@@ -115,7 +115,7 @@ class InfoScreen(Screens):
         verdana.text("You're free to use the characters and sprites generated in this program", ('center', 235))
         verdana.text("as you like, as long as you don't claim the sprites as your own creations.", ('center', 255))
         verdana.text("Original creator: just-some-cat.tumblr.com", ('center', 275))
-        verdana.text("Fan edit made by: SteelSable", ('center', 295))
+        verdana.text("Fan edit made by: SableSteel", ('center', 295))
 
         verdana.text("Thank you for playing!!", ('center', 550))
 

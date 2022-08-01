@@ -3,21 +3,32 @@ import random
 
 class Name(object):
     special_suffixes = {"kitten": "kit", "apprentice": "paw", "medicine cat apprentice": "paw", "leader": "star"}
-    normal_suffixes = ["acorn", "ash", "aster", "back", "beam", "bee", "belly", "berry", "bite", "bird", "blaze",
-                       "blink", "blossom", "bloom", "blotch", "bounce", "branch", "breeze", "briar", "bright", "brook",
-                       "burr", "bush", "call", "claw", "cloud", "clover", "coral", "creek", "cry", "dapple", "daisy",
-                       "dawn", "drift", "drop", "dusk", "dust", "ear", "ears", "eye", "eyes", "face", "fall", "fang",
-                       "feather", "fern", "fin", "fire", "fish", "flame", "flight", "flood", "flower", "foot",
-                       "frost", "fur", "gaze", "goose", "gorse", "grass", "hail", "hare", "hawk", "haze", "heart",
-                       "heather", "holly", "hollow", "ivy", "jaw", "jay", "jump", "kite", "lake", "larch", "leaf",
-                       "leap", "leg", "light", "lilac", "lily", "lotus", "mask", "mist", "moth", "moon", "mouse",
-                       "needle", "nettle", "night", "noise", "nose", "nut", "pad", "path", "patch", "pelt", "petal",
-                       "pond", "pool", "poppy", "pounce", "puddle", "rapid", "rose", "rump", "run", "runner",
-                       "scar", "seed", "shade", "shadow", "shell", "shine", "sight", "skip", "sky", "slip", "snow",
-                       "song", "spark", "speck", "speckle", "spirit", "splash", "splashed", "spot", "spots", "spring",
-                       "stalk", "stem", "step", "stone", "storm", "streak", "stream", "strike", "stripe", "sun",
-                       "swipe", "swoop", "tail", "tree", "throat", "tuft", "watcher", "water", "whisker", "whisper",
-                       "willow", "wind", "wing", "wish"]
+    normal_suffixes = [
+        # common suffixes
+        "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur",
+        "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt",
+        "tail", "tail", "tail", "tail", "tail", "tail", "tail", "tail",
+        "claw", "claw", "claw", "claw", "claw", "claw", "claw",
+        "foot", "foot", "foot", "foot", "foot",
+        "whisker", "whisker", "whisker", "whisker",
+        "heart", "heart", "heart", "heart", "heart",
+
+        # regular suffixes
+        "acorn", "ash", "aster", "back", "beam", "bee", "belly", "berry", "bite",
+        "bird", "blaze", "blink", "blossom", "bloom", "blotch", "bounce", "branch", "breeze", "briar", "bright",
+        "brook", "burr", "bush", "call", "cloud", "clover", "coral", "creek", "cry", "dapple", "daisy",
+        "dawn", "drift", "drop", "dusk", "dust", "ear", "ears", "eye", "eyes", "face", "fall", "fang",
+        "feather", "fern", "fin", "fire", "fish", "flame", "flight", "flood", "flower",
+        "frost", "gaze", "goose", "gorse", "grass", "hail", "hare", "hawk", "haze",
+        "heather", "holly", "hollow", "ivy", "jaw", "jay", "jump", "kite", "lake", "larch", "leaf",
+        "leap", "leg", "light", "lilac", "lily", "lotus", "mask", "mist", "moth", "moon", "mouse",
+        "needle", "nettle", "night", "noise", "nose", "nut", "pad", "path", "patch", "petal",
+        "pond", "pool", "poppy", "pounce", "puddle", "rapid", "rose", "rump", "run", "runner",
+        "scar", "seed", "shade", "shadow", "shell", "shine", "sight", "skip", "sky", "slip", "snow",
+        "song", "spark", "speck", "speckle", "spirit", "splash", "splashed", "spot", "spots", "spring",
+        "stalk", "stem", "step", "stone", "storm", "streak", "stream", "strike", "stripe", "sun",
+        "swipe", "swoop", "tail", "tree", "throat", "tuft", "watcher", "water", "whisper",
+        "willow", "wind", "wing", "wish"]
 
     pelt_suffixes = {'TwoColour': ['patch', 'spot', 'splash', 'patch', 'spots'],
                      'Tabby': ['stripe', 'feather', 'leaf', 'stripe', 'shade'],
