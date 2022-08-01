@@ -54,7 +54,7 @@ class Sprites(object):
 sprites = Sprites(50)
 for x in ['lineart', 'singlecolours', 'speckledcolours', 'tabbycolours', 'whitepatches', 'tortiecolours', 'eyes',
           'singleextra', 'tabbyextra', 'speckledextra', 'whiteextra', 'eyesextra', 'tortiesextra',
-          'skin', 'skinextra', 'scars', 'scarsextra']:
+          'skin', 'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'whitepatchesnew']:
     sprites.spritesheet("sprites/"+x+".png", x)
 
 # Line art
@@ -80,6 +80,13 @@ a = 1
 for i in ['ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANY2']:
     sprites.make_group('whitepatches', (a, 0), 'white' + i)
     sprites.make_group('whiteextra', (a, 0), 'whiteextra' + i, sprites_y=2)
+    a += 1
+
+#MORE white patches
+a = 0
+for i in ['ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO']:
+    sprites.make_group('whitepatchesnew', (a, 0), 'white' + i)
+    sprites.make_group('whitenewextra', (a, 0), 'whiteextra' + i, sprites_y=2)
     a += 1
 
 a = 0

@@ -22,7 +22,8 @@ class TwoColour(object):
     name = "TwoColour"
     sprites = {1: 'single', 2: 'white'}
     white_patches = ['ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY2', 'ANY2',
-                     'ANYCREAMY', 'TUXEDOCREAMY', 'LITTLECREAMY', 'VANCREAMY', 'ANY2CREAMY']
+                     'ANYCREAMY', 'TUXEDOCREAMY', 'LITTLECREAMY', 'VANCREAMY', 'ANY2CREAMY',
+                     'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO']
 
     def __init__(self, colour, length):
         self.colour = colour
@@ -37,6 +38,7 @@ class Tabby(object):
     name = "Tabby"
     sprites = {1: 'tabby', 2: 'white'}
     white_patches = ['ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY2', 'ANY2',
+                     'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO',
                      'ANYCREAMY', 'TUXEDOCREAMY', 'LITTLECREAMY', 'VANCREAMY', 'ANY2CREAMY']
 
     def __init__(self, colour, white, length):
@@ -55,6 +57,7 @@ class Speckled(object):
     name = "Speckled"
     sprites = {1: 'speckled', 2: 'white'}
     white_patches = ['ANY', 'TUXEDO', 'LITTLE', 'ANY', 'TUXEDO', 'LITTLE', 'ANY2', 'ANY2',
+                     'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO',
                      'ANYCREAMY', 'TUXEDOCREAMY', 'LITTLECREAMY', 'ANY2CREAMY']
 
     def __init__(self, colour, white, length):
@@ -73,6 +76,7 @@ class Tortie(object):
     name = "Tortie"
     sprites = {1: 'tortie', 2: 'white'}
     white_patches = ['TUXEDO', 'LITTLE', 'TUXEDO', 'LITTLE', None, 'EXTRA',
+                     'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO',
                      'TUXEDOCREAMY', 'LITTLECREAMY']
 
     def __init__(self, white, length):
@@ -91,6 +95,7 @@ class Calico(object):
     name = "Calico"
     sprites = {1: 'calico', 2: 'white'}
     white_patches = ['ANY', 'TUXEDO', 'VAN', 'ANY', 'TUXEDO', 'VAN', 'ANY2', 'ANY2',
+                     'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO',
                      'ANYCREAMY', 'TUXEDOCREAMY', 'VANCREAMY', 'ANY2CREAMY']
 
     def __init__(self, length):
@@ -126,7 +131,8 @@ single_colours = ['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK', 'P
                   'DARKGINGER', 'LIGHTBROWN', 'BROWN', 'DARKBROWN']
 eye_sprites = ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE', 'BLUEYELLOW', 'BLUEGREEN']
 white_sprites = ['ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN',
-                 'ANYCREAMY', 'TUXEDOCREAMY', 'LITTLECREAMY', 'COLOURPOINTCREAMY', 'VANCREAMY']
+                 'ANYCREAMY', 'TUXEDOCREAMY', 'LITTLECREAMY', 'COLOURPOINTCREAMY', 'VANCREAMY',
+                 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO']
 skin_sprites = ['BLACK', 'RED', 'PINK']
 
 

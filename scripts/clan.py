@@ -9,6 +9,7 @@ class Clan(object):
 
     # Starclan
     starclan_cats = []
+    seasons = ['Newleaf','Newleaf','Newleaf','Greenleaf','Greenleaf','Greenleaf','Leaf-fall','Leaf-fall','Leaf-fall','Leaf-bare','Leaf-bare','Leaf-bare',]
 
     layout_1 = {'leader den': ('center', 100), 'medicine den': (100, 230), 'nursery': (-100, 230),
                 'clearing': ('center', 300), 'apprentice den': (100, 450), 'warrior den': (-100, 450),
@@ -33,6 +34,7 @@ class Clan(object):
                      'elder': [False, False, False, False, False]}
 
     age = 0
+    season = 'Newleaf'
 
     def __init__(self, name=None, leader=None, medicine_cat=None):
         if name is not None:
@@ -41,6 +43,7 @@ class Clan(object):
             self.leader = leader
             self.leader.status_change('leader')
             self.leader_predecessors = 0
+            self.deputy = 0
             self.clan_cats.append(self.leader.ID)
 
             self.medicine_cat = medicine_cat
@@ -49,6 +52,7 @@ class Clan(object):
             self.clan_cats.append(self.medicine_cat.ID)
 
             self.age = 0
+            self.season = 'Newleaf'
 
             # Starclan
             self.instructor = None  # This is the first cat in starclan, to "guide" the other dead cats there..
@@ -115,6 +119,7 @@ class Clan(object):
             self.leader=leader
             cat_class.all_cats[leader.ID].status_change('leader')
             self.leader_predecessors+=1 
+            game.clan.deputy=0
         game.switches['new_leader'] = None
 
     def switch_clans(self):
@@ -143,7 +148,7 @@ class Clan(object):
         data = self.name + ',' + str(self.age) + '\n'
 
         # leader ID - leader lives - number of leader predecessors
-        data = data + self.leader.ID + ',' + str(self.leader_lives) + ',' + str(self.leader_predecessors) + '\n'
+        data = data + self.leader.ID + ',' + str(self.leader_lives) + ',' + str(self.leader_predecessors) + ',' + str(self.deputy) + '\n'
 
         # med. cat ID - number of med. cat predecessors
         data = data + self.medicine_cat.ID + ',' + str(self.med_cat_predecessors) + '\n'
@@ -183,7 +188,7 @@ class Clan(object):
             sections = clan_data.split('\n')
 
             general = sections[0].split(',')  # clan name(0) - clan age(1)
-            leader_info = sections[1].split(',')  # leader ID(0) - leader lives(1) - leader predecessors(2)
+            leader_info = sections[1].split(',')  # leader ID(0) - leader lives(1) - leader predecessors(2) - deputy ID(3)
             med_cat_info = sections[2].split(',')  # med cat ID(0) - med cat predecessors(2)
             if len(sections) > 4:
                 instructor_info = sections[3]  # instructor ID
@@ -194,7 +199,15 @@ class Clan(object):
 
             game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]], cat_class.all_cats[med_cat_info[0]])
             game.clan.age = int(general[1])
+            game.clan.season=game.clan.seasons[game.clan.age%12]
             game.clan.leader_lives, game.clan.leader_predecessors = int(leader_info[1]), int(leader_info[2])
+            if len(leader_info)>3:
+                if int(leader_info[3])>0:
+                    game.clan.deputy=cat_class.all_cats[leader_info[3]]
+                else:
+                   game.clan.deputy=0 
+            else:
+                game.clan.deputy=0
             game.clan.med_cat_predecessors = int(med_cat_info[1])
 
             # instructor
