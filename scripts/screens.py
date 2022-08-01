@@ -114,15 +114,8 @@ class InfoScreen(Screens):
         verdana.text("revisited until you decide the overwrite it with a new one.", ('center', 215))
         verdana.text("You're free to use the characters and sprites generated in this program", ('center', 235))
         verdana.text("as you like, as long as you don't claim the sprites as your own creations.", ('center', 255))
-        verdana.text("Contact me @ just-some-cat.tumblr.com .", ('center', 275))
-
-        verdana.text("Updates 0.2:", ('center', 320))
-        verdana.text("- Time can now go forward; clan cats grow older now when 'timeskip' is used", ('center', 350))
-        verdana.text("- Cats can be paired together and have litters of kittens", ('center', 370))
-        verdana.text("- Starclan has been added for dead cats", ('center', 390))
-        verdana.text("- Cats can die (but only of old age at around 200 moons)", ('center', 410))
-        verdana.text("- A list page for the clan cats has been added for a more organized view", ('center', 430))
-        verdana.text("- Minor additions to fur patterns etc.", ('center', 450))
+        verdana.text("Original creator: just-some-cat.tumblr.com", ('center', 275))
+        verdana.text("Fan edit made by: SteelSable", ('center', 295))
 
         verdana.text("Thank you for playing!!", ('center', 550))
 
