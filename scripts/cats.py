@@ -782,7 +782,11 @@ class Cat(object):
 
         self.status = new_status
         self.name.status = new_status
-
+        if new_status == 'apprentice':
+            mentor = choice(game.clan.clan_cats)
+            while self.all_cats.get(mentor).status != 'warrior' and not cat_class.all_cats.get(mentor).dead and mentor != game.clan.instructor.ID:
+                mentor = choice(game.clan.clan_cats)
+            self.mentor = self.all_cats.get(mentor)
         # update class dictionary
         self.all_cats[self.ID] = self
 
@@ -1054,7 +1058,7 @@ class Cat(object):
                             the_cat.age_sprites['dead'] = attr[28]
 
                     the_cat.skill = attr[22]
-                    self.all_cats[the_cat.ID] = the_cat
+                    the_cat.mentor = attr[8]
 
             for n in self.all_cats.values():
                 n.update_sprite()
@@ -1110,6 +1114,8 @@ class Cat(object):
                     new_cat.trait = value  # TRAIT
                 if attr == 'skill':
                     new_cat.skill = value  # SKILL
+                if attr == 'mentor':
+                    new_cat.mentor = value
 
 
 # CAT CLASS ITEMS

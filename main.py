@@ -63,7 +63,6 @@ while True:
     game.update_game()
     if game.switch_screens:
         screens.all_screens[game.current_screen].screen_switches()
-        #print(game.current_screen)
         game.switch_screens = False
     # END FRAME
     clock.tick(60)
