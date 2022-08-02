@@ -148,6 +148,8 @@ class ClanScreen(Screens):
         buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
         buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
         buttons.draw_button(('center', -50), text='Save Clan', save_clan=True)
+        verdana.text('Remember to save!', ('center', -20))
+
 
     def screen_switches(self):
         cat_profiles()
@@ -489,18 +491,25 @@ class EventsScreen(Screens):
         verdana.text('Clan age: ' + str(game.clan.age) + ' moons', ('center', 160))
 
         if game.switches['events_left'] == 0:
-            buttons.draw_button(('center', 200), text='TIMESKIP ONE MOON', timeskip=True)
+            buttons.draw_button(('center', 220), text='TIMESKIP ONE MOON', timeskip=True)
             if game.switches['timeskip']:
                 game.cur_events_list = []
         else:
-            buttons.draw_button(('center', 200), text='TIMESKIP ONE MOON', available=False)
+            buttons.draw_button(('center', 220), text='TIMESKIP ONE MOON', available=False)
         cat_class.one_moon()
-        verdana_red.text('Remember to save - the game doesn\'t save automatically.', ('center', 230))
-
+        a = 0
+        if game.clan.leader.dead:
+            verdana_red.text(game.clan.name + "Clan has no leader!", ('center', 260 + a*30))
+            a += 1
+        if game.clan.deputy == 0:
+            verdana_red.text(game.clan.name + "Clan has no deputy!", ('center', 260 + a*30))
+            a += 1
+        if game.clan.medicine_cat.dead:
+            verdana_red.text(game.clan.name + "Clan has no medicine cat!", ('center', 260 + a*30))
+            a += 1
         if game.cur_events_list is not None and game.cur_events_list != []:
-            a=0
             for x in range(len(game.cur_events_list)):
-                verdana.text(game.cur_events_list[x], ('center', 270 + a*30))
+                verdana.text(game.cur_events_list[x], ('center', 260 + a*30))
                 a += 1
             
 
