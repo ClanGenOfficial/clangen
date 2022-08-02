@@ -29,8 +29,15 @@ while True:
     mouse.check_pos()
 
     # EVENTS
-    for event in pygame.event.get():
-
+    for event in pygame.event.get(): 
+        if game.current_screen == 'make clan screen' and game.switches['clan_name'] == '': #Allows user to type in Clan Name
+            if event.type == pygame.KEYDOWN:
+                if event.unicode.isalpha(): #only allows alphabet letters as an input
+                    if len(game.switches['naming_text']) < game.max_name_length: #can't type more than max name length
+                        game.switches['naming_text'] += event.unicode
+                elif event.key == pygame.K_BACKSPACE: #Delete last character of clan name
+                    game.switches['naming_text'] = game.switches['naming_text'][:-1]
+                    
         if event.type == pygame.QUIT:
             # close pygame
             pygame.display.quit()
@@ -55,10 +62,9 @@ while True:
     # update
     game.update_game()
     if game.switch_screens:
-        # print screens.all_screens[game.current_screen].name
         screens.all_screens[game.current_screen].screen_switches()
+        #print(game.current_screen)
         game.switch_screens = False
-
     # END FRAME
     clock.tick(60)
 

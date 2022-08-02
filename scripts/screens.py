@@ -304,9 +304,11 @@ class MakeClanScreen(Screens):
         # buttons
         verdana_small.text('Note: going back to main menu resets the generated cats.', (50, 25))
         buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen', naming_text='')
-        writer.draw((290, 300))
-        buttons.draw_button(('center', 500), text='Name Clan', clan_name=game.switches['naming_text'])
+        #writer.draw((290, 300))
 
+
+        buttons.draw_button(('center', 500), text='Name Clan', clan_name=game.switches['naming_text'])
+        
     def second_phase(self):
         # LAYOUT
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))

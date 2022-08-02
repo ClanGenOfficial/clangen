@@ -12,3 +12,11 @@ Changes:
 - Notify player when the clan has no leader, deputy, or medicine cat
 
 - Updated info screen
+
+- Added allegiances
+
+- Added mentors for apprentices
+
+- Added keyboard functionality
+
+- Fixed StarClan instructor crash
