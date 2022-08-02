@@ -1,10 +1,12 @@
 # Make cats and start clans with them
+import pygame
+
 from scripts.screens import *
 import sys
 
 # P Y G A M E
 clock = pygame.time.Clock()
-
+pygame.display.set_icon(pygame.image.load('resources/icon.png'))
 # LOAD cats & clan
 with open('saves/clanlist.txt', 'r') as read_file:
     clan_list = read_file.read()
@@ -19,6 +21,7 @@ game.load_settings()
 
 # give thoughts/actions to already existing cats
 cat_class.thoughts()
+
 
 while True:
     screen.fill((255, 255, 255))

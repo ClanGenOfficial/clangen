@@ -35,7 +35,7 @@ class Cat(object):
         self.pelt = pelt
         self.eye_colour = eye_colour
         self.mentor = None
-        self.apprentice = None
+        self.apprentice = []
         self.mate = None
         self.placement = None
 
