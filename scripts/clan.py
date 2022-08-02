@@ -63,7 +63,7 @@ class Clan(object):
     def create_clan(self):
         """ This function is only called once a new clan is created in the 'clan created' screen, not every time
         the program starts"""
-        self.instructor = Cat(status=choice(["warrior", "warrior", "elder", "apprentice"]))
+        self.instructor = Cat(status=choice(["warrior", "warrior", "elder"]))
         self.instructor.update_sprite()
         self.instructor.dead = True
         self.add_cat(self.instructor)
@@ -212,13 +212,13 @@ class Clan(object):
                     game.clan.add_cat(game.clan.instructor)  # This is to make sure the instructor isn't removed
                 else:
                     # For whatever reason... instructor doesn't exist
-                    game.clan.instructor = Cat(status=choice(["warrior", "warrior", "elder", "apprentice"]))
+                    game.clan.instructor = Cat(status=choice(["warrior", "warrior", "elder"]))
                     game.clan.instructor.update_sprite()
                     game.clan.instructor.dead = True
                     game.clan.add_cat(game.clan.instructor)  # This is to make sure the instructor isn't removed
             else:
                 # instructor doesn't exist because the version converted is too old
-                game.clan.instructor = Cat(status=choice(["warrior", "warrior", "elder", "apprentice"]))
+                game.clan.instructor = Cat(status=choice(["warrior", "warrior", "elder"]))
                 game.clan.instructor.update_sprite()
                 game.clan.instructor.dead = True
                 game.clan.add_cat(game.clan.instructor)  # This is to make sure the instructor isn't removed

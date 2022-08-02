@@ -35,6 +35,7 @@ class Cat(object):
         self.pelt = pelt
         self.eye_colour = eye_colour
         self.mentor = None
+        self.apprentice = None
         self.mate = None
         self.placement = None
 
@@ -795,6 +796,7 @@ class Cat(object):
             while self.all_cats.get(mentor).status != 'warrior' and not cat_class.all_cats.get(mentor).dead and mentor != game.clan.instructor.ID:
                 mentor = choice(game.clan.clan_cats)
             self.mentor = self.all_cats.get(mentor)
+            self.all_cats.get(mentor).apprentice = self
         # update class dictionary
         self.all_cats[self.ID] = self
 
