@@ -588,7 +588,7 @@ class ProfileScreen(Screens):
         verdana.text(cat_thought, ('center', 300))  # THOUGHT / ACTION
         verdana_small.text(the_cat.gender, ('center', 330))  # SEX / GENDER
         verdana_small.text(the_cat.status, ('center', 345))  # STATUS
-        verdana_small.text('mentor: Birchfur', ('center', 360))
+        # verdana_small.text('mentor: Birchfur', ('center', 360))
         verdana_small.text(the_cat.age, ('center', 375))  # AGE
         verdana_small.text(the_cat.trait, ('center', 390))  # CHARACTER TRAIT
         verdana_small.text(the_cat.skill, ('center', 405))  # SPECIAL SKILL
@@ -643,7 +643,7 @@ class ProfileScreen(Screens):
         buttons.draw_button((300, -160), text='See Family', cur_screen='see kits screen')
         if not the_cat.dead:
             buttons.draw_button((-300, -160), text='Kill Cat', kill_cat=the_cat)
-        buttons.draw_button(('center', -130), text='Change Mentor', cur_screen='see kits screen')
+        buttons.draw_button(('center', -130), text='Change Mentor', cur_screen='change mentor screen')
 
         if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not the_cat.dead:
             buttons.draw_button(('center', -130), text='Pick mate for ' + str(the_cat.name),
