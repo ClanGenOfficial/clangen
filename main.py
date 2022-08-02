@@ -2,7 +2,6 @@
 from scripts.screens import *
 import sys
 
-
 # P Y G A M E
 clock = pygame.time.Clock()
 
@@ -23,6 +22,10 @@ cat_class.thoughts()
 
 while True:
     screen.fill((255, 255, 255))
+    # background
+    # bg = pygame.image.load("resources/menu.png")
+    # bg = pygame.transform.scale(bg, (1000,500))
+    # screen.blit(bg, (0,0))
     mouse.check_pos()
 
     # EVENTS

@@ -12,7 +12,7 @@ class Game(object):
     naming_box = pygame.Surface((140, 20))
     naming_box.fill((230, 230, 230))
     max_name_length = 10
-    cur_events_list=[]
+    cur_events_list = []
 
     choose_cats = {}
     cat_buttons = {'cat0': None, 'cat1': None, 'cat2': None, 'cat3': None,
@@ -20,12 +20,13 @@ class Game(object):
                    'cat8': None, 'cat9': None, 'cat10': None, 'cat11': None}
     patrol_cats = {}
 
-    # store changing parts of the game that the user can toggle with with buttons
+    # store changing parts of the game that the user can toggle with buttons
     switches = {'cat': None, 'clan_name': '', 'leader': None, 'medicine_cat': None, 'members': [],
                 'event': None, 'cur_screen': 'start screen', 'naming_text': '', 'timeskip': False, 'mate': None,
                 'setting': None, 'save_settings': False, 'list_page': 1, 'last_screen': 'start screen',
-                'events_left': 0, 'save_clan': False, 'new_leader': False, 'apprentice_switch': False, 'deputy_switch': False, 'clan_list' : '',
-                 'switch_clan': False, 'read_clans': False, 'kill_cat': False, 'current_patrol': []}
+                'events_left': 0, 'save_clan': False, 'new_leader': False, 'apprentice_switch': False,
+                'deputy_switch': False, 'clan_list': '',
+                'switch_clan': False, 'read_clans': False, 'kill_cat': False, 'current_patrol': []}
     all_screens = {}
     cur_events = {}
 
@@ -66,7 +67,7 @@ class Game(object):
                 self.switch_setting(self.switches['setting'])
                 self.switches['setting'] = None  # Action fulfilled, reset back to None
             else:
-                print ('Wrong settings value:', self.switches['setting'])
+                print('Wrong settings value:', self.switches['setting'])
                 self.switches['setting'] = None  # Wrong value added, turn back to None to avoid errors
 
         if self.switches['save_settings']:  # User has clicked 'save settings' button
@@ -90,7 +91,6 @@ class Game(object):
             if if_clans > 0:
                 game.switches['clan_list'] = clan_list.split('\n')
             self.switches['read_clans'] = False
-        
 
     def save_settings(self):
         """ Save user settings for later use """

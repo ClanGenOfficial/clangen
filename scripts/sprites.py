@@ -5,7 +5,7 @@ class Sprites(object):
     def __init__(self, original_size, new_size=None):
         self.size = original_size  # size of a single sprite in a spritesheet
         if new_size is None:
-            self.new_size = self.size*2
+            self.new_size = self.size * 2
         else:
             self.new_size = new_size  # size that the sprites will be transformed to
         self.spritesheets = {}
@@ -24,17 +24,17 @@ class Sprites(object):
         # pixels will be calculated automatically, so for x and y, just use 0, 1, 2, 3 etc.
         new_sprite = pygame.Surface((self.size, self.size), pygame.HWSURFACE | pygame.SRCALPHA)
         new_sprite.blit(self.groups[group_name], (0, 0),
-                        (x*self.size, y*self.size, (x+1)*self.size, (y+1)*self.size))
+                        (x * self.size, y * self.size, (x + 1) * self.size, (y + 1) * self.size))
         return new_sprite
 
     def make_group(self, spritesheet, pos, name, sprites_x=3, sprites_y=3):  # pos = ex. (2, 3), no single pixels
         # divide sprites on a sprite-sheet into groups of sprites that are easily accessible
 
         # making the group
-        new_group = pygame.Surface((self.size*sprites_x, self.size*sprites_y), pygame.HWSURFACE | pygame.SRCALPHA)
+        new_group = pygame.Surface((self.size * sprites_x, self.size * sprites_y), pygame.HWSURFACE | pygame.SRCALPHA)
         new_group.blit(self.spritesheets[spritesheet], (0, 0),
-                       (pos[0]*sprites_x*self.size, pos[1]*sprites_y*self.size,
-                        (pos[0]+sprites_x)*self.size, (pos[1]+sprites_y)*self.size))
+                       (pos[0] * sprites_x * self.size, pos[1] * sprites_y * self.size,
+                        (pos[0] + sprites_x) * self.size, (pos[1] + sprites_y) * self.size))
         self.groups[name] = new_group
 
         # splitting group into singular sprites and storing into self.sprites section
@@ -42,9 +42,9 @@ class Sprites(object):
         y_spr = 0
         for x in range(sprites_x * sprites_y):
             new_sprite = pygame.Surface((self.size, self.size), pygame.HWSURFACE | pygame.SRCALPHA)
-            new_sprite.blit(new_group, (0, 0), (x_spr*self.size, y_spr*self.size,
-                                                (x_spr+1)*self.size, (y_spr+1)*self.size))
-            self.sprites[name+str(x)] = new_sprite
+            new_sprite.blit(new_group, (0, 0), (x_spr * self.size, y_spr * self.size,
+                                                (x_spr + 1) * self.size, (y_spr + 1) * self.size))
+            self.sprites[name + str(x)] = new_sprite
             x_spr += 1
             if x_spr == sprites_x:
                 x_spr = 0
@@ -55,7 +55,7 @@ sprites = Sprites(50)
 for x in ['lineart', 'singlecolours', 'speckledcolours', 'tabbycolours', 'whitepatches', 'tortiecolours', 'eyes',
           'singleextra', 'tabbyextra', 'speckledextra', 'whiteextra', 'eyesextra', 'tortiesextra',
           'skin', 'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'whitepatchesnew']:
-    sprites.spritesheet("sprites/"+x+".png", x)
+    sprites.spritesheet("sprites/" + x + ".png", x)
 
 # Line art
 sprites.make_group('lineart', (0, 0), 'lines', sprites_y=5)
@@ -82,7 +82,7 @@ for i in ['ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANY2']:
     sprites.make_group('whiteextra', (a, 0), 'whiteextra' + i, sprites_y=2)
     a += 1
 
-#MORE white patches
+# MORE white patches
 a = 0
 for i in ['ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO']:
     sprites.make_group('whitepatchesnew', (a, 0), 'white' + i)

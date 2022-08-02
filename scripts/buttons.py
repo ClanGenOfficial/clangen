@@ -1,6 +1,5 @@
 from .text import *
 from .cats import *
-# from random import randint
 
 
 class Button(object):
@@ -144,7 +143,7 @@ class Writer(Button):
 
                 # Check collision
                 collision = self.used_screen.blit(new_button, (pos[0] + cur_length + space_x,
-                                                               pos[1] + (self.font.size + 6)*y + space_y))
+                                                               pos[1] + (self.font.size + 6) * y + space_y))
                 clickable = False
                 if available and collision.collidepoint(self.used_mouse.pos):
                     colour = self.clickable_colour
@@ -156,7 +155,7 @@ class Writer(Button):
                 new_button.fill(colour)
                 self.font.text(new_letter, (5, 0), new_button)
                 self.used_screen.blit(new_button, (pos[0] + cur_length + space_x,
-                                                   pos[1] + (self.font.size + 6)*y + space_y))
+                                                   pos[1] + (self.font.size + 6) * y + space_y))
 
                 # CLICK
                 if game.clicked and clickable:
@@ -175,7 +174,7 @@ class Writer(Button):
                 y += 1
 
     def activate(self, values=None, cat_value=None):
-        if values not in ['upper', 'LOWER', 'DEL'] and len(game.switches[self.target]) < game.max_name_length\
+        if values not in ['upper', 'LOWER', 'DEL'] and len(game.switches[self.target]) < game.max_name_length \
                 and values is not None:
             if self.upper:
                 game.switches[self.target] += values.upper()
