@@ -12,7 +12,14 @@ class Game(object):
     naming_box = pygame.Surface((140, 20))
     naming_box.fill((230, 230, 230))
     max_name_length = 10
+    max_events_displayed = 10
+    event_scroll_ct = 0
     cur_events_list = []
+
+    down = pygame.image.load("sprites\down.png")
+    down = pygame.transform.scale(down,(75,75))
+    up = pygame.image.load("sprites\carrot.png")
+    up = pygame.transform.scale(up,(40,40))
 
     choose_cats = {}
     cat_buttons = {'cat0': None, 'cat1': None, 'cat2': None, 'cat3': None,

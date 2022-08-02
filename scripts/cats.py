@@ -559,6 +559,14 @@ class Cat(object):
             game.clan.age += 1
             game.clan.season = game.clan.seasons[game.clan.age % 12]
 
+            if game.clan.medicine_cat.dead:
+                game.cur_events_list.insert(0, game.clan.name + "Clan has no medicine cat!")
+            if game.clan.deputy == 0:
+                game.cur_events_list.insert(0, game.clan.name + "Clan has no deputy!")
+            if game.clan.leader.dead:
+                game.cur_events_list.insert(0, game.clan.name + "Clan has no leader!")
+            
+            game.event_scroll_ct = 0
     def dies(self):  # This function is called every time a cat dies
         self.dead = True
         game.clan.add_to_starclan(self)

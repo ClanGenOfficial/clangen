@@ -1,6 +1,8 @@
+from scripts import game_essentials
 from .clan import *
 from .events import *
 from .patrols import *
+
 from math import ceil, floor
 
 
@@ -487,19 +489,32 @@ class EventsScreen(Screens):
         else:
             buttons.draw_button(('center', 220), text='TIMESKIP ONE MOON', available=False)
         cat_class.one_moon()
+
+        #Maximum events on the screen is 12
         a = 0
-        if game.clan.leader.dead:
-            verdana_red.text(game.clan.name + "Clan has no leader!", ('center', 260 + a * 30))
-            a += 1
-        if game.clan.deputy == 0:
-            verdana_red.text(game.clan.name + "Clan has no deputy!", ('center', 260 + a * 30))
-            a += 1
-        if game.clan.medicine_cat.dead:
-            verdana_red.text(game.clan.name + "Clan has no medicine cat!", ('center', 260 + a * 30))
-            a += 1
+        # if game.clan.leader.dead:
+        #     #verdana_red.text(game.clan.name + "Clan has no leader!", ('center', 260 + a * 30))
+        #     # a += 1
+
+        #     game.cur_events_list.insert(0, game.clan.name + "Clan has no leader!")
+        # if game.clan.deputy == 0:
+        #     game.cur_events_list.insert(0, game.clan.name + "Clan has no deputy!")
+
+        #     # verdana_red.text(game.clan.name + "Clan has no deputy!", ('center', 260 + a * 30))
+        #     # a += 1
+        # if game.clan.medicine_cat.dead:
+        #     game.cur_events_list.insert(0, game.clan.name + "Clan has no medicine cat!")
+        #     # verdana_red.text(game.clan.name + "Clan has no medicine cat!", ('center', 260 + a * 30))
+        #     # a += 1
+        
         if game.cur_events_list is not None and game.cur_events_list != []:
-            for x in range(len(game.cur_events_list)):
-                verdana.text(game.cur_events_list[x], ('center', 260 + a * 30))
+            for x in range(min(len(game.cur_events_list), game.max_events_displayed)):
+                if game.cur_events_list[x] == None:
+                    continue
+                if "Clan has no " in game.cur_events_list[x]:
+                    verdana_red.text(game.cur_events_list[x], ('center', 260 + a * 30))
+                else:
+                    verdana.text(game.cur_events_list[x], ('center', 260 + a * 30))
                 a += 1
         # buttons
         buttons.draw_button((260, 70), text='EVENTS', available=False)
@@ -507,6 +522,11 @@ class EventsScreen(Screens):
         buttons.draw_button((400, 70), text='STARCLAN', cur_screen='starclan screen')
         buttons.draw_button((500, 70), text='PATROL', cur_screen='patrol screen')
         buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
+        
+
+        if len(game.cur_events_list) > game.max_events_displayed:
+            buttons.draw_button((720, 250), image = game.up, arrow="UP")
+            buttons.draw_button((700, 550), image = game.down, arrow="DOWN")
 
 
 class ProfileScreen(Screens):

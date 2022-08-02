@@ -14,7 +14,7 @@ class Button(object):
         self.clickable_colour = clickable_colour
         self.unavailable_colour = unavailable_colour
 
-    def draw_button(self, pos, available=True, image=None, text='', cat_value=None, **values):
+    def draw_button(self, pos, available=True, image=None, text='', cat_value=None,arrow=None, **values):
         # self.on_screen = True
         # cat_value takes a cat object. if it isn't None, the keys and values are determined by which attributes of
         # the cat are changed and doesn't have an effect on game switches
@@ -56,12 +56,14 @@ class Button(object):
             self.used_screen.blit(new_button, new_pos)
 
         # CLICK
-        if game.clicked and clickable and cat_value is None:
+        if game.clicked and clickable and cat_value is None and arrow is None:
             self.activate(values)
-        elif game.clicked and clickable:  # if cat_value is not None
+        elif game.clicked and clickable and arrow is None:  # if cat_value is not None
             self.activate(values, cat_value)
+        elif game.clicked and clickable:
+            self.activate(values,arrow=arrow)
 
-    def activate(self, values=None, cat_value=None):  # cat value points to a Cat object
+    def activate(self, values=None, cat_value=None, arrow=None):  # cat value points to a Cat object
         if values is None:
             values = {}
         add = False
@@ -86,6 +88,15 @@ class Button(object):
                         cat_value.mate = None
                     game.switches['mate'] = None
 
+        if arrow is not None:
+            max_scroll_direction = len(game.cur_events_list) - game.max_events_displayed
+            if arrow=="UP" and game.event_scroll_ct < 0:
+                game.cur_events_list.insert(0, game.cur_events_list.pop())
+                game.event_scroll_ct += 1
+            if arrow=="DOWN" and abs(game.event_scroll_ct) < max_scroll_direction:
+                game.cur_events_list.append(game.cur_events_list.pop(0))
+                game.event_scroll_ct -= 1
+            
 
 class Writer(Button):
     button_type = 'writer'
@@ -188,6 +199,7 @@ class Writer(Button):
             self.letter_size = 'upper'
         elif values == 'DEL' and len(game.switches[self.target]) > 0:
             game.switches[self.target] = game.switches[self.target][:-1]
+
 
 
 # BUTTONS

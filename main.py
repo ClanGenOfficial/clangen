@@ -37,7 +37,16 @@ while True:
                         game.switches['naming_text'] += event.unicode
                 elif event.key == pygame.K_BACKSPACE: #Delete last character of clan name
                     game.switches['naming_text'] = game.switches['naming_text'][:-1]
-                    
+        
+        if game.current_screen == 'events screen' and len(game.cur_events_list) > game.max_events_displayed:
+            max_scroll_direction = len(game.cur_events_list) - game.max_events_displayed
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_UP and game.event_scroll_ct < 0:
+                    game.cur_events_list.insert(0, game.cur_events_list.pop())
+                    game.event_scroll_ct += 1
+                if event.key == pygame.K_DOWN and abs(game.event_scroll_ct) < max_scroll_direction:
+                    game.cur_events_list.append(game.cur_events_list.pop(0))
+                    game.event_scroll_ct -= 1
         if event.type == pygame.QUIT:
             # close pygame
             pygame.display.quit()
