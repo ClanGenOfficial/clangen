@@ -535,7 +535,7 @@ class EventsScreen(Screens):
 class ProfileScreen(Screens):
     def on_use(self):
         # use this variable to point to the cat object in question
-        the_cat = cat_class.all_cats[game.switches['cat']]
+        the_cat = cat_class.all_cats.get(game.switches['cat'], game.clan.instructor)
         # use these attributes to create differing profiles for starclan cats etc.
         is_instructor = False
         if the_cat.dead:
@@ -1109,17 +1109,17 @@ class AllegiancesScreen(Screens):
 
         verdana.text("LEADER:", (30, 140))
         if not game.clan.leader.dead:
-            verdana.text(str(game.clan.leader.name) + " - a long haired, black tom, with amber eyes.", (170, 140))
+            verdana.text(str(game.clan.leader.name), (170, 140))
 
         verdana.text("DEPUTY:", (30, 180))
         if game.clan.deputy != 0:
-            verdana.text(str(game.clan.deputy.name) + " - a short haired, red classic tabby tom, with gold eyes.",
+            verdana.text(str(game.clan.deputy.name),
                          (170, 180))
 
         verdana.text("MEDICINE CAT:", (30, 220))
         if not game.clan.medicine_cat.dead:
             verdana.text(
-                str(game.clan.medicine_cat.name) + " - a blue mackerel tabby she-cat, with short fur, and hazel eyes.",
+                str(game.clan.medicine_cat.name),
                 (170, 220))
 
         verdana.text("WARRIORS:", (30, 260))
@@ -1137,7 +1137,11 @@ class AllegiancesScreen(Screens):
 
         # verdana.text("QUEENS:", (30, 220))
 
-        # verdana.text("ELDERS:", (30, 220))
+        verdana.text("ELDERS:", (30, 310 + 30 * cat_count))
+        for j in range(len(living_cats)):
+            if str(living_cats[j].status) == 'elder':
+                verdana.text(str(living_cats[j].name), (170, 310 + 30 * cat_count))
+                cat_count += 1
 
         # buttons
         buttons.draw_button((260, 70), text='EVENTS', cur_screen='events screen')
