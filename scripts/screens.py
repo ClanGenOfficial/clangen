@@ -31,8 +31,6 @@ class Screens(object):
 class StartScreen(Screens):
     def on_use(self):
         # layout
-
-        verdana_white.text('Welcome to CLAN GENERATOR.', ('center', 100))
         example_cat.draw_big((350, 150))
 
         # buttons
@@ -1153,18 +1151,18 @@ class AllegiancesScreen(Screens):
                 verdana.text(str(living_cats[j].name), (170, 260 + 30 * cat_count))
                 cat_count += 1
 
-        verdana.text("APPRENTICES:", (30, 270 + 30 * cat_count))
+        verdana.text("APPRENTICES:", (30, 300 + 30 * cat_count))
         for j in range(len(living_cats)):
             if str(living_cats[j].status) == 'apprentice':
-                verdana.text(str(living_cats[j].name), (170, 270 + 30 * cat_count))
+                verdana.text(str(living_cats[j].name), (170, 300 + 30 * cat_count))
                 cat_count += 1
 
         # verdana.text("QUEENS:", (30, 220))
 
-        verdana.text("ELDERS:", (30, 310 + 30 * cat_count))
+        verdana.text("ELDERS:", (30, 340 + 30 * cat_count))
         for j in range(len(living_cats)):
             if str(living_cats[j].status) == 'elder':
-                verdana.text(str(living_cats[j].name), (170, 310 + 30 * cat_count))
+                verdana.text(str(living_cats[j].name), (170, 340 + 30 * cat_count))
                 cat_count += 1
 
         # buttons

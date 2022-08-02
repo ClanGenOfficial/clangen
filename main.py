@@ -53,14 +53,6 @@ while True:
             pygame.quit()
             sys.exit()
 
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_a:
-                for x in cat_class.all_cats.values():
-                    print(x.name)
-
-        """if event.type == pygame.MOUSEMOTION:
-            mouse_pos = pygame.mouse.get_pos()"""
-
         # MOUSE CLICK
         if event.type == pygame.MOUSEBUTTONDOWN:
             game.clicked = True

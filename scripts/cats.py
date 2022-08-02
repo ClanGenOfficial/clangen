@@ -122,7 +122,7 @@ class Cat(object):
                 self.pelt = choose_pelt(self.gender)
 
             elif self.parent2 is None and self.parent1 in self.all_cats.keys():
-                # 1 in 3 chance to inherit a single paren't pelt
+                # 1 in 3 chance to inherit a single parent's pelt
                 par1 = self.all_cats[self.parent1]
                 self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, None]),
                                         choice([par1.pelt.white, None]),
@@ -236,7 +236,6 @@ class Cat(object):
     def one_moon(self):  # Go forward in time one moon
         if game.switches['timeskip']:
             key_copy = tuple(cat_class.all_cats.keys())
-            # for i in key_copy:
             deputy = 0
             for index, i in enumerate(key_copy):
                 cat = cat_class.all_cats[i]
@@ -347,8 +346,6 @@ class Cat(object):
                             # check if cat is dead
                             if randint(1, 4) == 4:
                                 cat_number = key_copy[randint(0, index)]
-                                if cat_number == cat.ID:
-                                    key_copy[randint(0, index)]
                             else:
                                 cat_number = key_copy[index - randint(1, index)]
 
@@ -542,7 +539,7 @@ class Cat(object):
                 elif cat.dead:  # if cat was already dead
                     cat.dead_for += 1
 
-            # Checks to see if the leader is dead & if there a deputy; if so, it promotes the deputy
+            # Checks to see if the leader is dead & if there is a deputy; if so, it promotes the deputy
             if game.clan.leader.dead:
                 if deputy:
                     game.clan.new_leader(deputy)
@@ -566,8 +563,9 @@ class Cat(object):
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no deputy!")
             if game.clan.leader.dead:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no leader!")
-            
+
             game.event_scroll_ct = 0
+
     def dies(self):  # This function is called every time a cat dies
         self.dead = True
         game.clan.add_to_starclan(self)
@@ -578,7 +576,7 @@ class Cat(object):
 
         if self.mate is not None:
             if self.mate in self.all_cats:
-                if self.all_cats[self.mate].dead == True:
+                if self.all_cats[self.mate].dead:
                     chance = None
                 if self.all_cats[self.mate].gender != self.gender and self.all_cats[
                     self.mate].age != 'elder' and chance is not None:
@@ -738,9 +736,7 @@ class Cat(object):
                         pos_actions.append(is_old)
                     if self.all_cats[cat].status == 'leader':
                         pos_actions.append(is_leader)
-                    if self.all_cats[cat].status == 'medicine cat':
-                        pos_actions.append(is_med)
-                    if self.all_cats[cat].status == 'medicine cat apprentice':
+                    if self.all_cats[cat].status == 'medicine cat' or self.all_cats[cat].status == 'medicine cat apprentice':
                         pos_actions.append(is_med)
                 else:  # else, interaction is based on other cat's traits
                     if self.all_cats[other_1].age in ['kitten', 'adolescent']:
@@ -762,9 +758,8 @@ class Cat(object):
                     pos_actions.append(no_other_old)
                 if self.all_cats[cat].status == 'leader':
                     pos_actions.append(no_other_leader)
-                if self.all_cats[cat].status == 'medicine cat':
-                    pos_actions.append(no_other_med)
-                if self.all_cats[cat].status == 'medicine cat apprentice':
+                if self.all_cats[cat].status == 'medicine cat' or self.all_cats[
+                    cat].status == 'medicine cat apprentice':
                     pos_actions.append(no_other_med)
 
             # change the pos_actions if out on patrol
@@ -793,7 +788,8 @@ class Cat(object):
         self.name.status = new_status
         if new_status == 'apprentice':
             mentor = choice(game.clan.clan_cats)
-            while self.all_cats.get(mentor).status != 'warrior' and not cat_class.all_cats.get(mentor).dead and mentor != game.clan.instructor.ID:
+            while self.all_cats.get(mentor).status != 'warrior' and not cat_class.all_cats.get(
+                    mentor).dead and mentor != game.clan.instructor.ID:
                 mentor = choice(game.clan.clan_cats)
             self.mentor = self.all_cats.get(mentor)
             self.all_cats.get(mentor).apprentice = self
