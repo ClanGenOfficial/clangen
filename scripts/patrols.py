@@ -323,7 +323,7 @@ class Patrol(object):
         if self.patrol_event[0]==16:
             if self.before:
                 #stuff that happens during calculations
-                if self.patrol_stat_cat.experience>39:
+                if int(self.patrol_stat_cat.experience)>39:
                     self.success=True
                 return
             else:
@@ -344,7 +344,7 @@ class Patrol(object):
         if self.patrol_event[0]==19:
             if self.before:
                 #stuff that happens during calculations
-                if game.clan.deputy.experience>39:
+                if int(game.clan.deputy.experience)>39:
                     self.success=True
                 return
             else:
