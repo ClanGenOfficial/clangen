@@ -19,4 +19,6 @@ Changes:
 
 - Added keyboard functionality
 
+- Added scrolling functionality
+
 - Fixed StarClan instructor crash
