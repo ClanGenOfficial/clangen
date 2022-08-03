@@ -141,7 +141,7 @@ class ClanScreen(Screens):
         verdana.text('Elders\' Den', game.clan.cur_layout['elder den'])
 
         for x in game.clan.clan_cats:
-            if not cat_class.all_cats[x].dead and cat_class.all_cats[x].incamp:
+            if not cat_class.all_cats[x].dead and cat_class.all_cats[x].in_camp:
                 buttons.draw_button(cat_class.all_cats[x].placement, image=cat_class.all_cats[x].sprite, cat=x,
                                     cur_screen='profile screen')
 
@@ -654,10 +654,10 @@ class ProfileScreen(Screens):
 
         # experience
         if not the_cat.dead:
-            verdana_small.text('experience: ' + str(the_cat.experiencelevel), (450, 330 + count2 * 15));
+            verdana_small.text('experience: ' + str(the_cat.experience_level), (450, 330 + count2 * 15));
             count2 += 1
         else:
-            verdana_small.text('experience: ' + str(the_cat.experiencelevel), (450, 330 + count2 * 15));
+            verdana_small.text('experience: ' + str(the_cat.experience_level), (450, 330 + count2 * 15));
             count2 += 1
 
         # buttons
@@ -1007,7 +1007,7 @@ class PatrolScreen(Screens):
         able_cats = []
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
-            if not the_cat.dead and the_cat.incamp:
+            if not the_cat.dead and the_cat.in_camp:
                 if the_cat.status in ['leader', 'deputy', 'warrior', 'apprentice']:
                     able_cats.append(the_cat)
 
@@ -1050,7 +1050,7 @@ class PatrolScreen(Screens):
             verdana_small.text(str(game.patrol_cats[game.switches['cat']].status), (330, 385))
             verdana_small.text(str(game.patrol_cats[game.switches['cat']].trait), (330, 405))
             verdana_small.text(str(game.patrol_cats[game.switches['cat']].skill), (330, 425))
-            verdana_small.text('experience: ' + str(game.patrol_cats[game.switches['cat']].experiencelevel), (330, 445))
+            verdana_small.text('experience: ' + str(game.patrol_cats[game.switches['cat']].experience_level), (330, 445))
 
             if len(game.switches['current_patrol']) < 6:
                 buttons.draw_button(('center', 490), text='Add to Patrol',

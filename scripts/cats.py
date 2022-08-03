@@ -9,7 +9,8 @@ import os.path
 
 class Cat(object):
     used_screen = screen
-    traits = ['ambitious', 'loyal', 'righteous', 'fierce', 'nervous', 'strict', 'charismatic', 'calm',
+    traits = ['strange', 'bloodthirsty', 'ambitious', 'loyal', 'righteous', 'fierce', 'nervous', 'strict',
+              'charismatic', 'calm',
               'daring', 'loving', 'playful', 'lonesome', 'cold', 'insecure', 'vengeful',
               'shameless', 'faithful', 'troublesome', 'empathetic']
     kit_traits = ['bouncy', 'bullying', 'daydreamer', 'nervous', 'charming', 'attention-seeker',
@@ -30,43 +31,26 @@ class Cat(object):
         self.gender = gender
         self.status = status
         self.age = None
-        self.parent1 = parent1  # an ID of parent
-        self.parent2 = parent2  # if parent1 is None, parent2 is too
+        self.parent1 = parent1
+        self.parent2 = parent2
         self.pelt = pelt
         self.eye_colour = eye_colour
         self.mentor = None
         self.apprentice = []
         self.mate = None
         self.placement = None
-
-        # if the cat isn't real and is just an example cat:
         self.example = example
-
-        # DEATH
         self.dead = False
         self.died_by = None  # once the cat dies, tell the cause
-        self.dead_for = 0  # once cat has died, tell how many moons it has been since
-
-        # thoughts and actions
+        self.dead_for = 0  # moons
         self.thought = ''
-
         if ID is None:
             self.ID = str(randint(10000, 99999))
         else:
             self.ID = ID
-
         # personality trait and skill
         if self.status != 'kitten':
-            # TRAIT
-            a = randint(0, 50)
-            if a == 1:
-                self.trait = 'strange'
-            elif a == 2:
-                self.trait = 'bloodthirsty'
-            else:
-                self.trait = choice(self.traits)
-
-            # SKILL
+            self.trait = choice(self.traits)
             if self.status != 'apprentice' and self.status != 'medicine cat apprentice':
                 self.skill = choice(self.skills)
             else:
@@ -74,13 +58,10 @@ class Cat(object):
         else:
             self.trait = self.trait = choice(self.kit_traits)
             self.skill = '???'
-
         # gender
         if self.gender is None:
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
-
-        # age
         if status is None:
             self.age = choice(self.ages)
         else:
@@ -92,8 +73,6 @@ class Cat(object):
                 self.age = 'adolescent'
             else:
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
-
-        # age in moons
         if moons is None:
             self.moons = randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
         else:
@@ -144,39 +123,33 @@ class Cat(object):
         else:
             self.name = Name(status, prefix, suffix, eyes=self.eye_colour)
 
-        if self.pelt is None:
-            print('pelt is None')
-
         # SPRITE
         self.age_sprites = {'kitten': randint(0, 2), 'adolescent': randint(3, 5), 'elder': randint(3, 5)}
         self.reverse = choice([True, False])
         self.skin = choice(skin_sprites)
 
         # scars & more
+        scar_choice = randint(0, 15)
         if self.age in ['kitten', 'adolescent']:
-            i = randint(0, 50)
+            scar_choice = randint(0, 50)
         elif self.age in ['young adult', 'adult']:
-            i = randint(0, 20)
-        else:
-            i = randint(0, 15)
-        if i == 1:
+            scar_choice = randint(0, 20)
+        if scar_choice == 1:
             self.specialty = choice([choice(scars1), choice(scars2)])
         else:
             self.specialty = None
 
+        scar_choice2 = randint(0, 30)
         if self.age in ['kitten', 'adolescent']:
-            i = randint(0, 100)
+            scar_choice2 = randint(0, 100)
         elif self.age in ['young adult', 'adult']:
-            i = randint(0, 40)
-        else:
-            i = randint(0, 30)
-        if i == 1:
+            scar_choice2 = randint(0, 40)
+        if scar_choice2 == 1:
             self.specialty2 = choice([choice(scars1), choice(scars2)])
         else:
             self.specialty2 = None
 
         # random event
-
         if self.pelt is not None:
             if self.pelt.length != 'long':
                 self.age_sprites['adult'] = randint(6, 8)
@@ -188,11 +161,11 @@ class Cat(object):
 
             # WHITE PATCHES
             if self.pelt.white and self.pelt.white_patches is not None:
-                a = randint(0, 10)
-                if a == 1 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled'] \
+                pelt_choice = randint(0, 10)
+                if pelt_choice == 1 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled'] \
                         and self.pelt.colour != 'WHITE':
                     self.white_patches = choice(['COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL'])
-                elif a == 1 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled']:
+                elif pelt_choice == 1 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled']:
                     self.white_patches = choice(['COLOURPOINT', 'RAGDOLL'])
                 elif self.pelt.name in ['Tabby', 'Speckled', 'TwoColour'] and self.pelt.colour == 'WHITE':
                     self.white_patches = choice(
@@ -221,13 +194,13 @@ class Cat(object):
 
         # experience and current patrol status
         self.experience = 0
-        self.incamp = 1
+        self.in_camp = 1
 
-        experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high',
-                            'master', 'max']
-        self.experiencelevel = experiencelevels[math.floor(self.experience / 10)]
+        experience_levels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high',
+                             'master', 'max']
+        self.experience_level = experience_levels[math.floor(self.experience / 10)]
 
-        # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS -CLASS
+        # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
 
     def __repr__(self):
@@ -236,335 +209,324 @@ class Cat(object):
     def one_moon(self):  # Go forward in time one moon
         if game.switches['timeskip']:
             key_copy = tuple(cat_class.all_cats.keys())
-            deputy = 0
             for index, i in enumerate(key_copy):
                 cat = cat_class.all_cats[i]
-                cat.incamp = 1
                 if not cat.dead:
-                    cat.moons += 1
-                    if cat.status == 'deputy':
-                        deputy = cat
-                        if game.clan.deputy == 0:
-                            game.clan.deputy = cat
-                    if cat.moons > self.age_moons[cat.age][1]:
-                        # Give the cat a new age group, if old enough
-                        if cat.age != 'elder':
-                            cat.age = self.ages[self.ages.index(cat.age) + 1]
-                        # change the status
-                        if cat.status == 'kitten' and cat.age == 'adolescent':
-                            cat.status_change('apprentice')
-                            if game.cur_events_list is not None:
-                                game.cur_events_list.append(str(cat.name) + ' has started their apprenticeship')
-                            else:
-                                game.cur_events_list = [str(cat.name) + ' has started their apprenticeship']
-                        elif cat.status == 'apprentice' and cat.age == 'young adult':
-                            cat.status_change('warrior')
-                            if game.cur_events_list is not None:
-                                game.cur_events_list.append(str(cat.name) + ' has earned their warrior name')
-                            else:
-                                game.cur_events_list = [str(cat.name) + ' has earned their warrior name']
-                        elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
-                            cat.status_change('medicine cat')
-                            if game.cur_events_list is not None:
-                                game.cur_events_list.append(str(cat.name) + ' has earned their medicine cat name')
-                            else:
-                                game.cur_events_list = [str(cat.name) + ' has earned their medicine cat name']
-                        elif cat.status == 'warrior' and cat.age == 'elder':
-                            cat.status_change('elder')
-                            if game.cur_events_list is not None:
-                                game.cur_events_list.append(str(cat.name) + ' has retired to the elder den')
-                            else:
-                                game.cur_events_list = [str(cat.name) + ' has retired to the elder den']
-                        elif cat.status == 'deputy' and cat.age == 'elder':
-                            cat.status_change('elder')
-                            game.clan.deputy = 0
-                            if game.cur_events_list is not None:
-                                game.cur_events_list.append(
-                                    'The deputy ' + str(cat.name) + ' has retired to the elder den')
-                            else:
-                                game.cur_events_list = ['The deputy ' + str(cat.name) + ' has retired to the elder den']
-
-                        # gaining scars with age
-                        if cat.specialty is None:
-                            if cat.age in ['adolescent', 'young adult']:
-                                i = randint(0, 15)
-                            elif cat.age in ['adult', 'senior adult']:
-                                i = randint(0, 30)
-                            else:
-                                i = randint(0, 50)
-                            if i == 1:
-                                cat.specialty = choice([choice(scars1), choice(scars2)])
-                                if cat.specialty == 'NOTAIL':
-                                    if game.cur_events_list is not None:
-                                        game.cur_events_list.append(str(cat.name) + ' lost their tail to a ' + choice(
-                                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk']))
-                                    else:
-                                        game.cur_events_list = [str(cat.name) + ' lost their tail to a ' + choice(
-                                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk'])]
-                                else:
-                                    if game.cur_events_list is not None:
-                                        game.cur_events_list.append(
-                                            str(cat.name) + ' earned a scar fighting a ' + choice(
-                                                ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk']))
-                                    else:
-                                        game.cur_events_list = [str(cat.name) + ' earned a scar fighting a ' + choice(
-                                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk'])]
-                            else:
-                                cat.specialty = None
-
-                        if cat.specialty2 is None:
-                            if cat.age in ['adolescent', 'young adult']:
-                                i = randint(0, 15)
-                            elif cat.age in ['adult', 'senior adult']:
-                                i = randint(0, 30)
-                            else:
-                                i = randint(0, 50)
-                            if i == 1:
-                                cat.specialty2 = choice([choice(scars1), choice(scars2)])
-                                if cat.specialty2 == 'NOTAIL':
-                                    if game.cur_events_list is not None:
-                                        game.cur_events_list.append(str(cat.name) + ' lost their tail to a ' + choice(
-                                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk']))
-                                    else:
-                                        game.cur_events_list = [str(cat.name) + ' lost their tail to a ' + choice(
-                                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk'])]
-                                else:
-                                    if game.cur_events_list is not None:
-                                        game.cur_events_list.append(
-                                            str(cat.name) + ' earned a scar fighting a ' + choice(
-                                                ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk']))
-                                    else:
-                                        game.cur_events_list = [str(cat.name) + ' earned a scar fighting a ' + choice(
-                                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk'])]
-                            else:
-                                cat.specialty2 = None
-
-                    if index > 4:
-                        if randint(1, 50) == 49:
-                            # interact with other cat
-                            append_str = None
-                            # check if cat is dead
-                            if randint(1, 4) == 4:
-                                cat_number = key_copy[randint(0, index)]
-                            else:
-                                cat_number = key_copy[index - randint(1, index)]
-
-                            if self.all_cats[cat_number].dead:
-                                if randint(1, 4) == 4:
-                                    append_str = str(cat.name) + ' mourns the loss of ' + str(
-                                        self.all_cats[cat_number].name)
-                            elif cat_number == cat.ID:
-                                append_str = str(cat.name) + ' thinks they are going crazy.'
-                            else:
-                                # all other interactions here
-                                event_choice = randint(1, 6)
-                                if event_choice == 1:
-                                    if cat.specialty is None:
-                                        if cat.age in ['adolescent', 'young adult']:
-                                            i = randint(0, 1)
-                                        elif cat.age in ['adult', 'senior adult']:
-                                            i = randint(0, 2)
-                                        else:
-                                            i = randint(0, 10)
-                                        if i == 1:
-                                            cat.specialty = choice([choice(scars1), choice(scars2)])
-                                            if cat.age in ['kitten']:
-                                                append_str = str(cat.name) + ' is injured when they sneak out of camp'
-                                            else:
-                                                if randint(1, 3) == 3 and (
-                                                        cat.status == 'warrior' or cat.status == 'deputy'):
-                                                    append_str = str(
-                                                        cat.name) + ' retires the elder den after injuries sustained defending ' + str(
-                                                        self.all_cats[cat_number].name)
-                                                    cat.status_change('elder')
-                                                else:
-                                                    append_str = str(cat.name) + ' earned a scar defending ' + str(
-                                                        self.all_cats[cat_number].name) + ' from a ' + choice(
-                                                        ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk'])
-
-
-                                        else:
-                                            cat.specialty = None
-                                            append_str = str(cat.name) + ' tried to convince ' + str(
-                                                self.all_cats[cat_number].name) + ' to run away together.'
-                                    elif cat.status != 'kitten':
-                                        cat.specialty = None
-                                        append_str = str(cat.name) + ' tried to convince ' + str(
-                                            self.all_cats[cat_number].name) + ' to run away together.'
-                                    elif game.clan.season != 'Leaf-bare':
-                                        cat.specialty = None
-                                        append_str = str(cat.name) + ' asks ' + str(
-                                            self.all_cats[cat_number].name) + ' to show them ' + str(
-                                            game.clan.name) + ' territory.'
-                                    else:
-                                        if game.clan.season == 'Leaf-bare' and cat.status == 'kitten':
-                                            cat.dies()
-                                            append_str = str(cat.name) + '  dies of a chill during a snowstorm.'
-                                        else:
-                                            append_str = str(cat.name) + '  feels lost.'
-
-                                # defends
-                                elif event_choice == 2:
-                                    if cat.status == 'leader':
-                                        append_str = str(cat.name) + ' confesses to ' + str(self.all_cats[
-                                                                                                cat_number].name) + ' that the responsibility of leadership is crushing them.'
-                                    elif game.clan.season == 'Leaf-bare' and cat.status == 'kitten':
-                                        cat.dies()
-                                        append_str = str(self.all_cats[cat_number].name) + ' finds ' + str(
-                                            cat.name) + ' dead in the snow.'
-                                    # sus
-                                elif event_choice == 3:
-                                    if cat.mate is not None and randint(1, 3) == 1:
-                                        append_str = str(cat.name) + ' is killed by ' + str(
-                                            self.all_cats[cat_number].name) + ' in an argument over ' + str(
-                                            self.all_cats[cat.mate].name)
-                                        cat.dies()
-                                    elif cat.mate is not None:
-                                        append_str = str(cat.name) + ' breaks up with ' + str(
-                                            self.all_cats[cat.mate].name)
-                                        self.all_cats[cat.mate].mate = None
-                                        cat.mate = None
-                                    else:
-                                        valid_mates = 0
-                                        if not self.all_cats[cat_number].dead and self.all_cats[cat_number].age in [
-                                            'young adult', 'adult', 'senior adult', 'elder'] and \
-                                                cat != self.all_cats[cat_number] and cat.ID not in [
-                                            self.all_cats[cat_number].parent1, self.all_cats[cat_number].parent2] and \
-                                                self.all_cats[cat_number].ID not in [cat.parent1, cat.parent2] and \
-                                                self.all_cats[cat_number].mate is None and \
-                                                (self.all_cats[cat_number].parent1 is None or self.all_cats[
-                                                    cat_number].parent1 not in [cat.parent1, cat.parent2]) and \
-                                                (self.all_cats[cat_number].parent2 is None or self.all_cats[
-                                                    cat_number].parent2 not in [cat.parent1, cat.parent2]):
-
-                                            # Making sure the ages are appropriate
-                                            if cat.age in ['senior adult', 'elder'] and self.all_cats[
-                                                cat_number].age in ['senior adult',
-                                                                    'elder']:
-                                                valid_mates = 1
-                                            elif self.all_cats[
-                                                cat_number].age != 'elder' and cat.age != 'elder' and cat.age != 'kitten' and cat.age != 'adolescent':
-                                                valid_mates = 1
-
-                                        if self.all_cats[cat_number].ID == cat.ID:
-                                            valid_mates = 0
-
-                                        if valid_mates:
-                                            cat.mate = self.all_cats[cat_number].ID
-                                            self.all_cats[cat_number].mate = cat.ID
-                                            append_str = str(cat.name) + ' and ' + str(
-                                                self.all_cats[cat_number].name) + ' have become mates.'
-
-                                        else:
-                                            append_str = str(cat.name) + ' talks with ' + str(
-                                                self.all_cats[cat_number].name) + ' about love.'
-
-                                    # angry mate
-                                elif event_choice == 4:
-                                    # training
-                                    if cat.status == 'apprentice' and self.all_cats[cat_number].status == 'warrior':
-                                        append_str = str(cat.name) + ' trains with their mentor, ' + str(
-                                            self.all_cats[cat_number].name)
-                                    elif cat.age in ['adolescent', 'young adult', 'adult', 'senior adult']:
-                                        append_str = str(cat.name) + ' learns some new moves from ' + str(
-                                            self.all_cats[cat_number].name)
-                                    else:
-                                        append_str = str(cat.name) + ' sneaks out of the camp with ' + str(
-                                            self.all_cats[cat_number].name)
-
-                                elif event_choice == 5:
-                                    # if has mate adopts kit, otherwise two invite in new cat
-                                    if randint(1, 4) < 4 and cat.status != 'kitten':
-                                        kit = Cat(moons=0)
-                                        game.clan.add_cat(kit)
-                                        append_str = str(cat.name) + ' adopts an abandoned kit named ' + str(kit.name)
-                                    else:
-                                        kit = Cat(status='warrior', moons=14)
-                                        game.clan.add_cat(kit)
-                                        append_str = str(cat.name) + ' invites a loner named ' + str(
-                                            kit.name) + ' to join'
-                                        kit.skill = 'formerly a loner'
-
-                                elif event_choice == 6:
-                                    append_str = str(cat.name) + ' and ' + str(
-                                        self.all_cats[cat_number].name) + ' die of a contagious disease'
-                                    cat.dies()
-                                    self.all_cats[cat_number].dies()
-                                else:
-                                    append_str = str(cat.name) + ' interacted with ' + str(
-                                        self.all_cats[cat_number].name)
-
-                            if game.cur_events_list is not None and append_str is not None and append_str != '':
-                                game.cur_events_list.append(append_str)
-                            else:
-                                game.cur_events_list = [append_str]
-
-                    # events
-                    if randint(1, 300) == 299:
-                        if randint(1, 4) == 4:
-                            cat.dies()
-                            if game.cur_events_list is not None:
-                                game.cur_events_list.append(
-                                    str(cat.name) + ' was murdered at ' + str(cat.moons) + ' moons old')
-                            else:
-                                game.cur_events_list = [
-                                    str(cat.name) + ' was murdered at ' + str(cat.moons) + ' moons old']
-                        elif randint(1, 3) == 3:
-                            cat.dies()
-                            if game.cur_events_list is not None:
-                                game.cur_events_list.append(
-                                    str(cat.name) + ' died of a disease at ' + str(cat.moons) + ' moons old')
-                            else:
-                                game.cur_events_list = [
-                                    str(cat.name) + ' died of a disease at ' + str(cat.moons) + ' moons old']
-                        else:
-                            cat.dies()
-                            if game.cur_events_list is not None:
-                                game.cur_events_list.append(
-                                    str(cat.name) + ' died in an accident at ' + str(cat.moons) + ' moons old')
-                            else:
-                                game.cur_events_list = [
-                                    str(cat.name) + ' died in an accident at ' + str(cat.moons) + ' moons old']
-
-                    if cat.moons > randint(150, 200):  # Cat dies of old age
-                        cat.dies()
-                        if game.cur_events_list is not None:
-                            game.cur_events_list.append(
-                                str(cat.name) + ' has passed away at ' + str(cat.moons) + ' moons old')
-                        else:
-                            game.cur_events_list = [
-                                str(cat.name) + ' has passed away at ' + str(cat.moons) + ' moons old']
+                    cat.in_camp = 1
+                    self.perform_ceremonies(cat)
+                    self.gain_scars(cat)
+                    self.handle_deaths(cat)
                     # possibly have kits
                     cat.have_kits()
-                elif cat.dead:  # if cat was already dead
+                else:  # if cat was already dead
                     cat.dead_for += 1
-
-            # Checks to see if the leader is dead & if there is a deputy; if so, it promotes the deputy
-            if game.clan.leader.dead:
-                if deputy:
-                    game.clan.new_leader(deputy)
-                    if game.cur_events_list is not None:
-                        game.cur_events_list.append(
-                            str(deputy.name) + ' has been promoted to the new leader of the clan')
-                    else:
-                        game.cur_events_list = [str(deputy.name) + ' has been promoted to the new leader of the clan']
-
-            # Reset cat "thoughts and small actions every moon
             self.thoughts()
-            game.switches['timeskip'] = False
 
             # Age the clan itself
             game.clan.age += 1
             game.clan.season = game.clan.seasons[game.clan.age % 12]
-
+            game.event_scroll_ct = 0
             if game.clan.medicine_cat.dead:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no medicine cat!")
             if game.clan.deputy == 0:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no deputy!")
             if game.clan.leader.dead:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no leader!")
+        game.switches['timeskip'] = False
 
-            game.event_scroll_ct = 0
+    def perform_ceremonies(self,
+                           cat):  # This function is called when apprentice/warrior/other ceremonies are performed every moon
+        if game.clan.leader.dead:
+            if game.clan.deputy != 0:
+                game.clan.new_leader(game.clan.deputy)
+                if game.cur_events_list is not None:
+                    game.cur_events_list.append(
+                        str(game.clan.deputy.name) + ' has been promoted to the new leader of the clan')
+                else:
+                    game.cur_events_list = [
+                        str(game.clan.deputy.name) + ' has been promoted to the new leader of the clan']
+
+        if not cat.dead:
+            cat.moons += 1
+            if cat.status == 'deputy':
+                deputy = cat
+                if game.clan.deputy == 0:
+                    game.clan.deputy = cat
+            if cat.moons > self.age_moons[cat.age][1]:
+                # Give the cat a new age group, if old enough
+                if cat.age != 'elder':
+                    cat.age = self.ages[self.ages.index(cat.age) + 1]
+                # change the status
+                if cat.status == 'kitten' and cat.age == 'adolescent':
+                    cat.status_change('apprentice')
+                    if game.cur_events_list is not None:
+                        game.cur_events_list.append(str(cat.name) + ' has started their apprenticeship')
+                    else:
+                        game.cur_events_list = [str(cat.name) + ' has started their apprenticeship']
+                elif cat.status == 'apprentice' and cat.age == 'young adult':
+                    cat.status_change('warrior')
+                    if game.cur_events_list is not None:
+                        game.cur_events_list.append(str(cat.name) + ' has earned their warrior name')
+                    else:
+                        game.cur_events_list = [str(cat.name) + ' has earned their warrior name']
+                elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
+                    cat.status_change('medicine cat')
+                    if game.cur_events_list is not None:
+                        game.cur_events_list.append(str(cat.name) + ' has earned their medicine cat name')
+                    game.clan.new_medicine_cat(cat)
+                elif cat.status == 'warrior' and cat.age == 'elder':
+                    cat.status_change('elder')
+                    if game.cur_events_list is not None:
+                        game.cur_events_list.append(str(cat.name) + ' has retired to the elder den')
+                    else:
+                        game.cur_events_list = [str(cat.name) + ' has retired to the elder den']
+                elif cat.status == 'deputy' and cat.age == 'elder':
+                    cat.status_change('elder')
+                    game.clan.deputy = 0
+                    if game.cur_events_list is not None:
+                        game.cur_events_list.append(
+                            'The deputy ' + str(cat.name) + ' has retired to the elder den')
+                    else:
+                        game.cur_events_list = ['The deputy ' + str(cat.name) + ' has retired to the elder den']
+
+    def gain_scars(self, cat):
+        # gaining scars with age
+        if cat.specialty is None:
+            if cat.age in ['adolescent', 'young adult']:
+                i = randint(0, 15)
+            elif cat.age in ['adult', 'senior adult']:
+                i = randint(0, 30)
+            else:
+                i = randint(0, 50)
+            if i == 1:
+                cat.specialty = choice([choice(scars1), choice(scars2)])
+                if cat.specialty == 'NOTAIL':
+                    if game.cur_events_list is not None:
+                        game.cur_events_list.append(str(cat.name) + ' lost their tail to a ' + choice(
+                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk']))
+                    else:
+                        game.cur_events_list = [str(cat.name) + ' lost their tail to a ' + choice(
+                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk'])]
+                else:
+                    if game.cur_events_list is not None:
+                        game.cur_events_list.append(
+                            str(cat.name) + ' earned a scar fighting a ' + choice(
+                                ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk']))
+                    else:
+                        game.cur_events_list = [str(cat.name) + ' earned a scar fighting a ' + choice(
+                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk'])]
+            else:
+                cat.specialty = None
+
+        if cat.specialty2 is None:
+            if cat.age in ['adolescent', 'young adult']:
+                i = randint(0, 15)
+            elif cat.age in ['adult', 'senior adult']:
+                i = randint(0, 30)
+            else:
+                i = randint(0, 50)
+            if i == 1:
+                cat.specialty2 = choice([choice(scars1), choice(scars2)])
+                if cat.specialty2 == 'NOTAIL':
+                    if game.cur_events_list is not None:
+                        game.cur_events_list.append(str(cat.name) + ' lost their tail to a ' + choice(
+                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk']))
+                    else:
+                        game.cur_events_list = [str(cat.name) + ' lost their tail to a ' + choice(
+                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk'])]
+                else:
+                    if game.cur_events_list is not None:
+                        game.cur_events_list.append(
+                            str(cat.name) + ' earned a scar fighting a ' + choice(
+                                ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk']))
+                    else:
+                        game.cur_events_list = [str(cat.name) + ' earned a scar fighting a ' + choice(
+                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk'])]
+            else:
+                cat.specialty2 = None
+
+    def create_interactions(self, cat, index, key_copy):
+        if randint(1, 50) == 49:
+            # interact with other cat
+            append_str = None
+            # check if cat is dead
+            if randint(1, 4) == 4:
+                cat_number = key_copy[randint(0, index)]
+            else:
+                cat_number = key_copy[index - randint(1, index)]
+
+            if self.all_cats[cat_number].dead:
+                if randint(1, 4) == 4:
+                    append_str = str(cat.name) + ' mourns the loss of ' + str(
+                        self.all_cats[cat_number].name)
+            elif cat_number == cat.ID:
+                append_str = str(cat.name) + ' thinks they are going crazy.'
+            else:
+                # all other interactions here
+                event_choice = randint(1, 6)
+                if event_choice == 1:
+                    if cat.specialty is None:
+                        if cat.age in ['adolescent', 'young adult']:
+                            i = randint(0, 1)
+                        elif cat.age in ['adult', 'senior adult']:
+                            i = randint(0, 2)
+                        else:
+                            i = randint(0, 10)
+                        if i == 1:
+                            cat.specialty = choice([choice(scars1), choice(scars2)])
+                            if cat.age in ['kitten']:
+                                append_str = str(cat.name) + ' is injured when they sneak out of camp'
+                            else:
+                                if randint(1, 3) == 3 and (
+                                        cat.status == 'warrior' or cat.status == 'deputy'):
+                                    append_str = str(
+                                        cat.name) + ' retires the elder den after injuries sustained defending ' + str(
+                                        self.all_cats[cat_number].name)
+                                    cat.status_change('elder')
+                                else:
+                                    append_str = str(cat.name) + ' earned a scar defending ' + str(
+                                        self.all_cats[cat_number].name) + ' from a ' + choice(
+                                        ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk'])
+                        else:
+                            cat.specialty = None
+                            append_str = str(cat.name) + ' tried to convince ' + str(
+                                self.all_cats[cat_number].name) + ' to run away together.'
+                    elif cat.status != 'kitten':
+                        cat.specialty = None
+                        append_str = str(cat.name) + ' tried to convince ' + str(
+                            self.all_cats[cat_number].name) + ' to run away together.'
+                    elif game.clan.season != 'Leaf-bare':
+                        cat.specialty = None
+                        append_str = str(cat.name) + ' asks ' + str(
+                            self.all_cats[cat_number].name) + ' to show them ' + str(
+                            game.clan.name) + ' territory.'
+                    else:
+                        if game.clan.season == 'Leaf-bare' and cat.status == 'kitten':
+                            cat.dies()
+                            append_str = str(cat.name) + '  dies of a chill during a snowstorm.'
+                        else:
+                            append_str = str(cat.name) + '  feels lost.'
+
+                # defends
+                elif event_choice == 2:
+                    if cat.status == 'leader':
+                        append_str = str(cat.name) + ' confesses to ' + str(self.all_cats[
+                                                                                cat_number].name) + ' that the responsibility of leadership is crushing them.'
+                    elif game.clan.season == 'Leaf-bare' and cat.status == 'kitten':
+                        cat.dies()
+                        append_str = str(self.all_cats[cat_number].name) + ' finds ' + str(
+                            cat.name) + ' dead in the snow.'
+                    # sus
+                elif event_choice == 3:
+                    if cat.mate is not None and randint(1, 3) == 1:
+                        append_str = str(cat.name) + ' is killed by ' + str(
+                            self.all_cats[cat_number].name) + ' in an argument over ' + str(
+                            self.all_cats[cat.mate].name)
+                        cat.dies()
+                    elif cat.mate is not None:
+                        append_str = str(cat.name) + ' breaks up with ' + str(
+                            self.all_cats[cat.mate].name)
+                        self.all_cats[cat.mate].mate = None
+                        cat.mate = None
+                    else:
+                        valid_mates = 0
+                        if not self.all_cats[cat_number].dead and self.all_cats[cat_number].age in [
+                            'young adult', 'adult', 'senior adult', 'elder'] and \
+                                cat != self.all_cats[cat_number] and cat.ID not in [
+                            self.all_cats[cat_number].parent1, self.all_cats[cat_number].parent2] and \
+                                self.all_cats[cat_number].ID not in [cat.parent1, cat.parent2] and \
+                                self.all_cats[cat_number].mate is None and \
+                                (self.all_cats[cat_number].parent1 is None or self.all_cats[
+                                    cat_number].parent1 not in [cat.parent1, cat.parent2]) and \
+                                (self.all_cats[cat_number].parent2 is None or self.all_cats[
+                                    cat_number].parent2 not in [cat.parent1, cat.parent2]):
+
+                            # Making sure the ages are appropriate
+                            if cat.age in ['senior adult', 'elder'] and self.all_cats[
+                                cat_number].age in ['senior adult',
+                                                    'elder']:
+                                valid_mates = 1
+                            elif self.all_cats[
+                                cat_number].age != 'elder' and cat.age != 'elder' and cat.age != 'kitten' and cat.age != 'adolescent':
+                                valid_mates = 1
+
+                        if self.all_cats[cat_number].ID == cat.ID:
+                            valid_mates = 0
+
+                        if valid_mates:
+                            cat.mate = self.all_cats[cat_number].ID
+                            self.all_cats[cat_number].mate = cat.ID
+                            append_str = str(cat.name) + ' and ' + str(
+                                self.all_cats[cat_number].name) + ' have become mates.'
+
+                        else:
+                            append_str = str(cat.name) + ' talks with ' + str(
+                                self.all_cats[cat_number].name) + ' about love.'
+
+                    # angry mate
+                elif event_choice == 4:
+                    # training
+                    if cat.status == 'apprentice' and self.all_cats[cat_number].status == 'warrior':
+                        append_str = str(cat.name) + ' trains with their mentor, ' + str(
+                            self.all_cats[cat_number].name)
+                    elif cat.age in ['adolescent', 'young adult', 'adult', 'senior adult']:
+                        append_str = str(cat.name) + ' learns some new moves from ' + str(
+                            self.all_cats[cat_number].name)
+                    else:
+                        append_str = str(cat.name) + ' sneaks out of the camp with ' + str(
+                            self.all_cats[cat_number].name)
+
+                elif event_choice == 5:
+
+                    # if has mate adopts kit, otherwise two invite in new cat
+                    if randint(1, 4) < 4 and cat.status != 'kitten':
+                        kit = Cat(moons=0)
+                        game.clan.add_cat(kit)
+                        append_str = str(cat.name) + ' adopts an abandoned kit named ' + str(kit.name)
+                    else:
+                        kit = Cat(status='warrior', moons=14)
+                        game.clan.add_cat(kit)
+                        append_str = str(cat.name) + ' invites a loner named ' + str(
+                            kit.name) + ' to join'
+                        kit.skill = 'formerly a loner'
+
+                elif event_choice == 6:
+                    append_str = str(cat.name) + ' and ' + str(
+                        self.all_cats[cat_number].name) + ' die of a contagious disease'
+                    cat.dies()
+                    self.all_cats[cat_number].dies()
+                else:
+                    append_str = str(cat.name) + ' interacted with ' + str(
+                        self.all_cats[cat_number].name)
+
+            if game.cur_events_list is not None and append_str is not None and append_str != '':
+                game.cur_events_list.append(append_str)
+            else:
+                game.cur_events_list = [append_str]
+
+    def handle_deaths(self, cat):
+        if randint(1, 300) == 299:
+            if randint(1, 4) == 4:
+                cat.dies()
+                if game.cur_events_list is not None:
+                    game.cur_events_list.append(
+                        str(cat.name) + ' was murdered at ' + str(cat.moons) + ' moons old')
+            elif randint(1, 3) == 3:
+                cat.dies()
+                if game.cur_events_list is not None:
+                    game.cur_events_list.append(
+                        str(cat.name) + ' died of a disease at ' + str(cat.moons) + ' moons old')
+            else:
+                cat.dies()
+                if game.cur_events_list is not None:
+                    game.cur_events_list.append(
+                        str(cat.name) + ' died in an accident at ' + str(cat.moons) + ' moons old')
+
+        if cat.moons > randint(150, 200):  # Cat dies of old age
+            cat.dies()
+            if game.cur_events_list is not None:
+                game.cur_events_list.append(
+                    str(cat.name) + ' has passed away at ' + str(cat.moons) + ' moons old')
 
     def dies(self):  # This function is called every time a cat dies
         self.dead = True
@@ -590,8 +552,6 @@ class Cat(object):
                 game.cur_events_list.append(
                     "Warning: " + str(self.name) + " has an invalid mate #" + str(self.mate) + ". This has been unset.")
                 self.mate = None
-
-
         else:
             chance = chance / 2
             if not game.settings['no unknown fathers']:
@@ -736,7 +696,8 @@ class Cat(object):
                         pos_actions.append(is_old)
                     if self.all_cats[cat].status == 'leader':
                         pos_actions.append(is_leader)
-                    if self.all_cats[cat].status == 'medicine cat' or self.all_cats[cat].status == 'medicine cat apprentice':
+                    if self.all_cats[cat].status == 'medicine cat' or self.all_cats[
+                        cat].status == 'medicine cat apprentice':
                         pos_actions.append(is_med)
                 else:  # else, interaction is based on other cat's traits
                     if self.all_cats[other_1].age in ['kitten', 'adolescent']:
@@ -763,7 +724,7 @@ class Cat(object):
                     pos_actions.append(no_other_med)
 
             # change the pos_actions if out on patrol
-            if self.all_cats[cat].incamp == 0:
+            if self.all_cats[cat].in_camp == 0:
                 pos_actions = on_patrol
 
             # deciding and setting action
@@ -1047,7 +1008,7 @@ class Cat(object):
                         the_cat.experience = attr[30]
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
-                        the_cat.experiencelevel = experiencelevels[math.floor(int(the_cat.experience) / 10)]
+                        the_cat.experience_level = experiencelevels[math.floor(int(the_cat.experience) / 10)]
 
                     else:
                         the_cat.experience = 0

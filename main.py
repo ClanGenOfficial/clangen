@@ -1,12 +1,11 @@
-# Make cats and start clans with them
-import pygame
+import sys
 
 from scripts.screens import *
-import sys
 
 # P Y G A M E
 clock = pygame.time.Clock()
 pygame.display.set_icon(pygame.image.load('resources/icon.png'))
+
 # LOAD cats & clan
 with open('saves/clanlist.txt', 'r') as read_file:
     clan_list = read_file.read()
@@ -15,13 +14,11 @@ if if_clans > 0:
     game.switches['clan_list'] = clan_list.split('\n')
     cat_class.load_cats()
     clan_class.load_clan()
-
 # LOAD settings
 game.load_settings()
 
 # give thoughts/actions to already existing cats
 cat_class.thoughts()
-
 
 while True:
     screen.fill((255, 255, 255))
@@ -32,15 +29,16 @@ while True:
     mouse.check_pos()
 
     # EVENTS
-    for event in pygame.event.get(): 
-        if game.current_screen == 'make clan screen' and game.switches['clan_name'] == '': #Allows user to type in Clan Name
+    for event in pygame.event.get():
+        if game.current_screen == 'make clan screen' and game.switches[
+            'clan_name'] == '':  # Allows user to type in Clan Name
             if event.type == pygame.KEYDOWN:
-                if event.unicode.isalpha(): #only allows alphabet letters as an input
-                    if len(game.switches['naming_text']) < game.max_name_length: #can't type more than max name length
+                if event.unicode.isalpha():  # only allows alphabet letters as an input
+                    if len(game.switches['naming_text']) < game.max_name_length:  # can't type more than max name length
                         game.switches['naming_text'] += event.unicode
-                elif event.key == pygame.K_BACKSPACE: #Delete last character of clan name
+                elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
                     game.switches['naming_text'] = game.switches['naming_text'][:-1]
-        
+
         if game.current_screen == 'events screen' and len(game.cur_events_list) > game.max_events_displayed:
             max_scroll_direction = len(game.cur_events_list) - game.max_events_displayed
             if event.type == pygame.KEYDOWN:

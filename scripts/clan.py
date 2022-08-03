@@ -123,6 +123,11 @@ class Clan(object):
             game.clan.deputy = 0
         game.switches['new_leader'] = None
 
+    def new_medicine_cat(self, medicine_cat):
+        if medicine_cat:
+            self.medicine_cat = medicine_cat
+            cat_class.all_cats[medicine_cat.ID].status_change('medicine cat')
+            self.med_cat_predecessors += 1
     def switch_clans(self):
         list_data = game.switches['switch_clan'] + "\n"
         for i in range(len(game.switches['clan_list'])):

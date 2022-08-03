@@ -149,7 +149,7 @@ class Patrol(object):
                         self.patrol_cats[i].experience = 80
                     experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                         'very high', 'master', 'max']
-                    self.patrol_cats[i].experiencelevel = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
+                    self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
             else:
                 self.patrol_result_text = self.patrol_event[3]
 
@@ -158,7 +158,7 @@ class Patrol(object):
                 self.event_special()
 
         for i in range(self.patrol_size):
-            self.patrol_cats[i].incamp = 0
+            self.patrol_cats[i].in_camp = 0
 
         game.switches['event'] = 4
 
@@ -365,7 +365,7 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
-                        self.patrol_cats[i].experiencelevel = experiencelevels[
+                        self.patrol_cats[i].experience_level = experiencelevels[
                             floor(self.patrol_cats[i].experience / 10)]
                 return
 
@@ -435,7 +435,7 @@ class Patrol(object):
                                 self.patrol_cats[i].experience = 80
                             experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                                 'very high', 'master', 'max']
-                            self.patrol_cats[i].experiencelevel = experiencelevels[
+                            self.patrol_cats[i].experience_level = experiencelevels[
                                 floor(self.patrol_cats[i].experience / 10)]
                     return
 
@@ -456,7 +456,7 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
-                        self.patrol_cats[i].experiencelevel = experiencelevels[
+                        self.patrol_cats[i].experience_level = experiencelevels[
                             floor(self.patrol_cats[i].experience / 10)]
                 return
 
@@ -519,7 +519,7 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
-                        self.patrol_cats[i].experiencelevel = experiencelevels[
+                        self.patrol_cats[i].experience_level = experiencelevels[
                             floor(self.patrol_cats[i].experience / 10)]
                 return
 
@@ -542,7 +542,7 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
-                        self.patrol_cats[i].experiencelevel = experiencelevels[
+                        self.patrol_cats[i].experience_level = experiencelevels[
                             floor(self.patrol_cats[i].experience / 10)]
                 return
 
@@ -563,7 +563,7 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
-                        self.patrol_cats[i].experiencelevel = experiencelevels[
+                        self.patrol_cats[i].experience_level = experiencelevels[
                             floor(self.patrol_cats[i].experience / 10)]
                 return
 
@@ -587,7 +587,7 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
-                        self.patrol_cats[i].experiencelevel = experiencelevels[
+                        self.patrol_cats[i].experience_level = experiencelevels[
                             floor(self.patrol_cats[i].experience / 10)]
                 return
 
@@ -610,7 +610,7 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
-                        self.patrol_cats[i].experiencelevel = experiencelevels[
+                        self.patrol_cats[i].experience_level = experiencelevels[
                             floor(self.patrol_cats[i].experience / 10)]
                 return
 
@@ -631,7 +631,7 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
-                        self.patrol_cats[i].experiencelevel = experiencelevels[
+                        self.patrol_cats[i].experience_level = experiencelevels[
                             floor(self.patrol_cats[i].experience / 10)]
                 return
 
@@ -662,7 +662,7 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
-                        self.patrol_cats[i].experiencelevel = experiencelevels[
+                        self.patrol_cats[i].experience_level = experiencelevels[
                             floor(self.patrol_cats[i].experience / 10)]
                 return
 
@@ -683,7 +683,7 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
-                        self.patrol_cats[i].experiencelevel = experiencelevels[
+                        self.patrol_cats[i].experience_level = experiencelevels[
                             floor(self.patrol_cats[i].experience / 10)]
                 return
 
@@ -745,7 +745,7 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
-                        self.patrol_cats[i].experiencelevel = experiencelevels[
+                        self.patrol_cats[i].experience_level = experiencelevels[
                             floor(self.patrol_cats[i].experience / 10)]
                 return
 
