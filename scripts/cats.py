@@ -940,6 +940,8 @@ class Cat(object):
             data += ',' + str(x.specialty2)
             # experience
             data += ',' + str(x.experience)
+            # dead_for x moons
+            data += ',' + str(x.dead_for)
             # next cat
             data += '\n'
 
@@ -975,7 +977,6 @@ class Cat(object):
                 # SPRITE: kitten(13) - apprentice(14) - warrior(15) - elder(16) - eye colour(17) - reverse(18)
                 # - white patches(19) - pattern(20) - skin(21) - skill(22) - NONE(23) - spec(24) - moons(25) - mate(26)
                 # dead(27) - SPRITE:dead(28)
-
                 if i.strip() != '':
                     attr = i.split(',')
                     for x in range(len(attr)):
@@ -1023,7 +1024,8 @@ class Cat(object):
                             # Is the cat dead
                             the_cat.dead = attr[27]
                             the_cat.age_sprites['dead'] = attr[28]
-
+                    if len(attr) > 31:
+                        the_cat.dead_for = attr[31]
                     the_cat.skill = attr[22]
                     the_cat.mentor = attr[8]
 
