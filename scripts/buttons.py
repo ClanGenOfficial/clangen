@@ -103,10 +103,10 @@ class Button(object):
     def change_button_brightness(self):
         if game.settings['dark mode'] and self.frame_colour == (200, 200, 200):
             self.reset_colour(frame_colour=(70, 70, 70), clickable_colour=(10, 10, 10),
-                 unavailable_colour=(50, 50, 50))
+                              unavailable_colour=(50, 50, 50))
         elif not game.settings['dark mode'] and self.frame_colour == (70, 70, 70):
             self.reset_colour(frame_colour=(200, 200, 200), clickable_colour=(150, 150, 150),
-                 unavailable_colour=(230, 230, 230))
+                              unavailable_colour=(230, 230, 230))
 
 
 class Writer(Button):

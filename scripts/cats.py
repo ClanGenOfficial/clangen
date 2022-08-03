@@ -921,7 +921,7 @@ class Cat(object):
             if x.mentor is None:
                 data += 'None ,'
             else:
-                data += x.mentor.ID + ','
+                data += x.mentor + ','
 
             # pelt type -- colour -- white -- length
             data += x.pelt.name + ',' + x.pelt.colour + ',' + str(x.pelt.white) + ',' + x.pelt.length + ','

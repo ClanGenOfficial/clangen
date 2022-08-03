@@ -96,7 +96,7 @@ class Name(object):
                     'BLUEGREEN': ['Green', 'Blue', 'Odd', 'One', 'Clover']}
 
     loner_names = ["Haku", "Pichi", "Poki", "Nagi", "Jubie", "Bonbon", "Beans", "Aurora", "Maleficent", "Luna",
-                   "Eclipse", "Sol", "Star", "George", "Nightmare", "Bagel", "Monster", "Gargoyle", "Missile Launcher",
+                   "Eclipse", "Sol", "Star", "George", "Nightmare", "Bagel", "Monster", "Gargoyle", "Missile",
                    "Rolo", "Rocket", "Void", "Abyss", "Vox", "Princess", "Noodle", "Duchess", "Cheesecake", "Callie",
                    "Randy", "Ace", "Rook", "Queeny", "Freddy", "Stella", "Rooster", "Sophie", "Maverick", "Seamus",
                    "Pickles", "Lacy", "Lucy", "Knox", "Lugnut", "Bailey", "Azula", "Lucky", "Sunny", "Sadie", "Sox",
@@ -114,19 +114,19 @@ class Name(object):
                    "Ramble", "Rudolph", "Rum", "Rye", "Reese", "Snow", "Spruce", "Scotch", "Sneakers", "Schmidt",
                    "Sonic", "Teufel", "Toni", "Toque", "Tempest", "Turbo", "Tetris", "Triscuit", "Tumble", "Voltage",
                    "Vinnie", "Vaxx", "Venture", "Vida", "Guinness", "Polly", "Piper", "Pepper", "Lakota", "Dakota",
-                   "Bently", "Chinook", "Tiny", "Ula", "Union", "Uriel", "Orion", "Oakley", "Roeseii", "Belle", "Benny",
+                   "Bently", "Chinook", "Tiny", "Ula", "Union", "Uriel", "Orion", "Oakley", "Roselies", "Belle", "Benny",
                    "Bumblebee", "Bluebell", "Chip", "Chocolate", "Cracker", "Dave", "Dolly", "Egg", "Frito", "Frank",
                    "Gibby", "Jack", "Jenny", "Juliet", "Joob", "John", "Jimmy", "Jude", "Kenny", "Tom", "Oreo", "Mocha",
-                   "Ninja", "Rock", "Pip", "Pipsqueak", "Milquetoast", "Molly Murder Mittens", "Vulture", "Raven",
+                   "Ninja", "Rock", "Pip", "Pipsqueak", "Milque", "Toast", "Molly Murder Mittens", "Vulture", "Raven",
                    "Sorbet", "Vanilla", "Mint", "Niki", "Nikki", "Pocket", "Tabbytha", "Gravy", "Potato",
                    "Pumpernickel", "Pecan", "Old Man Sam", "Icecube", "Queso Ruby", "Pearl", "Jasper", "Stan", "Rose",
-                   "Mojo", "Kate", "Carmen", "Mange", "Sir Earl Picked the Third", "Socks", "Tabby", "Jay", "Charlie",
+                   "Mojo", "Kate", "Carmen", "Mange", "Chase", "Socks", "Tabby", "Jay", "Charlie",
                    "Crunchwrap", "Meow-meow", "Bede", "Smores", "Evilface", "Nick", "Mitski", "Ash", "Ah", "Violet",
                    "Alcina", "Worm", "Monika", "Rat", "Bongo", "Bunny", "Viktor", "Steve", "Jewels", "Blu", "Rue",
                    "Stinky", "Garnet", "Anita", "Sloane", "Emi", "Vivienne", "Ambers", "Moon", "Twilight", "River",
                    "Glass", "Goose", "Hunter", "Amity", "Stripes", "Cowbell", "Rory", "Lobster", "Slug", "Starfish",
                    "Salmon", "Judy", "Johnny", "Kerry", "Evelyn", "Holly", "Bolt", "Millie", "Jessica", "Laku",
-                   "Dragonfly", "X’ek", "Silva", "DreamyDecay", "Twister", "Shay", "Louis", "Oleander", "Spots",
+                   "Dragonfly", "X’ek", "Silva", "Dreamy", "Decay", "Twister", "Shay", "Louis", "Oleander", "Spots",
                    "Cream", "Omlet", "Gizmo", "Feather", "Twix", "Silver,", "Ghost", "Wisp,", "Obi Wan", "Pearl,",
                    "Mango", "Via", "Olivia", "Mr. Whiskers", "Fluffy", "Shimmer", "Mimi", "Melody", "Leon", "Punk",
                    "Mew", "Fern", "Marceline", "Whisper", "Skrunkly", "Stolas", "Rio", "Steven", "Pear", "Sekhmet",
@@ -135,7 +135,7 @@ class Name(object):
                    "Bastet, Birb", "Bee", "Burm", "Chrissy", "Cherry", "Chief", "Crow", "Carrie", "Calvin", "Cookie",
                    "Catie", "Charm", "Crane", "Crab", "Charles", "Caroline", "Conan", "Cloud", "Charlie", "Cowboy",
                    "Dune", "Dan", "Dove", "Delilah", "Emerald", "Emy", "Erica", " Eddie", "Eda", "Ferret", "Fawn",
-                   "Fallow", "Ferry", "Gramble", "Grain", "Gir", "Herron", "Hop", "Honey", "Hot Sauce", "Habanero"]
+                   "Fallow", "Ferry", "Gamble", "Grain", "Gir", "Heron", "Hop", "Honey", "Hot Sauce", "Habanero"]
 
     def __init__(self, status="warrior", prefix=None, suffix=None, colour=None, eyes=None, pelt=None):
         self.status = status  # warrior, kitten, leader or apprentice
