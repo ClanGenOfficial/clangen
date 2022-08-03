@@ -1,5 +1,5 @@
 import pygame
-
+from .game_essentials import *
 
 class Sprites(object):
     def __init__(self, original_size, new_size=None):
@@ -50,11 +50,35 @@ class Sprites(object):
                 x_spr = 0
                 y_spr += 1
 
+    def load_scars(self):
+        # SCARS & MORE
+        if 'dark mode' in game.settings:
+            if game.settings['dark mode']:
+                scars = 'scarsdark'
+            else:
+                scars = 'scars'
+        else:
+            scars = 'scars'
+
+        self.make_group(scars, (0, 0), 'scarsONE')
+        self.make_group(scars, (1, 0), 'scarsTWO')
+        self.make_group(scars, (2, 0), 'scarsTHREE')
+        self.make_group(scars, (3, 0), 'scarsLEFTEAR')
+        self.make_group(scars, (4, 0), 'scarsRIGHTEAR')
+        self.make_group(scars, (5, 0), 'scarsNOTAIL')
+
+        self.make_group(scars + 'extra', (0, 0), 'scarsextraONE', sprites_y=2)
+        self.make_group(scars + 'extra', (1, 0), 'scarsextraTWO', sprites_y=2)
+        self.make_group(scars + 'extra', (2, 0), 'scarsextraTHREE', sprites_y=2)
+        self.make_group(scars + 'extra', (3, 0), 'scarsextraLEFTEAR', sprites_y=2)
+        self.make_group(scars + 'extra', (4, 0), 'scarsextraRIGHTEAR', sprites_y=2)
+        self.make_group(scars + 'extra', (5, 0), 'scarsextraNOTAIL', sprites_y=2)
+
 
 sprites = Sprites(50)
 for x in ['lineart', 'singlecolours', 'speckledcolours', 'tabbycolours', 'whitepatches', 'tortiecolours', 'eyes',
           'singleextra', 'tabbyextra', 'speckledextra', 'whiteextra', 'eyesextra', 'tortiesextra',
-          'skin', 'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'whitepatchesnew']:
+          'skin', 'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'whitepatchesnew', 'scarsdark', 'scarsdarkextra']:
     sprites.spritesheet("sprites/" + x + ".png", x)
 
 # Line art
@@ -202,17 +226,4 @@ sprites.make_group('skinextra', (0, 0), 'skinextraBLACK', sprites_y=2)
 sprites.make_group('skinextra', (1, 0), 'skinextraRED', sprites_y=2)
 sprites.make_group('skinextra', (2, 0), 'skinextraPINK', sprites_y=2)
 
-# SCARS & MORE
-sprites.make_group('scars', (0, 0), 'scarsONE')
-sprites.make_group('scars', (1, 0), 'scarsTWO')
-sprites.make_group('scars', (2, 0), 'scarsTHREE')
-sprites.make_group('scars', (3, 0), 'scarsLEFTEAR')
-sprites.make_group('scars', (4, 0), 'scarsRIGHTEAR')
-sprites.make_group('scars', (5, 0), 'scarsNOTAIL')
-
-sprites.make_group('scarsextra', (0, 0), 'scarsextraONE', sprites_y=2)
-sprites.make_group('scarsextra', (1, 0), 'scarsextraTWO', sprites_y=2)
-sprites.make_group('scarsextra', (2, 0), 'scarsextraTHREE', sprites_y=2)
-sprites.make_group('scarsextra', (3, 0), 'scarsextraLEFTEAR', sprites_y=2)
-sprites.make_group('scarsextra', (4, 0), 'scarsextraRIGHTEAR', sprites_y=2)
-sprites.make_group('scarsextra', (5, 0), 'scarsextraNOTAIL', sprites_y=2)
+sprites.load_scars()

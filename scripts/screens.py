@@ -1,4 +1,4 @@
-from scripts import game_essentials
+from .game_essentials import *
 from .clan import *
 from .events import *
 from .patrols import *
@@ -87,14 +87,14 @@ class SettingsScreen(Screens):
         verdana.text("Change the setting of your game here.", ('center', 130))
 
         # Setting names
-        verdana.text("Text size: (unavailable)", (100, 200))
+        verdana.text("Dark mode:", (100, 200))
         verdana.text("Allow couples to have kittens despite same-sex status:", (100, 230))
 
         verdana.text("Allow unmated cats to have offspring:", (100, 260))
 
         # Setting values
-        verdana.text(self.text_size[game.settings['text size']], (-170, 200))
-        buttons.draw_button((-80, 200), text='SWITCH', setting='text size', available=False)
+        verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
+        buttons.draw_button((-80, 200), text='SWITCH', setting='dark mode')
         verdana.text(self.bool[game.settings['no gendered breeding']], (-170, 230))
         buttons.draw_button((-80, 230), text='SWITCH', setting='no gendered breeding')
         verdana.text(self.bool[game.settings['no unknown fathers']], (-170, 260))

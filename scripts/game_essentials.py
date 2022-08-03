@@ -38,10 +38,11 @@ class Game(object):
     cur_events = {}
 
     # SETTINGS
-    settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False}  # The current settings
+    settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False, 'dark mode': False}  # The current settings
     setting_lists = {'no gendered breeding': [False, True],
                      'text size': ['0', '1', '2'],
-                     'no unknown fathers': [False, True]}  # Lists of possible options for each setting
+                     'no unknown fathers': [False, True],
+                     'dark mode': [False, True]}  # Lists of possible options for each setting
     settings_changed = False
 
     # CLAN
@@ -72,6 +73,7 @@ class Game(object):
             if self.switches['setting'] in self.settings.keys():
                 # Switch setting value using function
                 self.switch_setting(self.switches['setting'])
+                
                 self.switches['setting'] = None  # Action fulfilled, reset back to None
             else:
                 print('Wrong settings value:', self.switches['setting'])
@@ -134,6 +136,7 @@ class Game(object):
                     self.settings[parts[0]] = None
                 else:
                     self.settings[parts[0]] = parts[1]
+
 
     def switch_setting(self, setting_name):
         """ Call this function to change a setting given in the parameter by one to the right on it's list """
