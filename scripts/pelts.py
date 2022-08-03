@@ -114,8 +114,9 @@ pelt_c_no_white = ['PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK', 'PALEGINGE
                    'DARKGINGER', 'LIGHTBROWN', 'BROWN', 'DARKBROWN']
 pelt_c_no_bw = ['PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'PALEGINGER', 'GOLDEN', 'GINGER',
                 'DARKGINGER', 'LIGHTBROWN', 'BROWN', 'DARKBROWN']
-tortie_pattern = ['ONE', 'TWO', 'FADEDONE', 'FADEDTWO','BLUEONE','BLUETWO']
-calico_pattern = ['ONE', 'TWO', 'THREE', 'FOUR', 'FADEDONE', 'FADEDTWO', 'FADEDTHREE', 'FADEDFOUR','BLUEONE','BLUETWO','BLUETHREE','BLUEFOUR']
+tortie_pattern = ['ONE', 'TWO', 'FADEDONE', 'FADEDTWO', 'BLUEONE', 'BLUETWO']
+calico_pattern = ['ONE', 'TWO', 'THREE', 'FOUR', 'FADEDONE', 'FADEDTWO', 'FADEDTHREE', 'FADEDFOUR', 'BLUEONE',
+                  'BLUETWO', 'BLUETHREE', 'BLUEFOUR']
 
 pelt_length = ["short", "medium", "medium", "long"]
 eye_colours = ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE']
@@ -148,7 +149,7 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determi
         else:
             pelt = choice(pelt_names_F)
             if gender == 'male' and pelt in ['Tortie', 'Calico']:
-                print ("Male tortie/calico!")
+                print("Male tortie/calico!")
 
     elif pelt in ['Tortie', 'Calico'] and gender == 'male' and not determined:
         a = randint(0, 200)

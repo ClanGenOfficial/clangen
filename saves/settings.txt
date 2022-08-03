@@ -1,3 +1,0 @@
-no gendered breeding:True
-text size:0
-no unknown fathers:False
