@@ -921,7 +921,7 @@ class Cat(object):
             if x.mentor is None:
                 data += 'None ,'
             else:
-                data += x.mentor + ','
+                data += x.mentor.ID + ','
 
             # pelt type -- colour -- white -- length
             data += x.pelt.name + ',' + x.pelt.colour + ',' + str(x.pelt.white) + ',' + x.pelt.length + ','
@@ -1025,7 +1025,7 @@ class Cat(object):
                             the_cat.dead = attr[27]
                             the_cat.age_sprites['dead'] = attr[28]
                     if len(attr) > 31:
-                        the_cat.dead_for = attr[31]
+                        the_cat.dead_for = int(attr[31])
                     the_cat.skill = attr[22]
                     the_cat.mentor = attr[8]
 

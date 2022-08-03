@@ -596,11 +596,16 @@ class ProfileScreen(Screens):
                 while cat_class.all_cats.get(mentor).status != 'warrior' and not cat_class.all_cats.get(mentor).dead:
                     mentor = choice(game.clan.clan_cats)
                 the_cat.mentor = cat_class.all_cats.get(mentor)
-        verdana_small.text(the_cat.age, (300, 330 + count * 15));
+        if the_cat.age == 'kitten':
+            verdana_small.text('young', (300, 330 + count * 15))
+        elif the_cat.age == 'elder':
+            verdana_small.text('senior', (300, 330 + count * 15))
+        else:
+            verdana_small.text(the_cat.age, (300, 330 + count * 15))
         count += 1  # AGE
-        verdana_small.text(the_cat.trait, (450, 330 + count2 * 15));
+        verdana_small.text(the_cat.trait, (450, 330 + count2 * 15))
         count2 += 1  # CHARACTER TRAIT
-        verdana_small.text(the_cat.skill, (450, 330 + count2 * 15));
+        verdana_small.text(the_cat.skill, (450, 330 + count2 * 15))
         count2 += 1  # SPECIAL SKILL
         verdana_small.text('eyes: ' + the_cat.eye_colour.lower(), (300, 330 + count * 15));
         count += 1  # EYE COLOR
