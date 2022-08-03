@@ -137,6 +137,7 @@ class Name(object):
                    "Dune", "Dan", "Dove", "Delilah", "Emerald", "Emy", "Erica", " Eddie", "Eda", "Ferret", "Fawn",
                    "Fallow", "Ferry", "Gamble", "Grain", "Gir", "Heron", "Hop", "Honey", "Hot Sauce", "Habanero"]
 
+
     def __init__(self, status="warrior", prefix=None, suffix=None, colour=None, eyes=None, pelt=None):
         self.status = status  # warrior, kitten, leader or apprentice
         if prefix is None:

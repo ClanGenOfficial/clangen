@@ -477,7 +477,7 @@ class EventsScreen(Screens):
         # LAYOUT
         verdana_big.text(game.clan.name + 'Clan', ('center', 30))
         verdana.text('Check this page to see which events are currently happening at the clan.', ('center', 100))
-        verdana.text('Current season: ' + str(game.clan.season), ('center', 130))
+        verdana.text('Current season: ' + str(game.clan.current_season), ('center', 130))
         verdana.text('Clan age: ' + str(game.clan.age) + ' moons', ('center', 160))
 
         if game.switches['events_left'] == 0:
@@ -592,7 +592,6 @@ class ProfileScreen(Screens):
                 count2 += 1
             else:
                 mentor = choice(game.clan.clan_cats)
-                print(mentor)
                 while cat_class.all_cats.get(mentor).status != 'warrior' and not cat_class.all_cats.get(mentor).dead:
                     mentor = choice(game.clan.clan_cats)
                 the_cat.mentor = cat_class.all_cats.get(mentor)
@@ -1007,7 +1006,7 @@ class PatrolScreen(Screens):
         buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
         buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
 
-        # make a list of patrol eligible cats ###ADD IN FUTURE THAT THEY ALSO CAN ONLY PATROL ONCE PER MOON
+        # make a list of patrol eligible cats
         able_cats = []
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
@@ -1045,6 +1044,7 @@ class PatrolScreen(Screens):
                 else:
                     buttons.draw_button((screen_x - 100, 150 + 50 * (u - 6)), image=game.patrol_cats[u].sprite,
                                         cat=u)
+        buttons.draw_button(('center', 530), text='Add Random', addRandom=True)
 
         # display cat profile
         if game.switches['cat'] is not None and 12 > game.switches['cat'] >= 0 and \
@@ -1062,7 +1062,6 @@ class PatrolScreen(Screens):
                                     current_patrol=game.patrol_cats[game.switches['cat']], add=True)
 
         if len(game.switches['current_patrol']) > 0:
-            # print('done')
             buttons.draw_button(('center', 630), text='Start Patrol', cur_screen='patrol event screen')
         else:
             buttons.draw_button(('center', 630), text='Start Patrol', available=False)
@@ -1098,7 +1097,7 @@ class PatrolEventScreen(Screens):
         for u in range(6):
             if u < patrol.patrol_size:
                 patrol.patrol_cats[u].draw((screen_x / 2 - 50 * (u + 2), 550))
-        verdana_small.text('season: ' + str(game.clan.season), ('center', 400))
+        verdana_small.text('season: ' + str(game.clan.current_season), ('center', 400))
         verdana_small.text('patrol leader: ' + str(patrol.patrol_leader.name), ('center', 420))
         verdana_small.text('patrol skills: ' + str(patrol.patrol_skills), ('center', 440))
         verdana_small.text('patrol traits: ' + str(patrol.patrol_traits), ('center', 460))

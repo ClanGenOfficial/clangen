@@ -224,7 +224,7 @@ class Cat(object):
 
             # Age the clan itself
             game.clan.age += 1
-            game.clan.season = game.clan.seasons[game.clan.age % 12]
+            game.clan.current_season = game.clan.seasons[game.clan.age % 12]
             game.event_scroll_ct = 0
             if game.clan.medicine_cat.dead:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no medicine cat!")
@@ -395,13 +395,13 @@ class Cat(object):
                         cat.specialty = None
                         append_str = str(cat.name) + ' tried to convince ' + str(
                             self.all_cats[cat_number].name) + ' to run away together.'
-                    elif game.clan.season != 'Leaf-bare':
+                    elif game.clan.current_season != 'Leaf-bare':
                         cat.specialty = None
                         append_str = str(cat.name) + ' asks ' + str(
                             self.all_cats[cat_number].name) + ' to show them ' + str(
                             game.clan.name) + ' territory.'
                     else:
-                        if game.clan.season == 'Leaf-bare' and cat.status == 'kitten':
+                        if game.clan.current_season == 'Leaf-bare' and cat.status == 'kitten':
                             cat.dies()
                             append_str = str(cat.name) + '  dies of a chill during a snowstorm.'
                         else:
@@ -412,7 +412,7 @@ class Cat(object):
                     if cat.status == 'leader':
                         append_str = str(cat.name) + ' confesses to ' + str(self.all_cats[
                                                                                 cat_number].name) + ' that the responsibility of leadership is crushing them.'
-                    elif game.clan.season == 'Leaf-bare' and cat.status == 'kitten':
+                    elif game.clan.current_season == 'Leaf-bare' and cat.status == 'kitten':
                         cat.dies()
                         append_str = str(self.all_cats[cat_number].name) + ' finds ' + str(
                             cat.name) + ' dead in the snow.'

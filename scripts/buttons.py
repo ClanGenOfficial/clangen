@@ -69,6 +69,9 @@ class Button(object):
     def activate(self, values=None, cat_value=None, arrow=None):  # cat value points to a Cat object
         if values is None:
             values = {}
+        # if len(values.keys()) == 1:
+        #     if values.get('addrandom'):
+        #         choice(game.switches[patr])
         add = False
         if 'add' in values.keys():
             add = values['add']
@@ -90,6 +93,7 @@ class Button(object):
                         cat_class.all_cats[cat_value.mate].mate = None
                         cat_value.mate = None
                     game.switches['mate'] = None
+
 
         if arrow is not None:
             max_scroll_direction = len(game.cur_events_list) - game.max_events_displayed

@@ -66,7 +66,7 @@ class Patrol(object):
                 continue
             if test_event[10] != 0 and test_event[10] not in self.patrol_traits:
                 continue
-            if test_event[9] != 0 and test_event[9] != game.clan.season:
+            if test_event[9] != 0 and test_event[9] != game.clan.current_season:
                 continue
             if test_event[8] != 0 and test_event[8] not in self.patrol_statuses:
                 continue
