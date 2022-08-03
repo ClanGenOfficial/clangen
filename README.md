@@ -21,4 +21,6 @@ Changes:
 
 - Added scrolling functionality
 
-- Fixed StarClan instructor crash
+- Dark mode
+
+- Various bug fixes
