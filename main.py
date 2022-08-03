@@ -17,15 +17,28 @@ if if_clans > 0:
 # LOAD settings
 game.load_settings()
 
+# reset brightness to allow for dark mode to not look crap
+verdana.change_text_brightness()
+buttons.change_button_brightness()
+sprites.load_scars()
+
 # give thoughts/actions to already existing cats
 cat_class.thoughts()
 
 while True:
-    screen.fill((255, 255, 255))
+    if game.settings['dark mode']:
+        screen.fill((40, 40, 40))
+    else:
+        screen.fill((255, 255, 255))
     # background
     # bg = pygame.image.load("resources/menu.png")
     # bg = pygame.transform.scale(bg, (1000,500))
     # screen.blit(bg, (0,0))
+
+    if game.settings_changed:
+        verdana.change_text_brightness()
+        buttons.change_button_brightness()
+    
     mouse.check_pos()
 
     # EVENTS

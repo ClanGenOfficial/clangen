@@ -1,5 +1,6 @@
 from .text import *
 from .cats import *
+from .game_essentials import *
 
 
 class Button(object):
@@ -10,6 +11,9 @@ class Button(object):
                  unavailable_colour=(230, 230, 230)):
         self.text = ''
         self.font = font
+        self.reset_colour(frame_colour, clickable_colour, unavailable_colour)
+
+    def reset_colour(self, frame_colour, clickable_colour, unavailable_colour):
         self.frame_colour = frame_colour
         self.clickable_colour = clickable_colour
         self.unavailable_colour = unavailable_colour
@@ -95,6 +99,14 @@ class Button(object):
             if arrow == "DOWN" and abs(game.event_scroll_ct) < max_scroll_direction:
                 game.cur_events_list.append(game.cur_events_list.pop(0))
                 game.event_scroll_ct -= 1
+
+    def change_button_brightness(self):
+        if game.settings['dark mode'] and self.frame_colour == (200, 200, 200):
+            self.reset_colour(frame_colour=(70, 70, 70), clickable_colour=(10, 10, 10),
+                 unavailable_colour=(50, 50, 50))
+        elif not game.settings['dark mode'] and self.frame_colour == (70, 70, 70):
+            self.reset_colour(frame_colour=(200, 200, 200), clickable_colour=(150, 150, 150),
+                 unavailable_colour=(230, 230, 230))
 
 
 class Writer(Button):

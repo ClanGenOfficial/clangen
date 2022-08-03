@@ -87,6 +87,9 @@ ipython_config.py
 saves/
 saves/clanlist.txt
 saves/settings.txt
+saves\
+saves\clanlist.txt
+saves\settings.txt
 
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is

@@ -1,0 +1,4 @@
+no gendered breeding:False
+text size:0
+no unknown fathers:False
+dark mode:False
