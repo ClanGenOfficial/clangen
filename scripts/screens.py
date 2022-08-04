@@ -703,7 +703,8 @@ class ProfileScreen(Screens):
         # MATE
         if the_cat.mate is not None and not the_cat.dead:
             if the_cat.mate in cat_class.all_cats:
-                verdana_small.text('mate: ' + str(cat_class.all_cats[the_cat.mate].name), ('center', 495))
+                verdana_small.text('mate: ' + str(cat_class.all_cats[the_cat.mate].name), (300, 330 + count * 15))
+                count+=1
             else:
                 verdana_small.text('Error: mate: ' + str(the_cat.mate) + " not found", ('center', 495))
 
@@ -720,7 +721,8 @@ class ProfileScreen(Screens):
         buttons.draw_button((300, -160), text='See Family', cur_screen='see kits screen')
         if not the_cat.dead:
             buttons.draw_button((-300, -160), text='Kill Cat', kill_cat=the_cat)
-        # buttons.draw_button(('center', -130), text='Change Mentor', cur_screen='change mentor screen')
+        if the_cat.status == 'apprentice':
+            buttons.draw_button(('center', -130), text='Change Mentor')
 
         if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not the_cat.dead:
             buttons.draw_button(('center', -130), text='Pick mate for ' + str(the_cat.name),
