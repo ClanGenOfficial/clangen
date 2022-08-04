@@ -239,13 +239,8 @@ class Cat(object):
         if game.clan.leader.dead:
             if game.clan.deputy is not None:
                 game.clan.new_leader(game.clan.deputy)
-                if game.cur_events_list is not None:
-                    game.cur_events_list.append(
-                        str(game.clan.deputy.name) + ' has been promoted to the new leader of the clan')
-                else:
-                    game.cur_events_list = [
-                        str(game.clan.deputy.name) + ' has been promoted to the new leader of the clan']
-
+                game.cur_events_list.append(str(game.clan.deputy.name) + ' has been promoted to the new leader of the clan')
+                game.clan.deputy = None
         if not cat.dead:
             cat.moons += 1
             if cat.status == 'deputy':
@@ -486,8 +481,8 @@ class Cat(object):
                     else:
                         kit = Cat(status='warrior', moons=14)
                         game.clan.add_cat(kit)
-                        append_str = str(cat.name) + ' invites a loner named ' + str(
-                            kit.name) + ' to join'
+                        append_str = str(cat.name) + ' invites the loner ' + choice(
+                            names.loner_names) + ' to join. They change their name to' + str(kit.name) + ''
                         kit.skill = 'formerly a loner'
 
                 elif event_choice == 6:
@@ -1027,7 +1022,7 @@ class Cat(object):
                     if len(attr) > 31:
                         the_cat.dead_for = int(attr[31])
                     the_cat.skill = attr[22]
-                    the_cat.mentor = attr[8]
+                    the_cat.mentor = cat_class.all_cats.get(attr[8])
 
             for n in self.all_cats.values():
                 n.update_sprite()

@@ -1,7 +1,5 @@
 from .buttons import *
 from .cats import *
-
-
 class Events(object):
     all_events = {}
 
