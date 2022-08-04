@@ -731,7 +731,7 @@ class ProfileScreen(Screens):
 
         if the_cat.status in ['warrior'] and not the_cat.dead and game.clan.leader.dead:
             buttons.draw_button(('center', -70), text='Promote to Leader', new_leader=the_cat)
-        elif the_cat.status in ['warrior'] and not the_cat.dead and game.clan.deputy == 0:
+        elif the_cat.status in ['warrior'] and not the_cat.dead and game.clan.deputy is None:
             buttons.draw_button(('center', -70), text='Promote to Deputy', deputy_switch=the_cat)
         elif the_cat.status in ['deputy'] and not the_cat.dead:
             buttons.draw_button(('center', -70), text='Demote from Deputy', deputy_switch=the_cat) 
@@ -746,7 +746,7 @@ class ProfileScreen(Screens):
             game.switches['deputy_switch'] = False
         elif game.switches['deputy_switch'] is not False and game.switches['deputy_switch'] is not None and game.switches[
             'deputy_switch'].status == 'deputy':
-            game.clan.deputy = 0
+            game.clan.deputy = None
             game.switches['deputy_switch'].status_change('warrior')
             game.switches['deputy_switch'] = False
 
@@ -1208,7 +1208,7 @@ class AllegiancesScreen(Screens):
             verdana.text(str(game.clan.leader.name) + " - a " + str(leader.pelt.colour).lower() + ' ' + str(leader.pelt.length).lower() + "-furred " + str(leader.gender), (170, 140))
 
         verdana.text("DEPUTY:", (30, 180))
-        if game.clan.deputy != 0:
+        if game.clan.deputy != 0 and game.clan.deputy is not None:
             verdana.text(str(game.clan.deputy.name) + " - a " + str(dep.pelt.colour).lower() + ' ' + str(dep.pelt.length).lower() + "-furred " + str(dep.gender),
                          (170, 180))
 
