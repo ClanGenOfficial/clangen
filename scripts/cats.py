@@ -198,7 +198,7 @@ class Cat(object):
 
         experience_levels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high',
                              'master', 'max']
-        self.experience_level = experience_levels[math.floor(self.experience / 10)]
+        self.experience_level = experience_levels[math.floor(self.experience / 5)]
 
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
@@ -1005,7 +1005,7 @@ class Cat(object):
                         the_cat.experience = attr[30]
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
-                        the_cat.experience_level = experiencelevels[math.floor(int(the_cat.experience) / 10)]
+                        the_cat.experience_level = experiencelevels[math.floor(int(the_cat.experience) / 5)]
 
                     else:
                         the_cat.experience = 0
