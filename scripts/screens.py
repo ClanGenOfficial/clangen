@@ -1187,24 +1187,35 @@ class AllegiancesScreen(Screens):
 
         # make a list of just living cats
         living_cats = []
+        leader = None
+        dep = None
+        med = None
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
-            if not the_cat.dead:
+            if the_cat.status == 'leader':
+                leader = the_cat
+                continue
+            elif the_cat.status == 'deputy':
+                dep = the_cat
+                continue
+            elif the_cat.status == 'medicine cat':
+                med = the_cat
+            elif not the_cat.dead:
                 living_cats.append(the_cat)
 
         verdana.text("LEADER:", (30, 140))
         if not game.clan.leader.dead:
-            verdana.text(str(game.clan.leader.name), (170, 140))
+            verdana.text(str(game.clan.leader.name) + " - a " + str(leader.pelt.colour).lower() + ' ' + str(leader.pelt.length).lower() + "-furred " + str(leader.gender), (170, 140))
 
         verdana.text("DEPUTY:", (30, 180))
         if game.clan.deputy != 0:
-            verdana.text(str(game.clan.deputy.name),
+            verdana.text(str(game.clan.deputy.name) + " - a " + str(dep.pelt.colour).lower() + ' ' + str(dep.pelt.length).lower() + "-furred " + str(dep.gender),
                          (170, 180))
 
         verdana.text("MEDICINE CAT:", (30, 220))
         if not game.clan.medicine_cat.dead:
             verdana.text(
-                str(game.clan.medicine_cat.name),
+                str(game.clan.medicine_cat.name) + " - a " + str(med.pelt.colour).lower() + ' ' + str(med.pelt.length).lower() + "-furred " + str(med.gender),
                 (170, 220))
 
         verdana.text("WARRIORS:", (30, 260))
@@ -1212,7 +1223,7 @@ class AllegiancesScreen(Screens):
         for j in range(len(living_cats)):
             if str(living_cats[j].status) == 'warrior':
                 verdana.text(
-                    str(living_cats[j].name) + " - a " + str(living_cats[j].pelt) + " " + str(living_cats[j].gender),
+                    str(living_cats[j].name) + " - a " + str(living_cats[j].pelt.colour).lower() + ' ' + str(living_cats[j].pelt.length).lower() + "-furred " + str(living_cats[j].gender),
                     (170, 260 + 30 * cat_count))
                 cat_count += 1
 
@@ -1220,18 +1231,18 @@ class AllegiancesScreen(Screens):
         for j in range(len(living_cats)):
             if str(living_cats[j].status) == 'apprentice':
                 verdana.text(
-                    str(living_cats[j].name) + " - a " + str(living_cats[j].pelt) + " " + str(living_cats[j].gender),
+                    str(living_cats[j].name) + " - a " + str(living_cats[j].pelt.colour).lower() + ' ' + str(living_cats[j].pelt.length).lower() + "-furred " + str(living_cats[j].gender),
                     (170, 300 + 30 * cat_count))
                 cat_count += 1
 
-        # verdana.text("QUEENS:", (30, 220))
+        verdana.text("QUEENS:", (30, 340 + 30 * cat_count))
 
-        verdana.text("ELDERS:", (30, 340 + 30 * cat_count))
+        verdana.text("ELDERS:", (30, 380 + 30 * cat_count))
         for j in range(len(living_cats)):
             if str(living_cats[j].status) == 'elder':
                 verdana.text(
-                    str(living_cats[j].name) + " - a " + str(living_cats[j].pelt) + " " + str(living_cats[j].gender),
-                    (170, 340 + 30 * cat_count))
+                    str(living_cats[j].name) + " - a " + str(living_cats[j].pelt.colour).lower() + ' ' + str(living_cats[j].pelt.length).lower() + "-furred " + str(living_cats[j].gender),
+                    (170, 380 + 30 * cat_count))
                 cat_count += 1
 
         # buttons
