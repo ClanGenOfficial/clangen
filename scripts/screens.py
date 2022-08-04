@@ -30,7 +30,10 @@ class Screens(object):
 # SCREEN CHILD CLASSES
 class StartScreen(Screens):
     def on_use(self):
-        # layout
+        # background
+        bg = pygame.image.load("resources/menu.png")
+        bg = pygame.transform.scale(bg, (1000,500))
+        screen.blit(bg, (0,100))
         example_cat.draw_big((350, 150))
 
         # buttons
@@ -297,7 +300,10 @@ class MakeClanScreen(Screens):
         # layout
         verdana_big.text('NAME YOUR CLAN!', ('center', 150))
         self.game_screen.blit(game.naming_box, (310, 200))
-        verdana.text(game.switches['naming_text'], (315, 200))
+        if game.settings['dark mode']:
+            verdana_black.text(game.switches['naming_text'], (315, 200))
+        else:
+            verdana.text(game.switches['naming_text'], (315, 200))
         verdana.text('-Clan', (455, 200))
         verdana.text('Max ten letters long. Don\'t include "Clan" in it.', ('center', 250))
 
@@ -313,7 +319,7 @@ class MakeClanScreen(Screens):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
         verdana.text('These twelve cats are your potential clan members.', ('center', 115))
         verdana.text('Some of them will be left behind.', ('center', 135))
-        verdana.text('First, pick your leader from them:', ('center', 160))
+        verdana.text('First, pick your leader. A strong and determined cat that will lead ' + game.switches['clan_name'] + 'Clan through any difficulties.', ('center', 160))
 
         # cat buttons / small sprites
         for u in range(6):
@@ -347,9 +353,8 @@ class MakeClanScreen(Screens):
         buttons.draw_button((-50, 50), text='< Last step', clan_name='', cat=None)
 
     def third_phase(self):
-        # LAYOUT
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        verdana.text('Second, pick your medicine cat:', ('center', 120))
+        verdana.text('Second, choose your deputy. This cat will support their leader and take over if things go awry.', ('center', 120))
 
         # cat buttons / small sprites
         for u in range(6):
@@ -374,6 +379,47 @@ class MakeClanScreen(Screens):
             verdana_small.text(str(game.choose_cats[game.switches['cat']].trait), (330, 425))
 
             if game.choose_cats[game.switches['cat']].age == 'kitten':
+                verdana_red.text('Too young to become deputy.', ('center', 490))
+            else:
+                buttons.draw_button(('center', 490), text='This cat will support the leader',
+                                    deputy=game.switches['cat'])
+
+        # buttons
+        verdana_small.text('Note: going back to main menu resets the generated cats.', (50, 25))
+        buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen', naming_text='')
+        buttons.draw_button((-50, 50), text='< Last Step', leader=None, cat=None)
+    def fourth_phase(self):
+        # LAYOUT
+        verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
+        verdana.text('Third, pick your medicine cat. They will aid the sick and wounded and communicate with StarClan.', ('center', 120))
+
+        # cat buttons / small sprites
+        for u in range(6):
+            if game.switches['leader'] == u:
+                game.choose_cats[u].draw((screen_x / 2 - 25, 550))
+            elif game.switches['deputy'] == u:
+                game.choose_cats[u].draw((screen_x / 2, 550))
+            else:
+                buttons.draw_button((50, 150 + 50 * u), image=game.choose_cats[u].sprite,
+                                    cat=u)
+        for u in range(6, 12):
+            if game.switches['leader'] == u:
+                game.choose_cats[u].draw((screen_x / 2 - 25, 550))
+            elif game.switches['deputy'] == u:
+                game.choose_cats[u].draw((screen_x / 2, 550))
+            else:
+                buttons.draw_button((screen_x - 100, 150 + 50 * (u - 6)), image=game.choose_cats[u].sprite,
+                                    cat=u)
+
+        # cat profiles
+        if 12 > game.switches['cat'] >= 0 and game.switches['cat'] != game.switches['leader'] and game.switches['cat'] != game.switches['deputy']:
+            game.choose_cats[game.switches['cat']].draw_large((320, 200))
+            verdana.text(str(game.choose_cats[game.switches['cat']].name), ('center', 360))
+            verdana_small.text(str(game.choose_cats[game.switches['cat']].gender), (330, 385))
+            verdana_small.text(str(game.choose_cats[game.switches['cat']].age), (330, 405))
+            verdana_small.text(str(game.choose_cats[game.switches['cat']].trait), (330, 425))
+
+            if game.choose_cats[game.switches['cat']].age == 'kitten':
                 verdana_red.text('Too young to become medicine cat.', ('center', 490))
             else:
                 buttons.draw_button(('center', 490), text='This cat will take care of the clan',
@@ -382,9 +428,9 @@ class MakeClanScreen(Screens):
         # buttons
         verdana_small.text('Note: going back to main menu resets the generated cats.', (50, 25))
         buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen', naming_text='')
-        buttons.draw_button((-50, 50), text='< Last step', leader=None, cat=None)
+        buttons.draw_button((-50, 50), text='< Last step', deputy=None, cat=None)
 
-    def fourth_phase(self):
+    def fifth_phase(self):
         # LAYOUT
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
         verdana.text('Finally, recruit from 4 to 7 more members to your clan.', ('center', 120))
@@ -394,6 +440,8 @@ class MakeClanScreen(Screens):
         for u in range(6):
             if game.switches['leader'] == u:
                 game.choose_cats[u].draw((screen_x / 2 - 50, 550))
+            elif game.switches['deputy'] == u:
+                game.choose_cats[u].draw((screen_x / 2 + 50, 550))
             elif game.switches['medicine_cat'] == u:
                 game.choose_cats[u].draw((screen_x / 2, 550))
             elif u in game.switches['members']:
@@ -404,6 +452,8 @@ class MakeClanScreen(Screens):
         for u in range(6, 12):
             if game.switches['leader'] == u:
                 game.choose_cats[u].draw((screen_x / 2 - 50, 550))
+            elif game.switches['deputy'] == u:
+                game.choose_cats[u].draw((screen_x / 2 + 50, 550))
             elif game.switches['medicine_cat'] == u:
                 game.choose_cats[u].draw((screen_x / 2, 550))
             elif u in game.switches['members']:
@@ -414,7 +464,7 @@ class MakeClanScreen(Screens):
 
         # cat profiles
         if 12 > game.switches['cat'] >= 0 and \
-                game.switches['cat'] not in [game.switches['leader'], game.switches['medicine_cat']] \
+                game.switches['cat'] not in [game.switches['leader'], game.switches['deputy'], game.switches['medicine_cat']] \
                 and game.switches['cat'] not in game.switches['members']:
             game.choose_cats[game.switches['cat']].draw_large((320, 200))
             verdana.text(str(game.choose_cats[game.switches['cat']].name), ('center', 360))
@@ -442,10 +492,12 @@ class MakeClanScreen(Screens):
             self.first_phase()
         elif len(game.switches['clan_name']) > 0 and game.switches['leader'] is None:
             self.second_phase()
-        elif game.switches['leader'] is not None and game.switches['medicine_cat'] is None:
+        elif game.switches['leader'] is not None and game.switches['deputy'] is None:
             self.third_phase()
-        else:
+        elif game.switches['leader'] is not None and game.switches['deputy'] is not None and game.switches['medicine_cat'] is None:
             self.fourth_phase()
+        else:
+            self.fifth_phase()
 
     def screen_switches(self):
         game.switches['clan_name'] = ''
@@ -453,6 +505,7 @@ class MakeClanScreen(Screens):
         game.switches['leader'] = None
         game.switches['cat'] = None
         game.switches['medicine_cat'] = None
+        game.switches['deputy'] = None
         game.switches['members'] = []
         example_cats()
 
@@ -468,6 +521,7 @@ class ClanCreatedScreen(Screens):
 
     def screen_switches(self):
         game.clan = Clan(game.switches['clan_name'], game.choose_cats[game.switches['leader']],
+                         game.choose_cats[game.switches['deputy']],
                          game.choose_cats[game.switches['medicine_cat']])
         game.clan.create_clan()
 
@@ -477,7 +531,7 @@ class EventsScreen(Screens):
         # LAYOUT
         verdana_big.text(game.clan.name + 'Clan', ('center', 30))
         verdana.text('Check this page to see which events are currently happening at the clan.', ('center', 100))
-        verdana.text('Current season: ' + str(game.clan.season), ('center', 130))
+        verdana.text('Current season: ' + str(game.clan.current_season), ('center', 130))
         verdana.text('Clan age: ' + str(game.clan.age) + ' moons', ('center', 160))
 
         if game.switches['events_left'] == 0:
@@ -488,7 +542,7 @@ class EventsScreen(Screens):
             buttons.draw_button(('center', 220), text='TIMESKIP ONE MOON', available=False)
         cat_class.one_moon()
 
-        #Maximum events on the screen is 12
+        # Maximum events on the screen is 12
         a = 0
         # if game.clan.leader.dead:
         #     #verdana_red.text(game.clan.name + "Clan has no leader!", ('center', 260 + a * 30))
@@ -504,7 +558,7 @@ class EventsScreen(Screens):
         #     game.cur_events_list.insert(0, game.clan.name + "Clan has no medicine cat!")
         #     # verdana_red.text(game.clan.name + "Clan has no medicine cat!", ('center', 260 + a * 30))
         #     # a += 1
-        
+
         if game.cur_events_list is not None and game.cur_events_list != []:
             for x in range(min(len(game.cur_events_list), game.max_events_displayed)):
                 if game.cur_events_list[x] == None:
@@ -520,11 +574,10 @@ class EventsScreen(Screens):
         buttons.draw_button((400, 70), text='STARCLAN', cur_screen='starclan screen')
         buttons.draw_button((500, 70), text='PATROL', cur_screen='patrol screen')
         buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
-        
 
         if len(game.cur_events_list) > game.max_events_displayed:
-            buttons.draw_button((720, 250), image = game.up, arrow="UP")
-            buttons.draw_button((700, 550), image = game.down, arrow="DOWN")
+            buttons.draw_button((720, 250), image=game.up, arrow="UP")
+            buttons.draw_button((700, 550), image=game.down, arrow="DOWN")
 
 
 class ProfileScreen(Screens):
@@ -593,15 +646,19 @@ class ProfileScreen(Screens):
                 count2 += 1
             else:
                 mentor = choice(game.clan.clan_cats)
-                print(mentor)
                 while cat_class.all_cats.get(mentor).status != 'warrior' and not cat_class.all_cats.get(mentor).dead:
                     mentor = choice(game.clan.clan_cats)
                 the_cat.mentor = cat_class.all_cats.get(mentor)
-        verdana_small.text(the_cat.age, (300, 330 + count * 15));
+        if the_cat.age == 'kitten':
+            verdana_small.text('young', (300, 330 + count * 15))
+        elif the_cat.age == 'elder':
+            verdana_small.text('senior', (300, 330 + count * 15))
+        else:
+            verdana_small.text(the_cat.age, (300, 330 + count * 15))
         count += 1  # AGE
-        verdana_small.text(the_cat.trait, (450, 330 + count2 * 15));
+        verdana_small.text(the_cat.trait, (450, 330 + count2 * 15))
         count2 += 1  # CHARACTER TRAIT
-        verdana_small.text(the_cat.skill, (450, 330 + count2 * 15));
+        verdana_small.text(the_cat.skill, (450, 330 + count2 * 15))
         count2 += 1  # SPECIAL SKILL
         verdana_small.text('eyes: ' + the_cat.eye_colour.lower(), (300, 330 + count * 15));
         count += 1  # EYE COLOR
@@ -1003,7 +1060,7 @@ class PatrolScreen(Screens):
         buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
         buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
 
-        # make a list of patrol eligible cats ###ADD IN FUTURE THAT THEY ALSO CAN ONLY PATROL ONCE PER MOON
+        # make a list of patrol eligible cats
         able_cats = []
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
@@ -1041,6 +1098,7 @@ class PatrolScreen(Screens):
                 else:
                     buttons.draw_button((screen_x - 100, 150 + 50 * (u - 6)), image=game.patrol_cats[u].sprite,
                                         cat=u)
+        buttons.draw_button(('center', 530), text='Add Random', addRandom=True)
 
         # display cat profile
         if game.switches['cat'] is not None and 12 > game.switches['cat'] >= 0 and \
@@ -1050,14 +1108,14 @@ class PatrolScreen(Screens):
             verdana_small.text(str(game.patrol_cats[game.switches['cat']].status), (330, 385))
             verdana_small.text(str(game.patrol_cats[game.switches['cat']].trait), (330, 405))
             verdana_small.text(str(game.patrol_cats[game.switches['cat']].skill), (330, 425))
-            verdana_small.text('experience: ' + str(game.patrol_cats[game.switches['cat']].experience_level), (330, 445))
+            verdana_small.text('experience: ' + str(game.patrol_cats[game.switches['cat']].experience_level),
+                               (330, 445))
 
             if len(game.switches['current_patrol']) < 6:
                 buttons.draw_button(('center', 490), text='Add to Patrol',
                                     current_patrol=game.patrol_cats[game.switches['cat']], add=True)
 
         if len(game.switches['current_patrol']) > 0:
-            # print('done')
             buttons.draw_button(('center', 630), text='Start Patrol', cur_screen='patrol event screen')
         else:
             buttons.draw_button(('center', 630), text='Start Patrol', available=False)
@@ -1093,7 +1151,7 @@ class PatrolEventScreen(Screens):
         for u in range(6):
             if u < patrol.patrol_size:
                 patrol.patrol_cats[u].draw((screen_x / 2 - 50 * (u + 2), 550))
-        verdana_small.text('season: ' + str(game.clan.season), ('center', 400))
+        verdana_small.text('season: ' + str(game.clan.current_season), ('center', 400))
         verdana_small.text('patrol leader: ' + str(patrol.patrol_leader.name), ('center', 420))
         verdana_small.text('patrol skills: ' + str(patrol.patrol_skills), ('center', 440))
         verdana_small.text('patrol traits: ' + str(patrol.patrol_traits), ('center', 460))
@@ -1148,13 +1206,17 @@ class AllegiancesScreen(Screens):
         cat_count = 0
         for j in range(len(living_cats)):
             if str(living_cats[j].status) == 'warrior':
-                verdana.text(str(living_cats[j].name), (170, 260 + 30 * cat_count))
+                verdana.text(
+                    str(living_cats[j].name) + " - a " + str(living_cats[j].pelt) + " " + str(living_cats[j].gender),
+                    (170, 260 + 30 * cat_count))
                 cat_count += 1
 
         verdana.text("APPRENTICES:", (30, 300 + 30 * cat_count))
         for j in range(len(living_cats)):
             if str(living_cats[j].status) == 'apprentice':
-                verdana.text(str(living_cats[j].name), (170, 300 + 30 * cat_count))
+                verdana.text(
+                    str(living_cats[j].name) + " - a " + str(living_cats[j].pelt) + " " + str(living_cats[j].gender),
+                    (170, 300 + 30 * cat_count))
                 cat_count += 1
 
         # verdana.text("QUEENS:", (30, 220))
@@ -1162,7 +1224,9 @@ class AllegiancesScreen(Screens):
         verdana.text("ELDERS:", (30, 340 + 30 * cat_count))
         for j in range(len(living_cats)):
             if str(living_cats[j].status) == 'elder':
-                verdana.text(str(living_cats[j].name), (170, 340 + 30 * cat_count))
+                verdana.text(
+                    str(living_cats[j].name) + " - a " + str(living_cats[j].pelt) + " " + str(living_cats[j].gender),
+                    (170, 340 + 30 * cat_count))
                 cat_count += 1
 
         # buttons

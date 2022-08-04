@@ -69,6 +69,9 @@ class Button(object):
     def activate(self, values=None, cat_value=None, arrow=None):  # cat value points to a Cat object
         if values is None:
             values = {}
+        # if len(values.keys()) == 1:
+        #     if values.get('addrandom'):
+        #         choice(game.switches[patr])
         add = False
         if 'add' in values.keys():
             add = values['add']
@@ -91,6 +94,7 @@ class Button(object):
                         cat_value.mate = None
                     game.switches['mate'] = None
 
+
         if arrow is not None:
             max_scroll_direction = len(game.cur_events_list) - game.max_events_displayed
             if arrow == "UP" and game.event_scroll_ct < 0:
@@ -103,10 +107,10 @@ class Button(object):
     def change_button_brightness(self):
         if game.settings['dark mode'] and self.frame_colour == (200, 200, 200):
             self.reset_colour(frame_colour=(70, 70, 70), clickable_colour=(10, 10, 10),
-                 unavailable_colour=(50, 50, 50))
+                              unavailable_colour=(30, 30, 30))
         elif not game.settings['dark mode'] and self.frame_colour == (70, 70, 70):
             self.reset_colour(frame_colour=(200, 200, 200), clickable_colour=(150, 150, 150),
-                 unavailable_colour=(230, 230, 230))
+                              unavailable_colour=(230, 230, 230))
 
 
 class Writer(Button):
