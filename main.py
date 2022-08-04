@@ -2,7 +2,7 @@ import sys
 
 from scripts.screens import *
 
-# apparently mac executables need the directly to be spelled out for it
+# apparently mac executables need the directory to be spelled out for it
 dir_path = os.path.sep.join(sys.argv[0].split(os.path.sep)[:-1])
 os.chdir(dir_path)
 
