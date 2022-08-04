@@ -2,6 +2,10 @@ import sys
 
 from scripts.screens import *
 
+# apparently mac executables need the directly to be spelled out for it
+dir_path = os.path.sep.join(sys.argv[0].split(os.path.sep)[:-1])
+os.chdir(dir_path)
+
 # P Y G A M E
 clock = pygame.time.Clock()
 pygame.display.set_icon(pygame.image.load('resources/icon.png'))
