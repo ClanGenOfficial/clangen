@@ -287,12 +287,13 @@ class Cat(object):
     def gain_scars(self, cat):
         # gaining scars with age
         if cat.specialty is None:
+            i = 0
             if cat.age in ['adolescent', 'young adult']:
-                i = randint(0, 15)
-            elif cat.age in ['adult', 'senior adult']:
                 i = randint(0, 30)
-            else:
+            elif cat.age in ['adult', 'senior adult']:
                 i = randint(0, 50)
+            else:
+                i = randint(0, 70)
             if i == 1:
                 cat.specialty = choice([choice(scars1), choice(scars2)])
                 if cat.specialty == 'NOTAIL':
@@ -315,11 +316,11 @@ class Cat(object):
 
         if cat.specialty2 is None:
             if cat.age in ['adolescent', 'young adult']:
-                i = randint(0, 15)
-            elif cat.age in ['adult', 'senior adult']:
                 i = randint(0, 30)
-            else:
+            elif cat.age in ['adult', 'senior adult']:
                 i = randint(0, 50)
+            else:
+                i = randint(0, 70)
             if i == 1:
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
                 if cat.specialty2 == 'NOTAIL':
