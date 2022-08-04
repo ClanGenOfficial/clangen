@@ -401,6 +401,8 @@ class Patrol(object):
             else:
                 # cripples random cat
                 if not self.success:
+                    if self.patrol_random_cat.status == 'deputy':
+                        game.clan.deputy = None
                     if self.patrol_random_cat.status == 'leader':
                         self.patrol_random_cat.experience = 0
                         self.patrol_result_text = self.patrol_random_cat.name + ' is crippled by a Monster and has to relearn everything.'
