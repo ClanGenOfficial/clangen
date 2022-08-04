@@ -30,10 +30,6 @@ while True:
         screen.fill((40, 40, 40))
     else:
         screen.fill((255, 255, 255))
-    # background
-    # bg = pygame.image.load("resources/menu.png")
-    # bg = pygame.transform.scale(bg, (1000,500))
-    # screen.blit(bg, (0,0))
 
     if game.settings_changed:
         verdana.change_text_brightness()
@@ -43,8 +39,7 @@ while True:
 
     # EVENTS
     for event in pygame.event.get():
-        if game.current_screen == 'make clan screen' and game.switches[
-            'clan_name'] == '':  # Allows user to type in Clan Name
+        if game.current_screen == 'make clan screen' and game.switches['clan_name'] == '':  # Allows user to type in Clan Name
             if event.type == pygame.KEYDOWN:
                 if event.unicode.isalpha():  # only allows alphabet letters as an input
                     if len(game.switches['naming_text']) < game.max_name_length:  # can't type more than max name length

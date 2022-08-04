@@ -57,6 +57,7 @@ class Font(object):
 
 # F O N T S
 verdana = Font('verdana')
+verdana_black = Font('verdana', colour= 'black')
 verdana_red = Font('verdana', colour=(242, 52, 29))
 verdana_small = Font('verdana', 11)
 verdana_baby = Font('verdana', 11, (100, 100, 250))

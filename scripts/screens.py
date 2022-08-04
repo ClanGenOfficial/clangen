@@ -30,7 +30,10 @@ class Screens(object):
 # SCREEN CHILD CLASSES
 class StartScreen(Screens):
     def on_use(self):
-        # layout
+        # background
+        bg = pygame.image.load("resources/menu.png")
+        bg = pygame.transform.scale(bg, (1000,500))
+        screen.blit(bg, (0,100))
         example_cat.draw_big((350, 150))
 
         # buttons
@@ -297,7 +300,10 @@ class MakeClanScreen(Screens):
         # layout
         verdana_big.text('NAME YOUR CLAN!', ('center', 150))
         self.game_screen.blit(game.naming_box, (310, 200))
-        verdana.text(game.switches['naming_text'], (315, 200))
+        if game.settings['dark mode']:
+            verdana_black.text(game.switches['naming_text'], (315, 200))
+        else:
+            verdana.text(game.switches['naming_text'], (315, 200))
         verdana.text('-Clan', (455, 200))
         verdana.text('Max ten letters long. Don\'t include "Clan" in it.', ('center', 250))
 
@@ -468,6 +474,7 @@ class ClanCreatedScreen(Screens):
 
     def screen_switches(self):
         game.clan = Clan(game.switches['clan_name'], game.choose_cats[game.switches['leader']],
+                         game.choose_cats[game.switches['deputy']],
                          game.choose_cats[game.switches['medicine_cat']])
         game.clan.create_clan()
 
