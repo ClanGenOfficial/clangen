@@ -306,6 +306,8 @@ class MakeClanScreen(Screens):
             verdana.text(game.switches['naming_text'], (315, 200))
         verdana.text('-Clan', (455, 200))
         verdana.text('Max ten letters long. Don\'t include "Clan" in it.', ('center', 250))
+        buttons.draw_button(('center', 300), text='Randomize', naming_text=choice(names.normal_prefixes))
+        buttons.draw_button(('center', 350), text='Reset Name', naming_text='')
 
         # buttons
         verdana_small.text('Note: going back to main menu resets the generated cats.', (50, 25))
