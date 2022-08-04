@@ -319,7 +319,7 @@ class MakeClanScreen(Screens):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
         verdana.text('These twelve cats are your potential clan members.', ('center', 115))
         verdana.text('Some of them will be left behind.', ('center', 135))
-        verdana.text('First, pick your leader. A strong and determined cat that will lead ' + game.switches['clan_name'] + 'Clan through any difficulties.', ('center', 160))
+        verdana.text('First, pick a leader to lead ' + game.switches['clan_name'] + 'Clan through any difficulties.', ('center', 160))
 
         # cat buttons / small sprites
         for u in range(6):
@@ -371,7 +371,7 @@ class MakeClanScreen(Screens):
                                     cat=u)
 
         # cat profiles
-        if 12 > game.switches['cat'] >= 0 and game.switches['cat'] != game.switches['leader']:
+        if game.switches['cat'] is not None and 12 > game.switches['cat'] >= 0 and game.switches['cat'] != game.switches['leader']:
             game.choose_cats[game.switches['cat']].draw_large((320, 200))
             verdana.text(str(game.choose_cats[game.switches['cat']].name), ('center', 360))
             verdana_small.text(str(game.choose_cats[game.switches['cat']].gender), (330, 385))
@@ -398,7 +398,7 @@ class MakeClanScreen(Screens):
             if game.switches['leader'] == u:
                 game.choose_cats[u].draw((screen_x / 2 - 25, 550))
             elif game.switches['deputy'] == u:
-                game.choose_cats[u].draw((screen_x / 2, 550))
+                game.choose_cats[u].draw((screen_x / 2 - 50 * (u + 2), 550))
             else:
                 buttons.draw_button((50, 150 + 50 * u), image=game.choose_cats[u].sprite,
                                     cat=u)
@@ -406,13 +406,13 @@ class MakeClanScreen(Screens):
             if game.switches['leader'] == u:
                 game.choose_cats[u].draw((screen_x / 2 - 25, 550))
             elif game.switches['deputy'] == u:
-                game.choose_cats[u].draw((screen_x / 2, 550))
+                game.choose_cats[u].draw((screen_x / 2 + 50 * (u - 5), 550))
             else:
                 buttons.draw_button((screen_x - 100, 150 + 50 * (u - 6)), image=game.choose_cats[u].sprite,
                                     cat=u)
 
         # cat profiles
-        if 12 > game.switches['cat'] >= 0 and game.switches['cat'] != game.switches['leader'] and game.switches['cat'] != game.switches['deputy']:
+        if game.switches['cat'] is not None and 12 > game.switches['cat'] >= 0 and game.switches['cat'] != game.switches['leader'] and game.switches['cat'] != game.switches['deputy']:
             game.choose_cats[game.switches['cat']].draw_large((320, 200))
             verdana.text(str(game.choose_cats[game.switches['cat']].name), ('center', 360))
             verdana_small.text(str(game.choose_cats[game.switches['cat']].gender), (330, 385))
@@ -439,11 +439,9 @@ class MakeClanScreen(Screens):
         # cat buttons / small sprites
         for u in range(6):
             if game.switches['leader'] == u:
-                game.choose_cats[u].draw((screen_x / 2 - 50, 550))
-            elif game.switches['deputy'] == u:
-                game.choose_cats[u].draw((screen_x / 2 + 50, 550))
-            elif game.switches['medicine_cat'] == u:
-                game.choose_cats[u].draw((screen_x / 2, 550))
+                game.choose_cats[u].draw((screen_x / 2 - 25, 550))
+            elif game.switches['deputy'] == u or game.switches['medicine_cat'] == u:
+                game.choose_cats[u].draw((screen_x / 2 - 50 * (u + 2), 550))
             elif u in game.switches['members']:
                 game.choose_cats[u].draw((screen_x / 2 - 50 * (u + 2), 550))
             else:
@@ -451,11 +449,9 @@ class MakeClanScreen(Screens):
                                     cat=u)
         for u in range(6, 12):
             if game.switches['leader'] == u:
-                game.choose_cats[u].draw((screen_x / 2 - 50, 550))
-            elif game.switches['deputy'] == u:
-                game.choose_cats[u].draw((screen_x / 2 + 50, 550))
-            elif game.switches['medicine_cat'] == u:
-                game.choose_cats[u].draw((screen_x / 2, 550))
+                game.choose_cats[u].draw((screen_x / 2 - 25, 550))
+            elif game.switches['deputy'] == u or game.switches['medicine_cat'] == u:
+                game.choose_cats[u].draw((screen_x / 2 + 50 * (u - 5), 550))
             elif u in game.switches['members']:
                 game.choose_cats[u].draw((screen_x / 2 + 50 * (u - 5), 550))
             else:
