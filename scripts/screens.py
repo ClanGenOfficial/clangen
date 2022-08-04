@@ -898,7 +898,8 @@ class ChooseMateScreen(Screens):
             verdana_small.text(mate.trait, (-100, 230))
 
             if the_cat.gender == mate.gender or 'elder' in [the_cat.age, mate.age]:
-                verdana_small.text('(this pair will not be able to have kittens)', ('center', 320))
+                if the_cat.gender == mate.gender and not game.settings['no gendered breeding']:
+                    verdana_small.text('(this pair will not be able to have kittens)', ('center', 320))
 
         valid_mates = []
         pos_x = 0
