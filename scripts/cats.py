@@ -228,7 +228,7 @@ class Cat(object):
             game.event_scroll_ct = 0
             if game.clan.medicine_cat.dead:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no medicine cat!")
-            if game.clan.deputy == 0 or game.clan.deputy.dead:
+            if game.clan.deputy == 0 or game.clan.deputy is None:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no deputy!")
             if game.clan.leader.dead:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no leader!")
@@ -237,7 +237,7 @@ class Cat(object):
     def perform_ceremonies(self,
                            cat):  # This function is called when apprentice/warrior/other ceremonies are performed every moon
         if game.clan.leader.dead:
-            if game.clan.deputy != 0:
+            if game.clan.deputy is not None:
                 game.clan.new_leader(game.clan.deputy)
                 if game.cur_events_list is not None:
                     game.cur_events_list.append(
@@ -250,7 +250,7 @@ class Cat(object):
             cat.moons += 1
             if cat.status == 'deputy':
                 deputy = cat
-                if game.clan.deputy == 0:
+                if game.clan.deputy is None:
                     game.clan.deputy = cat
             if cat.moons > self.age_moons[cat.age][1]:
                 # Give the cat a new age group, if old enough
@@ -282,7 +282,7 @@ class Cat(object):
                         game.cur_events_list = [str(cat.name) + ' has retired to the elder den']
                 elif cat.status == 'deputy' and cat.age == 'elder':
                     cat.status_change('elder')
-                    game.clan.deputy = 0
+                    game.clan.deputy = None
                     if game.cur_events_list is not None:
                         game.cur_events_list.append(
                             'The deputy ' + str(cat.name) + ' has retired to the elder den')
