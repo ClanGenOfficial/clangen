@@ -14,9 +14,9 @@ jobs:
       - run: "cp sprites/* dist/sprites"
       - run: "cp saves/* dist/saves"
       - run: "cp resources/* dist/resources"
-      - run: "cd dist"
-      - run: "zip macos.zip *"
+      - run: "zip macos.zip */"
+        working-directory: ./dist
       - uses: actions/upload-artifact@v3
         with:
           name: release
-          path: macos.zip
+          path: dist/macos.zip
