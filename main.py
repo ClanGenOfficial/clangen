@@ -3,8 +3,9 @@ import sys
 from scripts.screens import *
 
 # apparently mac executables need the directory to be spelled out for it
-dir_path = os.path.sep.join(sys.argv[0].split(os.path.sep)[:-1])
-os.chdir(dir_path)
+if sys.platform != "win32":
+    dir_path = os.path.sep.join(sys.argv[0].split(os.path.sep)[:-1])
+    os.chdir(dir_path)
 
 # P Y G A M E
 clock = pygame.time.Clock()
