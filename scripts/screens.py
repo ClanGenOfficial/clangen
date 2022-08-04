@@ -819,8 +819,7 @@ class ViewChildrenScreen(Screens):
 
         siblings = False
         for x in game.clan.clan_cats:
-            if the_cat.parent1 == cat_class.all_cats[x].parent1 and the_cat.parent2 == cat_class.all_cats[
-                x].parent2 and the_cat.ID != cat_class.all_cats[x].ID and the_cat.parent1 is not None:
+            if (cat_class.all_cats[x].parent1 in (the_cat.parent1, the_cat.parent2) or cat_class.all_cats[x].parent2 in (the_cat.parent1, the_cat.parent2)) and the_cat.ID != cat_class.all_cats[x].ID and the_cat.parent1 is not None:
                 buttons.draw_button((40 + pos_x, 220 + pos_y), image=cat_class.all_cats[x].sprite,
                                     cat=cat_class.all_cats[x].ID,
                                     cur_screen='profile screen')

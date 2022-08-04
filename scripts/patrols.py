@@ -64,7 +64,7 @@ class Patrol(object):
                 continue
             if test_event[7] == 2 and self.patrol_size == 1:
                 continue
-            if test_event[10] != 0 and test_event[10] not in self.patrol_traits:
+            if test_event[10] != 0 and test_event[10] not in self.patrol_traits and test_event[10] not in self.patrol_skills:
                 continue
             if test_event[9] != 0 and test_event[9] != game.clan.current_season:
                 continue
@@ -401,7 +401,11 @@ class Patrol(object):
             else:
                 # cripples random cat
                 if not self.success:
-                    self.patrol_random_cat.status_change('elder')
+                    if self.patrol_random_cat.status == 'leader':
+                        self.patrol_random_cat.experience = 0
+                        self.patrol_result_text = self.patrol_random_cat.name + ' is crippled by a Monster and has to relearn everything.'
+                    else:
+                        self.patrol_random_cat.status_change('elder')
                     self.patrol_random_cat.skill = choice(['paralyzed', 'blind', 'missing a leg'])
                     return
 
