@@ -9,10 +9,15 @@ jobs:
       - run: "pip3 install pygame pyinstaller"
       - run: "pyinstaller --onefile main.py"
       - run: |
-        mkdir dist/sprites
-        mkdir dist/saves
-        mkdir dist/resources
-        cp sprites/* dist/sprites
-        cp saves/* dist/saves
-        cp resources/* dist/resources
-        
+        mkdir dist/sprites \
+        mkdir dist/saves \
+        mkdir dist/resources \
+        cp sprites/* dist/sprites \
+        cp saves/* dist/saves \
+        cp resources/* dist/resources \
+        cd dist
+        zip macos.zip *
+      - uses: actions/upload-artifact@v3
+        with:
+          name: release
+          path: macos.zip
