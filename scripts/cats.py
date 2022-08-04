@@ -228,7 +228,7 @@ class Cat(object):
             game.event_scroll_ct = 0
             if game.clan.medicine_cat.dead:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no medicine cat!")
-            if game.clan.deputy == 0:
+            if game.clan.deputy == 0 or game.clan.deputy.dead:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no deputy!")
             if game.clan.leader.dead:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no leader!")

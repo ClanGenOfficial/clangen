@@ -733,6 +733,8 @@ class ProfileScreen(Screens):
             buttons.draw_button(('center', -70), text='Promote to Leader', new_leader=the_cat)
         elif the_cat.status in ['warrior'] and not the_cat.dead and game.clan.deputy == 0:
             buttons.draw_button(('center', -70), text='Promote to Deputy', deputy_switch=the_cat)
+        elif the_cat.status in ['deputy'] and not the_cat.dead:
+            buttons.draw_button(('center', -70), text='Demote from Deputy', deputy_switch=the_cat) 
         elif the_cat.status in ['warrior'] and not the_cat.dead and game.clan.deputy:
             if game.clan.deputy.dead:
                 buttons.draw_button(('center', -70), text='Promote to Deputy', deputy_switch=the_cat)
@@ -741,6 +743,11 @@ class ProfileScreen(Screens):
             'deputy_switch'].status == 'warrior':
             game.clan.deputy = game.switches['deputy_switch']
             game.switches['deputy_switch'].status_change('deputy')
+            game.switches['deputy_switch'] = False
+        elif game.switches['deputy_switch'] is not False and game.switches['deputy_switch'] is not None and game.switches[
+            'deputy_switch'].status == 'deputy':
+            game.clan.deputy = 0
+            game.switches['deputy_switch'].status_change('warrior')
             game.switches['deputy_switch'] = False
 
         if game.switches['apprentice_switch'] is not False and game.switches['apprentice_switch'] is not None and \
