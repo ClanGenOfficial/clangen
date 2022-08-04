@@ -8,16 +8,14 @@ jobs:
       - uses: actions/checkout@v2
       - run: "pip3 install pygame pyinstaller"
       - run: "pyinstaller --onefile main.py"
-      - run: |
-          ls dist \
-          mkdir dist/sprites \
-          mkdir dist/saves \
-          mkdir dist/resources \
-          cp sprites/* dist/sprites \
-          cp saves/* dist/saves \
-          cp resources/* dist/resources \
-          cd dist
-          zip macos.zip *
+      - run: "mkdir dist/sprites"
+      - run: "mkdir dist/saves"
+      - run: "mkdir dist/resources"
+      - run: "cp sprites/* dist/sprites"
+      - run: "cp saves/* dist/saves"
+      - run: "cp resources/* dist/resources"
+      - run: "cd dist"
+      - run: "zip macos.zip *"
       - uses: actions/upload-artifact@v3
         with:
           name: release
