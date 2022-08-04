@@ -9,6 +9,7 @@ jobs:
       - run: "pip3 install pygame pyinstaller"
       - run: "pyinstaller --onefile main.py"
       - run: |
+          ls dist \
           mkdir dist/sprites \
           mkdir dist/saves \
           mkdir dist/resources \
