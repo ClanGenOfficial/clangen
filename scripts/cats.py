@@ -1022,7 +1022,7 @@ class Cat(object):
                     if len(attr) > 31:
                         the_cat.dead_for = int(attr[31])
                     the_cat.skill = attr[22]
-                    the_cat.mentor = attr[8]
+                    the_cat.mentor = cat_class.all_cats.get(attr[8])
 
             for n in self.all_cats.values():
                 n.update_sprite()
