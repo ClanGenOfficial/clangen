@@ -8,7 +8,7 @@ class Button(object):
     used_mouse = mouse
 
     def __init__(self, font=verdana, frame_colour=(200, 200, 200), clickable_colour=(150, 150, 150),
-                 unavailable_colour=(230, 230, 230)):
+                 unavailable_colour=(120, 120, 120)):
         self.text = ''
         self.font = font
         self.reset_colour(frame_colour, clickable_colour, unavailable_colour)
@@ -110,7 +110,7 @@ class Button(object):
                               unavailable_colour=(30, 30, 30))
         elif not game.settings['dark mode'] and self.frame_colour == (70, 70, 70):
             self.reset_colour(frame_colour=(200, 200, 200), clickable_colour=(150, 150, 150),
-                              unavailable_colour=(230, 230, 230))
+                              unavailable_colour=(120, 120, 120))
 
 
 class Writer(Button):
