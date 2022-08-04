@@ -16,9 +16,9 @@ class Game(object):
     event_scroll_ct = 0
     cur_events_list = []
 
-    down = pygame.image.load("sprites\down.png")
+    down = pygame.image.load("sprites/down.png")
     down = pygame.transform.scale(down, (75, 75))
-    up = pygame.image.load("sprites\carrot.png")
+    up = pygame.image.load("sprites/carrot.png")
     up = pygame.transform.scale(up, (40, 40))
 
     choose_cats = {}
