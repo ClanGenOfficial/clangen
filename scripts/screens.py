@@ -552,20 +552,6 @@ class EventsScreen(Screens):
 
         # Maximum events on the screen is 12
         a = 0
-        # if game.clan.leader.dead:
-        #     #verdana_red.text(game.clan.name + "Clan has no leader!", ('center', 260 + a * 30))
-        #     # a += 1
-
-        #     game.cur_events_list.insert(0, game.clan.name + "Clan has no leader!")
-        # if game.clan.deputy == 0:
-        #     game.cur_events_list.insert(0, game.clan.name + "Clan has no deputy!")
-
-        #     # verdana_red.text(game.clan.name + "Clan has no deputy!", ('center', 260 + a * 30))
-        #     # a += 1
-        # if game.clan.medicine_cat.dead:
-        #     game.cur_events_list.insert(0, game.clan.name + "Clan has no medicine cat!")
-        #     # verdana_red.text(game.clan.name + "Clan has no medicine cat!", ('center', 260 + a * 30))
-        #     # a += 1
 
         if game.cur_events_list is not None and game.cur_events_list != []:
             for x in range(min(len(game.cur_events_list), game.max_events_displayed)):
@@ -1235,8 +1221,6 @@ class AllegiancesScreen(Screens):
             elif the_cat.status == 'deputy':
                 dep = the_cat
                 continue
-            elif the_cat.status == 'medicine cat':
-                med = the_cat
             elif not the_cat.dead:
                 living_cats.append(the_cat)
 
@@ -1252,14 +1236,21 @@ class AllegiancesScreen(Screens):
                          (170, 180))
 
         verdana.text("MEDICINE CAT:", (30, 220))
-        if not game.clan.medicine_cat.dead:
-            verdana.text(
-                str(game.clan.medicine_cat.name) + " - a " + str(med.pelt.colour).lower() + ' ' + str(
-                    med.pelt.length).lower() + "-furred " + str(med.gender),
-                (170, 220))
-
-        verdana.text("WARRIORS:", (30, 260))
+        # if not game.clan.medicine_cat.dead:
+        #     verdana.text(
+        #         str(game.clan.medicine_cat.name) + " - a " + str(med.pelt.colour).lower() + ' ' + str(
+        #             med.pelt.length).lower() + "-furred " + str(med.gender),
+        #         (170, 220))
         cat_count = 0
+        for j in range(len(living_cats)):
+            if str(living_cats[j].status) == 'medicine cat':
+                verdana.text(
+                    str(living_cats[j].name) + " - a " + str(living_cats[j].pelt.colour).lower() + ' ' + str(
+                        living_cats[j].pelt.length).lower() + "-furred " + str(living_cats[j].gender),
+                    (170, 220 + 30 * cat_count))
+                cat_count += 1
+
+        verdana.text("WARRIORS:", (30, 260 + 30 * cat_count))
         for j in range(len(living_cats)):
             if str(living_cats[j].status) == 'warrior':
                 verdana.text(

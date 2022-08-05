@@ -226,7 +226,13 @@ class Cat(object):
             game.clan.age += 1
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
             game.event_scroll_ct = 0
-            if game.clan.medicine_cat.dead:
+            has_med = False
+            for cat in cat_class.all_cats.values():
+                if str(cat.status) == "medicine cat" or str(cat.status) == "medicine cat apprentice":
+                    if not cat.dead:
+                        has_med = True
+                        break
+            if not has_med:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no medicine cat!")
             if game.clan.deputy == 0 or game.clan.deputy is None:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no deputy!")
