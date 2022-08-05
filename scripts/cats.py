@@ -395,7 +395,7 @@ class Cat(object):
                         cat.specialty = None
                         append_str = str(cat.name) + ' asks ' + str(
                             self.all_cats[cat_number].name) + ' to show them ' + str(
-                            game.clan.name) + ' territory.'
+                            game.clan.name) + 'Clan territory.'
                     else:
                         if game.clan.current_season == 'Leaf-bare' and cat.status == 'kitten':
                             cat.dies()
@@ -462,9 +462,8 @@ class Cat(object):
                     # angry mate
                 elif event_choice == 4:
                     # training
-                    if cat.status == 'apprentice' and self.all_cats[cat_number].status == 'warrior':
-                        append_str = str(cat.name) + ' trains with their mentor, ' + str(
-                            self.all_cats[cat_number].name)
+                    if cat.status == 'apprentice':
+                        append_str = str(cat.name) + ' trains with their mentor, ' + cat.mentor.name
                     elif cat.age in ['adolescent', 'young adult', 'adult', 'senior adult']:
                         append_str = str(cat.name) + ' learns some new moves from ' + str(
                             self.all_cats[cat_number].name)
