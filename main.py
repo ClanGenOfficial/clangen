@@ -2,12 +2,6 @@ import sys, platform
 
 from scripts.screens import *
 
-# apparently mac executables need the directory to be spelled out for it
-if sys.platform != "win32":
-    dir = os.path.dirname(os.path.abspath(__file__))
-    print(f"Changing working directory to: {dir}")
-    os.chdir(dir)
-
 # P Y G A M E
 clock = pygame.time.Clock()
 pygame.display.set_icon(pygame.image.load('resources/icon.png'))
