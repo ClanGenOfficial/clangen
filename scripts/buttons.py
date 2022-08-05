@@ -22,16 +22,30 @@ class Button(object):
         # cat_value takes a cat object. if it isn't None, the keys and values are determined by which attributes of
         # the cat are changed and doesn't have an effect on game switches
 
+        # setting dynamic_image flag for true; this will be for image buttons such as on start screen
+        dynamic_image=False
+
+        if image is not None and text != '' and text is not None:
+            dynamic_image = True
+            image = "resources/" + image
+
         if not available:
             colour = self.unavailable_colour
+            if image is not None:
+                image = image + '_unavailable'
         else:
             colour = self.frame_colour
 
         # creating visible button
         if image is None:
             new_button = pygame.Surface((self.font.text(text) + 10, self.font.size + 6))
+        elif dynamic_image:
+            # this is just store a temporary image to calculate size
+            new_button = pygame.image.load(image + ".png")
+            new_button = pygame.transform.scale(new_button, (192,35))
         else:
             new_button = image
+
 
         new_pos = list(pos)
         if pos[0] == 'center':
@@ -49,11 +63,17 @@ class Button(object):
         if available and collision.collidepoint(self.used_mouse.pos):
             colour = self.clickable_colour
             clickable = True
+            if dynamic_image:
+                image = image + '_hover'
 
         # fill in non-image button
         if image is None:
             new_button.fill(colour)
             self.font.text(text, (5, 0), new_button)
+            self.used_screen.blit(new_button, new_pos)
+        elif dynamic_image:
+            new_button = pygame.image.load(image + ".png")
+            new_button = pygame.transform.scale(new_button, (192,35))
             self.used_screen.blit(new_button, new_pos)
         else:
             self.used_screen.blit(new_button, new_pos)
