@@ -779,7 +779,7 @@ class Patrol(object):
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
                     self.patrol_cats.append(kit)
-                return
+
 
 
 patrol = Patrol()

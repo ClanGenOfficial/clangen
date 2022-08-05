@@ -23,7 +23,7 @@ class Button(object):
         # the cat are changed and doesn't have an effect on game switches
 
         # setting dynamic_image flag for true; this will be for image buttons such as on start screen
-        dynamic_image=False
+        dynamic_image = False
 
         if image is not None and text != '' and text is not None:
             dynamic_image = True
@@ -42,10 +42,9 @@ class Button(object):
         elif dynamic_image:
             # this is just store a temporary image to calculate size
             new_button = pygame.image.load(image + ".png")
-            new_button = pygame.transform.scale(new_button, (192,35))
+            new_button = pygame.transform.scale(new_button, (192, 35))
         else:
             new_button = image
-
 
         new_pos = list(pos)
         if pos[0] == 'center':
@@ -73,7 +72,7 @@ class Button(object):
             self.used_screen.blit(new_button, new_pos)
         elif dynamic_image:
             new_button = pygame.image.load(image + ".png")
-            new_button = pygame.transform.scale(new_button, (192,35))
+            new_button = pygame.transform.scale(new_button, (192, 35))
             self.used_screen.blit(new_button, new_pos)
         else:
             self.used_screen.blit(new_button, new_pos)
@@ -91,7 +90,7 @@ class Button(object):
             values = {}
         # if len(values.keys()) == 1:
         #     if values.get('addrandom'):
-        #         choice(game.switches[patr])
+        #         choice(game.switches[patrol])
         add = False
         if 'add' in values.keys():
             add = values['add']
@@ -113,7 +112,6 @@ class Button(object):
                         cat_class.all_cats[cat_value.mate].mate = None
                         cat_value.mate = None
                     game.switches['mate'] = None
-
 
         if arrow is not None:
             max_scroll_direction = len(game.cur_events_list) - game.max_events_displayed

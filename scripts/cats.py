@@ -242,15 +242,14 @@ class Cat(object):
 
     def perform_ceremonies(self,
                            cat):  # This function is called when apprentice/warrior/other ceremonies are performed every moon
-        if game.clan.leader.dead:
-            if game.clan.deputy is not None:
+        if game.clan.leader.dead and game.clan.deputy is not None:
                 game.clan.new_leader(game.clan.deputy)
-                game.cur_events_list.append(str(game.clan.deputy.name) + ' has been promoted to the new leader of the clan')
+                game.cur_events_list.append(
+                    str(game.clan.deputy.name) + ' has been promoted to the new leader of the clan')
                 game.clan.deputy = None
         if not cat.dead:
             cat.moons += 1
-            if cat.status == 'deputy':
-                if game.clan.deputy is None:
+            if cat.status == 'deputy' and game.clan.deputy is None:
                     game.clan.deputy = cat
             if cat.moons > self.age_moons[cat.age][1]:
                 # Give the cat a new age group, if old enough
@@ -274,60 +273,44 @@ class Cat(object):
                     cat.status_change('elder')
                     game.clan.deputy = None
                     game.cur_events_list.append('The deputy ' + str(cat.name) + ' has retired to the elder den')
+
     def gain_scars(self, cat):
         # gaining scars with age
         if cat.specialty is None:
-            i = 0
+            chance = 0
             if cat.age in ['adolescent', 'young adult']:
-                i = randint(0, 30)
+                chance = randint(0, 30)
             elif cat.age in ['adult', 'senior adult']:
-                i = randint(0, 50)
+                chance = randint(0, 50)
             else:
-                i = randint(0, 70)
-            if i == 1:
+                chance = randint(0, 70)
+            if chance == 1:
                 cat.specialty = choice([choice(scars1), choice(scars2)])
                 if cat.specialty == 'NOTAIL':
-                    if game.cur_events_list is not None:
-                        game.cur_events_list.append(str(cat.name) + ' lost their tail to a ' + choice(
-                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk']))
-                    else:
-                        game.cur_events_list = [str(cat.name) + ' lost their tail to a ' + choice(
-                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk'])]
+                    game.cur_events_list.append(str(cat.name) + ' lost their tail to a ' + choice(
+                        ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk']))
                 else:
-                    if game.cur_events_list is not None:
-                        game.cur_events_list.append(
-                            str(cat.name) + ' earned a scar fighting a ' + choice(
-                                ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk']))
-                    else:
-                        game.cur_events_list = [str(cat.name) + ' earned a scar fighting a ' + choice(
-                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk'])]
+                    game.cur_events_list.append(
+                        str(cat.name) + ' earned a scar fighting a ' + choice(
+                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk']))
             else:
                 cat.specialty = None
 
         if cat.specialty2 is None:
             if cat.age in ['adolescent', 'young adult']:
-                i = randint(0, 30)
+                chance = randint(0, 30)
             elif cat.age in ['adult', 'senior adult']:
-                i = randint(0, 50)
+                chance = randint(0, 50)
             else:
-                i = randint(0, 70)
-            if i == 1:
+                chance = randint(0, 70)
+            if chance == 1:
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
                 if cat.specialty2 == 'NOTAIL':
-                    if game.cur_events_list is not None:
-                        game.cur_events_list.append(str(cat.name) + ' lost their tail to a ' + choice(
-                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk']))
-                    else:
-                        game.cur_events_list = [str(cat.name) + ' lost their tail to a ' + choice(
-                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk'])]
+                    game.cur_events_list.append(str(cat.name) + ' lost their tail to a ' + choice(
+                        ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'tree']))
                 else:
-                    if game.cur_events_list is not None:
-                        game.cur_events_list.append(
-                            str(cat.name) + ' earned a scar fighting a ' + choice(
-                                ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk']))
-                    else:
-                        game.cur_events_list = [str(cat.name) + ' earned a scar fighting a ' + choice(
-                            ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk'])]
+                    game.cur_events_list.append(str(cat.name) + ' earned a scar fighting a ' + choice(
+                        ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'badger']))
             else:
                 cat.specialty2 = None
 
@@ -428,12 +411,9 @@ class Cat(object):
                                     cat_number].parent2 not in [cat.parent1, cat.parent2]):
 
                             # Making sure the ages are appropriate
-                            if cat.age in ['senior adult', 'elder'] and self.all_cats[
-                                cat_number].age in ['senior adult',
-                                                    'elder']:
-                                valid_mates = 1
-                            elif self.all_cats[
-                                cat_number].age != 'elder' and cat.age != 'elder' and cat.age != 'kitten' and cat.age != 'adolescent':
+                            if (cat.age in ['senior adult', 'elder'] and self.all_cats[cat_number].age in [
+                                'senior adult', 'elder']) or (self.all_cats[
+                                                                  cat_number].age != 'elder' and cat.age != 'elder' and cat.age != 'kitten' and cat.age != 'adolescent'):
                                 valid_mates = 1
 
                         if self.all_cats[cat_number].ID == cat.ID:
@@ -737,7 +717,7 @@ class Cat(object):
             mentor = choice(game.clan.clan_cats)
             while cat_class.all_cats.get(mentor).status != 'warrior' and cat_class.all_cats.get(
                     mentor).status != 'deputy' and cat_class.all_cats.get(
-                    mentor).status != 'leader' or cat_class.all_cats.get(mentor).dead:
+                mentor).status != 'leader' or cat_class.all_cats.get(mentor).dead:
                 mentor = choice(game.clan.clan_cats)
             self.mentor = cat_class.all_cats.get(mentor)
             cat_class.all_cats.get(mentor).apprentice.append(self)
@@ -1082,40 +1062,39 @@ class Cat(object):
         elif self.pelt.name == "Speckled":
             color_name = str(self.pelt.colour).lower() + ' speckled'
         elif self.pelt.name == "Tortie" or self.pelt.name == "Calico":
-            color_name = 'tortie' #check for calico or for white later
-        
+            color_name = 'tortie'  # check for calico or for white later
 
-        #not enough to comment on
+        # not enough to comment on
         if self.white_patches is None or self.white_patches in ['EXTRA']:
-            color_name = color_name
-        #enough to comment but not make calico
-        elif self.white_patches in ['LITTLE', 'LITTLECREAMY','LIGHTTUXEDO', 'BUZZARDFANG']:
+            color_name = color_name  # what is this even lol
+        # enough to comment but not make calico
+        elif self.white_patches in ['LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG']:
             color_name = color_name + ' and white'
         # and white
-        elif self.white_patches in ['ANY', 'TUXEDO', 'ANY2', 'ANYCREAMY', 'TUXEDOCREAMY', 'ANY2CREAMY','BROKEN']:
+        elif self.white_patches in ['ANY', 'TUXEDO', 'ANY2', 'ANYCREAMY', 'TUXEDOCREAMY', 'ANY2CREAMY', 'BROKEN']:
             if color_name == 'tortie':
                 color_name = 'calico'
             else:
                 color_name = color_name + ' and white'
-        #white and
+        # white and
         elif self.white_patches in ['VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG']:
             color_name = 'white and ' + color_name
-        #colorpoint
+        # colorpoint
         elif self.white_patches in ['COLOURPOINT', 'RAGDOLL', 'COLOURPOINTCREAMY']:
             color_name = color_name + ' point'
             if color_name == 'darkginger point':
                 color_name = 'flame point'
-        #vitiligo
+        # vitiligo
         elif self.white_patches in ['VITILIGO']:
             color_name = color_name + ' with vitiligo'
         else:
             color_name = color_name + ' color error'
-        
+
         if color_name == 'tortie':
             color_name = 'tortoiseshell'
 
         if color_name == 'white and white':
-            color=name = 'white'
+            color = name = 'white'
 
         return color_name
 
@@ -1127,6 +1106,7 @@ class Cat(object):
         description = self.describe_color()
         description += ' ' + str(self.pelt.length).lower() + '-furred ' + sex
         return description
+
 
 # CAT CLASS ITEMS
 cat_class = Cat(example=True)
