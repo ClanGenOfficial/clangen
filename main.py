@@ -3,7 +3,7 @@ import sys, platform
 from scripts.screens import *
 
 # apparently mac executables need the directory to be spelled out for it
-if platform.system() == "Darwin":
+if sys.platform != "win32":
     dir = os.path.dirname(os.path.abspath(__file__))
     print(f"Changing working directory to: {dir}")
     os.chdir(dir)
