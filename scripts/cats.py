@@ -745,11 +745,12 @@ class Cat(object):
         self.name.status = new_status
         if new_status == 'apprentice':
             mentor = choice(game.clan.clan_cats)
-            while self.all_cats.get(mentor).status != 'warrior' and not cat_class.all_cats.get(
-                    mentor).dead and mentor != game.clan.instructor.ID:
+            while cat_class.all_cats.get(mentor).status != 'warrior' and cat_class.all_cats.get(
+                    mentor).status != 'deputy' and cat_class.all_cats.get(
+                    mentor).status != 'leader' or cat_class.all_cats.get(mentor).dead:
                 mentor = choice(game.clan.clan_cats)
-            self.mentor = self.all_cats.get(mentor)
-            self.all_cats.get(mentor).apprentice = self
+            self.mentor = cat_class.all_cats.get(mentor)
+            cat_class.all_cats.get(mentor).apprentice.append(self)
         # update class dictionary
         self.all_cats[self.ID] = self
 
