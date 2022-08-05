@@ -203,7 +203,8 @@ class Clan(object):
             game.clan.age = int(general[1])
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
             game.clan.leader_lives, game.clan.leader_predecessors = int(leader_info[1]), int(leader_info[2])
-            game.clan.deputy_predecessors = int(deputy_info[1])
+            if len(deputy_info) > 1:
+                game.clan.deputy_predecessors = int(deputy_info[1])
             game.clan.med_cat_predecessors = int(med_cat_info[1])
 
             # instructor
