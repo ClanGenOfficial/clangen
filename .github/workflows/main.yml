@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: "pip3 install pygame pyinstaller"
-      - run: "pyinstaller --onefile -w -n Clangen main.py"
+      - run: "pyinstaller --onefile -w -n Clangen -i resources/icon.png main.py"
       - run: "mkdir dist/Clangen.app/Contents/Resources/sprites"
       - run: "mkdir dist/Clangen.app/Contents/Resources/saves"
       - run: "mkdir dist/Clangen.app/Contents/Resources/resources"
@@ -15,9 +15,9 @@ jobs:
       - run: "cp saves/* dist/Clangen.app/Contents/Resources/saves"
       - run: "cp resources/* dist/Clangen.app/Contents/Resources/resources"
       - run: "rm dist/Clangen"
-      - run: "zip -r macos.zip *"
-        working-directory: ./dist
+      - run: "ln -s /Applications/ dist/"
+      - run: "hdiutil create Clangen.dmg -ov -volname 'Clangen' -fs HFS+ -format UDZO -srcfolder './dist/'"
       - uses: actions/upload-artifact@v3
         with:
           name: release
-          path: dist/macos.zip
+          path: Clangen.dmg
