@@ -1270,7 +1270,7 @@ class AllegiancesScreen(Screens):
 
         verdana.text("APPRENTICES:", (30, 300 + 30 * cat_count))
         for j in range(len(living_cats)):
-            if str(living_cats[j].status) == 'apprentice':
+            if str(living_cats[j].status) == 'apprentice' or str(living_cats[j].status) == 'medicine cat apprentice':
                 verdana.text(
                     str(living_cats[j].name) + " - a " + str(living_cats[j].pelt.colour).lower() + ' ' + str(
                         living_cats[j].pelt.length).lower() + "-furred " + str(living_cats[j].gender),
