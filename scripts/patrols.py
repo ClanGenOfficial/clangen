@@ -154,7 +154,7 @@ class Patrol(object):
                         self.patrol_cats[i].experience = 80
                     experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                         'very high', 'master', 'max']
-                    self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 5)]
+                    self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
             else:
                 self.patrol_result_text = self.patrol_event[3]
 
@@ -447,7 +447,7 @@ class Patrol(object):
                             experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                                 'very high', 'master', 'max']
                             self.patrol_cats[i].experience_level = experiencelevels[
-                                floor(self.patrol_cats[i].experience / 5)]
+                                floor(self.patrol_cats[i].experience / 10)]
                     return
 
         if self.patrol_event[0] == 14:
@@ -468,7 +468,7 @@ class Patrol(object):
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
                         self.patrol_cats[i].experience_level = experiencelevels[
-                            floor(self.patrol_cats[i].experience / 5)]
+                            floor(self.patrol_cats[i].experience / 10)]
                 return
 
         if self.patrol_event[0] == 16:
