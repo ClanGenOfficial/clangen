@@ -123,7 +123,7 @@ class Name(object):
                    "Mojo", "Kate", "Carmen", "Mange", "Chase", "Socks", "Tabby", "Jay", "Charlie",
                    "Crunchwrap", "Meow-meow", "Bede", "Smores", "Evilface", "Nick", "Mitski", "Ash", "Ah", "Violet",
                    "Alcina", "Worm", "Monika", "Rat", "Bongo", "Bunny", "Viktor", "Steve", "Jewels", "Blu", "Rue",
-                   "Stinky", "Garnet", "Anita", "Sloane", "Emi", "Vivienne", "Ambers", "Moon", "Twilight", "River",
+                   "Stinky", "Garnet", "Anita", "Sloane", "Emi", "Vivienne", "Amber", "Moon", "Twilight", "River",
                    "Glass", "Goose", "Hunter", "Amity", "Stripes", "Cowbell", "Rory", "Lobster", "Slug", "Starfish",
                    "Salmon", "Judy", "Johnny", "Kerry", "Evelyn", "Holly", "Bolt", "Millie", "Jessica", "Laku",
                    "Dragonfly", "X’ek", "Silva", "Dreamy", "Decay", "Twister", "Shay", "Louis", "Oleander", "Spots",

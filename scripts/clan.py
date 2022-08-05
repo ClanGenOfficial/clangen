@@ -42,7 +42,7 @@ class Clan(object):
             self.leader_predecessors = 0
             self.clan_cats.append(self.leader.ID)
             self.deputy = deputy
-            if (deputy is not None):
+            if deputy is not None:
                 self.deputy.status_change('deputy')
                 self.clan_cats.append(self.deputy.ID)
             self.deputy_predecessors = 0
@@ -198,7 +198,8 @@ class Clan(object):
                 instructor_info = sections[4]  # instructor ID
                 members = sections[5].split(',')  # rest of the members in order
 
-            game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]], cat_class.all_cats.get(deputy_info[0], None),
+            game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]],
+                             cat_class.all_cats.get(deputy_info[0], None),
                              cat_class.all_cats[med_cat_info[0]])
             game.clan.age = int(general[1])
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]

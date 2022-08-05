@@ -250,7 +250,6 @@ class Cat(object):
         if not cat.dead:
             cat.moons += 1
             if cat.status == 'deputy':
-                deputy = cat
                 if game.clan.deputy is None:
                     game.clan.deputy = cat
             if cat.moons > self.age_moons[cat.age][1]:
@@ -260,36 +259,21 @@ class Cat(object):
                 # change the status
                 if cat.status == 'kitten' and cat.age == 'adolescent':
                     cat.status_change('apprentice')
-                    if game.cur_events_list is not None:
-                        game.cur_events_list.append(str(cat.name) + ' has started their apprenticeship')
-                    else:
-                        game.cur_events_list = [str(cat.name) + ' has started their apprenticeship']
+                    game.cur_events_list.append(str(cat.name) + ' has started their apprenticeship')
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
                     cat.status_change('warrior')
-                    if game.cur_events_list is not None:
-                        game.cur_events_list.append(str(cat.name) + ' has earned their warrior name')
-                    else:
-                        game.cur_events_list = [str(cat.name) + ' has earned their warrior name']
+                    game.cur_events_list.append(str(cat.name) + ' has earned their warrior name')
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
                     cat.status_change('medicine cat')
-                    if game.cur_events_list is not None:
-                        game.cur_events_list.append(str(cat.name) + ' has earned their medicine cat name')
+                    game.cur_events_list.append(str(cat.name) + ' has earned their medicine cat name')
                     game.clan.new_medicine_cat(cat)
                 elif cat.status == 'warrior' and cat.age == 'elder':
                     cat.status_change('elder')
-                    if game.cur_events_list is not None:
-                        game.cur_events_list.append(str(cat.name) + ' has retired to the elder den')
-                    else:
-                        game.cur_events_list = [str(cat.name) + ' has retired to the elder den']
+                    game.cur_events_list.append(str(cat.name) + ' has retired to the elder den')
                 elif cat.status == 'deputy' and cat.age == 'elder':
                     cat.status_change('elder')
                     game.clan.deputy = None
-                    if game.cur_events_list is not None:
-                        game.cur_events_list.append(
-                            'The deputy ' + str(cat.name) + ' has retired to the elder den')
-                    else:
-                        game.cur_events_list = ['The deputy ' + str(cat.name) + ' has retired to the elder den']
-
+                    game.cur_events_list.append('The deputy ' + str(cat.name) + ' has retired to the elder den')
     def gain_scars(self, cat):
         # gaining scars with age
         if cat.specialty is None:
