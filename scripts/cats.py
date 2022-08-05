@@ -1073,6 +1073,60 @@ class Cat(object):
                 if attr == 'mentor':
                     new_cat.mentor = value
 
+    def describe_color(self):
+        color_name = ''
+        if self.pelt.name == 'SingleColour' or self.pelt.name == 'TwoColour':
+            color_name = str(self.pelt.colour).lower()
+        elif self.pelt.name == "Tabby":
+            color_name = str(self.pelt.colour).lower() + ' tabby'
+        elif self.pelt.name == "Speckled":
+            color_name = str(self.pelt.colour).lower() + ' speckled'
+        elif self.pelt.name == "Tortie" or self.pelt.name == "Calico":
+            color_name = 'tortie' #check for calico or for white later
+        
+
+        #not enough to comment on
+        if self.white_patches is None or self.white_patches in ['EXTRA']:
+            color_name = color_name
+        #enough to comment but not make calico
+        elif self.white_patches in ['LITTLE', 'LITTLECREAMY','LIGHTTUXEDO', 'BUZZARDFANG']:
+            color_name = color_name + ' and white'
+        # and white
+        elif self.white_patches in ['ANY', 'TUXEDO', 'ANY2', 'ANYCREAMY', 'TUXEDOCREAMY', 'ANY2CREAMY','BROKEN']:
+            if color_name == 'tortie':
+                color_name = 'calico'
+            else:
+                color_name = color_name + ' and white'
+        #white and
+        elif self.white_patches in ['VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG']:
+            color_name = 'white and ' + color_name
+        #colorpoint
+        elif self.white_patches in ['COLOURPOINT', 'RAGDOLL', 'COLOURPOINTCREAMY']:
+            color_name = color_name + ' point'
+            if color_name == 'darkginger point':
+                color_name = 'flame point'
+        #vitiligo
+        elif self.white_patches in ['VITILIGO']:
+            color_name = color_name + ' with vitiligo'
+        else:
+            color_name = color_name + ' color error'
+        
+        if color_name == 'tortie':
+            color_name = 'tortoiseshell'
+
+        if color_name == 'white and white':
+            color=name = 'white'
+
+        return color_name
+
+    def describe_cat(self):
+        if self.gender == 'male':
+            sex = 'tom'
+        else:
+            sex = 'she-cat'
+        description = self.describe_color()
+        description += ' ' + str(self.pelt.length).lower() + '-furred ' + sex
+        return description
 
 # CAT CLASS ITEMS
 cat_class = Cat(example=True)
