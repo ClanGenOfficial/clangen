@@ -294,6 +294,8 @@ class StarClanScreen(Screens):
         buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
         buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
 
+    def screen_switches(self):
+        cat_profiles()
 
 class MakeClanScreen(Screens):
     def first_phase(self):
@@ -773,6 +775,9 @@ class ProfileScreen(Screens):
             buttons.draw_button(('center', -70), text='Switch to warrior apprentice', apprentice_switch=the_cat)
 
         buttons.draw_button(('center', -100), text='Back', cur_screen=game.switches['last_screen'])
+    
+    def screen_switches(self):
+        cat_profiles()
 
 
 class SingleEventScreen(Screens):
@@ -821,7 +826,7 @@ class ViewChildrenScreen(Screens):
 
         siblings = False
         for x in game.clan.clan_cats:
-            if (cat_class.all_cats[x].parent1 in (the_cat.parent1, the_cat.parent2) or cat_class.all_cats[x].parent2 in (the_cat.parent1, the_cat.parent2)) and the_cat.ID != cat_class.all_cats[x].ID and the_cat.parent1 is not None:
+            if (cat_class.all_cats[x].parent1 in (the_cat.parent1, the_cat.parent2) or (cat_class.all_cats[x].parent2 in (the_cat.parent1, the_cat.parent2) and the_cat.parent2 is not None)) and the_cat.ID != cat_class.all_cats[x].ID and the_cat.parent1 is not None and cat_class.all_cats[x].parent1 is not None:
                 buttons.draw_button((40 + pos_x, 220 + pos_y), image=cat_class.all_cats[x].sprite,
                                     cat=cat_class.all_cats[x].ID,
                                     cur_screen='profile screen')
@@ -861,6 +866,9 @@ class ViewChildrenScreen(Screens):
             verdana.text('This cat has never had offspring.', ('center', 400))
 
         buttons.draw_button(('center', -100), text='Back', cur_screen='profile screen')
+
+    def screen_switches(self):
+        cat_profiles()
 
 
 class ChooseMateScreen(Screens):
@@ -985,6 +993,7 @@ class ChooseMateScreen(Screens):
 
     def screen_switches(self):
         game.switches['mate'] = None
+        cat_profiles()
 
 
 class ListScreen(Screens):
@@ -1047,6 +1056,9 @@ class ListScreen(Screens):
         buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
         buttons.draw_button((-70, 50), text='List Cats', available=False)
         buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
+
+    def screen_switches(self):
+        cat_profiles()
 
 
 class PatrolScreen(Screens):
@@ -1132,6 +1144,7 @@ class PatrolScreen(Screens):
         game.switches['cat'] = None
         game.patrol_cats = {}
         game.switches['event'] = 0
+        cat_profiles()
 
 
 class PatrolEventScreen(Screens):
@@ -1175,6 +1188,7 @@ class PatrolEventScreen(Screens):
     def screen_switches(self):
         patrol.new_patrol()
         game.switches['event'] = 0
+        cat_profiles()
 
 
 class Color:
