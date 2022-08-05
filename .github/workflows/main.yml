@@ -6,7 +6,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - run: "pip3 install pygame pyinstaller"
+      - run: "pip3 install pygame pyinstaller PIL"
       - run: "pyinstaller --onefile -w -n Clangen -i resources/icon.png main.py"
       - run: "mkdir dist/Clangen.app/Contents/Resources/sprites"
       - run: "mkdir dist/Clangen.app/Contents/Resources/saves"
