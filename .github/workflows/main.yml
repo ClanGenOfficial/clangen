@@ -7,13 +7,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: "pip3 install pygame pyinstaller"
-      - run: "pyinstaller --onefile main.py"
-      - run: "mkdir dist/sprites"
-      - run: "mkdir dist/saves"
-      - run: "mkdir dist/resources"
-      - run: "cp sprites/* dist/sprites"
-      - run: "cp saves/* dist/saves"
-      - run: "cp resources/* dist/resources"
+      - run: "pyinstaller --onefile -w -n Clangen main.py"
+      - run: "mkdir dist/Clangen.app/Contents/Resources/sprites"
+      - run: "mkdir dist/Clangen.app/Contents/Resources/saves"
+      - run: "mkdir dist/Clangen.app/Contents/Resources/resources"
+      - run: "cp sprites/* dist/Clangen.app/Contents/Resources/sprites"
+      - run: "cp saves/* dist/Clangen.app/Contents/Resources/saves"
+      - run: "cp resources/* dist/Clangen.app/Contents/Resources/resources"
+      - run: "rm dist/Clangen"
       - run: "zip -r macos.zip *"
         working-directory: ./dist
       - uses: actions/upload-artifact@v3
