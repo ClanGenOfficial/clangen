@@ -1,10 +1,12 @@
-import sys
+import sys, os
 
 from scripts.screens import *
 
 # apparently mac executables need the directory to be spelled out for it
-dir_path = os.path.sep.join(sys.argv[0].split(os.path.sep)[:-1])
-os.chdir(dir_path)
+if os.system() == "Darwin"
+    dir = os.path.dirname(os.path.abspath(__file__))
+    print(f"Changing working directory to: {dir}")
+    os.chdir(dir)
 
 # P Y G A M E
 clock = pygame.time.Clock()
