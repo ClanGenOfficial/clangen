@@ -577,6 +577,8 @@ class EventsScreen(Screens):
                 else:
                     verdana.text(game.cur_events_list[x], ('center', 260 + a * 30))
                 a += 1
+        else:
+            verdana.text("Nothing significant happened this moon.", ('center', 260 + a * 30))
         # buttons
         buttons.draw_button((260, 70), text='EVENTS', available=False)
         buttons.draw_button((340, 70), text='CLAN', cur_screen='clan screen')
