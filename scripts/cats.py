@@ -518,10 +518,11 @@ class Cat(object):
                         str(cat.name) + ' died in an accident at ' + str(cat.moons) + ' moons old')
 
         if cat.moons > randint(150, 200):  # Cat dies of old age
-            cat.dies()
-            if game.cur_events_list is not None:
-                game.cur_events_list.append(
-                    str(cat.name) + ' has passed away at ' + str(cat.moons) + ' moons old')
+            if choice([1, 2, 3, 4]) == 1:
+                cat.dies()
+                if game.cur_events_list is not None:
+                    game.cur_events_list.append(
+                        str(cat.name) + ' has passed away at ' + str(cat.moons) + ' moons old')
 
     def dies(self):  # This function is called every time a cat dies
         self.dead = True
