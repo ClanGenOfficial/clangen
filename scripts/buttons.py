@@ -69,7 +69,7 @@ class Button(object):
         # fill in non-image button
         if image is None:
             new_button.fill(colour)
-            self.font.text(text, self.padding, new_button)
+            self.font.text(text, (self.padding[0], 0), new_button)
             self.used_screen.blit(new_button, new_pos)
         elif dynamic_image:
             new_button = pygame.image.load(image + ".png")
