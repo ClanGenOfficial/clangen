@@ -981,7 +981,7 @@ class Cat(object):
                         the_cat.specialty2 = None
 
                     if len(attr) > 30:
-                        the_cat.experience = attr[30]
+                        the_cat.experience = int(attr[30])
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
                         the_cat.experience_level = experiencelevels[math.floor(int(the_cat.experience) / 10)]
