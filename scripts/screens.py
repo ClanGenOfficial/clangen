@@ -1204,13 +1204,7 @@ class AllegiancesScreen(Screens):
             buttons.draw_button((720, 250), image=game.up, arrow="UP")
             buttons.draw_button((700, 550), image=game.down, arrow="DOWN")
 
-        buttons.draw_button((260, 70), text='EVENTS', cur_screen='events screen')
-        buttons.draw_button((340, 70), text='CLAN', cur_screen='clan screen')
-        buttons.draw_button((400, 70), text='STARCLAN', cur_screen='starclan screen')
-        buttons.draw_button((500, 70), text='PATROL', cur_screen='patrol screen')
-        buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
-        buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
-        buttons.draw_button((-70, 80), text='Allegiances', available=False)
+        draw_menu_buttons()
 
     def screen_switches(self):
         # make a list of just living cats
