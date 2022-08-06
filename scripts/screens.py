@@ -655,7 +655,8 @@ class ProfileScreen(Screens):
         if len(the_cat.former_apprentices) != 0:
             former_apps = ''
             for cat in the_cat.former_apprentices:
-                former_apps = former_apps + str(cat.name) + ' ,'
+                former_apps = former_apps + str(cat.name) + ', '
+            former_apps = former_apps[:len(former_apps)-2]
             verdana_small.text('former apprentice(s): ' + former_apps, (450, 330 + count2 * 15))
             count2 += 1
         if the_cat.age == 'kitten':
