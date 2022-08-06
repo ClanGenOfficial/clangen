@@ -90,6 +90,10 @@ class Patrol(object):
 
         if self.patrol_event[10] != 0 and self.patrol_event[10] in self.patrol_traits:
             self.patrol_stat_cat = self.patrol_cats[self.patrol_traits.index(self.patrol_event[10])]
+        
+        if self.patrol_event[10] != 0 and self.patrol_event[10] in self.patrol_skills:
+            self.patrol_stat_cat = self.patrol_cats[self.patrol_skills.index(self.patrol_event[10])]
+        
 
         # replace names in the patrol_events
         # also do random cat
@@ -501,9 +505,6 @@ class Patrol(object):
                 if int(game.clan.deputy.experience) > 39:
                     self.success = True
 
-                # stuff that happens during calculations
-                if game.clan.deputy.experience > 39:
-                    self.success = True
 
                 return
             else:
