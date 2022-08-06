@@ -1134,7 +1134,7 @@ class PatrolScreen(Screens):
                                         cat=u)
                     random_options.append(game.patrol_cats[u])
 
-        if len(random_options)>0:
+        if len(random_options)>0 and len(game.switches['current_patrol']) < 6:
             random_patrol = choice(random_options)
             buttons.draw_button(('center', 530), text='Add Random', current_patrol=random_patrol, add=True)
         else:
