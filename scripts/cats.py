@@ -37,6 +37,7 @@ class Cat(object):
         self.eye_colour = eye_colour
         self.mentor = None
         self.apprentice = []
+        self.former_apprentices = []
         self.mate = None
         self.placement = None
         self.example = example
@@ -58,7 +59,6 @@ class Cat(object):
         else:
             self.trait = self.trait = choice(self.kit_traits)
             self.skill = '???'
-        # gender
         if self.gender is None:
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
@@ -260,6 +260,9 @@ class Cat(object):
                     cat.status_change('apprentice')
                     game.cur_events_list.append(str(cat.name) + ' has started their apprenticeship')
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
+                    if cat.mentor is not None:
+                        cat.mentor.apprentice.remove(cat)
+                        cat.mentor.former_apprentices.append(cat)
                     cat.status_change('warrior')
                     game.cur_events_list.append(str(cat.name) + ' has earned their warrior name')
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
@@ -721,6 +724,7 @@ class Cat(object):
                 mentor = choice(game.clan.clan_cats)
             self.mentor = cat_class.all_cats.get(mentor)
             cat_class.all_cats.get(mentor).apprentice.append(self)
+
         # update class dictionary
         self.all_cats[self.ID] = self
 
