@@ -1295,7 +1295,7 @@ class AllegiancesScreen(Screens):
 
         cat_count = 0
         for j in range(len(living_cats)):
-            if str(living_cats[j].status) == 'apprentice':
+            if str(living_cats[j].status) == 'apprentice' or str(living_cats[j].status) == 'medicine cat apprentice':
                 if not cat_count:
                     game.allegiance_list.append(['APPRENTICES:', str(living_cats[j].name) + " - a " + living_cats[j].describe_cat()])
                 else: 
