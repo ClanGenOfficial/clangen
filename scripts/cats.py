@@ -502,7 +502,8 @@ class Cat(object):
     def dies(self):  # This function is called every time a cat dies
         self.dead = True
         if (self.status == 'apprentice'):
-            self.mentor.apprentice.remove(self)
+            if self in self.mentor.apprentice:
+                self.mentor.apprentice.remove(self)
             self.mentor.former_apprentices.append(self)
         game.clan.add_to_starclan(self)
 
