@@ -63,8 +63,6 @@ class Clan(object):
         self.add_cat(self.instructor)
 
         key_copy = tuple(cat_class.all_cats.keys())
-        print(key_copy)
-        print(cat_class.all_cats.keys())
         for i in key_copy:  # Going through all currently existing cats
             # cat_class is a Cat-object
             not_found = True

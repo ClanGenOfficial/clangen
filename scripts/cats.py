@@ -36,6 +36,7 @@ class Cat(object):
         self.pelt = pelt
         self.eye_colour = eye_colour
         self.mentor = None
+        self.former_mentor = []
         self.apprentice = []
         self.former_apprentices = []
         self.mate = None
@@ -243,14 +244,14 @@ class Cat(object):
     def perform_ceremonies(self,
                            cat):  # This function is called when apprentice/warrior/other ceremonies are performed every moon
         if game.clan.leader.dead and game.clan.deputy is not None:
-                game.clan.new_leader(game.clan.deputy)
-                game.cur_events_list.append(
-                    str(game.clan.deputy.name) + ' has been promoted to the new leader of the clan')
-                game.clan.deputy = None
+            game.clan.new_leader(game.clan.deputy)
+            game.cur_events_list.append(
+                str(game.clan.deputy.name) + ' has been promoted to the new leader of the clan')
+            game.clan.deputy = None
         if not cat.dead:
             cat.moons += 1
             if cat.status == 'deputy' and game.clan.deputy is None:
-                    game.clan.deputy = cat
+                game.clan.deputy = cat
             if cat.moons > self.age_moons[cat.age][1]:
                 # Give the cat a new age group, if old enough
                 if cat.age != 'elder':
@@ -310,10 +311,10 @@ class Cat(object):
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
                 if cat.specialty2 == 'NOTAIL':
                     game.cur_events_list.append(str(cat.name) + ' lost their tail to a ' + choice(
-                        ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'tree']))
+                        ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'tree', 'badger', 'enemy warrior']))
                 else:
                     game.cur_events_list.append(str(cat.name) + ' earned a scar fighting a ' + choice(
-                        ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'badger']))
+                        ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'badger', 'enemy warrior']))
             else:
                 cat.specialty2 = None
 
@@ -446,7 +447,7 @@ class Cat(object):
 
                 elif event_choice == 5:
 
-                    # if has mate adopts kit, otherwise two invite in new cat
+                    # if cat has mate adopts kit, otherwise two invite in new cat
                     if randint(1, 4) < 4 and cat.status != 'kitten':
                         kit = Cat(moons=0)
                         game.clan.add_cat(kit)
@@ -499,6 +500,9 @@ class Cat(object):
 
     def dies(self):  # This function is called every time a cat dies
         self.dead = True
+        if (self.status == 'apprentice'):
+            self.mentor.apprentice.remove(self)
+            self.mentor.former_apprentices.append(self)
         game.clan.add_to_starclan(self)
 
     def have_kits(self):
