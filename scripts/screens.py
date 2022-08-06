@@ -643,17 +643,26 @@ class ProfileScreen(Screens):
                 the_cat.mentor = cat_class.all_cats.get(mentor)
                 cat_class.all_cats.get(mentor).apprentice.append(the_cat)
         if len(the_cat.apprentice) != 0:
-            verdana_small.text('apprentice: ' + str(the_cat.apprentice[0].name), (450, 330 + count2 * 15))
+            app_text = ''
+            if len(the_cat.apprentice) == 1:
+                app_text = 'apprentice: ' + str(the_cat.apprentice[0].name)
+            else:
+                app_text = 'apprentices: '
+                for cat in the_cat.apprentice:
+                    app_text += str(cat.name) + ', '
+                app_text = app_text[:len(app_text)-2]
+            verdana_small.text(app_text, (450, 330 + count2 * 15))
             count2 += 1
         if len(the_cat.former_apprentices) != 0:
             former_apps = ''
             if len(the_cat.former_apprentices) == 1:
-                former_apps = str(the_cat.former_apprentices[0].name)
+                former_apps = 'former apprentice: ' + str(the_cat.former_apprentices[0].name)
             else:
+                former_apps = 'former apprentices: '
                 for cat in the_cat.former_apprentices:
-                    former_apps = cat.name + ' ,'
+                    former_apps += str(cat.name) + ', '
                 former_apps = former_apps[:len(former_apps)-2]
-            verdana_small.text('former apprentice(s): ' + former_apps, (450, 330 + count2 * 15))
+            verdana_small.text(former_apps, (450, 330 + count2 * 15))
             count2 += 1
 
         if the_cat.age == 'kitten':
