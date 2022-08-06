@@ -235,7 +235,7 @@ class Cat(object):
                         break
             if not has_med:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no medicine cat!")
-            if game.clan.deputy == 0 or game.clan.deputy is None:
+            if game.clan.deputy == 0 or game.clan.deputy is None or game.clan.deputy.dead:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no deputy!")
             if game.clan.leader.dead:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no leader!")
@@ -262,7 +262,8 @@ class Cat(object):
                     game.cur_events_list.append(str(cat.name) + ' has started their apprenticeship')
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
                     if cat.mentor is not None:
-                        cat.mentor.apprentice.remove(cat)
+                        if cat in cat.mentor.apprentice:
+                            cat.mentor.apprentice.remove(cat)
                         cat.mentor.former_apprentices.append(cat)
                     cat.status_change('warrior')
                     game.cur_events_list.append(str(cat.name) + ' has earned their warrior name')
