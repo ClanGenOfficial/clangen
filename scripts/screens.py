@@ -145,13 +145,7 @@ class ClanScreen(Screens):
                                     cur_screen='profile screen')
 
         # buttons
-        buttons.draw_button((260, 70), text='EVENTS', cur_screen='events screen')
-        buttons.draw_button((340, 70), text='CLAN', available=False)
-        buttons.draw_button((400, 70), text='STARCLAN', cur_screen='starclan screen')
-        buttons.draw_button((500, 70), text='PATROL', cur_screen='patrol screen')
-        buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
-        buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
-        buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
+        draw_menu_buttons()
         buttons.draw_button(('center', -50), text='Save Clan', save_clan=True)
         verdana.text('Remember to save!', ('center', -20))
 
@@ -280,13 +274,7 @@ class StarClanScreen(Screens):
         #                 pos_y += 100
 
         # buttons
-        buttons.draw_button((260, 70), text='EVENTS', cur_screen='events screen')
-        buttons.draw_button((340, 70), text='CLAN', cur_screen='clan screen')
-        buttons.draw_button((400, 70), text='STARCLAN', available=False)
-        buttons.draw_button((500, 70), text='PATROL', cur_screen='patrol screen')
-        buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
-        buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
-        buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
+        draw_menu_buttons()
 
     def screen_switches(self):
         cat_profiles()
@@ -560,11 +548,7 @@ class EventsScreen(Screens):
         else:
             verdana.text("Nothing significant happened this moon.", ('center', 260 + a * 30))
         # buttons
-        buttons.draw_button((260, 70), text='EVENTS', available=False)
-        buttons.draw_button((340, 70), text='CLAN', cur_screen='clan screen')
-        buttons.draw_button((400, 70), text='STARCLAN', cur_screen='starclan screen')
-        buttons.draw_button((500, 70), text='PATROL', cur_screen='patrol screen')
-        buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
+        draw_menu_buttons()
 
         if len(game.cur_events_list) > game.max_events_displayed:
             buttons.draw_button((720, 250), image=game.up, arrow="UP")
@@ -645,19 +629,24 @@ class ProfileScreen(Screens):
         if len(the_cat.apprentice) != 0:
             apps = ''
             if len(the_cat.apprentice) == 1:
-                apps = str(the_cat.apprentice[0].name)
+                apps = 'apprentice: ' + str(the_cat.apprentice[0].name)
             else:
+                apps = 'apprentices: '
                 for cat in the_cat.apprentice:
-                    apps = apps + str(cat.name) + ', '
-                apps = apps[:len(apps) - 2]
-            verdana_small.text('apprentice: ' + apps, (450, 330 + count2 * 15))
+                    apps += str(cat.name) + ', '
+                apps = apps[:len(apps)-2]
+            verdana_small.text(apps, (450, 330 + count2 * 15))
             count2 += 1
         if len(the_cat.former_apprentices) != 0:
             former_apps = ''
-            for cat in the_cat.former_apprentices:
-                former_apps = former_apps + str(cat.name) + ', '
-            former_apps = former_apps[:len(former_apps)-2]
-            verdana_small.text('former apprentice(s): ' + former_apps, (450, 330 + count2 * 15))
+            if len(the_cat.former_apprentices) == 1:
+                former_apps = 'former apprentice: ' + str(the_cat.former_apprentices[0].name)
+            else:
+                former_apps = 'former apprentices: '
+                for cat in the_cat.former_apprentices:
+                    former_apps += str(cat.name) + ', '
+                former_apps = former_apps[:len(former_apps)-2]
+            verdana_small.text(former_apps, (450, 330 + count2 * 15))
             count2 += 1
         if the_cat.age == 'kitten':
             verdana_small.text('young', (300, 330 + count * 15))
@@ -1062,13 +1051,7 @@ class ListScreen(Screens):
             buttons.draw_button((-300, 600), text='>', list_page=game.switches['list_page'] + 1)
 
         # buttons
-        buttons.draw_button((260, 70), text='EVENTS', cur_screen='events screen')
-        buttons.draw_button((340, 70), text='CLAN', cur_screen='clan screen')
-        buttons.draw_button((400, 70), text='STARCLAN', cur_screen='starclan screen')
-        buttons.draw_button((500, 70), text='PATROL', cur_screen='patrol screen')
-        buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
-        buttons.draw_button((-70, 50), text='List Cats', available=False)
-        buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
+        draw_menu_buttons()
 
     def screen_switches(self):
         cat_profiles()
@@ -1084,13 +1067,7 @@ class PatrolScreen(Screens):
         # verdana.text('Leader\'s Den', game.clan.cur_layout['leader den'])
 
         # buttons
-        buttons.draw_button((260, 70), text='EVENTS', cur_screen='events screen')
-        buttons.draw_button((340, 70), text='CLAN', cur_screen='clan screen')
-        buttons.draw_button((400, 70), text='STARCLAN', cur_screen='starclan screen')
-        buttons.draw_button((500, 70), text='PATROL', available=False)
-        buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
-        buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
-        buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
+        draw_menu_buttons()
 
         # make a list of patrol eligible cats
         able_cats = []
@@ -1195,13 +1172,7 @@ class PatrolEventScreen(Screens):
         verdana_small.text('patrol traits: ' + str(patrol.patrol_traits), ('center', 460))
 
         # buttons
-        buttons.draw_button((260, 70), text='EVENTS', cur_screen='events screen')
-        buttons.draw_button((340, 70), text='CLAN', cur_screen='clan screen')
-        buttons.draw_button((400, 70), text='STARCLAN', cur_screen='starclan screen')
-        buttons.draw_button((500, 70), text='PATROL', available=False)
-        buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
-        buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
-        buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
+        draw_menu_buttons()
 
     def screen_switches(self):
         patrol.new_patrol()
@@ -1233,13 +1204,7 @@ class AllegiancesScreen(Screens):
             buttons.draw_button((720, 250), image=game.up, arrow="UP")
             buttons.draw_button((700, 550), image=game.down, arrow="DOWN")
 
-        buttons.draw_button((260, 70), text='EVENTS', cur_screen='events screen')
-        buttons.draw_button((340, 70), text='CLAN', cur_screen='clan screen')
-        buttons.draw_button((400, 70), text='STARCLAN', cur_screen='starclan screen')
-        buttons.draw_button((500, 70), text='PATROL', cur_screen='patrol screen')
-        buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
-        buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
-        buttons.draw_button((-70, 80), text='Allegiances', available=False)
+        draw_menu_buttons()
 
     def screen_switches(self):
         # make a list of just living cats
@@ -1279,13 +1244,14 @@ class AllegiancesScreen(Screens):
         queens = []
         for j in range(len(living_cats)):
             if str(living_cats[j].status) == 'kitten':
-                if cat_class.all_cats[living_cats[j].parent1].gender == 'male':
-                    if living_cats[j].parent2 is None or cat_class.all_cats[living_cats[j].parent2].gender == 'male':
+                if living_cats[j].parent1 is not None:
+                    if cat_class.all_cats[living_cats[j].parent1].gender == 'male':
+                        if living_cats[j].parent2 is None or cat_class.all_cats[living_cats[j].parent2].gender == 'male':
+                            queens.append(living_cats[j].parent1)
+                        elif cat_class.all_cats[living_cats[j].parent2].gender == 'male':
+                            queens.append(living_cats[j].parent2)
+                    else:
                         queens.append(living_cats[j].parent1)
-                    elif cat_class.all_cats[living_cats[j].parent2].gender == 'male':
-                        queens.append(living_cats[j].parent2)
-                else:
-                    queens.append(living_cats[j].parent1)
 
         cat_count = 0
         for j in range(len(living_cats)):
@@ -1360,7 +1326,7 @@ class AllegiancesScreen(Screens):
         #         cat_count += 1
 
         # buttons
-        
+        draw_menu_buttons()
 
 
 class ChooseMentorScreen(Screens):
@@ -1411,13 +1377,7 @@ class ChooseMentorScreen(Screens):
             buttons.draw_button((-300, 600), text='>', list_page=game.switches['list_page'] + 1)
 
         # buttons
-        buttons.draw_button((260, 70), text='EVENTS', cur_screen='events screen')
-        buttons.draw_button((340, 70), text='CLAN', cur_screen='clan screen')
-        buttons.draw_button((400, 70), text='STARCLAN', cur_screen='starclan screen')
-        buttons.draw_button((500, 70), text='PATROL', cur_screen='patrol screen')
-        buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
-        buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
-        buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
+        draw_menu_buttons()
 
 
 # SCREENS
@@ -1450,3 +1410,13 @@ def cat_profiles():
     for x in game.clan.clan_cats:
         game.choose_cats[x] = cat_class.all_cats[x]
         game.choose_cats[x].update_sprite()
+
+
+def draw_menu_buttons():
+    buttons.draw_button((260, 70), text='EVENTS', cur_screen='events screen')
+    buttons.draw_button((340, 70), text='CLAN', cur_screen='clan screen')
+    buttons.draw_button((400, 70), text='STARCLAN', cur_screen='starclan screen')
+    buttons.draw_button((500, 70), text='PATROL', cur_screen='patrol screen')
+    buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
+    buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
+    buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')

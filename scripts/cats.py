@@ -983,7 +983,7 @@ class Cat(object):
                         the_cat.specialty2 = None
 
                     if len(attr) > 30:
-                        the_cat.experience = attr[30]
+                        the_cat.experience = int(attr[30])
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
                         the_cat.experience_level = experiencelevels[math.floor(int(the_cat.experience) / 10)]
@@ -1004,9 +1004,12 @@ class Cat(object):
                     if len(attr) > 31:
                         the_cat.dead_for = int(attr[31])
                     the_cat.skill = attr[22]
-                    the_cat.mentor = cat_class.all_cats.get(attr[8])
 
             for n in self.all_cats.values():
+                # Load the mentors and apprentices after all cats have been loaded
+                n.mentor = cat_class.all_cats.get(n.mentor)
+                if n.mentor:
+                    n.mentor.apprentice.append(n)
                 n.update_sprite()
 
     def load(self, cat_dict):
