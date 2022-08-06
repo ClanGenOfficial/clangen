@@ -24,8 +24,13 @@ class Patrol(object):
         self.patrol_stat_cat = None
         # [#,prompt,win,lose,decline,threshold,reward,size,status,season,trait,function,autowin skills]
         self.patrol_events = []
-        self.eligable_events = []
+        self.eligible_events = []
         self.patrol_result_text = ''
+
+        self.experience_levels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
+                                        'very high', 'master', 'max']
+        # 0 vl -> 2 l -> 4 sl -> 7 a -> 10 sh -> 15 h -> 20 vh -> 25 m -> 35 max
+
 
     # get patrol personalities, patrol total experience, patrol max experience
     def new_patrol(self):
@@ -44,7 +49,7 @@ class Patrol(object):
         self.patrol_random_cat = None
         self.patrol_stat_cat = None
         self.patrol_result_text = ''
-        self.eligable_events = []
+        self.eligible_events = []
         # calculate random cat here
         self.patrol_random_cat = choice(self.patrol_cats)
 
@@ -64,21 +69,21 @@ class Patrol(object):
                 continue
             if test_event[7] == 2 and self.patrol_size == 1:
                 continue
-            if test_event[10] != 0 and test_event[10] not in self.patrol_traits:
+            if test_event[10] != 0 and test_event[10] not in self.patrol_traits and test_event[10] not in self.patrol_skills:
                 continue
             if test_event[9] != 0 and test_event[9] != game.clan.current_season:
                 continue
             if test_event[8] != 0 and test_event[8] not in self.patrol_statuses:
                 continue
 
-            self.eligable_events.append(test_event)
+            self.eligible_events.append(test_event)
             # 11 is function
             # 10 is trait
             # 9 is season
             # 8 is status
             # 7 is cat numbers
 
-        self.patrol_event = choice(self.eligable_events)
+        self.patrol_event = choice(self.eligible_events)
 
         if self.patrol_event[0] == 36:
             self.patrol_event[5] = 30 * self.patrol_size
@@ -401,7 +406,13 @@ class Patrol(object):
             else:
                 # cripples random cat
                 if not self.success:
-                    self.patrol_random_cat.status_change('elder')
+                    if self.patrol_random_cat.status == 'deputy':
+                        game.clan.deputy = None
+                    if self.patrol_random_cat.status == 'leader':
+                        self.patrol_random_cat.experience = 0
+                        self.patrol_result_text = self.patrol_random_cat.name + ' is crippled by a Monster and has to relearn everything.'
+                    else:
+                        self.patrol_random_cat.status_change('elder')
                     self.patrol_random_cat.skill = choice(['paralyzed', 'blind', 'missing a leg'])
                     return
 
@@ -768,7 +779,7 @@ class Patrol(object):
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
                     self.patrol_cats.append(kit)
-                return
+
 
 
 patrol = Patrol()

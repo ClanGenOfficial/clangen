@@ -22,7 +22,7 @@ class Font(object):
         self.colour = colour
 
     def text(self, text, pos=None, where=used_screen):
-        t = self.font.render(text, 1, self.colour)
+        t = self.font.render(text, True, self.colour)
         if pos is not None:
             # setting on or both items in tuple to 'center' centers the text to the screen.
             # negative pos value will be taken from the other end of the screen
