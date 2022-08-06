@@ -1244,13 +1244,14 @@ class AllegiancesScreen(Screens):
         queens = []
         for j in range(len(living_cats)):
             if str(living_cats[j].status) == 'kitten':
-                if cat_class.all_cats[living_cats[j].parent1].gender == 'male':
-                    if living_cats[j].parent2 is None or cat_class.all_cats[living_cats[j].parent2].gender == 'male':
+                if living_cats[j].parent1 is not None:
+                    if cat_class.all_cats[living_cats[j].parent1].gender == 'male':
+                        if living_cats[j].parent2 is None or cat_class.all_cats[living_cats[j].parent2].gender == 'male':
+                            queens.append(living_cats[j].parent1)
+                        elif cat_class.all_cats[living_cats[j].parent2].gender == 'male':
+                            queens.append(living_cats[j].parent2)
+                    else:
                         queens.append(living_cats[j].parent1)
-                    elif cat_class.all_cats[living_cats[j].parent2].gender == 'male':
-                        queens.append(living_cats[j].parent2)
-                else:
-                    queens.append(living_cats[j].parent1)
 
         cat_count = 0
         for j in range(len(living_cats)):
