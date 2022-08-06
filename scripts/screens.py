@@ -643,7 +643,14 @@ class ProfileScreen(Screens):
                 the_cat.mentor = cat_class.all_cats.get(mentor)
                 cat_class.all_cats.get(mentor).apprentice.append(the_cat)
         if len(the_cat.apprentice) != 0:
-            verdana_small.text('apprentice: ' + str(the_cat.apprentice[0].name), (450, 330 + count2 * 15))
+            apps = ''
+            if len(the_cat.apprentice) == 1:
+                apps = str(the_cat.apprentice[0].name)
+            else:
+                for cat in the_cat.apprentice:
+                    apps = apps + str(cat.name) + ', '
+                apps = apps[:len(apps) - 2]
+            verdana_small.text('apprentice: ' + apps, (450, 330 + count2 * 15))
             count2 += 1
         if len(the_cat.former_apprentices) != 0:
             former_apps = ''
@@ -655,7 +662,6 @@ class ProfileScreen(Screens):
                 former_apps = former_apps[:len(former_apps)-2]
             verdana_small.text('former apprentice(s): ' + former_apps, (450, 330 + count2 * 15))
             count2 += 1
-
         if the_cat.age == 'kitten':
             verdana_small.text('young', (300, 330 + count * 15))
         elif the_cat.age == 'elder':
@@ -1127,7 +1133,7 @@ class PatrolScreen(Screens):
                 else:
                     buttons.draw_button((screen_x - 100, 150 + 50 * (u - 6)), image=game.patrol_cats[u].sprite,
                                         cat=u)
-        buttons.draw_button(('center', 530), text='Add Random', addRandom=True)
+        # buttons.draw_button(('center', 530), text='Add Random', addRandom=True) //TODO
 
         # display cat profile
         if game.switches['cat'] is not None and 12 > game.switches['cat'] >= 0 and \
