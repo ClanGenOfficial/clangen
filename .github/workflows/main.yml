@@ -13,7 +13,7 @@ jobs:
       - run: "mkdir dist/Clangen.app/Data/resources"
       - run: "cp sprites/* dist/Clangen.app/Data/sprites"
       - run: "cp saves/* dist/Clangen.app/Data/saves"
-      - run: "cp resources/* dist/Clangen.app/Dataresources"
+      - run: "cp resources/* dist/Clangen.app/Data/resources"
       - run: "rm dist/Clangen"
       - run: "codesign --force --deep --sign - dist/Clangen.app"
       - run: "ln -s /Applications/ dist/"
