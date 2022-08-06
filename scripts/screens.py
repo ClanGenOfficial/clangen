@@ -1113,6 +1113,7 @@ class PatrolScreen(Screens):
         else:
             i_max = len(game.patrol_cats)
 
+        random_options = []
         # cat buttons / small sprites
         for u in range(6):
             if u < i_max:
@@ -1121,6 +1122,7 @@ class PatrolScreen(Screens):
                 else:
                     buttons.draw_button((50, 150 + 50 * u), image=game.patrol_cats[u].sprite,
                                         cat=u)
+                    random_options.append(game.patrol_cats[u])
 
         for u in range(6, 12):
             if u < i_max:
@@ -1129,7 +1131,13 @@ class PatrolScreen(Screens):
                 else:
                     buttons.draw_button((screen_x - 100, 150 + 50 * (u - 6)), image=game.patrol_cats[u].sprite,
                                         cat=u)
-        # buttons.draw_button(('center', 530), text='Add Random', addRandom=True) //TODO
+                    random_options.append(game.patrol_cats[u])
+
+        if len(random_options)>0:
+            random_patrol = choice(random_options)
+            buttons.draw_button(('center', 530), text='Add Random', current_patrol=random_patrol, add=True)
+        else:
+            buttons.draw_button(('center', 530), text='Add Random', available=False)
 
         # display cat profile
         if game.switches['cat'] is not None and 12 > game.switches['cat'] >= 0 and \
