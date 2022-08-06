@@ -15,7 +15,7 @@ jobs:
       - run: "cp saves/* dist/Clangen.app/Data/saves"
       - run: "cp resources/* dist/Clangen.app/Data/resources"
       - run: "rm dist/Clangen"
-      - run: "codesign --force --deep --sign - dist/Clangen.app"
+      - run: "codesign --force --sign - dist/Clangen.app"
       - run: "ln -s /Applications/ dist/"
       - run: "hdiutil create Clangen.dmg -ov -volname 'Clangen' -fs HFS+ -format UDZO -srcfolder './dist/'"
       - uses: actions/upload-artifact@v3
