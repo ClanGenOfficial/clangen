@@ -922,17 +922,23 @@ class Cat(object):
             # dead_for x moons
             data += ',' + str(x.dead_for)
             # apprentice
-            if x.apprentice is not None:
+            if x.apprentice:
+                data += ','
                 for cat in x.apprentice:
-                    data += ',' + str(cat.ID)
+                    data += str(cat.ID) + ';'
+                # remove last semicolon
+                data = data[:-1]
             else:
-                data += 'None'
+                data += ',' + 'None'
             # former apprentice
-            if x.former_apprentices is not None:
+            if x.former_apprentices:
+                data += ','
                 for cat in x.former_apprentices:
-                    data += ',' + str(cat.ID)
+                    data += str(cat.ID) + ';'
+                # remove last semicolon
+                data = data[:-1]
             else:
-                data += 'None'
+                data += ',' + 'None'
             # next cat
             data += '\n'
 
@@ -1019,11 +1025,28 @@ class Cat(object):
                         the_cat.dead_for = int(attr[31])
                     the_cat.skill = attr[22]
 
+                    if len(attr) > 32 and attr[32] is not None:
+                        the_cat.apprentice = attr[32].split(';')
+                    if len(attr) > 33 and attr[33] is not None:
+                        the_cat.former_apprentices = attr[33].split(';')
+
             for n in self.all_cats.values():
                 # Load the mentors and apprentices after all cats have been loaded
                 n.mentor = cat_class.all_cats.get(n.mentor)
-                if n.mentor:
-                    n.mentor.apprentice.append(n)
+                apps = []
+                former_apps = []
+                for app_id in n.apprentice:
+                    app = cat_class.all_cats.get(app_id)
+                    # Make sure if cat isn't an apprentice, they're a former apprentice
+                    if 'apprentice' in app.status:
+                        apps.append(app)
+                    else:
+                        former_apps.append(app)
+                for f_app_id in n.former_apprentices:
+                    f_app = cat_class.all_cats.get(f_app_id)
+                    former_apps.append(f_app)
+                n.apprentice = apps
+                n.former_apprentices = former_apps
                 n.update_sprite()
 
     def load(self, cat_dict):
