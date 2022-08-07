@@ -722,24 +722,30 @@ class Cat(object):
 
         self.status = new_status
         self.name.status = new_status
-        if new_status == 'apprentice':
-            mentor = choice(game.clan.clan_cats)
-            while cat_class.all_cats.get(mentor).status != 'warrior' and cat_class.all_cats.get(
-                    mentor).status != 'deputy' and cat_class.all_cats.get(
-                mentor).status != 'leader' or cat_class.all_cats.get(mentor).dead:
+        if 'apprentice' in new_status:
+            # In case cat is switching apprentice type,
+            # remove the old mentor
+            if self.mentor:
+                self.mentor.apprentice.remove(self)
+                if self not in self.mentor.former_apprentices:
+                    self.mentor.former_apprentices.append(self)
+            if new_status == 'apprentice':
                 mentor = choice(game.clan.clan_cats)
+                while cat_class.all_cats.get(mentor).status != 'warrior' and cat_class.all_cats.get(
+                        mentor).status != 'deputy' and cat_class.all_cats.get(
+                    mentor).status != 'leader' or cat_class.all_cats.get(mentor).dead:
+                    mentor = choice(game.clan.clan_cats)
+            elif new_status == 'medicine cat apprentice':
+                med_cats = []
+                for cat in game.clan.clan_cats:
+                    if cat_class.all_cats.get(cat).status == 'medicine cat' and not cat_class.all_cats.get(cat).dead:
+                        med_cats.append(cat)
+                mentor = choice(med_cats)
             self.mentor = cat_class.all_cats.get(mentor)
             cat_class.all_cats.get(mentor).apprentice.append(self)
-        elif new_status == 'medicine cat apprentice':
-            self.mentor.apprentice.remove(self)
-            self.mentor.former_apprentices.append(self)
-            med_cats = []
-            for cat in game.clan.clan_cats:
-                if cat_class.all_cats.get(cat).status == 'medicine cat' and not cat_class.all_cats.get(cat).dead:
-                    med_cats.append(cat)
-            mentor = choice(med_cats)
-            self.mentor = cat_class.all_cats.get(mentor)
-            cat_class.all_cats.get(mentor).apprentice.append(self)
+            # Shouldn't be both an apprentice and former apprentice
+            if self in cat_class.all_cats.get(mentor).former_apprentices:
+                cat_class.all_cats.get(mentor).former_apprentices.remove(self)
         # update class dictionary
         self.all_cats[self.ID] = self
 
