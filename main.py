@@ -10,7 +10,7 @@ pygame.display.set_icon(pygame.image.load('resources/icon.png'))
 
 # LOAD cats & clan
 if not os.path.exists('saves/clanlist.txt'):
-    os.mkdir('saves')
+    os.makedirs('saves', exist_ok=True)
     with open('saves/clanlist.txt', 'w') as write_file:
         write_file.write('')
 with open('saves/clanlist.txt', 'r') as read_file:
