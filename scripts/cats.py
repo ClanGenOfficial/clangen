@@ -262,12 +262,18 @@ class Cat(object):
                     game.cur_events_list.append(str(cat.name) + ' has started their apprenticeship')
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
                     if cat.mentor is not None:
-                        cat.mentor.former_apprentices.append(cat)
+                        if cat not in cat.mentor.former_apprentices:
+                            cat.mentor.former_apprentices.append(cat)
                         if cat in cat.mentor.apprentice:
                             cat.mentor.apprentice.remove(cat)
                     cat.status_change('warrior')
                     game.cur_events_list.append(str(cat.name) + ' has earned their warrior name')
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
+                    if cat.mentor is not None:
+                        if cat not in cat.mentor.former_apprentices:
+                            cat.mentor.former_apprentices.append(cat)
+                        if cat in cat.mentor.apprentice:
+                            cat.mentor.apprentice.remove(cat)
                     cat.status_change('medicine cat')
                     game.cur_events_list.append(str(cat.name) + ' has earned their medicine cat name')
                     game.clan.new_medicine_cat(cat)
@@ -722,17 +728,30 @@ class Cat(object):
 
         self.status = new_status
         self.name.status = new_status
-        if new_status == 'apprentice':
-            mentor = choice(game.clan.clan_cats)
-            while cat_class.all_cats.get(mentor).status != 'warrior' and cat_class.all_cats.get(
-                    mentor).status != 'deputy' and cat_class.all_cats.get(
-                mentor).status != 'leader' or cat_class.all_cats.get(mentor).dead:
+        if 'apprentice' in new_status:
+            # In case cat is switching apprentice type,
+            # remove the old mentor
+            if self.mentor:
+                self.mentor.apprentice.remove(self)
+                if self not in self.mentor.former_apprentices:
+                    self.mentor.former_apprentices.append(self)
+            if new_status == 'apprentice':
                 mentor = choice(game.clan.clan_cats)
+                while cat_class.all_cats.get(mentor).status != 'warrior' and cat_class.all_cats.get(
+                        mentor).status != 'deputy' and cat_class.all_cats.get(
+                    mentor).status != 'leader' or cat_class.all_cats.get(mentor).dead:
+                    mentor = choice(game.clan.clan_cats)
+            elif new_status == 'medicine cat apprentice':
+                med_cats = []
+                for cat in game.clan.clan_cats:
+                    if cat_class.all_cats.get(cat).status == 'medicine cat' and not cat_class.all_cats.get(cat).dead:
+                        med_cats.append(cat)
+                mentor = choice(med_cats)
             self.mentor = cat_class.all_cats.get(mentor)
             cat_class.all_cats.get(mentor).apprentice.append(self)
-        elif new_status == 'medicine cat apprentice':
-            self.mentor.apprentice.remove(self)
-            self.mentor.former_apprentices.append(self)
+            # Shouldn't be both an apprentice and former apprentice
+            if self in cat_class.all_cats.get(mentor).former_apprentices:
+                cat_class.all_cats.get(mentor).former_apprentices.remove(self)
         # update class dictionary
         self.all_cats[self.ID] = self
 
@@ -922,17 +941,23 @@ class Cat(object):
             # dead_for x moons
             data += ',' + str(x.dead_for)
             # apprentice
-            if x.apprentice is not None:
+            if x.apprentice:
+                data += ','
                 for cat in x.apprentice:
-                    data += ',' + str(cat.ID)
+                    data += str(cat.ID) + ';'
+                # remove last semicolon
+                data = data[:-1]
             else:
-                data += 'None'
+                data += ',' + 'None'
             # former apprentice
-            if x.former_apprentices is not None:
+            if x.former_apprentices:
+                data += ','
                 for cat in x.former_apprentices:
-                    data += ',' + str(cat.ID)
+                    data += str(cat.ID) + ';'
+                # remove last semicolon
+                data = data[:-1]
             else:
-                data += 'None'
+                data += ',' + 'None'
             # next cat
             data += '\n'
 
@@ -1019,11 +1044,28 @@ class Cat(object):
                         the_cat.dead_for = int(attr[31])
                     the_cat.skill = attr[22]
 
+                    if len(attr) > 32 and attr[32] is not None:
+                        the_cat.apprentice = attr[32].split(';')
+                    if len(attr) > 33 and attr[33] is not None:
+                        the_cat.former_apprentices = attr[33].split(';')
+
             for n in self.all_cats.values():
                 # Load the mentors and apprentices after all cats have been loaded
                 n.mentor = cat_class.all_cats.get(n.mentor)
-                if n.mentor:
-                    n.mentor.apprentice.append(n)
+                apps = []
+                former_apps = []
+                for app_id in n.apprentice:
+                    app = cat_class.all_cats.get(app_id)
+                    # Make sure if cat isn't an apprentice, they're a former apprentice
+                    if 'apprentice' in app.status:
+                        apps.append(app)
+                    else:
+                        former_apps.append(app)
+                for f_app_id in n.former_apprentices:
+                    f_app = cat_class.all_cats.get(f_app_id)
+                    former_apps.append(f_app)
+                n.apprentice = apps
+                n.former_apprentices = former_apps
                 n.update_sprite()
 
     def load(self, cat_dict):
