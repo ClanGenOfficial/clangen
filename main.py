@@ -9,6 +9,10 @@ clock = pygame.time.Clock()
 pygame.display.set_icon(pygame.image.load('resources/icon.png'))
 
 # LOAD cats & clan
+if not os.path.exists('saves/clanlist.txt'):
+    os.mkdir('saves')
+    with open('saves/clanlist.txt', 'w') as write_file:
+        write_file.write('')
 with open('saves/clanlist.txt', 'r') as read_file:
     clan_list = read_file.read()
     if_clans = len(clan_list)
@@ -16,7 +20,11 @@ if if_clans > 0:
     game.switches['clan_list'] = clan_list.split('\n')
     cat_class.load_cats()
     clan_class.load_clan()
+    
 # LOAD settings
+if not os.path.exists('saves/settings.txt'):
+    with open('saves/settings.txt', 'w') as write_file:
+        write_file.write('')
 game.load_settings()
 
 # reset brightness to allow for dark mode to not look crap
