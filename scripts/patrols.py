@@ -414,7 +414,7 @@ class Patrol(object):
                         game.clan.deputy = None
                     if self.patrol_random_cat.status == 'leader':
                         self.patrol_random_cat.experience = 0
-                        self.patrol_result_text = self.patrol_random_cat.name + ' is crippled by a Monster and has to relearn everything.'
+                        self.patrol_result_text = str(self.patrol_random_cat.name) + ' is crippled by a Monster and has to relearn everything.'
                     else:
                         self.patrol_random_cat.status_change('elder')
                     self.patrol_random_cat.skill = choice(['paralyzed', 'blind', 'missing a leg'])
