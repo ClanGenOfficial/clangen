@@ -262,12 +262,18 @@ class Cat(object):
                     game.cur_events_list.append(str(cat.name) + ' has started their apprenticeship')
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
                     if cat.mentor is not None:
-                        cat.mentor.former_apprentices.append(cat)
+                        if cat not in cat.mentor.former_apprentices:
+                            cat.mentor.former_apprentices.append(cat)
                         if cat in cat.mentor.apprentice:
                             cat.mentor.apprentice.remove(cat)
                     cat.status_change('warrior')
                     game.cur_events_list.append(str(cat.name) + ' has earned their warrior name')
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
+                    if cat.mentor is not None:
+                        if cat not in cat.mentor.former_apprentices:
+                            cat.mentor.former_apprentices.append(cat)
+                        if cat in cat.mentor.apprentice:
+                            cat.mentor.apprentice.remove(cat)
                     cat.status_change('medicine cat')
                     game.cur_events_list.append(str(cat.name) + ' has earned their medicine cat name')
                     game.clan.new_medicine_cat(cat)
