@@ -730,7 +730,9 @@ class Cat(object):
                 mentor = choice(game.clan.clan_cats)
             self.mentor = cat_class.all_cats.get(mentor)
             cat_class.all_cats.get(mentor).apprentice.append(self)
-
+        elif new_status == 'medicine cat apprentice':
+            self.mentor.apprentice.remove(self)
+            self.mentor.former_apprentices.append(self)
         # update class dictionary
         self.all_cats[self.ID] = self
 
