@@ -1305,6 +1305,19 @@ class AllegiancesScreen(Screens):
                 cat_count += 1
         if not cat_count:
             game.allegiance_list.append(['ELDERS:', ''])
+        
+        cat_count = 0
+        for j in range(len(living_cats)):
+            if str(living_cats[j].status) == 'kitten':
+                if not cat_count:
+                    game.allegiance_list.append(
+                        ['KITS:', str(living_cats[j].name) + " - a " + living_cats[j].describe_cat()])
+                else:
+                    game.allegiance_list.append(
+                        ['', str(living_cats[j].name) + " - a " + living_cats[j].describe_cat()])
+                cat_count += 1
+        if not cat_count:
+            game.allegiance_list.append(['KITS:', ''])
 
         # buttons
         draw_menu_buttons()
