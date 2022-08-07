@@ -444,7 +444,7 @@ class Cat(object):
                 elif event_choice == 4:
                     # training
                     if cat.status == 'apprentice':
-                        append_str = str(cat.name) + ' trains with their mentor, ' + cat.mentor.name
+                        append_str = str(cat.name) + ' trains with their mentor, ' + str(cat.mentor.name)
                     elif cat.age in ['adolescent', 'young adult', 'adult', 'senior adult']:
                         append_str = str(cat.name) + ' learns some new moves from ' + str(
                             self.all_cats[cat_number].name)
