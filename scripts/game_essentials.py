@@ -14,7 +14,10 @@ class Game(object):
     max_name_length = 10
     max_events_displayed = 10
     event_scroll_ct = 0
+    max_allegiance_displayed = 17
+    allegiance_scroll_ct = 0
     cur_events_list = []
+    allegiance_list = []
 
     down = pygame.image.load("sprites/down.png")
     down = pygame.transform.scale(down, (75, 75))

@@ -8,10 +8,11 @@ class Button(object):
     used_mouse = mouse
 
     def __init__(self, font=verdana, frame_colour=(200, 200, 200), clickable_colour=(150, 150, 150),
-                 unavailable_colour=(120, 120, 120)):
+                 unavailable_colour=(120, 120, 120), padding=(5, 3)):
         self.text = ''
         self.font = font
         self.reset_colour(frame_colour, clickable_colour, unavailable_colour)
+        self.padding = padding
 
     def reset_colour(self, frame_colour, clickable_colour, unavailable_colour):
         self.frame_colour = frame_colour
@@ -38,7 +39,7 @@ class Button(object):
 
         # creating visible button
         if image is None:
-            new_button = pygame.Surface((self.font.text(text) + 10, self.font.size + 6))
+            new_button = pygame.Surface((self.font.text(text) + self.padding[0]*2, self.font.size + self.padding[1]*2))
         elif dynamic_image:
             # this is just store a temporary image to calculate size
             new_button = pygame.image.load(image + ".png")
@@ -68,7 +69,7 @@ class Button(object):
         # fill in non-image button
         if image is None:
             new_button.fill(colour)
-            self.font.text(text, (5, 0), new_button)
+            self.font.text(text, (self.padding[0], 0), new_button)
             self.used_screen.blit(new_button, new_pos)
         elif dynamic_image:
             new_button = pygame.image.load(image + ".png")
@@ -113,7 +114,7 @@ class Button(object):
                         cat_value.mate = None
                     game.switches['mate'] = None
 
-        if arrow is not None:
+        if arrow is not None and game.switches['cur_screen'] == 'events screen':
             max_scroll_direction = len(game.cur_events_list) - game.max_events_displayed
             if arrow == "UP" and game.event_scroll_ct < 0:
                 game.cur_events_list.insert(0, game.cur_events_list.pop())
@@ -121,6 +122,15 @@ class Button(object):
             if arrow == "DOWN" and abs(game.event_scroll_ct) < max_scroll_direction:
                 game.cur_events_list.append(game.cur_events_list.pop(0))
                 game.event_scroll_ct -= 1
+
+        if arrow is not None and game.switches['cur_screen'] == 'allegiances screen':
+            max_scroll_direction = len(game.allegiance_list) - game.max_allegiance_displayed
+            if arrow == "UP" and game.allegiance_scroll_ct < 0:
+                game.allegiance_list.insert(0, game.allegiance_list.pop())
+                game.allegiance_scroll_ct += 1
+            if arrow == "DOWN" and abs(game.allegiance_scroll_ct) < max_scroll_direction:
+                game.allegiance_list.append(game.allegiance_list.pop(0))
+                game.allegiance_scroll_ct -= 1
 
     def change_button_brightness(self):
         if game.settings['dark mode'] and self.frame_colour == (200, 200, 200):

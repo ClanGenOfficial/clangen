@@ -235,7 +235,7 @@ class Cat(object):
                         break
             if not has_med:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no medicine cat!")
-            if game.clan.deputy == 0 or game.clan.deputy is None:
+            if game.clan.deputy == 0 or game.clan.deputy is None or game.clan.deputy.dead:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no deputy!")
             if game.clan.leader.dead:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no leader!")
@@ -262,8 +262,9 @@ class Cat(object):
                     game.cur_events_list.append(str(cat.name) + ' has started their apprenticeship')
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
                     if cat.mentor is not None:
-                        cat.mentor.apprentice.remove(cat)
                         cat.mentor.former_apprentices.append(cat)
+                        if cat in cat.mentor.apprentice:
+                            cat.mentor.apprentice.remove(cat)
                     cat.status_change('warrior')
                     game.cur_events_list.append(str(cat.name) + ' has earned their warrior name')
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
@@ -501,7 +502,8 @@ class Cat(object):
     def dies(self):  # This function is called every time a cat dies
         self.dead = True
         if (self.status == 'apprentice'):
-            self.mentor.apprentice.remove(self)
+            if self in self.mentor.apprentice:
+                self.mentor.apprentice.remove(self)
             self.mentor.former_apprentices.append(self)
         game.clan.add_to_starclan(self)
 
@@ -728,7 +730,9 @@ class Cat(object):
                 mentor = choice(game.clan.clan_cats)
             self.mentor = cat_class.all_cats.get(mentor)
             cat_class.all_cats.get(mentor).apprentice.append(self)
-
+        elif new_status == 'medicine cat apprentice':
+            self.mentor.apprentice.remove(self)
+            self.mentor.former_apprentices.append(self)
         # update class dictionary
         self.all_cats[self.ID] = self
 
@@ -917,6 +921,18 @@ class Cat(object):
             data += ',' + str(x.experience)
             # dead_for x moons
             data += ',' + str(x.dead_for)
+            # apprentice
+            if x.apprentice is not None:
+                for cat in x.apprentice:
+                    data += ',' + str(cat.ID)
+            else:
+                data += 'None'
+            # former apprentice
+            if x.former_apprentices is not None:
+                for cat in x.former_apprentices:
+                    data += ',' + str(cat.ID)
+            else:
+                data += 'None'
             # next cat
             data += '\n'
 
@@ -981,7 +997,7 @@ class Cat(object):
                         the_cat.specialty2 = None
 
                     if len(attr) > 30:
-                        the_cat.experience = attr[30]
+                        the_cat.experience = int(attr[30])
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                             'very high', 'master', 'max']
                         the_cat.experience_level = experiencelevels[math.floor(int(the_cat.experience) / 10)]
@@ -1002,9 +1018,12 @@ class Cat(object):
                     if len(attr) > 31:
                         the_cat.dead_for = int(attr[31])
                     the_cat.skill = attr[22]
-                    the_cat.mentor = cat_class.all_cats.get(attr[8])
 
             for n in self.all_cats.values():
+                # Load the mentors and apprentices after all cats have been loaded
+                n.mentor = cat_class.all_cats.get(n.mentor)
+                if n.mentor:
+                    n.mentor.apprentice.append(n)
                 n.update_sprite()
 
     def load(self, cat_dict):
