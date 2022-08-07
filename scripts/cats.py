@@ -921,6 +921,18 @@ class Cat(object):
             data += ',' + str(x.experience)
             # dead_for x moons
             data += ',' + str(x.dead_for)
+            # apprentice
+            if x.apprentice is not None:
+                for cat in x.apprentice:
+                    data += ',' + str(cat.ID)
+            else:
+                data += 'None'
+            # former apprentice
+            if x.former_apprentices is not None:
+                for cat in x.former_apprentices:
+                    data += ',' + str(cat.ID)
+            else:
+                data += 'None'
             # next cat
             data += '\n'
 
