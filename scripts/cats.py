@@ -521,32 +521,32 @@ class Cat(object):
         if self.mate is not None:
             if self.mate in self.all_cats:
                 if self.all_cats[self.mate].dead:
-                    chance = None
+                    chance = 0
                 if self.all_cats[self.mate].gender != self.gender and self.all_cats[
                     self.mate].age != 'elder' and chance is not None:
-                    chance = chance / 4
+                    chance = int(chance / 7)
                 elif game.settings['no gendered breeding'] and self.all_cats[
                     self.mate].age != 'elder' and chance is not None:
-                    chance = chance / 4
+                    chance = int(chance / 7)
                 else:
-                    chance = None
+                    chance = 0
             else:
                 game.cur_events_list.append(
                     "Warning: " + str(self.name) + " has an invalid mate #" + str(self.mate) + ". This has been unset.")
                 self.mate = None
         else:
-            chance = chance / 2
+            chance = int(chance / 7)
             if not game.settings['no unknown fathers']:
-                chance = None
+                chance = 0
 
         if self.age in ['kitten', 'adolescent', 'elder'] or self.example or \
                 (not game.settings['no gendered breeding'] and self.gender == 'male'):
-            chance = None
+            chance = 0
 
         # Decide randomly if kits will be born, if possible
-        if chance is not None:
+        if chance != 0:
             hit = randint(0, chance)
-            kits = choice([1, 2, 2, 3, 3, 4])
+            kits = choice([1, 1, 2, 2, 3, 3, 4])
             if hit == 1 and self.mate is not None:
                 if game.cur_events_list is not None:
                     game.cur_events_list.append(str(self.name) + ' had a litter of ' + str(kits) + ' kit(s)')
@@ -557,10 +557,7 @@ class Cat(object):
                     kit = Cat(parent1=self.ID, parent2=self.mate, moons=0)
                     game.clan.add_cat(kit)
             elif hit == 1:
-                if game.cur_events_list is not None:
-                    game.cur_events_list.append(str(self.name) + ' had a litter of ' + str(kits) + ' kit(s)')
-                else:
-                    game.cur_events_list = [str(self.name) + ' had a litter of ' + str(kits) + ' kit(s)']
+                game.cur_events_list.append(str(self.name) + ' had a litter of ' + str(kits) + ' kit(s)')
 
                 for kit in range(kits):
                     kit = Cat(parent1=self.ID, moons=0)
