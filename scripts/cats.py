@@ -743,6 +743,14 @@ class Cat(object):
                         mentor).status != 'deputy' and cat_class.all_cats.get(
                     mentor).status != 'leader' or cat_class.all_cats.get(mentor).dead:
                     mentor = choice(game.clan.clan_cats)
+                if len(cat_class.all_cats.get(mentor).apprentice) > 0:
+                    for i in range(len(cat_class.all_cats)):
+                        if cat_class.all_cats.get(mentor).status != 'warrior' and cat_class.all_cats.get(
+                                mentor).status != 'deputy' and cat_class.all_cats.get(
+                            mentor).status != 'leader' or cat_class.all_cats.get(mentor).dead or len(
+                            cat_class.all_cats.get(game.clan.clan_cats[i]).apprentice) == 0:
+                            mentor = game.clan.clan_cats[i]
+                            break
             elif new_status == 'medicine cat apprentice':
                 med_cats = []
                 for cat in game.clan.clan_cats:
