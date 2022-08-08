@@ -287,7 +287,7 @@ class Cat(object):
 
     def gain_scars(self, cat):
         # gaining scars with age
-        if cat.specialty is None:
+        if cat.specialty is None and cat.age != 'kitten':
             chance = 0
             if cat.age in ['adolescent', 'young adult']:
                 chance = randint(0, 50)
@@ -307,7 +307,7 @@ class Cat(object):
             else:
                 cat.specialty = None
 
-        elif cat.specialty2 is None:
+        elif cat.specialty2 is None and cat.age != 'kitten':
             chance = 0
             if cat.age in ['adolescent', 'young adult']:
                 chance = randint(0, 50)
