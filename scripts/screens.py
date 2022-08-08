@@ -736,7 +736,10 @@ class ProfileScreen(Screens):
         # MATE
         if the_cat.mate is not None and not the_cat.dead:
             if the_cat.mate in cat_class.all_cats:
-                verdana_small.text('mate: ' + str(cat_class.all_cats[the_cat.mate].name), (300, 330 + count * 15))
+                if cat_class.all_cats.get(the_cat.mate).dead:
+                    verdana_small.text('former mate: ' + str(cat_class.all_cats[the_cat.mate].name), (300, 330 + count * 15))
+                else:
+                    verdana_small.text('mate: ' + str(cat_class.all_cats[the_cat.mate].name), (300, 330 + count * 15))
                 count += 1
             else:
                 verdana_small.text('Error: mate: ' + str(the_cat.mate) + " not found", ('center', 495))
