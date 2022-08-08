@@ -290,11 +290,11 @@ class Cat(object):
         if cat.specialty is None:
             chance = 0
             if cat.age in ['adolescent', 'young adult']:
-                chance = randint(0, 30)
-            elif cat.age in ['adult', 'senior adult']:
                 chance = randint(0, 50)
-            else:
+            elif cat.age in ['adult', 'senior adult']:
                 chance = randint(0, 70)
+            else:
+                chance = randint(0, 90)
             if chance == 1:
                 cat.specialty = choice([choice(scars1), choice(scars2)])
                 if cat.specialty == 'NOTAIL':
@@ -307,13 +307,14 @@ class Cat(object):
             else:
                 cat.specialty = None
 
-        if cat.specialty2 is None:
+        elif cat.specialty2 is None:
+            chance = 0
             if cat.age in ['adolescent', 'young adult']:
-                chance = randint(0, 30)
-            elif cat.age in ['adult', 'senior adult']:
                 chance = randint(0, 50)
-            else:
+            elif cat.age in ['adult', 'senior adult']:
                 chance = randint(0, 70)
+            else:
+                chance = randint(0, 90)
             if chance == 1:
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
                 if cat.specialty2 == 'NOTAIL':
