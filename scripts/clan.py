@@ -79,6 +79,9 @@ class Clan(object):
                 self.remove_cat(cat_class.all_cats[i].ID)
 
         # give thoughts/actions to cats
+        for cat in cat_class.all_cats:
+            if cat_class.all_cats.get(cat).status == 'apprentice':
+                cat_class.all_cats.get(cat).status_change('apprentice')
         cat_class.thoughts()
         cat_class.save_cats()
         self.save_clan()

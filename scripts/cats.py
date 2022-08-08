@@ -516,18 +516,17 @@ class Cat(object):
 
     def have_kits(self):
         # decide chances of having kits, and if it's possible at all
-        chance = 100
-
+        chance = 0
         if self.mate is not None:
             if self.mate in self.all_cats:
                 if self.all_cats[self.mate].dead:
                     chance = 0
-                if self.all_cats[self.mate].gender != self.gender and self.all_cats[
-                    self.mate].age != 'elder' and chance is not None:
-                    chance = int(chance / 7)
+                elif self.all_cats[self.mate].gender != self.gender and self.all_cats[
+                    self.mate].age != 'elder':
+                    chance = 25
                 elif game.settings['no gendered breeding'] and self.all_cats[
                     self.mate].age != 'elder' and chance is not None:
-                    chance = int(chance / 7)
+                    chance = 25
                 else:
                     chance = 0
             else:
@@ -535,7 +534,7 @@ class Cat(object):
                     "Warning: " + str(self.name) + " has an invalid mate #" + str(self.mate) + ". This has been unset.")
                 self.mate = None
         else:
-            chance = int(chance / 7)
+            chance = 50
             if not game.settings['no unknown fathers']:
                 chance = 0
 
@@ -546,6 +545,10 @@ class Cat(object):
         # Decide randomly if kits will be born, if possible
         if chance != 0:
             hit = randint(0, chance)
+            if len(game.clan.clan_cats) > 30:
+                hit = randint(0, chance + 20)
+            elif len(game.clan.clan_cats) < 10:
+                hit = randint(0, chance - 10)
             kits = choice([1, 1, 2, 2, 3, 3, 4])
             if hit == 1 and self.mate is not None:
                 if game.cur_events_list is not None:
@@ -565,6 +568,7 @@ class Cat(object):
 
     def thoughts(self):
         # actions or thoughts for all cats. These switch either every moon or every time the game is re-opened
+
         for cat in self.all_cats.keys():
             while True:  # DECIDE SECOND CAT ( to interact with)
                 other_1 = random.choice(list(self.all_cats.keys()))
