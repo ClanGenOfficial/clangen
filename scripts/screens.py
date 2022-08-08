@@ -128,8 +128,22 @@ class InfoScreen(Screens):
 
 
 class ClanScreen(Screens):
+    greenleaf_bg = pygame.transform.scale(pygame.image.load('resources/greenleafcamp.png'), (800, 700))
+    newleaf_bg = pygame.transform.scale(pygame.image.load('resources/newleafcamp.png'), (800, 700))
+    leafbare_bg = pygame.transform.scale(pygame.image.load('resources/leafbarecamp.png'), (800, 700))
+    leaffall_bg = pygame.transform.scale(pygame.image.load('resources/leaffallcamp.png'), (800, 700))
+
     def on_use(self):
         # layout
+        if game.clan.current_season == 'Newleaf':
+            screen.blit(self.newleaf_bg, (0, 0))
+        elif game.clan.current_season == 'Greenleaf':
+            screen.blit(self.greenleaf_bg, (0, 0))
+        elif game.clan.current_season == 'Leaf-bare':
+            screen.blit(self.leafbare_bg, (0, 0))
+        elif game.clan.current_season == 'Leaf-fall':
+            screen.blit(self.leaffall_bg, (0, 0))
+
         verdana_big.text(game.clan.name + 'Clan', ('center', 30))
         verdana.text('Leader\'s Den', game.clan.cur_layout['leader den'])
         verdana.text('Medicine Cat Den', game.clan.cur_layout['medicine den'])
@@ -368,7 +382,8 @@ class MakeClanScreen(Screens):
             verdana_small.text(str(game.choose_cats[game.switches['cat']].age), (330, 405))
             verdana_small.text(str(game.choose_cats[game.switches['cat']].trait), (330, 425))
 
-            if game.choose_cats[game.switches['cat']].age == 'kitten' or game.choose_cats[game.switches['cat']].age == 'apprentice':
+            if game.choose_cats[game.switches['cat']].age == 'kitten' or game.choose_cats[
+                game.switches['cat']].age == 'apprentice':
                 verdana_red.text('Too young to become deputy.', ('center', 490))
             else:
                 buttons.draw_button(('center', 490), text='This cat will support the leader',
@@ -632,7 +647,7 @@ class ProfileScreen(Screens):
             if the_cat.mentor is not None:
                 verdana_small.text('mentor: ' + str(the_cat.mentor.name), (450, 330 + count2 * 15))
                 count2 += 1
-            else :
+            else:
                 med_cats = []
                 for cat in game.clan.clan_cats:
                     if cat_class.all_cats.get(cat).status == 'medicine cat' and not cat_class.all_cats.get(cat).dead:
@@ -1322,7 +1337,7 @@ class AllegiancesScreen(Screens):
                 cat_count += 1
         if not cat_count:
             game.allegiance_list.append(['ELDERS:', ''])
-        
+
         cat_count = 0
         for j in range(len(living_cats)):
             if str(living_cats[j].status) == 'kitten':
@@ -1338,6 +1353,7 @@ class AllegiancesScreen(Screens):
 
         # buttons
         draw_menu_buttons()
+
 
 #
 # class ChooseMentorScreen(Screens):
@@ -1411,6 +1427,8 @@ choose_mate_screen = ViewChildrenScreen('see kits screen')
 list_screen = ListScreen('list screen')
 switch_clan_screen = SwitchClanScreen('switch clan screen')
 allegiances_screen = AllegiancesScreen('allegiances screen')
+
+
 # choose_mentor_screen = ChooseMentorScreen('choose mentor screen')
 
 
