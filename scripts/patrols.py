@@ -77,6 +77,7 @@ class Patrol(object):
                 continue
 
             self.eligible_events.append(test_event)
+            
             # 11 is function
             # 10 is trait
             # 9 is season
@@ -353,7 +354,16 @@ class Patrol(object):
                                's_c invites their friend to join the clan',
                                's_c and their friend reminisce about old times.',
                                'The patrol turns back without meeting the other loner.', 20, 10, 0, 0, 0,
-                               'formerly a loner', 1, []]]
+                               'formerly a loner', 1, []],
+                              [44, 'The patrol finds a kittypet who is interested in clan cats',
+                               'The patrol convinces the kittypet to join',
+                               'The descriptions of clan cats frighten the kittypet',
+                               'You decide to not confront that kittypet', 80, 10, 0, 0, 0, 0, 1, ['great speaker',
+                                                                                                'excellent speaker']],
+                              [45, 'The patrol finds a loner who is interested in joining the clan',
+                               'The loner joins, bringing with them a litter of kits',
+                               'The loner thinks for a while, and decides against joining',
+                               'You decide to not confront that loner', 120, 10, 0, 0, 0, 0, 1, ['excellent speaker']]]
 
     def event_special(self):
         # special functions for each event defined here
@@ -780,6 +790,47 @@ class Patrol(object):
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
                     self.patrol_cats.append(kit)
+
+        if self.patrol_event[0] == 44:
+            if self.before:
+                # stuff that happens during calculations
+                return
+            else:
+                # stuff that happens after the results
+                if self.success:
+                    new_cat_status = choice(
+                        ['warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'apprentice', 'apprentice',
+                         'apprentice'])
+                    kit = Cat(status=new_cat_status)
+                    game.clan.add_cat(kit)
+                    kit.skill = 'formerly a kittypet'
+                    self.patrol_cats.append(kit)
+                    if randint(0, 1):
+                        kit.specialty2 = choice(scars3)
+                    if randint(0, 1):
+                        kit.name.prefix = choice(kit.name.loner_names)
+                        if randint(0, 2) > 0:
+                            kit.name.suffix = ""
+                return
+
+        if self.patrol_event[0] == 45:
+            if self.before:
+                # stuff that happens during calculations
+                return
+            else:
+                # stuff that happens after the results
+                if self.success:
+                    new_cat_status = choice(
+                        ['warrior','warrior','warrior','warrior','warrior','warrior','warrior','warrior','warrior','warrior','medicine cat'])
+                    kit = Cat(status=new_cat_status)
+                    game.clan.add_cat(kit)
+                    kit.skill = 'formerly a loner'
+                    self.patrol_cats.append(kit)
+                    kits =  choice([2, 2, 2, 3])
+                    for new_kit in range(kits):
+                        new_kit = Cat(parent1=kit.ID, moons=0)
+                        game.clan.add_cat(new_kit)
+                return
 
 
 
