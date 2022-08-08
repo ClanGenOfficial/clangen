@@ -1,12 +1,18 @@
-import sys
-
+import sys, os
 from scripts.screens import *
+
+if sys.platform == "darwin":
+    os.chdir("/Applications/Clangen.app/Contents/Resources/")
 
 # P Y G A M E
 clock = pygame.time.Clock()
 pygame.display.set_icon(pygame.image.load('resources/icon.png'))
 
 # LOAD cats & clan
+if not os.path.exists('saves/clanlist.txt'):
+    os.makedirs('saves', exist_ok=True)
+    with open('saves/clanlist.txt', 'w') as write_file:
+        write_file.write('')
 with open('saves/clanlist.txt', 'r') as read_file:
     clan_list = read_file.read()
     if_clans = len(clan_list)
@@ -14,7 +20,11 @@ if if_clans > 0:
     game.switches['clan_list'] = clan_list.split('\n')
     cat_class.load_cats()
     clan_class.load_clan()
+    
 # LOAD settings
+if not os.path.exists('saves/settings.txt'):
+    with open('saves/settings.txt', 'w') as write_file:
+        write_file.write('')
 game.load_settings()
 
 # reset brightness to allow for dark mode to not look crap
@@ -30,10 +40,6 @@ while True:
         screen.fill((40, 40, 40))
     else:
         screen.fill((255, 255, 255))
-    # background
-    # bg = pygame.image.load("resources/menu.png")
-    # bg = pygame.transform.scale(bg, (1000,500))
-    # screen.blit(bg, (0,0))
 
     if game.settings_changed:
         verdana.change_text_brightness()
@@ -43,8 +49,7 @@ while True:
 
     # EVENTS
     for event in pygame.event.get():
-        if game.current_screen == 'make clan screen' and game.switches[
-            'clan_name'] == '':  # Allows user to type in Clan Name
+        if game.current_screen == 'make clan screen' and game.switches['clan_name'] == '':  # Allows user to type in Clan Name
             if event.type == pygame.KEYDOWN:
                 if event.unicode.isalpha():  # only allows alphabet letters as an input
                     if len(game.switches['naming_text']) < game.max_name_length:  # can't type more than max name length
@@ -61,6 +66,17 @@ while True:
                 if event.key == pygame.K_DOWN and abs(game.event_scroll_ct) < max_scroll_direction:
                     game.cur_events_list.append(game.cur_events_list.pop(0))
                     game.event_scroll_ct -= 1
+
+        if game.current_screen == 'allegiances screen' and len(game.allegiance_list) > game.max_allegiance_displayed:
+            max_scroll_direction = len(game.allegiance_list) - game.max_allegiance_displayed
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_UP and game.allegiance_scroll_ct < 0:
+                    game.allegiance_list.insert(0, game.allegiance_list.pop())
+                    game.allegiance_scroll_ct += 1
+                if event.key == pygame.K_DOWN and abs(game.allegiance_scroll_ct) < max_scroll_direction:
+                    game.allegiance_list.append(game.allegiance_list.pop(0))
+                    game.allegiance_scroll_ct -= 1
+
         if event.type == pygame.QUIT:
             # close pygame
             pygame.display.quit()

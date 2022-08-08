@@ -7,6 +7,8 @@ Fan edit creator: SableSteel
 
 Changes:
 
+- New main menu art
+
 - Added new suffixes/prefixes
 
 - Notify player when the clan has no leader, deputy, or medicine cat
@@ -21,4 +23,8 @@ Changes:
 
 - Added scrolling functionality
 
-- Fixed StarClan instructor crash
+- Add random cats to patrol
+
+- Dark mode
+
+- Various bug fixes

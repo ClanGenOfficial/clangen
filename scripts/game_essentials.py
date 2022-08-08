@@ -14,12 +14,15 @@ class Game(object):
     max_name_length = 10
     max_events_displayed = 10
     event_scroll_ct = 0
+    max_allegiance_displayed = 17
+    allegiance_scroll_ct = 0
     cur_events_list = []
+    allegiance_list = []
 
-    down = pygame.image.load("sprites\down.png")
-    down = pygame.transform.scale(down,(75,75))
-    up = pygame.image.load("sprites\carrot.png")
-    up = pygame.transform.scale(up,(40,40))
+    down = pygame.image.load("sprites/down.png")
+    down = pygame.transform.scale(down, (75, 75))
+    up = pygame.image.load("sprites/carrot.png")
+    up = pygame.transform.scale(up, (40, 40))
 
     choose_cats = {}
     cat_buttons = {'cat0': None, 'cat1': None, 'cat2': None, 'cat3': None,
@@ -28,7 +31,7 @@ class Game(object):
     patrol_cats = {}
 
     # store changing parts of the game that the user can toggle with buttons
-    switches = {'cat': None, 'clan_name': '', 'leader': None, 'medicine_cat': None, 'members': [],
+    switches = {'cat': None, 'clan_name': '', 'leader': None, 'deputy': None, 'medicine_cat': None, 'members': [],
                 'event': None, 'cur_screen': 'start screen', 'naming_text': '', 'timeskip': False, 'mate': None,
                 'setting': None, 'save_settings': False, 'list_page': 1, 'last_screen': 'start screen',
                 'events_left': 0, 'save_clan': False, 'new_leader': False, 'apprentice_switch': False,
@@ -38,7 +41,8 @@ class Game(object):
     cur_events = {}
 
     # SETTINGS
-    settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False, 'dark mode': False}  # The current settings
+    settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False,
+                'dark mode': False}  # The current settings
     setting_lists = {'no gendered breeding': [False, True],
                      'text size': ['0', '1', '2'],
                      'no unknown fathers': [False, True],
@@ -73,7 +77,7 @@ class Game(object):
             if self.switches['setting'] in self.settings.keys():
                 # Switch setting value using function
                 self.switch_setting(self.switches['setting'])
-                
+
                 self.switches['setting'] = None  # Action fulfilled, reset back to None
             else:
                 print('Wrong settings value:', self.switches['setting'])
@@ -136,7 +140,6 @@ class Game(object):
                     self.settings[parts[0]] = None
                 else:
                     self.settings[parts[0]] = parts[1]
-
 
     def switch_setting(self, setting_name):
         """ Call this function to change a setting given in the parameter by one to the right on it's list """

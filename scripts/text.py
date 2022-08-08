@@ -22,7 +22,7 @@ class Font(object):
         self.colour = colour
 
     def text(self, text, pos=None, where=used_screen):
-        t = self.font.render(text, 1, self.colour)
+        t = self.font.render(text, True, self.colour)
         if pos is not None:
             # setting on or both items in tuple to 'center' centers the text to the screen.
             # negative pos value will be taken from the other end of the screen
@@ -57,6 +57,7 @@ class Font(object):
 
 # F O N T S
 verdana = Font('verdana')
+verdana_black = Font('verdana', colour= 'black')
 verdana_red = Font('verdana', colour=(242, 52, 29))
 verdana_small = Font('verdana', 11)
 verdana_baby = Font('verdana', 11, (100, 100, 250))

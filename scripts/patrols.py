@@ -24,8 +24,13 @@ class Patrol(object):
         self.patrol_stat_cat = None
         # [#,prompt,win,lose,decline,threshold,reward,size,status,season,trait,function,autowin skills]
         self.patrol_events = []
-        self.eligable_events = []
+        self.eligible_events = []
         self.patrol_result_text = ''
+
+        self.experience_levels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
+                                        'very high', 'master', 'max']
+        # 0 vl -> 2 l -> 4 sl -> 7 a -> 10 sh -> 15 h -> 20 vh -> 25 m -> 35 max
+
 
     # get patrol personalities, patrol total experience, patrol max experience
     def new_patrol(self):
@@ -44,7 +49,7 @@ class Patrol(object):
         self.patrol_random_cat = None
         self.patrol_stat_cat = None
         self.patrol_result_text = ''
-        self.eligable_events = []
+        self.eligible_events = []
         # calculate random cat here
         self.patrol_random_cat = choice(self.patrol_cats)
 
@@ -64,27 +69,31 @@ class Patrol(object):
                 continue
             if test_event[7] == 2 and self.patrol_size == 1:
                 continue
-            if test_event[10] != 0 and test_event[10] not in self.patrol_traits:
+            if test_event[10] != 0 and test_event[10] not in self.patrol_traits and test_event[10] not in self.patrol_skills:
                 continue
-            if test_event[9] != 0 and test_event[9] != game.clan.season:
+            if test_event[9] != 0 and test_event[9] != game.clan.current_season:
                 continue
             if test_event[8] != 0 and test_event[8] not in self.patrol_statuses:
                 continue
 
-            self.eligable_events.append(test_event)
+            self.eligible_events.append(test_event)
             # 11 is function
             # 10 is trait
             # 9 is season
             # 8 is status
             # 7 is cat numbers
 
-        self.patrol_event = choice(self.eligable_events)
+        self.patrol_event = choice(self.eligible_events)
 
         if self.patrol_event[0] == 36:
             self.patrol_event[5] = 30 * self.patrol_size
 
         if self.patrol_event[10] != 0 and self.patrol_event[10] in self.patrol_traits:
             self.patrol_stat_cat = self.patrol_cats[self.patrol_traits.index(self.patrol_event[10])]
+        
+        if self.patrol_event[10] != 0 and self.patrol_event[10] in self.patrol_skills:
+            self.patrol_stat_cat = self.patrol_cats[self.patrol_skills.index(self.patrol_event[10])]
+        
 
         # replace names in the patrol_events
         # also do random cat
@@ -192,7 +201,7 @@ class Patrol(object):
                                'You decide not to pursue the fox', 70, 25, 0, 0, 0, 0, 1,
                                ['great fighter', 'excellent fighter']],
                               [8, 'Your patrol catches the scent of a large dog',
-                               'Your patrol manages to valianty drive away the dog',
+                               'Your patrol manages to valiantly drive away the dog',
                                'The dog is driven away, but only after killing r_c', 'You decide not to pursue the dog',
                                150, 50, 0, 0, 0, 0, 1, ['excellent fighter']],
                               [9, 'Your patrol comes across a thunderpath. Do you cross it?',
@@ -243,7 +252,7 @@ class Patrol(object):
                                's_c brings it up but the other cat denies it', 's_c decides to keep such to themselves',
                                60, 10, 2, 0, 0, 'righteous', 0, []],
                               [19, 'The patrol starts doubting (deputy)s ability as the clans deputy',
-                               '(deputy) preforms well in the patrol and quells doubt',
+                               '(deputy) performs well in the patrol and quells doubt',
                                'The patrol fails to catch anything, and they blame (deputy)',
                                'Nobody brings it up again', 60, 10, 2, 'deputy', 0, 0, 1, []],
                               [20, 'The patrol tries to get their leader to tell stories about their warrior days',
@@ -261,7 +270,7 @@ class Patrol(object):
                               [23, 's_c is worried that their clanmates think theyre a bad hunter',
                                'The rest of the patrol comfort s_c', 's_cs nerves make them fail a hunt',
                                's_c ends up turning back instead of joining', 60, 10, 2, 0, 0, 'insecure', 1, []],
-                              [24, 's_c notices that the patrol isnt following the exact rules',
+                              [24, 's_c notices that the patrol isn\'t following the exact rules',
                                's_c convinces the other cats to follow the rules',
                                's_cs concerns are dismissed by the other cats',
                                's_c decides to keep such to themselves', 60, 10, 2, 0, 0, 'strict', 0, []],
@@ -291,7 +300,7 @@ class Patrol(object):
                                2, 0, 0, 'shameless', 1, []],
                               [31, 'One of the other cats on the patrol wants to talk to s_c about StarClan',
                                's_c has a nice conversation with them about their faith',
-                               's_cs blind faith isnt quite what the other cat needed right then',
+                               's_cs blind faith isn\'t quite what the other cat needed right then',
                                's_c decides to keep such to themselves', 60, 10, 2, 0, 0, 'faithful', 1, []],
                               [32, 's_c seems to be picking on the other cats',
                                'The rest of the cats manage to ignore s_c',
@@ -302,7 +311,7 @@ class Patrol(object):
                                's_c distances themselves from the other cat', 60, 10, 2, 0, 0, 'empathetic', 0, []],
                               [34, 'The patrol comes upon a strange object that smells strongly of two-legs',
                                'The patrol interprets the purpose of the object',
-                               'After interacting with the object, r_c is naseous for a couple days',
+                               'After interacting with the object, r_c is nauseous for a couple days',
                                'The patrol decides to avoid such object', 80, 20, 0, 0, 0, 0, 1,
                                ['smart', 'very smart', 'extremely smart']],
                               [35, 'The patrol comes across a rogue', 'The patrol successfully drives off the rogue',
@@ -324,7 +333,7 @@ class Patrol(object):
                                ['excellent fighter']],
                               [39, 'p_l worries that an apprentice should not be out here alone',
                                'At least this is a good chance to learn the territory',
-                               'The apprentice gets lost and doesnt learn anything',
+                               'The apprentice gets lost and doesn\'t learn anything',
                                'p_l turns back to camp, deciding this is a bad idea', 20, 6, 1, 'apprentice', 0, 0, 1,
                                ['very smart', 'extremely smart']],
                               [40, 'The patrol notices new leaves and flowers starting to grow',
@@ -401,7 +410,13 @@ class Patrol(object):
             else:
                 # cripples random cat
                 if not self.success:
-                    self.patrol_random_cat.status_change('elder')
+                    if self.patrol_random_cat.status == 'deputy':
+                        game.clan.deputy = None
+                    if self.patrol_random_cat.status == 'leader':
+                        self.patrol_random_cat.experience = 0
+                        self.patrol_result_text = str(self.patrol_random_cat.name) + ' is crippled by a Monster and has to relearn everything.'
+                    else:
+                        self.patrol_random_cat.status_change('elder')
                     self.patrol_random_cat.skill = choice(['paralyzed', 'blind', 'missing a leg'])
                     return
 
@@ -490,9 +505,6 @@ class Patrol(object):
                 if int(game.clan.deputy.experience) > 39:
                     self.success = True
 
-                # stuff that happens during calculations
-                if game.clan.deputy.experience > 39:
-                    self.success = True
 
                 return
             else:
@@ -768,7 +780,7 @@ class Patrol(object):
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
                     self.patrol_cats.append(kit)
-                return
+
 
 
 patrol = Patrol()
