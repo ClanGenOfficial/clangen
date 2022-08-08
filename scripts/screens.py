@@ -632,12 +632,12 @@ class ProfileScreen(Screens):
             if the_cat.mentor is not None:
                 verdana_small.text('mentor: ' + str(the_cat.mentor.name), (450, 330 + count2 * 15))
                 count2 += 1
-            else:
+            else :
                 med_cats = []
                 for cat in game.clan.clan_cats:
                     if cat_class.all_cats.get(cat).status == 'medicine cat' and not cat_class.all_cats.get(cat).dead:
                         med_cats.append(cat)
-                if med_cats:
+                if len(med_cats) > 0:
                     mentor = choice(med_cats)
                     self.mentor = cat_class.all_cats.get(mentor)
                     cat_class.all_cats.get(mentor).apprentice.append(self)
