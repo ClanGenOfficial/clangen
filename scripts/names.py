@@ -1,5 +1,5 @@
 import random
-
+import os
 
 class Name(object):
     special_suffixes = {"kitten": "kit", "apprentice": "paw", "medicine cat apprentice": "paw", "leader": "star"}
@@ -136,6 +136,28 @@ class Name(object):
                    "Catie", "Charm", "Crane", "Crab", "Charles", "Caroline", "Conan", "Cloud", "Charlie", "Cowboy",
                    "Dune", "Dan", "Dove", "Delilah", "Emerald", "Emy", "Erica", " Eddie", "Eda", "Ferret", "Fawn",
                    "Fallow", "Ferry", "Gamble", "Grain", "Gir", "Heron", "Hop", "Honey", "Hot Sauce", "Habanero"]
+        
+    if os.path.exists('saves/prefixlist.txt'):
+        with open('saves/prefixlist.txt', 'r') as read_file:
+            name_list = read_file.read()
+            if_names = len(name_list)
+        if if_names > 0:
+            new_names = name_list.split('\n')
+            for new_name in new_names:
+                if new_name != '':
+                    normal_prefixes.append(new_name)
+
+    if os.path.exists('saves/suffixlist.txt'):
+        with open('saves/suffixlist.txt', 'r') as read_file:
+            name_list = read_file.read()
+            if_names = len(name_list)
+        if if_names > 0:
+            new_names = name_list.split('\n')
+            for new_name in new_names:
+                if new_name != '':
+                    normal_suffixes.append(new_name)
+        
+
 
 
     def __init__(self, status="warrior", prefix=None, suffix=None, colour=None, eyes=None, pelt=None):
@@ -182,6 +204,7 @@ class Name(object):
                     loop = False
         else:
             self.suffix = suffix
+
 
     def __repr__(self):
         if self.status in ["deputy", "warrior", "medicine cat", "elder"]:
