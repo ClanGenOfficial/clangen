@@ -508,7 +508,7 @@ class Cat(object):
 
     def dies(self):  # This function is called every time a cat dies
         self.dead = True
-        if (self.status == 'apprentice' or self.status == 'medicine cat apprentice'):
+        if (self.status == 'apprentice' or self.status == 'medicine cat apprentice') and self.mentor:
             if self in self.mentor.apprentice:
                 self.mentor.apprentice.remove(self)
             self.mentor.former_apprentices.append(self)
