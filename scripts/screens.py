@@ -1094,14 +1094,29 @@ class ListScreen(Screens):
         cat_profiles()
 
 
+# def choose_banner():
+    # if game.clan is not None:
+    #     # if game.clan.current_season == 'Leaf-fall':
+    #     fall = pygame.image.load('resources/seasonbanners/fall/fall banner.png')
+    #     fall_fog = pygame.image.load('resources/seasonbanners/fall/fall banner fog.png')
+    #     fall_night = pygame.image.load('resources/seasonbanners/fall/fall banner night.png')
+    #     fall_night_fog = pygame.image.load('resources/seasonbanners/fall/fall banner night fog.png')
+    #     fall_night_overcast = pygame.image.load('resources/seasonbanners/fall/fall banner night overcast.png')
+    #     fall_night_rain = pygame.image.load('resources/seasonbanners/fall/fall banner night rain.png')
+    #     fall_overcast = pygame.image.load('resources/seasonbanners/fall/fall banner overcast.png')
+    #     fall_rain = pygame.image.load('resources/seasonbanners/fall/fall banner rain.png')
+    #     leaffall = [fall, fall_fog, fall_night, fall_night_fog, fall_night_overcast, fall_night_rain, fall_overcast,
+    #                 fall_rain]
+    #     return choice(leaffall)
+
+
 class PatrolScreen(Screens):
     def on_use(self):
-
         verdana_big.text(game.clan.name + 'Clan', ('center', 30))
         verdana.text('These cats are currently in the camp, ready for a patrol.', ('center', 115))
         verdana.text('Choose up to six to take on patrol.', ('center', 135))
         verdana.text('Smaller patrols help cats gain more experience, but larger patrols are safer.', ('center', 155))
-        # verdana.text('Leader\'s Den', game.clan.cur_layout['leader den'])
+
 
         # buttons
         draw_menu_buttons()
@@ -1452,3 +1467,5 @@ def draw_menu_buttons():
     buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
     buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
     buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
+
+
