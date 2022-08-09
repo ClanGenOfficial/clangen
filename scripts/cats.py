@@ -860,7 +860,7 @@ class Cat(object):
         else:
             new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
 
-        # draw skin and scars2
+        # draw skin and scars2 and scars3
         if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice',
                                                               'medicine cat apprentice'] or self.age == 'elder':
             new_sprite.blit(sprites.sprites['skinextra' + self.skin + str(self.age_sprites[self.age])], (0, 0))
@@ -868,6 +868,12 @@ class Cat(object):
                 new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])],
                                 (0, 0))
             if self.specialty2 in scars2:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])],
+                                (0, 0))
+            if self.specialty in scars3:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])],
+                                (0, 0))
+            if self.specialty2 in scars3:
                 new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])],
                                 (0, 0))
         else:
@@ -878,6 +884,14 @@ class Cat(object):
             if self.specialty2 in scars2:
                 new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])],
                                 (0, 0))
+            if self.specialty in scars3:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])],
+                                (0, 0))
+            if self.specialty2 in scars3:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])],
+                                (0, 0))
+
+        
 
         # reverse, if assigned so
         if self.reverse:
