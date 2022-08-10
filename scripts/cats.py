@@ -675,8 +675,8 @@ class Cat(object):
                             thoughts.extend(['Pretends to be a warrior with ' + other_name,
                                              'Plays mossball with ' + other_name,
                                              'Has a mock battle with ' + other_name,
-                                             'Comes up with a plan to sneak out of camp with ' + other_cat,
-                                             'Whines about ' + other_cat])
+                                             'Comes up with a plan to sneak out of camp with ' + other_name,
+                                             'Whines about ' + other_name])
                         elif other_cat.status != 'kitten':  # kit thoughts about older cat
                             thoughts.extend(
                                 ['Is biting ' + other_name + '\'s tail', 'Sticks their tongue out at ' + other_name,
