@@ -634,35 +634,12 @@ class ProfileScreen(Screens):
         count += 1  # SEX / GENDER
         verdana_small.text(the_cat.status, (450, 330 + count2 * 15));
         count2 += 1  # STATUS
-        if the_cat.status == 'apprentice':
+        if 'apprentice' in the_cat.status:
+            if the_cat.mentor is None:
+                the_cat.update_mentor()
             if the_cat.mentor is not None:
                 verdana_small.text('mentor: ' + str(the_cat.mentor.name), (450, 330 + count2 * 15))
                 count2 += 1
-            else:
-                mentor = choice(game.clan.clan_cats)
-                while cat_class.all_cats.get(mentor).status != 'warrior' and cat_class.all_cats.get(
-                        mentor).status != 'deputy' and cat_class.all_cats.get(
-                    mentor).status != 'leader' or cat_class.all_cats.get(mentor).dead:
-                    mentor = choice(game.clan.clan_cats)
-                the_cat.mentor = cat_class.all_cats.get(mentor)
-                cat_class.all_cats.get(mentor).apprentice.append(the_cat)
-                verdana_small.text('mentor: ' + str(the_cat.mentor.name), (450, 330 + count2 * 15))
-                count2 += 1
-        elif the_cat.status == 'medicine cat apprentice':
-            if the_cat.mentor is not None:
-                verdana_small.text('mentor: ' + str(the_cat.mentor.name), (450, 330 + count2 * 15))
-                count2 += 1
-            else:
-                med_cats = []
-                for cat in game.clan.clan_cats:
-                    if cat_class.all_cats.get(cat).status == 'medicine cat' and not cat_class.all_cats.get(cat).dead:
-                        med_cats.append(cat)
-                if len(med_cats) > 0:
-                    mentor = choice(med_cats)
-                    self.mentor = cat_class.all_cats.get(mentor)
-                    cat_class.all_cats.get(mentor).apprentice.append(self)
-                    verdana_small.text('mentor: ' + str(the_cat.mentor.name), (450, 330 + count2 * 15))
-                    count2 += 1
         if len(the_cat.apprentice) != 0:
             apps = ''
             if len(the_cat.apprentice) == 1:
