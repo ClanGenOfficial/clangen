@@ -778,12 +778,6 @@ class Cat(object):
     def status_change(self, new_status):
         # revealing of traits and skills
         if self.status == 'kitten':
-            a = randint(0, 50)
-            if a == 1:
-                self.trait = 'strange'
-            elif a == 2:
-                self.trait = 'bloodthirsty'
-            else:
                 self.trait = choice(self.traits)
         if (self.status == 'apprentice' and new_status != 'medicine cat apprentice') or (
                 self.status == 'medicine cat apprentice' and new_status != 'apprentice'):

@@ -630,7 +630,7 @@ class ProfileScreen(Screens):
         verdana_big.text(cat_name, ('center', 70))  # NAME
         the_cat.draw_large(('center', 100))  # IMAGE
         verdana.text(cat_thought, ('center', 300))  # THOUGHT / ACTION
-        verdana_small.text(the_cat.gender, (300, 330 + count * 15));
+        verdana_small.text(the_cat.gender, (250, 330 + count * 15));
         count += 1  # SEX / GENDER
         verdana_small.text(the_cat.status, (450, 330 + count2 * 15));
         count2 += 1  # STATUS
@@ -663,30 +663,30 @@ class ProfileScreen(Screens):
             verdana_small.text(former_apps, (450, 330 + count2 * 15))
             count2 += 1
         if the_cat.age == 'kitten':
-            verdana_small.text('young', (300, 330 + count * 15))
+            verdana_small.text('young', (250, 330 + count * 15))
         elif the_cat.age == 'elder':
-            verdana_small.text('senior', (300, 330 + count * 15))
+            verdana_small.text('senior', (250, 330 + count * 15))
         else:
-            verdana_small.text(the_cat.age, (300, 330 + count * 15))
+            verdana_small.text(the_cat.age, (250, 330 + count * 15))
         count += 1  # AGE
         verdana_small.text(the_cat.trait, (450, 330 + count2 * 15))
         count2 += 1  # CHARACTER TRAIT
         verdana_small.text(the_cat.skill, (450, 330 + count2 * 15))
         count2 += 1  # SPECIAL SKILL
-        verdana_small.text('eyes: ' + the_cat.eye_colour.lower(), (300, 330 + count * 15));
+        verdana_small.text('eyes: ' + the_cat.eye_colour.lower(), (250, 330 + count * 15));
         count += 1  # EYE COLOR
-        verdana_small.text('pelt: ' + the_cat.pelt.name.lower(), (300, 330 + count * 15));
+        verdana_small.text('pelt: ' + the_cat.pelt.name.lower(), (250, 330 + count * 15));
         count += 1  # PELT TYPE
-        verdana_small.text('fur length: ' + the_cat.pelt.length, (300, 330 + count * 15));
+        verdana_small.text('fur length: ' + the_cat.pelt.length, (250, 330 + count * 15));
         count += 1  # PELT LENGTH
 
         # PARENTS
         if the_cat.parent1 is None:
-            verdana_small.text('parents: unknown', (300, 330 + count * 15));
+            verdana_small.text('parents: unknown', (250, 330 + count * 15));
             count += 1
         elif the_cat.parent2 is None:
             par1 = str(the_cat.all_cats[the_cat.parent1].name)
-            verdana_small.text('parents: ' + par1 + ', unknown', (300, 330 + count * 15));
+            verdana_small.text('parents: ' + par1 + ', unknown', (250, 330 + count * 15));
             count += 1
         else:
             if the_cat.parent1 in the_cat.all_cats and the_cat.parent2 in the_cat.all_cats:
@@ -702,26 +702,26 @@ class ProfileScreen(Screens):
                 par1 = "Error: Cat#" + the_cat.parent1 + " not found"
                 par2 = "Error: Cat#" + the_cat.parent2 + " not found"
 
-            verdana_small.text('parents: ' + par1 + ' and ' + par2, (300, 330 + count * 15));
+            verdana_small.text('parents: ' + par1 + ' and ' + par2, (250, 330 + count * 15))
             count += 1
 
         # MOONS
         if the_cat.dead:
-            verdana_small.text(str(the_cat.moons) + ' moons (in life)', (300, 330 + count * 15));
+            verdana_small.text(str(the_cat.moons) + ' moons (in life)', (250, 330 + count * 15))
             count += 1
-            verdana_small.text(str(the_cat.dead_for) + ' moons (in death)', (300, 330 + count * 15));
+            verdana_small.text(str(the_cat.dead_for) + ' moons (in death)', (250, 330 + count * 15))
             count += 1
         else:
-            verdana_small.text(str(the_cat.moons) + ' moons', (300, 330 + count * 15));
+            verdana_small.text(str(the_cat.moons) + ' moons', (250, 330 + count * 15))
             count += 1
 
         # MATE
         if the_cat.mate is not None and not the_cat.dead:
             if the_cat.mate in cat_class.all_cats:
                 if cat_class.all_cats.get(the_cat.mate).dead:
-                    verdana_small.text('former mate: ' + str(cat_class.all_cats[the_cat.mate].name), (300, 330 + count * 15))
+                    verdana_small.text('former mate: ' + str(cat_class.all_cats[the_cat.mate].name), (250, 330 + count * 15))
                 else:
-                    verdana_small.text('mate: ' + str(cat_class.all_cats[the_cat.mate].name), (300, 330 + count * 15))
+                    verdana_small.text('mate: ' + str(cat_class.all_cats[the_cat.mate].name), (250, 330 + count * 15))
                 count += 1
             else:
                 verdana_small.text('Error: mate: ' + str(the_cat.mate) + " not found", ('center', 495))
