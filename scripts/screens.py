@@ -268,30 +268,6 @@ class StarClanScreen(Screens):
         if game.switches['list_page'] < all_pages:
             buttons.draw_button((-300, 600), text='>', list_page=game.switches['list_page'] + 1)
 
-        # def on_use(self):
-
-        #     # layout
-        #     verdana_big.text(game.clan.name + 'Clan', ('center', 30))
-        #     verdana.text('You are visiting StarClan.', ('center', 100))
-
-        #     # instructor cat
-        #     buttons.draw_button(('center', 120), image=game.clan.instructor.sprite, cat=game.clan.instructor.ID,
-        #                         cur_screen='profile screen')
-        #     verdana.text(str(game.clan.instructor.name), ('center', 170))
-
-        #     # dead cats
-        #     pos_x = 0
-        #     pos_y = 0
-        #     for x in game.clan.starclan_cats:
-        #         if x != game.clan.instructor.ID:  # Instructor has their own spot in starclan
-        #             buttons.draw_button((100 + pos_x, 250 + pos_y), image=cat_class.all_cats[x].sprite, cat=x,
-        #                                 cur_screen='profile screen')
-        #             verdana.text(str(cat_class.all_cats[x].name), (90 + pos_x, 310 + pos_y))
-        #             pos_x += 100
-        #             if pos_x >= 500:
-        #                 pos_x = 0
-        #                 pos_y += 100
-
         # buttons
         draw_menu_buttons()
 
@@ -316,8 +292,6 @@ class MakeClanScreen(Screens):
         # buttons
         verdana_small.text('Note: going back to main menu resets the generated cats.', (50, 25))
         buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen', naming_text='')
-        # writer.draw((290, 300))
-
         buttons.draw_button(('center', 500), text='Name Clan', clan_name=game.switches['naming_text'])
 
     def second_phase(self):
@@ -1427,8 +1401,6 @@ choose_mate_screen = ViewChildrenScreen('see kits screen')
 list_screen = ListScreen('list screen')
 switch_clan_screen = SwitchClanScreen('switch clan screen')
 allegiances_screen = AllegiancesScreen('allegiances screen')
-
-
 # choose_mentor_screen = ChooseMentorScreen('choose mentor screen')
 
 

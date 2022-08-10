@@ -217,6 +217,7 @@ class Cat(object):
                     self.perform_ceremonies(cat)
                     self.gain_scars(cat)
                     self.handle_deaths(cat)
+                    self.create_interactions(cat, index, key_copy)
                     # possibly have kits
                     cat.have_kits()
                 else:  # if cat was already dead
@@ -474,7 +475,7 @@ class Cat(object):
                 game.cur_events_list = [append_str]
 
     def handle_deaths(self, cat):
-        if randint(1, 300) == 299:
+        if randint(1, 300) == 1:
             if randint(1, 4) == 4:
                 cat.dies()
                 if game.cur_events_list is not None:
@@ -778,7 +779,7 @@ class Cat(object):
     def status_change(self, new_status):
         # revealing of traits and skills
         if self.status == 'kitten':
-                self.trait = choice(self.traits)
+            self.trait = choice(self.traits)
         if (self.status == 'apprentice' and new_status != 'medicine cat apprentice') or (
                 self.status == 'medicine cat apprentice' and new_status != 'apprentice'):
             self.skill = choice(self.skills)
