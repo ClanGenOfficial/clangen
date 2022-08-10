@@ -10,11 +10,11 @@ import os.path
 class Cat(object):
     used_screen = screen
     traits = ['strange', 'bloodthirsty', 'ambitious', 'loyal', 'righteous', 'fierce', 'nervous', 'strict',
-              'charismatic', 'calm',
-              'daring', 'loving', 'playful', 'lonesome', 'cold', 'insecure', 'vengeful',
-              'shameless', 'faithful', 'troublesome', 'empathetic']
-    kit_traits = ['bouncy', 'bullying', 'daydreamer', 'nervous', 'charming', 'attention-seeker',
-                  'inquisitive', 'bossy', 'troublesome', 'quiet', 'daring', 'sweet', 'insecure']
+              'charismatic', 'calm', 'daring', 'loving', 'playful', 'lonesome', 'cold', 'insecure', 'vengeful',
+              'shameless', 'faithful', 'troublesome', 'empathetic', 'adventurous', 'thoughtful', 'compassionate',
+              'childish', 'confident', 'careful', 'altruistic', 'bold', 'clever', 'responsible', 'sneaky', 'wise']
+    kit_traits = ['bouncy', 'bullying', 'daydreamer', 'nervous', 'charming', 'attention-seeker', 'impulsive',
+                  'inquisitive', 'bossy', 'troublesome', 'quiet', 'daring', 'sweet', 'insecure', 'noisy', 'polite']
     ages = ['kitten', 'adolescent', 'young adult', 'adult', 'senior adult', 'elder', 'dead']
     age_moons = {'kitten': [0, 5], 'adolescent': [6, 11], 'young adult': [12, 47], 'adult': [48, 95],
                  'senior adult': [96, 119], 'elder': [120, 199]}
@@ -770,10 +770,10 @@ class Cat(object):
                 thought = choice(thoughts)
             cat.thought = thought
 
-                # on_patrol = ['Is having a good time out on patrol', 'Wants to return to camp to see ' + other_name,
-                #              'Is currently out on patrol', 'Is getting rained on during their patrol',
-                #              'Is out hunting'] //will add later
-                # interact_with_loner = ['Wants to know where ' + other_name + ' came from.'] // will add
+            # on_patrol = ['Is having a good time out on patrol', 'Wants to return to camp to see ' + other_name,
+            #              'Is currently out on patrol', 'Is getting rained on during their patrol',
+            #              'Is out hunting'] //will add later
+            # interact_with_loner = ['Wants to know where ' + other_name + ' came from.'] // will add
 
     def status_change(self, new_status):
         # revealing of traits and skills
