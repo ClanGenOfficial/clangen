@@ -90,6 +90,7 @@ class SettingsScreen(Screens):
         verdana.text("Allow couples to have kittens despite same-sex status:", (100, 230))
 
         verdana.text("Allow unmated cats to have offspring:", (100, 260))
+        verdana.text("Enable clan page background:", (100, 290))
 
         # Setting values
         verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
@@ -98,6 +99,8 @@ class SettingsScreen(Screens):
         buttons.draw_button((-80, 230), text='SWITCH', setting='no gendered breeding')
         verdana.text(self.bool[game.settings['no unknown fathers']], (-170, 260))
         buttons.draw_button((-80, 260), text='SWITCH', setting='no unknown fathers')
+        verdana.text(self.bool[game.settings['backgrounds']], (-170, 290))
+        buttons.draw_button((-80, 290), text='SWITCH', setting='backgrounds')
 
         # other buttons
         buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen')
@@ -128,6 +131,7 @@ class InfoScreen(Screens):
 
 
 class ClanScreen(Screens):
+    
     greenleaf_bg = pygame.transform.scale(pygame.image.load('resources/greenleafcamp.png'), (800, 700))
     newleaf_bg = pygame.transform.scale(pygame.image.load('resources/newleafcamp.png'), (800, 700))
     leafbare_bg = pygame.transform.scale(pygame.image.load('resources/leafbarecamp.png'), (800, 700))
@@ -135,14 +139,15 @@ class ClanScreen(Screens):
 
     def on_use(self):
         # layout
-        if game.clan.current_season == 'Newleaf':
-            screen.blit(self.newleaf_bg, (0, 0))
-        elif game.clan.current_season == 'Greenleaf':
-            screen.blit(self.greenleaf_bg, (0, 0))
-        elif game.clan.current_season == 'Leaf-bare':
-            screen.blit(self.leafbare_bg, (0, 0))
-        elif game.clan.current_season == 'Leaf-fall':
-            screen.blit(self.leaffall_bg, (0, 0))
+        if game.settings['backgrounds']:
+            if game.clan.current_season == 'Newleaf':
+                screen.blit(self.newleaf_bg, (0, 0))
+            elif game.clan.current_season == 'Greenleaf':
+                screen.blit(self.greenleaf_bg, (0, 0))
+            elif game.clan.current_season == 'Leaf-bare':
+                screen.blit(self.leafbare_bg, (0, 0))
+            elif game.clan.current_season == 'Leaf-fall':
+                screen.blit(self.leaffall_bg, (0, 0))
 
         verdana_big.text(game.clan.name + 'Clan', ('center', 30))
         verdana.text('Leader\'s Den', game.clan.cur_layout['leader den'])
@@ -629,35 +634,12 @@ class ProfileScreen(Screens):
         count += 1  # SEX / GENDER
         verdana_small.text(the_cat.status, (450, 330 + count2 * 15));
         count2 += 1  # STATUS
-        if the_cat.status == 'apprentice':
+        if 'apprentice' in the_cat.status:
+            if the_cat.mentor is None:
+                the_cat.update_mentor()
             if the_cat.mentor is not None:
                 verdana_small.text('mentor: ' + str(the_cat.mentor.name), (450, 330 + count2 * 15))
                 count2 += 1
-            else:
-                mentor = choice(game.clan.clan_cats)
-                while cat_class.all_cats.get(mentor).status != 'warrior' and cat_class.all_cats.get(
-                        mentor).status != 'deputy' and cat_class.all_cats.get(
-                    mentor).status != 'leader' or cat_class.all_cats.get(mentor).dead:
-                    mentor = choice(game.clan.clan_cats)
-                the_cat.mentor = cat_class.all_cats.get(mentor)
-                cat_class.all_cats.get(mentor).apprentice.append(the_cat)
-                verdana_small.text('mentor: ' + str(the_cat.mentor.name), (450, 330 + count2 * 15))
-                count2 += 1
-        elif the_cat.status == 'medicine cat apprentice':
-            if the_cat.mentor is not None:
-                verdana_small.text('mentor: ' + str(the_cat.mentor.name), (450, 330 + count2 * 15))
-                count2 += 1
-            else:
-                med_cats = []
-                for cat in game.clan.clan_cats:
-                    if cat_class.all_cats.get(cat).status == 'medicine cat' and not cat_class.all_cats.get(cat).dead:
-                        med_cats.append(cat)
-                if len(med_cats) > 0:
-                    mentor = choice(med_cats)
-                    self.mentor = cat_class.all_cats.get(mentor)
-                    cat_class.all_cats.get(mentor).apprentice.append(self)
-                    verdana_small.text('mentor: ' + str(the_cat.mentor.name), (450, 330 + count2 * 15))
-                    count2 += 1
         if len(the_cat.apprentice) != 0:
             apps = ''
             if len(the_cat.apprentice) == 1:

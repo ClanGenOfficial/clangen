@@ -207,7 +207,7 @@ class Patrol(object):
                                150, 50, 0, 0, 0, 0, 1, ['excellent fighter']],
                               [9, 'Your patrol comes across a thunderpath. Do you cross it?',
                                'Your patrol crosses the path, and can hunt on the other side',
-                               'r_c is crippled by a Monster and retires to the elder den',
+                               'r_c is hit by a Monster and retires to the elder den',
                                'You decide to not cross the thunderpath', 20, 10, 0, 0, 0, 0, 1,
                                ['very smart', 'extremely smart']],
                               [10, 'Your patrol has a disagreement. They look to p_l to settle the dispute',
@@ -418,13 +418,13 @@ class Patrol(object):
                 # stuff that happens during calculations
                 return
             else:
-                # cripples random cat
+                # disables random cat
                 if not self.success:
                     if self.patrol_random_cat.status == 'deputy':
                         game.clan.deputy = None
                     if self.patrol_random_cat.status == 'leader':
                         self.patrol_random_cat.experience = 0
-                        self.patrol_result_text = str(self.patrol_random_cat.name) + ' is crippled by a Monster and has to relearn everything.'
+                        self.patrol_result_text = str(self.patrol_random_cat.name) + ' is injured by a Monster and has to relearn everything.'
                     else:
                         self.patrol_random_cat.status_change('elder')
                     self.patrol_random_cat.skill = choice(['paralyzed', 'blind', 'missing a leg'])
@@ -744,6 +744,8 @@ class Patrol(object):
                     kit = Cat(status=new_cat_status)
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
+                    if randint(0, 1):
+                        kit.name.suffix = ""
                     self.patrol_cats.append(kit)
                 return
 
@@ -789,6 +791,8 @@ class Patrol(object):
                     kit = Cat(status='warrior')
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
+                    if randint(0, 1):
+                        kit.name.suffix = ""
                     self.patrol_cats.append(kit)
 
         if self.patrol_event[0] == 44:

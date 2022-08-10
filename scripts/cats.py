@@ -243,7 +243,7 @@ class Cat(object):
 
     def perform_ceremonies(self,
                            cat):  # This function is called when apprentice/warrior/other ceremonies are performed every moon
-        if game.clan.leader.dead and game.clan.deputy is not None:
+        if game.clan.leader.dead and game.clan.deputy is not None and not game.clan.deputy.dead:
             game.clan.new_leader(game.clan.deputy)
             game.cur_events_list.append(
                 str(game.clan.deputy.name) + ' has been promoted to the new leader of the clan')
@@ -261,20 +261,12 @@ class Cat(object):
                     cat.status_change('apprentice')
                     game.cur_events_list.append(str(cat.name) + ' has started their apprenticeship')
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
-                    if cat.mentor is not None:
-                        if cat not in cat.mentor.former_apprentices:
-                            cat.mentor.former_apprentices.append(cat)
-                        if cat in cat.mentor.apprentice:
-                            cat.mentor.apprentice.remove(cat)
                     cat.status_change('warrior')
+                    cat.update_mentor()
                     game.cur_events_list.append(str(cat.name) + ' has earned their warrior name')
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
-                    if cat.mentor is not None:
-                        if cat not in cat.mentor.former_apprentices:
-                            cat.mentor.former_apprentices.append(cat)
-                        if cat in cat.mentor.apprentice:
-                            cat.mentor.apprentice.remove(cat)
                     cat.status_change('medicine cat')
+                    cat.update_mentor()
                     game.cur_events_list.append(str(cat.name) + ' has earned their medicine cat name')
                     game.clan.new_medicine_cat(cat)
                 elif cat.status == 'warrior' and cat.age == 'elder':
@@ -508,10 +500,9 @@ class Cat(object):
 
     def dies(self):  # This function is called every time a cat dies
         self.dead = True
-        if (self.status == 'apprentice' or self.status == 'medicine cat apprentice'):
-            if self in self.mentor.apprentice:
-                self.mentor.apprentice.remove(self)
-            self.mentor.former_apprentices.append(self)
+        self.update_mentor()
+        for app in self.apprentice:
+            app.update_mentor()
         game.clan.add_to_starclan(self)
 
     def have_kits(self):
@@ -799,44 +790,66 @@ class Cat(object):
         self.status = new_status
         self.name.status = new_status
         if 'apprentice' in new_status:
-            # In case cat is switching apprentice type,
-            # remove the old mentor
-            if self.mentor:
-                if self in self.mentor.apprentice:
-                    self.mentor.apprentice.remove(self)
-                if self not in self.mentor.former_apprentices:
-                    self.mentor.former_apprentices.append(self)
-            if new_status == 'apprentice':
-                mentor = choice(game.clan.clan_cats)
-                while cat_class.all_cats.get(mentor).status != 'warrior' and cat_class.all_cats.get(
-                        mentor).status != 'deputy' and cat_class.all_cats.get(
-                    mentor).status != 'leader' or cat_class.all_cats.get(mentor).dead:
-                    mentor = choice(game.clan.clan_cats)
-                if len(cat_class.all_cats.get(mentor).apprentice) > 0:
-                    for i in range(len(cat_class.all_cats)):
-                        if cat_class.all_cats.get(mentor).status != 'warrior' and cat_class.all_cats.get(
-                                mentor).status != 'deputy' and cat_class.all_cats.get(
-                            mentor).status != 'leader' or cat_class.all_cats.get(mentor).dead or len(
-                            cat_class.all_cats.get(game.clan.clan_cats[i]).apprentice) == 0:
-                            mentor = game.clan.clan_cats[i]
-                            break
-            elif new_status == 'medicine cat apprentice':
-                med_cats = []
-                for cat in game.clan.clan_cats:
-                    if cat_class.all_cats.get(cat).status == 'medicine cat' and not cat_class.all_cats.get(cat).dead:
-                        med_cats.append(cat)
-                if med_cats:
-                    mentor = choice(med_cats)
-                else:
-                    mentor = None
-            self.mentor = cat_class.all_cats.get(mentor)
-            if mentor:
-                cat_class.all_cats.get(mentor).apprentice.append(self)
-                # Shouldn't be both an apprentice and former apprentice
-                if self in cat_class.all_cats.get(mentor).former_apprentices:
-                    cat_class.all_cats.get(mentor).former_apprentices.remove(self)
+            self.update_mentor()
         # update class dictionary
         self.all_cats[self.ID] = self
+    
+    def is_valid_mentor(self, potential_mentor):
+        # Dead cats can't be mentors
+        if potential_mentor.dead:
+            return False
+        # Match jobs
+        if self.status == 'medicine cat apprentice' and potential_mentor.status != 'medicine cat':
+            return False
+        if self.status == 'apprentice' and potential_mentor.status not in ['leader', 'deputy', 'warrior']:
+            return False
+        # If not an app, don't need a mentor
+        if 'apprentice' not in self.status:
+            return False
+        # Dead cats don't need mentors
+        if self.dead:
+            return False
+        return True
+
+    def update_mentor(self, new_mentor=None):
+        if new_mentor is None:
+            # If not reassigning and current mentor works, leave it
+            if self.mentor and self.is_valid_mentor(self.mentor):
+                return
+        old_mentor = self.mentor
+        # Should only have mentor if alive and some kind of apprentice
+        if 'apprentice' in self.status and not self.dead:
+            # Need to pick a random mentor if not specified
+            if new_mentor is None:
+                potential_mentors = []
+                priority_mentors = []
+                for cat in self.all_cats.values():
+                    if self.is_valid_mentor(cat):
+                        potential_mentors.append(cat)
+                        if len(cat.apprentice) == 0:
+                            priority_mentors.append(cat)
+                # First try for a cat who currently has no apprentices
+                if len(priority_mentors) > 0:
+                    new_mentor = choice(priority_mentors)
+                elif len(potential_mentors) > 0:
+                    new_mentor = choice(potential_mentors)
+            # Mentor changing to chosen/specified cat
+            self.mentor = new_mentor
+            if new_mentor is not None:
+                if self not in new_mentor.apprentice:
+                    new_mentor.apprentice.append(self)
+                if self in new_mentor.former_apprentices:
+                    new_mentor.former_apprentices.remove(self)
+        else:
+            self.mentor = None
+        # Move from old mentor's apps to former apps
+        if old_mentor is not None and old_mentor != self.mentor:
+            if self in old_mentor.apprentice:
+                old_mentor.apprentice.remove(self)
+            if self not in old_mentor.former_apprentices:
+                old_mentor.former_apprentices.append(self)
+            if old_mentor not in self.former_mentor:
+                self.former_mentor.append(old_mentor)
 
     def update_sprite(self):
         # First make pelt, if it wasn't possible before
