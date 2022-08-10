@@ -243,7 +243,7 @@ class Cat(object):
 
     def perform_ceremonies(self,
                            cat):  # This function is called when apprentice/warrior/other ceremonies are performed every moon
-        if game.clan.leader.dead and game.clan.deputy is not None:
+        if game.clan.leader.dead and game.clan.deputy is not None and not game.clan.deputy.dead:
             game.clan.new_leader(game.clan.deputy)
             game.cur_events_list.append(
                 str(game.clan.deputy.name) + ' has been promoted to the new leader of the clan')
@@ -261,12 +261,12 @@ class Cat(object):
                     cat.status_change('apprentice')
                     game.cur_events_list.append(str(cat.name) + ' has started their apprenticeship')
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
-                    cat.update_mentor()
                     cat.status_change('warrior')
+                    cat.update_mentor()
                     game.cur_events_list.append(str(cat.name) + ' has earned their warrior name')
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
-                    cat.update_mentor()
                     cat.status_change('medicine cat')
+                    cat.update_mentor()
                     game.cur_events_list.append(str(cat.name) + ' has earned their medicine cat name')
                     game.clan.new_medicine_cat(cat)
                 elif cat.status == 'warrior' and cat.age == 'elder':
