@@ -492,7 +492,7 @@ class Cat(object):
                         str(cat.name) + ' died in an accident at ' + str(cat.moons) + ' moons old')
 
         if cat.moons > randint(150, 200):  # Cat dies of old age
-            if choice([1, 2, 3, 4]) == 1:
+            if choice([1, 2, 3, 4, 5, 6]) == 1:
                 cat.dies()
                 if game.cur_events_list is not None:
                     game.cur_events_list.append(
@@ -631,7 +631,8 @@ class Cat(object):
                             'Is feeling happy!', 'Is curious about the other clans', 'Is feeling sassy today',
                             'Wants to spend time alone today', "Is eating some freshkill",
                             'Is heading to the dirtplace', 'Is rethinking their life choices',
-                            'Is visiting the medicine den', 'Is having a good day']
+                            'Is visiting the medicine den', 'Is having a good day', 'Is having a hard day',
+                            'Is talking to themselves', 'Regrets not eating the bird on the freshkill pile earlier']
                 if other_cat.dead:  # thoughts with other cats who are dead
                     if cat.status in ['kitten', 'apprentice',
                                       'medicine cat apprentice']:  # young cat thoughts about dead cat
@@ -670,22 +671,23 @@ class Cat(object):
                                          'Is scolding ' + other_name,
                                          'Is giving ' + other_name + ' a task'])
                     if cat.status == 'kitten':  # kit thoughts
-                        if other_cat.status == 'kitten':
+                        if other_cat.status == 'kitten':  # kit thoughts with other kit
                             thoughts.extend(['Pretends to be a warrior with ' + other_name,
                                              'Plays mossball with ' + other_name,
                                              'Has a mock battle with ' + other_name,
                                              'Comes up with a plan to sneak out of camp with ' + other_cat,
                                              'Whines about ' + other_cat])
-                        elif other_cat.status != 'kitten':
+                        elif other_cat.status != 'kitten':  # kit thoughts about older cat
                             thoughts.extend(
-                                ['Is biting ' + other_name + '\'s tail', 'Sticks their tongue out at ' + other_name])
+                                ['Is biting ' + other_name + '\'s tail', 'Sticks their tongue out at ' + other_name,
+                                 'Whines to ' + other_name])
                     elif cat.status in ['apprentice', 'medicine cat apprentice', 'warrior', 'medicine cat', 'deputy',
                                         'leader']:
                         if other_cat.status == 'kitten':  # older cat thoughts about kit
                             thoughts.extend(['Trips over ' + other_name, 'Is giving advice to ' + other_name])
                         else:
                             thoughts.extend(['Is fighting with ' + other_name, 'Is talking with ' + other_name,
-                                             'Is sharing prey with ' + other_name])
+                                             'Is sharing prey with ' + other_name, 'Heard a rumor about ' + other_name])
                     if cat.age == other_cat.age:
                         thoughts.extend(
                             ['Is developing a crush on ' + other_name, 'Is spending a lot of time with ' + other_name])
@@ -700,7 +702,7 @@ class Cat(object):
                                      'Wants to take a nap', 'Is scared after having a nightmare',
                                      'Thinks they saw a StarClan cat in their dreams', 'Wants to snuggle',
                                      'Wishes other cats would stop babying them', 'Is hiding from other cats',
-                                     'Is bouncing around in excitement'])
+                                     'Is bouncing around in excitement', 'Whines about being hungry'])
                 elif cat.status == 'apprentice':
                     thoughts.extend(
                         ['Is thinking about the time they caught a huge rabbit', 'Wonders what their full name will be',
@@ -731,7 +733,7 @@ class Cat(object):
                          'Is wondering if they could borrow some catmint from the other clans',
                          'Is looking forward to the half-moon meeting', 'Is wrapping a wound with cobwebs',
                          'Is clearing out old herbs', 'Is gathering death berries',
-                         'Is proud of their ability to care for their clanmates'])
+                         'Is proud of their ability to care for their clanmates', 'Chased kits out of their den'])
                 elif cat.status == 'warrior':
                     thoughts.extend(
                         ['Caught scent of a fox earlier', 'Caught scent of an enemy warrior earlier',
@@ -764,12 +766,12 @@ class Cat(object):
                          'Is complaining about thorns in their nest', 'Is bossing around the younger cats',
                          'Is telling scary stories to the younger cats', 'Is snoring in their sleep',
                          'Thinking about how too many cats die young', 'Is complaining about being cold',
-                         'Is grateful they have lived so long'])
+                         'Is grateful they have lived so long', 'Is sharing their wisdom'])
                 cat.thought = choice(thoughts)
 
                 # on_patrol = ['Is having a good time out on patrol', 'Wants to return to camp to see ' + other_name,
                 #              'Is currently out on patrol', 'Is getting rained on during their patrol',
-                #              'Is out hunting']
+                #              'Is out hunting'] //will add later
                 # interact_with_loner = ['Wants to know where ' + other_name + ' came from.'] // will add
 
     def status_change(self, new_status):
@@ -782,9 +784,8 @@ class Cat(object):
                 self.trait = 'bloodthirsty'
             else:
                 self.trait = choice(self.traits)
-        if self.status == 'apprentice' and new_status != 'medicine cat apprentice':
-            self.skill = choice(self.skills)
-        if self.status == 'medicine cat apprentice' and new_status != 'apprentice':
+        if (self.status == 'apprentice' and new_status != 'medicine cat apprentice') or (
+                self.status == 'medicine cat apprentice' and new_status != 'apprentice'):
             self.skill = choice(self.skills)
 
         self.status = new_status
@@ -793,7 +794,7 @@ class Cat(object):
             self.update_mentor()
         # update class dictionary
         self.all_cats[self.ID] = self
-    
+
     def is_valid_mentor(self, potential_mentor):
         # Dead cats can't be mentors
         if potential_mentor.dead:
