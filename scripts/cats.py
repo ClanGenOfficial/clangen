@@ -767,7 +767,8 @@ class Cat(object):
                          'Is telling scary stories to the younger cats', 'Is snoring in their sleep',
                          'Thinking about how too many cats die young', 'Is complaining about being cold',
                          'Is grateful they have lived so long', 'Is sharing their wisdom'])
-                cat.thought = choice(thoughts)
+                thought = choice(thoughts)
+            cat.thought = thought
 
                 # on_patrol = ['Is having a good time out on patrol', 'Wants to return to camp to see ' + other_name,
                 #              'Is currently out on patrol', 'Is getting rained on during their patrol',
