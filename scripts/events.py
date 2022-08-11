@@ -136,10 +136,12 @@ class Events(object):
                 elif type_of_new_cat == 2:
                     loner_name = choice(names.loner_names)
                     loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
+                    loner.skill = 'formerly a loner'
                     game.clan.add_cat(loner)
                     game.cur_events_list.extend([name + ' finds a loner named ' + str(loner.name) + ' who joins the clan. They decide to keep their name'])
                 elif type_of_new_cat == 3:
                     loner = Cat(status='warrior', moons=randint(12, 120))
+                    loner.skill = 'formerly a loner'
                     game.clan.add_cat(loner)
                     game.cur_events_list.extend(
                         [name + ' finds a loner named ' + choice(names.loner_names) + ' who joins the clan. They change their name to ' + str(loner.name)])
@@ -151,10 +153,16 @@ class Events(object):
                 elif type_of_new_cat == 5:
                     loner_name = choice(names.loner_names)
                     loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
+                    loner.skill = 'formerly a kittypet'
+                    if choice([1, 2]) == 1:
+                        loner.specialty2 = choice(scars3)
                     game.clan.add_cat(loner)
                     game.cur_events_list.extend([name + ' finds a kittypet named ' + str(loner_name) + ' who wants to join the clan. They decide to keep their name'])
                 elif type_of_new_cat == 6:
                     loner = Cat(status='warrior', moons=randint(12, 120))
+                    loner.skill = 'formerly a kittypet'
+                    if choice([1, 2]) == 1:
+                        loner.specialty2 = choice(scars3)
                     game.clan.add_cat(loner)
                     game.cur_events_list.extend(
                         [name + ' finds a kittypet named ' + choice(names.loner_names) + ' who wants to join the clan. They change their name to ' + str(loner.name)])
