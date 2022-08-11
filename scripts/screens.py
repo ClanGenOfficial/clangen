@@ -525,7 +525,7 @@ class EventsScreen(Screens):
                 game.cur_events_list = []
         else:
             buttons.draw_button(('center', 220), text='TIMESKIP ONE MOON', available=False)
-        cat_class.one_moon()
+        events_class.one_moon()
 
         # Maximum events on the screen is 12
         a = 0
