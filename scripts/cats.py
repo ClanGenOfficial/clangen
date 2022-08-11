@@ -1212,6 +1212,8 @@ class Cat(object):
                         elif attr[x].upper() == 'FALSE':
                             attr[x] = False
 
+                    game.switches['error_message'] = 'There was an error loading cat # ' + str(attr[0])
+
                     the_pelt = choose_pelt(attr[2], attr[10], attr[11], attr[9], attr[12], True)
                     the_cat = Cat(ID=attr[0], prefix=attr[1].split(':')[0], suffix=attr[1].split(':')[1],
                                   gender=attr[2],
@@ -1257,6 +1259,8 @@ class Cat(object):
                     if len(attr) > 33 and attr[33] is not None:
                         the_cat.former_apprentices = attr[33].split(';')
 
+            game.switches['error_message'] = 'There was an error loading this clan\'s mentors/apprentices'
+
             for n in self.all_cats.values():
                 # Load the mentors and apprentices after all cats have been loaded
                 n.mentor = cat_class.all_cats.get(n.mentor)
@@ -1275,6 +1279,8 @@ class Cat(object):
                 n.apprentice = apps
                 n.former_apprentices = former_apps
                 n.update_sprite()
+            
+            game.switches['error_message'] = ''
 
     def load(self, cat_dict):
         """ A function that takes a dictionary containing other dictionaries with attributes and values of all(?)
