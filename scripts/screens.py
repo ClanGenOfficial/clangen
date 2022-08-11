@@ -131,7 +131,6 @@ class InfoScreen(Screens):
 
 
 class ClanScreen(Screens):
-    
     greenleaf_bg = pygame.transform.scale(pygame.image.load('resources/greenleafcamp.png'), (800, 700))
     newleaf_bg = pygame.transform.scale(pygame.image.load('resources/newleafcamp.png'), (800, 700))
     leafbare_bg = pygame.transform.scale(pygame.image.load('resources/leafbarecamp.png'), (800, 700))
@@ -362,7 +361,7 @@ class MakeClanScreen(Screens):
             verdana_small.text(str(game.choose_cats[game.switches['cat']].trait), (330, 425))
 
             if game.choose_cats[game.switches['cat']].age == 'kitten' or game.choose_cats[
-                game.switches['cat']].age == 'apprentice':
+                game.switches['cat']].status == 'apprentice':
                 verdana_red.text('Too young to become deputy.', ('center', 490))
             else:
                 buttons.draw_button(('center', 490), text='This cat will support the leader',
@@ -406,7 +405,8 @@ class MakeClanScreen(Screens):
             verdana_small.text(str(game.choose_cats[game.switches['cat']].age), (330, 405))
             verdana_small.text(str(game.choose_cats[game.switches['cat']].trait), (330, 425))
 
-            if game.choose_cats[game.switches['cat']].age == 'kitten':
+            if game.choose_cats[game.switches['cat']].age == 'kitten' or game.choose_cats[
+                game.switches['cat']].status == 'kitten':
                 verdana_red.text('Too young to become medicine cat.', ('center', 490))
             else:
                 buttons.draw_button(('center', 490), text='This cat will take care of the clan',
@@ -693,7 +693,8 @@ class ProfileScreen(Screens):
         if the_cat.mate is not None and not the_cat.dead:
             if the_cat.mate in cat_class.all_cats:
                 if cat_class.all_cats.get(the_cat.mate).dead:
-                    verdana_small.text('former mate: ' + str(cat_class.all_cats[the_cat.mate].name), (250, 330 + count * 15))
+                    verdana_small.text('former mate: ' + str(cat_class.all_cats[the_cat.mate].name),
+                                       (250, 330 + count * 15))
                 else:
                     verdana_small.text('mate: ' + str(cat_class.all_cats[the_cat.mate].name), (250, 330 + count * 15))
                 count += 1
@@ -1051,19 +1052,19 @@ class ListScreen(Screens):
 
 
 # def choose_banner():
-    # if game.clan is not None:
-    #     # if game.clan.current_season == 'Leaf-fall':
-    #     fall = pygame.image.load('resources/seasonbanners/fall/fall banner.png')
-    #     fall_fog = pygame.image.load('resources/seasonbanners/fall/fall banner fog.png')
-    #     fall_night = pygame.image.load('resources/seasonbanners/fall/fall banner night.png')
-    #     fall_night_fog = pygame.image.load('resources/seasonbanners/fall/fall banner night fog.png')
-    #     fall_night_overcast = pygame.image.load('resources/seasonbanners/fall/fall banner night overcast.png')
-    #     fall_night_rain = pygame.image.load('resources/seasonbanners/fall/fall banner night rain.png')
-    #     fall_overcast = pygame.image.load('resources/seasonbanners/fall/fall banner overcast.png')
-    #     fall_rain = pygame.image.load('resources/seasonbanners/fall/fall banner rain.png')
-    #     leaffall = [fall, fall_fog, fall_night, fall_night_fog, fall_night_overcast, fall_night_rain, fall_overcast,
-    #                 fall_rain]
-    #     return choice(leaffall)
+# if game.clan is not None:
+#     # if game.clan.current_season == 'Leaf-fall':
+#     fall = pygame.image.load('resources/seasonbanners/fall/fall banner.png')
+#     fall_fog = pygame.image.load('resources/seasonbanners/fall/fall banner fog.png')
+#     fall_night = pygame.image.load('resources/seasonbanners/fall/fall banner night.png')
+#     fall_night_fog = pygame.image.load('resources/seasonbanners/fall/fall banner night fog.png')
+#     fall_night_overcast = pygame.image.load('resources/seasonbanners/fall/fall banner night overcast.png')
+#     fall_night_rain = pygame.image.load('resources/seasonbanners/fall/fall banner night rain.png')
+#     fall_overcast = pygame.image.load('resources/seasonbanners/fall/fall banner overcast.png')
+#     fall_rain = pygame.image.load('resources/seasonbanners/fall/fall banner rain.png')
+#     leaffall = [fall, fall_fog, fall_night, fall_night_fog, fall_night_overcast, fall_night_rain, fall_overcast,
+#                 fall_rain]
+#     return choice(leaffall)
 
 
 class PatrolScreen(Screens):
@@ -1072,7 +1073,6 @@ class PatrolScreen(Screens):
         verdana.text('These cats are currently in the camp, ready for a patrol.', ('center', 115))
         verdana.text('Choose up to six to take on patrol.', ('center', 135))
         verdana.text('Smaller patrols help cats gain more experience, but larger patrols are safer.', ('center', 155))
-
 
         # buttons
         draw_menu_buttons()
@@ -1401,6 +1401,8 @@ choose_mate_screen = ViewChildrenScreen('see kits screen')
 list_screen = ListScreen('list screen')
 switch_clan_screen = SwitchClanScreen('switch clan screen')
 allegiances_screen = AllegiancesScreen('allegiances screen')
+
+
 # choose_mentor_screen = ChooseMentorScreen('choose mentor screen')
 
 
@@ -1421,5 +1423,3 @@ def draw_menu_buttons():
     buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
     buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
     buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
-
-
