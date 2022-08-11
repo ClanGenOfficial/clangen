@@ -323,7 +323,6 @@ class Cat(object):
         if randint(1, 50) == 49:
             # interact with other cat
             append_str = None
-            # check if cat is dead
             cat_number = choice(list(self.all_cats.keys()))
 
             if self.all_cats[cat_number].dead:
@@ -389,7 +388,8 @@ class Cat(object):
                             cat.name) + ' dead in the snow.'
                     # sus
                 elif event_choice == 3:
-                    if cat.mate is not None and randint(1, 3) == 1:
+                    if cat.mate is not None and randint(1, 3) == 1 and self.all_cats[cat_number].name != self.all_cats[
+                        cat.mate].name:
                         append_str = str(cat.name) + ' is killed by ' + str(
                             self.all_cats[cat_number].name) + ' in an argument over ' + str(
                             self.all_cats[cat.mate].name)
@@ -462,14 +462,9 @@ class Cat(object):
                         self.all_cats[cat_number].name) + ' die of a contagious disease'
                     cat.dies()
                     self.all_cats[cat_number].dies()
-                else:
-                    append_str = str(cat.name) + ' interacted with ' + str(
-                        self.all_cats[cat_number].name)
 
             if game.cur_events_list is not None and append_str is not None and append_str != '':
                 game.cur_events_list.append(append_str)
-            else:
-                game.cur_events_list = [append_str]
 
     def create_interactions2(self, cat):
         if randint(1, 50) == 1:
