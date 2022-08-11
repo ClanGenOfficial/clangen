@@ -5,6 +5,7 @@ from .game_essentials import *
 from random import choice, randint
 import math
 import os.path
+import json
 
 
 class Cat(object):
@@ -916,68 +917,41 @@ class Cat(object):
         self.used_screen.blit(self.large_sprite, new_pos)
 
     def save_cats(self):
-        data = ''
-        for x in self.all_cats.values():
-            # cat ID -- name prefix : name suffix
-            data += x.ID + ',' + x.name.prefix + ':' + x.name.suffix + ','
-            # cat gender -- status -- age -- trait
-            data += x.gender + ',' + x.status + ',' + str(x.age) + ',' + x.trait + ','
-            # cat parent1 -- parent2 -- mentor
-            if x.parent1 is None:
-                data += 'None ,'
-            else:
-                data += x.parent1 + ','
-            if x.parent2 is None:
-                data += 'None ,'
-            else:
-                data += x.parent2 + ','
-            if x.mentor is None:
-                data += 'None ,'
-            else:
-                data += x.mentor.ID + ','
-
-            # pelt type -- colour -- white -- length
-            data += x.pelt.name + ',' + x.pelt.colour + ',' + str(x.pelt.white) + ',' + x.pelt.length + ','
-            # sprite kitten -- adolescent
-            data += str(x.age_sprites['kitten']) + ',' + str(x.age_sprites['adolescent']) + ','
-            # sprite adult -- elder
-            data += str(x.age_sprites['adult']) + ',' + str(x.age_sprites['elder']) + ','
-            # eye colour -- reverse -- white patches -- pattern
-            data += x.eye_colour + ',' + str(x.reverse) + ',' + str(x.white_patches) + ',' + str(x.pattern) + ','
-            # skin -- skill -- NONE  -- specs  -- moons
-            data += x.skin + ',' + x.skill + ',' + 'None' + ',' + str(x.specialty) + ',' + str(x.moons) + ','
-            # mate -- dead  -- dead sprite
-            data += str(x.mate) + ',' + str(x.dead) + ',' + str(x.age_sprites['dead'])
-
-            # scar 2
-            data += ',' + str(x.specialty2)
-            # experience
-            data += ',' + str(x.experience)
-            # dead_for x moons
-            data += ',' + str(x.dead_for)
-            # apprentice
-            if x.apprentice:
-                data += ','
-                for cat in x.apprentice:
-                    data += str(cat.ID) + ';'
-                # remove last semicolon
-                data = data[:-1]
-            else:
-                data += ',' + 'None'
-            # former apprentice
-            if x.former_apprentices:
-                data += ','
-                for cat in x.former_apprentices:
-                    data += str(cat.ID) + ';'
-                # remove last semicolon
-                data = data[:-1]
-            else:
-                data += ',' + 'None'
-            # next cat
-            data += '\n'
-
-        # remove one last unnecessary new line
-        data = data[:-1]
+        cats = {}
+        for cat in self.all_cats.values():
+            cats[cat.ID]["name_prefix"] = cat.name.prefix
+            cats[cat.ID]["name_suffix"] = cat.name.suffix
+            cats[cat.ID]["gander"] = cat.gender
+            cats[cat.ID]["status"] = cat.status
+            cats[cat.ID]["age"] = cat.age  # does this really need to be converted to a string if we store as json?
+            cat[cat.ID]["trait"] = cat.trait
+            cat[cat.ID]["parent_1"] = cat.parent1
+            cat[cat.ID]["parent_2"] = cat.parent2
+            cat[cat.ID]["mentor"] = cat.mentor.ID
+            cat[cat.ID]["pelt_name"] = cat.pelt.name
+            cat[cat.ID]["pelt_color"] = cat.pelt.color
+            cat[cat.ID]["pelt_white"] = cat.pelt.white  # does this need to be converted to string
+            cat[cat.ID]["pelt_length"] = cat.pelt.length
+            cat[cat.ID]["sprite_kitten"] = cat.age_sprites['kitten']  # does this need to be converted to string
+            cat[cat.ID]["sprite_adolescent"] = cat.age_sprites['adolescent']  # does this need to be converted to string
+            cat[cat.ID]["sprite_adult"] = cat.age_sprites['adult']  # does this need to be converted to string
+            cat[cat.ID]["sprite_elder"] = cat.age_sprites['elder']  # need to be a string?
+            cat[cat.ID]["eye_color"] = cat.eye_colour
+            cat[cat.ID]["reverse"] = cat.reverse  # need to be a string?
+            cat[cat.ID]["white_patches"] = cat.white_patches  # need to be string?
+            cat[cat.ID]["pattern"] = cat.pattern
+            cat[cat.ID]["skin"] = cat.skin
+            cat[cat.ID]["skill"] = cat.skill
+            cat[cat.ID]["specialty"] = cat.specialty  # need to be a string?
+            cat[cat.ID]["moons"] = cat.moons  # need to be a string?
+            cat[cat.ID]["mate"] = cat.mate  # need to be a string?
+            cat[cat.ID]["dead"] = cat.dead  # need to be a string?
+            cat[cat.ID]["sprite_dead"] = cat.age_sprites['dead']  # needs to be a string?
+            cat[cat.ID]["scar_2"] = cat.specialty2
+            cat[cat.ID]["experience"] = cat.experience
+            cat[cat.ID]["dead_for"] = cat.dead_for  # need to be a string?
+            cat[cat.ID]["apprentices"] = cat.apprentice  # we can store this as a list in the dict/json is that oK?
+            cat[cat.ID]["former_apprentices"] = cat.former_apprentices  # we can store this as a list in the dict/json is that oK?
 
         if game.switches['naming_text'] != '':
             clanname = game.switches['naming_text']
@@ -985,7 +959,8 @@ class Cat(object):
             clanname = game.switches['clan_name']
         else:
             clanname = game.switches['clan_list'][0]
-        with open('saves/' + clanname + 'cats.csv', 'w') as write_file:
+        with open('saves/' + clanname + 'cats.json', 'w') as write_file:
+            data = json.dumps(cats)
             write_file.write(data)
 
     def load_cats(self):
@@ -993,7 +968,7 @@ class Cat(object):
             cat_data = ''
         else:
             if os.path.exists('saves/' + game.switches['clan_list'][0] + 'cats.csv'):
-                with open('saves/' + game.switches['clan_list'][0] + 'cats.csv', 'r') as read_file:
+                with open('saves/' + game.switches['clan_list'][0] + 'cats.json', 'r') as read_file:
                     cat_data = read_file.read()
             else:
                 with open('saves/' + game.switches['clan_list'][0] + 'cats.txt', 'r') as read_file:
