@@ -125,7 +125,7 @@ class Events(object):
                 other_cat.mate = None
 
     def invite_new_cats(self, cat):
-        if randint(1, 50) == 1:
+        if randint(1, 100) == 1:
             if cat.age != 'kitten':
                 name = str(cat.name)
                 type_of_new_cat = choice([1, 1, 2, 3, 4, 5, 6])
@@ -226,6 +226,8 @@ class Events(object):
             elif cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader':
                 cause_of_death.extend([name + ' died from infected wounds', name + ' was killed by enemy ' + str(choice(names.normal_prefixes)) + 'Clan warriors',
                                        name + ' went missing and was found dead', name + ' died in a border skirmish'])
+            elif cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice':
+                cause_of_death.extend(['The herb stores were damaged and ' + name + ' was murdered by an enemy warrior'])
             if cat.status == 'deputy' or cat.status == 'leader':
                 cause_of_death.extend([name + ' was killed by the ' + str(choice(names.normal_prefixes)) + 'Clan deputy',
                                        name + ' was killed by the ' + str(choice(names.normal_prefixes)) + 'Clan leader'])
