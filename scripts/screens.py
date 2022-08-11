@@ -361,7 +361,7 @@ class MakeClanScreen(Screens):
             verdana_small.text(str(game.choose_cats[game.switches['cat']].trait), (330, 425))
 
             if game.choose_cats[game.switches['cat']].age == 'kitten' or game.choose_cats[
-                game.switches['cat']].status == 'apprentice':
+                game.switches['cat']].age == 'adolescent':
                 verdana_red.text('Too young to become deputy.', ('center', 490))
             else:
                 buttons.draw_button(('center', 490), text='This cat will support the leader',
@@ -406,7 +406,7 @@ class MakeClanScreen(Screens):
             verdana_small.text(str(game.choose_cats[game.switches['cat']].trait), (330, 425))
 
             if game.choose_cats[game.switches['cat']].age == 'kitten' or game.choose_cats[
-                game.switches['cat']].status == 'kitten':
+                game.switches['cat']].age == 'adolescent':
                 verdana_red.text('Too young to become medicine cat.', ('center', 490))
             else:
                 buttons.draw_button(('center', 490), text='This cat will take care of the clan',
