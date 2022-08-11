@@ -1,5 +1,5 @@
 import random
-
+import os
 
 class Name(object):
     special_suffixes = {"kitten": "kit", "apprentice": "paw", "medicine cat apprentice": "paw", "leader": "star"}
@@ -37,33 +37,33 @@ class Name(object):
                      'Calico': ['stripe', 'dapple', 'patch', 'patch']}
 
     normal_prefixes = ["Adder", "Alder", "Ant", "Apple", "Ash", "Acorn", "Arch", "Aspen", "Bark", "Bay", "Bee",
-                       "Badger", "Beetle", "Beech", "Berry", "Big", "Birch", "Bird", "Bloom", "Boulder", "Bounce",
-                       "Blossom", "Bracken", "Branch", "Brave", "Bramble", "Briar", "Bright", "Brindle", "Bristle",
+                       "Badger", "Beetle", "Beech", "Berry", "Bat", "Beaver", "Big", "Birch", "Bird", "Bloom", "Borage", "Boulder", "Bounce",
+                       "Blossom", "Bracken", "Branch", "Brave", "Bramble", "Burdock", "Briar", "Bright", "Brindle", "Bristle",
                        "Broken", "Brook", "Bug", "Bumble", "Buzzard", "Cherry", "Chestnut", "Chive", "Cinder",
-                       "Cinnamon", "Cloud", "Cold", "Crow", "Cedar", "Claw", "Clover", "Copper", "Cone",
+                       "Cheetah", "Cinnamon", "Cloud", "Cold", "Crow", "Cedar", "Claw", "Clover", "Copper", "Cone",
                        "Creek", "Cricket", "Crooked", "Crouch", "Curl", "Curly", "Cypress", "Dapple", "Dove", "Dusk",
                        "Dust", "Dawn", "Dead", "Dew", "Doe", "Down", "Drift", "Duck", "Eagle", "Echo", "Eel", "Elm",
-                       "Ember", "Freckle", "Fringe", "Feather", "Fern", "Fennel", "Ferret", "Flame", "Flower", "Fallen",
+                       "Ember", "Freckle", "Fringe", "Frozen", "Feather", "Fern", "Fennel", "Ferret", "Flame", "Flower", "Fallen",
                        "Fallow", "Fawn", "Fin", "Finch", "Flail", "Flutter", "Fir", "Frog", "Frond", "Flash", "Flax",
                        "Fleet", "Flicker", "Flint", "Flip", "Fly", "Fuzzy", "Goose", "Gorse", "Grass", "Gravel", "Gull",
                        "Hail", "Hare", "Hay", "Hatch", "Half", "Hawk", "Heather", "Heavy", "Heron", "Hickory", "Hill",
-                       "Hollow", "Hoot", "Hop", "Hope", "Hound", "Holly", "Ivy", "Jagged", "Jay", "Jump", "Juniper",
-                       "Kestrel", "Kink", "Kite", "Lake", "Lark", "Larch", "Lavender", "Leaf", "Lichen", "Leopard",
+                       "Hollow", "Horse", "Hoot", "Hop", "Hope", "Hound", "Holly", "Ivy", "Jagged", "Jay", "Jump", "Juniper",
+                       "Kestrel", "Kink", "Kite", "Lake", "Laurel", "Lark", "Larch", "Lavender", "Leaf", "Lichen", "Leopard",
                        "Lightning", "Lily", "Lizard", "Log", "Lost", "Low", "Lynx", "Little", "Long", "Loud", "Marsh",
                        "Marigold", "Maple", "Mole", "Moth", "Mouse", "Mallow", "Meadow", "Midge", "Milk", "Minnow",
-                       "Mint", "Mist", "Mistle", "Misty", "Morning", "Moss", "Mossy", "Mottle", "Mud", "Mumble",
+                       "Mint", "Mist", "Mistle", "Misty", "Murk", "Morning", "Moss", "Mossy", "Mottle", "Mud", "Mumble",
                        "Nectar", "Night", "Nettle", "Nut", "Needle", "Newt", "Oat", "Odd", "Oak", "One", "Otter", "Owl",
-                       "Parsley", "Patch", "Pear", "Petal", "Pebble", "Perch", "Pigeon", "Pike", "Pine", "Pod", "Poppy",
-                       "Pounce", "Prickle", "Quail", "Quick", "Quiet", "Rabbit", "Ragged", "Reed", "Ripple", "Ridge",
+                       "Parsley", "Patch", "Pear", "Petal", "Pebble", "Perch", "Pigeon", "Python", "Pike", "Pine", "Pod", "Poppy",
+                       "Panther", "Pounce", "Prickle", "Quail", "Quick", "Quiet", "Rabbit", "Ragged", "Reed", "Ripple", "Ridge",
                        "River", "Rain", "Raven", "Rat", "Robin", "Rock", "Rose", "Rowan", "Rubble", "Running", "Rush",
                        "Rook", "Root", "Rye", "Sage", "Sandy", "Scorch", "Sedge", "Sharp", "Shimmer", "Spring",
                        "Strike", "Seed", "Shade", "Shell", "Short", "Shy", "Sky", "Slate", "Sleek", "Slight", "Sloe",
                        "Small", "Snail", "Sneeze", "Soft", "Song", "Spark", "Stoat", "Starling", "Shrew", "Smoke",
                        "Snake", "Snip", "Soot", "Sparrow", "Speckle", "Spider", "Scar", "Skip", "Stork", "Spire",
                        "Sorrel", "Spike", "Splash", "Stag", "Swallow", "Swan", "Swamp", "Sweet", "Spotted", "Squirrel",
-                       "Storm", "Stone", "Swift", "Tall", "Thistle", "Thrift", "Trout", "Tiger", "Tulip", "Timber",
-                       "Twig", "Torn", "Tumble", "Turtle", "Vine", "Violet", "Vixen", "Vole", "Web", "Wet", "Whisker",
-                       "Willow", "Wasp", "Weasel", "Whirl", "Wild", "Yarrow", "Yew"]
+                       "Storm", "Stone", "Swift", "Tall", "Thistle", "Thrift", "Trout", "Tiger", "Tip", "Tulip", "Timber",
+                       "Twig", "Torn", "Tumble", "Turtle", "Thyme", "Vine", "Violet", "Vixen", "Vole", "Web", "Wet", "Whisker",
+                       "Willow", "Wisteria", "Wasp", "Weasel", "Whirl", "Wild", "Yarrow", "Yew"]
 
     colour_prefixes = {'WHITE': ['White', 'White', 'Pale', 'Snow', 'Cloud', 'Milk', 'Hail', 'Frost', 'Ice',
                                  'Sheep', 'Blizzard', 'Moon', 'Light'],
@@ -127,7 +127,7 @@ class Name(object):
                    "Glass", "Goose", "Hunter", "Amity", "Stripes", "Cowbell", "Rory", "Lobster", "Slug", "Starfish",
                    "Salmon", "Judy", "Johnny", "Kerry", "Evelyn", "Holly", "Bolt", "Millie", "Jessica", "Laku",
                    "Dragonfly", "X’ek", "Silva", "Dreamy", "Decay", "Twister", "Shay", "Louis", "Oleander", "Spots",
-                   "Cream", "Omlet", "Gizmo", "Feather", "Twix", "Silver,", "Ghost", "Wisp,", "Obi Wan", "Pearl,",
+                   "Cream", "Omlet", "Gizmo", "Feather", "Twix", "Silver,", "Ghost", "Wisp", "Obi Wan", "Pearl,",
                    "Mango", "Via", "Olivia", "Mr. Whiskers", "Fluffy", "Shimmer", "Mimi", "Melody", "Leon", "Punk",
                    "Mew", "Fern", "Marceline", "Whisper", "Skrunkly", "Stolas", "Rio", "Steven", "Pear", "Sekhmet",
                    "Mellon", "Ember", "Loona", "Saki", "Tiny", "Sandy", "Miles", "Mini", "Judas", "Zim", "Vinyl",
@@ -136,6 +136,28 @@ class Name(object):
                    "Catie", "Charm", "Crane", "Crab", "Charles", "Caroline", "Conan", "Cloud", "Charlie", "Cowboy",
                    "Dune", "Dan", "Dove", "Delilah", "Emerald", "Emy", "Erica", " Eddie", "Eda", "Ferret", "Fawn",
                    "Fallow", "Ferry", "Gamble", "Grain", "Gir", "Heron", "Hop", "Honey", "Hot Sauce", "Habanero"]
+        
+    if os.path.exists('saves/prefixlist.txt'):
+        with open('saves/prefixlist.txt', 'r') as read_file:
+            name_list = read_file.read()
+            if_names = len(name_list)
+        if if_names > 0:
+            new_names = name_list.split('\n')
+            for new_name in new_names:
+                if new_name != '':
+                    normal_prefixes.append(new_name)
+
+    if os.path.exists('saves/suffixlist.txt'):
+        with open('saves/suffixlist.txt', 'r') as read_file:
+            name_list = read_file.read()
+            if_names = len(name_list)
+        if if_names > 0:
+            new_names = name_list.split('\n')
+            for new_name in new_names:
+                if new_name != '':
+                    normal_suffixes.append(new_name)
+        
+
 
 
     def __init__(self, status="warrior", prefix=None, suffix=None, colour=None, eyes=None, pelt=None):
@@ -182,6 +204,7 @@ class Name(object):
                     loop = False
         else:
             self.suffix = suffix
+
 
     def __repr__(self):
         if self.status in ["deputy", "warrior", "medicine cat", "elder"]:

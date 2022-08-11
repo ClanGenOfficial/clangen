@@ -10,11 +10,11 @@ import os.path
 class Cat(object):
     used_screen = screen
     traits = ['strange', 'bloodthirsty', 'ambitious', 'loyal', 'righteous', 'fierce', 'nervous', 'strict',
-              'charismatic', 'calm',
-              'daring', 'loving', 'playful', 'lonesome', 'cold', 'insecure', 'vengeful',
-              'shameless', 'faithful', 'troublesome', 'empathetic']
-    kit_traits = ['bouncy', 'bullying', 'daydreamer', 'nervous', 'charming', 'attention-seeker',
-                  'inquisitive', 'bossy', 'troublesome', 'quiet', 'daring', 'sweet', 'insecure']
+              'charismatic', 'calm', 'daring', 'loving', 'playful', 'lonesome', 'cold', 'insecure', 'vengeful',
+              'shameless', 'faithful', 'troublesome', 'empathetic', 'adventurous', 'thoughtful', 'compassionate',
+              'childish', 'confident', 'careful', 'altruistic', 'bold', 'clever', 'responsible', 'sneaky', 'wise']
+    kit_traits = ['bouncy', 'bullying', 'daydreamer', 'nervous', 'charming', 'attention-seeker', 'impulsive',
+                  'inquisitive', 'bossy', 'troublesome', 'quiet', 'daring', 'sweet', 'insecure', 'noisy', 'polite']
     ages = ['kitten', 'adolescent', 'young adult', 'adult', 'senior adult', 'elder', 'dead']
     age_moons = {'kitten': [0, 5], 'adolescent': [6, 11], 'young adult': [12, 47], 'adult': [48, 95],
                  'senior adult': [96, 119], 'elder': [120, 199]}
@@ -217,6 +217,7 @@ class Cat(object):
                     self.perform_ceremonies(cat)
                     self.gain_scars(cat)
                     self.handle_deaths(cat)
+                    self.create_interactions(cat, index, key_copy)
                     # possibly have kits
                     cat.have_kits()
                 else:  # if cat was already dead
@@ -243,7 +244,7 @@ class Cat(object):
 
     def perform_ceremonies(self,
                            cat):  # This function is called when apprentice/warrior/other ceremonies are performed every moon
-        if game.clan.leader.dead and game.clan.deputy is not None:
+        if game.clan.leader.dead and game.clan.deputy is not None and not game.clan.deputy.dead:
             game.clan.new_leader(game.clan.deputy)
             game.cur_events_list.append(
                 str(game.clan.deputy.name) + ' has been promoted to the new leader of the clan')
@@ -261,20 +262,12 @@ class Cat(object):
                     cat.status_change('apprentice')
                     game.cur_events_list.append(str(cat.name) + ' has started their apprenticeship')
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
-                    if cat.mentor is not None:
-                        if cat not in cat.mentor.former_apprentices:
-                            cat.mentor.former_apprentices.append(cat)
-                        if cat in cat.mentor.apprentice:
-                            cat.mentor.apprentice.remove(cat)
                     cat.status_change('warrior')
+                    cat.update_mentor()
                     game.cur_events_list.append(str(cat.name) + ' has earned their warrior name')
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
-                    if cat.mentor is not None:
-                        if cat not in cat.mentor.former_apprentices:
-                            cat.mentor.former_apprentices.append(cat)
-                        if cat in cat.mentor.apprentice:
-                            cat.mentor.apprentice.remove(cat)
                     cat.status_change('medicine cat')
+                    cat.update_mentor()
                     game.cur_events_list.append(str(cat.name) + ' has earned their medicine cat name')
                     game.clan.new_medicine_cat(cat)
                 elif cat.status == 'warrior' and cat.age == 'elder':
@@ -287,14 +280,14 @@ class Cat(object):
 
     def gain_scars(self, cat):
         # gaining scars with age
-        if cat.specialty is None:
+        if cat.specialty is None and cat.age != 'kitten':
             chance = 0
             if cat.age in ['adolescent', 'young adult']:
-                chance = randint(0, 30)
-            elif cat.age in ['adult', 'senior adult']:
                 chance = randint(0, 50)
-            else:
+            elif cat.age in ['adult', 'senior adult']:
                 chance = randint(0, 70)
+            else:
+                chance = randint(0, 90)
             if chance == 1:
                 cat.specialty = choice([choice(scars1), choice(scars2)])
                 if cat.specialty == 'NOTAIL':
@@ -307,13 +300,14 @@ class Cat(object):
             else:
                 cat.specialty = None
 
-        if cat.specialty2 is None:
+        elif cat.specialty2 is None and cat.age != 'kitten':
+            chance = 0
             if cat.age in ['adolescent', 'young adult']:
-                chance = randint(0, 30)
-            elif cat.age in ['adult', 'senior adult']:
                 chance = randint(0, 50)
-            else:
+            elif cat.age in ['adult', 'senior adult']:
                 chance = randint(0, 70)
+            else:
+                chance = randint(0, 90)
             if chance == 1:
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
                 if cat.specialty2 == 'NOTAIL':
@@ -480,8 +474,104 @@ class Cat(object):
             else:
                 game.cur_events_list = [append_str]
 
+    def create_interactions2(self, cat):
+        if randint(1, 50) == 1:
+            interactions = []
+            other_cat = self.all_cats.get(choice(list(self.all_cats.keys())))
+            while cat == other_cat or other_cat.dead:
+                other_cat = self.all_cats.get(choice(list(self.all_cats.keys())))
+            name = str(cat.name)
+            other_name = str(other_cat.name)
+            event = choice([1, 1, 2])  # 1:general event 2:new cat joins
+            if event == 1:
+                if cat.status == 'kitten':
+                    interactions.extend([name + ' is scolded after sneaking out of camp',
+                                         name + ' falls into a river but is saved by ' + other_name])
+                elif cat.status in ['apprentice', 'medicine cat apprentice']:
+                    interactions.extend([name + ' is scolded after sneaking out of camp',
+                                         name + ' falls into a river but is saved by ' + other_name,
+                                         name + ' accidentally trespasses onto another clan\'s territory'])
+                elif cat.status == 'warrior':
+                    interactions.extend([name + ' is caught outside of the clan\'s territory',
+                                         name + ' is caught breaking the warrior code',
+                                         name + ' went missing for a few days',
+                                         name + ' believes they are a part of the new prophecy'])
+                elif cat.status == 'medicine cat':
+                    interactions.extend(
+                        [name + ' learns of a new prophecy', name + ' is worried about an outbreak of greencough',
+                         name + ' is worried about how low their herb stores has gotten',
+                         name + 'visits the other medicine cats'])
+                elif cat.status == 'deputy':
+                    interactions.extend([name + ' thinks about retiring',
+                                         name + ' travels to the other clans to bring them an important message'])
+                elif cat.status == 'leader':
+                    interactions.extend(
+                        [name + ' thinks about retiring', name + ' confesses they don\'t have many lives left',
+                         name + ' calls a clan meeting to give an important announcement'])
+                elif cat.status == 'elder':
+                    interactions.extend([name + ' is brought back to camp after wandering off'])
+                if cat.age == other_cat.age:
+                    interactions.extend([name + ' tries to convince ' + other_name + ' to run away together'])
+                if cat.mate == other_cat.ID:
+                    if choice([1, 2, 3, 4]) == 1:
+                        cat.mate = None
+                        other_cat.mate = None
+                        game.cur_events_list.append(name + ' and ' + other_name + ' have broken up')
+                        return
+                if cat.status not in ['kitten', 'apprentice'] and other_cat.status not in ['kitten',
+                                                                                           'apprentice'] and cat.ID not in [
+                    other_cat.parent1, other_cat.parent2] and other_cat.ID not in [cat.parent1,
+                                                                                   cat.parent2] and cat.mate is None and other_cat.mate is None and cat.age == other_cat.age:
+                    cat.mate = other_cat.ID
+                    other_cat.mate = cat.ID
+                    game.cur_events_list.append(name + ' and ' + other_name + ' have become mates')
+                    return
+            elif event == 2:
+                if cat.age != 'kitten':
+                    type_of_new_cat = choice([1, 1, 2, 3, 4, 5, 6])
+                    if type_of_new_cat == 1:
+                        kit = Cat(moons=0)
+                        game.clan.add_cat(kit)
+                        game.cur_events_list.extend([name + ' finds an abandoned kit and names them ' + str(kit.name)])
+                    elif type_of_new_cat == 2:
+                        loner_name = choice(names.loner_names)
+                        loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior',
+                                    moons=randint(12, 120), suffix='')
+                        game.clan.add_cat(loner)
+                        game.cur_events_list.extend([name + ' finds a loner named ' + str(
+                            loner.name) + ' who wants to join the clan. They decide to keep their name'])
+                    elif type_of_new_cat == 3:
+                        loner = Cat(status='warrior', moons=randint(12, 120))
+                        game.clan.add_cat(loner)
+                        game.cur_events_list.extend([name + ' finds a loner named ' + choice(
+                            names.loner_names) + ' who wants to join the clan. They change their name to ' + str(
+                            loner.name)])
+                    elif type_of_new_cat == 4:
+                        warrior = Cat(status='warrior', moons=randint(12, 150))
+                        game.clan.add_cat(warrior)
+                        game.cur_events_list.extend(
+                            [name + ' finds a warrior from ' + choice(names.normal_prefixes) + 'Clan named ' + str(
+                                warrior.name) + ' who asks to join the clan'])
+                    elif type_of_new_cat == 5:
+                        loner_name = choice(names.loner_names)
+                        loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior',
+                                    moons=randint(12, 120), suffix='')
+                        game.clan.add_cat(loner)
+                        game.cur_events_list.extend(
+                            [name + ' finds a kittypet named ' + str(
+                                loner_name) + ' who wants to join the clan. They decide to keep their name'])
+                    elif type_of_new_cat == 6:
+                        loner = Cat(status='warrior', moons=randint(12, 120))
+                        game.clan.add_cat(loner)
+                        game.cur_events_list.extend([name + ' finds a kittypet named ' + choice(
+                            names.loner_names) + ' who wants to join the clan. They change their name to ' + str(
+                            loner.name)])
+
+            if len(interactions) > 0:
+                game.cur_events_list.append(choice(interactions))
+
     def handle_deaths(self, cat):
-        if randint(1, 300) == 299:
+        if randint(1, 300) == 1:
             if randint(1, 4) == 4:
                 cat.dies()
                 if game.cur_events_list is not None:
@@ -491,7 +581,7 @@ class Cat(object):
                 cat.dies()
                 if game.cur_events_list is not None:
                     game.cur_events_list.append(
-                        str(cat.name) + ' died of a disease at ' + str(cat.moons) + ' moons old')
+                        str(cat.name) + ' died of greencough at ' + str(cat.moons) + ' moons old')
             else:
                 cat.dies()
                 if game.cur_events_list is not None:
@@ -499,7 +589,7 @@ class Cat(object):
                         str(cat.name) + ' died in an accident at ' + str(cat.moons) + ' moons old')
 
         if cat.moons > randint(150, 200):  # Cat dies of old age
-            if choice([1, 2, 3, 4]) == 1:
+            if choice([1, 2, 3, 4, 5, 6]) == 1:
                 cat.dies()
                 if game.cur_events_list is not None:
                     game.cur_events_list.append(
@@ -507,45 +597,47 @@ class Cat(object):
 
     def dies(self):  # This function is called every time a cat dies
         self.dead = True
-        if (self.status == 'apprentice'):
-            if self in self.mentor.apprentice:
-                self.mentor.apprentice.remove(self)
-            self.mentor.former_apprentices.append(self)
+        self.update_mentor()
+        for app in self.apprentice:
+            app.update_mentor()
         game.clan.add_to_starclan(self)
 
     def have_kits(self):
         # decide chances of having kits, and if it's possible at all
-        chance = 100
-
+        chance = 0
         if self.mate is not None:
             if self.mate in self.all_cats:
                 if self.all_cats[self.mate].dead:
-                    chance = None
-                if self.all_cats[self.mate].gender != self.gender and self.all_cats[
-                    self.mate].age != 'elder' and chance is not None:
-                    chance = chance / 4
+                    chance = 0
+                elif self.all_cats[self.mate].gender != self.gender and self.all_cats[
+                    self.mate].age != 'elder':
+                    chance = 25
                 elif game.settings['no gendered breeding'] and self.all_cats[
                     self.mate].age != 'elder' and chance is not None:
-                    chance = chance / 4
+                    chance = 25
                 else:
-                    chance = None
+                    chance = 0
             else:
                 game.cur_events_list.append(
                     "Warning: " + str(self.name) + " has an invalid mate #" + str(self.mate) + ". This has been unset.")
                 self.mate = None
         else:
-            chance = chance / 2
+            chance = 50
             if not game.settings['no unknown fathers']:
-                chance = None
+                chance = 0
 
         if self.age in ['kitten', 'adolescent', 'elder'] or self.example or \
                 (not game.settings['no gendered breeding'] and self.gender == 'male'):
-            chance = None
+            chance = 0
 
         # Decide randomly if kits will be born, if possible
-        if chance is not None:
+        if chance != 0:
             hit = randint(0, chance)
-            kits = choice([1, 2, 2, 3, 3, 4])
+            if len(game.clan.clan_cats) > 30:
+                hit = randint(0, chance + 20)
+            elif len(game.clan.clan_cats) < 10:
+                hit = randint(0, chance - 10)
+            kits = choice([1, 1, 2, 2, 3, 3, 4])
             if hit == 1 and self.mate is not None:
                 if game.cur_events_list is not None:
                     game.cur_events_list.append(str(self.name) + ' had a litter of ' + str(kits) + ' kit(s)')
@@ -556,10 +648,7 @@ class Cat(object):
                     kit = Cat(parent1=self.ID, parent2=self.mate, moons=0)
                     game.clan.add_cat(kit)
             elif hit == 1:
-                if game.cur_events_list is not None:
-                    game.cur_events_list.append(str(self.name) + ' had a litter of ' + str(kits) + ' kit(s)')
-                else:
-                    game.cur_events_list = [str(self.name) + ' had a litter of ' + str(kits) + ' kit(s)']
+                game.cur_events_list.append(str(self.name) + ' had a litter of ' + str(kits) + ' kit(s)')
 
                 for kit in range(kits):
                     kit = Cat(parent1=self.ID, moons=0)
@@ -567,198 +656,293 @@ class Cat(object):
 
     def thoughts(self):
         # actions or thoughts for all cats. These switch either every moon or every time the game is re-opened
-        for cat in self.all_cats.keys():
-            while True:  # DECIDE SECOND CAT ( to interact with)
-                other_1 = random.choice(list(self.all_cats.keys()))
-                if other_1 != cat:
-                    break
-            # different act/think choices. 'no_other' means without other cat to interat with.
-            o_n = str(self.all_cats[other_1].name)
-            if not self.all_cats[other_1].dead or self.all_cats[cat].dead or self.all_cats[
-                cat].skill == 'strong connection to starclan' or self.all_cats[cat].status == 'medicine cat':
-                # stuff that only trigger with starclan prone cats, medicine cats or if the other cat is living
-                general = ['Is sharing tongues with ' + o_n, 'Has been spending time with ' + o_n + ' lately',
-                           'Is acting huffy at ' + o_n, 'Is sharing a freshkill with ' + o_n,
-                           'Is praising ' + o_n + ' on a good hunt', 'Is curious about ' + o_n,
-                           'Is keeping an eye on ' + o_n,
-                           'Doesn\'t seem to trust ' + o_n, 'Is asking to train together with ' + o_n,
-                           'Is having a good time with ' + o_n + '!', 'Doesn\'t want to talk to ' + o_n,
-                           'Is helping ' + o_n + ' with a recent injury', 'Is having a serious fight with ' + o_n,
-                           'Wants to spend more time with ' + o_n + '!']
-                is_young = ['Seems to want to play with ' + o_n, 'Is listening to ' + o_n + ' studiously',
-                            'Is refusing to do as ' + o_n + ' says', 'Is having fun with ' + o_n,
-                            'Pounces on ' + o_n + ' playfully']
-                interact_with_young = ['Is exasperated with ' + o_n, 'Is feeling proud of ' + o_n,
-                                       'Is teaching ' + o_n + ' new hunting techniques',
-                                       'Is feeling amused with ' + o_n]
-                is_old = ['Almost forgets the name of ' + o_n, 'Is telling old tales to ' + o_n,
-                          'Is feeling cranky at ' + o_n, 'Is acting commanding towards ' + o_n]
-                interact_with_old = ['Is listening to stories by ' + o_n,
-                                     'Is helping ' + o_n + ' with changing the moss']
-                is_leader = ['Is giving special orders to ' + o_n, 'Feels disappointed with ' + o_n]
-                interact_with_leader = ['Is asking for guidance from ' + o_n, 'Is hiding something from ' + o_n,
-                                        'Is feeling humbled in the presence of ' + o_n,
-                                        'Doesn\'t agree with the orders from ' + o_n]
-                is_med = ['Is assigning ' + o_n + ' to help with the herbs', 'Is treating ' + o_n + 's small wounds',
-                          'Is telling ' + o_n + ' about last nights dreams', 'Saw a dream about ' + o_n]
-                interact_with_med = ['Is asking for help from ' + o_n, 'Is helping ' + o_n + ' around',
-                                     'Wants to hear more about starclan from ' + o_n]
-                no_other = ['Is feeling quite lazy', 'Is spending a considerable amount of time grooming',
-                            'Is looking forward to today', 'Is feeling down...', 'Has been acting suspiciously',
-                            'Is feeling happy!', 'Caught a huge rabbit', 'Has been performing poorly...',
-                            'Is curious about other clans', 'Caught smell of a fox earlier', 'Is feeling sassy today']
-                no_other_young = ['Is sending mossballs flying', 'Is bothering older warriors',
-                                  'Is scared about something',
-                                  'Is whining about wanting to go outside the camp', 'Was asked to help elders',
-                                  'Is feeling lonely...', 'Has been acting angsty', 'Is dreaming about growing up',
-                                  'Is bouncing around in excitement']
-                no_other_old = ['Is having joint pains', 'Is lost in thought, thinking about the past',
-                                'Is quite forgetful today', 'Is missing a lost loved one', 'Has started to limp']
-                no_other_leader = ['Is thinking about battle strategies', 'Has been worrying about clan relations',
-                                   'Almost lost a life recently', 'Is feeling proud of the clan',
-                                   'Has been following the growth of the young members closely',
-                                   'Needs to talk to the medicine cat urgently']
-                no_other_med = ['Is arranging herbs', 'Wants to visit Starclan', 'Is feeling annoyed with Starclan',
-                                'Has been listening to Starclan\'s messages carefully',
-                                'Has been having weird dreams lately', 'Wishes to meet other medicine cats soon']
-                on_patrol = ['Is having a good time out on patrol', 'Wants to return to camp to see ' + o_n,
-                             'Is currently out on patrol', 'Is getting rained on during their patrol',
-                             'Is out hunting']
-                interact_with_loner = ['Is listening to ' + o_n + ' talk about being a loner.']
-            else:
-                general = ['Is listening to stories about ' + o_n, 'Has been spending time alone lately',
-                           'Hates being compared to ' + o_n, 'Seems to be eating more lately',
-                           'Is sad that they can\'t spend time with ' + o_n, 'Is curious about herbs',
-                           'Seems to be avoiding other cats',
-                           'Volunteered to gather herbs', 'Swears that they saw a twoleg nearby']
-                is_young = ['Is learning about who ' + o_n + ' was', 'Mentions seeing ' + o_n + ' in a dream']
-                interact_with_young = ['Thinks that ' + o_n + ' died too young']
-                is_old = ['Almost forgets the name of ' + o_n, 'Wishes that ' + o_n + ' were still alive',
-                          'Keeps forgetting that ' + o_n + ' is dead']
-                interact_with_old = ['Found a trinket that used to belong to ' + o_n]
-                is_leader = ['Received a blessing from ' + o_n,
-                             'Saw ' + o_n + ' in a dream, warning them about... something']
-                interact_with_leader = ['Is asking for guidance from ' + o_n, 'Was visited by ' + o_n + ' in a dream',
-                                        'Is listening to stories about the former leader, ' + o_n,
-                                        'Thinks that ' + o_n + ' was a better leader']
-                interact_with_med = ['Was given a prophecy by ' + o_n]
-                no_other = ['Is feeling quite lazy', 'Is spending a considerable amount of time grooming',
-                            'Is looking forward to today', 'Is feeling down...', 'Has been acting suspiciously',
-                            'Is feeling happy!', 'Caught a huge rabbit', 'Has been performing poorly...',
-                            'Is curious about other clans', 'Caught smell of a fox earlier', 'Is feeling sassy today']
-                no_other_young = ['Is sending mossballs flying', 'Is bothering older warriors',
-                                  'Is scared about something',
-                                  'Is whining about wanting to go outside the camp', 'Was asked to help elders',
-                                  'Is feeling lonely...', 'Has been acting angsty', 'Is dreaming about growing up',
-                                  'Is bouncing around in excitement']
-                no_other_old = ['Is having joint pains', 'Is lost in thought, thinking about the past',
-                                'Is quite forgetful today', 'Is missing a lost loved one', 'Has started to limp']
-                no_other_leader = ['Is thinking about battle strategies', 'Has been worrying about clan relations',
-                                   'Almost lost a life recently', 'Is feeling proud of the clan',
-                                   'Has been following the growth of the young members closely',
-                                   'Needs to talk to the medicine cat urgently']
-                no_other_med = ['Is arranging herbs', 'Wants to visit Starclan', 'Is feeling annoyed with Starclan',
-                                'Has been listening to Starclan\'s messages carefully',
-                                'Has been having weird dreams lately', 'Wishes to meet other medicine cats soon']
-                on_patrol = ['Is having a good time out on patrol', 'Wants to return to camp to see ' + o_n,
-                             'Is currently out on patrol', 'Is getting rained on during their patrol',
-                             'Is out hunting']
-                interact_with_loner = ['Wants to know where ' + o_n + ' came from.']
 
-            # decide conditions
-            interact = choice([False, False, True])  # is the actions alone or with other cat
-            self_or_them = choice(['self', 'them'])  # is the interaction more based on the other cat or self
-            if interact:
-                pos_actions = [general]
-                if self_or_them == 'self':  # interaction is based on cats own traits
-                    if self.all_cats[cat].age in ['kitten', 'adolescent']:
-                        pos_actions.append(is_young)
-                    elif self.all_cats[cat].age in ['elder']:
-                        pos_actions.append(is_old)
-                    if self.all_cats[cat].status == 'leader':
-                        pos_actions.append(is_leader)
-                    if self.all_cats[cat].status == 'medicine cat' or self.all_cats[
-                        cat].status == 'medicine cat apprentice':
-                        pos_actions.append(is_med)
-                else:  # else, interaction is based on other cat's traits
-                    if self.all_cats[other_1].age in ['kitten', 'adolescent']:
-                        pos_actions.append(interact_with_young)
-                    elif self.all_cats[other_1].age in ['elder']:
-                        pos_actions.append(interact_with_old)
-                    if self.all_cats[other_1].status == 'leader':
-                        pos_actions.append(interact_with_leader)
-                    if self.all_cats[other_1].status == 'medicine cat':
-                        pos_actions.append(interact_with_med)
-                    if self.all_cats[other_1].skill == 'formerly a loner':
-                        pos_actions.append(interact_with_loner)
+        for c in self.all_cats.keys():
+            other_cat = random.choice(list(self.all_cats.keys()))
+            while other_cat == c:
+                other_cat = random.choice(list(self.all_cats.keys()))
+            other_cat = self.all_cats.get(other_cat)
+            other_name = str(other_cat.name)
+            cat = self.all_cats.get(c)
+            thought = 'Is not thinking about much right now'  # placeholder thought - should never appear in game
+            if cat.dead:
+                # individual thoughts
+                starclan_thoughts = ['Is feeling quite lazy', 'Is spending a considerable amount of time grooming',
+                                     'Is looking forward to today', 'Is feeling down...',
+                                     'Is feeling happy!', 'Is curious about other clans', 'Is feeling sassy today',
+                                     "Is thinking about a message to send", "Wishes they were still alive",
+                                     "Is admiring StarClan territory", "Is thinking about their life",
+                                     "Is missing a loved one",
+                                     "Is hoping to meet with a medicine cat soon", "Is admiring the stars in their fur",
+                                     "Is watching over a clan ceremony", "Is hoping to give a life to a new leader",
+                                     "Is hoping they will be remembered", "Is watching over the clan",
+                                     "Is worried about the clan",
+                                     "Is relaxing in the sun", "Is wondering about twolegs",
+                                     "Is thinking about their ancient ancestors",
+                                     "Is worried about the cats in the Dark Forest",
+                                     "Is thinking of advice to give to a medicine cat"]
+                if other_cat.dead:
+                    starclan_thoughts.extend([  # thoughts with other cats that are dead
+                        'Is sharing tongues with ' + other_name,
+                        'Has been spending time with ' + other_name + ' lately',
+                        'Is acting huffy at ' + other_name,
+                        'Is sharing a freshkill with ' + other_name,
+                        'Is curious about ' + other_name,
+                        'Is talking with ' + other_name,
+                        'Doesn\'t want to talk to ' + other_name,
+                        'Is having a serious fight with ' + other_name,
+                        'Wants to spend more time with ' + other_name + '!',
+                        'Is thinking about future prophecies with ' + other_name,
+                        'Is watching over the clan with ' + other_name])
+                elif not other_cat.dead:
+                    starclan_thoughts.extend([  # thoughts with other cats that are alive
+                        'Is watching over ' + other_name,
+                        'Is curious about what ' + other_name + ' is doing',
+                        'Wants to send a message to ' + other_name,
+                        'Is currently walking in the dreams of ' + other_name,
+                        'Is proud of ' + other_name,
+                        'Is disappointed in ' + other_name,
+                        'Wants to warn ' + other_name,
+                        'Has been following the growth of ' + other_name])
+                if cat.status in ['kitten', 'apprentice', 'medicine cat apprentice']:  # dead young cat thoughts
+                    starclan_thoughts.extend(['Wishes they had more time to grow up',
+                                              'Wonders what their full name would have been',
+                                              'Is bothering older StarClan cats',
+                                              'Is learning about the other cats in StarClan'])
+                elif cat.status == 'elder':  # dead elder thoughts
+                    starclan_thoughts.extend(['Is grateful that they lived such a long life',
+                                              'Is happy that their joints no longer ache',
+                                              'Is telling stories to the younger cats of StarClan',
+                                              'Watches over the younger cats of StarClan', ])
+                elif cat.status == 'leader':  # dead leader thoughts
+                    starclan_thoughts.extend(['Hoped that they were a good leader,'
+                                              'Wishes that they had ten lives',
+                                              'Is proud of their clan from StarClan', ])
+                thought = choice(starclan_thoughts)  # sets current thought to a random applicable thought
+            elif not cat.dead:
+                # general individual thoughts
+                thoughts = ['Is feeling quite lazy', 'Is spending a considerable amount of time grooming',
+                            'Is looking forward to today', 'Is feeling down...', 'Is feeling excited',
+                            'Is feeling nervous', 'Is feeling content', "Is relaxing in camp", 'Is daydreaming',
+                            'Is napping', 'Thinks they are going crazy', 'Is feeling gloomy', "Is looking around camp",
+                            'Is feeling happy!', 'Is curious about the other clans', 'Is feeling sassy today',
+                            'Wants to spend time alone today', "Is eating some freshkill",
+                            'Is heading to the dirtplace', 'Is rethinking their life choices',
+                            'Is visiting the medicine den', 'Is having a good day', 'Is having a hard day',
+                            'Is talking to themselves', 'Regrets not eating the bird on the freshkill pile earlier']
+                if other_cat.dead:  # thoughts with other cats who are dead
+                    if cat.status in ['kitten', 'apprentice',
+                                      'medicine cat apprentice']:  # young cat thoughts about dead cat
+                        thoughts.extend(['Is listening to stories about ' + other_name,
+                                         'Is learning more about ' + other_name,
+                                         'Is sad they couldn\'t spend time with ' + other_name])
+                    elif cat.status in ['warrior', 'medicine cat', 'deputy',
+                                        'leader']:  # older cat thoughts about dead cat
+                        thoughts.extend(['Is listening to stories about ' + other_name,
+                                         'Is learning more about ' + other_name,
+                                         'Is sad they couldn\'t spend more time with ' + other_name,
+                                         'Wishes they could visit ' + other_name + ' in StarClan',
+                                         'Is remembering ' + other_name])
+                    if cat.status == 'elder':  # elder thoughts about dead cat
+                        thoughts.extend(['Is telling stories about ' + other_name,
+                                         'Is sad they couldn\'t spend more time with ' + other_name,
+                                         'Wishes they could visit ' + other_name + ' in StarClan',
+                                         'Is remembering ' + other_name,
+                                         'Wishes that ' + other_name + ' were still alive',
+                                         'Found a trinket that used to belong to ' + other_name,
+                                         'Is forgetting who ' + other_name + ' was',
+                                         'Is thinking fondly of ' + other_name])
+                    if cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice' or cat.skill == 'strong connection to starclan':  # medicine cat/strong connection thoughts about dead cat
+                        thoughts.extend(['Was given a prophecy by ' + other_name,
+                                         'Was sent an omen by ' + other_name,
+                                         'Is dreaming about ' + other_name + ' who gives them a message',
+                                         'Is visited by ' + other_name,
+                                         'Senses ' + other_name + ' is nearby',
+                                         'Saw ' + other_name + ' in a dream, warning them about... something',
+                                         'Is asking for guidance from ' + other_name])
+                elif not other_cat.dead:  # thoughts with other cat who is alive
+                    if cat.status in ['warrior', 'elder', 'deputy',
+                                      'leader'] and other_cat.status == 'apprentice':  # older cat thoughts about younger cat
+                        thoughts.extend(['Is giving ' + other_name + ' advice',
+                                         'Is telling ' + other_name + ' about a hunting technique',
+                                         'Is scolding ' + other_name,
+                                         'Is giving ' + other_name + ' a task'])
+                    if cat.status == 'kitten':  # kit thoughts
+                        if other_cat.status == 'kitten':  # kit thoughts with other kit
+                            thoughts.extend(['Pretends to be a warrior with ' + other_name,
+                                             'Plays mossball with ' + other_name,
+                                             'Has a mock battle with ' + other_name,
+                                             'Comes up with a plan to sneak out of camp with ' + other_name,
+                                             'Whines about ' + other_name])
+                        elif other_cat.status != 'kitten':  # kit thoughts about older cat
+                            thoughts.extend(
+                                ['Is biting ' + other_name + '\'s tail', 'Sticks their tongue out at ' + other_name,
+                                 'Whines to ' + other_name])
+                    elif cat.status in ['apprentice', 'medicine cat apprentice', 'warrior', 'medicine cat', 'deputy',
+                                        'leader']:
+                        if other_cat.status == 'kitten':  # older cat thoughts about kit
+                            thoughts.extend(['Trips over ' + other_name, 'Is giving advice to ' + other_name])
+                        else:
+                            thoughts.extend(['Is fighting with ' + other_name, 'Is talking with ' + other_name,
+                                             'Is sharing prey with ' + other_name, 'Heard a rumor about ' + other_name])
+                    if cat.age == other_cat.age:
+                        thoughts.extend(
+                            ['Is developing a crush on ' + other_name, 'Is spending a lot of time with ' + other_name])
+                if cat.status == 'kitten':
+                    thoughts.extend(['Plays mossball by themselves', 'Is annoying older cats',
+                                     'Wonders what their full name will be', 'Pretends to be a warrior',
+                                     'Is becoming interested in herbs', 'Tries to sneak out of camp',
+                                     'Is rolling around on the ground', 'Is chasing their tail',
+                                     'Is playing with a stick', 'Is nervous for their apprentice ceremony',
+                                     'Is excited for their apprentice ceremony', 'Wonders who their mentor will be',
+                                     "Practices the hunting crouch", 'Pretends to fight an enemy warrior',
+                                     'Wants to take a nap', 'Is scared after having a nightmare',
+                                     'Thinks they saw a StarClan cat in their dreams', 'Wants to snuggle',
+                                     'Wishes other cats would stop babying them', 'Is hiding from other cats',
+                                     'Is bouncing around in excitement', 'Whines about being hungry'])
+                elif cat.status == 'apprentice':
+                    thoughts.extend(
+                        ['Is thinking about the time they caught a huge rabbit', 'Wonders what their full name will be',
+                         'Is irritating their mentor',
+                         'Is arguing with their mentor', 'Is listening to their mentor',
+                         'Plans to visit the elders soon', "Practices the hunting crouch",
+                         'Pretends to fight an enemy warrior', 'Practices some battle moves',
+                         'Is becoming interested in herbs', 'Volunteers for the dawn patrol',
+                         'Volunteers to gather herbs', 'Hopes they will do battle training soon',
+                         'Is pulling a prank on the warriors', 'Can\'t wait to be a warrior',
+                         'Is wondering if they are good enough to become a warrior', 'Is gathering moss',
+                         'Doesn\'t want to become a warrior yet', 'Is gossiping', 'Is acting angsty'])
+                elif cat.status == 'medicine cat apprentice':
+                    thoughts.extend(
+                        ['Is struggling to remember all of the names of herbs', 'Is counting the poppy seeds',
+                         'Is helping organize the herb stores', 'Wonders what their full name will be',
+                         'Plans to help the elders with their ticks', 'Is looking forward to the half-moon meeting',
+                         'Is wondering if they are good enough to become a medicine cat',
+                         'Helps apply a poultice to a small wound', 'Is making new nests',
+                         'Is proud of their ability to care for their clanmates'])
+                elif cat.status == 'medicine cat':
+                    thoughts.extend(
+                        ['Is looking for herbs', 'Is organizing the herb stores', 'Is drying some herbs',
+                         'Is counting the poppy seeds', 'Is gathering cobwebs', 'Is interpreting an omen',
+                         'Is interpreting a prophecy', 'Hopes for a message from StarClan soon',
+                         'Is checking up on the warriors', 'Is feeling stressed taking care of the clan',
+                         'Is thinking about taking on a new apprentice',
+                         'Is wondering if they could borrow some catmint from the other clans',
+                         'Is looking forward to the half-moon meeting', 'Is wrapping a wound with cobwebs',
+                         'Is clearing out old herbs', 'Is gathering death berries',
+                         'Is proud of their ability to care for their clanmates', 'Chased kits out of their den'])
+                elif cat.status == 'warrior':
+                    thoughts.extend(
+                        ['Caught scent of a fox earlier', 'Caught scent of an enemy warrior earlier',
+                         'Is helping gathering herbs', 'Is thinking about love', 'Is decorating their nest',
+                         'Is reinforcing the camp with brambles', 'Wants to be chosen as the new deputy',
+                         'Caught a huge rabbit', 'Is dreaming about being leader', 'Is acting suspicious',
+                         'Tries to set a good example for younger cats', 'Wants to go on a patrol',
+                         'Wants to go on a hunting patrol', 'Is hoping to lead the next patrol',
+                         'Is guarding the camp entrance', 'Is thinking about kits', 'Is watching over the kits',
+                         'Is gossiping', 'Plans to visit the medicine cat'])
+                elif cat.status == 'deputy':
+                    thoughts.extend(
+                        ['Is assigning cats to a border patrol', 'Is assigning cats to a hunting patrol',
+                         'Is wondering what it would be like to be a leader', 'Is spending time alone',
+                         'Tries to set a good example for younger cats', 'Is thinking about kits',
+                         'Is stressed about organizing patrols', "Wonders who will give them nine lives"])
+                elif cat.status == 'leader':
+                    thoughts.extend(
+                        ['Is hoping for a sign from StarClan', 'Is hoping that they are leading their clan well',
+                         'Thinks about who should mentor new apprentices', 'Is worried about clan relations',
+                         'Is spending time alone', 'Tries to set a good example for the deputy',
+                         'Is thinking about forming an alliance',
+                         'Is debating if they should declare a war with another clan', 'Is assessing some apprentices',
+                         'Is thinking about battle stategies', 'Almost lost a life recently',
+                         'Is counting how many lives they have left'])
+                elif cat.status == 'elder':
+                    thoughts.extend(
+                        ['Is complaining about their nest being too rough', 'Is complaining about their aching joints',
+                         'Is telling stories about when they were young', 'Is giving advice to younger cats',
+                         'Is complaining about thorns in their nest', 'Is bossing around the younger cats',
+                         'Is telling scary stories to the younger cats', 'Is snoring in their sleep',
+                         'Thinking about how too many cats die young', 'Is complaining about being cold',
+                         'Is grateful they have lived so long', 'Is sharing their wisdom'])
+                thought = choice(thoughts)
+            cat.thought = thought
 
-            else:  # the cat doesn't interact with anyone else
-                pos_actions = [no_other]
-                if self.all_cats[cat].age in ['kitten', 'adolescent']:
-                    pos_actions.append(no_other_young)
-                elif self.all_cats[cat].age in ['elder']:
-                    pos_actions.append(no_other_old)
-                if self.all_cats[cat].status == 'leader':
-                    pos_actions.append(no_other_leader)
-                if self.all_cats[cat].status == 'medicine cat' or self.all_cats[
-                    cat].status == 'medicine cat apprentice':
-                    pos_actions.append(no_other_med)
-
-            # change the pos_actions if out on patrol
-            if self.all_cats[cat].in_camp == 0:
-                pos_actions = on_patrol
-
-            # deciding and setting action
-            self.all_cats[cat].thought = choice(choice(pos_actions))
+            # on_patrol = ['Is having a good time out on patrol', 'Wants to return to camp to see ' + other_name,
+            #              'Is currently out on patrol', 'Is getting rained on during their patrol',
+            #              'Is out hunting'] //will add later
+            # interact_with_loner = ['Wants to know where ' + other_name + ' came from.'] // will add
 
     def status_change(self, new_status):
         # revealing of traits and skills
         if self.status == 'kitten':
-            a = randint(0, 50)
-            if a == 1:
-                self.trait = 'strange'
-            elif a == 2:
-                self.trait = 'bloodthirsty'
-            else:
-                self.trait = choice(self.traits)
-        if self.status == 'apprentice' and new_status != 'medicine cat apprentice':
-            self.skill = choice(self.skills)
-        if self.status == 'medicine cat apprentice' and new_status != 'apprentice':
+            self.trait = choice(self.traits)
+        if (self.status == 'apprentice' and new_status != 'medicine cat apprentice') or (
+                self.status == 'medicine cat apprentice' and new_status != 'apprentice'):
             self.skill = choice(self.skills)
 
         self.status = new_status
         self.name.status = new_status
         if 'apprentice' in new_status:
-            # In case cat is switching apprentice type,
-            # remove the old mentor
-            if self.mentor:
-                if self in self.mentor.apprentice:
-                    self.mentor.apprentice.remove(self)
-                if self not in self.mentor.former_apprentices:
-                    self.mentor.former_apprentices.append(self)
-            if new_status == 'apprentice':
-                mentor = choice(game.clan.clan_cats)
-                while cat_class.all_cats.get(mentor).status != 'warrior' and cat_class.all_cats.get(
-                        mentor).status != 'deputy' and cat_class.all_cats.get(
-                    mentor).status != 'leader' or cat_class.all_cats.get(mentor).dead:
-                    mentor = choice(game.clan.clan_cats)
-            elif new_status == 'medicine cat apprentice':
-                med_cats = []
-                for cat in game.clan.clan_cats:
-                    if cat_class.all_cats.get(cat).status == 'medicine cat' and not cat_class.all_cats.get(cat).dead:
-                        med_cats.append(cat)
-                if med_cats:
-                    mentor = choice(med_cats)
-                else:
-                    mentor = None
-            self.mentor = cat_class.all_cats.get(mentor)
-            if mentor:
-                cat_class.all_cats.get(mentor).apprentice.append(self)
-                # Shouldn't be both an apprentice and former apprentice
-                if self in cat_class.all_cats.get(mentor).former_apprentices:
-                    cat_class.all_cats.get(mentor).former_apprentices.remove(self)
+            self.update_mentor()
         # update class dictionary
         self.all_cats[self.ID] = self
+
+    def is_valid_mentor(self, potential_mentor):
+        # Dead cats can't be mentors
+        if potential_mentor.dead:
+            return False
+        # Match jobs
+        if self.status == 'medicine cat apprentice' and potential_mentor.status != 'medicine cat':
+            return False
+        if self.status == 'apprentice' and potential_mentor.status not in ['leader', 'deputy', 'warrior']:
+            return False
+        # If not an app, don't need a mentor
+        if 'apprentice' not in self.status:
+            return False
+        # Dead cats don't need mentors
+        if self.dead:
+            return False
+        return True
+
+    def update_mentor(self, new_mentor=None):
+        if new_mentor is None:
+            # If not reassigning and current mentor works, leave it
+            if self.mentor and self.is_valid_mentor(self.mentor):
+                return
+        old_mentor = self.mentor
+        # Should only have mentor if alive and some kind of apprentice
+        if 'apprentice' in self.status and not self.dead:
+            # Need to pick a random mentor if not specified
+            if new_mentor is None:
+                potential_mentors = []
+                priority_mentors = []
+                for cat in self.all_cats.values():
+                    if self.is_valid_mentor(cat):
+                        potential_mentors.append(cat)
+                        if len(cat.apprentice) == 0:
+                            priority_mentors.append(cat)
+                # First try for a cat who currently has no apprentices
+                if len(priority_mentors) > 0:
+                    new_mentor = choice(priority_mentors)
+                elif len(potential_mentors) > 0:
+                    new_mentor = choice(potential_mentors)
+            # Mentor changing to chosen/specified cat
+            self.mentor = new_mentor
+            if new_mentor is not None:
+                if self not in new_mentor.apprentice:
+                    new_mentor.apprentice.append(self)
+                if self in new_mentor.former_apprentices:
+                    new_mentor.former_apprentices.remove(self)
+        else:
+            self.mentor = None
+        # Move from old mentor's apps to former apps
+        if old_mentor is not None and old_mentor != self.mentor:
+            if self in old_mentor.apprentice:
+                old_mentor.apprentice.remove(self)
+            if self not in old_mentor.former_apprentices:
+                old_mentor.former_apprentices.append(self)
+            if old_mentor not in self.former_mentor:
+                self.former_mentor.append(old_mentor)
 
     def update_sprite(self):
         # First make pelt, if it wasn't possible before
@@ -850,7 +1034,7 @@ class Cat(object):
         else:
             new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
 
-        # draw skin and scars2
+        # draw skin and scars2 and scars3
         if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice',
                                                               'medicine cat apprentice'] or self.age == 'elder':
             new_sprite.blit(sprites.sprites['skinextra' + self.skin + str(self.age_sprites[self.age])], (0, 0))
@@ -860,12 +1044,24 @@ class Cat(object):
             if self.specialty2 in scars2:
                 new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])],
                                 (0, 0))
+            if self.specialty in scars3:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])],
+                                (0, 0))
+            if self.specialty2 in scars3:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])],
+                                (0, 0))
         else:
             new_sprite.blit(sprites.sprites['skin' + self.skin + str(self.age_sprites[self.age])], (0, 0))
             if self.specialty in scars2:
                 new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])],
                                 (0, 0))
             if self.specialty2 in scars2:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])],
+                                (0, 0))
+            if self.specialty in scars3:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])],
+                                (0, 0))
+            if self.specialty2 in scars3:
                 new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])],
                                 (0, 0))
 

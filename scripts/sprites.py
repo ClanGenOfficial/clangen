@@ -74,11 +74,65 @@ class Sprites(object):
         self.make_group(scars + 'extra', (4, 0), 'scarsextraRIGHTEAR', sprites_y=2)
         self.make_group(scars + 'extra', (5, 0), 'scarsextraNOTAIL', sprites_y=2)
 
+        a = 0
+        for i in ["CRIMSON", "BLUE", "YELLOW", "CYAN", "RED", "LIME"]:
+            sprites.make_group('collars', (a, 0), 'scars' + i)
+            sprites.make_group('collarsextra', (a, 0), 'scarsextra' + i, sprites_y=2)
+            a += 1
+
+        a = 0
+        for i in ["GREEN", "RAINBOW", "BLACK", "SPIKES"]:
+            sprites.make_group('collars', (a, 1), 'scars' + i)
+            sprites.make_group('collarsextra', (a, 1), 'scarsextra' + i, sprites_y=2)
+            a += 1
+
+        a = 0
+        for i in ["PINK", "PURPLE", "MULTI"]:
+            sprites.make_group('collars', (a, 2), 'scars' + i)
+            sprites.make_group('collarsextra', (a, 2), 'scarsextra' + i, sprites_y=2)
+            a += 1
+
+        a = 0
+        for i in ["CRIMSONBELL", "BLUEBELL", "YELLOWBELL", "CYANBELL", "REDBELL", "LIMEBELL"]:
+            sprites.make_group('bellcollars', (a, 0), 'scars' + i)
+            sprites.make_group('bellcollarsextra', (a, 0), 'scarsextra' + i, sprites_y=2)
+            a += 1
+
+        a = 0
+        for i in ["GREENBELL", "RAINBOWBELL", "BLACKBELL", "SPIKESBELL"]:
+            sprites.make_group('bellcollars', (a, 1), 'scars' + i)
+            sprites.make_group('bellcollarsextra', (a, 1), 'scarsextra' + i, sprites_y=2)
+            a += 1
+
+        a = 0
+        for i in ["PINKBELL", "PURPLEBELL", "MULTIBELL"]:
+            sprites.make_group('bellcollars', (a, 2), 'scars' + i)
+            sprites.make_group('bellcollarsextra', (a, 2), 'scarsextra' + i, sprites_y=2)
+            a += 1
+
+        a = 0
+        for i in ["CRIMSONBOW", "BLUEBOW", "YELLOWBOW", "CYANBOW", "REDBOW", "LIMEBOW"]:
+            sprites.make_group('bowcollars', (a, 0), 'scars' + i)
+            sprites.make_group('bowcollarsextra', (a, 0), 'scarsextra' + i, sprites_y=2)
+            a += 1
+
+        a = 0
+        for i in ["GREENBOW", "RAINBOWBOW", "BLACKBOW", "SPIKESBOW"]:
+            sprites.make_group('bowcollars', (a, 1), 'scars' + i)
+            sprites.make_group('bowcollarsextra', (a, 1), 'scarsextra' + i, sprites_y=2)
+            a += 1
+
+        a = 0
+        for i in ["PINKBOW", "PURPLEBOW", "MULTIBOW"]:
+            sprites.make_group('bowcollars', (a, 2), 'scars' + i)
+            sprites.make_group('bowcollarsextra', (a, 2), 'scarsextra' + i, sprites_y=2)
+            a += 1
 
 sprites = Sprites(50)
 for x in ['lineart', 'singlecolours', 'speckledcolours', 'tabbycolours', 'whitepatches', 'tortiecolours', 'eyes',
           'singleextra', 'tabbyextra', 'speckledextra', 'whiteextra', 'eyesextra', 'tortiesextra',
-          'skin', 'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'whitepatchesnew', 'scarsdark', 'scarsdarkextra']:
+          'skin', 'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'whitepatchesnew', 'scarsdark', 'scarsdarkextra',
+          'collars', 'collarsextra', 'bellcollars', 'bellcollarsextra', 'bowcollars', 'bowcollarsextra']:
     sprites.spritesheet("sprites/" + x + ".png", x)
 
 # Line art
