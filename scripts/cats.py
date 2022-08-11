@@ -68,9 +68,7 @@ class Cat(object):
         else:
             if status in ['kitten', 'elder']:
                 self.age = status
-            elif status == 'apprentice':
-                self.age = 'adolescent'
-            elif status == 'medicine cat apprentice':
+            elif status == 'apprentice' or status == 'medicine cat apprentice':
                 self.age = 'adolescent'
             else:
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
@@ -216,10 +214,11 @@ class Cat(object):
                     cat.in_camp = 1
                     self.perform_ceremonies(cat)
                     self.gain_scars(cat)
-                    self.handle_deaths(cat)
                     self.create_interactions(cat, index, key_copy)
-                    # possibly have kits
+                    # self.create_mates
+                    # self.invite_new_cats
                     cat.have_kits()
+                    self.handle_deaths(cat)
                 else:  # if cat was already dead
                     cat.dead_for += 1
             self.thoughts()
@@ -564,28 +563,42 @@ class Cat(object):
 
     def handle_deaths(self, cat):
         if randint(1, 300) == 1:
-            if randint(1, 4) == 4:
-                cat.dies()
-                if game.cur_events_list is not None:
-                    game.cur_events_list.append(
-                        str(cat.name) + ' was murdered at ' + str(cat.moons) + ' moons old')
-            elif randint(1, 3) == 3:
-                cat.dies()
-                if game.cur_events_list is not None:
-                    game.cur_events_list.append(
-                        str(cat.name) + ' died of greencough at ' + str(cat.moons) + ' moons old')
-            else:
-                cat.dies()
-                if game.cur_events_list is not None:
-                    game.cur_events_list.append(
-                        str(cat.name) + ' died in an accident at ' + str(cat.moons) + ' moons old')
+            name = str(cat.name)
+            cause_of_death = [name + ' was murdered', name + ' died of greencough',
+                              'A tree fell in camp and killed ' + name,
+                              name + ' was found dead near a fox den']
+            if cat.status == 'kitten':
+                cause_of_death.extend([name + ' fell into a river and drowned', name + ' was taken by a hawk',
+                                       name + ' grew weak as the days passed and died',
+                                       name + ' was killed after sneaking out of camp'])
+                if game.clan.current_season == 'Leaf-bare':
+                    cause_of_death.extend(
+                        [name + ' was found dead in the snow', name + ' froze to death in a harsh snowstorm',
+                         name + ' disappeared from the nursery and was found dead in the territory'])
+                if game.clan.current_season == 'Greenleaf':
+                    cause_of_death.extend(
+                        [name + ' died to overheating'])
+            elif cat.status == 'apprentice':
+                cause_of_death.extend([name + ' died in a training accident',
+                                       name + ' was killed by enemy warriors after accidentally wandering over the border',
+                                       name + ' went missing and was found dead', name + ' died in a border skirmish'])
+            elif cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader':
+                cause_of_death.extend([name + ' died from infected wounds',
+                                       name + ' was killed by enemy ' + str(
+                                           choice(names.normal_prefixes)) + 'Clan warriors',
+                                       name + ' went missing and was found dead', name + ' died in a border skirmish'])
+            if cat.status == 'deputy' or cat.status == 'leader':
+                cause_of_death.extend(
+                    [name + ' was killed by the ' + str(choice(names.normal_prefixes)) + 'Clan deputy',
+                     name + ' was killed by the ' + str(choice(names.normal_prefixes)) + 'Clan leader'])
+            cat.dies()
+            game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old')
 
-        if cat.moons > randint(150, 200):  # Cat dies of old age
+        elif cat.moons > randint(150, 200):  # extra chance of cat dying to age
             if choice([1, 2, 3, 4, 5, 6]) == 1:
                 cat.dies()
-                if game.cur_events_list is not None:
-                    game.cur_events_list.append(
-                        str(cat.name) + ' has passed away at ' + str(cat.moons) + ' moons old')
+                game.cur_events_list.append(
+                        str(cat.name) + ' has passed due to their old age at ' + str(cat.moons) + ' moons old')
 
     def dies(self):  # This function is called every time a cat dies
         self.dead = True
