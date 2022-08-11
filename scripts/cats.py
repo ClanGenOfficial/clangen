@@ -324,10 +324,7 @@ class Cat(object):
             # interact with other cat
             append_str = None
             # check if cat is dead
-            if randint(1, 4) == 4:
-                cat_number = key_copy[randint(0, index)]
-            else:
-                cat_number = key_copy[index - randint(1, index)]
+            cat_number = choice(list(self.all_cats.keys()))
 
             if self.all_cats[cat_number].dead:
                 if randint(1, 4) == 4:
