@@ -33,14 +33,21 @@ class StartScreen(Screens):
         # example_cat.draw_big((350, 150))
 
         # buttons
-        if game.clan is not None:
+        if game.clan is not None and game.switches['error_message'] == '':
             buttons.draw_button((70, 310), image='continue', text='Continue >', cur_screen='clan screen')
+            buttons.draw_button((70, 355), image='switch_clan', text='Switch Clan >', cur_screen='switch clan screen')
+        elif game.clan is not None and game.switches['error_message']:
+            buttons.draw_button((70, 310), image='continue', text='Continue >', available=False)
             buttons.draw_button((70, 355), image='switch_clan', text='Switch Clan >', cur_screen='switch clan screen')
         else:
             buttons.draw_button((70, 310), image='continue', text='Continue >', available=False)
             buttons.draw_button((70, 355), image='switch_clan', text='Switch Clan >', available=False)
         buttons.draw_button((70, 400), image='new_clan', text='Make New >', cur_screen='make clan screen')
         buttons.draw_button((70, 445), image='settings', text='Settings & Info >', cur_screen='settings screen')
+
+        if game.switches['error_message']:
+            buttons.draw_button((50, 50), text='There was an error loading the game:', available=False)
+            buttons.draw_button((50, 80), text=game.switches['error_message'], available=False)
 
     def screen_switches(self):
         if game.clan is not None:
