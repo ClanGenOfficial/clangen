@@ -457,7 +457,7 @@ class Cat(object):
                         kit = Cat(status='warrior', moons=14)
                         game.clan.add_cat(kit)
                         append_str = str(cat.name) + ' invites the loner ' + choice(
-                            names.loner_names) + ' to join. They change their name to' + str(kit.name) + ''
+                            names.loner_names) + ' to join. They change their name to ' + str(kit.name) + ''
                         kit.skill = 'formerly a loner'
 
                 elif event_choice == 6:
@@ -785,7 +785,9 @@ class Cat(object):
                         else:
                             thoughts.extend(['Is fighting with ' + other_name, 'Is talking with ' + other_name,
                                              'Is sharing prey with ' + other_name, 'Heard a rumor about ' + other_name])
-                    if cat.age == other_cat.age:
+                    if cat.age == other_cat.age and cat.parent1 != other_cat.parent1 and cat.parent2 != other_cat.parent2 and cat.ID not in [
+                        other_cat.parent1, other_cat.parent2] and other_cat.ID not in [cat.parent1,
+                                                                                       cat.parent2] and cat.mate is None and other_cat.mate is None and cat.age == other_cat.age:
                         thoughts.extend(
                             ['Is developing a crush on ' + other_name, 'Is spending a lot of time with ' + other_name])
                 if cat.status == 'kitten':
