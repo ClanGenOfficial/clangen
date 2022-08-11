@@ -217,7 +217,7 @@ class Cat(object):
                     self.perform_ceremonies(cat)
                     self.gain_scars(cat)
                     self.handle_deaths(cat)
-                    self.create_interactions(cat)
+                    self.create_interactions(cat, index, key_copy)
                     # possibly have kits
                     cat.have_kits()
                 else:  # if cat was already dead
@@ -319,7 +319,162 @@ class Cat(object):
             else:
                 cat.specialty2 = None
 
-    def create_interactions(self, cat):
+    def create_interactions(self, cat, index, key_copy):
+        if randint(1, 50) == 49:
+            # interact with other cat
+            append_str = None
+            # check if cat is dead
+            if randint(1, 4) == 4:
+                cat_number = key_copy[randint(0, index)]
+            else:
+                cat_number = key_copy[index - randint(1, index)]
+
+            if self.all_cats[cat_number].dead:
+                if randint(1, 4) == 4:
+                    append_str = str(cat.name) + ' mourns the loss of ' + str(
+                        self.all_cats[cat_number].name)
+            elif cat_number == cat.ID:
+                append_str = str(cat.name) + ' thinks they are going crazy.'
+            else:
+                # all other interactions here
+                event_choice = randint(1, 6)
+                if event_choice == 1:
+                    if cat.specialty is None:
+                        if cat.age in ['adolescent', 'young adult']:
+                            i = randint(0, 1)
+                        elif cat.age in ['adult', 'senior adult']:
+                            i = randint(0, 2)
+                        else:
+                            i = randint(0, 10)
+                        if i == 1:
+                            cat.specialty = choice([choice(scars1), choice(scars2)])
+                            if cat.age in ['kitten']:
+                                append_str = str(cat.name) + ' is injured when they sneak out of camp'
+                            else:
+                                if randint(1, 3) == 3 and (
+                                        cat.status == 'warrior' or cat.status == 'deputy'):
+                                    append_str = str(
+                                        cat.name) + ' retires the elder den after injuries sustained defending ' + str(
+                                        self.all_cats[cat_number].name)
+                                    cat.status_change('elder')
+                                else:
+                                    append_str = str(cat.name) + ' earned a scar defending ' + str(
+                                        self.all_cats[cat_number].name) + ' from a ' + choice(
+                                        ['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk'])
+                        else:
+                            cat.specialty = None
+                            append_str = str(cat.name) + ' tried to convince ' + str(
+                                self.all_cats[cat_number].name) + ' to run away together.'
+                    elif cat.status != 'kitten':
+                        cat.specialty = None
+                        append_str = str(cat.name) + ' tried to convince ' + str(
+                            self.all_cats[cat_number].name) + ' to run away together.'
+                    elif game.clan.current_season != 'Leaf-bare':
+                        cat.specialty = None
+                        append_str = str(cat.name) + ' asks ' + str(
+                            self.all_cats[cat_number].name) + ' to show them ' + str(
+                            game.clan.name) + 'Clan territory.'
+                    else:
+                        if game.clan.current_season == 'Leaf-bare' and cat.status == 'kitten':
+                            cat.dies()
+                            append_str = str(cat.name) + '  dies of a chill during a snowstorm.'
+                        else:
+                            append_str = str(cat.name) + '  feels lost.'
+
+                # defends
+                elif event_choice == 2:
+                    if cat.status == 'leader':
+                        append_str = str(cat.name) + ' confesses to ' + str(self.all_cats[
+                                                                                cat_number].name) + ' that the responsibility of leadership is crushing them.'
+                    elif game.clan.current_season == 'Leaf-bare' and cat.status == 'kitten':
+                        cat.dies()
+                        append_str = str(self.all_cats[cat_number].name) + ' finds ' + str(
+                            cat.name) + ' dead in the snow.'
+                    # sus
+                elif event_choice == 3:
+                    if cat.mate is not None and randint(1, 3) == 1:
+                        append_str = str(cat.name) + ' is killed by ' + str(
+                            self.all_cats[cat_number].name) + ' in an argument over ' + str(
+                            self.all_cats[cat.mate].name)
+                        cat.dies()
+                    elif cat.mate is not None:
+                        append_str = str(cat.name) + ' breaks up with ' + str(
+                            self.all_cats[cat.mate].name)
+                        self.all_cats[cat.mate].mate = None
+                        cat.mate = None
+                    else:
+                        valid_mates = 0
+                        if not self.all_cats[cat_number].dead and self.all_cats[cat_number].age in [
+                            'young adult', 'adult', 'senior adult', 'elder'] and \
+                                cat != self.all_cats[cat_number] and cat.ID not in [
+                            self.all_cats[cat_number].parent1, self.all_cats[cat_number].parent2] and \
+                                self.all_cats[cat_number].ID not in [cat.parent1, cat.parent2] and \
+                                self.all_cats[cat_number].mate is None and \
+                                (self.all_cats[cat_number].parent1 is None or self.all_cats[
+                                    cat_number].parent1 not in [cat.parent1, cat.parent2]) and \
+                                (self.all_cats[cat_number].parent2 is None or self.all_cats[
+                                    cat_number].parent2 not in [cat.parent1, cat.parent2]):
+
+                            # Making sure the ages are appropriate
+                            if (cat.age in ['senior adult', 'elder'] and self.all_cats[cat_number].age in [
+                                'senior adult', 'elder']) or (self.all_cats[
+                                                                  cat_number].age != 'elder' and cat.age != 'elder' and cat.age != 'kitten' and cat.age != 'adolescent'):
+                                valid_mates = 1
+
+                        if self.all_cats[cat_number].ID == cat.ID:
+                            valid_mates = 0
+
+                        if valid_mates:
+                            cat.mate = self.all_cats[cat_number].ID
+                            self.all_cats[cat_number].mate = cat.ID
+                            append_str = str(cat.name) + ' and ' + str(
+                                self.all_cats[cat_number].name) + ' have become mates.'
+
+                        else:
+                            append_str = str(cat.name) + ' talks with ' + str(
+                                self.all_cats[cat_number].name) + ' about love.'
+
+                    # angry mate
+                elif event_choice == 4:
+                    # training
+                    if cat.status == 'apprentice':
+                        append_str = str(cat.name) + ' trains with their mentor, ' + str(cat.mentor.name)
+                    elif cat.age in ['adolescent', 'young adult', 'adult', 'senior adult']:
+                        append_str = str(cat.name) + ' learns some new moves from ' + str(
+                            self.all_cats[cat_number].name)
+                    else:
+                        append_str = str(cat.name) + ' sneaks out of the camp with ' + str(
+                            self.all_cats[cat_number].name)
+
+                elif event_choice == 5:
+
+                    # if cat has mate adopts kit, otherwise two invite in new cat
+                    if randint(1, 4) < 4 and cat.status != 'kitten':
+                        kit = Cat(moons=0)
+                        game.clan.add_cat(kit)
+                        append_str = str(cat.name) + ' adopts an abandoned kit named ' + str(kit.name)
+                    else:
+                        kit = Cat(status='warrior', moons=14)
+                        game.clan.add_cat(kit)
+                        append_str = str(cat.name) + ' invites the loner ' + choice(
+                            names.loner_names) + ' to join. They change their name to' + str(kit.name) + ''
+                        kit.skill = 'formerly a loner'
+
+                elif event_choice == 6:
+                    append_str = str(cat.name) + ' and ' + str(
+                        self.all_cats[cat_number].name) + ' die of a contagious disease'
+                    cat.dies()
+                    self.all_cats[cat_number].dies()
+                else:
+                    append_str = str(cat.name) + ' interacted with ' + str(
+                        self.all_cats[cat_number].name)
+
+            if game.cur_events_list is not None and append_str is not None and append_str != '':
+                game.cur_events_list.append(append_str)
+            else:
+                game.cur_events_list = [append_str]
+
+    def create_interactions2(self, cat):
         if randint(1, 50) == 1:
             interactions = []
             other_cat = self.all_cats.get(choice(list(self.all_cats.keys())))
