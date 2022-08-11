@@ -951,7 +951,8 @@ class Cat(object):
             cat[cat.ID]["experience"] = cat.experience
             cat[cat.ID]["dead_for"] = cat.dead_for  # need to be a string?
             cat[cat.ID]["apprentices"] = cat.apprentice  # we can store this as a list in the dict/json is that oK?
-            cat[cat.ID]["former_apprentices"] = cat.former_apprentices  # we can store this as a list in the dict/json is that oK?
+            cat[cat.ID][
+                "former_apprentices"] = cat.former_apprentices  # we can store this as a list in the dict/json is that oK?
 
         if game.switches['naming_text'] != '':
             clanname = game.switches['naming_text']
@@ -965,14 +966,22 @@ class Cat(object):
 
     def load_cats(self):
         if game.switches['clan_list'][0].strip() == '':
-            cat_data = ''
+            cat_data = {}
         else:
-            if os.path.exists('saves/' + game.switches['clan_list'][0] + 'cats.csv'):
+            if os.path.exists('saves/' + game.switches['clan_list'][0] + 'cats.json'):
                 with open('saves/' + game.switches['clan_list'][0] + 'cats.json', 'r') as read_file:
-                    cat_data = read_file.read()
-            else:
-                with open('saves/' + game.switches['clan_list'][0] + 'cats.txt', 'r') as read_file:
-                    cat_data = read_file.read()
+                    file = read_file.read()
+                    cat_data = json.loads(file)
+
+        if cat_data:
+            for cat_id, cat in cat_data.items():
+                the_pelt = choose_pelt(cat.get("gender"), cat.get("pelt_color"), cat.get("pelt_white"),
+                                       cat.get("pelt_length"), True)
+                the_cat = Cat(cat.get("name_prefix"), cat.get("gender"), cat.get("status"), cat.get("parent_1"),
+                              cat.get("parent_2"), the_pelt, cat.get("eye_color"), cat.get("name_suffix"),
+                              cat_id, cat.get("moons"), False)
+                the_cat.age = cat.get("age")
+                the_cat.mentor = cat.get("mentor")
 
         if len(cat_data) > 0:
             cat_data = cat_data.replace('\t', ',')
@@ -983,22 +992,7 @@ class Cat(object):
                 # SPRITE: kitten(13) - apprentice(14) - warrior(15) - elder(16) - eye colour(17) - reverse(18)
                 # - white patches(19) - pattern(20) - skin(21) - skill(22) - NONE(23) - spec(24) - moons(25) - mate(26)
                 # dead(27) - SPRITE:dead(28)
-                if i.strip() != '':
-                    attr = i.split(',')
-                    for x in range(len(attr)):
-                        attr[x] = attr[x].strip()
-                        if attr[x] in ['None', 'None ']:
-                            attr[x] = None
-                        elif attr[x].upper() == 'TRUE':
-                            attr[x] = True
-                        elif attr[x].upper() == 'FALSE':
-                            attr[x] = False
 
-                    the_pelt = choose_pelt(attr[2], attr[10], attr[11], attr[9], attr[12], True)
-                    the_cat = Cat(ID=attr[0], prefix=attr[1].split(':')[0], suffix=attr[1].split(':')[1],
-                                  gender=attr[2],
-                                  status=attr[3], pelt=the_pelt, parent1=attr[6], parent2=attr[7], eye_colour=attr[17])
-                    the_cat.age, the_cat.mentor = attr[4], attr[8]
                     the_cat.age_sprites['kitten'], the_cat.age_sprites['adolescent'] = int(attr[13]), int(attr[14])
                     the_cat.age_sprites['adult'], the_cat.age_sprites['elder'] = int(attr[15]), int(attr[16])
                     the_cat.age_sprites['young adult'], the_cat.age_sprites['senior adult'] = int(attr[15]), int(
