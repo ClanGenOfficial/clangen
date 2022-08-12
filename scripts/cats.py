@@ -320,7 +320,7 @@ class Cat(object):
                                      'Is regretting eating the bug that they caught', 'Recently took a tumble off of a log', 'Is busy mastering a battle move they are performing incorrectly',
                                      'Refuses to eat the herbs the Medicine Cat has given them for thier tummy', 'Is scrambling the Medicine Cat\'s herbs!', 'Is crying after rough-housing too hard with the older cats',
                                      'Is hatching a plan to sneak out of camp and play', 'Is running like a whirlwind around the camp', 'Is pretending to be the clan leader',
-                                     'Is pretending to be deputy', 'Is pretrending to be the Medicine Cat', 'Doesn\'t want to grow up yet...', 'Wants to be a warrior already!', 'Got in trouble for bringing thorns into the nest'
+                                     'Is pretending to be deputy', 'Is pretrending to be the Medicine Cat', 'Doesn\'t want to grow up yet...', 'Wants to be a warrior already!', 'Got in trouble for bringing thorns into the nest',
                                      'Is asking older cats how kits are born'])
                 elif cat.status == 'apprentice':
                     thoughts.extend(['Is thinking about the time they caught a huge rabbit', 'Wonders what their full name will be', 'Is irritating their mentor',
