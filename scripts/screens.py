@@ -33,14 +33,21 @@ class StartScreen(Screens):
         # example_cat.draw_big((350, 150))
 
         # buttons
-        if game.clan is not None:
+        if game.clan is not None and game.switches['error_message'] == '':
             buttons.draw_button((70, 310), image='continue', text='Continue >', cur_screen='clan screen')
+            buttons.draw_button((70, 355), image='switch_clan', text='Switch Clan >', cur_screen='switch clan screen')
+        elif game.clan is not None and game.switches['error_message']:
+            buttons.draw_button((70, 310), image='continue', text='Continue >', available=False)
             buttons.draw_button((70, 355), image='switch_clan', text='Switch Clan >', cur_screen='switch clan screen')
         else:
             buttons.draw_button((70, 310), image='continue', text='Continue >', available=False)
             buttons.draw_button((70, 355), image='switch_clan', text='Switch Clan >', available=False)
         buttons.draw_button((70, 400), image='new_clan', text='Make New >', cur_screen='make clan screen')
         buttons.draw_button((70, 445), image='settings', text='Settings & Info >', cur_screen='settings screen')
+
+        if game.switches['error_message']:
+            buttons.draw_button((50, 50), text='There was an error loading the game:', available=False)
+            buttons.draw_button((50, 80), text=game.switches['error_message'], available=False)
 
     def screen_switches(self):
         if game.clan is not None:
@@ -361,7 +368,7 @@ class MakeClanScreen(Screens):
             verdana_small.text(str(game.choose_cats[game.switches['cat']].trait), (330, 425))
 
             if game.choose_cats[game.switches['cat']].age == 'kitten' or game.choose_cats[
-                game.switches['cat']].status == 'apprentice':
+                game.switches['cat']].age == 'adolescent':
                 verdana_red.text('Too young to become deputy.', ('center', 490))
             else:
                 buttons.draw_button(('center', 490), text='This cat will support the leader',
@@ -406,7 +413,7 @@ class MakeClanScreen(Screens):
             verdana_small.text(str(game.choose_cats[game.switches['cat']].trait), (330, 425))
 
             if game.choose_cats[game.switches['cat']].age == 'kitten' or game.choose_cats[
-                game.switches['cat']].status == 'kitten':
+                game.switches['cat']].age == 'adolescent':
                 verdana_red.text('Too young to become medicine cat.', ('center', 490))
             else:
                 buttons.draw_button(('center', 490), text='This cat will take care of the clan',
@@ -525,7 +532,7 @@ class EventsScreen(Screens):
                 game.cur_events_list = []
         else:
             buttons.draw_button(('center', 220), text='TIMESKIP ONE MOON', available=False)
-        cat_class.one_moon()
+        events_class.one_moon()
 
         # Maximum events on the screen is 12
         a = 0
