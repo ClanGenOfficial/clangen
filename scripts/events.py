@@ -267,7 +267,7 @@ class Events(object):
                     alive_cats.append(cat)
             if alive_count > 10:
                 chance = int(alive_count/10)
-                if randint(chance, 500) == 499:
+                if randint(chance, 1000) == 999:
                     disaster = []
                     dead_cats = random.sample(alive_cats, 5)
                     name1 = str(dead_cats[0].name)

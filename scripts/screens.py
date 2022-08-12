@@ -704,7 +704,7 @@ class ProfileScreen(Screens):
         # MATE
         if the_cat.mate is not None and not the_cat.dead:
             if the_cat.mate in cat_class.all_cats:
-                if cat_class.all_cats.get(the_cat.mate).dead:
+                if cat_class.all_cats.get(the_cat.mate).dead: # TODO: fix when mate dies mate becomes none
                     verdana_small.text('former mate: ' + str(cat_class.all_cats[the_cat.mate].name),
                                        (250, 330 + count * 15))
                 else:
