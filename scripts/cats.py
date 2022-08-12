@@ -936,6 +936,8 @@ class Cat(object):
             cat[cat.ID]["sprite_adolescent"] = cat.age_sprites['adolescent']  # does this need to be converted to string
             cat[cat.ID]["sprite_adult"] = cat.age_sprites['adult']  # does this need to be converted to string
             cat[cat.ID]["sprite_elder"] = cat.age_sprites['elder']  # need to be a string?
+            cat[cat.ID]["sprite_young_adult"] = cat.age_sprites['young adult']
+            cat[cat.ID]["senior_adult"] = cat.age_sprites["seinor adult"]
             cat[cat.ID]["eye_color"] = cat.eye_colour
             cat[cat.ID]["reverse"] = cat.reverse  # need to be a string?
             cat[cat.ID]["white_patches"] = cat.white_patches  # need to be string?
@@ -965,6 +967,7 @@ class Cat(object):
             write_file.write(data)
 
     def load_cats(self):
+        cat_data = {}
         if game.switches['clan_list'][0].strip() == '':
             cat_data = {}
         else:
@@ -982,56 +985,42 @@ class Cat(object):
                               cat_id, cat.get("moons"), False)
                 the_cat.age = cat.get("age")
                 the_cat.mentor = cat.get("mentor")
+                age_sprite_list = [('kitten', "sprite_kitten"), ("adolescent", "sprite_adolescent"),
+                                   ("adult", "sprite_adult"), ("elder", "sprite_elder"),
+                                   ("young adult", "sprite_young_adult"),
+                                   ("senior adult", "sprite_senior_adult")]
+                for age_sprite in age_sprite_list:
+                    the_cat.age_sprites[age_sprite[0]] = cat.get(age_sprite[1])
+                the_cat.reverse = cat.get("reverse")
+                the_cat.white_patches = cat.get("white_patches")
+                the_cat.pattern = cat.get("pattern")
+                the_cat.trait = cat.get('trait')
+                the_cat.skin = cat.get('skin')
+                the_cat.specialty = cat.get("specialty")
+                the_cat.specialty2 = cat.get("specialty_2")
+                the_cat.experience = cat.get("experience")
+                if the_cat.experience:
+                    experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
+                                    'very high', 'master', 'max']
+                    the_cat.experience_level = experiencelevels[math.floor(int(the_cat.experience) / 10)]
+                else:
+                    the_cat.experience = 0
+                the_cat.moons = cat.get('moons')
+                the_cat.mate = cat.get("mate")
+                the_cat.dead = cat.get('dead')
+                if the_cat.dead:
+                    the_cat.age_sprites['dead'] = cat.get("sprite_dead")
+                    the_cat.dead_for = cat.get("dead_for")
+                    the_cat.skill = cat.get("skill")
 
-        if len(cat_data) > 0:
-            cat_data = cat_data.replace('\t', ',')
-            for i in cat_data.split('\n'):
+                the_cat.apprentice = cat.get("apprentices")
+                the_cat.former_apprentices = cat.get("former_apprentices")
                 # CAT: ID(0) - prefix:suffix(1) - gender(2) - status(3) - age(4) - trait(5) - parent1(6) - parent2(7)
                 #  - mentor(8)
                 # PELT: pelt(9) - colour(10) - white(11) - length(12)
                 # SPRITE: kitten(13) - apprentice(14) - warrior(15) - elder(16) - eye colour(17) - reverse(18)
                 # - white patches(19) - pattern(20) - skin(21) - skill(22) - NONE(23) - spec(24) - moons(25) - mate(26)
                 # dead(27) - SPRITE:dead(28)
-
-                    the_cat.age_sprites['kitten'], the_cat.age_sprites['adolescent'] = int(attr[13]), int(attr[14])
-                    the_cat.age_sprites['adult'], the_cat.age_sprites['elder'] = int(attr[15]), int(attr[16])
-                    the_cat.age_sprites['young adult'], the_cat.age_sprites['senior adult'] = int(attr[15]), int(
-                        attr[15])
-                    the_cat.reverse, the_cat.white_patches, the_cat.pattern = attr[18], attr[19], attr[20]
-                    the_cat.trait, the_cat.skin, the_cat.specialty = attr[5], attr[21], attr[24]
-
-                    if len(attr) > 29:
-                        the_cat.specialty2 = attr[29]
-                    else:
-                        the_cat.specialty2 = None
-
-                    if len(attr) > 30:
-                        the_cat.experience = int(attr[30])
-                        experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
-                                            'very high', 'master', 'max']
-                        the_cat.experience_level = experiencelevels[math.floor(int(the_cat.experience) / 10)]
-
-                    else:
-                        the_cat.experience = 0
-
-                    if len(attr) > 25:
-                        # Attributes that are to be added after the update
-                        the_cat.moons = int(attr[25])
-                        if len(attr) >= 27:
-                            # assigning mate to cat, if any
-                            the_cat.mate = attr[26]
-                        if len(attr) >= 28:
-                            # Is the cat dead
-                            the_cat.dead = attr[27]
-                            the_cat.age_sprites['dead'] = attr[28]
-                    if len(attr) > 31:
-                        the_cat.dead_for = int(attr[31])
-                    the_cat.skill = attr[22]
-
-                    if len(attr) > 32 and attr[32] is not None:
-                        the_cat.apprentice = attr[32].split(';')
-                    if len(attr) > 33 and attr[33] is not None:
-                        the_cat.former_apprentices = attr[33].split(';')
 
             for n in self.all_cats.values():
                 # Load the mentors and apprentices after all cats have been loaded
