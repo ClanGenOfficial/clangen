@@ -99,6 +99,7 @@ class SettingsScreen(Screens):
         verdana.text("Enable clan page background:", (100, 290))
         verdana.text("Automatically save every five moons", (100, 320))
         verdana.text("Allow mass extinction events", (100, 350))
+        verdana.text("Force cats to retire after severe injury", (100, 380))
 
         # Setting values
         verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
@@ -113,6 +114,8 @@ class SettingsScreen(Screens):
         buttons.draw_button((-80, 320), text='SWITCH', setting='autosave')
         verdana.text(self.bool[game.settings['disasters']], (-170, 350))
         buttons.draw_button((-80, 350), text='SWITCH', setting='disasters')
+        verdana.text(self.bool[game.settings['retirement']], (-170, 380))
+        buttons.draw_button((-80, 380), text='SWITCH', setting='retirement')
 
         # other buttons
         buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen')
@@ -736,7 +739,7 @@ class ProfileScreen(Screens):
             buttons.draw_button((-300, -160), text='Kill Cat', kill_cat=the_cat)
         # if the_cat.status == 'apprentice':
         #     buttons.draw_button(('center', -130), text='Change Mentor')
-
+        # buttons.draw_button(('center', -130), text='Family Tree')
         if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not the_cat.dead:
             buttons.draw_button(('center', -130), text='Pick mate for ' + str(the_cat.name),
                                 cur_screen='choose mate screen')

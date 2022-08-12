@@ -178,7 +178,7 @@ class Events(object):
                 other_cat = choice(list(cat_class.all_cats.values()))
             name = str(cat.name)
             other_name = str(other_cat.name)
-            if (cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader') and randint(1, 4) == 1:
+            if (cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader') and randint(1, 4) == 1 and game.settings.get('retirement') == True:
                 game.cur_events_list.append(name + ' retires to the elders den after injuries sustained defending ' + other_name)
                 cat.status_change('elder')
                 return
