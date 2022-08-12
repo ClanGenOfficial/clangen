@@ -28,6 +28,9 @@ class Events(object):
                     cat.dead_for += 1
             cat_class.thoughts()
             game.clan.age += 1
+            if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
+                cat_class.save_cats()
+                game.clan.save_clan()
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
             game.event_scroll_ct = 0
             has_med = False
