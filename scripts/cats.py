@@ -1041,59 +1041,60 @@ class Cat(object):
                 n.former_apprentices = former_apps
                 n.update_sprite()
 
-    def load(self, cat_dict):
-        """ A function that takes a dictionary containing other dictionaries with attributes and values of all(?)
-         cats from a save file and redistributes the values onto new cat object attributes.
-         The dict is in form:
-         cat_dict = { ID : [(prefix, suffix), {attribute: value}] }"""
-        for cat in cat_dict.keys():  # cat is the ID of the cats
-            # create the cat object
-            name = cat_dict[cat][0]
-            new_cat = Cat(prefix=name[0], suffix=name[1], ID=cat)
-
-            # put attribute dict into easier accessible variable
-            attr_dict = cat_dict[cat][1]
-
-            # go through attributes
-            for attr in attr_dict.keys():
-                value = attr_dict[attr]  # value of attribute
-                # turn value into other forms than string if necessary
-                if value == 'None':
-                    value = None
-                elif value == 'False':
-                    value = False
-                elif value == 'True':
-                    value = True
-
-                # Assign values to cat object
-                if attr == 'status':
-                    new_cat.status = value  # STATUS
-                if attr == 'parent1':
-                    new_cat.parent1 = value  # PARENT1
-                if attr == 'parent2':
-                    new_cat.parent2 = value  # PARENT2
-                if attr == 'sex':
-                    new_cat.gender = value  # SEX / GENDER
-                if attr == 'moons':
-                    new_cat.moons = int(value)  # MOONS
-                if attr == 'age':
-                    new_cat.age = int(value)  # AGE
-                if attr == 'dead':
-                    new_cat.dead = value  # DEAD ( OR NOT )
-                if attr == 'dead_for':
-                    new_cat.dead_for = int(value)  # DEAD FOR ( MOONS )
-                if attr == 'pelt':
-                    new_cat.pelt = value  # PELT
-                if attr == 'eye_colour':
-                    new_cat.eye_colour = value  # EYES
-                if attr == 'mate':
-                    new_cat.mate = value  # MATE
-                if attr == 'trait':
-                    new_cat.trait = value  # TRAIT
-                if attr == 'skill':
-                    new_cat.skill = value  # SKILL
-                if attr == 'mentor':
-                    new_cat.mentor = value
+    # still needed?
+    # def load(self, cat_dict):
+    #     """ A function that takes a dictionary containing other dictionaries with attributes and values of all(?)
+    #      cats from a save file and redistributes the values onto new cat object attributes.
+    #      The dict is in form:
+    #      cat_dict = { ID : [(prefix, suffix), {attribute: value}] }"""
+    #     for cat in cat_dict.keys():  # cat is the ID of the cats
+    #         # create the cat object
+    #         name = cat_dict[cat][0]
+    #         new_cat = Cat(prefix=name[0], suffix=name[1], ID=cat)
+    #
+    #         # put attribute dict into easier accessible variable
+    #         attr_dict = cat_dict[cat][1]
+    #
+    #         # go through attributes
+    #         for attr in attr_dict.keys():
+    #             value = attr_dict[attr]  # value of attribute
+    #             # turn value into other forms than string if necessary
+    #             if value == 'None':
+    #                 value = None
+    #             elif value == 'False':
+    #                 value = False
+    #             elif value == 'True':
+    #                 value = True
+    #
+    #             # Assign values to cat object
+    #             if attr == 'status':
+    #                 new_cat.status = value  # STATUS
+    #             if attr == 'parent1':
+    #                 new_cat.parent1 = value  # PARENT1
+    #             if attr == 'parent2':
+    #                 new_cat.parent2 = value  # PARENT2
+    #             if attr == 'sex':
+    #                 new_cat.gender = value  # SEX / GENDER
+    #             if attr == 'moons':
+    #                 new_cat.moons = int(value)  # MOONS
+    #             if attr == 'age':
+    #                 new_cat.age = int(value)  # AGE
+    #             if attr == 'dead':
+    #                 new_cat.dead = value  # DEAD ( OR NOT )
+    #             if attr == 'dead_for':
+    #                 new_cat.dead_for = int(value)  # DEAD FOR ( MOONS )
+    #             if attr == 'pelt':
+    #                 new_cat.pelt = value  # PELT
+    #             if attr == 'eye_colour':
+    #                 new_cat.eye_colour = value  # EYES
+    #             if attr == 'mate':
+    #                 new_cat.mate = value  # MATE
+    #             if attr == 'trait':
+    #                 new_cat.trait = value  # TRAIT
+    #             if attr == 'skill':
+    #                 new_cat.skill = value  # SKILL
+    #             if attr == 'mentor':
+    #                 new_cat.mentor = value
 
     def describe_color(self):
         color_name = ''
