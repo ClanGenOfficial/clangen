@@ -98,6 +98,7 @@ class SettingsScreen(Screens):
         verdana.text("Allow unmated cats to have offspring:", (100, 260))
         verdana.text("Enable clan page background:", (100, 290))
         verdana.text("Automatically save every five moons", (100, 320))
+        verdana.text("Allow mass extinction events", (100, 350))
 
         # Setting values
         verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
@@ -110,6 +111,8 @@ class SettingsScreen(Screens):
         buttons.draw_button((-80, 290), text='SWITCH', setting='backgrounds')
         verdana.text(self.bool[game.settings['autosave']], (-170, 320))
         buttons.draw_button((-80, 320), text='SWITCH', setting='autosave')
+        verdana.text(self.bool[game.settings['disasters']], (-170, 350))
+        buttons.draw_button((-80, 350), text='SWITCH', setting='disasters')
 
         # other buttons
         buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen')
