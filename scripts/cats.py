@@ -315,7 +315,7 @@ class Cat(object):
                                      'Wonders who their mentor will be', "Practices the hunting crouch", 'Pretends to fight an enemy warrior', 'Wants to take a nap',
                                      'Is scared after having a nightmare', 'Thinks they saw a StarClan cat in their dreams', 'Wants to snuggle',
                                      'Wishes other cats would stop babying them', 'Is hiding from other cats', 'Is bouncing around in excitement', 'Whines about being hungry',
-                                     'Is asking the older cats about how kittens are made', 'Is pestering older cats to play with them', 'Is whining for milk', 'Is whimpering in their sleep',
+                                     'Is asking the older cats about where kits come from', 'Is pestering older cats to play with them', 'Is whining for milk', 'Is whimpering in their sleep',
                                      'Is trying to growl menacingly', 'Is adamantly refusing to take their nap', 'Was nipped on the rump by an elder for being naughty', 'Is batting pebbles across the camp clearing',
                                      'Is regretting eating the bug that they caught', 'Recently took a tumble off of a log', 'Is busy mastering a battle move they are performing incorrectly',
                                      'Refuses to eat the herbs the Medicine Cat has given them for thier tummy', 'Is scrambling the Medicine Cat\'s herbs!', 'Is crying after rough-housing too hard with the older cats',
@@ -349,7 +349,7 @@ class Cat(object):
                                      'Is wrapping a wound with cobwebs', 'Is clearing out old herbs', 'Is gathering deathberries',
                                      'Is proud of their ability to care for their clanmates', 'Chased kits out of their den', 'Is wishing they could have a mate and kits',
                                      'Is tending growing herbs', 'Wishes they had an extra set of paws', 'Is carefully picking up spilled poppy seeds', 'Is out gathering more cobwebs',
-                                     'Is reciting the names of herbs aloud', 'Wishes their clanmates could understand thier struggles', 'Was startled awake in the wee hours by a vivid dream'
+                                     'Is reciting the names of herbs aloud', 'Wishes their clanmates could understand thier struggles', 'Was startled awake in the wee hours by a vivid dream',
                                      'Is running low on catmint', 'Is running low on marigold', 'Is running low on burdock root', 'Is running low on poppy seeds', 'Is running low on cobwebs',
                                      'Is running low on feverfew', 'Is running low on borage leaves' 'Is running low on tansy' 'Is running low on mouse bile',
                                      'Is teaching kits about what plants to stay away from', 'Plans to go out gathering herbs today', 'Has been hearing the voices of StarClan cats...',
@@ -381,7 +381,7 @@ class Cat(object):
                                      'Is finding the responsibility of leadership to be quite the heavy burden', 'Is feeling blessed by StarClan this moon',
                                      'Is making a solemn vow to protect their clanmates', 'Has been letting their deputy call the shots recently, and is proud of thier initiative',
                                      'Called an important clan meeting recently', 'Is pondering the next mentors for the kits of the clan', 'Has recently picked up the scent of mischeivous kits in their den...',
-                                     'Is pondering recent dreams they have had... perhaps from StarClan?', 'Recently called a clan meeting, but forgot what to say', 'Think they have been hearing the voices of StarClan cats...'])
+                                     'Is pondering recent dreams they have had... perhaps from StarClan?', 'Recently called a clan meeting, but forgot what to say', 'Thinks they have been hearing the voices of StarClan cats...'])
                 elif cat.status == 'elder':
                     thoughts.extend(['Is complaining about their nest being too rough', 'Is complaining about their aching joints', 'Is telling stories about when they were young',
                                      'Is giving advice to younger cats', 'Is complaining about thorns in their nest', 'Is bossing around the younger cats',
