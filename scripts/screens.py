@@ -143,11 +143,6 @@ class InfoScreen(Screens):
 
 
 class ClanScreen(Screens):
-    greenleaf_bg = pygame.transform.scale(pygame.image.load('resources/greenleafcamp.png'), (800, 700))
-    newleaf_bg = pygame.transform.scale(pygame.image.load('resources/newleafcamp.png'), (800, 700))
-    leafbare_bg = pygame.transform.scale(pygame.image.load('resources/leafbarecamp.png'), (800, 700))
-    leaffall_bg = pygame.transform.scale(pygame.image.load('resources/leaffallcamp.png'), (800, 700))
-
     def on_use(self):
         # layout
         if game.settings['backgrounds']:
@@ -181,6 +176,7 @@ class ClanScreen(Screens):
 
     def screen_switches(self):
         cat_profiles()
+        self.change_brightness()
         game.switches['cat'] = None
 
         p = game.clan.cur_layout
@@ -228,6 +224,18 @@ class ClanScreen(Screens):
                 cat_class.all_cats[x].placement = choice(p['medicine place'])
             elif cat_class.all_cats[x].status == 'medicine cat':
                 cat_class.all_cats[x].placement = choice(p['medicine place'])
+
+    def change_brightness(self):
+        if game.settings['dark mode']:
+            self.greenleaf_bg = pygame.transform.scale(pygame.image.load('resources/greenleafcamp_dark.png'), (800, 700))
+            self.newleaf_bg = pygame.transform.scale(pygame.image.load('resources/newleafcamp_dark.png'), (800, 700))
+            self.leafbare_bg = pygame.transform.scale(pygame.image.load('resources/leafbarecamp_dark.png'), (800, 700))
+            self.leaffall_bg = pygame.transform.scale(pygame.image.load('resources/leaffallcamp_dark.png'), (800, 700))
+        else:
+            self.greenleaf_bg = pygame.transform.scale(pygame.image.load('resources/greenleafcamp.png'), (800, 700))
+            self.newleaf_bg = pygame.transform.scale(pygame.image.load('resources/newleafcamp.png'), (800, 700))
+            self.leafbare_bg = pygame.transform.scale(pygame.image.load('resources/leafbarecamp.png'), (800, 700))
+            self.leaffall_bg = pygame.transform.scale(pygame.image.load('resources/leaffallcamp.png'), (800, 700))
 
 
 class StarClanScreen(Screens):
@@ -637,7 +645,7 @@ class ProfileScreen(Screens):
                 apps = apps[:len(apps) - 2]
             verdana_small.text(apps, (450, 330 + count2 * 15))
             count2 += 1
-        if len(the_cat.former_apprentices) != 0:
+        if len(the_cat.former_apprentices) != 0 and the_cat.former_apprentices[0] is not None:
             former_apps = ''
             if len(the_cat.former_apprentices) == 1:
                 former_apps = 'former apprentice: ' + str(the_cat.former_apprentices[0].name)
@@ -769,7 +777,7 @@ class ProfileScreen(Screens):
             game.switches['apprentice_switch'] = False
 
         if game.switches['kill_cat'] is not False and game.switches['kill_cat'] is not None:
-            game.switches['kill_cat'].dies()
+            events_class.dies(game.switches['kill_cat'])
             game.switches['kill_cat'] = False
 
         if the_cat.status in ['apprentice'] and not the_cat.dead:

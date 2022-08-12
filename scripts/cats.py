@@ -592,7 +592,8 @@ class Cat(object):
             if x.former_apprentices:
                 data += ','
                 for cat in x.former_apprentices:
-                    data += str(cat.ID) + ';'
+                    if cat is not None:
+                        data += str(cat.ID) + ';'
                 # remove last semicolon
                 data = data[:-1]
             else:
