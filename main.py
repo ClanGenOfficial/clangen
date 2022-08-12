@@ -18,7 +18,11 @@ with open('saves/clanlist.txt', 'r') as read_file:
     if_clans = len(clan_list)
 if if_clans > 0:
     game.switches['clan_list'] = clan_list.split('\n')
-    cat_class.load_cats()
+    try:
+        cat_class.load_cats()
+    except:
+        if not game.switches['error_message']:
+            game.switches['error_message'] = 'There was an error loading the cats file!'
     clan_class.load_clan()
     
 # LOAD settings

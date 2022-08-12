@@ -1,4 +1,5 @@
 from .game_essentials import *
+
 pygame.init()
 
 
@@ -28,11 +29,11 @@ class Font(object):
             # negative pos value will be taken from the other end of the screen
             new_pos = list(pos)
             if pos[0] == 'center':
-                new_pos[0] = screen_x/2 - t.get_width()/2
+                new_pos[0] = screen_x / 2 - t.get_width() / 2
             elif pos[0] < 0:
                 new_pos[0] = screen_x + pos[0] - t.get_width()
             if pos[1] == 'center':
-                new_pos[1] = screen_y/2 - t.get_height()/2
+                new_pos[1] = screen_y / 2 - t.get_height() / 2
             elif pos[1] < 0:
                 new_pos[1] = screen_y + pos[1] - t.get_height()
             where.blit(t, new_pos)
@@ -57,14 +58,8 @@ class Font(object):
 
 # F O N T S
 verdana = Font('verdana')
-verdana_black = Font('verdana', colour= 'black')
+verdana_black = Font('verdana', colour='black')
 verdana_red = Font('verdana', colour=(242, 52, 29))
 verdana_small = Font('verdana', 11)
 verdana_baby = Font('verdana', 11, (100, 100, 250))
 verdana_big = Font('verdana', 18)
-
-
-
-
-
-
