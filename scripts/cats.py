@@ -225,7 +225,7 @@ class Cat(object):
                     starclan_thoughts.extend([  # thoughts with other cats that are alive
                         'Is watching over ' + other_name, 'Is curious about what ' + other_name + ' is doing', 'Wants to send a message to ' + other_name,
                         'Is currently walking in the dreams of ' + other_name, 'Is proud of ' + other_name, 'Is disappointed in ' + other_name, 'Wants to warn ' + other_name,
-                        'Has been following the growth of ' + other_name, 'Has seeen ' + other_name, + '\'s future demise', 'Is looking to visit ' + other_name + ' in a dream soon',
+                        'Has been following the growth of ' + other_name, 'Has seeen ' + other_name + '\'s future demise', 'Is looking to visit ' + other_name + ' in a dream soon',
                         'Accidentally found themselves in ' + other_name + '\'s dreams the other night', 'Wants to warn ' + other_name + ' about something that will happen soon',
                         'Knows what ' + other_name + '\'s secret is and wants to tell some cat'])
                 if cat.status in ['kitten', 'apprentice', 'medicine cat apprentice']:  # dead young cat thoughts
