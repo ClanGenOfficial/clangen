@@ -1,5 +1,6 @@
 from random import choice, randint
 from math import ceil, floor
+from .events import events_class
 from .game_essentials import *
 from .names import *
 from .cats import *
@@ -410,7 +411,7 @@ class Patrol(object):
                 # stuff that happens after the results
                 # cat straight up dies
                 if not self.success:
-                    self.patrol_random_cat.dies()
+                    events_class.dies(self.patrol_random_cat)
                     return
 
         if self.patrol_event[0] == 9:
@@ -757,7 +758,7 @@ class Patrol(object):
                 # stuff that happens after the results
                 # cat straight up dies
                 if not self.success:
-                    self.patrol_random_cat.dies()
+                    events_class.dies(self.patrol_random_cat)
                     return
 
         if self.patrol_event[0] == 39:
