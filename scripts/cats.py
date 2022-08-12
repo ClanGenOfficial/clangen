@@ -238,8 +238,7 @@ class Cat(object):
                         ['Is grateful that they lived such a long life', 'Is happy that their joints no longer ache', 'Is telling stories to the younger cats of StarClan',
                          'Watches over the younger cats of StarClan', 'Is observing how different the clan is from when they were alive'])
                 elif cat.status == 'leader':  # dead leader thoughts
-                    starclan_thoughts.extend(['Hoped that they were a good leader,'
-                                              'Wishes that they had ten lives', 'Is proud of their clan from StarClan',
+                    starclan_thoughts.extend(['Hoped that they were a good leader', 'Wishes that they had ten lives', 'Is proud of their clan from StarClan',
                                               'Is pleased to see the new direction the clan is heading in', 'Still frets over their beloved former clanmates from afar',
                                               'Rejoices with every new kit born to the clan they still hold so dear'])
                 thought = choice(starclan_thoughts)  # sets current thought to a random applicable thought
@@ -387,6 +386,8 @@ class Cat(object):
                                      'Has been hearing the voices of StarClan cats...', 'Is lining nests with fress moss and feathers'])
                     if cat.trait == 'bloodthirsty':
                         thoughts.extend(['Is gathering deathberries', 'Has been disappearing a lot lately', 'Insists only on treating cats who need it'])
+                    elif cat.trait == 'strange':
+                        thoughts.extend(['Insists everyone eat camomile leaves everyday at moonhigh', 'Hisses at the kits randomly', 'Sleeps in the middle of the clearing'])
                 elif cat.status == 'warrior':
                     thoughts.extend(['Caught scent of a fox earlier', 'Caught scent of an enemy warrior earlier', 'Is helping gathering herbs', 'Is thinking about love',
                                      'Is decorating their nest', 'Is reinforcing the camp with brambles', 'Wants to be chosen as the new deputy', 'Caught a huge rabbit',
@@ -401,6 +402,8 @@ class Cat(object):
                                      'Is helping to escort the medicine cat to gather herbs'])
                     if cat.trait == 'bloodthirsty':
                         thoughts.extend(['Is thinking about murder', 'Is acting suspicious', 'Has been washing their paws a lot lately', 'Has disappeared often recently'])
+                    elif cat.trait == 'strange':
+                        thoughts.extend(['Is telling every cat about their weird dreams', 'Is chasing a butterfly', 'Stares at random cats'])
                 elif cat.status == 'deputy':
                     thoughts.extend(['Is assigning cats to a border patrol', 'Is assigning cats to a hunting patrol', 'Is wondering what it would be like to be a leader',
                                      'Is spending time alone', 'Tries to set a good example for younger cats', 'Is thinking about kits', 'Is stressed about organizing patrols',
@@ -412,6 +415,9 @@ class Cat(object):
                     if cat.trait == 'bloodthirsty':
                         thoughts.extend(['Is thinking about murder', 'Is acting suspicious', 'Has been washing their paws a lot lately', 'Has disappeared often recently',
                                          'Thinks about killing the leader and staging it as an accident', 'Encourages the leader to start a war'])
+                    elif cat.trait == 'strange':
+                        thoughts.extend(['Accidentally assigns the same cat to three patrols', 'Insists a hunting patrol only bring back mice',
+                                         'Goes missing and comes back smelling like garlic'])
                 elif cat.status == 'leader':
                     thoughts.extend(['Is hoping for a sign from StarClan', 'Is hoping that they are leading their clan well', 'Thinks about who should mentor new apprentices',
                                      'Is worried about clan relations', 'Is spending time alone', 'Tries to set a good example for the deputy',
@@ -427,7 +433,9 @@ class Cat(object):
                     if cat.trait == 'bloodthirsty':
                         thoughts.extend(['Encourages warriors to start fights on border patrols', 'Is debating if they should declare a war with another clan',
                                          'Is wondering if they could hold apprentice ceremonies at 4 moons old instead', 'Has been growling to themselves'])
-                elif cat.status == 'elder':
+                    elif cat.trait == 'strange':
+                        thoughts.extend(['No thoughts, head empty', 'Insists they they received ten lives instead of nine', 'Has a crazed look in their eyes'])
+                elif cat.age == 'elder':
                     thoughts.extend(['Is complaining about their nest being too rough', 'Is complaining about their aching joints', 'Is telling stories about when they were young',
                                      'Is giving advice to younger cats', 'Is complaining about thorns in their nest', 'Is bossing around the younger cats',
                                      'Is telling scary stories to the younger cats', 'Is snoring in their sleep', 'Thinking about how too many cats die young',
