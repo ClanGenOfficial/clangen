@@ -208,7 +208,7 @@ class Patrol(object):
                                150, 50, 0, 0, 0, 0, 1, ['excellent fighter']],
                               [9, 'Your patrol comes across a thunderpath. Do you cross it?',
                                'Your patrol crosses the path, and can hunt on the other side',
-                               'r_c is hit by a Monster and retires to the elder den',
+                               'r_c is hit by a Monster and debates retiring to the elder den',
                                'You decide to not cross the thunderpath', 20, 10, 0, 0, 0, 0, 1,
                                ['very smart', 'extremely smart']],
                               [10, 'Your patrol has a disagreement. They look to p_l to settle the dispute',
@@ -426,7 +426,7 @@ class Patrol(object):
                     if self.patrol_random_cat.status == 'leader':
                         self.patrol_random_cat.experience = 0
                         self.patrol_result_text = str(self.patrol_random_cat.name) + ' is injured by a Monster and has to relearn everything.'
-                    else:
+                    elif game.settings.get('retirement') == True:
                         self.patrol_random_cat.status_change('elder')
                     self.patrol_random_cat.skill = choice(['paralyzed', 'blind', 'missing a leg'])
                     return
