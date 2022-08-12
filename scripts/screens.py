@@ -95,9 +95,10 @@ class SettingsScreen(Screens):
         # Setting names
         verdana.text("Dark mode:", (100, 200))
         verdana.text("Allow couples to have kittens despite same-sex status:", (100, 230))
-
         verdana.text("Allow unmated cats to have offspring:", (100, 260))
         verdana.text("Enable clan page background:", (100, 290))
+        verdana.text("Automatically save every five moons", (100, 320))
+        verdana.text("Allow mass extinction events", (100, 350))
 
         # Setting values
         verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
@@ -108,6 +109,10 @@ class SettingsScreen(Screens):
         buttons.draw_button((-80, 260), text='SWITCH', setting='no unknown fathers')
         verdana.text(self.bool[game.settings['backgrounds']], (-170, 290))
         buttons.draw_button((-80, 290), text='SWITCH', setting='backgrounds')
+        verdana.text(self.bool[game.settings['autosave']], (-170, 320))
+        buttons.draw_button((-80, 320), text='SWITCH', setting='autosave')
+        verdana.text(self.bool[game.settings['disasters']], (-170, 350))
+        buttons.draw_button((-80, 350), text='SWITCH', setting='disasters')
 
         # other buttons
         buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen')
@@ -699,7 +704,7 @@ class ProfileScreen(Screens):
         # MATE
         if the_cat.mate is not None and not the_cat.dead:
             if the_cat.mate in cat_class.all_cats:
-                if cat_class.all_cats.get(the_cat.mate).dead:
+                if cat_class.all_cats.get(the_cat.mate).dead: # TODO: fix when mate dies mate becomes none
                     verdana_small.text('former mate: ' + str(cat_class.all_cats[the_cat.mate].name),
                                        (250, 330 + count * 15))
                 else:

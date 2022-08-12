@@ -28,6 +28,9 @@ class Events(object):
                     cat.dead_for += 1
             cat_class.thoughts()
             game.clan.age += 1
+            if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
+                cat_class.save_cats()
+                game.clan.save_clan()
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
             game.event_scroll_ct = 0
             has_med = False
@@ -255,6 +258,28 @@ class Events(object):
             if choice([1, 2, 3, 4, 5, 6]) == 1:
                 self.dies(cat)
                 game.cur_events_list.append(str(cat.name) + ' has passed due to their old age at ' + str(cat.moons) + ' moons old')
+        if game.settings.get('disasters') is True:
+            alive_count = 0
+            alive_cats = []
+            for cat in list(cat_class.all_cats.values()):
+                if not cat.dead:
+                    alive_count += 1
+                    alive_cats.append(cat)
+            if alive_count > 10:
+                chance = int(alive_count/10)
+                if randint(chance, 1000) == 999:
+                    disaster = []
+                    dead_cats = random.sample(alive_cats, 5)
+                    name1 = str(dead_cats[0].name)
+                    name2 = str(dead_cats[1].name)
+                    name3 = str(dead_cats[2].name)
+                    name4 = str(dead_cats[3].name)
+                    name5 = str(dead_cats[4].name)
+                    disaster.extend([' drown after the camp becomes flooded', ' are killed in a battle against ' + choice(names.normal_prefixes) + 'Clan',
+                                     ' are killed after a fire rages through the camp', ' are killed in an ambush by a group of rogues', ' go missing in the night'])
+                    game.cur_events_list.append(name1 + ', ' + name2 + ', ' + name3 + ', ' + name4 + ', and ' + name5 + choice(disaster))
+                    for cat in dead_cats:
+                        self.dies(cat)
 
     def dies(self, cat):  # This function is called every time a cat dies
         cat.dead = True

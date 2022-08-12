@@ -52,13 +52,7 @@ class Sprites(object):
 
     def load_scars(self):
         # SCARS & MORE
-        if 'dark mode' in game.settings:
-            if game.settings['dark mode']:
-                scars = 'scarsdark'
-            else:
-                scars = 'scars'
-        else:
-            scars = 'scars'
+        scars = 'scars'
 
         self.make_group(scars, (0, 0), 'scarsONE')
         self.make_group(scars, (1, 0), 'scarsTWO')
