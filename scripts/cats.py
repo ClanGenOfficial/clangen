@@ -476,12 +476,16 @@ class Cat(object):
             new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
 
         # draw skin and scars2 and scars3
-        if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
+        blendmode = pygame.BLEND_RGBA_MIN
+        if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice',
+                                                              'medicine cat apprentice'] or self.age == 'elder':
             new_sprite.blit(sprites.sprites['skinextra' + self.skin + str(self.age_sprites[self.age])], (0, 0))
             if self.specialty in scars2:
-                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])], (0, 0))
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])],
+                                (0, 0), special_flags=blendmode)
             if self.specialty2 in scars2:
-                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0))
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])],
+                                (0, 0), special_flags=blendmode)
             if self.specialty in scars3:
                 new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])], (0, 0))
             if self.specialty2 in scars3:
@@ -489,9 +493,11 @@ class Cat(object):
         else:
             new_sprite.blit(sprites.sprites['skin' + self.skin + str(self.age_sprites[self.age])], (0, 0))
             if self.specialty in scars2:
-                new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])], (0, 0))
+                new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])],
+                                (0, 0), special_flags=blendmode)
             if self.specialty2 in scars2:
-                new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0))
+                new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])],
+                                (0, 0), special_flags=blendmode)
             if self.specialty in scars3:
                 new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])], (0, 0))
             if self.specialty2 in scars3:
