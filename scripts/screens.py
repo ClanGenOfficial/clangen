@@ -1229,7 +1229,7 @@ class AllegiancesScreen(Screens):
             game.allegiance_list.append(['LEADER:', ''])
 
         if game.clan.deputy != 0 and game.clan.deputy is not None and not game.clan.deputy.dead:
-            game.allegiance_list.append(['DEPUTY:', str(game.clan.deputy.name) + " - a " + dep.describe_cat()])
+            game.allegiance_list.append(['DEPUTY:', str(game.clan.deputy.name) + " - a " + game.clan.deputy.describe_cat()])
         else:
             game.allegiance_list.append(['DEPUTY:', ''])
 
