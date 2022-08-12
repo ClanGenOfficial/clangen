@@ -289,7 +289,7 @@ class Cat(object):
                                              'Is talking excitedly with ' + other_name + ' about how cool their clan leader is', 'Is talking excitedly with ' + other_name + ' about how cool their clan deputy is',
                                              'Is jealous that ' + other_name + ' is getting more attention than them', 'Won\'t stop crying that they\'re hungry... but they just ate!'])
                         elif other_cat.status != 'kitten':  # kit thoughts about older cat
-                            thoughts.extend(['Is biting ' + other_name + '\'s tail', 'Sticks their tongue out at ' + other_name, 'Whines to ' + other_name, 'Is demanding ' + other_name + '\'s attention'
+                            thoughts.extend(['Is biting ' + other_name + '\'s tail', 'Sticks their tongue out at ' + other_name, 'Whines to ' + other_name, 'Is demanding ' + other_name + '\'s attention', 
                                 'Really looks up to ' + other_name, 'Is hiding under a bush from ' + other_name + ', but they can\'t stop giggling', 'Is pretending to be ' + other_name])
                     elif cat.status in ['apprentice', 'medicine cat apprentice', 'warrior', 'medicine cat', 'deputy', 'leader']:
                         if other_cat.status == 'kitten':  # older cat thoughts about kit
