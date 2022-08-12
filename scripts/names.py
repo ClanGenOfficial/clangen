@@ -134,7 +134,7 @@ class Name(object):
                    "Rarity", "Trixie", "Sunset", "Anubis", "Armin", "Amy", "Alice", "Alec", "Baphomet", "Bean",
                    "Bastet", "Birb", "Burm", "Chrissy", "Cherry", "Chief", "Crow", "Carrie", "Calvin", "Cookie",
                    "Catie", "Charm", "Crab", "Charles", "Caroline", "Conan", "Cloud", "Charlie", "Cowboy",
-                   "Dune", "Dan", "Delilah", "Emerald", "Emy", "Erica", " Eddie", "Eda", "Ferret", "Fawn",
+                   "Dune", "Dan", "Delilah", "Emerald", "Emy", "Erica", " Eddie", "Eda", "Ferret", "Fawn", "Fiver",
                    "Fallow", "Ferry", "Gamble", "Grain", "Gir", "Hop", "Hot Sauce", "Habanero", "Taco Bell", "Cheetoman"]
         
     if os.path.exists('saves/prefixlist.txt'):
