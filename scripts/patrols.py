@@ -531,6 +531,8 @@ class Patrol(object):
                     self.other_clan.relations = int(self.other_clan.relations) - 1
                     if int(self.other_clan.relations) < 1:
                         self.other_clan.relations = 1
+                    if int(self.other_clan.relations) == 6:
+                        self.patrol_result_text = self.other_clan.name + 'Clan declares war on ' + game.clan.name + 'Clan.'
                 return
 
         if self.patrol_event[0] == 12:
