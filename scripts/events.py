@@ -11,9 +11,12 @@ class Events(object):
             # Leave "e_type" empty for example class
             self.all_events[self.ID] = self
         self.cats = cats
+        self.at_war = False
+        self.enemy_clan = None
 
     def one_moon(self):  # Go forward in time one moon
         if game.switches['timeskip']:
+            self.check_clan_relations()
             for cat in cat_class.all_cats.copy().values():
                 if not cat.dead:
                     cat.in_camp = 1
@@ -46,6 +49,22 @@ class Events(object):
             if game.clan.leader.dead:
                 game.cur_events_list.insert(0, game.clan.name + "Clan has no leader!")
         game.switches['timeskip'] = False
+
+    def check_clan_relations(self):
+        for other_clan in game.clan.all_clans:
+            war_notice = ''
+            if int(other_clan.relations) < 7:
+                self.at_war = True
+                self.enemy_clan = other_clan.name + 'Clan'
+                war_notice = choice(['War rages between ' + game.clan.name + 'Clan and ' + other_clan.name + 'Clan',
+                                    other_clan.name + 'Clan has taken some of ' + game.clan.name + 'Clan\'s territory.',
+                                    game.clan.name + 'Clan has claimed some of ' + other_clan.name + 'Clan\'s territory',
+                                    other_clan.name + 'Clan attempted to break into your camp during the war',
+                                    'The war against ' + other_clan.name + 'Clan continues.',
+                                    game.clan.name + 'Clan is starting to get tired of the war against ' + other_clan.name + 'Clan'])
+            if war_notice:
+                game.cur_events_list.append(war_notice)
+                
 
     def perform_ceremonies(self, cat):  # This function is called when apprentice/warrior/other ceremonies are performed every moon
         if game.clan.leader.dead and game.clan.deputy is not None and not game.clan.deputy.dead:
@@ -152,7 +171,7 @@ class Events(object):
                     warrior = Cat(status='warrior', moons=randint(12, 150))
                     game.clan.add_cat(warrior)
                     game.cur_events_list.extend(
-                        [name + ' finds a warrior from ' + choice(names.normal_prefixes) + 'Clan named ' + str(warrior.name) + ' who asks to join the clan'])
+                        [name + ' finds a warrior from ' + choice(game.clan.all_clans).name + 'Clan named ' + str(warrior.name) + ' who asks to join the clan'])
                 elif type_of_new_cat == 5:
                     loner_name = choice(names.loner_names)
                     loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
@@ -227,13 +246,21 @@ class Events(object):
                 cause_of_death.extend([name + ' died in a training accident', name + ' was killed by enemy warriors after accidentally wandering over the border',
                                        name + ' went missing and was found dead', name + ' died in a border skirmish'])
             elif cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader':
-                cause_of_death.extend([name + ' died from infected wounds', name + ' was killed by enemy ' + str(choice(names.normal_prefixes)) + 'Clan warriors',
-                                       name + ' went missing and was found dead', name + ' died in a border skirmish'])
+                cause_of_death.extend([name + ' died from infected wounds', name + ' was found dead near the ' + choice(game.clan.all_clans).name + 'Clan border',
+                                       name + ' went missing and was found dead'])
+                if self.at_war:
+                    cause_of_death.extend([name + ' was killed by enemy ' + self.enemy_clan + ' warriors',
+                                        name + ' was killed by enemy ' + self.enemy_clan + ' warriors',
+                                        name + ' was killed by enemy ' + self.enemy_clan + ' warriors',
+                                       name + ' died in a border skirmish'])
             elif cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice':
                 cause_of_death.extend(['The herb stores were damaged and ' + name + ' was murdered by an enemy warrior'])
+                if self.at_war:
+                    cause_of_death.extend([name + ' was killed by a ' + self.enemy_clan + ' warrior while pulling an injured cat out of the battlefield'])
             if cat.status == 'deputy' or cat.status == 'leader':
-                cause_of_death.extend([name + ' was killed by the ' + str(choice(names.normal_prefixes)) + 'Clan deputy',
-                                       name + ' was killed by the ' + str(choice(names.normal_prefixes)) + 'Clan leader'])
+                if self.at_war:
+                    cause_of_death.extend([name + ' was killed by the ' + self.enemy_clan + ' deputy',
+                                       name + ' was killed by the ' + self.enemy_clan + ' leader'])
             self.dies(cat)
             game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old')
         elif randint(1, 300) == 1:  # multiple deaths

@@ -27,6 +27,7 @@ class Patrol(object):
         self.patrol_events = []
         self.eligible_events = []
         self.patrol_result_text = ''
+        self.other_clan = {}
 
         self.experience_levels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high',
                                         'very high', 'master', 'max']
@@ -51,6 +52,7 @@ class Patrol(object):
         self.patrol_stat_cat = None
         self.patrol_result_text = ''
         self.eligible_events = []
+        self.other_clan = {}
         # calculate random cat here
         self.patrol_random_cat = choice(self.patrol_cats)
 
@@ -86,6 +88,22 @@ class Patrol(object):
             # 7 is cat numbers
 
         self.patrol_event = choice(self.eligible_events)
+
+        # because I think too many loners are joining; if we roll one of the loner events and have a decent size clan
+        # 50% chance we meet a border patrol instead
+        # 37, 43, 44 and 45 are joining events
+        if self.patrol_event[0] in [37, 43, 44, 45] and len(game.clan.clan_cats) >20:
+            if randint(0,1):
+                self.other_clan = self.meet_other_clan()
+
+        if self.patrol_event[0] == 11:
+            self.other_clan = self.meet_other_clan()
+
+        #if the clan is at war, really boost the chances that the patrol is just meeting the clan. 1/3 chances
+        for other_clan in game.clan.all_clans:
+            if int(other_clan.relations) <7:
+                if randint(1,3) == 1:
+                    self.other_clan = self.meet_other_clan(other_clan)
 
         if self.patrol_event[0] == 36:
             self.patrol_event[5] = 30 * self.patrol_size
@@ -125,6 +143,58 @@ class Patrol(object):
             self.patrol_event[2] = self.patrol_event[2].replace('s_c', str(self.patrol_stat_cat.name))
             self.patrol_event[3] = self.patrol_event[3].replace('s_c', str(self.patrol_stat_cat.name))
             self.patrol_event[4] = self.patrol_event[4].replace('s_c', str(self.patrol_stat_cat.name))
+
+    def meet_other_clan(self, other_clan=''):
+        if not other_clan:
+            other_clan = choice(game.clan.all_clans)
+        other_clan_name = other_clan.name + "Clan"
+        other_clan_relations = int(other_clan.relations)
+        other_clan_temperament = int(other_clan.relations) # leaving this open for the future for potential tie-ins
+        
+        if other_clan_relations > 17:
+            self.patrol_event = [11, 'clan_name meets their allies, ' + other_clan_name + ', at the border.',
+                               'Your cats have a nice conversation with them',
+                               'Although they act nice, the alliance seems to be weakening.',
+                               'You decide not to talk with the ally patrol', 60, 8, 0, 0, 0, 0, 1,
+                               ['good speaker','great speaker',
+                                'excellent speaker']]
+        elif other_clan_relations < 11 and other_clan_relations > 6:
+            self.patrol_event = [11, 'clan_name is threatened by a ' + other_clan_name + ' patrol at the border',
+                               'Your cats manage to smooth things out a bit',
+                               'The patrol ends with threats and malice. Clan relations have worsened.',
+                               'You decide to back off from the opposing patrol', 60, 8, 0, 0, 0, 0, 1,
+                               ['great speaker',
+                                'excellent speaker']]
+        elif other_clan_relations < 7 and 'fierce' not in self.patrol_traits and 'bloodthirsty' not in self.patrol_traits:
+            self.patrol_event = [11, 'Your patrol is attacked by a ' + other_clan_name + ' patrol at the border',
+                               'Your cats manage to escape without injury',
+                               'r_c is killed by the ' + other_clan_name + ' patrol.',
+                               'You run away from the other patrol', 60, 8, 0, 0, 0, 0, 1,
+                               ['great fighter','excellent fighter',
+                                'excellent speaker']]
+        elif other_clan_relations < 7 and 'fierce' in self.patrol_traits:
+            self.patrol_event = [11, 'Your patrol is attacked by a ' + other_clan_name + ' patrol at the border',
+                               'Your cats manage to escape, but only after s_c kills an enemy ' + choice(['warrior', 'apprentice']),
+                               'r_c is killed by the ' + other_clan_name + ' patrol.',
+                               'You run away from the other patrol', 60, 8, 0, 0, 0, 'fierce', 1,
+                               ['great fighter','excellent fighter',
+                                'excellent speaker']]
+        elif other_clan_relations < 7 and 'bloodthirsty' in self.patrol_traits:
+            self.patrol_event = [11, 'Your patrol is attacked by a ' + other_clan_name + ' patrol at the border',
+                               'Your cats manage to escape, but only after s_c kills an enemy ' + choice(['warrior', 'apprentice']),
+                               'r_c is killed by the ' + other_clan_name + ' patrol.',
+                               'You run away from the other patrol', 60, 8, 0, 0, 0, 'bloodthirsty', 1,
+                               ['great fighter','excellent fighter',
+                                'excellent speaker']]
+        else:
+             self.patrol_event = [11, 'clan_name meets a ' + other_clan_name + ' patrol at the border, but nobody is hostile.',
+                               'Your cats have a nice conversation with them',
+                               'Despite the lack of outright hostilities, the situation turns awkward fast',
+                               'You decide not to talk with the opposing patrol', 60, 8, 0, 0, 0, 0, 1,
+                               ['great speaker',
+                                'excellent speaker']]
+
+        return other_clan
 
     def calculate(self):
         self.patrol_result_text = self.patrol_event[4]
@@ -443,6 +513,24 @@ class Patrol(object):
                     self.patrol_leader.experience = int(self.patrol_leader.experience) - 10
                     if int(self.patrol_leader.experience) < 0:
                         self.patrol_leader.experience = 0
+                return
+
+        if self.patrol_event[0] == 11:
+            if self.before:
+                # stuff that happens during calculations
+                return
+            else:
+                # stuff that happens after the results
+                if self.success:
+                    self.other_clan.relations = int(self.other_clan.relations) + 1
+                    if int(self.other_clan.relations) == 7:
+                        self.patrol_result_text = game.clan.name + 'Clan and ' + self.other_clan.name + 'Clan declare a truce.'
+                else:
+                    if int(self.other_clan.relations) <7:
+                        events_class.dies(self.patrol_random_cat)
+                    self.other_clan.relations = int(self.other_clan.relations) - 1
+                    if int(self.other_clan.relations) < 1:
+                        self.other_clan.relations = 1
                 return
 
         if self.patrol_event[0] == 12:
