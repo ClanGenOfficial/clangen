@@ -894,13 +894,14 @@ class Cat(object):
             cats[cat.ID]["scar_2"] = cat.specialty2
             cats[cat.ID]["experience"] = cat.experience
             cats[cat.ID]["dead_for"] = cat.dead_for  # need to be a string?
-            cats[cat.ID]["apprentices"] = cat.apprentice  # we can store this as a list in the dict/json is that oK?
+            cats[cat.ID]["apprentices"] = [apprentice.ID for apprentice in cat.apprentice]  # we can store this as a list in the dict/json is that oK?
             cats[cat.ID][
-                "former_apprentices"] = cat.former_apprentices  # we can store this as a list in the dict/json is that oK?
+                "former_apprentices"] = [former_apprentice.ID for former_apprentice in cat.former_apprentices]  # we can store this as a list in the dict/json is that oK?
         # debug
         for cat in cats:
             for key, value in cats[cat].items():
-                print(f"{key=}, {value=} ({type(value)=})")
+                if type(value) == Cat:
+                    print(f"{key=}, {value=} ({type(value)=})")
 
         if game.switches['naming_text'] != '':
             clanname = game.switches['naming_text']
