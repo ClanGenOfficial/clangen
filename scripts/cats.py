@@ -305,7 +305,7 @@ class Cat(object):
                         thoughts.extend(
                             ['Is developing a crush on ' + other_name, 'Is spending a lot of time with ' + other_name, 'Feels guilty about hurting ' + other_name + '\'s feelings',
                              'Can\'t seem to stop talking about ' + other_name, 'Would spend the entire day with ' + other_name + ' if they could', 'Was caught enjoying a moonlit stroll with ' + other_name + ' last night...',
-                             'Keeps shyly glancing over at ' + other_name + ' as the clan talks about kits', 'Gave a pretty flower they found to ' + other_name, 'Is admiring ' + other_name + ' from afar...'
+                             'Keeps shyly glancing over at ' + other_name + ' as the clan talks about kits', 'Gave a pretty flower they found to ' + other_name, 'Is admiring ' + other_name + ' from afar...',
                              'Is thinking of the best ways to impress ' + other_name, 'Doesn\'t want ' + other_name + ' to overwork themselves', 'Is rolling around a little too playfully with ' + other_name + '...',
                              'Is wondering what it would be like to grow old with ' + other_name, 'Thinks that ' + other_name + ' is really funny', 'Thinks that ' + other_name + ' is really charming'])
                 if cat.status == 'kitten':
