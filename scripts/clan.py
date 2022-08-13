@@ -210,7 +210,7 @@ class Clan(object):
                 members = sections[5].split(',')  # rest of the members in order
                 other_clans = []
             else:
-                 # add a row for deputies if converting up from an old save
+                # add a row for deputies if converting up from an old save
                 general = sections[0].split(',')  # clan name(0) - clan age(1)
                 leader_info = sections[1].split(',')  # leader ID(0) - leader lives(1) - leader predecessors(2)
                 deputy_info = (0, 0)
@@ -240,13 +240,13 @@ class Clan(object):
                 game.clan.instructor.update_sprite()
                 game.clan.instructor.dead = True
                 game.clan.add_cat(game.clan.instructor)  # This is to make sure the instructor isn't removed
-            
+
             if other_clans:
                 for other_clan in other_clans:
                     other_clan_info = other_clan.split(';')
-                    self.all_clans.append(OtherClan(other_clan_info[0],other_clan_info[1],other_clan_info[2]))
+                    self.all_clans.append(OtherClan(other_clan_info[0], other_clan_info[1], other_clan_info[2]))
             else:
-                number_other_clans = randint(3,5)
+                number_other_clans = randint(3, 5)
                 for a in range(number_other_clans):
                     self.all_clans.append(OtherClan())
 
@@ -258,6 +258,7 @@ class Clan(object):
                 else:
                     print('Cat not found:', cat)
 
+
 class OtherClan(object):
     def __init__(self, name='', relations=0, temperament=''):
         if name:
@@ -268,17 +269,18 @@ class OtherClan(object):
         if relations:
             self.relations = relations
         else:
-            self.relations = randint(10,15)
-        
+            self.relations = randint(10, 15)
+
         if temperament:
             self.temperament = temperament
         else:
             self.temperament = choice(['bloodthirsty', 'righteous', 'strict', 'kind', 'calm', 'progressive',
-                                        'faithful', 'thoughtful', 'compassionate', 'logical', 'brave',
-                                        'altruistic', 'distant', 'competitive'])
+                                       'faithful', 'thoughtful', 'compassionate', 'logical', 'brave',
+                                       'altruistic', 'distant', 'competitive'])
 
     def __repr__(self):
         return self.name + "Clan"
+
 
 class StarClan(object):
     forgotten_stages = {0: [0, 100], 10: [101, 200], 30: [201, 300], 60: [301, 400],
