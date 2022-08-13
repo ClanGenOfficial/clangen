@@ -36,17 +36,22 @@ class Game(object):
                 'setting': None, 'save_settings': False, 'list_page': 1, 'last_screen': 'start screen',
                 'events_left': 0, 'save_clan': False, 'new_leader': False, 'apprentice_switch': False,
                 'deputy_switch': False, 'clan_list': '',
-                'switch_clan': False, 'read_clans': False, 'kill_cat': False, 'current_patrol': []}
+                'switch_clan': False, 'read_clans': False, 'kill_cat': False, 'current_patrol': [],
+                'error_message': ''}
     all_screens = {}
     cur_events = {}
 
     # SETTINGS
     settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False,
-                'dark mode': False}  # The current settings
+                'dark mode': False, 'backgrounds': True, 'autosave': False, 'disasters': False, 'retirement': True}  # The current settings
     setting_lists = {'no gendered breeding': [False, True],
                      'text size': ['0', '1', '2'],
                      'no unknown fathers': [False, True],
-                     'dark mode': [False, True]}  # Lists of possible options for each setting
+                     'dark mode': [False, True],
+                     'backgrounds': [True, False],
+                     'autosave': [False, True],
+                     'disasters': [False, True],
+                     'retirement': [True, False]}  # Lists of possible options for each setting
     settings_changed = False
 
     # CLAN
