@@ -857,42 +857,50 @@ class Cat(object):
     def save_cats(self):
         cats = {}
         for cat in self.all_cats.values():
-            cats[cat.ID]["name_prefix"] = cat.name.prefix
+            # this first one has to look lke this to create the cat.ID key in the dict
+            cats[cat.ID] = {"name_prefix": cat.name.prefix}
             cats[cat.ID]["name_suffix"] = cat.name.suffix
             cats[cat.ID]["gander"] = cat.gender
             cats[cat.ID]["status"] = cat.status
             cats[cat.ID]["age"] = cat.age  # does this really need to be converted to a string if we store as json?
-            cat[cat.ID]["trait"] = cat.trait
-            cat[cat.ID]["parent_1"] = cat.parent1
-            cat[cat.ID]["parent_2"] = cat.parent2
-            cat[cat.ID]["mentor"] = cat.mentor.ID
-            cat[cat.ID]["pelt_name"] = cat.pelt.name
-            cat[cat.ID]["pelt_color"] = cat.pelt.color
-            cat[cat.ID]["pelt_white"] = cat.pelt.white  # does this need to be converted to string
-            cat[cat.ID]["pelt_length"] = cat.pelt.length
-            cat[cat.ID]["sprite_kitten"] = cat.age_sprites['kitten']  # does this need to be converted to string
-            cat[cat.ID]["sprite_adolescent"] = cat.age_sprites['adolescent']  # does this need to be converted to string
-            cat[cat.ID]["sprite_adult"] = cat.age_sprites['adult']  # does this need to be converted to string
-            cat[cat.ID]["sprite_elder"] = cat.age_sprites['elder']  # need to be a string?
-            cat[cat.ID]["sprite_young_adult"] = cat.age_sprites['young adult']
-            cat[cat.ID]["senior_adult"] = cat.age_sprites["seinor adult"]
-            cat[cat.ID]["eye_color"] = cat.eye_colour
-            cat[cat.ID]["reverse"] = cat.reverse  # need to be a string?
-            cat[cat.ID]["white_patches"] = cat.white_patches  # need to be string?
-            cat[cat.ID]["pattern"] = cat.pattern
-            cat[cat.ID]["skin"] = cat.skin
-            cat[cat.ID]["skill"] = cat.skill
-            cat[cat.ID]["specialty"] = cat.specialty  # need to be a string?
-            cat[cat.ID]["moons"] = cat.moons  # need to be a string?
-            cat[cat.ID]["mate"] = cat.mate  # need to be a string?
-            cat[cat.ID]["dead"] = cat.dead  # need to be a string?
-            cat[cat.ID]["sprite_dead"] = cat.age_sprites['dead']  # needs to be a string?
-            cat[cat.ID]["scar_2"] = cat.specialty2
-            cat[cat.ID]["experience"] = cat.experience
-            cat[cat.ID]["dead_for"] = cat.dead_for  # need to be a string?
-            cat[cat.ID]["apprentices"] = cat.apprentice  # we can store this as a list in the dict/json is that oK?
-            cat[cat.ID][
+            cats[cat.ID]["trait"] = cat.trait
+            cats[cat.ID]["parent_1"] = cat.parent1
+            cats[cat.ID]["parent_2"] = cat.parent2
+            if cat.mentor:
+                cats[cat.ID]["mentor"] = cat.mentor.ID
+            else:
+                cats[cat.ID]["mentor"] = None
+            cats[cat.ID]["pelt_name"] = cat.pelt.name
+            cats[cat.ID]["pelt_colour"] = cat.pelt.colour
+            cats[cat.ID]["pelt_white"] = cat.pelt.white  # does this need to be converted to string
+            cats[cat.ID]["pelt_length"] = cat.pelt.length
+            cats[cat.ID]["sprite_kitten"] = cat.age_sprites['kitten']  # does this need to be converted to string
+            cats[cat.ID]["sprite_adolescent"] = cat.age_sprites['adolescent']  # does this need to be converted to string
+            cats[cat.ID]["sprite_adult"] = cat.age_sprites['adult']  # does this need to be converted to string
+            cats[cat.ID]["sprite_elder"] = cat.age_sprites['elder']  # need to be a string?
+            cats[cat.ID]["sprite_young_adult"] = cat.age_sprites['young adult']
+            cats[cat.ID]["senior_adult"] = cat.age_sprites["senior adult"]
+            cats[cat.ID]["eye_color"] = cat.eye_colour
+            cats[cat.ID]["reverse"] = cat.reverse  # need to be a string?
+            cats[cat.ID]["white_patches"] = cat.white_patches  # need to be string?
+            cats[cat.ID]["pattern"] = cat.pattern
+            cats[cat.ID]["skin"] = cat.skin
+            cats[cat.ID]["skill"] = cat.skill
+            cats[cat.ID]["specialty"] = cat.specialty  # need to be a string?
+            cats[cat.ID]["moons"] = cat.moons  # need to be a string?
+            cats[cat.ID]["mate"] = cat.mate  # need to be a string?
+            cats[cat.ID]["dead"] = cat.dead  # need to be a string?
+            cats[cat.ID]["sprite_dead"] = cat.age_sprites['dead']  # needs to be a string?
+            cats[cat.ID]["scar_2"] = cat.specialty2
+            cats[cat.ID]["experience"] = cat.experience
+            cats[cat.ID]["dead_for"] = cat.dead_for  # need to be a string?
+            cats[cat.ID]["apprentices"] = cat.apprentice  # we can store this as a list in the dict/json is that oK?
+            cats[cat.ID][
                 "former_apprentices"] = cat.former_apprentices  # we can store this as a list in the dict/json is that oK?
+        # debug
+        for cat in cats:
+            for key, value in cats[cat].items():
+                print(f"{key=}, {value=} ({type(value)=})")
 
         if game.switches['naming_text'] != '':
             clanname = game.switches['naming_text']
