@@ -131,7 +131,7 @@ class Events(object):
         if randint(1, 100) == 1:
             if cat.age != 'kitten':
                 name = str(cat.name)
-                type_of_new_cat = choice([1, 1, 2, 3, 4, 5, 6])
+                type_of_new_cat = choice([1, 2, 3, 4, 5, 6])
                 if type_of_new_cat == 1:
                     kit = Cat(moons=0)
                     game.clan.add_cat(kit)
