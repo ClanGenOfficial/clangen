@@ -213,9 +213,8 @@ class Cat(object):
                                      "Is relaxing in the sun", "Is wondering about twolegs", "Is thinking about their ancient ancestors",
                                      "Is worried about the cats in the Dark Forest", "Is thinking of advice to give to a medicine cat", "Is exploring StarClan",
                                      "Is sad seeing how the clan has changed", "Wishes they could speak to old friends", "Is sneezing on stardust",
-                                     "Is comforting another StarClan cat"
-                                     "Is exploring StarClan\'s hunting grounds", "Is hunting mice in StarClan", "Is chattering at the birds in StarClan",
-                                     "Is chasing rabbits in StarClan", "Can feel some cat forgetting them..."]
+                                     "Is comforting another StarClan cat", "Is exploring StarClan\'s hunting grounds", "Is hunting mice in StarClan",
+                                     "Is chattering at the birds in StarClan", "Is chasing rabbits in StarClan", "Can feel some cat forgetting them..."]
                 if other_cat.dead:
                     starclan_thoughts.extend([  # thoughts with other cats that are dead
                         'Is sharing tongues with ' + other_name, 'Has been spending time with ' + other_name + ' lately', 'Is acting huffy at ' + other_name,
@@ -227,9 +226,9 @@ class Cat(object):
                     starclan_thoughts.extend([  # thoughts with other cats that are alive
                         'Is watching over ' + other_name, 'Is curious about what ' + other_name + ' is doing', 'Wants to send a message to ' + other_name,
                         'Is currently walking in the dreams of ' + other_name, 'Is proud of ' + other_name, 'Is disappointed in ' + other_name, 'Wants to warn ' + other_name,
-                        'Has been following the growth of ' + other_name, 'Has seen the future demise of ' + other_name,
-                        'Is looking to visit ' + other_name + ' in a dream soon', 'Accidentally found themselves in ' + other_name + '\'s dreams the other night',
-                        'Wants to warn ' + other_name + ' about something that will happen soon', 'Knows what ' + other_name + '\'s secret is and wants to tell some cat'])
+                        'Has been following the growth of ' + other_name, 'Has seen the future demise of ' + other_name, 'Is looking to visit ' + other_name + ' in a dream soon',
+                        'Accidentally found themselves in ' + other_name + '\'s dreams the other night', 'Wants to warn ' + other_name + ' about something that will happen soon',
+                        'Knows what ' + other_name + '\'s secret is and wants to tell some cat'])
                 if cat.status in ['kitten', 'apprentice', 'medicine cat apprentice']:  # dead young cat thoughts
                     starclan_thoughts.extend(['Wishes they had more time to grow up', 'Wonders what their full name would have been', 'Is bothering older StarClan cats',
                                               'Is learning about the other cats in StarClan'])
@@ -248,14 +247,14 @@ class Cat(object):
                             'Is feeling excited', 'Is feeling nervous', 'Is feeling content', "Is relaxing in camp", 'Is daydreaming', 'Is napping', 'Thinks they are going crazy',
                             'Is feeling gloomy', "Is looking around camp", 'Is feeling happy!', 'Is curious about the other clans', 'Is feeling sassy today',
                             'Wants to spend time alone today', "Is eating some freshkill", 'Is heading to the dirtplace', 'Is rethinking their life choices',
-                            'Is visiting the medicine den', 'Is having a good day', 'Is having a hard day', 'Is talking to themselves',
+                            'Is in the medicine den', 'Is having a good day', 'Is having a hard day', 'Is talking to themselves',
                             'Regrets not eating the bird on the freshkill pile earlier', 'Is basking in the sun', 'Feels a sense of dread', 'Is feeling unappreciated',
                             'Is staring off into space', 'Is worried others are judging them', 'Almost choked on their prey', 'Is chattering at the birds in the trees above',
                             'Was recently caught humming to themselves', 'Had a nightmare involving the rushing river nearby', 'Wishes they were still in their nest sleeping',
                             'Is craving the taste of mouse', 'Is craving the taste of rabbit', 'Is craving the taste of vole', 'Is craving the taste of frog',
                             'Is craving the taste of shrew', 'Is wondering if they would be a good swimmer', 'Is thinking about how awful kittypet food must taste',
                             'Is feeling underappreciated...', 'Is staring off into space', 'Is picking the burrs from their pelt', 'Has a sore paw from a bee sting',
-                            'Is sharpening thier claws', 'Woke up on the wrong side of the nest']
+                            'Is sharpening their claws', 'Woke up on the wrong side of the nest']
                 if other_cat.dead:  # thoughts with other cats who are dead
                     if cat.status in ['kitten', 'apprentice', 'medicine cat apprentice']:  # young cat thoughts about dead cat
                         thoughts.extend(
@@ -282,8 +281,8 @@ class Cat(object):
                     if cat.status in ['warrior', 'elder', 'deputy', 'leader'] and other_cat.status == 'apprentice':  # older cat thoughts about younger cat
                         thoughts.extend(['Is giving ' + other_name + ' advice', 'Is telling ' + other_name + ' about a hunting technique', 'Is scolding ' + other_name,
                                          'Is giving ' + other_name + ' a task', other_name + ' reminds them of when they were their age',
-                                         'Is telling ' + other_name + ' about thier own days as an apprentice',
-                                         'Is frustrated that ' + other_name + ' won\'t take thier duties more seriously',
+                                         'Is telling ' + other_name + ' about their own days as an apprentice',
+                                         'Is frustrated that ' + other_name + ' won\'t take their duties more seriously',
                                          'Has successfully tricked ' + other_name + ' into believing a crazy tale about the clan leader',
                                          'Can\'t believe ' + other_name + ' caught that rabbit on patrol yesterday',
                                          'Doesn\'t think that ' + other_name + ' has been completely honest lately', 'Is fuming from an argument with ' + other_name])
@@ -309,7 +308,7 @@ class Cat(object):
                                              'Had to nip ' + other_name + ' on the rump because they were being naughty',
                                              'Is promising to take ' + other_name + ' outside of camp if they behave',
                                              'Is watching ' + other_name + ' perform an almost-decent hunting crouch',
-                                             'Can\'t take thier eyes off of' + other_name + ' for more than a few seconds',
+                                             'Can\'t take their eyes off of' + other_name + ' for more than a few seconds',
                                              'Gave ' + other_name + ' a trinket they found while out on patrol today'])
                         else:
                             thoughts.extend(
@@ -339,10 +338,10 @@ class Cat(object):
                                      'Is whimpering in their sleep', 'Is trying to growl menacingly', 'Is adamantly refusing to take their nap',
                                      'Was nipped on the rump by an elder for being naughty', 'Is batting pebbles across the camp clearing',
                                      'Is regretting eating the bug that they caught', 'Recently took a tumble off of a log',
-                                     'Is busy mastering a battle move they are performing incorrectly', 'Refuses to eat the herbs the Medicine Cat has given them for thier tummy',
+                                     'Is busy mastering a battle move they are performing incorrectly', 'Refuses to eat the herbs the medicine cat has given them for their tummy',
                                      'Is scrambling the Medicine Cat\'s herbs!', 'Is crying after rough-housing too hard with the older cats',
                                      'Is hatching a plan to sneak out of camp and play', 'Is running like a whirlwind around the camp', 'Is pretending to be the clan leader',
-                                     'Is pretending to be deputy', 'Is pretrending to be the Medicine Cat', 'Doesn\'t want to grow up yet...', 'Wants to be a warrior already!',
+                                     'Is pretending to be deputy', 'Is pretending to be the medicine cat', 'Doesn\'t want to grow up yet...', 'Wants to be a warrior already!',
                                      'Got in trouble for bringing thorns into the nest'
                                      'Is asking older cats how kits are born'])
                 elif cat.status == 'apprentice':
@@ -357,7 +356,7 @@ class Cat(object):
                                      'Was asked to gather fresh moss for the elders\' bedding', 'Is making their mentor laugh', 'Is really bonding with their mentor',
                                      'Is having a hard time keeping up with their training', 'Has been lending the Medicine Cat a paw lately',
                                      'Is daydreaming about having a mate and kits someday', 'Had quite the adventure today', 'Was tasked with lining nests with fresh moss today',
-                                     'Wants to be a warrior already!', 'Is dreaming of someday making thier clan proud',
+                                     'Wants to be a warrior already!', 'Is dreaming of someday making their clan proud',
                                      'Is awkwardly deflecting kits\' questions about where kits come from'])
                 elif cat.status == 'medicine cat apprentice':
                     thoughts.extend(['Is struggling to remember all of the names of herbs', 'Is counting the poppy seeds', 'Is helping organize the herb stores',
@@ -368,22 +367,22 @@ class Cat(object):
                                      'Wishes the other apprentices could understand how they feel', 'Was startled awake in the wee hours by a vivid dream',
                                      'Has been hearing the voices of StarClan cats...', 'Has the foul taste of bitter herbs in their mouth',
                                      'Is enjoying learning all of the herbs a medicine cat needs!', 'Is happy that they chose life as a Medicine Cat',
-                                     'Is lining nests with fress moss and feathers'])
+                                     'Is lining nests with fresh moss and feathers'])
                 elif cat.status == 'medicine cat':
                     thoughts.extend(['Is looking for herbs', 'Is organizing the herb stores', 'Is drying some herbs', 'Is counting the poppy seeds', 'Is gathering cobwebs',
                                      'Is interpreting an omen', 'Is interpreting a prophecy', 'Hopes for a message from StarClan soon', 'Is checking up on the warriors',
                                      'Is feeling stressed taking care of the clan', 'Is thinking about taking on a new apprentice',
                                      'Is wondering if they could borrow some catmint from the other clans', 'Is looking forward to the half-moon meeting',
-                                     'Is wrapping a wound with cobwebs', 'Is clearing out old herbs',
-                                     'Is proud of their ability to care for their clanmates', 'Chased kits out of their den', 'Is wishing they could have a mate and kits',
-                                     'Is tending growing herbs', 'Wishes they had an extra set of paws', 'Is carefully picking up spilled poppy seeds',
-                                     'Is out gathering more cobwebs', 'Is reciting the names of herbs aloud', 'Wishes their clanmates could understand thier struggles',
+                                     'Is wrapping a wound with cobwebs', 'Is clearing out old herbs', 'Is proud of their ability to care for their clanmates',
+                                     'Chased kits out of their den', 'Is wishing they could have a mate and kits', 'Is tending growing herbs',
+                                     'Wishes they had an extra set of paws', 'Is carefully picking up spilled poppy seeds', 'Is out gathering more cobwebs',
+                                     'Is reciting the names of herbs aloud', 'Wishes their clanmates could understand their struggles',
                                      'Was startled awake in the wee hours by a vivid dream'
                                      'Is running low on catmint', 'Is running low on marigold', 'Is running low on burdock root', 'Is running low on poppy seeds',
                                      'Is running low on cobwebs', 'Is running low on feverfew',
                                      'Is running low on borage leaves' 'Is running low on tansy' 'Is running low on mouse bile',
                                      'Is teaching kits about what plants to stay away from', 'Plans to go out gathering herbs today',
-                                     'Has been hearing the voices of StarClan cats...', 'Is lining nests with fress moss and feathers'])
+                                     'Has been hearing the voices of StarClan cats...', 'Is lining nests with fresh moss and feathers'])
                     if cat.trait == 'bloodthirsty':
                         thoughts.extend(['Is gathering deathberries', 'Has been disappearing a lot lately', 'Insists only on treating cats who need it'])
                     elif cat.trait == 'strange':
@@ -410,7 +409,7 @@ class Cat(object):
                                      "Wonders who will give them nine lives", 'Feels overworked', 'Is hoping for a break', 'Is assessing the apprentices',
                                      'Wishes they had an extra set of paws', 'Is assigning cats to the dawn patrol', 'Is assigning cats to the hunting patrol',
                                      'Is assigning cats to patrol the borders', 'Can\'t believe they overslept today',
-                                     'Is unsure of what the rest of the clan thinks of them as deputy', 'Is doing thier best to honor thier clan and thier leader',
+                                     'Is unsure of what the rest of the clan thinks of them as deputy', 'Is doing their best to honor their clan and their leader',
                                      'Must speak with the leader soon about something they found while out on patrol'])
                     if cat.trait == 'bloodthirsty':
                         thoughts.extend(['Is thinking about murder', 'Is acting suspicious', 'Has been washing their paws a lot lately', 'Has disappeared often recently',
@@ -421,13 +420,12 @@ class Cat(object):
                 elif cat.status == 'leader':
                     thoughts.extend(['Is hoping for a sign from StarClan', 'Is hoping that they are leading their clan well', 'Thinks about who should mentor new apprentices',
                                      'Is worried about clan relations', 'Is spending time alone', 'Tries to set a good example for the deputy',
-                                     'Is thinking about forming an alliance', 'Is assessing some apprentices',
-                                     'Is thinking about battle stategies', 'Almost lost a life recently', 'Is counting how many lives they have left',
-                                     'Is thinking about what to say at the gathering', 'Is questioning their ability to lead',
+                                     'Is thinking about forming an alliance', 'Is assessing some apprentices', 'Is thinking about battle strategies', 'Almost lost a life recently',
+                                     'Is counting how many lives they have left', 'Is thinking about what to say at the gathering', 'Is questioning their ability to lead',
                                      'Is dreading the clan meeting they must call later today', 'Is finding the responsibility of leadership to be quite the heavy burden',
                                      'Is feeling blessed by StarClan this moon', 'Is making a solemn vow to protect their clanmates',
-                                     'Has been letting their deputy call the shots recently, and is proud of thier initiative', 'Called an important clan meeting recently',
-                                     'Is pondering the next mentors for the kits of the clan', 'Has recently picked up the scent of mischeivous kits in their den...',
+                                     'Has been letting their deputy call the shots recently, and is proud of their initiative', 'Called an important clan meeting recently',
+                                     'Is pondering the next mentors for the kits of the clan', 'Has recently picked up the scent of mischievous kits in their den...',
                                      'Is pondering recent dreams they have had... perhaps from StarClan?', 'Recently called a clan meeting, but forgot what to say',
                                      'Think they have been hearing the voices of StarClan cats...'])
                     if cat.trait == 'bloodthirsty':
