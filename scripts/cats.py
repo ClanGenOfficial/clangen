@@ -321,7 +321,15 @@ class Cat(object):
                                      'Refuses to eat the herbs the Medicine Cat has given them for thier tummy', 'Is scrambling the Medicine Cat\'s herbs!', 'Is crying after rough-housing too hard with the older cats',
                                      'Is hatching a plan to sneak out of camp and play', 'Is running like a whirlwind around the camp', 'Is pretending to be the clan leader',
                                      'Is pretending to be deputy', 'Is pretrending to be the Medicine Cat', 'Doesn\'t want to grow up yet...', 'Wants to be a warrior already!', 'Got in trouble for bringing thorns into the nest',
-                                     'Is asking older cats how kits are born'])
+                                     'Is asking older cats where kits come from'])
+                    if cat.trait == 'nervous':
+                        thoughts.extend(['Was startled by a croaking frog', 'Is doing their best not to get stepped on by the bigger cats']) 
+                    elif cat.trait == 'charming':
+                        thoughts.extend(['Is rolling around cutely while warriors look upon them', 'Is rubbing up against the warriors\' legs',
+                                         'Is hoping the patrol will come back with a special gift for them like usual', 'Is trying to purr thier way out of trouble with the Medicine Cat'])
+                    elif cat.trait == 'impulsive':
+                        thoughts.extend(['Keeps streaking across the clearing', 'Is stuck in a tree... again', 'Is complaining of a tummy ache after eating too much',
+                                     'Is awfully close to getting a nip on the rump for misbehaving', 'Is waiting for an opportunity to sprint out of sight'])
                 elif cat.status == 'apprentice':
                     thoughts.extend(['Is thinking about the time they caught a huge rabbit', 'Wonders what their full name will be', 'Is irritating their mentor',
                                      'Is arguing with their mentor', 'Is listening to their mentor', 'Plans to visit the elders soon', "Practices the hunting crouch",
@@ -352,8 +360,13 @@ class Cat(object):
                                      'Is reciting the names of herbs aloud', 'Wishes their clanmates could understand thier struggles', 'Was startled awake in the wee hours by a vivid dream',
                                      'Is running low on catmint', 'Is running low on marigold', 'Is running low on burdock root', 'Is running low on poppy seeds', 'Is running low on cobwebs',
                                      'Is running low on feverfew', 'Is running low on borage leaves' 'Is running low on tansy' 'Is running low on mouse bile',
-                                     'Is teaching kits about what plants to stay away from', 'Plans to go out gathering herbs today', 'Has been hearing the voices of StarClan cats...',
-                                     'Is lining nests with fress moss and feathers'])
+                                     'Is teaching kits about what plants to stay away from', 'Plans to go out gathering herbs today',
+                                     'Has been hearing the voices of StarClan cats...', 'Is lining nests with fress moss and feathers'])
+                    if cat.trait == 'bloodthirsty':
+                        thoughts.extend(['Is gathering deathberries', 'Has been disappearing a lot lately', 'Insists only on treating cats who need it'])
+                    elif cat.trait == 'strange':
+                        thoughts.extend(['Insists everyone eat camomile leaves everyday at moonhigh', 'Hisses at the kits randomly', 'Sleeps in the middle of the clearing',
+                                         'Is staring intently at the wall', 'Is drawing symbols in the dirt with thier claw'])
                 elif cat.status == 'warrior':
                     thoughts.extend(['Caught scent of a fox earlier', 'Caught scent of an enemy warrior earlier', 'Is helping gathering herbs', 'Is thinking about love',
                                      'Is decorating their nest', 'Is reinforcing the camp with brambles', 'Wants to be chosen as the new deputy', 'Caught a huge rabbit',
