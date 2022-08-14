@@ -137,7 +137,7 @@ class Clan(object):
         for i in range(len(game.switches['clan_list'])):
             if game.switches['clan_list'][i] != game.switches['switch_clan']:
                 list_data = list_data + game.switches['clan_list'][i] + "\n"
-
+        game.cur_events_list.clear()
         with open('saves/clanlist.txt', 'w') as write_file:
             write_file.write(list_data)
 
