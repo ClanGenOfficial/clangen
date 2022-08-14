@@ -170,8 +170,12 @@ class Events(object):
                 elif type_of_new_cat == 4:
                     warrior = Cat(status='warrior', moons=randint(12, 150))
                     game.clan.add_cat(warrior)
-                    game.cur_events_list.extend(
-                        [name + ' finds a warrior from ' + choice(game.clan.all_clans).name + 'Clan named ' + str(warrior.name) + ' who asks to join the clan'])
+                    if len(game.clan.all_clans) > 0:
+                        game.cur_events_list.extend(
+                            [name + ' finds a warrior from ' + choice(game.clan.all_clans).name + 'Clan named ' + str(warrior.name) + ' who asks to join the clan'])
+                    else:
+                        game.cur_events_list.extend(
+                            [name + ' finds a warrior from a different clan named ' + str(warrior.name) + ' who asks to join the clan'])
                 elif type_of_new_cat == 5:
                     loner_name = choice(names.loner_names)
                     loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
