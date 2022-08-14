@@ -7,8 +7,7 @@ class Button(object):
     used_screen = screen
     used_mouse = mouse
 
-    def __init__(self, font=verdana, frame_colour=(200, 200, 200), clickable_colour=(150, 150, 150),
-                 unavailable_colour=(120, 120, 120), padding=(5, 3)):
+    def __init__(self, font=verdana, frame_colour=(200, 200, 200), clickable_colour=(150, 150, 150), unavailable_colour=(120, 120, 120), padding=(5, 3)):
         self.text = ''
         self.font = font
         self.reset_colour(frame_colour, clickable_colour, unavailable_colour)
@@ -19,7 +18,7 @@ class Button(object):
         self.clickable_colour = clickable_colour
         self.unavailable_colour = unavailable_colour
 
-    def draw_button(self, pos, available=True, image=None, text='', cat_value=None, arrow=None, **values):
+    def draw_button(self, pos, available=True, image=None, text='', cat_value=None, arrow=None, apprentice=None, **values):
         # cat_value takes a cat object. if it isn't None, the keys and values are determined by which attributes of
         # the cat are changed and doesn't have an effect on game switches
 
@@ -39,7 +38,7 @@ class Button(object):
 
         # creating visible button
         if image is None:
-            new_button = pygame.Surface((self.font.text(text) + self.padding[0]*2, self.font.size + self.padding[1]*2))
+            new_button = pygame.Surface((self.font.text(text) + self.padding[0] * 2, self.font.size + self.padding[1] * 2))
         elif dynamic_image:
             # this is just store a temporary image to calculate size
             new_button = pygame.image.load(image + ".png")
@@ -79,7 +78,9 @@ class Button(object):
             self.used_screen.blit(new_button, new_pos)
 
         # CLICK
-        if game.clicked and clickable and cat_value is None and arrow is None:
+        if game.clicked and apprentice is not None:
+            self.choose_mentor(apprentice, cat_value)
+        elif game.clicked and clickable and cat_value is None and arrow is None:
             self.activate(values)
         elif game.clicked and clickable and arrow is None:  # if cat_value is not None
             self.activate(values, cat_value)
@@ -89,30 +90,25 @@ class Button(object):
     def activate(self, values=None, cat_value=None, arrow=None):  # cat value points to a Cat object
         if values is None:
             values = {}
-        # if len(values.keys()) == 1:
-        #     if values.get('addrandom'):
-        #         choice(game.switches[patrol])
         add = False
         if 'add' in values.keys():
             add = values['add']
         for key, value in values.items():
             if cat_value is None:
                 if key in game.switches.keys() and not add:
-                    if key == 'cur_screen' and game.switches['cur_screen'] in ['list screen', 'clan screen',
-                                                                               'starclan screen']:
+                    if key == 'cur_screen' and game.switches['cur_screen'] in ['list screen', 'clan screen', 'starclan screen']:
                         game.switches['last_screen'] = game.switches['cur_screen']
                     game.switches[key] = value
                 elif key in game.switches.keys() and add:
                     game.switches[key].append(value)
-            else:
-                if key == 'mate':
-                    if value is not None:
-                        cat_value.mate = value.ID
-                        value.mate = cat_value.ID
-                    else:
-                        cat_class.all_cats[cat_value.mate].mate = None
-                        cat_value.mate = None
-                    game.switches['mate'] = None
+            elif key == 'mate':
+                if value is not None:
+                    cat_value.mate = value.ID
+                    value.mate = cat_value.ID
+                else:
+                    cat_class.all_cats[cat_value.mate].mate = None
+                    cat_value.mate = None
+                game.switches['mate'] = None
 
         if arrow is not None and game.switches['cur_screen'] == 'events screen':
             max_scroll_direction = len(game.cur_events_list) - game.max_events_displayed
@@ -134,17 +130,22 @@ class Button(object):
 
     def change_button_brightness(self):
         if game.settings['dark mode'] and self.frame_colour == (200, 200, 200):
-            self.reset_colour(frame_colour=(70, 70, 70), clickable_colour=(10, 10, 10),
-                              unavailable_colour=(30, 30, 30))
+            self.reset_colour(frame_colour=(70, 70, 70), clickable_colour=(10, 10, 10), unavailable_colour=(30, 30, 30))
         elif not game.settings['dark mode'] and self.frame_colour == (70, 70, 70):
-            self.reset_colour(frame_colour=(200, 200, 200), clickable_colour=(150, 150, 150),
-                              unavailable_colour=(120, 120, 120))
+            self.reset_colour(frame_colour=(200, 200, 200), clickable_colour=(150, 150, 150), unavailable_colour=(120, 120, 120))
+
+    def choose_mentor(self, apprentice, cat_value):
+        if apprentice not in cat_value.apprentice:
+            apprentice.mentor.former_apprentices.append(apprentice)
+            apprentice.mentor.apprentice.remove(apprentice)
+            apprentice.mentor = cat_value
+            cat_value.apprentice.append(apprentice)
+        game.current_screen = 'clan screen'
 
 
 class Writer(Button):
     button_type = 'writer'
-    abc = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l',
-           'z', 'x', 'c', 'v', 'b', 'n', 'm']
+    abc = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm']
     # abc.sort()
     for i in ['\'', '-', '.', 'DEL', 'upper', 'lower']:
         abc.append(i)
@@ -196,8 +197,7 @@ class Writer(Button):
                 new_button = pygame.Surface((self.font.text(new_letter) + 10, self.font.size + 6))
 
                 # Check collision
-                collision = self.used_screen.blit(new_button, (pos[0] + cur_length + space_x,
-                                                               pos[1] + (self.font.size + 6) * y + space_y))
+                collision = self.used_screen.blit(new_button, (pos[0] + cur_length + space_x, pos[1] + (self.font.size + 6) * y + space_y))
                 clickable = False
                 if available and collision.collidepoint(self.used_mouse.pos):
                     colour = self.clickable_colour
@@ -208,8 +208,7 @@ class Writer(Button):
                 # Fill in letter and blit
                 new_button.fill(colour)
                 self.font.text(new_letter, (5, 0), new_button)
-                self.used_screen.blit(new_button, (pos[0] + cur_length + space_x,
-                                                   pos[1] + (self.font.size + 6) * y + space_y))
+                self.used_screen.blit(new_button, (pos[0] + cur_length + space_x, pos[1] + (self.font.size + 6) * y + space_y))
 
                 # CLICK
                 if game.clicked and clickable:
@@ -228,8 +227,7 @@ class Writer(Button):
                 y += 1
 
     def activate(self, values=None, cat_value=None):
-        if values not in ['upper', 'LOWER', 'DEL'] and len(game.switches[self.target]) < game.max_name_length \
-                and values is not None:
+        if values not in ['upper', 'LOWER', 'DEL'] and len(game.switches[self.target]) < game.max_name_length and values is not None:
             if self.upper:
                 game.switches[self.target] += values.upper()
             else:
