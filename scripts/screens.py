@@ -1287,7 +1287,7 @@ class ChooseMentorScreen(Screens):
         # make a list of just living cats
         living_cats = []
         for cat in cat_class.all_cats.values():
-            if not cat.dead and (cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader'):
+            if not cat.dead and cat != game.switches['apprentice'].mentor and (cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader'):
                 living_cats.append(cat)
 
         # pages
