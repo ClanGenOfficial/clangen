@@ -241,7 +241,7 @@ class Clan(object):
                 game.clan.instructor.dead = True
                 game.clan.add_cat(game.clan.instructor)  # This is to make sure the instructor isn't removed
             
-            if other_clans:
+            if other_clans and other_clans[0]:
                 for other_clan in other_clans:
                     other_clan_info = other_clan.split(';')
                     self.all_clans.append(OtherClan(other_clan_info[0],other_clan_info[1],other_clan_info[2]))
