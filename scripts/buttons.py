@@ -18,7 +18,7 @@ class Button(object):
         self.clickable_colour = clickable_colour
         self.unavailable_colour = unavailable_colour
 
-    def draw_button(self, pos, available=True, image=None, text='', cat_value=None, arrow=None, apprentice=None, **values):
+    def draw_button(self, pos, available=True, image=None, text='', cat_value=None, arrow=None, name='', apprentice=None, **values):
         # cat_value takes a cat object. if it isn't None, the keys and values are determined by which attributes of
         # the cat are changed and doesn't have an effect on game switches
 
@@ -80,6 +80,8 @@ class Button(object):
         # CLICK
         if game.clicked and apprentice is not None:
             self.choose_mentor(apprentice, cat_value)
+        elif game.clicked and game.switches['change_name'] != '':
+            self.change_name(game.switches['change_name'], cat_value)
         elif game.clicked and clickable and cat_value is None and arrow is None:
             self.activate(values)
         elif game.clicked and clickable and arrow is None:  # if cat_value is not None
@@ -141,6 +143,10 @@ class Button(object):
             apprentice.mentor = cat_value
             cat_value.apprentice.append(apprentice)
         game.current_screen = 'clan screen'
+
+    def change_name(self, name, cat_value):
+        cat_value = cat_class.all_cats.get(cat_value)
+        cat_value.name =  game.switches['change_name']
 
 
 class Writer(Button):

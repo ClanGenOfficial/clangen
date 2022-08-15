@@ -37,7 +37,7 @@ class Game(object):
                 'events_left': 0, 'save_clan': False, 'new_leader': False, 'apprentice_switch': False,
                 'deputy_switch': False, 'clan_list': '',
                 'switch_clan': False, 'read_clans': False, 'kill_cat': False, 'current_patrol': [],
-                'error_message': '', 'apprentice': None}
+                'error_message': '', 'apprentice': None, 'change_name': ''}
     all_screens = {}
     cur_events = {}
 

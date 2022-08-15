@@ -699,7 +699,8 @@ class ProfileScreen(Screens):
             count2 += 1
 
         # buttons
-
+        # buttons.draw_button(('center', 10), text='Change Name', cur_screen='change name screen')
+        game.switches['cat'] = the_cat.ID
         buttons.draw_button((300, -160), text='See Family', cur_screen='see kits screen')
         if not the_cat.dead:
             buttons.draw_button((-300, -160), text='Kill Cat', kill_cat=the_cat)
@@ -1488,6 +1489,24 @@ class ChooseMentorScreen2(Screens):
         buttons.draw_button(('center', -50), text='Back', cur_screen='clan screen')
 
 
+class ChangeNameScreen(Screens):
+    def on_use(self):
+        verdana.text('Change Name', ('center', 50))
+        buttons.draw_button(('center', -100), text='Change Name', cur_screen='change name screen', cat_value=game.switches['cat'], name=game.switches['change_name'])
+        buttons.draw_button(('center', -50), text='Back', cur_screen=game.switches['last_screen'])
+
+        if game.current_screen == 'change name screen':
+            for event in pygame.event.get():
+                if event.type == pygame.KEYDOWN:
+                    if event.unicode.isalpha():  # only allows alphabet letters as an input
+                        if len(game.switches['change_name']) < 20:  # can't type more than max name length
+                            game.switches['change_name'] += event.unicode
+                    elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
+                        game.switches['change_name'] = game.switches['change_name'][:-1]
+
+
+
+
 # SCREENS
 screens = Screens()
 
@@ -1504,12 +1523,13 @@ events_screen = EventsScreen('events screen')
 profile_screen = ProfileScreen('profile screen')
 single_event_screen = SingleEventScreen('single event screen')
 choose_mate_screen = ChooseMateScreen('choose mate screen')
-choose_mate_screen = ViewChildrenScreen('see kits screen')
+view_children_screen = ViewChildrenScreen('see kits screen')
 list_screen = ListScreen('list screen')
 switch_clan_screen = SwitchClanScreen('switch clan screen')
 allegiances_screen = AllegiancesScreen('allegiances screen')
 choose_mentor_screen = ChooseMentorScreen('choose mentor screen')
 choose_mentor_screen2 = ChooseMentorScreen2('choose mentor screen2')
+change_name_screen = ChangeNameScreen('change name screen')
 
 
 # CAT PROFILES
