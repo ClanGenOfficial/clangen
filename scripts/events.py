@@ -1,6 +1,7 @@
 from .cats import *
 from .buttons import *
 
+
 class Events(object):
     all_events = {}
 
@@ -57,14 +58,12 @@ class Events(object):
                 self.at_war = True
                 self.enemy_clan = other_clan.name + 'Clan'
                 war_notice = choice(['War rages between ' + game.clan.name + 'Clan and ' + other_clan.name + 'Clan',
-                                    other_clan.name + 'Clan has taken some of ' + game.clan.name + 'Clan\'s territory.',
-                                    game.clan.name + 'Clan has claimed some of ' + other_clan.name + 'Clan\'s territory',
-                                    other_clan.name + 'Clan attempted to break into your camp during the war',
-                                    'The war against ' + other_clan.name + 'Clan continues.',
-                                    game.clan.name + 'Clan is starting to get tired of the war against ' + other_clan.name + 'Clan'])
+                                     other_clan.name + 'Clan has taken some of ' + game.clan.name + 'Clan\'s territory.',
+                                     game.clan.name + 'Clan has claimed some of ' + other_clan.name + 'Clan\'s territory',
+                                     other_clan.name + 'Clan attempted to break into your camp during the war', 'The war against ' + other_clan.name + 'Clan continues.',
+                                     game.clan.name + 'Clan is starting to get tired of the war against ' + other_clan.name + 'Clan'])
             if war_notice:
                 game.cur_events_list.append(war_notice)
-                
 
     def perform_ceremonies(self, cat):  # This function is called when apprentice/warrior/other ceremonies are performed every moon
         if game.clan.leader.dead and game.clan.deputy is not None and not game.clan.deputy.dead:
@@ -116,18 +115,16 @@ class Events(object):
                     scar_text.append(name + ' lost their tail to a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger', 'tree', 'twoleg trap']))
                 else:
                     scar_text.extend([name + ' earned a scar fighting a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger']),
-                                           name + ' earned a scar defending the territory', name + ' earned a scar protecting the kits',
-                                           name + ' is injured after falling into a river', name + ' is injured by enemy warriors after accidentally wandering over the border',
-                                           name + ' is injured after messing with a twoleg object'])
+                                      name + ' earned a scar defending the territory', name + ' earned a scar protecting the kits', name + ' is injured after falling into a river',
+                                      name + ' is injured by enemy warriors after accidentally wandering over the border', name + ' is injured after messing with a twoleg object'])
             elif chance == 1 and cat.specialty2 is None:
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
                     scar_text.append(name + ' lost their tail to a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger', 'tree', 'twoleg trap']))
                 else:
                     scar_text.extend([name + ' earned a scar fighting a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger']),
-                                           name + ' earned a scar defending the territory', name + ' earned a scar protecting the kits',
-                                           name + ' is injured after falling into a river', name + ' is injured by enemy warriors after accidentally wandering over the border',
-                                           name + ' is injured after messing with a twoleg object'])
+                                      name + ' earned a scar defending the territory', name + ' earned a scar protecting the kits', name + ' is injured after falling into a river',
+                                      name + ' is injured by enemy warriors after accidentally wandering over the border', name + ' is injured after messing with a twoleg object'])
             if len(scar_text) > 0:
                 game.cur_events_list.append(choice(scar_text))
 
@@ -136,7 +133,7 @@ class Events(object):
         if randint(1, 50) == 1:
             if cat != other_cat and not other_cat.dead and cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and other_cat.status not in [
                 'kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and cat.age == other_cat.age and len(
-                {cat, cat.parent1, cat.parent2}.intersection({other_cat, other_cat.parent1, other_cat.parent2})) == 0:
+                {cat, cat.parent1, cat.parent2}.intersection({other_cat, other_cat.parent1, other_cat.parent2})) == 0 and cat.mate is None and other_cat.mate is None:
                 game.cur_events_list.append(str(cat.name) + ' and ' + str(other_cat.name) + ' have become mates')
                 cat.mate = other_cat.ID
                 other_cat.mate = cat.ID
@@ -165,8 +162,7 @@ class Events(object):
                     loner = Cat(status='warrior', moons=randint(12, 120))
                     loner.skill = 'formerly a loner'
                     game.clan.add_cat(loner)
-                    game.cur_events_list.extend(
-                        [name + ' finds a loner named ' + choice(names.loner_names) + ' who joins the clan. They change their name to ' + str(loner.name)])
+                    game.cur_events_list.extend([name + ' finds a loner named ' + choice(names.loner_names) + ' who joins the clan. They change their name to ' + str(loner.name)])
                 elif type_of_new_cat == 4:
                     warrior = Cat(status='warrior', moons=randint(12, 150))
                     game.clan.add_cat(warrior)
@@ -174,8 +170,7 @@ class Events(object):
                         game.cur_events_list.extend(
                             [name + ' finds a warrior from ' + choice(game.clan.all_clans).name + 'Clan named ' + str(warrior.name) + ' who asks to join the clan'])
                     else:
-                        game.cur_events_list.extend(
-                            [name + ' finds a warrior from a different clan named ' + str(warrior.name) + ' who asks to join the clan'])
+                        game.cur_events_list.extend([name + ' finds a warrior from a different clan named ' + str(warrior.name) + ' who asks to join the clan'])
                 elif type_of_new_cat == 5:
                     loner_name = choice(names.loner_names)
                     loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
@@ -253,18 +248,15 @@ class Events(object):
                 cause_of_death.extend([name + ' died from infected wounds', name + ' was found dead near the ' + choice(game.clan.all_clans).name + 'Clan border',
                                        name + ' went missing and was found dead'])
                 if self.at_war:
-                    cause_of_death.extend([name + ' was killed by enemy ' + self.enemy_clan + ' warriors',
-                                        name + ' was killed by enemy ' + self.enemy_clan + ' warriors',
-                                        name + ' was killed by enemy ' + self.enemy_clan + ' warriors',
-                                       name + ' died in a border skirmish'])
+                    cause_of_death.extend([name + ' was killed by enemy ' + self.enemy_clan + ' warriors', name + ' was killed by enemy ' + self.enemy_clan + ' warriors',
+                                           name + ' was killed by enemy ' + self.enemy_clan + ' warriors', name + ' died in a border skirmish'])
             elif cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice':
                 cause_of_death.extend(['The herb stores were damaged and ' + name + ' was murdered by an enemy warrior'])
                 if self.at_war:
                     cause_of_death.extend([name + ' was killed by a ' + self.enemy_clan + ' warrior while pulling an injured cat out of the battlefield'])
             if cat.status == 'deputy' or cat.status == 'leader':
                 if self.at_war:
-                    cause_of_death.extend([name + ' was killed by the ' + self.enemy_clan + ' deputy',
-                                       name + ' was killed by the ' + self.enemy_clan + ' leader'])
+                    cause_of_death.extend([name + ' was killed by the ' + self.enemy_clan + ' deputy', name + ' was killed by the ' + self.enemy_clan + ' leader'])
             self.dies(cat)
             game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old')
         elif randint(1, 300) == 1:  # multiple deaths
@@ -276,8 +268,8 @@ class Events(object):
             cause_of_death = [name + ' and ' + other_name + ' die of greencough', name + ' and ' + other_name + ' die of yellowcough',
                               name + ' and ' + other_name + ' die from eating poisoned prey']
             if cat.status != 'kitten' and other_cat.status != 'kitten':
-                cause_of_death.extend([name + ' and ' + other_name + ' are killed in a border skirmish', name + ' and '
-                                       + other_name + ' are killed in a battle against a gang of rogues'])
+                cause_of_death.extend(
+                    [name + ' and ' + other_name + ' are killed in a border skirmish', name + ' and ' + other_name + ' are killed in a battle against a gang of rogues'])
             if cat.mate is not None and cat.age == other_cat.age and other_cat.mate is None:
                 self.dies(cat)
                 game.cur_events_list.append(name + ' is killed by ' + other_name + ' in an argument over ' + str(cat_class.all_cats.get(cat.mate).name))
@@ -297,7 +289,7 @@ class Events(object):
                     alive_count += 1
                     alive_cats.append(cat)
             if alive_count > 10:
-                chance = int(alive_count/10)
+                chance = int(alive_count / 10)
                 if randint(chance, 1000) == 999:
                     disaster = []
                     dead_cats = random.sample(alive_cats, 5)
