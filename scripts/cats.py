@@ -877,18 +877,25 @@ class Cat(object):
 
     def describe_color(self):
         color_name = ''
-        if self.pelt.name == 'SingleColour' or self.pelt.name == 'TwoColour':
-            color_name = str(self.pelt.colour).lower()
-        elif self.pelt.name == "Tabby":
-            color_name = str(self.pelt.colour).lower() + ' tabby'
+        color_name = str(self.pelt.colour).lower()
+        if color_name == 'palegrey':
+            color_name = 'pale grey'
+        elif color_name == 'darkgrey':
+            color_name = 'dark grey'
+        elif color_name == 'paleginger':
+            color_name = 'pale ginger'
+        elif color_name == 'darkginger':
+            color_name = 'dark ginger'
+        elif color_name == 'lightbrown':
+            color_name = 'light brown'
+        elif color_name == 'darkbrown':
+            color_name = 'dark brown'
+        if self.pelt.name == "Tabby":
+            color_name = color_name + ' tabby'
         elif self.pelt.name == "Speckled":
-            color_name = str(self.pelt.colour).lower() + ' speckled'
+            color_name = color_name + ' speckled'
         elif self.pelt.name == "Tortie" or self.pelt.name == "Calico":
             color_name = 'tortie'  # check for calico or for white later
-
-        # not enough to comment on
-        if self.white_patches is None or self.white_patches in ['EXTRA']:
-            color_name = color_name  # what is this even lol
         # enough to comment but not make calico
         elif self.white_patches in ['LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG']:
             color_name = color_name + ' and white'
@@ -909,8 +916,6 @@ class Cat(object):
         # vitiligo
         elif self.white_patches in ['VITILIGO']:
             color_name = color_name + ' with vitiligo'
-        else:
-            color_name = color_name + ' color error'
 
         if color_name == 'tortie':
             color_name = 'tortoiseshell'
