@@ -496,7 +496,7 @@ class Patrol(object):
                     if self.patrol_random_cat.status == 'leader':
                         self.patrol_random_cat.experience = 0
                         self.patrol_result_text = str(self.patrol_random_cat.name) + ' is injured by a Monster and has to relearn everything.'
-                    elif game.settings.get('retirement') == True:
+                    elif game.settings.get('retirement'):
                         self.patrol_random_cat.status_change('elder')
                     self.patrol_random_cat.skill = choice(['paralyzed', 'blind', 'missing a leg'])
                     return
@@ -833,10 +833,10 @@ class Patrol(object):
                         ['warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'apprentice', 'apprentice',
                          'apprentice', 'elder'])
                     kit = Cat(status=new_cat_status)
-                    game.clan.add_cat(kit)
-                    kit.skill = 'formerly a loner'
                     if randint(0, 1):
                         kit.name.suffix = ""
+                    game.clan.add_cat(kit)
+                    kit.skill = 'formerly a loner'
                     self.patrol_cats.append(kit)
                 return
 

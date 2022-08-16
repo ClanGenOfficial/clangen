@@ -14,12 +14,14 @@ class Events(object):
         self.cats = cats
         self.at_war = False
         self.enemy_clan = None
-
+        self.living_cats = 0
     def one_moon(self):  # Go forward in time one moon
         if game.switches['timeskip']:
+            self.living_cats = 0
             self.check_clan_relations()
             for cat in cat_class.all_cats.copy().values():
                 if not cat.dead:
+                    self.living_cats += 1
                     cat.in_camp = 1
                     self.perform_ceremonies(cat)
                     self.handle_relationships(cat)
@@ -145,7 +147,12 @@ class Events(object):
                 other_cat.mate = None
 
     def invite_new_cats(self, cat):
-        if randint(1, 100) == 1:
+        chance = 100
+        if self.living_cats < 10:
+            chance = 50
+        elif self.living_cats > 30:
+            chance = 200
+        if randint(1, chance) == 1:
             if cat.age != 'kitten':
                 name = str(cat.name)
                 type_of_new_cat = choice([1, 2, 3, 4, 5, 6])
@@ -341,9 +348,9 @@ class Events(object):
         # Decide randomly if kits will be born, if possible
         if chance != 0:
             hit = randint(0, chance)
-            if len(game.clan.clan_cats) > 30:
+            if self.living_cats > 30:
                 hit = randint(0, chance + 20)
-            elif len(game.clan.clan_cats) < 10:
+            elif self.living_cats < 10:
                 hit = randint(0, chance - 10)
             kits = choice([1, 1, 2, 2, 3, 3, 4])
             if hit == 1 and cat.mate is not None:
