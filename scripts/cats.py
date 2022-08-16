@@ -338,7 +338,7 @@ class Cat(object):
                                      'Was nipped on the rump by an elder for being naughty', 'Is batting pebbles across the camp clearing',
                                      'Is regretting eating the bug that they caught', 'Recently took a tumble off of a log',
                                      'Is busy mastering a battle move they are performing incorrectly', 'Refuses to eat the herbs the medicine cat has given them for their tummy',
-                                     'Is scrambling the Medicine Cat\'s herbs!', 'Is crying after rough-housing too hard with the older cats',
+                                     'Is scrambling the medicine cat\'s herbs!', 'Is crying after rough-housing too hard with the older cats',
                                      'Is hatching a plan to sneak out of camp and play', 'Is running like a whirlwind around the camp', 'Is pretending to be the clan leader',
                                      'Is pretending to be deputy', 'Is pretending to be the medicine cat', 'Doesn\'t want to grow up yet...', 'Wants to be a warrior already!',
                                      'Got in trouble for bringing thorns into the nest'
@@ -353,7 +353,7 @@ class Cat(object):
                                      'Is helping the elders with their ticks', 'Fell into the nearby creek yesterday and is still feeling damp',
                                      'Is helping to repair the elder\'s den', 'Is helping to reinforce the camp wall with brambles',
                                      'Was asked to gather fresh moss for the elders\' bedding', 'Is making their mentor laugh', 'Is really bonding with their mentor',
-                                     'Is having a hard time keeping up with their training', 'Has been lending the Medicine Cat a paw lately',
+                                     'Is having a hard time keeping up with their training', 'Has been lending the medicine cat a paw lately',
                                      'Is daydreaming about having a mate and kits someday', 'Had quite the adventure today', 'Was tasked with lining nests with fresh moss today',
                                      'Wants to be a warrior already!', 'Is dreaming of someday making their clan proud',
                                      'Is awkwardly deflecting kits\' questions about where kits come from'])
@@ -365,7 +365,7 @@ class Cat(object):
                                      'Is carefully picking up spilled poppy seeds', 'Is out gathering more cobwebs', 'Is reciting the names of herbs aloud',
                                      'Wishes the other apprentices could understand how they feel', 'Was startled awake in the wee hours by a vivid dream',
                                      'Has been hearing the voices of StarClan cats...', 'Has the foul taste of bitter herbs in their mouth',
-                                     'Is enjoying learning all of the herbs a medicine cat needs!', 'Is happy that they chose life as a Medicine Cat',
+                                     'Is enjoying learning all of the herbs a medicine cat needs!', 'Is happy that they chose life as a medicine cat',
                                      'Is lining nests with fresh moss and feathers'])
                 elif cat.status == 'medicine cat':
                     thoughts.extend(['Is looking for herbs', 'Is organizing the herb stores', 'Is drying some herbs', 'Is counting the poppy seeds', 'Is gathering cobwebs',

@@ -214,7 +214,7 @@ class Events(object):
             elif cat.status == 'medicine cat':
                 interactions.extend(
                     [name + ' learns of a new prophecy', name + ' is worried about an outbreak of greencough', name + ' is worried about how low their herb stores has gotten',
-                     name + 'visits the other medicine cats'])
+                     name + ' visits the other medicine cats'])
             elif cat.status == 'deputy':
                 interactions.extend([name + ' thinks about retiring', name + ' travels to the other clans to bring them an important message'])
             elif cat.status == 'leader':
