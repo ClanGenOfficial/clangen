@@ -19,8 +19,9 @@ class Cat(object):
     gender_tags = {'female': 'F', 'male': 'M'}
     skills = ['good hunter', 'great hunter', 'fantastic hunter', 'smart', 'very smart', 'extremely smart', 'good fighter', 'great fighter', 'excellent fighter', 'good speaker',
               'great speaker', 'excellent speaker', 'strong connection to starclan', 'good teacher', 'great teacher', 'fantastic teacher']
-    med_skills = ['good healer', 'great healer', 'fantastic healer', 'smart', 'very smart', 'extremely smart', 'good speaker',
-                  'great speaker', 'excellent speaker', 'strong connection to starclan', 'good teacher', 'great teacher', 'fantastic teacher']
+    med_skills = ['good healer', 'great healer', 'fantastic healer', 'omen sight', 'dream walker', 'strong connection to starclan', 'lore keeper', 'good teacher',
+                  'great teacher', 'fantastic teacher', 'keen eye', 'smart', 'very smart', 'extremely smart', 'good mediator', 'great mediator', 'excellent mediator',
+                  'clairvoyant', 'prophet']
 
     all_cats = {}  # ID: object
 
