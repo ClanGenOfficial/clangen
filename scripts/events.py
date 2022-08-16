@@ -60,7 +60,7 @@ class Events(object):
                 war_notice = ''
                 if int(other_clan.relations) < 7:
                     self.at_war = True
-                    self.enemy_clan = other_clan.name + 'Clan'
+                    self.enemy_clan = str(other_clan.name) + 'Clan'
                     war_notice = choice(['War rages between ' + game.clan.name + 'Clan and ' + other_clan.name + 'Clan',
                                          other_clan.name + 'Clan has taken some of ' + game.clan.name + 'Clan\'s territory.',
                                          game.clan.name + 'Clan has claimed some of ' + other_clan.name + 'Clan\'s territory',
@@ -162,7 +162,7 @@ class Events(object):
                     game.clan.add_cat(kit)
                     kit_text = []
                     kit_text.extend([name + ' finds an abandoned kit and names them ' + str(kit.name),
-                                     'A loner brings their kit named ' + str(kit.name.prefix) + 'to the clan, stating they no longer can care for them'])
+                                     'A loner brings their kit named ' + str(kit.name.prefix) + ' to the clan, stating they no longer can care for them'])
                     game.cur_events_list.append(choice(kit_text))
                 elif type_of_new_cat == 2:
                     loner_name = choice(names.loner_names)
@@ -179,15 +179,16 @@ class Events(object):
                     game.clan.add_cat(loner)
                     loner_text = []
                     loner_text.extend([name + ' finds a loner who joins the clan. They change their name to ' + str(loner.name),
-                                                 'A loner says that they are interested in clan life. They join, changing their name to ' + str(loner.name)])
+                                       'A loner says that they are interested in clan life. They join, changing their name to ' + str(loner.name)])
                     game.cur_events_list.append(choice(loner_text))
                 elif type_of_new_cat == 4:
                     warrior = Cat(status='warrior', moons=randint(12, 150))
                     game.clan.add_cat(warrior)
                     warrior_text = []
                     if len(game.clan.all_clans) > 0:
-                        warrior_text.extend([name + ' finds a warrior from ' + choice(game.clan.all_clans).name + 'Clan named ' + str(warrior.name) + ' who asks to join the clan',
-                                             'An injured warrior from ' + choice(game.clan.all_clans).name + 'Clan asks to join in exchange for healing'])
+                        warrior_text.extend(
+                            [name + ' finds a warrior from ' + str(choice(game.clan.all_clans).name) + 'Clan named ' + str(warrior.name) + ' who asks to join the clan',
+                             'An injured warrior from ' + str(choice(game.clan.all_clans).name) + 'Clan asks to join in exchange for healing'])
                     else:
                         warrior_text.extend([name + ' finds a warrior from a different clan named ' + str(warrior.name) + ' who asks to join the clan'])
                     game.cur_events_list.append(choice(warrior_text))
@@ -270,7 +271,7 @@ class Events(object):
                                        name + ' went missing and was found dead', name + ' died in a border skirmish'])
             elif cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader':
                 if len(game.clan.all_clans) > 0:
-                    cause_of_death.extend(name + ' was found dead near the ' + choice(game.clan.all_clans).name + 'Clan border')
+                    cause_of_death.append(name + ' was found dead near the ' + choice(game.clan.all_clans).name + 'Clan border')
                 cause_of_death.extend([name + ' died from infected wounds', name + ' went missing and was found dead'])
                 if self.at_war:
                     cause_of_death.extend([name + ' was killed by enemy ' + self.enemy_clan + ' warriors', name + ' was killed by enemy ' + self.enemy_clan + ' warriors',
