@@ -1492,8 +1492,10 @@ class ChooseMentorScreen2(Screens):
 class ChangeNameScreen(Screens):
     def on_use(self):
         if game.settings['dark mode']:
-            verdana.text(game.switches['naming_text'], (315, 200))
+            pygame.draw.rect(screen, 'white', pygame.Rect((300, 200), (200, 20)))
+            verdana_black.text(game.switches['naming_text'], (315, 200))
         else:
+            pygame.draw.rect(screen, 'gray', pygame.Rect((300, 200), (200, 20)))
             verdana.text(game.switches['naming_text'], (315, 200))
         verdana.text('Change Name', ('center', 50))
         verdana.text('Add a space between the new prefix and suffix', ('center', 70))
