@@ -94,10 +94,10 @@ class Events(object):
                     cat.update_mentor()
                     game.cur_events_list.append(str(cat.name) + ' has earned their medicine cat name')
                     game.clan.new_medicine_cat(cat)
-                elif cat.status == 'warrior' and cat.age == 'elder':
+                elif cat.status == 'warrior' and cat.age == 'elder' and len(cat.apprentice) < 1:
                     cat.status_change('elder')
                     game.cur_events_list.append(str(cat.name) + ' has retired to the elder den')
-                elif cat.status == 'deputy' and cat.age == 'elder':
+                elif cat.status == 'deputy' and cat.age == 'elder' and len(cat.apprentice) < 1:
                     cat.status_change('elder')
                     game.clan.deputy = None
                     game.cur_events_list.append('The deputy ' + str(cat.name) + ' has retired to the elder den')
