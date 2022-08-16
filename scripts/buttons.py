@@ -80,8 +80,8 @@ class Button(object):
         # CLICK
         if game.clicked and apprentice is not None:
             self.choose_mentor(apprentice, cat_value)
-        elif game.clicked and game.switches['change_name'] != '':
-            self.change_name(game.switches['change_name'], cat_value)
+        elif game.clicked and text == 'Change Name':
+            self.change_name(game.switches['naming_text'], cat_value)
         elif game.clicked and clickable and cat_value is None and arrow is None:
             self.activate(values)
         elif game.clicked and clickable and arrow is None:  # if cat_value is not None
@@ -146,7 +146,7 @@ class Button(object):
 
     def change_name(self, name, cat_value):
         cat_value = cat_class.all_cats.get(cat_value)
-        cat_value.name =  game.switches['change_name']
+        cat_value.name = game.switches['change_name']
 
 
 class Writer(Button):

@@ -699,7 +699,7 @@ class ProfileScreen(Screens):
             count2 += 1
 
         # buttons
-        # buttons.draw_button(('center', 10), text='Change Name', cur_screen='change name screen')
+        buttons.draw_button(('center', 10), text=' Change Name ', cur_screen='change name screen')
         game.switches['cat'] = the_cat.ID
         buttons.draw_button((300, -160), text='See Family', cur_screen='see kits screen')
         if not the_cat.dead:
@@ -1491,18 +1491,13 @@ class ChooseMentorScreen2(Screens):
 
 class ChangeNameScreen(Screens):
     def on_use(self):
+        if game.settings['dark mode']:
+            verdana_black.text(game.switches['naming_text'], (315, 200))
+        else:
+            verdana.text(game.switches['naming_text'], (315, 200))
         verdana.text('Change Name', ('center', 50))
-        buttons.draw_button(('center', -100), text='Change Name', cur_screen='change name screen', cat_value=game.switches['cat'], name=game.switches['change_name'])
+        buttons.draw_button(('center', -100), text='Change Name', cur_screen='change name screen', cat_value=game.switches['cat'], name=game.switches['naming_text'])
         buttons.draw_button(('center', -50), text='Back', cur_screen=game.switches['last_screen'])
-
-        if game.current_screen == 'change name screen':
-            for event in pygame.event.get():
-                if event.type == pygame.KEYDOWN:
-                    if event.unicode.isalpha():  # only allows alphabet letters as an input
-                        if len(game.switches['change_name']) < 20:  # can't type more than max name length
-                            game.switches['change_name'] += event.unicode
-                    elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
-                        game.switches['change_name'] = game.switches['change_name'][:-1]
 
 
 

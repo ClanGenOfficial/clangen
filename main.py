@@ -81,6 +81,14 @@ while True:
                     game.allegiance_list.append(game.allegiance_list.pop(0))
                     game.allegiance_scroll_ct -= 1
 
+        if game.current_screen == 'change name screen' and game.switches['change_name'] == '':
+            if event.type == pygame.KEYDOWN:
+                if event.unicode.isalpha():  # only allows alphabet letters as an input
+                    if len(game.switches['naming_text']) < game.max_name_length:  # can't type more than max name length
+                        game.switches['naming_text'] += event.unicode
+                elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
+                    game.switches['naming_text'] = game.switches['naming_text'][:-1]
+
         if event.type == pygame.QUIT:
             # close pygame
             pygame.display.quit()
