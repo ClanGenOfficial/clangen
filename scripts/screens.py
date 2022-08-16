@@ -990,8 +990,8 @@ class ListScreen(Screens):
         pos_y = 0
         cats_on_page = 0  # how many are on page already
         for x in range(len(living_cats)):
-            if (x + (game.switches['list_page'] - 1) * 24) > len(living_cats):
-                game.switches['list_page'] = 1
+            if (x + (game.switches['list_page'] - 1) * 24) >= len(living_cats):
+                game.switches['list_page'] -= 1 
 
             the_cat = living_cats[x + (game.switches['list_page'] - 1) * 24]
             if not the_cat.dead:
