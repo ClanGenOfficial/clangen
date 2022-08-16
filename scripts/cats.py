@@ -19,6 +19,8 @@ class Cat(object):
     gender_tags = {'female': 'F', 'male': 'M'}
     skills = ['good hunter', 'great hunter', 'fantastic hunter', 'smart', 'very smart', 'extremely smart', 'good fighter', 'great fighter', 'excellent fighter', 'good speaker',
               'great speaker', 'excellent speaker', 'strong connection to starclan', 'good teacher', 'great teacher', 'fantastic teacher']
+    med_skills = ['good healer', 'great healer', 'fantastic healer', 'smart', 'very smart', 'extremely smart', 'good speaker',
+                  'great speaker', 'excellent speaker', 'strong connection to starclan', 'good teacher', 'great teacher', 'fantastic teacher']
 
     all_cats = {}  # ID: object
 
@@ -48,7 +50,9 @@ class Cat(object):
         # personality trait and skill
         if self.status != 'kitten':
             self.trait = choice(self.traits)
-            if self.status != 'apprentice' and self.status != 'medicine cat apprentice':
+            if self.status == 'medicine cat':
+                self.skill = choice(self.med_skills)
+            elif self.status != 'apprentice' and self.status != 'medicine cat apprentice':
                 self.skill = choice(self.skills)
             else:
                 self.skill = '???'
