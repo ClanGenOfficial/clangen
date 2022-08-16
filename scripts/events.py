@@ -16,21 +16,13 @@ class Events(object):
         self.enemy_clan = None
         self.living_cats = 0
 
-    def one_moon(self):  # Go forward in time one moon
+    def one_moon(self):
         if game.switches['timeskip']:
             self.living_cats = 0
             self.check_clan_relations()
             for cat in cat_class.all_cats.copy().values():
                 if not cat.dead:
-                    self.living_cats += 1
-                    cat.in_camp = 1
-                    self.perform_ceremonies(cat)
-                    self.handle_relationships(cat)
-                    self.invite_new_cats(cat)
-                    self.have_kits(cat)
-                    self.other_interactions(cat)
-                    self.gain_scars(cat)
-                    self.handle_deaths(cat)
+                    self._extracted_from_one_moon_7(cat)
                 else:
                     cat.dead_for += 1
             cat_class.thoughts()
@@ -40,19 +32,27 @@ class Events(object):
                 game.clan.save_clan()
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
             game.event_scroll_ct = 0
-            has_med = False
-            for cat in cat_class.all_cats.values():
-                if str(cat.status) == "medicine cat" or str(cat.status) == "medicine cat apprentice":
-                    if not cat.dead:
-                        has_med = True
-                        break
+            has_med = any(str(cat.status) in {"medicine cat", "medicine cat apprentice"} and not cat.dead for cat in cat_class.all_cats.values())
+
             if not has_med:
-                game.cur_events_list.insert(0, game.clan.name + "Clan has no medicine cat!")
+                game.cur_events_list.insert(0, f"{game.clan.name}Clan has no medicine cat!")
             if game.clan.deputy == 0 or game.clan.deputy is None or game.clan.deputy.dead:
-                game.cur_events_list.insert(0, game.clan.name + "Clan has no deputy!")
+                game.cur_events_list.insert(0, f"{game.clan.name}Clan has no deputy!")
             if game.clan.leader.dead:
-                game.cur_events_list.insert(0, game.clan.name + "Clan has no leader!")
+                game.cur_events_list.insert(0, f"{game.clan.name}Clan has no leader!")
         game.switches['timeskip'] = False
+
+    # TODO Rename this here and in `one_moon`
+    def _extracted_from_one_moon_7(self, cat):
+        self.living_cats += 1
+        cat.in_camp = 1
+        self.perform_ceremonies(cat)
+        self.handle_relationships(cat)
+        self.invite_new_cats(cat)
+        self.have_kits(cat)
+        self.other_interactions(cat)
+        self.gain_scars(cat)
+        self.handle_deaths(cat)
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0:
@@ -60,199 +60,229 @@ class Events(object):
                 war_notice = ''
                 if int(other_clan.relations) < 7:
                     self.at_war = True
-                    self.enemy_clan = str(other_clan.name) + 'Clan'
-                    war_notice = choice(['War rages between ' + game.clan.name + 'Clan and ' + other_clan.name + 'Clan',
-                                         other_clan.name + 'Clan has taken some of ' + game.clan.name + 'Clan\'s territory.',
-                                         game.clan.name + 'Clan has claimed some of ' + other_clan.name + 'Clan\'s territory',
-                                         other_clan.name + 'Clan attempted to break into your camp during the war', 'The war against ' + other_clan.name + 'Clan continues.',
-                                         game.clan.name + 'Clan is starting to get tired of the war against ' + other_clan.name + 'Clan'])
+                    self.enemy_clan = f'{str(other_clan.name)}Clan'
+                    war_notice = choice(
+                        [f'War rages between {game.clan.name}Clan and {other_clan.name}Clan', f'{other_clan.name}Clan has taken some of {game.clan.name}' + "Clan\'s territory.",
+                         f'{game.clan.name}Clan has claimed some of {other_clan.name}' + "Clan\'s territory",
+                         f'{other_clan.name}Clan attempted to break into your camp during the war', f'The war against {other_clan.name}Clan continues.',
+                         f'{game.clan.name}Clan is starting to get tired of the war against {other_clan.name}Clan'])
+
                 if war_notice:
                     game.cur_events_list.append(war_notice)
 
-    def perform_ceremonies(self, cat):  # This function is called when apprentice/warrior/other ceremonies are performed every moon
+    def perform_ceremonies(self, cat):
         if game.clan.leader.dead and game.clan.deputy is not None and not game.clan.deputy.dead:
             game.clan.new_leader(game.clan.deputy)
-            game.cur_events_list.append(str(game.clan.deputy.name) + ' has been promoted to the new leader of the clan')
+            game.cur_events_list.append(f'{str(game.clan.deputy.name)} has been promoted to the new leader of the clan')
+
             game.clan.deputy = None
         if not cat.dead:
             cat.moons += 1
             if cat.status == 'deputy' and game.clan.deputy is None:
                 game.clan.deputy = cat
             if cat.moons > cat_class.age_moons[cat.age][1]:
-                # Give the cat a new age group, if old enough
                 if cat.age != 'elder':
                     cat.age = cat_class.ages[cat_class.ages.index(cat.age) + 1]
                 if cat.status == 'kitten' and cat.age == 'adolescent':
                     cat.status_change('apprentice')
-                    game.cur_events_list.append(str(cat.name) + ' has started their apprenticeship')
+                    game.cur_events_list.append(f'{str(cat.name)} has started their apprenticeship')
+
                     cat.update_mentor()
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
-                    cat.status_change('warrior')
-                    cat.update_mentor()
-                    game.cur_events_list.append(str(cat.name) + ' has earned their warrior name')
+                    self._extracted_from_perform_ceremonies_19(cat, 'warrior', ' has earned their warrior name')
+
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
-                    cat.status_change('medicine cat')
-                    cat.update_mentor()
-                    game.cur_events_list.append(str(cat.name) + ' has earned their medicine cat name')
+                    self._extracted_from_perform_ceremonies_19(cat, 'medicine cat', ' has earned their medicine cat name')
+
                     game.clan.new_medicine_cat(cat)
                 elif cat.status == 'warrior' and cat.age == 'elder' and len(cat.apprentice) < 1:
                     cat.status_change('elder')
-                    game.cur_events_list.append(str(cat.name) + ' has retired to the elder den')
+                    game.cur_events_list.append(f'{str(cat.name)} has retired to the elder den')
                 elif cat.status == 'deputy' and cat.age == 'elder' and len(cat.apprentice) < 1:
                     cat.status_change('elder')
                     game.clan.deputy = None
-                    game.cur_events_list.append('The deputy ' + str(cat.name) + ' has retired to the elder den')
+                    game.cur_events_list.append(f'The deputy {str(cat.name)} has retired to the elder den')
+
+    # TODO Rename this here and in `perform_ceremonies`
+    def _extracted_from_perform_ceremonies_19(self, cat, arg1, arg2):
+        cat.status_change(arg1)
+        cat.update_mentor()
+        game.cur_events_list.append(f'{str(cat.name)}{arg2}')
 
     def gain_scars(self, cat):
-        if (cat.specialty is None or cat.specialty2 is None) and cat.age != 'kitten':
-            name = str(cat.name)
-            scar_text = []
-            if cat.age in ['adolescent', 'young adult']:
-                chance = randint(0, 50)
-            elif cat.age in ['adult', 'senior adult']:
-                chance = randint(0, 70)
-            else:
-                chance = randint(0, 90)
-            if chance == 1 and cat.specialty is None:
+        if cat.specialty is not None and cat.specialty2 is not None or cat.age == 'kitten':
+            return
+        name = str(cat.name)
+        scar_text = []
+        if cat.age in ['adolescent', 'young adult']:
+            chance = randint(0, 50)
+        elif cat.age in ['adult', 'senior adult']:
+            chance = randint(0, 70)
+        else:
+            chance = randint(0, 90)
+        if chance == 1:
+            if cat.specialty is None:
                 cat.specialty = choice([choice(scars1), choice(scars2)])
                 if cat.specialty == 'NOTAIL':
-                    scar_text.append(name + ' lost their tail to a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger', 'tree', 'twoleg trap']))
+                    scar_text.append(f'{name} lost their tail to a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger', 'tree', 'twoleg trap']))
+
                 else:
-                    scar_text.extend([name + ' earned a scar fighting a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger']),
-                                      name + ' earned a scar defending the territory', name + ' earned a scar protecting the kits', name + ' is injured after falling into a river',
-                                      name + ' is injured by enemy warriors after accidentally wandering over the border', name + ' is injured after messing with a twoleg object'])
-            elif chance == 1 and cat.specialty2 is None:
+                    scar_text.extend([f'{name} earned a scar fighting a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger']),
+                                      f'{name} earned a scar defending the territory', f'{name} earned a scar protecting the kits', f'{name} is injured after falling into a river',
+                                      f'{name} is injured by enemy warriors after accidentally wandering over the border', f'{name} is injured after messing with a twoleg object'])
+
+            elif cat.specialty2 is None:
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
-                    scar_text.append(name + ' lost their tail to a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger', 'tree', 'twoleg trap']))
+                    scar_text.append(f'{name} lost their tail to a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger', 'tree', 'twoleg trap']))
+
                 else:
-                    scar_text.extend([name + ' earned a scar fighting a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger']),
-                                      name + ' earned a scar defending the territory', name + ' earned a scar protecting the kits', name + ' is injured after falling into a river',
-                                      name + ' is injured by enemy warriors after accidentally wandering over the border', name + ' is injured after messing with a twoleg object'])
-            if len(scar_text) > 0:
-                game.cur_events_list.append(choice(scar_text))
+                    scar_text.extend([f'{name} earned a scar fighting a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger']),
+                                      f'{name} earned a scar defending the territory', f'{name} earned a scar protecting the kits', f'{name} is injured after falling into a river',
+                                      f'{name} is injured by enemy warriors after accidentally wandering over the border', f'{name} is injured after messing with a twoleg object'])
+
+        if scar_text:
+            game.cur_events_list.append(choice(scar_text))
 
     def handle_relationships(self, cat):
         other_cat = choice(list(cat_class.all_cats.values()))
         if randint(1, 50) == 1:
             if cat != other_cat and not other_cat.dead and cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and other_cat.status not in [
-                'kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and cat.age == other_cat.age and len(
-                {cat, cat.parent1, cat.parent2}.intersection({other_cat, other_cat.parent1, other_cat.parent2})) == 0 and cat.mate is None and other_cat.mate is None:
-                game.cur_events_list.append(str(cat.name) + ' and ' + str(other_cat.name) + ' have become mates')
+                'kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and cat.age == other_cat.age and not {cat, cat.parent1, cat.parent2}.intersection(
+                    {other_cat, other_cat.parent1, other_cat.parent2}) and cat.mate is None and other_cat.mate is None:
+                game.cur_events_list.append(f'{str(cat.name)} and {str(other_cat.name)} have become mates')
+
                 cat.mate = other_cat.ID
                 other_cat.mate = cat.ID
         elif randint(1, 50) == 1:
             if cat.mate == other_cat.ID:
-                game.cur_events_list.append(str(cat.name) + ' and ' + str(other_cat.name) + ' have broken up')
+                game.cur_events_list.append(f'{str(cat.name)} and {str(other_cat.name)} have broken up')
                 cat.mate = None
                 other_cat.mate = None
-
     def invite_new_cats(self, cat):
         chance = 100
         if self.living_cats < 10:
             chance = 50
         elif self.living_cats > 30:
             chance = 200
-        if randint(1, chance) == 1:
-            if cat.age != 'kitten':
-                name = str(cat.name)
-                type_of_new_cat = choice([1, 2, 3, 4, 5, 6])
-                if type_of_new_cat == 1:
-                    kit = Cat(moons=0)
-                    game.clan.add_cat(kit)
-                    kit_text = []
-                    kit_text.extend([name + ' finds an abandoned kit and names them ' + str(kit.name),
-                                     'A loner brings their kit named ' + str(kit.name.prefix) + ' to the clan, stating they no longer can care for them'])
-                    game.cur_events_list.append(choice(kit_text))
-                elif type_of_new_cat == 2:
-                    loner_name = choice(names.loner_names)
-                    loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
-                    loner.skill = 'formerly a loner'
-                    game.clan.add_cat(loner)
-                    loner_text = []
-                    loner_text.extend([name + ' finds a loner named ' + str(loner.name) + ' who joins the clan. They decide to keep their name',
-                                       'A loner named ' + str(loner.name) + ' waits on the border for a patrol, asking to join the clan'])
-                    game.cur_events_list.append(choice(loner_text))
-                elif type_of_new_cat == 3:
-                    loner = Cat(status='warrior', moons=randint(12, 120))
-                    loner.skill = 'formerly a loner'
-                    game.clan.add_cat(loner)
-                    loner_text = []
-                    loner_text.extend([name + ' finds a loner who joins the clan. They change their name to ' + str(loner.name),
-                                       'A loner says that they are interested in clan life. They join, changing their name to ' + str(loner.name)])
-                    game.cur_events_list.append(choice(loner_text))
-                elif type_of_new_cat == 4:
-                    warrior = Cat(status='warrior', moons=randint(12, 150))
-                    game.clan.add_cat(warrior)
-                    warrior_text = []
-                    if len(game.clan.all_clans) > 0:
-                        warrior_text.extend(
-                            [name + ' finds a warrior from ' + str(choice(game.clan.all_clans).name) + 'Clan named ' + str(warrior.name) + ' who asks to join the clan',
-                             'An injured warrior from ' + str(choice(game.clan.all_clans).name) + 'Clan asks to join in exchange for healing'])
-                    else:
-                        warrior_text.extend([name + ' finds a warrior from a different clan named ' + str(warrior.name) + ' who asks to join the clan'])
-                    game.cur_events_list.append(choice(warrior_text))
-                elif type_of_new_cat == 5:
-                    loner_name = choice(names.loner_names)
-                    loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
-                    loner.skill = 'formerly a kittypet'
-                    if choice([1, 2]) == 1:
-                        loner.specialty2 = choice(scars3)
-                    game.clan.add_cat(loner)
-                    loner_text = []
-                    loner_text.extend([name + ' finds a kittypet named ' + str(loner_name) + ' who wants to join the clan. They decide to keep their name',
-                                       'A kittypet named ' + str(loner_name) + ' stops ' + name + ' and asks to join the clan'])
-                    game.cur_events_list.append(choice(loner_text))
-                elif type_of_new_cat == 6:
-                    loner = Cat(status='warrior', moons=randint(12, 120))
-                    loner.skill = 'formerly a kittypet'
-                    if choice([1, 2]) == 1:
-                        loner.specialty2 = choice(scars3)
-                    game.clan.add_cat(loner)
-                    loner_text = []
-                    loner_text.extend([name + ' finds a kittypet named ' + choice(names.loner_names) + ' who wants to join the clan. They change their name to ' + str(loner.name)])
-                    game.cur_events_list.append(choice(loner_text))
+        if randint(1, chance) == 1 and cat.age != 'kitten':
+            name = str(cat.name)
+            type_of_new_cat = choice([1, 2, 3, 4, 5, 6])
+            if type_of_new_cat == 1:
+                kit = Cat(moons=0)
+                game.clan.add_cat(kit)
+                kit_text = [f'{name} finds an abandoned kit and names them {str(kit.name)}', f'A loner brings their kit named {str(kit.name.prefix)} to the clan, stating they no longer can care for them']
+
+                game.cur_events_list.append(choice(kit_text))
+            elif type_of_new_cat == 2:
+                self._extracted_from_invite_new_cats_19(name)
+            elif type_of_new_cat == 3:
+                loner = Cat(status='warrior', moons=randint(12, 120))
+                loner.skill = 'formerly a loner'
+                game.clan.add_cat(loner)
+                loner_text = [f'{name} finds a loner who joins the clan. They change their name to {str(loner.name)}', f'A loner says that they are interested in clan life. They join, changing their name to {str(loner.name)}']
+
+                game.cur_events_list.append(choice(loner_text))
+            elif type_of_new_cat == 4:
+                warrior = Cat(status='warrior', moons=randint(12, 150))
+                game.clan.add_cat(warrior)
+                warrior_text = []
+                if len(game.clan.all_clans) > 0:
+                    warrior_text.extend([f'{name} finds a warrior from {str(choice(game.clan.all_clans).name)}Clan named {str(warrior.name)} who asks to join the clan', f'An injured warrior from {str(choice(game.clan.all_clans).name)}Clan asks to join in exchange for healing'])
+
+                else:
+                    warrior_text.extend([f'{name} finds a warrior from a different clan named {str(warrior.name)} who asks to join the clan'])
+
+                game.cur_events_list.append(choice(warrior_text))
+            elif type_of_new_cat == 5:
+                self._extracted_from_invite_new_cats_47(name)
+            elif type_of_new_cat == 6:
+                loner = Cat(status='warrior', moons=randint(12, 120))
+                self._extracted_from_invite_new_cats_59(loner)
+                loner_text = [f'{name} finds a kittypet named {choice(names.loner_names)} who wants to join the clan. They change their name to {str(loner.name)}']
+
+                game.cur_events_list.append(choice(loner_text))
+
+    # TODO Rename this here and in `invite_new_cats`
+    def _extracted_from_invite_new_cats_59(self, loner):
+        loner.skill = 'formerly a kittypet'
+        if choice([1, 2]) == 1:
+            loner.specialty2 = choice(scars3)
+        game.clan.add_cat(loner)
+
+    # TODO Rename this here and in `invite_new_cats`
+    def _extracted_from_invite_new_cats_47(self, name):
+        loner_name = choice(names.loner_names)
+        loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
+
+        self._extracted_from_invite_new_cats_59(loner)
+        loner_text = [f'{name} finds a kittypet named {str(loner_name)} who wants to join the clan. They decide to keep their name',
+                      f'A kittypet named {str(loner_name)} stops {name} and asks to join the clan']
+
+        game.cur_events_list.append(choice(loner_text))
+
+    # TODO Rename this here and in `invite_new_cats`
+    def _extracted_from_invite_new_cats_19(self, name):
+        loner_name = choice(names.loner_names)
+        loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
+
+        loner.skill = 'formerly a loner'
+        game.clan.add_cat(loner)
+        loner_text = [f'{name} finds a loner named {str(loner.name)} who joins the clan. They decide to keep their name',
+                      f'A loner named {str(loner.name)} waits on the border for a patrol, asking to join the clan']
+
+        game.cur_events_list.append(choice(loner_text))
 
     def other_interactions(self, cat):
-        if randint(1, 50) == 1:
-            interactions = []
+        if randint(1, 50) != 1:
+            return
+        interactions = []
+        other_cat = choice(list(cat_class.all_cats.values()))
+        while cat == other_cat or other_cat.dead:
             other_cat = choice(list(cat_class.all_cats.values()))
-            while cat == other_cat or other_cat.dead:
-                other_cat = choice(list(cat_class.all_cats.values()))
-            name = str(cat.name)
-            other_name = str(other_cat.name)
-            if (cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader') and randint(1, 4) == 1 and game.settings.get('retirement') == True:
-                game.cur_events_list.append(name + ' retires to the elders den after injuries sustained defending ' + other_name)
-                cat.status_change('elder')
-                return
-            if cat.status == 'kitten':
-                interactions.extend([name + ' is scolded after sneaking out of camp', name + ' falls into a river but is saved by ' + other_name])
-            elif cat.status in ['apprentice', 'medicine cat apprentice']:
-                interactions.extend([name + ' is scolded after sneaking out of camp', name + ' falls into a river but is saved by ' + other_name,
-                                     name + ' accidentally trespasses onto another clan\'s territory'])
-                if other_cat.status == 'apprentice':
-                    interactions.append(name + ' sneaks out of camp with ' + other_name)
-            elif cat.status == 'warrior':
-                interactions.extend([name + ' is caught outside of the clan\'s territory', name + ' is caught breaking the warrior code', name + ' went missing for a few days',
-                                     name + ' believes they are a part of the new prophecy'])
-            elif cat.status == 'medicine cat':
-                interactions.extend(
-                    [name + ' learns of a new prophecy', name + ' is worried about an outbreak of greencough', name + ' is worried about how low their herb stores has gotten',
-                     name + ' visits the other medicine cats'])
-            elif cat.status == 'deputy':
-                interactions.extend([name + ' thinks about retiring', name + ' travels to the other clans to bring them an important message'])
-            elif cat.status == 'leader':
-                interactions.extend(
-                    [name + ' thinks about retiring', name + ' confesses they don\'t have many lives left', name + ' calls a clan meeting to give an important announcement'])
-                if other_cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice']:
-                    interactions.append(name + ' confesses to ' + other_name + ' that the responsibility of leadership is crushing them')
-                elif other_cat.status == 'apprentice':
-                    interactions.append(name + ' assesses ' + other_name + '\'s progress')
-            elif cat.status == 'elder':
-                interactions.extend([name + ' is brought back to camp after wandering off'])
-            if cat.age == other_cat.age:
-                interactions.extend([name + ' tries to convince ' + other_name + ' to run away together'])
-            game.cur_events_list.append(choice(interactions))
+        name = str(cat.name)
+        other_name = str(other_cat.name)
+        if cat.status in ['warrior', 'deputy', 'leader'] and randint(1, 4) == 1 and game.settings.get('retirement') == True:
+            game.cur_events_list.append(f'{name} retires to the elders den after injuries sustained defending {other_name}')
+
+            cat.status_change('elder')
+            return
+        if cat.status == 'kitten':
+            interactions.extend([f'{name} is scolded after sneaking out of camp', f'{name} falls into a river but is saved by {other_name}'])
+
+        elif cat.status in ['apprentice', 'medicine cat apprentice']:
+            interactions.extend([f'{name} is scolded after sneaking out of camp', f'{name} falls into a river but is saved by {other_name}',
+                                 name + " accidentally trespasses onto another clan\'s territory"])
+
+            if other_cat.status == 'apprentice':
+                interactions.append(f'{name} sneaks out of camp with {other_name}')
+        elif cat.status == 'warrior':
+            interactions.extend([name + " is caught outside of the clan\'s territory", f'{name} is caught breaking the warrior code', f'{name} went missing for a few days',
+                                 f'{name} believes they are a part of the new prophecy'])
+
+        elif cat.status == 'medicine cat':
+            interactions.extend(
+                [f'{name} learns of a new prophecy', f'{name} is worried about an outbreak of greencough', f'{name} is worried about how low their herb stores has gotten',
+                 f'{name} visits the other medicine cats'])
+
+        elif cat.status == 'deputy':
+            interactions.extend([f'{name} thinks about retiring', f'{name} travels to the other clans to bring them an important message'])
+
+        elif cat.status == 'leader':
+            interactions.extend(
+                [f'{name} thinks about retiring', name + " confesses they don\'t have many lives left", f'{name} calls a clan meeting to give an important announcement'])
+
+            if other_cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice']:
+                interactions.append(f'{name} confesses to {other_name} that the responsibility of leadership is crushing them')
+
+            elif other_cat.status == 'apprentice':
+                interactions.append(f'{name} assesses {other_name}' + "\'s progress")
+        elif cat.status == 'elder':
+            interactions.extend([f'{name} is brought back to camp after wandering off'])
+        if cat.age == other_cat.age:
+            interactions.extend([f'{name} tries to convince {other_name} to run away together'])
+
+        game.cur_events_list.append(choice(interactions))
 
     def handle_deaths(self, cat):
         if randint(1, 300) == 1:

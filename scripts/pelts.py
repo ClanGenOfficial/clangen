@@ -9,10 +9,7 @@ class SingleColour(object):
     def __init__(self, colour, length):
         self.colour = colour
         self.length = length
-        if self.colour == "white":
-            self.white = True
-        else:
-            self.white = False
+        self.white = self.colour == "white"
 
     def __repr__(self):
         return self.colour + self.length
@@ -31,7 +28,7 @@ class TwoColour(object):
         self.white = True
 
     def __repr__(self):
-        return "white and " + self.colour + self.length
+        return f"white and {self.colour}{self.length}"
 
 
 class Tabby(object):
@@ -48,7 +45,7 @@ class Tabby(object):
 
     def __repr__(self):
         if self.white:
-            return "white and " + self.colour + self.length + " tabby"
+            return f"white and {self.colour}{self.length} tabby"
         else:
             return self.colour + self.length + " tabby"
 
@@ -67,9 +64,9 @@ class Speckled(object):
 
     def __repr__(self):
         if self.white:
-            return "white and " + self.colour + " speckled" + self.length
+            return f"white and {self.colour} speckled{self.length}"
         else:
-            return self.colour + " speckled" + self.length
+            return f"{self.colour} speckled{self.length}"
 
 
 class Tortie(object):
@@ -86,9 +83,9 @@ class Tortie(object):
 
     def __repr__(self):
         if self.white:
-            return "white and tortoiseshell" + self.length
+            return f"white and tortoiseshell{self.length}"
         else:
-            return "tortoiseshell" + self.length
+            return f"tortoiseshell{self.length}"
 
 
 class Calico(object):
@@ -104,7 +101,7 @@ class Calico(object):
         self.white = True
 
     def __repr__(self):
-        return "calico" + self.length
+        return f"calico{self.length}"
 
 
 # ATTRIBUTES, including non-pelt related
@@ -147,37 +144,29 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determi
     if pelt is None:
         a = randint(0, 100)
         if a != 1:
-            if gender == "female":
-                pelt = choice(pelt_names_F)
-            else:
-                pelt = choice(pelt_names_M)
+            pelt = choice(pelt_names_F) if gender == "female" else choice(pelt_names_M)
         else:
             pelt = choice(pelt_names_F)
             if gender == 'male' and pelt in ['Tortie', 'Calico']:
                 print("Male tortie/calico!")
-
     elif pelt in ['Tortie', 'Calico'] and gender == 'male' and not determined:
         a = randint(0, 200)
         if a != 1:
             pelt = choice(pelt_names_M)
-
     if length is None:
         length = choice(pelt_length)
-
     if pelt == "SingleColour":
         if colour is None and not white:
             return SingleColour(choice(pelt_colours), length)
-        elif colour is None and white:
+        elif colour is None:
             return SingleColour("WHITE", length)
         else:
             return SingleColour(colour, length)
-
     elif pelt == "TwoColour":
         if colour is None:
             return TwoColour(choice(pelt_c_no_white), length)
         else:
             return TwoColour(colour, length)
-
     elif pelt == "Tabby":
         if colour is None and white is None:
             return Tabby(choice(pelt_colours), choice([False, True]), length)
@@ -185,13 +174,11 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determi
             return Tabby(choice(pelt_colours), white, length)
         else:
             return Tabby(colour, white, length)
-
     elif pelt == "Tortie":
         if white is None:
             return Tortie(choice([False, True]), length)
         else:
             return Tortie(white, length)
-
     elif pelt == "Speckled":
         if colour is None and white is None:
             return Speckled(choice(pelt_colours), choice([False, True]), length)
@@ -199,6 +186,5 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determi
             return Speckled(choice(pelt_colours), white, length)
         else:
             return Speckled(colour, white, length)
-
     elif pelt == "Calico":
         return Calico(length)

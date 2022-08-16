@@ -161,7 +161,7 @@ class Name(object):
 
 
     def __init__(self, status="warrior", prefix=None, suffix=None, colour=None, eyes=None, pelt=None):
-        self.status = status  # warrior, kitten, leader or apprentice
+        self.status = status
         if prefix is None:
             if colour is None and eyes is None:
                 self.prefix = random.choice(self.normal_prefixes)
@@ -185,10 +185,8 @@ class Name(object):
                     self.prefix = random.choice(self.eye_prefixes[eyes])
                 else:
                     self.prefix = random.choice(self.normal_prefixes)
-
         else:
             self.prefix = prefix
-
         if suffix is None:
             loop = True
             while loop:

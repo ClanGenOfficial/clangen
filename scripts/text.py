@@ -43,7 +43,7 @@ class Font(object):
     def change_text_size(self, extra=0):
         """ Add or reduce the size of all fonts to increase readability for those in need """
         self.extra = extra
-        # Go trhoguh all existing fonts and change their sizes accordingly
+        # Go through all existing fonts and change their sizes accordingly
         for f in self.all_fonts:
             f.font = pygame.font.SysFont(f.name, f.size + self.extra)
 

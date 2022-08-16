@@ -19,33 +19,24 @@ class Button(object):
         self.unavailable_colour = unavailable_colour
 
     def draw_button(self, pos, available=True, image=None, text='', cat_value=None, arrow=None, name='', apprentice=None, **values):
-        # cat_value takes a cat object. if it isn't None, the keys and values are determined by which attributes of
-        # the cat are changed and doesn't have an effect on game switches
-
-        # setting dynamic_image flag for true; this will be for image buttons such as on start screen
         dynamic_image = False
-
         if image is not None and text != '' and text is not None:
             dynamic_image = True
-            image = "resources/" + image
-
+            image = f"resources/{image}"
         if not available:
             colour = self.unavailable_colour
             if image is not None:
-                image = image + '_unavailable'
+                image = f'{image}_unavailable'
         else:
             colour = self.frame_colour
-
-        # creating visible button
         if image is None:
             new_button = pygame.Surface((self.font.text(text) + self.padding[0] * 2, self.font.size + self.padding[1] * 2))
+
         elif dynamic_image:
-            # this is just store a temporary image to calculate size
-            new_button = pygame.image.load(image + ".png")
+            new_button = pygame.image.load(f"{image}.png")
             new_button = pygame.transform.scale(new_button, (192, 35))
         else:
             new_button = image
-
         new_pos = list(pos)
         if pos[0] == 'center':
             new_pos[0] = screen_x / 2 - new_button.get_width() / 2
@@ -55,54 +46,45 @@ class Button(object):
             new_pos[1] = screen_y / 2 - new_button.get_height() / 2
         elif pos[1] < 0:
             new_pos[1] = screen_y + pos[1] - new_button.get_height()
-
-        # Check collision
         collision = self.used_screen.blit(new_button, new_pos)
         clickable = False
         if available and collision.collidepoint(self.used_mouse.pos):
             colour = self.clickable_colour
             clickable = True
             if dynamic_image:
-                image = image + '_hover'
-
-        # fill in non-image button
+                image = f'{image}_hover'
         if image is None:
             new_button.fill(colour)
             self.font.text(text, (self.padding[0], 0), new_button)
-            self.used_screen.blit(new_button, new_pos)
         elif dynamic_image:
-            new_button = pygame.image.load(image + ".png")
+            new_button = pygame.image.load(f"{image}.png")
             new_button = pygame.transform.scale(new_button, (192, 35))
-            self.used_screen.blit(new_button, new_pos)
-        else:
-            self.used_screen.blit(new_button, new_pos)
+        self.used_screen.blit(new_button, new_pos)
+        if game.clicked:
+            if apprentice is not None:
+                self.choose_mentor(apprentice, cat_value)
+            elif text == 'Change Name':
+                self.change_name(game.switches['naming_text'], cat_value)
+            elif clickable and cat_value is None and arrow is None:
+                self.activate(values)
+            elif clickable and arrow is None:
+                self.activate(values, cat_value)
+            elif clickable:
+                self.activate(values, arrow=arrow)
 
-        # CLICK
-        if game.clicked and apprentice is not None:
-            self.choose_mentor(apprentice, cat_value)
-        elif game.clicked and text == 'Change Name':
-            self.change_name(game.switches['naming_text'], cat_value)
-        elif game.clicked and clickable and cat_value is None and arrow is None:
-            self.activate(values)
-        elif game.clicked and clickable and arrow is None:  # if cat_value is not None
-            self.activate(values, cat_value)
-        elif game.clicked and clickable:
-            self.activate(values, arrow=arrow)
-
-    def activate(self, values=None, cat_value=None, arrow=None):  # cat value points to a Cat object
+    def activate(self, values=None, cat_value=None, arrow=None):
         if values is None:
             values = {}
-        add = False
-        if 'add' in values.keys():
-            add = values['add']
+        add = values['add'] if 'add' in values.keys() else False
         for key, value in values.items():
             if cat_value is None:
-                if key in game.switches.keys() and not add:
-                    if key == 'cur_screen' and game.switches['cur_screen'] in ['list screen', 'clan screen', 'starclan screen']:
-                        game.switches['last_screen'] = game.switches['cur_screen']
-                    game.switches[key] = value
-                elif key in game.switches.keys() and add:
-                    game.switches[key].append(value)
+                if key in game.switches.keys():
+                    if not add:
+                        if key == 'cur_screen' and game.switches['cur_screen'] in ['list screen', 'clan screen', 'starclan screen']:
+                            game.switches['last_screen'] = game.switches['cur_screen']
+                        game.switches[key] = value
+                    else:
+                        game.switches[key].append(value)
             elif key == 'mate':
                 if value is not None:
                     cat_value.mate = value.ID
@@ -111,7 +93,6 @@ class Button(object):
                     cat_class.all_cats[cat_value.mate].mate = None
                     cat_value.mate = None
                 game.switches['mate'] = None
-
         if arrow is not None and game.switches['cur_screen'] == 'events screen':
             max_scroll_direction = len(game.cur_events_list) - game.max_events_displayed
             if arrow == "UP" and game.event_scroll_ct < 0:
@@ -120,9 +101,9 @@ class Button(object):
             if arrow == "DOWN" and abs(game.event_scroll_ct) < max_scroll_direction:
                 game.cur_events_list.append(game.cur_events_list.pop(0))
                 game.event_scroll_ct -= 1
-
         if arrow is not None and game.switches['cur_screen'] == 'allegiances screen':
             max_scroll_direction = len(game.allegiance_list) - game.max_allegiance_displayed
+
             if arrow == "UP" and game.allegiance_scroll_ct < 0:
                 game.allegiance_list.insert(0, game.allegiance_list.pop())
                 game.allegiance_scroll_ct += 1
@@ -155,7 +136,6 @@ class Button(object):
             cat_class.save_cats()
 
 
-
 class Writer(Button):
     button_type = 'writer'
     abc = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm']
@@ -170,15 +150,8 @@ class Writer(Button):
     target = 'naming_text'
 
     def init(self, included_letters=None, letters_x=10, target=None):
-        if included_letters is not None:
-            self.letters = included_letters
-        else:
-            self.letters = self.abc
-        if target is not None:
-            self.target = target
-        else:
-            self.target = 'naming_text'
-
+        self.letters = included_letters if included_letters is not None else self.abc
+        self.target = target if target is not None else 'naming_text'
         self.length = letters_x
         self.letter_size = 'lower'
         self.upper = True
@@ -189,49 +162,29 @@ class Writer(Button):
         space_x = 0
         x = 0
         y = 0
-
-        if self.upper:
-            self.letter_size = 'upper'
-        else:
-            self.letter_size = 'lower'
-
-        # Is writer available?
-        if available:
-            colour = self.frame_colour
-        else:
-            colour = self.unavailable_colour
-
+        self.letter_size = 'upper' if self.upper else 'lower'
         for letter in self.letters:
             if letter != self.letter_size:
-                if self.upper and letter.isalpha():
-                    new_letter = letter.upper()
-                else:
-                    new_letter = letter
+                new_letter = letter.upper() if self.upper and letter.isalpha() else letter
                 new_button = pygame.Surface((self.font.text(new_letter) + 10, self.font.size + 6))
 
-                # Check collision
                 collision = self.used_screen.blit(new_button, (pos[0] + cur_length + space_x, pos[1] + (self.font.size + 6) * y + space_y))
+
                 clickable = False
                 if available and collision.collidepoint(self.used_mouse.pos):
                     colour = self.clickable_colour
                     clickable = True
                 else:
                     colour = self.frame_colour
-
-                # Fill in letter and blit
                 new_button.fill(colour)
                 self.font.text(new_letter, (5, 0), new_button)
                 self.used_screen.blit(new_button, (pos[0] + cur_length + space_x, pos[1] + (self.font.size + 6) * y + space_y))
 
-                # CLICK
                 if game.clicked and clickable:
                     self.activate(new_letter)
-
-                # Add pixels for the next letter to follow
                 cur_length += self.font.text(new_letter) + 10
                 space_x += 2
                 x += 1
-
             if x >= self.length:
                 x = 0
                 cur_length = 0
@@ -241,10 +194,7 @@ class Writer(Button):
 
     def activate(self, values=None, cat_value=None):
         if values not in ['upper', 'LOWER', 'DEL'] and len(game.switches[self.target]) < game.max_name_length and values is not None:
-            if self.upper:
-                game.switches[self.target] += values.upper()
-            else:
-                game.switches[self.target] += values
+            game.switches[self.target] += values.upper() if self.upper else values
         elif values == 'upper':
             self.upper = True
             self.letter_size = 'lower'

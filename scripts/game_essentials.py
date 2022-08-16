@@ -76,33 +76,23 @@ class Game(object):
     def carry_commands(self):
         """ Run this function to go through commands added to the switch-dictionary and carry them, then
         reset them back to normal after the action"""
-
-        # settings
-        if self.switches['setting'] is not None:  # Some value has been added to the settings and must be dealt with
+        if self.switches['setting'] is not None:
             if self.switches['setting'] in self.settings.keys():
-                # Switch setting value using function
                 self.switch_setting(self.switches['setting'])
-
-                self.switches['setting'] = None  # Action fulfilled, reset back to None
             else:
                 print('Wrong settings value:', self.switches['setting'])
-                self.switches['setting'] = None  # Wrong value added, turn back to None to avoid errors
-
-        if self.switches['save_settings']:  # User has clicked 'save settings' button
+            self.switches['setting'] = None
+        if self.switches['save_settings']:
             self.save_settings()
             self.switches['save_settings'] = False
-
         if self.switches['save_clan'] and self.clan is not None and self.cat_class is not None:
-            # User has clicked 'save clan' button
             self.clan.save_clan()
             self.cat_class.save_cats()
             self.switches['save_clan'] = False
-
-        if self.switches['switch_clan']:  # User has clicked 'save settings' button
+        if self.switches['switch_clan']:
             self.clan.switch_clans()
             self.switches['switch_clan'] = False
-
-        if self.switches['read_clans']:  # User has clicked 'save settings' button
+        if self.switches['read_clans']:
             with open('saves/clanlist.txt', 'r') as read_file:
                 clan_list = read_file.read()
                 if_clans = len(clan_list)
@@ -112,16 +102,10 @@ class Game(object):
 
     def save_settings(self):
         """ Save user settings for later use """
-        data = ''
+        data = ''.join(f"{s}:{str(self.settings[s])}" + "\n" for s in self.settings.keys())
 
-        for s in self.settings.keys():
-            data += s + ":" + str(self.settings[s]) + "\n"
-
-        # save data
         with open('saves/settings.txt', 'w') as write_file:
             write_file.write(data)
-
-        # Changes saved.
         self.settings_changed = False
 
     def load_settings(self):
