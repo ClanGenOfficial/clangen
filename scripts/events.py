@@ -15,6 +15,7 @@ class Events(object):
         self.at_war = False
         self.enemy_clan = None
         self.living_cats = 0
+
     def one_moon(self):  # Go forward in time one moon
         if game.switches['timeskip']:
             self.living_cats = 0
@@ -159,26 +160,37 @@ class Events(object):
                 if type_of_new_cat == 1:
                     kit = Cat(moons=0)
                     game.clan.add_cat(kit)
-                    game.cur_events_list.extend([name + ' finds an abandoned kit and names them ' + str(kit.name)])
+                    kit_text = []
+                    kit_text.extend([name + ' finds an abandoned kit and names them ' + str(kit.name),
+                                     'A loner brings their kit named ' + str(kit.name.prefix) + 'to the clan, stating they no longer can care for them'])
+                    game.cur_events_list.append(choice(kit_text))
                 elif type_of_new_cat == 2:
                     loner_name = choice(names.loner_names)
                     loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
                     loner.skill = 'formerly a loner'
                     game.clan.add_cat(loner)
-                    game.cur_events_list.extend([name + ' finds a loner named ' + str(loner.name) + ' who joins the clan. They decide to keep their name'])
+                    loner_text = []
+                    loner_text.extend([name + ' finds a loner named ' + str(loner.name) + ' who joins the clan. They decide to keep their name',
+                                       'A loner named ' + str(loner.name) + ' waits on the border for a patrol, asking to join the clan'])
+                    game.cur_events_list.append(choice(loner_text))
                 elif type_of_new_cat == 3:
                     loner = Cat(status='warrior', moons=randint(12, 120))
                     loner.skill = 'formerly a loner'
                     game.clan.add_cat(loner)
-                    game.cur_events_list.extend([name + ' finds a loner named ' + choice(names.loner_names) + ' who joins the clan. They change their name to ' + str(loner.name)])
+                    loner_text = []
+                    loner_text.extend([name + ' finds a loner who joins the clan. They change their name to ' + str(loner.name),
+                                                 'A loner says that they are interested in clan life. They join, changing their name to ' + str(loner.name)])
+                    game.cur_events_list.append(choice(loner_text))
                 elif type_of_new_cat == 4:
                     warrior = Cat(status='warrior', moons=randint(12, 150))
                     game.clan.add_cat(warrior)
+                    warrior_text = []
                     if len(game.clan.all_clans) > 0:
-                        game.cur_events_list.extend(
-                            [name + ' finds a warrior from ' + choice(game.clan.all_clans).name + 'Clan named ' + str(warrior.name) + ' who asks to join the clan'])
+                        warrior_text.extend([name + ' finds a warrior from ' + choice(game.clan.all_clans).name + 'Clan named ' + str(warrior.name) + ' who asks to join the clan',
+                                             'An injured warrior from ' + choice(game.clan.all_clans).name + ' asks to join in exchange for healing'])
                     else:
-                        game.cur_events_list.extend([name + ' finds a warrior from a different clan named ' + str(warrior.name) + ' who asks to join the clan'])
+                        warrior_text.extend([name + ' finds a warrior from a different clan named ' + str(warrior.name) + ' who asks to join the clan'])
+                    game.cur_events_list.append(choice(warrior_text))
                 elif type_of_new_cat == 5:
                     loner_name = choice(names.loner_names)
                     loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
@@ -186,15 +198,19 @@ class Events(object):
                     if choice([1, 2]) == 1:
                         loner.specialty2 = choice(scars3)
                     game.clan.add_cat(loner)
-                    game.cur_events_list.extend([name + ' finds a kittypet named ' + str(loner_name) + ' who wants to join the clan. They decide to keep their name'])
+                    loner_text = []
+                    loner_text.extend([name + ' finds a kittypet named ' + str(loner_name) + ' who wants to join the clan. They decide to keep their name',
+                                       'A kittypet named ' + str(loner_name) + ' stops ' + name + ' and asks to join the clan'])
+                    game.cur_events_list.append(choice(loner_text))
                 elif type_of_new_cat == 6:
                     loner = Cat(status='warrior', moons=randint(12, 120))
                     loner.skill = 'formerly a kittypet'
                     if choice([1, 2]) == 1:
                         loner.specialty2 = choice(scars3)
                     game.clan.add_cat(loner)
-                    game.cur_events_list.extend(
-                        [name + ' finds a kittypet named ' + choice(names.loner_names) + ' who wants to join the clan. They change their name to ' + str(loner.name)])
+                    loner_text = []
+                    loner_text.extend([name + ' finds a kittypet named ' + choice(names.loner_names) + ' who wants to join the clan. They change their name to ' + str(loner.name)])
+                    game.cur_events_list.append(choice(loner_text))
 
     def other_interactions(self, cat):
         if randint(1, 50) == 1:
@@ -255,8 +271,7 @@ class Events(object):
             elif cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader':
                 if len(game.clan.all_clans) > 0:
                     cause_of_death.extend(name + ' was found dead near the ' + choice(game.clan.all_clans).name + 'Clan border')
-                cause_of_death.extend([name + ' died from infected wounds',
-                                       name + ' went missing and was found dead'])
+                cause_of_death.extend([name + ' died from infected wounds', name + ' went missing and was found dead'])
                 if self.at_war:
                     cause_of_death.extend([name + ' was killed by enemy ' + self.enemy_clan + ' warriors', name + ' was killed by enemy ' + self.enemy_clan + ' warriors',
                                            name + ' was killed by enemy ' + self.enemy_clan + ' warriors', name + ' died in a border skirmish'])
