@@ -187,7 +187,7 @@ class Events(object):
                     warrior_text = []
                     if len(game.clan.all_clans) > 0:
                         warrior_text.extend([name + ' finds a warrior from ' + choice(game.clan.all_clans).name + 'Clan named ' + str(warrior.name) + ' who asks to join the clan',
-                                             'An injured warrior from ' + choice(game.clan.all_clans).name + ' asks to join in exchange for healing'])
+                                             'An injured warrior from ' + choice(game.clan.all_clans).name + 'Clan asks to join in exchange for healing'])
                     else:
                         warrior_text.extend([name + ' finds a warrior from a different clan named ' + str(warrior.name) + ' who asks to join the clan'])
                     game.cur_events_list.append(choice(warrior_text))

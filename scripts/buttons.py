@@ -143,10 +143,17 @@ class Button(object):
             apprentice.mentor = cat_value
             cat_value.apprentice.append(apprentice)
         game.current_screen = 'clan screen'
+        cat_class.save_cats()
 
     def change_name(self, name, cat_value):
         cat_value = cat_class.all_cats.get(cat_value)
-        cat_value.name = game.switches['change_name']
+        if game.switches['naming_text'] != '':
+            name = game.switches['naming_text'].split(' ')
+            cat_value.name.prefix = name[0]
+            if len(name) > 1:
+                cat_value.name.suffix = name[1]
+            cat_class.save_cats()
+
 
 
 class Writer(Button):

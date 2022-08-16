@@ -149,7 +149,7 @@ class Clan(object):
         # clan name - clan age
         data = self.name + ',' + str(self.age) + '\n'
         data = data + self.leader.ID + ',' + str(self.leader_lives) + ',' + str(self.leader_predecessors) + ',' + '\n'
-        if (self.deputy is not None):
+        if self.deputy is not None:
             data = data + self.deputy.ID + ',' + str(self.deputy_predecessors) + ',' + '\n'
         else:
             data = data + '\n'

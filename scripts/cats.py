@@ -376,9 +376,8 @@ class Cat(object):
                                      'Chased kits out of their den', 'Is wishing they could have a mate and kits', 'Is tending growing herbs',
                                      'Wishes they had an extra set of paws', 'Is carefully picking up spilled poppy seeds', 'Is out gathering more cobwebs',
                                      'Is reciting the names of herbs aloud', 'Wishes their clanmates could understand their struggles',
-                                     'Was startled awake in the wee hours by a vivid dream'
-                                     'Is running low on catmint', 'Is running low on marigold', 'Is running low on burdock root', 'Is running low on poppy seeds',
-                                     'Is running low on cobwebs', 'Is running low on feverfew',
+                                     'Was startled awake in the wee hours by a vivid dream', 'Is running low on catmint', 'Is running low on marigold',
+                                     'Is running low on burdock root', 'Is running low on poppy seeds', 'Is running low on cobwebs', 'Is running low on feverfew',
                                      'Is running low on borage leaves' 'Is running low on tansy' 'Is running low on mouse bile',
                                      'Is teaching kits about what plants to stay away from', 'Plans to go out gathering herbs today',
                                      'Has been hearing the voices of StarClan cats...', 'Is lining nests with fresh moss and feathers'])
@@ -713,9 +712,7 @@ class Cat(object):
         # remove one last unnecessary new line
         data = data[:-1]
 
-        if game.switches['naming_text'] != '':
-            clanname = game.switches['naming_text']
-        elif game.switches['clan_name'] != '':
+        if game.switches['clan_name'] != '':
             clanname = game.switches['clan_name']
         else:
             clanname = game.switches['clan_list'][0]
