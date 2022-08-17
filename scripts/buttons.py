@@ -73,6 +73,7 @@ class Button(object):
                 self.activate(values, cat_value)
             else:
                 self.activate(values, arrow=arrow)
+
     def activate(self, values=None, cat_value=None, arrow=None):
         if values is None:
             values = {}
@@ -136,81 +137,5 @@ class Button(object):
                 cat_value.name.suffix = name[1]
             cat_class.save_cats()
 
-
-
-class Writer(Button):
-    button_type = 'writer'
-    abc = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm']
-    # abc.sort()
-    for i in ['\'', '-', '.', 'DEL', 'upper', 'lower']:
-        abc.append(i)
-    letters = abc
-    # letter size is opposite to the current size
-    letter_size = 'lower'
-    length = 12
-    upper = True
-    target = 'naming_text'
-
-    def init(self, included_letters=None, letters_x=10, target=None):
-        self.letters = included_letters if included_letters is not None else self.abc
-        self.target = target if target is not None else 'naming_text'
-        self.length = letters_x
-        self.letter_size = 'lower'
-        self.upper = True
-
-    def draw(self, pos, available=True):
-        cur_length = 0
-        space_y = 0
-        space_x = 0
-        x = 0
-        y = 0
-        self.letter_size = 'upper' if self.upper else 'lower'
-        colour = self.frame_colour if available else self.unavailable_colour
-        for letter in self.letters:
-            if letter != self.letter_size:
-                new_letter = letter.upper() if self.upper and letter.isalpha() else letter
-                new_button = pygame.Surface((self.font.text(new_letter) + 10, self.font.size + 6))
-
-                collision = self.used_screen.blit(new_button, (pos[0] + cur_length + space_x, pos[1] + (self.font.size + 6) * y + space_y))
-
-                clickable = False
-                if available and collision.collidepoint(self.used_mouse.pos):
-                    colour = self.clickable_colour
-                    clickable = True
-                else:
-                    colour = self.frame_colour
-                new_button.fill(colour)
-                self.font.text(new_letter, (5, 0), new_button)
-                self.used_screen.blit(new_button, (pos[0] + cur_length + space_x, pos[1] + (self.font.size + 6) * y + space_y))
-
-                if game.clicked and clickable:
-                    self.activate(new_letter)
-                cur_length += self.font.text(new_letter) + 10
-                space_x += 2
-                x += 1
-            if x >= self.length:
-                x = 0
-                cur_length = 0
-                space_x = 0
-                space_y += 2
-                y += 1
-
-    def activate(self, values=None, cat_value=None):
-        if values not in ['upper', 'LOWER', 'DEL'] and len(game.switches[self.target]) < game.max_name_length and values is not None:
-            game.switches[self.target] += values.upper() if self.upper else values
-        elif values == 'upper':
-            self.upper = True
-            self.letter_size = 'lower'
-        elif values == 'LOWER':
-            self.upper = False
-            self.letter_size = 'upper'
-        elif values == 'DEL' and len(game.switches[self.target]) > 0:
-            game.switches[self.target] = game.switches[self.target][:-1]
-
-
 # BUTTONS
 buttons = Button()
-
-# WRITER
-writer = Writer()
-writer.init()

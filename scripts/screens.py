@@ -193,7 +193,8 @@ class ClanScreen(Screens):
                     cat_class.all_cats[x].placement = choice([choice(p['warrior place']), choice(p['leader place']), choice(p['clearing place'])])
 
                 else:
-                    cat_class.all_cats[x].placement = choice([choice(p['nursery place']), choice(p['leader place']), choice(p['elder place']), choice(p['medicine place']), choice(p['apprentice place'])])
+                    cat_class.all_cats[x].placement = choice(
+                        [choice(p['nursery place']), choice(p['leader place']), choice(p['elder place']), choice(p['medicine place']), choice(p['apprentice place'])])
 
             elif cat_class.all_cats[x].status == 'elder':
                 cat_class.all_cats[x].placement = choice(p['elder place'])
@@ -203,7 +204,8 @@ class ClanScreen(Screens):
                 elif i == 19:
                     cat_class.all_cats[x].placement = choice(p['leader place'])
                 else:
-                    cat_class.all_cats[x].placement = choice([choice(p['clearing place']), choice(p['warrior place']), choice(p['elder place']), choice(p['medicine place']), choice(p['apprentice place'])])
+                    cat_class.all_cats[x].placement = choice(
+                        [choice(p['clearing place']), choice(p['warrior place']), choice(p['elder place']), choice(p['medicine place']), choice(p['apprentice place'])])
 
             elif cat_class.all_cats[x].status in ['medicine cat apprentice', 'medicine cat']:
                 cat_class.all_cats[x].placement = choice(p['medicine place'])
@@ -212,7 +214,8 @@ class ClanScreen(Screens):
                     cat_class.all_cats[x].placement = choice([choice(p['warrior place']), choice(p['clearing place'])])
 
                 else:
-                    cat_class.all_cats[x].placement = choice([choice(p['nursery place']), choice(p['leader place']), choice(p['elder place']), choice(p['medicine place']), choice(p['apprentice place'])])
+                    cat_class.all_cats[x].placement = choice(
+                        [choice(p['nursery place']), choice(p['leader place']), choice(p['elder place']), choice(p['medicine place']), choice(p['apprentice place'])])
 
     def change_brightness(self):
         if game.settings['dark mode']:
@@ -480,7 +483,6 @@ class MakeClanScreen(Screens):
 
     def screen_switches(self):
         game.switches['clan_name'] = ''
-        writer.upper = True
         game.switches['leader'] = None
         game.switches['cat'] = None
         game.switches['medicine_cat'] = None
@@ -593,9 +595,9 @@ class ProfileScreen(Screens):
         verdana_big.text(cat_name, ('center', 70))  # NAME
         the_cat.draw_large(('center', 100))  # IMAGE
         verdana.text(cat_thought, ('center', 300))  # THOUGHT / ACTION
-        verdana_small.text(the_cat.gender, (250, 330 + count * 15));
+        verdana_small.text(the_cat.gender, (250, 330 + count * 15))
         count += 1  # SEX / GENDER
-        verdana_small.text(the_cat.status, (450, 330 + count2 * 15));
+        verdana_small.text(the_cat.status, (450, 330 + count2 * 15))
         count2 += 1  # STATUS
         if 'apprentice' in the_cat.status:
             if the_cat.mentor is None:
@@ -604,7 +606,6 @@ class ProfileScreen(Screens):
                 verdana_small.text('mentor: ' + str(the_cat.mentor.name), (450, 330 + count2 * 15))
                 count2 += 1
         if len(the_cat.apprentice) != 0:
-            apps = ''
             if len(the_cat.apprentice) == 1:
                 apps = 'apprentice: ' + str(the_cat.apprentice[0].name)
             else:
@@ -615,7 +616,6 @@ class ProfileScreen(Screens):
             verdana_small.text(apps, (450, 330 + count2 * 15))
             count2 += 1
         if len(the_cat.former_apprentices) != 0 and the_cat.former_apprentices[0] is not None:
-            former_apps = ''
             if len(the_cat.former_apprentices) == 1:
                 former_apps = 'former apprentice: ' + str(the_cat.former_apprentices[0].name)
             else:
@@ -636,20 +636,20 @@ class ProfileScreen(Screens):
         count2 += 1  # CHARACTER TRAIT
         verdana_small.text(the_cat.skill, (450, 330 + count2 * 15))
         count2 += 1  # SPECIAL SKILL
-        verdana_small.text('eyes: ' + the_cat.eye_colour.lower(), (250, 330 + count * 15));
+        verdana_small.text('eyes: ' + the_cat.eye_colour.lower(), (250, 330 + count * 15))
         count += 1  # EYE COLOR
-        verdana_small.text('pelt: ' + the_cat.pelt.name.lower(), (250, 330 + count * 15));
+        verdana_small.text('pelt: ' + the_cat.pelt.name.lower(), (250, 330 + count * 15))
         count += 1  # PELT TYPE
-        verdana_small.text('fur length: ' + the_cat.pelt.length, (250, 330 + count * 15));
+        verdana_small.text('fur length: ' + the_cat.pelt.length, (250, 330 + count * 15))
         count += 1  # PELT LENGTH
 
         # PARENTS
         if the_cat.parent1 is None:
-            verdana_small.text('parents: unknown', (250, 330 + count * 15));
+            verdana_small.text('parents: unknown', (250, 330 + count * 15))
             count += 1
         elif the_cat.parent2 is None:
             par1 = str(the_cat.all_cats[the_cat.parent1].name)
-            verdana_small.text('parents: ' + par1 + ', unknown', (250, 330 + count * 15));
+            verdana_small.text('parents: ' + par1 + ', unknown', (250, 330 + count * 15))
             count += 1
         else:
             if the_cat.parent1 in the_cat.all_cats and the_cat.parent2 in the_cat.all_cats:
@@ -691,10 +691,10 @@ class ProfileScreen(Screens):
 
         # experience
         if not the_cat.dead:
-            verdana_small.text('experience: ' + str(the_cat.experience_level), (450, 330 + count2 * 15));
+            verdana_small.text('experience: ' + str(the_cat.experience_level), (450, 330 + count2 * 15))
             count2 += 1
         else:
-            verdana_small.text('experience: ' + str(the_cat.experience_level), (450, 330 + count2 * 15));
+            verdana_small.text('experience: ' + str(the_cat.experience_level), (450, 330 + count2 * 15))
             count2 += 1
 
         # buttons
@@ -783,8 +783,7 @@ class ViewChildrenScreen(Screens):
             verdana_small.text(str(cat_class.all_cats[the_cat.parent1].name), (375 - name_len / 2, 185))
 
         else:
-            verdana_small.text('Error: cat ' + str(the_cat.parent1) + ' not found', (342, 165))
-
+            verdana_small.text(f'Error: cat {str(the_cat.parent1)} not found', (342, 165))
         if the_cat.parent2 is None:
             verdana_small.text('Unknown', (422, 165))
         elif the_cat.parent2 in cat_class.all_cats:
@@ -801,8 +800,8 @@ class ViewChildrenScreen(Screens):
         siblings = False
         for x in game.clan.clan_cats:
             if (cat_class.all_cats[x].parent1 in (the_cat.parent1, the_cat.parent2) or cat_class.all_cats[x].parent2 in (
-            the_cat.parent1, the_cat.parent2) and the_cat.parent2 is not None) and the_cat.ID != cat_class.all_cats[x].ID and the_cat.parent1 is not None and cat_class.all_cats[
-                x].parent1 is not None:
+                    the_cat.parent1, the_cat.parent2) and the_cat.parent2 is not None) and the_cat.ID != cat_class.all_cats[x].ID and the_cat.parent1 is not None and \
+                    cat_class.all_cats[x].parent1 is not None:
                 buttons.draw_button((40 + pos_x, 220 + pos_y), image=cat_class.all_cats[x].sprite, cat=cat_class.all_cats[x].ID, cur_screen='profile screen')
 
                 name_len = verdana.text(str(cat_class.all_cats[x].name))
@@ -950,11 +949,8 @@ class ListScreen(Screens):
     # the amount of cats a page can hold is 20, so the amount of pages is cats/20
 
     def on_use(self):
-        # layout
         verdana_big.text(game.clan.name + 'Clan', ('center', 30))
         verdana.text('ALL CATS LIST', ('center', 100))
-
-        # make a list of just living cats
         living_cats = []
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
@@ -973,24 +969,17 @@ class ListScreen(Screens):
                         living_cats.insert(1, the_cat)
                 else:
                     living_cats.append(the_cat)
-
-        # pages
-        all_pages = 1  # amount of pages
-        if len(living_cats) > 24:
-            all_pages = int(ceil(len(living_cats) / 24.0))
-
-        # dead cats
+        all_pages = int(ceil(len(living_cats) / 24.0)) if len(living_cats) > 24 else 1
         pos_x = 0
         pos_y = 0
-        cats_on_page = 0  # how many are on page already
+        cats_on_page = 0
         for x in range(len(living_cats)):
-            if (x + (game.switches['list_page'] - 1) * 24) >= len(living_cats):
+            if x + (game.switches['list_page'] - 1) * 24 >= len(living_cats):
                 game.switches['list_page'] -= 1
-
             the_cat = living_cats[x + (game.switches['list_page'] - 1) * 24]
             if not the_cat.dead:
                 buttons.draw_button((130 + pos_x, 180 + pos_y), image=the_cat.sprite, cat=the_cat.ID, cur_screen='profile screen')
-                # name length
+
                 name_len = verdana.text(str(the_cat.name))
                 verdana.text(str(the_cat.name), (155 + pos_x - name_len / 2, 240 + pos_y))
                 cats_on_page += 1
@@ -998,18 +987,16 @@ class ListScreen(Screens):
                 if pos_x >= 600:
                     pos_x = 0
                     pos_y += 100
-
                 if cats_on_page >= 24 or x + (game.switches['list_page'] - 1) * 24 == len(living_cats) - 1:
                     break
-
-        # page buttons
         verdana.text('page ' + str(game.switches['list_page']) + ' / ' + str(all_pages), ('center', 600))
+
         if game.switches['list_page'] > 1:
             buttons.draw_button((300, 600), text='<', list_page=game.switches['list_page'] - 1)
+
         if game.switches['list_page'] < all_pages:
             buttons.draw_button((-300, 600), text='>', list_page=game.switches['list_page'] + 1)
 
-        # buttons
         draw_menu_buttons()
 
     def screen_switches(self):
@@ -1110,31 +1097,27 @@ class PatrolScreen(Screens):
 
 class PatrolEventScreen(Screens):
     def on_use(self):
-        # LAYOUT
-
-        verdana_big.text(game.clan.name + 'Clan', ('center', 30))
+        verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
         if game.switches['event'] == 0:
             verdana.text(str(patrol.patrol_event[1]), ('center', 200))
-
             buttons.draw_button(('center', 300), text='Proceed', event=1)
             buttons.draw_button(('center', 340), text='Do Not Proceed', event=2)
-
         if game.switches['event'] > 0:
             if game.switches['event'] < 3:
                 patrol.calculate()
             verdana.text(str(patrol.patrol_result_text), ('center', 200))
             buttons.draw_button(('center', 320), text='Return to Clan', cur_screen='clan screen')
 
-        # cat buttons / small sprites
         for u in range(6):
             if u < patrol.patrol_size:
                 patrol.patrol_cats[u].draw((screen_x / 2 - 50 * (u + 2), 550))
         verdana_small.text('season: ' + str(game.clan.current_season), ('center', 400))
         verdana_small.text('patrol leader: ' + str(patrol.patrol_leader.name), ('center', 420))
+
         verdana_small.text('patrol skills: ' + str(patrol.patrol_skills), ('center', 440))
+
         verdana_small.text('patrol traits: ' + str(patrol.patrol_traits), ('center', 460))
 
-        # buttons
         draw_menu_buttons()
 
     def screen_switches(self):
@@ -1145,7 +1128,7 @@ class PatrolEventScreen(Screens):
 
 class AllegiancesScreen(Screens):
     def on_use(self):
-        verdana_big.text(game.clan.name + 'Clan Allegiances', (30, 110))
+        verdana_big.text(f'{game.clan.name}Clan Allegiances', (30, 110))
         a = 0
         if game.allegiance_list is not None and game.allegiance_list != []:
             for x in range(min(len(game.allegiance_list), game.max_allegiance_displayed)):
@@ -1251,31 +1234,24 @@ class AllegiancesScreen(Screens):
 
 class ChooseMentorScreen(Screens):
     def on_use(self):
-        # layout
         verdana_big.text('Choose Mentor', ('center', 30))
-        # make a list of just living cats
         living_cats = []
         for cat in cat_class.all_cats.values():
-            if not cat.dead and cat != game.switches['apprentice'].mentor and (cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader'):
+            if not cat.dead and cat != game.switches['apprentice'].mentor and cat.status in ['warrior', 'deputy', 'leader']:
                 living_cats.append(cat)
-
-        # pages
-        all_pages = 1  # amount of pages
+        all_pages = 1
         if len(living_cats) > 24:
             all_pages = int(ceil(len(living_cats) / 24.0))
-
-        # dead cats
         pos_x = 0
         pos_y = 0
-        cats_on_page = 0  # how many are on page already
+        cats_on_page = 0
         for x in range(len(living_cats)):
-            if (x + (game.switches['list_page'] - 1) * 24) > len(living_cats):
+            if x + (game.switches['list_page'] - 1) * 24 > len(living_cats):
                 game.switches['list_page'] = 1
-
             the_cat = living_cats[x + (game.switches['list_page'] - 1) * 24]
             if not the_cat.dead:
                 buttons.draw_button((130 + pos_x, 180 + pos_y), image=the_cat.sprite, cat=the_cat.ID, cur_screen='choose mentor screen2')
-                # name length
+
                 name_len = verdana.text(str(the_cat.name))
                 verdana.text(str(the_cat.name), (155 + pos_x - name_len / 2, 240 + pos_y))
                 cats_on_page += 1
@@ -1283,18 +1259,16 @@ class ChooseMentorScreen(Screens):
                 if pos_x >= 600:
                     pos_x = 0
                     pos_y += 100
-
                 if cats_on_page >= 24 or x + (game.switches['list_page'] - 1) * 24 == len(living_cats) - 1:
                     break
-
-        # page buttons
         verdana.text('page ' + str(game.switches['list_page']) + ' / ' + str(all_pages), ('center', 600))
+
         if game.switches['list_page'] > 1:
             buttons.draw_button((300, 600), text='<', list_page=game.switches['list_page'] - 1)
+
         if game.switches['list_page'] < all_pages:
             buttons.draw_button((-300, 600), text='>', list_page=game.switches['list_page'] + 1)
 
-        # buttons
         draw_menu_buttons()
 
 
@@ -1345,9 +1319,9 @@ class ChooseMentorScreen2(Screens):
         count2 = 0
         verdana_big.text(cat_name, ('center', 70))  # NAME
         the_cat.draw_large(('center', 100))  # IMAGE
-        verdana_small.text(the_cat.gender, (250, 330 + count * 15));
+        verdana_small.text(the_cat.gender, (250, 330 + count * 15))
         count += 1  # SEX / GENDER
-        verdana_small.text(the_cat.status, (450, 330 + count2 * 15));
+        verdana_small.text(the_cat.status, (450, 330 + count2 * 15))
         count2 += 1  # STATUS
         if 'apprentice' in the_cat.status:
             if the_cat.mentor is not None:
@@ -1386,20 +1360,20 @@ class ChooseMentorScreen2(Screens):
         count2 += 1  # CHARACTER TRAIT
         verdana_small.text(the_cat.skill, (450, 330 + count2 * 15))
         count2 += 1  # SPECIAL SKILL
-        verdana_small.text('eyes: ' + the_cat.eye_colour.lower(), (250, 330 + count * 15));
+        verdana_small.text('eyes: ' + the_cat.eye_colour.lower(), (250, 330 + count * 15))
         count += 1  # EYE COLOR
-        verdana_small.text('pelt: ' + the_cat.pelt.name.lower(), (250, 330 + count * 15));
+        verdana_small.text('pelt: ' + the_cat.pelt.name.lower(), (250, 330 + count * 15))
         count += 1  # PELT TYPE
-        verdana_small.text('fur length: ' + the_cat.pelt.length, (250, 330 + count * 15));
+        verdana_small.text('fur length: ' + the_cat.pelt.length, (250, 330 + count * 15))
         count += 1  # PELT LENGTH
 
         # PARENTS
         if the_cat.parent1 is None:
-            verdana_small.text('parents: unknown', (250, 330 + count * 15));
+            verdana_small.text('parents: unknown', (250, 330 + count * 15))
             count += 1
         elif the_cat.parent2 is None:
             par1 = str(the_cat.all_cats[the_cat.parent1].name)
-            verdana_small.text('parents: ' + par1 + ', unknown', (250, 330 + count * 15));
+            verdana_small.text('parents: ' + par1 + ', unknown', (250, 330 + count * 15))
             count += 1
         else:
             if the_cat.parent1 in the_cat.all_cats and the_cat.parent2 in the_cat.all_cats:
@@ -1441,10 +1415,10 @@ class ChooseMentorScreen2(Screens):
 
         # experience
         if not the_cat.dead:
-            verdana_small.text('experience: ' + str(the_cat.experience_level), (450, 330 + count2 * 15));
+            verdana_small.text('experience: ' + str(the_cat.experience_level), (450, 330 + count2 * 15))
             count2 += 1
         else:
-            verdana_small.text('experience: ' + str(the_cat.experience_level), (450, 330 + count2 * 15));
+            verdana_small.text('experience: ' + str(the_cat.experience_level), (450, 330 + count2 * 15))
             count2 += 1
 
         # buttons
