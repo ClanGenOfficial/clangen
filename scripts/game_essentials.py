@@ -25,33 +25,23 @@ class Game(object):
     up = pygame.transform.scale(up, (40, 40))
 
     choose_cats = {}
-    cat_buttons = {'cat0': None, 'cat1': None, 'cat2': None, 'cat3': None,
-                   'cat4': None, 'cat5': None, 'cat6': None, 'cat7': None,
-                   'cat8': None, 'cat9': None, 'cat10': None, 'cat11': None}
+    cat_buttons = {'cat0': None, 'cat1': None, 'cat2': None, 'cat3': None, 'cat4': None, 'cat5': None, 'cat6': None, 'cat7': None, 'cat8': None, 'cat9': None, 'cat10': None,
+                   'cat11': None}
     patrol_cats = {}
 
     # store changing parts of the game that the user can toggle with buttons
-    switches = {'cat': None, 'clan_name': '', 'leader': None, 'deputy': None, 'medicine_cat': None, 'members': [],
-                'event': None, 'cur_screen': 'start screen', 'naming_text': '', 'timeskip': False, 'mate': None,
-                'setting': None, 'save_settings': False, 'list_page': 1, 'last_screen': 'start screen',
-                'events_left': 0, 'save_clan': False, 'new_leader': False, 'apprentice_switch': False,
-                'deputy_switch': False, 'clan_list': '',
-                'switch_clan': False, 'read_clans': False, 'kill_cat': False, 'current_patrol': [],
-                'error_message': '', 'apprentice': None, 'change_name': ''}
+    switches = {'cat': None, 'clan_name': '', 'leader': None, 'deputy': None, 'medicine_cat': None, 'members': [], 'event': None, 'cur_screen': 'start screen', 'naming_text': '',
+                'timeskip': False, 'mate': None, 'setting': None, 'save_settings': False, 'list_page': 1, 'last_screen': 'start screen', 'events_left': 0, 'save_clan': False,
+                'new_leader': False, 'apprentice_switch': False, 'deputy_switch': False, 'clan_list': '', 'switch_clan': False, 'read_clans': False, 'kill_cat': False,
+                'current_patrol': [], 'error_message': '', 'apprentice': None, 'change_name': ''}
     all_screens = {}
     cur_events = {}
 
     # SETTINGS
-    settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False,
-                'dark mode': False, 'backgrounds': True, 'autosave': False, 'disasters': False, 'retirement': True}  # The current settings
-    setting_lists = {'no gendered breeding': [False, True],
-                     'text size': ['0', '1', '2'],
-                     'no unknown fathers': [False, True],
-                     'dark mode': [False, True],
-                     'backgrounds': [True, False],
-                     'autosave': [False, True],
-                     'disasters': [False, True],
-                     'retirement': [True, False]}  # Lists of possible options for each setting
+    settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False, 'dark mode': False, 'backgrounds': True, 'autosave': False, 'disasters': False,
+                'retirement': True}  # The current settings
+    setting_lists = {'no gendered breeding': [False, True], 'text size': ['0', '1', '2'], 'no unknown fathers': [False, True], 'dark mode': [False, True],
+                     'backgrounds': [True, False], 'autosave': [False, True], 'disasters': [False, True], 'retirement': [True, False]}  # Lists of possible options for each setting
     settings_changed = False
 
     # CLAN

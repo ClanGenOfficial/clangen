@@ -19,9 +19,8 @@ class Cat(object):
     gender_tags = {'female': 'F', 'male': 'M'}
     skills = ['good hunter', 'great hunter', 'fantastic hunter', 'smart', 'very smart', 'extremely smart', 'good fighter', 'great fighter', 'excellent fighter', 'good speaker',
               'great speaker', 'excellent speaker', 'strong connection to starclan', 'good teacher', 'great teacher', 'fantastic teacher']
-    med_skills = ['good healer', 'great healer', 'fantastic healer', 'omen sight', 'dream walker', 'strong connection to starclan', 'lore keeper', 'good teacher',
-                  'great teacher', 'fantastic teacher', 'keen eye', 'smart', 'very smart', 'extremely smart', 'good mediator', 'great mediator', 'excellent mediator',
-                  'clairvoyant', 'prophet']
+    med_skills = ['good healer', 'great healer', 'fantastic healer', 'omen sight', 'dream walker', 'strong connection to starclan', 'lore keeper', 'good teacher', 'great teacher',
+                  'fantastic teacher', 'keen eye', 'smart', 'very smart', 'extremely smart', 'good mediator', 'great mediator', 'excellent mediator', 'clairvoyant', 'prophet']
 
     all_cats = {}  # ID: object
 
@@ -45,7 +44,7 @@ class Cat(object):
         self.dead_for = 0  # moons
         self.thought = ''
         if ID is None:
-            self.ID = str(randint(10000, 99999))
+            self.ID = str(randint(10000, 9999999))
         else:
             self.ID = ID
         # personality trait and skill
@@ -327,8 +326,7 @@ class Cat(object):
                              'Can\'t seem to stop talking about ' + other_name, 'Would spend the entire day with ' + other_name + ' if they could',
                              'Was caught enjoying a moonlit stroll with ' + other_name + ' last night...',
                              'Keeps shyly glancing over at ' + other_name + ' as the clan talks about kits', 'Gave a pretty flower they found to ' + other_name,
-                             'Is admiring ' + other_name + ' from afar...'
-                                                           'Is thinking of the best ways to impress ' + other_name, 'Doesn\'t want ' + other_name + ' to overwork themselves',
+                             'Is admiring ' + other_name + ' from afar...', 'Is thinking of the best ways to impress ' + other_name, 'Doesn\'t want ' + other_name + ' to overwork',                                                                                                                           ' themselves',
                              'Is rolling around a little too playfully with ' + other_name + '...', 'Is wondering what it would be like to grow old with ' + other_name,
                              'Thinks that ' + other_name + ' is really funny', 'Thinks that ' + other_name + ' is really charming'])
                 if cat.status == 'kitten':
@@ -346,8 +344,7 @@ class Cat(object):
                                      'Is scrambling the medicine cat\'s herbs!', 'Is crying after rough-housing too hard with the older cats',
                                      'Is hatching a plan to sneak out of camp and play', 'Is running like a whirlwind around the camp', 'Is pretending to be the clan leader',
                                      'Is pretending to be deputy', 'Is pretending to be the medicine cat', 'Doesn\'t want to grow up yet...', 'Wants to be a warrior already!',
-                                     'Got in trouble for bringing thorns into the nest'
-                                     'Is asking older cats how kits are born'])
+                                     'Got in trouble for bringing thorns into the nest', 'Is asking older cats how kits are born'])
                 elif cat.status == 'apprentice':
                     thoughts.extend(['Is thinking about the time they caught a huge rabbit', 'Wonders what their full name will be', 'Is irritating their mentor',
                                      'Is arguing with their mentor', 'Is listening to their mentor', 'Plans to visit the elders soon', "Practices the hunting crouch",

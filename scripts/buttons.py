@@ -18,7 +18,7 @@ class Button(object):
         self.clickable_colour = clickable_colour
         self.unavailable_colour = unavailable_colour
 
-    def draw_button(self, pos, available=True, image=None, text='', cat_value=None, arrow=None, name='', apprentice=None, **values):
+    def draw_button(self, pos, available=True, image=None, text='', cat_value=None, arrow=None, apprentice=None, **values):
         dynamic_image = False
         if image is not None and text != '' and text is not None:
             dynamic_image = True
@@ -60,18 +60,17 @@ class Button(object):
             new_button = pygame.image.load(f"{image}.png")
             new_button = pygame.transform.scale(new_button, (192, 35))
         self.used_screen.blit(new_button, new_pos)
-        if game.clicked:
-            if apprentice is not None:
+        if game.clicked and clickable:
+            if apprentice is not None and text == 'Change Mentor':
                 self.choose_mentor(apprentice, cat_value)
-            elif text == 'Change Name':
+            elif text == 'Change Name' and game.switches['naming_text'] != "":
                 self.change_name(game.switches['naming_text'], cat_value)
-            elif clickable and cat_value is None and arrow is None:
+            elif cat_value is None and arrow is None:
                 self.activate(values)
-            elif clickable and arrow is None:
+            elif arrow is None:
                 self.activate(values, cat_value)
-            elif clickable:
+            else:
                 self.activate(values, arrow=arrow)
-
     def activate(self, values=None, cat_value=None, arrow=None):
         if values is None:
             values = {}
@@ -136,6 +135,7 @@ class Button(object):
             cat_class.save_cats()
 
 
+
 class Writer(Button):
     button_type = 'writer'
     abc = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm']
@@ -163,6 +163,7 @@ class Writer(Button):
         x = 0
         y = 0
         self.letter_size = 'upper' if self.upper else 'lower'
+        colour = self.frame_colour if available else self.unavailable_colour
         for letter in self.letters:
             if letter != self.letter_size:
                 new_letter = letter.upper() if self.upper and letter.isalpha() else letter
