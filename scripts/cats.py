@@ -314,7 +314,7 @@ class Cat(object):
                                              'Had to nip ' + other_name + ' on the rump because they were being naughty',
                                              'Is promising to take ' + other_name + ' outside of camp if they behave',
                                              'Is watching ' + other_name + ' perform an almost-decent hunting crouch',
-                                             'Can\'t take their eyes off of' + other_name + ' for more than a few seconds',
+                                             'Can\'t take their eyes off of ' + other_name + ' for more than a few seconds',
                                              'Gave ' + other_name + ' a trinket they found while out on patrol today'])
                         else:
                             thoughts.extend(
