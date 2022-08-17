@@ -9,6 +9,7 @@ jobs:
       - run: "pip3 install pygame pyinstaller pillow"
       - run: "pyinstaller --onefile -w -n Clangen -i resources/icon.png main.py"
       - run: "mkdir -p dist/Clangen.app/Contents/Resources/sprites"
+      - run: "mkdir dist/Clangen.app/Contents/Resources/sprites/paralyzed"
       - run: "mkdir dist/Clangen.app/Contents/Resources/saves"
       - run: "mkdir dist/Clangen.app/Contents/Resources/resources"
       - run: "cp sprites/* dist/Clangen.app/Contents/Resources/sprites"
