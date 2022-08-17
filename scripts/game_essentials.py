@@ -33,7 +33,7 @@ class Game(object):
     switches = {'cat': None, 'clan_name': '', 'leader': None, 'deputy': None, 'medicine_cat': None, 'members': [], 'event': None, 'cur_screen': 'start screen', 'naming_text': '',
                 'timeskip': False, 'mate': None, 'setting': None, 'save_settings': False, 'list_page': 1, 'last_screen': 'start screen', 'events_left': 0, 'save_clan': False,
                 'new_leader': False, 'apprentice_switch': False, 'deputy_switch': False, 'clan_list': '', 'switch_clan': False, 'read_clans': False, 'kill_cat': False,
-                'current_patrol': [], 'error_message': '', 'apprentice': None, 'change_name': ''}
+                'current_patrol': [], 'error_message': '', 'apprentice': None, 'change_name': '', 'name_cat': None}
     all_screens = {}
     cur_events = {}
 
@@ -57,7 +57,6 @@ class Game(object):
         if self.current_screen != self.switches['cur_screen']:
             self.current_screen = self.switches['cur_screen']
             self.switch_screens = True
-
         self.clicked = False
 
         # carry commands

@@ -193,6 +193,9 @@ class Cat(object):
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
 
+    def is_alive(self):
+        return not self.dead
+
     def __repr__(self):
         return self.ID
 

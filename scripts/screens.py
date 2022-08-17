@@ -698,8 +698,7 @@ class ProfileScreen(Screens):
             count2 += 1
 
         # buttons
-        buttons.draw_button(('center', 10), text=' Change Name ', naming_text='', cur_screen='change name screen')
-        game.switches['cat'] = the_cat.ID
+        buttons.draw_button(('center', 20), text=' Change Name ', naming_text='', cur_screen='change name screen', cat_value=the_cat)
         buttons.draw_button(('center', -160), text='See Family', cur_screen='see kits screen')
         if not the_cat.dead:
             buttons.draw_button((-40, -50), text='Kill Cat', kill_cat=the_cat)

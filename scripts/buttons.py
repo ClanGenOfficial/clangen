@@ -65,6 +65,8 @@ class Button(object):
                 self.choose_mentor(apprentice, cat_value)
             elif text == 'Change Name' and game.switches['naming_text'] != "":
                 self.change_name(game.switches['naming_text'], cat_value)
+            elif text in ['Next Cat', 'Previous Cat']:
+                game.switches['cat'] = values.get('cat')
             elif cat_value is None and arrow is None:
                 self.activate(values)
             elif arrow is None:
