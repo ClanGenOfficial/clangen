@@ -279,14 +279,14 @@ class StarClanScreen(Screens):
 class MakeClanScreen(Screens):
     def first_phase(self):
         # layout
-        verdana_big.text('NAME YOUR CLAN!', ('center', 150))
+        name_clan_img = pygame.image.load('resources/name_clan.png')
+
         self.game_screen.blit(game.naming_box, (310, 200))
         if game.settings['dark mode']:
             verdana_black.text(game.switches['naming_text'], (315, 200))
         else:
             verdana.text(game.switches['naming_text'], (315, 200))
         verdana.text('-Clan', (455, 200))
-        verdana.text('Max ten letters long. Don\'t include "Clan" in it.', ('center', 250))
         buttons.draw_button(('center', 300), text='Randomize', naming_text=choice(names.normal_prefixes))
         buttons.draw_button(('center', 350), text='Reset Name', naming_text='')
 
@@ -703,7 +703,8 @@ class ProfileScreen(Screens):
             count2 += 1
 
         # buttons
-        buttons.draw_button(('center', 20), text=' Change Name ', naming_text='', cur_screen='change name screen', cat_value=the_cat)
+        buttons.draw_button(('center', 20), text='Change Name', cur_screen='change name screen')
+        game.switches['name_cat'] = the_cat.ID
         buttons.draw_button(('center', -160), text='See Family', cur_screen='see kits screen')
         if not the_cat.dead:
             buttons.draw_button((-40, -50), text='Kill Cat', kill_cat=the_cat)
@@ -852,9 +853,7 @@ class ChooseMateScreen(Screens):
         the_cat = cat_class.all_cats[game.switches['cat']]
         verdana_big.text(f'Choose mate for {str(the_cat.name)}', ('center', 50))
         verdana_small.text('If the cat has chosen a mate, they will stay loyal and not have kittens with anyone else,', ('center', 80))
-
         verdana_small.text('even if having kittens in said relationship is impossible.', ('center', 95))
-
         verdana_small.text('Chances of having kittens when possible is heightened though.', ('center', 110))
 
         the_cat.draw_large((200, 130))
@@ -963,15 +962,15 @@ class ListScreen(Screens):
                 if the_cat.status == 'leader':
                     living_cats.insert(0, the_cat)
                 elif the_cat.status == 'deputy':
-                    if len(living_cats) > 0:
-                        if living_cats[0].status == 'leader':
-                            living_cats.insert(1, the_cat)
+                    if len(living_cats) > 0 and living_cats[0].status == 'leader':
+                        living_cats.insert(1, the_cat)
                     else:
                         living_cats.insert(0, the_cat)
                 elif the_cat.status == 'medicine cat':
-                    if len(living_cats) > 1:
-                        if living_cats[0].status == 'leader' and living_cats[1].status == 'deputy':
-                            living_cats.insert(2, the_cat)
+                    if len(living_cats) > 1 and living_cats[0].status == 'leader' and living_cats[1].status == 'deputy':
+                        living_cats.insert(2, the_cat)
+                    elif living_cats[0] != 'leader' and living_cats[1] != 'deputy':
+                        living_cats.insert(0, the_cat)
                     else:
                         living_cats.insert(1, the_cat)
                 else:
@@ -1155,19 +1154,13 @@ class AllegiancesScreen(Screens):
         game.allegiance_list = []
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
-            living_cats.append(the_cat)
+            if not the_cat.dead:
+                living_cats.append(the_cat)
         if not game.clan.leader.dead:
             game.allegiance_list.append(['LEADER:', f"{str(game.clan.leader.name)} - a {game.clan.leader.describe_cat()}"])
-
-        else:
-            game.allegiance_list.append(['LEADER:', ''])
         if game.clan.deputy != 0 and game.clan.deputy is not None and not game.clan.deputy.dead:
             game.allegiance_list.append(['DEPUTY:', f"{str(game.clan.deputy.name)} - a {game.clan.deputy.describe_cat()}"])
-
-        else:
-            game.allegiance_list.append(['DEPUTY:', ''])
         cat_count = self._extracted_from_screen_switches_24(living_cats, 'medicine cat', 'MEDICINE CAT:')
-
         queens = []
         for living_cat_ in living_cats:
             if str(living_cat_.status) == 'kitten' and living_cat_.parent1 is not None:
@@ -1194,9 +1187,6 @@ class AllegiancesScreen(Screens):
                 if not cat_count:
                     game.allegiance_list.append(['APPRENTICES:', f"{str(living_cat___.name)} - a {living_cat___.describe_cat()}"])
 
-                else:
-                    game.allegiance_list.append(['', f"{str(living_cat___.name)} - a {living_cat___.describe_cat()}"])
-
                 cat_count += 1
         if not cat_count:
             game.allegiance_list.append(['APPRENTICES:', ''])
@@ -1205,15 +1195,10 @@ class AllegiancesScreen(Screens):
             if living_cat____.ID in queens:
                 if not cat_count:
                     game.allegiance_list.append(['QUEENS:', f"{str(living_cat____.name)} - a {living_cat____.describe_cat()}"])
-
-                else:
-                    game.allegiance_list.append(['', f"{str(living_cat____.name)} - a {living_cat____.describe_cat()}"])
-
                 cat_count += 1
         if not cat_count:
             game.allegiance_list.append(['QUEENS:', ''])
         cat_count = self._extracted_from_screen_switches_24(living_cats, 'elder', 'ELDERS:')
-
         cat_count = self._extracted_from_screen_switches_24(living_cats, 'kitten', 'KITS:')
 
         draw_menu_buttons()
@@ -1225,10 +1210,6 @@ class AllegiancesScreen(Screens):
             if str(living_cat.status) == arg1:
                 if not result:
                     game.allegiance_list.append([arg2, f"{str(living_cat.name)} - a {living_cat.describe_cat()}"])
-
-                else:
-                    game.allegiance_list.append(['', f"{str(living_cat.name)} - a {living_cat.describe_cat()}"])
-
                 result += 1
         if not result:
             game.allegiance_list.append([arg2, ''])
@@ -1440,7 +1421,7 @@ class ChangeNameScreen(Screens):
         verdana.text('Change Name', ('center', 50))
         verdana.text('Add a space between the new prefix and suffix', ('center', 70))
         verdana.text('i.e. Fire heart', ('center', 90))
-        buttons.draw_button(('center', -100), text='Change Name', cur_screen='change name screen', cat_value=game.switches['cat'])
+        buttons.draw_button(('center', -100), text=' Change Name ', cur_screen='change name screen', cat_value=game.switches['name_cat'])
         buttons.draw_button(('center', -50), text='Back', cur_screen=game.switches['last_screen'])
 
 
