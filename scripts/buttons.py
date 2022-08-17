@@ -137,5 +137,6 @@ class Button(object):
                 cat_value.name.suffix = name[1]
             cat_class.save_cats()
 
+
 # BUTTONS
 buttons = Button()

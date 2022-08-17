@@ -958,13 +958,15 @@ class ListScreen(Screens):
                 if the_cat.status == 'leader':
                     living_cats.insert(0, the_cat)
                 elif the_cat.status == 'deputy':
-                    if living_cats[0].status == 'leader':
-                        living_cats.insert(1, the_cat)
+                    if len(living_cats) > 0:
+                        if living_cats[0].status == 'leader':
+                            living_cats.insert(1, the_cat)
                     else:
                         living_cats.insert(0, the_cat)
                 elif the_cat.status == 'medicine cat':
-                    if living_cats[0].status == 'leader' and living_cats[1].status == 'deputy':
-                        living_cats.insert(2, the_cat)
+                    if len(living_cats) > 1:
+                        if living_cats[0].status == 'leader' and living_cats[1].status == 'deputy':
+                            living_cats.insert(2, the_cat)
                     else:
                         living_cats.insert(1, the_cat)
                 else:
@@ -1146,13 +1148,9 @@ class AllegiancesScreen(Screens):
         living_cats = []
         game.allegiance_scroll_ct = 0
         game.allegiance_list = []
-        dep = None
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
-            if the_cat.status == 'deputy':
-                dep = the_cat
-            elif not the_cat.dead:
-                living_cats.append(the_cat)
+            living_cats.append(the_cat)
         if not game.clan.leader.dead:
             game.allegiance_list.append(['LEADER:', f"{str(game.clan.leader.name)} - a {game.clan.leader.describe_cat()}"])
 
@@ -1328,7 +1326,6 @@ class ChooseMentorScreen2(Screens):
                 verdana_small.text('mentor: ' + str(the_cat.mentor.name), (450, 330 + count2 * 15))
                 count2 += 1
         if len(the_cat.apprentice) != 0:
-            apps = ''
             if len(the_cat.apprentice) == 1:
                 apps = 'apprentice: ' + str(the_cat.apprentice[0].name)
             else:
@@ -1339,7 +1336,6 @@ class ChooseMentorScreen2(Screens):
             verdana_small.text(apps, (450, 330 + count2 * 15))
             count2 += 1
         if len(the_cat.former_apprentices) != 0 and the_cat.former_apprentices[0] is not None:
-            former_apps = ''
             if len(the_cat.former_apprentices) == 1:
                 former_apps = 'former apprentice: ' + str(the_cat.former_apprentices[0].name)
             else:

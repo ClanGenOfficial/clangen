@@ -1,4 +1,5 @@
-import sys, os
+import sys
+import os
 from scripts.screens import *
 
 if sys.platform == "darwin":
