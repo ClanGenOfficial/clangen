@@ -25,29 +25,23 @@ class Game(object):
     up = pygame.transform.scale(up, (40, 40))
 
     choose_cats = {}
-    cat_buttons = {'cat0': None, 'cat1': None, 'cat2': None, 'cat3': None,
-                   'cat4': None, 'cat5': None, 'cat6': None, 'cat7': None,
-                   'cat8': None, 'cat9': None, 'cat10': None, 'cat11': None}
+    cat_buttons = {'cat0': None, 'cat1': None, 'cat2': None, 'cat3': None, 'cat4': None, 'cat5': None, 'cat6': None, 'cat7': None, 'cat8': None, 'cat9': None, 'cat10': None,
+                   'cat11': None}
     patrol_cats = {}
 
     # store changing parts of the game that the user can toggle with buttons
-    switches = {'cat': None, 'clan_name': '', 'leader': None, 'deputy': None, 'medicine_cat': None, 'members': [],
-                'event': None, 'cur_screen': 'start screen', 'naming_text': '', 'timeskip': False, 'mate': None,
-                'setting': None, 'save_settings': False, 'list_page': 1, 'last_screen': 'start screen',
-                'events_left': 0, 'save_clan': False, 'new_leader': False, 'apprentice_switch': False,
-                'deputy_switch': False, 'clan_list': '',
-                'switch_clan': False, 'read_clans': False, 'kill_cat': False, 'current_patrol': []}
+    switches = {'cat': None, 'clan_name': '', 'leader': None, 'deputy': None, 'medicine_cat': None, 'members': [], 'event': None, 'cur_screen': 'start screen', 'naming_text': '',
+                'timeskip': False, 'mate': None, 'setting': None, 'save_settings': False, 'list_page': 1, 'last_screen': 'start screen', 'events_left': 0, 'save_clan': False,
+                'new_leader': False, 'apprentice_switch': False, 'deputy_switch': False, 'clan_list': '', 'switch_clan': False, 'read_clans': False, 'kill_cat': False,
+                'current_patrol': [], 'error_message': '', 'apprentice': None, 'change_name': '', 'name_cat': None}
     all_screens = {}
     cur_events = {}
 
     # SETTINGS
-    settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False,
-                'dark mode': False, 'backgrounds': True}  # The current settings
-    setting_lists = {'no gendered breeding': [False, True],
-                     'text size': ['0', '1', '2'],
-                     'no unknown fathers': [False, True],
-                     'dark mode': [False, True],
-                     'backgrounds': [True, False]}  # Lists of possible options for each setting
+    settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False, 'dark mode': False, 'backgrounds': True, 'autosave': False, 'disasters': False,
+                'retirement': True}  # The current settings
+    setting_lists = {'no gendered breeding': [False, True], 'text size': ['0', '1', '2'], 'no unknown fathers': [False, True], 'dark mode': [False, True],
+                     'backgrounds': [True, False], 'autosave': [False, True], 'disasters': [False, True], 'retirement': [True, False]}  # Lists of possible options for each setting
     settings_changed = False
 
     # CLAN
@@ -63,7 +57,6 @@ class Game(object):
         if self.current_screen != self.switches['cur_screen']:
             self.current_screen = self.switches['cur_screen']
             self.switch_screens = True
-
         self.clicked = False
 
         # carry commands
@@ -72,33 +65,23 @@ class Game(object):
     def carry_commands(self):
         """ Run this function to go through commands added to the switch-dictionary and carry them, then
         reset them back to normal after the action"""
-
-        # settings
-        if self.switches['setting'] is not None:  # Some value has been added to the settings and must be dealt with
+        if self.switches['setting'] is not None:
             if self.switches['setting'] in self.settings.keys():
-                # Switch setting value using function
                 self.switch_setting(self.switches['setting'])
-
-                self.switches['setting'] = None  # Action fulfilled, reset back to None
             else:
                 print('Wrong settings value:', self.switches['setting'])
-                self.switches['setting'] = None  # Wrong value added, turn back to None to avoid errors
-
-        if self.switches['save_settings']:  # User has clicked 'save settings' button
+            self.switches['setting'] = None
+        if self.switches['save_settings']:
             self.save_settings()
             self.switches['save_settings'] = False
-
         if self.switches['save_clan'] and self.clan is not None and self.cat_class is not None:
-            # User has clicked 'save clan' button
             self.clan.save_clan()
             self.cat_class.save_cats()
             self.switches['save_clan'] = False
-
-        if self.switches['switch_clan']:  # User has clicked 'save settings' button
+        if self.switches['switch_clan']:
             self.clan.switch_clans()
             self.switches['switch_clan'] = False
-
-        if self.switches['read_clans']:  # User has clicked 'save settings' button
+        if self.switches['read_clans']:
             with open('saves/clanlist.txt', 'r') as read_file:
                 clan_list = read_file.read()
                 if_clans = len(clan_list)
@@ -108,16 +91,10 @@ class Game(object):
 
     def save_settings(self):
         """ Save user settings for later use """
-        data = ''
+        data = ''.join(f"{s}:{str(self.settings[s])}" + "\n" for s in self.settings.keys())
 
-        for s in self.settings.keys():
-            data += s + ":" + str(self.settings[s]) + "\n"
-
-        # save data
         with open('saves/settings.txt', 'w') as write_file:
             write_file.write(data)
-
-        # Changes saved.
         self.settings_changed = False
 
     def load_settings(self):

@@ -1,4 +1,5 @@
-import sys, os
+import sys
+import os
 from scripts.screens import *
 
 if sys.platform == "darwin":
@@ -18,9 +19,13 @@ with open('saves/clanlist.txt', 'r') as read_file:
     if_clans = len(clan_list)
 if if_clans > 0:
     game.switches['clan_list'] = clan_list.split('\n')
-    cat_class.load_cats()
+    try:
+        cat_class.load_cats()
+    except Exception:
+        if not game.switches['error_message']:
+            game.switches['error_message'] = 'There was an error loading the cats file!'
     clan_class.load_clan()
-    
+
 # LOAD settings
 if not os.path.exists('saves/settings.txt'):
     with open('saves/settings.txt', 'w') as write_file:
@@ -44,18 +49,17 @@ while True:
     if game.settings_changed:
         verdana.change_text_brightness()
         buttons.change_button_brightness()
-    
+
     mouse.check_pos()
 
     # EVENTS
     for event in pygame.event.get():
-        if game.current_screen == 'make clan screen' and game.switches['clan_name'] == '':  # Allows user to type in Clan Name
-            if event.type == pygame.KEYDOWN:
-                if event.unicode.isalpha():  # only allows alphabet letters as an input
-                    if len(game.switches['naming_text']) < game.max_name_length:  # can't type more than max name length
-                        game.switches['naming_text'] += event.unicode
-                elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
-                    game.switches['naming_text'] = game.switches['naming_text'][:-1]
+        if game.current_screen == 'make clan screen' and game.switches['clan_name'] == '' and event.type == pygame.KEYDOWN:
+            if event.unicode.isalpha():  # only allows alphabet letters as an input
+                if len(game.switches['naming_text']) < game.max_name_length:  # can't type more than max name length
+                    game.switches['naming_text'] += event.unicode
+            elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
+                game.switches['naming_text'] = game.switches['naming_text'][:-1]
 
         if game.current_screen == 'events screen' and len(game.cur_events_list) > game.max_events_displayed:
             max_scroll_direction = len(game.cur_events_list) - game.max_events_displayed
@@ -76,6 +80,13 @@ while True:
                 if event.key == pygame.K_DOWN and abs(game.allegiance_scroll_ct) < max_scroll_direction:
                     game.allegiance_list.append(game.allegiance_list.pop(0))
                     game.allegiance_scroll_ct -= 1
+
+        if game.current_screen == 'change name screen' and game.switches['change_name'] == '' and event.type == pygame.KEYDOWN:
+            if event.unicode.isalpha() or event.unicode.isspace():  # only allows alphabet letters/space as an input
+                if len(game.switches['naming_text']) < 20:  # can't type more than max name length
+                    game.switches['naming_text'] += event.unicode
+            elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
+                game.switches['naming_text'] = game.switches['naming_text'][:-1]
 
         if event.type == pygame.QUIT:
             # close pygame
