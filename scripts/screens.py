@@ -647,8 +647,13 @@ class ProfileScreen(Screens):
         if the_cat.parent1 is None:
             verdana_small.text('parents: unknown', (250, 330 + count * 15))
             count += 1
-        elif the_cat.parent2 is None:
+        elif the_cat.parent2 is None and the_cat.parent1 in the_cat.all_cats:
             par1 = str(the_cat.all_cats[the_cat.parent1].name)
+            verdana_small.text('parents: ' + par1 + ', unknown', (250, 330 + count * 15))
+            count += 1
+        elif the_cat.parent2 is None:
+            par2 = "unknown"
+            par1 = "Error: Cat#" + the_cat.parent1 + " not found"
             verdana_small.text('parents: ' + par1 + ', unknown', (250, 330 + count * 15))
             count += 1
         else:
