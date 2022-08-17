@@ -969,7 +969,7 @@ class ListScreen(Screens):
                 elif the_cat.status == 'medicine cat':
                     if len(living_cats) > 1 and living_cats[0].status == 'leader' and living_cats[1].status == 'deputy':
                         living_cats.insert(2, the_cat)
-                    elif living_cats[0] != 'leader' and living_cats[1] != 'deputy':
+                    elif living_cats[0].status != 'leader' and living_cats[1].status != 'deputy':
                         living_cats.insert(0, the_cat)
                     else:
                         living_cats.insert(1, the_cat)
