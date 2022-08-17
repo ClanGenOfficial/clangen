@@ -1154,7 +1154,8 @@ class AllegiancesScreen(Screens):
         game.allegiance_list = []
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
-            living_cats.append(the_cat)
+            if not the_cat.dead:
+                living_cats.append(the_cat)
         if not game.clan.leader.dead:
             game.allegiance_list.append(['LEADER:', f"{str(game.clan.leader.name)} - a {game.clan.leader.describe_cat()}"])
         if game.clan.deputy != 0 and game.clan.deputy is not None and not game.clan.deputy.dead:
