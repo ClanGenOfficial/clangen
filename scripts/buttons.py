@@ -63,8 +63,8 @@ class Button(object):
         if game.clicked and clickable:
             if apprentice is not None and text == 'Change Mentor':
                 self.choose_mentor(apprentice, cat_value)
-            elif text == 'Change Name' and game.switches['naming_text'] != "":
-                self.change_name(game.switches['naming_text'], cat_value)
+            elif text == ' Change Name ' and game.switches['naming_text'] != '':
+                self.change_name(game.switches['naming_text'], game.switches['name_cat'])
             elif text in ['Next Cat', 'Previous Cat']:
                 game.switches['cat'] = values.get('cat')
             elif cat_value is None and arrow is None:
@@ -136,6 +136,7 @@ class Button(object):
             if len(name) > 1:
                 cat_value.name.suffix = name[1]
             cat_class.save_cats()
+            game.switches['naming_text'] = ''
 
 
 # BUTTONS
