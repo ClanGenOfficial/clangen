@@ -959,20 +959,26 @@ class ListScreen(Screens):
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
             if not the_cat.dead:
-                if the_cat.status == 'leader':
-                    living_cats.insert(0, the_cat)
-                elif the_cat.status == 'deputy':
-                    if len(living_cats) > 0 and living_cats[0].status == 'leader':
-                        living_cats.insert(1, the_cat)
-                    else:
+                if len(living_cats) > 0:
+                    if the_cat.status == 'leader':
                         living_cats.insert(0, the_cat)
-                elif the_cat.status == 'medicine cat':
-                    if len(living_cats) > 1 and living_cats[0].status == 'leader' and living_cats[1].status == 'deputy':
-                        living_cats.insert(2, the_cat)
-                    elif living_cats[0] != 'leader' and living_cats[1] != 'deputy':
-                        living_cats.insert(0, the_cat)
+                    elif the_cat.status == 'deputy':
+                        if living_cats[0].status == 'leader':
+                            living_cats.insert(1, the_cat)
+                        else:
+                            living_cats.insert(0, the_cat)
+                    elif the_cat.status == 'medicine cat':
+                        if len(living_cats) > 1:
+                            if living_cats[0].status == 'leader' and living_cats[1].status == 'deputy':
+                                living_cats.insert(2, the_cat)
+                            elif living_cats[0].status == 'leader' or living_cats[0].status == 'deputy':
+                                living_cats.insert(1, the_cat)
+                            else:
+                                living_cats.insert(0, the_cat)
+                        else:
+                            living_cats.append(the_cat)
                     else:
-                        living_cats.insert(1, the_cat)
+                        living_cats.append(the_cat)
                 else:
                     living_cats.append(the_cat)
         all_pages = int(ceil(len(living_cats) / 24.0)) if len(living_cats) > 24 else 1
