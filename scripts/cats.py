@@ -184,8 +184,21 @@ class Cat(object):
         self.large_sprite = None
 
         # experience and current patrol status
-        self.experience = 0
         self.in_camp = 1
+        if self.age in ['kitten']:
+            self.experience = 0
+        elif self.age in ['adolescent']:
+            self.experience = randint(0,19)
+        elif self.age in ['young adult']:
+            self.experience = randint(10,40)
+        elif self.age in ['adult']:
+            self.experience = randint(20,50)
+        elif self.age in ['senior adult']:
+            self.experience = randint(30,60)
+        elif self.age in ['elder']:
+            self.experience = randint (40,70)
+        else:
+            self.experience = 0
 
         experience_levels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
         self.experience_level = experience_levels[math.floor(self.experience / 10)]
