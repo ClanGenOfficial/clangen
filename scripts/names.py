@@ -80,7 +80,7 @@ class Name(object):
                    "Smores", "Evilface", "Nick", "Mitski", "Ash", "Ah", "Violet", "Alcina", "Worm", "Monika", "Rat", "Bongo", "Bunny", "Viktor", "Steve", "Jewels", "Blu", "Rue",
                    "Stinky", "Garnet", "Anita", "Sloane", "Emi", "Vivienne", "Amber", "Moon", "Twilight", "River", "Glass", "Goose", "Hunter", "Amity", "Stripes", "Cowbell",
                    "Rory", "Lobster", "Slug", "Starfish", "Salmon", "Judy", "Johnny", "Kerry", "Evelyn", "Holly", "Bolt", "Millie", "Jessica", "Laku", "Dragonfly", "X’ek", "Silva",
-                   "Dreamy", "Decay", "Twister", "Shay", "Louis", "Oleander", "Spots", "Cream", "Omlet", "Gizmo", "Feather", "Twix", "Silver,", "Ghost", "Wisp", "Obi Wan", "Mango",
+                   "Dreamy", "Decay", "Twister", "Shay", "Louis", "Oleander", "Spots", "Cream", "Omlet", "Gizmo", "Feather", "Twix", "Silver", "Ghost", "Wisp", "Obi Wan", "Mango",
                    "Via", "Olivia", "Mr. Whiskers", "Fluffy", "Shimmer", "Mimi", "Melody", "Leon", "Punk", "Mew", "Fern", "Marceline", "Whisper", "Skrunkly", "Stolas", "Rio",
                    "Steven", "Pear", "Sekhmet", "Mellon", "Ember", "Loona", "Saki", "Tiny", "Sandy", "Miles", "Mini", "Judas", "Zim", "Vinyl", "Rarity", "Trixie", "Sunset",
                    "Anubis", "Armin", "Amy", "Alice", "Alec", "Baphomet", "Bean", "Bastet", "Birb", "Burm", "Chrissy", "Cherry", "Chief", "Crow", "Carrie", "Calvin", "Cookie",

@@ -94,7 +94,7 @@ class Button(object):
             new_button = pygame.transform.scale(new_button, (192, 35))
         self.used_screen.blit(new_button, new_pos)
         if game.clicked and clickable:
-            if apprentice is not None and text == 'Change Mentor':
+            if apprentice is not None:
                 self.choose_mentor(apprentice, cat_value)
             elif text == ' Change Name ' and game.switches['naming_text'] != '':
                 self.change_name(game.switches['naming_text'], game.switches['name_cat'])

@@ -93,7 +93,6 @@ class Events(object):
 
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
                     self._extracted_from_perform_ceremonies_19(cat, 'medicine cat', ' has earned their medicine cat name')
-
                     game.clan.new_medicine_cat(cat)
                 elif cat.status == 'warrior' and cat.age == 'elder' and len(cat.apprentice) < 1:
                     cat.status_change('elder')

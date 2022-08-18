@@ -959,8 +959,8 @@ example_cat.update_sprite()
 
 
 # Twelve example cats
-def example_cats():
-    e = random.sample(range(12), 2)
+def create_example_cats():
+    e = random.sample(range(12), 3)
     for a in range(12):
         if a in e:
             game.choose_cats[a] = Cat(status='warrior')
