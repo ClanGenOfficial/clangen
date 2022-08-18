@@ -575,27 +575,11 @@ class ProfileScreen(Screens):
         if next_cat == 1:
             next_cat = 0
 
-        if the_cat.status == 'leader':
-            previous_cat = 0
-            if game.clan.deputy is not None:
-                next_cat = game.clan.deputy.ID
-            elif game.clan.medicine_cat is not None:
-                next_cat = game.clan.medicine_cat.ID
-        elif the_cat.status == 'deputy':
-            if game.clan.leader is not None:
-                previous_cat = game.clan.leader.ID
-            if game.clan.medicine_cat is not None:
-                next_cat = game.clan.medicine_cat.ID
-        elif the_cat.status == 'medicine cat':
-            if game.clan.deputy is not None:
-                previous_cat = game.clan.deputy.ID
-            elif game.clan.leader is not None:
-                previous_cat = game.clan.leader.ID
         if next_cat != 0:
             buttons.draw_button((-40, 40), text='Next Cat', cat=next_cat)
+
         if previous_cat != 0:
             buttons.draw_button((40, 40), text='Previous Cat', cat=previous_cat)
-
         # Info in string
         cat_name = str(the_cat.name)  # name
         cat_thought = the_cat.thought  # thought
@@ -974,28 +958,7 @@ class ListScreen(Screens):
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
             if not the_cat.dead:
-                if len(living_cats) > 0:
-                    if the_cat.status == 'leader':
-                        living_cats.insert(0, the_cat)
-                    elif the_cat.status == 'deputy':
-                        if living_cats[0].status == 'leader':
-                            living_cats.insert(1, the_cat)
-                        else:
-                            living_cats.insert(0, the_cat)
-                    elif the_cat.status == 'medicine cat':
-                        if len(living_cats) > 1:
-                            if living_cats[0].status == 'leader' and living_cats[1].status == 'deputy':
-                                living_cats.insert(2, the_cat)
-                            elif living_cats[0].status == 'leader' or living_cats[0].status == 'deputy':
-                                living_cats.insert(1, the_cat)
-                            else:
-                                living_cats.insert(0, the_cat)
-                        else:
-                            living_cats.append(the_cat)
-                    else:
-                        living_cats.append(the_cat)
-                else:
-                    living_cats.append(the_cat)
+                living_cats.append(the_cat)
         all_pages = int(ceil(len(living_cats) / 24.0)) if len(living_cats) > 24 else 1
         pos_x = 0
         pos_y = 0
