@@ -575,9 +575,24 @@ class ProfileScreen(Screens):
         if next_cat == 1:
             next_cat = 0
 
+        if the_cat.status == 'leader':
+            previous_cat = 0
+            if game.clan.deputy is not None:
+                next_cat = game.clan.deputy.ID
+            elif game.clan.medicine_cat is not None:
+                next_cat = game.clan.medicine_cat.ID
+        elif the_cat.status == 'deputy':
+            if game.clan.leader is not None:
+                previous_cat = game.clan.leader.ID
+            if game.clan.medicine_cat is not None:
+                next_cat = game.clan.medicine_cat.ID
+        elif the_cat.status == 'medicine cat':
+            if game.clan.deputy is not None:
+                previous_cat = game.clan.deputy.ID
+            elif game.clan.leader is not None:
+                previous_cat = game.clan.leader.ID
         if next_cat != 0:
             buttons.draw_button((-40, 40), text='Next Cat', cat=next_cat)
-
         if previous_cat != 0:
             buttons.draw_button((40, 40), text='Previous Cat', cat=previous_cat)
 
