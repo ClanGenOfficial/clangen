@@ -280,20 +280,21 @@ class MakeClanScreen(Screens):
     def first_phase(self):
         # layout
         name_clan_img = pygame.image.load('resources/name_clan.png')
+        screen.blit(name_clan_img, (0, 0))
 
-        self.game_screen.blit(game.naming_box, (310, 200))
+        self.game_screen.blit(game.naming_box, (150, 620))
         if game.settings['dark mode']:
-            verdana_black.text(game.switches['naming_text'], (315, 200))
+            verdana_black.text(game.switches['naming_text'], (155, 620))
         else:
-            verdana.text(game.switches['naming_text'], (315, 200))
-        verdana.text('-Clan', (455, 200))
-        buttons.draw_button(('center', 300), text='Randomize', naming_text=choice(names.normal_prefixes))
-        buttons.draw_button(('center', 350), text='Reset Name', naming_text='')
+            verdana.text(game.switches['naming_text'], (155, 620))
+        verdana.text('-Clan', (290, 620))
+        buttons.draw_button((350, 620), text='Randomize', naming_text=choice(names.normal_prefixes))
+        buttons.draw_button((450, 620), text='Reset Name', naming_text='')
 
         # buttons
         verdana_small.text('Note: going back to main menu resets the generated cats.', (50, 25))
         buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen', naming_text='')
-        buttons.draw_button(('center', 500), text='Name Clan', clan_name=game.switches['naming_text'])
+        buttons.draw_button((570, 620), text='Name Clan', clan_name=game.switches['naming_text'])
 
     def second_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
