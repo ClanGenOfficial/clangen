@@ -396,7 +396,7 @@ class Cat(object):
                                      'Is reciting the names of herbs aloud', 'Wishes their clanmates could understand their struggles',
                                      'Was startled awake in the wee hours by a vivid dream', 'Is running low on catmint', 'Is running low on marigold',
                                      'Is running low on burdock root', 'Is running low on poppy seeds', 'Is running low on cobwebs', 'Is running low on feverfew',
-                                     'Is running low on borage leaves' 'Is running low on tansy' 'Is running low on mouse bile',
+                                     'Is running low on borage leaves', 'Is running low on tansy', 'Is running low on mouse bile',
                                      'Is teaching kits about what plants to stay away from', 'Plans to go out gathering herbs today',
                                      'Has been hearing the voices of StarClan cats...', 'Is lining nests with fresh moss and feathers'])
                     if cat.trait == 'bloodthirsty':

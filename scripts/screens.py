@@ -30,20 +30,19 @@ class StartScreen(Screens):
         # background
         bg = pygame.image.load("resources/menu.png")
         screen.blit(bg, (0, 0))
-        # example_cat.draw_big((350, 150))
 
         # buttons
         if game.clan is not None and game.switches['error_message'] == '':
-            buttons.draw_button((70, 310), image='continue', text='Continue >', cur_screen='clan screen')
-            buttons.draw_button((70, 355), image='switch_clan', text='Switch Clan >', cur_screen='switch clan screen')
+            buttons.draw_image_button((70, 310), path='continue', text='Continue >', cur_screen='clan screen')
+            buttons.draw_image_button((70, 355), path='switch_clan', text='Switch Clan >', cur_screen='switch clan screen')
         elif game.clan is not None and game.switches['error_message']:
-            buttons.draw_button((70, 310), image='continue', text='Continue >', available=False)
-            buttons.draw_button((70, 355), image='switch_clan', text='Switch Clan >', cur_screen='switch clan screen')
+            buttons.draw_image_button((70, 310), path='continue', text='Continue >', available=False)
+            buttons.draw_image_button((70, 355), path='switch_clan', text='Switch Clan >', cur_screen='switch clan screen')
         else:
-            buttons.draw_button((70, 310), image='continue', text='Continue >', available=False)
-            buttons.draw_button((70, 355), image='switch_clan', text='Switch Clan >', available=False)
-        buttons.draw_button((70, 400), image='new_clan', text='Make New >', cur_screen='make clan screen')
-        buttons.draw_button((70, 445), image='settings', text='Settings & Info >', cur_screen='settings screen')
+            buttons.draw_image_button((70, 310), path='continue', text='Continue >', available=False)
+            buttons.draw_image_button((70, 355), path='switch_clan', text='Switch Clan >', available=False)
+        buttons.draw_image_button((70, 400), path='new_clan', text='Make New >', cur_screen='make clan screen')
+        buttons.draw_image_button((70, 445), path='settings', text='Settings & Info >', cur_screen='settings screen')
 
         if game.switches['error_message']:
             buttons.draw_button((50, 50), text='There was an error loading the game:', available=False)
@@ -1192,8 +1191,10 @@ class AllegiancesScreen(Screens):
         result = 0
         for living_cat in living_cats:
             if str(living_cat.status) == arg1:
-                if not result:
+                if result == 0:
                     game.allegiance_list.append([arg2, f"{str(living_cat.name)} - a {living_cat.describe_cat()}"])
+                else:
+                    game.allegiance_list.append(["", f"{str(living_cat.name)} - a {living_cat.describe_cat()}"])
                 result += 1
         if not result:
             game.allegiance_list.append([arg2, ''])

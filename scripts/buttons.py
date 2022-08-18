@@ -7,16 +7,51 @@ class Button(object):
     used_screen = screen
     used_mouse = mouse
 
-    def __init__(self, font=verdana, frame_colour=(200, 200, 200), clickable_colour=(150, 150, 150), unavailable_colour=(120, 120, 120), padding=(5, 3)):
+    def __init__(self, font=verdana, padding=(5, 3)):
         self.text = ''
         self.font = font
-        self.reset_colour(frame_colour, clickable_colour, unavailable_colour)
         self.padding = padding
+        self.unavailable_colour = (120, 120, 120)
+        self.clickable_colour = (150, 150, 150)
+        self.frame_colour = (200, 200, 200)
 
     def reset_colour(self, frame_colour, clickable_colour, unavailable_colour):
         self.frame_colour = frame_colour
         self.clickable_colour = clickable_colour
         self.unavailable_colour = unavailable_colour
+
+    def draw_button(self, pos, available=True, text='', **values):
+        print('a')
+
+    def draw_image_button(self, pos, available=True, path=None, **values):
+        is_clickable = False
+        if available:
+            image_path = f'resources/{path}.png'
+        else:
+            image_path = f'resources/{path}_unavailable.png'
+        image = pygame.image.load(image_path)
+        button = pygame.transform.scale(image, (192, 35))
+        collided = self.used_screen.blit(button, pos)
+        if available and collided.collidepoint(self.used_mouse.pos):
+            is_clickable = True
+            image_path = f'resources/{path}_hover.png'
+            image = pygame.image.load(image_path)
+            button = pygame.transform.scale(image, (192, 35))
+        self.used_screen.blit(button, pos)
+        if game.clicked and is_clickable:
+            self.activate(values)
+
+    def calculate_position(self, button, pos):
+        new_pos = list(pos)
+        if pos[0] == 'center':
+            new_pos[0] = screen_x / 2 - button.get_width() / 2
+        elif pos[0] < 0:
+            new_pos[0] = screen_x + pos[0] - button.get_width()
+        if pos[1] == 'center':
+            new_pos[1] = screen_y / 2 - button.get_height() / 2
+        elif pos[1] < 0:
+            new_pos[1] = screen_y + pos[1] - button.get_height()
+        return new_pos
 
     def draw_button(self, pos, available=True, image=None, text='', cat_value=None, arrow=None, apprentice=None, **values):
         dynamic_image = False
@@ -24,9 +59,7 @@ class Button(object):
             dynamic_image = True
             image = f"resources/{image}"
         if not available:
-            colour = self.unavailable_colour
-            if image is not None:
-                image = f'{image}_unavailable'
+            colour = self.unavailable_colour  # if image is not None:  #     image = f'{image}_unavailable'
         else:
             colour = self.frame_colour
         if image is None:
