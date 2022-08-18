@@ -298,9 +298,8 @@ class MakeClanScreen(Screens):
 
     def second_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        verdana.text('These twelve cats are your potential clan members.', ('center', 115))
-        verdana.text('Some of them will be left behind.', ('center', 135))
-        verdana.text('First, pick a leader to lead ' + game.switches['clan_name'] + 'Clan through any difficulties.', ('center', 160))
+        leader_img = pygame.image.load('resources/leader.png')
+        screen.blit(leader_img, (0,-20))
 
         for u in range(6):
             buttons.draw_button((50, 150 + 50 * u), image=game.choose_cats[u].sprite, cat=u)
@@ -310,7 +309,6 @@ class MakeClanScreen(Screens):
 
         if game.switches['cat'] is not None and 12 > game.switches['cat'] >= 0:
             self._extracted_from_second_phase_16()
-        verdana_small.text('Note: going back to main menu resets the generated cats.', (50, 25))
 
         buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen', naming_text='')
 
@@ -337,7 +335,8 @@ class MakeClanScreen(Screens):
 
     def third_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        verdana.text('Second, choose your deputy. This cat will support their leader and take over if things go awry.', ('center', 120))
+        deputy_img = pygame.image.load('resources/deputy.png')
+        screen.blit(deputy_img, (0, -20))
 
         for u in range(6):
             if game.switches['leader'] == u:
@@ -375,7 +374,8 @@ class MakeClanScreen(Screens):
 
     def fourth_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        verdana.text('Third, pick your medicine cat. They will aid the sick and wounded and communicate with StarClan.', ('center', 120))
+        medic_img = pygame.image.load('resources/medic.png')
+        screen.blit(medic_img, (0, -20))
 
         for u in range(6):
             if game.switches['leader'] == u:
@@ -418,9 +418,8 @@ class MakeClanScreen(Screens):
 
     def fifth_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        verdana.text('Finally, recruit from 4 to 7 more members to your clan.', ('center', 120))
-
-        verdana.text('Choose wisely...', ('center', 150))
+        clan_img = pygame.image.load('resources/clan.png')
+        screen.blit(clan_img, (0, -20))
         for u in range(6):
             if game.switches['leader'] == u:
                 game.choose_cats[u].draw((screen_x / 2 - 25, 550))
