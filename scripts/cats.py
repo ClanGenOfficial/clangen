@@ -246,7 +246,7 @@ class Cat(object):
                     starclan_thoughts.extend([  # thoughts with other cats that are alive
                         'Is watching over ' + other_name, 'Is curious about what ' + other_name + ' is doing', 'Wants to send a message to ' + other_name,
                         'Is currently walking in the dreams of ' + other_name, 'Is proud of ' + other_name, 'Is disappointed in ' + other_name, 'Wants to warn ' + other_name,
-                        'Has been following the growth of ' + other_name, 'Has seen the future demise of ' + other_name, 'Is looking to visit ' + other_name + ' in a dream soon',
+                        'Has been following the growth of ' + other_name, 'Has seeen ' + other_name + '\'s future demise', 'Is looking to visit ' + other_name + ' in a dream soon',
                         'Accidentally found themselves in ' + other_name + '\'s dreams the other night', 'Wants to warn ' + other_name + ' about something that will happen soon',
                         'Knows what ' + other_name + '\'s secret is and wants to tell some cat'])
                 if cat.status in ['kitten', 'apprentice', 'medicine cat apprentice']:  # dead young cat thoughts
@@ -330,21 +330,15 @@ class Cat(object):
                                              'Can\'t take their eyes off of ' + other_name + ' for more than a few seconds',
                                              'Gave ' + other_name + ' a trinket they found while out on patrol today'])
                         else:
-                            thoughts.extend(
-                                ['Is fighting with ' + other_name, 'Is talking with ' + other_name, 'Is sharing prey with ' + other_name, 'Heard a rumor about ' + other_name,
-                                 'Just told ' + other_name + ' a hilarious joke'])
-                    if cat.age == other_cat.age and cat.parent1 != other_cat.parent1 and cat.parent2 != other_cat.parent2 and cat.ID not in [other_cat.parent1,
-                                                                                                                                             other_cat.parent2] and other_cat.ID \
-                            not in [
-                        cat.parent1, cat.parent2] and cat.mate is None and other_cat.mate is None and cat.age == other_cat.age:
-                        thoughts.extend(
-                            ['Is developing a crush on ' + other_name, 'Is spending a lot of time with ' + other_name, 'Feels guilty about hurting ' + other_name + '\'s feelings',
-                             'Can\'t seem to stop talking about ' + other_name, 'Would spend the entire day with ' + other_name + ' if they could',
-                             'Was caught enjoying a moonlit stroll with ' + other_name + ' last night...',
-                             'Keeps shyly glancing over at ' + other_name + ' as the clan talks about kits', 'Gave a pretty flower they found to ' + other_name,
-                             'Is admiring ' + other_name + ' from afar...', 'Is thinking of the best ways to impress ' + other_name, 'Doesn\'t want ' + other_name + ' to overwork',                                                                                                                           ' themselves',
-                             'Is rolling around a little too playfully with ' + other_name + '...', 'Is wondering what it would be like to grow old with ' + other_name,
-                             'Thinks that ' + other_name + ' is really funny', 'Thinks that ' + other_name + ' is really charming'])
+                            thoughts.extend(['Is fighting with ' + other_name, 'Is talking with ' + other_name, 'Is sharing prey with ' + other_name, 'Heard a rumor about ' + other_name,
+                                             'Just told ' + other_name + ' a hilarious joke'])
+                    if cat.age == other_cat.age and cat.parent1 != other_cat.parent1 and cat.parent2 != other_cat.parent2 and cat.ID not in [other_cat.parent1,other_cat.parent2] and other_cat.ID not in [cat.parent1, cat.parent2] and cat.mate is None and other_cat.mate is None and cat.age == other_cat.age:
+                        thoughts.extend(['Is developing a crush on ' + other_name, 'Is spending a lot of time with ' + other_name, 'Feels guilty about hurting ' + other_name + '\'s feelings',
+                                         'Can\'t seem to stop talking about ' + other_name, 'Would spend the entire day with ' + other_name + ' if they could',
+                                         'Was caught enjoying a moonlit stroll with ' + other_name + ' last night...',
+                                         'Keeps shyly glancing over at ' + other_name + ' as the clan talks about kits', 'Gave a pretty flower they found to ' + other_name,
+                                         'Is admiring ' + other_name + ' from afar...', 'Is thinking of the best ways to impress ' + other_name, 'Doesn\'t want ' + other_name + ' to overwork themselves',
+                                         'Is rolling around a little too playfully with ' + other_name + '...', 'Is wondering what it would be like to grow old with ' + other_name,])
                 if cat.status == 'kitten':
                     thoughts.extend(['Plays mossball by themselves', 'Is annoying older cats', 'Wonders what their full name will be', 'Pretends to be a warrior',
                                      'Is becoming interested in herbs', 'Tries to sneak out of camp', 'Is rolling around on the ground', 'Is chasing their tail',
@@ -361,6 +355,14 @@ class Cat(object):
                                      'Is hatching a plan to sneak out of camp and play', 'Is running like a whirlwind around the camp', 'Is pretending to be the clan leader',
                                      'Is pretending to be deputy', 'Is pretending to be the medicine cat', 'Doesn\'t want to grow up yet...', 'Wants to be a warrior already!',
                                      'Got in trouble for bringing thorns into the nest', 'Is asking older cats how kits are born'])
+                    if cat.trait == 'nervous':
+                        thoughts.extend(['Was startled by a croaking frog', 'Is doing their best not to get stepped on by the bigger cats']) 
+                    elif cat.trait == 'charming':
+                        thoughts.extend(['Is rolling around cutely while warriors look upon them', 'Is rubbing up against the warriors\' legs',
+                                         'Is hoping the patrol will come back with a special gift for them like usual', 'Is trying to purr thier way out of trouble with the Medicine Cat'])
+                    elif cat.trait == 'impulsive':
+                        thoughts.extend(['Keeps streaking across the clearing', 'Is stuck in a tree... again', 'Is complaining of a tummy ache after eating too much',
+                                         'Is awfully close to getting a nip on the rump for misbehaving', 'Is waiting for an opportunity to sprint out of sight'])
                 elif cat.status == 'apprentice':
                     thoughts.extend(['Is thinking about the time they caught a huge rabbit', 'Wonders what their full name will be', 'Is irritating their mentor',
                                      'Is arguing with their mentor', 'Is listening to their mentor', 'Plans to visit the elders soon', "Practices the hunting crouch",
@@ -631,7 +633,7 @@ class Cat(object):
                     elif cat.trait == 'strange':
                         thoughts.extend(['No thoughts, head empty', 'Insists they they received ten lives instead of nine', 'Has a crazed look in their eyes'
                                          'Is wondering how many cats would agree to changing the clan\'s name...'])
-                elif cat.age == 'elder':
+                elif cat.status == 'elder':
                     thoughts.extend(['Is complaining about their nest being too rough', 'Is complaining about their aching joints', 'Is telling stories about when they were young',
                                      'Is giving advice to younger cats', 'Is complaining about thorns in their nest', 'Is bossing around the younger cats',
                                      'Is telling scary stories to the younger cats', 'Is snoring in their sleep', 'Thinking about how too many cats die young',
