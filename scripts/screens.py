@@ -575,18 +575,34 @@ class ProfileScreen(Screens):
         if len(the_cat.former_apprentices) != 0 and the_cat.former_apprentices[0] is not None:
             if len(the_cat.former_apprentices) == 1:
                 former_apps = 'former apprentice: ' + str(the_cat.former_apprentices[0].name)
+                verdana_small.text(former_apps, (490, 230 + count2 * 15))
+                count2 += 1
+            elif len(the_cat.former_apprentices) == 2:
+                former_apps = 'former apprentices: ' + str(the_cat.former_apprentices[0].name) + ', ' + str(the_cat.former_apprentices[1].name)
+                verdana_small.text(former_apps, (490, 230 + count2 * 15))
+                count2 += 1
             else:
-                former_apps = 'former apprentices: '
-                num=1
+                num = 1
+                rows = []
+                name = ''
                 for cat in the_cat.former_apprentices:
-                    if num % 2 == 0:
-                        former_apps += str(cat.name) + ', '
-                    else:
-                        former_apps += str(cat.name) + ', '
+                    name = name + str(cat.name) + ', '
+                    if num == 2:
+                        rows.append(name)
+                        name = ''
+                        num+=1
+                    if num % 3 == 0 and name != '':
+                        rows.append(name)
+                        name = ''
                     num += 1
-                former_apps = former_apps[:len(former_apps) - 2]
-            verdana_small.text(former_apps, (490, 230 + count2 * 15))
-            count2 += 1
+                for ind in range(len(rows)):
+                    if ind == 0:
+                        verdana_small.text('former apprentices: ' + rows[ind], (490, 230 + count2 * 15))
+                    elif ind == len(rows) - 1:
+                        verdana_small.text(rows[ind][:-2], (490, 230 + count2 * 15))
+                    else:
+                        verdana_small.text(rows[ind], (490, 230 + count2 * 15))
+                    count2+=1
         if the_cat.age == 'kitten':
             verdana_small.text('young', (300, 230 + count * 15))
         elif the_cat.age == 'elder':
