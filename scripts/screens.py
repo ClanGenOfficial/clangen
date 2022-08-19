@@ -577,10 +577,10 @@ class ProfileScreen(Screens):
                 former_apps = 'former apprentice: ' + str(the_cat.former_apprentices[0].name)
             else:
                 former_apps = 'former apprentices: '
-                num = 1
+                num=1
                 for cat in the_cat.former_apprentices:
                     if num % 2 == 0:
-                        former_apps += str(cat.name) + ', ' + '\n'
+                        former_apps += str(cat.name) + ', '
                     else:
                         former_apps += str(cat.name) + ', '
                     num += 1
@@ -1274,7 +1274,7 @@ class ChooseMentorScreen2(Screens):
             if len(the_cat.former_apprentices) == 1:
                 former_apps = 'former apprentice: ' + str(the_cat.former_apprentices[0].name)
             else:
-                former_apps = []
+                former_apps = 'former apprentices: '
                 for cat in the_cat.former_apprentices:
                     former_apps += str(cat.name) + ', '
                 former_apps = former_apps[:len(former_apps) - 2]
