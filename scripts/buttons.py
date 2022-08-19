@@ -122,10 +122,10 @@ class Button(object):
                         game.switches[key].append(value)
             elif key == 'mate':
                 if value is not None:
-                    cat_value.mate = value.ID
-                    value.mate = cat_value.ID
+                    cat_value.mate = value
+                    value.mate = cat_value
                 else:
-                    cat_class.all_cats[cat_value.mate].mate = None
+                    cat_value.mate.mate = None
                     cat_value.mate = None
                 game.switches['mate'] = None
         if arrow is not None and game.switches['cur_screen'] == 'events screen':
@@ -154,22 +154,24 @@ class Button(object):
 
     def choose_mentor(self, apprentice, cat_value):
         if apprentice not in cat_value.apprentice:
+            print("APPRENTICE" ,apprentice)
             apprentice.mentor.former_apprentices.append(apprentice)
             apprentice.mentor.apprentice.remove(apprentice)
             apprentice.mentor = cat_value
             cat_value.apprentice.append(apprentice)
         game.current_screen = 'clan screen'
-        cat_class.save_cats()
+        game.clan.save_clan()
 
     def change_name(self, name, cat_value):
-        cat_value = cat_class.all_cats.get(cat_value)
-        if game.switches['naming_text'] != '':
-            name = game.switches['naming_text'].split(' ')
-            cat_value.name.prefix = name[0]
-            if len(name) > 1:
-                cat_value.name.suffix = name[1]
-            cat_class.save_cats()
-            game.switches['naming_text'] = ''
+        print(name, " " , cat_value)
+        #cat_value = cat_class.all_cats.get(cat_value)
+        #if game.switches['naming_text'] != '':
+        #    name = game.switches['naming_text'].split(' ')
+        #    cat_value.name.prefix = name[0]
+        #    if len(name) > 1:
+        #        cat_value.name.suffix = name[1]
+        #    cat_class.save_cats()
+        #    game.switches['naming_text'] = ''
 
 
 # BUTTONS

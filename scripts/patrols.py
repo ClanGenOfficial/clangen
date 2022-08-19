@@ -700,6 +700,12 @@ class Patrol(object):
                 if self.success:
                     new_cat_status = choice(['warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'apprentice', 'apprentice', 'apprentice', 'elder'])
                     kit = Cat(status=new_cat_status)
+                    #create and update relationships
+                    relationships = []
+                    for cat in game.clan.clan_cats:
+                        cat.relationships.append(Relationship(cat,kit))
+                        relationships.append(Relationship(kit,cat))
+                    kit.relationships = relationships
                     if randint(0, 1):
                         kit.name.suffix = ""
                     game.clan.add_cat(kit)
@@ -745,6 +751,12 @@ class Patrol(object):
                 # stuff that happens after the results
                 if self.success:
                     kit = Cat(status='warrior')
+                    #create and update relationships
+                    relationships = []
+                    for cat in game.clan.clan_cats:
+                        cat.relationships.append(Relationship(cat,kit))
+                        relationships.append(Relationship(kit,cat))
+                    kit.relationships = relationships
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
                     if randint(0, 1):
@@ -760,6 +772,12 @@ class Patrol(object):
                 if self.success:
                     new_cat_status = choice(['warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'apprentice', 'apprentice', 'apprentice'])
                     kit = Cat(status=new_cat_status)
+                    #create and update relationships
+                    relationships = []
+                    for cat in game.clan.clan_cats:
+                        cat.relationships.append(Relationship(cat,kit))
+                        relationships.append(Relationship(kit,cat))
+                    kit.relationships = relationships
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a kittypet'
                     self.patrol_cats.append(kit)
@@ -780,12 +798,27 @@ class Patrol(object):
                 if self.success:
                     new_cat_status = choice(['warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'medicine cat'])
                     kit = Cat(status=new_cat_status)
+                    #create and update relationships
+                    relationships = []
+                    for cat in game.clan.clan_cats:
+                        cat.relationships.append(Relationship(cat,kit))
+                        relationships.append(Relationship(kit,cat))
+                    kit.relationships = relationships
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
                     self.patrol_cats.append(kit)
                     kits = choice([2, 2, 2, 3])
                     for new_kit in range(kits):
-                        new_kit = Cat(parent1=kit.ID, moons=0)
+                        new_kit = Cat(parent1=kit, moons=0)
+                        #create and update relationships
+                        for cat in game.clan.clan_cats:
+                            if cat.ID is new_kit.parent1.ID:
+                                cat.relationships.append(Relationship(cat,new_kit,False,True))
+                                relationships.append(Relationship(new_kit,cat,False,True))
+                            else:
+                                cat.relationships.append(Relationship(cat,new_kit))
+                                relationships.append(Relationship(new_kit,cat))
+                        new_kit.relationships = relationships
                         game.clan.add_cat(new_kit)
                 return
 

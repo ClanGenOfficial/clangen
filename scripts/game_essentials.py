@@ -18,6 +18,7 @@ class Game(object):
     allegiance_scroll_ct = 0
     cur_events_list = []
     allegiance_list = []
+    relation_events_list = []
 
     down = pygame.image.load("sprites/down.png")
     down = pygame.transform.scale(down, (75, 75))
@@ -46,7 +47,6 @@ class Game(object):
 
     # CLAN
     clan = None
-    cat_class = None
 
     def __init__(self, current_screen='start screen'):
         self.current_screen = current_screen
@@ -74,9 +74,8 @@ class Game(object):
         if self.switches['save_settings']:
             self.save_settings()
             self.switches['save_settings'] = False
-        if self.switches['save_clan'] and self.clan is not None and self.cat_class is not None:
+        if self.switches['save_clan'] and self.clan is not None:
             self.clan.save_clan()
-            self.cat_class.save_cats()
             self.switches['save_clan'] = False
         if self.switches['switch_clan']:
             self.clan.switch_clans()
