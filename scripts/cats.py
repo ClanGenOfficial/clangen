@@ -556,7 +556,7 @@ class Cat(object):
                                          'Is listening to a clanmate\'s struggles with love'])
                     elif cat.trait == 'childish':
                         thoughts.extend(['Is chasing a butterfly around the camp', 'Is pouncing on unsuspecting apprentices', 'Is playing with their food', 'Is giggleing about clan drama with friends',
-                                         'Is crunching leaves wuth their paws', 'Is whining about clan duties', 'Is teaching new games to the kits', 'Is distracted by a shiny twoleg trinket they found',
+                                         'Is crunching leaves with their paws', 'Is whining about clan duties', 'Is teaching new games to the kits', 'Is distracted by a shiny twoleg trinket they found',
                                          'Is gnawing on a small bone busily', 'Is batting at a ball of moss', 'Is preoccupied playing an important game of Hide and Seek', 'Is laughing gleefully!'])
                     elif cat.trait == 'confident':
                         thoughts.extend(['Boasts about how much fresh kill they intend to bring back to camp today', 'Is building up a fellow clanmate\'s confidence in battle!', 'Is puffing their chest out',
@@ -591,7 +591,7 @@ class Cat(object):
                                          'Is asking the deputy what they can do to be helpful around camp today', 'Was the first to rise this morning', 'Roused the other cats awake this morning',
                                          'Is repairing one of the camp walls', 'Is making sure the kits behave', 'Isn\'t sure that they should be idling around at the moment',
                                          'Is planning on going to sleep early tonight', 'Is planning to wake up early tomorrow', 'Is offering to lead the next patrol out',
-                                         'Is licking their chest in embarrassment after being praised byt the deputy', 'Is making sure no work is being shirked!'])
+                                         'Is licking their chest in embarrassment after being praised by the deputy', 'Is making sure no work is being shirked!'])
                     elif cat.trait == 'sneaky':
                         thoughts.extend(['Is sniffing the edges of the camp wall suspiciously...', 'Smells like they may have rolled in catmint recently...',
                                          'Is currently eavesdropping on two clanmates, ears pricked', 'Is avoiding the conversation topic at paw', 'Is spreading rumors about clanmates',
