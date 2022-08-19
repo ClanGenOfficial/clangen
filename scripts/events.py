@@ -86,7 +86,6 @@ class Events(object):
                 if cat.status == 'kitten' and cat.age == 'adolescent':
                     cat.status_change('apprentice')
                     game.cur_events_list.append(f'{str(cat.name)} has started their apprenticeship')
-
                     cat.update_mentor()
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
                     self._extracted_from_perform_ceremonies_19(cat, 'warrior', ' has earned their warrior name')
@@ -159,6 +158,8 @@ class Events(object):
         chance = 100
         if self.living_cats < 10:
             chance = 50
+        elif self.living_cats > 50:
+            chance = 500
         elif self.living_cats > 30:
             chance = 200
         if randint(1, chance) == 1 and cat.age != 'kitten':
