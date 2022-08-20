@@ -1,6 +1,7 @@
 import pygame
 from .game_essentials import *
 
+
 class Sprites(object):
     def __init__(self, original_size, new_size=None):
         self.size = original_size  # size of a single sprite in a spritesheet
@@ -20,8 +21,7 @@ class Sprites(object):
         # find singular sprite from group
         # pixels will be calculated automatically, so for x and y, just use 0, 1, 2, 3 etc.
         new_sprite = pygame.Surface((self.size, self.size), pygame.HWSURFACE | pygame.SRCALPHA)
-        new_sprite.blit(self.groups[group_name], (0, 0),
-                        (x * self.size, y * self.size, (x + 1) * self.size, (y + 1) * self.size))
+        new_sprite.blit(self.groups[group_name], (0, 0), (x * self.size, y * self.size, (x + 1) * self.size, (y + 1) * self.size))
         return new_sprite
 
     def make_group(self, spritesheet, pos, name, sprites_x=3, sprites_y=3):  # pos = ex. (2, 3), no single pixels
@@ -30,8 +30,7 @@ class Sprites(object):
         # making the group
         new_group = pygame.Surface((self.size * sprites_x, self.size * sprites_y), pygame.HWSURFACE | pygame.SRCALPHA)
         new_group.blit(self.spritesheets[spritesheet], (0, 0),
-                       (pos[0] * sprites_x * self.size, pos[1] * sprites_y * self.size,
-                        (pos[0] + sprites_x) * self.size, (pos[1] + sprites_y) * self.size))
+                       (pos[0] * sprites_x * self.size, pos[1] * sprites_y * self.size, (pos[0] + sprites_x) * self.size, (pos[1] + sprites_y) * self.size))
         self.groups[name] = new_group
 
         # splitting group into singular sprites and storing into self.sprites section
@@ -39,8 +38,7 @@ class Sprites(object):
         y_spr = 0
         for x in range(sprites_x * sprites_y):
             new_sprite = pygame.Surface((self.size, self.size), pygame.HWSURFACE | pygame.SRCALPHA)
-            new_sprite.blit(new_group, (0, 0), (x_spr * self.size, y_spr * self.size,
-                                                (x_spr + 1) * self.size, (y_spr + 1) * self.size))
+            new_sprite.blit(new_group, (0, 0), (x_spr * self.size, y_spr * self.size, (x_spr + 1) * self.size, (y_spr + 1) * self.size))
             self.sprites[name + str(x)] = new_sprite
             x_spr += 1
             if x_spr == sprites_x:
@@ -89,12 +87,15 @@ class Sprites(object):
             sprites.make_group('bowcollars', (a, 2), f'scars{i}')
             sprites.make_group('bowcollarsextra', (a, 2), f'scarsextra{i}', sprites_y=2)
 
+
 sprites = Sprites(50)
-for x in ['lineart', 'singlecolours', 'speckledcolours', 'tabbycolours', 'whitepatches', 'tortiecolours', 'eyes',
-          'singleextra', 'tabbyextra', 'speckledextra', 'whiteextra', 'eyesextra', 'tortiesextra',
-          'skin', 'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'whitepatchesnew', 'scarsdark', 'scarsdarkextra',
-          'collars', 'collarsextra', 'bellcollars', 'bellcollarsextra', 'bowcollars', 'bowcollarsextra']:
+for x in ['lineart', 'singlecolours', 'speckledcolours', 'tabbycolours', 'whitepatches', 'tortiecolours', 'eyes', 'singleextra', 'tabbyextra', 'speckledextra', 'whiteextra',
+          'eyesextra', 'tortiesextra', 'skin', 'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'whitepatchesnew', 'scarsdark', 'scarsdarkextra', 'collars', 'collarsextra',
+          'bellcollars', 'bellcollarsextra', 'bowcollars', 'bowcollarsextra']:
     sprites.spritesheet(f"sprites/{x}.png", x)
+
+for sprite in ['Paralyzed_lineart', 'singleparalyzed', 'speckledparalyzed', 'tabbyparalyzed', 'whiteallparalyzed', 'eyesparalyzed', 'tabbyparalyzed', 'tortiesparalyzed', 'scarsparalyzed']:
+    sprites.spritesheet(f"sprites/paralyzed/{sprite}.png", sprite)
 
 # Line art
 sprites.make_group('lineart', (0, 0), 'lines', sprites_y=5)
