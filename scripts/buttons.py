@@ -151,7 +151,6 @@ class Button(object):
 
     def choose_mentor(self, apprentice, cat_value):
         if apprentice not in cat_value.apprentice:
-            print("APPRENTICE" ,apprentice)
             apprentice.mentor.former_apprentices.append(apprentice)
             apprentice.mentor.apprentice.remove(apprentice)
             apprentice.mentor = cat_value
@@ -160,15 +159,14 @@ class Button(object):
         game.clan.save_clan()
 
     def change_name(self, name, cat_value):
-        print(name, " " , cat_value)
-        #cat_value = cat_class.all_cats.get(cat_value)
-        #if game.switches['naming_text'] != '':
-        #    name = game.switches['naming_text'].split(' ')
-        #    cat_value.name.prefix = name[0]
-        #    if len(name) > 1:
-        #        cat_value.name.suffix = name[1]
-        #    cat_class.save_cats()
-        #    game.switches['naming_text'] = ''
+        relevant_cat = list(filter(lambda inter_cat: inter_cat.ID == cat_value, game.clan.clan_cats))[0]
+        if game.switches['naming_text'] != '':
+            name = game.switches['naming_text'].split(' ')
+            relevant_cat.name.prefix = name[0]
+            if len(name) > 1:
+                cat_value.name.suffix = name[1]
+            game.clan.save_cats()
+            game.switches['naming_text'] = ''
 
 
 # BUTTONS

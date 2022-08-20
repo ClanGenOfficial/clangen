@@ -581,12 +581,10 @@ class ProfileScreen(Screens):
         the_cat = game.switches['cat']
 
         if type(game.switches['cat']) == str:
-            relevant_list = list(
-                filter(lambda cat: cat.ID == game.switches['cat'], game.clan.clan_cats))
+            relevant_list = list(filter(lambda cat: cat.ID == game.switches['cat'], game.clan.clan_cats))
             # if the cat can't be found in the living ones, check the dead
             if len(relevant_list) < 1:
-                relevant_list = list(
-                    filter(lambda cat: cat.ID == game.switches['cat'], game.clan.starclan_cats))
+                relevant_list = list(filter(lambda cat: cat.ID == game.switches['cat'], game.clan.starclan_cats))
             the_cat = relevant_list[0]
 
         # use these attributes to create differing profiles for starclan cats etc.
@@ -774,6 +772,7 @@ class ProfileScreen(Screens):
         buttons.draw_button(('center', 20), text='Change Name', cur_screen='change name screen')
         game.switches['name_cat'] = the_cat.ID
         buttons.draw_button(('center', -160), text='See Family', cur_screen='see kits screen')
+        buttons.draw_button(('center', -160), text='See Relaionships', cur_screen='relationship screen')
         if not the_cat.dead:
             buttons.draw_button((-40, -50), text='Kill Cat', kill_cat=the_cat)
         if the_cat.status == 'apprentice' and not the_cat.dead:

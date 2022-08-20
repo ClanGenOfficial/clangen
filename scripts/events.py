@@ -22,6 +22,7 @@ class Events(object):
             self.check_clan_relations()
             for cat in game.clan.clan_cats:
                 if not cat.dead:
+                    cat.create_interaction()
                     self._extracted_from_one_moon_7(cat)
                 else:
                     cat.dead_for += 1
