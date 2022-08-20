@@ -54,8 +54,11 @@ VersionInfoVersion={#ApplicationVersion}
 Source: "*"; DestDir: {app}; Excludes: "{#InstallerFullName},{#SourceFullName}";
 Source: ".\resources\*"; DestDir: {app}\resources;
 Source: ".\sprites\*"; DestDir: {app}\sprites;
-; this line prevents settings and clanlist.txt from being overwritten after update
-Source: ".\saves\*"; DestDir: {app}\saves; Flags: onlyifdoesntexist
+; Flags: onlyifdoesntexist prevents settings and clanlist.txt from being overwritten after update
+Source: ".\saves\*"; DestDir: {app}\saves; Flags: onlyifdoesntexist;
+[Dirs]
+; Permissions: users-full allows the user to write to the saves directory
+Name: "{app}\saves"; Permissions: users-full
 
 ;-------------------------------------------------------------------------------
 [Icons]
