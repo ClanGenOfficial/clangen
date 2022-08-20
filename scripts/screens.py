@@ -1045,13 +1045,13 @@ class PatrolScreen(Screens):
     def _extracted_from_on_use_58(self):
         game.patrol_cats[game.switches['cat']].draw_large((320, 200))
         verdana.text(str(game.patrol_cats[game.switches['cat']].name), ('center', 360))
-        verdana_small.text(str(game.patrol_cats[game.switches['cat']].status), (130, 385))
+        verdana_small.text(str(game.patrol_cats[game.switches['cat']].status), ('center', 385))
 
-        verdana_small.text(str(game.patrol_cats[game.switches['cat']].trait), (130, 405))
+        verdana_small.text(str(game.patrol_cats[game.switches['cat']].trait), ('center', 405))
 
-        verdana_small.text(str(game.patrol_cats[game.switches['cat']].skill), (130, 425))
+        verdana_small.text(str(game.patrol_cats[game.switches['cat']].skill), ('center', 425))
 
-        verdana_small.text('experience: ' + str(game.patrol_cats[game.switches['cat']].experience_level), (130, 445))
+        verdana_small.text('experience: ' + str(game.patrol_cats[game.switches['cat']].experience_level), ('center', 445))
 
         if len(game.switches['current_patrol']) < 6:
             buttons.draw_button(('center', 490), text='Add to Patrol', current_patrol=game.patrol_cats[game.switches['cat']], add=True)
