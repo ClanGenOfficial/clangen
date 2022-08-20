@@ -371,23 +371,20 @@ class Cat(object):
                         thoughts.extend(['Keeps streaking across the clearing', 'Is stuck in a tree... again', 'Is complaining of a tummy ache after eating too much',
                                          'Is awfully close to getting a nip on the rump for misbehaving', 'Is waiting for an opportunity to sprint out of sight'])
                 elif cat.status == 'apprentice':
-                    thoughts.extend(['Is thinking about the time they caught a huge rabbit', 'Wonders what their full name will be', 'Is irritating their mentor',
-                                     'Is arguing with their mentor', 'Is listening to their mentor', 'Plans to visit the elders soon', "Practices the hunting crouch",
-                                     'Pretends to fight an enemy warrior', 'Practices some battle moves', 'Is becoming interested in herbs', 'Volunteers for the dawn patrol',
-                                     'Volunteers to gather herbs', 'Hopes they will do battle training soon', 'Is pulling a prank on the warriors', 'Can\'t wait to be a warrior',
-                                     'Is wondering if they are good enough to become a warrior', 'Is gathering moss', 'Doesn\'t want to become a warrior yet', 'Is gossiping',
-                                     'Is acting angsty', 'Was put on kit-sitting duty', 'Is showing off to the kits', 'Is dreading their apprentice duties',
-                                     'Is helping the elders with their ticks', 'Fell into the nearby creek yesterday and is still feeling damp',
-                                     'Is helping to repair the elder\'s den', 'Is helping to reinforce the camp wall with brambles',
-                                     'Was asked to gather fresh moss for the elders\' bedding', 'Is making their mentor laugh', 'Is really bonding with their mentor',
-                                     'Is having a hard time keeping up with their training', 'Has been lending the medicine cat a paw lately',
-                                     'Is daydreaming about having a mate and kits someday', 'Had quite the adventure today', 'Was tasked with lining nests with fresh moss today',
-                                     'Wants to be a warrior already!', 'Is dreaming of someday making their clan proud',
+                    thoughts.extend(['Is thinking about the time they caught a huge rabbit', 'Wonders what their full name will be', 'Plans to visit the elders soon',
+                                     "Practices the hunting crouch", 'Pretends to fight an enemy warrior', 'Practices some battle moves', 'Is becoming interested in herbs',
+                                     'Volunteers to gather herbs', 'Can\'t wait to be a warrior', 'Is gathering moss', 'Is gossiping', 'Is acting angsty',
+                                     'Was put on kit-sitting duty', 'Is showing off to the kits', 'Is dreading their apprentice duties', 'Is helping the elders with their ticks',
+                                     'Fell into the nearby creek yesterday and is still feeling damp', 'Is helping to repair the elder\'s den',
+                                     'Is helping to reinforce the camp wall with brambles', 'Was asked to gather fresh moss for the elders\' bedding',
+                                     'Is making their mentor laugh', 'Is really bonding with their mentor', 'Is having a hard time keeping up with their training',
+                                     'Has been lending the medicine cat a paw lately', 'Is daydreaming about having a mate and kits someday', 'Had quite the adventure today',
+                                     'Was tasked with lining nests with fresh moss today', 'Is dreaming of someday making their clan proud',
                                      'Is awkwardly deflecting kits\' questions about where kits come from'])
                     if cat.trait == 'bloodthirsty':
                         thoughts.extend(
                             ['Pesters their mentor about doing battle training', 'Is thinking about murder', 'Is acting suspicious', 'Has been washing their paws a lot lately',
-                             'Has disappeared often recently'])
+                             'Has disappeared often recently', 'Starts a fight with another apprentice', 'Draws blood during their battle training', 'Growls to themselves'])
                     elif cat.trait == 'strange':
                         thoughts.extend(
                             ['Is telling every cat about their weird dreams', 'Is chasing a butterfly', 'Stares at random cats', 'Volunteered to guard the dirtplace...?',
@@ -626,17 +623,17 @@ class Cat(object):
                 elif cat.status == 'warrior':
                     thoughts.extend(['Caught scent of a fox earlier', 'Caught scent of an enemy warrior earlier', 'Is helping gathering herbs', 'Is thinking about love',
                                      'Is decorating their nest', 'Is reinforcing the camp with brambles', 'Wants to be chosen as the new deputy', 'Caught a huge rabbit',
-                                     'Is dreaming about being leader', 'Tries to set a good example for younger cats', 'Wants to go on a patrol', 'Wants to go on a hunting patrol',
-                                     'Is hoping to lead the next patrol', 'Is guarding the camp entrance', 'Is thinking about kits', 'Is watching over the kits', 'Is gossiping',
-                                     'Plans to visit the medicine cat', 'Is sharpening their claws', 'Is feeling sore', 'Is being pestered by flies', 'Feels overworked',
-                                     'Overslept and missed their patrol', 'Is exhausted from yesterday\'s patrol', 'Wants to have kits', 'Is sparring with some campmates',
-                                     'Fell into the nearby creek yesterday and is still feeling damp', 'Is helping to reinforce the nursery wall with brambles',
-                                     'Is hoping to be assigned to the dawn patrol tomorrow', 'Is hoping to be assigned to the hunting patrol today',
-                                     'Is hoping to be asked to help patrol the borders today', 'Is itching to run in a wide open space',
-                                     'Has offered to help the deputy organize today\'s patrols', 'Is guarding the camp entrance dutifully',
-                                     'Is helping to escort the medicine cat to gather herbs'])
+                                     'Tries to set a good example for younger cats', 'Wants to go on a patrol', 'Wants to go on a hunting patrol', 'Is guarding the camp entrance',
+                                     'Is thinking about kits', 'Is watching over the kits', 'Is gossiping', 'Plans to visit the medicine cat', 'Is sharpening their claws',
+                                     'Is feeling sore', 'Is being pestered by flies', 'Feels overworked', 'Is exhausted from yesterday\'s patrol', 'Wants to have kits',
+                                     'Is sparring with some campmates', 'Fell into the nearby creek yesterday and is still feeling damp',
+                                     'Is helping to reinforce the nursery wall with brambles', 'Is assigned to the dawn patrol tomorrow', 'Is assigned to the hunting patrol today',
+                                     'Is helping patrol the borders today', 'Is itching to run in a wide open space', 'Has offered to help the deputy organize today\'s patrols',
+                                     'Is guarding the camp entrance', 'Is helping to escort the medicine cat to gather herbs'])
                     if cat.trait == 'bloodthirsty':
-                        thoughts.extend(['Is thinking about murder', 'Is acting suspicious', 'Has been washing their paws a lot lately', 'Has disappeared often recently'])
+                        thoughts.extend(['Is thinking about murder', 'Is acting suspicious', 'Has been washing their paws a lot lately', 'Has disappeared often recently',
+                                         'Growls to themselves', 'Tells other warriors to get ready for a battle', 'Yearns to fight', 'Daydreams about killing a certain cat',
+                                         'Wonders if they could kill a fox all by themselves', 'Started a fight with a fellow warrior'])
                     elif cat.trait == 'strange':
                         thoughts.extend(
                             ['Is telling every cat about their weird dreams', 'Is chasing a butterfly', 'Stares at random cats', 'Volunteered to guard the dirtplace...?',
