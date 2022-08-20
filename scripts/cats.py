@@ -608,19 +608,81 @@ class Cat(object):
                                      'Is interpreting an omen', 'Is interpreting a prophecy', 'Hopes for a message from StarClan soon', 'Is checking up on the warriors',
                                      'Is feeling stressed taking care of the clan', 'Is thinking about taking on a new apprentice',
                                      'Is wondering if they could borrow some catmint from the other clans', 'Is looking forward to the half-moon meeting',
-                                     'Is wrapping a wound with cobwebs', 'Is clearing out old herbs', 'Is proud of their ability to care for their clanmates',
-                                     'Chased kits out of their den', 'Is wishing they could have a mate and kits', 'Is tending growing herbs',
+                                     'Is wrapping a wound with cobwebs', 'Is clearing out old herbs', 'Chased kits out of their den', 'Is tending growing herbs',
                                      'Wishes they had an extra set of paws', 'Is carefully picking up spilled poppy seeds', 'Is out gathering more cobwebs',
-                                     'Is reciting the names of herbs aloud', 'Wishes their clanmates could understand their struggles',
-                                     'Was startled awake in the wee hours by a vivid dream', 'Is running low on catmint', 'Is running low on marigold',
-                                     'Is running low on burdock root', 'Is running low on poppy seeds', 'Is running low on cobwebs', 'Is running low on feverfew',
-                                     'Is running low on borage leaves', 'Is running low on tansy', 'Is running low on mouse bile',
+                                     'Is reciting the names of herbs aloud', 'Was startled awake in the wee hours by a vivid dream', 'Is running low on catmint',
+                                     'Is running low on marigold', 'Is running low on burdock root', 'Is running low on poppy seeds', 'Is running low on cobwebs',
+                                     'Is running low on feverfew', 'Is running low on borage leaves', 'Is running low on tansy', 'Is running low on mouse bile',
                                      'Is teaching kits about what plants to stay away from', 'Plans to go out gathering herbs today',
-                                     'Has been hearing the voices of StarClan cats...', 'Is lining nests with fresh moss and feathers'])
+                                     'Is lining nests with fresh moss and feathers'])
                     if cat.trait == 'bloodthirsty':
-                        thoughts.extend(['Is gathering deathberries', 'Has been disappearing a lot lately', 'Insists only on treating cats who need it'])
+                        thoughts.extend(
+                            ['Is gathering deathberries', 'Has been disappearing a lot lately', 'Insists only on treating cats who need it', 'Is ripping some leaves to shreds',
+                             'Encourages kits to eat some strange red berries', 'Debates becoming a warrior', 'Gives the wrong herbs to a warrior on purpose'])
                     elif cat.trait == 'strange':
-                        thoughts.extend(['Insists everyone eat chamomile leaves everyday at moonhigh', 'Hisses at the kits randomly', 'Sleeps in the middle of the clearing'])
+                        thoughts.extend(['Insists everyone eat chamomile leaves everyday at moonhigh', 'Hisses at the kits randomly', 'Sleeps in the middle of the clearing', 'Looks dazed'])
+                    elif cat.trait == 'ambitious':
+                        thoughts.extend(['Insists on taking on more tasks'])
+                    elif cat.trait == 'loyal':
+                        thoughts.extend(['Refuses to share gossip at the half-moon meeting'])
+                    elif cat.trait == 'righteous':
+                        thoughts.extend(['Gives herbs to an injured loner'])
+                    elif cat.thoughts == 'fierce':
+                        thoughts.extend(['Insists on joining battle training once a moon'])
+                    elif cat.trait == 'nervous':
+                        thoughts.extend(['Recounts the amount of catmint in their stores'])
+                    elif cat.trait == 'strict':
+                        thoughts.extend(['Forbids anyone from disturbing them when working'])
+                    elif cat.trait == 'charismatic':
+                        thoughts.extend([''])
+                    elif cat.trait == 'calm':
+                        thoughts.extend(['Stays composed when treating a severe injury'])
+                    elif cat.trait == 'daring':
+                        thoughts.extend(['Steals catmint from a twoleg garden'])
+                    elif cat.trait == 'loving':
+                        thoughts.extend(['Watches over some newborn kits'])
+                    elif cat.trait == 'playful':
+                        thoughts.extend([''])
+                    elif cat.trait == 'lonesome':
+                        thoughts.extend(['Is wishing they could have a mate and kits', 'Wishes their clanmates could understand their struggles'])
+                    elif cat.trait == 'cold':
+                        thoughts.extend(['Refuses to treat an injured, abandoned kit'])
+                    elif cat.trait == 'insecure':
+                        thoughts.extend(['Is saying that they don\'t deserve their full name'])
+                    elif cat.trait == 'vengeful':
+                        thoughts.extend(['Refuses to treat a cat that once bullied them'])
+                    elif cat.trait == 'shameless':
+                        thoughts.extend(['Refuses to groom themselves'])
+                    elif cat.trait == 'faithful':
+                        thoughts.extend(['Has been hearing the voices of StarClan cats...'])
+                    elif cat.trait == 'troublesome':
+                        thoughts.extend(['Mixes up herbs'])
+                    elif cat.trait == 'empathetic':
+                        thoughts.extend(['Listens to the apprentices complain about their training'])
+                    elif cat.trait == 'adventurous':
+                        thoughts.extend(['Heads out of clan territories to look for new herbs'])
+                    elif cat.trait == 'thoughtful':
+                        thoughts.extend(['Realizes what an omen might mean'])
+                    elif cat.trait == 'compassionate':
+                        thoughts.extend(['Works long into the night taking care of the clan'])
+                    elif cat.trait == 'childish':
+                        thoughts.extend(['Bounces excitedly at the half-moon meeting'])
+                    elif cat.trait == 'confident':
+                        thoughts.extend(['Is proud of their ability to care for their clanmates'])
+                    elif cat.trait == 'careful':
+                        thoughts.extend(['Counts and recounts the poppy seeds'])
+                    elif cat.trait == 'altruistic':
+                        thoughts.extend(['Declines to eat when prey is low'])
+                    elif cat.trait == 'bold':
+                        thoughts.extend(['Decides to try a new herb as treatment for an injury'])
+                    elif cat.trait == 'patient':
+                        thoughts.extend(['Helps a warrior regain their strength'])
+                    elif cat.trait == 'responsible':
+                        thoughts.extend(['Ensures that all of their duties are taken care of'])
+                    elif cat.trait == 'sneaky':
+                        thoughts.extend(['Seems to be hiding something in the medicine they give to the leader'])
+                    elif cat.trait == 'wise':
+                        thoughts.extend(['Tells an ancient tale about StarClan'])
                 elif cat.status == 'warrior':
                     thoughts.extend(['Caught scent of a fox earlier', 'Caught scent of an enemy warrior earlier', 'Is helping gathering herbs', 'Is thinking about love',
                                      'Is decorating their nest', 'Is reinforcing the camp with brambles', 'Wants to be chosen as the new deputy', 'Caught a huge rabbit',
@@ -1006,7 +1068,7 @@ class Cat(object):
         new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
         if self.paralyzed:
-            new_sprite.blit(pygame.image.load('sprites/paralyzed/Paralyzed_lineart.png'), (0,0))
+            new_sprite.blit(pygame.image.load('sprites/paralyzed/Paralyzed_lineart.png'), (0, 0))
         else:
             if self.pelt.name not in ['Tortie', 'Calico']:
                 if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
