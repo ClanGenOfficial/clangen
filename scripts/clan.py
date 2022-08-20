@@ -1,4 +1,6 @@
+from ftplib import all_errors
 import json
+from tkinter.messagebox import NO
 from .cats import *
 from .text import *
 from .relationship import *
@@ -145,6 +147,15 @@ class Clan(object):
         if not os.path.exists(directory):
             os.makedirs(directory)
 
+        all_clans_save = []
+        for otherclan in self.all_clans:
+            all_clans_save.append({
+                "name": otherclan.name,
+                "relations": otherclan.relations,
+                "temperament": otherclan.temperament
+            })
+
+
         data = {
             "name": self.name,
             "age": self.age,
@@ -156,6 +167,7 @@ class Clan(object):
             "medicine_id": self.medicine_cat.ID if self.medicine_cat is not None else None,
             "med_cat_predecessors": self.med_cat_predecessors,
             "instructor_id": self.instructor.ID if self.instructor is not None else None,
+            "other_clans": all_clans_save
         }
 
         # save data
@@ -223,6 +235,15 @@ class Clan(object):
         game.clan.leader_predecessors = clan_data["leader_predecessors"]
         game.clan.deputy_predecessors = clan_data["deputy_predecessors"]
         game.clan.med_cat_predecessors = clan_data["med_cat_predecessors"]
+
+        game.clan.all_clans = []
+        if len(clan_data["other_clans"]) > 0:
+            for otherclan in clan_data["other_clans"]:
+                game.clan.all_clans.append(OtherClan(otherclan["name"],otherclan["relations"],otherclan["temperament"]))
+        else:
+            number_other_clans = randint(3, 5)
+            for _ in range(number_other_clans):
+                game.clan.all_clans.append(OtherClan())
 
         for cat in game.clan.clan_cats:
             cat.create_relationships()
