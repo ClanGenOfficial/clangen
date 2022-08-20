@@ -392,6 +392,8 @@ class Patrol(object):
                     elif game.settings.get('retirement'):
                         self.patrol_random_cat.status_change('elder')
                     self.patrol_random_cat.skill = choice(['paralyzed', 'blind', 'missing a leg'])
+                    if self.patrol_random_cat.skill == 'paralyzed':
+                        self.patrol_random_cat.paralyzed = True
                     return
 
         if self.patrol_event[0] == 10:

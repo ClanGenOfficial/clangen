@@ -58,10 +58,7 @@ class Button(object):
         if image is not None and text != '' and text is not None:
             dynamic_image = True
             image = f"resources/{image}"
-        if not available:
-            colour = self.unavailable_colour  # if image is not None:  #     image = f'{image}_unavailable'
-        else:
-            colour = self.frame_colour
+        colour = self.frame_colour if available else self.unavailable_colour
         if image is None:
             new_button = pygame.Surface((self.font.text(text) + self.padding[0] * 2, self.font.size + self.padding[1] * 2))
 
