@@ -110,9 +110,7 @@ while True:
 
         # MOUSE CLICK
         if event.type == pygame.MOUSEBUTTONDOWN:
-            pressed = pygame.mouse.get_pressed(num_buttons=5) # returns a tuple of 5 bools (left, middle, right, scroll up, scroll down)
-            if pressed[0] or pressed[2]: # if left or right mouse button is pressed
-                game.clicked = True
+            game.clicked = True
 
     # SCREENS
     game.all_screens[game.current_screen].on_use()
