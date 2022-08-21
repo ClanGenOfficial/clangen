@@ -74,13 +74,18 @@ class Patrol(object):
                 continue
             self.eligible_events.append(test_event)
         self.patrol_event = choice(self.eligible_events)
-        if self.patrol_event[0] in [37, 43, 44, 45] and len(game.clan.clan_cats) > 20 and randint(0, 1):
-            self.other_clan = self.meet_other_clan()
-        if self.patrol_event[0] == 11:
-            self.other_clan = self.meet_other_clan()
-        for other_clan in game.clan.all_clans:
-            if int(other_clan.relations) < 7 and randint(1, 3) == 1:
-                self.other_clan = self.meet_other_clan(other_clan)
+        if len(game.clan.all_clans) > 0:
+            if self.patrol_event[0] in [37, 43, 44, 45] and len(game.clan.clan_cats) > 20 and randint(0, 1):
+                self.other_clan = self.meet_other_clan()
+            if self.patrol_event[0] == 11:
+                self.other_clan = self.meet_other_clan()
+        else:
+            while self.patrol_event[0] in [37, 43, 44, 45, 11]:
+                self.patrol_event = choice(self.eligible_events)
+        if len(game.clan.all_clans) > 0:
+            for other_clan in game.clan.all_clans:
+                if int(other_clan.relations) < 7 and randint(1, 3) == 1:
+                    self.other_clan = self.meet_other_clan(other_clan)
         if self.patrol_event[0] == 36:
             self.patrol_event[5] = 30 * self.patrol_size
         if self.patrol_event[10] != 0 and self.patrol_event[10] in self.patrol_traits:
