@@ -1138,7 +1138,6 @@ class AllegiancesScreen(Screens):
             if str(living_cat__.status) == 'warrior' and living_cat__.ID not in queens:
                 if not cat_count:
                     game.allegiance_list.append(['WARRIORS:', f"{str(living_cat__.name)} - a {living_cat__.describe_cat()}"])
-
                 else:
                     game.allegiance_list.append(['', f"{str(living_cat__.name)} - a {living_cat__.describe_cat()}"])
 
@@ -1147,18 +1146,21 @@ class AllegiancesScreen(Screens):
             game.allegiance_list.append(['WARRIORS:', ''])
         cat_count = 0
         for living_cat___ in living_cats:
-            if str(living_cat___.status) in {'apprentice', 'medicine cat apprentice'}:
-                if not cat_count:
+            if str(living_cat___.status) in ['apprentice', 'medicine cat apprentice']:
+                if cat_count == 0:
                     game.allegiance_list.append(['APPRENTICES:', f"{str(living_cat___.name)} - a {living_cat___.describe_cat()}"])
-
+                else:
+                    game.allegiance_list.append(['', f"{str(living_cat___.name)} - a {living_cat___.describe_cat()}"])
                 cat_count += 1
         if not cat_count:
             game.allegiance_list.append(['APPRENTICES:', ''])
         cat_count = 0
         for living_cat____ in living_cats:
             if living_cat____.ID in queens:
-                if not cat_count:
+                if cat_count == 0:
                     game.allegiance_list.append(['QUEENS:', f"{str(living_cat____.name)} - a {living_cat____.describe_cat()}"])
+                else:
+                    game.allegiance_list.append(['', f"{str(living_cat____.name)} - a {living_cat____.describe_cat()}"])
                 cat_count += 1
         if not cat_count:
             game.allegiance_list.append(['QUEENS:', ''])
