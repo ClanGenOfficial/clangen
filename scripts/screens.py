@@ -415,7 +415,8 @@ class MakeClanScreen(Screens):
             verdana_small.text(str(game.choose_cats[game.switches['cat']].gender), (420, 230))
             verdana_small.text(str(game.choose_cats[game.switches['cat']].age), (420, 245))
             verdana_small.text(str(game.choose_cats[game.switches['cat']].trait), (420, 260))
-            buttons.draw_button((420, 300), text='Recruit', members=game.switches['cat'], add=True)
+            if len(game.switches['members']) < 7:
+                buttons.draw_button((420, 300), text='Recruit', members=game.switches['cat'], add=True)
 
         verdana_small.text('Note: going back to main menu resets the generated cats.', (50, 25))
 
@@ -423,7 +424,7 @@ class MakeClanScreen(Screens):
 
         buttons.draw_button((-50, 50), text='< Last step', medicine_cat=None, members=[], cat=None)
 
-        if len(game.switches['members']) > 3:
+        if 3 < len(game.switches['members']) < 8:
             buttons.draw_button(('center', 350), text='Done', cur_screen='clan created screen')
         else:
             buttons.draw_button(('center', 350), text='Done', available=False)
