@@ -62,20 +62,22 @@ class Cat(object):
         if self.gender is None:
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
-        if status is None:
-            self.age = choice(self.ages)
-        else:
-            if status in ['kitten', 'elder']:
-                self.age = status
-            elif status == 'apprentice' or status == 'medicine cat apprentice':
-                self.age = 'adolescent'
-            else:
-                self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
         if moons is None:
-            self.moons = randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
+            self.moons = randint(0, 200)
         else:
             self.moons = moons
-
+        if 0 <= self.moons <= 5:
+            self.age = 'kitten'
+        elif 6 <= self.moons <= 11:
+            self.age = 'adolescent'
+        elif 12 <= self.moons <= 47:
+            self.age = 'young adult'
+        elif 48 <= self.moons <= 95:
+            self.age = 'adult'
+        elif 96 <= self.moons <= 119:
+            self.age = 'senior adult'
+        else:
+            self.age = 'elder'
         # eye colour
         if self.eye_colour is None:
             a = randint(0, 200)
