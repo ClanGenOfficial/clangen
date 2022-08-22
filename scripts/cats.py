@@ -44,7 +44,10 @@ class Cat(object):
         self.dead_for = 0  # moons
         self.thought = ''
         if ID is None:
-            self.ID = str(randint(10000, 9999999))
+            potential_ID = str(randint(10000, 9999999))
+            while potential_ID in self.all_cats:
+                potential_ID = str(randint(10000, 9999999))
+            self.ID = potential_ID
         else:
             self.ID = ID
         # personality trait and skill
