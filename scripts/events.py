@@ -54,6 +54,7 @@ class Events(object):
         self.other_interactions(cat)
         self.gain_scars(cat)
         self.handle_deaths(cat)
+        self.check_age(cat)
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0:
@@ -403,6 +404,20 @@ class Events(object):
                 for kit in range(kits):
                     kit = Cat(parent1=cat.ID, moons=0)
                     game.clan.add_cat(kit)
+
+    def check_age(self, cat):
+        if 0 <= cat.moons <= 5:
+            cat.age = 'kitten'
+        elif 6 <= cat.moons <= 11:
+            cat.age = 'adolescent'
+        elif 12 <= cat.moons <= 47:
+            cat.age = 'young adult'
+        elif 48 <= cat.moons <= 95:
+            cat.age = 'adult'
+        elif 96 <= cat.moons <= 119:
+            cat.age = 'senior adult'
+        else:
+            cat.age = 'elder'
 
 
 events_class = Events()
