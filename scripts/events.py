@@ -175,7 +175,8 @@ class Events(object):
                     relationships.append(Relationship(kit,cat))
                 kit.relationships = relationships
                 game.clan.add_cat(kit)
-                kit_text = [f'{name} finds an abandoned kit and names them {str(kit.name)}', f'A loner brings their kit named {str(kit.name.prefix)} to the clan, stating they no longer can care for them']
+                kit_text = [f'{name} finds an abandoned kit and names them {str(kit.name)}',
+                            f'A loner brings their kit named {str(kit.name.prefix)} to the clan, stating they no longer can care for them']
                 game.cur_events_list.append(choice(kit_text))
             elif type_of_new_cat == 2:
                 self._extracted_from_invite_new_cats_19(name)
@@ -269,7 +270,7 @@ class Events(object):
             other_cat = choice(list(game.clan.clan_cats))
         name = str(cat.name)
         other_name = str(other_cat.name)
-        if cat.status in ['warrior', 'deputy', 'leader'] and randint(1, 4) == 1 and game.settings.get('retirement') == True:
+        if cat.status in ['warrior', 'deputy', 'leader'] and randint(1, 4) == 1 and game.settings.get('retirement') is True:
             game.cur_events_list.append(f'{name} retires to the elders den after injuries sustained defending {other_name}')
             cat.status_change('elder')
             return

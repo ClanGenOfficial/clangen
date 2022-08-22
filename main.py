@@ -73,6 +73,13 @@ while True:
                 if event.key == pygame.K_DOWN and abs(game.event_scroll_ct) < max_scroll_direction:
                     game.cur_events_list.append(game.cur_events_list.pop(0))
                     game.event_scroll_ct -= 1
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 4 and game.event_scroll_ct < 0:
+                    game.cur_events_list.insert(0, game.cur_events_list.pop())
+                    game.event_scroll_ct += 1
+                if event.button == 5 and abs(game.event_scroll_ct) < max_scroll_direction:
+                    game.cur_events_list.append(game.cur_events_list.pop(0))
+                    game.event_scroll_ct -= 1
 
         if game.current_screen == 'allegiances screen' and len(game.allegiance_list) > game.max_allegiance_displayed:
             max_scroll_direction = len(game.allegiance_list) - game.max_allegiance_displayed
@@ -83,6 +90,13 @@ while True:
                 if event.key == pygame.K_DOWN and abs(game.allegiance_scroll_ct) < max_scroll_direction:
                     game.allegiance_list.append(game.allegiance_list.pop(0))
                     game.allegiance_scroll_ct -= 1
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 4 and game.allegiance_scroll_ct < 0:
+                        game.allegiance_list.insert(0, game.allegiance_list.pop())
+                        game.allegiance_scroll_ct += 1
+                if event.button == 5 and abs(game.allegiance_scroll_ct) < max_scroll_direction:
+                        game.allegiance_list.append(game.allegiance_list.pop(0))
+                        game.allegiance_scroll_ct -= 1
 
         if game.current_screen == 'change name screen' and game.switches['change_name'] == '' and event.type == pygame.KEYDOWN:
             if event.unicode.isalpha() or event.unicode.isspace():  # only allows alphabet letters/space as an input

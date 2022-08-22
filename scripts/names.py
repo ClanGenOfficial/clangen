@@ -74,7 +74,7 @@ class Name(object):
                    "Free", "Glory", "Snek", "Indi", "Igor", "Jupiter", "Nintendo", "Jesse", "James", "Jethro", 'Shampoo',
                    "Joker", "Jinx", "Chaos", "Havoc", "Trouble", "Kingston", "King", "Kip", "Kong", "Ken", "Kendra",
                    "Kisha", "Kermit", "Kelloggs", "Kodiak", "Klondike", "Ketchup", "KD", "Lupo", "Luigi", "Lily",
-                   "Lora", "Lee", "Lex", "Lester", "Makwa", "Madi", "Minna", "Moxie", "Mucha", "Manda", "Monte",
+                   "Lora", "Lee", "Lex", "Lester", "Makwa", "Madi", "Minna", "Moxie", "Mucha", "Manda", "Monte", 'Riya',
                    "Monzi", "Nisha", "Nemo", "Nitro", "Oops", "O'Leary", "Ophelia", "Olga", "Oscar", "Owen", "Porsche",
                    "Ping", "Pong", "Quinzee", "Quickie", "Quagmire", "Quake", "Quinoa", "Roomba", "Riot", "Peanut Wigglebutt",
                    "Ramble", "Rudolph", "Rum", "Reese", "Scotch", "Sneakers", "Schmidt", "Espresso", "Cocoa Puff",
