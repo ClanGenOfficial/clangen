@@ -640,7 +640,8 @@ class Cat(object):
                             ['Is gathering deathberries', 'Has been disappearing a lot lately', 'Insists only on treating cats who need it', 'Is ripping some leaves to shreds',
                              'Encourages kits to eat some strange red berries', 'Debates becoming a warrior', 'Gives the wrong herbs to a warrior on purpose'])
                     elif cat.trait == 'strange':
-                        thoughts.extend(['Insists everyone eat chamomile leaves everyday at moonhigh', 'Hisses at the kits randomly', 'Sleeps in the middle of the clearing', 'Looks dazed'])
+                        thoughts.extend(
+                            ['Insists everyone eat chamomile leaves everyday at moonhigh', 'Hisses at the kits randomly', 'Sleeps in the middle of the clearing', 'Looks dazed'])
                     elif cat.trait == 'ambitious':
                         thoughts.extend(['Insists on taking on more tasks'])
                     elif cat.trait == 'loyal':
@@ -965,9 +966,8 @@ class Cat(object):
                         thoughts.extend(['Encourages warriors to start fights on border patrols', 'Is debating if they should declare a war with another clan',
                                          'Is wondering if they could hold apprentice ceremonies at 4 moons old instead', 'Has been growling to themselves'])
                     elif cat.trait == 'strange':
-                        thoughts.extend(['No thoughts, head empty', 'Insists they they received ten lives instead of nine', 'Has a crazed look in their eyes'
-                                                                                                                            'Is wondering how many cats would agree to changing '
-                                                                                                                            'the clan\'s name...'])
+                        thoughts.extend(['No thoughts, head empty', 'Insists they they received ten lives instead of nine', 'Has a crazed look in their eyes',
+                                         'Is wondering how many cats would agree to changing the clan\'s name...'])
                 elif cat.status == 'elder':
                     thoughts.extend(['Is complaining about their nest being too rough', 'Is complaining about their aching joints', 'Is telling stories about when they were young',
                                      'Is giving advice to younger cats', 'Is complaining about thorns in their nest', 'Is bossing around the younger cats',
