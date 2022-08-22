@@ -1092,8 +1092,10 @@ class PatrolEventScreen(Screens):
             verdana.text(str(patrol.patrol_event[1]), ('center', 200))
             buttons.draw_button(('center', 300), text='Proceed', event=1)
             buttons.draw_button(('center', 340), text='Do Not Proceed', event=2)
+            if patrol.patrol_event[0] in patrol.failable_patrols:
+                buttons.draw_button(('center', 380), text='Antagonize', event=3)
         if game.switches['event'] > 0:
-            if game.switches['event'] < 3:
+            if game.switches['event'] < 3 or (game.switches['event'] <4 and patrol.patrol_event[0] in patrol.failable_patrols):
                 patrol.calculate()
             verdana.text(str(patrol.patrol_result_text), ('center', 200))
             buttons.draw_button(('center', 320), text='Return to Clan', cur_screen='clan screen')

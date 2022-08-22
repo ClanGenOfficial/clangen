@@ -51,6 +51,9 @@ class Patrol(object):
         self.patrol_result_text = ''
         self.eligible_events = []
         self.other_clan = {}
+        self.new_cat_patrols = [37, 43, 44, 45]
+        self.failable_patrols = self.new_cat_patrols + [11]
+        self.intentional_fail = ''
         self.patrol_random_cat = choice(self.patrol_cats)
         for i in range(self.patrol_size):
             self.patrol_skills.append(self.patrol_cats[i].skill)
@@ -75,7 +78,7 @@ class Patrol(object):
             self.eligible_events.append(test_event)
         self.patrol_event = choice(self.eligible_events)
         if len(game.clan.all_clans) > 0:
-            if self.patrol_event[0] in [37, 43, 44, 45] and len(game.clan.clan_cats) > 20 and randint(0, 1):
+            if self.patrol_event[0] in self.new_cat_patrols and len(game.clan.clan_cats) > 20 and randint(0, 4):
                 self.other_clan = self.meet_other_clan()
             if self.patrol_event[0] == 11:
                 self.other_clan = self.meet_other_clan()
@@ -143,6 +146,18 @@ class Patrol(object):
 
             self.patrol_event[4] = self.patrol_event[4].replace('s_c', str(self.patrol_stat_cat.name))
 
+    def intentionally_fail(self):
+        if self.patrol_event[0] in self.new_cat_patrols:
+            self.intentional_fail = 'Drive away the loner'
+            # success
+            self.patrol_event[2] = 'Your patrol talks to the cat and asks them to not cross the border again.'
+            # fail
+            self.patrol_event[3] = 'The stranger says mean things to the patrol after being asked to leave.'
+
+        if self.patrol_event[0] == 11:
+            self.intentional_fail = 'Antagonize'
+            # for this event the success and fails are calculated in meet_other_clans() because they will be different depending on relations
+
     def meet_other_clan(self, other_clan=''):
         if not other_clan:
             other_clan = choice(game.clan.all_clans)
@@ -153,18 +168,26 @@ class Patrol(object):
             self.patrol_event = [11, f'clan_name meets their allies, {other_clan_name}, at the border.', 'Your cats have a nice conversation with them',
                                  'Although they act nice, the alliance seems to be weakening.', 'You decide not to talk with the ally patrol', 60, 8, 0, 0, 0, 0, 1,
                                  ['good speaker', 'great speaker', 'excellent speaker']]
+            if self.intentional_fail:
+                self.patrol_event[2] = f'Your cats seem to ignore the alliance, threatening {other_clan_name} anyway'
+                self.patrol_event[3] = 'Your cats try to offend to the other clan but only make things slightly awkward'
 
 
         elif other_clan_relations < 11 and other_clan_relations > 6:
             self.patrol_event = [11, f'clan_name is threatened by a {other_clan_name} patrol at the border', 'Your cats manage to smooth things out a bit',
                                  'The patrol ends with threats and malice. Clan relations have worsened.', 'You decide to back off from the opposing patrol', 60, 8, 0, 0, 0, 0, 1,
                                  ['great speaker', 'excellent speaker']]
-
+            if self.intentional_fail:
+                self.patrol_event[2] = f'Your cats shoot back threats as well, hurting clan relations'
+                self.patrol_event[3] = 'Your cats mostly ignore the other clan\'s threats'
 
         elif other_clan_relations < 7 and 'fierce' not in self.patrol_traits and 'bloodthirsty' not in self.patrol_traits:
             self.patrol_event = [11, f'Your patrol is attacked by a {other_clan_name} patrol at the border', 'Your cats manage to escape without injury',
                                  f'r_c is killed by the {other_clan_name} patrol.', 'You run away from the other patrol', 60, 8, 0, 0, 0, 0, 1,
                                  ['great fighter', 'excellent fighter', 'excellent speaker']]
+            if self.intentional_fail:
+                self.patrol_event[2] = f'Your cats attack {other_clan_name} right back'
+                self.patrol_event[3] = f'r_c is killed by the {other_clan_name} patrol.'
 
 
         elif other_clan_relations < 7 and 'fierce' in self.patrol_traits:
@@ -172,6 +195,9 @@ class Patrol(object):
                                  'Your cats manage to escape, but only after s_c kills an enemy ' + choice(['warrior', 'apprentice']),
                                  f'r_c is killed by the {other_clan_name} patrol.', 'You run away from the other patrol', 60, 8, 0, 0, 0, 'fierce', 1,
                                  ['great fighter', 'excellent fighter', 'excellent speaker']]
+            if self.intentional_fail:
+                self.patrol_event[2] = f'Your cats chase {other_clan_name} away as they flee'
+                self.patrol_event[3] = f'r_c is killed by the {other_clan_name} patrol.'
 
 
         elif other_clan_relations < 7:
@@ -179,17 +205,28 @@ class Patrol(object):
                                  'Your cats manage to escape, but only after s_c kills an enemy ' + choice(['warrior', 'apprentice']),
                                  f'r_c is killed by the {other_clan_name} patrol.', 'You run away from the other patrol', 60, 8, 0, 0, 0, 'bloodthirsty', 1,
                                  ['great fighter', 'excellent fighter', 'excellent speaker']]
+            if self.intentional_fail:
+                self.patrol_event[2] = f'Your cats chase {other_clan_name} away as they flee'
+                self.patrol_event[3] = f'r_c is killed by the {other_clan_name} patrol.'
 
 
         else:
             self.patrol_event = [11, f'clan_name meets a {other_clan_name} patrol at the border, but nobody is hostile.', 'Your cats have a nice conversation with them',
                                  'Despite the lack of outright hostilities, the situation turns awkward fast', 'You decide not to talk with the opposing patrol', 60, 8, 0, 0, 0, 0,
                                  1, ['great speaker', 'excellent speaker']]
+            if self.intentional_fail:
+                self.patrol_event[2] = f'Your cats intentionally antagonize the other clan anyway.'
+                self.patrol_event[3] = f'Despite the vague threats, the situation only turns awkward'
 
         return other_clan
 
     def calculate(self):
         self.patrol_result_text = self.patrol_event[4]
+        if game.switches['event'] == 3:
+            self.intentionally_fail()
+            if self.patrol_event[0] == 11:
+                self.meet_other_clan(other_clan=self.other_clan)
+            game.switches['event'] = 1
         if game.switches['event'] == 1:
             self._extracted_from_calculate_6()
         for i in range(self.patrol_size):
@@ -421,11 +458,11 @@ class Patrol(object):
                 return
             else:
                 # stuff that happens after the results
-                if self.success:
+                if self.success and not self.intentional_fail:
                     self.other_clan.relations = int(self.other_clan.relations) + 1
                     if int(self.other_clan.relations) == 7:
                         self.patrol_result_text = game.clan.name + 'Clan and ' + self.other_clan.name + 'Clan declare a truce.'
-                else:
+                elif (self.intentional_fail and self.success) or (not self.intentional_fail and not self.success):
                     if int(self.other_clan.relations) < 7:
                         events_class.dies(self.patrol_random_cat)
                     self.other_clan.relations = int(self.other_clan.relations) - 1
@@ -434,6 +471,7 @@ class Patrol(object):
                     if int(self.other_clan.relations) == 6:
                         self.patrol_result_text = self.other_clan.name + 'Clan declares war on ' + game.clan.name + 'Clan.'
                 return
+                
 
         if self.patrol_event[0] == 12:
             if self.before:
@@ -704,7 +742,7 @@ class Patrol(object):
                 return
             else:
                 # stuff that happens after the results
-                if self.success:
+                if self.success and not self.intentional_fail:
                     new_cat_status = choice(['warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'apprentice', 'apprentice', 'apprentice', 'elder'])
                     kit = Cat(status=new_cat_status)
                     if randint(0, 1):
@@ -750,7 +788,7 @@ class Patrol(object):
                 return
             else:
                 # stuff that happens after the results
-                if self.success:
+                if self.success and not self.intentional_fail:
                     kit = Cat(status='warrior')
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
@@ -764,7 +802,7 @@ class Patrol(object):
                 return
             else:
                 # stuff that happens after the results
-                if self.success:
+                if self.success and not self.intentional_fail:
                     new_cat_status = choice(['warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'apprentice', 'apprentice', 'apprentice'])
                     kit = Cat(status=new_cat_status)
                     game.clan.add_cat(kit)
@@ -784,7 +822,7 @@ class Patrol(object):
                 return
             else:
                 # stuff that happens after the results
-                if self.success:
+                if self.success and not self.intentional_fail:
                     new_cat_status = choice(['warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'medicine cat'])
                     kit = Cat(status=new_cat_status)
                     game.clan.add_cat(kit)
