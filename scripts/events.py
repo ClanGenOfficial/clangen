@@ -177,9 +177,11 @@ class Events(object):
                 loner = Cat(status='warrior', moons=randint(12, 120))
                 loner.skill = 'formerly a loner'
                 game.clan.add_cat(loner)
-                loner_text = [f'{name} finds a loner who joins the clan. They change their name to {str(loner.name)}',
-                              f'A loner says that they are interested in clan life. They join, changing their name to {str(loner.name)}']
+                loner_text = [f'{name} finds a loner who joins the clan',
+                              f'A loner says that they are interested in clan life']
                 game.cur_events_list.append(choice(loner_text))
+                game.cur_events_list.append('The loner changes their name to ' + str(loner.name))
+
             elif type_of_new_cat == 4:
                 warrior = Cat(status='warrior', moons=randint(12, 150))
                 game.clan.add_cat(warrior)
@@ -195,9 +197,9 @@ class Events(object):
             elif type_of_new_cat == 6:
                 loner = Cat(status='warrior', moons=randint(12, 120))
                 self._extracted_from_invite_new_cats_59(loner)
-                loner_text = [f'{name} finds a kittypet named {choice(names.loner_names)} who wants to join the clan. They change their name to {str(loner.name)}']
+                loner_text = [f'{name} finds a kittypet named {choice(names.loner_names)} who wants to join the clan']
                 game.cur_events_list.append(choice(loner_text))
-
+                game.cur_events_list.append('The kittypet changes their name to ' + str(loner.name))
     # TODO Rename this here and in `invite_new_cats`
     def _extracted_from_invite_new_cats_59(self, loner):
         loner.skill = 'formerly a kittypet'
@@ -210,9 +212,11 @@ class Events(object):
         loner_name = choice(names.loner_names)
         loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
         self._extracted_from_invite_new_cats_59(loner)
-        loner_text = [f'{name} finds a kittypet named {str(loner_name)} who wants to join the clan. They decide to keep their name',
+        loner_text = [f'{name} finds a kittypet named {str(loner_name)} who wants to join the clan',
                       f'A kittypet named {str(loner_name)} stops {name} and asks to join the clan']
         game.cur_events_list.append(choice(loner_text))
+        game.cur_events_list.append(str(loner_name) + ' decides to keep their name')
+
 
     # TODO Rename this here and in `invite_new_cats`
     def _extracted_from_invite_new_cats_19(self, name):
@@ -220,9 +224,10 @@ class Events(object):
         loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
         loner.skill = 'formerly a loner'
         game.clan.add_cat(loner)
-        loner_text = [f'{name} finds a loner named {str(loner.name)} who joins the clan. They decide to keep their name',
+        loner_text = [f'{name} finds a loner named {str(loner.name)} who joins the clan',
                       f'A loner named {str(loner.name)} waits on the border for a patrol, asking to join the clan']
         game.cur_events_list.append(choice(loner_text))
+        game.cur_events_list.append(str(loner_name) + ' decides to keep their name')
 
     def other_interactions(self, cat):
         if randint(1, 50) != 1:
