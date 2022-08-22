@@ -298,6 +298,7 @@ class MakeClanScreen(Screens):
         buttons.draw_button((570, 620), text='Name Clan', clan_name=game.switches['naming_text'])
 
     def second_phase(self):
+        game.switches['naming_text'] = ''
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
         if game.settings['dark mode']:
             leader_img = pygame.image.load('resources/leader.png')
