@@ -218,6 +218,9 @@ class Patrol(object):
                 self.patrol_event[2] = f'Your cats intentionally antagonize the other clan anyway.'
                 self.patrol_event[3] = f'Despite the vague threats, the situation only turns awkward'
 
+        self.patrol_event[2] = self.patrol_event[2].replace('r_c', str(self.patrol_random_cat.name))
+        self.patrol_event[3] = self.patrol_event[3].replace('r_c', str(self.patrol_random_cat.name))
+
         return other_clan
 
     def calculate(self):
