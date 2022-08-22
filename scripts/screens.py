@@ -333,7 +333,7 @@ class MakeClanScreen(Screens):
         if game.settings['dark mode']:
             deputy_img = pygame.image.load('resources/deputy.png')
         else:
-            deputy_img = pygame.image.load('resources/deputy.png')
+            deputy_img = pygame.image.load('resources/deputy_light.png')
         screen.blit(deputy_img, (0, 400))
 
         for u in range(6):
