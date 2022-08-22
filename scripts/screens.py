@@ -277,7 +277,10 @@ class StarClanScreen(Screens):
 class MakeClanScreen(Screens):
     def first_phase(self):
         # layout
-        name_clan_img = pygame.image.load('resources/name_clan.png')
+        if game.settings['dark mode']:
+            name_clan_img = pygame.image.load('resources/name_clan.png')
+        else:
+            name_clan_img = pygame.image.load('resources/name_clan_light.png')
         screen.blit(name_clan_img, (0, 0))
 
         self.game_screen.blit(game.naming_box, (150, 620))
@@ -296,7 +299,10 @@ class MakeClanScreen(Screens):
 
     def second_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        leader_img = pygame.image.load('resources/leader.png')
+        if game.settings['dark mode']:
+            leader_img = pygame.image.load('resources/leader.png')
+        else:
+            leader_img = pygame.image.load('resources/leader_light.png')
         screen.blit(leader_img, (0, 400))
         for u in range(6):
             buttons.draw_button((50, 150 + 50 * u), image=game.choose_cats[u].sprite, cat=u)
@@ -319,7 +325,10 @@ class MakeClanScreen(Screens):
 
     def third_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        deputy_img = pygame.image.load('resources/deputy.png')
+        if game.settings['dark mode']:
+            deputy_img = pygame.image.load('resources/deputy.png')
+        else:
+            deputy_img = pygame.image.load('resources/deputy.png')
         screen.blit(deputy_img, (0, 400))
 
         for u in range(6):
@@ -350,7 +359,10 @@ class MakeClanScreen(Screens):
 
     def fourth_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        medic_img = pygame.image.load('resources/medic.png')
+        if game.settings['dark mode']:
+            medic_img = pygame.image.load('resources/medic.png')
+        else:
+            medic_img = pygame.image.load('resources/med_light.png')
         screen.blit(medic_img, (0, 400))
 
         for u in range(6):
@@ -386,7 +398,10 @@ class MakeClanScreen(Screens):
 
     def fifth_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        clan_img = pygame.image.load('resources/clan.png')
+        if game.settings['dark mode']:
+            clan_img = pygame.image.load('resources/clan.png')
+        else:
+            clan_img = pygame.image.load('resources/clan_light.png')
         screen.blit(clan_img, (0, 400))
         for u in range(6):
             if game.switches['leader'] == u:
