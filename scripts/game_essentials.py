@@ -77,7 +77,6 @@ class Game(object):
         if self.switches['save_clan'] and self.clan is not None and self.cat_class is not None:
             self.clan.save_clan()
             self.cat_class.save_cats()
-            self.switches['save_clan'] = False
         if self.switches['switch_clan']:
             self.clan.switch_clans()
             self.switches['switch_clan'] = False

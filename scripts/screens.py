@@ -166,7 +166,11 @@ class ClanScreen(Screens):
                 buttons.draw_button(cat_class.all_cats[x].placement, image=cat_class.all_cats[x].sprite, cat=x, cur_screen='profile screen')
         draw_menu_buttons()
         buttons.draw_button(('center', -50), text='Save Clan', save_clan=True)
-        verdana.text('Remember to save!', ('center', -20))
+        pygame.draw.rect(screen, color='gray', rect=pygame.Rect(320,660,160,20))
+        if game.switches['save_clan']:
+            verdana_green.text('Saved!', ('center', -20))
+        else:
+            verdana_red.text('Remember to save!', ('center', -20))
 
     def screen_switches(self):
         cat_profiles()

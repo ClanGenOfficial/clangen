@@ -18,6 +18,7 @@ class Events(object):
 
     def one_moon(self):
         if game.switches['timeskip']:
+            game.switches['save_clan'] = False
             self.living_cats = 0
             self.check_clan_relations()
             for cat in cat_class.all_cats.copy().values():
