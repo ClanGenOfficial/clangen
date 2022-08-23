@@ -102,6 +102,9 @@ class Events(object):
                     cat.status_change('elder')
                     game.clan.deputy = None
                     game.cur_events_list.append(f'The deputy {str(cat.name)} has retired to the elder den')
+            if cat.status in ['warrior', 'deputy'] and cat.age == 'elder' and len(cat.apprentice) < 1:
+                cat.status_change('elder')
+                game.cur_events_list.append(f'{str(cat.name)} has retired to the elder den')
 
     # TODO Rename this here and in `perform_ceremonies`
     def _extracted_from_perform_ceremonies_19(self, cat, arg1, arg2):

@@ -1125,6 +1125,10 @@ class PatrolEventScreen(Screens):
         verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
         if game.switches['event'] == 0:
             verdana.text(str(patrol.patrol_event[1]), ('center', 200))
+            if patrol.patrol_event[0] == 35:
+                patrol_img = pygame.image.load('resources/rogue.png')
+                patrol_img = pygame.transform.scale(patrol_img, (300,200))
+                screen.blit(patrol_img, (500, 200))
             buttons.draw_button(('center', 300), text='Proceed', event=1)
             buttons.draw_button(('center', 340), text='Do Not Proceed', event=2)
             if patrol.patrol_event[0] in patrol.failable_patrols:
@@ -1132,6 +1136,7 @@ class PatrolEventScreen(Screens):
         if game.switches['event'] > 0:
             if game.switches['event'] < 3 or (game.switches['event'] <4 and patrol.patrol_event[0] in patrol.failable_patrols):
                 patrol.calculate()
+
             verdana.text(str(patrol.patrol_result_text), ('center', 200))
             buttons.draw_button(('center', 320), text='Return to Clan', cur_screen='clan screen')
 
