@@ -247,9 +247,10 @@ class Patrol(object):
                                ['good fighter', 'great fighter', 'excellent fighter']],
                               [7, 'Your patrol catches the scent of a fox', 'Your patrol finds a fox and her cubs and drives them away',
                                'The mother fox fights to defend her cubs; r_c is left with a scar', 'You decide not to pursue the fox', 70, 25, 0, 0, 0, 0, 1,
-                               ['great fighter', 'excellent fighter']], [8, 'Your patrol catches the scent of a large dog', 'Your patrol manages to valiantly drive away the dog',
-                                                                         'The dog is driven away, but only after killing r_c', 'You decide not to pursue the dog', 150, 50, 0, 0, 0,
-                                                                         0, 1, ['excellent fighter']],
+                               ['great fighter', 'excellent fighter']],
+                              [8, 'Your patrol catches the scent of a large dog', 'Your patrol manages to valiantly drive away the dog',
+                               'The dog is driven away, but only after killing r_c', 'You decide not to pursue the dog', 150, 50, 0, 0, 0, 0, 1,
+                               ['excellent fighter']],
                               [9, 'Your patrol comes across a thunderpath. Do you cross it?', 'Your patrol crosses the path, and can hunt on the other side',
                                'r_c is hit by a Monster and debates retiring to the elder den', 'You decide to not cross the thunderpath', 20, 10, 0, 0, 0, 0, 1,
                                ['very smart', 'extremely smart']],
@@ -337,15 +338,18 @@ class Patrol(object):
                                'The loner thinks for a while, and decides against joining', 'You decide to not confront that loner', 120, 10, 0, 0, 0, 0, 1, ['excellent speaker']]]
 
     def event_special(self):
+        # impact to the relationship (will be defined in the conditions)
+        impact = 0
         # special functions for each event defined here
         if self.patrol_event[0] == 5:
+            # EVENT: larg rat
             if self.before:
                 # stuff that happens during calculations
                 return
             else:
                 # stuff that happens after the results
-                # losing experience
                 if not self.success:
+                    # losing experience
                     experience_each = ceil((-10) / int(self.patrol_size) / 2)
                     for i in range(self.patrol_size):
                         self.patrol_cats[i].experience = int(self.patrol_cats[i].experience) + int(experience_each)
@@ -355,9 +359,22 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
                         self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
+                    impact = -3
+                if self.success:
+                    impact = 3
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.trust)
+                        rel.trust += impact
+                        print("AFTER", rel.trust)
                 return
 
         if self.patrol_event[0] == 7:
+            # EVENT: fox
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -369,9 +386,23 @@ class Patrol(object):
                         self.patrol_random_cat.specialty = choice([choice(scars1), choice(scars2)])
                     elif self.patrol_random_cat.specialty2 is None:
                         self.patrol_random_cat.specialty2 = choice([choice(scars1), choice(scars2)])
-                    return
+                    impact = -5
+
+                if self.success:
+                    impact = 5
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.admiration)
+                        rel.admiration += impact
+                        print("AFTER", rel.admiration)
+                return
 
         if self.patrol_event[0] == 8:
+            # EVENT: dog
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -380,9 +411,23 @@ class Patrol(object):
                 # cat straight up dies
                 if not self.success:
                     events_class.dies(self.patrol_random_cat)
-                    return
+                    impact = -5
+
+                if self.success:
+                    impact = 5
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.admiration)
+                        rel.admiration += impact
+                        print("AFTER", rel.admiration)
+                return
 
         if self.patrol_event[0] == 9:
+            # EVENT: thunderpath
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -399,9 +444,23 @@ class Patrol(object):
                     self.patrol_random_cat.skill = choice(['paralyzed', 'blind', 'missing a leg'])
                     if self.patrol_random_cat.skill == 'paralyzed':
                         self.patrol_random_cat.paralyzed = True
-                    return
+                    impact = -5
+
+                if self.success:
+                    impact = 5
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.trust)
+                        rel.trust += impact
+                        print("AFTER", rel.trust)
+                return
 
         if self.patrol_event[0] == 10:
+            # EVENT: patrol disagreement
             if self.before:
                 # stuff that happens during calculations
                 if int(self.patrol_max_experience) > 49:
@@ -413,9 +472,23 @@ class Patrol(object):
                     self.patrol_leader.experience = int(self.patrol_leader.experience) - 10
                     if int(self.patrol_leader.experience) < 0:
                         self.patrol_leader.experience = 0
+                    impact = -3
+
+                if self.success:
+                    impact = 3
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.like)
+                        rel.like += impact
+                        print("AFTER", rel.like)
                 return
 
         if self.patrol_event[0] == 11:
+            # EVENT: meets a other clan
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -425,6 +498,7 @@ class Patrol(object):
                     self.other_clan.relations = int(self.other_clan.relations) + 1
                     if int(self.other_clan.relations) == 7:
                         self.patrol_result_text = game.clan.name + 'Clan and ' + self.other_clan.name + 'Clan declare a truce.'
+                    impact = 3
                 else:
                     if int(self.other_clan.relations) < 7:
                         events_class.dies(self.patrol_random_cat)
@@ -433,9 +507,23 @@ class Patrol(object):
                         self.other_clan.relations = 1
                     if int(self.other_clan.relations) == 6:
                         self.patrol_result_text = self.other_clan.name + 'Clan declares war on ' + game.clan.name + 'Clan.'
+
+                if not self.success:
+                    impact = -3
+
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.trust)
+                        rel.trust += impact
+                        print("AFTER", rel.trust)
                 return
 
         if self.patrol_event[0] == 12:
+            # EVENT: chance for training
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -451,9 +539,23 @@ class Patrol(object):
                                 self.patrol_cats[i].experience = 80
                             experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
                             self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
-                    return
+                    impact = 5
+
+                if not self.success:
+                    impact = -5
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.admiration)
+                        rel.admiration += impact
+                        print("AFTER", rel.admiration)
+                return
 
         if self.patrol_event[0] == 14:
+            # EVENT: ghost story
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -470,9 +572,23 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
                         self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
+                    impact = -3
+
+                if self.success:
+                    impact = 3
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.trust)
+                        rel.trust += impact
+                        print("AFTER", rel.trust)
                 return
 
         if self.patrol_event[0] == 16:
+            # EVENT: prove there skill
             if self.before:
 
                 # stuff that happens during calculations
@@ -482,9 +598,24 @@ class Patrol(object):
                 return
             else:
                 # stuff that happens after the results
+                if not self.success:
+                    impact = -3
+
+                if self.success:
+                    impact = 3
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.comfortable)
+                        rel.comfortable += impact
+                        print("AFTER", rel.comfortable)
                 return
 
         if self.patrol_event[0] == 17:
+            # EVENT: question loyalty
             if self.before:
                 # stuff that happens during calculations
                 if self.patrol_stat_cat.skill in ['good speaker', 'great speaker', 'excellent speaker']:
@@ -492,9 +623,24 @@ class Patrol(object):
                 return
             else:
                 # stuff that happens after the results
+                if not self.success:
+                    impact = -5
+
+                if self.success:
+                    impact = 5
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.trust)
+                        rel.trust += impact
+                        print("AFTER", rel.trust)
                 return
 
         if self.patrol_event[0] == 19:
+            # EVENT: doubting deputy ability
             if self.before:
 
                 # stuff that happens during calculations
@@ -504,9 +650,24 @@ class Patrol(object):
                 return
             else:
                 # stuff that happens after the results
+                if not self.success:
+                    impact = -5
+
+                if self.success:
+                    impact = 5
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.admiration)
+                        rel.admiration += impact
+                        print("AFTER", rel.admiration)
                 return
 
         if self.patrol_event[0] == 20:
+            # EVENT: patrol leader story
             if self.before:
                 # stuff that happens during calculations
                 if game.clan.leader.skill in ['good speaker', 'great speaker', 'excellent speaker']:
@@ -514,9 +675,24 @@ class Patrol(object):
                 return
             else:
                 # stuff that happens after the results
+                if not self.success:
+                    impact = -3
+
+                if self.success:
+                    impact = 3
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.comfortable)
+                        rel.comfortable += impact
+                        print("AFTER", rel.comfortable)
                 return
 
         if self.patrol_event[0] == 21:
+            # EVENT: young loner
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -533,9 +709,23 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
                         self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
+                    impact = -3
+
+                if self.success:
+                    impact = 3
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.like)
+                        rel.like += impact
+                        print("AFTER", rel.like)
                 return
 
         if self.patrol_event[0] == 22 or self.patrol_event[0] == 23:
+            # EVENT: nervous or worried cat
             if self.before:
                 # stuff that happens during calculations
                 if self.patrol_stat_cat.skill in ['good hunter', 'great hunter', 'fantastic hunter']:
@@ -554,9 +744,23 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
                         self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
+                    impact = -3
+
+                if self.success:
+                    impact = 3
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.comfortable)
+                        rel.comfortable += impact
+                        print("AFTER", rel.comfortable)
                 return
 
         if self.patrol_event[0] == 27:
+            # EVENT: runs ahead of excitment
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -573,9 +777,23 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
                         self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
+                    impact = -3
+
+                if self.success:
+                    impact = 5
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.admiration)
+                        rel.admiration += impact
+                        print("AFTER", rel.admiration)
                 return
 
         if self.patrol_event[0] == 28:
+            # EVENT: distracted
             if self.before:
                 # stuff that happens during calculations
                 if self.patrol_stat_cat.skill in ['good speaker', 'great speaker', 'excellent speaker']:
@@ -594,9 +812,23 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
                         self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
+                    impact = -3
+
+                if self.success:
+                    impact = 5
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.comfortable)
+                        rel.comfortable += impact
+                        print("AFTER", rel.comfortable)
                 return
 
         if self.patrol_event[0] == 29:
+            # EVENT: old reval rogue
             if self.before:
                 # stuff that happens during calculations
                 if self.patrol_stat_cat.skill in ['good fighter', 'great fighter', 'excellent fighter']:
@@ -615,9 +847,23 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
                         self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
+                    impact = -5
+
+                if self.success:
+                    impact = 5
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.trust)
+                        rel.trust += impact
+                        print("AFTER", rel.trust)
                 return
 
         if self.patrol_event[0] == 30:
+            # EVENT: talking about love life
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -634,9 +880,23 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
                         self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
+                    impact = -5
+
+                if self.success:
+                    impact = 5
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.comfortable)
+                        rel.comfortable += impact
+                        print("AFTER", rel.comfortable)
                 return
 
         if self.patrol_event[0] == 31:
+            # EVENT: talk about Starclan
             if self.before:
                 # stuff that happens during calculations
                 if self.patrol_stat_cat.skill in ['strong connection to starclan']:
@@ -644,9 +904,24 @@ class Patrol(object):
                 return
             else:
                 # stuff that happens after the results
+                if not self.success:
+                    impact = -3
+
+                if self.success:
+                    impact = 3
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.comfortable)
+                        rel.comfortable += impact
+                        print("AFTER", rel.comfortable)
                 return
 
         if self.patrol_event[0] == 32:
+            # EVENT: picking on other cat
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -663,9 +938,23 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
                         self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
+                    impact = -5
+
+                if self.success:
+                    impact = 5
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.comfortable)
+                        rel.comfortable += impact
+                        print("AFTER", rel.comfortable)
                 return
 
         if self.patrol_event[0] == 34:
+            # EVENT: strange object of two-legs
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -682,9 +971,23 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
                         self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
+                    impact = -3
+
+                if self.success:
+                    impact = 3
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.trust)
+                        rel.trust += impact
+                        print("AFTER", rel.trust)
                 return
 
         if self.patrol_event[0] == 35 or self.patrol_event[0] == 36:
+            # EVENT: comes accross one or more rogues
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -696,9 +999,24 @@ class Patrol(object):
                         self.patrol_random_cat.specialty = choice([choice(scars1), choice(scars2)])
                     elif self.patrol_random_cat.specialty2 is None:
                         self.patrol_random_cat.specialty2 = choice([choice(scars1), choice(scars2)])
-                    return
+                    impact = -3
+
+                if self.success:
+                    impact = 3
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.trust)
+                        rel.admiration += impact
+                        rel.trust += impact
+                        print("AFTER", rel.trust)
+                return
 
         if self.patrol_event[0] == 37:
+            # EVENT: loner wants to join
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -718,9 +1036,23 @@ class Patrol(object):
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
                     self.patrol_cats.append(kit)
+                    impact = 3
+
+                if not self.success:
+                    impact = -3
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.like)
+                        rel.like += impact
+                        print("AFTER", rel.like)
                 return
 
         if self.patrol_event[0] == 38:
+            # EVENT: bloodthirsty rogues
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -729,9 +1061,23 @@ class Patrol(object):
                 # cat straight up dies
                 if not self.success:
                     events_class.dies(self.patrol_random_cat)
-                    return
+                    impact = -5
+
+                if self.success:
+                    impact = 5
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.trust)
+                        rel.trust += impact
+                        print("AFTER", rel.trust)
+                return
 
         if self.patrol_event[0] == 39:
+            # EVENT: patrol leader thinks apprentice should not be here
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -748,9 +1094,23 @@ class Patrol(object):
                             self.patrol_cats[i].experience = 80
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
                         self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
+                    impact = -3
+
+                if self.success:
+                    impact = 3
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.admiration)
+                        rel.admiration += impact
+                        print("AFTER", rel.admiration)
                 return
 
         if self.patrol_event[0] == 43:
+            # EVENT: scent of an old friend
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -769,8 +1129,23 @@ class Patrol(object):
                     if randint(0, 1):
                         kit.name.suffix = ""
                     self.patrol_cats.append(kit)
+                    impact = 3
+
+                if not self.success:
+                    impact = -3
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.trust)
+                        rel.trust += impact
+                        print("AFTER", rel.trust)
+                return
 
         if self.patrol_event[0] == 44:
+            # EVENT: kittypet wants to join
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -794,9 +1169,23 @@ class Patrol(object):
                         kit.name.prefix = choice(kit.name.loner_names)
                         if randint(0, 2) > 0:
                             kit.name.suffix = ""
+                    impact = 3
+
+                if not self.success:
+                    impact = -3
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.like)
+                        rel.like += impact
+                        print("AFTER", rel.like)
                 return
 
         if self.patrol_event[0] == 45:
+            # EVENT: loner wants to join
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -827,6 +1216,19 @@ class Patrol(object):
                                 relationships.append(Relationship(new_kit,cat))
                         new_kit.relationships = relationships
                         game.clan.add_cat(new_kit)
+                    impact = 3
+
+                if not self.success:
+                    impact = -3
+                # impact relationships
+                cat_ids = [cat.ID for cat in self.patrol_cats]
+                for cat in self.patrol_cats:
+                    print("HERE")
+                    relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+                    for rel in relationships:
+                        print("BEFORE", rel.like)
+                        rel.like += impact
+                        print("AFTER", rel.like)
                 return
 
 

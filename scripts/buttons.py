@@ -159,7 +159,7 @@ class Button(object):
         game.clan.save_clan()
 
     def change_name(self, name, cat_value):
-        relevant_cat = list(filter(lambda inter_cat: inter_cat.ID == cat_value, game.clan.clan_cats))[0]
+        relevant_cat = list(filter(lambda iter_cat: iter_cat.ID == cat_value, game.clan.clan_cats))[0]
         if game.switches['naming_text'] != '':
             name = game.switches['naming_text'].split(' ')
             relevant_cat.name.prefix = name[0]

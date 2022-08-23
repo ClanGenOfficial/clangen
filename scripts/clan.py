@@ -205,22 +205,22 @@ class Clan(object):
             clan_data = json.loads(read_file.read())
         cat_data = self.load_cats_new()
 
-        leader_relevant = list(filter(lambda inter_cat: inter_cat.ID == clan_data["leader_id"], cat_data))
+        leader_relevant = list(filter(lambda iter_cat: iter_cat.ID == clan_data["leader_id"], cat_data))
         leader = None
         if len(leader_relevant) > 0:
             leader = leader_relevant[0]
 
-        deputy_relevant = list(filter(lambda inter_cat: inter_cat.ID == clan_data["deputy_id"], cat_data))
+        deputy_relevant = list(filter(lambda iter_cat: iter_cat.ID == clan_data["deputy_id"], cat_data))
         deputy = None
         if len(deputy_relevant) > 0:
             deputy = deputy_relevant[0]
         
-        med_relevant = list(filter(lambda inter_cat: inter_cat.ID == clan_data["medicine_id"], cat_data))
+        med_relevant = list(filter(lambda iter_cat: iter_cat.ID == clan_data["medicine_id"], cat_data))
         medicine = None
         if len(med_relevant) > 0:
             medicine = med_relevant[0]
 
-        instructor_relevant = list(filter(lambda inter_cat: inter_cat.ID == clan_data["instructor_id"], cat_data))
+        instructor_relevant = list(filter(lambda iter_cat: iter_cat.ID == clan_data["instructor_id"], cat_data))
         instructor = None
         if len(instructor_relevant) == 1:
             instructor = instructor_relevant[0]
@@ -303,21 +303,21 @@ class Clan(object):
 
         if leader_info[0] == '':
             leader_info[0] = None
-        leader_relevant = list(filter(lambda inter_cat: inter_cat.ID == leader_info[0], all_cats))
+        leader_relevant = list(filter(lambda iter_cat: iter_cat.ID == leader_info[0], all_cats))
         leader = None
         if len(leader_relevant) == 1:
             leader = leader_relevant[0]
 
         if deputy_info[0] == '':
             deputy_info[0] = None
-        deputy_relevant = list(filter(lambda inter_cat: inter_cat.ID == deputy_info[0], all_cats))
+        deputy_relevant = list(filter(lambda iter_cat: iter_cat.ID == deputy_info[0], all_cats))
         deputy = None
         if len(deputy_relevant) == 1:
             deputy = deputy_relevant[0]
         
         if med_cat_info[0] == '':
             med_cat_info[0] = None
-        med_relevant = list(filter(lambda inter_cat: inter_cat.ID == med_cat_info[0], all_cats))
+        med_relevant = list(filter(lambda iter_cat: iter_cat.ID == med_cat_info[0], all_cats))
         medicine = None
         if len(med_relevant) == 1:
             medicine = med_relevant[0]
@@ -336,7 +336,7 @@ class Clan(object):
         if len(sections) > 4:
             if instructor_info == '':
                 instructor_info = None
-            instructor_relevant = list(filter(lambda inter_cat: inter_cat.ID == instructor_info, all_cats))
+            instructor_relevant = list(filter(lambda iter_cat: iter_cat.ID == instructor_info, all_cats))
             if len(instructor_relevant) == 1:
                 instructor = instructor_relevant[0]
                 game.clan.instructor = instructor
@@ -514,22 +514,22 @@ class Clan(object):
 
         # replace cat ids with cat objects and creat relationships
         for cat in all_cats:
-            mate_relevant = list(filter(lambda inter_cat: inter_cat.ID == cat.mate, all_cats))
+            mate_relevant = list(filter(lambda iter_cat: iter_cat.ID == cat.mate, all_cats))
             cat.mate = None
             if len(mate_relevant) == 1:
                 cat.mate = mate_relevant[0]
         
-            parten1_relevant = list(filter(lambda inter_cat: inter_cat.ID == cat.parent1, all_cats))
+            parten1_relevant = list(filter(lambda iter_cat: iter_cat.ID == cat.parent1, all_cats))
             cat.parent1 = None
             if len(parten1_relevant) == 1:
                 cat.parent1 = parten1_relevant[0]
 
-            parten2_relevant = list(filter(lambda inter_cat: inter_cat.ID == cat.parent2, all_cats))
+            parten2_relevant = list(filter(lambda iter_cat: iter_cat.ID == cat.parent2, all_cats))
             cat.parent2 = None
             if len(parten2_relevant) == 1:
                 cat.parent2 = parten2_relevant[0]
 
-            mentor_relevant = list(filter(lambda inter_cat: inter_cat.ID == cat.mentor, all_cats))
+            mentor_relevant = list(filter(lambda iter_cat: iter_cat.ID == cat.mentor, all_cats))
             cat.mentor = None
             if len(mentor_relevant) == 1:
                 cat.mentor = mentor_relevant[0]
@@ -539,7 +539,7 @@ class Clan(object):
                 rel_data = json.loads(read_file.read())
                 relationships = []
                 for rel in rel_data:
-                    relevant_cat_list = list(filter(lambda inter_cat: inter_cat.ID == rel['cat_to_id'], all_cats))
+                    relevant_cat_list = list(filter(lambda iter_cat: iter_cat.ID == rel['cat_to_id'], all_cats))
                     if len(relevant_cat_list) > 0:
                         cat_to = relevant_cat_list[0]
                         new_rel = Relationship(cat_from=cat,cat_to=cat_to,

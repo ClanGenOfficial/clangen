@@ -351,6 +351,7 @@ class Events(object):
                 game.cur_events_list.append(name + ' is killed by ' + other_name + ' in an argument over ' + str(cat.mate.name))
                 return
             cat.dies()
+            other_cat.dies()
             game.cur_events_list.append(choice(cause_of_death))
         elif cat.moons > randint(150, 200):  # extra chance of cat dying to age
             if choice([1, 2, 3, 4, 5, 6]) == 1:
@@ -379,28 +380,28 @@ class Events(object):
                     for cat in dead_cats:
                         cat.dies()
 
-    def have_kits(self, cat):
+    def have_kits(self, iter_cat):
         # decide chances of having kits, and if it's possible at all
         chance = 0
-        if cat.mate is not None:
-            if cat.mate in game.clan.clan_cats:
-                if cat.mate.dead:
+        if iter_cat.mate is not None:
+            if iter_cat.mate in game.clan.clan_cats:
+                if iter_cat.mate.dead:
                     chance = 0
-                elif cat.mate.gender != cat.gender and cat.mate.age != 'elder':
+                elif iter_cat.mate.gender != iter_cat.gender and iter_cat.mate.age != 'elder':
                     chance = 25
-                elif game.settings['no gendered breeding'] and cat.mate.age != 'elder' and chance is not None:
+                elif game.settings['no gendered breeding'] and iter_cat.mate.age != 'elder' and chance is not None:
                     chance = 25
                 else:
                     chance = 0
             else:
-                game.cur_events_list.append(f"Warning: {cat.name} has an invalid mate #{cat.mate.ID} - {cat.mate.name}. This has been unset.")
-                cat.mate = None
+                game.cur_events_list.append(f"Warning: {iter_cat.name} has an invalid mate #{iter_cat.mate.ID} - {iter_cat.mate.name}. This has been unset.")
+                iter_cat.mate = None
         else:
             chance = 50
             if not game.settings['no unknown fathers']:
                 chance = 0
 
-        if cat.age in ['kitten', 'adolescent', 'elder'] or cat.example or (not game.settings['no gendered breeding'] and cat.gender == 'male'):
+        if iter_cat.age in ['kitten', 'adolescent', 'elder'] or iter_cat.example or (not game.settings['no gendered breeding'] and iter_cat.gender == 'male'):
             chance = 0
 
         # Decide randomly if kits will be born, if possible
@@ -411,39 +412,39 @@ class Events(object):
             elif self.living_cats < 10:
                 hit = randint(0, chance - 10)
             kits = choice([1, 1, 2, 2, 3, 3, 4])
-            if hit == 1 and cat.mate is not None:
+            if hit == 1 and iter_cat.mate is not None:
                 if game.cur_events_list is not None:
-                    game.cur_events_list.append(str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s)')
+                    game.cur_events_list.append(str(iter_cat.name) + ' had a litter of ' + str(kits) + ' kit(s)')
                 else:
-                    game.cur_events_list = [str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s)']
+                    game.cur_events_list = [str(iter_cat.name) + ' had a litter of ' + str(kits) + ' kit(s)']
 
                 for kit in range(kits):
-                    kit = Cat(parent1=cat, parent2=cat.mate, moons=0)
+                    kit = Cat(parent1=iter_cat, parent2=iter_cat.mate, moons=0)
                     #create and update relationships
                     relationships = []
-                    for inter_cat in game.clan.clan_cats:
-                        if inter_cat.ID in [kit.parent1.ID, kit.parent2.ID]:
-                            inter_cat.relationships.append(Relationship(inter_cat,kit,False,True))
-                            relationships.append(Relationship(kit,inter_cat,False,True))
+                    for iter_cat in game.clan.clan_cats:
+                        if iter_cat in [kit.parent1, kit.parent2]:
+                            iter_cat.relationships.append(Relationship(iter_cat,kit,False,True))
+                            relationships.append(Relationship(kit,iter_cat,False,True))
                         else:
-                            cat.relationships.append(Relationship(inter_cat,kit))
-                            relationships.append(Relationship(kit,inter_cat))
+                            iter_cat.relationships.append(Relationship(iter_cat,kit))
+                            relationships.append(Relationship(kit,iter_cat))
                     kit.relationships = relationships
                     game.clan.add_cat(kit)
             elif hit == 1:
-                game.cur_events_list.append(str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s)')
+                game.cur_events_list.append(str(iter_cat.name) + ' had a litter of ' + str(kits) + ' kit(s)')
 
                 for kit in range(kits):
-                    kit = Cat(parent1=cat, moons=0)
+                    kit = Cat(parent1=iter_cat, moons=0)
                     #create and update relationships
                     relationships = []
-                    for cat in game.clan.clan_cats:
-                        if cat.ID is kit.parent1.ID:
-                            cat.relationships.append(Relationship(cat,kit,False,True))
-                            relationships.append(Relationship(kit,cat,False,True))
+                    for iter_cat in game.clan.clan_cats:
+                        if iter_cat.ID is kit.parent1.ID:
+                            iter_cat.relationships.append(Relationship(iter_cat,kit,False,True))
+                            relationships.append(Relationship(kit,iter_cat,False,True))
                         else:
-                            cat.relationships.append(Relationship(cat,kit))
-                            relationships.append(Relationship(kit,cat))
+                            iter_cat.relationships.append(Relationship(iter_cat,kit))
+                            relationships.append(Relationship(kit,iter_cat))
                     kit.relationships = relationships
                     game.clan.add_cat(kit)
 

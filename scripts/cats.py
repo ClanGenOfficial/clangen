@@ -1057,10 +1057,34 @@ class Cat(object):
             relationship.link_relationship()
 
     def create_interaction(self):
-        random_cat = choice(game.clan.clan_cats)
-        if random_cat.ID != self.ID:
-            relevant_relationship = list(filter(lambda relation: str(relation.cat_to.ID) == str(random_cat.ID), self.relationships))[0]
-            relevant_relationship.start_action()
+        cats_to_choose = list(filter(lambda iter_cat: iter_cat.ID != self.ID, game.clan.clan_cats))
+
+        # increase chance of cats, which are already befriended
+        like_threshold = 40
+        relevant_relationships = list(filter(lambda relation: relation.like >= like_threshold, self.relationships))
+        for relationship in relevant_relationships:
+            cats_to_choose.append(relationship.cat_to)
+            if relationship.like >= like_threshold * 2:
+                cats_to_choose.append(relationship.cat_to)
+        
+
+        # increase chance of cats, which are already may be in love
+        love_threshold = 40
+        relevant_relationships = list(filter(lambda relation: relation.romantic_love >= love_threshold, self.relationships))
+        for relationship in relevant_relationships:
+            cats_to_choose.append(relationship.cat_to)
+            if relationship.romantic_love >= love_threshold * 2:
+                cats_to_choose.append(relationship.cat_to)
+
+        # increase the chance a kitten interact with other kittens
+        if self.age == "kitten":
+            kittens = list(filter(lambda cat: cat.age == "kitten" and cat.ID != self.ID, game.clan.clan_cats))
+            cats_to_choose = cats_to_choose + kittens
+
+        # choose cat and start
+        random_cat = choice(cats_to_choose)
+        relevant_relationship = list(filter(lambda relation: str(relation.cat_to.ID) == str(random_cat.ID), self.relationships))[0]
+        relevant_relationship.start_action()
 
     def update_mentor(self, new_mentor=None):
         if new_mentor is None:
@@ -1201,8 +1225,6 @@ class Cat(object):
         self.sprite = new_sprite
         self.big_sprite = pygame.transform.scale(new_sprite, (sprites.new_size, sprites.new_size))
         self.large_sprite = pygame.transform.scale(self.big_sprite, (sprites.size * 3, sprites.size * 3))
-
-
 
     def draw(self, pos):
         new_pos = list(pos)

@@ -1619,36 +1619,35 @@ class RelationshipScreen(Screens):
 
             the_relationship = relationships[x +
                                              (game.switches['list_page'] - 1) * 10]
-            buttons.draw_button((100 + pos_x, 180 + pos_y), image=the_relationship.cat_to.sprite,
-                                cat=the_relationship.cat_to.ID, cur_screen='profile screen')
+            buttons.draw_button((100 + pos_x, 180 + pos_y), image=the_relationship.cat_to.sprite, cat=the_relationship.cat_to.ID, cur_screen='profile screen')
             # name length
-            longest_string_len = verdana.text(
-                str('romantic love: ' + str(the_relationship.romantic_love)))
-            verdana.text(str(the_relationship.cat_to.name),
-                         (155 + pos_x - longest_string_len / 1.5, 240 + pos_y))
-            verdana_small.text(str(the_relationship.cat_to.gender) + ' - ' + str(
-                the_relationship.cat_to.age), (155 + pos_x - longest_string_len / 1.5, 255 + pos_y))
-            count = 30
-            verdana_small.text('romantic love:  ' + str(the_relationship.romantic_love),
-                               (155 + pos_x - longest_string_len / 1.5, 240 + pos_y + count))
+            longest_string_len = verdana.text(str('romantic love: ' + str(the_relationship.romantic_love)))
+            verdana.text(str(the_relationship.cat_to.name), (155 + pos_x - longest_string_len / 1.5, 240 + pos_y))
+                
+            verdana_small.text(f"{str(the_relationship.cat_to.gender)} - {str(the_relationship.cat_to.age)}", (155 + pos_x - longest_string_len / 1.5, 255 + pos_y))
+            
+            # there is no way the mate is dead
+            if the_cat.mate is not None and the_relationship.cat_to.ID == the_cat.mate.ID:
+                verdana_small.text('mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
+            elif the_relationship.cat_to.mate != None:
+                verdana_small.text('has a mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
+            if the_relationship.cat_to.dead:
+                verdana_small.text('(dead)', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
+            
+            count = 12
+            verdana_small.text('romantic love:  ' + str(the_relationship.romantic_love), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
             count += 10
-            verdana_small.text('like:                ' + str(the_relationship.like),
-                               (155 + pos_x - longest_string_len / 1.5, 240 + pos_y + count))
+            verdana_small.text('like:                ' + str(the_relationship.like), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
             count += 10
-            verdana_small.text('dislike:            ' + str(the_relationship.dislike),
-                               (155 + pos_x - longest_string_len / 1.5, 240 + pos_y + count))
+            verdana_small.text('dislike:            ' + str(the_relationship.dislike), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
             count += 10
-            verdana_small.text('admiration:      ' + str(the_relationship.admiration),
-                               (155 + pos_x - longest_string_len / 1.5, 240 + pos_y + count))
+            verdana_small.text('admiration:      ' + str(the_relationship.admiration), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
             count += 10
-            verdana_small.text('comfortable:    ' + str(the_relationship.comfortable),
-                               (155 + pos_x - longest_string_len / 1.5, 240 + pos_y + count))
+            verdana_small.text('comfortable:    ' + str(the_relationship.comfortable), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
             count += 10
-            verdana_small.text('jealousy:         ' + str(the_relationship.jealousy),
-                               (155 + pos_x - longest_string_len / 1.5, 240 + pos_y + count))
+            verdana_small.text('jealousy:         ' + str(the_relationship.jealousy), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
             count += 10
-            verdana_small.text('trust:               ' + str(the_relationship.trust),
-                               (155 + pos_x - longest_string_len / 1.5, 240 + pos_y + count))
+            verdana_small.text('trust:               ' + str(the_relationship.trust), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
 
             cats_on_page += 1
             pos_x += 130
