@@ -466,13 +466,15 @@ class Patrol(object):
                     if int(self.other_clan.relations) == 7:
                         self.patrol_result_text = game.clan.name + 'Clan and ' + self.other_clan.name + 'Clan declare a truce.'
                 elif (self.intentional_fail and self.success) or (not self.intentional_fail and not self.success):
-                    if int(self.other_clan.relations) < 7:
-                        events_class.dies(self.patrol_random_cat)
                     self.other_clan.relations = int(self.other_clan.relations) - 1
                     if int(self.other_clan.relations) < 1:
                         self.other_clan.relations = 1
                     if int(self.other_clan.relations) == 6:
                         self.patrol_result_text = self.other_clan.name + 'Clan declares war on ' + game.clan.name + 'Clan.'
+                
+                if int(self.other_clan.relations) < 7 and not self.success:
+                        events_class.dies(self.patrol_random_cat)
+                        
                 return
                 
 
