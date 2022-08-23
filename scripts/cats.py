@@ -267,7 +267,7 @@ class Cat(object):
                     starclan_thoughts.extend([  # thoughts with other cats that are alive
                         'Is watching over ' + other_name, 'Is curious about what ' + other_name + ' is doing', 'Wants to send a message to ' + other_name,
                         'Is currently walking in the dreams of ' + other_name, 'Is proud of ' + other_name, 'Is disappointed in ' + other_name, 'Wants to warn ' + other_name,
-                        'Has been following the growth of ' + other_name, 'Has seeen ' + other_name + '\'s future demise', 'Is looking to visit ' + other_name + ' in a dream soon',
+                        'Has been following the growth of ' + other_name, 'Has seen ' + other_name + '\'s future demise', 'Is looking to visit ' + other_name + ' in a dream soon',
                         'Accidentally found themselves in ' + other_name + '\'s dreams the other night', 'Wants to warn ' + other_name + ' about something that will happen soon',
                         'Knows what ' + other_name + '\'s secret is and wants to tell some cat'])
                 if cat.status in ['kitten', 'apprentice', 'medicine cat apprentice']:  # dead young cat thoughts
@@ -365,7 +365,7 @@ class Cat(object):
                              'Keeps shyly glancing over at ' + other_name + ' as the clan talks about kits', 'Gave a pretty flower they found to ' + other_name,
                              'Is admiring ' + other_name + ' from afar...', 'Is thinking of the best ways to impress ' + other_name,
                              'Doesn\'t want ' + other_name + ' to overwork themselves', 'Is rolling around a little too playfully with ' + other_name + '...',
-                             'Is wondering what it would be like to grow old with ' + other_name, ])
+                             'Is wondering what it would be like to grow old with ' + other_name])
                 if cat.status == 'kitten':
                     thoughts.extend(['Plays mossball by themselves', 'Is annoying older cats', 'Wonders what their full name will be', 'Pretends to be a warrior',
                                      'Is becoming interested in herbs', 'Tries to sneak out of camp', 'Is rolling around on the ground', 'Is chasing their tail',
@@ -454,7 +454,7 @@ class Cat(object):
                                          'Is lashing their tail furiously', 'Can\'t stand to watch the kits make fools of themselves'])
                     elif cat.trait == 'charismatic':
                         thoughts.extend(['Is smiling warmly at their clanmates', 'Has the kits very engaged in a very, very tall tale', 'Is a favorite among the elders lately',
-                                         'Is this moon\'s heartthrob', 'Is making everyone laugh at a very funny quip',
+                                         'Is this moon\'s heartthrob to the other apprentices', 'Is making everyone laugh at a very funny quip',
                                          'Has recently given a wonderful speech to fellow apprentices, boosting morale', 'Always manages to turn the mood into a lighter one',
                                          'Is laughing with friends', 'Is looking around camp for someone to share tongues with',
                                          'Has received several invitations to share tongues later this evening... and is deciding which to take',
@@ -710,7 +710,7 @@ class Cat(object):
                                      'Tries to set a good example for younger cats', 'Wants to go on a patrol', 'Wants to go on a hunting patrol', 'Is guarding the camp entrance',
                                      'Is thinking about kits', 'Is watching over the kits', 'Is gossiping', 'Plans to visit the medicine cat', 'Is sharpening their claws',
                                      'Is feeling sore', 'Is being pestered by flies', 'Feels overworked', 'Is exhausted from yesterday\'s patrol', 'Wants to have kits',
-                                     'Is sparring with some campmates', 'Fell into the nearby creek yesterday and is still feeling damp',
+                                     'Is sparring with some clanmates', 'Fell into the nearby creek yesterday and is still feeling damp',
                                      'Is helping to reinforce the nursery wall with brambles', 'Is assigned to the dawn patrol tomorrow', 'Is assigned to the hunting patrol today',
                                      'Is helping patrol the borders today', 'Is itching to run in a wide open space', 'Has offered to help the deputy organize today\'s patrols',
                                      'Is guarding the camp entrance', 'Is helping to escort the medicine cat to gather herbs'])

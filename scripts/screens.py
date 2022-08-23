@@ -338,12 +338,12 @@ class MakeClanScreen(Screens):
 
         for u in range(6):
             if game.switches['leader'] == u:
-                game.choose_cats[u].draw((screen_x / 2 - 25, 550))
+                game.choose_cats[u].draw((650, 200))
             else:
                 buttons.draw_button((50, 150 + 50 * u), image=game.choose_cats[u].sprite, cat=u)
         for u in range(6, 12):
             if game.switches['leader'] == u:
-                game.choose_cats[u].draw((screen_x / 2 - 25, 550))
+                game.choose_cats[u].draw((650, 200))
             else:
                 buttons.draw_button((100, 150 + 50 * (u - 6)), image=game.choose_cats[u].sprite, cat=u)
 
@@ -372,17 +372,17 @@ class MakeClanScreen(Screens):
 
         for u in range(6):
             if game.switches['leader'] == u:
-                game.choose_cats[u].draw((screen_x / 2 - 25, 550))
+                game.choose_cats[u].draw((650, 200))
             elif game.switches['deputy'] == u:
-                game.choose_cats[u].draw((screen_x / 2 - 50 * (u + 2), 550))
+                game.choose_cats[u].draw((650, 250))
             else:
                 buttons.draw_button((50, 150 + 50 * u), image=game.choose_cats[u].sprite, cat=u)
 
         for u in range(6, 12):
             if game.switches['leader'] == u:
-                game.choose_cats[u].draw((screen_x / 2 - 25, 550))
+                game.choose_cats[u].draw((650, 200))
             elif game.switches['deputy'] == u:
-                game.choose_cats[u].draw((screen_x / 2 + 50 * (u - 5), 550))
+                game.choose_cats[u].draw((650, 250))
             else:
                 buttons.draw_button((100, 150 + 50 * (u - 6)), image=game.choose_cats[u].sprite, cat=u)
 
@@ -410,21 +410,25 @@ class MakeClanScreen(Screens):
         screen.blit(clan_img, (0, 400))
         for u in range(6):
             if game.switches['leader'] == u:
-                game.choose_cats[u].draw((screen_x / 2 - 25, 550))
-            elif game.switches['deputy'] == u or game.switches['medicine_cat'] == u:
-                game.choose_cats[u].draw((screen_x / 2 - 50 * (u + 2), 550))
+                game.choose_cats[u].draw((650, 200))
+            elif game.switches['deputy'] == u:
+                game.choose_cats[u].draw((650, 250))
+            elif game.switches['medicine_cat'] == u:
+                game.choose_cats[u].draw((650, 300))
             elif u in game.switches['members']:
-                game.choose_cats[u].draw((screen_x / 2 - 50 * (u + 2), 550))
+                game.choose_cats[u].draw((700, 100 + 50 * (len(game.switches['members']) - u)))
             else:
                 buttons.draw_button((50, 150 + 50 * u), image=game.choose_cats[u].sprite, cat=u)
 
         for u in range(6, 12):
             if game.switches['leader'] == u:
-                game.choose_cats[u].draw((screen_x / 2 - 25, 550))
-            elif game.switches['deputy'] == u or game.switches['medicine_cat'] == u:
-                game.choose_cats[u].draw((screen_x / 2 + 50 * (u - 5), 550))
+                game.choose_cats[u].draw((650, 200))
+            elif game.switches['deputy'] == u:
+                game.choose_cats[u].draw((650, 250))
+            elif game.switches['medicine_cat'] == u:
+                game.choose_cats[u].draw((650, 300))
             elif u in game.switches['members']:
-                game.choose_cats[u].draw((screen_x / 2 + 50 * (u - 5), 550))
+                game.choose_cats[u].draw((700, 100 + 50 * (len(game.switches['members']) - (u - 6))))
             else:
                 buttons.draw_button((100, 150 + 50 * (u - 6)), image=game.choose_cats[u].sprite, cat=u)
 
