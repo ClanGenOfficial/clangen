@@ -754,6 +754,7 @@ class Patrol(object):
                         kit.name.suffix = ""
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
+                    kit.thought = 'Is looking around the camp with wonder'
                     self.patrol_cats.append(kit)
                 return
 
@@ -799,6 +800,7 @@ class Patrol(object):
                     kit.skill = 'formerly a loner'
                     if randint(0, 1):
                         kit.name.suffix = ""
+                    kit.thought = 'Is looking around the camp with wonder'
                     self.patrol_cats.append(kit)
 
         if self.patrol_event[0] == 44:
@@ -812,6 +814,7 @@ class Patrol(object):
                     kit = Cat(status=new_cat_status)
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a kittypet'
+                    kit.thought = 'Is looking around the camp with wonder'
                     self.patrol_cats.append(kit)
                     if randint(0, 1):
                         kit.specialty2 = choice(scars3)
@@ -832,6 +835,7 @@ class Patrol(object):
                     kit = Cat(status=new_cat_status)
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
+                    kit.thought = 'Is looking around the camp with wonder'
                     self.patrol_cats.append(kit)
                     kits = choice([2, 2, 2, 3])
                     for new_kit in range(kits):
