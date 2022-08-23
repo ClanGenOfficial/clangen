@@ -415,10 +415,25 @@ class MakeClanScreen(Screens):
                 game.choose_cats[u].draw((650, 250))
             elif game.switches['medicine_cat'] == u:
                 game.choose_cats[u].draw((650, 300))
-            elif u in game.switches['members']:
-                game.choose_cats[u].draw((700, 100 + 50 * (len(game.switches['members']) - u)))
-            else:
+            elif u not in game.switches['members']:
                 buttons.draw_button((50, 150 + 50 * u), image=game.choose_cats[u].sprite, cat=u)
+            try:
+                if u == game.switches['members'][0]:
+                    game.choose_cats[u].draw((700, 100))
+                elif u == game.switches['members'][1]:
+                    game.choose_cats[u].draw((700, 150))
+                elif u == game.switches['members'][2]:
+                    game.choose_cats[u].draw((700, 200))
+                elif u == game.switches['members'][3]:
+                    game.choose_cats[u].draw((700, 250))
+                elif u == game.switches['members'][4]:
+                    game.choose_cats[u].draw((700, 300))
+                elif u == game.switches['members'][5]:
+                    game.choose_cats[u].draw((700, 350))
+                elif u == game.switches['members'][6]:
+                    game.choose_cats[u].draw((700, 400))
+            except IndexError:
+                pass
 
         for u in range(6, 12):
             if game.switches['leader'] == u:
@@ -427,10 +442,26 @@ class MakeClanScreen(Screens):
                 game.choose_cats[u].draw((650, 250))
             elif game.switches['medicine_cat'] == u:
                 game.choose_cats[u].draw((650, 300))
-            elif u in game.switches['members']:
-                game.choose_cats[u].draw((700, 100 + 50 * (len(game.switches['members']) - (u - 6))))
-            else:
+            elif u not in game.switches['members']:
                 buttons.draw_button((100, 150 + 50 * (u - 6)), image=game.choose_cats[u].sprite, cat=u)
+            try:
+                if u == game.switches['members'][0]:
+                    game.choose_cats[u].draw((700, 100))
+                elif u == game.switches['members'][1]:
+                    game.choose_cats[u].draw((700, 150))
+                elif u == game.switches['members'][2]:
+                    game.choose_cats[u].draw((700, 200))
+                elif u == game.switches['members'][3]:
+                    game.choose_cats[u].draw((700, 250))
+                elif u == game.switches['members'][4]:
+                    game.choose_cats[u].draw((700, 300))
+                elif u == game.switches['members'][5]:
+                    game.choose_cats[u].draw((700, 350))
+                elif u == game.switches['members'][6]:
+                    game.choose_cats[u].draw((700, 400))
+            except IndexError:
+                pass
+
 
         if 12 > game.switches['cat'] >= 0 and game.switches['cat'] not in [game.switches['leader'], game.switches['deputy'], game.switches['medicine_cat']] and game.switches[
             'cat'] not in game.switches['members']:
