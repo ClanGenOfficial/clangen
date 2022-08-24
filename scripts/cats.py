@@ -1073,6 +1073,7 @@ class Cat(object):
         new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
         if self.paralyzed:
+            new_sprite.blit(sprites.sprites.get('skinparalyzed' + self.skin + '0'), (0, 0))
             new_sprite.blit(pygame.image.load('sprites/paralyzed/Paralyzed_lineart.png'), (0, 0))
         else:
             if self.pelt.name not in ['Tortie', 'Calico']:
@@ -1231,6 +1232,10 @@ class Cat(object):
                 data = data[:-1]
             else:
                 data += ',' + 'None'
+            if x.paralyzed:
+                data+= ',' + 'True'
+            else:
+                data+=',' + 'False'
             # next cat
             data += '\n'
 
@@ -1318,6 +1323,9 @@ class Cat(object):
                         the_cat.apprentice = attr[32].split(';')
                     if len(attr) > 33 and attr[33] is not None:
                         the_cat.former_apprentices = attr[33].split(';')
+                    if len(attr) > 34:
+                        the_cat.paralyzed = bool(attr[34])
+
 
             game.switches['error_message'] = 'There was an error loading this clan\'s mentors/apprentices'
 

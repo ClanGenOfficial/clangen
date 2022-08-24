@@ -1073,7 +1073,6 @@ class PatrolScreen(Screens):
                     game.patrol_cats[u].draw((screen_x / 2 - 50 * (u + 2), 550))
                 else:
                     buttons.draw_button((50, 150 + 50 * u), image=game.patrol_cats[u].sprite, cat=u)
-
                     random_options.append(game.patrol_cats[u])
         for u in range(6, 12):
             if u < i_max:
@@ -1081,7 +1080,6 @@ class PatrolScreen(Screens):
                     game.patrol_cats[u].draw((screen_x / 2 + 50 * (u - 5), 550))
                 else:
                     buttons.draw_button((screen_x - 100, 150 + 50 * (u - 6)), image=game.patrol_cats[u].sprite, cat=u)
-
                     random_options.append(game.patrol_cats[u])
         if random_options and len(game.switches['current_patrol']) < 6:
             random_patrol = choice(random_options)
@@ -1109,8 +1107,11 @@ class PatrolScreen(Screens):
 
         verdana_small.text('experience: ' + str(game.patrol_cats[game.switches['cat']].experience_level), ('center', 445))
 
+        if game.patrol_cats[game.switches['cat']].status == 'apprentice':
+            verdana_small.text('mentor: ' + str(game.patrol_cats[game.switches['cat']].mentor.name), ('center', 465))
+
         if len(game.switches['current_patrol']) < 6:
-            buttons.draw_button(('center', 490), text='Add to Patrol', current_patrol=game.patrol_cats[game.switches['cat']], add=True)
+            buttons.draw_button(('center', 500), text='Add to Patrol', current_patrol=game.patrol_cats[game.switches['cat']], add=True)
 
     def screen_switches(self):
         game.switches['current_patrol'] = []

@@ -29,8 +29,13 @@ class Sprites(object):
 
         # making the group
         new_group = pygame.Surface((self.size * sprites_x, self.size * sprites_y), pygame.HWSURFACE | pygame.SRCALPHA)
-        new_group.blit(self.spritesheets[spritesheet], (0, 0),
+        if name == 'skinparalyzedPINK':
+            new_group.blit(self.spritesheets[spritesheet], (5, 4),
+                           (pos[0] * sprites_x * self.size, pos[1] * sprites_y * self.size, (pos[0] + sprites_x) * self.size, (pos[1] + sprites_y) * self.size))
+        else:
+            new_group.blit(self.spritesheets[spritesheet], (0, 0),
                        (pos[0] * sprites_x * self.size, pos[1] * sprites_y * self.size, (pos[0] + sprites_x) * self.size, (pos[1] + sprites_y) * self.size))
+
         self.groups[name] = new_group
 
         # splitting group into singular sprites and storing into self.sprites section
@@ -94,11 +99,12 @@ for x in ['lineart', 'singlecolours', 'speckledcolours', 'tabbycolours', 'whitep
           'bellcollars', 'bellcollarsextra', 'bowcollars', 'bowcollarsextra']:
     sprites.spritesheet(f"sprites/{x}.png", x)
 
-for sprite in ['Paralyzed_lineart', 'singleparalyzed', 'speckledparalyzed', 'tabbyparalyzed', 'whiteallparalyzed', 'eyesparalyzed', 'tabbyparalyzed', 'tortiesparalyzed', 'scarsparalyzed']:
+for sprite in ['Paralyzed_lineart', 'singleparalyzed', 'speckledparalyzed', 'tabbyparalyzed', 'whiteallparalyzed', 'eyesparalyzed', 'tabbyparalyzed', 'tortiesparalyzed', 'scarsparalyzed', 'skinparalyzed']:
     sprites.spritesheet(f"sprites/paralyzed/{sprite}.png", sprite)
 
 # Line art
 sprites.make_group('lineart', (0, 0), 'lines', sprites_y=5)
+sprites.make_group('Paralyzed_lineart', (0, 0), 'p_lines', sprites_x = 1, sprites_y=1)
 
 for a, i in enumerate(['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE']):
     sprites.make_group('eyes', (a, 0), f'eyes{i}')
@@ -106,10 +112,10 @@ for a, i in enumerate(['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE']
 sprites.make_group('eyes', (0, 1), 'eyesDARKBLUE')
 sprites.make_group('eyes', (1, 1), 'eyesBLUEYELLOW')
 sprites.make_group('eyes', (2, 1), 'eyesBLUEGREEN')
-
 sprites.make_group('eyesextra', (0, 1), 'eyesextraDARKBLUE', sprites_y=2)
 sprites.make_group('eyesextra', (1, 1), 'eyesextraBLUEYELLOW', sprites_y=2)
 sprites.make_group('eyesextra', (2, 1), 'eyesextraBLUEGREEN', sprites_y=2)
+
 
 for a, i in enumerate(['ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANY2'], start=1):
     sprites.make_group('whitepatches', (a, 0), f'white{i}')
@@ -173,6 +179,10 @@ for a, i in enumerate(['BLUEONE', 'BLUETWO', 'BLUETHREE', 'BLUEFOUR'], start=2):
 sprites.make_group('skin', (0, 0), 'skinBLACK')
 sprites.make_group('skin', (1, 0), 'skinRED')
 sprites.make_group('skin', (2, 0), 'skinPINK')
+sprites.make_group('skinparalyzed', (0, 0), 'skinparalyzedPINK', sprites_x=1, sprites_y=1)
+sprites.make_group('skinparalyzed', (1, 0), 'skinparalyzedRED', sprites_x=1, sprites_y=1)
+sprites.make_group('skinparalyzed', (2, 0), 'skinparalyzedBLACK', sprites_x=1, sprites_y=1)
+
 
 sprites.make_group('skinextra', (0, 0), 'skinextraBLACK', sprites_y=2)
 sprites.make_group('skinextra', (1, 0), 'skinextraRED', sprites_y=2)
