@@ -209,6 +209,7 @@ class Cat(object):
         self.experience_level = experience_levels[math.floor(self.experience / 10)]
 
         self.paralyzed = False
+        self.no_kits = False
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
 
@@ -398,12 +399,11 @@ class Cat(object):
                              'Is staring intently at something no other cat can see', 'Is staring intently at a wall', 'Has been distracted during recent clan meetings',
                              'Recently wandered off during training, not returning until dusk'])
                     elif cat.trait == 'ambitious':
-                        thoughts.extend(
-                            ['Is asking the clan leader they can do to help out around camp', 'Has been asking their mentor for more training', 'Begs to be made a warrior early',
-                             'Is boasting loudly about having defeated an enemy warrior on patrol the other day', 'Seems to be ordering their fellow apprentices around',
-                             'Has been imitating the clan leader\'s behaviour recently', 'Tries to put on a brave face for their fellow apprentices',
-                             'Is feeling proud of themselves', 'Made sure to wake up early to train', 'Has been catching the most prey out of all the apprentices',
-                             'Is daydreaming about a clan celebration in their honor someday'])
+                        thoughts.extend(['Is asking the clan leader what they can do to help out around camp', 'Has been asking their mentor for more training',
+                                         'Begs to be made a warrior early', 'Is boasting loudly about having defeated an enemy warrior on patrol the other day',
+                                         'Seems to be ordering their fellow apprentices around', 'Has been imitating the clan leader\'s behaviour recently',
+                                         'Tries to put on a brave face for their fellow apprentices', 'Is feeling proud of themselves', 'Made sure to wake up early to train',
+                                         'Has been catching the most prey out of all the apprentices', 'Is daydreaming about a clan celebration in their honor someday'])
                     elif cat.trait == 'loyal':
                         thoughts.extend(['Is listening to the clan leader intently', 'Is listening to the deputy intently', 'Is listening to their mentor intently',
                                          'Has agreed to their mentor\'s orders recently, despite their own doubts', 'Is determined to protect their loved ones',
@@ -628,9 +628,9 @@ class Cat(object):
                         thoughts.extend(
                             ['Insists everyone eat chamomile leaves everyday at moonhigh', 'Hisses at the kits randomly', 'Sleeps in the middle of the clearing', 'Looks dazed'])
                     elif cat.trait == 'ambitious':
-                        thoughts.extend(['Insists on taking on more tasks'])
+                        thoughts.extend(['Insists on taking on more tasks', 'Spends all day gathering herbs'])
                     elif cat.trait == 'loyal':
-                        thoughts.extend(['Refuses to share gossip at the half-moon meeting'])
+                        thoughts.extend(['Refuses to share gossip at the half-moon meeting', 'Refuses to give another clan\'s medicine cat some herbs'])
                     elif cat.trait == 'righteous':
                         thoughts.extend(['Gives herbs to an injured loner'])
                     elif cat.thoughts == 'fierce':
@@ -640,7 +640,7 @@ class Cat(object):
                     elif cat.trait == 'strict':
                         thoughts.extend(['Forbids anyone from disturbing them when working'])
                     elif cat.trait == 'charismatic':
-                        thoughts.extend([''])
+                        thoughts.extend(['Is doing their daily checkup on the elders'])
                     elif cat.trait == 'calm':
                         thoughts.extend(['Stays composed when treating a severe injury'])
                     elif cat.trait == 'daring':
@@ -648,7 +648,7 @@ class Cat(object):
                     elif cat.trait == 'loving':
                         thoughts.extend(['Watches over some newborn kits'])
                     elif cat.trait == 'playful':
-                        thoughts.extend([''])
+                        thoughts.extend(['Excitedly teaches the kits about basic herbs'])
                     elif cat.trait == 'lonesome':
                         thoughts.extend(['Is wishing they could have a mate and kits', 'Wishes their clanmates could understand their struggles'])
                     elif cat.trait == 'cold':
@@ -704,14 +704,15 @@ class Cat(object):
                                          'Growls to themselves', 'Tells other warriors to get ready for a battle', 'Yearns to fight', 'Daydreams about killing a certain cat',
                                          'Wonders if they could kill a fox all by themselves', 'Started a fight with a fellow warrior'])
                     elif cat.trait == 'strange':
-                        thoughts.extend(
-                            ['Is telling every cat about their weird dreams', 'Is chasing a butterfly', 'Stares at random cats', 'Volunteered to guard the dirtplace...?',
-                             'Is telling stories that only make sense to them', 'Doesn\'t feel understood by their clanmates', 'Wandered off alone somewhere the other day',
-                             'Is staring intently at something no other cat can see', 'Is staring intently at a wall', 'Has been distracted during recent clan meetings',
-                             'Recently wandered off during a patrol, not returning until dusk'])
+                        thoughts.extend(['Is making odd noises', 'Is tearing up their food', 'Is gnawing on a stick', 'Collects the bones of prey', 'Is staring intently at a wall',
+                                         'Drawing symbols in the dirt with their claws', 'Paces back and forth', 'Is zoned out', 'Is telling every cat about their weird dreams',
+                                         'Is chasing a butterfly', 'Stares at random cats', 'Volunteered to guard the dirtplace...?',
+                                         'Is telling stories that only make sense to them', 'Doesn\'t feel understood by their clanmates',
+                                         'Wandered off alone somewhere the other day', 'Is staring intently at something no other cat can see', 'Is staring intently at a wall',
+                                         'Has been distracted during recent clan meetings', 'Recently wandered off during a patrol, not returning until dusk'])
                     elif cat.trait == 'ambitious':
                         thoughts.extend(
-                            ['Is asking the clan leader they can do to help out around camp', 'Has been taking on extra patrols lately', 'Envies the deputy\'s position',
+                            ['Is asking the clan leader what they can do to help out around camp', 'Has been taking on extra patrols lately', 'Envies the deputy\'s position',
                              'Is being admired by many clanmates for their recent feats', 'Is boasting loudly about having defeated an enemy warrior on patrol the other day',
                              'Seems to be ordering their fellow clanmates around', 'Has been imitating the clan leader\'s behaviour recently',
                              'Tries to put on a brave face for their clanmates', 'Is feeling proud of themselves', 'Made sure to wake up early to volunteer for the dawn patrol',
@@ -935,7 +936,7 @@ class Cat(object):
                                          'Thinks about killing the leader and staging it as an accident', 'Encourages the leader to start a war'])
                     elif cat.trait == 'strange':
                         thoughts.extend(['Accidentally assigns the same cat to three patrols', 'Insists a hunting patrol only bring back mice',
-                                         'Goes missing and comes back smelling like garlic'])
+                                         'Goes missing and comes back smelling like garlic', 'Is making odd noises'])
                 elif cat.status == 'leader':
                     thoughts.extend(['Is hoping for a sign from StarClan', 'Is hoping that they are leading their clan well', 'Thinks about who should mentor new apprentices',
                                      'Is worried about clan relations', 'Is spending time alone', 'Tries to set a good example for the deputy',
@@ -1233,9 +1234,9 @@ class Cat(object):
             else:
                 data += ',' + 'None'
             if x.paralyzed:
-                data+= ',' + 'True'
+                data += ',' + 'True'
             else:
-                data+=',' + 'False'
+                data += ',' + 'False'
             # next cat
             data += '\n'
 
@@ -1325,7 +1326,6 @@ class Cat(object):
                         the_cat.former_apprentices = attr[33].split(';')
                     if len(attr) > 34:
                         the_cat.paralyzed = bool(attr[34])
-
 
             game.switches['error_message'] = 'There was an error loading this clan\'s mentors/apprentices'
 

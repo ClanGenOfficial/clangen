@@ -185,8 +185,7 @@ class Events(object):
                 loner = Cat(status='warrior', moons=randint(12, 120))
                 loner.skill = 'formerly a loner'
                 game.clan.add_cat(loner)
-                loner_text = [f'{name} finds a loner who joins the clan',
-                              f'A loner says that they are interested in clan life and joins the clan']
+                loner_text = [f'{name} finds a loner who joins the clan', f'A loner says that they are interested in clan life and joins the clan']
                 game.cur_events_list.append(choice(loner_text))
                 game.cur_events_list.append('The loner changes their name to ' + str(loner.name))
                 self.check_age(loner)
@@ -212,6 +211,7 @@ class Events(object):
                 game.cur_events_list.append(choice(loner_text))
                 game.cur_events_list.append('The kittypet changes their name to ' + str(loner.name))
                 self.check_age(loner)
+
     # TODO Rename this here and in `invite_new_cats`
     def _extracted_from_invite_new_cats_59(self, loner):
         loner.skill = 'formerly a kittypet'
@@ -225,11 +225,9 @@ class Events(object):
         loner_name = choice(names.loner_names)
         loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
         self._extracted_from_invite_new_cats_59(loner)
-        loner_text = [f'{name} finds a kittypet named {str(loner_name)} who wants to join the clan',
-                      f'A kittypet named {str(loner_name)} stops {name} and asks to join the clan']
+        loner_text = [f'{name} finds a kittypet named {str(loner_name)} who wants to join the clan', f'A kittypet named {str(loner_name)} stops {name} and asks to join the clan']
         game.cur_events_list.append(choice(loner_text))
         game.cur_events_list.append(str(loner_name) + ' decides to keep their name')
-
 
     # TODO Rename this here and in `invite_new_cats`
     def _extracted_from_invite_new_cats_19(self, name):
@@ -357,7 +355,13 @@ class Events(object):
                     name4 = str(dead_cats[3].name)
                     name5 = str(dead_cats[4].name)
                     disaster.extend([' drown after the camp becomes flooded', ' are killed in a battle against ' + choice(names.normal_prefixes) + 'Clan',
-                                     ' are killed after a fire rages through the camp', ' are killed in an ambush by a group of rogues', ' go missing in the night'])
+                                     ' are killed after a fire rages through the camp', ' are killed in an ambush by a group of rogues', ' go missing in the night',
+                                     ' are killed after a badger attack', ' die to a greencough outbreak', ' are taken away by twolegs'])
+                    if game.clan.current_season == 'Leaf-bare':
+                        disaster.extend([' die after freezing from a snowstorm', ' starve to death when no prey is found'])
+                    elif game.clan.current_season == 'Greenleaf':
+                        disaster.extend([' die after overheating', ' die after the water dries up from drought'])
+
                     game.cur_events_list.append(name1 + ', ' + name2 + ', ' + name3 + ', ' + name4 + ', and ' + name5 + choice(disaster))
                     for cat in dead_cats:
                         self.dies(cat)
@@ -401,7 +405,7 @@ class Events(object):
             elif self.living_cats < 10:
                 hit = randint(0, chance - 10)
             kits = choice([1, 1, 2, 2, 3, 3, 4])
-            if hit == 1 and cat.mate is not None:
+            if hit == 1 and cat.mate is not None and not cat.no_kits and not cat.mate.no_kits:
                 if game.cur_events_list is not None:
                     game.cur_events_list.append(str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s)')
                 else:
@@ -410,7 +414,7 @@ class Events(object):
                 for kit in range(kits):
                     kit = Cat(parent1=cat.ID, parent2=cat.mate, moons=0)
                     game.clan.add_cat(kit)
-            elif hit == 1:
+            elif hit == 1 and not cat.no_kits:
                 game.cur_events_list.append(str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s)')
 
                 for kit in range(kits):
