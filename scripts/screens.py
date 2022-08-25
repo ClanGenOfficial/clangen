@@ -737,9 +737,9 @@ class ProfileScreen(Screens):
             count2 += 1
 
         # buttons
-        buttons.draw_button((300, 400), text='Options', cur_screen='options screen')
+        buttons.draw_button((400, 400), text='Options', cur_screen='options screen')
 
-        buttons.draw_button((450, 400), text='Back', cur_screen=game.switches['last_screen'])
+        buttons.draw_button((325, 400), text='Back', cur_screen=game.switches['last_screen'])
 
     def screen_switches(self):
         cat_profiles()
@@ -1469,7 +1469,7 @@ class OptionsScreen(Screens):
         if not the_cat.dead:
             buttons.draw_button((x_value, 650), text='Kill Cat', kill_cat=the_cat)
 
-        buttons.draw_button((x_value, 600), text='Exile Cat', kill_cat=the_cat)
+        buttons.draw_button((x_value, 600), text='Exile Cat')
 
         if game.switches['deputy_switch'] is not False and game.switches['deputy_switch'] is not None and game.switches['deputy_switch'].status == 'warrior':
             game.clan.deputy = game.switches['deputy_switch']
