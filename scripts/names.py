@@ -7,7 +7,7 @@ class Name(object):
     normal_suffixes = [  # common suffixes
         "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", "fur", 'fur', 'fur', 'pelt', "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "pelt", "tail", "tail", "tail",
         "tail", "tail", "tail", "tail", "tail", "claw", "claw", "claw", "claw", "claw", "claw", "claw", "foot", "foot", "foot", "foot", "foot", "whisker", "whisker", "whisker",
-        "whisker", "heart", "heart", "heart", "heart", "heart", 'heart'
+        "whisker", "heart", "heart", "heart", "heart", "heart", 'heart',
 
         # regular suffixes
         "acorn", "ash", "aster", "back", "beam", "bee", "belly", "berry", "bite", "bird", "blaze", "blink", "blossom", "bloom", "blotch", "bounce", "branch", "breeze", "briar",

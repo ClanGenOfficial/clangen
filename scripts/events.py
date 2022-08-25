@@ -368,9 +368,9 @@ class Events(object):
 
     def dies(self, cat):  # This function is called every time a cat dies
         cat.dead = True
-        cat.update_mentor()
-        for app in cat.apprentice:
+        for app in cat.apprentice.copy():
             app.update_mentor()
+        cat.update_mentor()
         game.clan.add_to_starclan(cat)
 
     def have_kits(self, cat):
