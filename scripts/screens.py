@@ -754,7 +754,6 @@ class ProfileScreen(Screens):
                 buttons.draw_button(('center', -100), text='Allow kits', no_kits=False, cat_value=the_cat)
         if game.switches['new_leader'] is not False and game.switches['new_leader'] is not None:
             game.clan.new_leader(game.switches['new_leader'])
-
         if the_cat.status in ['warrior'] and not the_cat.dead and game.clan.leader.dead:
             buttons.draw_button(('center', -70), text='Promote to Leader', new_leader=the_cat)
         elif the_cat.status in ['warrior'] and not the_cat.dead and game.clan.deputy is None:
@@ -1131,7 +1130,15 @@ class PatrolEventScreen(Screens):
             verdana.text(str(patrol.patrol_event[1]), ('center', 200))
             if patrol.patrol_event[0] == 35:
                 patrol_img = pygame.image.load('resources/rogue.png')
-                patrol_img = pygame.transform.scale(patrol_img, (300,200))
+                patrol_img = pygame.transform.scale(patrol_img, (340,200))
+                screen.blit(patrol_img, (500, 200))
+            elif patrol.patrol_event[0] == 44:
+                patrol_img = pygame.image.load('resources/kittypet.png')
+                patrol_img = pygame.transform.scale(patrol_img, (320, 200))
+                screen.blit(patrol_img, (500, 200))
+            elif patrol.patrol_event[0] == 6 or patrol.patrol_event[0] == 7:
+                patrol_img = pygame.image.load('resources/fox.png')
+                patrol_img = pygame.transform.scale(patrol_img, (320, 200))
                 screen.blit(patrol_img, (500, 200))
             buttons.draw_button(('center', 300), text='Proceed', event=1)
             buttons.draw_button(('center', 340), text='Do Not Proceed', event=2)
