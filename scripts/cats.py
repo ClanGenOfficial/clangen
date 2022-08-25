@@ -1237,6 +1237,10 @@ class Cat(object):
                 data += ',' + 'True'
             else:
                 data += ',' + 'False'
+            if x.no_kits:
+                data += ',' + 'True'
+            else:
+                data+= ',' + 'False'
             # next cat
             data += '\n'
 
@@ -1326,6 +1330,9 @@ class Cat(object):
                         the_cat.former_apprentices = attr[33].split(';')
                     if len(attr) > 34:
                         the_cat.paralyzed = bool(attr[34])
+                    if len(attr) > 35:
+                        the_cat.no_kits = bool(attr[35])
+
 
             game.switches['error_message'] = 'There was an error loading this clan\'s mentors/apprentices'
 
