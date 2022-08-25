@@ -840,7 +840,9 @@ class Patrol(object):
                     kits = choice([2, 2, 2, 3])
                     for new_kit in range(kits):
                         new_kit = Cat(parent1=kit.ID, moons=0)
+                        new_kit.thought == 'Wonders where they are'
                         game.clan.add_cat(new_kit)
+
                 return
 
 
