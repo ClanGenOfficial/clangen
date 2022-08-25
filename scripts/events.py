@@ -299,6 +299,10 @@ class Events(object):
             elif cat.status == 'apprentice':
                 cause_of_death.extend([name + ' died in a training accident', name + ' was killed by enemy warriors after accidentally wandering over the border',
                                        name + ' went missing and was found dead', name + ' died in a border skirmish'])
+                if game.clan.biome == "Mountainous":
+                    cause_of_death.extend([name + ' was crushed to death by an avalanche', name + ' fell from a cliff and died'])
+                if game.clan.biome == "Beach":
+                    cause_of_death.extend([name + ' was washed out to sea and drowned', name + ' was poisoned by a sea creature and died'])
             elif cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader':
                 if len(game.clan.all_clans) > 0:
                     cause_of_death.append(name + ' was found dead near the ' + choice(game.clan.all_clans).name + 'Clan border')
@@ -306,6 +310,10 @@ class Events(object):
                 if self.at_war:
                     cause_of_death.extend([name + ' was killed by enemy ' + self.enemy_clan + ' warriors', name + ' was killed by enemy ' + self.enemy_clan + ' warriors',
                                            name + ' was killed by enemy ' + self.enemy_clan + ' warriors', name + ' died in a border skirmish'])
+                if game.clan.biome == "Mountainous":
+                    cause_of_death.extend([name + ' was crushed by an avalanche', name + ' fell from a cliff and died'])
+                if game.clan.biome == "Beach":
+                    cause_of_death.extend([name + ' was washed out to sea and drowned', name + ' was poisoned by a sea creature and died'])
             elif cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice':
                 cause_of_death.extend(['The herb stores were damaged and ' + name + ' was murdered by an enemy warrior'])
                 if self.at_war:

@@ -473,6 +473,11 @@ class MakeClanScreen(Screens):
             if len(game.switches['members']) < 7:
                 buttons.draw_button((420, 300), text='Recruit', members=game.switches['cat'], add=True)
 
+        buttons.draw_button((250, 50), text='Forest', biome='Forest')
+        buttons.draw_button((325, 50), text='Mountainous', biome='Mountainous')
+        buttons.draw_button((450, 50), text='Plains', biome='Plains')
+        buttons.draw_button((525, 50), text='Beach', biome='Beach')
+
         verdana_small.text('Note: going back to main menu resets the generated cats.', (50, 25))
 
         buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen', naming_text='')
@@ -483,6 +488,7 @@ class MakeClanScreen(Screens):
             buttons.draw_button(('center', 350), text='Done', cur_screen='clan created screen')
         else:
             buttons.draw_button(('center', 350), text='Done', available=False)
+            print(game.switches['members'])
 
     def on_use(self):
         if len(game.switches['clan_name']) == 0:
@@ -517,7 +523,7 @@ class ClanCreatedScreen(Screens):
 
     def screen_switches(self):
         game.clan = Clan(game.switches['clan_name'], game.choose_cats[game.switches['leader']], game.choose_cats[game.switches['deputy']],
-                         game.choose_cats[game.switches['medicine_cat']])
+                         game.choose_cats[game.switches['medicine_cat']], game.switches['biome'])
         game.clan.create_clan()
 
 
