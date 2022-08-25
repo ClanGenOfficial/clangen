@@ -737,62 +737,9 @@ class ProfileScreen(Screens):
             count2 += 1
 
         # buttons
-        buttons.draw_button(('center', 20), text='Change Name', cur_screen='change name screen')
-        game.switches['name_cat'] = the_cat.ID
-        buttons.draw_button(('center', -160), text='See Family', cur_screen='see kits screen')
-        if not the_cat.dead:
-            buttons.draw_button((-40, -50), text='Kill Cat', kill_cat=the_cat)
-        if the_cat.status == 'apprentice' and not the_cat.dead:
-            game.switches['apprentice'] = the_cat
-            buttons.draw_button(('center', -130), text='Change Mentor', cur_screen='choose mentor screen')
-        # buttons.draw_button(('center', -130), text='Family Tree')
-        if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not the_cat.dead:
-            buttons.draw_button(('center', -130), text='Pick mate for ' + str(the_cat.name), cur_screen='choose mate screen')
-            if the_cat.age in ['young adult', 'adult', 'senior adult'] and not the_cat.no_kits:
-                buttons.draw_button(('center', -100), text='Prevent kits', no_kits=True, cat_value=the_cat)
-            elif the_cat.age in ['young adult', 'adult', 'senior adult'] and the_cat.no_kits:
-                buttons.draw_button(('center', -100), text='Allow kits', no_kits=False, cat_value=the_cat)
-        if game.switches['new_leader'] is not False and game.switches['new_leader'] is not None:
-            game.clan.new_leader(game.switches['new_leader'])
-        if the_cat.status in ['warrior'] and not the_cat.dead and game.clan.leader.dead:
-            buttons.draw_button(('center', -70), text='Promote to Leader', new_leader=the_cat)
-        elif the_cat.status in ['warrior'] and not the_cat.dead and game.clan.deputy is None:
-            buttons.draw_button(('center', -70), text='Promote to Deputy', deputy_switch=the_cat)
-        elif the_cat.status in ['deputy'] and not the_cat.dead:
-            buttons.draw_button(('center', -70), text='Demote from Deputy', deputy_switch=the_cat)
-        elif the_cat.status in ['warrior'] and not the_cat.dead and game.clan.deputy:
-            if game.clan.deputy.dead:
-                buttons.draw_button(('center', -70), text='Promote to Deputy', deputy_switch=the_cat)
+        buttons.draw_button((300, 400), text='Options', cur_screen='options screen')
 
-        if game.switches['deputy_switch'] is not False and game.switches['deputy_switch'] is not None and game.switches['deputy_switch'].status == 'warrior':
-            game.clan.deputy = game.switches['deputy_switch']
-            game.switches['deputy_switch'].status_change('deputy')
-            game.switches['deputy_switch'] = False
-        elif game.switches['deputy_switch'] is not False and game.switches['deputy_switch'] is not None and game.switches['deputy_switch'].status == 'deputy':
-            game.clan.deputy = None
-            game.switches['deputy_switch'].status_change('warrior')
-            game.switches['deputy_switch'] = False
-
-        if game.switches['apprentice_switch'] is not False and game.switches['apprentice_switch'] is not None and game.switches['apprentice_switch'].status == 'apprentice':
-            game.switches['apprentice_switch'].status_change('medicine cat apprentice')
-            game.switches['apprentice_switch'] = False
-
-        if game.switches['apprentice_switch'] is not False and game.switches['apprentice_switch'] is not None and game.switches[
-            'apprentice_switch'].status == 'medicine cat apprentice':
-            game.switches['apprentice_switch'].status_change('apprentice')
-            game.switches['apprentice_switch'] = False
-
-        if game.switches['kill_cat'] is not False and game.switches['kill_cat'] is not None:
-            events_class.dies(game.switches['kill_cat'])
-            game.switches['kill_cat'] = False
-
-        if the_cat.status in ['apprentice'] and not the_cat.dead:
-            buttons.draw_button(('center', -70), text='Switch to medicine cat apprentice', apprentice_switch=the_cat)
-
-        if the_cat.status in ['medicine cat apprentice'] and not the_cat.dead:
-            buttons.draw_button(('center', -70), text='Switch to warrior apprentice', apprentice_switch=the_cat)
-
-        buttons.draw_button(('center', -30), text='Back', cur_screen=game.switches['last_screen'])
+        buttons.draw_button((450, 400), text='Back', cur_screen=game.switches['last_screen'])
 
     def screen_switches(self):
         cat_profiles()
@@ -1463,26 +1410,103 @@ class ChangeNameScreen(Screens):
         verdana.text('Add a space between the new prefix and suffix', ('center', 70))
         verdana.text('i.e. Fire heart', ('center', 90))
         buttons.draw_button(('center', -100), text=' Change Name ', cur_screen='change name screen', cat_value=game.switches['name_cat'])
-        buttons.draw_button(('center', -50), text='Back', cur_screen=game.switches['last_screen'])
+        buttons.draw_button(('center', -50), text='Back', cur_screen='profile screen')
 
 
 class OptionsScreen(Screens):
     def on_use(self):
-        verdana_big.text(str(game.switches['cat'].name), ('center', 50))
-        verdana_big.text('Options', ('center', 50))
-        verdana.text('Change Name')
-        verdana.text('Change Mentor')
-        verdana.text('Make Medicine Cat Apprentice')
-        verdana.text('Make Warrior Apprentice')
-        verdana.text('See Family')
-        verdana.text('See Family Tree')
-        verdana.text('Exile from clan')
-        verdana.text('Kill Cat')
-        verdana.text('Choose Mate')
-        verdana.text('Make Deputy')
-        verdana.text('Make Leader')
-        verdana.text('Make Medicine Cat')
-        verdana.text('Disable kits')
+        the_cat = cat_class.all_cats.get(game.switches['cat'])
+        verdana_big.text('Options - ' + str(the_cat.name), ('center', 80))
+        button_count = 0
+        x_value = 'center'
+        y_value = 150
+        y_change = 50
+        buttons.draw_button((x_value, y_value + button_count * y_change), text='Change Name', cur_screen='change name screen')
+        button_count+=1
+        game.switches['name_cat'] = the_cat.ID
+        buttons.draw_button((x_value, y_value + button_count * y_change), text='See Family', cur_screen='see kits screen')
+        button_count+=1
+
+        if the_cat.status == 'apprentice' and not the_cat.dead:
+            game.switches['apprentice'] = the_cat
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Change Mentor', cur_screen='choose mentor screen')
+            button_count += 1
+
+        buttons.draw_button((x_value, y_value + button_count * y_change), text='Family Tree')
+        button_count+=1
+
+        if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Pick mate for ' + str(the_cat.name), cur_screen='choose mate screen')
+            button_count += 1
+
+            if the_cat.age in ['young adult', 'adult', 'senior adult'] and not the_cat.no_kits:
+                buttons.draw_button((x_value, y_value + button_count * y_change), text='Prevent kits', no_kits=True, cat_value=the_cat)
+                button_count += 1
+
+            elif the_cat.age in ['young adult', 'adult', 'senior adult'] and the_cat.no_kits:
+                buttons.draw_button((x_value, y_value + button_count * y_change), text='Allow kits', no_kits=False, cat_value=the_cat)
+                button_count += 1
+
+        if game.switches['new_leader'] is not False and game.switches['new_leader'] is not None:
+            game.clan.new_leader(game.switches['new_leader'])
+        if the_cat.status in ['warrior'] and not the_cat.dead and game.clan.leader.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Promote to Leader', new_leader=the_cat)
+            button_count += 1
+
+        elif the_cat.status in ['warrior'] and not the_cat.dead and game.clan.deputy is None:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Promote to Deputy', deputy_switch=the_cat)
+            button_count += 1
+
+        elif the_cat.status in ['deputy'] and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Demote from Deputy', deputy_switch=the_cat)
+            button_count += 1
+
+        elif the_cat.status in ['warrior'] and not the_cat.dead and game.clan.deputy:
+            if game.clan.deputy.dead:
+                buttons.draw_button((x_value, y_value + button_count * y_change), text='Promote to Deputy', deputy_switch=the_cat)
+                button_count += 1
+
+        if not the_cat.dead:
+            buttons.draw_button((x_value, 650), text='Kill Cat', kill_cat=the_cat)
+
+        buttons.draw_button((x_value, 600), text='Exile Cat', kill_cat=the_cat)
+
+        if game.switches['deputy_switch'] is not False and game.switches['deputy_switch'] is not None and game.switches['deputy_switch'].status == 'warrior':
+            game.clan.deputy = game.switches['deputy_switch']
+            game.switches['deputy_switch'].status_change('deputy')
+            game.switches['deputy_switch'] = False
+        elif game.switches['deputy_switch'] is not False and game.switches['deputy_switch'] is not None and game.switches['deputy_switch'].status == 'deputy':
+            game.clan.deputy = None
+            game.switches['deputy_switch'].status_change('warrior')
+            game.switches['deputy_switch'] = False
+
+        if game.switches['apprentice_switch'] is not False and game.switches['apprentice_switch'] is not None and game.switches['apprentice_switch'].status == 'apprentice':
+            game.switches['apprentice_switch'].status_change('medicine cat apprentice')
+            game.switches['apprentice_switch'] = False
+
+        if game.switches['apprentice_switch'] is not False and game.switches['apprentice_switch'] is not None and game.switches[
+            'apprentice_switch'].status == 'medicine cat apprentice':
+            game.switches['apprentice_switch'].status_change('apprentice')
+            game.switches['apprentice_switch'] = False
+
+        if game.switches['kill_cat'] is not False and game.switches['kill_cat'] is not None:
+            events_class.dies(game.switches['kill_cat'])
+            game.switches['kill_cat'] = False
+
+        if the_cat.status in ['apprentice'] and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Switch to medicine cat apprentice', apprentice_switch=the_cat)
+            button_count+=1
+        elif the_cat.status in ['medicine cat apprentice'] and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Switch to warrior apprentice', apprentice_switch=the_cat)
+            button_count+=1
+        elif the_cat.status == 'warrior' and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Switch to medicine cat', apprentice_switch=the_cat)
+            button_count += 1
+        elif the_cat.status == 'medicine cat' and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Switch to warrior', apprentice_switch=the_cat)
+            button_count += 1
+        buttons.draw_button((x_value, y_value + button_count * y_change + 30), text='Back', cur_screen='profile screen')
+
 
 
 # SCREENS
@@ -1508,6 +1532,7 @@ allegiances_screen = AllegiancesScreen('allegiances screen')
 choose_mentor_screen = ChooseMentorScreen('choose mentor screen')
 choose_mentor_screen2 = ChooseMentorScreen2('choose mentor screen2')
 change_name_screen = ChangeNameScreen('change name screen')
+option_screen = OptionsScreen('options screen')
 
 
 # options_screen = OptionsScreen('options screen')

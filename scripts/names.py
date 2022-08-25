@@ -23,7 +23,7 @@ class Name(object):
                      'Speckled': ['dapple', 'speckle', 'spot', 'speck'], 'Tortie': ['dapple', 'speckle', 'spot', 'dapple'], 'Calico': ['stripe', 'dapple', 'patch', 'patch']}
 
     normal_prefixes = ["Adder", "Alder", "Ant", "Apple", "Ash", "Acorn", "Arch", "Aspen", "Aster", "Bark", "Barley", "Bay", "Bee", "Badger", "Basil", "Bass", "Beetle",
-                       "Beech", "Berry", "Bat", "Bayou", "Beaver", "Big", "Birch", "Bird", "Bite," "Bitter", "Bittern", "Bleak", "Blight", "Bliss", "Bloom", "Bluff", "Bog", "Bold",
+                       "Beech", "Berry", "Bat", "Bayou", "Beaver", "Big", "Birch", "Bird", "Bite", "Bitter", "Bittern", "Bleak", "Blight", "Bliss", "Bloom", "Bluff", "Bog", "Bold",
                        "Borage", "Boulder", "Bounce", "Blossom", "Bracken", "Branch", "Brave", "Bramble", "Breeze", "Burdock", "Briar", "Bright", "Brindle", "Bristle",
                        "Broken", "Brook", "Brush", "Bubble", "Bubbling", "Buck", "Bug", "Bumble", "Buzzard", "Cedar", "Chaffinch", "Cherry", "Chestnut", "Chive", "Cicada",
                        "Cinder", "Cheetah", "Cinnamon", "Clay", "Cloud", "Clover", "Cobra", "Cold", "Crow", "Cedar", "Claw", "Clover", "Condor", "Conifer", "Copper", "Cone",
@@ -88,7 +88,7 @@ class Name(object):
                    "Ah", "Violet", "Alcina", "Worm", "Monika", "Rat", "Bongo", "Bunny", "Viktor", "Steve", "Jewels", "Blu", "Rue", "Stinky", "Garnet", "Anita", "Sloane", "Emi",
                    "Vivienne", "Amber", "Moon", "Twilight", "River", "Glass", "Goose", "Hunter", "Amity", "Stripes", "Cowbell", "Rory", "Lobster", "Slug", "Starfish", "Salmon",
                    "Judy", "Johnny", "Kerry", "Evelyn", "Holly", "Bolt", "Millie", "Jessica", "Laku", "Dragonfly", "X’ek", "Silva", "Dreamy", "Decay", "Twister", "Shay", "Louis",
-                   "Oleander", "Spots", "Cream", "Omlet", "Gizmo", "Feather", "Twix", "Silver,", "Ghost", "Wisp", "Obi Wan", 'Pikachu', "Mango", "Via", "Olivia", "Mr. Whiskers",
+                   "Oleander", "Spots", "Cream", "Omlet", "Gizmo", "Feather", "Twix", "Silver", "Ghost", "Wisp", "Obi Wan", 'Pikachu', "Mango", "Via", "Olivia", "Mr. Whiskers",
                    "Fluffy", "Shimmer", "Mimi", "Melody", "Leon", "Punk", "Mew", "Fern", "Marceline", "Whisper", "Skrunkly", "Stolas", "Rio", "Steven", "Pear", "Sekhmet", "Mellon",
                    "Ember", "Loona", "Saki", "Tiny", "Sandy", "Miles", "Mini", "Judas", "Zim", "Vinyl", "Rarity", "Trixie", "Sunset", "Anubis", "Armin", "Amy", "Alice", "Alec",
                    "Baphomet", "Bean", "Bastet", "Birb", "Burm", "Chrissy", "Cherry", "Chief", "Crow", "Carrie", "Calvin", "Cookie", "Catie", "Charm", "Crab", "Charles",
