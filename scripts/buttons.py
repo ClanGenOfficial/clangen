@@ -97,6 +97,10 @@ class Button(object):
                 self.change_name(game.switches['naming_text'], game.switches['name_cat'])
             elif text in ['Next Cat', 'Previous Cat']:
                 game.switches['cat'] = values.get('cat')
+            elif text == 'Prevent kits':
+                cat_value.no_kits = True
+            elif text == 'Allow kits':
+                cat_value.no_kits = False
             elif cat_value is None and arrow is None:
                 self.activate(values)
             elif arrow is None:

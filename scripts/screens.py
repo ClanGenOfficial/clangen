@@ -748,7 +748,10 @@ class ProfileScreen(Screens):
         # buttons.draw_button(('center', -130), text='Family Tree')
         if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not the_cat.dead:
             buttons.draw_button(('center', -130), text='Pick mate for ' + str(the_cat.name), cur_screen='choose mate screen')
-
+            if the_cat.age in ['young adult', 'adult', 'senior adult'] and not the_cat.no_kits:
+                buttons.draw_button(('center', -100), text='Prevent kits', no_kits=True, cat_value=the_cat)
+            elif the_cat.age in ['young adult', 'adult', 'senior adult'] and the_cat.no_kits:
+                buttons.draw_button(('center', -100), text='Allow kits', no_kits=False, cat_value=the_cat)
         if game.switches['new_leader'] is not False and game.switches['new_leader'] is not None:
             game.clan.new_leader(game.switches['new_leader'])
 
@@ -790,7 +793,7 @@ class ProfileScreen(Screens):
         if the_cat.status in ['medicine cat apprentice'] and not the_cat.dead:
             buttons.draw_button(('center', -70), text='Switch to warrior apprentice', apprentice_switch=the_cat)
 
-        buttons.draw_button(('center', -100), text='Back', cur_screen=game.switches['last_screen'])
+        buttons.draw_button(('center', -30), text='Back', cur_screen=game.switches['last_screen'])
 
     def screen_switches(self):
         cat_profiles()
