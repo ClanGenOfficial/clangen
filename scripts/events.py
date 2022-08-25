@@ -405,15 +405,16 @@ class Events(object):
             elif self.living_cats < 10:
                 hit = randint(0, chance - 10)
             kits = choice([1, 1, 2, 2, 3, 3, 4])
-            if hit == 1 and cat.mate is not None and not cat.no_kits and not cat.mate.no_kits:
-                if game.cur_events_list is not None:
-                    game.cur_events_list.append(str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s)')
-                else:
-                    game.cur_events_list = [str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s)']
+            if hit == 1 and cat.mate is not None:
+                if not cat.no_kits and not cat_class.all_cats.get(cat.mate).no_kits:
+                    if game.cur_events_list is not None:
+                        game.cur_events_list.append(str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s)')
+                    else:
+                        game.cur_events_list = [str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s)']
 
-                for kit in range(kits):
-                    kit = Cat(parent1=cat.ID, parent2=cat.mate, moons=0)
-                    game.clan.add_cat(kit)
+                    for kit in range(kits):
+                        kit = Cat(parent1=cat.ID, parent2=cat.mate, moons=0)
+                        game.clan.add_cat(kit)
             elif hit == 1 and not cat.no_kits:
                 game.cur_events_list.append(str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s)')
 
