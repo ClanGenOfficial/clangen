@@ -1205,6 +1205,14 @@ class AllegiancesScreen(Screens):
                 else:
                     game.allegiance_list.append(['', f"{str(living_cat____.name)} - a {living_cat____.describe_cat()}"])
                 cat_count += 1
+                if len(living_cat____.apprentice) > 0:
+                    if len(living_cat____.apprentice) == 1:
+                        game.allegiance_list.append(['', '      Apprentice: ' + str(living_cat____.apprentice[0].name)])
+                    else:
+                        app_names = ''
+                        for app in living_cat____.apprentice:
+                            app_names += str(app.name) + ', '
+                        game.allegiance_list.append(['', '      Apprentices: ' + app_names[:-2]])
         if not cat_count:
             game.allegiance_list.append(['QUEENS:', ''])
         cat_count = self._extracted_from_screen_switches_24(living_cats, 'elder', 'ELDERS:')

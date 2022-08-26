@@ -377,7 +377,7 @@ class Events(object):
         # decide chances of having kits, and if it's possible at all
         chance = 0
         for kit in cat_class.all_cats.values():
-            if str(kit.status) == 'kitten' and kit.parent1 is not None:
+            if str(kit.status) == 'kitten' and kit.parent1 is not None and not kit.dead:
                 if cat_class.all_cats.get(kit.parent1) == cat or cat_class.all_cats.get(kit.parent2) == cat:
                     return
         if cat.mate is not None:
