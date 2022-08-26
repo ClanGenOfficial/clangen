@@ -808,7 +808,7 @@ class Patrol(object):
                     self.patrol_cats.append(kit)
                 return
 
-        if self.patrol_event[0] == 38 or self.patrol_event[0] == 57:
+        if self.patrol_event[0] == 38 or self.patrol_event[0] == 57 or self.patrol_event[0] == 50:
             if self.before:
                 # stuff that happens during calculations
                 return
