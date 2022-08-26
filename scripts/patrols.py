@@ -376,18 +376,18 @@ class Patrol(object):
                               [45, 'The patrol finds a loner who is interested in joining the clan', 'The loner joins, bringing with them a litter of kits',
                                'The loner thinks for a while, and decides against joining', 'You decide to not confront that loner', 120, 10, 0, 0, 0, 0, 1, ['excellent speaker']],
                               [46, 'r_c admits that they have been training in the Dark Forest', 'The patrol convinces them to stop',
-                               'Your patrol doesnt manage to convince them to stop and later r_c is found dead in their nest', 'Your patrol doesnt react to the news', 120, 10,
-                               0, 0, 0, 0, 1, ['excellent speaker']],
+                               'Your patrol doesnt manage to convince them to stop and later r_c is found dead in their nest', 'Your patrol doesnt react to the news', 120, 10, 0,
+                               0, 0, 0, 1, ['excellent speaker']],
                               [47, 'There is a large river dividing your territory. Should your patrol cross it?', 'Your patrol crosses the river and can hunt on the other side',
                                'r_c is swept away by the strong current and dies', 'Your patrol decides to avoid the river', 120, 10, 0, 0, 0, 0, 1, ['excellent speaker']],
                               [48, 'Your patrol sees a large rabbit, but it is just over the border', 'Your patrol manages to catch the rabbit without the enemy clan noticing',
                                'Your patrol is caught by enemy warriors', 'Your patrol doesnt attempt to catch the rabbit', 120, 10, 0, 0, 0, 0, 1, ['fantastic hunter']],
                               [49, 'The smell of food lures r_c close to a twoleg trap', 'The patrol leads r_c away before it goes off',
                                'r_c is caught in the trap and is taken by twolegs shortly after', 'r_c loses interest and walks back to the patrol', 120, 10, 0, 0, 0, 0, 1,
-                               ['smart', 'very smart', 'extremely smart']],
-                              [50, 'The patrol is helping gather herbs and r_c stumbles upon a bush of red berries',
-                               'The patrol tells r_c to stay away from the death berries just in time', 'r_c chews some of the berries and dies',
-                               'r_c decides to not touch the berries', 120, 10, 0, 0, 0, 0, 1, ['great teacher', 'fantastic teacher']],
+                               ['smart', 'very smart', 'extremely smart']], [50, 'The patrol is helping gather herbs and r_c stumbles upon a bush of red berries',
+                                                                             'The patrol tells r_c to stay away from the death berries just in time',
+                                                                             'r_c chews some of the berries and dies', 'r_c decides to not touch the berries', 120, 10, 0, 0, 0, 0,
+                                                                             1, ['great teacher', 'fantastic teacher']],
                               [51, 'The patrol approaches a deep ravine. There is a lot of prey here, but the ground is very slippery.', 'The patrol has a very successful hunt',
                                'While hunting, r_c slips and falls into the ravine, never to be seen again', 'The patrol decides to hunt elsewhere', 120, 10, 0, 0, 0, 0, 1,
                                ['great hunter', 'fantastic hunter']],
@@ -396,15 +396,34 @@ class Patrol(object):
                               [53, 'r_c notices a suspicious trail of pawprints in the mud',
                                'The pawprints lead them to a trespassing rogue and the patrol chases them off the territory',
                                'Turns out they were following their own pawprints... How embarrassing.', 'r_c decides to ignore the pawprints', 120, 10, 0, 0, 0, 0, 1,
-                               ['great fighter']],
-                              [54, 'r_c notices a clanmate trapped in some brambles', 'The patrol frees their clanmate',
+                               ['great fighter']], [54, 'r_c notices a clanmate trapped in some brambles', 'The patrol frees their clanmate',
                                                     'The patrol works all day to free their clanmate and gets nothing done', 'The patrol decides to leave their clanmate alone',
                                                     120, 10, 0, 0, 0, 0, 1, ['great speaker', 'fantastic speaker']],
                               [55, 'r_c is tempted to eat the prey they caught', 'They eat the prey without anyone noticing',
                                'The patrol notices r_c eating the freshkill and report them', 'They decide not to eat the prey', 120, 10, 0, 0, 0, 0, 1,
                                ['great hunter', 'fantastic hunter']],
                               [56, 'The patrol approaches some twoleg dens while hunting', 'The patrol has a successful hunt, avoiding any twolegs',
-                               'Twoleg kits chase the patrol away', 'The patrol decides to hunt elsewhere', 120, 10, 0, 0, 0, 0, 1, ['great hunter', 'fantastic hunter']]]
+                               'Twoleg kits chase the patrol away', 'The patrol decides to hunt elsewhere', 120, 10, 0, 0, 0, 0, 1, ['great hunter', 'fantastic hunter']],
+                              [57, 'The patrol comes across a badger den', 'The patrol drives the badger off of the territory', 'r_c is killed trying to attack the badger',
+                               'The patrol decides to leave the den alone', 120, 10, 0, 0, 0, 0, 1, ['good fighter', 'great fighter', 'fantastic fighter']],
+                              [58, 'The patrol comes across a deer', 'The patrol looks in wonder at the strange animal, and continue on their way',
+                               'The deer kicks at the cats, giving r_c a scar', 'The patrol turns around, avoiding the deer', 120, 10, 0, 0, 0, 0, 1,
+                               ['good speaker', 'great speaker', 'fantastic speaker']],
+                              [59, 'The patrol sees a wounded cat near the thunderpath', 'Your patrol brings the wounded cat back to camp and later they join the clan.',
+                               'As r_c inspects the cat, they notice they are already hunting with their ancestors', 'They leave the wounded cat alone', 120, 10, 0, 0, 0, 0, 1,
+                               ['strong connection to starclan']],
+                              [60, 'r_c notices the patrol is not staying on task', 'They manage to steer the patrol back on course', 'The patrol is annoyed by r_c\'s pestering',
+                               'They keep their thoughts to themselves', 120, 10, 0, 0, 0, 0, 1, ['good speaker', 'great speaker', 'excellent speaker']],
+                              [61, 'r_c spots a rabbit up ahead, but it seems to be acting strange', 'r_c catches the rabbit and it is eaten as normal',
+                               'r_c catches the rabbit and later the cats who eat it are violently ill', 'They avoid catching the rabbit', 120, 10, 0, 0, 0, 0, 1,
+                               ['good hunter', 'great hunter', 'fantastic hunter']], [62, 'The patrol finds a patch of herbs that they believe the medicine cat mentioned needing',
+                                                                                      'They bring the herb back to camp and the herbs are put to good use',
+                                                                                      'The herbs turn out to be useless weeds', 'They decide to continue patrolling instead', 120,
+                                                                                      10, 0, 0, 0, 0, 1, ['strong connection to starclan', 'great teacher', 'fantastic teacher']],
+                              [62, 'r_c goes missing during the patrol', 'r_c is found with an abandoned kit', 'r_c is found laying on the ground injured',
+                               'r_c eventually catches up', 120, 10, 0, 0, 0, 0, 1, ['excellent speaker']]]
+
+    # [ ,'','','','', 120, 10, 0, 0, 0, 0, 1, [, '']],
 
     def event_special(self):
         # special functions for each event defined here
@@ -756,7 +775,7 @@ class Patrol(object):
                         self.patrol_cats[i].experience_level = experiencelevels[floor(self.patrol_cats[i].experience / 10)]
                 return
 
-        if self.patrol_event[0] == 35 or self.patrol_event[0] == 36:
+        if self.patrol_event[0] == 35 or self.patrol_event[0] == 36 or self.patrol_event[0] == 58 or self.patrol_event[0] == 62:
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -770,7 +789,7 @@ class Patrol(object):
                         self.patrol_random_cat.specialty2 = choice([choice(scars1), choice(scars2)])
                     return
 
-        if self.patrol_event[0] == 37:
+        if self.patrol_event[0] == 37 or self.patrol_event[0] == 59 or self.patrol_event[0] == 62:
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -778,8 +797,10 @@ class Patrol(object):
                 # stuff that happens after the results
                 if self.success and not self.intentional_fail:
                     new_cat_status = choice(['warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'apprentice', 'apprentice', 'apprentice', 'elder'])
+                    if self.patrol_event[0] == 62:
+                        new_cat_status = 'kitten'
                     kit = Cat(status=new_cat_status)
-                    if randint(0, 1):
+                    if randint(0, 2) == 0 and self.patrol_event[0] != 62:
                         kit.name.suffix = ""
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
@@ -787,7 +808,7 @@ class Patrol(object):
                     self.patrol_cats.append(kit)
                 return
 
-        if self.patrol_event[0] == 38:
+        if self.patrol_event[0] == 38 or self.patrol_event[0] == 57:
             if self.before:
                 # stuff that happens during calculations
                 return
