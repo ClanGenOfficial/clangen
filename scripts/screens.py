@@ -483,7 +483,6 @@ class MakeClanScreen(Screens):
             buttons.draw_button(('center', 350), text='Done', cur_screen='clan created screen')
         else:
             buttons.draw_button(('center', 350), text='Done', available=False)
-            print(game.switches['members'])
 
     def on_use(self):
         if len(game.switches['clan_name']) == 0:

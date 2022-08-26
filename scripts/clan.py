@@ -55,7 +55,6 @@ class Clan(object):
             self.current_season = 'Newleaf'
             self.instructor = None  # This is the first cat in starclan, to "guide" the other dead cats there.
             self.biome = biome
-            print(self.biome)
 
     def create_clan(self):
         """ This function is only called once a new clan is created in the 'clan created' screen, not every time

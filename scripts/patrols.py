@@ -146,7 +146,6 @@ class Patrol(object):
 
             self.patrol_event[4] = self.patrol_event[4].replace('s_c', str(self.patrol_stat_cat.name))
 
-
     def intentionally_fail(self):
         if self.patrol_event[0] in self.new_cat_patrols:
             self.intentional_fail = 'Drive away the loner'
@@ -384,13 +383,28 @@ class Patrol(object):
                               [48, 'Your patrol sees a large rabbit, but it is just over the border', 'Your patrol manages to catch the rabbit without the enemy clan noticing',
                                'Your patrol is caught by enemy warriors', 'Your patrol doesn\’t attempt to catch the rabbit', 120, 10, 0, 0, 0, 0, 1, ['fantastic hunter']],
                               [49, 'The smell of food lures r_c close to a twoleg trap', 'The patrol leads r_c away before it goes off',
-                               'r_c is caught in the trap and is taken by twolegs shortly after', 'r_c loses interest and walks back to the patrol', 120, 10, 0, 0, 0, 0, 1, ['smart', 'very smart', 'extremely smart']],
-                              [50, 'The patrol is helping gather herbs for the medicine cat and r_c stumbles upon a bush of red berries', 'The patrol tells r_c to stay away from the death berries just in time',
-                              'r_c chews some of the berries and dies', 'r_c decides to not touch the berries', 120, 10, 0, 0, 0, 0, 1, ['great teacher', 'fantastic teacher']],
-                              [51, 'The patrol approaches a deep ravine. There is a lot of prey here, but the ground is very slippery.',
-                               'The patrol has a very successful hunt', 'While hunting, r_c slips and falls into the ravine, never to be seen again',
-                               'The patrol decides to hunt elsewhere', 120, 10, 0, 0, 0, 0, 1, ['great hunter', 'fantastic hunter']],
-                              ]
+                               'r_c is caught in the trap and is taken by twolegs shortly after', 'r_c loses interest and walks back to the patrol', 120, 10, 0, 0, 0, 0, 1,
+                               ['smart', 'very smart', 'extremely smart']],
+                              [50, 'The patrol is helping gather herbs and r_c stumbles upon a bush of red berries',
+                               'The patrol tells r_c to stay away from the death berries just in time', 'r_c chews some of the berries and dies',
+                               'r_c decides to not touch the berries', 120, 10, 0, 0, 0, 0, 1, ['great teacher', 'fantastic teacher']],
+                              [51, 'The patrol approaches a deep ravine. There is a lot of prey here, but the ground is very slippery.', 'The patrol has a very successful hunt',
+                               'While hunting, r_c slips and falls into the ravine, never to be seen again', 'The patrol decides to hunt elsewhere', 120, 10, 0, 0, 0, 0, 1,
+                               ['great hunter', 'fantastic hunter']],
+                              [52, 'The patrol runs into a small dog.', 'They manage to scare it back to its twolegs.', 'The dog\'s barking scares away the prey',
+                               'The patrol decides to avoid the dog', 120, 10, 0, 0, 0, 0, 1, ['great fighter', 'fantastic fighter']],
+                              [53, 'r_c notices a suspicious trail of pawprints in the mud',
+                               'The pawprints lead them to a trespassing rogue and the patrol chases them off the territory',
+                               'Turns out they were following their own pawprints... How embarrassing.', 'r_c decides to ignore the pawprints', 120, 10, 0, 0, 0, 0, 1,
+                               ['great fighter']],
+                              [54, 'r_c notices a clanmate trapped in some brambles', 'The patrol frees their clanmate',
+                                                    'The patrol works all day to free their clanmate and gets nothing done', 'The patrol decides to leave their clanmate alone',
+                                                    120, 10, 0, 0, 0, 0, 1, ['great speaker', 'fantastic speaker']],
+                              [55, 'r_c is tempted to eat the prey they caught', 'They eat the prey without anyone noticing',
+                               'The patrol notices r_c eating the freshkill and report them', 'They decide not to eat the prey', 120, 10, 0, 0, 0, 0, 1,
+                               ['great hunter', 'fantastic hunter']],
+                              [56, 'The patrol approaches some twoleg dens while hunting', 'The patrol has a successful hunt, avoiding any twolegs',
+                               'Twoleg kits chase the patrol away', 'The patrol decides to hunt elsewhere', 120, 10, 0, 0, 0, 0, 1, ['great hunter', 'fantastic hunter']]]
 
     def event_special(self):
         # special functions for each event defined here
@@ -427,7 +441,7 @@ class Patrol(object):
                         self.patrol_random_cat.specialty2 = choice([choice(scars1), choice(scars2)])
                     return
 
-        if self.patrol_event[0] == 8 or self.patrol_event[0] ==  46 or self.patrol_event[0] ==  47 or self.patrol_event[0] == 49 or self.patrol_event[0] == 51:
+        if self.patrol_event[0] == 8 or self.patrol_event[0] == 46 or self.patrol_event[0] == 47 or self.patrol_event[0] == 49 or self.patrol_event[0] == 51:
             if self.before:
                 # stuff that happens during calculations
                 return
