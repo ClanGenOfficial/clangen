@@ -1555,6 +1555,16 @@ class OptionsScreen(Screens):
             game.switches['apprentice_switch'].status_change('apprentice')
             game.switches['apprentice_switch'] = False
 
+        if game.switches['apprentice_switch'] is not False and game.switches['apprentice_switch'] is not None and game.switches[
+            'apprentice_switch'].status == 'warrior':
+            game.switches['apprentice_switch'].status_change('medicine cat')
+            game.switches['apprentice_switch'] = False
+
+        if game.switches['apprentice_switch'] is not False and game.switches['apprentice_switch'] is not None and game.switches[
+            'apprentice_switch'].status == 'medicine cat':
+            game.switches['apprentice_switch'].status_change('warrior')
+            game.switches['apprentice_switch'] = False
+
         if game.switches['kill_cat'] is not False and game.switches['kill_cat'] is not None:
             events_class.dies(game.switches['kill_cat'])
             game.switches['kill_cat'] = False
