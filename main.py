@@ -102,6 +102,13 @@ while True:
             elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
                 game.switches['naming_text'] = game.switches['naming_text'][:-1]
 
+        if (game.current_screen == 'list screen' or game.current_screen == 'starclan screen') and event.type == pygame.KEYDOWN:
+            if event.unicode.isalpha() or event.unicode.isspace():  # only allows alphabet letters/space as an input
+                if len(game.switches['search_text']) < 20:  # can't type more than max name length
+                    game.switches['search_text'] += event.unicode
+            elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
+                game.switches['search_text'] = game.switches['search_text'][:-1]
+
         if event.type == pygame.QUIT:
             # close pygame
             pygame.display.quit()

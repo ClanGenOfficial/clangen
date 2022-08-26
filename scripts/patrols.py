@@ -376,7 +376,7 @@ class Patrol(object):
                               [45, 'The patrol finds a loner who is interested in joining the clan', 'The loner joins, bringing with them a litter of kits',
                                'The loner thinks for a while, and decides against joining', 'You decide to not confront that loner', 120, 10, 0, 0, 0, 0, 1, ['excellent speaker']],
                               [46, 'r_c admits that they have been training in the Dark Forest', 'The patrol convinces them to stop',
-                               'Your patrol doesn\’t manage to convince them to stop and later r_c is found dead in their nest', 'Your patrol doesn\’t react to the news', 120, 10,
+                               'Your patrol doesnt manage to convince them to stop and later r_c is found dead in their nest', 'Your patrol doesnt react to the news', 120, 10,
                                0, 0, 0, 0, 1, ['excellent speaker']],
                               [47, 'There is a large river dividing your territory. Should your patrol cross it?', 'Your patrol crosses the river and can hunt on the other side',
                                'r_c is swept away by the strong current and dies', 'Your patrol decides to avoid the river', 120, 10, 0, 0, 0, 0, 1, ['excellent speaker']],
