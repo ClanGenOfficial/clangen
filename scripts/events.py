@@ -285,7 +285,7 @@ class Events(object):
         game.cur_events_list.append(choice(interactions))
 
     def handle_deaths(self, cat):
-        if randint(1, 300) == 1:
+        if randint(1, 400) == 1:
             name = str(cat.name)
             cause_of_death = [name + ' was murdered', name + ' died of greencough', 'A tree fell in camp and killed ' + name, name + ' was found dead near a fox den']
             if cat.status == 'kitten':
@@ -323,7 +323,7 @@ class Events(object):
                     cause_of_death.extend([name + ' was killed by the ' + self.enemy_clan + ' deputy', name + ' was killed by the ' + self.enemy_clan + ' leader'])
             self.dies(cat)
             game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old')
-        elif randint(1, 300) == 1:  # multiple deaths
+        elif randint(1, 500) == 1:  # multiple deaths
             name = str(cat.name)
             other_cat = choice(list(cat_class.all_cats.values()))
             while cat == other_cat or other_cat.dead:
@@ -364,7 +364,7 @@ class Events(object):
                     name5 = str(dead_cats[4].name)
                     disaster.extend([' drown after the camp becomes flooded', ' are killed in a battle against ' + choice(names.normal_prefixes) + 'Clan',
                                      ' are killed after a fire rages through the camp', ' are killed in an ambush by a group of rogues', ' go missing in the night',
-                                     ' are killed after a badger attack', ' die to a greencough outbreak', ' are taken away by twolegs'])
+                                     ' are killed after a badger attack', ' die to a greencough outbreak', ' are taken away by twolegs', ' eat poisoned freshkill and die'])
                     if game.clan.current_season == 'Leaf-bare':
                         disaster.extend([' die after freezing from a snowstorm', ' starve to death when no prey is found'])
                     elif game.clan.current_season == 'Greenleaf':
@@ -412,7 +412,7 @@ class Events(object):
         # Decide randomly if kits will be born, if possible
         if chance != 0:
             hit = randint(0, chance)
-            if self.living_cats > 30:
+            if self.living_cats > 50:
                 hit = randint(0, chance + 20)
             elif self.living_cats < 10:
                 hit = randint(0, chance - 10)
