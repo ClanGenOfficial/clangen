@@ -1110,18 +1110,18 @@ class PatrolEventScreen(Screens):
         verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
         if game.switches['event'] == 0:
             verdana.text(str(patrol.patrol_event[1]), ('center', 200))
-            if patrol.patrol_event[0] == 35:
-                patrol_img = pygame.image.load('resources/rogue.png')
-                patrol_img = pygame.transform.scale(patrol_img, (340,200))
-                screen.blit(patrol_img, (500, 200))
-            elif patrol.patrol_event[0] == 44:
-                patrol_img = pygame.image.load('resources/kittypet.png')
-                patrol_img = pygame.transform.scale(patrol_img, (320, 200))
-                screen.blit(patrol_img, (500, 200))
-            elif patrol.patrol_event[0] == 6 or patrol.patrol_event[0] == 7:
-                patrol_img = pygame.image.load('resources/fox.png')
-                patrol_img = pygame.transform.scale(patrol_img, (320, 200))
-                screen.blit(patrol_img, (500, 200))
+            # if patrol.patrol_event[0] == 35:
+            #     patrol_img = pygame.image.load('resources/rogue.png')
+            #     patrol_img = pygame.transform.scale(patrol_img, (340,200))
+            #     screen.blit(patrol_img, (500, 200))
+            # elif patrol.patrol_event[0] == 44:
+            #     patrol_img = pygame.image.load('resources/kittypet.png')
+            #     patrol_img = pygame.transform.scale(patrol_img, (320, 200))
+            #     screen.blit(patrol_img, (500, 200))
+            # elif patrol.patrol_event[0] == 6 or patrol.patrol_event[0] == 7:
+            #     patrol_img = pygame.image.load('resources/fox.png')
+            #     patrol_img = pygame.transform.scale(patrol_img, (320, 200))
+            #     screen.blit(patrol_img, (500, 200))
             buttons.draw_button(('center', 300), text='Proceed', event=1)
             buttons.draw_button(('center', 340), text='Do Not Proceed', event=2)
             if patrol.patrol_event[0] in patrol.failable_patrols:
@@ -1153,6 +1153,8 @@ class PatrolEventScreen(Screens):
 
 class AllegiancesScreen(Screens):
     def on_use(self):
+        verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
+
         verdana_big.text(f'{game.clan.name}Clan Allegiances', (30, 110))
         a = 0
         if game.allegiance_list is not None and game.allegiance_list != []:
@@ -1583,6 +1585,40 @@ class OptionsScreen(Screens):
             button_count += 1
         buttons.draw_button((x_value, y_value + button_count * y_change + 30), text='Back', cur_screen='profile screen')
 
+class StatsScreen(Screens):
+    def on_use(self):
+        verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
+        living_num = 0
+        warriors_num = 0
+        app_num = 0
+        kit_num = 0
+        elder_num = 0
+        starclan_num = 0
+        for cat in cat_class.all_cats.values():
+            if not cat.dead:
+                living_num+=1
+                if cat.status == 'warrior':
+                    warriors_num+=1
+                elif cat.status in ['apprentice', 'medicine cat apprentice']:
+                    app_num+=1
+                elif cat.status == 'kitten':
+                    kit_num+=1
+                elif cat.status == 'elder':
+                    elder_num+=1
+            else:
+                starclan_num+=1
+
+        verdana.text('Number of Living Cats: ' + str(living_num), (100, 150))
+        verdana.text('Number of Warriors: ' + str(warriors_num), (100, 200))
+        verdana.text('Number of Apprentices: ' + str(app_num), (100, 250))
+        verdana.text('Number of Kits: ' + str(kit_num), (100, 300))
+        verdana.text('Number of Elders: ' + str(elder_num), (100, 350))
+        verdana.text('Number of StarClan Cats: ' + str(starclan_num), (100, 400))
+        draw_menu_buttons()
+
+
+
+
 
 
 # SCREENS
@@ -1610,10 +1646,7 @@ choose_mentor_screen2 = ChooseMentorScreen2('choose mentor screen2')
 change_name_screen = ChangeNameScreen('change name screen')
 option_screen = OptionsScreen('options screen')
 language_screen = LanguageScreen('language screen')
-
-
-# options_screen = OptionsScreen('options screen')
-
+stats_screen = StatsScreen('stats screen')
 
 # CAT PROFILES
 def cat_profiles():
@@ -1632,3 +1665,5 @@ def draw_menu_buttons():
     buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
     buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
     buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
+    buttons.draw_button((50, 80), text='Stats', cur_screen='stats screen')
+
