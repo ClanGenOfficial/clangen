@@ -146,6 +146,7 @@ class Patrol(object):
 
             self.patrol_event[4] = self.patrol_event[4].replace('s_c', str(self.patrol_stat_cat.name))
 
+
     def intentionally_fail(self):
         if self.patrol_event[0] in self.new_cat_patrols:
             self.intentional_fail = 'Drive away the loner'
@@ -155,8 +156,7 @@ class Patrol(object):
             self.patrol_event[3] = 'The stranger says mean things to the patrol after being asked to leave.'
 
         if self.patrol_event[0] == 11:
-            self.intentional_fail = 'Antagonize'
-            # for this event the success and fails are calculated in meet_other_clans() because they will be different depending on relations
+            self.intentional_fail = 'Antagonize'  # for this event the success and fails are calculated in meet_other_clans() because they will be different depending on relations
 
     def meet_other_clan(self, other_clan=''):
         if not other_clan:
@@ -271,6 +271,7 @@ class Patrol(object):
             self.event_special()
 
     def refresh_events(self):
+        # patrol = id, first text, success, fail, ignore,
         self.patrol_events = [[1, 'Your patrol comes upon the scent of a mouse', 'Your patrol catches the mouse', 'Your patrol narrowly misses catching the mouse',
                                'You decide not to pursue the mouse', 10, 8, 0, 0, 0, 0, 0, ['good hunter', 'great hunter', 'fantastic hunter']],
                               [2, 'Your patrol doesnt find anything useful', 'It was still a fun outing, and you learned a lot', 'How? How did you fail this?',
@@ -374,7 +375,22 @@ class Patrol(object):
                                      'The descriptions of clan cats frighten the kittypet', 'You decide to not confront that kittypet', 80, 10, 0, 0, 0, 0, 1,
                                      ['great speaker', 'excellent speaker']],
                               [45, 'The patrol finds a loner who is interested in joining the clan', 'The loner joins, bringing with them a litter of kits',
-                               'The loner thinks for a while, and decides against joining', 'You decide to not confront that loner', 120, 10, 0, 0, 0, 0, 1, ['excellent speaker']]]
+                               'The loner thinks for a while, and decides against joining', 'You decide to not confront that loner', 120, 10, 0, 0, 0, 0, 1, ['excellent speaker']],
+                              [46, 'r_c admits that they have been training in the Dark Forest', 'The patrol convinces them to stop',
+                               'Your patrol doesn\’t manage to convince them to stop and later r_c is found dead in their nest', 'Your patrol doesn\’t react to the news', 120, 10,
+                               0, 0, 0, 0, 1, ['excellent speaker']],
+                              [47, 'There is a large river dividing your territory. Should your patrol cross it?', 'Your patrol crosses the river and can hunt on the other side',
+                               'r_c is swept away by the strong current and dies', 'Your patrol decides to avoid the river', 120, 10, 0, 0, 0, 0, 1, ['excellent speaker']],
+                              [48, 'Your patrol sees a large rabbit, but it is just over the border', 'Your patrol manages to catch the rabbit without the enemy clan noticing',
+                               'Your patrol is caught by enemy warriors', 'Your patrol doesn\’t attempt to catch the rabbit', 120, 10, 0, 0, 0, 0, 1, ['fantastic hunter']],
+                              [49, 'The smell of food lures r_c close to a twoleg trap', 'The patrol leads r_c away before it goes off',
+                               'r_c is caught in the trap and is taken by twolegs shortly after', 'r_c loses interest and walks back to the patrol', 120, 10, 0, 0, 0, 0, 1, ['smart', 'very smart', 'extremely smart']],
+                              [50, 'The patrol is helping gather herbs for the medicine cat and r_c stumbles upon a bush of red berries', 'The patrol tells r_c to stay away from the death berries just in time',
+                              'r_c chews some of the berries and dies', 'r_c decides to not touch the berries', 120, 10, 0, 0, 0, 0, 1, ['great teacher', 'fantastic teacher']],
+                              [51, 'The patrol approaches a deep ravine. There is a lot of prey here, but the ground is very slippery.',
+                               'The patrol has a very successful hunt', 'While hunting, r_c slips and falls into the ravine, never to be seen again',
+                               'The patrol decides to hunt elsewhere', 120, 10, 0, 0, 0, 0, 1, ['great hunter', 'fantastic hunter']],
+                              ]
 
     def event_special(self):
         # special functions for each event defined here
@@ -411,7 +427,7 @@ class Patrol(object):
                         self.patrol_random_cat.specialty2 = choice([choice(scars1), choice(scars2)])
                     return
 
-        if self.patrol_event[0] == 8:
+        if self.patrol_event[0] == 8 or self.patrol_event[0] ==  46 or self.patrol_event[0] ==  47 or self.patrol_event[0] == 49 or self.patrol_event[0] == 51:
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -471,12 +487,11 @@ class Patrol(object):
                         self.other_clan.relations = 1
                     if int(self.other_clan.relations) == 6:
                         self.patrol_result_text = self.other_clan.name + 'Clan declares war on ' + game.clan.name + 'Clan.'
-                
+
                 if int(self.other_clan.relations) < 7 and not self.success:
-                        events_class.dies(self.patrol_random_cat)
-                        
+                    events_class.dies(self.patrol_random_cat)
+
                 return
-                
 
         if self.patrol_event[0] == 12:
             if self.before:
