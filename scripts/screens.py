@@ -1286,31 +1286,21 @@ class ChooseMentorScreen(Screens):
 class ChooseMentorScreen2(Screens):
     def on_use(self):
         # use this variable to point to the cat object in question
-        the_cat = cat_class.all_cats.get(game.switches['cat'], game.clan.instructor)
-        # use these attributes to create differing profiles for starclan cats etc.
-        is_instructor = False
-        if the_cat.dead and game.clan.instructor.ID == the_cat.ID:
-            is_instructor = True
+        the_cat = cat_class.all_cats.get(game.switches['cat'])
 
         # back and next buttons on the profile page
         previous_cat = 0
         next_cat = 0
 
-        if the_cat.dead and not is_instructor:
-            previous_cat = game.clan.instructor.ID
-
-        if is_instructor:
-            next_cat = 1
-
         for check_cat in cat_class.all_cats:
             if cat_class.all_cats[check_cat].ID == the_cat.ID:
                 next_cat = 1
 
-            if next_cat == 0 and cat_class.all_cats[check_cat].ID != the_cat.ID and cat_class.all_cats[check_cat].dead == the_cat.dead and cat_class.all_cats[
-                check_cat].ID != game.clan.instructor.ID:
+            if next_cat == 0 and cat_class.all_cats[check_cat].ID != the_cat.ID and not cat_class.all_cats[check_cat].dead and cat_class.all_cats[
+                check_cat].status in ['warrior', 'deputy', 'leader'] and cat_class.all_cats[check_cat] != game.switches['apprentice'].mentor:
                 previous_cat = cat_class.all_cats[check_cat].ID
-            elif next_cat == 1 and cat_class.all_cats[check_cat].ID != the_cat.ID and cat_class.all_cats[check_cat].dead == the_cat.dead and cat_class.all_cats[
-                check_cat].ID != game.clan.instructor.ID:
+            elif next_cat == 1 and cat_class.all_cats[check_cat].ID != the_cat.ID and not cat_class.all_cats[check_cat].dead and cat_class.all_cats[
+                check_cat].status in ['warrior', 'deputy', 'leader'] and cat_class.all_cats[check_cat] != game.switches['apprentice'].mentor:
                 next_cat = cat_class.all_cats[check_cat].ID
             elif int(next_cat) > 1:
                 break
@@ -1318,8 +1308,10 @@ class ChooseMentorScreen2(Screens):
         if next_cat == 1:
             next_cat = 0
 
-        buttons.draw_button((-40, 40), text='Next Cat', cat=next_cat)
-        buttons.draw_button((40, 40), text='Previous Cat', cat=previous_cat)
+        if next_cat != 0:
+            buttons.draw_button((-40, 40), text='Next Cat', cat=next_cat)
+        if previous_cat != 0:
+            buttons.draw_button((40, 40), text='Previous Cat', cat=previous_cat)
 
         # Info in string
         cat_name = str(the_cat.name)  # name
