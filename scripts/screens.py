@@ -85,8 +85,9 @@ class SettingsScreen(Screens):
 
     def on_use(self):
         # layout
-        buttons.draw_button((330, 100), text='Settings', available=False)
-        buttons.draw_button((-340, 100), text='Info', cur_screen='info screen')
+        buttons.draw_button((310, 100), text='Settings', available=False)
+        buttons.draw_button((-360, 100), text='Info', cur_screen='info screen')
+        buttons.draw_button((-255, 100), text='Language', cur_screen='language screen')
         verdana.text("Change the setting of your game here.", ('center', 130))
 
         # Setting names
@@ -125,8 +126,10 @@ class SettingsScreen(Screens):
 class InfoScreen(Screens):
     def on_use(self):
         # layout
-        buttons.draw_button((330, 100), text='Settings', cur_screen='settings screen')
-        buttons.draw_button((-340, 100), text='Info', available=False)
+        buttons.draw_button((310, 100), text='Settings', cur_screen='settings screen')
+        buttons.draw_button((-360, 100), text='Info', available=False)
+        buttons.draw_button((-255, 100), text='Language', cur_screen='language screen')
+
         verdana.text("Welcome to Warrior Cats clan generator!", ('center', 140))
         verdana.text("This is fan-made generator for the Warrior Cats -book series by Erin Hunter.", ('center', 175))
         verdana.text("Create a new clan in the 'Make New' section. That clan is saved and can be", ('center', 195))
@@ -141,6 +144,33 @@ class InfoScreen(Screens):
         # other buttons
         buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen')
 
+class LanguageScreen(Screens):
+
+    def on_use(self):
+        # layout
+        buttons.draw_button((310, 100), text='Settings', cur_screen='settings screen')
+        buttons.draw_button((-360, 100), text='Info', cur_screen='info screen')
+        buttons.draw_button((-255, 100), text='Language', available='false')
+        verdana.text("Choose the language of your game here:", ('center', 130))
+
+        # Language options
+        a = 200
+        for language_name in game.language_list:
+            buttons.draw_button(('center', a), text=language_name, language=language_name, available=language_name!=game.switches['language'])
+            a += 30
+
+        if game.switches['language']!=game.settings['language']:
+            game.settings['language'] = game.switches['language']
+            game.settings_changed = True
+            if game.settings['language'] != 'english':
+                game.switch_language()
+
+        # other buttons
+        buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen')
+        if game.settings_changed:
+            buttons.draw_button(('center', -150), text='Save Settings', save_settings=True)
+        else:
+            buttons.draw_button(('center', -150), text='Save Settings', available=False)
 
 class ClanScreen(Screens):
     def on_use(self):
@@ -1569,6 +1599,7 @@ choose_mentor_screen = ChooseMentorScreen('choose mentor screen')
 choose_mentor_screen2 = ChooseMentorScreen2('choose mentor screen2')
 change_name_screen = ChangeNameScreen('change name screen')
 option_screen = OptionsScreen('options screen')
+language_screen = LanguageScreen('language screen')
 
 
 # options_screen = OptionsScreen('options screen')
