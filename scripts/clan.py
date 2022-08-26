@@ -35,7 +35,7 @@ class Clan(object):
     current_season = 'Newleaf'
     all_clans = []
 
-    def __init__(self, name="", leader=None, deputy=None, medicine_cat=None):
+    def __init__(self, name="", leader=None, deputy=None, medicine_cat=None, biome='Forest'):
         if name != "":
             self.name = name
             self.leader = leader
@@ -54,6 +54,8 @@ class Clan(object):
             self.age = 0
             self.current_season = 'Newleaf'
             self.instructor = None  # This is the first cat in starclan, to "guide" the other dead cats there.
+            self.biome = biome
+            print(self.biome)
 
     def create_clan(self):
         """ This function is only called once a new clan is created in the 'clan created' screen, not every time
@@ -146,7 +148,7 @@ class Clan(object):
         exit()
 
     def save_clan(self):
-        data = f'{self.name},{str(self.age)}' + '\n'
+        data = f'{self.name},{self.age},{self.biome}' + '\n'
         data = data + self.leader.ID + ',' + str(self.leader_lives) + ',' + str(self.leader_predecessors) + ',' + '\n'
 
         if self.deputy is not None:
@@ -156,6 +158,7 @@ class Clan(object):
         data = data + self.medicine_cat.ID + ',' + str(self.med_cat_predecessors) + '\n'
 
         data = data + self.instructor.ID + '\n'
+
         for a in range(len(self.clan_cats)):
             if a == len(self.clan_cats) - 1:
                 data = data + self.clan_cats[a]
@@ -207,7 +210,10 @@ class Clan(object):
             instructor_info = sections[3]
             members = sections[4].split(',')
             other_clans = []
-        game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]], cat_class.all_cats.get(deputy_info[0], None), cat_class.all_cats[med_cat_info[0]])
+        if len(general) == 3:
+            game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]], cat_class.all_cats.get(deputy_info[0], None), cat_class.all_cats[med_cat_info[0]], general[2])
+        else:
+            game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]], cat_class.all_cats.get(deputy_info[0], None), cat_class.all_cats[med_cat_info[0]])
 
         game.clan.age = int(general[1])
         game.clan.current_season = game.clan.seasons[game.clan.age % 12]
