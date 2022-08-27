@@ -420,8 +420,9 @@ class Patrol(object):
                                                                                       'They bring the herb back to camp and the herbs are put to good use',
                                                                                       'The herbs turn out to be useless weeds', 'They decide to continue patrolling instead', 30,
                                                                                       10, 0, 0, 0, 0, 1, ['strong connection to starclan', 'great teacher', 'fantastic teacher']],
-                              [62, 'r_c goes missing during the patrol', 'r_c is found with an abandoned kit', 'r_c is found laying on the ground injured',
-                               'r_c eventually catches up', 50, 10, 0, 2, 0, 0, 1, ['excellent speaker']]]
+                              [63, 'r_c goes missing during the patrol', 'r_c is found with an abandoned kit', 'r_c is found laying on the ground injured',
+                               'r_c eventually catches up', 50, 10, 0, 2, 0, 0, 1, ['excellent speaker']],
+                              ]
 
     # [ ,'','','','', 120, 10, 0, 0, 0, 0, 1, [, '']],
 
@@ -789,7 +790,7 @@ class Patrol(object):
                         self.patrol_random_cat.specialty2 = choice([choice(scars1), choice(scars2)])
                     return
 
-        if self.patrol_event[0] == 37 or self.patrol_event[0] == 59 or self.patrol_event[0] == 62:
+        if self.patrol_event[0] == 37 or self.patrol_event[0] == 59 or self.patrol_event[0] == 63:
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -890,7 +891,7 @@ class Patrol(object):
                     kits = choice([2, 2, 2, 3])
                     for new_kit in range(kits):
                         new_kit = Cat(parent1=kit.ID, moons=0)
-                        new_kit.thought == 'Wonders where they are'
+                        new_kit.thought = 'Wonders where they are'
                         game.clan.add_cat(new_kit)
 
                 return
