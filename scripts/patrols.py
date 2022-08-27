@@ -29,8 +29,7 @@ class Patrol(object):
         self.patrol_result_text = ''
         self.other_clan = {}
 
-        self.experience_levels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master',
-                                  'max']
+        self.experience_levels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
 
     # get patrol personalities, patrol total experience, patrol max experience
     def new_patrol(self):
@@ -397,8 +396,8 @@ class Patrol(object):
                                'The pawprints lead them to a trespassing rogue and the patrol chases them off the territory',
                                'Turns out they were following their own pawprints... How embarrassing.', 'r_c decides to ignore the pawprints', 30, 10, 0, 0, 0, 0, 1,
                                ['great fighter']], [54, 'r_c notices a clanmate trapped in some brambles', 'The patrol frees their clanmate',
-                                                    'The patrol works all day to free their clanmate and gets nothing done', 'The patrol decides to leave their clanmate alone',
-                                                    40, 10, 0, 0, 0, 0, 1, ['great speaker', 'fantastic speaker']],
+                                                    'The patrol works all day to free their clanmate and gets nothing done', 'The patrol decides to leave their clanmate alone', 40,
+                                                    10, 0, 0, 0, 0, 1, ['great speaker', 'fantastic speaker']],
                               [55, 'r_c is tempted to eat the prey they caught', 'They eat the prey without anyone noticing',
                                'The patrol notices r_c eating the freshkill and report them', 'They decide not to eat the prey', 30, 10, 0, 2, 0, 0, 1,
                                ['great hunter', 'fantastic hunter']],
@@ -421,8 +420,19 @@ class Patrol(object):
                                                                                       'The herbs turn out to be useless weeds', 'They decide to continue patrolling instead', 30,
                                                                                       10, 0, 0, 0, 0, 1, ['strong connection to starclan', 'great teacher', 'fantastic teacher']],
                               [63, 'r_c goes missing during the patrol', 'r_c is found with an abandoned kit', 'r_c is found laying on the ground injured',
-                               'r_c eventually catches up', 50, 10, 0, 2, 0, 0, 1, ['excellent speaker']],
-                              ]
+                               'r_c eventually catches up', 50, 10, 0, 2, 0, 0, 1, ['excellent speaker']], ]
+        deadly_patrols = [[100, 'The patrol hears odd noises near the twoleg nests', 'They find the noise was just an old loner singing to themselves',
+                           'Your patrol walks into an ambush by a group of rogues and all cats perish', 'Your patrol ignores the noises', 120, 10, 0, 0, 0, 0, 1, []],
+                          [101, 'Your patrol find a wounded cat by the clan border', 'They bring the cat back to camp and they join the clan',
+                           'The cat was pretending to be wounded. Your patrol is killed by an enemy clan ambush', 120, 10, 0, 0, 0, 0, 1, []],
+                          [102, 'Your patrol is near a steep cliff. Suddenly there is the sounds of falling rocks', 'Your cats successfully escape the rock slide',
+                           'Your cats are caught in the rock slide and die', 'It seems like the patrol was just imagining things', 120, 10, 0, 0, 0, 0, 1, []],
+                          [103, 'Your patrol is out near a clearing where there seems to be a lot of twolegs', 'The patrol avoids detection and continues their hunt',
+                           'The twolegs notice the cats and capture them. They are never seen again', 'The patrol heads back to camp, avoiding the strange twolegs', 120, 10, 0, 0,
+                           0, 0, 1, []], [104, 'There are large dark clouds in the horizon and your patrol wonders if they should continue',
+                                          'Your patrol continues the patrol successfully, just becoming a little wet',
+                                          'There is suddenly a downpour, and the cats are swept away by the flooded river', 'Your cats decide not to risk it and head back', 120,
+                                          10, 0, 0, 0, 0, 1, []]]
 
     # [ ,'','','','', 120, 10, 0, 0, 0, 0, 1, [, '']],
 

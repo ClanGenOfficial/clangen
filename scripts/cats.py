@@ -1073,10 +1073,6 @@ class Cat(object):
         # draw colour & style
         new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
-        # if self.paralyzed:
-        #     new_sprite.blit(sprites.sprites.get('skinparalyzed' + self.skin + '0'), (0, 0))
-        #     new_sprite.blit(pygame.image.load('sprites/paralyzed/Paralyzed_lineart.png'), (0, 0))
-        # else:
         if self.pelt.name not in ['Tortie', 'Calico']:
             if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
                 new_sprite.blit(sprites.sprites[self.pelt.sprites[1] + 'extra' + self.pelt.colour + str(self.age_sprites[self.age])], (0, 0))
@@ -1109,34 +1105,34 @@ class Cat(object):
                 new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0))
             new_sprite.blit(sprites.sprites['eyes' + self.eye_colour + str(self.age_sprites[self.age])], (0, 0))
 
-            # draw line art
-            if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
-                new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age] + 9)], (0, 0))
-            else:
-                new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
+        # draw line art
+        if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
+            new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age] + 9)], (0, 0))
+        else:
+            new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
 
-            # draw skin and scars2 and scars3
-            blendmode = pygame.BLEND_RGBA_MIN
-            if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
-                new_sprite.blit(sprites.sprites['skinextra' + self.skin + str(self.age_sprites[self.age])], (0, 0))
-                if self.specialty in scars2:
-                    new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
-                if self.specialty2 in scars2:
-                    new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
-                if self.specialty in scars3:
-                    new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])], (0, 0))
-                if self.specialty2 in scars3:
-                    new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0))
-            else:
-                new_sprite.blit(sprites.sprites['skin' + self.skin + str(self.age_sprites[self.age])], (0, 0))
-                if self.specialty in scars2:
-                    new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
-                if self.specialty2 in scars2:
-                    new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
-                if self.specialty in scars3:
-                    new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])], (0, 0))
-                if self.specialty2 in scars3:
-                    new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0))
+        # draw skin and scars2 and scars3
+        blendmode = pygame.BLEND_RGBA_MIN
+        if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
+            new_sprite.blit(sprites.sprites['skinextra' + self.skin + str(self.age_sprites[self.age])], (0, 0))
+            if self.specialty in scars2:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty2 in scars2:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty in scars3:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])], (0, 0))
+            if self.specialty2 in scars3:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0))
+        else:
+            new_sprite.blit(sprites.sprites['skin' + self.skin + str(self.age_sprites[self.age])], (0, 0))
+            if self.specialty in scars2:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty2 in scars2:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty in scars3:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])], (0, 0))
+            if self.specialty2 in scars3:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0))
 
         # reverse, if assigned so
         if self.reverse:
