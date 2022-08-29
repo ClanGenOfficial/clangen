@@ -94,6 +94,8 @@ class Sprites(object):
 
 
 sprites = Sprites(50)
+tiles = Sprites(64)
+
 for x in ['lineart', 'singlecolours', 'speckledcolours', 'tabbycolours', 'whitepatches', 'tortiecolours', 'eyes', 'singleextra', 'tabbyextra', 'speckledextra', 'whiteextra',
           'eyesextra', 'tortiesextra', 'skin', 'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'whitepatchesnew', 'scarsdark', 'scarsdarkextra', 'collars', 'collarsextra',
           'bellcollars', 'bellcollarsextra', 'bowcollars', 'bowcollarsextra']:
@@ -101,6 +103,9 @@ for x in ['lineart', 'singlecolours', 'speckledcolours', 'tabbycolours', 'whitep
 
 for sprite in ['Paralyzed_lineart', 'singleparalyzed', 'speckledparalyzed', 'tabbyparalyzed', 'whiteallparalyzed', 'eyesparalyzed', 'tabbyparalyzed', 'tortiesparalyzed', 'scarsparalyzed', 'skinparalyzed']:
     sprites.spritesheet(f"sprites/paralyzed/{sprite}.png", sprite)
+
+for x in ['dithered']:
+    tiles.spritesheet(f"sprites/{x}.png", x)
 
 # Line art
 sprites.make_group('lineart', (0, 0), 'lines', sprites_y=5)
@@ -187,5 +192,7 @@ sprites.make_group('skinparalyzed', (2, 0), 'skinparalyzedBLACK', sprites_x=1, s
 sprites.make_group('skinextra', (0, 0), 'skinextraBLACK', sprites_y=2)
 sprites.make_group('skinextra', (1, 0), 'skinextraRED', sprites_y=2)
 sprites.make_group('skinextra', (2, 0), 'skinextraPINK', sprites_y=2)
+
+tiles.make_group('dithered', (0, 0), 'terrain')
 
 sprites.load_scars()
