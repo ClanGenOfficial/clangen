@@ -1827,7 +1827,7 @@ class MapScreen(Screens):
                     buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain6'], (16,16)), map_selection=(x,y))
                 if (x,y) == game.clan.camp_site:
                     buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terraintwo0'], (16,16)), map_selection=(x,y))
-                    game.map_info[(x,y)] = [x,y,str(game.switches['biome']), game.clan.name + 'Clan Camp',"Twoleg Activity: none","Thunderpath Traffic: none","Prey Levels: low",str(game.map_info[(x,y)][7])]
+                    game.map_info[(x,y)] = [x,y,str(biome), game.clan.name + 'Clan Camp',"Twoleg Activity: none","Thunderpath Traffic: none","Prey Levels: low",str(game.map_info[(x,y)][7])]
                 if (x,y) == game.switches['map_selection']:
                     if str(game.map_info[(x,y)][3]) == territory_claim:
                         buttons.draw_button((-16, 450), text='Hunting Grounds',hunting_territory=(x,y))
