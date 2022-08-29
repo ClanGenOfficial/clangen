@@ -618,7 +618,8 @@ class MakeClanScreen(Screens):
         game.switches['choosing_camp'] = False
         create_example_cats()
         self.worldseed = random.randrange(10000)
-        self.world = World((44,44),self.worldseed)
+        if mapavailable:
+            self.world = World((44,44),self.worldseed)
 
 
 class ClanCreatedScreen(Screens):
@@ -633,87 +634,88 @@ class ClanCreatedScreen(Screens):
     def screen_switches(self):
         game.clan = Clan(game.switches['clan_name'], game.choose_cats[game.switches['leader']], game.choose_cats[game.switches['deputy']],game.choose_cats[game.switches['medicine_cat']], game.switches['biome'], game.switches['world_seed'], game.switches['camp_site'])
         game.clan.create_clan()
-        territory_claim = str(game.clan.name) + 'Clan Territory'
-        otherclan_campsite = {}
-        for clan in game.clan.all_clans:
-            x = random.randrange(40)
-            y = random.randrange(44)
-            clan_camp = self.choose_other_clan_territory(x,y)
-            territory_biome = str(game.map_info[clan_camp][2])
-            territory_twolegs = str(game.map_info[clan_camp][4])
-            territory_thunderpath = str(game.map_info[clan_camp][5])
-            territory_prey = str(game.map_info[clan_camp][6])
-            territory_plants = str(game.map_info[clan_camp][7])
-            game.map_info[clan_camp] = [clan_camp[0],clan_camp[1],territory_biome, str(clan) + " Camp",territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
-            otherclan_campsite[str(clan)] = clan_camp
-        for y in range(44):
-            for x in range(40):
-                if (x,y) == (game.switches['camp_site'][0] - 1, game.switches['camp_site'][1]):
-                    territory_biome = str(game.map_info[(x,y)][2])
-                    territory_twolegs = str(game.map_info[(x,y)][4])
-                    territory_thunderpath = str(game.map_info[(x,y)][5])
-                    territory_prey = str(game.map_info[(x,y)][6])
-                    territory_plants = str(game.map_info[(x,y)][7])
-                    if str(game.map_info[(x,y)][3]) != 'Unclaimable':
-                        game.map_info[(x,y)] = [x,y,territory_biome, territory_claim,territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
-                elif (x,y) == (game.switches['camp_site'][0], game.switches['camp_site'][1] - 1):
-                    territory_biome = str(game.map_info[(x,y)][2])
-                    territory_twolegs = str(game.map_info[(x,y)][4])
-                    territory_thunderpath = str(game.map_info[(x,y)][5])
-                    territory_prey = str(game.map_info[(x,y)][6])
-                    territory_plants = str(game.map_info[(x,y)][7])
-                    if str(game.map_info[(x,y)][3]) != 'Unclaimable':
-                        game.map_info[(x,y)] = [x,y,territory_biome, territory_claim,territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
-                elif (x,y) == (game.switches['camp_site'][0] + 1, game.switches['camp_site'][1]):
-                    territory_biome = str(game.map_info[(x,y)][2])
-                    territory_twolegs = str(game.map_info[(x,y)][4])
-                    territory_thunderpath = str(game.map_info[(x,y)][5])
-                    territory_prey = str(game.map_info[(x,y)][6])
-                    territory_plants = str(game.map_info[(x,y)][7])
-                    if str(game.map_info[(x,y)][3]) != 'Unclaimable':
-                        game.map_info[(x,y)] = [x,y,territory_biome, territory_claim,territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
-                elif (x,y) == (game.switches['camp_site'][0], game.switches['camp_site'][1] + 1):
-                    territory_biome = str(game.map_info[(x,y)][2])
-                    territory_twolegs = str(game.map_info[(x,y)][4])
-                    territory_thunderpath = str(game.map_info[(x,y)][5])
-                    territory_prey = str(game.map_info[(x,y)][6])
-                    territory_plants = str(game.map_info[(x,y)][7])
-                    if str(game.map_info[(x,y)][3]) != 'Unclaimable':
-                        game.map_info[(x,y)] = [x,y,territory_biome, territory_claim,territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
-                for clan in game.clan.all_clans:
-                    if (x,y) == (otherclan_campsite[str(clan)][0] - 1, otherclan_campsite[str(clan)][1]):
+        if mapavailable:
+            territory_claim = str(game.clan.name) + 'Clan Territory'
+            otherclan_campsite = {}
+            for clan in game.clan.all_clans:
+                x = random.randrange(40)
+                y = random.randrange(44)
+                clan_camp = self.choose_other_clan_territory(x,y)
+                territory_biome = str(game.map_info[clan_camp][2])
+                territory_twolegs = str(game.map_info[clan_camp][4])
+                territory_thunderpath = str(game.map_info[clan_camp][5])
+                territory_prey = str(game.map_info[clan_camp][6])
+                territory_plants = str(game.map_info[clan_camp][7])
+                game.map_info[clan_camp] = [clan_camp[0],clan_camp[1],territory_biome, str(clan) + " Camp",territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                otherclan_campsite[str(clan)] = clan_camp
+            for y in range(44):
+                for x in range(40):
+                    if (x,y) == (game.switches['camp_site'][0] - 1, game.switches['camp_site'][1]):
                         territory_biome = str(game.map_info[(x,y)][2])
                         territory_twolegs = str(game.map_info[(x,y)][4])
                         territory_thunderpath = str(game.map_info[(x,y)][5])
                         territory_prey = str(game.map_info[(x,y)][6])
                         territory_plants = str(game.map_info[(x,y)][7])
                         if str(game.map_info[(x,y)][3]) != 'Unclaimable':
-                            game.map_info[(x,y)] = [x,y,territory_biome, str(clan) + ' Territory',territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
-                    elif (x,y) == (otherclan_campsite[str(clan)][0], otherclan_campsite[str(clan)][1] - 1):
+                            game.map_info[(x,y)] = [x,y,territory_biome, territory_claim,territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                    elif (x,y) == (game.switches['camp_site'][0], game.switches['camp_site'][1] - 1):
                         territory_biome = str(game.map_info[(x,y)][2])
                         territory_twolegs = str(game.map_info[(x,y)][4])
                         territory_thunderpath = str(game.map_info[(x,y)][5])
                         territory_prey = str(game.map_info[(x,y)][6])
                         territory_plants = str(game.map_info[(x,y)][7])
                         if str(game.map_info[(x,y)][3]) != 'Unclaimable':
-                            game.map_info[(x,y)] = [x,y,territory_biome, str(clan) + ' Territory',territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
-                    elif (x,y) == (otherclan_campsite[str(clan)][0] + 1, otherclan_campsite[str(clan)][1]):
+                            game.map_info[(x,y)] = [x,y,territory_biome, territory_claim,territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                    elif (x,y) == (game.switches['camp_site'][0] + 1, game.switches['camp_site'][1]):
                         territory_biome = str(game.map_info[(x,y)][2])
                         territory_twolegs = str(game.map_info[(x,y)][4])
                         territory_thunderpath = str(game.map_info[(x,y)][5])
                         territory_prey = str(game.map_info[(x,y)][6])
                         territory_plants = str(game.map_info[(x,y)][7])
                         if str(game.map_info[(x,y)][3]) != 'Unclaimable':
-                            game.map_info[(x,y)] = [x,y,territory_biome, str(clan) + ' Territory',territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
-                    elif (x,y) == (otherclan_campsite[str(clan)][0], otherclan_campsite[str(clan)][1] + 1):
+                            game.map_info[(x,y)] = [x,y,territory_biome, territory_claim,territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                    elif (x,y) == (game.switches['camp_site'][0], game.switches['camp_site'][1] + 1):
                         territory_biome = str(game.map_info[(x,y)][2])
                         territory_twolegs = str(game.map_info[(x,y)][4])
                         territory_thunderpath = str(game.map_info[(x,y)][5])
                         territory_prey = str(game.map_info[(x,y)][6])
                         territory_plants = str(game.map_info[(x,y)][7])
                         if str(game.map_info[(x,y)][3]) != 'Unclaimable':
-                            game.map_info[(x,y)] = [x,y,territory_biome, str(clan) + ' Territory',territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
-        save_map(game.map_info, game.switches['clan_name'])
+                            game.map_info[(x,y)] = [x,y,territory_biome, territory_claim,territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                    for clan in game.clan.all_clans:
+                        if (x,y) == (otherclan_campsite[str(clan)][0] - 1, otherclan_campsite[str(clan)][1]):
+                            territory_biome = str(game.map_info[(x,y)][2])
+                            territory_twolegs = str(game.map_info[(x,y)][4])
+                            territory_thunderpath = str(game.map_info[(x,y)][5])
+                            territory_prey = str(game.map_info[(x,y)][6])
+                            territory_plants = str(game.map_info[(x,y)][7])
+                            if str(game.map_info[(x,y)][3]) != 'Unclaimable':
+                                game.map_info[(x,y)] = [x,y,territory_biome, str(clan) + ' Territory',territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                        elif (x,y) == (otherclan_campsite[str(clan)][0], otherclan_campsite[str(clan)][1] - 1):
+                            territory_biome = str(game.map_info[(x,y)][2])
+                            territory_twolegs = str(game.map_info[(x,y)][4])
+                            territory_thunderpath = str(game.map_info[(x,y)][5])
+                            territory_prey = str(game.map_info[(x,y)][6])
+                            territory_plants = str(game.map_info[(x,y)][7])
+                            if str(game.map_info[(x,y)][3]) != 'Unclaimable':
+                                game.map_info[(x,y)] = [x,y,territory_biome, str(clan) + ' Territory',territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                        elif (x,y) == (otherclan_campsite[str(clan)][0] + 1, otherclan_campsite[str(clan)][1]):
+                            territory_biome = str(game.map_info[(x,y)][2])
+                            territory_twolegs = str(game.map_info[(x,y)][4])
+                            territory_thunderpath = str(game.map_info[(x,y)][5])
+                            territory_prey = str(game.map_info[(x,y)][6])
+                            territory_plants = str(game.map_info[(x,y)][7])
+                            if str(game.map_info[(x,y)][3]) != 'Unclaimable':
+                                game.map_info[(x,y)] = [x,y,territory_biome, str(clan) + ' Territory',territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                        elif (x,y) == (otherclan_campsite[str(clan)][0], otherclan_campsite[str(clan)][1] + 1):
+                            territory_biome = str(game.map_info[(x,y)][2])
+                            territory_twolegs = str(game.map_info[(x,y)][4])
+                            territory_thunderpath = str(game.map_info[(x,y)][5])
+                            territory_prey = str(game.map_info[(x,y)][6])
+                            territory_plants = str(game.map_info[(x,y)][7])
+                            if str(game.map_info[(x,y)][3]) != 'Unclaimable':
+                                game.map_info[(x,y)] = [x,y,territory_biome, str(clan) + ' Territory',territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+            save_map(game.map_info, game.switches['clan_name'])
 
     def choose_other_clan_territory(self,x,y):
         self.x = x
