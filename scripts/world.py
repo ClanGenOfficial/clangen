@@ -4,7 +4,7 @@ from noise import snoise2
 import numpy as np
 import pandas as pd
 
-iwoe4rweofiw#class World:
+class World:
     def __init__(self, shape, seed):
         self.shape = shape
         self.seed = seed
