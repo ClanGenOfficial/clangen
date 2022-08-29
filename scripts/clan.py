@@ -1,6 +1,10 @@
 from .cats import *
 from .text import *
-from .world import *
+try:
+    from .world import *
+    mapavailable = True
+except:
+    mapavailable = False
 from sys import exit
 
 
@@ -90,7 +94,8 @@ class Clan(object):
         cat_class.thoughts()
         cat_class.save_cats()
         self.save_clan()
-        save_map(game.map_info, game.clan.name)
+        if mapavailable:
+            save_map(game.map_info, game.clan.name)
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""
@@ -214,6 +219,8 @@ class Clan(object):
             members = sections[4].split(',')
             other_clans = []
         if len(general) == 6:
+            if general[3] == 'None':
+                general[3] = 0
             game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]], cat_class.all_cats.get(deputy_info[0], None), cat_class.all_cats[med_cat_info[0]], biome=general[2], world_seed=int(general[3]), camp_site=(int(general[4]),int(general[5])))
         elif len(general) == 3:
             game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]], cat_class.all_cats.get(deputy_info[0], None), cat_class.all_cats[med_cat_info[0]], general[2])

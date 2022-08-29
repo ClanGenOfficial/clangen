@@ -27,7 +27,9 @@ if if_clans > 0:
     clan_class.load_clan()
     try:
         game.map_info = load_map('saves/'+game.clan.name)
-    except:
+    except NameError:
+        game.map_info = {}
+    except:   
         game.map_info = load_map("Fallback")
         print("Default map loaded.")
 

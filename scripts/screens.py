@@ -1,7 +1,8 @@
 from .clan import *
 from .events import *
 from .patrols import *
-from .world import *
+if mapavailable:
+    from .world import *
 
 import random
 
@@ -64,7 +65,8 @@ class StartScreen(Screens):
         if game.clan is not None:
             cat_class.save_cats()
             game.clan.save_clan()
-            save_map(game.map_info, game.clan.name)
+            if mapavailable:
+                save_map(game.map_info, game.clan.name)
 
         # LOAD settings
         game.load_settings()
@@ -533,56 +535,65 @@ class MakeClanScreen(Screens):
         else:
             buttons.draw_button(('center', 350), text='Done', available=False)
     def sixth_phase(self):
-        world = World((44,44),worldseed)
-        for y in range(44):
-            for x in range(40):
-                noisevalue = world.check_noisetile(x,y)
-                if noisevalue > 0.1:
-                    #buttons.draw_maptile_button((x*TILESIZE,y*TILESIZE),image=(pygame.transform.scale(terrain.images[1],(TILESIZE,TILESIZE))))
-                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain1'], (16,16)), map_selection=(x,y))
-                    Game.map_info[(x,y)] = [x,y,"Desert", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium','high']), 'Prey Levels: ' + random.choice(['none','low','medium']), 'Plant Cover: ' + random.choice(['none','low','medium'])]
-                elif noisevalue < -0.015:
-                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain3'], (16,16)), map_selection=(x,y))
-                    Game.map_info[(x,y)] = [x,y,"Forest", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium']), 'Prey Levels: ' + random.choice(['low','medium', 'high']), 'Plant Cover: ' + random.choice(['low','medium','high'])]
-                else:
-                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain0'], (16,16)), map_selection=(x,y))
-                    Game.map_info[(x,y)] = [x,y,"Plains", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium','high']), 'Prey Levels: ' + random.choice(['low','medium','high']), 'Plant Cover: ' + random.choice(['low','medium','high'])]
-        for y in range(44):
-            for x in range(40):
-                height = world.check_heighttile(x,y)
-                if height < 0:
-                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
-                    Game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
-                elif x == 0:
-                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
-                    Game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
-                elif x == 39:
-                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
-                    Game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
-                elif y == 0:
-                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
-                    Game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
-                elif y == 43:
-                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
-                    Game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
-                elif height < 0.03:
-                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain6'], (16,16)), map_selection=(x,y))
-                    Game.map_info[(x,y)] = [x,y,"Beach", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium']), 'Prey Levels: ' + random.choice(['low','medium','high']), 'Plant Cover: ' + random.choice(['none','low','medium'])]
-                elif height > 0.35:
-                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain5'], (16,16)), map_selection=(x,y))
-                    Game.map_info[(x,y)] = [x,y,"Mountainous", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium']), 'Prey Levels: ' + random.choice(['none','low','medium','high']), 'Plant Cover: ' + random.choice(['none','low','medium','high'])]
-                if (x,y) == game.switches['map_selection']:
-                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain7'], (16,16)), camp_site=(x,y))
-        verdana_big.text('Map', (-16, 50))
-        verdana.text(str(Game.map_info[game.switches['map_selection']][0])+", "+str(Game.map_info[game.switches['map_selection']][1]), (-16, 100))
-        verdana.text(str(Game.map_info[game.switches['map_selection']][2]), (-16, 150))
-        verdana.text(str(Game.map_info[game.switches['map_selection']][3]), (-16, 200))
-        verdana.text(str(game.switches['camp_site']), (-16, 250))
-        
-        if Game.map_info[game.switches['map_selection']][3] == 'Unclaimed':
-            buttons.draw_button((-16, 300), text='Done', choosing_camp=False, biome=Game.map_info[game.switches['map_selection']][2], world_seed=worldseed, cur_screen='clan created screen')
+        if mapavailable:
+            world = World((44,44),worldseed)
+            for y in range(44):
+                for x in range(40):
+                    noisevalue = world.check_noisetile(x,y)
+                    if noisevalue > 0.1:
+                        #buttons.draw_maptile_button((x*TILESIZE,y*TILESIZE),image=(pygame.transform.scale(terrain.images[1],(TILESIZE,TILESIZE))))
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain1'], (16,16)), map_selection=(x,y))
+                        Game.map_info[(x,y)] = [x,y,"Desert", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium','high']), 'Prey Levels: ' + random.choice(['none','low','medium']), 'Plant Cover: ' + random.choice(['none','low','medium'])]
+                    elif noisevalue < -0.015:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain3'], (16,16)), map_selection=(x,y))
+                        Game.map_info[(x,y)] = [x,y,"Forest", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium']), 'Prey Levels: ' + random.choice(['low','medium', 'high']), 'Plant Cover: ' + random.choice(['low','medium','high'])]
+                    else:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain0'], (16,16)), map_selection=(x,y))
+                        Game.map_info[(x,y)] = [x,y,"Plains", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium','high']), 'Prey Levels: ' + random.choice(['low','medium','high']), 'Plant Cover: ' + random.choice(['low','medium','high'])]
+            for y in range(44):
+                for x in range(40):
+                    height = world.check_heighttile(x,y)
+                    if height < 0:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                        Game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
+                    elif x == 0:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                        Game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
+                    elif x == 39:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                        Game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
+                    elif y == 0:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                        Game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
+                    elif y == 43:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                        Game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
+                    elif height < 0.03:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain6'], (16,16)), map_selection=(x,y))
+                        Game.map_info[(x,y)] = [x,y,"Beach", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium']), 'Prey Levels: ' + random.choice(['low','medium','high']), 'Plant Cover: ' + random.choice(['none','low','medium'])]
+                    elif height > 0.35:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain5'], (16,16)), map_selection=(x,y))
+                        Game.map_info[(x,y)] = [x,y,"Mountainous", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium']), 'Prey Levels: ' + random.choice(['none','low','medium','high']), 'Plant Cover: ' + random.choice(['none','low','medium','high'])]
+                    if (x,y) == game.switches['map_selection']:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain7'], (16,16)), camp_site=(x,y))
+            verdana_big.text('Map', (-16, 50))
+            verdana.text(str(Game.map_info[game.switches['map_selection']][0])+", "+str(Game.map_info[game.switches['map_selection']][1]), (-16, 100))
+            verdana.text(str(Game.map_info[game.switches['map_selection']][2]), (-16, 150))
+            verdana.text(str(Game.map_info[game.switches['map_selection']][3]), (-16, 200))
+            verdana.text(str(game.switches['camp_site']), (-16, 250))
+            
+            if Game.map_info[game.switches['map_selection']][3] == 'Unclaimed':
+                buttons.draw_button((-16, 300), text='Done', choosing_camp=False, biome=Game.map_info[game.switches['map_selection']][2], world_seed=worldseed, cur_screen='clan created screen')
+            else:
+                buttons.draw_button((-16, 300), text='Done', available=False)
         else:
-            buttons.draw_button((-16, 300), text='Done', available=False)
+            buttons.draw_button(('center', 350), text='Done', cur_screen='clan created screen')
+
+
+            buttons.draw_button((250, 50), text='Forest', biome='Forest', available=game.switches['biome'] != 'Forest')
+            buttons.draw_button((325, 50), text='Mountainous', biome='Mountainous', available=game.switches['biome'] != 'Mountainous')
+            buttons.draw_button((450, 50), text='Plains', biome='Plains', available=game.switches['biome'] != 'Plains')
+            buttons.draw_button((525, 50), text='Beach', biome='Beach', available=game.switches['biome'] != 'Beach')    
         
 
     def on_use(self):
@@ -1813,5 +1824,5 @@ def draw_menu_buttons():
     buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
     buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
     buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
-    buttons.draw_button((-70, 110), text='Map', cur_screen='map screen')
+    buttons.draw_button((-70, 110), text='Map', cur_screen='map screen', available=mapavailable)
     buttons.draw_button((50, 80), text='Stats', cur_screen='stats screen')
