@@ -194,5 +194,6 @@ sprites.make_group('skinextra', (1, 0), 'skinextraRED', sprites_y=2)
 sprites.make_group('skinextra', (2, 0), 'skinextraPINK', sprites_y=2)
 
 tiles.make_group('dithered', (0, 0), 'terrain')
+tiles.make_group('dithered', (1, 0), 'terraintwo')
 
 sprites.load_scars()

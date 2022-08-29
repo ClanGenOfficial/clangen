@@ -70,6 +70,8 @@ class Clan(object):
         self.instructor.dead = True
         self.instructor.update_sprite()
         self.add_cat(self.instructor)
+        self.all_clans = []
+        other_clans = []
 
         key_copy = tuple(cat_class.all_cats.keys())
         for i in key_copy:  # Going through all currently existing cats
@@ -91,11 +93,13 @@ class Clan(object):
         for cat in cat_class.all_cats:
             if cat_class.all_cats.get(cat).status == 'apprentice':
                 cat_class.all_cats.get(cat).status_change('apprentice')
+                
         cat_class.thoughts()
         cat_class.save_cats()
         self.save_clan()
+        self.load_clan()
         if mapavailable:
-            save_map(game.map_info, game.clan.name)
+            save_map(game.map_info, game.clan.name)      
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""
@@ -243,7 +247,7 @@ class Clan(object):
             game.clan.instructor.update_sprite()
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
-        if other_clans and other_clans[0]:
+        if other_clans != [""]:
             for other_clan in other_clans:
                 other_clan_info = other_clan.split(';')
                 self.all_clans.append(OtherClan(other_clan_info[0], other_clan_info[1], other_clan_info[2]))
@@ -252,6 +256,7 @@ class Clan(object):
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
+            print(self.all_clans)
         for cat in members:
             if cat in cat_class.all_cats.keys():
                 game.clan.add_cat(cat_class.all_cats[cat])
