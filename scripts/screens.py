@@ -1,3 +1,4 @@
+from .Patrol import Patrol, patrol
 from .clan import *
 from .events import *
 from .patrols import *
@@ -1134,47 +1135,38 @@ class PatrolEventScreen(Screens):
     def on_use(self):
         verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
         if game.switches['event'] == 0:
-            verdana.text(str(patrol.patrol_event[1]), ('center', 200))
-            # if patrol.patrol_event[0] == 35:
-            #     patrol_img = pygame.image.load('resources/rogue.png')
-            #     patrol_img = pygame.transform.scale(patrol_img, (340,200))
-            #     screen.blit(patrol_img, (500, 200))
-            # elif patrol.patrol_event[0] == 44:
-            #     patrol_img = pygame.image.load('resources/kittypet.png')
-            #     patrol_img = pygame.transform.scale(patrol_img, (320, 200))
-            #     screen.blit(patrol_img, (500, 200))
-            # elif patrol.patrol_event[0] == 6 or patrol.patrol_event[0] == 7:
-            #     patrol_img = pygame.image.load('resources/fox.png')
-            #     patrol_img = pygame.transform.scale(patrol_img, (320, 200))
-            #     screen.blit(patrol_img, (500, 200))
-            buttons.draw_button(('center', 300), text='Proceed', event=1)
+            patrol.add_patrol_cats()
+            patrol.add_possible_patrols()
+            game.switches['event'] = -1
+        if game.switches['event'] == -1:
+            verdana.text(patrol.patrol_event.intro_text, ('center', 200))
+            buttons.draw_button(('center', 300), text='Proceed', event=-2)
             buttons.draw_button(('center', 340), text='Do Not Proceed', event=2)
-            if patrol.patrol_event[0] in patrol.failable_patrols:
-                buttons.draw_button(('center', 380), text='Antagonize', event=3)
+        if game.switches['event'] == -2:
+            patrol.calculate_success()
+            game.switches['event'] = 1
         if game.switches['event'] > 0:
-            if game.switches['event'] < 3 or (game.switches['event'] < 4 and patrol.patrol_event[0] in patrol.failable_patrols):
-                patrol.calculate()
-
-            verdana.text(str(patrol.patrol_result_text), ('center', 200))
+            if game.switches['event'] == 1:
+                if patrol.success:
+                    verdana.text(str(patrol.patrol_event.success_text), ('center', 200))
+                else:
+                    verdana.text(str(patrol.patrol_event.fail_text), ('center', 200))
+            elif game.switches['event'] == 2:
+                verdana.text(str(patrol.patrol_event.decline_text), ('center', 200))
             buttons.draw_button(('center', 320), text='Return to Clan', cur_screen='clan screen')
 
         for u in range(6):
-            if u < patrol.patrol_size:
+            if u < len(patrol.patrol_cats):
                 patrol.patrol_cats[u].draw((screen_x / 2 - 50 * (u + 2), 550))
         verdana_small.text('season: ' + str(game.clan.current_season), ('center', 400))
         verdana_small.text('patrol leader: ' + str(patrol.patrol_leader.name), ('center', 420))
-
         verdana_small.text('patrol skills: ' + str(patrol.patrol_skills), ('center', 440))
-
         verdana_small.text('patrol traits: ' + str(patrol.patrol_traits), ('center', 460))
-
         draw_menu_buttons()
 
     def screen_switches(self):
-        patrol.new_patrol()
         game.switches['event'] = 0
         cat_profiles()
-
 
 class AllegiancesScreen(Screens):
     def on_use(self):
