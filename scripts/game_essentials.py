@@ -21,7 +21,7 @@ class Game(object):
     cur_events_list = []
     allegiance_list = []
     language = {}
-    language_list = ['english','spanish','german']
+    language_list = ['english','spanish','german', 'cat']
 
     down = pygame.image.load("sprites/down.png")
     down = pygame.transform.scale(down, (75, 75))
@@ -37,9 +37,10 @@ class Game(object):
     switches = {'cat': None, 'clan_name': '', 'leader': None, 'deputy': None, 'medicine_cat': None, 'members': [], 'event': None, 'cur_screen': 'start screen', 'naming_text': '',
                 'timeskip': False, 'mate': None, 'setting': None, 'save_settings': False, 'list_page': 1, 'last_screen': 'start screen', 'events_left': 0, 'save_clan': False,
                 'new_leader': False, 'apprentice_switch': False, 'deputy_switch': False, 'clan_list': '', 'switch_clan': False, 'read_clans': False, 'kill_cat': False,
-                'current_patrol': [], 'error_message': '', 'apprentice': None, 'change_name': '', 'name_cat': None, 'biome': None, 'language': 'english', 'search_text': ''}
+                'current_patrol': [], 'error_message': '', 'apprentice': None, 'change_name': '', 'name_cat': None, 'biome': None, 'language': 'english', 'search_text': '', 'map_selection': (0,0), 'world_seed': None, 'camp_site': (0,0), 'choosing_camp': False, 'hunting_territory': (0,0)}
     all_screens = {}
     cur_events = {}
+    map_info = {}
 
     # SETTINGS
     settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False, 'dark mode': False, 'backgrounds': True, 'autosave': False, 'disasters': False,
