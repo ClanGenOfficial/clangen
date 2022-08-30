@@ -527,8 +527,7 @@ class MakeClanScreen(Screens):
             buttons.draw_button(('center', 350), text='Done', cur_screen='clan created screen')
         else:
             buttons.draw_button(('center', 350), text='Done', available=False)
-<<<<<<< HEAD
-=======
+
     def sixth_phase(self):
         if mapavailable:
             for y in range(44):
@@ -587,9 +586,7 @@ class MakeClanScreen(Screens):
             buttons.draw_button((250, 50), text='Forest', biome='Forest', available=game.switches['biome'] != 'Forest')
             buttons.draw_button((325, 50), text='Mountainous', biome='Mountainous', available=game.switches['biome'] != 'Mountainous')
             buttons.draw_button((450, 50), text='Plains', biome='Plains', available=game.switches['biome'] != 'Plains')
-            buttons.draw_button((525, 50), text='Beach', biome='Beach', available=game.switches['biome'] != 'Beach')    
->>>>>>> parent of 6d3a514 (Merge pull request #48 from Lixxis/development)
-
+            buttons.draw_button((525, 50), text='Beach', biome='Beach', available=game.switches['biome'] != 'Beach')
     def on_use(self):
         if len(game.switches['clan_name']) == 0:
             self.first_phase()
@@ -615,11 +612,8 @@ class MakeClanScreen(Screens):
         game.switches['deputy'] = None
         game.switches['members'] = []
         create_example_cats()
-<<<<<<< HEAD
-=======
         self.worldseed = random.randrange(10000)
         self.world = World((44,44),self.worldseed)
->>>>>>> parent of 6d3a514 (Merge pull request #48 from Lixxis/development)
 
 
 class ClanCreatedScreen(Screens):
@@ -632,12 +626,9 @@ class ClanCreatedScreen(Screens):
         buttons.draw_button(('center', 250), text='Continue', cur_screen='clan screen')
 
     def screen_switches(self):
-<<<<<<< HEAD
         game.clan = Clan(game.switches['clan_name'], game.choose_cats[game.switches['leader']], game.choose_cats[game.switches['deputy']],
                          game.choose_cats[game.switches['medicine_cat']], game.switches['biome'])
-=======
         game.clan = Clan(game.switches['clan_name'], game.choose_cats[game.switches['leader']], game.choose_cats[game.switches['deputy']],game.choose_cats[game.switches['medicine_cat']], game.switches['biome'], game.switches['world_seed'], game.switches['camp_site'])
->>>>>>> parent of 6d3a514 (Merge pull request #48 from Lixxis/development)
         game.clan.create_clan()
         territory_claim = str(game.clan.name) + 'Clan Territory'
         otherclan_campsite = {}
@@ -1230,12 +1221,8 @@ class PatrolScreen(Screens):
         able_cats = []
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
-<<<<<<< HEAD
             if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status in ['leader', 'deputy', 'warrior', 'apprentice']:
-=======
-            if not the_cat.dead and the_cat.in_camp and the_cat.status in ['leader', 'deputy', 'warrior', 'apprentice']:
->>>>>>> parent of 6d3a514 (Merge pull request #48 from Lixxis/development)
-                able_cats.append(the_cat)
+                    able_cats.append(the_cat)
         if not game.patrol_cats:
             i_max = min(len(able_cats), 12)
             for i in range(i_max):
