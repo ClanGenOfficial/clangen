@@ -1,4 +1,4 @@
-from .patrol import Patrol, patrol
+from .patrol import patrol
 from .clan import *
 from .events import *
 from .patrol import *
