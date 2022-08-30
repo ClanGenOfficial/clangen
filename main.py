@@ -20,7 +20,8 @@ with open('saves/clanlist.txt', 'r') as read_file:
 if if_clans > 0:
     game.switches['clan_list'] = clan_list.split('\n')
     try:
-        cat_class.load_cats()
+        clan_class = Clan()
+        clan_class.load_clan()
     except Exception:
         if not game.switches['error_message']:
             game.switches['error_message'] = 'There was an error loading the cats file!'
@@ -45,7 +46,9 @@ buttons.change_button_brightness()
 sprites.load_scars()
 
 # give thoughts/actions to already existing cats
-cat_class.thoughts()
+if game.clan is not None:
+    for cat in game.clan.clan_cats:
+        cat.thoughts()
 
 while True:
     if game.settings['dark mode']:
