@@ -465,12 +465,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.trust)
                         rel.trust += impact
-                        print("AFTER", rel.trust)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 7:
@@ -493,12 +491,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.admiration)
                         rel.admiration += impact
-                        print("AFTER", rel.admiration)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 8 or self.patrol_event[0] == 46 or self.patrol_event[0] == 47 or self.patrol_event[0] == 49 or self.patrol_event[0] == 51:
@@ -509,7 +505,7 @@ class Patrol(object):
                 # stuff that happens after the results
                 # cat straight up dies
                 if not self.success:
-                    events_class.dies(self.patrol_random_cat)
+                    self.patrol_random_cat.dies()
                     impact = -5
 
                 if self.success:
@@ -517,12 +513,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.admiration)
                         rel.admiration += impact
-                        print("AFTER", rel.admiration)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 9:
@@ -550,12 +544,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.trust)
                         rel.trust += impact
-                        print("AFTER", rel.trust)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 10:
@@ -578,12 +570,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.like)
                         rel.like += impact
-                        print("AFTER", rel.like)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 11:
@@ -606,7 +596,7 @@ class Patrol(object):
                         self.patrol_result_text = self.other_clan.name + 'Clan declares war on ' + game.clan.name + 'Clan.'
 
                 if int(self.other_clan.relations) < 7 and not self.success:
-                    events_class.dies(self.patrol_random_cat)
+                    self.patrol_random_cat.dies()
 
 
                 if not self.success:
@@ -615,12 +605,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.trust)
                         rel.trust += impact
-                        print("AFTER", rel.trust)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 12:
@@ -647,12 +635,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.admiration)
                         rel.admiration += impact
-                        print("AFTER", rel.admiration)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 14:
@@ -680,12 +666,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.trust)
                         rel.trust += impact
-                        print("AFTER", rel.trust)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 16:
@@ -707,12 +691,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.comfortable)
                         rel.comfortable += impact
-                        print("AFTER", rel.comfortable)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 17:
@@ -732,12 +714,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.trust)
                         rel.trust += impact
-                        print("AFTER", rel.trust)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 19:
@@ -759,12 +739,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.admiration)
                         rel.admiration += impact
-                        print("AFTER", rel.admiration)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 20:
@@ -784,12 +762,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.comfortable)
                         rel.comfortable += impact
-                        print("AFTER", rel.comfortable)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 21:
@@ -817,12 +793,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.like)
                         rel.like += impact
-                        print("AFTER", rel.like)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 22 or self.patrol_event[0] == 23:
@@ -852,12 +826,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.comfortable)
                         rel.comfortable += impact
-                        print("AFTER", rel.comfortable)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 27:
@@ -885,12 +857,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.admiration)
                         rel.admiration += impact
-                        print("AFTER", rel.admiration)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 28:
@@ -920,12 +890,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.comfortable)
                         rel.comfortable += impact
-                        print("AFTER", rel.comfortable)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 29:
@@ -955,12 +923,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.trust)
                         rel.trust += impact
-                        print("AFTER", rel.trust)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 30:
@@ -988,12 +954,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.comfortable)
                         rel.comfortable += impact
-                        print("AFTER", rel.comfortable)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 31:
@@ -1013,12 +977,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.comfortable)
                         rel.comfortable += impact
-                        print("AFTER", rel.comfortable)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 32:
@@ -1046,12 +1008,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.comfortable)
                         rel.comfortable += impact
-                        print("AFTER", rel.comfortable)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 34:
@@ -1079,12 +1039,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.trust)
                         rel.trust += impact
-                        print("AFTER", rel.trust)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 35 or self.patrol_event[0] == 36 or self.patrol_event[0] == 58 or self.patrol_event[0] == 62:
@@ -1107,13 +1065,11 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.trust)
                         rel.admiration += impact
                         rel.trust += impact
-                        print("AFTER", rel.trust)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 37 or self.patrol_event[0] == 59 or self.patrol_event[0] == 63:
@@ -1147,12 +1103,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.like)
                         rel.like += impact
-                        print("AFTER", rel.like)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 38 or self.patrol_event[0] == 57 or self.patrol_event[0] == 50:
@@ -1164,7 +1118,7 @@ class Patrol(object):
                 # stuff that happens after the results
                 # cat straight up dies
                 if not self.success:
-                    events_class.dies(self.patrol_random_cat)
+                    self.patrol_random_cat.dies()
                     impact = -5
 
                 if self.success:
@@ -1172,12 +1126,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.trust)
                         rel.trust += impact
-                        print("AFTER", rel.trust)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 39:
@@ -1205,12 +1157,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.admiration)
                         rel.admiration += impact
-                        print("AFTER", rel.admiration)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 43:
@@ -1241,12 +1191,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.trust)
                         rel.trust += impact
-                        print("AFTER", rel.trust)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 44:
@@ -1282,12 +1230,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.like)
                         rel.like += impact
-                        print("AFTER", rel.like)
+                        rel.cut_boundries()
                 return
 
         if self.patrol_event[0] == 45:
@@ -1330,12 +1276,10 @@ class Patrol(object):
                 # impact relationships
                 cat_ids = [cat.ID for cat in self.patrol_cats]
                 for cat in self.patrol_cats:
-                    print("HERE")
                     relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
                     for rel in relationships:
-                        print("BEFORE", rel.like)
                         rel.like += impact
-                        print("AFTER", rel.like)
+                        rel.cut_boundries()
                 return
 
 

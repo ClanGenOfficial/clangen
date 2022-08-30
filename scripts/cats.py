@@ -1075,7 +1075,11 @@ class Cat(object):
 
         # choose cat and start
         random_cat = choice(cats_to_choose)
-        relevant_relationship = list(filter(lambda relation: str(relation.cat_to.ID) == str(random_cat.ID), self.relationships))[0]
+        relevant_relationship_list = list(filter(lambda relation: str(relation.cat_to.ID) == str(random_cat.ID), self.relationships))
+        while len(relevant_relationship_list) < 1:
+            random_cat = choice(cats_to_choose)
+            relevant_relationship_list = list(filter(lambda relation: str(relation.cat_to.ID) == str(random_cat.ID), self.relationships))
+        relevant_relationship = relevant_relationship_list[0]
         relevant_relationship.start_action()
 
     def update_mentor(self, new_mentor=None):

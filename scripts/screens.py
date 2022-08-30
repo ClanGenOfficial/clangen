@@ -330,8 +330,7 @@ class StarClanScreen(Screens):
                     search_cats.append(cat)
         else:
             search_cats = dead_cats.copy()
-        all_pages = int(ceil(len(search_cats) / 24.0)
-                        ) if len(search_cats) > 24 else 1
+        all_pages = int(ceil(len(search_cats) / 24.0)) if len(search_cats) > 24 else 1
         pos_x = 0
         pos_y = 0
         cats_on_page = 0
@@ -341,6 +340,7 @@ class StarClanScreen(Screens):
 
             the_cat = dead_cats[x + (game.switches['list_page'] - 1) * 24]
             if the_cat.dead:
+                the_cat.update_sprite()
                 buttons.draw_button((130 + pos_x, 180 + pos_y), image=the_cat.sprite,
                                     cat=the_cat.ID, cur_screen='profile screen')
 
@@ -438,16 +438,15 @@ class MakeClanScreen(Screens):
         # cat buttons / small sprites
         for number in range(6):
             if game.switches['leader'] == number:
-                game.choose_cats[number].draw((screen_x / 2 - 25, 550))
+                game.choose_cats[number].draw((650, 200))
             else:
                 buttons.draw_button(
                     (50, 150 + 50 * number), image=game.choose_cats[number].sprite, cat=number)
         for number in range(6, 12):
             if game.switches['leader'] == number:
-                game.choose_cats[number].draw((screen_x / 2 - 25, 550))
+                game.choose_cats[number].draw((650, 200))
             else:
-                buttons.draw_button((100, 150 + 50 * (number - 6)),
-                                    image=game.choose_cats[number].sprite, cat=number)
+                buttons.draw_button((100, 150 + 50 * (number - 6)), image=game.choose_cats[number].sprite, cat=number)
 
         # cat profiles
         if game.switches['cat'] is not None and 12 > game.switches['cat'] >= 0 and game.switches['cat'] != game.switches['leader']:
@@ -477,20 +476,17 @@ class MakeClanScreen(Screens):
         # cat buttons / small sprites
         for number in range(6):
             if game.switches['leader'] == number:
-                game.choose_cats[number].draw((screen_x / 2 - 25, 550))
+                game.choose_cats[number].draw((650, 200))
             elif game.switches['deputy'] == number:
-                game.choose_cats[number].draw(
-                    (screen_x / 2 - 50 * (number + 2), 550))
+                game.choose_cats[number].draw((650, 250))
             else:
-                buttons.draw_button(
-                    (50, 150 + 50 * number), image=game.choose_cats[number].sprite, cat=number)
+                buttons.draw_button((50, 150 + 50 * number), image=game.choose_cats[number].sprite, cat=number)
 
         for number in range(6, 12):
             if game.switches['leader'] == number:
-                game.choose_cats[number].draw((screen_x / 2 - 25, 550))
+                game.choose_cats[number].draw((650, 200))
             elif game.switches['deputy'] == number:
-                game.choose_cats[number].draw(
-                    (screen_x / 2 + 50 * (number - 5), 550))
+                game.choose_cats[number].draw((650, 200))
             else:
                 buttons.draw_button((100, 150 + 50 * (number - 6)),
                                     image=game.choose_cats[number].sprite, cat=number)
@@ -521,31 +517,59 @@ class MakeClanScreen(Screens):
         screen.blit(clan_img, (0, 400))
 
         # cat buttons / small sprites
-        for number in range(6):
-            if game.switches['leader'] == number:
-                game.choose_cats[number].draw((screen_x / 2 - 25, 550))
-            elif game.switches['deputy'] == number or game.switches['medicine_cat'] == number:
-                game.choose_cats[number].draw(
-                    (screen_x / 2 - 50 * (number + 2), 550))
-            elif number in game.switches['members']:
-                game.choose_cats[number].draw(
-                    (screen_x / 2 - 50 * (number + 2), 550))
-            else:
-                buttons.draw_button(
-                    (50, 150 + 50 * number), image=game.choose_cats[number].sprite, cat=number)
+        for u in range(6):
+            if game.switches['leader'] == u:
+                game.choose_cats[u].draw((650, 200))
+            elif game.switches['deputy'] == u:
+                game.choose_cats[u].draw((650, 250))
+            elif game.switches['medicine_cat'] == u:
+                game.choose_cats[u].draw((650, 300))
+            elif u not in game.switches['members']:
+                buttons.draw_button((50, 150 + 50 * u), image=game.choose_cats[u].sprite, cat=u)
+            try:
+                if u == game.switches['members'][0]:
+                    game.choose_cats[u].draw((700, 100))
+                elif u == game.switches['members'][1]:
+                    game.choose_cats[u].draw((700, 150))
+                elif u == game.switches['members'][2]:
+                    game.choose_cats[u].draw((700, 200))
+                elif u == game.switches['members'][3]:
+                    game.choose_cats[u].draw((700, 250))
+                elif u == game.switches['members'][4]:
+                    game.choose_cats[u].draw((700, 300))
+                elif u == game.switches['members'][5]:
+                    game.choose_cats[u].draw((700, 350))
+                elif u == game.switches['members'][6]:
+                    game.choose_cats[u].draw((700, 400))
+            except IndexError:
+                pass
 
-        for number in range(6, 12):
-            if game.switches['leader'] == number:
-                game.choose_cats[number].draw((screen_x / 2 - 25, 550))
-            elif game.switches['deputy'] == number or game.switches['medicine_cat'] == number:
-                game.choose_cats[number].draw(
-                    (screen_x / 2 + 50 * (number - 5), 550))
-            elif number in game.switches['members']:
-                game.choose_cats[number].draw(
-                    (screen_x / 2 + 50 * (number - 5), 550))
-            else:
-                buttons.draw_button((100, 150 + 50 * (number - 6)),
-                                    image=game.choose_cats[number].sprite, cat=number)
+        for u in range(6, 12):
+            if game.switches['leader'] == u:
+                game.choose_cats[u].draw((650, 200))
+            elif game.switches['deputy'] == u:
+                game.choose_cats[u].draw((650, 250))
+            elif game.switches['medicine_cat'] == u:
+                game.choose_cats[u].draw((650, 300))
+            elif u not in game.switches['members']:
+                buttons.draw_button((100, 150 + 50 * (u - 6)), image=game.choose_cats[u].sprite, cat=u)
+            try:
+                if u == game.switches['members'][0]:
+                    game.choose_cats[u].draw((700, 100))
+                elif u == game.switches['members'][1]:
+                    game.choose_cats[u].draw((700, 150))
+                elif u == game.switches['members'][2]:
+                    game.choose_cats[u].draw((700, 200))
+                elif u == game.switches['members'][3]:
+                    game.choose_cats[u].draw((700, 250))
+                elif u == game.switches['members'][4]:
+                    game.choose_cats[u].draw((700, 300))
+                elif u == game.switches['members'][5]:
+                    game.choose_cats[u].draw((700, 350))
+                elif u == game.switches['members'][6]:
+                    game.choose_cats[u].draw((700, 400))
+            except IndexError:
+                pass
 
         # cat profiles
         if 12 > game.switches['cat'] >= 0 and game.switches['cat'] not in [game.switches['leader'], game.switches['deputy'], game.switches['medicine_cat']] and game.switches[
@@ -568,6 +592,7 @@ class MakeClanScreen(Screens):
             buttons.draw_button(('center', 350), text='Done', choosing_camp=True)
         else:
             buttons.draw_button(('center', 350), text='Done', available=False)
+
     def sixth_phase(self):
         if mapavailable:
             for y in range(44):
@@ -853,13 +878,13 @@ class ProfileScreen(Screens):
         elif the_cat.parent2 is None and the_cat.parent1 in game.clan.clan_cats:
             par1 = str(the_cat.parent1.name)
             verdana_small.text('parents: ' + par1 +
-                               ', unknown', (250, 330 + count * 15))
+                               ', unknown', (300, 230 + count * 15))
             count += 1
         elif the_cat.parent2 is None:
             par2 = "unknown"
             par1 = "Error: Cat#" + the_cat.parent1.ID + " not found"
             verdana_small.text('parents: ' + par1 +
-                               ', unknown', (250, 330 + count * 15))
+                               ', unknown', (300, 230 + count * 15))
             count += 1
         else:
             if the_cat.parent1 in game.clan.clan_cats and the_cat.parent2 in game.clan.clan_cats:
@@ -1003,7 +1028,14 @@ class ViewChildrenScreen(Screens):
         pos_y = 60
         kittens = False
         for cat in game.clan.clan_cats:
-            if the_cat.ID in [cat.parent1, cat.parent2]:
+            parent_ids = []
+
+            if cat.parent1 != None:
+                parent_ids.append(cat.parent1.ID)
+            if cat.parent2 != None:
+                parent_ids.append(cat.parent2.ID)
+
+            if the_cat.ID in parent_ids:
                 buttons.draw_button(
                     (40 + pos_x, 370 + pos_y), image=cat.sprite, cat=cat.ID, cur_screen='profile screen')
 
@@ -1767,8 +1799,8 @@ class RelationshipScreen(Screens):
             if (x + (game.switches['list_page'] - 1) * 10) > len(relationships):
                 game.switches['list_page'] = 1
 
-            the_relationship = relationships[x +
-                                             (game.switches['list_page'] - 1) * 10]
+            the_relationship = relationships[x + (game.switches['list_page'] - 1) * 10]
+            the_relationship.cat_to.update_sprite()
             buttons.draw_button((100 + pos_x, 180 + pos_y), image=the_relationship.cat_to.sprite, cat=the_relationship.cat_to.ID, cur_screen='profile screen')
             # name length
             longest_string_len = verdana.text(str('romantic love: ' + str(the_relationship.romantic_love)))
@@ -1990,6 +2022,7 @@ class StatsScreen(Screens):
                     elder_num += 1
             else:
                 starclan_num += 1
+        starclan_num = len(game.clan.starclan_cats)
 
         verdana.text('Number of Living Cats: ' + str(living_num), (100, 150))
         verdana.text('Number of Warriors: ' + str(warriors_num), (100, 200))
