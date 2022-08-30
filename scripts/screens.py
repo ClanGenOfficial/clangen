@@ -1,7 +1,7 @@
-from .Patrol import Patrol, patrol
+from .patrol import Patrol, patrol
 from .clan import *
 from .events import *
-from .patrols import *
+from .patrol import *
 
 
 # SCREENS PARENT CLASS
@@ -1058,7 +1058,6 @@ class PatrolScreen(Screens):
     def on_use(self):
         verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
         verdana.text('These cats are currently in the camp, ready for a patrol.', ('center', 115))
-
         verdana.text('Choose up to six to take on patrol.', ('center', 135))
         verdana.text('Smaller patrols help cats gain more experience, but larger patrols are safer.', ('center', 155))
 
@@ -1066,7 +1065,7 @@ class PatrolScreen(Screens):
         able_cats = []
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
-            if not the_cat.dead and the_cat.in_camp and the_cat.status in ['leader', 'deputy', 'warrior', 'apprentice']:
+            if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status in ['leader', 'deputy', 'warrior', 'apprentice']:
                 able_cats.append(the_cat)
         if not game.patrol_cats:
             i_max = min(len(able_cats), 12)
@@ -1139,7 +1138,10 @@ class PatrolEventScreen(Screens):
             patrol.add_possible_patrols()
             game.switches['event'] = -1
         if game.switches['event'] == -1:
-            verdana.text(patrol.patrol_event.intro_text, ('center', 200))
+            intro_text = patrol.patrol_event.intro_text
+            intro_text = intro_text.replace('r_c', str(patrol.patrol_random_cat.name))
+            intro_text = intro_text.replace('p_l', str(patrol.patrol_leader.name))
+            verdana.text(intro_text, ('center', 200))
             buttons.draw_button(('center', 300), text='Proceed', event=-2)
             buttons.draw_button(('center', 340), text='Do Not Proceed', event=2)
         if game.switches['event'] == -2:
@@ -1148,11 +1150,20 @@ class PatrolEventScreen(Screens):
         if game.switches['event'] > 0:
             if game.switches['event'] == 1:
                 if patrol.success:
-                    verdana.text(str(patrol.patrol_event.success_text), ('center', 200))
+                    success_text = patrol.patrol_event.success_text
+                    success_text = success_text.replace('r_c', str(patrol.patrol_random_cat.name))
+                    success_text = success_text.replace('p_l', str(patrol.patrol_leader.name))
+                    verdana.text(success_text, ('center', 200))
                 else:
-                    verdana.text(str(patrol.patrol_event.fail_text), ('center', 200))
+                    fail_text = patrol.patrol_event.fail_text
+                    fail_text = fail_text.replace('r_c', str(patrol.patrol_random_cat.name))
+                    fail_text = fail_text.replace('p_l', str(patrol.patrol_leader.name))
+                    verdana.text(fail_text, ('center', 200))
             elif game.switches['event'] == 2:
-                verdana.text(str(patrol.patrol_event.decline_text), ('center', 200))
+                decline_text = patrol.patrol_event.decline_text
+                decline_text = decline_text.replace('r_c', str(patrol.patrol_random_cat.name))
+                decline_text = decline_text.replace('p_l', str(patrol.patrol_leader.name))
+                verdana.text(decline_text, ('center', 200))
             buttons.draw_button(('center', 320), text='Return to Clan', cur_screen='clan screen')
 
         for u in range(6):
