@@ -652,7 +652,7 @@ class MakeClanScreen(Screens):
         game.switches['choosing_camp'] = False
         create_example_cats()
         self.worldseed = random.randrange(10000)
-        self.world = World((44,44),self.worldseed)
+        self.world = World((44,44), self.worldseed)
 
 
 class ClanCreatedScreen(Screens):
@@ -693,8 +693,7 @@ class EventsScreen(Screens):
         events_class.one_moon()
 
         # show the Relationshipevents
-        buttons.draw_button((-200, 220), text='RELEATIONSHIP EVENTS',
-                            cur_screen='relationship event screen')
+        buttons.draw_button((-200, 220), text='RELEATIONSHIP EVENTS', cur_screen='relationship event screen')
 
         a = 0
         if game.cur_events_list is not None and game.cur_events_list != []:
@@ -894,10 +893,10 @@ class ProfileScreen(Screens):
             if the_cat.mate in game.clan.clan_cats:
                 if the_cat.mate.dead:
                     verdana_small.text(
-                        'former mate: ' + str(the_cat.mate.name), (250, 330 + count * 15))
+                        'former mate: ' + str(the_cat.mate.name), (300, 230 + count * 15))
                 else:
                     verdana_small.text(
-                        'mate: ' + str(the_cat.mate.name), (250, 330 + count * 15))
+                        'mate: ' + str(the_cat.mate.name), (300, 230 + count * 15))
                 count += 1
             else:
                 verdana_small.text(
@@ -1883,6 +1882,9 @@ class OptionsScreen(Screens):
             button_count += 1
 
         buttons.draw_button((x_value, y_value + button_count * y_change), text='Family Tree')
+        button_count += 1
+
+        buttons.draw_button((x_value, y_value + button_count * y_change), text='See Relaionships', cur_screen='relationship screen')
         button_count += 1
 
         if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not the_cat.dead:

@@ -166,19 +166,6 @@ class Clan(object):
                 "temperament": otherclan.temperament
             })
 
-        data = data + self.instructor.ID + '\n'
-
-        for a in range(len(self.clan_cats)):
-            if a == len(self.clan_cats) - 1:
-                data = data + self.clan_cats[a]
-            elif self.clan_cats[a] in cat_class.all_cats.keys():
-                data = data + self.clan_cats[a] + ','
-        data = data + '\n'
-        for a, other_clan in enumerate(self.all_clans):
-            if a:
-                data = f"{data},"
-            data = data + str(other_clan.name) + ";" + str(other_clan.relations) + ";" + str(other_clan.temperament)
-
         data = {
             "name": self.name,
             "age": self.age,
