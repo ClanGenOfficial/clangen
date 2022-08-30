@@ -123,10 +123,10 @@ class Button(object):
                         game.switches[key].append(value)
             elif key == 'mate':
                 if value is not None:
-                    cat_value.mate = value
-                    value.mate = cat_value
+                    cat_value.mate = value.ID
+                    value.mate = cat_value.ID
                 else:
-                    cat_value.mate.mate = None
+                    cat_class.all_cats[cat_value.mate].mate = None
                     cat_value.mate = None
                 game.switches['mate'] = None
         if arrow is not None and game.switches['cur_screen'] == 'events screen':
@@ -160,16 +160,16 @@ class Button(object):
             apprentice.mentor = cat_value
             cat_value.apprentice.append(apprentice)
         game.current_screen = 'clan screen'
-        game.clan.save_clan()
+        cat_class.save_cats()
 
     def change_name(self, name, cat_value):
-        relevant_cat = list(filter(lambda iter_cat: iter_cat.ID == cat_value, game.clan.clan_cats))[0]
+        cat_value = cat_class.all_cats.get(cat_value)
         if game.switches['naming_text'] != '':
             name = game.switches['naming_text'].split(' ')
-            relevant_cat.name.prefix = name[0]
+            cat_value.name.prefix = name[0]
             if len(name) > 1:
                 cat_value.name.suffix = name[1]
-            game.clan.save_cats()
+            cat_class.save_cats()
             game.switches['naming_text'] = ''
 
 

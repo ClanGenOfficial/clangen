@@ -527,6 +527,68 @@ class MakeClanScreen(Screens):
             buttons.draw_button(('center', 350), text='Done', cur_screen='clan created screen')
         else:
             buttons.draw_button(('center', 350), text='Done', available=False)
+<<<<<<< HEAD
+=======
+    def sixth_phase(self):
+        if mapavailable:
+            for y in range(44):
+                for x in range(40):
+                    noisevalue = self.world.check_noisetile(x,y)
+                    if noisevalue > 0.1:
+                        #buttons.draw_maptile_button((x*TILESIZE,y*TILESIZE),image=(pygame.transform.scale(terrain.images[1],(TILESIZE,TILESIZE))))
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain1'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Desert", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','low','medium','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium','high']), 'Prey Levels: ' + random.choice(['none','low','medium']), 'Plant Cover: ' + random.choice(['none','low','medium'])]
+                    elif noisevalue < -0.015:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain3'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Forest", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','low','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium']), 'Prey Levels: ' + random.choice(['low','medium', 'high']), 'Plant Cover: ' + random.choice(['low','medium','high'])]
+                    else:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain0'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Plains", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','medium','medium','high','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium','high']), 'Prey Levels: ' + random.choice(['low','medium','high']), 'Plant Cover: ' + random.choice(['low','medium','high'])]
+            for y in range(44):
+                for x in range(40):
+                    height = self.world.check_heighttile(x,y)
+                    if height < 0:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
+                    elif x == 0:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
+                    elif x == 39:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
+                    elif y == 0:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
+                    elif y == 43:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
+                    elif height < 0.03:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain6'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Beach", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','medium','medium','high','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium']), 'Prey Levels: ' + random.choice(['low','medium','high']), 'Plant Cover: ' + random.choice(['none','low','medium'])]
+                    elif height > 0.35:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain5'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Mountainous", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','none','low','low','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','none','low','low','medium','medium','high']), 'Prey Levels: ' + random.choice(['none','low','medium','high']), 'Plant Cover: ' + random.choice(['none','low','medium','high'])]
+                    if (x,y) == game.switches['map_selection']:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terraintwo0'], (16,16)), camp_site=(x,y))
+            verdana_big.text('Map', (-16, 50))
+            verdana.text(str(game.map_info[game.switches['map_selection']][0])+", "+str(game.map_info[game.switches['map_selection']][1]), (-16, 100))
+            verdana.text(str(game.map_info[game.switches['map_selection']][2]), (-16, 150))
+            verdana.text(str(game.map_info[game.switches['map_selection']][3]), (-16, 200))
+            verdana.text(str(game.switches['camp_site']), (-16, 250))
+            
+            if game.map_info[game.switches['map_selection']][3] == 'Unclaimed':
+                buttons.draw_button((-16, 300), text='Done', choosing_camp=False, biome=game.map_info[game.switches['map_selection']][2], world_seed=self.worldseed, cur_screen='clan created screen')
+            else:
+                buttons.draw_button((-16, 300), text='Done', available=False)
+        else:
+            buttons.draw_button(('center', 350), text='Done', cur_screen='clan created screen')
+
+
+            buttons.draw_button((250, 50), text='Forest', biome='Forest', available=game.switches['biome'] != 'Forest')
+            buttons.draw_button((325, 50), text='Mountainous', biome='Mountainous', available=game.switches['biome'] != 'Mountainous')
+            buttons.draw_button((450, 50), text='Plains', biome='Plains', available=game.switches['biome'] != 'Plains')
+            buttons.draw_button((525, 50), text='Beach', biome='Beach', available=game.switches['biome'] != 'Beach')    
+>>>>>>> parent of 6d3a514 (Merge pull request #48 from Lixxis/development)
 
     def on_use(self):
         if len(game.switches['clan_name']) == 0:
@@ -553,6 +615,11 @@ class MakeClanScreen(Screens):
         game.switches['deputy'] = None
         game.switches['members'] = []
         create_example_cats()
+<<<<<<< HEAD
+=======
+        self.worldseed = random.randrange(10000)
+        self.world = World((44,44),self.worldseed)
+>>>>>>> parent of 6d3a514 (Merge pull request #48 from Lixxis/development)
 
 
 class ClanCreatedScreen(Screens):
@@ -565,11 +632,109 @@ class ClanCreatedScreen(Screens):
         buttons.draw_button(('center', 250), text='Continue', cur_screen='clan screen')
 
     def screen_switches(self):
+<<<<<<< HEAD
         game.clan = Clan(game.switches['clan_name'], game.choose_cats[game.switches['leader']], game.choose_cats[game.switches['deputy']],
                          game.choose_cats[game.switches['medicine_cat']], game.switches['biome'])
+=======
+        game.clan = Clan(game.switches['clan_name'], game.choose_cats[game.switches['leader']], game.choose_cats[game.switches['deputy']],game.choose_cats[game.switches['medicine_cat']], game.switches['biome'], game.switches['world_seed'], game.switches['camp_site'])
+>>>>>>> parent of 6d3a514 (Merge pull request #48 from Lixxis/development)
         game.clan.create_clan()
+        territory_claim = str(game.clan.name) + 'Clan Territory'
+        otherclan_campsite = {}
+        for clan in game.clan.all_clans:
+            x = random.randrange(40)
+            y = random.randrange(44)
+            clan_camp = self.choose_other_clan_territory(x,y)
+            territory_biome = str(game.map_info[clan_camp][2])
+            territory_twolegs = str(game.map_info[clan_camp][4])
+            territory_thunderpath = str(game.map_info[clan_camp][5])
+            territory_prey = str(game.map_info[clan_camp][6])
+            territory_plants = str(game.map_info[clan_camp][7])
+            game.map_info[clan_camp] = [clan_camp[0],clan_camp[1],territory_biome, str(clan) + " Camp",territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+            otherclan_campsite[str(clan)] = clan_camp
+        for y in range(44):
+            for x in range(40):
+                if (x,y) == (game.switches['camp_site'][0] - 1, game.switches['camp_site'][1]):
+                    territory_biome = str(game.map_info[(x,y)][2])
+                    territory_twolegs = str(game.map_info[(x,y)][4])
+                    territory_thunderpath = str(game.map_info[(x,y)][5])
+                    territory_prey = str(game.map_info[(x,y)][6])
+                    territory_plants = str(game.map_info[(x,y)][7])
+                    if str(game.map_info[(x,y)][3]) != 'Unclaimable':
+                        game.map_info[(x,y)] = [x,y,territory_biome, territory_claim,territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                elif (x,y) == (game.switches['camp_site'][0], game.switches['camp_site'][1] - 1):
+                    territory_biome = str(game.map_info[(x,y)][2])
+                    territory_twolegs = str(game.map_info[(x,y)][4])
+                    territory_thunderpath = str(game.map_info[(x,y)][5])
+                    territory_prey = str(game.map_info[(x,y)][6])
+                    territory_plants = str(game.map_info[(x,y)][7])
+                    if str(game.map_info[(x,y)][3]) != 'Unclaimable':
+                        game.map_info[(x,y)] = [x,y,territory_biome, territory_claim,territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                elif (x,y) == (game.switches['camp_site'][0] + 1, game.switches['camp_site'][1]):
+                    territory_biome = str(game.map_info[(x,y)][2])
+                    territory_twolegs = str(game.map_info[(x,y)][4])
+                    territory_thunderpath = str(game.map_info[(x,y)][5])
+                    territory_prey = str(game.map_info[(x,y)][6])
+                    territory_plants = str(game.map_info[(x,y)][7])
+                    if str(game.map_info[(x,y)][3]) != 'Unclaimable':
+                        game.map_info[(x,y)] = [x,y,territory_biome, territory_claim,territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                elif (x,y) == (game.switches['camp_site'][0], game.switches['camp_site'][1] + 1):
+                    territory_biome = str(game.map_info[(x,y)][2])
+                    territory_twolegs = str(game.map_info[(x,y)][4])
+                    territory_thunderpath = str(game.map_info[(x,y)][5])
+                    territory_prey = str(game.map_info[(x,y)][6])
+                    territory_plants = str(game.map_info[(x,y)][7])
+                    if str(game.map_info[(x,y)][3]) != 'Unclaimable':
+                        game.map_info[(x,y)] = [x,y,territory_biome, territory_claim,territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                for clan in game.clan.all_clans:
+                    if (x,y) == (otherclan_campsite[str(clan)][0] - 1, otherclan_campsite[str(clan)][1]):
+                        territory_biome = str(game.map_info[(x,y)][2])
+                        territory_twolegs = str(game.map_info[(x,y)][4])
+                        territory_thunderpath = str(game.map_info[(x,y)][5])
+                        territory_prey = str(game.map_info[(x,y)][6])
+                        territory_plants = str(game.map_info[(x,y)][7])
+                        if str(game.map_info[(x,y)][3]) != 'Unclaimable':
+                            game.map_info[(x,y)] = [x,y,territory_biome, str(clan) + ' Territory',territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                    elif (x,y) == (otherclan_campsite[str(clan)][0], otherclan_campsite[str(clan)][1] - 1):
+                        territory_biome = str(game.map_info[(x,y)][2])
+                        territory_twolegs = str(game.map_info[(x,y)][4])
+                        territory_thunderpath = str(game.map_info[(x,y)][5])
+                        territory_prey = str(game.map_info[(x,y)][6])
+                        territory_plants = str(game.map_info[(x,y)][7])
+                        if str(game.map_info[(x,y)][3]) != 'Unclaimable':
+                            game.map_info[(x,y)] = [x,y,territory_biome, str(clan) + ' Territory',territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                    elif (x,y) == (otherclan_campsite[str(clan)][0] + 1, otherclan_campsite[str(clan)][1]):
+                        territory_biome = str(game.map_info[(x,y)][2])
+                        territory_twolegs = str(game.map_info[(x,y)][4])
+                        territory_thunderpath = str(game.map_info[(x,y)][5])
+                        territory_prey = str(game.map_info[(x,y)][6])
+                        territory_plants = str(game.map_info[(x,y)][7])
+                        if str(game.map_info[(x,y)][3]) != 'Unclaimable':
+                            game.map_info[(x,y)] = [x,y,territory_biome, str(clan) + ' Territory',territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                    elif (x,y) == (otherclan_campsite[str(clan)][0], otherclan_campsite[str(clan)][1] + 1):
+                        territory_biome = str(game.map_info[(x,y)][2])
+                        territory_twolegs = str(game.map_info[(x,y)][4])
+                        territory_thunderpath = str(game.map_info[(x,y)][5])
+                        territory_prey = str(game.map_info[(x,y)][6])
+                        territory_plants = str(game.map_info[(x,y)][7])
+                        if str(game.map_info[(x,y)][3]) != 'Unclaimable':
+                            game.map_info[(x,y)] = [x,y,territory_biome, str(clan) + ' Territory',territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+        save_map(game.map_info, game.switches['clan_name'])
 
-
+    def choose_other_clan_territory(self,x,y):
+        self.x = x
+        self.y = y
+        if game.map_info[(self.x,self.y)][3] != "Unclaimed":
+            self.x = random.randrange(40)
+            self.y = random.randrange(44)
+            if game.map_info[(self.x,self.y)][3] == "Unclaimed":
+                return self.x,self.y
+            else:
+                self.x = random.randrange(40)
+                self.y = random.randrange(44)
+                return self.x,self.y
+        else:
+            return self.x,self.y
 class EventsScreen(Screens):
     def on_use(self):
         verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
@@ -1065,7 +1230,11 @@ class PatrolScreen(Screens):
         able_cats = []
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
+<<<<<<< HEAD
             if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status in ['leader', 'deputy', 'warrior', 'apprentice']:
+=======
+            if not the_cat.dead and the_cat.in_camp and the_cat.status in ['leader', 'deputy', 'warrior', 'apprentice']:
+>>>>>>> parent of 6d3a514 (Merge pull request #48 from Lixxis/development)
                 able_cats.append(the_cat)
         if not game.patrol_cats:
             i_max = min(len(able_cats), 12)

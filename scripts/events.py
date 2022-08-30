@@ -21,7 +21,10 @@ class Events(object):
             game.switches['save_clan'] = False
             self.living_cats = 0
             self.check_clan_relations()
+<<<<<<< HEAD
             game.patrolled.clear()
+=======
+>>>>>>> parent of 6d3a514 (Merge pull request #48 from Lixxis/development)
             for cat in cat_class.all_cats.copy().values():
                 if not cat.dead:
                     self._extracted_from_one_moon_7(cat)
