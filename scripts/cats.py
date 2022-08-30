@@ -21,6 +21,7 @@ class Cat(object):
               'great speaker', 'excellent speaker', 'strong connection to starclan', 'good teacher', 'great teacher', 'fantastic teacher']
     med_skills = ['good healer', 'great healer', 'fantastic healer', 'omen sight', 'dream walker', 'strong connection to starclan', 'lore keeper', 'good teacher', 'great teacher',
                   'fantastic teacher', 'keen eye', 'smart', 'very smart', 'extremely smart', 'good mediator', 'great mediator', 'excellent mediator', 'clairvoyant', 'prophet']
+    all_cats = {}
 
     def __init__(self, prefix=None, gender=None, status="kitten", parent1=None, parent2=None, pelt=None, eye_colour=None, suffix=None, ID=None, moons=None, example=False):
         self.gender = gender
@@ -1317,3 +1318,5 @@ def create_example_cats():
         else:
             game.choose_cats[a] = Cat(status=choice(['kitten', 'apprentice', 'warrior', 'warrior', 'elder']))
         game.choose_cats[a].update_sprite()
+
+cat_class = Cat()
