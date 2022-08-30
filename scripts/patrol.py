@@ -369,7 +369,7 @@ class Patrol(object):
         self.patrol_event = choice(possible_patrols)
 
     def calculate_success(self):
-        if self.patrol_event is not None:
+        if self.patrol_event is not None and self.patrol_event.win_skills is not None:
             # if patrol contains cats with autowin skill, chance of success is 100
             # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
             chance = self.patrol_event.chance_of_success + int(self.patrol_total_experience / 10) if set(self.patrol_skills).isdisjoint(self.patrol_event.win_skills) else 100

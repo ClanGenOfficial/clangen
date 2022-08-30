@@ -9,9 +9,7 @@ import os.path
 
 class Cat(object):
     used_screen = screen
-    traits = ['strange', 'bloodthirsty', 'ambitious', 'loyal', 'righteous', 'fierce', 'nervous', 'strict', 'charismatic', 'calm', 'daring', 'loving', 'playful', 'lonesome', 'cold',
-              'insecure', 'vengeful', 'shameless', 'faithful', 'troublesome', 'empathetic', 'adventurous', 'thoughtful', 'compassionate', 'childish', 'confident', 'careful',
-              'altruistic', 'bold', 'patient', 'responsible', 'sneaky', 'wise']
+    traits = ['active', 'adventurous', 'altruistic', 'ambitious', 'athletic', 'bloodthirsty', 'bold', 'careful', 'chaotic', 'childish', 'clumsy', 'cold', 'compassionate', 'confident', 'controlling', 'deceptive', 'devoted', 'dramatic', 'eloquent', 'empathetic', 'fair', 'faithful', 'fierce', 'generous', 'gentle', 'graceful', 'greedy', 'innovative', 'insecure', 'insightful', 'lazy', 'lonesome', 'loving', 'loyal', 'nervous', 'open-minded', 'optimistic', 'paranoid', 'passionate', 'patient', 'peaceful', 'pessimistic', 'petty', 'playful', 'resourceful', 'responsible', 'righteous', 'sadistic', 'secretive', 'selfish', 'shameless', 'sincere', 'sneaky', 'strange', 'strict', 'stubborn', 'thoughtful', 'timid', 'tough', 'troublesome', 'uncooperative', 'vengeful', 'willful', 'wise']
     kit_traits = ['bouncy', 'bullying', 'daydreamer', 'nervous', 'charming', 'attention-seeker', 'impulsive', 'inquisitive', 'bossy', 'troublesome', 'quiet', 'daring', 'sweet',
                   'insecure', 'noisy', 'polite']
     ages = ['kitten', 'adolescent', 'young adult', 'adult', 'senior adult', 'elder', 'dead']
