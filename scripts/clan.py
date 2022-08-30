@@ -96,8 +96,11 @@ class Clan(object):
                 
         cat_class.thoughts()
         cat_class.save_cats()
+        number_other_clans = randint(3, 5)
+        for _ in range(number_other_clans):
+            self.all_clans.append(OtherClan())
+            print(self.all_clans)
         self.save_clan()
-        self.load_clan()
         if mapavailable:
             save_map(game.map_info, game.clan.name)      
 
@@ -192,7 +195,18 @@ class Clan(object):
             write_file.write(list_data)
 
     def load_clan(self):
+        other_clans = []
+        if game.switches['clan_list'] == '':
+            number_other_clans = randint(3, 5)
+            for _ in range(number_other_clans):
+                self.all_clans.append(OtherClan())
+                print(self.all_clans)
+            return
         if game.switches['clan_list'][0].strip() == '':
+            number_other_clans = randint(3, 5)
+            for _ in range(number_other_clans):
+                self.all_clans.append(OtherClan())
+                print(self.all_clans)
             return
         with open('saves/' + game.switches['clan_list'][0] + 'clan.txt', 'r') as read_file:
             clan_data = read_file.read()
