@@ -20,7 +20,7 @@ class Events(object):
         if game.switches['timeskip']:
             game.switches['save_clan'] = False
             self.living_cats = 0
-            self.check_clan_relations()
+            game.patrolled.clear()
             for cat in cat_class.all_cats.copy().values():
                 if not cat.dead:
                     self._extracted_from_one_moon_7(cat)
@@ -296,17 +296,11 @@ class Events(object):
                                            name + ' disappeared from the nursery and was found dead in the territory'])
                 if game.clan.current_season == 'Greenleaf':
                     cause_of_death.extend([name + ' died to overheating'])
-                if game.clan.biome == "Beach":
-                    cause_of_death.extend([name + ' tried to play in the ocean and was taken away by the tides', name + ' was picked up and dropped to their death by a seagull'])
             elif cat.status == 'apprentice':
                 cause_of_death.extend([name + ' died in a training accident', name + ' was killed by enemy warriors after accidentally wandering over the border',
                                        name + ' went missing and was found dead', name + ' died in a border skirmish'])
-                if game.clan.biome == "Forest":
-                    cause_of_death.extend([name + ' was crushed by a falling tree', name + ' was killed by a badger'])
                 if game.clan.biome == "Mountainous":
                     cause_of_death.extend([name + ' was crushed to death by an avalanche', name + ' fell from a cliff and died'])
-                if game.clan.biome == "Plains":
-                    cause_of_death.extend([name + ' was bitten by a rattlesnake and died', name + ' was caught in a twoleg farm monster and mangled to death'])
                 if game.clan.biome == "Beach":
                     cause_of_death.extend([name + ' was washed out to sea and drowned', name + ' was poisoned by a sea creature and died'])
             elif cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader':
@@ -316,12 +310,8 @@ class Events(object):
                 if self.at_war:
                     cause_of_death.extend([name + ' was killed by enemy ' + self.enemy_clan + ' warriors', name + ' was killed by enemy ' + self.enemy_clan + ' warriors',
                                            name + ' was killed by enemy ' + self.enemy_clan + ' warriors', name + ' died in a border skirmish'])
-                if game.clan.biome == "Forest":
-                    cause_of_death.extend([name + ' was crushed by a falling tree', name + ' died from their severe wounds after fighting off a badger'])
                 if game.clan.biome == "Mountainous":
-                    cause_of_death.extend([name + ' was crushed to death by an avalanche', name + ' fell from a cliff and died'])
-                if game.clan.biome == "Plains":
-                    cause_of_death.extend([name + ' was bitten by a rattlesnake and died', name + ' was caught in a twoleg farm monster and mangled to death'])
+                    cause_of_death.extend([name + ' was crushed by an avalanche', name + ' fell from a cliff and died'])
                 if game.clan.biome == "Beach":
                     cause_of_death.extend([name + ' was washed out to sea and drowned', name + ' was poisoned by a sea creature and died'])
             elif cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice':
