@@ -29,8 +29,7 @@ class Patrol(object):
         self.patrol_result_text = ''
         self.other_clan = {}
 
-        self.experience_levels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master',
-                                  'max']  # 0 vl -> 2 l -> 4 sl -> 7 a -> 10 sh -> 15 h -> 20 vh -> 25 m -> 35 max
+        self.experience_levels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
 
     # get patrol personalities, patrol total experience, patrol max experience
     def new_patrol(self):
@@ -51,6 +50,9 @@ class Patrol(object):
         self.patrol_result_text = ''
         self.eligible_events = []
         self.other_clan = {}
+        self.new_cat_patrols = [37, 43, 44, 45]
+        self.failable_patrols = self.new_cat_patrols + [11]
+        self.intentional_fail = ''
         self.patrol_random_cat = choice(self.patrol_cats)
         for i in range(self.patrol_size):
             self.patrol_skills.append(self.patrol_cats[i].skill)
@@ -75,7 +77,7 @@ class Patrol(object):
             self.eligible_events.append(test_event)
         self.patrol_event = choice(self.eligible_events)
         if len(game.clan.all_clans) > 0:
-            if self.patrol_event[0] in [37, 43, 44, 45] and len(game.clan.clan_cats) > 20 and randint(0, 1):
+            if self.patrol_event[0] in self.new_cat_patrols and len(game.clan.clan_cats) > 20 and randint(0, 4):
                 self.other_clan = self.meet_other_clan()
             if self.patrol_event[0] == 11:
                 self.other_clan = self.meet_other_clan()
@@ -143,6 +145,17 @@ class Patrol(object):
 
             self.patrol_event[4] = self.patrol_event[4].replace('s_c', str(self.patrol_stat_cat.name))
 
+    def intentionally_fail(self):
+        if self.patrol_event[0] in self.new_cat_patrols:
+            self.intentional_fail = 'Drive away the loner'
+            # success
+            self.patrol_event[2] = 'Your patrol talks to the cat and asks them to not cross the border again.'
+            # fail
+            self.patrol_event[3] = 'The stranger says mean things to the patrol after being asked to leave.'
+
+        if self.patrol_event[0] == 11:
+            self.intentional_fail = 'Antagonize'  # for this event the success and fails are calculated in meet_other_clans() because they will be different depending on relations
+
     def meet_other_clan(self, other_clan=''):
         if not other_clan:
             other_clan = choice(game.clan.all_clans)
@@ -153,18 +166,26 @@ class Patrol(object):
             self.patrol_event = [11, f'clan_name meets their allies, {other_clan_name}, at the border.', 'Your cats have a nice conversation with them',
                                  'Although they act nice, the alliance seems to be weakening.', 'You decide not to talk with the ally patrol', 60, 8, 0, 0, 0, 0, 1,
                                  ['good speaker', 'great speaker', 'excellent speaker']]
+            if self.intentional_fail:
+                self.patrol_event[2] = f'Your cats seem to ignore the alliance, threatening {other_clan_name} anyway'
+                self.patrol_event[3] = 'Your cats try to offend to the other clan but only make things slightly awkward'
 
 
         elif other_clan_relations < 11 and other_clan_relations > 6:
             self.patrol_event = [11, f'clan_name is threatened by a {other_clan_name} patrol at the border', 'Your cats manage to smooth things out a bit',
                                  'The patrol ends with threats and malice. Clan relations have worsened.', 'You decide to back off from the opposing patrol', 60, 8, 0, 0, 0, 0, 1,
                                  ['great speaker', 'excellent speaker']]
-
+            if self.intentional_fail:
+                self.patrol_event[2] = f'Your cats shoot back threats as well, hurting clan relations'
+                self.patrol_event[3] = 'Your cats mostly ignore the other clan\'s threats'
 
         elif other_clan_relations < 7 and 'fierce' not in self.patrol_traits and 'bloodthirsty' not in self.patrol_traits:
             self.patrol_event = [11, f'Your patrol is attacked by a {other_clan_name} patrol at the border', 'Your cats manage to escape without injury',
                                  f'r_c is killed by the {other_clan_name} patrol.', 'You run away from the other patrol', 60, 8, 0, 0, 0, 0, 1,
                                  ['great fighter', 'excellent fighter', 'excellent speaker']]
+            if self.intentional_fail:
+                self.patrol_event[2] = f'Your cats attack {other_clan_name} right back'
+                self.patrol_event[3] = f'r_c is killed by the {other_clan_name} patrol.'
 
 
         elif other_clan_relations < 7 and 'fierce' in self.patrol_traits:
@@ -172,6 +193,9 @@ class Patrol(object):
                                  'Your cats manage to escape, but only after s_c kills an enemy ' + choice(['warrior', 'apprentice']),
                                  f'r_c is killed by the {other_clan_name} patrol.', 'You run away from the other patrol', 60, 8, 0, 0, 0, 'fierce', 1,
                                  ['great fighter', 'excellent fighter', 'excellent speaker']]
+            if self.intentional_fail:
+                self.patrol_event[2] = f'Your cats chase {other_clan_name} away as they flee'
+                self.patrol_event[3] = f'r_c is killed by the {other_clan_name} patrol.'
 
 
         elif other_clan_relations < 7:
@@ -179,17 +203,31 @@ class Patrol(object):
                                  'Your cats manage to escape, but only after s_c kills an enemy ' + choice(['warrior', 'apprentice']),
                                  f'r_c is killed by the {other_clan_name} patrol.', 'You run away from the other patrol', 60, 8, 0, 0, 0, 'bloodthirsty', 1,
                                  ['great fighter', 'excellent fighter', 'excellent speaker']]
+            if self.intentional_fail:
+                self.patrol_event[2] = f'Your cats chase {other_clan_name} away as they flee'
+                self.patrol_event[3] = f'r_c is killed by the {other_clan_name} patrol.'
 
 
         else:
             self.patrol_event = [11, f'clan_name meets a {other_clan_name} patrol at the border, but nobody is hostile.', 'Your cats have a nice conversation with them',
                                  'Despite the lack of outright hostilities, the situation turns awkward fast', 'You decide not to talk with the opposing patrol', 60, 8, 0, 0, 0, 0,
                                  1, ['great speaker', 'excellent speaker']]
+            if self.intentional_fail:
+                self.patrol_event[2] = f'Your cats intentionally antagonize the other clan anyway.'
+                self.patrol_event[3] = f'Despite the vague threats, the situation only turns awkward'
+
+        self.patrol_event[2] = self.patrol_event[2].replace('r_c', str(self.patrol_random_cat.name))
+        self.patrol_event[3] = self.patrol_event[3].replace('r_c', str(self.patrol_random_cat.name))
 
         return other_clan
 
     def calculate(self):
         self.patrol_result_text = self.patrol_event[4]
+        if game.switches['event'] == 3:
+            self.intentionally_fail()
+            if self.patrol_event[0] == 11:
+                self.meet_other_clan(other_clan=self.other_clan)
+            game.switches['event'] = 1
         if game.switches['event'] == 1:
             self._extracted_from_calculate_6()
         for i in range(self.patrol_size):
@@ -231,6 +269,7 @@ class Patrol(object):
             self.event_special()
 
     def refresh_events(self):
+        # patrol = id, first text, success, fail, ignore,
         self.patrol_events = [[1, 'Your patrol comes upon the scent of a mouse', 'Your patrol catches the mouse', 'Your patrol narrowly misses catching the mouse',
                                'You decide not to pursue the mouse', 10, 8, 0, 0, 0, 0, 0, ['good hunter', 'great hunter', 'fantastic hunter']],
                               [2, 'Your patrol doesnt find anything useful', 'It was still a fun outing, and you learned a lot', 'How? How did you fail this?',
@@ -320,7 +359,7 @@ class Patrol(object):
                               [38, 'p_l comes across a group of four bloodthirsty rogues', 'In a skillful display, p_l chases them away', 'The rogues outnumber p_l and kill them',
                                'p_l knows they are outnumbered and turns away', 70, 30, 1, 0, 0, 0, 1, ['excellent fighter']],
                               [39, 'p_l worries that an apprentice should not be out here alone', 'At least this is a good chance to learn the territory',
-                               'The apprentice gets lost and doesn\'t learn anything', 'p_l turns back to camp, deciding this is a bad idea', 20, 6, 1, 'apprentice', 0, 0, 1,
+                               'The apprentice gets lost and doesnt learn anything', 'p_l turns back to camp, deciding this is a bad idea', 20, 6, 1, 'apprentice', 0, 0, 1,
                                ['very smart', 'extremely smart']],
                               [40, 'The patrol notices new leaves and flowers starting to grow', 'The hunting is plentiful as new prey is born',
                                'Unfortunately, with newleaf comes allergies', 'The patrol is uneventful', 30, 8, 0, 0, 'Newleaf', 0, 0, []],
@@ -335,7 +374,68 @@ class Patrol(object):
                                      'The descriptions of clan cats frighten the kittypet', 'You decide to not confront that kittypet', 80, 10, 0, 0, 0, 0, 1,
                                      ['great speaker', 'excellent speaker']],
                               [45, 'The patrol finds a loner who is interested in joining the clan', 'The loner joins, bringing with them a litter of kits',
-                               'The loner thinks for a while, and decides against joining', 'You decide to not confront that loner', 120, 10, 0, 0, 0, 0, 1, ['excellent speaker']]]
+                               'The loner thinks for a while, and decides against joining', 'You decide to not confront that loner', 120, 10, 0, 0, 0, 0, 1, ['excellent speaker']],
+                              [46, 'r_c admits that they have been training in the Dark Forest', 'The patrol convinces them to stop',
+                               'Your patrol doesnt manage to convince them to stop and later r_c is found dead in their nest', 'Your patrol doesnt react to the news', 100, 10, 0,
+                               0, 0, 0, 1, ['excellent speaker']],
+                              [47, 'There is a large river dividing your territory. Should your patrol cross it?', 'Your patrol crosses the river and can hunt on the other side',
+                               'r_c is swept away by the strong current and dies', 'Your patrol decides to avoid the river', 40, 10, 0, 0, 0, 0, 1, ['excellent speaker']],
+                              [48, 'Your patrol sees a large rabbit, but it is just over the border', 'Your patrol manages to catch the rabbit without the enemy clan noticing',
+                               'Your patrol is caught by enemy warriors', 'Your patrol doesnt attempt to catch the rabbit', 50, 10, 0, 0, 0, 0, 1, ['fantastic hunter']],
+                              [49, 'The smell of food lures r_c close to a twoleg trap', 'The patrol leads r_c away before it goes off',
+                               'r_c is caught in the trap and is taken by twolegs shortly after', 'r_c loses interest and walks back to the patrol', 60, 10, 0, 0, 0, 0, 1,
+                               ['smart', 'very smart', 'extremely smart']], [50, 'The patrol is helping gather herbs and r_c stumbles upon a bush of red berries',
+                                                                             'The patrol tells r_c to stay away from the death berries just in time',
+                                                                             'r_c chews some of the berries and dies', 'r_c decides to not touch the berries', 40, 10, 0, 2, 0, 0,
+                                                                             1, ['great teacher', 'fantastic teacher']],
+                              [51, 'The patrol approaches a deep ravine. There is a lot of prey here, but the ground is very slippery.', 'The patrol has a very successful hunt',
+                               'While hunting, r_c slips and falls into the ravine, never to be seen again', 'The patrol decides to hunt elsewhere', 50, 10, 0, 0, 0, 0, 1,
+                               ['great hunter', 'fantastic hunter']],
+                              [52, 'The patrol runs into a small dog.', 'They manage to scare it back to its twolegs.', 'The dog\'s barking scares away the prey',
+                               'The patrol decides to avoid the dog', 120, 10, 0, 0, 0, 0, 1, ['great fighter', 'fantastic fighter']],
+                              [53, 'r_c notices a suspicious trail of pawprints in the mud',
+                               'The pawprints lead them to a trespassing rogue and the patrol chases them off the territory',
+                               'Turns out they were following their own pawprints... How embarrassing.', 'r_c decides to ignore the pawprints', 30, 10, 0, 0, 0, 0, 1,
+                               ['great fighter']], [54, 'r_c notices a clanmate trapped in some brambles', 'The patrol frees their clanmate',
+                                                    'The patrol works all day to free their clanmate and gets nothing done', 'The patrol decides to leave their clanmate alone', 40,
+                                                    10, 0, 0, 0, 0, 1, ['great speaker', 'fantastic speaker']],
+                              [55, 'r_c is tempted to eat the prey they caught', 'They eat the prey without anyone noticing',
+                               'The patrol notices r_c eating the freshkill and report them', 'They decide not to eat the prey', 30, 10, 0, 2, 0, 0, 1,
+                               ['great hunter', 'fantastic hunter']],
+                              [56, 'The patrol approaches some twoleg dens while hunting', 'The patrol has a successful hunt, avoiding any twolegs',
+                               'Twoleg kits chase the patrol away', 'The patrol decides to hunt elsewhere', 30, 10, 0, 0, 0, 0, 1, ['great hunter', 'fantastic hunter']],
+                              [57, 'The patrol comes across a badger den', 'The patrol drives the badger off of the territory', 'r_c is killed trying to attack the badger',
+                               'The patrol decides to leave the den alone', 50, 10, 0, 0, 0, 0, 1, ['good fighter', 'great fighter', 'fantastic fighter']],
+                              [58, 'The patrol comes across a deer', 'The patrol looks in wonder at the strange animal, and continue on their way',
+                               'The deer kicks at the cats, giving r_c a scar', 'The patrol turns around, avoiding the deer', 70, 10, 0, 0, 0, 0, 1,
+                               ['good speaker', 'great speaker', 'fantastic speaker']],
+                              [59, 'The patrol sees a wounded cat near the thunderpath', 'Your patrol brings the wounded cat back to camp and later they join the clan.',
+                               'As r_c inspects the cat, they notice they are already hunting with their ancestors', 'They leave the wounded cat alone', 100, 10, 0, 0, 0, 0, 1,
+                               ['strong connection to starclan']],
+                              [60, 'r_c notices the patrol is not staying on task', 'They manage to steer the patrol back on course', 'The patrol is annoyed by r_c\'s pestering',
+                               'They keep their thoughts to themselves', 30, 10, 0, 2, 0, 0, 1, ['good speaker', 'great speaker', 'excellent speaker']],
+                              [61, 'r_c spots a rabbit up ahead, but it seems to be acting strange', 'r_c catches the rabbit and it is eaten as normal',
+                               'r_c catches the rabbit and later the cats who eat it are violently ill', 'They avoid catching the rabbit', 50, 10, 0, 0, 0, 0, 1,
+                               ['good hunter', 'great hunter', 'fantastic hunter']], [62, 'The patrol finds a patch of herbs that they believe the medicine cat mentioned needing',
+                                                                                      'They bring the herb back to camp and the herbs are put to good use',
+                                                                                      'The herbs turn out to be useless weeds', 'They decide to continue patrolling instead', 30,
+                                                                                      10, 0, 0, 0, 0, 1, ['strong connection to starclan', 'great teacher', 'fantastic teacher']],
+                              [63, 'r_c goes missing during the patrol', 'r_c is found with an abandoned kit', 'r_c is found laying on the ground injured',
+                               'r_c eventually catches up', 50, 10, 0, 2, 0, 0, 1, ['excellent speaker']], ]
+        deadly_patrols = [[100, 'The patrol hears odd noises near the twoleg nests', 'They find the noise was just an old loner singing to themselves',
+                           'Your patrol walks into an ambush by a group of rogues and all cats perish', 'Your patrol ignores the noises', 120, 10, 0, 0, 0, 0, 1, []],
+                          [101, 'Your patrol find a wounded cat by the clan border', 'They bring the cat back to camp and they join the clan',
+                           'The cat was pretending to be wounded. Your patrol is killed by an enemy clan ambush', 120, 10, 0, 0, 0, 0, 1, []],
+                          [102, 'Your patrol is near a steep cliff. Suddenly there is the sounds of falling rocks', 'Your cats successfully escape the rock slide',
+                           'Your cats are caught in the rock slide and die', 'It seems like the patrol was just imagining things', 120, 10, 0, 0, 0, 0, 1, []],
+                          [103, 'Your patrol is out near a clearing where there seems to be a lot of twolegs', 'The patrol avoids detection and continues their hunt',
+                           'The twolegs notice the cats and capture them. They are never seen again', 'The patrol heads back to camp, avoiding the strange twolegs', 120, 10, 0, 0,
+                           0, 0, 1, []], [104, 'There are large dark clouds in the horizon and your patrol wonders if they should continue',
+                                          'Your patrol continues the patrol successfully, just becoming a little wet',
+                                          'There is suddenly a downpour, and the cats are swept away by the flooded river', 'Your cats decide not to risk it and head back', 120,
+                                          10, 0, 0, 0, 0, 1, []]]
+
+    # [ ,'','','','', 120, 10, 0, 0, 0, 0, 1, [, '']],
 
     def event_special(self):
         # impact to the relationship (will be defined in the conditions)
@@ -401,8 +501,7 @@ class Patrol(object):
                         print("AFTER", rel.admiration)
                 return
 
-        if self.patrol_event[0] == 8:
-            # EVENT: dog
+        if self.patrol_event[0] == 8 or self.patrol_event[0] == 46 or self.patrol_event[0] == 47 or self.patrol_event[0] == 49 or self.patrol_event[0] == 51:
             if self.before:
                 # stuff that happens during calculations
                 return
@@ -494,19 +593,21 @@ class Patrol(object):
                 return
             else:
                 # stuff that happens after the results
-                if self.success:
+                if self.success and not self.intentional_fail:
                     self.other_clan.relations = int(self.other_clan.relations) + 1
                     if int(self.other_clan.relations) == 7:
                         self.patrol_result_text = game.clan.name + 'Clan and ' + self.other_clan.name + 'Clan declare a truce.'
                     impact = 3
-                else:
-                    if int(self.other_clan.relations) < 7:
-                        events_class.dies(self.patrol_random_cat)
+                elif (self.intentional_fail and self.success) or (not self.intentional_fail and not self.success):
                     self.other_clan.relations = int(self.other_clan.relations) - 1
                     if int(self.other_clan.relations) < 1:
                         self.other_clan.relations = 1
                     if int(self.other_clan.relations) == 6:
                         self.patrol_result_text = self.other_clan.name + 'Clan declares war on ' + game.clan.name + 'Clan.'
+
+                if int(self.other_clan.relations) < 7 and not self.success:
+                    events_class.dies(self.patrol_random_cat)
+
 
                 if not self.success:
                     impact = -3
@@ -986,7 +1087,7 @@ class Patrol(object):
                         print("AFTER", rel.trust)
                 return
 
-        if self.patrol_event[0] == 35 or self.patrol_event[0] == 36:
+        if self.patrol_event[0] == 35 or self.patrol_event[0] == 36 or self.patrol_event[0] == 58 or self.patrol_event[0] == 62:
             # EVENT: comes accross one or more rogues
             if self.before:
                 # stuff that happens during calculations
@@ -1015,15 +1116,17 @@ class Patrol(object):
                         print("AFTER", rel.trust)
                 return
 
-        if self.patrol_event[0] == 37:
+        if self.patrol_event[0] == 37 or self.patrol_event[0] == 59 or self.patrol_event[0] == 63:
             # EVENT: loner wants to join
             if self.before:
                 # stuff that happens during calculations
                 return
             else:
                 # stuff that happens after the results
-                if self.success:
+                if self.success and not self.intentional_fail:
                     new_cat_status = choice(['warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'apprentice', 'apprentice', 'apprentice', 'elder'])
+                    if self.patrol_event[0] == 62:
+                        new_cat_status = 'kitten'
                     kit = Cat(status=new_cat_status)
                     #create and update relationships
                     relationships = []
@@ -1031,10 +1134,11 @@ class Patrol(object):
                         cat.relationships.append(Relationship(cat,kit))
                         relationships.append(Relationship(kit,cat))
                     kit.relationships = relationships
-                    if randint(0, 1):
+                    if randint(0, 2) == 0 and self.patrol_event[0] != 62:
                         kit.name.suffix = ""
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
+                    kit.thought = 'Is looking around the camp with wonder'
                     self.patrol_cats.append(kit)
                     impact = 3
 
@@ -1051,7 +1155,7 @@ class Patrol(object):
                         print("AFTER", rel.like)
                 return
 
-        if self.patrol_event[0] == 38:
+        if self.patrol_event[0] == 38 or self.patrol_event[0] == 57 or self.patrol_event[0] == 50:
             # EVENT: bloodthirsty rogues
             if self.before:
                 # stuff that happens during calculations
@@ -1116,7 +1220,7 @@ class Patrol(object):
                 return
             else:
                 # stuff that happens after the results
-                if self.success:
+                if self.success and not self.intentional_fail:
                     kit = Cat(status='warrior')
                     #create and update relationships
                     relationships = []
@@ -1128,6 +1232,7 @@ class Patrol(object):
                     kit.skill = 'formerly a loner'
                     if randint(0, 1):
                         kit.name.suffix = ""
+                    kit.thought = 'Is looking around the camp with wonder'
                     self.patrol_cats.append(kit)
                     impact = 3
 
@@ -1151,7 +1256,7 @@ class Patrol(object):
                 return
             else:
                 # stuff that happens after the results
-                if self.success:
+                if self.success and not self.intentional_fail:
                     new_cat_status = choice(['warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'apprentice', 'apprentice', 'apprentice'])
                     kit = Cat(status=new_cat_status)
                     #create and update relationships
@@ -1162,6 +1267,7 @@ class Patrol(object):
                     kit.relationships = relationships
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a kittypet'
+                    kit.thought = 'Is looking around the camp with wonder'
                     self.patrol_cats.append(kit)
                     if randint(0, 1):
                         kit.specialty2 = choice(scars3)
@@ -1191,7 +1297,7 @@ class Patrol(object):
                 return
             else:
                 # stuff that happens after the results
-                if self.success:
+                if self.success and not self.intentional_fail:
                     new_cat_status = choice(['warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior', 'medicine cat'])
                     kit = Cat(status=new_cat_status)
                     #create and update relationships
@@ -1202,6 +1308,7 @@ class Patrol(object):
                     kit.relationships = relationships
                     game.clan.add_cat(kit)
                     kit.skill = 'formerly a loner'
+                    kit.thought = 'Is looking around the camp with wonder'
                     self.patrol_cats.append(kit)
                     kits = choice([2, 2, 2, 3])
                     for new_kit in range(kits):

@@ -2,7 +2,12 @@ from .clan import *
 from .cats import *
 from .events import *
 from .patrols import *
+if mapavailable:
+    from .world import *
 
+import random
+
+random.seed()
 
 # SCREENS PARENT CLASS
 class Screens(object):
@@ -10,7 +15,7 @@ class Screens(object):
     game_x = screen_x
     game_y = screen_y
     all_screens = {}
-    last_screen = ''  # store the screen that the user will go back to after clicking 'back' button
+    last_screen = ''
 
     def __init__(self, name=None):
         self.name = name
@@ -34,35 +39,28 @@ class StartScreen(Screens):
 
         # buttons
         if game.clan is not None and game.switches['error_message'] == '':
-            buttons.draw_image_button(
-                (70, 310), path='continue', text='Continue >', cur_screen='clan screen')
-            buttons.draw_image_button(
-                (70, 355), path='switch_clan', text='Switch Clan >', cur_screen='switch clan screen')
+            buttons.draw_image_button((70, 310), path='continue', text='Continue >', cur_screen='clan screen')
+            buttons.draw_image_button((70, 355), path='switch_clan', text='Switch Clan >', cur_screen='switch clan screen')
         elif game.clan is not None and game.switches['error_message']:
-            buttons.draw_image_button(
-                (70, 310), path='continue', text='Continue >', available=False)
-            buttons.draw_image_button(
-                (70, 355), path='switch_clan', text='Switch Clan >', cur_screen='switch clan screen')
+            buttons.draw_image_button((70, 310), path='continue', text='Continue >', available=False)
+            buttons.draw_image_button((70, 355), path='switch_clan', text='Switch Clan >', cur_screen='switch clan screen')
         else:
-            buttons.draw_image_button(
-                (70, 310), path='continue', text='Continue >', available=False)
-            buttons.draw_image_button(
-                (70, 355), path='switch_clan', text='Switch Clan >', available=False)
-        buttons.draw_image_button(
-            (70, 400), path='new_clan', text='Make New >', cur_screen='make clan screen')
-        buttons.draw_image_button(
-            (70, 445), path='settings', text='Settings & Info >', cur_screen='settings screen')
+            buttons.draw_image_button((70, 310), path='continue', text='Continue >', available=False)
+            buttons.draw_image_button((70, 355), path='switch_clan', text='Switch Clan >', available=False)
+        buttons.draw_image_button((70, 400), path='new_clan', text='Make New >', cur_screen='make clan screen')
+        buttons.draw_image_button((70, 445), path='settings', text='Settings & Info >', cur_screen='settings screen')
 
         if game.switches['error_message']:
-            buttons.draw_button(
-                (50, 50), text='There was an error loading the game:', available=False)
-            buttons.draw_button(
-                (50, 80), text=game.switches['error_message'], available=False)
+            buttons.draw_button((50, 50), text='There was an error loading the game:', available=False)
+            buttons.draw_button((50, 80), text=game.switches['error_message'], available=False)
+            
 
     def screen_switches(self):
         # SAVE cats
         if game.clan is not None:
             game.clan.save_clan()
+            if mapavailable:
+                save_map(game.map_info, game.clan.name)
 
         # LOAD settings
         game.load_settings()
@@ -93,8 +91,9 @@ class SettingsScreen(Screens):
 
     def on_use(self):
         # layout
-        buttons.draw_button((330, 100), text='Settings', available=False)
-        buttons.draw_button((-340, 100), text='Info', cur_screen='info screen')
+        buttons.draw_button((310, 100), text='Settings', available=False)
+        buttons.draw_button((-360, 100), text='Info', cur_screen='info screen')
+        buttons.draw_button((-255, 100), text='Language', cur_screen='language screen')
         verdana.text("Change the setting of your game here.", ('center', 130))
 
         # Setting names
@@ -133,23 +132,17 @@ class SettingsScreen(Screens):
 class InfoScreen(Screens):
     def on_use(self):
         # layout
-        buttons.draw_button((330, 100), text='Settings',
-                            cur_screen='settings screen')
-        buttons.draw_button((-340, 100), text='Info', available=False)
-        verdana.text("Welcome to Warrior Cats clan generator!",
-                     ('center', 140))
-        verdana.text(
-            "This is fan-made generator for the Warrior Cats -book series by Erin Hunter.", ('center', 175))
-        verdana.text(
-            "Create a new clan in the 'Make New' section. That clan is saved and can be", ('center', 195))
-        verdana.text(
-            "revisited until you decide the overwrite it with a new one.", ('center', 215))
-        verdana.text(
-            "You're free to use the characters and sprites generated in this program", ('center', 235))
-        verdana.text(
-            "as you like, as long as you don't claim the sprites as your own creations.", ('center', 255))
-        verdana.text("Original creator: just-some-cat.tumblr.com",
-                     ('center', 275))
+        buttons.draw_button((310, 100), text='Settings', cur_screen='settings screen')
+        buttons.draw_button((-360, 100), text='Info', available=False)
+        buttons.draw_button((-255, 100), text='Language', cur_screen='language screen')
+
+        verdana.text("Welcome to Warrior Cats clan generator!", ('center', 140))
+        verdana.text("This is fan-made generator for the Warrior Cats -book series by Erin Hunter.", ('center', 175))
+        verdana.text("Create a new clan in the 'Make New' section. That clan is saved and can be", ('center', 195))
+        verdana.text("revisited until you decide the overwrite it with a new one.", ('center', 215))
+        verdana.text("You're free to use the characters and sprites generated in this program", ('center', 235))
+        verdana.text("as you like, as long as you don't claim the sprites as your own creations.", ('center', 255))
+        verdana.text("Original creator: just-some-cat.tumblr.com", ('center', 275))
         verdana.text("Fan edit made by: SableSteel", ('center', 295))
 
         verdana.text("Thank you for playing!!", ('center', 550))
@@ -157,6 +150,60 @@ class InfoScreen(Screens):
         # other buttons
         buttons.draw_button(
             (50, 50), text='<< Back to Main Menu', cur_screen='start screen')
+
+
+class LanguageScreen(Screens):
+
+    def on_use(self):
+        # layout
+        buttons.draw_button((310, 100), text='Settings', cur_screen='settings screen')
+        buttons.draw_button((-360, 100), text='Info', cur_screen='info screen')
+        buttons.draw_button((-255, 100), text='Language', available='false')
+        verdana.text("Choose the language of your game here:", ('center', 130))
+
+        # Language options
+        a = 200
+        for language_name in game.language_list:
+            buttons.draw_button(('center', a), text=language_name, language=language_name, available=language_name != game.switches['language'])
+            a += 30
+
+        if game.switches['language'] != game.settings['language']:
+            game.settings['language'] = game.switches['language']
+            game.settings_changed = True
+            if game.settings['language'] != 'english':
+                game.switch_language()
+
+        # other buttons
+        buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen')
+
+
+class LanguageScreen(Screens):
+
+    def on_use(self):
+        # layout
+        buttons.draw_button((310, 100), text='Settings', cur_screen='settings screen')
+        buttons.draw_button((-360, 100), text='Info', cur_screen='info screen')
+        buttons.draw_button((-255, 100), text='Language', available='false')
+        verdana.text("Choose the language of your game here:", ('center', 130))
+
+        # Language options
+        a = 200
+        for language_name in game.language_list:
+            buttons.draw_button(('center', a), text=language_name, language=language_name, available=language_name != game.switches['language'])
+            a += 30
+
+        if game.switches['language'] != game.settings['language']:
+            game.settings['language'] = game.switches['language']
+            game.settings_changed = True
+            if game.settings['language'] != 'english':
+                game.switch_language()
+
+        # other buttons
+        buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen')
+        if game.settings_changed:
+            buttons.draw_button(('center', -150), text='Save Settings', save_settings=True)
+        else:
+            buttons.draw_button(('center', -150), text='Save Settings', available=False)
 
 
 class ClanScreen(Screens):
@@ -186,7 +233,11 @@ class ClanScreen(Screens):
 
         draw_menu_buttons()
         buttons.draw_button(('center', -50), text='Save Clan', save_clan=True)
-        verdana.text('Remember to save!', ('center', -20))
+        pygame.draw.rect(screen, color='gray', rect=pygame.Rect(320, 660, 160, 20))
+        if game.switches['save_clan']:
+            verdana_green.text('Saved!', ('center', -20))
+        else:
+            verdana_red.text('Remember to save!', ('center', -20))
 
     def screen_switches(self):
         cat_profiles()
@@ -267,13 +318,25 @@ class StarClanScreen(Screens):
             dead_cats.append(cat)
 
         # pages
-        all_pages = int(ceil(len(dead_cats) / 24.0)
-                        ) if len(dead_cats) > 24 else 1
+
+        search_text = game.switches['search_text']
+        pygame.draw.rect(screen, 'lightgray', pygame.Rect((170, 130), (150, 20)))
+        verdana.text('Search: ', (100, 130))
+        verdana_black.text(game.switches['search_text'], (180, 130))
+        search_cats = []
+        if search_text.strip() != '':
+            for cat in dead_cats:
+                if search_text.lower() in str(cat.name).lower():
+                    search_cats.append(cat)
+        else:
+            search_cats = dead_cats.copy()
+        all_pages = int(ceil(len(search_cats) / 24.0)
+                        ) if len(search_cats) > 24 else 1
         pos_x = 0
         pos_y = 0
         cats_on_page = 0
-        for x in range(len(dead_cats)):
-            if x + (game.switches['list_page'] - 1) * 24 > len(dead_cats):
+        for x in range(len(search_cats)):
+            if x + (game.switches['list_page'] - 1) * 24 > len(search_cats):
                 game.switches['list_page'] = 1
 
             the_cat = dead_cats[x + (game.switches['list_page'] - 1) * 24]
@@ -289,7 +352,7 @@ class StarClanScreen(Screens):
                 if pos_x >= 600:
                     pos_x = 0
                     pos_y += 100
-                if cats_on_page >= 24 or x + (game.switches['list_page'] - 1) * 24 == len(dead_cats) - 1:
+                if cats_on_page >= 24 or x + (game.switches['list_page'] - 1) * 24 == len(search_cats) - 1:
                     break
 
         # page nuttons
@@ -310,7 +373,10 @@ class StarClanScreen(Screens):
 class MakeClanScreen(Screens):
     def first_phase(self):
         # layout
-        name_clan_img = pygame.image.load('resources/name_clan.png')
+        if game.settings['dark mode']:
+            name_clan_img = pygame.image.load('resources/name_clan.png')
+        else:
+            name_clan_img = pygame.image.load('resources/name_clan_light.png')
         screen.blit(name_clan_img, (0, 0))
 
         self.game_screen.blit(game.naming_box, (150, 620))
@@ -328,9 +394,12 @@ class MakeClanScreen(Screens):
         buttons.draw_button((570, 620), text='Name Clan', clan_name=game.switches['naming_text'])
 
     def second_phase(self):
-        # layout
+        game.switches['naming_text'] = ''
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        leader_img = pygame.image.load('resources/leader.png')
+        if game.settings['dark mode']:
+            leader_img = pygame.image.load('resources/leader.png')
+        else:
+            leader_img = pygame.image.load('resources/leader_light.png')
         screen.blit(leader_img, (0, 400))
 
         # cat buttons / small sprites
@@ -360,7 +429,10 @@ class MakeClanScreen(Screens):
 
     def third_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        deputy_img = pygame.image.load('resources/deputy.png')
+        if game.settings['dark mode']:
+            deputy_img = pygame.image.load('resources/deputy.png')
+        else:
+            deputy_img = pygame.image.load('resources/deputy_light.png')
         screen.blit(deputy_img, (0, 400))
 
         # cat buttons / small sprites
@@ -396,7 +468,10 @@ class MakeClanScreen(Screens):
     def fourth_phase(self):
         # layout
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        medic_img = pygame.image.load('resources/medic.png')
+        if game.settings['dark mode']:
+            medic_img = pygame.image.load('resources/medic.png')
+        else:
+            medic_img = pygame.image.load('resources/med_light.png')
         screen.blit(medic_img, (0, 400))
 
         # cat buttons / small sprites
@@ -439,7 +514,10 @@ class MakeClanScreen(Screens):
     def fifth_phase(self):
         # layout
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        clan_img = pygame.image.load('resources/clan.png')
+        if game.settings['dark mode']:
+            clan_img = pygame.image.load('resources/clan.png')
+        else:
+            clan_img = pygame.image.load('resources/clan_light.png')
         screen.blit(clan_img, (0, 400))
 
         # cat buttons / small sprites
@@ -487,9 +565,68 @@ class MakeClanScreen(Screens):
         buttons.draw_button((-50, 50), text='< Last step', medicine_cat=None, members=[], cat=None)
 
         if 3 < len(game.switches['members']) < 8:
-            buttons.draw_button(('center', 350), text='Done', cur_screen='clan created screen')
+            buttons.draw_button(('center', 350), text='Done', choosing_camp=True)
         else:
             buttons.draw_button(('center', 350), text='Done', available=False)
+    def sixth_phase(self):
+        if mapavailable:
+            for y in range(44):
+                for x in range(40):
+                    noisevalue = self.world.check_noisetile(x,y)
+                    if noisevalue > 0.1:
+                        #buttons.draw_maptile_button((x*TILESIZE,y*TILESIZE),image=(pygame.transform.scale(terrain.images[1],(TILESIZE,TILESIZE))))
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain1'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Desert", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','low','medium','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium','high']), 'Prey Levels: ' + random.choice(['none','low','medium']), 'Plant Cover: ' + random.choice(['none','low','medium'])]
+                    elif noisevalue < -0.015:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain3'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Forest", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','low','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium']), 'Prey Levels: ' + random.choice(['low','medium', 'high']), 'Plant Cover: ' + random.choice(['low','medium','high'])]
+                    else:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain0'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Plains", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','medium','medium','high','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium','high']), 'Prey Levels: ' + random.choice(['low','medium','high']), 'Plant Cover: ' + random.choice(['low','medium','high'])]
+            for y in range(44):
+                for x in range(40):
+                    height = self.world.check_heighttile(x,y)
+                    if height < 0:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
+                    elif x == 0:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
+                    elif x == 39:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
+                    elif y == 0:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
+                    elif y == 43:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Ocean", "Unclaimable", 'Twoleg Activity: ' + random.choice(['none']), 'Thunderpath Traffic: ' + random.choice(['none']), 'Prey Levels: ' + random.choice(['none']), 'Plant Cover: ' + random.choice(['none'])]
+                    elif height < 0.03:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain6'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Beach", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','low','medium','medium','high','high']), 'Thunderpath Traffic: ' + random.choice(['none','low','medium']), 'Prey Levels: ' + random.choice(['low','medium','high']), 'Plant Cover: ' + random.choice(['none','low','medium'])]
+                    elif height > 0.35:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain5'], (16,16)), map_selection=(x,y))
+                        game.map_info[(x,y)] = [x,y,"Mountainous", "Unclaimed", 'Twoleg Activity: ' + random.choice(['none','none','low','low','medium','high']), 'Thunderpath Traffic: ' + random.choice(['none','none','low','low','medium','medium','high']), 'Prey Levels: ' + random.choice(['none','low','medium','high']), 'Plant Cover: ' + random.choice(['none','low','medium','high'])]
+                    if (x,y) == game.switches['map_selection']:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terraintwo0'], (16,16)), camp_site=(x,y))
+            verdana_big.text('Map', (-16, 50))
+            verdana.text(str(game.map_info[game.switches['map_selection']][0])+", "+str(game.map_info[game.switches['map_selection']][1]), (-16, 100))
+            verdana.text(str(game.map_info[game.switches['map_selection']][2]), (-16, 150))
+            verdana.text(str(game.map_info[game.switches['map_selection']][3]), (-16, 200))
+            verdana.text(str(game.switches['camp_site']), (-16, 250))
+            
+            if game.map_info[game.switches['map_selection']][3] == 'Unclaimed':
+                buttons.draw_button((-16, 300), text='Done', choosing_camp=False, biome=game.map_info[game.switches['map_selection']][2], world_seed=self.worldseed, cur_screen='clan created screen')
+            else:
+                buttons.draw_button((-16, 300), text='Done', available=False)
+        else:
+            buttons.draw_button(('center', 350), text='Done', cur_screen='clan created screen')
+
+
+            buttons.draw_button((250, 50), text='Forest', biome='Forest', available=game.switches['biome'] != 'Forest')
+            buttons.draw_button((325, 50), text='Mountainous', biome='Mountainous', available=game.switches['biome'] != 'Mountainous')
+            buttons.draw_button((450, 50), text='Plains', biome='Plains', available=game.switches['biome'] != 'Plains')
+            buttons.draw_button((525, 50), text='Beach', biome='Beach', available=game.switches['biome'] != 'Beach')    
 
     def on_use(self):
         if len(game.switches['clan_name']) == 0:
@@ -500,9 +637,11 @@ class MakeClanScreen(Screens):
             self.third_phase()
         elif game.switches['leader'] is not None and game.switches['medicine_cat'] is None:
             self.fourth_phase()
-        else:
+        elif game.switches['medicine_cat'] is not None and game.switches['choosing_camp'] is False:
             self.fifth_phase()
-
+        else:
+            self.sixth_phase()
+            
     def screen_switches(self):
         game.switches['clan_name'] = ''
         game.switches['leader'] = None
@@ -510,7 +649,10 @@ class MakeClanScreen(Screens):
         game.switches['medicine_cat'] = None
         game.switches['deputy'] = None
         game.switches['members'] = []
+        game.switches['choosing_camp'] = False
         create_example_cats()
+        self.worldseed = random.randrange(10000)
+        self.world = World((44,44),self.worldseed)
 
 
 class ClanCreatedScreen(Screens):
@@ -674,7 +816,7 @@ class ProfileScreen(Screens):
                     if num == 2:
                         rows.append(name)
                         name = ''
-                        num+=1
+                        num += 1
                     if num % 3 == 0 and name != '':
                         rows.append(name)
                         name = ''
@@ -686,7 +828,7 @@ class ProfileScreen(Screens):
                         verdana_small.text(rows[ind][:-2], (490, 230 + count2 * 15))
                     else:
                         verdana_small.text(rows[ind], (490, 230 + count2 * 15))
-                    count2+=1
+                    count2 += 1
         if the_cat.age == 'kitten':
             verdana_small.text('young', (300, 230 + count * 15))
         elif the_cat.age == 'elder':
@@ -770,61 +912,9 @@ class ProfileScreen(Screens):
             count2 += 1
 
         # buttons
-        buttons.draw_button(('center', 20), text='Change Name', cur_screen='change name screen')
-        game.switches['name_cat'] = the_cat.ID
-        buttons.draw_button(('center', -160), text='See Family', cur_screen='see kits screen')
-        buttons.draw_button(('center', -160), text='See Relaionships', cur_screen='relationship screen')
-        if not the_cat.dead:
-            buttons.draw_button((-40, -50), text='Kill Cat', kill_cat=the_cat)
-        if the_cat.status == 'apprentice' and not the_cat.dead:
-            game.switches['apprentice'] = the_cat
-            buttons.draw_button(('center', -130), text='Change Mentor', cur_screen='choose mentor screen')
-        # buttons.draw_button(('center', -130), text='Family Tree')
-        if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not the_cat.dead:
-            buttons.draw_button(('center', -130), text='Pick mate for ' + str(the_cat.name), cur_screen='choose mate screen')
+        buttons.draw_button((400, 400), text='Options', cur_screen='options screen')
 
-        if game.switches['new_leader'] is not False and game.switches['new_leader'] is not None:
-            game.clan.new_leader(game.switches['new_leader'])
-
-        if the_cat.status in ['warrior'] and not the_cat.dead and game.clan.leader.dead:
-            buttons.draw_button(('center', -70), text='Promote to Leader', new_leader=the_cat)
-        elif the_cat.status in ['warrior'] and not the_cat.dead and game.clan.deputy is None:
-            buttons.draw_button(('center', -70), text='Promote to Deputy', deputy_switch=the_cat)
-        elif the_cat.status in ['deputy'] and not the_cat.dead:
-            buttons.draw_button(('center', -70), text='Demote from Deputy', deputy_switch=the_cat)
-        elif the_cat.status in ['warrior'] and not the_cat.dead and game.clan.deputy:
-            if game.clan.deputy.dead:
-                buttons.draw_button(('center', -70), text='Promote to Deputy', deputy_switch=the_cat)
-
-        if game.switches['deputy_switch'] is not False and game.switches['deputy_switch'] is not None and game.switches['deputy_switch'].status == 'warrior':
-            game.clan.deputy = game.switches['deputy_switch']
-            game.switches['deputy_switch'].status_change('deputy')
-            game.switches['deputy_switch'] = False
-        elif game.switches['deputy_switch'] is not False and game.switches['deputy_switch'] is not None and game.switches['deputy_switch'].status == 'deputy':
-            game.clan.deputy = None
-            game.switches['deputy_switch'].status_change('warrior')
-            game.switches['deputy_switch'] = False
-
-        if game.switches['apprentice_switch'] is not False and game.switches['apprentice_switch'] is not None and game.switches['apprentice_switch'].status == 'apprentice':
-            game.switches['apprentice_switch'].status_change('medicine cat apprentice')
-            game.switches['apprentice_switch'] = False
-
-        if game.switches['apprentice_switch'] is not False and game.switches['apprentice_switch'] is not None and game.switches[
-                'apprentice_switch'].status == 'medicine cat apprentice':
-            game.switches['apprentice_switch'].status_change('apprentice')
-            game.switches['apprentice_switch'] = False
-
-        if game.switches['kill_cat'] is not False and game.switches['kill_cat'] is not None:
-            game.switches['kill_cat'].dies()
-            game.switches['kill_cat'] = False
-
-        if the_cat.status in ['apprentice'] and not the_cat.dead:
-            buttons.draw_button(('center', -70), text='Switch to medicine cat apprentice', apprentice_switch=the_cat)
-
-        if the_cat.status in ['medicine cat apprentice'] and not the_cat.dead:
-            buttons.draw_button(('center', -70), text='Switch to warrior apprentice', apprentice_switch=the_cat)
-
-        buttons.draw_button(('center', -100), text='Back', cur_screen=game.switches['last_screen'])
+        buttons.draw_button((325, 400), text='Back', cur_screen=game.switches['last_screen'])
 
     def screen_switches(self):
         cat_profiles()
@@ -1083,18 +1173,25 @@ class ListScreen(Screens):
             if not the_cat.dead:
                 living_cats.append(the_cat)
 
-        # pages
-        all_pages = int(ceil(len(living_cats) / 24.0)
-                        ) if len(living_cats) > 24 else 1
-
-        # dead cats
+        search_text = game.switches['search_text']
+        pygame.draw.rect(screen, 'lightgray', pygame.Rect((170, 130), (150, 20)))
+        verdana.text('Search: ', (100, 130))
+        verdana_black.text(game.switches['search_text'], (180, 130))
+        search_cats = []
+        if search_text.strip() != '':
+            for cat in living_cats:
+                if search_text.lower() in str(cat.name).lower():
+                    search_cats.append(cat)
+        else:
+            search_cats = living_cats.copy()
+        all_pages = int(ceil(len(search_cats) / 24.0)) if len(search_cats) > 24 else 1
         pos_x = 0
         pos_y = 0
         cats_on_page = 0
-        for x in range(len(living_cats)):
-            if x + (game.switches['list_page'] - 1) * 24 >= len(living_cats):
+        for x in range(len(search_cats)):
+            if x + (game.switches['list_page'] - 1) * 24 >= len(search_cats):
                 game.switches['list_page'] -= 1
-            the_cat = living_cats[x + (game.switches['list_page'] - 1) * 24]
+            the_cat = search_cats[x + (game.switches['list_page'] - 1) * 24]
             if not the_cat.dead:
                 buttons.draw_button((130 + pos_x, 180 + pos_y), image=the_cat.sprite, cat=the_cat.ID, cur_screen='profile screen')
 
@@ -1105,7 +1202,7 @@ class ListScreen(Screens):
                 if pos_x >= 600:
                     pos_x = 0
                     pos_y += 100
-                if cats_on_page >= 24 or x + (game.switches['list_page'] - 1) * 24 == len(living_cats) - 1:
+                if cats_on_page >= 24 or x + (game.switches['list_page'] - 1) * 24 == len(search_cats) - 1:
                     break
 
         if game.switches['list_page'] > 1:
@@ -1211,8 +1308,11 @@ class PatrolScreen(Screens):
 
         verdana_small.text('experience: ' + str(game.patrol_cats[game.switches['cat']].experience_level), ('center', 445))
 
+        if game.patrol_cats[game.switches['cat']].status == 'apprentice':
+            verdana_small.text('mentor: ' + str(game.patrol_cats[game.switches['cat']].mentor.name), ('center', 465))
+
         if len(game.switches['current_patrol']) < 6:
-            buttons.draw_button(('center', 490), text='Add to Patrol', current_patrol=game.patrol_cats[game.switches['cat']], add=True)
+            buttons.draw_button(('center', 500), text='Add to Patrol', current_patrol=game.patrol_cats[game.switches['cat']], add=True)
 
     def screen_switches(self):
         game.switches['current_patrol'] = []
@@ -1229,11 +1329,26 @@ class PatrolEventScreen(Screens):
         verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
         if game.switches['event'] == 0:
             verdana.text(str(patrol.patrol_event[1]), ('center', 200))
+            # if patrol.patrol_event[0] == 35:
+            #     patrol_img = pygame.image.load('resources/rogue.png')
+            #     patrol_img = pygame.transform.scale(patrol_img, (340,200))
+            #     screen.blit(patrol_img, (500, 200))
+            # elif patrol.patrol_event[0] == 44:
+            #     patrol_img = pygame.image.load('resources/kittypet.png')
+            #     patrol_img = pygame.transform.scale(patrol_img, (320, 200))
+            #     screen.blit(patrol_img, (500, 200))
+            # elif patrol.patrol_event[0] == 6 or patrol.patrol_event[0] == 7:
+            #     patrol_img = pygame.image.load('resources/fox.png')
+            #     patrol_img = pygame.transform.scale(patrol_img, (320, 200))
+            #     screen.blit(patrol_img, (500, 200))
             buttons.draw_button(('center', 300), text='Proceed', event=1)
             buttons.draw_button(('center', 340), text='Do Not Proceed', event=2)
+            if patrol.patrol_event[0] in patrol.failable_patrols:
+                buttons.draw_button(('center', 380), text='Antagonize', event=3)
         if game.switches['event'] > 0:
-            if game.switches['event'] < 3:
+            if game.switches['event'] < 3 or (game.switches['event'] < 4 and patrol.patrol_event[0] in patrol.failable_patrols):
                 patrol.calculate()
+
             verdana.text(str(patrol.patrol_result_text), ('center', 200))
             buttons.draw_button(('center', 320), text='Return to Clan', cur_screen='clan screen')
 
@@ -1257,7 +1372,8 @@ class PatrolEventScreen(Screens):
 
 class AllegiancesScreen(Screens):
     def on_use(self):
-        # layout
+        verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
+
         verdana_big.text(f'{game.clan.name}Clan Allegiances', (30, 110))
 
         a = 0
@@ -1283,15 +1399,26 @@ class AllegiancesScreen(Screens):
                 living_cats.append(the_cat)
 
         if not game.clan.leader.dead:
-            game.allegiance_list.append(
-                ['LEADER:', f"{str(game.clan.leader.name)} - a {game.clan.leader.describe_cat()}"])
-
+            game.allegiance_list.append(['LEADER:', f"{str(game.clan.leader.name)} - a {game.clan.leader.describe_cat()}"])
+            if len(game.clan.leader.apprentice) > 0:
+                if len(game.clan.leader.apprentice) == 1:
+                    game.allegiance_list.append(['', '      Apprentice: ' + str(game.clan.leader.apprentice[0].name)])
+                else:
+                    app_names = ''
+                    for app in game.clan.leader.apprentice:
+                        app_names += str(app.name) + ', '
+                    game.allegiance_list.append(['', '      Apprentices: ' + app_names[:-2]])
         if game.clan.deputy != 0 and game.clan.deputy is not None and not game.clan.deputy.dead:
-            game.allegiance_list.append(
-                ['DEPUTY:', f"{str(game.clan.deputy.name)} - a {game.clan.deputy.describe_cat()}"])
-        cat_count = self._extracted_from_screen_switches_24(
-            living_cats, 'medicine cat', 'MEDICINE CAT:')
-
+            game.allegiance_list.append(['DEPUTY:', f"{str(game.clan.deputy.name)} - a {game.clan.deputy.describe_cat()}"])
+            if len(game.clan.deputy.apprentice) > 0:
+                if len(game.clan.deputy.apprentice) == 1:
+                    game.allegiance_list.append(['', '      Apprentice: ' + str(game.clan.deputy.apprentice[0].name)])
+                else:
+                    app_names = ''
+                    for app in game.clan.deputy.apprentice:
+                        app_names += str(app.name) + ', '
+                    game.allegiance_list.append(['', '      Apprentices: ' + app_names[:-2]])
+        cat_count = self._extracted_from_screen_switches_24(living_cats, 'medicine cat', 'MEDICINE CAT:')
         queens = []
         for cat in living_cats:
             if str(cat.status) == 'kitten' and cat.parent1 is not None:
@@ -1307,9 +1434,15 @@ class AllegiancesScreen(Screens):
                 if not cat_count:
                     game.allegiance_list.append(['WARRIORS:', f"{str(living_cat__.name)} - a {living_cat__.describe_cat()}"])
                 else:
-                    game.allegiance_list.append(
-                        ['', f"{str(living_cat__.name)} - a {living_cat__.describe_cat()}"])
-
+                    game.allegiance_list.append(['', f"{str(living_cat__.name)} - a {living_cat__.describe_cat()}"])
+                if len(living_cat__.apprentice) > 0:
+                    if len(living_cat__.apprentice) == 1:
+                        game.allegiance_list.append(['', '      Apprentice: ' + str(living_cat__.apprentice[0].name)])
+                    else:
+                        app_names = ''
+                        for app in living_cat__.apprentice:
+                            app_names += str(app.name) + ', '
+                        game.allegiance_list.append(['', '      Apprentices: ' + app_names[:-2]])
                 cat_count += 1
         if not cat_count:
             game.allegiance_list.append(['WARRIORS:', ''])
@@ -1333,6 +1466,14 @@ class AllegiancesScreen(Screens):
                 else:
                     game.allegiance_list.append(['', f"{str(living_cat____.name)} - a {living_cat____.describe_cat()}"])
                 cat_count += 1
+                if len(living_cat____.apprentice) > 0:
+                    if len(living_cat____.apprentice) == 1:
+                        game.allegiance_list.append(['', '      Apprentice: ' + str(living_cat____.apprentice[0].name)])
+                    else:
+                        app_names = ''
+                        for app in living_cat____.apprentice:
+                            app_names += str(app.name) + ', '
+                        game.allegiance_list.append(['', '      Apprentices: ' + app_names[:-2]])
         if not cat_count:
             game.allegiance_list.append(['QUEENS:', ''])
         cat_count = self._extracted_from_screen_switches_24(living_cats, 'elder', 'ELDERS:')
@@ -1350,6 +1491,14 @@ class AllegiancesScreen(Screens):
                 else:
                     game.allegiance_list.append(["", f"{str(living_cat.name)} - a {living_cat.describe_cat()}"])
                 result += 1
+                if len(living_cat.apprentice) > 0:
+                    if len(living_cat.apprentice) == 1:
+                        game.allegiance_list.append(['', '      Apprentice: ' + str(living_cat.apprentice[0].name)])
+                    else:
+                        app_names = ''
+                        for app in living_cat.apprentice:
+                            app_names += str(app.name) + ', '
+                        game.allegiance_list.append(['', '      Apprentices: ' + app_names[:-2]])
         if not result:
             game.allegiance_list.append([arg2, ''])
         return result
@@ -1438,8 +1587,10 @@ class ChooseMentorScreen2(Screens):
         if next_cat == 1:
             next_cat = 0
 
-        buttons.draw_button((-40, 40), text='Next Cat', cat=next_cat)
-        buttons.draw_button((40, 40), text='Previous Cat', cat=previous_cat)
+        if next_cat != 0:
+            buttons.draw_button((-40, 40), text='Next Cat', cat=next_cat)
+        if previous_cat != 0:
+            buttons.draw_button((40, 40), text='Previous Cat', cat=previous_cat)
 
         # Info in string
         cat_name = str(the_cat.name)  # name
@@ -1706,21 +1857,222 @@ class RelationshipEventScreen(Screens):
 
 class OptionsScreen(Screens):
     def on_use(self):
-        verdana_big.text(str(game.switches['cat'].name), ('center', 50))
-        verdana_big.text('Options', ('center', 50))
-        verdana.text('Change Name')
-        verdana.text('Change Mentor')
-        verdana.text('Make Medicine Cat Apprentice')
-        verdana.text('Make Warrior Apprentice')
-        verdana.text('See Family')
-        verdana.text('See Family Tree')
-        verdana.text('Exile from clan')
-        verdana.text('Kill Cat')
-        verdana.text('Choose Mate')
-        verdana.text('Make Deputy')
-        verdana.text('Make Leader')
-        verdana.text('Make Medicine Cat')
-        verdana.text('Disable kits')
+        the_cat = game.switches['cat']
+
+        if type(game.switches['cat']) == str:
+            relevant_list = list(filter(lambda cat: cat.ID == game.switches['cat'], game.clan.clan_cats))
+            # if the cat can't be found in the living ones, check the dead
+            if len(relevant_list) < 1:
+                relevant_list = list(filter(lambda cat: cat.ID == game.switches['cat'], game.clan.starclan_cats))
+            the_cat = relevant_list[0]
+
+        verdana_big.text('Options - ' + str(the_cat.name), ('center', 80))
+        button_count = 0
+        x_value = 'center'
+        y_value = 150
+        y_change = 50
+        buttons.draw_button((x_value, y_value + button_count * y_change), text='Change Name', cur_screen='change name screen')
+        button_count += 1
+        game.switches['name_cat'] = the_cat.ID
+        buttons.draw_button((x_value, y_value + button_count * y_change), text='See Family', cur_screen='see kits screen')
+        button_count += 1
+
+        if the_cat.status == 'apprentice' and not the_cat.dead:
+            game.switches['apprentice'] = the_cat
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Change Mentor', cur_screen='choose mentor screen')
+            button_count += 1
+
+        buttons.draw_button((x_value, y_value + button_count * y_change), text='Family Tree')
+        button_count += 1
+
+        if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Pick mate for ' + str(the_cat.name), cur_screen='choose mate screen')
+            button_count += 1
+
+            if the_cat.age in ['young adult', 'adult', 'senior adult'] and not the_cat.no_kits:
+                buttons.draw_button((x_value, y_value + button_count * y_change), text='Prevent kits', no_kits=True, cat_value=the_cat)
+                button_count += 1
+
+            elif the_cat.age in ['young adult', 'adult', 'senior adult'] and the_cat.no_kits:
+                buttons.draw_button((x_value, y_value + button_count * y_change), text='Allow kits', no_kits=False, cat_value=the_cat)
+                button_count += 1
+
+        if game.switches['new_leader'] is not False and game.switches['new_leader'] is not None:
+            game.clan.new_leader(game.switches['new_leader'])
+        if the_cat.status in ['warrior'] and not the_cat.dead and game.clan.leader.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Promote to Leader', new_leader=the_cat)
+            button_count += 1
+
+        elif the_cat.status in ['warrior'] and not the_cat.dead and game.clan.deputy is None:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Promote to Deputy', deputy_switch=the_cat)
+            button_count += 1
+
+        elif the_cat.status in ['deputy'] and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Demote from Deputy', deputy_switch=the_cat)
+            button_count += 1
+
+        elif the_cat.status in ['warrior'] and not the_cat.dead and game.clan.deputy:
+            if game.clan.deputy.dead:
+                buttons.draw_button((x_value, y_value + button_count * y_change), text='Promote to Deputy', deputy_switch=the_cat)
+                button_count += 1
+
+        if not the_cat.dead:
+            buttons.draw_button((x_value, 650), text='Kill Cat', kill_cat=the_cat)
+
+        buttons.draw_button((x_value, 600), text='Exile Cat')
+
+        if game.switches['deputy_switch'] is not False and game.switches['deputy_switch'] is not None and game.switches['deputy_switch'].status == 'warrior':
+            game.clan.deputy = game.switches['deputy_switch']
+            game.switches['deputy_switch'].status_change('deputy')
+            game.switches['deputy_switch'] = False
+        elif game.switches['deputy_switch'] is not False and game.switches['deputy_switch'] is not None and game.switches['deputy_switch'].status == 'deputy':
+            game.clan.deputy = None
+            game.switches['deputy_switch'].status_change('warrior')
+            game.switches['deputy_switch'] = False
+
+        if game.switches['apprentice_switch'] is not False and game.switches['apprentice_switch'] is not None and game.switches['apprentice_switch'].status == 'apprentice':
+            game.switches['apprentice_switch'].status_change('medicine cat apprentice')
+            game.switches['apprentice_switch'] = False
+
+        if game.switches['apprentice_switch'] is not False and game.switches['apprentice_switch'] is not None and game.switches[
+            'apprentice_switch'].status == 'medicine cat apprentice':
+            game.switches['apprentice_switch'].status_change('apprentice')
+            game.switches['apprentice_switch'] = False
+
+        if game.switches['apprentice_switch'] is not False and game.switches['apprentice_switch'] is not None and game.switches['apprentice_switch'].status == 'warrior':
+            game.switches['apprentice_switch'].status_change('medicine cat')
+            game.switches['apprentice_switch'] = False
+
+        if game.switches['apprentice_switch'] is not False and game.switches['apprentice_switch'] is not None and game.switches['apprentice_switch'].status == 'medicine cat':
+            game.switches['apprentice_switch'].status_change('warrior')
+            game.switches['apprentice_switch'] = False
+
+        if game.switches['kill_cat'] is not False and game.switches['kill_cat'] is not None:
+            events_class.dies(game.switches['kill_cat'])
+            game.switches['kill_cat'] = False
+
+        if the_cat.status in ['apprentice'] and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Switch to medicine cat apprentice', apprentice_switch=the_cat)
+            button_count += 1
+        elif the_cat.status in ['medicine cat apprentice'] and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Switch to warrior apprentice', apprentice_switch=the_cat)
+            button_count += 1
+        elif the_cat.status == 'warrior' and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Switch to medicine cat', apprentice_switch=the_cat)
+            button_count += 1
+        elif the_cat.status == 'medicine cat' and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Switch to warrior', apprentice_switch=the_cat)
+            button_count += 1
+        buttons.draw_button((x_value, y_value + button_count * y_change + 30), text='Back', cur_screen='profile screen')
+
+
+class StatsScreen(Screens):
+    def on_use(self):
+        verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
+        living_num = 0
+        warriors_num = 0
+        app_num = 0
+        kit_num = 0
+        elder_num = 0
+        starclan_num = 0
+        for cat in game.clan.clan_cats:
+            if not cat.dead:
+                living_num += 1
+                if cat.status == 'warrior':
+                    warriors_num += 1
+                elif cat.status in ['apprentice', 'medicine cat apprentice']:
+                    app_num += 1
+                elif cat.status == 'kitten':
+                    kit_num += 1
+                elif cat.status == 'elder':
+                    elder_num += 1
+            else:
+                starclan_num += 1
+
+        verdana.text('Number of Living Cats: ' + str(living_num), (100, 150))
+        verdana.text('Number of Warriors: ' + str(warriors_num), (100, 200))
+        verdana.text('Number of Apprentices: ' + str(app_num), (100, 250))
+        verdana.text('Number of Kits: ' + str(kit_num), (100, 300))
+        verdana.text('Number of Elders: ' + str(elder_num), (100, 350))
+        verdana.text('Number of StarClan Cats: ' + str(starclan_num), (100, 400))
+        draw_menu_buttons()
+        
+class MapScreen(Screens):
+    def on_use(self):
+        hunting_claim = str(game.clan.name) + 'Clan Hunting Grounds'
+        territory_claim = str(game.clan.name) + 'Clan Territory'
+        training_claim = str(game.clan.name) + 'Clan Training Grounds'
+        for y in range(44):
+            for x in range(40):
+                biome = game.map_info[(x,y)][2]
+                if biome == 'Desert':
+                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain1'], (16,16)), map_selection=(x,y))
+                elif biome == 'Forest':
+                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain3'], (16,16)), map_selection=(x,y))
+                elif biome == 'Plains':
+                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain0'], (16,16)), map_selection=(x,y))
+                elif biome == 'Ocean':
+                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain2'], (16,16)), map_selection=(x,y))
+                elif biome == 'Mountainous':
+                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain5'], (16,16)), map_selection=(x,y))
+                elif biome == 'Beach':
+                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terrain6'], (16,16)), map_selection=(x,y))
+                if (x,y) == game.clan.camp_site:
+                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terraintwo0'], (16,16)), map_selection=(x,y))
+                    game.map_info[(x,y)] = [x,y,str(game.switches['biome']), game.clan.name + 'Clan Camp',"Twoleg Activity: none","Thunderpath Traffic: none","Prey Levels: low",str(game.map_info[(x,y)][7])]
+                if (x,y) == game.switches['map_selection']:
+                    if str(game.map_info[(x,y)][3]) == territory_claim:
+                        buttons.draw_button((-16, 450), text='Hunting Grounds',hunting_territory=(x,y))
+                        buttons.draw_button((-16, 500), text='Training Grounds',training_territory=(x,y))
+                if (x,y) == game.switches['hunting_territory']:
+                    territory_biome = str(game.map_info[(x,y)][2])
+                    territory_twolegs = str(game.map_info[(x,y)][4])
+                    territory_thunderpath = str(game.map_info[(x,y)][5])
+                    territory_prey = str(game.map_info[(x,y)][6])
+                    territory_plants = str(game.map_info[(x,y)][7])
+                    if str(game.map_info[(x,y)][3]) != 'Unclaimable':
+                        game.map_info[(x,y)] = [x,y,territory_biome, hunting_claim,territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                elif (x,y) == game.switches['training_territory']:
+                    territory_biome = str(game.map_info[(x,y)][2])
+                    territory_twolegs = str(game.map_info[(x,y)][4])
+                    territory_thunderpath = str(game.map_info[(x,y)][5])
+                    territory_prey = str(game.map_info[(x,y)][6])
+                    territory_plants = str(game.map_info[(x,y)][7])
+                    if str(game.map_info[(x,y)][3]) != 'Unclaimable':
+                        game.map_info[(x,y)] = [x,y,territory_biome, training_claim,territory_twolegs,territory_thunderpath,territory_prey,territory_plants]
+                if game.map_info[(x,y)][3] == hunting_claim:
+                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terraintwo1'], (16,16)))
+                    game.switches['hunting_territory'] = (x,y)
+                elif game.map_info[(x,y)][3] == territory_claim:
+                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terraintwo2'], (16,16)))
+                elif game.map_info[(x,y)][3] == training_claim:
+                    buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terraintwo3'], (16,16)))
+                for clan in game.clan.all_clans:
+                    camp_claim = str(clan) + " Camp"
+                    other_territory = str(clan) + " Territory"
+                    if game.map_info[(x,y)][3] == camp_claim:
+                        if game.map_info[(x,y)][2] == "Ocean":
+                            game.map_info[(x,y)] = [x,y,game.map_info[(x,y)][2],"Unclaimable",game.map_info[(x,y)][4],game.map_info[(x,y)][5],game.map_info[(x,y)][6],game.map_info[(x,y)][7]]
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terraintwo4'], (16,16)))
+                    elif game.map_info[(x,y)][3] == other_territory:
+                        buttons.draw_button((x*16,y*16),image=pygame.transform.scale(tiles.sprites['terraintwo4'], (16,16)))
+        verdana_big.text('Map', (-16, 50))
+        verdana.text(str(game.map_info[game.switches['map_selection']][0])+", "+str(game.map_info[game.switches['map_selection']][1]), (-16, 100))
+        verdana.text(str(game.map_info[game.switches['map_selection']][2]), (-16, 150))
+        verdana.text(str(game.map_info[game.switches['map_selection']][3]), (-16, 200))
+        verdana.text(str(game.map_info[game.switches['map_selection']][4]), (-16, 250))
+        verdana.text(str(game.map_info[game.switches['map_selection']][5]), (-16, 300))
+        verdana.text(str(game.map_info[game.switches['map_selection']][6]), (-16, 350))
+        verdana.text(str(game.map_info[game.switches['map_selection']][7]), (-16, 400))
+        
+        buttons.draw_button((-16, -56), text='<< Back', cur_screen=game.switches['last_screen'])
+    def screen_switches(self):
+        try:
+            game.map_info = load_map('saves/'+game.clan.name)
+            print("Map loaded.")
+        except:
+            game.map_info = load_map("Fallback")
+            print("Default map loaded.")
 
 
 # SCREENS
@@ -1751,10 +2103,10 @@ change_name_screen = ChangeNameScreen('change name screen')
 relationship_screen = RelationshipScreen('relationship screen')
 relationship_event_screen = RelationshipEventScreen(
     'relationship event screen')
-
-
-# options_screen = OptionsScreen('options screen')
-
+option_screen = OptionsScreen('options screen')
+language_screen = LanguageScreen('language screen')
+stats_screen = StatsScreen('stats screen')
+map_screen = MapScreen('map screen')
 
 # CAT PROFILES
 def cat_profiles():
@@ -1774,3 +2126,5 @@ def draw_menu_buttons():
     buttons.draw_button((50, 50), text='< Back to Main Menu', cur_screen='start screen')
     buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
     buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
+    buttons.draw_button((-70, 110), text='Map', cur_screen='map screen', available=mapavailable)
+    buttons.draw_button((50, 80), text='Stats', cur_screen='stats screen')

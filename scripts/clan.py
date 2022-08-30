@@ -3,6 +3,11 @@ import json
 from tkinter.messagebox import NO
 from .cats import *
 from .text import *
+try:
+    from .world import *
+    mapavailable = True
+except:
+    mapavailable = False
 from .relationship import *
 from sys import exit
 import os
@@ -39,7 +44,7 @@ class Clan(object):
     current_season = 'Newleaf'
     all_clans = []
 
-    def __init__(self, name="", leader=None, deputy=None, medicine_cat=None):
+    def __init__(self, name="", leader=None, deputy=None, medicine_cat=None, biome='Forest', world_seed=6616, camp_site=(20,22)):
         if name != "":
             self.clan_cats = []
             self.starclan_cats = []
@@ -63,6 +68,9 @@ class Clan(object):
             self.age = 0
             self.current_season = 'Newleaf'
             self.instructor = None  # This is the first cat in starclan, to "guide" the other dead cats there.
+            self.biome = biome
+            self.world_seed = world_seed
+            self.camp_site = camp_site
 
     def create_clan(self):
         """ This function is only called once a new clan is created in the 'clan created' screen, not every time
@@ -93,6 +101,9 @@ class Clan(object):
             cat.thoughts()
 
         self.save_clan()
+        self.load_clan()
+        if mapavailable:
+            save_map(game.map_info, game.clan.name)      
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats."""
@@ -155,6 +166,18 @@ class Clan(object):
                 "temperament": otherclan.temperament
             })
 
+        data = data + self.instructor.ID + '\n'
+
+        for a in range(len(self.clan_cats)):
+            if a == len(self.clan_cats) - 1:
+                data = data + self.clan_cats[a]
+            elif self.clan_cats[a] in cat_class.all_cats.keys():
+                data = data + self.clan_cats[a] + ','
+        data = data + '\n'
+        for a, other_clan in enumerate(self.all_clans):
+            if a:
+                data = f"{data},"
+            data = data + str(other_clan.name) + ";" + str(other_clan.relations) + ";" + str(other_clan.temperament)
 
         data = {
             "name": self.name,
@@ -345,7 +368,7 @@ class Clan(object):
             game.clan.instructor.update_sprite()
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
-        if other_clans and other_clans[0]:
+        if other_clans != [""]:
             for other_clan in other_clans:
                 other_clan_info = other_clan.split(';')
                 game.clan.all_clans.append(OtherClan(other_clan_info[0], other_clan_info[1], other_clan_info[2]))

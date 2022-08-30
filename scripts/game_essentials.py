@@ -1,4 +1,6 @@
 import pygame
+from ast import literal_eval
+from os import path
 
 screen_x = 800
 screen_y = 700
@@ -18,6 +20,8 @@ class Game(object):
     allegiance_scroll_ct = 0
     cur_events_list = []
     allegiance_list = []
+    language = {}
+    language_list = ['english','spanish','german']
     relation_events_list = []
 
     down = pygame.image.load("sprites/down.png")
@@ -34,15 +38,17 @@ class Game(object):
     switches = {'cat': None, 'clan_name': '', 'leader': None, 'deputy': None, 'medicine_cat': None, 'members': [], 'event': None, 'cur_screen': 'start screen', 'naming_text': '',
                 'timeskip': False, 'mate': None, 'setting': None, 'save_settings': False, 'list_page': 1, 'last_screen': 'start screen', 'events_left': 0, 'save_clan': False,
                 'new_leader': False, 'apprentice_switch': False, 'deputy_switch': False, 'clan_list': '', 'switch_clan': False, 'read_clans': False, 'kill_cat': False,
-                'current_patrol': [], 'error_message': '', 'apprentice': None, 'change_name': '', 'name_cat': None}
+                'current_patrol': [], 'error_message': '', 'apprentice': None, 'change_name': '', 'name_cat': None, 'biome': None, 'language': 'english', 'search_text': '', 'map_selection': (0,0), 'world_seed': None, 'camp_site': (0,0), 'choosing_camp': False, 'hunting_territory': (0,0), 'training_territory': (0,0)}
     all_screens = {}
     cur_events = {}
+    map_info = {}
 
     # SETTINGS
     settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False, 'dark mode': False, 'backgrounds': True, 'autosave': False, 'disasters': False,
-                'retirement': True}  # The current settings
+                'retirement': True, 'language': 'english'}  # The current settings
     setting_lists = {'no gendered breeding': [False, True], 'text size': ['0', '1', '2'], 'no unknown fathers': [False, True], 'dark mode': [False, True],
-                     'backgrounds': [True, False], 'autosave': [False, True], 'disasters': [False, True], 'retirement': [True, False]}  # Lists of possible options for each setting
+                     'backgrounds': [True, False], 'autosave': [False, True], 'disasters': [False, True], 'retirement': [True, False],
+                     'language': language_list}  # Lists of possible options for each setting
     settings_changed = False
 
     # CLAN
@@ -117,6 +123,18 @@ class Game(object):
                     self.settings[parts[0]] = None
                 else:
                     self.settings[parts[0]] = parts[1]
+
+        self.switches['language'] = self.settings['language']
+        if self.settings['language'] != 'english':
+            self.switch_language()
+
+
+    def switch_language(self):
+        #add translation information here
+        if path.exists('languages/' + game.settings['language'] + '.txt'):
+            with open('languages/' + game.settings['language'] + '.txt', 'r') as read_file:
+                raw_language = read_file.read()
+            game.language = literal_eval(raw_language)
 
     def switch_setting(self, setting_name):
         """ Call this function to change a setting given in the parameter by one to the right on it's list """

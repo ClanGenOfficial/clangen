@@ -18,6 +18,7 @@ class Events(object):
 
     def one_moon(self):
         if game.switches['timeskip']:
+            game.switches['save_clan'] = False
             self.living_cats = 0
             self.check_clan_relations()
             for cat in game.clan.clan_cats:
@@ -53,6 +54,7 @@ class Events(object):
         self.other_interactions(cat)
         self.gain_scars(cat)
         self.handle_deaths(cat)
+        self.check_age(cat)
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0:
@@ -100,6 +102,9 @@ class Events(object):
                     cat.status_change('elder')
                     game.clan.deputy = None
                     game.cur_events_list.append(f'The deputy {str(cat.name)} has retired to the elder den')
+            if cat.status in ['warrior', 'deputy'] and cat.age == 'elder' and len(cat.apprentice) < 1:
+                cat.status_change('elder')
+                game.cur_events_list.append(f'{str(cat.name)} has retired to the elder den')
 
     # TODO Rename this here and in `perform_ceremonies`
     def _extracted_from_perform_ceremonies_19(self, cat, arg1, arg2):
@@ -157,12 +162,11 @@ class Events(object):
     def invite_new_cats(self, cat):
         chance = 100
         if self.living_cats < 10:
-            chance = 50
+            chance = 100
         elif self.living_cats > 50:
-            chance = 500
+            chance = 700
         elif self.living_cats > 30:
-            chance = 200
-
+            chance = 300
         if randint(1, chance) == 1 and cat.age != 'kitten':
             name = str(cat.name)
             type_of_new_cat = choice([1, 2, 3, 4, 5, 6])
@@ -178,8 +182,11 @@ class Events(object):
                 kit_text = [f'{name} finds an abandoned kit and names them {str(kit.name)}',
                             f'A loner brings their kit named {str(kit.name.prefix)} to the clan, stating they no longer can care for them']
                 game.cur_events_list.append(choice(kit_text))
+                self.check_age(kit)
+
             elif type_of_new_cat == 2:
                 self._extracted_from_invite_new_cats_19(name)
+
             elif type_of_new_cat == 3:
                 loner = Cat(status='warrior', moons=randint(12, 120))
                 #create and update relationships
@@ -190,9 +197,11 @@ class Events(object):
                 loner.relationships = relationships
                 loner.skill = 'formerly a loner'
                 game.clan.add_cat(loner)
-                loner_text = [f'{name} finds a loner who joins the clan. They change their name to {str(loner.name)}',
-                              f'A loner says that they are interested in clan life. They join, changing their name to {str(loner.name)}']
+                loner_text = [f'{name} finds a loner who joins the clan', f'A loner says that they are interested in clan life and joins the clan']
                 game.cur_events_list.append(choice(loner_text))
+                game.cur_events_list.append('The loner changes their name to ' + str(loner.name))
+                self.check_age(loner)
+
             elif type_of_new_cat == 4:
                 warrior = Cat(status='warrior', moons=randint(12, 150))
                 #create and update relationships
@@ -209,6 +218,8 @@ class Events(object):
                 else:
                     warrior_text.extend([f'{name} finds a warrior from a different clan named {str(warrior.name)} who asks to join the clan'])
                 game.cur_events_list.append(choice(warrior_text))
+                self.check_age(warrior)
+
             elif type_of_new_cat == 5:
                 self._extracted_from_invite_new_cats_47(name)
             elif type_of_new_cat == 6:
@@ -220,8 +231,10 @@ class Events(object):
                     relationships.append(Relationship(loner,cat))
                 loner.relationships = relationships
                 self._extracted_from_invite_new_cats_59(loner)
-                loner_text = [f'{name} finds a kittypet named {choice(names.loner_names)} who wants to join the clan. They change their name to {str(loner.name)}']
+                loner_text = [f'{name} finds a kittypet named {choice(names.loner_names)} who wants to join the clan']
                 game.cur_events_list.append(choice(loner_text))
+                game.cur_events_list.append('The kittypet changes their name to ' + str(loner.name))
+                self.check_age(loner)
 
     # TODO Rename this here and in `invite_new_cats`
     def _extracted_from_invite_new_cats_59(self, loner):
@@ -229,6 +242,7 @@ class Events(object):
         if choice([1, 2]) == 1:
             loner.specialty2 = choice(scars3)
         game.clan.add_cat(loner)
+        self.check_age(loner)
 
     # TODO Rename this here and in `invite_new_cats`
     def _extracted_from_invite_new_cats_47(self, name):
@@ -241,9 +255,9 @@ class Events(object):
             relationships.append(Relationship(loner,cat))
         loner.relationships = relationships
         self._extracted_from_invite_new_cats_59(loner)
-        loner_text = [f'{name} finds a kittypet named {str(loner_name)} who wants to join the clan. They decide to keep their name',
-                      f'A kittypet named {str(loner_name)} stops {name} and asks to join the clan']
+        loner_text = [f'{name} finds a kittypet named {str(loner_name)} who wants to join the clan', f'A kittypet named {str(loner_name)} stops {name} and asks to join the clan']
         game.cur_events_list.append(choice(loner_text))
+        game.cur_events_list.append(str(loner_name) + ' decides to keep their name')
 
     # TODO Rename this here and in `invite_new_cats`
     def _extracted_from_invite_new_cats_19(self, name):
@@ -257,9 +271,11 @@ class Events(object):
             relationships.append(Relationship(loner,cat))
         loner.relationships = relationships
         game.clan.add_cat(loner)
-        loner_text = [f'{name} finds a loner named {str(loner.name)} who joins the clan. They decide to keep their name',
+        loner_text = [f'{name} finds a loner named {str(loner.name)} who joins the clan',
                       f'A loner named {str(loner.name)} waits on the border for a patrol, asking to join the clan']
         game.cur_events_list.append(choice(loner_text))
+        game.cur_events_list.append(str(loner_name) + ' decides to keep their name')
+        self.check_age(loner)
 
     def other_interactions(self, cat):
         if randint(1, 50) != 1:
@@ -305,7 +321,7 @@ class Events(object):
         game.cur_events_list.append(choice(interactions))
 
     def handle_deaths(self, cat):
-        if randint(1, 300) == 1:
+        if randint(1, 400) == 1:
             name = str(cat.name)
             cause_of_death = [name + ' was murdered', name + ' died of greencough', 'A tree fell in camp and killed ' + name, name + ' was found dead near a fox den']
             if cat.status == 'kitten':
@@ -316,9 +332,19 @@ class Events(object):
                                            name + ' disappeared from the nursery and was found dead in the territory'])
                 if game.clan.current_season == 'Greenleaf':
                     cause_of_death.extend([name + ' died to overheating'])
+                if game.clan.biome == "Beach":
+                    cause_of_death.extend([name + ' tried to play in the ocean and was taken away by the tides', name + ' was picked up and dropped to their death by a seagull'])
             elif cat.status == 'apprentice':
                 cause_of_death.extend([name + ' died in a training accident', name + ' was killed by enemy warriors after accidentally wandering over the border',
                                        name + ' went missing and was found dead', name + ' died in a border skirmish'])
+                if game.clan.biome == "Forest":
+                    cause_of_death.extend([name + ' was crushed by a falling tree', name + ' was killed by a badger'])
+                if game.clan.biome == "Mountainous":
+                    cause_of_death.extend([name + ' was crushed to death by an avalanche', name + ' fell from a cliff and died'])
+                if game.clan.biome == "Plains":
+                    cause_of_death.extend([name + ' was bitten by a rattlesnake and died', name + ' was caught in a twoleg farm monster and mangled to death'])
+                if game.clan.biome == "Beach":
+                    cause_of_death.extend([name + ' was washed out to sea and drowned', name + ' was poisoned by a sea creature and died'])
             elif cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader':
                 if len(game.clan.all_clans) > 0:
                     cause_of_death.append(name + ' was found dead near the ' + choice(game.clan.all_clans).name + 'Clan border')
@@ -326,6 +352,14 @@ class Events(object):
                 if self.at_war:
                     cause_of_death.extend([name + ' was killed by enemy ' + self.enemy_clan + ' warriors', name + ' was killed by enemy ' + self.enemy_clan + ' warriors',
                                            name + ' was killed by enemy ' + self.enemy_clan + ' warriors', name + ' died in a border skirmish'])
+                if game.clan.biome == "Forest":
+                    cause_of_death.extend([name + ' was crushed by a falling tree', name + ' died from their severe wounds after fighting off a badger'])
+                if game.clan.biome == "Mountainous":
+                    cause_of_death.extend([name + ' was crushed to death by an avalanche', name + ' fell from a cliff and died'])
+                if game.clan.biome == "Plains":
+                    cause_of_death.extend([name + ' was bitten by a rattlesnake and died', name + ' was caught in a twoleg farm monster and mangled to death'])
+                if game.clan.biome == "Beach":
+                    cause_of_death.extend([name + ' was washed out to sea and drowned', name + ' was poisoned by a sea creature and died'])
             elif cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice':
                 cause_of_death.extend(['The herb stores were damaged and ' + name + ' was murdered by an enemy warrior'])
                 if self.at_war:
@@ -335,7 +369,7 @@ class Events(object):
                     cause_of_death.extend([name + ' was killed by the ' + self.enemy_clan + ' deputy', name + ' was killed by the ' + self.enemy_clan + ' leader'])
             cat.dies()
             game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old')
-        elif randint(1, 300) == 1:  # multiple deaths
+        elif randint(1, 500) == 1:  # multiple deaths
             name = str(cat.name)
             other_cat = choice(list(game.clan.clan_cats))
             while cat == other_cat or other_cat.dead:
@@ -375,7 +409,13 @@ class Events(object):
                     name4 = str(dead_cats[3].name)
                     name5 = str(dead_cats[4].name)
                     disaster.extend([' drown after the camp becomes flooded', ' are killed in a battle against ' + choice(names.normal_prefixes) + 'Clan',
-                                     ' are killed after a fire rages through the camp', ' are killed in an ambush by a group of rogues', ' go missing in the night'])
+                                     ' are killed after a fire rages through the camp', ' are killed in an ambush by a group of rogues', ' go missing in the night',
+                                     ' are killed after a badger attack', ' die to a greencough outbreak', ' are taken away by twolegs', ' eat poisoned freshkill and die'])
+                    if game.clan.current_season == 'Leaf-bare':
+                        disaster.extend([' die after freezing from a snowstorm', ' starve to death when no prey is found'])
+                    elif game.clan.current_season == 'Greenleaf':
+                        disaster.extend([' die after overheating', ' die after the water dries up from drought'])
+
                     game.cur_events_list.append(name1 + ', ' + name2 + ', ' + name3 + ', ' + name4 + ', and ' + name5 + choice(disaster))
                     for cat in dead_cats:
                         cat.dies()
@@ -407,7 +447,7 @@ class Events(object):
         # Decide randomly if kits will be born, if possible
         if chance != 0:
             hit = randint(0, chance)
-            if self.living_cats > 30:
+            if self.living_cats > 50:
                 hit = randint(0, chance + 20)
             elif self.living_cats < 10:
                 hit = randint(0, chance - 10)
@@ -447,6 +487,20 @@ class Events(object):
                             relationships.append(Relationship(kit,iter_cat))
                     kit.relationships = relationships
                     game.clan.add_cat(kit)
+
+    def check_age(self, cat):
+        if 0 <= cat.moons <= 5:
+            cat.age = 'kitten'
+        elif 6 <= cat.moons <= 11:
+            cat.age = 'adolescent'
+        elif 12 <= cat.moons <= 47:
+            cat.age = 'young adult'
+        elif 48 <= cat.moons <= 95:
+            cat.age = 'adult'
+        elif 96 <= cat.moons <= 119:
+            cat.age = 'senior adult'
+        else:
+            cat.age = 'elder'
 
 
 events_class = Events()

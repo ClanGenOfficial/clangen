@@ -11,6 +11,14 @@ class Font(object):
     # all fonts
     all_fonts = []
 
+    def translate(self, text):
+        #testing
+        #test dictionary
+        if game.language and game.settings['language'] != 'english' and text in game.language.keys():
+            text = game.language[text]
+        return text
+        
+
     def __init__(self, name, size=15, colour=(0, 0, 0)):
         self.name = name
         self.size = size
@@ -23,6 +31,7 @@ class Font(object):
         self.colour = colour
 
     def text(self, text, pos=None, where=used_screen):
+        text = self.translate(text)
         t = self.font.render(text, True, self.colour)
         if pos is not None:
             # setting on or both items in tuple to 'center' centers the text to the screen.
@@ -63,3 +72,4 @@ verdana_red = Font('verdana', colour=(242, 52, 29))
 verdana_small = Font('verdana', 11)
 verdana_baby = Font('verdana', 11, (100, 100, 250))
 verdana_big = Font('verdana', 18)
+verdana_green = Font('verdana', colour='darkgreen')
