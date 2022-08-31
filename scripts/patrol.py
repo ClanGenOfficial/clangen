@@ -270,7 +270,7 @@ class Patrol(object):
                 possible_patrols.extend([
                     PatrolEvent(600, 'r_c tells the patrol to roll in a patch of garlic to diguise their scent while hunting', 'The plan works and their hunt goes well',
                                 'The patrol finds no prey and blame r_c; it seems like all the prey was scared off because of their stench!',
-                                'The patrol ignores r_c\'s odd instructions')])
+                                'The patrol ignores r_c\'s odd instructions', 50, 10)])
             elif self.patrol_random_cat.trait == 'bloodthirsty':
                 possible_patrols.extend([
                     PatrolEvent(605, 'r_c deliberately provokes a border patrol skirmish', 'The other cats in the patrol keep r_c from fighting and no one is hurt',
