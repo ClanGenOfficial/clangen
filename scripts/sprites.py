@@ -153,7 +153,7 @@ for x in [
         'bellcollars', 'bellcollarsextra', 'bowcollars', 'bowcollarsextra',
         'speckledcolours2', 'speckledextra2', 'tabbycolours2', 'tabbyextra2',
         'tortiecolours2', 'tortiesextra2', 'rosettecolours', 'rosetteextra',
-        'smokecolours', 'smokeextra'
+        'smokecolours', 'smokeextra', 'tickedcolors', 'tickedextra'
 ]:
     sprites.spritesheet(f"sprites/{x}.png", x)
 
@@ -256,6 +256,17 @@ for a, i in enumerate(['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER']):
 for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN']):
     sprites.make_group('smokecolours', (a, 0), f'smoke{i}')
     sprites.make_group('smokeextra', (a, 0), f'smokeextra{i}', sprites_y=2)
+    
+for a, i in enumerate(
+    ['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK']):
+    sprites.make_group('tickedcolors', (a, 0), f'ticked{i}')
+    sprites.make_group('tickedextra', (a, 0), f'tickedextra{i}', sprites_y=2)
+for a, i in enumerate(['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER']):
+    sprites.make_group('tickedcolors', (a, 0), f'ticked{i}')
+    sprites.make_group('tickedextra', (a, 0), f'tickedextra{i}', sprites_y=2)
+for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN']):
+    sprites.make_group('tickedcolors', (a, 0), f'ticked{i}')
+    sprites.make_group('tickedextra', (a, 0), f'tickedextra{i}', sprites_y=2)
 
 for a, i in enumerate(
     ['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK']):
