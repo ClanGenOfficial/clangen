@@ -52,8 +52,6 @@ class Sprites(object):
         x_spr = 0
         y_spr = 0
         for x in range(sprites_x * sprites_y):
-            if x % 5 == 0 and name == 'tortie2':
-                print(name + str(x))
             new_sprite = pygame.Surface((self.size, self.size),
                                         pygame.HWSURFACE | pygame.SRCALPHA)
             new_sprite.blit(new_group, (0, 0),
@@ -153,7 +151,8 @@ for x in [
         'bellcollars', 'bellcollarsextra', 'bowcollars', 'bowcollarsextra',
         'speckledcolours2', 'speckledextra2', 'tabbycolours2', 'tabbyextra2',
         'tortiecolours2', 'tortiesextra2', 'rosettecolours', 'rosetteextra',
-        'smokecolours', 'smokeextra', 'tickedcolors', 'tickedextra'
+        'smokecolours', 'smokeextra', 'tickedcolors', 'tickedextra',
+        'whitepatchesryos', 'whitepatchesryosextra'
 ]:
     sprites.spritesheet(f"sprites/{x}.png", x)
 
@@ -203,6 +202,20 @@ sprites.make_group('whitepatches', (0, 2), 'whiteEXTRA')
 sprites.make_group('whiteextra', (0, 2), 'whiteextraEXTRA', sprites_y=2)
 
 for a, i in enumerate(
+    ['TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE']):
+    sprites.make_group('whitepatchesryos', (a, 0), f'white{i}')
+    sprites.make_group('whitepatchesryosextra', (a, 0), f'whiteextra{i}')
+
+for a, i in enumerate(['TAIL', 'BLAZE', 'PRINCE', 'BIB', 'UNDERS', 'PAWS']):
+    sprites.make_group('whitepatchesryos', (a, 1), f'white{i}')
+    sprites.make_group('whitepatchesryosextra', (a, 0), f'whiteextra{i}')
+
+for a, i in enumerate(
+    ['FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES', 'BROKENBLAZE']):
+    sprites.make_group('whitepatchesryos', (a, 2), f'white{i}')
+    sprites.make_group('whitepatchesryosextra', (a, 0), f'whiteextra{i}')
+
+for a, i in enumerate(
     ['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK']):
     sprites.make_group('singlecolours', (a, 0), f'single{i}')
     sprites.make_group('singleextra', (a, 0), f'singleextra{i}', sprites_y=2)
@@ -245,7 +258,7 @@ for a, i in enumerate(['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER']):
 for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN']):
     sprites.make_group('rosettecolours', (a, 0), f'rosette{i}')
     sprites.make_group('rosetteextra', (a, 0), f'rosetteextra{i}', sprites_y=2)
-    
+
 for a, i in enumerate(
     ['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK']):
     sprites.make_group('smokecolours', (a, 0), f'smoke{i}')
@@ -256,7 +269,7 @@ for a, i in enumerate(['PALEGINGER', 'GOLDEN', 'GINGER', 'DARKGINGER']):
 for a, i in enumerate(['LIGHTBROWN', 'BROWN', 'DARKBROWN']):
     sprites.make_group('smokecolours', (a, 0), f'smoke{i}')
     sprites.make_group('smokeextra', (a, 0), f'smokeextra{i}', sprites_y=2)
-    
+
 for a, i in enumerate(
     ['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK']):
     sprites.make_group('tickedcolors', (a, 0), f'ticked{i}')

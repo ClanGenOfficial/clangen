@@ -365,6 +365,8 @@ class Patrol(object):
 
         if self.patrol_event.patrol_id in [500, 501, 510]:  # new loner
             new_status = choice(['apprentice', 'warrior', 'warrior', 'warrior', 'warrior', 'elder'])
+            if self.patrol_event.patrol_id == 501:
+                new_status = 'warrior'
             kit = Cat(status=new_status)
             game.clan.add_cat(kit)
             kit.skill = 'formerly a loner'
