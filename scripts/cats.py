@@ -21,6 +21,7 @@ class Cat(object):
                   'fantastic teacher', 'keen eye', 'smart', 'very smart', 'extremely smart', 'good mediator', 'great mediator', 'excellent mediator', 'clairvoyant', 'prophet']
 
     all_cats = {}  # ID: object
+    other_cats = {} # cats outside the clan
 
     def __init__(self, prefix=None, gender=None, status="kitten", parent1=None, parent2=None, pelt=None, eye_colour=None, suffix=None, ID=None, moons=None, example=False):
         self.gender = gender
@@ -208,6 +209,7 @@ class Cat(object):
 
         self.paralyzed = False
         self.no_kits = False
+        self.exiled = False
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
 

@@ -101,6 +101,9 @@ class Button(object):
                 cat_value.no_kits = True
             elif text == 'Allow kits':
                 cat_value.no_kits = False
+            elif text == 'Exile Cat':
+                cat_class.all_cats[cat_value].exiled = True
+                cat_class.other_cats[cat_value] =  cat_class.all_cats[cat_value]
             elif cat_value is None and arrow is None:
                 self.activate(values)
             elif arrow is None:

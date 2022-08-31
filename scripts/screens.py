@@ -638,6 +638,8 @@ class ProfileScreen(Screens):
             buttons.draw_button((-40, 40), text='Next Cat', cat=next_cat)
         if previous_cat != 0:
             buttons.draw_button((40, 40), text='Previous Cat', cat=previous_cat)
+            
+            
         # Info in string
         cat_name = str(the_cat.name)  # name
         cat_thought = the_cat.thought  # thought
@@ -990,6 +992,61 @@ class ListScreen(Screens):
         living_cats = []
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
+            if not the_cat.dead and not the_cat.exiled:
+                living_cats.append(the_cat)
+
+        search_text = game.switches['search_text']
+        pygame.draw.rect(screen, 'lightgray', pygame.Rect((170, 130), (150, 20)))
+        verdana.text('Search: ', (100, 130))
+        verdana_black.text(game.switches['search_text'], (180, 130))
+        search_cats = []
+        if search_text.strip() != '':
+            for cat in living_cats:
+                if search_text.lower() in str(cat.name).lower():
+                    search_cats.append(cat)
+        else:
+            search_cats = living_cats.copy()
+        all_pages = int(ceil(len(search_cats) / 24.0)) if len(search_cats) > 24 else 1
+        pos_x = 0
+        pos_y = 0
+        cats_on_page = 0
+        for x in range(len(search_cats)):
+            if x + (game.switches['list_page'] - 1) * 24 >= len(search_cats):
+                game.switches['list_page'] -= 1
+            the_cat = search_cats[x + (game.switches['list_page'] - 1) * 24]
+            if not the_cat.dead:
+                buttons.draw_button((130 + pos_x, 180 + pos_y), image=the_cat.sprite, cat=the_cat.ID, cur_screen='profile screen')
+
+                name_len = verdana.text(str(the_cat.name))
+                verdana.text(str(the_cat.name), (155 + pos_x - name_len / 2, 240 + pos_y))
+                cats_on_page += 1
+                pos_x += 100
+                if pos_x >= 600:
+                    pos_x = 0
+                    pos_y += 100
+                if cats_on_page >= 24 or x + (game.switches['list_page'] - 1) * 24 == len(search_cats) - 1:
+                    break
+        verdana.text('page ' + str(game.switches['list_page']) + ' / ' + str(all_pages), ('center', 600))
+
+        if game.switches['list_page'] > 1:
+            buttons.draw_button((300, 600), text='<', list_page=game.switches['list_page'] - 1)
+
+        if game.switches['list_page'] < all_pages:
+            buttons.draw_button((-300, 600), text='>', list_page=game.switches['list_page'] + 1)
+        buttons.draw_button((-70, 130), text='Cats Outside Clans', cur_screen='other screen')
+
+        draw_menu_buttons()
+
+    def screen_switches(self):
+        cat_profiles()
+        
+class OtherScreen(Screens):
+    def on_use(self):
+        verdana_big.text('Cats Outside The Clan', ('center', 30))
+        verdana.text('ALL CATS LIST', ('center', 100))
+        living_cats = []
+        for x in range(len(cat_class.other_cats.values())):
+            the_cat = list(cat_class.other_cats.values())[x]
             if not the_cat.dead:
                 living_cats.append(the_cat)
 
@@ -1031,11 +1088,9 @@ class ListScreen(Screens):
 
         if game.switches['list_page'] < all_pages:
             buttons.draw_button((-300, 600), text='>', list_page=game.switches['list_page'] + 1)
-
+        
+        buttons.draw_button((-70, 130), text='Cats in ' + str(game.clan.name) + 'Clan', cur_screen = 'list screen')
         draw_menu_buttons()
-
-    def screen_switches(self):
-        cat_profiles()
 
 
 # def choose_banner():
@@ -1203,7 +1258,7 @@ class AllegiancesScreen(Screens):
         game.allegiance_list = []
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
-            if not the_cat.dead:
+            if not the_cat.dead and not the_cat.exiled:
                 living_cats.append(the_cat)
         if not game.clan.leader.dead:
             game.allegiance_list.append(['LEADER:', f"{str(game.clan.leader.name)} - a {game.clan.leader.describe_cat()}"])
@@ -1570,7 +1625,7 @@ class OptionsScreen(Screens):
         if not the_cat.dead:
             buttons.draw_button((x_value, 650), text='Kill Cat', kill_cat=the_cat)
 
-        buttons.draw_button((x_value, 600), text='Exile Cat')
+        buttons.draw_button((x_value, 600), text='Exile Cat', cat_value = game.switches['cat'])
 
         if game.switches['deputy_switch'] is not False and game.switches['deputy_switch'] is not None and game.switches['deputy_switch'].status == 'warrior':
             game.clan.deputy = game.switches['deputy_switch']
@@ -1675,6 +1730,7 @@ change_name_screen = ChangeNameScreen('change name screen')
 option_screen = OptionsScreen('options screen')
 language_screen = LanguageScreen('language screen')
 stats_screen = StatsScreen('stats screen')
+other_screen = OtherScreen('other screen')
 
 
 # CAT PROFILES
