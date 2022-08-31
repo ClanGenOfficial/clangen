@@ -252,7 +252,6 @@ class Patrol(object):
                                  PatrolEvent(504, 'r_c finds an abandoned kit whose mother is nowhere to be found', 'The kit is taken back to camp and nursed back to health',
                                              'The kit is taken back to camp, but grows weak and dies a few days later', 'They leave the kit alone', 40, 10)])
 
-        # new kit patrols
         if self.patrol_random_cat.status == 'formerly a loner':
             possible_patrols.extend([PatrolEvent(510, 'r_c finds an old friend of their\'s from when they were a loner', 'r_c invites their friend to join the clan',
                                                  'r_c and their friend reminisce about old times', 'r_c says farewell to their friend and rejoins the patrol')])
@@ -369,21 +368,15 @@ class Patrol(object):
         self.patrol_event = choice(possible_patrols)
 
     def calculate_success(self):
-        if self.patrol_event is not None and self.patrol_event.win_skills is not None:
-            # if patrol contains cats with autowin skill, chance of success is 100
-            # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
-            chance = self.patrol_event.chance_of_success + int(self.patrol_total_experience / 10) if set(self.patrol_skills).isdisjoint(self.patrol_event.win_skills) else 100
-            if randint(0, 100) < chance:
-                self.success = True
-                self.handle_exp_gain()
         if self.patrol_event is None:
             return
         # if patrol contains cats with autowin skill, chance of success is high
         # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
         chance = self.patrol_event.chance_of_success + int(self.patrol_total_experience / 10)
         chance = min(chance, 80)
-        if self.patrol_event.win_skills is not None and not set(self.patrol_skills).isdisjoint(self.patrol_event.win_skills):
-            chance = 90
+        if self.patrol_event.win_skills is not None:
+            if set(self.patrol_skills).isdisjoint(self.patrol_event.win_skills):
+                chance = 90
         c = randint(0, 100)
         if c < chance:
             self.success = True
@@ -465,11 +458,6 @@ class Patrol(object):
 
 
 class PatrolEvent(object):
-    def __init__(self, patrol_id, intro_text, success_text, fail_text, decline_text, chance_of_success, exp, other_clan=None, win_skills=None):
-        if other_clan is None:
-            other_clan = {}
-        if win_skills is None:
-            win_skills = []
 
     def __init__(self, patrol_id, intro_text, success_text, fail_text, decline_text, chance_of_success, exp, other_clan=None, win_skills=None, antagonize_text='',
                  antagonize_fail_text=''):
