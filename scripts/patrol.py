@@ -370,15 +370,17 @@ class Patrol(object):
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
             if randint(0, 5) == 0:  # chance to keep name
-                kit.prefix = choice(names.loner_names)
+                kit.name.prefix = choice(names.loner_names)
+                kit.name.suffix = ''
             if self.patrol_event.patrol_id == 501:
                 num_kits = choice([2, 2, 2, 2, 3, 4])
                 for _ in range(num_kits):
                     kit2 = Cat(status='kitten', moons=0)
-                    game.clan.add_cat(kit)
                     kit2.skill = 'formerly a loner'
                     kit2.parent1 = kit.ID
                     kit2.thought = 'Is looking around the camp with wonder'
+                    game.clan.add_cat(kit2)
+
         elif self.patrol_event.patrol_id in [502, 503, 520]:  # new kittypet
             new_status = choice(['apprentice', 'warrior', 'warrior', 'warrior', 'warrior', 'elder'])
             kit = Cat(status=new_status)
@@ -388,7 +390,8 @@ class Patrol(object):
             if randint(0, 2) == 0:  # chance to add collar
                 kit.specialty2 = choice(scars3)
             if randint(0, 5) == 0:  # chance to keep name
-                kit.prefix = choice(names.loner_names)
+                kit.name.prefix = choice(names.loner_names)
+                kit.name.suffix = ''
 
 
 class PatrolEvent(object):
