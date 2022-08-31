@@ -85,6 +85,24 @@ class Rosette(object):
         else:
             return self.colour + self.length + " rosette"
 
+class Smoke(object):
+    name = "Smoke"
+    sprites = {1: 'smoke', 2: 'white'}
+    white_patches = ['ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY2', 'ANY2',
+                     'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO',
+                     'ANYCREAMY', 'TUXEDOCREAMY', 'LITTLECREAMY', 'VANCREAMY', 'ANY2CREAMY']
+
+    def __init__(self, colour, white, length):
+        self.white = white  # boolean; does cat have white on it or no
+        self.colour = colour
+        self.length = length
+
+    def __repr__(self):
+        if self.white:
+            return f"white and {self.colour}{self.length} smoke"
+        else:
+            return self.colour + self.length + " smoke"
+
 
 class Speckled(object):
     name = "Speckled"
@@ -197,8 +215,8 @@ scars3 = ["CRIMSON", "BLUE", "YELLOW", "CYAN", "RED", "LIME", "GREEN", "RAINBOW"
             "SPIKESBOW", "PINKBOW", "PURPLEBOW", "MULTIBOW"]
 
 pelt_names_F = ["SingleColour", "SingleColour", "TwoColour", "Tabby", "Tortie", "Calico", "Tabby", "TwoColour",
-                "Speckled", "Tabby2", "Speckled2", 'Tortie2', 'Rosette']
-pelt_names_M = ["SingleColour", "SingleColour", "TwoColour", "Tabby", "Tabby", "Speckled", "TwoColour", "Tabby2", "Speckled2", 'Rosette']
+                "Speckled", "Tabby2", "Speckled2", 'Tortie2', 'Rosette', 'Smoke']
+pelt_names_M = ["SingleColour", "SingleColour", "TwoColour", "Tabby", "Tabby", "Speckled", "TwoColour", "Tabby2", "Speckled2", 'Rosette', 'Smoke']
 
 # SPRITE NAMES
 single_colours = ['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK', 'PALEGINGER', 'GOLDEN', 'GINGER',
@@ -259,6 +277,13 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determi
             return Rosette(choice(pelt_colours), white, length)
         else:
             return Rosette(colour, white, length)
+    elif pelt == "Smoke":
+        if colour is None and white is None:
+            return Smoke(choice(pelt_colours), choice([False, True]), length)
+        elif colour is None:
+            return Smoke(choice(pelt_colours), white, length)
+        else:
+            return Smoke(colour, white, length)
     elif pelt == "Tortie":
         if white is None:
             return Tortie(choice([False, True]), length)
