@@ -23,8 +23,11 @@ class Events(object):
             self.check_clan_relations()
             game.patrolled.clear()
             for cat in cat_class.all_cats.copy().values():
-                if not cat.dead:
+                if not cat.dead and not cat.exiled:
                     self._extracted_from_one_moon_7(cat)
+                elif cat.exiled:
+                    cat.moons+=1
+
                 else:
                     cat.dead_for += 1
             cat_class.thoughts()

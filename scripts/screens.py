@@ -1045,9 +1045,9 @@ class OtherScreen(Screens):
         verdana_big.text('Cats Outside The Clan', ('center', 30))
         verdana.text('ALL CATS LIST', ('center', 100))
         living_cats = []
-        for x in range(len(cat_class.other_cats.values())):
-            the_cat = list(cat_class.other_cats.values())[x]
-            if not the_cat.dead:
+        for x in range(len(cat_class.all_cats.values())):
+            the_cat = list(cat_class.all_cats.values())[x]
+            if not the_cat.dead and the_cat.exiled:
                 living_cats.append(the_cat)
 
         search_text = game.switches['search_text']
@@ -1070,7 +1070,7 @@ class OtherScreen(Screens):
                 game.switches['list_page'] -= 1
             the_cat = search_cats[x + (game.switches['list_page'] - 1) * 24]
             if not the_cat.dead:
-                buttons.draw_button((130 + pos_x, 180 + pos_y), image=the_cat.sprite, cat=the_cat.ID, cur_screen='profile screen')
+                buttons.draw_button((130 + pos_x, 180 + pos_y), image=the_cat.sprite, cat=the_cat.ID)
 
                 name_len = verdana.text(str(the_cat.name))
                 verdana.text(str(the_cat.name), (155 + pos_x - name_len / 2, 240 + pos_y))
