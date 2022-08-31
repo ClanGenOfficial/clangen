@@ -159,11 +159,11 @@ class Cat(object):
             # WHITE PATCHES
             if self.pelt.white and self.pelt.white_patches is not None:
                 pelt_choice = randint(0, 10)
-                if pelt_choice == 1 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled'] and self.pelt.colour != 'WHITE':
+                if pelt_choice == 1 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled', 'Tabby2', 'Speckled2'] and self.pelt.colour != 'WHITE':
                     self.white_patches = choice(['COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL'])
-                elif pelt_choice == 1 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled']:
+                elif pelt_choice == 1 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled', 'Tabby2', 'Speckled2']:
                     self.white_patches = choice(['COLOURPOINT', 'RAGDOLL'])
-                elif self.pelt.name in ['Tabby', 'Speckled', 'TwoColour'] and self.pelt.colour == 'WHITE':
+                elif self.pelt.name in ['Tabby', 'Speckled', 'Tabby2', 'Speckled2', 'TwoColour'] and self.pelt.colour == 'WHITE':
                     self.white_patches = choice(['ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY2', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'LIGHTSONG', 'VITILIGO'])
                 else:
                     self.white_patches = choice(self.pelt.white_patches)
@@ -173,7 +173,7 @@ class Cat(object):
             # pattern for tortie/calico cats
             if self.pelt.name == 'Calico':
                 self.pattern = choice(calico_pattern)
-            elif self.pelt.name == 'Tortie':
+            elif self.pelt.name == 'Tortie' or self.pelt.name == 'Tortie2':
                 self.pattern = choice(tortie_pattern)
             else:
                 self.pattern = None
@@ -1071,7 +1071,7 @@ class Cat(object):
         # draw colour & style
         new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
-        if self.pelt.name not in ['Tortie', 'Calico']:
+        if self.pelt.name not in ['Tortie', 'Calico', 'Tortie2']:
             if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
                 new_sprite.blit(sprites.sprites[self.pelt.sprites[1] + 'extra' + self.pelt.colour + str(self.age_sprites[self.age])], (0, 0))
             else:

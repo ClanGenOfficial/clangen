@@ -19,8 +19,8 @@ class Name(object):
         "splash", "splashed", "spot", "spots", "spring", "stalk", "stem", "step", "stone", "storm", "streak", "stream", "strike", "stripe", "sun", "swipe", "swoop", "tail", "tree",
         "throat", "tuft", "watcher", "water", "whisper", "willow", "wind", "wing", "wish"]
 
-    pelt_suffixes = {'TwoColour': ['patch', 'spot', 'splash', 'patch', 'spots'], 'Tabby': ['stripe', 'feather', 'leaf', 'stripe', 'shade'],
-                     'Speckled': ['dapple', 'speckle', 'spot', 'speck'], 'Tortie': ['dapple', 'speckle', 'spot', 'dapple'], 'Calico': ['stripe', 'dapple', 'patch', 'patch']}
+    pelt_suffixes = {'TwoColour': ['patch', 'spot', 'splash', 'patch', 'spots'], 'Tabby': ['stripe', 'feather', 'leaf', 'stripe', 'shade'], 'Tabby2': ['stripe', 'feather', 'leaf', 'stripe', 'shade'],
+                     'Speckled': ['dapple', 'speckle', 'spot', 'speck'], 'Speckled2': ['dapple', 'speckle', 'spot', 'speck'], 'Tortie': ['dapple', 'speckle', 'spot', 'dapple'], 'Tortie2': ['dapple', 'speckle', 'spot', 'dapple'], 'Calico': ['stripe', 'dapple', 'patch', 'patch']}
 
     normal_prefixes = ['Acorn', 'Adder', 'Alder', 'Amber', 'Ant', 'Antler', 'Apple', 'Apricot', 'Arc', 'Arch', 'Ash', 'Ashen', 'Aspen', 'Aster', 'Aster', 'Badger', 'Bark',
                        'Barley', 'Barley', 'Basil', 'Bass', 'Bat', 'Bay', 'Bayou', 'Beam', 'Beaver', 'Bee', 'Beech', 'Beetle', 'Berry', 'Big', 'Birch', 'Bird', 'Bite', 'Bitter',

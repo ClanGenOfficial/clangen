@@ -264,9 +264,6 @@ class Patrol(object):
                                                  'r_c and their friend reminisce about old times', 'r_c says farewell to their friend and rejoins the patrol')])
 
         # trait specific patrols
-        # traits = [
-        #      ' 'compassionate', 'childish', 'confident', 'careful',
-        #      'altruistic', 'bold', 'patient', 'responsible', 'sneaky', 'wise']
 
         if len(self.patrol_cats) > 1:
             if self.patrol_random_cat.trait == 'strange':
@@ -278,71 +275,7 @@ class Patrol(object):
                 possible_patrols.extend([
                     PatrolEvent(605, 'r_c deliberately provokes a border patrol skirmish', 'The other cats in the patrol keep r_c from fighting and no one is hurt',
                                 'r_c is injured by the enemy patrol', 'r_c decides to back down by themselves', 50, 10, win_skills=['great speaker', 'fantastic speaker'])])
-            elif self.patrol_random_cat.trait == 'ambitious':
-                possible_patrols.extend([
-                    PatrolEvent(610, 'r_c decides to practice their leadership skills and takes charge of the patrol', 'The patrol goes smoothly under r_c\'s guidance',
-                                'The patrol is disorganized under r_c\'s leadership',
-                                'r_c decides not to lead the patrol')])  # elif self.patrol_random_cat.trait == 'loyal':  #     possible_patrols.extend([  #         PatrolEvent(
-                #       #        610,  #             'r_c deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting  #
-                #       and no one  #        is hurt',  #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )
-                #     ])  # elif   #        self.patrol_random_cat.trait == 'righteous':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,
-                #             'r_c   #        deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is
-                #             hurt',    #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  #  #
-                #             elif   #             self.patrol_random_cat.trait == 'fierce':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,
-                #             'r_c   #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no  #
-                #             one is hurt',    #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])
-                # elif   #             self.patrol_random_cat.trait == 'nervous':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,
-                #             'r_c   #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no  #
-                #             one is hurt',    #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])
-                # elif   #             self.patrol_random_cat.trait == 'strict':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  # elif   #  #
-                #             self.patrol_random_cat.trait == 'charismatic':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c   #
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  # elif   #  #
-                #             self.patrol_random_cat.trait == 'calm':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c   #  #
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  # elif   #  #
-                #             self.patrol_random_cat.trait == 'daring':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c   #  #
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  # elif   #  #
-                #             self.patrol_random_cat.trait == 'loving':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c   #  #
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  # elif   #  #
-                #             self.patrol_random_cat.trait == 'playful':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c   #  #
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  # elif   #  #
-                #             self.patrol_random_cat.trait == 'lonesome':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c   #  #
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  # elif   #  #
-                #             self.patrol_random_cat.trait == 'cold':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c   #  #
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  # elif   #  #
-                #             self.patrol_random_cat.trait == 'insecure':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c   #  #
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  # elif   #  #
-                #             self.patrol_random_cat.trait == 'vengeful':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c   #  #
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  # elif   #  #
-                #             self.patrol_random_cat.trait == 'shameless':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c   #
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  # elif   #  #
-                #             self.patrol_random_cat.trait == 'faithful':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c   #  #
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  # elif   #  #
-                #             self.patrol_random_cat.trait == 'troublesome':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c   #
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  # elif   #  #
-                #             self.patrol_random_cat.trait == 'empathetic':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c   #
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  # elif   #  #
-                #             self.patrol_random_cat.trait == 'adventurous':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c   #
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])  # elif   #  #
-                #             self.patrol_random_cat.trait == 'thoughtful':  #     possible_patrols.extend([  #         PatrolEvent(  #             610,  #             'r_c   #
-                #             deliberately provokes a border patrol skirmish',  #             'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                #             'r_c is injured by the enemy patrol',  #             'r_c decides to back down by themselves'  #         )  #     ])
-
+           
         # biome specific patrols
         #
         # will add here
@@ -384,16 +317,17 @@ class Patrol(object):
             self.add_new_cats()
         else:
             self.success = False
-            self.handle_exp_loss()
+            # self.handle_exp_loss()
             self.handle_deaths()
             self.handle_scars()
 
     def handle_exp_gain(self):
         if self.success:
             for cat in self.patrol_cats:
-                cat.experience = self.patrol_event.exp + 6 // len(self.patrol_cats)
+                cat.experience = cat.experience + self.patrol_event.exp + 6 // len(self.patrol_cats)
                 cat.experience = min(cat.experience, 80)
                 cat.experience_level = self.experience_levels[floor(cat.experience / 10)]
+
 
     def handle_exp_loss(self):
         for cat in self.patrol_cats:

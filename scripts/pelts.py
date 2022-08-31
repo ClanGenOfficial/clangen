@@ -49,6 +49,24 @@ class Tabby(object):
         else:
             return self.colour + self.length + " tabby"
 
+class Tabby2(object):
+    name = "Tabby2"
+    sprites = {1: 'tabby2', 2: 'white'}
+    white_patches = ['ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY2', 'ANY2',
+                     'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO',
+                     'ANYCREAMY', 'TUXEDOCREAMY', 'LITTLECREAMY', 'VANCREAMY', 'ANY2CREAMY']
+
+    def __init__(self, colour, white, length):
+        self.white = white  # boolean; does cat have white on it or no
+        self.colour = colour
+        self.length = length
+
+    def __repr__(self):
+        if self.white:
+            return f"white and {self.colour}{self.length} bengal"
+        else:
+            return self.colour + self.length + " bengal"
+
 
 class Speckled(object):
     name = "Speckled"
@@ -67,6 +85,24 @@ class Speckled(object):
             return f"white and {self.colour} speckled{self.length}"
         else:
             return f"{self.colour} speckled{self.length}"
+        
+class Speckled2(object):
+    name = "Speckled2"
+    sprites = {1: 'speckled2', 2: 'white'}
+    white_patches = ['ANY', 'TUXEDO', 'LITTLE', 'ANY', 'TUXEDO', 'LITTLE', 'ANY2', 'ANY2',
+                     'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO',
+                     'ANYCREAMY', 'TUXEDOCREAMY', 'LITTLECREAMY', 'ANY2CREAMY']
+
+    def __init__(self, colour, white, length):
+        self.white = white  # boolean; does cat have white on it or no
+        self.colour = colour
+        self.length = length
+
+    def __repr__(self):
+        if self.white:
+            return f"white and {self.colour} bengal{self.length}"
+        else:
+            return f"{self.colour} bengal{self.length}"
 
 
 class Tortie(object):
@@ -87,6 +123,23 @@ class Tortie(object):
         else:
             return f"tortoiseshell{self.length}"
 
+class Tortie2(object):
+    name = "Tortie2"
+    sprites = {1: 'tortie2', 2: 'white'}
+    white_patches = ['TUXEDO', 'LITTLE', 'TUXEDO', 'LITTLE', None, 'EXTRA',
+                     'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO',
+                     'TUXEDOCREAMY', 'LITTLECREAMY']
+
+    def __init__(self, white, length):
+        self.white = white  # boolean; does cat have white on it or no
+        self.colour = choice(["BLACK", "GINGER"])
+        self.length = length
+
+    def __repr__(self):
+        if self.white:
+            return f"white and bengal{self.length}"
+        else:
+            return f"bengal{self.length}"
 
 class Calico(object):
     name = "Calico"
@@ -126,8 +179,8 @@ scars3 = ["CRIMSON", "BLUE", "YELLOW", "CYAN", "RED", "LIME", "GREEN", "RAINBOW"
             "SPIKESBOW", "PINKBOW", "PURPLEBOW", "MULTIBOW"]
 
 pelt_names_F = ["SingleColour", "SingleColour", "TwoColour", "Tabby", "Tortie", "Calico", "Tabby", "TwoColour",
-                "Speckled"]
-pelt_names_M = ["SingleColour", "SingleColour", "TwoColour", "Tabby", "Tabby", "Speckled", "TwoColour"]
+                "Speckled", "Tabby2", "Speckled2", 'Tortie2']
+pelt_names_M = ["SingleColour", "SingleColour", "TwoColour", "Tabby", "Tabby", "Speckled", "TwoColour", "Tabby2", "Speckled2",]
 
 # SPRITE NAMES
 single_colours = ['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK', 'PALEGINGER', 'GOLDEN', 'GINGER',
@@ -174,11 +227,23 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determi
             return Tabby(choice(pelt_colours), white, length)
         else:
             return Tabby(colour, white, length)
+    elif pelt == "Tabby2":
+        if colour is None and white is None:
+            return Tabby2(choice(pelt_colours), choice([False, True]), length)
+        elif colour is None:
+            return Tabby2(choice(pelt_colours), white, length)
+        else:
+            return Tabby2(colour, white, length)
     elif pelt == "Tortie":
         if white is None:
             return Tortie(choice([False, True]), length)
         else:
             return Tortie(white, length)
+    elif pelt == "Tortie2":
+        if white is None:
+            return Tortie2(choice([False, True]), length)
+        else:
+            return Tortie2(white, length)
     elif pelt == "Speckled":
         if colour is None and white is None:
             return Speckled(choice(pelt_colours), choice([False, True]), length)
@@ -186,5 +251,12 @@ def choose_pelt(gender, colour=None, white=None, pelt=None, length=None, determi
             return Speckled(choice(pelt_colours), white, length)
         else:
             return Speckled(colour, white, length)
+    elif pelt == "Speckled2":
+        if colour is None and white is None:
+            return Speckled2(choice(pelt_colours), choice([False, True]), length)
+        elif colour is None:
+            return Speckled2(choice(pelt_colours), white, length)
+        else:
+            return Speckled2(colour, white, length)
     elif pelt == "Calico":
         return Calico(length)
