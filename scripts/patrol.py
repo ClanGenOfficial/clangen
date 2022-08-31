@@ -277,7 +277,7 @@ class Patrol(object):
             elif self.patrol_random_cat.trait == 'bloodthirsty':
                 possible_patrols.extend([
                     PatrolEvent(605, 'r_c deliberately provokes a border patrol skirmish', 'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                                'r_c is injured by the enemy patrol', 'r_c decides to back down by themselves')])
+                                'r_c is injured by the enemy patrol', 'r_c decides to back down by themselves', 50, 10, win_skills=['great speaker', 'fantastic speaker'])])
             elif self.patrol_random_cat.trait == 'ambitious':
                 possible_patrols.extend([
                     PatrolEvent(610, 'r_c decides to practice their leadership skills and takes charge of the patrol', 'The patrol goes smoothly under r_c\'s guidance',
@@ -443,7 +443,7 @@ class Patrol(object):
                     kit2 = Cat(status='kitten', moons=0)
                     game.clan.add_cat(kit)
                     kit2.skill = 'formerly a loner'
-                    kit2.parent1 = kit
+                    kit2.parent1 = kit.ID
                     kit2.thought = 'Is looking around the camp with wonder'
         elif self.patrol_event.patrol_id in [502, 503, 520]:  # new kittypet
             new_status = choice(['apprentice', 'warrior', 'warrior', 'warrior', 'warrior', 'elder'])
