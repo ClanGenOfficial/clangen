@@ -1438,13 +1438,17 @@ class Cat(object):
             color_name = 'light brown'
         elif color_name == 'darkbrown':
             color_name = 'dark brown'
-            #adding descriptions for the not-technically-smoke pelts
         if color_name == 'silver' and self.pelt.name == "Smoke":
             color_name = 'lilac shaded'
         elif color_name == 'white' and self.pelt.name == "Smoke":
             color_name = 'black tipped white'
         elif color_name == 'pale grey' and self.pelt.name == "Smoke":
             color_name = 'blue shaded'
+         #fixing descs of non-smoke smokes
+        elif self.pelt.name == "Smoke":
+            color_name = color_name + ' smoke'
+        elif self.pelt.name == "Smoke" and color_name != ['lilac shaded', 'blue shaded', 'black tipped white']:
+            color_name = color_name
         if self.pelt.name == "Tabby":
             color_name = color_name + ' tabby'
         elif self.pelt.name == "Tabby2":
@@ -1455,16 +1459,13 @@ class Cat(object):
             color_name = color_name + ' bengal'
         elif self.pelt.name == "Ticked":
             color_name = color_name + ' ticked tabby'
-        if self.pelt.name == "Smoke" and color_name != ['lilac shaded', 'blue shaded', 'black tipped white']:
-            color_name = color_name
-        elif self.pelt.name == "Smoke":
-            color_name = color_name + ' smoke'
         elif self.pelt.name == "Rosette":
             color_name = color_name + ' rosetted'
         elif self.pelt.name == "Tortie" or self.pelt.name == "Tortie2" or self.pelt.name == "Calico":
             color_name = 'tortie'  # check for calico or for white later
         # enough to comment but not make calico
-        elif self.white_patches in ['LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'FANCY', 'BLAZE', 'BIB', 'VEE', 'PAWS',
+       
+        if self.white_patches in ['LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'FANCY', 'BLAZE', 'BIB', 'VEE', 'PAWS',
                      'TAILTIP', 'TOES', 'BROKENBLAZE', 'DAMIEN', 'SKUNK', 'KARPATI', 'LILTWO']:
             color_name = color_name + ' and white'
         # and white
