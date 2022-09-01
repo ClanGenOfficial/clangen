@@ -22,8 +22,17 @@ class Events(object):
             self.living_cats = 0
             game.patrolled.clear()
             for cat in cat_class.all_cats.copy().values():
-                if not cat.dead:
+                if not cat.dead and not cat.exiled:
                     self._extracted_from_one_moon_7(cat)
+                elif cat.exiled:
+                    cat.moons+=1
+                    if cat.moons == 12:
+                        cat.age = 'adult'
+                    elif cat.moons == 100:
+                        cat.age = 'elder'
+                    if cat.moons > randint(100,200):
+                        if choice([1, 2, 3, 4, 5]) == 1:
+                            cat.dead = True
                     cat.create_interaction()
                 else:
                     cat.dead_for += 1
