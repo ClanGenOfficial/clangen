@@ -270,7 +270,7 @@ class Patrol(object):
                 possible_patrols.extend([
                     PatrolEvent(600, 'r_c tells the patrol to roll in a patch of garlic to diguise their scent while hunting', 'The plan works and their hunt goes well',
                                 'The patrol finds no prey and blame r_c; it seems like all the prey was scared off because of their stench!',
-                                'The patrol ignores r_c\'s odd instructions')])
+                                'The patrol ignores r_c\'s odd instructions', 50, 10)])
             elif self.patrol_random_cat.trait == 'bloodthirsty':
                 possible_patrols.extend([
                     PatrolEvent(605, 'r_c deliberately provokes a border patrol skirmish', 'The other cats in the patrol keep r_c from fighting and no one is hurt',
@@ -324,9 +324,10 @@ class Patrol(object):
     def handle_exp_gain(self):
         if self.success:
             for cat in self.patrol_cats:
-                cat.experience = cat.experience + self.patrol_event.exp + 6 // len(self.patrol_cats)
+                cat.experience = cat.experience + (self.patrol_event.exp + 6 // len(self.patrol_cats)) // 5
                 cat.experience = min(cat.experience, 80)
                 cat.experience_level = self.experience_levels[floor(cat.experience / 10)]
+
 
     def handle_exp_loss(self):
         for cat in self.patrol_cats:
@@ -364,10 +365,14 @@ class Patrol(object):
 
         if self.patrol_event.patrol_id in [500, 501, 510]:  # new loner
             new_status = choice(['apprentice', 'warrior', 'warrior', 'warrior', 'warrior', 'elder'])
+            if self.patrol_event.patrol_id == 501:
+                new_status = 'warrior'
             kit = Cat(status=new_status)
             game.clan.add_cat(kit)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
+            if (kit.status == 'elder'):
+                kit.moons = randint(120,150)
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
@@ -386,6 +391,8 @@ class Patrol(object):
             game.clan.add_cat(kit)
             kit.skill = 'formerly a kittypet'
             kit.thought = 'Is looking around the camp with wonder'
+            if (kit.status == 'elder'):
+                kit.moons = randint(120,150)
             if randint(0, 2) == 0:  # chance to add collar
                 kit.specialty2 = choice(scars3)
             if randint(0, 5) == 0:  # chance to keep name
