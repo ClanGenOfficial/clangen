@@ -275,7 +275,7 @@ class Patrol(object):
                 possible_patrols.extend([
                     PatrolEvent(605, 'r_c deliberately provokes a border patrol skirmish', 'The other cats in the patrol keep r_c from fighting and no one is hurt',
                                 'r_c is injured by the enemy patrol', 'r_c decides to back down by themselves', 50, 10, win_skills=['great speaker', 'fantastic speaker'])])
-
+           
         # biome specific patrols
         #
         # will add here

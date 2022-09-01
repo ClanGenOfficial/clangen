@@ -20,6 +20,7 @@ class Events(object):
         if game.switches['timeskip']:
             game.switches['save_clan'] = False
             self.living_cats = 0
+            self.check_clan_relations()
             game.patrolled.clear()
             for cat in cat_class.all_cats.copy().values():
                 if not cat.dead and not cat.exiled:
