@@ -1846,7 +1846,7 @@ class PatrolEventScreen(Screens):
                                 text='Return to Clan',
                                 cur_screen='clan screen')
         for u in range(6):
-            if u < patrol.patrol_size:
+            if u < len(patrol.patrol_cats):
                 patrol.patrol_cats[u].draw((screen_x / 2 - 50 * (u + 2), 550))
         verdana_small.text('season: ' + str(game.clan.current_season),
                            ('center', 400))
@@ -1860,10 +1860,8 @@ class PatrolEventScreen(Screens):
         draw_menu_buttons()
 
     def screen_switches(self):
-        patrol.new_patrol()
         game.switches['event'] = 0
         cat_profiles()
-
 
 class AllegiancesScreen(Screens):
 
