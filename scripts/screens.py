@@ -412,7 +412,7 @@ class StarClanScreen(Screens):
         dead_cats = [game.clan.instructor]
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
-            if the_cat.dead and the_cat.ID != game.clan.instructor.ID:
+            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled:
                 dead_cats.append(the_cat)
 
         search_text = game.switches['search_text']
