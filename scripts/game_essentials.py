@@ -44,10 +44,10 @@ class Game(object):
 
     # SETTINGS
     settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False, 'dark mode': False, 'backgrounds': True, 'autosave': False, 'disasters': False,
-                'retirement': True, 'language': 'english'}  # The current settings
+                'retirement': True, 'language': 'english', 'shaders': False}  # The current settings
     setting_lists = {'no gendered breeding': [False, True], 'text size': ['0', '1', '2'], 'no unknown fathers': [False, True], 'dark mode': [False, True],
                      'backgrounds': [True, False], 'autosave': [False, True], 'disasters': [False, True], 'retirement': [True, False],
-                     'language': language_list}  # Lists of possible options for each setting
+                     'language': language_list, 'shaders': [False, True]}  # Lists of possible options for each setting
     settings_changed = False
 
     # CLAN

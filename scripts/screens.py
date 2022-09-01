@@ -142,6 +142,8 @@ class SettingsScreen(Screens):
         verdana.text("Automatically save every five moons", (100, 320))
         verdana.text("Allow mass extinction events", (100, 350))
         verdana.text("Force cats to retire after severe injury", (100, 380))
+        verdana.text("Enable shaders", (100, 410))
+
 
         # Setting values
         verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
@@ -164,6 +166,8 @@ class SettingsScreen(Screens):
         buttons.draw_button((-80, 350), text='SWITCH', setting='disasters')
         verdana.text(self.bool[game.settings['retirement']], (-170, 380))
         buttons.draw_button((-80, 380), text='SWITCH', setting='retirement')
+        verdana.text(self.bool[game.settings['shaders']], (-170, 410))
+        buttons.draw_button((-80, 410), text='SWITCH', setting='shaders')
 
         # other buttons
         buttons.draw_button((50, 50),
@@ -1664,8 +1668,7 @@ class PatrolEventScreen(Screens):
                                             str(patrol.patrol_random_cat.name))
             intro_text = intro_text.replace('p_l',
                                             str(patrol.patrol_leader.name))
-            text1 = intro_text.split(' ')
-            verdana.text(intro_text, ('center', 200))
+            verdana.blit_text(intro_text, (200, 200))
             buttons.draw_button(('center', 300), text='Proceed', event=-2)
             buttons.draw_button(('center', 340),
                                 text='Do Not Proceed',
@@ -1681,21 +1684,21 @@ class PatrolEventScreen(Screens):
                         'r_c', str(patrol.patrol_random_cat.name))
                     success_text = success_text.replace(
                         'p_l', str(patrol.patrol_leader.name))
-                    verdana.text(success_text, ('center', 200))
+                    verdana.blit_text(success_text, (200, 200))
                 else:
                     fail_text = patrol.patrol_event.fail_text
                     fail_text = fail_text.replace(
                         'r_c', str(patrol.patrol_random_cat.name))
                     fail_text = fail_text.replace(
                         'p_l', str(patrol.patrol_leader.name))
-                    verdana.text(fail_text, ('center', 200))
+                    verdana.blit_text(fail_text, (200, 200))
             elif game.switches['event'] == 2:
                 decline_text = patrol.patrol_event.decline_text
                 decline_text = decline_text.replace(
                     'r_c', str(patrol.patrol_random_cat.name))
                 decline_text = decline_text.replace(
                     'p_l', str(patrol.patrol_leader.name))
-                verdana.text(decline_text, ('center', 200))
+                verdana.blit_text(decline_text, (200, 200))
             buttons.draw_button(('center', 320),
                                 text='Return to Clan',
                                 cur_screen='clan screen')

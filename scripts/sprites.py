@@ -152,7 +152,7 @@ for x in [
         'speckledcolours2', 'speckledextra2', 'tabbycolours2', 'tabbyextra2',
         'tortiecolours2', 'tortiesextra2', 'rosettecolours', 'rosetteextra',
         'smokecolours', 'smokeextra', 'tickedcolors', 'tickedextra',
-        'whitepatchesryos', 'whitepatchesryosextra'
+        'whitepatchesryos', 'whitepatchesryosextra', 'shaders'
 ]:
     sprites.spritesheet(f"sprites/{x}.png", x)
 
@@ -164,6 +164,7 @@ for sprite in [
     sprites.spritesheet(f"sprites/paralyzed/{sprite}.png", sprite)
 
 # Line art
+sprites.make_group('shaders', (0, 0), 'shaders', sprites_y=5)
 sprites.make_group('lineart', (0, 0), 'lines', sprites_y=5)
 sprites.make_group('Paralyzed_lineart', (0, 0),
                    'p_lines',
