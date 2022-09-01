@@ -410,4 +410,4 @@ class PatrolEvent(object):
         self.antagonize_fail_text = antagonize_fail_text
 
 
-patrol = Patrol()
+#patrol = Patrol()

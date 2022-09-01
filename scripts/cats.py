@@ -2,6 +2,7 @@ from .pelts import *
 from .names import *
 from .sprites import *
 from .game_essentials import *
+from .relationship import *
 from random import choice, randint
 import math
 import os.path
@@ -975,6 +976,86 @@ class Cat(object):
             # on_patrol = ['Is having a good time out on patrol', 'Wants to return to camp to see ' + other_name,  #              'Is currently out on patrol',
             # 'Is getting rained on during their patrol',  #              'Is out hunting'] //will add later  # interact_with_loner = ['Wants to know where ' + other_name + '  #
             # came from.'] // will add
+
+    def create_relationships(self):
+        """Create Relationships to all current clan cats."""
+        relationships = []
+        for id in self.all_cats.keys():
+            the_cat = self.all_cats.get(id)
+            if the_cat.ID is not self.ID:
+                mates = the_cat is self.mate
+                are_parents = False
+                parents = False
+                siblings = False
+
+                if self.parent1 is not None and self.parent2 is not None and \
+                    the_cat.parent1 is not None and the_cat.parent2 is not None:
+                        are_parents = the_cat in [self.parent1, self.parent2]
+                        parents = are_parents or self in [the_cat.parent1, the_cat.parent2]
+                        siblings = self.parent1 in [the_cat.parent1, the_cat.parent2] or self.parent2 in [the_cat.parent1, the_cat.parent2]
+                
+                related = parents or siblings
+                
+                # set the different stats
+                romantic_love = 0
+                like = 0
+                dislike = 0
+                admiration = 0
+                comfortable = 0
+                jealousy = 0
+                trust = 0
+                if are_parents:
+                    like = 60
+                if siblings:
+                    like = 20
+
+                rel = Relationship(cat_from=self,cat_to=the_cat,mates=mates,
+                        family=related, romantic_love=romantic_love,
+                        like=like, dislike=dislike, admiration=admiration,
+                        comfortable=comfortable, jealousy=jealousy, trust=trust)
+                relationships.append(rel)        
+        self.relationships = relationships
+
+    def link_relationships(self):
+        """Create links for all the relationships of the self."""
+        for relationship in self.relationships:
+            relationship.link_relationship()
+
+    def create_interaction(self):
+        cats_to_choose = list(filter(lambda iter_cat_id: iter_cat_id != self.ID, game.clan.clan_cats))
+
+        # increase chance of cats, which are already befriended
+        like_threshold = 40
+        relevant_relationships = list(filter(lambda relation: relation.like >= like_threshold, self.relationships))
+        for relationship in relevant_relationships:
+            cats_to_choose.append(relationship.cat_to)
+            if relationship.like >= like_threshold * 2:
+                cats_to_choose.append(relationship.cat_to)
+        
+
+        # increase chance of cats, which are already may be in love
+        love_threshold = 40
+        relevant_relationships = list(filter(lambda relation: relation.romantic_love >= love_threshold, self.relationships))
+        for relationship in relevant_relationships:
+            cats_to_choose.append(relationship.cat_to)
+            if relationship.romantic_love >= love_threshold * 2:
+                cats_to_choose.append(relationship.cat_to)
+
+        # increase the chance a kitten interact with other kittens
+        if self.age == "kitten":
+            kittens = list(filter(lambda cat_id: self.all_cats.get(cat_id).age == "kitten" and cat_id != self.ID, game.clan.clan_cats))
+            cats_to_choose = cats_to_choose + kittens
+
+        # choose cat and start
+        random_id = random.choice(list(self.all_cats.keys()))
+        random_cat = self.all_cats.get(random_id)
+        relevant_relationship_list = list(filter(lambda relation: str(relation.cat_to.ID) == str(random_cat.ID), self.relationships))
+        while len(relevant_relationship_list) < 1:
+            random_id = random.choice(list(self.all_cats.keys()))
+            random_cat = self.all_cats.get(random_id)
+            relevant_relationship_list = list(filter(lambda relation: str(relation.cat_to.ID) == str(random_cat.ID), self.relationships))
+        relevant_relationship = relevant_relationship_list[0]
+        relevant_relationship.start_action()
 
     def status_change(self, new_status):
         # revealing of traits and skills
