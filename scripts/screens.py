@@ -1195,6 +1195,7 @@ class PatrolEventScreen(Screens):
             intro_text = patrol.patrol_event.intro_text
             intro_text = intro_text.replace('r_c', str(patrol.patrol_random_cat.name))
             intro_text = intro_text.replace('p_l', str(patrol.patrol_leader.name))
+            text1 = intro_text.split(' ')
             verdana.text(intro_text, ('center', 200))
             buttons.draw_button(('center', 300), text='Proceed', event=-2)
             buttons.draw_button(('center', 340), text='Do Not Proceed', event=2)
