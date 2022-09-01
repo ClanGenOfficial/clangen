@@ -1,6 +1,6 @@
 from .clan import *
 from .events import *
-from .patrols import *
+from .patrol import *
 if mapavailable:
     from .world import *
 
