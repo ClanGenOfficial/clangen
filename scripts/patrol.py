@@ -5,6 +5,7 @@ from .game_essentials import *
 from .names import *
 from .cats import *
 from .pelts import *
+from .clan import *
 
 
 class Patrol(object):
@@ -21,6 +22,7 @@ class Patrol(object):
         self.patrol_random_cat = None
         self.patrol_stat_cat = None
         self.experience_levels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
+        self.hunting_claim_info = {}
 
     def add_patrol_cats(self):
         self.patrol_cats.clear()
@@ -41,25 +43,50 @@ class Patrol(object):
     def add_possible_patrols(self):
         possible_patrols = []
         # general hunting patrols
-        possible_patrols.extend([
-            PatrolEvent(1, 'Your patrol comes across a mouse', 'Your patrol catches the mouse!', 'Your patrol narrowly misses the mouse', 'Your patrol ignores the mouse', 60, 10,
-                        win_skills=['good hunter', 'great hunter', 'fantastic hunter']),
-            PatrolEvent(2, 'Your patrol comes across a large rat', 'Your patrol catches the rat! More freshkill!',
-                        'Your patrol misses the rat, and the patrol\'s confidence is shaken', 'Your patrol ignores the rat', 50, 10,
-                        win_skills=['great hunter', 'fantastic hunter']),
-            PatrolEvent(3, 'Your patrol comes across a large hare', 'Your patrol catches the hare!', 'Your patrol narrowly misses the hare', 'Your patrol ignores the hare', 40, 20,
-                        win_skills=['fantastic hunter']),
-            PatrolEvent(4, 'Your patrol comes across a bird', 'Your patrol catches the bird before it flies away!', 'Your patrol narrowly misses the bird',
-                        'Your patrol ignores the bird', 50, 10, win_skills=['great hunter', 'fantastic hunter']),
-            PatrolEvent(5, 'Your patrol comes across a squirrel', 'Your patrol catches the squirrel!', 'Your patrol narrowly misses the squirrel',
-                        'Your patrol ignores the squirrel', 50, 10, win_skills=['good hunter', 'great hunter', 'fantastic hunter']),
-            PatrolEvent(6, 'Your patrol sees the shadow of a fish in a river', 'r_c hooks the fish out of the water! More freshkill!',
-                        'Your patrol accidentally scares the fish away', 'Your patrol ignores the fish', 50, 10, win_skills=['great hunter', 'fantastic hunter']),
-            PatrolEvent(7, 'r_c spots a rabbit up ahead but it seems to be acting strange', 'r_c catches the rabbit and it is eaten as normal',
-                        'r_c catches the rabbit and later the cats who eat it become violently ill', 'r_c avoids catching the rabbit and looks for other prey', 40, 10,
-                        win_skills=['smart', 'very smart', 'extremely smart']),
-            PatrolEvent(8, 'The patrol approaches a twoleg nest while hunting', 'The patrol has a successful hunt, avoiding any twolegs', 'Twoleg kits scare the cats away',
-                        'The patrol decides to hunt elsewhere', 40, 10, win_skills=['great hunter', 'fantastic hunter'])])
+        if mapavailable == True:
+            self.check_territories()
+            for i in self.hunting_grounds:
+                if self.hunting_claim_info[i][7] != "Prey Levels: none":
+                    possible_patrols.extend([
+                        PatrolEvent(1, 'Your patrol comes across a mouse', 'Your patrol catches the mouse!', 'Your patrol narrowly misses the mouse', 'Your patrol ignores the mouse', 60, 10,
+                                    win_skills=['good hunter', 'great hunter', 'fantastic hunter']),
+                        PatrolEvent(2, 'Your patrol comes across a large rat', 'Your patrol catches the rat! More freshkill!',
+                                    'Your patrol misses the rat, and the patrol\'s confidence is shaken', 'Your patrol ignores the rat', 50, 10,
+                                    win_skills=['great hunter', 'fantastic hunter']),
+                        PatrolEvent(3, 'Your patrol comes across a large hare', 'Your patrol catches the hare!', 'Your patrol narrowly misses the hare', 'Your patrol ignores the hare', 40, 20,
+                                    win_skills=['fantastic hunter']),
+                        PatrolEvent(4, 'Your patrol comes across a bird', 'Your patrol catches the bird before it flies away!', 'Your patrol narrowly misses the bird',
+                                    'Your patrol ignores the bird', 50, 10, win_skills=['great hunter', 'fantastic hunter']),
+                        PatrolEvent(5, 'Your patrol comes across a squirrel', 'Your patrol catches the squirrel!', 'Your patrol narrowly misses the squirrel',
+                                    'Your patrol ignores the squirrel', 50, 10, win_skills=['good hunter', 'great hunter', 'fantastic hunter']),
+                        PatrolEvent(6, 'Your patrol sees the shadow of a fish in a river', 'r_c hooks the fish out of the water! More freshkill!',
+                                    'Your patrol accidentally scares the fish away', 'Your patrol ignores the fish', 50, 10, win_skills=['great hunter', 'fantastic hunter']),
+                        PatrolEvent(7, 'r_c spots a rabbit up ahead but it seems to be acting strange', 'r_c catches the rabbit and it is eaten as normal',
+                                    'r_c catches the rabbit and later the cats who eat it become violently ill', 'r_c avoids catching the rabbit and looks for other prey', 40, 10,
+                                    win_skills=['smart', 'very smart', 'extremely smart']),
+                        PatrolEvent(8, 'The patrol approaches a twoleg nest while hunting', 'The patrol has a successful hunt, avoiding any twolegs', 'Twoleg kits scare the cats away',
+                                    'The patrol decides to hunt elsewhere', 40, 10, win_skills=['great hunter', 'fantastic hunter'])])
+
+        if mapavailable == False:
+            possible_patrols.extend([
+                    PatrolEvent(1, 'Your patrol comes across a mouse', 'Your patrol catches the mouse!', 'Your patrol narrowly misses the mouse', 'Your patrol ignores the mouse', 60, 10,
+                                win_skills=['good hunter', 'great hunter', 'fantastic hunter']),
+                    PatrolEvent(2, 'Your patrol comes across a large rat', 'Your patrol catches the rat! More freshkill!',
+                                'Your patrol misses the rat, and the patrol\'s confidence is shaken', 'Your patrol ignores the rat', 50, 10,
+                                win_skills=['great hunter', 'fantastic hunter']),
+                    PatrolEvent(3, 'Your patrol comes across a large hare', 'Your patrol catches the hare!', 'Your patrol narrowly misses the hare', 'Your patrol ignores the hare', 40, 20,
+                                win_skills=['fantastic hunter']),
+                    PatrolEvent(4, 'Your patrol comes across a bird', 'Your patrol catches the bird before it flies away!', 'Your patrol narrowly misses the bird',
+                                'Your patrol ignores the bird', 50, 10, win_skills=['great hunter', 'fantastic hunter']),
+                    PatrolEvent(5, 'Your patrol comes across a squirrel', 'Your patrol catches the squirrel!', 'Your patrol narrowly misses the squirrel',
+                                'Your patrol ignores the squirrel', 50, 10, win_skills=['good hunter', 'great hunter', 'fantastic hunter']),
+                    PatrolEvent(6, 'Your patrol sees the shadow of a fish in a river', 'r_c hooks the fish out of the water! More freshkill!',
+                                'Your patrol accidentally scares the fish away', 'Your patrol ignores the fish', 50, 10, win_skills=['great hunter', 'fantastic hunter']),
+                    PatrolEvent(7, 'r_c spots a rabbit up ahead but it seems to be acting strange', 'r_c catches the rabbit and it is eaten as normal',
+                                'r_c catches the rabbit and later the cats who eat it become violently ill', 'r_c avoids catching the rabbit and looks for other prey', 40, 10,
+                                win_skills=['smart', 'very smart', 'extremely smart']),
+                    PatrolEvent(8, 'The patrol approaches a twoleg nest while hunting', 'The patrol has a successful hunt, avoiding any twolegs', 'Twoleg kits scare the cats away',
+                                'The patrol decides to hunt elsewhere', 40, 10, win_skills=['great hunter', 'fantastic hunter'])])
 
         # general/misc patrols
         possible_patrols.extend([
@@ -398,6 +425,16 @@ class Patrol(object):
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
+                
+    def check_territories(self):
+        hunting_claim = str(game.clan.name) + 'Clan Hunting Grounds'
+        self.hunting_grounds = []
+        for y in range(44):
+            for x in range(40):
+                claim_type = game.map_info[(x,y)][3]
+                if claim_type == hunting_claim:
+                    self.hunting_claim_info[(x,y)] = game.map_info[(x,y)]
+                    self.hunting_grounds.append((x,y)) 
 
 
 class PatrolEvent(object):
