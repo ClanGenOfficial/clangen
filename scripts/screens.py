@@ -1,4 +1,3 @@
-from .patrol import Patrol, patrol
 from .clan import *
 from .events import *
 from .patrol import *
@@ -195,7 +194,7 @@ class ClanScreen(Screens):
         verdana.text("Warriors\' Den", game.clan.cur_layout['warrior den'])
         verdana.text("Elders\' Den", game.clan.cur_layout['elder den'])
         for x in game.clan.clan_cats:
-            if not cat_class.all_cats[x].dead and cat_class.all_cats[x].in_camp:
+            if not cat_class.all_cats[x].dead and cat_class.all_cats[x].in_camp and not cat_class.all_cats[x].exiled:
                 buttons.draw_button(cat_class.all_cats[x].placement, image=cat_class.all_cats[x].sprite, cat=x, cur_screen='profile screen')
         draw_menu_buttons()
         buttons.draw_button(('center', -50), text='Save Clan', save_clan=True)
@@ -1120,7 +1119,7 @@ class PatrolScreen(Screens):
         able_cats = []
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
-            if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status in ['leader', 'deputy', 'warrior', 'apprentice']:
+            if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status in ['leader', 'deputy', 'warrior', 'apprentice'] and not the_cat.exiled:
                 able_cats.append(the_cat)
         if not game.patrol_cats:
             i_max = min(len(able_cats), 12)
