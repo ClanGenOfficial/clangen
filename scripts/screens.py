@@ -1332,7 +1332,7 @@ class ChooseMateScreen(Screens):
                 the_cat.parent1, the_cat.parent2] and pos_mate.mate is None and (pos_mate.parent1 is None or pos_mate.parent1 not in [the_cat.parent1, the_cat.parent2]) and (
                     pos_mate.parent2 is None or pos_mate.parent2 not in [the_cat.parent1, the_cat.parent2]) and (
                     the_cat.age in ['senior adult', 'elder'] and cat_class.all_cats[x].age in ['senior adult', 'elder'] or cat_class.all_cats[x].age != 'elder' and
-                    cat_class.all_cats[x].age != 'adolescent' and the_cat.age != 'elder' and the_cat.age != 'adolescent'):
+                    cat_class.all_cats[x].age != 'adolescent' and the_cat.age != 'elder' and the_cat.age != 'adolescent') and not the_cat.exiled:
                 valid_mates.append(cat_class.all_cats[x])
         all_pages = int(ceil(len(valid_mates) /
                              27.0)) if len(valid_mates) > 27 else 1
