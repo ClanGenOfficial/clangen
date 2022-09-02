@@ -100,9 +100,9 @@ class Events(object):
                     cat.update_mentor()
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
                     self._extracted_from_perform_ceremonies_19(cat, 'warrior', ' has earned their warrior name')
-
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
                     self._extracted_from_perform_ceremonies_19(cat, 'medicine cat', ' has earned their medicine cat name')
+                    cat.skill = choice(cat_class.med_skills)
                     game.clan.new_medicine_cat(cat)
                 elif cat.status == 'warrior' and cat.age == 'elder' and len(cat.apprentice) < 1:
                     cat.status_change('elder')
@@ -167,7 +167,7 @@ class Events(object):
                 cat.mate = None
                 other_cat.mate = None
         if cat.mate is not None:
-            if cat_class.all_cats[cat.mate].dead and randint(1,10) == 1:
+            if cat_class.all_cats[cat.mate].dead and randint(1,20) == 1:
                 game.cur_events_list.append(f'{str(cat.name)} will always love {str(cat_class.all_cats[cat.mate].name)} but decides to move on')
                 cat.mate = None
 
