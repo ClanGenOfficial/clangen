@@ -14,7 +14,7 @@ EVENT = {
 # if another cat is involved
 THIRD_RELATIONSHIP_INCLUDED = {
     "charismatic": ['Is convincing (cat 1) that (cat 2) isn\'t so bad once you get to know them'],
-    "troublesom": ['Made (cat) and (cat) start an argument'],
+    "troublesome": ['Made (cat) and (cat) start an argument'],
     "sneaky": ['Is gossiping about (cat) and (cat)'],
     "like": '(cat) confesses to (cat) that they think they like (cat)',
     "trick": 'Has successfully tricked (cat) into believing a crazy tale about the clan leader'

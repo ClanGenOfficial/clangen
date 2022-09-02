@@ -37,6 +37,8 @@ game.load_settings()
 verdana.change_text_brightness()
 buttons.change_button_brightness()
 sprites.load_scars()
+cat_class.thoughts()
+
 
 while True:
     if game.settings['dark mode']:

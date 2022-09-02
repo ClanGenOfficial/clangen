@@ -658,7 +658,6 @@ class ProfileScreen(Screens):
             
         # Info in string
         cat_name = str(the_cat.name)  # name
-        cat_thought = the_cat.thought  # thought
         if the_cat.dead:
             cat_name += " (dead)"  # A dead cat will have the (dead) sign next to their name
         if is_instructor:
@@ -669,7 +668,7 @@ class ProfileScreen(Screens):
         count2 = 0
         verdana_big.text(cat_name, ('center', 150))  # NAME
         the_cat.draw_large((100, 200))  # IMAGE
-        verdana.text(cat_thought, ('center', 180))  # THOUGHT / ACTION
+        verdana.text(the_cat.thought, ('center', 180))  # THOUGHT / ACTION
         verdana_small.text(the_cat.gender, (300, 230 + count * 15))
         count += 1  # SEX / GENDER
         verdana_small.text(the_cat.status, (490, 230 + count2 * 15))
@@ -1843,7 +1842,7 @@ class RelationshipEventScreen(Screens):
 
         events_class.one_moon()
 
-        # show the Relationshipevents
+        # show the Relationship events
         buttons.draw_button((-250, 220), text='CLAN EVENTS', cur_screen='events screen')
 
         if game.relation_events_list is not None and game.relation_events_list != []:
