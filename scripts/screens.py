@@ -98,6 +98,8 @@ class SettingsScreen(Screens):
         verdana.text("Automatically save every five moons", (100, 320))
         verdana.text("Allow mass extinction events", (100, 350))
         verdana.text("Force cats to retire after severe injury", (100, 380))
+        verdana.text("Enable shaders", (100, 410))
+
 
         # Setting values
         verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
@@ -114,6 +116,8 @@ class SettingsScreen(Screens):
         buttons.draw_button((-80, 350), text='SWITCH', setting='disasters')
         verdana.text(self.bool[game.settings['retirement']], (-170, 380))
         buttons.draw_button((-80, 380), text='SWITCH', setting='retirement')
+        verdana.text(self.bool[game.settings['shaders']], (-170, 410))
+        buttons.draw_button((-80, 410), text='SWITCH', setting='retirement')
 
         # other buttons
         buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen')
