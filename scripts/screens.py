@@ -1373,7 +1373,7 @@ class ChooseMentorScreen(Screens):
         verdana_big.text('Choose Mentor', ('center', 30))
         living_cats = []
         for cat in cat_class.all_cats.values():
-            if not cat.dead and cat != game.switches['apprentice'].mentor and cat.status in ['warrior', 'deputy', 'leader'] and not the_cat.exiled:
+            if not cat.dead and cat != game.switches['apprentice'].mentor and cat.status in ['warrior', 'deputy', 'leader'] and not cat.exiled:
                 living_cats.append(cat)
         all_pages = 1
         if len(living_cats) > 24:
