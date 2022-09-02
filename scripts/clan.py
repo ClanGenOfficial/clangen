@@ -1,5 +1,10 @@
 from .cats import *
 from .text import *
+try:
+    from .world import *
+    mapavailable = True
+except:
+    mapavailable = False
 from sys import exit
 
 
@@ -35,7 +40,7 @@ class Clan(object):
     current_season = 'Newleaf'
     all_clans = []
 
-    def __init__(self, name="", leader=None, deputy=None, medicine_cat=None, biome='Forest'):
+    def __init__(self, name="", leader=None, deputy=None, medicine_cat=None, biome='Forest', world_seed=6616, camp_site=(20,22)):
         if name != "":
             self.name = name
             self.leader = leader
@@ -55,6 +60,8 @@ class Clan(object):
             self.current_season = 'Newleaf'
             self.instructor = None  # This is the first cat in starclan, to "guide" the other dead cats there.
             self.biome = biome
+            self.world_seed = world_seed
+            self.camp_site = camp_site
 
     def create_clan(self):
         """ This function is only called once a new clan is created in the 'clan created' screen, not every time
@@ -63,6 +70,8 @@ class Clan(object):
         self.instructor.dead = True
         self.instructor.update_sprite()
         self.add_cat(self.instructor)
+        self.all_clans = []
+        other_clans = []
 
         key_copy = tuple(cat_class.all_cats.keys())
         for i in key_copy:  # Going through all currently existing cats
@@ -91,8 +100,9 @@ class Clan(object):
         number_other_clans = randint(3, 5)
         for _ in range(number_other_clans):
             self.all_clans.append(OtherClan())
-
         self.save_clan()
+        if mapavailable:
+            save_map(game.map_info, game.clan.name)      
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""
@@ -153,7 +163,7 @@ class Clan(object):
         exit()
 
     def save_clan(self):
-        data = f'{self.name},{self.age},{self.biome}' + '\n'
+        data = f'{self.name},{self.age},{self.biome},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]}' + '\n'
         data = data + self.leader.ID + ',' + str(self.leader_lives) + ',' + str(self.leader_predecessors) + ',' + '\n'
 
         if self.deputy is not None:
@@ -195,7 +205,6 @@ class Clan(object):
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
-
             return
         with open('saves/' + game.switches['clan_list'][0] + 'clan.txt', 'r') as read_file:
             clan_data = read_file.read()
@@ -225,7 +234,11 @@ class Clan(object):
             instructor_info = sections[3]
             members = sections[4].split(',')
             other_clans = []
-        if len(general) == 3:
+        if len(general) == 6:
+            if general[3] == 'None':
+                general[3] = 0
+            game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]], cat_class.all_cats.get(deputy_info[0], None), cat_class.all_cats[med_cat_info[0]], biome=general[2], world_seed=int(general[3]), camp_site=(int(general[4]),int(general[5])))
+        elif len(general) == 3:
             game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]], cat_class.all_cats.get(deputy_info[0], None), cat_class.all_cats[med_cat_info[0]], general[2])
         else:
             game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]], cat_class.all_cats.get(deputy_info[0], None), cat_class.all_cats[med_cat_info[0]])
@@ -246,7 +259,7 @@ class Clan(object):
             game.clan.instructor.update_sprite()
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
-        if other_clans and other_clans[0]:
+        if other_clans != [""]:
             for other_clan in other_clans:
                 other_clan_info = other_clan.split(';')
                 self.all_clans.append(OtherClan(other_clan_info[0], other_clan_info[1], other_clan_info[2]))

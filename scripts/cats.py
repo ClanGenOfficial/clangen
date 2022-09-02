@@ -163,16 +163,12 @@ class Cat(object):
             # WHITE PATCHES
             if self.pelt.white and self.pelt.white_patches is not None:
                 pelt_choice = randint(0, 10)
-                if pelt_choice == 1 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled', 'Tabby2', 'Speckled2', 'Ticked', 'Rosette', 'Smoke'] and self.pelt.colour != 'WHITE':
-                    self.white_patches = choice(['COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL', 'POINTMARK'])
-                elif pelt_choice == 1 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled', 'Tabby2', 'Speckled2', 'Ticked', 'Rosette', 'Smoke']:
-                    self.white_patches = choice(['COLOURPOINT', 'RAGDOLL', 'POINTMARK'])
-                elif self.pelt.name in ['Tabby', 'Speckled', 'Tabby2', 'Speckled2', 'TwoColour', 'Ticked', 'Rosette', 'Smoke'] and self.pelt.colour == 'WHITE':
-                    self.white_patches = choice(['ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY2', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'LIGHTSONG', 'VITILIGO',
-                                                 'TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE', 'VEE',
-                                                 'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE',
-                                                 'PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA',
-                                                 'PIEBALD', 'CURVED', 'HEART', 'LILTWO', 'GLASS', 'MOORISH', 'POINTMARK'])
+                if pelt_choice == 1 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled', 'Tabby2', 'Speckled2'] and self.pelt.colour != 'WHITE':
+                    self.white_patches = choice(['COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL'])
+                elif pelt_choice == 1 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled', 'Tabby2', 'Speckled2']:
+                    self.white_patches = choice(['COLOURPOINT', 'RAGDOLL'])
+                elif self.pelt.name in ['Tabby', 'Speckled', 'Tabby2', 'Speckled2', 'TwoColour'] and self.pelt.colour == 'WHITE':
+                    self.white_patches = choice(['ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY2', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'LIGHTSONG', 'VITILIGO'])
                 else:
                     self.white_patches = choice(self.pelt.white_patches)
             else:
@@ -961,7 +957,7 @@ class Cat(object):
                     elif cat.trait == 'strange':
                         thoughts.extend(['No thoughts, head empty', 'Insists they they received ten lives instead of nine', 'Has a crazed look in their eyes',
                                          'Is wondering how many cats would agree to changing the clan\'s name...'])
-                elif cat.status == 'elder' and cat.age == 'elder':
+                elif cat.status == 'elder':
                     thoughts.extend(['Is complaining about their nest being too rough', 'Is complaining about their aching joints', 'Is telling stories about when they were young',
                                      'Is giving advice to younger cats', 'Is complaining about thorns in their nest', 'Is bossing around the younger cats',
                                      'Is telling scary stories to the younger cats', 'Is snoring in their sleep', 'Thinking about how too many cats die young',
@@ -1152,16 +1148,10 @@ class Cat(object):
             new_sprite.blit(sprites.sprites['eyes' + self.eye_colour + str(self.age_sprites[self.age])], (0, 0))
 
         # draw line art
-        if game.settings['shaders']:
-            if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
-                new_sprite.blit(sprites.sprites['shaders' + str(self.age_sprites[self.age] + 9)], (0, 0))
-            else:
-                new_sprite.blit(sprites.sprites['shaders' + str(self.age_sprites[self.age])], (0, 0))
+        if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
+            new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age] + 9)], (0, 0))
         else:
-            if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
-                new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age] + 9)], (0, 0))
-            else:
-                new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
+            new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
 
         # draw skin and scars2 and scars3
         blendmode = pygame.BLEND_RGBA_MIN
@@ -1408,31 +1398,18 @@ class Cat(object):
                             the_cat.age_sprites['dead'] = attr[28]
                     if len(attr) > 31:
                         the_cat.dead_for = int(attr[31])
-                    else:
-                        the_cat.dead_for = 0
-                        
                     the_cat.skill = attr[22]
 
                     if len(attr) > 32 and attr[32] is not None:
                         the_cat.apprentice = attr[32].split(';')
-                    else:
-                        the_cat.apprentice = []
                     if len(attr) > 33 and attr[33] is not None:
                         the_cat.former_apprentices = attr[33].split(';')
-                    else:
-                        the_cat.former_apprentices = []
                     if len(attr) > 34:
                         the_cat.paralyzed = bool(attr[34])
-                    else:
-                        the_cat.paralyzed = False
                     if len(attr) > 35:
                         the_cat.no_kits = bool(attr[35])
-                    else:
-                        the_cat.no_kits = False
                     if len(attr) > 36:
                         the_cat.exiled = bool(attr[36])
-                    else:
-                        the_cat.exiled = False
 
 
             game.switches['error_message'] = 'There was an error loading this clan\'s mentors/apprentices'
@@ -1556,49 +1533,26 @@ class Cat(object):
             color_name = 'light brown'
         elif color_name == 'darkbrown':
             color_name = 'dark brown'
-        if color_name == 'silver' and self.pelt.name == "Smoke":
-            color_name = 'lilac shaded'
-        elif color_name == 'white' and self.pelt.name == "Smoke":
-            color_name = 'black tipped white'
-        elif color_name == 'pale grey' and self.pelt.name == "Smoke":
-            color_name = 'blue shaded'
-         #fixing descs of non-smoke smokes
-        elif self.pelt.name == "Smoke":
-            color_name = color_name + ' smoke'
-        elif self.pelt.name == "Smoke" and color_name != ['lilac shaded', 'blue shaded', 'black tipped white']:
-            color_name = color_name
         if self.pelt.name == "Tabby":
             color_name = color_name + ' tabby'
-        elif self.pelt.name == "Tabby2":
-            color_name = color_name + ' marbled tabby'
         elif self.pelt.name == "Speckled":
             color_name = color_name + ' speckled'
-        elif self.pelt.name == "Speckled2":
-            color_name = color_name + ' bengal'
-        elif self.pelt.name == "Ticked":
-            color_name = color_name + ' ticked tabby'
-        elif self.pelt.name == "Rosette":
-            color_name = color_name + ' rosetted'
-        elif self.pelt.name == "Tortie" or self.pelt.name == "Tortie2" or self.pelt.name == "Calico":
+        elif self.pelt.name == "Tortie" or self.pelt.name == "Calico":
             color_name = 'tortie'  # check for calico or for white later
         # enough to comment but not make calico
-       
-        if self.white_patches in ['LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'FANCY', 'BLAZE', 'BIB', 'VEE', 'PAWS',
-                     'TAILTIP', 'TOES', 'BROKENBLAZE', 'DAMIEN', 'SKUNK', 'KARPATI', 'LILTWO']:
+        elif self.white_patches in ['LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG']:
             color_name = color_name + ' and white'
         # and white
-        elif self.white_patches in ['ANY', 'TUXEDO', 'ANY2', 'ANYCREAMY', 'TUXEDOCREAMY', 'ANY2CREAMY', 'BROKEN', 'FRECKLES',
-        'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'PRINCE', 'UNDERS', 'FAROFA', 'MISTER', 'PANTS', 'REVERSEPANTS',
-         'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED', 'GLASS']:
+        elif self.white_patches in ['ANY', 'TUXEDO', 'ANY2', 'ANYCREAMY', 'TUXEDOCREAMY', 'ANY2CREAMY', 'BROKEN']:
             if color_name == 'tortie':
                 color_name = 'calico'
             else:
                 color_name = color_name + ' and white'
         # white and
-        elif self.white_patches in ['VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH']:
+        elif self.white_patches in ['VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG']:
             color_name = 'white and ' + color_name
         # colorpoint
-        elif self.white_patches in ['COLOURPOINT', 'RAGDOLL', 'COLOURPOINTCREAMY', 'POINTMARK']:
+        elif self.white_patches in ['COLOURPOINT', 'RAGDOLL', 'COLOURPOINTCREAMY']:
             color_name = color_name + ' point'
             if color_name == 'darkginger point':
                 color_name = 'flame point'
@@ -1643,4 +1597,3 @@ def create_example_cats():
 cat_class = Cat(example=True)
 cat_class = Cat()
 game.cat_class = cat_class
-
