@@ -117,7 +117,7 @@ class SettingsScreen(Screens):
         verdana.text(self.bool[game.settings['retirement']], (-170, 380))
         buttons.draw_button((-80, 380), text='SWITCH', setting='retirement')
         verdana.text(self.bool[game.settings['shaders']], (-170, 410))
-        buttons.draw_button((-80, 410), text='SWITCH', setting='retirement')
+        buttons.draw_button((-80, 410), text='SWITCH', setting='shaders')
 
         # other buttons
         buttons.draw_button((50, 50), text='<< Back to Main Menu', cur_screen='start screen')

@@ -958,7 +958,7 @@ class Cat(object):
                     elif cat.trait == 'strange':
                         thoughts.extend(['No thoughts, head empty', 'Insists they they received ten lives instead of nine', 'Has a crazed look in their eyes',
                                          'Is wondering how many cats would agree to changing the clan\'s name...'])
-                elif cat.status == 'elder':
+                elif cat.status == 'elder' and cat.age == 'elder':
                     thoughts.extend(['Is complaining about their nest being too rough', 'Is complaining about their aching joints', 'Is telling stories about when they were young',
                                      'Is giving advice to younger cats', 'Is complaining about thorns in their nest', 'Is bossing around the younger cats',
                                      'Is telling scary stories to the younger cats', 'Is snoring in their sleep', 'Thinking about how too many cats die young',
@@ -1332,18 +1332,31 @@ class Cat(object):
                             the_cat.age_sprites['dead'] = attr[28]
                     if len(attr) > 31:
                         the_cat.dead_for = int(attr[31])
+                    else:
+                        the_cat.dead_for = 0
+                        
                     the_cat.skill = attr[22]
 
                     if len(attr) > 32 and attr[32] is not None:
                         the_cat.apprentice = attr[32].split(';')
+                    else:
+                        the_cat.apprentice = []
                     if len(attr) > 33 and attr[33] is not None:
                         the_cat.former_apprentices = attr[33].split(';')
+                    else:
+                        the_cat.former_apprentices = []
                     if len(attr) > 34:
                         the_cat.paralyzed = bool(attr[34])
+                    else:
+                        the_cat.paralyzed = False
                     if len(attr) > 35:
                         the_cat.no_kits = bool(attr[35])
+                    else:
+                        the_cat.no_kits = False
                     if len(attr) > 36:
                         the_cat.exiled = bool(attr[36])
+                    else:
+                        the_cat.exiled = False
 
 
             game.switches['error_message'] = 'There was an error loading this clan\'s mentors/apprentices'

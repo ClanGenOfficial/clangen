@@ -273,10 +273,12 @@ class Events(object):
         elif cat.status == 'warrior':
             interactions.extend([name + " is caught outside of the clan\'s territory", f'{name} is caught breaking the warrior code', f'{name} went missing for a few days',
                                  f'{name} believes they are a part of the new prophecy'])
+            if cat.mate is None:
+                interactions.extend([name + " is caught meeting with a kittypet", f'{name} is caught meeting with a loner'])
         elif cat.status == 'medicine cat':
             interactions.extend(
                 [f'{name} learns of a new prophecy', f'{name} is worried about an outbreak of greencough', f'{name} is worried about how low their herb stores has gotten',
-                 f'{name} visits the other medicine cats'])
+                 f'{name} visits the other medicine cats', f'{name} brings important news from the half-moon meeting'])
         elif cat.status == 'deputy':
             interactions.extend([f'{name} thinks about retiring', f'{name} travels to the other clans to bring them an important message'])
         elif cat.status == 'leader':
