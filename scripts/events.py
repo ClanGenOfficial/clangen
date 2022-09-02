@@ -154,9 +154,9 @@ class Events(object):
 
     def handle_relationships(self, cat):
         other_cat = choice(list(cat_class.all_cats.values()))
-        if randint(1, 30) == 1:
+        if randint(1, 50) == 1:
             if cat != other_cat and not other_cat.dead and cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and other_cat.status not in [
-                'kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and cat.age == other_cat.age and not {cat, cat.parent1, cat.parent2}.intersection(
+                'kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and (cat.age in ['young adult', 'adult', 'senior adult'] and other_cat.age in ['young adult', 'adult', 'senior adult']) or cat.age == other_cat.age and not {cat, cat.parent1, cat.parent2}.intersection(
                 {other_cat, other_cat.parent1, other_cat.parent2}) and cat.mate is None and other_cat.mate is None and not other_cat.exiled:
                 game.cur_events_list.append(f'{str(cat.name)} and {str(other_cat.name)} have become mates')
                 cat.mate = other_cat.ID
@@ -296,7 +296,7 @@ class Events(object):
         game.cur_events_list.append(choice(interactions))
 
     def handle_deaths(self, cat):
-        if randint(1, 400) == 1:
+        if randint(1, 300) == 1:
             name = str(cat.name)
             cause_of_death = [name + ' was murdered', name + ' died of greencough', 'A tree fell in camp and killed ' + name, name + ' was found dead near a fox den']
             if cat.status == 'kitten':
