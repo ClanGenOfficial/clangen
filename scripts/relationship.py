@@ -75,7 +75,7 @@ NOT_AGE_SPECIFIC = {
                    'Is mocking (cat)', 'Ignores (cat)','Is telling jokes about (cat)',
                    'Is spreading a rumour about (cat)'],
     "neutral": ['Whines about (cat)', 'Is telling a story to (cat)', 'Is talking with (cat)',
-                'Is sharing prey with (cat)', 'Had an huge argument with (cat)', 'Had a fight with (cat)'],
+                'Is sharing prey with (cat)', 'Had a huge argument with (cat)', 'Had a fight with (cat)'],
     "friendly": ['Is sharing tongue with (cat)'],
     "close": ['Tells (cat) a secret']
 }

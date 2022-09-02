@@ -1608,7 +1608,7 @@ class OptionsScreen(Screens):
         buttons.draw_button((x_value, y_value + button_count * y_change), text='Family Tree')
         button_count += 1
 
-        buttons.draw_button((x_value, y_value + button_count * y_change), text='See Relaionships', cur_screen='relationship screen')
+        buttons.draw_button((x_value, y_value + button_count * y_change), text='See Relationships', cur_screen='relationship screen')
         button_count += 1
 
         if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
