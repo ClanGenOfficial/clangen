@@ -22,6 +22,7 @@ class Game(object):
     allegiance_list = []
     language = {}
     language_list = ['english','spanish','german']
+    relation_events_list = []
 
     down = pygame.image.load("sprites/down.png")
     down = pygame.transform.scale(down, (75, 75))

@@ -2,9 +2,11 @@ from .pelts import *
 from .names import *
 from .sprites import *
 from .game_essentials import *
+from .relationship import *
 from random import choice, randint
 import math
 import os.path
+import json
 
 
 class Cat(object):
@@ -35,6 +37,7 @@ class Cat(object):
         self.former_mentor = []
         self.apprentice = []
         self.former_apprentices = []
+        self.relationships = []
         self.mate = None
         self.placement = None
         self.example = example
@@ -979,6 +982,45 @@ class Cat(object):
             # 'Is getting rained on during their patrol',  #              'Is out hunting'] //will add later  # interact_with_loner = ['Wants to know where ' + other_name + '  #
             # came from.'] // will add
 
+    def create_new_relationships(self):
+        """Create Relationships to all current clan cats."""
+        relationships = []
+        for id in self.all_cats.keys():
+            the_cat = self.all_cats.get(id)
+            if the_cat.ID is not self.ID:
+                mates = the_cat is self.mate
+                are_parents = False
+                parents = False
+                siblings = False
+
+                if self.parent1 is not None and self.parent2 is not None and \
+                    the_cat.parent1 is not None and the_cat.parent2 is not None:
+                        are_parents = the_cat in [self.parent1, self.parent2]
+                        parents = are_parents or self in [the_cat.parent1, the_cat.parent2]
+                        siblings = self.parent1 in [the_cat.parent1, the_cat.parent2] or self.parent2 in [the_cat.parent1, the_cat.parent2]
+                
+                related = parents or siblings
+                
+                # set the different stats
+                romantic_love = 0
+                like = 0
+                dislike = 0
+                admiration = 0
+                comfortable = 0
+                jealousy = 0
+                trust = 0
+                if are_parents:
+                    like = 60
+                if siblings:
+                    like = 20
+
+                rel = Relationship(cat_from=self,cat_to=the_cat,mates=mates,
+                        family=related, romantic_love=romantic_love,
+                        like=like, dislike=dislike, admiration=admiration,
+                        comfortable=comfortable, jealousy=jealousy, trust=trust)
+                relationships.append(rel)        
+        self.relationships = relationships
+
     def status_change(self, new_status):
         # revealing of traits and skills
         if self.status == 'kitten':
@@ -1183,6 +1225,7 @@ class Cat(object):
     def save_cats(self):
         data = ''
         for x in self.all_cats.values():
+            x.save_relationship_of_cat()
             # cat ID -- name prefix : name suffix
             data += x.ID + ',' + x.name.prefix + ':' + x.name.suffix + ','
             # cat gender -- status -- age -- trait
@@ -1263,6 +1306,39 @@ class Cat(object):
             clanname = game.switches['clan_list'][0]
         with open('saves/' + clanname + 'cats.csv', 'w') as write_file:
             write_file.write(data)
+
+    def save_relationship_of_cat(self):
+        # save relationships for each cat
+        if game.switches['clan_name'] != '':
+            clanname = game.switches['clan_name']
+        elif len(game.switches['clan_name']) > 0:
+            clanname = game.switches['clan_list'][0]
+        elif game.clan != None:
+            clanname = game.clan.name
+        relationship_dir = 'saves/' + clanname + '/relationships' 
+        if not os.path.exists(relationship_dir):
+            os.makedirs(relationship_dir)
+        
+        rel = []
+        for r in self.relationships:
+            r_data = {
+                "cat_from_id": r.cat_from.ID,
+                "cat_to_id": r.cat_to.ID,
+                "mates": r.mates,
+                "family": r.family,
+                "romantic_love": r.romantic_love,
+                "like": r.like,
+                "dislike": r.dislike,
+                "admiration": r.admiration,
+                "comfortable": r.comfortable,
+                "jealousy": r.jealousy,
+                "trust": r.trust 
+            }
+            rel.append(r_data)
+
+        with open(relationship_dir + '/' + self.ID + '_relations.json', 'w') as rel_file:
+            json_string = json.dumps(rel)
+            rel_file.write(json_string)
 
     def load_cats(self):
         if game.switches['clan_list'][0].strip() == '':
@@ -1378,9 +1454,38 @@ class Cat(object):
                     former_apps.append(f_app)
                 n.apprentice = apps
                 n.former_apprentices = former_apps
+                n.load_relationship_of_cat()
                 n.update_sprite()
 
             game.switches['error_message'] = ''
+
+    def load_relationship_of_cat(self):
+        if game.switches['clan_name'] != '':
+            clanname = game.switches['clan_name']
+        else:
+            clanname = game.switches['clan_list'][0]
+
+        relation_directory = 'saves/' + clanname + '/relationships/' + self.ID + '_relations.json'
+        
+        if not os.path.exists(relation_directory):
+            return
+        
+        with open(relation_directory, 'r') as read_file:
+            rel_data = json.loads(read_file.read())
+            relationships = []
+            for rel in rel_data:
+                cat_to = self.all_cats.get(rel['cat_to_id'])
+                if cat_to == None:
+                    continue
+                new_rel = Relationship(cat_from=self,cat_to=cat_to,
+                                        mates=rel['mates'],family=rel['family'],
+                                        romantic_love=rel['romantic_love'],
+                                        like=rel['like'], dislike=rel['dislike'],
+                                        admiration=rel['admiration'],
+                                        comfortable=rel['comfortable'],
+                                        jealousy=rel['jealousy'],trust=rel['trust'])
+                relationships.append(new_rel)
+            self.relationships = relationships
 
     def load(self, cat_dict):
         """ A function that takes a dictionary containing other dictionaries with attributes and values of all(?)
@@ -1519,10 +1624,6 @@ class Cat(object):
         return description
 
 
-# CAT CLASS ITEMS
-cat_class = Cat(example=True)
-game.cat_class = cat_class
-
 # The randomized cat sprite in Main Menu screen
 example_cat = Cat(status=choice(["kitten", "apprentice", "warrior", "elder"]), example=True)
 example_cat.update_sprite()
@@ -1537,3 +1638,9 @@ def create_example_cats():
         else:
             game.choose_cats[a] = Cat(status=choice(['kitten', 'apprentice', 'warrior', 'warrior', 'elder']))
         game.choose_cats[a].update_sprite()
+
+# CAT CLASS ITEMS
+cat_class = Cat(example=True)
+cat_class = Cat()
+game.cat_class = cat_class
+
