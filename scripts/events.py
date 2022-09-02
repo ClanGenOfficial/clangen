@@ -15,16 +15,28 @@ class Events(object):
         self.at_war = False
         self.enemy_clan = None
         self.living_cats = 0
+        self.new_cat_invited = False
 
     def one_moon(self):
         if game.switches['timeskip']:
             game.switches['save_clan'] = False
+            self.new_cat_invited = False
             self.living_cats = 0
             self.check_clan_relations()
             game.patrolled.clear()
             for cat in cat_class.all_cats.copy().values():
                 if not cat.dead and not cat.exiled:
-                    self._extracted_from_one_moon_7(cat)
+                    self.living_cats += 1
+                    cat.in_camp = 1
+                    self.perform_ceremonies(cat)
+                    self.handle_relationships(cat)
+                    if not self.new_cat_invited or self.living_cats < 10:        
+                        self.invite_new_cats(cat)
+                    self.have_kits(cat)
+                    self.other_interactions(cat)
+                    self.gain_scars(cat)
+                    self.handle_deaths(cat)
+                    self.check_age(cat)
                 elif cat.exiled:
                     cat.moons+=1
                     if cat.moons > randint(100,200):
@@ -48,19 +60,6 @@ class Events(object):
             if game.clan.leader.dead:
                 game.cur_events_list.insert(0, f"{game.clan.name}Clan has no leader!")
         game.switches['timeskip'] = False
-
-    # TODO Rename this here and in `one_moon`
-    def _extracted_from_one_moon_7(self, cat):
-        self.living_cats += 1
-        cat.in_camp = 1
-        self.perform_ceremonies(cat)
-        self.handle_relationships(cat)
-        self.invite_new_cats(cat)
-        self.have_kits(cat)
-        self.other_interactions(cat)
-        self.gain_scars(cat)
-        self.handle_deaths(cat)
-        self.check_age(cat)
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0:
@@ -151,12 +150,11 @@ class Events(object):
 
     def handle_relationships(self, cat):
         other_cat = choice(list(cat_class.all_cats.values()))
-        if randint(1, 50) == 1:
+        if randint(1, 30) == 1:
             if cat != other_cat and not other_cat.dead and cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and other_cat.status not in [
                 'kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and cat.age == other_cat.age and not {cat, cat.parent1, cat.parent2}.intersection(
-                {other_cat, other_cat.parent1, other_cat.parent2}) and cat.mate is None and other_cat.mate is None:
+                {other_cat, other_cat.parent1, other_cat.parent2}) and cat.mate is None and other_cat.mate is None and not other_cat.exiled:
                 game.cur_events_list.append(f'{str(cat.name)} and {str(other_cat.name)} have become mates')
-
                 cat.mate = other_cat.ID
                 other_cat.mate = cat.ID
         elif randint(1, 50) == 1:
@@ -174,6 +172,7 @@ class Events(object):
         elif self.living_cats > 30:
             chance = 300
         if randint(1, chance) == 1 and cat.age != 'kitten':
+            self.new_cat_invited = True
             name = str(cat.name)
             type_of_new_cat = choice([1, 2, 3, 4, 5, 6])
             if type_of_new_cat == 1:
