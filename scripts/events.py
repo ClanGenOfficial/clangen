@@ -33,7 +33,6 @@ class Events(object):
                     if cat.moons > randint(100,200):
                         if choice([1, 2, 3, 4, 5]) == 1:
                             cat.dead = True
-                    cat.create_interaction()
                 else:
                     cat.dead_for += 1
             cat_class.thoughts()
@@ -65,6 +64,7 @@ class Events(object):
         self.gain_scars(cat)
         self.handle_deaths(cat)
         self.check_age(cat)
+        self.create_interaction(cat)
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0:
@@ -521,6 +521,43 @@ class Events(object):
             cat.age = 'senior adult'
         else:
             cat.age = 'elder'
+
+    def create_interaction(self, cat):
+        # if the cat has no relationships, skip
+        if len(cat.relationships) < 1:
+            return
+
+        cats_to_choose = list(filter(lambda iter_cat_id: iter_cat_id != cat.ID, cat_class.all_cats.copy()))
+        # increase chance of cats, which are already befriended
+        like_threshold = 40
+        relevant_relationships = list(filter(lambda relation: relation.like >= like_threshold, cat.relationships))
+        for relationship in relevant_relationships:
+            cats_to_choose.append(relationship.cat_to)
+            if relationship.like >= like_threshold * 2:
+                cats_to_choose.append(relationship.cat_to)
+        
+
+        # increase chance of cats, which are already may be in love
+        love_threshold = 40
+        relevant_relationships = list(filter(lambda relation: relation.romantic_love >= love_threshold, cat.relationships))
+        for relationship in relevant_relationships:
+            cats_to_choose.append(relationship.cat_to)
+            if relationship.romantic_love >= love_threshold * 2:
+                cats_to_choose.append(relationship.cat_to)
+
+        # increase the chance a kitten interact with other kittens
+        if cat.age == "kitten":
+            kittens = list(filter(lambda cat_id: cat.all_cats.get(cat_id).age == "kitten" and cat_id != cat.ID, cat_class.all_cats.copy()))
+            cats_to_choose = cats_to_choose + kittens
+
+        # choose cat and start
+        random_id = random.choice(list(cat.all_cats.keys()))
+        relevant_relationship_list = list(filter(lambda relation: str(relation.cat_to) == str(random_id) and not relation.cat_to.dead, cat.relationships))
+        while len(relevant_relationship_list) < 1:
+            random_id = random.choice(list(cat.all_cats.keys()))
+            relevant_relationship_list = list(filter(lambda relation: str(relation.cat_to) == str(random_id) and not relation.cat_to.dead, cat.relationships))
+        relevant_relationship = relevant_relationship_list[0]
+        relevant_relationship.start_action()
 
 
 events_class = Events()

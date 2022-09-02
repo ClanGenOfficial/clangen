@@ -1008,7 +1008,7 @@ class EventsScreen(Screens):
         else:
             buttons.draw_button((200, 220),
                                 text='TIMESKIP ONE MOON',
-                                available=False)
+                                available=False)        
         events_class.one_moon()
 
         # show the Relationshipevents

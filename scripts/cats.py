@@ -6,6 +6,7 @@ from .relationship import *
 from random import choice, randint
 import math
 import os.path
+import json
 
 
 class Cat(object):
@@ -20,7 +21,6 @@ class Cat(object):
               'great speaker', 'excellent speaker', 'strong connection to starclan', 'good teacher', 'great teacher', 'fantastic teacher']
     med_skills = ['good healer', 'great healer', 'fantastic healer', 'omen sight', 'dream walker', 'strong connection to starclan', 'lore keeper', 'good teacher', 'great teacher',
                   'fantastic teacher', 'keen eye', 'smart', 'very smart', 'extremely smart', 'good mediator', 'great mediator', 'excellent mediator', 'clairvoyant', 'prophet']
-    all_cats = {}
 
     all_cats = {}  # ID: object
     other_cats = {} # cats outside the clan
@@ -37,6 +37,7 @@ class Cat(object):
         self.former_mentor = []
         self.apprentice = []
         self.former_apprentices = []
+        self.relationships = []
         self.mate = None
         self.placement = None
         self.example = example
@@ -977,7 +978,7 @@ class Cat(object):
             # 'Is getting rained on during their patrol',  #              'Is out hunting'] //will add later  # interact_with_loner = ['Wants to know where ' + other_name + '  #
             # came from.'] // will add
 
-    def create_relationships(self):
+    def create_new_relationships(self):
         """Create Relationships to all current clan cats."""
         relationships = []
         for id in self.all_cats.keys():
@@ -1015,47 +1016,6 @@ class Cat(object):
                         comfortable=comfortable, jealousy=jealousy, trust=trust)
                 relationships.append(rel)        
         self.relationships = relationships
-
-    def link_relationships(self):
-        """Create links for all the relationships of the self."""
-        for relationship in self.relationships:
-            relationship.link_relationship()
-
-    def create_interaction(self):
-        cats_to_choose = list(filter(lambda iter_cat_id: iter_cat_id != self.ID, game.clan.clan_cats))
-
-        # increase chance of cats, which are already befriended
-        like_threshold = 40
-        relevant_relationships = list(filter(lambda relation: relation.like >= like_threshold, self.relationships))
-        for relationship in relevant_relationships:
-            cats_to_choose.append(relationship.cat_to)
-            if relationship.like >= like_threshold * 2:
-                cats_to_choose.append(relationship.cat_to)
-        
-
-        # increase chance of cats, which are already may be in love
-        love_threshold = 40
-        relevant_relationships = list(filter(lambda relation: relation.romantic_love >= love_threshold, self.relationships))
-        for relationship in relevant_relationships:
-            cats_to_choose.append(relationship.cat_to)
-            if relationship.romantic_love >= love_threshold * 2:
-                cats_to_choose.append(relationship.cat_to)
-
-        # increase the chance a kitten interact with other kittens
-        if self.age == "kitten":
-            kittens = list(filter(lambda cat_id: self.all_cats.get(cat_id).age == "kitten" and cat_id != self.ID, game.clan.clan_cats))
-            cats_to_choose = cats_to_choose + kittens
-
-        # choose cat and start
-        random_id = random.choice(list(self.all_cats.keys()))
-        random_cat = self.all_cats.get(random_id)
-        relevant_relationship_list = list(filter(lambda relation: str(relation.cat_to.ID) == str(random_cat.ID), self.relationships))
-        while len(relevant_relationship_list) < 1:
-            random_id = random.choice(list(self.all_cats.keys()))
-            random_cat = self.all_cats.get(random_id)
-            relevant_relationship_list = list(filter(lambda relation: str(relation.cat_to.ID) == str(random_cat.ID), self.relationships))
-        relevant_relationship = relevant_relationship_list[0]
-        relevant_relationship.start_action()
 
     def status_change(self, new_status):
         # revealing of traits and skills
@@ -1255,6 +1215,7 @@ class Cat(object):
     def save_cats(self):
         data = ''
         for x in self.all_cats.values():
+            x.save_relationship_of_cat()
             # cat ID -- name prefix : name suffix
             data += x.ID + ',' + x.name.prefix + ':' + x.name.suffix + ','
             # cat gender -- status -- age -- trait
@@ -1335,6 +1296,39 @@ class Cat(object):
             clanname = game.switches['clan_list'][0]
         with open('saves/' + clanname + 'cats.csv', 'w') as write_file:
             write_file.write(data)
+
+    def save_relationship_of_cat(self):
+        # save relationships for each cat
+        if game.switches['clan_name'] != '':
+            clanname = game.switches['clan_name']
+        elif len(game.switches['clan_name']) > 0:
+            clanname = game.switches['clan_list'][0]
+        elif game.clan != None:
+            clanname = game.clan.name
+        relationship_dir = 'saves/' + clanname + '/relationships' 
+        if not os.path.exists(relationship_dir):
+            os.makedirs(relationship_dir)
+        
+        rel = []
+        for r in self.relationships:
+            r_data = {
+                "cat_from_id": r.cat_from.ID,
+                "cat_to_id": r.cat_to.ID,
+                "mates": r.mates,
+                "family": r.family,
+                "romantic_love": r.romantic_love,
+                "like": r.like,
+                "dislike": r.dislike,
+                "admiration": r.admiration,
+                "comfortable": r.comfortable,
+                "jealousy": r.jealousy,
+                "trust": r.trust 
+            }
+            rel.append(r_data)
+
+        with open(relationship_dir + '/' + self.ID + '_relations.json', 'w') as rel_file:
+            json_string = json.dumps(rel)
+            rel_file.write(json_string)
 
     def load_cats(self):
         if game.switches['clan_list'][0].strip() == '':
@@ -1437,9 +1431,38 @@ class Cat(object):
                     former_apps.append(f_app)
                 n.apprentice = apps
                 n.former_apprentices = former_apps
+                n.load_relationship_of_cat()
                 n.update_sprite()
 
             game.switches['error_message'] = ''
+
+    def load_relationship_of_cat(self):
+        if game.switches['clan_name'] != '':
+            clanname = game.switches['clan_name']
+        else:
+            clanname = game.switches['clan_list'][0]
+
+        relation_directory = 'saves/' + clanname + '/relationships/' + self.ID + '_relations.json'
+        
+        if not os.path.exists(relation_directory):
+            return
+        
+        with open(relation_directory, 'r') as read_file:
+            rel_data = json.loads(read_file.read())
+            relationships = []
+            for rel in rel_data:
+                cat_to = self.all_cats.get(rel['cat_to_id'])
+                if cat_to == None:
+                    continue
+                new_rel = Relationship(cat_from=self,cat_to=cat_to,
+                                        mates=rel['mates'],family=rel['family'],
+                                        romantic_love=rel['romantic_love'],
+                                        like=rel['like'], dislike=rel['dislike'],
+                                        admiration=rel['admiration'],
+                                        comfortable=rel['comfortable'],
+                                        jealousy=rel['jealousy'],trust=rel['trust'])
+                relationships.append(new_rel)
+            self.relationships = relationships
 
     def load(self, cat_dict):
         """ A function that takes a dictionary containing other dictionaries with attributes and values of all(?)
@@ -1555,10 +1578,6 @@ class Cat(object):
         return description
 
 
-# CAT CLASS ITEMS
-cat_class = Cat(example=True)
-game.cat_class = cat_class
-
 # The randomized cat sprite in Main Menu screen
 example_cat = Cat(status=choice(["kitten", "apprentice", "warrior", "elder"]), example=True)
 example_cat.update_sprite()
@@ -1574,4 +1593,7 @@ def create_example_cats():
             game.choose_cats[a] = Cat(status=choice(['kitten', 'apprentice', 'warrior', 'warrior', 'elder']))
         game.choose_cats[a].update_sprite()
 
+# CAT CLASS ITEMS
+cat_class = Cat(example=True)
 cat_class = Cat()
+game.cat_class = cat_class

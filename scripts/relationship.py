@@ -424,9 +424,11 @@ class Relationship(object):
 
         if len(self.effect) > 0:
             game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string} ({self.effect})")
+            # game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string}")
         else:
             game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string}")
-        
+
+        self.effect = []
         #if len(self.current_changes_from) > 0:
         #    game.relation_events_list.append(rel_stat_info_from)
         #if len(self.current_changes_to) > 0:
@@ -548,7 +550,7 @@ class Relationship(object):
         if action in INCREASE['from']['dislike']:
             self.dislike += number_increase
             self.current_changes_from.append('+ ' + str(number_increase) + ' dislike ')
-            self.effect = 'positive Effect'
+            self.effect = 'negative Effect'
             # indirekt influences
             self.like -= INDIRECT_DECREASE
             self.romantic_love -= INDIRECT_DECREASE
@@ -594,7 +596,7 @@ class Relationship(object):
         if action in DECREASE['from']['dislike']:
             self.dislike -= number_decrease
             self.current_changes_from.append('- ' + str(number_decrease) + ' dislike ')
-            self.effect = 'negative Effect'
+            self.effect = 'positive Effect'
         if action in DECREASE['from']['admiration']:
             self.admiration -= number_decrease
             self.current_changes_from.append('- ' + str(number_decrease) + ' admir. ')

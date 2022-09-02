@@ -20,6 +20,7 @@ with open('saves/clanlist.txt', 'r') as read_file:
 if if_clans > 0:
     game.switches['clan_list'] = clan_list.split('\n')
     try:
+        cat_class.load_cats()
         clan_class = Clan()
         clan_class.load_clan()
     except Exception:
