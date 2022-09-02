@@ -89,17 +89,17 @@ class Clan(object):
                 cat_class.all_cats[i].example = True
                 self.remove_cat(cat_class.all_cats[i].ID)
 
-        # give thoughts/actions to cats
-        for cat in cat_class.all_cats:
-            if cat_class.all_cats.get(cat).status == 'apprentice':
-                cat_class.all_cats.get(cat).status_change('apprentice')
+        # give thoughts,actions and relationships to cats
+        for cat_id in cat_class.all_cats:
+            cat_class.all_cats.get(cat_id).create_new_relationships()
+            if cat_class.all_cats.get(cat_id).status == 'apprentice':
+                cat_class.all_cats.get(cat_id).status_change('apprentice')
                 
         cat_class.thoughts()
         cat_class.save_cats()
         number_other_clans = randint(3, 5)
         for _ in range(number_other_clans):
             self.all_clans.append(OtherClan())
-            print(self.all_clans)
         self.save_clan()
         if mapavailable:
             save_map(game.map_info, game.clan.name)      
@@ -200,13 +200,11 @@ class Clan(object):
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
-                print(self.all_clans)
             return
         if game.switches['clan_list'][0].strip() == '':
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
-                print(self.all_clans)
             return
         with open('saves/' + game.switches['clan_list'][0] + 'clan.txt', 'r') as read_file:
             clan_data = read_file.read()
@@ -270,7 +268,7 @@ class Clan(object):
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
-            print(self.all_clans)
+
         for cat in members:
             if cat in cat_class.all_cats.keys():
                 game.clan.add_cat(cat_class.all_cats[cat])

@@ -64,6 +64,7 @@ class Events(object):
         self.gain_scars(cat)
         self.handle_deaths(cat)
         self.check_age(cat)
+        self.create_interaction(cat)
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0:
@@ -181,6 +182,13 @@ class Events(object):
             type_of_new_cat = choice([1, 2, 3, 4, 5, 6])
             if type_of_new_cat == 1:
                 kit = Cat(moons=0)
+                #create and update relationships
+                relationships = []
+                for cat_id in game.clan.clan_cats:
+                    the_cat = cat_class.all_cats.get(cat_id)
+                    the_cat.relationships.append(Relationship(the_cat,kit))
+                    relationships.append(Relationship(kit,the_cat))
+                kit.relationships = relationships
                 game.clan.add_cat(kit)
                 kit_text = [f'{name} finds an abandoned kit and names them {str(kit.name)}',
                             f'A loner brings their kit named {str(kit.name.prefix)} to the clan, stating they no longer can care for them']
@@ -192,6 +200,13 @@ class Events(object):
 
             elif type_of_new_cat == 3:
                 loner = Cat(status='warrior', moons=randint(12, 120))
+                #create and update relationships
+                relationships = []
+                for cat_id in game.clan.clan_cats:
+                    the_cat = cat_class.all_cats.get(cat_id)
+                    the_cat.relationships.append(Relationship(the_cat,loner))
+                    relationships.append(Relationship(loner,the_cat))
+                loner.relationships = relationships
                 loner.skill = 'formerly a loner'
                 game.clan.add_cat(loner)
                 loner_text = [f'{name} finds a loner who joins the clan', f'A loner says that they are interested in clan life and joins the clan']
@@ -201,6 +216,13 @@ class Events(object):
 
             elif type_of_new_cat == 4:
                 warrior = Cat(status='warrior', moons=randint(12, 150))
+                #create and update relationships
+                relationships = []
+                for cat_id in game.clan.clan_cats:
+                    the_cat = cat_class.all_cats.get(cat_id)
+                    the_cat.relationships.append(Relationship(the_cat, warrior))
+                    relationships.append(Relationship(warrior,the_cat))
+                warrior.relationships = relationships
                 game.clan.add_cat(warrior)
                 warrior_text = []
                 if len(game.clan.all_clans) > 0:
@@ -215,6 +237,13 @@ class Events(object):
                 self._extracted_from_invite_new_cats_47(name)
             elif type_of_new_cat == 6:
                 loner = Cat(status='warrior', moons=randint(12, 120))
+                #create and update relationships
+                relationships = []
+                for cat_id in game.clan.clan_cats:
+                    the_cat = cat_class.all_cats.get(cat_id)
+                    the_cat.relationships.append(Relationship(the_cat,loner))
+                    relationships.append(Relationship(loner,the_cat))
+                loner.relationships = relationships
                 self._extracted_from_invite_new_cats_59(loner)
                 loner_text = [f'{name} finds a kittypet named {choice(names.loner_names)} who wants to join the clan']
                 game.cur_events_list.append(choice(loner_text))
@@ -233,6 +262,13 @@ class Events(object):
     def _extracted_from_invite_new_cats_47(self, name):
         loner_name = choice(names.loner_names)
         loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
+        #create and update relationships
+        relationships = []
+        for cat_id in game.clan.clan_cats:
+            the_cat = cat_class.all_cats.get(cat_id)
+            the_cat.relationships.append(Relationship(the_cat,loner))
+            relationships.append(Relationship(loner,the_cat))
+        loner.relationships = relationships
         self._extracted_from_invite_new_cats_59(loner)
         loner_text = [f'{name} finds a kittypet named {str(loner_name)} who wants to join the clan', f'A kittypet named {str(loner_name)} stops {name} and asks to join the clan']
         game.cur_events_list.append(choice(loner_text))
@@ -243,6 +279,13 @@ class Events(object):
         loner_name = choice(names.loner_names)
         loner = Cat(prefix=loner_name, gender=choice(['female', 'male']), status='warrior', moons=randint(12, 120), suffix='')
         loner.skill = 'formerly a loner'
+        #create and update relationships
+        relationships = []
+        for cat_id in game.clan.clan_cats:
+            the_cat = cat_class.all_cats.get(cat_id)
+            the_cat.relationships.append(Relationship(the_cat,loner))
+            relationships.append(Relationship(loner,the_cat))
+        loner.relationships = relationships
         game.clan.add_cat(loner)
         loner_text = [f'{name} finds a loner named {str(loner.name)} who joins the clan',
                       f'A loner named {str(loner.name)} waits on the border for a patrol, asking to join the clan']
@@ -435,12 +478,34 @@ class Events(object):
 
                     for kit in range(kits):
                         kit = Cat(parent1=cat.ID, parent2=cat.mate, moons=0)
+                        #create and update relationships
+                        relationships = []
+                        for cat_id in game.clan.clan_cats:
+                            the_cat = cat_class.all_cats.get(cat_id)
+                            if the_cat.ID in [kit.parent1, kit.parent2]:
+                                cat.relationships.append(Relationship(cat,kit,False,True))
+                                relationships.append(Relationship(kit,cat,False,True))
+                            else:
+                                the_cat.relationships.append(Relationship(the_cat,kit))
+                                relationships.append(Relationship(kit,the_cat))
+                        kit.relationships = relationships
                         game.clan.add_cat(kit)
             elif hit == 1 and not cat.no_kits:
                 game.cur_events_list.append(str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s)')
 
                 for kit in range(kits):
                     kit = Cat(parent1=cat.ID, moons=0)
+                    #create and update relationships
+                    relationships = []
+                    for cat_id in game.clan.clan_cats:
+                        the_cat = cat_class.all_cats.get(cat_id)
+                        if the_cat.ID is kit.parent1:
+                            the_cat.relationships.append(Relationship(the_cat,kit,False,True))
+                            relationships.append(Relationship(kit,the_cat,False,True))
+                        else:
+                            the_cat.relationships.append(Relationship(the_cat,kit))
+                            relationships.append(Relationship(kit,the_cat))
+                    kit.relationships = relationships
                     game.clan.add_cat(kit)
 
     def check_age(self, cat):
@@ -456,6 +521,43 @@ class Events(object):
             cat.age = 'senior adult'
         else:
             cat.age = 'elder'
+
+    def create_interaction(self, cat):
+        # if the cat has no relationships, skip
+        if len(cat.relationships) < 1:
+            return
+
+        cats_to_choose = list(filter(lambda iter_cat_id: iter_cat_id != cat.ID, cat_class.all_cats.copy()))
+        # increase chance of cats, which are already befriended
+        like_threshold = 40
+        relevant_relationships = list(filter(lambda relation: relation.like >= like_threshold, cat.relationships))
+        for relationship in relevant_relationships:
+            cats_to_choose.append(relationship.cat_to)
+            if relationship.like >= like_threshold * 2:
+                cats_to_choose.append(relationship.cat_to)
+        
+
+        # increase chance of cats, which are already may be in love
+        love_threshold = 40
+        relevant_relationships = list(filter(lambda relation: relation.romantic_love >= love_threshold, cat.relationships))
+        for relationship in relevant_relationships:
+            cats_to_choose.append(relationship.cat_to)
+            if relationship.romantic_love >= love_threshold * 2:
+                cats_to_choose.append(relationship.cat_to)
+
+        # increase the chance a kitten interact with other kittens
+        if cat.age == "kitten":
+            kittens = list(filter(lambda cat_id: cat.all_cats.get(cat_id).age == "kitten" and cat_id != cat.ID, cat_class.all_cats.copy()))
+            cats_to_choose = cats_to_choose + kittens
+
+        # choose cat and start
+        random_id = random.choice(list(cat.all_cats.keys()))
+        relevant_relationship_list = list(filter(lambda relation: str(relation.cat_to) == str(random_id) and not relation.cat_to.dead, cat.relationships))
+        while len(relevant_relationship_list) < 1:
+            random_id = random.choice(list(cat.all_cats.keys()))
+            relevant_relationship_list = list(filter(lambda relation: str(relation.cat_to) == str(random_id) and not relation.cat_to.dead, cat.relationships))
+        relevant_relationship = relevant_relationship_list[0]
+        relevant_relationship.start_action()
 
 
 events_class = Events()

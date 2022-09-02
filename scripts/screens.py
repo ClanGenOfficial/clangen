@@ -984,6 +984,8 @@ class ClanCreatedScreen(Screens):
                 return self.x,self.y
         else:
             return self.x,self.y
+
+
 class EventsScreen(Screens):
 
     def on_use(self):
@@ -997,16 +999,21 @@ class EventsScreen(Screens):
 
         verdana.text(f'Clan age: {str(game.clan.age)} moons', ('center', 160))
         if game.switches['events_left'] == 0:
-            buttons.draw_button(('center', 220),
+            buttons.draw_button((200, 220),
                                 text='TIMESKIP ONE MOON',
                                 timeskip=True)
             if game.switches['timeskip']:
                 game.cur_events_list = []
+                game.relation_events_list = []
         else:
-            buttons.draw_button(('center', 220),
+            buttons.draw_button((200, 220),
                                 text='TIMESKIP ONE MOON',
-                                available=False)
+                                available=False)        
         events_class.one_moon()
+
+        # show the Relationshipevents
+        buttons.draw_button((-200, 220), text='RELEATIONSHIP EVENTS', cur_screen='relationship event screen')
+
         a = 0
         if game.cur_events_list is not None and game.cur_events_list != []:
             for x in range(
@@ -2352,6 +2359,9 @@ class OptionsScreen(Screens):
                             text='Family Tree')
         button_count += 1
 
+        buttons.draw_button((x_value, y_value + button_count * y_change), text='See Relaionships', cur_screen='relationship screen')
+        button_count += 1
+
         if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
                            ] and not the_cat.dead:
             buttons.draw_button((x_value, y_value + button_count * y_change),
@@ -2520,7 +2530,8 @@ class StatsScreen(Screens):
         verdana.text('Number of StarClan Cats: ' + str(starclan_num),
                      (100, 400))
         draw_menu_buttons()
-        
+
+
 class MapScreen(Screens):
     def on_use(self):
         hunting_claim = str(game.clan.name) + 'Clan Hunting Grounds'
@@ -2599,6 +2610,119 @@ class MapScreen(Screens):
             print("Default map loaded.")
 
 
+class RelationshipScreen(Screens):
+    def on_use(self):
+        # get the relevant cat
+        the_cat = cat_class.all_cats.get(game.switches['cat'])
+
+        # layout
+        verdana_big.text(str(the_cat.name) + ' Relationships', ('center', 30))
+        verdana_small.text(str(the_cat.gender) + ' - ' +
+                           str(the_cat.age), ('center', 50))
+        verdana.text('CATS LIST', ('center', 100))
+
+        # make a list of the relationships
+        relationships = the_cat.relationships
+
+        # pages
+        all_pages = 1  # amount of pages
+        if len(relationships) > 10:
+            all_pages = int(ceil(len(relationships) / 10))
+
+        pos_x = 0
+        pos_y = 0
+        cats_on_page = 0  # how many are on page already
+        for x in range(len(relationships)):
+            if (x + (game.switches['list_page'] - 1) * 10) > len(relationships):
+                game.switches['list_page'] = 1
+
+            the_relationship = relationships[x + (game.switches['list_page'] - 1) * 10]
+            the_relationship.cat_to.update_sprite()
+            buttons.draw_button((100 + pos_x, 180 + pos_y), image=the_relationship.cat_to.sprite, cat=the_relationship.cat_to.ID, cur_screen='profile screen')
+            # name length
+            longest_string_len = verdana.text(str('romantic love: ' + str(the_relationship.romantic_love)))
+            verdana.text(str(the_relationship.cat_to.name), (155 + pos_x - longest_string_len / 1.5, 240 + pos_y))
+                
+            verdana_small.text(f"{str(the_relationship.cat_to.gender)} - {str(the_relationship.cat_to.age)}", (155 + pos_x - longest_string_len / 1.5, 255 + pos_y))
+            
+            # there is no way the mate is dead
+            if the_cat.mate is not None and the_relationship.cat_to.ID == the_cat.mate.ID:
+                verdana_small.text('mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
+            elif the_relationship.cat_to.mate != None:
+                verdana_small.text('has a mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
+            if the_relationship.cat_to.dead:
+                verdana_small.text('(dead)', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
+            
+            count = 12
+            verdana_small.text('romantic love:  ' + str(the_relationship.romantic_love), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
+            count += 10
+            verdana_small.text('like:                ' + str(the_relationship.like), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
+            count += 10
+            verdana_small.text('dislike:            ' + str(the_relationship.dislike), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
+            count += 10
+            verdana_small.text('admiration:      ' + str(the_relationship.admiration), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
+            count += 10
+            verdana_small.text('comfortable:    ' + str(the_relationship.comfortable), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
+            count += 10
+            verdana_small.text('jealousy:         ' + str(the_relationship.jealousy), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
+            count += 10
+            verdana_small.text('trust:               ' + str(the_relationship.trust), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
+
+            cats_on_page += 1
+            pos_x += 130
+            if pos_x >= 600:
+                pos_x = 0
+                pos_y += 100 + count
+
+            if cats_on_page >= 10 or x + (game.switches['list_page'] - 1) * 10 == len(relationships) - 1:
+                break
+
+        # page buttons
+        verdana.text(
+            'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages), ('center', 600))
+        if game.switches['list_page'] > 1:
+            buttons.draw_button((300, 600), text='<',
+                                list_page=game.switches['list_page'] - 1)
+        if game.switches['list_page'] < all_pages:
+            buttons.draw_button((-300, 600), text='>',
+                                list_page=game.switches['list_page'] + 1)
+        buttons.draw_button(('center', -100), text='Back',
+                            cur_screen='profile screen')
+
+    def screen_switches(self):
+        cat_profiles()
+
+
+class RelationshipEventScreen(Screens):
+    def on_use(self):
+        max_events = 14
+        a = 0
+
+        if game.relation_events_list is not None and game.relation_events_list != []:
+            for x in range(min(len(game.relation_events_list), max_events)):
+                if game.relation_events_list[x] == None:
+                    continue
+                if "Clan has no " in game.relation_events_list[x]:
+                    verdana_red.text(
+                        game.relation_events_list[x], ('center', 160 + a * 30))
+                else:
+                    verdana.text(
+                        game.relation_events_list[x], ('center', 160 + a * 30))
+                a += 1
+        else:
+            verdana.text("Nothing significant happened this moon.",
+                         ('center', 160 + a * 30))
+        # buttons
+        draw_menu_buttons()
+
+        if len(game.relation_events_list) > max_events:
+            buttons.draw_button((720, 150), image=game.up, arrow="UP")
+            buttons.draw_button((700, 550), image=game.down, arrow="DOWN")
+
+    def screen_switches(self):
+        cat_profiles
+
+
 # SCREENS
 screens = Screens()
 
@@ -2629,6 +2753,8 @@ language_screen = LanguageScreen('language screen')
 stats_screen = StatsScreen('stats screen')
 other_screen = OtherScreen('other screen')
 map_screen = MapScreen('map screen')
+relationship_screen = RelationshipScreen('relationship screen')
+relationship_event_screen = RelationshipEventScreen('relationship event screen')
 
 
 # CAT PROFILES
