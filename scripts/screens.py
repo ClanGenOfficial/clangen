@@ -1823,6 +1823,28 @@ class RelationshipEventScreen(Screens):
         max_events = 14
         a = 0
         verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
+        verdana.text('Check this page to see which events are currently happening at the clan.', ('center', 100))
+
+        verdana.text(f'Current season: {str(game.clan.current_season)}', ('center', 130))
+
+        verdana.text(f'Clan age: {str(game.clan.age)} moons', ('center', 160))
+        if game.switches['events_left'] == 0:
+            buttons.draw_button((200, 220),
+                                text='TIMESKIP ONE MOON',
+                                timeskip=True)
+
+            if game.switches['timeskip']:
+                game.cur_events_list = []
+                game.relation_events_list = []
+        else:
+            buttons.draw_button((200, 220),
+                                text='TIMESKIP ONE MOON',
+                                available=False)        
+
+        events_class.one_moon()
+
+        # show the Relationshipevents
+        buttons.draw_button((-250, 220), text='CLAN EVENTS', cur_screen='events screen')
 
         if game.relation_events_list is not None and game.relation_events_list != []:
             for x in range(min(len(game.relation_events_list), max_events)):
@@ -1830,14 +1852,14 @@ class RelationshipEventScreen(Screens):
                     continue
                 if "Clan has no " in game.relation_events_list[x]:
                     verdana_red.text(
-                        game.relation_events_list[x], ('center', 160 + a * 30))
+                        game.relation_events_list[x], ('center', 260 + a * 30))
                 else:
                     verdana.text(
-                        game.relation_events_list[x], ('center', 160 + a * 30))
+                        game.relation_events_list[x], ('center', 260 + a * 30))
                 a += 1
         else:
             verdana.text("Nothing significant happened this moon.",
-                         ('center', 160 + a * 30))
+                         ('center', 260 + a * 30))
         # buttons
         draw_menu_buttons()
 
