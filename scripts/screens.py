@@ -599,7 +599,7 @@ class EventsScreen(Screens):
         events_class.one_moon()
 
         # show the Relationshipevents
-        buttons.draw_button((-200, 220), text='RELEATIONSHIP EVENTS', cur_screen='relationship event screen')
+        buttons.draw_button((-200, 220), text='RELATIONSHIP EVENTS', cur_screen='relationship event screen')
 
         a = 0
         if game.cur_events_list is not None and game.cur_events_list != []:
