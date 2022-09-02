@@ -360,7 +360,10 @@ class MakeClanScreen(Screens):
 
         if game.switches['cat'] is not None and 12 > game.switches['cat'] >= 0:
             game.choose_cats[game.switches['cat']].draw_large((250, 200))
-            verdana.text(str(game.choose_cats[game.switches['cat']].name) + ' --> ' + game.choose_cats[game.switches['cat']].name.prefix + 'star', (420, 200))
+            if game.choose_cats[game.switches['cat']].age in ['kitten', 'adolescent']:
+                verdana.text(str(game.choose_cats[game.switches['cat']].name), (420, 200))
+            else:
+                verdana.text(str(game.choose_cats[game.switches['cat']].name) + ' --> ' + game.choose_cats[game.switches['cat']].name.prefix + 'star', (420, 200))
             verdana_small.text(str(game.choose_cats[game.switches['cat']].gender), (420, 230))
             verdana_small.text(str(game.choose_cats[game.switches['cat']].age), (420, 245))
             verdana_small.text(str(game.choose_cats[game.switches['cat']].trait), (420, 260))
