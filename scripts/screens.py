@@ -300,7 +300,7 @@ class StarClanScreen(Screens):
             if x + (game.switches['list_page'] - 1) * 24 > len(search_cats):
                 game.switches['list_page'] = 1
             the_cat = search_cats[x + (game.switches['list_page'] - 1) * 24]
-            if the_cat.dead:
+            if the_cat.dead and not the_cat.exiled:
                 buttons.draw_button((130 + pos_x, 180 + pos_y), image=the_cat.sprite, cat=the_cat.ID, cur_screen='profile screen')
 
                 name_len = verdana.text(str(the_cat.name))
@@ -924,7 +924,6 @@ class ChooseMateScreen(Screens):
             for x in game.clan.clan_cats:
                 if the_cat.ID in [cat_class.all_cats[x].parent1, cat_class.all_cats[x].parent2] and mate.ID in [cat_class.all_cats[x].parent1, cat_class.all_cats[x].parent2]:
                     buttons.draw_button((200 + pos_x, 370 + pos_y), image=cat_class.all_cats[x].sprite, cat=cat_class.all_cats[x].ID, cur_screen='profile screen')
-
                     kittens = True
                     pos_x += 50
                     if pos_x > 400:
@@ -952,7 +951,7 @@ class ChooseMateScreen(Screens):
                 the_cat.parent1, the_cat.parent2] and pos_mate.mate is None and (pos_mate.parent1 is None or pos_mate.parent1 not in [the_cat.parent1, the_cat.parent2]) and (
                     pos_mate.parent2 is None or pos_mate.parent2 not in [the_cat.parent1, the_cat.parent2]) and (
                     the_cat.age in ['senior adult', 'elder'] and cat_class.all_cats[x].age in ['senior adult', 'elder'] or cat_class.all_cats[x].age != 'elder' and
-                    cat_class.all_cats[x].age != 'adolescent' and the_cat.age != 'elder' and the_cat.age != 'adolescent'):
+                    cat_class.all_cats[x].age != 'adolescent' and the_cat.age != 'elder' and the_cat.age != 'adolescent') and not the_cat.exiled:
                 valid_mates.append(cat_class.all_cats[x])
         all_pages = int(ceil(len(valid_mates) / 27.0)) if len(valid_mates) > 27 else 1
         cats_on_page = 0
@@ -1020,7 +1019,7 @@ class ListScreen(Screens):
             if x + (game.switches['list_page'] - 1) * 24 >= len(search_cats):
                 game.switches['list_page'] -= 1
             the_cat = search_cats[x + (game.switches['list_page'] - 1) * 24]
-            if not the_cat.dead:
+            if not the_cat.dead and not the_cat.exiled:
                 buttons.draw_button((130 + pos_x, 180 + pos_y), image=the_cat.sprite, cat=the_cat.ID, cur_screen='profile screen')
 
                 name_len = verdana.text(str(the_cat.name))
@@ -1375,7 +1374,7 @@ class ChooseMentorScreen(Screens):
         verdana_big.text('Choose Mentor', ('center', 30))
         living_cats = []
         for cat in cat_class.all_cats.values():
-            if not cat.dead and cat != game.switches['apprentice'].mentor and cat.status in ['warrior', 'deputy', 'leader']:
+            if not cat.dead and cat != game.switches['apprentice'].mentor and cat.status in ['warrior', 'deputy', 'leader'] and not the_cat.exiled:
                 living_cats.append(cat)
         all_pages = 1
         if len(living_cats) > 24:
@@ -1427,12 +1426,12 @@ class ChooseMentorScreen2(Screens):
                                                                                                                                                                         'deputy',
                                                                                                                                                                         'leader']\
                     and \
-                    cat_class.all_cats[check_cat] != game.switches['apprentice'].mentor:
+                    cat_class.all_cats[check_cat] != game.switches['apprentice'].mentor and not the_cat.exiled:
                 previous_cat = cat_class.all_cats[check_cat].ID
             elif next_cat == 1 and cat_class.all_cats[check_cat].ID != the_cat.ID and not cat_class.all_cats[check_cat].dead and cat_class.all_cats[check_cat].status in ['warrior',
                                                                                                                                                                           'deputy',
                                                                                                                                                                           'leader'] and \
-                    cat_class.all_cats[check_cat] != game.switches['apprentice'].mentor:
+                    cat_class.all_cats[check_cat] != game.switches['apprentice'].mentor and not the_cat.exiled:
                 next_cat = cat_class.all_cats[check_cat].ID
             elif int(next_cat) > 1:
                 break
@@ -1688,9 +1687,13 @@ class StatsScreen(Screens):
         kit_num = 0
         elder_num = 0
         starclan_num = 0
+        exiled_num = 0
         for cat in cat_class.all_cats.values():
             if not cat.dead:
                 living_num += 1
+                if cat.exiled:
+                    exiled_num += 1
+                    continue
                 if cat.status == 'warrior':
                     warriors_num += 1
                 elif cat.status in ['apprentice', 'medicine cat apprentice']:
@@ -1699,6 +1702,7 @@ class StatsScreen(Screens):
                     kit_num += 1
                 elif cat.status == 'elder':
                     elder_num += 1
+                
             else:
                 starclan_num += 1
 
@@ -1707,7 +1711,8 @@ class StatsScreen(Screens):
         verdana.text('Number of Apprentices: ' + str(app_num), (100, 250))
         verdana.text('Number of Kits: ' + str(kit_num), (100, 300))
         verdana.text('Number of Elders: ' + str(elder_num), (100, 350))
-        verdana.text('Number of StarClan Cats: ' + str(starclan_num), (100, 400))
+        verdana.text('Number of Exiled Cats: ' + str(exiled_num), (100, 400))
+        verdana.text('Number of StarClan Cats: ' + str(starclan_num), (100, 450))
         draw_menu_buttons()
 
 

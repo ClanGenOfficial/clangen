@@ -39,9 +39,13 @@ class Events(object):
                     self.check_age(cat)
                 elif cat.exiled:
                     cat.moons+=1
+                    if cat.moons == 12:
+                        cat.age = 'adult'
+                    elif cat.moons == 100:
+                        cat.age = 'elder'
                     if cat.moons > randint(100,200):
                         if choice([1, 2, 3, 4, 5]) == 1:
-                            cat_class.all_cats.remove(cat)
+                            cat.dead = True
                 else:
                     cat.dead_for += 1
             cat_class.thoughts()

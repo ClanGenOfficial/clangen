@@ -368,6 +368,8 @@ class Patrol(object):
             if self.patrol_event.patrol_id == 501:
                 new_status = 'warrior'
             kit = Cat(status=new_status)
+            if (kit.status == 'elder'):
+                kit.moons = randint(120,150)
             game.clan.add_cat(kit)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
@@ -387,6 +389,8 @@ class Patrol(object):
             new_status = choice(['apprentice', 'warrior', 'warrior', 'warrior', 'warrior', 'elder'])
             kit = Cat(status=new_status)
             game.clan.add_cat(kit)
+            if (kit.status == 'elder'):
+                kit.moons = randint(120,150)
             kit.skill = 'formerly a kittypet'
             kit.thought = 'Is looking around the camp with wonder'
             if randint(0, 2) == 0:  # chance to add collar
