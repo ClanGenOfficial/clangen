@@ -1736,6 +1736,7 @@ class StatsScreen(Screens):
 
 class RelationshipScreen(Screens):
     def on_use(self):
+
         # get the relevant cat
         the_cat = cat_class.all_cats.get(game.switches['cat'])
 
@@ -1770,7 +1771,7 @@ class RelationshipScreen(Screens):
             verdana_small.text(f"{str(the_relationship.cat_to.gender)} - {str(the_relationship.cat_to.age)}", (155 + pos_x - longest_string_len / 1.5, 255 + pos_y))
             
             # there is no way the mate is dead
-            if the_cat.mate is not None and the_relationship.cat_to.ID == the_cat.mate.ID:
+            if the_cat.mate is not None and the_relationship.cat_to.ID == the_cat.mate:
                 verdana_small.text('mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
             elif the_relationship.cat_to.mate != None:
                 verdana_small.text('has a mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
@@ -1821,6 +1822,7 @@ class RelationshipEventScreen(Screens):
     def on_use(self):
         max_events = 14
         a = 0
+        verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
 
         if game.relation_events_list is not None and game.relation_events_list != []:
             for x in range(min(len(game.relation_events_list), max_events)):
