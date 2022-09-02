@@ -1110,16 +1110,10 @@ class Cat(object):
             new_sprite.blit(sprites.sprites['eyes' + self.eye_colour + str(self.age_sprites[self.age])], (0, 0))
 
         # draw line art
-        if game.settings['shaders']:
-            if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
-                new_sprite.blit(sprites.sprites['shaders' + str(self.age_sprites[self.age] + 9)], (0, 0))
-            else:
-                new_sprite.blit(sprites.sprites['shaders' + str(self.age_sprites[self.age])], (0, 0))
+        if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
+            new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age] + 9)], (0, 0))
         else:
-            if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
-                new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age] + 9)], (0, 0))
-            else:
-                new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
+            new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
 
         # draw skin and scars2 and scars3
         blendmode = pygame.BLEND_RGBA_MIN

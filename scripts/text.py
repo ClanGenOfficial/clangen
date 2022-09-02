@@ -64,21 +64,6 @@ class Font(object):
             elif not game.settings['dark mode'] and font.colour == (250, 250, 250):
                 font.reset_colour(colour=(0, 0, 0))
 
-    def blit_text(self, text, pos, where=used_screen):
-        words = [word.split(' ') for word in text.splitlines()]  # 2D array where each row is a list of words.
-        space = 5  # The width of a space.
-        x, y = pos
-        for line in words:
-            for word in line:
-                word_surface = self.font.render(word, True, self.colour)
-                word_width, word_height = word_surface.get_size()
-                if x + word_width >= 800:
-                    x = pos[0]  # Reset the x.
-                    y += word_height  # Start on new row.
-                where.blit(word_surface, (x, y))
-                x += word_width + space
-            x = pos[0]  # Reset the x.
-            y += word_height  # Start on new row.
 
 # F O N T S
 verdana = Font('verdana')

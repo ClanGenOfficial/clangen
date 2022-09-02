@@ -148,7 +148,7 @@ class Smoke(object):
 
 
 class Ticked(object):
-    name = "Smoke"
+    name = "Ticked"
     sprites = {1: 'ticked', 2: 'white'}
     white_patches = [
         'ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY', 'TUXEDO', 'LITTLE', 'VAN',
