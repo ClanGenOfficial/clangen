@@ -1202,8 +1202,8 @@ class PatrolEventScreen(Screens):
             intro_text = intro_text.replace('r_c', str(patrol.patrol_random_cat.name))
             intro_text = intro_text.replace('p_l', str(patrol.patrol_leader.name))
             verdana.blit_text(intro_text, (150, 200))
-            buttons.draw_button((150, 320), text='Proceed', event=-2)
-            buttons.draw_button((250, 320), text='Do Not Proceed', event=2)
+            buttons.draw_button((290, 320), text='Proceed', event=-2)
+            buttons.draw_button((150, 320), text='Do Not Proceed', event=2)
         if game.switches['event'] == -2:
             patrol.calculate_success()
             game.switches['event'] = 1
@@ -1224,7 +1224,9 @@ class PatrolEventScreen(Screens):
                 decline_text = decline_text.replace('r_c', str(patrol.patrol_random_cat.name))
                 decline_text = decline_text.replace('p_l', str(patrol.patrol_leader.name))
                 verdana.blit_text(decline_text, (150, 200))
-            buttons.draw_button((150, 340), text='Return to Clan', cur_screen='clan screen')
+            buttons.draw_button((150, 350), text='Return to Clan', cur_screen='clan screen')
+            buttons.draw_button((280, 350), text='Patrol Again', cur_screen='patrol screen')
+
 
         for u in range(6):
             if u < len(patrol.patrol_cats):

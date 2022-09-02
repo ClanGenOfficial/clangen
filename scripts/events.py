@@ -408,16 +408,16 @@ class Events(object):
                 if cat_class.all_cats[cat.mate].dead:
                     chance = 0
                 elif cat_class.all_cats[cat.mate].gender != cat.gender and cat_class.all_cats[cat.mate].age != 'elder':
-                    chance = 25
+                    chance = 50
                 elif game.settings['no gendered breeding'] and cat_class.all_cats[cat.mate].age != 'elder' and chance is not None:
-                    chance = 25
+                    chance = 50
                 else:
                     chance = 0
             else:
                 game.cur_events_list.append("Warning: " + str(cat.name) + " has an invalid mate #" + str(cat.mate) + ". This has been unset.")
                 cat.mate = None
         else:
-            chance = 50
+            chance = 100
             if not game.settings['no unknown fathers']:
                 chance = 0
 
@@ -428,7 +428,7 @@ class Events(object):
         if chance != 0:
             hit = randint(0, chance)
             if self.living_cats > 50:
-                hit = randint(0, chance + 20)
+                hit = randint(0, chance + 30)
             elif self.living_cats < 10:
                 hit = randint(0, chance - 10)
             kits = choice([1, 1, 2, 2, 3, 3, 4])
