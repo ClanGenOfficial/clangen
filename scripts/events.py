@@ -154,10 +154,10 @@ class Events(object):
 
     def handle_relationships(self, cat):
         other_cat = choice(list(cat_class.all_cats.values()))
-        if randint(1, 50) == 1:
+        if randint(1, 2) == 1:
             if cat != other_cat and not other_cat.dead and cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and other_cat.status not in [
-                'kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and (cat.age in ['young adult', 'adult', 'senior adult'] and other_cat.age in ['young adult', 'adult', 'senior adult']) or cat.age == other_cat.age and not {cat, cat.parent1, cat.parent2}.intersection(
-                {other_cat, other_cat.parent1, other_cat.parent2}) and cat.mate is None and other_cat.mate is None and not other_cat.exiled:
+                'kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and ((cat.age in ['young adult', 'adult', 'senior adult'] and other_cat.age in ['young adult', 'adult', 'senior adult']) or cat.age == other_cat.age) and not {cat, cat.parent1, cat.parent2}.intersection(
+                {other_cat, other_cat.parent1, other_cat.parent2}) and cat.ID not in other_cat.former_apprentices and other_cat.ID not in cat.former_apprentices and cat.mate is None and other_cat.mate is None and not other_cat.exiled:
                 game.cur_events_list.append(f'{str(cat.name)} and {str(other_cat.name)} have become mates')
                 cat.mate = other_cat.ID
                 other_cat.mate = cat.ID
