@@ -72,7 +72,8 @@ class Font(object):
             for word in line:
                 word_surface = self.font.render(word, True, self.colour)
                 word_width, word_height = word_surface.get_size()
-                if x + word_width >= 800:
+                word_height+=5
+                if x + word_width >= 400:
                     x = pos[0]  # Reset the x.
                     y += word_height  # Start on new row.
                 where.blit(word_surface, (x, y))

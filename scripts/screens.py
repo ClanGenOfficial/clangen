@@ -1201,10 +1201,9 @@ class PatrolEventScreen(Screens):
             intro_text = patrol.patrol_event.intro_text
             intro_text = intro_text.replace('r_c', str(patrol.patrol_random_cat.name))
             intro_text = intro_text.replace('p_l', str(patrol.patrol_leader.name))
-            text1 = intro_text.split(' ')
-            verdana.text(intro_text, ('center', 200))
-            buttons.draw_button(('center', 300), text='Proceed', event=-2)
-            buttons.draw_button(('center', 340), text='Do Not Proceed', event=2)
+            verdana.blit_text(intro_text, (150, 200))
+            buttons.draw_button((150, 320), text='Proceed', event=-2)
+            buttons.draw_button((250, 320), text='Do Not Proceed', event=2)
         if game.switches['event'] == -2:
             patrol.calculate_success()
             game.switches['event'] = 1
@@ -1214,26 +1213,26 @@ class PatrolEventScreen(Screens):
                     success_text = patrol.patrol_event.success_text
                     success_text = success_text.replace('r_c', str(patrol.patrol_random_cat.name))
                     success_text = success_text.replace('p_l', str(patrol.patrol_leader.name))
-                    verdana.text(success_text, ('center', 200))
+                    verdana.blit_text(success_text, (150, 200))
                 else:
                     fail_text = patrol.patrol_event.fail_text
                     fail_text = fail_text.replace('r_c', str(patrol.patrol_random_cat.name))
                     fail_text = fail_text.replace('p_l', str(patrol.patrol_leader.name))
-                    verdana.text(fail_text, ('center', 200))
+                    verdana.blit_text(fail_text, (150, 200))
             elif game.switches['event'] == 2:
                 decline_text = patrol.patrol_event.decline_text
                 decline_text = decline_text.replace('r_c', str(patrol.patrol_random_cat.name))
                 decline_text = decline_text.replace('p_l', str(patrol.patrol_leader.name))
-                verdana.text(decline_text, ('center', 200))
-            buttons.draw_button(('center', 320), text='Return to Clan', cur_screen='clan screen')
+                verdana.blit_text(decline_text, (150, 200))
+            buttons.draw_button((150, 340), text='Return to Clan', cur_screen='clan screen')
 
         for u in range(6):
             if u < len(patrol.patrol_cats):
-                patrol.patrol_cats[u].draw((screen_x / 2 - 50 * (u + 2), 550))
-        verdana_small.text('season: ' + str(game.clan.current_season), ('center', 400))
-        verdana_small.text('patrol leader: ' + str(patrol.patrol_leader.name), ('center', 420))
-        verdana_small.text('patrol skills: ' + str(patrol.patrol_skills), ('center', 440))
-        verdana_small.text('patrol traits: ' + str(patrol.patrol_traits), ('center', 460))
+                patrol.patrol_cats[u].draw((50, 200 + 50*(u)))
+        verdana_small.blit_text('season: ' + str(game.clan.current_season), (150, 400))
+        verdana_small.blit_text('patrol leader: ' + str(patrol.patrol_leader.name), (150, 430))
+        verdana_small.blit_text('patrol skills: ' + str(set(patrol.patrol_skills)), (150, 460))
+        verdana_small.blit_text('patrol traits: ' + str(set(patrol.patrol_traits)), (150, 510))
         draw_menu_buttons()
 
     def screen_switches(self):
