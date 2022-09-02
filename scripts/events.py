@@ -166,6 +166,10 @@ class Events(object):
                 game.cur_events_list.append(f'{str(cat.name)} and {str(other_cat.name)} have broken up')
                 cat.mate = None
                 other_cat.mate = None
+        if cat.mate is not None:
+            if cat_class.all_cats[cat.mate].dead and randint(1,10) == 1:
+                game.cur_events_list.append(f'{str(cat.name)} will always love {str(cat_class.all_cats[cat.mate].name)} but decides to move on')
+                cat.mate = None
 
     def invite_new_cats(self, cat):
         chance = 100
