@@ -452,7 +452,7 @@ class StarClanScreen(Screens):
 
                 name_len = verdana.text(str(the_cat.name))
                 verdana.text(str(the_cat.name),
-                             (155 + pos_x - name_len / 2, 240 + pos_y))
+                             (130 + pos_x - name_len / 2, 240 + pos_y))
                 cats_on_page += 1
                 pos_x += 100
                 if pos_x >= 600:
@@ -1572,7 +1572,7 @@ class ListScreen(Screens):
 
                 name_len = verdana.text(str(the_cat.name))
                 verdana.text(str(the_cat.name),
-                             (155 + pos_x - name_len / 2, 240 + pos_y))
+                             (130 + pos_x - name_len / 2, 240 + pos_y))
                 cats_on_page += 1
                 pos_x += 100
                 if pos_x >= 600:
@@ -1643,7 +1643,7 @@ class OtherScreen(Screens):
 
                 name_len = verdana.text(str(the_cat.name))
                 verdana_red.text(str(the_cat.name),
-                                 (155 + pos_x - name_len / 2, 240 + pos_y))
+                                 (130 + pos_x - name_len / 2, 240 + pos_y))
                 cats_on_page += 1
                 pos_x += 100
                 if pos_x >= 600:
@@ -2089,7 +2089,7 @@ class ChooseMentorScreen(Screens):
 
                 name_len = verdana.text(str(the_cat.name))
                 verdana.text(str(the_cat.name),
-                             (155 + pos_x - name_len / 2, 240 + pos_y))
+                             (130 + pos_x - name_len / 2, 240 + pos_y))
                 cats_on_page += 1
                 pos_x += 100
                 if pos_x >= 600:
@@ -2616,10 +2616,12 @@ class RelationshipScreen(Screens):
         the_cat = cat_class.all_cats.get(game.switches['cat'])
 
         # layout
-        verdana_big.text(str(the_cat.name) + ' Relationships', ('center', 30))
-        verdana_small.text(str(the_cat.gender) + ' - ' +
-                           str(the_cat.age), ('center', 50))
-        verdana.text('CATS LIST', ('center', 100))
+        verdana_big.text(str(the_cat.name) + ' Relationships', ('center', 10))
+        if the_cat != None: 
+            mate = cat_class.all_cats.get(the_cat.mate)
+            verdana_small.text(f"{str(the_cat.gender)}  - {str(the_cat.age)} -  mate: {str(mate.name)}", ('center', 40))
+        else:
+            verdana_small.text(f"{str(the_cat.gender)}  - {str(the_cat.age)}", ('center', 40))
 
         # make a list of the relationships
         relationships = the_cat.relationships
@@ -2638,39 +2640,98 @@ class RelationshipScreen(Screens):
 
             the_relationship = relationships[x + (game.switches['list_page'] - 1) * 10]
             the_relationship.cat_to.update_sprite()
-            buttons.draw_button((100 + pos_x, 180 + pos_y), image=the_relationship.cat_to.sprite, cat=the_relationship.cat_to.ID, cur_screen='profile screen')
+            buttons.draw_button((90 + pos_x, 60 + pos_y), image=the_relationship.cat_to.sprite, cat=the_relationship.cat_to.ID, cur_screen='profile screen')
             # name length
-            longest_string_len = verdana.text(str('romantic love: ' + str(the_relationship.romantic_love)))
-            verdana.text(str(the_relationship.cat_to.name), (155 + pos_x - longest_string_len / 1.5, 240 + pos_y))
-                
-            verdana_small.text(f"{str(the_relationship.cat_to.gender)} - {str(the_relationship.cat_to.age)}", (155 + pos_x - longest_string_len / 1.5, 255 + pos_y))
+            string_len = verdana.text(str('romantic love: '))
+            verdana.text(str(the_relationship.cat_to.name), (140 + pos_x - string_len / 1.5, 105 + pos_y))
+            verdana_small.text(f"{str(the_relationship.cat_to.gender)} - {str(the_relationship.cat_to.age)}", (140 + pos_x - string_len / 1.5, 120 + pos_y))
             
-            # there is no way the mate is dead
-            if the_cat.mate is not None and the_relationship.cat_to.ID == the_cat.mate.ID:
-                verdana_small.text('mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
+            if the_relationship.family and the_relationship.cat_to.dead:
+                verdana_small.text('related (dead)', (140 + pos_x - string_len / 1.5, 130 + pos_y))
+            elif the_relationship.family:
+                verdana_small.text('related', (140 + pos_x - string_len / 1.5, 130 + pos_y))
+            elif the_relationship.cat_to.dead:
+                verdana_small.text('(dead)', (140 + pos_x - string_len / 1.5, 130 + pos_y))
+            
+            if the_cat.mate is not None and the_relationship.cat_to == the_cat.mate:
+                verdana_small.text('mate', (140 + pos_x - string_len / 1.5, 140 + pos_y))
             elif the_relationship.cat_to.mate != None:
-                verdana_small.text('has a mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
-            if the_relationship.cat_to.dead:
-                verdana_small.text('(dead)', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
+                verdana_small.text('has a mate', (140 + pos_x - string_len / 1.5, 140 + pos_y))
+
+            # Loading Bar and variables
+            bar_bg = pygame.image.load("resources/relations_border.png")
+            original_bar = pygame.image.load("resources/relation_bar.png")
+
+            if game.settings['dark mode']:
+                bar_bg = pygame.image.load("resources/relations_border_dark.png")
+                original_bar = pygame.image.load("resources/relation_bar_dark.png")
+
+            count = 15
+            verdana_small.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            count += 20
+            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar = pygame.transform.scale(original_bar, (the_relationship.romantic_love, 12))
+            screen.blit(bar_bg, bg_rect)
+            screen.blit(bar, bar_rect)
+            count += 5
+
+            verdana_small.text('platonic like:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            count += 20
+            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar = pygame.transform.scale(original_bar, (the_relationship.platonic_like, 12))
+            screen.blit(bar_bg, bg_rect)
+            screen.blit(bar, bar_rect)
+            count += 5
+
+            verdana_small.text('dislike:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            count += 20
+            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar = pygame.transform.scale(original_bar, (the_relationship.dislike, 12))
+            screen.blit(bar_bg, bg_rect)
+            screen.blit(bar, bar_rect)
+            count += 5
             
-            count = 12
-            verdana_small.text('romantic love:  ' + str(the_relationship.romantic_love), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
-            count += 10
-            verdana_small.text('like:                ' + str(the_relationship.like), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
-            count += 10
-            verdana_small.text('dislike:            ' + str(the_relationship.dislike), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
-            count += 10
-            verdana_small.text('admiration:      ' + str(the_relationship.admiration), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
-            count += 10
-            verdana_small.text('comfortable:    ' + str(the_relationship.comfortable), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
-            count += 10
-            verdana_small.text('jealousy:         ' + str(the_relationship.jealousy), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
-            count += 10
-            verdana_small.text('trust:               ' + str(the_relationship.trust), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
+            verdana_small.text('admiration:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            count += 20
+            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar = pygame.transform.scale(original_bar, (the_relationship.admiration, 12))
+            screen.blit(bar_bg, bg_rect)
+            screen.blit(bar, bar_rect)
+            count += 5
+
+            verdana_small.text('comfortable:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            count += 20
+            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar = pygame.transform.scale(original_bar, (the_relationship.comfortable, 12))
+            screen.blit(bar_bg, bg_rect)
+            screen.blit(bar, bar_rect)
+            count += 5
+
+            verdana_small.text('jealousy:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            count += 20
+            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar = pygame.transform.scale(original_bar, (the_relationship.jealousy, 12))
+            screen.blit(bar_bg, bg_rect)
+            screen.blit(bar, bar_rect)
+            count += 5
+
+            verdana_small.text('trust:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            count += 20
+            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar = pygame.transform.scale(original_bar, (the_relationship.trust, 12))
+            screen.blit(bar_bg, bg_rect)
+            screen.blit(bar, bar_rect)
 
             cats_on_page += 1
-            pos_x += 130
-            if pos_x >= 600:
+            pos_x += 140
+            if pos_x >= 650:
                 pos_x = 0
                 pos_y += 100 + count
 
@@ -2678,16 +2739,13 @@ class RelationshipScreen(Screens):
                 break
 
         # page buttons
-        verdana.text(
-            'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages), ('center', 600))
+        verdana.text('page ' + str(game.switches['list_page']) + ' / ' + str(all_pages), ('center', 640))
         if game.switches['list_page'] > 1:
-            buttons.draw_button((300, 600), text='<',
-                                list_page=game.switches['list_page'] - 1)
+            buttons.draw_button((300, 640), text='<',list_page=game.switches['list_page'] - 1)
         if game.switches['list_page'] < all_pages:
-            buttons.draw_button((-300, 600), text='>',
-                                list_page=game.switches['list_page'] + 1)
-        buttons.draw_button(('center', -100), text='Back',
-                            cur_screen='profile screen')
+            buttons.draw_button((-300, 640), text='>',list_page=game.switches['list_page'] + 1)
+        # buttons.draw_button(('center', -100), text='Back',cur_screen='profile screen')
+        buttons.draw_button(('center', 670), text='Back',cur_screen='profile screen')
 
     def screen_switches(self):
         cat_profiles()
