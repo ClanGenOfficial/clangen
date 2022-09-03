@@ -1015,7 +1015,7 @@ class Cat(object):
 
                 rel = Relationship(cat_from=self,cat_to=the_cat,mates=mates,
                         family=related, romantic_love=romantic_love,
-                        like=like, dislike=dislike, admiration=admiration,
+                        platonic_like=like, dislike=dislike, admiration=admiration,
                         comfortable=comfortable, jealousy=jealousy, trust=trust)
                 relationships.append(rel)        
         self.relationships = relationships
@@ -1321,7 +1321,7 @@ class Cat(object):
                 "mates": r.mates,
                 "family": r.family,
                 "romantic_love": r.romantic_love,
-                "like": r.like,
+                "platonic_like": r.platonic_like,
                 "dislike": r.dislike,
                 "admiration": r.admiration,
                 "comfortable": r.comfortable,
@@ -1463,7 +1463,8 @@ class Cat(object):
                 new_rel = Relationship(cat_from=self,cat_to=cat_to,
                                         mates=rel['mates'],family=rel['family'],
                                         romantic_love=rel['romantic_love'],
-                                        like=rel['like'], dislike=rel['dislike'],
+                                        platonic_like=rel['platonic_like'],
+                                        dislike=rel['dislike'],
                                         admiration=rel['admiration'],
                                         comfortable=rel['comfortable'],
                                         jealousy=rel['jealousy'],trust=rel['trust'])

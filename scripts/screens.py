@@ -136,9 +136,7 @@ class SettingsScreen(Screens):
         # layout
         buttons.draw_button((310, 100), text='Settings', available=False)
         buttons.draw_button((-360, 100), text='Info', cur_screen='info screen')
-        buttons.draw_button((-255, 100),
-                            text='Language',
-                            cur_screen='language screen')
+        buttons.draw_button((-255, 100), text='Language', cur_screen='language screen')
         verdana.text("Change the setting of your game here.", ('center', 130))
 
         # Setting names
@@ -150,20 +148,15 @@ class SettingsScreen(Screens):
         verdana.text("Automatically save every five moons", (100, 320))
         verdana.text("Allow mass extinction events", (100, 350))
         verdana.text("Force cats to retire after severe injury", (100, 380))
+        verdana.text("Allow affairs and mate switches based on relationships", (100, 410))
 
         # Setting values
         verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
         buttons.draw_button((-80, 200), text='SWITCH', setting='dark mode')
-        verdana.text(self.bool[game.settings['no gendered breeding']],
-                     (-170, 230))
-        buttons.draw_button((-80, 230),
-                            text='SWITCH',
-                            setting='no gendered breeding')
-        verdana.text(self.bool[game.settings['no unknown fathers']],
-                     (-170, 260))
-        buttons.draw_button((-80, 260),
-                            text='SWITCH',
-                            setting='no unknown fathers')
+        verdana.text(self.bool[game.settings['no gendered breeding']], (-170, 230))
+        buttons.draw_button((-80, 230), text='SWITCH', setting='no gendered breeding')
+        verdana.text(self.bool[game.settings['no unknown fathers']], (-170, 260))
+        buttons.draw_button((-80, 260), text='SWITCH', setting='no unknown fathers')
         verdana.text(self.bool[game.settings['backgrounds']], (-170, 290))
         buttons.draw_button((-80, 290), text='SWITCH', setting='backgrounds')
         verdana.text(self.bool[game.settings['autosave']], (-170, 320))
@@ -172,6 +165,8 @@ class SettingsScreen(Screens):
         buttons.draw_button((-80, 350), text='SWITCH', setting='disasters')
         verdana.text(self.bool[game.settings['retirement']], (-170, 380))
         buttons.draw_button((-80, 380), text='SWITCH', setting='retirement')
+        verdana.text(self.bool[game.settings['affair']], (-170, 410))
+        buttons.draw_button((-80, 410), text='SWITCH', setting='affair')
 
         # other buttons
         buttons.draw_button((50, 50),
@@ -452,7 +447,7 @@ class StarClanScreen(Screens):
 
                 name_len = verdana.text(str(the_cat.name))
                 verdana.text(str(the_cat.name),
-                             (155 + pos_x - name_len / 2, 240 + pos_y))
+                             (130 + pos_x - name_len / 2, 240 + pos_y))
                 cats_on_page += 1
                 pos_x += 100
                 if pos_x >= 600:
@@ -1016,8 +1011,7 @@ class EventsScreen(Screens):
 
         a = 0
         if game.cur_events_list is not None and game.cur_events_list != []:
-            for x in range(
-                    min(len(game.cur_events_list), game.max_events_displayed)):
+            for x in range(min(len(game.cur_events_list), game.max_events_displayed)):
                 if game.cur_events_list[x] is None:
                     continue
                 if "Clan has no " in game.cur_events_list[x]:
@@ -1122,8 +1116,7 @@ class ProfileScreen(Screens):
                 apps = apps[:len(apps) - 2]
             verdana_small.text(apps, (490, 230 + count2 * 15))
             count2 += 1
-        if len(the_cat.former_apprentices
-               ) != 0 and the_cat.former_apprentices[0] is not None:
+        if len(the_cat.former_apprentices) != 0 and the_cat.former_apprentices[0] is not None:
             if len(the_cat.former_apprentices) == 1:
                 former_apps = 'former apprentice: ' + str(
                     the_cat.former_apprentices[0].name)
@@ -1231,9 +1224,7 @@ class ProfileScreen(Screens):
         # MATE
         if the_cat.mate is not None and not the_cat.dead:
             if the_cat.mate in cat_class.all_cats:
-                if cat_class.all_cats.get(
-                        the_cat.mate
-                ).dead:  # TODO: fix when mate dies mate becomes none
+                if cat_class.all_cats.get(the_cat.mate).dead:  # TODO: fix when mate dies mate becomes none
                     verdana_small.text(
                         'former mate: ' +
                         str(cat_class.all_cats[the_cat.mate].name),
@@ -1421,8 +1412,7 @@ class ChooseMateScreen(Screens):
             mate.draw_large((450, 130))
             verdana.text(str(mate.name), ('center', 300))
             self._extracted_from_on_use_29(mate, -100)
-            if the_cat.gender == mate.gender and not game.settings[
-                    'no gendered breeding']:
+            if the_cat.gender == mate.gender and not game.settings['no gendered breeding']:
                 verdana_small.text(
                     '(this pair will not be able to have kittens)',
                     ('center', 320))
@@ -1572,7 +1562,7 @@ class ListScreen(Screens):
 
                 name_len = verdana.text(str(the_cat.name))
                 verdana.text(str(the_cat.name),
-                             (155 + pos_x - name_len / 2, 240 + pos_y))
+                             (130 + pos_x - name_len / 2, 240 + pos_y))
                 cats_on_page += 1
                 pos_x += 100
                 if pos_x >= 600:
@@ -1643,7 +1633,7 @@ class OtherScreen(Screens):
 
                 name_len = verdana.text(str(the_cat.name))
                 verdana_red.text(str(the_cat.name),
-                                 (155 + pos_x - name_len / 2, 240 + pos_y))
+                                 (130 + pos_x - name_len / 2, 240 + pos_y))
                 cats_on_page += 1
                 pos_x += 100
                 if pos_x >= 600:
@@ -1825,6 +1815,7 @@ class PatrolEventScreen(Screens):
                                 event=2)
         if game.switches['event'] == -2:
             patrol.calculate_success()
+            patrol.handle_relationships()
             game.switches['event'] = 1
         if game.switches['event'] > 0:
             if game.switches['event'] == 1:
@@ -2089,7 +2080,7 @@ class ChooseMentorScreen(Screens):
 
                 name_len = verdana.text(str(the_cat.name))
                 verdana.text(str(the_cat.name),
-                             (155 + pos_x - name_len / 2, 240 + pos_y))
+                             (130 + pos_x - name_len / 2, 240 + pos_y))
                 cats_on_page += 1
                 pos_x += 100
                 if pos_x >= 600:
@@ -2624,10 +2615,15 @@ class RelationshipScreen(Screens):
         the_cat = cat_class.all_cats.get(game.switches['cat'])
 
         # layout
-        verdana_big.text(str(the_cat.name) + ' Relationships', ('center', 30))
-        verdana_small.text(str(the_cat.gender) + ' - ' +
-                           str(the_cat.age), ('center', 50))
-        verdana.text('CATS LIST', ('center', 100))
+        verdana_big.text(str(the_cat.name) + ' Relationships', ('center', 10))
+        if the_cat != None and the_cat.mate != '':
+            mate = cat_class.all_cats.get(the_cat.mate)
+            if mate != None:
+                verdana_small.text(f"{str(the_cat.gender)}  - {str(the_cat.age)} -  mate: {str(mate.name)}", ('center', 40))
+            else:
+                verdana_small.text(f"{str(the_cat.gender)}  - {str(the_cat.age)}", ('center', 40))
+        else:
+            verdana_small.text(f"{str(the_cat.gender)}  - {str(the_cat.age)}", ('center', 40))
 
         # make a list of the relationships
         relationships = the_cat.relationships
@@ -2646,13 +2642,13 @@ class RelationshipScreen(Screens):
 
             the_relationship = relationships[x + (game.switches['list_page'] - 1) * 10]
             the_relationship.cat_to.update_sprite()
-            buttons.draw_button((100 + pos_x, 180 + pos_y), image=the_relationship.cat_to.sprite, cat=the_relationship.cat_to.ID, cur_screen='profile screen')
+            buttons.draw_button((90 + pos_x, 60 + pos_y), image=the_relationship.cat_to.sprite, cat=the_relationship.cat_to.ID, cur_screen='profile screen')
             # name length
-            longest_string_len = verdana.text(str('romantic love: ' + str(the_relationship.romantic_love)))
-            verdana.text(str(the_relationship.cat_to.name), (155 + pos_x - longest_string_len / 1.5, 240 + pos_y))
-                
-            verdana_small.text(f"{str(the_relationship.cat_to.gender)} - {str(the_relationship.cat_to.age)}", (155 + pos_x - longest_string_len / 1.5, 255 + pos_y))
+            string_len = verdana.text(str('romantic love: '))
+            verdana.text(str(the_relationship.cat_to.name), (140 + pos_x - string_len / 1.5, 105 + pos_y))
+            verdana_small.text(f"{str(the_relationship.cat_to.gender)} - {str(the_relationship.cat_to.age)}", (140 + pos_x - string_len / 1.5, 120 + pos_y))
             
+
             # there is no way the mate is dead
             if the_cat.mate is not None and the_relationship.cat_to == the_cat.mate:
                 verdana_small.text('mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
@@ -2660,25 +2656,92 @@ class RelationshipScreen(Screens):
                 verdana_small.text('has a mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
             if the_relationship.cat_to.dead:
                 verdana_small.text('(dead)', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
+            if the_relationship.family and the_relationship.cat_to.dead:
+                verdana_small.text('related (dead)', (140 + pos_x - string_len / 1.5, 130 + pos_y))
+            elif the_relationship.family:
+                verdana_small.text('related', (140 + pos_x - string_len / 1.5, 130 + pos_y))
+            elif the_relationship.cat_to.dead:
+                verdana_small.text('(dead)', (140 + pos_x - string_len / 1.5, 130 + pos_y))
             
-            count = 12
-            verdana_small.text('romantic love:  ' + str(the_relationship.romantic_love), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
-            count += 10
-            verdana_small.text('like:                ' + str(the_relationship.like), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
-            count += 10
-            verdana_small.text('dislike:            ' + str(the_relationship.dislike), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
-            count += 10
-            verdana_small.text('admiration:      ' + str(the_relationship.admiration), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
-            count += 10
-            verdana_small.text('comfortable:    ' + str(the_relationship.comfortable), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
-            count += 10
-            verdana_small.text('jealousy:         ' + str(the_relationship.jealousy), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
-            count += 10
-            verdana_small.text('trust:               ' + str(the_relationship.trust), (155 + pos_x - longest_string_len / 1.5, 265 + pos_y + count))
+            if the_cat.mate != None and the_cat.mate != '' and the_relationship.cat_to.ID == the_cat.mate:
+                verdana_small.text('mate', (140 + pos_x - string_len / 1.5, 140 + pos_y))
+            elif the_relationship.cat_to.mate != None and the_relationship.cat_to.mate != '':
+                verdana_small.text('has a mate', (140 + pos_x - string_len / 1.5, 140 + pos_y))
+
+            # Loading Bar and variables
+            bar_bg = pygame.image.load("resources/relations_border.png")
+            original_bar = pygame.image.load("resources/relation_bar.png")
+
+            if game.settings['dark mode']:
+                bar_bg = pygame.image.load("resources/relations_border_dark.png")
+                original_bar = pygame.image.load("resources/relation_bar_dark.png")
+
+            count = 15
+            verdana_small.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            count += 20
+            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar = pygame.transform.scale(original_bar, (the_relationship.romantic_love, 12))
+            screen.blit(bar_bg, bg_rect)
+            screen.blit(bar, bar_rect)
+            count += 5
+
+            verdana_small.text('platonic like:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            count += 20
+            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar = pygame.transform.scale(original_bar, (the_relationship.platonic_like, 12))
+            screen.blit(bar_bg, bg_rect)
+            screen.blit(bar, bar_rect)
+            count += 5
+
+            verdana_small.text('dislike:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            count += 20
+            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar = pygame.transform.scale(original_bar, (the_relationship.dislike, 12))
+            screen.blit(bar_bg, bg_rect)
+            screen.blit(bar, bar_rect)
+            count += 5
+            
+            verdana_small.text('admiration:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            count += 20
+            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar = pygame.transform.scale(original_bar, (the_relationship.admiration, 12))
+            screen.blit(bar_bg, bg_rect)
+            screen.blit(bar, bar_rect)
+            count += 5
+
+            verdana_small.text('comfortable:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            count += 20
+            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar = pygame.transform.scale(original_bar, (the_relationship.comfortable, 12))
+            screen.blit(bar_bg, bg_rect)
+            screen.blit(bar, bar_rect)
+            count += 5
+
+            verdana_small.text('jealousy:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            count += 20
+            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar = pygame.transform.scale(original_bar, (the_relationship.jealousy, 12))
+            screen.blit(bar_bg, bg_rect)
+            screen.blit(bar, bar_rect)
+            count += 5
+
+            verdana_small.text('trust:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            count += 20
+            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            bar = pygame.transform.scale(original_bar, (the_relationship.trust, 12))
+            screen.blit(bar_bg, bg_rect)
+            screen.blit(bar, bar_rect)
 
             cats_on_page += 1
-            pos_x += 130
-            if pos_x >= 600:
+            pos_x += 140
+            if pos_x >= 650:
                 pos_x = 0
                 pos_y += 100 + count
 
@@ -2686,16 +2749,13 @@ class RelationshipScreen(Screens):
                 break
 
         # page buttons
-        verdana.text(
-            'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages), ('center', 600))
+        verdana.text('page ' + str(game.switches['list_page']) + ' / ' + str(all_pages), ('center', 640))
         if game.switches['list_page'] > 1:
-            buttons.draw_button((300, 600), text='<',
-                                list_page=game.switches['list_page'] - 1)
+            buttons.draw_button((300, 640), text='<',list_page=game.switches['list_page'] - 1)
         if game.switches['list_page'] < all_pages:
-            buttons.draw_button((-300, 600), text='>',
-                                list_page=game.switches['list_page'] + 1)
-        buttons.draw_button(('center', -100), text='Back',
-                            cur_screen='profile screen')
+            buttons.draw_button((-300, 640), text='>',list_page=game.switches['list_page'] + 1)
+        # buttons.draw_button(('center', -100), text='Back',cur_screen='profile screen')
+        buttons.draw_button(('center', 670), text='Back',cur_screen='profile screen')
 
     def screen_switches(self):
         cat_profiles()
@@ -2703,19 +2763,14 @@ class RelationshipScreen(Screens):
 
 class RelationshipEventScreen(Screens):
     def on_use(self):
-        max_events = 14
         a = 0
 
         if game.relation_events_list is not None and game.relation_events_list != []:
-            for x in range(min(len(game.relation_events_list), max_events)):
-                if game.relation_events_list[x] == None:
+            for x in range(min(len(game.relation_events_list), game.max_relation_events_displayed)):
+                if game.relation_events_list[x] is None:
                     continue
-                if "Clan has no " in game.relation_events_list[x]:
-                    verdana_red.text(
-                        game.relation_events_list[x], ('center', 160 + a * 30))
-                else:
-                    verdana.text(
-                        game.relation_events_list[x], ('center', 160 + a * 30))
+                verdana.text(game.relation_events_list[x],
+                    ('center', 160 + a * 30))
                 a += 1
         else:
             verdana.text("Nothing significant happened this moon.",
@@ -2723,7 +2778,7 @@ class RelationshipEventScreen(Screens):
         # buttons
         draw_menu_buttons()
 
-        if len(game.relation_events_list) > max_events:
+        if len(game.relation_events_list) > game.max_relation_events_displayed:
             buttons.draw_button((720, 150), image=game.up, arrow="UP")
             buttons.draw_button((700, 550), image=game.down, arrow="DOWN")
 
@@ -2738,10 +2793,8 @@ start_screen = StartScreen('start screen')
 settings_screen = SettingsScreen('settings screen')
 info_screen = InfoScreen('info screen')
 clan_screen = ClanScreen('clan screen')
-patrol_screen = PatrolScreen(
-    'patrol screen')  # for picking cats to go on patrol
-patrol_event_screen = PatrolEventScreen(
-    'patrol event screen')  # for seeing the events of the patrol
+patrol_screen = PatrolScreen('patrol screen')  # for picking cats to go on patrol
+patrol_event_screen = PatrolEventScreen('patrol event screen')  # for seeing the events of the patrol
 starclan_screen = StarClanScreen('starclan screen')
 make_clan_screen = MakeClanScreen('make clan screen')
 clan_created_screen = ClanCreatedScreen('clan created screen')
