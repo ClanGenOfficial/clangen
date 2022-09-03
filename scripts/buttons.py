@@ -104,6 +104,12 @@ class Button(object):
             elif text == 'Exile Cat':
                 cat_class.all_cats[cat_value].exiled = True
                 cat_class.other_cats[cat_value] =  cat_class.all_cats[cat_value]
+            elif text == 'Change to Transmasc':
+                cat_class.all_cats[cat_value].genderalign = "transmasc"
+            elif text == 'Change to Transfem':
+                cat_class.all_cats[cat_value].genderalign = "transfem"
+            elif text == 'Change to Transneu':
+                cat_class.all_cats[cat_value].genderalign = "transneu"
             elif cat_value is None and arrow is None:
                 self.activate(values)
             elif arrow is None:

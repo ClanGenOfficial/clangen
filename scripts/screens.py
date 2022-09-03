@@ -1007,7 +1007,7 @@ class EventsScreen(Screens):
         events_class.one_moon()
 
         # show the Relationshipevents
-        buttons.draw_button((-200, 220), text='RELEATIONSHIP EVENTS', cur_screen='relationship event screen')
+        buttons.draw_button((-200, 220), text='RELATIONSHIP EVENTS', cur_screen='relationship event screen')
 
         a = 0
         if game.cur_events_list is not None and game.cur_events_list != []:
@@ -1090,7 +1090,7 @@ class ProfileScreen(Screens):
         verdana_big.text(cat_name, ('center', 150))  # NAME
         the_cat.draw_large((100, 200))  # IMAGE
         verdana.text(cat_thought, ('center', 180))  # THOUGHT / ACTION
-        verdana_small.text(the_cat.gender, (300, 230 + count * 15))
+        verdana_small.text(the_cat.genderalign, (300, 230 + count * 15))
         count += 1  # SEX / GENDER
         verdana_small.text(the_cat.status, (490, 230 + count2 * 15))
         count2 += 1  # STATUS
@@ -2350,7 +2350,7 @@ class OptionsScreen(Screens):
                             text='Family Tree')
         button_count += 1
 
-        buttons.draw_button((x_value, y_value + button_count * y_change), text='See Relaionships', cur_screen='relationship screen')
+        buttons.draw_button((x_value, y_value + button_count * y_change), text='See Relationships', cur_screen='relationship screen')
         button_count += 1
 
         if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
@@ -2410,13 +2410,21 @@ class OptionsScreen(Screens):
                     text='Promote to Deputy',
                     deputy_switch=the_cat)
                 button_count += 1
-
+        if the_cat.gender == "female" and the_cat.genderalign != "transmasc":
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Transmasc', cat_value=game.switches['cat'])
+            button_count += 1
+        elif the_cat.gender == "male" and the_cat.genderalign != "transfem":
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Transfem', cat_value=game.switches['cat'])
+            button_count += 1
+        if the_cat.genderalign != "transneu":
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Transneu', cat_value=game.switches['cat'])
+            button_count += 1
         if not the_cat.dead:
-            buttons.draw_button((x_value, 650),
+            buttons.draw_button((-100, 650),
                                 text='Kill Cat',
                                 kill_cat=the_cat)
 
-        buttons.draw_button((x_value, 600),
+        buttons.draw_button((-100, 600),
                             text='Exile Cat',
                             cat_value=game.switches['cat'])
 
@@ -2484,7 +2492,7 @@ class OptionsScreen(Screens):
                                 text='Switch to warrior',
                                 apprentice_switch=the_cat)
             button_count += 1
-        buttons.draw_button((x_value, y_value + button_count * y_change + 30),
+        buttons.draw_button((x_value, y_value + button_count * y_change),
                             text='Back',
                             cur_screen='profile screen')
 
@@ -2640,6 +2648,14 @@ class RelationshipScreen(Screens):
             verdana.text(str(the_relationship.cat_to.name), (140 + pos_x - string_len / 1.5, 105 + pos_y))
             verdana_small.text(f"{str(the_relationship.cat_to.gender)} - {str(the_relationship.cat_to.age)}", (140 + pos_x - string_len / 1.5, 120 + pos_y))
             
+
+            # there is no way the mate is dead
+            if the_cat.mate is not None and the_relationship.cat_to == the_cat.mate:
+                verdana_small.text('mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
+            elif the_relationship.cat_to.mate != None:
+                verdana_small.text('has a mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
+            if the_relationship.cat_to.dead:
+                verdana_small.text('(dead)', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
             if the_relationship.family and the_relationship.cat_to.dead:
                 verdana_small.text('related (dead)', (140 + pos_x - string_len / 1.5, 130 + pos_y))
             elif the_relationship.family:
