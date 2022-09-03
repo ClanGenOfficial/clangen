@@ -355,7 +355,6 @@ class Patrol(object):
                 cat.experience = min(cat.experience, 80)
                 cat.experience_level = self.experience_levels[floor(cat.experience / 10)]
 
-
     def handle_exp_loss(self):
         for cat in self.patrol_cats:
             cat.experience -= 5
@@ -386,6 +385,15 @@ class Patrol(object):
     def add_new_cats(self):
         if self.patrol_event.patrol_id in [504]:  # new kit
             kit = Cat(status='kitten', moons=0)
+            #create and update relationships
+            relationships = []
+            for cat_id in game.clan.clan_cats:
+                the_cat = cat_class.all_cats.get(cat_id)
+                if the_cat.dead:
+                    continue
+                the_cat.relationships.append(Relationship(the_cat,kit))
+                relationships.append(Relationship(kit,the_cat))
+            kit.relationships = relationships
             game.clan.add_cat(kit)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
@@ -395,6 +403,15 @@ class Patrol(object):
             if self.patrol_event.patrol_id == 501:
                 new_status = 'warrior'
             kit = Cat(status=new_status)
+            #create and update relationships
+            relationships = []
+            for cat_id in game.clan.clan_cats:
+                the_cat = cat_class.all_cats.get(cat_id)
+                if the_cat.dead:
+                    continue
+                the_cat.relationships.append(Relationship(the_cat,kit))
+                relationships.append(Relationship(kit,the_cat))
+            kit.relationships = relationships
             game.clan.add_cat(kit)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
@@ -410,11 +427,33 @@ class Patrol(object):
                     kit2.skill = 'formerly a loner'
                     kit2.parent1 = kit.ID
                     kit2.thought = 'Is looking around the camp with wonder'
+                    #create and update relationships
+                    relationships = []
+                    for cat_id in game.clan.clan_cats:
+                        the_cat = cat_class.all_cats.get(cat_id)
+                        if the_cat.dead:
+                            continue
+                        if the_cat.ID in [kit2.parent1, kit2.parent2]:
+                            kit2.relationships.append(Relationship(kit,kit2,False,True))
+                            relationships.append(Relationship(kit2,kit,False,True))
+                        else:
+                            the_cat.relationships.append(Relationship(the_cat,kit2))
+                            relationships.append(Relationship(kit2,the_cat))
+                    kit2.relationships = relationships
                     game.clan.add_cat(kit2)
 
         elif self.patrol_event.patrol_id in [502, 503, 520]:  # new kittypet
             new_status = choice(['apprentice', 'warrior', 'warrior', 'warrior', 'warrior', 'elder'])
             kit = Cat(status=new_status)
+            #create and update relationships
+            relationships = []
+            for cat_id in game.clan.clan_cats:
+                the_cat = cat_class.all_cats.get(cat_id)
+                if the_cat.dead:
+                    continue
+                the_cat.relationships.append(Relationship(the_cat,kit))
+                relationships.append(Relationship(kit,the_cat))
+            kit.relationships = relationships
             game.clan.add_cat(kit)
             kit.skill = 'formerly a kittypet'
             kit.thought = 'Is looking around the camp with wonder'
@@ -425,7 +464,7 @@ class Patrol(object):
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
-                
+
     def check_territories(self):
         hunting_claim = str(game.clan.name) + 'Clan Hunting Grounds'
         self.hunting_grounds = []

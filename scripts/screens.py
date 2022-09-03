@@ -136,9 +136,7 @@ class SettingsScreen(Screens):
         # layout
         buttons.draw_button((310, 100), text='Settings', available=False)
         buttons.draw_button((-360, 100), text='Info', cur_screen='info screen')
-        buttons.draw_button((-255, 100),
-                            text='Language',
-                            cur_screen='language screen')
+        buttons.draw_button((-255, 100), text='Language', cur_screen='language screen')
         verdana.text("Change the setting of your game here.", ('center', 130))
 
         # Setting names
@@ -150,20 +148,15 @@ class SettingsScreen(Screens):
         verdana.text("Automatically save every five moons", (100, 320))
         verdana.text("Allow mass extinction events", (100, 350))
         verdana.text("Force cats to retire after severe injury", (100, 380))
+        verdana.text("Allow affairs and mate switches based on relationships", (100, 410))
 
         # Setting values
         verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
         buttons.draw_button((-80, 200), text='SWITCH', setting='dark mode')
-        verdana.text(self.bool[game.settings['no gendered breeding']],
-                     (-170, 230))
-        buttons.draw_button((-80, 230),
-                            text='SWITCH',
-                            setting='no gendered breeding')
-        verdana.text(self.bool[game.settings['no unknown fathers']],
-                     (-170, 260))
-        buttons.draw_button((-80, 260),
-                            text='SWITCH',
-                            setting='no unknown fathers')
+        verdana.text(self.bool[game.settings['no gendered breeding']], (-170, 230))
+        buttons.draw_button((-80, 230), text='SWITCH', setting='no gendered breeding')
+        verdana.text(self.bool[game.settings['no unknown fathers']], (-170, 260))
+        buttons.draw_button((-80, 260), text='SWITCH', setting='no unknown fathers')
         verdana.text(self.bool[game.settings['backgrounds']], (-170, 290))
         buttons.draw_button((-80, 290), text='SWITCH', setting='backgrounds')
         verdana.text(self.bool[game.settings['autosave']], (-170, 320))
@@ -172,6 +165,8 @@ class SettingsScreen(Screens):
         buttons.draw_button((-80, 350), text='SWITCH', setting='disasters')
         verdana.text(self.bool[game.settings['retirement']], (-170, 380))
         buttons.draw_button((-80, 380), text='SWITCH', setting='retirement')
+        verdana.text(self.bool[game.settings['affair']], (-170, 410))
+        buttons.draw_button((-80, 410), text='SWITCH', setting='affair')
 
         # other buttons
         buttons.draw_button((50, 50),
@@ -1121,8 +1116,7 @@ class ProfileScreen(Screens):
                 apps = apps[:len(apps) - 2]
             verdana_small.text(apps, (490, 230 + count2 * 15))
             count2 += 1
-        if len(the_cat.former_apprentices
-               ) != 0 and the_cat.former_apprentices[0] is not None:
+        if len(the_cat.former_apprentices) != 0 and the_cat.former_apprentices[0] is not None:
             if len(the_cat.former_apprentices) == 1:
                 former_apps = 'former apprentice: ' + str(
                     the_cat.former_apprentices[0].name)
@@ -1230,9 +1224,7 @@ class ProfileScreen(Screens):
         # MATE
         if the_cat.mate is not None and not the_cat.dead:
             if the_cat.mate in cat_class.all_cats:
-                if cat_class.all_cats.get(
-                        the_cat.mate
-                ).dead:  # TODO: fix when mate dies mate becomes none
+                if cat_class.all_cats.get(the_cat.mate).dead:  # TODO: fix when mate dies mate becomes none
                     verdana_small.text(
                         'former mate: ' +
                         str(cat_class.all_cats[the_cat.mate].name),
@@ -1420,8 +1412,7 @@ class ChooseMateScreen(Screens):
             mate.draw_large((450, 130))
             verdana.text(str(mate.name), ('center', 300))
             self._extracted_from_on_use_29(mate, -100)
-            if the_cat.gender == mate.gender and not game.settings[
-                    'no gendered breeding']:
+            if the_cat.gender == mate.gender and not game.settings['no gendered breeding']:
                 verdana_small.text(
                     '(this pair will not be able to have kittens)',
                     ('center', 320))
@@ -2655,9 +2646,9 @@ class RelationshipScreen(Screens):
             elif the_relationship.cat_to.dead:
                 verdana_small.text('(dead)', (140 + pos_x - string_len / 1.5, 130 + pos_y))
             
-            if the_cat.mate is not None and the_relationship.cat_to == the_cat.mate:
+            if the_cat.mate != None and the_cat.mate != '' and the_relationship.cat_to.ID == the_cat.mate:
                 verdana_small.text('mate', (140 + pos_x - string_len / 1.5, 140 + pos_y))
-            elif the_relationship.cat_to.mate != None:
+            elif the_relationship.cat_to.mate != None and the_relationship.cat_to.mate != '':
                 verdana_small.text('has a mate', (140 + pos_x - string_len / 1.5, 140 + pos_y))
 
             # Loading Bar and variables
@@ -2785,10 +2776,8 @@ start_screen = StartScreen('start screen')
 settings_screen = SettingsScreen('settings screen')
 info_screen = InfoScreen('info screen')
 clan_screen = ClanScreen('clan screen')
-patrol_screen = PatrolScreen(
-    'patrol screen')  # for picking cats to go on patrol
-patrol_event_screen = PatrolEventScreen(
-    'patrol event screen')  # for seeing the events of the patrol
+patrol_screen = PatrolScreen('patrol screen')  # for picking cats to go on patrol
+patrol_event_screen = PatrolEventScreen('patrol event screen')  # for seeing the events of the patrol
 starclan_screen = StarClanScreen('starclan screen')
 make_clan_screen = MakeClanScreen('make clan screen')
 clan_created_screen = ClanCreatedScreen('clan created screen')

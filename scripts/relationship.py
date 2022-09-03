@@ -1,15 +1,7 @@
 from random import choice, randint
+from tkinter.messagebox import NO
 from .game_essentials import *
 import copy
-
-to_sort = []
-
-# NOT FINISHED
-
-# if the relationship triggers an event
-EVENT = {
-    "breakup": '(cat) is no longer mates with (cat)'
-}
 
 # if another cat is involved
 THIRD_RELATIONSHIP_INCLUDED = {
@@ -429,7 +421,8 @@ class Relationship(object):
 
         # broadcast action
         string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
-        action_string = action.replace(string_to_replace, str(self.cat_to.name))
+        action_string = action.replace(string_to_replace, str(self.cat_to.name)) 
+        self.action_results(action_string)
         rel_stat_info_from = '('
         rel_stat_info_from += ','.join(self.current_changes_from) + '[' + str(self.cat_from.name) + '])'
         rel_stat_info_to = '('
@@ -441,16 +434,42 @@ class Relationship(object):
         else:
             game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string}")
 
-        self.effect = []
-        self.action_results()
+        self.effect = ''
         #if len(self.current_changes_from) > 0:
         #    game.relation_events_list.append(rel_stat_info_from)
         #if len(self.current_changes_to) > 0:
         #    game.relation_events_list.append(rel_stat_info_to)
 
-    def action_results(self):
-        """Things that can happen."""
+    def action_results(self, action_string):
+        """Things that can happen, this events will show on the """
 
+        # new mates
+        cat_to_no_mate = self.cat_to.mate == None or self.cat_to.mate == ''
+        cat_from_no_mate = self.cat_from.mate == None or self.cat_from.mate == ''
+        both_no_mates = cat_to_no_mate and cat_from_no_mate
+        if self.romantic_love > 25 and self.opposit_relationship.romantic_love > 25 and both_no_mates:
+            self.cat_to.mate = self.cat_from.ID
+            self.cat_from.mate = self.cat_to.ID
+            self.mates = True
+            game.cur_events_list.append(f'{str(self.cat_from.name)} and {str(self.cat_to.name)} have become mates')
+        
+        # breakup and new mate
+        #if game.settings['affair']:
+        #    if self.romantic_love > 30 and self.opposit_relationship.romantic_love > 30:
+        #        print("AFFAIR")
+        
+        # breakup
+        if self.mates and 'negative' in self.effect:
+            chance_number = 30
+            if 'fight' in action_string:
+                chance_number = 20
+            chance = randint(0,chance_number)
+            if chance == 1 or self.dislike > 20:
+                self.cat_to.mate = None
+                self.cat_from.mate = None
+                self.romantic_love = 10
+                self.mates = False
+                game.cur_events_list.append(f'{str(self.cat_from.name)} and {str(self.cat_to.name)} broke up')
 
     def get_action_possibilities(self):
         """Creates a list of possibles actions of this relationship"""
@@ -522,8 +541,12 @@ class Relationship(object):
             action_possibilies += SPECIAL_CHARACTER[self.cat_from.trait]
 
         # LOVE
+        # check mate status and settings
+        cat_from_has_mate = self.cat_from.mate != None or self.cat_from.mate != ''
+        if cat_from_has_mate and not self.mates and not game.settings['affair']:
+            return action_possibilies
+
         # chance to fall in love with some the character is not close to:
-        love_p = randint(0,50)
         # check ages of cats
         age_group1 = ['adolescent', 'young adult', 'adult']
         age_group2 = ['adult', 'senior adult', 'elder']
@@ -531,13 +554,18 @@ class Relationship(object):
         none_of_them_are_kits = self.cat_from.age != 'kitten' and self.cat_to.age != 'kitten'
         both_in_same_age_group = (self.cat_from.age in age_group1 and self.cat_to.age in age_group1) or\
             (self.cat_from.age in age_group2 and self.cat_to.age in age_group2)
+
+        love_p = randint(0,30)
         if not self.family and (both_are_kits or none_of_them_are_kits) and both_in_same_age_group:
-            if self.platonic_like > 50 or love_p == 1 or self.romantic_love > 5:
+            if self.platonic_like > 40 or love_p == 1 or self.romantic_love > 5:
                 action_possibilies = action_possibilies + LOVE['love_interest_only']
+
             if self.opposit_relationship.romantic_love > 20:
                 action_possibilies = action_possibilies + LOVE['love_interest_only']
+
             if self.romantic_love > 25 and self.opposit_relationship.romantic_love > 15:
                 action_possibilies = action_possibilies + LOVE['love_interest']
+
             if self.mates and self.romantic_love > 30 and self.opposit_relationship.romantic_love > 25 :
                 action_possibilies = action_possibilies + LOVE['mates']
 
