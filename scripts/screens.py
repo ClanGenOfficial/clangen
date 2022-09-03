@@ -1276,7 +1276,7 @@ class AllegiancesScreen(Screens):
             the_cat = list(cat_class.all_cats.values())[x]
             if not the_cat.dead and not the_cat.exiled:
                 living_cats.append(the_cat)
-        if not game.clan.leader.dead:
+        if not game.clan.leader.dead and not game.clan.leader.exiled:
             game.allegiance_list.append(['LEADER:', f"{str(game.clan.leader.name)} - a {game.clan.leader.describe_cat()}"])
             if len(game.clan.leader.apprentice) > 0:
                 if len(game.clan.leader.apprentice) == 1:
@@ -1286,7 +1286,7 @@ class AllegiancesScreen(Screens):
                     for app in game.clan.leader.apprentice:
                         app_names += str(app.name) + ', '
                     game.allegiance_list.append(['', '      Apprentices: ' + app_names[:-2]])
-        if game.clan.deputy != 0 and game.clan.deputy is not None and not game.clan.deputy.dead:
+        if game.clan.deputy != 0 and game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.exiled:
             game.allegiance_list.append(['DEPUTY:', f"{str(game.clan.deputy.name)} - a {game.clan.deputy.describe_cat()}"])
             if len(game.clan.deputy.apprentice) > 0:
                 if len(game.clan.deputy.apprentice) == 1:
@@ -1307,7 +1307,7 @@ class AllegiancesScreen(Screens):
                     queens.append(living_cat_.parent1)
         cat_count = 0
         for living_cat__ in living_cats:
-            if str(living_cat__.status) == 'warrior' and living_cat__.ID not in queens:
+            if str(living_cat__.status) == 'warrior' and living_cat__.ID not in queens and not living_cat__.exiled:
                 if not cat_count:
                     game.allegiance_list.append(['WARRIORS:', f"{str(living_cat__.name)} - a {living_cat__.describe_cat()}"])
                 else:
@@ -1360,7 +1360,7 @@ class AllegiancesScreen(Screens):
     def _extracted_from_screen_switches_24(self, living_cats, arg1, arg2):
         result = 0
         for living_cat in living_cats:
-            if str(living_cat.status) == arg1:
+            if str(living_cat.status) == arg1 and not living_cat.exiled:
                 if result == 0:
                     game.allegiance_list.append([arg2, f"{str(living_cat.name)} - a {living_cat.describe_cat()}"])
                 else:

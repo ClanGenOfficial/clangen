@@ -56,13 +56,13 @@ class Events(object):
                 game.clan.save_clan()
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
             game.event_scroll_ct = 0
-            has_med = any(str(cat.status) in {"medicine cat", "medicine cat apprentice"} and not cat.dead for cat in cat_class.all_cats.values())
+            has_med = any(str(cat.status) in {"medicine cat", "medicine cat apprentice"} and not cat.dead and not cat.exiled for cat in cat_class.all_cats.values())
 
             if not has_med:
                 game.cur_events_list.insert(0, f"{game.clan.name}Clan has no medicine cat!")
-            if game.clan.deputy == 0 or game.clan.deputy is None or game.clan.deputy.dead:
+            if game.clan.deputy == 0 or game.clan.deputy is None or game.clan.deputy.dead or game.clan.deputy.exiled:
                 game.cur_events_list.insert(0, f"{game.clan.name}Clan has no deputy!")
-            if game.clan.leader.dead:
+            if game.clan.leader.dead or game.clan.leader.exiled:
                 game.cur_events_list.insert(0, f"{game.clan.name}Clan has no leader!")
         game.switches['timeskip'] = False
 
@@ -83,10 +83,9 @@ class Events(object):
                     game.cur_events_list.append(war_notice)
 
     def perform_ceremonies(self, cat):
-        if game.clan.leader.dead and game.clan.deputy is not None and not game.clan.deputy.dead:
+        if (game.clan.leader.dead or game.clan.leader.exiled) and game.clan.deputy is not None and not game.clan.deputy.dead:
             game.clan.new_leader(game.clan.deputy)
             game.cur_events_list.append(f'{str(game.clan.deputy.name)} has been promoted to the new leader of the clan')
-
             game.clan.deputy = None
         if not cat.dead:
             cat.moons += 1
