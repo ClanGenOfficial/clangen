@@ -1820,7 +1820,7 @@ class RelationshipScreen(Screens):
             buttons.draw_button((-300, 600), text='>',
                                 list_page=game.switches['list_page'] + 1)
         buttons.draw_button(('center', -50), text='Back',
-                            cur_screen='profile screen')
+                            cur_screen='options screen')
 
     def screen_switches(self):
         cat_profiles()
