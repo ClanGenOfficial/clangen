@@ -1416,7 +1416,6 @@ class Cat(object):
                         the_cat.exiled = bool(attr[36])
                     if len(attr) > 37:
                         the_cat.genderalign = attr[37]
-                        print(the_cat.genderalign)
 
 
             game.switches['error_message'] = 'There was an error loading this clan\'s mentors/apprentices'
