@@ -1089,7 +1089,7 @@ class Cat(object):
                 new_sprite.blit(sprites.sprites[self.pelt.sprites[1] + self.pattern + str(self.age_sprites[self.age])], (0, 0))
 
         #draw pelt markings
-        blendmarkings = pygame.BLEND_RGBA_MULT
+        blendmarkings = pygame.BLEND_RGB_MAX
         if self.pelt.name in ['Tortie', 'Calico']:
             if self.pelt.markings not in ['Solid']:
                 if self.pelt.markings == 'Ticked':
