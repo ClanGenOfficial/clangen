@@ -1623,12 +1623,6 @@ class Cat(object):
         description += ' ' + str(self.pelt.length).lower() + '-furred ' + sex
         return description
 
-
-# The randomized cat sprite in Main Menu screen
-example_cat = Cat(status=choice(["kitten", "apprentice", "warrior", "elder"]), example=True)
-example_cat.update_sprite()
-
-
 # Twelve example cats
 def create_example_cats():
     e = random.sample(range(12), 3)
@@ -1641,6 +1635,4 @@ def create_example_cats():
 
 # CAT CLASS ITEMS
 cat_class = Cat(example=True)
-cat_class = Cat()
 game.cat_class = cat_class
-

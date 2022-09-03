@@ -293,4 +293,3 @@ class StarClan(object):
 
 clan_class = Clan()
 clan_class.remove_cat(cat_class.ID)
-clan_class.remove_cat(example_cat.ID)
