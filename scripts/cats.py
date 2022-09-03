@@ -1027,7 +1027,8 @@ class Cat(object):
             self.trait = choice(self.traits)
         if (self.status == 'apprentice' and new_status != 'medicine cat apprentice') or (self.status == 'medicine cat apprentice' and new_status != 'apprentice'):
             self.skill = choice(self.skills)
-
+        elif new_status == 'medicine cat':
+            self.skill = choice(self.med_skills)
         self.status = new_status
         self.name.status = new_status
         if 'apprentice' in new_status:

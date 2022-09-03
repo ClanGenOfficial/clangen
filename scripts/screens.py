@@ -1647,8 +1647,9 @@ class OptionsScreen(Screens):
 
         if not the_cat.dead:
             buttons.draw_button((x_value, 650), text='Kill Cat', kill_cat=the_cat)
-
-        buttons.draw_button((x_value, 600), text='Exile Cat', cat_value = game.switches['cat'])
+            buttons.draw_button((x_value, 600), text='Exile Cat', cat_value = game.switches['cat'])
+        elif the_cat.dead and not the_cat.exiled:
+            buttons.draw_button((x_value, 600), text='Exile to Dark Forest', cat_value = game.switches['cat'])
 
         if game.switches['deputy_switch'] is not False and game.switches['deputy_switch'] is not None and game.switches['deputy_switch'].status == 'warrior':
             game.clan.deputy = game.switches['deputy_switch']
