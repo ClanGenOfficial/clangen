@@ -2420,11 +2420,11 @@ class OptionsScreen(Screens):
             buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Transneu', cat_value=game.switches['cat'])
             button_count += 1
         if not the_cat.dead:
-            buttons.draw_button((-100, 650),
+            buttons.draw_button((x_value, 650),
                                 text='Kill Cat',
                                 kill_cat=the_cat)
 
-        buttons.draw_button((-100, 600),
+        buttons.draw_button((x_value, 600),
                             text='Exile Cat',
                             cat_value=game.switches['cat'])
 
@@ -2650,12 +2650,6 @@ class RelationshipScreen(Screens):
             
 
             # there is no way the mate is dead
-            if the_cat.mate is not None and the_relationship.cat_to == the_cat.mate:
-                verdana_small.text('mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
-            elif the_relationship.cat_to.mate != None:
-                verdana_small.text('has a mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
-            if the_relationship.cat_to.dead:
-                verdana_small.text('(dead)', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
             if the_relationship.family and the_relationship.cat_to.dead:
                 verdana_small.text('related (dead)', (140 + pos_x - string_len / 1.5, 130 + pos_y))
             elif the_relationship.family:
