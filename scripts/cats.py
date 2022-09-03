@@ -175,7 +175,7 @@ class Cat(object):
                 self.white_patches = choice(['EXTRA', None, None])
 
             # pattern for tortie/calico cats
-            if self.pelt.name == 'Calico':
+            if self.pelt.name == 'Calico' or self.pelt.name =='Calico2':
                 self.pattern = choice(calico_pattern)
             elif self.pelt.name == 'Tortie' or self.pelt.name == 'Tortie2':
                 self.pattern = choice(tortie_pattern)
@@ -1115,7 +1115,7 @@ class Cat(object):
         # draw colour & style
         new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
 
-        if self.pelt.name not in ['Tortie', 'Calico', 'Tortie2']:
+        if self.pelt.name not in ['Tortie', 'Calico', 'Calico2', 'Tortie2']:
             if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
                 new_sprite.blit(sprites.sprites[self.pelt.sprites[1] + 'extra' + self.pelt.colour + str(self.age_sprites[self.age])], (0, 0))
             else:

@@ -277,6 +277,26 @@ class Calico(object):
 
     def __repr__(self):
         return f"calico{self.length}"
+    
+class Calico2(object):
+    name = "Calico2"
+    sprites = {1: 'calico2', 2: 'white'}
+    white_patches = [
+        'ANY', 'TUXEDO', 'VAN', 'ANY', 'TUXEDO', 'VAN', 'ANY2', 'ANY2',
+        'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL',
+        'LIGHTSONG', 'VITILIGO', 'ANYCREAMY', 'TUXEDOCREAMY', 'VANCREAMY',
+        'ANY2CREAMY', 'TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE',
+        'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE', 'BIB', 'UNDERS', 'PAWS',
+        'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES', 'BROKENBLAZE'
+    ]
+
+    def __init__(self, length):
+        self.colour = choice(["BLACK", "GINGER", "WHITE"])
+        self.length = length
+        self.white = True
+
+    def __repr__(self):
+        return f"calico{self.length}"
 
 
 # ATTRIBUTES, including non-pelt related
@@ -317,7 +337,7 @@ scars3 = [
 pelt_names_F = [
     "SingleColour", "SingleColour", "TwoColour", "Tabby", "Tortie", "Calico",
     "Tabby", "TwoColour", "Speckled", "Tabby2", "Speckled2", 'Tortie2',
-    'Rosette', 'Smoke', 'Ticked'
+    'Rosette', 'Smoke', 'Ticked', 'Calico2'
 ]
 pelt_names_M = [
     "SingleColour", "SingleColour", "TwoColour", "Tabby", "Tabby", "Speckled",
@@ -441,3 +461,5 @@ def choose_pelt(gender,
             return Speckled2(colour, white, length)
     elif pelt == "Calico":
         return Calico(length)
+    elif pelt == "Calico2":
+        return Calico2(length)
