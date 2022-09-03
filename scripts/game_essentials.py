@@ -18,6 +18,8 @@ class Game(object):
     event_scroll_ct = 0
     max_allegiance_displayed = 17
     allegiance_scroll_ct = 0
+    max_relation_events_displayed = 14
+    relation_scroll_ct = 0
     cur_events_list = []
     allegiance_list = []
     language = {}
@@ -39,17 +41,18 @@ class Game(object):
     switches = {'cat': None, 'clan_name': '', 'leader': None, 'deputy': None, 'medicine_cat': None, 'members': [], 'event': None, 'cur_screen': 'start screen', 'naming_text': '',
                 'timeskip': False, 'mate': None, 'setting': None, 'save_settings': False, 'list_page': 1, 'last_screen': 'start screen', 'events_left': 0, 'save_clan': False,
                 'new_leader': False, 'apprentice_switch': False, 'deputy_switch': False, 'clan_list': '', 'switch_clan': False, 'read_clans': False, 'kill_cat': False,
-                'current_patrol': [], 'error_message': '', 'apprentice': None, 'change_name': '', 'name_cat': None, 'biome': None, 'language': 'english', 'search_text': '', 'map_selection': (0,0), 'world_seed': None, 'camp_site': (0,0), 'choosing_camp': False, 'hunting_territory': (0,0), 'training_territory': (0,0)}
+                'current_patrol': [], 'error_message': '', 'apprentice': None, 'change_name': '', 'name_cat': None, 'biome': None, 'language': 'english', 'search_text': '', 
+                'map_selection': (0,0), 'world_seed': None, 'camp_site': (0,0), 'choosing_camp': False, 'hunting_territory': (0,0), 'training_territory': (0,0)}
     all_screens = {}
     cur_events = {}
     map_info = {}
 
     # SETTINGS
     settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False, 'dark mode': False, 'backgrounds': True, 'autosave': False, 'disasters': False,
-                'retirement': True, 'language': 'english'}  # The current settings
+                'retirement': True, 'language': 'english', 'affair': False}  # The current settings
     setting_lists = {'no gendered breeding': [False, True], 'text size': ['0', '1', '2'], 'no unknown fathers': [False, True], 'dark mode': [False, True],
                      'backgrounds': [True, False], 'autosave': [False, True], 'disasters': [False, True], 'retirement': [True, False],
-                     'language': language_list}  # Lists of possible options for each setting
+                     'language': language_list, 'affair': [False,True]}  # Lists of possible options for each setting
     settings_changed = False
 
     # CLAN
