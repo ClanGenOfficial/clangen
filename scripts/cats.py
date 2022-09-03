@@ -45,6 +45,7 @@ class Cat(object):
         self.died_by = None  # once the cat dies, tell the cause
         self.dead_for = 0  # moons
         self.thought = ''
+        self.genderalign = None
         if ID is None:
             potential_ID = str(randint(10000, 9999999))
             while potential_ID in self.all_cats:
@@ -213,6 +214,8 @@ class Cat(object):
         self.paralyzed = False
         self.no_kits = False
         self.exiled = False
+        if self.genderalign == None:
+            self.genderalign = self.gender
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
 
@@ -1284,6 +1287,7 @@ class Cat(object):
                 data+=',' + 'True'
             else:
                 data+=',' + 'False'
+            data += ',' + str(x.genderalign)
             # next cat
             data += '\n'
 
@@ -1410,6 +1414,9 @@ class Cat(object):
                         the_cat.no_kits = bool(attr[35])
                     if len(attr) > 36:
                         the_cat.exiled = bool(attr[36])
+                    if len(attr) > 37:
+                        the_cat.genderalign = attr[37]
+                        print(the_cat.genderalign)
 
 
             game.switches['error_message'] = 'There was an error loading this clan\'s mentors/apprentices'
@@ -1517,6 +1524,7 @@ class Cat(object):
                     new_cat.skill = value  # SKILL
                 if attr == 'mentor':
                     new_cat.mentor = value
+                
 
     def describe_color(self):
         color_name = ''
@@ -1569,10 +1577,12 @@ class Cat(object):
         return color_name
 
     def describe_cat(self):
-        if self.gender == 'male':
+        if self.genderalign == 'male' or self.genderalign == "transmasc":
             sex = 'tom'
-        else:
+        elif self.genderalign == 'female'or self.genderalign == "transfem":
             sex = 'she-cat'
+        else:
+            sex = 'cat'
         description = self.describe_color()
         description += ' ' + str(self.pelt.length).lower() + '-furred ' + sex
         return description

@@ -1096,7 +1096,7 @@ class ProfileScreen(Screens):
         verdana_big.text(cat_name, ('center', 150))  # NAME
         the_cat.draw_large((100, 200))  # IMAGE
         verdana.text(cat_thought, ('center', 180))  # THOUGHT / ACTION
-        verdana_small.text(the_cat.gender, (300, 230 + count * 15))
+        verdana_small.text(the_cat.genderalign, (300, 230 + count * 15))
         count += 1  # SEX / GENDER
         verdana_small.text(the_cat.status, (490, 230 + count2 * 15))
         count2 += 1  # STATUS
@@ -2419,13 +2419,21 @@ class OptionsScreen(Screens):
                     text='Promote to Deputy',
                     deputy_switch=the_cat)
                 button_count += 1
-
+        if the_cat.gender == "female" and the_cat.genderalign != "transmasc":
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Transmasc', cat_value=game.switches['cat'])
+            button_count += 1
+        elif the_cat.gender == "male" and the_cat.genderalign != "transfem":
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Transfem', cat_value=game.switches['cat'])
+            button_count += 1
+        if the_cat.genderalign != "transneu":
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Transneu', cat_value=game.switches['cat'])
+            button_count += 1
         if not the_cat.dead:
-            buttons.draw_button((x_value, 650),
+            buttons.draw_button((-100, 650),
                                 text='Kill Cat',
                                 kill_cat=the_cat)
 
-        buttons.draw_button((x_value, 600),
+        buttons.draw_button((-100, 600),
                             text='Exile Cat',
                             cat_value=game.switches['cat'])
 
@@ -2493,7 +2501,7 @@ class OptionsScreen(Screens):
                                 text='Switch to warrior',
                                 apprentice_switch=the_cat)
             button_count += 1
-        buttons.draw_button((x_value, y_value + button_count * y_change + 30),
+        buttons.draw_button((x_value, y_value + button_count * y_change),
                             text='Back',
                             cur_screen='profile screen')
 
