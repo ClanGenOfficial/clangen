@@ -2646,7 +2646,7 @@ class RelationshipScreen(Screens):
             verdana_small.text(f"{str(the_relationship.cat_to.gender)} - {str(the_relationship.cat_to.age)}", (155 + pos_x - longest_string_len / 1.5, 255 + pos_y))
             
             # there is no way the mate is dead
-            if the_cat.mate is not None and the_relationship.cat_to.ID == the_cat.mate.ID:
+            if the_cat.mate is not None and the_relationship.cat_to == the_cat.mate:
                 verdana_small.text('mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))
             elif the_relationship.cat_to.mate != None:
                 verdana_small.text('has a mate', (155 + pos_x - longest_string_len / 1.5, 265 + pos_y))

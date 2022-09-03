@@ -178,7 +178,15 @@ while True:
                 if event.button == 5 and abs(game.allegiance_scroll_ct) < max_scroll_direction:
                         game.allegiance_list.append(game.allegiance_list.pop(0))
                         game.allegiance_scroll_ct -= 1
-
+        if game.current_screen == 'patrol screen':
+            random_options = []
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_8:
+                    print(game.switches['current_patrol'])
+                    for u in range(12):
+                        i_max = len(game.patrol_cats)
+                        if u < i_max:
+                            game.switches['current_patrol'].append(game.patrol_cats[u])
         if game.current_screen == 'change name screen' and game.switches['change_name'] == '' and event.type == pygame.KEYDOWN:
             if event.unicode.isalpha() or event.unicode.isspace():  # only allows alphabet letters/space as an input
                 if len(game.switches['naming_text']) < 20:  # can't type more than max name length
