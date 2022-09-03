@@ -1012,7 +1012,7 @@ class EventsScreen(Screens):
         events_class.one_moon()
 
         # show the Relationshipevents
-        buttons.draw_button((-200, 220), text='RELEATIONSHIP EVENTS', cur_screen='relationship event screen')
+        buttons.draw_button((-200, 220), text='RELATIONSHIP EVENTS', cur_screen='relationship event screen')
 
         a = 0
         if game.cur_events_list is not None and game.cur_events_list != []:
@@ -2359,7 +2359,7 @@ class OptionsScreen(Screens):
                             text='Family Tree')
         button_count += 1
 
-        buttons.draw_button((x_value, y_value + button_count * y_change), text='See Relaionships', cur_screen='relationship screen')
+        buttons.draw_button((x_value, y_value + button_count * y_change), text='See Relationships', cur_screen='relationship screen')
         button_count += 1
 
         if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
