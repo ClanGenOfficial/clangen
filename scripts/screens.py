@@ -1762,7 +1762,7 @@ class RelationshipScreen(Screens):
 
             the_relationship = relationships[x + (game.switches['list_page'] - 1) * 10]
             the_relationship.cat_to.update_sprite()
-            buttons.draw_button((120 + pos_x, 100 + pos_y), image=the_relationship.cat_to.sprite, cat=the_relationship.cat_to.ID, cur_screen='profile screen')
+            buttons.draw_button((120 + pos_x, 100 + pos_y), image=the_relationship.cat_to.sprite, cat=the_relationship.cat_to, cur_screen='profile screen')
             # name length
             if the_relationship.cat_to.dead:
                 verdana_small.text(str(the_relationship.cat_to.name) + ' (dead)', (115 + pos_x, 153 + pos_y))
