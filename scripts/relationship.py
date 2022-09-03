@@ -350,7 +350,7 @@ class Relationship(object):
         self.mates = mates
         self.family = family
         self.opposit_relationship = None #link to oppositting relationship will be created later
-        self.effect = ''
+        self.effect = 'neutral effect'
 
         # check if cats are related
         parents_to = [self.cat_to.parent1, self.cat_to.parent2]
@@ -428,13 +428,9 @@ class Relationship(object):
         rel_stat_info_to = '('
         rel_stat_info_to += ','.join(self.current_changes_to) + '[' + str(self.cat_to.name) + '])'
 
-        if len(self.effect) > 0:
-            game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string} ({self.effect})")
-            # game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string}")
-        else:
-            game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string}")
+        game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string} ({self.effect})")
 
-        self.effect = ''
+        self.effect = 'neutral effect'
         #if len(self.current_changes_from) > 0:
         #    game.relation_events_list.append(rel_stat_info_from)
         #if len(self.current_changes_to) > 0:
@@ -581,7 +577,7 @@ class Relationship(object):
         if action in INCREASE['from']['romantic_love']:
             self.romantic_love += number_increase
             self.current_changes_from.append('+ ' + str(number_increase) + ' rom. love ')
-            self.effect = 'positive Effect'
+            self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
             self.platonic_like += INDIRECT_INCREASE
@@ -589,14 +585,14 @@ class Relationship(object):
         if action in INCREASE['from']['like']:
             self.platonic_like += number_increase
             self.current_changes_from.append('+ ' + str(number_increase) + ' like ')
-            self.effect = 'positive Effect'
+            self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
             self.comfortable += INDIRECT_INCREASE
         if action in INCREASE['from']['dislike']:
             self.dislike += number_increase
             self.current_changes_from.append('+ ' + str(number_increase) + ' dislike ')
-            self.effect = 'negative Effect'
+            self.effect = 'negative effect'
             # indirekt influences
             self.platonic_like -= INDIRECT_DECREASE
             self.romantic_love -= INDIRECT_DECREASE
@@ -607,11 +603,11 @@ class Relationship(object):
         if action in INCREASE['from']['admiration']:
             self.admiration += number_increase
             self.current_changes_from.append('+ ' + str(number_increase) + ' admir. ')
-            self.effect = 'positive Effect'
+            self.effect = 'positive effect'
         if action in INCREASE['from']['comfortable']:
             self.comfortable += number_increase
             self.current_changes_from.append('+ ' + str(number_increase) + ' comfortable ')
-            self.effect = 'positive Effect'
+            self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
             self.jealousy -= INDIRECT_DECREASE
@@ -620,11 +616,11 @@ class Relationship(object):
         if action in INCREASE['from']['jealousy']:
             self.jealousy += number_increase
             self.current_changes_from.append('+ ' + str(number_increase) + ' jeal. ')
-            self.effect = 'positive Effect'
+            self.effect = 'positive effect'
         if action in INCREASE['from']['trust']:
             self.trust += number_increase
             self.current_changes_from.append('+ ' + str(number_increase) + ' trust ')
-            self.effect = 'positive Effect'
+            self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
             self.comfortable += INDIRECT_INCREASE
@@ -634,31 +630,31 @@ class Relationship(object):
         if action in DECREASE['from']['romantic_love']:
             self.romantic_love -= number_decrease
             self.current_changes_from.append('- ' + str(number_decrease) + ' rom. love ')
-            self.effect = 'negative Effect'
+            self.effect = 'negative effect'
         if action in DECREASE['from']['like']:
             self.platonic_like -= number_decrease
             self.current_changes_from.append(('- ' + str(number_decrease) + ' like '))
-            self.effect = 'negative Effect'
+            self.effect = 'negative effect'
         if action in DECREASE['from']['dislike']:
             self.dislike -= number_decrease
             self.current_changes_from.append('- ' + str(number_decrease) + ' dislike ')
-            self.effect = 'positive Effect'
+            self.effect = 'positive effect'
         if action in DECREASE['from']['admiration']:
             self.admiration -= number_decrease
             self.current_changes_from.append('- ' + str(number_decrease) + ' admir. ')
-            self.effect = 'negative Effect'
+            self.effect = 'negative effect'
         if action in DECREASE['from']['comfortable']:
             self.comfortable -= number_decrease
             self.current_changes_from.append('- ' + str(number_decrease) + ' comfortable ')
-            self.effect = 'negative Effect'
+            self.effect = 'negative effect'
         if action in DECREASE['from']['trust']:
             self.trust -= number_decrease
             self.current_changes_from.append('- ' + str(number_decrease) + ' trust ')
-            self.effect = 'negative Effect'
+            self.effect = 'negative effect'
         if action in DECREASE['from']['jealousy']:
             self.jealousy -= number_decrease
             self.current_changes_from.append('- ' + str(number_decrease) + ' jeal. ')
-            self.effect = 'negative Effect'
+            self.effect = 'negative effect'
 
         self.cut_boundries()
 
