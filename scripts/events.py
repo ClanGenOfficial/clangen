@@ -186,6 +186,8 @@ class Events(object):
                 relationships = []
                 for cat_id in game.clan.clan_cats:
                     the_cat = cat_class.all_cats.get(cat_id)
+                    if the_cat.dead:
+                        continue
                     the_cat.relationships.append(Relationship(the_cat,kit))
                     relationships.append(Relationship(kit,the_cat))
                 kit.relationships = relationships
@@ -204,6 +206,8 @@ class Events(object):
                 relationships = []
                 for cat_id in game.clan.clan_cats:
                     the_cat = cat_class.all_cats.get(cat_id)
+                    if the_cat.dead:
+                        continue
                     the_cat.relationships.append(Relationship(the_cat,loner))
                     relationships.append(Relationship(loner,the_cat))
                 loner.relationships = relationships
@@ -220,6 +224,8 @@ class Events(object):
                 relationships = []
                 for cat_id in game.clan.clan_cats:
                     the_cat = cat_class.all_cats.get(cat_id)
+                    if the_cat.dead:
+                        continue
                     the_cat.relationships.append(Relationship(the_cat, warrior))
                     relationships.append(Relationship(warrior,the_cat))
                 warrior.relationships = relationships
@@ -241,6 +247,8 @@ class Events(object):
                 relationships = []
                 for cat_id in game.clan.clan_cats:
                     the_cat = cat_class.all_cats.get(cat_id)
+                    if the_cat.dead:
+                        continue
                     the_cat.relationships.append(Relationship(the_cat,loner))
                     relationships.append(Relationship(loner,the_cat))
                 loner.relationships = relationships
@@ -482,6 +490,8 @@ class Events(object):
                         relationships = []
                         for cat_id in game.clan.clan_cats:
                             the_cat = cat_class.all_cats.get(cat_id)
+                            if the_cat.dead:
+                                continue
                             if the_cat.ID in [kit.parent1, kit.parent2]:
                                 cat.relationships.append(Relationship(cat,kit,False,True))
                                 relationships.append(Relationship(kit,cat,False,True))
@@ -499,6 +509,8 @@ class Events(object):
                     relationships = []
                     for cat_id in game.clan.clan_cats:
                         the_cat = cat_class.all_cats.get(cat_id)
+                        if the_cat.dead:
+                            continue
                         if the_cat.ID is kit.parent1:
                             the_cat.relationships.append(Relationship(the_cat,kit,False,True))
                             relationships.append(Relationship(kit,the_cat,False,True))
