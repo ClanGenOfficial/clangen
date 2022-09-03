@@ -319,7 +319,7 @@ class Events(object):
 
     def handle_deaths(self, cat):
         #Leader lost a life EVENTS
-        if randint(1, 2) == 1:
+        if randint(1, 100) == 1:
             name = str(cat.name)
             other_cat = choice(list(cat_class.all_cats.values()))
             while cat == other_cat or other_cat.dead or other_cat.status == 'leader':
@@ -340,7 +340,7 @@ class Events(object):
                 self.dies(cat)
                 game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old')
             
-        elif randint(1, 200) == 1 and cat.status == 'leader': #Several/All Lives loss
+        elif randint(1, 250) == 1 and cat.status == 'leader': #Several/All Lives loss
             name = str(cat.name)
             allorsome = randint(1, 10)
             if cat.status == 'leader':
