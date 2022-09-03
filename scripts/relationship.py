@@ -346,7 +346,7 @@ DECREASE  = {
 
 # weigths of the stat change
 DIRECT_INCREASE = 8
-DIRECT_DECREASE = 4
+DIRECT_DECREASE = 5
 INDIRECT_INCREASE = 6
 INDIRECT_DECREASE = 3
 
@@ -442,10 +442,15 @@ class Relationship(object):
             game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string}")
 
         self.effect = []
+        self.action_results()
         #if len(self.current_changes_from) > 0:
         #    game.relation_events_list.append(rel_stat_info_from)
         #if len(self.current_changes_to) > 0:
         #    game.relation_events_list.append(rel_stat_info_to)
+
+    def action_results(self):
+        """Things that can happen."""
+
 
     def get_action_possibilities(self):
         """Creates a list of possibles actions of this relationship"""

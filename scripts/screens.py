@@ -1016,8 +1016,7 @@ class EventsScreen(Screens):
 
         a = 0
         if game.cur_events_list is not None and game.cur_events_list != []:
-            for x in range(
-                    min(len(game.cur_events_list), game.max_events_displayed)):
+            for x in range(min(len(game.cur_events_list), game.max_events_displayed)):
                 if game.cur_events_list[x] is None:
                     continue
                 if "Clan has no " in game.cur_events_list[x]:
@@ -2617,9 +2616,12 @@ class RelationshipScreen(Screens):
 
         # layout
         verdana_big.text(str(the_cat.name) + ' Relationships', ('center', 10))
-        if the_cat != None: 
+        if the_cat != None and the_cat.mate != '':
             mate = cat_class.all_cats.get(the_cat.mate)
-            verdana_small.text(f"{str(the_cat.gender)}  - {str(the_cat.age)} -  mate: {str(mate.name)}", ('center', 40))
+            if mate != None:
+                verdana_small.text(f"{str(the_cat.gender)}  - {str(the_cat.age)} -  mate: {str(mate.name)}", ('center', 40))
+            else:
+                verdana_small.text(f"{str(the_cat.gender)}  - {str(the_cat.age)}", ('center', 40))
         else:
             verdana_small.text(f"{str(the_cat.gender)}  - {str(the_cat.age)}", ('center', 40))
 
@@ -2753,19 +2755,14 @@ class RelationshipScreen(Screens):
 
 class RelationshipEventScreen(Screens):
     def on_use(self):
-        max_events = 14
         a = 0
 
         if game.relation_events_list is not None and game.relation_events_list != []:
-            for x in range(min(len(game.relation_events_list), max_events)):
-                if game.relation_events_list[x] == None:
+            for x in range(min(len(game.relation_events_list), game.max_relation_events_displayed)):
+                if game.relation_events_list[x] is None:
                     continue
-                if "Clan has no " in game.relation_events_list[x]:
-                    verdana_red.text(
-                        game.relation_events_list[x], ('center', 160 + a * 30))
-                else:
-                    verdana.text(
-                        game.relation_events_list[x], ('center', 160 + a * 30))
+                verdana.text(game.relation_events_list[x],
+                    ('center', 160 + a * 30))
                 a += 1
         else:
             verdana.text("Nothing significant happened this moon.",
@@ -2773,7 +2770,7 @@ class RelationshipEventScreen(Screens):
         # buttons
         draw_menu_buttons()
 
-        if len(game.relation_events_list) > max_events:
+        if len(game.relation_events_list) > game.max_relation_events_displayed:
             buttons.draw_button((720, 150), image=game.up, arrow="UP")
             buttons.draw_button((700, 550), image=game.down, arrow="DOWN")
 

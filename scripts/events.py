@@ -454,7 +454,7 @@ class Events(object):
             if type(cat.mate) == str:
                 mate = cat_class.all_cats.get(cat.mate)
                 mate.mate = None
-            else:
+            elif type(cat.mate) == Cat:
                 cat.mate.mate = None
         for app in cat.apprentice.copy():
             app.update_mentor()
