@@ -4,7 +4,7 @@ from sys import exit
 
 
 class Clan(object):
-    leader_lives = 9
+    leader_lives = 0
     clan_cats = []
     starclan_cats = []
     seasons = ['Newleaf', 'Newleaf', 'Newleaf', 'Greenleaf', 'Greenleaf', 'Greenleaf', 'Leaf-fall', 'Leaf-fall',
@@ -80,18 +80,12 @@ class Clan(object):
                 cat_class.all_cats[i].example = True
                 self.remove_cat(cat_class.all_cats[i].ID)
 
-        # give thoughts,actions and relationships to cats
-        for cat_id in cat_class.all_cats:
-            cat_class.all_cats.get(cat_id).create_new_relationships()
-            if cat_class.all_cats.get(cat_id).status == 'apprentice':
-                cat_class.all_cats.get(cat_id).status_change('apprentice')
-                
+        # give thoughts/actions to cats
+        for cat in cat_class.all_cats:
+            if cat_class.all_cats.get(cat).status == 'apprentice':
+                cat_class.all_cats.get(cat).status_change('apprentice')
         cat_class.thoughts()
         cat_class.save_cats()
-        number_other_clans = randint(3, 5)
-        for _ in range(number_other_clans):
-            self.all_clans.append(OtherClan())
-
         self.save_clan()
 
     def add_cat(self, cat):  # cat is a 'Cat' object
@@ -185,17 +179,7 @@ class Clan(object):
             write_file.write(list_data)
 
     def load_clan(self):
-        other_clans = []
-        if game.switches['clan_list'] == '':
-            number_other_clans = randint(3, 5)
-            for _ in range(number_other_clans):
-                self.all_clans.append(OtherClan())
-            return
         if game.switches['clan_list'][0].strip() == '':
-            number_other_clans = randint(3, 5)
-            for _ in range(number_other_clans):
-                self.all_clans.append(OtherClan())
-
             return
         with open('saves/' + game.switches['clan_list'][0] + 'clan.txt', 'r') as read_file:
             clan_data = read_file.read()
@@ -255,7 +239,6 @@ class Clan(object):
             number_other_clans = randint(3, 5)
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
-
         for cat in members:
             if cat in cat_class.all_cats.keys():
                 game.clan.add_cat(cat_class.all_cats[cat])
@@ -293,3 +276,4 @@ class StarClan(object):
 
 clan_class = Clan()
 clan_class.remove_cat(cat_class.ID)
+clan_class.remove_cat(example_cat.ID)

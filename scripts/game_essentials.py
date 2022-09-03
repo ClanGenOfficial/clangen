@@ -22,7 +22,6 @@ class Game(object):
     allegiance_list = []
     language = {}
     language_list = ['english','spanish','german']
-    relation_events_list = []
 
     down = pygame.image.load("sprites/down.png")
     down = pygame.transform.scale(down, (75, 75))
@@ -33,7 +32,6 @@ class Game(object):
     cat_buttons = {'cat0': None, 'cat1': None, 'cat2': None, 'cat3': None, 'cat4': None, 'cat5': None, 'cat6': None, 'cat7': None, 'cat8': None, 'cat9': None, 'cat10': None,
                    'cat11': None}
     patrol_cats = {}
-    patrolled = []
 
     # store changing parts of the game that the user can toggle with buttons
     switches = {'cat': None, 'clan_name': '', 'leader': None, 'deputy': None, 'medicine_cat': None, 'members': [], 'event': None, 'cur_screen': 'start screen', 'naming_text': '',
@@ -45,10 +43,10 @@ class Game(object):
 
     # SETTINGS
     settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False, 'dark mode': False, 'backgrounds': True, 'autosave': False, 'disasters': False,
-                'retirement': True, 'language': 'english', 'shaders': False}  # The current settings
+                'retirement': True, 'language': 'english'}  # The current settings
     setting_lists = {'no gendered breeding': [False, True], 'text size': ['0', '1', '2'], 'no unknown fathers': [False, True], 'dark mode': [False, True],
                      'backgrounds': [True, False], 'autosave': [False, True], 'disasters': [False, True], 'retirement': [True, False],
-                     'language': language_list, 'shaders': [False, True]}  # Lists of possible options for each setting
+                     'language': language_list}  # Lists of possible options for each setting
     settings_changed = False
 
     # CLAN
