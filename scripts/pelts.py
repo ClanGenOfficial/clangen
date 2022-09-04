@@ -24,10 +24,8 @@ class TwoColour(object):
         'VANCREAMY', 'ANY2CREAMY', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO',
         'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO', 'TIP', 'FANCY',
         'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL',
-        'BLAZE', 'PRINCE', 'VEE', 'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN',
-        'MISTER', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE',
-        'PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA',
-        'PIEBALD', 'CURVED', 'HEART', 'LILTWO', 'GLASS', 'MOORISH', 'POINTMARK'
+        'BLAZE', 'PRINCE', 'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN',
+        'MISTER', 'BELLY', 'TOES', 'BROKENBLAZE'
     ]
 
     def __init__(self, colour, length):
@@ -48,10 +46,8 @@ class Tabby(object):
         'RAGDOLL', 'LIGHTSONG', 'VITILIGO', 'ANYCREAMY', 'TUXEDOCREAMY',
         'LITTLECREAMY', 'VANCREAMY', 'ANY2CREAMY', 'TIP', 'FANCY', 'FRECKLES',
         'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE',
-        'VEE', 'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY',
-        'TAILTIP', 'TOES', 'BROKENBLAZE', 'PANTS', 'REVERSEPANTS', 'SKUNK',
-        'KARPATI', 'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED', 'HEART',
-        'LILTWO', 'GLASS', 'MOORISH', 'POINTMARK'
+        'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES',
+        'BROKENBLAZE'
     ]
 
     def __init__(self, colour, white, length):
@@ -75,10 +71,8 @@ class Tabby2(object):
         'RAGDOLL', 'LIGHTSONG', 'VITILIGO', 'ANYCREAMY', 'TUXEDOCREAMY',
         'LITTLECREAMY', 'VANCREAMY', 'ANY2CREAMY', 'TIP', 'FANCY', 'FRECKLES',
         'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE',
-        'VEE', 'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY',
-        'TAILTIP', 'TOES', 'BROKENBLAZE', 'PANTS', 'REVERSEPANTS', 'SKUNK',
-        'KARPATI', 'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED', 'HEART',
-        'LILTWO', 'GLASS', 'MOORISH', 'POINTMARK'
+        'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES',
+        'BROKENBLAZE'
     ]
 
     def __init__(self, colour, white, length):
@@ -102,10 +96,8 @@ class Rosette(object):
         'RAGDOLL', 'LIGHTSONG', 'VITILIGO', 'ANYCREAMY', 'TUXEDOCREAMY',
         'LITTLECREAMY', 'VANCREAMY', 'ANY2CREAMY', 'TIP', 'FANCY', 'FRECKLES',
         'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE',
-        'VEE', 'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY',
-        'TAILTIP', 'TOES', 'BROKENBLAZE', 'PANTS', 'REVERSEPANTS', 'SKUNK',
-        'KARPATI', 'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED', 'HEART',
-        'LILTWO', 'GLASS', 'MOORISH', 'POINTMARK'
+        'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES',
+        'BROKENBLAZE'
     ]
 
     def __init__(self, colour, white, length):
@@ -128,11 +120,9 @@ class Smoke(object):
         'ANY2', 'ANY2', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG',
         'RAGDOLL', 'LIGHTSONG', 'VITILIGO', 'ANYCREAMY', 'TUXEDOCREAMY',
         'LITTLECREAMY', 'VANCREAMY', 'ANY2CREAMY', 'TIP', 'FANCY', 'FRECKLES',
-        'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL',  'BLAZE', 'PRINCE',
-        'VEE', 'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY',
-        'TAILTIP', 'TOES', 'BROKENBLAZE', 'PANTS', 'REVERSEPANTS', 'SKUNK',
-        'KARPATI', 'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED', 'HEART',
-        'LILTWO', 'GLASS', 'MOORISH', 'POINTMARK'
+        'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE',
+        'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES',
+        'BROKENBLAZE'
     ]
 
     def __init__(self, colour, white, length):
@@ -142,24 +132,22 @@ class Smoke(object):
 
     def __repr__(self):
         if self.white:
-            return f"white and {self.colour}{self.length}"
+            return f"white and {self.colour}{self.length} smoke"
         else:
-            return self.colour + self.length
+            return self.colour + self.length + " smoke"
 
 
 class Ticked(object):
-    name = "Ticked"
+    name = "Smoke"
     sprites = {1: 'ticked', 2: 'white'}
     white_patches = [
         'ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY', 'TUXEDO', 'LITTLE', 'VAN',
         'ANY2', 'ANY2', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG',
         'RAGDOLL', 'LIGHTSONG', 'VITILIGO', 'ANYCREAMY', 'TUXEDOCREAMY',
         'LITTLECREAMY', 'VANCREAMY', 'ANY2CREAMY', 'TIP', 'FANCY', 'FRECKLES',
-        'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL',  'BLAZE', 'PRINCE',
-        'VEE', 'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY',
-        'TAILTIP', 'TOES', 'BROKENBLAZE', 'PANTS', 'REVERSEPANTS', 'SKUNK',
-        'KARPATI', 'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED', 'HEART',
-        'LILTWO', 'GLASS', 'MOORISH', 'POINTMARK'
+        'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE',
+        'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES',
+        'BROKENBLAZE'
     ]
 
     def __init__(self, colour, white, length):
@@ -182,10 +170,8 @@ class Speckled(object):
         'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL',
         'LIGHTSONG', 'VITILIGO', 'ANYCREAMY', 'TUXEDOCREAMY', 'LITTLECREAMY',
         'ANY2CREAMY', 'TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE',
-        'PANTS2', 'GOATEE', 'TAIL',  'BLAZE', 'PRINCE', 'VEE', 'BIB', 'UNDERS',
-        'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE',
-        'PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA', 'PIEBALD',
-        'CURVED', 'HEART', 'LILTWO', 'GLASS', 'MOORISH', 'POINTMARK'
+        'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE', 'BIB', 'UNDERS', 'PAWS',
+        'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES', 'BROKENBLAZE'
     ]
 
     def __init__(self, colour, white, length):
@@ -208,11 +194,8 @@ class Speckled2(object):
         'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL',
         'LIGHTSONG', 'VITILIGO', 'ANYCREAMY', 'TUXEDOCREAMY', 'LITTLECREAMY',
         'ANY2CREAMY', 'TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE',
-        'PANTS2', 'GOATEE', 'TAIL',  'BLAZE', 'PRINCE',
-        'VEE', 'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY',
-        'TAILTIP', 'TOES', 'BROKENBLAZE', 'PANTS', 'REVERSEPANTS', 'SKUNK',
-        'KARPATI', 'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED', 'HEART',
-        'LILTWO', 'GLASS', 'MOORISH', 'POINTMARK'
+        'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE', 'BIB', 'UNDERS', 'PAWS',
+        'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES', 'BROKENBLAZE'
     ]
 
     def __init__(self, colour, white, length):
@@ -231,11 +214,12 @@ class Tortie(object):
     name = "Tortie"
     sprites = {1: 'tortie', 2: 'white'}
     white_patches = [
-                     'TUXEDO', 'LITTLE', 'TUXEDO', 'LITTLE', None, None, None, 'EXTRA',
-                     'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO',
-                     'TUXEDOCREAMY', 'LITTLECREAMY', 'TIP', 'FANCY', 'BLAZE', 'BIB', 'VEE', 'PAWS',
-                     'TAILTIP', 'TOES', 'BROKENBLAZE', 'DAMIEN', 'DAMIEN', 'BROKENBLAZE', 'SKUNK', 'KARPATI',
-                     'LILTWO', 'POINTMARK'
+        'TUXEDO', 'LITTLE', 'TUXEDO', 'LITTLE', None, None, None, None, 'EXTRA', 'ONEEAR',
+        'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG',
+        'VITILIGO', 'TUXEDOCREAMY', 'LITTLECREAMY', 'TIP', 'FANCY', 'FRECKLES',
+        'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE',
+        'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES',
+        'BROKENBLAZE'
     ]
 
     def __init__(self, white, length):
@@ -253,11 +237,13 @@ class Tortie(object):
 class Tortie2(object):
     name = "Tortie2"
     sprites = {1: 'tortie2', 2: 'white'}
-    white_patches = ['TUXEDO', 'LITTLE', 'TUXEDO', 'LITTLE', None, None, None, 'EXTRA',
-                     'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO',
-                     'TUXEDOCREAMY', 'LITTLECREAMY', 'TIP', 'FANCY', 'BLAZE', 'BIB', 'VEE', 'PAWS',
-                     'TAILTIP', 'TOES', 'BROKENBLAZE', 'DAMIEN', 'DAMIEN', 'BROKENBLAZE', 'SKUNK', 'KARPATI',
-                     'LILTWO', 'POINTMARK'
+    white_patches = [
+        'TUXEDO', 'LITTLE', 'TUXEDO', 'LITTLE', None, None, None, 'EXTRA', 'ONEEAR',
+        'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG',
+        'VITILIGO', 'TUXEDOCREAMY', 'LITTLECREAMY', 'TIP', 'FANCY', 'FRECKLES',
+        'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE',
+        'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES',
+        'BROKENBLAZE'
     ]
 
     def __init__(self, white, length):
@@ -275,14 +261,33 @@ class Tortie2(object):
 class Calico(object):
     name = "Calico"
     sprites = {1: 'calico', 2: 'white'}
-    white_patches = ['ANY', 'TUXEDO', 'VAN', 'ANY', 'TUXEDO', 'VAN', 'ANY2', 'ANY2',
-                     'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO',
-                     'ANYCREAMY', 'TUXEDOCREAMY', 'VANCREAMY', 'ANY2CREAMY', 'TIP', 'FANCY', 'FRECKLES',
-                     'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE', 'BIB', 'VEE',
-                     'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE',
-                     'PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED',
-                     'HEART', 'LILTWO', 'GLASS', 'MOORISH', 'POINTMARK'
-                     
+    white_patches = [
+        'ANY', 'TUXEDO', 'VAN', 'ANY', 'TUXEDO', 'VAN', 'ANY2', 'ANY2',
+        'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL',
+        'LIGHTSONG', 'VITILIGO', 'ANYCREAMY', 'TUXEDOCREAMY', 'VANCREAMY',
+        'ANY2CREAMY', 'TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE',
+        'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE', 'BIB', 'UNDERS', 'PAWS',
+        'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES', 'BROKENBLAZE'
+    ]
+
+    def __init__(self, length):
+        self.colour = choice(["BLACK", "GINGER", "WHITE"])
+        self.length = length
+        self.white = True
+
+    def __repr__(self):
+        return f"calico{self.length}"
+    
+class Calico2(object):
+    name = "Calico2"
+    sprites = {1: 'calico2', 2: 'white'}
+    white_patches = [
+        'ANY', 'TUXEDO', 'VAN', 'ANY', 'TUXEDO', 'VAN', 'ANY2', 'ANY2',
+        'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL',
+        'LIGHTSONG', 'VITILIGO', 'ANYCREAMY', 'TUXEDOCREAMY', 'VANCREAMY',
+        'ANY2CREAMY', 'TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE',
+        'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE', 'BIB', 'UNDERS', 'PAWS',
+        'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES', 'BROKENBLAZE'
     ]
 
     def __init__(self, length):
@@ -326,17 +331,20 @@ scars3 = [
     "RAINBOWBELL", "BLACKBELL", "SPIKESBELL", "PINKBELL", "PURPLEBELL",
     "MULTIBELL", "CRIMSONBOW", "BLUEBOW", "YELLOWBOW", "CYANBOW", "REDBOW",
     "LIMEBOW", "GREENBOW", "RAINBOWBOW", "BLACKBOW", "SPIKESBOW", "PINKBOW",
-    "PURPLEBOW", "MULTIBOW"
+    "PURPLEBOW", "MULTIBOW"]
+scars4 = ["TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE", "BELLY", "TOETRAP"]
+scars5 = ["SNAKE"
+
 ]
 
 pelt_names_F = [
     "SingleColour", "SingleColour", "TwoColour", "Tabby", "Tortie", "Calico",
     "Tabby", "TwoColour", "Speckled", "Tabby2", "Speckled2", 'Tortie2',
-    "Rosette", "Smoke", "Ticked"
+    'Rosette', 'Smoke', 'Ticked', 'Calico2'
 ]
 pelt_names_M = [
     "SingleColour", "SingleColour", "TwoColour", "Tabby", "Tabby", "Speckled",
-    "TwoColour", "Tabby2", "Speckled2", "Rosette", "Smoke", "Ticked"
+    "TwoColour", "Tabby2", "Speckled2", 'Rosette', 'Smoke', 'Ticked'
 ]
 
 # SPRITE NAMES
@@ -353,10 +361,8 @@ white_sprites = [
     'TUXEDOCREAMY', 'LITTLECREAMY', 'COLOURPOINTCREAMY', 'VANCREAMY', 'ONEEAR',
     'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO',
     'TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE',
-    'TAIL', 'BLAZE', 'PRINCE', 'BIB', 'VEE', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN',
-    'MISTER', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE',
-    'PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED',
-    'HEART', 'LILTWO', 'GLASS', 'MOORISH', 'POINTMARK'
+    'TAIL', 'BLAZE', 'PRINCE', 'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN',
+    'MISTER', 'BELLY', 'TOES', 'BROKENBLAZE'
 ]
 skin_sprites = ['BLACK', 'RED', 'PINK']
 
@@ -458,3 +464,5 @@ def choose_pelt(gender,
             return Speckled2(colour, white, length)
     elif pelt == "Calico":
         return Calico(length)
+    elif pelt == "Calico2":
+        return Calico2(length)

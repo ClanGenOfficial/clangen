@@ -259,6 +259,7 @@ class Patrol(object):
                     'The patrol decides it is too dangerous to cross right now',
                     50, 10)
             ])
+
         elif game.clan.current_season == 'Greenleaf':
             possible_patrols.extend([
                 PatrolEvent(
@@ -782,6 +783,7 @@ class Patrol(object):
         if self.patrol_event.patrol_id in [
                 108, 113, 114, 120, 141, 250, 305, 307
         ]:
+
             events_class.dies(self.patrol_random_cat)
         elif self.patrol_event.patrol_id in [900, 901, 902]:
             for cat in self.patrol_cats:
@@ -791,23 +793,83 @@ class Patrol(object):
     def handle_scars(self):
         if self.patrol_event.patrol_id in [107, 251, 301, 302, 304, 306]:
             if self.patrol_random_cat.specialty is None:
-                self.patrol_random_cat.specialty = choice(
-                    [choice(scars1), choice(scars2)])
+                self.patrol_random_cat.specialty = choice([choice(scars1), choice(scars2), choice(scars4)])
             elif self.patrol_random_cat.specialty2 is None:
-                self.patrol_random_cat.specialty2 = choice(
-                    [choice(scars1), choice(scars2)])
+                self.patrol_random_cat.specialty2 = choice([choice(scars1), choice(scars2), choice(scars4)])
         elif self.patrol_event.patrol_id == 102:
-            self.patrol_random_cat.skill = choice(
-                ['paralyzed', 'blind', 'missing a leg'])
+            self.patrol_random_cat.skill = choice(['paralyzed', 'blind', 'missing a leg'])
+        elif self.patrol_event.patrol_id == 904:
+            if self.patrol_random_cat.specialty is None:
+                self.patrol_random_cat.specialty = choice([choice(scars5)])
+            elif self.patrol_random_cat.specialty2 is None:
+                self.patrol_random_cat.specialty2 = choice([choice(scars5)])
 
     def handle_retirements(self):
         if self.patrol_event.patrol_id == 102 and game.settings.get(
                 'retirement'):
             self.patrol_random_cat.status_change('elder')
 
+    def handle_relationships(self):
+        romantic_love = 0
+        platonic_like = 0
+        dislike = 0
+        admiration = 0
+        comfortable = 0
+        jealousy = 0
+        trust = 0
+
+        # change the values
+        if self.patrol_event.patrol_id in []:
+            romantic_love = 5
+        if self.patrol_event.patrol_id in [2,3,6,100,103,140,141,200,204,605]:
+            platonic_like = 5
+        if self.patrol_event.patrol_id in [103,110]:
+            dislike = 5
+        if self.patrol_event.patrol_id in [2,3,6,104,105,108,130,131,261,300,301,302,303,305,307,600]:
+            admiration = 5
+        if self.patrol_event.patrol_id in [102,120,150,202,203,250,251,260,261]:
+            comfortable = 5
+        if self.patrol_event.patrol_id in []:
+            jealousy = 5
+        if self.patrol_event.patrol_id in [7,8,102,107,110,114,115,141,250,251,605]:
+            trust = 5
+
+        # affect the relationship
+        cat_ids = [cat.ID for cat in self.patrol_cats]
+        for cat in self.patrol_cats:
+            relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+            for rel in relationships:
+                if self.success:
+                    rel.romantic_love += romantic_love
+                    rel.platonic_like += platonic_like
+                    rel.dislike += dislike
+                    rel.admiration += admiration
+                    rel.comfortable += comfortable
+                    rel.jealousy += jealousy
+                    rel.trust += trust
+                    rel.cut_boundries()
+                elif not self.success:
+                    rel.romantic_love -= romantic_love
+                    rel.platonic_like -= platonic_like
+                    rel.dislike -= dislike
+                    rel.admiration -= admiration
+                    rel.comfortable -= comfortable
+                    rel.jealousy -= jealousy
+                    rel.trust -= trust
+                    rel.cut_boundries()
+
     def add_new_cats(self):
         if self.patrol_event.patrol_id in [504]:  # new kit
             kit = Cat(status='kitten', moons=0)
+            #create and update relationships
+            relationships = []
+            for cat_id in game.clan.clan_cats:
+                the_cat = cat_class.all_cats.get(cat_id)
+                if the_cat.dead:
+                    continue
+                the_cat.relationships.append(Relationship(the_cat,kit))
+                relationships.append(Relationship(kit,the_cat))
+            kit.relationships = relationships
             game.clan.add_cat(kit)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
@@ -822,9 +884,20 @@ class Patrol(object):
             kit = Cat(status=new_status)
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
+            #create and update relationships
+            relationships = []
+            for cat_id in game.clan.clan_cats:
+                the_cat = cat_class.all_cats.get(cat_id)
+                if the_cat.dead:
+                    continue
+                the_cat.relationships.append(Relationship(the_cat,kit))
+                relationships.append(Relationship(kit,the_cat))
+            kit.relationships = relationships
             game.clan.add_cat(kit)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
+            if (kit.status == 'elder'):
+                kit.moons = randint(120,150)
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
@@ -835,6 +908,19 @@ class Patrol(object):
                     kit2.skill = 'formerly a loner'
                     kit2.parent1 = kit.ID
                     kit2.thought = 'Is looking around the camp with wonder'
+                    #create and update relationships
+                    relationships = []
+                    for cat_id in game.clan.clan_cats:
+                        the_cat = cat_class.all_cats.get(cat_id)
+                        if the_cat.dead:
+                            continue
+                        if the_cat.ID in [kit2.parent1, kit2.parent2]:
+                            kit2.relationships.append(Relationship(kit,kit2,False,True))
+                            relationships.append(Relationship(kit2,kit,False,True))
+                        else:
+                            the_cat.relationships.append(Relationship(the_cat,kit2))
+                            relationships.append(Relationship(kit2,the_cat))
+                    kit2.relationships = relationships
                     game.clan.add_cat(kit2)
 
         elif self.patrol_event.patrol_id in [502, 503, 520]:  # new kittypet
@@ -843,16 +929,37 @@ class Patrol(object):
                 'elder'
             ])
             kit = Cat(status=new_status)
+            #create and update relationships
+            relationships = []
+            for cat_id in game.clan.clan_cats:
+                the_cat = cat_class.all_cats.get(cat_id)
+                if the_cat.dead:
+                    continue
+                the_cat.relationships.append(Relationship(the_cat,kit))
+                relationships.append(Relationship(kit,the_cat))
+            kit.relationships = relationships
             game.clan.add_cat(kit)
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
             kit.skill = 'formerly a kittypet'
             kit.thought = 'Is looking around the camp with wonder'
+            if (kit.status == 'elder'):
+                kit.moons = randint(120,150)
             if randint(0, 2) == 0:  # chance to add collar
                 kit.specialty2 = choice(scars3)
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
+                
+    def check_territories(self):
+        hunting_claim = str(game.clan.name) + 'Clan Hunting Grounds'
+        self.hunting_grounds = []
+        for y in range(44):
+            for x in range(40):
+                claim_type = game.map_info[(x,y)][3]
+                if claim_type == hunting_claim:
+                    self.hunting_claim_info[(x,y)] = game.map_info[(x,y)]
+                    self.hunting_grounds.append((x,y)) 
 
 
 class PatrolEvent(object):

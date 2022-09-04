@@ -104,6 +104,12 @@ class Button(object):
             elif text == 'Exile Cat':
                 cat_class.all_cats[cat_value].exiled = True
                 cat_class.other_cats[cat_value] =  cat_class.all_cats[cat_value]
+            elif text == 'Change to Transmasc':
+                cat_class.all_cats[cat_value].genderalign = "transmasc"
+            elif text == 'Change to Transfem':
+                cat_class.all_cats[cat_value].genderalign = "transfem"
+            elif text == 'Change to Transneu':
+                cat_class.all_cats[cat_value].genderalign = "transneu"
             elif cat_value is None and arrow is None:
                 self.activate(values)
             elif arrow is None:
@@ -142,13 +148,20 @@ class Button(object):
                 game.event_scroll_ct -= 1
         if arrow is not None and game.switches['cur_screen'] == 'allegiances screen':
             max_scroll_direction = len(game.allegiance_list) - game.max_allegiance_displayed
-
             if arrow == "UP" and game.allegiance_scroll_ct < 0:
                 game.allegiance_list.insert(0, game.allegiance_list.pop())
                 game.allegiance_scroll_ct += 1
             if arrow == "DOWN" and abs(game.allegiance_scroll_ct) < max_scroll_direction:
                 game.allegiance_list.append(game.allegiance_list.pop(0))
                 game.allegiance_scroll_ct -= 1
+        if arrow is not None and game.switches['cur_screen'] == 'relationship event screen':
+            max_scroll_direction = len(game.relation_events_list) - game.max_events_displayed
+            if arrow == "UP" and game.relation_scroll_ct < 0:
+                game.relation_events_list.insert(0, game.relation_events_list.pop())
+                game.relation_scroll_ct += 1
+            if arrow == "DOWN" and abs(game.relation_scroll_ct) < max_scroll_direction:
+                game.relation_events_list.append(game.relation_events_list.pop(0))
+                game.relation_scroll_ct -= 1
 
     def change_button_brightness(self):
         if game.settings['dark mode'] and self.frame_colour == (200, 200, 200):
