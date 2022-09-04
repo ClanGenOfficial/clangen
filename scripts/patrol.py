@@ -325,7 +325,12 @@ class Patrol(object):
                                                  'Your patrol decides to head back early', 70, 20, win_skills=['fantastic fighter']),
                                      PatrolEvent(902, 'Your patrol encounters a clearing where a lot of twolegs linger', 'They continue hunting undetected',
                                                  'The twolegs notice the cats and trap them in their monsters. The cats on your patrol are never seen again',
-                                                 'Your patrol decides to hunt elsewhere', 60, 20, win_skills=['extremely smart'])])
+                                                 'Your patrol decides to hunt elsewhere', 60, 20, win_skills=['extremely smart']),
+                                     PatrolEvent(903, 'Your patrol spys a snake in the distance', 'Your patrol catches the snake before it notices them',
+                                                 'The snake notices r_c and is fatally wounded ', 'Your patrol decides to not risk it and hunt else where', 50,
+                                                 60, win_skills=['fantastic hunter']),
+                                     PatrolEvent(904, 'Your patrol spys a snake in the distance', 'Your patrol catches the snake before it notices them', 'The snake strikes at r_c leaving them with a scar but is otherwise alright','Your patrol decides to not risk it and hunt else where', 50,
+                                                 60, win_skills=['fantastic hunter'])])
 
         self.patrol_event = choice(possible_patrols)
 
@@ -364,7 +369,7 @@ class Patrol(object):
             cat.experience_level = self.experience_levels[floor(cat.experience / 10)]
 
     def handle_deaths(self):
-        if self.patrol_event.patrol_id in [108, 114, 115, 120, 141, 250, 305, 307]:
+        if self.patrol_event.patrol_id in [108, 114, 115, 120, 141, 250, 305, 307, 903]:
             events_class.dies(self.patrol_random_cat)
         elif self.patrol_event.patrol_id in [900, 901, 902]:
             for cat in self.patrol_cats:
@@ -374,11 +379,16 @@ class Patrol(object):
     def handle_scars(self):
         if self.patrol_event.patrol_id in [107, 251, 301, 302, 304, 306]:
             if self.patrol_random_cat.specialty is None:
-                self.patrol_random_cat.specialty = choice([choice(scars1), choice(scars2)])
+                self.patrol_random_cat.specialty = choice([choice(scars1), choice(scars2), choice(scars4)])
             elif self.patrol_random_cat.specialty2 is None:
-                self.patrol_random_cat.specialty2 = choice([choice(scars1), choice(scars2)])
+                self.patrol_random_cat.specialty2 = choice([choice(scars1), choice(scars2), choice(scars4)])
         elif self.patrol_event.patrol_id == 102:
             self.patrol_random_cat.skill = choice(['paralyzed', 'blind', 'missing a leg'])
+        elif self.patrol_event.patrol_id == 904:
+            if self.patrol_random_cat.specialty is None:
+                self.patrol_random_cat.specialty = choice([choice(scars5)])
+            elif self.patrol_random_cat.specialty2 is None:
+                self.patrol_random_cat.specialty2 = choice([choice(scars5)])
 
     def handle_retirements(self):
         if self.patrol_event.patrol_id == 102 and game.settings.get('retirement'):
