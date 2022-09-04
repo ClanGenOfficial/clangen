@@ -139,7 +139,7 @@ class Sprites(object):
             sprites.make_group('bowcollarsextra', (a, 2),
                                f'scarsextra{i}',
                                sprites_y=2)
-         for a, i in enumerate(["TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE"]):
+        for a, i in enumerate(["TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE"]):
             sprites.make_group('Newscars_white', (a, 0), f'scars{i}')
             sprites.make_group('Newscarsextra_white', (a, 0), f'scarsextra{i}', sprites_y=2)
         for a, i in enumerate(["BELLY", "TOETRAP", "SNAKE"]):
