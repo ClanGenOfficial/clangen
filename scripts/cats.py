@@ -1120,7 +1120,7 @@ class Cat(object):
         # THE SPRITE UPDATE
         # draw colour & style
         new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
-
+        game.switches['error_message'] = 'There was an error loading a cat\'s base coat sprite. Last cat read was ' + str(self)
         if self.pelt.name not in ['Tortie', 'Calico', 'Calico2', 'Tortie2']:
             if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
                 new_sprite.blit(sprites.sprites[self.pelt.sprites[1] + 'extra' + self.pelt.colour + str(self.age_sprites[self.age])], (0, 0))
@@ -1131,14 +1131,14 @@ class Cat(object):
                 new_sprite.blit(sprites.sprites[self.pelt.sprites[1] + 'extra' + self.pattern + str(self.age_sprites[self.age])], (0, 0))
             else:
                 new_sprite.blit(sprites.sprites[self.pelt.sprites[1] + self.pattern + str(self.age_sprites[self.age])], (0, 0))
-
+        game.switches['error_message'] = 'There was an error loading a cat\'s white patches sprite. Last cat read was ' + str(self)
         # draw white patches
         if self.white_patches is not None:
             if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
                 new_sprite.blit(sprites.sprites['whiteextra' + self.white_patches + str(self.age_sprites[self.age])], (0, 0))
             else:
                 new_sprite.blit(sprites.sprites['white' + self.white_patches + str(self.age_sprites[self.age])], (0, 0))
-
+        game.switches['error_message'] = 'There was an error loading a cat\'s scar and eye sprites. Last cat read was ' + str(self)
         # draw eyes & scars1
         if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
             if self.specialty in scars1:
@@ -1152,7 +1152,7 @@ class Cat(object):
             if self.specialty2 in scars1:
                 new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0))
             new_sprite.blit(sprites.sprites['eyes' + self.eye_colour + str(self.age_sprites[self.age])], (0, 0))
-
+        game.switches['error_message'] = 'There was an error loading a cat\'s shader sprites. Last cat read was ' + str(self)
         # draw line art
         if game.settings['shaders']:
             if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
@@ -1164,7 +1164,7 @@ class Cat(object):
                 new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age] + 9)], (0, 0))
             else:
                 new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
-
+        game.switches['error_message'] = 'There was an error loading a cat\'s skin and second set of scar sprites. Last cat read was ' + str(self)
         # draw skin and scars2 and scars3
         blendmode = pygame.BLEND_RGBA_MIN
         if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
@@ -1204,18 +1204,19 @@ class Cat(object):
             if self.specialty2 in scars5:
                 new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
             
-
+        game.switches['error_message'] = 'There was an error reversing a cat\'s sprite. Last cat read was ' + str(self)
         # reverse, if assigned so
         if self.reverse:
             new_sprite = pygame.transform.flip(new_sprite, True, False)
-
+        game.switches['error_message'] = 'There was an error scaling a cat\'s sprites. Last cat read was ' + str(self)
         # apply
         self.sprite = new_sprite
         self.big_sprite = pygame.transform.scale(new_sprite, (sprites.new_size, sprites.new_size))
         self.large_sprite = pygame.transform.scale(self.big_sprite, (sprites.size * 3, sprites.size * 3))
-
+        game.switches['error_message'] = 'There was an error updating a cat\'s sprites. Last cat read was ' + str(self)
         # update class dictionary
         self.all_cats[self.ID] = self
+        game.switches['error_message'] = ''
 
     def draw(self, pos):
         new_pos = list(pos)
@@ -1444,10 +1445,11 @@ class Cat(object):
                         the_cat.genderalign = attr[37]
 
 
-            game.switches['error_message'] = 'There was an error loading this clan\'s mentors/apprentices'
+            game.switches['error_message'] = 'There was an error loading this clan\'s mentors, apprentices, relationships, or sprite info.'
 
             for n in self.all_cats.values():
                 # Load the mentors and apprentices after all cats have been loaded
+                game.switches['error_message'] = 'There was an error loading this clan\'s mentors/apprentices. Last cat read was ' + str(n)
                 n.mentor = cat_class.all_cats.get(n.mentor)
                 apps = []
                 former_apps = []
@@ -1463,7 +1465,9 @@ class Cat(object):
                     former_apps.append(f_app)
                 n.apprentice = apps
                 n.former_apprentices = former_apps
+                game.switches['error_message'] = 'There was an error loading this clan\'s relationships. Last cat read was ' + str(n)
                 n.load_relationship_of_cat()
+                game.switches['error_message'] = 'There was an error loading a cat\'s sprite info. Last cat read was ' + str(n)
                 n.update_sprite()
 
             game.switches['error_message'] = ''
