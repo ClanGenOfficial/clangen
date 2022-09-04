@@ -1855,12 +1855,19 @@ class PatrolEventScreen(Screens):
                            ('center', 400))
         verdana_small.text('patrol leader: ' + str(patrol.patrol_leader.name),
                            ('center', 420))
-        verdana_small.text('patrol skills: ' + str(patrol.patrol_skills),
+        verdana_small.text('patrol skills: ' + self.get_list_text(patrol.patrol_skills),
                            ('center', 440))
-        verdana_small.text('patrol traits: ' + str(patrol.patrol_traits),
+        verdana_small.text('patrol traits: ' + self.get_list_text(patrol.patrol_traits),
                            ('center', 460))
 
         draw_menu_buttons()
+
+    def get_list_text(self, patrol_list):
+        if not patrol_list:
+            return "None"
+        # Removes duplicates.
+        patrol_set = list(set(patrol_list))
+        return ", ".join(patrol_set)
 
     def screen_switches(self):
         game.switches['event'] = 0
