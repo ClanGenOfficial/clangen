@@ -2783,7 +2783,7 @@ class RelationshipEventScreen(Screens):
                 if game.relation_events_list[x] is None:
                     continue
                 verdana.text(game.relation_events_list[x],
-                    ('center', 160 + a * 30))
+                    ('center', 260 + a * 30))
                 a += 1
         else:
             verdana.text("Nothing significant happened this moon.",
