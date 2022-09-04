@@ -2318,6 +2318,27 @@ class ChangeNameScreen(Screens):
                             text='Back',
                             cur_screen='profile screen')
 
+class ChangeGenderScreen(Screens):
+
+    def on_use(self):
+        if game.settings['dark mode']:
+            pygame.draw.rect(screen, 'white', pygame.Rect((300, 200),
+                                                          (200, 20)))
+            verdana_black.text(game.switches['naming_text'], (315, 200))
+        else:
+            pygame.draw.rect(screen, 'gray', pygame.Rect((300, 200),
+                                                         (200, 20)))
+            verdana.text(game.switches['naming_text'], (315, 200))
+        verdana.text('Change Gender', ('center', 50))
+        verdana.text('You can set this to anything.',
+                     ('center', 70))
+        buttons.draw_button(('center', -100),
+                            text=' Change Gender ',
+                            cur_screen='change gender screen',
+                            cat_value=game.switches['name_cat'])
+        buttons.draw_button(('center', -50),
+                            text='Back',
+                            cur_screen='profile screen')
 
 class OptionsScreen(Screens):
 
@@ -2409,14 +2430,21 @@ class OptionsScreen(Screens):
                     text='Promote to Deputy',
                     deputy_switch=the_cat)
                 button_count += 1
-        if the_cat.gender == "female" and the_cat.genderalign != "transmasc":
-            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Transmasc', cat_value=game.switches['cat'])
+        if the_cat.genderalign == "female":
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Trans Male', cat_value=game.switches['cat'])
             button_count += 1
-        elif the_cat.gender == "male" and the_cat.genderalign != "transfem":
-            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Transfem', cat_value=game.switches['cat'])
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Nonbinary', cat_value=game.switches['cat'])
             button_count += 1
-        if the_cat.genderalign != "transneu":
-            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Transneu', cat_value=game.switches['cat'])
+        elif the_cat.genderalign == "male":
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Trans Female', cat_value=game.switches['cat'])
+            button_count += 1
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Nonbinary', cat_value=game.switches['cat'])
+            button_count += 1
+        elif the_cat.genderalign == "nonbinary":
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Specify Gender', cur_screen='change gender screen')
+            button_count += 1
+        if the_cat.genderalign != "female" and the_cat.genderalign != "male":
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change Back to Cisgender', cat_value=game.switches['cat'])
             button_count += 1
         if not the_cat.dead:
             buttons.draw_button((375-50, 650), text='Kill Cat', kill_cat=the_cat)
@@ -2826,6 +2854,7 @@ allegiances_screen = AllegiancesScreen('allegiances screen')
 choose_mentor_screen = ChooseMentorScreen('choose mentor screen')
 choose_mentor_screen2 = ChooseMentorScreen2('choose mentor screen2')
 change_name_screen = ChangeNameScreen('change name screen')
+change_gender_screen = ChangeGenderScreen('change gender screen')
 option_screen = OptionsScreen('options screen')
 language_screen = LanguageScreen('language screen')
 stats_screen = StatsScreen('stats screen')

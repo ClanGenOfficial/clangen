@@ -205,6 +205,12 @@ while True:
                         cat_value.name.suffix = name[1]
                     cat_class.save_cats()
                     game.switches['naming_text'] = ''
+        if game.current_screen == 'change gender screen' and game.switches['change_name'] == '' and event.type == pygame.KEYDOWN:
+            if event.unicode.isalpha() or event.unicode.isspace():  # only allows alphabet letters/space as an input
+                if len(game.switches['naming_text']) < 20:  # can't type more than max name length
+                    game.switches['naming_text'] += event.unicode
+            elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
+                game.switches['naming_text'] = game.switches['naming_text'][:-1]
         if game.current_screen in ['list screen', 'starclan screen', 'other screen'] and event.type == pygame.KEYDOWN:
             if event.unicode.isalpha() or event.unicode.isspace():  # only allows alphabet letters/space as an input
                 if len(game.switches['search_text']) < 20:  # can't type more than max name length
