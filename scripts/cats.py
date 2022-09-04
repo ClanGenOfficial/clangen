@@ -11,7 +11,9 @@ import json
 
 class Cat(object):
     used_screen = screen
-    traits = ['active', 'adventurous', 'altruistic', 'ambitious', 'athletic', 'bloodthirsty', 'bold', 'careful', 'chaotic', 'childish', 'clumsy', 'cold', 'compassionate', 'confident', 'controlling', 'deceptive', 'devoted', 'dramatic', 'eloquent', 'empathetic', 'fair', 'faithful', 'fierce', 'generous', 'gentle', 'graceful', 'greedy', 'innovative', 'insecure', 'insightful', 'lazy', 'lonesome', 'loving', 'loyal', 'nervous', 'open-minded', 'optimistic', 'paranoid', 'passionate', 'patient', 'peaceful', 'pessimistic', 'petty', 'playful', 'resourceful', 'responsible', 'righteous', 'sadistic', 'secretive', 'selfish', 'shameless', 'sincere', 'sneaky', 'strange', 'strict', 'stubborn', 'thoughtful', 'timid', 'tough', 'troublesome', 'uncooperative', 'vengeful', 'willful', 'wise']
+    traits = ['strange', 'bloodthirsty', 'ambitious', 'loyal', 'righteous', 'fierce', 'nervous', 'strict', 'charismatic', 'calm', 'daring', 'loving', 'playful', 'lonesome', 'cold',
+              'insecure', 'vengeful', 'shameless', 'faithful', 'troublesome', 'empathetic', 'adventurous', 'thoughtful', 'compassionate', 'childish', 'confident', 'careful',
+              'altruistic', 'bold', 'patient', 'responsible', 'sneaky', 'wise']
     kit_traits = ['bouncy', 'bullying', 'daydreamer', 'nervous', 'charming', 'attention-seeker', 'impulsive', 'inquisitive', 'bossy', 'troublesome', 'quiet', 'daring', 'sweet',
                   'insecure', 'noisy', 'polite']
     ages = ['kitten', 'adolescent', 'young adult', 'adult', 'senior adult', 'elder', 'dead']
@@ -45,6 +47,7 @@ class Cat(object):
         self.died_by = None  # once the cat dies, tell the cause
         self.dead_for = 0  # moons
         self.thought = ''
+        self.genderalign = None
         if ID is None:
             potential_ID = str(randint(10000, 9999999))
             while potential_ID in self.all_cats:
@@ -136,7 +139,7 @@ class Cat(object):
         elif self.age in ['young adult', 'adult']:
             scar_choice = randint(0, 20)
         if scar_choice == 1:
-            self.specialty = choice([choice(scars1), choice(scars2)])
+            self.specialty = choice([choice(scars1), choice(scars2), choice(scars4), choice(scars5)])
         else:
             self.specialty = None
 
@@ -146,7 +149,7 @@ class Cat(object):
         elif self.age in ['young adult', 'adult']:
             scar_choice2 = randint(0, 40)
         if scar_choice2 == 1:
-            self.specialty2 = choice([choice(scars1), choice(scars2)])
+            self.specialty2 = choice([choice(scars1), choice(scars2), choice(scars4), choice(scars5)])
         else:
             self.specialty2 = None
 
@@ -213,6 +216,8 @@ class Cat(object):
         self.paralyzed = False
         self.no_kits = False
         self.exiled = False
+        if self.genderalign == None:
+            self.genderalign = self.gender
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
 
@@ -1012,7 +1017,7 @@ class Cat(object):
 
                 rel = Relationship(cat_from=self,cat_to=the_cat,mates=mates,
                         family=related, romantic_love=romantic_love,
-                        like=like, dislike=dislike, admiration=admiration,
+                        platonic_like=like, dislike=dislike, admiration=admiration,
                         comfortable=comfortable, jealousy=jealousy, trust=trust)
                 relationships.append(rel)        
         self.relationships = relationships
@@ -1023,7 +1028,8 @@ class Cat(object):
             self.trait = choice(self.traits)
         if (self.status == 'apprentice' and new_status != 'medicine cat apprentice') or (self.status == 'medicine cat apprentice' and new_status != 'apprentice'):
             self.skill = choice(self.skills)
-
+        elif new_status == 'medicine cat':
+            self.skill = choice(self.med_skills)
         self.status = new_status
         self.name.status = new_status
         if 'apprentice' in new_status:
@@ -1148,10 +1154,16 @@ class Cat(object):
             new_sprite.blit(sprites.sprites['eyes' + self.eye_colour + str(self.age_sprites[self.age])], (0, 0))
 
         # draw line art
-        if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
-            new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age] + 9)], (0, 0))
+        if game.settings['shaders']:
+            if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
+                new_sprite.blit(sprites.sprites['shaders' + str(self.age_sprites[self.age] + 9)], (0, 0))
+            else:
+                new_sprite.blit(sprites.sprites['shaders' + str(self.age_sprites[self.age])], (0, 0))
         else:
-            new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
+            if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
+                new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age] + 9)], (0, 0))
+            else:
+                new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
 
         # draw skin and scars2 and scars3
         blendmode = pygame.BLEND_RGBA_MIN
@@ -1165,6 +1177,14 @@ class Cat(object):
                 new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])], (0, 0))
             if self.specialty2 in scars3:
                 new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0))
+            if self.specialty in scars4:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty2 in scars4:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty in scars5:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty2 in scars5:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
         else:
             new_sprite.blit(sprites.sprites['skin' + self.skin + str(self.age_sprites[self.age])], (0, 0))
             if self.specialty in scars2:
@@ -1175,6 +1195,15 @@ class Cat(object):
                 new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])], (0, 0))
             if self.specialty2 in scars3:
                 new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0))
+            if self.specialty in scars4:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty2 in scars4:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty in scars5:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty2 in scars5:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            
 
         # reverse, if assigned so
         if self.reverse:
@@ -1284,6 +1313,7 @@ class Cat(object):
                 data+=',' + 'True'
             else:
                 data+=',' + 'False'
+            data += ',' + str(x.genderalign)
             # next cat
             data += '\n'
 
@@ -1317,7 +1347,7 @@ class Cat(object):
                 "mates": r.mates,
                 "family": r.family,
                 "romantic_love": r.romantic_love,
-                "like": r.like,
+                "platonic_like": r.platonic_like,
                 "dislike": r.dislike,
                 "admiration": r.admiration,
                 "comfortable": r.comfortable,
@@ -1410,6 +1440,8 @@ class Cat(object):
                         the_cat.no_kits = bool(attr[35])
                     if len(attr) > 36:
                         the_cat.exiled = bool(attr[36])
+                    if len(attr) > 37:
+                        the_cat.genderalign = attr[37]
 
 
             game.switches['error_message'] = 'There was an error loading this clan\'s mentors/apprentices'
@@ -1457,7 +1489,8 @@ class Cat(object):
                 new_rel = Relationship(cat_from=self,cat_to=cat_to,
                                         mates=rel['mates'],family=rel['family'],
                                         romantic_love=rel['romantic_love'],
-                                        like=rel['like'], dislike=rel['dislike'],
+                                        platonic_like=rel['platonic_like'],
+                                        dislike=rel['dislike'],
                                         admiration=rel['admiration'],
                                         comfortable=rel['comfortable'],
                                         jealousy=rel['jealousy'],trust=rel['trust'])
@@ -1517,6 +1550,7 @@ class Cat(object):
                     new_cat.skill = value  # SKILL
                 if attr == 'mentor':
                     new_cat.mentor = value
+                
 
     def describe_color(self):
         color_name = ''
@@ -1569,19 +1603,15 @@ class Cat(object):
         return color_name
 
     def describe_cat(self):
-        if self.gender == 'male':
+        if self.genderalign == 'male' or self.genderalign == "transmasc":
             sex = 'tom'
-        else:
+        elif self.genderalign == 'female'or self.genderalign == "transfem":
             sex = 'she-cat'
+        else:
+            sex = 'cat'
         description = self.describe_color()
         description += ' ' + str(self.pelt.length).lower() + '-furred ' + sex
         return description
-
-
-# The randomized cat sprite in Main Menu screen
-example_cat = Cat(status=choice(["kitten", "apprentice", "warrior", "elder"]), example=True)
-example_cat.update_sprite()
-
 
 # Twelve example cats
 def create_example_cats():
@@ -1595,5 +1625,5 @@ def create_example_cats():
 
 # CAT CLASS ITEMS
 cat_class = Cat(example=True)
-cat_class = Cat()
 game.cat_class = cat_class
+

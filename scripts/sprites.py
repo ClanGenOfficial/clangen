@@ -139,6 +139,14 @@ class Sprites(object):
             sprites.make_group('bowcollarsextra', (a, 2),
                                f'scarsextra{i}',
                                sprites_y=2)
+        for a, i in enumerate(["TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE"]):
+            sprites.make_group('Newscars_white', (a, 0), f'scars{i}')
+            sprites.make_group('Newscarsextra_white', (a, 0), f'scarsextra{i}', sprites_y=2)
+        for a, i in enumerate(["BELLY", "TOETRAP", "SNAKE"]):
+            sprites.make_group('Newscars_white', (a, 1), f'scars{i}')
+            sprites.make_group('Newscarsextra_white', (a, 1), f'scarsextra{i}', sprites_y=2)
+
+
 
 
 sprites = Sprites(50)
@@ -154,7 +162,7 @@ for x in [
         'speckledcolours2', 'speckledextra2', 'tabbycolours2', 'tabbyextra2',
         'tortiecolours2', 'tortiesextra2', 'rosettecolours', 'rosetteextra',
         'smokecolours', 'smokeextra', 'tickedcolors', 'tickedextra',
-        'whitepatchesryos', 'whitepatchesryosextra'
+        'whitepatchesryos', 'whitepatchesryosextra', 'Newscars_white', 'Newscarsextra_white', 'shaders'
 ]:
     sprites.spritesheet(f"sprites/{x}.png", x)
 
@@ -174,6 +182,8 @@ sprites.make_group('Paralyzed_lineart', (0, 0),
                    'p_lines',
                    sprites_x=1,
                    sprites_y=1)
+sprites.make_group('shaders', (0, 0), 'shaders', sprites_y=5)
+
 
 for a, i in enumerate(
     ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE']):
