@@ -727,8 +727,16 @@ class ProfileScreen(Screens):
         count += 1  # PELT COLOUR
         verdana_small.text('pelt: ' + the_cat.pelt.name.lower(), (300, 230 + count * 15))
         count += 1  # PELT TYPE
-        verdana_small.text('marking: ' + the_cat.pelt.markings.lower(), (300, 230 + count * 15))
-        count += 1  # PELT MARKINGS
+        if the_cat.pattern not in ['THREE', 'FOUR', 'FADEDTHREE', 'FADEDFOUR', 'BLUETHREE', 'BLUEFOUR']:
+            if the_cat.pelt.markings == 'TickedAbyss':
+                verdana_small.text('marking: ' + 'abyssinian', (300, 230 + count * 15))
+                count += 1  # Abyssinian MARKINGS
+            else:
+                verdana_small.text('marking: ' + the_cat.pelt.markings.lower(), (300, 230 + count * 15))
+                count += 1  # PELT MARKINGS
+        else:
+            verdana_small.text('marking: ' + 'pseudo tabby', (300, 230 + count * 15))
+            count += 1  # Pseudo MARKINGS
         verdana_small.text('fur length: ' + the_cat.pelt.length, (300, 230 + count * 15))
         count += 1  # PELT LENGTH
 
