@@ -2415,8 +2415,8 @@ class OptionsScreen(Screens):
             buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Transneu', cat_value=game.switches['cat'])
             button_count += 1
         if not the_cat.dead:
-            buttons.draw_button((x_value, 650), text='Kill Cat', kill_cat=the_cat)
-            buttons.draw_button((x_value, 600), text='Exile Cat', cat_value = game.switches['cat'])
+            buttons.draw_button((375-50, 650), text='Kill Cat', kill_cat=the_cat)
+            buttons.draw_button((375+30, 650), text='Exile Cat', cat_value = game.switches['cat'])
         elif the_cat.dead and not the_cat.exiled:
             buttons.draw_button((x_value, 600), text='Exile to Dark Forest', cat_value = game.switches['cat'])
 
