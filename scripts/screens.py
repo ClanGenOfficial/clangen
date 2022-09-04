@@ -117,11 +117,11 @@ class SwitchClanScreen(Screens):
                 buttons.draw_button(
                     ('center', 50 * i + y_pos),
                     text=game.switches['clan_list'][i] + 'clan',
-                    switch_clan=game.switches['clan_list'][i])
+                    switch_clan=game.switches['clan_list'][i],hotkey=[i+1])
 
         buttons.draw_button((50, 50),
                             text='<< Back to Main Menu',
-                            cur_screen='start screen')
+                            cur_screen='start screen',hotkey=[0])
 
 
 class SettingsScreen(Screens):
@@ -288,15 +288,21 @@ class ClanScreen(Screens):
                      game.clan.cur_layout['apprentice den'])
         verdana.text("Warriors\' Den", game.clan.cur_layout['warrior den'])
         verdana.text("Elders\' Den", game.clan.cur_layout['elder den'])
+        hotkey_assign_1 = 1
+        hotkey_assign_2 = 2
         for x in game.clan.clan_cats:
             if not cat_class.all_cats[x].dead and cat_class.all_cats[
                     x].in_camp and not cat_class.all_cats[x].exiled:
                 buttons.draw_button(cat_class.all_cats[x].placement,
                                     image=cat_class.all_cats[x].sprite,
                                     cat=x,
-                                    cur_screen='profile screen')
+                                    cur_screen='profile screen',hotkey=[hotkey_assign_1, hotkey_assign_2])
+                hotkey_assign_2 = hotkey_assign_2 + 1
+                if hotkey_assign_2 == 20:
+                    hotkey_assign_1 = hotkey_assign_1 + 1
+                    hotkey_assign_2 = hotkey_assign_1 + 1
         draw_menu_buttons()
-        buttons.draw_button(('center', -50), text='Save Clan', save_clan=True)
+        buttons.draw_button(('center', -50), text='Save Clan', save_clan=True, hotkey=[9])
         pygame.draw.rect(screen,
                          color='gray',
                          rect=pygame.Rect(320, 660, 160, 20))
@@ -443,10 +449,12 @@ class StarClanScreen(Screens):
                 game.switches['list_page'] = 1
             the_cat = search_cats[x + (game.switches['list_page'] - 1) * 20]
             if the_cat.dead:
+                column = int(pos_x/100)
+                row = int(pos_y/100)
                 buttons.draw_button((130 + pos_x, 180 + pos_y),
                                     image=the_cat.sprite,
                                     cat=the_cat.ID,
-                                    cur_screen='profile screen')
+                                    cur_screen='profile screen', hotkey=[row+1, column+11])
 
                 name_len = verdana.text(str(the_cat.name))
                 verdana.text(str(the_cat.name),
@@ -1561,10 +1569,12 @@ class ListScreen(Screens):
                 game.switches['list_page'] -= 1
             the_cat = search_cats[x + (game.switches['list_page'] - 1) * 20]
             if not the_cat.dead:
+                column = int(pos_x/100)
+                row = int(pos_y/100)
                 buttons.draw_button((130 + pos_x, 180 + pos_y),
                                     image=the_cat.sprite,
                                     cat=the_cat.ID,
-                                    cur_screen='profile screen')
+                                    cur_screen='profile screen', hotkey=[row+1, column+11])
 
                 verdana.text(str(the_cat.name),
                              (130 + pos_x, 240 + pos_y))
@@ -2945,16 +2955,16 @@ def cat_profiles():
 
 
 def draw_menu_buttons():
-    buttons.draw_button((260, 70), text='EVENTS', cur_screen='events screen')
-    buttons.draw_button((340, 70), text='CLAN', cur_screen='clan screen')
+    buttons.draw_button((260, 70), text='EVENTS', cur_screen='events screen', hotkey=[2])
+    buttons.draw_button((340, 70), text='CLAN', cur_screen='clan screen', hotkey=[3])
     buttons.draw_button((400, 70),
                         text='STARCLAN',
-                        cur_screen='starclan screen')
-    buttons.draw_button((500, 70), text='PATROL', cur_screen='patrol screen')
+                        cur_screen='starclan screen', hotkey=[4])
+    buttons.draw_button((500, 70), text='PATROL', cur_screen='patrol screen', hotkey=[5])
     buttons.draw_button((50, 50),
                         text='< Back to Main Menu',
-                        cur_screen='start screen')
-    buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
-    buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
-    buttons.draw_button((-70, 110), text='Map', cur_screen='map screen', available=mapavailable)
-    buttons.draw_button((50, 80), text='Stats', cur_screen='stats screen')
+                        cur_screen='start screen', hotkey=[0])
+    buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen', hotkey=[6])
+    buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen', hotkey=[7])
+    buttons.draw_button((-70, 110), text='Map', cur_screen='map screen', available=mapavailable, hotkey=[8])
+    buttons.draw_button((50, 80), text='Stats', cur_screen='stats screen', hotkey=[1])

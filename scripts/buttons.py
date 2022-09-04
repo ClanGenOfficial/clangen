@@ -53,7 +53,7 @@ class Button(object):
             new_pos[1] = screen_y + pos[1] - button.get_height()
         return new_pos
 
-    def draw_button(self, pos, available=True, image=None, text='', cat_value=None, arrow=None, apprentice=None, **values):
+    def draw_button(self, pos, available=True, image=None, text='', cat_value=None, arrow=None, apprentice=None, hotkey=None, **values):
         dynamic_image = False
         if image is not None and text != '' and text is not None:
             dynamic_image = True
@@ -120,6 +120,37 @@ class Button(object):
                 self.activate(values, cat_value)
             else:
                 self.activate(values, arrow=arrow)
+        if available and hotkey is not None:
+            if hotkey == game.keyspressed:
+                if apprentice is not None:
+                    self.choose_mentor(apprentice, cat_value)
+                elif text == ' Change Name ' and game.switches['naming_text'] != '':
+                    self.change_name(game.switches['naming_text'], game.switches['name_cat'])
+                elif text == ' Change Gender ' and game.switches['naming_text'] != '':
+                    self.change_gender(game.switches['naming_text'], game.switches['name_cat'])
+                elif text in ['Next Cat', 'Previous Cat']:
+                    game.switches['cat'] = values.get('cat')
+                elif text == 'Prevent kits':
+                    cat_value.no_kits = True
+                elif text == 'Allow kits':
+                    cat_value.no_kits = False
+                elif text == 'Exile Cat':
+                    cat_class.all_cats[cat_value].exiled = True
+                    cat_class.other_cats[cat_value] =  cat_class.all_cats[cat_value]
+                elif text == 'Change to Trans Male':
+                    cat_class.all_cats[cat_value].genderalign = "trans male"
+                elif text == 'Change to Trans Female':
+                    cat_class.all_cats[cat_value].genderalign = "trans female"
+                elif text == 'Change to Nonbinary':
+                    cat_class.all_cats[cat_value].genderalign = "nonbinary"
+                elif text == 'Change Back to Cisgender':
+                    cat_class.all_cats[cat_value].genderalign = cat_class.all_cats[cat_value].gender
+                elif cat_value is None and arrow is None:
+                    self.activate(values)
+                elif arrow is None:
+                    self.activate(values, cat_value)
+                else:
+                    self.activate(values, arrow=arrow)
 
     def activate(self, values=None, cat_value=None, arrow=None):
         if values is None:

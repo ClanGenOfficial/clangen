@@ -62,6 +62,7 @@ class Game(object):
     def __init__(self, current_screen='start screen'):
         self.current_screen = current_screen
         self.clicked = False
+        self.keyspressed = []
         self.switch_screens = False
 
     def update_game(self):
@@ -69,7 +70,7 @@ class Game(object):
             self.current_screen = self.switches['cur_screen']
             self.switch_screens = True
         self.clicked = False
-
+        self.keyspressed = []
         # carry commands
         self.carry_commands()
 

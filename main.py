@@ -61,37 +61,6 @@ while True:
 
     # EVENTS
     for event in pygame.event.get():
-        if game.current_screen == 'events screen' or game.current_screen == 'stats screen' or game.current_screen == 'clan screen' or game.current_screen == 'starclan screen' or game.current_screen == 'patrol screen' or game.current_screen == 'list screen' or game.current_screen == 'allegiances screen':
-            if event.type == pygame.KEYDOWN:
-                game.switches['last_screen'] = game.current_screen
-                if event.key == pygame.K_0:
-                    game.switches['cur_screen'] = 'stats screen'
-                if event.key == pygame.K_1:
-                    game.switches['cur_screen'] = 'events screen'
-                if event.key == pygame.K_2:
-                    game.switches['cur_screen'] = 'clan screen'
-                if event.key == pygame.K_3:
-                    game.switches['cur_screen'] = 'starclan screen'
-                if event.key == pygame.K_4:
-                    game.switches['cur_screen'] = 'patrol screen'
-                if event.key == pygame.K_5:
-                    game.switches['cur_screen'] = 'list screen'
-                if event.key == pygame.K_6:
-                    game.switches['cur_screen'] = 'allegiances screen'
-                if event.key == pygame.K_7:
-                    game.switches['cur_screen'] = 'map screen'
-        if game.current_screen == 'map screen':
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_0:
-                    game.switches['cur_screen'] = game.switches['last_screen']
-                    game.switches['last_screen'] = 'map screen'
-        if game.current_screen == 'list screen':
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_8:
-                    the_cat = list(cat_class.all_cats.values())[0]
-                    game.switches['cat'] = the_cat.ID
-                    game.switches['cur_screen'] = 'profile screen'
-                    game.switches['last_screen'] = 'list screen'
         if game.current_screen == 'profile screen':
             previous_cat = 0
             next_cat = 0
@@ -111,34 +80,12 @@ while True:
                 if event.key == pygame.K_LEFT and previous_cat != 0:
                     game.switches['cat']=previous_cat
                 if event.key == pygame.K_RIGHT and next_cat != 0:
-                    print(next_cat)
                     game.switches['cat']=next_cat
                 if event.key == pygame.K_0:
                     game.switches['cur_screen'] = 'list screen'
                 if event.key == pygame.K_1:
                     game.switches['cur_screen'] = 'options screen'
                     game.switches['last_screen'] = 'profile screen'
-        if game.current_screen == 'options screen':
-            if event.type == pygame.KEYDOWN:
-                keys = pygame.key.get_pressed()
-
-                if keys[pygame.K_LSHIFT] and keys[pygame.K_5]:
-                    the_cat = cat_class.all_cats.get(game.switches['cat'])
-                    game.switches['kill_cat'] = the_cat
-                if event.key == pygame.K_0:
-                    game.switches['cur_screen'] = 'profile screen'
-                if event.key == pygame.K_1:
-                    game.switches['cur_screen'] = 'change name screen'
-                if event.key == pygame.K_2:
-                    game.switches['cur_screen'] = 'see kits screen'
-                if event.key == pygame.K_3:
-                    game.switches['cur_screen'] = 'relationship screen'
-                if event.key == pygame.K_4:
-                    game.switches['cur_screen'] = 'choose mate screen'
-        if game.current_screen == 'change name screen' or game.current_screen == 'see kits screen' or game.current_screen == 'relationship screen' or game.current_screen == 'choose mate screen':
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_0:
-                    game.switches['cur_screen'] = 'options screen'
         if game.current_screen == 'make clan screen' and game.switches['clan_name'] == '' and event.type == pygame.KEYDOWN:
             if event.unicode.isalpha():  # only allows alphabet letters as an input
                 if len(game.switches['naming_text']) < game.max_name_length:  # can't type more than max name length
@@ -182,8 +129,7 @@ while True:
         if game.current_screen == 'patrol screen':
             random_options = []
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_8:
-                    print(game.switches['current_patrol'])
+                if event.key == pygame.K_9:
                     for u in range(12):
                         i_max = len(game.patrol_cats)
                         if u < i_max:
@@ -194,17 +140,6 @@ while True:
                     game.switches['naming_text'] += event.unicode
             elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
                 game.switches['naming_text'] = game.switches['naming_text'][:-1]
-            elif event.key == pygame.K_1:
-                game.switches['current_screen'] = 'change name screen'
-                game.switches['cat'] = game.switches['name_cat']
-                cat_value = cat_class.all_cats.get(game.switches['name_cat'])
-                if game.switches['naming_text'] != '':
-                    name = game.switches['naming_text'].split(' ')
-                    cat_value.name.prefix = name[0]
-                    if len(name) > 1:
-                        cat_value.name.suffix = name[1]
-                    cat_class.save_cats()
-                    game.switches['naming_text'] = ''
         if game.current_screen == 'change gender screen' and game.switches['change_name'] == '' and event.type == pygame.KEYDOWN:
             if event.unicode.isalpha() or event.unicode.isspace():  # only allows alphabet letters/space as an input
                 if len(game.switches['naming_text']) < 20:  # can't type more than max name length
@@ -227,6 +162,50 @@ while True:
         # MOUSE CLICK
         if event.type == pygame.MOUSEBUTTONDOWN:
             game.clicked = True
+            
+        if event.type == pygame.KEYDOWN:
+            game.keyspressed = []
+            keys = pygame.key.get_pressed()
+            if keys[pygame.K_0]:
+                game.keyspressed.append(0)
+            if keys[pygame.K_1]:
+                game.keyspressed.append(1)
+            if keys[pygame.K_2]:
+                game.keyspressed.append(2)
+            if keys[pygame.K_3]:
+                game.keyspressed.append(3)
+            if keys[pygame.K_4]:
+                game.keyspressed.append(4)
+            if keys[pygame.K_5]:
+                game.keyspressed.append(5)
+            if keys[pygame.K_6]:
+                game.keyspressed.append(6)
+            if keys[pygame.K_7]:
+                game.keyspressed.append(7)
+            if keys[pygame.K_8]:
+                game.keyspressed.append(8)
+            if keys[pygame.K_9]:
+                game.keyspressed.append(9)
+            if keys[pygame.K_KP0]:
+                game.keyspressed.append(10)
+            if keys[pygame.K_KP1]:
+                game.keyspressed.append(11)
+            if keys[pygame.K_KP2]:
+                game.keyspressed.append(12)
+            if keys[pygame.K_KP3]:
+                game.keyspressed.append(13)
+            if keys[pygame.K_KP4]:
+                game.keyspressed.append(14)
+            if keys[pygame.K_KP5]:
+                game.keyspressed.append(15)
+            if keys[pygame.K_KP6]:
+                game.keyspressed.append(16)
+            if keys[pygame.K_KP7]:
+                game.keyspressed.append(17)
+            if keys[pygame.K_KP8]:
+                game.keyspressed.append(18)
+            if keys[pygame.K_KP9]:
+                game.keyspressed.append(19)
 
     # SCREENS
     game.all_screens[game.current_screen].on_use()
