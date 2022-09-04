@@ -41,7 +41,7 @@ SPECIAL_CHARACTER = {
     "compassionate": [  'Curled around (cat) to share warmth', 'Lets (cat) have the last piece of fresh kill', 
                         'Goes out of their way to cheer up (cat)', 'Listening to (cat)\'s problems',
                         'Gives (cat) an item they may like', 'Helps (elder) get around camp'],
-    "childish": ['(cat) chases around a butterfly', 'Is hiding behind a bush ready to pounce on (cat)'],
+    "childish": ['Chases around a butterfly', 'Is hiding behind a bush ready to pounce on (cat)'],
     "confident": ['Is building up (cat)\'s confidence', 'Stands tall when (cat) walks by'],
     "careful": ['Tells (cat) to get their ailment treated as soon as possible', 'Chiding (cat) for being so reckless',
                 'Apologized to (cat) for possibly hurting their feelings'],

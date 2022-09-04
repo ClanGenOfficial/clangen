@@ -431,14 +431,14 @@ class StarClanScreen(Screens):
         else:
             search_cats = dead_cats.copy()
         all_pages = int(ceil(len(search_cats) /
-                             24.0)) if len(search_cats) > 24 else 1
+                             20.0)) if len(search_cats) > 20 else 1
         pos_x = 0
         pos_y = 0
         cats_on_page = 0
         for x in range(len(search_cats)):
-            if x + (game.switches['list_page'] - 1) * 24 > len(search_cats):
+            if x + (game.switches['list_page'] - 1) * 20 > len(search_cats):
                 game.switches['list_page'] = 1
-            the_cat = search_cats[x + (game.switches['list_page'] - 1) * 24]
+            the_cat = search_cats[x + (game.switches['list_page'] - 1) * 20]
             if the_cat.dead:
                 buttons.draw_button((130 + pos_x, 180 + pos_y),
                                     image=the_cat.sprite,
@@ -453,8 +453,8 @@ class StarClanScreen(Screens):
                 if pos_x >= 600:
                     pos_x = 0
                     pos_y += 100
-                if cats_on_page >= 24 or x + (game.switches['list_page'] -
-                                              1) * 24 == len(search_cats) - 1:
+                if cats_on_page >= 20 or x + (game.switches['list_page'] -
+                                              1) * 20 == len(search_cats) - 1:
                     break
         verdana.text(
             'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages),
@@ -1081,14 +1081,14 @@ class ProfileScreen(Screens):
         if the_cat.dead:
             cat_name += " (dead)"  # A dead cat will have the (dead) sign next to their name
         if is_instructor:
-            cat_thought = "Hello. I am here to guide the dead cats of " + game.clan.name + "Clan into StarClan."
+            the_cat.thought = "Hello. I am here to guide the dead cats of " + game.clan.name + "Clan into StarClan."
 
         # LAYOUT
         count = 0
         count2 = 0
         verdana_big.text(cat_name, ('center', 150))  # NAME
         the_cat.draw_large((100, 200))  # IMAGE
-        verdana.text(cat_thought, ('center', 180))  # THOUGHT / ACTION
+        verdana.text(the_cat.thought, ('center', 180))  # THOUGHT / ACTION
         verdana_small.text(the_cat.genderalign, (300, 230 + count * 15))
         count += 1  # SEX / GENDER
         verdana_small.text(the_cat.status, (490, 230 + count2 * 15))
@@ -1545,30 +1545,29 @@ class ListScreen(Screens):
         else:
             search_cats = living_cats.copy()
         all_pages = int(ceil(len(search_cats) /
-                             24.0)) if len(search_cats) > 24 else 1
+                             20.0)) if len(search_cats) > 20 else 1
         pos_x = 0
         pos_y = 0
         cats_on_page = 0
         for x in range(len(search_cats)):
-            if x + (game.switches['list_page'] - 1) * 24 >= len(search_cats):
+            if x + (game.switches['list_page'] - 1) * 20 >= len(search_cats):
                 game.switches['list_page'] -= 1
-            the_cat = search_cats[x + (game.switches['list_page'] - 1) * 24]
+            the_cat = search_cats[x + (game.switches['list_page'] - 1) * 20]
             if not the_cat.dead:
                 buttons.draw_button((130 + pos_x, 180 + pos_y),
                                     image=the_cat.sprite,
                                     cat=the_cat.ID,
                                     cur_screen='profile screen')
 
-                name_len = verdana.text(str(the_cat.name))
                 verdana.text(str(the_cat.name),
-                             (130 + pos_x - name_len / 2, 240 + pos_y))
+                             (130 + pos_x, 240 + pos_y))
                 cats_on_page += 1
-                pos_x += 100
+                pos_x += 120
                 if pos_x >= 600:
                     pos_x = 0
                     pos_y += 100
-                if cats_on_page >= 24 or x + (game.switches['list_page'] -
-                                              1) * 24 == len(search_cats) - 1:
+                if cats_on_page >= 20 or x + (game.switches['list_page'] -
+                                              1) * 20 == len(search_cats) - 1:
                     break
         verdana.text(
             'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages),
@@ -1617,14 +1616,14 @@ class OtherScreen(Screens):
         else:
             search_cats = living_cats.copy()
         all_pages = int(ceil(len(search_cats) /
-                             24.0)) if len(search_cats) > 24 else 1
+                             20.0)) if len(search_cats) > 20 else 1
         pos_x = 0
         pos_y = 0
         cats_on_page = 0
         for x in range(len(search_cats)):
-            if x + (game.switches['list_page'] - 1) * 24 >= len(search_cats):
+            if x + (game.switches['list_page'] - 1) * 20 >= len(search_cats):
                 game.switches['list_page'] -= 1
-            the_cat = search_cats[x + (game.switches['list_page'] - 1) * 24]
+            the_cat = search_cats[x + (game.switches['list_page'] - 1) * 20]
             if not the_cat.dead:
                 buttons.draw_button((130 + pos_x, 180 + pos_y),
                                     image=the_cat.sprite,
@@ -1638,8 +1637,8 @@ class OtherScreen(Screens):
                 if pos_x >= 600:
                     pos_x = 0
                     pos_y += 100
-                if cats_on_page >= 24 or x + (game.switches['list_page'] -
-                                              1) * 24 == len(search_cats) - 1:
+                if cats_on_page >= 20 or x + (game.switches['list_page'] -
+                                              1) * 20 == len(search_cats) - 1:
                     break
         verdana.text(
             'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages),
@@ -2056,15 +2055,15 @@ class ChooseMentorScreen(Screens):
                     ]:
                 living_cats.append(cat)
         all_pages = 1
-        if len(living_cats) > 24:
-            all_pages = int(ceil(len(living_cats) / 24.0))
+        if len(living_cats) > 20:
+            all_pages = int(ceil(len(living_cats) / 20.0))
         pos_x = 0
         pos_y = 0
         cats_on_page = 0
         for x in range(len(living_cats)):
-            if x + (game.switches['list_page'] - 1) * 24 > len(living_cats):
+            if x + (game.switches['list_page'] - 1) * 20 > len(living_cats):
                 game.switches['list_page'] = 1
-            the_cat = living_cats[x + (game.switches['list_page'] - 1) * 24]
+            the_cat = living_cats[x + (game.switches['list_page'] - 1) * 20]
             if not the_cat.dead:
                 buttons.draw_button((130 + pos_x, 180 + pos_y),
                                     image=the_cat.sprite,
@@ -2079,8 +2078,8 @@ class ChooseMentorScreen(Screens):
                 if pos_x >= 600:
                     pos_x = 0
                     pos_y += 100
-                if cats_on_page >= 24 or x + (game.switches['list_page'] -
-                                              1) * 24 == len(living_cats) - 1:
+                if cats_on_page >= 20 or x + (game.switches['list_page'] -
+                                              1) * 20 == len(living_cats) - 1:
                     break
         verdana.text(
             'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages),
