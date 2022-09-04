@@ -92,8 +92,9 @@ class Events(object):
                     game.cur_events_list.append(war_notice)
 
     def perform_ceremonies(self, cat):
-        if game.clan.leader.dead and game.clan.deputy is not None and not game.clan.deputy.dead:
+        if (game.clan.leader.dead or game.clan.leader.exiled) and game.clan.deputy is not None and not game.clan.deputy.dead:
             game.cur_events_list.append(str(game.clan.leader.name) + ' has lost their last life and has travelled to StarClan' )
+
             game.clan.new_leader(game.clan.deputy)
             game.clan.leader_lives += 9
             game.cur_events_list.append(f'{str(game.clan.deputy.name)} has been promoted to the new leader of the clan')
@@ -154,17 +155,25 @@ class Events(object):
             chance = randint(0, 90)
         if chance == 1:
             if cat.specialty is None:
-                cat.specialty = choice([choice(scars1), choice(scars2)])
+                cat.specialty = choice([choice(scars1), choice(scars2), choice(scars4), choice(scars5)])
                 if cat.specialty == 'NOTAIL':
                     scar_text.append(f'{name} lost their tail to a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger', 'tree', 'twoleg trap']))
+                elif cat.specialty == 'SNAKE':
+                    scar_text.append(f'{name} was bit by a snake but lived')
+                elif cat.specialty == 'TOETRAP':
+                    scar_text.append(f'{name} got their paw stuck in a twoleg trap and earned a scar')
                 else:
                     scar_text.extend([f'{name} earned a scar fighting a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger']),
                                         f'{name} earned a scar defending the territory', f'{name} earned a scar protecting the kits', f'{name} is injured after falling into a river',
                                         f'{name} is injured by enemy warriors after accidentally wandering over the border', f'{name} is injured after messing with a twoleg object'])
             elif cat.specialty2 is None:
-                cat.specialty2 = choice([choice(scars1), choice(scars2)])
+                cat.specialty2 = choice([choice(scars1), choice(scars2), choice(scars4), choice(scars5)])
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
                     scar_text.append(f'{name} lost their tail to a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger', 'tree', 'twoleg trap']))
+                elif cat.specialty == 'SNAKE':
+                    scar_text.append(f'{name} was bit by a snake but lived')
+                elif cat.specialty == 'TOETRAP':
+                    scar_text.append(f'{name} got their paw stuck in a twoleg trap and earned a scar')
                 else:
                     scar_text.extend([f'{name} earned a scar fighting a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger']),
                                         f'{name} earned a scar defending the territory', f'{name} earned a scar protecting the kits', f'{name} is injured after falling into a river',
@@ -525,8 +534,8 @@ class Events(object):
             name = str(cat.name)
             cause_of_death = [name + ' was murdered', name + ' died of greencough', 'A tree fell in camp and killed ' + name, name + ' was found dead near a fox den']
             if cat.status == 'kitten':
-                cause_of_death.append([name + ' fell into a river and drowned', name + ' was taken by a hawk', name + ' grew weak as the days passed and died',
-                                       name + ' was killed after sneaking out of camp', name + ' died after accidentally eating deathberries'])
+                cause_of_death.extend([name + ' fell into a river and drowned', name + ' was taken by a hawk', name + ' grew weak as the days passed and died',
+                                       name + ' was killed after sneaking out of camp', name + ' died after accidentally eating deathberries', name + 'was killed in their sleep after a snake snuck into camp'])
                 if game.clan.current_season == 'Leaf-bare':
                     cause_of_death.extend([name + ' was found dead in the snow', name + ' froze to death in a harsh snowstorm',
                                            name + ' disappeared from the nursery and was found dead in the territory'])
@@ -711,7 +720,15 @@ class Events(object):
         elif cat.status == 'leader' and game.clan.leader_lives <= 0:
             cat.dead = True
             game.clan.leader_lives = 0
-            
+           
+        if cat.mate != None:
+            cat.mate = None
+            if type(cat.mate) == str:
+                mate = cat_class.all_cats.get(cat.mate)
+                mate.mate = None
+            elif type(cat.mate) == Cat:
+                cat.mate.mate = None
+
         for app in cat.apprentice.copy():
             app.update_mentor()
         cat.update_mentor()

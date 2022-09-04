@@ -1518,7 +1518,7 @@ class ChooseMateScreen(Screens):
     # TODO Rename this here and in `on_use`
     def _extracted_from_on_use_29(self, arg0, arg1):
         verdana_small.text(arg0.age, (arg1, 200))
-        verdana_small.text(arg0.gender, (arg1, 215))
+        verdana_small.text(arg0.genderalign, (arg1, 215))
         verdana_small.text(arg0.trait, (arg1, 230))
 
     def screen_switches(self):
@@ -2157,7 +2157,7 @@ class ChooseMentorScreen2(Screens):
         count2 = 0
         verdana_big.text(cat_name, ('center', 70))  # NAME
         the_cat.draw_large(('center', 100))  # IMAGE
-        verdana_small.text(the_cat.gender, (250, 330 + count * 15))
+        verdana_small.text(the_cat.genderalign, (250, 330 + count * 15))
         count += 1  # SEX / GENDER
         verdana_small.text(the_cat.status, (450, 330 + count2 * 15))
         count2 += 1  # STATUS
@@ -2618,11 +2618,11 @@ class RelationshipScreen(Screens):
         if the_cat != None and the_cat.mate != '':
             mate = cat_class.all_cats.get(the_cat.mate)
             if mate != None:
-                verdana_small.text(f"{str(the_cat.gender)}  - {str(the_cat.age)} -  mate: {str(mate.name)}", ('center', 40))
+                verdana_small.text(f"{str(the_cat.genderalign)}  - {str(the_cat.age)} -  mate: {str(mate.name)}", ('center', 40))
             else:
-                verdana_small.text(f"{str(the_cat.gender)}  - {str(the_cat.age)}", ('center', 40))
+                verdana_small.text(f"{str(the_cat.genderalign)}  - {str(the_cat.age)}", ('center', 40))
         else:
-            verdana_small.text(f"{str(the_cat.gender)}  - {str(the_cat.age)}", ('center', 40))
+            verdana_small.text(f"{str(the_cat.genderalign)}  - {str(the_cat.age)}", ('center', 40))
 
         # make a list of the relationships
         relationships = the_cat.relationships
@@ -2645,7 +2645,7 @@ class RelationshipScreen(Screens):
             # name length
             string_len = verdana.text(str('romantic love: '))
             verdana.text(str(the_relationship.cat_to.name), (140 + pos_x - string_len / 1.5, 105 + pos_y))
-            verdana_small.text(f"{str(the_relationship.cat_to.gender)} - {str(the_relationship.cat_to.age)}", (140 + pos_x - string_len / 1.5, 120 + pos_y))
+            verdana_small.text(f"{str(the_relationship.cat_to.genderalign)} - {str(the_relationship.cat_to.age)}", (140 + pos_x - string_len / 1.5, 120 + pos_y))
             
 
             # there is no way the mate is dead
