@@ -149,6 +149,7 @@ class SettingsScreen(Screens):
         verdana.text("Allow mass extinction events", (100, 350))
         verdana.text("Force cats to retire after severe injury", (100, 380))
         verdana.text("Allow affairs and mate switches based on relationships", (100, 410))
+        verdana.text("Enable shaders", (100, 440))
 
         # Setting values
         verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
@@ -167,6 +168,8 @@ class SettingsScreen(Screens):
         buttons.draw_button((-80, 380), text='SWITCH', setting='retirement')
         verdana.text(self.bool[game.settings['affair']], (-170, 410))
         buttons.draw_button((-80, 410), text='SWITCH', setting='affair')
+        verdana.text(self.bool[game.settings['shaders']], (-170, 440))
+        buttons.draw_button((-80, 440), text='SWITCH', setting='shaders')
 
         # other buttons
         buttons.draw_button((50, 50),
@@ -2412,8 +2415,8 @@ class OptionsScreen(Screens):
             buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Transneu', cat_value=game.switches['cat'])
             button_count += 1
         if not the_cat.dead:
-            buttons.draw_button((x_value, 650), text='Kill Cat', kill_cat=the_cat)
-            buttons.draw_button((x_value, 600), text='Exile Cat', cat_value = game.switches['cat'])
+            buttons.draw_button((375-50, 650), text='Kill Cat', kill_cat=the_cat)
+            buttons.draw_button((375+30, 650), text='Exile Cat', cat_value = game.switches['cat'])
         elif the_cat.dead and not the_cat.exiled:
             buttons.draw_button((x_value, 600), text='Exile to Dark Forest', cat_value = game.switches['cat'])
 
@@ -2780,7 +2783,7 @@ class RelationshipEventScreen(Screens):
                 if game.relation_events_list[x] is None:
                     continue
                 verdana.text(game.relation_events_list[x],
-                    ('center', 160 + a * 30))
+                    ('center', 260 + a * 30))
                 a += 1
         else:
             verdana.text("Nothing significant happened this moon.",

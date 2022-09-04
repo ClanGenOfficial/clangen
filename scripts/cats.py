@@ -11,7 +11,9 @@ import json
 
 class Cat(object):
     used_screen = screen
-    traits = ['active', 'adventurous', 'altruistic', 'ambitious', 'athletic', 'bloodthirsty', 'bold', 'careful', 'chaotic', 'childish', 'clumsy', 'cold', 'compassionate', 'confident', 'controlling', 'deceptive', 'devoted', 'dramatic', 'eloquent', 'empathetic', 'fair', 'faithful', 'fierce', 'generous', 'gentle', 'graceful', 'greedy', 'innovative', 'insecure', 'insightful', 'lazy', 'lonesome', 'loving', 'loyal', 'nervous', 'open-minded', 'optimistic', 'paranoid', 'passionate', 'patient', 'peaceful', 'pessimistic', 'petty', 'playful', 'resourceful', 'responsible', 'righteous', 'sadistic', 'secretive', 'selfish', 'shameless', 'sincere', 'sneaky', 'strange', 'strict', 'stubborn', 'thoughtful', 'timid', 'tough', 'troublesome', 'uncooperative', 'vengeful', 'willful', 'wise']
+    traits = ['strange', 'bloodthirsty', 'ambitious', 'loyal', 'righteous', 'fierce', 'nervous', 'strict', 'charismatic', 'calm', 'daring', 'loving', 'playful', 'lonesome', 'cold',
+              'insecure', 'vengeful', 'shameless', 'faithful', 'troublesome', 'empathetic', 'adventurous', 'thoughtful', 'compassionate', 'childish', 'confident', 'careful',
+              'altruistic', 'bold', 'patient', 'responsible', 'sneaky', 'wise']
     kit_traits = ['bouncy', 'bullying', 'daydreamer', 'nervous', 'charming', 'attention-seeker', 'impulsive', 'inquisitive', 'bossy', 'troublesome', 'quiet', 'daring', 'sweet',
                   'insecure', 'noisy', 'polite']
     ages = ['kitten', 'adolescent', 'young adult', 'adult', 'senior adult', 'elder', 'dead']
@@ -1152,10 +1154,16 @@ class Cat(object):
             new_sprite.blit(sprites.sprites['eyes' + self.eye_colour + str(self.age_sprites[self.age])], (0, 0))
 
         # draw line art
-        if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
-            new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age] + 9)], (0, 0))
+        if game.settings['shaders']:
+            if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
+                new_sprite.blit(sprites.sprites['shaders' + str(self.age_sprites[self.age] + 9)], (0, 0))
+            else:
+                new_sprite.blit(sprites.sprites['shaders' + str(self.age_sprites[self.age])], (0, 0))
         else:
-            new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
+            if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
+                new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age] + 9)], (0, 0))
+            else:
+                new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
 
         # draw skin and scars2 and scars3
         blendmode = pygame.BLEND_RGBA_MIN
