@@ -320,7 +320,7 @@ class Patrol(object):
                     'The patrol doesn\'t get much done because of that',
                     'They decide to stay focused instead', 80, 10),
                 PatrolEvent(
-                    200,
+                    204,
                     'Your patrol has a disagreement and look to p_l to settle the dispute',
                     'p_l manages to skillfully smooth over any disagreement',
                     'p_l stutters; they don\'t think they are fit to lead the patrol',
@@ -329,7 +329,7 @@ class Patrol(object):
                     10,
                     win_skills=['great speaker', 'excellent speaker']),
                 PatrolEvent(
-                    201,
+                    205,
                     'r_c admits that they had a vision from StarClan last night',
                     'The patrol talks them through the vision as they hunt',
                     'No one can make sense of the vision',
