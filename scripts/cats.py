@@ -1102,7 +1102,7 @@ class Cat(object):
                         new_sprite.blit(sprites.sprites['tabbyextra' + self.pelt.colour + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmarkings)
                     else:
                         new_sprite.blit(sprites.sprites['tabby' + self.pelt.colour + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmarkings)
-                elif self.pelt.markings == 'Ticked':
+                elif self.pelt.markings == 'Speckled':
                     if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
                         new_sprite.blit(sprites.sprites['speckledextra' + self.pelt.colour + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmarkings)
                     else:
@@ -1134,7 +1134,7 @@ class Cat(object):
                         new_sprite.blit(sprites.sprites['tabbyextra' + self.pelt.colour + str(self.age_sprites[self.age])], (0, 0))
                     else:
                         new_sprite.blit(sprites.sprites['tabby' + self.pelt.colour + str(self.age_sprites[self.age])], (0, 0))
-                elif self.pelt.markings == 'Ticked':
+                elif self.pelt.markings == 'Speckled':
                     if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
                         new_sprite.blit(sprites.sprites['speckledextra' + self.pelt.colour + str(self.age_sprites[self.age])], (0, 0))
                     else:
