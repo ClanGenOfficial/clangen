@@ -1164,6 +1164,7 @@ class Cat(object):
                 new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age] + 9)], (0, 0))
             else:
                 new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
+
         game.switches['error_message'] = 'There was an error loading a cat\'s skin and second set of scar sprites. Last cat read was ' + str(self)
         # draw skin and scars2 and scars3
         blendmode = pygame.BLEND_RGBA_MIN

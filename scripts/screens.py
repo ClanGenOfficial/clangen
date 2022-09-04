@@ -847,6 +847,7 @@ class MakeClanScreen(Screens):
             self.second_phase()
         elif game.switches[
                 'leader'] is not None and game.switches['deputy'] is None:
+            Clan.leader_lives = 9
             self.third_phase()
         elif game.switches['leader'] is not None and game.switches[
                 'medicine_cat'] is None:
@@ -1095,6 +1096,9 @@ class ProfileScreen(Screens):
         verdana_small.text(the_cat.genderalign, (300, 230 + count * 15))
         count += 1  # SEX / GENDER
         verdana_small.text(the_cat.status, (490, 230 + count2 * 15))
+        if not the_cat.dead and 'leader' in the_cat.status: #See Lives
+            count2 += 1
+            verdana_small.text('remaining lives: ' + str(game.clan.leader_lives), (490, 230 + count2 * 15))
         count2 += 1  # STATUS
         if 'apprentice' in the_cat.status:
             if the_cat.mentor is None:

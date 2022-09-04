@@ -9,7 +9,7 @@ from sys import exit
 
 
 class Clan(object):
-    leader_lives = 9
+    leader_lives = 0
     clan_cats = []
     starclan_cats = []
     seasons = ['Newleaf', 'Newleaf', 'Newleaf', 'Greenleaf', 'Greenleaf', 'Greenleaf', 'Leaf-fall', 'Leaf-fall',

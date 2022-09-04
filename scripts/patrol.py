@@ -784,10 +784,13 @@ class Patrol(object):
                 108, 113, 114, 120, 141, 250, 305, 307
         ]:
 
+            game.clan.leader_lives -= 1
             events_class.dies(self.patrol_random_cat)
         elif self.patrol_event.patrol_id in [900, 901, 902]:
             for cat in self.patrol_cats:
                 cat.experience += self.patrol_event.exp
+                if self.patrol_cats.status == 'leader':
+                    game.clan.leader_lives -= 10
                 events_class.dies(cat)
 
     def handle_scars(self):
