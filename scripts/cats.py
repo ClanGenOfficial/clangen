@@ -1436,10 +1436,11 @@ class Cat(object):
                         the_cat.genderalign = attr[37]
 
 
-            game.switches['error_message'] = 'There was an error loading this clan\'s mentors/apprentices'
+            game.switches['error_message'] = 'There was an error loading this clan\'s mentors, apprentices, relationships, or sprite info.'
 
             for n in self.all_cats.values():
                 # Load the mentors and apprentices after all cats have been loaded
+                game.switches['error_message'] = 'There was an error loading this clan\'s mentors/apprentices. Last cat read was ' + str(n)
                 n.mentor = cat_class.all_cats.get(n.mentor)
                 apps = []
                 former_apps = []
@@ -1455,7 +1456,9 @@ class Cat(object):
                     former_apps.append(f_app)
                 n.apprentice = apps
                 n.former_apprentices = former_apps
+                game.switches['error_message'] = 'There was an error loading this clan\'s relationships. Last cat read was ' + str(n)
                 n.load_relationship_of_cat()
+                game.switches['error_message'] = 'There was an error loading a cat\'s sprite info. Last cat read was ' + str(n)
                 n.update_sprite()
 
             game.switches['error_message'] = ''
