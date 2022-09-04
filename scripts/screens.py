@@ -2342,62 +2342,58 @@ class ChangeGenderScreen(Screens):
 
 class OptionsScreen(Screens):
 
-    def on_use(self):
+    def relations_tab(self):
+        buttons.draw_button((10,10), text="Relations Tab", available=False)
+        buttons.draw_button((150,10), text="Roles Tab", options_tab="Roles Tab")
+        buttons.draw_button((260,10), text="Personal Tab", options_tab="Personal Tab")
+        buttons.draw_button((-10,10), text="Dangerous Tab", options_tab="Dangerous Tab")
+        
         the_cat = cat_class.all_cats.get(game.switches['cat'])
-        verdana_big.text('Options - ' + str(the_cat.name), ('center', 80))
         button_count = 0
         x_value = 'center'
         y_value = 150
         y_change = 50
         buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='Change Name',
-                            cur_screen='change name screen')
-        button_count += 1
-        game.switches['name_cat'] = the_cat.ID
-        buttons.draw_button((x_value, y_value + button_count * y_change),
                             text='See Family',
                             cur_screen='see kits screen')
         button_count += 1
-
+        
+        buttons.draw_button((x_value, y_value + button_count * y_change),
+                            text='Family Tree')
+        button_count += 1
+        
+        buttons.draw_button((x_value, y_value + button_count * y_change), text='See Relationships', cur_screen='relationship screen')
+        button_count += 1
+        
+        if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change),
+                                text='Pick mate for ' + str(the_cat.name),
+                                cur_screen='choose mate screen')
+            button_count += 1
+            
         if the_cat.status == 'apprentice' and not the_cat.dead:
             game.switches['apprentice'] = the_cat
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Change Mentor',
                                 cur_screen='choose mentor screen')
             button_count += 1
-
+            
         buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='Family Tree')
-        button_count += 1
-
-        buttons.draw_button((x_value, y_value + button_count * y_change), text='See Relationships', cur_screen='relationship screen')
-        button_count += 1
-
-        if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
-                           ] and not the_cat.dead:
-            buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Pick mate for ' + str(the_cat.name),
-                                cur_screen='choose mate screen')
-            button_count += 1
-
-            if the_cat.age in ['young adult', 'adult', 'senior adult'
-                               ] and not the_cat.no_kits:
-                buttons.draw_button(
-                    (x_value, y_value + button_count * y_change),
-                    text='Prevent kits',
-                    no_kits=True,
-                    cat_value=the_cat)
-                button_count += 1
-
-            elif the_cat.age in ['young adult', 'adult', 'senior adult'
-                                 ] and the_cat.no_kits:
-                buttons.draw_button(
-                    (x_value, y_value + button_count * y_change),
-                    text='Allow kits',
-                    no_kits=False,
-                    cat_value=the_cat)
-                button_count += 1
-
+                            text='Back',
+                            cur_screen='profile screen')
+            
+            
+    def roles_tab(self):
+        buttons.draw_button((10,10), text="Relations Tab", options_tab="Relations Tab")
+        buttons.draw_button((150,10), text="Roles Tab", available=False)
+        buttons.draw_button((260,10), text="Personal Tab", options_tab="Personal Tab")
+        buttons.draw_button((-10,10), text="Dangerous Tab", options_tab="Dangerous Tab")
+        
+        the_cat = cat_class.all_cats.get(game.switches['cat'])
+        button_count = 0
+        x_value = 'center'
+        y_value = 150
+        y_change = 50
         if game.switches['new_leader'] is not False and game.switches[
                 'new_leader'] is not None:
             game.clan.new_leader(game.switches['new_leader'])
@@ -2430,6 +2426,51 @@ class OptionsScreen(Screens):
                     text='Promote to Deputy',
                     deputy_switch=the_cat)
                 button_count += 1
+                
+        if the_cat.status in ['apprentice'] and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change),
+                                text='Switch to medicine cat apprentice',
+                                apprentice_switch=the_cat)
+            button_count += 1
+        elif the_cat.status in ['medicine cat apprentice'
+                                ] and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change),
+                                text='Switch to warrior apprentice',
+                                apprentice_switch=the_cat)
+            button_count += 1
+        elif the_cat.status == 'warrior' and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change),
+                                text='Switch to medicine cat',
+                                apprentice_switch=the_cat)
+            button_count += 1
+        elif the_cat.status == 'medicine cat' and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change),
+                                text='Switch to warrior',
+                                apprentice_switch=the_cat)
+            button_count += 1
+            
+        buttons.draw_button((x_value, y_value + button_count * y_change),
+                            text='Back',
+                            cur_screen='profile screen')
+        
+    def personal_tab(self):
+        buttons.draw_button((10,10), text="Relations Tab", options_tab="Relations Tab")
+        buttons.draw_button((150,10), text="Roles Tab", options_tab="Roles Tab")
+        buttons.draw_button((260,10), text="Personal Tab", available=False)
+        buttons.draw_button((-10,10), text="Dangerous Tab", options_tab="Dangerous Tab")
+        
+        the_cat = cat_class.all_cats.get(game.switches['cat'])
+        button_count = 0
+        x_value = 'center'
+        y_value = 150
+        y_change = 50
+        
+        buttons.draw_button((x_value, y_value + button_count * y_change),
+                            text='Change Name',
+                            cur_screen='change name screen')
+        button_count += 1
+        game.switches['name_cat'] = the_cat.ID
+        
         if the_cat.genderalign == "female":
             buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Trans Male', cat_value=game.switches['cat'])
             button_count += 1
@@ -2446,12 +2487,67 @@ class OptionsScreen(Screens):
         if the_cat.genderalign != "female" and the_cat.genderalign != "male":
             buttons.draw_button((x_value, y_value + button_count * y_change),text='Change Back to Cisgender', cat_value=game.switches['cat'])
             button_count += 1
+            
+        if the_cat.age in ['young adult', 'adult', 'senior adult'] and not the_cat.no_kits:
+                buttons.draw_button(
+                    (x_value, y_value + button_count * y_change),
+                    text='Prevent kits',
+                    no_kits=True,
+                    cat_value=the_cat)
+                button_count += 1
+
+        elif the_cat.age in ['young adult', 'adult', 'senior adult'] and the_cat.no_kits:
+                buttons.draw_button(
+                    (x_value, y_value + button_count * y_change),
+                    text='Allow kits',
+                    no_kits=False,
+                    cat_value=the_cat)
+                button_count += 1
+        
+        buttons.draw_button((x_value, y_value + button_count * y_change),
+                            text='Back',
+                            cur_screen='profile screen')
+        
+    def dangerous_tab(self):
+        buttons.draw_button((10,10), text="Relations Tab", options_tab="Relations Tab")
+        buttons.draw_button((150,10), text="Roles Tab", options_tab="Roles Tab")
+        buttons.draw_button((260,10), text="Personal Tab", options_tab="Personal Tab")
+        buttons.draw_button((-10,10), text="Dangerous Tab", available=False)
+        
+        the_cat = cat_class.all_cats.get(game.switches['cat'])
+        button_count = 0
+        x_value = 'center'
+        y_value = 150
+        y_change = 50
+        
         if not the_cat.dead:
             buttons.draw_button((375-50, 650), text='Kill Cat', kill_cat=the_cat)
             buttons.draw_button((375+30, 650), text='Exile Cat', cat_value = game.switches['cat'])
         elif the_cat.dead and not the_cat.exiled:
             buttons.draw_button((x_value, 600), text='Exile to Dark Forest', cat_value = game.switches['cat'])
-
+        
+        buttons.draw_button((x_value, y_value + button_count * y_change),
+                            text='Back',
+                            cur_screen='profile screen')
+        
+    def on_use(self):
+        the_cat = cat_class.all_cats.get(game.switches['cat'])
+        verdana_big.text('Options - ' + str(the_cat.name), ('center', 40))
+        button_count = 0
+        x_value = 'center'
+        y_value = 150
+        y_change = 50
+        
+        if game.switches['options_tab'] == "Relations Tab":
+            self.relations_tab()
+        elif game.switches['options_tab'] == "Roles Tab":
+            self.roles_tab()
+        elif game.switches['options_tab'] == "Personal Tab":
+            self.personal_tab()
+        elif game.switches['options_tab'] == "Dangerous Tab":
+            self.dangerous_tab()
+        else:
+            self.relations_tab()
 
         if game.switches['deputy_switch'] is not False and game.switches[
                 'deputy_switch'] is not None and game.switches[
@@ -2495,31 +2591,6 @@ class OptionsScreen(Screens):
                 'kill_cat'] is not None:
             events_class.dies(game.switches['kill_cat'])
             game.switches['kill_cat'] = False
-
-        if the_cat.status in ['apprentice'] and not the_cat.dead:
-            buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Switch to medicine cat apprentice',
-                                apprentice_switch=the_cat)
-            button_count += 1
-        elif the_cat.status in ['medicine cat apprentice'
-                                ] and not the_cat.dead:
-            buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Switch to warrior apprentice',
-                                apprentice_switch=the_cat)
-            button_count += 1
-        elif the_cat.status == 'warrior' and not the_cat.dead:
-            buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Switch to medicine cat',
-                                apprentice_switch=the_cat)
-            button_count += 1
-        elif the_cat.status == 'medicine cat' and not the_cat.dead:
-            buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Switch to warrior',
-                                apprentice_switch=the_cat)
-            button_count += 1
-        buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='Back',
-                            cur_screen='profile screen')
 
 
 class StatsScreen(Screens):
