@@ -34,7 +34,7 @@ class StartScreen(Screens):
 
     def on_use(self):
         # background
-        bg = pygame.image.load("resources/menu.png")
+        bg = pygame.image.load("resources/menu.png").convert()
         screen.blit(bg, (0, 0))
 
         # buttons
@@ -409,13 +409,13 @@ class ClanScreen(Screens):
 
     # TODO Rename this here and in `change_brightness`
     def _extracted_from_change_brightness_3(self, arg0, arg1, arg2, arg3):
-        self.greenleaf_bg = pygame.transform.scale(pygame.image.load(arg0),
+        self.greenleaf_bg = pygame.transform.scale(pygame.image.load(arg0).convert(),
                                                    (800, 700))
-        self.newleaf_bg = pygame.transform.scale(pygame.image.load(arg1),
+        self.newleaf_bg = pygame.transform.scale(pygame.image.load(arg1).convert(),
                                                  (800, 700))
-        self.leafbare_bg = pygame.transform.scale(pygame.image.load(arg2),
+        self.leafbare_bg = pygame.transform.scale(pygame.image.load(arg2).convert(),
                                                   (800, 700))
-        self.leaffall_bg = pygame.transform.scale(pygame.image.load(arg3),
+        self.leaffall_bg = pygame.transform.scale(pygame.image.load(arg3).convert(),
                                                   (800, 700))
 
 
@@ -495,9 +495,9 @@ class MakeClanScreen(Screens):
     def first_phase(self):
         # layout
         if game.settings['dark mode']:
-            name_clan_img = pygame.image.load('resources/name_clan.png')
+            name_clan_img = pygame.image.load('resources/name_clan.png').convert_alpha()
         else:
-            name_clan_img = pygame.image.load('resources/name_clan_light.png')
+            name_clan_img = pygame.image.load('resources/name_clan_light.png').convert_alpha()
         screen.blit(name_clan_img, (0, 0))
 
         self.game_screen.blit(game.naming_box, (150, 620))
@@ -527,9 +527,9 @@ class MakeClanScreen(Screens):
         game.switches['naming_text'] = ''
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
         if game.settings['dark mode']:
-            leader_img = pygame.image.load('resources/leader.png')
+            leader_img = pygame.image.load('resources/leader.png').convert_alpha()
         else:
-            leader_img = pygame.image.load('resources/leader_light.png')
+            leader_img = pygame.image.load('resources/leader_light.png').convert_alpha()
         screen.blit(leader_img, (0, 400))
         for u in range(6):
             buttons.draw_button((50, 150 + 50 * u),
@@ -573,9 +573,9 @@ class MakeClanScreen(Screens):
     def third_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
         if game.settings['dark mode']:
-            deputy_img = pygame.image.load('resources/deputy.png')
+            deputy_img = pygame.image.load('resources/deputy.png').convert_alpha()
         else:
-            deputy_img = pygame.image.load('resources/deputy_light.png')
+            deputy_img = pygame.image.load('resources/deputy_light.png').convert_alpha()
         screen.blit(deputy_img, (0, 400))
 
         for u in range(6):
@@ -628,9 +628,9 @@ class MakeClanScreen(Screens):
     def fourth_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
         if game.settings['dark mode']:
-            medic_img = pygame.image.load('resources/medic.png')
+            medic_img = pygame.image.load('resources/medic.png').convert_alpha()
         else:
-            medic_img = pygame.image.load('resources/med_light.png')
+            medic_img = pygame.image.load('resources/med_light.png').convert_alpha()
         screen.blit(medic_img, (0, 400))
 
         for u in range(6):
@@ -690,9 +690,9 @@ class MakeClanScreen(Screens):
     def fifth_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
         if game.settings['dark mode']:
-            clan_img = pygame.image.load('resources/clan.png')
+            clan_img = pygame.image.load('resources/clan.png').convert_alpha()
         else:
-            clan_img = pygame.image.load('resources/clan_light.png')
+            clan_img = pygame.image.load('resources/clan_light.png').convert_alpha()
         screen.blit(clan_img, (0, 400))
         for u in range(6):
             if game.switches['leader'] == u:
@@ -2781,12 +2781,12 @@ class RelationshipScreen(Screens):
                 verdana_small.text('has a mate', (140 + pos_x - string_len / 1.5, 140 + pos_y))
 
             # Loading Bar and variables
-            bar_bg = pygame.image.load("resources/relations_border.png")
-            original_bar = pygame.image.load("resources/relation_bar.png")
+            bar_bg = pygame.image.load("resources/relations_border.png").convert_alpha()
+            original_bar = pygame.image.load("resources/relation_bar.png").convert_alpha()
 
             if game.settings['dark mode']:
-                bar_bg = pygame.image.load("resources/relations_border_dark.png")
-                original_bar = pygame.image.load("resources/relation_bar_dark.png")
+                bar_bg = pygame.image.load("resources/relations_border_dark.png").convert_alpha()
+                original_bar = pygame.image.load("resources/relation_bar_dark.png").convert_alpha()
 
             count = 15
             verdana_small.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))

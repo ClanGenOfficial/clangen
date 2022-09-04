@@ -29,13 +29,13 @@ class Button(object):
             image_path = f'resources/{path}.png'
         else:
             image_path = f'resources/{path}_unavailable.png'
-        image = pygame.image.load(image_path)
+        image = pygame.image.load(image_path).convert_alpha()
         button = pygame.transform.scale(image, (192, 35))
         collided = self.used_screen.blit(button, pos)
         if available and collided.collidepoint(self.used_mouse.pos):
             is_clickable = True
             image_path = f'resources/{path}_hover.png'
-            image = pygame.image.load(image_path)
+            image = pygame.image.load(image_path).convert_alpha()
             button = pygame.transform.scale(image, (192, 35))
         self.used_screen.blit(button, pos)
         if game.clicked and is_clickable:
@@ -98,7 +98,7 @@ class Button(object):
                 new_button = pygame.Surface((self.font.text(text) + self.padding[0] * 2, self.font.size + self.padding[1] * 2))
 
         elif dynamic_image:
-            new_button = pygame.image.load(f"{image}.png")
+            new_button = pygame.image.load(f"{image}.png").convert_alpha()
             new_button = pygame.transform.scale(new_button, (192, 35))
         else:
             new_button = image
@@ -126,7 +126,7 @@ class Button(object):
                 new_button.fill(colour)
                 self.font.text(text, (self.padding[0], 0), new_button)
         elif dynamic_image:
-            new_button = pygame.image.load(f"{image}.png")
+            new_button = pygame.image.load(f"{image}.png").convert_alpha()
             new_button = pygame.transform.scale(new_button, (192, 35))
         self.used_screen.blit(new_button, new_pos)
         if game.clicked and clickable:

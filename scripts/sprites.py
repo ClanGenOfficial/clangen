@@ -13,10 +13,10 @@ class Sprites(object):
         self.sprites = {}
 
     def spritesheet(self, a_file, name):
-        self.spritesheets[name] = pygame.image.load(a_file)
+        self.spritesheets[name] = pygame.image.load(a_file).convert_alpha()
 
     def image(self, a_file, name):
-        self.images[name] = pygame.image.load(a_file)
+        self.images[name] = pygame.image.load(a_file).convert_alpha()
 
     def find_sprite(self, group_name, x, y):
         # find singular sprite from group
