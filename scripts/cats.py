@@ -137,7 +137,7 @@ class Cat(object):
         elif self.age in ['young adult', 'adult']:
             scar_choice = randint(0, 20)
         if scar_choice == 1:
-            self.specialty = choice([choice(scars1), choice(scars2)])
+            self.specialty = choice([choice(scars1), choice(scars2), choice(scars4), choice(scars5)])
         else:
             self.specialty = None
 
@@ -147,7 +147,7 @@ class Cat(object):
         elif self.age in ['young adult', 'adult']:
             scar_choice2 = randint(0, 40)
         if scar_choice2 == 1:
-            self.specialty2 = choice([choice(scars1), choice(scars2)])
+            self.specialty2 = choice([choice(scars1), choice(scars2), choice(scars4), choice(scars5)])
         else:
             self.specialty2 = None
 
@@ -1168,6 +1168,14 @@ class Cat(object):
                 new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])], (0, 0))
             if self.specialty2 in scars3:
                 new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0))
+            if self.specialty in scars4:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty2 in scars4:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty in scars5:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty2 in scars5:
+                new_sprite.blit(sprites.sprites['scarsextra' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
         else:
             new_sprite.blit(sprites.sprites['skin' + self.skin + str(self.age_sprites[self.age])], (0, 0))
             if self.specialty in scars2:
@@ -1178,6 +1186,15 @@ class Cat(object):
                 new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])], (0, 0))
             if self.specialty2 in scars3:
                 new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0))
+            if self.specialty in scars4:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty2 in scars4:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty in scars5:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            if self.specialty2 in scars5:
+                new_sprite.blit(sprites.sprites['scars' + self.specialty2 + str(self.age_sprites[self.age])], (0, 0), special_flags=blendmode)
+            
 
         # reverse, if assigned so
         if self.reverse:
