@@ -6,7 +6,7 @@ import copy
 # if another cat is involved
 THIRD_RELATIONSHIP_INCLUDED = {
     "charismatic": ['Is convincing (cat 1) that (cat 2) isn\'t so bad once you get to know them'],
-    "troublesom": ['Made (cat) and (cat) start an argument'],
+    "troublesome": ['Made (cat) and (cat) start an argument'],
     "sneaky": ['Is gossiping about (cat) and (cat)'],
     "like": '(cat) confesses to (cat) that they think they like (cat)',
     "trick": 'Has successfully tricked (cat) into believing a crazy tale about the clan leader'
@@ -67,7 +67,7 @@ NOT_AGE_SPECIFIC = {
                    'Is mocking (cat)', 'Ignores (cat)','Is telling jokes about (cat)',
                    'Is spreading a rumour about (cat)'],
     "neutral": ['Whines about (cat)', 'Is telling a story to (cat)', 'Is talking with (cat)',
-                'Is sharing prey with (cat)', 'Had an huge argument with (cat)', 'Had a fight with (cat)'],
+                'Is sharing prey with (cat)', 'Had a huge argument with (cat)', 'Had a fight with (cat)'],
     "friendly": ['Is sharing tongue with (cat)'],
     "close": ['Tells (cat) a secret']
 }

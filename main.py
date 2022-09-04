@@ -16,13 +16,13 @@ if not os.path.exists('saves/clanlist.txt'):
         write_file.write('')
 with open('saves/clanlist.txt', 'r') as read_file:
     clan_list = read_file.read()
-    if_clans = len(clan_list)
+    if_clans = len(clan_list.strip())
 if if_clans > 0:
     game.switches['clan_list'] = clan_list.split('\n')
     try:
         cat_class.load_cats()
-        clan_class = Clan()
         clan_class.load_clan()
+        cat_class.thoughts()
     except Exception:
         if not game.switches['error_message']:
             game.switches['error_message'] = 'There was an error loading the cats file!'
@@ -45,6 +45,7 @@ game.load_settings()
 verdana.change_text_brightness()
 buttons.change_button_brightness()
 sprites.load_scars()
+
 
 while True:
     if game.settings['dark mode']:

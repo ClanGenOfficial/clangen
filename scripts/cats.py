@@ -1026,7 +1026,8 @@ class Cat(object):
             self.trait = choice(self.traits)
         if (self.status == 'apprentice' and new_status != 'medicine cat apprentice') or (self.status == 'medicine cat apprentice' and new_status != 'apprentice'):
             self.skill = choice(self.skills)
-
+        elif new_status == 'medicine cat':
+            self.skill = choice(self.med_skills)
         self.status = new_status
         self.name.status = new_status
         if 'apprentice' in new_status:
@@ -1604,12 +1605,6 @@ class Cat(object):
         description += ' ' + str(self.pelt.length).lower() + '-furred ' + sex
         return description
 
-
-# The randomized cat sprite in Main Menu screen
-example_cat = Cat(status=choice(["kitten", "apprentice", "warrior", "elder"]), example=True)
-example_cat.update_sprite()
-
-
 # Twelve example cats
 def create_example_cats():
     e = random.sample(range(12), 3)
@@ -1622,5 +1617,5 @@ def create_example_cats():
 
 # CAT CLASS ITEMS
 cat_class = Cat(example=True)
-cat_class = Cat()
 game.cat_class = cat_class
+
