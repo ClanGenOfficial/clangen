@@ -95,6 +95,8 @@ class Button(object):
                 self.choose_mentor(apprentice, cat_value)
             elif text == ' Change Name ' and game.switches['naming_text'] != '':
                 self.change_name(game.switches['naming_text'], game.switches['name_cat'])
+            elif text == ' Change Gender ' and game.switches['naming_text'] != '':
+                self.change_gender(game.switches['naming_text'], game.switches['name_cat'])
             elif text in ['Next Cat', 'Previous Cat']:
                 game.switches['cat'] = values.get('cat')
             elif text == 'Prevent kits':
@@ -104,12 +106,14 @@ class Button(object):
             elif text == 'Exile Cat':
                 cat_class.all_cats[cat_value].exiled = True
                 cat_class.other_cats[cat_value] =  cat_class.all_cats[cat_value]
-            elif text == 'Change to Transmasc':
-                cat_class.all_cats[cat_value].genderalign = "transmasc"
-            elif text == 'Change to Transfem':
-                cat_class.all_cats[cat_value].genderalign = "transfem"
-            elif text == 'Change to Transneu':
-                cat_class.all_cats[cat_value].genderalign = "transneu"
+            elif text == 'Change to Trans Male':
+                cat_class.all_cats[cat_value].genderalign = "trans male"
+            elif text == 'Change to Trans Female':
+                cat_class.all_cats[cat_value].genderalign = "trans female"
+            elif text == 'Change to Nonbinary':
+                cat_class.all_cats[cat_value].genderalign = "nonbinary"
+            elif text == 'Change Back to Cisgender':
+                cat_class.all_cats[cat_value].genderalign = cat_class.all_cats[cat_value].gender
             elif cat_value is None and arrow is None:
                 self.activate(values)
             elif arrow is None:
@@ -185,6 +189,13 @@ class Button(object):
             cat_value.name.prefix = name[0]
             if len(name) > 1:
                 cat_value.name.suffix = name[1]
+            cat_class.save_cats()
+            game.switches['naming_text'] = ''
+            
+    def change_gender(self, name, cat_value):
+        cat_value = cat_class.all_cats.get(cat_value)
+        if game.switches['naming_text'] != '':
+            cat_value.genderalign = game.switches['naming_text']
             cat_class.save_cats()
             game.switches['naming_text'] = ''
 

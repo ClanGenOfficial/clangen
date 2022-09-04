@@ -1608,9 +1608,9 @@ class Cat(object):
         return color_name
 
     def describe_cat(self):
-        if self.genderalign == 'male' or self.genderalign == "transmasc":
+        if self.genderalign == 'male' or self.genderalign == "transmasc" or self.genderalign == "trans male":
             sex = 'tom'
-        elif self.genderalign == 'female'or self.genderalign == "transfem":
+        elif self.genderalign == 'female'or self.genderalign == "transfem" or self.genderalign == "trans female":
             sex = 'she-cat'
         else:
             sex = 'cat'
