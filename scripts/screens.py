@@ -117,11 +117,11 @@ class SwitchClanScreen(Screens):
                 buttons.draw_button(
                     ('center', 50 * i + y_pos),
                     text=game.switches['clan_list'][i] + 'clan',
-                    switch_clan=game.switches['clan_list'][i],hotkey=[i+1])
+                    switch_clan=game.switches['clan_list'][i])
 
         buttons.draw_button((50, 50),
                             text='<< Back to Main Menu',
-                            cur_screen='start screen',hotkey=[0])
+                            cur_screen='start screen')
 
 
 class SettingsScreen(Screens):
@@ -145,12 +145,11 @@ class SettingsScreen(Screens):
                      (100, 230))
         verdana.text("Allow unmated cats to have offspring:", (100, 260))
         verdana.text("Enable clan page background:", (100, 290))
-        verdana.text("Automatically save every five moons:", (100, 320))
-        verdana.text("Allow mass extinction events:", (100, 350))
-        verdana.text("Force cats to retire after severe injury:", (100, 380))
-        verdana.text("Allow affairs and mate switches based on relationships:", (100, 410))
-        verdana.text("Enable shaders:", (100, 440))
-        verdana.text("Display hotkeys on text buttons:", (100, 470))
+        verdana.text("Automatically save every five moons", (100, 320))
+        verdana.text("Allow mass extinction events", (100, 350))
+        verdana.text("Force cats to retire after severe injury", (100, 380))
+        verdana.text("Allow affairs and mate switches based on relationships", (100, 410))
+        verdana.text("Enable shaders", (100, 440))
 
         # Setting values
         verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
@@ -171,8 +170,6 @@ class SettingsScreen(Screens):
         buttons.draw_button((-80, 410), text='SWITCH', setting='affair')
         verdana.text(self.bool[game.settings['shaders']], (-170, 440))
         buttons.draw_button((-80, 440), text='SWITCH', setting='shaders')
-        verdana.text(self.bool[game.settings['hotkey display']], (-170, 470))
-        buttons.draw_button((-80, 470), text='SWITCH', setting='hotkey display')
 
         # other buttons
         buttons.draw_button((50, 50),
@@ -291,21 +288,15 @@ class ClanScreen(Screens):
                      game.clan.cur_layout['apprentice den'])
         verdana.text("Warriors\' Den", game.clan.cur_layout['warrior den'])
         verdana.text("Elders\' Den", game.clan.cur_layout['elder den'])
-        hotkey_assign_1 = 1
-        hotkey_assign_2 = 2
         for x in game.clan.clan_cats:
             if not cat_class.all_cats[x].dead and cat_class.all_cats[
                     x].in_camp and not cat_class.all_cats[x].exiled:
                 buttons.draw_button(cat_class.all_cats[x].placement,
                                     image=cat_class.all_cats[x].sprite,
                                     cat=x,
-                                    cur_screen='profile screen',hotkey=[hotkey_assign_1, hotkey_assign_2])
-                hotkey_assign_2 = hotkey_assign_2 + 1
-                if hotkey_assign_2 == 20:
-                    hotkey_assign_1 = hotkey_assign_1 + 1
-                    hotkey_assign_2 = hotkey_assign_1 + 1
+                                    cur_screen='profile screen')
         draw_menu_buttons()
-        buttons.draw_button(('center', -50), text='Save Clan', save_clan=True, hotkey=[9])
+        buttons.draw_button(('center', -50), text='Save Clan', save_clan=True)
         pygame.draw.rect(screen,
                          color='gray',
                          rect=pygame.Rect(320, 660, 160, 20))
@@ -452,12 +443,10 @@ class StarClanScreen(Screens):
                 game.switches['list_page'] = 1
             the_cat = search_cats[x + (game.switches['list_page'] - 1) * 20]
             if the_cat.dead:
-                column = int(pos_x/100)
-                row = int(pos_y/100)
                 buttons.draw_button((130 + pos_x, 180 + pos_y),
                                     image=the_cat.sprite,
                                     cat=the_cat.ID,
-                                    cur_screen='profile screen', hotkey=[row+1, column+11])
+                                    cur_screen='profile screen')
 
                 name_len = verdana.text(str(the_cat.name))
                 verdana.text(str(the_cat.name),
@@ -477,12 +466,12 @@ class StarClanScreen(Screens):
         if game.switches['list_page'] > 1:
             buttons.draw_button((300, 600),
                                 text='<',
-                                list_page=game.switches['list_page'] - 1, hotkey=[23])
+                                list_page=game.switches['list_page'] - 1)
 
         if game.switches['list_page'] < all_pages:
             buttons.draw_button((-300, 600),
                                 text='>',
-                                list_page=game.switches['list_page'] + 1, hotkey=[21])
+                                list_page=game.switches['list_page'] + 1)
 
         draw_menu_buttons()
 
@@ -508,8 +497,8 @@ class MakeClanScreen(Screens):
         verdana.text('-Clan', (290, 620))
         buttons.draw_button((350, 620),
                             text='Randomize',
-                            naming_text=choice(names.normal_prefixes), hotkey=[1])
-        buttons.draw_button((450, 620), text='Reset Name', naming_text='', hotkey=[2])
+                            naming_text=choice(names.normal_prefixes))
+        buttons.draw_button((450, 620), text='Reset Name', naming_text='')
 
         # buttons
         verdana_small.text(
@@ -521,7 +510,7 @@ class MakeClanScreen(Screens):
                             naming_text='')
         buttons.draw_button((570, 620),
                             text='Name Clan',
-                            clan_name=game.switches['naming_text'], hotkey=[3])
+                            clan_name=game.switches['naming_text'])
 
     def second_phase(self):
         game.switches['naming_text'] = ''
@@ -534,11 +523,11 @@ class MakeClanScreen(Screens):
         for u in range(6):
             buttons.draw_button((50, 150 + 50 * u),
                                 image=game.choose_cats[u].sprite,
-                                cat=u, hotkey=[1, u+10])
+                                cat=u)
         for u in range(6, 12):
             buttons.draw_button((100, 150 + 50 * (u - 6)),
                                 image=game.choose_cats[u].sprite,
-                                cat=u, hotkey=[2, u+4])
+                                cat=u)
 
         if game.switches['cat'] is not None and 12 > game.switches['cat'] >= 0:
             game.choose_cats[game.switches['cat']].draw_large((250, 200))
@@ -559,7 +548,7 @@ class MakeClanScreen(Screens):
             else:
                 buttons.draw_button((420, 300),
                                     text='Grant this cat their nine lives',
-                                    leader=game.switches['cat'], hotkey=[1])
+                                    leader=game.switches['cat'])
         buttons.draw_button((50, 50),
                             text='<< Back to Main Menu',
                             cur_screen='start screen',
@@ -568,7 +557,7 @@ class MakeClanScreen(Screens):
         buttons.draw_button((-50, 50),
                             text='< Last step',
                             clan_name='',
-                            cat=None, hotkey=[0])
+                            cat=None)
 
     def third_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
@@ -584,14 +573,14 @@ class MakeClanScreen(Screens):
             else:
                 buttons.draw_button((50, 150 + 50 * u),
                                     image=game.choose_cats[u].sprite,
-                                    cat=u, hotkey=[1, u+10])
+                                    cat=u)
         for u in range(6, 12):
             if game.switches['leader'] == u:
                 game.choose_cats[u].draw((650, 200))
             else:
                 buttons.draw_button((100, 150 + 50 * (u - 6)),
                                     image=game.choose_cats[u].sprite,
-                                    cat=u, hotkey=[2, u+4])
+                                    cat=u)
 
         if game.switches['cat'] is not None and 12 > game.switches[
                 'cat'] >= 0 and game.switches['cat'] != game.switches['leader']:
@@ -611,7 +600,7 @@ class MakeClanScreen(Screens):
             else:
                 buttons.draw_button((420, 300),
                                     text='This cat will support the leader',
-                                    deputy=game.switches['cat'], hotkey=[1])
+                                    deputy=game.switches['cat'])
         verdana_small.text(
             'Note: going back to main menu resets the generated cats.',
             (50, 25))
@@ -623,7 +612,7 @@ class MakeClanScreen(Screens):
         buttons.draw_button((-50, 50),
                             text='< Last Step',
                             leader=None,
-                            cat=None, hotkey=[0])
+                            cat=None)
 
     def fourth_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
@@ -641,7 +630,7 @@ class MakeClanScreen(Screens):
             else:
                 buttons.draw_button((50, 150 + 50 * u),
                                     image=game.choose_cats[u].sprite,
-                                    cat=u, hotkey=[1, u+10])
+                                    cat=u)
 
         for u in range(6, 12):
             if game.switches['leader'] == u:
@@ -651,7 +640,7 @@ class MakeClanScreen(Screens):
             else:
                 buttons.draw_button((100, 150 + 50 * (u - 6)),
                                     image=game.choose_cats[u].sprite,
-                                    cat=u, hotkey=[2, u+4])
+                                    cat=u)
 
         if game.switches['cat'] is not None and 12 > game.switches[
                 'cat'] >= 0 and game.switches['cat'] != game.switches[
@@ -674,7 +663,7 @@ class MakeClanScreen(Screens):
             else:
                 buttons.draw_button((420, 300),
                                     text='This cat will aid the clan',
-                                    medicine_cat=game.switches['cat'], hotkey=[1])
+                                    medicine_cat=game.switches['cat'])
         verdana_small.text(
             'Note: going back to main menu resets the generated cats.',
             (50, 25))
@@ -685,7 +674,7 @@ class MakeClanScreen(Screens):
         buttons.draw_button((-50, 50),
                             text='< Last step',
                             deputy=None,
-                            cat=None, hotkey=[0])
+                            cat=None)
 
     def fifth_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
@@ -704,7 +693,7 @@ class MakeClanScreen(Screens):
             elif u not in game.switches['members']:
                 buttons.draw_button((50, 150 + 50 * u),
                                     image=game.choose_cats[u].sprite,
-                                    cat=u, hotkey=[1, u+10])
+                                    cat=u)
             try:
                 if u == game.switches['members'][0]:
                     game.choose_cats[u].draw((700, 100))
@@ -733,7 +722,7 @@ class MakeClanScreen(Screens):
             elif u not in game.switches['members']:
                 buttons.draw_button((100, 150 + 50 * (u - 6)),
                                     image=game.choose_cats[u].sprite,
-                                    cat=u, hotkey=[2, u+4])
+                                    cat=u)
             try:
                 if u == game.switches['members'][0]:
                     game.choose_cats[u].draw((700, 100))
@@ -769,7 +758,7 @@ class MakeClanScreen(Screens):
                 buttons.draw_button((420, 300),
                                     text='Recruit',
                                     members=game.switches['cat'],
-                                    add=True, hotkey=[1])
+                                    add=True)
 
         verdana_small.text(
             'Note: going back to main menu resets the generated cats.',
@@ -784,10 +773,10 @@ class MakeClanScreen(Screens):
                             text='< Last step',
                             medicine_cat=None,
                             members=[],
-                            cat=None, hotkey=[0])
+                            cat=None)
 
         if 3 < len(game.switches['members']) < 8:
-            buttons.draw_button(('center', 350), text='Done', choosing_camp=True, hotkey=[2])
+            buttons.draw_button(('center', 350), text='Done', choosing_camp=True)
         else:
             buttons.draw_button(('center', 350), text='Done', available=False)
     def sixth_phase(self):
@@ -845,10 +834,10 @@ class MakeClanScreen(Screens):
             buttons.draw_button(('center', 350), text='Done', cur_screen='clan created screen')
 
 
-            buttons.draw_button((250, 50), text='Forest', biome='Forest', available=game.switches['biome'] != 'Forest', hotkey=[1])
-            buttons.draw_button((325, 50), text='Mountainous', biome='Mountainous', available=game.switches['biome'] != 'Mountainous', hotkey=[2])
-            buttons.draw_button((450, 50), text='Plains', biome='Plains', available=game.switches['biome'] != 'Plains', hotkey=[3])
-            buttons.draw_button((525, 50), text='Beach', biome='Beach', available=game.switches['biome'] != 'Beach', hotkey=[4])    
+            buttons.draw_button((250, 50), text='Forest', biome='Forest', available=game.switches['biome'] != 'Forest')
+            buttons.draw_button((325, 50), text='Mountainous', biome='Mountainous', available=game.switches['biome'] != 'Mountainous')
+            buttons.draw_button((450, 50), text='Plains', biome='Plains', available=game.switches['biome'] != 'Plains')
+            buttons.draw_button((525, 50), text='Beach', biome='Beach', available=game.switches['biome'] != 'Beach')    
 
     def on_use(self):
         if len(game.switches['clan_name']) == 0:
@@ -892,7 +881,7 @@ class ClanCreatedScreen(Screens):
         # buttons
         buttons.draw_button(('center', 250),
                             text='Continue',
-                            cur_screen='clan screen', hotkey=[1])
+                            cur_screen='clan screen')
 
     def screen_switches(self):
         game.clan = Clan(game.switches['clan_name'], game.choose_cats[game.switches['leader']], game.choose_cats[game.switches['deputy']],game.choose_cats[game.switches['medicine_cat']], game.switches['biome'], game.switches['world_seed'], game.switches['camp_site'])
@@ -1011,7 +1000,7 @@ class EventsScreen(Screens):
         if game.switches['events_left'] == 0:
             buttons.draw_button((200, 220),
                                 text='TIMESKIP ONE MOON',
-                                timeskip=True, hotkey=[11])
+                                timeskip=True)
             if game.switches['timeskip']:
                 game.cur_events_list = []
                 game.relation_events_list = []
@@ -1022,7 +1011,7 @@ class EventsScreen(Screens):
         events_class.one_moon()
 
         # show the Relationshipevents
-        buttons.draw_button((-200, 220), text='RELATIONSHIP EVENTS', cur_screen='relationship event screen', hotkey=[12])
+        buttons.draw_button((-200, 220), text='RELATIONSHIP EVENTS', cur_screen='relationship event screen')
 
         a = 0
         if game.cur_events_list is not None and game.cur_events_list != []:
@@ -1042,8 +1031,8 @@ class EventsScreen(Screens):
 
         draw_menu_buttons()
         if len(game.cur_events_list) > game.max_events_displayed:
-            buttons.draw_button((720, 250), image=game.up, arrow="UP", hotkey=[20])
-            buttons.draw_button((700, 550), image=game.down, arrow="DOWN", hotkey=[22])
+            buttons.draw_button((720, 250), image=game.up, arrow="UP")
+            buttons.draw_button((700, 550), image=game.down, arrow="DOWN")
 
 
 class ProfileScreen(Screens):
@@ -1085,11 +1074,11 @@ class ProfileScreen(Screens):
         if next_cat == 1:
             next_cat = 0
         if next_cat != 0:
-            buttons.draw_button((-40, 40), text='Next Cat', cat=next_cat, hotkey=[21])
+            buttons.draw_button((-40, 40), text='Next Cat', cat=next_cat)
         if previous_cat != 0:
             buttons.draw_button((40, 40),
                                 text='Previous Cat',
-                                cat=previous_cat, hotkey=[23])
+                                cat=previous_cat)
 
         # Info in string
         cat_name = str(the_cat.name)  # name
@@ -1519,12 +1508,12 @@ class ChooseMateScreen(Screens):
         if game.switches['list_page'] > 1:
             buttons.draw_button((300, 600),
                                 text='<',
-                                list_page=game.switches['list_page'] - 1, hotkey=[23])
+                                list_page=game.switches['list_page'] - 1)
 
         if game.switches['list_page'] < all_pages:
             buttons.draw_button((-300, 600),
                                 text='>',
-                                list_page=game.switches['list_page'] + 1, hotkey=[21])
+                                list_page=game.switches['list_page'] + 1)
 
     # TODO Rename this here and in `on_use`
     def _extracted_from_on_use_29(self, arg0, arg1):
@@ -1572,12 +1561,10 @@ class ListScreen(Screens):
                 game.switches['list_page'] -= 1
             the_cat = search_cats[x + (game.switches['list_page'] - 1) * 20]
             if not the_cat.dead:
-                column = int(pos_x/100)
-                row = int(pos_y/100)
                 buttons.draw_button((130 + pos_x, 180 + pos_y),
                                     image=the_cat.sprite,
                                     cat=the_cat.ID,
-                                    cur_screen='profile screen', hotkey=[row+1, column+11])
+                                    cur_screen='profile screen')
 
                 verdana.text(str(the_cat.name),
                              (130 + pos_x, 240 + pos_y))
@@ -1596,12 +1583,12 @@ class ListScreen(Screens):
         if game.switches['list_page'] > 1:
             buttons.draw_button((300, 600),
                                 text='<',
-                                list_page=game.switches['list_page'] - 1, hotkey=[23])
+                                list_page=game.switches['list_page'] - 1)
 
         if game.switches['list_page'] < all_pages:
             buttons.draw_button((-300, 600),
                                 text='>',
-                                list_page=game.switches['list_page'] + 1, hotkey=[21])
+                                list_page=game.switches['list_page'] + 1)
         buttons.draw_button((-70, 130),
                             text='Cats Outside Clans',
                             cur_screen='other screen')
@@ -1667,12 +1654,12 @@ class OtherScreen(Screens):
         if game.switches['list_page'] > 1:
             buttons.draw_button((300, 600),
                                 text='<',
-                                list_page=game.switches['list_page'] - 1, hotkey=[23])
+                                list_page=game.switches['list_page'] - 1)
 
         if game.switches['list_page'] < all_pages:
             buttons.draw_button((-300, 600),
                                 text='>',
-                                list_page=game.switches['list_page'] + 1, hotkey=[21])
+                                list_page=game.switches['list_page'] + 1)
 
         buttons.draw_button((-70, 130),
                             text='Cats in ' + str(game.clan.name) + 'Clan',
@@ -1868,19 +1855,12 @@ class PatrolEventScreen(Screens):
                            ('center', 400))
         verdana_small.text('patrol leader: ' + str(patrol.patrol_leader.name),
                            ('center', 420))
-        verdana_small.text('patrol skills: ' + self.get_list_text(patrol.patrol_skills),
+        verdana_small.text('patrol skills: ' + str(patrol.patrol_skills),
                            ('center', 440))
-        verdana_small.text('patrol traits: ' + self.get_list_text(patrol.patrol_traits),
+        verdana_small.text('patrol traits: ' + str(patrol.patrol_traits),
                            ('center', 460))
 
         draw_menu_buttons()
-
-    def get_list_text(self, patrol_list):
-        if not patrol_list:
-            return "None"
-        # Removes duplicates.
-        patrol_set = list(set(patrol_list))
-        return ", ".join(patrol_set)
 
     def screen_switches(self):
         game.switches['event'] = 0
@@ -1903,8 +1883,8 @@ class AllegiancesScreen(Screens):
                 verdana.text(game.allegiance_list[x][1], (170, 140 + a * 30))
                 a += 1
         if len(game.allegiance_list) > game.max_allegiance_displayed:
-            buttons.draw_button((720, 250), image=game.up, arrow="UP", hotkey=[20])
-            buttons.draw_button((700, 550), image=game.down, arrow="DOWN", hotkey=[22])
+            buttons.draw_button((720, 250), image=game.up, arrow="UP")
+            buttons.draw_button((700, 550), image=game.down, arrow="DOWN")
         draw_menu_buttons()
 
     def screen_switches(self):
@@ -2115,12 +2095,12 @@ class ChooseMentorScreen(Screens):
         if game.switches['list_page'] > 1:
             buttons.draw_button((300, 600),
                                 text='<',
-                                list_page=game.switches['list_page'] - 1, hotkey=[23])
+                                list_page=game.switches['list_page'] - 1)
 
         if game.switches['list_page'] < all_pages:
             buttons.draw_button((-300, 600),
                                 text='>',
-                                list_page=game.switches['list_page'] + 1, hotkey=[21])
+                                list_page=game.switches['list_page'] + 1)
 
         draw_menu_buttons()
 
@@ -2162,11 +2142,11 @@ class ChooseMentorScreen2(Screens):
             next_cat = 0
 
         if next_cat != 0:
-            buttons.draw_button((-40, 40), text='Next Cat', cat=next_cat, hotkey=[21])
+            buttons.draw_button((-40, 40), text='Next Cat', cat=next_cat)
         if previous_cat != 0:
             buttons.draw_button((40, 40),
                                 text='Previous Cat',
-                                cat=previous_cat, hotkey=[23])
+                                cat=previous_cat)
 
         # Info in string
         cat_name = str(the_cat.name)  # name
@@ -2312,7 +2292,7 @@ class ChooseMentorScreen2(Screens):
             apprentice=game.switches['apprentice'])
         buttons.draw_button(('center', -50),
                             text='Back',
-                            cur_screen='clan screen', hotkey=[0])
+                            cur_screen='clan screen')
 
 
 class ChangeNameScreen(Screens):
@@ -2336,7 +2316,7 @@ class ChangeNameScreen(Screens):
                             cat_value=game.switches['name_cat'])
         buttons.draw_button(('center', -50),
                             text='Back',
-                            cur_screen='profile screen', hotkey=[0])
+                            cur_screen='profile screen')
 
 class ChangeGenderScreen(Screens):
 
@@ -2358,62 +2338,66 @@ class ChangeGenderScreen(Screens):
                             cat_value=game.switches['name_cat'])
         buttons.draw_button(('center', -50),
                             text='Back',
-                            cur_screen='profile screen', hotkey=[0])
+                            cur_screen='profile screen')
 
 class OptionsScreen(Screens):
 
-    def relations_tab(self):
-        buttons.draw_button((10,10), text="Relations Tab", available=False)
-        buttons.draw_button((150,10), text="Roles Tab", options_tab="Roles Tab", hotkey=[12])
-        buttons.draw_button((260,10), text="Personal Tab", options_tab="Personal Tab", hotkey=[13])
-        buttons.draw_button((-10,10), text="Dangerous Tab", options_tab="Dangerous Tab", hotkey=[14])
-        
+    def on_use(self):
         the_cat = cat_class.all_cats.get(game.switches['cat'])
+        verdana_big.text('Options - ' + str(the_cat.name), ('center', 80))
         button_count = 0
         x_value = 'center'
         y_value = 150
         y_change = 50
         buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='See Family',
-                            cur_screen='see kits screen', hotkey=[button_count+1])
+                            text='Change Name',
+                            cur_screen='change name screen')
         button_count += 1
-        
+        game.switches['name_cat'] = the_cat.ID
         buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='Family Tree', hotkey=[button_count+1])
+                            text='See Family',
+                            cur_screen='see kits screen')
         button_count += 1
-        
-        buttons.draw_button((x_value, y_value + button_count * y_change), text='See Relationships', cur_screen='relationship screen', hotkey=[button_count+1])
-        button_count += 1
-        
-        if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not the_cat.dead:
-            buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Pick mate for ' + str(the_cat.name),
-                                cur_screen='choose mate screen', hotkey=[button_count+1])
-            button_count += 1
-            
+
         if the_cat.status == 'apprentice' and not the_cat.dead:
             game.switches['apprentice'] = the_cat
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Change Mentor',
-                                cur_screen='choose mentor screen', hotkey=[button_count+1])
+                                cur_screen='choose mentor screen')
             button_count += 1
-            
+
         buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='Back',
-                            cur_screen='profile screen', hotkey=[0])
-            
-            
-    def roles_tab(self):
-        buttons.draw_button((10,10), text="Relations Tab", options_tab="Relations Tab", hotkey=[11])
-        buttons.draw_button((150,10), text="Roles Tab", available=False)
-        buttons.draw_button((260,10), text="Personal Tab", options_tab="Personal Tab", hotkey=[13])
-        buttons.draw_button((-10,10), text="Dangerous Tab", options_tab="Dangerous Tab", hotkey=[14])
-        
-        the_cat = cat_class.all_cats.get(game.switches['cat'])
-        button_count = 0
-        x_value = 'center'
-        y_value = 150
-        y_change = 50
+                            text='Family Tree')
+        button_count += 1
+
+        buttons.draw_button((x_value, y_value + button_count * y_change), text='See Relationships', cur_screen='relationship screen')
+        button_count += 1
+
+        if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
+                           ] and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change),
+                                text='Pick mate for ' + str(the_cat.name),
+                                cur_screen='choose mate screen')
+            button_count += 1
+
+            if the_cat.age in ['young adult', 'adult', 'senior adult'
+                               ] and not the_cat.no_kits:
+                buttons.draw_button(
+                    (x_value, y_value + button_count * y_change),
+                    text='Prevent kits',
+                    no_kits=True,
+                    cat_value=the_cat)
+                button_count += 1
+
+            elif the_cat.age in ['young adult', 'adult', 'senior adult'
+                                 ] and the_cat.no_kits:
+                buttons.draw_button(
+                    (x_value, y_value + button_count * y_change),
+                    text='Allow kits',
+                    no_kits=False,
+                    cat_value=the_cat)
+                button_count += 1
+
         if game.switches['new_leader'] is not False and game.switches[
                 'new_leader'] is not None:
             game.clan.new_leader(game.switches['new_leader'])
@@ -2421,7 +2405,7 @@ class OptionsScreen(Screens):
                               ] and not the_cat.dead and game.clan.leader.dead:
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Promote to Leader',
-                                new_leader=the_cat, hotkey=[button_count+1])
+                                new_leader=the_cat)
             button_count += 1
 
         elif the_cat.status in [
@@ -2429,13 +2413,13 @@ class OptionsScreen(Screens):
         ] and not the_cat.dead and game.clan.deputy is None:
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Promote to Deputy',
-                                deputy_switch=the_cat, hotkey=[button_count+1])
+                                deputy_switch=the_cat)
             button_count += 1
 
         elif the_cat.status in ['deputy'] and not the_cat.dead:
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Demote from Deputy',
-                                deputy_switch=the_cat, hotkey=[button_count+1])
+                                deputy_switch=the_cat)
             button_count += 1
 
         elif the_cat.status in ['warrior'
@@ -2444,130 +2428,30 @@ class OptionsScreen(Screens):
                 buttons.draw_button(
                     (x_value, y_value + button_count * y_change),
                     text='Promote to Deputy',
-                    deputy_switch=the_cat, hotkey=[button_count+1])
+                    deputy_switch=the_cat)
                 button_count += 1
-                
-        if the_cat.status in ['apprentice'] and not the_cat.dead:
-            buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Switch to medicine cat apprentice',
-                                apprentice_switch=the_cat, hotkey=[button_count+1])
-            button_count += 1
-        elif the_cat.status in ['medicine cat apprentice'
-                                ] and not the_cat.dead:
-            buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Switch to warrior apprentice',
-                                apprentice_switch=the_cat, hotkey=[button_count+1])
-            button_count += 1
-        elif the_cat.status == 'warrior' and not the_cat.dead:
-            buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Switch to medicine cat',
-                                apprentice_switch=the_cat, hotkey=[button_count+1])
-            button_count += 1
-        elif the_cat.status == 'medicine cat' and not the_cat.dead:
-            buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Switch to warrior',
-                                apprentice_switch=the_cat, hotkey=[button_count+1])
-            button_count += 1
-            
-        buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='Back',
-                            cur_screen='profile screen', hotkey=[0])
-        
-    def personal_tab(self):
-        buttons.draw_button((10,10), text="Relations Tab", options_tab="Relations Tab", hotkey=[11])
-        buttons.draw_button((150,10), text="Roles Tab", options_tab="Roles Tab", hotkey=[12])
-        buttons.draw_button((260,10), text="Personal Tab", available=False)
-        buttons.draw_button((-10,10), text="Dangerous Tab", options_tab="Dangerous Tab", hotkey=[14])
-        
-        the_cat = cat_class.all_cats.get(game.switches['cat'])
-        button_count = 0
-        x_value = 'center'
-        y_value = 150
-        y_change = 50
-        
-        buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='Change Name',
-                            cur_screen='change name screen', hotkey=[button_count+1])
-        button_count += 1
-        game.switches['name_cat'] = the_cat.ID
-        
         if the_cat.genderalign == "female":
-            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Trans Male', cat_value=game.switches['cat'], hotkey=[button_count+1])
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Trans Male', cat_value=game.switches['cat'])
             button_count += 1
-            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Nonbinary', cat_value=game.switches['cat'], hotkey=[button_count+1])
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Nonbinary', cat_value=game.switches['cat'])
             button_count += 1
         elif the_cat.genderalign == "male":
-            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Trans Female', cat_value=game.switches['cat'], hotkey=[button_count+1])
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Trans Female', cat_value=game.switches['cat'])
             button_count += 1
-            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Nonbinary', cat_value=game.switches['cat'], hotkey=[button_count+1])
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change to Nonbinary', cat_value=game.switches['cat'])
             button_count += 1
         elif the_cat.genderalign == "nonbinary":
-            buttons.draw_button((x_value, y_value + button_count * y_change),text='Specify Gender', cur_screen='change gender screen', hotkey=[button_count+1])
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Specify Gender', cur_screen='change gender screen')
             button_count += 1
         if the_cat.genderalign != "female" and the_cat.genderalign != "male":
-            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change Back to Cisgender', cat_value=game.switches['cat'], hotkey=[button_count+1])
+            buttons.draw_button((x_value, y_value + button_count * y_change),text='Change Back to Cisgender', cat_value=game.switches['cat'])
             button_count += 1
-            
-        if the_cat.age in ['young adult', 'adult', 'senior adult'] and not the_cat.no_kits:
-                buttons.draw_button(
-                    (x_value, y_value + button_count * y_change),
-                    text='Prevent kits',
-                    no_kits=True,
-                    cat_value=the_cat, hotkey=[button_count+1])
-                button_count += 1
-
-        elif the_cat.age in ['young adult', 'adult', 'senior adult'] and the_cat.no_kits:
-                buttons.draw_button(
-                    (x_value, y_value + button_count * y_change),
-                    text='Allow kits',
-                    no_kits=False,
-                    cat_value=the_cat, hotkey=[button_count+1])
-                button_count += 1
-        
-        buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='Back',
-                            cur_screen='profile screen', hotkey=[0])
-        
-    def dangerous_tab(self):
-        buttons.draw_button((10,10), text="Relations Tab", options_tab="Relations Tab", hotkey=[1])
-        buttons.draw_button((150,10), text="Roles Tab", options_tab="Roles Tab", hotkey=[2])
-        buttons.draw_button((260,10), text="Personal Tab", options_tab="Personal Tab", hotkey=[3])
-        buttons.draw_button((-10,10), text="Dangerous Tab", available=False)
-        
-        the_cat = cat_class.all_cats.get(game.switches['cat'])
-        button_count = 0
-        x_value = 'center'
-        y_value = 150
-        y_change = 50
-        
         if not the_cat.dead:
-            buttons.draw_button((375-50, 650), text='Kill Cat', kill_cat=the_cat, hotkey=[11])
-            buttons.draw_button((375+30, 650), text='Exile Cat', cat_value = game.switches['cat'], hotkey=[12])
+            buttons.draw_button((375-50, 650), text='Kill Cat', kill_cat=the_cat)
+            buttons.draw_button((375+30, 650), text='Exile Cat', cat_value = game.switches['cat'])
         elif the_cat.dead and not the_cat.exiled:
-            buttons.draw_button((x_value, 600), text='Exile to Dark Forest', cat_value = game.switches['cat'], hotkey=[11])
-        
-        buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='Back',
-                            cur_screen='profile screen', hotkey=[0])
-        
-    def on_use(self):
-        the_cat = cat_class.all_cats.get(game.switches['cat'])
-        verdana_big.text('Options - ' + str(the_cat.name), ('center', 40))
-        button_count = 0
-        x_value = 'center'
-        y_value = 150
-        y_change = 50
-        
-        if game.switches['options_tab'] == "Relations Tab":
-            self.relations_tab()
-        elif game.switches['options_tab'] == "Roles Tab":
-            self.roles_tab()
-        elif game.switches['options_tab'] == "Personal Tab":
-            self.personal_tab()
-        elif game.switches['options_tab'] == "Dangerous Tab":
-            self.dangerous_tab()
-        else:
-            self.relations_tab()
+            buttons.draw_button((x_value, 600), text='Exile to Dark Forest', cat_value = game.switches['cat'])
+
 
         if game.switches['deputy_switch'] is not False and game.switches[
                 'deputy_switch'] is not None and game.switches[
@@ -2611,6 +2495,31 @@ class OptionsScreen(Screens):
                 'kill_cat'] is not None:
             events_class.dies(game.switches['kill_cat'])
             game.switches['kill_cat'] = False
+
+        if the_cat.status in ['apprentice'] and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change),
+                                text='Switch to medicine cat apprentice',
+                                apprentice_switch=the_cat)
+            button_count += 1
+        elif the_cat.status in ['medicine cat apprentice'
+                                ] and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change),
+                                text='Switch to warrior apprentice',
+                                apprentice_switch=the_cat)
+            button_count += 1
+        elif the_cat.status == 'warrior' and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change),
+                                text='Switch to medicine cat',
+                                apprentice_switch=the_cat)
+            button_count += 1
+        elif the_cat.status == 'medicine cat' and not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change),
+                                text='Switch to warrior',
+                                apprentice_switch=the_cat)
+            button_count += 1
+        buttons.draw_button((x_value, y_value + button_count * y_change),
+                            text='Back',
+                            cur_screen='profile screen')
 
 
 class StatsScreen(Screens):
@@ -2863,10 +2772,10 @@ class RelationshipScreen(Screens):
         # page buttons
         verdana.text('page ' + str(game.switches['list_page']) + ' / ' + str(all_pages), ('center', 640))
         if game.switches['list_page'] > 1:
-            buttons.draw_button((300, 640), text='<',list_page=game.switches['list_page'] - 1, hotkey=[23])
+            buttons.draw_button((300, 640), text='<',list_page=game.switches['list_page'] - 1)
         if game.switches['list_page'] < all_pages:
 
-            buttons.draw_button((-300, 640), text='>',list_page=game.switches['list_page'] + 1, hotkey=[21])
+            buttons.draw_button((-300, 640), text='>',list_page=game.switches['list_page'] + 1)
         # buttons.draw_button(('center', -100), text='Back',cur_screen='profile screen')
         buttons.draw_button(('center', 670), text='Back',cur_screen='profile screen')
 
@@ -2915,8 +2824,8 @@ class RelationshipEventScreen(Screens):
         draw_menu_buttons()
 
         if len(game.relation_events_list) > game.max_relation_events_displayed:
-            buttons.draw_button((720, 150), image=game.up, arrow="UP", hotkey=[20])
-            buttons.draw_button((700, 550), image=game.down, arrow="DOWN", hotkey=[22])
+            buttons.draw_button((720, 150), image=game.up, arrow="UP")
+            buttons.draw_button((700, 550), image=game.down, arrow="DOWN")
 
     def screen_switches(self):
         cat_profiles
@@ -2965,16 +2874,16 @@ def cat_profiles():
 
 
 def draw_menu_buttons():
-    buttons.draw_button((260, 70), text='EVENTS', cur_screen='events screen', hotkey=[2])
-    buttons.draw_button((340, 70), text='CLAN', cur_screen='clan screen', hotkey=[3])
+    buttons.draw_button((260, 70), text='EVENTS', cur_screen='events screen')
+    buttons.draw_button((340, 70), text='CLAN', cur_screen='clan screen')
     buttons.draw_button((400, 70),
                         text='STARCLAN',
-                        cur_screen='starclan screen', hotkey=[4])
-    buttons.draw_button((500, 70), text='PATROL', cur_screen='patrol screen', hotkey=[5])
+                        cur_screen='starclan screen')
+    buttons.draw_button((500, 70), text='PATROL', cur_screen='patrol screen')
     buttons.draw_button((50, 50),
                         text='< Back to Main Menu',
-                        cur_screen='start screen', hotkey=[0])
-    buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen', hotkey=[6])
-    buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen', hotkey=[7])
-    buttons.draw_button((-70, 110), text='Map', cur_screen='map screen', available=mapavailable, hotkey=[8])
-    buttons.draw_button((50, 80), text='Stats', cur_screen='stats screen', hotkey=[1])
+                        cur_screen='start screen')
+    buttons.draw_button((-70, 50), text='List Cats', cur_screen='list screen')
+    buttons.draw_button((-70, 80), text='Allegiances', cur_screen='allegiances screen')
+    buttons.draw_button((-70, 110), text='Map', cur_screen='map screen', available=mapavailable)
+    buttons.draw_button((50, 80), text='Stats', cur_screen='stats screen')
