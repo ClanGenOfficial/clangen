@@ -35,12 +35,12 @@ class Events(object):
                     if cat.moons > randint(100,200):
                         if choice([1, 2, 3, 4, 5]) == 1:
                             cat.dead = True
-                    if cat.exiled == 'leader' and randint(1, 10) == 1:
+                    if cat.exiled and cat.status == 'leader' and randint(1, 10) == 1:
                         game.clan.leader_lives -= 1
                         if game.clan.leader_lives <= 0:
                             cat.dead = True
                             game.clan.leader_lives = 0
-                    elif cat.exiled == 'leader' and randint(1, 30) == 1:
+                    elif cat.exiled and cat.status == 'leader' and randint(1, 45) == 1:
                         game.clan.leader_lives -= 10
                         cat.dead = True
                         game.clan.leader_lives = 0
@@ -379,9 +379,9 @@ class Events(object):
                     game.clan.add_cat(warrior)
                     Akit_text = ([f'{parent1} finds an abandoned litter and decides to adopt them',
                                     f'A loner leaves their litter to the clan. {str(parent1)} decides to adopt them as their own',
-                                    f'A {str(choice(game.clan.all_clans).name)}Clan queen named {str(warrior.name)} decides to leave their litter with you. {str(parent1)} adopts them'])
+                                    f'A {str(choice(game.clan.all_clans).name)}Clan queen decides to leave their litter with you. {str(parent1)} adopts them'])
                 else:
-                    Akit_text = ([f'{parent1} finds an abandoned litter and decides to adopt them',
+                    Akit_text = ([f'{parent1} finds an abandoned litter and decides to adopt them as their own',
                                     f'A loner leaves their litter to the clan. {str(parent1)} decides to adopt them as their own'])
                 game.cur_events_list.append(choice(Akit_text))
                 self.check_age(kit) 
