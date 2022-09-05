@@ -206,6 +206,14 @@ while True:
                 game.keyspressed.append(18)
             if keys[pygame.K_KP9]:
                 game.keyspressed.append(19)
+            if keys[pygame.K_UP]:
+                game.keyspressed.append(20)
+            if keys[pygame.K_RIGHT]:
+                game.keyspressed.append(21)
+            if keys[pygame.K_DOWN]:
+                game.keyspressed.append(22)
+            if keys[pygame.K_LEFT]:
+                game.keyspressed.append(23)
 
     # SCREENS
     game.all_screens[game.current_screen].on_use()
