@@ -163,7 +163,7 @@ for x in [
         'tortiecolours2', 'tortiesextra2', 'rosettecolours', 'rosetteextra',
         'smokecolours', 'smokeextra', 'tickedcolors', 'tickedextra',
         'whitepatchesryos', 'whitepatchesryosextra', 'whitepatchesbeejeans', 'whitepatchesbeejeansextra',
-        'Newscars_white', 'Newscarsextra_white', 'shaders'
+        'Newscars_white', 'Newscarsextra_white', 'shaders', 'lineartdead'
 ]:
     sprites.spritesheet(f"sprites/{x}.png", x)
 
@@ -184,6 +184,8 @@ sprites.make_group('Paralyzed_lineart', (0, 0),
                    sprites_x=1,
                    sprites_y=1)
 sprites.make_group('shaders', (0, 0), 'shaders', sprites_y=5)
+sprites.make_group('lineartdead', (0, 0), 'lineartdead', sprites_y=5)
+
 
 
 for a, i in enumerate(

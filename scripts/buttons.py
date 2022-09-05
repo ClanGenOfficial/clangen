@@ -176,6 +176,7 @@ class Button(object):
                 elif text == 'Exile Cat':
                     cat_class.all_cats[cat_value].exiled = True
                     cat_class.other_cats[cat_value] =  cat_class.all_cats[cat_value]
+                    game.switches['cur_screen'] = 'other screen'
                 elif text == 'Change to Trans Male':
                     cat_class.all_cats[cat_value].genderalign = "trans male"
                 elif text == 'Change to Trans Female':

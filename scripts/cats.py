@@ -1178,16 +1178,21 @@ class Cat(object):
             new_sprite.blit(sprites.sprites['eyes' + self.eye_colour + str(self.age_sprites[self.age])], (0, 0))
         game.switches['error_message'] = 'There was an error loading a cat\'s shader sprites. Last cat read was ' + str(self)
         # draw line art
-        if game.settings['shaders']:
+        if game.settings['shaders'] and not self.dead:
             if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
                 new_sprite.blit(sprites.sprites['shaders' + str(self.age_sprites[self.age] + 9)], (0, 0))
             else:
                 new_sprite.blit(sprites.sprites['shaders' + str(self.age_sprites[self.age])], (0, 0))
-        else:
+        elif not self.dead:
             if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
                 new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age] + 9)], (0, 0))
             else:
                 new_sprite.blit(sprites.sprites['lines' + str(self.age_sprites[self.age])], (0, 0))
+        elif self.dead:
+            if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
+                new_sprite.blit(sprites.sprites['lineartdead' + str(self.age_sprites[self.age] + 9)], (0, 0))
+            else:
+                new_sprite.blit(sprites.sprites['lineartdead' + str(self.age_sprites[self.age])], (0, 0))
 
         game.switches['error_message'] = 'There was an error loading a cat\'s skin and second set of scar sprites. Last cat read was ' + str(self)
         # draw skin and scars2 and scars3
