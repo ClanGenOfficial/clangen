@@ -1,9 +1,9 @@
 import sys
 import os
-from scripts.screens import *
-
+from os import path
 if sys.platform == "darwin":
-    os.chdir("/Applications/Clangen.app/Contents/Resources/")
+    os.chdir(os.path.dirname(__file__))
+from scripts.screens import *
 
 # P Y G A M E
 clock = pygame.time.Clock()
