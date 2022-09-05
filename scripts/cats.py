@@ -1057,8 +1057,8 @@ class Cat(object):
         self.all_cats[self.ID] = self
 
     def is_valid_mentor(self, potential_mentor):
-        # Dead cats can't be mentors
-        if potential_mentor.dead:
+        # Dead or exiled cats can't be mentors
+        if potential_mentor.dead and not potential_mentor.exiled:
             return False
         # Match jobs
         if self.status == 'medicine cat apprentice' and potential_mentor.status != 'medicine cat':
@@ -1080,7 +1080,7 @@ class Cat(object):
                 return
         old_mentor = self.mentor
         # Should only have mentor if alive and some kind of apprentice
-        if 'apprentice' in self.status and not self.dead:
+        if 'apprentice' in self.status and not self.dead and not self.exiled:
             # Need to pick a random mentor if not specified
             if new_mentor is None:
                 potential_mentors = []

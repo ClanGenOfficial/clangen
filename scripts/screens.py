@@ -1791,10 +1791,11 @@ class PatrolScreen(Screens):
             ('center', 445))
 
         if game.patrol_cats[game.switches['cat']].status == 'apprentice':
-            verdana_small.text(
-                'mentor: ' +
-                str(game.patrol_cats[game.switches['cat']].mentor.name),
-                ('center', 465))
+            if game.switches['cat'].mentor is not None:
+                verdana_small.text(
+                    'mentor: ' +
+                    str(game.patrol_cats[game.switches['cat']].mentor.name),
+                    ('center', 465))
 
         if len(game.switches['current_patrol']) < 6:
             buttons.draw_button(
