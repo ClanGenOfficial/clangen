@@ -386,7 +386,7 @@ class Relationship(object):
         """Add the other relationship object to this easly access and change the other side."""
         opposite_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_to.relationships))
         if opposite_relationship is not None or len(opposite_relationship) > 0:
-            self.opposit_relationship = opposite_relationship
+            self.opposit_relationship = opposite_relationship[0]
 
     def start_action(self):
         """This function checks current state of relationship and decides which actions can happen."""
@@ -761,17 +761,18 @@ class Relationship(object):
         # opposit relationship
         if self.opposit_relationship == None:
             self.link_relationship()
-        self.opposit_relationship.romantic_love = upper_bound if self.opposit_relationship.romantic_love > upper_bound else self.opposit_relationship.romantic_love
-        self.opposit_relationship.romantic_love = lower_bound if self.opposit_relationship.romantic_love < lower_bound else self.opposit_relationship.romantic_love
-        self.opposit_relationship.platonic_like = upper_bound if self.opposit_relationship.platonic_like > upper_bound else self.opposit_relationship.platonic_like
-        self.opposit_relationship.platonic_like = lower_bound if self.opposit_relationship.platonic_like < lower_bound else self.opposit_relationship.platonic_like
-        self.opposit_relationship.dislike = upper_bound if self.opposit_relationship.dislike > upper_bound else self.opposit_relationship.dislike
-        self.opposit_relationship.dislike = lower_bound if self.opposit_relationship.dislike < lower_bound else self.opposit_relationship.dislike
-        self.opposit_relationship.admiration = upper_bound if self.opposit_relationship.admiration > upper_bound else self.opposit_relationship.admiration
-        self.opposit_relationship.admiration = lower_bound if self.opposit_relationship.admiration < lower_bound else self.opposit_relationship.admiration
-        self.opposit_relationship.comfortable = upper_bound if self.opposit_relationship.comfortable > upper_bound else self.opposit_relationship.comfortable
-        self.opposit_relationship.comfortable = lower_bound if self.opposit_relationship.comfortable < lower_bound else self.opposit_relationship.comfortable
-        self.opposit_relationship.trust = upper_bound if self.opposit_relationship.trust > upper_bound else self.opposit_relationship.trust
-        self.opposit_relationship.trust = lower_bound if self.opposit_relationship.trust < lower_bound else self.opposit_relationship.trust
-        self.opposit_relationship.jealousy = upper_bound if self.opposit_relationship.jealousy > upper_bound else self.opposit_relationship.jealousy
-        self.opposit_relationship.jealousy = lower_bound if self.opposit_relationship.jealousy < lower_bound else self.opposit_relationship.jealousy
+        if len(self.opposit_relationship) > 0 and self.opposit_relationship is not None:
+            self.opposit_relationship.romantic_love = upper_bound if self.opposit_relationship.romantic_love > upper_bound else self.opposit_relationship.romantic_love
+            self.opposit_relationship.romantic_love = lower_bound if self.opposit_relationship.romantic_love < lower_bound else self.opposit_relationship.romantic_love
+            self.opposit_relationship.platonic_like = upper_bound if self.opposit_relationship.platonic_like > upper_bound else self.opposit_relationship.platonic_like
+            self.opposit_relationship.platonic_like = lower_bound if self.opposit_relationship.platonic_like < lower_bound else self.opposit_relationship.platonic_like
+            self.opposit_relationship.dislike = upper_bound if self.opposit_relationship.dislike > upper_bound else self.opposit_relationship.dislike
+            self.opposit_relationship.dislike = lower_bound if self.opposit_relationship.dislike < lower_bound else self.opposit_relationship.dislike
+            self.opposit_relationship.admiration = upper_bound if self.opposit_relationship.admiration > upper_bound else self.opposit_relationship.admiration
+            self.opposit_relationship.admiration = lower_bound if self.opposit_relationship.admiration < lower_bound else self.opposit_relationship.admiration
+            self.opposit_relationship.comfortable = upper_bound if self.opposit_relationship.comfortable > upper_bound else self.opposit_relationship.comfortable
+            self.opposit_relationship.comfortable = lower_bound if self.opposit_relationship.comfortable < lower_bound else self.opposit_relationship.comfortable
+            self.opposit_relationship.trust = upper_bound if self.opposit_relationship.trust > upper_bound else self.opposit_relationship.trust
+            self.opposit_relationship.trust = lower_bound if self.opposit_relationship.trust < lower_bound else self.opposit_relationship.trust
+            self.opposit_relationship.jealousy = upper_bound if self.opposit_relationship.jealousy > upper_bound else self.opposit_relationship.jealousy
+            self.opposit_relationship.jealousy = lower_bound if self.opposit_relationship.jealousy < lower_bound else self.opposit_relationship.jealousy
