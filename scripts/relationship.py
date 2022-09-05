@@ -761,7 +761,7 @@ class Relationship(object):
         # opposit relationship
         if self.opposit_relationship == None:
             self.link_relationship()
-        if len(self.opposit_relationship) > 0 and self.opposit_relationship is not None:
+        if self.opposit_relationship is not None:
             self.opposit_relationship.romantic_love = upper_bound if self.opposit_relationship.romantic_love > upper_bound else self.opposit_relationship.romantic_love
             self.opposit_relationship.romantic_love = lower_bound if self.opposit_relationship.romantic_love < lower_bound else self.opposit_relationship.romantic_love
             self.opposit_relationship.platonic_like = upper_bound if self.opposit_relationship.platonic_like > upper_bound else self.opposit_relationship.platonic_like
