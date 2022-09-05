@@ -53,14 +53,49 @@ class Button(object):
             new_pos[1] = screen_y + pos[1] - button.get_height()
         return new_pos
 
-    def draw_button(self, pos, available=True, image=None, text='', cat_value=None, arrow=None, apprentice=None, **values):
+    def draw_button(self, pos, available=True, image=None, text='', cat_value=None, arrow=None, apprentice=None, hotkey=None, **values):
         dynamic_image = False
         if image is not None and text != '' and text is not None:
             dynamic_image = True
             image = f"resources/{image}"
         colour = self.frame_colour if available else self.unavailable_colour
         if image is None:
-            new_button = pygame.Surface((self.font.text(text) + self.padding[0] * 2, self.font.size + self.padding[1] * 2))
+            if game.settings['hotkey display'] and hotkey is not None:
+                hotkey_text = text
+                for i in hotkey:
+                    if i == 10:
+                        hotkey_text = hotkey_text + " NP0"
+                    elif i == 11:
+                        hotkey_text = hotkey_text + " NP1"
+                    elif i == 12:
+                        hotkey_text = hotkey_text + " NP2"
+                    elif i == 13:
+                        hotkey_text = hotkey_text + " NP3"
+                    elif i == 14:
+                        hotkey_text = hotkey_text + " NP4"
+                    elif i == 15:
+                        hotkey_text = hotkey_text + " NP5"
+                    elif i == 16:
+                        hotkey_text = hotkey_text + " NP6"
+                    elif i == 17:
+                        hotkey_text = hotkey_text + " NP7"
+                    elif i == 18:
+                        hotkey_text = hotkey_text + " NP8"
+                    elif i == 19:
+                        hotkey_text = hotkey_text + " NP9"
+                    elif i == 20:
+                        hotkey_text = hotkey_text + " ^"
+                    elif i == 21:
+                        hotkey_text = hotkey_text + " >"
+                    elif i == 22:
+                        hotkey_text = hotkey_text + " v"
+                    elif i == 23:
+                        hotkey_text = hotkey_text + " <"
+                    else:
+                        hotkey_text = hotkey_text + " " + str(i)
+                new_button = pygame.Surface((self.font.text(hotkey_text) + self.padding[0] * 2, self.font.size + self.padding[1] * 2))
+            else:
+                new_button = pygame.Surface((self.font.text(text) + self.padding[0] * 2, self.font.size + self.padding[1] * 2))
 
         elif dynamic_image:
             new_button = pygame.image.load(f"{image}.png")
@@ -84,8 +119,12 @@ class Button(object):
             if dynamic_image:
                 image = f'{image}_hover'
         if image is None:
-            new_button.fill(colour)
-            self.font.text(text, (self.padding[0], 0), new_button)
+            if game.settings['hotkey display'] and hotkey is not None:
+                new_button.fill(colour)
+                self.font.text(hotkey_text, (self.padding[0], 0), new_button)
+            else:
+                new_button.fill(colour)
+                self.font.text(text, (self.padding[0], 0), new_button)
         elif dynamic_image:
             new_button = pygame.image.load(f"{image}.png")
             new_button = pygame.transform.scale(new_button, (192, 35))
@@ -120,6 +159,37 @@ class Button(object):
                 self.activate(values, cat_value)
             else:
                 self.activate(values, arrow=arrow)
+        if available and hotkey is not None:
+            if hotkey == game.keyspressed:
+                if apprentice is not None:
+                    self.choose_mentor(apprentice, cat_value)
+                elif text == ' Change Name ' and game.switches['naming_text'] != '':
+                    self.change_name(game.switches['naming_text'], game.switches['name_cat'])
+                elif text == ' Change Gender ' and game.switches['naming_text'] != '':
+                    self.change_gender(game.switches['naming_text'], game.switches['name_cat'])
+                elif text in ['Next Cat', 'Previous Cat']:
+                    game.switches['cat'] = values.get('cat')
+                elif text == 'Prevent kits':
+                    cat_value.no_kits = True
+                elif text == 'Allow kits':
+                    cat_value.no_kits = False
+                elif text == 'Exile Cat':
+                    cat_class.all_cats[cat_value].exiled = True
+                    cat_class.other_cats[cat_value] =  cat_class.all_cats[cat_value]
+                elif text == 'Change to Trans Male':
+                    cat_class.all_cats[cat_value].genderalign = "trans male"
+                elif text == 'Change to Trans Female':
+                    cat_class.all_cats[cat_value].genderalign = "trans female"
+                elif text == 'Change to Nonbinary':
+                    cat_class.all_cats[cat_value].genderalign = "nonbinary"
+                elif text == 'Change Back to Cisgender':
+                    cat_class.all_cats[cat_value].genderalign = cat_class.all_cats[cat_value].gender
+                elif cat_value is None and arrow is None:
+                    self.activate(values)
+                elif arrow is None:
+                    self.activate(values, cat_value)
+                else:
+                    self.activate(values, arrow=arrow)
 
     def activate(self, values=None, cat_value=None, arrow=None):
         if values is None:
