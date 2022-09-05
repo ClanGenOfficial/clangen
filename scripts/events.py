@@ -15,11 +15,13 @@ class Events(object):
         self.at_war = False
         self.enemy_clan = None
         self.living_cats = 0
+        self.new_cat_invited = False
 
     def one_moon(self):
         if game.switches['timeskip']:
             game.switches['save_clan'] = False
             self.living_cats = 0
+            self.new_cat_invited = False
             game.patrolled.clear()
             for cat in cat_class.all_cats.copy().values():
                 if not cat.dead and not cat.exiled:
@@ -67,7 +69,8 @@ class Events(object):
         cat.in_camp = 1
         self.perform_ceremonies(cat)
         self.handle_relationships(cat)
-        self.invite_new_cats(cat)
+        if self.new_cat_invited == False or len(self.living_cats) < 10:
+            self.invite_new_cats(cat)
         self.have_kits(cat)
         self.other_interactions(cat)
         self.gain_scars(cat)
@@ -280,6 +283,7 @@ class Events(object):
         elif self.living_cats > 30:
             chance = 300
         if randint(1, chance) == 1 and cat.age != 'kitten':
+            self.new_cat_invited = True
             name = str(cat.name)
             type_of_new_cat = choice([1, 2, 3, 4, 5, 6, 7])
             if type_of_new_cat == 1:
