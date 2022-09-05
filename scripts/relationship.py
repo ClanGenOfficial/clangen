@@ -618,7 +618,7 @@ class Relationship(object):
         if action in INCREASE['from']['jealousy']:
             self.jealousy += number_increase
             self.current_changes_from.append('+ ' + str(number_increase) + ' jeal. ')
-            self.effect = 'positive effect'
+            self.effect = 'negative effect'
         if action in INCREASE['from']['trust']:
             self.trust += number_increase
             self.current_changes_from.append('+ ' + str(number_increase) + ' trust ')
@@ -656,7 +656,7 @@ class Relationship(object):
         if action in DECREASE['from']['jealousy']:
             self.jealousy -= number_decrease
             self.current_changes_from.append('- ' + str(number_decrease) + ' jeal. ')
-            self.effect = 'negative effect'
+            self.effect = 'positive effect'
 
         self.cut_boundries()
 
