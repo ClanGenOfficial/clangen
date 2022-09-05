@@ -6,6 +6,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
+      - run: "brew install python-tk@3.10"
       - run: "pip3 install -r requirements.txt"
       - run: "pip3 install pyinstaller pillow"
       - run: "pyinstaller Clangen.spec"
