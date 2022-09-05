@@ -868,7 +868,7 @@ class Patrol(object):
             relationships = []
             for cat_id in game.clan.clan_cats:
                 the_cat = cat_class.all_cats.get(cat_id)
-                if the_cat.dead:
+                if the_cat.dead or the_cat.exiled:
                     continue
                 the_cat.relationships.append(Relationship(the_cat,kit))
                 relationships.append(Relationship(kit,the_cat))
@@ -891,7 +891,7 @@ class Patrol(object):
             relationships = []
             for cat_id in game.clan.clan_cats:
                 the_cat = cat_class.all_cats.get(cat_id)
-                if the_cat.dead:
+                if the_cat.dead or the_cat.exiled:
                     continue
                 the_cat.relationships.append(Relationship(the_cat,kit))
                 relationships.append(Relationship(kit,the_cat))
@@ -915,7 +915,7 @@ class Patrol(object):
                     relationships = []
                     for cat_id in game.clan.clan_cats:
                         the_cat = cat_class.all_cats.get(cat_id)
-                        if the_cat.dead:
+                        if the_cat.dead or the_cat.exiled:
                             continue
                         if the_cat.ID in [kit2.parent1, kit2.parent2]:
                             kit2.relationships.append(Relationship(kit,kit2,False,True))
@@ -936,7 +936,7 @@ class Patrol(object):
             relationships = []
             for cat_id in game.clan.clan_cats:
                 the_cat = cat_class.all_cats.get(cat_id)
-                if the_cat.dead:
+                if the_cat.dead or the_cat.exiled:
                     continue
                 the_cat.relationships.append(Relationship(the_cat,kit))
                 relationships.append(Relationship(kit,the_cat))
