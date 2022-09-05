@@ -2744,7 +2744,7 @@ class RelationshipScreen(Screens):
             verdana_small.text(f"{str(the_cat.genderalign)}  - {str(the_cat.age)}", ('center', 40))
 
         # make a list of the relationships
-        relationships = list(set(the_cat.relationships))
+        relationships = the_cat.relationships
 
         # pages
         all_pages = 1  # amount of pages

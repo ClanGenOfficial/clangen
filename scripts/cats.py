@@ -996,8 +996,8 @@ class Cat(object):
 
                 if self.parent1 is not None and self.parent2 is not None and \
                     the_cat.parent1 is not None and the_cat.parent2 is not None:
-                        are_parents = the_cat in [self.parent1, self.parent2]
-                        parents = are_parents or self in [the_cat.parent1, the_cat.parent2]
+                        are_parents = the_cat.ID in [self.parent1, self.parent2]
+                        parents = are_parents or self.ID in [the_cat.parent1, the_cat.parent2]
                         siblings = self.parent1 in [the_cat.parent1, the_cat.parent2] or self.parent2 in [the_cat.parent1, the_cat.parent2]
                 
                 related = parents or siblings
@@ -1584,11 +1584,11 @@ class Cat(object):
             color_name = color_name + ' rosetted'
         elif self.pelt.name == "Ticked":
             color_name = color_name + ' ticked tabby'
-        if color_name == 'white' and self.pelt.name is "Smoke":
+        if color_name == 'white' and self.pelt.name == "Smoke":
             color_name = 'black tipped white'
-        elif color_name == 'palegrey' and self.pelt.name is "Smoke":
+        elif color_name == 'palegrey' and self.pelt.name == "Smoke":
             color_name = 'lilac silver shaded'
-        elif color_name == 'silver' and self.pelt.name is "Smoke":
+        elif color_name == 'silver' and self.pelt.name == "Smoke":
             color_name = 'blue silver shaded'
         elif self.pelt.name == "Smoke" and color_name is not ['black tipped white', 'lilac silver shaded', 'blue silver shaded']:
             color_name = color_name + ' smoke'

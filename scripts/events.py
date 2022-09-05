@@ -790,8 +790,8 @@ class Events(object):
                             if the_cat.dead:
                                 continue
                             if the_cat.ID in [kit.parent1, kit.parent2]:
-                                cat.relationships.append(Relationship(cat,kit,False,True))
-                                relationships.append(Relationship(kit,cat,False,True))
+                                cat.relationships.append(Relationship(the_cat,kit,False,True))
+                                relationships.append(Relationship(kit,the_cat,False,True))
                             else:
                                 the_cat.relationships.append(Relationship(the_cat,kit))
                                 relationships.append(Relationship(kit,the_cat))
