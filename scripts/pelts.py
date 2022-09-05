@@ -24,8 +24,8 @@ class TwoColour(object):
         'VANCREAMY', 'ANY2CREAMY', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO',
         'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO', 'TIP', 'FANCY',
         'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL',
-        'BLAZE', 'PRINCE', 'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN',
-        'MISTER', 'BELLY', 'TOES', 'BROKENBLAZE'
+        'BLAZE', 'PRINCE', 'BIB', 'VEE', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN',
+        'MISTER', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE'
     ]
 
     def __init__(self, colour, length):
@@ -138,7 +138,7 @@ class Smoke(object):
 
 
 class Ticked(object):
-    name = "Smoke"
+    name = "Ticked"
     sprites = {1: 'ticked', 2: 'white'}
     white_patches = [
         'ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY', 'TUXEDO', 'LITTLE', 'VAN',
@@ -340,11 +340,11 @@ scars5 = ["SNAKE"
 pelt_names_F = [
     "SingleColour", "SingleColour", "TwoColour", "Tabby", "Tortie", "Calico",
     "Tabby", "TwoColour", "Speckled", "Tabby2", "Speckled2", 'Tortie2',
-    'Rosette', 'Smoke', 'Ticked', 'Calico2'
+    "Rosette", "Smoke", "Ticked", "Calico2"
 ]
 pelt_names_M = [
     "SingleColour", "SingleColour", "TwoColour", "Tabby", "Tabby", "Speckled",
-    "TwoColour", "Tabby2", "Speckled2", 'Rosette', 'Smoke', 'Ticked'
+    "TwoColour", "Tabby2", "Speckled2", "Rosette", "Smoke", "Ticked"
 ]
 
 # SPRITE NAMES
@@ -361,8 +361,10 @@ white_sprites = [
     'TUXEDOCREAMY', 'LITTLECREAMY', 'COLOURPOINTCREAMY', 'VANCREAMY', 'ONEEAR',
     'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO',
     'TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE',
-    'TAIL', 'BLAZE', 'PRINCE', 'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN',
-    'MISTER', 'BELLY', 'TOES', 'BROKENBLAZE'
+    'TAIL', 'BLAZE', 'PRINCE', 'BIB', 'VEE', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN',
+    'MISTER', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE',
+    'PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA', 'PIEBALD',
+    'CURVED', 'HEART', 'LILTWO', 'GLASS', 'MOORISH', 'POINTMARK'
 ]
 skin_sprites = ['BLACK', 'RED', 'PINK']
 

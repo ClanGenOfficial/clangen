@@ -162,7 +162,8 @@ for x in [
         'speckledcolours2', 'speckledextra2', 'tabbycolours2', 'tabbyextra2',
         'tortiecolours2', 'tortiesextra2', 'rosettecolours', 'rosetteextra',
         'smokecolours', 'smokeextra', 'tickedcolors', 'tickedextra',
-        'whitepatchesryos', 'whitepatchesryosextra', 'Newscars_white', 'Newscarsextra_white', 'shaders'
+        'whitepatchesryos', 'whitepatchesryosextra', 'whitepatchesbeejeans', 'whitepatchesbeejeansextra',
+        'Newscars_white', 'Newscarsextra_white', 'shaders'
 ]:
     sprites.spritesheet(f"sprites/{x}.png", x)
 
@@ -221,14 +222,23 @@ for a, i in enumerate(
     sprites.make_group('whitepatchesryos', (a, 0), f'white{i}')
     sprites.make_group('whitepatchesryosextra', (a, 0), f'whiteextra{i}', sprites_y=2)
 
-for a, i in enumerate(['TAIL', 'BLAZE', 'PRINCE', 'BIB', 'UNDERS', 'PAWS']):
+for a, i in enumerate(['TAIL', 'BLAZE', 'PRINCE', 'BIB', 'VEE', 'UNDERS', 'PAWS']):
     sprites.make_group('whitepatchesryos', (a, 1), f'white{i}')
     sprites.make_group('whitepatchesryosextra', (a, 1), f'whiteextra{i}', sprites_y=2)
 
 for a, i in enumerate(
-    ['FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES', 'BROKENBLAZE']):
+    ['FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TAILTIP','TOES', 'BROKENBLAZE']):
     sprites.make_group('whitepatchesryos', (a, 2), f'white{i}')
     sprites.make_group('whitepatchesryosextra', (a, 2), f'whiteextra{i}', sprites_y=2)
+
+#beejeans white patches    
+for a, i in enumerate(['PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA', 'PIEBALD', 'CURVED']):
+    sprites.make_group('whitepatchesbeejeans', (a, 0), 'white' + i)
+    sprites.make_group('whitepatchesbeejeansextra', (a, 0), 'whiteextra' + i, sprites_y=2)
+for a, i in enumerate(['HEART', 'LILTWO', 'GLASS', 'MOORISH', 'POINTMARK']):
+    sprites.make_group('whitepatchesbeejeans', (a, 1), 'white' + i)
+    sprites.make_group('whitepatchesbeejeansextra', (a, 1), 'whiteextra' + i, sprites_y=2)
+
 
 for a, i in enumerate(
     ['WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK']):

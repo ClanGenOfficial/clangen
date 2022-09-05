@@ -1576,22 +1576,41 @@ class Cat(object):
             color_name = color_name + ' tabby'
         elif self.pelt.name == "Speckled":
             color_name = color_name + ' speckled'
-        elif self.pelt.name == "Tortie" or self.pelt.name == "Calico":
-            color_name = 'tortie'  # check for calico or for white later
+        elif self.pelt.name == "Speckled2":
+            color_name = color_name + ' bengal'
+        elif self.pelt.name == "Tabby2":
+            color_name = color_name + ' marbled tabby'
+        elif self.pelt.name == "Rosette":
+            color_name = color_name + ' rosetted'
+        elif self.pelt.name == "Ticked":
+            color_name = color_name + ' ticked tabby'
+        if color_name == 'white' and self.pelt.name is "Smoke":
+            color_name = 'black tipped white'
+        elif color_name == 'palegrey' and self.pelt.name is "Smoke":
+            color_name = 'lilac silver shaded'
+        elif color_name == 'silver' and self.pelt.name is "Smoke":
+            color_name = 'blue silver shaded'
+        elif self.pelt.name == "Smoke" and color_name is not ['black tipped white', 'lilac silver shaded', 'blue silver shaded']:
+            color_name = color_name + ' smoke'
+
+        elif self.pelt.name is "Tortie" or self.pelt.name is "Tortie2" or self.pelt.name is "Calico" or self.pelt.name is "Calico2":            color_name = 'tortie'  # check for calico or for white later
         # enough to comment but not make calico
-        elif self.white_patches in ['LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG']:
+        if self.white_patches in ['LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'FANCY', 'BLAZE', 'BIB', 'VEE',
+                                  'PAWS', 'DAMIEN', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'SKUNK', 'KARPATI', 'LILTWO']:
             color_name = color_name + ' and white'
         # and white
-        elif self.white_patches in ['ANY', 'TUXEDO', 'ANY2', 'ANYCREAMY', 'TUXEDOCREAMY', 'ANY2CREAMY', 'BROKEN']:
+        elif self.white_patches in ['ANY', 'TUXEDO', 'ANY2', 'ANYCREAMY', 'TUXEDOCREAMY', 'ANY2CREAMY', 'BROKEN', 'FRECKLES', 'RINGTAIL', 'HALFFACE',
+                                    'PANTS2', 'GOATEE', 'PRINCE', 'UNDERS', 'FAROFA', 'MISTER', 'PANTS', 'REVERSEPANTS', 'HALFWHITE', 'APPALOOSA',
+                                    'PIEBALD', 'GLASS']:
             if color_name == 'tortie':
                 color_name = 'calico'
             else:
                 color_name = color_name + ' and white'
         # white and
-        elif self.white_patches in ['VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG']:
+        elif self.white_patches in ['VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'CURVED', 'HEART', 'MOORISH']:
             color_name = 'white and ' + color_name
         # colorpoint
-        elif self.white_patches in ['COLOURPOINT', 'RAGDOLL', 'COLOURPOINTCREAMY']:
+        elif self.white_patches in ['COLOURPOINT', 'RAGDOLL', 'COLOURPOINTCREAMY', 'POINTMARK']:
             color_name = color_name + ' point'
             if color_name == 'darkginger point':
                 color_name = 'flame point'
