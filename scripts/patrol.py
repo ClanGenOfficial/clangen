@@ -139,39 +139,6 @@ class Patrol(object):
                 10,
                 win_skills=['very smart', 'extremely smart']),
             PatrolEvent(
-                103,
-                'p_l suggests this might be a good chance for the cats to practice teamwork',
-                'Everyone has a nice practice session and their connection to their clanmates grows stronger',
-                'Unfortunately, no one steps up to teach',
-                'They decide to focus on the patrol instead',
-                50,
-                10,
-                win_skills=[
-                    'good teacher', 'great teacher', 'fantastic teacher'
-                ]),
-            PatrolEvent(
-                104,
-                'p_l suggests this might be a good chance for the cats to practice new hunting techniques',
-                'Everyone has a nice practice session and their hunting skills grow stronger',
-                'Unfortunately, no one steps up to teach',
-                'They decide to focus on the patrol instead',
-                50,
-                10,
-                win_skills=[
-                    'good teacher', 'great teacher', 'fantastic teacher'
-                ]),
-            PatrolEvent(
-                105,
-                'p_l suggests this might be a good chance for the cats to practice new fighting techniques',
-                'Everyone has a nice practice session and their fighting skills grow stronger',
-                'Unfortunately, no one steps up to teach',
-                'They decide to focus on the patrol instead',
-                50,
-                10,
-                win_skills=[
-                    'good teacher', 'great teacher', 'fantastic teacher'
-                ]),
-            PatrolEvent(
                 106,
                 'p_l finds a patch of herbs that they believe the medicine cat mentioned they needed',
                 'The patrol brings the herbs back to camp and they are put to good use',
@@ -353,7 +320,7 @@ class Patrol(object):
                     'The patrol doesn\'t get much done because of that',
                     'They decide to stay focused instead', 80, 10),
                 PatrolEvent(
-                    200,
+                    204,
                     'Your patrol has a disagreement and look to p_l to settle the dispute',
                     'p_l manages to skillfully smooth over any disagreement',
                     'p_l stutters; they don\'t think they are fit to lead the patrol',
@@ -362,7 +329,7 @@ class Patrol(object):
                     10,
                     win_skills=['great speaker', 'excellent speaker']),
                 PatrolEvent(
-                    201,
+                    205,
                     'r_c admits that they had a vision from StarClan last night',
                     'The patrol talks them through the vision as they hunt',
                     'No one can make sense of the vision',
@@ -380,7 +347,40 @@ class Patrol(object):
                     203, 'r_c is tempted to eat the prey they just caught',
                     'They eat the prey without anyone noticing',
                     'The patrol notices r_c eating the prey and reports them back at camp',
-                    'r_c decides against breaking the warrior code', 50, 10)
+                    'r_c decides against breaking the warrior code', 50, 10),
+                PatrolEvent(
+                    103,
+                    'p_l suggests this might be a good chance for the cats to practice teamwork',
+                    'Everyone has a nice practice session and their connection to their clanmates grows stronger',
+                    'Unfortunately, no one steps up to teach',
+                    'They decide to focus on the patrol instead',
+                    50,
+                    10,
+                    win_skills=[
+                        'good teacher', 'great teacher', 'fantastic teacher'
+                    ]),
+                PatrolEvent(
+                    104,
+                    'p_l suggests this might be a good chance for the cats to practice new hunting techniques',
+                    'Everyone has a nice practice session and their hunting skills grow stronger',
+                    'Unfortunately, no one steps up to teach',
+                    'They decide to focus on the patrol instead',
+                    50,
+                    10,
+                    win_skills=[
+                        'good teacher', 'great teacher', 'fantastic teacher'
+                    ]),
+                PatrolEvent(
+                    105,
+                    'p_l suggests this might be a good chance for the cats to practice new fighting techniques',
+                    'Everyone has a nice practice session and their fighting skills grow stronger',
+                    'Unfortunately, no one steps up to teach',
+                    'They decide to focus on the patrol instead',
+                    50,
+                    10,
+                    win_skills=[
+                        'good teacher', 'great teacher', 'fantastic teacher'
+                    ])
             ])
 
             if self.patrol_random_cat.status == 'warrior' or self.patrol_random_cat.status == 'apprentice':
