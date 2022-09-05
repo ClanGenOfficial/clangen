@@ -544,7 +544,7 @@ class Relationship(object):
 
         # chance to fall in love with some the character is not close to:
         # check ages of cats
-        age_group1 = ['adolescent', 'young adult', 'adult']
+        age_group1 = ['young adult', 'adult']
         age_group2 = ['adult', 'senior adult', 'elder']
         both_are_kits = self.cat_from.age == 'kitten' and self.cat_to.age == 'kitten'
         none_of_them_are_kits = self.cat_from.age != 'kitten' and self.cat_to.age != 'kitten'
