@@ -834,7 +834,7 @@ class Events(object):
 
     def create_interaction(self, cat):
         # if the cat has no relationships, skip
-        if len(cat.relationships) < 1:
+        if len(cat.relationships) < 1 or cat.relationships is None:
             return
 
         cats_to_choose = list(filter(lambda iter_cat_id: iter_cat_id != cat.ID, cat_class.all_cats.copy()))
