@@ -69,7 +69,7 @@ class Events(object):
         cat.in_camp = 1
         self.perform_ceremonies(cat)
         self.handle_relationships(cat)
-        if self.new_cat_invited == False or len(self.living_cats) < 10:
+        if self.new_cat_invited == False or self.living_cats < 10:
             self.invite_new_cats(cat)
         self.have_kits(cat)
         self.other_interactions(cat)
