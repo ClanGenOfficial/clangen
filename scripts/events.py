@@ -376,9 +376,10 @@ class Events(object):
                         game.clan.add_cat(kit)
                 if len(game.clan.all_clans) > 0:
                     warrior = Cat(status='warrior', moons=randint(18, 150))
+                    game.clan.add_cat(warrior)
                     Akit_text = ([f'{parent1} finds an abandoned litter and decides to adopt them',
                                     f'A loner leaves their litter to the clan. {str(parent1)} decides to adopt them as their own',
-                                    f'A {str(choice(game.clan.all_clans).name)} queen named {str(warrior.name)} decides to leave their litter with you. {str(parent1)} adopts them'])
+                                    f'A {str(choice(game.clan.all_clans).name)}Clan queen named {str(warrior.name)} decides to leave their litter with you. {str(parent1)} adopts them'])
                 else:
                     Akit_text = ([f'{parent1} finds an abandoned litter and decides to adopt them',
                                     f'A loner leaves their litter to the clan. {str(parent1)} decides to adopt them as their own'])
@@ -575,11 +576,11 @@ class Events(object):
                                            name + ' was killed by enemy ' + self.enemy_clan + ' warriors and lost a life', name + ' lost a life in a border skirmish'])
                 if game.clan.biome == "Mountainous":
                     cause_of_death.extend([name + ' lost a life in an avalanche', name + ' lost a life in a landslide', name + ' was pushed off a cliff and lost a life', name + ' accidentally fell off a cliff and lost a life'])
-                if game.clan.biome == "Beach":
+                elif game.clan.biome == "Beach":
                     cause_of_death.extend([name + ' was washed out to sea and lost a life', name + ' was poisoned by a sea creature and lost a life'])
-                if game.clan.biome == "Plains":
+                elif game.clan.biome == "Plains":
                     cause_of_death.extend([name + ' fell into a sinkhole and lost a life', name + ' fell into a hidden burrow and lost a life', name + ' lost a life when a burrow collapsed on them'])
-                if self.at_war:
+                elif self.at_war:
                     cause_of_death.extend([name + ' was killed by the ' + self.enemy_clan + ' deputy and lost a life', name + ' was killed by the ' + self.enemy_clan + ' leader and lost a life'])
                     
             elif cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice':
