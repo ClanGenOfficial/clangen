@@ -48,6 +48,8 @@ class Cat(object):
         self.dead_for = 0  # moons
         self.thought = ''
         self.genderalign = None
+        self.calicobase = None
+        self.calicocolour = None
         if ID is None:
             potential_ID = str(randint(10000, 9999999))
             while potential_ID in self.all_cats:
@@ -218,6 +220,23 @@ class Cat(object):
         self.exiled = False
         if self.genderalign == None:
             self.genderalign = self.gender
+        if self.calicobase == None:
+            if self.pattern != None:
+                if self.pattern in ['FADEDTHREE', 'FADEDFOUR', 'BLUETHREE', 'BLUEFOUR'] and self.pelt.name == "Calico":
+                    self.calicobase = "tabby"
+                elif self.pattern in ['FADEDTHREE', 'FADEDFOUR', 'BLUETHREE', 'BLUEFOUR'] and self.pelt.name == "Calico2":
+                    self.calicobase = "tabby2"
+                else:
+                    self.calicobase = "single"
+        if self.calicocolour == None:
+            if self.pattern != None:
+                if self.pattern in ['ONE', 'TWO', 'THREE', 'FOUR']:
+                    self.calicocolour = "BLACK"
+                elif self.pattern in ['FADEDONE', 'FADEDTWO', 'FADEDTHREE', 'FADEDFOUR']:
+                    self.calicocolour = "BROWN"
+                else:
+                    self.calicocolour = "GREY"
+            
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
 
@@ -1127,9 +1146,14 @@ class Cat(object):
             else:
                 new_sprite.blit(sprites.sprites[self.pelt.sprites[1] + self.pelt.colour + str(self.age_sprites[self.age])], (0, 0))
         else:
+            game.switches['error_message'] = 'There was an error loading a tortie\'s base coat sprite. Last cat read was ' + str(self)
             if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
+                new_sprite.blit(sprites.sprites[self.calicobase + 'extra' + self.calicocolour + str(self.age_sprites[self.age])], (0, 0))
+                game.switches['error_message'] = 'There was an error loading a tortie\'s pattern sprite. Last cat read was ' + str(self)
                 new_sprite.blit(sprites.sprites[self.pelt.sprites[1] + 'extra' + self.pattern + str(self.age_sprites[self.age])], (0, 0))
             else:
+                new_sprite.blit(sprites.sprites[self.calicobase + self.calicocolour + str(self.age_sprites[self.age])], (0, 0))
+                game.switches['error_message'] = 'There was an error loading a tortie\'s pattern sprite. Last cat read was ' + str(self)
                 new_sprite.blit(sprites.sprites[self.pelt.sprites[1] + self.pattern + str(self.age_sprites[self.age])], (0, 0))
         game.switches['error_message'] = 'There was an error loading a cat\'s white patches sprite. Last cat read was ' + str(self)
         # draw white patches
@@ -1316,6 +1340,8 @@ class Cat(object):
             else:
                 data+=',' + 'False'
             data += ',' + str(x.genderalign)
+            data += ',' + str(x.calicobase)
+            data += ',' + str(x.calicocolour)
             # next cat
             data += '\n'
 
@@ -1444,6 +1470,10 @@ class Cat(object):
                         the_cat.exiled = bool(attr[36])
                     if len(attr) > 37:
                         the_cat.genderalign = attr[37]
+                    if len(attr) > 38:
+                        the_cat.calicobase = attr[38]
+                    if len(attr) > 39:
+                        the_cat.calicocolour = attr[39]
 
 
             game.switches['error_message'] = 'There was an error loading this clan\'s mentors, apprentices, relationships, or sprite info.'
