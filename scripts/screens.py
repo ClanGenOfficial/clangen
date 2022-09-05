@@ -2744,7 +2744,7 @@ class RelationshipScreen(Screens):
             verdana_small.text(f"{str(the_cat.genderalign)}  - {str(the_cat.age)}", ('center', 40))
 
         # make a list of the relationships
-        relationships = the_cat.relationships
+        relationships = list(set(the_cat.relationships))
 
         # pages
         all_pages = 1  # amount of pages
@@ -2757,7 +2757,6 @@ class RelationshipScreen(Screens):
         for x in range(len(relationships)):
             if (x + (game.switches['list_page'] - 1) * 10) > len(relationships):
                 game.switches['list_page'] = 1
-
             the_relationship = relationships[x + (game.switches['list_page'] - 1) * 10]
             the_relationship.cat_to.update_sprite()
             buttons.draw_button((90 + pos_x, 60 + pos_y), image=the_relationship.cat_to.sprite, cat=the_relationship.cat_to.ID, cur_screen='profile screen')

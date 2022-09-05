@@ -1593,7 +1593,8 @@ class Cat(object):
         elif self.pelt.name == "Smoke" and color_name is not ['black tipped white', 'lilac silver shaded', 'blue silver shaded']:
             color_name = color_name + ' smoke'
 
-        elif self.pelt.name is "Tortie" or self.pelt.name is "Tortie2" or self.pelt.name is "Calico" or self.pelt.name is "Calico2":            color_name = 'tortie'  # check for calico or for white later
+        elif self.pelt.name == "Tortie" or self.pelt.name == "Tortie2" or self.pelt.name == "Calico" or self.pelt.name == "Calico2":            
+            color_name = 'tortie'  # check for calico or for white later
         # enough to comment but not make calico
         if self.white_patches in ['LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'FANCY', 'BLAZE', 'BIB', 'VEE',
                                   'PAWS', 'DAMIEN', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'SKUNK', 'KARPATI', 'LILTWO']:
