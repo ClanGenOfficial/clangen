@@ -789,7 +789,7 @@ class Patrol(object):
         elif self.patrol_event.patrol_id in [900, 901, 902]:
             for cat in self.patrol_cats:
                 cat.experience += self.patrol_event.exp
-                if self.patrol_cats.status == 'leader':
+                if cat.status == 'leader':
                     game.clan.leader_lives -= 10
                 events_class.dies(cat)
 
