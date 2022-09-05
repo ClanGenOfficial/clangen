@@ -224,6 +224,6 @@ while True:
         screens.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
     # END FRAME
-    clock.tick(60)
+    clock.tick(30)
 
     pygame.display.update()
