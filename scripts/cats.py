@@ -1500,6 +1500,13 @@ class Cat(object):
                 n.load_relationship_of_cat()
                 game.switches['error_message'] = 'There was an error loading a cat\'s sprite info. Last cat read was ' + str(n)
                 n.update_sprite()
+            
+            # generate the relationship if some is missing
+            game.switches['error_message'] = 'There was an error when relationships where created.'
+            for id in self.all_cats.keys():
+                the_cat = self.all_cats.get(id)
+                if the_cat.relationships != None and len(the_cat.relationships) < 1:
+                    the_cat.create_new_relationships()
 
             game.switches['error_message'] = ''
 
@@ -1509,28 +1516,29 @@ class Cat(object):
         else:
             clanname = game.switches['clan_list'][0]
 
-        relation_directory = 'saves/' + clanname + '/relationships/' + self.ID + '_relations.json'
+        relation_directory = 'saves/' + clanname + '/relationships/'
+        relation_cat_directory = relation_directory + self.ID + '_relations.json'
         
-        if not os.path.exists(relation_directory):
-            return
-        
-        with open(relation_directory, 'r') as read_file:
-            rel_data = json.loads(read_file.read())
-            relationships = []
-            for rel in rel_data:
-                cat_to = self.all_cats.get(rel['cat_to_id'])
-                if cat_to == None:
-                    continue
-                new_rel = Relationship(cat_from=self,cat_to=cat_to,
-                                        mates=rel['mates'],family=rel['family'],
-                                        romantic_love=rel['romantic_love'],
-                                        platonic_like=rel['platonic_like'],
-                                        dislike=rel['dislike'],
-                                        admiration=rel['admiration'],
-                                        comfortable=rel['comfortable'],
-                                        jealousy=rel['jealousy'],trust=rel['trust'])
-                relationships.append(new_rel)
-            self.relationships = relationships
+        if not os.path.exists(relation_directory and relation_cat_directory):
+            self.relationships = []
+        else: 
+            with open(relation_cat_directory, 'r') as read_file:
+                rel_data = json.loads(read_file.read())
+                relationships = []
+                for rel in rel_data:
+                    cat_to = self.all_cats.get(rel['cat_to_id'])
+                    if cat_to == None:
+                        continue
+                    new_rel = Relationship(cat_from=self,cat_to=cat_to,
+                                            mates=rel['mates'],family=rel['family'],
+                                            romantic_love=rel['romantic_love'],
+                                            platonic_like=rel['platonic_like'],
+                                            dislike=rel['dislike'],
+                                            admiration=rel['admiration'],
+                                            comfortable=rel['comfortable'],
+                                            jealousy=rel['jealousy'],trust=rel['trust'])
+                    relationships.append(new_rel)
+                self.relationships = relationships
 
     def load(self, cat_dict):
         """ A function that takes a dictionary containing other dictionaries with attributes and values of all(?)
@@ -1585,7 +1593,6 @@ class Cat(object):
                     new_cat.skill = value  # SKILL
                 if attr == 'mentor':
                     new_cat.mentor = value
-                
 
     def describe_color(self):
         color_name = ''

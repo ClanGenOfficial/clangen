@@ -292,7 +292,7 @@ class Events(object):
                 relationships = []
                 for cat_id in game.clan.clan_cats:
                     the_cat = cat_class.all_cats.get(cat_id)
-                    if the_cat.dead:
+                    if the_cat.dead or the_cat.exiled:
                         continue
                     the_cat.relationships.append(Relationship(the_cat,kit))
                     relationships.append(Relationship(kit,the_cat))
@@ -312,7 +312,7 @@ class Events(object):
                 relationships = []
                 for cat_id in game.clan.clan_cats:
                     the_cat = cat_class.all_cats.get(cat_id)
-                    if the_cat.dead:
+                    if the_cat.dead or the_cat.exiled:
                         continue
                     the_cat.relationships.append(Relationship(the_cat,loner))
                     relationships.append(Relationship(loner,the_cat))
@@ -330,7 +330,7 @@ class Events(object):
                 relationships = []
                 for cat_id in game.clan.clan_cats:
                     the_cat = cat_class.all_cats.get(cat_id)
-                    if the_cat.dead:
+                    if the_cat.dead or the_cat.exiled:
                         continue
                     the_cat.relationships.append(Relationship(the_cat, warrior))
                     relationships.append(Relationship(warrior,the_cat))
@@ -353,7 +353,7 @@ class Events(object):
                 relationships = []
                 for cat_id in game.clan.clan_cats:
                     the_cat = cat_class.all_cats.get(cat_id)
-                    if the_cat.dead:
+                    if the_cat.dead or the_cat.exiled:
                         continue
                     the_cat.relationships.append(Relationship(the_cat,loner))
                     relationships.append(Relationship(loner,the_cat))
@@ -395,7 +395,7 @@ class Events(object):
         relationships = []
         for cat_id in game.clan.clan_cats:
             the_cat = cat_class.all_cats.get(cat_id)
-            if the_cat.dead:
+            if the_cat.dead or the_cat.exiled:
                 continue
             the_cat.relationships.append(Relationship(the_cat,loner))
             relationships.append(Relationship(loner,the_cat))
@@ -411,7 +411,7 @@ class Events(object):
         relationships = []
         for cat_id in game.clan.clan_cats:
             the_cat = cat_class.all_cats.get(cat_id)
-            if the_cat.dead:
+            if the_cat.dead or the_cat.exiled:
                 continue
             the_cat.relationships.append(Relationship(the_cat,loner))
             relationships.append(Relationship(loner,the_cat))
@@ -430,7 +430,7 @@ class Events(object):
         relationships = []
         for cat_id in game.clan.clan_cats:
             the_cat = cat_class.all_cats.get(cat_id)
-            if the_cat.dead:
+            if the_cat.dead or the_cat.exiled:
                 continue
             the_cat.relationships.append(Relationship(the_cat,loner))
             relationships.append(Relationship(loner,the_cat))
@@ -788,7 +788,7 @@ class Events(object):
                         relationships = []
                         for cat_id in game.clan.clan_cats:
                             the_cat = cat_class.all_cats.get(cat_id)
-                            if the_cat.dead:
+                            if the_cat.dead or the_cat.exiled:
                                 continue
                             if the_cat.ID in [kit.parent1, kit.parent2]:
                                 cat.relationships.append(Relationship(the_cat,kit,False,True))
@@ -807,7 +807,7 @@ class Events(object):
                     relationships = []
                     for cat_id in game.clan.clan_cats:
                         the_cat = cat_class.all_cats.get(cat_id)
-                        if the_cat.dead:
+                        if the_cat.dead or the_cat.exiled:
                             continue
                         if the_cat.ID is kit.parent1:
                             the_cat.relationships.append(Relationship(the_cat,kit,False,True))

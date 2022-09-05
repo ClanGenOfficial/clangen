@@ -1,4 +1,4 @@
-from random import choice, randint
+from random import choice, choices, randint
 from tkinter.messagebox import NO
 from .game_essentials import *
 import copy
@@ -58,6 +58,12 @@ SPECIAL_CHARACTER = {
     "tidy": [   'Is annoyed by the mess (cat) made', 'Grooms the grime off (cat)\'s pelt', 
                 'Is cross with (cat) for getting dirt all over the fresh-kill pile'],
     "dreamy": ['Talks about dreams with (cat)', 'Gets distracted from conversation with (cat)']
+}
+
+EXILED_CATS = {
+    "cat_to": ['Bumped into (cat) at the clan border', 'Caught a glimpse of (cat) from the distance'],
+    "cat_from": ['Was wandering near the clan territory and met (cat)'],
+    "both":['Ran into (cat) by chance']
 }
 
 # IN increase or decrease
@@ -400,6 +406,26 @@ class Relationship(object):
         self.current_changes_to = []
         self.current_changes_from = []
 
+        # quick fix for exiled cat relationships
+        if self.cat_to.exiled and not self.cat_from.exiled:
+            action = choice(EXILED_CATS['cat_to'])
+            string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
+            action_string = action.replace(string_to_replace, str(self.cat_to.name)) 
+            game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string} ({self.effect})")
+            return
+        elif self.cat_from.exiled and not self.cat_to.exiled:
+            action = choice(EXILED_CATS['cat_from'])
+            string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
+            action_string = action.replace(string_to_replace, str(self.cat_to.name)) 
+            game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string} ({self.effect})")
+            return
+        elif self.cat_from.exiled and self.cat_to.exiled:
+            action = choice(EXILED_CATS['both'])
+            string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
+            action_string = action.replace(string_to_replace, str(self.cat_to.name)) 
+            game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string} ({self.effect})")
+            return
+
         # get action possibilities
         action_possibilies = self.get_action_possibilities()
 
@@ -423,7 +449,7 @@ class Relationship(object):
 
         # broadcast action
         string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
-        action_string = action.replace(string_to_replace, str(self.cat_to.name)) 
+        action_string = action.replace(string_to_replace, str(self.cat_to.name))
         self.action_results(action_string)
         rel_stat_info_from = '('
         rel_stat_info_from += ','.join(self.current_changes_from) + '[' + str(self.cat_from.name) + '])'
@@ -618,7 +644,7 @@ class Relationship(object):
         if action in INCREASE['from']['jealousy']:
             self.jealousy += number_increase
             self.current_changes_from.append('+ ' + str(number_increase) + ' jeal. ')
-            self.effect = 'positive effect'
+            self.effect = 'negative effect'
         if action in INCREASE['from']['trust']:
             self.trust += number_increase
             self.current_changes_from.append('+ ' + str(number_increase) + ' trust ')
@@ -656,7 +682,7 @@ class Relationship(object):
         if action in DECREASE['from']['jealousy']:
             self.jealousy -= number_decrease
             self.current_changes_from.append('- ' + str(number_decrease) + ' jeal. ')
-            self.effect = 'negative effect'
+            self.effect = 'positive effect'
 
         self.cut_boundries()
 
