@@ -1676,7 +1676,7 @@ class OtherScreen(Screens):
 
         buttons.draw_button((-70, 130),
                             text='Cats in ' + str(game.clan.name) + 'Clan',
-                            cur_screen='list screen')
+                            cur_screen='list screen', hotkey=[9])
         draw_menu_buttons()
 
 
@@ -1734,7 +1734,7 @@ class PatrolScreen(Screens):
                 else:
                     buttons.draw_button((50, 150 + 50 * u),
                                         image=game.patrol_cats[u].sprite,
-                                        cat=u)
+                                        cat=u, hotkey=[u+1, 11])
                     random_options.append(game.patrol_cats[u])
         for u in range(6, 12):
             if u < i_max:
@@ -1744,14 +1744,14 @@ class PatrolScreen(Screens):
                 else:
                     buttons.draw_button((screen_x - 100, 150 + 50 * (u - 6)),
                                         image=game.patrol_cats[u].sprite,
-                                        cat=u)
+                                        cat=u, hotkey=[u+1, 12])
                     random_options.append(game.patrol_cats[u])
         if random_options and len(game.switches['current_patrol']) < 6:
             random_patrol = choice(random_options)
             buttons.draw_button(('center', 530),
                                 text='Add Random',
                                 current_patrol=random_patrol,
-                                add=True)
+                                add=True, hotkey=[12])
 
         else:
             buttons.draw_button(('center', 530),
@@ -1764,7 +1764,7 @@ class PatrolScreen(Screens):
         if len(game.switches['current_patrol']) > 0:
             buttons.draw_button(('center', 630),
                                 text='Start Patrol',
-                                cur_screen='patrol event screen')
+                                cur_screen='patrol event screen', hotkey=[13])
 
         else:
             buttons.draw_button(('center', 630),
@@ -1801,7 +1801,7 @@ class PatrolScreen(Screens):
                 ('center', 500),
                 text='Add to Patrol',
                 current_patrol=game.patrol_cats[game.switches['cat']],
-                add=True)
+                add=True, hotkey=[11])
 
     def screen_switches(self):
         game.switches['current_patrol'] = []
@@ -1827,10 +1827,10 @@ class PatrolEventScreen(Screens):
                                             str(patrol.patrol_leader.name))
             text1 = intro_text.split(' ')
             verdana.text(intro_text, ('center', 200))
-            buttons.draw_button(('center', 300), text='Proceed', event=-2)
+            buttons.draw_button(('center', 300), text='Proceed', event=-2, hotkey=[9])
             buttons.draw_button(('center', 340),
                                 text='Do Not Proceed',
-                                event=2)
+                                event=2, hotkey=[10])
         if game.switches['event'] == -2:
             patrol.calculate_success()
             patrol.handle_relationships()
@@ -1860,7 +1860,7 @@ class PatrolEventScreen(Screens):
                 verdana.text(decline_text, ('center', 200))
             buttons.draw_button(('center', 320),
                                 text='Return to Clan',
-                                cur_screen='clan screen')
+                                cur_screen='clan screen', hotkey=[10])
         for u in range(6):
             if u < len(patrol.patrol_cats):
                 patrol.patrol_cats[u].draw((screen_x / 2 - 50 * (u + 2), 550))
@@ -2715,7 +2715,7 @@ class MapScreen(Screens):
         verdana.text(str(game.map_info[game.switches['map_selection']][6]), (-16, 350))
         verdana.text(str(game.map_info[game.switches['map_selection']][7]), (-16, 400))
         
-        buttons.draw_button((-16, -56), text='<< Back', cur_screen=game.switches['last_screen'])
+        buttons.draw_button((-16, -56), text='<< Back', cur_screen=game.switches['last_screen'], hotkey=[0])
     def screen_switches(self):
         try:
             game.map_info = load_map('saves/'+game.clan.name)
@@ -2886,7 +2886,7 @@ class RelationshipEventScreen(Screens):
         if game.switches['events_left'] == 0:
             buttons.draw_button((200, 220),
                                 text='TIMESKIP ONE MOON',
-                                timeskip=True)
+                                timeskip=True, hotkey=[11])
 
             if game.switches['timeskip']:
                 game.cur_events_list = []
@@ -2899,7 +2899,7 @@ class RelationshipEventScreen(Screens):
         events_class.one_moon()
 
         # show the Relationship events
-        buttons.draw_button((-250, 220), text='CLAN EVENTS', cur_screen='events screen')
+        buttons.draw_button((-250, 220), text='CLAN EVENTS', cur_screen='events screen', hotkey=[12])
 
         if game.relation_events_list is not None and game.relation_events_list != []:
             for x in range(min(len(game.relation_events_list), game.max_relation_events_displayed)):

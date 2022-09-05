@@ -385,7 +385,7 @@ class Relationship(object):
     def link_relationship(self):
         """Add the other relationship object to this easly access and change the other side."""
         opposite_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_to.relationships))
-        if opposite_relationship is not None or len(opposite_relationship) > 0:
+        if opposite_relationship is not None and len(opposite_relationship) > 0:
             self.opposit_relationship = opposite_relationship[0]
 
     def start_action(self):
