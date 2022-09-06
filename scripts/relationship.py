@@ -1,5 +1,4 @@
-from random import choice, choices, randint
-from tkinter.messagebox import NO
+from random import choice, randint
 from .game_essentials import *
 import copy
 
@@ -70,11 +69,11 @@ EXILED_CATS = {
 NOT_AGE_SPECIFIC = {
     "unfriendly": ['Has successfully tricked (cat) into believing a crazy tale about the clan leader',
                    'Doesn\'t think that (cat) has been completely honest lately',
-                   'Is mocking (cat)', 'Ignores (cat)','Is telling jokes about (cat)',
+                   'Is mocking (cat)', 'Ignores (cat)', 'Is telling jokes about (cat)',
                    'Is spreading a rumour about (cat)'],
     "neutral": ['Whines about (cat)', 'Is telling a story to (cat)', 'Is talking with (cat)',
                 'Is sharing prey with (cat)', 'Had a huge argument with (cat)', 'Had a fight with (cat)'],
-    "friendly": ['Is sharing tongue with (cat)'],
+    "friendly": ['Is sharing tongue with (cat)', 'Has been spending time with (cat) lately'],
     "close": ['Tells (cat) a secret']
 }
 
@@ -122,7 +121,7 @@ KITTEN_TO_OTHER = {
 APPRENTICE_TO_OTHER = {
     "kitten": {
         "unfriendly": [],
-        "neutral": ['Trips over (cat)'],
+        "neutral": ['Trips over (cat)','Is watching over (cat)'],
         "friendly": [],
         "close": []
     },
@@ -161,15 +160,14 @@ WARRIOR_TO_OTHER = {
         "unfriendly": ['Is scolding (cat)'],
         "neutral": ['Is giving advice to (cat)', 'Is watching (cat) perform an almost-decent hunting crouch',
                     'Is telling (cat) about a hunting technique', 'Is giving (cat) a task'],
-        "friendly": [],
+        "friendly": ['Is telling (cat) about their own days as an apprentice'],
         "close": []
     },
     "warrior": {
         "unfriendly": [],
         "neutral": ['Is telling (cat) about a hunting technique',
                     'Is giving (cat) a task','Is frustrated that (cat) won\'t take their duties more seriously'],
-        "friendly": ['Has been spending time with (cat) lately',
-                     'Is telling (cat) about their own days as an apprentice'],
+        "friendly": [],
         "close": ['Just told (cat) a hilarious joke']
     },
     "elder": {
@@ -209,7 +207,9 @@ ELDER_TO_OTHER = {
 
 LOVE = {
     "love_interest_only": ['Is developing a crush on (cat)', 'Is admiring (cat) from afar...', 'Is spending a lot of time with (cat)',
-                            'Gave a pretty flower they found to (cat)'],
+                            'Gave a pretty flower they found to (cat)', 'Laughs at bad jokes from (cat)', 
+                            'Enjoys the time with (cat) and feels secure', 'Make (cat) laugh again and again',
+                            'Ensnares (cat) with a charming smile'],
     "love_interest": [  'Can\'t seem to stop talking about (cat)', 'Would spend the entire day with (cat) if they could', 
                         'Keeps shyly glancing over at (cat) as the clan talks about kits', 
                         'Is thinking of the best ways to impress (cat)', 'Doesn\'t want (cat) to overwork themselves', 
@@ -282,40 +282,43 @@ INCREASE = {
         "romantic_love": ['Is developing a crush on (cat)', 'Is admiring (cat) from afar...', 
                           'Is spending a lot of time with (cat)', 'Gave a pretty flower they found to (cat)',
                           'Can\'t seem to stop talking about (cat)', 'Would spend the entire day with (cat) if they could',
-                          'Keeps shyly glancing over at (cat) as the clan talks about kits', 
-                          'Is rolling around a little too playfully with (cat)...',
-                          'Was caught enjoying a moonlit stroll with (cat) last night...'],
+                          'Keeps shyly glancing over at (cat) as the clan talks about kits', 'Laughs at bad jokes from (cat)',
+                          'Is rolling around a little too playfully with (cat)...', 'Enjoys the time with (cat) and feels secure',
+                          'Was caught enjoying a moonlit stroll with (cat) last night...', 'Thinks that (cat) is really charming',
+                          'Is wondering what it would be like to grow old with (cat)'],
         "like": ['Is telling a story to (cat)','Is talking with (cat)','Pretends to be a warrior with (cat)',
-                'Is giving (cat) a badger ride on their back!', 'Hopes that their own kits are as cute as (cat) someday',
-                'Is sharing tongues with (cat)','Has been spending time with (cat) lately','Just told (cat) a hilarious joke',
-                'Plays mossball with (cat)'],
-        "dislike": ['Is mocking (cat)', 'Ignores (cat)', 'Sticks their tongue out at (cat)','Had an huge argument with (cat)',
-                    'Had a fight with (cat)'],
-        "admiration": ['Is watching (cat) perform an almost-decent hunting crouch'],
+                'Is giving (cat) a badger ride on their back!', 'Is sharing tongues with (cat)',
+                'Has been spending time with (cat) lately','Just told (cat) a hilarious joke',
+                'Plays mossball with (cat)', 'Tells (cat) a secret'],
+        "dislike": ['Is mocking (cat)', 'Ignores (cat)', 'Sticks their tongue out at (cat)','Had a huge argument with (cat)',
+                    'Had a fight with (cat)', 'Is jealous that (cat) is getting more attention than them'],
+        "admiration": ['Is watching (cat) perform an almost-decent hunting crouch', 'Is admiring (cat) from afar...'],
         "comfortable": ['Is telling a story to (cat)','Is sharing prey with (cat)','Tells (cat) a secret',
-                        'Is sharing tongues with (cat)','Comes up with a plan to sneak out of camp with (cat)'],
+                        'Is sharing tongues with (cat)','Comes up with a plan to sneak out of camp with (cat)', 
+                        'Just told (cat) a hilarious joke', 'Thinks that (cat) is really funny'],
         "jealousy": ['Is jealous that (cat) is getting more attention than them'],
         "trust":['Is talking with (cat)','Tells (cat) a secret','Comes up with a plan to sneak out of camp with (cat)']
     },
     "to": {
         "romantic_love": ['Is spending a lot of time with (cat)', 'Gave a pretty flower they found to (cat)',
-                          'Is rolling around a little too playfully with (cat)...', 
-                          'Was caught enjoying a moonlit stroll with (cat) last night...'],
+                          'Is rolling around a little too playfully with (cat)...', 'Ensnares (cat) with a charming smile',
+                          'Was caught enjoying a moonlit stroll with (cat) last night...', 'Make (cat) laugh again and again'],
         "like": ['Is telling a story to (cat)','Is talking with (cat)','Is sharing tongue with (cat)',
                 'Is giving (cat) a badger ride on their back!', 'Is promising to take (cat) outside of camp if they behave',
                 'Gave (cat) a trinket they found while out on patrol today', 'Is telling (cat) about a hunting technique',
                 'Is sharing tongues with (cat)','Has been spending time with (cat) lately',
                 'Just told (cat) a hilarious joke', 'Plays mossball with (cat)','Pretends to be a warrior with (cat)',
-                'Comes up with a plan to sneak out of camp with (cat)'],
+                'Comes up with a plan to sneak out of camp with (cat)', 'Tells (cat) a secret', 'Laughs at bad jokes from (cat)'],
         "dislike": ['Is mocking (cat)','Is telling jokes about (cat)','Sticks their tongue out at (cat)',
-                    'Is spreading a rumour about (cat)','Tries to scare (cat)','Had an huge argument with (cat)',
+                    'Is spreading a rumour about (cat)','Tries to scare (cat)','Had a huge argument with (cat)',
                     'Had a fight with (cat)'],
-        "admiration": ['Is promising to take (cat) outside of camp if they behave', 'Is telling (cat) about a hunting technique'],
+        "admiration": ['Is promising to take (cat) outside of camp if they behave', 'Is telling (cat) about a hunting technique',
+                        'Is giving advice to (cat)'],
         "comfortable": ['Is telling a story to (cat)','Is sharing prey with (cat)','Tells (cat) a secret', 
                         'Is sharing tongues with (cat)','Is telling (cat) about their own days as an apprentice',
                         'Comes up with a plan to sneak out of camp with (cat)'],
         "jealousy": [],
-        "trust":['Is talking with (cat)','Tells (cat) a secret','Tries to scare (cat)',
+        "trust":['Is talking with (cat)','Tells (cat) a secret',
                 'Comes up with a plan to sneak out of camp with (cat)']
     }
 }
@@ -328,7 +331,7 @@ DECREASE  = {
         "admiration": ['Is frustrated that (cat) won\'t take their duties more seriously'],
         "comfortable": [],
         "jealousy": [],
-        "trust": []
+        "trust": ['Doesn\'t think that (cat) has been completely honest lately']
     },
     "to": {
         "romantic_love": [],
@@ -337,7 +340,7 @@ DECREASE  = {
         "admiration": ['Is scolding (cat)'],
         "comfortable": [],
         "jealousy": [],
-        "trust": ['Is spreading a rumour about (cat)','Trips over (cat)', 'Doesn\'t think that (cat) has been completely honest lately',
+        "trust": ['Is spreading a rumour about (cat)','Trips over (cat)','Tries to scare (cat)',
                 'Has successfully tricked (cat) into believing a crazy tale about the clan leader']
     }
 }
@@ -394,6 +397,12 @@ class Relationship(object):
         opposite_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_to.relationships))
         if opposite_relationship is not None and len(opposite_relationship) > 0:
             self.opposit_relationship = opposite_relationship[0]
+        else:
+            # create relationship
+            print(f"Relationship of cat {self.cat_from} to cat {self.cat_to} is buggy.\n The opposit relationship does not exist, a new one is created.")
+            relation = Relationship(self.cat_to,self.cat_from)
+            self.cat_to.relationships.append(relation)
+            
 
     def start_action(self):
         """This function checks current state of relationship and decides which actions can happen."""
@@ -446,14 +455,7 @@ class Relationship(object):
                     
         # change the stats of the relationships
         self.affect_own_relationship(action)
-
-        # if link the relationship failed, you can't influence it 
-        if self.opposit_relationship is None:
-            print(f"Relationship of cat {self.cat_from} to cat {self.cat_to} is buggy.\n The opposit relationship does not exist, a new one is created.")
-            relation = Relationship(self.cat_to,self.cat_from)
-            self.cat_to.relationships.append(relation)
-        else:
-            self.affect_other_relationship(action)
+        self.affect_other_relationship(action)
 
         # broadcast action
         string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
@@ -530,15 +532,16 @@ class Relationship(object):
         # NORMAL INTERACTIONS
         # check how the relationship is
         relation_keys = ['neutral']
-        if self.dislike > 20:
+        if self.dislike > 20 or self.jealousy > 20:
             action_possibilies += NOT_AGE_SPECIFIC['unfriendly']
             relation_keys.append('unfriendly')
+            # increase the chance for unfriendly behaviour
             if self.dislike > 30:
                 relation_keys.append('unfriendly')
         if self.platonic_like > 40 or self.comfortable > 30:
             action_possibilies += NOT_AGE_SPECIFIC['friendly']
             relation_keys.append('friendly')
-        if self.platonic_like > 60 and self.comfortable > 50 and self.trust > 50:
+        if self.platonic_like > 50 and self.comfortable > 40 and self.trust > 30:
             action_possibilies += NOT_AGE_SPECIFIC['close']
             relation_keys.append('close')
 
@@ -586,18 +589,19 @@ class Relationship(object):
         # LOVE
         # check mate status and settings
         cat_from_has_mate = self.cat_from.mate != None or self.cat_from.mate != ''
+        # only allow love actions with mate (if they have some) if the setting is turned of
         if cat_from_has_mate and not self.mates and not game.settings['affair']:
             return action_possibilies
 
-        # chance to fall in love with some the character is not close to:
         # check ages of cats
-        age_group1 = ['young adult', 'adult']
+        age_group1 = ['adolescent','young adult', 'adult']
         age_group2 = ['adult', 'senior adult', 'elder']
         both_are_kits = self.cat_from.age == 'kitten' and self.cat_to.age == 'kitten'
         none_of_them_are_kits = self.cat_from.age != 'kitten' and self.cat_to.age != 'kitten'
         both_in_same_age_group = (self.cat_from.age in age_group1 and self.cat_to.age in age_group1) or\
             (self.cat_from.age in age_group2 and self.cat_to.age in age_group2)
 
+        # chance to fall in love with some the character is not close to:
         love_p = randint(0,30)
         if not self.family and (both_are_kits or none_of_them_are_kits) and both_in_same_age_group:
             if self.platonic_like > 40 or love_p == 1 or self.romantic_love > 5:
