@@ -454,15 +454,6 @@ class Events(object):
         loner.skill = 'formerly a kittypet'
         if choice([1, 2]) == 1:
             loner.specialty2 = choice(scars3)
-        #create and update relationships
-        relationships = []
-        for cat_id in game.clan.clan_cats:
-            the_cat = cat_class.all_cats.get(cat_id)
-            if the_cat.dead or the_cat.exiled:
-                continue
-            the_cat.relationships.append(Relationship(the_cat,loner))
-            relationships.append(Relationship(loner,the_cat))
-        loner.relationships = relationships
         game.clan.add_cat(loner)
         self.check_age(loner)
 
