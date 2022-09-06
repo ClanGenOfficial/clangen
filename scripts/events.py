@@ -253,15 +253,19 @@ class Events(object):
             game.cur_events_list.append(choice(scar_text))
 
     def handle_relationships(self, cat):
+        viable_mate = False
         other_cat = choice(list(cat_class.all_cats.values()))
+        if cat != other_cat and not other_cat.dead and cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and other_cat.status not in [
+        'kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and cat.age == other_cat.age and cat.mate is None and other_cat.mate is None and not cat.parent1 and not cat.parent2 and not cat.former_apprentices:
+            viable_mate = True
+        else:
+            other_cat = choice(list(cat_class.all_cats.values()))
         if randint(1, 50) == 1:
-            if cat != other_cat and not other_cat.dead and cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and other_cat.status not in [
-                'kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and cat.age == other_cat.age and not {cat, cat.parent1, cat.parent2}.intersection(
-                {other_cat, other_cat.parent1, other_cat.parent2}) and cat.mate is None and other_cat.mate is None:
-                game.cur_events_list.append(f'{str(cat.name)} and {str(other_cat.name)} have become mates')
-
-                cat.mate = other_cat.ID
-                other_cat.mate = cat.ID
+            if viable_mate == True:
+                    game.cur_events_list.append(f'{str(cat.name)} and {str(other_cat.name)} have become mates') 
+                    cat.mate = other_cat.ID
+                    other_cat.mate = cat.ID
+                    
         elif randint(1, 50) == 1:
             if cat.mate == other_cat.ID:
                 game.cur_events_list.append(f'{str(cat.name)} and {str(other_cat.name)} have broken up')
