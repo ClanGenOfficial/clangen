@@ -8,6 +8,9 @@ Original creator: just-some-cat.tumblr.com
 
 Fan edit creator: SableSteel
 
+### Download
+Download compiled apps here: https://sablesteel.itch.io/clan-gen-fan-edit
+
 ## Running from source
 ### Requirements
 - python >= 3.8
