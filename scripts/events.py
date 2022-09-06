@@ -282,6 +282,23 @@ class Events(object):
             game.cur_events_list.append(f'{str(cat.name)} and {str(other_cat.name)} have become mates') 
             cat.mate = other_cat.ID
             other_cat.mate = cat.ID
+
+            # affect relationship
+            cat_relationship = list(filter(lambda r: r.cat_to.ID == other_cat.ID , cat.relationships))
+            if cat_relationship is not None and len(cat_relationship) > 0:
+                cat_relationship[0].romantic_love = 20
+                cat_relationship[0].comfortable = 20
+                cat_relationship[0].trust = 10
+            else:
+                cat.relationships.append(Relationship(cat,other_cat,True))
+            
+            ohter_cat_relationship = list(filter(lambda r: r.cat_to.ID == cat.ID , other_cat.relationships))
+            if ohter_cat_relationship is not None and len(ohter_cat_relationship) > 0:
+                ohter_cat_relationship[0].romantic_love = 20
+                ohter_cat_relationship[0].comfortable = 20
+                ohter_cat_relationship[0].trust = 10
+            else:
+                other_cat.relationships.append(Relationship(other_cat,cat,True))
                     
         elif randint(1, 50) == 1:
             other_cat = choice(list(cat_class.all_cats.values()))

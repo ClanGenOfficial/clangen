@@ -369,8 +369,9 @@ class Relationship(object):
             self.family = True
 
         if mates and romantic_love == 0:
-            romantic_love = 50
-            comfortable = 40
+            romantic_love = 20
+            comfortable = 20
+            trust = 10
         
         if family and platonic_like == 0:
             platonic_like = 20
@@ -397,7 +398,7 @@ class Relationship(object):
     def start_action(self):
         """This function checks current state of relationship and decides which actions can happen."""
         # update relationship
-        if self.cat_from.mate == self.cat_to:
+        if self.cat_from.mate == self.cat_to.ID:
             self.mates = True
 
         if self.opposit_relationship is None:
@@ -482,6 +483,17 @@ class Relationship(object):
             self.cat_to.mate = self.cat_from.ID
             self.cat_from.mate = self.cat_to.ID
             self.mates = True
+            self.romantic_love = 20
+            self.comfortable = 20
+            self.trust = 10
+            # effect other relationship
+            mate_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_from.relationships))
+            if mate_relationship is not None and len(mate_relationship) > 0:
+                mate_relationship[0].romantic_love = 20
+                mate_relationship[0].comfortable = 20
+                mate_relationship[0].trust = 10
+            else:
+                self.cat_to.relationships.append(Relationship(self.cat_to,self.cat_from,True))
             game.cur_events_list.append(f'{str(self.cat_from.name)} and {str(self.cat_to.name)} have become mates')
         
         # breakup and new mate
