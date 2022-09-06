@@ -918,8 +918,8 @@ class Patrol(object):
                         if the_cat.dead or the_cat.exiled:
                             continue
                         if the_cat.ID in [kit2.parent1, kit2.parent2]:
-                            kit2.relationships.append(Relationship(kit,kit2,False,True))
-                            relationships.append(Relationship(kit2,kit,False,True))
+                            the_cat.relationships.append(Relationship(the_cat,kit2,False,True))
+                            relationships.append(Relationship(kit2,the_cat,False,True))
                         else:
                             the_cat.relationships.append(Relationship(the_cat,kit2))
                             relationships.append(Relationship(kit2,the_cat))
