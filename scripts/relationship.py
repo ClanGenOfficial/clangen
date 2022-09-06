@@ -485,15 +485,15 @@ class Relationship(object):
             self.cat_to.mate = self.cat_from.ID
             self.cat_from.mate = self.cat_to.ID
             self.mates = True
-            self.romantic_love = 20
-            self.comfortable = 20
-            self.trust = 10
+            self.romantic_love += 20
+            self.comfortable += 20
+            self.trust += 10
             # effect other relationship
             mate_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_from.relationships))
             if mate_relationship is not None and len(mate_relationship) > 0:
-                mate_relationship[0].romantic_love = 20
-                mate_relationship[0].comfortable = 20
-                mate_relationship[0].trust = 10
+                mate_relationship[0].romantic_love += 20
+                mate_relationship[0].comfortable += 20
+                mate_relationship[0].trust += 10
             else:
                 self.cat_to.relationships.append(Relationship(self.cat_to,self.cat_from,True))
             game.cur_events_list.append(f'{str(self.cat_from.name)} and {str(self.cat_to.name)} have become mates')
@@ -512,7 +512,17 @@ class Relationship(object):
             if chance == 1 or self.dislike > 20:
                 self.cat_to.mate = None
                 self.cat_from.mate = None
-                self.romantic_love = 10
+                self.romantic_love =5
+                self.comfortable = 10
+                self.trust = 10
+                # effect other relationship
+                mate_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_from.relationships))
+                if mate_relationship is not None and len(mate_relationship) > 0:
+                    mate_relationship[0].romantic_love = 5
+                    mate_relationship[0].comfortable = 10
+                    mate_relationship[0].trust = 10
+                else:
+                    self.cat_to.relationships.append(Relationship(self.cat_to,self.cat_from))
                 self.mates = False
                 game.cur_events_list.append(f'{str(self.cat_from.name)} and {str(self.cat_to.name)} broke up')
 
