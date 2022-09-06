@@ -560,7 +560,7 @@ class Events(object):
             cause_of_death = [name + ' was murdered', name + ' died of greencough', 'A tree fell in camp and killed ' + name, name + ' was found dead near a fox den']
             if cat.status == 'kitten':
                 cause_of_death.extend([name + ' fell into a river and drowned', name + ' was taken by a hawk', name + ' grew weak as the days passed and died',
-                                       name + ' was killed after sneaking out of camp', name + ' died after accidentally eating deathberries', name + 'was killed in their sleep after a snake snuck into camp'])
+                                       name + ' was killed after sneaking out of camp', name + ' died after accidentally eating deathberries', name + ' was killed in their sleep after a snake snuck into camp'])
                 if game.clan.current_season == 'Leaf-bare':
                     cause_of_death.extend([name + ' was found dead in the snow', name + ' froze to death in a harsh snowstorm',
                                            name + ' disappeared from the nursery and was found dead in the territory'])
