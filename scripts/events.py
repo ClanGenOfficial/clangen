@@ -410,8 +410,34 @@ class Events(object):
                     if cat.mate is not None:
                         kit = Cat(parent1=cat.ID, parent2=cat.mate, moons=randint(0, 5))
                         game.clan.add_cat(kit)
+                        #create and update relationships
+                        relationships = []
+                        for cat_id in game.clan.clan_cats:
+                            the_cat = cat_class.all_cats.get(cat_id)
+                            if the_cat.dead or the_cat.exiled:
+                                continue
+                            if the_cat.ID in [kit.parent1, kit.parent2]:
+                                the_cat.relationships.append(Relationship(the_cat,kit,False,True))
+                                relationships.append(Relationship(kit,the_cat,False,True))
+                            else:
+                                the_cat.relationships.append(Relationship(the_cat,kit))
+                                relationships.append(Relationship(kit,the_cat))
+                        kit.relationships = relationships
                     else:
                         kit = Cat(parent1=cat.ID, moons=randint(0, 5))
+                        #create and update relationships
+                        relationships = []
+                        for cat_id in game.clan.clan_cats:
+                            the_cat = cat_class.all_cats.get(cat_id)
+                            if the_cat.dead or the_cat.exiled:
+                                continue
+                            if the_cat.ID == kit.parent1:
+                                the_cat.relationships.append(Relationship(the_cat,kit,False,True))
+                                relationships.append(Relationship(kit,the_cat,False,True))
+                            else:
+                                the_cat.relationships.append(Relationship(the_cat,kit))
+                                relationships.append(Relationship(kit,the_cat))
+                        kit.relationships = relationships
                         game.clan.add_cat(kit)
                 if len(game.clan.all_clans) > 0:
                     Akit_text = ([f'{parent1} finds an abandoned litter and decides to adopt them',
