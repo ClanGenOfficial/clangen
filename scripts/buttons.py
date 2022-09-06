@@ -226,7 +226,24 @@ class Button(object):
                     else:
                         value.relationships.append(Relationship(value,cat_value,True))
                 else:
-                    cat_class.all_cats[cat_value.mate].mate = None
+                    # affect relationship
+                    cat_mate = cat_class.all_cats[cat_value.mate]
+                    cat_relationship = list(filter(lambda r: r.cat_to.ID == cat_mate.ID , cat_value.relationships))
+                    if cat_relationship is not None and len(cat_relationship) > 0:
+                        cat_relationship[0].romantic_love = 5
+                        cat_relationship[0].comfortable = 10
+                        cat_relationship[0].trust = 10
+                    else:
+                        cat_value.relationships.append(Relationship(cat_value,cat_mate,True))
+    
+                    ohter_cat_relationship = list(filter(lambda r: r.cat_to.ID == cat_value.ID , cat_mate.relationships))
+                    if ohter_cat_relationship is not None and len(ohter_cat_relationship) > 0:
+                        ohter_cat_relationship[0].romantic_love = 5
+                        ohter_cat_relationship[0].comfortable = 10
+                        ohter_cat_relationship[0].trust = 10
+                    else:
+                        cat_mate.relationships.append(Relationship(cat_mate,cat_value,True))
+                    cat_mate.mate = None
                     cat_value.mate = None
                 game.switches['mate'] = None
         if arrow is not None and game.switches['cur_screen'] == 'events screen':
