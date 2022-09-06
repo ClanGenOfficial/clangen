@@ -445,7 +445,14 @@ class Relationship(object):
                     
         # change the stats of the relationships
         self.affect_own_relationship(action)
-        self.affect_other_relationship(action)
+
+        # if link the relationship failed, you can't influence it 
+        if self.opposit_relationship is None:
+            print(f"Relationship of cat {self.cat_from} to cat {self.cat_to} is buggy.\n The opposit relationship does not exist, a new one is created.")
+            relation = Relationship(self.cat_to,self.cat_from)
+            self.cat_to.relationships.append(relation)
+        else:
+            self.affect_other_relationship(action)
 
         # broadcast action
         string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
