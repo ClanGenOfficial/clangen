@@ -28,7 +28,9 @@ class Events(object):
                     self._extracted_from_one_moon_7(cat)
                 elif cat.exiled:
                     cat.moons+=1
-                    if cat.moons == 12:
+                    if cat.moons == 6:
+                        cat.age = 'adolescent'
+                    elif cat.moons == 12:
                         cat.age = 'adult'
                     elif cat.moons == 100:
                         cat.age = 'elder'
@@ -395,8 +397,6 @@ class Events(object):
                         kit = Cat(parent1=cat.ID, moons=randint(0, 5))
                         game.clan.add_cat(kit)
                 if len(game.clan.all_clans) > 0:
-                    warrior = Cat(status='warrior', moons=randint(18, 150))
-                    game.clan.add_cat(warrior)
                     Akit_text = ([f'{parent1} finds an abandoned litter and decides to adopt them',
                                     f'A loner leaves their litter to the clan. {str(parent1)} decides to adopt them as their own',
                                     f'A {str(choice(game.clan.all_clans).name)}Clan queen decides to leave their litter with you. {str(parent1)} adopts them'])
