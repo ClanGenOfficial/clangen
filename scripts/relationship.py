@@ -11,54 +11,6 @@ THIRD_RELATIONSHIP_INCLUDED = {
     "trick": 'Has successfully tricked (cat) into believing a crazy tale about the clan leader'
 }
 
-SPECIAL_CHARACTER = {
-    "strange": ['Is following (cat) around', 'Tells (cat) that they\'re pelt looks like a different colour today'],
-    "bloodthirsty": ['Talks to (cat) how best to kill prey, very enthusiastic'],
-    "ambitious": ['Has been listening to (elder/deputy/senior warrior/leader) closely'],
-    "righteous": ['Makes sure (cat) is following the warrior code'],
-    "fierce": [ 'Is not backing down in an argument with (cat)', 
-                'Is telling (cat) in great detail how they would protect them from any danger'],
-    "nervous": ['Is stuttering while speaking to (cat)'],
-    "strict":['Scorns (apprentice) for not catching enough prey'],
-    "charismatic": ['Charms (cat)', 'Smiles at (cat) whenever they meet', 'Knows what to say to make (cat) feel better', 
-                    'Compliments (cat) for their good disposition'],
-    "calm": ['Relaxing with (cat)','Is soothing (cat)\'s irrational thoughts', 'Is helping (cat) calm down'],
-    "loving": [ 'Is making sure (cat) knows that they are loved','Is telling (cat) how much they cherish them', 
-                'Is purring loudly to comfort (cat)'],
-    "playful": ['Is playing tag with (cat)'],
-    "cold": ['Hissed at (cat)', 'Tells (cat) to leave them alone', 'Glaring at (cat) from across the camp'],
-    "vengeful": ['Thinking about how (cat) wronged them', 'Is watching (cat) scornfully', 'Is glaring daggers at (cat)'],
-    "shameless": ['Is asking (cat) to tell them about how good they look'],
-    "troublesome": ['Pulled a prank on (cat)', 'Blamed (cat) for their own mistake', 'Won\'t stop bothering (cat)',
-                    'Feels bad that they caused a problem for (cat)'],
-    "empathetic": [ 'Listening to (elder)\'s woes', 'Is listening to (cat)\'s troubles',
-                    'Noticed (apprentice) was struggling, and offered to help them'],
-    "adventurous": ['Wants to explore Twoleg place with (cat)', 'Wants to sneak along the border with (cat)', 
-                    'Tells (cat) that there\'s so much to see in the world!'],
-    "thoughful": [  'Gave (cat) their favorite piece of prey', 'Is being quite considerate with (cat)', 
-                    'Took the time to help (apprentice) work through a technique they are struggling with'],
-    "compassionate": [  'Curled around (cat) to share warmth', 'Lets (cat) have the last piece of fresh kill', 
-                        'Goes out of their way to cheer up (cat)', 'Listening to (cat)\'s problems',
-                        'Gives (cat) an item they may like', 'Helps (elder) get around camp'],
-    "childish": ['Chases around a butterfly', 'Is hiding behind a bush ready to pounce on (cat)'],
-    "confident": ['Is building up (cat)\'s confidence', 'Stands tall when (cat) walks by'],
-    "careful": ['Tells (cat) to get their ailment treated as soon as possible', 'Chiding (cat) for being so reckless',
-                'Apologized to (cat) for possibly hurting their feelings'],
-    "altruistic": ['Let (cat) lean on their shoulder after a recent injury', 'Is poised to help train (apprentice)'],
-    "bold": ['Winks at (cat)', 'Challenged (cat) to spar with them'],
-    "patient": ['Watching the shooting stars with (cat)', 
-                'Calmly explains hunting techniques to (cat) again for the fourth time today'],
-    "sneaky": [ 'Is gossiping about (cat)', 'Is teaching (cat) how to walk without making a sound', 
-                'Is showing (cat) how to sneak up on their enemies'],
-    "wise": ['Is giving (cat) advice'],
-    "cowardly": ['Is hiding from (cat)'],
-    "impulsive": [  'Crashes into (cat) while eager for patrol', 'Rejects (cat)\'s advice without letting them finish', 
-                    'Interrupts (cat) during a conversation'],
-    "tidy": [   'Is annoyed by the mess (cat) made', 'Grooms the grime off (cat)\'s pelt', 
-                'Is cross with (cat) for getting dirt all over the fresh-kill pile'],
-    "dreamy": ['Talks about dreams with (cat)', 'Gets distracted from conversation with (cat)']
-}
-
 EXILED_CATS = {
     "cat_to": ['Bumped into (cat) at the clan border', 'Caught a glimpse of (cat) from the distance'],
     "cat_from": ['Was wandering near the clan territory and met (cat)'],
@@ -79,7 +31,7 @@ NOT_AGE_SPECIFIC = {
 
 KITTEN_TO_OTHER = {
     "kitten": {
-        "unfriendly": ['Tries to scare (cat)'],
+        "unfriendly": ['Tries to scare (cat)', 'Constantly pulling pranks on (cat)'],
         "neutral": ['Has a mock battle with (cat)', 
                     'Is jealous that (cat) is getting more attention than them',
                     'Plays mossball with (cat)', 'Sticks their tongue out at (cat)',
@@ -89,30 +41,32 @@ KITTEN_TO_OTHER = {
                      'Is pretending to ward off foxes with (cat)',
                      'Is pretending to fight off badgers with (cat)',
                      'Is racing (cat) back and forth across the camp clearing'],
-        "close": [  'Comes up with a plan to sneak out of camp with (cat)']
+        "close": [  'Comes up with a plan to sneak out of camp with (cat)',
+                    'Wants to snuggle with (cat)']
     },
     "apprentice": {
-        "unfriendly": [],
+        "unfriendly": ['Constantly pulling pranks on (cat)'],
         "neutral": ['Sticks their tongue out at (cat)',
                     'Is hiding under a bush from (cat), but they can\'t stop giggling',
-                    'Is pretending to be (cat)'],
-        "friendly": [],
-        "close": []
+                    'Is pretending to be (cat)', 'Is asking (cat) how babies are made'],
+        "friendly": ['Ask (cat) what it\'s like to be a apprentice'],
+        "close": ['Wants to snuggle with (cat)']
     },
     "warrior": {
-        "unfriendly": [],
+        "unfriendly": ['Constantly pulling pranks on (cat)'],
         "neutral": ['Is biting (cat)\'s tail',
-                    'Sticks their tongue out at (cat)',
-                    'Is demanding (cat)\'s attention', 
+                    'Sticks their tongue out at (cat)', 'Is asking (cat) how babies are made',
+                    'Is demanding (cat)\'s attention', 'Is pretending to be (cat)',
                     'Is hiding under a bush from (cat), but they can\'t stop giggling',
-                    'Is pretending to be (cat)'],
-        "friendly": [],
-        "close": []
+                    ],
+        "friendly": ['Tells (cat) that they would like to be like them when they grows up'],
+        "close": ['Wants to snuggle with (cat)']
     },
     "elder": {
-        "unfriendly": [],
+        "unfriendly": ['Constantly pulling pranks on (cat)'],
         "neutral": ['Sticks their tongue out at (cat)', 
-                    'Is hiding under a bush from (cat), but they can\'t stop giggling'],
+                    'Is hiding under a bush from (cat), but they can\'t stop giggling',
+                    'Is asking (cat) how babies are made'],
         "friendly": [],
         "close": []
     }
@@ -122,7 +76,7 @@ APPRENTICE_TO_OTHER = {
     "kitten": {
         "unfriendly": [],
         "neutral": ['Trips over (cat)','Is watching over (cat)'],
-        "friendly": [],
+        "friendly": ['Train playfully with (cat)','Gave (cat) a trinket they found while out on patrol today'],
         "close": []
     },
     "apprentice": {
@@ -153,20 +107,23 @@ WARRIOR_TO_OTHER = {
                     'Is watching (cat) perform an almost-decent hunting crouch', 
                     'Is watching over (cat)'],
         "friendly": ['Is giving (cat) a badger ride on their back!', 'Hopes that their own kits are as cute as (cat) someday',
-                     'Is promising to take (cat) outside of camp if they behave', 'Gave (cat) a trinket they found while out on patrol today'],
-        "close":[],
+                     'Is promising to take (cat) outside of camp if they behave', 'Gave (cat) a trinket they found while out on patrol today',
+                     'Is feeling proud of (cat)'],
+        "close":['Train playfully with (cat)'],
     },
     "apprentice": {
         "unfriendly": ['Is scolding (cat)'],
         "neutral": ['Is giving advice to (cat)', 'Is watching (cat) perform an almost-decent hunting crouch',
-                    'Is telling (cat) about a hunting technique', 'Is giving (cat) a task'],
-        "friendly": ['Is telling (cat) about their own days as an apprentice'],
+                    'Is telling (cat) about a hunting technique', 'Is giving (cat) a task',
+                    'Wishes (cat) would take things more seriously'],
+        "friendly": ['Is telling (cat) about their own days as an apprentice', 'Is feeling proud of (cat)'],
         "close": []
     },
     "warrior": {
         "unfriendly": [],
         "neutral": ['Is telling (cat) about a hunting technique',
-                    'Is giving (cat) a task','Is frustrated that (cat) won\'t take their duties more seriously'],
+                    'Is giving (cat) a task','Is frustrated that (cat) won\'t take their duties more seriously',
+                    'Sparring with (cat)'],
         "friendly": [],
         "close": ['Just told (cat) a hilarious joke']
     },
@@ -186,14 +143,16 @@ ELDER_TO_OTHER = {
         "close": []
     },
     "apprentice": {
-        "unfriendly": ['Is scolding (cat)'],
-        "neutral": ['Is frustrated that (cat) won\'t take their duties more seriously'],
+        "unfriendly": ['Is scolding (cat)', 'Is bossing (cat) around'],
+        "neutral": ['Is frustrated that (cat) won\'t take their duties more seriously',
+                    'Bestowing wisdom onto (cat)', 'Is asking (cat) to check them for ticks'],
         "friendly": [],
         "close": []
     },
     "warrior": {
-        "unfriendly": ['Is scolding (cat)'],
-        "neutral": ['Is frustrated that (cat) won\'t take their duties more seriously'],
+        "unfriendly": ['Is scolding (cat)', 'Is bossing (cat) around'],
+        "neutral": ['Is frustrated that (cat) won\'t take their duties more seriously',
+                    'Bestowing wisdom onto (cat)'],
         "friendly": [],
         "close": []
     },
@@ -209,13 +168,14 @@ LOVE = {
     "love_interest_only": ['Is developing a crush on (cat)', 'Is admiring (cat) from afar...', 'Is spending a lot of time with (cat)',
                             'Gave a pretty flower they found to (cat)', 'Laughs at bad jokes from (cat)', 
                             'Enjoys the time with (cat) and feels secure', 'Make (cat) laugh again and again',
-                            'Ensnares (cat) with a charming smile'],
+                            'Ensnares (cat) with a charming smile', 'Go for a nice long walk with (cat)',
+                            'Wants to spend the entire day with (cat)'],
     "love_interest": [  'Can\'t seem to stop talking about (cat)', 'Would spend the entire day with (cat) if they could', 
                         'Keeps shyly glancing over at (cat) as the clan talks about kits', 
                         'Is thinking of the best ways to impress (cat)', 'Doesn\'t want (cat) to overwork themselves', 
                         'Is rolling around a little too playfully with (cat)...', 
                         'Is wondering what it would be like to grow old with (cat)', 'Thinks that (cat) is really funny',
-                        'Thinks that (cat) is really charming'],
+                        'Thinks that (cat) is really charming', 'Wants to confess their love to (cat)'],
     "mates": ['Was caught enjoying a moonlit stroll with (cat) last night...']
 }
 
@@ -242,8 +202,8 @@ DEPUTY = {
         "close": []
     },
     "to":{
-        "unfriendly": [],
-        "neutral": [],
+        "unfriendly": ['Thinks they should be deputy instead of (cat)'],
+        "neutral": ['Is tired from (cat) putting them on so many patrols'],
         "friendly": [],
         "close": []
     }
@@ -259,11 +219,58 @@ MEDICINE = {
     "to":{
         "unfriendly": [],
         "neutral": [],
-        "friendly": [],
+        "friendly": ['Escorted (cat) so they could gather herbs'],
         "close": []
     }
 }
 
+SPECIAL_CHARACTER = {
+    "strange": ['Is following (cat) around', 'Tells (cat) that they\'re pelt looks like a different colour today'],
+    "bloodthirsty": ['Talks to (cat) how best to kill prey, very enthusiastic', 'Started a fight with (cat)'],
+    "righteous": ['Makes sure (cat) is following the warrior code', 'Has a fight with (cat) about what\'s right'],
+    "fierce": [ 'Is not backing down in an argument with (cat)', 
+                'Is telling (cat) in great detail how they would protect them from any danger'],
+    "nervous": ['Is stuttering while speaking to (cat)'],
+    "strict":['Scorns (apprentice) for not catching enough prey'],
+    "charismatic": ['Charms (cat)', 'Smiles at (cat) whenever they meet', 'Knows what to say to make (cat) feel better', 
+                    'Compliments (cat) for their good disposition'],
+    "calm": ['Relaxing with (cat)','Is soothing (cat)\'s irrational thoughts', 'Is helping (cat) calm down'],
+    "daring": ['Challenges (cat) to a race'],
+    "loving": [ 'Is making sure (cat) knows that they are loved','Is telling (cat) how much they cherish them', 
+                'Is purring loudly to comfort (cat)'],
+    "playful": ['Is playing tag with (cat)'],
+    "cold": ['Hissed at (cat)', 'Tells (cat) to leave them alone', 'Glaring at (cat) from across the camp'],
+    "vengeful": ['Thinking about how (cat) wronged them', 'Is watching (cat) scornfully', 'Is glaring daggers at (cat)'],
+    "shameless": ['Is asking (cat) to tell them about how good they look'],
+    "troublesome": ['Pulled a prank on (cat)', 'Blamed (cat) for their own mistake', 'Won\'t stop bothering (cat)',
+                    'Feels bad that they caused a problem for (cat)'],
+    "empathetic": [ 'Listening to (elder)\'s woes', 'Is listening to (cat)\'s troubles',
+                    'Noticed (apprentice) was struggling, and offered to help them'],
+    "adventurous": ['Wants to explore Twoleg place with (cat)', 'Wants to sneak along the border with (cat)', 
+                    'Tells (cat) that there\'s so much to see in the world!'],
+    "thoughful": [  'Gave (cat) their favorite piece of prey', 'Is being quite considerate with (cat)', 
+                    'Took the time to help (apprentice) work through a technique they are struggling with'],
+    "compassionate": [  'Curled around (cat) to share warmth', 'Lets (cat) have the last piece of fresh kill', 
+                        'Listening to (cat)\'s problems', 'Gives (cat) an item they may like', 
+                        'Helps (elder) get around camp'],
+    "childish": ['Chases around a butterfly', 'Is hiding behind a bush ready to pounce on (cat)'],
+    "confident": ['Is building up (cat)\'s confidence', 'Stands tall when (cat) walks by'],
+    "careful": ['Tells (cat) to get their ailment treated as soon as possible', 'Chiding (cat) for being so reckless',
+                'Apologized to (cat) for possibly hurting their feelings'],
+    "altruistic": ['Let (cat) lean on their shoulder after a recent injury', 'Is poised to help train (apprentice)'],
+    "bold": ['Winks at (cat)', 'Challenged (cat) to spar with them'],
+    "patient": ['Watching the shooting stars with (cat)', 
+                'Calmly explains hunting techniques to (cat) again for the fourth time today'],
+    "sneaky": [ 'Is gossiping about (cat)', 'Is teaching (cat) how to walk without making a sound', 
+                'Is showing (cat) how to sneak up on their enemies'],
+    "wise": ['Is giving (cat) advice'],
+    "cowardly": ['Is hiding from (cat)'],
+    "impulsive": [  'Crashes into (cat) while eager for patrol', 'Rejects (cat)\'s advice without letting them finish', 
+                    'Interrupts (cat) during a conversation'],
+    "tidy": [   'Is annoyed by the mess (cat) made', 'Grooms the grime off (cat)\'s pelt', 
+                'Is cross with (cat) for getting dirt all over the fresh-kill pile'],
+    "dreamy": ['Talks about dreams with (cat)', 'Gets distracted from conversation with (cat)']
+}
 
 # How increasing one state influences another directly: (an increase of one state doesn't trigger a chain reaction)
 # increase romantic_love -> decreases: dislike | increases: like, comfortable
@@ -285,63 +292,107 @@ INCREASE = {
                           'Keeps shyly glancing over at (cat) as the clan talks about kits', 'Laughs at bad jokes from (cat)',
                           'Is rolling around a little too playfully with (cat)...', 'Enjoys the time with (cat) and feels secure',
                           'Was caught enjoying a moonlit stroll with (cat) last night...', 'Thinks that (cat) is really charming',
-                          'Is wondering what it would be like to grow old with (cat)'],
+                          'Is wondering what it would be like to grow old with (cat)','Go for a nice long walk with (cat)',
+                          'Wants to spend the entire day with (cat)', 'Wants to confess their love to (cat)'],
         "like": ['Is telling a story to (cat)','Is talking with (cat)','Pretends to be a warrior with (cat)',
-                'Is giving (cat) a badger ride on their back!', 'Is sharing tongues with (cat)',
-                'Has been spending time with (cat) lately','Just told (cat) a hilarious joke',
-                'Plays mossball with (cat)', 'Tells (cat) a secret'],
+                'Is giving (cat) a badger ride on their back!', 'Is sharing tongues with (cat)', 'Is playing tag with (cat)',
+                'Has been spending time with (cat) lately','Just told (cat) a hilarious joke', 'Relaxing with (cat)',
+                'Plays mossball with (cat)', 'Tells (cat) a secret', 'Wants to snuggle with (cat)', 
+                'Is making sure (cat) knows that they are loved', 'Is telling (cat) how much they cherish them',
+                'Noticed (apprentice) was struggling, and offered to help them','Gave (cat) their favorite piece of prey',
+                'Took the time to help (apprentice) work through a technique they are struggling with',
+                'Curled around (cat) to share warmth', 'Is building up (cat)\'s confidence',
+                'Watching the shooting stars with (cat)', 'Calmly explains hunting techniques to (cat) again for the fourth time today'],
         "dislike": ['Is mocking (cat)', 'Ignores (cat)', 'Sticks their tongue out at (cat)','Had a huge argument with (cat)',
-                    'Had a fight with (cat)', 'Is jealous that (cat) is getting more attention than them'],
-        "admiration": ['Is watching (cat) perform an almost-decent hunting crouch', 'Is admiring (cat) from afar...'],
+                    'Had a fight with (cat)', 'Is jealous that (cat) is getting more attention than them',
+                    'Constantly pulling pranks on (cat)', 'Started a fight with (cat)', 'Hissed at (cat)',
+                    'Tells (cat) to leave them alone'],
+        "admiration": ['Is watching (cat) perform an almost-decent hunting crouch', 'Is admiring (cat) from afar...',
+                        'Tells (cat) that they would like to be like them when they grows up', 'Train playfully with (cat)',
+                        'Ask (cat) what it\'s like to be a apprentice','Sparring with (cat)', 'Is feeling proud of (cat)',
+                        'Is asking (cat) to check them for ticks', 'Compliments (cat) for their good disposition'],
         "comfortable": ['Is telling a story to (cat)','Is sharing prey with (cat)','Tells (cat) a secret',
                         'Is sharing tongues with (cat)','Comes up with a plan to sneak out of camp with (cat)', 
-                        'Just told (cat) a hilarious joke', 'Thinks that (cat) is really funny'],
-        "jealousy": ['Is jealous that (cat) is getting more attention than them'],
-        "trust":['Is talking with (cat)','Tells (cat) a secret','Comes up with a plan to sneak out of camp with (cat)']
+                        'Just told (cat) a hilarious joke', 'Thinks that (cat) is really funny',
+                        'Escorted (cat) so they could gather herbs', 'Is helping (cat) calm down',
+                        'Curled around (cat) to share warmth','Watching the shooting stars with (cat)',
+                        'Talks about dreams with (cat)'],
+        "jealousy": ['Is jealous that (cat) is getting more attention than them', 'Thinking about how (cat) wronged them'],
+        "trust":['Is talking with (cat)','Tells (cat) a secret','Comes up with a plan to sneak out of camp with (cat)',
+                 'Escorted (cat) so they could gather herbs','Let (cat) lean on their shoulder after a recent injury']
     },
     "to": {
         "romantic_love": ['Is spending a lot of time with (cat)', 'Gave a pretty flower they found to (cat)',
                           'Is rolling around a little too playfully with (cat)...', 'Ensnares (cat) with a charming smile',
-                          'Was caught enjoying a moonlit stroll with (cat) last night...', 'Make (cat) laugh again and again'],
+                          'Was caught enjoying a moonlit stroll with (cat) last night...', 'Make (cat) laugh again and again',
+                          'Go for a nice long walk with (cat)', 'Wants to spend the entire day with (cat)', 'Charms (cat)'],
         "like": ['Is telling a story to (cat)','Is talking with (cat)','Is sharing tongue with (cat)',
                 'Is giving (cat) a badger ride on their back!', 'Is promising to take (cat) outside of camp if they behave',
                 'Gave (cat) a trinket they found while out on patrol today', 'Is telling (cat) about a hunting technique',
-                'Is sharing tongues with (cat)','Has been spending time with (cat) lately',
+                'Is sharing tongues with (cat)','Has been spending time with (cat) lately', 'Relaxing with (cat)', 
                 'Just told (cat) a hilarious joke', 'Plays mossball with (cat)','Pretends to be a warrior with (cat)',
-                'Comes up with a plan to sneak out of camp with (cat)', 'Tells (cat) a secret', 'Laughs at bad jokes from (cat)'],
+                'Comes up with a plan to sneak out of camp with (cat)', 'Tells (cat) a secret', 'Laughs at bad jokes from (cat)',
+                'Knows what to say to make (cat) feel better', 'Is making sure (cat) knows that they are loved',
+                'Is telling (cat) how much they cherish them', 'Is playing tag with (cat)', 'Curled around (cat) to share warmth',
+                'Noticed (apprentice) was struggling, and offered to help them', 'Gave (cat) their favorite piece of prey',
+                'Took the time to help (apprentice) work through a technique they are struggling with',
+                'Lets (cat) have the last piece of fresh kill', 'Gives (cat) an item they may like',
+                'Apologized to (cat) for possibly hurting their feelings', 'Watching the shooting stars with (cat)',
+                'Calmly explains hunting techniques to (cat) again for the fourth time today'],
         "dislike": ['Is mocking (cat)','Is telling jokes about (cat)','Sticks their tongue out at (cat)',
                     'Is spreading a rumour about (cat)','Tries to scare (cat)','Had a huge argument with (cat)',
-                    'Had a fight with (cat)'],
+                    'Had a fight with (cat)', 'Constantly pulling pranks on (cat)', 'Started a fight with (cat)',
+                    'Hissed at (cat)', 'Tells (cat) to leave them alone'],
         "admiration": ['Is promising to take (cat) outside of camp if they behave', 'Is telling (cat) about a hunting technique',
-                        'Is giving advice to (cat)'],
+                        'Is giving advice to (cat)','Sparring with (cat)', 'Is showing (cat) how to sneak up on their enemies',
+                        'Noticed (apprentice) was struggling, and offered to help them', 'Is giving (cat) advice',
+                        'Took the time to help (apprentice) work through a technique they are struggling with',
+                        'Calmly explains hunting techniques to (cat) again for the fourth time today',
+                        'Is teaching (cat) how to walk without making a sound'],
         "comfortable": ['Is telling a story to (cat)','Is sharing prey with (cat)','Tells (cat) a secret', 
                         'Is sharing tongues with (cat)','Is telling (cat) about their own days as an apprentice',
-                        'Comes up with a plan to sneak out of camp with (cat)'],
+                        'Comes up with a plan to sneak out of camp with (cat)', 'Escorted (cat) so they could gather herbs',
+                        'Compliments (cat) for their good disposition', 'Is helping (cat) calm down',
+                        'Is purring loudly to comfort (cat)', 'Is glaring daggers at (cat)', 'Is listening to (cat)\'s troubles',
+                        'Curled around (cat) to share warmth', 'Listening to (cat)\'s problems',
+                        'Is building up (cat)\'s confidence', 'Apologized to (cat) for possibly hurting their feelings',
+                        'Watching the shooting stars with (cat)','Is giving (cat) advice', 'Grooms the grime off (cat)\'s pelt'],
         "jealousy": [],
-        "trust":['Is talking with (cat)','Tells (cat) a secret',
-                'Comes up with a plan to sneak out of camp with (cat)']
+        "trust":['Is talking with (cat)','Tells (cat) a secret', 'Escorted (cat) so they could gather herbs',
+                'Comes up with a plan to sneak out of camp with (cat)', 'Let (cat) lean on their shoulder after a recent injury']
     }
 }
 
 DECREASE  = {
     "from": {
         "romantic_love": [],
-        "like": ['Is telling jokes about (cat)', 'Whines about (cat)'],
+        "like": ['Is telling jokes about (cat)', 'Whines about (cat)', 'Is tired from (cat) putting them on so many patrols',
+                 'Is bossing (cat) around', 'Started a fight with (cat)', 'Has a fight with (cat) about what\'s right',
+                 'Hissed at (cat)', 'Tells (cat) to leave them alone', 'Blamed (cat) for their own mistake',
+                 'Is hiding from (cat)', 'Is cross with (cat) for getting dirt all over the fresh-kill pile'],
         "dislike": [],
-        "admiration": ['Is frustrated that (cat) won\'t take their duties more seriously'],
-        "comfortable": [],
+        "admiration": ['Is frustrated that (cat) won\'t take their duties more seriously', 'Is annoyed by the mess (cat) made',
+                        'Wishes (cat) would take things more seriously', 'Thinks they should be deputy instead of (cat)'],
+        "comfortable": ['Is stuttering while speaking to (cat)','Glaring at (cat) from across the camp'],
         "jealousy": [],
         "trust": ['Doesn\'t think that (cat) has been completely honest lately']
     },
     "to": {
         "romantic_love": [],
-        "like": ['Is telling jokes about (cat)'],
+        "like": ['Is telling jokes about (cat)', 'Started a fight with (cat)', 'Has a fight with (cat) about what\'s right',
+                 'Is not backing down in an argument with (cat)', 'Scorns (apprentice) for not catching enough prey',
+                 'Hissed at (cat)', 'Tells (cat) to leave them alone', 'Blamed (cat) for their own mistake',
+                 'Rejects (cat)\'s advice without letting them finish', 'Is cross with (cat) for getting dirt all over the fresh-kill pile'],
         "dislike": [],
-        "admiration": ['Is scolding (cat)'],
-        "comfortable": [],
+        "admiration": ['Is scolding (cat)', 'Rejects (cat)\'s advice without letting them finish'],
+        "comfortable": ['Tells (cat) that they\'re pelt looks like a different colour today', 'Is following (cat) around',
+                        'Talks to (cat) how best to kill prey, very enthusiastic', 'Glaring at (cat) from across the camp',
+                        'Pulled a prank on (cat)', 'Won\'t stop bothering (cat)','Interrupts (cat) during a conversation',
+                        'Gets distracted from conversation with (cat)'],
         "jealousy": [],
-        "trust": ['Is spreading a rumour about (cat)','Trips over (cat)','Tries to scare (cat)',
-                'Has successfully tricked (cat) into believing a crazy tale about the clan leader']
+        "trust": ['Is spreading a rumour about (cat)','Trips over (cat)','Tries to scare (cat)', 'Pulled a prank on (cat)',
+                'Has successfully tricked (cat) into believing a crazy tale about the clan leader',
+                'Blamed (cat) for their own mistake', 'Is gossiping about (cat)']
     }
 }
 
@@ -485,15 +536,15 @@ class Relationship(object):
             self.cat_to.mate = self.cat_from.ID
             self.cat_from.mate = self.cat_to.ID
             self.mates = True
-            self.romantic_love += 20
-            self.comfortable += 20
-            self.trust += 10
+            self.romantic_love = 20
+            self.comfortable = 20
+            self.trust = 10
             # effect other relationship
             mate_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_from.relationships))
             if mate_relationship is not None and len(mate_relationship) > 0:
-                mate_relationship[0].romantic_love += 20
-                mate_relationship[0].comfortable += 20
-                mate_relationship[0].trust += 10
+                mate_relationship[0].romantic_love = 20
+                mate_relationship[0].comfortable = 20
+                mate_relationship[0].trust = 10
             else:
                 self.cat_to.relationships.append(Relationship(self.cat_to,self.cat_from,True))
             game.cur_events_list.append(f'{str(self.cat_from.name)} and {str(self.cat_to.name)} have become mates')
@@ -512,17 +563,7 @@ class Relationship(object):
             if chance == 1 or self.dislike > 20:
                 self.cat_to.mate = None
                 self.cat_from.mate = None
-                self.romantic_love =5
-                self.comfortable = 10
-                self.trust = 10
-                # effect other relationship
-                mate_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_from.relationships))
-                if mate_relationship is not None and len(mate_relationship) > 0:
-                    mate_relationship[0].romantic_love = 5
-                    mate_relationship[0].comfortable = 10
-                    mate_relationship[0].trust = 10
-                else:
-                    self.cat_to.relationships.append(Relationship(self.cat_to,self.cat_from))
+                self.romantic_love = 10
                 self.mates = False
                 game.cur_events_list.append(f'{str(self.cat_from.name)} and {str(self.cat_to.name)} broke up')
 
