@@ -13,7 +13,7 @@ THIRD_RELATIONSHIP_INCLUDED = {
 }
 
 SPECIAL_CHARACTER = {
-    "strange": ['Is following (cat) around', 'Tells (cat) that they\'re pelt looks like a different colour today'],
+    "strange": ['Is following (cat) around', 'Tells (cat) that their pelt looks like a different colour today'],
     "bloodthirsty": ['Talks to (cat) how best to kill prey, very enthusiastic'],
     "ambitious": ['Has been listening to (elder/deputy/senior warrior/leader) closely'],
     "righteous": ['Makes sure (cat) is following the warrior code'],
