@@ -1570,7 +1570,10 @@ class ListScreen(Screens):
         for x in range(len(search_cats)):
             if x + (game.switches['list_page'] - 1) * 20 >= len(search_cats):
                 game.switches['list_page'] -= 1
-            the_cat = search_cats[x + (game.switches['list_page'] - 1) * 20]
+            if (x + (game.switches['list_page'] - 1) * 20 < len(search_cats)): 
+                the_cat = search_cats[x + (game.switches['list_page'] - 1) * 20]
+            else:
+                the_cat = search_cats[len(search_cats) - 1]
             if not the_cat.dead:
                 column = int(pos_x/100)
                 row = int(pos_y/100)
