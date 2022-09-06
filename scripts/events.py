@@ -253,26 +253,42 @@ class Events(object):
             game.cur_events_list.append(choice(scar_text))
 
     def handle_relationships(self, cat):
-        viable_mate = False
-        other_cat = choice(list(cat_class.all_cats.values()))
-        if cat != other_cat and not other_cat.dead and cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and other_cat.status not in [
-        'kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and cat.age == other_cat.age and cat.mate is None and other_cat.mate is None and not cat.parent1 and not cat.parent2 and not cat.former_apprentices:
-            viable_mate = True
-        else:
+        if randint(1, 100) == 1 and cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and cat.age in ['young adult', 'adult', 'senior adult'] and cat.mate is None:
             other_cat = choice(list(cat_class.all_cats.values()))
-        if randint(1, 50) == 1:
-            if viable_mate == True:
-                    game.cur_events_list.append(f'{str(cat.name)} and {str(other_cat.name)} have become mates') 
-                    cat.mate = other_cat.ID
-                    other_cat.mate = cat.ID
+            parents = [cat.ID]
+            if cat.parent1 is not None:
+                parents.append(cat.parent1)
+                if cat.parent2 is not None:
+                    parents.append(cat.parent2)
+            other_parents = [other_cat.ID]
+            if other_cat.parent1 is not None:
+                other_parents.append(other_cat.parent1)
+                if other_cat.parent2 is not None:
+                    other_parents.append(other_cat.parent2)
+            count = 0
+            while cat == other_cat or other_cat.dead or other_cat.exiled or other_cat.status in [
+            'kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] or other_cat.age not in ['young adult', 'adult', 'senior adult'] or other_cat.mate is not None or other_cat.ID in cat.former_apprentices or cat.ID in other_cat.former_apprentices or not set(parents).isdisjoint(set(other_parents)):
+                other_cat = choice(list(cat_class.all_cats.values()))
+                other_parents = [other_cat.ID]
+                if other_cat.parent1 is not None:
+                    other_parents.append(other_cat.parent1)
+                    if other_cat.parent2 is not None:
+                        other_parents.append(other_cat.parent2)
+                count += 1
+                if count == 5:
+                    return
+            game.cur_events_list.append(f'{str(cat.name)} and {str(other_cat.name)} have become mates') 
+            cat.mate = other_cat.ID
+            other_cat.mate = cat.ID
                     
         elif randint(1, 50) == 1:
+            other_cat = choice(list(cat_class.all_cats.values()))
             if cat.mate == other_cat.ID:
                 game.cur_events_list.append(f'{str(cat.name)} and {str(other_cat.name)} have broken up')
                 cat.mate = None
                 other_cat.mate = None
-                
-        elif randint(1, 25) == 1:
+        elif randint(1, 50) == 1:
+            other_cat = choice(list(cat_class.all_cats.values()))
             if cat.mate == other_cat.ID and other_cat.dead == True:
                 game.cur_events_list.append(f'{str(cat.name)} will always love {str(other_cat.name)} but has decided to move on')
                 cat.mate = None
@@ -551,7 +567,7 @@ class Events(object):
                 if game.clan.current_season == 'Greenleaf':
                     cause_of_death.extend([name + ' died to overheating'])
             elif cat.status == 'apprentice':
-                cause_of_death.append([name + ' died in a training accident', name + ' was killed by enemy warriors after accidentally wandering over the border',
+                cause_of_death.extend([name + ' died in a training accident', name + ' was killed by enemy warriors after accidentally wandering over the border',
                                        name + ' went missing and was found dead', name + ' died in a border skirmish'])
                 if game.clan.biome == "Mountainous":
                     cause_of_death.extend([name + ' was crushed to death by an avalanche', name + ' fell from a cliff and died'])
