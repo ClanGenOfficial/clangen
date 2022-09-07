@@ -1275,7 +1275,8 @@ class Cat(object):
     def save_cats(self):
         data = ''
         for x in self.all_cats.values():
-            x.save_relationship_of_cat()
+            if not x.dead:
+                x.save_relationship_of_cat()
             # cat ID -- name prefix : name suffix
             data += x.ID + ',' + x.name.prefix + ':' + x.name.suffix + ','
             # cat gender -- status -- age -- trait
@@ -1344,9 +1345,12 @@ class Cat(object):
                 data+=',' + 'True'
             else:
                 data+=',' + 'False'
-            data += ',' + str(x.genderalign)
-            data += ',' + str(x.calicobase)
-            data += ',' + str(x.calicocolour)
+            if x.genderalign:
+                data += ',' + str(x.genderalign)
+            if x.calicobase:
+                data += ',' + str(x.calicobase)
+            if x.calicocolour:
+                data += ',' + str(x.calicocolour)
             # next cat
             data += '\n'
 
