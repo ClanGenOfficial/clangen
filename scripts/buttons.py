@@ -212,17 +212,17 @@ class Button(object):
                     # affect relationship
                     cat_relationship = list(filter(lambda r: r.cat_to.ID == value.ID , cat_value.relationships))
                     if cat_relationship is not None and len(cat_relationship) > 0:
-                        cat_relationship[0].romantic_love = 20
-                        cat_relationship[0].comfortable = 20
-                        cat_relationship[0].trust = 10
+                        cat_relationship[0].romantic_love += 20
+                        cat_relationship[0].comfortable += 20
+                        cat_relationship[0].trust += 10
                     else:
                         cat_value.relationships.append(Relationship(cat_value,value,True))
     
                     ohter_cat_relationship = list(filter(lambda r: r.cat_to.ID == cat_value.ID , value.relationships))
                     if ohter_cat_relationship is not None and len(ohter_cat_relationship) > 0:
-                        ohter_cat_relationship[0].romantic_love = 20
-                        ohter_cat_relationship[0].comfortable = 20
-                        ohter_cat_relationship[0].trust = 10
+                        ohter_cat_relationship[0].romantic_love += 20
+                        ohter_cat_relationship[0].comfortable += 20
+                        ohter_cat_relationship[0].trust += 10
                     else:
                         value.relationships.append(Relationship(value,cat_value,True))
                 else:
@@ -231,16 +231,16 @@ class Button(object):
                     cat_relationship = list(filter(lambda r: r.cat_to.ID == cat_mate.ID , cat_value.relationships))
                     if cat_relationship is not None and len(cat_relationship) > 0:
                         cat_relationship[0].romantic_love = 5
-                        cat_relationship[0].comfortable = 10
-                        cat_relationship[0].trust = 10
+                        cat_relationship[0].comfortable -= 20
+                        cat_relationship[0].trust -= 10
                     else:
                         cat_value.relationships.append(Relationship(cat_value,cat_mate,True))
     
                     ohter_cat_relationship = list(filter(lambda r: r.cat_to.ID == cat_value.ID , cat_mate.relationships))
                     if ohter_cat_relationship is not None and len(ohter_cat_relationship) > 0:
                         ohter_cat_relationship[0].romantic_love = 5
-                        ohter_cat_relationship[0].comfortable = 10
-                        ohter_cat_relationship[0].trust = 10
+                        ohter_cat_relationship[0].comfortable -= 20
+                        ohter_cat_relationship[0].trust -= 10
                     else:
                         cat_mate.relationships.append(Relationship(cat_mate,cat_value,True))
                     cat_mate.mate = None
