@@ -2762,9 +2762,7 @@ class RelationshipScreen(Screens):
         if next_cat != 0:
             buttons.draw_button((-40, 40), text='Next Cat', cat=next_cat, hotkey=[21])
         if previous_cat != 0:
-            buttons.draw_button((40, 40),
-                                    text='Previous Cat',
-                                    cat=previous_cat, hotkey=[23])     
+            buttons.draw_button((40, 40), text='Previous Cat', cat=previous_cat, hotkey=[23])     
 
         # layout
 
@@ -2814,76 +2812,54 @@ class RelationshipScreen(Screens):
             elif the_relationship.cat_to.mate != None and the_relationship.cat_to.mate != '':
                 verdana_small.text('has a mate', (140 + pos_x - string_len / 1.5, 140 + pos_y))
 
-            # Loading Bar and variables
-            bar_bg = pygame.image.load("resources/relations_border.png").convert_alpha()
-            original_bar = pygame.image.load("resources/relation_bar.png").convert_alpha()
-
-            if game.settings['dark mode']:
-                bar_bg = pygame.image.load("resources/relations_border_dark.png").convert_alpha()
-                original_bar = pygame.image.load("resources/relation_bar_dark.png").convert_alpha()
-
             count = 15
             verdana_small.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             count += 20
-            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            bar = pygame.transform.scale(original_bar, (the_relationship.romantic_love, 12))
-            screen.blit(bar_bg, bg_rect)
-            screen.blit(bar, bar_rect)
+            current_x = 140 + pos_x - string_len / 1.5
+            current_y = 145 + pos_y + count
+            draw_bar(the_relationship.romantic_love, current_x, current_y)
             count += 5
 
             verdana_small.text('platonic like:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             count += 20
-            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            bar = pygame.transform.scale(original_bar, (the_relationship.platonic_like, 12))
-            screen.blit(bar_bg, bg_rect)
-            screen.blit(bar, bar_rect)
+            current_x = 140 + pos_x - string_len / 1.5
+            current_y = 145 + pos_y + count
+            draw_bar(the_relationship.platonic_like, current_x, current_y)
             count += 5
 
             verdana_small.text('dislike:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             count += 20
-            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            bar = pygame.transform.scale(original_bar, (the_relationship.dislike, 12))
-            screen.blit(bar_bg, bg_rect)
-            screen.blit(bar, bar_rect)
+            current_x = 140 + pos_x - string_len / 1.5
+            current_y = 145 + pos_y + count
+            draw_bar(the_relationship.dislike, current_x, current_y)
             count += 5
             
             verdana_small.text('admiration:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             count += 20
-            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            bar = pygame.transform.scale(original_bar, (the_relationship.admiration, 12))
-            screen.blit(bar_bg, bg_rect)
-            screen.blit(bar, bar_rect)
+            current_x = 140 + pos_x - string_len / 1.5
+            current_y = 145 + pos_y + count
+            draw_bar(the_relationship.admiration, current_x, current_y)
             count += 5
 
             verdana_small.text('comfortable:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             count += 20
-            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            bar = pygame.transform.scale(original_bar, (the_relationship.comfortable, 12))
-            screen.blit(bar_bg, bg_rect)
-            screen.blit(bar, bar_rect)
+            current_x = 140 + pos_x - string_len / 1.5
+            current_y = 145 + pos_y + count
+            draw_bar(the_relationship.comfortable, current_x, current_y)
             count += 5
 
             verdana_small.text('jealousy:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             count += 20
-            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            bar = pygame.transform.scale(original_bar, (the_relationship.jealousy, 12))
-            screen.blit(bar_bg, bg_rect)
-            screen.blit(bar, bar_rect)
+            current_x = 140 + pos_x - string_len / 1.5
+            current_y = 145 + pos_y + count
+            draw_bar(the_relationship.jealousy, current_x, current_y)
             count += 5
 
             verdana_small.text('trust:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             count += 20
-            bg_rect = bar_bg.get_rect(midleft=(140 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            bar_rect = original_bar.get_rect(midleft=(142 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            bar = pygame.transform.scale(original_bar, (the_relationship.trust, 12))
-            screen.blit(bar_bg, bg_rect)
-            screen.blit(bar, bar_rect)
+            current_x = 140 + pos_x - string_len / 1.5
+            current_y = 145 + pos_y + count
+            draw_bar(the_relationship.trust, current_x, current_y)
 
             cats_on_page += 1
             pos_x += 140
