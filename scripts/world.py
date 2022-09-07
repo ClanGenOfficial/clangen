@@ -2,7 +2,7 @@ import pygame
 import math
 from noise import snoise2
 import numpy as np
-import pandas as pd
+import csv
 
 class World:
     def __init__(self, shape, seed):
@@ -25,8 +25,10 @@ class World:
         return self.heightmap[x][y]
     
 def save_map(mapinfo, clanname):
-    mapinfo = pd.DataFrame.from_dict(mapinfo, orient='index')
-    mapinfo.to_csv(f'saves/{clanname}map.csv', index = False, header=False)
+    with open(f'saves/{clanname}map.csv', 'w') as csvfile:
+        writer = csv.writer(csvfile)
+        for key in mapinfo:
+            writer.writerow(mapinfo[key])
 
 def load_map(clanname):
     dict_from_csv = {}
