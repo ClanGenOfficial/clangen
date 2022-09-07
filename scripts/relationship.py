@@ -225,7 +225,7 @@ MEDICINE = {
 }
 
 SPECIAL_CHARACTER = {
-    "strange": ['Is following (cat) around', 'Tells (cat) that they\'re pelt looks like a different colour today'],
+    "strange": ['Is following (cat) around', 'Tells (cat) that their pelt looks like a different colour today'],
     "bloodthirsty": ['Talks to (cat) how best to kill prey, very enthusiastic', 'Started a fight with (cat)'],
     "righteous": ['Makes sure (cat) is following the warrior code', 'Has a fight with (cat) about what\'s right'],
     "fierce": [ 'Is not backing down in an argument with (cat)', 
@@ -411,6 +411,7 @@ class Relationship(object):
         self.family = family
         self.opposit_relationship = None #link to oppositting relationship will be created later
         self.effect = 'neutral effect'
+        self.current_action_str = ''
 
         # check if cats are related
         parents_to = [self.cat_to.parent1, self.cat_to.parent2]
@@ -455,7 +456,6 @@ class Relationship(object):
             self.cat_to.relationships.append(relation)
             self.opposit_relationship =relation
             
-
     def start_action(self):
         """This function checks current state of relationship and decides which actions can happen."""
         # update relationship
@@ -467,25 +467,26 @@ class Relationship(object):
 
         self.current_changes_to = []
         self.current_changes_from = []
+        self.effect = 'neutral effect'
 
         # quick fix for exiled cat relationships
         if self.cat_to.exiled and not self.cat_from.exiled:
             action = choice(EXILED_CATS['cat_to'])
             string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
-            action_string = action.replace(string_to_replace, str(self.cat_to.name)) 
-            game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string} ({self.effect})")
+            self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name)) 
+            game.relation_events_list.append(f"{str(self.cat_from.name)} - {self.current_action_str} ({self.effect})")
             return
         elif self.cat_from.exiled and not self.cat_to.exiled:
             action = choice(EXILED_CATS['cat_from'])
             string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
-            action_string = action.replace(string_to_replace, str(self.cat_to.name)) 
-            game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string} ({self.effect})")
+            self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name)) 
+            game.relation_events_list.append(f"{str(self.cat_from.name)} - {self.current_action_str} ({self.effect})")
             return
         elif self.cat_from.exiled and self.cat_to.exiled:
             action = choice(EXILED_CATS['both'])
             string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
-            action_string = action.replace(string_to_replace, str(self.cat_to.name)) 
-            game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string} ({self.effect})")
+            self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name)) 
+            game.relation_events_list.append(f"{str(self.cat_from.name)} - {self.current_action_str} ({self.effect})")
             return
 
         # get action possibilities
@@ -511,24 +512,21 @@ class Relationship(object):
 
         # broadcast action
         string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
-        action_string = action.replace(string_to_replace, str(self.cat_to.name))
-        self.action_results(action_string)
+        self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
+        # self.action_results()
         rel_stat_info_from = '('
         rel_stat_info_from += ','.join(self.current_changes_from) + '[' + str(self.cat_from.name) + '])'
         rel_stat_info_to = '('
         rel_stat_info_to += ','.join(self.current_changes_to) + '[' + str(self.cat_to.name) + '])'
 
-        game.relation_events_list.append(f"{str(self.cat_from.name)} - {action_string} ({self.effect})")
-
-        self.effect = 'neutral effect'
+        game.relation_events_list.append(f"{str(self.cat_from.name)} - {self.current_action_str} ({self.effect})")
         #if len(self.current_changes_from) > 0:
         #    game.relation_events_list.append(rel_stat_info_from)
         #if len(self.current_changes_to) > 0:
         #    game.relation_events_list.append(rel_stat_info_to)
 
-    def action_results(self, action_string):
+    def action_results(self):
         """Things that can happen, this events will show on the """
-
         # new mates
         cat_to_no_mate = self.cat_to.mate == None or self.cat_to.mate == ''
         cat_from_no_mate = self.cat_from.mate == None or self.cat_from.mate == ''
@@ -541,24 +539,49 @@ class Relationship(object):
             self.comfortable += 10
             self.trust += 10
             # effect other relationship
-            mate_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_from.relationships))
-            if mate_relationship is not None and len(mate_relationship) > 0:
-                mate_relationship[0].romantic_love += 15
-                mate_relationship[0].comfortable += 10
-                mate_relationship[0].trust += 10
+            opposite_mate_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_from.relationships))
+            if opposite_mate_relationship is not None and len(opposite_mate_relationship) > 0:
+                opposite_mate_relationship[0].romantic_love += 15
+                opposite_mate_relationship[0].comfortable += 10
+                opposite_mate_relationship[0].trust += 10
             else:
                 self.cat_to.relationships.append(Relationship(self.cat_to,self.cat_from,True))
             game.cur_events_list.append(f'{str(self.cat_from.name)} and {str(self.cat_to.name)} have become mates')
         
         # breakup and new mate
-        #if game.settings['affair']:
-        #    if self.romantic_love > 30 and self.opposit_relationship.romantic_love > 30:
-        #        print("AFFAIR")
+        # if game.settings['affair'] and not self.mates:
+            # love_over_30 = self.romantic_love > 30 and self.opposit_relationship.romantic_love > 30
+            # normal_chance = randint(0,10)
+            ## compare love value of current mates
+            # bigger_than_current = False
+            # bigger_love_chance = randint(0,3)
+            # mate_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.mate , self.cat_from.relationships))
+            # if mate_relationship is not None and len(mate_relationship) > 0:
+                # bigger_than_current = self.romantic_love > mate_relationship[0].romantic_love
+            # else:
+                # print(f"Relationship of cat {self.cat_from} to cat {self.cat_from.mate} is buggy.")
+                ## A new relation can't be created here, because there is no way to get the 
+                ## cat entity of the mate
+                # bigger_than_current = True
+# 
+            # if self.cat_to.mate != None or self.cat_to.mate != '':
+                # opposite_mate_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_to.relationships))
+                # if opposite_mate_relationship is not None and len(opposite_mate_relationship) > 0:
+                    # bigger_than_current = bigger_than_current and self.romantic_love > opposite_mate_relationship[0]
+                # else:
+                    # print(f"Relationship of cat {self.cat_to} to cat {self.cat_to.mate} is buggy.")
+                    ## A new relation can't be created here, because there is no way to get the 
+                    ## cat entity of the mate
+                    # bigger_than_current = bigger_than_current and True
+            # 
+            # if (love_over_30 and normal_chance == 1) or (bigger_than_current and bigger_love_chance == 1):
+                # game.cur_events_list.append(f'{str(self.cat_from.name)} and {str(self.cat_from.mate)} broke up')
+                # print("AFFAIR")
         
         # breakup
         if self.mates and 'negative' in self.effect:
             chance_number = 30
-            if 'fight' in action_string:
+            if 'fight' in self.current_action_str:
                 chance_number = 20
             chance = randint(0,chance_number)
             if chance == 1 or self.dislike > 20:
@@ -568,11 +591,11 @@ class Relationship(object):
                 self.comfortable -= 20
                 self.trust -= 10
                 # effect other relationship
-                mate_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_from.relationships))
-                if mate_relationship is not None and len(mate_relationship) > 0:
-                    mate_relationship[0].romantic_love = 5
-                    mate_relationship[0].comfortable -= 20
-                    mate_relationship[0].trust -= 10
+                opposite_mate_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_from.relationships))
+                if opposite_mate_relationship is not None and len(opposite_mate_relationship) > 0:
+                    opposite_mate_relationship[0].romantic_love = 5
+                    opposite_mate_relationship[0].comfortable -= 20
+                    opposite_mate_relationship[0].trust -= 10
                 else:
                     self.cat_to.relationships.append(Relationship(self.cat_to,self.cat_from,True))
                 self.mates = False
@@ -651,6 +674,7 @@ class Relationship(object):
         # LOVE
         # check mate status and settings
         cat_from_has_mate = self.cat_from.mate != None or self.cat_from.mate != ''
+
         # only allow love actions with mate (if they have some) if the setting is turned of
         if cat_from_has_mate and not self.mates and not game.settings['affair']:
             return action_possibilies
@@ -666,8 +690,13 @@ class Relationship(object):
         # chance to fall in love with some the character is not close to:
         love_p = randint(0,30)
         if not self.family and (both_are_kits or none_of_them_are_kits) and both_in_same_age_group:
-            if self.platonic_like > 40 or love_p == 1 or self.romantic_love > 5:
+            if self.platonic_like > 30 or love_p == 1 or self.romantic_love > 5:
+
+                # increase the chance of an love event for two unmated cats
                 action_possibilies = action_possibilies + LOVE['love_interest_only']
+                if (self.cat_from.mate == None or self.cat_from.mate == '') and\
+                    (self.cat_to.mate == None or self.cat_to.mate == ''):
+                    action_possibilies = action_possibilies + LOVE['love_interest_only']
 
             if self.opposit_relationship.romantic_love > 20:
                 action_possibilies = action_possibilies + LOVE['love_interest_only']
