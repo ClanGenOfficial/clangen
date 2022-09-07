@@ -404,11 +404,18 @@ class ClanScreen(Screens):
                     'resources/leafbarecamp_dark.png',
                     'resources/leaffallcamp_dark.png')
             elif game.clan.biome == "Plains":
-                self._extracted_from_change_brightness_3(
-                    'resources/greenleafcamp_plains_dark.png',
-                    'resources/newleafcamp_plains_dark.png',
-                    'resources/leafbarecamp_plains_dark.png',
-                    'resources/leaffallcamp_plains_dark.png')
+                try:
+                    self._extracted_from_change_brightness_3(
+                        'resources/greenleafcamp_plains_dark.png',
+                        'resources/newleafcamp_plains_dark.png',
+                        'resources/leafbarecamp_plains_dark.png',
+                        'resources/leaffallcamp_plains_dark.png')
+                except:
+                    self._extracted_from_change_brightness_3(
+                    'resources/greenleafcamp_dark.png',
+                    'resources/newleafcamp_dark.png',
+                    'resources/leafbarecamp_dark.png',
+                    'resources/leaffallcamp_dark.png')
             elif game.clan.biome == "Beach":
                 try:
                     self._extracted_from_change_brightness_3(
