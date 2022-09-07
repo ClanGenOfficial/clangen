@@ -1058,7 +1058,7 @@ class Cat(object):
 
     def is_valid_mentor(self, potential_mentor):
         # Dead or exiled cats can't be mentors
-        if potential_mentor.dead and not potential_mentor.exiled:
+        if potential_mentor.dead or potential_mentor.exiled:
             return False
         # Match jobs
         if self.status == 'medicine cat apprentice' and potential_mentor.status != 'medicine cat':
