@@ -450,7 +450,7 @@ class Patrol(object):
                 'Your patrol comes catches the scent of a fox',
                 'Your patrol drives away the fox and her cubs',
                 'The mother fox fights to defend her cubs, and r_c is injured in the attack',
-                'Your patrol decides not to pursue the dog',
+                'Your patrol decides not to pursue the fox',
                 30,
                 30,
                 win_skills=['excellent fighter']),
