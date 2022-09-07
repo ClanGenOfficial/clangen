@@ -422,8 +422,10 @@ class ClanScreen(Screens):
 class StarClanScreen(Screens):
 
     def on_use(self):
-        verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
-        verdana.text('StarClan Cat List', ('center', 100))
+        bg = pygame.transform.scale(pygame.image.load("resources/starclanbg.png").convert(), (800, 700))
+        screen.blit(bg, (0, 0))
+        verdana_big_white.text(f'{game.clan.name}Clan', ('center', 30))
+        verdana_white.text('StarClan Cat List', ('center', 100))
         dead_cats = [game.clan.instructor]
         for x in range(len(cat_class.all_cats.values())):
             the_cat = list(cat_class.all_cats.values())[x]
@@ -433,7 +435,7 @@ class StarClanScreen(Screens):
         search_text = game.switches['search_text']
         pygame.draw.rect(screen, 'lightgray', pygame.Rect((170, 130),
                                                           (150, 20)))
-        verdana.text('Search: ', (100, 130))
+        verdana_white.text('Search: ', (100, 130))
         verdana_black.text(game.switches['search_text'], (180, 130))
         search_cats = []
         if search_text.strip() != '':
@@ -458,19 +460,17 @@ class StarClanScreen(Screens):
                                     image=the_cat.sprite,
                                     cat=the_cat.ID,
                                     cur_screen='profile screen', hotkey=[row+1, column+11])
-
-                name_len = verdana.text(str(the_cat.name))
-                verdana.text(str(the_cat.name),
-                             (130 + pos_x - name_len / 2, 240 + pos_y))
+                verdana_white.text(str(the_cat.name),
+                             (130 + pos_x, 240 + pos_y))
                 cats_on_page += 1
-                pos_x += 100
+                pos_x += 120
                 if pos_x >= 600:
                     pos_x = 0
                     pos_y += 100
                 if cats_on_page >= 20 or x + (game.switches['list_page'] -
                                               1) * 20 == len(search_cats) - 1:
                     break
-        verdana.text(
+        verdana_white.text(
             'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages),
             ('center', 600))
 
@@ -2600,6 +2600,8 @@ class OptionsScreen(Screens):
 
         if game.switches['kill_cat'] is not False and game.switches[
                 'kill_cat'] is not None:
+            if game.switches['kill_cat'].status == 'leader':
+                game.clan.leader_lives -= 10
             events_class.dies(game.switches['kill_cat'])
             game.switches['kill_cat'] = False
 
