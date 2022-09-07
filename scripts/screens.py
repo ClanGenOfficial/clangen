@@ -421,8 +421,13 @@ class ClanScreen(Screens):
 
 class StarClanScreen(Screens):
 
+    def __init__(self, name=None):
+        super().__init__(name)
+        self.starclan_bg = pygame.transform.scale(pygame.image.load("resources/starclanbg.png")
+                                                  .convert(), (800, 700))
+
     def on_use(self):
-        bg = pygame.transform.scale(pygame.image.load("resources/starclanbg.png").convert(), (800, 700))
+        bg = self.starclan_bg
         screen.blit(bg, (0, 0))
         verdana_big_white.text(f'{game.clan.name}Clan', ('center', 30))
         verdana_white.text('StarClan Cat List', ('center', 100))
