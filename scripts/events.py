@@ -668,7 +668,7 @@ class Events(object):
                 if cat.status == 'leader':
                     game.clan.leader_lives -= 10
                 self.dies(cat)
-                game.cur_events_list.append(name + ' is killed by ' + other_name + ' in an argument over ' + str(cat_class.all_cats.get(cat.mate).name))
+                game.cur_events_list.append(name + ' is killed by ' + other_name + ' in an argument')
                 if cat.status != 'leader':
                     self.dies(cat)
                     self.dies(other_cat)
