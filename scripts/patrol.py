@@ -532,7 +532,7 @@ class Patrol(object):
                 20,
                 win_skills=[
                     'good fighter', 'great fighter', 'excellent fighter'
-                ]),
+                ])
         ])
 
         # single cat patrol
@@ -666,10 +666,7 @@ class Patrol(object):
                     'r_c and their friend reminisce about old times',
                     'r_c says farewell to their friend and rejoins the patrol')
             ])
-
-        # status specific patrols
-
-        # season specific patrols
+        
         if self.patrol_random_cat.status == 'formerly a kittypet':
             possible_patrols.extend([
                 PatrolEvent(
@@ -679,6 +676,11 @@ class Patrol(object):
                     'r_c and their friend reminisce about old times',
                     'r_c says farewell to their friend and rejoins the patrol')
             ])
+
+        # status specific patrols
+
+        # season specific patrols
+
 
         # trait specific patrols
 
