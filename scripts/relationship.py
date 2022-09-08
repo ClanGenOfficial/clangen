@@ -353,7 +353,7 @@ INCREASE = {
                         'Is sharing tongues with (cat)','Is telling (cat) about their own days as an apprentice',
                         'Comes up with a plan to sneak out of camp with (cat)', 'Escorted (cat) so they could gather herbs',
                         'Compliments (cat) for their good disposition', 'Is helping (cat) calm down',
-                        'Is purring loudly to comfort (cat)', 'Is glaring daggers at (cat)', 'Is listening to (cat)\'s troubles',
+                        'Is purring loudly to comfort (cat)', 'Is listening to (cat)\'s troubles',
                         'Curled around (cat) to share warmth', 'Listening to (cat)\'s problems',
                         'Is building up (cat)\'s confidence', 'Apologized to (cat) for possibly hurting their feelings',
                         'Watching the shooting stars with (cat)','Is giving (cat) advice', 'Grooms the grime off (cat)\'s pelt'],
@@ -388,7 +388,7 @@ DECREASE  = {
         "comfortable": ['Tells (cat) that they\'re pelt looks like a different colour today', 'Is following (cat) around',
                         'Talks to (cat) how best to kill prey, very enthusiastic', 'Glaring at (cat) from across the camp',
                         'Pulled a prank on (cat)', 'Won\'t stop bothering (cat)','Interrupts (cat) during a conversation',
-                        'Gets distracted from conversation with (cat)'],
+                        'Gets distracted from conversation with (cat)', 'Is glaring daggers at (cat)'],
         "jealousy": [],
         "trust": ['Is spreading a rumour about (cat)','Trips over (cat)','Tries to scare (cat)', 'Pulled a prank on (cat)',
                 'Has successfully tricked (cat) into believing a crazy tale about the clan leader',
@@ -675,7 +675,7 @@ class Relationship(object):
         # check mate status and settings
         cat_from_has_mate = self.cat_from.mate != None or self.cat_from.mate != ''
 
-        # only allow love actions with mate (if they have some) if the setting is turned of
+        # only allow love actions with mate (if they have some) if the setting is turned off
         if (cat_from_has_mate and not self.mates and not game.settings['affair']) or self.family:
             return action_possibilies
 
