@@ -90,7 +90,7 @@ class Events(object):
                     if randint(1,5) == 1:
                         self.at_war = False
                         other_clan.relations = str(int(other_clan.relations) + 5)
-                        game.cur_events_list.append('The war against ' + str(other_clan.name) + ' has ended')
+                        game.cur_events_list.append('The war against ' + str(other_clan.name) + 'Clan has ended')
                     else:
                         self.enemy_clan = f'{str(other_clan.name)}Clan'
                         war_notice = choice(
