@@ -86,19 +86,27 @@ class Events(object):
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0:
+            war_notice = ''
             for other_clan in game.clan.all_clans:
-                war_notice = ''
-                if int(other_clan.relations) < 7:
+                if int(other_clan.relations) <= 7:
                     self.at_war = True
-                    self.enemy_clan = f'{str(other_clan.name)}Clan'
-                    war_notice = choice(
-                        [f'War rages between {game.clan.name}Clan and {other_clan.name}Clan', f'{other_clan.name}Clan has taken some of {game.clan.name}' + "Clan\'s territory.",
-                         f'{game.clan.name}Clan has claimed some of {other_clan.name}' + "Clan\'s territory",
-                         f'{other_clan.name}Clan attempted to break into your camp during the war', f'The war against {other_clan.name}Clan continues.',
-                         f'{game.clan.name}Clan is starting to get tired of the war against {other_clan.name}Clan'])
-
-                if war_notice:
-                    game.cur_events_list.append(war_notice)
+                    if randint(1,5) == 1:
+                        self.at_war = False
+                        other_clan.relations = str(int(other_clan.relations) + 5)
+                        game.cur_events_list.append('The war against ' + str(other_clan.name) + 'Clan has ended')
+                    else:
+                        self.enemy_clan = f'{str(other_clan.name)}Clan'
+                        war_notice = choice(
+                            [f'War rages between {game.clan.name}Clan and {other_clan.name}Clan', f'{other_clan.name}Clan has taken some of {game.clan.name}' + "Clan\'s territory.",
+                            f'{game.clan.name}Clan has claimed some of {other_clan.name}' + "Clan\'s territory",
+                            f'{other_clan.name}Clan attempted to break into your camp during the war', f'The war against {other_clan.name}Clan continues.',
+                            f'{game.clan.name}Clan is starting to get tired of the war against {other_clan.name}Clan'])
+                else:
+                    self.at_war = False
+                    r_num = choice([-2, -1, 1, 2])
+                    other_clan.relations = str(int(other_clan.relations) + r_num)
+            if war_notice:
+                game.cur_events_list.append(war_notice)
 
     def perform_ceremonies(self, cat):
         if (game.clan.leader.dead or game.clan.leader.exiled) and game.clan.deputy is not None and not game.clan.deputy.dead:
@@ -501,7 +509,7 @@ class Events(object):
         self.check_age(loner)
 
     def other_interactions(self, cat):
-        if randint(1, 50) != 1:
+        if randint(1, 100) != 1:
             return
         interactions = []
         other_cat = choice(list(cat_class.all_cats.values()))
@@ -537,6 +545,7 @@ class Events(object):
                 interactions.append(f'{name} confesses to {other_name} that the responsibility of leadership is crushing them')
             elif other_cat.status == 'apprentice':
                 interactions.append(f'{name} assesses {other_name}' + "\'s progress")
+            interactions.extend([f'{name} calls a clan meeting to give an important announcement'])
         elif cat.status == 'elder':
             interactions.extend([f'{name} is brought back to camp after wandering off'])
         if cat.age == other_cat.age:
@@ -671,22 +680,20 @@ class Events(object):
             if cat.mate is not None and cat.age == other_cat.age and other_cat.mate is None:
                 if cat.status == 'leader':
                     game.clan.leader_lives -= 10
-                game.cur_events_list.append(name + ' is killed by ' + other_name + ' in an argument over' + str(cat_class.all_cats.get(cat.mate).name))
+                game.cur_events_list.append(name + ' is killed by ' + other_name + ' in an argument over ' + str(cat_class.all_cats.get(cat.mate).name))
                 self.dies(cat)
-                if cat.status != 'leader':
-                    self.dies(cat)
-                    self.dies(other_cat)
-                    game.cur_events_list.append(choice(cause_of_death))
-                elif cat.status == 'leader' and other_cat.status != 'leader':
-                    game.clan.leader_lives -= 1
-                    self.dies(cat)
-                    self.dies(other_cat)
-                    game.cur_events_list.append(choice(cause_of_death) + 'and the leader lost a life')
-                elif other_cat.status == 'leader' and cat.status != 'leader':
-                    game.clan.leader_lives -= 1
-                    self.dies(cat)
-                    self.dies(other_cat)
-                    game.cur_events_list.append(choice(cause_of_death) + 'and the leader lost a life')
+
+                return
+            self.dies(cat)
+            self.dies(other_cat)
+            if cat.status != 'leader':
+                game.cur_events_list.append(choice(cause_of_death))
+            elif cat.status == 'leader' and other_cat.status != 'leader':
+                game.clan.leader_lives -= 1
+                game.cur_events_list.append(choice(cause_of_death) + 'and the leader lost a life')
+            elif other_cat.status == 'leader' and cat.status != 'leader':
+                game.clan.leader_lives -= 1
+                game.cur_events_list.append(choice(cause_of_death) + 'and the leader lost a life')
                     
         elif randint(1, 5) == 1: #Death with Personalities
             murder_chance = 20

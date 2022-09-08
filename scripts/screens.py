@@ -397,7 +397,6 @@ class ClanScreen(Screens):
                     ])
 
     def change_brightness(self):
-        print(game.clan.biome)
         if game.settings['dark mode']:
             if game.clan.biome == "Forest":
                 self._extracted_from_change_brightness_3(
@@ -1119,8 +1118,12 @@ class EventsScreen(Screens):
 
         verdana.text(f'Current season: {str(game.clan.current_season)}',
                      ('center', 130))
-
-        verdana.text(f'Clan age: {str(game.clan.age)} moons', ('center', 160))
+                     
+        if game.clan.age == 1:
+            verdana.text(f'Clan age: {str(game.clan.age)} moon', ('center', 160))
+        if game.clan.age != 1:
+            verdana.text(f'Clan age: {str(game.clan.age)} moons', ('center', 160))
+            
         if game.switches['events_left'] == 0:
             buttons.draw_button((200, 220),
                                 text='TIMESKIP ONE MOON',
@@ -1338,18 +1341,35 @@ class ProfileScreen(Screens):
 
         # MOONS
         if the_cat.dead:
-            verdana_small.text(
-                str(the_cat.moons) + ' moons (in life)',
-                (300, 230 + count * 15))
-            count += 1
-            verdana_small.text(
-                str(the_cat.dead_for) + ' moons (in death)',
-                (300, 230 + count * 15))
-            count += 1
+            if the_cat.moons == 1:
+                verdana_small.text(
+                    str(the_cat.moons) + ' moon (in life)',
+                    (300, 230 + count * 15))
+                count += 1
+            elif the_cat.moons != 1:
+                verdana_small.text(
+                    str(the_cat.moons) + ' moons (in life)',
+                    (300, 230 + count * 15))
+                count += 1
+            if the_cat.dead_for == 1:
+                verdana_small.text(
+                    str(the_cat.dead_for) + ' moon (in death)',
+                    (300, 230 + count * 15))
+                count += 1
+            elif the_cat.dead_for != 1:
+                verdana_small.text(
+                    str(the_cat.dead_for) + ' moons (in death)',
+                    (300, 230 + count * 15))
+                count += 1     
         else:
-            verdana_small.text(
-                str(the_cat.moons) + ' moons', (300, 230 + count * 15))
-            count += 1
+            if the_cat.moons == 1:
+                verdana_small.text(
+                    str(the_cat.moons) + ' moon', (300, 230 + count * 15))
+                count += 1
+            elif the_cat.moons != 1:
+                verdana_small.text(
+                    str(the_cat.moons) + ' moons', (300, 230 + count * 15))
+                count += 1
 
         # MATE
         if the_cat.mate is not None and not the_cat.dead:
@@ -2377,18 +2397,35 @@ class ChooseMentorScreen2(Screens):
 
         # MOONS
         if the_cat.dead:
-            verdana_small.text(
-                str(the_cat.moons) + ' moons (in life)',
-                (250, 330 + count * 15))
-            count += 1
-            verdana_small.text(
-                str(the_cat.dead_for) + ' moons (in death)',
-                (250, 330 + count * 15))
-            count += 1
+            if the_cat.moons == 1:
+                verdana_small.text(
+                    str(the_cat.moon) + ' moons (in life)',
+                    (250, 330 + count * 15))
+                count += 1
+            elif the_cat.moons != 1:
+                verdana_small.text(
+                    str(the_cat.moons) + ' moons (in life)',
+                    (250, 330 + count * 15))
+                count += 1
+            if the_cat.dead_for == 1:
+                verdana_small.text(
+                    str(the_cat.dead_for) + ' moon (in death)',
+                    (250, 330 + count * 15))
+                count += 1
+            elif the_cat.dead_for != 1:
+                verdana_small.text(
+                    str(the_cat.dead_for) + ' moons (in death)',
+                    (250, 330 + count * 15))
+                count += 1                
         else:
-            verdana_small.text(
-                str(the_cat.moons) + ' moons', (250, 330 + count * 15))
-            count += 1
+            if the_cat.moons == 1:
+                verdana_small.text(
+                    str(the_cat.moons) + ' moon', (250, 330 + count * 15))
+                count += 1
+            elif the_cat.moons != 1:
+                verdana_small.text(
+                    str(the_cat.moons) + ' moons', (250, 330 + count * 15))
+                count += 1 
 
         # MATE
         if the_cat.mate is not None and not the_cat.dead:
@@ -3042,7 +3079,11 @@ class RelationshipEventScreen(Screens):
 
         verdana.text(f'Current season: {str(game.clan.current_season)}', ('center', 130))
 
-        verdana.text(f'Clan age: {str(game.clan.age)} moons', ('center', 160))
+        if game.clan.age == 1:
+            verdana.text(f'Clan age: {str(game.clan.age)} moon', ('center', 160))
+        elif game.clan.age != 1:
+            verdana.text(f'Clan age: {str(game.clan.age)} moons', ('center', 160))
+            
         if game.switches['events_left'] == 0:
             buttons.draw_button((200, 220),
                                 text='TIMESKIP ONE MOON',
