@@ -918,7 +918,7 @@ class Events(object):
         # choose cat and start
         random_id = random.choice(list(cat.all_cats.keys()))
         relevant_relationship_list = list(filter(lambda relation: str(relation.cat_to) == str(random_id) and not relation.cat_to.dead, cat.relationships))
-        while len(relevant_relationship_list) < 1:
+        while len(relevant_relationship_list) < 1 and random_id == cat.ID:
             random_id = random.choice(list(cat.all_cats.keys()))
             relevant_relationship_list = list(filter(lambda relation: str(relation.cat_to) == str(random_id) and not relation.cat_to.dead, cat.relationships))
         relevant_relationship = relevant_relationship_list[0]
