@@ -2899,6 +2899,8 @@ class RelationshipScreen(Screens):
         for x in range(len(relationships)):
             if (x + (game.switches['list_page'] - 1) * 10) > len(relationships):
                 game.switches['list_page'] = 1
+            if game.switches['list_page'] > all_pages:
+                game.switches['list_page'] = 1
             the_relationship = relationships[x + (game.switches['list_page'] - 1) * 10]
             the_relationship.cat_to.update_sprite()
             buttons.draw_button((90 + pos_x, 60 + pos_y), image=the_relationship.cat_to.sprite, cat=the_relationship.cat_to.ID, cur_screen='profile screen')
@@ -2922,28 +2924,48 @@ class RelationshipScreen(Screens):
                 verdana_small.text('has a mate', (140 + pos_x - string_len / 1.5, 140 + pos_y))
 
             count = 15
-            verdana_small.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            if the_relationship.romantic_love > 49 and game.settings['dark mode']:
+                verdana_dark_margenta.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            elif the_relationship.romantic_love > 49 and not game.settings['dark mode']:
+                verdana_dark_margenta.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            else:
+                verdana_small.text('romantic like:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             count += 20
             current_x = 140 + pos_x - string_len / 1.5
             current_y = 145 + pos_y + count
             draw_bar(the_relationship.romantic_love, current_x, current_y)
             count += 5
 
-            verdana_small.text('platonic like:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            if the_relationship.platonic_like > 49 and game.settings['dark mode']:
+                verdana_dark_margenta.text('platonic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            elif the_relationship.platonic_like > 49 and not game.settings['dark mode']:
+                verdana_margenta.text('platonic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            else:
+                verdana_small.text('platonic like:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             count += 20
             current_x = 140 + pos_x - string_len / 1.5
             current_y = 145 + pos_y + count
             draw_bar(the_relationship.platonic_like, current_x, current_y)
             count += 5
 
-            verdana_small.text('dislike:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            if the_relationship.dislike > 49 and game.settings['dark mode']:
+                verdana_dark_margenta.text('hate:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            elif the_relationship.dislike > 49 and not game.settings['dark mode']:
+                verdana_margenta.text('hate:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            else:
+                verdana_small.text('dislike:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             count += 20
             current_x = 140 + pos_x - string_len / 1.5
             current_y = 145 + pos_y + count
             draw_bar(the_relationship.dislike, current_x, current_y)
             count += 5
             
-            verdana_small.text('admiration:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            if the_relationship.admiration > 49 and game.settings['dark mode']:
+                verdana_dark_margenta.text('admiration:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            elif the_relationship.admiration > 49 and not game.settings['dark mode']:
+                verdana_margenta.text('admiration:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+            else:
+                verdana_small.text('respect:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             count += 20
             current_x = 140 + pos_x - string_len / 1.5
             current_y = 145 + pos_y + count

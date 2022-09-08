@@ -92,3 +92,6 @@ verdana_baby = Font('verdana', 11, (100, 100, 250))
 verdana_big = Font('verdana', 18)
 verdana_big_white = Font('verdana', 18, colour='white')
 verdana_green = Font('verdana', colour='darkgreen')
+# for relationships, same color as bar
+verdana_dark_margenta = Font('verdana', 11, colour=(226,65,103))
+verdana_margenta = Font('verdana', 11, colour=(160,40,69))
