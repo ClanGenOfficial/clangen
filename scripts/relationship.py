@@ -676,7 +676,7 @@ class Relationship(object):
         cat_from_has_mate = self.cat_from.mate != None or self.cat_from.mate != ''
 
         # only allow love actions with mate (if they have some) if the setting is turned of
-        if cat_from_has_mate and not self.mates and not game.settings['affair']:
+        if (cat_from_has_mate and not self.mates and not game.settings['affair']) or self.family:
             return action_possibilies
 
         # check ages of cats
