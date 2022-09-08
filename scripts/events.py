@@ -48,6 +48,10 @@ class Events(object):
                         game.clan.leader_lives = 0
                 else:
                     cat.dead_for += 1
+            # interaction here so every cat may have got a new name 
+            for cat in cat_class.all_cats.copy.values(): 
+                if not cat.dead and not cat.exiled:
+                    self.create_interaction(cat)
             cat_class.thoughts()
             self.check_clan_relations()
             game.clan.age += 1
@@ -79,7 +83,6 @@ class Events(object):
         self.gain_scars(cat)
         self.handle_deaths(cat)
         self.check_age(cat)
-        self.create_interaction(cat)
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0:
