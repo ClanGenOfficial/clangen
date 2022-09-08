@@ -13,6 +13,7 @@ class Patrol(object):
         self.patrol_event = None
         self.patrol_leader = None
         self.patrol_cats = []
+        self.possible_patrol_leaders = []
         self.patrol_skills = []
         self.patrol_statuses = []
         self.patrol_traits = []
@@ -27,18 +28,24 @@ class Patrol(object):
 
     def add_patrol_cats(self):
         self.patrol_cats.clear()
+        self.possible_patrol_leaders.clear()
         self.patrol_skills.clear()
         self.patrol_statuses.clear()
         self.patrol_traits.clear()
         self.patrol_total_experience = 0
         for cat in game.switches['current_patrol']:
             self.patrol_cats.append(cat)
+            if cat.status != 'apprentice':
+                self.possible_patrol_leaders.append(cat)
             self.patrol_skills.append(cat.skill)
             self.patrol_statuses.append(cat.status)
             self.patrol_traits.append(cat.trait)
             self.patrol_total_experience += cat.experience
             game.patrolled.append(cat)
-        self.patrol_leader = choice(self.patrol_cats)
+        if self.possible_patrol_leaders:
+            self.patrol_leader = choice(self.possible_patrol_leaders)
+        elif not self.possible_patrol_leaders:
+            self.patrol_leader = choice(self.patrol_cats)
         self.patrol_random_cat = choice(self.patrol_cats)
 
     def add_possible_patrols(self):
