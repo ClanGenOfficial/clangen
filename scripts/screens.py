@@ -563,6 +563,8 @@ class StarClanScreen(Screens):
         for x in range(len(search_cats)):
             if x + (game.switches['list_page'] - 1) * 20 > len(search_cats):
                 game.switches['list_page'] = 1
+            if game.switches['list_page'] > all_pages:
+                game.switches['list_page'] = 1
             the_cat = search_cats[x + (game.switches['list_page'] - 1) * 20]
             if the_cat.dead:
                 column = int(pos_x/100)
@@ -1617,6 +1619,8 @@ class ChooseMateScreen(Screens):
         for x in range(len(valid_mates)):
             if x + (game.switches['list_page'] - 1) * 27 > len(valid_mates):
                 game.switches['list_page'] = 1
+            if game.switches['list_page'] > all_pages:
+                game.switches['list_page'] = 1
             pot_mate = valid_mates[x + (game.switches['list_page'] - 1) * 27]
             buttons.draw_button((100 + pos_x, 320 + pos_y),
                                 image=pot_mate.sprite,
@@ -1686,6 +1690,8 @@ class ListScreen(Screens):
         pos_y = 0
         cats_on_page = 0
         for x in range(len(search_cats)):
+            if game.switches['list_page'] > all_pages:
+                game.switches['list_page'] = 1
             if x + (game.switches['list_page'] - 1) * 20 >= len(search_cats):
                 game.switches['list_page'] -= 1
             if (x + (game.switches['list_page'] - 1) * 20 < len(search_cats)): 
@@ -1764,6 +1770,8 @@ class OtherScreen(Screens):
         for x in range(len(search_cats)):
             if x + (game.switches['list_page'] - 1) * 20 >= len(search_cats):
                 game.switches['list_page'] -= 1
+            if game.switches['list_page'] > all_pages:
+                game.switches['list_page'] = 1
             the_cat = search_cats[x + (game.switches['list_page'] - 1) * 20]
             if not the_cat.dead:
                 buttons.draw_button((130 + pos_x, 180 + pos_y),
@@ -2198,6 +2206,8 @@ class ChooseMentorScreen(Screens):
         cats_on_page = 0
         for x in range(len(living_cats)):
             if x + (game.switches['list_page'] - 1) * 20 > len(living_cats):
+                game.switches['list_page'] = 1
+            if game.switches['list_page'] > all_pages:
                 game.switches['list_page'] = 1
             the_cat = living_cats[x + (game.switches['list_page'] - 1) * 20]
             if not the_cat.dead:
