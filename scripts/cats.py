@@ -1511,12 +1511,14 @@ class Cat(object):
                 n.update_sprite()
             
             # generate the relationship if some is missing
-            game.switches['error_message'] = 'There was an error when relationships where created.'
             for id in self.all_cats.keys():
                 the_cat = self.all_cats.get(id)
                 if the_cat.relationships != None and len(the_cat.relationships) < 1:
+                    game.switches['error_message'] = 'There was an error when relationships where created. Last cat read was ' + str(self)
                     the_cat.create_new_relationships()
-
+                game.switches['error_message'] = 'There was an error when relationships where linked. Last cat read was ' + str(self)
+                for rel in the_cat.relationships:
+                    rel.link_relationship()
             game.switches['error_message'] = ''
 
     def load_relationship_of_cat(self):
