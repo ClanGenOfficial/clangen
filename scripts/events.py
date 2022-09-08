@@ -669,22 +669,19 @@ class Events(object):
             if cat.mate is not None and cat.age == other_cat.age and other_cat.mate is None:
                 if cat.status == 'leader':
                     game.clan.leader_lives -= 10
-                game.cur_events_list.append(name + ' is killed by ' + other_name + ' in an argument over' + str(cat_class.all_cats.get(cat.mate).name))
                 self.dies(cat)
-                if cat.status != 'leader':
-                    self.dies(cat)
-                    self.dies(other_cat)
-                    game.cur_events_list.append(choice(cause_of_death))
-                elif cat.status == 'leader' and other_cat.status != 'leader':
-                    game.clan.leader_lives -= 1
-                    self.dies(cat)
-                    self.dies(other_cat)
-                    game.cur_events_list.append(choice(cause_of_death) + 'and the leader lost a life')
-                elif other_cat.status == 'leader' and cat.status != 'leader':
-                    game.clan.leader_lives -= 1
-                    self.dies(cat)
-                    self.dies(other_cat)
-                    game.cur_events_list.append(choice(cause_of_death) + 'and the leader lost a life')
+                game.cur_events_list.append(name + ' is killed by ' + other_name + ' in an argument over ' + str(cat_class.all_cats.get(cat.mate).name))
+                return
+            self.dies(cat)
+            self.dies(other_cat)
+            if cat.status != 'leader':
+                game.cur_events_list.append(choice(cause_of_death))
+            elif cat.status == 'leader' and other_cat.status != 'leader':
+                game.clan.leader_lives -= 1
+                game.cur_events_list.append(choice(cause_of_death) + 'and the leader lost a life')
+            elif other_cat.status == 'leader' and cat.status != 'leader':
+                game.clan.leader_lives -= 1
+                game.cur_events_list.append(choice(cause_of_death) + 'and the leader lost a life')
                     
         elif randint(1, 5) == 1: #Death with Personalities
             murder_chance = 20
