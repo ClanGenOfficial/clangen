@@ -84,16 +84,23 @@ class Events(object):
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0:
             for other_clan in game.clan.all_clans:
-                war_notice = ''
                 if int(other_clan.relations) < 7:
                     self.at_war = True
+                    if randint(1,5) == 1:
+                        self.at_war = False
+                        other_clan.relations = str(int(other_clan.relations) + 5)
+                        game.cur_events_list.append('The war against ' + str(other_clan.name) + ' has ended')
                     self.enemy_clan = f'{str(other_clan.name)}Clan'
                     war_notice = choice(
                         [f'War rages between {game.clan.name}Clan and {other_clan.name}Clan', f'{other_clan.name}Clan has taken some of {game.clan.name}' + "Clan\'s territory.",
                          f'{game.clan.name}Clan has claimed some of {other_clan.name}' + "Clan\'s territory",
                          f'{other_clan.name}Clan attempted to break into your camp during the war', f'The war against {other_clan.name}Clan continues.',
                          f'{game.clan.name}Clan is starting to get tired of the war against {other_clan.name}Clan'])
-
+                else:
+                    self.at_war = False
+                    r_num = randint(-2, 3)
+                    other_clan.relations = str(int(other_clan.relations) + r_num)
+                    war_notice = ''
                 if war_notice:
                     game.cur_events_list.append(war_notice)
 
@@ -669,8 +676,9 @@ class Events(object):
             if cat.mate is not None and cat.age == other_cat.age and other_cat.mate is None:
                 if cat.status == 'leader':
                     game.clan.leader_lives -= 10
-                self.dies(cat)
                 game.cur_events_list.append(name + ' is killed by ' + other_name + ' in an argument over ' + str(cat_class.all_cats.get(cat.mate).name))
+                self.dies(cat)
+
                 return
             self.dies(cat)
             self.dies(other_cat)
