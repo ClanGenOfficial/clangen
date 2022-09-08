@@ -49,6 +49,7 @@ class Events(object):
                 else:
                     cat.dead_for += 1
             cat_class.thoughts()
+            self.check_clan_relations()
             game.clan.age += 1
             if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
                 cat_class.save_cats()
