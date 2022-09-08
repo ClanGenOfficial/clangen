@@ -451,7 +451,6 @@ class Relationship(object):
             self.opposit_relationship = opposite_relationship[0]
         else:
             # create relationship
-            print(f"Relationship of cat {self.cat_from} to cat {self.cat_to} is buggy.\n The opposit relationship does not exist, a new one is created.")
             relation = Relationship(self.cat_to,self.cat_from)
             self.cat_to.relationships.append(relation)
             self.opposit_relationship =relation
