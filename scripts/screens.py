@@ -395,7 +395,6 @@ class ClanScreen(Screens):
                     ])
 
     def change_brightness(self):
-        print(game.clan.biome)
         if game.settings['dark mode']:
             if game.clan.biome == "Forest":
                 self._extracted_from_change_brightness_3(

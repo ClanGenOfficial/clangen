@@ -498,7 +498,7 @@ class Events(object):
         self.check_age(loner)
 
     def other_interactions(self, cat):
-        if randint(1, 50) != 1:
+        if randint(1, 100) != 1:
             return
         interactions = []
         other_cat = choice(list(cat_class.all_cats.values()))
@@ -534,6 +534,7 @@ class Events(object):
                 interactions.append(f'{name} confesses to {other_name} that the responsibility of leadership is crushing them')
             elif other_cat.status == 'apprentice':
                 interactions.append(f'{name} assesses {other_name}' + "\'s progress")
+            interactions.extend([f'{name} calls a clan meeting to give an important announcement'])
         elif cat.status == 'elder':
             interactions.extend([f'{name} is brought back to camp after wandering off'])
         if cat.age == other_cat.age:
