@@ -141,8 +141,7 @@ class SettingsScreen(Screens):
 
         # Setting names
         verdana.text("Dark mode:", (100, 200))
-        verdana.text("Allow couples to have kittens despite same-sex status:",
-                     (100, 230))
+        verdana.text("Allow couples to have kittens despite same-sex status:", (100, 230))
         verdana.text("Allow unmated cats to have offspring:", (100, 260))
         verdana.text("Enable clan page background:", (100, 290))
         verdana.text("Automatically save every five moons:", (100, 320))
@@ -151,6 +150,7 @@ class SettingsScreen(Screens):
         verdana.text("Allow affairs and mate switches based on relationships:", (100, 410))
         verdana.text("Enable shaders:", (100, 440))
         verdana.text("Display hotkeys on text buttons:", (100, 470))
+        verdana.text("Randomize relationship values, when creating clan:", (100, 500))
 
         # Setting values
         verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
@@ -173,17 +173,19 @@ class SettingsScreen(Screens):
         buttons.draw_button((-80, 440), text='SWITCH', setting='shaders')
         verdana.text(self.bool[game.settings['hotkey display']], (-170, 470))
         buttons.draw_button((-80, 470), text='SWITCH', setting='hotkey display')
+        verdana.text(self.bool[game.settings['random relation']], (-170, 500))
+        buttons.draw_button((-80, 500), text='SWITCH', setting='random relation')
 
         # other buttons
         buttons.draw_button((50, 50),
                             text='<< Back to Main Menu',
                             cur_screen='start screen')
         if game.settings_changed:
-            buttons.draw_button(('center', -150),
+            buttons.draw_button(('center', -130),
                                 text='Save Settings',
                                 save_settings=True)
         else:
-            buttons.draw_button(('center', -150),
+            buttons.draw_button(('center', -130),
                                 text='Save Settings',
                                 available=False)
 
@@ -1538,6 +1540,13 @@ class ChooseMateScreen(Screens):
             mate.draw_large((450, 130))
             verdana.text(str(mate.name), ('center', 300))
             self._extracted_from_on_use_29(mate, -100)
+            #relationship = list(filter(lambda r: r.cat_to.ID == mate.ID , the_cat.relationships))
+            #if relationship is not None and len(relationship) > 0:
+            #    if relationship[0].romantic_love > 49:
+            #        verdana_small.text('romantic love', (-100, 250))
+            #    else:
+            #        verdana_small.text('romantic like', (-100, 250))
+            #    draw_bar(relationship[0].romantic_love, 588, 270)
             if the_cat.gender == mate.gender and not game.settings['no gendered breeding']:
                 verdana_small.text(
                     '(this pair will not be able to have kittens)',

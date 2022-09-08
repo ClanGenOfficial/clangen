@@ -91,7 +91,7 @@ class Clan(object):
 
         # give thoughts,actions and relationships to cats
         for cat_id in cat_class.all_cats:
-            cat_class.all_cats.get(cat_id).create_new_relationships()
+            cat_class.all_cats.get(cat_id).create_new_relationships(game.settings['random relation'])
             if cat_class.all_cats.get(cat_id).status == 'apprentice':
                 cat_class.all_cats.get(cat_id).status_change('apprentice')
                 
