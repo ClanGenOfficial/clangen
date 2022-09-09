@@ -590,8 +590,9 @@ class Relationship(object):
             return action_possibilies
 
         # check ages of cats
-        age_group1 = ['adolescent','young adult', 'adult']
+        age_group1 = ['young adult', 'adult']
         age_group2 = ['adult', 'senior adult', 'elder']
+        both_are_appr = self.cat_from.age == 'adolescent' and self.cat_to.age == 'adolescent'
         both_are_kits = self.cat_from.age == 'kitten' and self.cat_to.age == 'kitten'
         none_of_them_are_kits = self.cat_from.age != 'kitten' and self.cat_to.age != 'kitten'
         both_in_same_age_group = (self.cat_from.age in age_group1 and self.cat_to.age in age_group1) or\
@@ -599,7 +600,7 @@ class Relationship(object):
 
         # chance to fall in love with some the character is not close to:
         love_p = randint(0,30)
-        if not self.family and (both_are_kits or none_of_them_are_kits) and both_in_same_age_group:
+        if not self.family and (both_are_kits or none_of_them_are_kits or both_are_appr) and both_in_same_age_group:
             if self.platonic_like > 30 or love_p == 1 or self.romantic_love > 5:
 
                 # increase the chance of an love event for two unmated cats
