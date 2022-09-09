@@ -1002,7 +1002,7 @@ class Cat(object):
             # 'Is getting rained on during their patrol',  #              'Is out hunting'] //will add later  # interact_with_loner = ['Wants to know where ' + other_name + '  #
             # came from.'] // will add
 
-    def create_new_relationships(self):
+    def create_new_relationships(self, set_random=False):
         """Create Relationships to all current clan cats."""
         relationships = []
         for id in self.all_cats.keys():
@@ -1029,10 +1029,26 @@ class Cat(object):
                 comfortable = 0
                 jealousy = 0
                 trust = 0
-                if are_parents:
+                if set_random:
+                    if randint(1,20) == 1 and romantic_love < 1:
+                        dislike = randint(10,25)
+                        jealousy = randint(5,15)
+                        if randint(1,30) == 1:
+                            trust = randint(1,10)
+                    else:
+                        like = randint(0,35)
+                        comfortable = randint(0,25)
+                        trust = randint(0,15)
+                        admiration = randint(0,20)
+                        if randint(1,100-like) == 1:
+                            romantic_love = randint(15,30)
+                            comfortable = int(comfortable * 1.3)
+                            trust = int(trust * 1.2)
+
+                if are_parents and like < 60:
                     like = 60
-                if siblings:
-                    like = 20
+                if siblings and like < 30:
+                    like = 30
 
                 rel = Relationship(cat_from=self,cat_to=the_cat,mates=mates,
                         family=related, romantic_love=romantic_love,
@@ -1511,12 +1527,14 @@ class Cat(object):
                 n.update_sprite()
             
             # generate the relationship if some is missing
-            game.switches['error_message'] = 'There was an error when relationships where created.'
             for id in self.all_cats.keys():
                 the_cat = self.all_cats.get(id)
                 if the_cat.relationships != None and len(the_cat.relationships) < 1:
+                    game.switches['error_message'] = 'There was an error when relationships where created. Last cat read was ' + str(self)
                     the_cat.create_new_relationships()
-
+                game.switches['error_message'] = 'There was an error when relationships where linked. Last cat read was ' + str(self)
+                for rel in the_cat.relationships:
+                    rel.link_relationship()
             game.switches['error_message'] = ''
 
     def load_relationship_of_cat(self):
