@@ -126,7 +126,6 @@ class Events(object):
                     cat.update_mentor()
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
                     self._extracted_from_perform_ceremonies_19(cat, 'warrior', ' has earned their warrior name')
-
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
                     self._extracted_from_perform_ceremonies_19(cat, 'medicine cat', ' has earned their medicine cat name')
                     game.clan.new_medicine_cat(cat)
@@ -139,6 +138,8 @@ class Events(object):
                     game.cur_events_list.append(f'The deputy {str(cat.name)} has retired to the elder den')
             if cat.status in ['warrior', 'deputy'] and cat.age == 'elder' and len(cat.apprentice) < 1:
                 cat.status_change('elder')
+                if cat.status == 'deputy':
+                    game.clan.deputy = None
                 game.cur_events_list.append(f'{str(cat.name)} has retired to the elder den')
 
     # TODO Rename this here and in `perform_ceremonies`
