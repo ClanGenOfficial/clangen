@@ -1,3 +1,4 @@
+from re import T
 from .clan import *
 from .events import *
 from .patrol import *
@@ -2887,8 +2888,9 @@ class MapScreen(Screens):
 
 
 class RelationshipScreen(Screens):
-    def on_use(self):
+    bool = {True: 'on', False: 'of', None: 'None'}
 
+    def on_use(self):
         # get the relevant cat
         the_cat = cat_class.all_cats.get(game.switches['cat'])
         
@@ -2930,10 +2932,16 @@ class RelationshipScreen(Screens):
         if next_cat != 0:
             buttons.draw_button((-40, 40), text='Next Cat', cat=next_cat, hotkey=[21])
         if previous_cat != 0:
-            buttons.draw_button((40, 40), text='Previous Cat', cat=previous_cat, hotkey=[23])     
+            buttons.draw_button((40, 40), text='Previous Cat', cat=previous_cat, hotkey=[23])
+
+        # button for better displaying
+        verdana_small.text(f"Display dead {self.bool[game.settings['show dead relation']]}", (50, 650))
+        buttons.draw_button((50, 670), text='switch', setting='show dead relation')
+
+        verdana_small.text(f"Display empty value {self.bool[game.settings['show empty relation']]}", (180, 650))
+        buttons.draw_button((180, 670), text='switch', setting='show empty relation')
 
         # layout
-
         verdana_big.text(str(the_cat.name) + ' Relationships', ('center', 10))
         if the_cat != None and the_cat.mate != '':
             mate = cat_class.all_cats.get(the_cat.mate)
@@ -2946,6 +2954,13 @@ class RelationshipScreen(Screens):
 
         # make a list of the relationships
         relationships = the_cat.relationships
+
+        # filter relationships pased on the settings
+        if not game.settings['show dead relation']:
+            relationships = list(filter(lambda rel: not rel.cat_to.dead, relationships))
+        
+        if not game.settings['show empty relation']:
+            relationships = list(filter(lambda rel: (rel.romantic_love + rel.platonic_like + rel.dislike + rel.admiration + rel.comfortable + rel.jealousy + rel.trust) > 0, relationships))
 
         # pages
         all_pages = 1  # amount of pages
