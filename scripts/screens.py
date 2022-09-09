@@ -32,10 +32,13 @@ class Screens(object):
 # SCREEN CHILD CLASSES
 class StartScreen(Screens):
 
+    def __init__(self, name=None):
+        super().__init__(name)
+        self.bg = pygame.image.load("resources/menu.png").convert()
+
     def on_use(self):
         # background
-        bg = pygame.image.load("resources/menu.png").convert()
-        screen.blit(bg, (0, 0))
+        screen.blit(self.bg, (0, 0))
 
         # buttons
         if game.clan is not None and game.switches['error_message'] == '':
