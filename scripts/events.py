@@ -13,6 +13,7 @@ class Events(object):
             self.all_events[self.ID] = self
         self.cats = cats
         self.at_war = False
+        self.time_at_war = False
         self.enemy_clan = None
         self.living_cats = 0
         self.new_cat_invited = False
@@ -89,21 +90,28 @@ class Events(object):
             war_notice = ''
             for other_clan in game.clan.all_clans:
                 if int(other_clan.relations) <= 7:
-                    self.at_war = True
-                    if randint(1,5) == 1:
+                    if randint(1,5) == 1 and self.time_at_war > 2:
                         self.at_war = False
-                        other_clan.relations = str(int(other_clan.relations) + 5)
+                        self.time_at_war = 0
+                        other_clan.relations = 10
                         game.cur_events_list.append('The war against ' + str(other_clan.name) + 'Clan has ended')
+                    elif self.time_at_war == 0:
+                        game.cur_events_list.append('The war against ' + str(other_clan.name) + 'Clan has begun')
+                        self.time_at_war+=1
                     else:
                         self.enemy_clan = f'{str(other_clan.name)}Clan'
-                        war_notice = choice(
-                            [f'War rages between {game.clan.name}Clan and {other_clan.name}Clan', f'{other_clan.name}Clan has taken some of {game.clan.name}' + "Clan\'s territory.",
+                        possible_text = [f'War rages between {game.clan.name}Clan and {other_clan.name}Clan', f'{other_clan.name}Clan has taken some of {game.clan.name}' + "Clan\'s territory",
                             f'{game.clan.name}Clan has claimed some of {other_clan.name}' + "Clan\'s territory",
-                            f'{other_clan.name}Clan attempted to break into your camp during the war', f'The war against {other_clan.name}Clan continues.',
-                            f'{game.clan.name}Clan is starting to get tired of the war against {other_clan.name}Clan'])
+                            f'{other_clan.name}Clan attempted to break into your camp during the war', f'The war against {other_clan.name}Clan continues',
+                            f'{game.clan.name}Clan is starting to get tired of the war against {other_clan.name}Clan', f'{game.clan.name}Clan warriors plan new battle strategies for the war', f'{game.clan.name}Clan warriors reinforce the camp walls']
+                        if game.clan.medicine_cat is not None:
+                            possible_text.extend(['The medicine cats worry about having enough herbs to treat their clan\'s wounds'])
+                        war_notice = choice(possible_text)
+                        self.time_at_war+=1
+                    break
                 else:
                     self.at_war = False
-                    r_num = choice([-2, -1, 1, 2])
+                    r_num = choice([-1, 1])
                     other_clan.relations = str(int(other_clan.relations) + r_num)
             if war_notice:
                 game.cur_events_list.append(war_notice)
