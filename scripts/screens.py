@@ -2943,16 +2943,22 @@ class RelationshipScreen(Screens):
                 verdana_small.text('has a mate', (140 + pos_x - string_len / 1.5, 140 + pos_y))
 
             count = 15
-            if the_relationship.romantic_love > 49 and game.settings['dark mode']:
+            different_age = the_relationship.cat_to.age != the_relationship.cat_to.age
+            adult_ages = ['young adult', 'adult', 'senior adult', 'elder']
+            both_adult = the_relationship.cat_to.age in adult_ages and the_relationship.cat_to.age in adult_ages
+            if the_relationship.romantic_love > 49 and game.settings['dark mode'] and different_age and both_adult:
                 verdana_dark_margenta.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            elif the_relationship.romantic_love > 49 and not game.settings['dark mode']:
+            elif the_relationship.romantic_love > 49 and not game.settings['dark mode'] and different_age and both_adult:
                 verdana_dark_margenta.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             else:
                 verdana_small.text('romantic like:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             count += 20
             current_x = 140 + pos_x - string_len / 1.5
             current_y = 145 + pos_y + count
-            draw_bar(the_relationship.romantic_love, current_x, current_y)
+            if different_age and both_adult:
+                draw_bar(the_relationship.romantic_love, current_x, current_y)
+            else:
+                draw_bar(0, current_x, current_y)
             count += 5
 
             if the_relationship.platonic_like > 49 and game.settings['dark mode']:
