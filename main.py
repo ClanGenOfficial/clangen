@@ -46,6 +46,7 @@ verdana.change_text_brightness()
 buttons.change_button_brightness()
 sprites.load_scars()
 
+pygame.event.set_allowed([pygame.KEYDOWN, pygame.QUIT, pygame.MOUSEBUTTONDOWN])
 
 while True:
     if game.settings['dark mode']:
