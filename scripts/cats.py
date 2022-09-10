@@ -1115,7 +1115,7 @@ class Cat(object):
                         comfortable = randint(0,25)
                         trust = randint(0,15)
                         admiration = randint(0,20)
-                        if randint(1,100-like) == 1 and self.age_moons > 11 and the_cat.age_moons > 11:
+                        if randint(1,100-like) == 1 and self.moons > 11 and the_cat.moons > 11:
                             romantic_love = randint(15,30)
                             comfortable = int(comfortable * 1.3)
                             trust = int(trust * 1.2)

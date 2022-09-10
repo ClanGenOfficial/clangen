@@ -204,6 +204,7 @@ class RelationshipSettingsScreen(Screens):
         verdana.text("Allow affairs and mate switches based on relationships:", (100, 230))
         verdana.text("Allow couples to have kittens despite same-sex status:", (100, 260))
         verdana.text("Allow unmated cats to have offspring:", (100, 290))
+        verdana.text("Allow romantic interactions with former apprentices/mentor:", (100, 320))
 
         # Setting values
         verdana.text(self.bool[game.settings['random relation']], (-170, 200))
@@ -214,6 +215,8 @@ class RelationshipSettingsScreen(Screens):
         buttons.draw_button((-80, 260), text='SWITCH', setting='no gendered breeding')
         verdana.text(self.bool[game.settings['no unknown fathers']], (-170, 290))
         buttons.draw_button((-80, 290), text='SWITCH', setting='no unknown fathers')
+        verdana.text(self.bool[game.settings['romantic with former mentor']], (-170, 320))
+        buttons.draw_button((-80, 320), text='SWITCH', setting='romantic with former mentor')
 
         # other buttons
         buttons.draw_button((50, 50),
