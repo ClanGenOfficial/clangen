@@ -1148,7 +1148,7 @@ class EventsScreen(Screens):
     def on_use(self):
         verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
         verdana.text(
-            'Check this page to see which events are currently happening at the clan.',
+            'Check this page to see which events are currently happening at the Clan.',
             ('center', 100))
 
         verdana.text(f'Current season: {str(game.clan.current_season)}',

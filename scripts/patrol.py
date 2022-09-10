@@ -116,8 +116,8 @@ class Patrol(object):
                 win_skills=['smart', 'very smart', 'extremely smart']),
             PatrolEvent(
                 8,
-                'The patrol approaches a twoleg nest while hunting',
-                'The patrol has a successful hunt, avoiding any twolegs',
+                'The patrol approaches a Twoleg nest while hunting',
+                'The patrol has a successful hunt, avoiding any Twolegs',
                 'Twoleg kits scare the cats away',
                 'The patrol decides to hunt elsewhere',
                 40,
@@ -165,9 +165,9 @@ class Patrol(object):
             ),
             PatrolEvent(
                 108,
-                'The smell of food lures r_c close to a twoleg trap',
+                'The smell of food lures r_c close to a Twoleg trap',
                 'r_c grabs the food before the trap goes off',
-                'r_c is caught in the trap and is taken by twolegs shortly after',
+                'r_c is caught in the trap and is taken by Twolegs shortly after',
                 'r_c loses interest and walks back to the patrol',
                 40,
                 10,
@@ -183,9 +183,9 @@ class Patrol(object):
                 win_skills=['very smart', 'extremely smart']),
             PatrolEvent(
                 109,
-                'r_c notices a clanmate trapped in some brambles',
-                'r_c frees their clanmate',
-                'The patrol works all day to free their clanmate and gets nothing else done',
+                'r_c notices a Clanmate trapped in some brambles',
+                'r_c frees their Clanmate',
+                'The patrol works all day to free their Clanmate and gets nothing else done',
                 'r_c runs back to camp to fetch help and rejoins the patrol later',
                 50,
                 10,
@@ -193,8 +193,8 @@ class Patrol(object):
             PatrolEvent(
                 110,
                 'r_c spots a large rabbit, but it is just over the border',
-                'r_c catches the rabbit without the enemy clan noticing',
-                'r_c is caught by an enemy clan patrol and is sent on their way',
+                'r_c catches the rabbit without the enemy Clan noticing',
+                'r_c is caught by an enemy Clan patrol and is sent on their way',
                 'r_c decides against chasing the rabbit',
                 50,
                 10,
@@ -227,7 +227,7 @@ class Patrol(object):
                     win_skills=['fantastic hunter']),
                 PatrolEvent(
                     114,
-                    'A large river divides the clan\'s territory and the water is high from newleaf rain. Should your patrol cross it?',
+                    'A large river divides the Clan\'s territory and the water is high from newleaf rain. Should your patrol cross it?',
                     'The patrol crosses the river and the rest of the patrol goes smoothly',
                     'r_c is swept away from the strong current and drowns',
                     'The patrol decides it is too dangerous to cross right now',
@@ -251,10 +251,10 @@ class Patrol(object):
                     'r_c decides to continue with the patrol instead', 50, 10),
                 PatrolEvent(
                     122,
-                    'The patrol comes across a strange twoleg object smelling slightly of smoke and prey',
-                    'The patrol interprets the purpose of the object. It seems like twolegs light their freshkill on fire before eating it! How strange.',
+                    'The patrol comes across a strange Twoleg object smelling slightly of smoke and prey',
+                    'The patrol interprets the purpose of the object. It seems like Twolegs light their freshkill on fire before eating it! How strange.',
                     'The patrol can\'t seem to interpret the purpose of the object',
-                    'The patrol decides to avoid the twoleg object',
+                    'The patrol decides to avoid the Twoleg object',
                     50,
                     10,
                     win_skills=['smart', 'very smart', 'extremely smart']),
@@ -358,7 +358,7 @@ class Patrol(object):
                 PatrolEvent(
                     103,
                     'p_l suggests this might be a good chance for the cats to practice teamwork',
-                    'Everyone has a nice practice session and their connection to their clanmates grows stronger',
+                    'Everyone has a nice practice session and their connection to their Clanmates grows stronger',
                     'Unfortunately, no one steps up to teach',
                     'They decide to focus on the patrol instead',
                     50,
@@ -422,7 +422,7 @@ class Patrol(object):
                     PatrolEvent(
                         260,
                         'r_c admits that they don\'t think that they are a good deputy',
-                        'The patrol tells r_c that the clan wouldn\'t be the same without them, and r_c feels a sense of relief',
+                        'The patrol tells r_c that the Clan wouldn\'t be the same without them, and r_c feels a sense of relief',
                         'The patrol secretly agrees with r_c',
                         'The patrol doesn\'t say anything about r_c\'s statement',
                         50,
@@ -430,7 +430,7 @@ class Patrol(object):
                         win_skills=['great speaker', 'excellent speaker']),
                     PatrolEvent(
                         251,
-                        'The patrol starts to doubt r_c\'s ability as the clan\'s deputy',
+                        'The patrol starts to doubt r_c\'s ability as the Clan\'s deputy',
                         'r_c performs well on the patrol and all doubt is quelled',
                         'The patrol performs poorly and they blame r_c',
                         'The patrol decides to keep their thoughts to themselves',
@@ -482,7 +482,7 @@ class Patrol(object):
                         ]),
             PatrolEvent(
                 304,
-                'r_c alerts the rest of the patrol that there is a rogue near the clan border',
+                'r_c alerts the rest of the patrol that there is a rogue near the Clan border',
                 'Your patrol chases the rogue off of the territory',
                 'The rogue leaves, but not before giving r_c a scar',
                 'Your patrol decides not to confront the rogue',
@@ -598,7 +598,7 @@ class Patrol(object):
                     PatrolEvent(
                         452,
                         'r_c\'s mentor assesses them by sending them on a solo border patrol',
-                        'r_c successfully marks the clan territory',
+                        'r_c successfully marks the Clan territory',
                         'r_c messes up the territory markings and almost starts a border skirmish',
                         'r_c asks their mentor to do the assessment some other time',
                         40,
@@ -610,8 +610,8 @@ class Patrol(object):
         possible_patrols.extend([
             PatrolEvent(
                 500,
-                'Your patrol finds a loner who is interested in joining the clan',
-                'The patrol convinces the loner to join the clan',
+                'Your patrol finds a loner who is interested in joining the Clan',
+                'The patrol convinces the loner to join the Clan',
                 'The loner decides against joining',
                 'Your patrol decides not to confront the loner',
                 40,
@@ -619,12 +619,12 @@ class Patrol(object):
                 antagonize_text=
                 'Your patrol drives the loner off of the territory',
                 antagonize_fail_text=
-                'The loner is taken aback by their hostility and decides that clan life is not for them',
+                'The loner is taken aback by their hostility and decides that Clan life is not for them',
                 win_skills=['great speaker', 'excellent speaker']),
             PatrolEvent(
                 501,
-                'Your patrol finds a loner who is interested in joining the clan',
-                'The patrol convinces the loner to join the clan and they bring with '
+                'Your patrol finds a loner who is interested in joining the Clan',
+                'The patrol convinces the loner to join the Clan and they bring with '
                 'them a litter of kits',
                 'The loner decides against joining',
                 'Your patrol decides not to confront the loner',
@@ -634,13 +634,13 @@ class Patrol(object):
                 'Your patrol drives the loner off of the territory',
                 antagonize_fail_text=
                 'The loner is taken aback by their hostility '
-                'and decides that clan life is not for them',
+                'and decides that Clan life is not for them',
                 win_skills=['great speaker', 'excellent speaker']),
             PatrolEvent(
                 502,
-                'Your patrol finds a kittypet who is interested in joining the clan',
-                'The patrol convinces the kittypet to join the clan',
-                'The description of clan life frightens the kittypet',
+                'Your patrol finds a kittypet who is interested in joining the Clan',
+                'The patrol convinces the kittypet to join the Clan',
+                'The description of Clan life frightens the kittypet',
                 'Your patrol decides not to confront the kittypet',
                 40,
                 10,
@@ -649,7 +649,7 @@ class Patrol(object):
                 503,
                 'r_c finds a wounded cat near the thunderpath',
                 'The patrol brings the cat back to camp. Once nursed back to health, '
-                'the cat decides to join the clan',
+                'the cat decides to join the Clan',
                 'As r_c inspects the cat, they find that they are already hunting '
                 'with their ancestors',
                 'They leave the wounded cat alone',
@@ -669,7 +669,7 @@ class Patrol(object):
                 PatrolEvent(
                     510,
                     'r_c finds an old friend of their\'s from when they were a loner',
-                    'r_c invites their friend to join the clan',
+                    'r_c invites their friend to join the Clan',
                     'r_c and their friend reminisce about old times',
                     'r_c says farewell to their friend and rejoins the patrol')
             ])
@@ -679,7 +679,7 @@ class Patrol(object):
                 PatrolEvent(
                     520,
                     'r_c finds an old friend of their\'s from when they were a kittypet',
-                    'r_c invites their friend to join the clan',
+                    'r_c invites their friend to join the Clan',
                     'r_c and their friend reminisce about old times',
                     'r_c says farewell to their friend and rejoins the patrol')
             ])
@@ -687,8 +687,8 @@ class Patrol(object):
         # status specific patrols
 
         # season specific patrols
-
-
+        
+        
         # trait specific patrols
 
         if len(self.patrol_cats) > 1:
@@ -728,7 +728,7 @@ class Patrol(object):
             possible_patrols.extend([
                 PatrolEvent(
                     900,
-                    'Your patrol hears some odd noises coming from an abandoned twoleg nest',
+                    'Your patrol hears some odd noises coming from an abandoned Twoleg nest',
                     'It\'s just an old loner singing to themselves',
                     'Your patrol walks into an ambush by a group of rogues and everyone is slaughtered',
                     'Your patrol decides not to investigate',
@@ -746,9 +746,9 @@ class Patrol(object):
                     win_skills=['fantastic fighter']),
                 PatrolEvent(
                     902,
-                    'Your patrol encounters a clearing where a lot of twolegs linger',
+                    'Your patrol encounters a clearing where a lot of Twolegs linger',
                     'They continue hunting undetected',
-                    'The twolegs notice the cats and trap them in their monsters. The cats on your patrol are never seen again',
+                    'The Twolegs notice the cats and trap them in their monsters. The cats on your patrol are never seen again',
                     'Your patrol decides to hunt elsewhere',
                     60,
                     20,
