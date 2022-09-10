@@ -264,7 +264,7 @@ class Cat(object):
             other_cat = self.all_cats.get(other_cat)
             other_name = str(other_cat.name)
             cat = self.all_cats.get(c)
-            thought = 'Is not thinking about much right now'  # placeholder thought - should never appear in game    
+            thoughts = ['Is not thinking about much right now']  # placeholder thought - should never appear in game    
             
             if cat.dead:
                 # individual thoughts
