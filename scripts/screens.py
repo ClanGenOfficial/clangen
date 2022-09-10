@@ -3032,9 +3032,10 @@ class RelationshipScreen(Screens):
             different_age = the_relationship.cat_to.age != the_relationship.cat_to.age
             adult_ages = ['young adult', 'adult', 'senior adult', 'elder']
             both_adult = the_relationship.cat_to.age in adult_ages and the_relationship.cat_to.age in adult_ages
-            if the_relationship.romantic_love > 49 and game.settings['dark mode'] and different_age and both_adult:
+            check_age = (different_age and both_adult) or both_adult
+            if the_relationship.romantic_love > 49 and game.settings['dark mode'] and check_age:
                 verdana_dark_margenta.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            elif the_relationship.romantic_love > 49 and not game.settings['dark mode'] and different_age and both_adult:
+            elif the_relationship.romantic_love > 49 and not game.settings['dark mode'] and check_age:
                 verdana_dark_margenta.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             else:
                 verdana_small.text('romantic like:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
