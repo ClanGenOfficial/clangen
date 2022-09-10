@@ -927,7 +927,7 @@ class Cat(object):
                                      'Is challenging any Clanmate they can to a sparring match... with minimal recruiting success',
                                      'Is challenging some Clanmates to a sparring match, two-on-one!', 'Is twitching their tail in excitement about something'])
                 elif cat.trait == 'empathetic':
-                    thoughts.extend(['Is listening to the woes of a fellow Clanmate', 'Notices another apprentice struggling with a task and offers their help',
+                    thoughts.extend(['Is listening to the woes of a fellow Clanmate', 'Notices an apprentice struggling with a task and offers their help',
                                      'Is doing some apprentice tasks around camp, to help lighten the load', 'Is sharing tongues with friends',
                                      'Is going to keep cats in the medicine den company', 'Is taking a breath, and ponders the burdens of others they have listened to'])
                     # checks for specific roles
@@ -957,7 +957,7 @@ class Cat(object):
                                      'Is enjoying some peace and quiet away from others', 'Is seeking out a place where they can be by themselves for a bit',
                                      'Is feeling a bit anxious after having been around so many cats at the last Gathering'])
                 elif cat.trait == 'loving':
-                    thoughts.extend(['Is feeling content with the little things in life', 'Is offering any help they can to the medicine cat'
+                    thoughts.extend(['Is feeling content with the little things in life', 'Is offering any help they can to the medicine cat',
                                      'Is purring with friends', 'Is purring loudly', 'Is purring gently', 'Needs a bit of time alone today',
                                      'Is talking with friends about recent celebrations'])
                 elif cat.trait == 'loyal':
