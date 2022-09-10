@@ -734,9 +734,9 @@ class Cat(object):
                         thoughts.extend(['Is refusing to follow the deputy\'s recent orders due to their own morals'])
                         
                 # active cat specific thoughts
-                if cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader':
+                if cat.status == 'warrior':
                     thoughts.extend(['Caught scent of a fox earlier', 'Caught scent of an enemy warrior earlier', 'Is helping gathering herbs', 'Is thinking about love',
-                                     'Is decorating their nest', 'Is reinforcing the camp with brambles', 'Wants to be chosen as the new deputy', 'Caught a huge rabbit',
+                                     'Is decorating their nest', 'Is reinforcing the camp with brambles', 'Caught a huge rabbit',
                                      'Tries to set a good example for younger cats', 'Wants to go on a patrol', 'Wants to go on a hunting patrol', 'Is guarding the camp entrance',
                                      'Is gossiping', 'Plans to visit the medicine cat', 'Is sharpening their claws', 'Is helping to escort the medicine cat to gather herbs',
                                      'Is feeling sore', 'Is being pestered by flies', 'Feels overworked', 'Is exhausted from yesterday\'s patrol', 'Wants to have kits',
