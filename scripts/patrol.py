@@ -687,8 +687,8 @@ class Patrol(object):
         # status specific patrols
 
         # season specific patrols
-
-
+        
+        
         # trait specific patrols
 
         if len(self.patrol_cats) > 1:

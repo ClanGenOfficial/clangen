@@ -86,7 +86,7 @@ class Events(object):
         self.check_age(cat)
 
     def check_clan_relations(self):
-        if len(game.clan.all_clans) > 0:
+        if len(game.clan.all_clans) > 0 and randint(1,5) == 1:
             war_notice = ''
             for other_clan in game.clan.all_clans:
                 if int(other_clan.relations) <= 7:
