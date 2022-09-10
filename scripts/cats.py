@@ -264,7 +264,7 @@ class Cat(object):
             other_cat = self.all_cats.get(other_cat)
             other_name = str(other_cat.name)
             cat = self.all_cats.get(c)
-            thought = 'Is not thinking about much right now'  # placeholder thought - should never appear in game    
+            thoughts = ['Is not thinking about much right now']  # placeholder thought - should never appear in game    
             
             if cat.dead:
                 # individual thoughts
@@ -1115,7 +1115,7 @@ class Cat(object):
                         comfortable = randint(0,25)
                         trust = randint(0,15)
                         admiration = randint(0,20)
-                        if randint(1,100-like) == 1:
+                        if randint(1,100-like) == 1 and self.age_moons > 11 and the_cat.age_moons > 11:
                             romantic_love = randint(15,30)
                             comfortable = int(comfortable * 1.3)
                             trust = int(trust * 1.2)
