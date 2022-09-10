@@ -538,7 +538,7 @@ class Events(object):
             if other_cat.status == 'apprentice':
                 interactions.append(f'{name} sneaks out of camp with {other_name}')
         elif cat.status == 'warrior':
-            interactions.extend([name + " is caught outside of the clan\'s territory", f'{name} is caught breaking the warrior code', f'{name} went missing for a few days',
+            interactions.extend([name + " is caught outside of the Clan\'s territory", f'{name} is caught breaking the Warrior Code', f'{name} went missing for a few days',
                                  f'{name} believes they are a part of the new prophecy'])
         elif cat.status == 'medicine cat':
             interactions.extend(
