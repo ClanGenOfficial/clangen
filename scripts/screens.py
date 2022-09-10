@@ -3041,7 +3041,7 @@ class RelationshipScreen(Screens):
             count += 20
             current_x = 140 + pos_x - string_len / 1.5
             current_y = 145 + pos_y + count
-            if different_age and both_adult:
+            if (different_age and both_adult) or both_adult:
                 draw_bar(the_relationship.romantic_love, current_x, current_y)
             else:
                 draw_bar(0, current_x, current_y)
