@@ -582,11 +582,13 @@ class Relationship(object):
             action_possibilies += SPECIAL_CHARACTER[self.cat_from.trait]
 
         # LOVE
-        # check mate status and settings
+        # check settings and family
         cat_from_has_mate = self.cat_from.mate != None or self.cat_from.mate != ''
-
-        # only allow love actions with mate (if they have some) if the setting is turned off
-        if (cat_from_has_mate and not self.mates and not game.settings['affair']) or self.family:
+        affair_setting = (cat_from_has_mate and not self.mates and not game.settings['affair'])
+        former_mentor1 = self.cat_to.ID in [ cat.ID for cat in self.cat_from.former_apprentices]
+        former_mentor2 = self.cat_from.ID in [ cat.ID for cat in self.cat_to.former_apprentices]
+        former_mentor_setting = (former_mentor1 or former_mentor2) and not game.settings['romantic with former mentor']
+        if affair_setting or self.family or former_mentor_setting:
             return action_possibilies
 
         # check ages of cats

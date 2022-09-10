@@ -204,6 +204,7 @@ class RelationshipSettingsScreen(Screens):
         verdana.text("Allow affairs and mate switches based on relationships:", (100, 230))
         verdana.text("Allow couples to have kittens despite same-sex status:", (100, 260))
         verdana.text("Allow unmated cats to have offspring:", (100, 290))
+        verdana.text("Allow romantic interactions with former apprentices/mentor:", (100, 320))
 
         # Setting values
         verdana.text(self.bool[game.settings['random relation']], (-170, 200))
@@ -214,6 +215,8 @@ class RelationshipSettingsScreen(Screens):
         buttons.draw_button((-80, 260), text='SWITCH', setting='no gendered breeding')
         verdana.text(self.bool[game.settings['no unknown fathers']], (-170, 290))
         buttons.draw_button((-80, 290), text='SWITCH', setting='no unknown fathers')
+        verdana.text(self.bool[game.settings['romantic with former mentor']], (-170, 320))
+        buttons.draw_button((-80, 320), text='SWITCH', setting='romantic with former mentor')
 
         # other buttons
         buttons.draw_button((50, 50),
@@ -3032,16 +3035,17 @@ class RelationshipScreen(Screens):
             different_age = the_relationship.cat_to.age != the_relationship.cat_to.age
             adult_ages = ['young adult', 'adult', 'senior adult', 'elder']
             both_adult = the_relationship.cat_to.age in adult_ages and the_relationship.cat_to.age in adult_ages
-            if the_relationship.romantic_love > 49 and game.settings['dark mode'] and different_age and both_adult:
+            check_age = (different_age and both_adult) or both_adult
+            if the_relationship.romantic_love > 49 and game.settings['dark mode'] and check_age:
                 verdana_dark_margenta.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            elif the_relationship.romantic_love > 49 and not game.settings['dark mode'] and different_age and both_adult:
+            elif the_relationship.romantic_love > 49 and not game.settings['dark mode'] and check_age:
                 verdana_dark_margenta.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             else:
                 verdana_small.text('romantic like:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             count += 20
             current_x = 140 + pos_x - string_len / 1.5
             current_y = 145 + pos_y + count
-            if different_age and both_adult:
+            if (different_age and both_adult) or both_adult:
                 draw_bar(the_relationship.romantic_love, current_x, current_y)
             else:
                 draw_bar(0, current_x, current_y)

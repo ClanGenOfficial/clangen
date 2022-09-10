@@ -50,11 +50,12 @@ class Game(object):
     # SETTINGS
     settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False, 'dark mode': False, 'backgrounds': True, 'autosave': False, 'disasters': False,
                 'retirement': True, 'language': 'english', 'affair': False, 'shaders': False, 'hotkey display': False, 'random relation': True, 'show dead relation': True,
-                'show empty relation': True}  # The current settings
+                'show empty relation': True, 'romantic with former mentor': True}  # The current settings
     setting_lists = {'no gendered breeding': [False, True], 'text size': ['0', '1', '2'], 'no unknown fathers': [False, True], 'dark mode': [False, True],
                      'backgrounds': [True, False], 'autosave': [False, True], 'disasters': [False, True], 'retirement': [True, False],
                      'language': language_list, 'affair': [False,True], 'shaders': [False, True], 'hotkey display': [False, True],
-                     'random relation': [False,True], 'show dead relation': [False, True], 'show empty relation': [False, True]}  # Lists of possible options for each setting
+                     'random relation': [False,True], 'show dead relation': [False, True], 'show empty relation': [False, True],
+                     'romantic with former mentor': [False,True]}  # Lists of possible options for each setting
     settings_changed = False
 
     # CLAN
