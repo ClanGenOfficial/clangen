@@ -9,14 +9,14 @@ class Name(object):
         "medicine cat apprentice": "paw",
         "leader": "star"
     }
-    normal_suffixes = [  # common suffixes
-        "fur" * 13,
-        "pelt" * 13,
-        "tail" * 8, 
-        "claw" * 7, 
-        "foot" * 5,
-        "whisker" * 6,
-        "heart" * 10,
+    normal_suffixes =  [ # common suffixes 
+        "fur"] * 13 + \
+        ["pelt"] * 13 + \
+        ["tail"] * 8 + \
+        ["claw"] * 7 +  \
+        ["foot"] * 5 + \
+        ["whisker"] * 6 + \
+        ["heart"] * 10 + [
 
         # regular suffixes
         "acorn",
