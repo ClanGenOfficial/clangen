@@ -409,7 +409,7 @@ class Relationship(object):
         self.cat_to = cat_to
         self.mates = mates
         self.family = family
-        self.opposit_relationship = None #link to oppositting relationship will be created later
+        self.opposite_relationship = None #link to oppositting relationship will be created later
         self.effect = 'neutral effect'
         self.current_action_str = ''
 
@@ -445,12 +445,12 @@ class Relationship(object):
         """Add the other relationship object to this easly access and change the other side."""
         opposite_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_to.relationships))
         if opposite_relationship is not None and len(opposite_relationship) > 0:
-            self.opposit_relationship = opposite_relationship[0]
+            self.opposite_relationship = opposite_relationship[0]
         else:
             # create relationship
             relation = Relationship(self.cat_to,self.cat_from)
             self.cat_to.relationships.append(relation)
-            self.opposit_relationship =relation
+            self.opposite_relationship =relation
             
     def start_action(self):
         """This function checks current state of relationship and decides which actions can happen."""
@@ -458,7 +458,7 @@ class Relationship(object):
         if self.cat_from.mate == self.cat_to.ID:
             self.mates = True
 
-        if self.opposit_relationship is None:
+        if self.opposite_relationship is None:
             self.link_relationship()
 
         self.effect = 'neutral effect'
@@ -608,13 +608,13 @@ class Relationship(object):
                     (self.cat_to.mate == None or self.cat_to.mate == ''):
                     action_possibilies = action_possibilies + LOVE['love_interest_only']
 
-            if self.opposit_relationship.romantic_love > 20:
+            if self.opposite_relationship.romantic_love > 20:
                 action_possibilies = action_possibilies + LOVE['love_interest_only']
 
-            if self.romantic_love > 25 and self.opposit_relationship.romantic_love > 15:
+            if self.romantic_love > 25 and self.opposite_relationship.romantic_love > 15:
                 action_possibilies = action_possibilies + LOVE['love_interest']
 
-            if self.mates and self.romantic_love > 30 and self.opposit_relationship.romantic_love > 25 :
+            if self.mates and self.romantic_love > 30 and self.opposite_relationship.romantic_love > 25 :
                 action_possibilies = action_possibilies + LOVE['mates']
 
         return action_possibilies
@@ -704,33 +704,33 @@ class Relationship(object):
 
         # increases
         if action in INCREASE['to']['romantic_love']:
-            self.opposit_relationship.romantic_love += number_increase
+            self.opposite_relationship.romantic_love += number_increase
             self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
             self.platonic_like += INDIRECT_INCREASE
             self.comfortable += INDIRECT_INCREASE
         if action in INCREASE['to']['like']:
-            self.opposit_relationship.platonic_like += number_increase
+            self.opposite_relationship.platonic_like += number_increase
             self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
             self.comfortable += INDIRECT_INCREASE
         if action in INCREASE['to']['dislike']:
-            self.opposit_relationship.dislike += number_increase
+            self.opposite_relationship.dislike += number_increase
             self.effect = 'negative effect'
             # indirekt influences
-            self.opposit_relationship.platonic_like -= INDIRECT_DECREASE
-            self.opposit_relationship.romantic_love -= INDIRECT_DECREASE
+            self.opposite_relationship.platonic_like -= INDIRECT_DECREASE
+            self.opposite_relationship.romantic_love -= INDIRECT_DECREASE
             # if dislike reaced a certain point, and is increased, like will get decrease more
             if self.dislike > 30:
-                self.opposit_relationship.platonic_like -= INDIRECT_DECREASE
-                self.opposit_relationship.romantic_love -= INDIRECT_DECREASE
+                self.opposite_relationship.platonic_like -= INDIRECT_DECREASE
+                self.opposite_relationship.romantic_love -= INDIRECT_DECREASE
         if action in INCREASE['to']['admiration']:
-            self.opposit_relationship.admiration += number_increase
+            self.opposite_relationship.admiration += number_increase
             self.effect = 'positive effect'
         if action in INCREASE['to']['comfortable']:
-            self.opposit_relationship.comfortable += number_increase
+            self.opposite_relationship.comfortable += number_increase
             self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
@@ -738,10 +738,10 @@ class Relationship(object):
             self.platonic_like += INDIRECT_INCREASE
             self.trust += INDIRECT_INCREASE
         if action in INCREASE['to']['jealousy']:
-            self.opposit_relationship.jealousy -= number_decrease
+            self.opposite_relationship.jealousy -= number_decrease
             self.effect = 'negative effect'
         if action in INCREASE['to']['trust']:
-            self.opposit_relationship.trust += number_increase
+            self.opposite_relationship.trust += number_increase
             self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
@@ -750,25 +750,25 @@ class Relationship(object):
 
         # decreases
         if action in DECREASE['to']['romantic_love']:
-            self.opposit_relationship.romantic_love -= number_decrease
+            self.opposite_relationship.romantic_love -= number_decrease
             self.effect = 'negative effect'
         if action in DECREASE['to']['like']:
-            self.opposit_relationship.platonic_like -= number_decrease
+            self.opposite_relationship.platonic_like -= number_decrease
             self.effect = 'negative effect'
         if action in DECREASE['to']['dislike']:
-            self.opposit_relationship.dislike -= number_decrease
+            self.opposite_relationship.dislike -= number_decrease
             self.effect = 'negative effect'
             self.effect = 'positive effect'
         if action in DECREASE['to']['admiration']:
-            self.opposit_relationship.admiration -= number_decrease
+            self.opposite_relationship.admiration -= number_decrease
             self.effect = 'negative effect'
         if action in DECREASE['to']['comfortable']:
-            self.opposit_relationship.comfortable -= number_decrease
+            self.opposite_relationship.comfortable -= number_decrease
         if action in DECREASE['to']['trust']:
-            self.opposit_relationship.trust -= number_decrease
+            self.opposite_relationship.trust -= number_decrease
             self.effect = 'negative effect'
         if action in DECREASE['to']['jealousy']:
-            self.opposit_relationship.jealousy -= number_decrease
+            self.opposite_relationship.jealousy -= number_decrease
             self.effect = 'positive effect'
 
         self.cut_boundries()
@@ -795,23 +795,23 @@ class Relationship(object):
         self.jealousy = lower_bound if self.jealousy < lower_bound else self.jealousy
         
         # opposit relationship
-        if self.opposit_relationship == None:
+        if self.opposite_relationship == None:
             self.link_relationship()
-        if self.opposit_relationship is not None:
-            self.opposit_relationship.romantic_love = upper_bound if self.opposit_relationship.romantic_love > upper_bound else self.opposit_relationship.romantic_love
-            self.opposit_relationship.romantic_love = lower_bound if self.opposit_relationship.romantic_love < lower_bound else self.opposit_relationship.romantic_love
-            self.opposit_relationship.platonic_like = upper_bound if self.opposit_relationship.platonic_like > upper_bound else self.opposit_relationship.platonic_like
-            self.opposit_relationship.platonic_like = lower_bound if self.opposit_relationship.platonic_like < lower_bound else self.opposit_relationship.platonic_like
-            self.opposit_relationship.dislike = upper_bound if self.opposit_relationship.dislike > upper_bound else self.opposit_relationship.dislike
-            self.opposit_relationship.dislike = lower_bound if self.opposit_relationship.dislike < lower_bound else self.opposit_relationship.dislike
-            self.opposit_relationship.admiration = upper_bound if self.opposit_relationship.admiration > upper_bound else self.opposit_relationship.admiration
-            self.opposit_relationship.admiration = lower_bound if self.opposit_relationship.admiration < lower_bound else self.opposit_relationship.admiration
-            self.opposit_relationship.comfortable = upper_bound if self.opposit_relationship.comfortable > upper_bound else self.opposit_relationship.comfortable
-            self.opposit_relationship.comfortable = lower_bound if self.opposit_relationship.comfortable < lower_bound else self.opposit_relationship.comfortable
-            self.opposit_relationship.trust = upper_bound if self.opposit_relationship.trust > upper_bound else self.opposit_relationship.trust
-            self.opposit_relationship.trust = lower_bound if self.opposit_relationship.trust < lower_bound else self.opposit_relationship.trust
-            self.opposit_relationship.jealousy = upper_bound if self.opposit_relationship.jealousy > upper_bound else self.opposit_relationship.jealousy
-            self.opposit_relationship.jealousy = lower_bound if self.opposit_relationship.jealousy < lower_bound else self.opposit_relationship.jealousy
+        if self.opposite_relationship is not None:
+            self.opposite_relationship.romantic_love = upper_bound if self.opposite_relationship.romantic_love > upper_bound else self.opposite_relationship.romantic_love
+            self.opposite_relationship.romantic_love = lower_bound if self.opposite_relationship.romantic_love < lower_bound else self.opposite_relationship.romantic_love
+            self.opposite_relationship.platonic_like = upper_bound if self.opposite_relationship.platonic_like > upper_bound else self.opposite_relationship.platonic_like
+            self.opposite_relationship.platonic_like = lower_bound if self.opposite_relationship.platonic_like < lower_bound else self.opposite_relationship.platonic_like
+            self.opposite_relationship.dislike = upper_bound if self.opposite_relationship.dislike > upper_bound else self.opposite_relationship.dislike
+            self.opposite_relationship.dislike = lower_bound if self.opposite_relationship.dislike < lower_bound else self.opposite_relationship.dislike
+            self.opposite_relationship.admiration = upper_bound if self.opposite_relationship.admiration > upper_bound else self.opposite_relationship.admiration
+            self.opposite_relationship.admiration = lower_bound if self.opposite_relationship.admiration < lower_bound else self.opposite_relationship.admiration
+            self.opposite_relationship.comfortable = upper_bound if self.opposite_relationship.comfortable > upper_bound else self.opposite_relationship.comfortable
+            self.opposite_relationship.comfortable = lower_bound if self.opposite_relationship.comfortable < lower_bound else self.opposite_relationship.comfortable
+            self.opposite_relationship.trust = upper_bound if self.opposite_relationship.trust > upper_bound else self.opposite_relationship.trust
+            self.opposite_relationship.trust = lower_bound if self.opposite_relationship.trust < lower_bound else self.opposite_relationship.trust
+            self.opposite_relationship.jealousy = upper_bound if self.opposite_relationship.jealousy > upper_bound else self.opposite_relationship.jealousy
+            self.opposite_relationship.jealousy = lower_bound if self.opposite_relationship.jealousy < lower_bound else self.opposite_relationship.jealousy
 
     def special_interactions(self):
         actions_possibilities = []

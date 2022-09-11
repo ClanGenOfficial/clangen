@@ -313,11 +313,11 @@ class Events(object):
             else:
                 cat.relationships.append(Relationship(cat,other_cat,True))
             
-            ohter_cat_relationship = list(filter(lambda r: r.cat_to.ID == cat.ID , other_cat.relationships))
-            if ohter_cat_relationship is not None and len(ohter_cat_relationship) > 0:
-                ohter_cat_relationship[0].romantic_love = 20
-                ohter_cat_relationship[0].comfortable = 20
-                ohter_cat_relationship[0].trust = 10
+            other_cat_relationship = list(filter(lambda r: r.cat_to.ID == cat.ID , other_cat.relationships))
+            if other_cat_relationship is not None and len(other_cat_relationship) > 0:
+                other_cat_relationship[0].romantic_love = 20
+                other_cat_relationship[0].comfortable = 20
+                other_cat_relationship[0].trust = 10
             else:
                 other_cat.relationships.append(Relationship(other_cat,cat,True))
                     
