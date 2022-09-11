@@ -888,7 +888,7 @@ class Cat(object):
                 elif cat.trait == 'charismatic':
                     thoughts.extend(['Is smiling warmly at their Clanmates', 'Is making everyone laugh at a very funny quip', 'Always manages to turn the mood into a lighter one',
                                      'Is laughing with friends', 'Is looking around camp for someone to share tongues with', 'Winked playfully at a Clanmate from across the clearing!'
-                                     'Has received several invitations to share tongues later this evening... and is deciding which to take',
+                                     'Has received several invitations to share tongues... and is deciding which to take',
                                      'Is basking in a sunray in the camp clearing', 'Plans to go on a stroll with some cat today',
                                      'Is swishing their tail back and forth in a laid back manner', 'Is grooming their already silky soft coat', 'Is purring warmly',
                                      'Is purring loudly', 'Is purring sweetly', 'Is this moon\'s heartthrob', 'Has recently given a wonderful speech to fellow Clanmates, boosting morale'])
@@ -1069,7 +1069,11 @@ class Cat(object):
                 # skill specific thoughts
                 elif cat.skills == 'strong connection to starclan' and cat.status != 'medicine cat' and cat.status != 'medicine cat apprentice':  
                     thoughts.extend(['Is becoming interested in herbs', 'Volunteers to gather herbs', 'Has been lending the medicine cat a paw lately'])    
-                    
+
+            else: 
+                # if this else is reached dead is not set, just to be sure the cat should be alive
+                self.dead = False
+
             thought = choice(thoughts)
             cat.thought = thought                
             
@@ -1622,23 +1626,26 @@ class Cat(object):
         if not os.path.exists(relation_directory and relation_cat_directory):
             self.relationships = []
         else: 
-            with open(relation_cat_directory, 'r') as read_file:
-                rel_data = json.loads(read_file.read())
-                relationships = []
-                for rel in rel_data:
-                    cat_to = self.all_cats.get(rel['cat_to_id'])
-                    if cat_to == None:
-                        continue
-                    new_rel = Relationship(cat_from=self,cat_to=cat_to,
-                                            mates=rel['mates'],family=rel['family'],
-                                            romantic_love=rel['romantic_love'],
-                                            platonic_like=rel['platonic_like'],
-                                            dislike=rel['dislike'],
-                                            admiration=rel['admiration'],
-                                            comfortable=rel['comfortable'],
-                                            jealousy=rel['jealousy'],trust=rel['trust'])
-                    relationships.append(new_rel)
-                self.relationships = relationships
+            try:
+                with open(relation_cat_directory, 'r') as read_file:
+                    rel_data = json.loads(read_file.read())
+                    relationships = []
+                    for rel in rel_data:
+                        cat_to = self.all_cats.get(rel['cat_to_id'])
+                        if cat_to == None:
+                            continue
+                        new_rel = Relationship(cat_from=self,cat_to=cat_to,
+                                                mates=rel['mates'],family=rel['family'],
+                                                romantic_love=rel['romantic_love'],
+                                                platonic_like=rel['platonic_like'],
+                                                dislike=rel['dislike'],
+                                                admiration=rel['admiration'],
+                                                comfortable=rel['comfortable'],
+                                                jealousy=rel['jealousy'],trust=rel['trust'])
+                        relationships.append(new_rel)
+                    self.relationships = relationships
+            except:
+                self.relationships = []
 
     def load(self, cat_dict):
         """ A function that takes a dictionary containing other dictionaries with attributes and values of all(?)

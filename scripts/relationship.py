@@ -29,6 +29,7 @@ NOT_AGE_SPECIFIC = {
     "close": ['Tells (cat) a secret']
 }
 
+
 KITTEN_TO_OTHER = {
     "kitten": {
         "unfriendly": ['Tries to scare (cat)', 'Constantly pulling pranks on (cat)'],
@@ -181,13 +182,13 @@ LOVE = {
 
 LEADER = {
     "from":{
-        "unfriendly": [],
+        "unfriendly": ['Punishes (cat) with extra work'],
         "neutral": [],
         "friendly": [],
-        "close": []
+        "close": ['Talks with (cat) about difficult decisions', 'Tells (cat) about the last encounter with the Starclan']
     },
     "to":{
-        "unfriendly": [],
+        "unfriendly": ['Accuses (cat) of being a bad leader'],
         "neutral": [],
         "friendly": [],
         "close": []
@@ -196,13 +197,13 @@ LEADER = {
 
 DEPUTY = {
     "from":{
-        "unfriendly": [],
+        "unfriendly": ['Punishes (cat) with extra work', 'Divides (cat) into extra patrols'],
         "neutral": [],
         "friendly": [],
         "close": []
     },
     "to":{
-        "unfriendly": ['Thinks they should be deputy instead of (cat)'],
+        "unfriendly": ['Thinks they should be deputy instead of (cat)', 'Accuses (cat) of being a bad deputy'],
         "neutral": ['Is tired from (cat) putting them on so many patrols'],
         "friendly": [],
         "close": []
@@ -211,14 +212,14 @@ DEPUTY = {
 
 MEDICINE = {
     "from":{
-        "unfriendly": [],
+        "unfriendly": ['Treats (cat)\'s splinter wound more roughly', 'Gives (cat) bitter herbs on purpose'],
         "neutral": [],
         "friendly": [],
-        "close": []
+        "close": ['Tells (cat) about the last encounter with the Starclan']
     },
     "to":{
         "unfriendly": [],
-        "neutral": [],
+        "neutral": ['Thought of (cat) on the last patrol and took a rare herb with them'],
         "friendly": ['Escorted (cat) so they could gather herbs'],
         "close": []
     }
@@ -253,12 +254,12 @@ SPECIAL_CHARACTER = {
     "compassionate": [  'Curled around (cat) to share warmth', 'Lets (cat) have the last piece of fresh kill', 
                         'Listening to (cat)\'s problems', 'Gives (cat) an item they may like', 
                         'Helps (elder) get around camp'],
-    "childish": ['Chases around a butterfly', 'Is hiding behind a bush ready to pounce on (cat)'],
+    "childish": ['Is hiding behind a bush ready to pounce on (cat)'],
     "confident": ['Is building up (cat)\'s confidence', 'Stands tall when (cat) walks by'],
     "careful": ['Tells (cat) to get their ailment treated as soon as possible', 'Chiding (cat) for being so reckless',
                 'Apologized to (cat) for possibly hurting their feelings'],
     "altruistic": ['Let (cat) lean on their shoulder after a recent injury', 'Is poised to help train (apprentice)'],
-    "bold": ['Winks at (cat)', 'Challenged (cat) to spar with them'],
+    "bold": ['Challenged (cat) to spar with them'],
     "patient": ['Watching the shooting stars with (cat)', 
                 'Calmly explains hunting techniques to (cat) again for the fourth time today'],
     "sneaky": [ 'Is gossiping about (cat)', 'Is teaching (cat) how to walk without making a sound', 
@@ -279,47 +280,45 @@ SPECIAL_CHARACTER = {
 # increase admiration -> decreases: - | increases: -
 # increase comfortable -> decreases: jealousy, dislike | increases: trust, like
 # increase jealousy -> decreases: - | increases: dislike
-# increase trust -> decreases: dislike | increases: comfortable
+# increase trust -> decreases: dislike | increases: -
 
 # !! DECREASING ONE STATE DOES'T INFLUENCE OTHERS !!
 
 # This defines effect the action has, not every action has to have a effect
-INCREASE = {
+INCREASE_HIGH = {
     "from": {
         "romantic_love": ['Is developing a crush on (cat)', 'Is admiring (cat) from afar...', 
                           'Is spending a lot of time with (cat)', 'Gave a pretty flower they found to (cat)',
                           'Can\'t seem to stop talking about (cat)', 'Would spend the entire day with (cat) if they could',
-                          'Keeps shyly glancing over at (cat) as the clan talks about kits', 'Laughs at bad jokes from (cat)',
+                          'Laughs at bad jokes from (cat)', 'Wants to confess their love to (cat)',
                           'Is rolling around a little too playfully with (cat)...', 'Enjoys the time with (cat) and feels secure',
-                          'Was caught enjoying a moonlit stroll with (cat) last night...', 'Thinks that (cat) is really charming',
-                          'Is wondering what it would be like to grow old with (cat)','Go for a nice long walk with (cat)',
-                          'Wants to spend the entire day with (cat)', 'Wants to confess their love to (cat)'],
+                          'Was caught enjoying a moonlit stroll with (cat) last night...', 'Wants to spend the entire day with (cat)',
+                          'Is wondering what it would be like to grow old with (cat)','Go for a nice long walk with (cat)'
+                          ],
         "like": ['Is telling a story to (cat)','Is talking with (cat)','Pretends to be a warrior with (cat)',
-                'Is giving (cat) a badger ride on their back!', 'Is sharing tongues with (cat)', 'Is playing tag with (cat)',
+                'Is sharing tongues with (cat)', 'Is playing tag with (cat)',
                 'Has been spending time with (cat) lately','Just told (cat) a hilarious joke', 'Relaxing with (cat)',
-                'Plays mossball with (cat)', 'Tells (cat) a secret', 'Wants to snuggle with (cat)', 
+                'Tells (cat) a secret', 'Wants to snuggle with (cat)', 'Curled around (cat) to share warmth',
                 'Is making sure (cat) knows that they are loved', 'Is telling (cat) how much they cherish them',
                 'Noticed (apprentice) was struggling, and offered to help them','Gave (cat) their favorite piece of prey',
                 'Took the time to help (apprentice) work through a technique they are struggling with',
-                'Curled around (cat) to share warmth', 'Is building up (cat)\'s confidence',
-                'Watching the shooting stars with (cat)', 'Calmly explains hunting techniques to (cat) again for the fourth time today'],
+                'Watching the shooting stars with (cat)'],
         "dislike": ['Is mocking (cat)', 'Ignores (cat)', 'Sticks their tongue out at (cat)','Had a huge argument with (cat)',
                     'Had a fight with (cat)', 'Is jealous that (cat) is getting more attention than them',
                     'Constantly pulling pranks on (cat)', 'Started a fight with (cat)', 'Hissed at (cat)',
-                    'Tells (cat) to leave them alone'],
-        "admiration": ['Is watching (cat) perform an almost-decent hunting crouch', 'Is admiring (cat) from afar...',
-                        'Tells (cat) that they would like to be like them when they grows up', 'Train playfully with (cat)',
-                        'Ask (cat) what it\'s like to be a apprentice','Sparring with (cat)', 'Is feeling proud of (cat)',
-                        'Is asking (cat) to check them for ticks', 'Compliments (cat) for their good disposition'],
+                    'Tells (cat) to leave them alone', 'Accuses (cat) of being a bad leader', 'Accuses (cat) of being a bad deputy'],
+        "admiration": ['Tells (cat) that they would like to be like them when they grows up', 'Train playfully with (cat)',
+                        'Sparring with (cat)', 'Is feeling proud of (cat)', 'Compliments (cat) for their good disposition'],
         "comfortable": ['Is telling a story to (cat)','Is sharing prey with (cat)','Tells (cat) a secret',
-                        'Is sharing tongues with (cat)','Comes up with a plan to sneak out of camp with (cat)', 
+                        'Is sharing tongues with (cat)', 'Talks with (cat) about difficult decisions',
                         'Just told (cat) a hilarious joke', 'Thinks that (cat) is really funny',
                         'Escorted (cat) so they could gather herbs', 'Is helping (cat) calm down',
-                        'Curled around (cat) to share warmth','Watching the shooting stars with (cat)',
+                        'Curled around (cat) to share warmth', 'Watching the shooting stars with (cat)',
                         'Talks about dreams with (cat)'],
         "jealousy": ['Is jealous that (cat) is getting more attention than them', 'Thinking about how (cat) wronged them'],
         "trust":['Is talking with (cat)','Tells (cat) a secret','Comes up with a plan to sneak out of camp with (cat)',
-                 'Escorted (cat) so they could gather herbs','Let (cat) lean on their shoulder after a recent injury']
+                 'Escorted (cat) so they could gather herbs','Let (cat) lean on their shoulder after a recent injury',
+                 'Ask (cat) to collect herbs on the next patrol', 'Tells (cat) about the last encounter with the Starclan']
     },
     "to": {
         "romantic_love": ['Is spending a lot of time with (cat)', 'Gave a pretty flower they found to (cat)',
@@ -328,7 +327,7 @@ INCREASE = {
                           'Go for a nice long walk with (cat)', 'Wants to spend the entire day with (cat)', 'Charms (cat)'],
         "like": ['Is telling a story to (cat)','Is talking with (cat)','Is sharing tongue with (cat)',
                 'Is giving (cat) a badger ride on their back!', 'Is promising to take (cat) outside of camp if they behave',
-                'Gave (cat) a trinket they found while out on patrol today', 'Is telling (cat) about a hunting technique',
+                'Is telling (cat) about a hunting technique',
                 'Is sharing tongues with (cat)','Has been spending time with (cat) lately', 'Relaxing with (cat)', 
                 'Just told (cat) a hilarious joke', 'Plays mossball with (cat)','Pretends to be a warrior with (cat)',
                 'Comes up with a plan to sneak out of camp with (cat)', 'Tells (cat) a secret', 'Laughs at bad jokes from (cat)',
@@ -342,63 +341,134 @@ INCREASE = {
         "dislike": ['Is mocking (cat)','Is telling jokes about (cat)','Sticks their tongue out at (cat)',
                     'Is spreading a rumour about (cat)','Tries to scare (cat)','Had a huge argument with (cat)',
                     'Had a fight with (cat)', 'Constantly pulling pranks on (cat)', 'Started a fight with (cat)',
-                    'Hissed at (cat)', 'Tells (cat) to leave them alone'],
+                    'Hissed at (cat)', 'Tells (cat) to leave them alone', 'Accuses (cat) of being a bad leader',
+                    'Accuses (cat) of being a bad deputy', 'Punishes (cat) with extra work',
+                    'Treats (cat)\'s splinter wound more roughly','Gives (cat) bitter herbs on purpose'],
         "admiration": ['Is promising to take (cat) outside of camp if they behave', 'Is telling (cat) about a hunting technique',
                         'Is giving advice to (cat)','Sparring with (cat)', 'Is showing (cat) how to sneak up on their enemies',
                         'Noticed (apprentice) was struggling, and offered to help them', 'Is giving (cat) advice',
                         'Took the time to help (apprentice) work through a technique they are struggling with',
                         'Calmly explains hunting techniques to (cat) again for the fourth time today',
-                        'Is teaching (cat) how to walk without making a sound'],
+                        'Is teaching (cat) how to walk without making a sound', 'Thought of (cat) on the last patrol and took a rare herb with them',
+                        'Is poised to help train (apprentice)'],
         "comfortable": ['Is telling a story to (cat)','Is sharing prey with (cat)','Tells (cat) a secret', 
                         'Is sharing tongues with (cat)','Is telling (cat) about their own days as an apprentice',
                         'Comes up with a plan to sneak out of camp with (cat)', 'Escorted (cat) so they could gather herbs',
                         'Compliments (cat) for their good disposition', 'Is helping (cat) calm down',
-                        'Is purring loudly to comfort (cat)', 'Is listening to (cat)\'s troubles',
+                        'Is listening to (cat)\'s troubles',
                         'Curled around (cat) to share warmth', 'Listening to (cat)\'s problems',
                         'Is building up (cat)\'s confidence', 'Apologized to (cat) for possibly hurting their feelings',
-                        'Watching the shooting stars with (cat)','Is giving (cat) advice', 'Grooms the grime off (cat)\'s pelt'],
+                        'Watching the shooting stars with (cat)','Is giving (cat) advice', 'Grooms the grime off (cat)\'s pelt',
+                        'Is soothing (cat)\'s irrational thoughts'],
         "jealousy": [],
         "trust":['Is talking with (cat)','Tells (cat) a secret', 'Escorted (cat) so they could gather herbs',
-                'Comes up with a plan to sneak out of camp with (cat)', 'Let (cat) lean on their shoulder after a recent injury']
+                'Comes up with a plan to sneak out of camp with (cat)', 'Let (cat) lean on their shoulder after a recent injury',
+                'Talks with (cat) about difficult decisions', 'Thought of (cat) on the last patrol and took a rare herb with them',
+                'Tells (cat) about the last encounter with the Starclan']
     }
 }
 
-DECREASE  = {
+INCREASE_LOW = {
+    "from": {
+        "romantic_love": ['Keeps shyly glancing over at (cat) as the clan talks about kits', 'Thinks that (cat) is really charming',
+                          'Is thinking of the best ways to impress (cat)'],
+        "like": ['Is pretending to ward off foxes with (cat)', 'Is pretending to fight off badgers with (cat)',
+                 'Is racing (cat) back and forth across the camp clearing', 'Has a mock battle with (cat)',
+                 'Hopes that their own kits are as cute as (cat) someday', 'Is asking (cat) to check them for ticks',
+                 'Is hiding behind a bush ready to pounce on (cat)', 'Tells (cat) to get their ailment treated as soon as possible',
+                 'Plays mossball with (cat)', 'Is giving (cat) a badger ride on their back!',
+                 'Calmly explains hunting techniques to (cat) again for the fourth time today'],
+        "dislike": ['Divides (cat) into extra patrols', 'Chiding (cat) for being so reckless'],
+        "admiration": ['Is watching (cat) perform an almost-decent hunting crouch', 'Ask (cat) what it\'s like to be a apprentice',
+                        'Is admiring (cat) from afar...'],
+        "comfortable": ['Is hiding under a bush from (cat), but they can\'t stop giggling', 'Is watching over (cat)',
+                        'Bestowing wisdom onto (cat)', 'Is telling (cat) in great detail how they would protect them from any danger',
+                        'Is purring loudly to comfort (cat)'],
+        "jealousy": [],
+        "trust": ['Is asking (cat) how babies are made', 'Wants to explore Twoleg place with (cat)', 'Wants to sneak along the border with (cat)']
+    },
+    "to": {
+        "romantic_love": ['Doesn\'t want (cat) to overwork themselves'],
+        "like": ['Is pretending to ward off foxes with (cat)', 'Is pretending to fight off badgers with (cat)',
+                 'Is racing (cat) back and forth across the camp clearing', 'Has a mock battle with (cat)', 
+                 'Is hiding under a bush from (cat), but they can\'t stop giggling', 'Helps (elder) get around camp',
+                 'Gave (cat) a trinket they found while out on patrol today', 'Listening to (elder)\'s woes'],
+        "dislike": ['Divides (cat) into extra patrols', 'Chiding (cat) for being so reckless'],
+        "admiration": ['Bestowing wisdom onto (cat)'],
+        "comfortable": ['Hopes that their own kits are as cute as (cat) someday', 'Smiles at (cat) whenever they meet',
+                        'Is purring loudly to comfort (cat)', 'Listening to (elder)\'s woes', 'Is being quite considerate with (cat)'],
+        "jealousy": [],
+        "trust": ['Wants to explore Twoleg place with (cat)', 'Wants to sneak along the border with (cat)',
+                  'Tells (cat) to get their ailment treated as soon as possible']
+    }
+}
+
+
+DECREASE_HIGH  = {
     "from": {
         "romantic_love": [],
         "like": ['Is telling jokes about (cat)', 'Whines about (cat)', 'Is tired from (cat) putting them on so many patrols',
                  'Is bossing (cat) around', 'Started a fight with (cat)', 'Has a fight with (cat) about what\'s right',
                  'Hissed at (cat)', 'Tells (cat) to leave them alone', 'Blamed (cat) for their own mistake',
-                 'Is hiding from (cat)', 'Is cross with (cat) for getting dirt all over the fresh-kill pile'],
+                 'Is cross with (cat) for getting dirt all over the fresh-kill pile'],
         "dislike": [],
         "admiration": ['Is frustrated that (cat) won\'t take their duties more seriously', 'Is annoyed by the mess (cat) made',
                         'Wishes (cat) would take things more seriously', 'Thinks they should be deputy instead of (cat)'],
         "comfortable": ['Is stuttering while speaking to (cat)','Glaring at (cat) from across the camp'],
         "jealousy": [],
-        "trust": ['Doesn\'t think that (cat) has been completely honest lately']
+        "trust": ['Doesn\'t think that (cat) has been completely honest lately', 'Accuses (cat) of being a bad leader',
+                  'Accuses (cat) of being a bad deputy']
     },
     "to": {
-        "romantic_love": [],
+        "romantic_love": ['Started a fight with (cat)'],
         "like": ['Is telling jokes about (cat)', 'Started a fight with (cat)', 'Has a fight with (cat) about what\'s right',
                  'Is not backing down in an argument with (cat)', 'Scorns (apprentice) for not catching enough prey',
                  'Hissed at (cat)', 'Tells (cat) to leave them alone', 'Blamed (cat) for their own mistake',
-                 'Rejects (cat)\'s advice without letting them finish', 'Is cross with (cat) for getting dirt all over the fresh-kill pile'],
+                 'Rejects (cat)\'s advice without letting them finish', 'Is cross with (cat) for getting dirt all over the fresh-kill pile',
+                 'Punishes (cat) with extra work'],
         "dislike": [],
         "admiration": ['Is scolding (cat)', 'Rejects (cat)\'s advice without letting them finish'],
         "comfortable": ['Tells (cat) that they\'re pelt looks like a different colour today', 'Is following (cat) around',
-                        'Talks to (cat) how best to kill prey, very enthusiastic', 'Glaring at (cat) from across the camp',
+                        'Glaring at (cat) from across the camp',
                         'Pulled a prank on (cat)', 'Won\'t stop bothering (cat)','Interrupts (cat) during a conversation',
-                        'Gets distracted from conversation with (cat)', 'Is glaring daggers at (cat)'],
+                        'Gets distracted from conversation with (cat)', 'Is glaring daggers at (cat)',
+                        'Gives (cat) bitter herbs on purpose'],
         "jealousy": [],
-        "trust": ['Is spreading a rumour about (cat)','Trips over (cat)','Tries to scare (cat)', 'Pulled a prank on (cat)',
+        "trust": ['Is spreading a rumour about (cat)','Tries to scare (cat)', 'Pulled a prank on (cat)',
                 'Has successfully tricked (cat) into believing a crazy tale about the clan leader',
-                'Blamed (cat) for their own mistake', 'Is gossiping about (cat)']
+                'Blamed (cat) for their own mistake', 'Is gossiping about (cat)', 'Treats (cat)\'s splinter wound more roughly']
+    }
+}
+
+DECREASE_LOW = {
+    "from": {
+        "romantic_love": [],
+        "like": ['Is hiding from (cat)', 'Complains about (cat)'],
+        "dislike": [],
+        "admiration": [],
+        "comfortable": ['Chomps on (cat)\'s ear'],
+        "jealousy": [],
+        "trust": ['Chiding (cat) for being so reckless']
+    },
+    "to": {
+        "romantic_love": [],
+        "like": ['Trips over (cat)', 'Divides (cat) into extra patrols', 'Is watching (cat) scornfully'],
+        "dislike": ['Feels bad that they caused a problem for (cat)'],
+        "admiration": ['Is asking (cat) to tell them about how good they look'],
+        "comfortable": ['Is biting (cat)\'s tail', 'Tells (cat) that their pelt looks like a different colour today',
+                        'Talks to (cat) how best to kill prey, very enthusiastic',
+                        'Makes sure (cat) is following the warrior code',
+                        'Crashes into (cat) while eager for patrol'],
+        "jealousy": [],
+        "trust": ['Trips over (cat)']
     }
 }
 
 # weigths of the stat change
-DIRECT_INCREASE = 8
-DIRECT_DECREASE = 5
+DIRECT_INCREASE_HIGH = 12
+DIRECT_DECREASE_HIGH = 9
+DIRECT_INCREASE_LOW = 7
+DIRECT_DECREASE_LOW = 4
 INDIRECT_INCREASE = 6
 INDIRECT_DECREASE = 3
 
@@ -509,7 +579,14 @@ class Relationship(object):
         self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
         # self.action_results()
 
-        game.relation_events_list.append(f"{str(self.cat_from.name)} - {self.current_action_str} ({self.effect})")
+        actionstring_all = f"{str(self.cat_from.name)} - {self.current_action_str} "
+        effect_string =  f"({self.effect})"
+        both = actionstring_all+effect_string
+        if len(both) < 100:
+            game.relation_events_list.append(both)
+        else:
+            game.relation_events_list.append(actionstring_all)
+            game.relation_events_list.append(effect_string)
 
     def get_action_possibilities(self):
         """Creates a list of possibles actions of this relationship"""
@@ -555,26 +632,27 @@ class Relationship(object):
                 action_possibilies += ELDER_TO_OTHER[key][relation_key]
 
         # STATUS INTERACTIONS
-        if self.cat_from.status == 'leader':
-            for relation_key in relation_keys:
-                action_possibilies += LEADER['from'][relation_key]
-        if self.cat_to.status == 'leader':
-            for relation_key in relation_keys:
-                action_possibilies += LEADER['to'][relation_key]
-        
-        if self.cat_from.status == 'deputy':
-            for relation_key in relation_keys:
-                action_possibilies += LEADER['from'][relation_key]
-        if self.cat_to.status == 'deputy':
-            for relation_key in relation_keys:
-                action_possibilies += LEADER['to'][relation_key]
-        
-        if self.cat_from.status == 'medicine cat':
-            for relation_key in relation_keys:
-                action_possibilies += MEDICINE['from'][relation_key]
-        if self.cat_to.status == 'medicine cat':
-            for relation_key in relation_keys:
-                action_possibilies += MEDICINE['to'][relation_key]
+        if self.cat_from.age != 'kitten' and self.cat_to.age != 'kitten':
+            if self.cat_from.status == 'leader':
+                for relation_key in relation_keys:
+                    action_possibilies += LEADER['from'][relation_key]
+            if self.cat_to.status == 'leader':
+                for relation_key in relation_keys:
+                    action_possibilies += LEADER['to'][relation_key]
+
+            if self.cat_from.status == 'deputy':
+                for relation_key in relation_keys:
+                    action_possibilies += LEADER['from'][relation_key]
+            if self.cat_to.status == 'deputy':
+                for relation_key in relation_keys:
+                    action_possibilies += LEADER['to'][relation_key]
+
+            if self.cat_from.status == 'medicine cat':
+                for relation_key in relation_keys:
+                    action_possibilies += MEDICINE['from'][relation_key]
+            if self.cat_to.status == 'medicine cat':
+                for relation_key in relation_keys:
+                    action_possibilies += MEDICINE['to'][relation_key]
 
         # CHARACTERISTIC INTERACTION
         character_keys = SPECIAL_CHARACTER.keys()
@@ -625,37 +703,39 @@ class Relationship(object):
     def affect_own_relationship(self, action):
         """Affect the own relationship according to the action."""
         # for easier value change
-        number_increase = DIRECT_INCREASE
-        number_decrease = DIRECT_DECREASE
+        number_increase = DIRECT_INCREASE_HIGH
+        number_decrease = DIRECT_DECREASE_HIGH
 
         # increases
-        if action in INCREASE['from']['romantic_love']:
+        if action in INCREASE_HIGH['from']['romantic_love']:
             self.romantic_love += number_increase
             self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
             self.platonic_like += INDIRECT_INCREASE
             self.comfortable += INDIRECT_INCREASE
-        if action in INCREASE['from']['like']:
+        if action in INCREASE_HIGH['from']['like']:
             self.platonic_like += number_increase
             self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
             self.comfortable += INDIRECT_INCREASE
-        if action in INCREASE['from']['dislike']:
+        if action in INCREASE_HIGH['from']['dislike']:
             self.dislike += number_increase
             self.effect = 'negative effect'
             # indirekt influences
             self.platonic_like -= INDIRECT_DECREASE
             self.romantic_love -= INDIRECT_DECREASE
             # if dislike reaced a certain point, and is increased, like will get decrease more
-            if self.dislike > 30:
+            if self.dislike > 24:
                 self.platonic_like -= INDIRECT_DECREASE
                 self.romantic_love -= INDIRECT_DECREASE
-        if action in INCREASE['from']['admiration']:
+                self.comfortable -= INDIRECT_DECREASE
+                self.trust -= INDIRECT_DECREASE
+        if action in INCREASE_HIGH['from']['admiration']:
             self.admiration += number_increase
             self.effect = 'positive effect'
-        if action in INCREASE['from']['comfortable']:
+        if action in INCREASE_HIGH['from']['comfortable']:
             self.comfortable += number_increase
             self.effect = 'positive effect'
             # indirekt influences
@@ -663,76 +743,142 @@ class Relationship(object):
             self.jealousy -= INDIRECT_DECREASE
             self.platonic_like += INDIRECT_INCREASE
             self.trust += INDIRECT_INCREASE
-        if action in INCREASE['from']['jealousy']:
+        if action in INCREASE_HIGH['from']['jealousy']:
             self.jealousy += number_increase
             self.effect = 'negative effect'
-        if action in INCREASE['from']['trust']:
+        if action in INCREASE_HIGH['from']['trust']:
             self.trust += number_increase
             self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
-            self.comfortable += INDIRECT_INCREASE
 
+        number_increase = DIRECT_INCREASE_LOW
+        if action in INCREASE_LOW['from']['romantic_love']:
+            self.romantic_love += number_increase
+            if self.effect == 'neutral effect':
+                self.effect = 'small positive effect'
+        if action in INCREASE_LOW['from']['like']:
+            self.platonic_like += number_increase
+            if self.effect == 'neutral effect':
+                self.effect = 'small positive effect'
+        if action in INCREASE_LOW['from']['dislike']:
+            self.dislike += number_increase
+            if self.effect == 'neutral effect':
+                self.effect = 'small negative effect'
+            # if dislike reaced a certain point, and is increased, like will get decrease more
+            if self.dislike > 24:
+                self.platonic_like -= INDIRECT_DECREASE
+                self.romantic_love -= INDIRECT_DECREASE
+                self.comfortable -= INDIRECT_DECREASE
+                self.trust -= INDIRECT_DECREASE
+        if action in INCREASE_LOW['from']['admiration']:
+            self.admiration += number_increase
+            if self.effect == 'neutral effect':
+                self.effect = 'small positive effect'
+        if action in INCREASE_LOW['from']['comfortable']:
+            self.comfortable += number_increase
+            if self.effect == 'neutral effect':
+                self.effect = 'small positive effect'
+        if action in INCREASE_LOW['from']['jealousy']:
+            self.jealousy += number_increase
+            if self.effect == 'neutral effect':
+                self.effect = 'small negative effect'
+        if action in INCREASE_LOW['from']['trust']:
+            self.trust += number_increase
+            if self.effect == 'neutral effect':
+                self.effect = 'small positive effect'
 
         # decreases
-        if action in DECREASE['from']['romantic_love']:
+        if action in DECREASE_HIGH['from']['romantic_love']:
             self.romantic_love -= number_decrease
             self.effect = 'negative effect'
-        if action in DECREASE['from']['like']:
+        if action in DECREASE_HIGH['from']['like']:
             self.platonic_like -= number_decrease
             self.effect = 'negative effect'
-        if action in DECREASE['from']['dislike']:
+        if action in DECREASE_HIGH['from']['dislike']:
             self.dislike -= number_decrease
             self.effect = 'positive effect'
-        if action in DECREASE['from']['admiration']:
+        if action in DECREASE_HIGH['from']['admiration']:
             self.admiration -= number_decrease
             self.effect = 'negative effect'
-        if action in DECREASE['from']['comfortable']:
+        if action in DECREASE_HIGH['from']['comfortable']:
             self.comfortable -= number_decrease
             self.effect = 'negative effect'
-        if action in DECREASE['from']['trust']:
+        if action in DECREASE_HIGH['from']['trust']:
             self.trust -= number_decrease
             self.effect = 'negative effect'
-        if action in DECREASE['from']['jealousy']:
+        if action in DECREASE_HIGH['from']['jealousy']:
             self.jealousy -= number_decrease
             self.effect = 'positive effect'
+
+        number_decrease = DIRECT_DECREASE_LOW
+        if action in DECREASE_LOW['from']['romantic_love']:
+            self.romantic_love -= number_decrease
+            if self.effect == 'neutral effect':
+                self.effect = 'small negative effect'
+        if action in DECREASE_LOW['from']['like']:
+            self.platonic_like -= number_decrease
+            if self.effect == 'neutral effect':
+                self.effect = 'small negative effect'
+        if action in DECREASE_LOW['from']['dislike']:
+            self.dislike -= number_decrease
+            if self.effect == 'neutral effect':
+                self.effect = 'small positive effect'
+        if action in DECREASE_LOW['from']['admiration']:
+            self.admiration -= number_decrease
+            if self.effect == 'neutral effect':
+                self.effect = 'small negative effect'
+        if action in DECREASE_LOW['from']['comfortable']:
+            self.comfortable -= number_decrease
+            if self.effect == 'neutral effect':
+                self.effect = 'small negative effect'
+        if action in DECREASE_LOW['from']['jealousy']:
+            self.jealousy -= number_decrease
+            if self.effect == 'neutral effect':
+                self.effect = 'small positive effect'
+        if action in DECREASE_LOW['from']['trust']:
+            self.trust -= number_decrease
+            if self.effect == 'neutral effect':
+                self.effect = 'small negative effect'
 
         self.cut_boundries()
 
     def affect_other_relationship(self, action):
         """Affect the other relationship according to the action."""
         # for easier value change
-        number_increase = DIRECT_INCREASE
-        number_decrease = DIRECT_DECREASE
+        number_increase = DIRECT_INCREASE_HIGH
+        number_decrease = DIRECT_DECREASE_HIGH
 
         # increases
-        if action in INCREASE['to']['romantic_love']:
+        if action in INCREASE_HIGH['to']['romantic_love']:
             self.opposit_relationship.romantic_love += number_increase
             self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
             self.platonic_like += INDIRECT_INCREASE
             self.comfortable += INDIRECT_INCREASE
-        if action in INCREASE['to']['like']:
+        if action in INCREASE_HIGH['to']['like']:
             self.opposit_relationship.platonic_like += number_increase
             self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
             self.comfortable += INDIRECT_INCREASE
-        if action in INCREASE['to']['dislike']:
+        if action in INCREASE_HIGH['to']['dislike']:
             self.opposit_relationship.dislike += number_increase
             self.effect = 'negative effect'
             # indirekt influences
             self.opposit_relationship.platonic_like -= INDIRECT_DECREASE
             self.opposit_relationship.romantic_love -= INDIRECT_DECREASE
             # if dislike reaced a certain point, and is increased, like will get decrease more
-            if self.dislike > 30:
+            if self.dislike > 24:
                 self.opposit_relationship.platonic_like -= INDIRECT_DECREASE
                 self.opposit_relationship.romantic_love -= INDIRECT_DECREASE
-        if action in INCREASE['to']['admiration']:
+                self.opposit_relationship.comfortable -= INDIRECT_DECREASE
+                self.opposit_relationship.trust -= INDIRECT_DECREASE
+        if action in INCREASE_HIGH['to']['admiration']:
             self.opposit_relationship.admiration += number_increase
             self.effect = 'positive effect'
-        if action in INCREASE['to']['comfortable']:
+        if action in INCREASE_HIGH['to']['comfortable']:
             self.opposit_relationship.comfortable += number_increase
             self.effect = 'positive effect'
             # indirekt influences
@@ -740,39 +886,102 @@ class Relationship(object):
             self.jealousy -= INDIRECT_DECREASE
             self.platonic_like += INDIRECT_INCREASE
             self.trust += INDIRECT_INCREASE
-        if action in INCREASE['to']['jealousy']:
+        if action in INCREASE_HIGH['to']['jealousy']:
             self.opposit_relationship.jealousy -= number_decrease
             self.effect = 'negative effect'
-        if action in INCREASE['to']['trust']:
+        if action in INCREASE_HIGH['to']['trust']:
             self.opposit_relationship.trust += number_increase
             self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
-            self.comfortable += INDIRECT_INCREASE
+
+        number_increase = DIRECT_INCREASE_LOW
+        if action in INCREASE_LOW['from']['romantic_love']:
+            self.opposit_relationship.romantic_love += number_increase
+            if self.effect == 'neutral effect':
+                self.effect = 'small positive effect'
+        if action in INCREASE_LOW['from']['like']:
+            self.opposit_relationship.platonic_like += number_increase
+            if self.effect == 'neutral effect':
+                self.effect = 'small positive effect'
+        if action in INCREASE_LOW['from']['dislike']:
+            self.opposit_relationship.dislike += number_increase
+            if self.effect == 'neutral effect':
+                self.effect = 'small negative effect'
+            # if dislike reaced a certain point, and is increased, like will get decrease more
+            if self.opposit_relationship.dislike > 24:
+                self.opposit_relationship.platonic_like -= INDIRECT_DECREASE
+                self.opposit_relationship.romantic_love -= INDIRECT_DECREASE
+                self.opposit_relationship.comfortable -= INDIRECT_DECREASE
+                self.opposit_relationship.trust -= INDIRECT_DECREASE
+        if action in INCREASE_LOW['from']['admiration']:
+            self.opposit_relationship.admiration += number_increase
+            if self.effect == 'neutral effect':
+                self.effect = 'small positive effect'
+        if action in INCREASE_LOW['from']['comfortable']:
+            self.opposit_relationship.comfortable += number_increase
+            if self.effect == 'neutral effect':
+                self.effect = 'small positive effect'
+        if action in INCREASE_LOW['from']['jealousy']:
+            self.opposit_relationship.jealousy += number_increase
+            if self.effect == 'neutral effect':
+                self.effect = 'small negative effect'
+        if action in INCREASE_LOW['from']['trust']:
+            self.opposit_relationship.trust += number_increase
+            if self.effect == 'neutral effect':
+                self.effect = 'small positive effect'
 
 
         # decreases
-        if action in DECREASE['to']['romantic_love']:
+        if action in DECREASE_HIGH['to']['romantic_love']:
             self.opposit_relationship.romantic_love -= number_decrease
             self.effect = 'negative effect'
-        if action in DECREASE['to']['like']:
+        if action in DECREASE_HIGH['to']['like']:
             self.opposit_relationship.platonic_like -= number_decrease
             self.effect = 'negative effect'
-        if action in DECREASE['to']['dislike']:
+        if action in DECREASE_HIGH['to']['dislike']:
             self.opposit_relationship.dislike -= number_decrease
-            self.effect = 'negative effect'
             self.effect = 'positive effect'
-        if action in DECREASE['to']['admiration']:
+        if action in DECREASE_HIGH['to']['admiration']:
             self.opposit_relationship.admiration -= number_decrease
             self.effect = 'negative effect'
-        if action in DECREASE['to']['comfortable']:
+        if action in DECREASE_HIGH['to']['comfortable']:
             self.opposit_relationship.comfortable -= number_decrease
-        if action in DECREASE['to']['trust']:
+            self.effect = 'negative effect'
+        if action in DECREASE_HIGH['to']['trust']:
             self.opposit_relationship.trust -= number_decrease
             self.effect = 'negative effect'
-        if action in DECREASE['to']['jealousy']:
+        if action in DECREASE_HIGH['to']['jealousy']:
             self.opposit_relationship.jealousy -= number_decrease
             self.effect = 'positive effect'
+
+        number_decrease = DIRECT_DECREASE_LOW
+        if action in DECREASE_LOW['from']['romantic_love']:
+            self.opposit_relationship.romantic_love -= number_decrease
+            if self.effect == 'neutral effect':
+                self.effect = 'small negative effect'
+        if action in DECREASE_LOW['from']['like']:
+            self.opposit_relationship.platonic_like -= number_decrease
+            if self.effect == 'neutral effect':
+                self.effect = 'small negative effect'
+        if action in DECREASE_LOW['from']['dislike']:
+            self.opposit_relationship.dislike -= number_decrease
+            if self.effect == 'neutral effect':
+                self.effect = 'smallpositive effect'
+        if action in DECREASE_LOW['from']['admiration']:
+            self.opposit_relationship.admiration -= number_decrease
+            if self.effect == 'neutral effect':
+                self.effect = 'small negative effect'
+        if action in DECREASE_LOW['from']['comfortable']:
+            self.opposit_relationship.comfortable -= number_decrease
+            if self.effect == 'neutral effect':
+                self.effect = 'small negative effect'
+        if action in DECREASE_LOW['from']['jealousy']:
+            self.opposit_relationship.jealousy -= number_decrease
+            if self.effect == 'neutral effect':
+                self.effect = 'smallpositive effect'
+        if action in DECREASE_LOW['from']['trust']:
+            self.opposit_relationship.trust -= number_decrease
 
         self.cut_boundries()
 
