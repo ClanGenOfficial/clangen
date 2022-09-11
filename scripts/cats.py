@@ -264,7 +264,7 @@ class Cat(object):
             other_cat = self.all_cats.get(other_cat)
             other_name = str(other_cat.name)
             cat = self.all_cats.get(c)
-            thought = 'Is not thinking about much right now'  # placeholder thought - should never appear in game    
+            thoughts = ['Is not thinking about much right now']  # placeholder thought - should never appear in game    
             
             if cat.dead:
                 # individual thoughts
@@ -734,9 +734,9 @@ class Cat(object):
                         thoughts.extend(['Is refusing to follow the deputy\'s recent orders due to their own morals'])
                         
                 # active cat specific thoughts
-                if cat.status == 'warrior' or cat.status == 'deputy' or cat.status == 'leader':
+                if cat.status == 'warrior':
                     thoughts.extend(['Caught scent of a fox earlier', 'Caught scent of an enemy warrior earlier', 'Is helping gathering herbs', 'Is thinking about love',
-                                     'Is decorating their nest', 'Is reinforcing the camp with brambles', 'Wants to be chosen as the new deputy', 'Caught a huge rabbit',
+                                     'Is decorating their nest', 'Is reinforcing the camp with brambles', 'Caught a huge rabbit',
                                      'Tries to set a good example for younger cats', 'Wants to go on a patrol', 'Wants to go on a hunting patrol', 'Is guarding the camp entrance',
                                      'Is gossiping', 'Plans to visit the medicine cat', 'Is sharpening their claws', 'Is helping to escort the medicine cat to gather herbs',
                                      'Is feeling sore', 'Is being pestered by flies', 'Feels overworked', 'Is exhausted from yesterday\'s patrol', 'Wants to have kits',
@@ -927,7 +927,7 @@ class Cat(object):
                                      'Is challenging any Clanmate they can to a sparring match... with minimal recruiting success',
                                      'Is challenging some Clanmates to a sparring match, two-on-one!', 'Is twitching their tail in excitement about something'])
                 elif cat.trait == 'empathetic':
-                    thoughts.extend(['Is listening to the woes of a fellow Clanmate', 'Notices another apprentice struggling with a task and offers their help',
+                    thoughts.extend(['Is listening to the woes of a fellow Clanmate', 'Notices an apprentice struggling with a task and offers their help',
                                      'Is doing some apprentice tasks around camp, to help lighten the load', 'Is sharing tongues with friends',
                                      'Is going to keep cats in the medicine den company', 'Is taking a breath, and ponders the burdens of others they have listened to'])
                     # checks for specific roles
@@ -957,7 +957,7 @@ class Cat(object):
                                      'Is enjoying some peace and quiet away from others', 'Is seeking out a place where they can be by themselves for a bit',
                                      'Is feeling a bit anxious after having been around so many cats at the last Gathering'])
                 elif cat.trait == 'loving':
-                    thoughts.extend(['Is feeling content with the little things in life', 'Is offering any help they can to the medicine cat'
+                    thoughts.extend(['Is feeling content with the little things in life', 'Is offering any help they can to the medicine cat',
                                      'Is purring with friends', 'Is purring loudly', 'Is purring gently', 'Needs a bit of time alone today',
                                      'Is talking with friends about recent celebrations'])
                 elif cat.trait == 'loyal':
@@ -1104,10 +1104,26 @@ class Cat(object):
                 comfortable = 0
                 jealousy = 0
                 trust = 0
-                if are_parents:
+                if game.settings['random relation']:
+                    if randint(1,20) == 1 and romantic_love < 1:
+                        dislike = randint(10,25)
+                        jealousy = randint(5,15)
+                        if randint(1,30) == 1:
+                            trust = randint(1,10)
+                    else:
+                        like = randint(0,35)
+                        comfortable = randint(0,25)
+                        trust = randint(0,15)
+                        admiration = randint(0,20)
+                        if randint(1,100-like) == 1 and self.moons > 11 and the_cat.moons > 11:
+                            romantic_love = randint(15,30)
+                            comfortable = int(comfortable * 1.3)
+                            trust = int(trust * 1.2)
+
+                if are_parents and like < 60:
                     like = 60
-                if siblings:
-                    like = 20
+                if siblings and like < 30:
+                    like = 30
 
                 rel = Relationship(cat_from=self,cat_to=the_cat,mates=mates,
                         family=related, romantic_love=romantic_love,
