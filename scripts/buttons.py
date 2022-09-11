@@ -292,7 +292,10 @@ class Button(object):
             name = game.switches['naming_text'].split(' ')
             cat_value.name.prefix = name[0]
             if len(name) > 1:
-                cat_value.name.suffix = name[1]
+                # If cat is an apprentice/kit and new suffix is paw/kit, leave hidden suffix unchanged 
+                if not (cat_value.name.status == "apprentice" and name[1] == "paw") and \
+                    not (cat_value.name.status == "kitten" and name[1] == "kit"):
+                    cat_value.name.suffix = name[1]
             cat_class.save_cats()
             game.switches['naming_text'] = ''
             
