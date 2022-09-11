@@ -181,13 +181,13 @@ LOVE = {
 
 LEADER = {
     "from":{
-        "unfriendly": [],
+        "unfriendly": ['Punishes (cat) with extra work'],
         "neutral": [],
         "friendly": [],
-        "close": []
+        "close": ['Talks with (cat) about difficult decisions', 'Tells (cat) about the last encounter with the Starclan']
     },
     "to":{
-        "unfriendly": [],
+        "unfriendly": ['Accuses (cat) of being a bad leader'],
         "neutral": [],
         "friendly": [],
         "close": []
@@ -196,13 +196,13 @@ LEADER = {
 
 DEPUTY = {
     "from":{
-        "unfriendly": [],
+        "unfriendly": ['Punishes (cat) with extra work', 'Divides (cat) into extra patrols'],
         "neutral": [],
         "friendly": [],
         "close": []
     },
     "to":{
-        "unfriendly": ['Thinks they should be deputy instead of (cat)'],
+        "unfriendly": ['Thinks they should be deputy instead of (cat)', 'Accuses (cat) of being a bad deputy'],
         "neutral": ['Is tired from (cat) putting them on so many patrols'],
         "friendly": [],
         "close": []
@@ -211,14 +211,14 @@ DEPUTY = {
 
 MEDICINE = {
     "from":{
-        "unfriendly": [],
-        "neutral": [],
+        "unfriendly": ['Treats (cat)\'s splinter wound more roughly', 'Gives (cat) bitter herbs on purpose'],
+        "neutral": ['Ask (cat) to collect herbs on the next patrol'],
         "friendly": [],
-        "close": []
+        "close": ['Tells (cat) about the last encounter with the Starclan']
     },
     "to":{
         "unfriendly": [],
-        "neutral": [],
+        "neutral": ['Thought of (cat) on the last patrol and took a rare herb with them'],
         "friendly": ['Escorted (cat) so they could gather herbs'],
         "close": []
     }
@@ -279,7 +279,7 @@ SPECIAL_CHARACTER = {
 # increase admiration -> decreases: - | increases: -
 # increase comfortable -> decreases: jealousy, dislike | increases: trust, like
 # increase jealousy -> decreases: - | increases: dislike
-# increase trust -> decreases: dislike | increases: comfortable
+# increase trust -> decreases: dislike | increases: -
 
 # !! DECREASING ONE STATE DOES'T INFLUENCE OTHERS !!
 
@@ -306,7 +306,7 @@ INCREASE = {
         "dislike": ['Is mocking (cat)', 'Ignores (cat)', 'Sticks their tongue out at (cat)','Had a huge argument with (cat)',
                     'Had a fight with (cat)', 'Is jealous that (cat) is getting more attention than them',
                     'Constantly pulling pranks on (cat)', 'Started a fight with (cat)', 'Hissed at (cat)',
-                    'Tells (cat) to leave them alone'],
+                    'Tells (cat) to leave them alone', 'Accuses (cat) of being a bad leader', 'Accuses (cat) of being a bad deputy'],
         "admiration": ['Is watching (cat) perform an almost-decent hunting crouch', 'Is admiring (cat) from afar...',
                         'Tells (cat) that they would like to be like them when they grows up', 'Train playfully with (cat)',
                         'Ask (cat) what it\'s like to be a apprentice','Sparring with (cat)', 'Is feeling proud of (cat)',
@@ -316,10 +316,11 @@ INCREASE = {
                         'Just told (cat) a hilarious joke', 'Thinks that (cat) is really funny',
                         'Escorted (cat) so they could gather herbs', 'Is helping (cat) calm down',
                         'Curled around (cat) to share warmth','Watching the shooting stars with (cat)',
-                        'Talks about dreams with (cat)'],
+                        'Talks about dreams with (cat)', 'Talks with (cat) about difficult decisions'],
         "jealousy": ['Is jealous that (cat) is getting more attention than them', 'Thinking about how (cat) wronged them'],
         "trust":['Is talking with (cat)','Tells (cat) a secret','Comes up with a plan to sneak out of camp with (cat)',
-                 'Escorted (cat) so they could gather herbs','Let (cat) lean on their shoulder after a recent injury']
+                 'Escorted (cat) so they could gather herbs','Let (cat) lean on their shoulder after a recent injury',
+                 'Ask (cat) to collect herbs on the next patrol', 'Tells (cat) about the last encounter with the Starclan']
     },
     "to": {
         "romantic_love": ['Is spending a lot of time with (cat)', 'Gave a pretty flower they found to (cat)',
@@ -342,13 +343,15 @@ INCREASE = {
         "dislike": ['Is mocking (cat)','Is telling jokes about (cat)','Sticks their tongue out at (cat)',
                     'Is spreading a rumour about (cat)','Tries to scare (cat)','Had a huge argument with (cat)',
                     'Had a fight with (cat)', 'Constantly pulling pranks on (cat)', 'Started a fight with (cat)',
-                    'Hissed at (cat)', 'Tells (cat) to leave them alone'],
+                    'Hissed at (cat)', 'Tells (cat) to leave them alone', 'Accuses (cat) of being a bad leader',
+                    'Accuses (cat) of being a bad deputy', 'Punishes (cat) with extra work',
+                    'Treats (cat)\'s splinter wound more roughly','Gives (cat) bitter herbs on purpose'],
         "admiration": ['Is promising to take (cat) outside of camp if they behave', 'Is telling (cat) about a hunting technique',
                         'Is giving advice to (cat)','Sparring with (cat)', 'Is showing (cat) how to sneak up on their enemies',
                         'Noticed (apprentice) was struggling, and offered to help them', 'Is giving (cat) advice',
                         'Took the time to help (apprentice) work through a technique they are struggling with',
                         'Calmly explains hunting techniques to (cat) again for the fourth time today',
-                        'Is teaching (cat) how to walk without making a sound'],
+                        'Is teaching (cat) how to walk without making a sound', 'Thought of (cat) on the last patrol and took a rare herb with them'],
         "comfortable": ['Is telling a story to (cat)','Is sharing prey with (cat)','Tells (cat) a secret', 
                         'Is sharing tongues with (cat)','Is telling (cat) about their own days as an apprentice',
                         'Comes up with a plan to sneak out of camp with (cat)', 'Escorted (cat) so they could gather herbs',
@@ -359,7 +362,9 @@ INCREASE = {
                         'Watching the shooting stars with (cat)','Is giving (cat) advice', 'Grooms the grime off (cat)\'s pelt'],
         "jealousy": [],
         "trust":['Is talking with (cat)','Tells (cat) a secret', 'Escorted (cat) so they could gather herbs',
-                'Comes up with a plan to sneak out of camp with (cat)', 'Let (cat) lean on their shoulder after a recent injury']
+                'Comes up with a plan to sneak out of camp with (cat)', 'Let (cat) lean on their shoulder after a recent injury',
+                'Talks with (cat) about difficult decisions', 'Thought of (cat) on the last patrol and took a rare herb with them',
+                'Tells (cat) about the last encounter with the Starclan']
     }
 }
 
@@ -375,24 +380,27 @@ DECREASE  = {
                         'Wishes (cat) would take things more seriously', 'Thinks they should be deputy instead of (cat)'],
         "comfortable": ['Is stuttering while speaking to (cat)','Glaring at (cat) from across the camp'],
         "jealousy": [],
-        "trust": ['Doesn\'t think that (cat) has been completely honest lately']
+        "trust": ['Doesn\'t think that (cat) has been completely honest lately', 'Accuses (cat) of being a bad leader',
+                  'Accuses (cat) of being a bad deputy']
     },
     "to": {
-        "romantic_love": [],
+        "romantic_love": ['Started a fight with (cat)'],
         "like": ['Is telling jokes about (cat)', 'Started a fight with (cat)', 'Has a fight with (cat) about what\'s right',
                  'Is not backing down in an argument with (cat)', 'Scorns (apprentice) for not catching enough prey',
                  'Hissed at (cat)', 'Tells (cat) to leave them alone', 'Blamed (cat) for their own mistake',
-                 'Rejects (cat)\'s advice without letting them finish', 'Is cross with (cat) for getting dirt all over the fresh-kill pile'],
+                 'Rejects (cat)\'s advice without letting them finish', 'Is cross with (cat) for getting dirt all over the fresh-kill pile',
+                 'Punishes (cat) with extra work'],
         "dislike": [],
         "admiration": ['Is scolding (cat)', 'Rejects (cat)\'s advice without letting them finish'],
         "comfortable": ['Tells (cat) that they\'re pelt looks like a different colour today', 'Is following (cat) around',
                         'Talks to (cat) how best to kill prey, very enthusiastic', 'Glaring at (cat) from across the camp',
                         'Pulled a prank on (cat)', 'Won\'t stop bothering (cat)','Interrupts (cat) during a conversation',
-                        'Gets distracted from conversation with (cat)', 'Is glaring daggers at (cat)'],
+                        'Gets distracted from conversation with (cat)', 'Is glaring daggers at (cat)',
+                        'Gives (cat) bitter herbs on purpose'],
         "jealousy": [],
         "trust": ['Is spreading a rumour about (cat)','Trips over (cat)','Tries to scare (cat)', 'Pulled a prank on (cat)',
                 'Has successfully tricked (cat) into believing a crazy tale about the clan leader',
-                'Blamed (cat) for their own mistake', 'Is gossiping about (cat)']
+                'Blamed (cat) for their own mistake', 'Is gossiping about (cat)', 'Treats (cat)\'s splinter wound more roughly']
     }
 }
 
@@ -671,7 +679,6 @@ class Relationship(object):
             self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
-            self.comfortable += INDIRECT_INCREASE
 
 
         # decreases
@@ -748,7 +755,6 @@ class Relationship(object):
             self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
-            self.comfortable += INDIRECT_INCREASE
 
 
         # decreases
