@@ -26,10 +26,8 @@ class Game(object):
     language_list = ['english','spanish','german']
     relation_events_list = []
 
-    down = pygame.image.load("sprites/down.png").convert_alpha()
-    down = pygame.transform.scale(down, (75, 75))
-    up = pygame.image.load("sprites/carrot.png").convert_alpha()
-    up = pygame.transform.scale(up, (40, 40))
+    down = pygame.image.load("resources/arrow_down.png").convert_alpha()
+    up = pygame.image.load("resources/arrow_up.png").convert_alpha()
 
     choose_cats = {}
     cat_buttons = {'cat0': None, 'cat1': None, 'cat2': None, 'cat3': None, 'cat4': None, 'cat5': None, 'cat6': None, 'cat7': None, 'cat8': None, 'cat9': None, 'cat10': None,

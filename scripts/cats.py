@@ -1069,7 +1069,11 @@ class Cat(object):
                 # skill specific thoughts
                 elif cat.skills == 'strong connection to starclan' and cat.status != 'medicine cat' and cat.status != 'medicine cat apprentice':  
                     thoughts.extend(['Is becoming interested in herbs', 'Volunteers to gather herbs', 'Has been lending the medicine cat a paw lately'])    
-                    
+
+            else: 
+                # if this else is reached dead is not set, just to be sure the cat should be alive
+                self.dead = False
+
             thought = choice(thoughts)
             cat.thought = thought                
             

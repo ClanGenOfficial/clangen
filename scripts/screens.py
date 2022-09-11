@@ -1152,15 +1152,15 @@ class EventsScreen(Screens):
         verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
         verdana.text(
             'Check this page to see which events are currently happening at the Clan.',
-            ('center', 100))
+            ('center', 110))
 
         verdana.text(f'Current season: {str(game.clan.current_season)}',
-                     ('center', 130))
+                     ('center', 140))
                      
         if game.clan.age == 1:
-            verdana.text(f'Clan age: {str(game.clan.age)} moon', ('center', 160))
+            verdana.text(f'Clan age: {str(game.clan.age)} moon', ('center', 170))
         if game.clan.age != 1:
-            verdana.text(f'Clan age: {str(game.clan.age)} moons', ('center', 160))
+            verdana.text(f'Clan age: {str(game.clan.age)} moons', ('center', 170))
             
         if game.switches['events_left'] == 0:
             buttons.draw_button((200, 220),
@@ -1196,7 +1196,7 @@ class EventsScreen(Screens):
 
         draw_menu_buttons()
         if len(game.cur_events_list) > game.max_events_displayed:
-            buttons.draw_button((720, 250), image=game.up, arrow="UP", hotkey=[20])
+            buttons.draw_button((700, 250), image=game.up, arrow="UP", hotkey=[20])
             buttons.draw_button((700, 550), image=game.down, arrow="DOWN", hotkey=[22])
 
 
@@ -1787,7 +1787,7 @@ class ListScreen(Screens):
             buttons.draw_button((-300, 600),
                                 text='>',
                                 list_page=game.switches['list_page'] + 1, hotkey=[21])
-        buttons.draw_button((-70, 130),
+        buttons.draw_button((-70, 140),
                             text='Cats Outside Clans',
                             cur_screen='other screen')
 
@@ -2078,7 +2078,7 @@ class AllegiancesScreen(Screens):
                 verdana.text(game.allegiance_list[x][1], (170, 140 + a * 30))
                 a += 1
         if len(game.allegiance_list) > game.max_allegiance_displayed:
-            buttons.draw_button((720, 250), image=game.up, arrow="UP", hotkey=[20])
+            buttons.draw_button((700, 250), image=game.up, arrow="UP", hotkey=[20])
             buttons.draw_button((700, 550), image=game.down, arrow="DOWN", hotkey=[22])
         draw_menu_buttons()
 
@@ -3039,7 +3039,7 @@ class RelationshipScreen(Screens):
             if the_relationship.romantic_love > 49 and game.settings['dark mode'] and check_age:
                 verdana_dark_margenta.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             elif the_relationship.romantic_love > 49 and not game.settings['dark mode'] and check_age:
-                verdana_dark_margenta.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+                verdana_margenta.text('romantic love:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             else:
                 verdana_small.text('romantic like:', (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
             count += 20
@@ -3123,7 +3123,7 @@ class RelationshipScreen(Screens):
         if game.switches['list_page'] < all_pages:
 
             buttons.draw_button((-300, 640), text='>',list_page=game.switches['list_page'] + 1, hotkey=[21])
-        # buttons.draw_button(('center', -100), text='Back',cur_screen='profile screen')
+
         buttons.draw_button(('center', 670), text='Back',cur_screen='profile screen')
 
     def screen_switches(self):
@@ -3134,20 +3134,22 @@ class RelationshipEventScreen(Screens):
     def on_use(self):
         a = 0
         verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
-        verdana.text('Check this page to see which events are currently happening at the clan.', ('center', 100))
+        verdana.text(
+            'Check this page to see which events are currently happening at the Clan.',
+            ('center', 110))
 
-        verdana.text(f'Current season: {str(game.clan.current_season)}', ('center', 130))
-
+        verdana.text(f'Current season: {str(game.clan.current_season)}',
+                     ('center', 140))
+                     
         if game.clan.age == 1:
-            verdana.text(f'Clan age: {str(game.clan.age)} moon', ('center', 160))
-        elif game.clan.age != 1:
-            verdana.text(f'Clan age: {str(game.clan.age)} moons', ('center', 160))
+            verdana.text(f'Clan age: {str(game.clan.age)} moon', ('center', 170))
+        if game.clan.age != 1:
+            verdana.text(f'Clan age: {str(game.clan.age)} moons', ('center', 170))
             
         if game.switches['events_left'] == 0:
             buttons.draw_button((200, 220),
                                 text='TIMESKIP ONE MOON',
                                 timeskip=True, hotkey=[11])
-
             if game.switches['timeskip']:
                 game.cur_events_list = []
                 game.relation_events_list = []
@@ -3155,10 +3157,9 @@ class RelationshipEventScreen(Screens):
             buttons.draw_button((200, 220),
                                 text='TIMESKIP ONE MOON',
                                 available=False)        
-
         events_class.one_moon()
 
-        # show the Relationship events
+        # show the clan events
         buttons.draw_button((-250, 220), text='CLAN EVENTS', cur_screen='events screen', hotkey=[12])
 
         if game.relation_events_list is not None and game.relation_events_list != []:
@@ -3175,7 +3176,7 @@ class RelationshipEventScreen(Screens):
         draw_menu_buttons()
 
         if len(game.relation_events_list) > game.max_relation_events_displayed:
-            buttons.draw_button((720, 150), image=game.up, arrow="UP", hotkey=[20])
+            buttons.draw_button((700, 250), image=game.up, arrow="UP", hotkey=[20])
             buttons.draw_button((700, 550), image=game.down, arrow="DOWN", hotkey=[22])
 
     def screen_switches(self):
