@@ -263,7 +263,7 @@ class Button(object):
                 game.allegiance_list.append(game.allegiance_list.pop(0))
                 game.allegiance_scroll_ct -= 1
         if arrow is not None and game.switches['cur_screen'] == 'relationship event screen':
-            max_scroll_direction = len(game.relation_events_list) - game.max_events_displayed
+            max_scroll_direction = len(game.relation_events_list) - game.max_relation_events_displayed
             if arrow == "UP" and game.relation_scroll_ct < 0:
                 game.relation_events_list.insert(0, game.relation_events_list.pop())
                 game.relation_scroll_ct += 1
