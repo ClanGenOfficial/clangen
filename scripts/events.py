@@ -913,7 +913,7 @@ class Events(object):
 
         cats_to_choose = list(filter(lambda iter_cat_id: iter_cat_id != cat.ID, cat_class.all_cats.copy()))
         # increase chance of cats, which are already befriended
-        like_threshold = 40
+        like_threshold = 50
         relevant_relationships = list(filter(lambda relation: relation.platonic_like >= like_threshold, cat.relationships))
         for relationship in relevant_relationships:
             cats_to_choose.append(relationship.cat_to)
@@ -933,6 +933,11 @@ class Events(object):
         if cat.age == "kitten":
             kittens = list(filter(lambda cat_id: cat.all_cats.get(cat_id).age == "kitten" and cat_id != cat.ID, cat_class.all_cats.copy()))
             cats_to_choose = cats_to_choose + kittens
+
+        # increase the chance a apprentice interact with otherapprentices
+        if cat.age == "adolescent":
+            apprentices = list(filter(lambda cat_id: cat.all_cats.get(cat_id).age == "adolescent" and cat_id != cat.ID, cat_class.all_cats.copy()))
+            cats_to_choose = cats_to_choose + apprentices
 
         # choose cat and start
         random_id = random.choice(list(cat.all_cats.keys()))

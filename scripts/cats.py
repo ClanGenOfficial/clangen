@@ -888,7 +888,7 @@ class Cat(object):
                 elif cat.trait == 'charismatic':
                     thoughts.extend(['Is smiling warmly at their Clanmates', 'Is making everyone laugh at a very funny quip', 'Always manages to turn the mood into a lighter one',
                                      'Is laughing with friends', 'Is looking around camp for someone to share tongues with', 'Winked playfully at a Clanmate from across the clearing!'
-                                     'Has received several invitations to share tongues later this evening... and is deciding which to take',
+                                     'Has received several invitations to share tongues... and is deciding which to take',
                                      'Is basking in a sunray in the camp clearing', 'Plans to go on a stroll with some cat today',
                                      'Is swishing their tail back and forth in a laid back manner', 'Is grooming their already silky soft coat', 'Is purring warmly',
                                      'Is purring loudly', 'Is purring sweetly', 'Is this moon\'s heartthrob', 'Has recently given a wonderful speech to fellow Clanmates, boosting morale'])

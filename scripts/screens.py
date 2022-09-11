@@ -1196,8 +1196,8 @@ class EventsScreen(Screens):
 
         draw_menu_buttons()
         if len(game.cur_events_list) > game.max_events_displayed:
-            buttons.draw_button((700, 250), image=game.up, arrow="UP", hotkey=[20])
-            buttons.draw_button((700, 550), image=game.down, arrow="DOWN", hotkey=[22])
+            buttons.draw_button((700, 180), image=game.up, arrow="UP", hotkey=[20])
+            buttons.draw_button((700, 630), image=game.down, arrow="DOWN", hotkey=[22])
 
 
 class ProfileScreen(Screens):
@@ -1861,7 +1861,7 @@ class OtherScreen(Screens):
                                 text='>',
                                 list_page=game.switches['list_page'] + 1, hotkey=[21])
 
-        buttons.draw_button((-70, 130),
+        buttons.draw_button((-70, 140),
                             text='Cats in ' + str(game.clan.name) + 'Clan',
                             cur_screen='list screen', hotkey=[9])
         draw_menu_buttons()
@@ -2078,8 +2078,8 @@ class AllegiancesScreen(Screens):
                 verdana.text(game.allegiance_list[x][1], (170, 140 + a * 30))
                 a += 1
         if len(game.allegiance_list) > game.max_allegiance_displayed:
-            buttons.draw_button((700, 250), image=game.up, arrow="UP", hotkey=[20])
-            buttons.draw_button((700, 550), image=game.down, arrow="DOWN", hotkey=[22])
+            buttons.draw_button((700, 180), image=game.up, arrow="UP", hotkey=[20])
+            buttons.draw_button((700, 630), image=game.down, arrow="DOWN", hotkey=[22])
         draw_menu_buttons()
 
     def screen_switches(self):
@@ -3119,10 +3119,10 @@ class RelationshipScreen(Screens):
         # page buttons
         verdana.text('page ' + str(game.switches['list_page']) + ' / ' + str(all_pages), ('center', 640))
         if game.switches['list_page'] > 1:
-            buttons.draw_button((300, 640), text='<',list_page=game.switches['list_page'] - 1, hotkey=[23])
+            buttons.draw_button((320, 640), text='<',list_page=game.switches['list_page'] - 1, hotkey=[23])
         if game.switches['list_page'] < all_pages:
 
-            buttons.draw_button((-300, 640), text='>',list_page=game.switches['list_page'] + 1, hotkey=[21])
+            buttons.draw_button((-320, 640), text='>',list_page=game.switches['list_page'] + 1, hotkey=[21])
 
         buttons.draw_button(('center', 670), text='Back',cur_screen='profile screen')
 
@@ -3176,8 +3176,8 @@ class RelationshipEventScreen(Screens):
         draw_menu_buttons()
 
         if len(game.relation_events_list) > game.max_relation_events_displayed:
-            buttons.draw_button((700, 250), image=game.up, arrow="UP", hotkey=[20])
-            buttons.draw_button((700, 550), image=game.down, arrow="DOWN", hotkey=[22])
+            buttons.draw_button((700, 180), image=game.up, arrow="UP", hotkey=[20])
+            buttons.draw_button((700, 630), image=game.down, arrow="DOWN", hotkey=[22])
 
     def screen_switches(self):
         cat_profiles
