@@ -795,11 +795,12 @@ class Events(object):
     def dies(self, cat):  # This function is called every time a cat dies
         if cat.status == 'leader' and game.clan.leader_lives > 0:
             return
-        if cat.status != 'leader':
-            cat.dead = True
         elif cat.status == 'leader' and game.clan.leader_lives <= 0:
             cat.dead = True
             game.clan.leader_lives = 0
+        else:
+            cat.dead = True
+
         if cat.mate != None:
             cat.mate = None
             if type(cat.mate) == str:
