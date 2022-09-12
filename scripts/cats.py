@@ -308,7 +308,7 @@ class Cat(object):
                     if other_cat.status == 'kitten':
                             starclan_thoughts.extend(['Rejoices with every new kit born to the Clan they still hold so dear'])
                 
-                thought = choice(starclan_thoughts)  # sets current thought to a random applicable thought            
+                thoughts = starclan_thoughts  # sets current thought to a random applicable thought   
                 
             elif not cat.dead:
                 # general individual thoughts
@@ -705,7 +705,7 @@ class Cat(object):
                                          'Is dreading the Clan meeting they must call later today', 'Is finding the responsibility of leadership to be quite the heavy burden',
                                          'Is feeling blessed by StarClan this moon', 'Is making a solemn vow to protect their Clanmates',
                                          'Has been letting their deputy call the shots recently, and is proud of their initiative', 'Called an important Clan meeting recently',
-                                         'Is pondering the next mentors for the kits of the Clan', 'Think they have been hearing the voices of StarClan cats...'
+                                         'Is pondering the next mentors for the kits of the Clan', 'Think they have been hearing the voices of StarClan cats...',
                                          'Is pondering recent dreams they have had... perhaps from StarClan?', 'Recently called a Clan meeting, but forgot what to say'])
                         # checks for specific roles
                         if other_cat.status == 'kitten':
