@@ -196,9 +196,9 @@ class Events(object):
                 cat.specialty2 = choice([choice(scars1), choice(scars2), choice(scars4), choice(scars5)])
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
                     scar_text.append(f'{name} lost their tail to a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger', 'tree', 'twoleg trap']))
-                elif cat.specialty == 'SNAKE':
+                elif cat.specialty2 == 'SNAKE':
                     scar_text.append(f'{name} was bit by a snake but lived')
-                elif cat.specialty == 'TOETRAP':
+                elif cat.specialty2 == 'TOETRAP':
                     scar_text.append(f'{name} got their paw stuck in a twoleg trap and earned a scar')
                 else:
                     scar_text.extend([f'{name} earned a scar fighting a ' + choice(['rogue', 'dog', 'fox', 'otter', 'rat', 'hawk', 'enemy warrior', 'badger']),
