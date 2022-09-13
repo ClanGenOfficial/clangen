@@ -1258,7 +1258,10 @@ class ProfileScreen(Screens):
         verdana_big.text(cat_name, ('center', 150))  # NAME
         the_cat.draw_large((100, 200))  # IMAGE
         verdana.text(the_cat.thought, ('center', 180))  # THOUGHT / ACTION
-        verdana_small.text(the_cat.genderalign, (300, 230 + count * 15))
+        if the_cat.genderalign == None:
+            verdana_small.text(the_cat.gender, (300, 230 + count * 15))
+        else:
+            verdana_small.text(the_cat.genderalign, (300, 230 + count * 15))
         count += 1  # SEX / GENDER
         verdana_small.text(the_cat.status, (490, 230 + count2 * 15))
         if not the_cat.dead and 'leader' in the_cat.status: #See Lives
@@ -2525,7 +2528,7 @@ class ChangeNameScreen(Screens):
                      ('center', 70))
         verdana.text('i.e. Fire heart', ('center', 90))
         buttons.draw_button(('center', -100),
-                            text=' Change Name ',
+                            text='Change Name',
                             cur_screen='change name screen',
                             cat_value=game.switches['name_cat'])
         buttons.draw_button(('center', -50),
@@ -2735,10 +2738,13 @@ class OptionsScreen(Screens):
         y_change = 50
         
         if not the_cat.dead:
-            buttons.draw_button((375-50, 650), text='Kill Cat', kill_cat=the_cat, hotkey=[11])
-            buttons.draw_button((375+30, 650), text='Exile Cat', cat_value = game.switches['cat'], hotkey=[12], cur_screen = 'other screen')
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Exile Cat', cat_value = game.switches['cat'], hotkey=[12], cur_screen = 'other screen')
+            button_count += 1
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Kill Cat', kill_cat=the_cat, hotkey=[11])
+            button_count += 1
         elif the_cat.dead and not the_cat.exiled:
-            buttons.draw_button((x_value, 600), text='Exile to Dark Forest', cat_value = game.switches['cat'], hotkey=[11])
+            buttons.draw_button((x_value, y_value + button_count * y_change), text='Exile to Dark Forest', cat_value = game.switches['cat'], hotkey=[11])
+            button_count += 1
         
         buttons.draw_button((x_value, y_value + button_count * y_change),
                             text='Back',
