@@ -132,7 +132,7 @@ class Button(object):
         if game.clicked and clickable:
             if apprentice is not None:
                 self.choose_mentor(apprentice, cat_value)
-            elif text == ' Change Name ' and game.switches['naming_text'] != '':
+            elif text == 'Change Name' and game.switches['naming_text'] != '':
                 self.change_name(game.switches['naming_text'], game.switches['name_cat'])
             elif text == ' Change Gender ' and game.switches['naming_text'] != '':
                 self.change_gender(game.switches['naming_text'], game.switches['name_cat'])
