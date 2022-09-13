@@ -135,6 +135,7 @@ class Clan(object):
             self.leader = leader
             cat_class.all_cats[leader.ID].status_change('leader')
             self.leader_predecessors += 1
+            self.leader_lives = 9
         game.switches['new_leader'] = None
 
     def new_deputy(self, deputy):
