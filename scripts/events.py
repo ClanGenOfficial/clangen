@@ -172,7 +172,7 @@ class Events(object):
             chance = randint(0, 50)
         elif cat.age in ['adult', 'senior adult']:
             chance = randint(0, 70)
-        elif cat.age in ['aprentice', 'medicine cat apprentice'] and cat.mentor.ID == other_cat.ID and other_cat.trait in ['bloodthirsty', 'ambitious', 'vengeful', 'sadistic', 'cold',
+        elif cat.age in ['apprentice', 'medicine cat apprentice'] and cat.mentor.ID == other_cat.ID and other_cat.trait in ['bloodthirsty', 'ambitious', 'vengeful', 'sadistic', 'cold',
                                                                                                                             'tough', 'clumsy', 'controlling', 'fierce', 'petty', 'strict']:
             chance = randint(0, 20)
         elif other_cat.status in ['leader', 'deputy'] and other_cat.trait in ['bloodthirsty', 'ambitious', 'vengeful', 'sadistic', 'cold', 'tough', 'clumsy', 'controlling', 'fierce', 'petty', 'strict']:
@@ -207,7 +207,7 @@ class Events(object):
                                         f'{name} is injured after a fight broke out with ' + other_name])
                                         
 
-        elif chance == 1 and cat.status in ['aprentice', 'medicine cat apprentice'] and cat.mentor.ID == other_cat.ID and other_cat.trait in ['bloodthirsty', 'ambitious', 'vengeful', 'sadistic', 'cold', 'tough',
+        elif chance == 1 and cat.status in ['apprentice', 'medicine cat apprentice'] and cat.mentor.ID == other_cat.ID and other_cat.trait in ['bloodthirsty', 'ambitious', 'vengeful', 'sadistic', 'cold', 'tough',
                                                                                                                                                 'clumsy', 'controlling', 'fierce', 'petty', 'strict']:
             if cat.specialty is None:
                 cat.specialty = choice([choice(scars1), choice(scars2)])
