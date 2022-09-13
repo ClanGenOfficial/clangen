@@ -674,6 +674,8 @@ class Events(object):
             if cat.status == 'leader':
                 game.clan.leader_lives -= 1
             self.dies(cat)
+            print(choice(cause_of_death))
+            print(cat)
             game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old')
             
         elif randint(1, 500) == 1:  # multiple deaths
