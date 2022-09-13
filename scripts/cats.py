@@ -1585,20 +1585,20 @@ class Cat(object):
                         else:
                             the_cat.exiled = bool(attr[35])
                     if len(attr) > 36:
-                        if attr[36] != True or attr[36] != False or attr[36] != '' or attr[36] != None:
+                        if attr[36] != 'True' or attr[36] != 'False' or attr[36] != '' or attr[36] != None:
                             the_cat.genderalign = attr[36]
                         else:
                             the_cat.genderalign = None
                     if len(attr) > 37:
-                        try:
+                        if attr[37] not in ['None', 'tabby', 'tabby2', 'single', 'False', 'True']:
+                            the_cat.calicobase = 'single'
+                        else:
                             the_cat.calicobase = attr[37]
-                        except:
-                            the_cat.calicobase = None
                     if len(attr) > 38:
-                        try:
+                        if attr[38] not in ['BLACK', 'BROWN', 'GREY']:
+                            the_cat.calicocolour = 'BLACK'
+                        else: 
                             the_cat.calicocolour = attr[38]
-                        except: 
-                            the_cat.calicocolour = None
                     if len(attr) > 39 and attr[39] is not None:
                         try:
                             the_cat.former_apprentices = attr[39].split(';')
