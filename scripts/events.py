@@ -279,7 +279,7 @@ class Events(object):
             game.cur_events_list.append(choice(scar_text))
 
     def handle_relationships(self, cat):
-        if randint(1, 100) == 1 and cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and cat.age in ['young adult', 'adult', 'senior adult'] and cat.mate is None:
+        if randint(1, 50) == 1 and cat.status not in ['kitten', 'apprentice', 'medicine cat apprentice', 'medicine cat'] and cat.age in ['young adult', 'adult', 'senior adult'] and cat.mate is None:
             other_cat = choice(list(cat_class.all_cats.values()))
             parents = [cat.ID]
             if cat.parent1 is not None:
@@ -324,13 +324,13 @@ class Events(object):
             else:
                 other_cat.relationships.append(Relationship(other_cat,cat,True))
                     
-        elif randint(1, 50) == 1:
+        elif randint(1, 40) == 1:
             other_cat = choice(list(cat_class.all_cats.values()))
             if cat.mate == other_cat.ID:
                 game.cur_events_list.append(f'{str(cat.name)} and {str(other_cat.name)} have broken up')
                 cat.mate = None
                 other_cat.mate = None
-        elif randint(1, 50) == 1:
+        elif randint(1, 2) == 1:
             other_cat = choice(list(cat_class.all_cats.values()))
             if cat.mate == other_cat.ID and other_cat.dead == True:
                 game.cur_events_list.append(f'{str(cat.name)} will always love {str(other_cat.name)} but has decided to move on')
@@ -830,7 +830,8 @@ class Events(object):
                 game.cur_events_list.append("Warning: " + str(cat.name) + " has an invalid mate #" + str(cat.mate) + ". This has been unset.")
                 cat.mate = None
         else:
-            chance = 50
+            if cat.moons > 14:
+                chance = 50
             if not game.settings['no unknown fathers']:
                 chance = 0
 
