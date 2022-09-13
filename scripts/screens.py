@@ -1258,10 +1258,10 @@ class ProfileScreen(Screens):
         verdana_big.text(cat_name, ('center', 150))  # NAME
         the_cat.draw_large((100, 200))  # IMAGE
         verdana.text(the_cat.thought, ('center', 180))  # THOUGHT / ACTION
-        if the_cat.genderalign == None:
-            verdana_small.text(the_cat.gender, (300, 230 + count * 15))
+        if the_cat.genderalign == None or the_cat.genderalign == True or the_cat.genderalign == False:
+            verdana_small.text(str(the_cat.gender), (300, 230 + count * 15))
         else:
-            verdana_small.text(the_cat.genderalign, (300, 230 + count * 15))
+            verdana_small.text(str(the_cat.genderalign), (300, 230 + count * 15))
         count += 1  # SEX / GENDER
         verdana_small.text(the_cat.status, (490, 230 + count2 * 15))
         if not the_cat.dead and 'leader' in the_cat.status: #See Lives

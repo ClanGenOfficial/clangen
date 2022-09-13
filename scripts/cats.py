@@ -1585,7 +1585,7 @@ class Cat(object):
                         else:
                             the_cat.exiled = bool(attr[35])
                     if len(attr) > 36:
-                        if attr[36] != 'True' or attr[36] != 'False' or attr[36] != '' or attr[36] != None:
+                        if attr[36] != True or attr[36] != False or attr[36] != '' or attr[36] != None:
                             the_cat.genderalign = attr[36]
                         else:
                             the_cat.genderalign = None
