@@ -9,7 +9,9 @@ class Name(object):
         "medicine cat apprentice": "paw",
         "leader": "star"
     }
-    normal_suffixes = [  # common suffixes
+    normal_suffixes = [  # common suffixes 
+                       # please fix this
+        "fur",
         "fur",
         "fur",
         "fur",

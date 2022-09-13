@@ -9,7 +9,6 @@ class Events(object):
         self.e_type = e_type
         self.ID = str(randint(0, 9)) + str(randint(0, 9)) + str(randint(0, 9)) + str(randint(0, 9))
         if e_type is not None:
-            # Leave "e_type" empty for example class
             self.all_events[self.ID] = self
         self.cats = cats
         self.at_war = False
@@ -89,7 +88,7 @@ class Events(object):
         if len(game.clan.all_clans) > 0 and randint(1,5) == 1:
             war_notice = ''
             for other_clan in game.clan.all_clans:
-                if int(other_clan.relations) <= 7:
+                if int(other_clan.relations) <= 5:
                     if randint(1,5) == 1 and self.time_at_war > 2:
                         self.at_war = False
                         self.time_at_war = 0
@@ -109,6 +108,8 @@ class Events(object):
                         war_notice = choice(possible_text)
                         self.time_at_war+=1
                     break
+                elif int(other_clan.relations) > 30:
+                        other_clan.relations = 10
                 else:
                     self.at_war = False
                     r_num = choice([-1, 1])
@@ -701,7 +702,7 @@ class Events(object):
                 game.clan.leader_lives -= 1
                 game.cur_events_list.append(choice(cause_of_death) + ' and the leader lost a life')
                     
-        elif randint(1, 5) == 1: #Death with Personalities
+        elif randint(1, 100) == 1: #Death with Personalities
             murder_chance = 20
             name = str(cat.name)
             other_cat = choice(list(cat_class.all_cats.values()))
@@ -756,7 +757,7 @@ class Events(object):
             alive_count = 0
             alive_cats = []
             for cat in list(cat_class.all_cats.values()):
-                if not cat.dead:
+                if not cat.dead and not cat.exiled and cat.status != 'leader':
                     alive_count += 1
                     alive_cats.append(cat)
             if alive_count > 10:
@@ -779,12 +780,8 @@ class Events(object):
 
                     game.cur_events_list.append(name1 + ', ' + name2 + ', ' + name3 + ', ' + name4 + ', and ' + name5 + choice(disaster))
                     for cat in dead_cats:
-                        if cat.status != 'leader':
-                            self.dies(cat)
-                        else:
-                            game.clan.leader_lives -= 1
-                            self.dies(cat)
-
+                        self.dies(cat)
+                        
     def dies(self, cat):  # This function is called every time a cat dies
         if cat.status == 'leader' and game.clan.leader_lives > 0:
             return
