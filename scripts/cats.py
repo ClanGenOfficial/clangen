@@ -308,7 +308,7 @@ class Cat(object):
                     if other_cat.status == 'kitten':
                             starclan_thoughts.extend(['Rejoices with every new kit born to the Clan they still hold so dear'])
                 
-                thoughts = starclan_thoughts  # sets current thought to a random applicable thought   
+                thoughts = starclan_thoughts  # sets current thought to a random applicable thought
                 
             elif not cat.dead:
                 # general individual thoughts
@@ -1069,13 +1069,12 @@ class Cat(object):
                 # skill specific thoughts
                 elif cat.skills == 'strong connection to starclan' and cat.status != 'medicine cat' and cat.status != 'medicine cat apprentice':  
                     thoughts.extend(['Is becoming interested in herbs', 'Volunteers to gather herbs', 'Has been lending the medicine cat a paw lately'])    
-                thought = choice(thoughts)
 
             else: 
                 # if this else is reached dead is not set, just to be sure the cat should be alive
                 self.dead = False
-                thought = choice(thoughts)
-
+            
+            thought = choice(thoughts)
             cat.thought = thought                
             
             # on_patrol = ['Is having a good time out on patrol', 'Wants to return to camp to see ' + other_name,  #              'Is currently out on patrol',

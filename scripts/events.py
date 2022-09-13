@@ -118,10 +118,12 @@ class Events(object):
 
     def perform_ceremonies(self, cat):
         if (game.clan.leader.dead or game.clan.leader.exiled) and game.clan.deputy is not None and not game.clan.deputy.dead:
-            game.cur_events_list.append(str(game.clan.leader.name) + ' has lost their last life and has travelled to StarClan' )
-
+            if game.clan.leader.exiled:
+                game.cur_events_list.append(str(game.clan.leader.name) + ' was exiled' )
+            else:
+                game.cur_events_list.append(str(game.clan.leader.name) + ' has lost their last life and has travelled to StarClan' )
             game.clan.new_leader(game.clan.deputy)
-            game.clan.leader_lives += 9
+            game.clan.leader_lives = 9
             game.cur_events_list.append(f'{str(game.clan.deputy.name)} has been promoted to the new leader of the clan')
             game.clan.deputy = None
         if not cat.dead:
@@ -644,8 +646,10 @@ class Events(object):
                     cause_of_death.extend([name + ' fell into a sinkhole and died', name + ' fell into a hidden burrow and could not get out', name + ' was buried alive when a burrow collapsed on them'])
             #Leader loses a life
             elif cat.status == 'leader':
+                cause_of_death = []
                 if len(game.clan.all_clans) > 0:
-                    cause_of_death.append(name + ' was found dead near the ' + choice(game.clan.all_clans).name + 'Clan border mortally injured')
+                    cause_of_death.extend([name + ' lost a live to greencough', 'A tree fell in camp and ' + name + ' lost a life'])
+                    cause_of_death.extend(name + ' was found dead near the ' + choice(game.clan.all_clans).name + 'Clan border mortally injured')
                     cause_of_death.extend([name + ' lost a life from infected wounds', name + ' went missing and was later found mortally wounded'])
                 if self.at_war:
                     cause_of_death.extend([name + ' was killed by enemy ' + self.enemy_clan + ' warriors and lost a life', name + ' was killed by enemy ' + self.enemy_clan + ' warriors and lost a life',
@@ -658,7 +662,7 @@ class Events(object):
                     cause_of_death.extend([name + ' fell into a sinkhole and lost a life', name + ' fell into a hidden burrow and lost a life', name + ' lost a life when a burrow collapsed on them'])
                 elif self.at_war:
                     cause_of_death.extend([name + ' was killed by the ' + self.enemy_clan + ' deputy and lost a life', name + ' was killed by the ' + self.enemy_clan + ' leader and lost a life'])
-                    
+
             elif cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice':
                 cause_of_death.extend(['The herb stores were damaged and ' + name + ' was murdered by an enemy warrior'])
                 if self.at_war:
@@ -666,7 +670,7 @@ class Events(object):
             if cat.status == 'deputy':
                 if self.at_war:
                     cause_of_death.extend([name + ' was killed by the ' + self.enemy_clan + ' deputy', name + ' was killed by the ' + self.enemy_clan + ' leader'])
-                    
+
             if cat.status == 'leader':
                 game.clan.leader_lives -= 1
             self.dies(cat)
