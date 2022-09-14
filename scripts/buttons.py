@@ -28,7 +28,7 @@ class Button(object):
         path must specify a .png file inside of the resources folder without the file extension.
             (e.g. if there's a file btn.png, path should be 'btn')
         Unavailable buttons should be named as {path}_unavailable.png and
-        Hover buttons should be named as {path}_unavailable.png,
+        Hover buttons should be named as {path}_hover.png,
         where {path} is the name of the file in the resources folder.
 
         Parameters:
