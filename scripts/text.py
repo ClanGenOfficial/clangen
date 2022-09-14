@@ -28,9 +28,25 @@ class Font(object):
         self.all_fonts.append(self)
 
     def reset_colour(self, colour):
+        """Change colour of text. Colour is specified by an RGB tuple."""
         self.colour = colour
 
     def text(self, text, pos=None, where=used_screen):
+        """
+        Blit text onto a screen and return its width.
+        
+        Doesn't blit if pos is None.
+        Setting one or both items in pos to 'center' centers the text to the screen.
+        Negative pos value will be taken from the other end of the screen.
+
+        Parameters:
+        text -- String to blit
+        pos -- Tuple specifying (x,y) position in pixels where to blit text (default: None)
+        where -- Screen to draw text onto (default: used_screen)
+
+        Returns:
+        int -- Width of text when drawn
+        """
         text = self.translate(text)
         t = self.font.render(text, True, self.colour)
         if pos is not None:
@@ -50,14 +66,21 @@ class Font(object):
         return t.get_width()
 
     def change_text_size(self, extra=0):
-        """ Add or reduce the size of all fonts to increase readability for those in need """
+        """
+        Add or reduce the size of all fonts to increase readability for those in need
+
+        Parameters:
+        extra -- Number to add or reduce all font sizes by (default: 0)
+        """
         self.extra = extra
         # Go through all existing fonts and change their sizes accordingly
         for f in self.all_fonts:
             f.font = pygame.font.SysFont(f.name, f.size + self.extra)
 
     def change_text_brightness(self):
-        # change font colors in dark mode. Verdana is used as the generic font
+        """
+        Change font colors in dark mode. Verdana is used as the generic font
+        """
         for font in verdana.all_fonts:
             if game.settings['dark mode'] and font.colour == (0, 0, 0):
                 font.reset_colour(colour=(250, 250, 250))
@@ -65,6 +88,14 @@ class Font(object):
                 font.reset_colour(colour=(0, 0, 0))
 
     def blit_text(self, text, pos, where=used_screen):
+        """
+        Blit text with automatically-added linebreaks.
+
+        Parameters:
+        text -- String to blit
+        pos -- Tuple specifying position to blit text onto (default: None)
+        where -- Screen to draw text onto (default: used_screen)
+        """
         words = [word.split(' ') for word in text.splitlines()]  # 2D array where each row is a list of words.
         space = 5  # The width of a space.
         x, y = pos

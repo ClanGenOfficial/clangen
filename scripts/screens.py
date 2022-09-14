@@ -24,9 +24,11 @@ class Screens(object):
             game.all_screens[name] = self
 
     def on_use(self):
+        """Runs every frame this screen is used."""
         pass
 
     def screen_switches(self):
+        """Runs when this screen is switched to."""
         pass
 
 

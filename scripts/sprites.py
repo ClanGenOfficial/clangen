@@ -13,11 +13,24 @@ class Sprites(object):
         self.sprites = {}
 
     def spritesheet(self, a_file, name):
+        """
+        Add spritesheet called name from a_file.
+
+        Parameters:
+        a_file -- Path to the file to create a spritesheet from.
+        name -- Name to call the new spritesheet.
+        """
         self.spritesheets[name] = pygame.image.load(a_file).convert_alpha()
 
-
     def find_sprite(self, group_name, x, y):
-        # find singular sprite from group
+        """
+        Find singular sprite from a group.
+
+        Parameters:
+        group_name -- Name of Pygame group to find sprite from.
+        x -- X-offset of the sprite to get. NOT pixel offset, but offset of other sprites.
+        y -- Y-offset of the sprite to get. NOT pixel offset, but offset of other sprites.
+        """
         # pixels will be calculated automatically, so for x and y, just use 0, 1, 2, 3 etc.
         new_sprite = pygame.Surface((self.size, self.size),
                                     pygame.HWSURFACE | pygame.SRCALPHA)
@@ -32,7 +45,18 @@ class Sprites(object):
                    name,
                    sprites_x=3,
                    sprites_y=3):  # pos = ex. (2, 3), no single pixels
-        # divide sprites on a sprite-sheet into groups of sprites that are easily accessible
+        """
+        Divide sprites on a sprite-sheet into groups of sprites that are easily accessible.
+
+        Parameters:
+        spritesheet -- Name of spritesheet.
+        pos -- (x,y) tuple of offsets. NOT pixel offset, but offset of other sprites.
+        name -- Name of group to make.
+        
+        Keyword Arguments
+        sprites_x -- Number of sprites horizontally (default: 3)
+        sprites_y -- Number of sprites vertically (default: 3)
+        """
 
         # making the group
         new_group = pygame.Surface(
@@ -62,6 +86,9 @@ class Sprites(object):
                 y_spr += 1
 
     def load_scars(self):
+        """
+        Loads scar sprites and puts them into groups.
+        """
         scars = 'scars'
         self.make_group(scars, (0, 0), 'scarsONE')
         self.make_group(scars, (1, 0), 'scarsTWO')
