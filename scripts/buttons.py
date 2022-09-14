@@ -20,9 +20,6 @@ class Button(object):
         self.clickable_colour = clickable_colour
         self.unavailable_colour = unavailable_colour
 
-    def draw_button(self, pos, available=True, text='', **values):
-        print('a')
-
     def draw_image_button(self, pos, available=True, path=None, **values):
         is_clickable = False
         if available:
