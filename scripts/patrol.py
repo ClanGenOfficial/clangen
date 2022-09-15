@@ -673,7 +673,7 @@ class Patrol(object):
                     'r_c and their friend reminisce about old times',
                     'r_c says farewell to their friend and rejoins the patrol')
             ])
-        
+
         if self.patrol_random_cat.status == 'formerly a kittypet':
             possible_patrols.extend([
                 PatrolEvent(
@@ -687,8 +687,7 @@ class Patrol(object):
         # status specific patrols
 
         # season specific patrols
-        
-        
+
         # trait specific patrols
 
         if len(self.patrol_cats) > 1:
@@ -805,11 +804,18 @@ class Patrol(object):
     def handle_scars(self):
         if self.patrol_event.patrol_id in [107, 251, 301, 302, 304, 306]:
             if self.patrol_random_cat.specialty is None:
-                self.patrol_random_cat.specialty = choice([choice(scars1), choice(scars2), choice(scars4)])
+                self.patrol_random_cat.specialty = choice(
+                    [choice(scars1),
+                     choice(scars2),
+                     choice(scars4)])
             elif self.patrol_random_cat.specialty2 is None:
-                self.patrol_random_cat.specialty2 = choice([choice(scars1), choice(scars2), choice(scars4)])
+                self.patrol_random_cat.specialty2 = choice(
+                    [choice(scars1),
+                     choice(scars2),
+                     choice(scars4)])
         elif self.patrol_event.patrol_id == 102:
-            self.patrol_random_cat.skill = choice(['paralyzed', 'blind', 'missing a leg'])
+            self.patrol_random_cat.skill = choice(
+                ['paralyzed', 'blind', 'missing a leg'])
         elif self.patrol_event.patrol_id == 904:
             if self.patrol_random_cat.specialty is None:
                 self.patrol_random_cat.specialty = choice([choice(scars5)])
@@ -833,23 +839,34 @@ class Patrol(object):
         # change the values
         if self.patrol_event.patrol_id in []:
             romantic_love = 5
-        if self.patrol_event.patrol_id in [2,3,6,100,103,140,141,200,204,605]:
+        if self.patrol_event.patrol_id in [
+                2, 3, 6, 100, 103, 140, 141, 200, 204, 605
+        ]:
             platonic_like = 5
-        if self.patrol_event.patrol_id in [103,110]:
+        if self.patrol_event.patrol_id in [103, 110]:
             dislike = 5
-        if self.patrol_event.patrol_id in [2,3,6,104,105,108,130,131,261,300,301,302,303,305,307,600]:
+        if self.patrol_event.patrol_id in [
+                2, 3, 6, 104, 105, 108, 130, 131, 261, 300, 301, 302, 303, 305,
+                307, 600
+        ]:
             admiration = 5
-        if self.patrol_event.patrol_id in [102,120,150,202,203,250,251,260,261]:
+        if self.patrol_event.patrol_id in [
+                102, 120, 150, 202, 203, 250, 251, 260, 261
+        ]:
             comfortable = 5
         if self.patrol_event.patrol_id in []:
             jealousy = 5
-        if self.patrol_event.patrol_id in [7,8,102,107,110,114,115,141,250,251,605]:
+        if self.patrol_event.patrol_id in [
+                7, 8, 102, 107, 110, 114, 115, 141, 250, 251, 605
+        ]:
             trust = 5
 
         # affect the relationship
         cat_ids = [cat.ID for cat in self.patrol_cats]
         for cat in self.patrol_cats:
-            relationships = list(filter(lambda rel: rel.cat_to.ID in cat_ids, cat.relationships))
+            relationships = list(
+                filter(lambda rel: rel.cat_to.ID in cat_ids,
+                       cat.relationships))
             for rel in relationships:
                 if self.success:
                     rel.romantic_love += romantic_love
@@ -879,8 +896,8 @@ class Patrol(object):
                 the_cat = cat_class.all_cats.get(cat_id)
                 if the_cat.dead or the_cat.exiled:
                     continue
-                the_cat.relationships.append(Relationship(the_cat,kit))
-                relationships.append(Relationship(kit,the_cat))
+                the_cat.relationships.append(Relationship(the_cat, kit))
+                relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
             kit.skill = 'formerly a loner'
@@ -902,14 +919,14 @@ class Patrol(object):
                 the_cat = cat_class.all_cats.get(cat_id)
                 if the_cat.dead or the_cat.exiled:
                     continue
-                the_cat.relationships.append(Relationship(the_cat,kit))
-                relationships.append(Relationship(kit,the_cat))
+                the_cat.relationships.append(Relationship(the_cat, kit))
+                relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
             if (kit.status == 'elder'):
-                kit.moons = randint(120,150)
+                kit.moons = randint(120, 150)
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
@@ -927,11 +944,14 @@ class Patrol(object):
                         if the_cat.dead or the_cat.exiled:
                             continue
                         if the_cat.ID in [kit2.parent1, kit2.parent2]:
-                            the_cat.relationships.append(Relationship(the_cat,kit2,False,True))
-                            relationships.append(Relationship(kit2,the_cat,False,True))
+                            the_cat.relationships.append(
+                                Relationship(the_cat, kit2, False, True))
+                            relationships.append(
+                                Relationship(kit2, the_cat, False, True))
                         else:
-                            the_cat.relationships.append(Relationship(the_cat,kit2))
-                            relationships.append(Relationship(kit2,the_cat))
+                            the_cat.relationships.append(
+                                Relationship(the_cat, kit2))
+                            relationships.append(Relationship(kit2, the_cat))
                     kit2.relationships = relationships
                     game.clan.add_cat(kit2)
 
@@ -947,8 +967,8 @@ class Patrol(object):
                 the_cat = cat_class.all_cats.get(cat_id)
                 if the_cat.dead or the_cat.exiled:
                     continue
-                the_cat.relationships.append(Relationship(the_cat,kit))
-                relationships.append(Relationship(kit,the_cat))
+                the_cat.relationships.append(Relationship(the_cat, kit))
+                relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
             if (kit.status == 'elder'):
@@ -956,22 +976,22 @@ class Patrol(object):
             kit.skill = 'formerly a kittypet'
             kit.thought = 'Is looking around the camp with wonder'
             if (kit.status == 'elder'):
-                kit.moons = randint(120,150)
+                kit.moons = randint(120, 150)
             if randint(0, 2) == 0:  # chance to add collar
                 kit.specialty2 = choice(scars3)
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
-                
+
     def check_territories(self):
         hunting_claim = str(game.clan.name) + 'Clan Hunting Grounds'
         self.hunting_grounds = []
         for y in range(44):
             for x in range(40):
-                claim_type = game.map_info[(x,y)][3]
+                claim_type = game.map_info[(x, y)][3]
                 if claim_type == hunting_claim:
-                    self.hunting_claim_info[(x,y)] = game.map_info[(x,y)]
-                    self.hunting_grounds.append((x,y)) 
+                    self.hunting_claim_info[(x, y)] = game.map_info[(x, y)]
+                    self.hunting_grounds.append((x, y))
 
 
 class PatrolEvent(object):

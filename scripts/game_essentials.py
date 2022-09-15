@@ -23,37 +23,113 @@ class Game(object):
     cur_events_list = []
     allegiance_list = []
     language = {}
-    language_list = ['english','spanish','german']
+    language_list = ['english', 'spanish', 'german']
     relation_events_list = []
 
     down = pygame.image.load("resources/arrow_down.png").convert_alpha()
     up = pygame.image.load("resources/arrow_up.png").convert_alpha()
 
     choose_cats = {}
-    cat_buttons = {'cat0': None, 'cat1': None, 'cat2': None, 'cat3': None, 'cat4': None, 'cat5': None, 'cat6': None, 'cat7': None, 'cat8': None, 'cat9': None, 'cat10': None,
-                   'cat11': None}
+    cat_buttons = {
+        'cat0': None,
+        'cat1': None,
+        'cat2': None,
+        'cat3': None,
+        'cat4': None,
+        'cat5': None,
+        'cat6': None,
+        'cat7': None,
+        'cat8': None,
+        'cat9': None,
+        'cat10': None,
+        'cat11': None
+    }
     patrol_cats = {}
     patrolled = []
 
     # store changing parts of the game that the user can toggle with buttons
-    switches = {'cat': None, 'clan_name': '', 'leader': None, 'deputy': None, 'medicine_cat': None, 'members': [], 'event': None, 'cur_screen': 'start screen', 'naming_text': '',
-                'timeskip': False, 'mate': None, 'setting': None, 'save_settings': False, 'list_page': 1, 'last_screen': 'start screen', 'events_left': 0, 'save_clan': False,
-                'new_leader': False, 'apprentice_switch': False, 'deputy_switch': False, 'clan_list': '', 'switch_clan': False, 'read_clans': False, 'kill_cat': False,
-                'current_patrol': [], 'error_message': '', 'apprentice': None, 'change_name': '', 'name_cat': None, 'biome': None, 'language': 'english', 'search_text': '', 
-                'map_selection': (0,0), 'world_seed': None, 'camp_site': (0,0), 'choosing_camp': False, 'hunting_territory': (0,0), 'training_territory': (0,0), 'options_tab': None}
+    switches = {
+        'cat': None,
+        'clan_name': '',
+        'leader': None,
+        'deputy': None,
+        'medicine_cat': None,
+        'members': [],
+        'event': None,
+        'cur_screen': 'start screen',
+        'naming_text': '',
+        'timeskip': False,
+        'mate': None,
+        'setting': None,
+        'save_settings': False,
+        'list_page': 1,
+        'last_screen': 'start screen',
+        'events_left': 0,
+        'save_clan': False,
+        'new_leader': False,
+        'apprentice_switch': False,
+        'deputy_switch': False,
+        'clan_list': '',
+        'switch_clan': False,
+        'read_clans': False,
+        'kill_cat': False,
+        'current_patrol': [],
+        'error_message': '',
+        'apprentice': None,
+        'change_name': '',
+        'name_cat': None,
+        'biome': None,
+        'language': 'english',
+        'search_text': '',
+        'map_selection': (0, 0),
+        'world_seed': None,
+        'camp_site': (0, 0),
+        'choosing_camp': False,
+        'hunting_territory': (0, 0),
+        'training_territory': (0, 0),
+        'options_tab': None
+    }
     all_screens = {}
     cur_events = {}
     map_info = {}
 
     # SETTINGS
-    settings = {'no gendered breeding': False, 'text size': '0', 'no unknown fathers': False, 'dark mode': False, 'backgrounds': True, 'autosave': False, 'disasters': False,
-                'retirement': True, 'language': 'english', 'affair': False, 'shaders': False, 'hotkey display': False, 'random relation': True, 'show dead relation': True,
-                'show empty relation': True, 'romantic with former mentor': True}  # The current settings
-    setting_lists = {'no gendered breeding': [False, True], 'text size': ['0', '1', '2'], 'no unknown fathers': [False, True], 'dark mode': [False, True],
-                     'backgrounds': [True, False], 'autosave': [False, True], 'disasters': [False, True], 'retirement': [True, False],
-                     'language': language_list, 'affair': [False,True], 'shaders': [False, True], 'hotkey display': [False, True],
-                     'random relation': [False,True], 'show dead relation': [False, True], 'show empty relation': [False, True],
-                     'romantic with former mentor': [False,True]}  # Lists of possible options for each setting
+    settings = {
+        'no gendered breeding': False,
+        'text size': '0',
+        'no unknown fathers': False,
+        'dark mode': False,
+        'backgrounds': True,
+        'autosave': False,
+        'disasters': False,
+        'retirement': True,
+        'language': 'english',
+        'affair': False,
+        'shaders': False,
+        'hotkey display': False,
+        'random relation': True,
+        'show dead relation': True,
+        'show empty relation': True,
+        'romantic with former mentor': True
+    }  # The current settings
+    setting_lists = {
+        'no gendered breeding': [False, True],
+        'text size': ['0', '1', '2'],
+        'no unknown fathers': [False, True],
+        'dark mode': [False, True],
+        'backgrounds': [True, False],
+        'autosave': [False, True],
+        'disasters': [False, True],
+        'retirement': [True, False],
+        'language': language_list,
+        'affair': [False, True],
+        'shaders': [False, True],
+        'hotkey display': [False, True],
+        'random relation': [False, True],
+        'show dead relation': [False, True],
+        'show empty relation': [False, True],
+        'romantic with former mentor': [False, True]
+    }  # Lists of possible options for each setting
     settings_changed = False
 
     # CLAN
@@ -87,7 +163,8 @@ class Game(object):
         if self.switches['save_settings']:
             self.save_settings()
             self.switches['save_settings'] = False
-        if self.switches['save_clan'] and self.clan is not None and self.cat_class is not None:
+        if self.switches[
+                'save_clan'] and self.clan is not None and self.cat_class is not None:
             self.clan.save_clan()
             self.cat_class.save_cats()
         if self.switches['switch_clan']:
@@ -103,7 +180,8 @@ class Game(object):
 
     def save_settings(self):
         """ Save user settings for later use """
-        data = ''.join(f"{s}:{str(self.settings[s])}" + "\n" for s in self.settings.keys())
+        data = ''.join(f"{s}:{str(self.settings[s])}" + "\n"
+                       for s in self.settings.keys())
 
         with open('saves/settings.txt', 'w') as write_file:
             write_file.write(data)
@@ -114,12 +192,15 @@ class Game(object):
         with open('saves/settings.txt', 'r') as read_file:
             settings_data = read_file.read()
 
-        lines = settings_data.split("\n")  # Splits text file into singular lines, each line containing one setting
+        lines = settings_data.split(
+            "\n"
+        )  # Splits text file into singular lines, each line containing one setting
         # and value
 
         for x in lines:
             if len(x) > 0:  # If line isn't empty
-                parts = x.split(":")  # first part is setting name, second is value
+                parts = x.split(
+                    ":")  # first part is setting name, second is value
                 # Turn value into right type (int types stay string and will be turned into int when needed)
                 # And put it into game settings
                 if parts[1] in ['True', 'True ', 'true', ' True']:
@@ -135,11 +216,11 @@ class Game(object):
         if self.settings['language'] != 'english':
             self.switch_language()
 
-
     def switch_language(self):
         #add translation information here
         if path.exists('languages/' + game.settings['language'] + '.txt'):
-            with open('languages/' + game.settings['language'] + '.txt', 'r') as read_file:
+            with open('languages/' + game.settings['language'] + '.txt',
+                      'r') as read_file:
                 raw_language = read_file.read()
             game.language = literal_eval(raw_language)
 
@@ -148,13 +229,17 @@ class Game(object):
         self.settings_changed = True
 
         # Give the index that the list is currently at
-        list_index = self.setting_lists[setting_name].index(self.settings[setting_name])
+        list_index = self.setting_lists[setting_name].index(
+            self.settings[setting_name])
 
-        if list_index == len(self.setting_lists[setting_name]) - 1:  # The option is at the list's end, go back to 0
+        if list_index == len(
+                self.setting_lists[setting_name]
+        ) - 1:  # The option is at the list's end, go back to 0
             self.settings[setting_name] = self.setting_lists[setting_name][0]
         else:
             # Else move on to the next item on the list
-            self.settings[setting_name] = self.setting_lists[setting_name][list_index + 1]
+            self.settings[setting_name] = self.setting_lists[setting_name][
+                list_index + 1]
 
 
 # M O U S E

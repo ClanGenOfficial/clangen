@@ -14,10 +14,10 @@ class Font(object):
     def translate(self, text):
         #testing
         #test dictionary
-        if game.language and game.settings['language'] != 'english' and text in game.language.keys():
+        if game.language and game.settings[
+                'language'] != 'english' and text in game.language.keys():
             text = game.language[text]
         return text
-        
 
     def __init__(self, name, size=15, colour=(0, 0, 0)):
         self.name = name
@@ -84,7 +84,8 @@ class Font(object):
         for font in verdana.all_fonts:
             if game.settings['dark mode'] and font.colour == (0, 0, 0):
                 font.reset_colour(colour=(250, 250, 250))
-            elif not game.settings['dark mode'] and font.colour == (250, 250, 250):
+            elif not game.settings['dark mode'] and font.colour == (250, 250,
+                                                                    250):
                 font.reset_colour(colour=(0, 0, 0))
 
     def blit_text(self, text, pos, where=used_screen):
@@ -96,14 +97,15 @@ class Font(object):
         pos -- Tuple specifying position to blit text onto (default: None)
         where -- Screen to draw text onto (default: used_screen)
         """
-        words = [word.split(' ') for word in text.splitlines()]  # 2D array where each row is a list of words.
+        words = [word.split(' ') for word in text.splitlines()
+                 ]  # 2D array where each row is a list of words.
         space = 5  # The width of a space.
         x, y = pos
         for line in words:
             for word in line:
                 word_surface = self.font.render(word, True, self.colour)
                 word_width, word_height = word_surface.get_size()
-                word_height+=5
+                word_height += 5
                 if x + word_width >= 400:
                     x = pos[0]  # Reset the x.
                     y += word_height  # Start on new row.
@@ -124,5 +126,5 @@ verdana_big = Font('verdana', 18)
 verdana_big_white = Font('verdana', 18, colour='white')
 verdana_green = Font('verdana', colour='darkgreen')
 # for relationships, same color as bar
-verdana_dark_margenta = Font('verdana', 11, colour=(226,65,103))
-verdana_margenta = Font('verdana', 11, colour=(160,40,69))
+verdana_dark_margenta = Font('verdana', 11, colour=(226, 65, 103))
+verdana_margenta = Font('verdana', 11, colour=(160, 40, 69))

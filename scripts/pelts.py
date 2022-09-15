@@ -214,12 +214,12 @@ class Tortie(object):
     name = "Tortie"
     sprites = {1: 'tortie', 2: 'white'}
     white_patches = [
-        'TUXEDO', 'LITTLE', 'TUXEDO', 'LITTLE', None, None, None, None, 'EXTRA', 'ONEEAR',
-        'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG',
-        'VITILIGO', 'TUXEDOCREAMY', 'LITTLECREAMY', 'TIP', 'FANCY', 'FRECKLES',
-        'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE',
-        'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES',
-        'BROKENBLAZE'
+        'TUXEDO', 'LITTLE', 'TUXEDO', 'LITTLE', None, None, None, None,
+        'EXTRA', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL',
+        'LIGHTSONG', 'VITILIGO', 'TUXEDOCREAMY', 'LITTLECREAMY', 'TIP',
+        'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE',
+        'TAIL', 'BLAZE', 'PRINCE', 'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN',
+        'MISTER', 'BELLY', 'TOES', 'BROKENBLAZE'
     ]
 
     def __init__(self, white, length):
@@ -238,12 +238,12 @@ class Tortie2(object):
     name = "Tortie2"
     sprites = {1: 'tortie2', 2: 'white'}
     white_patches = [
-        'TUXEDO', 'LITTLE', 'TUXEDO', 'LITTLE', None, None, None, 'EXTRA', 'ONEEAR',
-        'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG',
-        'VITILIGO', 'TUXEDOCREAMY', 'LITTLECREAMY', 'TIP', 'FANCY', 'FRECKLES',
-        'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE',
-        'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES',
-        'BROKENBLAZE'
+        'TUXEDO', 'LITTLE', 'TUXEDO', 'LITTLE', None, None, None, 'EXTRA',
+        'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL',
+        'LIGHTSONG', 'VITILIGO', 'TUXEDOCREAMY', 'LITTLECREAMY', 'TIP',
+        'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE',
+        'TAIL', 'BLAZE', 'PRINCE', 'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN',
+        'MISTER', 'BELLY', 'TOES', 'BROKENBLAZE'
     ]
 
     def __init__(self, white, length):
@@ -277,7 +277,8 @@ class Calico(object):
 
     def __repr__(self):
         return f"calico{self.length}"
-    
+
+
 class Calico2(object):
     name = "Calico2"
     sprites = {1: 'calico2', 2: 'white'}
@@ -331,11 +332,13 @@ scars3 = [
     "RAINBOWBELL", "BLACKBELL", "SPIKESBELL", "PINKBELL", "PURPLEBELL",
     "MULTIBELL", "CRIMSONBOW", "BLUEBOW", "YELLOWBOW", "CYANBOW", "REDBOW",
     "LIMEBOW", "GREENBOW", "RAINBOWBOW", "BLACKBOW", "SPIKESBOW", "PINKBOW",
-    "PURPLEBOW", "MULTIBOW"]
-scars4 = ["TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE", "BELLY", "TOETRAP"]
-scars5 = ["SNAKE"
-
+    "PURPLEBOW", "MULTIBOW"
 ]
+scars4 = [
+    "TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE", "BELLY",
+    "TOETRAP"
+]
+scars5 = ["SNAKE"]
 
 pelt_names_F = [
     "SingleColour", "SingleColour", "TwoColour", "Tabby", "Tortie", "Calico",
@@ -361,9 +364,9 @@ white_sprites = [
     'TUXEDOCREAMY', 'LITTLECREAMY', 'COLOURPOINTCREAMY', 'VANCREAMY', 'ONEEAR',
     'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO',
     'TIP', 'FANCY', 'FRECKLES', 'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE',
-    'TAIL', 'BLAZE', 'PRINCE', 'BIB', 'VEE', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN',
-    'MISTER', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE',
-    'PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA', 'PIEBALD',
+    'TAIL', 'BLAZE', 'PRINCE', 'BIB', 'VEE', 'UNDERS', 'PAWS', 'FAROFA',
+    'DAMIEN', 'MISTER', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'PANTS',
+    'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 'APPALOOSA', 'PIEBALD',
     'CURVED', 'HEART', 'LILTWO', 'GLASS', 'MOORISH', 'POINTMARK'
 ]
 skin_sprites = ['BLACK', 'RED', 'PINK']
@@ -383,9 +386,12 @@ def choose_pelt(gender,
                 pelt_names_M)
         else:
             pelt = choice(pelt_names_F)
-            if gender == 'male' and pelt in ['Tortie', 'Calico', 'Tortie2', 'Calico2']:
+            if gender == 'male' and pelt in [
+                    'Tortie', 'Calico', 'Tortie2', 'Calico2'
+            ]:
                 print("Male tortie/calico!")
-    elif pelt in ['Tortie', 'Calico', 'Tortie2', 'Calico2'] and gender == 'male' and not determined:
+    elif pelt in ['Tortie', 'Calico', 'Tortie2', 'Calico2'
+                  ] and gender == 'male' and not determined:
         a = randint(0, 200)
         if a != 1:
             pelt = choice(pelt_names_M)

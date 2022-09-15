@@ -12,35 +12,70 @@ class Clan(object):
     leader_lives = 0
     clan_cats = []
     starclan_cats = []
-    seasons = ['Newleaf', 'Newleaf', 'Newleaf', 'Greenleaf', 'Greenleaf', 'Greenleaf', 'Leaf-fall', 'Leaf-fall',
-               'Leaf-fall', 'Leaf-bare', 'Leaf-bare', 'Leaf-bare', ]
-    layout_1 = {'leader den': ('center', 100), 'medicine den': (100, 230), 'nursery': (-100, 230),
-                'clearing': ('center', 300), 'apprentice den': (100, 450), 'warrior den': (-100, 450),
-                'elder den': ('center', 500),
-                'leader place': [('center', 120), (screen_x / 2 - 50, 170), (screen_x / 2, 170)],
-                'medicine place': [(70, 250), (120, 250), (170, 250), (100, 300), (150, 300)],
-                'nursery place': [(-100, 250), (-150, 250), (-200, 250), (-70, 300), (-120, 300), (-170, 300),
-                                  (-220, 300), (-70, 350), (-120, 350), (-170, 350), (-220, 350)],
-                'clearing place': [('center', 320), (300, 370), (350, 370), (400, 370), (300, 420), (350, 420),
-                                   (400, 420)],
-                'apprentice place': [(70, 470), (120, 470), (170, 470), (100, 520), (150, 520), (200, 520)],
-                'warrior place': [(-50, 470), (-100, 490), (-150, 470), (-200, 490), (-50, 520), (-100, 540),
-                                  (-150, 520), (-200, 540)],
-                'elder place': [(300, 520), (350, 520), (400, 520), (320, 570), (370, 570)]}
+    seasons = [
+        'Newleaf',
+        'Newleaf',
+        'Newleaf',
+        'Greenleaf',
+        'Greenleaf',
+        'Greenleaf',
+        'Leaf-fall',
+        'Leaf-fall',
+        'Leaf-fall',
+        'Leaf-bare',
+        'Leaf-bare',
+        'Leaf-bare',
+    ]
+    layout_1 = {
+        'leader den': ('center', 100),
+        'medicine den': (100, 230),
+        'nursery': (-100, 230),
+        'clearing': ('center', 300),
+        'apprentice den': (100, 450),
+        'warrior den': (-100, 450),
+        'elder den': ('center', 500),
+        'leader place': [('center', 120), (screen_x / 2 - 50, 170),
+                         (screen_x / 2, 170)],
+        'medicine place': [(70, 250), (120, 250), (170, 250), (100, 300),
+                           (150, 300)],
+        'nursery place': [(-100, 250), (-150, 250), (-200, 250), (-70, 300),
+                          (-120, 300), (-170, 300), (-220, 300), (-70, 350),
+                          (-120, 350), (-170, 350), (-220, 350)],
+        'clearing place': [('center', 320), (300, 370), (350, 370), (400, 370),
+                           (300, 420), (350, 420), (400, 420)],
+        'apprentice place': [(70, 470), (120, 470), (170, 470), (100, 520),
+                             (150, 520), (200, 520)],
+        'warrior place': [(-50, 470), (-100, 490), (-150, 470), (-200, 490),
+                          (-50, 520), (-100, 540), (-150, 520), (-200, 540)],
+        'elder place': [(300, 520), (350, 520), (400, 520), (320, 570),
+                        (370, 570)]
+    }
     cur_layout = layout_1
-    places_vacant = {'leader': [False, False, False],
-                     'medicine': [False, False, False, False, False],
-                     'nursery': [False, False, False, False, False, False, False, False, False, False, False],
-                     'clearing': [False, False, False, False, False, False, False],
-                     'apprentice': [False, False, False, False, False, False],
-                     'warrior': [False, False, False, False, False, False, False, False],
-                     'elder': [False, False, False, False, False]}
+    places_vacant = {
+        'leader': [False, False, False],
+        'medicine': [False, False, False, False, False],
+        'nursery': [
+            False, False, False, False, False, False, False, False, False,
+            False, False
+        ],
+        'clearing': [False, False, False, False, False, False, False],
+        'apprentice': [False, False, False, False, False, False],
+        'warrior': [False, False, False, False, False, False, False, False],
+        'elder': [False, False, False, False, False]
+    }
 
     age = 0
     current_season = 'Newleaf'
     all_clans = []
 
-    def __init__(self, name="", leader=None, deputy=None, medicine_cat=None, biome='Forest', world_seed=6616, camp_site=(20,22)):
+    def __init__(self,
+                 name="",
+                 leader=None,
+                 deputy=None,
+                 medicine_cat=None,
+                 biome='Forest',
+                 world_seed=6616,
+                 camp_site=(20, 22)):
         if name != "":
             self.name = name
             self.leader = leader
@@ -94,7 +129,7 @@ class Clan(object):
             cat_class.all_cats.get(cat_id).create_new_relationships()
             if cat_class.all_cats.get(cat_id).status == 'apprentice':
                 cat_class.all_cats.get(cat_id).status_change('apprentice')
-                
+
         cat_class.thoughts()
         cat_class.save_cats()
         number_other_clans = randint(3, 5)
@@ -102,16 +137,18 @@ class Clan(object):
             self.all_clans.append(OtherClan())
         self.save_clan()
         if mapavailable:
-            save_map(game.map_info, game.clan.name)      
+            save_map(game.map_info, game.clan.name)
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""
-        if cat.ID in cat_class.all_cats.keys() and cat.ID not in self.clan_cats:
+        if cat.ID in cat_class.all_cats.keys(
+        ) and cat.ID not in self.clan_cats:
             self.clan_cats.append(cat.ID)
 
     def add_to_starclan(self, cat):  # Same as add_cat
         """ Places the dead cat into starclan. It should not be removed from the list of cats in the clan"""
-        if cat.ID in cat_class.all_cats.keys() and cat.dead and cat.ID not in self.starclan_cats:
+        if cat.ID in cat_class.all_cats.keys(
+        ) and cat.dead and cat.ID not in self.starclan_cats:
             # The dead-value must be set to True before the cat can go to starclan
             self.starclan_cats.append(cat.ID)
 
@@ -165,13 +202,17 @@ class Clan(object):
 
     def save_clan(self):
         data = f'{self.name},{self.age},{self.biome},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]}' + '\n'
-        data = data + self.leader.ID + ',' + str(self.leader_lives) + ',' + str(self.leader_predecessors) + ',' + '\n'
+        data = data + self.leader.ID + ',' + str(
+            self.leader_lives) + ',' + str(
+                self.leader_predecessors) + ',' + '\n'
 
         if self.deputy is not None:
-            data = data + self.deputy.ID + ',' + str(self.deputy_predecessors) + ',' + '\n'
+            data = data + self.deputy.ID + ',' + str(
+                self.deputy_predecessors) + ',' + '\n'
         else:
             data = data + '\n'
-        data = data + self.medicine_cat.ID + ',' + str(self.med_cat_predecessors) + '\n'
+        data = data + self.medicine_cat.ID + ',' + str(
+            self.med_cat_predecessors) + '\n'
 
         data = data + self.instructor.ID + '\n'
 
@@ -184,7 +225,8 @@ class Clan(object):
         for a, other_clan in enumerate(self.all_clans):
             if a:
                 data = f"{data},"
-            data = data + str(other_clan.name) + ";" + str(other_clan.relations) + ";" + str(other_clan.temperament)
+            data = data + str(other_clan.name) + ";" + str(
+                other_clan.relations) + ";" + str(other_clan.temperament)
 
         with open(f'saves/{self.name}clan.txt', 'w') as write_file:
             write_file.write(data)
@@ -207,7 +249,8 @@ class Clan(object):
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
             return
-        with open('saves/' + game.switches['clan_list'][0] + 'clan.txt', 'r') as read_file:
+        with open('saves/' + game.switches['clan_list'][0] + 'clan.txt',
+                  'r') as read_file:
             clan_data = read_file.read()
         clan_data = clan_data.replace('\t', ',')
         sections = clan_data.split('\n')
@@ -238,15 +281,26 @@ class Clan(object):
         if len(general) == 6:
             if general[3] == 'None':
                 general[3] = 0
-            game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]], cat_class.all_cats.get(deputy_info[0], None), cat_class.all_cats[med_cat_info[0]], biome=general[2], world_seed=int(general[3]), camp_site=(int(general[4]),int(general[5])))
+            game.clan = Clan(general[0],
+                             cat_class.all_cats[leader_info[0]],
+                             cat_class.all_cats.get(deputy_info[0], None),
+                             cat_class.all_cats[med_cat_info[0]],
+                             biome=general[2],
+                             world_seed=int(general[3]),
+                             camp_site=(int(general[4]), int(general[5])))
         elif len(general) == 3:
-            game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]], cat_class.all_cats.get(deputy_info[0], None), cat_class.all_cats[med_cat_info[0]], general[2])
+            game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]],
+                             cat_class.all_cats.get(deputy_info[0], None),
+                             cat_class.all_cats[med_cat_info[0]], general[2])
         else:
-            game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]], cat_class.all_cats.get(deputy_info[0], None), cat_class.all_cats[med_cat_info[0]])
+            game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]],
+                             cat_class.all_cats.get(deputy_info[0], None),
+                             cat_class.all_cats[med_cat_info[0]])
 
         game.clan.age = int(general[1])
         game.clan.current_season = game.clan.seasons[game.clan.age % 12]
-        game.clan.leader_lives, game.clan.leader_predecessors = int(leader_info[1]), int(leader_info[2])
+        game.clan.leader_lives, game.clan.leader_predecessors = int(
+            leader_info[1]), int(leader_info[2])
 
         if len(deputy_info) > 1:
             game.clan.deputy_predecessors = int(deputy_info[1])
@@ -256,14 +310,17 @@ class Clan(object):
                 game.clan.instructor = cat_class.all_cats[instructor_info]
                 game.clan.add_cat(game.clan.instructor)
         else:
-            game.clan.instructor = Cat(status=choice(["warrior", "warrior", "elder"]))
+            game.clan.instructor = Cat(
+                status=choice(["warrior", "warrior", "elder"]))
             game.clan.instructor.update_sprite()
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
         if other_clans != [""]:
             for other_clan in other_clans:
                 other_clan_info = other_clan.split(';')
-                self.all_clans.append(OtherClan(other_clan_info[0], other_clan_info[1], other_clan_info[2]))
+                self.all_clans.append(
+                    OtherClan(other_clan_info[0], other_clan_info[1],
+                              other_clan_info[2]))
 
         else:
             number_other_clans = randint(3, 5)
@@ -277,18 +334,31 @@ class Clan(object):
             else:
                 print('Cat not found:', cat)
 
+
 class OtherClan(object):
+
     def __init__(self, name='', relations=0, temperament=''):
         self.name = name or choice(names.normal_prefixes)
         self.relations = relations or randint(10, 15)
-        self.temperament = temperament or choice(['bloodthirsty', 'righteous', 'strict', 'kind', 'calm', 'progressive', 'faithful', 'thoughtful', 'compassionate', 'logical', 'brave', 'altruistic', 'distant', 'competitive'])
+        self.temperament = temperament or choice([
+            'bloodthirsty', 'righteous', 'strict', 'kind', 'calm',
+            'progressive', 'faithful', 'thoughtful', 'compassionate',
+            'logical', 'brave', 'altruistic', 'distant', 'competitive'
+        ])
 
     def __repr__(self):
         return f"{self.name}Clan"
 
+
 class StarClan(object):
-    forgotten_stages = {0: [0, 100], 10: [101, 200], 30: [201, 300], 60: [301, 400],
-                        90: [401, 500], 100: [501, 502]}  # Tells how faded the cat will be in starclan by months spent
+    forgotten_stages = {
+        0: [0, 100],
+        10: [101, 200],
+        30: [201, 300],
+        60: [301, 400],
+        90: [401, 500],
+        100: [501, 502]
+    }  # Tells how faded the cat will be in starclan by months spent
     dead_cats = {}
 
     def __init__(self):
@@ -299,7 +369,8 @@ class StarClan(object):
         fade_level = 0
         if cat.dead:
             for f in self.forgotten_stages.keys():
-                if cat.dead_for in range(self.forgotten_stages[f][0], self.forgotten_stages[f][1]):
+                if cat.dead_for in range(self.forgotten_stages[f][0],
+                                         self.forgotten_stages[f][1]):
                     fade_level = f
         white.fill((255, 255, 255, fade_level))
         return white

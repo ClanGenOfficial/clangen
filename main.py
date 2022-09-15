@@ -27,13 +27,14 @@ if if_clans > 0:
         cat_class.thoughts()
     except Exception:
         if not game.switches['error_message']:
-            game.switches['error_message'] = 'There was an error loading the cats file!'
+            game.switches[
+                'error_message'] = 'There was an error loading the cats file!'
 
     try:
-        game.map_info = load_map('saves/'+game.clan.name)
+        game.map_info = load_map('saves/' + game.clan.name)
     except NameError:
         game.map_info = {}
-    except:   
+    except:
         game.map_info = load_map("Fallback")
         print("Default map loaded.")
 
@@ -67,13 +68,22 @@ while True:
         if game.current_screen == 'profile screen':
             previous_cat = 0
             next_cat = 0
-            the_cat = cat_class.all_cats.get(game.switches['cat'],game.clan.instructor)
+            the_cat = cat_class.all_cats.get(game.switches['cat'],
+                                             game.clan.instructor)
             for check_cat in cat_class.all_cats:
                 if cat_class.all_cats[check_cat].ID == the_cat.ID:
                     next_cat = 1
-                if next_cat == 0 and cat_class.all_cats[check_cat].ID != the_cat.ID and cat_class.all_cats[check_cat].dead == the_cat.dead and cat_class.all_cats[check_cat].ID != game.clan.instructor.ID and not cat_class.all_cats[check_cat].exiled:
+                if next_cat == 0 and cat_class.all_cats[
+                        check_cat].ID != the_cat.ID and cat_class.all_cats[
+                            check_cat].dead == the_cat.dead and cat_class.all_cats[
+                                check_cat].ID != game.clan.instructor.ID and not cat_class.all_cats[
+                                    check_cat].exiled:
                     previous_cat = cat_class.all_cats[check_cat].ID
-                elif next_cat == 1 and cat_class.all_cats[check_cat].ID != the_cat.ID and cat_class.all_cats[check_cat].dead == the_cat.dead and cat_class.all_cats[check_cat].ID != game.clan.instructor.ID and not cat_class.all_cats[check_cat].exiled:
+                elif next_cat == 1 and cat_class.all_cats[
+                        check_cat].ID != the_cat.ID and cat_class.all_cats[
+                            check_cat].dead == the_cat.dead and cat_class.all_cats[
+                                check_cat].ID != game.clan.instructor.ID and not cat_class.all_cats[
+                                    check_cat].exiled:
                     next_cat = cat_class.all_cats[check_cat].ID
                 elif int(next_cat) > 1:
                     break
@@ -81,54 +91,67 @@ while True:
                 next_cat = 0
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT and previous_cat != 0:
-                    game.switches['cat']=previous_cat
+                    game.switches['cat'] = previous_cat
                 if event.key == pygame.K_RIGHT and next_cat != 0:
-                    game.switches['cat']=next_cat
+                    game.switches['cat'] = next_cat
                 if event.key == pygame.K_0:
                     game.switches['cur_screen'] = 'list screen'
                 if event.key == pygame.K_1:
                     game.switches['cur_screen'] = 'options screen'
                     game.switches['last_screen'] = 'profile screen'
-        if game.current_screen == 'make clan screen' and game.switches['clan_name'] == '' and event.type == pygame.KEYDOWN:
-            if event.unicode.isalpha():  # only allows alphabet letters as an input
-                if len(game.switches['naming_text']) < game.max_name_length:  # can't type more than max name length
+        if game.current_screen == 'make clan screen' and game.switches[
+                'clan_name'] == '' and event.type == pygame.KEYDOWN:
+            if event.unicode.isalpha(
+            ):  # only allows alphabet letters as an input
+                if len(
+                        game.switches['naming_text']
+                ) < game.max_name_length:  # can't type more than max name length
                     game.switches['naming_text'] += event.unicode
             elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
-                game.switches['naming_text'] = game.switches['naming_text'][:-1]
+                game.switches['naming_text'] = game.switches[
+                    'naming_text'][:-1]
 
-        if game.current_screen == 'events screen' and len(game.cur_events_list) > game.max_events_displayed:
-            max_scroll_direction = len(game.cur_events_list) - game.max_events_displayed
+        if game.current_screen == 'events screen' and len(
+                game.cur_events_list) > game.max_events_displayed:
+            max_scroll_direction = len(
+                game.cur_events_list) - game.max_events_displayed
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP and game.event_scroll_ct < 0:
                     game.cur_events_list.insert(0, game.cur_events_list.pop())
                     game.event_scroll_ct += 1
-                if event.key == pygame.K_DOWN and abs(game.event_scroll_ct) < max_scroll_direction:
+                if event.key == pygame.K_DOWN and abs(
+                        game.event_scroll_ct) < max_scroll_direction:
                     game.cur_events_list.append(game.cur_events_list.pop(0))
                     game.event_scroll_ct -= 1
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 4 and game.event_scroll_ct < 0:
                     game.cur_events_list.insert(0, game.cur_events_list.pop())
                     game.event_scroll_ct += 1
-                if event.button == 5 and abs(game.event_scroll_ct) < max_scroll_direction:
+                if event.button == 5 and abs(
+                        game.event_scroll_ct) < max_scroll_direction:
                     game.cur_events_list.append(game.cur_events_list.pop(0))
                     game.event_scroll_ct -= 1
 
-        if game.current_screen == 'allegiances screen' and len(game.allegiance_list) > game.max_allegiance_displayed:
-            max_scroll_direction = len(game.allegiance_list) - game.max_allegiance_displayed
+        if game.current_screen == 'allegiances screen' and len(
+                game.allegiance_list) > game.max_allegiance_displayed:
+            max_scroll_direction = len(
+                game.allegiance_list) - game.max_allegiance_displayed
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP and game.allegiance_scroll_ct < 0:
                     game.allegiance_list.insert(0, game.allegiance_list.pop())
                     game.allegiance_scroll_ct += 1
-                if event.key == pygame.K_DOWN and abs(game.allegiance_scroll_ct) < max_scroll_direction:
+                if event.key == pygame.K_DOWN and abs(
+                        game.allegiance_scroll_ct) < max_scroll_direction:
                     game.allegiance_list.append(game.allegiance_list.pop(0))
                     game.allegiance_scroll_ct -= 1
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 4 and game.allegiance_scroll_ct < 0:
-                        game.allegiance_list.insert(0, game.allegiance_list.pop())
-                        game.allegiance_scroll_ct += 1
-                if event.button == 5 and abs(game.allegiance_scroll_ct) < max_scroll_direction:
-                        game.allegiance_list.append(game.allegiance_list.pop(0))
-                        game.allegiance_scroll_ct -= 1
+                    game.allegiance_list.insert(0, game.allegiance_list.pop())
+                    game.allegiance_scroll_ct += 1
+                if event.button == 5 and abs(
+                        game.allegiance_scroll_ct) < max_scroll_direction:
+                    game.allegiance_list.append(game.allegiance_list.pop(0))
+                    game.allegiance_scroll_ct -= 1
         if game.current_screen == 'patrol screen':
             random_options = []
             if event.type == pygame.KEYDOWN:
@@ -136,25 +159,39 @@ while True:
                     for u in range(12):
                         i_max = len(game.patrol_cats)
                         if u < i_max:
-                            game.switches['current_patrol'].append(game.patrol_cats[u])
-        if game.current_screen == 'change name screen' and game.switches['change_name'] == '' and event.type == pygame.KEYDOWN:
-            if event.unicode.isalpha() or event.unicode.isspace():  # only allows alphabet letters/space as an input
-                if len(game.switches['naming_text']) < 20:  # can't type more than max name length
+                            game.switches['current_patrol'].append(
+                                game.patrol_cats[u])
+        if game.current_screen == 'change name screen' and game.switches[
+                'change_name'] == '' and event.type == pygame.KEYDOWN:
+            if event.unicode.isalpha() or event.unicode.isspace(
+            ):  # only allows alphabet letters/space as an input
+                if len(game.switches['naming_text']
+                       ) < 20:  # can't type more than max name length
                     game.switches['naming_text'] += event.unicode
             elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
-                game.switches['naming_text'] = game.switches['naming_text'][:-1]
-        if game.current_screen == 'change gender screen' and game.switches['change_name'] == '' and event.type == pygame.KEYDOWN:
-            if event.unicode.isalpha() or event.unicode.isspace():  # only allows alphabet letters/space as an input
-                if len(game.switches['naming_text']) < 20:  # can't type more than max name length
+                game.switches['naming_text'] = game.switches[
+                    'naming_text'][:-1]
+        if game.current_screen == 'change gender screen' and game.switches[
+                'change_name'] == '' and event.type == pygame.KEYDOWN:
+            if event.unicode.isalpha() or event.unicode.isspace(
+            ):  # only allows alphabet letters/space as an input
+                if len(game.switches['naming_text']
+                       ) < 20:  # can't type more than max name length
                     game.switches['naming_text'] += event.unicode
             elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
-                game.switches['naming_text'] = game.switches['naming_text'][:-1]
-        if game.current_screen in ['list screen', 'starclan screen', 'other screen'] and event.type == pygame.KEYDOWN:
-            if event.unicode.isalpha() or event.unicode.isspace():  # only allows alphabet letters/space as an input
-                if len(game.switches['search_text']) < 20:  # can't type more than max name length
+                game.switches['naming_text'] = game.switches[
+                    'naming_text'][:-1]
+        if game.current_screen in [
+                'list screen', 'starclan screen', 'other screen'
+        ] and event.type == pygame.KEYDOWN:
+            if event.unicode.isalpha() or event.unicode.isspace(
+            ):  # only allows alphabet letters/space as an input
+                if len(game.switches['search_text']
+                       ) < 20:  # can't type more than max name length
                     game.switches['search_text'] += event.unicode
             elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
-                game.switches['search_text'] = game.switches['search_text'][:-1]
+                game.switches['search_text'] = game.switches[
+                    'search_text'][:-1]
 
         if event.type == pygame.QUIT:
             # close pygame
@@ -165,7 +202,7 @@ while True:
         # MOUSE CLICK
         if event.type == pygame.MOUSEBUTTONDOWN:
             game.clicked = True
-            
+
         if event.type == pygame.KEYDOWN:
             game.keyspressed = []
             keys = pygame.key.get_pressed()

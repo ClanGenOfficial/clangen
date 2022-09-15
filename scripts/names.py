@@ -10,7 +10,7 @@ class Name(object):
         "leader": "star"
     }
     normal_suffixes = [  # common suffixes 
-                       # please fix this
+        # please fix this
         "fur",
         "fur",
         "fur",
