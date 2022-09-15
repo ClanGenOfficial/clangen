@@ -1714,7 +1714,10 @@ class ChooseMateScreen(Screens):
     # TODO Rename this here and in `on_use`
     def _extracted_from_on_use_29(self, arg0, arg1):
         verdana_small.text(arg0.age, (arg1, 200))
-        verdana_small.text(arg0.genderalign, (arg1, 215))
+        if (arg0.genderalign is not None):
+            verdana_small.text(arg0.genderalign, (arg1, 215))
+        else:
+            verdana_small.text(arg0.gender, (arg1, 215))
         verdana_small.text(arg0.trait, (arg1, 230))
 
     def screen_switches(self):
@@ -2020,11 +2023,13 @@ class PatrolEventScreen(Screens):
             buttons.draw_button((290, 320), text='Proceed', event=-2)
             buttons.draw_button((150, 320), text='Do Not Proceed', event=2)
             if patrol.patrol_event.patrol_id in [500, 501, 502, 503, 510]:
-                buttons.draw_button((150, 350), text='Antagonize', event=3)
+                buttons.draw_button((150, 290), text='Antagonize', event=3)
 
         if game.switches['event'] == -2:
             patrol.calculate_success()
             game.switches['event'] = 1
+        elif game.switches['event'] == 3:
+            game.switches['event'] = 4
         if game.switches['event'] > 0:
             if game.switches['event'] == 1:
                 if patrol.success:
@@ -2042,6 +2047,11 @@ class PatrolEventScreen(Screens):
                 decline_text = decline_text.replace('r_c', str(patrol.patrol_random_cat.name))
                 decline_text = decline_text.replace('p_l', str(patrol.patrol_leader.name))
                 verdana.blit_text(decline_text, (150, 200))
+            elif game.switches['event'] == 4:
+                antagonize_text = patrol.patrol_event.antagonize_text
+                antagonize_text = antagonize_text.replace('r_c', str(patrol.patrol_random_cat.name))
+                antagonize_text = antagonize_text.replace('p_l', str(patrol.patrol_leader.name))
+                verdana.blit_text(antagonize_text, (150, 200))
             buttons.draw_button((150, 350), text='Return to Clan', cur_screen='clan screen')
             buttons.draw_button((280, 350), text='Patrol Again', cur_screen='patrol screen')
 
