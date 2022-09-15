@@ -2,7 +2,9 @@ import sys
 import os
 from os import path
 if sys.platform == "darwin":
-    os.chdir(os.path.dirname(__file__))
+    directory = os.path.dirname(__file__)
+    if directory:
+        os.chdir(directory)
 from scripts.screens import *
 
 # P Y G A M E
