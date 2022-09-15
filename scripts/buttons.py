@@ -16,14 +16,27 @@ class Button(object):
         self.frame_colour = (200, 200, 200)
 
     def reset_colour(self, frame_colour, clickable_colour, unavailable_colour):
+        """Change colours of automatically drawn buttons. Colours are specified by RGB tuples."""
         self.frame_colour = frame_colour
         self.clickable_colour = clickable_colour
         self.unavailable_colour = unavailable_colour
 
-    def draw_button(self, pos, available=True, text='', **values):
-        print('a')
-
     def draw_image_button(self, pos, available=True, path=None, **values):
+        """
+        Draw an image button and check for collisions.
+
+        path must specify a .png file inside of the resources folder without the file extension.
+            (e.g. if there's a file btn.png, path should be 'btn')
+        Unavailable buttons should be named as {path}_unavailable.png and
+        Hover buttons should be named as {path}_hover.png,
+        where {path} is the name of the file in the resources folder.
+
+        Parameters:
+        pos -- Tuple specifying (x,y) position in pixels where to place button
+        available -- If button is available for clicking (default: True)
+        path -- Path to button image inside of resources
+        **values -- Dictionary of values to be passed into activate
+        """
         is_clickable = False
         if available:
             image_path = f'resources/{path}.png'
@@ -54,6 +67,23 @@ class Button(object):
         return new_pos
 
     def draw_button(self, pos, available=True, image=None, text='', cat_value=None, arrow=None, apprentice=None, hotkey=None, **values):
+        """
+        Draw a clickable object and check for its collisions.
+
+        If set, image must specify a file inside of the resources folder.
+        If not set, a button is drawn automatically.
+
+        Parameters:
+        pos -- Tuple specifying (x,y) position in pixels where to place button
+        available -- If button is available for clicking (default: True)
+        image -- Path to image inside of resources specifying button background (default: None)
+        text -- String to place inside button (default: '')
+        cat_value -- Cat referred to if this button refers to a cat (default: None)
+        arrow -- Arrow key button pressed for input detection (default: None)
+        apprentice -- Apprentice referred to if this button refers to an apprentice (default: None)
+        hotkey -- Hotkey pressed for input detection (default: None)
+        **values -- Dictionary of values to be passed into activate
+        """
         dynamic_image = False
         if image is not None and text != '' and text is not None:
             dynamic_image = True
@@ -196,6 +226,14 @@ class Button(object):
                     self.activate(values, arrow=arrow)
 
     def activate(self, values=None, cat_value=None, arrow=None):
+        """
+        Activates a clicked button.
+
+        Parameters:
+        values -- Dict of values to be set as game switches
+        cat_value -- Cat being activated
+        arrow -- String referring to arrow that has been pressed
+        """
         if values is None:
             values = {}
         add = values['add'] if 'add' in values.keys() else False
@@ -275,12 +313,14 @@ class Button(object):
                 game.relation_scroll_ct -= 1
 
     def change_button_brightness(self):
+        """Switches button colours according to screen brightness."""
         if game.settings['dark mode'] and self.frame_colour == (200, 200, 200):
             self.reset_colour(frame_colour=(70, 70, 70), clickable_colour=(10, 10, 10), unavailable_colour=(30, 30, 30))
         elif not game.settings['dark mode'] and self.frame_colour == (70, 70, 70):
             self.reset_colour(frame_colour=(200, 200, 200), clickable_colour=(150, 150, 150), unavailable_colour=(120, 120, 120))
 
     def choose_mentor(self, apprentice, cat_value):
+        """Chooses cat_value as mentor for apprentice."""
         if apprentice not in cat_value.apprentice:
             apprentice.mentor.former_apprentices.append(apprentice)
             apprentice.mentor.apprentice.remove(apprentice)
@@ -290,6 +330,7 @@ class Button(object):
         cat_class.save_cats()
 
     def change_name(self, name, cat_value):
+        """Changes name of cat_value to name specified in textbox"""
         cat_value = cat_class.all_cats.get(cat_value)
         if game.switches['naming_text'] != '':
             name = game.switches['naming_text'].split(' ')
