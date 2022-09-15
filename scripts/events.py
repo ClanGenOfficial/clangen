@@ -650,7 +650,7 @@ class Events(object):
                 cause_of_death = []
                 if len(game.clan.all_clans) > 0:
                     cause_of_death.extend([name + ' lost a live to greencough', 'A tree fell in camp and ' + name + ' lost a life'])
-                    cause_of_death.extend(name + ' was found dead near the ' + choice(game.clan.all_clans).name + 'Clan border mortally injured')
+                    cause_of_death.extend([name + ' was found dead near the ' + choice(game.clan.all_clans).name + 'Clan border mortally injured'])
                     cause_of_death.extend([name + ' lost a life from infected wounds', name + ' went missing and was later found mortally wounded'])
                 if self.at_war:
                     cause_of_death.extend([name + ' was killed by enemy ' + self.enemy_clan + ' warriors and lost a life', name + ' was killed by enemy ' + self.enemy_clan + ' warriors and lost a life',
@@ -687,14 +687,12 @@ class Events(object):
             cause_of_death = [name + ' and ' + other_name + ' die of greencough', name + ' and ' + other_name + ' die of yellowcough', name + ' and ' + other_name + ' die of whitecough',
                               name + ' and ' + other_name + ' die from eating poisoned prey']
             if cat.status != 'kitten' or 'leader' and other_cat.status != 'kitten' or 'leader':
-                cause_of_death.extend(
-                    [name + ' and ' + other_name + ' are killed in a border skirmish', name + ' and ' + other_name + ' are killed in a battle against a gang of rogues'])
+                cause_of_death.extend([name + ' and ' + other_name + ' are killed in a border skirmish', name + ' and ' + other_name + ' are killed in a battle against a gang of rogues'])
             if cat.mate is not None and cat.age == other_cat.age and other_cat.mate is None:
                 if cat.status == 'leader':
                     game.clan.leader_lives -= 10
                 game.cur_events_list.append(name + ' is killed by ' + other_name + ' in an argument over ' + str(cat_class.all_cats.get(cat.mate).name))
                 self.dies(cat)
-
                 return
             self.dies(cat)
             self.dies(other_cat)
