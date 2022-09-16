@@ -149,3 +149,4 @@ cython_debug/
 
 /saves/**
 *.png~
+.vscode/settings.json
