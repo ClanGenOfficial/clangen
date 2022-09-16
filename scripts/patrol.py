@@ -680,7 +680,7 @@ class Patrol(object):
                     'r_c finds an old friend of their\'s from when they were a loner',
                     'r_c invites their friend to join the Clan',
                     'r_c and their friend reminisce about old times',
-                    'r_c says farewell to their friend and rejoins the patrol')
+                    'r_c says farewell to their friend and rejoins the patrol', 40, 10)
             ])
 
         if self.patrol_random_cat.status == 'formerly a kittypet':
@@ -690,7 +690,7 @@ class Patrol(object):
                     'r_c finds an old friend of their\'s from when they were a kittypet',
                     'r_c invites their friend to join the Clan',
                     'r_c and their friend reminisce about old times',
-                    'r_c says farewell to their friend and rejoins the patrol')
+                    'r_c says farewell to their friend and rejoins the patrol', 40, 10)
             ])
 
         # status specific patrols
