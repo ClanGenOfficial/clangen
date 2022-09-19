@@ -723,9 +723,77 @@ class Patrol(object):
                 ])
 
         # biome specific patrols
-        #
-        # will add here
-        #
+        if game.clan.biome == 'forest':
+            possible_patrols.extend([
+                PatrolEvent(700, 
+                            'Your patrol comes across a vole',
+                            'Your patrol catches the vole!',
+                            'Your patrol narrowly misses the vole',
+                            'Your patrol decides to look for other prey',
+                            50,
+                            10,
+                            win_skills=['great hunter', 'fantastic hunter']),
+                PatrolEvent(701, 
+                            'While hunting, r_c comes across a rabbit burrow',
+                            'r_c catches the rabbit hiding in its burrow',
+                            'The burrow is abandoned, with no prey to be found in there',
+                            'r_c decides to ignore the burrow',
+                            50,
+                            10,
+                            win_skills=['great hunter', 'fantastic hunter']),
+                PatrolEvent(702, 
+                            'Your patrol comes across a small fallen tree blocking their path',
+                            'Your patrol successfully moves the tree out of the way and continues the patrol',
+                            'Your patrol can\'t seem to move the tree out of the way and is discouraged',
+                            'Your patrol decides to find another route to continue to patrol',
+                            40,
+                            10)
+            ])
+        elif game.clan.biome == 'plains':
+            possible_patrols.extend([
+                PatrolEvent(710, 
+                            'Your patrol comes across a praire dog',
+                            'Your patrol catches the praire dog!',
+                            'Your patrol narrowly misses the praire dog',
+                            'Your patrol decides to look for other prey',
+                            50,
+                            10,
+                            win_skills=['great hunter', 'fantastic hunter'])
+            ])
+        elif game.clan.biome == 'mountains':
+            possible_patrols.extend([
+                PatrolEvent(710, 
+                            'Your patrol comes across a shrew',
+                            'Your patrol catches the shrew!',
+                            'Your patrol narrowly misses the shrew',
+                            'Your patrol decides to look for other prey',
+                            50,
+                            10,
+                            win_skills=['great hunter', 'fantastic hunter'])
+            ])
+        elif game.clan.biome == 'swamp':
+            possible_patrols.extend([
+                PatrolEvent(710, 
+                            'Your patrol comes across a lizard',
+                            'Your patrol catches the lizard!',
+                            'Your patrol narrowly misses the lizard',
+                            'Your patrol decides to look for other prey',
+                            50,
+                            10,
+                            win_skills=['great hunter', 'fantastic hunter'])
+            ])
+        elif game.clan.biome == 'beach':
+            possible_patrols.extend([
+                PatrolEvent(710, 
+                            'Your patrol comes across a turtle',
+                            'Your patrol catches the turtle!',
+                            'Your patrol narrowly misses the turtle',
+                            'Your patrol decides to look for other prey',
+                            50,
+                            10,
+                            win_skills=['great hunter', 'fantastic hunter'])
+            ])
+
 
         # other_clan patrols
         if len(game.clan.all_clans) > 0:
