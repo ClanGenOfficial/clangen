@@ -233,13 +233,13 @@ class Events(object):
         acc_text = []
         chance = randint(0, 50)
         if cat.age in ['kitten', 'adolescent']:
-            chance = randint(0, 40)
+            chance = randint(0, 70)
         elif cat.age in ['young adult', 'adult', 'senior adult', 'elder']:
             chance = randint(0, 150)
         elif cat.trait in ['childish', 'lonesome', 'loving', 'playful', 'shameless', 'strange', 'troublesome']:
-            chance = randint(0, 20)
+            chance = randint(0, 40)
         elif cat.status in ['medicine cat', 'medicine cat apprentice']:
-            chance = randint(0, 20)
+            chance = randint(0, 30)
         if chance == 1:
             if cat.accessory is None:
                 cat.accessory = choice([
@@ -1482,14 +1482,14 @@ class Events(object):
                     if game.switches['birth_cooldown']:
                         chance = 0
                     else:
-                        chance = 15
+                        chance = 25
                 elif game.settings[
                         'no gendered breeding'] and cat_class.all_cats[
                             cat.mate].age != 'elder' and chance is not None:
                     if game.switches['birth_cooldown']:
                         chance = 0
                     else:
-                        chance = 15
+                        chance = 25
                 else:
                     chance = 0
             else:
@@ -1503,7 +1503,7 @@ class Events(object):
                 if game.switches['birth_cooldown']:
                     chance = 0
                 else:
-                    chance = 25
+                    chance = 50
             if not game.settings['no unknown fathers']:
                 chance = 0
 
@@ -1521,7 +1521,7 @@ class Events(object):
             elif self.living_cats < 10:
                 hit = randint(0, chance - 10)
             kits = choice([1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
-                            5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 9])
+                            5, 5, 5, 5, 6])
             if hit == 1 and cat.mate is not None:
                 game.cur_events_list.append(str(cat.name) + 'just found out that they were going to have kits with ' + str(cat_class.all_cats.get(cat.mate).name))
                 has_birth = True
