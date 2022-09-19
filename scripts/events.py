@@ -210,28 +210,38 @@ class Events(object):
             return
         name = str(cat.name)
         other_cat = choice(list(cat_class.all_cats.values()))
+        scar_chance = randint(0, 40)
+        clancats = int(self.living_cats)
         while cat == other_cat or other_cat.dead or other_cat.exiled:
             other_cat = choice(list(cat_class.all_cats.values()))
         other_name = str(other_cat.name)
         scar_text = []
+        if clancats > 45:
+            scar_chance = scar_chance + 20
+        elif clancats > 120:
+            scar_chance = scar_chance * 2
+        elif clancats > 300:
+            scar_chance = scar_chance + 80
+        else:
+            scar_chance = scar_chance
         if cat.age in ['adolescent', 'young adult']:
-            chance = randint(0, 50)
+            chance = scar_chance
         elif cat.age in ['adult', 'senior adult']:
-            chance = randint(0, 70)
+            chance = scar_chance + 10
         elif cat.age in [
                 'apprentice', 'medicine cat apprentice'
         ] and cat.mentor.ID == other_cat.ID and other_cat.trait in [
                 'bloodthirsty', 'ambitious', 'vengeful', 'sadistic', 'cold',
                 'tough', 'clumsy', 'controlling', 'fierce', 'petty', 'strict'
         ]:
-            chance = randint(0, 20)
+            chance = scar_chance - 15
         elif other_cat.status in ['leader', 'deputy'] and other_cat.trait in [
                 'bloodthirsty', 'ambitious', 'vengeful', 'sadistic', 'cold',
                 'tough', 'clumsy', 'controlling', 'fierce', 'petty', 'strict'
         ]:
-            chance = randint(0, 30)
+            chance = scar_chance
         else:
-            chance = randint(0, 90)
+            chance = scar_chance
         if chance == 1:
             if cat.specialty is None:
                 cat.specialty = choice([
@@ -274,9 +284,9 @@ class Events(object):
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
                     ]))
-                elif cat.specialty2 == 'SNAKE':
+                elif cat.specialty2 == 'SNAKE' and cat.specialty != 'SNAKE':
                     scar_text.append(f'{name} was bit by a snake but lived')
-                elif cat.specialty2 == 'TOETRAP':
+                elif cat.specialty2 == 'TOETRAP' and cat.specialty != 'TOETRAP':
                     scar_text.append(
                         f'{name} got their paw stuck in a twoleg trap and earned a scar'
                     )
@@ -464,11 +474,22 @@ class Events(object):
             game.cur_events_list.append(choice(scar_text))
 
     def handle_relationships(self, cat):
-        if randint(1, 50) == 1 and cat.status not in [
+        mate_chance = randint(1, 50)
+        if self.living_cats > 60:
+            mate_chance = mate_chance + 20
+        elif self.living_cats > 120:
+            mate_chance = mate_chance + 40
+        elif self.living_cats > 300:
+            mate_chance = mate_chance * 3
+        elif self.living_cats > 500:
+            mate_chance = mate_chance * 5
+        else:
+            mate_chance = mate_chance
+        if mate_chance == 1 and cat.status not in [
                 'kitten', 'apprentice', 'medicine cat apprentice',
                 'medicine cat'
         ] and cat.age in ['young adult', 'adult', 'senior adult'
-                          ] and cat.mate is None:
+                          ] and cat.moons > 14 and cat.mate is None:
             other_cat = choice(list(cat_class.all_cats.values()))
             parents = [cat.ID]
             if cat.parent1 is not None:
@@ -486,7 +507,7 @@ class Events(object):
                     'medicine cat'
             ] or other_cat.age not in [
                     'young adult', 'adult', 'senior adult'
-            ] or other_cat.mate is not None or other_cat.ID in cat.former_apprentices or cat.ID in other_cat.former_apprentices or not set(
+            ] or other_cat.mate is not None or other_cat.ID in cat.former_apprentices or cat.moons < 14 or cat.ID in other_cat.former_apprentices or not set(
                     parents).isdisjoint(set(other_parents)):
                 other_cat = choice(list(cat_class.all_cats.values()))
                 other_parents = [other_cat.ID]
@@ -525,6 +546,14 @@ class Events(object):
                 other_cat.relationships.append(
                     Relationship(other_cat, cat, True))
 
+        elif randint(1, 10) == 1:
+            other_cat = choice(list(cat_class.all_cats.values()))
+            if cat.mate == other_cat.ID and other_cat.dead == True:
+                game.cur_events_list.append(
+                    f'{str(cat.name)} will always love {str(other_cat.name)} but has decided to move on'
+                )
+                cat.mate = None
+                other_cat.mate = None
         elif randint(1, 40) == 1:
             other_cat = choice(list(cat_class.all_cats.values()))
             if cat.mate == other_cat.ID:
@@ -533,14 +562,7 @@ class Events(object):
                 )
                 cat.mate = None
                 other_cat.mate = None
-        elif randint(1, 2) == 1:
-            other_cat = choice(list(cat_class.all_cats.values()))
-            if cat.mate == other_cat.ID and other_cat.dead == True:
-                game.cur_events_list.append(
-                    f'{str(cat.name)} will always love {str(other_cat.name)} but has decided to move on'
-                )
-                cat.mate = None
-                other_cat.mate = None
+        
 
     def invite_new_cats(self, cat):
         chance = 100

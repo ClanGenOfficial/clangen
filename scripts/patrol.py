@@ -454,7 +454,7 @@ class Patrol(object):
                 ]),
             PatrolEvent(
                 301,
-                'Your patrol catches the scent of a fox',
+                'Your patrol comes catches the scent of a fox',
                 'Your patrol drives away the fox and her cubs',
                 'The mother fox fights to defend her cubs, and r_c is injured in the attack',
                 'Your patrol decides not to pursue the fox',
@@ -644,11 +644,6 @@ class Patrol(object):
                 'Your patrol decides not to confront the kittypet',
                 40,
                 10,
-                antagonize_text=
-                'Your patrol drives the kittypet off of the territory',
-                antagonize_fail_text=
-                'The kittypet is taken aback by their hostility '
-                'and decides that Clan life is not for them',
                 win_skills=['great speaker', 'excellent speaker']),
             PatrolEvent(
                 503,
@@ -660,10 +655,6 @@ class Patrol(object):
                 'They leave the wounded cat alone',
                 40,
                 10,
-                antagonize_text=
-                'Your patrol drives the cat off of the territory',
-                antagonize_fail_text=
-                'In an attempt to drive them off, one of your patrol members accidentally kills the wounded cat',
                 win_skills=['smart', 'very smart', 'extremely smart']),
             PatrolEvent(
                 504,
@@ -680,7 +671,7 @@ class Patrol(object):
                     'r_c finds an old friend of their\'s from when they were a loner',
                     'r_c invites their friend to join the Clan',
                     'r_c and their friend reminisce about old times',
-                    'r_c says farewell to their friend and rejoins the patrol', 40, 10)
+                    'r_c says farewell to their friend and rejoins the patrol')
             ])
 
         if self.patrol_random_cat.status == 'formerly a kittypet':
@@ -690,7 +681,7 @@ class Patrol(object):
                     'r_c finds an old friend of their\'s from when they were a kittypet',
                     'r_c invites their friend to join the Clan',
                     'r_c and their friend reminisce about old times',
-                    'r_c says farewell to their friend and rejoins the patrol', 40, 10)
+                    'r_c says farewell to their friend and rejoins the patrol')
             ])
 
         # status specific patrols
