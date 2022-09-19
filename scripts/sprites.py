@@ -175,6 +175,27 @@ class Sprites(object):
             sprites.make_group('Newscarsextra', (a, 1),
                                f'scarsextra{i}',
                                sprites_y=2)
+                               
+        # Accessories
+        for a, i in enumerate([
+            "MAPLE LEAF", "HOLLY", "BLUE BERRIES", "FORGET ME NOTS", "RYE STALK", "LAUREL"]):
+            sprites.make_group('medcatherbs', (a, 0), f'acc_herbs{i}')
+            sprites.make_group('medcatherbsextra', (a, 0), f'acc_herbsextra{i}', sprites_y=2)
+        for a, i in enumerate([
+            "BLUEBELLS", "NETTLE", "POPPY", "LAVENDER", "HERBS", "PETALS"]):
+            sprites.make_group('medcatherbs', (a, 1), f'acc_herbs{i}')
+            sprites.make_group('medcatherbsextra', (a, 1), f'acc_herbsextra{i}', sprites_y=2)
+        for a, i in enumerate([
+            "OAK LEAVES", "CATMINT", "MAPLE SEED", "JUNIPER"]):
+            sprites.make_group('medcatherbs', (a, 3), f'acc_herbs{i}')
+            sprites.make_group('medcatherbsextra', (a, 3), f'acc_herbsextra{i}', sprites_y=2)    
+        sprites.make_group('medcatherbs', (5, 2), 'acc_herbsDRY HERBS')
+        sprites.make_group('medcatherbsextra', (5, 2), 'acc_herbsextraDRY HERBS', sprites_y=2)
+        
+        for a, i in enumerate([
+            "RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS", "MOTH WINGS", "CICADA WINGS"]):
+            sprites.make_group('medcatherbs', (a, 2), f'acc_wild{i}')
+            sprites.make_group('medcatherbsextra', (a, 2), f'acc_wildextra{i}', sprites_y=2)
 
 
 sprites = Sprites(50)
@@ -192,14 +213,17 @@ for x in [
         'smokecolours', 'smokeextra', 'tickedcolors', 'tickedextra',
         'whitepatchesryos', 'whitepatchesryosextra', 'whitepatchesbeejeans',
         'whitepatchesbeejeansextra', 'Newscars', 'Newscarsextra',
-        'shaders', 'lineartdead'
+        'shaders', 'lineartdead', 'medcatherbs', 'medcatherbsextra'
+
 ]:
     sprites.spritesheet(f"sprites/{x}.png", x)
 
 for sprite in [
         'Paralyzed_lineart', 'singleparalyzed', 'speckledparalyzed',
         'tabbyparalyzed', 'whiteallparalyzed', 'eyesparalyzed',
-        'tabbyparalyzed', 'tortiesparalyzed', 'scarsparalyzed', 'skinparalyzed'
+        'tabbyparalyzed', 'tortiesparalyzed', 'scarsparalyzed', 'skinparalyzed',
+        'medcatherbsparalyzed'
+    
 ]:
     sprites.spritesheet(f"sprites/paralyzed/{sprite}.png", sprite)
 

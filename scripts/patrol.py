@@ -714,6 +714,7 @@ class Patrol(object):
                 ])
 
         # biome specific patrols
+
         if game.clan.biome == 'forest':
             possible_patrols.extend([
                 PatrolEvent(700, 

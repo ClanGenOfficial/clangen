@@ -17,6 +17,12 @@ class Events(object):
         self.enemy_clan = None
         self.living_cats = 0
         self.new_cat_invited = False
+        self.ceremony_accessory = False
+        game.switches['pregnancy'] = False
+        game.switches['birth_cooldown'] = False
+        if game.switches['birth_cooldown']:
+            birth_range = randint(6, 9)
+
 
     def one_moon(self):
         if game.switches['timeskip']:
@@ -38,16 +44,22 @@ class Events(object):
                     if cat.moons > randint(100, 200):
                         if choice([1, 2, 3, 4, 5]) == 1:
                             cat.dead = True
+                            game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently')
+
                     if cat.exiled and cat.status == 'leader' and randint(
                             1, 10) == 1:
                         game.clan.leader_lives -= 1
                         if game.clan.leader_lives <= 0:
                             cat.dead = True
+                            game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently')
+
                             game.clan.leader_lives = 0
                     elif cat.exiled and cat.status == 'leader' and randint(
                             1, 45) == 1:
                         game.clan.leader_lives -= 10
                         cat.dead = True
+                        game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently')
+
                         game.clan.leader_lives = 0
                 else:
                     cat.dead_for += 1
@@ -78,6 +90,9 @@ class Events(object):
             if game.clan.leader.dead or game.clan.leader.exiled:
                 game.cur_events_list.insert(
                     0, f"{game.clan.name}Clan has no leader!")
+            if game.switches['birth_cooldown']:
+                birth_range -= 1
+
         game.switches['timeskip'] = False
 
     # TODO Rename this here and in `one_moon`
@@ -90,6 +105,8 @@ class Events(object):
             self.invite_new_cats(cat)
         self.have_kits(cat)
         self.other_interactions(cat)
+        self.gain_accessories(cat)
+
         self.gain_scars(cat)
         self.handle_deaths(cat)
         self.check_age(cat)
@@ -166,17 +183,23 @@ class Events(object):
                 if cat.age != 'elder':
                     cat.age = cat_class.ages[cat_class.ages.index(cat.age) + 1]
                 if cat.status == 'kitten' and cat.age == 'adolescent':
+                    self.ceremony_accessory = True
                     cat.status_change('apprentice')
                     game.cur_events_list.append(
                         f'{str(cat.name)} has started their apprenticeship')
+                    self.gain_accessories(cat)
                     cat.update_mentor()
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
+                    self.ceremony_accessory = True
                     self._extracted_from_perform_ceremonies_19(
                         cat, 'warrior', ' has earned their warrior name')
+                    self.gain_accessories(cat)
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
+                    self.ceremony_accessory = True
                     self._extracted_from_perform_ceremonies_19(
                         cat, 'medicine cat',
                         ' has earned their medicine cat name')
+                    self.gain_accessories(cat)
                     game.clan.new_medicine_cat(cat)
                 elif cat.status == 'warrior' and cat.age == 'elder' and len(
                         cat.apprentice) < 1:
@@ -204,6 +227,76 @@ class Events(object):
         cat.status_change(arg1)
         cat.update_mentor()
         game.cur_events_list.append(f'{str(cat.name)}{arg2}')
+
+    def gain_accessories(self, cat):
+        if cat.accessory is not None:
+            return
+        name = str(cat.name)
+        other_cat = choice(list(cat_class.all_cats.values()))
+        while cat == other_cat or other_cat.dead or other_cat.exiled:
+            other_cat = choice(list(cat_class.all_cats.values()))
+        other_name = str(other_cat.name)
+        acc_text = []
+        chance = randint(0, 50)
+        if cat.age in ['kitten', 'adolescent']:
+            chance = randint(0, 70)
+        elif cat.age in ['young adult', 'adult', 'senior adult', 'elder']:
+            chance = randint(0, 150)
+        elif cat.trait in ['childish', 'lonesome', 'loving', 'playful', 'shameless', 'strange', 'troublesome']:
+            chance = randint(0, 40)
+        elif cat.status in ['medicine cat', 'medicine cat apprentice']:
+            chance = randint(0, 30)
+        if chance == 1:
+            if cat.accessory is None:
+                cat.accessory = choice([
+                    choice(plant_accessories),
+                    choice(wild_accessories)
+                ])
+                accessory = cat.accessory
+                if self.ceremony_accessory == True:
+                    acc_text.extend([f'{other_name} gives {name} something to adorn their pelt as congratulations', f'{name} decides to pick something to adorn their pelt as celebration'])
+                if cat.age != 'kitten':
+                    if cat.accessory in ["FORGET ME NOTS", "BLUEBELLS", "POPPY"]:
+                        if game.clan.current_season == 'Leaf-bare':
+                            acc_text.append(f'{name} found a mysterious flower growing in the {choice(["snow", "ice", "frost"])} and decided to wear it')
+                        else:
+                            acc_text.extend([f'{name} received a flower from {other_name} and decided to wear it on their pelt',
+                                            f'{name} found a pretty flower and decided to wear it on their pelt', f'A clanmate gave {name} a flower and they decided to wear it'
+                            ])
+                    elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                        acc_text.append(f'{name} found a bunch of pretty feathers and decided to wear them')
+                    elif cat.accessory in ["HERBS", "PETALS", "DRY_HERBS"]:
+                        acc_text.append(f'{name} always tries to groom themselves clean but they always seem to have something stuck in there')
+                    elif cat.accessory in plant_accessories and cat.status in ['medicine cat apprentice', 'medicine cat']:
+                        acc_text.extend([f'{name} decides to always bring {accessory.lower()} with them',
+                                        f'{accessory.lower()} is so important to {name} that they always carry it around',
+                                        f'{accessory.lower()} is vital for {name}, so they always have it on them'
+                        ])
+                    else:
+                        acc_text.extend([f'{name} finds something interesting and decides to wear it on their pelt', f'A clanmate gives {name} a pretty accessory and they decide to wear it on their pelt',
+                                        f'{name} finds something interesting while out on a walk and decides to wear it on their pelt', f'{name} finds {accessory.lower()} fascinating and decides to wear it on their pelt',
+                                        f'A clanmate gives {name} something to adorn their pelt as congratulations', f'{other_name} gives {name} a pretty accessory and they decide to wear it on their pelt'
+                        ])
+                else:
+                    if cat.accessory in ["FORGET ME NOTS", "BLUEBELLS", "POPPY"]:
+                        acc_text.extend([f'{name} received a flower from {other_name} and decided to wear it on their pelt',
+                                            f'{name} found a pretty flower and decided to wear it on their pelt', f'A clanmate gave {name} a flower and they decided to wear it'
+                            ])
+                    elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                        acc_text.append(f'{name} was playing with feathers earlier and decided to wear some of them')
+                    elif cat.accessory in ["HERBS", "PETALS", "DRYHERBS"]:
+                        acc_text.append(f'{name} is always groomed clean by their parents but there always seems be something stuck in there')
+                    else:    
+                        acc_text.extend([f'{name} seems to have picked something up while playing out in the camp', f'{name} finds something interesting and decides to wear it on their pelt',
+                                        f'A clanmate gives {name} a pretty accessory and they decide to wear it on their pelt', f'{other_name} gives {name} a pretty accessory and they decide to wear it on their pelt',
+                                        f'{name} is so cute that they are given {accessory.lower()} as a gift', f'{name} starts to wear {accessory.lower()} on their pelt after their friend gave it to them',
+                                        f'{name} was playing with {accessory.lower()} earlier and has decided to use it to adorn themselves'
+                        ])
+        if acc_text:
+            game.cur_events_list.append(choice(acc_text))
+            if self.ceremony_accessory:
+                self.ceremony_accessory = False   
+    
 
     def gain_scars(self, cat):
         if cat.specialty is not None and cat.specialty2 is not None or cat.age == 'kitten':
@@ -251,6 +344,9 @@ class Events(object):
                     choice(scars5)
                 ])
                 if cat.specialty == 'NOTAIL':
+                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                        cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -280,6 +376,9 @@ class Events(object):
                     choice(scars5)
                 ])
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
+                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                        cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -313,6 +412,9 @@ class Events(object):
             if cat.specialty is None:
                 cat.specialty = choice([choice(scars1), choice(scars2)])
                 if cat.specialty == 'NOTAIL':
+                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                        cat.accessory = None
+
                     scar_text.append(
                         f'{name} recklessly lost their tail to a ' + choice([
                             'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
@@ -343,6 +445,9 @@ class Events(object):
             elif cat.specialty2 is None:
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
+                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                        cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -375,6 +480,9 @@ class Events(object):
             if cat.specialty is None:
                 cat.specialty = choice([choice(scars1), choice(scars2)])
                 if cat.specialty == 'NOTAIL':
+                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                        cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -395,6 +503,9 @@ class Events(object):
             elif cat.specialty2 is None:
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
+                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                        cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -420,6 +531,9 @@ class Events(object):
             if cat.specialty is None:
                 cat.specialty = choice([choice(scars1), choice(scars2)])
                 if cat.specialty == 'NOTAIL':
+                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                        cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -446,6 +560,9 @@ class Events(object):
             elif cat.specialty2 is None:
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
+                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                        cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -554,7 +671,8 @@ class Events(object):
                 )
                 cat.mate = None
                 other_cat.mate = None
-        elif randint(1, 40) == 1:
+        elif randint(1, 100) == 1:
+
             other_cat = choice(list(cat_class.all_cats.values()))
             if cat.mate == other_cat.ID:
                 game.cur_events_list.append(
@@ -717,8 +835,8 @@ class Events(object):
                     Akit_text = ([
                         f'{parent1} finds an abandoned litter and decides to adopt them',
                         f'A loner leaves their litter to the clan. {str(parent1)} decides to adopt them as their own',
-                        f'A {str(choice(game.clan.all_clans).name)}Clan queen decides to leave their litter with you. {str(parent1)} adopts them'
-                    ])
+                        f'A {str(choice(game.clan.all_clans).name)}Clan queen decides to leave their litter with you. {str(parent1)} takes them as their own'
+
                 else:
                     Akit_text = ([
                         f'{parent1} finds an abandoned litter and decides to adopt them as their own',
@@ -799,10 +917,13 @@ class Events(object):
         name = str(cat.name)
         other_name = str(other_cat.name)
         if cat.status in ['warrior', 'deputy'] and randint(
-                1, 4) == 1 and game.settings.get('retirement') is True:
+                1, 15) == 1 and game.settings.get('retirement') is True:
             game.cur_events_list.append(
                 f'{name} retires to the elders den after injuries sustained defending {other_name}'
             )
+            if cat.status == 'deputy':
+                game.clan.deputy = None
+
             cat.status_change('elder')
             return
         if cat.status == 'kitten':
@@ -1186,18 +1307,13 @@ class Events(object):
                     str(cat_class.all_cats.get(cat.mate).name))
                 self.dies(cat)
                 return
+            if cat.status == 'leader' or other_cat.status == 'leader':
+                game.clan.leader_lives -= 1
+                game.cur_events_list.append(choice(cause_of_death) + ' and the leader lost a life')
+            else:
+                game.cur_events_list.append(choice(cause_of_death))
             self.dies(cat)
             self.dies(other_cat)
-            if cat.status != 'leader':
-                game.cur_events_list.append(choice(cause_of_death))
-            elif cat.status == 'leader' and other_cat.status != 'leader':
-                game.clan.leader_lives -= 1
-                game.cur_events_list.append(
-                    choice(cause_of_death) + ' and the leader lost a life')
-            elif other_cat.status == 'leader' and cat.status != 'leader':
-                game.clan.leader_lives -= 1
-                game.cur_events_list.append(
-                    choice(cause_of_death) + ' and the leader lost a life')
 
         elif randint(1, 100) == 1:  #Death with Personalities
             murder_chance = 20
@@ -1380,11 +1496,18 @@ class Events(object):
                 elif cat_class.all_cats[
                         cat.mate].gender != cat.gender and cat_class.all_cats[
                             cat.mate].age != 'elder':
-                    chance = 25
+                    if game.switches['birth_cooldown']:
+                        chance = 0
+                    else:
+                        chance = 25
                 elif game.settings[
                         'no gendered breeding'] and cat_class.all_cats[
                             cat.mate].age != 'elder' and chance is not None:
-                    chance = 25
+                    if game.switches['birth_cooldown']:
+                        chance = 0
+                    else:
+                        chance = 25
+
                 else:
                     chance = 0
             else:
@@ -1395,7 +1518,11 @@ class Events(object):
                 cat.mate = None
         else:
             if cat.moons > 14:
-                chance = 50
+                if game.switches['birth_cooldown']:
+                    chance = 0
+                else:
+                    chance = 50
+
             if not game.settings['no unknown fathers']:
                 chance = 0
 
@@ -1412,19 +1539,17 @@ class Events(object):
                 hit = randint(0, chance + 20)
             elif self.living_cats < 10:
                 hit = randint(0, chance - 10)
-            kits = choice([1, 1, 2, 2, 3, 3, 4])
+            kits = choice([1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+                            5, 5, 5, 5, 6])
             if hit == 1 and cat.mate is not None:
-                if not cat.no_kits and not cat_class.all_cats.get(
-                        cat.mate).no_kits:
+                game.cur_events_list.append(str(cat.name) + 'just found out that they were going to have kits with ' + str(cat_class.all_cats.get(cat.mate).name))
+                has_birth = True
+                if not cat.no_kits and not cat_class.all_cats.get(cat.mate).no_kits:
                     if game.cur_events_list is not None:
-                        game.cur_events_list.append(
-                            str(cat.name) + ' had a litter of ' + str(kits) +
-                            ' kit(s)')
+                        game.cur_events_list.append(str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s) with ' + str(cat_class.all_cats.get(cat.mate).name))
                     else:
-                        game.cur_events_list = [
-                            str(cat.name) + ' had a litter of ' + str(kits) +
-                            ' kit(s)'
-                        ]
+                        game.cur_events_list = str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s) with' + str(cat_class.all_cats.get(cat.mate).name)
+
 
                     for kit in range(kits):
                         kit = Cat(parent1=cat.ID, parent2=cat.mate, moons=0)
@@ -1435,42 +1560,124 @@ class Events(object):
                             if the_cat.dead or the_cat.exiled:
                                 continue
                             if the_cat.ID in [kit.parent1, kit.parent2]:
-                                the_cat.relationships.append(
-                                    Relationship(the_cat, kit, False, True))
-                                relationships.append(
-                                    Relationship(kit, the_cat, False, True))
+                                the_cat.relationships.append(Relationship(the_cat,kit,False,True))
+                                relationships.append(Relationship(kit,the_cat,False,True))
                             else:
-                                the_cat.relationships.append(
-                                    Relationship(the_cat, kit))
-                                relationships.append(Relationship(
-                                    kit, the_cat))
+                                the_cat.relationships.append(Relationship(the_cat,kit))
+                                relationships.append(Relationship(kit,the_cat))
                         kit.relationships = relationships
                         game.clan.add_cat(kit)
+                        
             elif hit == 1 and not cat.no_kits:
-                game.cur_events_list.append(
-                    str(cat.name) + ' had a litter of ' + str(kits) +
-                    ' kit(s)')
+                game.cur_events_list.append(str(cat.name) + 'just found out that they were going to have kits')
+                has_birth = True
+                name = str(cat.name)
+                loner_name = choice(names.loner_names)
+                warrior_name = names.prefix + names.suffix
+                warrior_name_two = names.prefix + names.suffix
+                mate_text= []
+                mate_textEX = []
+                other_parent = choice(list(cat_class.all_cats.values()))
+                while cat == other_parent or other_parent.dead or other_parent.age in ['kitten', 'adolescent', 'elder']\
+                or not game.settings['no gendered breeding'] and cat.gender == other_parent.gender or not game.settings['affair'] and other_parent.mate != None:
+                        other_parent = choice(list(cat_class.all_cats.values()))
+                parentless = randint(0, 2)
+                is_parent = randint(0, 3)
+                
+                if parentless == 1:
+                    has_birth = True
+                    mate_text.extend([f'{name} had a litter of {str(kits)} kit(s)', f'{name} had a secret litter of {str(kits)} kit(s)', f'{name} had a litter of {str(kits)} kit(s) with an unknown partner',
+                                        f'{name} had a litter of {str(kits)} kit(s) and refused to talk about their progenitor'])
+                    game.cur_events_list.append(choice(mate_text))
+                    for kit in range(kits):
+                        kit = Cat(parent1=cat.ID, moons=0)
+                        #create and update relationships
+                        relationships = []
+                        for cat_id in game.clan.clan_cats:
+                            the_cat = cat_class.all_cats.get(cat_id)
+                            if the_cat.dead or the_cat.exiled:
+                                continue
+                            if the_cat.ID is kit.parent1:
+                                the_cat.relationships.append(Relationship(the_cat,kit,False,True))
+                                relationships.append(Relationship(kit,the_cat,False,True))
+                            else:
+                                the_cat.relationships.append(Relationship(the_cat,kit))
+                                relationships.append(Relationship(kit,the_cat))
+                        kit.relationships = relationships
+                        game.clan.add_cat(kit)
+                        
+                else:
+                    has_birth = True
+                    if is_parent == 1:
+                        mate_textEX.extend([f'{name} had a litter of {str(kits)} kit(s) with a ' + choice(['loner', 'rogue', 'kittypet']) + ' named ' + str(loner_name),
+                                          f'{name} had a secret litter of {str(kits)} kit(s) with a ' + choice(['loner', 'rogue', 'kittypet']) + ' named ' + str(loner_name)])
 
-                for kit in range(kits):
-                    kit = Cat(parent1=cat.ID, moons=0)
-                    #create and update relationships
-                    relationships = []
-                    for cat_id in game.clan.clan_cats:
-                        the_cat = cat_class.all_cats.get(cat_id)
-                        if the_cat.dead or the_cat.exiled:
-                            continue
-                        if the_cat.ID is kit.parent1:
-                            the_cat.relationships.append(
-                                Relationship(the_cat, kit, False, True))
-                            relationships.append(
-                                Relationship(kit, the_cat, False, True))
+                    elif is_parent == 2 and len(game.clan.all_clans) > 0:
+                        mate_textEX.extend([f'{name} had a secret litter of {str(kits)} kit(s) with a ' + choice(game.clan.all_clans).name + f'Clan warrior named {str(warrior_name)}',
+                                         f'{name} had a secret litter of {str(kits)} kit(s) with ' + choice(game.clan.all_clans).name + f'Clan\'s deputy {str(warrior_name)}',
+                                         f'{name} had a secret litter of {str(kits)} kit(s) with {str(warrior_name)} of ' + choice(game.clan.all_clans).name + 'Clan',
+                                         f'{name} had a secret litter of {str(kits)} kit(s) with ' + choice(game.clan.all_clans).name + f'Clan\'s leader {str(names.prefix)}star'])
+
+                    elif is_parent == 2 and len(game.clan.all_clans) == 0:
+                        mate_textEX.extend([f'{name} had a secret litter of {str(kits)} kit(s) with another Clan\'s warrior',
+                                            f'{name} had a secret litter of {str(kits)} kit(s) with a warrior named {str(warrior_name_two)}',
+                                            f'{name} had a secret litter of {str(kits)} kit(s) with {str(warrior_name_two)} from another Clan\'s'])                          
+                    else:
+                        if other_parent.status == 'medicine cat':
+                            mate_textEX.extend([f'{name} had a secret litter of {str(kits)} kit(s) with {str(other_parent.name)}',
+                                        f'{name} had a secret litter of {str(kits)} kit(s) with the medicine cat {str(other_parent.name)}',
+                                        f'{name} had a litter of {str(kits)} kit(s) with {str(other_parent.name)}',
+                                        f'{name} had a litter of {str(kits)} kit(s) with the medicine cat {str(other_parent.name)}'])
+                        else:        
+                            mate_textEX.append(str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s) with ' + str(other_parent.name))
+                    game.cur_events_list.append(choice(mate_textEX))      
+                    for kit in range(kits):
+                        if is_parent == 1:
+                            kit = Cat(parent1=cat.ID, moons=0)
+                        elif is_parent == 2 and len(game.clan.all_clans) > 0:
+                            kit = Cat(parent1=cat.ID, moons=0)
+                        elif is_parent == 2 and len(game.clan.all_clans) == 0:
+                            kit = Cat(parent1=cat.ID, moons=0)
                         else:
-                            the_cat.relationships.append(
-                                Relationship(the_cat, kit))
-                            relationships.append(Relationship(kit, the_cat))
-                    kit.relationships = relationships
-                    game.clan.add_cat(kit)
-
+                            kit = Cat(parent1=cat.ID, parent2=other_parent.ID, moons=0)  
+                        #create and update relationships
+                        relationships = []
+                        for cat_id in game.clan.clan_cats:
+                            the_cat = cat_class.all_cats.get(cat_id)
+                            if the_cat.dead or the_cat.exiled:
+                                continue
+                            if kit.parent2 != None:
+                                if randint(0, 5) == 1:
+                                    if the_cat.ID in [kit.parent1, kit.parent2]:
+                                        the_cat.relationships.append(Relationship(the_cat,kit,False,True))
+                                        relationships.append(Relationship(kit,the_cat,False,True))
+                                    else:
+                                        the_cat.relationships.append(Relationship(the_cat,kit))
+                                        relationships.append(Relationship(kit,the_cat))
+                                else:
+                                    if the_cat.ID is kit.parent1:
+                                        the_cat.relationships.append(Relationship(the_cat,kit,False,True))
+                                        relationships.append(Relationship(kit,the_cat,False,True))
+                                    else:
+                                        the_cat.relationships.append(Relationship(the_cat,kit))
+                                        relationships.append(Relationship(kit,the_cat))
+                            else:
+                                if the_cat.ID is kit.parent1:
+                                    the_cat.relationships.append(Relationship(the_cat,kit,False,True))
+                                    relationships.append(Relationship(kit,the_cat,False,True))
+                                else:
+                                    the_cat.relationships.append(Relationship(the_cat,kit))
+                                    relationships.append(Relationship(kit,the_cat))
+                        kit.relationships = relationships
+                        game.clan.add_cat(kit)
+    
+    def had_kits(self):
+        if has_birth is True:
+            game.switches['birth_cooldown'] = True
+            has_birth = False
+        if birth_range <= 0:
+            game.switches['birth_cooldown'] = False
+    
     def check_age(self, cat):
         if 0 <= cat.moons <= 5:
             cat.age = 'kitten'

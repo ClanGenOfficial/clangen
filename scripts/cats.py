@@ -223,6 +223,20 @@ class Cat(object):
         else:
             self.specialty2 = None
 
+        # Accessories
+        accessory_choice = randint(0, 35)
+        if self.age in ['kitten', 'adolescent']:
+            accessory_choice = randint(0, 15)
+        elif self.age in ['young adult', 'adult']:    
+            accessory_choice = randint(0, 50)
+        if accessory_choice == 1:
+            self.accessory = choice([
+                choice(plant_accessories),
+                choice(wild_accessories)
+            ])
+        else:
+            self.accessory = None
+        
         # random event
         if self.pelt is not None:
             if self.pelt.length != 'long':
@@ -272,6 +286,30 @@ class Cat(object):
             self.white_patches = None
             self.pattern = None
 
+        if self.calicobase == None:
+            if self.pattern != None:
+                if self.pattern in [
+                        'FADEDTHREE', 'FADEDFOUR', 'BLUETHREE', 'BLUEFOUR'
+                ] and self.pelt.name == "Calico":
+                    self.calicobase = "tabby"
+                elif self.pattern in [
+                        'FADEDTHREE', 'FADEDFOUR', 'BLUETHREE', 'BLUEFOUR'
+                ] and self.pelt.name == "Calico2":
+                    self.calicobase = "tabby2"
+                else:
+                    self.calicobase = "single"
+        if self.calicocolour == None:
+            if self.pattern != None:
+                if self.pattern in ['ONE', 'TWO', 'THREE', 'FOUR']:
+                    self.calicocolour = choice(["BLACK", "BROWN", "DARKBROWN", "GOLDEN"])
+                elif self.pattern in [
+                        'FADEDONE', 'FADEDTWO', 'FADEDTHREE', 'FADEDFOUR'
+                ]:
+                    self.calicocolour = choice(["PALEGREY", "LIGHTBROWN", "SILVER", "GREY", "GOLDEN"])
+                else:
+                    self.calicocolour = choice(["BROWN", "GOLDEN", "GREY", "DARKGREY"])
+
+   
         # Sprite sizes
         self.sprite = None
         self.big_sprite = None
@@ -305,29 +343,8 @@ class Cat(object):
         self.no_kits = False
         self.exiled = False
         if self.genderalign == None:
-            self.genderalign = self.gender
-        if self.calicobase == None:
-            if self.pattern != None:
-                if self.pattern in [
-                        'FADEDTHREE', 'FADEDFOUR', 'BLUETHREE', 'BLUEFOUR'
-                ] and self.pelt.name == "Calico":
-                    self.calicobase = "tabby"
-                elif self.pattern in [
-                        'FADEDTHREE', 'FADEDFOUR', 'BLUETHREE', 'BLUEFOUR'
-                ] and self.pelt.name == "Calico2":
-                    self.calicobase = "tabby2"
-                else:
-                    self.calicobase = "single"
-        if self.calicocolour == None:
-            if self.pattern != None:
-                if self.pattern in ['ONE', 'TWO', 'THREE', 'FOUR']:
-                    self.calicocolour = "BLACK"
-                elif self.pattern in [
-                        'FADEDONE', 'FADEDTWO', 'FADEDTHREE', 'FADEDFOUR'
-                ]:
-                    self.calicocolour = "BROWN"
-                else:
-                    self.calicocolour = "GREY"
+            self.genderalign = self.gender        
+
 
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
@@ -2440,10 +2457,37 @@ class Cat(object):
                     sprites.sprites['scars' + self.specialty2 +
                                     str(self.age_sprites[self.age])], (0, 0))
             
-
+        game.switches[
+        'error_message'] = 'There was an error loading a cat\'s accessory. Last cat read was ' + str(
+            self)                            
+        # draw accessories        
+        if self.pelt.length == 'long' and self.status not in [
+                'kitten', 'apprentice', 'medicine cat apprentice'
+        ] or self.age == 'elder':
+            if self.accessory in plant_accessories:
+                new_sprite.blit(
+                    sprites.sprites['acc_herbsextra' + self.accessory +
+                                    str(self.age_sprites[self.age])], (0, 0))
+            elif self.accessory in wild_accessories:
+                new_sprite.blit(
+                    sprites.sprites['acc_wildextra' + self.accessory +
+                                    str(self.age_sprites[self.age])], (0, 0))
+        else:
+            if self.accessory in plant_accessories:
+                new_sprite.blit(
+                    sprites.sprites['acc_herbs' + self.accessory +
+                                    str(self.age_sprites[self.age])], (0, 0))
+            elif self.accessory in wild_accessories:
+                new_sprite.blit(
+                    sprites.sprites['acc_wild' + self.accessory +
+                                    str(self.age_sprites[self.age])], (0, 0))
+        game.switches[
+            'error_message'] = 'There was an error loading a cat\'s skin and second set of scar sprites. Last cat read was ' + str(
+                self)
         game.switches[
             'error_message'] = 'There was an error reversing a cat\'s sprite. Last cat read was ' + str(
                 self)
+                
         # reverse, if assigned so
         if self.reverse:
             new_sprite = pygame.transform.flip(new_sprite, True, False)
@@ -2529,6 +2573,9 @@ class Cat(object):
             # mate -- dead  -- dead sprite
             data += str(x.mate) + ',' + str(x.dead) + ',' + str(
                 x.age_sprites['dead'])
+            
+            #accessories
+            data += ',' + str(x.accessory)
 
             # scar 2
             data += ',' + str(x.specialty2)
@@ -2690,12 +2737,16 @@ class Cat(object):
                         5], attr[21], attr[24]
 
                     if len(attr) > 29:
-                        the_cat.specialty2 = attr[29]
+                        the_cat.accessory = attr[29]
+                    
+                    if len(attr) > 30:
+                        the_cat.specialty2 = attr[30]
                     else:
                         the_cat.specialty2 = None
 
-                    if len(attr) > 30:
-                        the_cat.experience = int(attr[30])
+                    if len(attr) > 31:
+                        the_cat.experience = int(attr[31])
+
                         experiencelevels = [
                             'very low', 'low', 'slightly low', 'average',
                             'somewhat high', 'high', 'very high', 'master',
@@ -2717,48 +2768,49 @@ class Cat(object):
                             # Is the cat dead
                             the_cat.dead = attr[27]
                             the_cat.age_sprites['dead'] = attr[28]
-                    if len(attr) > 31:
-                        the_cat.dead_for = int(attr[31])
+                    if len(attr) > 32:
+                        the_cat.dead_for = int(attr[32])
                     the_cat.skill = attr[22]
-                    if len(attr) > 32 and attr[32] is not None:
-                        the_cat.apprentice = attr[32].split(';')
-                    if len(attr) > 33:
-                        if (attr[33] != True or attr[33] != False):
-                            the_cat.paralyzed = False
-                        else:
-                            the_cat.paralyzed = bool(attr[33])
+                    if len(attr) > 33 and attr[33] is not None:
+                        the_cat.apprentice = attr[33].split(';')
                     if len(attr) > 34:
                         if (attr[34] != True or attr[34] != False):
-                            the_cat.no_kits = False
+                            the_cat.paralyzed = False
                         else:
-                            the_cat.no_kits = bool(attr[34])
+                            the_cat.paralyzed = bool(attr[34])
                     if len(attr) > 35:
                         if (attr[35] != True or attr[35] != False):
+                            the_cat.no_kits = False
+                        else:
+                            the_cat.no_kits = bool(attr[35])
+                    if len(attr) > 36:
+                        if (attr[36] != True or attr[36] != False):
                             the_cat.exiled = False
                         else:
-                            the_cat.exiled = bool(attr[35])
-                    if len(attr) > 36:
-                        if attr[36] != True or attr[36] != False or attr[
-                                36] != '' or attr[36] != None:
-                            the_cat.genderalign = attr[36]
+                            the_cat.exiled = bool(attr[36])
+                    if len(attr) > 37:
+                        if attr[37] != True or attr[37] != False or attr[
+                                37] != '' or attr[37] != None:
+                            the_cat.genderalign = attr[37]
                         else:
                             the_cat.genderalign = None
-                    if len(attr) > 37:
-                        if attr[37] not in [
+                    if len(attr) > 38:
+                        if attr[38] not in [
+
                                 'None', 'tabby', 'tabby2', 'single', 'False',
                                 'True'
                         ]:
                             the_cat.calicobase = 'single'
                         else:
-                            the_cat.calicobase = attr[37]
-                    if len(attr) > 38:
-                        if attr[38] not in ['BLACK', 'BROWN', 'GREY']:
+                            the_cat.calicobase = attr[38]
+                    if len(attr) > 39:
+                        if attr[39] not in ['BLACK', 'BROWN', 'GREY']:
                             the_cat.calicocolour = 'BLACK'
                         else:
-                            the_cat.calicocolour = attr[38]
-                    if len(attr) > 39 and attr[39] is not None:
+                            the_cat.calicocolour = attr[39]
+                    if len(attr) > 40 and attr[40] is not None:
                         try:
-                            the_cat.former_apprentices = attr[39].split(';')
+                            the_cat.former_apprentices = attr[40].split(';')
                         except:
                             the_cat.former_apprentices = []
 

@@ -1681,6 +1681,9 @@ class ProfileScreen(Screens):
         verdana_small.text('fur length: ' + the_cat.pelt.length,
                            (300, 230 + count * 15))
         count += 1  # PELT LENGTH
+        verdana_small.text('accessory: ' + str(the_cat.accessory).lower(),
+                           (300, 230 + count * 15))
+        count += 1  # accessory
 
         # PARENTS
         if the_cat.parent1 is None:

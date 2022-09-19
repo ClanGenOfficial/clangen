@@ -340,6 +340,13 @@ scars4 = [
 ]
 scars5 = ["SNAKE"]
 
+plant_accessories = ["MAPLE LEAF", "HOLLY", "BLUE BERRIES", "FORGET ME NOTS", "RYE STALK", "LAUREL",
+                    "BLUEBELLS", "NETTLE", "POPPY", "LAVENDER", "HERBS", "PETALS", "DRY HERBS",
+                    "OAK LEAVES", "CATMINT", "MAPLE SEED", "JUNIPER"
+]
+wild_accessories = ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS", "MOTH WINGS", "CICADA WINGS"
+]
+
 pelt_names_F = [
     "SingleColour", "SingleColour", "TwoColour", "Tabby", "Tortie", "Calico",
     "Tabby", "TwoColour", "Speckled", "Tabby2", "Speckled2", 'Tortie2',
