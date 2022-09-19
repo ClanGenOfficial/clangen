@@ -197,6 +197,7 @@ class Sprites(object):
             sprites.make_group('medcatherbs', (a, 2), f'acc_wild{i}')
             sprites.make_group('medcatherbsextra', (a, 2), f'acc_wildextra{i}', sprites_y=2)
 
+
 sprites = Sprites(50)
 tiles = Sprites(64)
 
@@ -213,6 +214,7 @@ for x in [
         'whitepatchesryos', 'whitepatchesryosextra', 'whitepatchesbeejeans',
         'whitepatchesbeejeansextra', 'Newscars', 'Newscarsextra',
         'shaders', 'lineartdead', 'medcatherbs', 'medcatherbsextra'
+
 ]:
     sprites.spritesheet(f"sprites/{x}.png", x)
 
@@ -221,6 +223,7 @@ for sprite in [
         'tabbyparalyzed', 'whiteallparalyzed', 'eyesparalyzed',
         'tabbyparalyzed', 'tortiesparalyzed', 'scarsparalyzed', 'skinparalyzed',
         'medcatherbsparalyzed'
+    
 ]:
     sprites.spritesheet(f"sprites/paralyzed/{sprite}.png", sprite)
 

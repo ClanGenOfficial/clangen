@@ -343,8 +343,8 @@ class Cat(object):
         self.no_kits = False
         self.exiled = False
         if self.genderalign == None:
-            self.genderalign = self.gender
-        
+            self.genderalign = self.gender        
+
 
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
@@ -2576,6 +2576,7 @@ class Cat(object):
             
             #accessories
             data += ',' + str(x.accessory)
+
             # scar 2
             data += ',' + str(x.specialty2)
             # experience
@@ -2745,6 +2746,7 @@ class Cat(object):
 
                     if len(attr) > 31:
                         the_cat.experience = int(attr[31])
+
                         experiencelevels = [
                             'very low', 'low', 'slightly low', 'average',
                             'somewhat high', 'high', 'very high', 'master',
@@ -2794,6 +2796,7 @@ class Cat(object):
                             the_cat.genderalign = None
                     if len(attr) > 38:
                         if attr[38] not in [
+
                                 'None', 'tabby', 'tabby2', 'single', 'False',
                                 'True'
                         ]:

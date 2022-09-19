@@ -23,6 +23,7 @@ class Events(object):
         if game.switches['birth_cooldown']:
             birth_range = randint(6, 9)
 
+
     def one_moon(self):
         if game.switches['timeskip']:
             game.switches['save_clan'] = False
@@ -44,18 +45,21 @@ class Events(object):
                         if choice([1, 2, 3, 4, 5]) == 1:
                             cat.dead = True
                             game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently')
+
                     if cat.exiled and cat.status == 'leader' and randint(
                             1, 10) == 1:
                         game.clan.leader_lives -= 1
                         if game.clan.leader_lives <= 0:
                             cat.dead = True
                             game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently')
+
                             game.clan.leader_lives = 0
                     elif cat.exiled and cat.status == 'leader' and randint(
                             1, 45) == 1:
                         game.clan.leader_lives -= 10
                         cat.dead = True
                         game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently')
+
                         game.clan.leader_lives = 0
                 else:
                     cat.dead_for += 1
@@ -88,6 +92,7 @@ class Events(object):
                     0, f"{game.clan.name}Clan has no leader!")
             if game.switches['birth_cooldown']:
                 birth_range -= 1
+
         game.switches['timeskip'] = False
 
     # TODO Rename this here and in `one_moon`
@@ -101,6 +106,7 @@ class Events(object):
         self.have_kits(cat)
         self.other_interactions(cat)
         self.gain_accessories(cat)
+
         self.gain_scars(cat)
         self.handle_deaths(cat)
         self.check_age(cat)
@@ -291,6 +297,7 @@ class Events(object):
             if self.ceremony_accessory:
                 self.ceremony_accessory = False   
     
+
     def gain_scars(self, cat):
         if cat.specialty is not None and cat.specialty2 is not None or cat.age == 'kitten':
             return
@@ -339,6 +346,7 @@ class Events(object):
                 if cat.specialty == 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -370,6 +378,7 @@ class Events(object):
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -405,6 +414,7 @@ class Events(object):
                 if cat.specialty == 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
                     scar_text.append(
                         f'{name} recklessly lost their tail to a ' + choice([
                             'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
@@ -437,6 +447,7 @@ class Events(object):
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -471,6 +482,7 @@ class Events(object):
                 if cat.specialty == 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -493,6 +505,7 @@ class Events(object):
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -520,6 +533,7 @@ class Events(object):
                 if cat.specialty == 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -548,6 +562,7 @@ class Events(object):
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -657,6 +672,7 @@ class Events(object):
                 cat.mate = None
                 other_cat.mate = None
         elif randint(1, 100) == 1:
+
             other_cat = choice(list(cat_class.all_cats.values()))
             if cat.mate == other_cat.ID:
                 game.cur_events_list.append(
@@ -820,7 +836,7 @@ class Events(object):
                         f'{parent1} finds an abandoned litter and decides to adopt them',
                         f'A loner leaves their litter to the clan. {str(parent1)} decides to adopt them as their own',
                         f'A {str(choice(game.clan.all_clans).name)}Clan queen decides to leave their litter with you. {str(parent1)} takes them as their own'
-                    ])
+
                 else:
                     Akit_text = ([
                         f'{parent1} finds an abandoned litter and decides to adopt them as their own',
@@ -907,6 +923,7 @@ class Events(object):
             )
             if cat.status == 'deputy':
                 game.clan.deputy = None
+
             cat.status_change('elder')
             return
         if cat.status == 'kitten':
@@ -1490,6 +1507,7 @@ class Events(object):
                         chance = 0
                     else:
                         chance = 25
+
                 else:
                     chance = 0
             else:
@@ -1504,6 +1522,7 @@ class Events(object):
                     chance = 0
                 else:
                     chance = 50
+
             if not game.settings['no unknown fathers']:
                 chance = 0
 
@@ -1530,6 +1549,7 @@ class Events(object):
                         game.cur_events_list.append(str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s) with ' + str(cat_class.all_cats.get(cat.mate).name))
                     else:
                         game.cur_events_list = str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s) with' + str(cat_class.all_cats.get(cat.mate).name)
+
 
                     for kit in range(kits):
                         kit = Cat(parent1=cat.ID, parent2=cat.mate, moons=0)
