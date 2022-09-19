@@ -836,7 +836,7 @@ class Events(object):
                         f'{parent1} finds an abandoned litter and decides to adopt them',
                         f'A loner leaves their litter to the clan. {str(parent1)} decides to adopt them as their own',
                         f'A {str(choice(game.clan.all_clans).name)}Clan queen decides to leave their litter with you. {str(parent1)} takes them as their own'
-
+                    ])
                 else:
                     Akit_text = ([
                         f'{parent1} finds an abandoned litter and decides to adopt them as their own',
@@ -1542,7 +1542,7 @@ class Events(object):
             kits = choice([1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
                             5, 5, 5, 5, 6])
             if hit == 1 and cat.mate is not None:
-                game.cur_events_list.append(str(cat.name) + 'just found out that they were going to have kits with ' + str(cat_class.all_cats.get(cat.mate).name))
+                game.cur_events_list.append(str(cat.name) + ' just found out that they were going to have kits with ' + str(cat_class.all_cats.get(cat.mate).name))
                 has_birth = True
                 if not cat.no_kits and not cat_class.all_cats.get(cat.mate).no_kits:
                     if game.cur_events_list is not None:
@@ -1569,7 +1569,7 @@ class Events(object):
                         game.clan.add_cat(kit)
                         
             elif hit == 1 and not cat.no_kits:
-                game.cur_events_list.append(str(cat.name) + 'just found out that they were going to have kits')
+                game.cur_events_list.append(str(cat.name) + ' just found out that they were going to have kits')
                 has_birth = True
                 name = str(cat.name)
                 loner_name = choice(names.loner_names)
@@ -1675,7 +1675,7 @@ class Events(object):
         if has_birth is True:
             game.switches['birth_cooldown'] = True
             has_birth = False
-        if birth_range <= 0:
+        if self.birth_range <= 0:
             game.switches['birth_cooldown'] = False
     
     def check_age(self, cat):
