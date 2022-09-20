@@ -22,6 +22,7 @@ class Events(object):
         game.switches['birth_cooldown'] = False
         if game.switches['birth_cooldown']:
             birth_range = randint(6, 9)
+        
 
 
     def one_moon(self):
@@ -309,6 +310,10 @@ class Events(object):
             other_cat = choice(list(cat_class.all_cats.values()))
         other_name = str(other_cat.name)
         scar_text = []
+        clan_has_kits = any(
+                str(cat.status) in "kitten"
+                and not cat.dead and not cat.exiled
+                for cat in cat_class.all_cats.values())
         if clancats > 45:
             scar_chance = scar_chance + 20
         elif clancats > 120:
@@ -390,12 +395,15 @@ class Events(object):
                         f'{name} got their paw stuck in a twoleg trap and earned a scar'
                     )
                 else:
-                    scar_text.extend([
+                    if clan_has_kits == True:
+                        scar_text.extend([
+                        f'{name} earned a scar protecting the kits'])
+                    else:
+                        scar_text.extend([
                         f'{name} earned a scar fighting a ' + choice([
                             'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                             'enemy warrior', 'badger'
                         ]), f'{name} earned a scar defending the territory',
-                        f'{name} earned a scar protecting the kits',
                         f'{name} is injured after falling into a river',
                         f'{name} is injured by enemy warriors after accidentally wandering over the border',
                         f'{name} is injured after messing with a twoleg object',
@@ -421,21 +429,24 @@ class Events(object):
                             'enemy warrior', 'badger', 'tree', 'twoleg trap'
                         ]) + ' encouraged by their mentor')
                 else:
-                    scar_text.extend([
+                    if clan_has_kits == True:
+                        scar_text.extend([
+                        f'{name} earned a scar protecting the kits'])
+                    else:
+                        scar_text.extend([
                         f'{name} earned a scar  recklessly fighting a ' +
                         choice([
                             'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                             'enemy warrior', 'badger'
                         ]) + ' encouraged by their mentor',
                         f'{name} earned a scar for not defending the territory well enough',
-                        f'{name} earned a scar protecting the kits',
                         f'{name} is injured after being pushed into a river',
                         f'{name} is punished by their mentor after accidentally wandering over the border',
                         f'{name} is injured by their mentor after being caught messing with a twoleg object'
                         f'{name} is injured by their mentor while practicing with their claws out',
                         f'{name}\' mentor punished them for disobeying',
                         f'{name} gained a scar while fighting their mentor',
-                        f'{name} is injured while practicing their batle moves with '
+                        f'{name} is injured while practicing their battle moves with '
                         + other_name,
                         f'{name} is injured after a fight broke out with ' +
                         other_name,
@@ -453,14 +464,17 @@ class Events(object):
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
                     ]) + ' encouraged by their mentor')
                 else:
-                    scar_text.extend([
+                    if clan_has_kits == True:
+                        scar_text.extend([
+                        f'{name} earned a scar protecting the kits'])
+                    else:
+                        scar_text.extend([
                         f'{name} earned a scar recklessly fighting a ' +
                         choice([
                             'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                             'enemy warrior', 'badger'
                         ]) + ' encouraged by their mentor',
                         f'{name} earned a scar for not defending the territory well enough',
-                        f'{name} earned a scar protecting the kits',
                         f'{name} is injured after being pushed into a river',
                         f'{name} is punished by their mentor after accidentally wandering over the border',
                         f'{name} is injured by their mentor after being caught messing with a twoleg object'
@@ -989,13 +1003,16 @@ class Events(object):
         game.cur_events_list.append(choice(interactions))
 
     def handle_deaths(self, cat):
+        clan_has_kits = any(
+                str(cat.status) in "kitten"
+                and not cat.dead and not cat.exiled
+                for cat in cat_class.all_cats.values())
         #Leader lost a life EVENTS
         if randint(1, 100) == 1:
             name = str(cat.name)
             other_cat = choice(list(cat_class.all_cats.values()))
             while cat == other_cat or other_cat.dead or other_cat.status == 'leader' or other_cat.exiled:
                 other_cat = choice(list(cat_class.all_cats.values()))
-            other_name = str(other_cat.name)
             if cat.status == 'leader':
                 cause_of_death = [
                     name + ' lost a life after falling into a river',
@@ -1026,7 +1043,8 @@ class Events(object):
                     name + ' lost a life while saving ' + other_name +
                     ' from drowning', name + ' lost a life while saving ' +
                     other_name + ' from a monster',
-                    name + ' was pushed under a monster and lost a life'
+                    name + ' was pushed under a monster and lost a life',
+                    name + ' lost a life after saving ' + other_name + ' from a snake'
                 ]
                 if len(game.clan.all_clans) > 0:
                     cause_of_death.extend([
@@ -1127,8 +1145,13 @@ class Events(object):
             cause_of_death = [
                 name + ' was murdered', name + ' died of greencough',
                 'A tree fell in camp and killed ' + name,
-                name + ' was found dead near a fox den'
+                name + ' was found dead near a fox den',
+                name + ' was bitten by a snake and died'
             ]
+            if clan_has_kits == True:
+                cause_of_death.extend([
+                    name + ' was bitten by a snake while saving a kit and died'
+                ])
             if cat.status == 'kitten':
                 cause_of_death.extend([
                     name + ' fell into a river and drowned',
