@@ -1146,6 +1146,13 @@ class Events(object):
 
         elif randint(1, 400) == 1:
             name = str(cat.name)
+            other_cat = choice(list(cat_class.all_cats.values()))
+            while cat == other_cat or other_cat.dead or other_cat.status == 'leader' or other_cat.exiled:
+                other_cat = choice(list(cat_class.all_cats.values()))
+            if other_cat.status == 'kitten':
+                other_name_kit = str(other_cat.name)
+            else:
+                other_name = str(other_cat.name)
             cause_of_death = [
                 name + ' was murdered', name + ' died of greencough',
                 'A tree fell in camp and killed ' + name,
