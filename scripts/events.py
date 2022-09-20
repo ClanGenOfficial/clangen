@@ -1013,10 +1013,6 @@ class Events(object):
             other_cat = choice(list(cat_class.all_cats.values()))
             while cat == other_cat or other_cat.dead or other_cat.status == 'leader' or other_cat.exiled:
                 other_cat = choice(list(cat_class.all_cats.values()))
-            if other_cat.status == 'kitten':
-                other_name_kit = str(other_cat.name)
-            else:
-                other_name = str(other_cat.name)
             if cat.status == 'leader':
                 cause_of_death = [
                     name + ' lost a life after falling into a river',
@@ -1146,13 +1142,6 @@ class Events(object):
 
         elif randint(1, 400) == 1:
             name = str(cat.name)
-            other_cat = choice(list(cat_class.all_cats.values()))
-            while cat == other_cat or other_cat.dead or other_cat.status == 'leader' or other_cat.exiled:
-                other_cat = choice(list(cat_class.all_cats.values()))
-            if other_cat.status == 'kitten':
-                other_name_kit = str(other_cat.name)
-            else:
-                other_name = str(other_cat.name)
             cause_of_death = [
                 name + ' was murdered', name + ' died of greencough',
                 'A tree fell in camp and killed ' + name,
@@ -1161,7 +1150,7 @@ class Events(object):
             ]
             if clan_has_kits == True:
                 cause_of_death.extend([
-                    name + ' was bitten by a snake while saving ' + other_name_kit + ' and died'
+                    name + ' was bitten by a snake while saving a kit and died'
                 ])
             if cat.status == 'kitten':
                 cause_of_death.extend([
