@@ -1588,12 +1588,21 @@ class ProfileScreen(Screens):
         count2 = 0
         verdana_big.text(cat_name, ('center', 150))  # NAME
         the_cat.draw_large((100, 200))  # IMAGE
-        verdana.text(the_cat.thought, ('center', 180))  # THOUGHT / ACTION
+
+        if len(the_cat.thought) < 100:
+            verdana.text(the_cat.thought, ('center', 180))  # THOUGHT
+        else:
+            cut = the_cat.thought.find(' ', int(len(the_cat.thought)/2))
+            first_part = the_cat.thought[:cut]
+            second_part = the_cat.thought[cut:]
+            verdana.text(first_part, ('center', 180))  # THOUGHT
+            verdana.text(second_part, ('center', 200))  # THOUGHT
+
+        
         if the_cat.genderalign == None or the_cat.genderalign == True or the_cat.genderalign == False:
             verdana_small.text(str(the_cat.gender), (300, 230 + count * 15))
         else:
-            verdana_small.text(str(the_cat.genderalign),
-                               (300, 230 + count * 15))
+            verdana_small.text(str(the_cat.genderalign), (300, 230 + count * 15))
         count += 1  # SEX / GENDER
         verdana_small.text(the_cat.status, (490, 230 + count2 * 15))
         if not the_cat.dead and 'leader' in the_cat.status:  #See Lives
@@ -3502,7 +3511,7 @@ class MapScreen(Screens):
 
 
 class RelationshipScreen(Screens):
-    bool = {True: 'on', False: 'of', None: 'None'}
+    bool = {True: 'on', False: 'off', None: 'None'}
 
     def on_use(self):
         # get the relevant cat
