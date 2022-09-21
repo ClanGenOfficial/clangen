@@ -168,31 +168,7 @@ class Relation_Events(object):
                 self.breakup(cat_from, cat_to)
 
     def new_mates(self, cat1, cat2):
-        # change cat 1
-        cat1_relation = list(
-            filter(lambda r: r.cat_to.ID == cat2.ID, cat1.relationships))
-        cat1.mate = cat2.ID
-        if cat1_relation is not None and len(cat1_relation) > 0:
-            cat1_relation = cat1_relation[0]
-            cat1_relation.mates = True
-            cat1_relation.romantic_love += 15
-            cat1_relation.comfortable += 10
-            cat1_relation.trust += 10
-        else:
-            cat1.relationships.append(Relationship(cat1, cat2, True))
-
-        # change cat 2
-        cat2_relation = list(
-            filter(lambda r: r.cat_to.ID == cat1.ID, cat2.relationships))
-        cat2.mate = cat1.ID
-        if cat2_relation is not None and len(cat2_relation) > 0:
-            cat2_relation = cat2_relation[0]
-            cat2_relation.mates = True
-            cat2_relation.romantic_love += 15
-            cat2_relation.comfortable += 10
-            cat2_relation.trust += 10
-        else:
-            cat1.relationships.append(Relationship(cat1, cat2, True))
+        cat1.set_mate(cat2)
 
         game.cur_events_list.append(
             f'{str(cat1.name)} and {str(cat2.name)} have become mates')
