@@ -3502,7 +3502,7 @@ class MapScreen(Screens):
 
 
 class RelationshipScreen(Screens):
-    bool = {True: 'on', False: 'of', None: 'None'}
+    bool = {True: 'on', False: 'off', None: 'None'}
 
     def on_use(self):
         # get the relevant cat

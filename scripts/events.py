@@ -202,11 +202,6 @@ class Events(object):
                         ' has earned their medicine cat name')
                     self.gain_accessories(cat)
                     game.clan.new_medicine_cat(cat)
-                elif cat.status == 'warrior' and cat.age == 'elder' and len(
-                        cat.apprentice) < 1:
-                    cat.status_change('elder')
-                    game.cur_events_list.append(
-                        f'{str(cat.name)} has retired to the elder den')
                 elif cat.status == 'deputy' and cat.age == 'elder' and len(
                         cat.apprentice) < 1:
                     cat.status_change('elder')
@@ -214,11 +209,18 @@ class Events(object):
                     game.cur_events_list.append(
                         f'The deputy {str(cat.name)} has retired to the elder den'
                     )
+                elif cat.status == 'warrior' and cat.age == 'elder' and len(
+                        cat.apprentice) < 1:
+                    cat.status_change('elder')
+                    game.cur_events_list.append(
+                        f'{str(cat.name)} has retired to the elder den')
             if cat.status in [
                     'warrior', 'deputy'
             ] and cat.age == 'elder' and len(cat.apprentice) < 1:
                 cat.status_change('elder')
-                if cat.status == 'deputy':
+                print(cat.status)
+                if str(cat.status) == 'deputy':
+                    print("TO NONE")
                     game.clan.deputy = None
                 game.cur_events_list.append(
                     f'{str(cat.name)} has retired to the elder den')
@@ -1014,6 +1016,7 @@ class Events(object):
             while cat == other_cat or other_cat.dead or other_cat.status == 'leader' or other_cat.exiled:
                 other_cat = choice(list(cat_class.all_cats.values()))
             if cat.status == 'leader':
+                other_name = str(other_cat.name)
                 cause_of_death = [
                     name + ' lost a life after falling into a river',
                     name + ' lost a life due to greencough',
