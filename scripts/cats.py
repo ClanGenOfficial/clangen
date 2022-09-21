@@ -3076,6 +3076,14 @@ class Cat(object):
 
         return True
 
+    def get_parents(self):
+        """Returns list containing parents of cat."""
+        parents = []
+        if self.parent1 is not None:
+            parents.append(self.parent1)
+            if self.parent2 is not None:
+                parents.append(self.parent2)
+        return parents
 
 # Twelve example cats
 def create_example_cats():
