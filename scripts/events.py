@@ -619,10 +619,10 @@ class Events(object):
         if mate_chance == 1 and cat.is_available():
             for i in range(5): # Try assigning a random mate 5 times
                 other_cat = choice(list(cat_class.all_cats.values()))
-                if (cat.set_mate(other_cat) == True):
+                if (cat.set_mate(other_cat)):
+                    game.cur_events_list.append(
+                        f'{str(cat.name)} and {str(other_cat.name)} have become mates')
                     break
-            game.cur_events_list.append(
-                f'{str(cat.name)} and {str(other_cat.name)} have become mates')
 
         elif randint(1, 10) == 1:
             other_cat = choice(list(cat_class.all_cats.values()))
