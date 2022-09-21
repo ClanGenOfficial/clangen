@@ -3047,6 +3047,15 @@ class Cat(object):
     def set_mate(self, other_cat):
         """Assigns other_cat as mate to self."""
 
+        if self == other_cat or other_cat.dead or other_cat.exiled or other_cat.status in [
+                'kitten', 'apprentice', 'medicine cat apprentice',
+                'medicine cat'
+        ] or other_cat.age not in [
+                'young adult', 'adult', 'senior adult'
+        ] or other_cat.mate is not None or other_cat.ID in self.former_apprentices or self.moons < 14 or self.ID in other_cat.former_apprentices or not set(
+                self.get_parents()).isdisjoint(set(other_cat.get_parents())):
+            return False
+
         self.mate = other_cat.ID
         other_cat.mate = self.ID
 
