@@ -3050,7 +3050,7 @@ class Cat(object):
         former_mentor = (other_cat in self.former_apprentices or
                                   self in other_cat.former_apprentices)
 
-        if (not self.is_available() or 
+        if (self == other_cat or not self.is_available() or 
                 not other_cat.is_available() or not set(
                 self.get_parents()).isdisjoint(set(other_cat.get_parents()))
                 or (former_mentor and game.settings['romantic with former mentor'])):
