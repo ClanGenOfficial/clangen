@@ -616,11 +616,7 @@ class Events(object):
             mate_chance = mate_chance * 5
         else:
             mate_chance = mate_chance
-        if mate_chance == 1 and cat.status not in [
-                'kitten', 'apprentice', 'medicine cat apprentice',
-                'medicine cat'
-        ] and cat.age in ['young adult', 'adult', 'senior adult'
-                          ] and cat.moons > 14 and cat.mate is None:
+        if mate_chance == 1 and cat.is_available():
             for i in range(5): # Try assigning a random mate 5 times
                 other_cat = choice(list(cat_class.all_cats.values()))
                 if (cat.set_mate(other_cat) == True):

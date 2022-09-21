@@ -3050,14 +3050,10 @@ class Cat(object):
         former_mentor = (other_cat in self.former_apprentices or
                                   self in other_cat.former_apprentices)
 
-        if (self == other_cat or other_cat.dead or other_cat.exiled or other_cat.status in [
-                'kitten', 'apprentice', 'medicine cat apprentice',
-                'medicine cat'
-        ] or other_cat.age not in [
-                'young adult', 'adult', 'senior adult'
-        ] or other_cat.mate is not None or self.moons < 14 or not set(
+        if (not self.is_available() or 
+                not other_cat.is_available() or not set(
                 self.get_parents()).isdisjoint(set(other_cat.get_parents()))
-          or (former_mentor and game.settings['romantic with former mentor'])):
+                or (former_mentor and game.settings['romantic with former mentor'])):
             return False
 
         self.mate = other_cat.ID
@@ -3088,6 +3084,23 @@ class Cat(object):
                 Relationship(other_cat, self, True))
 
         return True
+
+    def is_available(self):
+        """Return True if a cat is available for mating, False otherwise."""
+
+        invalid_status = [
+                'kitten', 'apprentice', 'medicine cat apprentice',
+                'medicine cat'
+        ]
+        valid_ages = [
+            'young adult', 'adult', 'senior adult'
+        ]
+
+        if (self.status not in invalid_status and 
+            self.age in valid_ages and self.moons > 14 and self.mate is None and
+            not self.dead and not self.exiled):
+            return True
+        return False
 
     def get_parents(self):
         """Returns list containing parents of cat."""
