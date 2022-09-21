@@ -1,6 +1,6 @@
 from .cats import *
 from .buttons import *
-
+from .relation_events import * 
 
 class Events(object):
     all_events = {}
@@ -22,8 +22,6 @@ class Events(object):
         game.switches['birth_cooldown'] = False
         if game.switches['birth_cooldown']:
             birth_range = randint(6, 9)
-        
-
 
     def one_moon(self):
         if game.switches['timeskip']:
@@ -1554,8 +1552,7 @@ class Events(object):
 
         if cat.age in [
                 'kitten', 'adolescent', 'elder'
-        ] or cat.example or (not game.settings['no gendered breeding']
-                             and cat.gender == 'male'):
+        ] or cat.example or (not game.settings['no gendered breeding'] and cat.gender == 'male'):
             chance = 0
 
         # Decide randomly if kits will be born, if possible
@@ -1565,8 +1562,13 @@ class Events(object):
                 hit = randint(0, chance + 20)
             elif self.living_cats < 10:
                 hit = randint(0, chance - 10)
-            kits = choice([1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
-                            5, 5, 5, 5, 6])
+            one_kit = [1] * 8
+            two_kits = [2] * 10
+            three_kits = [3] * 11
+            four_kits = [4] * 12
+            five_kits = [5] * 4
+            six_kits = [6]
+            kits = choice(one_kit + two_kits + three_kits + four_kits + five_kits + six_kits)
             if hit == 1 and cat.mate is not None:
                 game.cur_events_list.append(str(cat.name) + ' just found out that they were going to have kits with ' + str(cat_class.all_cats.get(cat.mate).name))
                 has_birth = True
@@ -1778,168 +1780,5 @@ class Events(object):
         relevant_relationship.start_action()
 
         # self.relationship_outcome(relationship=relevant_relationship)
-
-    def relationship_outcome(self, relationship):
-        """Things that can happen, after relationship changes."""
-        cat_from = relationship.cat_from
-        cat_from_mate = None
-        if cat_from.mate != None or cat_from.mate != '':
-            cat_from_mate = cat_class.all_cats.get(cat_from.mate)
-
-        cat_to = relationship.cat_to
-        cat_to_mate = None
-        if cat_to.mate != None or cat_to.mate != '':
-            cat_to_mate = cat_class.all_cats.get(cat_to.mate)
-
-        if relationship.opposit_relationship == None:
-            relationship.link_relationship()
-
-        # overcome dead mates
-        if cat_from_mate != None and cat_from_mate.dead and randint(1, 20):
-            game.cur_events_list.append(
-                f'{str(cat_from.name)} will always love {str(cat_from_mate.name)} but has decided to move on'
-            )
-            cat_from.mate = None
-            cat_from_mate.mate = None
-        if cat_to_mate != None and cat_to_mate.dead and randint(1, 20):
-            game.cur_events_list.append(
-                f'{str(cat_to.name)} will always love {str(cat_to_mate.name)} but has decided to move on'
-            )
-            cat_to.mate = None
-            cat_to_mate.mate = None
-
-        # new mates
-        both_no_mates = cat_to_mate == None and cat_from_mate == None
-        # check ages of cats
-        age_group1 = ['adolescent', 'young adult', 'adult']
-        age_group2 = ['adult', 'senior adult', 'elder']
-        both_in_same_age_group = (cat_from.age in age_group1 and cat_to.age in age_group1) or\
-            (cat_from.age in age_group2 and cat_to.age in age_group2)
-        random_mates = randint(1, 200)
-        if (relationship.romantic_love > 20 and relationship.opposit_relationship.romantic_love > 20 and both_no_mates)\
-            or (random_mates == 1 and both_in_same_age_group):
-            self.new_mates(cat_from, cat_to)
-
-        # breakup and new mate
-        if game.settings[
-                'affair'] and not relationship.mates and cat_from_mate != None:
-            love_over_30 = relationship.romantic_love > 30 and relationship.opposit_relationship.romantic_love > 30
-            normal_chance = randint(1, 10)
-            # compare love value of current mates
-            bigger_than_current = False
-            bigger_love_chance = randint(1, 3)
-            mate_relationship = list(
-                filter(lambda r: r.cat_to.ID == cat_from.mate,
-                       cat_from.relationships))
-
-            # check cat from value
-            if mate_relationship is not None and len(mate_relationship) > 0:
-                bigger_than_current = relationship.romantic_love > mate_relationship[
-                    0].romantic_love
-            else:
-                if cat_from_mate != None:
-                    cat_from_mate.relationships.append(
-                        Relationship(cat_from, cat_from_mate, True))
-                bigger_than_current = True
-
-            # check cat to value
-            if cat_to_mate != None:
-                opposite_mate_relationship = list(
-                    filter(lambda r: r.cat_to.ID == cat_from.ID,
-                           cat_to.relationships))
-                if opposite_mate_relationship is not None and len(
-                        opposite_mate_relationship) > 0:
-                    bigger_than_current = bigger_than_current and relationship.romantic_love > opposite_mate_relationship[
-                        0].romantic_love
-                else:
-                    cat_to_mate.relationships.append(
-                        Relationship(cat_to, cat_to_mate, True))
-                    bigger_than_current = bigger_than_current and True
-
-            if (love_over_30
-                    and normal_chance == 1) or (bigger_than_current
-                                                and bigger_love_chance == 1):
-                # break up the old relationships
-                cat_from_mate = cat_class.all_cats.get(cat_from.mate)
-                self.breakup(cat_from, cat_from_mate)
-
-                if cat_to_mate != None:
-                    self.breakup(cat_to, cat_to_mate)
-
-                # new relationship
-                game.cur_events_list.append(
-                    f'{str(cat_from.name)} and {str(cat_to.name)} can\'t ignore their feelings for each other'
-                )
-                self.new_mates(cat_from, cat_to)
-
-        # breakup
-        if relationship.mates and 'negative' in relationship.effect:
-            chance_number = 30
-            if 'fight' in relationship.current_action_str:
-                chance_number = 20
-            chance = randint(0, chance_number)
-            if chance == 1 or relationship.dislike > 20:
-                self.breakup(cat_from, cat_to)
-
-    def new_mates(self, cat1, cat2):
-        # change cat 1
-        cat1_relation = list(
-            filter(lambda r: r.cat_to.ID == cat2.ID, cat1.relationships))
-        cat1.mate = cat2.ID
-        if cat1_relation is not None and len(cat1_relation) > 0:
-            cat1_relation = cat1_relation[0]
-            cat1_relation.mates = True
-            cat1_relation.romantic_love += 15
-            cat1_relation.comfortable += 10
-            cat1_relation.trust += 10
-        else:
-            cat1.relationships.append(Relationship(cat1, cat2, True))
-
-        # change cat 2
-        cat2_relation = list(
-            filter(lambda r: r.cat_to.ID == cat1.ID, cat2.relationships))
-        cat2.mate = cat1.ID
-        if cat2_relation is not None and len(cat2_relation) > 0:
-            cat2_relation = cat2_relation[0]
-            cat2_relation.mates = True
-            cat2_relation.romantic_love += 15
-            cat2_relation.comfortable += 10
-            cat2_relation.trust += 10
-        else:
-            cat1.relationships.append(Relationship(cat1, cat2, True))
-
-        game.cur_events_list.append(
-            f'{str(cat1.name)} and {str(cat2.name)} have become mates')
-
-    def breakup(self, cat1, cat2):
-        # change cat 1
-        cat1_relation = list(
-            filter(lambda r: r.cat_to.ID == cat2.ID, cat1.relationships))
-        cat1.mate = None
-        if cat1_relation is not None and len(cat1_relation) > 0:
-            cat1_relation = cat1_relation[0]
-            cat1_relation.mates = False
-            cat1_relation.romantic_love = 5
-            cat1_relation.comfortable -= 20
-            cat1_relation.trust -= 10
-        else:
-            cat1.relationships.append(Relationship(cat1, cat2))
-
-        # change cat 2
-        cat2_relation = list(
-            filter(lambda r: r.cat_to.ID == cat1.ID, cat2.relationships))
-        cat2.mate = None
-        if cat2_relation is not None and len(cat2_relation) > 0:
-            cat2_relation = cat2_relation[0]
-            cat2_relation.mates = False
-            cat2_relation.romantic_love = 5
-            cat2_relation.comfortable -= 20
-            cat2_relation.trust -= 10
-        else:
-            cat1.relationships.append(Relationship(cat1, cat2))
-
-        game.cur_events_list.append(
-            f'{str(cat1.name)} and {str(cat2.name)} broke up')
-
 
 events_class = Events()
