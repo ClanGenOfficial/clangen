@@ -3044,6 +3044,38 @@ class Cat(object):
         description += ' ' + str(self.pelt.length).lower() + '-furred ' + sex
         return description
 
+    def set_mate(self, other_cat):
+        """Assigns other_cat as mate to self."""
+
+        self.mate = other_cat.ID
+        other_cat.mate = self.ID
+
+        # Affect relationships
+        cat_relationship = list(
+            filter(lambda r: r.cat_to.ID == other_cat.ID,
+                    self.relationships))
+        if cat_relationship is not None and len(cat_relationship) > 0:
+            cat_relationship[0].romantic_love = +20
+            cat_relationship[0].comfortable = +20
+            cat_relationship[0].trust = +10
+        else:
+            self.relationships.append(
+                Relationship(self, other_cat, True))
+
+        ohter_cat_relationship = list(
+            filter(lambda r: r.cat_to.ID == self.ID,
+                    other_cat.relationships))
+        if ohter_cat_relationship is not None and len(
+                ohter_cat_relationship) > 0:
+            ohter_cat_relationship[0].romantic_love = +20
+            ohter_cat_relationship[0].comfortable = +20
+            ohter_cat_relationship[0].trust = +10
+        else:
+            other_cat.relationships.append(
+                Relationship(other_cat, self, True))
+
+        return True
+
 
 # Twelve example cats
 def create_example_cats():
