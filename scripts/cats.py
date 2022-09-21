@@ -3047,13 +3047,17 @@ class Cat(object):
     def set_mate(self, other_cat):
         """Assigns other_cat as mate to self."""
 
-        if self == other_cat or other_cat.dead or other_cat.exiled or other_cat.status in [
+        former_mentor = (other_cat in self.former_apprentices or
+                                  self in other_cat.former_apprentices)
+
+        if (self == other_cat or other_cat.dead or other_cat.exiled or other_cat.status in [
                 'kitten', 'apprentice', 'medicine cat apprentice',
                 'medicine cat'
         ] or other_cat.age not in [
                 'young adult', 'adult', 'senior adult'
-        ] or other_cat.mate is not None or other_cat.ID in self.former_apprentices or self.moons < 14 or self.ID in other_cat.former_apprentices or not set(
-                self.get_parents()).isdisjoint(set(other_cat.get_parents())):
+        ] or other_cat.mate is not None or self.moons < 14 or not set(
+                self.get_parents()).isdisjoint(set(other_cat.get_parents()))
+          or (former_mentor and game.settings['romantic with former mentor'])):
             return False
 
         self.mate = other_cat.ID
