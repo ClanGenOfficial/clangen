@@ -1609,6 +1609,12 @@ class Events(object):
                 while cat == other_parent or other_parent.dead or other_parent.age in ['kitten', 'adolescent', 'elder']\
                 or not game.settings['no gendered breeding'] and cat.gender == other_parent.gender or not game.settings['affair'] and other_parent.mate != None:
                         other_parent = choice(list(cat_class.all_cats.values()))
+                        if cat.parent1 is not None:
+                            if cat.parent1 == other_parent.parent1 or cat.parent1 == other_parent.parent2:
+                                other_parent = choice(list(cat_class.all_cats.values()))
+                            if cat.parent2 is not None:
+                                if cat.parent2 == other_parent.parent1 or cat.parent2 == other_parent.parent2:
+                                    other_parent = choice(list(cat_class.all_cats.values()))
                 parentless = randint(0, 2)
                 is_parent = randint(0, 3)
                 
