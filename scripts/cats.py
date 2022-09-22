@@ -2804,10 +2804,10 @@ class Cat(object):
                         else:
                             the_cat.calicobase = attr[38]
                     if len(attr) > 39:
-                        if attr[39] not in ['BLACK', 'BROWN', 'GREY']:
-                            the_cat.calicocolour = 'BLACK'
-                        else:
+                        if the_cat.calicocolour != None:
                             the_cat.calicocolour = attr[39]
+                        else:
+                            the_cat.calicocolour = None
                     if len(attr) > 40 and attr[40] is not None:
                         try:
                             the_cat.former_apprentices = attr[40].split(';')
