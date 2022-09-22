@@ -2509,24 +2509,25 @@ class AllegiancesScreen(Screens):
             the_cat = list(cat_class.all_cats.values())[x]
             if not the_cat.dead and not the_cat.exiled:
                 living_cats.append(the_cat)
-        if not game.clan.leader.dead and not game.clan.leader.exiled:
-            game.allegiance_list.append([
-                'LEADER:',
-                f"{str(game.clan.leader.name)} - a {game.clan.leader.describe_cat()}"
-            ])
+        if game.clan.leader is not None:
+            if not game.clan.leader.dead and not game.clan.leader.exiled:
+                game.allegiance_list.append([
+                    'LEADER:',
+                    f"{str(game.clan.leader.name)} - a {game.clan.leader.describe_cat()}"
+                ])
 
-            if len(game.clan.leader.apprentice) > 0:
-                if len(game.clan.leader.apprentice) == 1:
-                    game.allegiance_list.append([
-                        '', '      Apprentice: ' +
-                        str(game.clan.leader.apprentice[0].name)
-                    ])
-                else:
-                    app_names = ''
-                    for app in game.clan.leader.apprentice:
-                        app_names += str(app.name) + ', '
-                    game.allegiance_list.append(
-                        ['', '      Apprentices: ' + app_names[:-2]])
+                if len(game.clan.leader.apprentice) > 0:
+                    if len(game.clan.leader.apprentice) == 1:
+                        game.allegiance_list.append([
+                            '', '      Apprentice: ' +
+                            str(game.clan.leader.apprentice[0].name)
+                        ])
+                    else:
+                        app_names = ''
+                        for app in game.clan.leader.apprentice:
+                            app_names += str(app.name) + ', '
+                        game.allegiance_list.append(
+                            ['', '      Apprentices: ' + app_names[:-2]])
         if game.clan.deputy != 0 and game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.exiled:
             game.allegiance_list.append([
                 'DEPUTY:',

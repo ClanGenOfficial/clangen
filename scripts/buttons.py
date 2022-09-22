@@ -191,9 +191,11 @@ class Button(object):
             elif text == 'Exile Cat':
                 # it is the leader, manage all the things
                 if cat_class.all_cats[cat_value].status == 'leader':
+                    game.clan.leader.exiled = True
                     game.clan.leader_lives = 1
                 if cat_class.all_cats[cat_value].status == 'deputy':
                     game.clan.deputy = None
+                    game.clan.deputy.exiled = True
                 cat_class.all_cats[cat_value].exiled = True
                 cat_class.other_cats[cat_value] = cat_class.all_cats[cat_value]
             elif text == 'Change to Trans Male':

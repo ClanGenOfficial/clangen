@@ -105,7 +105,6 @@ class Events(object):
         self.have_kits(cat)
         self.other_interactions(cat)
         self.gain_accessories(cat)
-
         self.gain_scars(cat)
         self.handle_deaths(cat)
         self.check_age(cat)
