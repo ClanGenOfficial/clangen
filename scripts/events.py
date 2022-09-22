@@ -444,7 +444,7 @@ class Events(object):
                         f'{name} is punished by their mentor after accidentally wandering over the border',
                         f'{name} is injured by their mentor after being caught messing with a twoleg object'
                         f'{name} is injured by their mentor while practicing with their claws out',
-                        f'{name}\' mentor punished them for disobeying',
+                        f'{name}\'s mentor punished them for disobeying',
                         f'{name} gained a scar while fighting their mentor',
                         f'{name} is injured while practicing their battle moves with '
                         + other_name,
@@ -479,7 +479,7 @@ class Events(object):
                         f'{name} is punished by their mentor after accidentally wandering over the border',
                         f'{name} is injured by their mentor after being caught messing with a twoleg object'
                         f'{name} is injured by their mentor while practicing with their claws out',
-                        f'{name}\' mentor punished them for disobeying',
+                        f'{name}\'s mentor punished them for disobeying',
                         f'{name} gained a scar while fighting their mentor',
                         f'{name} is injured while practicing their batle moves with '
                         + other_name,
@@ -526,7 +526,7 @@ class Events(object):
                     ]) + ' while following orders')
                 else:
                     scar_text.extend([
-                        f'While following orders {name} earned a scar fighting a '
+                        f'While following orders, {name} earned a scar fighting a '
                         + choice([
                             'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                             'enemy warrior', 'badger'
@@ -554,7 +554,7 @@ class Events(object):
                     ]) + ' while following orders')
                 else:
                     scar_text.extend([
-                        f'While following orders {name} earned a scar fighting a '
+                        f'While following orders, {name} earned a scar fighting a '
                         + choice([
                             'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                             'enemy warrior', 'badger'
@@ -685,7 +685,7 @@ class Events(object):
                 )
                 cat.mate = None
                 other_cat.mate = None
-        elif randint(1, 100) == 1:
+        elif randint(1, 40) == 1:
 
             other_cat = choice(list(cat_class.all_cats.values()))
             if cat.mate == other_cat.ID:
