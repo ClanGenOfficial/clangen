@@ -1604,7 +1604,10 @@ class ProfileScreen(Screens):
         else:
             verdana_small.text(str(the_cat.genderalign), (300, 230 + count * 15))
         count += 1  # SEX / GENDER
-        verdana_small.text(the_cat.status, (490, 230 + count2 * 15))
+        if (the_cat.exiled): 
+            verdana_red.text("exiled", (490, 230 + count2 * 15))
+        else:
+            verdana_small.text(the_cat.status, (490, 230 + count2 * 15))
         if not the_cat.dead and 'leader' in the_cat.status:  #See Lives
             count2 += 1
             verdana_small.text(
@@ -3076,7 +3079,7 @@ class OptionsScreen(Screens):
                 'new_leader'] is not None:
             game.clan.new_leader(game.switches['new_leader'])
         if the_cat.status in ['warrior'
-                              ] and not the_cat.dead and game.clan.leader.dead:
+                              ] and not the_cat.dead and game.clan.leader.dead and not the_cat.exiled:
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Promote to Leader',
                                 new_leader=the_cat,
@@ -3085,14 +3088,14 @@ class OptionsScreen(Screens):
 
         elif the_cat.status in [
                 'warrior'
-        ] and not the_cat.dead and game.clan.deputy is None:
+        ] and not the_cat.dead and game.clan.deputy is None and not the_cat.exiled:
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Promote to Deputy',
                                 deputy_switch=the_cat,
                                 hotkey=[button_count + 1])
             button_count += 1
 
-        elif the_cat.status in ['deputy'] and not the_cat.dead:
+        elif the_cat.status in ['deputy'] and not the_cat.dead and not the_cat.exiled:
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Demote from Deputy',
                                 deputy_switch=the_cat,
@@ -3101,7 +3104,7 @@ class OptionsScreen(Screens):
 
         elif the_cat.status in ['warrior'
                                 ] and not the_cat.dead and game.clan.deputy:
-            if game.clan.deputy.dead:
+            if game.clan.deputy.dead and not the_cat.exiled:
                 buttons.draw_button(
                     (x_value, y_value + button_count * y_change),
                     text='Promote to Deputy',
@@ -3109,26 +3112,26 @@ class OptionsScreen(Screens):
                     hotkey=[button_count + 1])
                 button_count += 1
 
-        if the_cat.status in ['apprentice'] and not the_cat.dead:
+        if the_cat.status in ['apprentice'] and not the_cat.dead and not the_cat.exiled:
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Switch to medicine cat apprentice',
                                 apprentice_switch=the_cat,
                                 hotkey=[button_count + 1])
             button_count += 1
         elif the_cat.status in ['medicine cat apprentice'
-                                ] and not the_cat.dead:
+                                ] and not the_cat.dead and not the_cat.exiled:
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Switch to warrior apprentice',
                                 apprentice_switch=the_cat,
                                 hotkey=[button_count + 1])
             button_count += 1
-        elif the_cat.status == 'warrior' and not the_cat.dead:
+        elif the_cat.status == 'warrior' and not the_cat.dead and not the_cat.exiled:
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Switch to medicine cat',
                                 apprentice_switch=the_cat,
                                 hotkey=[button_count + 1])
             button_count += 1
-        elif the_cat.status == 'medicine cat' and not the_cat.dead:
+        elif the_cat.status == 'medicine cat' and not the_cat.dead and not the_cat.exiled:
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Switch to warrior',
                                 apprentice_switch=the_cat,
@@ -3247,7 +3250,7 @@ class OptionsScreen(Screens):
         y_value = 150
         y_change = 50
 
-        if not the_cat.dead:
+        if not the_cat.dead and not the_cat.exiled:
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Exile Cat',
                                 cat_value=game.switches['cat'],

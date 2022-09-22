@@ -2784,10 +2784,7 @@ class Cat(object):
                         else:
                             the_cat.no_kits = bool(attr[35])
                     if len(attr) > 36:
-                        if (attr[36] != True or attr[36] != False):
-                            the_cat.exiled = False
-                        else:
-                            the_cat.exiled = bool(attr[36])
+                        the_cat.exiled = bool(attr[36])
                     if len(attr) > 37:
                         if attr[37] != True or attr[37] != False or attr[
                                 37] != '' or attr[37] != None:
