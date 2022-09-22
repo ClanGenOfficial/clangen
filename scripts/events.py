@@ -216,9 +216,7 @@ class Events(object):
                     'warrior', 'deputy'
             ] and cat.age == 'elder' and len(cat.apprentice) < 1:
                 cat.status_change('elder')
-                print(cat.status)
                 if str(cat.status) == 'deputy':
-                    print("TO NONE")
                     game.clan.deputy = None
                 game.cur_events_list.append(
                     f'{str(cat.name)} has retired to the elder den')
