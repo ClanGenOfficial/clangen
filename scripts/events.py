@@ -619,6 +619,8 @@ class Events(object):
         ] and cat.age in ['young adult', 'adult', 'senior adult'
                           ] and cat.moons > 14 and cat.mate is None:
             other_cat = choice(list(cat_class.all_cats.values()))
+            while other_cat.ID == cat.ID:
+                other_cat = choice(list(cat_class.all_cats.values()))
             parents = [cat.ID]
             if cat.parent1 is not None:
                 parents.append(cat.parent1)
