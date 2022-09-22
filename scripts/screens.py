@@ -1646,6 +1646,23 @@ class ProfileScreen(Screens):
                         the_cat.former_apprentices[1].name)
                 verdana_small.text(former_apps, (490, 230 + count2 * 15))
                 count2 += 1
+            elif len(the_cat.former_apprentices) == 3:
+                former_apps = 'former apprentices: ' + str(
+                    the_cat.former_apprentices[0].name) + ', ' + str(
+                        the_cat.former_apprentices[1].name)
+                verdana_small.text(former_apps, (490, 230 + count2 * 15))
+                count2 += 1
+                verdana_small.text(str(the_cat.former_apprentices[2].name), (490, 230 + count2 * 15))
+                count2+=1
+            elif len(the_cat.former_apprentices) == 4:
+                former_apps = 'former apprentices: ' + str(
+                    the_cat.former_apprentices[0].name) + ', ' + str(
+                        the_cat.former_apprentices[1].name)
+                verdana_small.text(former_apps, (490, 230 + count2 * 15))
+                count2 += 1
+                former_apps2 = str(the_cat.former_apprentices[2].name) + ', ' + str(the_cat.former_apprentices[3].name)
+                verdana_small.text(former_apps2, (490, 230 + count2 * 15))
+                count2+=1
             else:
                 num = 1
                 rows = []
