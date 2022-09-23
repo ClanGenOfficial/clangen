@@ -656,8 +656,6 @@ class Cat(object):
                                 'Is giving advice to ' + other_name,
                                 'Is giving ' + other_name +
                                 ' a badger ride on their back!',
-                                'Hopes that their own kits are as cute as ' +
-                                other_name + ' someday',
                                 'Had to nip ' + other_name +
                                 ' on the rump because they were being naughty',
                                 'Is promising to take ' + other_name +
@@ -669,6 +667,9 @@ class Cat(object):
                                 'Gave ' + other_name +
                                 ' a trinket they found while out on patrol today'
                             ])
+                            if cat.ID not in [other_cat.parent1, other_cat.parent2]:
+                                thoughts.append('Hopes that their own kits are as cute as ' +
+                                other_name + ' someday')
                         else:
                             thoughts.extend([
                                 'Is fighting with ' + other_name,
