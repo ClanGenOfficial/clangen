@@ -281,34 +281,7 @@ class Button(object):
                         game.switches[key].append(value)
             elif key == 'mate':
                 if value is not None:
-                    cat_value.mate = value.ID
-                    value.mate = cat_value.ID
-                    # affect relationship
-                    cat_relationship = list(
-                        filter(lambda r: r.cat_to.ID == value.ID,
-                               cat_value.relationships))
-                    if cat_relationship is not None and len(
-                            cat_relationship) > 0:
-                        cat_relationship[0].romantic_love += 20
-                        cat_relationship[0].comfortable += 20
-                        cat_relationship[0].trust += 10
-                        cat_relationship[0].cut_boundries()
-                    else:
-                        cat_value.relationships.append(
-                            Relationship(cat_value, value, True))
-
-                    other_cat_relationship = list(
-                        filter(lambda r: r.cat_to.ID == cat_value.ID,
-                               value.relationships))
-                    if other_cat_relationship is not None and len(
-                            other_cat_relationship) > 0:
-                        other_cat_relationship[0].romantic_love += 20
-                        other_cat_relationship[0].comfortable += 20
-                        other_cat_relationship[0].trust += 10
-                        other_cat_relationship[0].cut_boundries()
-                    else:
-                        value.relationships.append(
-                            Relationship(value, cat_value, True))
+                    cat_value.set_mate(value)
                 else:
                     # affect relationship
                     cat_mate = cat_class.all_cats[cat_value.mate]

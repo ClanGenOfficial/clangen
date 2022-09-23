@@ -2969,6 +2969,73 @@ class Cat(object):
         description += ' ' + str(self.pelt.length).lower() + '-furred ' + sex
         return description
 
+    def set_mate(self, other_cat):
+        """Assigns other_cat as mate to self."""
+
+        is_former_mentor = (other_cat in self.former_apprentices or
+                                  self in other_cat.former_apprentices)
+
+        if (self == other_cat or not self.is_available() or 
+                not other_cat.is_available() or not set(
+                self.get_parents()).isdisjoint(set(other_cat.get_parents())) or
+                other_cat in self.get_parents() or self in other_cat.get_parents()
+                or (is_former_mentor and not game.settings['romantic with former mentor'])):
+            return False
+
+        self.mate = other_cat.ID
+        other_cat.mate = self.ID
+
+        # Affect relationships
+        cat_relationship = list(
+            filter(lambda r: r.cat_to.ID == other_cat.ID,
+                    self.relationships))
+        if cat_relationship is not None and len(cat_relationship) > 0:
+            cat_relationship[0].romantic_love = +20
+            cat_relationship[0].comfortable = +20
+            cat_relationship[0].trust = +10
+        else:
+            self.relationships.append(
+                Relationship(self, other_cat, True))
+
+        ohter_cat_relationship = list(
+            filter(lambda r: r.cat_to.ID == self.ID,
+                    other_cat.relationships))
+        if ohter_cat_relationship is not None and len(
+                ohter_cat_relationship) > 0:
+            ohter_cat_relationship[0].romantic_love = +20
+            ohter_cat_relationship[0].comfortable = +20
+            ohter_cat_relationship[0].trust = +10
+        else:
+            other_cat.relationships.append(
+                Relationship(other_cat, self, True))
+
+        return True
+
+    def is_available(self):
+        """Return True if a cat is available for mating, False otherwise."""
+
+        invalid_status = [
+                'kitten', 'apprentice', 'medicine cat apprentice',
+                'medicine cat'
+        ]
+        valid_ages = [
+            'young adult', 'adult', 'senior adult'
+        ]
+
+        if (self.status not in invalid_status and 
+            self.age in valid_ages and self.moons > 14 and self.mate is None and
+            not self.dead and not self.exiled):
+            return True
+        return False
+
+    def get_parents(self):
+        """Returns list containing parents of cat."""
+        parents = []
+        if self.parent1 is not None:
+            parents.append(self.parent1)
+            if self.parent2 is not None:
+                parents.append(self.parent2)
+        return parents
 
 # Twelve example cats
 def create_example_cats():

@@ -614,71 +614,13 @@ class Events(object):
             mate_chance = mate_chance * 5
         else:
             mate_chance = mate_chance
-        if mate_chance == 1 and cat.status not in [
-                'kitten', 'apprentice', 'medicine cat apprentice',
-                'medicine cat'
-        ] and cat.age in ['young adult', 'adult', 'senior adult'
-                          ] and cat.moons > 14 and cat.mate is None:
-            other_cat = choice(list(cat_class.all_cats.values()))
-            while other_cat.ID == cat.ID:
+        if mate_chance == 1 and cat.is_available():
+            for i in range(5): # Try assigning a random mate 5 times
                 other_cat = choice(list(cat_class.all_cats.values()))
-            parents = [cat.ID]
-            if cat.parent1 is not None:
-                parents.append(cat.parent1)
-                if cat.parent2 is not None:
-                    parents.append(cat.parent2)
-            other_parents = [other_cat.ID]
-            if other_cat.parent1 is not None:
-                other_parents.append(other_cat.parent1)
-                if other_cat.parent2 is not None:
-                    other_parents.append(other_cat.parent2)
-            count = 0
-            while cat == other_cat or other_cat.dead or other_cat.exiled or other_cat.status in [
-                    'kitten', 'apprentice', 'medicine cat apprentice',
-                    'medicine cat'
-            ] or other_cat.age not in [
-                    'young adult', 'adult', 'senior adult'
-            ] or other_cat.mate is not None or other_cat.ID in cat.former_apprentices or cat.moons < 14 or cat.ID in other_cat.former_apprentices or not set(
-                    parents).isdisjoint(set(other_parents)):
-                other_cat = choice(list(cat_class.all_cats.values()))
-                other_parents = [other_cat.ID]
-                if other_cat.parent1 is not None:
-                    other_parents.append(other_cat.parent1)
-                    if other_cat.parent2 is not None:
-                        other_parents.append(other_cat.parent2)
-                count += 1
-                if count == 5:
-                    return
-            game.cur_events_list.append(
-                f'{str(cat.name)} and {str(other_cat.name)} have become mates')
-            cat.mate = other_cat.ID
-            other_cat.mate = cat.ID
-
-            # affect relationship
-            cat_relationship = list(
-                filter(lambda r: r.cat_to.ID == other_cat.ID,
-                       cat.relationships))
-            if cat_relationship is not None and len(cat_relationship) > 0:
-                cat_relationship[0].romantic_love += 20
-                cat_relationship[0].comfortable += 20
-                cat_relationship[0].trust += 10
-                cat_relationship[0].cut_boundries()
-            else:
-                cat.relationships.append(Relationship(cat, other_cat, True))
-
-            other_cat_relationship = list(
-                filter(lambda r: r.cat_to.ID == cat.ID,
-                       other_cat.relationships))
-            if other_cat_relationship is not None and len(
-                    other_cat_relationship) > 0:
-                other_cat_relationship[0].romantic_love += 20
-                other_cat_relationship[0].comfortable += 20
-                other_cat_relationship[0].trust += 10
-                other_cat_relationship[0].cut_boundries()
-            else:
-                other_cat.relationships.append(
-                    Relationship(other_cat, cat, True))
-
+                if (cat.set_mate(other_cat)):
+                    game.cur_events_list.append(
+                        f'{str(cat.name)} and {str(other_cat.name)} have become mates')
+                    break
         elif randint(1, 10) == 1:
             other_cat = choice(list(cat_class.all_cats.values()))
             if cat.mate == other_cat.ID and other_cat.dead == True:
