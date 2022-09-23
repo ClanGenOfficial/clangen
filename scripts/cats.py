@@ -3009,6 +3009,10 @@ class Cat(object):
         if self.ID == other_cat.ID:
             return False
 
+        # check exiles and dead cats
+        if self.dead or self.exiled or other_cat.dead or other_cat.exiled:
+            return False
+
         # check for current mate
         if not for_love_interest and self.mate != None:
             return False
