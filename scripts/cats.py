@@ -1,4 +1,3 @@
-from msilib.schema import Error
 from .pelts import *
 from .names import *
 from .sprites import *
