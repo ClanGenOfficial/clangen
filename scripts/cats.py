@@ -3013,10 +3013,7 @@ class Cat(object):
             return False
 
         # check for current mate
-        if not for_love_interest and self.mate != None:
-            return False
-        
-        if for_love_interest and (self.mate != None or other_cat.mate != None):
+        if self.mate != None or other_cat.mate != None:
             if not game.settings['affair']:
                 return False
 
