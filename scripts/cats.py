@@ -152,30 +152,20 @@ class Cat(object):
 
         # pelt
         if self.pelt is None:
-            if self.parent1 is None:
-                # If pelt has not been picked manually, this function chooses one based on possible inheritances
-                self.pelt = choose_pelt(self.gender)
-
-            elif self.parent2 is None and self.parent1 in self.all_cats.keys():
+            if self.parent2 is None and self.parent1 in self.all_cats.keys():
                 # 1 in 3 chance to inherit a single parent's pelt
                 par1 = self.all_cats[self.parent1]
-                self.pelt = choose_pelt(self.gender,
-                                        choice([par1.pelt.colour, None]),
-                                        choice([par1.pelt.white, None]),
-                                        choice([par1.pelt.name, None]),
+                self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, None]), choice([par1.pelt.white, None]), choice([par1.pelt.name, None]),
                                         choice([par1.pelt.length, None]))
 
-            elif self.parent1 in self.all_cats.keys(
-            ) and self.parent2 in self.all_cats.keys():
+            if self.parent1 in self.all_cats.keys() and self.parent2 in self.all_cats.keys():
                 # 2 in 3 chance to inherit either parent's pelt
                 par1 = self.all_cats[self.parent1]
                 par2 = self.all_cats[self.parent2]
-                self.pelt = choose_pelt(
-                    self.gender,
-                    choice([par1.pelt.colour, par2.pelt.colour, None]),
-                    choice([par1.pelt.white, par2.pelt.white, None]),
-                    choice([par1.pelt.name, par2.pelt.name, None]),
-                    choice([par1.pelt.length, par2.pelt.length, None]))
+                self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, par2.pelt.colour, None]), choice([par1.pelt.white, par2.pelt.white, None]),
+                                        choice([par1.pelt.name, par2.pelt.name, None]), choice([par1.pelt.length, par2.pelt.length, None]))
+            else:
+                self.pelt = choose_pelt(self.gender)
 
         # NAME
         if self.pelt is not None:
@@ -273,10 +263,13 @@ class Cat(object):
             self.white_patches = None
             # pattern for tortie/calico cats
         if self.pelt.name in ['Calico', 'Tortie']:
+            self.pelt.colour = choice(["SILVER", "GREY", "DARKGREY", "BLACK",
+                                        "LIGHTBROWN", "BROWN", "DARKBROWN"])
+            print (self.pelt.colour)
             if self.tortiebase == None:
                 self.tortiebase = choice(['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled'])
             else:
-                self.tortiebase == None
+                self.tortiebase = None
 
             if self.tortiebase != None:
                 if self.tortiebase == 'tabby':
@@ -296,16 +289,16 @@ class Cat(object):
                 else:
                     self.tortiepattern = 'tortietabby'
         else:
-            self.tortiebase == None
+            self.tortiebase = None
 
         if self.pelt.name in ['Calico', 'Tortie'] and self.pelt.colour != None:
-            if self.pelt.colour in ["GREY", "PALEGREY", "SILVER", "LIGHTBROWN"]:
-                self.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR'])
-            elif self.pelt.colour in ["DARKGREY", "BROWN"]:
-                self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR'])
-            else:
+            if self.pelt.colour in ["BLACK", "DARKBROWN"]:
                 self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
                                         'DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
+            elif self.pelt.colour in ["DARKGREY", "BROWN"]:
+                self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR'])
+            elif self.pelt.colour in ["SILVER", "GREY", "LIGHTBROWN"]:
+                self.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR'])
         else:
             self.pattern = None
             
@@ -2245,13 +2238,13 @@ class Cat(object):
                 self.pelt = choose_pelt(self.gender)
 
             if self.pelt.name in ['Calico', 'Tortie'] and self.pelt.colour != None and self.pattern == None:
-                if self.pelt.colour == ["GREY", "PALEGREY", "SILVER", "LIGHTBROWN"]:
-                    self.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR'])
-                elif self.pelt.colour == ["DARKGREY", "BROWN"]:
-                    self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR'])
-                else:
+                if self.pelt.colour in ["BLACK", "DARKBROWN"]:
                     self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
                                         'DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
+                elif self.pelt.colour in ["DARKGREY", "BROWN"]:
+                    self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR'])
+                elif self.pelt.colour in ["SILVER", "GREY", "LIGHTBROWN"]:
+                    self.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR'])
             else:
                 self.pattern = None
 
