@@ -1,4 +1,3 @@
-from msilib.schema import Error
 from .pelts import *
 from .names import *
 from .sprites import *
@@ -3001,19 +3000,18 @@ class Cat(object):
             other_cat.relationships.append(
                 Relationship(other_cat, self, True))
 
-        return True
-
     def is_potential_mate(self, other_cat, for_love_interest = False):
         """Checks if this cat is a potential mate for the other cat."""
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
             return False
 
-        # check for current mate
-        if not for_love_interest and self.mate != None:
+        # check exiles and dead cats
+        if self.dead or self.exiled or other_cat.dead or other_cat.exiled:
             return False
-        
-        if for_love_interest and (self.mate != None or other_cat.mate != None):
+
+        # check for current mate
+        if self.mate != None or other_cat.mate != None:
             if not game.settings['affair']:
                 return False
 
