@@ -665,8 +665,9 @@ class StarClanScreen(Screens):
                                     cat=the_cat.ID,
                                     cur_screen='profile screen',
                                     hotkey=[row + 1, column + 11])
+                name_len = verdana.text(str(the_cat.name))
                 verdana_white.text(str(the_cat.name),
-                                   (130 + pos_x, 240 + pos_y))
+                                   (155 + pos_x - name_len/2, 240 + pos_y))
                 cats_on_page += 1
                 pos_x += 120
                 if pos_x >= 600:
@@ -2143,8 +2144,8 @@ class ListScreen(Screens):
                                     cat=the_cat.ID,
                                     cur_screen='profile screen',
                                     hotkey=[row + 1, column + 11])
-
-                verdana.text(str(the_cat.name), (130 + pos_x, 240 + pos_y))
+                name_len = verdana.text(str(the_cat.name))
+                verdana.text(str(the_cat.name), (155 + pos_x - name_len/2, 240 + pos_y))
                 cats_on_page += 1
                 pos_x += 120
                 if pos_x >= 600:
