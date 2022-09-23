@@ -603,7 +603,7 @@ class Events(object):
             game.cur_events_list.append(choice(scar_text))
 
     def handle_relationships(self, cat):
-        mate_chance = randint(1, 50)
+        mate_chance = 50
         if self.living_cats > 60:
             mate_chance = mate_chance + 20
         elif self.living_cats > 120:
@@ -612,12 +612,13 @@ class Events(object):
             mate_chance = mate_chance * 3
         elif self.living_cats > 500:
             mate_chance = mate_chance * 5
-        else:
-            mate_chance = mate_chance
-        if mate_chance == 1 and cat.is_available():
+
+        hit = randint(1, mate_chance)
+        if hit == 1 and cat.mate == None:
             for i in range(5): # Try assigning a random mate 5 times
                 other_cat = choice(list(cat_class.all_cats.values()))
-                if (cat.set_mate(other_cat)):
+                if cat.is_potential_mate(other_cat):
+                    cat.set_mate(other_cat)
                     game.cur_events_list.append(
                         f'{str(cat.name)} and {str(other_cat.name)} have become mates')
                     break
