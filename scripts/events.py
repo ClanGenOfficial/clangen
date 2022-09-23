@@ -622,7 +622,6 @@ class Events(object):
             mate_chance = mate_chance * 5
 
         hit = randint(1, mate_chance)
-        # hit = 1
         if hit == 1 and cat.mate is None:
             for i in range(5): # Try assigning a random mate 5 times
                 other_cat = choice(list(cat_class.all_cats.values()))

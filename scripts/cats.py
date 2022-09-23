@@ -265,7 +265,6 @@ class Cat(object):
         if self.pelt.name in ['Calico', 'Tortie']:
             self.pelt.colour = choice(["SILVER", "GREY", "DARKGREY", "BLACK",
                                         "LIGHTBROWN", "BROWN", "DARKBROWN"])
-            print (self.pelt.colour)
             if self.tortiebase == None:
                 self.tortiebase = choice(['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled'])
             else:

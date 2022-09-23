@@ -3001,7 +3001,7 @@ class OptionsScreen(Screens):
                             text="Personal Tab",
                             options_tab="Personal Tab",
                             hotkey=[13])
-        buttons.draw_button((390, 85),
+        buttons.draw_button((-10, 85),
                             text="Dangerous Tab",
                             options_tab="Dangerous Tab",
                             hotkey=[14])
@@ -3050,16 +3050,16 @@ class OptionsScreen(Screens):
                             hotkey=[0])
 
     def roles_tab(self):
-        buttons.draw_button((10, 10),
+        buttons.draw_button((10, 85),
                             text="Relations Tab",
                             options_tab="Relations Tab",
                             hotkey=[11])
-        buttons.draw_button((150, 10), text="Roles Tab", available=False)
-        buttons.draw_button((260, 10),
+        buttons.draw_button((150, 85), text="Roles Tab", available=False)
+        buttons.draw_button((260, 85),
                             text="Personal Tab",
                             options_tab="Personal Tab",
                             hotkey=[13])
-        buttons.draw_button((-10, 10),
+        buttons.draw_button((-10, 85),
                             text="Dangerous Tab",
                             options_tab="Dangerous Tab",
                             hotkey=[14])
@@ -3138,16 +3138,16 @@ class OptionsScreen(Screens):
                             hotkey=[0])
 
     def personal_tab(self):
-        buttons.draw_button((10, 10),
+        buttons.draw_button((10, 85),
                             text="Relations Tab",
                             options_tab="Relations Tab",
                             hotkey=[11])
-        buttons.draw_button((150, 10),
+        buttons.draw_button((150, 85),
                             text="Roles Tab",
                             options_tab="Roles Tab",
                             hotkey=[12])
-        buttons.draw_button((260, 10), text="Personal Tab", available=False)
-        buttons.draw_button((-10, 10),
+        buttons.draw_button((260, 85), text="Personal Tab", available=False)
+        buttons.draw_button((-10, 85),
                             text="Dangerous Tab",
                             options_tab="Dangerous Tab",
                             hotkey=[14])
@@ -3224,19 +3224,19 @@ class OptionsScreen(Screens):
                             hotkey=[0])
 
     def dangerous_tab(self):
-        buttons.draw_button((10, 10),
+        buttons.draw_button((10, 85),
                             text="Relations Tab",
                             options_tab="Relations Tab",
                             hotkey=[1])
-        buttons.draw_button((150, 10),
+        buttons.draw_button((150, 85),
                             text="Roles Tab",
                             options_tab="Roles Tab",
                             hotkey=[2])
-        buttons.draw_button((260, 10),
+        buttons.draw_button((260, 85),
                             text="Personal Tab",
                             options_tab="Personal Tab",
                             hotkey=[3])
-        buttons.draw_button((-10, 10), text="Dangerous Tab", available=False)
+        buttons.draw_button((-10, 85), text="Dangerous Tab", available=False)
 
         the_cat = cat_class.all_cats.get(game.switches['cat'])
         button_count = 0
