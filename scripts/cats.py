@@ -3031,6 +3031,8 @@ class Cat(object):
             invalid_status_mate = ['kitten', 'apprentice', 'medicine cat apprentice']
             if self.status in invalid_status_mate or other_cat.status in invalid_status_mate:
                 return False
+            if self.age in age_group1 or self.age in age_group2:
+                return False
             if (self.age in age_group3 and other_cat.age not in age_group3) or\
                 (self.age in age_group4 and other_cat.age not in age_group4) or\
                 (self.age in age_group5 and other_cat.age not in age_group5):
