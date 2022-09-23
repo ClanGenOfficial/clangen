@@ -4,6 +4,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 ./scripts/__pycache__/
+scripts/__pycache__/
 
 # C extensions
 *.so
@@ -149,4 +150,19 @@ cython_debug/
 
 /saves/**
 *.png~
+.vscode/settings.json
+scripts/__pycache__/buttons.cpython-310.pyc
+scripts/__pycache__/cats.cpython-310.pyc
+scripts/__pycache__/clan.cpython-310.pyc
+scripts/__pycache__/events.cpython-310.pyc
+scripts/__pycache__/game_essentials.cpython-310.pyc
+scripts/__pycache__/names.cpython-310.pyc
+scripts/__pycache__/patrol.cpython-310.pyc
+scripts/__pycache__/pelts.cpython-310.pyc
+scripts/__pycache__/relation_events.cpython-310.pyc
+scripts/__pycache__/relationship.cpython-310.pyc
+scripts/__pycache__/screens.cpython-310.pyc
+scripts/__pycache__/sprites.cpython-310.pyc
+scripts/__pycache__/text.cpython-310.pyc
+scripts/__pycache__/world.cpython-310.pyc
 .vscode/settings.json

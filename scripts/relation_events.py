@@ -169,7 +169,6 @@ class Relation_Events(object):
 
     def new_mates(self, cat1, cat2):
         cat1.set_mate(cat2)
-
         game.cur_events_list.append(
             f'{str(cat1.name)} and {str(cat2.name)} have become mates')
 
@@ -184,6 +183,7 @@ class Relation_Events(object):
             cat1_relation.romantic_love = 5
             cat1_relation.comfortable -= 20
             cat1_relation.trust -= 10
+            cat1_relation.cut_boundries()
         else:
             cat1.relationships.append(Relationship(cat1, cat2))
 
@@ -197,6 +197,7 @@ class Relation_Events(object):
             cat2_relation.romantic_love = 5
             cat2_relation.comfortable -= 20
             cat2_relation.trust -= 10
+            cat2_relation.cut_boundries()
         else:
             cat1.relationships.append(Relationship(cat1, cat2))
 

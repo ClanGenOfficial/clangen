@@ -191,9 +191,11 @@ class Button(object):
             elif text == 'Exile Cat':
                 # it is the leader, manage all the things
                 if cat_class.all_cats[cat_value].status == 'leader':
+                    game.clan.leader.exiled = True
                     game.clan.leader_lives = 1
                 if cat_class.all_cats[cat_value].status == 'deputy':
                     game.clan.deputy = None
+                    game.clan.deputy.exiled = True
                 cat_class.all_cats[cat_value].exiled = True
                 cat_class.other_cats[cat_value] = cat_class.all_cats[cat_value]
             elif text == 'Change to Trans Male':
@@ -291,18 +293,20 @@ class Button(object):
                         cat_relationship[0].romantic_love = 5
                         cat_relationship[0].comfortable -= 20
                         cat_relationship[0].trust -= 10
+                        cat_relationship[0].cut_boundries()
                     else:
                         cat_value.relationships.append(
                             Relationship(cat_value, cat_mate, True))
 
-                    ohter_cat_relationship = list(
+                    other_cat_relationship = list(
                         filter(lambda r: r.cat_to.ID == cat_value.ID,
                                cat_mate.relationships))
-                    if ohter_cat_relationship is not None and len(
-                            ohter_cat_relationship) > 0:
-                        ohter_cat_relationship[0].romantic_love = 5
-                        ohter_cat_relationship[0].comfortable -= 20
-                        ohter_cat_relationship[0].trust -= 10
+                    if other_cat_relationship is not None and len(
+                            other_cat_relationship) > 0:
+                        other_cat_relationship[0].romantic_love = 5
+                        other_cat_relationship[0].comfortable -= 20
+                        other_cat_relationship[0].trust -= 10
+                        other_cat_relationship[0].cut_boundries()
                     else:
                         cat_mate.relationships.append(
                             Relationship(cat_mate, cat_value, True))

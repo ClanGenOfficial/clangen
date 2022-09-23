@@ -2784,10 +2784,7 @@ class Cat(object):
                         else:
                             the_cat.no_kits = bool(attr[35])
                     if len(attr) > 36:
-                        if (attr[36] != True or attr[36] != False):
-                            the_cat.exiled = False
-                        else:
-                            the_cat.exiled = bool(attr[36])
+                        the_cat.exiled = bool(attr[36])
                     if len(attr) > 37:
                         if attr[37] != True or attr[37] != False or attr[
                                 37] != '' or attr[37] != None:
@@ -2804,10 +2801,10 @@ class Cat(object):
                         else:
                             the_cat.calicobase = attr[38]
                     if len(attr) > 39:
-                        if attr[39] not in ['BLACK', 'BROWN', 'GREY']:
-                            the_cat.calicocolour = 'BLACK'
-                        else:
+                        if the_cat.calicocolour != None:
                             the_cat.calicocolour = attr[39]
+                        else:
+                            the_cat.calicocolour = None
                     if len(attr) > 40 and attr[40] is not None:
                         try:
                             the_cat.former_apprentices = attr[40].split(';')
@@ -2847,12 +2844,10 @@ class Cat(object):
                 n.update_sprite()
 
             # generate the relationship if some is missing
-            game.switches[
-                'error_message'] = 'There was an error when relationships where created.'
+            game.switches['error_message'] = 'There was an error when relationships where created.'
             for id in self.all_cats.keys():
                 the_cat = self.all_cats.get(id)
-                if the_cat.relationships != None and len(
-                        the_cat.relationships) < 1:
+                if the_cat.relationships != None and len(the_cat.relationships) < 1:
                     the_cat.create_new_relationships()
 
             game.switches['error_message'] = ''
