@@ -622,9 +622,11 @@ class Events(object):
             mate_chance = mate_chance * 5
 
         hit = randint(1, mate_chance)
-        if hit == 1 and cat.mate == None:
+        if hit == 1 and cat.mate is None:
             for i in range(5): # Try assigning a random mate 5 times
                 other_cat = choice(list(cat_class.all_cats.values()))
+                if other_cat.mate is not None and not game.settings['affair']:
+                    continue
                 if cat.is_potential_mate(other_cat, for_love_interest = True):
                     cat.set_mate(other_cat)
                     game.cur_events_list.append(

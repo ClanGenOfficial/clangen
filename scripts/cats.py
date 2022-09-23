@@ -3004,7 +3004,7 @@ class Cat(object):
             return False
 
         # check for current mate
-        if self.mate != None or other_cat.mate != None:
+        if self.mate is not None or other_cat.mate is not None:
             if not game.settings['affair']:
                 return False
 
