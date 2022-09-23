@@ -644,6 +644,11 @@ class Patrol(object):
                 'Your patrol decides not to confront the kittypet',
                 40,
                 10,
+                antagonize_text=
+                'Your patrol drives the kittypet off of the territory',
+                antagonize_fail_text=
+                'The kittypet is taken aback by their hostility '
+                'and decides that Clan life is not for them',
                 win_skills=['great speaker', 'excellent speaker']),
             PatrolEvent(
                 503,
@@ -655,6 +660,10 @@ class Patrol(object):
                 'They leave the wounded cat alone',
                 40,
                 10,
+                antagonize_text=
+                'Your patrol drives the cat off of the territory',
+                antagonize_fail_text=
+                'The wounded cat is killed in an attempt to drive them off of the territory',
                 win_skills=['smart', 'very smart', 'extremely smart']),
             PatrolEvent(
                 504,

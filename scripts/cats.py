@@ -369,8 +369,12 @@ class Cat(object):
 
         for c in self.all_cats.keys():
             other_cat = random.choice(list(self.all_cats.keys()))
+            countdown = int(len(cat_class.all_cats) / 3)
             while other_cat == c:
                 other_cat = random.choice(list(self.all_cats.keys()))
+                countdown-=1
+                if countdown == 0:
+                    continue
             other_cat = self.all_cats.get(other_cat)
             other_name = str(other_cat.name)
             cat = self.all_cats.get(c)
@@ -653,8 +657,6 @@ class Cat(object):
                                 'Is giving advice to ' + other_name,
                                 'Is giving ' + other_name +
                                 ' a badger ride on their back!',
-                                'Hopes that their own kits are as cute as ' +
-                                other_name + ' someday',
                                 'Had to nip ' + other_name +
                                 ' on the rump because they were being naughty',
                                 'Is promising to take ' + other_name +
@@ -666,6 +668,9 @@ class Cat(object):
                                 'Gave ' + other_name +
                                 ' a trinket they found while out on patrol today'
                             ])
+                            if cat.ID not in [other_cat.parent1, other_cat.parent2]:
+                                thoughts.append('Hopes that their own kits are as cute as ' +
+                                other_name + ' someday')
                         else:
                             thoughts.extend([
                                 'Is fighting with ' + other_name,
