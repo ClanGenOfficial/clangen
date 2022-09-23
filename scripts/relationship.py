@@ -484,8 +484,8 @@ class Relationship(object):
         self.current_action_str = ''
 
         # check if cats are related
-        parents_to = [self.cat_to.parent1, self.cat_to.parent2]
-        parents_from = [self.cat_from.parent1, self.cat_from.parent2]
+        parents_to = [self.cat_to.parent1, self.cat_to.parent2, self.cat_to.ID]
+        parents_from = [self.cat_from.parent1, self.cat_from.parent2, self.cat_from.ID]
         parents_to = set([c for c in parents_to if c is not None])
         parents_from = set([c for c in parents_from if c is not None])
         # if there is any same element in any of the lists, they are related
@@ -661,11 +661,22 @@ class Relationship(object):
 
         # LOVE
         # check settings and family
-        cat_from_has_mate = self.cat_from.mate != None or self.cat_from.mate != ''
-        affair_setting = (cat_from_has_mate and not self.mates and not game.settings['affair'])
+        affair_setting = False
+        if self.cat_from.mate != None or self.cat_to.mate != None:
+            if game.settings['affair']:
+                affair_setting = True
+        else:
+            affair_setting = True
+
+        former_mentor_setting = False
         former_mentor1 = self.cat_to.ID in [ cat.ID for cat in self.cat_from.former_apprentices]
         former_mentor2 = self.cat_from.ID in [ cat.ID for cat in self.cat_to.former_apprentices]
-        former_mentor_setting = (former_mentor1 or former_mentor2) and not game.settings['romantic with former mentor']
+        if (former_mentor1 or former_mentor2):
+            if game.settings['romantic with former mentor']:
+                former_mentor_setting = True
+        else:
+            former_mentor_setting = True
+        
         if affair_setting or self.family or former_mentor_setting:
             return action_possibilies
 

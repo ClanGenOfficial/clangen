@@ -2844,12 +2844,10 @@ class Cat(object):
                 n.update_sprite()
 
             # generate the relationship if some is missing
-            game.switches[
-                'error_message'] = 'There was an error when relationships where created.'
+            game.switches['error_message'] = 'There was an error when relationships where created.'
             for id in self.all_cats.keys():
                 the_cat = self.all_cats.get(id)
-                if the_cat.relationships != None and len(
-                        the_cat.relationships) < 1:
+                if the_cat.relationships != None and len(the_cat.relationships) < 1:
                     the_cat.create_new_relationships()
 
             game.switches['error_message'] = ''

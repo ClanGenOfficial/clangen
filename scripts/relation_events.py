@@ -178,6 +178,7 @@ class Relation_Events(object):
             cat1_relation.romantic_love += 15
             cat1_relation.comfortable += 10
             cat1_relation.trust += 10
+            cat1_relation.cut_boundries()
         else:
             cat1.relationships.append(Relationship(cat1, cat2, True))
 
@@ -191,6 +192,7 @@ class Relation_Events(object):
             cat2_relation.romantic_love += 15
             cat2_relation.comfortable += 10
             cat2_relation.trust += 10
+            cat2_relation.cut_boundries()
         else:
             cat1.relationships.append(Relationship(cat1, cat2, True))
 
@@ -208,6 +210,7 @@ class Relation_Events(object):
             cat1_relation.romantic_love = 5
             cat1_relation.comfortable -= 20
             cat1_relation.trust -= 10
+            cat1_relation.cut_boundries()
         else:
             cat1.relationships.append(Relationship(cat1, cat2))
 
@@ -221,6 +224,7 @@ class Relation_Events(object):
             cat2_relation.romantic_love = 5
             cat2_relation.comfortable -= 20
             cat2_relation.trust -= 10
+            cat2_relation.cut_boundries()
         else:
             cat1.relationships.append(Relationship(cat1, cat2))
 

@@ -383,7 +383,7 @@ class Name(object):
         "Sophie", "Maverick", "Seamus", 'Meowyman', "Pickles", "Lacy", "Lucy",
         "Knox", "Lugnut", "Bailey", "Azula", "Lucky", "Sunny", "Sadie", "Sox",
         "Bandit", "Onyx", "Quinn", "Grace", "Fang", "Ike", "Flower",
-        "Whiskers", "Gust", "Peony", 'Human', "Minnie", "Buddy", "Mollie",
+        "Whiskers", "Gust", "Peony", "Minnie", "Buddy", "Mollie",
         "Jaxon", "Dunnock", "Firefly", "Cheese", "Sandwich", "Spam",
         'Brocolli', "Prickle", "Insect", "Grasshopper", "Coral", "Windy",
         "Sofa", "McChicken", "Katy Purry", 'Mop', "Fishtail", "Roman",
