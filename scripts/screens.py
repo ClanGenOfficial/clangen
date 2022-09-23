@@ -2998,16 +2998,16 @@ class ChangeGenderScreen(Screens):
 class OptionsScreen(Screens):
 
     def relations_tab(self):
-        buttons.draw_button((10, 10), text="Relations Tab", available=False)
-        buttons.draw_button((150, 10),
+        buttons.draw_button((10, 85), text="Relations Tab", available=False)
+        buttons.draw_button((150, 85),
                             text="Roles Tab",
                             options_tab="Roles Tab",
                             hotkey=[12])
-        buttons.draw_button((260, 10),
+        buttons.draw_button((260, 85),
                             text="Personal Tab",
                             options_tab="Personal Tab",
                             hotkey=[13])
-        buttons.draw_button((-10, 10),
+        buttons.draw_button((390, 85),
                             text="Dangerous Tab",
                             options_tab="Dangerous Tab",
                             hotkey=[14])
