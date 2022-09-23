@@ -3000,8 +3000,6 @@ class Cat(object):
             other_cat.relationships.append(
                 Relationship(other_cat, self, True))
 
-        return True
-
     def is_potential_mate(self, other_cat, for_love_interest = False):
         """Checks if this cat is a potential mate for the other cat."""
         # just to be sure, check if it is not the same cat
