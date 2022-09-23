@@ -368,8 +368,12 @@ class Cat(object):
 
         for c in self.all_cats.keys():
             other_cat = random.choice(list(self.all_cats.keys()))
+            countdown = int(len(cat_class.all_cats) / 3)
             while other_cat == c:
                 other_cat = random.choice(list(self.all_cats.keys()))
+                countdown-=1
+                if countdown == 0:
+                    continue
             other_cat = self.all_cats.get(other_cat)
             other_name = str(other_cat.name)
             cat = self.all_cats.get(c)

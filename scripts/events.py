@@ -232,8 +232,12 @@ class Events(object):
             return
         name = str(cat.name)
         other_cat = choice(list(cat_class.all_cats.values()))
+        countdown = int(len(cat_class.all_cats) / 3)
         while cat == other_cat or other_cat.dead or other_cat.exiled:
             other_cat = choice(list(cat_class.all_cats.values()))
+            countdown-=1
+            if countdown == 0:
+                return
         other_name = str(other_cat.name)
         acc_text = []
         chance = randint(0, 50)
@@ -304,8 +308,12 @@ class Events(object):
         other_cat = choice(list(cat_class.all_cats.values()))
         scar_chance = randint(0, 40)
         clancats = int(self.living_cats)
+        countdown = int(len(cat_class.all_cats) / 3)
         while cat == other_cat or other_cat.dead or other_cat.exiled:
             other_cat = choice(list(cat_class.all_cats.values()))
+            countdown-=1
+            if countdown == 0:
+                return
         other_name = str(other_cat.name)
         scar_text = []
         clan_has_kits = any(
@@ -870,8 +878,12 @@ class Events(object):
             return
         interactions = []
         other_cat = choice(list(cat_class.all_cats.values()))
+        countdown = int(len(cat_class.all_cats) / 3)
         while cat == other_cat or other_cat.dead or other_cat.exiled:
             other_cat = choice(list(cat_class.all_cats.values()))
+            countdown-=1
+            if countdown == 0:
+                return
         name = str(cat.name)
         other_name = str(other_cat.name)
         if cat.status in ['warrior', 'deputy'] and randint(
@@ -955,8 +967,12 @@ class Events(object):
         if randint(1, 100) == 1:
             name = str(cat.name)
             other_cat = choice(list(cat_class.all_cats.values()))
+            countdown = int(len(cat_class.all_cats) / 3)
             while cat == other_cat or other_cat.dead or other_cat.status == 'leader' or other_cat.exiled:
                 other_cat = choice(list(cat_class.all_cats.values()))
+                countdown-=1
+                if countdown == 0:
+                    return
             if cat.status == 'leader':
                 other_name = str(other_cat.name)
                 cause_of_death = [
@@ -1250,8 +1266,12 @@ class Events(object):
         elif randint(1, 500) == 1:  # multiple deaths
             name = str(cat.name)
             other_cat = choice(list(cat_class.all_cats.values()))
+            countdown = int(len(cat_class.all_cats) / 3)
             while cat == other_cat or other_cat.dead or other_cat.exiled:
                 other_cat = choice(list(cat_class.all_cats.values()))
+                countdown-=1
+                if countdown == 0:
+                    return
             other_name = str(other_cat.name)
             cause_of_death = [
                 name + ' and ' + other_name + ' die of greencough',
@@ -1286,9 +1306,13 @@ class Events(object):
         elif randint(1, 100) == 1:  #Death with Personalities
             murder_chance = 20
             name = str(cat.name)
+            countdown = int(len(cat_class.all_cats) / 3)
             other_cat = choice(list(cat_class.all_cats.values()))
             while cat == other_cat or other_cat.dead or other_cat.exiled:
                 other_cat = choice(list(cat_class.all_cats.values()))
+                countdown-=1
+                if countdown == 0:
+                    return
             other_name = str(other_cat.name)
             if cat.trait in [
                     'bloodthirsty', 'ambitious', 'vengeful', 'sneaky',
@@ -1738,6 +1762,8 @@ class Events(object):
 
         # choose cat and start
         random_id = random.choice(list(cat.all_cats.keys()))
+        countdown = int(len(cat_class.all_cats) / 3)
+
         relevant_relationship_list = list(
             filter(
                 lambda relation: str(relation.cat_to) == str(random_id) and
@@ -1748,6 +1774,9 @@ class Events(object):
                 filter(
                     lambda relation: str(relation.cat_to) == str(random_id) and
                     not relation.cat_to.dead, cat.relationships))
+            countdown-=1
+            if countdown == 0:
+                return
         relevant_relationship = relevant_relationship_list[0]
         relevant_relationship.start_action()
 
