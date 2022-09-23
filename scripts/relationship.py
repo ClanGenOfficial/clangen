@@ -483,22 +483,15 @@ class Relationship(object):
         self.effect = 'neutral effect'
         self.current_action_str = ''
 
-        # check if cats are related
-        parents_to = [self.cat_to.parent1, self.cat_to.parent2, self.cat_to.ID]
-        parents_from = [self.cat_from.parent1, self.cat_from.parent2, self.cat_from.ID]
-        parents_to = set([c for c in parents_to if c is not None])
-        parents_from = set([c for c in parents_from if c is not None])
-        # if there is any same element in any of the lists, they are related
-        if parents_to & parents_from:
-            family = True
-            self.family = True
+        #if cat_from.are_related(cat_to):
+        #    self.family = True
 
         if mates and romantic_love == 0:
             romantic_love = 20
             comfortable = 20
             trust = 10
         
-        if family and platonic_like == 0:
+        if self.family and platonic_like == 0:
             platonic_like = 20
             comfortable = 10
 
@@ -660,54 +653,25 @@ class Relationship(object):
             action_possibilies += SPECIAL_CHARACTER[self.cat_from.trait]
 
         # LOVE
-        # check settings and family
-        affair_setting = False
-        if self.cat_from.mate != None or self.cat_to.mate != None:
-            if game.settings['affair']:
-                affair_setting = True
-        else:
-            affair_setting = True
-
-        former_mentor_setting = False
-        former_mentor1 = self.cat_to.ID in [ cat.ID for cat in self.cat_from.former_apprentices]
-        former_mentor2 = self.cat_from.ID in [ cat.ID for cat in self.cat_to.former_apprentices]
-        if (former_mentor1 or former_mentor2):
-            if game.settings['romantic with former mentor']:
-                former_mentor_setting = True
-        else:
-            former_mentor_setting = True
-        
-        if affair_setting or self.family or former_mentor_setting:
+        if not self.cat_from.is_potential_mate(self.cat_to, for_love_interest = True):
             return action_possibilies
-
-        # check ages of cats
-        age_group1 = ['young adult', 'adult']
-        age_group2 = ['adult', 'senior adult', 'elder']
-        both_are_appr = self.cat_from.age == 'adolescent' and self.cat_to.age == 'adolescent'
-        both_are_kits = self.cat_from.age == 'kitten' and self.cat_to.age == 'kitten'
-        none_of_them_are_kits = self.cat_from.age != 'kitten' and self.cat_to.age != 'kitten'
-        both_in_same_age_group = (self.cat_from.age in age_group1 and self.cat_to.age in age_group1) or\
-            (self.cat_from.age in age_group2 and self.cat_to.age in age_group2)
 
         # chance to fall in love with some the character is not close to:
         love_p = randint(0,30)
-        if not self.family and (both_are_kits or none_of_them_are_kits or both_are_appr) and both_in_same_age_group:
-            if self.platonic_like > 30 or love_p == 1 or self.romantic_love > 5:
-
-                # increase the chance of an love event for two unmated cats
-                action_possibilies = action_possibilies + LOVE['love_interest_only']
-                if (self.cat_from.mate == None or self.cat_from.mate == '') and\
-                    (self.cat_to.mate == None or self.cat_to.mate == ''):
-                    action_possibilies = action_possibilies + LOVE['love_interest_only']
-
-            if self.opposit_relationship.romantic_love > 20:
+        if self.platonic_like > 30 or love_p == 1 or self.romantic_love > 5:
+            # increase the chance of an love event for two unmated cats
+            action_possibilies = action_possibilies + LOVE['love_interest_only']
+            if self.cat_from.mate == None and self.cat_to.mate == None:
                 action_possibilies = action_possibilies + LOVE['love_interest_only']
 
-            if self.romantic_love > 25 and self.opposit_relationship.romantic_love > 15:
-                action_possibilies = action_possibilies + LOVE['love_interest']
+        if self.opposit_relationship.romantic_love > 20:
+            action_possibilies = action_possibilies + LOVE['love_interest_only']
 
-            if self.mates and self.romantic_love > 30 and self.opposit_relationship.romantic_love > 25 :
-                action_possibilies = action_possibilies + LOVE['mates']
+        if self.romantic_love > 25 and self.opposit_relationship.romantic_love > 15:
+            action_possibilies = action_possibilies + LOVE['love_interest']
+
+        if self.mates and self.romantic_love > 30 and self.opposit_relationship.romantic_love > 25 :
+            action_possibilies = action_possibilies + LOVE['mates']
 
         return action_possibilies
 

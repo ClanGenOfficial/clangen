@@ -1,3 +1,4 @@
+from msilib.schema import Error
 from .pelts import *
 from .names import *
 from .sprites import *
@@ -679,8 +680,7 @@ class Cat(object):
                                 'Just told ' + other_name + ' a hilarious joke'
                             ])
 
-                    if cat.age == other_cat.age and cat.parent1 != other_cat.parent1 and cat.parent2 != other_cat.parent2 and cat.ID not in [other_cat.parent1, other_cat.parent2] and other_cat.ID\
-                       not in [cat.parent1, cat.parent2] and cat.mate is None and other_cat.mate is None and cat.age == other_cat.age:
+                    if self.is_potential_mate(other_cat,for_love_interest=True):
                         thoughts.extend([
                             'Is developing a crush on ' + other_name,
                             'Is spending a lot of time with ' + other_name,
@@ -2758,42 +2758,39 @@ class Cat(object):
             game.switches[
                 'error_message'] = 'There was an error loading this clan\'s mentors, apprentices, relationships, or sprite info.'
 
-            for n in self.all_cats.values():
+            for inter_cat in self.all_cats.values():
                 # Load the mentors and apprentices after all cats have been loaded
                 game.switches[
                     'error_message'] = 'There was an error loading this clan\'s mentors/apprentices. Last cat read was ' + str(
-                        n)
-                n.mentor = cat_class.all_cats.get(n.mentor)
+                        inter_cat)
+                inter_cat.mentor = cat_class.all_cats.get(inter_cat.mentor)
                 apps = []
                 former_apps = []
-                for app_id in n.apprentice:
+                for app_id in inter_cat.apprentice:
                     app = cat_class.all_cats.get(app_id)
                     # Make sure if cat isn't an apprentice, they're a former apprentice
                     if 'apprentice' in app.status:
                         apps.append(app)
                     else:
                         former_apps.append(app)
-                for f_app_id in n.former_apprentices:
+                for f_app_id in inter_cat.former_apprentices:
                     f_app = cat_class.all_cats.get(f_app_id)
                     former_apps.append(f_app)
-                n.apprentice = apps
-                n.former_apprentices = former_apps
+                inter_cat.apprentice = apps
+                inter_cat.former_apprentices = former_apps
                 game.switches[
-                    'error_message'] = 'There was an error loading this clan\'s relationships. Last cat read was ' + str(
-                        n)
-                n.load_relationship_of_cat()
+                    'error_message'] = 'There was an error loading this clan\'s relationships. Last cat read was ' + str(inter_cat)
+                inter_cat.load_relationship_of_cat()
                 game.switches[
-                    'error_message'] = 'There was an error loading a cat\'s sprite info. Last cat read was ' + str(
-                        n)
-                n.update_sprite()
+                    'error_message'] = 'There was an error loading a cat\'s sprite info. Last cat read was ' + str(inter_cat)
+                inter_cat.update_sprite()
 
             # generate the relationship if some is missing
-            game.switches[
-                'error_message'] = 'There was an error when relationships where created.'
+            game.switches['error_message'] = 'There was an error when relationships where created.'
             for id in self.all_cats.keys():
                 the_cat = self.all_cats.get(id)
-                if the_cat.relationships != None and len(
-                        the_cat.relationships) < 1:
+                game.switches['error_message'] = f'There was an error when relationships for cat #{the_cat} are created.'
+                if the_cat.relationships != None and len(the_cat.relationships) < 1:
                     the_cat.create_new_relationships()
 
             game.switches['error_message'] = ''
@@ -2807,9 +2804,8 @@ class Cat(object):
         relation_directory = 'saves/' + clanname + '/relationships/'
         relation_cat_directory = relation_directory + self.ID + '_relations.json'
 
-        if not os.path.exists(relation_directory and relation_cat_directory):
-            self.relationships = []
-        else:
+        self.relationships = []
+        if os.path.exists(relation_directory and relation_cat_directory):
             try:
                 with open(relation_cat_directory, 'r') as read_file:
                     rel_data = json.loads(read_file.read())
@@ -2833,7 +2829,7 @@ class Cat(object):
                         relationships.append(new_rel)
                     self.relationships = relationships
             except:
-                self.relationships = []
+                print(f'There was an error reading the relationship file of cat #{self}.')
 
     def load(self, cat_dict):
         """ A function that takes a dictionary containing other dictionaries with attributes and values of all(?)
@@ -2976,17 +2972,6 @@ class Cat(object):
 
     def set_mate(self, other_cat):
         """Assigns other_cat as mate to self."""
-
-        is_former_mentor = (other_cat in self.former_apprentices or
-                                  self in other_cat.former_apprentices)
-
-        if (self == other_cat or not self.is_available() or 
-                not other_cat.is_available() or not set(
-                self.get_parents()).isdisjoint(set(other_cat.get_parents())) or
-                other_cat in self.get_parents() or self in other_cat.get_parents()
-                or (is_former_mentor and not game.settings['romantic with former mentor'])):
-            return False
-
         self.mate = other_cat.ID
         other_cat.mate = self.ID
 
@@ -2998,40 +2983,76 @@ class Cat(object):
             cat_relationship[0].romantic_love = +20
             cat_relationship[0].comfortable = +20
             cat_relationship[0].trust = +10
+            cat_relationship[0].cut_boundries()
         else:
             self.relationships.append(
                 Relationship(self, other_cat, True))
 
-        ohter_cat_relationship = list(
+        other_cat_relationship = list(
             filter(lambda r: r.cat_to.ID == self.ID,
                     other_cat.relationships))
-        if ohter_cat_relationship is not None and len(
-                ohter_cat_relationship) > 0:
-            ohter_cat_relationship[0].romantic_love = +20
-            ohter_cat_relationship[0].comfortable = +20
-            ohter_cat_relationship[0].trust = +10
+        if other_cat_relationship is not None and len(
+                other_cat_relationship) > 0:
+            other_cat_relationship[0].romantic_love = +20
+            other_cat_relationship[0].comfortable = +20
+            other_cat_relationship[0].trust = +10
+            other_cat_relationship[0].cut_boundries()
         else:
             other_cat.relationships.append(
                 Relationship(other_cat, self, True))
 
         return True
 
-    def is_available(self):
-        """Return True if a cat is available for mating, False otherwise."""
+    def is_potential_mate(self, other_cat, for_love_interest = False):
+        """Checks if this cat is a potential mate for the other cat."""
+        # just to be sure, check if it is not the same cat
+        if self.ID == other_cat.ID:
+            return False
 
-        invalid_status = [
-                'kitten', 'apprentice', 'medicine cat apprentice',
-                'medicine cat'
-        ]
-        valid_ages = [
-            'young adult', 'adult', 'senior adult'
-        ]
+        # check for current mate
+        if not for_love_interest and self.mate != None:
+            return False
+        
+        if for_love_interest and (self.mate != None or other_cat.mate != None):
+            if not game.settings['affair']:
+                return False
 
-        if (self.status not in invalid_status and 
-            self.age in valid_ages and self.moons > 14 and self.mate is None and
-            not self.dead and not self.exiled):
+        # check for mentor
+        is_former_mentor = (other_cat in self.former_apprentices or self in other_cat.former_apprentices)
+        if is_former_mentor and not game.settings['romantic with former mentor']:
+            return False
+
+        # check for age
+        if for_love_interest:
+            age_group1 = ['kitten']
+            age_group2 = ['adolescent']
+            age_group3 = ['young adult', 'adult']
+            age_group4 = ['adult', 'senior adult', 'elder']
+            if (self.age in age_group1 and other_cat.age not in age_group1) or\
+                (self.age in age_group2 and other_cat.age not in age_group2) or\
+                (self.age in age_group3 and other_cat.age not in age_group3) or\
+                (self.age in age_group4 and other_cat.age not in age_group4):
+                return False
+        else:
+            invalid_status_mate = ['kitten', 'apprentice', 'medicine cat apprentice']
+            if  self.status in invalid_status_mate or other_cat.status in invalid_status_mate:
+                return False
+
+        # check for relation
+        if self.are_related(other_cat):
+            return False
+        
+        return True
+
+    def are_related(self, other_cat):
+        """Check if the cats are related."""
+        # TODO: check for aunt/uncle and niece/nephew
+
+        # check direkt relation
+        parents_self = set(self.get_parents() + [self.ID])
+        parents_other = set(other_cat.get_parents() + [other_cat.ID])
+        if parents_self & parents_other:
             return True
-        return False
 
     def get_parents(self):
         """Returns list containing parents of cat."""
@@ -3041,6 +3062,7 @@ class Cat(object):
             if self.parent2 is not None:
                 parents.append(self.parent2)
         return parents
+
 
 # Twelve example cats
 def create_example_cats():

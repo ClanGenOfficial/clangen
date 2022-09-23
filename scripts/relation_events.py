@@ -81,13 +81,13 @@ class Relation_Events(object):
             relationship.link_relationship()
 
         # overcome dead mates
-        if cat_from_mate != None and cat_from_mate.dead and randint(1, 20):
+        if cat_from_mate != None and cat_from_mate.dead and randint(1, 10):
             game.cur_events_list.append(
                 f'{str(cat_from.name)} will always love {str(cat_from_mate.name)} but has decided to move on'
             )
             cat_from.mate = None
             cat_from_mate.mate = None
-        if cat_to_mate != None and cat_to_mate.dead and randint(1, 20):
+        if cat_to_mate != None and cat_to_mate.dead and randint(1, 10):
             game.cur_events_list.append(
                 f'{str(cat_to.name)} will always love {str(cat_to_mate.name)} but has decided to move on'
             )
@@ -95,20 +95,12 @@ class Relation_Events(object):
             cat_to_mate.mate = None
 
         # new mates
-        both_no_mates = cat_to_mate == None and cat_from_mate == None
-        # check ages of cats
-        age_group1 = ['adolescent', 'young adult', 'adult']
-        age_group2 = ['adult', 'senior adult', 'elder']
-        both_in_same_age_group = (cat_from.age in age_group1 and cat_to.age in age_group1) or\
-            (cat_from.age in age_group2 and cat_to.age in age_group2)
-        random_mates = randint(1, 200)
-        if (relationship.romantic_love > 20 and relationship.opposit_relationship.romantic_love > 20 and both_no_mates)\
-            or (random_mates == 1 and both_in_same_age_group):
+        if relationship.romantic_love > 20 and relationship.opposit_relationship.romantic_love > 20 and\
+            cat_from.is_potential_mate(cat_to):
             self.new_mates(cat_from, cat_to)
 
         # breakup and new mate
-        if game.settings[
-                'affair'] and not relationship.mates and cat_from_mate != None:
+        if cat_from.is_potential_mate(cat_to):
             love_over_30 = relationship.romantic_love > 30 and relationship.opposit_relationship.romantic_love > 30
             normal_chance = randint(1, 10)
             # compare love value of current mates
@@ -169,8 +161,7 @@ class Relation_Events(object):
 
     def new_mates(self, cat1, cat2):
         cat1.set_mate(cat2)
-        game.cur_events_list.append(
-            f'{str(cat1.name)} and {str(cat2.name)} have become mates')
+        game.cur_events_list.append(f'{str(cat1.name)} and {str(cat2.name)} have become mates')
 
     def breakup(self, cat1, cat2):
         # change cat 1
