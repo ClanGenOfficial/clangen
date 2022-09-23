@@ -3019,21 +3019,28 @@ class Cat(object):
         is_former_mentor = (other_cat in self.former_apprentices or self in other_cat.former_apprentices)
         if is_former_mentor and not game.settings['romantic with former mentor']:
             return False
-
+        
+        age_group1 = ['kitten']
+        age_group2 = ['adolescent']
+        age_group3 = ['young adult', 'adult']
+        age_group4 = ['adult', 'senior adult']
+        age_group5 = ['elder']
+        
         # check for age
         if for_love_interest:
-            age_group1 = ['kitten']
-            age_group2 = ['adolescent']
-            age_group3 = ['young adult', 'adult']
-            age_group4 = ['adult', 'senior adult', 'elder']
             if (self.age in age_group1 and other_cat.age not in age_group1) or\
                 (self.age in age_group2 and other_cat.age not in age_group2) or\
                 (self.age in age_group3 and other_cat.age not in age_group3) or\
-                (self.age in age_group4 and other_cat.age not in age_group4):
+                (self.age in age_group4 and other_cat.age not in age_group4) or\
+                (self.age in age_group5 and other_cat.age not in age_group5):
                 return False
         else:
             invalid_status_mate = ['kitten', 'apprentice', 'medicine cat apprentice']
-            if  self.status in invalid_status_mate or other_cat.status in invalid_status_mate:
+            if self.status in invalid_status_mate or other_cat.status in invalid_status_mate:
+                return False
+            if (self.age in age_group3 and other_cat.age not in age_group3) or\
+                (self.age in age_group4 and other_cat.age not in age_group4) or\
+                (self.age in age_group5 and other_cat.age not in age_group5):
                 return False
 
         # check for relation
