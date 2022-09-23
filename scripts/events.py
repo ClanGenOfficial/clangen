@@ -628,7 +628,7 @@ class Events(object):
                 other_cat = choice(list(cat_class.all_cats.values()))
                 if other_cat.mate is not None and not game.settings['affair']:
                     continue
-                if cat.is_potential_mate(other_cat, for_love_interest = True):
+                if cat.is_potential_mate(other_cat):
                     cat.set_mate(other_cat)
                     game.cur_events_list.append(
                         f'{str(cat.name)} and {str(other_cat.name)} have become mates')
