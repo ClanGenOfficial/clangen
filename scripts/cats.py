@@ -90,6 +90,7 @@ class Cat(object):
         self.tortiebase = None
         self.pattern = None
         self.tortiepattern = None
+        self.tortiecolour = None
         if ID is None:
             potential_ID = str(randint(10000, 9999999))
             while potential_ID in self.all_cats:
@@ -261,34 +262,31 @@ class Cat(object):
                 self.white_patches = choice(['EXTRA', None, None])
         else:
             self.white_patches = None
-            # pattern for tortie/calico cats
+            
+        # pattern for tortie/calico cats
         if self.pelt.name in ['Calico', 'Tortie']:
-            self.pelt.colour = choice(["SILVER", "GREY", "DARKGREY", "BLACK",
-                                        "LIGHTBROWN", "BROWN", "DARKBROWN"])
-            if self.tortiebase == None:
-                self.tortiebase = choice(['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled'])
+            self.tortiecolour = self.pelt.colour
+            self.tortiebase = choice(['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled'])
+            if self.tortiebase == 'tabby':
+                self.tortiepattern = 'tortietabby'
+            elif self.tortiebase == 'bengal':
+                self.tortiepattern = 'tortiebengal'
+            elif self.tortiebase == 'marbled':
+                self.tortiepattern = 'tortiemarbled'
+            elif self.tortiebase == 'ticked':
+                self.tortiepattern = 'tortieticked'
+            elif self.tortiebase == 'rosette':
+                self.tortiepattern = 'tortierosette'
+            elif self.tortiebase == 'smoke':
+                self.tortiepattern = 'tortiesmoke'
+            elif self.tortiebase == 'speckled':
+                self.tortiepattern = 'tortiespeckled'
             else:
-                self.tortiebase = None
-
-            if self.tortiebase != None:
-                if self.tortiebase == 'tabby':
-                    self.tortiepattern = 'tortietabby'
-                elif self.tortiebase == 'bengal':
-                    self.tortiepattern = 'tortiebengal'
-                elif self.tortiebase == 'marbled':
-                    self.tortiepattern = 'tortiemarbled'
-                elif self.tortiebase == 'ticked':
-                    self.tortiepattern = 'tortieticked'
-                elif self.tortiebase == 'rosette':
-                    self.tortiepattern = 'tortierosette'
-                elif self.tortiebase == 'smoke':
-                    self.tortiepattern = 'tortiesmoke'
-                elif self.tortiebase == 'speckled':
-                    self.tortiepattern = 'tortiespeckled'
-                else:
-                    self.tortiepattern = 'tortietabby'
+                self.tortiepattern = 'tortietabby'
         else:
             self.tortiebase = None
+            self.tortiepattern = None
+            self.tortiecolour = None
 
         if self.pelt.name in ['Calico', 'Tortie'] and self.pelt.colour != None:
             if self.pelt.colour in ["BLACK", "DARKBROWN"]:
@@ -2236,17 +2234,6 @@ class Cat(object):
             else:
                 self.pelt = choose_pelt(self.gender)
 
-            if self.pelt.name in ['Calico', 'Tortie'] and self.pelt.colour != None and self.pattern == None:
-                if self.pelt.colour in ["BLACK", "DARKBROWN"]:
-                    self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
-                                        'DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
-                elif self.pelt.colour in ["DARKGREY", "BROWN"]:
-                    self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR'])
-                elif self.pelt.colour in ["SILVER", "GREY", "LIGHTBROWN"]:
-                    self.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR'])
-            else:
-                self.pattern = None
-
         # THE SPRITE UPDATE
         # draw colour & style
         new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
@@ -2259,11 +2246,11 @@ class Cat(object):
         else:
             game.switches['error_message'] = 'There was an error loading a tortie\'s base coat sprite. Last cat read was ' + str(self)
             if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
-                new_sprite.blit(sprites.sprites[self.tortiebase + 'extra' + self.pelt.colour + str(self.age_sprites[self.age])], (0, 0))
+                new_sprite.blit(sprites.sprites[self.tortiebase + 'extra' + self.tortiecolour + str(self.age_sprites[self.age])], (0, 0))
                 game.switches['error_message'] = 'There was an error loading a tortie\'s pattern sprite. Last cat read was ' + str(self)
                 new_sprite.blit(sprites.sprites[self.tortiepattern + 'extra' + self.pattern + str(self.age_sprites[self.age])], (0, 0))
             else:
-                new_sprite.blit(sprites.sprites[self.tortiebase + self.pelt.colour + str(self.age_sprites[self.age])], (0, 0))
+                new_sprite.blit(sprites.sprites[self.tortiebase + self.tortiecolour + str(self.age_sprites[self.age])], (0, 0))
                 game.switches['error_message'] = 'There was an error loading a tortie\'s pattern sprite. Last cat read was ' + str(self)
                 new_sprite.blit(sprites.sprites[self.tortiepattern + self.pattern + str(self.age_sprites[self.age])], (0, 0))
         game.switches['error_message'] = 'There was an error loading a cat\'s white patches sprite. Last cat read was ' + str(self)
@@ -2541,14 +2528,7 @@ class Cat(object):
             # eye colour -- reverse -- white patches -- pattern
             data += x.eye_colour + ',' + str(x.reverse) + ',' + str(x.white_patches) + ',' + str(x.pattern) + ','
             #Tortie/Calico Patterns
-            if x.tortiebase:
-                data += str(x.tortiebase) + ','
-            else:
-                data += 'None ,'
-            if x.tortiepattern:
-                data += str(x.tortiepattern) + ','
-            else:
-                data += 'None ,'
+            data += str(x.tortiebase) + ',' + str(x.tortiepattern) + ',' + str(x.tortiecolour) + ','
             # skin -- skill -- NONE  -- specs  -- accessory -- spec2 -- moons
             data += x.skin + ',' + x.skill + ',' + 'None' + ',' + str(x.specialty) + ',' + str(x.accessory) + ',' + str(x.specialty2) + ',' + str(x.moons) + ','
             # mate -- dead  -- dead sprite
@@ -2663,11 +2643,11 @@ class Cat(object):
                 # CAT: ID(0) - prefix:suffix(1) - gender(2) - status(3) - age(4) - trait(5) - parent1(6) - parent2(7) - mentor(8)
                 # PELT: pelt(9) - colour(10) - white(11) - length(12)
                 # SPRITE: kitten(13) - apprentice(14) - warrior(15) - elder(16) - eye colour(17) - reverse(18)
-                # - white patches(19) - pattern(20) - tortiebase(21) - tortiepattern(22) - skin(23) - skill(24) - NONE(25) - spec(26) - accessory(27) -
-                # spec2(28) - moons(29) - mate(30)
-                # dead(31) - SPRITE:dead(32) - exp(33) - dead for _ moons(34) - current apprentice(35) 
-                # (BOOLS, either TRUE OR FALSE) paralyzed(36) - no kits(37) - exiled(38)
-                # genderalign(39) - former apprentices list (40)[FORMER APPS SHOULD ALWAYS BE MOVED TO THE END]
+                # - white patches(19) - pattern(20) - tortiebase(21) - tortiepattern(22) - tortiecolour(23) - skin(24) - skill(25) - NONE(26) - spec(27) - accessory(28) -
+                # spec2(29) - moons(30) - mate(31)
+                # dead(32) - SPRITE:dead(33) - exp(34) - dead for _ moons(35) - current apprentice(36) 
+                # (BOOLS, either TRUE OR FALSE) paralyzed(37) - no kits(38) - exiled(39)
+                # genderalign(40) - former apprentices list (41)[FORMER APPS SHOULD ALWAYS BE MOVED TO THE END]
                 if i.strip() != '':
                     attr = i.split(',')
                     for x in range(len(attr)):
@@ -2696,55 +2676,53 @@ class Cat(object):
                     game.switches['error_message'] = '7There was an error loading cat # ' + str(attr[0])
                     the_cat.reverse, the_cat.white_patches, the_cat.pattern = attr[18], attr[19], attr[20]
                     game.switches['error_message'] = '8There was an error loading cat # ' + str(attr[0])
-                    the_cat.tortiebase, the_cat.tortiepattern = attr[21], attr[22]
+                    the_cat.tortiebase, the_cat.tortiepattern, the_cat.tortiecolour = attr[21], attr[22], attr[23]
                     game.switches['error_message'] = '9There was an error loading cat # ' + str(attr[0])
-                    the_cat.trait, the_cat.skin, the_cat.specialty = attr[5], attr[23], attr[26]
+                    the_cat.trait, the_cat.skin, the_cat.specialty = attr[5], attr[24], attr[27]
                     game.switches['error_message'] = '10There was an error loading cat # ' + str(attr[0])
-                
-                    if len(attr) > 27:
-                        the_cat.accessory = attr[27]
-
+                    the_cat.skill = attr[25]
                     if len(attr) > 28:
-                        the_cat.specialty2 = attr[28]
+                        the_cat.accessory = attr[28]
+
+                    if len(attr) > 29:
+                        the_cat.specialty2 = attr[29]
                     else:
                         the_cat.specialty2 = None
                     game.switches['error_message'] = '11There was an error loading cat # ' + str(attr[0])
-                    if len(attr) > 33:
-                        the_cat.experience = int(attr[33])
+                    if len(attr) > 34:
+                        the_cat.experience = int(attr[34])
                         experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
                         the_cat.experience_level = experiencelevels[math.floor(int(the_cat.experience) / 10)]
-
                     else:
                         the_cat.experience = 0
                     game.switches['error_message'] = '12There was an error loading cat # ' + str(attr[0])
-                    if len(attr) > 29:
+                    if len(attr) > 30:
                         # Attributes that are to be added after the update
-                        the_cat.moons = int(attr[29])
-                        if len(attr) >= 30:
-                            # assigning mate to cat, if any
-                            the_cat.mate = attr[30]
+                        the_cat.moons = int(attr[30])
                         if len(attr) >= 31:
+                            # assigning mate to cat, if any
+                            the_cat.mate = attr[31]
+                        if len(attr) >= 32:
                             # Is the cat dead
-                            the_cat.dead = attr[31]
-                            the_cat.age_sprites['dead'] = attr[32]
+                            the_cat.dead = attr[32]
+                            the_cat.age_sprites['dead'] = attr[33]
                     game.switches['error_message'] = '13There was an error loading cat # ' + str(attr[0])
-                    if len(attr) > 34:
-                        the_cat.dead_for = int(attr[34])
-                    the_cat.skill = attr[24]
+                    if len(attr) > 35:
+                        the_cat.dead_for = int(attr[35])
                     game.switches['error_message'] = '14There was an error loading cat # ' + str(attr[0])
-                    if len(attr) > 35 and attr[35] is not None:
-                        the_cat.apprentice = attr[35].split(';')
+                    if len(attr) > 36 and attr[36] is not None:
+                        the_cat.apprentice = attr[36].split(';')
                     game.switches['error_message'] = '15There was an error loading cat # ' + str(attr[0])
-                    if len(attr) > 36:
-                        the_cat.paralyzed = bool(attr[36])
                     if len(attr) > 37:
-                        the_cat.no_kits = bool(attr[37])
+                        the_cat.paralyzed = bool(attr[37])
                     if len(attr) > 38:
-                        the_cat.exiled = bool(attr[38])
+                        the_cat.no_kits = bool(attr[38])
                     if len(attr) > 39:
-                        the_cat.genderalign = attr[39]
-                    if len(attr) > 40 and attr[40] is not None:                 #KEEP THIS AT THE END
-                        the_cat.former_apprentices = attr[40].split(';')
+                        the_cat.exiled = bool(attr[39])
+                    if len(attr) > 40:
+                        the_cat.genderalign = attr[40]
+                    if len(attr) > 41 and attr[41] is not None:                 #KEEP THIS AT THE END
+                        the_cat.former_apprentices = attr[41].split(';')
 
             game.switches[
                 'error_message'] = 'There was an error loading this clan\'s mentors, apprentices, relationships, or sprite info.'
