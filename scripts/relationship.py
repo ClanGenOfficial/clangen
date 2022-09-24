@@ -1,4 +1,5 @@
 from random import choice, randint
+from tkinter.tix import Tree
 from .game_essentials import *
 import copy
 
@@ -474,7 +475,6 @@ INDIRECT_DECREASE = 3
 
 class Relationship(object):
     def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0, admiration=0, comfortable=0, jealousy=0, trust=0) -> None:        
-        # involved cat
         self.cat_from = cat_from
         self.cat_to = cat_to
         self.mates = mates
@@ -483,17 +483,24 @@ class Relationship(object):
         self.effect = 'neutral effect'
         self.current_action_str = ''
 
-        #if cat_from.are_related(cat_to):
-        #    self.family = True
+        if self.cat_from.is_parent(self.cat_to) or self.cat_to.is_parent(self.cat_from):
+            self.family = True
+            if platonic_like == 0:
+                platonic_like = 30
+                comfortable = 15
 
-        if mates and romantic_love == 0:
-            romantic_love = 20
-            comfortable = 20
-            trust = 10
-        
-        if self.family and platonic_like == 0:
-            platonic_like = 20
-            comfortable = 10
+        if self.cat_from.is_sibling(self.cat_to):
+            self.family = True
+            if platonic_like == 0:
+                platonic_like = 20
+                comfortable = 10
+
+        if self.cat_from.mate != None and self.cat_from.mate == self.cat_to.ID:
+            self.mates = True
+            if romantic_love == 0:
+                romantic_love = 20
+                comfortable = 20
+                trust = 10
 
         # each stat can go from 0 to 100
         self.romantic_love = romantic_love
