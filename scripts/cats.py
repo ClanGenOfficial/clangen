@@ -2602,8 +2602,11 @@ class Cat(object):
     def load_cats(self):
         directory = 'saves/' + game.switches['clan_list'][0] + '/clan_cats.json'
         if os.path.exists(directory):
-            self.json_load_cats()
+            self.json_load()
+        else:
+            self.csv_load()
 
+    def csv_load(self):
         if game.switches['clan_list'][0].strip() == '':
             cat_data = ''
         else:
@@ -2746,7 +2749,7 @@ class Cat(object):
 
             game.switches['error_message'] = ''
 
-    def json_load_cats(self):
+    def json_load(self):
         all_cats = []
         cat_data = None
         clanname = game.switches['clan_list'][0]
