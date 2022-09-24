@@ -3023,20 +3023,29 @@ class Cat(object):
                 return False
 
         # check for relation
-        if self.are_related(other_cat):
+        direct_related = self.is_sibling(other_cat) or self.is_parent(other_cat) or other_cat.is_parent(self)
+        indirect_related = self.is_uncle_aunt(other_cat) or other_cat.is_uncle_aunt(self)
+        if direct_related or indirect_related:
             return False
-        
         return True
 
-    def are_related(self, other_cat):
-        """Check if the cats are related."""
-        # TODO: check for aunt/uncle and niece/nephew
-
-        # check direkt relation
-        parents_self = set(self.get_parents() + [self.ID])
-        parents_other = set(other_cat.get_parents() + [other_cat.ID])
-        if parents_self & parents_other:
+    def is_parent(self,other_cat):
+        """Check if the cat is the parent of the other cat."""
+        if self.ID in other_cat.get_parents():
             return True
+        return False
+
+    def is_sibling(self, other_cat):
+        """Check if the cats are siblings."""
+        if set(self.get_parents()) & set(other_cat.get_parents()):
+            return True
+        return False
+
+    def is_uncle_aunt(self, other_cat):
+        """Check if the cats are related as uncle/aunt and niece/nephew."""
+        if set(self.get_siblings()) & set(other_cat.get_parents()):
+            return True
+        return False
 
     def get_parents(self):
         """Returns list containing parents of cat."""
@@ -3046,6 +3055,14 @@ class Cat(object):
             if self.parent2 is not None:
                 parents.append(self.parent2)
         return parents
+
+    def get_siblings(self):
+        """Returns list of the siblings."""
+        siblings = []
+        for inter_cat in self.all_cats.values():
+            if self.is_sibling(inter_cat):
+                siblings.append(inter_cat.ID)
+        return siblings
 
 
 # Twelve example cats
