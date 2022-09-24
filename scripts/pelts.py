@@ -394,11 +394,6 @@ def choose_pelt(gender,
             return Ticked(choice(pelt_colours), white, length)
         else:
             return Ticked(colour, white, length)
-    elif pelt == "Tortie":
-        if white is None:
-            return Tortie(choice([False, True]), length)
-        else:
-            return Tortie(white, length)
     elif pelt == "Speckled":
         if colour is None and white is None:
             return Speckled(choice(pelt_colours), choice([False, True]),
@@ -415,5 +410,10 @@ def choose_pelt(gender,
             return Bengal(choice(pelt_colours), white, length)
         else:
             return Bengal(colour, white, length)
-    elif pelt == "Calico":
+    elif pelt == "Tortie":
+        if white is None:
+            return Tortie(choice([False, True]), length)
+        else:
+            return Tortie(white, length)
+    else:
         return Calico(length)

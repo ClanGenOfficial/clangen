@@ -613,18 +613,20 @@ class Events(object):
     def handle_relationships(self, cat):
         mate_chance = 50
         if self.living_cats > 60:
-            mate_chance = mate_chance + 20
+            mate_chance = mate_chance + 50
         elif self.living_cats > 120:
-            mate_chance = mate_chance + 40
+            mate_chance = mate_chance + 75
         elif self.living_cats > 300:
             mate_chance = mate_chance * 3
         elif self.living_cats > 500:
             mate_chance = mate_chance * 5
 
         hit = randint(1, mate_chance)
-        if hit == 1 and cat.mate == None:
+        if hit == 1 and cat.mate is None:
             for i in range(5): # Try assigning a random mate 5 times
                 other_cat = choice(list(cat_class.all_cats.values()))
+                if other_cat.mate is not None and not game.settings['affair']:
+                    continue
                 if cat.is_potential_mate(other_cat):
                     cat.set_mate(other_cat)
                     game.cur_events_list.append(
@@ -1494,7 +1496,7 @@ class Events(object):
                 elif cat_class.all_cats[cat.mate].age == 'elder':
                     return
                 else:
-                    chance = 25
+                    chance = 50
             else:
                 game.cur_events_list.append("Warning: " + str(cat.name) +
                                             " has an invalid mate #" +
@@ -1505,7 +1507,7 @@ class Events(object):
             if not game.settings['no unknown fathers']:
                 return
             if cat.moons > 15:
-                chance = 50
+                chance = 100
 
         # Decide randomly if kits will be born, if possible
         if chance != 0:

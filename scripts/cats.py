@@ -1,4 +1,3 @@
-from msilib.schema import Error
 from .pelts import *
 from .names import *
 from .sprites import *
@@ -153,30 +152,20 @@ class Cat(object):
 
         # pelt
         if self.pelt is None:
-            if self.parent1 is None:
-                # If pelt has not been picked manually, this function chooses one based on possible inheritances
-                self.pelt = choose_pelt(self.gender)
-
-            elif self.parent2 is None and self.parent1 in self.all_cats.keys():
+            if self.parent2 is None and self.parent1 in self.all_cats.keys():
                 # 1 in 3 chance to inherit a single parent's pelt
                 par1 = self.all_cats[self.parent1]
-                self.pelt = choose_pelt(self.gender,
-                                        choice([par1.pelt.colour, None]),
-                                        choice([par1.pelt.white, None]),
-                                        choice([par1.pelt.name, None]),
+                self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, None]), choice([par1.pelt.white, None]), choice([par1.pelt.name, None]),
                                         choice([par1.pelt.length, None]))
 
-            elif self.parent1 in self.all_cats.keys(
-            ) and self.parent2 in self.all_cats.keys():
+            if self.parent1 in self.all_cats.keys() and self.parent2 in self.all_cats.keys():
                 # 2 in 3 chance to inherit either parent's pelt
                 par1 = self.all_cats[self.parent1]
                 par2 = self.all_cats[self.parent2]
-                self.pelt = choose_pelt(
-                    self.gender,
-                    choice([par1.pelt.colour, par2.pelt.colour, None]),
-                    choice([par1.pelt.white, par2.pelt.white, None]),
-                    choice([par1.pelt.name, par2.pelt.name, None]),
-                    choice([par1.pelt.length, par2.pelt.length, None]))
+                self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, par2.pelt.colour, None]), choice([par1.pelt.white, par2.pelt.white, None]),
+                                        choice([par1.pelt.name, par2.pelt.name, None]), choice([par1.pelt.length, par2.pelt.length, None]))
+            else:
+                self.pelt = choose_pelt(self.gender)
 
         # NAME
         if self.pelt is not None:
@@ -274,10 +263,12 @@ class Cat(object):
             self.white_patches = None
             # pattern for tortie/calico cats
         if self.pelt.name in ['Calico', 'Tortie']:
+            self.pelt.colour = choice(["SILVER", "GREY", "DARKGREY", "BLACK",
+                                        "LIGHTBROWN", "BROWN", "DARKBROWN"])
             if self.tortiebase == None:
                 self.tortiebase = choice(['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled'])
             else:
-                self.tortiebase == None
+                self.tortiebase = None
 
             if self.tortiebase != None:
                 if self.tortiebase == 'tabby':
@@ -297,16 +288,16 @@ class Cat(object):
                 else:
                     self.tortiepattern = 'tortietabby'
         else:
-            self.tortiebase == None
+            self.tortiebase = None
 
         if self.pelt.name in ['Calico', 'Tortie'] and self.pelt.colour != None:
-            if self.pelt.colour in ["GREY", "PALEGREY", "SILVER", "LIGHTBROWN"]:
-                self.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR'])
-            elif self.pelt.colour in ["DARKGREY", "BROWN"]:
-                self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR'])
-            else:
+            if self.pelt.colour in ["BLACK", "DARKBROWN"]:
                 self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
                                         'DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
+            elif self.pelt.colour in ["DARKGREY", "BROWN"]:
+                self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR'])
+            elif self.pelt.colour in ["SILVER", "GREY", "LIGHTBROWN"]:
+                self.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR'])
         else:
             self.pattern = None
             
@@ -2246,13 +2237,13 @@ class Cat(object):
                 self.pelt = choose_pelt(self.gender)
 
             if self.pelt.name in ['Calico', 'Tortie'] and self.pelt.colour != None and self.pattern == None:
-                if self.pelt.colour == ["GREY", "PALEGREY", "SILVER", "LIGHTBROWN"]:
-                    self.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR'])
-                elif self.pelt.colour == ["DARKGREY", "BROWN"]:
-                    self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR'])
-                else:
+                if self.pelt.colour in ["BLACK", "DARKBROWN"]:
                     self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
                                         'DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
+                elif self.pelt.colour in ["DARKGREY", "BROWN"]:
+                    self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR'])
+                elif self.pelt.colour in ["SILVER", "GREY", "LIGHTBROWN"]:
+                    self.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR'])
             else:
                 self.pattern = None
 
@@ -3001,19 +2992,18 @@ class Cat(object):
             other_cat.relationships.append(
                 Relationship(other_cat, self, True))
 
-        return True
-
     def is_potential_mate(self, other_cat, for_love_interest = False):
         """Checks if this cat is a potential mate for the other cat."""
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
             return False
 
-        # check for current mate
-        if not for_love_interest and self.mate != None:
+        # check exiles and dead cats
+        if self.dead or self.exiled or other_cat.dead or other_cat.exiled:
             return False
-        
-        if for_love_interest and (self.mate != None or other_cat.mate != None):
+
+        # check for current mate
+        if self.mate is not None or other_cat.mate is not None:
             if not game.settings['affair']:
                 return False
 
@@ -3021,21 +3011,30 @@ class Cat(object):
         is_former_mentor = (other_cat in self.former_apprentices or self in other_cat.former_apprentices)
         if is_former_mentor and not game.settings['romantic with former mentor']:
             return False
-
+        
+        age_group1 = ['kitten']
+        age_group2 = ['adolescent']
+        age_group3 = ['young adult', 'adult']
+        age_group4 = ['adult', 'senior adult']
+        age_group5 = ['elder']
+        
         # check for age
         if for_love_interest:
-            age_group1 = ['kitten']
-            age_group2 = ['adolescent']
-            age_group3 = ['young adult', 'adult']
-            age_group4 = ['adult', 'senior adult', 'elder']
             if (self.age in age_group1 and other_cat.age not in age_group1) or\
                 (self.age in age_group2 and other_cat.age not in age_group2) or\
                 (self.age in age_group3 and other_cat.age not in age_group3) or\
-                (self.age in age_group4 and other_cat.age not in age_group4):
+                (self.age in age_group4 and other_cat.age not in age_group4) or\
+                (self.age in age_group5 and other_cat.age not in age_group5):
                 return False
         else:
             invalid_status_mate = ['kitten', 'apprentice', 'medicine cat apprentice']
-            if  self.status in invalid_status_mate or other_cat.status in invalid_status_mate:
+            if self.status in invalid_status_mate or other_cat.status in invalid_status_mate:
+                return False
+            if self.age in age_group1 or self.age in age_group2 or other_cat.age in age_group1 or other_cat.age in age_group2:
+                return False
+            if (self.age in age_group3 and other_cat.age not in age_group3) or\
+                (self.age in age_group4 and other_cat.age not in age_group4) or\
+                (self.age in age_group5 and other_cat.age not in age_group5):
                 return False
 
         # check for relation

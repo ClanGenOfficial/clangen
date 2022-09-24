@@ -2036,14 +2036,7 @@ class ChooseMateScreen(Screens):
     # TODO Rename this here and in `on_use`
     def _extracted_from_on_use_42(self, the_cat, valid_mates, pos_x, pos_y):
         for x in game.clan.clan_cats:
-            pos_mate = cat_class.all_cats[x]
-            if not pos_mate.dead and pos_mate.age in ['young adult', 'adult', 'senior adult', 'elder'] and the_cat != pos_mate and the_cat.ID not in [pos_mate.parent1,
-                                                                                                                                                      pos_mate.parent2] and \
-                    pos_mate.ID not in [
-                the_cat.parent1, the_cat.parent2] and pos_mate.mate is None and (pos_mate.parent1 is None or pos_mate.parent1 not in [the_cat.parent1, the_cat.parent2]) and (
-                    pos_mate.parent2 is None or pos_mate.parent2 not in [the_cat.parent1, the_cat.parent2]) and (
-                    the_cat.age in ['senior adult', 'elder'] and cat_class.all_cats[x].age in ['senior adult', 'elder'] or cat_class.all_cats[x].age != 'elder' and
-                    cat_class.all_cats[x].age != 'adolescent' and the_cat.age != 'elder' and the_cat.age != 'adolescent') and not the_cat.exiled:
+            if the_cat.is_potential_mate(cat_class.all_cats[x]):
                 valid_mates.append(cat_class.all_cats[x])
         all_pages = int(ceil(len(valid_mates) /
                              27.0)) if len(valid_mates) > 27 else 1
@@ -3011,7 +3004,7 @@ class OptionsScreen(Screens):
                             text="Personal Tab",
                             options_tab="Personal Tab",
                             hotkey=[13])
-        buttons.draw_button((390, 85),
+        buttons.draw_button((-10, 85),
                             text="Dangerous Tab",
                             options_tab="Dangerous Tab",
                             hotkey=[14])
@@ -3060,16 +3053,16 @@ class OptionsScreen(Screens):
                             hotkey=[0])
 
     def roles_tab(self):
-        buttons.draw_button((10, 10),
+        buttons.draw_button((10, 85),
                             text="Relations Tab",
                             options_tab="Relations Tab",
                             hotkey=[11])
-        buttons.draw_button((150, 10), text="Roles Tab", available=False)
-        buttons.draw_button((260, 10),
+        buttons.draw_button((150, 85), text="Roles Tab", available=False)
+        buttons.draw_button((260, 85),
                             text="Personal Tab",
                             options_tab="Personal Tab",
                             hotkey=[13])
-        buttons.draw_button((-10, 10),
+        buttons.draw_button((-10, 85),
                             text="Dangerous Tab",
                             options_tab="Dangerous Tab",
                             hotkey=[14])
@@ -3148,16 +3141,16 @@ class OptionsScreen(Screens):
                             hotkey=[0])
 
     def personal_tab(self):
-        buttons.draw_button((10, 10),
+        buttons.draw_button((10, 85),
                             text="Relations Tab",
                             options_tab="Relations Tab",
                             hotkey=[11])
-        buttons.draw_button((150, 10),
+        buttons.draw_button((150, 85),
                             text="Roles Tab",
                             options_tab="Roles Tab",
                             hotkey=[12])
-        buttons.draw_button((260, 10), text="Personal Tab", available=False)
-        buttons.draw_button((-10, 10),
+        buttons.draw_button((260, 85), text="Personal Tab", available=False)
+        buttons.draw_button((-10, 85),
                             text="Dangerous Tab",
                             options_tab="Dangerous Tab",
                             hotkey=[14])
@@ -3234,19 +3227,19 @@ class OptionsScreen(Screens):
                             hotkey=[0])
 
     def dangerous_tab(self):
-        buttons.draw_button((10, 10),
+        buttons.draw_button((10, 85),
                             text="Relations Tab",
                             options_tab="Relations Tab",
                             hotkey=[1])
-        buttons.draw_button((150, 10),
+        buttons.draw_button((150, 85),
                             text="Roles Tab",
                             options_tab="Roles Tab",
                             hotkey=[2])
-        buttons.draw_button((260, 10),
+        buttons.draw_button((260, 85),
                             text="Personal Tab",
                             options_tab="Personal Tab",
                             hotkey=[3])
-        buttons.draw_button((-10, 10), text="Dangerous Tab", available=False)
+        buttons.draw_button((-10, 85), text="Dangerous Tab", available=False)
 
         the_cat = cat_class.all_cats.get(game.switches['cat'])
         button_count = 0
