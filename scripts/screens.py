@@ -98,7 +98,7 @@ class StartScreen(Screens):
 
         # SAVE cats
         if game.clan is not None:
-            cat_class.save_cats()
+            cat_class.json_save_cats()
             game.clan.save_clan()
             if mapavailable:
                 save_map(game.map_info, game.clan.name)
