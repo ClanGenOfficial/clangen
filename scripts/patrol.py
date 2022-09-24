@@ -1,3 +1,5 @@
+from os import name
+from pydoc import text
 from random import choice, randint
 from math import ceil, floor
 from .events import events_class
@@ -13,6 +15,7 @@ class Patrol(object):
         self.patrol_event = None
         self.patrol_leader = None
         self.patrol_cats = []
+        self.patrol_names = []
         self.possible_patrol_leaders = []
         self.patrol_skills = []
         self.patrol_statuses = []
@@ -28,13 +31,16 @@ class Patrol(object):
 
     def add_patrol_cats(self):
         self.patrol_cats.clear()
+        self.patrol_names.clear()
         self.possible_patrol_leaders.clear()
         self.patrol_skills.clear()
         self.patrol_statuses.clear()
         self.patrol_traits.clear()
         self.patrol_total_experience = 0
         for cat in game.switches['current_patrol']:
+            name = str(cat.name)
             self.patrol_cats.append(cat)
+            self.patrol_names.append(name)
             if cat.status != 'apprentice':
                 self.possible_patrol_leaders.append(cat)
             self.patrol_skills.append(cat.skill)

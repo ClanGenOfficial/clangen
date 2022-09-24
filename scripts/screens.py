@@ -2459,11 +2459,14 @@ class PatrolEventScreen(Screens):
         verdana_small.blit_text(
             'patrol leader: ' + str(patrol.patrol_leader.name), (150, 430))
         verdana_small.blit_text(
-            'patrol skills: ' + self.get_list_text(patrol.patrol_skills),
+            'patrol members: ' + self.get_list_text(patrol.patrol_names),
             (150, 460))
         verdana_small.blit_text(
-            'patrol traits: ' + self.get_list_text(patrol.patrol_traits),
+            'patrol skills: ' + self.get_list_text(patrol.patrol_skills),
             (150, 510))
+        verdana_small.blit_text(
+            'patrol traits: ' + self.get_list_text(patrol.patrol_traits),
+            (150, 560))
         draw_menu_buttons()
 
     def get_list_text(self, patrol_list):
