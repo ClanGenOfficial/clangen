@@ -1973,13 +1973,6 @@ class ChooseMateScreen(Screens):
             mate.draw_large((450, 130))
             verdana.text(str(mate.name), ('center', 300))
             self._extracted_from_on_use_29(mate, -100)
-            #relationship = list(filter(lambda r: r.cat_to.ID == mate.ID , the_cat.relationships))
-            #if relationship is not None and len(relationship) > 0:
-            #    if relationship[0].romantic_love > 49:
-            #        verdana_small.text('romantic love', (-100, 250))
-            #    else:
-            #        verdana_small.text('romantic like', (-100, 250))
-            #    draw_bar(relationship[0].romantic_love, 588, 270)
             if the_cat.gender == mate.gender and not game.settings[
                     'no gendered breeding']:
                 verdana_small.text(
@@ -2036,7 +2029,7 @@ class ChooseMateScreen(Screens):
     # TODO Rename this here and in `on_use`
     def _extracted_from_on_use_42(self, the_cat, valid_mates, pos_x, pos_y):
         for x in game.clan.clan_cats:
-            if the_cat.is_potential_mate(cat_class.all_cats[x]):
+            if cat_class.all_cats[x].is_potential_mate(the_cat):
                 valid_mates.append(cat_class.all_cats[x])
         all_pages = int(ceil(len(valid_mates) /
                              27.0)) if len(valid_mates) > 27 else 1
