@@ -1,5 +1,4 @@
 from random import choice, randint
-from tkinter.tix import Tree
 from .game_essentials import *
 import copy
 
@@ -20,8 +19,7 @@ EXILED_CATS = {
 
 # IN increase or decrease
 NOT_AGE_SPECIFIC = {
-    "unfriendly": ['Has successfully tricked (cat) into believing a crazy tale about the clan leader',
-                   'Doesn\'t think that (cat) has been completely honest lately',
+    "unfriendly": ['Doesn\'t think that (cat) has been completely honest lately',
                    'Is mocking (cat)', 'Ignores (cat)', 'Is telling jokes about (cat)',
                    'Is spreading a rumour about (cat)'],
     "neutral": ['Complains about (cat)', 'Is telling a story to (cat)', 'Is talking with (cat)',
@@ -169,7 +167,7 @@ ELDER_TO_OTHER = {
 LOVE = {
     "love_interest_only": ['Is developing a crush on (cat)', 'Is admiring (cat) from afar...', 'Is spending a lot of time with (cat)',
                             'Gave a pretty flower they found to (cat)', 'Laughs at bad jokes from (cat)', 
-                            'Enjoys the time with (cat) and feels secure', 'Make (cat) laugh again and again',
+                            'Enjoys the time with (cat) and feels secure', 'Made (cat) laugh again and again',
                             'Ensnares (cat) with a charming smile', 'Go for a nice long walk with (cat)',
                             'Wants to spend the entire day with (cat)'],
     "love_interest": [  'Can\'t seem to stop talking about (cat)', 'Would spend the entire day with (cat) if they could', 
