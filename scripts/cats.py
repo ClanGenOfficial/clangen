@@ -3020,6 +3020,8 @@ class Cat(object):
         
         # check for age
         if for_love_interest:
+            if self.age in age_group1 or other_cat.age in age_group1:
+                return False
             if (self.age in age_group1 and other_cat.age not in age_group1) or\
                 (self.age in age_group2 and other_cat.age not in age_group2) or\
                 (self.age in age_group3 and other_cat.age not in age_group3) or\
