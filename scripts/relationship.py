@@ -19,8 +19,7 @@ EXILED_CATS = {
 
 # IN increase or decrease
 NOT_AGE_SPECIFIC = {
-    "unfriendly": ['Has successfully tricked (cat) into believing a crazy tale about the clan leader',
-                   'Doesn\'t think that (cat) has been completely honest lately',
+    "unfriendly": ['Doesn\'t think that (cat) has been completely honest lately',
                    'Is mocking (cat)', 'Ignores (cat)', 'Is telling jokes about (cat)',
                    'Is spreading a rumour about (cat)'],
     "neutral": ['Complains about (cat)', 'Is telling a story to (cat)', 'Is talking with (cat)',
@@ -168,7 +167,7 @@ ELDER_TO_OTHER = {
 LOVE = {
     "love_interest_only": ['Is developing a crush on (cat)', 'Is admiring (cat) from afar...', 'Is spending a lot of time with (cat)',
                             'Gave a pretty flower they found to (cat)', 'Laughs at bad jokes from (cat)', 
-                            'Enjoys the time with (cat) and feels secure', 'Make (cat) laugh again and again',
+                            'Enjoys the time with (cat) and feels secure', 'Made (cat) laugh again and again',
                             'Ensnares (cat) with a charming smile', 'Go for a nice long walk with (cat)',
                             'Wants to spend the entire day with (cat)'],
     "love_interest": [  'Can\'t seem to stop talking about (cat)', 'Would spend the entire day with (cat) if they could', 
@@ -474,7 +473,6 @@ INDIRECT_DECREASE = 3
 
 class Relationship(object):
     def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0, admiration=0, comfortable=0, jealousy=0, trust=0) -> None:        
-        # involved cat
         self.cat_from = cat_from
         self.cat_to = cat_to
         self.mates = mates
@@ -483,17 +481,24 @@ class Relationship(object):
         self.effect = 'neutral effect'
         self.current_action_str = ''
 
-        #if cat_from.are_related(cat_to):
-        #    self.family = True
+        if self.cat_from.is_parent(self.cat_to) or self.cat_to.is_parent(self.cat_from):
+            self.family = True
+            if platonic_like == 0:
+                platonic_like = 30
+                comfortable = 15
 
-        if mates and romantic_love == 0:
-            romantic_love = 20
-            comfortable = 20
-            trust = 10
-        
-        if self.family and platonic_like == 0:
-            platonic_like = 20
-            comfortable = 10
+        if self.cat_from.is_sibling(self.cat_to):
+            self.family = True
+            if platonic_like == 0:
+                platonic_like = 20
+                comfortable = 10
+
+        if self.cat_from.mate != None and self.cat_from.mate == self.cat_to.ID:
+            self.mates = True
+            if romantic_love == 0:
+                romantic_love = 20
+                comfortable = 20
+                trust = 10
 
         # each stat can go from 0 to 100
         self.romantic_love = romantic_love

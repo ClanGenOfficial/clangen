@@ -1,3 +1,4 @@
+from multiprocessing import reduction
 from .pelts import *
 from .names import *
 from .sprites import *
@@ -2971,7 +2972,7 @@ class Cat(object):
                 Relationship(other_cat, self, True))
 
     def is_potential_mate(self, other_cat, for_love_interest = False):
-        """Checks if this cat is a potential mate for the other cat."""
+        """Checks if this cat is a free and potential mate for the other cat."""
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
             return False
@@ -2981,6 +2982,10 @@ class Cat(object):
             return False
 
         # check for current mate
+        # if the cat has a mate, they are not open for a new mate
+        if not for_love_interest and self.mate is not None:
+            return False
+
         if self.mate is not None or other_cat.mate is not None:
             if not game.settings['affair']:
                 return False
@@ -2989,7 +2994,13 @@ class Cat(object):
         is_former_mentor = (other_cat in self.former_apprentices or self in other_cat.former_apprentices)
         if is_former_mentor and not game.settings['romantic with former mentor']:
             return False
-        
+
+        # check for relation
+        direct_related = self.is_sibling(other_cat) or self.is_parent(other_cat) or other_cat.is_parent(self)
+        indirect_related = self.is_uncle_aunt(other_cat) or other_cat.is_uncle_aunt(self)
+        if direct_related or indirect_related:
+            return False
+
         age_group1 = ['kitten']
         age_group2 = ['adolescent']
         age_group3 = ['young adult', 'adult']
@@ -2998,40 +3009,39 @@ class Cat(object):
         
         # check for age
         if for_love_interest:
-            if self.age in age_group1 or other_cat.age in age_group1:
-                return False
-            if (self.age in age_group1 and other_cat.age not in age_group1) or\
-                (self.age in age_group2 and other_cat.age not in age_group2) or\
-                (self.age in age_group3 and other_cat.age not in age_group3) or\
-                (self.age in age_group4 and other_cat.age not in age_group4) or\
-                (self.age in age_group5 and other_cat.age not in age_group5):
-                return False
+            if (self.age in age_group1 and other_cat.age in age_group1) or\
+                (self.age in age_group2 and other_cat.age in age_group2):
+                return True
         else:
             invalid_status_mate = ['kitten', 'apprentice', 'medicine cat apprentice']
             if self.status in invalid_status_mate or other_cat.status in invalid_status_mate:
                 return False
             if self.age in age_group1 or self.age in age_group2 or other_cat.age in age_group1 or other_cat.age in age_group2:
                 return False
-            if (self.age in age_group3 and other_cat.age not in age_group3) or\
-                (self.age in age_group4 and other_cat.age not in age_group4) or\
-                (self.age in age_group5 and other_cat.age not in age_group5):
-                return False
 
-        # check for relation
-        if self.are_related(other_cat):
-            return False
-        
-        return True
-
-    def are_related(self, other_cat):
-        """Check if the cats are related."""
-        # TODO: check for aunt/uncle and niece/nephew
-
-        # check direkt relation
-        parents_self = set(self.get_parents() + [self.ID])
-        parents_other = set(other_cat.get_parents() + [other_cat.ID])
-        if parents_self & parents_other:
+        if (self.age in age_group3 and other_cat.age in age_group3) or\
+            (self.age in age_group4 and other_cat.age in age_group4) or\
+            (self.age in age_group5 and other_cat.age in age_group5):
             return True
+        return False
+
+    def is_parent(self,other_cat):
+        """Check if the cat is the parent of the other cat."""
+        if self.ID in other_cat.get_parents():
+            return True
+        return False
+
+    def is_sibling(self, other_cat):
+        """Check if the cats are siblings."""
+        if set(self.get_parents()) & set(other_cat.get_parents()):
+            return True
+        return False
+
+    def is_uncle_aunt(self, other_cat):
+        """Check if the cats are related as uncle/aunt and niece/nephew."""
+        if set(self.get_siblings()) & set(other_cat.get_parents()):
+            return True
+        return False
 
     def get_parents(self):
         """Returns list containing parents of cat."""
@@ -3041,6 +3051,14 @@ class Cat(object):
             if self.parent2 is not None:
                 parents.append(self.parent2)
         return parents
+
+    def get_siblings(self):
+        """Returns list of the siblings."""
+        siblings = []
+        for inter_cat in self.all_cats.values():
+            if self.is_sibling(inter_cat):
+                siblings.append(inter_cat.ID)
+        return siblings
 
 
 # Twelve example cats
