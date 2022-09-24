@@ -3007,9 +3007,10 @@ class Cat(object):
                 return False
             if (self.age in age_group1 and other_cat.age not in age_group1) or\
                 (self.age in age_group2 and other_cat.age not in age_group2) or\
-                (self.age in age_group3 and other_cat.age not in age_group3) or\
-                (self.age in age_group4 and other_cat.age not in age_group4) or\
                 (self.age in age_group5 and other_cat.age not in age_group5):
+                return False
+            if self.age in age_group4 and other_cat.age not in age_group4 and\
+                self.age in age_group3 and other_cat.age not in age_group3:
                 return False
         else:
             invalid_status_mate = ['kitten', 'apprentice', 'medicine cat apprentice']
@@ -3017,9 +3018,10 @@ class Cat(object):
                 return False
             if self.age in age_group1 or self.age in age_group2 or other_cat.age in age_group1 or other_cat.age in age_group2:
                 return False
-            if (self.age in age_group3 and other_cat.age not in age_group3) or\
-                (self.age in age_group4 and other_cat.age not in age_group4) or\
-                (self.age in age_group5 and other_cat.age not in age_group5):
+            if self.age in age_group4 and other_cat.age not in age_group4 and\
+                self.age in age_group3 and other_cat.age not in age_group3:
+                return False
+            if self.age in age_group5 and other_cat.age not in age_group5:
                 return False
 
         # check for relation
