@@ -2994,7 +2994,13 @@ class Cat(object):
         is_former_mentor = (other_cat in self.former_apprentices or self in other_cat.former_apprentices)
         if is_former_mentor and not game.settings['romantic with former mentor']:
             return False
-        
+
+        # check for relation
+        direct_related = self.is_sibling(other_cat) or self.is_parent(other_cat) or other_cat.is_parent(self)
+        indirect_related = self.is_uncle_aunt(other_cat) or other_cat.is_uncle_aunt(self)
+        if direct_related or indirect_related:
+            return False
+
         age_group1 = ['kitten']
         age_group2 = ['adolescent']
         age_group3 = ['young adult', 'adult']
@@ -3003,33 +3009,21 @@ class Cat(object):
         
         # check for age
         if for_love_interest:
-            if self.age in age_group1 or other_cat.age in age_group1:
-                return False
-            if (self.age in age_group1 and other_cat.age not in age_group1) or\
-                (self.age in age_group2 and other_cat.age not in age_group2) or\
-                (self.age in age_group5 and other_cat.age not in age_group5):
-                return False
-            if self.age in age_group4 and other_cat.age not in age_group4 and\
-                self.age in age_group3 and other_cat.age not in age_group3:
-                return False
+            if (self.age in age_group1 and other_cat.age in age_group1) or\
+                (self.age in age_group2 and other_cat.age in age_group2):
+                return True
         else:
             invalid_status_mate = ['kitten', 'apprentice', 'medicine cat apprentice']
             if self.status in invalid_status_mate or other_cat.status in invalid_status_mate:
                 return False
             if self.age in age_group1 or self.age in age_group2 or other_cat.age in age_group1 or other_cat.age in age_group2:
                 return False
-            if self.age in age_group4 and other_cat.age not in age_group4 and\
-                self.age in age_group3 and other_cat.age not in age_group3:
-                return False
-            if self.age in age_group5 and other_cat.age not in age_group5:
-                return False
 
-        # check for relation
-        direct_related = self.is_sibling(other_cat) or self.is_parent(other_cat) or other_cat.is_parent(self)
-        indirect_related = self.is_uncle_aunt(other_cat) or other_cat.is_uncle_aunt(self)
-        if direct_related or indirect_related:
-            return False
-        return True
+        if (self.age in age_group3 and other_cat.age in age_group3) or\
+            (self.age in age_group4 and other_cat.age in age_group4) or\
+            (self.age in age_group5 and other_cat.age in age_group5):
+            return True
+        return False
 
     def is_parent(self,other_cat):
         """Check if the cat is the parent of the other cat."""
