@@ -1,3 +1,4 @@
+from multiprocessing import reduction
 from .pelts import *
 from .names import *
 from .sprites import *
@@ -2971,7 +2972,7 @@ class Cat(object):
                 Relationship(other_cat, self, True))
 
     def is_potential_mate(self, other_cat, for_love_interest = False):
-        """Checks if this cat is a potential mate for the other cat."""
+        """Checks if this cat is a free and potential mate for the other cat."""
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
             return False
@@ -2981,6 +2982,10 @@ class Cat(object):
             return False
 
         # check for current mate
+        # if the cat has a mate, they are not open for a new mate
+        if not for_love_interest and self.mate is not None:
+            return False
+
         if self.mate is not None or other_cat.mate is not None:
             if not game.settings['affair']:
                 return False
