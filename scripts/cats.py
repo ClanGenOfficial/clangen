@@ -2943,12 +2943,9 @@ class Cat(object):
     def set_mate(self, other_cat):
         """Assigns other_cat as mate to self."""
         self.mate = other_cat.ID
-        other_cat.mate = self.ID
 
-        # Affect relationships
         cat_relationship = list(
-            filter(lambda r: r.cat_to.ID == other_cat.ID,
-                    self.relationships))
+            filter(lambda r: r.cat_to.ID == other_cat.ID, self.relationships))
         if cat_relationship is not None and len(cat_relationship) > 0:
             cat_relationship[0].romantic_love = +20
             cat_relationship[0].comfortable = +20
@@ -2958,18 +2955,26 @@ class Cat(object):
             self.relationships.append(
                 Relationship(self, other_cat, True))
 
-        other_cat_relationship = list(
-            filter(lambda r: r.cat_to.ID == self.ID,
-                    other_cat.relationships))
-        if other_cat_relationship is not None and len(
-                other_cat_relationship) > 0:
-            other_cat_relationship[0].romantic_love = +20
-            other_cat_relationship[0].comfortable = +20
-            other_cat_relationship[0].trust = +10
-            other_cat_relationship[0].cut_boundries()
+    def unset_mate(self, breakup = False):
+        """Unset the mate."""
+        if self.mate is None:
+            return
+
+        relation = list(
+            filter(lambda r: r.cat_to.ID == self.mate, self.relationships))
+        if relation is not None and len(relation) > 0:
+            relation = relation[0]
+            relation.mates = False
+            if breakup:
+                relation.romantic_love -= 60
+                relation.comfortable -= 20
+                relation.trust -= 10
+                relation.cut_boundries()
         else:
-            other_cat.relationships.append(
-                Relationship(other_cat, self, True))
+            mate = self.all_cats.get(self.mate)
+            self.relationships.append(Relationship(self, mate))
+
+        self.mate = None
 
     def is_potential_mate(self, other_cat, for_love_interest = False):
         """Checks if this cat is a free and potential mate for the other cat."""
