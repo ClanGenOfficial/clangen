@@ -670,7 +670,7 @@ class Cat(object):
                                 'Just told ' + other_name + ' a hilarious joke'
                             ])
 
-                    if self.is_potential_mate(other_cat,for_love_interest=True):
+                    if other_cat.is_potential_mate(cat,for_love_interest=True):
                         thoughts.extend([
                             'Is developing a crush on ' + other_name,
                             'Is spending a lot of time with ' + other_name,
