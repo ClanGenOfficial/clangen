@@ -1,3 +1,4 @@
+from pickle import TRUE
 from random import choice, randint
 from .game_essentials import *
 import copy
@@ -480,6 +481,7 @@ class Relationship(object):
         self.opposit_relationship = None #link to oppositting relationship will be created later
         self.effect = 'neutral effect'
         self.current_action_str = ''
+        self.triggerd_event = False
 
         if self.cat_from.is_parent(self.cat_to) or self.cat_to.is_parent(self.cat_from):
             self.family = True
@@ -569,13 +571,12 @@ class Relationship(object):
                 action_relevant = True
                     
         # change the stats of the relationships
-        self.affect_own_relationship(action)
-        self.affect_other_relationship(action)
+        self.affect_relationship(action)
+        self.opposit_relationship.affect_relationship(action, other=TRUE)
 
         # broadcast action
         string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
         self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
-        # self.action_results()
 
         actionstring_all = f"{str(self.cat_from.name)} - {self.current_action_str} "
         effect_string =  f"({self.effect})"
@@ -680,27 +681,31 @@ class Relationship(object):
 
         return action_possibilies
 
-    def affect_own_relationship(self, action):
-        """Affect the own relationship according to the action."""
+    def affect_relationship(self, action, other = False):
+        """Affect the relationship according to the action."""
+        key = 'from'
+        if other:
+            key = 'to'
+
         # for easier value change
         number_increase = DIRECT_INCREASE_HIGH
         number_decrease = DIRECT_DECREASE_HIGH
 
         # increases
-        if action in INCREASE_HIGH['from']['romantic_love']:
+        if action in INCREASE_HIGH[key]['romantic_love']:
             self.romantic_love += number_increase
             self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
             self.platonic_like += INDIRECT_INCREASE
             self.comfortable += INDIRECT_INCREASE
-        if action in INCREASE_HIGH['from']['like']:
+        if action in INCREASE_HIGH[key]['like']:
             self.platonic_like += number_increase
             self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
             self.comfortable += INDIRECT_INCREASE
-        if action in INCREASE_HIGH['from']['dislike']:
+        if action in INCREASE_HIGH[key]['dislike']:
             self.dislike += number_increase
             self.effect = 'negative effect'
             # indirekt influences
@@ -712,10 +717,10 @@ class Relationship(object):
                 self.romantic_love -= INDIRECT_DECREASE
                 self.comfortable -= INDIRECT_DECREASE
                 self.trust -= INDIRECT_DECREASE
-        if action in INCREASE_HIGH['from']['admiration']:
+        if action in INCREASE_HIGH[key]['admiration']:
             self.admiration += number_increase
             self.effect = 'positive effect'
-        if action in INCREASE_HIGH['from']['comfortable']:
+        if action in INCREASE_HIGH[key]['comfortable']:
             self.comfortable += number_increase
             self.effect = 'positive effect'
             # indirekt influences
@@ -723,25 +728,25 @@ class Relationship(object):
             self.jealousy -= INDIRECT_DECREASE
             self.platonic_like += INDIRECT_INCREASE
             self.trust += INDIRECT_INCREASE
-        if action in INCREASE_HIGH['from']['jealousy']:
+        if action in INCREASE_HIGH[key]['jealousy']:
             self.jealousy += number_increase
             self.effect = 'negative effect'
-        if action in INCREASE_HIGH['from']['trust']:
+        if action in INCREASE_HIGH[key]['trust']:
             self.trust += number_increase
             self.effect = 'positive effect'
             # indirekt influences
             self.dislike -= INDIRECT_DECREASE
 
         number_increase = DIRECT_INCREASE_LOW
-        if action in INCREASE_LOW['from']['romantic_love']:
+        if action in INCREASE_LOW[key]['romantic_love']:
             self.romantic_love += number_increase
             if self.effect == 'neutral effect':
                 self.effect = 'small positive effect'
-        if action in INCREASE_LOW['from']['like']:
+        if action in INCREASE_LOW[key]['like']:
             self.platonic_like += number_increase
             if self.effect == 'neutral effect':
                 self.effect = 'small positive effect'
-        if action in INCREASE_LOW['from']['dislike']:
+        if action in INCREASE_LOW[key]['dislike']:
             self.dislike += number_increase
             if self.effect == 'neutral effect':
                 self.effect = 'small negative effect'
@@ -751,225 +756,83 @@ class Relationship(object):
                 self.romantic_love -= INDIRECT_DECREASE
                 self.comfortable -= INDIRECT_DECREASE
                 self.trust -= INDIRECT_DECREASE
-        if action in INCREASE_LOW['from']['admiration']:
+        if action in INCREASE_LOW[key]['admiration']:
             self.admiration += number_increase
             if self.effect == 'neutral effect':
                 self.effect = 'small positive effect'
-        if action in INCREASE_LOW['from']['comfortable']:
+        if action in INCREASE_LOW[key]['comfortable']:
             self.comfortable += number_increase
             if self.effect == 'neutral effect':
                 self.effect = 'small positive effect'
-        if action in INCREASE_LOW['from']['jealousy']:
+        if action in INCREASE_LOW[key]['jealousy']:
             self.jealousy += number_increase
             if self.effect == 'neutral effect':
                 self.effect = 'small negative effect'
-        if action in INCREASE_LOW['from']['trust']:
+        if action in INCREASE_LOW[key]['trust']:
             self.trust += number_increase
             if self.effect == 'neutral effect':
                 self.effect = 'small positive effect'
 
         # decreases
-        if action in DECREASE_HIGH['from']['romantic_love']:
+        if action in DECREASE_HIGH[key]['romantic_love']:
             self.romantic_love -= number_decrease
             self.effect = 'negative effect'
-        if action in DECREASE_HIGH['from']['like']:
+        if action in DECREASE_HIGH[key]['like']:
             self.platonic_like -= number_decrease
             self.effect = 'negative effect'
-        if action in DECREASE_HIGH['from']['dislike']:
+        if action in DECREASE_HIGH[key]['dislike']:
             self.dislike -= number_decrease
             self.effect = 'positive effect'
-        if action in DECREASE_HIGH['from']['admiration']:
+        if action in DECREASE_HIGH[key]['admiration']:
             self.admiration -= number_decrease
             self.effect = 'negative effect'
-        if action in DECREASE_HIGH['from']['comfortable']:
+        if action in DECREASE_HIGH[key]['comfortable']:
             self.comfortable -= number_decrease
             self.effect = 'negative effect'
-        if action in DECREASE_HIGH['from']['trust']:
+        if action in DECREASE_HIGH[key]['trust']:
             self.trust -= number_decrease
             self.effect = 'negative effect'
-        if action in DECREASE_HIGH['from']['jealousy']:
+        if action in DECREASE_HIGH[key]['jealousy']:
             self.jealousy -= number_decrease
             self.effect = 'positive effect'
 
         number_decrease = DIRECT_DECREASE_LOW
-        if action in DECREASE_LOW['from']['romantic_love']:
+        if action in DECREASE_LOW[key]['romantic_love']:
             self.romantic_love -= number_decrease
             if self.effect == 'neutral effect':
                 self.effect = 'small negative effect'
-        if action in DECREASE_LOW['from']['like']:
+        if action in DECREASE_LOW[key]['like']:
             self.platonic_like -= number_decrease
             if self.effect == 'neutral effect':
                 self.effect = 'small negative effect'
-        if action in DECREASE_LOW['from']['dislike']:
+        if action in DECREASE_LOW[key]['dislike']:
             self.dislike -= number_decrease
             if self.effect == 'neutral effect':
                 self.effect = 'small positive effect'
-        if action in DECREASE_LOW['from']['admiration']:
+        if action in DECREASE_LOW[key]['admiration']:
             self.admiration -= number_decrease
             if self.effect == 'neutral effect':
                 self.effect = 'small negative effect'
-        if action in DECREASE_LOW['from']['comfortable']:
+        if action in DECREASE_LOW[key]['comfortable']:
             self.comfortable -= number_decrease
             if self.effect == 'neutral effect':
                 self.effect = 'small negative effect'
-        if action in DECREASE_LOW['from']['jealousy']:
+        if action in DECREASE_LOW[key]['jealousy']:
             self.jealousy -= number_decrease
             if self.effect == 'neutral effect':
                 self.effect = 'small positive effect'
-        if action in DECREASE_LOW['from']['trust']:
+        if action in DECREASE_LOW[key]['trust']:
             self.trust -= number_decrease
             if self.effect == 'neutral effect':
                 self.effect = 'small negative effect'
-
-        self.cut_boundries()
-
-    def affect_other_relationship(self, action):
-        """Affect the other relationship according to the action."""
-        # for easier value change
-        number_increase = DIRECT_INCREASE_HIGH
-        number_decrease = DIRECT_DECREASE_HIGH
-
-        # increases
-        if action in INCREASE_HIGH['to']['romantic_love']:
-            self.opposit_relationship.romantic_love += number_increase
-            self.effect = 'positive effect'
-            # indirekt influences
-            self.dislike -= INDIRECT_DECREASE
-            self.platonic_like += INDIRECT_INCREASE
-            self.comfortable += INDIRECT_INCREASE
-        if action in INCREASE_HIGH['to']['like']:
-            self.opposit_relationship.platonic_like += number_increase
-            self.effect = 'positive effect'
-            # indirekt influences
-            self.dislike -= INDIRECT_DECREASE
-            self.comfortable += INDIRECT_INCREASE
-        if action in INCREASE_HIGH['to']['dislike']:
-            self.opposit_relationship.dislike += number_increase
-            self.effect = 'negative effect'
-            # indirekt influences
-            self.opposit_relationship.platonic_like -= INDIRECT_DECREASE
-            self.opposit_relationship.romantic_love -= INDIRECT_DECREASE
-            # if dislike reaced a certain point, and is increased, like will get decrease more
-            if self.dislike > 24:
-                self.opposit_relationship.platonic_like -= INDIRECT_DECREASE
-                self.opposit_relationship.romantic_love -= INDIRECT_DECREASE
-                self.opposit_relationship.comfortable -= INDIRECT_DECREASE
-                self.opposit_relationship.trust -= INDIRECT_DECREASE
-        if action in INCREASE_HIGH['to']['admiration']:
-            self.opposit_relationship.admiration += number_increase
-            self.effect = 'positive effect'
-        if action in INCREASE_HIGH['to']['comfortable']:
-            self.opposit_relationship.comfortable += number_increase
-            self.effect = 'positive effect'
-            # indirekt influences
-            self.dislike -= INDIRECT_DECREASE
-            self.jealousy -= INDIRECT_DECREASE
-            self.platonic_like += INDIRECT_INCREASE
-            self.trust += INDIRECT_INCREASE
-        if action in INCREASE_HIGH['to']['jealousy']:
-            self.opposit_relationship.jealousy -= number_decrease
-            self.effect = 'negative effect'
-        if action in INCREASE_HIGH['to']['trust']:
-            self.opposit_relationship.trust += number_increase
-            self.effect = 'positive effect'
-            # indirekt influences
-            self.dislike -= INDIRECT_DECREASE
-
-        number_increase = DIRECT_INCREASE_LOW
-        if action in INCREASE_LOW['from']['romantic_love']:
-            self.opposit_relationship.romantic_love += number_increase
-            if self.effect == 'neutral effect':
-                self.effect = 'small positive effect'
-        if action in INCREASE_LOW['from']['like']:
-            self.opposit_relationship.platonic_like += number_increase
-            if self.effect == 'neutral effect':
-                self.effect = 'small positive effect'
-        if action in INCREASE_LOW['from']['dislike']:
-            self.opposit_relationship.dislike += number_increase
-            if self.effect == 'neutral effect':
-                self.effect = 'small negative effect'
-            # if dislike reaced a certain point, and is increased, like will get decrease more
-            if self.opposit_relationship.dislike > 24:
-                self.opposit_relationship.platonic_like -= INDIRECT_DECREASE
-                self.opposit_relationship.romantic_love -= INDIRECT_DECREASE
-                self.opposit_relationship.comfortable -= INDIRECT_DECREASE
-                self.opposit_relationship.trust -= INDIRECT_DECREASE
-        if action in INCREASE_LOW['from']['admiration']:
-            self.opposit_relationship.admiration += number_increase
-            if self.effect == 'neutral effect':
-                self.effect = 'small positive effect'
-        if action in INCREASE_LOW['from']['comfortable']:
-            self.opposit_relationship.comfortable += number_increase
-            if self.effect == 'neutral effect':
-                self.effect = 'small positive effect'
-        if action in INCREASE_LOW['from']['jealousy']:
-            self.opposit_relationship.jealousy += number_increase
-            if self.effect == 'neutral effect':
-                self.effect = 'small negative effect'
-        if action in INCREASE_LOW['from']['trust']:
-            self.opposit_relationship.trust += number_increase
-            if self.effect == 'neutral effect':
-                self.effect = 'small positive effect'
-
-
-        # decreases
-        if action in DECREASE_HIGH['to']['romantic_love']:
-            self.opposit_relationship.romantic_love -= number_decrease
-            self.effect = 'negative effect'
-        if action in DECREASE_HIGH['to']['like']:
-            self.opposit_relationship.platonic_like -= number_decrease
-            self.effect = 'negative effect'
-        if action in DECREASE_HIGH['to']['dislike']:
-            self.opposit_relationship.dislike -= number_decrease
-            self.effect = 'positive effect'
-        if action in DECREASE_HIGH['to']['admiration']:
-            self.opposit_relationship.admiration -= number_decrease
-            self.effect = 'negative effect'
-        if action in DECREASE_HIGH['to']['comfortable']:
-            self.opposit_relationship.comfortable -= number_decrease
-            self.effect = 'negative effect'
-        if action in DECREASE_HIGH['to']['trust']:
-            self.opposit_relationship.trust -= number_decrease
-            self.effect = 'negative effect'
-        if action in DECREASE_HIGH['to']['jealousy']:
-            self.opposit_relationship.jealousy -= number_decrease
-            self.effect = 'positive effect'
-
-        number_decrease = DIRECT_DECREASE_LOW
-        if action in DECREASE_LOW['from']['romantic_love']:
-            self.opposit_relationship.romantic_love -= number_decrease
-            if self.effect == 'neutral effect':
-                self.effect = 'small negative effect'
-        if action in DECREASE_LOW['from']['like']:
-            self.opposit_relationship.platonic_like -= number_decrease
-            if self.effect == 'neutral effect':
-                self.effect = 'small negative effect'
-        if action in DECREASE_LOW['from']['dislike']:
-            self.opposit_relationship.dislike -= number_decrease
-            if self.effect == 'neutral effect':
-                self.effect = 'smallpositive effect'
-        if action in DECREASE_LOW['from']['admiration']:
-            self.opposit_relationship.admiration -= number_decrease
-            if self.effect == 'neutral effect':
-                self.effect = 'small negative effect'
-        if action in DECREASE_LOW['from']['comfortable']:
-            self.opposit_relationship.comfortable -= number_decrease
-            if self.effect == 'neutral effect':
-                self.effect = 'small negative effect'
-        if action in DECREASE_LOW['from']['jealousy']:
-            self.opposit_relationship.jealousy -= number_decrease
-            if self.effect == 'neutral effect':
-                self.effect = 'smallpositive effect'
-        if action in DECREASE_LOW['from']['trust']:
-            self.opposit_relationship.trust -= number_decrease
 
         self.cut_boundries()
 
     def cut_boundries(self):
+        """Cut the stats of involved relationships."""
         upper_bound = 100
         lower_bound = 0
 
-        """Cut the stats of involved relationships."""
         # current_relationship
         self.romantic_love = upper_bound if self.romantic_love > upper_bound else self.romantic_love
         self.romantic_love = lower_bound if self.romantic_love < lower_bound else self.romantic_love
@@ -985,25 +848,6 @@ class Relationship(object):
         self.trust = lower_bound if self.trust < lower_bound else self.trust
         self.jealousy = upper_bound if self.jealousy > upper_bound else self.jealousy
         self.jealousy = lower_bound if self.jealousy < lower_bound else self.jealousy
-        
-        # opposit relationship
-        if self.opposit_relationship == None:
-            self.link_relationship()
-        if self.opposit_relationship is not None:
-            self.opposit_relationship.romantic_love = upper_bound if self.opposit_relationship.romantic_love > upper_bound else self.opposit_relationship.romantic_love
-            self.opposit_relationship.romantic_love = lower_bound if self.opposit_relationship.romantic_love < lower_bound else self.opposit_relationship.romantic_love
-            self.opposit_relationship.platonic_like = upper_bound if self.opposit_relationship.platonic_like > upper_bound else self.opposit_relationship.platonic_like
-            self.opposit_relationship.platonic_like = lower_bound if self.opposit_relationship.platonic_like < lower_bound else self.opposit_relationship.platonic_like
-            self.opposit_relationship.dislike = upper_bound if self.opposit_relationship.dislike > upper_bound else self.opposit_relationship.dislike
-            self.opposit_relationship.dislike = lower_bound if self.opposit_relationship.dislike < lower_bound else self.opposit_relationship.dislike
-            self.opposit_relationship.admiration = upper_bound if self.opposit_relationship.admiration > upper_bound else self.opposit_relationship.admiration
-            self.opposit_relationship.admiration = lower_bound if self.opposit_relationship.admiration < lower_bound else self.opposit_relationship.admiration
-            self.opposit_relationship.comfortable = upper_bound if self.opposit_relationship.comfortable > upper_bound else self.opposit_relationship.comfortable
-            self.opposit_relationship.comfortable = lower_bound if self.opposit_relationship.comfortable < lower_bound else self.opposit_relationship.comfortable
-            self.opposit_relationship.trust = upper_bound if self.opposit_relationship.trust > upper_bound else self.opposit_relationship.trust
-            self.opposit_relationship.trust = lower_bound if self.opposit_relationship.trust < lower_bound else self.opposit_relationship.trust
-            self.opposit_relationship.jealousy = upper_bound if self.opposit_relationship.jealousy > upper_bound else self.opposit_relationship.jealousy
-            self.opposit_relationship.jealousy = lower_bound if self.opposit_relationship.jealousy < lower_bound else self.opposit_relationship.jealousy
 
     def special_interactions(self):
         actions_possibilities = []

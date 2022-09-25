@@ -2947,15 +2947,15 @@ class Cat(object):
         cat_relationship = list(
             filter(lambda r: r.cat_to.ID == other_cat.ID, self.relationships))
         if cat_relationship is not None and len(cat_relationship) > 0:
-            cat_relationship[0].romantic_love = +20
-            cat_relationship[0].comfortable = +20
-            cat_relationship[0].trust = +10
+            cat_relationship[0].romantic_love += 20
+            cat_relationship[0].comfortable += 20
+            cat_relationship[0].trust += 10
             cat_relationship[0].cut_boundries()
         else:
             self.relationships.append(
                 Relationship(self, other_cat, True))
 
-    def unset_mate(self, breakup = False):
+    def unset_mate(self, breakup = False, fight = False):
         """Unset the mate."""
         if self.mate is None:
             return
@@ -2966,9 +2966,11 @@ class Cat(object):
             relation = relation[0]
             relation.mates = False
             if breakup:
-                relation.romantic_love -= 60
+                relation.romantic_love -= 40
                 relation.comfortable -= 20
                 relation.trust -= 10
+                if fight:
+                    relation.platonic_like -= 30
                 relation.cut_boundries()
         else:
             mate = self.all_cats.get(self.mate)
