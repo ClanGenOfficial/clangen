@@ -1,4 +1,3 @@
-from re import T
 from .cats import *
 from .buttons import *
 from .relation_events import * 
@@ -63,10 +62,14 @@ class Events(object):
                         game.clan.leader_lives = 0
                 else:
                     cat.dead_for += 1
+
             # interaction here so every cat may have got a new name
+            relation_events = Relation_Events()
             for cat in cat_class.all_cats.copy().values():
                 if not cat.dead and not cat.exiled:
-                    self.create_interaction(cat)
+                    relation_events.create_interaction(cat)
+                    relation_events.handle_relationships(cat)
+                    relation_events.have_kits(cat)
             cat_class.thoughts()
             self.check_clan_relations()
             game.clan.age += 1
@@ -99,16 +102,14 @@ class Events(object):
     def _extracted_from_one_moon_7(self, cat):
         self.living_cats += 1
         cat.in_camp = 1
+        self.check_age(cat)
         self.perform_ceremonies(cat)
-        self.handle_relationships(cat)
         if self.new_cat_invited == False or self.living_cats < 10:
             self.invite_new_cats(cat)
-        self.have_kits(cat)
         self.other_interactions(cat)
         self.gain_accessories(cat)
         self.gain_scars(cat)
         self.handle_deaths(cat)
-        self.check_age(cat)
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0 and randint(1, 5) == 1:
@@ -300,7 +301,6 @@ class Events(object):
             if self.ceremony_accessory:
                 self.ceremony_accessory = False   
     
-
     def gain_scars(self, cat):
         if cat.specialty is not None and cat.specialty2 is not None or cat.age == 'kitten':
             return
@@ -609,47 +609,6 @@ class Events(object):
 
         if scar_text:
             game.cur_events_list.append(choice(scar_text))
-
-    def handle_relationships(self, cat):
-        mate_chance = 50
-        if self.living_cats > 60:
-            mate_chance = mate_chance + 50
-        elif self.living_cats > 120:
-            mate_chance = mate_chance + 75
-        elif self.living_cats > 300:
-            mate_chance = mate_chance * 3
-        elif self.living_cats > 500:
-            mate_chance = mate_chance * 5
-
-        hit = randint(1, mate_chance)
-        if hit == 1 and cat.mate is None:
-            for i in range(5): # Try assigning a random mate 5 times
-                other_cat = choice(list(cat_class.all_cats.values()))
-                if other_cat.mate is not None and not game.settings['affair']:
-                    continue
-                if cat.is_potential_mate(other_cat):
-                    cat.set_mate(other_cat)
-                    game.cur_events_list.append(
-                        f'{str(cat.name)} and {str(other_cat.name)} have become mates')
-                    break
-        elif randint(1, 10) == 1:
-            other_cat = choice(list(cat_class.all_cats.values()))
-            if cat.mate == other_cat.ID and other_cat.dead == True:
-                game.cur_events_list.append(
-                    f'{str(cat.name)} will always love {str(other_cat.name)} but has decided to move on'
-                )
-                cat.mate = None
-                other_cat.mate = None
-        elif randint(1, 40) == 1:
-
-            other_cat = choice(list(cat_class.all_cats.values()))
-            if cat.mate == other_cat.ID:
-                game.cur_events_list.append(
-                    f'{str(cat.name)} and {str(other_cat.name)} have broken up'
-                )
-                cat.mate = None
-                other_cat.mate = None
-        
 
     def invite_new_cats(self, cat):
         chance = 100
@@ -1027,9 +986,8 @@ class Events(object):
                     choice(cause_of_death) + ' at ' + str(cat.moons) +
                     ' moons old')
 
-        elif randint(
-                1,
-                200) == 1 and cat.status == 'leader':  #Several/All Lives loss
+        #Several/All Lives loss
+        elif randint(1,200) == 1 and cat.status == 'leader':  
             name = str(cat.name)
             allorsome = randint(1, 10)
             if cat.status == 'leader':
@@ -1474,237 +1432,6 @@ class Events(object):
         cat.update_mentor()
         game.clan.add_to_starclan(cat)
 
-    def have_kits(self, cat):
-        # decide chances of having kits, and if it's possible at all
-        not_correct_age = cat.age in ['kitten', 'adolescent', 'elder']
-        gender_breeding = (cat.gender == 'male' and not game.settings['no gendered breeding'])
-        if  not_correct_age or gender_breeding or cat.no_kits or game.switches['birth_cooldown']:
-            return
-
-        for kit in cat_class.all_cats.values():
-            if str(kit.status) == 'kitten' and kit.parent1 is not None and not kit.dead:
-                if cat_class.all_cats.get(kit.parent1) == cat or cat_class.all_cats.get(kit.parent2) == cat:
-                    return
-
-        chance = 0
-        if cat.mate is not None:
-            if cat.mate in cat.all_cats:
-                if cat_class.all_cats[cat.mate].dead:
-                    return
-                elif cat_class.all_cats[cat.mate].gender == cat.gender and not game.settings['no gendered breeding']:
-                    return
-                elif cat_class.all_cats[cat.mate].age == 'elder':
-                    return
-                else:
-                    chance = 50
-            else:
-                game.cur_events_list.append("Warning: " + str(cat.name) +
-                                            " has an invalid mate #" +
-                                            str(cat.mate) +
-                                            ". This has been unset.")
-                cat.mate = None
-        else:
-            if not game.settings['no unknown fathers']:
-                return
-            if cat.moons > 15:
-                chance = 100
-
-        # Decide randomly if kits will be born, if possible
-        if chance != 0:
-            hit = randint(0, chance)
-            if self.living_cats > 50:
-                hit = randint(0, chance + 20)
-            elif self.living_cats < 10:
-                hit = randint(0, chance - 10)
-
-            one_kit = [1] * 8
-            two_kits = [2] * 10
-            three_kits = [3] * 15
-            four_kits = [4] * 12
-            five_kits = [5] * 4
-            six_kits = [6]
-            kits = choice(one_kit + two_kits + three_kits + four_kits + five_kits + six_kits)
-
-            if hit == 1 and cat.mate is not None:
-                if not cat.no_kits and not cat_class.all_cats.get(cat.mate).no_kits:
-                    if game.cur_events_list is not None:
-                        game.cur_events_list.append(str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s) with ' + str(cat_class.all_cats.get(cat.mate).name))
-                    else:
-                        game.cur_events_list = [str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s) with' + str(cat_class.all_cats.get(cat.mate).name)]
-
-                    # create amount of kits
-                    for kit in range(kits):
-                        kit = Cat(parent1=cat.ID, parent2=cat.mate, moons=0)
-                        #create and update relationships
-                        relationships = []
-                        for cat_id in game.clan.clan_cats:
-                            the_cat = cat_class.all_cats.get(cat_id)
-                            if the_cat.dead or the_cat.exiled:
-                                continue
-                            if the_cat.ID in [kit.parent1, kit.parent2]:
-                                the_cat.relationships.append(Relationship(the_cat,kit,False,True))
-                                relationships.append(Relationship(kit,the_cat,False,True))
-                            else:
-                                the_cat.relationships.append(Relationship(the_cat,kit))
-                                relationships.append(Relationship(kit,the_cat))
-                        kit.relationships = relationships
-                        game.clan.add_cat(kit)
-                        
-            elif hit == 1:
-                name = str(cat.name)
-                loner_name = choice(names.loner_names)
-                warrior_name = names.prefix + names.suffix
-                warrior_name_two = names.prefix + names.suffix
-                mate_text = []
-
-                other_cat = choice(list(cat_class.all_cats.values()))
-                family = True
-                to_young = other_cat.age in ['kitten', 'adolescent', 'elder']
-                same_gender = True
-                affair = True
-                former_mentor_setting = True
-                countdown = int(len(cat_class.all_cats) / 3)
-                               
-                while (cat == other_cat or family or other_cat.exiled or other_cat.dead or to_young or same_gender or affair or former_mentor_setting) and countdown != 0:
-                    family = True
-                    same_gender = True
-                    affair = True
-                    other_cat = choice(list(cat_class.all_cats.values()))
-                    countdown -= 1
-                    
-                    # check if cats are related
-                    parents_to = [cat.parent1, cat.parent2, cat]
-                    parents_from = [other_cat.parent1, other_cat.parent2, other_cat]
-                    parents_to = set([c for c in parents_to if c is not None])
-                    parents_from = set([c for c in parents_from if c is not None])
-                    # if there is any same element in any of the lists, they are related
-                    family = parents_to & parents_from
-                    
-                    to_young = other_cat.age in ['kitten', 'adolescent', 'elder']
-
-                    if cat.gender == other_cat.gender:
-                        if game.settings['no gendered breeding']:
-                            same_gender = False 
-                    else:
-                        same_gender = False
-                    
-                    if other_cat.mate != None and cat.mate != None:
-                        if game.settings['affair']:
-                            affair = False
-                    else:
-                        affair = False
-                    
-                    former_mentor1 = cat.ID in [ inter_cat.ID for inter_cat in other_cat.former_apprentices]
-                    former_mentor2 = other_cat.ID in [ inter_cat.ID for inter_cat in cat.former_apprentices]
-                    if (former_mentor1 or former_mentor2):
-                        if game.settings['romantic with former mentor']:
-                            former_mentor_setting = False
-                    else:
-                        former_mentor_setting = False
-
-                    former_mentor_setting = (former_mentor1 or former_mentor2) and game.settings['romantic with former mentor']
-
-
-                parentless = randint(0, 2)
-                is_parent = randint(0, 3)
-
-                if countdown == 0:
-                    parentless = 1
-                
-                if parentless == 1:
-                    mate_text.extend([f'{name} had a litter of {str(kits)} kit(s)', f'{name} had a secret litter of {str(kits)} kit(s)', f'{name} had a litter of {str(kits)} kit(s) with an unknown partner',
-                                        f'{name} had a litter of {str(kits)} kit(s) and refused to talk about their progenitor'])
-                    game.cur_events_list.append(choice(mate_text))
-                    for kit in range(kits):
-                        kit = Cat(parent1=cat.ID, moons=0)
-                        #create and update relationships
-                        relationships = []
-                        for cat_id in game.clan.clan_cats:
-                            the_cat = cat_class.all_cats.get(cat_id)
-                            if the_cat.dead or the_cat.exiled:
-                                continue
-                            if the_cat.ID is kit.parent1:
-                                the_cat.relationships.append(Relationship(the_cat,kit,False,True))
-                                relationships.append(Relationship(kit,the_cat,False,True))
-                            else:
-                                the_cat.relationships.append(Relationship(the_cat,kit))
-                                relationships.append(Relationship(kit,the_cat))
-                        kit.relationships = relationships
-                        game.clan.add_cat(kit)
-                        
-                else:
-                    if is_parent == 1:
-                        mate_text.extend([f'{name} had a litter of {str(kits)} kit(s) with a ' + choice(['loner', 'rogue', 'kittypet']) + ' named ' + str(loner_name),
-                                          f'{name} had a secret litter of {str(kits)} kit(s) with a ' + choice(['loner', 'rogue', 'kittypet']) + ' named ' + str(loner_name)])
-
-                    elif is_parent == 2 and len(game.clan.all_clans) > 0:
-                        warrior1 = [f'{name} had a secret litter of {str(kits)} kit(s) with a ' + choice(game.clan.all_clans).name + f'Clan warrior named {str(warrior_name)}'] * 10
-                        warrior2 = [f'{name} had a secret litter of {str(kits)} kit(s) with {str(warrior_name)} of ' + choice(game.clan.all_clans).name + 'Clan'] * 10
-                        deputy = [f'{name} had a secret litter of {str(kits)} kit(s) with ' + choice(game.clan.all_clans).name + f'Clan\'s deputy {str(warrior_name)}'] * 3
-                        leader = [f'{name} had a secret litter of {str(kits)} kit(s) with ' + choice(game.clan.all_clans).name + f'Clan\'s leader {str(names.prefix)}star'] 
-                        
-                        mate_text.extend(warrior1 + warrior2 + deputy + leader)
-
-                    elif is_parent == 2 and len(game.clan.all_clans) == 0:
-                        mate_text.extend([f'{name} had a secret litter of {str(kits)} kit(s) with another Clan\'s warrior',
-                                            f'{name} had a secret litter of {str(kits)} kit(s) with a warrior named {str(warrior_name_two)}',
-                                            f'{name} had a secret litter of {str(kits)} kit(s) with {str(warrior_name_two)} from another Clan\'s'])                          
-                    else:
-                        if other_cat.status == 'medicine cat':
-                            mate_text.extend([f'{name} had a secret litter of {str(kits)} kit(s) with {str(other_cat.name)}',
-                                        f'{name} had a secret litter of {str(kits)} kit(s) with the medicine cat {str(other_cat.name)}',
-                                        f'{name} had a litter of {str(kits)} kit(s) with {str(other_cat.name)}',
-                                        f'{name} had a litter of {str(kits)} kit(s) with the medicine cat {str(other_cat.name)}'])
-                        else:
-                            mate_text.extend([str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s) with ' + str(other_cat.name)])
-                    game.cur_events_list.append(choice(mate_text))      
-                    for kit in range(kits):
-                        if is_parent == 1:
-                            kit = Cat(parent1=cat.ID, moons=0)
-                        elif is_parent == 2 and len(game.clan.all_clans) > 0:
-                            kit = Cat(parent1=cat.ID, moons=0)
-                        elif is_parent == 2 and len(game.clan.all_clans) == 0:
-                            kit = Cat(parent1=cat.ID, moons=0)
-                        else:
-                            kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)  
-                        #create and update relationships
-                        relationships = []
-                        for cat_id in game.clan.clan_cats:
-                            the_cat = cat_class.all_cats.get(cat_id)
-                            if the_cat.dead or the_cat.exiled:
-                                continue
-                            if kit.parent2 != None:
-                                if randint(0, 5) == 1:
-                                    if the_cat.ID in [kit.parent1, kit.parent2]:
-                                        the_cat.relationships.append(Relationship(the_cat,kit,False,True))
-                                        relationships.append(Relationship(kit,the_cat,False,True))
-                                    else:
-                                        the_cat.relationships.append(Relationship(the_cat,kit))
-                                        relationships.append(Relationship(kit,the_cat))
-                                else:
-                                    if the_cat.ID is kit.parent1:
-                                        the_cat.relationships.append(Relationship(the_cat,kit,False,True))
-                                        relationships.append(Relationship(kit,the_cat,False,True))
-                                    else:
-                                        the_cat.relationships.append(Relationship(the_cat,kit))
-                                        relationships.append(Relationship(kit,the_cat))
-                            else:
-                                if the_cat.ID is kit.parent1:
-                                    the_cat.relationships.append(Relationship(the_cat,kit,False,True))
-                                    relationships.append(Relationship(kit,the_cat,False,True))
-                                else:
-                                    the_cat.relationships.append(Relationship(the_cat,kit))
-                                    relationships.append(Relationship(kit,the_cat))
-                        kit.relationships = relationships
-                        game.clan.add_cat(kit)
-    
-    def had_kits(self):
-        if has_birth is True:
-            game.switches['birth_cooldown'] = True
-            has_birth = False
-        if self.birth_range <= 0:
-            game.switches['birth_cooldown'] = False
-    
     def check_age(self, cat):
         if 0 <= cat.moons <= 5:
             cat.age = 'kitten'
@@ -1718,71 +1445,5 @@ class Events(object):
             cat.age = 'senior adult'
         else:
             cat.age = 'elder'
-
-    def create_interaction(self, cat):
-        # if the cat has no relationships, skip
-        if len(cat.relationships) < 1 or cat.relationships is None:
-            return
-
-        cats_to_choose = list(
-            filter(lambda iter_cat_id: iter_cat_id != cat.ID,
-                   cat_class.all_cats.copy()))
-        # increase chance of cats, which are already befriended
-        like_threshold = 50
-        relevant_relationships = list(
-            filter(lambda relation: relation.platonic_like >= like_threshold,
-                   cat.relationships))
-        for relationship in relevant_relationships:
-            cats_to_choose.append(relationship.cat_to)
-            if relationship.platonic_like >= like_threshold * 2:
-                cats_to_choose.append(relationship.cat_to)
-
-        # increase chance of cats, which are already may be in love
-        love_threshold = 40
-        relevant_relationships = list(
-            filter(lambda relation: relation.romantic_love >= love_threshold,
-                   cat.relationships))
-        for relationship in relevant_relationships:
-            cats_to_choose.append(relationship.cat_to)
-            if relationship.romantic_love >= love_threshold * 2:
-                cats_to_choose.append(relationship.cat_to)
-
-        # increase the chance a kitten interact with other kittens
-        if cat.age == "kitten":
-            kittens = list(
-                filter(
-                    lambda cat_id: cat.all_cats.get(cat_id).age == "kitten" and
-                    cat_id != cat.ID, cat_class.all_cats.copy()))
-            cats_to_choose = cats_to_choose + kittens
-
-        # increase the chance a apprentice interact with otherapprentices
-        if cat.age == "adolescent":
-            apprentices = list(
-                filter(
-                    lambda cat_id: cat.all_cats.get(cat_id).age == "adolescent"
-                    and cat_id != cat.ID, cat_class.all_cats.copy()))
-            cats_to_choose = cats_to_choose + apprentices
-
-        # choose cat and start
-        random_id = random.choice(list(cat.all_cats.keys()))
-        countdown = int(len(cat_class.all_cats) / 3)
-
-        relevant_relationship_list = list(
-            filter(
-                lambda relation: str(relation.cat_to) == str(random_id) and
-                not relation.cat_to.dead, cat.relationships))
-        while len(relevant_relationship_list) < 1 or random_id == cat.ID:
-            random_id = random.choice(list(cat.all_cats.keys()))
-            relevant_relationship_list = list(
-                filter(
-                    lambda relation: str(relation.cat_to) == str(random_id) and
-                    not relation.cat_to.dead, cat.relationships))
-            countdown-=1
-            if countdown == 0:
-                return
-        relevant_relationship = relevant_relationship_list[0]
-        relevant_relationship.start_action()
-
-        # self.relationship_outcome(relationship=relevant_relationship)
 
 events_class = Events()
