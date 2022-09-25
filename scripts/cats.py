@@ -2534,7 +2534,9 @@ class Cat(object):
                 "pelt_length": inter_cat.pelt.length,
                 "spirit_kitten": inter_cat.age_sprites['kitten'],
                 "spirit_adolescent": inter_cat.age_sprites['adolescent'],
+                "spirit_young_adult": inter_cat.age_sprites['young adult'],
                 "spirit_adult": inter_cat.age_sprites['adult'],
+                "spirit_senior_adult": inter_cat.age_sprites['senior adult'],
                 "spirit_elder": inter_cat.age_sprites['elder'],
                 "eye_colour": inter_cat.eye_colour,
                 "reverse": inter_cat.reverse,
@@ -2776,7 +2778,9 @@ class Cat(object):
             new_cat.exiled = cat["exiled"]
             new_cat.age_sprites['kitten'] = cat["spirit_kitten"]
             new_cat.age_sprites['adolescent'] = cat["spirit_adolescent"]
+            new_cat.age_sprites['young adult'] = cat["spirit_young_adult"]
             new_cat.age_sprites['adult'] = cat["spirit_adult"]
+            new_cat.age_sprites['senior adult'] = cat["spirit_senior_adult"]
             new_cat.age_sprites['elder'] = cat["spirit_elder"]
             new_cat.eye_colour = cat["eye_colour"]
             new_cat.reverse = cat["reverse"]
