@@ -2862,6 +2862,8 @@ class Cat(object):
     def describe_color(self):
         color_name = ''
         color_name = str(self.pelt.colour).lower()
+        if self.tortiecolour != None:
+            color_name = str(self.tortiecolour).lower()
         if color_name == 'palegrey':
             color_name = 'pale grey'
         elif color_name == 'darkgrey':
@@ -2943,6 +2945,7 @@ class Cat(object):
     def set_mate(self, other_cat):
         """Assigns other_cat as mate to self."""
         self.mate = other_cat.ID
+        other_cat.mate = self.ID
 
         cat_relationship = list(
             filter(lambda r: r.cat_to.ID == other_cat.ID, self.relationships))
@@ -2992,8 +2995,7 @@ class Cat(object):
             return False
 
         if self.mate is not None or other_cat.mate is not None:
-            if not game.settings['affair']:
-                return False
+            return False
 
         # check for mentor
         is_former_mentor = (other_cat in self.former_apprentices or self in other_cat.former_apprentices)
@@ -3024,10 +3026,14 @@ class Cat(object):
             if self.age in age_group1 or self.age in age_group2 or other_cat.age in age_group1 or other_cat.age in age_group2:
                 return False
 
+        if self.moons < 14 or other_cat.moons < 14:
+            return False
+
         if (self.age in age_group3 and other_cat.age in age_group3) or\
             (self.age in age_group4 and other_cat.age in age_group4) or\
             (self.age in age_group5 and other_cat.age in age_group5):
             return True
+        
         return False
 
     def is_parent(self,other_cat):
