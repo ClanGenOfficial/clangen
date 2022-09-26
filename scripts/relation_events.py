@@ -234,7 +234,7 @@ class Relation_Events(object):
                 elif cat_class.all_cats[cat.mate].age == 'elder':
                     return
                 else:
-                    chance = 20
+                    chance = 30
             else:
                 game.cur_events_list.append("Warning: " + str(cat.name) +
                                             " has an invalid mate #" +
@@ -245,7 +245,7 @@ class Relation_Events(object):
             if not game.settings['no unknown fathers']:
                 return
             else:
-                chance = 35
+                chance = 40
 
         # Decide randomly if kits will be born, if possible
         if chance != 0:
