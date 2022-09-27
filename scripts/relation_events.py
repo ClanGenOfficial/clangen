@@ -243,6 +243,20 @@ class Relation_Events(object):
                                             str(cat.mate) +
                                             ". This has been unset.")
                 cat.mate = None
+            if cat_class.all_cats[cat.mate].age == 'elder':
+                if cat.gender == 'female' and cat_class.all_cats[cat.mate].gender == 'male':
+                    chance = 35
+                elif cat.gender == 'male' and game.settings['no gendered breeding']:
+                    chance = 35
+            if cat.age == 'elder':
+                if cat.gender == 'male' and cat_class.all_cats[cat.mate].gender == 'female':
+                    chance = 35
+                elif cat.gender == 'female' and game.settings['no gendered breeding']:
+                    chance = 35
+            if cat.age == 'elder' and cat_class.all_cats[cat.mate].age == 'elder':
+                chance = 0
+            
+                
         else:
             if not game.settings['no unknown fathers']:
                 return
@@ -302,8 +316,8 @@ class Relation_Events(object):
                 too_young = other_cat.age in ['kitten', 'adolescent']
                 same_gender = True
                 affair = True
-                former_mentor_setting = True
-                too_old = True
+                former_mentor_setting = True                
+                too_old = other_cat.age in 'elder' and cat.age not in 'senior adult' or cat.age in 'elder' and other_cat.age not in 'senior adult'
                 not_suitable_mate = True
                 countdown = int(len(cat_class.all_cats) / 3)
                                
@@ -327,6 +341,7 @@ class Relation_Events(object):
                         not_suitable_mate = False                        
                     
                     too_young = other_cat.age in ['kitten', 'adolescent']
+                    too_old = other_cat.age in 'elder' and cat.age not in 'senior adult' or cat.age in 'elder' and other_cat.age not in 'senior adult'
 
                     if cat.gender == other_cat.gender:
                         if game.settings['no gendered breeding']:
@@ -339,14 +354,6 @@ class Relation_Events(object):
                             affair = False
                     else:
                         affair = False
-
-                    if cat.gender == 'female' and cat.age == 'elder':
-                        if game.settings['no gendered breeding']:
-                            too_old = False
-                        else:
-                            too_old = True
-                    else:
-                        too_old = False
                     
                     former_mentor1 = cat.ID in [ inter_cat.ID for inter_cat in other_cat.former_apprentices]
                     former_mentor2 = other_cat.ID in [ inter_cat.ID for inter_cat in cat.former_apprentices]
