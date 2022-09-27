@@ -80,16 +80,18 @@ class Relation_Events(object):
 
         hit = randint(1, mate_chance)
         if hit == 1:
-            for i in range(5): # Try assigning a random mate 5 times
-                other_cat = choice(list(cat_class.all_cats.values()))
-                if other_cat.mate is not None:
-                    continue
-                if cat.is_potential_mate(other_cat):
-                    cat.set_mate(other_cat)
-                    game.cur_events_list.append(
-                        f'{str(cat.name)} and {str(other_cat.name)} have become mates')
-                    break
-        elif randint(1, 10) == 1:
+            if cat.mate == None:
+                for i in range(5): # Try assigning a random mate 5 times
+                    other_cat = choice(list(cat_class.all_cats.values()))
+                    if cat.is_potential_mate(other_cat) == False or other_cat.is_potential_mate(cat) == False:
+                        continue
+                    else:
+                        cat.mate = other_cat.ID
+                        other_cat.mate = cat.ID
+                        game.cur_events_list.append(
+                            f'{str(cat.name)} and {str(other_cat.name)} have become mates')
+                        
+        elif randint(1, 50) == 1:
             other_cat = choice(list(cat_class.all_cats.values()))
             if cat.mate == other_cat.ID and other_cat.dead == True:
                 game.cur_events_list.append(
@@ -97,7 +99,7 @@ class Relation_Events(object):
                 )
                 cat.mate = None
                 other_cat.mate = None
-        elif randint(1, 40) == 1:
+        elif randint(1, 100) == 1:
 
             other_cat = choice(list(cat_class.all_cats.values()))
             if cat.mate == other_cat.ID:
@@ -123,13 +125,13 @@ class Relation_Events(object):
             relationship.link_relationship()
 
         # overcome dead mates
-        if cat_from_mate != None and cat_from_mate.dead and randint(1, 10):
+        if cat_from_mate != None and cat_from_mate.dead and randint(1, 30) == 1:
             game.cur_events_list.append(
                 f'{str(cat_from.name)} will always love {str(cat_from_mate.name)} but has decided to move on'
             )
             cat_from.mate = None
             cat_from_mate.mate = None
-        if cat_to_mate != None and cat_to_mate.dead and randint(1, 10):
+        if cat_to_mate != None and cat_to_mate.dead and randint(1, 30) == 1:
             game.cur_events_list.append(
                 f'{str(cat_to.name)} will always love {str(cat_to_mate.name)} but has decided to move on'
             )
@@ -144,7 +146,7 @@ class Relation_Events(object):
         # breakup and new mate
         if cat_from.is_potential_mate(cat_to) and cat_from.mate is not None and cat_to.mate is not None:
             love_over_30 = relationship.romantic_love > 30 and relationship.opposit_relationship.romantic_love > 30
-            normal_chance = randint(1, 10)
+            normal_chance = randint(1, 20)
             # compare love value of current mates
             bigger_than_current = False
             bigger_love_chance = randint(1, 3)
@@ -212,7 +214,7 @@ class Relation_Events(object):
 
     def have_kits(self, cat):
         # decide chances of having kits, and if it's possible at all
-        not_correct_age = cat.age in ['kitten', 'adolescent', 'elder']
+        not_correct_age = cat.age in ['kitten', 'adolescent'] or cat.moons < 15
         gender_breeding = (cat.gender == 'male' and not game.settings['no gendered breeding'])
         if not_correct_age or gender_breeding or cat.no_kits or game.switches['birth_cooldown']:
             return
@@ -229,21 +231,37 @@ class Relation_Events(object):
                     return
                 elif cat_class.all_cats[cat.mate].gender == cat.gender and not game.settings['no gendered breeding']:
                     return
-                elif cat_class.all_cats[cat.mate].age == 'elder':
+                elif cat_class.all_cats[cat.mate].age == 'elder' and cat_class.all_cats[cat.mate].gender == 'female' and gender_breeding:
                     return
+                elif cat_class.all_cats[cat.mate].age == 'elder' and cat_class.all_cats[cat.mate].gender == 'male':
+                    chance = 2
                 else:
-                    chance = 50
+                    chance = 30
             else:
                 game.cur_events_list.append("Warning: " + str(cat.name) +
                                             " has an invalid mate #" +
                                             str(cat.mate) +
                                             ". This has been unset.")
                 cat.mate = None
+            if cat_class.all_cats[cat.mate].age == 'elder':
+                if cat.gender == 'female' and cat_class.all_cats[cat.mate].gender == 'male':
+                    chance = 35
+                elif cat.gender == 'male' and game.settings['no gendered breeding']:
+                    chance = 35
+            if cat.age == 'elder':
+                if cat.gender == 'male' and cat_class.all_cats[cat.mate].gender == 'female':
+                    chance = 35
+                elif cat.gender == 'female' and game.settings['no gendered breeding']:
+                    chance = 35
+            if cat.age == 'elder' and cat_class.all_cats[cat.mate].age == 'elder':
+                chance = 0
+            
+                
         else:
             if not game.settings['no unknown fathers']:
                 return
-            if cat.moons > 15:
-                chance = 100
+            else:
+                chance = 40
 
         # Decide randomly if kits will be born, if possible
         if chance != 0:
@@ -295,16 +313,19 @@ class Relation_Events(object):
 
                 other_cat = choice(list(cat_class.all_cats.values()))
                 family = True
-                to_young = other_cat.age in ['kitten', 'adolescent', 'elder']
+                too_young = other_cat.age in ['kitten', 'adolescent']
                 same_gender = True
                 affair = True
-                former_mentor_setting = True
+                former_mentor_setting = True                
+                too_old = other_cat.age in 'elder' and cat.age not in 'senior adult' or cat.age in 'elder' and other_cat.age not in 'senior adult'
+                not_suitable_mate = True
                 countdown = int(len(cat_class.all_cats) / 3)
                                
-                while (cat == other_cat or family or other_cat.exiled or other_cat.dead or to_young or same_gender or affair or former_mentor_setting) and countdown != 0:
+                while (cat == other_cat or not_suitable_mate or family or too_young or too_old or same_gender or affair or former_mentor_setting) and countdown != 0:
                     family = True
                     same_gender = True
                     affair = True
+                    not_suitable_mate = True
                     other_cat = choice(list(cat_class.all_cats.values()))
                     countdown -= 1
                     
@@ -315,8 +336,12 @@ class Relation_Events(object):
                     parents_from = set([c for c in parents_from if c is not None])
                     # if there is any same element in any of the lists, they are related
                     family = parents_to & parents_from
+
+                    if cat.is_potential_mate(other_cat) and other_cat.is_potential_mate(cat):
+                        not_suitable_mate = False                        
                     
-                    to_young = other_cat.age in ['kitten', 'adolescent', 'elder']
+                    too_young = other_cat.age in ['kitten', 'adolescent']
+                    too_old = other_cat.age in 'elder' and cat.age not in 'senior adult' or cat.age in 'elder' and other_cat.age not in 'senior adult'
 
                     if cat.gender == other_cat.gender:
                         if game.settings['no gendered breeding']:
