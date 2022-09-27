@@ -3012,7 +3012,7 @@ class Cat(object):
         age_group2 = ['adolescent']
         age_group3 = ['young adult', 'adult']
         age_group4 = ['adult', 'senior adult']
-        age_group5 = ['elder']
+        age_group5 = ['senior adult', 'elder']
         
         # check for age
         if for_love_interest:
