@@ -71,7 +71,8 @@ class Events(object):
                 if not cat.dead and not cat.exiled:
                     relation_events.create_interaction(cat)
                     relation_events.handle_relationships(cat)
-                    relation_events.have_kits(cat)
+                    relation_events.check_if_having_kits(cat)
+                    #relation_events.have_kits(cat)
             cat_class.thoughts()
             self.check_clan_relations()
             game.clan.age += 1

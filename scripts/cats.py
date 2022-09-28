@@ -92,6 +92,7 @@ class Cat(object):
         self.pattern = None
         self.tortiepattern = None
         self.tortiecolour = None
+        self.birth_cooldown = 0
         if ID is None:
             potential_ID = str(randint(10000, 9999999))
             while potential_ID in self.all_cats:
@@ -2613,7 +2614,8 @@ class Cat(object):
                 "admiration": r.admiration,
                 "comfortable": r.comfortable,
                 "jealousy": r.jealousy,
-                "trust": r.trust
+                "trust": r.trust,
+                "log": r.log
             }
             rel.append(r_data)
 
@@ -2787,15 +2789,16 @@ class Cat(object):
                         new_rel = Relationship(
                             cat_from=self,
                             cat_to=cat_to,
-                            mates=rel['mates'],
-                            family=rel['family'],
-                            romantic_love=rel['romantic_love'],
-                            platonic_like=rel['platonic_like'],
-                            dislike=rel['dislike'],
-                            admiration=rel['admiration'],
-                            comfortable=rel['comfortable'],
-                            jealousy=rel['jealousy'],
-                            trust=rel['trust'])
+                            mates=rel['mates'] if rel['mates'] else False,
+                            family=rel['family'] if rel['family'] else False,
+                            romantic_love=rel['romantic_love'] if rel['romantic_love'] else 0,
+                            platonic_like=rel['platonic_like'] if rel['platonic_like'] else 0,
+                            dislike=rel['dislike'] if rel['dislike'] else 0,
+                            admiration=rel['admiration'] if rel['admiration'] else 0,
+                            comfortable=rel['comfortable'] if rel['comfortable'] else 0,
+                            jealousy=rel['jealousy'] if rel['jealousy'] else 0,
+                            trust=rel['trust'] if rel['trust'] else 0,
+                            log =rel['log'] if rel['log'] else [])
                         relationships.append(new_rel)
                     self.relationships = relationships
             except:
@@ -3009,36 +3012,22 @@ class Cat(object):
         indirect_related = self.is_uncle_aunt(other_cat) or other_cat.is_uncle_aunt(self)
         if direct_related or indirect_related:
             return False
-
-        age_group1 = ['kitten']
-        age_group2 = ['adolescent']
-        age_group3 = ['young adult', 'adult']
-        age_group4 = ['adult', 'senior adult']
-        age_group5 = ['senior adult', 'elder']
         
         # check for age
-        if for_love_interest:
-            if (self.age in age_group1 and other_cat.age in age_group1) or\
-                (self.age in age_group2 and other_cat.age in age_group2):
-                return True
-        else:
-            invalid_status_mate = ['kitten', 'apprentice', 'medicine cat apprentice']
-            if self.status in invalid_status_mate or other_cat.status in invalid_status_mate:
-                return False
-            if self.age in age_group1 or self.age in age_group2 or other_cat.age in age_group1 or other_cat.age in age_group2:
-                return False
-
         if self.moons < 14 or other_cat.moons < 14:
             return False
 
-        if (self.age in age_group3 and other_cat.age in age_group3) or\
-            (self.age in age_group4 and other_cat.age in age_group4) or\
-            (self.age in age_group5 and other_cat.age in age_group5):
+        if self.age == other_cat.age:
             return True
-        
+
+        invalid_status_mate = ['kitten', 'apprentice', 'medicine cat apprentice']
+        not_invalid_status = self.status not in invalid_status_mate and other_cat.status not in invalid_status_mate
+        if not_invalid_status and abs(self.moons - other_cat.moons) <= 40:
+            return True
+
         return False
 
-    def is_parent(self,other_cat):
+    def is_parent(self, other_cat):
         """Check if the cat is the parent of the other cat."""
         if self.ID in other_cat.get_parents():
             return True
