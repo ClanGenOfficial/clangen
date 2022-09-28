@@ -272,7 +272,7 @@ class Events(object):
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         acc_text.append(f'{name} found a bunch of pretty feathers and decided to wear them')
                     elif cat.accessory in ["HERBS", "PETALS", "DRY_HERBS"]:
-                        acc_text.append(f'{name} always tries to groom themselves clean but they always seem to have something stuck in there')
+                        acc_text.append(f'{name} always seems to have something stuck in their fur')
                     elif cat.accessory in plant_accessories and cat.status in ['medicine cat apprentice', 'medicine cat']:
                         acc_text.extend([f'{name} decides to always bring {accessory.lower()} with them',
                                         f'{accessory.lower()} is so important to {name} that they always carry it around',
@@ -281,7 +281,7 @@ class Events(object):
                     else:
                         acc_text.extend([f'{name} finds something interesting and decides to wear it on their pelt', f'A clanmate gives {name} a pretty accessory and they decide to wear it on their pelt',
                                         f'{name} finds something interesting while out on a walk and decides to wear it on their pelt', f'{name} finds {accessory.lower()} fascinating and decides to wear it on their pelt',
-                                        f'A clanmate gives {name} something to adorn their pelt as congratulations', f'{other_name} gives {name} a pretty accessory and they decide to wear it on their pelt'
+                                        f'A clanmate gives {name} something to adorn their pelt as a gift', f'{other_name} gives {name} a pretty accessory and they decide to wear it on their pelt'
                         ])
                 else:
                     if cat.accessory in ["FORGET ME NOTS", "BLUEBELLS", "POPPY"]:
@@ -291,7 +291,7 @@ class Events(object):
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         acc_text.append(f'{name} was playing with feathers earlier and decided to wear some of them')
                     elif cat.accessory in ["HERBS", "PETALS", "DRYHERBS"]:
-                        acc_text.append(f'{name} is always groomed clean by their parents but there always seems be something stuck in there')
+                        acc_text.append(f'{name} is always groomed by their parents but there always seems be something stuck in there')
                     else:    
                         acc_text.extend([f'{name} seems to have picked something up while playing out in the camp', f'{name} finds something interesting and decides to wear it on their pelt',
                                         f'A clanmate gives {name} a pretty accessory and they decide to wear it on their pelt', f'{other_name} gives {name} a pretty accessory and they decide to wear it on their pelt',
@@ -1298,9 +1298,11 @@ class Events(object):
                     if randint(1, murder_chance - 15) == 1:
                         cause_of_death = [
                             name + ' murdered ' + other_name +
-                            ' in cold blood in hopes of taking their place',
+                            ' in cold blood '
+                            'in hopes of taking their place',
                             name + ' murdered ' + other_name +
-                            ' in cold blood and made it look accidental in hopes of taking their place'
+                            ' in cold blood and made it look accidental '
+                            'in hopes of taking their place'
                         ]
                         if other_cat == 'leader':
                             game.clan.leader_lives -= 10
