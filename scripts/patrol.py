@@ -900,6 +900,8 @@ class Patrol(object):
         elif self.patrol_event.patrol_id == 102:
             self.patrol_random_cat.skill = choice(
                 ['paralyzed', 'blind', 'missing a leg'])
+            if game.settings['retirement']:
+                self.patrol_random_cat.status_change('elder')
         elif self.patrol_event.patrol_id == 904:
             if self.patrol_random_cat.specialty is None:
                 self.patrol_random_cat.specialty = choice([choice(scars5)])
