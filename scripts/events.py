@@ -25,7 +25,7 @@ class Events(object):
 
     def one_moon(self):
         if game.switches['timeskip']:
-            game.switches['save_clan'] = False
+            game.switches['saved_clan'] = False
             self.living_cats = 0
             self.new_cat_invited = False
             game.patrolled.clear()

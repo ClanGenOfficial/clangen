@@ -396,7 +396,7 @@ class ClanScreen(Screens):
         pygame.draw.rect(screen,
                          color='gray',
                          rect=pygame.Rect(320, 660, 160, 20))
-        if game.switches['save_clan']:
+        if game.switches['saved_clan']:
             verdana_green.text('Saved!', ('center', -20))
         else:
             verdana_red.text('Remember to save!', ('center', -20))
