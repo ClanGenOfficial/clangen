@@ -282,6 +282,7 @@ class Button(object):
             elif key == 'mate':
                 if value is not None:
                     cat_value.set_mate(value)
+                    value.set_mate(cat_value)
                 else:
                     # affect relationship
                     cat_mate = cat_class.all_cats[cat_value.mate]
