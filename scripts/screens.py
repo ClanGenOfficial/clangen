@@ -1,3 +1,4 @@
+from importlib import invalidate_caches
 from re import T
 from .clan import *
 from .events import *
@@ -2038,8 +2039,10 @@ class ChooseMateScreen(Screens):
     # TODO Rename this here and in `on_use`
     def _extracted_from_on_use_42(self, the_cat, valid_mates, pos_x, pos_y):
         for x in game.clan.clan_cats:
-            if cat_class.all_cats[x].is_potential_mate(the_cat):
-                valid_mates.append(cat_class.all_cats[x])
+            relevant_cat = cat_class.all_cats[x]
+            invalid_age = relevant_cat.age not in ['kitten', 'adolescent']
+            if relevant_cat.ID != the_cat.ID and invalid_age and not (relevant_cat.dead or relevant_cat.exiled):
+                valid_mates.append(relevant_cat)
         all_pages = int(ceil(len(valid_mates) /
                              27.0)) if len(valid_mates) > 27 else 1
         cats_on_page = 0

@@ -97,7 +97,7 @@ class Relation_Events(object):
                 relationship.link_relationship()
 
             # overcome dead mates
-            if cat_from_mate != None and cat_from_mate.dead and randint(1, 20) == 1:
+            if cat_from_mate != None and cat_from_mate.dead and randint(1, 25) == 1:
                 self.had_one_event = True
                 print(cat_from.name, cat_from_mate.name , " - OVERCOME", game.clan.age, "moons")
                 game.cur_events_list.append(
@@ -223,7 +223,6 @@ class Relation_Events(object):
     def check_if_having_kits(self, cat):
         """Check if it possible possible to have kits and with which cat."""
         if cat.birth_cooldown > 0:
-            print(cat.birth_cooldown)
             cat.birth_cooldown -= 1
 
         # decide chances of having kits, and if it's possible at all
@@ -277,8 +276,12 @@ class Relation_Events(object):
         # calculate which cat will be the parent
         if mate == None and biggest_love_cat == None:
             self.new_have_kits(cat)
-        elif mate.ID == biggest_love_cat.ID:
+        elif mate != None and biggest_love_cat != None and mate.ID == biggest_love_cat.ID:
             self.new_have_kits(cat, mate, mate_relation)
+        elif mate != None and biggest_love_cat == None:
+            self.new_have_kits(cat, mate, mate_relation)
+        elif biggest_love_cat != None and mate == None:
+            self.new_have_kits(cat, biggest_love_cat, highes_romantic_relation)
         else:
             # if the difference of the romantic love is lower than 0, an affair is more possible
             if love_diff_mate_other < 0:
@@ -341,12 +344,18 @@ class Relation_Events(object):
 
         print("CHANCE", chance)
         print(cat.name, " - HAVE KITS", game.clan.age, "moons")
-        one_kit = [1] * 8
-        two_kits = [2] * 10
-        three_kits = [3] * 15
-        four_kits = [4] * 12
-        five_kits = [5] * 4
-        six_kits = [6]
+        one_kit_possibility = {"young adult": 8,"adult": 9,"senior adult": 10,"elder" : 1}
+        two_kit_possibility = {"young adult": 10,"adult": 14,"senior adult": 15,"elder" : 1}
+        three_kit_possibility = {"young adult": 15,"adult": 15,"senior adult": 5,"elder" : 0}
+        four_kit_possibility = {"young adult": 12,"adult": 6,"senior adult": 0,"elder" : 0}
+        five_kit_possibility = {"young adult": 4,"adult": 1,"senior adult": 0,"elder" : 0}
+        six_kit_possibility = {"young adult": 1,"adult": 0,"senior adult": 0,"elder" : 0}
+        one_kit = [1] * one_kit_possibility[cat.age]
+        two_kits = [2] * two_kit_possibility[cat.age]
+        three_kits = [3] * three_kit_possibility[cat.age]
+        four_kits = [4] * four_kit_possibility[cat.age]
+        five_kits = [5] * five_kit_possibility[cat.age]
+        six_kits = [6] * six_kit_possibility[cat.age]
         kits = choice(one_kit + two_kits + three_kits + four_kits + five_kits + six_kits)
 
         # create amount of kits
@@ -381,7 +390,7 @@ class Relation_Events(object):
             if cat.gender == 'male':
                 possible_events = [f"{str(cat.name)} has brought a litter of {str(kits)} kit(s) into the camp, but does not talk about their mother"]
             elif cat.gender == 'female':
-                possible_events = [f"{str(cat.name)} had a litter of {str(kits)} kit(s), but refused to talk about the prorector"]
+                possible_events = [f"{str(cat.name)} had a litter of {str(kits)} kit(s), but refused to talk about the begetter"]
             print_event = choice(possible_events)
         elif cat.mate == other_cat.ID:
             print_event = f"{str(cat.name)} had a litter of {str(kits)} kit(s) with {str(other_cat.name)}"
