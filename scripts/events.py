@@ -65,11 +65,14 @@ class Events(object):
 
             # interaction here so every cat may have got a new name
             relation_events = Relation_Events()
-            for cat in cat_class.all_cats.copy().values():
+            cat_list = list(cat_class.all_cats.copy().values())
+            random.shuffle(cat_list)
+            for cat in cat_list:
                 if not cat.dead and not cat.exiled:
                     relation_events.create_interaction(cat)
                     relation_events.handle_relationships(cat)
-                    relation_events.have_kits(cat)
+                    relation_events.check_if_having_kits(cat)
+                    #relation_events.have_kits(cat)
             cat_class.thoughts()
             self.check_clan_relations()
             game.clan.age += 1

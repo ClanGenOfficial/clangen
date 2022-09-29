@@ -1,3 +1,4 @@
+from importlib import invalidate_caches
 from re import T
 from .clan import *
 from .events import *
@@ -1811,13 +1812,22 @@ class ProfileScreen(Screens):
             count2 += 1
 
         # buttons
-        buttons.draw_button((400, 400),
+        buttons.draw_button(('center', 400),
+                            text="See Family",
+                            cur_screen='see kits screen')
+
+        buttons.draw_button(('center', 430),
+                            text="See Relationships",
+                            cur_screen='relationship screen')
+
+        buttons.draw_button(('center', 460),
                             text='Options',
                             cur_screen='options screen')
 
-        buttons.draw_button((325, 400),
+        buttons.draw_button(('center', 510),
                             text='Back',
                             cur_screen=game.switches['last_screen'])
+
 
     def screen_switches(self):
         cat_profiles()
@@ -2029,8 +2039,10 @@ class ChooseMateScreen(Screens):
     # TODO Rename this here and in `on_use`
     def _extracted_from_on_use_42(self, the_cat, valid_mates, pos_x, pos_y):
         for x in game.clan.clan_cats:
-            if cat_class.all_cats[x].is_potential_mate(the_cat):
-                valid_mates.append(cat_class.all_cats[x])
+            relevant_cat = cat_class.all_cats[x]
+            invalid_age = relevant_cat.age not in ['kitten', 'adolescent']
+            if relevant_cat.ID != the_cat.ID and invalid_age and not (relevant_cat.dead or relevant_cat.exiled):
+                valid_mates.append(relevant_cat)
         all_pages = int(ceil(len(valid_mates) /
                              27.0)) if len(valid_mates) > 27 else 1
         cats_on_page = 0
@@ -3589,6 +3601,20 @@ class RelationshipScreen(Screens):
                             text='switch',
                             setting='show empty relation')
 
+        # make a list of the relationships
+        search_text = game.switches['search_text']
+        pygame.draw.rect(screen, 'lightgray', pygame.Rect((620, 670),
+                                                          (150, 20)))
+        verdana.text('Search: ', (550, 670))
+        verdana_black.text(game.switches['search_text'], (630, 670))
+        search_relations = []
+        if search_text.strip() != '':
+            for rel in the_cat.relationships:
+                if search_text.lower() in str(rel.cat_to.name).lower():
+                    search_relations.append(rel)
+        else:
+            search_relations = the_cat.relationships.copy()
+
         # layout
         verdana_big.text(str(the_cat.name) + ' Relationships', ('center', 10))
         if the_cat != None and the_cat.mate != '':
@@ -3606,36 +3632,33 @@ class RelationshipScreen(Screens):
                 f"{str(the_cat.genderalign)}  - {str(the_cat.age)}",
                 ('center', 40))
 
-        # make a list of the relationships
-        relationships = the_cat.relationships
-
         # filter relationships pased on the settings
         if not game.settings['show dead relation']:
-            relationships = list(
-                filter(lambda rel: not rel.cat_to.dead, relationships))
+            search_relations = list(
+                filter(lambda rel: not rel.cat_to.dead, search_relations))
 
         if not game.settings['show empty relation']:
-            relationships = list(
+            search_relations = list(
                 filter(
                     lambda rel: (rel.romantic_love + rel.platonic_like + rel.
                                  dislike + rel.admiration + rel.comfortable +
-                                 rel.jealousy + rel.trust) > 0, relationships))
+                                 rel.jealousy + rel.trust) > 0, search_relations))
 
         # pages
         all_pages = 1  # amount of pages
-        if len(relationships) > 10:
-            all_pages = int(ceil(len(relationships) / 10))
+        if len(search_relations) > 10:
+            all_pages = int(ceil(len(search_relations) / 10))
 
         pos_x = 0
         pos_y = 0
         cats_on_page = 0  # how many are on page already
-        for x in range(len(relationships)):
+        for x in range(len(search_relations)):
             if (x +
-                (game.switches['list_page'] - 1) * 10) > len(relationships):
+                (game.switches['list_page'] - 1) * 10) > len(search_relations):
                 game.switches['list_page'] = 1
             if game.switches['list_page'] > all_pages:
                 game.switches['list_page'] = 1
-            the_relationship = relationships[x +
+            the_relationship = search_relations[x +
                                              (game.switches['list_page'] - 1) *
                                              10]
             the_relationship.cat_to.update_sprite()
@@ -3790,7 +3813,7 @@ class RelationshipScreen(Screens):
                 pos_y += 100 + count
 
             if cats_on_page >= 10 or x + (game.switches['list_page'] -
-                                          1) * 10 == len(relationships) - 1:
+                                          1) * 10 == len(search_relations) - 1:
                 break
 
         # page buttons
