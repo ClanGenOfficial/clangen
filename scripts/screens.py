@@ -2206,7 +2206,7 @@ class OtherScreen(Screens):
 
                 name_len = verdana.text(str(the_cat.name))
                 verdana_red.text(str(the_cat.name),
-                                 (130 + pos_x - name_len / 2, 240 + pos_y))
+                                 (155 + pos_x - name_len / 2, 240 + pos_y))
                 cats_on_page += 1
                 pos_x += 100
                 if pos_x >= 600:
