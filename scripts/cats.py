@@ -243,27 +243,37 @@ class Cat(object):
                 'dead'] = None  # The sprite that the cat has in starclan
 
                 # WHITE PATCHES
+        little_white_poss = little_white * 6
+        mid_white_poss = mid_white * 4
+        high_white_poss = high_white * 2
+        mostly_white_poss = mostly_white
         if self.pelt is not None:
             if self.pelt.white and self.pelt.white_patches is not None:
-                pelt_choice = randint(0, 10)
-                if pelt_choice == 1 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette'] and self.pelt.colour != 'WHITE':
-                    self.white_patches = choice(['COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL'])
-                elif pelt_choice == 1 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
-                    self.white_patches = choice(['COLOURPOINT', 'RAGDOLL'])
-                elif self.pelt.name in ['Tabby', 'Speckled', 'Marbled', 'Bengal', 'TwoColour', 'Ticked', 'Smoke', 'Rosette'] and self.pelt.colour == 'WHITE':
-                    self.white_patches = choice(['ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY', 'TUXEDO', 'LITTLE', 'VAN',
-                                            'ANY2', 'ANY2', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG',
-                                            'RAGDOLL', 'LIGHTSONG', 'VITILIGO', 'TIP', 'FANCY', 'FRECKLES',
-                                            'RINGTAIL', 'HALFFACE', 'PANTS2', 'GOATEE', 'TAIL', 'BLAZE', 'PRINCE',
-                                            'BIB', 'UNDERS', 'PAWS', 'FAROFA', 'DAMIEN', 'MISTER', 'BELLY', 'TOES',
-                                            'BROKENBLAZE', 'PANTS', 'REVERSEPANTS', 'SKUNK', 'KARPATI', 'HALFWHITE', 
-                                            'APPALOOSA', 'PIEBALD', 'CURVED', 'HEART', 'LILTWO', 'GLASS', 'MOORISH', 'POINTMARK'])
+                pelt_choice = randint(0, 11)
+                vit_chance = randint(0, 100)
+                if pelt_choice == 1 and self.pelt.name in ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
+                and self.pelt.colour != 'WHITE':
+                    self.white_patches = choice(point_markings)
+                elif pelt_choice == 2 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+                    self.white_patches = choice(mostly_white_poss)
+                elif pelt_choice == 11 and self.pelt.name in ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
+                and self.pelt.colour != 'WHITE':
+                    self.white_patches = choice(['EXTRA', None])
+                elif pelt_choice == 3 and self.pelt.name in ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+                    self.white_patches = 'FULLWHITE'
+                elif pelt_choice < 10 and self.pelt.name in ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+                    self.white_patches = choice(little_white_poss + mid_white_poss + high_white_poss)
+                elif pelt_choice < 10 and self.pelt.name in ['Tortie']:
+                    self.white_patches = choice(little_white_poss + mid_white_poss)
+                elif pelt_choice < 10 and self.pelt.name in ['Calico']:
+                    self.white_patches = choice(high_white_poss)
+                elif vit_chance == 1 and self.pelt.name in ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
+                and self.pelt.colour != 'WHITE':
+                    self.white_patches = choice(vit)
                 else:
                     self.white_patches = choice(self.pelt.white_patches)
             else:
-                self.white_patches = choice(['EXTRA', None, None])
-        else:
-            self.white_patches = None
+                self.white_patches = None
             
         # pattern for tortie/calico cats
         if self.pelt.name in ['Calico', 'Tortie']:
@@ -914,7 +924,8 @@ class Cat(object):
                     elif cat.trait == 'troublesome':
                         thoughts.extend([
                             'Is ignoring their mentor\'s orders',
-                            'Is making other apprentices laugh'
+                            'Is making other apprentices laugh',
+                            'Got in trouble for shirking their training the other day...'
                         ])
                     elif cat.trait == 'vengeful':
                         thoughts.extend(['Snaps at another apprentice'])
@@ -2008,7 +2019,6 @@ class Cat(object):
                         'Won\'t stop pulling pranks', 'Is causing problems',
                         'Recently put a dead snake at the camp entrance to scare Clanmates',
                         'Is embarrassed after getting a taste of their own bitter herbs... Serves them right!',
-                        'Got in trouble for shirking their training the other day...',
                         'Can\'t seem to sit still!',
                         'Is surprisingly on task today',
                         'Is lightening the mood around camp with their shenanigans',
@@ -2971,29 +2981,29 @@ class Cat(object):
             else:
                 color_name = color_name + ' calico'
         # enough to comment but not make calico
-        if self.white_patches in ['LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP', 'FANCY', 'BLAZE', 'BIB', 'VEE',
-                                  'PAWS', 'DAMIEN', 'BELLY', 'TAILTIP', 'TOES', 'BROKENBLAZE', 'SKUNK', 'KARPATI', 'LILTWO']:
+        if self.white_patches in [little_white, mid_white]:
             color_name = color_name + ' and white'
         # and white
-        elif self.white_patches in ['ANY', 'TUXEDO', 'ANY2', 'ANYCREAMY', 'TUXEDOCREAMY', 'ANY2CREAMY', 'BROKEN', 'FRECKLES', 'RINGTAIL', 'HALFFACE',
-                                    'PANTS2', 'GOATEE', 'PRINCE', 'UNDERS', 'FAROFA', 'MISTER', 'PANTS', 'REVERSEPANTS', 'HALFWHITE', 'APPALOOSA',
-                                    'PIEBALD', 'GLASS']:
+        elif self.white_patches in [high_white]:
             if self.pelt.name != "Calico":
                 color_name = color_name + ' and white'
         # white and
-        elif self.white_patches in ['VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'CURVED', 'HEART', 'MOORISH']:
+        elif self.white_patches in [mostly_white]:
             color_name = 'white and ' + color_name
         # colorpoint
-        elif self.white_patches in ['COLOURPOINT', 'RAGDOLL', 'COLOURPOINTCREAMY', 'POINTMARK']:
+        elif self.white_patches in [point_markings]:
             color_name = color_name + ' point'
-            if color_name == 'darkginger point':
+            if color_name == 'darkginger point' or 'ginger point':
                 color_name = 'flame point'
         # vitiligo
-        elif self.white_patches in ['VITILIGO']:
+        elif self.white_patches in [vit]:
             color_name = color_name + ' with vitiligo'
 
         if color_name == 'tortie':
             color_name = 'tortoiseshell'
+
+        if self.white_patches == 'FULLWHITE':
+            color_name = 'white'
 
         if color_name == 'white and white':
             color_name = 'white'
