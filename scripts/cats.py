@@ -7,7 +7,7 @@ from .relationship import *
 from random import choice, randint
 import math
 import os.path
-import json
+import ujson
 
 
 class Cat(object):
@@ -2621,7 +2621,7 @@ class Cat(object):
 
         with open(relationship_dir + '/' + self.ID + '_relations.json',
                   'w') as rel_file:
-            json_string = json.dumps(rel)
+            json_string = ujson.dumps(rel)
             rel_file.write(json_string)
 
     def load_cats(self):
@@ -2780,7 +2780,7 @@ class Cat(object):
         if os.path.exists(relation_directory and relation_cat_directory):
             try:
                 with open(relation_cat_directory, 'r') as read_file:
-                    rel_data = json.loads(read_file.read())
+                    rel_data = ujson.loads(read_file.read())
                     relationships = []
                     for rel in rel_data:
                         cat_to = self.all_cats.get(rel['cat_to_id'])
