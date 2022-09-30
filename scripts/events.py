@@ -41,11 +41,11 @@ class Events(object):
                     elif cat.moons == 100:
                         cat.age = 'elder'
                     if cat.moons > randint(100, 200):
-                        if choice([1, 2, 3, 4, 5]) == 1:
+                        if choice([1, 2, 3, 4, 5]) == 1 and cat.dead == False:
                             cat.dead = True
                             game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently')
 
-                    if cat.exiled and cat.status == 'leader' and randint(
+                    if cat.exiled and cat.status == 'leader' and cat.dead == False and randint(
                             1, 10) == 1:
                         game.clan.leader_lives -= 1
                         if game.clan.leader_lives <= 0:
@@ -53,7 +53,7 @@ class Events(object):
                             game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently')
 
                             game.clan.leader_lives = 0
-                    elif cat.exiled and cat.status == 'leader' and randint(
+                    elif cat.exiled and cat.status == 'leader' and cat.dead == False and randint(
                             1, 45) == 1:
                         game.clan.leader_lives -= 10
                         cat.dead = True
