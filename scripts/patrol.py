@@ -876,7 +876,10 @@ class Patrol(object):
                 108, 113, 114, 120, 141, 250, 305, 307
         ]:
             if self.patrol_random_cat.status == 'leader':
-                game.clan.leader_lives -= 1
+                if self.patrol.event.patrol_id in [108, 113]:
+                    game.clan.leader_lives -= 9 # taken by twolegs, fall into ravine
+                else:
+                    game.clan.leader_lives -= 1
             events_class.dies(self.patrol_random_cat)
         elif self.patrol_event.patrol_id in [900, 901, 902]:
             for cat in self.patrol_cats:
