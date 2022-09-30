@@ -3025,10 +3025,10 @@ class OptionsScreen(Screens):
                             hotkey=[button_count + 1])
         button_count += 1
 
-        buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='Family Tree',
-                            hotkey=[button_count + 1])
-        button_count += 1
+        # buttons.draw_button((x_value, y_value + button_count * y_change),
+        #                     text='Family Tree',
+        #                     hotkey=[button_count + 1])
+        # button_count += 1
 
         buttons.draw_button((x_value, y_value + button_count * y_change),
                             text='See Relationships',
@@ -3264,12 +3264,12 @@ class OptionsScreen(Screens):
                                 kill_cat=the_cat,
                                 hotkey=[11])
             button_count += 1
-        elif the_cat.dead and not the_cat.exiled:
-            buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Exile to Dark Forest',
-                                cat_value=game.switches['cat'],
-                                hotkey=[11])
-            button_count += 1
+        # elif the_cat.dead and not the_cat.exiled:
+        #     buttons.draw_button((x_value, y_value + button_count * y_change),
+        #                         text='Exile to Dark Forest',
+        #                         cat_value=game.switches['cat'],
+        #                         hotkey=[11])
+        #     button_count += 1
 
         buttons.draw_button((x_value, y_value + button_count * y_change),
                             text='Back',

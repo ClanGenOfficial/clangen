@@ -396,34 +396,34 @@ class Patrol(object):
                     ])
             ])
 
-            if self.patrol_random_cat.status == 'warrior' or self.patrol_random_cat.status == 'apprentice':
-                possible_patrols.extend([
-                    PatrolEvent(
-                        250,
-                        'r_c admits that they have been training in the dark forest',
-                        'The patrol manages to convince r_c to stop',
-                        'The patrol isn\'t able to convince r_c to stop and a few nights later they are found dead in their nest',
-                        'The patrol decides not to advise r_c what they should do',
-                        50,
-                        10,
-                        win_skills=[
-                            'great speaker', 'excellent speaker',
-                            'strong connection to starclan'
-                        ]),
-                    PatrolEvent(
-                        251,
-                        'r_c admits that they have been training in the dark forest',
-                        'The patrol manages to convince r_c to stop',
-                        'The patrol isn\'t able to convince r_c to stop and a few nights later they wake up injured in their nest',
-                        'The patrol decides not to advise r_c what they should do',
-                        50,
-                        10,
-                        win_skills=[
-                            'great speaker', 'excellent speaker',
-                            'strong connection to starclan'
-                        ])
-                ])
-            elif self.patrol_random_cat.status == 'deputy':
+            # if self.patrol_random_cat.status == 'warrior' or self.patrol_random_cat.status == 'apprentice':
+            #     possible_patrols.extend([
+            #         PatrolEvent(
+            #             250,
+            #             'r_c admits that they have been training in the dark forest',
+            #             'The patrol manages to convince r_c to stop',
+            #             'The patrol isn\'t able to convince r_c to stop and a few nights later they are found dead in their nest',
+            #             'The patrol decides not to advise r_c what they should do',
+            #             50,
+            #             10,
+            #             win_skills=[
+            #                 'great speaker', 'excellent speaker',
+            #                 'strong connection to starclan'
+            #             ]),
+            #         PatrolEvent(
+            #             251,
+            #             'r_c admits that they have been training in the dark forest',
+            #             'The patrol manages to convince r_c to stop',
+            #             'The patrol isn\'t able to convince r_c to stop and a few nights later they wake up injured in their nest',
+            #             'The patrol decides not to advise r_c what they should do',
+            #             50,
+            #             10,
+            #             win_skills=[
+            #                 'great speaker', 'excellent speaker',
+            #                 'strong connection to starclan'
+            #             ])
+            #     ])
+            if self.patrol_random_cat.status == 'deputy':
                 possible_patrols.extend([
                     PatrolEvent(
                         260,
