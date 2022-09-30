@@ -7,7 +7,7 @@ from .relationship import *
 from random import choice, randint
 import math
 import os.path
-import json
+import ujson
 
 
 class Cat(object):
@@ -2563,7 +2563,7 @@ class Cat(object):
 
         try:
             with open('saves/' + clanname + '/clan_cats.json', 'w') as write_file:
-                json_string = json.dumps(clan_cats)
+                json_string = ujson.dumps(clan_cats)
                 write_file.write(json_string)
         except:
             print("Saving cats didn't work.")
@@ -2600,7 +2600,7 @@ class Cat(object):
 
         with open(relationship_dir + '/' + self.ID + '_relations.json',
                   'w') as rel_file:
-            json_string = json.dumps(rel)
+            json_string = ujson.dumps(rel)
             rel_file.write(json_string)
 
     def load_cats(self):
@@ -2759,7 +2759,7 @@ class Cat(object):
         clanname = game.switches['clan_list'][0]
         try:
             with open('saves/' + clanname + '/clan_cats.json', 'r') as read_file:
-                cat_data = json.loads(read_file.read())
+                cat_data = ujson.loads(read_file.read())
         except:
             game.switches['error_message'] = 'There was an error loading the json cats file!'
             return
@@ -2846,7 +2846,7 @@ class Cat(object):
         if os.path.exists(relation_directory and relation_cat_directory):
             try:
                 with open(relation_cat_directory, 'r') as read_file:
-                    rel_data = json.loads(read_file.read())
+                    rel_data = ujson.loads(read_file.read())
                     relationships = []
                     for rel in rel_data:
                         cat_to = self.all_cats.get(rel['cat_to_id'])
