@@ -71,6 +71,8 @@ class Relation_Events(object):
 
     def handle_relationships(self, cat):
         """Iterate over all relationships and trigger different events."""
+        if len(cat.relationships) < 1:
+            return
         self.had_one_event = False
         big_love_chance = 5
         hit = randint(1, big_love_chance)
@@ -85,13 +87,25 @@ class Relation_Events(object):
             # get some cats to make easier checks
             cat_from = relationship.cat_from
             cat_from_mate = None
-            if cat_from.mate != None or cat_from.mate != '':
+            from_mate_in_clan = False
+            if cat_from.mate != None:
+                if cat_from.mate not in cat_class.all_cats.keys():
+                    game.cur_events_list.insert(0, f"Cat #{cat_from} has a invalid mate. It will set to none.")
+                    cat_from.mate = None
+                    return
                 cat_from_mate = cat_class.all_cats.get(cat_from.mate)
+                from_mate_in_clan = not cat_from_mate.dead and not cat_from_mate.exiled
 
             cat_to = relationship.cat_to
             cat_to_mate = None
-            if cat_to.mate != None or cat_to.mate != '':
+            to_mate_in_clan = False
+            if cat_to.mate != None:
+                if cat_to.mate not in cat_class.all_cats.keys():
+                    game.cur_events_list.insert(0, f"Cat #{cat_to} has a invalid mate. It will set to none.")
+                    cat_to.mate = None
+                    return
                 cat_to_mate = cat_class.all_cats.get(cat_to.mate)
+                to_mate_in_clan = not cat_to_mate.dead and not cat_to_mate.exiled
 
             if relationship.opposit_relationship == None:
                 relationship.link_relationship()
@@ -103,6 +117,7 @@ class Relation_Events(object):
                 game.cur_events_list.append(
                     f'{str(cat_from.name)} will always love {str(cat_from_mate.name)} but has decided to move on'
                 )
+                relationship.mate = False
                 cat_from.mate = None
                 cat_from_mate.mate = None
 
@@ -161,7 +176,7 @@ class Relation_Events(object):
                     self.check_if_new_mates(cat_from, cat_to)
 
             # breakup
-            if not self.had_one_event and cat_from_mate is not None and relationship.mates:
+            if not self.had_one_event and relationship.mates and from_mate_in_clan:
                 self.check_if_breakup(relationship, cat_from, cat_to)
 
     def check_if_new_mates(self, relationship, cat_from, cat_to):
