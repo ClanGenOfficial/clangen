@@ -924,7 +924,8 @@ class Cat(object):
                     elif cat.trait == 'troublesome':
                         thoughts.extend([
                             'Is ignoring their mentor\'s orders',
-                            'Is making other apprentices laugh'
+                            'Is making other apprentices laugh',
+                            'Got in trouble for shirking their training the other day...'
                         ])
                     elif cat.trait == 'vengeful':
                         thoughts.extend(['Snaps at another apprentice'])
@@ -2018,7 +2019,6 @@ class Cat(object):
                         'Won\'t stop pulling pranks', 'Is causing problems',
                         'Recently put a dead snake at the camp entrance to scare Clanmates',
                         'Is embarrassed after getting a taste of their own bitter herbs... Serves them right!',
-                        'Got in trouble for shirking their training the other day...',
                         'Can\'t seem to sit still!',
                         'Is surprisingly on task today',
                         'Is lightening the mood around camp with their shenanigans',
