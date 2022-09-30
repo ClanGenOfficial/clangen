@@ -2507,97 +2507,76 @@ class Cat(object):
             new_pos[0] = screen_x + pos[0] - sprites.size * 3
         self.used_screen.blit(self.large_sprite, new_pos)
 
-    def save_cats(self):
-        data = ''
-        for x in self.all_cats.values():
-            if not x.dead:
-                x.save_relationship_of_cat()
-            # cat ID -- name prefix : name suffix
-            data += x.ID + ',' + x.name.prefix + ':' + x.name.suffix + ','
-            # cat gender -- status -- age -- trait
-            data += x.gender + ',' + x.status + ',' + str(
-                x.age) + ',' + x.trait + ','
-            # cat parent1 -- parent2 -- mentor
-            if x.parent1 is None:
-                data += 'None ,'
-            else:
-                data += x.parent1 + ','
-            if x.parent2 is None:
-                data += 'None ,'
-            else:
-                data += x.parent2 + ','
-            if x.mentor is None:
-                data += 'None ,'
-            else:
-                data += x.mentor.ID + ','
-
-            # pelt type -- colour -- white -- length
-            data += x.pelt.name + ',' + x.pelt.colour + ',' + str(x.pelt.white) + ',' + x.pelt.length + ','
-            # sprite kitten -- adolescent
-            data += str(x.age_sprites['kitten']) + ',' + str(x.age_sprites['adolescent']) + ','
-            # sprite adult -- elder
-            data += str(x.age_sprites['adult']) + ',' + str(x.age_sprites['elder']) + ','
-            # eye colour -- reverse -- white patches -- pattern
-            data += x.eye_colour + ',' + str(x.reverse) + ',' + str(x.white_patches) + ',' + str(x.pattern) + ','
-            #Tortie/Calico Patterns
-            data += str(x.tortiebase) + ',' + str(x.tortiepattern) + ',' + str(x.tortiecolour) + ','
-            # skin -- skill -- NONE  -- specs  -- accessory -- spec2 -- moons
-            data += x.skin + ',' + x.skill + ',' + 'None' + ',' + str(x.specialty) + ',' + str(x.accessory) + ',' + str(x.specialty2) + ',' + str(x.moons) + ','
-            # mate -- dead  -- dead sprite
-            data += str(x.mate) + ',' + str(x.dead) + ',' + str(x.age_sprites['dead']) + ','
-            # experience -- dead_for x moons -- 
-            data += str(x.experience) + ',' + str(x.dead_for)
-            # apprentice
-            if x.apprentice:
-                data += ','
-                for cat in x.apprentice:
-                    data += str(cat.ID) + ';'
-                # remove last semicolon
-                data = data[:-1]
-            else:
-                data += ',' + 'None'
-            # paralyzed - TRUE OR FALSE
-            if x.paralyzed:
-                data += ',' + 'True'
-            else:
-                data += ',' + 'False'
-            # kits - TRUE OR FALSE
-            if x.no_kits:
-                data += ',' + 'True'
-            else:
-                data+= ',' + 'False'
-            # exiled - TRUE OR FALSE
-            if x.exiled:
-                data+=',' + 'True'
-            else:
-                data+=',' + 'False'
-            # genderalign
-            if x.genderalign:
-                data += ',' + str(x.genderalign)
-            else:
-                data+=',' + 'False'
-            # former apprentice
-            if x.former_apprentices:
-                data += ','
-                for cat in x.former_apprentices:
-                    if cat is not None:
-                        data += str(cat.ID) + ';'
-                # remove last semicolon
-                data = data[:-1]
-            else:
-                data += ',' + 'None'
-            # next cat
-            data += '\n'
-
-        # remove one last unnecessary new line
-        data = data[:-1]
-
+    def json_save_cats(self):
+        """Save the cat data."""
+        clanname = ''        
         if game.switches['clan_name'] != '':
             clanname = game.switches['clan_name']
-        else:
+        elif len(game.switches['clan_name']) > 0:
             clanname = game.switches['clan_list'][0]
-        with open('saves/' + clanname + 'cats.csv', 'w') as write_file:
-            write_file.write(data)
+        elif game.clan != None:
+            clanname = game.clan.name
+
+        directory = 'saves/' + clanname
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+
+        clan_cats = []
+        for inter_cat in self.all_cats.values():
+            cat_data = {
+                "ID": inter_cat.ID,
+                "name_prefix": inter_cat.name.prefix,
+                "name_suffix": inter_cat.name.suffix,
+                "gender": inter_cat.gender,
+                "gender_align": inter_cat.genderalign,
+                "status": inter_cat.status,
+                "age": inter_cat.age,
+                "moons": inter_cat.moons,
+                "trait": inter_cat.trait,
+                "parent1": inter_cat.parent1,
+                "parent2": inter_cat.parent2,
+                "mentor": inter_cat.mentor.ID if inter_cat.mentor else None,
+                "paralyzed": inter_cat.paralyzed,
+                "no_kits": inter_cat.no_kits,
+                "exiled": inter_cat.exiled,
+                "pelt_name": inter_cat.pelt.name,
+                "pelt_color": inter_cat.pelt.colour,
+                "pelt_white": inter_cat.pelt.white,
+                "pelt_length": inter_cat.pelt.length,
+                "spirit_kitten": inter_cat.age_sprites['kitten'],
+                "spirit_adolescent": inter_cat.age_sprites['adolescent'],
+                "spirit_young_adult": inter_cat.age_sprites['young adult'],
+                "spirit_adult": inter_cat.age_sprites['adult'],
+                "spirit_senior_adult": inter_cat.age_sprites['senior adult'],
+                "spirit_elder": inter_cat.age_sprites['elder'],
+                "eye_colour": inter_cat.eye_colour,
+                "reverse": inter_cat.reverse,
+                "white_patches": inter_cat.white_patches,
+                "pattern": inter_cat.pattern,
+                "tortie_base": inter_cat.tortiebase,
+                "tortie_color": inter_cat.tortiecolour,
+                "tortie_pattern": inter_cat.tortiepattern,
+                "skin": inter_cat.skin,
+                "skill": inter_cat.skill,
+                "specialty": inter_cat.specialty,
+                "specialty2": inter_cat.specialty2,
+                "accessory": inter_cat.accessory,
+                "mate": inter_cat.mate,
+                "dead": inter_cat.dead,
+                "spirit_dead": inter_cat.age_sprites['dead'],
+                "experience": inter_cat.experience,
+                "dead_moons": inter_cat.dead_for,
+                "current_apprentice": [appr.ID for appr in inter_cat.apprentice],
+                "former_apprentices" :[appr.ID for appr in inter_cat.former_apprentices]
+            }
+            clan_cats.append(cat_data)
+
+        try:
+            with open('saves/' + clanname + '/clan_cats.json', 'w') as write_file:
+                json_string = ujson.dumps(clan_cats)
+                write_file.write(json_string)
+        except:
+            print("Saving cats didn't work.")
 
     def save_relationship_of_cat(self):
         # save relationships for each cat
@@ -2635,6 +2614,13 @@ class Cat(object):
             rel_file.write(json_string)
 
     def load_cats(self):
+        directory = 'saves/' + game.switches['clan_list'][0] + '/clan_cats.json'
+        if os.path.exists(directory):
+            self.json_load()
+        else:
+            self.csv_load()
+
+    def csv_load(self):
         if game.switches['clan_list'][0].strip() == '':
             cat_data = ''
         else:
@@ -2776,6 +2762,86 @@ class Cat(object):
                     the_cat.create_new_relationships()
 
             game.switches['error_message'] = ''
+
+    def json_load(self):
+        all_cats = []
+        cat_data = None
+        clanname = game.switches['clan_list'][0]
+        try:
+            with open('saves/' + clanname + '/clan_cats.json', 'r') as read_file:
+                cat_data = ujson.loads(read_file.read())
+        except:
+            game.switches['error_message'] = 'There was an error loading the json cats file!'
+            return
+        # create new cat objects
+        for cat in cat_data:
+            new_pelt = choose_pelt(cat["gender"], cat["pelt_color"], cat["pelt_white"], cat["pelt_name"], cat["pelt_length"], True)
+            
+            new_cat = Cat(ID=cat["ID"], prefix=cat["name_prefix"], suffix=cat["name_suffix"], gender=cat["gender"],
+                            status=cat["status"], parent1=cat["parent1"], parent2=cat["parent2"], moons=cat["moons"],
+                            eye_colour=cat["eye_colour"], pelt=new_pelt)
+            new_cat.age = cat["age"]
+            new_cat.genderalign = cat["gender_align"]
+            new_cat.moons = cat["moons"]
+            new_cat.trait = cat["trait"]
+            new_cat.mentor = cat["mentor"]
+            new_cat.paralyzed = cat["paralyzed"]
+            new_cat.no_kits = cat["no_kits"]
+            new_cat.exiled = cat["exiled"]
+            new_cat.age_sprites['kitten'] = cat["spirit_kitten"]
+            new_cat.age_sprites['adolescent'] = cat["spirit_adolescent"]
+            new_cat.age_sprites['young adult'] = cat["spirit_young_adult"]
+            new_cat.age_sprites['adult'] = cat["spirit_adult"]
+            new_cat.age_sprites['senior adult'] = cat["spirit_senior_adult"]
+            new_cat.age_sprites['elder'] = cat["spirit_elder"]
+            new_cat.eye_colour = cat["eye_colour"]
+            new_cat.reverse = cat["reverse"]
+            new_cat.white_patches = cat["white_patches"]
+            new_cat.pattern = cat["pattern"]
+            new_cat.tortiebase = cat["tortie_base"]
+            new_cat.tortiecolour = cat["tortie_color"]
+            new_cat.tortiepattern = cat["tortie_pattern"]
+            new_cat.skin = cat["skin"]
+            new_cat.skill = cat["skill"]
+            new_cat.specialty = cat["specialty"]
+            new_cat.specialty2 = cat["specialty2"]
+            new_cat.accessory = cat["accessory"]
+            new_cat.mate = cat["mate"]
+            new_cat.dead = cat["dead"]
+            new_cat.age_sprites['dead'] = cat["spirit_dead"]
+            new_cat.experience = cat["experience"]
+            new_cat.dead_for = cat["dead_moons"]
+            new_cat.apprentice = cat["current_apprentice"]
+            new_cat.former_apprentices = cat["former_apprentices"]
+
+            all_cats.append(new_cat)
+
+        # replace cat ids with cat objects (only needed by mentor)
+        for cat in all_cats:
+            mentor_relevant = list(filter(lambda inter_cat: inter_cat.ID == cat.mentor, all_cats))
+            cat.mentor = None
+            if len(mentor_relevant) == 1:
+                cat.mentor = mentor_relevant[0]
+            
+            # Update the apprentice
+            if len(cat.apprentice) > 0:
+                new_apprentices = []
+                for cat_id in cat.apprentice:
+                    relevant_list = list(filter(lambda cat: cat.ID == cat_id, all_cats))
+                    if len(relevant_list) > 0:
+                        # if the cat can't be found, drop the cat_id
+                        new_apprentices.append(relevant_list[0])
+                cat.apprentice = new_apprentices
+
+            # Update the apprentice
+            if len(cat.former_apprentices) > 0:
+                new_apprentices = []
+                for cat_id in cat.former_apprentices:
+                    relevant_list = list(filter(lambda cat: cat.ID == cat_id, all_cats))
+                    if len(relevant_list) > 0:
+                        # if the cat can't be found, drop the cat_id
+                        new_apprentices.append(relevant_list[0])
+                cat.former_apprentices = new_apprentices
 
     def load_relationship_of_cat(self):
         if game.switches['clan_name'] != '':
