@@ -99,7 +99,7 @@ class StartScreen(Screens):
 
         # SAVE cats
         if game.clan is not None:
-            cat_class.json_save_cats()
+            cat_class.save_cats()
             game.clan.save_clan()
             if mapavailable:
                 save_map(game.map_info, game.clan.name)
@@ -2041,7 +2041,14 @@ class ChooseMateScreen(Screens):
         for x in game.clan.clan_cats:
             relevant_cat = cat_class.all_cats[x]
             invalid_age = relevant_cat.age not in ['kitten', 'adolescent']
-            if relevant_cat.ID != the_cat.ID and invalid_age and not (relevant_cat.dead or relevant_cat.exiled):
+
+            direct_related = the_cat.is_sibling(relevant_cat) or the_cat.is_parent(relevant_cat) or relevant_cat.is_parent(the_cat)
+            indirect_related = the_cat.is_uncle_aunt(relevant_cat) or relevant_cat.is_uncle_aunt(the_cat)
+            related = direct_related or indirect_related
+
+            not_aviable = relevant_cat.dead or relevant_cat.exiled
+
+            if not related and relevant_cat.ID != the_cat.ID and invalid_age and not not_aviable and relevant_cat.mate == None:
                 valid_mates.append(relevant_cat)
         all_pages = int(ceil(len(valid_mates) /
                              27.0)) if len(valid_mates) > 27 else 1
