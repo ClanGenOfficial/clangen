@@ -78,7 +78,7 @@ class Events(object):
             game.clan.age += 1
             if game.settings.get(
                     'autosave') is True and game.clan.age % 5 == 0:
-                cat_class.save_cats()
+                cat_class.json_save_cats()
                 game.clan.save_clan()
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
             game.event_scroll_ct = 0
@@ -270,7 +270,7 @@ class Events(object):
                             acc_text.extend([f'{name} received a flower from {other_name} and decided to wear it on their pelt',
                                             f'{name} found a pretty flower and decided to wear it on their pelt', f'A clanmate gave {name} a flower and they decided to wear it'
                             ])
-                    elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                    elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
                         acc_text.append(f'{name} found a bunch of pretty feathers and decided to wear them')
                     elif cat.accessory in ["HERBS", "PETALS", "DRY_HERBS"]:
                         acc_text.append(f'{name} always seems to have something stuck in their fur')
@@ -289,7 +289,7 @@ class Events(object):
                         acc_text.extend([f'{name} received a flower from {other_name} and decided to wear it on their pelt',
                                             f'{name} found a pretty flower and decided to wear it on their pelt', f'A clanmate gave {name} a flower and they decided to wear it'
                             ])
-                    elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                    elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
                         acc_text.append(f'{name} was playing with feathers earlier and decided to wear some of them')
                     elif cat.accessory in ["HERBS", "PETALS", "DRYHERBS"]:
                         acc_text.append(f'{name} is always groomed by their parents but there always seems be something stuck in there')
@@ -392,6 +392,7 @@ class Events(object):
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+                        
 
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
@@ -467,6 +468,7 @@ class Events(object):
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+                        
 
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
@@ -505,7 +507,7 @@ class Events(object):
                 if cat.specialty == 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
-
+                        
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -528,6 +530,7 @@ class Events(object):
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+                        
 
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
@@ -556,7 +559,7 @@ class Events(object):
                 if cat.specialty == 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
-
+                        
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -585,7 +588,7 @@ class Events(object):
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
-
+                        
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'

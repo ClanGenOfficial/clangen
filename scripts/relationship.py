@@ -643,10 +643,10 @@ class Relationship(object):
 
             if self.cat_from.status == 'deputy':
                 for relation_key in relation_keys:
-                    action_possibilies += LEADER['from'][relation_key]
+                    action_possibilies += DEPUTY['from'][relation_key]
             if self.cat_to.status == 'deputy':
                 for relation_key in relation_keys:
-                    action_possibilies += LEADER['to'][relation_key]
+                    action_possibilies += DEPUTY['to'][relation_key]
 
             if self.cat_from.status == 'medicine cat':
                 for relation_key in relation_keys:
