@@ -1,5 +1,3 @@
-from bdb import effective
-from pickle import TRUE
 from random import choice, randint
 from .game_essentials import *
 import copy
@@ -571,7 +569,7 @@ class Relationship(object):
                     
         # change the stats of the relationships
         self_relation_effect = self.affect_relationship(action)
-        other_relation_effect = self.opposit_relationship.affect_relationship(action, other=TRUE)
+        other_relation_effect = self.opposit_relationship.affect_relationship(action, other=True)
 
         # broadcast action
         string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
