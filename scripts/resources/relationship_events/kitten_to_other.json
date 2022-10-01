@@ -1,10 +1,14 @@
 {
     "kitten": {
-        "unfriendly": ["Tries to scare (cat)", "Constantly pulling pranks on (cat)"],
+        "unfriendly": ["Tries to scare (cat)", "Constantly pulling pranks on (cat)",
+                        "Hisses at (cat) for getting a bigger piece of prey"],
         "neutral": ["Has a mock battle with (cat)", 
                     "Is jealous that (cat) is getting more attention than them",
                     "Plays mossball with (cat)", "Sticks their tongue out at (cat)",
-                    "Is pretending to be (cat)"],
+                    "Is pretending to be (cat)", "Spent the whole day playing their favorite games with (cat)",
+                    "Had a friendly argument with (cat) about which prey tastes the best",
+                    "Tried to have a discussion with (cat) about what prey tastes best, but it turned into an argument",
+                    "Is upset that (cat) always wins in their games"],
         "friendly": ["Chomps on (cat)'s ear",
                      "Pretends to be a warrior with (cat)",
                      "Is pretending to ward off foxes with (cat)",
@@ -14,7 +18,7 @@
                     "Wants to snuggle with (cat)"]
     },
     "apprentice": {
-        "unfriendly": ["Constantly pulling pranks on (cat)"],
+        "unfriendly": ["Constantly pulling pranks on (cat)", "Thinks they should get to be an apprentice already! They're just as good as (cat)"],
         "neutral": ["Sticks their tongue out at (cat)",
                     "Is hiding under a bush from (cat), but they can't stop giggling",
                     "Is pretending to be (cat)", "Is asking (cat) how babies are made"],
@@ -34,8 +38,8 @@
         "unfriendly": ["Constantly pulling pranks on (cat)"],
         "neutral": ["Sticks their tongue out at (cat)", 
                     "Is hiding under a bush from (cat), but they can't stop giggling",
-                    "Is asking (cat) how babies are made"],
-        "friendly": [],
+                    "Is asking (cat) how babies are made", "Was distracted while (cat) was telling a story"],
+        "friendly": ["Thinks that (cat) tells the best stories"],
         "close": []
     }
 }

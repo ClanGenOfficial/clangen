@@ -28,14 +28,12 @@ try:
 except:
     game.switches['error_message'] = 'There was an error loading the 1 jsonfile of relationship_events!'
 
-
 KITTEN_TO_OTHER = None
 try:
     with open(f"{resource_directory}kitten_to_other.json", 'r') as read_file:
         KITTEN_TO_OTHER = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 2 jsonfile of relationship_events!'
-
 
 APPRENTICE_TO_OTHER = None
 try:
@@ -44,14 +42,12 @@ try:
 except:
     game.switches['error_message'] = 'There was an error loading the 3 jsonfile of relationship_events!'
 
-
 WARRIOR_TO_OTHER = None
 try:
     with open(f"{resource_directory}warrior_to_other.json", 'r') as read_file:
         WARRIOR_TO_OTHER = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 4 jsonfile of relationship_events!'
-
 
 ELDER_TO_OTHER = None
 try:
@@ -76,14 +72,12 @@ try:
 except:
     game.switches['error_message'] = 'There was an error loading the 7 jsonfile of relationship_events!'
 
-
 DEPUTY = None
 try:
     with open(f"{resource_directory}deputy.json", 'r') as read_file:
         DEPUTY = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 8 jsonfile of relationship_events!'
-
 
 MEDICINE = None
 try:
@@ -114,21 +108,21 @@ except:
 # This defines effect the action has, not every action has to have a effect
 INCREASE_HIGH = None
 try:
-    with open(f"{resource_directory}INCREASE_HIGH.json", 'r') as read_file:
+    with open(f"{resource_directory}1_INCREASE_HIGH.json", 'r') as read_file:
         INCREASE_HIGH = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 11 jsonfile of relationship_events!'
 
 INCREASE_LOW = None
 try:
-    with open(f"{resource_directory}INCREASE_LOW.json", 'r') as read_file:
+    with open(f"{resource_directory}1_INCREASE_LOW.json", 'r') as read_file:
         INCREASE_LOW = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 12 jsonfile of relationship_events!'
 
 DECREASE_HIGH  = None
 try:
-    with open(f"{resource_directory}DECREASE_HIGH.json", 'r') as read_file:
+    with open(f"{resource_directory}1_DECREASE_HIGH.json", 'r') as read_file:
         DECREASE_HIGH = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 13 jsonfile of relationship_events!'
@@ -136,7 +130,7 @@ except:
 
 DECREASE_LOW = None
 try:
-    with open(f"{resource_directory}DECREASE_LOW.json", 'r') as read_file:
+    with open(f"{resource_directory}1_DECREASE_LOW.json", 'r') as read_file:
         DECREASE_LOW = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 14 jsonfile of relationship_events!'

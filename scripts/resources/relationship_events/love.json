@@ -3,12 +3,15 @@
                             "Gave a pretty flower they found to (cat)", "Laughs at bad jokes from (cat)", 
                             "Enjoys the time with (cat) and feels secure", "Made (cat) laugh again and again",
                             "Ensnares (cat) with a charming smile", "Go for a nice long walk with (cat)",
-                            "Wants to spend the entire day with (cat)"],
+                            "Wants to spend the entire day with (cat)", "Might be reading a little too far into (cat)'s kindness",
+                            "(cat) turned their nose up at their gift"],
     "love_interest": [  "Can't seem to stop talking about (cat)", "Would spend the entire day with (cat) if they could", 
                         "Keeps shyly glancing over at (cat) as the clan talks about kits", 
                         "Is thinking of the best ways to impress (cat)", "Doesn't want (cat) to overwork themselves", 
                         "Is rolling around a little too playfully with (cat)...", 
                         "Is wondering what it would be like to grow old with (cat)", "Thinks that (cat) is really funny",
-                        "Thinks that (cat) is really charming", "Wants to confess their love to (cat)"],
+                        "Thinks that (cat) is really charming", "Wants to confess their love to (cat)",
+                        "Left a gift in (cat)'s nest for them to find", "Picked out the best piece of prey to share with (cat)",
+                        "Told (cat) to stop padding after them like a lost kit"],
     "mates": ["Was caught enjoying a moonlit stroll with (cat) last night..."]
 }
