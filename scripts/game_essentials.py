@@ -66,6 +66,7 @@ class Game(object):
         'last_screen': 'start screen',
         'events_left': 0,
         'save_clan': False,
+        'saved_clan': False,
         'new_leader': False,
         'apprentice_switch': False,
         'deputy_switch': False,
@@ -166,7 +167,9 @@ class Game(object):
         if self.switches[
                 'save_clan'] and self.clan is not None and self.cat_class is not None:
             self.clan.save_clan()
-            self.cat_class.save_cats()
+            self.cat_class.json_save_cats()
+            self.switches['save_clan'] = False
+            self.switches['saved_clan'] = True
         if self.switches['switch_clan']:
             self.clan.switch_clans()
             self.switches['switch_clan'] = False

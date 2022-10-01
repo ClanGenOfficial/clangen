@@ -6,17 +6,14 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - run: "pip3 install pygame pyinstaller pillow"
-      - run: "pyinstaller --onefile -w -n Clangen -i resources/icon.png main.py"
-      - run: "mkdir -p dist/Clangen.app/Contents/Resources/sprites"
-      - run: "mkdir dist/Clangen.app/Contents/Resources/saves"
-      - run: "mkdir dist/Clangen.app/Contents/Resources/resources"
-      - run: "cp sprites/* dist/Clangen.app/Contents/Resources/sprites"
-      - run: "cp resources/* dist/Clangen.app/Contents/Resources/resources"
-      - run: "rm dist/Clangen"
+      - run: "brew install python-tk@3.10"
+      - run: "pip3 install -r requirements.txt"
+      - run: "pip3 install pyinstaller pillow"
+      - run: "pyinstaller Clangen.spec"
+      - run: "rm -r dist/Clangen"
       - run: "codesign --force --sign - dist/Clangen.app"
-      - run: "ln -s /Applications/ dist/"
-      - run: "hdiutil create Clangen.dmg -ov -volname 'Clangen' -fs HFS+ -format UDZO -srcfolder './dist/'"
+      - run: "npm install -g appdmg"
+      - run: "appdmg appdmg.json Clangen.dmg"
       - uses: actions/upload-artifact@v3
         with:
           name: release

@@ -191,8 +191,10 @@ class Button(object):
             elif text == 'Exile Cat':
                 # it is the leader, manage all the things
                 if cat_class.all_cats[cat_value].status == 'leader':
+                    game.clan.leader.exiled = True
                     game.clan.leader_lives = 1
                 if cat_class.all_cats[cat_value].status == 'deputy':
+                    game.clan.deputy.exiled = True
                     game.clan.deputy = None
                 cat_class.all_cats[cat_value].exiled = True
                 cat_class.other_cats[cat_value] = cat_class.all_cats[cat_value]
@@ -279,32 +281,8 @@ class Button(object):
                         game.switches[key].append(value)
             elif key == 'mate':
                 if value is not None:
-                    cat_value.mate = value.ID
-                    value.mate = cat_value.ID
-                    # affect relationship
-                    cat_relationship = list(
-                        filter(lambda r: r.cat_to.ID == value.ID,
-                               cat_value.relationships))
-                    if cat_relationship is not None and len(
-                            cat_relationship) > 0:
-                        cat_relationship[0].romantic_love += 20
-                        cat_relationship[0].comfortable += 20
-                        cat_relationship[0].trust += 10
-                    else:
-                        cat_value.relationships.append(
-                            Relationship(cat_value, value, True))
-
-                    ohter_cat_relationship = list(
-                        filter(lambda r: r.cat_to.ID == cat_value.ID,
-                               value.relationships))
-                    if ohter_cat_relationship is not None and len(
-                            ohter_cat_relationship) > 0:
-                        ohter_cat_relationship[0].romantic_love += 20
-                        ohter_cat_relationship[0].comfortable += 20
-                        ohter_cat_relationship[0].trust += 10
-                    else:
-                        value.relationships.append(
-                            Relationship(value, cat_value, True))
+                    cat_value.set_mate(value)
+                    value.set_mate(cat_value)
                 else:
                     # affect relationship
                     cat_mate = cat_class.all_cats[cat_value.mate]
@@ -316,18 +294,20 @@ class Button(object):
                         cat_relationship[0].romantic_love = 5
                         cat_relationship[0].comfortable -= 20
                         cat_relationship[0].trust -= 10
+                        cat_relationship[0].cut_boundries()
                     else:
                         cat_value.relationships.append(
                             Relationship(cat_value, cat_mate, True))
 
-                    ohter_cat_relationship = list(
+                    other_cat_relationship = list(
                         filter(lambda r: r.cat_to.ID == cat_value.ID,
                                cat_mate.relationships))
-                    if ohter_cat_relationship is not None and len(
-                            ohter_cat_relationship) > 0:
-                        ohter_cat_relationship[0].romantic_love = 5
-                        ohter_cat_relationship[0].comfortable -= 20
-                        ohter_cat_relationship[0].trust -= 10
+                    if other_cat_relationship is not None and len(
+                            other_cat_relationship) > 0:
+                        other_cat_relationship[0].romantic_love = 5
+                        other_cat_relationship[0].comfortable -= 20
+                        other_cat_relationship[0].trust -= 10
+                        other_cat_relationship[0].cut_boundries()
                     else:
                         cat_mate.relationships.append(
                             Relationship(cat_mate, cat_value, True))
@@ -389,7 +369,7 @@ class Button(object):
             apprentice.mentor = cat_value
             cat_value.apprentice.append(apprentice)
         game.current_screen = 'clan screen'
-        cat_class.save_cats()
+        cat_class.json_save_cats()
 
     def change_name(self, name, cat_value):
         """Changes name of cat_value to name specified in textbox"""
@@ -402,14 +382,14 @@ class Button(object):
                 if not (cat_value.name.status == "apprentice" and name[1] == "paw") and \
                     not (cat_value.name.status == "kitten" and name[1] == "kit"):
                     cat_value.name.suffix = name[1]
-            cat_class.save_cats()
+            cat_class.json_save_cats()
             game.switches['naming_text'] = ''
 
     def change_gender(self, name, cat_value):
         cat_value = cat_class.all_cats.get(cat_value)
         if game.switches['naming_text'] != '':
             cat_value.genderalign = game.switches['naming_text']
-            cat_class.save_cats()
+            cat_class.json_save_cats()
             game.switches['naming_text'] = ''
 
 

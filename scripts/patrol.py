@@ -1,3 +1,5 @@
+from os import name
+from pydoc import text
 from random import choice, randint
 from math import ceil, floor
 from .events import events_class
@@ -13,6 +15,7 @@ class Patrol(object):
         self.patrol_event = None
         self.patrol_leader = None
         self.patrol_cats = []
+        self.patrol_names = []
         self.possible_patrol_leaders = []
         self.patrol_skills = []
         self.patrol_statuses = []
@@ -28,13 +31,16 @@ class Patrol(object):
 
     def add_patrol_cats(self):
         self.patrol_cats.clear()
+        self.patrol_names.clear()
         self.possible_patrol_leaders.clear()
         self.patrol_skills.clear()
         self.patrol_statuses.clear()
         self.patrol_traits.clear()
         self.patrol_total_experience = 0
         for cat in game.switches['current_patrol']:
+            name = str(cat.name)
             self.patrol_cats.append(cat)
+            self.patrol_names.append(name)
             if cat.status != 'apprentice':
                 self.possible_patrol_leaders.append(cat)
             self.patrol_skills.append(cat.skill)
@@ -390,34 +396,34 @@ class Patrol(object):
                     ])
             ])
 
-            if self.patrol_random_cat.status == 'warrior' or self.patrol_random_cat.status == 'apprentice':
-                possible_patrols.extend([
-                    PatrolEvent(
-                        250,
-                        'r_c admits that they have been training in the dark forest',
-                        'The patrol manages to convince r_c to stop',
-                        'The patrol isn\'t able to convince r_c to stop and a few nights later they are found dead in their nest',
-                        'The patrol decides not to advise r_c what they should do',
-                        50,
-                        10,
-                        win_skills=[
-                            'great speaker', 'excellent speaker',
-                            'strong connection to starclan'
-                        ]),
-                    PatrolEvent(
-                        251,
-                        'r_c admits that they have been training in the dark forest',
-                        'The patrol manages to convince r_c to stop',
-                        'The patrol isn\'t able to convince r_c to stop and a few nights later they wake up injured in their nest',
-                        'The patrol decides not to advise r_c what they should do',
-                        50,
-                        10,
-                        win_skills=[
-                            'great speaker', 'excellent speaker',
-                            'strong connection to starclan'
-                        ])
-                ])
-            elif self.patrol_random_cat.status == 'deputy':
+            # if self.patrol_random_cat.status == 'warrior' or self.patrol_random_cat.status == 'apprentice':
+            #     possible_patrols.extend([
+            #         PatrolEvent(
+            #             250,
+            #             'r_c admits that they have been training in the dark forest',
+            #             'The patrol manages to convince r_c to stop',
+            #             'The patrol isn\'t able to convince r_c to stop and a few nights later they are found dead in their nest',
+            #             'The patrol decides not to advise r_c what they should do',
+            #             50,
+            #             10,
+            #             win_skills=[
+            #                 'great speaker', 'excellent speaker',
+            #                 'strong connection to starclan'
+            #             ]),
+            #         PatrolEvent(
+            #             251,
+            #             'r_c admits that they have been training in the dark forest',
+            #             'The patrol manages to convince r_c to stop',
+            #             'The patrol isn\'t able to convince r_c to stop and a few nights later they wake up injured in their nest',
+            #             'The patrol decides not to advise r_c what they should do',
+            #             50,
+            #             10,
+            #             win_skills=[
+            #                 'great speaker', 'excellent speaker',
+            #                 'strong connection to starclan'
+            #             ])
+            #     ])
+            if self.patrol_random_cat.status == 'deputy':
                 possible_patrols.extend([
                     PatrolEvent(
                         260,
@@ -644,6 +650,11 @@ class Patrol(object):
                 'Your patrol decides not to confront the kittypet',
                 40,
                 10,
+                antagonize_text=
+                'Your patrol drives the kittypet off of the territory',
+                antagonize_fail_text=
+                'The kittypet is taken aback by their hostility '
+                'and decides that Clan life is not for them',
                 win_skills=['great speaker', 'excellent speaker']),
             PatrolEvent(
                 503,
@@ -655,6 +666,10 @@ class Patrol(object):
                 'They leave the wounded cat alone',
                 40,
                 10,
+                antagonize_text=
+                'Your patrol drives the cat off of the territory',
+                antagonize_fail_text=
+                'The wounded cat is killed in an attempt to drive them off of the territory',
                 win_skills=['smart', 'very smart', 'extremely smart']),
             PatrolEvent(
                 504,
@@ -714,9 +729,78 @@ class Patrol(object):
                 ])
 
         # biome specific patrols
-        #
-        # will add here
-        #
+
+        if game.clan.biome == 'forest':
+            possible_patrols.extend([
+                PatrolEvent(700, 
+                            'Your patrol comes across a vole',
+                            'Your patrol catches the vole!',
+                            'Your patrol narrowly misses the vole',
+                            'Your patrol decides to look for other prey',
+                            50,
+                            10,
+                            win_skills=['great hunter', 'fantastic hunter']),
+                PatrolEvent(701, 
+                            'While hunting, r_c comes across a rabbit burrow',
+                            'r_c catches the rabbit hiding in its burrow',
+                            'The burrow is abandoned, with no prey to be found in there',
+                            'r_c decides to ignore the burrow',
+                            50,
+                            10,
+                            win_skills=['great hunter', 'fantastic hunter']),
+                PatrolEvent(702, 
+                            'Your patrol comes across a small fallen tree blocking their path',
+                            'Your patrol successfully moves the tree out of the way and continues the patrol',
+                            'Your patrol can\'t seem to move the tree out of the way and is discouraged',
+                            'Your patrol decides to find another route to continue to patrol',
+                            40,
+                            10)
+            ])
+        elif game.clan.biome == 'plains':
+            possible_patrols.extend([
+                PatrolEvent(710, 
+                            'Your patrol comes across a praire dog',
+                            'Your patrol catches the praire dog!',
+                            'Your patrol narrowly misses the praire dog',
+                            'Your patrol decides to look for other prey',
+                            50,
+                            10,
+                            win_skills=['great hunter', 'fantastic hunter'])
+            ])
+        elif game.clan.biome == 'mountains':
+            possible_patrols.extend([
+                PatrolEvent(710, 
+                            'Your patrol comes across a shrew',
+                            'Your patrol catches the shrew!',
+                            'Your patrol narrowly misses the shrew',
+                            'Your patrol decides to look for other prey',
+                            50,
+                            10,
+                            win_skills=['great hunter', 'fantastic hunter'])
+            ])
+        elif game.clan.biome == 'swamp':
+            possible_patrols.extend([
+                PatrolEvent(710, 
+                            'Your patrol comes across a lizard',
+                            'Your patrol catches the lizard!',
+                            'Your patrol narrowly misses the lizard',
+                            'Your patrol decides to look for other prey',
+                            50,
+                            10,
+                            win_skills=['great hunter', 'fantastic hunter'])
+            ])
+        elif game.clan.biome == 'beach':
+            possible_patrols.extend([
+                PatrolEvent(710, 
+                            'Your patrol comes across a turtle',
+                            'Your patrol catches the turtle!',
+                            'Your patrol narrowly misses the turtle',
+                            'Your patrol decides to look for other prey',
+                            50,
+                            10,
+                            win_skills=['great hunter', 'fantastic hunter'])
+            ])
+
 
         # other_clan patrols
         if len(game.clan.all_clans) > 0:
@@ -792,11 +876,15 @@ class Patrol(object):
                 108, 113, 114, 120, 141, 250, 305, 307
         ]:
             if self.patrol_random_cat.status == 'leader':
-                game.clan.leader_lives -= 1
+                if self.patrol.event.patrol_id in [108, 113]:
+                    game.clan.leader_lives -= 9 # taken by twolegs, fall into ravine
+                else:
+                    game.clan.leader_lives -= 1
             events_class.dies(self.patrol_random_cat)
         elif self.patrol_event.patrol_id in [900, 901, 902]:
             for cat in self.patrol_cats:
                 cat.experience += self.patrol_event.exp
+                cat.experience = min(cat.experience, 80)
                 if cat.status == 'leader':
                     game.clan.leader_lives -= 10
                 events_class.dies(cat)
@@ -816,6 +904,8 @@ class Patrol(object):
         elif self.patrol_event.patrol_id == 102:
             self.patrol_random_cat.skill = choice(
                 ['paralyzed', 'blind', 'missing a leg'])
+            if game.settings['retirement']:
+                self.patrol_random_cat.status_change('elder')
         elif self.patrol_event.patrol_id == 904:
             if self.patrol_random_cat.specialty is None:
                 self.patrol_random_cat.specialty = choice([choice(scars5)])
