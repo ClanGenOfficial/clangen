@@ -249,29 +249,31 @@ class Cat(object):
         mostly_white_poss = mostly_white
         if self.pelt is not None:
             if self.pelt.white and self.pelt.white_patches is not None:
-                pelt_choice = randint(0, 11)
+                pelt_choice = randint(0, 10)
                 vit_chance = randint(0, 100)
-                if pelt_choice == 1 and self.pelt.name in ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
+                if pelt_choice == 1 and self.pelt.name in ['Tortie', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
                 and self.pelt.colour != 'WHITE':
                     self.white_patches = choice(point_markings)
+                elif pelt_choice == 1 and self.pelt.name in 'TwoColour' and self.pelt.colour != 'WHITE':
+                    self.white_patches = choice([point_markings, 'POINTMARK'])
                 elif pelt_choice == 2 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
                     self.white_patches = choice(mostly_white_poss)
-                elif pelt_choice == 11 and self.pelt.name in ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
+                elif pelt_choice == 3 and self.pelt.name in ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
                 and self.pelt.colour != 'WHITE':
-                    self.white_patches = choice(['EXTRA', None])
-                elif pelt_choice == 3 and self.pelt.name in ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
-                    self.white_patches = 'FULLWHITE'
-                elif pelt_choice < 10 and self.pelt.name in ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
-                    self.white_patches = choice(little_white_poss + mid_white_poss + high_white_poss)
-                elif pelt_choice < 10 and self.pelt.name in ['Tortie']:
-                    self.white_patches = choice(little_white_poss + mid_white_poss)
-                elif pelt_choice < 10 and self.pelt.name in ['Calico']:
-                    self.white_patches = choice(high_white_poss)
-                elif vit_chance == 1 and self.pelt.name in ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
-                and self.pelt.colour != 'WHITE':
-                    self.white_patches = choice(vit)
+                    self.white_patches = choice(['EXTRA', None, 'FULLWHITE'])
+
                 else:
-                    self.white_patches = choice(self.pelt.white_patches)
+                    if self.pelt.name in ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+                        self.white_patches = choice(little_white_poss + mid_white_poss + high_white_poss)
+                    elif self.pelt.name in ['Tortie']:
+                        self.white_patches = choice(little_white_poss + mid_white_poss)
+                    elif self.pelt.name in ['Calico']:
+                        self.white_patches = choice(high_white_poss)
+                    elif vit_chance == 1 and self.pelt.name in ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
+                    and self.pelt.colour != 'WHITE':
+                        self.white_patches = choice(vit)
+                    else:
+                        self.white_patches = choice(self.pelt.white_patches)
             else:
                 self.white_patches = None
             
