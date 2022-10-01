@@ -2570,6 +2570,7 @@ class Cat(object):
                 "former_apprentices" :[appr.ID for appr in inter_cat.former_apprentices]
             }
             clan_cats.append(cat_data)
+            inter_cat.save_relationship_of_cat()
 
         try:
             with open('saves/' + clanname + '/clan_cats.json', 'w') as write_file:
@@ -2608,10 +2609,13 @@ class Cat(object):
             }
             rel.append(r_data)
 
-        with open(relationship_dir + '/' + self.ID + '_relations.json',
-                  'w') as rel_file:
-            json_string = ujson.dumps(rel)
-            rel_file.write(json_string)
+        try:
+            with open(relationship_dir + '/' + self.ID + '_relations.json',
+                      'w') as rel_file:
+                json_string = ujson.dumps(rel)
+                rel_file.write(json_string)
+        except:
+            print(f"Saving relationship of cat #{self} didn't work.")
 
     def load_cats(self):
         directory = 'saves/' + game.switches['clan_list'][0] + '/clan_cats.json'
@@ -2813,6 +2817,8 @@ class Cat(object):
             new_cat.dead_for = cat["dead_moons"]
             new_cat.apprentice = cat["current_apprentice"]
             new_cat.former_apprentices = cat["former_apprentices"]
+
+            new_cat.load_relationship_of_cat()
 
             all_cats.append(new_cat)
 
