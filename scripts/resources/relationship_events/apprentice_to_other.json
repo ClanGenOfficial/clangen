@@ -1,0 +1,27 @@
+{
+    "kitten": {
+        "unfriendly": [],
+        "neutral": ["Trips over (cat)","Is watching over (cat)"],
+        "friendly": ["Train playfully with (cat)","Gave (cat) a trinket they found while out on patrol today"],
+        "close": []
+    },
+    "apprentice": {
+        "unfriendly": [],
+        "neutral": ["Is frustrated that (cat) won't take their duties more seriously",
+                    "Has a mock battle with (cat)"],
+        "friendly": [],
+        "close": []
+    },
+    "warrior": {
+        "unfriendly": [],
+        "neutral": ["Is frustrated that (cat) won't take their duties more seriously"],
+        "friendly": [],
+        "close": []
+    },
+    "elder": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "from": {
+        "romantic_love": ["Keeps shyly glancing over at (cat) as the clan talks about kits", "Thinks that (cat) is really charming",
+                          "Is thinking of the best ways to impress (cat)"],
+        "like": ["Is pretending to ward off foxes with (cat)", "Is pretending to fight off badgers with (cat)",
+                 "Is racing (cat) back and forth across the camp clearing", "Has a mock battle with (cat)",
+                 "Hopes that their own kits are as cute as (cat) someday", "Is asking (cat) to check them for ticks",
+                 "Is hiding behind a bush ready to pounce on (cat)", "Tells (cat) to get their ailment treated as soon as possible",
+                 "Plays mossball with (cat)", "Is giving (cat) a badger ride on their back!",
+                 "Calmly explains hunting techniques to (cat) again for the fourth time today"],
+        "dislike": ["Divides (cat) into extra patrols", "Chiding (cat) for being so reckless"],
+        "admiration": ["Is watching (cat) perform an almost-decent hunting crouch", "Ask (cat) what it's like to be a apprentice",
+                        "Is admiring (cat) from afar..."],
+        "comfortable": ["Is hiding under a bush from (cat), but they can't stop giggling", "Is watching over (cat)",
+                        "Bestowing wisdom onto (cat)", "Is telling (cat) in great detail how they would protect them from any danger",
+                        "Is purring loudly to comfort (cat)"],
+        "jealousy": [],
+        "trust": ["Is asking (cat) how babies are made", "Wants to explore Twoleg place with (cat)", "Wants to sneak along the border with (cat)"]
+    },
+    "to": {
+        "romantic_love": ["Doesn't want (cat) to overwork themselves"],
+        "like": ["Is pretending to ward off foxes with (cat)", "Is pretending to fight off badgers with (cat)",
+                 "Is racing (cat) back and forth across the camp clearing", "Has a mock battle with (cat)", 
+                 "Is hiding under a bush from (cat), but they can't stop giggling", "Helps (elder) get around camp",
+                 "Gave (cat) a trinket they found while out on patrol today", "Listening to (elder)'s woes"],
+        "dislike": ["Divides (cat) into extra patrols", "Chiding (cat) for being so reckless"],
+        "admiration": ["Bestowing wisdom onto (cat)"],
+        "comfortable": ["Hopes that their own kits are as cute as (cat) someday", "Smiles at (cat) whenever they meet",
+                        "Is purring loudly to comfort (cat)", "Listening to (elder)'s woes", "Is being quite considerate with (cat)"],
+        "jealousy": [],
+        "trust": ["Wants to explore Twoleg place with (cat)", "Wants to sneak along the border with (cat)",
+                  "Tells (cat) to get their ailment treated as soon as possible"]
+    }
+}

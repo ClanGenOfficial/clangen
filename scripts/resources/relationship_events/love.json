@@ -1,0 +1,14 @@
+{
+    "love_interest_only": ["Is developing a crush on (cat)", "Is admiring (cat) from afar...", "Is spending a lot of time with (cat)",
+                            "Gave a pretty flower they found to (cat)", "Laughs at bad jokes from (cat)", 
+                            "Enjoys the time with (cat) and feels secure", "Made (cat) laugh again and again",
+                            "Ensnares (cat) with a charming smile", "Go for a nice long walk with (cat)",
+                            "Wants to spend the entire day with (cat)"],
+    "love_interest": [  "Can't seem to stop talking about (cat)", "Would spend the entire day with (cat) if they could", 
+                        "Keeps shyly glancing over at (cat) as the clan talks about kits", 
+                        "Is thinking of the best ways to impress (cat)", "Doesn't want (cat) to overwork themselves", 
+                        "Is rolling around a little too playfully with (cat)...", 
+                        "Is wondering what it would be like to grow old with (cat)", "Thinks that (cat) is really funny",
+                        "Thinks that (cat) is really charming", "Wants to confess their love to (cat)"],
+    "mates": ["Was caught enjoying a moonlit stroll with (cat) last night..."]
+}

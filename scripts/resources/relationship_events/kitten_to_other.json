@@ -1,0 +1,41 @@
+{
+    "kitten": {
+        "unfriendly": ["Tries to scare (cat)", "Constantly pulling pranks on (cat)"],
+        "neutral": ["Has a mock battle with (cat)", 
+                    "Is jealous that (cat) is getting more attention than them",
+                    "Plays mossball with (cat)", "Sticks their tongue out at (cat)",
+                    "Is pretending to be (cat)"],
+        "friendly": ["Chomps on (cat)'s ear",
+                     "Pretends to be a warrior with (cat)",
+                     "Is pretending to ward off foxes with (cat)",
+                     "Is pretending to fight off badgers with (cat)",
+                     "Is racing (cat) back and forth across the camp clearing"],
+        "close": [  "Comes up with a plan to sneak out of camp with (cat)",
+                    "Wants to snuggle with (cat)"]
+    },
+    "apprentice": {
+        "unfriendly": ["Constantly pulling pranks on (cat)"],
+        "neutral": ["Sticks their tongue out at (cat)",
+                    "Is hiding under a bush from (cat), but they can't stop giggling",
+                    "Is pretending to be (cat)", "Is asking (cat) how babies are made"],
+        "friendly": ["Ask (cat) what it's like to be a apprentice"],
+        "close": ["Wants to snuggle with (cat)"]
+    },
+    "warrior": {
+        "unfriendly": ["Constantly pulling pranks on (cat)"],
+        "neutral": ["Is biting (cat)'s tail",
+                    "Sticks their tongue out at (cat)", "Is asking (cat) how babies are made",
+                    "Is demanding (cat)'s attention", "Is pretending to be (cat)",
+                    "Is hiding under a bush from (cat), but they can't stop giggling"],
+        "friendly": ["Tells (cat) that they would like to be like them when they grows up"],
+        "close": ["Wants to snuggle with (cat)"]
+    },
+    "elder": {
+        "unfriendly": ["Constantly pulling pranks on (cat)"],
+        "neutral": ["Sticks their tongue out at (cat)", 
+                    "Is hiding under a bush from (cat), but they can't stop giggling",
+                    "Is asking (cat) how babies are made"],
+        "friendly": [],
+        "close": []
+    }
+}

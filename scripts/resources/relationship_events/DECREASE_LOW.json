@@ -1,0 +1,23 @@
+{
+    "from": {
+        "romantic_love": [],
+        "like": ["Is hiding from (cat)", "Complains about (cat)"],
+        "dislike": [],
+        "admiration": [],
+        "comfortable": ["Chomps on (cat)'s ear"],
+        "jealousy": [],
+        "trust": ["Chiding (cat) for being so reckless"]
+    },
+    "to": {
+        "romantic_love": [],
+        "like": ["Trips over (cat)", "Divides (cat) into extra patrols", "Is watching (cat) scornfully"],
+        "dislike": ["Feels bad that they caused a problem for (cat)"],
+        "admiration": ["Is asking (cat) to tell them about how good they look"],
+        "comfortable": ["Is biting (cat)'s tail", "Tells (cat) that their pelt looks like a different colour today",
+                        "Talks to (cat) how best to kill prey, very enthusiastic",
+                        "Makes sure (cat) is following the warrior code",
+                        "Crashes into (cat) while eager for patrol"],
+        "jealousy": [],
+        "trust": ["Trips over (cat)"]
+    }
+}
