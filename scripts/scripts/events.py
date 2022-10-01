@@ -78,7 +78,7 @@ class Events(object):
             game.clan.age += 1
             if game.settings.get(
                     'autosave') is True and game.clan.age % 5 == 0:
-                cat_class.json_save_cats()
+                cat_class.save_cats()
                 game.clan.save_clan()
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
             game.event_scroll_ct = 0
@@ -177,6 +177,8 @@ class Events(object):
             game.cur_events_list.append(
                 f'{str(game.clan.deputy.name)} has been promoted to the new leader of the clan'
             )
+            self.ceremony_accessory = True
+            self.gain_accessories(cat)
             game.clan.deputy = None
         if not cat.dead:
             cat.moons += 1
@@ -186,22 +188,22 @@ class Events(object):
                 if cat.age != 'elder':
                     cat.age = cat_class.ages[cat_class.ages.index(cat.age) + 1]
                 if cat.status == 'kitten' and cat.age == 'adolescent':
-                    self.ceremony_accessory = True
                     cat.status_change('apprentice')
                     game.cur_events_list.append(
                         f'{str(cat.name)} has started their apprenticeship')
+                    self.ceremony_accessory = True
                     self.gain_accessories(cat)
                     cat.update_mentor()
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
-                    self.ceremony_accessory = True
                     self._extracted_from_perform_ceremonies_19(
                         cat, 'warrior', ' has earned their warrior name')
+                    self.ceremony_accessory = True
                     self.gain_accessories(cat)
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
-                    self.ceremony_accessory = True
                     self._extracted_from_perform_ceremonies_19(
                         cat, 'medicine cat',
                         ' has earned their medicine cat name')
+                    self.ceremony_accessory = True
                     self.gain_accessories(cat)
                     game.clan.new_medicine_cat(cat)
                 elif cat.status == 'deputy' and cat.age == 'elder' and len(
@@ -260,8 +262,8 @@ class Events(object):
                     choice(wild_accessories)
                 ])
                 accessory = cat.accessory
-                if self.ceremony_accessory == True:
-                    acc_text.extend([f'{other_name} gives {name} something to adorn their pelt as congratulations', f'{name} decides to pick something to adorn their pelt as celebration'])
+                #if self.ceremony_accessory == True:
+                 #   acc_text.extend([f'{other_name} gives {name} something to adorn their pelt as congratulations', f'{name} decides to pick something to adorn their pelt as celebration'])
                 if cat.age != 'kitten':
                     if cat.accessory in ["FORGET ME NOTS", "BLUEBELLS", "POPPY"]:
                         if game.clan.current_season == 'Leaf-bare':
@@ -275,9 +277,9 @@ class Events(object):
                     elif cat.accessory in ["HERBS", "PETALS", "DRY_HERBS"]:
                         acc_text.append(f'{name} always seems to have something stuck in their fur')
                     elif cat.accessory in plant_accessories and cat.status in ['medicine cat apprentice', 'medicine cat']:
-                        acc_text.extend([f'{name} decides to always bring {accessory.lower()} with them',
-                                        f'{accessory.lower()} is so important to {name} that they always carry it around',
-                                        f'{accessory.lower()} is vital for {name}, so they always have it on them'
+                        acc_text.extend([f'{name} has decided to always bring their {accessory.lower()} with them',
+                                        f'{accessory.lower()} - an item so important to {name} that they always carry it around'.capitalize,
+                                        f'{accessory.lower()} - so vital for {name} that they always have it on them'.capitalize
                         ])
                     else:
                         acc_text.extend([f'{name} finds something interesting and decides to wear it on their pelt', f'A clanmate gives {name} a pretty accessory and they decide to wear it on their pelt',
@@ -292,7 +294,7 @@ class Events(object):
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
                         acc_text.append(f'{name} was playing with feathers earlier and decided to wear some of them')
                     elif cat.accessory in ["HERBS", "PETALS", "DRYHERBS"]:
-                        acc_text.append(f'{name} is always groomed by their parents but there always seems be something stuck in there')
+                        acc_text.append(f'{name}\'s parents try their best to groom them, but something is always stuck in their fur')
                     else:    
                         acc_text.extend([f'{name} seems to have picked something up while playing out in the camp', f'{name} finds something interesting and decides to wear it on their pelt',
                                         f'A clanmate gives {name} a pretty accessory and they decide to wear it on their pelt', f'{other_name} gives {name} a pretty accessory and they decide to wear it on their pelt',
@@ -1076,7 +1078,7 @@ class Events(object):
                 name + ' was found dead near a fox den',
                 name + ' was bitten by a snake and died'
             ]
-            if clan_has_kits == True:
+            if clan_has_kits == True and cat.status != 'kitten':
                 cause_of_death.extend([
                     name + ' was bitten by a snake while saving a kit and died'
                 ])
@@ -1246,7 +1248,7 @@ class Events(object):
                 name + ' and ' + other_name + ' die of whitecough',
                 name + ' and ' + other_name + ' die from eating poisoned prey'
             ]
-            if cat.status not in ['kitten', 'leader'] and other_cat.status not in ['kitten', 'leader']:
+            if cat.status == ['kitten', 'leader'] or other_cat.status == ['kitten', 'leader']:
                 cause_of_death.extend([
                     name + ' and ' + other_name +
                     ' are killed in a border skirmish',
@@ -1270,7 +1272,7 @@ class Events(object):
             self.dies(cat)
             self.dies(other_cat)
 
-        elif randint(1, 100) == 1:  #Death with Personalities
+        elif randint(1, 80) == 1:  #Death with Personalities
             murder_chance = 20
             name = str(cat.name)
             countdown = int(len(cat_class.all_cats) / 3)
