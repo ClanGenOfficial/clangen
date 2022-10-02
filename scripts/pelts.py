@@ -10,7 +10,7 @@ class SingleColour(object):
         self.colour = colour
         self.length = length
         self.white = self.colour == "white"
-        
+
     def __repr__(self):
         return self.colour + self.length
 
@@ -31,7 +31,7 @@ class TwoColour(object):
         self.colour = colour
         self.length = length
         self.white = True
-        
+
     def __repr__(self):
         return f"white and {self.colour}{self.length}"
 
@@ -52,7 +52,7 @@ class Tabby(object):
         self.white = white  # boolean; does cat have white on it or no
         self.colour = colour
         self.length = length
-        
+
     def __repr__(self):
         if self.white:
             return f"white and {self.colour}{self.length} tabby"
@@ -76,7 +76,7 @@ class Marbled(object):
         self.white = white  # boolean; does cat have white on it or no
         self.colour = colour
         self.length = length
-        
+
     def __repr__(self):
         if self.white:
             return f"white and {self.colour}{self.length} marbled"
@@ -100,7 +100,7 @@ class Rosette(object):
         self.white = white  # boolean; does cat have white on it or no
         self.colour = colour
         self.length = length
-        
+
     def __repr__(self):
         if self.white:
             return f"white and {self.colour}{self.length} rosette"
@@ -124,7 +124,7 @@ class Smoke(object):
         self.white = white  # boolean; does cat have white on it or no
         self.colour = colour
         self.length = length
-        
+
     def __repr__(self):
         if self.white:
             return f"white and {self.colour}{self.length} smoke"
@@ -311,10 +311,10 @@ high_white = ['ANY', 'ANYCREAMY', 'ANY2', 'ANY2CREAMY', 'BROKEN', 'FRECKLES', 'R
     'GOATEE', 'PRINCE', 'FAROFA', 'MISTER', 'PANTS', 'REVERSEPANTS', 'HALFWHITE', 'APPALOOSA', 'PIEBALD',
     'CURVED', 'GLASS']
 mostly_white = ['VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'HEART', 'MOORISH']
-point_markings = ['COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL', 'POINTMARK']
+point_markings = ['COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL']
 vit = ['VITILIGO']
 white_sprites = [
-    little_white, mid_white, high_white, mostly_white, point_markings, vit, 'FULLWHITE', 'EXTRA'
+    little_white, mid_white, high_white, mostly_white, point_markings, vit, 'FULLWHITE', 'EXTRA', 'POINTMARK'
 ]
 
 skin_sprites = ['BLACK', 'RED', 'PINK']
