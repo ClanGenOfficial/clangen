@@ -1,3 +1,4 @@
+from hashlib import new
 from multiprocessing import reduction
 from .pelts import *
 from .names import *
@@ -2529,6 +2530,7 @@ class Cat(object):
                 "name_suffix": inter_cat.name.suffix,
                 "gender": inter_cat.gender,
                 "gender_align": inter_cat.genderalign,
+                "birth_cooldown": inter_cat.birth_cooldown,
                 "status": inter_cat.status,
                 "age": inter_cat.age,
                 "moons": inter_cat.moons,
@@ -2786,6 +2788,7 @@ class Cat(object):
                             eye_colour=cat["eye_colour"], pelt=new_pelt)
             new_cat.age = cat["age"]
             new_cat.genderalign = cat["gender_align"]
+            new_cat.birth_cooldown = cat["birth_cooldown"]
             new_cat.moons = cat["moons"]
             new_cat.trait = cat["trait"]
             new_cat.mentor = cat["mentor"]
