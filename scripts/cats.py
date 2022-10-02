@@ -2576,7 +2576,7 @@ class Cat(object):
 
         try:
             with open('saves/' + clanname + '/clan_cats.json', 'w') as write_file:
-                json_string = ujson.dumps(clan_cats)
+                json_string = ujson.dumps(clan_cats, indent = 4)
                 write_file.write(json_string)
         except:
             print("Saving cats didn't work.")
@@ -2614,7 +2614,7 @@ class Cat(object):
         try:
             with open(relationship_dir + '/' + self.ID + '_relations.json',
                       'w') as rel_file:
-                json_string = ujson.dumps(rel)
+                json_string = ujson.dumps(rel, indent = 4)
                 rel_file.write(json_string)
         except:
             print(f"Saving relationship of cat #{self} didn't work.")
