@@ -78,7 +78,7 @@ class Events(object):
             game.clan.age += 1
             if game.settings.get(
                     'autosave') is True and game.clan.age % 5 == 0:
-                cat_class.save_cats()
+                cat_class.json_save_cats()
                 game.clan.save_clan()
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
             game.event_scroll_ct = 0
@@ -866,12 +866,12 @@ class Events(object):
 
             cat.status_change('elder')
             return
-        if cat.status == 'kitten':
+        if cat.status == 'kitten' and other_cat.status != 'kitten':
             interactions.extend([
                 f'{name} is scolded after sneaking out of camp',
                 f'{name} falls into a river but is saved by {other_name}'
             ])
-        elif cat.status in ['apprentice', 'medicine cat apprentice']:
+        elif cat.status in ['apprentice', 'medicine cat apprentice'] and other_cat.status != 'kitten':
             interactions.extend([
                 f'{name} is scolded after sneaking out of camp',
                 f'{name} falls into a river but is saved by {other_name}',

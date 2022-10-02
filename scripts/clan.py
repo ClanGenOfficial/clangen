@@ -249,6 +249,7 @@ class Clan(object):
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
             return
+        game.switches['error_message'] = "There was an error loading the clan.txt"
         with open('saves/' + game.switches['clan_list'][0] + 'clan.txt',
                   'r') as read_file:
             clan_data = read_file.read()

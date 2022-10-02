@@ -329,7 +329,7 @@ class Relation_Events(object):
         # calculate the chance of having kits
         chance = 60
         if other_cat != None:
-            chance = 32
+            chance = 35
             if relation.romantic_love > 50:
                 chance -= 5
             if relation.romantic_love > 60:
@@ -343,7 +343,7 @@ class Relation_Events(object):
             if relation.comfortable > 70:
                 chance -= 5
         if old_male:
-            chance = int(chance * 1.3)
+            chance = int(chance * 2)
 
         if self.living_cats > 50:
             chance += 20
@@ -401,12 +401,7 @@ class Relation_Events(object):
         # choose event string
         print_event = ""
         if other_cat == None:
-            possible_events = []
-            if cat.gender == 'male':
-                possible_events = [f"{str(cat.name)} has brought a litter of {str(kits)} kit(s) into the camp, but does not talk about their mother"]
-            elif cat.gender == 'female':
-                possible_events = [f"{str(cat.name)} had a litter of {str(kits)} kit(s), but refused to talk about the begetter"]
-            print_event = choice(possible_events)
+            print_event = f"{str(cat.name)} brought a litter of {str(kits)} kit(s) back to camp, but refused to talk about their origin"
         elif cat.mate == other_cat.ID:
             print_event = f"{str(cat.name)} had a litter of {str(kits)} kit(s) with {str(other_cat.name)}"
         else:
