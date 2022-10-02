@@ -866,12 +866,12 @@ class Events(object):
 
             cat.status_change('elder')
             return
-        if cat.status == 'kitten':
+        if cat.status == 'kitten' and other_cat.status != 'kitten':
             interactions.extend([
                 f'{name} is scolded after sneaking out of camp',
                 f'{name} falls into a river but is saved by {other_name}'
             ])
-        elif cat.status in ['apprentice', 'medicine cat apprentice']:
+        elif cat.status in ['apprentice', 'medicine cat apprentice'] and other_cat.status != 'kitten':
             interactions.extend([
                 f'{name} is scolded after sneaking out of camp',
                 f'{name} falls into a river but is saved by {other_name}',
