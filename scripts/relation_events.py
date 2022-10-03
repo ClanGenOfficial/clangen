@@ -396,6 +396,8 @@ class Relation_Events(object):
                     the_cat.relationships.append(Relationship(the_cat,kit))
                     relationships.append(Relationship(kit,the_cat))
             kit.relationships = relationships
+            # remove accesiory
+            kit.accessory = None
             game.clan.add_cat(kit)
 
         # choose event string
