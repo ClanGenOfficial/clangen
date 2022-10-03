@@ -334,6 +334,7 @@ class Clan(object):
                 game.clan.add_to_starclan(cat_class.all_cats[cat])
             else:
                 print('Cat not found:', cat)
+        game.switches['error_message'] = ''
 
 
 class OtherClan(object):
