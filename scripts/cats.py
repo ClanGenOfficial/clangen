@@ -1,4 +1,3 @@
-from re import S
 from .pelts import *
 from .names import *
 from .sprites import *
