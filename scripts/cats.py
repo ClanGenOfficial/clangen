@@ -255,7 +255,7 @@ class Cat(object):
                 and self.pelt.colour != 'WHITE':
                     self.white_patches = choice(point_markings)
                 elif pelt_choice == 1 and self.pelt.name in 'TwoColour' and self.pelt.colour != 'WHITE':
-                    self.white_patches = choice([point_markings, 'POINTMARK'])
+                    self.white_patches = choice(point_markings + ['POINTMARK'])
                 elif pelt_choice == 2 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
                     self.white_patches = choice(mostly_white_poss)
                 elif pelt_choice == 3 and self.pelt.name in ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
