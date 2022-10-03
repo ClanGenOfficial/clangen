@@ -401,12 +401,7 @@ class Relation_Events(object):
         # choose event string
         print_event = ""
         if other_cat == None:
-            possible_events = []
-            if cat.gender == 'male':
-                possible_events = [f"{str(cat.name)} has brought a litter of {str(kits)} kit(s) into the camp, but does not talk about their mother"]
-            elif cat.gender == 'female':
-                possible_events = [f"{str(cat.name)} had a litter of {str(kits)} kit(s), but refused to talk about the begetter"]
-            print_event = choice(possible_events)
+            print_event = f"{str(cat.name)} brought a litter of {str(kits)} kit(s) back to camp, but refused to talk about their origin"
         elif cat.mate == other_cat.ID:
             print_event = f"{str(cat.name)} had a litter of {str(kits)} kit(s) with {str(other_cat.name)}"
         else:
