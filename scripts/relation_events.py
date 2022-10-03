@@ -377,7 +377,10 @@ class Relation_Events(object):
         for kit in range(kits):
             kit = None
             if other_cat != None:
-                kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
+                if cat.gender == 'female':
+                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
+                else:
+                    kit = Cat(parent1=other_cat.ID, parent2=cat.ID, moons=0)
                 cat.birth_cooldown = 6
                 other_cat.birth_cooldown = 6
             else:
@@ -396,6 +399,8 @@ class Relation_Events(object):
                     the_cat.relationships.append(Relationship(the_cat,kit))
                     relationships.append(Relationship(kit,the_cat))
             kit.relationships = relationships
+            # remove accesiory
+            kit.accessory = None
             game.clan.add_cat(kit)
 
         # choose event string
@@ -403,7 +408,10 @@ class Relation_Events(object):
         if other_cat == None:
             print_event = f"{str(cat.name)} brought a litter of {str(kits)} kit(s) back to camp, but refused to talk about their origin"
         elif cat.mate == other_cat.ID:
-            print_event = f"{str(cat.name)} had a litter of {str(kits)} kit(s) with {str(other_cat.name)}"
+            if cat.gender == 'female':
+                print_event = f"{str(cat.name)} had a litter of {str(kits)} kit(s) with {str(other_cat.name)}"
+            else:
+                print_event = f"{str(other_cat.name)} had a litter of {str(kits)} kit(s) with {str(cat.name)}"
         else:
             print_event = f"{str(cat.name)} had a secret litter of {str(kits)} kit(s) with {str(other_cat.name)}"
 
