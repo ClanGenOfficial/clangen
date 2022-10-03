@@ -1,5 +1,4 @@
-from hashlib import new
-from multiprocessing import reduction
+from re import S
 from .pelts import *
 from .names import *
 from .sprites import *
@@ -116,8 +115,12 @@ class Cat(object):
         if self.gender is None:
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
-        if status is None:
+        if status is None and moons is None:
             self.age = choice(self.ages)
+        elif moons != None:
+            for key_age in self.age_moons.keys():
+                if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1]+1):
+                    self.age = key_age
         else:
             if status in ['kitten', 'elder']:
                 self.age = status
@@ -2782,13 +2785,12 @@ class Cat(object):
         # create new cat objects
         for cat in cat_data:
             new_pelt = choose_pelt(cat["gender"], cat["pelt_color"], cat["pelt_white"], cat["pelt_name"], cat["pelt_length"], True)
-            
             new_cat = Cat(ID=cat["ID"], prefix=cat["name_prefix"], suffix=cat["name_suffix"], gender=cat["gender"],
                             status=cat["status"], parent1=cat["parent1"], parent2=cat["parent2"], moons=cat["moons"],
                             eye_colour=cat["eye_colour"], pelt=new_pelt)
             new_cat.age = cat["age"]
             new_cat.genderalign = cat["gender_align"]
-            new_cat.birth_cooldown = cat["birth_cooldown"]
+            new_cat.birth_cooldown = cat["birth_cooldown"] if "birth_cooldown" in cat else 0
             new_cat.moons = cat["moons"]
             new_cat.trait = cat["trait"]
             new_cat.mentor = cat["mentor"]
