@@ -37,7 +37,7 @@ except:
 
 APPRENTICE_TO_OTHER = None
 try:
-    with open(f"{resource_directory}apprenice_to_other.json", 'r') as read_file:
+    with open(f"{resource_directory}apprentice_to_other.json", 'r') as read_file:
         APPRENTICE_TO_OTHER = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 3 jsonfile of relationship_events!'
