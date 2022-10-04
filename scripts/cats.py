@@ -250,7 +250,7 @@ class Cat(object):
         if self.pelt is not None:
             if self.pelt.white and self.pelt.white_patches is not None:
                 pelt_choice = randint(0, 10)
-                vit_chance = randint(0, 100)
+                vit_chance = randint(0, 40)
                 if pelt_choice == 1 and self.pelt.name in ['Tortie', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
                 and self.pelt.colour != 'WHITE':
                     self.white_patches = choice(point_markings)
@@ -269,7 +269,7 @@ class Cat(object):
                         self.white_patches = choice(little_white_poss + mid_white_poss)
                     elif self.pelt.name in ['Calico']:
                         self.white_patches = choice(high_white_poss)
-                    elif vit_chance == 1 and self.pelt.name in ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
+                    elif pelt_choice == 1 and vit_chance == 1 and self.pelt.name in ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
                     and self.pelt.colour != 'WHITE':
                         self.white_patches = choice(vit)
                     else:
