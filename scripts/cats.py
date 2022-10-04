@@ -3100,17 +3100,17 @@ class Cat(object):
         indirect_related = self.is_uncle_aunt(other_cat) or other_cat.is_uncle_aunt(self)
         if direct_related or indirect_related:
             return False
-        
+
         # check for age
-        if self.moons < 14 or other_cat.moons < 14:
+        if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
             return False
 
         if self.age == other_cat.age:
             return True
 
-        invalid_status_mate = ['kitten', 'apprentice', 'medicine cat apprentice']
-        not_invalid_status = self.status not in invalid_status_mate and other_cat.status not in invalid_status_mate
-        if not_invalid_status and abs(self.moons - other_cat.moons) <= 40:
+        invalid_age_mate = ['kitten', 'adolescent']
+        not_invalid_age = self.age not in invalid_age_mate and other_cat.age not in invalid_age_mate
+        if not_invalid_age and abs(self.moons - other_cat.moons) <= 40:
             return True
 
         return False
@@ -3129,6 +3129,8 @@ class Cat(object):
 
     def is_uncle_aunt(self, other_cat):
         """Check if the cats are related as uncle/aunt and niece/nephew."""
+        if self.is_parent(other_cat):
+            return False
         if set(self.get_siblings()) & set(other_cat.get_parents()):
             return True
         return False
