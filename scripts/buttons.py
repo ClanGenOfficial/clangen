@@ -202,9 +202,9 @@ class Button(object):
                 cat_class.all_cats[cat_value].genderalign = "trans male"
             elif text == 'Change to Trans Female':
                 cat_class.all_cats[cat_value].genderalign = "trans female"
-            elif text == 'Change to Nonbinary':
+            elif text == 'Change to Nonbinary/Specify Gender':
                 cat_class.all_cats[cat_value].genderalign = "nonbinary"
-            elif text == 'Change Back to Cisgender':
+            elif text == 'Change to Cisgender':
                 cat_class.all_cats[cat_value].genderalign = cat_class.all_cats[
                     cat_value].gender
             elif cat_value is None and arrow is None:
@@ -240,9 +240,9 @@ class Button(object):
                     cat_class.all_cats[cat_value].genderalign = "trans male"
                 elif text == 'Change to Trans Female':
                     cat_class.all_cats[cat_value].genderalign = "trans female"
-                elif text == 'Change to Nonbinary':
+                elif text == 'Change to Nonbinary/Specify Gender':
                     cat_class.all_cats[cat_value].genderalign = "nonbinary"
-                elif text == 'Change Back to Cisgender':
+                elif text == 'Change to Cisgender':
                     cat_class.all_cats[
                         cat_value].genderalign = cat_class.all_cats[
                             cat_value].gender
