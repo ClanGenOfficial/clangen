@@ -3025,8 +3025,8 @@ class Cat(object):
             sex = 'she-cat'
         else:
             sex = 'cat'
-        description = self.describe_color()
-        description += ' ' + str(self.pelt.length).lower() + '-furred ' + sex
+        description = str(self.pelt.length).lower() + '-furred'
+        description += ' ' + self.describe_color() + ' ' + sex
         return description
 
     def set_mate(self, other_cat):
