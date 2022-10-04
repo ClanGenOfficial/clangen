@@ -2820,12 +2820,14 @@ class Cat(object):
             new_cat.apprentice = cat["current_apprentice"]
             new_cat.former_apprentices = cat["former_apprentices"]
 
-            new_cat.load_relationship_of_cat()
-
             all_cats.append(new_cat)
 
+            
         # replace cat ids with cat objects (only needed by mentor)
         for cat in all_cats:
+            # load the relationships
+            cat.load_relationship_of_cat()
+
             mentor_relevant = list(filter(lambda inter_cat: inter_cat.ID == cat.mentor, all_cats))
             cat.mentor = None
             if len(mentor_relevant) == 1:
