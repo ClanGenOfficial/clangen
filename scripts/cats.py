@@ -1366,7 +1366,7 @@ class Cat(object):
                     thoughts.extend([
                         'Caught scent of a fox earlier',
                         'Caught scent of an enemy warrior earlier',
-                        'Is helping gathering herbs', 'Is thinking about love',
+                        'Is helping to gather herbs', 'Is thinking about love',
                         'Is decorating their nest',
                         'Is reinforcing the camp with brambles',
                         'Caught a huge rabbit',
