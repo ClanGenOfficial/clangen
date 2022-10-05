@@ -322,7 +322,7 @@ INCREASE_HIGH = {
     "to": {
         "romantic_love": ['Is spending a lot of time with (cat)', 'Gave a pretty flower they found to (cat)',
                           'Is rolling around a little too playfully with (cat)...', 'Ensnares (cat) with a charming smile',
-                          'Was caught enjoying a moonlit stroll with (cat) last night...', 'Make (cat) laugh again and again',
+                          'Was caught enjoying a moonlit stroll with (cat) last night...', 'Makes (cat) laugh again and again',
                           'Go for a nice long walk with (cat)', 'Wants to spend the entire day with (cat)', 'Charms (cat)'],
         "like": ['Is telling a story to (cat)','Is talking with (cat)','Is sharing tongues with (cat)',
                 'Is giving (cat) a badger ride on their back!', 'Is promising to take (cat) outside of camp if they behave',
