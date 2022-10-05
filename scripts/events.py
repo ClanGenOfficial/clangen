@@ -1461,13 +1461,13 @@ class Events(object):
             cat.age = 'elder'
 
     def coming_out(self, cat):
-        transing_chance = randint(0, 1)
+        transing_chance = randint(0, 500)
         hit = False
         if cat.genderalign == cat.gender:
             if cat.moons < 6:
                 return
             elif cat.moons == 6:
-                #transing_chance = transing_chance - 200
+                transing_chance = transing_chance - 200
                 if transing_chance == 1 and cat.gender == "male":
                     cat.genderalign = "trans female"
                     hit = True
@@ -1478,7 +1478,7 @@ class Events(object):
                     cat.genderalign = "nonbinary"
                     hit = True
             elif cat.moons == 12:
-                #transing_chance = transing_chance - 100
+                transing_chance = transing_chance - 100
                 if transing_chance == 1 and cat.gender == "male":
                     cat.genderalign = "trans female"
                     hit = True
@@ -1489,7 +1489,7 @@ class Events(object):
                     cat.genderalign = "nonbinary"
                     hit = True
             elif cat.moons >= 43:
-                #transing_chance = transing_chance
+                transing_chance = transing_chance
                 if transing_chance == 1 and cat.gender == "male":
                     cat.genderalign = "trans female"
                     hit = True
