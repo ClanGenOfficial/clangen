@@ -605,14 +605,18 @@ class Cat(object):
                             ' about their own days as an apprentice',
                             'Is frustrated that ' + other_name +
                             ' won\'t take their duties more seriously',
-                            'Has successfully tricked ' + other_name +
-                            ' into believing a crazy tale about the Clan leader',
                             'Can\'t believe ' + other_name +
                             ' caught that rabbit on patrol yesterday',
                             'Doesn\'t think that ' + other_name +
                             ' has been completely honest lately',
                             'Is fuming from an argument with ' + other_name
                         ])
+                    elif cat.status in ['warrior', 'elder', 'deputy'] and other_cat.status == 'apprentice':
+                        thoughts.extend([
+                            'Has successfully tricked ' + other_name +
+                            ' into believing a crazy tale about the Clan leader',
+                        ])
+
                     # kit thoughts
                     if cat.status == 'kitten':
                         # kit thoughts with other kit
