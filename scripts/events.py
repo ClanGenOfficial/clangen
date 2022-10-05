@@ -113,6 +113,7 @@ class Events(object):
         self.gain_accessories(cat)
         self.gain_scars(cat)
         self.handle_deaths(cat)
+        self.coming_out(cat)
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0 and randint(1, 5) == 1:
@@ -193,18 +194,21 @@ class Events(object):
                         f'{str(cat.name)} has started their apprenticeship')
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
+                    self.coming_out(cat)
                     cat.update_mentor()
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
                     self._extracted_from_perform_ceremonies_19(
                         cat, 'warrior', ' has earned their warrior name')
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
+                    self.coming_out(cat)
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
                     self._extracted_from_perform_ceremonies_19(
                         cat, 'medicine cat',
                         ' has earned their medicine cat name')
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
+                    self.coming_out(cat)
                     game.clan.new_medicine_cat(cat)
                 elif cat.status == 'deputy' and cat.age == 'elder' and len(
                         cat.apprentice) < 1:
@@ -1455,5 +1459,36 @@ class Events(object):
             cat.age = 'senior adult'
         else:
             cat.age = 'elder'
+
+    def coming_out(self, cat):
+        transing_chance = randint(0, 500)
+        if cat.moons < 6:
+            return
+        elif cat.moons == 6:
+            transing_chance = transing_chance - 200
+            if transing_chance == 1 and cat.sex == "male":
+                cat.gender_align == "trans female"
+            elif transing_chance == 1 and cat.sex == "female":
+                cat.gender_align == "trans male"
+            elif transing_chance == 2:
+                cat.gender_align == "nonbinary"
+        elif cat.moons == 12:
+            transing_chance = transing_chance - 100
+            if transing_chance == 1 and cat.sex == "male":
+                cat.gender_align == "trans female"
+            elif transing_chance == 1 and cat.sex == "female":
+                cat.gender_align == "trans male"
+            elif transing_chance == 2:
+                cat.gender_align == "nonbinary"
+        elif cat.moons >= 43:
+            transing_chance = transing_chance
+            if transing_chance == 1 and cat.sex == "male":
+                cat.gender_align == "trans female"
+            elif transing_chance == 1 and cat.sex == "female":
+                cat.gender_align == "trans male"
+            elif transing_chance == 2:
+                cat.gender_align == "nonbinary"
+
+
 
 events_class = Events()
