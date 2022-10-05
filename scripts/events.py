@@ -1461,33 +1461,53 @@ class Events(object):
             cat.age = 'elder'
 
     def coming_out(self, cat):
-        transing_chance = randint(0, 500)
-        if cat.moons < 6:
-            return
-        elif cat.moons == 6:
-            transing_chance = transing_chance - 200
-            if transing_chance == 1 and cat.sex == "male":
-                cat.gender_align == "trans female"
-            elif transing_chance == 1 and cat.sex == "female":
-                cat.gender_align == "trans male"
-            elif transing_chance == 2:
-                cat.gender_align == "nonbinary"
-        elif cat.moons == 12:
-            transing_chance = transing_chance - 100
-            if transing_chance == 1 and cat.sex == "male":
-                cat.gender_align == "trans female"
-            elif transing_chance == 1 and cat.sex == "female":
-                cat.gender_align == "trans male"
-            elif transing_chance == 2:
-                cat.gender_align == "nonbinary"
-        elif cat.moons >= 43:
-            transing_chance = transing_chance
-            if transing_chance == 1 and cat.sex == "male":
-                cat.gender_align == "trans female"
-            elif transing_chance == 1 and cat.sex == "female":
-                cat.gender_align == "trans male"
-            elif transing_chance == 2:
-                cat.gender_align == "nonbinary"
+        transing_chance = randint(0, 1)
+        hit = False
+        if cat.genderalign == cat.gender:
+            if cat.moons < 6:
+                return
+            elif cat.moons == 6:
+                #transing_chance = transing_chance - 200
+                if transing_chance == 1 and cat.gender == "male":
+                    cat.genderalign = "trans female"
+                    hit = True
+                elif transing_chance == 1 and cat.gender == "female":
+                    cat.genderalign = "trans male"
+                    hit = True
+                elif transing_chance == 2:
+                    cat.genderalign = "nonbinary"
+                    hit = True
+            elif cat.moons == 12:
+                #transing_chance = transing_chance - 100
+                if transing_chance == 1 and cat.gender == "male":
+                    cat.genderalign = "trans female"
+                    hit = True
+                elif transing_chance == 1 and cat.gender == "female":
+                    cat.genderalign = "trans male"
+                    hit = True
+                elif transing_chance == 2:
+                    cat.genderalign = "nonbinary"
+                    hit = True
+            elif cat.moons >= 43:
+                #transing_chance = transing_chance
+                if transing_chance == 1 and cat.gender == "male":
+                    cat.genderalign = "trans female"
+                    hit = True
+                elif transing_chance == 1 and cat.gender == "female":
+                    cat.genderalign = "trans male"
+                    hit = True
+                elif transing_chance == 2:
+                    cat.genderalign = "nonbinary"
+                    hit = True
+            if hit == True:
+                if cat.gender == 'male':
+                    gender = 'tom'
+                else:
+                    gender = 'she-cat'
+                game.cur_events_list.append(
+                    str(cat.name) + " has realized that " + str(gender) + " doesn't describe how they feel anymore")        
+        
+        
 
 
 
