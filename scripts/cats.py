@@ -3074,7 +3074,7 @@ class Cat(object):
 
         self.mate = None
 
-    def is_potential_mate(self, other_cat, for_love_interest = False):
+    def is_potential_mate(self, other_cat, for_love_interest = False, former_mentor_setting = game.settings['romantic with former mentor']):
         """Checks if this cat is a free and potential mate for the other cat."""
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
@@ -3094,7 +3094,7 @@ class Cat(object):
 
         # check for mentor
         is_former_mentor = (other_cat in self.former_apprentices or self in other_cat.former_apprentices)
-        if is_former_mentor and not game.settings['romantic with former mentor']:
+        if is_former_mentor and not former_mentor_setting:
             return False
 
         # check for relation
