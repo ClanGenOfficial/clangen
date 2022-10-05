@@ -117,6 +117,7 @@ class Cat(object):
         if self.gender is None:
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
+        #trans cat chances
         if self.gender == "female":
             if trans_chance == 1:
                 self.genderalign = "trans male"
