@@ -44,7 +44,7 @@ class Relation_Events(object):
                 filter(
                     lambda cat_id: cat.all_cats.get(cat_id).age == "kitten" and
                     cat_id != cat.ID, cat_class.all_cats.copy()))
-            cats_to_choose = cats_to_choose + kittens
+            cats_to_choose = cats_to_choose + kittens + kittens
 
         # increase the chance a apprentice interact with otherapprentices
         if cat.age == "adolescent":
@@ -52,7 +52,7 @@ class Relation_Events(object):
                 filter(
                     lambda cat_id: cat.all_cats.get(cat_id).age == "adolescent"
                     and cat_id != cat.ID, cat_class.all_cats.copy()))
-            cats_to_choose = cats_to_choose + apprentices
+            cats_to_choose = cats_to_choose + apprentices + apprentices
 
         # choose cat and start
         random_id = random.choice(list(cat.all_cats.keys()))
@@ -327,9 +327,9 @@ class Relation_Events(object):
             old_male = True
 
         # calculate the chance of having kits
-        chance = 60
+        chance = 80
         if other_cat != None:
-            chance = 35
+            chance = 45
             if relation.romantic_love > 50:
                 chance -= 5
             if relation.romantic_love > 60:
