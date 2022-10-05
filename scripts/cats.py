@@ -253,7 +253,7 @@ class Cat(object):
         if self.pelt is not None:
             if self.pelt.white and self.pelt.white_patches is not None:
                 pelt_choice = randint(0, 10)
-                vit_chance = randint(0, 100)
+                vit_chance = randint(0, 40)
                 if pelt_choice == 1 and self.pelt.name in ['Tortie', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
                 and self.pelt.colour != 'WHITE':
                     self.white_patches = choice(point_markings)
@@ -272,7 +272,7 @@ class Cat(object):
                         self.white_patches = choice(little_white_poss + mid_white_poss)
                     elif self.pelt.name in ['Calico']:
                         self.white_patches = choice(high_white_poss)
-                    elif vit_chance == 1 and self.pelt.name in ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
+                    elif pelt_choice == 1 and vit_chance == 1 and self.pelt.name in ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
                     and self.pelt.colour != 'WHITE':
                         self.white_patches = choice(vit)
                     else:
@@ -2824,12 +2824,14 @@ class Cat(object):
             new_cat.apprentice = cat["current_apprentice"]
             new_cat.former_apprentices = cat["former_apprentices"]
 
-            new_cat.load_relationship_of_cat()
-
             all_cats.append(new_cat)
 
+            
         # replace cat ids with cat objects (only needed by mentor)
         for cat in all_cats:
+            # load the relationships
+            cat.load_relationship_of_cat()
+
             mentor_relevant = list(filter(lambda inter_cat: inter_cat.ID == cat.mentor, all_cats))
             cat.mentor = None
             if len(mentor_relevant) == 1:
@@ -3029,8 +3031,8 @@ class Cat(object):
             sex = 'she-cat'
         else:
             sex = 'cat'
-        description = self.describe_color()
-        description += ' ' + str(self.pelt.length).lower() + '-furred ' + sex
+        description = str(self.pelt.length).lower() + '-furred'
+        description += ' ' + self.describe_color() + ' ' + sex
         return description
 
     def set_mate(self, other_cat):

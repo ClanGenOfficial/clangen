@@ -195,6 +195,7 @@ class Clan(object):
         game.cur_events_list.clear()
         with open('saves/clanlist.txt', 'w') as write_file:
             write_file.write(list_data)
+        game.cur_events_list.clear()
 
         pygame.display.quit()
         pygame.quit()
