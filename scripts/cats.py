@@ -1733,14 +1733,17 @@ class Cat(object):
                             ['Recently snapped at the kits, making them cry'])
                 elif cat.trait == 'compassionate':
                     thoughts.extend([
-                        'Is being scolded for giving their prey away to a starving loner',
                         'Spent time today with a grieving Clanmate',
                         'Is helping the medicine cat organize herb stores',
                         'Let their Clanmate have the last piece of fresh kill on the pile this morning',
-                        'Is making sure that the leader has eaten before they dig in to their own meal',
                         'Is noticing with joy how well the Clan is looking after one another as of late',
                         'Is listening to a Clanmate\'s struggles with love'
                     ])
+                    if cat.status != 'leader':
+                        thoughts.extend([
+                        'Is making sure that the leader has eaten before they dig in to their own meal',
+                        'Is being scolded for giving their prey away to a starving loner'
+                        ])
                     # checks for specific roles
                     if other_cat.status == 'elder':
                         thoughts.extend([
