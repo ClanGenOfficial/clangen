@@ -24,7 +24,7 @@ NOT_AGE_SPECIFIC = {
                    'Is spreading a rumour about (cat)'],
     "neutral": ['Complains about (cat)', 'Is telling a story to (cat)', 'Is talking with (cat)',
                 'Is sharing prey with (cat)', 'Had a huge argument with (cat)', 'Had a fight with (cat)'],
-    "friendly": ['Is sharing tongue with (cat)', 'Has been spending time with (cat) lately'],
+    "friendly": ['Is sharing tongues with (cat)', 'Has been spending time with (cat) lately'],
     "close": ['Tells (cat) a secret']
 }
 
@@ -184,7 +184,7 @@ LEADER = {
         "unfriendly": ['Punishes (cat) with extra work'],
         "neutral": [],
         "friendly": [],
-        "close": ['Talks with (cat) about difficult decisions', 'Tells (cat) about the last encounter with the Starclan']
+        "close": ['Talks with (cat) about difficult decisions', 'Tells (cat) about their last encounter with StarClan']
     },
     "to":{
         "unfriendly": ['Accuses (cat) of being a bad leader'],
@@ -214,7 +214,7 @@ MEDICINE = {
         "unfriendly": ['Treats (cat)\'s splinter wound more roughly', 'Gives (cat) bitter herbs on purpose'],
         "neutral": [],
         "friendly": [],
-        "close": ['Tells (cat) about the last encounter with the Starclan']
+        "close": ['Tells (cat) about their last encounter with StarClan']
     },
     "to":{
         "unfriendly": [],
@@ -317,14 +317,14 @@ INCREASE_HIGH = {
         "jealousy": ['Is jealous that (cat) is getting more attention than them', 'Thinking about how (cat) wronged them'],
         "trust":['Is talking with (cat)','Tells (cat) a secret','Comes up with a plan to sneak out of camp with (cat)',
                  'Escorted (cat) so they could gather herbs','Let (cat) lean on their shoulder after a recent injury',
-                 'Ask (cat) to collect herbs on the next patrol', 'Tells (cat) about the last encounter with the Starclan']
+                 'Ask (cat) to collect herbs on the next patrol', 'Tells (cat) about their last encounter with StarClan']
     },
     "to": {
         "romantic_love": ['Is spending a lot of time with (cat)', 'Gave a pretty flower they found to (cat)',
                           'Is rolling around a little too playfully with (cat)...', 'Ensnares (cat) with a charming smile',
                           'Was caught enjoying a moonlit stroll with (cat) last night...', 'Make (cat) laugh again and again',
                           'Go for a nice long walk with (cat)', 'Wants to spend the entire day with (cat)', 'Charms (cat)'],
-        "like": ['Is telling a story to (cat)','Is talking with (cat)','Is sharing tongue with (cat)',
+        "like": ['Is telling a story to (cat)','Is talking with (cat)','Is sharing tongues with (cat)',
                 'Is giving (cat) a badger ride on their back!', 'Is promising to take (cat) outside of camp if they behave',
                 'Is telling (cat) about a hunting technique',
                 'Is sharing tongues with (cat)','Has been spending time with (cat) lately', 'Relaxing with (cat)', 
@@ -363,7 +363,7 @@ INCREASE_HIGH = {
         "trust":['Is talking with (cat)','Tells (cat) a secret', 'Escorted (cat) so they could gather herbs',
                 'Comes up with a plan to sneak out of camp with (cat)', 'Let (cat) lean on their shoulder after a recent injury',
                 'Talks with (cat) about difficult decisions', 'Thought of (cat) on the last patrol and took a rare herb with them',
-                'Tells (cat) about the last encounter with the Starclan']
+                'Tells (cat) about their last encounter with StarClan']
     }
 }
 
