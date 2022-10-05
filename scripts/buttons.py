@@ -284,35 +284,9 @@ class Button(object):
                     cat_value.set_mate(value)
                     value.set_mate(cat_value)
                 else:
-                    # affect relationship
                     cat_mate = cat_class.all_cats[cat_value.mate]
-                    cat_relationship = list(
-                        filter(lambda r: r.cat_to.ID == cat_mate.ID,
-                               cat_value.relationships))
-                    if cat_relationship is not None and len(
-                            cat_relationship) > 0:
-                        cat_relationship[0].romantic_love = 5
-                        cat_relationship[0].comfortable -= 20
-                        cat_relationship[0].trust -= 10
-                        cat_relationship[0].cut_boundries()
-                    else:
-                        cat_value.relationships.append(
-                            Relationship(cat_value, cat_mate, True))
-
-                    other_cat_relationship = list(
-                        filter(lambda r: r.cat_to.ID == cat_value.ID,
-                               cat_mate.relationships))
-                    if other_cat_relationship is not None and len(
-                            other_cat_relationship) > 0:
-                        other_cat_relationship[0].romantic_love = 5
-                        other_cat_relationship[0].comfortable -= 20
-                        other_cat_relationship[0].trust -= 10
-                        other_cat_relationship[0].cut_boundries()
-                    else:
-                        cat_mate.relationships.append(
-                            Relationship(cat_mate, cat_value, True))
-                    cat_mate.mate = None
-                    cat_value.mate = None
+                    cat_mate.unset_mate(breakup = True)
+                    cat_value.unset_mate(breakup = True)
                 game.switches['mate'] = None
         if arrow is not None and game.switches['cur_screen'] == 'events screen':
             max_scroll_direction = len(
