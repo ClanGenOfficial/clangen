@@ -1488,8 +1488,41 @@ class Events(object):
                 elif transing_chance == 2:
                     cat.genderalign = "nonbinary"
                     hit = True
-            elif cat.moons >= 43:
+            elif cat.age == 'young adult':
                 transing_chance = transing_chance
+                if transing_chance == 1 and cat.gender == "male":
+                    cat.genderalign = "trans female"
+                    hit = True
+                elif transing_chance == 1 and cat.gender == "female":
+                    cat.genderalign = "trans male"
+                    hit = True
+                elif transing_chance == 2:
+                    cat.genderalign = "nonbinary"
+                    hit = True
+            elif cat.age == 'adult':
+                transing_chance = transing_chance + 100
+                if transing_chance == 1 and cat.gender == "male":
+                    cat.genderalign = "trans female"
+                    hit = True
+                elif transing_chance == 1 and cat.gender == "female":
+                    cat.genderalign = "trans male"
+                    hit = True
+                elif transing_chance == 2:
+                    cat.genderalign = "nonbinary"
+                    hit = True
+            elif cat.age == 'senior adult':
+                transing_chance = transing_chance = 300
+                if transing_chance == 1 and cat.gender == "male":
+                    cat.genderalign = "trans female"
+                    hit = True
+                elif transing_chance == 1 and cat.gender == "female":
+                    cat.genderalign = "trans male"
+                    hit = True
+                elif transing_chance == 2:
+                    cat.genderalign = "nonbinary"
+                    hit = True
+            elif cat.age == 'elder':
+                transing_chance = transing_chance + 450
                 if transing_chance == 1 and cat.gender == "male":
                     cat.genderalign = "trans female"
                     hit = True
