@@ -605,14 +605,18 @@ class Cat(object):
                             ' about their own days as an apprentice',
                             'Is frustrated that ' + other_name +
                             ' won\'t take their duties more seriously',
-                            'Has successfully tricked ' + other_name +
-                            ' into believing a crazy tale about the Clan leader',
                             'Can\'t believe ' + other_name +
                             ' caught that rabbit on patrol yesterday',
                             'Doesn\'t think that ' + other_name +
                             ' has been completely honest lately',
                             'Is fuming from an argument with ' + other_name
                         ])
+                    elif cat.status in ['warrior', 'elder', 'deputy'] and other_cat.status == 'apprentice':
+                        thoughts.extend([
+                            'Has successfully tricked ' + other_name +
+                            ' into believing a crazy tale about the Clan leader',
+                        ])
+
                     # kit thoughts
                     if cat.status == 'kitten':
                         # kit thoughts with other kit
@@ -1366,7 +1370,7 @@ class Cat(object):
                     thoughts.extend([
                         'Caught scent of a fox earlier',
                         'Caught scent of an enemy warrior earlier',
-                        'Is helping gathering herbs', 'Is thinking about love',
+                        'Is helping to gather herbs', 'Is thinking about love',
                         'Is decorating their nest',
                         'Is reinforcing the camp with brambles',
                         'Caught a huge rabbit',
@@ -1729,14 +1733,17 @@ class Cat(object):
                             ['Recently snapped at the kits, making them cry'])
                 elif cat.trait == 'compassionate':
                     thoughts.extend([
-                        'Is being scolded for giving their prey away to a starving loner',
                         'Spent time today with a grieving Clanmate',
                         'Is helping the medicine cat organize herb stores',
                         'Let their Clanmate have the last piece of fresh kill on the pile this morning',
-                        'Is making sure that the leader has eaten before they dig in to their own meal',
                         'Is noticing with joy how well the Clan is looking after one another as of late',
                         'Is listening to a Clanmate\'s struggles with love'
                     ])
+                    if cat.status != 'leader':
+                        thoughts.extend([
+                        'Is making sure that the leader has eaten before they dig in to their own meal',
+                        'Is being scolded for giving their prey away to a starving loner'
+                        ])
                     # checks for specific roles
                     if other_cat.status == 'elder':
                         thoughts.extend([
@@ -2043,11 +2050,14 @@ class Cat(object):
                         'Seems to be plotting something',
                         'Is definitely plotting something',
                         'Is glaring daggers across the camp clearing',
-                        'Swears that they will get their revenge... but for what?',
-                        'Thinks that the Clan leader should declare war on a neighboring Clan',
+                        'Swears that they will get their revenge... but for what?',                        
                         'Is angrily clawing up the ground, lost in deep thought',
                         'Is shredding the grass underpaw'
                     ])
+                    if cat.status != 'leader':
+                        thoughts.extend([
+                            'Thinks that the Clan leader should declare war on a neighboring Clan'
+                        ])
                 elif cat.trait == 'wise':
                     thoughts.extend([
                         'Has a suggestion for the Clan leader that they wish to present',
