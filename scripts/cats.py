@@ -2050,11 +2050,14 @@ class Cat(object):
                         'Seems to be plotting something',
                         'Is definitely plotting something',
                         'Is glaring daggers across the camp clearing',
-                        'Swears that they will get their revenge... but for what?',
-                        'Thinks that the Clan leader should declare war on a neighboring Clan',
+                        'Swears that they will get their revenge... but for what?',                        
                         'Is angrily clawing up the ground, lost in deep thought',
                         'Is shredding the grass underpaw'
                     ])
+                    if cat.status != 'leader':
+                        thoughts.extend([
+                            'Thinks that the Clan leader should declare war on a neighboring Clan'
+                        ])
                 elif cat.trait == 'wise':
                     thoughts.extend([
                         'Has a suggestion for the Clan leader that they wish to present',
