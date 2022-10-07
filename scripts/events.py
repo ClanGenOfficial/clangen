@@ -242,7 +242,7 @@ class Events(object):
         while cat == other_cat or other_cat.dead or other_cat.exiled:
             other_cat = choice(list(cat_class.all_cats.values()))
             countdown-=1
-            if countdown == 0:
+            if countdown <= 0:
                 return
         other_name = str(other_cat.name)
         acc_text = []
@@ -317,7 +317,7 @@ class Events(object):
         while cat == other_cat or other_cat.dead or other_cat.exiled:
             other_cat = choice(list(cat_class.all_cats.values()))
             countdown-=1
-            if countdown == 0:
+            if countdown <= 0:
                 return
         other_name = str(other_cat.name)
         scar_text = []
@@ -852,7 +852,7 @@ class Events(object):
         while cat == other_cat or other_cat.dead or other_cat.exiled:
             other_cat = choice(list(cat_class.all_cats.values()))
             countdown-=1
-            if countdown == 0:
+            if countdown <= 0:
                 return
         name = str(cat.name)
         other_name = str(other_cat.name)
@@ -941,7 +941,7 @@ class Events(object):
             while cat == other_cat or other_cat.dead or other_cat.status == 'leader' or other_cat.exiled:
                 other_cat = choice(list(cat_class.all_cats.values()))
                 countdown-=1
-                if countdown == 0:
+                if countdown <= 0:
                     return
             if cat.status == 'leader':
                 other_name = str(other_cat.name)
@@ -1239,7 +1239,7 @@ class Events(object):
             while cat == other_cat or other_cat.dead or other_cat.exiled:
                 other_cat = choice(list(cat_class.all_cats.values()))
                 countdown-=1
-                if countdown == 0:
+                if countdown <= 0:
                     return
             other_name = str(other_cat.name)
             cause_of_death = [
@@ -1280,7 +1280,7 @@ class Events(object):
             while cat == other_cat or other_cat.dead or other_cat.exiled:
                 other_cat = choice(list(cat_class.all_cats.values()))
                 countdown-=1
-                if countdown == 0:
+                if countdown <= 0:
                     return
             other_name = str(other_cat.name)
             if cat.trait in [

@@ -376,7 +376,7 @@ class Cat(object):
             while other_cat == c:
                 other_cat = random.choice(list(self.all_cats.keys()))
                 countdown-=1
-                if countdown == 0:
+                if countdown <= 0:
                     continue
             other_cat = self.all_cats.get(other_cat)
             other_name = str(other_cat.name)
