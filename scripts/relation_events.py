@@ -86,7 +86,10 @@ class Relation_Events(object):
             self.big_love_check(cat)
 
         random.shuffle(cat.relationships)
-        for i in range(0,15):
+        range_number = int(len(cat_class.all_cats.keys()) / 1.5)
+        if range_number > 20:
+            range_number = 20
+        for i in range(0, range_number):
             random_index = randint(0,len(cat.relationships)-1)
             relationship = cat.relationships[random_index]
             # get some cats to make easier checks
@@ -103,20 +106,18 @@ class Relation_Events(object):
 
             cat_to = relationship.cat_to
             cat_to_mate = None
-            to_mate_in_clan = False
             if cat_to.mate != None:
                 if cat_to.mate not in cat_class.all_cats.keys():
                     game.cur_events_list.insert(0, f"Cat #{cat_to} has a invalid mate. It will set to none.")
                     cat_to.mate = None
                     return
                 cat_to_mate = cat_class.all_cats.get(cat_to.mate)
-                to_mate_in_clan = not cat_to_mate.dead and not cat_to_mate.exiled
 
             if relationship.opposite_relationship == None:
                 relationship.link_relationship()
 
             # overcome dead mates
-            if cat_from_mate != None and cat_from_mate.dead and randint(1, 25) == 1:
+            if cat_from_mate != None and cat_from_mate.dead and randint(1, 25) == 1 and cat_from_mate.dead_for > 4:
                 self.had_one_event = True
                 print(cat_from.name, cat_from_mate.name , " - OVERCOME", game.clan.age, "moons")
                 game.cur_events_list.append(
@@ -223,14 +224,17 @@ class Relation_Events(object):
 
         # change the chance based on the current relationship
         if relationship.romantic_love > 80:
-            chance_number += 20
+            chance_number += 30
         elif relationship.romantic_love > 60:
-            chance_number += 10
+            chance_number += 20
         
         if relationship.platonic_like > 80:
-            chance_number += 20
+            chance_number += 30
         elif relationship.platonic_like > 60:
-            chance_number += 10
+            chance_number += 20
+
+        chance_number -= relationship.dislike
+        chance_number -= int(relationship.jealousy / 2)
 
         # change the change based on the personality
         get_along = get_personality_compatibility(cat_from,cat_to)
@@ -243,25 +247,27 @@ class Relation_Events(object):
         if len(relationship.log) > 0:
             # check last interaction
             last_log = relationship.log[len(relationship.log)-1]
+
             if 'negative' in last_log:
-                chance_number -= 40
+                chance_number -= 30
                 if 'fight' in last_log:
                     chance_number -= 20
                     had_fight = True
 
-            # check all interactions
-            negative_interactions = list(filter(lambda inter: 'negative' in inter,relationship.log))
-            chance_number -= len(negative_interactions)
-            positive_interactions = list(filter(lambda inter: 'positive' in inter,relationship.log))
-            chance_number += len(positive_interactions)
-            if len(negative_interactions) > len(positive_interactions):
-                chance_number -= 20
-        
+            # check all interactions - the logs are still buggy
+            #negative_interactions = list(filter(lambda inter: 'negative' in inter, relationship.log))
+            #chance_number -= len(negative_interactions)
+            #positive_interactions = list(filter(lambda inter: 'positive' in inter, relationship.log))
+            #chance_number += len(positive_interactions)
+
+            #if len(negative_interactions) > len(positive_interactions) and len(relationship.log) > 5 :
+            #    chance_number -= 20
+
         # this should be nearly impossible, that chance is lower than 0
         if chance_number <= 0:
             chance_number = 1
         chance = randint(1, chance_number)
-        if chance == 1 or relationship.dislike > 20:
+        if chance == 1:
             if relationship.dislike > 30:
                 will_break_up = True
             elif relationship.romantic_love < 50:
@@ -399,8 +405,10 @@ class Relation_Events(object):
         if old_male:
             chance = int(chance * 2)
 
-        if self.living_cats > 50:
+        if self.living_cats > 30:
             chance += 20
+            if self.living_cats > 40:
+                chance += int(self.living_cats/1.5) * int(self.living_cats % 10 * 2.2) 
         elif self.living_cats < 10 and chance > 10:
             chance -= 10
 
