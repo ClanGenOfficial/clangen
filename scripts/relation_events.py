@@ -1,4 +1,3 @@
-from distutils.util import change_root
 from .cats import *
 from .utility import *
 
@@ -19,7 +18,7 @@ class Relation_Events(object):
             filter(lambda iter_cat_id: iter_cat_id != cat.ID,
                    cat_class.all_cats.copy()))
         # increase chance of cats, which are already befriended
-        like_threshold = 50
+        like_threshold = 30
         relevant_relationships = list(
             filter(lambda relation: relation.platonic_like >= like_threshold,
                    cat.relationships))
@@ -29,7 +28,7 @@ class Relation_Events(object):
                 cats_to_choose.append(relationship.cat_to)
 
         # increase chance of cats, which are already may be in love
-        love_threshold = 40
+        love_threshold = 30
         relevant_relationships = list(
             filter(lambda relation: relation.romantic_love >= love_threshold,
                    cat.relationships))
@@ -219,21 +218,68 @@ class Relation_Events(object):
         """More in depth check if the cats will break up."""
         will_break_up = False
         had_fight = False
-        print(relationship["cat_to"]["name"])
 
+        chance_number = 80
+
+        # change the chance based on the current relationship
+        if relationship.romantic_love > 80:
+            chance_number += 20
+        elif relationship.romantic_love > 60:
+            chance_number += 10
+        
+        if relationship.platonic_like > 80:
+            chance_number += 20
+        elif relationship.platonic_like > 60:
+            chance_number += 10
+
+        # change the change based on the personality
+        get_along = get_personality_compatibility(cat_from,cat_to)
+        if get_along != None and get_along:
+            chance_number += 5
+        if get_along != None and not get_along:
+            chance_number -= 10
+
+        # change the chance based on the last interactions
         if len(relationship.log) > 0:
+            # check last interaction
             last_log = relationship.log[len(relationship.log)-1]
             if 'negative' in last_log:
-                chance_number = 40
-                if relationship.romantic_love > 80:
-                        chance_number += 30
+                chance_number -= 40
                 if 'fight' in last_log:
                     chance_number -= 20
                     had_fight = True
-                chance = randint(1, chance_number)
-                if chance == 1 or relationship.dislike > 20:
-                    if relationship.romantic_love < 50:
-                        will_break_up = True
+
+            # check all interactions
+            negative_interactions = list(filter(lambda inter: 'negative' in inter,relationship.log))
+            chance_number -= len(negative_interactions)
+            positive_interactions = list(filter(lambda inter: 'positive' in inter,relationship.log))
+            chance_number += len(positive_interactions)
+            if len(negative_interactions) > len(positive_interactions):
+                chance_number -= 20
+        
+        # this should be nearly impossible, that chance is lower than 0
+        if chance_number <= 0:
+            chance_number = 1
+        chance = randint(1, chance_number)
+        if chance == 1 or relationship.dislike > 20:
+            if relationship.dislike > 30:
+                will_break_up = True
+            elif relationship.romantic_love < 50:
+                will_break_up = True
+            elif had_fight:
+                game.cur_events_list.append(f'{str(cat_from.name)} and {str(cat_to.name)} had a fight and nearly broke up')
+            else:
+                game.relation_events_list.append(f"{str(cat_from.name)} and {str(cat_to.name)} have somewhat different views about their relationship")                
+                relationship.romantic_love -= 10
+                relationship.opposite_relationship.romantic_love -= 10
+                relationship.comfortable -= 20
+                relationship.opposite_relationship.comfortable -= 20
+                relationship.platonic_like -= 20
+                relationship.opposite_relationship.platonic_like -= 20
+                relationship.admiration -= 10
+                relationship.opposite_relationship.admiration -= 10
+                relationship.cut_boundaries()
+                relationship.opposite_relationship.cut_boundaries()
         
         if will_break_up:
             print(cat_from.name, cat_to.name, " - BREAKUP", game.clan.age, "moons")
@@ -338,17 +384,17 @@ class Relation_Events(object):
         chance = 80
         if other_cat != None:
             chance = 45
-            if relation.romantic_love > 50:
-                chance -= 5
             if relation.romantic_love > 60:
                 chance -= 5
             if relation.romantic_love > 70:
                 chance -= 5
-            if relation.comfortable > 50:
+            if relation.romantic_love > 80:
                 chance -= 5
             if relation.comfortable > 60:
                 chance -= 5
             if relation.comfortable > 70:
+                chance -= 5
+            if relation.comfortable > 80:
                 chance -= 5
         if old_male:
             chance = int(chance * 2)
