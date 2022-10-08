@@ -1,8 +1,18 @@
-# simple utility function which are not direkt related to a class
+import ujson
+from .game_essentials import *
+# simple utility function which are not direct related to a class
+
+resource_directory = "scripts/resources/"
+PERSONALITY_COMPATIBILITY = None
+try:
+    with open(f"{resource_directory}personality_compatibility.json", 'r') as read_file:
+        PERSONALITY_COMPATIBILITY = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the personality compatibility json!'
 
 
-def get_highes_romantic_relation(relationships):
-    """Returns the relationship with the hightes romantic value."""
+def get_highest_romantic_relation(relationships):
+    """Returns the relationship with the highest romantic value."""
     romantic_relation = list(filter(lambda rel: rel.romantic_love > 0, relationships))
     if romantic_relation is None or len(romantic_relation) == 0:
         return None
@@ -16,3 +26,26 @@ def get_highes_romantic_relation(relationships):
             relation = inter_rel
 
     return relation
+
+
+def get_personality_compatibility(cat1, cat2):
+    """Returns:
+        True - if personalities have a positive compatibility
+        False - if personalities have a negative compatibility
+        None - if personalities have a neutral compatibility
+    """
+    personality1 = cat1.trait
+    personality2 = cat2.trait
+
+    if personality1 == personality2 and personality1 in game.cat_class.traits:
+        return True
+
+    if personality1 in PERSONALITY_COMPATIBILITY:
+        if personality2 in PERSONALITY_COMPATIBILITY[personality1]:
+            return PERSONALITY_COMPATIBILITY[personality1][personality2]
+
+    if personality2 in PERSONALITY_COMPATIBILITY:
+        if personality1 in PERSONALITY_COMPATIBILITY[personality2]:
+            return PERSONALITY_COMPATIBILITY[personality2][personality1]
+
+    return None

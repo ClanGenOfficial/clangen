@@ -46,7 +46,7 @@ class Relation_Events(object):
                     cat_id != cat.ID, cat_class.all_cats.copy()))
             cats_to_choose = cats_to_choose + kittens + kittens
 
-        # increase the chance a apprentice interact with otherapprentices
+        # increase the chance a apprentice interact with other apprentices
         if cat.age == "adolescent":
             apprentices = list(
                 filter(
@@ -107,7 +107,7 @@ class Relation_Events(object):
                 cat_to_mate = cat_class.all_cats.get(cat_to.mate)
                 to_mate_in_clan = not cat_to_mate.dead and not cat_to_mate.exiled
 
-            if relationship.opposit_relationship == None:
+            if relationship.opposite_relationship == None:
                 relationship.link_relationship()
 
             # overcome dead mates
@@ -127,7 +127,7 @@ class Relation_Events(object):
 
             # breakup and new mate
             if cat_from.is_potential_mate(cat_to) and cat_from.mate is not None and cat_to.mate is not None:
-                love_over_30 = relationship.romantic_love > 30 and relationship.opposit_relationship.romantic_love > 30
+                love_over_30 = relationship.romantic_love > 30 and relationship.opposite_relationship.romantic_love > 30
                 normal_chance = randint(1, 10)
                 # compare love value of current mates
                 bigger_than_current = False
@@ -189,12 +189,12 @@ class Relation_Events(object):
         # has to be high because every moon this will be checked for each relationship in the came
         random_mate_chance = 300 
         random_hit = randint(1, random_mate_chance)
-        low_dislike = relationship.dislike < 15 and relationship.opposit_relationship.dislike < 15
-        high_like = relationship.platonic_like > 30 and relationship.opposit_relationship.platonic_like > 30
-        semi_high_like = relationship.platonic_like > 20 and relationship.opposit_relationship.platonic_like > 20
-        high_comfort = relationship.comfortable > 25 and relationship.opposit_relationship.comfortable > 25
+        low_dislike = relationship.dislike < 15 and relationship.opposite_relationship.dislike < 15
+        high_like = relationship.platonic_like > 30 and relationship.opposite_relationship.platonic_like > 30
+        semi_high_like = relationship.platonic_like > 20 and relationship.opposite_relationship.platonic_like > 20
+        high_comfort = relationship.comfortable > 25 and relationship.opposite_relationship.comfortable > 25
 
-        if hit == 1 and relationship.romantic_love > 20 and relationship.opposit_relationship.romantic_love > 20 and semi_high_like:
+        if hit == 1 and relationship.romantic_love > 20 and relationship.opposite_relationship.romantic_love > 20 and semi_high_like:
             print(cat_from.name, cat_to.name , " - LOVE", game.clan.age, "moons")
             mate_string = f"{str(cat_from.name)} and {str(cat_to.name)} have become mates"
             become_mates = True
@@ -269,7 +269,7 @@ class Relation_Events(object):
         # check if there is a cat in the clan for the second parent
         biggest_love_cat = None
         love_diff_mate_other = 0
-        highes_romantic_relation = get_highes_romantic_relation(cat.relationships)
+        highest_romantic_relation = get_highest_romantic_relation(cat.relationships)
         mate_relation = None
         if mate != None:
             mate_relation = list(filter(lambda r: r.cat_to.ID == mate.ID, cat.relationships))
@@ -279,10 +279,10 @@ class Relation_Events(object):
                 mate_relation = Relationship(cat,mate,True)
                 cat.relationships.append(mate_relation)
 
-        if highes_romantic_relation != None:
+        if highest_romantic_relation != None:
             if mate_relation:
-                love_diff_mate_other = mate_relation.romantic_love - highes_romantic_relation.romantic_love
-                biggest_love_cat = highes_romantic_relation.cat_to
+                love_diff_mate_other = mate_relation.romantic_love - highest_romantic_relation.romantic_love
+                biggest_love_cat = highest_romantic_relation.cat_to
 
         if biggest_love_cat:
             if biggest_love_cat.mate != None and not game.settings['affair']:
@@ -296,7 +296,7 @@ class Relation_Events(object):
         elif mate != None and biggest_love_cat == None:
             self.new_have_kits(cat, mate, mate_relation)
         elif biggest_love_cat != None and mate == None:
-            self.new_have_kits(cat, biggest_love_cat, highes_romantic_relation)
+            self.new_have_kits(cat, biggest_love_cat, highest_romantic_relation)
         else:
             # if the difference of the romantic love is lower than 0, an affair is more possible
             if love_diff_mate_other < 0:
@@ -308,13 +308,13 @@ class Relation_Events(object):
                 if abs(love_diff_mate_other) > 40:
                     affair_chance -= 10
                 if randint(1,affair_chance) == 1:
-                    self.new_have_kits(cat, biggest_love_cat, highes_romantic_relation)
+                    self.new_have_kits(cat, biggest_love_cat, highest_romantic_relation)
                 else:
                     self.new_have_kits(cat, mate, mate_relation)
             else:
                 affair_chance = 100 + love_diff_mate_other
                 if randint(1,affair_chance) == 1:
-                    self.new_have_kits(cat, biggest_love_cat, highes_romantic_relation)
+                    self.new_have_kits(cat, biggest_love_cat, highest_romantic_relation)
                 else:
                     self.new_have_kits(cat, mate, mate_relation)
 
@@ -399,7 +399,7 @@ class Relation_Events(object):
                     the_cat.relationships.append(Relationship(the_cat,kit))
                     relationships.append(Relationship(kit,the_cat))
             kit.relationships = relationships
-            # remove accesiory
+            # remove accessory
             kit.accessory = None
             game.clan.add_cat(kit)
 
@@ -679,18 +679,18 @@ class Relation_Events(object):
 
     def big_love_check(self, cat):
         # check romantic love
-        upper_love_threshhold = 40
-        lower_love_threshhold = 10
+        upper_love_threshold = 40
+        lower_love_threshold = 10
 
-        highes_romantic_relation = get_highes_romantic_relation(cat.relationships)
+        highest_romantic_relation = get_highest_romantic_relation(cat.relationships)
         max_love_value = 0
-        if highes_romantic_relation is not None:
-            max_love_value = highes_romantic_relation.romantic_love
+        if highest_romantic_relation is not None:
+            max_love_value = highest_romantic_relation.romantic_love
 
-        if max_love_value < upper_love_threshhold:
+        if max_love_value < upper_love_threshold:
             return
 
-        cat_to = highes_romantic_relation.cat_to
+        cat_to = highest_romantic_relation.cat_to
         if cat_to.is_potential_mate(cat, True) and cat.is_potential_mate(cat_to, True):
             if cat_to.mate == None and cat.mate == None:
                 print(cat.name, cat_to.name , " - BIG LOVE", game.clan.age, "moons")
@@ -700,14 +700,14 @@ class Relation_Events(object):
                 first_name = cat.name
                 second_name = cat_to.name
 
-                if highes_romantic_relation.opposit_relationship is None:
-                    highes_romantic_relation.link_relationship()
+                if highest_romantic_relation.opposite_relationship is None:
+                    highest_romantic_relation.link_relationship()
 
-                if highes_romantic_relation.opposit_relationship.romantic_love > max_love_value:
+                if highest_romantic_relation.opposite_relationship.romantic_love > max_love_value:
                     first_name = cat_to.name
                     second_name = cat.name
 
-                if highes_romantic_relation.opposit_relationship.romantic_love <= lower_love_threshhold:
+                if highest_romantic_relation.opposite_relationship.romantic_love <= lower_love_threshold:
                     game.cur_events_list.append(f"{first_name} confessed their feelings to {second_name}, but they got rejected")
                 else:
                     game.cur_events_list.append(f"{first_name} confessed their feelings to {second_name} and they have become mates")
