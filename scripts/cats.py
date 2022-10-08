@@ -2756,20 +2756,22 @@ class Cat(object):
                     former_apps.append(f_app)
                 inter_cat.apprentice = apps
                 inter_cat.former_apprentices = former_apps
-                game.switches[
-                    'error_message'] = 'There was an error loading this clan\'s relationships. Last cat read was ' + str(inter_cat)
-                inter_cat.load_relationship_of_cat()
+                if not inter_cat.dead:
+                    game.switches[
+                        'error_message'] = 'There was an error loading this clan\'s relationships. Last cat read was ' + str(inter_cat)
+                    inter_cat.load_relationship_of_cat()
                 game.switches[
                     'error_message'] = 'There was an error loading a cat\'s sprite info. Last cat read was ' + str(inter_cat)
                 inter_cat.update_sprite()
 
             # generate the relationship if some is missing
-            game.switches['error_message'] = 'There was an error when relationships where created.'
-            for id in self.all_cats.keys():
-                the_cat = self.all_cats.get(id)
-                game.switches['error_message'] = f'There was an error when relationships for cat #{the_cat} are created.'
-                if the_cat.relationships != None and len(the_cat.relationships) < 1:
-                    the_cat.create_new_relationships()
+            if not the_cat.dead:
+                game.switches['error_message'] = 'There was an error when relationships where created.'
+                for id in self.all_cats.keys():
+                    the_cat = self.all_cats.get(id)
+                    game.switches['error_message'] = f'There was an error when relationships for cat #{the_cat} are created.'
+                    if the_cat.relationships != None and len(the_cat.relationships) < 1:
+                        the_cat.create_new_relationships()
 
             game.switches['error_message'] = ''
 
@@ -2826,11 +2828,19 @@ class Cat(object):
 
             all_cats.append(new_cat)
 
-            
+        
         # replace cat ids with cat objects (only needed by mentor)
         for cat in all_cats:
             # load the relationships
-            cat.load_relationship_of_cat()
+            if not cat.dead:
+                game.switches[
+                    'error_message'] = 'There was an error loading this clan\'s relationships. Last cat read was ' + str(cat)
+                cat.load_relationship_of_cat()
+                game.switches['error_message'] = f'There was an error when relationships for cat #{cat} are created.'
+                if cat.relationships != None and len(cat.relationships) < 1:
+                    cat.create_new_relationships()
+            else:
+                cat.relationships = []
 
             mentor_relevant = list(filter(lambda inter_cat: inter_cat.ID == cat.mentor, all_cats))
             cat.mentor = None
@@ -2856,6 +2866,7 @@ class Cat(object):
                         # if the cat can't be found, drop the cat_id
                         new_apprentices.append(relevant_list[0])
                 cat.former_apprentices = new_apprentices
+
 
     def load_relationship_of_cat(self):
         if game.switches['clan_name'] != '':
