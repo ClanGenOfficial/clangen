@@ -44,7 +44,10 @@ class Relation_Events(object):
                 filter(
                     lambda cat_id: cat.all_cats.get(cat_id).age == "kitten" and
                     cat_id != cat.ID, cat_class.all_cats.copy()))
-            cats_to_choose = cats_to_choose + kittens + kittens
+            amount = int(len(cats_to_choose) / 4)
+            if len(kittens) > 0:
+                amount = int(len(cats_to_choose) / len(kittens))
+            cats_to_choose = cats_to_choose + kittens * amount
 
         # increase the chance a apprentice interact with other apprentices
         if cat.age == "adolescent":
@@ -52,16 +55,19 @@ class Relation_Events(object):
                 filter(
                     lambda cat_id: cat.all_cats.get(cat_id).age == "adolescent"
                     and cat_id != cat.ID, cat_class.all_cats.copy()))
-            cats_to_choose = cats_to_choose + apprentices + apprentices
+            amount = int(len(cats_to_choose) / 4)
+            if len(apprentices) > 0:
+                amount = int(len(cats_to_choose) / len(apprentices))
+            cats_to_choose = cats_to_choose + apprentices * amount
 
         # choose cat and start
-        random_id = random.choice(list(cat.all_cats.keys()))
+        random_id = random.choice(cats_to_choose)
         relevant_relationship_list = list(
             filter(
                 lambda relation: str(relation.cat_to) == str(random_id) and
                 not relation.cat_to.dead, cat.relationships))
         while len(relevant_relationship_list) < 1 or random_id == cat.ID:
-            random_id = random.choice(list(cat.all_cats.keys()))
+            random_id = random.choice(cats_to_choose)
             relevant_relationship_list = list(
                 filter(
                     lambda relation: str(relation.cat_to) == str(random_id) and
@@ -212,7 +218,8 @@ class Relation_Events(object):
     def check_if_breakup(self, relationship, cat_from, cat_to):
         """More in depth check if the cats will break up."""
         will_break_up = False
-        fight = False
+        had_fight = False
+        print(relationship["cat_to"]["name"])
 
         if len(relationship.log) > 0:
             last_log = relationship.log[len(relationship.log)-1]
@@ -222,7 +229,7 @@ class Relation_Events(object):
                         chance_number += 30
                 if 'fight' in last_log:
                     chance_number -= 20
-                    fight = True
+                    had_fight = True
                 chance = randint(1, chance_number)
                 if chance == 1 or relationship.dislike > 20:
                     if relationship.romantic_love < 50:
@@ -231,14 +238,15 @@ class Relation_Events(object):
         if will_break_up:
             print(cat_from.name, cat_to.name, " - BREAKUP", game.clan.age, "moons")
             self.had_one_event = True
-            cat_from.unset_mate(breakup=True, fight=fight)
-            cat_to.unset_mate(breakup=True, fight=fight)
+            cat_from.unset_mate(breakup=True, fight=had_fight)
+            cat_to.unset_mate(breakup=True, fight=had_fight)
             game.cur_events_list.append(f'{str(cat_from.name)} and {str(cat_to.name)} broke up')
 
     def check_if_having_kits(self, cat):
         """Check if it possible possible to have kits and with which cat."""
         if cat.birth_cooldown > 0:
             cat.birth_cooldown -= 1
+            return
 
         # decide chances of having kits, and if it's possible at all
         not_correct_age = cat.age in ['kitten', 'adolescent'] or cat.moons < 15
@@ -669,13 +677,6 @@ class Relation_Events(object):
                                     relationships.append(Relationship(kit,the_cat))
                         kit.relationships = relationships
                         game.clan.add_cat(kit)
-
-    def had_kits(self):
-        if has_birth is True:
-            game.switches['birth_cooldown'] = True
-            has_birth = False
-        if self.birth_range <= 0:
-            game.switches['birth_cooldown'] = False
 
     def big_love_check(self, cat):
         # check romantic love
