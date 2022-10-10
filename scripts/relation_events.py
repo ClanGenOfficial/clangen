@@ -60,8 +60,12 @@ class Relation_Events(object):
             filter(
                 lambda relation: str(relation.cat_to) == str(random_id) and
                 not relation.cat_to.dead, cat.relationships))
-        while len(relevant_relationship_list) < 1 or random_id == cat.ID:
+        random_cat = cat.all_cats.get(random_id)
+        kitten_and_exiled = random_cat.exiled and cat.age == "kitten"
+        while len(relevant_relationship_list) < 1 or random_id == cat.ID or kitten_and_exiled:
             random_id = random.choice(list(cat.all_cats.keys()))
+            random_cat = cat.all_cats.get(random_id)
+            kitten_and_exiled = random_cat.exiled and cat.age == "kitten"
             relevant_relationship_list = list(
                 filter(
                     lambda relation: str(relation.cat_to) == str(random_id) and
