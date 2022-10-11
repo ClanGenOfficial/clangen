@@ -2576,7 +2576,8 @@ class Cat(object):
                 "former_apprentices" :[appr.ID for appr in inter_cat.former_apprentices]
             }
             clan_cats.append(cat_data)
-            inter_cat.save_relationship_of_cat()
+            if not inter_cat.dead:
+                inter_cat.save_relationship_of_cat()
 
         try:
             with open('saves/' + clanname + '/clan_cats.json', 'w') as write_file:
