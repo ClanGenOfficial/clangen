@@ -3856,11 +3856,13 @@ class RelationshipScreen(Screens):
                 (140 + pos_x - string_len / 1.5, 120 + pos_y))
 
             # there is no way the mate is dead
-            if the_relationship.family and the_relationship.cat_to.dead:
+            uncle_aunt = the_relationship.cat_to.is_uncle_aunt(the_cat) or\
+                the_cat.is_uncle_aunt(the_relationship.cat_to)
+            if (the_relationship.family or uncle_aunt) and the_relationship.cat_to.dead:
                 verdana_small.text(
                     'related (dead)',
                     (140 + pos_x - string_len / 1.5, 130 + pos_y))
-            elif the_relationship.family:
+            elif (the_relationship.family or uncle_aunt):
                 verdana_small.text(
                     'related', (140 + pos_x - string_len / 1.5, 130 + pos_y))
             elif the_relationship.cat_to.dead:
