@@ -1833,7 +1833,8 @@ class ProfileScreen(Screens):
                             text="See Family",
                             cur_screen='see kits screen')
 
-        buttons.draw_button(('center', 430),
+        if not the_cat.dead:
+            buttons.draw_button(('center', 430),
                             text="See Relationships",
                             cur_screen='relationship screen')
 
@@ -3209,12 +3210,12 @@ class OptionsScreen(Screens):
         #                     text='Family Tree',
         #                     hotkey=[button_count + 1])
         # button_count += 1
-
-        buttons.draw_button((x_value, y_value + button_count * y_change),
+        if not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change),
                             text='See Relationships',
                             cur_screen='relationship screen',
                             hotkey=[button_count + 1])
-        button_count += 1
+            button_count += 1
 
         if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
                            ] and not the_cat.dead:
@@ -3360,7 +3361,7 @@ class OptionsScreen(Screens):
                                 hotkey=[button_count + 1])
             button_count += 1
             buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Change to Nonbinary',
+                                text='Change to Nonbinary/Specify Gender',
                                 cat_value=game.switches['cat'],
                                 hotkey=[button_count + 1])
             button_count += 1
@@ -3371,7 +3372,7 @@ class OptionsScreen(Screens):
                                 hotkey=[button_count + 1])
             button_count += 1
             buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Change to Nonbinary',
+                                text='Change to Nonbinary/Specify Gender',
                                 cat_value=game.switches['cat'],
                                 hotkey=[button_count + 1])
             button_count += 1
@@ -3383,7 +3384,7 @@ class OptionsScreen(Screens):
             button_count += 1
         if the_cat.genderalign != "female" and the_cat.genderalign != "male":
             buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Change Back to Cisgender',
+                                text='Change to Cisgender',
                                 cat_value=game.switches['cat'],
                                 hotkey=[button_count + 1])
             button_count += 1

@@ -1,6 +1,6 @@
 {
     "from": {
-        "romantic_love": [],
+        "romantic_love": ["Feels like (cat) hasn't been paying much attention to them lately"],
         "like": ["Is hiding from (cat)", "Complains about (cat)", "Has been listening to (cat) talk about how hard training has been"],
         "dislike": [],
         "admiration": [],
