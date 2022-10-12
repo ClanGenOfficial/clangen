@@ -194,21 +194,18 @@ class Events(object):
                         f'{str(cat.name)} has started their apprenticeship')
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
-                    self.coming_out(cat)
                     cat.update_mentor()
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
                     self._extracted_from_perform_ceremonies_19(
                         cat, 'warrior', ' has earned their warrior name')
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
-                    self.coming_out(cat)
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
                     self._extracted_from_perform_ceremonies_19(
                         cat, 'medicine cat',
                         ' has earned their medicine cat name')
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
-                    self.coming_out(cat)
                     game.clan.new_medicine_cat(cat)
                 elif cat.status == 'deputy' and cat.age == 'elder' and len(
                         cat.apprentice) < 1:
