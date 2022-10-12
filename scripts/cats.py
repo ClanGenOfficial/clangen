@@ -3020,19 +3020,19 @@ class Cat(object):
         if self.white_patches in [little_white, mid_white]:
             color_name = color_name + ' and white'
         # and white
-        elif self.white_patches in [high_white]:
+        elif self.white_patches in high_white:
             if self.pelt.name != "Calico":
                 color_name = color_name + ' and white'
         # white and
-        elif self.white_patches in [mostly_white]:
+        elif self.white_patches in mostly_white:
             color_name = 'white and ' + color_name
         # colorpoint
-        elif self.white_patches in [point_markings]:
+        elif self.white_patches in point_markings:
             color_name = color_name + ' point'
-            if color_name == 'darkginger point' or 'ginger point':
+            if color_name == 'darkginger point' or color_name == 'ginger point':
                 color_name = 'flame point'
         # vitiligo
-        elif self.white_patches in [vit]:
+        elif self.white_patches in vit:
             color_name = color_name + ' with vitiligo'
 
         if color_name == 'tortie':
