@@ -552,8 +552,10 @@ class ClanScreen(Screens):
         else:
             if game.clan.biome == "Forest":
                 self._extracted_from_change_brightness_3(
-                    'resources/greenleafcamp.png', 'resources/newleafcamp.png',
-                    'resources/leafbarecamp.png', 'resources/leaffallcamp.png')
+                    'resources/greenleafcamp.png',
+                    'resources/newleafcamp.png',
+                    'resources/leafbarecamp.png',
+                    'resources/leaffallcamp.png')
             elif game.clan.biome == "Plains":
                 self._extracted_from_change_brightness_3(
                     'resources/greenleafcamp_plains.png',
@@ -601,8 +603,10 @@ class ClanScreen(Screens):
                         'resources/leaffallcamp.png')
             else:
                 self._extracted_from_change_brightness_3(
-                    'resources/greenleafcamp.png', 'resources/newleafcamp.png',
-                    'resources/leafbarecamp.png', 'resources/leaffallcamp.png')
+                    'resources/greenleafcamp.png',
+                    'resources/newleafcamp.png',
+                    'resources/leafbarecamp.png',
+                    'resources/leaffallcamp.png')
 
     # TODO Rename this here and in `change_brightness`
     def _extracted_from_change_brightness_3(self, arg0, arg1, arg2, arg3):
@@ -1531,6 +1535,7 @@ class EventsScreen(Screens):
 
 class ProfileScreen(Screens):
 
+
     def on_use(self):
         # use this variable to point to the cat object in question
         the_cat = cat_class.all_cats.get(game.switches['cat'],
@@ -1589,7 +1594,19 @@ class ProfileScreen(Screens):
         count = 0
         count2 = 0
         verdana_big.text(cat_name, ('center', 150))  # NAME
-        the_cat.draw_large((100, 200))  # IMAGE
+
+        if game.settings['backgrounds']:  # CAT PLATFORM
+            if game.clan.current_season == 'Newleaf':
+                screen.blit(self.newleaf_plt, (55, 200))
+            elif game.clan.current_season == 'Greenleaf':
+                screen.blit(self.greenleaf_plt, (55, 200))
+            elif game.clan.current_season == 'Leaf-bare':
+                screen.blit(self.leafbare_plt, (55, 200))
+            elif game.clan.current_season == 'Leaf-fall':
+                screen.blit(self.leaffall_plt, (55, 200))
+
+        the_cat.draw_large((100, 200)) # IMAGE
+
 
         if len(the_cat.thought) < 100:
             verdana.text(the_cat.thought, ('center', 180))  # THOUGHT
@@ -1816,7 +1833,8 @@ class ProfileScreen(Screens):
                             text="See Family",
                             cur_screen='see kits screen')
 
-        buttons.draw_button(('center', 430),
+        if not the_cat.dead:
+            buttons.draw_button(('center', 430),
                             text="See Relationships",
                             cur_screen='relationship screen')
 
@@ -1828,9 +1846,163 @@ class ProfileScreen(Screens):
                             text='Back',
                             cur_screen=game.switches['last_screen'])
 
+    # PLATFORM
+    def change_brightness(self):
+        the_cat = cat_class.all_cats.get(game.switches['cat'],
+                                         game.clan.instructor)
+        if game.settings['dark mode']:
+            if the_cat.dead or game.clan.instructor.ID == the_cat.ID:
+                self._extracted_from_change_brightness_plt(
+                    'resources/starclanplatform_dark.png',
+                    'resources/starclanplatform_dark.png',
+                    'resources/starclanplatform_dark.png',
+                    'resources/starclanplatform_dark.png')
+            elif game.clan.biome == "Forest":
+                self._extracted_from_change_brightness_plt(
+                    'resources/greenleafplatform_dark.png',
+                    'resources/newleafplatform_dark.png',
+                    'resources/leafbareplatform_dark.png',
+                    'resources/leaffallplatform_dark.png')
+            elif game.clan.biome == "Plains":
+                try:
+                    self._extracted_from_change_brightness_plt(
+                        'resources/greenleafplatform_plains_dark.png',
+                        'resources/newleafplatform_plains_dark.png',
+                        'resources/leafbareplatform_plains_dark.png',
+                        'resources/leaffallplatform_plains_dark.png')
+                except:
+                    self._extracted_from_change_brightness_plt(
+                        'resources/greenleafplatform_dark.png',
+                        'resources/newleafplatform_dark.png',
+                        'resources/leafbareplatform_dark.png',
+                        'resources/leaffallplatform_dark.png')
+            elif game.clan.biome == "Beach":
+                try:
+                    self._extracted_from_change_brightness_plt(
+                        'resources/greenleafplatform_beach_dark.png',
+                        'resources/newleafplatform_beach_dark.png',
+                        'resources/leafbareplatform_beach_dark.png',
+                        'resources/leaffallplatform_beach_dark.png')
+                except:
+                    self._extracted_from_change_brightness_plt(
+                        'resources/greenleafplatform_dark.png',
+                        'resources/newleafplatform_dark.png',
+                        'resources/leafbareplatform_dark.png',
+                        'resources/leaffallplatform_dark.png')
+            elif game.clan.biome == "Mountainous":
+                try:
+                    self._extracted_from_change_brightness_plt(
+                        'resources/greenleafplatform_mountain_dark.png',
+                        'resources/newleafplatform_mountain_dark.png',
+                        'resources/leafbareplatform_mountain_dark.png',
+                        'resources/leaffallplatform_mountain_dark.png')
+                except:
+                    self._extracted_from_change_brightness_plt(
+                        'resources/greenleafplatform_dark.png',
+                        'resources/newleafplatform_dark.png',
+                        'resources/leafbareplatform_dark.png',
+                        'resources/leaffallplatform_dark.png')
+            elif game.clan.biome == "Desert":
+                try:
+                    self._extracted_from_change_brightness_plt(
+                        'resources/greenleafplatform_desert_dark.png',
+                        'resources/newleafplatform_desert_dark.png',
+                        'resources/leafbareplatform_desert_dark.png',
+                        'resources/leaffallplatform_desert_dark.png')
+                except:
+                    self._extracted_from_change_brightness_plt(
+                        'resources/greenleafplatform_dark.png',
+                        'resources/newleafplatform_dark.png',
+                        'resources/leafbareplatform_dark.png',
+                        'resources/leaffallplatform_dark.png')
+            else:
+                self._extracted_from_change_brightness_plt(
+                    'resources/greenleafplatform_dark.png',
+                    'resources/newleafplatform_dark.png',
+                    'resources/leafbareplatform_dark.png',
+                    'resources/leaffallplatform_dark.png')
+
+        else:
+            if the_cat.dead:
+                self._extracted_from_change_brightness_plt(
+                    'resources/starclanplatform.png',
+                    'resources/starclanplatform.png',
+                    'resources/starclanplatform.png',
+                    'resources/starclanplatform.png',)
+            elif game.clan.biome == "Forest":
+                self._extracted_from_change_brightness_plt(
+                    'resources/greenleafplatform.png',
+                    'resources/newleafplatform.png',
+                    'resources/leafbareplatform.png',
+                    'resources/leaffallplatform.png')
+            elif game.clan.biome == "Plains":
+                self._extracted_from_change_brightness_plt(
+                    'resources/greenleafplatform_plains.png',
+                    'resources/newleafplatform_plains.png',
+                    'resources/leafbareplatform_plains.png',
+                    'resources/leaffallplatform_plains.png')
+            elif game.clan.biome == "Beach":
+                try:
+                    self._extracted_from_change_brightness_plt(
+                        'resources/greenleafplatform_beach.png',
+                        'resources/newleafplatform_beach.png',
+                        'resources/leafbareplatform_beach.png',
+                        'resources/leaffallplatform_beach.png')
+                except:
+                    self._extracted_from_change_brightness_plt(
+                        'resources/greenleafplatform.png',
+                        'resources/newleafplatform.png',
+                        'resources/leafbareplatform.png',
+                        'resources/leaffallplatform.png')
+            elif game.clan.biome == "Mountainous":
+                try:
+                    self._extracted_from_change_brightness_plt(
+                        'resources/greenleafplatform_mountain.png',
+                        'resources/newleafplatform_mountain.png',
+                        'resources/leafbareplatform_mountain.png',
+                        'resources/leaffallplatform_mountain.png')
+                except:
+                    self._extracted_from_change_brightness_plt(
+                        'resources/greenleafplatform.png',
+                        'resources/newleafplatform.png',
+                        'resources/leafbareplatform.png',
+                        'resources/leaffallplatform.png')
+            elif game.clan.biome == "Desert":
+                try:
+                    self._extracted_from_change_brightness_plt(
+                        'resources/greenleafplatform_desert.png',
+                        'resources/newleafplatform_desert.png',
+                        'resources/leafbareplatform_desert.png',
+                        'resources/leaffallplatform_desert.png')
+                except:
+                    self._extracted_from_change_brightness_plt(
+                        'resources/greenleafplatform.png',
+                        'resources/newleafplatform.png',
+                        'resources/leafbareplatform.png',
+                        'resources/leaffallplatform.png')
+            else:
+                self._extracted_from_change_brightness_plt(
+                    'resources/greenleafplatform.png',
+                    'resources/newleafplatform.png',
+                    'resources/leafbareplatform.png',
+                    'resources/leaffallplatform.png')
+
+    # TODO Rename this here and in `change_brightness`
+    def _extracted_from_change_brightness_plt(self, arg0, arg1, arg2, arg3):
+        self.greenleaf_plt = pygame.transform.scale(
+            pygame.image.load(arg0).convert(), (240, 210))
+        self.newleaf_plt = pygame.transform.scale(
+            pygame.image.load(arg1).convert(), (240, 210))
+        self.leafbare_plt = pygame.transform.scale(
+            pygame.image.load(arg2).convert(), (240, 210))
+        self.leaffall_plt = pygame.transform.scale(
+            pygame.image.load(arg3).convert(), (240, 210))
+
+
 
     def screen_switches(self):
         cat_profiles()
+        self.change_brightness()
 
 
 class SingleEventScreen(Screens):
@@ -1951,6 +2123,7 @@ class ViewChildrenScreen(Screens):
 
     def screen_switches(self):
         cat_profiles()
+
 
 
 class ChooseMateScreen(Screens):
@@ -2099,6 +2272,7 @@ class ChooseMateScreen(Screens):
     def screen_switches(self):
         game.switches['mate'] = None
         cat_profiles()
+
 
 
 class ListScreen(Screens):
@@ -3036,12 +3210,12 @@ class OptionsScreen(Screens):
         #                     text='Family Tree',
         #                     hotkey=[button_count + 1])
         # button_count += 1
-
-        buttons.draw_button((x_value, y_value + button_count * y_change),
+        if not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change),
                             text='See Relationships',
                             cur_screen='relationship screen',
                             hotkey=[button_count + 1])
-        button_count += 1
+            button_count += 1
 
         if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
                            ] and not the_cat.dead:

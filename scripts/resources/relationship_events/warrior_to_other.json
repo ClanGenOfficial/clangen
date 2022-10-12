@@ -1,0 +1,35 @@
+{
+    "kitten": {
+        "unfriendly":["Is scolding (cat)"],
+        "neutral": ["Trips over (cat)", "Had to nip (cat) on the rump because they were being naughty",
+                    "Is watching (cat) perform an almost-decent hunting crouch", 
+                    "Is watching over (cat)"],
+        "friendly": ["Is giving (cat) a badger ride on their back!", "Hopes that their own kits are as cute as (cat) someday",
+                     "Is promising to take (cat) outside of camp if they behave", "Gave (cat) a trinket they found while out on patrol today",
+                     "Is feeling proud of (cat)"],
+        "close":["Train playfully with (cat)"]
+    },
+    "apprentice": {
+        "unfriendly": ["Is scolding (cat)"],
+        "neutral": ["Is giving advice to (cat)", "Is watching (cat) perform an almost-decent hunting crouch",
+                    "Is telling (cat) about a hunting technique", "Is giving (cat) a task",
+                    "Wishes (cat) would take things more seriously", "Is jealous that (cat) got to go to the last gathering"],
+        "friendly": ["Is telling (cat) about their own days as an apprentice", "Is feeling proud of (cat)"],
+        "close": []
+    },
+    "warrior": {
+        "unfriendly": [],
+        "neutral": ["Is telling (cat) about a hunting technique",
+                    "Is giving (cat) a task","Is frustrated that (cat) won't take their duties more seriously",
+                    "Sparring with (cat)", "Is jealous that (cat) got to go to the last gathering",
+                    "Has noticed (cat) isn't doing a lot of work lately", "Thinks that (cat) is so much braver than them"],
+        "friendly": [],
+        "close": ["Just told (cat) a hilarious joke"]
+    },
+    "elder": {
+        "unfriendly": [],
+        "neutral": ["Feels like they'll never accomplish as much as (cat)"],
+        "friendly": [],
+        "close": []
+    }
+}

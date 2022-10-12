@@ -1,0 +1,28 @@
+{
+    "kitten": {
+        "unfriendly": [],
+        "neutral": ["Trips over (cat)","Is watching over (cat)"],
+        "friendly": ["Train playfully with (cat)","Gave (cat) a trinket they found while out on patrol today"],
+        "close": []
+    },
+    "apprentice": {
+        "unfriendly": ["Accuses to (cat) of cheating, to win so many practice fights"],
+        "neutral": ["Is frustrated that (cat) won't take their duties more seriously",
+                    "Has a mock battle with (cat)", "Has been listening to (cat) talk about how hard training has been",
+                    "Is jealous that (cat) got praised by the leader", "Doesn't understand how (cat) got so good at hunting"],
+        "friendly": ["Was playing with (cat) and learned a fun new battle move from them!"],
+        "close": []
+    },
+    "warrior": {
+        "unfriendly": [],
+        "neutral": ["Is frustrated that (cat) won't take their duties more seriously", "Is jealous that (cat) got to fight in a border skirmish when they didn't"],
+        "friendly": [],
+        "close": []
+    },
+    "elder": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
+    }
+}

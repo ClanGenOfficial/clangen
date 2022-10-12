@@ -927,7 +927,8 @@ class Events(object):
                 f'{name} tries to convince {other_name} to run away together'
             ])
 
-        game.cur_events_list.append(choice(interactions))
+        if len(interactions) > 0:
+            game.cur_events_list.append(choice(interactions))
 
     def handle_deaths(self, cat):
         clan_has_kits = any(

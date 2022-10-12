@@ -1,0 +1,14 @@
+{
+    "from":{
+        "unfriendly": ["Punishes (cat) with extra work", "Divides (cat) into extra patrols"],
+        "neutral": [],
+        "friendly": [],
+        "close": []
+    },
+    "to":{
+        "unfriendly": ["Thinks they should be deputy instead of (cat)", "Accuses (cat) of being a bad deputy"],
+        "neutral": ["Is tired from (cat) putting them on so many patrols"],
+        "friendly": [],
+        "close": []
+    }
+}

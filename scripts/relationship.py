@@ -1,6 +1,9 @@
 from random import choice, randint
+
+from scripts.utility import get_personality_compatibility
 from .game_essentials import *
 import copy
+import ujson
 
 # if another cat is involved
 THIRD_RELATIONSHIP_INCLUDED = {
@@ -18,259 +21,80 @@ EXILED_CATS = {
 }
 
 # IN increase or decrease
-NOT_AGE_SPECIFIC = {
-    "unfriendly": ['Doesn\'t think that (cat) has been completely honest lately',
-                   'Is mocking (cat)', 'Ignores (cat)', 'Is telling jokes about (cat)',
-                   'Is spreading a rumour about (cat)'],
-    "neutral": ['Complains about (cat)', 'Is telling a story to (cat)', 'Is talking with (cat)',
-                'Is sharing prey with (cat)', 'Had a huge argument with (cat)', 'Had a fight with (cat)'],
-    "friendly": ['Is sharing tongues with (cat)', 'Has been spending time with (cat) lately'],
-    "close": ['Tells (cat) a secret']
-}
+resource_directory = "scripts/resources/relationship_events/"
+
+NOT_AGE_SPECIFIC = None
+try:
+    with open(f"{resource_directory}not_age_specific.json", 'r') as read_file:
+        NOT_AGE_SPECIFIC = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 1 json file of relationship_events!'
+
+KITTEN_TO_OTHER = None
+try:
+    with open(f"{resource_directory}kitten_to_other.json", 'r') as read_file:
+        KITTEN_TO_OTHER = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 2 json file of relationship_events!'
+
+APPRENTICE_TO_OTHER = None
+try:
+    with open(f"{resource_directory}apprentice_to_other.json", 'r') as read_file:
+        APPRENTICE_TO_OTHER = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 3 json file of relationship_events!'
+
+WARRIOR_TO_OTHER = None
+try:
+    with open(f"{resource_directory}warrior_to_other.json", 'r') as read_file:
+        WARRIOR_TO_OTHER = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 4 json file of relationship_events!'
+
+ELDER_TO_OTHER = None
+try:
+    with open(f"{resource_directory}elder_to_other.json", 'r') as read_file:
+        ELDER_TO_OTHER = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 5 json file of relationship_events!'
 
 
-KITTEN_TO_OTHER = {
-    "kitten": {
-        "unfriendly": ['Tries to scare (cat)', 'Constantly pulling pranks on (cat)'],
-        "neutral": ['Has a mock battle with (cat)', 
-                    'Is jealous that (cat) is getting more attention than them',
-                    'Plays mossball with (cat)', 'Sticks their tongue out at (cat)',
-                    'Is pretending to be (cat)'],
-        "friendly": ['Chomps on (cat)\'s ear',
-                     'Pretends to be a warrior with (cat)',
-                     'Is pretending to ward off foxes with (cat)',
-                     'Is pretending to fight off badgers with (cat)',
-                     'Is racing (cat) back and forth across the camp clearing'],
-        "close": [  'Comes up with a plan to sneak out of camp with (cat)',
-                    'Wants to snuggle with (cat)']
-    },
-    "apprentice": {
-        "unfriendly": ['Constantly pulling pranks on (cat)'],
-        "neutral": ['Sticks their tongue out at (cat)',
-                    'Is hiding under a bush from (cat), but they can\'t stop giggling',
-                    'Is pretending to be (cat)', 'Is asking (cat) how babies are made'],
-        "friendly": ['Ask (cat) what it\'s like to be a apprentice'],
-        "close": ['Wants to snuggle with (cat)']
-    },
-    "warrior": {
-        "unfriendly": ['Constantly pulling pranks on (cat)'],
-        "neutral": ['Is biting (cat)\'s tail',
-                    'Sticks their tongue out at (cat)', 'Is asking (cat) how babies are made',
-                    'Is demanding (cat)\'s attention', 'Is pretending to be (cat)',
-                    'Is hiding under a bush from (cat), but they can\'t stop giggling',
-                    ],
-        "friendly": ['Tells (cat) that they would like to be like them when they grows up'],
-        "close": ['Wants to snuggle with (cat)']
-    },
-    "elder": {
-        "unfriendly": ['Constantly pulling pranks on (cat)'],
-        "neutral": ['Sticks their tongue out at (cat)', 
-                    'Is hiding under a bush from (cat), but they can\'t stop giggling',
-                    'Is asking (cat) how babies are made'],
-        "friendly": [],
-        "close": []
-    }
-}
+LOVE = None
+try:
+    with open(f"{resource_directory}love.json", 'r') as read_file:
+        LOVE = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 6 json file of relationship_events!'
 
-APPRENTICE_TO_OTHER = {
-    "kitten": {
-        "unfriendly": [],
-        "neutral": ['Trips over (cat)','Is watching over (cat)'],
-        "friendly": ['Train playfully with (cat)','Gave (cat) a trinket they found while out on patrol today'],
-        "close": []
-    },
-    "apprentice": {
-        "unfriendly": [],
-        "neutral": ['Is frustrated that (cat) won\'t take their duties more seriously',
-                    'Has a mock battle with (cat)'],
-        "friendly": [],
-        "close": []
-    },
-    "warrior": {
-        "unfriendly": [],
-        "neutral": ['Is frustrated that (cat) won\'t take their duties more seriously'],
-        "friendly": [],
-        "close": []
-    },
-    "elder": {
-        "unfriendly": [],
-        "neutral": [],
-        "friendly": [],
-        "close": []
-    }
-}
 
-WARRIOR_TO_OTHER = {
-    "kitten": {
-        "unfriendly":['Is scolding (cat)'],
-        "neutral": ['Trips over (cat)', 'Had to nip (cat) on the rump because they were being naughty',
-                    'Is watching (cat) perform an almost-decent hunting crouch', 
-                    'Is watching over (cat)'],
-        "friendly": ['Is giving (cat) a badger ride on their back!', 'Hopes that their own kits are as cute as (cat) someday',
-                     'Is promising to take (cat) outside of camp if they behave', 'Gave (cat) a trinket they found while out on patrol today',
-                     'Is feeling proud of (cat)'],
-        "close":['Train playfully with (cat)'],
-    },
-    "apprentice": {
-        "unfriendly": ['Is scolding (cat)'],
-        "neutral": ['Is giving advice to (cat)', 'Is watching (cat) perform an almost-decent hunting crouch',
-                    'Is telling (cat) about a hunting technique', 'Is giving (cat) a task',
-                    'Wishes (cat) would take things more seriously'],
-        "friendly": ['Is telling (cat) about their own days as an apprentice', 'Is feeling proud of (cat)'],
-        "close": []
-    },
-    "warrior": {
-        "unfriendly": [],
-        "neutral": ['Is telling (cat) about a hunting technique',
-                    'Is giving (cat) a task','Is frustrated that (cat) won\'t take their duties more seriously',
-                    'Sparring with (cat)'],
-        "friendly": [],
-        "close": ['Just told (cat) a hilarious joke']
-    },
-    "elder": {
-        "unfriendly": [],
-        "neutral": [],
-        "friendly": [],
-        "close": []
-    }
-}
+LEADER = None
+try:
+    with open(f"{resource_directory}leader.json", 'r') as read_file:
+        LEADER = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 7 json file of relationship_events!'
 
-ELDER_TO_OTHER = {
-    "kitten": {
-        "unfriendly": ['Is scolding (cat)'],
-        "neutral": [],
-        "friendly": [],
-        "close": []
-    },
-    "apprentice": {
-        "unfriendly": ['Is scolding (cat)', 'Is bossing (cat) around'],
-        "neutral": ['Is frustrated that (cat) won\'t take their duties more seriously',
-                    'Bestowing wisdom onto (cat)', 'Is asking (cat) to check them for ticks'],
-        "friendly": [],
-        "close": []
-    },
-    "warrior": {
-        "unfriendly": ['Is scolding (cat)', 'Is bossing (cat) around'],
-        "neutral": ['Is frustrated that (cat) won\'t take their duties more seriously',
-                    'Bestowing wisdom onto (cat)'],
-        "friendly": [],
-        "close": []
-    },
-    "elder": {
-        "unfriendly": [],
-        "neutral": [],
-        "friendly": [],
-        "close": []
-    }
-}
+DEPUTY = None
+try:
+    with open(f"{resource_directory}deputy.json", 'r') as read_file:
+        DEPUTY = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 8 json file of relationship_events!'
 
-LOVE = {
-    "love_interest_only": ['Is developing a crush on (cat)', 'Is admiring (cat) from afar...', 'Is spending a lot of time with (cat)',
-                            'Gave a pretty flower they found to (cat)', 'Laughs at bad jokes from (cat)', 
-                            'Enjoys the time with (cat) and feels secure', 'Made (cat) laugh again and again',
-                            'Ensnares (cat) with a charming smile', 'Go for a nice long walk with (cat)',
-                            'Wants to spend the entire day with (cat)'],
-    "love_interest": [  'Can\'t seem to stop talking about (cat)', 'Would spend the entire day with (cat) if they could', 
-                        'Keeps shyly glancing over at (cat) as the clan talks about kits', 
-                        'Is thinking of the best ways to impress (cat)', 'Doesn\'t want (cat) to overwork themselves', 
-                        'Is rolling around a little too playfully with (cat)...', 
-                        'Is wondering what it would be like to grow old with (cat)', 'Thinks that (cat) is really funny',
-                        'Thinks that (cat) is really charming', 'Wants to confess their love to (cat)'],
-    "mates": ['Was caught enjoying a moonlit stroll with (cat) last night...']
-}
+MEDICINE = None
+try:
+    with open(f"{resource_directory}medicine.json", 'r') as read_file:
+        MEDICINE = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 9 json file of relationship_events!'
 
-LEADER = {
-    "from":{
-        "unfriendly": ['Punishes (cat) with extra work'],
-        "neutral": [],
-        "friendly": [],
-        "close": ['Talks with (cat) about difficult decisions', 'Tells (cat) about their last encounter with StarClan']
-    },
-    "to":{
-        "unfriendly": ['Accuses (cat) of being a bad leader'],
-        "neutral": [],
-        "friendly": [],
-        "close": []
-    }
-}
 
-DEPUTY = {
-    "from":{
-        "unfriendly": ['Punishes (cat) with extra work', 'Divides (cat) into extra patrols'],
-        "neutral": [],
-        "friendly": [],
-        "close": []
-    },
-    "to":{
-        "unfriendly": ['Thinks they should be deputy instead of (cat)', 'Accuses (cat) of being a bad deputy'],
-        "neutral": ['Is tired from (cat) putting them on so many patrols'],
-        "friendly": [],
-        "close": []
-    }
-}
-
-MEDICINE = {
-    "from":{
-        "unfriendly": ['Treats (cat)\'s splinter wound more roughly', 'Gives (cat) bitter herbs on purpose'],
-        "neutral": [],
-        "friendly": [],
-        "close": ['Tells (cat) about their last encounter with StarClan']
-    },
-    "to":{
-        "unfriendly": [],
-        "neutral": ['Thought of (cat) on the last patrol and took a rare herb with them'],
-        "friendly": ['Escorted (cat) so they could gather herbs'],
-        "close": []
-    }
-}
-
-SPECIAL_CHARACTER = {
-    "strange": ['Is following (cat) around', 'Tells (cat) that their pelt looks like a different colour today'],
-    "bloodthirsty": ['Talks to (cat) how best to kill prey, very enthusiastic', 'Started a fight with (cat)'],
-    "righteous": ['Makes sure (cat) is following the warrior code', 'Has a fight with (cat) about what\'s right'],
-    "fierce": [ 'Is not backing down in an argument with (cat)', 
-                'Is telling (cat) in great detail how they would protect them from any danger'],
-    "nervous": ['Is stuttering while speaking to (cat)'],
-    "strict":['Scorns (apprentice) for not catching enough prey'],
-    "charismatic": ['Charms (cat)', 'Smiles at (cat) whenever they meet', 'Knows what to say to make (cat) feel better', 
-                    'Compliments (cat) for their good disposition'],
-    "calm": ['Relaxing with (cat)','Is soothing (cat)\'s irrational thoughts', 'Is helping (cat) calm down'],
-    "daring": ['Challenges (cat) to a race'],
-    "loving": [ 'Is making sure (cat) knows that they are loved','Is telling (cat) how much they cherish them', 
-                'Is purring loudly to comfort (cat)'],
-    "playful": ['Is playing tag with (cat)'],
-    "cold": ['Hissed at (cat)', 'Tells (cat) to leave them alone', 'Glaring at (cat) from across the camp'],
-    "vengeful": ['Thinking about how (cat) wronged them', 'Is watching (cat) scornfully', 'Is glaring daggers at (cat)'],
-    "shameless": ['Is asking (cat) to tell them about how good they look'],
-    "troublesome": ['Pulled a prank on (cat)', 'Blamed (cat) for their own mistake', 'Won\'t stop bothering (cat)',
-                    'Feels bad that they caused a problem for (cat)'],
-    "empathetic": [ 'Listening to (elder)\'s woes', 'Is listening to (cat)\'s troubles',
-                    'Noticed (apprentice) was struggling, and offered to help them'],
-    "adventurous": ['Wants to explore Twoleg place with (cat)', 'Wants to sneak along the border with (cat)', 
-                    'Tells (cat) that there\'s so much to see in the world!'],
-    "thoughful": [  'Gave (cat) their favorite piece of prey', 'Is being quite considerate with (cat)', 
-                    'Took the time to help (apprentice) work through a technique they are struggling with'],
-    "compassionate": [  'Curled around (cat) to share warmth', 'Lets (cat) have the last piece of fresh kill', 
-                        'Listening to (cat)\'s problems', 'Gives (cat) an item they may like', 
-                        'Helps (elder) get around camp'],
-    "childish": ['Is hiding behind a bush ready to pounce on (cat)'],
-    "confident": ['Is building up (cat)\'s confidence', 'Stands tall when (cat) walks by'],
-    "careful": ['Tells (cat) to get their ailment treated as soon as possible', 'Chiding (cat) for being so reckless',
-                'Apologized to (cat) for possibly hurting their feelings'],
-    "altruistic": ['Let (cat) lean on their shoulder after a recent injury', 'Is poised to help train (apprentice)'],
-    "bold": ['Challenged (cat) to spar with them'],
-    "patient": ['Watching the shooting stars with (cat)', 
-                'Calmly explains hunting techniques to (cat) again for the fourth time today'],
-    "sneaky": [ 'Is gossiping about (cat)', 'Is teaching (cat) how to walk without making a sound', 
-                'Is showing (cat) how to sneak up on their enemies'],
-    "wise": ['Is giving (cat) advice'],
-    "cowardly": ['Is hiding from (cat)'],
-    "impulsive": [  'Crashes into (cat) while eager for patrol', 'Rejects (cat)\'s advice without letting them finish', 
-                    'Interrupts (cat) during a conversation'],
-    "tidy": [   'Is annoyed by the mess (cat) made', 'Grooms the grime off (cat)\'s pelt', 
-                'Is cross with (cat) for getting dirt all over the fresh-kill pile'],
-    "dreamy": ['Talks about dreams with (cat)', 'Gets distracted from conversation with (cat)']
-}
+SPECIAL_CHARACTER = None
+try:
+    with open(f"{resource_directory}special_character.json", 'r') as read_file:
+        SPECIAL_CHARACTER = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 10 json file of relationship_events!'
 
 # How increasing one state influences another directly: (an increase of one state doesn't trigger a chain reaction)
 # increase romantic_love -> decreases: dislike | increases: like, comfortable
@@ -284,186 +108,38 @@ SPECIAL_CHARACTER = {
 # !! DECREASING ONE STATE DOES'T INFLUENCE OTHERS !!
 
 # This defines effect the action has, not every action has to have a effect
-INCREASE_HIGH = {
-    "from": {
-        "romantic_love": ['Is developing a crush on (cat)', 'Is admiring (cat) from afar...', 
-                          'Is spending a lot of time with (cat)', 'Gave a pretty flower they found to (cat)',
-                          'Can\'t seem to stop talking about (cat)', 'Would spend the entire day with (cat) if they could',
-                          'Laughs at bad jokes from (cat)', 'Wants to confess their love to (cat)',
-                          'Is rolling around a little too playfully with (cat)...', 'Enjoys the time with (cat) and feels secure',
-                          'Was caught enjoying a moonlit stroll with (cat) last night...', 'Wants to spend the entire day with (cat)',
-                          'Is wondering what it would be like to grow old with (cat)','Go for a nice long walk with (cat)'
-                          ],
-        "like": ['Is telling a story to (cat)','Is talking with (cat)','Pretends to be a warrior with (cat)',
-                'Is sharing tongues with (cat)', 'Is playing tag with (cat)',
-                'Has been spending time with (cat) lately','Just told (cat) a hilarious joke', 'Relaxing with (cat)',
-                'Tells (cat) a secret', 'Wants to snuggle with (cat)', 'Curled around (cat) to share warmth',
-                'Is making sure (cat) knows that they are loved', 'Is telling (cat) how much they cherish them',
-                'Noticed (apprentice) was struggling, and offered to help them','Gave (cat) their favorite piece of prey',
-                'Took the time to help (apprentice) work through a technique they are struggling with',
-                'Watching the shooting stars with (cat)'],
-        "dislike": ['Is mocking (cat)', 'Ignores (cat)', 'Sticks their tongue out at (cat)','Had a huge argument with (cat)',
-                    'Had a fight with (cat)', 'Is jealous that (cat) is getting more attention than them',
-                    'Constantly pulling pranks on (cat)', 'Started a fight with (cat)', 'Hissed at (cat)',
-                    'Tells (cat) to leave them alone', 'Accuses (cat) of being a bad leader', 'Accuses (cat) of being a bad deputy'],
-        "admiration": ['Tells (cat) that they would like to be like them when they grows up', 'Train playfully with (cat)',
-                        'Sparring with (cat)', 'Is feeling proud of (cat)', 'Compliments (cat) for their good disposition'],
-        "comfortable": ['Is telling a story to (cat)','Is sharing prey with (cat)','Tells (cat) a secret',
-                        'Is sharing tongues with (cat)', 'Talks with (cat) about difficult decisions',
-                        'Just told (cat) a hilarious joke', 'Thinks that (cat) is really funny',
-                        'Escorted (cat) so they could gather herbs', 'Is helping (cat) calm down',
-                        'Curled around (cat) to share warmth', 'Watching the shooting stars with (cat)',
-                        'Talks about dreams with (cat)'],
-        "jealousy": ['Is jealous that (cat) is getting more attention than them', 'Thinking about how (cat) wronged them'],
-        "trust":['Is talking with (cat)','Tells (cat) a secret','Comes up with a plan to sneak out of camp with (cat)',
-                 'Escorted (cat) so they could gather herbs','Let (cat) lean on their shoulder after a recent injury',
-                 'Ask (cat) to collect herbs on the next patrol', 'Tells (cat) about their last encounter with StarClan']
-    },
-    "to": {
-        "romantic_love": ['Is spending a lot of time with (cat)', 'Gave a pretty flower they found to (cat)',
-                          'Is rolling around a little too playfully with (cat)...', 'Ensnares (cat) with a charming smile',
-                          'Was caught enjoying a moonlit stroll with (cat) last night...', 'Makes (cat) laugh again and again',
-                          'Go for a nice long walk with (cat)', 'Wants to spend the entire day with (cat)', 'Charms (cat)'],
-        "like": ['Is telling a story to (cat)','Is talking with (cat)','Is sharing tongues with (cat)',
-                'Is giving (cat) a badger ride on their back!', 'Is promising to take (cat) outside of camp if they behave',
-                'Is telling (cat) about a hunting technique',
-                'Is sharing tongues with (cat)','Has been spending time with (cat) lately', 'Relaxing with (cat)', 
-                'Just told (cat) a hilarious joke', 'Plays mossball with (cat)','Pretends to be a warrior with (cat)',
-                'Comes up with a plan to sneak out of camp with (cat)', 'Tells (cat) a secret', 'Laughs at bad jokes from (cat)',
-                'Knows what to say to make (cat) feel better', 'Is making sure (cat) knows that they are loved',
-                'Is telling (cat) how much they cherish them', 'Is playing tag with (cat)', 'Curled around (cat) to share warmth',
-                'Noticed (apprentice) was struggling, and offered to help them', 'Gave (cat) their favorite piece of prey',
-                'Took the time to help (apprentice) work through a technique they are struggling with',
-                'Lets (cat) have the last piece of fresh kill', 'Gives (cat) an item they may like',
-                'Apologized to (cat) for possibly hurting their feelings', 'Watching the shooting stars with (cat)',
-                'Calmly explains hunting techniques to (cat) again for the fourth time today'],
-        "dislike": ['Is mocking (cat)','Is telling jokes about (cat)','Sticks their tongue out at (cat)',
-                    'Is spreading a rumour about (cat)','Tries to scare (cat)','Had a huge argument with (cat)',
-                    'Had a fight with (cat)', 'Constantly pulling pranks on (cat)', 'Started a fight with (cat)',
-                    'Hissed at (cat)', 'Tells (cat) to leave them alone', 'Accuses (cat) of being a bad leader',
-                    'Accuses (cat) of being a bad deputy', 'Punishes (cat) with extra work',
-                    'Treats (cat)\'s splinter wound more roughly','Gives (cat) bitter herbs on purpose'],
-        "admiration": ['Is promising to take (cat) outside of camp if they behave', 'Is telling (cat) about a hunting technique',
-                        'Is giving advice to (cat)','Sparring with (cat)', 'Is showing (cat) how to sneak up on their enemies',
-                        'Noticed (apprentice) was struggling, and offered to help them', 'Is giving (cat) advice',
-                        'Took the time to help (apprentice) work through a technique they are struggling with',
-                        'Calmly explains hunting techniques to (cat) again for the fourth time today',
-                        'Is teaching (cat) how to walk without making a sound', 'Thought of (cat) on the last patrol and took a rare herb with them',
-                        'Is poised to help train (apprentice)'],
-        "comfortable": ['Is telling a story to (cat)','Is sharing prey with (cat)','Tells (cat) a secret', 
-                        'Is sharing tongues with (cat)','Is telling (cat) about their own days as an apprentice',
-                        'Comes up with a plan to sneak out of camp with (cat)', 'Escorted (cat) so they could gather herbs',
-                        'Compliments (cat) for their good disposition', 'Is helping (cat) calm down',
-                        'Is listening to (cat)\'s troubles',
-                        'Curled around (cat) to share warmth', 'Listening to (cat)\'s problems',
-                        'Is building up (cat)\'s confidence', 'Apologized to (cat) for possibly hurting their feelings',
-                        'Watching the shooting stars with (cat)','Is giving (cat) advice', 'Grooms the grime off (cat)\'s pelt',
-                        'Is soothing (cat)\'s irrational thoughts'],
-        "jealousy": [],
-        "trust":['Is talking with (cat)','Tells (cat) a secret', 'Escorted (cat) so they could gather herbs',
-                'Comes up with a plan to sneak out of camp with (cat)', 'Let (cat) lean on their shoulder after a recent injury',
-                'Talks with (cat) about difficult decisions', 'Thought of (cat) on the last patrol and took a rare herb with them',
-                'Tells (cat) about their last encounter with StarClan']
-    }
-}
+INCREASE_HIGH = None
+try:
+    with open(f"{resource_directory}1_INCREASE_HIGH.json", 'r') as read_file:
+        INCREASE_HIGH = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 11 json file of relationship_events!'
 
-INCREASE_LOW = {
-    "from": {
-        "romantic_love": ['Keeps shyly glancing over at (cat) as the clan talks about kits', 'Thinks that (cat) is really charming',
-                          'Is thinking of the best ways to impress (cat)'],
-        "like": ['Is pretending to ward off foxes with (cat)', 'Is pretending to fight off badgers with (cat)',
-                 'Is racing (cat) back and forth across the camp clearing', 'Has a mock battle with (cat)',
-                 'Hopes that their own kits are as cute as (cat) someday', 'Is asking (cat) to check them for ticks',
-                 'Is hiding behind a bush ready to pounce on (cat)', 'Tells (cat) to get their ailment treated as soon as possible',
-                 'Plays mossball with (cat)', 'Is giving (cat) a badger ride on their back!',
-                 'Calmly explains hunting techniques to (cat) again for the fourth time today'],
-        "dislike": ['Divides (cat) into extra patrols', 'Chiding (cat) for being so reckless'],
-        "admiration": ['Is watching (cat) perform an almost-decent hunting crouch', 'Ask (cat) what it\'s like to be a apprentice',
-                        'Is admiring (cat) from afar...'],
-        "comfortable": ['Is hiding under a bush from (cat), but they can\'t stop giggling', 'Is watching over (cat)',
-                        'Bestowing wisdom onto (cat)', 'Is telling (cat) in great detail how they would protect them from any danger',
-                        'Is purring loudly to comfort (cat)'],
-        "jealousy": [],
-        "trust": ['Is asking (cat) how babies are made', 'Wants to explore Twoleg place with (cat)', 'Wants to sneak along the border with (cat)']
-    },
-    "to": {
-        "romantic_love": ['Doesn\'t want (cat) to overwork themselves'],
-        "like": ['Is pretending to ward off foxes with (cat)', 'Is pretending to fight off badgers with (cat)',
-                 'Is racing (cat) back and forth across the camp clearing', 'Has a mock battle with (cat)', 
-                 'Is hiding under a bush from (cat), but they can\'t stop giggling', 'Helps (elder) get around camp',
-                 'Gave (cat) a trinket they found while out on patrol today', 'Listening to (elder)\'s woes'],
-        "dislike": ['Divides (cat) into extra patrols', 'Chiding (cat) for being so reckless'],
-        "admiration": ['Bestowing wisdom onto (cat)'],
-        "comfortable": ['Hopes that their own kits are as cute as (cat) someday', 'Smiles at (cat) whenever they meet',
-                        'Is purring loudly to comfort (cat)', 'Listening to (elder)\'s woes', 'Is being quite considerate with (cat)'],
-        "jealousy": [],
-        "trust": ['Wants to explore Twoleg place with (cat)', 'Wants to sneak along the border with (cat)',
-                  'Tells (cat) to get their ailment treated as soon as possible']
-    }
-}
+INCREASE_LOW = None
+try:
+    with open(f"{resource_directory}1_INCREASE_LOW.json", 'r') as read_file:
+        INCREASE_LOW = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 12 json file of relationship_events!'
+
+DECREASE_HIGH  = None
+try:
+    with open(f"{resource_directory}1_DECREASE_HIGH.json", 'r') as read_file:
+        DECREASE_HIGH = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 13 json file of relationship_events!'
 
 
-DECREASE_HIGH  = {
-    "from": {
-        "romantic_love": [],
-        "like": ['Is telling jokes about (cat)', 'Whines about (cat)', 'Is tired from (cat) putting them on so many patrols',
-                 'Is bossing (cat) around', 'Started a fight with (cat)', 'Has a fight with (cat) about what\'s right',
-                 'Hissed at (cat)', 'Tells (cat) to leave them alone', 'Blamed (cat) for their own mistake',
-                 'Is cross with (cat) for getting dirt all over the fresh-kill pile'],
-        "dislike": [],
-        "admiration": ['Is frustrated that (cat) won\'t take their duties more seriously', 'Is annoyed by the mess (cat) made',
-                        'Wishes (cat) would take things more seriously', 'Thinks they should be deputy instead of (cat)'],
-        "comfortable": ['Is stuttering while speaking to (cat)','Glaring at (cat) from across the camp'],
-        "jealousy": [],
-        "trust": ['Doesn\'t think that (cat) has been completely honest lately', 'Accuses (cat) of being a bad leader',
-                  'Accuses (cat) of being a bad deputy']
-    },
-    "to": {
-        "romantic_love": ['Started a fight with (cat)'],
-        "like": ['Is telling jokes about (cat)', 'Started a fight with (cat)', 'Has a fight with (cat) about what\'s right',
-                 'Is not backing down in an argument with (cat)', 'Scorns (apprentice) for not catching enough prey',
-                 'Hissed at (cat)', 'Tells (cat) to leave them alone', 'Blamed (cat) for their own mistake',
-                 'Rejects (cat)\'s advice without letting them finish', 'Is cross with (cat) for getting dirt all over the fresh-kill pile',
-                 'Punishes (cat) with extra work'],
-        "dislike": [],
-        "admiration": ['Is scolding (cat)', 'Rejects (cat)\'s advice without letting them finish'],
-        "comfortable": ['Tells (cat) that they\'re pelt looks like a different colour today', 'Is following (cat) around',
-                        'Glaring at (cat) from across the camp',
-                        'Pulled a prank on (cat)', 'Won\'t stop bothering (cat)','Interrupts (cat) during a conversation',
-                        'Gets distracted from conversation with (cat)', 'Is glaring daggers at (cat)',
-                        'Gives (cat) bitter herbs on purpose'],
-        "jealousy": [],
-        "trust": ['Is spreading a rumour about (cat)','Tries to scare (cat)', 'Pulled a prank on (cat)',
-                'Has successfully tricked (cat) into believing a crazy tale about the clan leader',
-                'Blamed (cat) for their own mistake', 'Is gossiping about (cat)', 'Treats (cat)\'s splinter wound more roughly']
-    }
-}
+DECREASE_LOW = None
+try:
+    with open(f"{resource_directory}1_DECREASE_LOW.json", 'r') as read_file:
+        DECREASE_LOW = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 14 json file of relationship_events!'
 
-DECREASE_LOW = {
-    "from": {
-        "romantic_love": [],
-        "like": ['Is hiding from (cat)', 'Complains about (cat)'],
-        "dislike": [],
-        "admiration": [],
-        "comfortable": ['Chomps on (cat)\'s ear'],
-        "jealousy": [],
-        "trust": ['Chiding (cat) for being so reckless']
-    },
-    "to": {
-        "romantic_love": [],
-        "like": ['Trips over (cat)', 'Divides (cat) into extra patrols', 'Is watching (cat) scornfully'],
-        "dislike": ['Feels bad that they caused a problem for (cat)'],
-        "admiration": ['Is asking (cat) to tell them about how good they look'],
-        "comfortable": ['Is biting (cat)\'s tail', 'Tells (cat) that their pelt looks like a different colour today',
-                        'Talks to (cat) how best to kill prey, very enthusiastic',
-                        'Makes sure (cat) is following the warrior code',
-                        'Crashes into (cat) while eager for patrol'],
-        "jealousy": [],
-        "trust": ['Trips over (cat)']
-    }
-}
 
-# weigths of the stat change
+# weights of the stat change
+
 DIRECT_INCREASE_HIGH = 12
 DIRECT_DECREASE_HIGH = 9
 DIRECT_INCREASE_LOW = 7
@@ -471,15 +147,18 @@ DIRECT_DECREASE_LOW = 4
 INDIRECT_INCREASE = 6
 INDIRECT_DECREASE = 3
 
+# add/decrease weight of personality based compatibility
+COMPATIBILITY_WEIGHT = 3
+
 class Relationship(object):
     def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0, admiration=0, comfortable=0, jealousy=0, trust=0, log = []) -> None:        
         self.cat_from = cat_from
         self.cat_to = cat_to
         self.mates = mates
         self.family = family
-        self.opposit_relationship = None #link to oppositting relationship will be created later
+        self.opposite_relationship = None #link to opposite relationship will be created later
         self.current_action_str = ''
-        self.triggerd_event = False
+        self.triggered_event = False
         self.log = log
 
         if self.cat_from.is_parent(self.cat_to) or self.cat_to.is_parent(self.cat_from):
@@ -511,15 +190,15 @@ class Relationship(object):
         self.trust = trust
 
     def link_relationship(self):
-        """Add the other relationship object to this easly access and change the other side."""
+        """Add the other relationship object to this easily access and change the other side."""
         opposite_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_to.relationships))
         if opposite_relationship is not None and len(opposite_relationship) > 0:
-            self.opposit_relationship = opposite_relationship[0]
+            self.opposite_relationship = opposite_relationship[0]
         else:
             # create relationship
             relation = Relationship(self.cat_to,self.cat_from)
             self.cat_to.relationships.append(relation)
-            self.opposit_relationship =relation
+            self.opposite_relationship =relation
             
     def start_action(self):
         """This function checks current state of relationship and decides which actions can happen."""
@@ -527,7 +206,7 @@ class Relationship(object):
         if self.cat_from.mate == self.cat_to.ID:
             self.mates = True
 
-        if self.opposit_relationship is None:
+        if self.opposite_relationship is None:
             self.link_relationship()
 
         # quick fix for exiled cat relationships
@@ -551,13 +230,13 @@ class Relationship(object):
             return
 
         # get action possibilities
-        action_possibilies = self.get_action_possibilities()
+        action_possibilities = self.get_action_possibilities()
 
         # check if the action is relevant (action of characters include age in the replacement string)
         action_relevant = False
         action = None
         while not action_relevant:
-            action = choice(action_possibilies)
+            action = choice(action_possibilities)
             relevant_ages = action[action.find("(")+1:action.find(")")]
             relevant_ages = relevant_ages.split(',')
             relevant_ages = [age.strip() for age in relevant_ages]
@@ -569,28 +248,28 @@ class Relationship(object):
                     
         # change the stats of the relationships
         self_relation_effect = self.affect_relationship(action)
-        other_relation_effect = self.opposit_relationship.affect_relationship(action, other=True)
+        other_relation_effect = self.opposite_relationship.affect_relationship(action, other=True)
 
         # broadcast action
         string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
         self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
 
-        actionstring_all = f"{str(self.cat_from.name)} - {self.current_action_str} "
+        action_string_all = f"{str(self.cat_from.name)} - {self.current_action_str} "
         if self_relation_effect == 'neutral effect':
             self_relation_effect = other_relation_effect
         effect_string =  f"({self_relation_effect})"
-        both = actionstring_all+effect_string
+        both = action_string_all+effect_string
         self.log.append(both)
         if len(both) < 100:
             game.relation_events_list.append(both)
         else:
-            game.relation_events_list.append(actionstring_all)
+            game.relation_events_list.append(action_string_all)
             game.relation_events_list.append(effect_string)
 
     def get_action_possibilities(self):
         """Creates a list of possibles actions of this relationship"""
-        # check if opposit_relationship is here, otherwise creates it       
-        action_possibilies = copy.deepcopy(NOT_AGE_SPECIFIC['neutral'])
+        # check if opposite_relationship is here, otherwise creates it       
+        action_possibilities = copy.deepcopy(NOT_AGE_SPECIFIC['neutral'])
 
         key = self.cat_to.status
         if key == "senior warrior" or key == "deputy" or\
@@ -604,82 +283,82 @@ class Relationship(object):
         # check how the relationship is
         relation_keys = ['neutral']
         if self.dislike > 20 or self.jealousy > 20:
-            action_possibilies += NOT_AGE_SPECIFIC['unfriendly']
+            action_possibilities += NOT_AGE_SPECIFIC['unfriendly']
             relation_keys.append('unfriendly')
-            # increase the chance for unfriendly behaviour
+            # increase the chance for unfriendly behavior
             if self.dislike > 30:
                 relation_keys.append('unfriendly')
         if self.platonic_like > 40 or self.comfortable > 30:
-            action_possibilies += NOT_AGE_SPECIFIC['friendly']
+            action_possibilities += NOT_AGE_SPECIFIC['friendly']
             relation_keys.append('friendly')
         if self.platonic_like > 50 and self.comfortable > 40 and self.trust > 30:
-            action_possibilies += NOT_AGE_SPECIFIC['close']
+            action_possibilities += NOT_AGE_SPECIFIC['close']
             relation_keys.append('close')
 
-        # add the interactions to the posssible ones
+        # add the interactions to the possible ones
         if self.cat_from.status == "kitten":
             for relation_key in relation_keys:
-                action_possibilies += KITTEN_TO_OTHER[key][relation_key]
+                action_possibilities += KITTEN_TO_OTHER[key][relation_key]
         if self.cat_from.status == "apprentice":
             for relation_key in relation_keys:
-                action_possibilies += APPRENTICE_TO_OTHER[key][relation_key]
+                action_possibilities += APPRENTICE_TO_OTHER[key][relation_key]
         if (self.cat_from.status == "warrior" or self.cat_from.status == "senior warrior"):
             for relation_key in relation_keys:
-                action_possibilies += WARRIOR_TO_OTHER[key][relation_key]
+                action_possibilities += WARRIOR_TO_OTHER[key][relation_key]
         if self.cat_from.status == "elder":
             for relation_key in relation_keys:
-                action_possibilies += ELDER_TO_OTHER[key][relation_key]
+                action_possibilities += ELDER_TO_OTHER[key][relation_key]
 
         # STATUS INTERACTIONS
         if self.cat_from.age != 'kitten' and self.cat_to.age != 'kitten':
             if self.cat_from.status == 'leader':
                 for relation_key in relation_keys:
-                    action_possibilies += LEADER['from'][relation_key]
+                    action_possibilities += LEADER['from'][relation_key]
             if self.cat_to.status == 'leader':
                 for relation_key in relation_keys:
-                    action_possibilies += LEADER['to'][relation_key]
+                    action_possibilities += LEADER['to'][relation_key]
 
             if self.cat_from.status == 'deputy':
                 for relation_key in relation_keys:
-                    action_possibilies += DEPUTY['from'][relation_key]
+                    action_possibilities += DEPUTY['from'][relation_key]
             if self.cat_to.status == 'deputy':
                 for relation_key in relation_keys:
-                    action_possibilies += DEPUTY['to'][relation_key]
+                    action_possibilities += DEPUTY['to'][relation_key]
 
             if self.cat_from.status == 'medicine cat':
                 for relation_key in relation_keys:
-                    action_possibilies += MEDICINE['from'][relation_key]
+                    action_possibilities += MEDICINE['from'][relation_key]
             if self.cat_to.status == 'medicine cat':
                 for relation_key in relation_keys:
-                    action_possibilies += MEDICINE['to'][relation_key]
+                    action_possibilities += MEDICINE['to'][relation_key]
 
         # CHARACTERISTIC INTERACTION
         character_keys = SPECIAL_CHARACTER.keys()
         if self.cat_from.trait in character_keys:
-            action_possibilies += SPECIAL_CHARACTER[self.cat_from.trait]
+            action_possibilities += SPECIAL_CHARACTER[self.cat_from.trait]
 
         # LOVE
         if not self.cat_from.is_potential_mate(self.cat_to, for_love_interest = True):
-            return action_possibilies
+            return action_possibilities
 
         # chance to fall in love with some the character is not close to:
         love_p = randint(0,30)
         if self.platonic_like > 30 or love_p == 1 or self.romantic_love > 5:
-            # increase the chance of an love event for two unmated cats
-            action_possibilies = action_possibilies + LOVE['love_interest_only']
+            # increase the chance of an love event for two un-mated cats
+            action_possibilities = action_possibilities + LOVE['love_interest_only']
             if self.cat_from.mate == None and self.cat_to.mate == None:
-                action_possibilies = action_possibilies + LOVE['love_interest_only']
+                action_possibilities = action_possibilities + LOVE['love_interest_only']
 
-        if self.opposit_relationship.romantic_love > 20:
-            action_possibilies = action_possibilies + LOVE['love_interest_only']
+        if self.opposite_relationship.romantic_love > 20:
+            action_possibilities = action_possibilities + LOVE['love_interest_only']
 
-        if self.romantic_love > 25 and self.opposit_relationship.romantic_love > 15:
-            action_possibilies = action_possibilies + LOVE['love_interest']
+        if self.romantic_love > 25 and self.opposite_relationship.romantic_love > 15:
+            action_possibilities = action_possibilities + LOVE['love_interest']
 
-        if self.mates and self.romantic_love > 30 and self.opposit_relationship.romantic_love > 25 :
-            action_possibilies = action_possibilies + LOVE['mates']
+        if self.mates and self.romantic_love > 30 and self.opposite_relationship.romantic_love > 25 :
+            action_possibilities = action_possibilities + LOVE['mates']
 
-        return action_possibilies
+        return action_possibilities
 
     def affect_relationship(self, action, other = False):
         """Affect the relationship according to the action."""
@@ -688,31 +367,31 @@ class Relationship(object):
             key = 'to'
 
         # for easier value change
-        number_increase = DIRECT_INCREASE_HIGH
-        number_decrease = DIRECT_DECREASE_HIGH
+        number_increase = self.get_high_increase_value()
+        number_decrease = self.get_high_decrease_value()
         effect = 'neutral effect'
 
         # increases
         if action in INCREASE_HIGH[key]['romantic_love']:
             self.romantic_love += number_increase
             effect = 'positive effect'
-            # indirekt influences
+            # indirect influences
             self.dislike -= INDIRECT_DECREASE
             self.platonic_like += INDIRECT_INCREASE
             self.comfortable += INDIRECT_INCREASE
         if action in INCREASE_HIGH[key]['like']:
             self.platonic_like += number_increase
             effect = 'positive effect'
-            # indirekt influences
+            # indirect influences
             self.dislike -= INDIRECT_DECREASE
             self.comfortable += INDIRECT_INCREASE
         if action in INCREASE_HIGH[key]['dislike']:
             self.dislike += number_increase
             effect = 'negative effect'
-            # indirekt influences
+            # indirect influences
             self.platonic_like -= INDIRECT_DECREASE
             self.romantic_love -= INDIRECT_DECREASE
-            # if dislike reaced a certain point, and is increased, like will get decrease more
+            # if dislike reached a certain point, and is increased, like will get decrease more
             if self.dislike > 24:
                 self.platonic_like -= INDIRECT_DECREASE
                 self.romantic_love -= INDIRECT_DECREASE
@@ -724,7 +403,7 @@ class Relationship(object):
         if action in INCREASE_HIGH[key]['comfortable']:
             self.comfortable += number_increase
             effect = 'positive effect'
-            # indirekt influences
+            # indirect influences
             self.dislike -= INDIRECT_DECREASE
             self.jealousy -= INDIRECT_DECREASE
             self.platonic_like += INDIRECT_INCREASE
@@ -735,10 +414,10 @@ class Relationship(object):
         if action in INCREASE_HIGH[key]['trust']:
             self.trust += number_increase
             effect = 'positive effect'
-            # indirekt influences
+            # indirect influences
             self.dislike -= INDIRECT_DECREASE
 
-        number_increase = DIRECT_INCREASE_LOW
+        number_increase = self.get_low_increase_value()
         if action in INCREASE_LOW[key]['romantic_love']:
             self.romantic_love += number_increase
             if effect == 'neutral effect':
@@ -751,7 +430,7 @@ class Relationship(object):
             self.dislike += number_increase
             if effect == 'neutral effect':
                 effect = 'small negative effect'
-            # if dislike reaced a certain point, and is increased, like will get decrease more
+            # if dislike reached a certain point, and is increased, like will get decrease more
             if self.dislike > 24:
                 self.platonic_like -= INDIRECT_DECREASE
                 self.romantic_love -= INDIRECT_DECREASE
@@ -797,7 +476,7 @@ class Relationship(object):
             self.jealousy -= number_decrease
             effect = 'positive effect'
 
-        number_decrease = DIRECT_DECREASE_LOW
+        number_decrease = self.get_low_decrease_value()
         if action in DECREASE_LOW[key]['romantic_love']:
             self.romantic_love -= number_decrease
             if effect == 'neutral effect':
@@ -827,10 +506,46 @@ class Relationship(object):
             if effect == 'neutral effect':
                 effect = 'small negative effect'
 
-        self.cut_boundries()
+        self.cut_boundaries()
         return effect
 
-    def cut_boundries(self):
+    def get_high_increase_value(self):
+        compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
+        if compatibility == None:
+            return DIRECT_INCREASE_HIGH
+        if compatibility:
+            return DIRECT_INCREASE_HIGH + COMPATIBILITY_WEIGHT
+        else:
+            return DIRECT_INCREASE_HIGH - COMPATIBILITY_WEIGHT
+
+    def get_high_decrease_value(self):
+        compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
+        if compatibility == None:
+            return DIRECT_DECREASE_HIGH
+        if compatibility:
+            return DIRECT_DECREASE_HIGH + COMPATIBILITY_WEIGHT
+        else:
+            return DIRECT_DECREASE_HIGH - COMPATIBILITY_WEIGHT
+
+    def get_low_increase_value(self):
+        compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
+        if compatibility == None:
+            return DIRECT_INCREASE_LOW
+        if compatibility:
+            return DIRECT_INCREASE_LOW + COMPATIBILITY_WEIGHT
+        else:
+            return DIRECT_INCREASE_LOW - COMPATIBILITY_WEIGHT
+
+    def get_low_decrease_value(self):
+        compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
+        if compatibility == None:
+            return DIRECT_DECREASE_LOW
+        if compatibility:
+            return DIRECT_DECREASE_LOW + COMPATIBILITY_WEIGHT
+        else:
+            return DIRECT_DECREASE_LOW - COMPATIBILITY_WEIGHT
+
+    def cut_boundaries(self):
         """Cut the stats of involved relationships."""
         upper_bound = 100
         lower_bound = 0
