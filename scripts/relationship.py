@@ -139,6 +139,7 @@ except:
 
 
 # weights of the stat change
+
 DIRECT_INCREASE_HIGH = 12
 DIRECT_DECREASE_HIGH = 9
 DIRECT_INCREASE_LOW = 7
