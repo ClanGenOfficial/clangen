@@ -75,7 +75,8 @@ class Clan(object):
                  medicine_cat=None,
                  biome='Forest',
                  world_seed=6616,
-                 camp_site=(20, 22)):
+                 camp_site=(20, 22),
+                 camp_bg=None):
         if name != "":
             self.name = name
             self.leader = leader
@@ -97,6 +98,7 @@ class Clan(object):
             self.biome = biome
             self.world_seed = world_seed
             self.camp_site = camp_site
+            self.camp_bg = camp_bg
 
     def create_clan(self):
         """ This function is only called once a new clan is created in the 'clan created' screen, not every time
@@ -202,7 +204,7 @@ class Clan(object):
         exit()
 
     def save_clan(self):
-        data = f'{self.name},{self.age},{self.biome},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]}' + '\n'
+        data = f'{self.name},{self.age},{self.biome},{self.camp_bg},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]}' + '\n'
         data = data + self.leader.ID + ',' + str(
             self.leader_lives) + ',' + str(
                 self.leader_predecessors) + ',' + '\n'
@@ -280,16 +282,17 @@ class Clan(object):
             instructor_info = sections[3]
             members = sections[4].split(',')
             other_clans = []
-        if len(general) == 6:
-            if general[3] == 'None':
-                general[3] = 0
+        if len(general) == 7:
+            if general[4] == 'None':
+                general[4] = 0
             game.clan = Clan(general[0],
                              cat_class.all_cats[leader_info[0]],
                              cat_class.all_cats.get(deputy_info[0], None),
                              cat_class.all_cats[med_cat_info[0]],
                              biome=general[2],
-                             world_seed=int(general[3]),
-                             camp_site=(int(general[4]), int(general[5])))
+                             camp_bg=general[3],
+                             world_seed=int(general[4]),
+                             camp_site=(int(general[5]), int(general[6])))
         elif len(general) == 3:
             game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]],
                              cat_class.all_cats.get(deputy_info[0], None),

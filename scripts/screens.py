@@ -484,13 +484,19 @@ class ClanScreen(Screens):
 
     def change_brightness(self):
         if game.settings['dark mode']:
-            if game.clan.biome == "Forest":
+            if game.clan.biome == "Forest" and game.clan.camp_bg == 'camp1':
                 self._extracted_from_change_brightness_3(
                     'resources/greenleafcamp_dark.png',
                     'resources/newleafcamp_dark.png',
                     'resources/leafbarecamp_dark.png',
                     'resources/leaffallcamp_dark.png')
-            elif game.clan.biome == "Plains":
+            elif game.clan.biome == "Forest" and game.clan.camp_bg == 'camp2':
+                self._extracted_from_change_brightness_3(
+                    'resources/greenleafcamp2_dark.png',
+                    'resources/newleafcamp2_dark.png',
+                    'resources/leafbarecamp2_dark.png',
+                    'resources/leaffallcamp2_dark.png')
+            elif game.clan.biome == "Plains" and game.clan.camp_bg == 'camp1':
                 try:
                     self._extracted_from_change_brightness_3(
                         'resources/greenleafcamp_plains_dark.png',
@@ -503,7 +509,20 @@ class ClanScreen(Screens):
                         'resources/newleafcamp_dark.png',
                         'resources/leafbarecamp_dark.png',
                         'resources/leaffallcamp_dark.png')
-            elif game.clan.biome == "Beach":
+            elif game.clan.biome == "Plains" and game.clan.camp_bg == 'camp2':
+                try:
+                    self._extracted_from_change_brightness_3(
+                        'resources/greenleafcamp_plains2_dark.png',
+                        'resources/newleafcamp_plains2_dark.png',
+                        'resources/leafbarecamp_plains2_dark.png',
+                        'resources/leaffallcamp_plains2_dark.png')
+                except:
+                    self._extracted_from_change_brightness_3(
+                        'resources/greenleafcamp_dark.png',
+                        'resources/newleafcamp_dark.png',
+                        'resources/leafbarecamp_dark.png',
+                        'resources/leaffallcamp_dark.png')
+            elif game.clan.biome == "Beach" and game.clan.camp_bg == 'camp1':
                 try:
                     self._extracted_from_change_brightness_3(
                         'resources/greenleafcamp_beach_dark.png',
@@ -516,13 +535,39 @@ class ClanScreen(Screens):
                         'resources/newleafcamp_dark.png',
                         'resources/leafbarecamp_dark.png',
                         'resources/leaffallcamp_dark.png')
-            elif game.clan.biome == "Mountainous":
+            elif game.clan.biome == "Beach" and game.clan.camp_bg == 'camp2':
+                try:
+                    self._extracted_from_change_brightness_3(
+                        'resources/greenleafcamp_beach2_dark.png',
+                        'resources/newleafcamp_beach2_dark.png',
+                        'resources/leafbarecamp_beach2_dark.png',
+                        'resources/leaffallcamp_beach2_dark.png')
+                except:
+                    self._extracted_from_change_brightness_3(
+                        'resources/greenleafcamp_dark.png',
+                        'resources/newleafcamp_dark.png',
+                        'resources/leafbarecamp_dark.png',
+                        'resources/leaffallcamp_dark.png')
+            elif game.clan.biome == "Mountainous" and game.clan.camp_bg == 'camp1':
                 try:
                     self._extracted_from_change_brightness_3(
                         'resources/greenleafcamp_mountain_dark.png',
                         'resources/newleafcamp_mountain_dark.png',
                         'resources/leafbarecamp_mountain_dark.png',
                         'resources/leaffallcamp_mountain_dark.png')
+                except:
+                    self._extracted_from_change_brightness_3(
+                        'resources/greenleafcamp_dark.png',
+                        'resources/newleafcamp_dark.png',
+                        'resources/leafbarecamp_dark.png',
+                        'resources/leaffallcamp_dark.png')
+            elif game.clan.biome == "Mountainous" and game.clan.camp_bg == 'camp2':
+                try:
+                    self._extracted_from_change_brightness_3(
+                        'resources/greenleafcamp_mountain2_dark.png',
+                        'resources/newleafcamp_mountain2_dark.png',
+                        'resources/leafbarecamp_mountain2_dark.png',
+                        'resources/leaffallcamp_mountain2_dark.png')
                 except:
                     self._extracted_from_change_brightness_3(
                         'resources/greenleafcamp_dark.png',
@@ -550,19 +595,45 @@ class ClanScreen(Screens):
                     'resources/leaffallcamp_dark.png')
 
         else:
-            if game.clan.biome == "Forest":
+            if game.clan.biome == "Forest" and game.clan.camp_bg == 'camp1':
                 self._extracted_from_change_brightness_3(
                     'resources/greenleafcamp.png',
                     'resources/newleafcamp.png',
                     'resources/leafbarecamp.png',
                     'resources/leaffallcamp.png')
-            elif game.clan.biome == "Plains":
+            elif game.clan.biome == "Forest" and game.clan.camp_bg == 'camp2':
                 self._extracted_from_change_brightness_3(
-                    'resources/greenleafcamp_plains.png',
-                    'resources/newleafcamp_plains.png',
-                    'resources/leafbarecamp_plains.png',
-                    'resources/leaffallcamp_plains.png')
-            elif game.clan.biome == "Beach":
+                    'resources/greenleafcamp2.png',
+                    'resources/newleafcamp2.png',
+                    'resources/leafbarecamp2.png',
+                    'resources/leaffallcamp2.png')
+            elif game.clan.biome == "Plains" and game.clan.camp_bg == 'camp1':
+                try:
+                    self._extracted_from_change_brightness_3(
+                        'resources/greenleafcamp_plains.png',
+                        'resources/newleafcamp_plains.png',
+                        'resources/leafbarecamp_plains.png',
+                        'resources/leaffallcamp_plains.png')
+                except:
+                    self._extracted_from_change_brightness_3(
+                        'resources/greenleafcamp.png',
+                        'resources/newleafcamp.png',
+                        'resources/leafbarecamp.png',
+                        'resources/leaffallcamp.png')
+            elif game.clan.biome == "Plains" and game.clan.camp_bg == 'camp2':
+                try:
+                    self._extracted_from_change_brightness_3(
+                        'resources/greenleafcamp_plains2.png',
+                        'resources/newleafcamp_plains2.png',
+                        'resources/leafbarecamp_plains2.png',
+                        'resources/leaffallcamp_plains2.png')
+                except:
+                    self._extracted_from_change_brightness_3(
+                        'resources/greenleafcamp.png',
+                        'resources/newleafcamp.png',
+                        'resources/leafbarecamp.png',
+                        'resources/leaffallcamp.png')
+            elif game.clan.biome == "Beach" and game.clan.camp_bg == 'camp1':
                 try:
                     self._extracted_from_change_brightness_3(
                         'resources/greenleafcamp_beach.png',
@@ -575,13 +646,39 @@ class ClanScreen(Screens):
                         'resources/newleafcamp.png',
                         'resources/leafbarecamp.png',
                         'resources/leaffallcamp.png')
-            elif game.clan.biome == "Mountainous":
+            elif game.clan.biome == "Beach" and game.clan.camp_bg == 'camp2':
+                try:
+                    self._extracted_from_change_brightness_3(
+                        'resources/greenleafcamp_beach2.png',
+                        'resources/newleafcamp_beach2.png',
+                        'resources/leafbarecamp_beach2.png',
+                        'resources/leaffallcamp_beach2.png')
+                except:
+                    self._extracted_from_change_brightness_3(
+                        'resources/greenleafcamp.png',
+                        'resources/newleafcamp.png',
+                        'resources/leafbarecamp.png',
+                        'resources/leaffallcamp.png')
+            elif game.clan.biome == "Mountainous" and game.clan.camp_bg == 'camp1':
                 try:
                     self._extracted_from_change_brightness_3(
                         'resources/greenleafcamp_mountain.png',
                         'resources/newleafcamp_mountain.png',
                         'resources/leafbarecamp_mountain.png',
                         'resources/leaffallcamp_mountain.png')
+                except:
+                    self._extracted_from_change_brightness_3(
+                        'resources/greenleafcamp.png',
+                        'resources/newleafcamp.png',
+                        'resources/leafbarecamp.png',
+                        'resources/leaffallcamp.png')
+            elif game.clan.biome == "Mountainous" and game.clan.camp_bg == 'camp2':
+                try:
+                    self._extracted_from_change_brightness_3(
+                        'resources/greenleafcamp_mountain2.png',
+                        'resources/newleafcamp_mountain2.png',
+                        'resources/leafbarecamp_mountain2.png',
+                        'resources/leaffallcamp_mountain2.png')
                 except:
                     self._extracted_from_change_brightness_3(
                         'resources/greenleafcamp.png',
@@ -1044,6 +1141,8 @@ class MakeClanScreen(Screens):
         else:
             buttons.draw_button(('center', 350), text='Done', available=False)
 
+
+
     def sixth_phase(self):
         if mapavailable:
             for y in range(44):
@@ -1235,31 +1334,180 @@ class MakeClanScreen(Screens):
             else:
                 buttons.draw_button((-16, 300), text='Done', available=False)
         else:
-            buttons.draw_button(('center', 350),
-                                text='Done',
-                                cur_screen='clan created screen')
 
             buttons.draw_button((250, 50),
                                 text='Forest',
                                 biome='Forest',
+                                camp_bg='camp1',
                                 available=game.switches['biome'] != 'Forest',
                                 hotkey=[1])
-            buttons.draw_button(
-                (325, 50),
-                text='Mountainous',
-                biome='Mountainous',
-                available=game.switches['biome'] != 'Mountainous',
-                hotkey=[2])
+            buttons.draw_button((325, 50),
+                                text='Mountainous',
+                                biome='Mountainous',
+                                camp_bg='camp1',
+                                available=game.switches['biome'] != 'Mountainous',
+                                hotkey=[2])
             buttons.draw_button((450, 50),
                                 text='Plains',
                                 biome='Plains',
+                                camp_bg='camp1',
                                 available=game.switches['biome'] != 'Plains',
                                 hotkey=[3])
             buttons.draw_button((525, 50),
                                 text='Beach',
                                 biome='Beach',
+                                camp_bg='camp1',
                                 available=game.switches['biome'] != 'Beach',
                                 hotkey=[4])
+
+            # CHOOSING CAMP ART
+            self.camp_art()
+            if game.settings['backgrounds']:
+                buttons.draw_button(('center', 630),
+                                    text='Done',
+                                    available=game.switches['camp_bg'] is not None,
+                                    cur_screen='clan created screen')
+
+                if game.switches['biome'] == 'Forest':
+                    buttons.draw_button((100, 180),
+                                        text='Classic',
+                                        camp_bg='camp1',
+                                        available=game.switches['camp_bg'] != 'camp1')
+                    buttons.draw_button((100, 230),
+                                        text='Gully',
+                                        camp_bg='camp2',
+                                        available=game.switches['camp_bg'] != 'camp2')
+
+                    if game.switches['camp_bg'] == 'camp1':
+                        screen.blit(self.camp1, (250, 150))
+                    elif game.switches['camp_bg'] == 'camp2':
+                        screen.blit(self.camp2, (250, 150))
+
+                elif game.switches['biome'] == 'Mountainous':
+                    buttons.draw_button((100, 180),
+                                        text='Cliff',
+                                        camp_bg='camp1',
+                                        available=game.switches['camp_bg'] != 'camp1')
+
+                    if game.switches['camp_bg'] == 'camp1':
+                        screen.blit(self.camp1, (250, 150))
+                    elif game.switches['camp_bg'] == 'camp2':
+                        screen.blit(self.camp2, (250, 150))
+
+                elif game.switches['biome'] == 'Plains':
+                    buttons.draw_button((100, 180),
+                                        text='Grasslands',
+                                        camp_bg='camp1',
+                                        available=game.switches['camp_bg'] != 'camp1')
+                    buttons.draw_button((100, 230),
+                                        text='Tunnels',
+                                        camp_bg='camp2',
+                                        available=game.switches['camp_bg'] != 'camp2')
+
+                    if game.switches['camp_bg'] == 'camp1':
+                        screen.blit(self.camp1, (250, 150))
+                    elif game.switches['camp_bg'] == 'camp2':
+                        screen.blit(self.camp2, (250, 150))
+
+                elif game.switches['biome'] == 'Beach':
+                    buttons.draw_button((100, 180),
+                                        text='Tidepools',
+                                        camp_bg='camp1',
+                                        available=game.switches['camp_bg'] != 'camp1')
+                    if game.switches['camp_bg'] == 'camp1':
+                        screen.blit(self.camp1, (250, 150))
+                    elif game.switches['camp_bg'] == 'camp2':
+                        screen.blit(self.camp2, (250, 150))
+
+
+            else:
+                buttons.draw_button(('center', 600),
+                                    text='Done',
+                                    available=game.switches['biome'] is not None,
+                                    cur_screen='clan created screen')
+
+    def camp_art(self):
+        if game.settings['dark mode']:
+            if game.switches['biome'] == "Forest":
+                self.change_camp_art(
+                    'resources/greenleafcamp_dark.png',
+                    'resources/greenleafcamp2_dark.png')
+            elif game.switches['biome'] == "Plains":
+                try:
+                    self.change_camp_art(
+                        'resources/greenleafcamp_plains_dark.png',
+                        'resources/greenleafcamp_plains2_dark.png')
+                except:
+                    self.change_camp_art(
+                        'resources/greenleafcamp_plains_dark.png',
+                        'resources/greenleafcamp_plains_dark.png')
+            elif game.switches['biome'] == "Beach":
+                try:
+                    self.change_camp_art(
+                        'resources/greenleafcamp_beach_dark.png',
+                        'resources/greenleafcamp_beach2_dark.png')
+                except:
+                    self.change_camp_art(
+                        'resources/greenleafcamp_beach_dark.png',
+                        'resources/greenleafcamp_beach_dark.png')
+            elif game.switches['biome'] == "Mountainous":
+                try:
+                    self.change_camp_art(
+                        'resources/greenleafcamp_mountain_dark.png',
+                        'resources/greenleafcamp_mountain2_dark.png')
+                except:
+                    self.change_camp_art(
+                        'resources/greenleafcamp_mountain_dark.png',
+                        'resources/greenleafcamp_mountain_dark.png')
+
+            else:
+                self.change_camp_art(
+                    'resources/greenleafcamp_dark.png',
+                    'resources/greenleafcamp2_dark.png')
+
+        else:
+            if game.switches['biome'] == "Forest":
+                self.change_camp_art(
+                    'resources/greenleafcamp.png',
+                    'resources/greenleafcamp2.png')
+            elif game.switches['biome'] == "Plains":
+                try:
+                    self.change_camp_art(
+                        'resources/greenleafcamp_plains.png',
+                        'resources/greenleafcamp_plains2.png')
+                except:
+                    self.change_camp_art(
+                        'resources/greenleafcamp_plains.png',
+                        'resources/greenleafcamp_plains.png')
+            elif game.switches['biome'] == "Beach":
+                try:
+                    self.change_camp_art(
+                        'resources/greenleafcamp_beach.png',
+                        'resources/greenleafcamp_beach.png')
+                except:
+                    self.change_camp_art(
+                        'resources/greenleafcamp_beach.png',
+                        'resources/greenleafcamp_beach.png')
+            elif game.switches['biome'] == "Mountainous":
+                try:
+                    self.change_camp_art(
+                        'resources/greenleafcamp_mountain.png',
+                        'resources/greenleafcamp_mountain2.png')
+                except:
+                    self.change_camp_art(
+                        'resources/greenleafcamp_mountain.png',
+                        'resources/greenleafcamp_mountain.png')
+
+            else:
+                self.change_camp_art(
+                    'resources/greenleafcamp.png',
+                    'resources/greenleafcamp2.png')
+
+    def change_camp_art(self, arg0, arg1):
+        self.camp1 = pygame.transform.scale(
+            pygame.image.load(arg0).convert(), (450, 400))
+        self.camp2 = pygame.transform.scale(
+            pygame.image.load(arg1).convert(), (450, 400))
 
     def on_use(self):
         if len(game.switches['clan_name']) == 0:
@@ -1313,7 +1561,7 @@ class ClanCreatedScreen(Screens):
                          game.choose_cats[game.switches['deputy']],
                          game.choose_cats[game.switches['medicine_cat']],
                          game.switches['biome'], game.switches['world_seed'],
-                         game.switches['camp_site'])
+                         game.switches['camp_site'], game.switches['camp_bg'])
         game.clan.create_clan()
         if mapavailable:
             territory_claim = str(game.clan.name) + 'Clan Territory'
@@ -1833,8 +2081,7 @@ class ProfileScreen(Screens):
                             text="See Family",
                             cur_screen='see kits screen')
 
-        if not the_cat.dead:
-            buttons.draw_button(('center', 430),
+        buttons.draw_button(('center', 430),
                             text="See Relationships",
                             cur_screen='relationship screen')
 
@@ -3210,12 +3457,12 @@ class OptionsScreen(Screens):
         #                     text='Family Tree',
         #                     hotkey=[button_count + 1])
         # button_count += 1
-        if not the_cat.dead:
-            buttons.draw_button((x_value, y_value + button_count * y_change),
+
+        buttons.draw_button((x_value, y_value + button_count * y_change),
                             text='See Relationships',
                             cur_screen='relationship screen',
                             hotkey=[button_count + 1])
-            button_count += 1
+        button_count += 1
 
         if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
                            ] and not the_cat.dead:
@@ -3361,7 +3608,7 @@ class OptionsScreen(Screens):
                                 hotkey=[button_count + 1])
             button_count += 1
             buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Change to Nonbinary/Specify Gender',
+                                text='Change to Nonbinary',
                                 cat_value=game.switches['cat'],
                                 hotkey=[button_count + 1])
             button_count += 1
@@ -3372,7 +3619,7 @@ class OptionsScreen(Screens):
                                 hotkey=[button_count + 1])
             button_count += 1
             buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Change to Nonbinary/Specify Gender',
+                                text='Change to Nonbinary',
                                 cat_value=game.switches['cat'],
                                 hotkey=[button_count + 1])
             button_count += 1
@@ -3384,7 +3631,7 @@ class OptionsScreen(Screens):
             button_count += 1
         if the_cat.genderalign != "female" and the_cat.genderalign != "male":
             buttons.draw_button((x_value, y_value + button_count * y_change),
-                                text='Change to Cisgender',
+                                text='Change Back to Cisgender',
                                 cat_value=game.switches['cat'],
                                 hotkey=[button_count + 1])
             button_count += 1
