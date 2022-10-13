@@ -518,10 +518,10 @@ class ClanScreen(Screens):
                         'resources/leaffallcamp_plains2_dark.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_dark.png',
-                        'resources/newleafcamp_dark.png',
-                        'resources/leafbarecamp_dark.png',
-                        'resources/leaffallcamp_dark.png')
+                        'resources/greenleafcamp_plains_dark.png',
+                        'resources/newleafcamp_plains_dark.png',
+                        'resources/leafbarecamp_plains_dark.png',
+                        'resources/leaffallcamp_plains_dark.png')
             elif game.clan.biome == "Beach" and game.clan.camp_bg == 'camp1':
                 try:
                     self._extracted_from_change_brightness_3(
@@ -544,10 +544,10 @@ class ClanScreen(Screens):
                         'resources/leaffallcamp_beach2_dark.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_dark.png',
-                        'resources/newleafcamp_dark.png',
-                        'resources/leafbarecamp_dark.png',
-                        'resources/leaffallcamp_dark.png')
+                        'resources/greenleafcamp_beach_dark.png',
+                        'resources/newleafcamp_beach_dark.png',
+                        'resources/leafbarecamp_beach_dark.png',
+                        'resources/leaffallcamp_beach_dark.png')
             elif game.clan.biome == "Mountainous" and game.clan.camp_bg == 'camp1':
                 try:
                     self._extracted_from_change_brightness_3(
@@ -570,10 +570,10 @@ class ClanScreen(Screens):
                         'resources/leaffallcamp_mountain2_dark.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_dark.png',
-                        'resources/newleafcamp_dark.png',
-                        'resources/leafbarecamp_dark.png',
-                        'resources/leaffallcamp_dark.png')
+                        'resources/greenleafcamp_mountain_dark.png',
+                        'resources/newleafcamp_mountain_dark.png',
+                        'resources/leafbarecamp_mountain_dark.png',
+                        'resources/leaffallcamp_mountain_dark.png')
             elif game.clan.biome == "Desert":
                 try:
                     self._extracted_from_change_brightness_3(
@@ -629,10 +629,10 @@ class ClanScreen(Screens):
                         'resources/leaffallcamp_plains2.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp.png',
-                        'resources/newleafcamp.png',
-                        'resources/leafbarecamp.png',
-                        'resources/leaffallcamp.png')
+                        'resources/greenleafcamp_plains.png',
+                        'resources/newleafcamp_plains.png',
+                        'resources/leafbarecamp_plains.png',
+                        'resources/leaffallcamp_plains.png')
             elif game.clan.biome == "Beach" and game.clan.camp_bg == 'camp1':
                 try:
                     self._extracted_from_change_brightness_3(
@@ -655,10 +655,10 @@ class ClanScreen(Screens):
                         'resources/leaffallcamp_beach2.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp.png',
-                        'resources/newleafcamp.png',
-                        'resources/leafbarecamp.png',
-                        'resources/leaffallcamp.png')
+                        'resources/greenleafcamp_beach.png',
+                        'resources/newleafcamp_beach.png',
+                        'resources/leafbarecamp_beach.png',
+                        'resources/leaffallcamp_beach.png')
             elif game.clan.biome == "Mountainous" and game.clan.camp_bg == 'camp1':
                 try:
                     self._extracted_from_change_brightness_3(
@@ -681,10 +681,10 @@ class ClanScreen(Screens):
                         'resources/leaffallcamp_mountain2.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp.png',
-                        'resources/newleafcamp.png',
-                        'resources/leafbarecamp.png',
-                        'resources/leaffallcamp.png')
+                        'resources/greenleafcamp_mountain.png',
+                        'resources/newleafcamp_mountain.png',
+                        'resources/leafbarecamp_mountain.png',
+                        'resources/leaffallcamp_mountain.png')
             elif game.clan.biome == "Desert":
                 try:
                     self._extracted_from_change_brightness_3(
@@ -1363,6 +1363,7 @@ class MakeClanScreen(Screens):
             # CHOOSING CAMP ART
             self.camp_art()
             if game.settings['backgrounds']:
+
                 buttons.draw_button(('center', 630),
                                     text='Done',
                                     available=game.switches['camp_bg'] is not None,
@@ -1419,6 +1420,17 @@ class MakeClanScreen(Screens):
                     elif game.switches['camp_bg'] == 'camp2':
                         screen.blit(self.camp2, (250, 150))
 
+                # CHOOSE RANDOM CAMP
+                random_biome_options = ['Forest', 'Mountainous', 'Plains', 'Beach']
+                random_biome = choice(random_biome_options)
+                random_camp_options = ['camp1', 'camp2']
+                random_camp = choice(random_camp_options)
+                buttons.draw_button(('center', 580),
+                                    text='Choose Random Camp Background',
+                                    biome=random_biome,
+                                    camp_bg=random_camp,
+                                    available=True,
+                                    cur_screen='clan created screen')
 
             else:
                 buttons.draw_button(('center', 600),
