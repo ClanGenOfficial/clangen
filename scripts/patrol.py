@@ -847,7 +847,8 @@ class Patrol(object):
         # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
         chance = self.patrol_event.chance_of_success + int(
             self.patrol_total_experience / 10)
-        chance = min(chance, 80)
+        if self.patrol_event.patrol_id != 100:
+            chance = min(chance, 80)
         if self.patrol_event.win_skills is not None:
             if set(self.patrol_skills).isdisjoint(
                     self.patrol_event.win_skills):
@@ -1068,7 +1069,7 @@ class Patrol(object):
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
             if randint(0, 2) == 0:  # chance to add collar
-                kit.specialty2 = choice(scars3)
+                kit.accessory = choice(collars)
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''

@@ -113,6 +113,7 @@ class Events(object):
         self.gain_accessories(cat)
         self.gain_scars(cat)
         self.handle_deaths(cat)
+        self.coming_out(cat)
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0 and randint(1, 5) == 1:
@@ -242,7 +243,7 @@ class Events(object):
         while cat == other_cat or other_cat.dead or other_cat.exiled:
             other_cat = choice(list(cat_class.all_cats.values()))
             countdown-=1
-            if countdown == 0:
+            if countdown <= 0:
                 return
         other_name = str(other_cat.name)
         acc_text = []
@@ -317,7 +318,7 @@ class Events(object):
         while cat == other_cat or other_cat.dead or other_cat.exiled:
             other_cat = choice(list(cat_class.all_cats.values()))
             countdown-=1
-            if countdown == 0:
+            if countdown <= 0:
                 return
         other_name = str(other_cat.name)
         scar_text = []
@@ -785,7 +786,7 @@ class Events(object):
     def _extracted_from_invite_new_cats_59(self, loner):
         loner.skill = 'formerly a kittypet'
         if choice([1, 2]) == 1:
-            loner.specialty2 = choice(scars3)
+            loner.accessory = choice(collars)
         game.clan.add_cat(loner)
         self.check_age(loner)
 
@@ -852,7 +853,7 @@ class Events(object):
         while cat == other_cat or other_cat.dead or other_cat.exiled:
             other_cat = choice(list(cat_class.all_cats.values()))
             countdown-=1
-            if countdown == 0:
+            if countdown <= 0:
                 return
         name = str(cat.name)
         other_name = str(other_cat.name)
@@ -926,7 +927,8 @@ class Events(object):
                 f'{name} tries to convince {other_name} to run away together'
             ])
 
-        game.cur_events_list.append(choice(interactions))
+        if len(interactions) > 0:
+            game.cur_events_list.append(choice(interactions))
 
     def handle_deaths(self, cat):
         clan_has_kits = any(
@@ -941,7 +943,7 @@ class Events(object):
             while cat == other_cat or other_cat.dead or other_cat.status == 'leader' or other_cat.exiled:
                 other_cat = choice(list(cat_class.all_cats.values()))
                 countdown-=1
-                if countdown == 0:
+                if countdown <= 0:
                     return
             if cat.status == 'leader':
                 other_name = str(other_cat.name)
@@ -1239,7 +1241,7 @@ class Events(object):
             while cat == other_cat or other_cat.dead or other_cat.exiled:
                 other_cat = choice(list(cat_class.all_cats.values()))
                 countdown-=1
-                if countdown == 0:
+                if countdown <= 0:
                     return
             other_name = str(other_cat.name)
             cause_of_death = [
@@ -1280,7 +1282,7 @@ class Events(object):
             while cat == other_cat or other_cat.dead or other_cat.exiled:
                 other_cat = choice(list(cat_class.all_cats.values()))
                 countdown-=1
-                if countdown == 0:
+                if countdown <= 0:
                     return
             other_name = str(other_cat.name)
             if cat.trait in [
@@ -1455,5 +1457,89 @@ class Events(object):
             cat.age = 'senior adult'
         else:
             cat.age = 'elder'
+
+    def coming_out(self, cat):
+        transing_chance = randint(0, 500)
+        hit = False
+        if cat.genderalign == cat.gender:
+            if cat.moons < 6:
+                return
+            elif cat.moons == 6:
+                transing_chance = transing_chance - 200
+                if transing_chance == 1 and cat.gender == "male":
+                    cat.genderalign = "trans female"
+                    hit = True
+                elif transing_chance == 1 and cat.gender == "female":
+                    cat.genderalign = "trans male"
+                    hit = True
+                elif transing_chance == 2:
+                    cat.genderalign = "nonbinary"
+                    hit = True
+            elif cat.moons == 12:
+                transing_chance = transing_chance - 100
+                if transing_chance == 1 and cat.gender == "male":
+                    cat.genderalign = "trans female"
+                    hit = True
+                elif transing_chance == 1 and cat.gender == "female":
+                    cat.genderalign = "trans male"
+                    hit = True
+                elif transing_chance == 2:
+                    cat.genderalign = "nonbinary"
+                    hit = True
+            elif cat.age == 'young adult':
+                transing_chance = transing_chance
+                if transing_chance == 1 and cat.gender == "male":
+                    cat.genderalign = "trans female"
+                    hit = True
+                elif transing_chance == 1 and cat.gender == "female":
+                    cat.genderalign = "trans male"
+                    hit = True
+                elif transing_chance == 2:
+                    cat.genderalign = "nonbinary"
+                    hit = True
+            elif cat.age == 'adult':
+                transing_chance = transing_chance + 100
+                if transing_chance == 1 and cat.gender == "male":
+                    cat.genderalign = "trans female"
+                    hit = True
+                elif transing_chance == 1 and cat.gender == "female":
+                    cat.genderalign = "trans male"
+                    hit = True
+                elif transing_chance == 2:
+                    cat.genderalign = "nonbinary"
+                    hit = True
+            elif cat.age == 'senior adult':
+                transing_chance = transing_chance = 300
+                if transing_chance == 1 and cat.gender == "male":
+                    cat.genderalign = "trans female"
+                    hit = True
+                elif transing_chance == 1 and cat.gender == "female":
+                    cat.genderalign = "trans male"
+                    hit = True
+                elif transing_chance == 2:
+                    cat.genderalign = "nonbinary"
+                    hit = True
+            elif cat.age == 'elder':
+                transing_chance = transing_chance + 450
+                if transing_chance == 1 and cat.gender == "male":
+                    cat.genderalign = "trans female"
+                    hit = True
+                elif transing_chance == 1 and cat.gender == "female":
+                    cat.genderalign = "trans male"
+                    hit = True
+                elif transing_chance == 2:
+                    cat.genderalign = "nonbinary"
+                    hit = True
+            if hit == True:
+                if cat.gender == 'male':
+                    gender = 'tom'
+                else:
+                    gender = 'she-cat'
+                game.cur_events_list.append(
+                    str(cat.name) + " has realized that " + str(gender) + " doesn't describe how they feel anymore")        
+        
+        
+
+
 
 events_class = Events()

@@ -1,4 +1,6 @@
 from random import choice, randint
+
+from scripts.utility import get_personality_compatibility
 from .game_essentials import *
 import copy
 import ujson
@@ -26,35 +28,35 @@ try:
     with open(f"{resource_directory}not_age_specific.json", 'r') as read_file:
         NOT_AGE_SPECIFIC = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 1 jsonfile of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 1 json file of relationship_events!'
 
 KITTEN_TO_OTHER = None
 try:
     with open(f"{resource_directory}kitten_to_other.json", 'r') as read_file:
         KITTEN_TO_OTHER = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 2 jsonfile of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 2 json file of relationship_events!'
 
 APPRENTICE_TO_OTHER = None
 try:
     with open(f"{resource_directory}apprentice_to_other.json", 'r') as read_file:
         APPRENTICE_TO_OTHER = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 3 jsonfile of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 3 json file of relationship_events!'
 
 WARRIOR_TO_OTHER = None
 try:
     with open(f"{resource_directory}warrior_to_other.json", 'r') as read_file:
         WARRIOR_TO_OTHER = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 4 jsonfile of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 4 json file of relationship_events!'
 
 ELDER_TO_OTHER = None
 try:
     with open(f"{resource_directory}elder_to_other.json", 'r') as read_file:
         ELDER_TO_OTHER = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 5 jsonfile of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 5 json file of relationship_events!'
 
 
 LOVE = None
@@ -62,7 +64,7 @@ try:
     with open(f"{resource_directory}love.json", 'r') as read_file:
         LOVE = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 6 jsonfile of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 6 json file of relationship_events!'
 
 
 LEADER = None
@@ -70,21 +72,21 @@ try:
     with open(f"{resource_directory}leader.json", 'r') as read_file:
         LEADER = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 7 jsonfile of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 7 json file of relationship_events!'
 
 DEPUTY = None
 try:
     with open(f"{resource_directory}deputy.json", 'r') as read_file:
         DEPUTY = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 8 jsonfile of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 8 json file of relationship_events!'
 
 MEDICINE = None
 try:
     with open(f"{resource_directory}medicine.json", 'r') as read_file:
         MEDICINE = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 9 jsonfile of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 9 json file of relationship_events!'
 
 
 SPECIAL_CHARACTER = None
@@ -92,7 +94,7 @@ try:
     with open(f"{resource_directory}special_character.json", 'r') as read_file:
         SPECIAL_CHARACTER = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 10 jsonfile of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 10 json file of relationship_events!'
 
 # How increasing one state influences another directly: (an increase of one state doesn't trigger a chain reaction)
 # increase romantic_love -> decreases: dislike | increases: like, comfortable
@@ -111,21 +113,21 @@ try:
     with open(f"{resource_directory}1_INCREASE_HIGH.json", 'r') as read_file:
         INCREASE_HIGH = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 11 jsonfile of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 11 json file of relationship_events!'
 
 INCREASE_LOW = None
 try:
     with open(f"{resource_directory}1_INCREASE_LOW.json", 'r') as read_file:
         INCREASE_LOW = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 12 jsonfile of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 12 json file of relationship_events!'
 
 DECREASE_HIGH  = None
 try:
     with open(f"{resource_directory}1_DECREASE_HIGH.json", 'r') as read_file:
         DECREASE_HIGH = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 13 jsonfile of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 13 json file of relationship_events!'
 
 
 DECREASE_LOW = None
@@ -133,10 +135,11 @@ try:
     with open(f"{resource_directory}1_DECREASE_LOW.json", 'r') as read_file:
         DECREASE_LOW = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 14 jsonfile of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 14 json file of relationship_events!'
 
 
-# weigths of the stat change
+# weights of the stat change
+
 DIRECT_INCREASE_HIGH = 12
 DIRECT_DECREASE_HIGH = 9
 DIRECT_INCREASE_LOW = 7
@@ -144,15 +147,18 @@ DIRECT_DECREASE_LOW = 4
 INDIRECT_INCREASE = 6
 INDIRECT_DECREASE = 3
 
+# add/decrease weight of personality based compatibility
+COMPATIBILITY_WEIGHT = 3
+
 class Relationship(object):
     def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0, admiration=0, comfortable=0, jealousy=0, trust=0, log = []) -> None:        
         self.cat_from = cat_from
         self.cat_to = cat_to
         self.mates = mates
         self.family = family
-        self.opposit_relationship = None #link to oppositting relationship will be created later
+        self.opposite_relationship = None #link to opposite relationship will be created later
         self.current_action_str = ''
-        self.triggerd_event = False
+        self.triggered_event = False
         self.log = log
 
         if self.cat_from.is_parent(self.cat_to) or self.cat_to.is_parent(self.cat_from):
@@ -184,15 +190,15 @@ class Relationship(object):
         self.trust = trust
 
     def link_relationship(self):
-        """Add the other relationship object to this easly access and change the other side."""
+        """Add the other relationship object to this easily access and change the other side."""
         opposite_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_to.relationships))
         if opposite_relationship is not None and len(opposite_relationship) > 0:
-            self.opposit_relationship = opposite_relationship[0]
+            self.opposite_relationship = opposite_relationship[0]
         else:
             # create relationship
             relation = Relationship(self.cat_to,self.cat_from)
             self.cat_to.relationships.append(relation)
-            self.opposit_relationship =relation
+            self.opposite_relationship =relation
             
     def start_action(self):
         """This function checks current state of relationship and decides which actions can happen."""
@@ -200,7 +206,7 @@ class Relationship(object):
         if self.cat_from.mate == self.cat_to.ID:
             self.mates = True
 
-        if self.opposit_relationship is None:
+        if self.opposite_relationship is None:
             self.link_relationship()
 
         # quick fix for exiled cat relationships
@@ -224,13 +230,13 @@ class Relationship(object):
             return
 
         # get action possibilities
-        action_possibilies = self.get_action_possibilities()
+        action_possibilities = self.get_action_possibilities()
 
         # check if the action is relevant (action of characters include age in the replacement string)
         action_relevant = False
         action = None
         while not action_relevant:
-            action = choice(action_possibilies)
+            action = choice(action_possibilities)
             relevant_ages = action[action.find("(")+1:action.find(")")]
             relevant_ages = relevant_ages.split(',')
             relevant_ages = [age.strip() for age in relevant_ages]
@@ -242,28 +248,28 @@ class Relationship(object):
                     
         # change the stats of the relationships
         self_relation_effect = self.affect_relationship(action)
-        other_relation_effect = self.opposit_relationship.affect_relationship(action, other=True)
+        other_relation_effect = self.opposite_relationship.affect_relationship(action, other=True)
 
         # broadcast action
         string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
         self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
 
-        actionstring_all = f"{str(self.cat_from.name)} - {self.current_action_str} "
+        action_string_all = f"{str(self.cat_from.name)} - {self.current_action_str} "
         if self_relation_effect == 'neutral effect':
             self_relation_effect = other_relation_effect
         effect_string =  f"({self_relation_effect})"
-        both = actionstring_all+effect_string
+        both = action_string_all+effect_string
         self.log.append(both)
         if len(both) < 100:
             game.relation_events_list.append(both)
         else:
-            game.relation_events_list.append(actionstring_all)
+            game.relation_events_list.append(action_string_all)
             game.relation_events_list.append(effect_string)
 
     def get_action_possibilities(self):
         """Creates a list of possibles actions of this relationship"""
-        # check if opposit_relationship is here, otherwise creates it       
-        action_possibilies = copy.deepcopy(NOT_AGE_SPECIFIC['neutral'])
+        # check if opposite_relationship is here, otherwise creates it       
+        action_possibilities = copy.deepcopy(NOT_AGE_SPECIFIC['neutral'])
 
         key = self.cat_to.status
         if key == "senior warrior" or key == "deputy" or\
@@ -277,82 +283,82 @@ class Relationship(object):
         # check how the relationship is
         relation_keys = ['neutral']
         if self.dislike > 20 or self.jealousy > 20:
-            action_possibilies += NOT_AGE_SPECIFIC['unfriendly']
+            action_possibilities += NOT_AGE_SPECIFIC['unfriendly']
             relation_keys.append('unfriendly')
-            # increase the chance for unfriendly behaviour
+            # increase the chance for unfriendly behavior
             if self.dislike > 30:
                 relation_keys.append('unfriendly')
         if self.platonic_like > 40 or self.comfortable > 30:
-            action_possibilies += NOT_AGE_SPECIFIC['friendly']
+            action_possibilities += NOT_AGE_SPECIFIC['friendly']
             relation_keys.append('friendly')
         if self.platonic_like > 50 and self.comfortable > 40 and self.trust > 30:
-            action_possibilies += NOT_AGE_SPECIFIC['close']
+            action_possibilities += NOT_AGE_SPECIFIC['close']
             relation_keys.append('close')
 
-        # add the interactions to the posssible ones
+        # add the interactions to the possible ones
         if self.cat_from.status == "kitten":
             for relation_key in relation_keys:
-                action_possibilies += KITTEN_TO_OTHER[key][relation_key]
+                action_possibilities += KITTEN_TO_OTHER[key][relation_key]
         if self.cat_from.status == "apprentice":
             for relation_key in relation_keys:
-                action_possibilies += APPRENTICE_TO_OTHER[key][relation_key]
+                action_possibilities += APPRENTICE_TO_OTHER[key][relation_key]
         if (self.cat_from.status == "warrior" or self.cat_from.status == "senior warrior"):
             for relation_key in relation_keys:
-                action_possibilies += WARRIOR_TO_OTHER[key][relation_key]
+                action_possibilities += WARRIOR_TO_OTHER[key][relation_key]
         if self.cat_from.status == "elder":
             for relation_key in relation_keys:
-                action_possibilies += ELDER_TO_OTHER[key][relation_key]
+                action_possibilities += ELDER_TO_OTHER[key][relation_key]
 
         # STATUS INTERACTIONS
         if self.cat_from.age != 'kitten' and self.cat_to.age != 'kitten':
             if self.cat_from.status == 'leader':
                 for relation_key in relation_keys:
-                    action_possibilies += LEADER['from'][relation_key]
+                    action_possibilities += LEADER['from'][relation_key]
             if self.cat_to.status == 'leader':
                 for relation_key in relation_keys:
-                    action_possibilies += LEADER['to'][relation_key]
+                    action_possibilities += LEADER['to'][relation_key]
 
             if self.cat_from.status == 'deputy':
                 for relation_key in relation_keys:
-                    action_possibilies += DEPUTY['from'][relation_key]
+                    action_possibilities += DEPUTY['from'][relation_key]
             if self.cat_to.status == 'deputy':
                 for relation_key in relation_keys:
-                    action_possibilies += DEPUTY['to'][relation_key]
+                    action_possibilities += DEPUTY['to'][relation_key]
 
             if self.cat_from.status == 'medicine cat':
                 for relation_key in relation_keys:
-                    action_possibilies += MEDICINE['from'][relation_key]
+                    action_possibilities += MEDICINE['from'][relation_key]
             if self.cat_to.status == 'medicine cat':
                 for relation_key in relation_keys:
-                    action_possibilies += MEDICINE['to'][relation_key]
+                    action_possibilities += MEDICINE['to'][relation_key]
 
         # CHARACTERISTIC INTERACTION
         character_keys = SPECIAL_CHARACTER.keys()
         if self.cat_from.trait in character_keys:
-            action_possibilies += SPECIAL_CHARACTER[self.cat_from.trait]
+            action_possibilities += SPECIAL_CHARACTER[self.cat_from.trait]
 
         # LOVE
         if not self.cat_from.is_potential_mate(self.cat_to, for_love_interest = True):
-            return action_possibilies
+            return action_possibilities
 
         # chance to fall in love with some the character is not close to:
         love_p = randint(0,30)
         if self.platonic_like > 30 or love_p == 1 or self.romantic_love > 5:
-            # increase the chance of an love event for two unmated cats
-            action_possibilies = action_possibilies + LOVE['love_interest_only']
+            # increase the chance of an love event for two un-mated cats
+            action_possibilities = action_possibilities + LOVE['love_interest_only']
             if self.cat_from.mate == None and self.cat_to.mate == None:
-                action_possibilies = action_possibilies + LOVE['love_interest_only']
+                action_possibilities = action_possibilities + LOVE['love_interest_only']
 
-        if self.opposit_relationship.romantic_love > 20:
-            action_possibilies = action_possibilies + LOVE['love_interest_only']
+        if self.opposite_relationship.romantic_love > 20:
+            action_possibilities = action_possibilities + LOVE['love_interest_only']
 
-        if self.romantic_love > 25 and self.opposit_relationship.romantic_love > 15:
-            action_possibilies = action_possibilies + LOVE['love_interest']
+        if self.romantic_love > 25 and self.opposite_relationship.romantic_love > 15:
+            action_possibilities = action_possibilities + LOVE['love_interest']
 
-        if self.mates and self.romantic_love > 30 and self.opposit_relationship.romantic_love > 25 :
-            action_possibilies = action_possibilies + LOVE['mates']
+        if self.mates and self.romantic_love > 30 and self.opposite_relationship.romantic_love > 25 :
+            action_possibilities = action_possibilities + LOVE['mates']
 
-        return action_possibilies
+        return action_possibilities
 
     def affect_relationship(self, action, other = False):
         """Affect the relationship according to the action."""
@@ -361,31 +367,31 @@ class Relationship(object):
             key = 'to'
 
         # for easier value change
-        number_increase = DIRECT_INCREASE_HIGH
-        number_decrease = DIRECT_DECREASE_HIGH
+        number_increase = self.get_high_increase_value()
+        number_decrease = self.get_high_decrease_value()
         effect = 'neutral effect'
 
         # increases
         if action in INCREASE_HIGH[key]['romantic_love']:
             self.romantic_love += number_increase
             effect = 'positive effect'
-            # indirekt influences
+            # indirect influences
             self.dislike -= INDIRECT_DECREASE
             self.platonic_like += INDIRECT_INCREASE
             self.comfortable += INDIRECT_INCREASE
         if action in INCREASE_HIGH[key]['like']:
             self.platonic_like += number_increase
             effect = 'positive effect'
-            # indirekt influences
+            # indirect influences
             self.dislike -= INDIRECT_DECREASE
             self.comfortable += INDIRECT_INCREASE
         if action in INCREASE_HIGH[key]['dislike']:
             self.dislike += number_increase
             effect = 'negative effect'
-            # indirekt influences
+            # indirect influences
             self.platonic_like -= INDIRECT_DECREASE
             self.romantic_love -= INDIRECT_DECREASE
-            # if dislike reaced a certain point, and is increased, like will get decrease more
+            # if dislike reached a certain point, and is increased, like will get decrease more
             if self.dislike > 24:
                 self.platonic_like -= INDIRECT_DECREASE
                 self.romantic_love -= INDIRECT_DECREASE
@@ -397,7 +403,7 @@ class Relationship(object):
         if action in INCREASE_HIGH[key]['comfortable']:
             self.comfortable += number_increase
             effect = 'positive effect'
-            # indirekt influences
+            # indirect influences
             self.dislike -= INDIRECT_DECREASE
             self.jealousy -= INDIRECT_DECREASE
             self.platonic_like += INDIRECT_INCREASE
@@ -408,10 +414,10 @@ class Relationship(object):
         if action in INCREASE_HIGH[key]['trust']:
             self.trust += number_increase
             effect = 'positive effect'
-            # indirekt influences
+            # indirect influences
             self.dislike -= INDIRECT_DECREASE
 
-        number_increase = DIRECT_INCREASE_LOW
+        number_increase = self.get_low_increase_value()
         if action in INCREASE_LOW[key]['romantic_love']:
             self.romantic_love += number_increase
             if effect == 'neutral effect':
@@ -424,7 +430,7 @@ class Relationship(object):
             self.dislike += number_increase
             if effect == 'neutral effect':
                 effect = 'small negative effect'
-            # if dislike reaced a certain point, and is increased, like will get decrease more
+            # if dislike reached a certain point, and is increased, like will get decrease more
             if self.dislike > 24:
                 self.platonic_like -= INDIRECT_DECREASE
                 self.romantic_love -= INDIRECT_DECREASE
@@ -470,7 +476,7 @@ class Relationship(object):
             self.jealousy -= number_decrease
             effect = 'positive effect'
 
-        number_decrease = DIRECT_DECREASE_LOW
+        number_decrease = self.get_low_decrease_value()
         if action in DECREASE_LOW[key]['romantic_love']:
             self.romantic_love -= number_decrease
             if effect == 'neutral effect':
@@ -500,10 +506,46 @@ class Relationship(object):
             if effect == 'neutral effect':
                 effect = 'small negative effect'
 
-        self.cut_boundries()
+        self.cut_boundaries()
         return effect
 
-    def cut_boundries(self):
+    def get_high_increase_value(self):
+        compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
+        if compatibility == None:
+            return DIRECT_INCREASE_HIGH
+        if compatibility:
+            return DIRECT_INCREASE_HIGH + COMPATIBILITY_WEIGHT
+        else:
+            return DIRECT_INCREASE_HIGH - COMPATIBILITY_WEIGHT
+
+    def get_high_decrease_value(self):
+        compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
+        if compatibility == None:
+            return DIRECT_DECREASE_HIGH
+        if compatibility:
+            return DIRECT_DECREASE_HIGH + COMPATIBILITY_WEIGHT
+        else:
+            return DIRECT_DECREASE_HIGH - COMPATIBILITY_WEIGHT
+
+    def get_low_increase_value(self):
+        compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
+        if compatibility == None:
+            return DIRECT_INCREASE_LOW
+        if compatibility:
+            return DIRECT_INCREASE_LOW + COMPATIBILITY_WEIGHT
+        else:
+            return DIRECT_INCREASE_LOW - COMPATIBILITY_WEIGHT
+
+    def get_low_decrease_value(self):
+        compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
+        if compatibility == None:
+            return DIRECT_DECREASE_LOW
+        if compatibility:
+            return DIRECT_DECREASE_LOW + COMPATIBILITY_WEIGHT
+        else:
+            return DIRECT_DECREASE_LOW - COMPATIBILITY_WEIGHT
+
+    def cut_boundaries(self):
         """Cut the stats of involved relationships."""
         upper_bound = 100
         lower_bound = 0
