@@ -785,7 +785,7 @@ class Events(object):
     def _extracted_from_invite_new_cats_59(self, loner):
         loner.skill = 'formerly a kittypet'
         if choice([1, 2]) == 1:
-            loner.specialty2 = choice(scars3)
+            loner.specialty2 = choice(collars)
         game.clan.add_cat(loner)
         self.check_age(loner)
 

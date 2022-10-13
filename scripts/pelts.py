@@ -299,7 +299,7 @@ pelt_length = ["short", "medium", "medium", "long"]
 eye_colours = ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE']
 scars1 = ["ONE", "TWO", "THREE"]
 scars2 = ["LEFTEAR", "RIGHTEAR", "LEFTEAR", "RIGHTEAR", "NOTAIL"]
-scars3 = [
+collars = [
     "CRIMSON", "BLUE", "YELLOW", "CYAN", "RED", "LIME", "GREEN", "RAINBOW",
     "BLACK", "SPIKES", "PINK", "PURPLE", "MULTI", "CRIMSONBELL", "BLUEBELL",
     "YELLOWBELL", "CYANBELL", "REDBELL", "LIMEBELL", "GREENBELL",

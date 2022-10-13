@@ -2399,7 +2399,7 @@ class Cat(object):
         game.switches[
             'error_message'] = 'There was an error loading a cat\'s skin and second set of scar sprites. Last cat read was ' + str(
                 self)
-        # draw skin and scars2 and scars3
+        # draw skin and scars2
         blendmode = pygame.BLEND_RGBA_MIN
         if self.pelt.length == 'long' and self.status not in [
                 'kitten', 'apprentice', 'medicine cat apprentice'
@@ -2417,14 +2417,7 @@ class Cat(object):
                     sprites.sprites['scarsextra' + self.specialty2 +
                                     str(self.age_sprites[self.age])], (0, 0),
                     special_flags=blendmode)
-            if self.specialty in scars3:
-                new_sprite.blit(
-                    sprites.sprites['scarsextra' + self.specialty +
-                                    str(self.age_sprites[self.age])], (0, 0))
-            if self.specialty2 in scars3:
-                new_sprite.blit(
-                    sprites.sprites['scarsextra' + self.specialty2 +
-                                    str(self.age_sprites[self.age])], (0, 0))
+            
         else:
             new_sprite.blit(
                 sprites.sprites['skin' + self.skin +
@@ -2439,14 +2432,7 @@ class Cat(object):
                     sprites.sprites['scars' + self.specialty2 +
                                     str(self.age_sprites[self.age])], (0, 0),
                     special_flags=blendmode)
-            if self.specialty in scars3:
-                new_sprite.blit(
-                    sprites.sprites['scars' + self.specialty +
-                                    str(self.age_sprites[self.age])], (0, 0))
-            if self.specialty2 in scars3:
-                new_sprite.blit(
-                    sprites.sprites['scars' + self.specialty2 +
-                                    str(self.age_sprites[self.age])], (0, 0))
+           
             
         game.switches[
         'error_message'] = 'There was an error loading a cat\'s accessory. Last cat read was ' + str(
@@ -2463,6 +2449,14 @@ class Cat(object):
                 new_sprite.blit(
                     sprites.sprites['acc_wildextra' + self.accessory +
                                     str(self.age_sprites[self.age])], (0, 0))
+            elif self.accessory in collars:
+                new_sprite.blit(
+                    sprites.sprites['collarsextra' + self.accessory +
+                                    str(self.age_sprites[self.age])], (0, 0))
+            elif self.accessory in collars:
+                new_sprite.blit(
+                    sprites.sprites['collarsextra' + self.accessory +
+                                    str(self.age_sprites[self.age])], (0, 0))
         else:
             if self.accessory in plant_accessories:
                 new_sprite.blit(
@@ -2471,6 +2465,14 @@ class Cat(object):
             elif self.accessory in wild_accessories:
                 new_sprite.blit(
                     sprites.sprites['acc_wild' + self.accessory +
+                                    str(self.age_sprites[self.age])], (0, 0))
+            elif self.accessory in collars:
+                new_sprite.blit(
+                    sprites.sprites['collars' + self.accessory +
+                                    str(self.age_sprites[self.age])], (0, 0))
+            elif self.accessory in collars:
+                new_sprite.blit(
+                    sprites.sprites['collars' + self.accessory +
                                     str(self.age_sprites[self.age])], (0, 0))
         game.switches[
             'error_message'] = 'There was an error loading a cat\'s skin and second set of scar sprites. Last cat read was ' + str(
