@@ -1069,7 +1069,7 @@ class Patrol(object):
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
             if randint(0, 2) == 0:  # chance to add collar
-                kit.specialty2 = choice(scars3)
+                kit.accessory = choice(collars)
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
