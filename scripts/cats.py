@@ -313,7 +313,7 @@ class Cat(object):
                             if par2.white_patches is None:
                                 self.white_patches = None
                             elif par2.white_patches in little_white:
-                                self.white_patches = choice(little_white_poss + None)
+                                self.white_patches = choice(little_white_poss + [None])
                             elif par2.white_patches in mid_white:
                                 self.white_patches = choice(little_white_poss + mid_white_poss)
                             elif par2.white_patches in high_white:
@@ -327,9 +327,9 @@ class Cat(object):
                         elif par1.white_patches in little_white and self.pelt.name in\
                         ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
                             if par2.white_patches is None:
-                                self.white_patches = choice(little_white + None)
+                                self.white_patches = choice(little_white + [None])
                             elif par2.white_patches in little_white:
-                                self.white_patches = choice(little_white_poss * [2] + mid_white_poss + None)
+                                self.white_patches = choice(little_white_poss * [2] + mid_white_poss + [None])
                             elif par2.white_patches in mid_white:
                                 self.white_patches = choice(little_white_poss + mid_white_poss + high_white)
                             elif par2.white_patches in high_white:
@@ -343,7 +343,7 @@ class Cat(object):
                         elif par1.white_patches in mid_white and self.pelt.name in\
                         ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
                             if par2.white_patches is None:
-                                self.white_patches = choice(little_white + mid_white + None)
+                                self.white_patches = choice(little_white + mid_white + [None])
                             elif par2.white_patches in little_white:
                                 self.white_patches = choice(little_white_poss + mid_white_poss + high_white)
                             elif par2.white_patches in mid_white:
@@ -359,7 +359,7 @@ class Cat(object):
                         elif par1.white_patches in high_white and self.pelt.name in\
                         ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
                             if par2.white_patches is None:
-                                self.white_patches = choice(little_white + mid_white + high_white + None)
+                                self.white_patches = choice(little_white + mid_white + high_white + [None])
                             elif par2.white_patches in little_white:
                                 self.white_patches = choice(little_white_poss + mid_white_poss + high_white)
                             elif par2.white_patches in mid_white:
@@ -375,7 +375,7 @@ class Cat(object):
                         elif par1.white_patches in mostly_white and self.pelt.name in\
                         ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
                             if par2.white_patches is None:
-                                self.white_patches = choice(little_white + mid_white + high_white + mostly_white + None)
+                                self.white_patches = choice(little_white + mid_white + high_white + mostly_white + [None])
                             elif par2.white_patches in little_white:
                                 self.white_patches = choice(little_white + mid_white_poss + high_white_poss + mostly_white)
                             elif par2.white_patches in mid_white:
@@ -391,7 +391,7 @@ class Cat(object):
                         elif par1.white_patches == 'FULLWHITE' and self.pelt.name in\
                         ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
                             if par2.white_patches is None:
-                                self.white_patches = choice(little_white + mid_white + high_white + mostly_white + None + ['FULLWHITE'])
+                                self.white_patches = choice(little_white + mid_white + high_white + mostly_white + [None] + ['FULLWHITE'])
                             elif par2.white_patches in little_white:
                                 self.white_patches = choice(mid_white_poss + high_white_poss * [2] + mostly_white * [2])
                             elif par2.white_patches in mid_white:
