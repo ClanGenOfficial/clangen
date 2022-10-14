@@ -141,6 +141,11 @@ class Clan(object):
         if mapavailable:
             save_map(game.map_info, game.clan.name)
 
+        if game.switches['camp_bg'] is None:
+            random_camp_options = ['camp1', 'camp2']
+            random_camp = choice(random_camp_options)
+            game.switches['camp_bg'] = random_camp
+
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""
         if cat.ID in cat_class.all_cats.keys(
