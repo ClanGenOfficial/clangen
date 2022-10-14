@@ -100,8 +100,6 @@ class Cat(object):
         else:
             self.ID = ID
         # personality trait and skill
-        trans_chance = randint(0, 50)
-        nb_chance = randint(0, 75)
         if self.status != 'kitten':
             self.trait = choice(self.traits)
             if self.status == 'medicine cat':
@@ -118,6 +116,8 @@ class Cat(object):
         self.g_tag = self.gender_tags[self.gender]
 
         #trans cat chances
+        trans_chance = randint(0, 50)
+        nb_chance = randint(0, 75)
         if self.gender == "female":
             if trans_chance == 1:
                 self.genderalign = "trans male"
