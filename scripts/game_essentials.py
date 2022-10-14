@@ -80,6 +80,7 @@ class Game(object):
         'change_name': '',
         'name_cat': None,
         'biome': None,
+        'camp_bg': None,
         'language': 'english',
         'search_text': '',
         'map_selection': (0, 0),
@@ -89,6 +90,8 @@ class Game(object):
         'hunting_territory': (0, 0),
         'training_territory': (0, 0),
         'options_tab': None
+
+
     }
     all_screens = {}
     cur_events = {}

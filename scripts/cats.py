@@ -114,6 +114,26 @@ class Cat(object):
         if self.gender is None:
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
+
+        #trans cat chances
+        trans_chance = randint(0, 50)
+        nb_chance = randint(0, 75)
+        if self.gender == "female":
+            if trans_chance == 1:
+                self.genderalign = "trans male"
+            elif nb_chance == 1:
+                self.genderalign = "nonbinary"
+            else:
+                self.genderalign = self.gender
+        if self.gender == "male":
+            if trans_chance == 1:
+                self.genderalign = "trans female"
+            elif nb_chance == 1:
+                self.genderalign = "nonbinary"
+            else:
+                self.genderalign = self.gender
+                
+
         if status is None and moons is None:
             self.age = choice(self.ages)
         elif moons != None:
@@ -250,10 +270,142 @@ class Cat(object):
         mid_white_poss = mid_white * 4
         high_white_poss = high_white * 2
         mostly_white_poss = mostly_white
+        if self.parent1 in self.all_cats.keys():
+            par1 = self.all_cats[self.parent1]
+        if  self.parent2 in self.all_cats.keys():
+            par2 = self.all_cats[self.parent2]
         if self.pelt is not None:
-            if self.pelt.white and self.pelt.white_patches is not None:
+            if self.pelt.white is True and self.pelt.white_patches is not None:
                 pelt_choice = randint(0, 10)
                 vit_chance = randint(0, 40)
+                direct_inherit = randint(0, 10)
+                # inheritance
+                # for one parent
+                if self.parent1 in self.all_cats.keys() and self.parent2 is None:
+                    if direct_inherit == 1:
+                        self.white_patches = par1.white_patches
+                    else:
+                        if par1.white_patches in point_markings and self.pelt.colour != 'WHITE':
+                            self.white_patches = choice(point_markings)
+                        elif par1.white_patches in vit:
+                            self.white_patches = choice(vit)
+                        elif par1.white_patches in [little_white, mid_white, high_white]:
+                            self.white_patches = choice(little_white_poss + mid_white_poss + high_white_poss + mostly_white_poss)
+                        elif par1.white_patches in mostly_white:
+                            self.white_patches = choice(mid_white + high_white + mostly_white + ['FULLWHITE'])
+                    # two parents
+                elif self.parent1 in self.all_cats.keys() and self.parent2 in self.all_cats.keys():
+                    # if 1, cat directly inherits parent 1's white patches. if 2, it directly inherits parent 2's
+                    if direct_inherit == 1:
+                        self.white_patches = par1.white_patches
+                    elif direct_inherit == 2:
+                        self.white_patches = par2.white_patches
+                    else:
+                        if par1.white_patches in point_markings or par2.white_patches in point_markings and self.pelt.colour != 'WHITE'\
+                        and self.pelt.name in ['Tortie', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+                            self.white_patches = choice(point_markings)
+                        elif par1.white_patches in vit or par2.white_patches in vit and self.pelt.name in\
+                        ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
+                        and self.pelt.colour != 'WHITE':
+                            self.white_patches = choice(vit)
+                        elif par1.white_patches is None and self.pelt.name in\
+                        ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+                            if par2.white_patches is None:
+                                self.white_patches = None
+                            elif par2.white_patches in little_white:
+                                self.white_patches = choice(little_white_poss + [None])
+                            elif par2.white_patches in mid_white:
+                                self.white_patches = choice(little_white_poss + mid_white_poss)
+                            elif par2.white_patches in high_white:
+                                self.white_patches = choice(little_white + mid_white_poss * [2] + high_white)
+                            elif par2.white_patches in mostly_white:
+                                self.white_patches = choice(mid_white_poss + high_white_poss + mostly_white)
+                            elif par2.white_patches == 'FULLWHITE':
+                                self.white_patches = choice(little_white_poss + mid_white_poss + high_white_poss + mostly_white_poss + ['FULLWHITE'])
+                            else:
+                                self.white_patches = choice(little_white)
+                        elif par1.white_patches in little_white and self.pelt.name in\
+                        ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+                            if par2.white_patches is None:
+                                self.white_patches = choice(little_white + [None])
+                            elif par2.white_patches in little_white:
+                                self.white_patches = choice(little_white_poss * [2] + mid_white_poss + [None])
+                            elif par2.white_patches in mid_white:
+                                self.white_patches = choice(little_white_poss + mid_white_poss + high_white)
+                            elif par2.white_patches in high_white:
+                                self.white_patches = choice(little_white + mid_white_poss * [2] + high_white_poss + mostly_white)
+                            elif par2.white_patches in mostly_white:
+                                self.white_patches = choice(mid_white + high_white_poss + mostly_white + ['FULLWHITE'])
+                            elif par2.white_patches == 'FULLWHITE':
+                                self.white_patches = choice(high_white_poss + mostly_white_poss + ['FULLWHITE'])
+                            else:
+                                self.white_patches = choice(little_white)
+                        elif par1.white_patches in mid_white and self.pelt.name in\
+                        ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+                            if par2.white_patches is None:
+                                self.white_patches = choice(little_white + mid_white + [None])
+                            elif par2.white_patches in little_white:
+                                self.white_patches = choice(little_white_poss + mid_white_poss + high_white)
+                            elif par2.white_patches in mid_white:
+                                self.white_patches = choice(little_white + mid_white_poss * [3] + high_white)
+                            elif par2.white_patches in high_white:
+                                self.white_patches = choice(mid_white_poss + high_white_poss * [3] + mostly_white)
+                            elif par2.white_patches in mostly_white:
+                                self.white_patches = choice(mid_white + high_white_poss + mostly_white + ['FULLWHITE'])
+                            elif par2.white_patches == 'FULLWHITE':
+                                self.white_patches = choice(high_white_poss + mostly_white_poss + ['FULLWHITE'])
+                            else:
+                                self.white_patches = choice(mid_white)
+                        elif par1.white_patches in high_white and self.pelt.name in\
+                        ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+                            if par2.white_patches is None:
+                                self.white_patches = choice(little_white + mid_white + high_white + [None])
+                            elif par2.white_patches in little_white:
+                                self.white_patches = choice(little_white_poss + mid_white_poss + high_white)
+                            elif par2.white_patches in mid_white:
+                                self.white_patches = choice(little_white + mid_white_poss + high_white_poss)
+                            elif par2.white_patches in high_white:
+                                self.white_patches = choice(mid_white_poss + high_white_poss + mostly_white)
+                            elif par2.white_patches in mostly_white:
+                                self.white_patches = choice(mid_white + high_white_poss + mostly_white + ['FULLWHITE'])
+                            elif par2.white_patches == 'FULLWHITE':
+                                self.white_patches = choice(high_white_poss + mostly_white_poss + ['FULLWHITE'])
+                            else:
+                                self.white_patches = choice(high_white)
+                        elif par1.white_patches in mostly_white and self.pelt.name in\
+                        ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+                            if par2.white_patches is None:
+                                self.white_patches = choice(little_white + mid_white + high_white + mostly_white + [None])
+                            elif par2.white_patches in little_white:
+                                self.white_patches = choice(little_white + mid_white_poss + high_white_poss + mostly_white)
+                            elif par2.white_patches in mid_white:
+                                self.white_patches = choice(mid_white_poss + high_white_poss + mostly_white + ['FULLWHITE'])
+                            elif par2.white_patches in high_white:
+                                self.white_patches = choice(high_white_poss + mostly_white + mostly_white + mostly_white + ['FULLWHITE'])
+                            elif par2.white_patches in mostly_white:
+                                self.white_patches = choice(high_white + mostly_white * [4] + ['FULLWHITE'])
+                            elif par2.white_patches == 'FULLWHITE':
+                                self.white_patches = choice(mostly_white * [5] + ['FULLWHITE', 'FULLWHITE', 'FULLWHITE'])
+                            else:
+                                self.white_patches = choice(mostly_white)
+                        elif par1.white_patches == 'FULLWHITE' and self.pelt.name in\
+                        ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+                            if par2.white_patches is None:
+                                self.white_patches = choice(little_white + mid_white + high_white + mostly_white + [None] + ['FULLWHITE'])
+                            elif par2.white_patches in little_white:
+                                self.white_patches = choice(mid_white_poss + high_white_poss * [2] + mostly_white * [2])
+                            elif par2.white_patches in mid_white:
+                                self.white_patches = choice(mid_white + high_white_poss * [3] + mostly_white * [3] + ['FULLWHITE'])
+                            elif par2.white_patches in high_white:
+                                self.white_patches = choice(high_white_poss + mostly_white * [4] + ['FULLWHITE'] * [3])
+                            elif par2.white_patches in mostly_white:
+                                self.white_patches = choice(high_white + mostly_white * [4] + ['FULLWHITE'] * [4])
+                            elif par2.white_patches == 'FULLWHITE':
+                                self.white_patches = choice(mostly_white + ['FULLWHITE'] * [6])
+                            else:
+                                self.white_patches = choice(mostly_white)
+                        
+                # regular non-inheritance white patches generation
                 if pelt_choice == 1 and self.pelt.name in ['Tortie', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
                 and self.pelt.colour != 'WHITE':
                     self.white_patches = choice(point_markings)
@@ -2399,7 +2551,7 @@ class Cat(object):
         game.switches[
             'error_message'] = 'There was an error loading a cat\'s skin and second set of scar sprites. Last cat read was ' + str(
                 self)
-        # draw skin and scars2 and scars3
+        # draw skin and scars2
         blendmode = pygame.BLEND_RGBA_MIN
         if self.pelt.length == 'long' and self.status not in [
                 'kitten', 'apprentice', 'medicine cat apprentice'
@@ -2417,14 +2569,7 @@ class Cat(object):
                     sprites.sprites['scarsextra' + self.specialty2 +
                                     str(self.age_sprites[self.age])], (0, 0),
                     special_flags=blendmode)
-            if self.specialty in scars3:
-                new_sprite.blit(
-                    sprites.sprites['scarsextra' + self.specialty +
-                                    str(self.age_sprites[self.age])], (0, 0))
-            if self.specialty2 in scars3:
-                new_sprite.blit(
-                    sprites.sprites['scarsextra' + self.specialty2 +
-                                    str(self.age_sprites[self.age])], (0, 0))
+            
         else:
             new_sprite.blit(
                 sprites.sprites['skin' + self.skin +
@@ -2439,14 +2584,7 @@ class Cat(object):
                     sprites.sprites['scars' + self.specialty2 +
                                     str(self.age_sprites[self.age])], (0, 0),
                     special_flags=blendmode)
-            if self.specialty in scars3:
-                new_sprite.blit(
-                    sprites.sprites['scars' + self.specialty +
-                                    str(self.age_sprites[self.age])], (0, 0))
-            if self.specialty2 in scars3:
-                new_sprite.blit(
-                    sprites.sprites['scars' + self.specialty2 +
-                                    str(self.age_sprites[self.age])], (0, 0))
+           
             
         game.switches[
         'error_message'] = 'There was an error loading a cat\'s accessory. Last cat read was ' + str(
@@ -2463,6 +2601,14 @@ class Cat(object):
                 new_sprite.blit(
                     sprites.sprites['acc_wildextra' + self.accessory +
                                     str(self.age_sprites[self.age])], (0, 0))
+            elif self.accessory in collars:
+                new_sprite.blit(
+                    sprites.sprites['collarsextra' + self.accessory +
+                                    str(self.age_sprites[self.age])], (0, 0))
+            elif self.accessory in collars:
+                new_sprite.blit(
+                    sprites.sprites['collarsextra' + self.accessory +
+                                    str(self.age_sprites[self.age])], (0, 0))
         else:
             if self.accessory in plant_accessories:
                 new_sprite.blit(
@@ -2471,6 +2617,14 @@ class Cat(object):
             elif self.accessory in wild_accessories:
                 new_sprite.blit(
                     sprites.sprites['acc_wild' + self.accessory +
+                                    str(self.age_sprites[self.age])], (0, 0))
+            elif self.accessory in collars:
+                new_sprite.blit(
+                    sprites.sprites['collars' + self.accessory +
+                                    str(self.age_sprites[self.age])], (0, 0))
+            elif self.accessory in collars:
+                new_sprite.blit(
+                    sprites.sprites['collars' + self.accessory +
                                     str(self.age_sprites[self.age])], (0, 0))
         game.switches[
             'error_message'] = 'There was an error loading a cat\'s skin and second set of scar sprites. Last cat read was ' + str(
@@ -3020,19 +3174,19 @@ class Cat(object):
         if self.white_patches in [little_white, mid_white]:
             color_name = color_name + ' and white'
         # and white
-        elif self.white_patches in [high_white]:
+        elif self.white_patches in high_white:
             if self.pelt.name != "Calico":
                 color_name = color_name + ' and white'
         # white and
-        elif self.white_patches in [mostly_white]:
+        elif self.white_patches in mostly_white:
             color_name = 'white and ' + color_name
         # colorpoint
-        elif self.white_patches in [point_markings]:
+        elif self.white_patches in point_markings:
             color_name = color_name + ' point'
-            if color_name == 'darkginger point' or 'ginger point':
+            if color_name == 'darkginger point' or color_name == 'ginger point':
                 color_name = 'flame point'
         # vitiligo
-        elif self.white_patches in [vit]:
+        elif self.white_patches in vit:
             color_name = color_name + ' with vitiligo'
 
         if color_name == 'tortie':
