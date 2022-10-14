@@ -483,6 +483,7 @@ class ClanScreen(Screens):
                     ])
 
     def change_brightness(self):
+
         if game.settings['dark mode']:
             if game.clan.biome == "Forest" and game.clan.camp_bg == 'camp1':
                 self._extracted_from_change_brightness_3(
@@ -1329,10 +1330,13 @@ class MakeClanScreen(Screens):
                     text='Done',
                     choosing_camp=False,
                     biome=game.map_info[game.switches['map_selection']][2],
+                    camp_bg='camp1',
                     world_seed=self.worldseed,
                     cur_screen='clan created screen')
             else:
-                buttons.draw_button((-16, 300), text='Done', available=False)
+                buttons.draw_button((-16, 300),
+                                    text='Done',
+                                    available=False)
         else:
 
             buttons.draw_button((250, 50),

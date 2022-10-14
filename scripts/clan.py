@@ -285,6 +285,8 @@ class Clan(object):
         if len(general) == 7:
             if general[4] == 'None':
                 general[4] = 0
+            elif general[3] == 'None':
+                general[3] = 'camp1'
             game.clan = Clan(general[0],
                              cat_class.all_cats[leader_info[0]],
                              cat_class.all_cats.get(deputy_info[0], None),
@@ -306,6 +308,7 @@ class Clan(object):
         game.clan.current_season = game.clan.seasons[game.clan.age % 12]
         game.clan.leader_lives, game.clan.leader_predecessors = int(
             leader_info[1]), int(leader_info[2])
+
 
         if len(deputy_info) > 1:
             game.clan.deputy_predecessors = int(deputy_info[1])
