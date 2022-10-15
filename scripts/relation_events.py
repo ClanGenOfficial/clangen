@@ -66,11 +66,11 @@ class Relation_Events(object):
                 lambda relation: str(relation.cat_to) == str(random_id) and
                 not relation.cat_to.dead, cat.relationships))
         random_cat = cat.all_cats.get(random_id)
-        kitten_and_exiled = random_cat.exiled and cat.age == "kitten"
+        kitten_and_exiled = random_cat != None and random_cat.exiled and cat.age == "kitten"
         while len(relevant_relationship_list) < 1 or random_id == cat.ID or kitten_and_exiled:
             random_id = random.choice(cats_to_choose)
             random_cat = cat.all_cats.get(random_id)
-            kitten_and_exiled = random_cat.exiled and cat.age == "kitten"
+            kitten_and_exiled = random_cat != None and random_cat.exiled and cat.age == "kitten"
             relevant_relationship_list = list(
                 filter(
                     lambda relation: str(relation.cat_to) == str(random_id) and

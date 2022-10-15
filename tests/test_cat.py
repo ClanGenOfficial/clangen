@@ -45,6 +45,7 @@ class TestRelativesFunction(unittest.TestCase):
         kit2 = Cat(parent1=parent.ID)
         self.assertFalse(parent.is_sibling(kit1))
         self.assertFalse(kit1.is_sibling(parent))
+        self.assertTrue(kit1.is_sibling(kit1))
         self.assertTrue(kit2.is_sibling(kit1))
         self.assertTrue(kit1.is_sibling(kit2))
 

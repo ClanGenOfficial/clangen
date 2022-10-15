@@ -92,6 +92,7 @@ class Cat(object):
         self.tortiepattern = None
         self.tortiecolour = None
         self.birth_cooldown = 0
+        self.siblings = []
         if ID is None:
             potential_ID = str(randint(10000, 9999999))
             while potential_ID in self.all_cats:
@@ -2994,7 +2995,7 @@ class Cat(object):
             all_cats.append(new_cat)
 
         
-        # replace cat ids with cat objects (only needed by mentor)
+        # replace cat ids with cat objects and add other needed variables
         for cat in all_cats:
             # load the relationships
             if not cat.dead:
@@ -3007,12 +3008,13 @@ class Cat(object):
             else:
                 cat.relationships = []
 
+            # replace mentor id with cat instance
             mentor_relevant = list(filter(lambda inter_cat: inter_cat.ID == cat.mentor, all_cats))
             cat.mentor = None
             if len(mentor_relevant) == 1:
                 cat.mentor = mentor_relevant[0]
             
-            # Update the apprentice
+            # update the apprentice
             if len(cat.apprentice) > 0:
                 new_apprentices = []
                 for cat_id in cat.apprentice:
@@ -3022,7 +3024,7 @@ class Cat(object):
                         new_apprentices.append(relevant_list[0])
                 cat.apprentice = new_apprentices
 
-            # Update the apprentice
+            # update the apprentice
             if len(cat.former_apprentices) > 0:
                 new_apprentices = []
                 for cat_id in cat.former_apprentices:
@@ -3032,6 +3034,9 @@ class Cat(object):
                         new_apprentices.append(relevant_list[0])
                 cat.former_apprentices = new_apprentices
 
+            # get all the siblings ids and save them
+            siblings = list(filter(lambda inter_cat: cat.is_sibling(inter_cat), all_cats))
+            cat.siblings = [sibling.ID for sibling in siblings]
 
     def load_relationship_of_cat(self):
         if game.switches['clan_name'] != '':
@@ -3324,11 +3329,7 @@ class Cat(object):
 
     def get_siblings(self):
         """Returns list of the siblings."""
-        siblings = []
-        for inter_cat in self.all_cats.values():
-            if self.is_sibling(inter_cat):
-                siblings.append(inter_cat.ID)
-        return siblings
+        return self.siblings
 
 
 # Twelve example cats
