@@ -483,7 +483,6 @@ class ClanScreen(Screens):
                     ])
 
     def change_brightness(self):
-
         if game.settings['dark mode']:
             if game.clan.biome == "Forest" and game.clan.camp_bg == 'camp1':
                 self._extracted_from_change_brightness_3(
@@ -1325,27 +1324,16 @@ class MakeClanScreen(Screens):
             verdana.text(str(game.switches['camp_site']), (-16, 250))
 
             if game.map_info[game.switches['map_selection']][3] == 'Unclaimed':
-
-                # ensures a camp bg is chosen
-                random_camp_options = ['camp1', 'camp2']
-                random_camp = choice(random_camp_options)
-
                 buttons.draw_button(
                     (-16, 300),
                     text='Done',
                     choosing_camp=False,
                     biome=game.map_info[game.switches['map_selection']][2],
                     world_seed=self.worldseed,
-                    camp_bg = random_camp,
                     cur_screen='clan created screen')
-
             else:
-                buttons.draw_button((-16, 300),
-                                    text='Done',
-                                    available=False)
+                buttons.draw_button((-16, 300), text='Done', available=False)
         else:
-
-            game.switches['biome'] = None  # resets the button selection when creating clans one after the other
 
             buttons.draw_button((250, 50),
                                 text='Forest',
@@ -1373,7 +1361,6 @@ class MakeClanScreen(Screens):
                                 hotkey=[4])
 
             # CHOOSING CAMP ART
-            game.switches['camp_bg'] = None  # resets the button selection when creating clans one after the other
             self.camp_art()
             if game.settings['backgrounds']:
 
@@ -1402,6 +1389,10 @@ class MakeClanScreen(Screens):
                                         text='Cliff',
                                         camp_bg='camp1',
                                         available=game.switches['camp_bg'] != 'camp1')
+                    buttons.draw_button((100, 230),
+                                        text='Caves',
+                                        camp_bg='camp2',
+                                        available=game.switches['camp_bg'] != 'camp2')
 
                     if game.switches['camp_bg'] == 'camp1':
                         screen.blit(self.camp1, (250, 150))
