@@ -141,6 +141,11 @@ class Clan(object):
         if mapavailable:
             save_map(game.map_info, game.clan.name)
 
+        if game.switches['camp_bg'] is None:
+            random_camp_options = ['camp1', 'camp2']
+            random_camp = choice(random_camp_options)
+            game.switches['camp_bg'] = random_camp
+
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""
         if cat.ID in cat_class.all_cats.keys(
@@ -285,6 +290,8 @@ class Clan(object):
         if len(general) == 7:
             if general[4] == 'None':
                 general[4] = 0
+            elif general[3] == 'None':
+                general[3] = 'camp1'
             game.clan = Clan(general[0],
                              cat_class.all_cats[leader_info[0]],
                              cat_class.all_cats.get(deputy_info[0], None),
@@ -306,6 +313,7 @@ class Clan(object):
         game.clan.current_season = game.clan.seasons[game.clan.age % 12]
         game.clan.leader_lives, game.clan.leader_predecessors = int(
             leader_info[1]), int(leader_info[2])
+
 
         if len(deputy_info) > 1:
             game.clan.deputy_predecessors = int(deputy_info[1])
