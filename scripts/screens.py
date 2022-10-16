@@ -1345,8 +1345,6 @@ class MakeClanScreen(Screens):
                                     available=False)
         else:
 
-            game.switches['biome'] = None  # resets the button selection when creating clans one after the other
-
             buttons.draw_button((250, 50),
                                 text='Forest',
                                 biome='Forest',
@@ -1373,7 +1371,7 @@ class MakeClanScreen(Screens):
                                 hotkey=[4])
 
             # CHOOSING CAMP ART
-            game.switches['camp_bg'] = None  # resets the button selection when creating clans one after the other
+
             self.camp_art()
             if game.settings['backgrounds']:
 
@@ -1402,6 +1400,10 @@ class MakeClanScreen(Screens):
                                         text='Cliff',
                                         camp_bg='camp1',
                                         available=game.switches['camp_bg'] != 'camp1')
+                    buttons.draw_button((100, 230),
+                                        text='Caves',
+                                        camp_bg='camp2',
+                                        available=game.switches['camp_bg'] != 'camp2')
 
                     if game.switches['camp_bg'] == 'camp1':
                         screen.blit(self.camp1, (250, 150))
