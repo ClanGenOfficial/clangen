@@ -119,6 +119,8 @@ class Cat(object):
         #trans cat chances
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)
+        if self.age_moons == 'kitten':
+            return
         if self.gender == "female":
             if trans_chance == 1:
                 self.genderalign = "trans male"
