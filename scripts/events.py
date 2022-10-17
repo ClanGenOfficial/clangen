@@ -276,15 +276,15 @@ class Events(object):
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
                         acc_text.append(f'{name} found a bunch of pretty feathers and decided to wear them')
                     elif cat.accessory in ["HERBS", "PETALS", "DRY_HERBS"]:
-                        acc_text.append(f'{name} always seems to have something stuck in their fur')
+                        acc_text.append(f'{name} always seems to have something stuck in their fur', f'{name} always seems to have {cat.acc_display.plural} in their fur')
                     elif cat.accessory in plant_accessories and cat.status in ['medicine cat apprentice', 'medicine cat']:
-                        acc_text.extend([f'{name} has decided to always bring their {accessory.lower()} with them',
-                                        f'{accessory.lower()} - an item so important to {name} that they always carry it around'.capitalize,
-                                        f'{accessory.lower()} - so vital for {name} that they always have it on them'.capitalize
+                        acc_text.extend([f'{name} has decided to always bring some {cat.acc_display.plural} with them',
+                                        f'{cat.acc_display.plural} are so important to {name} that they always carry them around'.capitalize,
+                                        f'{cat.acc_display.plural} are so vital for {name} that they always have it with them'.capitalize
                         ])
                     else:
                         acc_text.extend([f'{name} finds something interesting and decides to wear it on their pelt', f'A clanmate gives {name} a pretty accessory and they decide to wear it on their pelt',
-                                        f'{name} finds something interesting while out on a walk and decides to wear it on their pelt', f'{name} finds {accessory.lower()} fascinating and decides to wear it on their pelt',
+                                        f'{name} finds something interesting while out on a walk and decides to wear it on their pelt', f'{name} finds {cat.acc_display.plural} fascinating and decides to wear some on their pelt',
                                         f'A clanmate gives {name} something to adorn their pelt as a gift', f'{other_name} gives {name} a pretty accessory and they decide to wear it on their pelt'
                         ])
                 else:
@@ -299,8 +299,8 @@ class Events(object):
                     else:    
                         acc_text.extend([f'{name} seems to have picked something up while playing out in the camp', f'{name} finds something interesting and decides to wear it on their pelt',
                                         f'A clanmate gives {name} a pretty accessory and they decide to wear it on their pelt', f'{other_name} gives {name} a pretty accessory and they decide to wear it on their pelt',
-                                        f'{name} is so cute that they are given {accessory.lower()} as a gift', f'{name} starts to wear {accessory.lower()} on their pelt after their friend gave it to them',
-                                        f'{name} was playing with {accessory.lower()} earlier and has decided to use it to adorn themselves'
+                                        f'{name} is so cute that they are given {cat.acc_display} as a gift', f'{name} starts to wear {cat.acc_display} on their pelt after their friend gave it to them',
+                                        f'{name} was playing with {cat.acc_display.plural} earlier and has decided to use it to adorn themselves'
                         ])
         if acc_text:
             game.cur_events_list.append(choice(acc_text))
@@ -1536,10 +1536,6 @@ class Events(object):
                 else:
                     gender = 'she-cat'
                 game.cur_events_list.append(
-                    str(cat.name) + " has realized that " + str(gender) + " doesn't describe how they feel anymore")        
-        
-        
-
-
+                    str(cat.name) + " has realized that " + str(gender) + " doesn't describe how they feel anymore")
 
 events_class = Events()

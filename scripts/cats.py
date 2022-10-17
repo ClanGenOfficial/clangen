@@ -91,6 +91,7 @@ class Cat(object):
         self.pattern = None
         self.tortiepattern = None
         self.tortiecolour = None
+        self.accessory = None
         self.birth_cooldown = 0
         if ID is None:
             potential_ID = str(randint(10000, 9999999))
@@ -3215,6 +3216,125 @@ class Cat(object):
             color_name = 'white'
 
         return color_name
+    
+    
+    def accessory_display_name(self, accessory):
+    #    acc_display_plural = ' '
+    #    acc_display_singular = ' '
+        accessory = str(self.accessory).lower()
+        acc_display = accessory
+        if self.accessory != None:
+            if self.accessory in collars:
+                collar_color = None
+                if accessory.startswith('crimson'):
+                    collar_color = 'crimson'
+                elif accessory.startswith('blue'):
+                    collar_color = 'blue'
+                elif accessory.startswith('yellow'):
+                    collar_color = 'yellow'
+                elif accessory.startswith('cyan'):
+                    collar_color = 'cyan'
+                elif accessory.startswith('red'):
+                    collar_color = 'red'
+                elif accessory.startswith('lime'):
+                    collar_color = 'lime'
+                elif accessory.startswith('green'):
+                    collar_color = 'green'
+                elif accessory.startswith('rainbow'):
+                    collar_color = 'rainbow'
+                elif accessory.startswith('black'):
+                    collar_color = 'black'
+                elif accessory.startswith('spikes'):
+                    collar_color = 'spiky'
+                elif accessory.startswith('pink'):
+                    collar_color = 'pink'
+                elif accessory.startswith('purple'):
+                    collar_color = 'purple'
+                elif accessory.startswith('multi'):
+                    collar_color = 'multi'
+                if accessory.endswith('bow'):
+                    acc_display = collar_color + ' bow'
+                elif accessory.endswith('bell'):
+                    acc_display = collar_color + ' bell collar'
+                else:
+                    acc_display = collar_color + ' collar'
+
+                print(acc_display)
+                
+            # elif self.accessory in [plant_accessories]:
+            #     acc_plural = acc_display_plural
+            #     acc_singular = acc_display_singular
+            #     if accessory.name == 'maple leaf':
+            #         acc_display_plural = 'maple leaves'                    
+            #         acc_display_singular = 'a maple leaf'
+            #     if accessory.name == 'holly':
+            #         acc_display_plural = 'holly berries'
+            #         acc_display_singular = 'a holly berry'
+            #     if accessory.name == 'blue berries':                    
+            #         acc_display_plural = 'blueberries'
+            #         acc_display_singular = 'a blueberry'
+            #     if accessory.name == 'forget me nots':
+            #         acc_display_plural = 'forget me nots'
+            #         acc_display_singular = 'a forget me not flower'                
+            #     if accessory.name == 'rye stalk':
+            #         acc_display_plural = 'rye stalks'
+            #         acc_display_singular = 'rye stalk'
+            #     if accessory.name == 'laurel':                
+            #         acc_display_plural = 'laurel'
+            #         acc_display_singular = 'a laurel plant'
+            #     if accessory.name == 'bluebells':
+            #         acc_display_plural = 'bluebells'
+            #         acc_display_singular = 'a bluebell flower'                
+            #     if accessory.name == 'nettle':
+            #         acc_display_plural = 'nettles'
+            #         acc_display_singular = 'a nettle'
+            #     if accessory.name == 'poppy':
+            #         acc_display_plural = 'poppies'
+            #         acc_display_singular = 'a poppy flower'
+            #     if accessory.name == 'lavender':
+            #         acc_display_plural = 'lavender'
+            #         acc_display_singular = 'a lavender flower'
+            #     if accessory.name == 'herbs':
+            #         acc_display_plural = 'herbs'
+            #         acc_display_singular = 'an herb'
+            #     if accessory.name == 'petals':
+            #         acc_display_plural = 'petals'
+            #         acc_display_singular = 'a petal'
+            #     if accessory.name == 'dry herbs':
+            #         acc_display_plural = 'dry herbs'
+            #         acc_display_singular = 'a dry herb'
+            #     if accessory.name == 'oak leaves':
+            #         acc_display_plural = 'oak leaves'
+            #         acc_display_singular = 'an oak leaf'
+            #     if accessory.name == 'catmint':
+            #         acc_display_plural = 'catnip'
+            #         acc_display_singular = 'a catnip leaf'
+            #     if accessory.name == 'maple seed':                    
+            #         acc_display_plural = 'maple seeds'
+            #         acc_display_singular = 'a maple seed'
+            #     if accessory.name == 'juniper':
+            #         acc_display_plural = 'juniper berries'
+            #         acc_display_singular = 'a juniper berry'
+                
+            elif self.accessory in wild_accessories:
+                if acc_display == 'blue feathers':
+                    acc_display = 'crow feathers'
+                else:
+                    acc_display = acc_display
+
+                print(acc_display)    
+            
+            else:
+                acc_display = acc_display
+                print(acc_display)
+        if self.accessory == None:
+            acc_display = 'None'
+            print(acc_display)
+        
+            
+
+        
+
 
     def describe_cat(self):
         if self.genderalign == 'male' or self.genderalign == "transmasc" or self.genderalign == "trans male":
