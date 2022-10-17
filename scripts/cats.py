@@ -303,7 +303,6 @@ class Cat(object):
                         elif par1.white_patches in mostly_white:
                             self.white_patches = choice(mid_white + high_white + mostly_white + ['FULLWHITE'])
                     if par1.white_patches == None and self.pelt.name == 'Calico':
-                        print("Calico changed to tortie")
                         self.pelt.name = 'Tortie'
                     # two parents
                 elif self.parent1 is not None and self.parent2 is not None:
@@ -421,7 +420,6 @@ class Cat(object):
                                 self.white_patches = choice(mostly_white)
                     if self.pelt.name == 'Calico' and par1.white_patches not in mid_white + high_white + mostly_white\
                     and par2.white_patches not in mid_white + high_white + mostly_white:
-                        print("Calico changed to tortie")
                         self.pelt.name = 'Tortie'
                         
                 # regular non-inheritance white patches generation
@@ -449,8 +447,6 @@ class Cat(object):
                             self.white_patches = choice(self.white_patches)
             else:
                 self.white_patches = None
-
-            print(self.white_patches)
             
         # pattern for tortie/calico cats
         if self.pelt.name in ['Calico', 'Tortie']:
@@ -3220,7 +3216,6 @@ class Cat(object):
         if color_name == 'white and white':
             color_name = 'white'
 
-        print(color_name)
         return color_name
     
     
