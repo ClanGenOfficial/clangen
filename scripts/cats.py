@@ -91,6 +91,7 @@ class Cat(object):
         self.pattern = None
         self.tortiepattern = None
         self.tortiecolour = None
+        self.white_patches = None
         self.accessory = None
         self.birth_cooldown = 0
         if ID is None:
@@ -187,8 +188,8 @@ class Cat(object):
                 self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, None]), choice([par1.pelt.white, None]), choice([par1.pelt.name, None]),
                                         choice([par1.pelt.length, None]))
                 if par1.white_patches == None and self.pelt.name == 'Calico':
+                    print("Calico changed to tortie")
                     self.pelt.name = 'Tortie'
-
 
             if self.parent1 in self.all_cats.keys() and self.parent2 in self.all_cats.keys():
                 # 2 in 3 chance to inherit either parent's pelt
@@ -196,8 +197,11 @@ class Cat(object):
                 par2 = self.all_cats[self.parent2]
                 self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, par2.pelt.colour, None]), choice([par1.pelt.white, par2.pelt.white, None]),
                                         choice([par1.pelt.name, par2.pelt.name, None]), choice([par1.pelt.length, par2.pelt.length, None]))
-                if self.pelt.name == 'Calico' and par1.white_patches not in [mid_white, high_white, mostly_white]:
+                if self.pelt.name == 'Calico' and par1.white_patches not in [mid_white, high_white, mostly_white]\
+                and par2.white_patches not in [mid_white, high_white, mostly_white]:
+                    print("Calico changed to tortie")
                     self.pelt.name == 'Tortie'
+                    
             else:
                 self.pelt = choose_pelt(self.gender)
 
@@ -274,28 +278,32 @@ class Cat(object):
                 'dead'] = None  # The sprite that the cat has in starclan
 
                 # WHITE PATCHES
+        non_white_pelt = False
+        if self.pelt.colour != 'WHITE' and self.pelt.name in\
+        ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+            non_white_pelt = True
         little_white_poss = little_white * 6
         mid_white_poss = mid_white * 4
         high_white_poss = high_white * 2
         mostly_white_poss = mostly_white
-        if self.parent1 in self.all_cats.keys():
-            par1 = self.all_cats[self.parent1]
-        if self.parent2 in self.all_cats.keys():
-            par2 = self.all_cats[self.parent2]
         if self.pelt is not None:
-            if self.pelt.white_patches is not None:
+            if self.pelt.white is True:
                 pelt_choice = randint(0, 10)
                 vit_chance = randint(0, 40)
                 direct_inherit = randint(0, 10)
                 # inheritance
-                # for one parent
-                if self.parent1 in self.all_cats.keys() and self.parent2 is None:
+                # one parent
+                if self.parent1 is not None and self.parent2 is None:
+                    par1 = self.all_cats[self.parent1]
                     if direct_inherit == 1:
-                        self.white_patches = par1.white_patches
+                        if par1.pelt.white is False:
+                            self.pelt.white = False
+                        else:
+                            self.white_patches = par1.white_patches
                     elif vit_chance == 1:
                         self.white_patches = choice(vit)
                     else:
-                        if par1.white_patches in point_markings and self.pelt.colour != 'WHITE':
+                        if par1.white_patches in point_markings and non_white_pelt is True:
                             self.white_patches = choice(point_markings)
                         elif par1.white_patches in vit:
                             self.white_patches = choice(vit)
@@ -304,21 +312,28 @@ class Cat(object):
                         elif par1.white_patches in mostly_white:
                             self.white_patches = choice(mid_white + high_white + mostly_white + ['FULLWHITE'])
                     # two parents
-                elif self.parent1 in self.all_cats.keys() and self.parent2 in self.all_cats.keys():
+                elif self.parent1 is not None and self.parent2 is not None:
                     # if 1, cat directly inherits parent 1's white patches. if 2, it directly inherits parent 2's
+                    par1 = self.all_cats[self.parent1]
+                    par2 = self.all_cats[self.parent2]
                     if direct_inherit == 1:
-                        self.white_patches = par1.white_patches
+                        if par1.pelt.white is False:
+                            self.pelt.white = False
+                        else:
+                            self.white_patches = par1.white_patches
                     elif direct_inherit == 2:
-                        self.white_patches = par2.white_patches
+                        if par2.pelt.white is False:
+                            self.pelt.white = False
+                        else:
+                            self.white_patches = par2.white_patches
                     elif vit_chance == 1:
                         self.white_patches = choice(vit)
                     else:
-                        if par1.white_patches in point_markings or par2.white_patches in point_markings and self.pelt.colour != 'WHITE'\
-                        and self.pelt.name in ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+                        if par1.white_patches in point_markings and non_white_pelt is True\
+                        or par2.white_patches in point_markings and non_white_pelt is True:
                             self.white_patches = choice(point_markings)
-                        elif par1.white_patches in vit or par2.white_patches in vit and self.pelt.name in\
-                        ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
-                        and self.pelt.colour != 'WHITE':
+                        elif par1.white_patches in vit and non_white_pelt is True\
+                        or par2.white_patches in vit and non_white_pelt is True:
                             self.white_patches = choice(vit)
                         elif par1.white_patches is None:
                             if par2.white_patches is None:
@@ -360,20 +375,20 @@ class Cat(object):
                             elif par2.white_patches in high_white:
                                 self.white_patches = choice(mid_white_poss + high_white_poss * 3 + mostly_white)
                             elif par2.white_patches in mostly_white:
-                                self.white_patches = choice(mid_white + high_white_poss + mostly_white + ['FULLWHITE'])
+                                self.white_patches = choice(mid_white + high_white_poss * 2 + mostly_white + ['FULLWHITE'])
                             elif par2.white_patches == 'FULLWHITE':
                                 self.white_patches = choice(high_white_poss + mostly_white_poss + ['FULLWHITE'])
                             else:
                                 self.white_patches = choice(mid_white)
                         elif par1.white_patches in high_white:
                             if par2.white_patches is None:
-                                self.white_patches = choice(little_white + mid_white + high_white + [None])
+                                self.white_patches = choice(little_white + mid_white_poss + high_white + [None])
                             elif par2.white_patches in little_white:
                                 self.white_patches = choice(little_white_poss + mid_white_poss + high_white)
                             elif par2.white_patches in mid_white:
                                 self.white_patches = choice(little_white + mid_white_poss + high_white_poss)
                             elif par2.white_patches in high_white:
-                                self.white_patches = choice(mid_white_poss + high_white_poss + mostly_white)
+                                self.white_patches = choice(mid_white_poss + high_white_poss * 2 + mostly_white)
                             elif par2.white_patches in mostly_white:
                                 self.white_patches = choice(mid_white + high_white_poss + mostly_white + ['FULLWHITE'])
                             elif par2.white_patches == 'FULLWHITE':
@@ -412,9 +427,8 @@ class Cat(object):
                                 self.white_patches = choice(mostly_white)
                         
                 # regular non-inheritance white patches generation
-                if self.parent1 is None:
-                    if pelt_choice == 1 and self.pelt.name in ['Tortie', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
-                    and self.pelt.colour != 'WHITE':
+                else:
+                    if pelt_choice == 1 and non_white_pelt is True:
                         self.white_patches = choice(point_markings)
                     elif pelt_choice == 1 and self.pelt.name in 'TwoColour' and self.pelt.colour != 'WHITE':
                         self.white_patches = choice(point_markings + ['POINTMARK'])
@@ -435,9 +449,11 @@ class Cat(object):
                         and self.pelt.colour != 'WHITE':
                             self.white_patches = choice(vit)
                         else:
-                            self.white_patches = choice(self.pelt.white_patches)
+                            self.white_patches = choice(self.white_patches)
             else:
                 self.white_patches = None
+
+            print(self.white_patches)
             
         # pattern for tortie/calico cats
         if self.pelt.name in ['Calico', 'Tortie']:
@@ -2410,8 +2426,6 @@ class Cat(object):
                 par1 = self.all_cats[self.parent1]
                 self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, None]), choice([par1.pelt.white, None]), choice([par1.pelt.name, None]),
                                         choice([par1.pelt.length, None]))
-                if par1.white_patches == None and self.pelt.name == 'Calico':
-                    self.pelt.name = 'Tortie'
 
             if self.parent1 in self.all_cats.keys() and self.parent2 in self.all_cats.keys():
                 # 2 in 3 chance to inherit either parent's pelt
@@ -2419,8 +2433,6 @@ class Cat(object):
                 par2 = self.all_cats[self.parent2]
                 self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, par2.pelt.colour, None]), choice([par1.pelt.white, par2.pelt.white, None]),
                                         choice([par1.pelt.name, par2.pelt.name, None]), choice([par1.pelt.length, par2.pelt.length, None]))
-                if self.pelt.name == 'Calico' and par1.white_patches not in [mid_white, high_white, mostly_white]:
-                    self.pelt.name == 'Tortie'
             else:
                 self.pelt = choose_pelt(self.gender)            
                               
