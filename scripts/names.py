@@ -251,7 +251,7 @@ class Name(object):
         "Caroline", "Conan", "Cloud", "Charlie", "Cowboy", 'Burger', "Dune",
         "Dan", "Delilah", "Emerald", "Emy", "Erica", " Eddie", "Eda", "Ferret",
         "Fawn", "Fiver", "Fallow", "Ferry", "Gamble", "Grain", "Gir", "Hop",
-        "Hot Sauce", "Habanero", "Taco Bell", "Cheetoman"
+        "Hot Sauce", "Habanero", "Taco Bell", "Cheetoman", "Queso", "Ruby"
     ]
 
     if os.path.exists('saves/prefixlist.txt'):

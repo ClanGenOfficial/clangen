@@ -121,7 +121,7 @@ class Relation_Events(object):
                 relationship.link_relationship()
 
             # overcome dead mates
-            if cat_from_mate != None and cat_from_mate.dead and randint(1, 25) == 1 and cat_from_mate.dead_for > 4:
+            if cat_from_mate != None and cat_from_mate.dead and randint(1, 25) == 1 and cat_from_mate.dead_for >= 4:
                 self.had_one_event = True
                 print(cat_from.name, cat_from_mate.name , " - OVERCOME", game.clan.age, "moons")
                 game.cur_events_list.append(
