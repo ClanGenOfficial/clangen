@@ -3218,7 +3218,7 @@ class Cat(object):
         return color_name
     
     
-    def accessory_display_name(self, accessory):
+    def accessory_display_name(self):
     #    acc_display_plural = ' '
     #    acc_display_singular = ' '
         accessory = str(self.accessory).lower()
@@ -3258,8 +3258,6 @@ class Cat(object):
                     acc_display = collar_color + ' bell collar'
                 else:
                     acc_display = collar_color + ' collar'
-
-                print(acc_display)
                 
             # elif self.accessory in [plant_accessories]:
             #     acc_plural = acc_display_plural
@@ -3321,19 +3319,14 @@ class Cat(object):
                     acc_display = 'crow feathers'
                 else:
                     acc_display = acc_display
-
-                print(acc_display)    
             
             else:
                 acc_display = acc_display
-                print(acc_display)
-        if self.accessory == None:
-            acc_display = 'None'
-            print(acc_display)
-        
-            
 
-        
+            if self.accessory == None:
+                acc_display = None
+        print(acc_display)
+        return acc_display
 
 
     def describe_cat(self):
