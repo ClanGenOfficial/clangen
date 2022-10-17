@@ -1,5 +1,3 @@
-from os import name
-from pydoc import text
 from random import choice, randint
 from math import ceil, floor
 from .events import events_class
@@ -7,6 +5,7 @@ from .game_essentials import *
 from .names import *
 from .cats import *
 from .pelts import *
+from .utility import *
 
 
 class Patrol(object):
@@ -991,6 +990,7 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
+            add_siblings_to_cat(kit)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
 
@@ -1014,6 +1014,7 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
+            add_siblings_to_cat(kit)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
             if (kit.status == 'elder'):
@@ -1023,6 +1024,7 @@ class Patrol(object):
                 kit.name.suffix = ''
             if self.patrol_event.patrol_id == 501:
                 num_kits = choice([2, 2, 2, 2, 3, 4])
+                all_kitten = []
                 for _ in range(num_kits):
                     kit2 = Cat(status='kitten', moons=0)
                     kit2.skill = 'formerly a loner'
@@ -1045,6 +1047,8 @@ class Patrol(object):
                             relationships.append(Relationship(kit2, the_cat))
                     kit2.relationships = relationships
                     game.clan.add_cat(kit2)
+                for kit in all_kitten:
+                    add_siblings_to_cat(kit)
 
         elif self.patrol_event.patrol_id in [502, 503, 520]:  # new kittypet
             new_status = choice([
@@ -1062,6 +1066,7 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
+            add_siblings_to_cat(kit)
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
             kit.skill = 'formerly a kittypet'

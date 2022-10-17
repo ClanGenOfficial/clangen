@@ -53,6 +53,8 @@ class TestRelativesFunction(unittest.TestCase):
         grand_parent = Cat()
         sibling1 = Cat(parent1=grand_parent.ID)
         sibling2 = Cat(parent1=grand_parent.ID)
+        sibling1.siblings.append(sibling2.ID)
+        sibling2.siblings.append(sibling1.ID)
         kit = Cat(parent1=sibling1.ID)
         self.assertFalse(sibling1.is_uncle_aunt(kit))
         self.assertFalse(sibling1.is_uncle_aunt(sibling2))
@@ -142,7 +144,7 @@ class TestPossibleMateFunction(unittest.TestCase):
         self.assertTrue(elder_cat1.is_potential_mate(senior_adult_cat1))
         self.assertTrue(elder_cat1.is_potential_mate(elder_cat2))
 
-    def test_age_love_interrest(self):
+    def test_age_love_interest(self):
         kitten_cat2 = Cat(moons=1)
         kitten_cat1 = Cat(moons=1)
         adolescent_cat1 = Cat(moons=6)

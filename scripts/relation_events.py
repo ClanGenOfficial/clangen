@@ -440,17 +440,21 @@ class Relation_Events(object):
         kits = choice(one_kit + two_kits + three_kits + four_kits + five_kits + six_kits)
 
         # create amount of kits
+        all_kitten = []
         for kit in range(kits):
             kit = None
             if other_cat != None:
                 if cat.gender == 'female':
                     kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
+                    all_kitten.append(kit)
                 else:
                     kit = Cat(parent1=other_cat.ID, parent2=cat.ID, moons=0)
+                    all_kitten.append(kit)
                 cat.birth_cooldown = 6
                 other_cat.birth_cooldown = 6
             else:
                 kit = Cat(parent1=cat.ID, moons=0)
+                all_kitten.append(kit)
                 cat.birth_cooldown = 6
             #create and update relationships
             relationships = []
@@ -468,6 +472,10 @@ class Relation_Events(object):
             # remove accessory
             kit.accessory = None
             game.clan.add_cat(kit)
+
+        # check other cats of clan for siblings
+        for kitten in all_kitten:
+            add_siblings_to_cat(kitten)
 
         # choose event string
         print_event = ""
