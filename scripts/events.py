@@ -262,45 +262,46 @@ class Events(object):
                     choice(plant_accessories),
                     choice(wild_accessories)
                 ])
-                accessory = cat.accessory
+                acc_singular = cat.plural_acc_names(False, True)
+                acc_plural = cat.plural_acc_names(True, False)
                 #if self.ceremony_accessory == True:
                  #   acc_text.extend([f'{other_name} gives {name} something to adorn their pelt as congratulations', f'{name} decides to pick something to adorn their pelt as celebration'])
                 if cat.age != 'kitten':
                     if cat.accessory in ["FORGET ME NOTS", "BLUEBELLS", "POPPY"]:
                         if game.clan.current_season == 'Leaf-bare':
-                            acc_text.append(f'{name} found a mysterious flower growing in the {choice(["snow", "ice", "frost"])} and decided to wear it')
+                            acc_text.append(f'{name} found a mysterious {acc_singular} growing in the {choice(["snow", "ice", "frost"])} and decided to wear it')
                         else:
-                            acc_text.extend([f'{name} received a flower from {other_name} and decided to wear it on their pelt',
-                                            f'{name} found a pretty flower and decided to wear it on their pelt', f'A clanmate gave {name} a flower and they decided to wear it'
+                            acc_text.extend([f'{name} received a {acc_singular} from {other_name} and decided to wear it on their pelt',
+                                            f'{name} found a pretty {acc_singular} and decided to wear it on their pelt', f'A clanmate gave {name} a {acc_singular} and they decided to wear it'
                             ])
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
-                        acc_text.append(f'{name} found a bunch of pretty feathers and decided to wear them')
+                        acc_text.append(f'{name} found a bunch of pretty {acc_plural} and decided to wear them')
                     elif cat.accessory in ["HERBS", "PETALS", "DRY_HERBS"]:
-                        acc_text.append(f'{name} always seems to have something stuck in their fur')
+                        acc_text.append(f'{name} always seems to have {acc_plural} stuck in their fur')
                     elif cat.accessory in plant_accessories and cat.status in ['medicine cat apprentice', 'medicine cat']:
-                        acc_text.extend([f'{name} has decided to always bring their {accessory.lower()} with them',
-                                        f'{accessory.lower()} - an item so important to {name} that they always carry it around'.capitalize,
-                                        f'{accessory.lower()} - so vital for {name} that they always have it on them'.capitalize
+                        acc_text.extend([f'{name} has decided to always bring their {acc_plural} with them',
+                                        f'{acc_plural} are so important to {name} that they always carry it around'.capitalize,
+                                        f'{acc_plural} are so vital for {name} that they always have some on them'.capitalize
                         ])
                     else:
-                        acc_text.extend([f'{name} finds something interesting and decides to wear it on their pelt', f'A clanmate gives {name} a pretty accessory and they decide to wear it on their pelt',
-                                        f'{name} finds something interesting while out on a walk and decides to wear it on their pelt', f'{name} finds {accessory.lower()} fascinating and decides to wear it on their pelt',
-                                        f'A clanmate gives {name} something to adorn their pelt as a gift', f'{other_name} gives {name} a pretty accessory and they decide to wear it on their pelt'
+                        acc_text.extend([f'{name} finds a {acc_singular} and decides to wear it on their pelt', f'A clanmate gives {name} a pretty {acc_singular} and they decide to wear it on their pelt',
+                                        f'{name} finds a {acc_singular} while out on a walk and decides to wear it on their pelt', f'{name} finds {acc_plural} fascinating and decides to wear some on their pelt',
+                                        f'A clanmate gives {name} a {acc_singular} to adorn their pelt as a gift', f'{other_name} gives {name} a pretty {acc_plural} and they decide to wear it on their pelt'
                         ])
                 else:
                     if cat.accessory in ["FORGET ME NOTS", "BLUEBELLS", "POPPY"]:
-                        acc_text.extend([f'{name} received a flower from {other_name} and decided to wear it on their pelt',
-                                            f'{name} found a pretty flower and decided to wear it on their pelt', f'A clanmate gave {name} a flower and they decided to wear it'
+                        acc_text.extend([f'{name} received a {acc_singular} from {other_name} and decided to wear it on their pelt',
+                                            f'{name} found {acc_singular} and decided to wear it on their pelt', f'A clanmate gave {name} a {acc_singular} and they decided to wear it'
                             ])
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
-                        acc_text.append(f'{name} was playing with feathers earlier and decided to wear some of them')
+                        acc_text.append(f'{name} was playing with {acc_plural} earlier and decided to wear some of them')
                     elif cat.accessory in ["HERBS", "PETALS", "DRYHERBS"]:
                         acc_text.append(f'{name}\'s parents try their best to groom them, but something is always stuck in their fur')
                     else:    
-                        acc_text.extend([f'{name} seems to have picked something up while playing out in the camp', f'{name} finds something interesting and decides to wear it on their pelt',
-                                        f'A clanmate gives {name} a pretty accessory and they decide to wear it on their pelt', f'{other_name} gives {name} a pretty accessory and they decide to wear it on their pelt',
-                                        f'{name} is so cute that they are given {accessory.lower()} as a gift', f'{name} starts to wear {accessory.lower()} on their pelt after their friend gave it to them',
-                                        f'{name} was playing with {accessory.lower()} earlier and has decided to use it to adorn themselves'
+                        acc_text.extend([f'{name} seems to have picked up a {acc_singular} while playing out in the camp', f'{name} finds something interesting and decides to wear it on their pelt',
+                                        f'A clanmate gives {name} a pretty {acc_plural} and they decide to wear it on their pelt', f'{other_name} gives {name} a pretty accessory and they decide to wear it on their pelt',
+                                        f'{name} is so cute that they are given {acc_plural} as a gift', f'{name} starts to wear {acc_plural} on their pelt after their friend gave it to them',
+                                        f'{name} was playing with {acc_plural} earlier and has decided to use it to adorn themselves'
                         ])
         if acc_text:
             game.cur_events_list.append(choice(acc_text))

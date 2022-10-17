@@ -3220,8 +3220,6 @@ class Cat(object):
     
     
     def accessory_display_name(self):
-    #    acc_display_plural = ' '
-    #    acc_display_singular = ' '
         accessory = str(self.accessory).lower()
         acc_display = accessory
         if self.accessory != None:
@@ -3260,61 +3258,6 @@ class Cat(object):
                 else:
                     acc_display = collar_color + ' collar'
                 
-            # elif self.accessory in [plant_accessories]:
-            #     acc_plural = acc_display_plural
-            #     acc_singular = acc_display_singular
-            #     if accessory.name == 'maple leaf':
-            #         acc_display_plural = 'maple leaves'                    
-            #         acc_display_singular = 'a maple leaf'
-            #     if accessory.name == 'holly':
-            #         acc_display_plural = 'holly berries'
-            #         acc_display_singular = 'a holly berry'
-            #     if accessory.name == 'blue berries':                    
-            #         acc_display_plural = 'blueberries'
-            #         acc_display_singular = 'a blueberry'
-            #     if accessory.name == 'forget me nots':
-            #         acc_display_plural = 'forget me nots'
-            #         acc_display_singular = 'a forget me not flower'                
-            #     if accessory.name == 'rye stalk':
-            #         acc_display_plural = 'rye stalks'
-            #         acc_display_singular = 'rye stalk'
-            #     if accessory.name == 'laurel':                
-            #         acc_display_plural = 'laurel'
-            #         acc_display_singular = 'a laurel plant'
-            #     if accessory.name == 'bluebells':
-            #         acc_display_plural = 'bluebells'
-            #         acc_display_singular = 'a bluebell flower'                
-            #     if accessory.name == 'nettle':
-            #         acc_display_plural = 'nettles'
-            #         acc_display_singular = 'a nettle'
-            #     if accessory.name == 'poppy':
-            #         acc_display_plural = 'poppies'
-            #         acc_display_singular = 'a poppy flower'
-            #     if accessory.name == 'lavender':
-            #         acc_display_plural = 'lavender'
-            #         acc_display_singular = 'a lavender flower'
-            #     if accessory.name == 'herbs':
-            #         acc_display_plural = 'herbs'
-            #         acc_display_singular = 'an herb'
-            #     if accessory.name == 'petals':
-            #         acc_display_plural = 'petals'
-            #         acc_display_singular = 'a petal'
-            #     if accessory.name == 'dry herbs':
-            #         acc_display_plural = 'dry herbs'
-            #         acc_display_singular = 'a dry herb'
-            #     if accessory.name == 'oak leaves':
-            #         acc_display_plural = 'oak leaves'
-            #         acc_display_singular = 'an oak leaf'
-            #     if accessory.name == 'catmint':
-            #         acc_display_plural = 'catnip'
-            #         acc_display_singular = 'a catnip leaf'
-            #     if accessory.name == 'maple seed':                    
-            #         acc_display_plural = 'maple seeds'
-            #         acc_display_singular = 'a maple seed'
-            #     if accessory.name == 'juniper':
-            #         acc_display_plural = 'juniper berries'
-            #         acc_display_singular = 'a juniper berry'
-                
             elif self.accessory in wild_accessories:
                 if acc_display == 'blue feathers':
                     acc_display = 'crow feathers'
@@ -3328,6 +3271,124 @@ class Cat(object):
                 acc_display = None
         return acc_display
 
+    def plural_acc_names(self, plural, singular):
+        accessory = self.accessory.lower()
+        acc_display = accessory
+        if accessory == 'maple leaf':
+            if plural == True:
+                acc_display = 'maple leaves'
+            if singular == True:
+                acc_display = 'maple leaf'
+        elif accessory == 'holly':
+            if plural == True:
+                acc_display = 'holly berries'
+            if singular == True:
+                acc_display = 'holly berry'
+        elif accessory == 'blue berries':
+            if plural == True:        
+                acc_display = 'blueberries'
+            if singular == True:
+                acc_display = 'blueberry'
+        elif accessory == 'forget me nots':
+            if plural == True:
+                acc_display = 'forget me nots'
+            if singular == True:
+                acc_display = 'forget me not flower'                
+        elif accessory == 'rye stalk':
+            if plural == True:
+                acc_display = 'rye stalks'
+            if singular == True:
+                acc_display = 'rye stalk'
+        elif accessory == 'laurel':
+            if plural == True:
+                acc_display = 'laurel'
+            if singular == True:
+                acc_display = 'laurel plant'
+        elif accessory == 'bluebells':
+            if plural == True:
+                acc_display = 'bluebells'
+            if singular == True:
+                acc_display = 'bluebell flower'                
+        elif accessory == 'nettle':
+            if plural == True:
+                acc_display = 'nettles'
+            if singular == True:
+                acc_display = 'nettle'
+        elif accessory == 'poppy':
+            if plural == True:
+                acc_display = 'poppies'
+            if singular == True:
+                acc_display = 'poppy flower'
+        elif accessory == 'lavender':
+            if plural == True:
+                acc_display = 'lavender'
+            if singular == True:
+                acc_display = 'lavender flower'
+        elif accessory == 'herbs':
+            if plural == True:
+                acc_display = 'herbs'
+            if singular == True:
+                acc_display = 'herb'
+        elif accessory == 'petals':
+            if plural == True:
+                acc_display = 'petals'
+            if singular == True:
+                acc_display = 'petal'
+        elif accessory == 'dry herbs':
+            if plural == True:
+                acc_display = 'dry herbs'
+            if singular == True:
+                acc_display = 'dry herb'
+        elif accessory == 'oak leaves':
+            if plural == True:
+                acc_display = 'oak leaves'
+            if singular == True:
+                acc_display = 'oak leaf'
+        elif accessory == 'catmint':
+            if plural == True:
+                acc_display = 'catnip'
+            if singular == True:
+                acc_display = 'catnip leaf'
+        elif accessory == 'maple seed':
+            if plural == True:
+                acc_display = 'maple seeds'
+            if singular == True:
+                acc_display = 'maple seed'
+        elif accessory == 'juniper':
+            if plural == True:
+                acc_display = 'juniper berries'
+            if singular == True:
+                acc_display = 'juniper berry'
+        elif accessory == 'red feathers':
+            if plural == True:
+                acc_display = 'cardinal feathers'
+            if singular == True:
+                acc_display = 'cardinal feather'
+        elif accessory == 'blue feathers':
+            if plural == True:
+                acc_display = 'crow feathers'
+            if singular == True:
+                acc_display = 'crow feather'
+        elif accessory == 'jay feathers':
+            if plural == True:
+                acc_display = 'jay feathers'
+            if singular == True:
+                acc_display = 'jay feather'
+        elif accessory == 'moth wings':
+            if plural == True:
+                acc_display = 'moth wings'
+            if singular == True:
+                acc_display = 'moth wing'
+        elif accessory == 'cicada wings':
+            if plural == True:
+                acc_display = 'cicada wings'
+            if singular == True:
+                acc_display = 'cicada wing'
+            
+        if plural is True and singular is False:
+            return acc_display
+        elif singular is True and plural is False:
+            return acc_display
 
     def describe_cat(self):
         if self.genderalign == 'male' or self.genderalign == "transmasc" or self.genderalign == "trans male":
