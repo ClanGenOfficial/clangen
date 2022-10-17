@@ -3325,7 +3325,6 @@ class Cat(object):
 
             if self.accessory == None:
                 acc_display = None
-        print(acc_display)
         return acc_display
 
 
