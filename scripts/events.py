@@ -219,12 +219,12 @@ class Events(object):
                     cat.status_change('elder')
                     game.cur_events_list.append(
                         f'{str(cat.name)} has retired to the elder den')
-            if cat.status in [
-                    'warrior', 'deputy'
-            ] and cat.age == 'elder' and len(cat.apprentice) < 1:
-                cat.status_change('elder')
-                if str(cat.status) == 'deputy':
+            if cat.status in ['warrior', 'deputy'] and cat.age == 'elder' and len(cat.apprentice) < 1:
+                if cat.status == 'deputy':
                     game.clan.deputy = None
+                    cat.status_change('elder')
+                else:
+                    cat.status_change('elder')
                 game.cur_events_list.append(
                     f'{str(cat.name)} has retired to the elder den')
 
