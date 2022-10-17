@@ -298,8 +298,8 @@ class Cat(object):
                             self.white_patches = choice(point_markings)
                         elif par1.white_patches in vit:
                             self.white_patches = choice(vit)
-                        elif par1.white_patches in [None, little_white, mid_white, high_white]:
-                            self.white_patches = choice(little_white_poss + mid_white_poss + high_white_poss + mostly_white_poss)
+                        elif par1.white_patches in [None] + little_white + mid_white + high_white:
+                            self.white_patches = choice([None] + little_white_poss + mid_white_poss + high_white_poss + mostly_white_poss)
                         elif par1.white_patches in mostly_white:
                             self.white_patches = choice(mid_white + high_white + mostly_white + ['FULLWHITE'])
                     if par1.white_patches == None and self.pelt.name == 'Calico':
@@ -419,8 +419,8 @@ class Cat(object):
                                 self.white_patches = choice(mostly_white + ['FULLWHITE'] * 6)
                             else:
                                 self.white_patches = choice(mostly_white)
-                    if self.pelt.name == 'Calico' and par1.white_patches not in [mid_white, high_white, mostly_white]\
-                    and par2.white_patches not in [mid_white, high_white, mostly_white]:
+                    if self.pelt.name == 'Calico' and par1.white_patches not in mid_white + high_white + mostly_white\
+                    and par2.white_patches not in mid_white + high_white + mostly_white:
                         print("Calico changed to tortie")
                         self.pelt.name = 'Tortie'
                         
