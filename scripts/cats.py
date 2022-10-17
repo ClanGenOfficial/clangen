@@ -186,8 +186,8 @@ class Cat(object):
                 par1 = self.all_cats[self.parent1]
                 self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, None]), choice([par1.pelt.white, None]), choice([par1.pelt.name, None]),
                                         choice([par1.pelt.length, None]))
-                if par1.white_patches == None and self.pelt == 'Calico':
-                    self.pelt = 'Tortie'
+                if par1.white_patches == None and self.pelt.name == 'Calico':
+                    self.pelt.name = 'Tortie'
 
 
             if self.parent1 in self.all_cats.keys() and self.parent2 in self.all_cats.keys():
@@ -196,14 +196,10 @@ class Cat(object):
                 par2 = self.all_cats[self.parent2]
                 self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, par2.pelt.colour, None]), choice([par1.pelt.white, par2.pelt.white, None]),
                                         choice([par1.pelt.name, par2.pelt.name, None]), choice([par1.pelt.length, par2.pelt.length, None]))
-                if self.pelt == 'Calico' and par1.white_patches not in [mid_white, high_white, mostly_white]:
-                    self.pelt == 'Tortie'
+                if self.pelt.name == 'Calico' and par1.white_patches not in [mid_white, high_white, mostly_white]:
+                    self.pelt.name == 'Tortie'
             else:
                 self.pelt = choose_pelt(self.gender)
-                if self.pelt == 'Calico' and self.parent1 is not None:
-                    if par1.white_patches not in [mid_white, high_white, mostly_white, 'FULLWHITE']\
-                    and par2.white_patches not in [mid_white, high_white, mostly_white, 'FULLWHITE']:
-                        self.pelt == 'Tortie'
 
         # NAME
         if self.pelt is not None:
@@ -287,7 +283,7 @@ class Cat(object):
         if self.parent2 in self.all_cats.keys():
             par2 = self.all_cats[self.parent2]
         if self.pelt is not None:
-            if self.pelt.white is True:
+            if self.pelt.white_patches is not None:
                 pelt_choice = randint(0, 10)
                 vit_chance = randint(0, 40)
                 direct_inherit = randint(0, 10)
@@ -2414,8 +2410,8 @@ class Cat(object):
                 par1 = self.all_cats[self.parent1]
                 self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, None]), choice([par1.pelt.white, None]), choice([par1.pelt.name, None]),
                                         choice([par1.pelt.length, None]))
-                if par1.white_patches == None and self.pelt == 'Calico':
-                    self.pelt = 'Tortie'
+                if par1.white_patches == None and self.pelt.name == 'Calico':
+                    self.pelt.name = 'Tortie'
 
             if self.parent1 in self.all_cats.keys() and self.parent2 in self.all_cats.keys():
                 # 2 in 3 chance to inherit either parent's pelt
@@ -2423,14 +2419,10 @@ class Cat(object):
                 par2 = self.all_cats[self.parent2]
                 self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, par2.pelt.colour, None]), choice([par1.pelt.white, par2.pelt.white, None]),
                                         choice([par1.pelt.name, par2.pelt.name, None]), choice([par1.pelt.length, par2.pelt.length, None]))
-                if self.pelt == 'Calico' and par1.white_patches not in [mid_white, high_white, mostly_white]:
-                    self.pelt == 'Tortie'
+                if self.pelt.name == 'Calico' and par1.white_patches not in [mid_white, high_white, mostly_white]:
+                    self.pelt.name == 'Tortie'
             else:
-                self.pelt = choose_pelt(self.gender)
-                if self.pelt == 'Calico' and self.parent1 is not None:
-                    if par1.white_patches not in [mid_white, high_white, mostly_white, 'FULLWHITE']\
-                    and par2.white_patches not in [mid_white, high_white, mostly_white, 'FULLWHITE']:
-                        self.pelt == 'Tortie'
+                self.pelt = choose_pelt(self.gender)            
                               
         # THE SPRITE UPDATE
         # draw colour & style
@@ -2454,9 +2446,8 @@ class Cat(object):
         game.switches['error_message'] = 'There was an error loading a cat\'s white patches sprite. Last cat read was ' + str(self)
         # draw white patches
         if self.white_patches is not None:
-            if self.pelt.length == 'long' and self.status not in [
-                    'kitten', 'apprentice', 'medicine cat apprentice'
-            ] or self.age == 'elder':
+            if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice']\
+                or self.age == 'elder':
                 new_sprite.blit(
                     sprites.sprites['whiteextra' + self.white_patches +
                                     str(self.age_sprites[self.age])], (0, 0))
