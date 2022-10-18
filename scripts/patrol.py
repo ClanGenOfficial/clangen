@@ -24,6 +24,7 @@ class Patrol(object):
         self.patrol_total_experience = 0
         self.success = False
         self.patrol_random_cat = None
+        self.patrol_other_cats = None
         self.patrol_stat_cat = None
         self.experience_levels = [
             'very low', 'low', 'slightly low', 'average', 'somewhat high',
@@ -61,6 +62,10 @@ class Patrol(object):
                 return
         else:
             self.patrol_random_cat = choice(self.patrol_cats)
+        if len(self.patrol_cats) >= 3:
+            self.patrol_other_cats = self.patrol_cats - self.patrol_leader - self.patrol_random_cat
+        else:
+            self.patrol_other_cats = None
         
 
     def add_possible_patrols(self):
