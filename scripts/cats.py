@@ -24,6 +24,17 @@ class Cat(object):
         'daring', 'daydreamer', 'impulsive', 'inquisitive', 'insecure',
         'nervous', 'noisy', 'polite', 'quiet', 'sweet', 'troublesome'
     ]
+    personality_groups = {
+        'Outgoing': ['adventurous', 'bold', 'charismatic', 'childish', 'confident', 'daring', 
+                    'playful', 'righteous', 'attention-seeker', 'bouncy', 'charming', 'noisy'],
+        'Benevolent': ['altruistic', 'compassionate', 'empathetic', 'faithful', 'loving',
+                        'patient', 'responsible', 'thoughtful', 'wise', 'inquisitive',
+                        'polite', 'sweet'],
+        'Abrasive': ['ambitious', 'bloodthirsty', 'cold', 'fierce', 'shameless', 'strict',
+                    'troublesome', 'vengeful', 'bossy', 'bullying', 'impulsive'],
+        'Reserved': ['calm', 'careful', 'insecure', 'lonesome', 'loyal', 'nervous', 'sneaky',
+                    'strange', 'daydreamer', 'quiet'],
+        }
     ages = [
         'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
         'elder', 'dead'
