@@ -3261,6 +3261,8 @@ class Cat(object):
             elif self.accessory in wild_accessories:
                 if acc_display == 'blue feathers':
                     acc_display = 'crow feathers'
+                elif acc_display == 'red feathers':
+                    acc_display = 'cardinal feathers'
                 else:
                     acc_display = acc_display
             
