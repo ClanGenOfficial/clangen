@@ -1,3 +1,4 @@
+from asyncore import loop
 from os import name
 from pydoc import text
 from random import choice, randint
@@ -52,7 +53,15 @@ class Patrol(object):
             self.patrol_leader = choice(self.possible_patrol_leaders)
         elif not self.possible_patrol_leaders:
             self.patrol_leader = choice(self.patrol_cats)
-        self.patrol_random_cat = choice(self.patrol_cats)
+        if len(self.patrol_cats) > 1:
+            self.patrol_random_cat = choice(self.patrol_cats)
+            if self.patrol_random_cat == self.patrol_leader:
+                self.patrol_random_cat = choice(self.patrol_cats)
+            else:
+                return
+        else:
+            self.patrol_random_cat = choice(self.patrol_cats)
+        
 
     def add_possible_patrols(self):
         possible_patrols = []
@@ -1083,7 +1092,6 @@ class Patrol(object):
                 if claim_type == hunting_claim:
                     self.hunting_claim_info[(x, y)] = game.map_info[(x, y)]
                     self.hunting_grounds.append((x, y))
-
 
 class PatrolEvent(object):
 
