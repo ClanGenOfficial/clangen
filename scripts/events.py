@@ -1271,7 +1271,8 @@ class Events(object):
                 if cat.status == 'kitten' and other_cat.status == 'kitten':
                     cause_of_death = [
                         'Greencough reaches the nursery. ' + name + ' and ' + other_name + ' die',
-                        name + ' and ' + other_name + ' die from a bout of kittencough'
+                        name + ' and ' + other_name + ' die from a bout of kittencough',
+                        name + ' and ' + other_name + ' catch whitecough and fade away quickly'
                     ]
                 else:
                     cause_of_death = [
