@@ -1414,11 +1414,18 @@ class Events(object):
                 if not cat.dead and not cat.exiled and cat.status != 'leader':
                     alive_count += 1
                     alive_cats.append(cat)
-            if alive_count > 10:
+            addition = randint(0, 20)
+            death_chance = int(alive_count / 3)
+            if addition == 1:
+                death_chance = int(death_chance + randint(0, 10) / 2)
+            else:
+                death_chance = death_chance
+            dead_count = int(death_chance / 5)
+            if alive_count > 15:
                 chance = int(alive_count / 10)
                 if randint(chance, 1000) == 999:
                     disaster = []
-                    dead_cats = random.sample(alive_cats, 5)
+                    dead_cats = random.sample(alive_cats, 5) # alive_cats, death_count for when scaling is added
                     name1 = str(dead_cats[0].name)
                     name2 = str(dead_cats[1].name)
                     name3 = str(dead_cats[2].name)
