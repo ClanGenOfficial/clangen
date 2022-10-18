@@ -189,12 +189,33 @@ class Events(object):
                 if cat.age != 'elder':
                     cat.age = cat_class.ages[cat_class.ages.index(cat.age) + 1]
                 if cat.status == 'kitten' and cat.age == 'adolescent':
-                    cat.status_change('apprentice')
-                    game.cur_events_list.append(
-                        f'{str(cat.name)} has started their apprenticeship')
-                    self.ceremony_accessory = True
-                    self.gain_accessories(cat)
-                    cat.update_mentor()
+                    has_med = any(
+                        str(cat.status) == 'medicine cat'
+                        and not cat.dead and not cat.exiled
+                        for cat in cat_class.all_cats.values())
+                    has_med_app = any(
+                        str(cat.status) == 'medicine cat apprentice'
+                        and not cat.dead and not cat.exiled
+                        for cat in cat_class.all_cats.values())
+                    if cat.trait in ['calm', 'altruistic', 'careful', 'faithful', 'compassionate', 'empathetic',
+                                     'loving', 'patient', 'strange', 'thoughtful', 'wise']:
+                        chance = randint(0, 3)
+                    else:
+                        chance = randint(0, 25)
+                    if has_med_app is False and has_med is True and chance == 1:
+                        cat.status_change('medicine cat apprentice')
+                        game.cur_events_list.append(
+                            f'{str(cat.name)} has chosen to walk the path of a medicine cat')
+                        self.ceremony_accessory = True
+                        self.gain_accessories(cat)
+                        cat.update_med_mentor()
+                    else:
+                        cat.status_change('apprentice')
+                        game.cur_events_list.append(
+                            f'{str(cat.name)} has started their apprenticeship')
+                        self.ceremony_accessory = True
+                        self.gain_accessories(cat)
+                        cat.update_mentor()
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
                     self._extracted_from_perform_ceremonies_19(
                         cat, 'warrior', ' has earned their warrior name')

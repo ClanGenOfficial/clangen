@@ -2357,7 +2357,22 @@ class Cat(object):
             self.update_mentor()
         # update class dictionary
         self.all_cats[self.ID] = self
-
+    def is_valid_med_mentor(self, potential_mentor):
+        # Dead or exiled cats can't be mentors
+        if potential_mentor.dead or potential_mentor.exiled:
+            return False
+        # Match jobs
+        if self.status == 'medicine cat apprentice' and potential_mentor.status == 'medicine cat':
+            return True
+        if self.status == 'medicine cat apprentice' and potential_mentor.status != 'medicine cat':
+            return False
+        # If not an app, don't need a mentor
+        if 'medicine cat apprentice' not in self.status:
+            return False
+        # Dead cats don't need mentors
+        if self.dead:
+            return False
+        return True
     def is_valid_mentor(self, potential_mentor):
         # Dead or exiled cats can't be mentors
         if potential_mentor.dead or potential_mentor.exiled:
@@ -2376,6 +2391,45 @@ class Cat(object):
         if self.dead:
             return False
         return True
+    def update_med_mentor(self, new_mentor=None):
+        if new_mentor is None:
+            # If not reassigning and current mentor works, leave it
+            if self.mentor and self.is_valid_med_mentor(self.mentor):
+                return
+        old_mentor = self.mentor
+        # Should only have mentor if alive and some kind of apprentice
+        if 'medicine cat apprentice' in self.status and not self.dead and not self.exiled:
+            # Need to pick a random mentor if not specified
+            if new_mentor is None:
+                potential_mentors = []
+                priority_mentors = []
+                for cat in self.all_cats.values():
+                    if self.is_valid_med_mentor(cat):
+                        potential_mentors.append(cat)
+                        if len(cat.apprentice) == 0:
+                            priority_mentors.append(cat)
+                # First try for a cat who currently has no apprentices
+                if len(priority_mentors) > 0:
+                    new_mentor = choice(priority_mentors)
+                elif len(potential_mentors) > 0:
+                    new_mentor = choice(potential_mentors)
+            # Mentor changing to chosen/specified cat
+            self.mentor = new_mentor
+            if new_mentor is not None:
+                if self not in new_mentor.apprentice:
+                    new_mentor.apprentice.append(self)
+                if self in new_mentor.former_apprentices:
+                    new_mentor.former_apprentices.remove(self)
+        else:
+            self.mentor = None
+        # Move from old mentor's apps to former apps
+        if old_mentor is not None and old_mentor != self.mentor:
+            if self in old_mentor.apprentice:
+                old_mentor.apprentice.remove(self)
+            if self not in old_mentor.former_apprentices:
+                old_mentor.former_apprentices.append(self)
+            if old_mentor not in self.former_mentor:
+                self.former_mentor.append(old_mentor)
 
     def update_mentor(self, new_mentor=None):
         if new_mentor is None:
