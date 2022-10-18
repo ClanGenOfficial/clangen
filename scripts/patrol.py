@@ -851,6 +851,52 @@ class Patrol(object):
                     20,
                     win_skills=['extremely smart'])
             ])
+        # general relationship patrols
+        if len(self.patrol_cats) == 2:
+            possible_patrols.extend([
+                PatrolEvent(
+                    1000,
+                    'p_l playfully asks r_c to race',
+                    'r_c accepts and wins, grinning mischieviously',
+                    'r_c loses and gets annoyed',
+                    'r_c politely declines',
+                    50,
+                    10
+                ),
+                PatrolEvent(
+                    1001,
+                    'p_l asks r_c if they can tell them a secret',
+                    'p_l feels a huge weight lift from their shoulders as they tell their secret to r_c',
+                    'r_c dismisses it rudely, leaving p_l heartbroken',
+                    'r_c politely declines',
+                    60,
+                    10
+                ),
+                PatrolEvent(
+                    1002,
+                    'r_c has failed yet another hunting attempt and is feeling embarrassed',
+                    'p_l gently instructs them what they could do better, and r_c catches a big squirrel!',
+                    'p_l tries to tell them what they did wrong but r_c takes offense and stalks off',
+                    'p_l says nothing',
+                    60,
+                    20
+                )
+            
+                ])
+            # romantic patrols for two cats
+            if cat_class.is_potential_mate(self.patrol_leader, self.patrol_random_cat,
+            for_love_interest = True, former_mentor_setting = game.settings['romantic with former mentor']):
+                possible_patrols.extend([
+                PatrolEvent(
+                    1010,
+                    'p_l casually brushes against r_c\'s flank',
+                    'p_l and r_c enter camp together, tails entwined',
+                    'r_c jerks away suddenly and almost trips',
+                    'p_l immediately apologizes for doing so',
+                    50,
+                    10
+                    )
+                ])
 
         self.patrol_event = choice(possible_patrols)
 
@@ -867,6 +913,13 @@ class Patrol(object):
             if set(self.patrol_skills).isdisjoint(
                     self.patrol_event.win_skills):
                 chance = 90
+        # change the chance based on the personality
+        if self.patrol_event in range(1000, 1010):
+            get_along = get_personality_compatibility(self.patrol_leader, self.patrol_random_cat)
+            if get_along != None and get_along:
+                chance = chance + 50
+            if get_along != None and not get_along:
+                chance = chance - 50
         c = randint(0, 100)
         if c < chance:
             self.success = True
