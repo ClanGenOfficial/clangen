@@ -189,15 +189,22 @@ class Events(object):
                 if cat.age != 'elder':
                     cat.age = cat_class.ages[cat_class.ages.index(cat.age) + 1]
                 if cat.status == 'kitten' and cat.age == 'adolescent':
+
+                    has_elder_med = any(
+                        str(cat.status) == 'medicine cat' and str(cat.age) == 'elder'
+                        and not cat.dead and not cat.exiled
+                        for cat in cat_class.all_cats.values())
                     has_med = any(
-                        str(cat.status) == 'medicine cat'
+                        str(cat.status) == 'medicine cat' and str(cat.age) != 'elder'
                         and not cat.dead and not cat.exiled
                         for cat in cat_class.all_cats.values())
                     has_med_app = any(
                         str(cat.status) == 'medicine cat apprentice'
                         and not cat.dead and not cat.exiled
                         for cat in cat_class.all_cats.values())
-                    if cat.trait in ['calm', 'altruistic', 'careful', 'faithful', 'compassionate', 'empathetic',
+                    if has_elder_med is True and has_med is False:
+                        chance = randint(0, 1)
+                    elif cat.trait in ['calm', 'altruistic', 'careful', 'faithful', 'compassionate', 'empathetic',
                                      'loving', 'patient', 'strange', 'thoughtful', 'wise']:
                         chance = randint(0, 3)
                     else:
