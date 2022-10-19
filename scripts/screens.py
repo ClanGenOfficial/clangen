@@ -1430,6 +1430,10 @@ class MakeClanScreen(Screens):
                                         text='Tidepools',
                                         camp_bg='camp1',
                                         available=game.switches['camp_bg'] != 'camp1')
+                    buttons.draw_button((100, 230),
+                                        text='Tidal Cave',
+                                        camp_bg='camp2',
+                                        available=game.switches['camp_bg'] != 'camp2')
                     if game.switches['camp_bg'] == 'camp1':
                         screen.blit(self.camp1, (250, 150))
                     elif game.switches['camp_bg'] == 'camp2':
@@ -1510,7 +1514,7 @@ class MakeClanScreen(Screens):
                 try:
                     self.change_camp_art(
                         'resources/greenleafcamp_beach.png',
-                        'resources/greenleafcamp_beach.png')
+                        'resources/greenleafcamp_beach2.png')
                 except:
                     self.change_camp_art(
                         'resources/greenleafcamp_beach.png',
