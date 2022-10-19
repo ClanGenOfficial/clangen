@@ -189,12 +189,56 @@ class Events(object):
                 if cat.age != 'elder':
                     cat.age = cat_class.ages[cat_class.ages.index(cat.age) + 1]
                 if cat.status == 'kitten' and cat.age == 'adolescent':
-                    cat.status_change('apprentice')
-                    game.cur_events_list.append(
-                        f'{str(cat.name)} has started their apprenticeship')
-                    self.ceremony_accessory = True
-                    self.gain_accessories(cat)
-                    cat.update_mentor()
+
+                    # check if the medicine cat is an elder
+                    has_elder_med = any(
+                        str(cat.status) == 'medicine cat' and str(cat.age) == 'elder'
+                        and not cat.dead and not cat.exiled
+                        for cat in cat_class.all_cats.values())
+
+                    # check if a med cat of a different age exists
+                    has_med = any(
+                        str(cat.status) == 'medicine cat' and str(cat.age) != 'elder'
+                        and not cat.dead and not cat.exiled
+                        for cat in cat_class.all_cats.values())
+
+                    # check if a med cat app already exists
+                    has_med_app = any(
+                        str(cat.status) == 'medicine cat apprentice'
+                        and not cat.dead and not cat.exiled
+                        for cat in cat_class.all_cats.values())
+
+                    # assign chance to become med app depending on current med cat and traits
+                    if has_elder_med is True and has_med is False:
+                        chance = randint(0, 1)
+                        print('POSSIBLE MED APP - ELDER MED MENTOR - CHANCE:', chance)
+                    elif cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
+                        chance = randint(0, 3)
+                        print('POSSIBLE MED APP - TRAIT:', cat.trait, '- CHANCE:', chance)
+                    else:
+                        chance = randint(0, 25)
+                        print('POSSIBLE MED APP - CHANCE:', chance)
+                    if has_med_app is False and has_med is True and chance == 1:
+                        cat.status_change('medicine cat apprentice')
+                        game.cur_events_list.append(
+                            f'{str(cat.name)} has chosen to walk the path of a medicine cat')
+                        self.ceremony_accessory = True
+                        self.gain_accessories(cat)
+                        cat.update_med_mentor()
+                    elif has_med_app is False and has_elder_med is True and chance == 1:
+                        cat.status_change('medicine cat apprentice')
+                        game.cur_events_list.append(
+                            f'{str(cat.name)} has chosen to walk the path of a medicine cat')
+                        self.ceremony_accessory = True
+                        self.gain_accessories(cat)
+                        cat.update_med_mentor()
+                    else:
+                        cat.status_change('apprentice')
+                        game.cur_events_list.append(
+                            f'{str(cat.name)} has started their apprenticeship')
+                        self.ceremony_accessory = True
+                        self.gain_accessories(cat)
+                        cat.update_mentor()
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
                     self._extracted_from_perform_ceremonies_19(
                         cat, 'warrior', ' has earned their warrior name')
