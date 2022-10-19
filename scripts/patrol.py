@@ -602,7 +602,21 @@ class Patrol(object):
                 'r_c finds an abandoned kit whose mother is nowhere to be found',
                 'The kit is taken back to camp and nursed back to health',
                 'The kit is taken back to camp, but grows weak and dies a few days later',
-                'They leave the kit alone', 40, 10)
+                'They leave the kit alone', 40, 10),
+            PatrolEvent(
+                505,
+                'r_c finds a loner who offers their healing skills in exchange for shelter',
+                'The new medicine cat is welcomed into the clan',
+                'After hearing more about your clan, the loner decides not to join',
+                'The patrol declines their offer',
+                40,
+                10,
+                antagonize_text=
+                'Your patrol drives the cat off of the territory',
+                antagonize_fail_text=
+                'The loner is taken aback by their hostility '
+                'and decides this Clan is not for them',
+                win_skills=['great speaker', 'excellent speaker']),
         ])
 
         if self.patrol_random_cat.skill == 'formerly a loner':
@@ -1102,14 +1116,47 @@ class Patrol(object):
             kit.relationships = relationships
             game.clan.add_cat(kit)
             add_siblings_to_cat(kit,cat_class)
+            new_skill = choice(['formerly a loner', 'formerly a kittypet'])
+            kit.skill = new_skill
+            kit.thought = 'Is looking around the camp with wonder'
+            if kit.skill == 'formerly a kittypet':
+                if randint(0, 2) == 0:  # chance to add collar
+                    kit.accessory = choice(collars)
+
+
+        if self.patrol_event.patrol_id in [505]:  # new med cat
+            new_status = choice(['medicine cat'])
+            if self.patrol_event.patrol_id == 505:
+                new_status = 'medicine cat'
+
+            kit = Cat(status=new_status)
+            #create and update relationships
+            relationships = []
+            for cat_id in game.clan.clan_cats:
+                the_cat = cat_class.all_cats.get(cat_id)
+                if the_cat.dead or the_cat.exiled:
+                    continue
+                the_cat.relationships.append(Relationship(the_cat, kit))
+                relationships.append(Relationship(kit, the_cat))
+            kit.relationships = relationships
+            game.clan.add_cat(kit)
+            add_siblings_to_cat(kit,cat_class)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
+            if (kit.status == 'elder'):
+                kit.moons = randint(120, 150)
+            if randint(0, 5) == 0:  # chance to keep name
+                kit.name.prefix = choice(names.loner_names)
+                kit.name.suffix = ''
+            
 
-        if self.patrol_event.patrol_id in [500, 501, 510]:  # new loner
+        if self.patrol_event.patrol_id in [500, 501, 505, 510]:  # new loner
             new_status = choice([
-                'apprentice', 'warrior', 'warrior', 'warrior', 'warrior',
-                'elder'
+                'apprentice', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior',
+                'elder', 'medicine cat'
             ])
+            if self.patrol_event.patrol_id == 505:
+                new_status = 'medicine cat'
             if self.patrol_event.patrol_id == 501:
                 new_status = 'warrior'
             kit = Cat(status=new_status)

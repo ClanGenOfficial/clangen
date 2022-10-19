@@ -1486,7 +1486,7 @@ class Events(object):
                     disaster.extend([
                         ' drown after the camp becomes flooded',
                         ' are killed in a battle against ' +
-                        choice(names.normal_prefixes) + 'Clan',
+                        choice(game.clan.all_clans).name + 'Clan',
                         ' are killed after a fire rages through the camp',
                         ' are killed in an ambush by a group of rogues',
                         ' go missing in the night',
