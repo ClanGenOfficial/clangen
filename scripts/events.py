@@ -644,7 +644,7 @@ class Events(object):
                     the_cat.relationships.append(Relationship(the_cat, kit))
                     relationships.append(Relationship(kit, the_cat))
                 kit.relationships = relationships
-                add_siblings_to_cat(kit)
+                add_siblings_to_cat(kit,cat_class)
                 game.clan.add_cat(kit)
                 kit_text = [
                     f'{name} finds an abandoned kit and names them {str(kit.name)}',
@@ -669,7 +669,7 @@ class Events(object):
                 loner.relationships = relationships
                 loner.skill = 'formerly a loner'
                 game.clan.add_cat(loner)
-                add_siblings_to_cat(loner)
+                add_siblings_to_cat(loner, cat_class)
                 loner_text = [
                     f'{name} finds a loner who joins the clan',
                     f'A loner says that they are interested in clan life and joins the clan'
@@ -692,7 +692,7 @@ class Events(object):
                     relationships.append(Relationship(warrior, the_cat))
                 warrior.relationships = relationships
                 game.clan.add_cat(warrior)
-                add_siblings_to_cat(warrior)
+                add_siblings_to_cat(warrior, cat_class)
                 warrior_text = []
                 if len(game.clan.all_clans) > 0:
                     warrior_text.extend([
@@ -720,7 +720,7 @@ class Events(object):
                     relationships.append(Relationship(loner, the_cat))
                 loner.relationships = relationships
                 game.clan.add_cat(loner)
-                add_siblings_to_cat(loner)
+                add_siblings_to_cat(loner,cat_class)
                 self._extracted_from_invite_new_cats_59(loner)
                 loner_text = [
                     f'{name} finds a kittypet named {choice(names.loner_names)} who wants to join the clan'
@@ -776,7 +776,7 @@ class Events(object):
                         kit.relationships = relationships
                         game.clan.add_cat(kit)
                 for kit in all_kitten:
-                    add_siblings_to_cat(kit)
+                    add_siblings_to_cat(kit,cat_class)
                 if len(game.clan.all_clans) > 0:
                     Akit_text = ([
                         f'{parent1} finds an abandoned litter and decides to adopt them',
@@ -817,7 +817,7 @@ class Events(object):
             relationships.append(Relationship(loner, the_cat))
         loner.relationships = relationships
         game.clan.add_cat(loner)
-        add_siblings_to_cat(loner)
+        add_siblings_to_cat(loner,cat_class)
         self._extracted_from_invite_new_cats_59(loner)
         loner_text = [
             f'{name} finds a kittypet named {str(loner_name)} who wants to join the clan',

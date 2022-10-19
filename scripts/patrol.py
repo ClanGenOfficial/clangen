@@ -1066,7 +1066,7 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
-            add_siblings_to_cat(kit)
+            add_siblings_to_cat(kit,cat_class)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
 
@@ -1090,7 +1090,7 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
-            add_siblings_to_cat(kit)
+            add_siblings_to_cat(kit,cat_class)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
             if (kit.status == 'elder'):
@@ -1124,7 +1124,7 @@ class Patrol(object):
                     kit2.relationships = relationships
                     game.clan.add_cat(kit2)
                 for kit in all_kitten:
-                    add_siblings_to_cat(kit)
+                    add_siblings_to_cat(kit,cat_class)
 
         elif self.patrol_event.patrol_id in [502, 503, 520]:  # new kittypet
             new_status = choice([
@@ -1142,7 +1142,7 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
-            add_siblings_to_cat(kit)
+            add_siblings_to_cat(kit,cat_class)
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
             kit.skill = 'formerly a kittypet'

@@ -417,6 +417,7 @@ class Relation_Events(object):
             chance -= 10
 
         if other_cat != None and (other_cat.dead or other_cat.exiled or other_cat.birth_cooldown > 0):
+            print(other_cat.name ,other_cat.dead)
             return
 
         hit = randint(1, chance)
@@ -475,7 +476,7 @@ class Relation_Events(object):
 
         # check other cats of clan for siblings
         for kitten in all_kitten:
-            add_siblings_to_cat(kitten)
+            add_siblings_to_cat(kitten,cat_class)
 
         # choose event string
         print_event = ""
