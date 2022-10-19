@@ -1,6 +1,3 @@
-from asyncore import loop
-from os import name
-from pydoc import text
 from random import choice, randint
 from math import ceil, floor
 from .events import events_class
@@ -8,6 +5,7 @@ from .game_essentials import *
 from .names import *
 from .cats import *
 from .pelts import *
+from .utility import *
 
 
 class Patrol(object):
@@ -627,38 +625,14 @@ class Patrol(object):
                     'r_c says farewell to their friend and rejoins the patrol', 40, 10)
             ])            
 
-        # single cat patrol
-        if len(self.patrol_cats) == 1:
-            possible_patrols.extend([
-                PatrolEvent(
-                    400,
-                    'r_c is nervous doing a patrol by themselves',
-                    'They don\'t let their nerves get to them and continue the patrol successfully',
-                    'They run back to camp, unable to continue',
-                    'They continue the patrol but progress is slow',
-                    40,
-                    10,
-                    win_skills=['very smart', 'extremely smart']),
-                PatrolEvent(
-                    401,
-                    'Since r_c is alone, they debate taking a bite out of the freshkill they have just caught',
-                    'They decide not to and end up catching extra prey for the kits and elders',
-                    'They eat the freshkill; however, they do not catch more prey to make up for it and the kits and elders go hungry',
-                    'They shake the thought from their mind',
-                    30,
-                    10,
-                    win_skills=['smart', 'very smart', 'extremely smart']),
-                PatrolEvent(
-                    402,
-                    'While alone on patrol, r_c thinks about life',
-                    'They find peace within themselves and enjoy the rest of the patrol',
-                    'Their thoughts are plagued with bad memories',
-                    'r_c decides to focus on the patrol',
-                    40,
-                    10,
-                )
-            ])
-            if self.patrol_cats[0].status == 'apprentice':
+        # status specific patrols
+
+        # season specific patrols
+
+        # trait specific patrols
+
+        if len(self.patrol_cats) > 1:
+            if self.patrol_random_cat.trait == 'strange':
                 possible_patrols.extend([
                     PatrolEvent(
                         450,
@@ -1127,6 +1101,7 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
+            add_siblings_to_cat(kit,cat_class)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
 
@@ -1150,6 +1125,7 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
+            add_siblings_to_cat(kit,cat_class)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
             if (kit.status == 'elder'):
@@ -1159,6 +1135,7 @@ class Patrol(object):
                 kit.name.suffix = ''
             if self.patrol_event.patrol_id == 501:
                 num_kits = choice([2, 2, 2, 2, 3, 4])
+                all_kitten = []
                 for _ in range(num_kits):
                     kit2 = Cat(status='kitten', moons=0)
                     kit2.skill = 'formerly a loner'
@@ -1181,6 +1158,8 @@ class Patrol(object):
                             relationships.append(Relationship(kit2, the_cat))
                     kit2.relationships = relationships
                     game.clan.add_cat(kit2)
+                for kit in all_kitten:
+                    add_siblings_to_cat(kit,cat_class)
 
         elif self.patrol_event.patrol_id in [502, 503, 520]:  # new kittypet
             new_status = choice([
@@ -1198,6 +1177,7 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
+            add_siblings_to_cat(kit,cat_class)
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
             kit.skill = 'formerly a kittypet'

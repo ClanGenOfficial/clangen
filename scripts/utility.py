@@ -27,7 +27,6 @@ def get_highest_romantic_relation(relationships):
 
     return relation
 
-
 def get_personality_compatibility(cat1, cat2):
     """Returns:
         True - if personalities have a positive compatibility
@@ -49,3 +48,11 @@ def get_personality_compatibility(cat1, cat2):
             return PERSONALITY_COMPATIBILITY[personality2][personality1]
 
     return None
+
+def add_siblings_to_cat(cat, cat_class):
+    """Iterate over all current cats and add the ID to the current cat."""
+    for inter_cat in cat_class.all_cats.values():
+        if inter_cat.is_sibling(cat) and inter_cat.ID not in cat.siblings:
+            cat.siblings.append(inter_cat.ID)
+        if cat.is_sibling(inter_cat) and cat.ID not in inter_cat.siblings:
+            inter_cat.siblings.append(cat.ID)

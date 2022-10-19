@@ -105,6 +105,7 @@ class Cat(object):
         self.white_patches = None
         self.accessory = None
         self.birth_cooldown = 0
+        self.siblings = []
         if ID is None:
             potential_ID = str(randint(10000, 9999999))
             while potential_ID in self.all_cats:
@@ -3074,7 +3075,7 @@ class Cat(object):
             all_cats.append(new_cat)
 
         
-        # replace cat ids with cat objects (only needed by mentor)
+        # replace cat ids with cat objects and add other needed variables
         for cat in all_cats:
             # load the relationships
             if not cat.dead:
@@ -3087,12 +3088,13 @@ class Cat(object):
             else:
                 cat.relationships = []
 
+            # replace mentor id with cat instance
             mentor_relevant = list(filter(lambda inter_cat: inter_cat.ID == cat.mentor, all_cats))
             cat.mentor = None
             if len(mentor_relevant) == 1:
                 cat.mentor = mentor_relevant[0]
             
-            # Update the apprentice
+            # update the apprentice
             if len(cat.apprentice) > 0:
                 new_apprentices = []
                 for cat_id in cat.apprentice:
@@ -3102,7 +3104,7 @@ class Cat(object):
                         new_apprentices.append(relevant_list[0])
                 cat.apprentice = new_apprentices
 
-            # Update the apprentice
+            # update the apprentice
             if len(cat.former_apprentices) > 0:
                 new_apprentices = []
                 for cat_id in cat.former_apprentices:
@@ -3112,6 +3114,9 @@ class Cat(object):
                         new_apprentices.append(relevant_list[0])
                 cat.former_apprentices = new_apprentices
 
+            # get all the siblings ids and save them
+            siblings = list(filter(lambda inter_cat: cat.is_sibling(inter_cat), all_cats))
+            cat.siblings = [sibling.ID for sibling in siblings]
 
     def load_relationship_of_cat(self):
         if game.switches['clan_name'] != '':
@@ -3123,7 +3128,13 @@ class Cat(object):
         relation_cat_directory = relation_directory + self.ID + '_relations.json'
 
         self.relationships = []
-        if os.path.exists(relation_directory and relation_cat_directory):
+        if os.path.exists(relation_directory):
+            if not os.path.exists(relation_cat_directory):
+                self.create_new_relationships()
+                for cat in cat_class.all_cats.values():
+                    cat.relationships.append(Relationship(cat,self))
+                self.update_sprite()
+                return
             try:
                 with open(relation_cat_directory, 'r') as read_file:
                     rel_data = ujson.loads(read_file.read())
@@ -3531,9 +3542,10 @@ class Cat(object):
             return False
 
         # check for relation
+        far_related = self.is_grandparent(other_cat) or other_cat.is_grandparent(self)
         direct_related = self.is_sibling(other_cat) or self.is_parent(other_cat) or other_cat.is_parent(self)
         indirect_related = self.is_uncle_aunt(other_cat) or other_cat.is_uncle_aunt(self)
-        if direct_related or indirect_related:
+        if direct_related or indirect_related or far_related:
             return False
 
         # check for age
@@ -3548,6 +3560,27 @@ class Cat(object):
         if not_invalid_age and abs(self.moons - other_cat.moons) <= 40:
             return True
 
+        return False
+
+    def is_grandparent(self, other_cat):
+        """Check if the cat is the grandparent of the other cat."""
+        parents = other_cat.get_parents()
+        left_parents = []
+        right_parents = []
+        if len(parents) == 2:
+            left_p = cat_class.all_cats.get(parents[0])
+            if left_p != None:
+                left_parents = left_p.get_parents()
+            right_p = cat_class.all_cats.get(parents[1])
+            if right_p != None:
+                right_parents = right_p.get_parents()
+        if len(parents) == 1:
+            left_p = cat_class.all_cats.get(parents[0])
+            if left_p != None:
+                left_parents = left_p.get_parents()
+
+        if self.ID in left_parents or self.ID in right_parents:
+            return True
         return False
 
     def is_parent(self, other_cat):
@@ -3581,11 +3614,7 @@ class Cat(object):
 
     def get_siblings(self):
         """Returns list of the siblings."""
-        siblings = []
-        for inter_cat in self.all_cats.values():
-            if self.is_sibling(inter_cat):
-                siblings.append(inter_cat.ID)
-        return siblings
+        return self.siblings
 
 
 # Twelve example cats

@@ -65,8 +65,12 @@ class Relation_Events(object):
             filter(
                 lambda relation: str(relation.cat_to) == str(random_id) and
                 not relation.cat_to.dead, cat.relationships))
-        while len(relevant_relationship_list) < 1 or random_id == cat.ID:
+        random_cat = cat.all_cats.get(random_id)
+        kitten_and_exiled = random_cat != None and random_cat.exiled and cat.age == "kitten"
+        while len(relevant_relationship_list) < 1 or random_id == cat.ID or kitten_and_exiled:
             random_id = random.choice(cats_to_choose)
+            random_cat = cat.all_cats.get(random_id)
+            kitten_and_exiled = random_cat != None and random_cat.exiled and cat.age == "kitten"
             relevant_relationship_list = list(
                 filter(
                     lambda relation: str(relation.cat_to) == str(random_id) and
@@ -187,6 +191,10 @@ class Relation_Events(object):
 
     def check_if_new_mates(self, relationship, cat_from, cat_to):
         """More in depth check if the cats will become mates."""
+        young_age = ['kitten', 'adolescent']
+        if cat_from.age in young_age or cat_to.age in young_age:
+            return
+
         become_mates = False
         mate_string = ""
         mate_chance = 5
@@ -413,6 +421,7 @@ class Relation_Events(object):
             chance -= 10
 
         if other_cat != None and (other_cat.dead or other_cat.exiled or other_cat.birth_cooldown > 0):
+            print(other_cat.name ,other_cat.dead)
             return
 
         hit = randint(1, chance)
@@ -436,17 +445,21 @@ class Relation_Events(object):
         kits = choice(one_kit + two_kits + three_kits + four_kits + five_kits + six_kits)
 
         # create amount of kits
+        all_kitten = []
         for kit in range(kits):
             kit = None
             if other_cat != None:
                 if cat.gender == 'female':
                     kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
+                    all_kitten.append(kit)
                 else:
                     kit = Cat(parent1=other_cat.ID, parent2=cat.ID, moons=0)
+                    all_kitten.append(kit)
                 cat.birth_cooldown = 6
                 other_cat.birth_cooldown = 6
             else:
                 kit = Cat(parent1=cat.ID, moons=0)
+                all_kitten.append(kit)
                 cat.birth_cooldown = 6
             #create and update relationships
             relationships = []
@@ -464,6 +477,10 @@ class Relation_Events(object):
             # remove accessory
             kit.accessory = None
             game.clan.add_cat(kit)
+
+        # check other cats of clan for siblings
+        for kitten in all_kitten:
+            add_siblings_to_cat(kitten,cat_class)
 
         # choose event string
         print_event = ""
