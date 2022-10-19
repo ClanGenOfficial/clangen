@@ -191,6 +191,10 @@ class Relation_Events(object):
 
     def check_if_new_mates(self, relationship, cat_from, cat_to):
         """More in depth check if the cats will become mates."""
+        young_age = ['kitten', 'adolescent']
+        if cat_from.age in young_age or cat_to.age in young_age:
+            return
+
         become_mates = False
         mate_string = ""
         mate_chance = 5
