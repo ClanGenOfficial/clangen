@@ -602,7 +602,21 @@ class Patrol(object):
                 'r_c finds an abandoned kit whose mother is nowhere to be found',
                 'The kit is taken back to camp and nursed back to health',
                 'The kit is taken back to camp, but grows weak and dies a few days later',
-                'They leave the kit alone', 40, 10)
+                'They leave the kit alone', 40, 10),
+            PatrolEvent(
+                505,
+                'r_c finds a loner who offers their healing skills in exchange for shelter',
+                'The new medicine cat is welcomed into the clan',
+                'After hearing more about your clan, the loner decides not to join',
+                'The patrol declines their offer',
+                40,
+                10,
+                antagonize_text=
+                'Your patrol drives the cat off of the territory',
+                antagonize_fail_text=
+                'The loner is taken aback by their hostility '
+                'and decides this Clan is not for them',
+                win_skills=['great speaker', 'excellent speaker']),
         ])
 
         if self.patrol_random_cat.skill == 'formerly a loner':
@@ -1110,11 +1124,13 @@ class Patrol(object):
                     kit.accessory = choice(collars)
 
 
-        if self.patrol_event.patrol_id in [500, 501, 510]:  # new loner
+        if self.patrol_event.patrol_id in [500, 501, 505, 510]:  # new loner
             new_status = choice([
-                'apprentice', 'warrior', 'warrior', 'warrior', 'warrior',
-                'elder'
+                'apprentice', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior',
+                'elder', 'medicine cat'
             ])
+            if self.patrol_event.patrol_id == 505:
+                new_status = 'medicine cat'
             if self.patrol_event.patrol_id == 501:
                 new_status = 'warrior'
             kit = Cat(status=new_status)
