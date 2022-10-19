@@ -24,6 +24,17 @@ class Cat(object):
         'daring', 'daydreamer', 'impulsive', 'inquisitive', 'insecure',
         'nervous', 'noisy', 'polite', 'quiet', 'sweet', 'troublesome'
     ]
+    personality_groups = {
+        'Outgoing': ['adventurous', 'bold', 'charismatic', 'childish', 'confident', 'daring', 
+                    'playful', 'righteous', 'attention-seeker', 'bouncy', 'charming', 'noisy'],
+        'Benevolent': ['altruistic', 'compassionate', 'empathetic', 'faithful', 'loving',
+                        'patient', 'responsible', 'thoughtful', 'wise', 'inquisitive',
+                        'polite', 'sweet'],
+        'Abrasive': ['ambitious', 'bloodthirsty', 'cold', 'fierce', 'shameless', 'strict',
+                    'troublesome', 'vengeful', 'bossy', 'bullying', 'impulsive'],
+        'Reserved': ['calm', 'careful', 'insecure', 'lonesome', 'loyal', 'nervous', 'sneaky',
+                    'strange', 'daydreamer', 'quiet'],
+        }
     ages = [
         'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
         'elder', 'dead'
@@ -91,6 +102,7 @@ class Cat(object):
         self.pattern = None
         self.tortiepattern = None
         self.tortiecolour = None
+        self.white_patches = None
         self.accessory = None
         self.birth_cooldown = 0
         self.siblings = []
@@ -187,18 +199,12 @@ class Cat(object):
                 par1 = self.all_cats[self.parent1]
                 self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, None]), choice([par1.pelt.white, None]), choice([par1.pelt.name, None]),
                                         choice([par1.pelt.length, None]))
-                if par1.white_patches == None and self.pelt.name == 'Calico':
-                    self.pelt.name = 'Tortie'
-
-
             if self.parent1 in self.all_cats.keys() and self.parent2 in self.all_cats.keys():
                 # 2 in 3 chance to inherit either parent's pelt
                 par1 = self.all_cats[self.parent1]
                 par2 = self.all_cats[self.parent2]
                 self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, par2.pelt.colour, None]), choice([par1.pelt.white, par2.pelt.white, None]),
-                                        choice([par1.pelt.name, par2.pelt.name, None]), choice([par1.pelt.length, par2.pelt.length, None]))
-                if self.pelt.name == 'Calico' and par1.white_patches not in [mid_white, high_white, mostly_white]:
-                    self.pelt.name == 'Tortie'
+                                        choice([par1.pelt.name, par2.pelt.name, None]), choice([par1.pelt.length, par2.pelt.length, None]))                  
             else:
                 self.pelt = choose_pelt(self.gender)
 
@@ -275,51 +281,64 @@ class Cat(object):
                 'dead'] = None  # The sprite that the cat has in starclan
 
                 # WHITE PATCHES
+        non_white_pelt = False
+        if self.pelt.colour != 'WHITE' and self.pelt.name in\
+        ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+            non_white_pelt = True
         little_white_poss = little_white * 6
         mid_white_poss = mid_white * 4
         high_white_poss = high_white * 2
         mostly_white_poss = mostly_white
-        if self.parent1 in self.all_cats.keys():
-            par1 = self.all_cats[self.parent1]
-        if self.parent2 in self.all_cats.keys():
-            par2 = self.all_cats[self.parent2]
         if self.pelt is not None:
-            if self.pelt.white_patches is not None:
+            if self.pelt.white is True:
                 pelt_choice = randint(0, 10)
                 vit_chance = randint(0, 40)
                 direct_inherit = randint(0, 10)
                 # inheritance
-                # for one parent
-                if self.parent1 in self.all_cats.keys() and self.parent2 is None:
+                # one parent
+                if self.parent1 is not None and self.parent2 is None:
+                    par1 = self.all_cats[self.parent1]
                     if direct_inherit == 1:
-                        self.white_patches = par1.white_patches
+                        if par1.pelt.white is False:
+                            self.pelt.white = False
+                        else:
+                            self.white_patches = par1.white_patches
                     elif vit_chance == 1:
                         self.white_patches = choice(vit)
                     else:
-                        if par1.white_patches in point_markings and self.pelt.colour != 'WHITE':
+                        if par1.white_patches in point_markings and non_white_pelt is True:
                             self.white_patches = choice(point_markings)
                         elif par1.white_patches in vit:
                             self.white_patches = choice(vit)
-                        elif par1.white_patches in [None, little_white, mid_white, high_white]:
-                            self.white_patches = choice(little_white_poss + mid_white_poss + high_white_poss + mostly_white_poss)
+                        elif par1.white_patches in [None] + little_white + mid_white + high_white:
+                            self.white_patches = choice([None] + little_white_poss + mid_white_poss + high_white_poss + mostly_white_poss)
                         elif par1.white_patches in mostly_white:
                             self.white_patches = choice(mid_white + high_white + mostly_white + ['FULLWHITE'])
+                    if par1.white_patches == None and self.pelt.name == 'Calico':
+                        self.pelt.name = 'Tortie'
                     # two parents
-                elif self.parent1 in self.all_cats.keys() and self.parent2 in self.all_cats.keys():
+                elif self.parent1 is not None and self.parent2 is not None:
                     # if 1, cat directly inherits parent 1's white patches. if 2, it directly inherits parent 2's
+                    par1 = self.all_cats[self.parent1]
+                    par2 = self.all_cats[self.parent2]
                     if direct_inherit == 1:
-                        self.white_patches = par1.white_patches
+                        if par1.pelt.white is False:
+                            self.pelt.white = False
+                        else:
+                            self.white_patches = par1.white_patches
                     elif direct_inherit == 2:
-                        self.white_patches = par2.white_patches
+                        if par2.pelt.white is False:
+                            self.pelt.white = False
+                        else:
+                            self.white_patches = par2.white_patches
                     elif vit_chance == 1:
                         self.white_patches = choice(vit)
                     else:
-                        if par1.white_patches in point_markings or par2.white_patches in point_markings and self.pelt.colour != 'WHITE'\
-                        and self.pelt.name in ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+                        if par1.white_patches in point_markings and non_white_pelt is True\
+                        or par2.white_patches in point_markings and non_white_pelt is True:
                             self.white_patches = choice(point_markings)
-                        elif par1.white_patches in vit or par2.white_patches in vit and self.pelt.name in\
-                        ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
-                        and self.pelt.colour != 'WHITE':
+                        elif par1.white_patches in vit and non_white_pelt is True\
+                        or par2.white_patches in vit and non_white_pelt is True:
                             self.white_patches = choice(vit)
                         elif par1.white_patches is None:
                             if par2.white_patches is None:
@@ -361,20 +380,20 @@ class Cat(object):
                             elif par2.white_patches in high_white:
                                 self.white_patches = choice(mid_white_poss + high_white_poss * 3 + mostly_white)
                             elif par2.white_patches in mostly_white:
-                                self.white_patches = choice(mid_white + high_white_poss + mostly_white + ['FULLWHITE'])
+                                self.white_patches = choice(mid_white + high_white_poss * 2 + mostly_white + ['FULLWHITE'])
                             elif par2.white_patches == 'FULLWHITE':
                                 self.white_patches = choice(high_white_poss + mostly_white_poss + ['FULLWHITE'])
                             else:
                                 self.white_patches = choice(mid_white)
                         elif par1.white_patches in high_white:
                             if par2.white_patches is None:
-                                self.white_patches = choice(little_white + mid_white + high_white + [None])
+                                self.white_patches = choice(little_white + mid_white_poss + high_white + [None])
                             elif par2.white_patches in little_white:
                                 self.white_patches = choice(little_white_poss + mid_white_poss + high_white)
                             elif par2.white_patches in mid_white:
                                 self.white_patches = choice(little_white + mid_white_poss + high_white_poss)
                             elif par2.white_patches in high_white:
-                                self.white_patches = choice(mid_white_poss + high_white_poss + mostly_white)
+                                self.white_patches = choice(mid_white_poss + high_white_poss * 2 + mostly_white)
                             elif par2.white_patches in mostly_white:
                                 self.white_patches = choice(mid_white + high_white_poss + mostly_white + ['FULLWHITE'])
                             elif par2.white_patches == 'FULLWHITE':
@@ -411,20 +430,21 @@ class Cat(object):
                                 self.white_patches = choice(mostly_white + ['FULLWHITE'] * 6)
                             else:
                                 self.white_patches = choice(mostly_white)
+                    if self.pelt.name == 'Calico' and par1.white_patches not in mid_white + high_white + mostly_white\
+                    and par2.white_patches not in mid_white + high_white + mostly_white:
+                        self.pelt.name = 'Tortie'
                         
                 # regular non-inheritance white patches generation
-                if self.parent1 is None:
-                    if pelt_choice == 1 and self.pelt.name in ['Tortie', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
-                    and self.pelt.colour != 'WHITE':
+                else:
+                    if pelt_choice == 1 and non_white_pelt is True:
                         self.white_patches = choice(point_markings)
-                    elif pelt_choice == 1 and self.pelt.name in 'TwoColour' and self.pelt.colour != 'WHITE':
+                    elif pelt_choice == 1 and self.pelt.name == 'TwoColour' and self.pelt.colour != 'WHITE':
                         self.white_patches = choice(point_markings + ['POINTMARK'])
                     elif pelt_choice == 2 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
                         self.white_patches = choice(mostly_white_poss)
                     elif pelt_choice == 3 and self.pelt.name in ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
                     and self.pelt.colour != 'WHITE':
                         self.white_patches = choice(['EXTRA', None, 'FULLWHITE'])
-
                     else:
                         if self.pelt.name in ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
                             self.white_patches = choice(little_white_poss + mid_white_poss + high_white_poss)
@@ -436,7 +456,7 @@ class Cat(object):
                         and self.pelt.colour != 'WHITE':
                             self.white_patches = choice(vit)
                         else:
-                            self.white_patches = choice(self.pelt.white_patches)
+                            self.white_patches = choice(self.white_patches)
             else:
                 self.white_patches = None
             
@@ -2411,8 +2431,6 @@ class Cat(object):
                 par1 = self.all_cats[self.parent1]
                 self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, None]), choice([par1.pelt.white, None]), choice([par1.pelt.name, None]),
                                         choice([par1.pelt.length, None]))
-                if par1.white_patches == None and self.pelt.name == 'Calico':
-                    self.pelt.name = 'Tortie'
 
             if self.parent1 in self.all_cats.keys() and self.parent2 in self.all_cats.keys():
                 # 2 in 3 chance to inherit either parent's pelt
@@ -2420,8 +2438,6 @@ class Cat(object):
                 par2 = self.all_cats[self.parent2]
                 self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, par2.pelt.colour, None]), choice([par1.pelt.white, par2.pelt.white, None]),
                                         choice([par1.pelt.name, par2.pelt.name, None]), choice([par1.pelt.length, par2.pelt.length, None]))
-                if self.pelt.name == 'Calico' and par1.white_patches not in [mid_white, high_white, mostly_white]:
-                    self.pelt.name == 'Tortie'
             else:
                 self.pelt = choose_pelt(self.gender)            
                               
@@ -3186,23 +3202,26 @@ class Cat(object):
             else:
                 color_name = color_name + ' calico'
         # enough to comment but not make calico
-        if self.white_patches in [little_white, mid_white]:
-            color_name = color_name + ' and white'
-        # and white
-        elif self.white_patches in high_white:
-            if self.pelt.name != "Calico":
+        if self.white_patches is not None:
+            if self.white_patches in little_white + mid_white:
                 color_name = color_name + ' and white'
-        # white and
-        elif self.white_patches in mostly_white:
-            color_name = 'white and ' + color_name
-        # colorpoint
-        elif self.white_patches in point_markings:
-            color_name = color_name + ' point'
-            if color_name == 'darkginger point' or color_name == 'ginger point':
-                color_name = 'flame point'
-        # vitiligo
-        elif self.white_patches in vit:
-            color_name = color_name + ' with vitiligo'
+            # and white
+            elif self.white_patches in high_white:
+                if self.pelt.name != "Calico":
+                    color_name = color_name + ' and white'
+            # white and
+            elif self.white_patches in mostly_white:
+                color_name = 'white and ' + color_name
+            # colorpoint
+            elif self.white_patches in point_markings:
+                color_name = color_name + ' point'
+                if color_name == 'dark ginger point' or color_name == 'ginger point':
+                    color_name = 'flame point'
+            # vitiligo
+            elif self.white_patches in vit:
+                color_name = color_name + ' with vitiligo'
+        else:
+            color_name = color_name
 
         if color_name == 'tortie':
             color_name = 'tortoiseshell'
@@ -3217,8 +3236,6 @@ class Cat(object):
     
     
     def accessory_display_name(self):
-    #    acc_display_plural = ' '
-    #    acc_display_singular = ' '
         accessory = str(self.accessory).lower()
         acc_display = accessory
         if self.accessory != None:
@@ -3257,64 +3274,11 @@ class Cat(object):
                 else:
                     acc_display = collar_color + ' collar'
                 
-            # elif self.accessory in [plant_accessories]:
-            #     acc_plural = acc_display_plural
-            #     acc_singular = acc_display_singular
-            #     if accessory.name == 'maple leaf':
-            #         acc_display_plural = 'maple leaves'                    
-            #         acc_display_singular = 'a maple leaf'
-            #     if accessory.name == 'holly':
-            #         acc_display_plural = 'holly berries'
-            #         acc_display_singular = 'a holly berry'
-            #     if accessory.name == 'blue berries':                    
-            #         acc_display_plural = 'blueberries'
-            #         acc_display_singular = 'a blueberry'
-            #     if accessory.name == 'forget me nots':
-            #         acc_display_plural = 'forget me nots'
-            #         acc_display_singular = 'a forget me not flower'                
-            #     if accessory.name == 'rye stalk':
-            #         acc_display_plural = 'rye stalks'
-            #         acc_display_singular = 'rye stalk'
-            #     if accessory.name == 'laurel':                
-            #         acc_display_plural = 'laurel'
-            #         acc_display_singular = 'a laurel plant'
-            #     if accessory.name == 'bluebells':
-            #         acc_display_plural = 'bluebells'
-            #         acc_display_singular = 'a bluebell flower'                
-            #     if accessory.name == 'nettle':
-            #         acc_display_plural = 'nettles'
-            #         acc_display_singular = 'a nettle'
-            #     if accessory.name == 'poppy':
-            #         acc_display_plural = 'poppies'
-            #         acc_display_singular = 'a poppy flower'
-            #     if accessory.name == 'lavender':
-            #         acc_display_plural = 'lavender'
-            #         acc_display_singular = 'a lavender flower'
-            #     if accessory.name == 'herbs':
-            #         acc_display_plural = 'herbs'
-            #         acc_display_singular = 'an herb'
-            #     if accessory.name == 'petals':
-            #         acc_display_plural = 'petals'
-            #         acc_display_singular = 'a petal'
-            #     if accessory.name == 'dry herbs':
-            #         acc_display_plural = 'dry herbs'
-            #         acc_display_singular = 'a dry herb'
-            #     if accessory.name == 'oak leaves':
-            #         acc_display_plural = 'oak leaves'
-            #         acc_display_singular = 'an oak leaf'
-            #     if accessory.name == 'catmint':
-            #         acc_display_plural = 'catnip'
-            #         acc_display_singular = 'a catnip leaf'
-            #     if accessory.name == 'maple seed':                    
-            #         acc_display_plural = 'maple seeds'
-            #         acc_display_singular = 'a maple seed'
-            #     if accessory.name == 'juniper':
-            #         acc_display_plural = 'juniper berries'
-            #         acc_display_singular = 'a juniper berry'
-                
             elif self.accessory in wild_accessories:
                 if acc_display == 'blue feathers':
                     acc_display = 'crow feathers'
+                elif acc_display == 'red feathers':
+                    acc_display = 'cardinal feathers'
                 else:
                     acc_display = acc_display
             
@@ -3325,6 +3289,124 @@ class Cat(object):
                 acc_display = None
         return acc_display
 
+    def plural_acc_names(self, plural, singular):
+        accessory = self.accessory.lower()
+        acc_display = accessory
+        if accessory == 'maple leaf':
+            if plural == True:
+                acc_display = 'maple leaves'
+            if singular == True:
+                acc_display = 'maple leaf'
+        elif accessory == 'holly':
+            if plural == True:
+                acc_display = 'holly berries'
+            if singular == True:
+                acc_display = 'holly berry'
+        elif accessory == 'blue berries':
+            if plural == True:        
+                acc_display = 'blueberries'
+            if singular == True:
+                acc_display = 'blueberry'
+        elif accessory == 'forget me nots':
+            if plural == True:
+                acc_display = 'forget me nots'
+            if singular == True:
+                acc_display = 'forget me not flower'                
+        elif accessory == 'rye stalk':
+            if plural == True:
+                acc_display = 'rye stalks'
+            if singular == True:
+                acc_display = 'rye stalk'
+        elif accessory == 'laurel':
+            if plural == True:
+                acc_display = 'laurel'
+            if singular == True:
+                acc_display = 'laurel plant'
+        elif accessory == 'bluebells':
+            if plural == True:
+                acc_display = 'bluebells'
+            if singular == True:
+                acc_display = 'bluebell flower'                
+        elif accessory == 'nettle':
+            if plural == True:
+                acc_display = 'nettles'
+            if singular == True:
+                acc_display = 'nettle'
+        elif accessory == 'poppy':
+            if plural == True:
+                acc_display = 'poppies'
+            if singular == True:
+                acc_display = 'poppy flower'
+        elif accessory == 'lavender':
+            if plural == True:
+                acc_display = 'lavender'
+            if singular == True:
+                acc_display = 'lavender flower'
+        elif accessory == 'herbs':
+            if plural == True:
+                acc_display = 'herbs'
+            if singular == True:
+                acc_display = 'herb'
+        elif accessory == 'petals':
+            if plural == True:
+                acc_display = 'petals'
+            if singular == True:
+                acc_display = 'petal'
+        elif accessory == 'dry herbs':
+            if plural == True:
+                acc_display = 'dry herbs'
+            if singular == True:
+                acc_display = 'dry herb'
+        elif accessory == 'oak leaves':
+            if plural == True:
+                acc_display = 'oak leaves'
+            if singular == True:
+                acc_display = 'oak leaf'
+        elif accessory == 'catmint':
+            if plural == True:
+                acc_display = 'catnip'
+            if singular == True:
+                acc_display = 'catnip leaf'
+        elif accessory == 'maple seed':
+            if plural == True:
+                acc_display = 'maple seeds'
+            if singular == True:
+                acc_display = 'maple seed'
+        elif accessory == 'juniper':
+            if plural == True:
+                acc_display = 'juniper berries'
+            if singular == True:
+                acc_display = 'juniper berry'
+        elif accessory == 'red feathers':
+            if plural == True:
+                acc_display = 'cardinal feathers'
+            if singular == True:
+                acc_display = 'cardinal feather'
+        elif accessory == 'blue feathers':
+            if plural == True:
+                acc_display = 'crow feathers'
+            if singular == True:
+                acc_display = 'crow feather'
+        elif accessory == 'jay feathers':
+            if plural == True:
+                acc_display = 'jay feathers'
+            if singular == True:
+                acc_display = 'jay feather'
+        elif accessory == 'moth wings':
+            if plural == True:
+                acc_display = 'moth wings'
+            if singular == True:
+                acc_display = 'moth wing'
+        elif accessory == 'cicada wings':
+            if plural == True:
+                acc_display = 'cicada wings'
+            if singular == True:
+                acc_display = 'cicada wing'
+            
+        if plural is True and singular is False:
+            return acc_display
+        elif singular is True and plural is False:
+            return acc_display
 
     def describe_cat(self):
         if self.genderalign == 'male' or self.genderalign == "transmasc" or self.genderalign == "trans male":
