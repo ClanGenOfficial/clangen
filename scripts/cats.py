@@ -3074,7 +3074,13 @@ class Cat(object):
         relation_cat_directory = relation_directory + self.ID + '_relations.json'
 
         self.relationships = []
-        if os.path.exists(relation_directory and relation_cat_directory):
+        if os.path.exists(relation_directory):
+            if not os.path.exists(relation_cat_directory):
+                self.create_new_relationships()
+                for cat in cat_class.all_cats.values():
+                    cat.relationships.append(Relationship(cat,self))
+                self.update_sprite()
+                return
             try:
                 with open(relation_cat_directory, 'r') as read_file:
                     rel_data = ujson.loads(read_file.read())
