@@ -1124,6 +1124,32 @@ class Patrol(object):
                     kit.accessory = choice(collars)
 
 
+        if self.patrol_event.patrol_id in [505]:  # new med cat
+            new_status = choice(['medicine cat'])
+            if self.patrol_event.patrol_id == 505:
+                new_status = 'medicine cat'
+
+            kit = Cat(status=new_status)
+            #create and update relationships
+            relationships = []
+            for cat_id in game.clan.clan_cats:
+                the_cat = cat_class.all_cats.get(cat_id)
+                if the_cat.dead or the_cat.exiled:
+                    continue
+                the_cat.relationships.append(Relationship(the_cat, kit))
+                relationships.append(Relationship(kit, the_cat))
+            kit.relationships = relationships
+            game.clan.add_cat(kit)
+            add_siblings_to_cat(kit,cat_class)
+            kit.skill = 'formerly a loner'
+            kit.thought = 'Is looking around the camp with wonder'
+            if (kit.status == 'elder'):
+                kit.moons = randint(120, 150)
+            if randint(0, 5) == 0:  # chance to keep name
+                kit.name.prefix = choice(names.loner_names)
+                kit.name.suffix = ''
+            
+
         if self.patrol_event.patrol_id in [500, 501, 505, 510]:  # new loner
             new_status = choice([
                 'apprentice', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior',
