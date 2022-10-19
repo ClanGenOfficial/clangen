@@ -299,7 +299,7 @@ class Events(object):
                         acc_text.append(f'{name}\'s parents try their best to groom them, but something is always stuck in their fur')
                     else:    
                         acc_text.extend([f'{name} seems to have picked up a neat {acc_singular} while playing out in the camp', f'{name} finds something interesting and decides to wear it on their pelt',
-                                        f'A clanmate gives {name} a pretty {acc_plural} and they decide to wear it on their pelt', f'{other_name} gives {name} a pretty {acc_singular} and they decide to wear it on their pelt',
+                                        f'A clanmate gives {name} a pretty {acc_singular} and they decide to wear it on their pelt', f'{other_name} gives {name} a pretty {acc_singular} and they decide to wear it on their pelt',
                                         f'{name} is so cute that they are given {acc_plural} as a gift', f'{name} starts to wear {acc_plural} on their pelt after their friend gave some to them',
                                         f'{name} was playing with {acc_plural} earlier and has decided to use it to adorn themselves'
                         ])
