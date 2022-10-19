@@ -1083,10 +1083,9 @@ class Events(object):
                             str(lostlives) + ' lives due to an illness'
                         ]
                     game.clan.leader_lives = game.clan.leader_lives - lostlives
-                self.dies(cat)
-                game.cur_events_list.append(
-                    choice(cause_of_death) + ' at ' + str(cat.moons) +
-                    ' moons old')
+                    self.dies(cat)
+                    game.cur_events_list.append(
+                        choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old')
 
         elif randint(1, 400) == 1:
             name = str(cat.name)
