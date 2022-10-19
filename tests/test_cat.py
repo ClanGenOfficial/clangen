@@ -32,14 +32,14 @@ class TestCreationAge(unittest.TestCase):
 
 class TestRelativesFunction(unittest.TestCase):
 
-    def test_parent(self):
+    def test_is_parent(self):
         parent = Cat()
         kit = Cat(parent1=parent.ID)
         self.assertFalse(kit.is_parent(kit))
         self.assertFalse(kit.is_parent(parent))
         self.assertTrue(parent.is_parent(kit))
 
-    def test_sibling(self):
+    def test_is_sibling(self):
         parent = Cat()
         kit1 = Cat(parent1=parent.ID)
         kit2 = Cat(parent1=parent.ID)
@@ -49,7 +49,7 @@ class TestRelativesFunction(unittest.TestCase):
         self.assertTrue(kit2.is_sibling(kit1))
         self.assertTrue(kit1.is_sibling(kit2))
 
-    def test_uncle_aunt(self):
+    def test_is_uncle_aunt(self):
         grand_parent = Cat()
         sibling1 = Cat(parent1=grand_parent.ID)
         sibling2 = Cat(parent1=grand_parent.ID)
@@ -61,12 +61,28 @@ class TestRelativesFunction(unittest.TestCase):
         self.assertFalse(kit.is_uncle_aunt(sibling2))
         self.assertTrue(sibling2.is_uncle_aunt(kit))
 
+    def test_is_grandparent(self):
+        grand_parent = Cat()
+        sibling1 = Cat(parent1=grand_parent.ID)
+        sibling2 = Cat(parent1=grand_parent.ID)
+        sibling1.siblings.append(sibling2.ID)
+        sibling2.siblings.append(sibling1.ID)
+        kit = Cat(parent1=sibling1.ID)
+        self.assertFalse(sibling1.is_grandparent(kit))
+        #self.assertFalse(sibling1.is_grandparent(sibling2))
+        #self.assertFalse(kit.is_grandparent(sibling2))
+        #self.assertFalse(sibling2.is_grandparent(kit))
+        #self.assertFalse(kit.is_grandparent(grand_parent))
+        #self.assertTrue(grand_parent.is_grandparent(kit))
+
 class TestPossibleMateFunction(unittest.TestCase):
 
     def test_relation(self):
         grand_parent = Cat()
         sibling1 = Cat(parent1=grand_parent.ID)
         sibling2 = Cat(parent1=grand_parent.ID)
+        sibling1.siblings.append(sibling2.ID)
+        sibling2.siblings.append(sibling1.ID)
         kit = Cat(parent1=sibling1.ID)
         self.assertFalse(kit.is_potential_mate(grand_parent))
         self.assertFalse(kit.is_potential_mate(sibling1))
@@ -76,6 +92,22 @@ class TestPossibleMateFunction(unittest.TestCase):
         self.assertFalse(sibling1.is_potential_mate(sibling1))
         self.assertFalse(sibling1.is_potential_mate(sibling2))
         self.assertFalse(sibling1.is_potential_mate(kit))
+
+    def test_relation_love_interest(self):
+        grand_parent = Cat()
+        sibling1 = Cat(parent1=grand_parent.ID)
+        sibling2 = Cat(parent1=grand_parent.ID)
+        sibling1.siblings.append(sibling2.ID)
+        sibling2.siblings.append(sibling1.ID)
+        kit = Cat(parent1=sibling1.ID)
+        self.assertFalse(kit.is_potential_mate(grand_parent,True))
+        self.assertFalse(kit.is_potential_mate(sibling1,True))
+        self.assertFalse(kit.is_potential_mate(sibling2,True))
+        self.assertFalse(kit.is_potential_mate(kit,True))
+        self.assertFalse(sibling1.is_potential_mate(grand_parent,True))
+        self.assertFalse(sibling1.is_potential_mate(sibling1,True))
+        self.assertFalse(sibling1.is_potential_mate(sibling2,True))
+        self.assertFalse(sibling1.is_potential_mate(kit,True))
 
     def test_age_mating(self):
         kitten_cat2 = Cat(moons=1)
@@ -231,7 +263,6 @@ class TestPossibleMateFunction(unittest.TestCase):
         self.assertFalse(former_appr.is_potential_mate(mentor,True,False))
         self.assertTrue(mentor.is_potential_mate(former_appr,True,True))
         self.assertTrue(former_appr.is_potential_mate(mentor,True,True))
-
 
 class TestMateFunctions(unittest.TestCase):
 

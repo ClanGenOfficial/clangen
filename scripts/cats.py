@@ -3482,9 +3482,10 @@ class Cat(object):
             return False
 
         # check for relation
+        far_related = self.is_grandparent(other_cat) or other_cat.is_grandparent(self)
         direct_related = self.is_sibling(other_cat) or self.is_parent(other_cat) or other_cat.is_parent(self)
         indirect_related = self.is_uncle_aunt(other_cat) or other_cat.is_uncle_aunt(self)
-        if direct_related or indirect_related:
+        if direct_related or indirect_related or far_related:
             return False
 
         # check for age
@@ -3499,6 +3500,27 @@ class Cat(object):
         if not_invalid_age and abs(self.moons - other_cat.moons) <= 40:
             return True
 
+        return False
+
+    def is_grandparent(self, other_cat):
+        """Check if the cat is the grandparent of the other cat."""
+        parents = other_cat.get_parents()
+        left_parents = []
+        right_parents = []
+        if len(parents) == 2:
+            left_p = cat_class.all_cats.get(parents[0])
+            if left_p != None:
+                left_parents = left_p.get_parents()
+            right_p = cat_class.all_cats.get(parents[1])
+            if right_p != None:
+                right_parents = right_p.get_parents()
+        if len(parents) == 1:
+            left_p = cat_class.all_cats.get(parents[0])
+            if left_p != None:
+                left_parents = left_p.get_parents()
+
+        if self.ID in left_parents or self.ID in right_parents:
+            return True
         return False
 
     def is_parent(self, other_cat):
