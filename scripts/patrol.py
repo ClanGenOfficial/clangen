@@ -781,6 +781,41 @@ class Patrol(object):
                             10
                             ),
                         ])
+                elif self.patrol_random_cat.status == 'apprentice':
+                    possible_patrols.extend([
+                    PatrolEvent(
+                        1020,
+                        'p_l asks r_c how their training is going',
+                        'r_c happily tells p_l all about the fighting move they just learned',
+                        'r_c answers curtly, having been subjected to cleaning the elders\'s den recently',
+                        'r_c doesn\t hear the question and p_l changes the subject',
+                        50,
+                        10
+                        ),
+                    PatrolEvent(
+                        1021,
+                        'p_l asks r_c if they would like to go to the training grounds to practice',
+                        'The practice goes well and the apprentice learns a lot!',
+                        'The apprentice can\'t seem to focus today',
+                        'r_c declines the offer',
+                        50,
+                        10
+                        )
+                    ])
+                if game.clan.current_season == 'Leaf-fall':
+                    possible_patrols.extend([
+                    PatrolEvent(
+                        1022,
+                        'Leaf-fall gives new opportunities to train!',
+                        'r_c pays close attention to how p_l stalks prey while walking on leaves and manages to catch a bird!',
+                        'r_c can\'t seem to replicate p_l and scares off all the prey',
+                        'p_l decides to hunt with r_c in an area with less leaves',
+                        50,
+                        10
+                        )
+                        
+                ])
+
                 else:
                     possible_patrols.extend([
                     PatrolEvent(200, 'Your patrol doesn\'t find anything useful',
@@ -1032,7 +1067,7 @@ class Patrol(object):
             romantic_love = 10
         if self.patrol_event.patrol_id in [
                 2, 3, 6, 100, 103, 140, 141, 200, 204, 605, 1000, 1001, 1002, 1003,
-                1010, 1011, 1012
+                1010, 1011, 1012, 1020, 1021
         ]:
             platonic_like = 10
         if self.patrol_event.patrol_id in [103, 110, 1000, 1001, 1002, 1010]:
@@ -1043,7 +1078,7 @@ class Patrol(object):
         ]:
             admiration = 10
         if self.patrol_event.patrol_id in [
-                102, 120, 150, 202, 203, 250, 251, 260, 261, 1010, 1011, 1012
+                102, 120, 150, 202, 203, 250, 251, 260, 261, 1010, 1011, 1012, 1022
         ]:
             comfortable = 5
         if self.patrol_event.patrol_id in []:
