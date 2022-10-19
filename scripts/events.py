@@ -992,38 +992,44 @@ class Events(object):
                     return
             if cat.status == 'leader':
                 other_name = str(other_cat.name)
-                cause_of_death = [
-                    name + ' lost a life after falling into a river',
-                    name + ' lost a life due to greencough',
-                    name + ' lost a life due to whitecough',
-                    'Lightning fell in camp and ' + name + ' lost a life',
-                    name + ' was mortally wounded by a fox', name +
-                    ' lost a life to a dog', name + ' lost a life to a badger',
-                    name + ' lost a life to a hawk',
-                    name + ' lost a life due to yellowcough',
-                    name + ' lost a life while fighting off a rogue',
-                    name + ' lost a life to an eagle', name +
-                    ' was grabbed and dropped by an eagle, losing a life',
-                    name + ' was grabbed and dropped by a hawk, losing a life',
-                    name + ' lost a life after being swept away by a flood',
-                    name + ' lost a life after falling off a tree',
-                    name + ' was bit by a venomous spider and lost a life',
-                    name + ' was bit by a venomous snake and lost a life',
-                    name + ' ate poisoned fresh-kill and lost a life', name +
-                    ' failed to interpret a warning sign from StarClan and lost a life as a result',
-                    name + ' lost a life defending ' + other_name +
-                    ' from a dog', name + ' lost a life defending ' +
-                    other_name + ' from a badger', name +
-                    ' lost a life defending ' + other_name + ' from a fox',
-                    name + ' lost a life defending ' + other_name +
-                    ' from a hawk', name + ' lost a life defending ' +
-                    other_name + ' from an eagle',
-                    name + ' lost a life while saving ' + other_name +
-                    ' from drowning', name + ' lost a life while saving ' +
-                    other_name + ' from a monster',
-                    name + ' was pushed under a monster and lost a life',
-                    name + ' lost a life after saving ' + other_name + ' from a snake'
-                ]
+                if game.clan.current_season in ['Leaf-fall', 'Leaf-bare']:
+                    cause_of_death = [
+                        name + ' lost a life due to greencough',
+                        name + ' lost a life due to whitecough',
+                        name + ' lost a life due to yellowcough',
+                    ]
+                else:
+                    cause_of_death = [
+                        name + ' lost a life after falling into a river',
+                        'Lightning fell in camp and ' + name + ' lost a life',
+                        name + ' was mortally wounded by a fox', name +
+                        ' lost a life to a dog', name + ' lost a life to a badger',
+                        name + ' lost a life to a hawk',
+                        name + ' lost a life while fighting off a rogue',
+                        name + ' lost a life to an eagle', name +
+                        ' was grabbed and dropped by an eagle, losing a life',
+                        name + ' was grabbed and dropped by a hawk, losing a life',
+                        name + ' lost a life after being swept away by a flood',
+                        name + ' lost a life after falling off a tree',
+                        name + ' was bit by a venomous spider and lost a life',
+                        name + ' was bit by a venomous snake and lost a life',
+                        name + ' ate poisoned fresh-kill and lost a life', name +
+                        ' failed to interpret a warning sign from StarClan and lost a life as a result',
+                        name + ' lost a life defending ' + other_name +
+                        ' from a dog', name + ' lost a life defending ' +
+                        other_name + ' from a badger', name +
+                        ' lost a life defending ' + other_name + ' from a fox',
+                        name + ' lost a life defending ' + other_name +
+                        ' from a hawk', name + ' lost a life defending ' +
+                        other_name + ' from an eagle',
+                        name + ' lost a life while saving ' + other_name +
+                        ' from drowning', name + ' lost a life while saving ' +
+                        other_name + ' from a monster',
+                        name + ' was pushed under a monster and lost a life',
+                        name + ' lost a life after saving ' + other_name + ' from a snake'
+                    ]
+
+                    
                 if len(game.clan.all_clans) > 0:
                     cause_of_death.extend([
                         name + ' lost a life defending the kits from ' +
@@ -1101,16 +1107,15 @@ class Events(object):
                     game.clan.leader_lives -= 10
                 else:
                     lostlives = choice([2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6])
-                    cause_of_death = [
-                        name + ' lost ' + str(lostlives) +
-                        ' lives due to greencough', name + ' lost ' +
-                        str(lostlives) + ' lives due to whitecough',
-                        name + ' lost ' + str(lostlives) +
-                        ' lives due to yellowcough', name + ' lost ' +
-                        str(lostlives) + ' lives due to an illness',
-                        name + ' lost ' + str(lostlives) +
-                        ' lives due to an infection'
-                    ]
+                    if cat.moons >= 130 and game.clan.current_season in ['Leaf-fall', 'Leaf-bare']:
+                        cause_of_death = [
+                            name + ' lost ' + str(lostlives) +
+                            ' lives due to greencough', name + ' lost ' +
+                            str(lostlives) + ' lives due to whitecough',
+                            name + ' lost ' + str(lostlives) +
+                            ' lives due to yellowcough', name + ' lost ' +
+                            str(lostlives) + ' lives due to an illness'
+                        ]
                     game.clan.leader_lives = game.clan.leader_lives - lostlives
                 self.dies(cat)
                 game.cur_events_list.append(
@@ -1120,7 +1125,7 @@ class Events(object):
         elif randint(1, 400) == 1:
             name = str(cat.name)
             cause_of_death = [
-                name + ' was murdered', name + ' died of greencough',
+                name + ' was murdered',
                 'A tree fell in camp and killed ' + name,
                 name + ' was found dead near a fox den',
                 name + ' was bitten by a snake and died'
@@ -1145,7 +1150,21 @@ class Events(object):
                         name + ' froze to death in a harsh snowstorm', name +
                         ' disappeared from the nursery and was found dead in the territory',
                         name +
-                        ' was playing on the ice when the ice cracked and they drowned'
+                        ' was playing on the ice when the ice cracked and they drowned',
+                        name + ' died of greencough'
+                    ])
+                    if cat.status == 'kitten':
+                        cause_of_death.extend([
+                        name + ' died of kittencough', name + 
+                        ' was too weak to fight off whitecough and passed',
+                        name + ' caught a cold and slowly faded'
+                    ])
+                    if cat.status == 'elder' or cat.moons < 150:
+                        cause_of_death.extend([
+                        name + ' was already feeling weak and a case of whitecough finished them off',
+                        name + ' was too weak to recover from an illness and passed',
+                        'Weakened by a lack of prey, ' + name + ' couldn\'t fight off whitecough and passed',
+                        name + ' was taken quickly by a case of greencough'
                     ])
                 if game.clan.current_season == 'Greenleaf':
                     cause_of_death.extend([name + ' died to overheating'])
@@ -1205,7 +1224,7 @@ class Events(object):
                 cause_of_death = []
                 if len(game.clan.all_clans) > 0:
                     cause_of_death.extend([
-                        name + ' lost a live to greencough',
+                        name + ' lost a life to greencough',
                         'A tree fell in camp and ' + name + ' lost a life'
                     ])
                     cause_of_death.extend([
@@ -1290,12 +1309,24 @@ class Events(object):
                     return
             other_name = str(other_cat.name)
             cause_of_death = [
-                name + ' and ' + other_name + ' die of greencough',
-                name + ' and ' + other_name + ' die of yellowcough',
-                name + ' and ' + other_name + ' die of whitecough',
                 name + ' and ' + other_name + ' die from eating poisoned prey'
             ]
-            if cat.status == ['kitten', 'leader'] or other_cat.status == ['kitten', 'leader']:
+            if game.clan.current_season == 'Leaf-bare':
+                if cat.status == 'kitten' and other_cat.status == 'kitten':
+                    cause_of_death = [
+                        'Greencough reaches the nursery. ' + name + ' and ' + other_name + ' die',
+                        name + ' and ' + other_name + ' die from a bout of kittencough',
+                        name + ' and ' + other_name + ' catch whitecough and fade away quickly'
+                    ]
+                else:
+                    cause_of_death = [
+                        name + ' and ' + other_name + ' die of greencough',
+                        name + ' and ' + other_name + ' die of yellowcough',
+                        'A bad case of greencough strikes, and ' + name + ' and ' + other_name +
+                        ' die'
+                    ]
+                
+            if cat.status != ['kitten', 'leader'] or other_cat.status != ['kitten', 'leader']:
                 cause_of_death.extend([
                     name + ' and ' + other_name +
                     ' are killed in a border skirmish',
@@ -1427,11 +1458,18 @@ class Events(object):
                 if not cat.dead and not cat.exiled and cat.status != 'leader':
                     alive_count += 1
                     alive_cats.append(cat)
-            if alive_count > 10:
+            addition = randint(0, 20)
+            death_chance = int(alive_count / 3)
+            if addition == 1:
+                death_chance = int(death_chance + randint(0, 10) / 2)
+            else:
+                death_chance = death_chance
+            dead_count = int(death_chance / 5)
+            if alive_count > 15:
                 chance = int(alive_count / 10)
                 if randint(chance, 1000) == 999:
                     disaster = []
-                    dead_cats = random.sample(alive_cats, 5)
+                    dead_cats = random.sample(alive_cats, 5) # alive_cats, death_count for when scaling is added
                     name1 = str(dead_cats[0].name)
                     name2 = str(dead_cats[1].name)
                     name3 = str(dead_cats[2].name)
