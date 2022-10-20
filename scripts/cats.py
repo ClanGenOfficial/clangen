@@ -25,15 +25,15 @@ class Cat(object):
         'nervous', 'noisy', 'polite', 'quiet', 'sweet', 'troublesome'
     ]
     personality_groups = {
-        'Outgoing': ['adventurous', 'bold', 'charismatic', 'childish', 'confident', 'daring', 
-                    'playful', 'righteous', 'attention-seeker', 'bouncy', 'charming', 'noisy'],
+        'Outgoing': ['adventurous', 'bold', 'charismatic', 'childish', 'confident', 'daring',
+                        'playful', 'righteous', 'attention-seeker', 'bouncy', 'charming', 'noisy'],
         'Benevolent': ['altruistic', 'compassionate', 'empathetic', 'faithful', 'loving',
                         'patient', 'responsible', 'thoughtful', 'wise', 'inquisitive',
                         'polite', 'sweet'],
         'Abrasive': ['ambitious', 'bloodthirsty', 'cold', 'fierce', 'shameless', 'strict',
-                    'troublesome', 'vengeful', 'bossy', 'bullying', 'impulsive'],
+                        'troublesome', 'vengeful', 'bossy', 'bullying', 'impulsive'],
         'Reserved': ['calm', 'careful', 'insecure', 'lonesome', 'loyal', 'nervous', 'sneaky',
-                    'strange', 'daydreamer', 'quiet'],
+                        'strange', 'daydreamer', 'quiet'],
         }
     ages = [
         'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
@@ -2350,11 +2350,45 @@ class Cat(object):
                 relationships.append(rel)
         self.relationships = relationships
 
-    def status_change(self, new_status):
-        # revealing of traits and skills
+    def status_change(self, new_status):  # revealing of traits and skills
         # updates traits
         if self.moons == 6:
-            self.trait = choice(self.traits)
+            chance = randint(0, 5)  # chance for cat to gain trait that matches their previous trait's personality group
+            if chance == 0:
+                self.trait = choice(self.traits)
+                print('TRAIT TYPE: Random - CHANCE', chance)
+            else:
+                possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
+                for x in possible_groups:
+                    if self.trait in self.personality_groups[x]:
+                        possible_trait = self.personality_groups.get(x)
+                        self.trait = choice(possible_trait)
+                        print('TRAIT TYPE:', x, 'CHANCE:', chance)
+        if self.moons == 12:
+            chance = randint(0, 5)  # chance for cat to gain new trait or keep old
+            if chance == 0:
+                possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
+                for x in possible_groups:
+                    if self.trait in self.personality_groups[x]:
+                        possible_trait = self.personality_groups.get(x)
+                        self.trait = choice(possible_trait)
+                        print('TRAIT TYPE:', x, 'CHANCE:', chance)
+            else:
+                print('TRAIT TYPE: No change', chance)
+        if self.moons == 120:
+            chance = randint(0, 5)  # chance for cat to gain new trait or keep old
+            if chance == 0:
+                possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
+                for x in possible_groups:
+                    if self.trait in self.personality_groups[x]:
+                        possible_trait = self.personality_groups.get(x)
+                        self.trait = choice(possible_trait)
+                        print('TRAIT TYPE:', x, 'CHANCE:', chance)
+            elif chance == 1:
+                self.trait = choice(self.traits)
+                print('TRAIT TYPE: Random - CHANCE', chance)
+            else:
+                print('TRAIT TYPE: No change', chance)
         # updates mentors
         if new_status == 'apprentice':
             self.update_mentor()
