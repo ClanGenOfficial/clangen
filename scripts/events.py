@@ -347,7 +347,7 @@ class Events(object):
                 else:
                     if cat.accessory in ["FORGET ME NOTS", "BLUEBELLS", "POPPY"]:
                         acc_text.extend([f'{name} received a {acc_singular} from {other_name} and decided to wear it on their pelt',
-                                            f'{name} found {acc_singular} and decided to wear it on their pelt', f'A clanmate gave {name} a {acc_singular} and they decided to wear it'
+                                            f'{name} found a {acc_singular} and decided to wear it on their pelt', f'A clanmate gave {name} a {acc_singular} and they decided to wear it'
                             ])
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
                         acc_text.append(f'{name} was playing with {acc_plural} earlier and decided to wear some of them')
