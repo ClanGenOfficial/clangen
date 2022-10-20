@@ -2352,8 +2352,10 @@ class Cat(object):
         elif self.skill == '???':
             if self.status == 'apprentice' and new_status != 'medicine cat apprentice':
                 self.skill = choice(self.skills)
+                self.update_mentor()
             elif self.status == 'medicine cat apprentice' and new_status != 'apprentice':
                 self.skill = choice(self.med_skills)
+                self.update_med_mentor()
         self.status = new_status
         self.name.status = new_status
         if 'apprentice' in new_status:
@@ -2396,7 +2398,7 @@ class Cat(object):
         if self.dead:
             return False
         return True
-        
+
     def update_med_mentor(self, new_mentor=None):
         if new_mentor is None:
             # If not reassigning and current mentor works, leave it

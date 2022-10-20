@@ -107,6 +107,8 @@ class Events(object):
         cat.in_camp = 1
         self.check_age(cat)
         self.perform_ceremonies(cat)
+        if cat.age != 'adolescent':
+            cat.update_mentor()
         if self.new_cat_invited == False or self.living_cats < 10:
             self.invite_new_cats(cat)
         self.other_interactions(cat)
@@ -224,21 +226,18 @@ class Events(object):
                             f'{str(cat.name)} has chosen to walk the path of a medicine cat')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
-                        cat.update_med_mentor()
                     elif has_med_app is False and has_elder_med is True and chance == 1:
                         cat.status_change('medicine cat apprentice')
                         game.cur_events_list.append(
                             f'{str(cat.name)} has chosen to walk the path of a medicine cat')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
-                        cat.update_med_mentor()
                     else:
                         cat.status_change('apprentice')
                         game.cur_events_list.append(
                             f'{str(cat.name)} has started their apprenticeship')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
-                        cat.update_mentor()
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
                     self.ceremony(
                         cat, 'warrior', ' has earned their warrior name')
@@ -272,7 +271,6 @@ class Events(object):
 
     def ceremony(self, cat, promoted_to, ceremony_text):
         cat.status_change(promoted_to)
-        cat.update_mentor()
         game.cur_events_list.append(f'{str(cat.name)}{ceremony_text}')
 
     def gain_accessories(self, cat):
