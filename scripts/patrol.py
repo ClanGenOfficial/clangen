@@ -1148,9 +1148,9 @@ class Patrol(object):
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
+            
 
-
-        if self.patrol_event.patrol_id in [500, 501, 510]:  # new loner
+        if self.patrol_event.patrol_id in [500, 501, 505, 510]:  # new loner
             new_status = choice([
                 'apprentice', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior',
                 'elder', 'medicine cat'
