@@ -194,7 +194,7 @@ class Patrol(object):
                 10,
                 win_skills=['very smart', 'extremely smart']),
             PatrolEvent(
-                108,
+                116,
                 'While helping gathering herbs, r_c stumbles upon a bush of red berries',
                 'The patrol tells r_c to stay away from the deathberries just in time',
                 'r_c chews some of the deathberries and dies',
@@ -995,7 +995,7 @@ class Patrol(object):
 
     def handle_deaths(self):
         if self.patrol_event.patrol_id in [
-                108, 113, 114, 120, 141, 250, 305, 307
+                108, 113, 114, 116, 120, 141, 250, 305, 307
         ]:
             if self.patrol_random_cat.status == 'leader':
                 if self.patrol_event.patrol_id in [108, 113]:
