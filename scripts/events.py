@@ -240,14 +240,12 @@ class Events(object):
                         self.gain_accessories(cat)
                         cat.update_mentor()
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
-                    self._extracted_from_perform_ceremonies_19(
+                    self.ceremony(
                         cat, 'warrior', ' has earned their warrior name')
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
-                    self._extracted_from_perform_ceremonies_19(
-                        cat, 'medicine cat',
-                        ' has earned their medicine cat name')
+                    game.cur_events_list.append(f'{str(cat.name)} has earned their medicine cat name')
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
                     game.clan.new_medicine_cat(cat)
@@ -272,11 +270,10 @@ class Events(object):
                 game.cur_events_list.append(
                     f'{str(cat.name)} has retired to the elder den')
 
-    # TODO Rename this here and in `perform_ceremonies`
-    def _extracted_from_perform_ceremonies_19(self, cat, arg1, arg2):
-        cat.status_change(arg1)
+    def ceremony(self, cat, promoted_to, ceremony_text):
+        cat.status_change(promoted_to)
         cat.update_mentor()
-        game.cur_events_list.append(f'{str(cat.name)}{arg2}')
+        game.cur_events_list.append(f'{str(cat.name)}{ceremony_text}')
 
     def gain_accessories(self, cat):
         if cat.accessory is not None:

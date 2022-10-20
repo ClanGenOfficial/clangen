@@ -81,6 +81,8 @@ class Cat(object):
         self.gender = gender
         self.status = status
         self.age = None
+        self.skill = None
+        self.trait = None
         self.parent1 = parent1
         self.parent2 = parent2
         self.pelt = pelt
@@ -114,17 +116,19 @@ class Cat(object):
         else:
             self.ID = ID
         # personality trait and skill
-        if self.status != 'kitten':
-            self.trait = choice(self.traits)
-            if self.status == 'medicine cat':
-                self.skill = choice(self.med_skills)
-            elif self.status != 'apprentice' and self.status != 'medicine cat apprentice':
-                self.skill = choice(self.skills)
+        if self.trait is None or self.skill is None:
+            if self.status != 'kitten':
+                self.trait = choice(self.traits)
+                if self.status == 'medicine cat':
+                    self.skill = choice(self.med_skills)
+                elif self.status != 'apprentice' and self.status != 'medicine cat apprentice':
+                    self.skill = choice(self.skills)
+                else:
+                    self.skill = '???'
             else:
+                self.trait = self.trait = choice(self.kit_traits)
                 self.skill = '???'
-        else:
-            self.trait = self.trait = choice(self.kit_traits)
-            self.skill = '???'
+
         if self.gender is None:
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
@@ -2345,19 +2349,18 @@ class Cat(object):
         # revealing of traits and skills
         if self.status == 'kitten':
             self.trait = choice(self.traits)
-        if (self.status == 'apprentice'
-                and new_status != 'medicine cat apprentice') or (
-                    self.status == 'medicine cat apprentice'
-                    and new_status != 'apprentice'):
-            self.skill = choice(self.skills)
-        elif new_status == 'medicine cat':
-            self.skill = choice(self.med_skills)
+        elif self.skill == '???':
+            if self.status == 'apprentice' and new_status != 'medicine cat apprentice':
+                self.skill = choice(self.skills)
+            elif self.status == 'medicine cat apprentice' and new_status != 'apprentice':
+                self.skill = choice(self.med_skills)
         self.status = new_status
         self.name.status = new_status
         if 'apprentice' in new_status:
             self.update_mentor()
         # update class dictionary
         self.all_cats[self.ID] = self
+
     def is_valid_med_mentor(self, potential_mentor):
         # Dead or exiled cats can't be mentors
         if potential_mentor.dead or potential_mentor.exiled:
@@ -2374,6 +2377,7 @@ class Cat(object):
         if self.dead:
             return False
         return True
+
     def is_valid_mentor(self, potential_mentor):
         # Dead or exiled cats can't be mentors
         if potential_mentor.dead or potential_mentor.exiled:
@@ -2392,6 +2396,7 @@ class Cat(object):
         if self.dead:
             return False
         return True
+        
     def update_med_mentor(self, new_mentor=None):
         if new_mentor is None:
             # If not reassigning and current mentor works, leave it
