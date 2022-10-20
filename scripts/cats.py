@@ -108,6 +108,8 @@ class Cat(object):
         self.accessory = None
         self.birth_cooldown = 0
         self.siblings = []
+
+        # setting ID
         if ID is None:
             potential_ID = str(randint(10000, 9999999))
             while potential_ID in self.all_cats:
@@ -115,19 +117,45 @@ class Cat(object):
             self.ID = potential_ID
         else:
             self.ID = ID
+
+        # age
+        if status is None and moons is None:
+            self.age = choice(self.ages)
+        elif moons != None:
+            for key_age in self.age_moons.keys():
+                if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1]+1):
+                    self.age = key_age
+        else:
+            if status in ['kitten', 'elder']:
+                self.age = status
+            elif status == 'apprentice':
+                self.age = 'adolescent'
+            elif status == 'medicine cat apprentice':
+                self.age = 'adolescent'
+            else:
+                self.age = choice(
+                    ['young adult', 'adult', 'adult', 'senior adult'])
+        if moons is None:
+            self.moons = randint(self.age_moons[self.age][0],
+                                 self.age_moons[self.age][1])
+        else:
+            self.moons = moons
+
         # personality trait and skill
-        if self.trait is None or self.skill is None:
+        if self.trait is None: 
             if self.status != 'kitten':
                 self.trait = choice(self.traits)
+            else:
+                self.trait = choice(self.kit_traits)
+
+        if self.skill is None:
+            if self.moons <= 11:
+                self.skill = choice(self.skills)
+            else:
                 if self.status == 'medicine cat':
                     self.skill = choice(self.med_skills)
-                elif self.status != 'apprentice' and self.status != 'medicine cat apprentice':
-                    self.skill = choice(self.skills)
                 else:
                     self.skill = '???'
-            else:
-                self.trait = self.trait = choice(self.kit_traits)
-                self.skill = '???'
 
         if self.gender is None:
             self.gender = choice(["female", "male"])
@@ -152,29 +180,6 @@ class Cat(object):
                 self.genderalign = "nonbinary"
             else:
                 self.genderalign = self.gender
-                
-
-        if status is None and moons is None:
-            self.age = choice(self.ages)
-        elif moons != None:
-            for key_age in self.age_moons.keys():
-                if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1]+1):
-                    self.age = key_age
-        else:
-            if status in ['kitten', 'elder']:
-                self.age = status
-            elif status == 'apprentice':
-                self.age = 'adolescent'
-            elif status == 'medicine cat apprentice':
-                self.age = 'adolescent'
-            else:
-                self.age = choice(
-                    ['young adult', 'adult', 'adult', 'senior adult'])
-        if moons is None:
-            self.moons = randint(self.age_moons[self.age][0],
-                                 self.age_moons[self.age][1])
-        else:
-            self.moons = moons
 
         # eye colour
         if self.eye_colour is None:
@@ -2347,19 +2352,26 @@ class Cat(object):
 
     def status_change(self, new_status):
         # revealing of traits and skills
-        if self.status == 'kitten':
+        # updates traits
+        if self.moons == 6:
             self.trait = choice(self.traits)
-        elif self.skill == '???':
-            if self.status == 'apprentice' and new_status != 'medicine cat apprentice':
+        # updates mentors
+        if new_status == 'apprentice':
+            self.update_mentor()
+        elif new_status == 'medicine cat apprentice':
+            self.update_med_mentor()
+        # updates skill
+        if self.skill == '???':
+            if new_status == 'warrior':
                 self.skill = choice(self.skills)
                 self.update_mentor()
-            elif self.status == 'medicine cat apprentice' and new_status != 'apprentice':
+            elif new_status == 'medicine cat':
                 self.skill = choice(self.med_skills)
                 self.update_med_mentor()
+            else:
+                self.skill == '???'
         self.status = new_status
         self.name.status = new_status
-        if 'apprentice' in new_status:
-            self.update_mentor()
         # update class dictionary
         self.all_cats[self.ID] = self
 
@@ -3334,7 +3346,7 @@ class Cat(object):
                     collar_color = 'purple'
                 elif accessory.startswith('multi'):
                     collar_color = 'multi'
-                if accessory.endswith('bow'):
+                if accessory.endswith('bow') and not accessory == 'rainbow':
                     acc_display = collar_color + ' bow'
                 elif accessory.endswith('bell'):
                     acc_display = collar_color + ' bell collar'

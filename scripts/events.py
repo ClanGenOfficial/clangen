@@ -107,8 +107,6 @@ class Events(object):
         cat.in_camp = 1
         self.check_age(cat)
         self.perform_ceremonies(cat)
-        if cat.age != 'adolescent':
-            cat.update_mentor()
         if self.new_cat_invited == False or self.living_cats < 10:
             self.invite_new_cats(cat)
         self.other_interactions(cat)
@@ -116,6 +114,13 @@ class Events(object):
         self.gain_scars(cat)
         self.handle_deaths(cat)
         self.coming_out(cat)
+        if cat.moons <= 13:
+            cat.update_mentor()
+        #checking that skill is correct
+        if cat.status == 'medicine cat' and cat.skill not in cat.med_skills:
+            cat.skill = choice(cat.med_skills)
+        else:
+            return
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0 and randint(1, 5) == 1:
@@ -187,6 +192,8 @@ class Events(object):
             cat.moons += 1
             if cat.status == 'deputy' and game.clan.deputy is None:
                 game.clan.deputy = cat
+            if cat.status == 'medicine cat' and game.clan.medicine_cat is None:
+                game.clan.medicine_cat = cat
             if cat.moons > cat_class.age_moons[cat.age][1]:
                 if cat.age != 'elder':
                     cat.age = cat_class.ages[cat_class.ages.index(cat.age) + 1]
@@ -220,22 +227,16 @@ class Events(object):
                     else:
                         chance = randint(0, 25)
                         print('POSSIBLE MED APP - CHANCE:', chance)
-                    if has_med_app is False and has_med is True and chance == 1:
-                        cat.status_change('medicine cat apprentice')
-                        game.cur_events_list.append(
-                            f'{str(cat.name)} has chosen to walk the path of a medicine cat')
+                    if has_med_app is False and has_med is True and game.clan.medicine_cat <= 1 and chance == 1:
+                        self.ceremony(cat, 'medicine cat apprentice', ' has chosen to walk the path of a medicine cat')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
-                    elif has_med_app is False and has_elder_med is True and chance == 1:
-                        cat.status_change('medicine cat apprentice')
-                        game.cur_events_list.append(
-                            f'{str(cat.name)} has chosen to walk the path of a medicine cat')
+                    elif has_med_app is False and has_elder_med is True and len(game.clan.medicine_cat) <= 1 and chance == 1:
+                        self.ceremony(cat, 'medicine cat apprentice', ' has chosen to walk the path of a medicine cat')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
                     else:
-                        cat.status_change('apprentice')
-                        game.cur_events_list.append(
-                            f'{str(cat.name)} has started their apprenticeship')
+                        self.ceremony(cat, 'apprentice', 'has started their apprenticeship')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
@@ -244,22 +245,15 @@ class Events(object):
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
-                    game.cur_events_list.append(f'{str(cat.name)} has earned their medicine cat name')
+                    self.ceremony(cat, 'medicine cat', ' has earned their medicine cat name')
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
-                    game.clan.new_medicine_cat(cat)
-                elif cat.status == 'deputy' and cat.age == 'elder' and len(
-                        cat.apprentice) < 1:
-                    cat.status_change('elder')
+                elif cat.status == 'deputy' and cat.age == 'elder' and len(cat.apprentice) < 1:
+                    self.ceremony(cat, 'elder', ' has retired to the elder den')
                     game.clan.deputy = None
-                    game.cur_events_list.append(
-                        f'The deputy {str(cat.name)} has retired to the elder den'
-                    )
-                elif cat.status == 'warrior' and cat.age == 'elder' and len(
-                        cat.apprentice) < 1:
-                    cat.status_change('elder')
-                    game.cur_events_list.append(
-                        f'{str(cat.name)} has retired to the elder den')
+                elif cat.status == 'warrior' and cat.age == 'elder' and len(cat.apprentice) < 1:
+                    self.ceremony(cat, 'elder', ' has retired to the elder den')
+                
             if cat.status in ['warrior', 'deputy'] and cat.age == 'elder' and len(cat.apprentice) < 1:
                 if cat.status == 'deputy':
                     game.clan.deputy = None
@@ -1461,6 +1455,8 @@ class Events(object):
                 if not cat.dead and not cat.exiled and cat.status != 'leader':
                     alive_count += 1
                     alive_cats.append(cat)
+            if len(game.clan.all_clans) > 0:
+                other_clan = game.clan.all_clans.name
             addition = randint(0, 20)
             death_chance = int(alive_count / 3)
             if addition == 1:
@@ -1481,7 +1477,7 @@ class Events(object):
                     disaster.extend([
                         ' drown after the camp becomes flooded',
                         ' are killed in a battle against ' +
-                        choice(game.clan.all_clans).name + 'Clan',
+                        choice(other_clan.name) + 'Clan',
                         ' are killed after a fire rages through the camp',
                         ' are killed in an ambush by a group of rogues',
                         ' go missing in the night',
@@ -1531,7 +1527,7 @@ class Events(object):
         game.clan.add_to_starclan(cat)
 
     def check_age(self, cat):
-        if 0 <= cat.moons <= 5:
+        if cat.moons <= 5:
             cat.age = 'kitten'
         elif 6 <= cat.moons <= 11:
             cat.age = 'adolescent'
