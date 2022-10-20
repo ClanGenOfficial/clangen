@@ -2853,6 +2853,12 @@ class PatrolEventScreen(Screens):
             game.switches['event'] = -1
         if game.switches['event'] == -1:
             intro_text = patrol.patrol_event.intro_text
+            patrol_size = len(patrol.patrol_cats)
+            if patrol_size < 2: # adjusting text for solo patrols
+                intro_text = intro_text.replace('Your patrol',
+                                                str(patrol.patrol_leader.name))
+                intro_text = intro_text.replace('The patrol',
+                                                str(patrol.patrol_leader.name))
             intro_text = intro_text.replace('r_c',
                                             str(patrol.patrol_random_cat.name))
             intro_text = intro_text.replace('p_l',
@@ -2872,6 +2878,12 @@ class PatrolEventScreen(Screens):
             if game.switches['event'] == 1:
                 if patrol.success:
                     success_text = patrol.patrol_event.success_text
+                    patrol_size = len(patrol.patrol_cats)
+                    if patrol_size < 2:  # adjusting text for solo patrols
+                        success_text = success_text.replace('Your patrol',
+                                                        str(patrol.patrol_leader.name))
+                        success_text = success_text.replace('The patrol',
+                                                        str(patrol.patrol_leader.name))
                     success_text = success_text.replace(
                         'r_c', str(patrol.patrol_random_cat.name))
                     success_text = success_text.replace(
@@ -2879,6 +2891,12 @@ class PatrolEventScreen(Screens):
                     verdana.blit_text(success_text, (150, 200))
                 else:
                     fail_text = patrol.patrol_event.fail_text
+                    patrol_size = len(patrol.patrol_cats)
+                    if patrol_size < 2:  # adjusting text for solo patrols
+                        fail_text = fail_text.replace('Your patrol',
+                                                            str(patrol.patrol_leader.name))
+                        fail_text = fail_text.replace('The patrol',
+                                                            str(patrol.patrol_leader.name))
                     fail_text = fail_text.replace(
                         'r_c', str(patrol.patrol_random_cat.name))
                     fail_text = fail_text.replace(
@@ -2886,6 +2904,12 @@ class PatrolEventScreen(Screens):
                     verdana.blit_text(fail_text, (150, 200))
             elif game.switches['event'] == 2:
                 decline_text = patrol.patrol_event.decline_text
+                patrol_size = len(patrol.patrol_cats)
+                if patrol_size < 2:  # adjusting text for solo patrols
+                    decline_text = decline_text.replace('Your patrol',
+                                                        str(patrol.patrol_leader.name))
+                    decline_text = decline_text.replace('The patrol',
+                                                        str(patrol.patrol_leader.name))
                 decline_text = decline_text.replace(
                     'r_c', str(patrol.patrol_random_cat.name))
                 decline_text = decline_text.replace(
@@ -2893,6 +2917,12 @@ class PatrolEventScreen(Screens):
                 verdana.blit_text(decline_text, (150, 200))
             elif game.switches['event'] == 4:
                 antagonize_text = patrol.patrol_event.antagonize_text
+                patrol_size = len(patrol.patrol_cats)
+                if patrol_size < 2:  # adjusting text for solo patrols
+                    antagonize_text = antagonize_text.replace('Your patrol',
+                                                        str(patrol.patrol_leader.name))
+                    antagonize_text = antagonize_text.replace('The patrol',
+                                                        str(patrol.patrol_leader.name))
                 antagonize_text = antagonize_text.replace(
                     'r_c', str(patrol.patrol_random_cat.name))
                 antagonize_text = antagonize_text.replace(

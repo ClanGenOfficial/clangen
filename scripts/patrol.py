@@ -71,6 +71,7 @@ class Patrol(object):
         
 
     def add_possible_patrols(self):
+
         possible_patrols = []
     # general patrols, any number of cats
         # general hunting patrols
@@ -88,7 +89,7 @@ class Patrol(object):
                 2,
                 'Your patrol comes across a large rat',
                 'Your patrol catches the rat! More freshkill!',
-                'Your patrol misses the rat, and the patrol\'s confidence is shaken',
+                'Your patrol misses the rat, and their confidence is shaken',
                 'Your patrol ignores the rat',
                 50,
                 10,
@@ -1045,7 +1046,7 @@ class Patrol(object):
                             50,
                             10,
                             win_skills=['great speaker', 'fantastic speaker'])
-                        ])        
+                        ])
 
         self.patrol_event = choice(possible_patrols)
 
