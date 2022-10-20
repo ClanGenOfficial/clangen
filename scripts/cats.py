@@ -149,7 +149,7 @@ class Cat(object):
                 self.trait = choice(self.kit_traits)
 
         if self.skill is None:
-            if self.moons <= 11:
+            if self.moons >= 11:
                 self.skill = choice(self.skills)
             else:
                 if self.status == 'medicine cat':
@@ -2364,7 +2364,7 @@ class Cat(object):
             self.update_med_mentor()
         # updates skill
         if self.skill == '???':
-            if new_status == 'warrior':
+            if new_status == 'warrior' or self.status == 'warrior' and new_status != 'medicine cat':
                 self.skill = choice(self.skills)
                 self.update_mentor()
             elif new_status == 'medicine cat':
