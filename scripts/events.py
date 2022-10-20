@@ -106,6 +106,7 @@ class Events(object):
         self.living_cats += 1
         cat.in_camp = 1
         self.check_age(cat)
+        self.check_skill(cat)
         self.perform_ceremonies(cat)
         if self.new_cat_invited == False or self.living_cats < 10:
             self.invite_new_cats(cat)
@@ -116,11 +117,19 @@ class Events(object):
         self.coming_out(cat)
         if cat.moons <= 13:
             cat.update_mentor()
+        
+
+    def check_skill(self, cat):
         #checking that skill is correct
         if cat.status == 'medicine cat' and cat.skill not in cat.med_skills:
             cat.skill = choice(cat.med_skills)
         else:
             return
+        if cat.skill == '???':
+            if cat.status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
+                cat.skill = choice(cat.skills)
+            else:
+                return
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0 and randint(1, 5) == 1:
@@ -205,6 +214,11 @@ class Events(object):
                         and not cat.dead and not cat.exiled
                         for cat in cat_class.all_cats.values())
 
+                    very_old_med = any(
+                        str(cat.status) == 'medicine cat' and int(cat.moons) >= 150
+                        and not cat.dead and not cat.exiled
+                        for cat in cat_class.all_cats.values())
+
                     # check if a med cat of a different age exists
                     has_med = any(
                         str(cat.status) == 'medicine cat' and str(cat.age) != 'elder'
@@ -222,21 +236,30 @@ class Events(object):
                         chance = randint(0, 1)
                         print('POSSIBLE MED APP - ELDER MED MENTOR - CHANCE:', chance)
                     elif has_elder_med is False and has_med is True:
-                        chance = randint(0, 5)
-                    elif len(game.clan.medicine_cat) <= 2:
+                        chance = randint(0, 20)
+                    elif has_elder_med and has_med:
+                        if very_old_med:
+                            chance = randint(0, 25)
+                        else:
+                            chance = 0
+                    elif game.clan.med_cat_number >= 3:
                         chance = 0
                     else:
                         chance = randint(0, 30)
                         print('POSSIBLE MED APP - CHANCE:', chance)
-                    if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
-                        chance = chance + 10
+                    print('med app chance:', chance)
+                    if chance in range(0, 11):    
+                        if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
+                            chance = 1
+                        else:
+                            chance = chance
                         print('POSSIBLE MED APP - TRAIT:', cat.trait, '- CHANCE:', chance)
                     if has_med_app is False and chance == 1:
                         self.ceremony(cat, 'medicine cat apprentice', ' has chosen to walk the path of a medicine cat')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
                     else:
-                        self.ceremony(cat, 'apprentice', 'has started their apprenticeship')
+                        self.ceremony(cat, 'apprentice', ' has started their apprenticeship')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
