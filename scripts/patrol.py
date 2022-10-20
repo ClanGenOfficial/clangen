@@ -1,3 +1,6 @@
+from asyncore import loop
+from os import name
+from pydoc import text
 from random import choice, randint
 from math import ceil, floor
 from .events import events_class
@@ -5,7 +8,6 @@ from .game_essentials import *
 from .names import *
 from .cats import *
 from .pelts import *
-from .utility import *
 
 
 class Patrol(object):
@@ -203,15 +205,6 @@ class Patrol(object):
                 10,
                 win_skills=['very smart', 'extremely smart']),
             PatrolEvent(
-                109,
-                'r_c notices a Clanmate trapped in some brambles',
-                'r_c frees their Clanmate',
-                'The patrol works all day to free their Clanmate and gets nothing else done',
-                'r_c runs back to camp to fetch help and rejoins the patrol later',
-                50,
-                10,
-                win_skills=['very smart', 'extremely smart']),
-            PatrolEvent(
                 110,
                 'r_c spots a large rabbit, but it is just over the border',
                 'r_c catches the rabbit without the enemy Clan noticing',
@@ -221,6 +214,19 @@ class Patrol(object):
                 10,
                 win_skills=['fantastic hunter'])
         ])
+        if len(self.patrol_cats) >= 2:
+            possible_patrols.extend([
+                PatrolEvent(
+                    109,
+                    'r_c notices a Clanmate trapped in some brambles',
+                    'r_c frees their Clanmate',
+                    'The patrol works all day to free their Clanmate and gets nothing else done',
+                    'r_c runs back to camp to fetch help and rejoins the patrol later',
+                    50,
+                    10,
+                    win_skills=['very smart', 'extremely smart']
+                    )
+            ])
 
         # season patrols
         if game.clan.current_season == 'Newleaf':
@@ -602,21 +608,7 @@ class Patrol(object):
                 'r_c finds an abandoned kit whose mother is nowhere to be found',
                 'The kit is taken back to camp and nursed back to health',
                 'The kit is taken back to camp, but grows weak and dies a few days later',
-                'They leave the kit alone', 40, 10),
-            PatrolEvent(
-                505,
-                'r_c finds a loner who offers their healing skills in exchange for shelter',
-                'The new medicine cat is welcomed into the clan',
-                'After hearing more about your clan, the loner decides not to join',
-                'The patrol declines their offer',
-                40,
-                10,
-                antagonize_text=
-                'Your patrol drives the cat off of the territory',
-                antagonize_fail_text=
-                'The loner is taken aback by their hostility '
-                'and decides this Clan is not for them',
-                win_skills=['great speaker', 'excellent speaker']),
+                'They leave the kit alone', 40, 10)
         ])
 
         if self.patrol_random_cat.skill == 'formerly a loner':
@@ -639,14 +631,38 @@ class Patrol(object):
                     'r_c says farewell to their friend and rejoins the patrol', 40, 10)
             ])            
 
-        # status specific patrols
-
-        # season specific patrols
-
-        # trait specific patrols
-
-        if len(self.patrol_cats) > 1:
-            if self.patrol_random_cat.trait == 'strange':
+        # single cat patrol
+        if len(self.patrol_cats) == 1:
+            possible_patrols.extend([
+                PatrolEvent(
+                    400,
+                    'r_c is nervous doing a patrol by themselves',
+                    'They don\'t let their nerves get to them and continue the patrol successfully',
+                    'They run back to camp, unable to continue',
+                    'They continue the patrol but progress is slow',
+                    40,
+                    10,
+                    win_skills=['very smart', 'extremely smart']),
+                PatrolEvent(
+                    401,
+                    'Since r_c is alone, they debate taking a bite out of the freshkill they have just caught',
+                    'They decide not to and end up catching extra prey for the kits and elders',
+                    'They eat the freshkill; however, they do not catch more prey to make up for it and the kits and elders go hungry',
+                    'They shake the thought from their mind',
+                    30,
+                    10,
+                    win_skills=['smart', 'very smart', 'extremely smart']),
+                PatrolEvent(
+                    402,
+                    'While alone on patrol, r_c thinks about life',
+                    'They find peace within themselves and enjoy the rest of the patrol',
+                    'Their thoughts are plagued with bad memories',
+                    'r_c decides to focus on the patrol',
+                    40,
+                    10,
+                )
+            ])
+            if self.patrol_cats[0].status == 'apprentice':
                 possible_patrols.extend([
                     PatrolEvent(
                         450,
@@ -681,7 +697,7 @@ class Patrol(object):
                 
         # two or more cats            
         # conversation patrols
-        if len(self.patrol_cats) >= 2 and self.patrol_leader != self.patrol_random_cat:
+        if len(self.patrol_cats) == 2 and self.patrol_leader != self.patrol_random_cat:
             # general relationship patrols
             if len(self.patrol_cats) == 2:
                 possible_patrols.extend([
@@ -712,7 +728,43 @@ class Patrol(object):
                         60,
                         20
                     ),
-                ])
+                    PatrolEvent(
+                        1004,
+                        'p_l considers joking around with r_c to lighten up the mood',
+                        'p_l makes r_c laugh the entire patrol',
+                        'r_c scolds p_l for their lack of focus',
+                        'p_l decides to stay quiet',
+                        50,
+                        10
+                        ),
+                    PatrolEvent(
+                        1005,
+                        'p_l points out an interesting cloud to r_c',
+                        'r_c and p_l spend hours watching the sky together',
+                        'r_c chides p_l for their childishness',
+                        'p_l changes the subject',
+                        50,
+                        10
+                        ),
+                    PatrolEvent(
+                        1006,
+                        'r_c is thrilled that they were assigned to patrol with p_l today',
+                        'The two spend the whole patrol chatting and laughing',
+                        'Unfortunately, p_l doesn\'t seem to feel the same',
+                        'Still, their duties to the clan come first',
+                        50,
+                        10
+                        ),
+                    PatrolEvent(
+                        1007,
+                        'p_l notices that r_c isn\'t acting like their usual self',
+                        'r_c opens up to p_l over something that has been bothering them',
+                        'r_c snaps at p_l to mind their own business',
+                        'p_l decides not to interfere',
+                        50,
+                        10
+                        )
+                    ])
 
                 if game.clan.current_season == 'Leaf-bare':
                     possible_patrols.extend([
@@ -755,6 +807,33 @@ class Patrol(object):
                         'p_l changes their mind',
                         50,
                         10
+                        ),
+                    PatrolEvent(
+                        1013,
+                        'p_l notices how pretty r_c looks with the sun on their pelt',
+                        'p_l shares the compliment with r_c, who thanks them',
+                        'r_c tells p_l to keep their eyes off of them',
+                        'p_l decides to keep their feelings silent',
+                        50,
+                        10
+                        ),
+                    PatrolEvent(
+                        1014,
+                        'p_l notices r_c staring at them',
+                        'p_l feels their heart flutter',
+                        'p_l snaps at r_c to knock it off',
+                        'p_l ignores r_c',
+                        50,
+                        10
+                        ),
+                    PatrolEvent(
+                        1015,
+                        'p_l thinks r_c\'s eyes are beautiful',
+                        'p_l tells r_c and they love the compliment',
+                        'p_l tells r_c and they feel awkward, ignoring p_l for the rest of the patrol',
+                        'p_l shakes their head and focuses on the patrol',
+                        50,
+                        10
                         )
                     ])
                     if game.clan.current_season == 'Newleaf':
@@ -786,6 +865,15 @@ class Patrol(object):
                         'The practice goes well and the apprentice learns a lot!',
                         'The apprentice can\'t seem to focus today',
                         'r_c declines the offer',
+                        50,
+                        10
+                        ),
+                    PatrolEvent(
+                        1023,
+                        'r_c doesn\'t feel totally comfortable around p_l just yet',
+                        'p_l cracks a joke to make r_c feel more at ease',
+                        'r_c forces themself to spend time with p_l but it doesn\'t help',
+                        'r_c stays away from p_l',
                         50,
                         10
                         )
@@ -1050,29 +1138,30 @@ class Patrol(object):
 
         # change the values
         if self.patrol_event.patrol_id in [
-            1010, 1011, 1012
+            1010, 1011, 1012, 1013, 1014, 1015
         ]:
             romantic_love = 10
         if self.patrol_event.patrol_id in [
                 2, 3, 6, 100, 103, 140, 141, 200, 204, 605, 1000, 1001, 1002, 1003,
-                1010, 1011, 1012, 1020, 1021
+                1010, 1011, 1012, 1020, 1021, 1003, 1006
         ]:
             platonic_like = 10
         if self.patrol_event.patrol_id in [103, 110, 1000, 1001, 1002, 1010]:
             dislike = 5
         if self.patrol_event.patrol_id in [
                 2, 3, 6, 104, 105, 108, 130, 131, 261, 300, 301, 302, 303, 305,
-                307, 600, 1002
+                307, 600, 1002, 1005
         ]:
             admiration = 10
         if self.patrol_event.patrol_id in [
-                102, 120, 150, 202, 203, 250, 251, 260, 261, 1010, 1011, 1012, 1022
+                102, 120, 150, 202, 203, 250, 251, 260, 261, 1010, 1011, 1012, 1022,
+                1004, 1023, 1007
         ]:
             comfortable = 5
         if self.patrol_event.patrol_id in []:
             jealousy = 5
         if self.patrol_event.patrol_id in [
-                7, 8, 102, 107, 110, 114, 115, 141, 250, 251, 605, 1001
+                7, 8, 102, 107, 110, 114, 115, 141, 250, 251, 605, 1001, 1007
         ]:
             trust = 10
 
@@ -1115,48 +1204,14 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
-            add_siblings_to_cat(kit,cat_class)
-            new_skill = choice(['formerly a loner', 'formerly a kittypet'])
-            kit.skill = new_skill
-            kit.thought = 'Is looking around the camp with wonder'
-            if kit.skill == 'formerly a kittypet':
-                if randint(0, 2) == 0:  # chance to add collar
-                    kit.accessory = choice(collars)
-
-
-        if self.patrol_event.patrol_id in [505]:  # new med cat
-            new_status = choice(['medicine cat'])
-            if self.patrol_event.patrol_id == 505:
-                new_status = 'medicine cat'
-
-            kit = Cat(status=new_status)
-            #create and update relationships
-            relationships = []
-            for cat_id in game.clan.clan_cats:
-                the_cat = cat_class.all_cats.get(cat_id)
-                if the_cat.dead or the_cat.exiled:
-                    continue
-                the_cat.relationships.append(Relationship(the_cat, kit))
-                relationships.append(Relationship(kit, the_cat))
-            kit.relationships = relationships
-            game.clan.add_cat(kit)
-            add_siblings_to_cat(kit,cat_class)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
-            if (kit.status == 'elder'):
-                kit.moons = randint(120, 150)
-            if randint(0, 5) == 0:  # chance to keep name
-                kit.name.prefix = choice(names.loner_names)
-                kit.name.suffix = ''
-            
 
-        if self.patrol_event.patrol_id in [500, 501, 505, 510]:  # new loner
+        if self.patrol_event.patrol_id in [500, 501, 510]:  # new loner
             new_status = choice([
-                'apprentice', 'warrior', 'warrior', 'warrior', 'warrior', 'warrior',
-                'elder', 'medicine cat'
+                'apprentice', 'warrior', 'warrior', 'warrior', 'warrior',
+                'elder'
             ])
-            if self.patrol_event.patrol_id == 505:
-                new_status = 'medicine cat'
             if self.patrol_event.patrol_id == 501:
                 new_status = 'warrior'
             kit = Cat(status=new_status)
@@ -1172,7 +1227,6 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
-            add_siblings_to_cat(kit,cat_class)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
             if (kit.status == 'elder'):
@@ -1182,7 +1236,6 @@ class Patrol(object):
                 kit.name.suffix = ''
             if self.patrol_event.patrol_id == 501:
                 num_kits = choice([2, 2, 2, 2, 3, 4])
-                all_kitten = []
                 for _ in range(num_kits):
                     kit2 = Cat(status='kitten', moons=0)
                     kit2.skill = 'formerly a loner'
@@ -1205,8 +1258,6 @@ class Patrol(object):
                             relationships.append(Relationship(kit2, the_cat))
                     kit2.relationships = relationships
                     game.clan.add_cat(kit2)
-                for kit in all_kitten:
-                    add_siblings_to_cat(kit,cat_class)
 
         elif self.patrol_event.patrol_id in [502, 503, 520]:  # new kittypet
             new_status = choice([
@@ -1224,7 +1275,6 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
-            add_siblings_to_cat(kit,cat_class)
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
             kit.skill = 'formerly a kittypet'
