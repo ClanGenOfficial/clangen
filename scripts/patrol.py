@@ -784,7 +784,7 @@ class Patrol(object):
                     PatrolEvent(
                         1003,
                         'p_l notices r_c shivering',
-                        'p_l asks cat2 if they want to walk closer for warmth',
+                        'p_l asks r_c if they want to walk closer for warmth',
                         'r_c says that they\'re fine',
                         'p_l decides not to mention it',
                         60,
