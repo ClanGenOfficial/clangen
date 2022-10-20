@@ -154,6 +154,8 @@ class Cat(object):
             else:
                 if self.status == 'medicine cat':
                     self.skill = choice(self.med_skills)
+                elif self.status == 'warrior':
+                    self.skill = choice(self.skills)
                 else:
                     self.skill = '???'
 
@@ -2370,6 +2372,8 @@ class Cat(object):
                 self.update_med_mentor()
             else:
                 self.skill == '???'
+        else:
+            self.skill = self.skill
         self.status = new_status
         self.name.status = new_status
         # update class dictionary
