@@ -221,17 +221,17 @@ class Events(object):
                     if has_elder_med is True and has_med is False:
                         chance = randint(0, 1)
                         print('POSSIBLE MED APP - ELDER MED MENTOR - CHANCE:', chance)
-                    elif cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
-                        chance = randint(0, 3)
-                        print('POSSIBLE MED APP - TRAIT:', cat.trait, '- CHANCE:', chance)
+                    elif has_elder_med is False and has_med is True:
+                        chance = randint(0, 5)
+                    elif len(game.clan.medicine_cat) <= 2:
+                        chance = 0
                     else:
-                        chance = randint(0, 25)
+                        chance = randint(0, 30)
                         print('POSSIBLE MED APP - CHANCE:', chance)
-                    if has_med_app is False and has_med is True and game.clan.medicine_cat <= 1 and chance == 1:
-                        self.ceremony(cat, 'medicine cat apprentice', ' has chosen to walk the path of a medicine cat')
-                        self.ceremony_accessory = True
-                        self.gain_accessories(cat)
-                    elif has_med_app is False and has_elder_med is True and len(game.clan.medicine_cat) <= 1 and chance == 1:
+                    if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
+                        chance = chance + 10
+                        print('POSSIBLE MED APP - TRAIT:', cat.trait, '- CHANCE:', chance)
+                    if has_med_app is False and chance == 1:
                         self.ceremony(cat, 'medicine cat apprentice', ' has chosen to walk the path of a medicine cat')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
@@ -1527,7 +1527,7 @@ class Events(object):
         game.clan.add_to_starclan(cat)
 
     def check_age(self, cat):
-        if cat.moons <= 5:
+        if 0 <= cat.moons <= 5:
             cat.age = 'kitten'
         elif 6 <= cat.moons <= 11:
             cat.age = 'adolescent'
