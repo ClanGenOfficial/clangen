@@ -149,14 +149,15 @@ class Cat(object):
                 self.trait = choice(self.kit_traits)
 
         if self.skill is None:
-            if self.moons <= 11:
-                self.skill = choice(self.skills)
-            else:
+            if self.moons >= 11:
                 if self.status == 'medicine cat':
                     self.skill = choice(self.med_skills)
                 else:
-                    self.skill = '???'
+                    self.skill = choice(self.skills)                
+            else:
+                self.skill = '???'
 
+        # sex
         if self.gender is None:
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
@@ -164,8 +165,8 @@ class Cat(object):
         #trans cat chances
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)
-        if self.age_moons == 'kitten':
-            return
+        if self.age == 'kitten':
+            self.gender_align = self.gender
         if self.gender == "female":
             if trans_chance == 1:
                 self.genderalign = "trans male"
@@ -2396,7 +2397,7 @@ class Cat(object):
             self.update_med_mentor()
         # updates skill
         if self.skill == '???':
-            if new_status == 'warrior':
+            if new_status == 'warrior' or self.status == 'warrior' and new_status != 'medicine cat':
                 self.skill = choice(self.skills)
                 self.update_mentor()
             elif new_status == 'medicine cat':
@@ -2404,6 +2405,8 @@ class Cat(object):
                 self.update_med_mentor()
             else:
                 self.skill == '???'
+        else:
+            self.skill = self.skill
         self.status = new_status
         self.name.status = new_status
         # update class dictionary
