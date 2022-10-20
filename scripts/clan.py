@@ -89,6 +89,7 @@ class Clan(object):
                 self.clan_cats.append(self.deputy.ID)
             self.deputy_predecessors = 0
             self.medicine_cat = medicine_cat
+            self.med_cat_number = 0
             self.med_cat_predecessors = 0
             if medicine_cat is not None:
                 self.medicine_cat.status_change('medicine cat')
@@ -194,6 +195,7 @@ class Clan(object):
             self.medicine_cat = medicine_cat
             cat_class.all_cats[medicine_cat.ID].status_change('medicine cat')
             self.med_cat_predecessors += 1
+            self.med_cat_number += 1
 
     def switch_clans(self):
         list_data = game.switches['switch_clan'] + "\n"

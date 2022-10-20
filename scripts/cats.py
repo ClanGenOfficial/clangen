@@ -150,15 +150,14 @@ class Cat(object):
 
         if self.skill is None:
             if self.moons >= 11:
-                self.skill = choice(self.skills)
-            else:
                 if self.status == 'medicine cat':
                     self.skill = choice(self.med_skills)
-                elif self.status == 'warrior':
-                    self.skill = choice(self.skills)
                 else:
-                    self.skill = '???'
+                    self.skill = choice(self.skills)                
+            else:
+                self.skill = '???'
 
+        # sex
         if self.gender is None:
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
@@ -167,7 +166,7 @@ class Cat(object):
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)
         if self.age == 'kitten':
-            return
+            self.gender_align = self.gender
         if self.gender == "female":
             if trans_chance == 1:
                 self.genderalign = "trans male"
