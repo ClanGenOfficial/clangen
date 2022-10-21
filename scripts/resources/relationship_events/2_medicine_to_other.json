@@ -1,0 +1,133 @@
+{
+    "kitten": {
+        "unfriendly": [
+            "Is scolding (cat)",
+            "Treats (cat)'s splinter wound more roughly",
+            "Gives (cat) bitter herbs on purpose"
+        ],
+        "neutral": [
+            "Trips over (cat)",
+            "Had to nip (cat) on the rump because they were being naughty",
+            "Is watching (cat) perform an almost-decent hunting crouch",
+            "Is watching over (cat)"
+        ],
+        "friendly": [
+            "Is giving (cat) a badger ride on their back!",
+            "Is promising to take (cat) outside of camp if they behave",
+            "Gave (cat) a trinket they found while out on patrol today",
+            "Is feeling proud of (cat)"
+        ],
+        "close": []
+    },
+    "medicine cat apprentice": {
+        "unfriendly": [
+            "Is scolding (cat)",
+            "Treats (cat)'s splinter wound more roughly",
+            "Gives (cat) bitter herbs on purpose"
+        ],
+        "neutral": [
+            "Is giving advice to (cat)",
+            "Is giving (cat) a task",
+            "Wishes (cat) would take things more seriously"
+        ],
+        "friendly": [
+            "Is telling (cat) about their own days as an apprentice",
+            "Is feeling proud of (cat)",
+            "Tells (cat) about the last encounter with the Starclan"
+        ],
+        "close": []
+    },
+    "apprentice": {
+        "unfriendly": [
+            "Is scolding (cat)",
+            "Treats (cat)'s splinter wound more roughly",
+            "Gives (cat) bitter herbs on purpose"
+        ],
+        "neutral": [
+            "Is giving advice to (cat)",
+            "Is giving (cat) a task",
+            "Wishes (cat) would take things more seriously"
+        ],
+        "friendly": [
+            "Is feeling proud of (cat)"
+        ],
+        "close": []
+    },
+    "warrior": {
+        "unfriendly": [
+            "Treats (cat)'s splinter wound more roughly",
+            "Gives (cat) bitter herbs on purpose"
+        ],
+        "neutral": [
+            "Is giving (cat) a task",
+            "Is frustrated that (cat) won't take their duties more seriously",
+            "Has noticed (cat) isn't doing a lot of work lately"
+        ],
+        "friendly": [
+            "Thinks that (cat) is so much braver than them",
+            "Just told (cat) a hilarious joke"
+        ],
+        "close": [
+            "Tells (cat) about the last encounter with the Starclan"
+        ]
+    },
+    "medicine cat": {
+        "unfriendly": [
+            "Treats (cat)'s splinter wound more roughly",
+            "Gives (cat) bitter herbs on purpose"
+        ],
+        "neutral": [
+            "Is giving (cat) a task",
+            "Is frustrated that (cat) won't take their duties more seriously",
+            "Has noticed (cat) isn't doing a lot of work lately"
+        ],
+        "friendly": [],
+        "close": [
+            "Tells (cat) about the last encounter with the Starclan"
+        ]
+    },
+    "leader": {
+        "unfriendly": [
+            "Accuses (cat) of being a bad leader",
+            "Treats (cat)'s splinter wound more roughly",
+            "Gives (cat) bitter herbs on purpose"
+        ],
+        "neutral": [
+            "Is giving (cat) a task",
+            "Is frustrated that (cat) won't take their duties more seriously",
+            "Has noticed (cat) isn't doing a lot of work lately"
+        ],
+        "friendly": [],
+        "close": [
+            "Tells (cat) about the last encounter with the Starclan"
+        ]
+    },
+    "deputy": {
+        "unfriendly": [
+            "Accuses (cat) of being a bad deputy",
+            "Treats (cat)'s splinter wound more roughly",
+            "Gives (cat) bitter herbs on purpose"
+        ],
+        "neutral": [
+            "Is giving (cat) a task",
+            "Is frustrated that (cat) won't take their duties more seriously",
+            "Has noticed (cat) isn't doing a lot of work lately"
+        ],
+        "friendly": [],
+        "close": [
+            "Tells (cat) about the last encounter with the Starclan"
+        ]
+    },
+    "elder": {
+        "unfriendly": [
+            "Treats (cat)'s splinter wound more roughly",
+            "Gives (cat) bitter herbs on purpose"
+        ],
+        "neutral": [],
+        "friendly": [],
+        "close": [
+            "Feels like they'll never accomplish as much as (cat)",
+            "Tells (cat) about the last encounter with the Starclan"
+        ]
+    }
+}

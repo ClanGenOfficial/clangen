@@ -1,23 +1,50 @@
 {
     "from": {
-        "romantic_love": ["Feels like (cat) hasn't been paying much attention to them lately"],
-        "like": ["Is hiding from (cat)", "Complains about (cat)", "Has been listening to (cat) talk about how hard training has been"],
+        "romantic_love": [
+            "Feels like (cat) hasn't been paying much attention to them lately"
+        ],
+        "like": [
+            "Is hiding from (cat)",
+            "Complains about (cat)",
+            "Has been listening to (cat) talk about how hard training has been"
+        ],
         "dislike": [],
         "admiration": [],
-        "comfortable": ["Chomps on (cat)'s ear"],
-        "jealousy": ["Was playing with (cat) and learned a fun new battle move from them!"],
-        "trust": ["Chiding (cat) for being so reckless", "Has noticed (cat) isn't doing a lot of work lately"]
+        "comfortable": [
+            "Chomps on (cat)'s ear"
+        ],
+        "jealousy": [
+            "Was playing with (cat) and learned a fun new battle move from them!"
+        ],
+        "trust": [
+            "Chiding (cat) for being so reckless",
+            "Has noticed (cat) isn't doing a lot of work lately"
+        ]
     },
     "to": {
         "romantic_love": [],
-        "like": ["Trips over (cat)", "Divides (cat) into extra patrols", "Is watching (cat) scornfully"],
-        "dislike": ["Feels bad that they caused a problem for (cat)"],
-        "admiration": ["Is asking (cat) to tell them about how good they look", "Accuses to (cat) of cheating, to win so many practice fights"],
-        "comfortable": ["Is biting (cat)'s tail", "Tells (cat) that their pelt looks like a different colour today",
-                        "Talks to (cat) how best to kill prey, very enthusiastic",
-                        "Makes sure (cat) is following the warrior code",
-                        "Crashes into (cat) while eager for patrol"],
+        "like": [
+            "Trips over (cat)",
+            "Divides (cat) into extra patrols",
+            "Is watching (cat) scornfully"
+        ],
+        "dislike": [
+            "Feels bad that they caused a problem for (cat)"
+        ],
+        "admiration": [
+            "Is asking (cat) to tell them about how good they look",
+            "Accuses to (cat) of cheating, to win so many practice fights"
+        ],
+        "comfortable": [
+            "Is biting (cat)'s tail",
+            "Tells (cat) that their pelt looks like a different color today",
+            "Talks to (cat) how best to kill prey, very enthusiastic",
+            "Makes sure (cat) is following the warrior code",
+            "Crashes into (cat) while eager for patrol"
+        ],
         "jealousy": [],
-        "trust": ["Trips over (cat)"]
+        "trust": [
+            "Trips over (cat)"
+        ]
     }
 }

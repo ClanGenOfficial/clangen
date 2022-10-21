@@ -1,0 +1,88 @@
+{
+    "kitten": {
+        "unfriendly": [],
+        "neutral": [
+            "Trips over (cat)",
+            "Is watching over (cat)"
+        ],
+        "friendly": [
+            "Train playfully with (cat)",
+            "Gave (cat) a trinket they found while out on patrol today"
+        ],
+        "close": []
+    },
+    "medicine cat apprentice": {
+        "unfriendly": [
+            "Accuses to (cat) of cheating, to win so many practice fights"
+        ],
+        "neutral": [
+            "Is frustrated that (cat) won't take their duties more seriously",
+            "Has a mock battle with (cat)",
+            "Has been listening to (cat) talk about how hard training has been",
+            "Is jealous that (cat) got praised by the leader",
+            "Doesn't understand how (cat) got so good at hunting"
+        ],
+        "friendly": [
+            "Was playing with (cat) and learned a fun new battle move from them!"
+        ],
+        "close": []
+    },
+    "apprentice": {
+        "unfriendly": [
+            "Accuses to (cat) of cheating, to win so many practice fights"
+        ],
+        "neutral": [
+            "Is frustrated that (cat) won't take their duties more seriously",
+            "Has a mock battle with (cat)",
+            "Has been listening to (cat) talk about how hard training has been",
+            "Is jealous that (cat) got praised by the leader",
+            "Doesn't understand how (cat) got so good at hunting"
+        ],
+        "friendly": [
+            "Was playing with (cat) and learned a fun new battle move from them!"
+        ],
+        "close": []
+    },
+    "warrior": {
+        "unfriendly": [],
+        "neutral": [
+            "Is frustrated that (cat) won't take their duties more seriously",
+            "Is jealous that (cat) got to fight in a border skirmish when they didn't"
+        ],
+        "friendly": [],
+        "close": []
+    },
+    "medicine cat": {
+        "unfriendly": [],
+        "neutral": [
+            "Escorted (cat) so they could gather herbs",
+            "Thought of (cat) on the last patrol and took a rare herb with them"
+        ],
+        "friendly": [],
+        "close": []
+    },
+    "leader": {
+        "unfriendly": [
+            "Accuses (cat) of being a bad leader"
+        ],
+        "neutral": [],
+        "friendly": [],
+        "close": []
+    },
+    "deputy": {
+        "unfriendly": [
+            "Accuses (cat) of being a bad deputy"
+        ],
+        "neutral": [
+            "Is tired from (cat) putting them on so many patrols"
+        ],
+        "friendly": [],
+        "close": []
+    },
+    "elder": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
+    }
+}

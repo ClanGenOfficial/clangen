@@ -3,7 +3,7 @@ import ujson
 from scripts.cats import Cat
 from scripts.relationship import Relationship
 
-class TestPersonalityCompatibility(unittest.TestCase):
+class TestRelationshipInteraction(unittest.TestCase):
 
     def test_love_action_possibilities_sibling(self):
         # given
@@ -26,9 +26,9 @@ class TestPersonalityCompatibility(unittest.TestCase):
 
         # then
         possibilities = relationship.get_action_possibilities()
-        self.assertFalse(any(x in possibilities for x in LOVE['love_interest_only']))
-        self.assertFalse(any(x in possibilities for x in LOVE['love_interest']))
-        self.assertFalse(any(x in possibilities for x in LOVE['mates']))
+        self.assertFalse(any(action in possibilities for action in LOVE['love_interest_only']))
+        self.assertFalse(any(action in possibilities for action in LOVE['love_interest']))
+        self.assertFalse(any(action in possibilities for action in LOVE['mates']))
 
     def test_love_action_possibilities_parent(self):
         # given
@@ -49,9 +49,9 @@ class TestPersonalityCompatibility(unittest.TestCase):
 
         # then
         possibilities = relationship.get_action_possibilities()
-        self.assertFalse(any(x in possibilities for x in LOVE['love_interest_only']))
-        self.assertFalse(any(x in possibilities for x in LOVE['love_interest']))
-        self.assertFalse(any(x in possibilities for x in LOVE['mates']))
+        self.assertFalse(any(action in possibilities for action in LOVE['love_interest_only']))
+        self.assertFalse(any(action in possibilities for action in LOVE['love_interest']))
+        self.assertFalse(any(action in possibilities for action in LOVE['mates']))
 
     def test_love_action_possibilities_uncle(self):
         # given
@@ -75,9 +75,9 @@ class TestPersonalityCompatibility(unittest.TestCase):
 
         # then
         possibilities = relationship.get_action_possibilities()
-        self.assertFalse(any(x in possibilities for x in LOVE['love_interest_only']))
-        self.assertFalse(any(x in possibilities for x in LOVE['love_interest']))
-        self.assertFalse(any(x in possibilities for x in LOVE['mates']))
+        self.assertFalse(any(action in possibilities for action in LOVE['love_interest_only']))
+        self.assertFalse(any(action in possibilities for action in LOVE['love_interest']))
+        self.assertFalse(any(action in possibilities for action in LOVE['mates']))
 
     def test_love_action_possibilities_grandparents(self):
         # given
@@ -99,6 +99,29 @@ class TestPersonalityCompatibility(unittest.TestCase):
 
         # then
         possibilities = relationship.get_action_possibilities()
-        self.assertFalse(any(x in possibilities for x in LOVE['love_interest_only']))
-        self.assertFalse(any(x in possibilities for x in LOVE['love_interest']))
-        self.assertFalse(any(x in possibilities for x in LOVE['mates']))
+        self.assertFalse(any(action in possibilities for action in LOVE['love_interest_only']))
+        self.assertFalse(any(action in possibilities for action in LOVE['love_interest']))
+        self.assertFalse(any(action in possibilities for action in LOVE['mates']))
+
+    def test_love_action_possibilities_apprentice_warrior(self):
+        # given
+        cat1 = Cat(moons=6)
+        cat2 = Cat(moons=15)
+
+        relationship = Relationship(cat1,cat2)
+        relationship.link_relationship()
+
+        LOVE = None
+        resource_directory = "scripts/resources/relationship_events/"
+        with open(f"{resource_directory}love.json", 'r') as read_file:
+            LOVE = ujson.loads(read_file.read())
+
+        # when
+        relationship.platonic_like = 60
+        relationship.opposite_relationship.platonic_like = 60
+
+        # then
+        possibilities = relationship.get_action_possibilities()
+        self.assertFalse(any(action in possibilities for action in LOVE['love_interest_only']))
+        self.assertFalse(any(action in possibilities for action in LOVE['love_interest']))
+        self.assertFalse(any(action in possibilities for action in LOVE['mates']))

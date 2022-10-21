@@ -1,0 +1,76 @@
+{
+    "kitten": {
+        "unfriendly": [
+            "Is scolding (cat)"
+        ],
+        "neutral": [],
+        "friendly": [],
+        "close": []
+    },
+    "medicine cat apprentice": {
+        "unfriendly": [
+            "Is scolding (cat)",
+            "Is bossing (cat) around"
+        ],
+        "neutral": [
+            "Is frustrated that (cat) won't take their duties more seriously",
+            "Bestowing wisdom onto (cat)",
+            "Is asking (cat) to check them for ticks"
+        ],
+        "friendly": [],
+        "close": []
+    },
+    "apprentice": {
+        "unfriendly": [
+            "Is scolding (cat)",
+            "Is bossing (cat) around"
+        ],
+        "neutral": [
+            "Is frustrated that (cat) won't take their duties more seriously",
+            "Bestowing wisdom onto (cat)",
+            "Is asking (cat) to check them for ticks"
+        ],
+        "friendly": [],
+        "close": []
+    },
+    "warrior": {
+        "unfriendly": [
+            "Is scolding (cat)",
+            "Is bossing (cat) around"
+        ],
+        "neutral": [
+            "Is frustrated that (cat) won't take their duties more seriously",
+            "Bestowing wisdom onto (cat)"
+        ],
+        "friendly": [],
+        "close": []
+    },
+    "medicine cat": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
+    },
+    "leader": {
+        "unfriendly": [
+            "Accuses (cat) of being a bad leader"
+        ],
+        "neutral": [],
+        "friendly": [],
+        "close": []
+    },
+    "deputy": {
+        "unfriendly": [
+            "Accuses (cat) of being a bad deputy"
+        ],
+        "neutral": [],
+        "friendly": [],
+        "close": []
+    },
+    "elder": {
+        "unfriendly": [],
+        "neutral": [],
+        "friendly": [],
+        "close": []
+    }
+}
