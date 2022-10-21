@@ -1,5 +1,6 @@
 from .text import *
 from .cats import *
+from .load_cat import *
 from .game_essentials import *
 
 
@@ -343,7 +344,7 @@ class Button(object):
             apprentice.mentor = cat_value
             cat_value.apprentice.append(apprentice)
         game.current_screen = 'clan screen'
-        cat_class.json_save_cats()
+        game.save_cats()
 
     def change_name(self, name, cat_value):
         """Changes name of cat_value to name specified in textbox"""
@@ -356,14 +357,14 @@ class Button(object):
                 if not (cat_value.name.status == "apprentice" and name[1] == "paw") and \
                     not (cat_value.name.status == "kitten" and name[1] == "kit"):
                     cat_value.name.suffix = name[1]
-            cat_class.json_save_cats()
+            game.save_cats()
             game.switches['naming_text'] = ''
 
     def change_gender(self, name, cat_value):
         cat_value = cat_class.all_cats.get(cat_value)
         if game.switches['naming_text'] != '':
             cat_value.genderalign = game.switches['naming_text']
-            cat_class.json_save_cats()
+            game.save_cats()
             game.switches['naming_text'] = ''
 
 

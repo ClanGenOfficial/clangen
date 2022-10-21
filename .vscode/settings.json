@@ -15,6 +15,7 @@
         "cooldown",
         "kittypet",
         "parentless",
+        "pygame",
         "ujson"
     ]
 }

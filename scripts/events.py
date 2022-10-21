@@ -1,6 +1,7 @@
 from .cats import *
 from .buttons import *
-from .relation_events import * 
+from .relation_events import *
+from .load_cat import * 
 
 class Events(object):
     all_events = {}
@@ -76,9 +77,8 @@ class Events(object):
             cat_class.thoughts()
             self.check_clan_relations()
             game.clan.age += 1
-            if game.settings.get(
-                    'autosave') is True and game.clan.age % 5 == 0:
-                cat_class.json_save_cats()
+            if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
+                game.save_cats()
                 game.clan.save_clan()
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
             game.event_scroll_ct = 0

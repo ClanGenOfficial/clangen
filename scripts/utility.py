@@ -1,19 +1,26 @@
 import ujson
+
 from .game_essentials import *
-# simple utility function which are not direct related to a class
+
+# ---------------------------------------------------------------------------- #
+#                       Relationship / Traits / Relative                       #
+# ---------------------------------------------------------------------------- #
 
 resource_directory = "scripts/resources/"
 PERSONALITY_COMPATIBILITY = None
 try:
-    with open(f"{resource_directory}personality_compatibility.json", 'r') as read_file:
+    with open(f"{resource_directory}personality_compatibility.json",
+              'r') as read_file:
         PERSONALITY_COMPATIBILITY = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the personality compatibility json!'
+    game.switches[
+        'error_message'] = 'There was an error loading the personality compatibility json!'
 
 
 def get_highest_romantic_relation(relationships):
     """Returns the relationship with the highest romantic value."""
-    romantic_relation = list(filter(lambda rel: rel.romantic_love > 0, relationships))
+    romantic_relation = list(
+        filter(lambda rel: rel.romantic_love > 0, relationships))
     if romantic_relation is None or len(romantic_relation) == 0:
         return None
 
@@ -26,6 +33,7 @@ def get_highest_romantic_relation(relationships):
             relation = inter_rel
 
     return relation
+
 
 def get_personality_compatibility(cat1, cat2):
     """Returns:
@@ -49,6 +57,7 @@ def get_personality_compatibility(cat1, cat2):
 
     return None
 
+
 def add_siblings_to_cat(cat, cat_class):
     """Iterate over all current cats and add the ID to the current cat."""
     for inter_cat in cat_class.all_cats.values():
@@ -56,3 +65,4 @@ def add_siblings_to_cat(cat, cat_class):
             cat.siblings.append(inter_cat.ID)
         if cat.is_sibling(inter_cat) and cat.ID not in inter_cat.siblings:
             inter_cat.siblings.append(cat.ID)
+

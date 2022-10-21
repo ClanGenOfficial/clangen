@@ -1,6 +1,8 @@
 import pygame
+import ujson
+import os
 from ast import literal_eval
-from os import path
+
 
 screen_x = 800
 screen_y = 700
@@ -170,7 +172,7 @@ class Game(object):
         if self.switches[
                 'save_clan'] and self.clan is not None and self.cat_class is not None:
             self.clan.save_clan()
-            self.cat_class.json_save_cats()
+            self.save_cats()
             self.switches['save_clan'] = False
             self.switches['saved_clan'] = True
         if self.switches['switch_clan']:
@@ -224,7 +226,7 @@ class Game(object):
 
     def switch_language(self):
         #add translation information here
-        if path.exists('languages/' + game.settings['language'] + '.txt'):
+        if os.path.exists('languages/' + game.settings['language'] + '.txt'):
             with open('languages/' + game.settings['language'] + '.txt',
                       'r') as read_file:
                 raw_language = read_file.read()
@@ -247,6 +249,76 @@ class Game(object):
             self.settings[setting_name] = self.setting_lists[setting_name][
                 list_index + 1]
 
+    def save_cats(self):
+        """Save the cat data."""
+        clanname = ''
+        if game.switches['clan_name'] != '':
+            clanname = game.switches['clan_name']
+        elif len(game.switches['clan_name']) > 0:
+            clanname = game.switches['clan_list'][0]
+        elif game.clan != None:
+            clanname = game.clan.name
+        directory = 'saves/' + clanname
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+        clan_cats = []
+        for inter_cat in self.cat_class.all_cats.values():
+            cat_data = {
+                "ID": inter_cat.ID,
+                "name_prefix": inter_cat.name.prefix,
+                "name_suffix": inter_cat.name.suffix,
+                "gender": inter_cat.gender,
+                "gender_align": inter_cat.genderalign,
+                "birth_cooldown": inter_cat.birth_cooldown,
+                "status": inter_cat.status,
+                "age": inter_cat.age,
+                "moons": inter_cat.moons,
+                "trait": inter_cat.trait,
+                "parent1": inter_cat.parent1,
+                "parent2": inter_cat.parent2,
+                "mentor": inter_cat.mentor.ID if inter_cat.mentor else None,
+                "mate": inter_cat.mate,
+                "dead": inter_cat.dead,
+                "paralyzed": inter_cat.paralyzed,
+                "no_kits": inter_cat.no_kits,
+                "exiled": inter_cat.exiled,
+                "pelt_name": inter_cat.pelt.name,
+                "pelt_color": inter_cat.pelt.colour,
+                "pelt_white": inter_cat.pelt.white,
+                "pelt_length": inter_cat.pelt.length,
+                "spirit_kitten": inter_cat.age_sprites['kitten'],
+                "spirit_adolescent": inter_cat.age_sprites['adolescent'],
+                "spirit_young_adult": inter_cat.age_sprites['young adult'],
+                "spirit_adult": inter_cat.age_sprites['adult'],
+                "spirit_senior_adult": inter_cat.age_sprites['senior adult'],
+                "spirit_elder": inter_cat.age_sprites['elder'],
+                "spirit_dead": inter_cat.age_sprites['dead'],
+                "eye_colour": inter_cat.eye_colour,
+                "reverse": inter_cat.reverse,
+                "white_patches": inter_cat.white_patches,
+                "pattern": inter_cat.pattern,
+                "tortie_base": inter_cat.tortiebase,
+                "tortie_color": inter_cat.tortiecolour,
+                "tortie_pattern": inter_cat.tortiepattern,
+                "skin": inter_cat.skin,
+                "skill": inter_cat.skill,
+                "specialty": inter_cat.specialty,
+                "specialty2": inter_cat.specialty2,
+                "accessory": inter_cat.accessory,
+                "experience": inter_cat.experience,
+                "dead_moons": inter_cat.dead_for,
+                "current_apprentice": [appr.ID for appr in inter_cat.apprentice],
+                "former_apprentices": [appr.ID for appr in inter_cat.former_apprentices]
+            }
+            clan_cats.append(cat_data)
+            if not inter_cat.dead:
+                inter_cat.save_relationship_of_cat()
+        try:
+            with open('saves/' + clanname + '/clan_cats.json', 'w') as write_file:
+                json_string = ujson.dumps(clan_cats, indent=4)
+                write_file.write(json_string)
+        except:
+            print("Saving cats didn't work.")
 
 # M O U S E
 class Mouse(object):

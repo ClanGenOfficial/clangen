@@ -1,5 +1,6 @@
 from .cats import *
 from .text import *
+from .load_cat import *
 try:
     from .world import *
     mapavailable = True
@@ -135,7 +136,7 @@ class Clan(object):
                 cat_class.all_cats.get(cat_id).status_change('apprentice')
 
         cat_class.thoughts()
-        cat_class.json_save_cats()
+        game.save_cats()
         number_other_clans = randint(3, 5)
         for _ in range(number_other_clans):
             self.all_clans.append(OtherClan())

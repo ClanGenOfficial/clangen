@@ -4,6 +4,7 @@ directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
 from scripts.screens import *
+from scripts.load_cat import * 
 
 # P Y G A M E
 clock = pygame.time.Clock()
@@ -20,7 +21,7 @@ with open('saves/clanlist.txt', 'r') as read_file:
 if if_clans > 0:
     game.switches['clan_list'] = clan_list.split('\n')
     try:
-        cat_class.load_cats()
+        load_cats(game.cat_class)
         clan_class.load_clan()
         #cat_class.thoughts()
     except Exception:
