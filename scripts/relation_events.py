@@ -4,6 +4,9 @@ from .utility import *
 
 class Relation_Events(object):
     """All relationship events."""
+
+    MAX_ATTEMPTS = 1000
+
     def __init__(self) -> None:
         self.living_cats = len(list(filter(lambda r: r.dead == False, cat_class.all_cats.copy().values())))
         self.event_sums = 0
@@ -62,7 +65,8 @@ class Relation_Events(object):
                 not relation.cat_to.dead, cat.relationships))
         random_cat = cat.all_cats.get(random_id)
         kitten_and_exiled = random_cat.exiled and cat.age == "kitten"
-        while len(relevant_relationship_list) < 1 or random_id == cat.ID or kitten_and_exiled:
+        attempts = 0
+        while (len(relevant_relationship_list) < 1 or random_id == cat.ID or kitten_and_exiled) and attempts < Relation_Events.MAX_ATTEMPTS:
             random_id = random.choice(list(cat.all_cats.keys()))
             random_cat = cat.all_cats.get(random_id)
             kitten_and_exiled = random_cat.exiled and cat.age == "kitten"
@@ -70,8 +74,10 @@ class Relation_Events(object):
                 filter(
                     lambda relation: str(relation.cat_to) == str(random_id) and
                     not relation.cat_to.dead, cat.relationships))
-        relevant_relationship = relevant_relationship_list[0]
-        relevant_relationship.start_action()
+            attempts += 1
+        if len(relevant_relationship_list) >= 1:
+            relevant_relationship = relevant_relationship_list[0]
+            relevant_relationship.start_action()
 
     def handle_relationships(self, cat):
         """Iterate over all relationships and trigger different events."""
