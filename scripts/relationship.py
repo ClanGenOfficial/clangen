@@ -47,7 +47,7 @@ except:
 MEDICINE_APP_TO_OTHER = None
 try:
     with open(f"{resource_directory}2_medicine_app_to_other.json", 'r') as read_file:
-        APPRENTICE_TO_OTHER = ujson.loads(read_file.read())
+        MEDICINE_APP_TO_OTHER = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 2_medicine_app_to_other.json file of relationship_events!'
 
