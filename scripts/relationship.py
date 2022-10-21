@@ -499,7 +499,6 @@ class Relationship(object):
             if effect == 'neutral effect':
                 effect = 'small negative effect'
 
-        self.cut_boundaries()
         return effect
 
     def get_high_increase_value(self):
@@ -538,30 +537,86 @@ class Relationship(object):
         else:
             return DIRECT_DECREASE_LOW - COMPATIBILITY_WEIGHT
 
-    def cut_boundaries(self):
-        """Cut the stats of involved relationships."""
-        upper_bound = 100
-        lower_bound = 0
+    @property
+    def romantic_love(self):
+        return self._romantic_love
+    
+    @romantic_love.setter
+    def romantic_love(self,value):
+        if value > 100:
+            value = 100
+        if value < 0:
+            value = 0
+        self._romantic_love = value
 
-        # current_relationship
-        self.romantic_love = upper_bound if self.romantic_love > upper_bound else self.romantic_love
-        self.romantic_love = lower_bound if self.romantic_love < lower_bound else self.romantic_love
-        self.platonic_like = upper_bound if self.platonic_like > upper_bound else self.platonic_like
-        self.platonic_like = lower_bound if self.platonic_like < lower_bound else self.platonic_like
-        self.dislike = upper_bound if self.dislike > upper_bound else self.dislike
-        self.dislike = lower_bound if self.dislike < lower_bound else self.dislike
-        self.admiration = upper_bound if self.admiration > upper_bound else self.admiration
-        self.admiration = lower_bound if self.admiration < lower_bound else self.admiration
-        self.comfortable = upper_bound if self.comfortable > upper_bound else self.comfortable
-        self.comfortable = lower_bound if self.comfortable < lower_bound else self.comfortable
-        self.trust = upper_bound if self.trust > upper_bound else self.trust
-        self.trust = lower_bound if self.trust < lower_bound else self.trust
-        self.jealousy = upper_bound if self.jealousy > upper_bound else self.jealousy
-        self.jealousy = lower_bound if self.jealousy < lower_bound else self.jealousy
+    @property
+    def platonic_like(self):
+        return self._platonic_like
+    
+    @platonic_like.setter
+    def platonic_like(self,value):
+        if value > 100:
+            value = 100
+        if value < 0:
+            value = 0
+        self._platonic_like = value
 
-    def special_interactions(self):
-        actions_possibilities = []
+    @property
+    def dislike(self):
+        return self._dislike
+    
+    @dislike.setter
+    def dislike(self,value):
+        if value > 100:
+            value = 100
+        if value < 0:
+            value = 0
+        self._dislike = value
 
-        # more in dept relationship actions
+    @property
+    def admiration(self):
+        return self._admiration
+ 
+    @admiration.setter
+    def admiration(self,value):
+        if value > 100:
+            value = 100
+        if value < 0:
+            value = 0
+        self._admiration = value
 
-        return actions_possibilities
+    @property
+    def comfortable(self):
+        return self._comfortable
+    
+    @comfortable.setter
+    def comfortable(self,value):
+        if value > 100:
+            value = 100
+        if value < 0:
+            value = 0
+        self._comfortable = value
+
+    @property
+    def jealousy(self):
+        return self._jealousy
+    
+    @jealousy.setter
+    def jealousy(self,value):
+        if value > 100:
+            value = 100
+        if value < 0:
+            value = 0
+        self._jealousy = value
+
+    @property
+    def trust(self):
+        return self._trust
+    
+    @trust.setter
+    def trust(self,value):
+        if value > 100:
+            value = 100
+        if value < 0:
+            value = 0
+        self._trust = value

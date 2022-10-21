@@ -292,8 +292,6 @@ class Relation_Events(object):
                 relationship.opposite_relationship.platonic_like -= 20
                 relationship.admiration -= 10
                 relationship.opposite_relationship.admiration -= 10
-                relationship.cut_boundaries()
-                relationship.opposite_relationship.cut_boundaries()
         
         if will_break_up:
             print(cat_from.name, cat_to.name, " - BREAKUP", game.clan.age, "moons")

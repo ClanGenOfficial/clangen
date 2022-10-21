@@ -1175,7 +1175,6 @@ class Cat(object):
             cat_relationship[0].romantic_love += 20
             cat_relationship[0].comfortable += 20
             cat_relationship[0].trust += 10
-            cat_relationship[0].cut_boundaries()
         else:
             self.relationships.append(
                 Relationship(self, other_cat, True))
@@ -1196,7 +1195,6 @@ class Cat(object):
                 relation.trust -= 10
                 if fight:
                     relation.platonic_like -= 30
-                relation.cut_boundaries()
         else:
             mate = self.all_cats.get(self.mate)
             self.relationships.append(Relationship(self, mate))

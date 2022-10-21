@@ -1190,7 +1190,6 @@ class Patrol(object):
                     rel.comfortable += comfortable
                     rel.jealousy -= jealousy
                     rel.trust += trust
-                    rel.cut_boundaries()
                 elif not self.success:
                     rel.romantic_love -= romantic_love
                     rel.platonic_like -= platonic_like
@@ -1199,7 +1198,6 @@ class Patrol(object):
                     rel.comfortable -= comfortable
                     rel.jealousy += jealousy
                     rel.trust -= trust
-                    rel.cut_boundaries()
 
     def add_new_cats(self):
         if self.patrol_event.patrol_id in [504]:  # new kit
