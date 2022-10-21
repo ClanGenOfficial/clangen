@@ -81,6 +81,8 @@ class Cat(object):
         self.gender = gender
         self.status = status
         self.age = None
+        self.skill = None
+        self.trait = None
         self.parent1 = parent1
         self.parent2 = parent2
         self.pelt = pelt
@@ -106,6 +108,8 @@ class Cat(object):
         self.accessory = None
         self.birth_cooldown = 0
         self.siblings = []
+
+        # setting ID
         if ID is None:
             potential_ID = str(randint(10000, 9999999))
             while potential_ID in self.all_cats:
@@ -113,43 +117,8 @@ class Cat(object):
             self.ID = potential_ID
         else:
             self.ID = ID
-        # personality trait and skill
-        if self.status != 'kitten':
-            self.trait = choice(self.traits)
-            if self.status == 'medicine cat':
-                self.skill = choice(self.med_skills)
-            elif self.status != 'apprentice' and self.status != 'medicine cat apprentice':
-                self.skill = choice(self.skills)
-            else:
-                self.skill = '???'
-        else:
-            self.trait = self.trait = choice(self.kit_traits)
-            self.skill = '???'
-        if self.gender is None:
-            self.gender = choice(["female", "male"])
-        self.g_tag = self.gender_tags[self.gender]
 
-        #trans cat chances
-        trans_chance = randint(0, 50)
-        nb_chance = randint(0, 75)
-        if self.age_moons == 'kitten':
-            return
-        if self.gender == "female":
-            if trans_chance == 1:
-                self.genderalign = "trans male"
-            elif nb_chance == 1:
-                self.genderalign = "nonbinary"
-            else:
-                self.genderalign = self.gender
-        if self.gender == "male":
-            if trans_chance == 1:
-                self.genderalign = "trans female"
-            elif nb_chance == 1:
-                self.genderalign = "nonbinary"
-            else:
-                self.genderalign = self.gender
-                
-
+        # age
         if status is None and moons is None:
             self.age = choice(self.ages)
         elif moons != None:
@@ -171,6 +140,47 @@ class Cat(object):
                                  self.age_moons[self.age][1])
         else:
             self.moons = moons
+
+        # personality trait and skill
+        if self.trait is None: 
+            if self.status != 'kitten':
+                self.trait = choice(self.traits)
+            else:
+                self.trait = choice(self.kit_traits)
+
+        if self.skill is None:
+            if self.moons >= 11:
+                if self.status == 'medicine cat':
+                    self.skill = choice(self.med_skills)
+                else:
+                    self.skill = choice(self.skills)                
+            else:
+                self.skill = '???'
+
+        # sex
+        if self.gender is None:
+            self.gender = choice(["female", "male"])
+        self.g_tag = self.gender_tags[self.gender]
+
+        #trans cat chances
+        trans_chance = randint(0, 50)
+        nb_chance = randint(0, 75)
+        if self.age == 'kitten':
+            self.gender_align = self.gender
+        if self.gender == "female":
+            if trans_chance == 1:
+                self.genderalign = "trans male"
+            elif nb_chance == 1:
+                self.genderalign = "nonbinary"
+            else:
+                self.genderalign = self.gender
+        if self.gender == "male":
+            if trans_chance == 1:
+                self.genderalign = "trans female"
+            elif nb_chance == 1:
+                self.genderalign = "nonbinary"
+            else:
+                self.genderalign = self.gender
 
         # eye colour
         if self.eye_colour is None:
@@ -2343,21 +2353,47 @@ class Cat(object):
 
     def status_change(self, new_status):
         # revealing of traits and skills
-        if self.status == 'kitten':
+        # updates traits
+        if self.moons == 6:
             self.trait = choice(self.traits)
-        if (self.status == 'apprentice'
-                and new_status != 'medicine cat apprentice') or (
-                    self.status == 'medicine cat apprentice'
-                    and new_status != 'apprentice'):
-            self.skill = choice(self.skills)
-        elif new_status == 'medicine cat':
-            self.skill = choice(self.med_skills)
+        # updates mentors
+        if new_status == 'apprentice':
+            self.update_mentor()
+        elif new_status == 'medicine cat apprentice':
+            self.update_med_mentor()
+        # updates skill
+        if self.skill == '???':
+            if new_status == 'warrior' or self.status == 'warrior' and new_status != 'medicine cat':
+                self.skill = choice(self.skills)
+                self.update_mentor()
+            elif new_status == 'medicine cat':
+                self.skill = choice(self.med_skills)
+                self.update_med_mentor()
+            else:
+                self.skill == '???'
+        else:
+            self.skill = self.skill
         self.status = new_status
         self.name.status = new_status
-        if 'apprentice' in new_status:
-            self.update_mentor()
         # update class dictionary
         self.all_cats[self.ID] = self
+
+    def is_valid_med_mentor(self, potential_mentor):
+        # Dead or exiled cats can't be mentors
+        if potential_mentor.dead or potential_mentor.exiled:
+            return False
+        # Match jobs
+        if self.status == 'medicine cat apprentice' and potential_mentor.status == 'medicine cat':
+            return True
+        if self.status == 'medicine cat apprentice' and potential_mentor.status != 'medicine cat':
+            return False
+        # If not an app, don't need a mentor
+        if 'medicine cat apprentice' not in self.status:
+            return False
+        # Dead cats don't need mentors
+        if self.dead:
+            return False
+        return True
 
     def is_valid_mentor(self, potential_mentor):
         # Dead or exiled cats can't be mentors
@@ -2377,6 +2413,46 @@ class Cat(object):
         if self.dead:
             return False
         return True
+
+    def update_med_mentor(self, new_mentor=None):
+        if new_mentor is None:
+            # If not reassigning and current mentor works, leave it
+            if self.mentor and self.is_valid_med_mentor(self.mentor):
+                return
+        old_mentor = self.mentor
+        # Should only have mentor if alive and some kind of apprentice
+        if 'medicine cat apprentice' in self.status and not self.dead and not self.exiled:
+            # Need to pick a random mentor if not specified
+            if new_mentor is None:
+                potential_mentors = []
+                priority_mentors = []
+                for cat in self.all_cats.values():
+                    if self.is_valid_med_mentor(cat):
+                        potential_mentors.append(cat)
+                        if len(cat.apprentice) == 0:
+                            priority_mentors.append(cat)
+                # First try for a cat who currently has no apprentices
+                if len(priority_mentors) > 0:
+                    new_mentor = choice(priority_mentors)
+                elif len(potential_mentors) > 0:
+                    new_mentor = choice(potential_mentors)
+            # Mentor changing to chosen/specified cat
+            self.mentor = new_mentor
+            if new_mentor is not None:
+                if self not in new_mentor.apprentice:
+                    new_mentor.apprentice.append(self)
+                if self in new_mentor.former_apprentices:
+                    new_mentor.former_apprentices.remove(self)
+        else:
+            self.mentor = None
+        # Move from old mentor's apps to former apps
+        if old_mentor is not None and old_mentor != self.mentor:
+            if self in old_mentor.apprentice:
+                old_mentor.apprentice.remove(self)
+            if self not in old_mentor.former_apprentices:
+                old_mentor.former_apprentices.append(self)
+            if old_mentor not in self.former_mentor:
+                self.former_mentor.append(old_mentor)
 
     def update_mentor(self, new_mentor=None):
         if new_mentor is None:
@@ -3273,7 +3349,7 @@ class Cat(object):
                     collar_color = 'purple'
                 elif accessory.startswith('multi'):
                     collar_color = 'multi'
-                if accessory.endswith('bow'):
+                if accessory.endswith('bow') and not accessory == 'rainbow':
                     acc_display = collar_color + ' bow'
                 elif accessory.endswith('bell'):
                     acc_display = collar_color + ' bell collar'
