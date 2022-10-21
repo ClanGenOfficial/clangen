@@ -62,6 +62,15 @@ class Cat(object):
         'smart', 'very smart', 'extremely smart', 'good mediator',
         'great mediator', 'excellent mediator', 'clairvoyant', 'prophet'
     ]
+    elder_skills = [
+        'good storyteller', 'great storyteller', 'fantastic storyteller',
+        'smart tactician', 'valuable tactician', 'sharp eye',
+        'valuable insight', 'good mediator', 'great mediator', 'excellent mediator',
+        'good teacher', 'great teacher', 'fantastic teacher',
+        'strong connection to StarClan', 'smart', 'very smart', 'extremely smart',
+        'good kitsitter', 'great kitsitter', 'excellent kitsitter', 'camp keeper',
+        'den builder',
+    ]
 
     all_cats = {}  # ID: object
     other_cats = {}  # cats outside the clan
@@ -149,13 +158,17 @@ class Cat(object):
                 self.trait = choice(self.kit_traits)
 
         if self.skill is None:
-            if self.moons >= 11:
-                if self.status == 'medicine cat':
-                    self.skill = choice(self.med_skills)
-                else:
-                    self.skill = choice(self.skills)                
-            else:
+
+            if self.moons <= 11:
                 self.skill = '???'
+            elif self.status == 'warrior':
+                self.skill = choice(self.skills)
+            elif self.moons >= 120 and self.status != 'leader':
+                self.skill = choice(self.elder_skills)
+            elif self.status == 'medicine cat':
+                self.skill = choice(self.med_skills)
+            else:
+                    self.skill = choice(self.skills)
 
         # sex
         if self.gender is None:
@@ -2271,6 +2284,35 @@ class Cat(object):
                         'Volunteers to gather herbs',
                         'Has been lending the medicine cat a paw lately'
                     ])
+                elif cat.skills == 'good storyteller' or 'great storyteller' or 'fantastic storyteller' or 'lorekeeper':
+                    if other_cat.status == 'kitten':
+                        thoughts.extend([
+                            'Is telling a riveting story to the kits',
+                            'Is being pestered by kits begging for a story'
+                        ])
+                    elif other_cat.status == 'apprentice':
+                        thoughts.extend([
+                            'Has distracted the apprentices with a tall tale',
+                            'Is being pestered by an apprentice for a new story',
+                        ])
+                elif cat.skills == 'camp keeper' or 'den builder':
+                    thoughts.extend([
+                        'Is shoring up the camp walls',
+                        'Is busy cleaning up around camp',
+                        'Is clearing away old bedding',
+                        'Is working to improve the structure of the dens',
+                        'Is frustrated with how messy the camp is these days',
+                    ])
+                elif cat.skills == 'smart tactician' or 'valuable tactician':
+                    thoughts.extend([
+                        'Is giving the clan leader advice for an upcoming battle'
+                        'Is advising the deputy on battle tactics'
+                        'Is reminiscing about battles long past'
+                    ])
+                elif cat.skills == 'good kitsitter' or 'great kitsitter' or 'excellent kitsitter':
+                    thoughts.extend([
+                        ''
+                    ])
 
             else:
                 # if this else is reached dead is not set, just to be sure the cat should be alive
@@ -2407,6 +2449,10 @@ class Cat(object):
                 self.skill == '???'
         else:
             self.skill = self.skill
+
+        if self.moons >= 120 and self.status != 'leader':
+            self.skill = choice(self.elder_skills)
+
         self.status = new_status
         self.name.status = new_status
         # update class dictionary
