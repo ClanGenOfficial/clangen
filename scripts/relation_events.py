@@ -65,8 +65,8 @@ class Relation_Events(object):
                 not relation.cat_to.dead, cat.relationships))
         random_cat = cat.all_cats.get(random_id)
         kitten_and_exiled = random_cat.exiled and cat.age == "kitten"
-        attempts = 0
-        while (len(relevant_relationship_list) < 1 or random_id == cat.ID or kitten_and_exiled) and attempts < Relation_Events.MAX_ATTEMPTS:
+        attempts_left = Relation_Events.MAX_ATTEMPTS
+        while len(relevant_relationship_list) < 1 or random_id == cat.ID or kitten_and_exiled:
             random_id = random.choice(list(cat.all_cats.keys()))
             random_cat = cat.all_cats.get(random_id)
             kitten_and_exiled = random_cat.exiled and cat.age == "kitten"
@@ -74,10 +74,11 @@ class Relation_Events(object):
                 filter(
                     lambda relation: str(relation.cat_to) == str(random_id) and
                     not relation.cat_to.dead, cat.relationships))
-            attempts += 1
-        if len(relevant_relationship_list) >= 1:
-            relevant_relationship = relevant_relationship_list[0]
-            relevant_relationship.start_action()
+            attempts_left -= 1
+            if attempts_left <= 0:
+                return
+        relevant_relationship = relevant_relationship_list[0]
+        relevant_relationship.start_action()
 
     def handle_relationships(self, cat):
         """Iterate over all relationships and trigger different events."""
