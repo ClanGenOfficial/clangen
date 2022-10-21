@@ -1430,6 +1430,10 @@ class MakeClanScreen(Screens):
                                         text='Tidepools',
                                         camp_bg='camp1',
                                         available=game.switches['camp_bg'] != 'camp1')
+                    buttons.draw_button((100, 230),
+                                        text='Tidal Cave',
+                                        camp_bg='camp2',
+                                        available=game.switches['camp_bg'] != 'camp2')
                     if game.switches['camp_bg'] == 'camp1':
                         screen.blit(self.camp1, (250, 150))
                     elif game.switches['camp_bg'] == 'camp2':
@@ -1510,7 +1514,7 @@ class MakeClanScreen(Screens):
                 try:
                     self.change_camp_art(
                         'resources/greenleafcamp_beach.png',
-                        'resources/greenleafcamp_beach.png')
+                        'resources/greenleafcamp_beach2.png')
                 except:
                     self.change_camp_art(
                         'resources/greenleafcamp_beach.png',
@@ -1781,10 +1785,7 @@ class EventsScreen(Screens):
 
         a = 0
         if game.cur_events_list is not None and game.cur_events_list != []:
-            for x in range(
-                    min(len(game.cur_events_list), game.max_events_displayed)):
-                if game.cur_events_list[x] is None:
-                    continue
+            for x in range(min(len(game.cur_events_list), game.max_events_displayed)):
                 if "Clan has no " in game.cur_events_list[x]:
                     verdana_red.text(game.cur_events_list[x],
                                      ('center', 260 + a * 30))
@@ -2852,6 +2853,12 @@ class PatrolEventScreen(Screens):
             game.switches['event'] = -1
         if game.switches['event'] == -1:
             intro_text = patrol.patrol_event.intro_text
+            patrol_size = len(patrol.patrol_cats)
+            if patrol_size < 2: # adjusting text for solo patrols
+                intro_text = intro_text.replace('Your patrol',
+                                                str(patrol.patrol_leader.name))
+                intro_text = intro_text.replace('The patrol',
+                                                str(patrol.patrol_leader.name))
             intro_text = intro_text.replace('r_c',
                                             str(patrol.patrol_random_cat.name))
             intro_text = intro_text.replace('p_l',
@@ -2859,7 +2866,7 @@ class PatrolEventScreen(Screens):
             verdana.blit_text(intro_text, (150, 200))
             buttons.draw_button((290, 320), text='Proceed', event=-2)
             buttons.draw_button((150, 320), text='Do Not Proceed', event=2)
-            if patrol.patrol_event.patrol_id in [500, 501, 502, 503, 510]:
+            if patrol.patrol_event.patrol_id in [500, 501, 502, 503, 505, 510]:
                 buttons.draw_button((150, 290), text='Antagonize', event=3)
 
         if game.switches['event'] == -2:
@@ -2871,6 +2878,12 @@ class PatrolEventScreen(Screens):
             if game.switches['event'] == 1:
                 if patrol.success:
                     success_text = patrol.patrol_event.success_text
+                    patrol_size = len(patrol.patrol_cats)
+                    if patrol_size < 2:  # adjusting text for solo patrols
+                        success_text = success_text.replace('Your patrol',
+                                                        str(patrol.patrol_leader.name))
+                        success_text = success_text.replace('The patrol',
+                                                        str(patrol.patrol_leader.name))
                     success_text = success_text.replace(
                         'r_c', str(patrol.patrol_random_cat.name))
                     success_text = success_text.replace(
@@ -2878,6 +2891,12 @@ class PatrolEventScreen(Screens):
                     verdana.blit_text(success_text, (150, 200))
                 else:
                     fail_text = patrol.patrol_event.fail_text
+                    patrol_size = len(patrol.patrol_cats)
+                    if patrol_size < 2:  # adjusting text for solo patrols
+                        fail_text = fail_text.replace('Your patrol',
+                                                            str(patrol.patrol_leader.name))
+                        fail_text = fail_text.replace('The patrol',
+                                                            str(patrol.patrol_leader.name))
                     fail_text = fail_text.replace(
                         'r_c', str(patrol.patrol_random_cat.name))
                     fail_text = fail_text.replace(
@@ -2885,6 +2904,12 @@ class PatrolEventScreen(Screens):
                     verdana.blit_text(fail_text, (150, 200))
             elif game.switches['event'] == 2:
                 decline_text = patrol.patrol_event.decline_text
+                patrol_size = len(patrol.patrol_cats)
+                if patrol_size < 2:  # adjusting text for solo patrols
+                    decline_text = decline_text.replace('Your patrol',
+                                                        str(patrol.patrol_leader.name))
+                    decline_text = decline_text.replace('The patrol',
+                                                        str(patrol.patrol_leader.name))
                 decline_text = decline_text.replace(
                     'r_c', str(patrol.patrol_random_cat.name))
                 decline_text = decline_text.replace(
@@ -2892,6 +2917,12 @@ class PatrolEventScreen(Screens):
                 verdana.blit_text(decline_text, (150, 200))
             elif game.switches['event'] == 4:
                 antagonize_text = patrol.patrol_event.antagonize_text
+                patrol_size = len(patrol.patrol_cats)
+                if patrol_size < 2:  # adjusting text for solo patrols
+                    antagonize_text = antagonize_text.replace('Your patrol',
+                                                        str(patrol.patrol_leader.name))
+                    antagonize_text = antagonize_text.replace('The patrol',
+                                                        str(patrol.patrol_leader.name))
                 antagonize_text = antagonize_text.replace(
                     'r_c', str(patrol.patrol_random_cat.name))
                 antagonize_text = antagonize_text.replace(

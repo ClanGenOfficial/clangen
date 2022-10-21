@@ -106,6 +106,7 @@ class Events(object):
         self.living_cats += 1
         cat.in_camp = 1
         self.check_age(cat)
+        self.check_skill(cat)
         self.perform_ceremonies(cat)
         if self.new_cat_invited == False or self.living_cats < 10:
             self.invite_new_cats(cat)
@@ -114,6 +115,21 @@ class Events(object):
         self.gain_scars(cat)
         self.handle_deaths(cat)
         self.coming_out(cat)
+        if cat.moons <= 13:
+            cat.update_mentor()
+        
+
+    def check_skill(self, cat):
+        #checking that skill is correct
+        if cat.status == 'medicine cat' and cat.skill not in cat.med_skills:
+            cat.skill = choice(cat.med_skills)
+        else:
+            return
+        if cat.skill == '???':
+            if cat.status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
+                cat.skill = choice(cat.skills)
+            else:
+                return
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0 and randint(1, 5) == 1:
@@ -185,40 +201,82 @@ class Events(object):
             cat.moons += 1
             if cat.status == 'deputy' and game.clan.deputy is None:
                 game.clan.deputy = cat
+            if cat.status == 'medicine cat' and game.clan.medicine_cat is None:
+                game.clan.medicine_cat = cat
             if cat.moons > cat_class.age_moons[cat.age][1]:
                 if cat.age != 'elder':
                     cat.age = cat_class.ages[cat_class.ages.index(cat.age) + 1]
                 if cat.status == 'kitten' and cat.age == 'adolescent':
-                    cat.status_change('apprentice')
-                    game.cur_events_list.append(
-                        f'{str(cat.name)} has started their apprenticeship')
-                    self.ceremony_accessory = True
-                    self.gain_accessories(cat)
-                    cat.update_mentor()
+
+                    # check if the medicine cat is an elder
+                    has_elder_med = any(
+                        str(cat.status) == 'medicine cat' and str(cat.age) == 'elder'
+                        and not cat.dead and not cat.exiled
+                        for cat in cat_class.all_cats.values())
+
+                    very_old_med = any(
+                        str(cat.status) == 'medicine cat' and int(cat.moons) >= 150
+                        and not cat.dead and not cat.exiled
+                        for cat in cat_class.all_cats.values())
+
+                    # check if a med cat of a different age exists
+                    has_med = any(
+                        str(cat.status) == 'medicine cat' and str(cat.age) != 'elder'
+                        and not cat.dead and not cat.exiled
+                        for cat in cat_class.all_cats.values())
+
+                    # check if a med cat app already exists
+                    has_med_app = any(
+                        str(cat.status) == 'medicine cat apprentice'
+                        and not cat.dead and not cat.exiled
+                        for cat in cat_class.all_cats.values())
+
+                    # assign chance to become med app depending on current med cat and traits
+                    if has_elder_med is True and has_med is False:
+                        chance = randint(0, 1)
+                        print('POSSIBLE MED APP - ELDER MED MENTOR - CHANCE:', chance)
+                    elif has_elder_med is False and has_med is True:
+                        chance = randint(0, 20)
+                    elif has_elder_med and has_med:
+                        if very_old_med:
+                            chance = randint(0, 25)
+                        else:
+                            chance = 0
+                    elif game.clan.med_cat_number >= 3:
+                        chance = 0
+                    else:
+                        chance = randint(0, 30)
+                        print('POSSIBLE MED APP - CHANCE:', chance)
+                    print('med app chance:', chance)
+                    if chance in range(0, 11):    
+                        if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
+                            chance = 1
+                        else:
+                            chance = chance
+                        print('POSSIBLE MED APP - TRAIT:', cat.trait, '- CHANCE:', chance)
+                    if has_med_app is False and chance == 1:
+                        self.ceremony(cat, 'medicine cat apprentice', ' has chosen to walk the path of a medicine cat')
+                        self.ceremony_accessory = True
+                        self.gain_accessories(cat)
+                    else:
+                        self.ceremony(cat, 'apprentice', ' has started their apprenticeship')
+                        self.ceremony_accessory = True
+                        self.gain_accessories(cat)
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
-                    self._extracted_from_perform_ceremonies_19(
+                    self.ceremony(
                         cat, 'warrior', ' has earned their warrior name')
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
-                    self._extracted_from_perform_ceremonies_19(
-                        cat, 'medicine cat',
-                        ' has earned their medicine cat name')
+                    self.ceremony(cat, 'medicine cat', ' has earned their medicine cat name')
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
-                    game.clan.new_medicine_cat(cat)
-                elif cat.status == 'deputy' and cat.age == 'elder' and len(
-                        cat.apprentice) < 1:
-                    cat.status_change('elder')
+                elif cat.status == 'deputy' and cat.age == 'elder' and len(cat.apprentice) < 1:
+                    self.ceremony(cat, 'elder', ' has retired to the elder den')
                     game.clan.deputy = None
-                    game.cur_events_list.append(
-                        f'The deputy {str(cat.name)} has retired to the elder den'
-                    )
-                elif cat.status == 'warrior' and cat.age == 'elder' and len(
-                        cat.apprentice) < 1:
-                    cat.status_change('elder')
-                    game.cur_events_list.append(
-                        f'{str(cat.name)} has retired to the elder den')
+                elif cat.status == 'warrior' and cat.age == 'elder' and len(cat.apprentice) < 1:
+                    self.ceremony(cat, 'elder', ' has retired to the elder den')
+                
             if cat.status in ['warrior', 'deputy'] and cat.age == 'elder' and len(cat.apprentice) < 1:
                 if cat.status == 'deputy':
                     game.clan.deputy = None
@@ -228,11 +286,9 @@ class Events(object):
                 game.cur_events_list.append(
                     f'{str(cat.name)} has retired to the elder den')
 
-    # TODO Rename this here and in `perform_ceremonies`
-    def _extracted_from_perform_ceremonies_19(self, cat, arg1, arg2):
-        cat.status_change(arg1)
-        cat.update_mentor()
-        game.cur_events_list.append(f'{str(cat.name)}{arg2}')
+    def ceremony(self, cat, promoted_to, ceremony_text):
+        cat.status_change(promoted_to)
+        game.cur_events_list.append(f'{str(cat.name)}{ceremony_text}')
 
     def gain_accessories(self, cat):
         if cat.accessory is not None:
@@ -291,7 +347,7 @@ class Events(object):
                 else:
                     if cat.accessory in ["FORGET ME NOTS", "BLUEBELLS", "POPPY"]:
                         acc_text.extend([f'{name} received a {acc_singular} from {other_name} and decided to wear it on their pelt',
-                                            f'{name} found {acc_singular} and decided to wear it on their pelt', f'A clanmate gave {name} a {acc_singular} and they decided to wear it'
+                                            f'{name} found a {acc_singular} and decided to wear it on their pelt', f'A clanmate gave {name} a {acc_singular} and they decided to wear it'
                             ])
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
                         acc_text.append(f'{name} was playing with {acc_plural} earlier and decided to wear some of them')
@@ -299,7 +355,7 @@ class Events(object):
                         acc_text.append(f'{name}\'s parents try their best to groom them, but something is always stuck in their fur')
                     else:    
                         acc_text.extend([f'{name} seems to have picked up a neat {acc_singular} while playing out in the camp', f'{name} finds something interesting and decides to wear it on their pelt',
-                                        f'A clanmate gives {name} a pretty {acc_plural} and they decide to wear it on their pelt', f'{other_name} gives {name} a pretty {acc_singular} and they decide to wear it on their pelt',
+                                        f'A clanmate gives {name} a pretty {acc_singular} and they decide to wear it on their pelt', f'{other_name} gives {name} a pretty {acc_singular} and they decide to wear it on their pelt',
                                         f'{name} is so cute that they are given {acc_plural} as a gift', f'{name} starts to wear {acc_plural} on their pelt after their friend gave some to them',
                                         f'{name} was playing with {acc_plural} earlier and has decided to use it to adorn themselves'
                         ])
@@ -1082,10 +1138,9 @@ class Events(object):
                             ' lives due to yellowcough', name + ' lost ' +
                             str(lostlives) + ' lives due to an illness'
                         ]
-                    game.clan.leader_lives = game.clan.leader_lives - lostlives
-                    self.dies(cat)
-                    game.cur_events_list.append(
-                        choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old')
+                        game.clan.leader_lives = game.clan.leader_lives - lostlives
+                        self.dies(cat)
+                        game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old')
 
         elif randint(1, 400) == 1:
             name = str(cat.name)
@@ -1291,7 +1346,7 @@ class Events(object):
                         ' die'
                     ]
                 
-            if cat.status != ['kitten', 'leader'] or other_cat.status != ['kitten', 'leader']:
+            if cat.status != ['kitten', 'leader'] and other_cat.status != ['kitten', 'leader']:
                 cause_of_death.extend([
                     name + ' and ' + other_name +
                     ' are killed in a border skirmish',
@@ -1423,6 +1478,8 @@ class Events(object):
                 if not cat.dead and not cat.exiled and cat.status != 'leader':
                     alive_count += 1
                     alive_cats.append(cat)
+            if len(game.clan.all_clans) > 0:
+                other_clan = game.clan.all_clans
             addition = randint(0, 20)
             death_chance = int(alive_count / 3)
             if addition == 1:
@@ -1443,7 +1500,7 @@ class Events(object):
                     disaster.extend([
                         ' drown after the camp becomes flooded',
                         ' are killed in a battle against ' +
-                        choice(names.normal_prefixes) + 'Clan',
+                        choice(game.clan.all_clans).name + 'Clan',
                         ' are killed after a fire rages through the camp',
                         ' are killed in an ambush by a group of rogues',
                         ' go missing in the night',

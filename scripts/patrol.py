@@ -1,3 +1,6 @@
+from asyncore import loop
+from os import name
+from pydoc import text
 from random import choice, randint
 from math import ceil, floor
 from .events import events_class
@@ -5,7 +8,6 @@ from .game_essentials import *
 from .names import *
 from .cats import *
 from .pelts import *
-from .utility import *
 
 
 class Patrol(object):
@@ -69,6 +71,7 @@ class Patrol(object):
         
 
     def add_possible_patrols(self):
+
         possible_patrols = []
     # general patrols, any number of cats
         # general hunting patrols
@@ -81,33 +84,34 @@ class Patrol(object):
                 'Your patrol ignores the mouse',
                 60,
                 10,
-                win_skills=['good hunter', 'great hunter',
-                            'fantastic hunter']),
+                win_skills=['good hunter', 'great hunter', 'fantastic hunter']),
             PatrolEvent(
                 2,
                 'Your patrol comes across a large rat',
                 'Your patrol catches the rat! More freshkill!',
-                'Your patrol misses the rat, and the patrol\'s confidence is shaken',
+                'Your patrol misses the rat, and their confidence is shaken',
                 'Your patrol ignores the rat',
                 50,
                 10,
                 win_skills=['great hunter', 'fantastic hunter']),
-            PatrolEvent(3,
-                        'Your patrol comes across a large hare',
-                        'Your patrol catches the hare!',
-                        'Your patrol narrowly misses the hare',
-                        'Your patrol ignores the hare',
-                        40,
-                        20,
-                        win_skills=['fantastic hunter']),
-            PatrolEvent(4,
-                        'Your patrol comes across a bird',
-                        'Your patrol catches the bird before it flies away!',
-                        'Your patrol narrowly misses the bird',
-                        'Your patrol ignores the bird',
-                        50,
-                        10,
-                        win_skills=['great hunter', 'fantastic hunter']),
+            PatrolEvent(
+                3,
+                'Your patrol comes across a large hare',
+                'Your patrol catches the hare!',
+                'Your patrol narrowly misses the hare',
+                'Your patrol ignores the hare',
+                40,
+                20,
+                win_skills=['fantastic hunter']),
+            PatrolEvent(
+                4,
+                'Your patrol comes across a bird',
+                'Your patrol catches the bird before it flies away!',
+                'Your patrol narrowly misses the bird',
+                'Your patrol ignores the bird',
+                50,
+                10,
+                win_skills=['great hunter', 'fantastic hunter']),
             PatrolEvent(
                 5,
                 'Your patrol comes across a squirrel',
@@ -116,16 +120,16 @@ class Patrol(object):
                 'Your patrol ignores the squirrel',
                 50,
                 10,
-                win_skills=['good hunter', 'great hunter',
-                            'fantastic hunter']),
-            PatrolEvent(6,
-                        'Your patrol sees the shadow of a fish in a river',
-                        'r_c hooks the fish out of the water! More freshkill!',
-                        'Your patrol accidentally scares the fish away',
-                        'Your patrol ignores the fish',
-                        50,
-                        10,
-                        win_skills=['great hunter', 'fantastic hunter']),
+                win_skills=['good hunter', 'great hunter', 'fantastic hunter']),
+            PatrolEvent(
+                6,
+                'Your patrol sees the shadow of a fish in a river',
+                'r_c hooks the fish out of the water! More freshkill!',
+                'Your patrol accidentally scares the fish away',
+                'Your patrol ignores the fish',
+                50,
+                10,
+                win_skills=['great hunter', 'fantastic hunter']),
             PatrolEvent(
                 7,
                 'r_c spots a rabbit up ahead but it seems to be acting strange',
@@ -139,7 +143,7 @@ class Patrol(object):
                 8,
                 'The patrol approaches a Twoleg nest while hunting',
                 'The patrol has a successful hunt, avoiding any Twolegs',
-                'Twoleg kits scare the cats away',
+                'Twoleg kits scare the patrol away',
                 'The patrol decides to hunt elsewhere',
                 40,
                 10,
@@ -148,15 +152,21 @@ class Patrol(object):
 
         # general/misc patrols
         possible_patrols.extend([
-            PatrolEvent(100, 'Your patrol doesn\'t find anything useful',
-                        'It was still a fun outing!',
-                        'How did you fail this??',
-                        'Your patrol decides to head home early', 100, 10),
+            PatrolEvent(
+                100,
+                'Your patrol doesn\'t find anything useful',
+                'It was still a fun outing!',
+                'How did you fail this??',
+                'Your patrol decides to head home early',
+                100,
+                10),
             PatrolEvent(
                 101, 'The patrol finds a nice spot to sun themselves',
-                'The sunlight feels great and the cats have a pleasant patrol',
+                'The sunlight feels great and they have a pleasant patrol',
                 'The patrol doesn\'t get much done because of that',
-                'They decide to stay focused instead', 80, 10),
+                'They decide to stay focused instead',
+                80,
+                10),
             PatrolEvent(
                 102,
                 'The patrol comes across a thunderpath',
@@ -180,10 +190,9 @@ class Patrol(object):
                 'r_c goes missing during the patrol',
                 'r_c is later found carrying loads of prey after a successful hunt',
                 'r_c is found lying injured on the ground',
-                'r_c eventually catches up',
+                'r_c eventually makes it back to camp',
                 40,
-                10,
-            ),
+                10,),
             PatrolEvent(
                 108,
                 'The smell of food lures r_c close to a Twoleg trap',
@@ -191,24 +200,6 @@ class Patrol(object):
                 'r_c is caught in the trap and is taken by Twolegs shortly after',
                 'r_c loses interest and walks back to the patrol',
                 40,
-                10,
-                win_skills=['very smart', 'extremely smart']),
-            PatrolEvent(
-                108,
-                'While helping gathering herbs, r_c stumbles upon a bush of red berries',
-                'The patrol tells r_c to stay away from the deathberries just in time',
-                'r_c chews some of the deathberries and dies',
-                'r_c decides not to touch the berries',
-                50,
-                10,
-                win_skills=['very smart', 'extremely smart']),
-            PatrolEvent(
-                109,
-                'r_c notices a Clanmate trapped in some brambles',
-                'r_c frees their Clanmate',
-                'The patrol works all day to free their Clanmate and gets nothing else done',
-                'r_c runs back to camp to fetch help and rejoins the patrol later',
-                50,
                 10,
                 win_skills=['very smart', 'extremely smart']),
             PatrolEvent(
@@ -221,6 +212,18 @@ class Patrol(object):
                 10,
                 win_skills=['fantastic hunter'])
         ])
+        if len(self.patrol_cats) >= 2:
+            possible_patrols.extend([
+                PatrolEvent(
+                    109,
+                    'r_c notices a Clanmate trapped in some brambles',
+                    'r_c frees their Clanmate',
+                    'The patrol works all day to free their Clanmate and gets nothing else done',
+                    'r_c runs back to camp to fetch help and rejoins the patrol later',
+                    50,
+                    10,
+                    win_skills=['very smart', 'extremely smart'])
+            ])
 
         # season patrols
         if game.clan.current_season == 'Newleaf':
@@ -230,13 +233,17 @@ class Patrol(object):
                     'Your patrol notices new leaves and flowers starting to grow',
                     'The hunting is plentiful as new prey is born',
                     'With newleaf comes allergies...',
-                    'Your patrol decides to head home early', 95, 10),
+                    'Your patrol decides to head home early',
+                    95,
+                    10),
                 PatrolEvent(
                     112,
                     'r_c notes that it is a beautiful day outside, birds are singing and flowers are blooming',
                     'On days like these, patrolling is very pleasant',
                     'On days like these, cats are too lazy to patrol',
-                    'Your patrol decides to head home early', 95, 10),
+                    'Your patrol decides to head home early',
+                    95,
+                    10),
                 PatrolEvent(
                     113,
                     'The patrol approaches a deep ravine. There is a lot of prey here, but the ground is very slippery from newleaf rain',
@@ -252,7 +259,8 @@ class Patrol(object):
                     'The patrol crosses the river and the rest of the patrol goes smoothly',
                     'r_c is swept away from the strong current and drowns',
                     'The patrol decides it is too dangerous to cross right now',
-                    50, 10)
+                    50,
+                    10)
             ])
 
         elif game.clan.current_season == 'Greenleaf':
@@ -263,13 +271,16 @@ class Patrol(object):
                     'They decide to power through the weather and the patrol is successful',
                     'r_c collapses from heat exhaustion',
                     'Your patrol decides to head home early to beat the heat',
-                    50, 10),
+                    50,
+                    10),
                 PatrolEvent(
                     121,
                     'r_c spots a pond and debates if they should stop for a quick swim to cool off',
                     'They stop to swim for a few moments and feel rejuvenated',
                     'They get distracted while splashing in the water',
-                    'r_c decides to continue with the patrol instead', 50, 10),
+                    'r_c decides to continue with the patrol instead',
+                    50,
+                    10),
                 PatrolEvent(
                     122,
                     'The patrol comes across a strange Twoleg object smelling slightly of smoke and prey',
@@ -320,81 +331,86 @@ class Patrol(object):
                     'They decide to turn back and wait for warmer weather',
                     50,
                     10,
-                    win_skills=[
-                        'good teacher', 'great teacher', 'fantastic teacher'
-                    ])
+                    win_skills=['good teacher', 'great teacher', 'fantastic teacher'])
             ])
 
             # biome specific patrols
         if game.clan.biome == 'forest':
             possible_patrols.extend([
-                PatrolEvent(700, 
-                            'Your patrol comes across a vole',
-                            'Your patrol catches the vole!',
-                            'Your patrol narrowly misses the vole',
-                            'Your patrol decides to look for other prey',
-                            50,
-                            10,
-                            win_skills=['great hunter', 'fantastic hunter']),
-                PatrolEvent(701, 
-                            'While hunting, r_c comes across a rabbit burrow',
-                            'r_c catches the rabbit hiding in its burrow',
-                            'The burrow is abandoned, with no prey to be found in there',
-                            'r_c decides to ignore the burrow',
-                            50,
-                            10,
-                            win_skills=['great hunter', 'fantastic hunter']),
-                PatrolEvent(702, 
-                            'Your patrol comes across a small fallen tree blocking their path',
-                            'Your patrol successfully moves the tree out of the way and continues the patrol',
-                            'Your patrol can\'t seem to move the tree out of the way and is discouraged',
-                            'Your patrol decides to find another route to continue to patrol',
-                            40,
-                            10)
+                PatrolEvent(
+                    700,
+                    'Your patrol comes across a vole',
+                    'Your patrol catches the vole!',
+                    'Your patrol narrowly misses the vole',
+                    'Your patrol decides to look for other prey',
+                    50,
+                    10,
+                    win_skills=['great hunter', 'fantastic hunter']),
+                PatrolEvent(
+                    701,
+                    'While hunting, r_c comes across a rabbit burrow',
+                    'r_c catches the rabbit hiding in its burrow',
+                    'The burrow is abandoned, with no prey to be found in there',
+                    'r_c decides to ignore the burrow',
+                    50,
+                    10,
+                    win_skills=['great hunter', 'fantastic hunter']),
+                PatrolEvent(
+                    702,
+                    'Your patrol comes across a small fallen tree blocking their path',
+                    'Your patrol successfully moves the tree out of the way and continues the patrol',
+                    'Your patrol can\'t seem to move the tree out of the way and is discouraged',
+                    'Your patrol decides to find another route to continue to patrol',
+                    40,
+                    10)
             ])
         elif game.clan.biome == 'plains':
             possible_patrols.extend([
-                PatrolEvent(710, 
-                            'Your patrol comes across a praire dog',
-                            'Your patrol catches the praire dog!',
-                            'Your patrol narrowly misses the praire dog',
-                            'Your patrol decides to look for other prey',
-                            50,
-                            10,
-                            win_skills=['great hunter', 'fantastic hunter'])
+                PatrolEvent(
+                    710,
+                    'Your patrol comes across a prairie dog',
+                    'Your patrol catches the prairie dog!',
+                    'Your patrol narrowly misses the prairie dog',
+                    'Your patrol decides to look for other prey',
+                    50,
+                    10,
+                    win_skills=['great hunter', 'fantastic hunter'])
             ])
         elif game.clan.biome == 'mountains':
             possible_patrols.extend([
-                PatrolEvent(710, 
-                            'Your patrol comes across a shrew',
-                            'Your patrol catches the shrew!',
-                            'Your patrol narrowly misses the shrew',
-                            'Your patrol decides to look for other prey',
-                            50,
-                            10,
-                            win_skills=['great hunter', 'fantastic hunter'])
+                PatrolEvent(
+                    710,
+                    'Your patrol comes across a shrew',
+                    'Your patrol catches the shrew!',
+                    'Your patrol narrowly misses the shrew',
+                    'Your patrol decides to look for other prey',
+                    50,
+                    10,
+                    win_skills=['great hunter', 'fantastic hunter'])
             ])
         elif game.clan.biome == 'swamp':
             possible_patrols.extend([
-                PatrolEvent(710, 
-                            'Your patrol comes across a lizard',
-                            'Your patrol catches the lizard!',
-                            'Your patrol narrowly misses the lizard',
-                            'Your patrol decides to look for other prey',
-                            50,
-                            10,
-                            win_skills=['great hunter', 'fantastic hunter'])
+                PatrolEvent(
+                    710,
+                    'Your patrol comes across a lizard',
+                    'Your patrol catches the lizard!',
+                    'Your patrol narrowly misses the lizard',
+                    'Your patrol decides to look for other prey',
+                    50,
+                    10,
+                    win_skills=['great hunter', 'fantastic hunter'])
             ])
         elif game.clan.biome == 'beach':
             possible_patrols.extend([
-                PatrolEvent(710, 
-                            'Your patrol comes across a turtle',
-                            'Your patrol catches the turtle!',
-                            'Your patrol narrowly misses the turtle',
-                            'Your patrol decides to look for other prey',
-                            50,
-                            10,
-                            win_skills=['great hunter', 'fantastic hunter'])
+                PatrolEvent(
+                    710,
+                    'Your patrol comes across a turtle',
+                    'Your patrol catches the turtle!',
+                    'Your patrol narrowly misses the turtle',
+                    'Your patrol decides to look for other prey',
+                    50,
+                    10,
+                    win_skills=['great hunter', 'fantastic hunter'])
             ])
 
 
@@ -440,13 +456,11 @@ class Patrol(object):
                 300,
                 'Your patrol catches the scent of a fox',
                 'Your patrol finds the fox and drives it away',
-                'Your patrol fails to drive away to fox, but luckily no cat was injured',
+                'Your patrol fails to drive away to fox, but luckily there were no injuries',
                 'Your patrol decides not to pursue the fox',
                 40,
                 20,
-                win_skills=[
-                    'good fighter', 'great fighter', 'excellent fighter'
-                ]),
+                win_skills=['good fighter', 'great fighter', 'excellent fighter']),
             PatrolEvent(
                 301,
                 'Your patrol comes catches the scent of a fox',
@@ -456,25 +470,24 @@ class Patrol(object):
                 30,
                 30,
                 win_skills=['excellent fighter']),
-            PatrolEvent(302,
-                        'Your patrol comes across a large dog',
-                        'Your patrol valiantly drives away the dog',
-                        'The dog is driven away, but not before injuring r_c',
-                        'Your patrol decides not to pursue the dog',
-                        40,
-                        20,
-                        win_skills=['excellent fighter']),
-            PatrolEvent(303,
-                        'Your patrol comes across a small dog',
-                        'Your patrol drives away the dog',
-                        'The dog\'s barking scares away prey',
-                        'The patrol decides not to pursue the dog',
-                        20,
-                        60,
-                        win_skills=[
-                            'good fighter', 'great fighter',
-                            'excellent fighter'
-                        ]),
+            PatrolEvent(
+                302,
+                'Your patrol comes across a large dog',
+                'Your patrol valiantly drives away the dog',
+                'The dog is driven away, but not before injuring r_c',
+                'Your patrol decides not to pursue the dog',
+                40,
+                20,
+                win_skills=['excellent fighter']),
+            PatrolEvent(
+                303,
+                'Your patrol comes across a small dog',
+                'Your patrol drives away the dog',
+                'The dog\'s barking scares away prey',
+                'The patrol decides not to pursue the dog',
+                20,
+                60,
+                win_skills=['good fighter', 'great fighter','excellent fighter']),
             PatrolEvent(
                 305,
                 'A gang of rogues confronts your patrol',
@@ -511,34 +524,51 @@ class Patrol(object):
                 'They decide not to investigate',
                 60,
                 20,
-                win_skills=[
-                    'good fighter', 'great fighter', 'excellent fighter'
-                ]),
+                win_skills=['good fighter', 'great fighter', 'excellent fighter']),
             PatrolEvent(
                 309,
                 'While on patrol, r_c notices some suspicious pawprints in the ground',
                 'The pawprints lead to a trespassing rogue and the patrol drives them off of the '
                 'territory',
-                'It turns out they were r_c\'s own pawprints... How embarrassing',
+                'The pawprints lead to a trespassing rogue who injures r_c before being driven away',
                 'They decide not to investigate',
                 60,
                 20,
-                win_skills=[
-                    'good fighter', 'great fighter', 'excellent fighter'
-                ])
+                win_skills=['good fighter', 'great fighter', 'excellent fighter'])
         ])
 
         if self.patrol_random_cat != None and self.patrol_random_cat.status == 'apprentice' and len(
                 self.patrol_cats) > 1:
             possible_patrols.extend([
                 PatrolEvent(
-                    150, 'The patrol wants to hold a training session for r_c',
+                    150,
+                    'The patrol wants to hold a training session for r_c',
                     'r_c becomes more confident in their abilities after the training session',
                     'r_c is nervous and doesn\'t perform well',
-                    'They decide to focus on the patrol instead', 50, 10)
+                    'They decide to focus on the patrol instead',
+                    50,
+                    10),
+                PatrolEvent(
+                    116,
+                    'While helping gathering herbs, r_c stumbles upon a bush of red berries',
+                    'The patrol tells r_c to stay away from the deathberries just in time',
+                    'r_c chews some of the deathberries and dies',
+                    'r_c decides not to touch the berries',
+                    50,
+                    10,
+                    win_skills=['very smart', 'extremely smart']),
+                PatrolEvent(
+                    116,
+                    'While helping gathering herbs, r_c stumbles upon a bush of red berries',
+                    'Yum! r_c recognizes them as strawberries and shares the tasty treat with the patrol',
+                    'The patrol scolds r_c for wasting time munching on berries',
+                    'r_c decides not to touch the berries',
+                    50,
+                    10,
+                    win_skills=['very smart', 'extremely smart']),
             ])
 
-        # new cat patrols (not kit)
+        # new cat patrols
         possible_patrols.extend([
             PatrolEvent(
                 500,
@@ -625,14 +655,37 @@ class Patrol(object):
                     'r_c says farewell to their friend and rejoins the patrol', 40, 10)
             ])            
 
-        # status specific patrols
-
-        # season specific patrols
-
-        # trait specific patrols
-
-        if len(self.patrol_cats) > 1:
-            if self.patrol_random_cat.trait == 'strange':
+        # single cat patrol
+        if len(self.patrol_cats) == 1:
+            possible_patrols.extend([
+                PatrolEvent(
+                    400,
+                    'r_c is nervous doing a patrol by themselves',
+                    'They don\'t let their nerves get to them and continue the patrol successfully',
+                    'They run back to camp, unable to continue',
+                    'They continue the patrol but progress is slow',
+                    40,
+                    10,
+                    win_skills=['very smart', 'extremely smart']),
+                PatrolEvent(
+                    401,
+                    'Since r_c is alone, they debate taking a bite out of the freshkill they have just caught',
+                    'They decide not to and end up catching extra prey for the kits and elders',
+                    'They eat the freshkill; however, they do not catch more prey to make up for it and the kits and elders go hungry',
+                    'They shake the thought from their mind',
+                    30,
+                    10,
+                    win_skills=['smart', 'very smart', 'extremely smart']),
+                PatrolEvent(
+                    402,
+                    'While alone on patrol, r_c thinks about life',
+                    'They find peace within themselves and enjoy the rest of the patrol',
+                    'Their thoughts are plagued with bad memories',
+                    'r_c decides to focus on the patrol',
+                    40,
+                    10,)
+            ])
+            if self.patrol_cats[0].status == 'apprentice':
                 possible_patrols.extend([
                     PatrolEvent(
                         450,
@@ -651,9 +704,7 @@ class Patrol(object):
                         'r_c asks their mentor to do the assessment some other time',
                         40,
                         10,
-                        win_skills=[
-                            'good hunter', 'great hunter', 'fantastic hunter'
-                        ]),
+                        win_skills=['good hunter', 'great hunter', 'fantastic hunter']),
                     PatrolEvent(
                         452,
                         'r_c\'s mentor assesses them by sending them on a solo border patrol',
@@ -661,13 +712,12 @@ class Patrol(object):
                         'r_c messes up the territory markings and almost starts a border skirmish',
                         'r_c asks their mentor to do the assessment some other time',
                         40,
-                        10,
-                    )
+                        10,)
                 ])
                 
         # two or more cats            
         # conversation patrols
-        if len(self.patrol_cats) >= 2 and self.patrol_leader != self.patrol_random_cat:
+        if len(self.patrol_cats) == 2 and self.patrol_leader != self.patrol_random_cat:
             # general relationship patrols
             if len(self.patrol_cats) == 2:
                 possible_patrols.extend([
@@ -678,8 +728,7 @@ class Patrol(object):
                         'r_c loses and gets annoyed',
                         'r_c politely declines',
                         50,
-                        10
-                    ),
+                        10),
                     PatrolEvent(
                         1001,
                         'p_l asks r_c if they can tell them a secret',
@@ -687,8 +736,7 @@ class Patrol(object):
                         'r_c dismisses it rudely, leaving p_l heartbroken',
                         'r_c politely declines',
                         60,
-                        10
-                    ),
+                        10),
                     PatrolEvent(
                         1002,
                         'r_c has failed yet another hunting attempt and is feeling embarrassed',
@@ -696,20 +744,52 @@ class Patrol(object):
                         'p_l tries to tell them what they did wrong but r_c takes offense and stalks off',
                         'p_l says nothing',
                         60,
-                        20
-                    ),
-                ])
+                        20),
+                    PatrolEvent(
+                        1004,
+                        'p_l considers joking around with r_c to lighten up the mood',
+                        'p_l makes r_c laugh the entire patrol',
+                        'r_c scolds p_l for their lack of focus',
+                        'p_l decides to stay quiet',
+                        50,
+                        10),
+                    PatrolEvent(
+                        1005,
+                        'p_l points out an interesting cloud to r_c',
+                        'r_c and p_l spend hours watching the sky together',
+                        'r_c chides p_l for their childishness',
+                        'p_l changes the subject',
+                        50,
+                        10),
+                    PatrolEvent(
+                        1006,
+                        'r_c is thrilled that they were assigned to patrol with p_l today',
+                        'The two spend the whole patrol chatting and laughing',
+                        'Unfortunately, p_l doesn\'t seem to feel the same',
+                        'Still, their duties to the clan come first',
+                        50,
+                        10),
+                    PatrolEvent(
+                        1007,
+                        'p_l notices that r_c isn\'t acting like their usual self',
+                        'r_c opens up to p_l over something that has been bothering them',
+                        'r_c snaps at p_l to mind their own business',
+                        'p_l decides not to interfere',
+                        50,
+                        10)
+                    ])
 
                 if game.clan.current_season == 'Leaf-bare':
                     possible_patrols.extend([
                     PatrolEvent(
                         1003,
                         'p_l notices r_c shivering',
-                        'p_l asks cat2 if they want to walk closer for warmth',
+                        'p_l asks r_c if they want to walk closer for warmth',
                         'r_c says that they\'re fine',
                         'p_l decides not to mention it',
-                        60, 20
-                        )])
+                        60,
+                        20)
+                    ])
                         
                 # romantic patrols for two cats
                 if cat_class.is_potential_mate(self.patrol_leader, self.patrol_random_cat):
@@ -721,8 +801,7 @@ class Patrol(object):
                         'r_c jerks away suddenly and almost trips',
                         'p_l immediately apologizes for doing so',
                         50,
-                        10
-                        ),
+                        10),
                     PatrolEvent(
                         1011,
                         'p_l thinks this might be the perfect chance to tell r_c how they feel',
@@ -730,8 +809,7 @@ class Patrol(object):
                         'r_c cuts them off, saying that they don\'t feel the same way',
                         'p_l\'s nerves seem to get the best of them and they say nothing',
                         50,
-                        10
-                        ),
+                        10),
                     
                     PatrolEvent(
                         1012,
@@ -740,8 +818,31 @@ class Patrol(object):
                         'r_c agrees, but it\'s awkward and the rest of the patrol lasts way too long',
                         'p_l changes their mind',
                         50,
-                        10
-                        )
+                        10),
+                    PatrolEvent(
+                        1013,
+                        'p_l notices how pretty r_c looks with the sun on their pelt',
+                        'p_l shares the compliment with r_c, who thanks them',
+                        'r_c tells p_l to keep their eyes off of them',
+                        'p_l decides to keep their feelings silent',
+                        50,
+                        10),
+                    PatrolEvent(
+                        1014,
+                        'p_l notices r_c staring at them',
+                        'p_l feels their heart flutter',
+                        'p_l snaps at r_c to knock it off',
+                        'p_l ignores r_c',
+                        50,
+                        10),
+                    PatrolEvent(
+                        1015,
+                        'p_l thinks r_c\'s eyes are beautiful',
+                        'p_l tells r_c and they love the compliment',
+                        'p_l tells r_c and they feel awkward, ignoring p_l for the rest of the patrol',
+                        'p_l shakes their head and focuses on the patrol',
+                        50,
+                        10)
                     ])
                     if game.clan.current_season == 'Newleaf':
                         possible_patrols.extend([
@@ -752,20 +853,66 @@ class Patrol(object):
                             'r_c goes to take the flower and sneezes. The flower goes flying', 
                             'p_l drops the flower on the way over! Oh well',
                             50,
-                            10
-                            ),
+                            10),
                         ])
+                elif self.patrol_random_cat.status == 'apprentice':
+                    possible_patrols.extend([
+                    PatrolEvent(
+                        1020,
+                        'p_l asks r_c how their training is going',
+                        'r_c happily tells p_l all about the fighting move they just learned',
+                        'r_c answers curtly, having been subjected to cleaning the elders\'s den recently',
+                        'r_c doesn\t hear the question and p_l changes the subject',
+                        50,
+                        10),
+                    PatrolEvent(
+                        1021,
+                        'p_l asks r_c if they would like to go to the training grounds to practice',
+                        'The practice goes well and the apprentice learns a lot!',
+                        'The apprentice can\'t seem to focus today',
+                        'r_c declines the offer',
+                        50,
+                        10),
+                    PatrolEvent(
+                        1023,
+                        'r_c doesn\'t feel totally comfortable around p_l just yet',
+                        'p_l cracks a joke to make r_c feel more at ease',
+                        'r_c forces themself to spend time with p_l but it doesn\'t help',
+                        'r_c stays away from p_l',
+                        50,
+                        10)
+                    ])
+                if game.clan.current_season == 'Leaf-fall':
+                    possible_patrols.extend([
+                    PatrolEvent(
+                        1022,
+                        'Leaf-fall gives new opportunities to train!',
+                        'r_c pays close attention to how p_l stalks prey while walking on leaves and manages to catch a bird!',
+                        'r_c can\'t seem to replicate p_l and scares off all the prey',
+                        'p_l decides to hunt with r_c in an area with less leaves',
+                        50,
+                        10)
+                        
+                ])
+
                 else:
                     possible_patrols.extend([
-                    PatrolEvent(200, 'Your patrol doesn\'t find anything useful',
-                                'It was still a fun outing!',
-                                'How did you fail this??',
-                                'Your patrol decides to head home', 100, 10),
                     PatrolEvent(
-                        201, 'The patrol finds a nice spot to sun themselves',
+                        200,
+                        'Your patrol doesn\'t find anything useful',
+                        'It was still a fun outing!',
+                        'How did you fail this??',
+                        'Your patrol decides to head home',
+                        100,
+                        10),
+                    PatrolEvent(
+                        201,
+                        'The patrol finds a nice spot to sun themselves',
                         'The sunlight feels great and the cats have a successful patrol',
                         'The patrol doesn\'t get much done because of that',
-                        'They decide to stay focused instead', 80, 10),
+                        'They decide to stay focused instead',
+                        80,
+                        10),
                     PatrolEvent(
                         204,
                         'Your patrol has a disagreement and look to p_l to settle the dispute',
@@ -789,12 +936,16 @@ class Patrol(object):
                         'The patrol quickly devolves into ghost stories and everyone is on edge',
                         'Despite the tense mood, the patrol is successful',
                         'A branch snaps and the whole patrol runs back to camp',
-                        'p_l quickly silences any talk about ghosts', 50, 10),
+                        'p_l quickly silences any talk about ghosts',
+                        50,
+                        10),
                     PatrolEvent(
                         203, 'r_c is tempted to eat the prey they just caught',
                         'They eat the prey without anyone noticing',
                         'The patrol notices r_c eating the prey and reports them back at camp',
-                        'r_c decides against breaking the warrior code', 50, 10),
+                        'r_c decides against breaking the warrior code',
+                        50,
+                        10),
                     PatrolEvent(
                         103,
                         'p_l suggests this might be a good chance for the cats to practice teamwork',
@@ -803,9 +954,7 @@ class Patrol(object):
                         'They decide to focus on the patrol instead',
                         50,
                         10,
-                        win_skills=[
-                            'good teacher', 'great teacher', 'fantastic teacher'
-                        ]),
+                        win_skills=['good teacher', 'great teacher', 'fantastic teacher']),
                     PatrolEvent(
                         104,
                         'p_l suggests this might be a good chance for the cats to practice new hunting techniques',
@@ -814,9 +963,7 @@ class Patrol(object):
                         'They decide to focus on the patrol instead',
                         50,
                         10,
-                        win_skills=[
-                            'good teacher', 'great teacher', 'fantastic teacher'
-                        ]),
+                        win_skills=['good teacher', 'great teacher', 'fantastic teacher']),
                     PatrolEvent(
                         105,
                         'p_l suggests this might be a good chance for the cats to practice new fighting techniques',
@@ -825,9 +972,7 @@ class Patrol(object):
                         'They decide to focus on the patrol instead',
                         50,
                         10,
-                        win_skills=[
-                            'good teacher', 'great teacher', 'fantastic teacher'
-                        ])
+                        win_skills=['good teacher', 'great teacher', 'fantastic teacher'])
                 ])
 
                 # if self.patrol_random_cat.status == 'warrior' or self.patrol_random_cat.status == 'apprentice':
@@ -877,29 +1022,31 @@ class Patrol(object):
                             'The patrol decides to keep their thoughts to themselves',
                             50,
                             10)
-                            ])
+                        ])
                 # trait specific patrols
                 if self.patrol_random_cat.trait == 'strange':
                     possible_patrols.extend([
-                    PatrolEvent(
-                        600,
-                        'r_c tells the patrol to roll in a patch of garlic to diguise their scent while hunting',
-                        'The plan works and their hunt goes well',
-                        'The patrol finds no prey and blame r_c; it seems like all the prey was scared off because of their stench!',
-                        'The patrol ignores r_c\'s odd instructions', 50, 10)
-                ])
+                        PatrolEvent(
+                            600,
+                            'r_c tells the patrol to roll in a patch of garlic to diguise their scent while hunting',
+                            'The plan works and their hunt goes well',
+                            'The patrol finds no prey and blame r_c; it seems like all the prey was scared off because of their stench!',
+                            'The patrol ignores r_c\'s odd instructions',
+                            50,
+                            10)
+                        ])
                 elif self.patrol_random_cat.trait == 'bloodthirsty':
                     possible_patrols.extend([
-                    PatrolEvent(
-                        605,
-                        'r_c deliberately provokes a border patrol skirmish',
-                        'The other cats in the patrol keep r_c from fighting and no one is hurt',
-                        'r_c is injured by the enemy patrol',
-                        'r_c decides to back down by themselves',
-                        50,
-                        10,
-                        win_skills=['great speaker', 'fantastic speaker'])
-                ])        
+                        PatrolEvent(
+                            605,
+                            'r_c deliberately provokes a border patrol skirmish',
+                            'The other cats in the patrol keep r_c from fighting and no one is hurt',
+                            'r_c is injured by the enemy patrol',
+                            'r_c decides to back down by themselves',
+                            50,
+                            10,
+                            win_skills=['great speaker', 'fantastic speaker'])
+                        ])
 
         self.patrol_event = choice(possible_patrols)
 
@@ -946,7 +1093,7 @@ class Patrol(object):
 
     def handle_deaths(self):
         if self.patrol_event.patrol_id in [
-                108, 113, 114, 120, 141, 250, 305, 307
+                108, 113, 114, 116, 120, 141, 250, 305, 307
         ]:
             if self.patrol_random_cat.status == 'leader':
                 if self.patrol_event.patrol_id in [108, 113]:
@@ -963,7 +1110,7 @@ class Patrol(object):
                 events_class.dies(cat)
 
     def handle_scars(self):
-        if self.patrol_event.patrol_id in [107, 251, 301, 302, 304, 306]:
+        if self.patrol_event.patrol_id in [107, 251, 301, 302, 304, 306, 309]:
             if self.patrol_random_cat.specialty is None:
                 self.patrol_random_cat.specialty = choice(
                     [choice(scars1),
@@ -1001,29 +1148,30 @@ class Patrol(object):
 
         # change the values
         if self.patrol_event.patrol_id in [
-            1010, 1011, 1012
+            1010, 1011, 1012, 1013, 1014, 1015
         ]:
             romantic_love = 10
         if self.patrol_event.patrol_id in [
                 2, 3, 6, 100, 103, 140, 141, 200, 204, 605, 1000, 1001, 1002, 1003,
-                1010, 1011, 1012
+                1010, 1011, 1012, 1020, 1021, 1003, 1006
         ]:
             platonic_like = 10
         if self.patrol_event.patrol_id in [103, 110, 1000, 1001, 1002, 1010]:
             dislike = 5
         if self.patrol_event.patrol_id in [
                 2, 3, 6, 104, 105, 108, 130, 131, 261, 300, 301, 302, 303, 305,
-                307, 600, 1002
+                307, 600, 1002, 1005
         ]:
             admiration = 10
         if self.patrol_event.patrol_id in [
-                102, 120, 150, 202, 203, 250, 251, 260, 261, 1010, 1011, 1012
+                102, 120, 150, 202, 203, 250, 251, 260, 261, 1010, 1011, 1012, 1022,
+                1004, 1023, 1007
         ]:
             comfortable = 5
         if self.patrol_event.patrol_id in []:
             jealousy = 5
         if self.patrol_event.patrol_id in [
-                7, 8, 102, 107, 110, 114, 115, 141, 250, 251, 605, 1001
+                7, 8, 102, 107, 110, 114, 115, 141, 250, 251, 605, 1001, 1007
         ]:
             trust = 10
 
@@ -1066,7 +1214,6 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
-            add_siblings_to_cat(kit,cat_class)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
 
@@ -1090,7 +1237,6 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
-            add_siblings_to_cat(kit,cat_class)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
             if (kit.status == 'elder'):
@@ -1100,7 +1246,6 @@ class Patrol(object):
                 kit.name.suffix = ''
             if self.patrol_event.patrol_id == 501:
                 num_kits = choice([2, 2, 2, 2, 3, 4])
-                all_kitten = []
                 for _ in range(num_kits):
                     kit2 = Cat(status='kitten', moons=0)
                     kit2.skill = 'formerly a loner'
@@ -1123,8 +1268,6 @@ class Patrol(object):
                             relationships.append(Relationship(kit2, the_cat))
                     kit2.relationships = relationships
                     game.clan.add_cat(kit2)
-                for kit in all_kitten:
-                    add_siblings_to_cat(kit,cat_class)
 
         elif self.patrol_event.patrol_id in [502, 503, 520]:  # new kittypet
             new_status = choice([
@@ -1142,7 +1285,6 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
-            add_siblings_to_cat(kit,cat_class)
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
             kit.skill = 'formerly a kittypet'

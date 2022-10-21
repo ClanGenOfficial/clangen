@@ -89,9 +89,11 @@ class Clan(object):
                 self.clan_cats.append(self.deputy.ID)
             self.deputy_predecessors = 0
             self.medicine_cat = medicine_cat
-            self.medicine_cat.status_change('medicine cat')
+            self.med_cat_number = 0
             self.med_cat_predecessors = 0
-            self.clan_cats.append(self.medicine_cat.ID)
+            if medicine_cat is not None:
+                self.medicine_cat.status_change('medicine cat')
+                self.clan_cats.append(self.medicine_cat.ID)
             self.age = 0
             self.current_season = 'Newleaf'
             self.instructor = None  # This is the first cat in starclan, to "guide" the other dead cats there.
@@ -193,6 +195,7 @@ class Clan(object):
             self.medicine_cat = medicine_cat
             cat_class.all_cats[medicine_cat.ID].status_change('medicine cat')
             self.med_cat_predecessors += 1
+            self.med_cat_number += 1
 
     def switch_clans(self):
         list_data = game.switches['switch_clan'] + "\n"
@@ -220,7 +223,7 @@ class Clan(object):
         else:
             data = data + '\n'
         data = data + self.medicine_cat.ID + ',' + str(
-            self.med_cat_predecessors) + '\n'
+            self.med_cat_predecessors)  + '\n'
 
         data = data + self.instructor.ID + '\n'
 
