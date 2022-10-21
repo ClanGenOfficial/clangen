@@ -162,7 +162,7 @@ class Cat(object):
                 self.skill = '???'
             elif self.status == 'warrior':
                 self.skill = choice(self.skills)
-            elif self.moons >= 120 and self.status != 'leader':
+            elif self.moons >= 120 and self.status != 'leader' and self.status != 'medicine cat':
                 self.skill = choice(self.elder_skills)
             elif self.status == 'medicine cat':
                 self.skill = choice(self.med_skills)
@@ -892,7 +892,7 @@ class Cat(object):
                                 'Just told ' + other_name + ' a hilarious joke'
                             ])
 
-                    if other_cat.is_potential_mate(cat,for_love_interest=True):
+                    if other_cat.is_potential_mate(cat, for_love_interest=True):
                         thoughts.extend([
                             'Is developing a crush on ' + other_name,
                             'Is spending a lot of time with ' + other_name,
@@ -2457,12 +2457,10 @@ class Cat(object):
             elif new_status == 'medicine cat':
                 self.skill = choice(self.med_skills)
                 self.update_med_mentor()
-            else:
-                self.skill == '???'
         else:
             self.skill = self.skill
 
-        if self.moons >= 120 and self.status != 'leader':
+        if self.moons >= 120 and self.status != 'leader' and self.status != 'medicine cat':
             self.skill = choice(self.elder_skills)
 
         self.status = new_status
