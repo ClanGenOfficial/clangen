@@ -18,7 +18,6 @@ except:
     game.switches[
         'error_message'] = 'There was an error loading the personality compatibility json!'
 
-
 def get_highest_romantic_relation(relationships):
     """Returns the relationship with the highest romantic value."""
     romantic_relation = list(
@@ -35,7 +34,6 @@ def get_highest_romantic_relation(relationships):
             relation = inter_rel
 
     return relation
-
 
 def get_personality_compatibility(cat1, cat2):
     """Returns:
@@ -58,7 +56,6 @@ def get_personality_compatibility(cat1, cat2):
             return PERSONALITY_COMPATIBILITY[personality2][personality1]
 
     return None
-
 
 def add_siblings_to_cat(cat, cat_class):
     """Iterate over all current cats and add the ID to the current cat."""
