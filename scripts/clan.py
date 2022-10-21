@@ -1,6 +1,7 @@
 from .cats import *
 from .text import *
 from .load_cat import *
+from .cats import *
 try:
     from .world import *
     mapavailable = True
@@ -108,7 +109,7 @@ class Clan(object):
         the program starts"""
         self.instructor = Cat(status=choice(["warrior", "elder"]))
         self.instructor.dead = True
-        self.instructor.update_sprite()
+        update_sprite(self.instructor)
         self.add_cat(self.instructor)
         self.all_clans = []
         other_clans = []
@@ -329,7 +330,7 @@ class Clan(object):
         else:
             game.clan.instructor = Cat(
                 status=choice(["warrior", "warrior", "elder"]))
-            game.clan.instructor.update_sprite()
+            update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
         if other_clans != [""]:
