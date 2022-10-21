@@ -4125,24 +4125,18 @@ class RelationshipScreen(Screens):
             string_len = verdana.text(str('romantic love: '))
             verdana.text(str(the_relationship.cat_to.name),
                          (140 + pos_x - string_len / 1.5, 105 + pos_y))
+
+            # display gender align
             verdana_small.text(
-                f"{str(the_relationship.cat_to.genderalign)} - {str(the_relationship.cat_to.age)}",
+                f"{str(the_relationship.cat_to.genderalign)}",
                 (140 + pos_x - string_len / 1.5, 120 + pos_y))
 
-            # there is no way the mate is dead
-            uncle_aunt = the_relationship.cat_to.is_uncle_aunt(the_cat) or\
-                the_cat.is_uncle_aunt(the_relationship.cat_to)
-            if (the_relationship.family or uncle_aunt) and the_relationship.cat_to.dead:
-                verdana_small.text(
-                    'related (dead)',
-                    (140 + pos_x - string_len / 1.5, 130 + pos_y))
-            elif (the_relationship.family or uncle_aunt):
-                verdana_small.text(
-                    'related', (140 + pos_x - string_len / 1.5, 130 + pos_y))
-            elif the_relationship.cat_to.dead:
-                verdana_small.text(
-                    '(dead)', (140 + pos_x - string_len / 1.5, 130 + pos_y))
+            # display age
+            verdana_small.text(
+                f"{str(the_relationship.cat_to.age)}",
+                (140 + pos_x - string_len / 1.5, 130 + pos_y))
 
+            # display mate situation
             if the_cat.mate != None and the_cat.mate != '' and the_relationship.cat_to.ID == the_cat.mate:
                 verdana_small.text(
                     'mate', (140 + pos_x - string_len / 1.5, 140 + pos_y))
@@ -4150,8 +4144,22 @@ class RelationshipScreen(Screens):
                 verdana_small.text(
                     'has a mate',
                     (140 + pos_x - string_len / 1.5, 140 + pos_y))
+            
+            # display dead and/or relative
+            uncle_aunt = the_relationship.cat_to.is_uncle_aunt(the_cat) or\
+                the_cat.is_uncle_aunt(the_relationship.cat_to)
+            if (the_relationship.family or uncle_aunt) and the_relationship.cat_to.dead:
+                verdana_small.text(
+                    'related (dead)',
+                    (140 + pos_x - string_len / 1.5, 150 + pos_y))
+            elif (the_relationship.family or uncle_aunt):
+                verdana_small.text(
+                    'related', (140 + pos_x - string_len / 1.5, 150 + pos_y))
+            elif the_relationship.cat_to.dead:
+                verdana_small.text(
+                    '(dead)', (140 + pos_x - string_len / 1.5, 150 + pos_y))
 
-            count = 15
+            count = 17
             different_age = the_relationship.cat_to.age != the_relationship.cat_to.age
             adult_ages = ['young adult', 'adult', 'senior adult', 'elder']
             both_adult = the_relationship.cat_to.age in adult_ages and the_relationship.cat_to.age in adult_ages
