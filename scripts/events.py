@@ -1479,7 +1479,7 @@ class Events(object):
                     alive_count += 1
                     alive_cats.append(cat)
             if len(game.clan.all_clans) > 0:
-                other_clan = game.clan.all_clans.name
+                other_clan = game.clan.all_clans
             addition = randint(0, 20)
             death_chance = int(alive_count / 3)
             if addition == 1:
@@ -1500,7 +1500,7 @@ class Events(object):
                     disaster.extend([
                         ' drown after the camp becomes flooded',
                         ' are killed in a battle against ' +
-                        choice(other_clan.name) + 'Clan',
+                        choice(game.clan.all_clans).name + 'Clan',
                         ' are killed after a fire rages through the camp',
                         ' are killed in an ambush by a group of rogues',
                         ' go missing in the night',

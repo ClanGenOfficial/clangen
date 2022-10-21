@@ -25,15 +25,15 @@ class Cat(object):
         'nervous', 'noisy', 'polite', 'quiet', 'sweet', 'troublesome'
     ]
     personality_groups = {
-        'Outgoing': ['adventurous', 'bold', 'charismatic', 'childish', 'confident', 'daring', 
-                    'playful', 'righteous', 'attention-seeker', 'bouncy', 'charming', 'noisy'],
+        'Outgoing': ['adventurous', 'bold', 'charismatic', 'childish', 'confident', 'daring',
+                        'playful', 'righteous', 'attention-seeker', 'bouncy', 'charming', 'noisy'],
         'Benevolent': ['altruistic', 'compassionate', 'empathetic', 'faithful', 'loving',
                         'patient', 'responsible', 'thoughtful', 'wise', 'inquisitive',
                         'polite', 'sweet'],
         'Abrasive': ['ambitious', 'bloodthirsty', 'cold', 'fierce', 'shameless', 'strict',
-                    'troublesome', 'vengeful', 'bossy', 'bullying', 'impulsive'],
+                        'troublesome', 'vengeful', 'bossy', 'bullying', 'impulsive'],
         'Reserved': ['calm', 'careful', 'insecure', 'lonesome', 'loyal', 'nervous', 'sneaky',
-                    'strange', 'daydreamer', 'quiet'],
+                        'strange', 'daydreamer', 'quiet'],
         }
     ages = [
         'kitten', 'adolescent', 'young adult', 'adult', 'senior adult',
@@ -61,6 +61,14 @@ class Cat(object):
         'good teacher', 'great teacher', 'fantastic teacher', 'keen eye',
         'smart', 'very smart', 'extremely smart', 'good mediator',
         'great mediator', 'excellent mediator', 'clairvoyant', 'prophet'
+    ]
+    elder_skills = [
+        'good storyteller', 'great storyteller', 'fantastic storyteller',
+        'smart tactician', 'valuable tactician','valuable insight',
+        'good mediator', 'great mediator', 'excellent mediator',
+        'good teacher', 'great teacher', 'fantastic teacher',
+        'strong connection to StarClan', 'smart', 'very smart', 'extremely smart',
+        'good kitsitter', 'great kitsitter', 'excellent kitsitter', 'camp keeper', 'den builder',
     ]
 
     all_cats = {}  # ID: object
@@ -149,13 +157,17 @@ class Cat(object):
                 self.trait = choice(self.kit_traits)
 
         if self.skill is None:
-            if self.moons >= 11:
-                if self.status == 'medicine cat':
-                    self.skill = choice(self.med_skills)
-                else:
-                    self.skill = choice(self.skills)                
-            else:
+
+            if self.moons <= 11:
                 self.skill = '???'
+            elif self.status == 'warrior':
+                self.skill = choice(self.skills)
+            elif self.moons >= 120 and self.status != 'leader' and self.status != 'medicine cat':
+                self.skill = choice(self.elder_skills)
+            elif self.status == 'medicine cat':
+                self.skill = choice(self.med_skills)
+            else:
+                    self.skill = choice(self.skills)
 
         # sex
         if self.gender is None:
@@ -880,7 +892,7 @@ class Cat(object):
                                 'Just told ' + other_name + ' a hilarious joke'
                             ])
 
-                    if other_cat.is_potential_mate(cat,for_love_interest=True):
+                    if other_cat.is_potential_mate(cat, for_love_interest=True):
                         thoughts.extend([
                             'Is developing a crush on ' + other_name,
                             'Is spending a lot of time with ' + other_name,
@@ -2271,6 +2283,48 @@ class Cat(object):
                         'Volunteers to gather herbs',
                         'Has been lending the medicine cat a paw lately'
                     ])
+                elif cat.skills == 'good storyteller' or 'great storyteller' or 'fantastic storyteller' or 'lorekeeper':
+                    if other_cat.status == 'kitten':
+                        thoughts.extend([
+                            'Is telling a riveting story to the kits',
+                            'Is being pestered by kits begging for a story'
+                        ])
+                    elif other_cat.status == 'apprentice':
+                        thoughts.extend([
+                            'Has distracted the apprentices with a tall tale',
+                            'Is being pestered by an apprentice for a new story',
+                        ])
+                elif cat.skills == 'camp keeper' or 'den builder':
+                    thoughts.extend([
+                        'Is shoring up the camp walls',
+                        'Is busy cleaning up around camp',
+                        'Is clearing away old bedding',
+                        'Is working to improve the structure of the dens',
+                        'Is frustrated with how messy the camp is these days',
+                    ])
+                elif cat.skills == 'smart tactician' or 'valuable tactician':
+                    thoughts.extend([
+                        'Is giving the clan leader advice for an upcoming battle'
+                        'Is advising the deputy on battle tactics'
+                        'Is reminiscing about battles long past'
+                    ])
+                elif cat.skills == 'good kitsitter' or 'great kitsitter' or 'excellent kitsitter':
+                    if other_cat.status == 'kitten':
+                        thoughts.extend([
+                            'Is watching over the kits while their parents rest'
+                            'Is entertaining the kits with wild tales'
+                            'Is gently guiding a kit on how to treat their littermates kindly'
+                            'Soothes a kit\'s worries about the demands of apprenticeship'
+                            'Is snuggling with some napping kits'
+                            'Scolds a kit for their harsh words against another cat'
+                        ])
+                elif cat.skills == 'valuable insight':
+                    thoughts.extend([
+                        'Is giving some sage advice to another cat'
+                        'Is soothing a queen\'s kit worries'
+                        'Was called to the Leader\'s den to give advice on a problem'
+                        'Is listening to another cat\'s worries'
+                    ])
 
             else:
                 # if this else is reached dead is not set, just to be sure the cat should be alive
@@ -2351,11 +2405,45 @@ class Cat(object):
                 relationships.append(rel)
         self.relationships = relationships
 
-    def status_change(self, new_status):
-        # revealing of traits and skills
+    def status_change(self, new_status):  # revealing of traits and skills
         # updates traits
         if self.moons == 6:
-            self.trait = choice(self.traits)
+            chance = randint(0, 5)  # chance for cat to gain trait that matches their previous trait's personality group
+            if chance == 0:
+                self.trait = choice(self.traits)
+                print('TRAIT TYPE: Random - CHANCE', chance)
+            else:
+                possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
+                for x in possible_groups:
+                    if self.trait in self.personality_groups[x]:
+                        possible_trait = self.personality_groups.get(x)
+                        self.trait = choice(possible_trait)
+                        print('TRAIT TYPE:', x, 'CHANCE:', chance)
+        if self.moons == 12:
+            chance = randint(0, 5)  # chance for cat to gain new trait or keep old
+            if chance == 0:
+                possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
+                for x in possible_groups:
+                    if self.trait in self.personality_groups[x]:
+                        possible_trait = self.personality_groups.get(x)
+                        self.trait = choice(possible_trait)
+                        print('TRAIT TYPE:', x, 'CHANCE:', chance)
+            else:
+                print('TRAIT TYPE: No change', chance)
+        if self.moons == 120:
+            chance = randint(0, 5)  # chance for cat to gain new trait or keep old
+            if chance == 0:
+                possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
+                for x in possible_groups:
+                    if self.trait in self.personality_groups[x]:
+                        possible_trait = self.personality_groups.get(x)
+                        self.trait = choice(possible_trait)
+                        print('TRAIT TYPE:', x, 'CHANCE:', chance)
+            elif chance == 1:
+                self.trait = choice(self.traits)
+                print('TRAIT TYPE: Random - CHANCE', chance)
+            else:
+                print('TRAIT TYPE: No change', chance)
         # updates mentors
         if new_status == 'apprentice':
             self.update_mentor()
@@ -2369,10 +2457,12 @@ class Cat(object):
             elif new_status == 'medicine cat':
                 self.skill = choice(self.med_skills)
                 self.update_med_mentor()
-            else:
-                self.skill == '???'
         else:
             self.skill = self.skill
+
+        if self.moons >= 120 and self.status != 'leader' and self.status != 'medicine cat':
+            self.skill = choice(self.elder_skills)
+
         self.status = new_status
         self.name.status = new_status
         # update class dictionary
