@@ -28,35 +28,64 @@ try:
     with open(f"{resource_directory}not_age_specific.json", 'r') as read_file:
         NOT_AGE_SPECIFIC = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 1 json file of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the not_age_specific.json file of relationship_events!'
 
 KITTEN_TO_OTHER = None
 try:
-    with open(f"{resource_directory}kitten_to_other.json", 'r') as read_file:
+    with open(f"{resource_directory}2_kitten_to_other.json", 'r') as read_file:
         KITTEN_TO_OTHER = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 2 json file of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 2_kitten_to_other.json file of relationship_events!'
 
 APPRENTICE_TO_OTHER = None
 try:
-    with open(f"{resource_directory}apprentice_to_other.json", 'r') as read_file:
+    with open(f"{resource_directory}2_apprentice_to_other.json", 'r') as read_file:
         APPRENTICE_TO_OTHER = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 3 json file of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 2_apprentice_to_other.json file of relationship_events!'
+
+MEDICINE_APP_TO_OTHER = None
+try:
+    with open(f"{resource_directory}2_medicine_app_to_other.json", 'r') as read_file:
+        APPRENTICE_TO_OTHER = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 2_medicine_app_to_other.json file of relationship_events!'
+
 
 WARRIOR_TO_OTHER = None
 try:
-    with open(f"{resource_directory}warrior_to_other.json", 'r') as read_file:
+    with open(f"{resource_directory}2_warrior_to_other.json", 'r') as read_file:
         WARRIOR_TO_OTHER = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 4 json file of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 2_warrior_to_other.json file of relationship_events!'
 
 ELDER_TO_OTHER = None
 try:
-    with open(f"{resource_directory}elder_to_other.json", 'r') as read_file:
+    with open(f"{resource_directory}2_elder_to_other.json", 'r') as read_file:
         ELDER_TO_OTHER = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 5 json file of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 2_elder_to_other.json file of relationship_events!'
+
+LEADER_TO_OTHER = None
+try:
+    with open(f"{resource_directory}2_leader_to_other.json", 'r') as read_file:
+        LEADER_TO_OTHER = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 2_leader_to_other.json file of relationship_events!'
+
+DEPUTY_TO_OTHER = None
+try:
+    with open(f"{resource_directory}2_deputy_to_other.json", 'r') as read_file:
+        DEPUTY_TO_OTHER = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 2_deputy_to_other.json file of relationship_events!'
+
+MEDICINE_TO_OTHER = None
+try:
+    with open(f"{resource_directory}2_medicine_to_other.json", 'r') as read_file:
+        MEDICINE_TO_OTHER = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 2_medicine_to_other.json file of relationship_events!'
 
 
 LOVE = None
@@ -64,29 +93,7 @@ try:
     with open(f"{resource_directory}love.json", 'r') as read_file:
         LOVE = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 6 json file of relationship_events!'
-
-
-LEADER = None
-try:
-    with open(f"{resource_directory}leader.json", 'r') as read_file:
-        LEADER = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 7 json file of relationship_events!'
-
-DEPUTY = None
-try:
-    with open(f"{resource_directory}deputy.json", 'r') as read_file:
-        DEPUTY = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 8 json file of relationship_events!'
-
-MEDICINE = None
-try:
-    with open(f"{resource_directory}medicine.json", 'r') as read_file:
-        MEDICINE = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 9 json file of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the love.file of relationship_events!'
 
 
 SPECIAL_CHARACTER = None
@@ -94,7 +101,7 @@ try:
     with open(f"{resource_directory}special_character.json", 'r') as read_file:
         SPECIAL_CHARACTER = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 10 json file of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the special_character.json file of relationship_events!'
 
 # How increasing one state influences another directly: (an increase of one state doesn't trigger a chain reaction)
 # increase romantic_love -> decreases: dislike | increases: like, comfortable
@@ -113,21 +120,21 @@ try:
     with open(f"{resource_directory}1_INCREASE_HIGH.json", 'r') as read_file:
         INCREASE_HIGH = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 11 json file of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 1_INCREASE_HIGH.json file of relationship_events!'
 
 INCREASE_LOW = None
 try:
     with open(f"{resource_directory}1_INCREASE_LOW.json", 'r') as read_file:
         INCREASE_LOW = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 12 json file of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 1_INCREASE_LOW.json file of relationship_events!'
 
 DECREASE_HIGH  = None
 try:
     with open(f"{resource_directory}1_DECREASE_HIGH.json", 'r') as read_file:
         DECREASE_HIGH = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 13 json file of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 1_DECREASE_HIGH.json file of relationship_events!'
 
 
 DECREASE_LOW = None
@@ -135,7 +142,7 @@ try:
     with open(f"{resource_directory}1_DECREASE_LOW.json", 'r') as read_file:
         DECREASE_LOW = ujson.loads(read_file.read())
 except:
-    game.switches['error_message'] = 'There was an error loading the 14 json file of relationship_events!'
+    game.switches['error_message'] = 'There was an error loading the 1_DECREASE_LOW.json file of relationship_events!'
 
 
 # weights of the stat change
@@ -272,12 +279,8 @@ class Relationship(object):
         action_possibilities = copy.deepcopy(NOT_AGE_SPECIFIC['neutral'])
 
         key = self.cat_to.status
-        if key == "senior warrior" or key == "deputy" or\
-                key == "leader" or key == "medicine cat":
+        if key == "senior warrior":
             key = "warrior"
-        
-        if key == "medicine cat apprentice":
-            key = "apprentice"
 
         # NORMAL INTERACTIONS
         # check how the relationship is
@@ -302,35 +305,24 @@ class Relationship(object):
         if self.cat_from.status == "apprentice":
             for relation_key in relation_keys:
                 action_possibilities += APPRENTICE_TO_OTHER[key][relation_key]
+        if self.cat_from.status == "medicine cat apprentice":
+            for relation_key in relation_keys:
+                action_possibilities += MEDICINE_APP_TO_OTHER[key][relation_key]
         if (self.cat_from.status == "warrior" or self.cat_from.status == "senior warrior"):
             for relation_key in relation_keys:
                 action_possibilities += WARRIOR_TO_OTHER[key][relation_key]
+        if self.cat_from.status == "medicine cat":
+            for relation_key in relation_keys:
+                action_possibilities += MEDICINE_TO_OTHER[key][relation_key]
+        if self.cat_from.status == "deputy":
+            for relation_key in relation_keys:
+                action_possibilities += DEPUTY_TO_OTHER[key][relation_key]
+        if self.cat_from.status == "leader":
+            for relation_key in relation_keys:
+                action_possibilities += LEADER_TO_OTHER[key][relation_key]
         if self.cat_from.status == "elder":
             for relation_key in relation_keys:
                 action_possibilities += ELDER_TO_OTHER[key][relation_key]
-
-        # STATUS INTERACTIONS
-        if self.cat_from.age != 'kitten' and self.cat_to.age != 'kitten':
-            if self.cat_from.status == 'leader':
-                for relation_key in relation_keys:
-                    action_possibilities += LEADER['from'][relation_key]
-            if self.cat_to.status == 'leader':
-                for relation_key in relation_keys:
-                    action_possibilities += LEADER['to'][relation_key]
-
-            if self.cat_from.status == 'deputy':
-                for relation_key in relation_keys:
-                    action_possibilities += DEPUTY['from'][relation_key]
-            if self.cat_to.status == 'deputy':
-                for relation_key in relation_keys:
-                    action_possibilities += DEPUTY['to'][relation_key]
-
-            if self.cat_from.status == 'medicine cat':
-                for relation_key in relation_keys:
-                    action_possibilities += MEDICINE['from'][relation_key]
-            if self.cat_to.status == 'medicine cat':
-                for relation_key in relation_keys:
-                    action_possibilities += MEDICINE['to'][relation_key]
 
         # CHARACTERISTIC INTERACTION
         character_keys = SPECIAL_CHARACTER.keys()
