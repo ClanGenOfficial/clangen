@@ -64,12 +64,11 @@ class Cat(object):
     ]
     elder_skills = [
         'good storyteller', 'great storyteller', 'fantastic storyteller',
-        'smart tactician', 'valuable tactician', 'sharp eye',
-        'valuable insight', 'good mediator', 'great mediator', 'excellent mediator',
+        'smart tactician', 'valuable tactician','valuable insight',
+        'good mediator', 'great mediator', 'excellent mediator',
         'good teacher', 'great teacher', 'fantastic teacher',
         'strong connection to StarClan', 'smart', 'very smart', 'extremely smart',
-        'good kitsitter', 'great kitsitter', 'excellent kitsitter', 'camp keeper',
-        'den builder',
+        'good kitsitter', 'great kitsitter', 'excellent kitsitter', 'camp keeper', 'den builder',
     ]
 
     all_cats = {}  # ID: object
@@ -2310,8 +2309,21 @@ class Cat(object):
                         'Is reminiscing about battles long past'
                     ])
                 elif cat.skills == 'good kitsitter' or 'great kitsitter' or 'excellent kitsitter':
+                    if other_cat.status == 'kitten':
+                        thoughts.extend([
+                            'Is watching over the kits while their parents rest'
+                            'Is entertaining the kits with wild tales'
+                            'Is gently guiding a kit on how to treat their littermates kindly'
+                            'Soothes a kit\'s worries about the demands of apprenticeship'
+                            'Is snuggling with some napping kits'
+                            'Scolds a kit for their harsh words against another cat'
+                        ])
+                elif cat.skills == 'valuable insight':
                     thoughts.extend([
-                        ''
+                        'Is giving some sage advice to another cat'
+                        'Is soothing a queen\'s kit worries'
+                        'Was called to the Leader\'s den to give advice on a problem'
+                        'Is listening to another cat\'s worries'
                     ])
 
             else:
