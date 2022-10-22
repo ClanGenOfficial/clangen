@@ -683,22 +683,22 @@ class Events(object):
             type_of_new_cat = choice([1, 2, 3, 4, 5, 6, 7])
             if type_of_new_cat == 1:
                 created_cats = self.create_new_cat(loner = False, loner_name = False, kittypet = False, kit=True)
+                kit = created_cats[0]
                 kit_text = [
                     f'{name} finds an abandoned kit and names them {str(kit.name)}',
                     f'A loner brings their kit named {str(kit.name.prefix)} to the clan, stating they no longer can care for them'
                 ]
                 game.cur_events_list.append(choice(kit_text))
-                self.check_age(kit)
 
             elif type_of_new_cat == 2:
                 created_cats = self.create_new_cat(loner=True, loner_name=True)
+                loner_name = created_cats[0].name
                 loner_text = [
-                    f'{name} finds a loner named {str(loner.name)} who joins the clan',
-                    f'A loner named {str(loner.name)} waits on the border for a patrol, asking to join the clan'
+                    f'{name} finds a loner named {loner_name} who joins the clan',
+                    f'A loner named {loner_name} waits on the border for a patrol, asking to join the clan'
                 ]
                 game.cur_events_list.append(choice(loner_text))
                 game.cur_events_list.append(str(loner_name) + ' decides to keep their name')
-                self.check_age(loner)
 
             elif type_of_new_cat == 3:
                 created_cats = self.create_new_cat(loner=True)
