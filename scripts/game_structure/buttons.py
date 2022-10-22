@@ -23,7 +23,7 @@ class Button(object):
         self.clickable_colour = clickable_colour
         self.unavailable_colour = unavailable_colour
 
-    def draw_image_button(self, pos, available=True, path=None, **values):
+    def draw_image_button(self, pos, available=True, button_name=None, **values):
         """
         Draw an image button and check for collisions.
 
@@ -41,15 +41,15 @@ class Button(object):
         """
         is_clickable = False
         if available:
-            image_path = f'resources/images/{path}.png'
+            image_path = f'resources/images/buttons/{button_name}.png'
         else:
-            image_path = f'resources/images/{path}_unavailable.png'
+            image_path = f'resources/images/buttons/{button_name}_unavailable.png'
         image = pygame.image.load(image_path).convert_alpha()
         button = pygame.transform.scale(image, (192, 35))
         collided = self.used_screen.blit(button, pos)
         if available and collided.collidepoint(self.used_mouse.pos):
             is_clickable = True
-            image_path = f'resources/images/{path}_hover.png'
+            image_path = f'resources/images/buttons/{button_name}_hover.png'
             image = pygame.image.load(image_path).convert_alpha()
             button = pygame.transform.scale(image, (192, 35))
         self.used_screen.blit(button, pos)

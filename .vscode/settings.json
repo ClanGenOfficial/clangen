@@ -13,7 +13,11 @@
     "python.testing.unittestEnabled": true,
     "cSpell.words": [
         "cooldown",
+        "greenleaf",
         "kittypet",
+        "leafbare",
+        "leaffall",
+        "newleaf",
         "parentless",
         "pygame",
         "ujson"

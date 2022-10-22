@@ -28,8 +28,8 @@ class Game(object):
     language_list = ['english', 'spanish', 'german']
     relation_events_list = []
 
-    down = pygame.image.load("resources/images/arrow_down.png").convert_alpha()
-    up = pygame.image.load("resources/images/arrow_up.png").convert_alpha()
+    down = pygame.image.load("resources/images/buttons/arrow_down.png").convert_alpha()
+    up = pygame.image.load("resources/images/buttons/arrow_up.png").convert_alpha()
 
     choose_cats = {}
     cat_buttons = {
