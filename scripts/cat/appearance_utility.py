@@ -5,7 +5,7 @@ from .pelts import *
 # ---------------------------------------------------------------------------- #
 
 def plural_acc_names(accessory ,plural, singular):
-    acc_display = accessory
+    acc_display = accessory.lower()
     if accessory == 'maple leaf':
         if plural == True:
             acc_display = 'maple leaves'
