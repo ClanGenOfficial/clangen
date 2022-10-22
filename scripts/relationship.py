@@ -659,7 +659,8 @@ class Relationship(object):
             action_possibilies += SPECIAL_CHARACTER[self.cat_from.trait]
 
         # LOVE
-        if not self.cat_from.is_potential_mate(self.cat_to, for_love_interest = True):
+        if (not self.cat_from.is_potential_mate(self.cat_to, for_love_interest = True) or
+            not self.cat_to.is_potential_mate(self.cat_from, for_love_interest = True)):
             return action_possibilies
 
         # chance to fall in love with some the character is not close to:
