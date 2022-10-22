@@ -2915,6 +2915,8 @@ class Cat(object):
                     self.relationships = relationships
             except:
                 print(f'There was an error reading the relationship file of cat #{self}.')
+        else:
+            self.create_new_relationships()
 
     def load(self, cat_dict):
         """ A function that takes a dictionary containing other dictionaries with attributes and values of all(?)
