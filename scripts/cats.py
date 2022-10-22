@@ -367,6 +367,22 @@ class Cat(object):
     def __repr__(self):
         return self.ID
 
+    @property
+    def experience(self):
+        return self._experience
+
+    @experience.setter
+    def experience(self, exp):
+        if (exp > 80):
+            exp = 80
+        self._experience = exp
+        experience_levels = [
+            'very low', 'low', 'slightly low', 'average', 'somewhat high',
+            'high', 'very high', 'master', 'max'
+        ]
+        self.experience_level = experience_levels[math.floor(self.experience /
+                                                             10)]
+
     def thoughts(self):
         # actions or thoughts for all cats. These switch either every moon or every time the game is re-opened
 
