@@ -1,24 +1,22 @@
-from scripts.clan import *
 from scripts.utility import update_sprite
 from scripts.cat.cats import cat_class
 from scripts.game_structure.buttons import buttons
 from scripts.game_structure.game_essentials import *
+from scripts.clan import map_available
 
-
-# SCREEN PARENT CLASS
 class Screens(object):
     game_screen = screen
     game_x = screen_x
     game_y = screen_y
-    all_screens = {}
     last_screen = ''
 
     def __init__(self, name=None):
         self.name = name
-        self.all_screens = {}
         if name is not None:
-            self.all_screens[name] = self
             game.all_screens[name] = self
+
+    def fill(self, tuple):
+        pygame.Surface.fill(color=tuple)
 
     def on_use(self):
         """Runs every frame this screen is used."""

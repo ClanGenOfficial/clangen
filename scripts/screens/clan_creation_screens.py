@@ -1,13 +1,13 @@
 import pygame
 from random import choice, randrange
 
-from .screen import Screens, create_example_cats
+from .base_screens import Screens
 
-from scripts.game_structure.text import verdana, verdana_black, verdana_small, verdana_red, verdana_big
-from scripts.game_structure.game_essentials import game, screen_x, screen
+from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
 from scripts.utility import draw, draw_big, draw_large
 from scripts.clan import Clan, map_available
+from scripts.cat.cats import create_example_cats
 from scripts.cat.names import names
 from scripts.cat.sprites import tiles
 from scripts.world import World, save_map

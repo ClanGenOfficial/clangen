@@ -3,12 +3,14 @@ import os
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
-from scripts.screens.all_screens import screen
 from scripts.game_structure.text import verdana
 from scripts.game_structure.buttons import buttons
-from scripts.clan import clan_class
-#from scripts.screens.all_screens import *
 from scripts.game_structure.load_cat import *
+from scripts.world import load_map
+from scripts.clan import clan_class
+
+# import all screens for initialization 
+from scripts.screens.all_screens import *
 
 # P Y G A M E
 clock = pygame.time.Clock()
