@@ -58,7 +58,7 @@ class ClanScreen(Screens):
 
     def screen_switches(self):
         cat_profiles()
-        self.change_brightness()
+        self.update_camp_bg()
         game.switches['cat'] = None
         p = game.clan.cur_layout
         game.clan.leader.placement = choice(p['leader place'])
@@ -136,7 +136,7 @@ class ClanScreen(Screens):
                         choice(p['apprentice place'])
                     ])
 
-    def change_brightness(self):
+    def update_camp_bg(self):
         light_dark = "light"
         if game.settings["dark mode"]:
             light_dark = "dark"

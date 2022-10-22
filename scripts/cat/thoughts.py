@@ -1,7 +1,7 @@
 import random
 
 def old_thoughts(all_cats):
-           # actions or thoughts for all cats. These switch either every moon or every time the game is re-opened
+        # actions or thoughts for all cats. These switch either every moon or every time the game is re-opened
 
         for c in all_cats.keys():
             other_cat = random.choice(list(all_cats.keys()))

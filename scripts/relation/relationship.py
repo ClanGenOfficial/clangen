@@ -146,7 +146,6 @@ except:
 
 
 # weights of the stat change
-
 DIRECT_INCREASE_HIGH = 12
 DIRECT_DECREASE_HIGH = 9
 DIRECT_INCREASE_LOW = 7
@@ -331,7 +330,7 @@ class Relationship(object):
 
         # LOVE
         if not self.cat_from.is_potential_mate(self.cat_to, for_love_interest = True) or\
-            self.cat_to.is_potential_mate(self.cat_from, for_love_interest = True):
+            not self.cat_to.is_potential_mate(self.cat_from, for_love_interest = True):
             return action_possibilities
 
         # chance to fall in love with some the character is not close to:
@@ -536,6 +535,10 @@ class Relationship(object):
             return DIRECT_DECREASE_LOW + COMPATIBILITY_WEIGHT
         else:
             return DIRECT_DECREASE_LOW - COMPATIBILITY_WEIGHT
+
+# ---------------------------------------------------------------------------- #
+#                                   property                                   #
+# ---------------------------------------------------------------------------- #
 
     @property
     def romantic_love(self):

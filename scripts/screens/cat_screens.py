@@ -1,59 +1,39 @@
-from .base_screens import Screens, cat_profiles
+from .base_screens import Screens, cat_profiles, draw_next_prev_cat_buttons
 
 from scripts.utility import draw_large
+from scripts.cat.appearance_utility import accessory_display_name
 from scripts.events import events_class
 from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
 from scripts.cat.cats import cat_class
 
+def draw_text_bar():
+    if game.settings['dark mode']:
+        pygame.draw.rect(screen, 'white', pygame.Rect((300, 200),
+                                                      (200, 20)))
+        verdana_black.text(game.switches['naming_text'], (315, 200))
+    else:
+        pygame.draw.rect(screen, 'gray', pygame.Rect((300, 200),
+                                                     (200, 20)))
+        verdana.text(game.switches['naming_text'], (315, 200))
+
+def draw_back(x_value, y_value):
+    buttons.draw_button((x_value, y_value),
+        text='Back',
+        cur_screen='profile screen',
+        hotkey=[0])
+
 class ProfileScreen(Screens):
 
     def on_use(self):
         # use this variable to point to the cat object in question
-        the_cat = cat_class.all_cats.get(game.switches['cat'],
-                                         game.clan.instructor)
+        the_cat = cat_class.all_cats.get(game.switches['cat'],game.clan.instructor)
+
+        draw_next_prev_cat_buttons(the_cat)
         # use these attributes to create differing profiles for starclan cats etc.
         is_instructor = False
         if the_cat.dead and game.clan.instructor.ID == the_cat.ID:
             is_instructor = True
-
-        # back and next buttons on the profile page
-        previous_cat = 0
-        next_cat = 0
-
-        if the_cat.dead and not is_instructor:
-            previous_cat = game.clan.instructor.ID
-        if is_instructor:
-            next_cat = 1
-        for check_cat in cat_class.all_cats:
-            if cat_class.all_cats[check_cat].ID == the_cat.ID:
-                next_cat = 1
-            if next_cat == 0 and cat_class.all_cats[
-                    check_cat].ID != the_cat.ID and cat_class.all_cats[
-                        check_cat].dead == the_cat.dead and cat_class.all_cats[
-                            check_cat].ID != game.clan.instructor.ID and not cat_class.all_cats[
-                                check_cat].exiled:
-                previous_cat = cat_class.all_cats[check_cat].ID
-            elif next_cat == 1 and cat_class.all_cats[
-                    check_cat].ID != the_cat.ID and cat_class.all_cats[
-                        check_cat].dead == the_cat.dead and cat_class.all_cats[
-                            check_cat].ID != game.clan.instructor.ID and not cat_class.all_cats[
-                                check_cat].exiled:
-                next_cat = cat_class.all_cats[check_cat].ID
-            elif int(next_cat) > 1:
-                break
-        if next_cat == 1:
-            next_cat = 0
-        if next_cat != 0:
-            buttons.draw_button((-40, 40),
-                                text='Next Cat',
-                                cat=next_cat,
-                                hotkey=[21])
-        if previous_cat != 0:
-            buttons.draw_button((40, 40),
-                                text='Previous Cat',
-                                cat=previous_cat,
-                                hotkey=[23])
 
         # Info in string
         cat_name = str(the_cat.name)  # name
@@ -79,15 +59,15 @@ class ProfileScreen(Screens):
 
         draw_large(the_cat,(100, 200)) # IMAGE
 
-
+        # THOUGHT
         if len(the_cat.thought) < 100:
-            verdana.text(the_cat.thought, ('center', 180))  # THOUGHT
+            verdana.text(the_cat.thought, ('center', 180))
         else:
             cut = the_cat.thought.find(' ', int(len(the_cat.thought)/2))
             first_part = the_cat.thought[:cut]
             second_part = the_cat.thought[cut:]
-            verdana.text(first_part, ('center', 180))  # THOUGHT
-            verdana.text(second_part, ('center', 200))  # THOUGHT
+            verdana.text(first_part, ('center', 180))
+            verdana.text(second_part, ('center', 200))
 
         
         if the_cat.genderalign == None or the_cat.genderalign == True or the_cat.genderalign == False:
@@ -201,7 +181,7 @@ class ProfileScreen(Screens):
         verdana_small.text('fur length: ' + the_cat.pelt.length,
                            (300, 230 + count * 15))
         count += 1  # PELT LENGTH
-        verdana_small.text('accessory: ' + str(the_cat.accessory_display_name()),
+        verdana_small.text('accessory: ' + str(accessory_display_name(the_cat.accessory)),
                            (300, 230 + count * 15))
         count += 1  # accessory
 
@@ -301,15 +281,19 @@ class ProfileScreen(Screens):
             count2 += 1
 
         # buttons
-        buttons.draw_button(('center', 400),
+        count = 0
+        buttons.draw_button(('center', 400 + count),
                             text="See Family",
                             cur_screen='see kits screen')
+        count += 30
 
-        buttons.draw_button(('center', 430),
-                            text="See Relationships",
-                            cur_screen='relationship screen')
+        if not the_cat.dead:
+            buttons.draw_button(('center', 400 + count),
+                                text="See Relationships",
+                                cur_screen='relationship screen')
+            count += 30
 
-        buttons.draw_button(('center', 460),
+        buttons.draw_button(('center', 400 + count),
                             text='Options',
                             cur_screen='options screen')
 
@@ -318,7 +302,7 @@ class ProfileScreen(Screens):
                             cur_screen=game.switches['last_screen'])
 
     # PLATFORM
-    def change_brightness(self):
+    def update_platform(self):
         the_cat = cat_class.all_cats.get(game.switches['cat'],
                                          game.clan.instructor)
         
@@ -353,15 +337,17 @@ class ProfileScreen(Screens):
         self.leaffall_plt = pygame.transform.scale(
             pygame.image.load(all_platforms[3]).convert(), (240, 210))
 
-
     def screen_switches(self):
         cat_profiles()
-        self.change_brightness()
+        self.update_platform()
 
 class OptionsScreen(Screens):
 
-    def relations_tab(self):
-        buttons.draw_button((10, 85), text="Relations Tab", available=False)
+    def draw_header(self):
+        buttons.draw_button((10, 85),
+                            text="Relations Tab",
+                            options_tab="Relations Tab",
+                            hotkey=[11])
         buttons.draw_button((150, 85),
                             text="Roles Tab",
                             options_tab="Roles Tab",
@@ -374,6 +360,9 @@ class OptionsScreen(Screens):
                             text="Dangerous Tab",
                             options_tab="Dangerous Tab",
                             hotkey=[14])
+
+    def relations_tab(self):
+        self.draw_header()
 
         the_cat = cat_class.all_cats.get(game.switches['cat'])
         button_count = 0
@@ -390,11 +379,11 @@ class OptionsScreen(Screens):
         #                     text='Family Tree',
         #                     hotkey=[button_count + 1])
         # button_count += 1
-
-        buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='See Relationships',
-                            cur_screen='relationship screen',
-                            hotkey=[button_count + 1])
+        if not the_cat.dead:
+            buttons.draw_button((x_value, y_value + button_count * y_change),
+                                text='See Relationships',
+                                cur_screen='relationship screen',
+                                hotkey=[button_count + 1])
         button_count += 1
 
         if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
@@ -413,25 +402,10 @@ class OptionsScreen(Screens):
                                 hotkey=[button_count + 1])
             button_count += 1
 
-        buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='Back',
-                            cur_screen='profile screen',
-                            hotkey=[0])
+        draw_back(x_value, y_value + button_count * y_change)
 
     def roles_tab(self):
-        buttons.draw_button((10, 85),
-                            text="Relations Tab",
-                            options_tab="Relations Tab",
-                            hotkey=[11])
-        buttons.draw_button((150, 85), text="Roles Tab", available=False)
-        buttons.draw_button((260, 85),
-                            text="Personal Tab",
-                            options_tab="Personal Tab",
-                            hotkey=[13])
-        buttons.draw_button((-10, 85),
-                            text="Dangerous Tab",
-                            options_tab="Dangerous Tab",
-                            hotkey=[14])
+        self.draw_header()
 
         the_cat = cat_class.all_cats.get(game.switches['cat'])
         button_count = 0
@@ -501,25 +475,10 @@ class OptionsScreen(Screens):
                                 hotkey=[button_count + 1])
             button_count += 1
 
-        buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='Back',
-                            cur_screen='profile screen',
-                            hotkey=[0])
+        draw_back(x_value, y_value + button_count * y_change)
 
     def personal_tab(self):
-        buttons.draw_button((10, 85),
-                            text="Relations Tab",
-                            options_tab="Relations Tab",
-                            hotkey=[11])
-        buttons.draw_button((150, 85),
-                            text="Roles Tab",
-                            options_tab="Roles Tab",
-                            hotkey=[12])
-        buttons.draw_button((260, 85), text="Personal Tab", available=False)
-        buttons.draw_button((-10, 85),
-                            text="Dangerous Tab",
-                            options_tab="Dangerous Tab",
-                            hotkey=[14])
+        self.draw_header()
 
         the_cat = cat_class.all_cats.get(game.switches['cat'])
         button_count = 0
@@ -587,26 +546,10 @@ class OptionsScreen(Screens):
                                 hotkey=[button_count + 1])
             button_count += 1
 
-        buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='Back',
-                            cur_screen='profile screen',
-                            hotkey=[0])
-
+        draw_back(x_value, y_value + button_count * y_change)
+        
     def dangerous_tab(self):
-        buttons.draw_button((10, 85),
-                            text="Relations Tab",
-                            options_tab="Relations Tab",
-                            hotkey=[1])
-        buttons.draw_button((150, 85),
-                            text="Roles Tab",
-                            options_tab="Roles Tab",
-                            hotkey=[2])
-        buttons.draw_button((260, 85),
-                            text="Personal Tab",
-                            options_tab="Personal Tab",
-                            hotkey=[3])
-        buttons.draw_button((-10, 85), text="Dangerous Tab", available=False)
-
+        self.draw_header()
         the_cat = cat_class.all_cats.get(game.switches['cat'])
         button_count = 0
         x_value = 'center'
@@ -632,10 +575,7 @@ class OptionsScreen(Screens):
         #                         hotkey=[11])
         #     button_count += 1
 
-        buttons.draw_button((x_value, y_value + button_count * y_change),
-                            text='Back',
-                            cur_screen='profile screen',
-                            hotkey=[0])
+        draw_back(x_value, y_value + button_count * y_change)
 
     def on_use(self):
         the_cat = cat_class.all_cats.get(game.switches['cat'])
@@ -704,14 +644,7 @@ class OptionsScreen(Screens):
 class ChangeNameScreen(Screens):
 
     def on_use(self):
-        if game.settings['dark mode']:
-            pygame.draw.rect(screen, 'white', pygame.Rect((300, 200),
-                                                          (200, 20)))
-            verdana_black.text(game.switches['naming_text'], (315, 200))
-        else:
-            pygame.draw.rect(screen, 'gray', pygame.Rect((300, 200),
-                                                         (200, 20)))
-            verdana.text(game.switches['naming_text'], (315, 200))
+        draw_text_bar()
         verdana.text('Change Name', ('center', 50))
         verdana.text('Add a space between the new prefix and suffix',
                      ('center', 70))
@@ -720,29 +653,16 @@ class ChangeNameScreen(Screens):
                             text='Change Name',
                             cur_screen='change name screen',
                             cat_value=game.switches['name_cat'])
-        buttons.draw_button(('center', -50),
-                            text='Back',
-                            cur_screen='profile screen',
-                            hotkey=[0])
+        draw_back(('center', -50))
 
 class ChangeGenderScreen(Screens):
 
     def on_use(self):
-        if game.settings['dark mode']:
-            pygame.draw.rect(screen, 'white', pygame.Rect((300, 200),
-                                                          (200, 20)))
-            verdana_black.text(game.switches['naming_text'], (315, 200))
-        else:
-            pygame.draw.rect(screen, 'gray', pygame.Rect((300, 200),
-                                                         (200, 20)))
-            verdana.text(game.switches['naming_text'], (315, 200))
+        draw_text_bar()
         verdana.text('Change Gender', ('center', 50))
         verdana.text('You can set this to anything.', ('center', 70))
         buttons.draw_button(('center', -100),
                             text=' Change Gender ',
                             cur_screen='change gender screen',
                             cat_value=game.switches['name_cat'])
-        buttons.draw_button(('center', -50),
-                            text='Back',
-                            cur_screen='profile screen',
-                            hotkey=[0])
+        draw_back(('center', -50))

@@ -19,10 +19,6 @@ class Events(object):
         self.living_cats = 0
         self.new_cat_invited = False
         self.ceremony_accessory = False
-        game.switches['pregnancy'] = False
-        game.switches['birth_cooldown'] = False
-        if game.switches['birth_cooldown']:
-            birth_range = randint(6, 9)
 
     def one_moon(self):
         if game.switches['timeskip']:
@@ -116,8 +112,7 @@ class Events(object):
         self.handle_deaths(cat)
         self.coming_out(cat)
         if cat.moons <= 13:
-            cat.update_mentor()
-        
+            cat.update_mentor()  
 
     def check_skill(self, cat):
         #checking that skill is correct
@@ -318,8 +313,8 @@ class Events(object):
                     choice(plant_accessories),
                     choice(wild_accessories)
                 ])
-                acc_singular = cat.plural_acc_names(False, True)
-                acc_plural = cat.plural_acc_names(True, False)
+                acc_singular = plural_acc_names(cat.accessory, False, True)
+                acc_plural = plural_acc_names(cat.accessory, True, False)
                 #if self.ceremony_accessory == True:
                  #   acc_text.extend([f'{other_name} gives {name} something to adorn their pelt as congratulations', f'{name} decides to pick something to adorn their pelt as celebration'])
                 if cat.age != 'kitten':
@@ -684,8 +679,7 @@ class Events(object):
             chance = 700
         elif self.living_cats > 30:
             chance = 300
-        if randint(1, chance
-                   ) == 1 and cat.age != 'kitten' and cat.age != 'adolescent':
+        if randint(1, chance) == 1 and cat.age != 'kitten' and cat.age != 'adolescent':
             self.new_cat_invited = True
             name = str(cat.name)
             type_of_new_cat = choice([1, 2, 3, 4, 5, 6, 7])
@@ -764,6 +758,7 @@ class Events(object):
 
             elif type_of_new_cat == 5:
                 self._extracted_from_invite_new_cats_47(name)
+            
             elif type_of_new_cat == 6:
                 loner = Cat(status='warrior', moons=randint(12, 120))
                 #create and update relationships
@@ -910,6 +905,43 @@ class Events(object):
         game.cur_events_list.append(
             str(loner_name) + ' decides to keep their name')
         self.check_age(loner)
+
+    def create_new_cat(self, litter = False, loner = False, loner_changes_name = False, kittypet = False, relevant_cat = None):
+        skill = None
+        accessory = None
+        age = randint(0,5)
+        if not litter:
+            age = randint(12,120)
+        
+        name = None
+        status = "kitten"
+        if loner:
+            if not loner_changes_name:
+                name = choice(names.loner_names)
+            status = "warrior"
+            skill = "formerly a loner"
+        if kittypet:
+            skill = "formerly a kittypet"
+            accessory = choice(collars)
+
+        amount = choice([1,2,3,4]) if litter else 1
+        for number in amount:
+            new_cat = None
+            if not loner_changes_name:
+                new_cat = Cat(moons=age, name=name, suffix='', gender=choice(['female', 'male']))
+            else:
+                new_cat = Cat(moons=age, name=name, gender=choice(['female', 'male']))
+            #create and update relationships
+            relationships = []
+            for the_cat in game.clan.clan_cats.values():
+                if the_cat.dead or the_cat.exiled:
+                    continue
+                the_cat.relationships.append(Relationship(the_cat, new_cat))
+                relationships.append(Relationship(new_cat, the_cat))
+            new_cat.relationships = relationships
+            add_siblings_to_cat(new_cat,cat_class)
+            game.clan.add_cat(new_cat)
+        print("Here")
 
     def other_interactions(self, cat):
         if randint(1, 100) != 1:
@@ -1642,9 +1674,6 @@ class Events(object):
                     gender = 'she-cat'
                 game.cur_events_list.append(
                     str(cat.name) + " has realized that " + str(gender) + " doesn't describe how they feel anymore")        
-        
-        
-
 
 
 events_class = Events()

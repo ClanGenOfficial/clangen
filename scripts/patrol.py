@@ -66,7 +66,6 @@ class Patrol(object):
                 other_not_same = True
         else:
             self.patrol_other_cats = None
-        
 
     def add_possible_patrols(self):
 

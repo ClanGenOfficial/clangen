@@ -162,7 +162,6 @@ class Cat(object):
                 self.trait = choice(self.kit_traits)
 
         if self.skill is None:
-
             if self.moons <= 11:
                 self.skill = '???'
             elif self.status == 'warrior':
@@ -331,258 +330,6 @@ class Cat(object):
         # update class dictionary
         self.all_cats[self.ID] = self
 
-# ---------------------------------------------------------------------------- #
-#                               pelt & accessory                               #
-# ---------------------------------------------------------------------------- #
-
-    def describe_color(self):
-        color_name = ''
-        color_name = str(self.pelt.colour).lower()
-        if self.tortiecolour != None:
-            color_name = str(self.tortiecolour).lower()
-        if color_name == 'palegrey':
-            color_name = 'pale grey'
-        elif color_name == 'darkgrey':
-            color_name = 'dark grey'
-        elif color_name == 'paleginger':
-            color_name = 'pale ginger'
-        elif color_name == 'darkginger':
-            color_name = 'dark ginger'
-        elif color_name == 'lightbrown':
-            color_name = 'light brown'
-        elif color_name == 'darkbrown':
-            color_name = 'dark brown'
-        if self.pelt.name == "Tabby":
-            color_name = color_name + ' tabby'
-        elif self.pelt.name == "Speckled":
-            color_name = color_name + ' speckled'
-        elif self.pelt.name == "Bengal":
-            color_name = color_name + ' bengal'
-        elif self.pelt.name == "Marbled":
-            color_name = color_name + ' marbled tabby'
-        elif self.pelt.name == "Rosette":
-            color_name = color_name + ' rosetted'
-        elif self.pelt.name == "Ticked":
-            color_name = color_name + ' ticked tabby'
-        elif self.pelt.name == "Smoke":
-            color_name = color_name + ' smoke'
-
-        elif self.pelt.name == "Tortie":
-            if self.tortiepattern not in ["tortiesolid", "tortiesmoke"]:
-                color_name = color_name + ' torbie'
-            else:
-                color_name = color_name + ' tortie'
-        elif self.pelt.name == "Calico":
-            if self.tortiepattern not in ["tortiesolid", "tortiesmoke"]:
-                color_name = color_name + ' tabico'
-            else:
-                color_name = color_name + ' calico'
-        # enough to comment but not make calico
-        if self.white_patches is not None:
-            if self.white_patches in little_white + mid_white:
-                color_name = color_name + ' and white'
-            # and white
-            elif self.white_patches in high_white:
-                if self.pelt.name != "Calico":
-                    color_name = color_name + ' and white'
-            # white and
-            elif self.white_patches in mostly_white:
-                color_name = 'white and ' + color_name
-            # colorpoint
-            elif self.white_patches in point_markings:
-                color_name = color_name + ' point'
-                if color_name == 'dark ginger point' or color_name == 'ginger point':
-                    color_name = 'flame point'
-            # vitiligo
-            elif self.white_patches in vit:
-                color_name = color_name + ' with vitiligo'
-        else:
-            color_name = color_name
-
-        if color_name == 'tortie':
-            color_name = 'tortoiseshell'
-
-        if self.white_patches == 'FULLWHITE':
-            color_name = 'white'
-
-        if color_name == 'white and white':
-            color_name = 'white'
-
-        return color_name
-
-    def accessory_display_name(self):
-        accessory = str(self.accessory).lower()
-        acc_display = accessory
-        if self.accessory != None:
-            if self.accessory in collars:
-                collar_color = None
-                if accessory.startswith('crimson'):
-                    collar_color = 'crimson'
-                elif accessory.startswith('blue'):
-                    collar_color = 'blue'
-                elif accessory.startswith('yellow'):
-                    collar_color = 'yellow'
-                elif accessory.startswith('cyan'):
-                    collar_color = 'cyan'
-                elif accessory.startswith('red'):
-                    collar_color = 'red'
-                elif accessory.startswith('lime'):
-                    collar_color = 'lime'
-                elif accessory.startswith('green'):
-                    collar_color = 'green'
-                elif accessory.startswith('rainbow'):
-                    collar_color = 'rainbow'
-                elif accessory.startswith('black'):
-                    collar_color = 'black'
-                elif accessory.startswith('spikes'):
-                    collar_color = 'spiky'
-                elif accessory.startswith('pink'):
-                    collar_color = 'pink'
-                elif accessory.startswith('purple'):
-                    collar_color = 'purple'
-                elif accessory.startswith('multi'):
-                    collar_color = 'multi'
-                if accessory.endswith('bow') and not accessory == 'rainbow':
-                    acc_display = collar_color + ' bow'
-                elif accessory.endswith('bell'):
-                    acc_display = collar_color + ' bell collar'
-                else:
-                    acc_display = collar_color + ' collar'
-
-            elif self.accessory in wild_accessories:
-                if acc_display == 'blue feathers':
-                    acc_display = 'crow feathers'
-                elif acc_display == 'red feathers':
-                    acc_display = 'cardinal feathers'
-                else:
-                    acc_display = acc_display
-
-            else:
-                acc_display = acc_display
-
-            if self.accessory == None:
-                acc_display = None
-        return acc_display
-
-    def plural_acc_names(self, plural, singular):
-        accessory = self.accessory.lower()
-        acc_display = accessory
-        if accessory == 'maple leaf':
-            if plural == True:
-                acc_display = 'maple leaves'
-            if singular == True:
-                acc_display = 'maple leaf'
-        elif accessory == 'holly':
-            if plural == True:
-                acc_display = 'holly berries'
-            if singular == True:
-                acc_display = 'holly berry'
-        elif accessory == 'blue berries':
-            if plural == True:
-                acc_display = 'blueberries'
-            if singular == True:
-                acc_display = 'blueberry'
-        elif accessory == 'forget me nots':
-            if plural == True:
-                acc_display = 'forget me nots'
-            if singular == True:
-                acc_display = 'forget me not flower'
-        elif accessory == 'rye stalk':
-            if plural == True:
-                acc_display = 'rye stalks'
-            if singular == True:
-                acc_display = 'rye stalk'
-        elif accessory == 'laurel':
-            if plural == True:
-                acc_display = 'laurel'
-            if singular == True:
-                acc_display = 'laurel plant'
-        elif accessory == 'bluebells':
-            if plural == True:
-                acc_display = 'bluebells'
-            if singular == True:
-                acc_display = 'bluebell flower'
-        elif accessory == 'nettle':
-            if plural == True:
-                acc_display = 'nettles'
-            if singular == True:
-                acc_display = 'nettle'
-        elif accessory == 'poppy':
-            if plural == True:
-                acc_display = 'poppies'
-            if singular == True:
-                acc_display = 'poppy flower'
-        elif accessory == 'lavender':
-            if plural == True:
-                acc_display = 'lavender'
-            if singular == True:
-                acc_display = 'lavender flower'
-        elif accessory == 'herbs':
-            if plural == True:
-                acc_display = 'herbs'
-            if singular == True:
-                acc_display = 'herb'
-        elif accessory == 'petals':
-            if plural == True:
-                acc_display = 'petals'
-            if singular == True:
-                acc_display = 'petal'
-        elif accessory == 'dry herbs':
-            if plural == True:
-                acc_display = 'dry herbs'
-            if singular == True:
-                acc_display = 'dry herb'
-        elif accessory == 'oak leaves':
-            if plural == True:
-                acc_display = 'oak leaves'
-            if singular == True:
-                acc_display = 'oak leaf'
-        elif accessory == 'catmint':
-            if plural == True:
-                acc_display = 'catnip'
-            if singular == True:
-                acc_display = 'catnip leaf'
-        elif accessory == 'maple seed':
-            if plural == True:
-                acc_display = 'maple seeds'
-            if singular == True:
-                acc_display = 'maple seed'
-        elif accessory == 'juniper':
-            if plural == True:
-                acc_display = 'juniper berries'
-            if singular == True:
-                acc_display = 'juniper berry'
-        elif accessory == 'red feathers':
-            if plural == True:
-                acc_display = 'cardinal feathers'
-            if singular == True:
-                acc_display = 'cardinal feather'
-        elif accessory == 'blue feathers':
-            if plural == True:
-                acc_display = 'crow feathers'
-            if singular == True:
-                acc_display = 'crow feather'
-        elif accessory == 'jay feathers':
-            if plural == True:
-                acc_display = 'jay feathers'
-            if singular == True:
-                acc_display = 'jay feather'
-        elif accessory == 'moth wings':
-            if plural == True:
-                acc_display = 'moth wings'
-            if singular == True:
-                acc_display = 'moth wing'
-        elif accessory == 'cicada wings':
-            if plural == True:
-                acc_display = 'cicada wings'
-            if singular == True:
-                acc_display = 'cicada wing'
-
-        if plural is True and singular is False:
-            return acc_display
-        elif singular is True and plural is False:
-            return acc_display
-
     def describe_cat(self):
         if self.genderalign == 'male' or self.genderalign == "transmasc" or self.genderalign == "trans male":
             sex = 'tom'
@@ -591,7 +338,7 @@ class Cat(object):
         else:
             sex = 'cat'
         description = str(self.pelt.length).lower() + '-furred'
-        description += ' ' + self.describe_color() + ' ' + sex
+        description += ' ' + describe_color(self.pelt, self.tortiecolour, self.tortiepattern, self.white_patches) + ' ' + sex
         return description
 
 # ---------------------------------------------------------------------------- #
@@ -653,7 +400,7 @@ class Cat(object):
         return False
 
 # ---------------------------------------------------------------------------- #
-#                                 relationship                                 #
+#                                 relationships                                #
 # ---------------------------------------------------------------------------- #
 
     def is_potential_mate(self, other_cat, for_love_interest = False, former_mentor_setting = game.settings['romantic with former mentor']):

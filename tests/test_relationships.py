@@ -8,10 +8,9 @@ class TestRelationshipInteraction(unittest.TestCase):
 
     def test_love_action_possibilities_sibling(self):
         # given
-        cat1 = Cat()
-        cat2 = Cat()
-        cat1.siblings.append(cat2.ID)
-        cat2.siblings.append(cat1.ID)
+        parent = Cat()
+        cat1 = Cat(parent1=parent.ID)
+        cat2 = Cat(parent1=parent.ID)
 
         relationship = Relationship(cat1,cat2)
         relationship.link_relationship()

@@ -1,5 +1,185 @@
 from .pelts import *
 
+# ---------------------------------------------------------------------------- #
+#                               utility functions                              #
+# ---------------------------------------------------------------------------- #
+
+def plural_acc_names(accessory ,plural, singular):
+    acc_display = accessory
+    if accessory == 'maple leaf':
+        if plural == True:
+            acc_display = 'maple leaves'
+        if singular == True:
+            acc_display = 'maple leaf'
+    elif accessory == 'holly':
+        if plural == True:
+            acc_display = 'holly berries'
+        if singular == True:
+            acc_display = 'holly berry'
+    elif accessory == 'blue berries':
+        if plural == True:
+            acc_display = 'blueberries'
+        if singular == True:
+            acc_display = 'blueberry'
+    elif accessory == 'forget me nots':
+        if plural == True:
+            acc_display = 'forget me nots'
+        if singular == True:
+            acc_display = 'forget me not flower'
+    elif accessory == 'rye stalk':
+        if plural == True:
+            acc_display = 'rye stalks'
+        if singular == True:
+            acc_display = 'rye stalk'
+    elif accessory == 'laurel':
+        if plural == True:
+            acc_display = 'laurel'
+        if singular == True:
+            acc_display = 'laurel plant'
+    elif accessory == 'bluebells':
+        if plural == True:
+            acc_display = 'bluebells'
+        if singular == True:
+            acc_display = 'bluebell flower'
+    elif accessory == 'nettle':
+        if plural == True:
+            acc_display = 'nettles'
+        if singular == True:
+            acc_display = 'nettle'
+    elif accessory == 'poppy':
+        if plural == True:
+            acc_display = 'poppies'
+        if singular == True:
+            acc_display = 'poppy flower'
+    elif accessory == 'lavender':
+        if plural == True:
+            acc_display = 'lavender'
+        if singular == True:
+            acc_display = 'lavender flower'
+    elif accessory == 'herbs':
+        if plural == True:
+            acc_display = 'herbs'
+        if singular == True:
+            acc_display = 'herb'
+    elif accessory == 'petals':
+        if plural == True:
+            acc_display = 'petals'
+        if singular == True:
+            acc_display = 'petal'
+    elif accessory == 'dry herbs':
+        if plural == True:
+            acc_display = 'dry herbs'
+        if singular == True:
+            acc_display = 'dry herb'
+    elif accessory == 'oak leaves':
+        if plural == True:
+            acc_display = 'oak leaves'
+        if singular == True:
+            acc_display = 'oak leaf'
+    elif accessory == 'catmint':
+        if plural == True:
+            acc_display = 'catnip'
+        if singular == True:
+            acc_display = 'catnip leaf'
+    elif accessory == 'maple seed':
+        if plural == True:
+            acc_display = 'maple seeds'
+        if singular == True:
+            acc_display = 'maple seed'
+    elif accessory == 'juniper':
+        if plural == True:
+            acc_display = 'juniper berries'
+        if singular == True:
+            acc_display = 'juniper berry'
+    elif accessory == 'red feathers':
+        if plural == True:
+            acc_display = 'cardinal feathers'
+        if singular == True:
+            acc_display = 'cardinal feather'
+    elif accessory == 'blue feathers':
+        if plural == True:
+            acc_display = 'crow feathers'
+        if singular == True:
+            acc_display = 'crow feather'
+    elif accessory == 'jay feathers':
+        if plural == True:
+            acc_display = 'jay feathers'
+        if singular == True:
+            acc_display = 'jay feather'
+    elif accessory == 'moth wings':
+        if plural == True:
+            acc_display = 'moth wings'
+        if singular == True:
+            acc_display = 'moth wing'
+    elif accessory == 'cicada wings':
+        if plural == True:
+            acc_display = 'cicada wings'
+        if singular == True:
+            acc_display = 'cicada wing'
+
+    if plural is True and singular is False:
+        return acc_display
+    elif singular is True and plural is False:
+        return acc_display
+
+def accessory_display_name(accessory):
+    if not accessory:
+        return ''
+    accessory = accessory.lower()
+    acc_display = accessory
+    if accessory != None:
+        if accessory in collars:
+            collar_color = None
+            if accessory.startswith('crimson'):
+                collar_color = 'crimson'
+            elif accessory.startswith('blue'):
+                collar_color = 'blue'
+            elif accessory.startswith('yellow'):
+                collar_color = 'yellow'
+            elif accessory.startswith('cyan'):
+                collar_color = 'cyan'
+            elif accessory.startswith('red'):
+                collar_color = 'red'
+            elif accessory.startswith('lime'):
+                collar_color = 'lime'
+            elif accessory.startswith('green'):
+                collar_color = 'green'
+            elif accessory.startswith('rainbow'):
+                collar_color = 'rainbow'
+            elif accessory.startswith('black'):
+                collar_color = 'black'
+            elif accessory.startswith('spikes'):
+                collar_color = 'spiky'
+            elif accessory.startswith('pink'):
+                collar_color = 'pink'
+            elif accessory.startswith('purple'):
+                collar_color = 'purple'
+            elif accessory.startswith('multi'):
+                collar_color = 'multi'
+            if accessory.endswith('bow') and not accessory == 'rainbow':
+                acc_display = collar_color + ' bow'
+            elif accessory.endswith('bell'):
+                acc_display = collar_color + ' bell collar'
+            else:
+                acc_display = collar_color + ' collar'
+
+    elif accessory in wild_accessories:
+        if acc_display == 'blue feathers':
+            acc_display = 'crow feathers'
+        elif acc_display == 'red feathers':
+            acc_display = 'cardinal feathers'
+        else:
+            acc_display = acc_display
+    else:
+        acc_display = acc_display
+    if accessory == None:
+        acc_display = None
+    return acc_display
+
+# ---------------------------------------------------------------------------- #
+#                                init functions                                #
+# ---------------------------------------------------------------------------- #
+
 def init_eyes(cat):
     if cat.eye_colour != None:
         return
