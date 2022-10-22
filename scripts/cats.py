@@ -2441,7 +2441,7 @@ class Cat(object):
                             continue
             else:
                 print(self.name, 'NEW TRAIT TYPE: No change', chance)
-        if self.moons == 120:
+        if new_status == 'elder':
             chance = randint(0, 7)  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
@@ -2476,7 +2476,7 @@ class Cat(object):
         else:
             self.skill = self.skill
 
-        if self.moons >= 120 and self.status != 'leader' and self.status != 'medicine cat':
+        if new_status == 'elder' and self.status != 'leader' and self.status != 'medicine cat':
             self.skill = choice(self.elder_skills)
 
         self.status = new_status
