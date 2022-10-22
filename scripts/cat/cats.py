@@ -264,7 +264,7 @@ class Cat(object):
         return not self.dead
 
     def thoughts(self):
-        old_thoughts(self.all_cats)
+        old_thoughts(self)
 
     def status_change(self, new_status):
         # updates traits

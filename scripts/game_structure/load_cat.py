@@ -117,6 +117,9 @@ def json_load():
             filter(lambda inter_cat: cat.is_sibling(inter_cat), all_cats))
         cat.siblings = [sibling.ID for sibling in siblings]
 
+        # initialization of thoughts
+        cat.thoughts()
+
 def csv_load(all_cats):
     if game.switches['clan_list'][0].strip() == '':
         cat_data = ''

@@ -1,5 +1,5 @@
 from noise import snoise2
-import numpy as np
+from numpy import zeros
 import csv
 
 class World:
@@ -10,7 +10,7 @@ class World:
         self.height_map = self.generate_noise_map(self.seed + self.seed, 15)
 
     def generate_noise_map(self, seed, scale):
-        noise_tile = np.zeros(self.shape)
+        noise_tile = zeros(self.shape)
         for y in range(self.shape[0]):
             for x in range(self.shape[1]):
                 noise_tile[x][y] = snoise2(x/scale, y/scale, octaves=6, persistence = 0.5, lacunarity = 2.0, base=seed, repeatx=40,repeaty=44)

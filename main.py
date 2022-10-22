@@ -29,7 +29,6 @@ if if_clans > 0:
     try:
         load_cats(game.cat_class)
         clan_class.load_clan()
-        #cat_class.thoughts()
     except Exception:
         if not game.switches['error_message']:
             game.switches[

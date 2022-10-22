@@ -66,11 +66,11 @@ class Events(object):
             random.shuffle(cat_list)
             for cat in cat_list:
                 if not cat.dead and not cat.exiled:
+                    cat.thoughts()
                     relation_events.create_interaction(cat)
                     relation_events.handle_relationships(cat)
                     relation_events.check_if_having_kits(cat)
                     #relation_events.have_kits(cat)
-            cat_class.thoughts()
             self.check_clan_relations()
             game.clan.age += 1
             if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
@@ -795,7 +795,7 @@ class Events(object):
         for number in range(amount):
             new_cat = None
             if loner_name:
-                new_cat = Cat(moons=age, name=name, suffix='', status=status, gender=choice(['female', 'male']))
+                new_cat = Cat(moons=age, prefix=name, suffix='', status=status, gender=choice(['female', 'male']))
             else:
                 new_cat = Cat(moons=age, status=status, gender=choice(['female', 'male']))
             if skill:

@@ -135,8 +135,8 @@ class Clan(object):
             cat_class.all_cats.get(cat_id).create_new_relationships()
             if cat_class.all_cats.get(cat_id).status == 'apprentice':
                 cat_class.all_cats.get(cat_id).status_change('apprentice')
+            cat_class.all_cats.get(cat_id).thoughts()
 
-        cat_class.thoughts()
         game.save_cats()
         number_other_clans = randint(3, 5)
         for _ in range(number_other_clans):
