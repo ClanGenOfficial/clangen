@@ -3,6 +3,9 @@ from scripts.cat.cats import *
 
 class Relation_Events(object):
     """All relationship events."""
+
+    MAX_ATTEMPTS = 1000
+
     def __init__(self) -> None:
         self.living_cats = len(list(filter(lambda r: r.dead == False, cat_class.all_cats.copy().values())))
         self.event_sums = 0
@@ -67,6 +70,7 @@ class Relation_Events(object):
                 not relation.cat_to.dead, cat.relationships))
         random_cat = cat.all_cats.get(random_id)
         kitten_and_exiled = random_cat != None and random_cat.exiled and cat.age == "kitten"
+        attempts_left = Relation_Events.MAX_ATTEMPTS
         while len(relevant_relationship_list) < 1 or random_id == cat.ID or kitten_and_exiled:
             random_id = random.choice(cats_to_choose)
             random_cat = cat.all_cats.get(random_id)
@@ -75,6 +79,9 @@ class Relation_Events(object):
                 filter(
                     lambda relation: str(relation.cat_to) == str(random_id) and
                     not relation.cat_to.dead, cat.relationships))
+            attempts_left -= 1
+            if attempts_left <= 0:
+                return
         relevant_relationship = relevant_relationship_list[0]
         relevant_relationship.start_action()
 
