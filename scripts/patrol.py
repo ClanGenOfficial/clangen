@@ -1,13 +1,11 @@
-from asyncore import loop
-from os import name
-from pydoc import text
 from random import choice, randint
-from math import ceil, floor
-from .events import events_class
-from .game_essentials import *
-from .names import *
-from .cats import *
-from .pelts import *
+from math import floor
+
+from scripts.events import events_class
+from scripts.game_structure.game_essentials import *
+from scripts.cat.names import *
+from scripts.cat.cats import *
+from scripts.cat.pelts import *
 
 
 class Patrol(object):

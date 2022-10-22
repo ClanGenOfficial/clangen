@@ -1,9 +1,9 @@
 from random import choice, randint
-
-from scripts.utility import get_personality_compatibility
-from .game_essentials import *
 import copy
 import ujson
+
+from scripts.utility import get_personality_compatibility
+from scripts.game_structure.game_essentials import *
 
 # if another cat is involved
 THIRD_RELATIONSHIP_INCLUDED = {
@@ -21,7 +21,7 @@ EXILED_CATS = {
 }
 
 # IN increase or decrease
-resource_directory = "scripts/resources/relationship_events/"
+resource_directory = "resources/dicts/relationship_events/"
 
 NOT_AGE_SPECIFIC = None
 try:

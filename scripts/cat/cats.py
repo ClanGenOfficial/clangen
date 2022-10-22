@@ -1,15 +1,17 @@
-from .pelts import *
-from .names import *
-from .sprites import *
-from .game_essentials import *
-from .relationship import *
-from .thoughts import *
-from .utility import *
-from .appearance_utility import *
 from random import choice, randint
 import math
 import os.path
 import ujson
+
+from .pelts import *
+from .names import *
+from .sprites import *
+from .thoughts import *
+from .appearance_utility import *
+
+from scripts.utility import *
+from scripts.game_structure.game_essentials import *
+from scripts.relation.relationship import *
 
 
 class Cat(object):

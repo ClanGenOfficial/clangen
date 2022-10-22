@@ -1,7 +1,7 @@
-from .cats import *
-from .buttons import *
-from .relation_events import *
-from .load_cat import * 
+from scripts.cat.cats import *
+from scripts.relation.relation_events import *
+from scripts.game_structure.buttons import *
+from scripts.game_structure.load_cat import * 
 
 class Events(object):
     all_events = {}

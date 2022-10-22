@@ -1,14 +1,14 @@
-from .clan import *
-from .events import *
-from .patrol import *
-from .utility import *
-if mapavailable:
-    from .world import *
-
 import random
+from math import ceil
+
+from scripts.clan import *
+from scripts.events import *
+from scripts.patrol import *
+from scripts.utility import *
+if mapavailable:
+    from scripts.world import *
 
 random.seed()
-
 
 # SCREENS PARENT CLASS
 class Screens(object):
@@ -38,7 +38,7 @@ class StartScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
-        self.bg = pygame.image.load("resources/menu.png").convert()
+        self.bg = pygame.image.load("resources/images/menu.png").convert()
 
     def on_use(self):
         # background
@@ -486,224 +486,224 @@ class ClanScreen(Screens):
         if game.settings['dark mode']:
             if game.clan.biome == "Forest" and game.clan.camp_bg == 'camp1':
                 self._extracted_from_change_brightness_3(
-                    'resources/greenleafcamp_dark.png',
-                    'resources/newleafcamp_dark.png',
-                    'resources/leafbarecamp_dark.png',
-                    'resources/leaffallcamp_dark.png')
+                    'resources/images/greenleafcamp_dark.png',
+                    'resources/images/newleafcamp_dark.png',
+                    'resources/images/leafbarecamp_dark.png',
+                    'resources/images/leaffallcamp_dark.png')
             elif game.clan.biome == "Forest" and game.clan.camp_bg == 'camp2':
                 self._extracted_from_change_brightness_3(
-                    'resources/greenleafcamp2_dark.png',
-                    'resources/newleafcamp2_dark.png',
-                    'resources/leafbarecamp2_dark.png',
-                    'resources/leaffallcamp2_dark.png')
+                    'resources/images/greenleafcamp2_dark.png',
+                    'resources/images/newleafcamp2_dark.png',
+                    'resources/images/leafbarecamp2_dark.png',
+                    'resources/images/leaffallcamp2_dark.png')
             elif game.clan.biome == "Plains" and game.clan.camp_bg == 'camp1':
                 try:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_plains_dark.png',
-                        'resources/newleafcamp_plains_dark.png',
-                        'resources/leafbarecamp_plains_dark.png',
-                        'resources/leaffallcamp_plains_dark.png')
+                        'resources/images/greenleafcamp_plains_dark.png',
+                        'resources/images/newleafcamp_plains_dark.png',
+                        'resources/images/leafbarecamp_plains_dark.png',
+                        'resources/images/leaffallcamp_plains_dark.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_dark.png',
-                        'resources/newleafcamp_dark.png',
-                        'resources/leafbarecamp_dark.png',
-                        'resources/leaffallcamp_dark.png')
+                        'resources/images/greenleafcamp_dark.png',
+                        'resources/images/newleafcamp_dark.png',
+                        'resources/images/leafbarecamp_dark.png',
+                        'resources/images/leaffallcamp_dark.png')
             elif game.clan.biome == "Plains" and game.clan.camp_bg == 'camp2':
                 try:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_plains2_dark.png',
-                        'resources/newleafcamp_plains2_dark.png',
-                        'resources/leafbarecamp_plains2_dark.png',
-                        'resources/leaffallcamp_plains2_dark.png')
+                        'resources/images/greenleafcamp_plains2_dark.png',
+                        'resources/images/newleafcamp_plains2_dark.png',
+                        'resources/images/leafbarecamp_plains2_dark.png',
+                        'resources/images/leaffallcamp_plains2_dark.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_plains_dark.png',
-                        'resources/newleafcamp_plains_dark.png',
-                        'resources/leafbarecamp_plains_dark.png',
-                        'resources/leaffallcamp_plains_dark.png')
+                        'resources/images/greenleafcamp_plains_dark.png',
+                        'resources/images/newleafcamp_plains_dark.png',
+                        'resources/images/leafbarecamp_plains_dark.png',
+                        'resources/images/leaffallcamp_plains_dark.png')
             elif game.clan.biome == "Beach" and game.clan.camp_bg == 'camp1':
                 try:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_beach_dark.png',
-                        'resources/newleafcamp_beach_dark.png',
-                        'resources/leafbarecamp_beach_dark.png',
-                        'resources/leaffallcamp_beach_dark.png')
+                        'resources/images/greenleafcamp_beach_dark.png',
+                        'resources/images/newleafcamp_beach_dark.png',
+                        'resources/images/leafbarecamp_beach_dark.png',
+                        'resources/images/leaffallcamp_beach_dark.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_dark.png',
-                        'resources/newleafcamp_dark.png',
-                        'resources/leafbarecamp_dark.png',
-                        'resources/leaffallcamp_dark.png')
+                        'resources/images/greenleafcamp_dark.png',
+                        'resources/images/newleafcamp_dark.png',
+                        'resources/images/leafbarecamp_dark.png',
+                        'resources/images/leaffallcamp_dark.png')
             elif game.clan.biome == "Beach" and game.clan.camp_bg == 'camp2':
                 try:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_beach2_dark.png',
-                        'resources/newleafcamp_beach2_dark.png',
-                        'resources/leafbarecamp_beach2_dark.png',
-                        'resources/leaffallcamp_beach2_dark.png')
+                        'resources/images/greenleafcamp_beach2_dark.png',
+                        'resources/images/newleafcamp_beach2_dark.png',
+                        'resources/images/leafbarecamp_beach2_dark.png',
+                        'resources/images/leaffallcamp_beach2_dark.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_beach_dark.png',
-                        'resources/newleafcamp_beach_dark.png',
-                        'resources/leafbarecamp_beach_dark.png',
-                        'resources/leaffallcamp_beach_dark.png')
+                        'resources/images/greenleafcamp_beach_dark.png',
+                        'resources/images/newleafcamp_beach_dark.png',
+                        'resources/images/leafbarecamp_beach_dark.png',
+                        'resources/images/leaffallcamp_beach_dark.png')
             elif game.clan.biome == "Mountainous" and game.clan.camp_bg == 'camp1':
                 try:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_mountain_dark.png',
-                        'resources/newleafcamp_mountain_dark.png',
-                        'resources/leafbarecamp_mountain_dark.png',
-                        'resources/leaffallcamp_mountain_dark.png')
+                        'resources/images/greenleafcamp_mountain_dark.png',
+                        'resources/images/newleafcamp_mountain_dark.png',
+                        'resources/images/leafbarecamp_mountain_dark.png',
+                        'resources/images/leaffallcamp_mountain_dark.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_dark.png',
-                        'resources/newleafcamp_dark.png',
-                        'resources/leafbarecamp_dark.png',
-                        'resources/leaffallcamp_dark.png')
+                        'resources/images/greenleafcamp_dark.png',
+                        'resources/images/newleafcamp_dark.png',
+                        'resources/images/leafbarecamp_dark.png',
+                        'resources/images/leaffallcamp_dark.png')
             elif game.clan.biome == "Mountainous" and game.clan.camp_bg == 'camp2':
                 try:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_mountain2_dark.png',
-                        'resources/newleafcamp_mountain2_dark.png',
-                        'resources/leafbarecamp_mountain2_dark.png',
-                        'resources/leaffallcamp_mountain2_dark.png')
+                        'resources/images/greenleafcamp_mountain2_dark.png',
+                        'resources/images/newleafcamp_mountain2_dark.png',
+                        'resources/images/leafbarecamp_mountain2_dark.png',
+                        'resources/images/leaffallcamp_mountain2_dark.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_mountain_dark.png',
-                        'resources/newleafcamp_mountain_dark.png',
-                        'resources/leafbarecamp_mountain_dark.png',
-                        'resources/leaffallcamp_mountain_dark.png')
+                        'resources/images/greenleafcamp_mountain_dark.png',
+                        'resources/images/newleafcamp_mountain_dark.png',
+                        'resources/images/leafbarecamp_mountain_dark.png',
+                        'resources/images/leaffallcamp_mountain_dark.png')
             elif game.clan.biome == "Desert":
                 try:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_desert_dark.png',
-                        'resources/newleafcamp_desert_dark.png',
-                        'resources/leafbarecamp_desert_dark.png',
-                        'resources/leaffallcamp_desert_dark.png')
+                        'resources/images/greenleafcamp_desert_dark.png',
+                        'resources/images/newleafcamp_desert_dark.png',
+                        'resources/images/leafbarecamp_desert_dark.png',
+                        'resources/images/leaffallcamp_desert_dark.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_dark.png',
-                        'resources/newleafcamp_dark.png',
-                        'resources/leafbarecamp_dark.png',
-                        'resources/leaffallcamp_dark.png')
+                        'resources/images/greenleafcamp_dark.png',
+                        'resources/images/newleafcamp_dark.png',
+                        'resources/images/leafbarecamp_dark.png',
+                        'resources/images/leaffallcamp_dark.png')
             else:
                 self._extracted_from_change_brightness_3(
-                    'resources/greenleafcamp_dark.png',
-                    'resources/newleafcamp_dark.png',
-                    'resources/leafbarecamp_dark.png',
-                    'resources/leaffallcamp_dark.png')
+                    'resources/images/greenleafcamp_dark.png',
+                    'resources/images/newleafcamp_dark.png',
+                    'resources/images/leafbarecamp_dark.png',
+                    'resources/images/leaffallcamp_dark.png')
 
         else:
             if game.clan.biome == "Forest" and game.clan.camp_bg == 'camp1':
                 self._extracted_from_change_brightness_3(
-                    'resources/greenleafcamp.png',
-                    'resources/newleafcamp.png',
-                    'resources/leafbarecamp.png',
-                    'resources/leaffallcamp.png')
+                    'resources/images/greenleafcamp.png',
+                    'resources/images/newleafcamp.png',
+                    'resources/images/leafbarecamp.png',
+                    'resources/images/leaffallcamp.png')
             elif game.clan.biome == "Forest" and game.clan.camp_bg == 'camp2':
                 self._extracted_from_change_brightness_3(
-                    'resources/greenleafcamp2.png',
-                    'resources/newleafcamp2.png',
-                    'resources/leafbarecamp2.png',
-                    'resources/leaffallcamp2.png')
+                    'resources/images/greenleafcamp2.png',
+                    'resources/images/newleafcamp2.png',
+                    'resources/images/leafbarecamp2.png',
+                    'resources/images/leaffallcamp2.png')
             elif game.clan.biome == "Plains" and game.clan.camp_bg == 'camp1':
                 try:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_plains.png',
-                        'resources/newleafcamp_plains.png',
-                        'resources/leafbarecamp_plains.png',
-                        'resources/leaffallcamp_plains.png')
+                        'resources/images/greenleafcamp_plains.png',
+                        'resources/images/newleafcamp_plains.png',
+                        'resources/images/leafbarecamp_plains.png',
+                        'resources/images/leaffallcamp_plains.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp.png',
-                        'resources/newleafcamp.png',
-                        'resources/leafbarecamp.png',
-                        'resources/leaffallcamp.png')
+                        'resources/images/greenleafcamp.png',
+                        'resources/images/newleafcamp.png',
+                        'resources/images/leafbarecamp.png',
+                        'resources/images/leaffallcamp.png')
             elif game.clan.biome == "Plains" and game.clan.camp_bg == 'camp2':
                 try:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_plains2.png',
-                        'resources/newleafcamp_plains2.png',
-                        'resources/leafbarecamp_plains2.png',
-                        'resources/leaffallcamp_plains2.png')
+                        'resources/images/greenleafcamp_plains2.png',
+                        'resources/images/newleafcamp_plains2.png',
+                        'resources/images/leafbarecamp_plains2.png',
+                        'resources/images/leaffallcamp_plains2.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_plains.png',
-                        'resources/newleafcamp_plains.png',
-                        'resources/leafbarecamp_plains.png',
-                        'resources/leaffallcamp_plains.png')
+                        'resources/images/greenleafcamp_plains.png',
+                        'resources/images/newleafcamp_plains.png',
+                        'resources/images/leafbarecamp_plains.png',
+                        'resources/images/leaffallcamp_plains.png')
             elif game.clan.biome == "Beach" and game.clan.camp_bg == 'camp1':
                 try:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_beach.png',
-                        'resources/newleafcamp_beach.png',
-                        'resources/leafbarecamp_beach.png',
-                        'resources/leaffallcamp_beach.png')
+                        'resources/images/greenleafcamp_beach.png',
+                        'resources/images/newleafcamp_beach.png',
+                        'resources/images/leafbarecamp_beach.png',
+                        'resources/images/leaffallcamp_beach.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp.png',
-                        'resources/newleafcamp.png',
-                        'resources/leafbarecamp.png',
-                        'resources/leaffallcamp.png')
+                        'resources/images/greenleafcamp.png',
+                        'resources/images/newleafcamp.png',
+                        'resources/images/leafbarecamp.png',
+                        'resources/images/leaffallcamp.png')
             elif game.clan.biome == "Beach" and game.clan.camp_bg == 'camp2':
                 try:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_beach2.png',
-                        'resources/newleafcamp_beach2.png',
-                        'resources/leafbarecamp_beach2.png',
-                        'resources/leaffallcamp_beach2.png')
+                        'resources/images/greenleafcamp_beach2.png',
+                        'resources/images/newleafcamp_beach2.png',
+                        'resources/images/leafbarecamp_beach2.png',
+                        'resources/images/leaffallcamp_beach2.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_beach.png',
-                        'resources/newleafcamp_beach.png',
-                        'resources/leafbarecamp_beach.png',
-                        'resources/leaffallcamp_beach.png')
+                        'resources/images/greenleafcamp_beach.png',
+                        'resources/images/newleafcamp_beach.png',
+                        'resources/images/leafbarecamp_beach.png',
+                        'resources/images/leaffallcamp_beach.png')
             elif game.clan.biome == "Mountainous" and game.clan.camp_bg == 'camp1':
                 try:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_mountain.png',
-                        'resources/newleafcamp_mountain.png',
-                        'resources/leafbarecamp_mountain.png',
-                        'resources/leaffallcamp_mountain.png')
+                        'resources/images/greenleafcamp_mountain.png',
+                        'resources/images/newleafcamp_mountain.png',
+                        'resources/images/leafbarecamp_mountain.png',
+                        'resources/images/leaffallcamp_mountain.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp.png',
-                        'resources/newleafcamp.png',
-                        'resources/leafbarecamp.png',
-                        'resources/leaffallcamp.png')
+                        'resources/images/greenleafcamp.png',
+                        'resources/images/newleafcamp.png',
+                        'resources/images/leafbarecamp.png',
+                        'resources/images/leaffallcamp.png')
             elif game.clan.biome == "Mountainous" and game.clan.camp_bg == 'camp2':
                 try:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_mountain2.png',
-                        'resources/newleafcamp_mountain2.png',
-                        'resources/leafbarecamp_mountain2.png',
-                        'resources/leaffallcamp_mountain2.png')
+                        'resources/images/greenleafcamp_mountain2.png',
+                        'resources/images/newleafcamp_mountain2.png',
+                        'resources/images/leafbarecamp_mountain2.png',
+                        'resources/images/leaffallcamp_mountain2.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_mountain.png',
-                        'resources/newleafcamp_mountain.png',
-                        'resources/leafbarecamp_mountain.png',
-                        'resources/leaffallcamp_mountain.png')
+                        'resources/images/greenleafcamp_mountain.png',
+                        'resources/images/newleafcamp_mountain.png',
+                        'resources/images/leafbarecamp_mountain.png',
+                        'resources/images/leaffallcamp_mountain.png')
             elif game.clan.biome == "Desert":
                 try:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp_desert.png',
-                        'resources/newleafcamp_desert.png',
-                        'resources/leafbarecamp_desert.png',
-                        'resources/leaffallcamp_desert.png')
+                        'resources/images/greenleafcamp_desert.png',
+                        'resources/images/newleafcamp_desert.png',
+                        'resources/images/leafbarecamp_desert.png',
+                        'resources/images/leaffallcamp_desert.png')
                 except:
                     self._extracted_from_change_brightness_3(
-                        'resources/greenleafcamp.png',
-                        'resources/newleafcamp.png',
-                        'resources/leafbarecamp.png',
-                        'resources/leaffallcamp.png')
+                        'resources/images/greenleafcamp.png',
+                        'resources/images/newleafcamp.png',
+                        'resources/images/leafbarecamp.png',
+                        'resources/images/leaffallcamp.png')
             else:
                 self._extracted_from_change_brightness_3(
-                    'resources/greenleafcamp.png',
-                    'resources/newleafcamp.png',
-                    'resources/leafbarecamp.png',
-                    'resources/leaffallcamp.png')
+                    'resources/images/greenleafcamp.png',
+                    'resources/images/newleafcamp.png',
+                    'resources/images/leafbarecamp.png',
+                    'resources/images/leaffallcamp.png')
 
     # TODO Rename this here and in `change_brightness`
     def _extracted_from_change_brightness_3(self, arg0, arg1, arg2, arg3):
@@ -722,7 +722,7 @@ class StarClanScreen(Screens):
     def __init__(self, name=None):
         super().__init__(name)
         self.starclan_bg = pygame.transform.scale(
-            pygame.image.load("resources/starclanbg.png").convert(),
+            pygame.image.load("resources/images/starclanbg.png").convert(),
             (800, 700))
 
     def on_use(self):
@@ -806,10 +806,10 @@ class MakeClanScreen(Screens):
         # layout
         if game.settings['dark mode']:
             name_clan_img = pygame.image.load(
-                'resources/name_clan.png').convert_alpha()
+                'resources/images/name_clan.png').convert_alpha()
         else:
             name_clan_img = pygame.image.load(
-                'resources/name_clan_light.png').convert_alpha()
+                'resources/images/name_clan_light.png').convert_alpha()
         screen.blit(name_clan_img, (0, 0))
 
         self.game_screen.blit(game.naming_box, (150, 620))
@@ -845,10 +845,10 @@ class MakeClanScreen(Screens):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
         if game.settings['dark mode']:
             leader_img = pygame.image.load(
-                'resources/leader.png').convert_alpha()
+                'resources/images/leader.png').convert_alpha()
         else:
             leader_img = pygame.image.load(
-                'resources/leader_light.png').convert_alpha()
+                'resources/images/leader_light.png').convert_alpha()
         screen.blit(leader_img, (0, 400))
         for u in range(6):
             buttons.draw_button((50, 150 + 50 * u),
@@ -905,10 +905,10 @@ class MakeClanScreen(Screens):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
         if game.settings['dark mode']:
             deputy_img = pygame.image.load(
-                'resources/deputy.png').convert_alpha()
+                'resources/images/deputy.png').convert_alpha()
         else:
             deputy_img = pygame.image.load(
-                'resources/deputy_light.png').convert_alpha()
+                'resources/images/deputy_light.png').convert_alpha()
         screen.blit(deputy_img, (0, 400))
 
         for u in range(6):
@@ -967,10 +967,10 @@ class MakeClanScreen(Screens):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
         if game.settings['dark mode']:
             medic_img = pygame.image.load(
-                'resources/medic.png').convert_alpha()
+                'resources/images/medic.png').convert_alpha()
         else:
             medic_img = pygame.image.load(
-                'resources/med_light.png').convert_alpha()
+                'resources/images/med_light.png').convert_alpha()
         screen.blit(medic_img, (0, 400))
 
         for u in range(6):
@@ -1035,10 +1035,10 @@ class MakeClanScreen(Screens):
     def fifth_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
         if game.settings['dark mode']:
-            clan_img = pygame.image.load('resources/clan.png').convert_alpha()
+            clan_img = pygame.image.load('resources/images/clan.png').convert_alpha()
         else:
             clan_img = pygame.image.load(
-                'resources/clan_light.png').convert_alpha()
+                'resources/images/clan_light.png').convert_alpha()
         screen.blit(clan_img, (0, 400))
         for u in range(6):
             if game.switches['leader'] == u:
@@ -1151,7 +1151,7 @@ class MakeClanScreen(Screens):
         if mapavailable:
             for y in range(44):
                 for x in range(40):
-                    noisevalue = self.world.check_noisetile(x, y)
+                    noisevalue = self.world.check_noise_tile(x, y)
                     if noisevalue > 0.1:
                         #buttons.draw_maptile_button((x*TILESIZE,y*TILESIZE),image=(pygame.transform.scale(terrain.images[1],(TILESIZE,TILESIZE))))
                         buttons.draw_button((x * 16, y * 16),
@@ -1464,78 +1464,78 @@ class MakeClanScreen(Screens):
         if game.settings['dark mode']:
             if game.switches['biome'] == "Forest":
                 self.change_camp_art(
-                    'resources/greenleafcamp_dark.png',
-                    'resources/greenleafcamp2_dark.png')
+                    'resources/images/greenleafcamp_dark.png',
+                    'resources/images/greenleafcamp2_dark.png')
             elif game.switches['biome'] == "Plains":
                 try:
                     self.change_camp_art(
-                        'resources/greenleafcamp_plains_dark.png',
-                        'resources/greenleafcamp_plains2_dark.png')
+                        'resources/images/greenleafcamp_plains_dark.png',
+                        'resources/images/greenleafcamp_plains2_dark.png')
                 except:
                     self.change_camp_art(
-                        'resources/greenleafcamp_plains_dark.png',
-                        'resources/greenleafcamp_plains_dark.png')
+                        'resources/images/greenleafcamp_plains_dark.png',
+                        'resources/images/greenleafcamp_plains_dark.png')
             elif game.switches['biome'] == "Beach":
                 try:
                     self.change_camp_art(
-                        'resources/greenleafcamp_beach_dark.png',
-                        'resources/greenleafcamp_beach2_dark.png')
+                        'resources/images/greenleafcamp_beach_dark.png',
+                        'resources/images/greenleafcamp_beach2_dark.png')
                 except:
                     self.change_camp_art(
-                        'resources/greenleafcamp_beach_dark.png',
-                        'resources/greenleafcamp_beach_dark.png')
+                        'resources/images/greenleafcamp_beach_dark.png',
+                        'resources/images/greenleafcamp_beach_dark.png')
             elif game.switches['biome'] == "Mountainous":
                 try:
                     self.change_camp_art(
-                        'resources/greenleafcamp_mountain_dark.png',
-                        'resources/greenleafcamp_mountain2_dark.png')
+                        'resources/images/greenleafcamp_mountain_dark.png',
+                        'resources/images/greenleafcamp_mountain2_dark.png')
                 except:
                     self.change_camp_art(
-                        'resources/greenleafcamp_mountain_dark.png',
-                        'resources/greenleafcamp_mountain_dark.png')
+                        'resources/images/greenleafcamp_mountain_dark.png',
+                        'resources/images/greenleafcamp_mountain_dark.png')
 
             else:
                 self.change_camp_art(
-                    'resources/greenleafcamp_dark.png',
-                    'resources/greenleafcamp2_dark.png')
+                    'resources/images/greenleafcamp_dark.png',
+                    'resources/images/greenleafcamp2_dark.png')
 
         else:
             if game.switches['biome'] == "Forest":
                 self.change_camp_art(
-                    'resources/greenleafcamp.png',
-                    'resources/greenleafcamp2.png')
+                    'resources/images/greenleafcamp.png',
+                    'resources/images/greenleafcamp2.png')
             elif game.switches['biome'] == "Plains":
                 try:
                     self.change_camp_art(
-                        'resources/greenleafcamp_plains.png',
-                        'resources/greenleafcamp_plains2.png')
+                        'resources/images/greenleafcamp_plains.png',
+                        'resources/images/greenleafcamp_plains2.png')
                 except:
                     self.change_camp_art(
-                        'resources/greenleafcamp_plains.png',
-                        'resources/greenleafcamp_plains.png')
+                        'resources/images/greenleafcamp_plains.png',
+                        'resources/images/greenleafcamp_plains.png')
             elif game.switches['biome'] == "Beach":
                 try:
                     self.change_camp_art(
-                        'resources/greenleafcamp_beach.png',
-                        'resources/greenleafcamp_beach2.png')
+                        'resources/images/greenleafcamp_beach.png',
+                        'resources/images/greenleafcamp_beach2.png')
                 except:
                     self.change_camp_art(
-                        'resources/greenleafcamp_beach.png',
-                        'resources/greenleafcamp_beach.png')
+                        'resources/images/greenleafcamp_beach.png',
+                        'resources/images/greenleafcamp_beach.png')
             elif game.switches['biome'] == "Mountainous":
                 try:
                     self.change_camp_art(
-                        'resources/greenleafcamp_mountain.png',
-                        'resources/greenleafcamp_mountain2.png')
+                        'resources/images/greenleafcamp_mountain.png',
+                        'resources/images/greenleafcamp_mountain2.png')
                 except:
                     self.change_camp_art(
-                        'resources/greenleafcamp_mountain.png',
-                        'resources/greenleafcamp_mountain.png')
+                        'resources/images/greenleafcamp_mountain.png',
+                        'resources/images/greenleafcamp_mountain.png')
 
             else:
                 self.change_camp_art(
-                    'resources/greenleafcamp.png',
-                    'resources/greenleafcamp2.png')
+                    'resources/images/greenleafcamp.png',
+                    'resources/images/greenleafcamp2.png')
 
     def change_camp_art(self, arg0, arg1):
         self.camp1 = pygame.transform.scale(
@@ -2131,139 +2131,139 @@ class ProfileScreen(Screens):
         if game.settings['dark mode']:
             if the_cat.dead or game.clan.instructor.ID == the_cat.ID:
                 self._extracted_from_change_brightness_plt(
-                    'resources/starclanplatform_dark.png',
-                    'resources/starclanplatform_dark.png',
-                    'resources/starclanplatform_dark.png',
-                    'resources/starclanplatform_dark.png')
+                    'resources/images/starclanplatform_dark.png',
+                    'resources/images/starclanplatform_dark.png',
+                    'resources/images/starclanplatform_dark.png',
+                    'resources/images/starclanplatform_dark.png')
             elif game.clan.biome == "Forest":
                 self._extracted_from_change_brightness_plt(
-                    'resources/greenleafplatform_dark.png',
-                    'resources/newleafplatform_dark.png',
-                    'resources/leafbareplatform_dark.png',
-                    'resources/leaffallplatform_dark.png')
+                    'resources/images/greenleafplatform_dark.png',
+                    'resources/images/newleafplatform_dark.png',
+                    'resources/images/leafbareplatform_dark.png',
+                    'resources/images/leaffallplatform_dark.png')
             elif game.clan.biome == "Plains":
                 try:
                     self._extracted_from_change_brightness_plt(
-                        'resources/greenleafplatform_plains_dark.png',
-                        'resources/newleafplatform_plains_dark.png',
-                        'resources/leafbareplatform_plains_dark.png',
-                        'resources/leaffallplatform_plains_dark.png')
+                        'resources/images/greenleafplatform_plains_dark.png',
+                        'resources/images/newleafplatform_plains_dark.png',
+                        'resources/images/leafbareplatform_plains_dark.png',
+                        'resources/images/leaffallplatform_plains_dark.png')
                 except:
                     self._extracted_from_change_brightness_plt(
-                        'resources/greenleafplatform_dark.png',
-                        'resources/newleafplatform_dark.png',
-                        'resources/leafbareplatform_dark.png',
-                        'resources/leaffallplatform_dark.png')
+                        'resources/images/greenleafplatform_dark.png',
+                        'resources/images/newleafplatform_dark.png',
+                        'resources/images/leafbareplatform_dark.png',
+                        'resources/images/leaffallplatform_dark.png')
             elif game.clan.biome == "Beach":
                 try:
                     self._extracted_from_change_brightness_plt(
-                        'resources/greenleafplatform_beach_dark.png',
-                        'resources/newleafplatform_beach_dark.png',
-                        'resources/leafbareplatform_beach_dark.png',
-                        'resources/leaffallplatform_beach_dark.png')
+                        'resources/images/greenleafplatform_beach_dark.png',
+                        'resources/images/newleafplatform_beach_dark.png',
+                        'resources/images/leafbareplatform_beach_dark.png',
+                        'resources/images/leaffallplatform_beach_dark.png')
                 except:
                     self._extracted_from_change_brightness_plt(
-                        'resources/greenleafplatform_dark.png',
-                        'resources/newleafplatform_dark.png',
-                        'resources/leafbareplatform_dark.png',
-                        'resources/leaffallplatform_dark.png')
+                        'resources/images/greenleafplatform_dark.png',
+                        'resources/images/newleafplatform_dark.png',
+                        'resources/images/leafbareplatform_dark.png',
+                        'resources/images/leaffallplatform_dark.png')
             elif game.clan.biome == "Mountainous":
                 try:
                     self._extracted_from_change_brightness_plt(
-                        'resources/greenleafplatform_mountain_dark.png',
-                        'resources/newleafplatform_mountain_dark.png',
-                        'resources/leafbareplatform_mountain_dark.png',
-                        'resources/leaffallplatform_mountain_dark.png')
+                        'resources/images/greenleafplatform_mountain_dark.png',
+                        'resources/images/newleafplatform_mountain_dark.png',
+                        'resources/images/leafbareplatform_mountain_dark.png',
+                        'resources/images/leaffallplatform_mountain_dark.png')
                 except:
                     self._extracted_from_change_brightness_plt(
-                        'resources/greenleafplatform_dark.png',
-                        'resources/newleafplatform_dark.png',
-                        'resources/leafbareplatform_dark.png',
-                        'resources/leaffallplatform_dark.png')
+                        'resources/images/greenleafplatform_dark.png',
+                        'resources/images/newleafplatform_dark.png',
+                        'resources/images/leafbareplatform_dark.png',
+                        'resources/images/leaffallplatform_dark.png')
             elif game.clan.biome == "Desert":
                 try:
                     self._extracted_from_change_brightness_plt(
-                        'resources/greenleafplatform_desert_dark.png',
-                        'resources/newleafplatform_desert_dark.png',
-                        'resources/leafbareplatform_desert_dark.png',
-                        'resources/leaffallplatform_desert_dark.png')
+                        'resources/images/greenleafplatform_desert_dark.png',
+                        'resources/images/newleafplatform_desert_dark.png',
+                        'resources/images/leafbareplatform_desert_dark.png',
+                        'resources/images/leaffallplatform_desert_dark.png')
                 except:
                     self._extracted_from_change_brightness_plt(
-                        'resources/greenleafplatform_dark.png',
-                        'resources/newleafplatform_dark.png',
-                        'resources/leafbareplatform_dark.png',
-                        'resources/leaffallplatform_dark.png')
+                        'resources/images/greenleafplatform_dark.png',
+                        'resources/images/newleafplatform_dark.png',
+                        'resources/images/leafbareplatform_dark.png',
+                        'resources/images/leaffallplatform_dark.png')
             else:
                 self._extracted_from_change_brightness_plt(
-                    'resources/greenleafplatform_dark.png',
-                    'resources/newleafplatform_dark.png',
-                    'resources/leafbareplatform_dark.png',
-                    'resources/leaffallplatform_dark.png')
+                    'resources/images/greenleafplatform_dark.png',
+                    'resources/images/newleafplatform_dark.png',
+                    'resources/images/leafbareplatform_dark.png',
+                    'resources/images/leaffallplatform_dark.png')
 
         else:
             if the_cat.dead:
                 self._extracted_from_change_brightness_plt(
-                    'resources/starclanplatform.png',
-                    'resources/starclanplatform.png',
-                    'resources/starclanplatform.png',
-                    'resources/starclanplatform.png',)
+                    'resources/images/starclanplatform.png',
+                    'resources/images/starclanplatform.png',
+                    'resources/images/starclanplatform.png',
+                    'resources/images/starclanplatform.png',)
             elif game.clan.biome == "Forest":
                 self._extracted_from_change_brightness_plt(
-                    'resources/greenleafplatform.png',
-                    'resources/newleafplatform.png',
-                    'resources/leafbareplatform.png',
-                    'resources/leaffallplatform.png')
+                    'resources/images/greenleafplatform.png',
+                    'resources/images/newleafplatform.png',
+                    'resources/images/leafbareplatform.png',
+                    'resources/images/leaffallplatform.png')
             elif game.clan.biome == "Plains":
                 self._extracted_from_change_brightness_plt(
-                    'resources/greenleafplatform_plains.png',
-                    'resources/newleafplatform_plains.png',
-                    'resources/leafbareplatform_plains.png',
-                    'resources/leaffallplatform_plains.png')
+                    'resources/images/greenleafplatform_plains.png',
+                    'resources/images/newleafplatform_plains.png',
+                    'resources/images/leafbareplatform_plains.png',
+                    'resources/images/leaffallplatform_plains.png')
             elif game.clan.biome == "Beach":
                 try:
                     self._extracted_from_change_brightness_plt(
-                        'resources/greenleafplatform_beach.png',
-                        'resources/newleafplatform_beach.png',
-                        'resources/leafbareplatform_beach.png',
-                        'resources/leaffallplatform_beach.png')
+                        'resources/images/greenleafplatform_beach.png',
+                        'resources/images/newleafplatform_beach.png',
+                        'resources/images/leafbareplatform_beach.png',
+                        'resources/images/leaffallplatform_beach.png')
                 except:
                     self._extracted_from_change_brightness_plt(
-                        'resources/greenleafplatform.png',
-                        'resources/newleafplatform.png',
-                        'resources/leafbareplatform.png',
-                        'resources/leaffallplatform.png')
+                        'resources/images/greenleafplatform.png',
+                        'resources/images/newleafplatform.png',
+                        'resources/images/leafbareplatform.png',
+                        'resources/images/leaffallplatform.png')
             elif game.clan.biome == "Mountainous":
                 try:
                     self._extracted_from_change_brightness_plt(
-                        'resources/greenleafplatform_mountain.png',
-                        'resources/newleafplatform_mountain.png',
-                        'resources/leafbareplatform_mountain.png',
-                        'resources/leaffallplatform_mountain.png')
+                        'resources/images/greenleafplatform_mountain.png',
+                        'resources/images/newleafplatform_mountain.png',
+                        'resources/images/leafbareplatform_mountain.png',
+                        'resources/images/leaffallplatform_mountain.png')
                 except:
                     self._extracted_from_change_brightness_plt(
-                        'resources/greenleafplatform.png',
-                        'resources/newleafplatform.png',
-                        'resources/leafbareplatform.png',
-                        'resources/leaffallplatform.png')
+                        'resources/images/greenleafplatform.png',
+                        'resources/images/newleafplatform.png',
+                        'resources/images/leafbareplatform.png',
+                        'resources/images/leaffallplatform.png')
             elif game.clan.biome == "Desert":
                 try:
                     self._extracted_from_change_brightness_plt(
-                        'resources/greenleafplatform_desert.png',
-                        'resources/newleafplatform_desert.png',
-                        'resources/leafbareplatform_desert.png',
-                        'resources/leaffallplatform_desert.png')
+                        'resources/images/greenleafplatform_desert.png',
+                        'resources/images/newleafplatform_desert.png',
+                        'resources/images/leafbareplatform_desert.png',
+                        'resources/images/leaffallplatform_desert.png')
                 except:
                     self._extracted_from_change_brightness_plt(
-                        'resources/greenleafplatform.png',
-                        'resources/newleafplatform.png',
-                        'resources/leafbareplatform.png',
-                        'resources/leaffallplatform.png')
+                        'resources/images/greenleafplatform.png',
+                        'resources/images/newleafplatform.png',
+                        'resources/images/leafbareplatform.png',
+                        'resources/images/leaffallplatform.png')
             else:
                 self._extracted_from_change_brightness_plt(
-                    'resources/greenleafplatform.png',
-                    'resources/newleafplatform.png',
-                    'resources/leafbareplatform.png',
-                    'resources/leaffallplatform.png')
+                    'resources/images/greenleafplatform.png',
+                    'resources/images/newleafplatform.png',
+                    'resources/images/leafbareplatform.png',
+                    'resources/images/leaffallplatform.png')
 
     # TODO Rename this here and in `change_brightness`
     def _extracted_from_change_brightness_plt(self, arg0, arg1, arg2, arg3):
@@ -2712,14 +2712,14 @@ class OtherScreen(Screens):
 # def choose_banner():
 # if game.clan is not None:
 #     # if game.clan.current_season == 'Leaf-fall':
-#     fall = pygame.image.load('resources/seasonbanners/fall/fall banner.png')
-#     fall_fog = pygame.image.load('resources/seasonbanners/fall/fall banner fog.png')
-#     fall_night = pygame.image.load('resources/seasonbanners/fall/fall banner night.png')
-#     fall_night_fog = pygame.image.load('resources/seasonbanners/fall/fall banner night fog.png')
-#     fall_night_overcast = pygame.image.load('resources/seasonbanners/fall/fall banner night overcast.png')
-#     fall_night_rain = pygame.image.load('resources/seasonbanners/fall/fall banner night rain.png')
-#     fall_overcast = pygame.image.load('resources/seasonbanners/fall/fall banner overcast.png')
-#     fall_rain = pygame.image.load('resources/seasonbanners/fall/fall banner rain.png')
+#     fall = pygame.image.load('resources/images/seasonbanners/fall/fall banner.png')
+#     fall_fog = pygame.image.load('resources/images/seasonbanners/fall/fall banner fog.png')
+#     fall_night = pygame.image.load('resources/images/seasonbanners/fall/fall banner night.png')
+#     fall_night_fog = pygame.image.load('resources/images/seasonbanners/fall/fall banner night fog.png')
+#     fall_night_overcast = pygame.image.load('resources/images/seasonbanners/fall/fall banner night overcast.png')
+#     fall_night_rain = pygame.image.load('resources/images/seasonbanners/fall/fall banner night rain.png')
+#     fall_overcast = pygame.image.load('resources/images/seasonbanners/fall/fall banner overcast.png')
+#     fall_rain = pygame.image.load('resources/images/seasonbanners/fall/fall banner rain.png')
 #     leaffall = [fall, fall_fog, fall_night, fall_night_fog, fall_night_overcast, fall_night_rain, fall_overcast,
 #                 fall_rain]
 #     return choice(leaffall)

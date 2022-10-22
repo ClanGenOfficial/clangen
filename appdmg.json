@@ -1,6 +1,6 @@
 {
     "title": "Clangen",
-    "background": "resources/mac_installer_bg_blank.png",
+    "background": "resources/images/mac_installer_bg_blank.png",
     "icon-size": 75,
     "window": {
         "size": {

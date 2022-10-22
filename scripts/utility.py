@@ -1,14 +1,14 @@
 import ujson
-from .sprites import *
-from .pelts import *
 
-from .game_essentials import *
+from scripts.cat.sprites import *
+from scripts.cat.pelts import *
+from scripts.game_structure.game_essentials import *
 
 # ---------------------------------------------------------------------------- #
 #                       Relationship / Traits / Relative                       #
 # ---------------------------------------------------------------------------- #
 
-resource_directory = "scripts/resources/"
+resource_directory = "resources/dicts/"
 PERSONALITY_COMPATIBILITY = None
 try:
     with open(f"{resource_directory}personality_compatibility.json",

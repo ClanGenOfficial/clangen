@@ -1,5 +1,5 @@
-from .cats import *
-from .utility import *
+from scripts.utility import *
+from scripts.cat.cats import *
 
 class Relation_Events(object):
     """All relationship events."""

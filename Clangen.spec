@@ -39,7 +39,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon='resources/icon.png',
+    icon='resources/images/icon.png',
 )
 coll = COLLECT(
     exe,
@@ -54,6 +54,6 @@ coll = COLLECT(
 app = BUNDLE(
     coll,
     name='Clangen.app',
-    icon='resources/icon.png',
+    icon='resources/images/icon.png',
     bundle_identifier=None,
 )

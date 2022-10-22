@@ -1,9 +1,9 @@
-from .cats import *
-from .text import *
-from .load_cat import *
-from .cats import *
+from scripts.cat.cats import *
+from scripts.game_structure.text import *
+from scripts.game_structure.load_cat import *
+
 try:
-    from .world import *
+    from scripts.world import *
     mapavailable = True
 except:
     mapavailable = False

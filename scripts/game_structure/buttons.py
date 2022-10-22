@@ -1,7 +1,8 @@
 from .text import *
-from .cats import *
 from .load_cat import *
 from .game_essentials import *
+
+from scripts.cat.cats import *
 
 
 class Button(object):
@@ -40,15 +41,15 @@ class Button(object):
         """
         is_clickable = False
         if available:
-            image_path = f'resources/{path}.png'
+            image_path = f'resources/images/{path}.png'
         else:
-            image_path = f'resources/{path}_unavailable.png'
+            image_path = f'resources/images/{path}_unavailable.png'
         image = pygame.image.load(image_path).convert_alpha()
         button = pygame.transform.scale(image, (192, 35))
         collided = self.used_screen.blit(button, pos)
         if available and collided.collidepoint(self.used_mouse.pos):
             is_clickable = True
-            image_path = f'resources/{path}_hover.png'
+            image_path = f'resources/images/{path}_hover.png'
             image = pygame.image.load(image_path).convert_alpha()
             button = pygame.transform.scale(image, (192, 35))
         self.used_screen.blit(button, pos)
@@ -97,7 +98,7 @@ class Button(object):
         dynamic_image = False
         if image is not None and text != '' and text is not None:
             dynamic_image = True
-            image = f"resources/{image}"
+            image = f"resources/images/{image}"
         colour = self.frame_colour if available else self.unavailable_colour
         if image is None:
             if game.settings['hotkey display'] and hotkey is not None:
@@ -375,15 +376,15 @@ buttons = Button()
 def draw_bar(value, pos_x, pos_y):
     # Loading Bar and variables
     bar_bg = pygame.image.load(
-        "resources/relations_border.png").convert_alpha()
+        "resources/images/relations_border.png").convert_alpha()
     original_bar = pygame.image.load(
-        "resources/relation_bar.png").convert_alpha()
+        "resources/images/relation_bar.png").convert_alpha()
 
     if game.settings['dark mode']:
         bar_bg = pygame.image.load(
-            "resources/relations_border_dark.png").convert_alpha()
+            "resources/images/relations_border_dark.png").convert_alpha()
         original_bar = pygame.image.load(
-            "resources/relation_bar_dark.png").convert_alpha()
+            "resources/images/relation_bar_dark.png").convert_alpha()
 
     bg_rect = bar_bg.get_rect(midleft=(pos_x, pos_y))
     screen.blit(bar_bg, bg_rect)

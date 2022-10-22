@@ -1,7 +1,8 @@
 import unittest
 import ujson
-from scripts.cats import Cat
-from scripts.relationship import Relationship
+
+from scripts.cat.cats import Cat
+from scripts.relation.relationship import Relationship
 
 class TestRelationshipInteraction(unittest.TestCase):
 
@@ -16,7 +17,7 @@ class TestRelationshipInteraction(unittest.TestCase):
         relationship.link_relationship()
 
         LOVE = None
-        resource_directory = "scripts/resources/relationship_events/"
+        resource_directory = "resources/dicts/relationship_events/"
         with open(f"{resource_directory}love.json", 'r') as read_file:
             LOVE = ujson.loads(read_file.read())
 
@@ -39,7 +40,7 @@ class TestRelationshipInteraction(unittest.TestCase):
         relationship.link_relationship()
 
         LOVE = None
-        resource_directory = "scripts/resources/relationship_events/"
+        resource_directory = "resources/dicts/relationship_events/"
         with open(f"{resource_directory}love.json", 'r') as read_file:
             LOVE = ujson.loads(read_file.read())
 
@@ -65,7 +66,7 @@ class TestRelationshipInteraction(unittest.TestCase):
         relationship.link_relationship()
 
         LOVE = None
-        resource_directory = "scripts/resources/relationship_events/"
+        resource_directory = "resources/dicts/relationship_events/"
         with open(f"{resource_directory}love.json", 'r') as read_file:
             LOVE = ujson.loads(read_file.read())
 
@@ -89,7 +90,7 @@ class TestRelationshipInteraction(unittest.TestCase):
         relationship.link_relationship()
 
         LOVE = None
-        resource_directory = "scripts/resources/relationship_events/"
+        resource_directory = "resources/dicts/relationship_events/"
         with open(f"{resource_directory}love.json", 'r') as read_file:
             LOVE = ujson.loads(read_file.read())
 
@@ -112,7 +113,7 @@ class TestRelationshipInteraction(unittest.TestCase):
         relationship.link_relationship()
 
         LOVE = None
-        resource_directory = "scripts/resources/relationship_events/"
+        resource_directory = "resources/dicts/relationship_events/"
         with open(f"{resource_directory}love.json", 'r') as read_file:
             LOVE = ujson.loads(read_file.read())
 

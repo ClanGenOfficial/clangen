@@ -1,7 +1,8 @@
 from copy import deepcopy
 import unittest
-from scripts.cats import Cat
-from scripts.relationship import Relationship
+
+from scripts.cat.cats import Cat
+from scripts.relation.relationship import Relationship
 
 
 class TestCreationAge(unittest.TestCase):

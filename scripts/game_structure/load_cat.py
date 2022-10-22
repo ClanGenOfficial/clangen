@@ -1,6 +1,6 @@
 from .game_essentials import *
-from .cats import *
 
+from scripts.cat.cats import *
 
 def load_cats(cat_class):
     directory = 'saves/' + game.switches['clan_list'][0] + '/clan_cats.json'

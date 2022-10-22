@@ -3,12 +3,12 @@ import os
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
-from scripts.screens import *
-from scripts.load_cat import * 
+from scripts.game_structure.screens import *
+from scripts.game_structure.load_cat import *
 
 # P Y G A M E
 clock = pygame.time.Clock()
-pygame.display.set_icon(pygame.image.load('resources/icon.png'))
+pygame.display.set_icon(pygame.image.load('resources/images/icon.png'))
 
 # LOAD cats & clan
 if not os.path.exists('saves/clanlist.txt'):
