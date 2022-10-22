@@ -3,7 +3,11 @@ import os
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
-from scripts.game_structure.screens import *
+from scripts.screens.all_screens import screen
+from scripts.game_structure.text import verdana
+from scripts.game_structure.buttons import buttons
+from scripts.clan import clan_class
+#from scripts.screens.all_screens import *
 from scripts.game_structure.load_cat import *
 
 # P Y G A M E
@@ -260,7 +264,7 @@ while True:
     # update
     game.update_game()
     if game.switch_screens:
-        screens.all_screens[game.current_screen].screen_switches()
+        game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
     # END FRAME
     clock.tick(30)

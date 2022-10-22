@@ -4,9 +4,9 @@ from scripts.game_structure.load_cat import *
 
 try:
     from scripts.world import *
-    mapavailable = True
+    map_available = True
 except:
-    mapavailable = False
+    map_available = False
 from sys import exit
 
 
@@ -142,7 +142,7 @@ class Clan(object):
         for _ in range(number_other_clans):
             self.all_clans.append(OtherClan())
         self.save_clan()
-        if mapavailable:
+        if map_available:
             save_map(game.map_info, game.clan.name)
 
         if game.switches['camp_bg'] is None:
