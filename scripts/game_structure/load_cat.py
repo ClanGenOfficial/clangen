@@ -1,13 +1,16 @@
+from math import floor
 from .game_essentials import *
 
-from scripts.cat.cats import *
+from scripts.cat.cats import Cat
+from scripts.cat.pelts import choose_pelt
+from scripts.utility import update_sprite
 
-def load_cats(cat_class):
+def load_cats():
     directory = 'saves/' + game.switches['clan_list'][0] + '/clan_cats.json'
     if os.path.exists(directory):
         json_load()
     else:
-        csv_load(cat_class.all_cats)
+        csv_load(Cat.all_cats)
 
 def json_load():
     all_cats = []
@@ -224,7 +227,7 @@ def csv_load(all_cats):
                         'very low', 'low', 'slightly low', 'average',
                         'somewhat high', 'high', 'very high', 'master', 'max'
                     ]
-                    the_cat.experience_level = experiencelevels[math.floor(
+                    the_cat.experience_level = experiencelevels[floor(
                         int(the_cat.experience) / 10)]
                 else:
                     the_cat.experience = 0
@@ -272,18 +275,18 @@ def csv_load(all_cats):
             game.switches[
                 'error_message'] = 'There was an error loading this clan\'s mentors/apprentices. Last cat read was ' + str(
                     inter_cat)
-            inter_cat.mentor = cat_class.all_cats.get(inter_cat.mentor)
+            inter_cat.mentor = Cat.all_cats.get(inter_cat.mentor)
             apps = []
             former_apps = []
             for app_id in inter_cat.apprentice:
-                app = cat_class.all_cats.get(app_id)
+                app = Cat.all_cats.get(app_id)
                 # Make sure if cat isn't an apprentice, they're a former apprentice
                 if 'apprentice' in app.status:
                     apps.append(app)
                 else:
                     former_apps.append(app)
             for f_app_id in inter_cat.former_apprentices:
-                f_app = cat_class.all_cats.get(f_app_id)
+                f_app = Cat.all_cats.get(f_app_id)
                 former_apps.append(f_app)
             inter_cat.apprentice = apps
             inter_cat.former_apprentices = former_apps

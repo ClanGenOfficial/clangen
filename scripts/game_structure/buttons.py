@@ -2,7 +2,7 @@ from .text import *
 from .load_cat import *
 from .game_essentials import *
 
-from scripts.cat.cats import *
+from scripts.cat.cats import Cat
 
 
 class Button(object):
@@ -192,22 +192,22 @@ class Button(object):
                 cat_value.no_kits = False
             elif text == 'Exile Cat':
                 # it is the leader, manage all the things
-                if cat_class.all_cats[cat_value].status == 'leader':
+                if Cat.all_cats[cat_value].status == 'leader':
                     game.clan.leader.exiled = True
                     game.clan.leader_lives = 1
-                if cat_class.all_cats[cat_value].status == 'deputy':
+                if Cat.all_cats[cat_value].status == 'deputy':
                     game.clan.deputy.exiled = True
                     game.clan.deputy = None
-                cat_class.all_cats[cat_value].exiled = True
-                cat_class.other_cats[cat_value] = cat_class.all_cats[cat_value]
+                Cat.all_cats[cat_value].exiled = True
+                Cat.cat_class.other_cats[cat_value] = Cat.all_cats[cat_value]
             elif text == 'Change to Trans Male':
-                cat_class.all_cats[cat_value].genderalign = "trans male"
+                Cat.all_cats[cat_value].genderalign = "trans male"
             elif text == 'Change to Trans Female':
-                cat_class.all_cats[cat_value].genderalign = "trans female"
+                Cat.all_cats[cat_value].genderalign = "trans female"
             elif text == 'Change to Nonbinary/Specify Gender':
-                cat_class.all_cats[cat_value].genderalign = "nonbinary"
+                Cat.all_cats[cat_value].genderalign = "nonbinary"
             elif text == 'Change to Cisgender':
-                cat_class.all_cats[cat_value].genderalign = cat_class.all_cats[
+                Cat.all_cats[cat_value].genderalign = Cat.all_cats[
                     cat_value].gender
             elif cat_value is None and arrow is None:
                 self.activate(values)
@@ -234,19 +234,19 @@ class Button(object):
                 elif text == 'Allow kits':
                     cat_value.no_kits = False
                 elif text == 'Exile Cat':
-                    cat_class.all_cats[cat_value].exiled = True
-                    cat_class.other_cats[cat_value] = cat_class.all_cats[
+                    Cat.all_cats[cat_value].exiled = True
+                    Cat.cat_class.other_cats[cat_value] = Cat.all_cats[
                         cat_value]
                     game.switches['cur_screen'] = 'other screen'
                 elif text == 'Change to Trans Male':
-                    cat_class.all_cats[cat_value].genderalign = "trans male"
+                    Cat.all_cats[cat_value].genderalign = "trans male"
                 elif text == 'Change to Trans Female':
-                    cat_class.all_cats[cat_value].genderalign = "trans female"
+                    Cat.all_cats[cat_value].genderalign = "trans female"
                 elif text == 'Change to Nonbinary/Specify Gender':
-                    cat_class.all_cats[cat_value].genderalign = "nonbinary"
+                    Cat.all_cats[cat_value].genderalign = "nonbinary"
                 elif text == 'Change to Cisgender':
-                    cat_class.all_cats[
-                        cat_value].genderalign = cat_class.all_cats[
+                    Cat.all_cats[
+                        cat_value].genderalign = Cat.all_cats[
                             cat_value].gender
                 elif cat_value is None and arrow is None:
                     self.activate(values)
@@ -286,7 +286,7 @@ class Button(object):
                     cat_value.set_mate(value)
                     value.set_mate(cat_value)
                 else:
-                    cat_mate = cat_class.all_cats[cat_value.mate]
+                    cat_mate = Cat.all_cats[cat_value.mate]
                     cat_mate.unset_mate(breakup = True)
                     cat_value.unset_mate(breakup = True)
                 game.switches['mate'] = None
@@ -349,7 +349,7 @@ class Button(object):
 
     def change_name(self, name, cat_value):
         """Changes name of cat_value to name specified in textbox"""
-        cat_value = cat_class.all_cats.get(cat_value)
+        cat_value = Cat.all_cats.get(cat_value)
         if game.switches['naming_text'] != '':
             name = game.switches['naming_text'].split(' ')
             cat_value.name.prefix = name[0]
@@ -362,7 +362,7 @@ class Button(object):
             game.switches['naming_text'] = ''
 
     def change_gender(self, name, cat_value):
-        cat_value = cat_class.all_cats.get(cat_value)
+        cat_value = Cat.all_cats.get(cat_value)
         if game.switches['naming_text'] != '':
             cat_value.genderalign = game.switches['naming_text']
             game.save_cats()

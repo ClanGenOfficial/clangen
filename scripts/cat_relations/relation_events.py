@@ -7,7 +7,7 @@ class Relation_Events(object):
     MAX_ATTEMPTS = 1000
 
     def __init__(self) -> None:
-        self.living_cats = len(list(filter(lambda r: r.dead == False, cat_class.all_cats.copy().values())))
+        self.living_cats = len(list(filter(lambda r: r.dead == False, Cat.all_cats.copy().values())))
         self.event_sums = 0
         self.had_one_event = False
         pass
@@ -19,7 +19,7 @@ class Relation_Events(object):
 
         cats_to_choose = list(
             filter(lambda iter_cat_id: iter_cat_id != cat.ID,
-                   cat_class.all_cats.copy()))
+                   Cat.all_cats.copy()))
         # increase chance of cats, which are already befriended
         like_threshold = 30
         relevant_relationships = list(
@@ -45,7 +45,7 @@ class Relation_Events(object):
             kittens = list(
                 filter(
                     lambda cat_id: cat.all_cats.get(cat_id).age == "kitten" and
-                    cat_id != cat.ID, cat_class.all_cats.copy()))
+                    cat_id != cat.ID, Cat.all_cats.copy()))
             amount = int(len(cats_to_choose) / 4)
             if len(kittens) > 0:
                 amount = int(len(cats_to_choose) / len(kittens))
@@ -56,7 +56,7 @@ class Relation_Events(object):
             apprentices = list(
                 filter(
                     lambda cat_id: cat.all_cats.get(cat_id).age == "adolescent"
-                    and cat_id != cat.ID, cat_class.all_cats.copy()))
+                    and cat_id != cat.ID, Cat.all_cats.copy()))
             amount = int(len(cats_to_choose) / 4)
             if len(apprentices) > 0:
                 amount = int(len(cats_to_choose) / len(apprentices))
@@ -97,7 +97,7 @@ class Relation_Events(object):
             self.big_love_check(cat)
 
         random.shuffle(cat.relationships)
-        range_number = int(len(cat_class.all_cats.keys()) / 1.5)
+        range_number = int(len(Cat.all_cats.keys()) / 1.5)
         if range_number > 20:
             range_number = 20
         for i in range(0, range_number):
@@ -108,21 +108,21 @@ class Relation_Events(object):
             cat_from_mate = None
             from_mate_in_clan = False
             if cat_from.mate != None:
-                if cat_from.mate not in cat_class.all_cats.keys():
+                if cat_from.mate not in Cat.all_cats.keys():
                     game.cur_events_list.insert(0, f"Cat #{cat_from} has a invalid mate. It will set to none.")
                     cat_from.mate = None
                     return
-                cat_from_mate = cat_class.all_cats.get(cat_from.mate)
+                cat_from_mate = Cat.all_cats.get(cat_from.mate)
                 from_mate_in_clan = not cat_from_mate.dead and not cat_from_mate.exiled
 
             cat_to = relationship.cat_to
             cat_to_mate = None
             if cat_to.mate != None:
-                if cat_to.mate not in cat_class.all_cats.keys():
+                if cat_to.mate not in Cat.all_cats.keys():
                     game.cur_events_list.insert(0, f"Cat #{cat_to} has a invalid mate. It will set to none.")
                     cat_to.mate = None
                     return
-                cat_to_mate = cat_class.all_cats.get(cat_to.mate)
+                cat_to_mate = Cat.all_cats.get(cat_to.mate)
 
             if relationship.opposite_relationship == None:
                 relationship.link_relationship()
@@ -180,7 +180,7 @@ class Relation_Events(object):
                 if (love_over_30 and normal_chance == 1) or (bigger_than_current
                                                     and bigger_love_chance == 1):
                     # break up the old relationships
-                    cat_from_mate = cat_class.all_cats.get(cat_from.mate)
+                    cat_from_mate = Cat.all_cats.get(cat_from.mate)
                     self.check_if_breakup(cat_from, cat_from_mate)
 
                     if cat_to_mate != None:
@@ -321,8 +321,8 @@ class Relation_Events(object):
 
         mate = None
         if cat.mate is not None:
-            if cat.mate in cat_class.all_cats:
-                mate = cat_class.all_cats[cat.mate]
+            if cat.mate in Cat.all_cats:
+                mate = Cat.all_cats[cat.mate]
             else:
                 game.cur_events_list.append(
                     f"Warning: {str(cat.name)}  has an invalid mate # {str(cat.mate)}. This has been unset.")
@@ -468,7 +468,7 @@ class Relation_Events(object):
             #create and update relationships
             relationships = []
             for cat_id in game.clan.clan_cats:
-                the_cat = cat_class.all_cats.get(cat_id)
+                the_cat = Cat.all_cats.get(cat_id)
                 if the_cat.dead or the_cat.exiled:
                     continue
                 if the_cat.ID in kit.get_parents():

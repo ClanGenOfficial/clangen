@@ -6,7 +6,7 @@ from .base_screens import Screens, draw_menu_buttons, cat_profiles
 
 from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
-from scripts.cat.cats import cat_class
+from scripts.cat.cats import Cat
 
 class ClanScreen(Screens):
 
@@ -32,10 +32,10 @@ class ClanScreen(Screens):
         hotkey_assign_1 = 1
         hotkey_assign_2 = 2
         for x in game.clan.clan_cats:
-            if not cat_class.all_cats[x].dead and cat_class.all_cats[
-                    x].in_camp and not cat_class.all_cats[x].exiled:
-                buttons.draw_button(cat_class.all_cats[x].placement,
-                                    image=cat_class.all_cats[x].sprite,
+            if not Cat.all_cats[x].dead and Cat.all_cats[
+                    x].in_camp and not Cat.all_cats[x].exiled:
+                buttons.draw_button(Cat.all_cats[x].placement,
+                                    image=Cat.all_cats[x].sprite,
                                     cat=x,
                                     cur_screen='profile screen',
                                     hotkey=[hotkey_assign_1, hotkey_assign_2])
@@ -65,33 +65,33 @@ class ClanScreen(Screens):
         game.clan.medicine_cat.placement = choice(p['medicine place'])
         for x in game.clan.clan_cats:
             i = randint(0, 20)
-            if cat_class.all_cats[x].status == 'apprentice':
+            if Cat.all_cats[x].status == 'apprentice':
                 if i < 13:
-                    cat_class.all_cats[x].placement = choice([
+                    Cat.all_cats[x].placement = choice([
                         choice(p['apprentice place']),
                         choice(p['clearing place'])
                     ])
 
                 elif i >= 19:
-                    cat_class.all_cats[x].placement = choice(p['leader place'])
+                    Cat.all_cats[x].placement = choice(p['leader place'])
                 else:
-                    cat_class.all_cats[x].placement = choice([
+                    Cat.all_cats[x].placement = choice([
                         choice(p['nursery place']),
                         choice(p['warrior place']),
                         choice(p['elder place']),
                         choice(p['medicine place'])
                     ])
 
-            elif cat_class.all_cats[x].status == 'deputy':
+            elif Cat.all_cats[x].status == 'deputy':
                 if i < 17:
-                    cat_class.all_cats[x].placement = choice([
+                    Cat.all_cats[x].placement = choice([
                         choice(p['warrior place']),
                         choice(p['leader place']),
                         choice(p['clearing place'])
                     ])
 
                 else:
-                    cat_class.all_cats[x].placement = choice([
+                    Cat.all_cats[x].placement = choice([
                         choice(p['nursery place']),
                         choice(p['leader place']),
                         choice(p['elder place']),
@@ -99,16 +99,16 @@ class ClanScreen(Screens):
                         choice(p['apprentice place'])
                     ])
 
-            elif cat_class.all_cats[x].status == 'elder':
-                cat_class.all_cats[x].placement = choice(p['elder place'])
-            elif cat_class.all_cats[x].status == 'kitten':
+            elif Cat.all_cats[x].status == 'elder':
+                Cat.all_cats[x].placement = choice(p['elder place'])
+            elif Cat.all_cats[x].status == 'kitten':
                 if i < 13:
-                    cat_class.all_cats[x].placement = choice(
+                    Cat.all_cats[x].placement = choice(
                         p['nursery place'])
                 elif i == 19:
-                    cat_class.all_cats[x].placement = choice(p['leader place'])
+                    Cat.all_cats[x].placement = choice(p['leader place'])
                 else:
-                    cat_class.all_cats[x].placement = choice([
+                    Cat.all_cats[x].placement = choice([
                         choice(p['clearing place']),
                         choice(p['warrior place']),
                         choice(p['elder place']),
@@ -116,19 +116,19 @@ class ClanScreen(Screens):
                         choice(p['apprentice place'])
                     ])
 
-            elif cat_class.all_cats[x].status in [
+            elif Cat.all_cats[x].status in [
                     'medicine cat apprentice', 'medicine cat'
             ]:
-                cat_class.all_cats[x].placement = choice(p['medicine place'])
-            elif cat_class.all_cats[x].status == 'warrior':
+                Cat.all_cats[x].placement = choice(p['medicine place'])
+            elif Cat.all_cats[x].status == 'warrior':
                 if i < 15:
-                    cat_class.all_cats[x].placement = choice([
+                    Cat.all_cats[x].placement = choice([
                         choice(p['warrior place']),
                         choice(p['clearing place'])
                     ])
 
                 else:
-                    cat_class.all_cats[x].placement = choice([
+                    Cat.all_cats[x].placement = choice([
                         choice(p['nursery place']),
                         choice(p['leader place']),
                         choice(p['elder place']),
@@ -183,8 +183,8 @@ class StarClanScreen(Screens):
         verdana_big_white.text(f'{game.clan.name}Clan', ('center', 30))
         verdana_white.text('StarClan Cat List', ('center', 100))
         dead_cats = [game.clan.instructor]
-        for x in range(len(cat_class.all_cats.values())):
-            the_cat = list(cat_class.all_cats.values())[x]
+        for x in range(len(Cat.all_cats.values())):
+            the_cat = list(Cat.all_cats.values())[x]
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled:
                 dead_cats.append(the_cat)
 
@@ -259,8 +259,8 @@ class ListScreen(Screens):
         verdana_big.text(game.clan.name + 'Clan', ('center', 30))
         verdana.text('ALL CATS LIST', ('center', 100))
         living_cats = []
-        for x in range(len(cat_class.all_cats.values())):
-            the_cat = list(cat_class.all_cats.values())[x]
+        for x in range(len(Cat.all_cats.values())):
+            the_cat = list(Cat.all_cats.values())[x]
             if not the_cat.dead and not the_cat.exiled:
                 living_cats.append(the_cat)
 
@@ -364,8 +364,8 @@ class AllegiancesScreen(Screens):
         living_cats = []
         game.allegiance_scroll_ct = 0
         game.allegiance_list = []
-        for x in range(len(cat_class.all_cats.values())):
-            the_cat = list(cat_class.all_cats.values())[x]
+        for x in range(len(Cat.all_cats.values())):
+            the_cat = list(Cat.all_cats.values())[x]
             if not the_cat.dead and not the_cat.exiled:
                 living_cats.append(the_cat)
         if game.clan.leader is not None:
@@ -411,8 +411,8 @@ class AllegiancesScreen(Screens):
         for living_cat_ in living_cats:
             if str(living_cat_.status
                    ) == 'kitten' and living_cat_.parent1 is not None:
-                if cat_class.all_cats[living_cat_.parent1].gender == 'male':
-                    if living_cat_.parent2 is None or cat_class.all_cats[
+                if Cat.all_cats[living_cat_.parent1].gender == 'male':
+                    if living_cat_.parent2 is None or Cat.all_cats[
                             living_cat_.parent2].gender == 'male':
                         queens.append(living_cat_.parent1)
                 else:

@@ -1,5 +1,5 @@
 from scripts.utility import update_sprite
-from scripts.cat.cats import cat_class
+from scripts.cat.cats import Cat
 from scripts.game_structure.buttons import buttons
 from scripts.game_structure.game_essentials import *
 from scripts.clan import map_available
@@ -32,7 +32,7 @@ def cat_profiles():
     game.choose_cats.clear()
     game.cat_buttons.clear()
     for x in game.clan.clan_cats:
-        game.choose_cats[x] = cat_class.all_cats[x]
+        game.choose_cats[x] = Cat.all_cats[x]
         update_sprite(game.choose_cats[x])
 
 def draw_menu_buttons():
@@ -85,21 +85,21 @@ def draw_next_prev_cat_buttons(the_cat):
         previous_cat = game.clan.instructor.ID
     if is_instructor:
         next_cat = 1
-    for check_cat in cat_class.all_cats:
-        if cat_class.all_cats[check_cat].ID == the_cat.ID:
+    for check_cat in Cat.all_cats:
+        if Cat.all_cats[check_cat].ID == the_cat.ID:
             next_cat = 1
-        if next_cat == 0 and cat_class.all_cats[
-                check_cat].ID != the_cat.ID and cat_class.all_cats[
-                    check_cat].dead == the_cat.dead and cat_class.all_cats[
-                        check_cat].ID != game.clan.instructor.ID and not cat_class.all_cats[
+        if next_cat == 0 and Cat.all_cats[
+                check_cat].ID != the_cat.ID and Cat.all_cats[
+                    check_cat].dead == the_cat.dead and Cat.all_cats[
+                        check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
                             check_cat].exiled:
-            previous_cat = cat_class.all_cats[check_cat].ID
-        elif next_cat == 1 and cat_class.all_cats[
-                check_cat].ID != the_cat.ID and cat_class.all_cats[
-                    check_cat].dead == the_cat.dead and cat_class.all_cats[
-                        check_cat].ID != game.clan.instructor.ID and not cat_class.all_cats[
+            previous_cat = Cat.all_cats[check_cat].ID
+        elif next_cat == 1 and Cat.all_cats[
+                check_cat].ID != the_cat.ID and Cat.all_cats[
+                    check_cat].dead == the_cat.dead and Cat.all_cats[
+                        check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
                             check_cat].exiled:
-            next_cat = cat_class.all_cats[check_cat].ID
+            next_cat = Cat.all_cats[check_cat].ID
         elif int(next_cat) > 1:
             break
 

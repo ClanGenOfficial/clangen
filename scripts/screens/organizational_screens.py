@@ -3,7 +3,7 @@ import pygame
 from .base_screens import Screens, draw_menu_buttons
 
 from scripts.clan import map_available
-from scripts.cat.cats import cat_class
+from scripts.cat.cats import Cat
 from scripts.world import save_map
 from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
@@ -65,7 +65,7 @@ class StartScreen(Screens):
 
     def screen_switches(self):
         if game.clan is not None:
-            key_copy = tuple(cat_class.all_cats.keys())
+            key_copy = tuple(Cat.all_cats.keys())
             for x in key_copy:
                 if x not in game.clan.clan_cats:
                     game.clan.remove_cat(x)
@@ -331,7 +331,7 @@ class StatsScreen(Screens):
         kit_num = 0
         elder_num = 0
         starclan_num = 0
-        for cat in cat_class.all_cats.values():
+        for cat in Cat.all_cats.values():
             if not cat.dead:
                 living_num += 1
                 if cat.status == 'warrior':

@@ -242,12 +242,6 @@ class Cat(object):
         else:
             self.experience = 0
 
-        experience_levels = [
-            'very low', 'low', 'slightly low', 'average', 'somewhat high',
-            'high', 'very high', 'master', 'max'
-        ]
-        self.experience_level = experience_levels[math.floor(self.experience / 10)]
-
         self.paralyzed = False
         self.no_kits = False
         self.exiled = False
@@ -275,7 +269,7 @@ class Cat(object):
         if self.mate != None:
             self.mate = None
             if type(self.mate) == str:
-                mate = cat_class.all_cats.get(self.mate)
+                mate = Cat.all_cats.get(self.mate)
                 mate.mate = None
             elif type(self.mate) == Cat:
                 self.mate.mate = None
@@ -381,17 +375,16 @@ class Cat(object):
         if self.exiled:
             # this is handled in events.py
             return
-
-        # increase moons is already handled in events.py function perform_ceremonies
         if self.dead:
             self.dead_for += 1
             return
 
+        self.moons += 1
         self.in_camp = 1
-        if self.moons <= 13:
+        if self.moons < 12:
             self.update_mentor()
 
-        self.update_age()
+        #self.update_age()
         self.update_skill() # should only called sometimes not every moon?
         self.thoughts()
         self.create_interaction()
@@ -406,7 +399,7 @@ class Cat(object):
 
         cats_to_choose = list(
             filter(lambda iter_cat_id: iter_cat_id != self.ID,
-                   cat_class.all_cats.copy()))
+                   Cat.all_cats.copy()))
         # increase chance of cats, which are already befriended
         like_threshold = 30
         relevant_relationships = list(
@@ -432,7 +425,7 @@ class Cat(object):
             kittens = list(
                 filter(
                     lambda cat_id: self.all_cats.get(cat_id).age == "kitten" and
-                    cat_id != self.ID, cat_class.all_cats.copy()))
+                    cat_id != self.ID, Cat.all_cats.copy()))
             amount = int(len(cats_to_choose) / 4)
             if len(kittens) > 0:
                 amount = int(len(cats_to_choose) / len(kittens))
@@ -443,7 +436,7 @@ class Cat(object):
             apprentices = list(
                 filter(
                     lambda cat_id: self.all_cats.get(cat_id).age == "adolescent"
-                    and cat_id != self.ID, cat_class.all_cats.copy()))
+                    and cat_id != self.ID, Cat.all_cats.copy()))
             amount = int(len(cats_to_choose) / 4)
             if len(apprentices) > 0:
                 amount = int(len(cats_to_choose) / len(apprentices))
@@ -516,14 +509,14 @@ class Cat(object):
         left_parents = []
         right_parents = []
         if len(parents) == 2:
-            left_p = cat_class.all_cats.get(parents[0])
+            left_p = Cat.all_cats.get(parents[0])
             if left_p != None:
                 left_parents = left_p.get_parents()
-            right_p = cat_class.all_cats.get(parents[1])
+            right_p = Cat.all_cats.get(parents[1])
             if right_p != None:
                 right_parents = right_p.get_parents()
         if len(parents) == 1:
-            left_p = cat_class.all_cats.get(parents[0])
+            left_p = Cat.all_cats.get(parents[0])
             if left_p != None:
                 left_parents = left_p.get_parents()
 
@@ -755,7 +748,7 @@ class Cat(object):
         if os.path.exists(relation_directory):
             if not os.path.exists(relation_cat_directory):
                 self.create_new_relationships()
-                for cat in cat_class.all_cats.values():
+                for cat in Cat.all_cats.values():
                     cat.relationships.append(Relationship(cat,self))
                 update_sprite(self)
                 return
@@ -924,6 +917,23 @@ class Cat(object):
         ]
         self.experience_level = experience_levels[math.floor(self.experience /
                                                              10)]
+
+    @property
+    def moons(self):
+        return self._moons
+
+    @moons.setter
+    def moons(self, value):
+        self._moons = value
+
+        updated_age = False
+        for key_age in self.age_moons.keys():
+            if self.moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1]+1):
+                updated_age = True
+                self.age = key_age
+        if not updated_age:
+            print("WARNING: ERROR WHILE UPDATING AGE")
+            self.age = "elder"
 
 # ---------------------------------------------------------------------------- #
 #                               END OF CAT CLASS                               #

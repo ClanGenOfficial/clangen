@@ -5,14 +5,14 @@ from .base_screens import Screens, draw_menu_buttons, cat_profiles, draw_next_pr
 from scripts.utility import draw_large, update_sprite, draw_bar
 from scripts.game_structure.buttons import buttons
 from scripts.game_structure.text import *
-from scripts.cat.cats import cat_class
+from scripts.cat.cats import Cat
 
 class ChooseMentorScreen(Screens):
 
     def on_use(self):
         verdana_big.text('Choose Mentor', ('center', 30))
         living_cats = []
-        for cat in cat_class.all_cats.values():
+        for cat in Cat.all_cats.values():
             if not cat.dead and cat != game.switches[
                     'apprentice'].mentor and cat.status in [
                         'warrior', 'deputy', 'leader'
@@ -69,31 +69,31 @@ class ChooseMentorScreen2(Screens):
 
     def on_use(self):
         # use this variable to point to the cat object in question
-        the_cat = cat_class.all_cats.get(game.switches['cat'])
+        the_cat = Cat.all_cats.get(game.switches['cat'])
 
         # back and next buttons on the profile page
         previous_cat = 0
         next_cat = 0
 
-        for check_cat in cat_class.all_cats:
-            if cat_class.all_cats[check_cat].ID == the_cat.ID:
+        for check_cat in Cat.all_cats:
+            if Cat.all_cats[check_cat].ID == the_cat.ID:
                 next_cat = 1
 
-            if next_cat == 0 and cat_class.all_cats[
-                    check_cat].ID != the_cat.ID and not cat_class.all_cats[
-                        check_cat].dead and cat_class.all_cats[
+            if next_cat == 0 and Cat.all_cats[
+                    check_cat].ID != the_cat.ID and not Cat.all_cats[
+                        check_cat].dead and Cat.all_cats[
                             check_cat].status in [
                                 'warrior', 'deputy', 'leader'
-                            ] and cat_class.all_cats[check_cat] != game.switches[
-                                'apprentice'].mentor and not cat_class.all_cats[
+                            ] and Cat.all_cats[check_cat] != game.switches[
+                                'apprentice'].mentor and not Cat.all_cats[
                                     check_cat].exiled:
-                previous_cat = cat_class.all_cats[check_cat].ID
-            elif next_cat == 1 and cat_class.all_cats[check_cat].ID != the_cat.ID and not cat_class.all_cats[check_cat].dead and cat_class.all_cats[check_cat].status in ['warrior',
+                previous_cat = Cat.all_cats[check_cat].ID
+            elif next_cat == 1 and Cat.all_cats[check_cat].ID != the_cat.ID and not Cat.all_cats[check_cat].dead and Cat.all_cats[check_cat].status in ['warrior',
                                                                                                                                                                           'deputy',
                                                                                                                                                                           'leader'] and \
-                    cat_class.all_cats[check_cat] != game.switches['apprentice'].mentor and not cat_class.all_cats[
+                    Cat.all_cats[check_cat] != game.switches['apprentice'].mentor and not Cat.all_cats[
                     check_cat].exiled:
-                next_cat = cat_class.all_cats[check_cat].ID
+                next_cat = Cat.all_cats[check_cat].ID
             elif int(next_cat) > 1:
                 break
 
@@ -233,17 +233,17 @@ class ChooseMentorScreen2(Screens):
 
         # MATE
         if the_cat.mate is not None and not the_cat.dead:
-            if the_cat.mate in cat_class.all_cats:
-                if cat_class.all_cats.get(
+            if the_cat.mate in Cat.all_cats:
+                if Cat.all_cats.get(
                         the_cat.mate
                 ).dead:  # TODO: fix when mate dies mate becomes none
                     verdana_small.text(
                         'former mate: ' +
-                        str(cat_class.all_cats[the_cat.mate].name),
+                        str(Cat.all_cats[the_cat.mate].name),
                         (250, 330 + count * 15))
                 else:
                     verdana_small.text(
-                        'mate: ' + str(cat_class.all_cats[the_cat.mate].name),
+                        'mate: ' + str(Cat.all_cats[the_cat.mate].name),
                         (250, 330 + count * 15))
                 count += 1
             else:
@@ -278,21 +278,21 @@ class ChooseMentorScreen2(Screens):
 class ViewChildrenScreen(Screens):
 
     def on_use(self):
-        the_cat = cat_class.all_cats[game.switches['cat']]
+        the_cat = Cat.all_cats[game.switches['cat']]
         verdana_big.text(f'Family of {str(the_cat.name)}', ('center', 50))
         verdana.text('Parents:', ('center', 85))
         if the_cat.parent1 is None:
             verdana_small.text('Unknown', (342, 165))
-        elif the_cat.parent1 in cat_class.all_cats:
+        elif the_cat.parent1 in Cat.all_cats:
             buttons.draw_button(
                 (350, 120),
-                image=cat_class.all_cats[the_cat.parent1].sprite,
+                image=Cat.all_cats[the_cat.parent1].sprite,
                 cat=the_cat.parent1,
                 cur_screen='profile screen')
 
             name_len = verdana.text(
-                str(cat_class.all_cats[the_cat.parent1].name))
-            verdana_small.text(str(cat_class.all_cats[the_cat.parent1].name),
+                str(Cat.all_cats[the_cat.parent1].name))
+            verdana_small.text(str(Cat.all_cats[the_cat.parent1].name),
                                (375 - name_len / 2, 185))
 
         else:
@@ -300,16 +300,16 @@ class ViewChildrenScreen(Screens):
                                (342, 165))
         if the_cat.parent2 is None:
             verdana_small.text('Unknown', (422, 165))
-        elif the_cat.parent2 in cat_class.all_cats:
+        elif the_cat.parent2 in Cat.all_cats:
             buttons.draw_button(
                 (430, 120),
-                image=cat_class.all_cats[the_cat.parent2].sprite,
+                image=Cat.all_cats[the_cat.parent2].sprite,
                 cat=the_cat.parent2,
                 cur_screen='profile screen')
 
             name_len = verdana.text(
-                str(cat_class.all_cats[the_cat.parent2].name))
-            verdana_small.text(str(cat_class.all_cats[the_cat.parent2].name),
+                str(Cat.all_cats[the_cat.parent2].name))
+            verdana_small.text(str(Cat.all_cats[the_cat.parent2].name),
                                (455 - name_len / 2, 185))
 
         else:
@@ -321,16 +321,16 @@ class ViewChildrenScreen(Screens):
         pos_y = 20
         siblings = False
         for x in game.clan.clan_cats:
-            if (cat_class.all_cats[x].parent1 in (the_cat.parent1, the_cat.parent2) or cat_class.all_cats[x].parent2 in (
-                    the_cat.parent1, the_cat.parent2) and the_cat.parent2 is not None) and the_cat.ID != cat_class.all_cats[x].ID and the_cat.parent1 is not None and \
-                    cat_class.all_cats[x].parent1 is not None:
+            if (Cat.all_cats[x].parent1 in (the_cat.parent1, the_cat.parent2) or Cat.all_cats[x].parent2 in (
+                    the_cat.parent1, the_cat.parent2) and the_cat.parent2 is not None) and the_cat.ID != Cat.all_cats[x].ID and the_cat.parent1 is not None and \
+                    Cat.all_cats[x].parent1 is not None:
                 buttons.draw_button((40 + pos_x, 220 + pos_y),
-                                    image=cat_class.all_cats[x].sprite,
-                                    cat=cat_class.all_cats[x].ID,
+                                    image=Cat.all_cats[x].sprite,
+                                    cat=Cat.all_cats[x].ID,
                                     cur_screen='profile screen')
 
-                name_len = verdana.text(str(cat_class.all_cats[x].name))
-                verdana_small.text(str(cat_class.all_cats[x].name),
+                name_len = verdana.text(str(Cat.all_cats[x].name))
+                verdana_small.text(str(Cat.all_cats[x].name),
                                    (65 + pos_x - name_len / 2, 280 + pos_y))
 
                 siblings = True
@@ -350,16 +350,16 @@ class ViewChildrenScreen(Screens):
         kittens = False
         for x in game.clan.clan_cats:
             if the_cat.ID in [
-                    cat_class.all_cats[x].parent1,
-                    cat_class.all_cats[x].parent2
+                    Cat.all_cats[x].parent1,
+                    Cat.all_cats[x].parent2
             ]:
                 buttons.draw_button((40 + pos_x, 370 + pos_y),
-                                    image=cat_class.all_cats[x].sprite,
-                                    cat=cat_class.all_cats[x].ID,
+                                    image=Cat.all_cats[x].sprite,
+                                    cat=Cat.all_cats[x].ID,
                                     cur_screen='profile screen')
 
-                name_len = verdana.text(str(cat_class.all_cats[x].name))
-                verdana_small.text(str(cat_class.all_cats[x].name),
+                name_len = verdana.text(str(Cat.all_cats[x].name))
+                verdana_small.text(str(Cat.all_cats[x].name),
                                    (65 + pos_x - name_len / 2, 430 + pos_y))
 
                 kittens = True
@@ -381,7 +381,7 @@ class ViewChildrenScreen(Screens):
 class ChooseMateScreen(Screens):
 
     def on_use(self):
-        the_cat = cat_class.all_cats[game.switches['cat']]
+        the_cat = Cat.all_cats[game.switches['cat']]
         verdana_big.text(f'Choose mate for {str(the_cat.name)}',
                          ('center', 50))
         verdana_small.text(
@@ -398,10 +398,10 @@ class ChooseMateScreen(Screens):
         self._extracted_from_on_use_29(the_cat, 70)
         mate = None
         if game.switches['mate'] is not None and the_cat.mate is None:
-            mate = cat_class.all_cats[game.switches['mate']]
+            mate = Cat.all_cats[game.switches['mate']]
         elif the_cat.mate is not None:
-            if the_cat.mate in cat_class.all_cats:
-                mate = cat_class.all_cats[the_cat.mate]
+            if the_cat.mate in Cat.all_cats:
+                mate = Cat.all_cats[the_cat.mate]
             else:
                 the_cat.mate = None
         if mate is not None:
@@ -424,15 +424,15 @@ class ChooseMateScreen(Screens):
             kittens = False
             for x in game.clan.clan_cats:
                 if the_cat.ID in [
-                        cat_class.all_cats[x].parent1,
-                        cat_class.all_cats[x].parent2
+                        Cat.all_cats[x].parent1,
+                        Cat.all_cats[x].parent2
                 ] and mate.ID in [
-                        cat_class.all_cats[x].parent1,
-                        cat_class.all_cats[x].parent2
+                        Cat.all_cats[x].parent1,
+                        Cat.all_cats[x].parent2
                 ]:
                     buttons.draw_button((200 + pos_x, 370 + pos_y),
-                                        image=cat_class.all_cats[x].sprite,
-                                        cat=cat_class.all_cats[x].ID,
+                                        image=Cat.all_cats[x].sprite,
+                                        cat=Cat.all_cats[x].ID,
                                         cur_screen='profile screen')
 
                     kittens = True
@@ -464,7 +464,7 @@ class ChooseMateScreen(Screens):
     # TODO Rename this here and in `on_use`
     def _extracted_from_on_use_42(self, the_cat, valid_mates, pos_x, pos_y):
         for x in game.clan.clan_cats:
-            relevant_cat = cat_class.all_cats[x]
+            relevant_cat = Cat.all_cats[x]
             invalid_age = relevant_cat.age not in ['kitten', 'adolescent']
 
             direct_related = the_cat.is_sibling(relevant_cat) or the_cat.is_parent(relevant_cat) or relevant_cat.is_parent(the_cat)
@@ -530,7 +530,7 @@ class RelationshipScreen(Screens):
 
     def on_use(self):
         # use this variable to point to the cat object in question
-        the_cat = cat_class.all_cats.get(game.switches['cat'],
+        the_cat = Cat.all_cats.get(game.switches['cat'],
                                          game.clan.instructor)
 
         # back and next buttons on the relationships page
@@ -568,7 +568,7 @@ class RelationshipScreen(Screens):
         # layout
         verdana_big.text(str(the_cat.name) + ' Relationships', ('center', 10))
         if the_cat != None and the_cat.mate != '':
-            mate = cat_class.all_cats.get(the_cat.mate)
+            mate = Cat.all_cats.get(the_cat.mate)
             if mate != None:
                 verdana_small.text(
                     f"{str(the_cat.genderalign)}  - {str(the_cat.age)} -  mate: {str(mate.name)}",

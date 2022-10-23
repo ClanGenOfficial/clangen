@@ -27,7 +27,7 @@ class Events(object):
             self.new_cat_invited = False
             game.patrolled.clear()
             relation_events = Relation_Events()
-            for cat in cat_class.all_cats.copy().values():
+            for cat in Cat.all_cats.copy().values():
                 if not cat.exiled:
                     self.one_moon_cat(cat, relation_events)
                 else:
@@ -69,7 +69,7 @@ class Events(object):
             has_med = any(
                 str(cat.status) in {"medicine cat", "medicine cat apprentice"}
                 and not cat.dead and not cat.exiled
-                for cat in cat_class.all_cats.values())
+                for cat in Cat.all_cats.values())
 
             if not has_med:
                 game.cur_events_list.insert(
@@ -170,39 +170,36 @@ class Events(object):
             self.gain_accessories(cat)
             game.clan.deputy = None
         if not cat.dead:
-            cat.moons += 1
             if cat.status == 'deputy' and game.clan.deputy is None:
                 game.clan.deputy = cat
             if cat.status == 'medicine cat' and game.clan.medicine_cat is None:
                 game.clan.medicine_cat = cat
-            if cat.moons > cat_class.age_moons[cat.age][1]:
-                if cat.age != 'elder':
-                    cat.age = cat_class.ages[cat_class.ages.index(cat.age) + 1]
-                if cat.status == 'kitten' and cat.age == 'adolescent':
-
+            if cat.status in ['warrior', 'deputy'] and cat.age == 'elder' and len(cat.apprentice) < 1:
+                self.ceremony(cat, 'elder', ' has retired to the elder den')
+                if cat.status == 'deputy':
+                    game.clan.deputy = None
+                cat.status_change('elder')
+            if cat.moons == cat_class.age_moons[cat.age][1]:
+                if cat.status == 'kitten':
                     # check if the medicine cat is an elder
                     has_elder_med = any(
                         str(cat.status) == 'medicine cat' and str(cat.age) == 'elder'
                         and not cat.dead and not cat.exiled
-                        for cat in cat_class.all_cats.values())
-
+                        for cat in Cat.all_cats.values())
                     very_old_med = any(
                         str(cat.status) == 'medicine cat' and int(cat.moons) >= 150
                         and not cat.dead and not cat.exiled
-                        for cat in cat_class.all_cats.values())
-
+                        for cat in Cat.all_cats.values())
                     # check if a med cat of a different age exists
                     has_med = any(
                         str(cat.status) == 'medicine cat' and str(cat.age) != 'elder'
                         and not cat.dead and not cat.exiled
-                        for cat in cat_class.all_cats.values())
-
+                        for cat in Cat.all_cats.values())
                     # check if a med cat app already exists
                     has_med_app = any(
                         str(cat.status) == 'medicine cat apprentice'
                         and not cat.dead and not cat.exiled
-                        for cat in cat_class.all_cats.values())
-
+                        for cat in Cat.all_cats.values())
                     # assign chance to become med app depending on current med cat and traits
                     if has_elder_med is True and has_med is False:
                         chance = randint(0, 1)
@@ -234,29 +231,15 @@ class Events(object):
                         self.ceremony(cat, 'apprentice', ' has started their apprenticeship')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
-                elif cat.status == 'apprentice' and cat.age == 'young adult':
-                    self.ceremony(
-                        cat, 'warrior', ' has earned their warrior name')
+                elif cat.status == 'apprentice':
+                    self.ceremony(cat, 'warrior', ' has earned their warrior name')
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
-                elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
+                elif cat.status == 'medicine cat apprentice':
                     self.ceremony(cat, 'medicine cat', ' has earned their medicine cat name')
                     self.ceremony_accessory = True
                     self.gain_accessories(cat)
-                elif cat.status == 'deputy' and cat.age == 'elder' and len(cat.apprentice) < 1:
-                    self.ceremony(cat, 'elder', ' has retired to the elder den')
-                    game.clan.deputy = None
-                elif cat.status == 'warrior' and cat.age == 'elder' and len(cat.apprentice) < 1:
-                    self.ceremony(cat, 'elder', ' has retired to the elder den')
-                
-            if cat.status in ['warrior', 'deputy'] and cat.age == 'elder' and len(cat.apprentice) < 1:
-                if cat.status == 'deputy':
-                    game.clan.deputy = None
-                    cat.status_change('elder')
-                else:
-                    cat.status_change('elder')
-                game.cur_events_list.append(
-                    f'{str(cat.name)} has retired to the elder den')
+
 
     def ceremony(self, cat, promoted_to, ceremony_text):
         cat.status_change(promoted_to)
@@ -266,10 +249,10 @@ class Events(object):
         if cat.accessory is not None:
             return
         name = str(cat.name)
-        other_cat = choice(list(cat_class.all_cats.values()))
-        countdown = int(len(cat_class.all_cats) / 3)
+        other_cat = choice(list(Cat.all_cats.values()))
+        countdown = int(len(Cat.all_cats) / 3)
         while cat == other_cat or other_cat.dead or other_cat.exiled:
-            other_cat = choice(list(cat_class.all_cats.values()))
+            other_cat = choice(list(Cat.all_cats.values()))
             countdown-=1
             if countdown <= 0:
                 return
@@ -340,12 +323,12 @@ class Events(object):
         if cat.specialty is not None and cat.specialty2 is not None or cat.age == 'kitten':
             return
         name = str(cat.name)
-        other_cat = choice(list(cat_class.all_cats.values()))
+        other_cat = choice(list(Cat.all_cats.values()))
         scar_chance = randint(0, 40)
         clancats = int(self.living_cats)
-        countdown = int(len(cat_class.all_cats) / 3)
+        countdown = int(len(Cat.all_cats) / 3)
         while cat == other_cat or other_cat.dead or other_cat.exiled:
-            other_cat = choice(list(cat_class.all_cats.values()))
+            other_cat = choice(list(Cat.all_cats.values()))
             countdown-=1
             if countdown <= 0:
                 return
@@ -354,7 +337,7 @@ class Events(object):
         clan_has_kits = any(
                 str(cat.status) in "kitten"
                 and not cat.dead and not cat.exiled
-                for cat in cat_class.all_cats.values())
+                for cat in Cat.all_cats.values())
         if clancats > 45:
             scar_chance = scar_chance + 20
         elif clancats > 120:
@@ -782,7 +765,7 @@ class Events(object):
             if accessory:
                 new_cat.accessory = accessory
 
-            if (kit or litter) and relevant_cat and relevant_cat in cat_class.all_cats:
+            if (kit or litter) and relevant_cat and relevant_cat in Cat.all_cats:
                 new_cat.parent1 = relevant_cat.ID
                 if relevant_cat.mate:
                     new_cat.parent2 = relevant_cat.mate
@@ -807,10 +790,10 @@ class Events(object):
         if randint(1, 100) != 1:
             return
         interactions = []
-        other_cat = choice(list(cat_class.all_cats.values()))
-        countdown = int(len(cat_class.all_cats) / 3)
+        other_cat = choice(list(Cat.all_cats.values()))
+        countdown = int(len(Cat.all_cats) / 3)
         while cat == other_cat or other_cat.dead or other_cat.exiled:
-            other_cat = choice(list(cat_class.all_cats.values()))
+            other_cat = choice(list(Cat.all_cats.values()))
             countdown-=1
             if countdown <= 0:
                 return
@@ -893,14 +876,14 @@ class Events(object):
         clan_has_kits = any(
                 str(cat.status) in "kitten"
                 and not cat.dead and not cat.exiled
-                for cat in cat_class.all_cats.values())
+                for cat in Cat.all_cats.values())
         #Leader lost a life EVENTS
         if randint(1, 100) == 1:
             name = str(cat.name)
-            other_cat = choice(list(cat_class.all_cats.values()))
-            countdown = int(len(cat_class.all_cats) / 3)
+            other_cat = choice(list(Cat.all_cats.values()))
+            countdown = int(len(Cat.all_cats) / 3)
             while cat == other_cat or other_cat.dead or other_cat.status == 'leader' or other_cat.exiled:
-                other_cat = choice(list(cat_class.all_cats.values()))
+                other_cat = choice(list(Cat.all_cats.values()))
                 countdown-=1
                 if countdown <= 0:
                     return
@@ -1212,10 +1195,10 @@ class Events(object):
 
         elif randint(1, 500) == 1:  # multiple deaths
             name = str(cat.name)
-            other_cat = choice(list(cat_class.all_cats.values()))
-            countdown = int(len(cat_class.all_cats) / 3)
+            other_cat = choice(list(Cat.all_cats.values()))
+            countdown = int(len(Cat.all_cats) / 3)
             while cat == other_cat or other_cat.dead or other_cat.exiled:
-                other_cat = choice(list(cat_class.all_cats.values()))
+                other_cat = choice(list(Cat.all_cats.values()))
                 countdown-=1
                 if countdown <= 0:
                     return
@@ -1251,7 +1234,7 @@ class Events(object):
                 game.cur_events_list.append(
                     name + ' is killed by ' + other_name +
                     ' in an argument over ' +
-                    str(cat_class.all_cats.get(cat.mate).name))
+                    str(Cat.all_cats.get(cat.mate).name))
                 cat.die()
                 return
             if cat.status == 'leader' or other_cat.status == 'leader':
@@ -1265,10 +1248,10 @@ class Events(object):
         elif randint(1, 80) == 1:  #Death with Personalities
             murder_chance = 20
             name = str(cat.name)
-            countdown = int(len(cat_class.all_cats) / 3)
-            other_cat = choice(list(cat_class.all_cats.values()))
+            countdown = int(len(Cat.all_cats) / 3)
+            other_cat = choice(list(Cat.all_cats.values()))
             while cat == other_cat or other_cat.dead or other_cat.exiled:
-                other_cat = choice(list(cat_class.all_cats.values()))
+                other_cat = choice(list(Cat.all_cats.values()))
                 countdown-=1
                 if countdown <= 0:
                     return
@@ -1366,7 +1349,7 @@ class Events(object):
         if game.settings.get('disasters') is True:
             alive_count = 0
             alive_cats = []
-            for cat in list(cat_class.all_cats.values()):
+            for cat in list(Cat.all_cats.values()):
                 if not cat.dead and not cat.exiled and cat.status != 'leader':
                     alive_count += 1
                     alive_cats.append(cat)

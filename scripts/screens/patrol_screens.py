@@ -5,7 +5,7 @@ from .base_screens import Screens, draw_menu_buttons, cat_profiles
 from scripts.utility import draw, draw_large
 from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
-from scripts.cat.cats import cat_class
+from scripts.cat.cats import Cat
 
 class PatrolScreen(Screens):
 
@@ -21,8 +21,8 @@ class PatrolScreen(Screens):
 
         draw_menu_buttons()
         able_cats = []
-        for x in range(len(cat_class.all_cats.values())):
-            the_cat = list(cat_class.all_cats.values())[x]
+        for x in range(len(Cat.all_cats.values())):
+            the_cat = list(Cat.all_cats.values())[x]
             if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status in [
                     'leader', 'deputy', 'warrior', 'apprentice'
             ] and not the_cat.exiled:

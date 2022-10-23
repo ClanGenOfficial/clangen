@@ -262,7 +262,7 @@ class Game(object):
         if not os.path.exists(directory):
             os.makedirs(directory)
         clan_cats = []
-        for inter_cat in self.cat_class.all_cats.values():
+        for inter_cat in self.Cat.all_cats.values():
             cat_data = {
                 "ID": inter_cat.ID,
                 "name_prefix": inter_cat.name.prefix,

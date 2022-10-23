@@ -5,7 +5,7 @@ from scripts.cat.appearance_utility import accessory_display_name
 from scripts.events import events_class
 from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
-from scripts.cat.cats import cat_class
+from scripts.cat.cats import Cat
 
 def draw_text_bar():
     if game.settings['dark mode']:
@@ -27,7 +27,7 @@ class ProfileScreen(Screens):
 
     def on_use(self):
         # use this variable to point to the cat object in question
-        the_cat = cat_class.all_cats.get(game.switches['cat'],game.clan.instructor)
+        the_cat = Cat.all_cats.get(game.switches['cat'],game.clan.instructor)
 
         draw_next_prev_cat_buttons(the_cat)
         # use these attributes to create differing profiles for starclan cats etc.
@@ -252,17 +252,17 @@ class ProfileScreen(Screens):
 
         # MATE
         if the_cat.mate is not None and not the_cat.dead:
-            if the_cat.mate in cat_class.all_cats:
-                if cat_class.all_cats.get(
+            if the_cat.mate in Cat.all_cats:
+                if Cat.all_cats.get(
                         the_cat.mate
                 ).dead:  # TODO: fix when mate dies mate becomes none
                     verdana_small.text(
                         'former mate: ' +
-                        str(cat_class.all_cats[the_cat.mate].name),
+                        str(Cat.all_cats[the_cat.mate].name),
                         (300, 230 + count * 15))
                 else:
                     verdana_small.text(
-                        'mate: ' + str(cat_class.all_cats[the_cat.mate].name),
+                        'mate: ' + str(Cat.all_cats[the_cat.mate].name),
                         (300, 230 + count * 15))
                 count += 1
             else:
@@ -303,7 +303,7 @@ class ProfileScreen(Screens):
 
     # PLATFORM
     def update_platform(self):
-        the_cat = cat_class.all_cats.get(game.switches['cat'],
+        the_cat = Cat.all_cats.get(game.switches['cat'],
                                          game.clan.instructor)
         
         light_dark = "light"
@@ -364,7 +364,7 @@ class OptionsScreen(Screens):
     def relations_tab(self):
         self.draw_header()
 
-        the_cat = cat_class.all_cats.get(game.switches['cat'])
+        the_cat = Cat.all_cats.get(game.switches['cat'])
         button_count = 0
         x_value = 'center'
         y_value = 150
@@ -407,7 +407,7 @@ class OptionsScreen(Screens):
     def roles_tab(self):
         self.draw_header()
 
-        the_cat = cat_class.all_cats.get(game.switches['cat'])
+        the_cat = Cat.all_cats.get(game.switches['cat'])
         button_count = 0
         x_value = 'center'
         y_value = 150
@@ -480,7 +480,7 @@ class OptionsScreen(Screens):
     def personal_tab(self):
         self.draw_header()
 
-        the_cat = cat_class.all_cats.get(game.switches['cat'])
+        the_cat = Cat.all_cats.get(game.switches['cat'])
         button_count = 0
         x_value = 'center'
         y_value = 150
@@ -550,7 +550,7 @@ class OptionsScreen(Screens):
         
     def dangerous_tab(self):
         self.draw_header()
-        the_cat = cat_class.all_cats.get(game.switches['cat'])
+        the_cat = Cat.all_cats.get(game.switches['cat'])
         button_count = 0
         x_value = 'center'
         y_value = 150
@@ -578,7 +578,7 @@ class OptionsScreen(Screens):
         draw_back(x_value, y_value + button_count * y_change)
 
     def on_use(self):
-        the_cat = cat_class.all_cats.get(game.switches['cat'])
+        the_cat = Cat.all_cats.get(game.switches['cat'])
         verdana_big.text('Options - ' + str(the_cat.name), ('center', 40))
         button_count = 0
         x_value = 'center'

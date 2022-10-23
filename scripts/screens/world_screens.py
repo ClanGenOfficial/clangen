@@ -5,7 +5,7 @@ from .base_screens import Screens, draw_menu_buttons
 
 from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
-from scripts.cat.cats import cat_class
+from scripts.cat.cats import Cat
 from scripts.cat.sprites import tiles
 from scripts.world import load_map
 
@@ -15,8 +15,8 @@ class OutsideClanScreen(Screens):
         verdana_big.text('Cats Outside The Clan', ('center', 30))
         verdana.text('ALL CATS LIST', ('center', 100))
         living_cats = []
-        for x in range(len(cat_class.all_cats.values())):
-            the_cat = list(cat_class.all_cats.values())[x]
+        for x in range(len(Cat.all_cats.values())):
+            the_cat = list(Cat.all_cats.values())[x]
             if not the_cat.dead and the_cat.exiled:
                 living_cats.append(the_cat)
 
