@@ -1,6 +1,6 @@
 import pygame
 
-from .base_screens import Screens
+from .base_screens import Screens, draw_menu_buttons
 
 from scripts.clan import map_available
 from scripts.cat.cats import cat_class
