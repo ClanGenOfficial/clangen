@@ -22,31 +22,38 @@ EXILED_CATS = {
 
 # IN increase or decrease
 resource_directory = "resources/dicts/relationship_events/"
+de_in_crease_path = "DE_IN_CREASE/"
+cat_to_other_path = "cat_to_other/"
+
+# ---------------------------------------------------------------------------- #
+#                           load event possibilities                           #
+# ---------------------------------------------------------------------------- #
+
 
 NEWLEAF = None
 try:
-    with open(f"{resource_directory}not_age_specific.json", 'r') as read_file:
+    with open(f"{resource_directory}{cat_to_other_path}not_age_specific.json", 'r') as read_file:
         NEWLEAF = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the not_age_specific.json file of relationship_events!'
 
 KITTEN_TO_OTHER = None
 try:
-    with open(f"{resource_directory}2_kitten_to_other.json", 'r') as read_file:
+    with open(f"{resource_directory}{cat_to_other_path}kitten_to_other.json", 'r') as read_file:
         KITTEN_TO_OTHER = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 2_kitten_to_other.json file of relationship_events!'
 
 APPRENTICE_TO_OTHER = None
 try:
-    with open(f"{resource_directory}2_apprentice_to_other.json", 'r') as read_file:
+    with open(f"{resource_directory}{cat_to_other_path}apprentice_to_other.json", 'r') as read_file:
         APPRENTICE_TO_OTHER = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 2_apprentice_to_other.json file of relationship_events!'
 
 MEDICINE_APP_TO_OTHER = None
 try:
-    with open(f"{resource_directory}2_medicine_app_to_other.json", 'r') as read_file:
+    with open(f"{resource_directory}{cat_to_other_path}medicine_app_to_other.json", 'r') as read_file:
         MEDICINE_APP_TO_OTHER = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 2_medicine_app_to_other.json file of relationship_events!'
@@ -54,35 +61,35 @@ except:
 
 WARRIOR_TO_OTHER = None
 try:
-    with open(f"{resource_directory}2_warrior_to_other.json", 'r') as read_file:
+    with open(f"{resource_directory}{cat_to_other_path}warrior_to_other.json", 'r') as read_file:
         WARRIOR_TO_OTHER = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 2_warrior_to_other.json file of relationship_events!'
 
 ELDER_TO_OTHER = None
 try:
-    with open(f"{resource_directory}2_elder_to_other.json", 'r') as read_file:
+    with open(f"{resource_directory}{cat_to_other_path}elder_to_other.json", 'r') as read_file:
         ELDER_TO_OTHER = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 2_elder_to_other.json file of relationship_events!'
 
 LEADER_TO_OTHER = None
 try:
-    with open(f"{resource_directory}2_leader_to_other.json", 'r') as read_file:
+    with open(f"{resource_directory}{cat_to_other_path}leader_to_other.json", 'r') as read_file:
         LEADER_TO_OTHER = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 2_leader_to_other.json file of relationship_events!'
 
 DEPUTY_TO_OTHER = None
 try:
-    with open(f"{resource_directory}2_deputy_to_other.json", 'r') as read_file:
+    with open(f"{resource_directory}{cat_to_other_path}deputy_to_other.json", 'r') as read_file:
         DEPUTY_TO_OTHER = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 2_deputy_to_other.json file of relationship_events!'
 
 MEDICINE_TO_OTHER = None
 try:
-    with open(f"{resource_directory}2_medicine_to_other.json", 'r') as read_file:
+    with open(f"{resource_directory}{cat_to_other_path}medicine_to_other.json", 'r') as read_file:
         MEDICINE_TO_OTHER = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 2_medicine_to_other.json file of relationship_events!'
@@ -103,35 +110,29 @@ try:
 except:
     game.switches['error_message'] = 'There was an error loading the special_character.json file of relationship_events!'
 
-# How increasing one state influences another directly: (an increase of one state doesn't trigger a chain reaction)
-# increase romantic_love -> decreases: dislike | increases: like, comfortable
-# increase like -> decreases: dislike | increases: comfortable
-# increase dislike -> decreases: romantic_love, like | increases: -
-# increase admiration -> decreases: - | increases: -
-# increase comfortable -> decreases: jealousy, dislike | increases: trust, like
-# increase jealousy -> decreases: - | increases: dislike
-# increase trust -> decreases: dislike | increases: -
 
-# !! DECREASING ONE STATE DOES'T INFLUENCE OTHERS !!
+# ---------------------------------------------------------------------------- #
+#                             load de- and increase                            #
+# ---------------------------------------------------------------------------- #
 
-# This defines effect the action has, not every action has to have a effect
+
 INCREASE_HIGH = None
 try:
-    with open(f"{resource_directory}1_INCREASE_HIGH.json", 'r') as read_file:
+    with open(f"{resource_directory}{de_in_crease_path}INCREASE_HIGH.json", 'r') as read_file:
         INCREASE_HIGH = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 1_INCREASE_HIGH.json file of relationship_events!'
 
 INCREASE_LOW = None
 try:
-    with open(f"{resource_directory}1_INCREASE_LOW.json", 'r') as read_file:
+    with open(f"{resource_directory}{de_in_crease_path}INCREASE_LOW.json", 'r') as read_file:
         INCREASE_LOW = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 1_INCREASE_LOW.json file of relationship_events!'
 
 DECREASE_HIGH  = None
 try:
-    with open(f"{resource_directory}1_DECREASE_HIGH.json", 'r') as read_file:
+    with open(f"{resource_directory}{de_in_crease_path}DECREASE_HIGH.json", 'r') as read_file:
         DECREASE_HIGH = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 1_DECREASE_HIGH.json file of relationship_events!'
@@ -139,7 +140,7 @@ except:
 
 DECREASE_LOW = None
 try:
-    with open(f"{resource_directory}1_DECREASE_LOW.json", 'r') as read_file:
+    with open(f"{resource_directory}{de_in_crease_path}DECREASE_LOW.json", 'r') as read_file:
         DECREASE_LOW = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 1_DECREASE_LOW.json file of relationship_events!'
@@ -155,6 +156,11 @@ INDIRECT_DECREASE = 3
 
 # add/decrease weight of personality based compatibility
 COMPATIBILITY_WEIGHT = 3
+
+
+# ---------------------------------------------------------------------------- #
+#                           START Relationship class                           #
+# ---------------------------------------------------------------------------- #
 
 class Relationship(object):
     def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0, admiration=0, comfortable=0, jealousy=0, trust=0, log = []) -> None:        
@@ -354,6 +360,18 @@ class Relationship(object):
 
     def affect_relationship(self, action, other = False):
         """Affect the relationship according to the action."""
+        # How increasing one state influences another directly: (an increase of one state doesn't trigger a chain reaction)
+        # increase romantic_love -> decreases: dislike | increases: like, comfortable
+        # increase like -> decreases: dislike | increases: comfortable
+        # increase dislike -> decreases: romantic_love, like | increases: -
+        # increase admiration -> decreases: - | increases: -
+        # increase comfortable -> decreases: jealousy, dislike | increases: trust, like
+        # increase jealousy -> decreases: - | increases: dislike
+        # increase trust -> decreases: dislike | increases: -
+
+        # !! DECREASING ONE STATE DOES'T INFLUENCE OTHERS !!
+
+        # This defines effect the action has, not every action has to have a effect
         key = 'from'
         if other:
             key = 'to'
@@ -536,9 +554,9 @@ class Relationship(object):
         else:
             return DIRECT_DECREASE_LOW - COMPATIBILITY_WEIGHT
 
-# ---------------------------------------------------------------------------- #
-#                                   property                                   #
-# ---------------------------------------------------------------------------- #
+    # ---------------------------------------------------------------------------- #
+    #                                   property                                   #
+    # ---------------------------------------------------------------------------- #
 
     @property
     def romantic_love(self):
