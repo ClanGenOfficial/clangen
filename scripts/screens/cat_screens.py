@@ -1,11 +1,10 @@
 from .base_screens import Screens, cat_profiles, draw_next_prev_cat_buttons
 
 from scripts.utility import draw_large
-from scripts.cat.appearance_utility import accessory_display_name
-from scripts.events import events_class
 from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
 from scripts.cat.cats import Cat
+from scripts.cat.pelts import collars, wild_accessories
 
 def draw_text_bar():
     if game.settings['dark mode']:
@@ -22,6 +21,60 @@ def draw_back(x_value, y_value):
         text='Back',
         cur_screen='profile screen',
         hotkey=[0])
+
+def accessory_display_name(accessory):
+    if not accessory:
+        return ''
+    accessory = accessory.lower()
+    acc_display = accessory
+    if accessory != None:
+        if accessory in collars:
+            collar_color = None
+            if accessory.startswith('crimson'):
+                collar_color = 'crimson'
+            elif accessory.startswith('blue'):
+                collar_color = 'blue'
+            elif accessory.startswith('yellow'):
+                collar_color = 'yellow'
+            elif accessory.startswith('cyan'):
+                collar_color = 'cyan'
+            elif accessory.startswith('red'):
+                collar_color = 'red'
+            elif accessory.startswith('lime'):
+                collar_color = 'lime'
+            elif accessory.startswith('green'):
+                collar_color = 'green'
+            elif accessory.startswith('rainbow'):
+                collar_color = 'rainbow'
+            elif accessory.startswith('black'):
+                collar_color = 'black'
+            elif accessory.startswith('spikes'):
+                collar_color = 'spiky'
+            elif accessory.startswith('pink'):
+                collar_color = 'pink'
+            elif accessory.startswith('purple'):
+                collar_color = 'purple'
+            elif accessory.startswith('multi'):
+                collar_color = 'multi'
+            if accessory.endswith('bow') and not accessory == 'rainbow':
+                acc_display = collar_color + ' bow'
+            elif accessory.endswith('bell'):
+                acc_display = collar_color + ' bell collar'
+            else:
+                acc_display = collar_color + ' collar'
+
+    elif accessory in wild_accessories:
+        if acc_display == 'blue feathers':
+            acc_display = 'crow feathers'
+        elif acc_display == 'red feathers':
+            acc_display = 'cardinal feathers'
+        else:
+            acc_display = acc_display
+    else:
+        acc_display = acc_display
+    if accessory == None:
+        acc_display = None
+    return acc_display
 
 class ProfileScreen(Screens):
 
