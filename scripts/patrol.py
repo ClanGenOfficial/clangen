@@ -7,10 +7,12 @@ from scripts.cat.cats import *
 from scripts.cat.pelts import *
 
 resource_directory = "resources/dicts/patrols/"
+leaves_path = "leaves/"
+biomes_path = "biomes/"
 
 NEWLEAF = None
 try:
-    with open(f"{resource_directory}newleaf.json", 'r') as read_file:
+    with open(f"{resource_directory}{leaves_path}newleaf.json", 'r') as read_file:
         NEWLEAF = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the newleaf.json file of patrols!'
@@ -18,24 +20,71 @@ except:
 
 GREENLEAF = None
 try:
-    with open(f"{resource_directory}greenleaf.json", 'r') as read_file:
+    with open(f"{resource_directory}{leaves_path}greenleaf.json", 'r') as read_file:
         GREENLEAF = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the greenleaf.json file of patrols!'
 
 LEAF_FALL = None
 try:
-    with open(f"{resource_directory}leaf-fall.json", 'r') as read_file:
+    with open(f"{resource_directory}{leaves_path}leaf-fall.json", 'r') as read_file:
         LEAF_FALL = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the leaf-fall.json file of patrols!'
 
 LEAF_BARE = None
 try:
-    with open(f"{resource_directory}leaf-bare.json", 'r') as read_file:
+    with open(f"{resource_directory}{leaves_path}leaf-bare.json", 'r') as read_file:
         LEAF_BARE = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the leaf-bare.json file of patrols!'
+
+FOREST = None
+try:
+    with open(f"{resource_directory}{biomes_path}forest.json", 'r') as read_file:
+        FOREST = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the forest.json file of patrols!'
+
+PLAINS = None
+try:
+    with open(f"{resource_directory}{biomes_path}plains.json", 'r') as read_file:
+        PLAINS = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the plains.json file of patrols!'
+
+MOUNTAINOUS = None
+try:
+    with open(f"{resource_directory}{biomes_path}mountainous.json", 'r') as read_file:
+        MOUNTAINOUS = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the mountainous.json file of patrols!'
+
+SWAMP = None
+try:
+    with open(f"{resource_directory}{biomes_path}swamp.json", 'r') as read_file:
+        SWAMP = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the swamp.json file of patrols!'
+
+BEACH = None
+try:
+    with open(f"{resource_directory}{biomes_path}beach.json", 'r') as read_file:
+        BEACH = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the beach.json file of patrols!'
+
+DISASTER = None
+try:
+    with open(f"{resource_directory}disaster.json", 'r') as read_file:
+        DISASTER = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the disaster.json file of patrols!'
+
+
+# ---------------------------------------------------------------------------- #
+#                              PATROL CLASS START                              #
+# ---------------------------------------------------------------------------- #
 
 
 class Patrol(object):
@@ -97,7 +146,7 @@ class Patrol(object):
         else:
             self.patrol_other_cats = None
 
-    def get_possible_patrols(self, current_season, biome, all_clans):
+    def get_possible_patrols(self, current_season, biome, all_clans, game_setting_disaster):
         possible_patrols = []
         # general patrols, any number of cats
         # general hunting patrols
@@ -253,92 +302,26 @@ class Patrol(object):
 
         # season patrols
         if current_season == 'Newleaf':
-            possible_patrols.extend(self.generate_patrol_event(NEWLEAF))
+            possible_patrols.extend(self.generate_patrol_events(NEWLEAF))
         elif current_season == 'Greenleaf':
-            possible_patrols.extend(self.generate_patrol_event(GREENLEAF))
+            possible_patrols.extend(self.generate_patrol_events(GREENLEAF))
         elif current_season == 'Leaf-fall':
-            possible_patrols.extend(self.generate_patrol_event(LEAF_FALL))
+            possible_patrols.extend(self.generate_patrol_events(LEAF_FALL))
         elif current_season == 'Leaf-bare':
-            possible_patrols.extend(self.generate_patrol_event(LEAF_BARE))
+            possible_patrols.extend(self.generate_patrol_events(LEAF_BARE))
 
-            # biome specific patrols
+        # biome specific patrols
+        biome = biome.lower()
         if biome == 'forest':
-            possible_patrols.extend([
-                PatrolEvent(
-                    700,
-                    'Your patrol comes across a vole',
-                    'Your patrol catches the vole!',
-                    'Your patrol narrowly misses the vole',
-                    'Your patrol decides to look for other prey',
-                    50,
-                    10,
-                    win_skills=['great hunter', 'fantastic hunter']),
-                PatrolEvent(
-                    701,
-                    'While hunting, r_c comes across a rabbit burrow',
-                    'r_c catches the rabbit hiding in its burrow',
-                    'The burrow is abandoned, with no prey to be found in there',
-                    'r_c decides to ignore the burrow',
-                    50,
-                    10,
-                    win_skills=['great hunter', 'fantastic hunter']),
-                PatrolEvent(
-                    702,
-                    'Your patrol comes across a small fallen tree blocking their path',
-                    'Your patrol successfully moves the tree out of the way and continues the patrol',
-                    'Your patrol can\'t seem to move the tree out of the way and is discouraged',
-                    'Your patrol decides to find another route to continue to patrol',
-                    40,
-                    10)
-            ])
+            possible_patrols.extend(self.generate_patrol_events(FOREST))
         elif biome == 'plains':
-            possible_patrols.extend([
-                PatrolEvent(
-                    710,
-                    'Your patrol comes across a prairie dog',
-                    'Your patrol catches the prairie dog!',
-                    'Your patrol narrowly misses the prairie dog',
-                    'Your patrol decides to look for other prey',
-                    50,
-                    10,
-                    win_skills=['great hunter', 'fantastic hunter'])
-            ])
-        elif biome == 'mountains':
-            possible_patrols.extend([
-                PatrolEvent(
-                    710,
-                    'Your patrol comes across a shrew',
-                    'Your patrol catches the shrew!',
-                    'Your patrol narrowly misses the shrew',
-                    'Your patrol decides to look for other prey',
-                    50,
-                    10,
-                    win_skills=['great hunter', 'fantastic hunter'])
-            ])
+            possible_patrols.extend(self.generate_patrol_events(PLAINS))
+        elif biome == 'mountainous':
+            possible_patrols.extend(self.generate_patrol_events(MOUNTAINOUS))
         elif biome == 'swamp':
-            possible_patrols.extend([
-                PatrolEvent(
-                    710,
-                    'Your patrol comes across a lizard',
-                    'Your patrol catches the lizard!',
-                    'Your patrol narrowly misses the lizard',
-                    'Your patrol decides to look for other prey',
-                    50,
-                    10,
-                    win_skills=['great hunter', 'fantastic hunter'])
-            ])
+            possible_patrols.extend(self.generate_patrol_events(SWAMP))
         elif biome == 'beach':
-            possible_patrols.extend([
-                PatrolEvent(
-                    710,
-                    'Your patrol comes across a turtle',
-                    'Your patrol catches the turtle!',
-                    'Your patrol narrowly misses the turtle',
-                    'Your patrol decides to look for other prey',
-                    50,
-                    10,
-                    win_skills=['great hunter', 'fantastic hunter'])
-            ])
+            possible_patrols.extend(self.generate_patrol_events(BEACH))
 
 
         # other_clan patrols
@@ -346,37 +329,8 @@ class Patrol(object):
             1 == 1  # will add here
 
         # deadly patrols
-        if game.settings.get('disasters') == True:
-            possible_patrols.extend([
-                PatrolEvent(
-                    900,
-                    'Your patrol hears some odd noises coming from an abandoned Twoleg nest',
-                    'It\'s just an old loner singing to themselves',
-                    'Your patrol walks into an ambush by a group of rogues and everyone is slaughtered',
-                    'Your patrol decides not to investigate',
-                    70,
-                    20,
-                    win_skills=['fantastic fighter']),
-                PatrolEvent(
-                    901,
-                    'There are dark clouds in the horizon and p_l wonders if they should continue',
-                    'The cats become wet from the rain but otherwise the patrol is successful',
-                    'There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away',
-                    'Your patrol decides to head back early',
-                    70,
-                    20,
-                    win_skills=['fantastic fighter']),
-                PatrolEvent(
-                    902,
-                    'Your patrol encounters a clearing where a lot of Twolegs linger',
-                    'They continue hunting undetected',
-                    'The Twolegs notice the cats and trap them in their monsters. The cats on your patrol are never seen again',
-                    'Your patrol decides to hunt elsewhere',
-                    60,
-                    20,
-                    win_skills=['extremely smart'])
-            ])
-
+        if game_setting_disaster == True:
+            possible_patrols.extend(self.generate_patrol_events(DISASTER))
         # fighting patrols
         possible_patrols.extend([
             PatrolEvent(
@@ -562,25 +516,6 @@ class Patrol(object):
                 'They leave the kit alone', 40, 10)
         ])
 
-        #if self.patrol_random_cat.skill == 'formerly a loner':
-        #    possible_patrols.extend([
-        #        PatrolEvent(
-        #            510,
-        #            'r_c finds an old friend of their\'s from when they were a loner',
-        #            'r_c invites their friend to join the Clan',
-        #            'r_c and their friend reminisce about old times',
-        #            'r_c says farewell to their friend and rejoins the patrol', 40, 10)
-        #    ])
-
-        #if self.patrol_random_cat.status == 'formerly a kittypet':
-        #    possible_patrols.extend([
-        #        PatrolEvent(
-        #            520,
-        #            'r_c finds an old friend of their\'s from when they were a kittypet',
-        #            'r_c invites their friend to join the Clan',
-        #            'r_c and their friend reminisce about old times',
-        #            'r_c says farewell to their friend and rejoins the patrol', 40, 10)
-        #    ])            
 
         # single cat patrol
         if len(self.patrol_cats) == 1:
@@ -975,9 +910,36 @@ class Patrol(object):
                             win_skills=['great speaker', 'fantastic speaker'])
                         ])
 
+
+        # ---------------------------------------------------------------------------- #
+        #                                 !!IMPORTANT!!                                #
+        #                               currently in rework                            #
+        #                     me (Lixxis) will make a solution later                   #
+        # ---------------------------------------------------------------------------- #
+
+        #if self.patrol_random_cat.skill == 'formerly a loner':
+        #    possible_patrols.extend([
+        #        PatrolEvent(
+        #            510,
+        #            'r_c finds an old friend of their\'s from when they were a loner',
+        #            'r_c invites their friend to join the Clan',
+        #            'r_c and their friend reminisce about old times',
+        #            'r_c says farewell to their friend and rejoins the patrol', 40, 10)
+        #    ])
+
+        #if self.patrol_random_cat.status == 'formerly a kittypet':
+        #    possible_patrols.extend([
+        #        PatrolEvent(
+        #            520,
+        #            'r_c finds an old friend of their\'s from when they were a kittypet',
+        #            'r_c invites their friend to join the Clan',
+        #            'r_c and their friend reminisce about old times',
+        #            'r_c says farewell to their friend and rejoins the patrol', 40, 10)
+        #    ])            
+
         return possible_patrols
 
-    def generate_patrol_event(self, patrol_dict):
+    def generate_patrol_events(self, patrol_dict):
         all_patrol_events = []
         for patrol in patrol_dict:
             patrol_event = PatrolEvent(
@@ -1249,6 +1211,7 @@ class Patrol(object):
                 if claim_type == hunting_claim:
                     self.hunting_claim_info[(x, y)] = game.map_info[(x, y)]
                     self.hunting_grounds.append((x, y))
+
 
 class PatrolEvent(object):
 

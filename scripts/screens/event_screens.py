@@ -159,7 +159,12 @@ class PatrolEventScreen(Screens):
         verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
         if game.switches['event'] == 0:
             patrol.add_patrol_cats()
-            possible_events = patrol.get_possible_patrols(game.clan.current_season, game.clan.biome, game.clan.all_clans)
+            possible_events = patrol.get_possible_patrols(
+                game.clan.current_season,
+                game.clan.biome,
+                game.clan.all_clans,
+                game.settings.get('disasters')
+            )
             patrol.patrol_event = choice(possible_events)
             game.switches['event'] = -1
         if game.switches['event'] == -1:
