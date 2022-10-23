@@ -378,21 +378,101 @@ class Cat(object):
 # ---------------------------------------------------------------------------- #
 
     def one_moon(self):
+        if self.exiled:
+            # this is handled in events.py
+            return
+
+        # increase moons is already handled in events.py function perform_ceremonies
         if self.dead:
             self.dead_for += 1
             return
 
         self.in_camp = 1
-        if self.moons <= 13: # should only called sometimes not every moon?
-            self.update_mentor()  # should only called sometimes not every moon?
+        if self.moons <= 13:
+            self.update_mentor()
 
-        # increase moon is handled in events.py function perform_ceremonies
         self.update_age()
         self.update_skill() # should only called sometimes not every moon?
         self.thoughts()
+        self.create_interaction()
 
     def thoughts(self):
         old_thoughts(self)
+
+    def create_interaction(self):
+        # if the cat has no relationships, skip
+        if len(self.relationships) < 1 or self.relationships is None:
+            return
+
+        cats_to_choose = list(
+            filter(lambda iter_cat_id: iter_cat_id != self.ID,
+                   cat_class.all_cats.copy()))
+        # increase chance of cats, which are already befriended
+        like_threshold = 30
+        relevant_relationships = list(
+            filter(lambda relation: relation.platonic_like >= like_threshold,
+                   self.relationships))
+        for relationship in relevant_relationships:
+            cats_to_choose.append(relationship.cat_to)
+            if relationship.platonic_like >= like_threshold * 2:
+                cats_to_choose.append(relationship.cat_to)
+
+        # increase chance of cats, which are already may be in love
+        love_threshold = 30
+        relevant_relationships = list(
+            filter(lambda relation: relation.romantic_love >= love_threshold,
+                   self.relationships))
+        for relationship in relevant_relationships:
+            cats_to_choose.append(relationship.cat_to)
+            if relationship.romantic_love >= love_threshold * 2:
+                cats_to_choose.append(relationship.cat_to)
+
+        # increase the chance a kitten interact with other kittens
+        if self.age == "kitten":
+            kittens = list(
+                filter(
+                    lambda cat_id: self.all_cats.get(cat_id).age == "kitten" and
+                    cat_id != self.ID, cat_class.all_cats.copy()))
+            amount = int(len(cats_to_choose) / 4)
+            if len(kittens) > 0:
+                amount = int(len(cats_to_choose) / len(kittens))
+            cats_to_choose = cats_to_choose + kittens * amount
+
+        # increase the chance a apprentice interact with other apprentices
+        if self.age == "adolescent":
+            apprentices = list(
+                filter(
+                    lambda cat_id: self.all_cats.get(cat_id).age == "adolescent"
+                    and cat_id != self.ID, cat_class.all_cats.copy()))
+            amount = int(len(cats_to_choose) / 4)
+            if len(apprentices) > 0:
+                amount = int(len(cats_to_choose) / len(apprentices))
+            cats_to_choose = cats_to_choose + apprentices * amount
+
+        # choose cat and start
+        random_id = random.choice(cats_to_choose)
+        relevant_relationship_list = list(
+            filter(
+                lambda relation: str(relation.cat_to) == str(random_id) and
+                not relation.cat_to.dead, self.relationships))
+        random_cat = self.all_cats.get(random_id)
+        kitten_and_exiled = random_cat != None and random_cat.exiled and self.age == "kitten"
+
+        # is also found in Relation_Events.MAX_ATTEMPTS
+        attempts_left = 1000
+        while len(relevant_relationship_list) < 1 or random_id == self.ID or kitten_and_exiled:
+            random_id = random.choice(cats_to_choose)
+            random_cat = self.all_cats.get(random_id)
+            kitten_and_exiled = random_cat != None and random_cat.exiled and self.age == "kitten"
+            relevant_relationship_list = list(
+                filter(
+                    lambda relation: str(relation.cat_to) == str(random_id) and
+                    not relation.cat_to.dead, self.relationships))
+            attempts_left -= 1
+            if attempts_left <= 0:
+                return
+        relevant_relationship = relevant_relationship_list[0]
+        relevant_relationship.start_action()
 
     def update_age(self):
         updated_age = False

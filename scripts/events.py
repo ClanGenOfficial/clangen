@@ -26,9 +26,10 @@ class Events(object):
             self.living_cats = 0
             self.new_cat_invited = False
             game.patrolled.clear()
+            relation_events = Relation_Events()
             for cat in cat_class.all_cats.copy().values():
                 if not cat.exiled:
-                    self._extracted_from_one_moon_7(cat)
+                    self.one_moon_cat(cat, relation_events)
                 else:
                     cat.moons += 1
                     if cat.moons == 6:
@@ -58,15 +59,6 @@ class Events(object):
 
                         game.clan.leader_lives = 0
 
-            # interaction here so every cat may have got a new name
-            relation_events = Relation_Events()
-            cat_list = list(cat_class.all_cats.copy().values())
-            for cat in cat_list:
-                if not cat.dead and not cat.exiled:
-                    relation_events.create_interaction(cat)
-                    relation_events.handle_relationships(cat)
-                    relation_events.check_if_having_kits(cat)
-
             self.check_clan_relations()
             game.clan.age += 1
             if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
@@ -91,35 +83,25 @@ class Events(object):
 
         game.switches['timeskip'] = False
 
-    # TODO Rename this here and in `one_moon`
-    def _extracted_from_one_moon_7(self, cat):
-        self.living_cats += 1
+    def one_moon_cat(self, cat, relation_events):
+        if cat.is_alive():
+            self.living_cats += 1
 
-        # should not be in cat
         self.perform_ceremonies(cat) # here is age up included
         self.handle_deaths(cat)
         if self.new_cat_invited == False or self.living_cats < 10:
             self.invite_new_cats(cat)
         self.other_interactions(cat)
         self.coming_out(cat)
-
-        # should be in cat ?
         self.gain_accessories(cat)
         self.gain_scars(cat)
 
+        # all actions, which do not trigger and event display and 
+        # are connected to cats are located in there
         cat.one_moon()
 
-    def check_skill(self, cat):
-        #checking that skill is correct
-        if cat.status == 'medicine cat' and cat.skill not in cat.med_skills:
-            cat.skill = choice(cat.med_skills)
-        else:
-            return
-        if cat.skill == '???':
-            if cat.status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
-                cat.skill = choice(cat.skills)
-            else:
-                return
+        relation_events.handle_relationships(cat)
+        relation_events.check_if_having_kits(cat)
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0 and randint(1, 5) == 1:
@@ -1436,20 +1418,6 @@ class Events(object):
                                                 choice(disaster))
                     for cat in dead_cats:
                         cat.die()
-
-    def check_age(self, cat):
-        if 0 <= cat.moons <= 5:
-            cat.age = 'kitten'
-        elif 6 <= cat.moons <= 11:
-            cat.age = 'adolescent'
-        elif 12 <= cat.moons <= 47:
-            cat.age = 'young adult'
-        elif 48 <= cat.moons <= 95:
-            cat.age = 'adult'
-        elif 96 <= cat.moons <= 119:
-            cat.age = 'senior adult'
-        else:
-            cat.age = 'elder'
 
     def coming_out(self, cat):
         transing_chance = randint(0, 500)
