@@ -1,7 +1,6 @@
 from random import choice, randint
 from math import floor
 
-from scripts.events import events_class
 from scripts.game_structure.game_essentials import *
 from scripts.cat.names import *
 from scripts.cat.cats import *
@@ -1097,14 +1096,14 @@ class Patrol(object):
                     game.clan.leader_lives -= 9 # taken by twolegs, fall into ravine
                 else:
                     game.clan.leader_lives -= 1
-            events_class.dies(self.patrol_random_cat)
+            self.patrol_random_cat.die()
         elif self.patrol_event.patrol_id in [900, 901, 902]:
             for cat in self.patrol_cats:
                 cat.experience += self.patrol_event.exp
                 cat.experience = min(cat.experience, 80)
                 if cat.status == 'leader':
                     game.clan.leader_lives -= 10
-                events_class.dies(cat)
+                cat.die()
 
     def handle_scars(self):
         if self.patrol_event.patrol_id in [107, 251, 301, 302, 304, 306, 309]:

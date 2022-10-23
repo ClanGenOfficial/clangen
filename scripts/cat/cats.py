@@ -263,6 +263,28 @@ class Cat(object):
     def is_alive(self):
         return not self.dead
 
+    def die(self):
+        if self.status == 'leader' and game.clan.leader_lives > 0:
+            return
+        elif self.status == 'leader' and game.clan.leader_lives <= 0:
+            self.dead = True
+            game.clan.leader_lives = 0
+        else:
+            self.dead = True
+
+        if self.mate != None:
+            self.mate = None
+            if type(self.mate) == str:
+                mate = cat_class.all_cats.get(self.mate)
+                mate.mate = None
+            elif type(self.mate) == Cat:
+                self.mate.mate = None
+
+        for app in self.apprentice.copy():
+            app.update_mentor()
+        self.update_mentor()
+        game.clan.add_to_starclan(self)
+
     def thoughts(self):
         old_thoughts(self)
 

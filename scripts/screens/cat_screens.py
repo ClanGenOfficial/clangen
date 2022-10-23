@@ -638,7 +638,7 @@ class OptionsScreen(Screens):
                 'kill_cat'] is not None:
             if game.switches['kill_cat'].status == 'leader':
                 game.clan.leader_lives -= 10
-            events_class.dies(game.switches['kill_cat'])
+            game.switches['kill_cat'].die()
             game.switches['kill_cat'] = False
 
 class ChangeNameScreen(Screens):
