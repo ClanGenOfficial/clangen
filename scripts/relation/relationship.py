@@ -23,10 +23,10 @@ EXILED_CATS = {
 # IN increase or decrease
 resource_directory = "resources/dicts/relationship_events/"
 
-NOT_AGE_SPECIFIC = None
+NEWLEAF = None
 try:
     with open(f"{resource_directory}not_age_specific.json", 'r') as read_file:
-        NOT_AGE_SPECIFIC = ujson.loads(read_file.read())
+        NEWLEAF = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the not_age_specific.json file of relationship_events!'
 
@@ -275,7 +275,7 @@ class Relationship(object):
     def get_action_possibilities(self):
         """Creates a list of possibles actions of this relationship"""
         # check if opposite_relationship is here, otherwise creates it       
-        action_possibilities = copy.deepcopy(NOT_AGE_SPECIFIC['neutral'])
+        action_possibilities = copy.deepcopy(NEWLEAF['neutral'])
 
         key = self.cat_to.status
         if key == "senior warrior":
@@ -285,16 +285,16 @@ class Relationship(object):
         # check how the relationship is
         relation_keys = ['neutral']
         if self.dislike > 20 or self.jealousy > 20:
-            action_possibilities += NOT_AGE_SPECIFIC['unfriendly']
+            action_possibilities += NEWLEAF['unfriendly']
             relation_keys.append('unfriendly')
             # increase the chance for unfriendly behavior
             if self.dislike > 30:
                 relation_keys.append('unfriendly')
         if self.platonic_like > 40 or self.comfortable > 30:
-            action_possibilities += NOT_AGE_SPECIFIC['friendly']
+            action_possibilities += NEWLEAF['friendly']
             relation_keys.append('friendly')
         if self.platonic_like > 50 and self.comfortable > 40 and self.trust > 30:
-            action_possibilities += NOT_AGE_SPECIFIC['close']
+            action_possibilities += NEWLEAF['close']
             relation_keys.append('close')
 
         # add the interactions to the possible ones

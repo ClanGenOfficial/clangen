@@ -1,3 +1,5 @@
+from random import choice
+
 from .base_screens import Screens, draw_menu_buttons, cat_profiles
 
 from scripts.events import events_class
@@ -157,7 +159,8 @@ class PatrolEventScreen(Screens):
         verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
         if game.switches['event'] == 0:
             patrol.add_patrol_cats()
-            patrol.add_possible_patrols()
+            possible_events = patrol.get_possible_patrols(game.clan.current_season, game.clan.biome, game.clan.all_clans)
+            patrol.patrol_event = choice(possible_events)
             game.switches['event'] = -1
         if game.switches['event'] == -1:
             intro_text = patrol.patrol_event.intro_text

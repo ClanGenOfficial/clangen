@@ -6,6 +6,37 @@ from scripts.cat.names import *
 from scripts.cat.cats import *
 from scripts.cat.pelts import *
 
+resource_directory = "resources/dicts/patrols/"
+
+NEWLEAF = None
+try:
+    with open(f"{resource_directory}newleaf.json", 'r') as read_file:
+        NEWLEAF = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the newleaf.json file of patrols!'
+
+
+GREENLEAF = None
+try:
+    with open(f"{resource_directory}greenleaf.json", 'r') as read_file:
+        GREENLEAF = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the greenleaf.json file of patrols!'
+
+LEAF_FALL = None
+try:
+    with open(f"{resource_directory}leaf-fall.json", 'r') as read_file:
+        LEAF_FALL = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the leaf-fall.json file of patrols!'
+
+LEAF_BARE = None
+try:
+    with open(f"{resource_directory}leaf-bare.json", 'r') as read_file:
+        LEAF_BARE = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the leaf-bare.json file of patrols!'
+
 
 class Patrol(object):
 
@@ -66,10 +97,9 @@ class Patrol(object):
         else:
             self.patrol_other_cats = None
 
-    def add_possible_patrols(self):
-
+    def get_possible_patrols(self, current_season, biome, all_clans):
         possible_patrols = []
-    # general patrols, any number of cats
+        # general patrols, any number of cats
         # general hunting patrols
         possible_patrols.extend([
             PatrolEvent(
@@ -222,116 +252,17 @@ class Patrol(object):
             ])
 
         # season patrols
-        if game.clan.current_season == 'Newleaf':
-            possible_patrols.extend([
-                PatrolEvent(
-                    111,
-                    'Your patrol notices new leaves and flowers starting to grow',
-                    'The hunting is plentiful as new prey is born',
-                    'With newleaf comes allergies...',
-                    'Your patrol decides to head home early',
-                    95,
-                    10),
-                PatrolEvent(
-                    112,
-                    'r_c notes that it is a beautiful day outside, birds are singing and flowers are blooming',
-                    'On days like these, patrolling is very pleasant',
-                    'On days like these, cats are too lazy to patrol',
-                    'Your patrol decides to head home early',
-                    95,
-                    10),
-                PatrolEvent(
-                    113,
-                    'The patrol approaches a deep ravine. There is a lot of prey here, but the ground is very slippery from newleaf rain',
-                    'The patrol has a very successful hunt',
-                    'While hunting, r_c slips and falls into the ravine, never to be seen again',
-                    'The patrol decides to hunt elsewhere',
-                    50,
-                    10,
-                    win_skills=['fantastic hunter']),
-                PatrolEvent(
-                    114,
-                    'A large river divides the Clan\'s territory and the water is high from newleaf rain. Should your patrol cross it?',
-                    'The patrol crosses the river and the rest of the patrol goes smoothly',
-                    'r_c is swept away from the strong current and drowns',
-                    'The patrol decides it is too dangerous to cross right now',
-                    50,
-                    10)
-            ])
-
-        elif game.clan.current_season == 'Greenleaf':
-            possible_patrols.extend([
-                PatrolEvent(
-                    120,
-                    'It is extremely hot out today; r_c debates turning back home',
-                    'They decide to power through the weather and the patrol is successful',
-                    'r_c collapses from heat exhaustion',
-                    'Your patrol decides to head home early to beat the heat',
-                    50,
-                    10),
-                PatrolEvent(
-                    121,
-                    'r_c spots a pond and debates if they should stop for a quick swim to cool off',
-                    'They stop to swim for a few moments and feel rejuvenated',
-                    'They get distracted while splashing in the water',
-                    'r_c decides to continue with the patrol instead',
-                    50,
-                    10),
-                PatrolEvent(
-                    122,
-                    'The patrol comes across a strange Twoleg object smelling slightly of smoke and prey',
-                    'The patrol interprets the purpose of the object. It seems like Twolegs light their freshkill on fire before eating it! How strange.',
-                    'The patrol can\'t seem to interpret the purpose of the object',
-                    'The patrol decides to avoid the Twoleg object',
-                    50,
-                    10,
-                    win_skills=['smart', 'very smart', 'extremely smart']),
-            ])
-        elif game.clan.current_season == 'Leaf-fall':
-            possible_patrols.extend([
-                PatrolEvent(
-                    130,
-                    'The leaves are starting to turn colors; the patrol know leaf-bare will be here soon',
-                    'For now, hunting is still good',
-                    'A chilly wind makes it difficult to hunt',
-                    'The patrol is uneventful',
-                    50,
-                    10,
-                    win_skills=['great hunter', 'fantastic hunter']),
-                PatrolEvent(
-                    131,
-                    'r_c stalks a squirrel under a tree',
-                    'They use the leaf-fall foliage to their advantage and catch the squirrel easily',
-                    'Leaves crunch under their paws and the squirrel gets away',
-                    'r_c decides to go after other prey instead',
-                    50,
-                    10,
-                    win_skills=['fantastic hunter'])
-            ])
-        elif game.clan.current_season == 'Leaf-bare':
-            possible_patrols.extend([
-                PatrolEvent(
-                    140,
-                    'It starts snowing soon after the patrol sets out',
-                    'Despite the snow, the patrol manages to hunt successfully',
-                    'The prey must be hiding; the patrol catches nothing and is caught in a snowstorm',
-                    'They decide to turn back and wait until the snow dies down',
-                    50,
-                    10,
-                    win_skills=['great hunter', 'fantastic hunter']),
-                PatrolEvent(
-                    141,
-                    'r_c thinks that it is too cold to patrol and that they should turn back',
-                    'r_c warms up as they patrol the territory and says it isn\'t so bad anymore',
-                    'The cold is too much for r_c, they go missing and are later found frozen to death',
-                    'They decide to turn back and wait for warmer weather',
-                    50,
-                    10,
-                    win_skills=['good teacher', 'great teacher', 'fantastic teacher'])
-            ])
+        if current_season == 'Newleaf':
+            possible_patrols.extend(self.generate_patrol_event(NEWLEAF))
+        elif current_season == 'Greenleaf':
+            possible_patrols.extend(self.generate_patrol_event(GREENLEAF))
+        elif current_season == 'Leaf-fall':
+            possible_patrols.extend(self.generate_patrol_event(LEAF_FALL))
+        elif current_season == 'Leaf-bare':
+            possible_patrols.extend(self.generate_patrol_event(LEAF_BARE))
 
             # biome specific patrols
-        if game.clan.biome == 'forest':
+        if biome == 'forest':
             possible_patrols.extend([
                 PatrolEvent(
                     700,
@@ -360,7 +291,7 @@ class Patrol(object):
                     40,
                     10)
             ])
-        elif game.clan.biome == 'plains':
+        elif biome == 'plains':
             possible_patrols.extend([
                 PatrolEvent(
                     710,
@@ -372,7 +303,7 @@ class Patrol(object):
                     10,
                     win_skills=['great hunter', 'fantastic hunter'])
             ])
-        elif game.clan.biome == 'mountains':
+        elif biome == 'mountains':
             possible_patrols.extend([
                 PatrolEvent(
                     710,
@@ -384,7 +315,7 @@ class Patrol(object):
                     10,
                     win_skills=['great hunter', 'fantastic hunter'])
             ])
-        elif game.clan.biome == 'swamp':
+        elif biome == 'swamp':
             possible_patrols.extend([
                 PatrolEvent(
                     710,
@@ -396,7 +327,7 @@ class Patrol(object):
                     10,
                     win_skills=['great hunter', 'fantastic hunter'])
             ])
-        elif game.clan.biome == 'beach':
+        elif biome == 'beach':
             possible_patrols.extend([
                 PatrolEvent(
                     710,
@@ -411,7 +342,7 @@ class Patrol(object):
 
 
         # other_clan patrols
-        if len(game.clan.all_clans) > 0:
+        if len(all_clans) > 0:
             1 == 1  # will add here
 
         # deadly patrols
@@ -631,25 +562,25 @@ class Patrol(object):
                 'They leave the kit alone', 40, 10)
         ])
 
-        if self.patrol_random_cat.skill == 'formerly a loner':
-            possible_patrols.extend([
-                PatrolEvent(
-                    510,
-                    'r_c finds an old friend of their\'s from when they were a loner',
-                    'r_c invites their friend to join the Clan',
-                    'r_c and their friend reminisce about old times',
-                    'r_c says farewell to their friend and rejoins the patrol', 40, 10)
-            ])
+        #if self.patrol_random_cat.skill == 'formerly a loner':
+        #    possible_patrols.extend([
+        #        PatrolEvent(
+        #            510,
+        #            'r_c finds an old friend of their\'s from when they were a loner',
+        #            'r_c invites their friend to join the Clan',
+        #            'r_c and their friend reminisce about old times',
+        #            'r_c says farewell to their friend and rejoins the patrol', 40, 10)
+        #    ])
 
-        if self.patrol_random_cat.status == 'formerly a kittypet':
-            possible_patrols.extend([
-                PatrolEvent(
-                    520,
-                    'r_c finds an old friend of their\'s from when they were a kittypet',
-                    'r_c invites their friend to join the Clan',
-                    'r_c and their friend reminisce about old times',
-                    'r_c says farewell to their friend and rejoins the patrol', 40, 10)
-            ])            
+        #if self.patrol_random_cat.status == 'formerly a kittypet':
+        #    possible_patrols.extend([
+        #        PatrolEvent(
+        #            520,
+        #            'r_c finds an old friend of their\'s from when they were a kittypet',
+        #            'r_c invites their friend to join the Clan',
+        #            'r_c and their friend reminisce about old times',
+        #            'r_c says farewell to their friend and rejoins the patrol', 40, 10)
+        #    ])            
 
         # single cat patrol
         if len(self.patrol_cats) == 1:
@@ -775,7 +706,7 @@ class Patrol(object):
                         10)
                     ])
 
-                if game.clan.current_season == 'Leaf-bare':
+                if current_season == 'Leaf-bare':
                     possible_patrols.extend([
                     PatrolEvent(
                         1003,
@@ -840,7 +771,7 @@ class Patrol(object):
                         50,
                         10)
                     ])
-                    if game.clan.current_season == 'Newleaf':
+                    if current_season == 'Newleaf':
                         possible_patrols.extend([
                         PatrolEvent(
                             1012,
@@ -878,7 +809,7 @@ class Patrol(object):
                         50,
                         10)
                     ])
-                if game.clan.current_season == 'Leaf-fall':
+                if current_season == 'Leaf-fall':
                     possible_patrols.extend([
                     PatrolEvent(
                         1022,
@@ -1044,7 +975,25 @@ class Patrol(object):
                             win_skills=['great speaker', 'fantastic speaker'])
                         ])
 
-        self.patrol_event = choice(possible_patrols)
+        return possible_patrols
+
+    def generate_patrol_event(self, patrol_dict):
+        all_patrol_events = []
+        for patrol in patrol_dict:
+            patrol_event = PatrolEvent(
+                patrol_id = patrol["patrol_id"],
+                intro_text = patrol["intro_text"],
+                success_text = patrol["success_text"],
+                fail_text = patrol["fail_text"],
+                decline_text = patrol["decline_text"],
+                antagonize_text = patrol["antagonize_text"],
+                antagonize_fail_text = patrol["antagonize_fail_text"],
+                chance_of_success = patrol["chance_of_success"],
+                exp = patrol["exp"],
+                win_skills = patrol["win_skills"]
+            )
+            all_patrol_events.append(patrol_event)
+        return all_patrol_events
 
     def calculate_success(self):
         if self.patrol_event is None:
