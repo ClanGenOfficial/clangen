@@ -11,7 +11,7 @@ from .appearance_utility import *
 
 from scripts.utility import *
 from scripts.game_structure.game_essentials import *
-from scripts.relation.relationship import *
+from scripts.cat_relations.relationship import *
 
 
 class Cat(object):
@@ -285,12 +285,33 @@ class Cat(object):
         self.update_mentor()
         game.clan.add_to_starclan(self)
 
-    def thoughts(self):
-        old_thoughts(self)
-
     def status_change(self, new_status):
-        # updates traits
         # revealing of traits and skills
+        self.update_traits(new_status)
+        # updates mentors
+        if new_status == 'apprentice':
+            self.update_mentor()
+        elif new_status == 'medicine cat apprentice':
+            self.update_med_mentor()
+        # updates skill
+        if self.skill == '???':
+            if new_status == 'warrior' or self.status == 'warrior' and new_status != 'medicine cat':
+                self.skill = choice(self.skills)
+                self.update_mentor()
+            elif new_status == 'medicine cat':
+                self.skill = choice(self.med_skills)
+                self.update_med_mentor()
+        else:
+            self.skill = self.skill
+        if new_status == 'elder' and self.status != 'leader' and self.status != 'medicine cat':
+            self.skill = choice(self.elder_skills)
+        self.status = new_status
+        self.name.status = new_status
+
+        # update class dictionary
+        self.all_cats[self.ID] = self
+
+    def update_traits(self, new_status):
         if self.moons == 6:
             chance = randint(0, 5)  # chance for cat to gain trait that matches their previous trait's personality group
             if chance == 0:
@@ -340,29 +361,6 @@ class Cat(object):
                                 break
             else:
                 print(self.name, 'NEW TRAIT TYPE: No change', chance)
-        # updates mentors
-        if new_status == 'apprentice':
-            self.update_mentor()
-        elif new_status == 'medicine cat apprentice':
-            self.update_med_mentor()
-        # updates skill
-        if self.skill == '???':
-            if new_status == 'warrior' or self.status == 'warrior' and new_status != 'medicine cat':
-                self.skill = choice(self.skills)
-                self.update_mentor()
-            elif new_status == 'medicine cat':
-                self.skill = choice(self.med_skills)
-                self.update_med_mentor()
-        else:
-            self.skill = self.skill
-
-        if new_status == 'elder' and self.status != 'leader' and self.status != 'medicine cat':
-            self.skill = choice(self.elder_skills)
-
-        self.status = new_status
-        self.name.status = new_status
-        # update class dictionary
-        self.all_cats[self.ID] = self
 
     def describe_cat(self):
         if self.genderalign == 'male' or self.genderalign == "transmasc" or self.genderalign == "trans male":
@@ -374,6 +372,46 @@ class Cat(object):
         description = str(self.pelt.length).lower() + '-furred'
         description += ' ' + describe_color(self.pelt, self.tortiecolour, self.tortiepattern, self.white_patches) + ' ' + sex
         return description
+
+# ---------------------------------------------------------------------------- #
+#                              moon skip functions                             #
+# ---------------------------------------------------------------------------- #
+
+    def one_moon(self):
+        if self.dead:
+            self.dead_for += 1
+            return
+
+        self.in_camp = 1
+        if self.moons <= 13: # should only called sometimes not every moon?
+            self.update_mentor()  # should only called sometimes not every moon?
+
+        # increase moon is handled in events.py function perform_ceremonies
+        self.update_age()
+        self.update_skill() # should only called sometimes not every moon?
+        self.thoughts()
+
+    def thoughts(self):
+        old_thoughts(self)
+
+    def update_age(self):
+        updated_age = False
+        for key_age in self.age_moons.keys():
+            if self.moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1]+1):
+                updated_age = True
+                self.age = key_age
+        if not updated_age:
+            print("WARNING: ERROR WHILE UPDATING AGE")
+            self.age = "elder"
+
+    def update_skill(self):
+        #checking that skill is correct
+        if self.status == 'medicine cat' and self.skill not in self.med_skills:
+            self.skill = choice(self.med_skills)
+
+        if self.skill == '???':
+            if self.status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
+                self.skill = choice(self.skills)
 
 # ---------------------------------------------------------------------------- #
 #                                   relative                                   #

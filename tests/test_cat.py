@@ -2,7 +2,7 @@ from copy import deepcopy
 import unittest
 
 from scripts.cat.cats import Cat
-from scripts.relation.relationship import Relationship
+from scripts.cat_relations.relationship import Relationship
 
 
 class TestCreationAge(unittest.TestCase):

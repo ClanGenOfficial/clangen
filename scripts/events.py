@@ -1,5 +1,5 @@
 from scripts.cat.cats import *
-from scripts.relation.relation_events import *
+from scripts.cat_relations.relation_events import *
 from scripts.game_structure.buttons import *
 from scripts.game_structure.load_cat import * 
 
@@ -27,9 +27,9 @@ class Events(object):
             self.new_cat_invited = False
             game.patrolled.clear()
             for cat in cat_class.all_cats.copy().values():
-                if not cat.dead and not cat.exiled:
+                if not cat.exiled:
                     self._extracted_from_one_moon_7(cat)
-                elif cat.exiled:
+                else:
                     cat.moons += 1
                     if cat.moons == 6:
                         cat.age = 'adolescent'
@@ -57,20 +57,16 @@ class Events(object):
                         game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently')
 
                         game.clan.leader_lives = 0
-                else:
-                    cat.dead_for += 1
 
             # interaction here so every cat may have got a new name
             relation_events = Relation_Events()
             cat_list = list(cat_class.all_cats.copy().values())
-            random.shuffle(cat_list)
             for cat in cat_list:
                 if not cat.dead and not cat.exiled:
-                    cat.thoughts()
                     relation_events.create_interaction(cat)
                     relation_events.handle_relationships(cat)
                     relation_events.check_if_having_kits(cat)
-                    #relation_events.have_kits(cat)
+
             self.check_clan_relations()
             game.clan.age += 1
             if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
@@ -98,19 +94,20 @@ class Events(object):
     # TODO Rename this here and in `one_moon`
     def _extracted_from_one_moon_7(self, cat):
         self.living_cats += 1
-        cat.in_camp = 1
-        self.check_age(cat)
-        self.check_skill(cat)
-        self.perform_ceremonies(cat)
+
+        # should not be in cat
+        self.perform_ceremonies(cat) # here is age up included
+        self.handle_deaths(cat)
         if self.new_cat_invited == False or self.living_cats < 10:
             self.invite_new_cats(cat)
         self.other_interactions(cat)
+        self.coming_out(cat)
+
+        # should be in cat ?
         self.gain_accessories(cat)
         self.gain_scars(cat)
-        self.handle_deaths(cat)
-        self.coming_out(cat)
-        if cat.moons <= 13:
-            cat.update_mentor()  
+
+        cat.one_moon()
 
     def check_skill(self, cat):
         #checking that skill is correct

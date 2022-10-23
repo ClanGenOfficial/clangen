@@ -2,7 +2,7 @@ import unittest
 import ujson
 
 from scripts.cat.cats import Cat
-from scripts.relation.relationship import Relationship
+from scripts.cat_relations.relationship import Relationship
 
 class TestRelationshipInteraction(unittest.TestCase):
 

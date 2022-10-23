@@ -29,7 +29,8 @@ if if_clans > 0:
     try:
         load_cats(game.cat_class)
         clan_class.load_clan()
-    except Exception:
+    except Exception as e:
+        print("\nERROR MESSAGE:\n",e,"\n")
         if not game.switches['error_message']:
             game.switches[
                 'error_message'] = 'There was an error loading the cats file!'
