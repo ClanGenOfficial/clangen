@@ -153,7 +153,7 @@ class Events(object):
                         self.time_at_war += 1
                     break
                 elif int(other_clan.relations) > 30:
-                    other_clan.relations = 20
+                    other_clan.relations = 10
                 else:
                     self.at_war = False
                     other_clan.relations = other_clan.relations

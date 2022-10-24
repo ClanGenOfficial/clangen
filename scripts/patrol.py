@@ -7,7 +7,6 @@ from .game_essentials import *
 from .names import *
 from .cats import *
 from .pelts import *
-from .clan import *
 
 
 class Patrol(object):
@@ -25,7 +24,6 @@ class Patrol(object):
         self.success = False
         self.patrol_random_cat = None
         self.patrol_stat_cat = None
-        self.other_clan = {}
         self.experience_levels = [
             'very low', 'low', 'slightly low', 'average', 'somewhat high',
             'high', 'very high', 'master', 'max'
@@ -56,7 +54,6 @@ class Patrol(object):
             self.patrol_leader = choice(self.patrol_cats)
         self.patrol_random_cat = choice(self.patrol_cats)
         self.other_clan = choice(game.clan.all_clans)
-
 
     def add_possible_patrols(self):
         possible_patrols = []
@@ -942,10 +939,6 @@ class Patrol(object):
     def calculate_success(self):
         if self.patrol_event is None:
             return
-        if game.switches['event'] == 4:
-            antagonize = True
-        else:
-            antagonize = False
         # if patrol contains cats with autowin skill, chance of success is high
         # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
         chance = self.patrol_event.chance_of_success + int(
@@ -961,22 +954,45 @@ class Patrol(object):
                     self.patrol_event.win_trait):
                 chance = 90
         c = randint(0, 100)
-        if c < chance and antagonize is False:
+        if c < chance:
             self.success = True
             self.handle_exp_gain()
             self.add_new_cats()
-            self.handle_clan_relations(1)
-        elif c < chance and antagonize is True:
-            self.success_antagonize = True
-            self.handle_deaths()
-            self.handle_scars()
-            self.handle_clan_relations(1)
+            self.handle_clan_relations(difference = int(1))
         else:
             self.success = False
             self.handle_deaths()
             self.handle_scars()
-            self.handle_clan_relations(1)
-        print (patrol.other_clan.relations)
+            self.handle_clan_relations(difference = int(-1))
+
+    def calculate_success_antagonize(self):
+            if self.patrol_event is None:
+                return
+            # if patrol contains cats with autowin skill, chance of success is high
+            # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
+            chance = self.patrol_event.chance_of_success + int(
+                self.patrol_total_experience / 10)
+            if self.patrol_event.patrol_id != 100:
+                chance = min(chance, 80)
+            if self.patrol_event.win_skills is not None:
+                if set(self.patrol_skills).isdisjoint(
+                        self.patrol_event.win_skills):
+                    chance = 90
+            if self.patrol_event.win_trait is not None:
+                if set(self.patrol_traits).isdisjoint(
+                        self.patrol_event.win_trait):
+                    chance = 90
+            c = randint(0, 100)
+            if c < chance:
+                self.success = True
+                self.handle_exp_gain()
+                self.add_new_cats()
+                self.handle_clan_relations(difference = int(-1))
+            else:
+                self.success = False
+                self.handle_deaths()
+                self.handle_scars()
+                self.handle_clan_relations(difference = int(-2))
 
     def handle_exp_gain(self):
         if self.success:
@@ -1034,19 +1050,18 @@ class Patrol(object):
             self.patrol_random_cat.status_change('elder')
 
     def handle_clan_relations(self, difference):
-        difference = difference
         other_clan = patrol.other_clan
         other_clan_ = game.clan.all_clans.index(other_clan)
         number_from_file = int(game.clan.all_clans[other_clan_].relations)
         if self.patrol_event.patrol_id in list(range(800, 805)):
             if patrol.success is True:
                 clan_relations = int(number_from_file + difference)
-            elif patrol.success_antagonize is True:
-                clan_relations = int(number_from_file - difference)
+                game.clan.all_clans[other_clan_].relations = str(clan_relations)
             else:
-                clan_relations = int(number_from_file - difference)
-            clan_relations = clan_relations
-            game.clan.all_clans[other_clan_].relations = str(clan_relations)
+                clan_relations = int(number_from_file + difference)
+                game.clan.all_clans[other_clan_].relations = str(clan_relations)
+            clan_relations = clan_relations            
+            print(clan_relations)
 
     def handle_relationships(self):
         romantic_love = 0

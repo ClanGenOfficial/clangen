@@ -2425,6 +2425,7 @@ class PatrolEventScreen(Screens):
             patrol.calculate_success()
             game.switches['event'] = 1
         elif game.switches['event'] == 3:
+            patrol.calculate_success_antagonize()
             game.switches['event'] = 4
         if game.switches['event'] > 0:
             if game.switches['event'] == 1:
