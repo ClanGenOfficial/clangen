@@ -966,17 +966,17 @@ class Patrol(object):
             self.success = True
             self.handle_exp_gain()
             self.add_new_cats()
-            self.handle_clan_relations(clan_relations)
+            self.handle_clan_relations(1)
         elif c < chance and antagonize is True:
             self.success = True
             self.handle_deaths()
             self.handle_scars()
-            self.handle_clan_relations(clan_relations)
+            self.handle_clan_relations(-1)
         else:
             self.success = False
             self.handle_deaths()
             self.handle_scars()
-            self.handle_clan_relations(clan_relations)
+            self.handle_clan_relations(-1)
 
     def handle_exp_gain(self):
         if self.success:
@@ -1033,15 +1033,19 @@ class Patrol(object):
                 'retirement'):
             self.patrol_random_cat.status_change('elder')
 
-    def handle_clan_relations(self, clan_relations):
-        other_clan_ = game.clan.all_clans.index(patrol.other_clan)
-        clan_relations = int(game.clan.all_clans[other_clan_].relations)
-        if self.patrol_event.patrol_id in list(range(800,805)):
+    def handle_clan_relations(self, difference):
+        difference = difference
+        other_clan = patrol.other_clan
+        other_clan_ = game.clan.all_clans.index(other_clan)
+        number_from_file = int(game.clan.all_clans[other_clan_].relations)
+        if self.patrol_event.patrol_id in list(range(800, 805)):
             if patrol.success is True:
-                clan_relations = clan_relations + 1
+                clan_relations = number_from_file + difference
             else:
-                clan_relations = clan_relations - 1
-        print(clan_relations)
+                clan_relations = number_from_file - difference
+            clan_relations = clan_relations
+            game.clan.all_clans[other_clan_].relations = str(clan_relations)
+        
 
     def handle_relationships(self):
         romantic_love = 0
