@@ -101,7 +101,7 @@ class Events(object):
         cat.one_moon()
 
         relation_events.handle_relationships(cat)
-        relation_events.check_if_having_kits(cat)
+        relation_events.handle_having_kits(cat)
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0 and randint(1, 5) == 1:
@@ -1453,7 +1453,7 @@ class Events(object):
                     cat.genderalign = "nonbinary"
                     hit = True
             elif cat.age == 'senior adult':
-                transing_chance = transing_chance = 300
+                transing_chance = transing_chance - 300
                 if transing_chance == 1 and cat.gender == "male":
                     cat.genderalign = "trans female"
                     hit = True
@@ -1481,6 +1481,5 @@ class Events(object):
                     gender = 'she-cat'
                 game.cur_events_list.append(
                     str(cat.name) + " has realized that " + str(gender) + " doesn't describe how they feel anymore")        
-
 
 events_class = Events()

@@ -131,13 +131,14 @@ class Cat(object):
         else:
             self.ID = ID
 
-        # age
+        # age and status
         if status is None and moons is None:
             self.age = choice(self.ages)
         elif moons != None:
             for key_age in self.age_moons.keys():
                 if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1]+1):
                     self.age = key_age
+                    self.moons = moons
         else:
             if status in ['kitten', 'elder']:
                 self.age = status
@@ -146,13 +147,8 @@ class Cat(object):
             elif status == 'medicine cat apprentice':
                 self.age = 'adolescent'
             else:
-                self.age = choice(
-                    ['young adult', 'adult', 'adult', 'senior adult'])
-        if moons is None:
-            self.moons = randint(self.age_moons[self.age][0],
-                                 self.age_moons[self.age][1])
-        else:
-            self.moons = moons
+                self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
+        self.moons = random.uniform(self.age_moons[self.age][0], self.age_moons[self.age][1])
 
         # personality trait and skill
         if self.trait is None:
@@ -384,7 +380,6 @@ class Cat(object):
         if self.moons < 12:
             self.update_mentor()
 
-        #self.update_age()
         self.update_skill() # should only called sometimes not every moon?
         self.thoughts()
         self.create_interaction()
@@ -466,16 +461,6 @@ class Cat(object):
                 return
         relevant_relationship = relevant_relationship_list[0]
         relevant_relationship.start_action()
-
-    def update_age(self):
-        updated_age = False
-        for key_age in self.age_moons.keys():
-            if self.moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1]+1):
-                updated_age = True
-                self.age = key_age
-        if not updated_age:
-            print("WARNING: ERROR WHILE UPDATING AGE")
-            self.age = "elder"
 
     def update_skill(self):
         #checking that skill is correct
@@ -928,11 +913,10 @@ class Cat(object):
 
         updated_age = False
         for key_age in self.age_moons.keys():
-            if self.moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1]+1):
+            if self._moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1]+1):
                 updated_age = True
                 self.age = key_age
-        if not updated_age:
-            print("WARNING: ERROR WHILE UPDATING AGE")
+        if not updated_age and self.age != None:
             self.age = "elder"
 
 # ---------------------------------------------------------------------------- #
