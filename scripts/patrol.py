@@ -946,6 +946,7 @@ class Patrol(object):
             antagonize = True
         else:
             antagonize = False
+        clan_relations = patrol.other_clan.relations
         # if patrol contains cats with autowin skill, chance of success is high
         # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
         chance = self.patrol_event.chance_of_success + int(
@@ -965,17 +966,17 @@ class Patrol(object):
             self.success = True
             self.handle_exp_gain()
             self.add_new_cats()
-            self.handle_clan_relations()
+            self.handle_clan_relations(clan_relations)
         elif c < chance and antagonize is True:
             self.success = True
             self.handle_deaths()
             self.handle_scars()
-            self.handle_clan_relations()
+            self.handle_clan_relations(clan_relations)
         else:
             self.success = False
             self.handle_deaths()
             self.handle_scars()
-            self.handle_clan_relations()
+            self.handle_clan_relations(clan_relations)
 
     def handle_exp_gain(self):
         if self.success:
@@ -1032,10 +1033,10 @@ class Patrol(object):
                 'retirement'):
             self.patrol_random_cat.status_change('elder')
 
-    def handle_clan_relations(self):
-        other_clan = game.clan.all_clans.index(patrol.other_clan)
-        clan_relations = game.clan.all_clans[other_clan].relations
-        if self.patrol_event.patrol_id in [range(800, 805)]:
+    def handle_clan_relations(self, clan_relations):
+        other_clan_ = game.clan.all_clans.index(patrol.other_clan)
+        clan_relations = int(game.clan.all_clans[other_clan_].relations)
+        if self.patrol_event.patrol_id in list(range(800,805)):
             if patrol.success is True:
                 clan_relations = clan_relations + 1
             else:
