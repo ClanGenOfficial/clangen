@@ -156,11 +156,10 @@ class Events(object):
                     other_clan.relations = 10
                 else:
                     self.at_war = False
-                    r_num = choice([-1, 1])
-                    other_clan.relations = str(
-                        int(other_clan.relations) + r_num)
+                    other_clan.relations = other_clan.relations
             if war_notice:
                 game.cur_events_list.append(war_notice)
+                print(other_clan.relations)
 
     def perform_ceremonies(self, cat):
         if (game.clan.leader.dead or game.clan.leader.exiled

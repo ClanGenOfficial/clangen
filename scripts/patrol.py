@@ -1026,10 +1026,14 @@ class Patrol(object):
         other_clan = patrol.other_clan
         clan_relations = other_clan.relations
         if self.patrol_event.patrol_id in [range(800, 805)]:
-            if patrol.success:
-                clan_relations += 1
+            if patrol.success and not game.switches['event'] == 4:
+                clan_relations = clan_relations + 1
+            elif patrol.success and game.switches['event'] == 4:
+                clan_relations = clan_relations - 1
             else:
-                clan_relations -= 1
+                clan_relations = clan_relations - 1
+
+        print(int(other_clan.relations))
 
     def handle_relationships(self):
         romantic_love = 0

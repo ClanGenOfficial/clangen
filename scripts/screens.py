@@ -2478,8 +2478,6 @@ class PatrolEventScreen(Screens):
                     antagonize_text = antagonize_text.replace(
                         'p_l', str(patrol.patrol_leader.name))
                     antagonize_text = antagonize_text.replace(
-                            's_c', str(patrol.patrol_stat_cat.name))
-                    antagonize_text = antagonize_text.replace(
                             'o_c_n', str(patrol.other_clan.name) + 'Clan')
                     antagonize_text = antagonize_text.replace(
                             'c_n', str(game.clan.name) + 'Clan')
@@ -2493,8 +2491,6 @@ class PatrolEventScreen(Screens):
                         'r_c', str(patrol.patrol_random_cat.name))
                     antagonize_fail_text = antagonize_fail_text.replace(
                         'p_l', str(patrol.patrol_leader.name))
-                    antagonize_fail_text = antagonize_fail_text.replace(
-                            's_c', str(patrol.patrol_stat_cat.name))
                     antagonize_fail_text = antagonize_fail_text.replace(
                             'o_c_n', str(patrol.other_clan.name) + 'Clan')
                     antagonize_fail_text = antagonize_fail_text.replace(
