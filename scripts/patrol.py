@@ -941,6 +941,10 @@ class Patrol(object):
     def calculate_success(self):
         if self.patrol_event is None:
             return
+        if game.switches['event'] == 4:
+            antagonize = True
+        else:
+            antagonize = False
         # if patrol contains cats with autowin skill, chance of success is high
         # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
         chance = self.patrol_event.chance_of_success + int(
@@ -956,10 +960,15 @@ class Patrol(object):
                     self.patrol_event.win_trait):
                 chance = 90
         c = randint(0, 100)
-        if c < chance:
+        if c < chance and antagonize is False:
             self.success = True
             self.handle_exp_gain()
             self.add_new_cats()
+            self.handle_clan_relations()
+        elif c < chance and antagonize is True:
+            self.success = True
+            self.handle_deaths()
+            self.handle_scars()
             self.handle_clan_relations()
         else:
             self.success = False
@@ -1026,10 +1035,8 @@ class Patrol(object):
         other_clan = patrol.other_clan
         clan_relations = other_clan.relations
         if self.patrol_event.patrol_id in [range(800, 805)]:
-            if patrol.success and not game.switches['event'] == 4:
+            if patrol.success is True:
                 clan_relations = clan_relations + 1
-            elif patrol.success and game.switches['event'] == 4:
-                clan_relations = clan_relations - 1
             else:
                 clan_relations = clan_relations - 1
 
