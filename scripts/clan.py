@@ -1,5 +1,6 @@
 from .cats import *
 from .text import *
+from .patrol import *
 try:
     from .world import *
     mapavailable = True

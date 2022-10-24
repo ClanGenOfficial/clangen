@@ -7,6 +7,7 @@ from .game_essentials import *
 from .names import *
 from .cats import *
 from .pelts import *
+from .clan import *
 
 
 class Patrol(object):
@@ -1032,15 +1033,14 @@ class Patrol(object):
             self.patrol_random_cat.status_change('elder')
 
     def handle_clan_relations(self):
-        other_clan = patrol.other_clan
-        clan_relations = other_clan.relations
+        other_clan = game.clan.all_clans.index(patrol.other_clan)
+        clan_relations = game.clan.all_clans[other_clan].relations
         if self.patrol_event.patrol_id in [range(800, 805)]:
             if patrol.success is True:
                 clan_relations = clan_relations + 1
             else:
                 clan_relations = clan_relations - 1
-
-        print(int(other_clan.relations))
+        print(clan_relations)
 
     def handle_relationships(self):
         romantic_love = 0

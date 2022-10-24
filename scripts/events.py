@@ -153,13 +153,13 @@ class Events(object):
                         self.time_at_war += 1
                     break
                 elif int(other_clan.relations) > 30:
-                    other_clan.relations = 10
+                    other_clan.relations = 20
                 else:
                     self.at_war = False
                     other_clan.relations = other_clan.relations
             if war_notice:
                 game.cur_events_list.append(war_notice)
-                print(other_clan.relations)
+            print(other_clan.relations)
 
     def perform_ceremonies(self, cat):
         if (game.clan.leader.dead or game.clan.leader.exiled
