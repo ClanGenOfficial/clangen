@@ -10,13 +10,8 @@ from scripts.game_structure.game_essentials import *
 
 resource_directory = "resources/dicts/"
 PERSONALITY_COMPATIBILITY = None
-try:
-    with open(f"{resource_directory}personality_compatibility.json",
-              'r') as read_file:
-        PERSONALITY_COMPATIBILITY = ujson.loads(read_file.read())
-except:
-    game.switches[
-        'error_message'] = 'There was an error loading the personality compatibility json!'
+with open(f"{resource_directory}personality_compatibility.json",'r') as read_file:
+    PERSONALITY_COMPATIBILITY = ujson.loads(read_file.read())
 
 def get_highest_romantic_relation(relationships):
     """Returns the relationship with the highest romantic value."""

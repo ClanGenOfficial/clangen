@@ -1,0 +1,50 @@
+[
+    {
+        "patrol_id": 500,
+        "intro_text": "Your patrol finds a loner who is interested in joining the Clan",
+        "success_text": "The patrol convinces the loner to join the Clan",
+        "fail_text": "The loner decides against joining",
+        "decline_text": "Your patrol decides not to confront the loner",
+        "antagonize_text": "Your patrol drives the loner off of the territory",
+        "antagonize_fail_text": "The loner is taken aback by their hostility and decides that Clan life is not for them",
+        "chance_of_success": 40,
+        "exp": 10,
+        "win_skills": ["great speaker", "excellent speaker"]
+    },
+    {
+        "patrol_id": 501,
+        "intro_text": "Your patrol finds a loner who is interested in joining the Clan",
+        "success_text": "The patrol convinces the loner to join the Clan and they bring with them a litter of kits",
+        "fail_text": "The loner decides against joining",
+        "decline_text": "Your patrol decides not to confront the loner",
+        "antagonize_text": "Your patrol drives the loner off of the territory",
+        "antagonize_fail_text": "The loner is taken aback by their hostility and decides that Clan life is not for them",
+        "chance_of_success": 40,
+        "exp": 10,
+        "win_skills": ["great speaker","excellent speaker"]
+    },
+    {
+        "patrol_id": 502,
+        "intro_text": "Your patrol finds a kittypet who is interested in joining the Clan",
+        "success_text": "The patrol convinces the kittypet to join the Clan",
+        "fail_text": "The description of Clan life frightens the kittypet",
+        "decline_text": "Your patrol decides not to confront the kittypet",
+        "antagonize_text": "Your patrol drives the kittypet off of the territory",
+        "antagonize_fail_text": "The kittypet is taken aback by their hostility and decides that Clan life is not for them",
+        "chance_of_success": 40,
+        "exp": 10,
+        "win_skills": ["great speaker", "excellent speaker"]
+    },
+    {
+        "patrol_id": 503,
+        "intro_text": "r_c finds a wounded cat near the thunderpath",
+        "success_text": "The patrol brings the cat back to camp. Once nursed back to health, the cat decides to join the Clan",
+        "fail_text": "As r_c inspects the cat, they find that they are already hunting with their ancestors ",
+        "decline_text": "They leave the wounded cat alone",
+        "antagonize_text": "Your patrol drives the cat off of the territory",
+        "antagonize_fail_text": "The wounded cat is killed in an attempt to drive them off of the territory",
+        "chance_of_success": 40,
+        "exp": 10,
+        "win_skills": ["smart", "very smart", "extremely smart"]
+    }
+]

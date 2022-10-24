@@ -9,77 +9,83 @@ from scripts.cat.pelts import *
 resource_directory = "resources/dicts/patrols/"
 leaves_path = "leaves/"
 biomes_path = "biomes/"
+condition_path = "conditions/"
+
+GENERAL = None
+with open(f"{resource_directory}general.json", 'r') as read_file:
+    GENERAL = ujson.loads(read_file.read())
+
+GENERAL_HUNTING = None
+with open(f"{resource_directory}general_hunting.json", 'r') as read_file:
+    GENERAL_HUNTING = ujson.loads(read_file.read())
+
+GENERAL_FIGHTING = None
+with open(f"{resource_directory}general_fighting.json", 'r') as read_file:
+    GENERAL_FIGHTING = ujson.loads(read_file.read())
+
+GENERAL_NEW_CAT = None
+with open(f"{resource_directory}general_new_cat.json", 'r') as read_file:
+    GENERAL_NEW_CAT = ujson.loads(read_file.read())
+
+# ---------------------------------------------------------------------------- #
+#                            patrols with conditions                           #
+# ---------------------------------------------------------------------------- #
+
+ONE_CAT = None
+with open(f"{resource_directory}{condition_path}one_cat_patrol.json", 'r') as read_file:
+    ONE_CAT = ujson.loads(read_file.read())
+
+ONE_CAT_APPR = None
+with open(f"{resource_directory}{condition_path}one_cat_apprentice_patrol.json", 'r') as read_file:
+    ONE_CAT_APPR = ujson.loads(read_file.read())
+
+# ---------------------------------------------------------------------------- #
+#                                    leaves                                    #
+# ---------------------------------------------------------------------------- #
 
 NEWLEAF = None
-try:
-    with open(f"{resource_directory}{leaves_path}newleaf.json", 'r') as read_file:
-        NEWLEAF = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the newleaf.json file of patrols!'
-
+with open(f"{resource_directory}{leaves_path}newleaf.json", 'r') as read_file:
+    NEWLEAF = ujson.loads(read_file.read())
 
 GREENLEAF = None
-try:
-    with open(f"{resource_directory}{leaves_path}greenleaf.json", 'r') as read_file:
-        GREENLEAF = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the greenleaf.json file of patrols!'
+with open(f"{resource_directory}{leaves_path}greenleaf.json", 'r') as read_file:
+    GREENLEAF = ujson.loads(read_file.read())
 
 LEAF_FALL = None
-try:
-    with open(f"{resource_directory}{leaves_path}leaf-fall.json", 'r') as read_file:
-        LEAF_FALL = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the leaf-fall.json file of patrols!'
+with open(f"{resource_directory}{leaves_path}leaf-fall.json", 'r') as read_file:
+    LEAF_FALL = ujson.loads(read_file.read())
 
 LEAF_BARE = None
-try:
-    with open(f"{resource_directory}{leaves_path}leaf-bare.json", 'r') as read_file:
-        LEAF_BARE = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the leaf-bare.json file of patrols!'
+with open(f"{resource_directory}{leaves_path}leaf-bare.json", 'r') as read_file:
+    LEAF_BARE = ujson.loads(read_file.read())
+
+# ---------------------------------------------------------------------------- #
+#                                    biomes                                    #
+# ---------------------------------------------------------------------------- #
 
 FOREST = None
-try:
-    with open(f"{resource_directory}{biomes_path}forest.json", 'r') as read_file:
-        FOREST = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the forest.json file of patrols!'
+with open(f"{resource_directory}{biomes_path}forest.json", 'r') as read_file:
+    FOREST = ujson.loads(read_file.read())
 
 PLAINS = None
-try:
-    with open(f"{resource_directory}{biomes_path}plains.json", 'r') as read_file:
-        PLAINS = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the plains.json file of patrols!'
+with open(f"{resource_directory}{biomes_path}plains.json", 'r') as read_file:
+    PLAINS = ujson.loads(read_file.read())
 
 MOUNTAINOUS = None
-try:
-    with open(f"{resource_directory}{biomes_path}mountainous.json", 'r') as read_file:
-        MOUNTAINOUS = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the mountainous.json file of patrols!'
+with open(f"{resource_directory}{biomes_path}mountainous.json", 'r') as read_file:
+    MOUNTAINOUS = ujson.loads(read_file.read())
 
 SWAMP = None
-try:
-    with open(f"{resource_directory}{biomes_path}swamp.json", 'r') as read_file:
-        SWAMP = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the swamp.json file of patrols!'
+with open(f"{resource_directory}{biomes_path}swamp.json", 'r') as read_file:
+    SWAMP = ujson.loads(read_file.read())
 
 BEACH = None
-try:
-    with open(f"{resource_directory}{biomes_path}beach.json", 'r') as read_file:
-        BEACH = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the beach.json file of patrols!'
+with open(f"{resource_directory}{biomes_path}beach.json", 'r') as read_file:
+    BEACH = ujson.loads(read_file.read())
 
 DISASTER = None
-try:
-    with open(f"{resource_directory}disaster.json", 'r') as read_file:
-        DISASTER = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the disaster.json file of patrols!'
+with open(f"{resource_directory}disaster.json", 'r') as read_file:
+    DISASTER = ujson.loads(read_file.read())
 
 
 # ---------------------------------------------------------------------------- #
@@ -116,6 +122,7 @@ class Patrol(object):
         self.patrol_statuses.clear()
         self.patrol_traits.clear()
         self.patrol_total_experience = 0
+
         for cat in game.switches['current_patrol']:
             name = str(cat.name)
             self.patrol_cats.append(cat)
@@ -149,144 +156,12 @@ class Patrol(object):
     def get_possible_patrols(self, current_season, biome, all_clans, game_setting_disaster):
         possible_patrols = []
         # general patrols, any number of cats
-        # general hunting patrols
-        possible_patrols.extend([
-            PatrolEvent(
-                1,
-                'Your patrol comes across a mouse',
-                'Your patrol catches the mouse!',
-                'Your patrol narrowly misses the mouse',
-                'Your patrol ignores the mouse',
-                60,
-                10,
-                win_skills=['good hunter', 'great hunter', 'fantastic hunter']),
-            PatrolEvent(
-                2,
-                'Your patrol comes across a large rat',
-                'Your patrol catches the rat! More freshkill!',
-                'Your patrol misses the rat, and their confidence is shaken',
-                'Your patrol ignores the rat',
-                50,
-                10,
-                win_skills=['great hunter', 'fantastic hunter']),
-            PatrolEvent(
-                3,
-                'Your patrol comes across a large hare',
-                'Your patrol catches the hare!',
-                'Your patrol narrowly misses the hare',
-                'Your patrol ignores the hare',
-                40,
-                20,
-                win_skills=['fantastic hunter']),
-            PatrolEvent(
-                4,
-                'Your patrol comes across a bird',
-                'Your patrol catches the bird before it flies away!',
-                'Your patrol narrowly misses the bird',
-                'Your patrol ignores the bird',
-                50,
-                10,
-                win_skills=['great hunter', 'fantastic hunter']),
-            PatrolEvent(
-                5,
-                'Your patrol comes across a squirrel',
-                'Your patrol catches the squirrel!',
-                'Your patrol narrowly misses the squirrel',
-                'Your patrol ignores the squirrel',
-                50,
-                10,
-                win_skills=['good hunter', 'great hunter', 'fantastic hunter']),
-            PatrolEvent(
-                6,
-                'Your patrol sees the shadow of a fish in a river',
-                'r_c hooks the fish out of the water! More freshkill!',
-                'Your patrol accidentally scares the fish away',
-                'Your patrol ignores the fish',
-                50,
-                10,
-                win_skills=['great hunter', 'fantastic hunter']),
-            PatrolEvent(
-                7,
-                'r_c spots a rabbit up ahead but it seems to be acting strange',
-                'r_c catches the rabbit and it is eaten as normal',
-                'r_c catches the rabbit and later the cats who eat it become violently ill',
-                'r_c avoids catching the rabbit and looks for other prey',
-                40,
-                10,
-                win_skills=['smart', 'very smart', 'extremely smart']),
-            PatrolEvent(
-                8,
-                'The patrol approaches a Twoleg nest while hunting',
-                'The patrol has a successful hunt, avoiding any Twolegs',
-                'Twoleg kits scare the patrol away',
-                'The patrol decides to hunt elsewhere',
-                40,
-                10,
-                win_skills=['great hunter', 'fantastic hunter'])
-        ])
 
+        # general hunting patrols
+        possible_patrols.extend(self.generate_patrol_events(GENERAL_HUNTING))
+        
         # general/misc patrols
-        possible_patrols.extend([
-            PatrolEvent(
-                100,
-                'Your patrol doesn\'t find anything useful',
-                'It was still a fun outing!',
-                'How did you fail this??',
-                'Your patrol decides to head home early',
-                100,
-                10),
-            PatrolEvent(
-                101, 'The patrol finds a nice spot to sun themselves',
-                'The sunlight feels great and they have a pleasant patrol',
-                'The patrol doesn\'t get much done because of that',
-                'They decide to stay focused instead',
-                80,
-                10),
-            PatrolEvent(
-                102,
-                'The patrol comes across a thunderpath',
-                'Your patrol crosses the thunderpath and can hunt on the other side',
-                'r_c is hit by a monster and debates retiring to the elder den',
-                'They decide it is better not to cross',
-                50,
-                10,
-                win_skills=['very smart', 'extremely smart']),
-            PatrolEvent(
-                106,
-                'p_l finds a patch of herbs that they believe the medicine cat mentioned they needed',
-                'The patrol brings the herbs back to camp and they are put to good use',
-                'The herbs turn out to be useless weeds',
-                'They decide to focus on the patrol instead and leave the herb collecting to the medicine cat',
-                40,
-                10,
-                win_skills=['very smart', 'extremely smart']),
-            PatrolEvent(
-                107,
-                'r_c goes missing during the patrol',
-                'r_c is later found carrying loads of prey after a successful hunt',
-                'r_c is found lying injured on the ground',
-                'r_c eventually makes it back to camp',
-                40,
-                10,),
-            PatrolEvent(
-                108,
-                'The smell of food lures r_c close to a Twoleg trap',
-                'r_c grabs the food before the trap goes off',
-                'r_c is caught in the trap and is taken by Twolegs shortly after',
-                'r_c loses interest and walks back to the patrol',
-                40,
-                10,
-                win_skills=['very smart', 'extremely smart']),
-            PatrolEvent(
-                110,
-                'r_c spots a large rabbit, but it is just over the border',
-                'r_c catches the rabbit without the enemy Clan noticing',
-                'r_c is caught by an enemy Clan patrol and is sent on their way',
-                'r_c decides against chasing the rabbit',
-                50,
-                10,
-                win_skills=['fantastic hunter'])
-        ])
+        possible_patrols.extend(self.generate_patrol_events(GENERAL))
         if len(self.patrol_cats) >= 2:
             possible_patrols.extend([
                 PatrolEvent(
@@ -331,92 +206,10 @@ class Patrol(object):
         # deadly patrols
         if game_setting_disaster == True:
             possible_patrols.extend(self.generate_patrol_events(DISASTER))
+
         # fighting patrols
-        possible_patrols.extend([
-            PatrolEvent(
-                300,
-                'Your patrol catches the scent of a fox',
-                'Your patrol finds the fox and drives it away',
-                'Your patrol fails to drive away to fox, but luckily there were no injuries',
-                'Your patrol decides not to pursue the fox',
-                40,
-                20,
-                win_skills=['good fighter', 'great fighter', 'excellent fighter']),
-            PatrolEvent(
-                301,
-                'Your patrol comes catches the scent of a fox',
-                'Your patrol drives away the fox and her cubs',
-                'The mother fox fights to defend her cubs, and r_c is injured in the attack',
-                'Your patrol decides not to pursue the fox',
-                30,
-                30,
-                win_skills=['excellent fighter']),
-            PatrolEvent(
-                302,
-                'Your patrol comes across a large dog',
-                'Your patrol valiantly drives away the dog',
-                'The dog is driven away, but not before injuring r_c',
-                'Your patrol decides not to pursue the dog',
-                40,
-                20,
-                win_skills=['excellent fighter']),
-            PatrolEvent(
-                303,
-                'Your patrol comes across a small dog',
-                'Your patrol drives away the dog',
-                'The dog\'s barking scares away prey',
-                'The patrol decides not to pursue the dog',
-                20,
-                60,
-                win_skills=['good fighter', 'great fighter','excellent fighter']),
-            PatrolEvent(
-                305,
-                'A gang of rogues confronts your patrol',
-                'Your patrol drives away the rogues',
-                'The rogues are bloodthirsty and kill r_c before they leave',
-                'The patrol sprints back to camp',
-                40,
-                20,
-                win_skills=['excellent fighter']),
-            PatrolEvent(
-                306,
-                'There is a badger den up ahead',
-                'Your patrol chases the badger off of the territory',
-                'The badger is angered when the patrol nears its den and badly injures r_c',
-                'The patrol avoids the badger den',
-                40,
-                20,
-                win_skills=['excellent fighter']),
-            PatrolEvent(
-                307,
-                'There is a badger den up ahead',
-                'Your patrol chases the badger off of the territory',
-                'The badger is furious when the patrol nears its den and kills r_c',
-                'The patrol avoids the badger den',
-                50,
-                20,
-                win_skills=['excellent fighter']),
-            PatrolEvent(
-                308,
-                'While on patrol, r_c notices some suspicious pawprints in the ground',
-                'The pawprints lead to a trespassing rogue and the patrol drives them off of the '
-                'territory',
-                'It turns out they were r_c\'s own pawprints... How embarrassing',
-                'They decide not to investigate',
-                60,
-                20,
-                win_skills=['good fighter', 'great fighter', 'excellent fighter']),
-            PatrolEvent(
-                309,
-                'While on patrol, r_c notices some suspicious pawprints in the ground',
-                'The pawprints lead to a trespassing rogue and the patrol drives them off of the '
-                'territory',
-                'The pawprints lead to a trespassing rogue who injures r_c before being driven away',
-                'They decide not to investigate',
-                60,
-                20,
-                win_skills=['good fighter', 'great fighter', 'excellent fighter'])
-        ])
+        possible_patrols.extend(self.generate_patrol_events(GENERAL_FIGHTING))
+
 
         if self.patrol_random_cat != None and self.patrol_random_cat.status == 'apprentice' and len(
                 self.patrol_cats) > 1:
@@ -450,132 +243,13 @@ class Patrol(object):
             ])
 
         # new cat patrols
-        possible_patrols.extend([
-            PatrolEvent(
-                500,
-                'Your patrol finds a loner who is interested in joining the Clan',
-                'The patrol convinces the loner to join the Clan',
-                'The loner decides against joining',
-                'Your patrol decides not to confront the loner',
-                40,
-                10,
-                antagonize_text=
-                'Your patrol drives the loner off of the territory',
-                antagonize_fail_text=
-                'The loner is taken aback by their hostility and decides that Clan life is not for them',
-                win_skills=['great speaker', 'excellent speaker']),
-            PatrolEvent(
-                501,
-                'Your patrol finds a loner who is interested in joining the Clan',
-                'The patrol convinces the loner to join the Clan and they bring with '
-                'them a litter of kits',
-                'The loner decides against joining',
-                'Your patrol decides not to confront the loner',
-                40,
-                10,
-                antagonize_text=
-                'Your patrol drives the loner off of the territory',
-                antagonize_fail_text=
-                'The loner is taken aback by their hostility '
-                'and decides that Clan life is not for them',
-                win_skills=['great speaker', 'excellent speaker']),
-            PatrolEvent(
-                502,
-                'Your patrol finds a kittypet who is interested in joining the Clan',
-                'The patrol convinces the kittypet to join the Clan',
-                'The description of Clan life frightens the kittypet',
-                'Your patrol decides not to confront the kittypet',
-                40,
-                10,
-                antagonize_text=
-                'Your patrol drives the kittypet off of the territory',
-                antagonize_fail_text=
-                'The kittypet is taken aback by their hostility '
-                'and decides that Clan life is not for them',
-                win_skills=['great speaker', 'excellent speaker']),
-            PatrolEvent(
-                503,
-                'r_c finds a wounded cat near the thunderpath',
-                'The patrol brings the cat back to camp. Once nursed back to health, '
-                'the cat decides to join the Clan',
-                'As r_c inspects the cat, they find that they are already hunting '
-                'with their ancestors',
-                'They leave the wounded cat alone',
-                40,
-                10,
-                antagonize_text=
-                'Your patrol drives the cat off of the territory',
-                antagonize_fail_text=
-                'The wounded cat is killed in an attempt to drive them off of the territory',
-                win_skills=['smart', 'very smart', 'extremely smart']),
-            PatrolEvent(
-                504,
-                'r_c finds an abandoned kit whose mother is nowhere to be found',
-                'The kit is taken back to camp and nursed back to health',
-                'The kit is taken back to camp, but grows weak and dies a few days later',
-                'They leave the kit alone', 40, 10)
-        ])
-
+        possible_patrols.extend(self.generate_patrol_events(GENERAL_NEW_CAT))
 
         # single cat patrol
         if len(self.patrol_cats) == 1:
-            possible_patrols.extend([
-                PatrolEvent(
-                    400,
-                    'r_c is nervous doing a patrol by themselves',
-                    'They don\'t let their nerves get to them and continue the patrol successfully',
-                    'They run back to camp, unable to continue',
-                    'They continue the patrol but progress is slow',
-                    40,
-                    10,
-                    win_skills=['very smart', 'extremely smart']),
-                PatrolEvent(
-                    401,
-                    'Since r_c is alone, they debate taking a bite out of the freshkill they have just caught',
-                    'They decide not to and end up catching extra prey for the kits and elders',
-                    'They eat the freshkill; however, they do not catch more prey to make up for it and the kits and elders go hungry',
-                    'They shake the thought from their mind',
-                    30,
-                    10,
-                    win_skills=['smart', 'very smart', 'extremely smart']),
-                PatrolEvent(
-                    402,
-                    'While alone on patrol, r_c thinks about life',
-                    'They find peace within themselves and enjoy the rest of the patrol',
-                    'Their thoughts are plagued with bad memories',
-                    'r_c decides to focus on the patrol',
-                    40,
-                    10,)
-            ])
+            possible_patrols.extend(self.generate_patrol_events(ONE_CAT))
             if self.patrol_cats[0].status == 'apprentice':
-                possible_patrols.extend([
-                    PatrolEvent(
-                        450,
-                        'r_c worries that an apprentice should not be out here alone',
-                        'At least this is a good chance to learn the territory',
-                        'r_c gets lost in the territory and doesn\'t learn anything',
-                        'r_c turns back to camp, deciding that this is a bad idea',
-                        40,
-                        10,
-                        win_skills=['very smart', 'extremely smart']),
-                    PatrolEvent(
-                        451,
-                        'r_c\'s mentor assesses them by sending them on a solo hunt',
-                        'r_c catches a lot of prey and passes their assessment',
-                        'Hunting is poor and r_c\'s mentor is disappointed',
-                        'r_c asks their mentor to do the assessment some other time',
-                        40,
-                        10,
-                        win_skills=['good hunter', 'great hunter', 'fantastic hunter']),
-                    PatrolEvent(
-                        452,
-                        'r_c\'s mentor assesses them by sending them on a solo border patrol',
-                        'r_c successfully marks the Clan territory',
-                        'r_c messes up the territory markings and almost starts a border skirmish',
-                        'r_c asks their mentor to do the assessment some other time',
-                        40,
-                        10,)
-                ])
+                possible_patrols.extend(self.generate_patrol_events(ONE_CAT_APPR))
                 
         # two or more cats            
         # conversation patrols

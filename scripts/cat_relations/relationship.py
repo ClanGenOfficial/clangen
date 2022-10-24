@@ -31,84 +31,48 @@ cat_to_other_path = "cat_to_other/"
 
 
 NEWLEAF = None
-try:
-    with open(f"{resource_directory}{cat_to_other_path}not_age_specific.json", 'r') as read_file:
-        NEWLEAF = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the not_age_specific.json file of relationship_events!'
+with open(f"{resource_directory}{cat_to_other_path}not_age_specific.json", 'r') as read_file:
+    NEWLEAF = ujson.loads(read_file.read())
 
 KITTEN_TO_OTHER = None
-try:
-    with open(f"{resource_directory}{cat_to_other_path}kitten_to_other.json", 'r') as read_file:
-        KITTEN_TO_OTHER = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 2_kitten_to_other.json file of relationship_events!'
+with open(f"{resource_directory}{cat_to_other_path}kitten_to_other.json", 'r') as read_file:
+    KITTEN_TO_OTHER = ujson.loads(read_file.read())
 
 APPRENTICE_TO_OTHER = None
-try:
-    with open(f"{resource_directory}{cat_to_other_path}apprentice_to_other.json", 'r') as read_file:
-        APPRENTICE_TO_OTHER = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 2_apprentice_to_other.json file of relationship_events!'
+with open(f"{resource_directory}{cat_to_other_path}apprentice_to_other.json", 'r') as read_file:
+    APPRENTICE_TO_OTHER = ujson.loads(read_file.read())
 
 MEDICINE_APP_TO_OTHER = None
-try:
-    with open(f"{resource_directory}{cat_to_other_path}medicine_app_to_other.json", 'r') as read_file:
-        MEDICINE_APP_TO_OTHER = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 2_medicine_app_to_other.json file of relationship_events!'
-
+with open(f"{resource_directory}{cat_to_other_path}medicine_app_to_other.json", 'r') as read_file:
+    MEDICINE_APP_TO_OTHER = ujson.loads(read_file.read())
 
 WARRIOR_TO_OTHER = None
-try:
-    with open(f"{resource_directory}{cat_to_other_path}warrior_to_other.json", 'r') as read_file:
-        WARRIOR_TO_OTHER = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 2_warrior_to_other.json file of relationship_events!'
+with open(f"{resource_directory}{cat_to_other_path}warrior_to_other.json", 'r') as read_file:
+    WARRIOR_TO_OTHER = ujson.loads(read_file.read())
 
 ELDER_TO_OTHER = None
-try:
-    with open(f"{resource_directory}{cat_to_other_path}elder_to_other.json", 'r') as read_file:
-        ELDER_TO_OTHER = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 2_elder_to_other.json file of relationship_events!'
+with open(f"{resource_directory}{cat_to_other_path}elder_to_other.json", 'r') as read_file:
+    ELDER_TO_OTHER = ujson.loads(read_file.read())
 
 LEADER_TO_OTHER = None
-try:
-    with open(f"{resource_directory}{cat_to_other_path}leader_to_other.json", 'r') as read_file:
-        LEADER_TO_OTHER = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 2_leader_to_other.json file of relationship_events!'
+with open(f"{resource_directory}{cat_to_other_path}leader_to_other.json", 'r') as read_file:
+    LEADER_TO_OTHER = ujson.loads(read_file.read())
 
 DEPUTY_TO_OTHER = None
-try:
-    with open(f"{resource_directory}{cat_to_other_path}deputy_to_other.json", 'r') as read_file:
-        DEPUTY_TO_OTHER = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 2_deputy_to_other.json file of relationship_events!'
+with open(f"{resource_directory}{cat_to_other_path}deputy_to_other.json", 'r') as read_file:
+    DEPUTY_TO_OTHER = ujson.loads(read_file.read())
 
 MEDICINE_TO_OTHER = None
-try:
-    with open(f"{resource_directory}{cat_to_other_path}medicine_to_other.json", 'r') as read_file:
-        MEDICINE_TO_OTHER = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 2_medicine_to_other.json file of relationship_events!'
-
+with open(f"{resource_directory}{cat_to_other_path}medicine_to_other.json", 'r') as read_file:
+    MEDICINE_TO_OTHER = ujson.loads(read_file.read())
 
 LOVE = None
-try:
-    with open(f"{resource_directory}love.json", 'r') as read_file:
-        LOVE = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the love.file of relationship_events!'
-
+with open(f"{resource_directory}love.json", 'r') as read_file:
+    LOVE = ujson.loads(read_file.read())
 
 SPECIAL_CHARACTER = None
-try:
-    with open(f"{resource_directory}special_character.json", 'r') as read_file:
-        SPECIAL_CHARACTER = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the special_character.json file of relationship_events!'
+with open(f"{resource_directory}special_character.json", 'r') as read_file:
+    SPECIAL_CHARACTER = ujson.loads(read_file.read())
 
 
 # ---------------------------------------------------------------------------- #
