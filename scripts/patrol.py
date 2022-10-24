@@ -24,6 +24,7 @@ class Patrol(object):
         self.success = False
         self.patrol_random_cat = None
         self.patrol_stat_cat = None
+        self.other_clan = {}
         self.experience_levels = [
             'very low', 'low', 'slightly low', 'average', 'somewhat high',
             'high', 'very high', 'master', 'max'
@@ -53,10 +54,13 @@ class Patrol(object):
         elif not self.possible_patrol_leaders:
             self.patrol_leader = choice(self.patrol_cats)
         self.patrol_random_cat = choice(self.patrol_cats)
+        self.other_clan = choice(game.clan.all_clans)
+
 
     def add_possible_patrols(self):
         possible_patrols = []
         # general hunting patrols
+        """
         possible_patrols.extend([
             PatrolEvent(
                 1,
@@ -800,11 +804,100 @@ class Patrol(object):
                             10,
                             win_skills=['great hunter', 'fantastic hunter'])
             ])
-
+        """
 
         # other_clan patrols
-        if len(game.clan.all_clans) > 0:
-            1 == 1  # will add here
+        if randint(1, 1) == 1 and self.other_clan is not None:
+            other_clan = self.other_clan
+            other_clan_relations = int(other_clan.relations)
+            #other_clan_temperament = int(other_clan.relations)
+            if other_clan_relations > 17:
+                possible_patrols.extend([
+                PatrolEvent(800,
+                'c_n meets their allies, o_c_n, at the border', 
+                'Your cats have a nice conversation with them',
+                'Although they act nice, the alliance seems to be weakening', 
+                'You decide not to talk with the ally patrol', 60, 10, 
+                other_clan,
+                win_skills = ['good speaker', 'great speaker', 'excellent speaker'],
+                antagonize_text= 'Your cats seem to ignore the alliance, threatening o_c_n anyway',
+                antagonize_fail_text = 'Your cats try to offend to the other clan but only make things slightly awkward'
+                )
+                ])
+
+            elif other_clan_relations < 11 and other_clan_relations > 6:
+                possible_patrols.extend([
+                PatrolEvent(801, 
+                'c_n is threatened by a o_c_n patrol at the border', 
+                'Your cats manage to smooth things out a bit',
+                'The patrol ends with threats and malice. Clan relations have worsened', 
+                'You decide to back off from the opposing patrol', 60, 10, 
+                other_clan,
+                win_skills=['great speaker', 'excellent speaker'],
+                antagonize_text='Your cats shoot back threats as well, hurting clan relations',
+                antagonize_fail_text='Your cats mostly ignore the other clan\'s threats'
+                )
+                ])
+
+            elif other_clan_relations < 7 and 'fierce' not in self.patrol_traits and 'bloodthirsty' not in self.patrol_traits:
+                possible_patrols.extend([
+                PatrolEvent(802,
+                'Your patrol is attacked by a o_c_n patrol at the border', 
+                'Your cats manage to escape without injury',
+                'r_c is killed by the o_c_n patrol', 
+                'You run away from the other patrol', 60, 10,
+                other_clan,
+                win_skills=['great fighter', 'excellent fighter', 'excellent speaker'],
+                antagonize_text='Your cats attack o_c_n right back',
+                antagonize_fail_text='r_c is killed by the o_c_n patrol'
+                )
+                ])
+
+
+            elif other_clan_relations < 7 and 'fierce' in self.patrol_traits:
+                possible_patrols.extend([
+                PatrolEvent(803,
+                'Your patrol is attacked by a o_c_n patrol at the border',
+                'Your cats manage to escape, but only after s_c kills an enemy ' + choice(['warrior', 'apprentice']),
+                'r_c is killed by the o_c_n patrol', 
+                'You run away from the other patrol', 60, 10,
+                other_clan,
+                win_skills=['great fighter', 'excellent fighter', 'excellent speaker'],
+                win_trait='fierce',
+                antagonize_text='Your cats chase o_c_n away as they flee',
+                antagonize_fail_text='r_c is killed by the o_c_n patrol'
+                )
+                ])
+
+            elif other_clan_relations < 7:
+                possible_patrols.extend([
+                PatrolEvent(804, 
+                'Your patrol is attacked by a o_c_n patrol at the border',
+                'Your cats manage to escape, but only after s_c kills an enemy ' + choice(['warrior', 'apprentice']),
+                'r_c is killed by the o_c_n patrol', 
+                'You run away from the other patrol', 60, 10,
+                other_clan,
+                win_skills=['great fighter', 'excellent fighter', 'excellent speaker'],
+                win_trait= 'bloodthirsty',
+                antagonize_text= 'Your cats chase o_c_n away as they flee',
+                antagonize_fail_text= 'r_c is killed by the o_c_n patrol'
+                )
+                ])
+
+
+            else:
+                possible_patrols.extend([
+                PatrolEvent(805,
+                'c_n meets a o_c_n patrol at the border, but nobody is hostile',
+                'Your cats have a nice conversation with them',
+                'Despite the lack of outright hostilities, the situation turns awkward fast',
+                'You decide not to talk with the opposing patrol', 60, 10,
+                other_clan,
+                win_skills=['great speaker', 'excellent speaker'],
+                antagonize_text= 'Your cats intentionally antagonize the other clan anyway',
+                antagonize_fail_text= 'Despite the vague threats, the situation only turns awkward',
+                )
+                ])
 
         # deadly patrols
         if game.settings.get('disasters') == True:
@@ -839,6 +932,11 @@ class Patrol(object):
             ])
 
         self.patrol_event = choice(possible_patrols)
+        if self.patrol_event.win_trait is not None:
+            win_trait = self.patrol_event.win_trait
+            patrol_trait = self.patrol_traits.index(win_trait)
+            self.patrol_stat_cat = self.patrol_cats[patrol_trait]
+
 
     def calculate_success(self):
         if self.patrol_event is None:
@@ -853,15 +951,21 @@ class Patrol(object):
             if set(self.patrol_skills).isdisjoint(
                     self.patrol_event.win_skills):
                 chance = 90
+        if self.patrol_event.win_trait is not None:
+            if set(self.patrol_traits).isdisjoint(
+                    self.patrol_event.win_trait):
+                chance = 90
         c = randint(0, 100)
         if c < chance:
             self.success = True
             self.handle_exp_gain()
             self.add_new_cats()
+            self.handle_clan_relations()
         else:
             self.success = False
             self.handle_deaths()
             self.handle_scars()
+            self.handle_clan_relations()
 
     def handle_exp_gain(self):
         if self.success:
@@ -874,7 +978,7 @@ class Patrol(object):
 
     def handle_deaths(self):
         if self.patrol_event.patrol_id in [
-                108, 113, 114, 120, 141, 250, 305, 307
+                108, 113, 114, 120, 141, 250, 305, 307, 802, 803, 804
         ]:
             if self.patrol_random_cat.status == 'leader':
                 if self.patrol_event.patrol_id in [108, 113]:
@@ -917,6 +1021,15 @@ class Patrol(object):
         if self.patrol_event.patrol_id == 102 and game.settings.get(
                 'retirement'):
             self.patrol_random_cat.status_change('elder')
+
+    def handle_clan_relations(self):
+        other_clan = patrol.other_clan
+        clan_relations = other_clan.relations
+        if self.patrol_event.patrol_id in [range(800, 805)]:
+            if patrol.success:
+                clan_relations += 1
+            else:
+                clan_relations -= 1
 
     def handle_relationships(self):
         romantic_love = 0
@@ -1095,10 +1208,11 @@ class PatrolEvent(object):
                  decline_text,
                  chance_of_success,
                  exp,
-                 other_clan=None,
-                 win_skills=None,
-                 antagonize_text='',
-                 antagonize_fail_text=''):
+                 other_clan = None,
+                 win_skills = None,
+                 win_trait = None,
+                 antagonize_text = '',
+                 antagonize_fail_text = ''):
         self.patrol_id = patrol_id
         self.intro_text = intro_text
         self.success_text = success_text
@@ -1108,6 +1222,7 @@ class PatrolEvent(object):
         self.exp = exp
         self.other_clan = other_clan
         self.win_skills = win_skills
+        self.win_trait = win_trait
         self.antagonize_text = antagonize_text
         self.antagonize_fail_text = antagonize_fail_text
 

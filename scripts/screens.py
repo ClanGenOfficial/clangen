@@ -2409,10 +2409,14 @@ class PatrolEventScreen(Screens):
                                             str(patrol.patrol_random_cat.name))
             intro_text = intro_text.replace('p_l',
                                             str(patrol.patrol_leader.name))
+            intro_text = intro_text.replace('o_c_n', str(patrol.other_clan.name) + 'Clan')
+            intro_text = intro_text.replace('c_n', str(game.clan.name) + 'Clan')
+            if patrol.patrol_stat_cat is not None:
+                intro_text = intro_text.replace('s_c', str(patrol.patrol_stat_cat.name))
             verdana.blit_text(intro_text, (150, 200))
             buttons.draw_button((290, 320), text='Proceed', event=-2)
             buttons.draw_button((150, 320), text='Do Not Proceed', event=2)
-            if patrol.patrol_event.patrol_id in [500, 501, 502, 503, 510]:
+            if patrol.patrol_event.patrol_id in [500, 501, 502, 503, 510, 800, 801, 802, 803, 804, 805]:
                 buttons.draw_button((150, 290), text='Antagonize', event=3)
 
         if game.switches['event'] == -2:
@@ -2428,6 +2432,13 @@ class PatrolEventScreen(Screens):
                         'r_c', str(patrol.patrol_random_cat.name))
                     success_text = success_text.replace(
                         'p_l', str(patrol.patrol_leader.name))
+                    success_text = success_text.replace(
+                        'o_c_n', str(patrol.other_clan.name) + 'Clan')
+                    success_text = success_text.replace(
+                        'c_n', str(game.clan.name) + 'Clan')
+                    if patrol.patrol_stat_cat is not None:
+                        success_text = success_text.replace(
+                        's_c', str(patrol.patrol_stat_cat.name))
                     verdana.blit_text(success_text, (150, 200))
                 else:
                     fail_text = patrol.patrol_event.fail_text
@@ -2435,6 +2446,13 @@ class PatrolEventScreen(Screens):
                         'r_c', str(patrol.patrol_random_cat.name))
                     fail_text = fail_text.replace(
                         'p_l', str(patrol.patrol_leader.name))
+                    fail_text = fail_text.replace(
+                        'o_c_n', str(patrol.other_clan.name) + 'Clan')
+                    fail_text = fail_text.replace(
+                        'c_n', str(game.clan.name) + 'Clan')
+                    if patrol.patrol_stat_cat is not None:
+                        fail_text = fail_text.replace(
+                        's_c', str(patrol.patrol_stat_cat.name))
                     verdana.blit_text(fail_text, (150, 200))
             elif game.switches['event'] == 2:
                 decline_text = patrol.patrol_event.decline_text
@@ -2442,14 +2460,47 @@ class PatrolEventScreen(Screens):
                     'r_c', str(patrol.patrol_random_cat.name))
                 decline_text = decline_text.replace(
                     'p_l', str(patrol.patrol_leader.name))
+                decline_text = decline_text.replace(
+                        'o_c_n', str(patrol.other_clan.name) + 'Clan')
+                decline_text = decline_text.replace(
+                        'c_n', str(game.clan.name) + 'Clan')
+                if patrol.patrol_stat_cat is not None:
+                        decline_text = decline_text.replace(
+                        's_c', str(patrol.patrol_stat_cat.name))
                 verdana.blit_text(decline_text, (150, 200))
             elif game.switches['event'] == 4:
-                antagonize_text = patrol.patrol_event.antagonize_text
-                antagonize_text = antagonize_text.replace(
-                    'r_c', str(patrol.patrol_random_cat.name))
-                antagonize_text = antagonize_text.replace(
-                    'p_l', str(patrol.patrol_leader.name))
-                verdana.blit_text(antagonize_text, (150, 200))
+                if patrol.success:
+                    antagonize_text = patrol.patrol_event.antagonize_text
+                    antagonize_text = antagonize_text.replace(
+                        'r_c', str(patrol.patrol_random_cat.name))
+                    antagonize_text = antagonize_text.replace(
+                        'p_l', str(patrol.patrol_leader.name))
+                    antagonize_text = antagonize_text.replace(
+                            's_c', str(patrol.patrol_stat_cat.name))
+                    antagonize_text = antagonize_text.replace(
+                            'o_c_n', str(patrol.other_clan.name) + 'Clan')
+                    antagonize_text = antagonize_text.replace(
+                            'c_n', str(game.clan.name) + 'Clan')
+                    if patrol.patrol_stat_cat is not None:
+                            antagonize_text = antagonize_text.replace(
+                            's_c', str(patrol.patrol_stat_cat.name))
+                    verdana.blit_text(antagonize_text, (150, 200))
+                else:
+                    antagonize_fail_text = patrol.patrol_event.antagonize_fail_text
+                    antagonize_fail_text = antagonize_fail_text.replace(
+                        'r_c', str(patrol.patrol_random_cat.name))
+                    antagonize_fail_text = antagonize_fail_text.replace(
+                        'p_l', str(patrol.patrol_leader.name))
+                    antagonize_fail_text = antagonize_fail_text.replace(
+                            's_c', str(patrol.patrol_stat_cat.name))
+                    antagonize_fail_text = antagonize_fail_text.replace(
+                            'o_c_n', str(patrol.other_clan.name) + 'Clan')
+                    antagonize_fail_text = antagonize_fail_text.replace(
+                            'c_n', str(game.clan.name) + 'Clan')
+                    if patrol.patrol_stat_cat is not None:
+                            antagonize_fail_text = antagonize_fail_text.replace(
+                            's_c', str(patrol.patrol_stat_cat.name))
+                    verdana.blit_text(antagonize_fail_text, (150, 200))
             buttons.draw_button((150, 350),
                                 text='Return to Clan',
                                 cur_screen='clan screen')
