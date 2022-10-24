@@ -1039,7 +1039,7 @@ class MakeClanScreen(Screens):
                                 hotkey=[2])
         else:
             buttons.draw_button(('center', 350), text='Done', available=False)
-
+    
     def sixth_phase(self):
         if mapavailable:
             for y in range(44):
@@ -1256,6 +1256,7 @@ class MakeClanScreen(Screens):
                                 biome='Beach',
                                 available=game.switches['biome'] != 'Beach',
                                 hotkey=[4])
+            
 
     def on_use(self):
         if len(game.switches['clan_name']) == 0:
@@ -2175,9 +2176,9 @@ class ListScreen(Screens):
                                 text='>',
                                 list_page=game.switches['list_page'] + 1,
                                 hotkey=[21])
-        buttons.draw_button((-70, 140),
-                            text='Cats Outside Clans',
-                            cur_screen='other screen')
+        #buttons.draw_button((-70, 140),
+        #                    text='Cats Outside Clans',
+        #                    cur_screen='other screen')
 
         draw_menu_buttons()
 
@@ -2186,7 +2187,7 @@ class ListScreen(Screens):
 
 
 class OtherScreen(Screens):
-
+    """
     def on_use(self):
         verdana_big.text('Cats Outside The Clan', ('center', 30))
         verdana.text('ALL CATS LIST', ('center', 100))
@@ -2256,6 +2257,7 @@ class OtherScreen(Screens):
                             cur_screen='list screen',
                             hotkey=[9])
         draw_menu_buttons()
+        """
 
 
 # def choose_banner():
@@ -3312,12 +3314,14 @@ class OptionsScreen(Screens):
         y_change = 50
 
         if not the_cat.dead and not the_cat.exiled:
+            """
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Exile Cat',
                                 cat_value=game.switches['cat'],
                                 hotkey=[12],
                                 cur_screen='other screen')
             button_count += 1
+            """
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Kill Cat',
                                 kill_cat=the_cat,
@@ -3433,7 +3437,7 @@ class StatsScreen(Screens):
                      (100, 400))
         draw_menu_buttons()
 
-
+"""
 class MapScreen(Screens):
 
     def on_use(self):
@@ -3590,7 +3594,7 @@ class MapScreen(Screens):
         except:
             game.map_info = load_map("Fallback")
             print("Default map loaded.")
-
+"""
 
 class RelationshipScreen(Screens):
     bool = {True: 'on', False: 'off', None: 'None'}
@@ -3999,7 +4003,7 @@ option_screen = OptionsScreen('options screen')
 language_screen = LanguageScreen('language screen')
 stats_screen = StatsScreen('stats screen')
 other_screen = OtherScreen('other screen')
-map_screen = MapScreen('map screen')
+#map_screen = MapScreen('map screen')
 relationship_screen = RelationshipScreen('relationship screen')
 relationship_event_screen = RelationshipEventScreen(
     'relationship event screen')
@@ -4045,12 +4049,14 @@ def draw_menu_buttons():
                         text='Allegiances',
                         cur_screen='allegiances screen',
                         hotkey=[7])
+    buttons.draw_button((50, 80),
+                        text='Stats',
+                        cur_screen='stats screen',
+                        hotkey=[1])
+"""
     buttons.draw_button((-70, 110),
                         text='Map',
                         cur_screen='map screen',
                         available=mapavailable,
                         hotkey=[8])
-    buttons.draw_button((50, 80),
-                        text='Stats',
-                        cur_screen='stats screen',
-                        hotkey=[1])
+"""
