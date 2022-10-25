@@ -58,7 +58,6 @@ class Patrol(object):
     def add_possible_patrols(self):
         possible_patrols = []
         # general hunting patrols
-        """
         possible_patrols.extend([
             PatrolEvent(
                 1,
@@ -802,7 +801,7 @@ class Patrol(object):
                             10,
                             win_skills=['great hunter', 'fantastic hunter'])
             ])
-        """
+        
 
         # other_clan patrols
         if randint(1, 1) == 1 and self.other_clan is not None:
