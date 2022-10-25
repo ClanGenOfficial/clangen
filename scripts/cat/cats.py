@@ -50,7 +50,7 @@ class Cat(object):
         'young adult': [12, 47],
         'adult': [48, 95],
         'senior adult': [96, 119],
-        'elder': [120, 199]
+        'elder': [120, 300]
     }
     gender_tags = {'female': 'F', 'male': 'M'}
     skills = [
@@ -184,7 +184,7 @@ class Cat(object):
                 self.genderalign = "nonbinary"
             else:
                 self.genderalign = self.gender
-        if self.gender == "male"and not self.age == 'kitten':
+        if self.gender == "male" and not self.age == 'kitten':
             if trans_chance == 1:
                 self.genderalign = "trans female"
             elif nb_chance == 1:
@@ -873,6 +873,15 @@ class Cat(object):
         else:
             self.mentor = None
         # Move from old mentor's apps to former apps
+        if self.status == 'warrior' or self.status == 'medicine cat':
+            self.former_mentor.append(old_mentor)
+            self.mentor = None
+            if old_mentor is not None:
+                if self in old_mentor.apprentice:
+                    old_mentor.apprentice.remove(self)
+                if self not in old_mentor.former_apprentices:
+                    old_mentor.former_apprentices.append(self)
+
         if old_mentor is not None and old_mentor != self.mentor:
             if self in old_mentor.apprentice:
                 old_mentor.apprentice.remove(self)

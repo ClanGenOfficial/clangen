@@ -202,7 +202,7 @@ class Events(object):
                         for cat in Cat.all_cats.values())
                     # assign chance to become med app depending on current med cat and traits
                     if has_elder_med is True and has_med is False:
-                        chance = randint(0, 1)
+                        chance = randint(0, 2)
                         print('POSSIBLE MED APP - ELDER MED MENTOR - CHANCE:', chance)
                     elif has_elder_med is False and has_med is True:
                         chance = randint(0, 20)
@@ -215,7 +215,7 @@ class Events(object):
                         chance = 0
                     else:
                         chance = randint(0, 30)
-                        print('POSSIBLE MED APP - CHANCE:', chance)
+                    print('POSSIBLE MED APP - CHANCE:', chance)
                     print('med app chance:', chance)
                     if chance in range(0, 11):    
                         if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:

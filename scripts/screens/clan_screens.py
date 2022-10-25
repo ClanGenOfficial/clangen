@@ -432,7 +432,7 @@ class AllegiancesScreen(Screens):
                         '',
                         f"{str(living_cat__.name)} - a {living_cat__.describe_cat()}"
                     ])
-                if len(living_cat__.apprentice) > 0:
+                if len(living_cat__.apprentice) >= 1:
                     if len(living_cat__.apprentice) == 1:
                         game.allegiance_list.append([
                             '', '      Apprentice: ' +
