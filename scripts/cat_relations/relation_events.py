@@ -504,23 +504,23 @@ class Relation_Events(object):
             chance_number -= 10
 
         # change the chance based on the last interactions
-        #if len(relationship_from.log) > 0:
+        if len(relationship_from.log) > 0:
             # check last interaction
-            #last_log = relationship_from.log[len(relationship_from.log)-1]
+            last_log = relationship_from.log[len(relationship_from.log)-1]
+            print(last_log)
 
-            #if 'negative' in last_log:
-            #    chance_number -= 30
-            #    if 'fight' in last_log:
-            #        chance_number -= 20
-            #        had_fight = True
+            if 'negative' in last_log:
+                chance_number -= 30
+                if 'fight' in last_log:
+                    chance_number -= 20
 
             # check all interactions - the logs are still buggy
-            #negative_interactions = list(filter(lambda inter: 'negative' in inter, relationship.log))
+            #negative_interactions = list(filter(lambda inter: 'negative' in inter, relationship_from.log))
             #chance_number -= len(negative_interactions)
-            #positive_interactions = list(filter(lambda inter: 'positive' in inter, relationship.log))
+            #positive_interactions = list(filter(lambda inter: 'positive' in inter, relationship_from.log))
             #chance_number += len(positive_interactions)
 
-            #if len(negative_interactions) > len(positive_interactions) and len(relationship.log) > 5 :
+            #if len(negative_interactions) > len(positive_interactions) and len(relationship_from.log) > 5 :
             #    chance_number -= 20
 
         # this should be nearly impossible, that chance is lower than 0

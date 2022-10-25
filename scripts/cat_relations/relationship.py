@@ -235,7 +235,8 @@ class Relationship(object):
             self_relation_effect = other_relation_effect
         effect_string =  f"({self_relation_effect})"
         both = action_string_all+effect_string
-        self.log.append(both)
+        if both.startswith(str(self.cat_from.name)):
+            self.log.append(both)
         if len(both) < 100:
             game.relation_events_list.append(both)
         else:
