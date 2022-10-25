@@ -1,3 +1,4 @@
+from calendar import c
 from copy import deepcopy
 import unittest
 
@@ -364,3 +365,24 @@ class TestMateFunctions(unittest.TestCase):
         self.assertTrue(old_relation2.trust > relation2.trust)
         self.assertTrue(old_relation2.admiration >= relation2.admiration)
         self.assertTrue(old_relation2.jealousy >= relation2.jealousy)
+
+class TestStatusChange(unittest.TestCase):
+
+    def test_apprentice_to_warrior(self):
+        # given
+        apprentice = Cat()
+        mentor = Cat()
+        apprentice.status = "apprentice"
+        apprentice.skill = "???"
+        mentor.apprentice.append(apprentice)
+        apprentice.mentor = mentor
+
+        # when
+        self.assertTrue(apprentice.mentor != None)
+        apprentice.status_change("warrior")
+        
+        # then
+        self.assertTrue(apprentice.skill != "???")
+        self.assertTrue(apprentice.skill in apprentice.skills)
+        self.assertTrue(apprentice.mentor == None)
+        self.assertFalse(mentor.apprentice)

@@ -706,7 +706,7 @@ class ChangeNameScreen(Screens):
                             text='Change Name',
                             cur_screen='change name screen',
                             cat_value=game.switches['name_cat'])
-        draw_back(('center', -50))
+        draw_back('center', -50)
 
 class ChangeGenderScreen(Screens):
 
@@ -718,4 +718,4 @@ class ChangeGenderScreen(Screens):
                             text=' Change Gender ',
                             cur_screen='change gender screen',
                             cat_value=game.switches['name_cat'])
-        draw_back(('center', -50))
+        draw_back('center', -50)

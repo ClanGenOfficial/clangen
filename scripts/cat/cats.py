@@ -274,6 +274,8 @@ class Cat(object):
         game.clan.add_to_starclan(self)
 
     def status_change(self, new_status):
+        self.status = new_status
+        self.name.status = new_status
         # revealing of traits and skills
         self.update_traits(new_status)
         # updates mentors
@@ -283,7 +285,7 @@ class Cat(object):
             self.update_med_mentor()
         # updates skill
         if self.skill == '???':
-            if new_status == 'warrior' or self.status == 'warrior' and new_status != 'medicine cat':
+            if self.status == 'warrior' and new_status != 'medicine cat':
                 self.skill = choice(self.skills)
                 self.update_mentor()
             elif new_status == 'medicine cat':
@@ -293,8 +295,6 @@ class Cat(object):
             self.skill = self.skill
         if new_status == 'elder' and self.status != 'leader' and self.status != 'medicine cat':
             self.skill = choice(self.elder_skills)
-        self.status = new_status
-        self.name.status = new_status
 
         # update class dictionary
         self.all_cats[self.ID] = self
