@@ -184,7 +184,7 @@ class Cat(object):
                 self.genderalign = "nonbinary"
             else:
                 self.genderalign = self.gender
-        if self.gender == "male"and not self.age == 'kitten':
+        if self.gender == "male" and not self.age == 'kitten':
             if trans_chance == 1:
                 self.genderalign = "trans female"
             elif nb_chance == 1:
