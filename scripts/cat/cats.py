@@ -148,7 +148,7 @@ class Cat(object):
                 self.age = 'adolescent'
             else:
                 self.age = choice(['young adult', 'adult', 'adult', 'senior adult'])
-        self.moons = random.uniform(self.age_moons[self.age][0], self.age_moons[self.age][1])
+            self.moons = random.randint(self.age_moons[self.age][0], self.age_moons[self.age][1])
 
         # personality trait and skill
         if self.trait is None:
@@ -177,16 +177,14 @@ class Cat(object):
         #trans cat chances
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)
-        if self.age == 'kitten':
-            self.gender_align = self.gender
-        if self.gender == "female":
+        if self.gender == "female" and not self.age == 'kitten':
             if trans_chance == 1:
                 self.genderalign = "trans male"
             elif nb_chance == 1:
                 self.genderalign = "nonbinary"
             else:
                 self.genderalign = self.gender
-        if self.gender == "male":
+        if self.gender == "male"and not self.age == 'kitten':
             if trans_chance == 1:
                 self.genderalign = "trans female"
             elif nb_chance == 1:

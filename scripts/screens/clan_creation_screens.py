@@ -10,8 +10,8 @@ from scripts.clan import Clan, map_available
 from scripts.cat.cats import create_example_cats
 from scripts.cat.names import names
 from scripts.cat.sprites import tiles
-from scripts.world import World, save_map
-
+#from scripts.world import World, save_map
+map_available = False
 
 class MakeClanScreen(Screens):
 
@@ -675,78 +675,78 @@ class MakeClanScreen(Screens):
         if game.settings['dark mode']:
             if game.switches['biome'] == "Forest":
                 self.change_camp_art(
-                    'resources/images/camp_bg/greenleafcamp_dark.png',
-                    'resources/images/camp_bg/greenleafcamp2_dark.png')
+                    'resources/images/camp_bg/forest/greenleaf_camp1_dark.png',
+                    'resources/images/camp_bg/forest/greenleaf_camp2_dark.png')
             elif game.switches['biome'] == "Plains":
                 try:
                     self.change_camp_art(
-                        'resources/images/camp_bg/greenleafcamp_plains_dark.png',
-                        'resources/images/camp_bg/greenleafcamp_plains2_dark.png')
+                        'resources/images/camp_bg/plains/greenleaf_camp1_plains_dark.png',
+                        'resources/images/camp_bg/plains/greenleaf_camp1_plains2_dark.png')
                 except:
                     self.change_camp_art(
-                        'resources/images/camp_bg/greenleafcamp_plains_dark.png',
-                        'resources/images/camp_bg/greenleafcamp_plains_dark.png')
+                        'resources/images/camp_bg/plains/greenleaf_camp1_plains_dark.png',
+                        'resources/images/camp_bg/plains/greenleaf_camp1_plains_dark.png')
             elif game.switches['biome'] == "Beach":
                 try:
                     self.change_camp_art(
-                        'resources/images/camp_bg/greenleafcamp_beach_dark.png',
-                        'resources/images/camp_bg/greenleafcamp_beach2_dark.png')
+                        'resources/images/camp_bg/beach/greenleaf_camp1_beach_dark.png',
+                        'resources/images/camp_bg/beach/greenleaf_camp1_beach2_dark.png')
                 except:
                     self.change_camp_art(
-                        'resources/images/camp_bg/greenleafcamp_beach_dark.png',
-                        'resources/images/camp_bg/greenleafcamp_beach_dark.png')
+                        'resources/images/camp_bg/beach/greenleaf_camp1_beach_dark.png',
+                        'resources/images/camp_bg/beach/greenleaf_camp1_beach_dark.png')
             elif game.switches['biome'] == "Mountainous":
                 try:
                     self.change_camp_art(
-                        'resources/images/camp_bg/greenleafcamp_mountain_dark.png',
-                        'resources/images/camp_bg/greenleafcamp_mountain2_dark.png')
+                        'resources/images/camp_bg/mountainous/greenleaf_camp1_mountain_dark.png',
+                        'resources/images/camp_bg/mountainous/greenleaf_camp1_mountain2_dark.png')
                 except:
                     self.change_camp_art(
-                        'resources/images/camp_bg/greenleafcamp_mountain_dark.png',
-                        'resources/images/camp_bg/greenleafcamp_mountain_dark.png')
+                        'resources/images/camp_bg/mountainous/greenleaf_camp1_mountain_dark.png',
+                        'resources/images/camp_bg/mountainous/greenleaf_camp1_mountain_dark.png')
 
             else:
                 self.change_camp_art(
-                    'resources/images/camp_bg/greenleafcamp_dark.png',
-                    'resources/images/camp_bg/greenleafcamp2_dark.png')
+                    'resources/images/camp_bg/forest/greenleaf_camp1_dark.png',
+                    'resources/images/camp_bg/forest/greenleaf_camp2_dark.png')
 
         else:
             if game.switches['biome'] == "Forest":
                 self.change_camp_art(
-                    'resources/images/camp_bg/greenleafcamp.png',
-                    'resources/images/camp_bg/greenleafcamp2.png')
+                    'resources/images/camp_bg/forest/greenleafcamp.png',
+                    'resources/images/camp_bg/forest/greenleaf_camp2.png')
             elif game.switches['biome'] == "Plains":
                 try:
                     self.change_camp_art(
-                        'resources/images/camp_bg/greenleafcamp_plains.png',
-                        'resources/images/camp_bg/greenleafcamp_plains2.png')
+                        'resources/images/camp_bg/plains/greenleaf_camp1_plains.png',
+                        'resources/images/camp_bg/plains/greenleaf_camp1_plains2.png')
                 except:
                     self.change_camp_art(
-                        'resources/images/camp_bg/greenleafcamp_plains.png',
-                        'resources/images/camp_bg/greenleafcamp_plains.png')
+                        'resources/images/camp_bg/plains/greenleaf_camp1_plains.png',
+                        'resources/images/camp_bg/plains/greenleaf_camp1_plains.png')
             elif game.switches['biome'] == "Beach":
                 try:
                     self.change_camp_art(
-                        'resources/images/camp_bg/greenleafcamp_beach.png',
-                        'resources/images/camp_bg/greenleafcamp_beach2.png')
+                        'resources/images/camp_bg/beach/greenleaf_camp1_beach.png',
+                        'resources/images/camp_bg/beach/greenleaf_camp1_beach2.png')
                 except:
                     self.change_camp_art(
-                        'resources/images/camp_bg/greenleafcamp_beach.png',
-                        'resources/images/camp_bg/greenleafcamp_beach.png')
+                        'resources/images/camp_bg/beach/greenleaf_camp1_beach.png',
+                        'resources/images/camp_bg/beach/greenleaf_camp1_beach.png')
             elif game.switches['biome'] == "Mountainous":
                 try:
                     self.change_camp_art(
-                        'resources/images/camp_bg/greenleafcamp_mountain.png',
-                        'resources/images/camp_bg/greenleafcamp_mountain2.png')
+                        'resources/images/camp_bg/mountainous/greenleaf_camp1_mountain.png',
+                        'resources/images/camp_bg/mountainous/greenleaf_camp1_mountain2.png')
                 except:
                     self.change_camp_art(
-                        'resources/images/camp_bg/greenleafcamp_mountain.png',
-                        'resources/images/camp_bg/greenleafcamp_mountain.png')
+                        'resources/images/camp_bg/mountainous/greenleaf_camp1_mountain.png',
+                        'resources/images/camp_bg/mountainous/greenleaf_camp1_mountain.png')
 
             else:
                 self.change_camp_art(
-                    'resources/images/camp_bg/greenleafcamp.png',
-                    'resources/images/camp_bg/greenleafcamp2.png')
+                    'resources/images/camp_bg/forest/greenleaf_camp1.png',
+                    'resources/images/camp_bg/forest/greenleaf_camp2.png')
 
     def change_camp_art(self, arg0, arg1):
         self.camp1 = pygame.transform.scale(
@@ -783,8 +783,8 @@ class MakeClanScreen(Screens):
         game.switches['choosing_camp'] = False
         create_example_cats()
         self.worldseed = randrange(10000)
-        if map_available:
-            self.world = World((44, 44), self.worldseed)
+        #if map_available:
+        #   self.world = World((44, 44), self.worldseed)
 
 class ClanCreatedScreen(Screens):
 
@@ -940,7 +940,7 @@ class ClanCreatedScreen(Screens):
                                     territory_twolegs, territory_thunderpath,
                                     territory_prey, territory_plants
                                 ]
-            save_map(game.map_info, game.switches['clan_name'])
+            #save_map(game.map_info, game.switches['clan_name'])
 
     def choose_other_clan_territory(self, x, y):
         self.x = x

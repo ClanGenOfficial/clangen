@@ -644,7 +644,7 @@ class Events(object):
             name = str(cat.name)
             type_of_new_cat = choice([1, 2, 3, 4, 5, 6, 7])
             if type_of_new_cat == 1:
-                created_cats = self.create_new_cat(loner = False, loner_name = False, kittypet = False, kit=True)
+                created_cats = self.create_new_cat(loner = False, loner_name = False, kittypet = choice([True, False]), kit=True)
                 kit = created_cats[0]
                 kit_text = [
                     f'{name} finds an abandoned kit and names them {str(kit.name)}',
@@ -740,9 +740,12 @@ class Events(object):
 
         age = randint(0,5)
         if not litter and not kit:
-            age = randint(12,120)
+            age = randint(6,120)
+        elif litter and kit:
+            litter_age = randint(0,5)
+            age = litter_age
 
-        if loner or kittypet:
+        if loner and not kit and not litter or kittypet and not kit and not litter:
             if loner_name:
                 name = choice(names.loner_names)
             status = "warrior"

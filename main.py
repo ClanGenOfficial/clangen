@@ -7,7 +7,7 @@ from scripts.game_structure.text import verdana
 from scripts.game_structure.buttons import buttons
 from scripts.game_structure.load_cat import *
 from scripts.cat.sprites import sprites
-from scripts.world import load_map
+#from scripts.world import load_map
 from scripts.clan import clan_class
 
 # import all screens for initialization 
@@ -35,7 +35,7 @@ if if_clans > 0:
         if not game.switches['error_message']:
             game.switches[
                 'error_message'] = 'There was an error loading the cats file!'
-
+"""
     try:
         game.map_info = load_map('saves/' + game.clan.name)
     except NameError:
@@ -43,6 +43,7 @@ if if_clans > 0:
     except:
         game.map_info = load_map("Fallback")
         print("Default map loaded.")
+        """
 
 # LOAD settings
 if not os.path.exists('saves/settings.txt'):

@@ -7,7 +7,7 @@ from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
 from scripts.cat.cats import Cat
 from scripts.cat.sprites import tiles
-from scripts.world import load_map
+#from scripts.world import load_map
 
 class OutsideClanScreen(Screens):
 
@@ -229,7 +229,7 @@ class MapScreen(Screens):
                             text='<< Back',
                             cur_screen=game.switches['last_screen'],
                             hotkey=[0])
-
+"""
     def screen_switches(self):
         try:
             game.map_info = load_map('saves/' + game.clan.name)
@@ -237,3 +237,4 @@ class MapScreen(Screens):
         except:
             game.map_info = load_map("Fallback")
             print("Default map loaded.")
+"""

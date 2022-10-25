@@ -4,7 +4,7 @@ from .base_screens import Screens, draw_menu_buttons
 
 from scripts.clan import map_available
 from scripts.cat.cats import Cat
-from scripts.world import save_map
+#from scripts.world import save_map
 from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
 
@@ -74,8 +74,8 @@ class StartScreen(Screens):
         if game.clan is not None:
             game.save_cats()
             game.clan.save_clan()
-            if map_available:
-                save_map(game.map_info, game.clan.name)
+            #if map_available:
+            #    save_map(game.map_info, game.clan.name)
 
         # LOAD settings
         game.load_settings()

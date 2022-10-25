@@ -142,8 +142,8 @@ class Clan(object):
         for _ in range(number_other_clans):
             self.all_clans.append(OtherClan())
         self.save_clan()
-        if map_available:
-            save_map(game.map_info, game.clan.name)
+        #if map_available:
+        #    save_map(game.map_info, game.clan.name)
 
         if game.switches['camp_bg'] is None:
             random_camp_options = ['camp1', 'camp2']

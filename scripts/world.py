@@ -1,3 +1,4 @@
+"""
 from noise import snoise2
 from numpy import zeros
 import csv
@@ -51,3 +52,4 @@ def load_map(clanname):
                 tile_plants = tileinfo[7]
                 dict_from_csv[(x,y)] = [x,y,tile_biome,tile_claim,tile_twolegs,tile_thunderpath,tile_prey,tile_plants]
     return dict_from_csv
+"""
