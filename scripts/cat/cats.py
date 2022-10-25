@@ -50,7 +50,7 @@ class Cat(object):
         'young adult': [12, 47],
         'adult': [48, 95],
         'senior adult': [96, 119],
-        'elder': [120, 199]
+        'elder': [120, 300]
     }
     gender_tags = {'female': 'F', 'male': 'M'}
     skills = [
