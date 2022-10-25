@@ -1051,17 +1051,14 @@ class Patrol(object):
 
     def handle_clan_relations(self, difference):
         other_clan = patrol.other_clan
-        other_clan_ = game.clan.all_clans.index(other_clan)
-        number_from_file = int(game.clan.all_clans[other_clan_].relations)
-        if self.patrol_event.patrol_id in list(range(800, 805)):
+        otherclan = game.clan.all_clans.index(other_clan)
+        clan_relations = game.clan.all_clans[otherclan].relations
+        if self.patrol_event.patrol_id in list(range(800, 806)):
             if patrol.success is True:
-                clan_relations = int(number_from_file + difference)
-                game.clan.all_clans[other_clan_].relations = str(clan_relations)
+                clan_relations += difference
             else:
-                clan_relations = int(number_from_file + difference)
-                game.clan.all_clans[other_clan_].relations = str(clan_relations)
-            clan_relations = clan_relations            
-            print(clan_relations)
+                clan_relations += difference
+        game.clan.all_clans[otherclan].relations = clan_relations
 
     def handle_relationships(self):
         romantic_love = 0
