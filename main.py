@@ -3,11 +3,19 @@ import os
 directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
-from scripts.screens import *
+from scripts.game_structure.text import verdana
+from scripts.game_structure.buttons import buttons
+from scripts.game_structure.load_cat import *
+from scripts.cat.sprites import sprites
+#from scripts.world import load_map
+from scripts.clan import clan_class
+
+# import all screens for initialization 
+from scripts.screens.all_screens import *
 
 # P Y G A M E
 clock = pygame.time.Clock()
-pygame.display.set_icon(pygame.image.load('resources/icon.png'))
+pygame.display.set_icon(pygame.image.load('resources/images/icon.png'))
 
 # LOAD cats & clan
 if not os.path.exists('saves/clanlist.txt'):
@@ -20,14 +28,14 @@ with open('saves/clanlist.txt', 'r') as read_file:
 if if_clans > 0:
     game.switches['clan_list'] = clan_list.split('\n')
     try:
-        cat_class.load_cats()
+        load_cats()
         clan_class.load_clan()
-        cat_class.thoughts()
-    except Exception:
+    except Exception as e:
+        print("\nERROR MESSAGE:\n",e,"\n")
         if not game.switches['error_message']:
             game.switches[
                 'error_message'] = 'There was an error loading the cats file!'
-
+"""
     try:
         game.map_info = load_map('saves/' + game.clan.name)
     except NameError:
@@ -35,6 +43,7 @@ if if_clans > 0:
     except:
         game.map_info = load_map("Fallback")
         print("Default map loaded.")
+        """
 
 # LOAD settings
 if not os.path.exists('saves/settings.txt'):
@@ -66,23 +75,23 @@ while True:
         if game.current_screen == 'profile screen':
             previous_cat = 0
             next_cat = 0
-            the_cat = cat_class.all_cats.get(game.switches['cat'],
+            the_cat = Cat.all_cats.get(game.switches['cat'],
                                              game.clan.instructor)
-            for check_cat in cat_class.all_cats:
-                if cat_class.all_cats[check_cat].ID == the_cat.ID:
+            for check_cat in Cat.all_cats:
+                if Cat.all_cats[check_cat].ID == the_cat.ID:
                     next_cat = 1
-                if next_cat == 0 and cat_class.all_cats[
-                        check_cat].ID != the_cat.ID and cat_class.all_cats[
-                            check_cat].dead == the_cat.dead and cat_class.all_cats[
-                                check_cat].ID != game.clan.instructor.ID and not cat_class.all_cats[
+                if next_cat == 0 and Cat.all_cats[
+                        check_cat].ID != the_cat.ID and Cat.all_cats[
+                            check_cat].dead == the_cat.dead and Cat.all_cats[
+                                check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
                                     check_cat].exiled:
-                    previous_cat = cat_class.all_cats[check_cat].ID
-                elif next_cat == 1 and cat_class.all_cats[
-                        check_cat].ID != the_cat.ID and cat_class.all_cats[
-                            check_cat].dead == the_cat.dead and cat_class.all_cats[
-                                check_cat].ID != game.clan.instructor.ID and not cat_class.all_cats[
+                    previous_cat = Cat.all_cats[check_cat].ID
+                elif next_cat == 1 and Cat.all_cats[
+                        check_cat].ID != the_cat.ID and Cat.all_cats[
+                            check_cat].dead == the_cat.dead and Cat.all_cats[
+                                check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
                                     check_cat].exiled:
-                    next_cat = cat_class.all_cats[check_cat].ID
+                    next_cat = Cat.all_cats[check_cat].ID
                 elif int(next_cat) > 1:
                     break
             if next_cat == 1:
@@ -259,7 +268,7 @@ while True:
     # update
     game.update_game()
     if game.switch_screens:
-        screens.all_screens[game.current_screen].screen_switches()
+        game.all_screens[game.current_screen].screen_switches()
         game.switch_screens = False
     # END FRAME
     clock.tick(30)

@@ -1,6 +1,8 @@
 from .text import *
-from .cats import *
+from .load_cat import *
 from .game_essentials import *
+
+from scripts.cat.cats import Cat
 
 
 class Button(object):
@@ -21,7 +23,7 @@ class Button(object):
         self.clickable_colour = clickable_colour
         self.unavailable_colour = unavailable_colour
 
-    def draw_image_button(self, pos, available=True, path=None, **values):
+    def draw_image_button(self, pos, available=True, button_name=None, **values):
         """
         Draw an image button and check for collisions.
 
@@ -39,15 +41,15 @@ class Button(object):
         """
         is_clickable = False
         if available:
-            image_path = f'resources/{path}.png'
+            image_path = f'resources/images/buttons/{button_name}.png'
         else:
-            image_path = f'resources/{path}_unavailable.png'
+            image_path = f'resources/images/buttons/{button_name}_unavailable.png'
         image = pygame.image.load(image_path).convert_alpha()
         button = pygame.transform.scale(image, (192, 35))
         collided = self.used_screen.blit(button, pos)
         if available and collided.collidepoint(self.used_mouse.pos):
             is_clickable = True
-            image_path = f'resources/{path}_hover.png'
+            image_path = f'resources/images/buttons/{button_name}_hover.png'
             image = pygame.image.load(image_path).convert_alpha()
             button = pygame.transform.scale(image, (192, 35))
         self.used_screen.blit(button, pos)
@@ -96,7 +98,7 @@ class Button(object):
         dynamic_image = False
         if image is not None and text != '' and text is not None:
             dynamic_image = True
-            image = f"resources/{image}"
+            image = f"resources/images/{image}"
         colour = self.frame_colour if available else self.unavailable_colour
         if image is None:
             if game.settings['hotkey display'] and hotkey is not None:
@@ -190,22 +192,22 @@ class Button(object):
                 cat_value.no_kits = False
             elif text == 'Exile Cat':
                 # it is the leader, manage all the things
-                if cat_class.all_cats[cat_value].status == 'leader':
+                if Cat.all_cats[cat_value].status == 'leader':
                     game.clan.leader.exiled = True
                     game.clan.leader_lives = 1
-                if cat_class.all_cats[cat_value].status == 'deputy':
+                if Cat.all_cats[cat_value].status == 'deputy':
                     game.clan.deputy.exiled = True
                     game.clan.deputy = None
-                cat_class.all_cats[cat_value].exiled = True
-                cat_class.other_cats[cat_value] = cat_class.all_cats[cat_value]
+                Cat.all_cats[cat_value].exiled = True
+                Cat.cat_class.other_cats[cat_value] = Cat.all_cats[cat_value]
             elif text == 'Change to Trans Male':
-                cat_class.all_cats[cat_value].genderalign = "trans male"
+                Cat.all_cats[cat_value].genderalign = "trans male"
             elif text == 'Change to Trans Female':
-                cat_class.all_cats[cat_value].genderalign = "trans female"
+                Cat.all_cats[cat_value].genderalign = "trans female"
             elif text == 'Change to Nonbinary/Specify Gender':
-                cat_class.all_cats[cat_value].genderalign = "nonbinary"
+                Cat.all_cats[cat_value].genderalign = "nonbinary"
             elif text == 'Change to Cisgender':
-                cat_class.all_cats[cat_value].genderalign = cat_class.all_cats[
+                Cat.all_cats[cat_value].genderalign = Cat.all_cats[
                     cat_value].gender
             elif cat_value is None and arrow is None:
                 self.activate(values)
@@ -232,19 +234,19 @@ class Button(object):
                 elif text == 'Allow kits':
                     cat_value.no_kits = False
                 elif text == 'Exile Cat':
-                    cat_class.all_cats[cat_value].exiled = True
-                    cat_class.other_cats[cat_value] = cat_class.all_cats[
+                    Cat.all_cats[cat_value].exiled = True
+                    Cat.cat_class.other_cats[cat_value] = Cat.all_cats[
                         cat_value]
                     game.switches['cur_screen'] = 'other screen'
                 elif text == 'Change to Trans Male':
-                    cat_class.all_cats[cat_value].genderalign = "trans male"
+                    Cat.all_cats[cat_value].genderalign = "trans male"
                 elif text == 'Change to Trans Female':
-                    cat_class.all_cats[cat_value].genderalign = "trans female"
+                    Cat.all_cats[cat_value].genderalign = "trans female"
                 elif text == 'Change to Nonbinary/Specify Gender':
-                    cat_class.all_cats[cat_value].genderalign = "nonbinary"
+                    Cat.all_cats[cat_value].genderalign = "nonbinary"
                 elif text == 'Change to Cisgender':
-                    cat_class.all_cats[
-                        cat_value].genderalign = cat_class.all_cats[
+                    Cat.all_cats[
+                        cat_value].genderalign = Cat.all_cats[
                             cat_value].gender
                 elif cat_value is None and arrow is None:
                     self.activate(values)
@@ -284,7 +286,7 @@ class Button(object):
                     cat_value.set_mate(value)
                     value.set_mate(cat_value)
                 else:
-                    cat_mate = cat_class.all_cats[cat_value.mate]
+                    cat_mate = Cat.all_cats[cat_value.mate]
                     cat_mate.unset_mate(breakup = True)
                     cat_value.unset_mate(breakup = True)
                 game.switches['mate'] = None
@@ -343,11 +345,11 @@ class Button(object):
             apprentice.mentor = cat_value
             cat_value.apprentice.append(apprentice)
         game.current_screen = 'clan screen'
-        cat_class.json_save_cats()
+        game.save_cats()
 
     def change_name(self, name, cat_value):
         """Changes name of cat_value to name specified in textbox"""
-        cat_value = cat_class.all_cats.get(cat_value)
+        cat_value = Cat.all_cats.get(cat_value)
         if game.switches['naming_text'] != '':
             name = game.switches['naming_text'].split(' ')
             cat_value.name.prefix = name[0]
@@ -356,43 +358,16 @@ class Button(object):
                 if not (cat_value.name.status == "apprentice" and name[1] == "paw") and \
                     not (cat_value.name.status == "kitten" and name[1] == "kit"):
                     cat_value.name.suffix = name[1]
-            cat_class.json_save_cats()
+            game.save_cats()
             game.switches['naming_text'] = ''
 
     def change_gender(self, name, cat_value):
-        cat_value = cat_class.all_cats.get(cat_value)
+        cat_value = Cat.all_cats.get(cat_value)
         if game.switches['naming_text'] != '':
             cat_value.genderalign = game.switches['naming_text']
-            cat_class.json_save_cats()
+            game.save_cats()
             game.switches['naming_text'] = ''
 
 
 # BUTTONS
 buttons = Button()
-
-
-def draw_bar(value, pos_x, pos_y):
-    # Loading Bar and variables
-    bar_bg = pygame.image.load(
-        "resources/relations_border.png").convert_alpha()
-    original_bar = pygame.image.load(
-        "resources/relation_bar.png").convert_alpha()
-
-    if game.settings['dark mode']:
-        bar_bg = pygame.image.load(
-            "resources/relations_border_dark.png").convert_alpha()
-        original_bar = pygame.image.load(
-            "resources/relation_bar_dark.png").convert_alpha()
-
-    bg_rect = bar_bg.get_rect(midleft=(pos_x, pos_y))
-    screen.blit(bar_bg, bg_rect)
-    x_pos = 0
-    for i in range(int(value / 10)):
-        x_pos = i * 11
-        bar_rect = original_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
-        bar = pygame.transform.scale(original_bar, (10, 12))
-        screen.blit(bar, bar_rect)
-    x_pos = 11 * int(value / 10)
-    bar_rect = original_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
-    bar = pygame.transform.scale(original_bar, (value % 10, 12))
-    screen.blit(bar, bar_rect)

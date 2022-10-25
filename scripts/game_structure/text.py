@@ -1,4 +1,5 @@
-from .game_essentials import *
+import pygame
+from .game_essentials import game, screen, screen_x, screen_y
 
 pygame.init()
 

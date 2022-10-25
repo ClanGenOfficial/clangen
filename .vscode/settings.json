@@ -12,9 +12,21 @@
     "python.testing.pytestEnabled": false,
     "python.testing.unittestEnabled": true,
     "cSpell.words": [
+        "blit",
         "cooldown",
+        "freshkill",
+        "greenleaf",
         "kittypet",
+        "leafbare",
+        "leaffall",
+        "newleaf",
         "parentless",
-        "ujson"
+        "pygame",
+        "starclan",
+        "Thunderpath",
+        "Twoleg",
+        "Twolegs",
+        "ujson",
+        "verdana"
     ]
 }

@@ -1,28 +1,27 @@
-import pygame
-import math
+"""
 from noise import snoise2
-import numpy as np
+from numpy import zeros
 import csv
 
 class World:
     def __init__(self, shape, seed):
         self.shape = shape
         self.seed = seed
-        self.main_noisemap = self.generate_noisemap(self.seed, 5)
-        self.heightmap = self.generate_noisemap(self.seed + self.seed, 15)
+        self.main_noise_map = self.generate_noise_map(self.seed, 5)
+        self.height_map = self.generate_noise_map(self.seed + self.seed, 15)
 
-    def generate_noisemap(self, seed, scale):
-        noisetile = np.zeros(self.shape)
+    def generate_noise_map(self, seed, scale):
+        noise_tile = zeros(self.shape)
         for y in range(self.shape[0]):
             for x in range(self.shape[1]):
-                noisetile[x][y] = snoise2(x/scale, y/scale, octaves=6, persistence = 0.5, lacunarity = 2.0, base=seed, repeatx=40,repeaty=44)
-        return noisetile
+                noise_tile[x][y] = snoise2(x/scale, y/scale, octaves=6, persistence = 0.5, lacunarity = 2.0, base=seed, repeatx=40,repeaty=44)
+        return noise_tile
 
-    def check_noisetile(self, x, y):
-        return self.main_noisemap[x][y]
+    def check_noise_tile(self, x, y):
+        return self.main_noise_map[x][y]
     
     def check_heighttile(self, x, y):
-        return self.heightmap[x][y]
+        return self.height_map[x][y]
     
 def save_map(mapinfo, clanname):
     with open(f'saves/{clanname}map.csv', 'w') as csvfile:
@@ -53,3 +52,4 @@ def load_map(clanname):
                 tile_plants = tileinfo[7]
                 dict_from_csv[(x,y)] = [x,y,tile_biome,tile_claim,tile_twolegs,tile_thunderpath,tile_prey,tile_plants]
     return dict_from_csv
+"""

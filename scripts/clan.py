@@ -1,10 +1,12 @@
-from .cats import *
-from .text import *
+from scripts.cat.cats import *
+from scripts.game_structure.text import *
+from scripts.game_structure.load_cat import *
+
 try:
-    from .world import *
-    mapavailable = True
+    from scripts.world import *
+    map_available = True
 except:
-    mapavailable = False
+    map_available = False
 from sys import exit
 
 
@@ -107,41 +109,41 @@ class Clan(object):
         the program starts"""
         self.instructor = Cat(status=choice(["warrior", "elder"]))
         self.instructor.dead = True
-        self.instructor.update_sprite()
+        update_sprite(self.instructor)
         self.add_cat(self.instructor)
         self.all_clans = []
         other_clans = []
 
-        key_copy = tuple(cat_class.all_cats.keys())
+        key_copy = tuple(Cat.all_cats.keys())
         for i in key_copy:  # Going through all currently existing cats
             # cat_class is a Cat-object
             not_found = True
             for x in game.switches['members']:
-                if cat_class.all_cats[i] == game.choose_cats[x]:
-                    self.add_cat(cat_class.all_cats[i])
+                if Cat.all_cats[i] == game.choose_cats[x]:
+                    self.add_cat(Cat.all_cats[i])
                     not_found = False
-            if cat_class.all_cats[i] != game.choose_cats[game.switches['leader']] and cat_class.all_cats[i] != \
-                    game.choose_cats[game.switches['medicine_cat']] and cat_class.all_cats[i] != \
-                    game.choose_cats[game.switches['deputy']] and cat_class.all_cats[i] != \
+            if Cat.all_cats[i] != game.choose_cats[game.switches['leader']] and Cat.all_cats[i] != \
+                    game.choose_cats[game.switches['medicine_cat']] and Cat.all_cats[i] != \
+                    game.choose_cats[game.switches['deputy']] and Cat.all_cats[i] != \
                     self.instructor \
                     and not_found:
-                cat_class.all_cats[i].example = True
-                self.remove_cat(cat_class.all_cats[i].ID)
+                Cat.all_cats[i].example = True
+                self.remove_cat(Cat.all_cats[i].ID)
 
         # give thoughts,actions and relationships to cats
-        for cat_id in cat_class.all_cats:
-            cat_class.all_cats.get(cat_id).create_new_relationships()
-            if cat_class.all_cats.get(cat_id).status == 'apprentice':
-                cat_class.all_cats.get(cat_id).status_change('apprentice')
+        for cat_id in Cat.all_cats:
+            Cat.all_cats.get(cat_id).create_new_relationships()
+            if Cat.all_cats.get(cat_id).status == 'apprentice':
+                Cat.all_cats.get(cat_id).status_change('apprentice')
+            Cat.all_cats.get(cat_id).thoughts()
 
-        cat_class.thoughts()
-        cat_class.json_save_cats()
+        game.save_cats()
         number_other_clans = randint(3, 5)
         for _ in range(number_other_clans):
             self.all_clans.append(OtherClan())
         self.save_clan()
-        if mapavailable:
-            save_map(game.map_info, game.clan.name)
+        #if map_available:
+        #    save_map(game.map_info, game.clan.name)
 
         if game.switches['camp_bg'] is None:
             random_camp_options = ['camp1', 'camp2']
@@ -150,13 +152,13 @@ class Clan(object):
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""
-        if cat.ID in cat_class.all_cats.keys(
+        if cat.ID in Cat.all_cats.keys(
         ) and cat.ID not in self.clan_cats:
             self.clan_cats.append(cat.ID)
 
     def add_to_starclan(self, cat):  # Same as add_cat
         """ Places the dead cat into starclan. It should not be removed from the list of cats in the clan"""
-        if cat.ID in cat_class.all_cats.keys(
+        if cat.ID in Cat.all_cats.keys(
         ) and cat.dead and cat.ID not in self.starclan_cats:
             # The dead-value must be set to True before the cat can go to starclan
             self.starclan_cats.append(cat.ID)
@@ -164,8 +166,8 @@ class Clan(object):
     def remove_cat(self, ID):  # ID is cat.ID
         """This function is for completely removing the cat from the game, it's not meant for a cat that's
         simply dead"""
-        if ID in cat_class.all_cats.keys():
-            cat_class.all_cats.pop(ID)
+        if ID in Cat.all_cats.keys():
+            Cat.all_cats.pop(ID)
             if ID in self.clan_cats:
                 self.clan_cats.remove(ID)
 
@@ -179,7 +181,7 @@ class Clan(object):
     def new_leader(self, leader):
         if leader:
             self.leader = leader
-            cat_class.all_cats[leader.ID].status_change('leader')
+            Cat.all_cats[leader.ID].status_change('leader')
             self.leader_predecessors += 1
             self.leader_lives = 9
         game.switches['new_leader'] = None
@@ -187,13 +189,13 @@ class Clan(object):
     def new_deputy(self, deputy):
         if deputy:
             self.deputy = deputy
-            cat_class.all_cats[deputy.ID].status_change('deputy')
+            Cat.all_cats[deputy.ID].status_change('deputy')
             self.deputy_predecessors += 1
 
     def new_medicine_cat(self, medicine_cat):
         if medicine_cat:
             self.medicine_cat = medicine_cat
-            cat_class.all_cats[medicine_cat.ID].status_change('medicine cat')
+            Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
             self.med_cat_predecessors += 1
             self.med_cat_number += 1
 
@@ -230,7 +232,7 @@ class Clan(object):
         for a in range(len(self.clan_cats)):
             if a == len(self.clan_cats) - 1:
                 data = data + self.clan_cats[a]
-            elif self.clan_cats[a] in cat_class.all_cats.keys():
+            elif self.clan_cats[a] in Cat.all_cats.keys():
                 data = data + self.clan_cats[a] + ','
         data = data + '\n'
         for a, other_clan in enumerate(self.all_clans):
@@ -296,21 +298,21 @@ class Clan(object):
             elif general[3] == 'None':
                 general[3] = 'camp1'
             game.clan = Clan(general[0],
-                             cat_class.all_cats[leader_info[0]],
-                             cat_class.all_cats.get(deputy_info[0], None),
-                             cat_class.all_cats[med_cat_info[0]],
+                             Cat.all_cats[leader_info[0]],
+                             Cat.all_cats.get(deputy_info[0], None),
+                             Cat.all_cats[med_cat_info[0]],
                              biome=general[2],
                              camp_bg=general[3],
                              world_seed=int(general[4]),
                              camp_site=(int(general[5]), int(general[6])))
         elif len(general) == 3:
-            game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]],
-                             cat_class.all_cats.get(deputy_info[0], None),
-                             cat_class.all_cats[med_cat_info[0]], general[2])
+            game.clan = Clan(general[0], Cat.all_cats[leader_info[0]],
+                             Cat.all_cats.get(deputy_info[0], None),
+                             Cat.all_cats[med_cat_info[0]], general[2])
         else:
-            game.clan = Clan(general[0], cat_class.all_cats[leader_info[0]],
-                             cat_class.all_cats.get(deputy_info[0], None),
-                             cat_class.all_cats[med_cat_info[0]])
+            game.clan = Clan(general[0], Cat.all_cats[leader_info[0]],
+                             Cat.all_cats.get(deputy_info[0], None),
+                             Cat.all_cats[med_cat_info[0]])
 
         game.clan.age = int(general[1])
         game.clan.current_season = game.clan.seasons[game.clan.age % 12]
@@ -322,13 +324,13 @@ class Clan(object):
             game.clan.deputy_predecessors = int(deputy_info[1])
         game.clan.med_cat_predecessors = int(med_cat_info[1])
         if len(sections) > 4:
-            if instructor_info in cat_class.all_cats.keys():
-                game.clan.instructor = cat_class.all_cats[instructor_info]
+            if instructor_info in Cat.all_cats.keys():
+                game.clan.instructor = Cat.all_cats[instructor_info]
                 game.clan.add_cat(game.clan.instructor)
         else:
             game.clan.instructor = Cat(
                 status=choice(["warrior", "warrior", "elder"]))
-            game.clan.instructor.update_sprite()
+            update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
         if other_clans != [""]:
@@ -344,9 +346,9 @@ class Clan(object):
                 self.all_clans.append(OtherClan())
 
         for cat in members:
-            if cat in cat_class.all_cats.keys():
-                game.clan.add_cat(cat_class.all_cats[cat])
-                game.clan.add_to_starclan(cat_class.all_cats[cat])
+            if cat in Cat.all_cats.keys():
+                game.clan.add_cat(Cat.all_cats[cat])
+                game.clan.add_to_starclan(Cat.all_cats[cat])
             else:
                 print('Cat not found:', cat)
         game.switches['error_message'] = ''

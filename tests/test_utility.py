@@ -1,5 +1,6 @@
 import unittest
-from scripts.cats import Cat
+
+from scripts.cat.cats import Cat
 from scripts.utility import get_personality_compatibility
 
 class TestPersonalityCompatibility(unittest.TestCase):

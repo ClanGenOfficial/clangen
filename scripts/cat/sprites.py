@@ -1,6 +1,6 @@
 import pygame
-from .game_essentials import *
 
+from scripts.game_structure.game_essentials import *
 
 class Sprites(object):
 
