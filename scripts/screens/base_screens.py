@@ -64,11 +64,11 @@ def draw_menu_buttons():
                         text='Allegiances',
                         cur_screen='allegiances screen',
                         hotkey=[7])
-    buttons.draw_button((-70, 110),
-                        text='Map',
-                        cur_screen='map screen',
-                        available=map_available,
-                        hotkey=[8])
+    #buttons.draw_button((-70, 110),
+    #                    text='Map',
+    #                    cur_screen='map screen',
+    #                    available=map_available,
+    #                    hotkey=[8])
     buttons.draw_button((50, 80),
                         text='Stats',
                         cur_screen='stats screen',
