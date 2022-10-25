@@ -129,64 +129,6 @@ class Relation_Events(object):
             # breakup
             self.handle_breakup(relationship, relationship.opposite_relationship, cat_from, cat_to)
 
-    # ---------------------------------------------------------------------------- #
-    #                                 handle events                                #
-    # ---------------------------------------------------------------------------- #
-    
-    def handle_new_mates(self, relationship, cat_from, cat_to):
-        """More in depth check if the cats will become mates."""
-        young_age = ['kitten', 'adolescent']
-        if cat_from.age in young_age or cat_to.age in young_age:
-            return
-
-        become_mates = False
-        mate_string = ""
-        mate_chance = 5
-        hit = randint(1, mate_chance)
-
-        # has to be high because every moon this will be checked for each relationship in the came
-        random_mate_chance = 300 
-        random_hit = randint(1, random_mate_chance)
-        low_dislike = relationship.dislike < 15 and relationship.opposite_relationship.dislike < 15
-        high_like = relationship.platonic_like > 30 and relationship.opposite_relationship.platonic_like > 30
-        semi_high_like = relationship.platonic_like > 20 and relationship.opposite_relationship.platonic_like > 20
-        high_comfort = relationship.comfortable > 25 and relationship.opposite_relationship.comfortable > 25
-
-        if hit == 1 and relationship.romantic_love > 20 and relationship.opposite_relationship.romantic_love > 20 and semi_high_like:
-            print(cat_from.name, cat_to.name , " - LOVE", game.clan.age, "moons")
-            mate_string = f"{str(cat_from.name)} and {str(cat_to.name)} have become mates"
-            become_mates = True
-        elif random_hit == 1 and low_dislike and (high_like or high_comfort):
-            print(cat_from.name, cat_to.name , " - RANDOM", game.clan.age, "moons")
-            mate_string = f"{str(cat_from.name)} and {str(cat_to.name)} see each other in a different light and have become mates"
-            become_mates = True
-        
-        if become_mates:
-            self.had_one_event = True
-            cat_from.set_mate(cat_to)
-            cat_to.set_mate(cat_from)
-            game.cur_events_list.append(mate_string)
-
-    def handle_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
-        from_mate_in_clan = False
-        if cat_from.mate != None:
-            if cat_from.mate not in Cat.all_cats.keys():
-                game.cur_events_list.insert(0, f"Cat #{cat_from} has a invalid mate. It will set to none.")
-                cat_from.mate = None
-                return
-            cat_from_mate = Cat.all_cats.get(cat_from.mate)
-            from_mate_in_clan = cat_from_mate.is_alive() and not cat_from_mate.exiled
-
-        if not self.had_one_event and relationship_from.mates and from_mate_in_clan:
-            if self.check_if_breakup(relationship_from, relationship_to, cat_from, cat_to):
-                print(cat_from.name, cat_to.name, " - BREAKUP", game.clan.age, "moons")
-                #TODO: filter log to check if last interaction was a fight
-                had_fight = False
-                self.had_one_event = True
-                cat_from.unset_mate(breakup=True, fight=had_fight)
-                cat_to.unset_mate(breakup=True, fight=had_fight)
-                game.cur_events_list.append(f"{str(cat_from.name)} and {str(cat_to.name)} broke up")
-
     def handle_having_kits(self, cat):
         """Check if it possible possible to have kits and with which cat."""
         if cat.birth_cooldown > 0:
@@ -270,6 +212,64 @@ class Relation_Events(object):
                     self.have_kits(cat, biggest_love_cat, highest_romantic_relation)
                 else:
                     self.have_kits(cat, mate, mate_relation)
+
+    # ---------------------------------------------------------------------------- #
+    #                                 handle events                                #
+    # ---------------------------------------------------------------------------- #
+    
+    def handle_new_mates(self, relationship, cat_from, cat_to):
+        """More in depth check if the cats will become mates."""
+        young_age = ['kitten', 'adolescent']
+        if cat_from.age in young_age or cat_to.age in young_age:
+            return
+
+        become_mates = False
+        mate_string = ""
+        mate_chance = 5
+        hit = randint(1, mate_chance)
+
+        # has to be high because every moon this will be checked for each relationship in the came
+        random_mate_chance = 300 
+        random_hit = randint(1, random_mate_chance)
+        low_dislike = relationship.dislike < 15 and relationship.opposite_relationship.dislike < 15
+        high_like = relationship.platonic_like > 30 and relationship.opposite_relationship.platonic_like > 30
+        semi_high_like = relationship.platonic_like > 20 and relationship.opposite_relationship.platonic_like > 20
+        high_comfort = relationship.comfortable > 25 and relationship.opposite_relationship.comfortable > 25
+
+        if hit == 1 and relationship.romantic_love > 20 and relationship.opposite_relationship.romantic_love > 20 and semi_high_like:
+            print(cat_from.name, cat_to.name , " - LOVE", game.clan.age, "moons")
+            mate_string = f"{str(cat_from.name)} and {str(cat_to.name)} have become mates"
+            become_mates = True
+        elif random_hit == 1 and low_dislike and (high_like or high_comfort):
+            print(cat_from.name, cat_to.name , " - RANDOM", game.clan.age, "moons")
+            mate_string = f"{str(cat_from.name)} and {str(cat_to.name)} see each other in a different light and have become mates"
+            become_mates = True
+        
+        if become_mates:
+            self.had_one_event = True
+            cat_from.set_mate(cat_to)
+            cat_to.set_mate(cat_from)
+            game.cur_events_list.append(mate_string)
+
+    def handle_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
+        from_mate_in_clan = False
+        if cat_from.mate != None:
+            if cat_from.mate not in Cat.all_cats.keys():
+                game.cur_events_list.insert(0, f"Cat #{cat_from} has a invalid mate. It will set to none.")
+                cat_from.mate = None
+                return
+            cat_from_mate = Cat.all_cats.get(cat_from.mate)
+            from_mate_in_clan = cat_from_mate.is_alive() and not cat_from_mate.exiled
+
+        if not self.had_one_event and relationship_from.mates and from_mate_in_clan:
+            if self.check_if_breakup(relationship_from, relationship_to, cat_from, cat_to):
+                print(cat_from.name, cat_to.name, " - BREAKUP", game.clan.age, "moons")
+                #TODO: filter log to check if last interaction was a fight
+                had_fight = False
+                self.had_one_event = True
+                cat_from.unset_mate(breakup=True, fight=had_fight)
+                cat_to.unset_mate(breakup=True, fight=had_fight)
+                game.cur_events_list.append(f"{str(cat_from.name)} and {str(cat_to.name)} broke up")
 
     def big_love_check(self, cat, upper_threshold = 40, lower_threshold = 15):
         """
