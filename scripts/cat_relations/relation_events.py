@@ -529,7 +529,7 @@ class Relation_Events(object):
         
         return chance_number
 
-    def get_kits_chance(self, cat, other_cat, relation):
+    def get_kits_chance(self, cat, other_cat = None, relation = None):
         """ Looks into the current values and calculate the chance of having kittens. The lower, the more likely they will have kittens.
             Returns:
                 integer (number)
@@ -544,26 +544,24 @@ class Relation_Events(object):
         chance = 80
         if other_cat != None:
             chance = 45
-            if relation.romantic_love > 60:
+            if relation.romantic_love >= 50:
                 chance -= 5
-            if relation.romantic_love > 70:
+            if relation.romantic_love >= 70:
                 chance -= 5
-            if relation.romantic_love > 80:
+            if relation.romantic_love >= 90:
+                chance -= 10
+            if relation.comfortable >= 50:
                 chance -= 5
-            if relation.comfortable > 60:
+            if relation.comfortable >= 70:
                 chance -= 5
-            if relation.comfortable > 70:
-                chance -= 5
-            if relation.comfortable > 80:
-                chance -= 5
+            if relation.comfortable >= 90:
+                chance -= 10
         if old_male:
             chance = int(chance * 2)
 
         if self.living_cats > 30:
-            chance += 20
-            if self.living_cats > 40:
-                chance += int(self.living_cats/1.5) * int(self.living_cats % 10 * 2.2) 
-        elif self.living_cats < 10 and chance > 10:
+            chance += int(int(self.living_cats/2) * int(self.living_cats % 10)) 
+        if self.living_cats < 10 and chance > 10:
             chance -= 10
         
         return chance
