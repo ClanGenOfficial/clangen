@@ -185,7 +185,7 @@ class PatrolEventScreen(Screens):
             verdana.blit_text(intro_text, (150, 200))
             buttons.draw_button((290, 320), text='Proceed', event=-2)
             buttons.draw_button((150, 320), text='Do Not Proceed', event=2)
-            if patrol.patrol_event.patrol_id in [500, 501, 502, 503, 505, 510]:
+            if patrol.patrol_event.patrol_id in [500, 501, 502, 503, 504, 505, 510]:
                 buttons.draw_button((150, 290), text='Antagonize', event=3)
 
         if game.switches['event'] == -2:
