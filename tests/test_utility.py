@@ -1,7 +1,8 @@
 import unittest
 
 from scripts.cat.cats import Cat
-from scripts.utility import get_personality_compatibility
+from scripts.cat_relations.relationship import Relationship
+from scripts.utility import get_personality_compatibility, get_amount_of_cats_with_relation_value_towards
 
 class TestPersonalityCompatibility(unittest.TestCase):
 
@@ -87,3 +88,37 @@ class TestPersonalityCompatibility(unittest.TestCase):
         cat2.trait = None
         self.assertIsNone(get_personality_compatibility(cat1,cat2))
         self.assertIsNone(get_personality_compatibility(cat2,cat1))
+
+class TestCountRelation(unittest.TestCase):
+    def test_2_cats_jealousy(self):
+        # given
+        cat1 = Cat()
+        cat2 = Cat()
+        cat3 = Cat()
+        cat4 = Cat()
+
+        relation_1_2 = Relationship(cat_from=cat1,cat_to=cat2)
+        relation_1_2.link_relationship()
+        cat1.relationships.append(relation_1_2)
+        relation_3_2 = Relationship(cat_from=cat3,cat_to=cat2)
+        relation_3_2.link_relationship()
+        cat3.relationships.append(relation_3_2)
+        relation_4_2 = Relationship(cat_from=cat4,cat_to=cat2)
+        relation_4_2.link_relationship()
+        cat4.relationships.append(relation_4_2)
+
+        # when
+        relation_1_2.jealousy += 20
+        relation_3_2.jealousy += 20
+        relation_4_2.jealousy += 10
+
+        #then
+        relation_dict = get_amount_of_cats_with_relation_value_towards(cat2,20,[cat1,cat2,cat3,cat4])
+
+        self.assertEqual(relation_dict["romantic_love"],0)
+        self.assertEqual(relation_dict["platonic_like"],0)
+        self.assertEqual(relation_dict["dislike"],0)
+        self.assertEqual(relation_dict["admiration"],0)
+        self.assertEqual(relation_dict["comfortable"],0)
+        self.assertEqual(relation_dict["jealousy"],2)
+        self.assertEqual(relation_dict["trust"],0)

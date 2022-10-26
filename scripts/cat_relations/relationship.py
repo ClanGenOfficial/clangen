@@ -20,95 +20,6 @@ EXILED_CATS = {
     "both":['Ran into (cat) by chance']
 }
 
-# IN increase or decrease
-resource_directory = "resources/dicts/relationship_events/"
-de_in_crease_path = "DE_IN_CREASE/"
-cat_to_other_path = "cat_to_other/"
-
-# ---------------------------------------------------------------------------- #
-#                           load event possibilities                           #
-# ---------------------------------------------------------------------------- #
-
-
-NEWLEAF = None
-with open(f"{resource_directory}{cat_to_other_path}not_age_specific.json", 'r') as read_file:
-    NEWLEAF = ujson.loads(read_file.read())
-
-KITTEN_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}kitten_to_other.json", 'r') as read_file:
-    KITTEN_TO_OTHER = ujson.loads(read_file.read())
-
-APPRENTICE_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}apprentice_to_other.json", 'r') as read_file:
-    APPRENTICE_TO_OTHER = ujson.loads(read_file.read())
-
-MEDICINE_APP_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}medicine_app_to_other.json", 'r') as read_file:
-    MEDICINE_APP_TO_OTHER = ujson.loads(read_file.read())
-
-WARRIOR_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}warrior_to_other.json", 'r') as read_file:
-    WARRIOR_TO_OTHER = ujson.loads(read_file.read())
-
-ELDER_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}elder_to_other.json", 'r') as read_file:
-    ELDER_TO_OTHER = ujson.loads(read_file.read())
-
-LEADER_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}leader_to_other.json", 'r') as read_file:
-    LEADER_TO_OTHER = ujson.loads(read_file.read())
-
-DEPUTY_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}deputy_to_other.json", 'r') as read_file:
-    DEPUTY_TO_OTHER = ujson.loads(read_file.read())
-
-MEDICINE_TO_OTHER = None
-with open(f"{resource_directory}{cat_to_other_path}medicine_to_other.json", 'r') as read_file:
-    MEDICINE_TO_OTHER = ujson.loads(read_file.read())
-
-LOVE = None
-with open(f"{resource_directory}love.json", 'r') as read_file:
-    LOVE = ujson.loads(read_file.read())
-
-SPECIAL_CHARACTER = None
-with open(f"{resource_directory}special_character.json", 'r') as read_file:
-    SPECIAL_CHARACTER = ujson.loads(read_file.read())
-
-
-# ---------------------------------------------------------------------------- #
-#                             load de- and increase                            #
-# ---------------------------------------------------------------------------- #
-
-
-INCREASE_HIGH = None
-try:
-    with open(f"{resource_directory}{de_in_crease_path}INCREASE_HIGH.json", 'r') as read_file:
-        INCREASE_HIGH = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 1_INCREASE_HIGH.json file of relationship_events!'
-
-INCREASE_LOW = None
-try:
-    with open(f"{resource_directory}{de_in_crease_path}INCREASE_LOW.json", 'r') as read_file:
-        INCREASE_LOW = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 1_INCREASE_LOW.json file of relationship_events!'
-
-DECREASE_HIGH  = None
-try:
-    with open(f"{resource_directory}{de_in_crease_path}DECREASE_HIGH.json", 'r') as read_file:
-        DECREASE_HIGH = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 1_DECREASE_HIGH.json file of relationship_events!'
-
-
-DECREASE_LOW = None
-try:
-    with open(f"{resource_directory}{de_in_crease_path}DECREASE_LOW.json", 'r') as read_file:
-        DECREASE_LOW = ujson.loads(read_file.read())
-except:
-    game.switches['error_message'] = 'There was an error loading the 1_DECREASE_LOW.json file of relationship_events!'
-
 
 # weights of the stat change
 DIRECT_INCREASE_HIGH = 12
@@ -235,7 +146,8 @@ class Relationship(object):
             self_relation_effect = other_relation_effect
         effect_string =  f"({self_relation_effect})"
         both = action_string_all+effect_string
-        self.log.append(both)
+        if both.startswith(str(self.cat_from.name)):
+            self.log.append(both)
         if len(both) < 100:
             game.relation_events_list.append(both)
         else:
@@ -605,3 +517,94 @@ class Relationship(object):
         if value < 0:
             value = 0
         self._trust = value
+
+
+
+# IN increase or decrease
+resource_directory = "resources/dicts/relationship_events/"
+de_in_crease_path = "DE_IN_CREASE/"
+cat_to_other_path = "cat_to_other/"
+
+# ---------------------------------------------------------------------------- #
+#                           load event possibilities                           #
+# ---------------------------------------------------------------------------- #
+
+
+NEWLEAF = None
+with open(f"{resource_directory}{cat_to_other_path}not_age_specific.json", 'r') as read_file:
+    NEWLEAF = ujson.loads(read_file.read())
+
+KITTEN_TO_OTHER = None
+with open(f"{resource_directory}{cat_to_other_path}kitten_to_other.json", 'r') as read_file:
+    KITTEN_TO_OTHER = ujson.loads(read_file.read())
+
+APPRENTICE_TO_OTHER = None
+with open(f"{resource_directory}{cat_to_other_path}apprentice_to_other.json", 'r') as read_file:
+    APPRENTICE_TO_OTHER = ujson.loads(read_file.read())
+
+MEDICINE_APP_TO_OTHER = None
+with open(f"{resource_directory}{cat_to_other_path}medicine_app_to_other.json", 'r') as read_file:
+    MEDICINE_APP_TO_OTHER = ujson.loads(read_file.read())
+
+WARRIOR_TO_OTHER = None
+with open(f"{resource_directory}{cat_to_other_path}warrior_to_other.json", 'r') as read_file:
+    WARRIOR_TO_OTHER = ujson.loads(read_file.read())
+
+ELDER_TO_OTHER = None
+with open(f"{resource_directory}{cat_to_other_path}elder_to_other.json", 'r') as read_file:
+    ELDER_TO_OTHER = ujson.loads(read_file.read())
+
+LEADER_TO_OTHER = None
+with open(f"{resource_directory}{cat_to_other_path}leader_to_other.json", 'r') as read_file:
+    LEADER_TO_OTHER = ujson.loads(read_file.read())
+
+DEPUTY_TO_OTHER = None
+with open(f"{resource_directory}{cat_to_other_path}deputy_to_other.json", 'r') as read_file:
+    DEPUTY_TO_OTHER = ujson.loads(read_file.read())
+
+MEDICINE_TO_OTHER = None
+with open(f"{resource_directory}{cat_to_other_path}medicine_to_other.json", 'r') as read_file:
+    MEDICINE_TO_OTHER = ujson.loads(read_file.read())
+
+LOVE = None
+with open(f"{resource_directory}love.json", 'r') as read_file:
+    LOVE = ujson.loads(read_file.read())
+
+SPECIAL_CHARACTER = None
+with open(f"{resource_directory}special_character.json", 'r') as read_file:
+    SPECIAL_CHARACTER = ujson.loads(read_file.read())
+
+
+# ---------------------------------------------------------------------------- #
+#                             load de- and increase                            #
+# ---------------------------------------------------------------------------- #
+
+
+INCREASE_HIGH = None
+try:
+    with open(f"{resource_directory}{de_in_crease_path}INCREASE_HIGH.json", 'r') as read_file:
+        INCREASE_HIGH = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 1_INCREASE_HIGH.json file of relationship_events!'
+
+INCREASE_LOW = None
+try:
+    with open(f"{resource_directory}{de_in_crease_path}INCREASE_LOW.json", 'r') as read_file:
+        INCREASE_LOW = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 1_INCREASE_LOW.json file of relationship_events!'
+
+DECREASE_HIGH  = None
+try:
+    with open(f"{resource_directory}{de_in_crease_path}DECREASE_HIGH.json", 'r') as read_file:
+        DECREASE_HIGH = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 1_DECREASE_HIGH.json file of relationship_events!'
+
+
+DECREASE_LOW = None
+try:
+    with open(f"{resource_directory}{de_in_crease_path}DECREASE_LOW.json", 'r') as read_file:
+        DECREASE_LOW = ujson.loads(read_file.read())
+except:
+    game.switches['error_message'] = 'There was an error loading the 1_DECREASE_LOW.json file of relationship_events!'
