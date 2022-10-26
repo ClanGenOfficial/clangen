@@ -445,5 +445,9 @@ def init_white_patches(cat):
                     cat.white_patches = choice(vit)
                 else:
                     cat.white_patches = None
+        # just making sure no cats end up with no white patches and true white            
+        if cat.white_patches == None:
+            cat.white = False
     else:
         cat.white_patches = None
+        cat.white = False
