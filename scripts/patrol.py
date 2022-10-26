@@ -584,32 +584,25 @@ class Patrol(object):
                             win_skills=['great speaker', 'fantastic speaker'])
                         ])
 
+        if self.patrol_random_cat.skill == 'formerly a loner':
+            possible_patrols.extend([
+                PatrolEvent(
+                    510,
+                    'r_c finds an old friend of their\'s from when they were a loner',
+                    'r_c invites their friend to join the Clan',
+                    'r_c and their friend reminisce about old times',
+                    'r_c says farewell to their friend and rejoins the patrol', 40, 10)
+            ])
 
-        # ---------------------------------------------------------------------------- #
-        #                                 !!IMPORTANT!!                                #
-        #                               currently in rework                            #
-        #                     me (Lixxis) will make a solution later                   #
-        # ---------------------------------------------------------------------------- #
-
-        #if self.patrol_random_cat.skill == 'formerly a loner':
-        #    possible_patrols.extend([
-        #        PatrolEvent(
-        #            510,
-        #            'r_c finds an old friend of their\'s from when they were a loner',
-        #            'r_c invites their friend to join the Clan',
-        #            'r_c and their friend reminisce about old times',
-        #            'r_c says farewell to their friend and rejoins the patrol', 40, 10)
-        #    ])
-
-        #if self.patrol_random_cat.status == 'formerly a kittypet':
-        #    possible_patrols.extend([
-        #        PatrolEvent(
-        #            520,
-        #            'r_c finds an old friend of their\'s from when they were a kittypet',
-        #            'r_c invites their friend to join the Clan',
-        #            'r_c and their friend reminisce about old times',
-        #            'r_c says farewell to their friend and rejoins the patrol', 40, 10)
-        #    ])            
+        if self.patrol_random_cat.status == 'formerly a kittypet':
+            possible_patrols.extend([
+                PatrolEvent(
+                    520,
+                    'r_c finds an old friend of their\'s from when they were a kittypet',
+                    'r_c invites their friend to join the Clan',
+                    'r_c and their friend reminisce about old times',
+                    'r_c says farewell to their friend and rejoins the patrol', 40, 10)
+            ])            
 
         return possible_patrols
 
