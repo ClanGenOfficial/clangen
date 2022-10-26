@@ -1,6 +1,6 @@
 from scripts.utility import update_sprite
 from scripts.cat.cats import Cat
-from scripts.game_structure.buttons import buttons
+from scripts.game_structure.buttons import Button, buttons
 from scripts.game_structure.game_essentials import *
 from scripts.clan import map_available
 
@@ -26,7 +26,7 @@ class Screens(object):
         """Runs when this screen is switched to."""
         pass
 
-
+ 
 # CAT PROFILES
 def cat_profiles():
     game.choose_cats.clear()
@@ -36,42 +36,58 @@ def cat_profiles():
         update_sprite(game.choose_cats[x])
 
 def draw_menu_buttons():
-    buttons.draw_button((260, 70),
+    buttons.draw_image_button((200, 70),
+                        button_name='events',
                         text='EVENTS',
                         cur_screen='events screen',
+                        size=(100,26),
                         hotkey=[2])
-    buttons.draw_button((340, 70),
+    buttons.draw_image_button((310, 70),
+                        button_name='clan',
                         text='CLAN',
                         cur_screen='clan screen',
+                        size=(80,26),
                         hotkey=[3])
-    buttons.draw_button((400, 70),
+    buttons.draw_image_button((400, 70),
+                        button_name='starclan',
                         text='STARCLAN',
                         cur_screen='starclan screen',
+                        size=(110,26),
                         hotkey=[4])
-    buttons.draw_button((500, 70),
+    buttons.draw_image_button((520, 70),
+                        button_name='patrol',
                         text='PATROL',
                         cur_screen='patrol screen',
+                        size=(90,26),
                         hotkey=[5])
-    buttons.draw_button((50, 50),
+    buttons.draw_image_button((30, 50),
+                        button_name='main_menu',
                         text='< Back to Main Menu',
                         cur_screen='start screen',
+                        size=(140,28),
                         hotkey=[0])
-    buttons.draw_button((-70, 50),
+    buttons.draw_image_button((650, 40),
+                        button_name='list_cats',
                         text='List Cats',
                         cur_screen='list screen',
+                        size=(110,28),
                         hotkey=[6])
-    buttons.draw_button((-70, 80),
+    buttons.draw_image_button((640, 75),
+                        button_name='allegiances',
                         text='Allegiances',
                         cur_screen='allegiances screen',
+                        size=(135,28),
                         hotkey=[7])
     #buttons.draw_button((-70, 110),
     #                    text='Map',
     #                    cur_screen='map screen',
     #                    available=map_available,
     #                    hotkey=[8])
-    buttons.draw_button((50, 80),
+    buttons.draw_image_button((50, 80),
+                        button_name='stats',
                         text='Stats',
                         cur_screen='stats screen',
+                        size=(70,23),
                         hotkey=[1])
 
 def draw_next_prev_cat_buttons(the_cat):

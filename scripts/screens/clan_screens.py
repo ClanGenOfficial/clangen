@@ -7,6 +7,8 @@ from .base_screens import Screens, draw_menu_buttons, cat_profiles
 from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
 from scripts.cat.cats import Cat
+from scripts.game_structure.buttons import *
+
 
 class ClanScreen(Screens):
 
@@ -44,9 +46,12 @@ class ClanScreen(Screens):
                     hotkey_assign_1 = hotkey_assign_1 + 1
                     hotkey_assign_2 = hotkey_assign_1 + 1
         draw_menu_buttons()
-        buttons.draw_button(('center', -50),
+        
+        buttons.draw_image_button((330, 625),
+                            button_name='save_clan',
                             text='Save Clan',
                             save_clan=True,
+                            size=(140,30),
                             hotkey=[9])
         pygame.draw.rect(screen,
                          color='gray',

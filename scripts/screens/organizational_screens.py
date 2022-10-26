@@ -23,37 +23,45 @@ class StartScreen(Screens):
             buttons.draw_image_button((70, 310),
                                       button_name='continue',
                                       text='Continue >',
-                                      cur_screen='clan screen')
+                                      cur_screen='clan screen',
+                                      size=(192, 35))
             buttons.draw_image_button((70, 355),
                                       button_name='switch_clan',
                                       text='Switch Clan >',
-                                      cur_screen='switch clan screen')
+                                      cur_screen='switch clan screen',
+                                      size=(192, 35))
         elif game.clan is not None and game.switches['error_message']:
             buttons.draw_image_button((70, 310),
                                       button_name='continue',
                                       text='Continue >',
-                                      available=False)
+                                      available=False,
+                                      size=(192, 35))
             buttons.draw_image_button((70, 355),
                                       button_name='switch_clan',
                                       text='Switch Clan >',
-                                      cur_screen='switch clan screen')
+                                      cur_screen='switch clan screen',
+                                      size=(192, 35))
         else:
             buttons.draw_image_button((70, 310),
                                       button_name='continue',
                                       text='Continue >',
-                                      available=False)
+                                      available=False,
+                                      size=(192, 35))
             buttons.draw_image_button((70, 355),
                                       button_name='switch_clan',
                                       text='Switch Clan >',
-                                      available=False)
+                                      available=False,
+                                      size=(192, 35))
         buttons.draw_image_button((70, 400),
                                   button_name='new_clan',
                                   text='Make New >',
-                                  cur_screen='make clan screen')
+                                  cur_screen='make clan screen',
+                                  size=(192, 35))
         buttons.draw_image_button((70, 445),
                                   button_name='settings',
                                   text='Settings & Info >',
-                                  cur_screen='settings screen')
+                                  cur_screen='settings screen',
+                                  size=(192, 35))
 
         if game.switches['error_message']:
             buttons.draw_button((50, 50),
