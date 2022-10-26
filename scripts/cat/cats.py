@@ -381,9 +381,26 @@ class Cat(object):
         self.create_interaction()
 
     def thoughts(self):
-        thought_possibilities = get_thoughts(self)
-        chosen_thought = choice(thought_possibilities)
-        self.thought = chosen_thought
+        all_cats = self.all_cats
+        other_cat = random.choice(list(all_cats.keys()))
+        countdown = int(len(all_cats) / 3)
+
+        # get other cat
+        while other_cat == self and countdown > 0:
+            other_cat = random.choice(list(all_cats.keys()))
+            countdown -= 1
+        other_cat = all_cats.get(other_cat)
+
+        # get possible thoughts
+        thought_possibilities = get_thoughts(self, other_cat)
+        chosen_thought = random.choice(thought_possibilities)
+
+        # insert name if it is needed
+        if "r_c" in chosen_thought:
+            chosen_thought = chosen_thought.replace("r_c", str(other_cat.name))
+
+        # insert thought
+        self.thought = str(chosen_thought)
 
     def create_interaction(self):
         # if the cat has no relationships, skip
