@@ -84,8 +84,12 @@ class Events(object):
         game.switches['timeskip'] = False
 
     def one_moon_cat(self, cat, relation_events):
-        if cat.is_alive():
-            self.living_cats += 1
+        if cat.dead:
+            cat.thoughts()
+            cat.dead_for += 1
+            return
+        
+        self.living_cats += 1
 
         self.perform_ceremonies(cat) # here is age up included
         self.handle_deaths(cat)
