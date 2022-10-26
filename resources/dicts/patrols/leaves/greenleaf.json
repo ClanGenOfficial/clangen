@@ -4,7 +4,7 @@
         "intro_text": "It is extremely hot out today; r_c debates turning back home",
         "success_text": "They decide to power through the weather and the patrol is successful",
         "fail_text": "r_c collapses from heat exhaustion",
-        "decline_text": "",
+        "decline_text": "The patrol decides to head back to camp, they can patrol a different day",
         "antagonize_text": "",
         "antagonize_fail_text": "",
         "chance_of_success": 50,
