@@ -300,7 +300,7 @@ class Cat(object):
         self.all_cats[self.ID] = self
 
     def update_traits(self, new_status):
-        if self.moons == 6:
+        if new_status == 'apprentice' or new_status == "medicine cat apprentice":
             chance = randint(0, 5)  # chance for cat to gain trait that matches their previous trait's personality group
             if chance == 0:
                 self.trait = choice(self.traits)
@@ -308,14 +308,16 @@ class Cat(object):
             else:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
+                    print(self.trait in self.personality_groups[x])
                     if self.trait in self.personality_groups[x]:
-                        possible_trait = self.personality_groups.get(x)
-                        chosen_trait = choice(possible_trait)
-                        for y in self.kit_traits:
-                            if chosen_trait != y:
-                                print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
-                                break
-        if self.moons == 12:
+                        possible_traits = self.personality_groups.get(x)
+                        chosen_trait = choice(possible_traits)
+                        while chosen_trait not in self.traits:
+                            chosen_trait = choice(possible_traits)
+                        self.trait = chosen_trait
+                        print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
+
+        if new_status == "warrior" or new_status == "medicine cat":
             chance = randint(0, 5)  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
@@ -324,14 +326,15 @@ class Cat(object):
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
                     if self.trait in self.personality_groups[x]:
-                        possible_trait = self.personality_groups.get(x)
-                        chosen_trait = choice(possible_trait)
-                        for y in self.kit_traits:
-                            if chosen_trait != y:
-                                print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
-                                break
+                        possible_traits = self.personality_groups.get(x)
+                        chosen_trait = choice(possible_traits)
+                        while chosen_trait not in self.traits:
+                            chosen_trait = choice(possible_traits)
+                        self.trait = chosen_trait
+                        print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
             else:
                 print(self.name, 'NEW TRAIT TYPE: No change', chance)
+
         if new_status == 'elder':
             chance = randint(0, 7)  # chance for cat to gain new trait or keep old
             if chance == 0:
@@ -341,12 +344,12 @@ class Cat(object):
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
                     if self.trait in self.personality_groups[x]:
-                        possible_trait = self.personality_groups.get(x)
-                        chosen_trait = choice(possible_trait)
-                        for y in self.kit_traits:
-                            if chosen_trait != y:
-                                print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
-                                break
+                        possible_traits = self.personality_groups.get(x)
+                        chosen_trait = choice(possible_traits)
+                        while chosen_trait not in self.traits:
+                            chosen_trait = choice(possible_traits)
+                        self.trait = chosen_trait
+                        print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
             else:
                 print(self.name, 'NEW TRAIT TYPE: No change', chance)
 

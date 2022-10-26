@@ -138,7 +138,7 @@ def get_apprentice_thoughts(cat, other_cat):
     trait = cat.trait
     thoughts += APPR_TRAITS[trait]
 
-    if cat.trait == 'charismatic':
+    if trait == 'charismatic':
         # checks for specific roles
         if other_cat.status == 'kitten':
             thoughts += [
@@ -146,9 +146,7 @@ def get_apprentice_thoughts(cat, other_cat):
             ]
         elif cat.status == 'elder':
             thoughts += ['Is a favorite among the elders lately']
-    
-    thoughts += get_apprentice_thoughts(cat, other_cat)
-    thoughts += get_med_apprentice_thoughts(cat, other_cat)
+
     return thoughts
 
 def get_med_apprentice_thoughts(cat, other_cat):
