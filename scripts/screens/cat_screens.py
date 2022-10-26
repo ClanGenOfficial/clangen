@@ -598,6 +598,13 @@ class OptionsScreen(Screens):
                                 cat_value=the_cat,
                                 hotkey=[button_count + 1])
             button_count += 1
+            
+        if the_cat.accessory != None:
+            buttons.draw_button((x_value, y_value + button_count * y_change),
+                                text='Remove accessory',
+                                cat_value=the_cat,
+                                hotkey=[button_count + 1])
+            button_count += 1
 
         draw_back(x_value, y_value + button_count * y_change)
         
