@@ -107,7 +107,7 @@ class Patrol(object):
         self.patrol_total_experience = 0
         self.success = False
         self.patrol_random_cat = None
-        self.patrol_other_cats = None
+        self.patrol_other_cats = []
         self.patrol_stat_cat = None
         self.experience_levels = [
             'very low', 'low', 'slightly low', 'average', 'somewhat high',
@@ -122,7 +122,7 @@ class Patrol(object):
         self.patrol_statuses.clear()
         self.patrol_traits.clear()
         self.patrol_total_experience = 0
-
+        self.patrol_other_cats.clear()
         for cat in game.switches['current_patrol']:
             name = str(cat.name)
             self.patrol_cats.append(cat)
@@ -138,20 +138,21 @@ class Patrol(object):
             self.patrol_leader = choice(self.possible_patrol_leaders)
         elif not self.possible_patrol_leaders:
             self.patrol_leader = choice(self.patrol_cats)
-        self.patrol_random_cat = choice(self.patrol_cats)
-        """ idk, this wasn't working for some reason
-        for self.patrol_names in self.patrol_cats:
-            if self.patrol_random_cat != self.patrol_leader:
-                continue
-            else:
-                self.patrol_random_cat = choice(self.patrol_cats)
-        """
-        if len(self.patrol_cats) >= 3:
-            other_not_same = False
-            if self.patrol_other_cats != self.patrol_leader and self.patrol_other_cats != self.patrol_random_cat:
-                other_not_same = True
+        if self.patrol_cats >= 2:
+            self.patrol_random_cat = choice(self.patrol_cats)
+            for self.patrol_names in self.patrol_cats:
+                if self.patrol_random_cat == self.patrol_leader:
+                    self.patrol_random_cat = choice(self.patrol_cats)
+                else:
+                    break
         else:
-            self.patrol_other_cats = None
+            self.patrol_random_cat = choice(self.patrol_cats)
+
+        if len(self.patrol_cats) >= 3:
+            for self.patrol_names in self.patrol_cats:
+                if cat != self.patrol_leader and cat != self.patrol_random_cat:
+                    self.patrol_other_cats.append(cat)
+
 
     def get_possible_patrols(self, current_season, biome, all_clans, game_setting_disaster):
         possible_patrols = []
