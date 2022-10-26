@@ -366,11 +366,9 @@ class Cat(object):
 # ---------------------------------------------------------------------------- #
 
     def one_moon(self):
+        """Handles a moon skip for a alive cat"""
         if self.exiled:
             # this is handled in events.py
-            return
-        if self.dead:
-            self.dead_for += 1
             return
 
         self.moons += 1
