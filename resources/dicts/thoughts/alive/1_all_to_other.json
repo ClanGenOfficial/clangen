@@ -1,0 +1,37 @@
+{
+    "dead": {
+        "kitten": [
+            "Is listening to stories about r_c",
+            "Is learning more about r_c",
+            "Is sad they couldn't spend time with r_c"
+        ],
+        "medicine cat apprentice": [
+            "Is listening to stories about r_c",
+            "Is learning more about r_c",
+            "Is sad they couldn't spend time with r_c"
+        ],
+        "apprentice": [
+            "Is listening to stories about r_c",
+            "Is learning more about r_c",
+            "Is sad they couldn't spend time with r_c"
+        ],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [],
+        "all": []
+    },
+    "alive": {
+        "kitten": [],
+        "medicine cat apprentice": [],
+        "apprentice": [],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [],
+        "all": []
+    },
+    "all":[]
+}

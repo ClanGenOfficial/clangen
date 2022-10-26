@@ -220,7 +220,6 @@ class Events(object):
                     else:
                         chance = randint(0, 30)
                     print('POSSIBLE MED APP - CHANCE:', chance)
-                    print('med app chance:', chance)
                     if chance in range(0, 11):    
                         if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
                             chance = 1

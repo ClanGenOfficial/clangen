@@ -11,9 +11,9 @@ leaves_path = "leaves/"
 biomes_path = "biomes/"
 condition_path = "conditions/"
 
-GENERAL = None
+GENERAL_DEAD = None
 with open(f"{resource_directory}general.json", 'r') as read_file:
-    GENERAL = ujson.loads(read_file.read())
+    GENERAL_DEAD = ujson.loads(read_file.read())
 
 GENERAL_HUNTING = None
 with open(f"{resource_directory}general_hunting.json", 'r') as read_file:
@@ -161,7 +161,7 @@ class Patrol(object):
         possible_patrols.extend(self.generate_patrol_events(GENERAL_HUNTING))
         
         # general/misc patrols
-        possible_patrols.extend(self.generate_patrol_events(GENERAL))
+        possible_patrols.extend(self.generate_patrol_events(GENERAL_DEAD))
         if len(self.patrol_cats) >= 2:
             possible_patrols.extend([
                 PatrolEvent(
