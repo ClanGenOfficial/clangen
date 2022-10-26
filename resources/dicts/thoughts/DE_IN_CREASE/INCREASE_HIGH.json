@@ -1,0 +1,20 @@
+{
+    "from": {
+        "romantic_love": [],
+        "like": [],
+        "dislike": [],
+        "admiration": [],
+        "comfortable": [],
+        "jealousy": [],
+        "trust": []
+    },
+    "to": {
+        "romantic_love": [],
+        "like": [],
+        "dislike": [],
+        "admiration": [],
+        "comfortable": [],
+        "jealousy": [],
+        "trust": []
+    }
+}

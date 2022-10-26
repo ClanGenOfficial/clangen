@@ -1,0 +1,43 @@
+{
+    "dead": {
+        "kitten": [
+            "Is wondering if r_c would have been their friend"
+        ],
+        "medicine cat apprentice": [
+            "Is wondering if r_c would have been their friend"
+        ],
+        "apprentice": [
+            "Is wondering if r_c would have been their friend"
+        ],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [],
+        "all": []
+    },
+    "alive": {
+        "kitten": [],
+        "medicine cat apprentice": [],
+        "apprentice": [],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [
+            "Was nipped on the rump by an elder for being naughty"
+        ],
+        "all": []
+    },
+    "exiled": {
+        "kitten": [],
+        "medicine cat apprentice": [],
+        "apprentice": [],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [],
+        "all": []
+    }
+}

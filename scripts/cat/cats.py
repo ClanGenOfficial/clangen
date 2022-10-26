@@ -381,7 +381,9 @@ class Cat(object):
         self.create_interaction()
 
     def thoughts(self):
-        old_thoughts(self)
+        thought_possibilities = get_thoughts(self)
+        chosen_thought = choice(thought_possibilities)
+        self.thought = chosen_thought
 
     def create_interaction(self):
         # if the cat has no relationships, skip

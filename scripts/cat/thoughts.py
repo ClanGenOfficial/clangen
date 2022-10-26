@@ -1,7 +1,9 @@
 import random
+import ujson
 
+resource_directory = "resources/dicts/thoughts/"
 
-def old_thoughts(cat):
+def get_thoughts(cat):
     if cat == None:
         return
     all_cats = cat.all_cats
@@ -14,42 +16,24 @@ def old_thoughts(cat):
         if countdown <= 0:
             continue
     other_cat = all_cats.get(other_cat)
-    other_name = str(other_cat.name)
     # placeholder thought - should never appear in game
     thoughts = ['Is not thinking about much right now']
 
     if cat.dead:
+        thoughts = get_dead_thoughts(cat, other_cat)
+
+    # general individual thoughts
+    #thoughts = get_alive_thoughts(cat, other_cat)
+
+    return thoughts
+
+def get_dead_thoughts(cat, other_cat):
         # individual thoughts
-        starclan_thoughts = [
-            'Is feeling quite lazy',
-            'Is spending a considerable amount of time grooming',
-            'Is looking forward to today', 'Is feeling down...',
-            'Is feeling happy!', 'Is curious about other Clans',
-            'Is feeling sassy today', "Is thinking about a message to send",
-            "Wishes they were still alive", "Is admiring StarClan territory",
-            "Is thinking about their life", "Is missing a loved one",
-            "Is hoping to meet with a medicine cat soon",
-            "Is admiring the stars in their fur",
-            "Is watching over a Clan ceremony",
-            "Is hoping to give a life to a new leader",
-            "Is hoping they will be remembered", "Is watching over the Clan",
-            "Is worried about the Clan", "Is relaxing in the sun",
-            "Is wondering about Twolegs",
-            "Is thinking about their ancient ancestors",
-            "Is worried about the cats in the Dark Forest",
-            "Is thinking of advice to give to a medicine cat",
-            "Is exploring StarClan", "Is sad seeing how the Clan has changed",
-            "Wishes they could speak to old friends",
-            "Is sneezing on stardust", "Is comforting another StarClan cat",
-            "Is exploring StarClan\'s hunting grounds",
-            "Is hunting mice in StarClan",
-            "Is chattering at the birds in StarClan",
-            "Is chasing rabbits in StarClan",
-            "Can feel some cat forgetting them..."
-        ]
+        thoughts = GENERAL_DEAD
+        other_name = str(other_cat.name)
         # thoughts with other cats that are dead
         if other_cat.dead:
-            starclan_thoughts.extend([
+            thoughts.extend([
                 'Is sharing tongues with ' + other_name,
                 'Has been spending time with ' + other_name + ' lately',
                 'Is acting huffy at ' + other_name,
@@ -64,7 +48,7 @@ def old_thoughts(cat):
             ])
         # thoughts with other cats that are alive
         elif not other_cat.dead:
-            starclan_thoughts.extend([
+            thoughts.extend([
                 'Is watching over ' + other_name,
                 'Is curious about what ' + other_name + ' is doing',
                 'Wants to send a message to ' + other_name,
@@ -81,7 +65,7 @@ def old_thoughts(cat):
             ])
         # dead young cat thoughts
         if cat.status in ['kitten', 'apprentice', 'medicine cat apprentice']:
-            starclan_thoughts.extend([
+            thoughts.extend([
                 'Wishes they had more time to grow up',
                 'Wonders what their full name would have been',
                 'Is bothering older StarClan cats',
@@ -89,7 +73,7 @@ def old_thoughts(cat):
             ])
         # dead elder thoughts
         elif cat.status == 'elder':
-            starclan_thoughts.extend([
+            thoughts.extend([
                 'Is grateful that they lived such a long life',
                 'Is happy that their joints no longer ache',
                 'Is telling stories to the younger cats of StarClan',
@@ -98,7 +82,7 @@ def old_thoughts(cat):
             ])
         # dead leader thoughts
         elif cat.status == 'leader':
-            starclan_thoughts.extend([
+            thoughts.extend([
                 'Hoped that they were a good leader',
                 'Wishes that they had ten lives',
                 'Is proud of their clan from StarClan',
@@ -107,284 +91,248 @@ def old_thoughts(cat):
             ])
             # checks for specific roles
             if other_cat.status == 'kitten':
-                starclan_thoughts.extend([
+                thoughts.extend([
                     'Rejoices with every new kit born to the Clan they still hold so dear'
                 ])
 
-        thoughts = starclan_thoughts  # sets current thought to a random applicable thought
+        return thoughts
 
-    elif not cat.dead:
-        # general individual thoughts
-        thoughts = [
-            'Is feeling quite lazy',
-            'Is spending a considerable amount of time grooming',
-            'Is looking forward to today', 'Is feeling down...',
-            'Is feeling excited', 'Is feeling nervous', 'Is feeling content',
-            "Is relaxing in camp", 'Is daydreaming', 'Is napping',
-            'Thinks they are going crazy', 'Is feeling gloomy',
-            "Is looking around camp", 'Is feeling happy!',
-            'Is curious about the other clans', 'Is feeling sassy today',
-            'Wants to spend time alone today', "Is eating some freshkill",
-            'Is heading to the dirtplace', 'Is rethinking their life choices',
-            'Is in the medicine den', 'Is having a good day',
-            'Is having a hard day', 'Is talking to themselves',
-            'Regrets not eating the bird on the freshkill pile earlier',
-            'Is basking in the sun', 'Feels a sense of dread',
-            'Is feeling unappreciated', 'Is staring off into space',
-            'Is worried others are judging them',
-            'Almost choked on their prey',
-            'Is chattering at the birds in the trees above',
-            'Was recently caught humming to themselves',
-            'Had a nightmare involving the rushing river nearby',
-            'Wishes they were still in their nest sleeping',
-            'Is craving the taste of mouse', 'Is craving the taste of rabbit',
-            'Is craving the taste of vole', 'Is craving the taste of frog',
-            'Is craving the taste of shrew',
-            'Is wondering if they would be a good swimmer',
-            'Is thinking about how awful kittypet food must taste',
-            'Is feeling underappreciated...', 'Is staring off into space',
-            'Is picking the burrs from their pelt',
-            'Has a sore paw from a bee sting', 'Is sharpening their claws',
-            'Woke up on the wrong side of the nest'
-        ]
-
-        # thoughts with other cats who are dead
-        if other_cat.dead:
-            # young cat thoughts about dead cat
-            if cat.status in [
-                    'kitten', 'apprentice', 'medicine cat apprentice'
-            ]:
-                thoughts.extend([
-                    'Is listening to stories about ' + other_name,
-                    'Is learning more about ' + other_name,
-                    'Is sad they couldn\'t spend time with ' + other_name,
-                    'Is wondering if ' + other_name +
-                    ' would have been their friend'
-                ])
-            # older cat thoughts about dead cat
-            elif cat.status in ['warrior', 'medicine cat', 'deputy', 'leader']:
-                thoughts.extend([
-                    'Is listening to stories about ' + other_name,
-                    'Is learning more about ' + other_name,
-                    'Is sad they couldn\'t spend more time with ' + other_name,
-                    'Wishes they could visit ' + other_name + ' in StarClan',
-                    'Is remembering ' + other_name
-                ])
-            # elder thoughts about dead cat
-            elif cat.status == 'elder':
-                thoughts.extend([
-                    'Is telling stories about ' + other_name,
-                    'Is sad they couldn\'t spend more time with ' + other_name,
-                    'Wishes they could visit ' + other_name + ' in StarClan',
-                    'Is remembering ' + other_name,
-                    'Wishes that ' + other_name + ' were still alive',
-                    'Found a trinket that used to belong to ' + other_name,
-                    'Is forgetting who ' + other_name + ' was',
-                    'Is thinking fondly of ' + other_name,
-                    'Sometimes feels like ' + other_name +
-                    " is still right there next to them"
-                ])
-            elif cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice' or cat.skill == 'strong connection to StarClan':  # medicine cat/strong connection
-                # thoughts about dead cat
-                thoughts.extend([
-                    'Was given a prophecy by ' + other_name,
-                    'Was sent an omen by ' + other_name, 'Is dreaming about ' +
-                    other_name + ' who gives them a message',
-                    'Is visited by ' + other_name, 'Senses ' + other_name +
-                    ' is nearby', 'Saw ' + other_name +
-                    ' in a dream, warning them about... something',
-                    'Is asking for guidance from ' + other_name,
-                    'Is wondering desperately why ' + other_name +
-                    ' wasn\'t there when they needed them',
-                    'Is sure that they saw ' + other_name +
-                    ' appear in the forest today... why?',
-                    'Blames themselves for ' + other_name + '\'s death...'
-                ])
-
-        # thoughts with other cat who is alive
-        elif not other_cat.dead and not other_cat.exiled:
-            if cat.status in [
-                    'warrior', 'elder', 'deputy', 'leader'
-            ] and other_cat.status == 'apprentice':  # older cat thoughts about younger cat
-                thoughts.extend([
-                    'Is giving ' + other_name + ' advice',
-                    'Is telling ' + other_name + ' about a hunting technique',
-                    'Is scolding ' + other_name,
-                    'Is giving ' + other_name + ' a task',
-                    other_name + ' reminds them of when they were their age',
-                    'Is telling ' + other_name +
-                    ' about their own days as an apprentice',
-                    'Is frustrated that ' + other_name +
-                    ' won\'t take their duties more seriously',
-                    'Can\'t believe ' + other_name +
-                    ' caught that rabbit on patrol yesterday',
-                    'Doesn\'t think that ' + other_name +
-                    ' has been completely honest lately',
-                    'Is fuming from an argument with ' + other_name
-                ])
-            elif cat.status in ['warrior', 'elder', 'deputy'
-                                ] and other_cat.status == 'apprentice':
-                thoughts.extend([
-                    'Has successfully tricked ' + other_name +
-                    ' into believing a crazy tale about the Clan leader',
-                ])
-
-            # kit thoughts
-            if cat.status == 'kitten':
-                # kit thoughts with other kit
-                if other_cat.status == 'kitten':
-                    thoughts.extend([
-                        'Pretends to be a warrior with ' + other_name,
-                        'Plays mossball with ' + other_name,
-                        'Has a mock battle with ' + other_name,
-                        'Comes up with a plan to sneak out of camp with ' +
-                        other_name, 'Whines about ' + other_name,
-                        'Chomps on ' + other_name + '\'s ear',
-                        'Is pretending to ward off foxes with ' + other_name,
-                        'Is pretending to fight off badgers with ' +
-                        other_name, 'Is racing ' + other_name +
-                        ' back and forth across the camp clearing',
-                        'Is talking excitedly with ' + other_name +
-                        ' about how cool their Clan leader is',
-                        'Is talking excitedly with ' + other_name +
-                        ' about how cool their Clan deputy is',
-                        'Is jealous that ' + other_name +
-                        ' is getting more attention than them',
-                        'Won\'t stop crying that they\'re hungry... but they just ate!'
-                    ])
-                # kit thoughts about older cat
-                elif other_cat.status != 'kitten':
-                    thoughts.extend([
-                        'Is biting ' + other_name + '\'s tail',
-                        'Sticks their tongue out at ' + other_name,
-                        'Whines to ' + other_name,
-                        'Is demanding ' + other_name + '\'s attention',
-                        'Really looks up to ' + other_name,
-                        'Is hiding under a bush from ' + other_name +
-                        ', but they can\'t stop giggling',
-                        'Is pretending to be ' + other_name
-                    ])
-            elif cat.status in [
-                    'apprentice', 'medicine cat apprentice', 'warrior',
-                    'medicine cat', 'deputy', 'leader'
-            ]:
-                # older cat thoughts about kit
-                if other_cat.status == 'kitten':
-                    thoughts.extend([
-                        'Trips over ' + other_name,
-                        'Is giving advice to ' + other_name, 'Is giving ' +
-                        other_name + ' a badger ride on their back!',
-                        'Had to nip ' + other_name +
-                        ' on the rump because they were being naughty',
-                        'Is promising to take ' + other_name +
-                        ' outside of camp if they behave',
-                        'Is watching ' + other_name +
-                        ' perform an almost-decent hunting crouch',
-                        'Can\'t take their eyes off of ' + other_name +
-                        ' for more than a few seconds', 'Gave ' + other_name +
-                        ' a trinket they found while out on patrol today'
-                    ])
-                    if cat.ID not in [other_cat.parent1, other_cat.parent2]:
-                        thoughts.append(
-                            'Hopes that their own kits are as cute as ' +
-                            other_name + ' someday')
-                else:
-                    thoughts.extend([
-                        'Is fighting with ' + other_name,
-                        'Is talking with ' + other_name,
-                        'Is sharing prey with ' + other_name,
-                        'Heard a rumor about ' + other_name,
-                        'Just told ' + other_name + ' a hilarious joke'
-                    ])
-
-            if other_cat.is_potential_mate(cat, for_love_interest=True):
-                thoughts.extend([
-                    'Is developing a crush on ' + other_name,
-                    'Is spending a lot of time with ' + other_name,
-                    'Feels guilty about hurting ' + other_name +
-                    '\'s feelings', 'Can\'t seem to stop talking about ' +
-                    other_name, 'Would spend the entire day with ' +
-                    other_name + ' if they could',
-                    'Was caught enjoying a moonlit stroll with ' + other_name +
-                    ' last night...', 'Keeps shyly glancing over at ' +
-                    other_name + ' as the Clan talks about kits',
-                    'Gave a pretty flower they found to ' + other_name,
-                    'Is admiring ' + other_name + ' from afar...',
-                    'Is thinking of the best ways to impress ' + other_name,
-                    'Doesn\'t want ' + other_name + ' to overwork themselves',
-                    'Is rolling around a little too playfully with ' +
-                    other_name + '...',
-                    'Is wondering what it would be like to grow old with ' +
-                    other_name
-                ])
-
-        # kitten specific thoughts
-        if cat.status == 'kitten':
+def get_alive_thoughts(cat, other_cat):
+    thoughts = GENERAL
+    other_name = other_cat.name
+    # thoughts with other cats who are dead
+    if other_cat.dead:
+        # young cat thoughts about dead cat
+        if cat.status in ['kitten', 'apprentice', 'medicine cat apprentice']:
             thoughts.extend([
-                'Plays mossball by themselves', 'Is annoying older cats',
-                'Wonders who their mentor will be', 'Wants to take a nap',
-                'Tries to sneak out of camp',
-                'Is rolling around on the ground', 'Is chasing their tail',
-                'Is playing with a stick',
-                'Is nervous for their apprentice ceremony',
-                'Is excited for their apprentice ceremony',
-                'Is scared after having a nightmare', 'Wants to snuggle',
-                'Is asking older cats how kits are born',
-                'Wishes other cats would stop babying them',
-                'Is hiding from other cats',
-                'Is bouncing around in excitement',
-                'Whines about being hungry',
-                'Is asking the older cats about how kittens are made',
-                'Is pestering older cats to play with them',
-                'Is whining for milk', 'Is whimpering in their sleep',
-                'Is trying to growl menacingly',
-                'Is adamantly refusing to take their nap',
-                'Is batting pebbles across the camp clearing',
-                'Is crying after rough-housing too hard with the older cats',
-                'Is regretting eating the bug that they caught',
-                'Recently took a tumble off of a log',
-                'Is busy mastering a battle move they are performing incorrectly',
-                'Refuses to eat the herbs the medicine cat has given them for their tummy',
-                'Is hatching a plan to sneak out of camp and play',
-                'Is running like a whirlwind around the camp',
-                'Is pretending to be the clan leader',
-                'Doesn\'t want to grow up yet...',
-                'Got in trouble for bringing thorns into the nest'
+                'Is listening to stories about ' + other_name,
+                'Is learning more about ' + other_name,
+                'Is sad they couldn\'t spend time with ' + other_name,
+                'Is wondering if ' + other_name +
+                ' would have been their friend'
             ])
-            # checks for specific roles
-            if other_cat.status == 'elder':
-                thoughts.extend(
-                    ['Was nipped on the rump by an elder for being naughty'])
+        # ADDED
+        # older cat thoughts about dead cat
+        elif cat.status in ['warrior', 'medicine cat', 'deputy', 'leader']:
+            thoughts.extend([
+                'Is listening to stories about ' + other_name,
+                'Is learning more about ' + other_name,
+                'Is sad they couldn\'t spend more time with ' + other_name,
+                'Wishes they could visit ' + other_name + ' in StarClan',
+                'Is remembering ' + other_name
+            ])
+        # ADDED
+        # elder thoughts about dead cat
+        elif cat.status == 'elder':
+            thoughts.extend([
+                'Is telling stories about ' + other_name,
+                'Is sad they couldn\'t spend more time with ' + other_name,
+                'Wishes they could visit ' + other_name + ' in StarClan',
+                'Is remembering ' + other_name,
+                'Wishes that ' + other_name + ' were still alive',
+                'Found a trinket that used to belong to ' + other_name,
+                'Is forgetting who ' + other_name + ' was',
+                'Is thinking fondly of ' + other_name,
+                'Sometimes feels like ' + other_name +
+                " is still right there next to them"
+            ])
+        #ADDED
+        elif cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice' or cat.skill == 'strong connection to StarClan':  # medicine cat/strong connection
+            # thoughts about dead cat
+            thoughts.extend([
+                'Was given a prophecy by ' + other_name,
+                'Was sent an omen by ' + other_name, 'Is dreaming about ' +
+                other_name + ' who gives them a message', 
+                'Is visited by ' +
+                other_name, 'Senses ' + other_name + ' is nearby', 
+                'Saw ' +
+                other_name + ' in a dream, warning them about... something',
+                'Is asking for guidance from ' + other_name,
+                'Is wondering desperately why ' + other_name +
+                ' wasn\'t there when they needed them',
+                'Is sure that they saw ' + other_name +
+                ' appear in the forest today... why?',
+                'Blames themselves for ' + other_name + '\'s death...'
+            ])
+        # ADDED but trait is not considered
 
-            # kitten trait thoughts
-            if cat.trait == 'charming':
+    # thoughts with other cat who is alive
+    elif not other_cat.dead and not other_cat.exiled:
+        if cat.status in [
+                'warrior', 'elder', 'deputy', 'leader'
+        ] and other_cat.status == 'apprentice':  # older cat thoughts about younger cat
+            thoughts.extend([
+                'Is giving ' + other_name + ' advice',
+                'Is telling ' + other_name + ' about a hunting technique',
+                'Is scolding ' + other_name,
+                'Is giving ' + other_name + ' a task', 
+                other_name +
+                ' reminds them of when they were their age', 'Is telling ' +
+                other_name + ' about their own days as an apprentice',
+                'Is frustrated that ' + other_name +
+                ' won\'t take their duties more seriously', 'Can\'t believe ' +
+                other_name + ' caught that rabbit on patrol yesterday',
+                'Doesn\'t think that ' + other_name +
+                ' has been completely honest lately',
+                'Is fuming from an argument with ' + other_name
+            ])
+        elif cat.status in ['warrior', 'elder', 'deputy'
+                            ] and other_cat.status == 'apprentice':
+            thoughts.extend([
+                'Has successfully tricked ' + other_name +
+                ' into believing a crazy tale about the Clan leader',
+            ])
+
+        # kit thoughts
+        if cat.status == 'kitten':
+            # kit thoughts with other kit
+            if other_cat.status == 'kitten':
                 thoughts.extend([
-                    'Is rolling around cutely while warriors look upon them',
-                    'Is rubbing up against the warriors\' legs',
-                    'Is hoping the patrol will come back with a special gift for them like usual',
-                    'Is trying to purr their way out of trouble with the medicine cat'
+                    'Pretends to be a warrior with ' + other_name,
+                    'Plays mossball with ' + other_name,
+                    'Has a mock battle with ' + other_name,
+                    'Comes up with a plan to sneak out of camp with ' +
+                    other_name, 'Whines about ' + other_name,
+                    'Chomps on ' + other_name + '\'s ear',
+                    'Is pretending to ward off foxes with ' + other_name,
+                    'Is pretending to fight off badgers with ' + other_name,
+                    'Is racing ' + other_name +
+                    ' back and forth across the camp clearing',
+                    'Is talking excitedly with ' + other_name +
+                    ' about how cool their Clan leader is',
+                    'Is talking excitedly with ' + other_name +
+                    ' about how cool their Clan deputy is',
+                    'Is jealous that ' + other_name +
+                    ' is getting more attention than them',
+                    'Won\'t stop crying that they\'re hungry... but they just ate!'
                 ])
-            elif cat.trait == 'impulsive':
+            # kit thoughts about older cat
+            elif other_cat.status != 'kitten':
                 thoughts.extend([
-                    'Keeps streaking across the clearing',
-                    'Is stuck in a tree... again',
-                    'Is complaining of a tummy ache after eating too much',
-                    'Is awfully close to getting a nip on the rump for misbehaving',
-                    'Is waiting for an opportunity to sprint out of sight'
+                    'Is biting ' + other_name + '\'s tail',
+                    'Sticks their tongue out at ' + other_name,
+                    'Whines to ' + other_name,
+                    'Is demanding ' + other_name + '\'s attention',
+                    'Really looks up to ' + other_name,
+                    'Is hiding under a bush from ' + other_name +
+                    ', but they can\'t stop giggling',
+                    'Is pretending to be ' + other_name
                 ])
-            elif cat.trait == 'nervous':
+        elif cat.status in [
+                'apprentice', 'medicine cat apprentice', 'warrior',
+                'medicine cat', 'deputy', 'leader'
+        ]:
+            # older cat thoughts about kit
+            if other_cat.status == 'kitten':
                 thoughts.extend([
-                    'Was startled by a croaking frog',
-                    'Is doing their best not to get stepped on by the bigger cats'
+                    'Trips over ' + other_name,
+                    'Is giving advice to ' + other_name, 
+                    'Is giving ' +
+                    other_name + ' a badger ride on their back!',
+                    'Had to nip ' + other_name +
+                    ' on the rump because they were being naughty',
+                    'Is promising to take ' + other_name +
+                    ' outside of camp if they behave', 'Is watching ' +
+                    other_name + ' perform an almost-decent hunting crouch',
+                    'Can\'t take their eyes off of ' + other_name +
+                    ' for more than a few seconds', 'Gave ' + other_name +
+                    ' a trinket they found while out on patrol today'
+                ])
+                if cat.ID not in [other_cat.parent1, other_cat.parent2]:
+                    thoughts.append(
+                        'Hopes that their own kits are as cute as ' +
+                        other_name + ' someday')
+            else:
+                thoughts.extend([
+                    'Is fighting with ' + other_name,
+                    'Is talking with ' + other_name,
+                    'Is sharing prey with ' + other_name,
+                    'Heard a rumor about ' + other_name,
+                    'Just told ' + other_name + ' a hilarious joke'
                 ])
 
-            # kitten and skill specific thoughts
-            elif cat.skills == 'strong connection to starclan':
-                thoughts.extend([
-                    'Thinks they saw a StarClan cat in their dreams',
-                    'Is scrambling the medicine cat\'s herbs!',
-                    'Is pretending to be the medicine cat'
-                ])
+        if other_cat.is_potential_mate(cat, for_love_interest=True):
+            thoughts.extend([
+                'Is developing a crush on ' + other_name,
+                'Is spending a lot of time with ' + other_name,
+                'Feels guilty about hurting ' + other_name + '\'s feelings',
+                'Can\'t seem to stop talking about ' + other_name,
+                'Would spend the entire day with ' + other_name +
+                ' if they could',
+                'Was caught enjoying a moonlit stroll with ' + other_name +
+                ' last night...', 'Keeps shyly glancing over at ' +
+                other_name + ' as the Clan talks about kits',
+                'Gave a pretty flower they found to ' + other_name,
+                'Is admiring ' + other_name + ' from afar...',
+                'Is thinking of the best ways to impress ' + other_name,
+                'Doesn\'t want ' + other_name + ' to overwork themselves',
+                'Is rolling around a little too playfully with ' + other_name +
+                '...', 'Is wondering what it would be like to grow old with ' +
+                other_name
+            ])
+
+    # kitten specific thoughts
+    if cat.status == 'kitten':
+        thoughts.extend([
+            'Plays mossball by themselves', 'Is annoying older cats',
+            'Wonders who their mentor will be', 'Wants to take a nap',
+            'Tries to sneak out of camp', 'Is rolling around on the ground',
+            'Is chasing their tail', 'Is playing with a stick',
+            'Is nervous for their apprentice ceremony',
+            'Is excited for their apprentice ceremony',
+            'Is scared after having a nightmare', 'Wants to snuggle',
+            'Is asking older cats how kits are born',
+            'Wishes other cats would stop babying them',
+            'Is hiding from other cats', 'Is bouncing around in excitement',
+            'Whines about being hungry',
+            'Is asking the older cats about how kittens are made',
+            'Is pestering older cats to play with them', 'Is whining for milk',
+            'Is whimpering in their sleep', 'Is trying to growl menacingly',
+            'Is adamantly refusing to take their nap',
+            'Is batting pebbles across the camp clearing',
+            'Is crying after rough-housing too hard with the older cats',
+            'Is regretting eating the bug that they caught',
+            'Recently took a tumble off of a log',
+            'Is busy mastering a battle move they are performing incorrectly',
+            'Refuses to eat the herbs the medicine cat has given them for their tummy',
+            'Is hatching a plan to sneak out of camp and play',
+            'Is running like a whirlwind around the camp',
+            'Is pretending to be the clan leader',
+            'Doesn\'t want to grow up yet...',
+            'Got in trouble for bringing thorns into the nest'
+        ])
+        # checks for specific roles
+        if other_cat.status == 'elder':
+            thoughts.extend(
+                ['Was nipped on the rump by an elder for being naughty'])
+        # kitten trait thoughts
+        if cat.trait == 'charming':
+            thoughts.extend([
+                'Is rolling around cutely while warriors look upon them',
+                'Is rubbing up against the warriors\' legs',
+                'Is hoping the patrol will come back with a special gift for them like usual',
+                'Is trying to purr their way out of trouble with the medicine cat'
+            ])
+        elif cat.trait == 'impulsive':
+            thoughts.extend([
+                'Keeps streaking across the clearing',
+                'Is stuck in a tree... again',
+                'Is complaining of a tummy ache after eating too much',
+                'Is awfully close to getting a nip on the rump for misbehaving',
+                'Is waiting for an opportunity to sprint out of sight'
+            ])
+        elif cat.trait == 'nervous':
+            thoughts.extend([
+                'Was startled by a croaking frog',
+                'Is doing their best not to get stepped on by the bigger cats'
+            ])
+        # kitten and skill specific thoughts
+        elif cat.skills == 'strong connection to starclan':
+            thoughts.extend([
+                'Thinks they saw a StarClan cat in their dreams',
+                'Is scrambling the medicine cat\'s herbs!',
+                'Is pretending to be the medicine cat'
+            ])
 
         # Traits are sorted by rank and age group
         # Kittens, Cats under 12 moons, all apprentices, warrior apprentices, medicine at apprentices,
@@ -1627,10 +1575,29 @@ def old_thoughts(cat):
                 'Volunteers to gather herbs',
                 'Has been lending the medicine cat a paw lately'
             ])
+    return thoughts
 
-    thought = random.choice(thoughts)
-    cat.thought = thought
+def get_kitten_thoughts(cat, other_cat):
+    thoughts = []
+    return thoughts
 
-    # on_patrol = ['Is having a good time out on patrol', 'Wants to return to camp to see ' + other_name,  #              'Is currently out on patrol',
-    # 'Is getting rained on during their patrol',  #              'Is out hunting'] //will add later  # interact_with_loner = ['Wants to know where ' + other_name + '  #
-    # came from.'] // will add
+
+
+GENERAL_DEAD = None
+with open(f"{resource_directory}cat_dead_general.json", 'r') as read_file:
+    GENERAL_DEAD = ujson.loads(read_file.read())
+
+GENERAL = None
+with open(f"{resource_directory}cat_alive_general.json", 'r') as read_file:
+    GENERAL = ujson.loads(read_file.read())
+
+# ---------------------------------------------------------------------------- #
+#                           specific status thoughts                           #
+# ---------------------------------------------------------------------------- #
+
+KITTEN_GENERAL = None
+with open(f"{resource_directory}cat_alive_general.json", 'r') as read_file:
+    KITTEN_GENERAL = ujson.loads(read_file.read())
+
+
+
