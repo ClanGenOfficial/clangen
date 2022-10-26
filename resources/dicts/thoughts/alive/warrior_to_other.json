@@ -1,8 +1,8 @@
 {
     "dead": {
-        "kitten": ["Is wondering if r_c would have been their friend"],
-        "medicine cat apprentice": ["Is wondering if r_c would have been their friend"],
-        "apprentice": ["Is wondering if r_c would have been their friend"],
+        "kitten": [],
+        "medicine cat apprentice": [],
+        "apprentice": [],
         "warrior": [],
         "medicine cat": [],
         "leader": [],
@@ -21,15 +21,7 @@
         "elder": [],
         "all": []
     },
-    "exiled":{
-        "kitten": [],
-        "medicine cat apprentice": [],
-        "apprentice": [],
-        "warrior": [],
-        "medicine cat": [],
-        "leader": [],
-        "deputy": [],
-        "elder": [],
-        "all": []
-    }
+    "all":[
+        "Wants to be chosen as the new deputy"
+    ]
 }

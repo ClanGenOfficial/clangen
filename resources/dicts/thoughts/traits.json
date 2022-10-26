@@ -24,7 +24,6 @@
         "Has been catching the most prey on the latest hunting patrols",
         "Is daydreaming about a Clan celebration in their honor someday"
     ],
-    "bold": [],
     "bloodthirsty": [
         "Is acting suspicious",
         "Has been washing their paws a lot lately",
@@ -35,6 +34,7 @@
         "Wonders if they could kill a fox all by themselves",
         "Started a fight with a fellow Clanmate"
     ],
+    "bold": [],
     "calm":[
         "Is taking a moment to appreciate some peace and quiet",
         "Looks on as the camp buzzes around them",

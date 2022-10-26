@@ -33,15 +33,5 @@
         "elder": [],
         "all": []
     },
-    "exiled":{
-        "kitten": [],
-        "medicine cat apprentice": [],
-        "apprentice": [],
-        "warrior": [],
-        "medicine cat": [],
-        "leader": [],
-        "deputy": [],
-        "elder": [],
-        "all": []
-    }
+    "all":[]
 }
