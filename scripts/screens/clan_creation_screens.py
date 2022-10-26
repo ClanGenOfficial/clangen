@@ -43,11 +43,14 @@ class MakeClanScreen(Screens):
         # buttons
         verdana_small.text(
             'Note: going back to main menu resets the generated cats.',
-            (50, 25))
-        buttons.draw_button((50, 50),
-                            text='<< Back to Main Menu',
-                            cur_screen='start screen',
-                            naming_text='')
+            (25, 25))
+        buttons.draw_image_button((25, 50),
+                                  button_name='main_menu',
+                                  text='<< Back to Main Menu',
+                                  cur_screen='start screen',
+                                  naming_text='',
+                                  size=(153, 30)
+                                  )
         buttons.draw_button((570, 620),
                             text='Name Clan',
                             clan_name=game.switches['naming_text'],
@@ -103,10 +106,16 @@ class MakeClanScreen(Screens):
                                     text='Grant this cat their nine lives',
                                     leader=game.switches['cat'],
                                     hotkey=[1])
-        buttons.draw_button((50, 50),
-                            text='<< Back to Main Menu',
-                            cur_screen='start screen',
-                            naming_text='')
+        verdana_small.text(
+            'Note: going back to main menu resets the generated cats.',
+            (25, 25))
+        buttons.draw_image_button((25, 50),
+                                  button_name='main_menu',
+                                  text='<< Back to Main Menu',
+                                  cur_screen='start screen',
+                                  naming_text='',
+                                  size=(153, 30)
+                                  )
 
         buttons.draw_button((-50, 50),
                             text='< Last step',
@@ -164,12 +173,14 @@ class MakeClanScreen(Screens):
                                     hotkey=[1])
         verdana_small.text(
             'Note: going back to main menu resets the generated cats.',
-            (50, 25))
-
-        buttons.draw_button((50, 50),
-                            text='<< Back to Main Menu',
-                            cur_screen='start screen',
-                            naming_text='')
+            (25, 25))
+        buttons.draw_image_button((25, 50),
+                                  button_name='main_menu',
+                                  text='<< Back to Main Menu',
+                                  cur_screen='start screen',
+                                  naming_text='',
+                                  size=(153, 30)
+                                  )
         buttons.draw_button((-50, 50),
                             text='< Last Step',
                             leader=None,
@@ -234,11 +245,14 @@ class MakeClanScreen(Screens):
                                     hotkey=[1])
         verdana_small.text(
             'Note: going back to main menu resets the generated cats.',
-            (50, 25))
-        buttons.draw_button((50, 50),
-                            text='<< Back to Main Menu',
-                            cur_screen='start screen',
-                            naming_text='')
+            (25, 25))
+        buttons.draw_image_button((25, 50),
+                                  button_name='main_menu',
+                                  text='<< Back to Main Menu',
+                                  cur_screen='start screen',
+                                  naming_text='',
+                                  size=(153, 30)
+                                  )
         buttons.draw_button((-50, 50),
                             text='< Last step',
                             deputy=None,
@@ -336,12 +350,14 @@ class MakeClanScreen(Screens):
 
         verdana_small.text(
             'Note: going back to main menu resets the generated cats.',
-            (50, 25))
-
-        buttons.draw_button((50, 50),
-                            text='<< Back to Main Menu',
-                            cur_screen='start screen',
-                            naming_text='')
+            (25, 25))
+        buttons.draw_image_button((25, 50),
+                                  button_name='main_menu',
+                                  text='<< Back to Main Menu',
+                                  cur_screen='start screen',
+                                  naming_text='',
+                                  size=(153, 30)
+                                  )
 
         buttons.draw_button((-50, 50),
                             text='< Last step',
@@ -561,6 +577,19 @@ class MakeClanScreen(Screens):
             self.choose_camp()
 
     def choose_camp(self):
+        # MAIN AND BACK BUTTONS
+        verdana_small.text(
+            'Note: going back to main menu resets the generated cats.',
+            (25, 25))
+        buttons.draw_image_button((25, 50),
+                                  button_name='main_menu',
+                                  text='<< Back to Main Menu',
+                                  cur_screen='start screen',
+                                  naming_text='',
+                                  size=(153, 30)
+                                  )
+
+        # BIOME BUTTONS
         buttons.draw_button((250, 50),
                             text='Forest',
                             biome='Forest',

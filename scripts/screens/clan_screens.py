@@ -2,7 +2,7 @@ import pygame
 from math import ceil
 from random import choice, randint
 
-from .base_screens import Screens, draw_menu_buttons, cat_profiles
+from .base_screens import Screens, draw_menu_buttons, cat_profiles, draw_clan_name
 
 from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
@@ -22,7 +22,10 @@ class ClanScreen(Screens):
                 screen.blit(self.leafbare_bg, (0, 0))
             elif game.clan.current_season == 'Leaf-fall':
                 screen.blit(self.leaffall_bg, (0, 0))
-        verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
+
+        draw_clan_name()
+
+        verdana_big.text(f'{game.clan.name}Clan', ('center', 35))
         verdana.text("Leader\'s Den", game.clan.cur_layout['leader den'])
         verdana.text('Medicine Cat Den', game.clan.cur_layout['medicine den'])
         verdana.text('Nursery', game.clan.cur_layout['nursery'])
@@ -46,12 +49,14 @@ class ClanScreen(Screens):
                     hotkey_assign_1 = hotkey_assign_1 + 1
                     hotkey_assign_2 = hotkey_assign_1 + 1
         draw_menu_buttons()
-        
-        buttons.draw_image_button((330, 625),
+
+
+
+        buttons.draw_image_button((343, 625),
                             button_name='save_clan',
                             text='Save Clan',
                             save_clan=True,
-                            size=(140,30),
+                            size=(114, 30),
                             hotkey=[9])
         pygame.draw.rect(screen,
                          color='gray',
@@ -185,7 +190,7 @@ class StarClanScreen(Screens):
     def on_use(self):
         bg = self.starclan_bg
         screen.blit(bg, (0, 0))
-        verdana_big_white.text(f'{game.clan.name}Clan', ('center', 30))
+        draw_clan_name()
         verdana_white.text('StarClan Cat List', ('center', 100))
         dead_cats = [game.clan.instructor]
         for x in range(len(Cat.all_cats.values())):
@@ -261,7 +266,7 @@ class ListScreen(Screens):
     # the amount of cats a page can hold is 20, so the amount of pages is cats/20
 
     def on_use(self):
-        verdana_big.text(game.clan.name + 'Clan', ('center', 30))
+        draw_clan_name()
         verdana.text('ALL CATS LIST', ('center', 100))
         living_cats = []
         for x in range(len(Cat.all_cats.values())):
@@ -341,7 +346,7 @@ class ListScreen(Screens):
 class AllegiancesScreen(Screens):
 
     def on_use(self):
-        verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
+        draw_clan_name()
 
         verdana_big.text(f'{game.clan.name}Clan Allegiances', (30, 110))
         a = 0
@@ -355,11 +360,11 @@ class AllegiancesScreen(Screens):
                 verdana.text(game.allegiance_list[x][1], (170, 140 + a * 30))
                 a += 1
         if len(game.allegiance_list) > game.max_allegiance_displayed:
-            buttons.draw_button((700, 180),
+            buttons.draw_button((726, 120),
                                 image=game.up,
                                 arrow="UP",
                                 hotkey=[20])
-            buttons.draw_button((700, 630),
+            buttons.draw_button((726, 600),
                                 image=game.down,
                                 arrow="DOWN",
                                 hotkey=[22])

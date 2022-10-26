@@ -84,9 +84,9 @@ class Font(object):
         """
         for font in verdana.all_fonts:
             if game.settings['dark mode'] and font.colour == (0, 0, 0):
-                font.reset_colour(colour=(250, 250, 250))
-            elif not game.settings['dark mode'] and font.colour == (250, 250,
-                                                                    250):
+                font.reset_colour(colour=(239, 229, 206))
+            elif not game.settings['dark mode'] and font.colour == (239, 229,
+                                                                    206):
                 font.reset_colour(colour=(0, 0, 0))
 
     def blit_text(self, text, pos, where=used_screen):

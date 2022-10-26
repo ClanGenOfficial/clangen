@@ -1,6 +1,6 @@
 from random import choice
 
-from .base_screens import Screens, draw_menu_buttons, cat_profiles
+from .base_screens import Screens, draw_menu_buttons, cat_profiles, draw_clan_name
 
 from scripts.events import events_class
 from scripts.patrol import patrol
@@ -27,7 +27,7 @@ class RelationshipEventScreen(Screens):
 
     def on_use(self):
         a = 0
-        verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
+        draw_clan_name()
         verdana.text(
             'Check this page to see which events are currently happening at the Clan.',
             ('center', 110))
@@ -43,24 +43,39 @@ class RelationshipEventScreen(Screens):
                          ('center', 170))
 
         if game.switches['events_left'] == 0:
-            buttons.draw_button((200, 220),
+            buttons.draw_image_button((310, 205),
+                                button_name='timeskip_moon',
                                 text='TIMESKIP ONE MOON',
+                                size=(180, 30),
                                 timeskip=True,
                                 hotkey=[11])
             if game.switches['timeskip']:
                 game.cur_events_list = []
                 game.relation_events_list = []
         else:
-            buttons.draw_button((200, 220),
+            buttons.draw_image_button((310, 205),
+                                button_name='timeskip_moon',
                                 text='TIMESKIP ONE MOON',
-                                available=False)
+                                available=False,
+                                size=(180, 30),
+                                )
         events_class.one_moon()
 
         # show the clan events
-        buttons.draw_button((-250, 220),
-                            text='CLAN EVENTS',
-                            cur_screen='events screen',
-                            hotkey=[12])
+        buttons.draw_image_button((224, 245),
+                                  button_name='clan_events',
+                                  text='CLAN EVENTS',
+                                  cur_screen='events screen',
+                                  size=(176, 30),
+                                  hotkey=[12]
+                                  )
+
+        buttons.draw_image_button((400, 245),
+                                  button_name='relationship_events',
+                                  text='RELATIONSHIP EVENTS',
+                                  available=False,
+                                  size=(176, 30),
+                                  )
 
         if game.relation_events_list is not None and game.relation_events_list != []:
             for x in range(
@@ -69,20 +84,20 @@ class RelationshipEventScreen(Screens):
                 if game.relation_events_list[x] is None:
                     continue
                 verdana.text(game.relation_events_list[x],
-                             ('center', 260 + a * 30))
+                             ('center', 290 + a * 30))
                 a += 1
         else:
             verdana.text("Nothing significant happened this moon.",
-                         ('center', 260 + a * 30))
+                         ('center', 290 + a * 30))
         # buttons
         draw_menu_buttons()
 
         if len(game.relation_events_list) > game.max_relation_events_displayed:
-            buttons.draw_button((700, 180),
+            buttons.draw_button((726, 250),
                                 image=game.up,
                                 arrow="UP",
                                 hotkey=[20])
-            buttons.draw_button((700, 630),
+            buttons.draw_button((726, 630),
                                 image=game.down,
                                 arrow="DOWN",
                                 hotkey=[22])
@@ -93,7 +108,7 @@ class RelationshipEventScreen(Screens):
 class EventsScreen(Screens):
 
     def on_use(self):
-        verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
+        draw_clan_name()
         verdana.text(
             'Check this page to see which events are currently happening at the Clan.',
             ('center', 110))
@@ -109,24 +124,38 @@ class EventsScreen(Screens):
                          ('center', 170))
 
         if game.switches['events_left'] == 0:
-            buttons.draw_button((200, 220),
+            buttons.draw_image_button((310, 205),
+                                button_name='timeskip_moon',
                                 text='TIMESKIP ONE MOON',
                                 timeskip=True,
+                                size=(180, 30),
                                 hotkey=[11])
             if game.switches['timeskip']:
                 game.cur_events_list = []
                 game.relation_events_list = []
         else:
-            buttons.draw_button((200, 220),
+            buttons.draw_image_button((310, 205),
+                                button_name='timeskip_moon',
                                 text='TIMESKIP ONE MOON',
+                                size=(180, 30),
                                 available=False)
         events_class.one_moon()
 
-        # show the Relationshipevents
-        buttons.draw_button((-200, 220),
-                            text='RELATIONSHIP EVENTS',
-                            cur_screen='relationship event screen',
-                            hotkey=[12])
+        buttons.draw_image_button((224, 245),
+                                  button_name='clan_events',
+                                  text='CLAN EVENTS',
+                                  cur_screen='events screen',
+                                  size=(176, 30),
+                                  available=False
+                                  )
+        # show the Relationship events
+        buttons.draw_image_button((400, 245),
+                                  button_name='relationship_events',
+                                  text='RELATIONSHIP EVENTS',
+                                  cur_screen='relationship event screen',
+                                  size=(176, 30),
+                                  hotkey=[12]
+                                  )
 
         a = 0
         if game.cur_events_list is not None and game.cur_events_list != []:
@@ -136,22 +165,22 @@ class EventsScreen(Screens):
                     continue
                 if "Clan has no " in game.cur_events_list[x]:
                     verdana_red.text(game.cur_events_list[x],
-                                     ('center', 260 + a * 30))
+                                     ('center', 290 + a * 30))
                 else:
                     verdana.text(game.cur_events_list[x],
-                                 ('center', 260 + a * 30))
+                                 ('center', 290 + a * 30))
                 a += 1
         else:
             verdana.text("Nothing significant happened this moon.",
-                         ('center', 260 + a * 30))
+                         ('center', 290 + a * 30))
 
         draw_menu_buttons()
         if len(game.cur_events_list) > game.max_events_displayed:
-            buttons.draw_button((700, 180),
+            buttons.draw_button((726, 180),
                                 image=game.up,
                                 arrow="UP",
                                 hotkey=[20])
-            buttons.draw_button((700, 630),
+            buttons.draw_button((726, 630),
                                 image=game.down,
                                 arrow="DOWN",
                                 hotkey=[22])
@@ -159,7 +188,7 @@ class EventsScreen(Screens):
 class PatrolEventScreen(Screens):
 
     def on_use(self):
-        verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
+        draw_clan_name()
         if game.switches['event'] == 0:
             patrol.add_patrol_cats()
             possible_events = patrol.get_possible_patrols(

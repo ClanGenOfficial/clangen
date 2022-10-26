@@ -1,6 +1,6 @@
 import pygame
 
-from .base_screens import Screens, draw_menu_buttons
+from .base_screens import Screens, draw_menu_buttons, draw_clan_name
 
 from scripts.clan import map_available
 from scripts.cat.cats import Cat
@@ -332,7 +332,7 @@ class LanguageScreen(Screens):
 class StatsScreen(Screens):
 
     def on_use(self):
-        verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
+        draw_clan_name()
         living_num = 0
         warriors_num = 0
         app_num = 0

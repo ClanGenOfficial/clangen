@@ -1,6 +1,6 @@
 from random import choice
 
-from .base_screens import Screens, draw_menu_buttons, cat_profiles
+from .base_screens import Screens, draw_menu_buttons, cat_profiles, draw_clan_name
 
 from scripts.utility import draw, draw_large
 from scripts.game_structure.text import *
@@ -10,7 +10,7 @@ from scripts.cat.cats import Cat
 class PatrolScreen(Screens):
 
     def on_use(self):
-        verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
+        draw_clan_name()
         verdana.text(
             'These cats are currently in the camp, ready for a patrol.',
             ('center', 115))

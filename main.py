@@ -60,9 +60,9 @@ pygame.event.set_allowed([pygame.KEYDOWN, pygame.QUIT, pygame.MOUSEBUTTONDOWN])
 
 while True:
     if game.settings['dark mode']:
-        screen.fill((40, 40, 40))
+        screen.fill((65, 60, 51))
     else:
-        screen.fill((255, 255, 255))
+        screen.fill((206, 194, 168))
 
     if game.settings_changed:
         verdana.change_text_brightness()
