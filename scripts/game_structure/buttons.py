@@ -209,6 +209,8 @@ class Button(object):
             elif text == 'Change to Cisgender':
                 Cat.all_cats[cat_value].genderalign = Cat.all_cats[
                     cat_value].gender
+            elif text == 'Remove accessory':
+                Cat.all_cats[str(cat_value)].accessory = None
             elif cat_value is None and arrow is None:
                 self.activate(values)
             elif arrow is None:
@@ -248,6 +250,9 @@ class Button(object):
                     Cat.all_cats[
                         cat_value].genderalign = Cat.all_cats[
                             cat_value].gender
+                elif text == 'Remove accessory':
+                    Cat.all_cats[str(cat_value)].accessory = None
+
                 elif cat_value is None and arrow is None:
                     self.activate(values)
                 elif arrow is None:

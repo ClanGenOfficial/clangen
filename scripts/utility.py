@@ -52,6 +52,53 @@ def get_personality_compatibility(cat1, cat2):
 
     return None
 
+def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
+    """
+    Looks how many cats have the certain value 
+    :param cat: cat in question
+    :param value: value which has to be reached
+    :param all_cats: list of cats which has to be checked
+    """
+
+    # collect all true or false if the value is reached for the cat or not
+    # later count or sum can be used to get the amount of cats
+    # this will be handled like this, because it is easier / shorter to check
+    relation_dict = {
+        "romantic_love": [],
+        "platonic_like": [],
+        "dislike": [],
+        "admiration": [],
+        "comfortable": [],
+        "jealousy": [],
+        "trust": []
+    }
+
+    for inter_cat in all_cats:
+        relation = list(filter(lambda r: r.cat_to.ID == cat.ID, inter_cat.relationships))
+        if len(relation) < 1:
+            continue
+        
+        relation = relation[0]
+        relation_dict['romantic_love'].append(relation.romantic_love >= value)
+        relation_dict['platonic_like'].append(relation.platonic_like >= value)
+        relation_dict['dislike'].append(relation.dislike >= value)
+        relation_dict['admiration'].append(relation.admiration >= value)
+        relation_dict['comfortable'].append(relation.comfortable >= value)
+        relation_dict['jealousy'].append(relation.jealousy >= value)
+        relation_dict['trust'].append(relation.trust >= value)
+
+    return_dict = {
+        "romantic_love": sum(relation_dict['romantic_love']),
+        "platonic_like": sum(relation_dict['platonic_like']),
+        "dislike": sum(relation_dict['dislike']),
+        "admiration": sum(relation_dict['admiration']),
+        "comfortable": sum(relation_dict['comfortable']),
+        "jealousy": sum(relation_dict['jealousy']),
+        "trust": sum(relation_dict['trust'])
+    }
+
+    return return_dict
+
 def add_siblings_to_cat(cat, cat_class):
     """Iterate over all current cats and add the ID to the current cat."""
     for inter_cat in cat_class.all_cats.values():
@@ -59,33 +106,6 @@ def add_siblings_to_cat(cat, cat_class):
             cat.siblings.append(inter_cat.ID)
         if cat.is_sibling(inter_cat) and cat.ID not in inter_cat.siblings:
             inter_cat.siblings.append(cat.ID)
-
-def draw_bar(value, pos_x, pos_y):
-    # Loading Bar and variables
-    bar_bg = pygame.image.load(
-        "resources/images/relations_border.png").convert_alpha()
-    original_bar = pygame.image.load(
-        "resources/images/relation_bar.png").convert_alpha()
-
-    if game.settings['dark mode']:
-        bar_bg = pygame.image.load(
-            "resources/images/relations_border_dark.png").convert_alpha()
-        original_bar = pygame.image.load(
-            "resources/images/relation_bar_dark.png").convert_alpha()
-
-    bg_rect = bar_bg.get_rect(midleft=(pos_x, pos_y))
-    screen.blit(bar_bg, bg_rect)
-    x_pos = 0
-    for i in range(int(value / 10)):
-        x_pos = i * 11
-        bar_rect = original_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
-        bar = pygame.transform.scale(original_bar, (10, 12))
-        screen.blit(bar, bar_rect)
-    x_pos = 11 * int(value / 10)
-    bar_rect = original_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
-    bar = pygame.transform.scale(original_bar, (value % 10, 12))
-    screen.blit(bar, bar_rect)
-
 
 # ---------------------------------------------------------------------------- #
 #                                    Sprites                                   #

@@ -25,7 +25,9 @@ class Game(object):
     cur_events_list = []
     allegiance_list = []
     language = {}
+    game_mode = ''
     language_list = ['english', 'spanish', 'german']
+    game_mode_list = ['classic', 'expanded', 'cruel season']
     relation_events_list = []
 
     down = pygame.image.load("resources/images/buttons/arrow_down.png").convert_alpha()
@@ -91,9 +93,8 @@ class Game(object):
         'choosing_camp': False,
         'hunting_territory': (0, 0),
         'training_territory': (0, 0),
-        'options_tab': None
-
-
+        'options_tab': None,
+        'game_mode': ''
     }
     all_screens = {}
     cur_events = {}
@@ -116,7 +117,8 @@ class Game(object):
         'random relation': True,
         'show dead relation': True,
         'show empty relation': True,
-        'romantic with former mentor': True
+        'romantic with former mentor': True,
+        'game_mode': 'classic'
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
@@ -134,7 +136,8 @@ class Game(object):
         'random relation': [False, True],
         'show dead relation': [False, True],
         'show empty relation': [False, True],
-        'romantic with former mentor': [False, True]
+        'romantic with former mentor': [False, True],
+        'game_mode': game_mode_list
     }  # Lists of possible options for each setting
     settings_changed = False
 
@@ -221,6 +224,7 @@ class Game(object):
                     self.settings[parts[0]] = parts[1]
 
         self.switches['language'] = self.settings['language']
+        self.switches['game_mode'] = self.settings['game_mode']
         if self.settings['language'] != 'english':
             self.switch_language()
 
