@@ -25,20 +25,26 @@ class MakeClanScreen(Screens):
                 'resources/images/pick_clan_screen/name_clan_light.png').convert_alpha()
         screen.blit(name_clan_img, (0, 0))
 
-        self.game_screen.blit(game.naming_box, (150, 620))
+        self.game_screen.blit(game.naming_box, (265, 620))
         if game.settings['dark mode']:
-            verdana_black.text(game.switches['naming_text'], (155, 620))
+            verdana_black.text(game.switches['naming_text'], (265, 620))
         else:
-            verdana.text(game.switches['naming_text'], (155, 620))
-        verdana.text('-Clan', (290, 620))
-        buttons.draw_button((350, 620),
-                            text='Randomize',
-                            naming_text=choice(names.normal_prefixes),
-                            hotkey=[1])
-        buttons.draw_button((450, 620),
-                            text='Reset Name',
-                            naming_text='',
-                            hotkey=[2])
+            verdana.text(game.switches['naming_text'], (265, 620))
+        verdana.text('-Clan', (410, 620))
+        buttons.draw_image_button((222, 613),
+                                  button_name='random_dice',
+                                  text='Randomize',
+                                  naming_text=choice(names.normal_prefixes),
+                                  size=(34, 34),
+                                  hotkey=[1]
+                                  )
+        buttons.draw_image_button((455, 615),
+                                  button_name='reset_name',
+                                  text='Reset Name',
+                                  naming_text='',
+                                  size=(134, 30),
+                                  hotkey=[2]
+                                  )
 
         # buttons
         verdana_small.text(
@@ -51,10 +57,13 @@ class MakeClanScreen(Screens):
                                   naming_text='',
                                   size=(153, 30)
                                   )
-        buttons.draw_button((570, 620),
-                            text='Name Clan',
-                            clan_name=game.switches['naming_text'],
-                            hotkey=[3])
+        buttons.draw_image_button((333, 655),
+                                  button_name='name_clan',
+                                  text='Name Clan',
+                                  clan_name=game.switches['naming_text'],
+                                  size=(134, 30),
+                                  hotkey=[3]
+                                  )
 
     def second_phase(self):
         game.switches['naming_text'] = ''
@@ -79,33 +88,37 @@ class MakeClanScreen(Screens):
 
         if game.switches['cat'] is not None and 12 > game.switches['cat'] >= 0:
             chosen_cat = game.choose_cats[game.switches['cat']]
-            draw_large(chosen_cat,(250, 200))
+            draw_large(chosen_cat, (270, 200))
             if game.choose_cats[game.switches['cat']].age in [
                     'kitten', 'adolescent'
             ]:
                 verdana.text(str(game.choose_cats[game.switches['cat']].name),
-                             (420, 200))
+                             ('center', 175))
             else:
                 verdana.text(
                     str(game.choose_cats[game.switches['cat']].name) +
                     ' --> ' +
                     game.choose_cats[game.switches['cat']].name.prefix +
-                    'star', (420, 200))
+                    'star', ('center', 175))
             verdana_small.text(
-                str(game.choose_cats[game.switches['cat']].gender), (420, 230))
+                str(game.choose_cats[game.switches['cat']].gender), (440, 260))
             verdana_small.text(str(game.choose_cats[game.switches['cat']].age),
-                               (420, 245))
+                               (440, 275))
             verdana_small.text(
-                str(game.choose_cats[game.switches['cat']].trait), (420, 260))
+                str(game.choose_cats[game.switches['cat']].trait), (440, 290))
             if game.choose_cats[game.switches['cat']].age in [
                     'kitten', 'adolescent'
             ]:
-                verdana_red.text('Too young to become leader.', (420, 300))
+                verdana_red.text('Too young to become leader.', ('center', 360))
             else:
-                buttons.draw_button((420, 300),
-                                    text='Grant this cat their nine lives',
-                                    leader=game.switches['cat'],
-                                    hotkey=[1])
+                buttons.draw_image_button((234, 358),
+                                          button_name='grant_lives',
+                                          text='Grant this cat their nine lives',
+                                          leader=game.switches['cat'],
+                                          size=(332, 52),
+                                          hotkey=[1]
+                                          )
+
         verdana_small.text(
             'Note: going back to main menu resets the generated cats.',
             (25, 25))
@@ -117,11 +130,14 @@ class MakeClanScreen(Screens):
                                   size=(153, 30)
                                   )
 
-        buttons.draw_button((-50, 50),
-                            text='< Last step',
-                            clan_name='',
-                            cat=None,
-                            hotkey=[0])
+        buttons.draw_image_button((188, 50),
+                                  button_name='last_step',
+                                  text='< Last step',
+                                  clan_name='',
+                                  cat=None,
+                                  hotkey=[0],
+                                  size=(153, 30)
+                                  )
 
     def third_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
@@ -153,24 +169,26 @@ class MakeClanScreen(Screens):
         if game.switches['cat'] is not None and 12 > game.switches[
                 'cat'] >= 0 and game.switches['cat'] != game.switches['leader']:
             chosen_cat = game.choose_cats[game.switches['cat']]
-            draw_large(chosen_cat,(250, 200))
+            draw_large(chosen_cat,(270, 200))
             verdana.text(str(game.choose_cats[game.switches['cat']].name),
-                         (420, 200))
+                         ('center', 175))
             verdana_small.text(
-                str(game.choose_cats[game.switches['cat']].gender), (420, 230))
+                str(game.choose_cats[game.switches['cat']].gender), (440, 260))
             verdana_small.text(str(game.choose_cats[game.switches['cat']].age),
-                               (420, 245))
+                               (440, 275))
             verdana_small.text(
-                str(game.choose_cats[game.switches['cat']].trait), (420, 260))
+                str(game.choose_cats[game.switches['cat']].trait), (440, 290))
             if game.choose_cats[game.switches['cat']].age in [
                     'kitten', 'adolescent'
             ]:
-                verdana_red.text('Too young to become deputy.', (420, 300))
+                verdana_red.text('Too young to become deputy.', ('center', 360))
             else:
-                buttons.draw_button((420, 300),
-                                    text='This cat will support the leader',
-                                    deputy=game.switches['cat'],
-                                    hotkey=[1])
+                buttons.draw_image_button((209, 358),
+                                          button_name='support_leader',
+                                          text='This cat will support the leader',
+                                          deputy=game.switches['cat'],
+                                          size=(384, 52),
+                                          hotkey=[1])
         verdana_small.text(
             'Note: going back to main menu resets the generated cats.',
             (25, 25))
@@ -181,11 +199,14 @@ class MakeClanScreen(Screens):
                                   naming_text='',
                                   size=(153, 30)
                                   )
-        buttons.draw_button((-50, 50),
-                            text='< Last Step',
-                            leader=None,
-                            cat=None,
-                            hotkey=[0])
+        buttons.draw_image_button((188, 50),
+                                  button_name='last_step',
+                                  text='< Last step',
+                                  leader=None,
+                                  cat=None,
+                                  hotkey=[0],
+                                  size=(153, 30)
+                                  )
 
     def fourth_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
@@ -224,25 +245,27 @@ class MakeClanScreen(Screens):
                     'leader'] and game.switches['cat'] != game.switches[
                         'deputy']:
             chosen_cat = game.choose_cats[game.switches['cat']]
-            draw_large(chosen_cat,(250, 200))
+            draw_large(chosen_cat,(270, 200))
             verdana.text(str(chosen_cat.name),
-                         (420, 200))
+                         ('center', 175))
             verdana_small.text(
-                str(chosen_cat.gender), (420, 230))
+                str(chosen_cat.gender), (440, 260))
             verdana_small.text(str(chosen_cat.age),
-                               (420, 245))
+                               (440, 275))
             verdana_small.text(
-                str(chosen_cat.trait), (420, 260))
+                str(chosen_cat.trait), (440, 290))
             if chosen_cat.age in [
                     'kitten', 'adolescent'
             ]:
                 verdana_red.text('Too young to become medicine cat.',
-                                 (420, 300))
+                                 ('center', 360))
             else:
-                buttons.draw_button((420, 300),
-                                    text='This cat will aid the clan',
-                                    medicine_cat=game.switches['cat'],
-                                    hotkey=[1])
+                buttons.draw_image_button((252, 352),
+                                          button_name='aid_clan',
+                                          text='This cat will aid the clan',
+                                          medicine_cat=game.switches['cat'],
+                                          hotkey=[1],
+                                          size=(306, 58))
         verdana_small.text(
             'Note: going back to main menu resets the generated cats.',
             (25, 25))
@@ -253,11 +276,14 @@ class MakeClanScreen(Screens):
                                   naming_text='',
                                   size=(153, 30)
                                   )
-        buttons.draw_button((-50, 50),
-                            text='< Last step',
-                            deputy=None,
-                            cat=None,
-                            hotkey=[0])
+        buttons.draw_image_button((188, 50),
+                                  button_name='last_step',
+                                  text='< Last step',
+                                  deputy=None,
+                                  cat=None,
+                                  hotkey=[0],
+                                  size=(153, 30)
+                                  )
 
     def fifth_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
@@ -332,21 +358,23 @@ class MakeClanScreen(Screens):
                 game.switches['medicine_cat']
         ] and game.switches['cat'] not in game.switches['members']:
             chosen_cat = game.choose_cats[game.switches['cat']]
-            draw_large(chosen_cat,(250, 200))
+            draw_large(chosen_cat, (270, 200))
             verdana.text(str(game.choose_cats[game.switches['cat']].name),
-                         (420, 200))
+                         ('center', 175))
             verdana_small.text(
-                str(game.choose_cats[game.switches['cat']].gender), (420, 230))
+                str(game.choose_cats[game.switches['cat']].gender), (440, 260))
             verdana_small.text(str(game.choose_cats[game.switches['cat']].age),
-                               (420, 245))
+                               (440, 275))
             verdana_small.text(
-                str(game.choose_cats[game.switches['cat']].trait), (420, 260))
+                str(game.choose_cats[game.switches['cat']].trait), (440, 290))
             if len(game.switches['members']) < 7:
-                buttons.draw_button((420, 300),
-                                    text='Recruit',
-                                    members=game.switches['cat'],
-                                    add=True,
-                                    hotkey=[1])
+                buttons.draw_image_button((353, 360),
+                                          button_name='recruit',
+                                          text='Recruit',
+                                          members=game.switches['cat'],
+                                          add=True,
+                                          size=(95, 30),
+                                          hotkey=[1])
 
         verdana_small.text(
             'Note: going back to main menu resets the generated cats.',
@@ -359,20 +387,30 @@ class MakeClanScreen(Screens):
                                   size=(153, 30)
                                   )
 
-        buttons.draw_button((-50, 50),
-                            text='< Last step',
-                            medicine_cat=None,
-                            members=[],
-                            cat=None,
-                            hotkey=[0])
+        buttons.draw_image_button((188, 50),
+                                  button_name='last_step',
+                                  text='< Last step',
+                                  medicine_cat=None,
+                                  members=[],
+                                  cat=None,
+                                  hotkey=[0],
+                                  size=(153, 30)
+                                  )
 
         if 3 < len(game.switches['members']) < 8:
-            buttons.draw_button(('center', 350),
-                                text='Done',
-                                choosing_camp=True,
-                                hotkey=[2])
+            buttons.draw_image_button((362, 400),
+                                      button_name='done',
+                                      text='Done',
+                                      choosing_camp=True,
+                                      size=(77, 30),
+                                      hotkey=[2])
         else:
-            buttons.draw_button(('center', 350), text='Done', available=False)
+            buttons.draw_image_button((362, 400),
+                                      button_name='done',
+                                      text='Done',
+                                      available=False,
+                                      size=(77, 30),
+                                      hotkey=[2])
 
     def sixth_phase(self):
         if map_available:
@@ -588,41 +626,58 @@ class MakeClanScreen(Screens):
                                   naming_text='',
                                   size=(153, 30)
                                   )
+        buttons.draw_image_button((188, 50),
+                                  button_name='last_step',
+                                  text='< Last step',
+                                  hotkey=[0],
+                                  size=(153, 30),
+                                  choosing_camp=False
+                                  )
 
         # BIOME BUTTONS
-        buttons.draw_button((250, 50),
-                            text='Forest',
-                            biome='Forest',
-                            camp_bg='camp1',
-                            available=game.switches['biome'] != 'Forest',
-                            hotkey=[1])
-        buttons.draw_button((325, 50),
-                            text='Mountainous',
-                            biome='Mountainous',
-                            camp_bg='camp1',
-                            available=game.switches['biome'] != 'Mountainous',
-                            hotkey=[2])
-        buttons.draw_button((450, 50),
-                            text='Plains',
-                            biome='Plains',
-                            camp_bg='camp1',
-                            available=game.switches['biome'] != 'Plains',
-                            hotkey=[3])
-        buttons.draw_button((525, 50),
-                            text='Beach',
-                            biome='Beach',
-                            camp_bg='camp1',
-                            available=game.switches['biome'] != 'Beach',
-                            hotkey=[4])
+        buttons.draw_image_button((196, 100),
+                                  button_name='forest',
+                                  text='Forest',
+                                  biome='Forest',
+                                  camp_bg='camp1',
+                                  available=game.switches['biome'] != 'Forest',
+                                  size=(100, 46),
+                                  hotkey=[1])
+        buttons.draw_image_button((304, 100),
+                                  button_name='mountain',
+                                  text='Mountainous',
+                                  biome='Mountainous',
+                                  camp_bg='camp1',
+                                  available=game.switches['biome'] != 'Mountainous',
+                                  size=(106, 46),
+                                  hotkey=[2])
+        buttons.draw_image_button((424, 100),
+                                  button_name='plains',
+                                  text='Plains',
+                                  biome='Plains',
+                                  camp_bg='camp1',
+                                  available=game.switches['biome'] != 'Plains',
+                                  size=(88, 46),
+                                  hotkey=[3])
+        buttons.draw_image_button((520, 100),
+                                  button_name='beach',
+                                  text='Beach',
+                                  biome='Beach',
+                                  camp_bg='camp1',
+                                  available=game.switches['biome'] != 'Beach',
+                                  size=(82, 46),
+                                  hotkey=[4])
 
         # CHOOSING CAMP ART
         self.camp_art()
         if game.settings['backgrounds']:
 
-            buttons.draw_button(('center', 630),
-                                text='Done',
-                                available=game.switches['camp_bg'] is not None,
-                                cur_screen='clan created screen')
+            buttons.draw_image_button((362, 630),
+                                      button_name='done',
+                                      text='Done',
+                                      available=game.switches['camp_bg'] is not None,
+                                      size=(77, 30),
+                                      cur_screen='clan created screen')
 
             if game.switches['biome'] == 'Forest':
                 buttons.draw_button((100, 180),
@@ -696,10 +751,12 @@ class MakeClanScreen(Screens):
                                 cur_screen='clan created screen')
 
         else:
-            buttons.draw_button(('center', 600),
-                                text='Done',
-                                available=game.switches['biome'] is not None,
-                                cur_screen='clan created screen')
+            buttons.draw_image_button((362, 650),
+                                      button_name='done',
+                                      text='Done',
+                                      available=game.switches['biome'] is not None,
+                                      size=(77, 30),
+                                      cur_screen='clan created screen')
 
     def camp_art(self):
         camp_bg_base_dir = "resources/images/camp_bg/"
@@ -740,8 +797,10 @@ class MakeClanScreen(Screens):
         elif game.switches['medicine_cat'] is not None and game.switches[
                 'choosing_camp'] is False:
             self.fifth_phase()
-        else:
+        elif len(game.switches['members']) != 0:
             self.sixth_phase()
+        else:
+            self.first_phase()
 
     def screen_switches(self):
         game.switches['clan_name'] = ''
