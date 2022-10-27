@@ -24,7 +24,7 @@ jobs:
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
       - name: Run PyInstaller
-        run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onefile --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
+        run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
       - name: Create archive
         run: |
           mv dist clangen
@@ -60,7 +60,7 @@ jobs:
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
       - name: Run PyInstaller
-        run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onefile --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
       - name: Create archive
         run: |
           move dist clangen
@@ -96,7 +96,7 @@ jobs:
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
       - name: Run PyInstaller
-        run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onefile --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
       - name: Create archive
         run: |
           move dist clangen
@@ -132,7 +132,7 @@ jobs:
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
       - name: Run PyInstaller
-        run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onefile --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
+        run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
       - name: Create archive
         run: |
           mv dist clangen
