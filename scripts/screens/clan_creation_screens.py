@@ -61,7 +61,7 @@ class MakeClanScreen(Screens):
                                   button_name='name_clan',
                                   text='Name Clan',
                                   clan_name=game.switches['naming_text'],
-                                  size=(134, 30),
+                                  size=(124, 30),
                                   hotkey=[3]
                                   )
 
@@ -649,7 +649,7 @@ class MakeClanScreen(Screens):
                                   naming_text='',
                                   size=(153, 30)
                                   )
-        buttons.draw_image_button((253, 650),
+        buttons.draw_image_button((253, 645),
                                   button_name='last_step',
                                   text='< Last step',
                                   choosing_camp=False,
@@ -658,7 +658,7 @@ class MakeClanScreen(Screens):
                                   )
 
         # BIOME BUTTONS
-        buttons.draw_image_button((196, 90),
+        buttons.draw_image_button((196, 100),
                                   button_name='forest',
                                   text='Forest',
                                   biome='Forest',
@@ -666,7 +666,7 @@ class MakeClanScreen(Screens):
                                   available=game.switches['biome'] != 'Forest',
                                   size=(100, 46),
                                   hotkey=[1])
-        buttons.draw_image_button((304, 90),
+        buttons.draw_image_button((304, 100),
                                   button_name='mountain',
                                   text='Mountainous',
                                   biome='Mountainous',
@@ -674,7 +674,7 @@ class MakeClanScreen(Screens):
                                   available=game.switches['biome'] != 'Mountainous',
                                   size=(106, 46),
                                   hotkey=[2])
-        buttons.draw_image_button((424, 90),
+        buttons.draw_image_button((424, 100),
                                   button_name='plains',
                                   text='Plains',
                                   biome='Plains',
@@ -682,7 +682,7 @@ class MakeClanScreen(Screens):
                                   available=game.switches['biome'] != 'Plains',
                                   size=(88, 46),
                                   hotkey=[3])
-        buttons.draw_image_button((520, 90),
+        buttons.draw_image_button((520, 100),
                                   button_name='beach',
                                   text='Beach',
                                   biome='Beach',
@@ -695,7 +695,7 @@ class MakeClanScreen(Screens):
         self.camp_art()
         if game.settings['backgrounds']:
 
-            buttons.draw_image_button((400, 650),
+            buttons.draw_image_button((400, 645),
                                       button_name='done_creation',
                                       text='Next Step',
                                       available=game.switches['camp_bg'] is not None,
@@ -704,70 +704,95 @@ class MakeClanScreen(Screens):
                                       )
 
             if game.switches['biome'] == 'Forest':
-                buttons.draw_button((100, 180),
-                                    text='Classic',
-                                    camp_bg='camp1',
-                                    available=game.switches['camp_bg'] != 'camp1')
-                buttons.draw_button((100, 230),
-                                    text='Gully',
-                                    camp_bg='camp2',
-                                    available=game.switches['camp_bg'] != 'camp2')
+                buttons.draw_image_button((95, 180),
+                                          button_name='classic_camp',
+                                          text='Classic',
+                                          camp_bg='camp1',
+                                          size=(154, 30),
+                                          available=game.switches['camp_bg'] != 'camp1'
+                                          )
+                buttons.draw_image_button((108, 215),
+                                          button_name='gully_camp',
+                                          text='Gully',
+                                          camp_bg='camp2',
+                                          size=(154, 30),
+                                          available=game.switches['camp_bg'] != 'camp2'
+                                          )
 
                 if game.switches['camp_bg'] == 'camp1':
-                    screen.blit(self.camp1, (250, 170))
+                    screen.blit(self.camp1, (175, 170))
                 elif game.switches['camp_bg'] == 'camp2':
-                    screen.blit(self.camp2, (250, 170))
+                    screen.blit(self.camp2, (175, 170))
 
             elif game.switches['biome'] == 'Mountainous':
-                buttons.draw_button((100, 180),
-                                    text='Cliff',
-                                    camp_bg='camp1',
-                                    available=game.switches['camp_bg'] != 'camp1')
-                buttons.draw_button((100, 230),
-                                    text='Caves',
-                                    camp_bg='camp2',
-                                    available=game.switches['camp_bg'] != 'camp2')
+                buttons.draw_image_button((111, 180),
+                                          button_name='cliff_camp',
+                                          text='Cliff',
+                                          camp_bg='camp1',
+                                          size=(154, 30),
+                                          available=game.switches['camp_bg'] != 'camp1')
+                buttons.draw_image_button((101, 215),
+                                          button_name='cave_camp',
+                                          text='Caves',
+                                          camp_bg='camp2',
+                                          size=(154, 30),
+                                          available=game.switches['camp_bg'] != 'camp2')
 
                 if game.switches['camp_bg'] == 'camp1':
-                    screen.blit(self.camp1, (250, 170))
+                    screen.blit(self.camp1, (175, 170))
                 elif game.switches['camp_bg'] == 'camp2':
-                    screen.blit(self.camp2, (250, 170))
+                    screen.blit(self.camp2, (175, 170))
 
             elif game.switches['biome'] == 'Plains':
-                buttons.draw_button((100, 180),
-                                    text='Grasslands',
-                                    camp_bg='camp1',
-                                    available=game.switches['camp_bg'] != 'camp1')
-                buttons.draw_button((100, 230),
-                                    text='Tunnels',
-                                    camp_bg='camp2',
-                                    available=game.switches['camp_bg'] != 'camp2')
+                buttons.draw_image_button((64, 180),
+                                          button_name='grasslands_camp',
+                                          text='Grasslands',
+                                          camp_bg='camp1',
+                                          size=(154, 30),
+                                          available=game.switches['camp_bg'] != 'camp1'
+                                          )
+                buttons.draw_image_button((89, 215),
+                                          button_name='tunnel_camp',
+                                          text='Tunnels',
+                                          camp_bg='camp2',
+                                          size=(154, 30),
+                                          available=game.switches['camp_bg'] != 'camp2'
+                                          )
 
                 if game.switches['camp_bg'] == 'camp1':
-                    screen.blit(self.camp1, (250, 170))
+                    screen.blit(self.camp1, (175, 170))
                 elif game.switches['camp_bg'] == 'camp2':
-                    screen.blit(self.camp2, (250, 170))
+                    screen.blit(self.camp2, (175, 170))
 
             elif game.switches['biome'] == 'Beach':
-                buttons.draw_button((100, 180),
-                                    text='Tidepools',
-                                    camp_bg='camp1',
-                                    available=game.switches['camp_bg'] != 'camp1')
-                buttons.draw_button((100, 230),
-                                    text='Tidal Cave',
-                                    camp_bg='camp2',
-                                    available=game.switches['camp_bg'] != 'camp2')
+                buttons.draw_image_button((76, 180),
+                                          button_name='tidepool_camp',
+                                          text='Tidepools',
+                                          camp_bg='camp1',
+                                          size=(154, 30),
+                                          available=game.switches['camp_bg'] != 'camp1')
+                buttons.draw_image_button((65, 215),
+                                          button_name='tidal_cave_camp',
+                                          text='Tidal Cave',
+                                          camp_bg='camp2',
+                                          size=(154, 30),
+                                          available=game.switches['camp_bg'] != 'camp2')
                 if game.switches['camp_bg'] == 'camp1':
-                    screen.blit(self.camp1, (250, 170))
+                    screen.blit(self.camp1, (175, 170))
                 elif game.switches['camp_bg'] == 'camp2':
-                    screen.blit(self.camp2, (250, 170))
+                    screen.blit(self.camp2, (175, 170))
+
+            # PREVIEW BORDER
+            bg_preview_border = pygame.transform.scale(
+                pygame.image.load("resources/images/bg_preview_border.png").convert_alpha(), (466, 416))
+            screen.blit(bg_preview_border, (167, 162))
 
             # CHOOSE RANDOM CAMP
             random_biome_options = ['Forest', 'Mountainous', 'Plains', 'Beach']
             random_biome = choice(random_biome_options)
             random_camp_options = ['camp1', 'camp2']
             random_camp = choice(random_camp_options)
-            buttons.draw_image_button((255, 610),
+            buttons.draw_image_button((255, 595),
                                       button_name='random_bg',
                                       text='Choose Random Camp Background',
                                       biome=random_biome,
@@ -777,7 +802,7 @@ class MakeClanScreen(Screens):
                                       cur_screen='clan created screen')
 
         else:
-            buttons.draw_image_button((400, 650),
+            buttons.draw_image_button((400, 645),
                                       button_name='done_creation',
                                       text='Next Step',
                                       available=game.switches['biome'] is not None,
@@ -850,10 +875,12 @@ class ClanCreatedScreen(Screens):
         draw_big(game.clan.leader,(screen_x / 2 - 50, 100))
 
         # buttons
-        buttons.draw_button(('center', 250),
-                            text='Continue',
-                            cur_screen='clan screen',
-                            hotkey=[1])
+        buttons.draw_image_button((349, 250),
+                                  button_name='continue_small',
+                                  text='Continue',
+                                  cur_screen='clan screen',
+                                  size=(102, 30),
+                                  hotkey=[1])
 
     def screen_switches(self):
         game.clan = Clan(game.switches['clan_name'],

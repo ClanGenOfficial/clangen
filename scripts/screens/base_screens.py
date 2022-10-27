@@ -88,15 +88,15 @@ def draw_menu_buttons():
                         button_name='stats',
                         text='Stats',
                         cur_screen='stats screen',
-                        size=(76, 30),
+                        size=(81, 30),
                         hotkey=[1])
 
 def draw_clan_name():
     clan_name_bg = pygame.transform.scale(
-        pygame.image.load("resources/images/clan_name_bg.png").convert_alpha(), (180, 30))
-    screen.blit(clan_name_bg, (310, 30))
+        pygame.image.load("resources/images/clan_name_bg.png").convert_alpha(), (180, 35))
+    screen.blit(clan_name_bg, (310, 25))
 
-    verdana_big.text(f'{game.clan.name}Clan', ('center', 35))
+    verdana_big.text(f'{game.clan.name}Clan', ('center', 32))
 
 def draw_next_prev_cat_buttons(the_cat):
     is_instructor = False

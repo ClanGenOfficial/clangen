@@ -25,7 +25,6 @@ class ClanScreen(Screens):
 
         draw_clan_name()
 
-        verdana_big.text(f'{game.clan.name}Clan', ('center', 35))
         verdana.text("Leader\'s Den", game.clan.cur_layout['leader den'])
         verdana.text('Medicine Cat Den', game.clan.cur_layout['medicine den'])
         verdana.text('Nursery', game.clan.cur_layout['nursery'])
@@ -245,16 +244,20 @@ class StarClanScreen(Screens):
             ('center', 600))
 
         if game.switches['list_page'] > 1:
-            buttons.draw_button((300, 600),
-                                text='<',
-                                list_page=game.switches['list_page'] - 1,
-                                hotkey=[23])
+            buttons.draw_image_button((310, 595),
+                                      button_name='arrow_left',
+                                      text='<',
+                                      list_page=game.switches['list_page'] - 1,
+                                      size=(34, 34),
+                                      hotkey=[23])
 
         if game.switches['list_page'] < all_pages:
-            buttons.draw_button((-300, 600),
-                                text='>',
-                                list_page=game.switches['list_page'] + 1,
-                                hotkey=[21])
+            buttons.draw_image_button((456, 595),
+                                      button_name='arrow_right',
+                                      text='>',
+                                      list_page=game.switches['list_page'] + 1,
+                                      size=(34, 34),
+                                      hotkey=[21])
 
         draw_menu_buttons()
 
@@ -267,7 +270,7 @@ class ListScreen(Screens):
 
     def on_use(self):
         draw_clan_name()
-        verdana.text('ALL CATS LIST', ('center', 100))
+
         living_cats = []
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
@@ -275,10 +278,10 @@ class ListScreen(Screens):
                 living_cats.append(the_cat)
 
         search_text = game.switches['search_text']
-        pygame.draw.rect(screen, 'lightgray', pygame.Rect((170, 130),
+        pygame.draw.rect(screen, 'lightgray', pygame.Rect((530, 140),
                                                           (150, 20)))
-        verdana.text('Search: ', (100, 130))
-        verdana_black.text(game.switches['search_text'], (180, 130))
+        verdana.text('Search: ', (468, 140))
+        verdana_black.text(game.switches['search_text'], (540, 140))
         search_cats = []
         if search_text.strip() != '':
             for cat in living_cats:
@@ -324,19 +327,32 @@ class ListScreen(Screens):
             ('center', 600))
 
         if game.switches['list_page'] > 1:
-            buttons.draw_button((300, 600),
-                                text='<',
-                                list_page=game.switches['list_page'] - 1,
-                                hotkey=[23])
+            buttons.draw_image_button((310, 595),
+                                      button_name='arrow_left',
+                                      text='<',
+                                      list_page=game.switches['list_page'] - 1,
+                                      size=(34, 34),
+                                      hotkey=[23])
 
         if game.switches['list_page'] < all_pages:
-            buttons.draw_button((-300, 600),
-                                text='>',
-                                list_page=game.switches['list_page'] + 1,
-                                hotkey=[21])
-        buttons.draw_button((-70, 140),
-                            text='Cats Outside Clans',
-                            cur_screen='other screen')
+            buttons.draw_image_button((456, 595),
+                                      button_name='arrow_right',
+                                      text='>',
+                                      list_page=game.switches['list_page'] + 1,
+                                      size=(34, 34),
+                                      hotkey=[21])
+
+        buttons.draw_image_button((150, 135),
+                                  button_name='outside_clan',
+                                  text='Cats Outside Clans',
+                                  size=(34, 34),
+                                  cur_screen='other screen')
+        buttons.draw_image_button((116, 135),
+                                  button_name='your_clan',
+                                  text='your clan',
+                                  size=(34, 34),
+                                  available=False,
+                                  cur_screen='other screen')
 
         draw_menu_buttons()
 
