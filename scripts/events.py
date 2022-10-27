@@ -376,7 +376,7 @@ class Events(object):
                     choice(scars4),
                     choice(scars5)
                 ])
-                if cat.specialty == 'NOTAIL':
+                if cat.specialty in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
@@ -386,9 +386,13 @@ class Events(object):
                     ]))
                 elif cat.specialty == 'SNAKE':
                     scar_text.append(f'{name} was bit by a snake but lived')
-                elif cat.specialty == 'TOETRAP':
+                elif cat.specialty == 'TOETRAP' and cat.specialty2 != 'NOPAW':
                     scar_text.append(
                         f'{name} got their paw stuck in a twoleg trap and earned a scar'
+                    )
+                elif cat.specialty == 'NOPAW' and cat.specialty2 not in ['TOETRAP', 'NOPAW']:
+                    scar_text.append(
+                        f'{name} lost their paw to a twoleg trap'
                     )
                 else:
                     scar_text.extend([
@@ -408,7 +412,7 @@ class Events(object):
                     choice(scars4),
                     choice(scars5)
                 ])
-                if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
+                if cat.specialty2 in ['NOTAIL', 'HALFTAIL'] and cat.specialty not in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
@@ -419,9 +423,13 @@ class Events(object):
                     ]))
                 elif cat.specialty2 == 'SNAKE' and cat.specialty != 'SNAKE':
                     scar_text.append(f'{name} was bit by a snake but lived')
-                elif cat.specialty2 == 'TOETRAP' and cat.specialty != 'TOETRAP':
+                elif cat.specialty2 == 'TOETRAP' and cat.specialty not in ['TOETRAP', 'NOPAW']:
                     scar_text.append(
                         f'{name} got their paw stuck in a twoleg trap and earned a scar'
+                    )
+                elif cat.specialty2 == 'NOPAW' and cat.specialty not in ['TOETRAP', 'NOPAW']:
+                    scar_text.append(
+                        f'{name} lost their paw to a twoleg trap'
                     )
                 else:
                     if clan_has_kits == True:
@@ -448,7 +456,7 @@ class Events(object):
         ]:
             if cat.specialty is None:
                 cat.specialty = choice([choice(scars1), choice(scars2)])
-                if cat.specialty == 'NOTAIL':
+                if cat.specialty in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
@@ -484,7 +492,7 @@ class Events(object):
                     ])
             elif cat.specialty2 is None:
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
-                if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
+                if cat.specialty2 in ['NOTAIL', 'HALFTAIL'] and cat.specialty not in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
@@ -523,7 +531,7 @@ class Events(object):
         ] and other_cat.status == 'leader':
             if cat.specialty is None:
                 cat.specialty = choice([choice(scars1), choice(scars2)])
-                if cat.specialty == 'NOTAIL':
+                if cat.specialty in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
@@ -546,7 +554,7 @@ class Events(object):
                     ])
             elif cat.specialty2 is None:
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
-                if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
+                if cat.specialty2 in ['NOTAIL', 'HALFTAIL'] and cat.specialty not in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
@@ -575,7 +583,7 @@ class Events(object):
         ]:
             if cat.specialty is None:
                 cat.specialty = choice([choice(scars1), choice(scars2)])
-                if cat.specialty == 'NOTAIL':
+                if cat.specialty in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
@@ -604,7 +612,7 @@ class Events(object):
                     ])
             elif cat.specialty2 is None:
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
-                if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
+                if cat.specialty2 in ['NOTAIL', 'HALFTAIL'] and cat.specialty not in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
