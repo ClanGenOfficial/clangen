@@ -370,7 +370,7 @@ class ProfileScreen(Screens):
         biome = game.clan.biome
         if biome not in available_biome:
             biome = available_biome[0]
-        biome.lower()
+        biome = biome.lower()
 
         all_platforms = []
         if the_cat.dead or game.clan.instructor.ID == the_cat.ID:
