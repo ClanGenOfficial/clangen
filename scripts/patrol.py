@@ -138,7 +138,7 @@ class Patrol(object):
             self.patrol_leader = choice(self.possible_patrol_leaders)
         elif not self.possible_patrol_leaders:
             self.patrol_leader = choice(self.patrol_cats)
-        if self.patrol_cats >= 2:
+        if len(self.patrol_cats) >= 2:
             self.patrol_random_cat = choice(self.patrol_cats)
             for self.patrol_names in self.patrol_cats:
                 if self.patrol_random_cat == self.patrol_leader:
