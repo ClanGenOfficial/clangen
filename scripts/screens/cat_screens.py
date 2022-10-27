@@ -22,43 +22,43 @@ def draw_back(x_value, y_value):
         cur_screen='profile screen',
         hotkey=[0])
 
-def accessory_display_name(accessory):
-    if not accessory:
+def accessory_display_name(cat, accessory):
+    accessory = cat.accessory
+    if accessory is None:
         return ''
-    accessory = accessory.lower()
-    acc_display = accessory
+    acc_display = accessory.lower()
     if accessory != None:
         if accessory in collars:
             collar_color = None
-            if accessory.startswith('crimson'):
+            if acc_display.startswith('crimson'):
                 collar_color = 'crimson'
-            elif accessory.startswith('blue'):
+            elif acc_display.startswith('blue'):
                 collar_color = 'blue'
-            elif accessory.startswith('yellow'):
+            elif acc_display.startswith('yellow'):
                 collar_color = 'yellow'
-            elif accessory.startswith('cyan'):
+            elif acc_display.startswith('cyan'):
                 collar_color = 'cyan'
-            elif accessory.startswith('red'):
+            elif acc_display.startswith('red'):
                 collar_color = 'red'
-            elif accessory.startswith('lime'):
+            elif acc_display.startswith('lime'):
                 collar_color = 'lime'
-            elif accessory.startswith('green'):
+            elif acc_display.startswith('green'):
                 collar_color = 'green'
-            elif accessory.startswith('rainbow'):
+            elif acc_display.startswith('rainbow'):
                 collar_color = 'rainbow'
-            elif accessory.startswith('black'):
+            elif acc_display.startswith('black'):
                 collar_color = 'black'
-            elif accessory.startswith('spikes'):
+            elif acc_display.startswith('spikes'):
                 collar_color = 'spiky'
-            elif accessory.startswith('pink'):
+            elif acc_display.startswith('pink'):
                 collar_color = 'pink'
-            elif accessory.startswith('purple'):
+            elif acc_display.startswith('purple'):
                 collar_color = 'purple'
-            elif accessory.startswith('multi'):
+            elif acc_display.startswith('multi'):
                 collar_color = 'multi'
-            if accessory.endswith('bow') and not accessory == 'rainbow':
+            if acc_display.endswith('bow') and not acc_display == 'rainbow':
                 acc_display = collar_color + ' bow'
-            elif accessory.endswith('bell'):
+            elif acc_display.endswith('bell'):
                 acc_display = collar_color + ' bell collar'
             else:
                 acc_display = collar_color + ' collar'
@@ -234,7 +234,7 @@ class ProfileScreen(Screens):
         verdana_small.text('fur length: ' + the_cat.pelt.length,
                            (300, 230 + count * 15))
         count += 1  # PELT LENGTH
-        verdana_small.text('accessory: ' + str(accessory_display_name(the_cat.accessory)),
+        verdana_small.text('accessory: ' + str(accessory_display_name(the_cat, the_cat.accessory)),
                            (300, 230 + count * 15))
         count += 1  # accessory
 
