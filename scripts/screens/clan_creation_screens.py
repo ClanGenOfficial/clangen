@@ -74,7 +74,7 @@ class MakeClanScreen(Screens):
         else:
             leader_img = pygame.image.load(
                 'resources/images/pick_clan_screen/leader_light.png').convert_alpha()
-        screen.blit(leader_img, (0, 400))
+        screen.blit(leader_img, (0, 414))
         for u in range(6):
             buttons.draw_button((50, 150 + 50 * u),
                                 image=game.choose_cats[u].sprite,
@@ -111,7 +111,7 @@ class MakeClanScreen(Screens):
             ]:
                 verdana_red.text('Too young to become leader.', ('center', 360))
             else:
-                buttons.draw_image_button((234, 358),
+                buttons.draw_image_button((234, 348),
                                           button_name='grant_lives',
                                           text='Grant this cat their nine lives',
                                           leader=game.switches['cat'],
@@ -130,13 +130,21 @@ class MakeClanScreen(Screens):
                                   size=(153, 30)
                                   )
 
-        buttons.draw_image_button((188, 50),
+        buttons.draw_image_button((253, 400),
                                   button_name='last_step',
                                   text='< Last step',
                                   clan_name='',
                                   cat=None,
                                   hotkey=[0],
-                                  size=(153, 30)
+                                  size=(147, 30)
+                                  )
+
+        buttons.draw_image_button((400, 400),
+                                  button_name='next_step',
+                                  text='Next Step',
+                                  clan_name='',
+                                  available=False,
+                                  size=(147, 30)
                                   )
 
     def third_phase(self):
@@ -147,7 +155,7 @@ class MakeClanScreen(Screens):
         else:
             deputy_img = pygame.image.load(
                 'resources/images/pick_clan_screen/deputy_light.png').convert_alpha()
-        screen.blit(deputy_img, (0, 400))
+        screen.blit(deputy_img, (0, 414))
 
         for u in range(6):
             if game.switches['leader'] == u:
@@ -183,7 +191,7 @@ class MakeClanScreen(Screens):
             ]:
                 verdana_red.text('Too young to become deputy.', ('center', 360))
             else:
-                buttons.draw_image_button((209, 358),
+                buttons.draw_image_button((209, 348),
                                           button_name='support_leader',
                                           text='This cat will support the leader',
                                           deputy=game.switches['cat'],
@@ -199,13 +207,20 @@ class MakeClanScreen(Screens):
                                   naming_text='',
                                   size=(153, 30)
                                   )
-        buttons.draw_image_button((188, 50),
+        buttons.draw_image_button((253, 400),
                                   button_name='last_step',
                                   text='< Last step',
                                   leader=None,
                                   cat=None,
                                   hotkey=[0],
-                                  size=(153, 30)
+                                  size=(147, 30)
+                                  )
+        buttons.draw_image_button((400, 400),
+                                  button_name='next_step',
+                                  text='Next Step',
+                                  clan_name='',
+                                  available=False,
+                                  size=(147, 30)
                                   )
 
     def fourth_phase(self):
@@ -216,7 +231,7 @@ class MakeClanScreen(Screens):
         else:
             medic_img = pygame.image.load(
                 'resources/images/pick_clan_screen/med_light.png').convert_alpha()
-        screen.blit(medic_img, (0, 400))
+        screen.blit(medic_img, (0, 414))
 
         for u in range(6):
             if game.switches['leader'] == u:
@@ -260,7 +275,7 @@ class MakeClanScreen(Screens):
                 verdana_red.text('Too young to become medicine cat.',
                                  ('center', 360))
             else:
-                buttons.draw_image_button((252, 352),
+                buttons.draw_image_button((252, 342),
                                           button_name='aid_clan',
                                           text='This cat will aid the clan',
                                           medicine_cat=game.switches['cat'],
@@ -276,13 +291,20 @@ class MakeClanScreen(Screens):
                                   naming_text='',
                                   size=(153, 30)
                                   )
-        buttons.draw_image_button((188, 50),
+        buttons.draw_image_button((253, 400),
                                   button_name='last_step',
                                   text='< Last step',
                                   deputy=None,
                                   cat=None,
                                   hotkey=[0],
-                                  size=(153, 30)
+                                  size=(147, 30)
+                                  )
+        buttons.draw_image_button((400, 400),
+                                  button_name='next_step',
+                                  text='Next Step',
+                                  clan_name='',
+                                  available=False,
+                                  size=(147, 30)
                                   )
 
     def fifth_phase(self):
@@ -292,7 +314,7 @@ class MakeClanScreen(Screens):
         else:
             clan_img = pygame.image.load(
                 'resources/images/pick_clan_screen/clan_light.png').convert_alpha()
-        screen.blit(clan_img, (0, 400))
+        screen.blit(clan_img, (0, 414))
         for u in range(6):
             if game.switches['leader'] == u:
                 draw(game.choose_cats[u],(650, 200))
@@ -386,31 +408,32 @@ class MakeClanScreen(Screens):
                                   naming_text='',
                                   size=(153, 30)
                                   )
-
-        buttons.draw_image_button((188, 50),
+        buttons.draw_image_button((253, 400),
                                   button_name='last_step',
                                   text='< Last step',
                                   medicine_cat=None,
                                   members=[],
                                   cat=None,
                                   hotkey=[0],
-                                  size=(153, 30)
+                                  size=(147, 30)
                                   )
 
         if 3 < len(game.switches['members']) < 8:
-            buttons.draw_image_button((362, 400),
-                                      button_name='done',
-                                      text='Done',
+            buttons.draw_image_button((400, 400),
+                                      button_name='next_step',
+                                      text='Next Step',
                                       choosing_camp=True,
-                                      size=(77, 30),
-                                      hotkey=[2])
+                                      hotkey=[2],
+                                      size=(147, 30)
+                                      )
         else:
-            buttons.draw_image_button((362, 400),
-                                      button_name='done',
-                                      text='Done',
+            buttons.draw_image_button((400, 400),
+                                      button_name='next_step',
+                                      text='Next Step',
                                       available=False,
-                                      size=(77, 30),
-                                      hotkey=[2])
+                                      size=(147, 30),
+                                      hotkey=[2]
+                                      )
 
     def sixth_phase(self):
         if map_available:
@@ -626,16 +649,16 @@ class MakeClanScreen(Screens):
                                   naming_text='',
                                   size=(153, 30)
                                   )
-        buttons.draw_image_button((188, 50),
+        buttons.draw_image_button((253, 650),
                                   button_name='last_step',
                                   text='< Last step',
+                                  choosing_camp=False,
                                   hotkey=[0],
-                                  size=(153, 30),
-                                  choosing_camp=False
+                                  size=(147, 30)
                                   )
 
         # BIOME BUTTONS
-        buttons.draw_image_button((196, 100),
+        buttons.draw_image_button((196, 90),
                                   button_name='forest',
                                   text='Forest',
                                   biome='Forest',
@@ -643,7 +666,7 @@ class MakeClanScreen(Screens):
                                   available=game.switches['biome'] != 'Forest',
                                   size=(100, 46),
                                   hotkey=[1])
-        buttons.draw_image_button((304, 100),
+        buttons.draw_image_button((304, 90),
                                   button_name='mountain',
                                   text='Mountainous',
                                   biome='Mountainous',
@@ -651,7 +674,7 @@ class MakeClanScreen(Screens):
                                   available=game.switches['biome'] != 'Mountainous',
                                   size=(106, 46),
                                   hotkey=[2])
-        buttons.draw_image_button((424, 100),
+        buttons.draw_image_button((424, 90),
                                   button_name='plains',
                                   text='Plains',
                                   biome='Plains',
@@ -659,7 +682,7 @@ class MakeClanScreen(Screens):
                                   available=game.switches['biome'] != 'Plains',
                                   size=(88, 46),
                                   hotkey=[3])
-        buttons.draw_image_button((520, 100),
+        buttons.draw_image_button((520, 90),
                                   button_name='beach',
                                   text='Beach',
                                   biome='Beach',
@@ -672,12 +695,13 @@ class MakeClanScreen(Screens):
         self.camp_art()
         if game.settings['backgrounds']:
 
-            buttons.draw_image_button((362, 630),
-                                      button_name='done',
-                                      text='Done',
+            buttons.draw_image_button((400, 650),
+                                      button_name='done_creation',
+                                      text='Next Step',
                                       available=game.switches['camp_bg'] is not None,
-                                      size=(77, 30),
-                                      cur_screen='clan created screen')
+                                      cur_screen='clan created screen',
+                                      size=(147, 30)
+                                      )
 
             if game.switches['biome'] == 'Forest':
                 buttons.draw_button((100, 180),
@@ -690,9 +714,9 @@ class MakeClanScreen(Screens):
                                     available=game.switches['camp_bg'] != 'camp2')
 
                 if game.switches['camp_bg'] == 'camp1':
-                    screen.blit(self.camp1, (250, 150))
+                    screen.blit(self.camp1, (250, 170))
                 elif game.switches['camp_bg'] == 'camp2':
-                    screen.blit(self.camp2, (250, 150))
+                    screen.blit(self.camp2, (250, 170))
 
             elif game.switches['biome'] == 'Mountainous':
                 buttons.draw_button((100, 180),
@@ -705,9 +729,9 @@ class MakeClanScreen(Screens):
                                     available=game.switches['camp_bg'] != 'camp2')
 
                 if game.switches['camp_bg'] == 'camp1':
-                    screen.blit(self.camp1, (250, 150))
+                    screen.blit(self.camp1, (250, 170))
                 elif game.switches['camp_bg'] == 'camp2':
-                    screen.blit(self.camp2, (250, 150))
+                    screen.blit(self.camp2, (250, 170))
 
             elif game.switches['biome'] == 'Plains':
                 buttons.draw_button((100, 180),
@@ -720,9 +744,9 @@ class MakeClanScreen(Screens):
                                     available=game.switches['camp_bg'] != 'camp2')
 
                 if game.switches['camp_bg'] == 'camp1':
-                    screen.blit(self.camp1, (250, 150))
+                    screen.blit(self.camp1, (250, 170))
                 elif game.switches['camp_bg'] == 'camp2':
-                    screen.blit(self.camp2, (250, 150))
+                    screen.blit(self.camp2, (250, 170))
 
             elif game.switches['biome'] == 'Beach':
                 buttons.draw_button((100, 180),
@@ -734,29 +758,32 @@ class MakeClanScreen(Screens):
                                     camp_bg='camp2',
                                     available=game.switches['camp_bg'] != 'camp2')
                 if game.switches['camp_bg'] == 'camp1':
-                    screen.blit(self.camp1, (250, 150))
+                    screen.blit(self.camp1, (250, 170))
                 elif game.switches['camp_bg'] == 'camp2':
-                    screen.blit(self.camp2, (250, 150))
+                    screen.blit(self.camp2, (250, 170))
 
             # CHOOSE RANDOM CAMP
             random_biome_options = ['Forest', 'Mountainous', 'Plains', 'Beach']
             random_biome = choice(random_biome_options)
             random_camp_options = ['camp1', 'camp2']
             random_camp = choice(random_camp_options)
-            buttons.draw_button(('center', 580),
-                                text='Choose Random Camp Background',
-                                biome=random_biome,
-                                camp_bg=random_camp,
-                                available=True,
-                                cur_screen='clan created screen')
+            buttons.draw_image_button((255, 610),
+                                      button_name='random_bg',
+                                      text='Choose Random Camp Background',
+                                      biome=random_biome,
+                                      camp_bg=random_camp,
+                                      available=True,
+                                      size=(290, 30),
+                                      cur_screen='clan created screen')
 
         else:
-            buttons.draw_image_button((362, 650),
-                                      button_name='done',
-                                      text='Done',
+            buttons.draw_image_button((400, 650),
+                                      button_name='done_creation',
+                                      text='Next Step',
                                       available=game.switches['biome'] is not None,
-                                      size=(77, 30),
-                                      cur_screen='clan created screen')
+                                      cur_screen='clan created screen',
+                                      size=(147, 30)
+                                      )
 
     def camp_art(self):
         camp_bg_base_dir = "resources/images/camp_bg/"
