@@ -399,7 +399,7 @@ class Patrol(object):
                         'p_l asks r_c how their training is going',
                         'r_c happily tells p_l all about the fighting move they just learned',
                         'r_c answers curtly, having been subjected to cleaning the elders\'s den recently',
-                        'r_c doesn\t hear the question and p_l changes the subject',
+                        'r_c doesn\'t hear the question and p_l changes the subject',
                         50,
                         10),
                     PatrolEvent(
