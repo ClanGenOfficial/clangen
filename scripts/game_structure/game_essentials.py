@@ -91,7 +91,8 @@ class Game(object):
         'choosing_camp': False,
         'hunting_territory': (0, 0),
         'training_territory': (0, 0),
-        'options_tab': None
+        'options_tab': None,
+        'profile_tab_group': None
 
 
     }

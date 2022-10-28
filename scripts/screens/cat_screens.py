@@ -17,10 +17,12 @@ def draw_text_bar():
         verdana.text(game.switches['naming_text'], (315, 200))
 
 def draw_back(x_value, y_value):
-    buttons.draw_button((x_value, y_value),
-        text='Back',
-        cur_screen='profile screen',
-        hotkey=[0])
+    buttons.draw_image_button((x_value, y_value),
+                              button_name='back',
+                              text='Back',
+                              size=(105, 30),
+                              cur_screen='profile screen',
+                              hotkey=[0])
 
 def accessory_display_name(accessory):
     if not accessory:
@@ -122,13 +124,13 @@ class ProfileScreen(Screens):
             verdana.text(first_part, ('center', 180))
             verdana.text(second_part, ('center', 200))
 
-        
+
         if the_cat.genderalign == None or the_cat.genderalign == True or the_cat.genderalign == False:
             verdana_small.text(str(the_cat.gender), (300, 230 + count * 15))
         else:
             verdana_small.text(str(the_cat.genderalign), (300, 230 + count * 15))
         count += 1  # SEX / GENDER
-        if (the_cat.exiled): 
+        if (the_cat.exiled):
             verdana_red.text("exiled", (490, 230 + count2 * 15))
         else:
             verdana_small.text(the_cat.status, (490, 230 + count2 * 15))
@@ -335,24 +337,312 @@ class ProfileScreen(Screens):
 
         # buttons
         count = 0
-        buttons.draw_button(('center', 400 + count),
-                            text="See Family",
-                            cur_screen='see kits screen')
-        count += 30
+        # RELATION TAB GROUP
+        the_cat = Cat.all_cats.get(game.switches['cat'])
+        buttons.draw_image_button((48, 420),
+                                  button_name='relations',
+                                  text="relations",
+                                  size=(176, 30),
+                                  profile_tab_group='relations',
+                                  available=game.switches['profile_tab_group'] != 'relations'
+                                  )
+        if game.switches['profile_tab_group'] == 'relations':
+            buttons.draw_image_button((50, 594),
+                                      button_name='close',
+                                      text='close',
+                                      size=(172, 36),
+                                      profile_tab_group=None)
+            if the_cat.status == 'apprentice' and not the_cat.dead:
+                game.switches['apprentice'] = the_cat
+                buttons.draw_image_button((50, 558),
+                                          button_name='change_mentor',
+                                          text='change mentor',
+                                          size=(172, 36),
+                                          cur_screen='choose mentor screen')
+            else:
+                buttons.draw_image_button((50, 558),
+                                          button_name='change_mentor',
+                                          text='change mentor',
+                                          size=(172, 36),
+                                          available=False)
+            if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
+                               ] and not the_cat.dead:
+                buttons.draw_image_button((50, 522),
+                                          button_name='choose_mate',
+                                          text='choose mate',
+                                          size=(172, 36),
+                                          cur_screen='choose mate screen')
+            else:
+                buttons.draw_image_button((50, 522),
+                                          button_name='choose_mate',
+                                          text='choose mate',
+                                          size=(172, 36),
+                                          available=False)
+            if not the_cat.dead:
+                buttons.draw_image_button((50, 486),
+                                          button_name='see_relationships',
+                                          text='see relationships',
+                                          size=(172, 36),
+                                          cur_screen='see kits screen')
+            else:
+                buttons.draw_image_button((50, 486),
+                                          button_name='see_relationships',
+                                          text='see relationships',
+                                          size=(172, 36),
+                                          cur_screen='see kits screen',
+                                          available=False)
+            buttons.draw_image_button((50, 450),
+                                      button_name='see_family',
+                                      text='see family',
+                                      size=(172, 36),
+                                      cur_screen='relationship screen')
 
-        if not the_cat.dead:
-            buttons.draw_button(('center', 400 + count),
-                                text="See Relationships",
-                                cur_screen='relationship screen')
-            count += 30
+        # ROLE TAB GROUP
+        buttons.draw_image_button((224, 420),
+                                  button_name='roles',
+                                  text="roles",
+                                  size=(176, 30),
+                                  profile_tab_group='roles',
+                                  available=game.switches['profile_tab_group'] != 'roles'
+                                  )
+        if game.switches['profile_tab_group'] == 'roles':
+            the_cat = Cat.all_cats.get(game.switches['cat'])
+            if game.switches['new_leader'] is not False and game.switches['new_leader'] is not None:
+                game.clan.new_leader(game.switches['new_leader'])
+            if the_cat.status in ['warrior'
+                                  ] and not the_cat.dead and game.clan.leader.dead and not the_cat.exiled:
+                buttons.draw_image_button((226, 444),
+                                          button_name='promote_leader',
+                                          text='promote to leader',
+                                          new_leader=the_cat,
+                                          size=(172, 32),
+                                          )
+            else:
+                buttons.draw_image_button((226, 444),
+                                          button_name='promote_leader',
+                                          text='promote to leader',
+                                          size=(172, 32),
+                                          available=False)
+            if the_cat.status in [
+                'warrior'
+            ] and not the_cat.dead and not the_cat.exiled and game.clan.deputy is None:
+                buttons.draw_image_button((226, 474),
+                                          button_name='promote_deputy',
+                                          text='promote to deputy',
+                                          size=(172, 30),
+                                          deputy_switch=the_cat
+                                          )
+            else:
+                buttons.draw_image_button((226, 474),
+                                          button_name='promote_deputy',
+                                          text='promote to deputy',
+                                          size=(172, 30),
+                                          available=False
+                                          )
+            if the_cat.status in ['deputy'] and not the_cat.dead and not the_cat.exiled:
+                buttons.draw_image_button((226, 474),
+                                          button_name='demote_deputy',
+                                          text='demote from deputy',
+                                          deputy_switch=the_cat,
+                                          size=(172, 30),
+                                          )
+            if the_cat.status in ['apprentice'] and not the_cat.dead and not the_cat.exiled:
+                buttons.draw_image_button((226, 502),
+                                          button_name='switch_med_app',
+                                          text='switch to medicine cat apprentice',
+                                          size=(172, 46),
+                                          apprentice_switch=the_cat,
+                                          )
+                buttons.draw_image_button((226, 546),
+                                          button_name='close',
+                                          text='close',
+                                          size=(172, 30),
+                                          profile_tab_group=None)
+            elif the_cat.status in ['medicine cat apprentice'
+                                    ] and not the_cat.dead and not the_cat.exiled:
+                buttons.draw_image_button((226, 502),
+                                          button_name='switch_warrior_app',
+                                          text='switch to warrior apprentice',
+                                          size=(172, 46),
+                                          apprentice_switch=the_cat,
+                                          )
+                buttons.draw_image_button((226, 546),
+                                          button_name='close',
+                                          text='close',
+                                          size=(172, 30),
+                                          profile_tab_group=None)
+            elif the_cat.status == 'warrior' and not the_cat.dead and not the_cat.exiled:
+                buttons.draw_image_button((226, 502),
+                                          button_name='switch_med_cat',
+                                          text='switch to medicine cat',
+                                          size=(172, 46),
+                                          apprentice_switch=the_cat,
+                                          )
+                buttons.draw_image_button((226, 546),
+                                          button_name='close',
+                                          text='close',
+                                          size=(172, 30),
+                                          profile_tab_group=None)
+            elif the_cat.status == 'elder' and not the_cat.dead and not the_cat.exiled:
+                    buttons.draw_image_button((226, 502),
+                                              button_name='switch_med_cat',
+                                              text='switch to medicine cat',
+                                              size=(172, 46),
+                                              apprentice_switch=the_cat,
+                                              available=False
+                                              )
+                    buttons.draw_image_button((226, 546),
+                                              button_name='close',
+                                              text='close',
+                                              size=(172, 30),
+                                              profile_tab_group=None)
+            elif the_cat.status == 'medicine cat' and not the_cat.dead and not the_cat.exiled:
+                buttons.draw_image_button((226, 502),
+                                          button_name='switch_warrior',
+                                          text='switch to warrior',
+                                          apprentice_switch=the_cat,
+                                          size=(172, 30),
+                                          )
+                buttons.draw_image_button((226, 530),
+                                          button_name='close',
+                                          text='close',
+                                          size=(172, 30),
+                                          profile_tab_group=None)
+            else:
+                buttons.draw_image_button((226, 502),
+                                          button_name='close',
+                                          text='close',
+                                          size=(172, 30),
+                                          profile_tab_group=None)
 
-        buttons.draw_button(('center', 400 + count),
-                            text='Options',
-                            cur_screen='options screen')
+        #  ROLE SWITCHES
+        if game.switches['deputy_switch'] is not False and game.switches[
+                'deputy_switch'] is not None and game.switches[
+                    'deputy_switch'].status == 'warrior':
+            game.clan.deputy = game.switches['deputy_switch']
+            game.switches['deputy_switch'].status_change('deputy')
+            game.switches['deputy_switch'] = False
+        elif game.switches['deputy_switch'] is not False and game.switches[
+                'deputy_switch'] is not None and game.switches[
+                    'deputy_switch'].status == 'deputy':
+            game.clan.deputy = None
+            game.switches['deputy_switch'].status_change('warrior')
+            game.switches['deputy_switch'] = False
 
-        buttons.draw_button(('center', 510),
-                            text='Back',
-                            cur_screen=game.switches['last_screen'])
+        if game.switches['apprentice_switch'] is not False and game.switches[
+                'apprentice_switch'] is not None and game.switches[
+                    'apprentice_switch'].status == 'apprentice':
+            game.switches['apprentice_switch'].status_change(
+                'medicine cat apprentice')
+            game.switches['apprentice_switch'] = False
+
+        if game.switches['apprentice_switch'] is not False and game.switches[
+                'apprentice_switch'] is not None and game.switches[
+                    'apprentice_switch'].status == 'medicine cat apprentice':
+            game.switches['apprentice_switch'].status_change('apprentice')
+            game.switches['apprentice_switch'] = False
+
+        if game.switches['apprentice_switch'] is not False and game.switches[
+                'apprentice_switch'] is not None and game.switches[
+                    'apprentice_switch'].status == 'warrior':
+            game.switches['apprentice_switch'].status_change('medicine cat')
+            game.switches['apprentice_switch'] = False
+
+        if game.switches['apprentice_switch'] is not False and game.switches[
+                'apprentice_switch'] is not None and game.switches[
+                    'apprentice_switch'].status == 'medicine cat':
+            game.switches['apprentice_switch'].status_change('warrior')
+            game.switches['apprentice_switch'] = False
+
+        # PERSONAL TAB GROUP
+        buttons.draw_image_button((400, 420),
+                                  button_name='personal',
+                                  text="personal",
+                                  size=(176, 30),
+                                  profile_tab_group='personal',
+                                  available=game.switches['profile_tab_group'] != 'personal'
+                                  )
+        if game.switches['profile_tab_group'] == 'personal':
+            buttons.draw_image_button((402, 444),
+                                      button_name='change_name',
+                                      text='change name',
+                                      cur_screen='change name screen',
+                                      size=(172, 32),
+                                      )
+            if the_cat.genderalign == "female":
+                buttons.draw_image_button((402, 474),
+                                          button_name='change_trans_male',
+                                          text='change to trans male',
+                                          size=(172, 46),
+                                          cat_value=game.switches['cat']
+                                          )
+                buttons.draw_image_button((402, 518),
+                                          button_name='specify_gender',
+                                          text='specify gender',
+                                          size=(172, 30),
+                                          cat_value=game.switches['cat'],
+                                          cur_screen='change gender screen'
+                                          )
+            elif the_cat.genderalign == "male":
+                buttons.draw_image_button((402, 474),
+                                          button_name='change_trans_female',
+                                          text='change to trans female',
+                                          size=(172, 46),
+                                          cat_value=game.switches['cat'],
+                                          )
+                buttons.draw_image_button((402, 518),
+                                          button_name='specify_gender',
+                                          text='specify gender',
+                                          size=(172, 30),
+                                          cat_value=game.switches['cat'],
+                                          cur_screen='change gender screen'
+                                          )
+            if the_cat.genderalign != "female" and the_cat.genderalign != "male":
+                buttons.draw_image_button((402, 474),
+                                          button_name='change_cis',
+                                          text='change to cisgender',
+                                          size=(172, 30),
+                                          cat_value=game.switches['cat'],
+                                          )
+                buttons.draw_image_button((402, 502),
+                                          button_name='specify_gender',
+                                          text='specify gender',
+                                          size=(172, 30),
+                                          cat_value=game.switches['cat'],
+                                          cur_screen='change gender screen'
+                                          )
+            if the_cat.age in ['young adult', 'adult', 'senior adult'
+                               ] and not the_cat.no_kits:
+                buttons.draw_image_button(402,)
+            buttons.draw_image_button((226, 502),
+                                      button_name='close',
+                                      text='close',
+                                      size=(172, 30),
+                                      profile_tab_group=None)
+
+        # DANGEROUS TAB GROUP
+        buttons.draw_image_button((576, 420),
+                                  button_name='dangerous',
+                                  text="dangerous",
+                                  size=(176, 30),
+                                  profile_tab_group='dangerous',
+                                  available=game.switches['profile_tab_group'] != 'dangerous'
+                                  )
+
+        # BACK BUTTON
+        buttons.draw_image_button((25, 60),
+                                  button_name='back',
+                                  text='Back',
+                                  size=(105, 30),
+                                  cur_screen=game.switches['last_screen'])
+
+
+        if game.switches['kill_cat'] is not False and game.switches[
+                'kill_cat'] is not None:
+            if game.switches['kill_cat'].status == 'leader':
+                game.clan.leader_lives -= 10
+            game.switches['kill_cat'].die()
+            game.switches['kill_cat'] = False
 
     # PLATFORM
     def update_platform(self):
@@ -382,13 +672,13 @@ class ProfileScreen(Screens):
                 all_platforms.append(platform_dir)
 
         self.newleaf_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[0]).convert(), (240, 210))
+            pygame.image.load(all_platforms[0]).convert_alpha(), (240, 210))
         self.greenleaf_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[1]).convert(), (240, 210))
+            pygame.image.load(all_platforms[1]).convert_alpha(), (240, 210))
         self.leafbare_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[2]).convert(), (240, 210))
+            pygame.image.load(all_platforms[2]).convert_alpha(), (240, 210))
         self.leaffall_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[3]).convert(), (240, 210))
+            pygame.image.load(all_platforms[3]).convert_alpha(), (240, 210))
 
     def screen_switches(self):
         cat_profiles()
@@ -455,7 +745,7 @@ class OptionsScreen(Screens):
                                 hotkey=[button_count + 1])
             button_count += 1
 
-        draw_back(x_value, y_value + button_count * y_change)
+        draw_back(25, 25)
 
     def roles_tab(self):
         self.draw_header()
@@ -528,7 +818,7 @@ class OptionsScreen(Screens):
                                 hotkey=[button_count + 1])
             button_count += 1
 
-        draw_back(x_value, y_value + button_count * y_change)
+        draw_back(25, 25)
 
     def personal_tab(self):
         self.draw_header()
@@ -599,7 +889,7 @@ class OptionsScreen(Screens):
                                 hotkey=[button_count + 1])
             button_count += 1
 
-        draw_back(x_value, y_value + button_count * y_change)
+        draw_back(25, 25)
         
     def dangerous_tab(self):
         self.draw_header()
@@ -628,7 +918,7 @@ class OptionsScreen(Screens):
         #                         hotkey=[11])
         #     button_count += 1
 
-        draw_back(x_value, y_value + button_count * y_change)
+        draw_back(25, 25)
 
     def on_use(self):
         the_cat = Cat.all_cats.get(game.switches['cat'])
@@ -638,16 +928,6 @@ class OptionsScreen(Screens):
         y_value = 150
         y_change = 50
 
-        if game.switches['options_tab'] == "Relations Tab":
-            self.relations_tab()
-        elif game.switches['options_tab'] == "Roles Tab":
-            self.roles_tab()
-        elif game.switches['options_tab'] == "Personal Tab":
-            self.personal_tab()
-        elif game.switches['options_tab'] == "Dangerous Tab":
-            self.dangerous_tab()
-        else:
-            self.relations_tab()
 
         if game.switches['deputy_switch'] is not False and game.switches[
                 'deputy_switch'] is not None and game.switches[
@@ -706,7 +986,7 @@ class ChangeNameScreen(Screens):
                             text='Change Name',
                             cur_screen='change name screen',
                             cat_value=game.switches['name_cat'])
-        draw_back('center', -50)
+        draw_back(25, 25)
 
 class ChangeGenderScreen(Screens):
 
@@ -718,4 +998,4 @@ class ChangeGenderScreen(Screens):
                             text=' Change Gender ',
                             cur_screen='change gender screen',
                             cat_value=game.switches['name_cat'])
-        draw_back('center', -50)
+        draw_back(25, 25)

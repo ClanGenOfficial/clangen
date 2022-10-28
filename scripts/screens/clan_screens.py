@@ -198,10 +198,10 @@ class StarClanScreen(Screens):
                 dead_cats.append(the_cat)
 
         search_text = game.switches['search_text']
-        pygame.draw.rect(screen, 'lightgray', pygame.Rect((170, 130),
+        pygame.draw.rect(screen, 'lightgray', pygame.Rect((530, 140),
                                                           (150, 20)))
-        verdana_white.text('Search: ', (100, 130))
-        verdana_black.text(game.switches['search_text'], (180, 130))
+        verdana.text('Search: ', (468, 140))
+        verdana_black.text(game.switches['search_text'], (540, 140))
         search_cats = []
         if search_text.strip() != '':
             for cat in dead_cats:
@@ -278,10 +278,11 @@ class ListScreen(Screens):
                 living_cats.append(the_cat)
 
         search_text = game.switches['search_text']
-        pygame.draw.rect(screen, 'lightgray', pygame.Rect((530, 140),
-                                                          (150, 20)))
-        verdana.text('Search: ', (468, 140))
-        verdana_black.text(game.switches['search_text'], (540, 140))
+        search_bar = pygame.transform.scale(
+            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
+        screen.blit(search_bar, (452, 135))
+        verdana_black.text(game.switches['search_text'], (530, 142))
+
         search_cats = []
         if search_text.strip() != '':
             for cat in living_cats:

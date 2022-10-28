@@ -96,7 +96,7 @@ def draw_clan_name():
         pygame.image.load("resources/images/clan_name_bg.png").convert_alpha(), (180, 35))
     screen.blit(clan_name_bg, (310, 25))
 
-    verdana_big.text(f'{game.clan.name}Clan', ('center', 32))
+    verdana_big_light.text(f'{game.clan.name}Clan', ('center', 32))
 
 def draw_next_prev_cat_buttons(the_cat):
     is_instructor = False
@@ -130,13 +130,19 @@ def draw_next_prev_cat_buttons(the_cat):
     if next_cat == 1:
         next_cat = 0
     if next_cat != 0:
-        buttons.draw_button((-40, 40),
-                            text='Next Cat',
-                            cat=next_cat,
-                            hotkey=[21])
+        buttons.draw_image_button((622, 25),
+                                  button_name='next_cat',
+                                  text='Next Cat',
+                                  cat=next_cat,
+                                  size=(153, 30),
+                                  hotkey=[21]
+                                  )
 
     if previous_cat != 0:
-        buttons.draw_button((40, 40),
-                            text='Previous Cat',
-                            cat=previous_cat,
-                            hotkey=[23])
+        buttons.draw_image_button((25, 25),
+                                  button_name='previous_cat',
+                                  text='Previous Cat',
+                                  cat=previous_cat,
+                                  size=(153, 30),
+                                  hotkey=[23]
+                                  )

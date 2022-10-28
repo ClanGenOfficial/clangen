@@ -15,7 +15,7 @@ class OutsideClanScreen(Screens):
         clan_name_bg = pygame.transform.scale(
             pygame.image.load("resources/images/outside_clan_bg.png").convert_alpha(), (242, 35))
         screen.blit(clan_name_bg, (279, 25))
-        verdana_big.text('Cats Outside The Clan', ('center', 32))
+        verdana_big_light.text('Cats Outside The Clan', ('center', 32))
 
         living_cats = []
         for x in range(len(Cat.all_cats.values())):
@@ -24,10 +24,11 @@ class OutsideClanScreen(Screens):
                 living_cats.append(the_cat)
 
         search_text = game.switches['search_text']
-        pygame.draw.rect(screen, 'lightgray', pygame.Rect((530, 140),
-                                                          (150, 20)))
-        verdana.text('Search: ', (468, 140))
-        verdana_black.text(game.switches['search_text'], (540, 140))
+        search_bar = pygame.transform.scale(
+            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
+        screen.blit(search_bar, (452, 135))
+        verdana_black.text(game.switches['search_text'], (530, 142))
+
         search_cats = []
         if search_text.strip() != '':
             for cat in living_cats:
