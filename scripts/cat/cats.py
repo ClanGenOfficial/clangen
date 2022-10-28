@@ -277,23 +277,24 @@ class Cat(object):
         self.status = new_status
         self.name.status = new_status
         # revealing of traits and skills
-        self.update_traits(new_status)
+        self.update_traits(self.status)
         # updates mentors
-        if new_status == 'apprentice':
+        if self.status == 'apprentice':
             self.update_mentor()
-        elif new_status == 'medicine cat apprentice':
+        elif self.status == 'medicine cat apprentice':
             self.update_med_mentor()
         # updates skill
         if self.skill == '???':
-            if self.status == 'warrior' and new_status != 'medicine cat':
+            if self.status == 'warrior':
                 self.skill = choice(self.skills)
                 self.update_mentor()
-            elif new_status == 'medicine cat':
+            elif self.status == 'medicine cat':
                 self.skill = choice(self.med_skills)
+                game.clan.med_cat_number += 1
                 self.update_med_mentor()
         else:
             self.skill = self.skill
-        if new_status == 'elder' and self.status != 'leader' and self.status != 'medicine cat':
+        if self.status == 'elder':
             self.skill = choice(self.elder_skills)
 
         # update class dictionary
