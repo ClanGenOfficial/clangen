@@ -199,9 +199,12 @@ def init_scars(cat):
         ])
     else:
         cat.specialty = None
-    if cat.specialty == 'NOTAIL' and cat.specialty2 == 'HALFTAIL':
-        cat.specialty2 = None
 
+    if cat.specialty == 'NOTAIL':
+        if cat.specialty2 == 'HALFTAIL':
+            cat.specialty2 = None
+        else:
+            pass
     scar_choice2 = randint(0, 30)
     if cat.age in ['kitten', 'adolescent']:
         scar_choice2 = randint(0, 100)
