@@ -930,28 +930,68 @@ class OptionsScreen(Screens):
             game.switches['kill_cat'].die()
             game.switches['kill_cat'] = False
 
+
 class ChangeNameScreen(Screens):
 
     def on_use(self):
+        the_cat = Cat.all_cats.get(game.switches['cat'])
+
         draw_text_bar()
-        verdana.text('Change Name', ('center', 50))
+        verdana.text('-Change Name-', ('center', 130))
         verdana.text('Add a space between the new prefix and suffix',
-                     ('center', 70))
-        verdana.text('i.e. Fire heart', ('center', 90))
-        buttons.draw_button(('center', -100),
-                            text='Change Name',
-                            cur_screen='change name screen',
-                            cat_value=game.switches['name_cat'])
+                     ('center', 150))
+        verdana.text('i.e. Fire heart', ('center', 170))
+
+        buttons.draw_image_button((365, 272),
+                                  button_name='done',
+                                  text='done',
+                                  size=(77, 30),
+                                  change_name=['naming_text'],
+                                  )
+
+        if game.switches['change_name'] != '':
+            name = game.switches['naming_text'].split(' ')
+            the_cat.name.prefix = name[0]
+            if len(name) > 1:
+                # If cat is an apprentice/kit and new suffix is paw/kit, leave hidden suffix unchanged
+                if not (the_cat.name.status == "apprentice" and name[1] == "paw") and \
+                        not (the_cat.name.status == "kitten" and name[1] == "kit"):
+                    the_cat.name.suffix = name[1]
+            game.save_cats()
+            game.switches['naming_text'] = ''
+            game.switches['cur_screen'] = 'name changed screen'
         draw_back(25, 25)
 
+
+class NameChangedScreen(Screens):
+    def on_use(self):
+        the_cat = Cat.all_cats.get(game.switches['cat'])
+
+        draw_text_bar()
+        verdana.text('-Change Name-', ('center', 130))
+        verdana.text('Add a space between the new prefix and suffix',
+                     ('center', 150))
+        verdana.text('i.e. Fire heart', ('center', 170))
+
+        buttons.draw_image_button((365, 272),
+                                  button_name='done',
+                                  text='done',
+                                  size=(77, 30),
+                                  name_cat=['naming_text'],
+                                  available=False
+                                  )
+
+        game.switches['change_name'] = ''
+        verdana.text('Name changed!', ('center', 240))
+
+        draw_back(25, 25)
 
 class ChangeGenderScreen(Screens):
 
     def on_use(self):
-        gender_chosen = False
         the_cat = Cat.all_cats.get(game.switches['cat'])
         draw_text_bar()
-        verdana.text('Change Gender', ('center', 130))
+        verdana.text('-Change Gender-', ('center', 130))
         verdana.text('You can set this to anything.', ('center', 150))
         buttons.draw_image_button((365, 272),
                                   button_name='done',
