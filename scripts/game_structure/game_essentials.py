@@ -92,7 +92,8 @@ class Game(object):
         'hunting_territory': (0, 0),
         'training_territory': (0, 0),
         'options_tab': None,
-        'profile_tab_group': None
+        'profile_tab_group': None,
+        'gender_align': None
 
 
     }

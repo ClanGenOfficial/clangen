@@ -181,10 +181,7 @@ class Button(object):
             elif text == 'Change Name' and game.switches['naming_text'] != '':
                 self.change_name(game.switches['naming_text'],
                                  game.switches['name_cat'])
-            elif text == ' Change Gender ' and game.switches[
-                    'naming_text'] != '':
-                self.change_gender(game.switches['naming_text'],
-                                   game.switches['name_cat'])
+
             elif text in ['Next Cat', 'Previous Cat']:
                 game.switches['cat'] = values.get('cat')
             elif text == 'Prevent kits':
@@ -362,12 +359,7 @@ class Button(object):
             game.save_cats()
             game.switches['naming_text'] = ''
 
-    def change_gender(self, name, cat_value):
-        cat_value = Cat.all_cats.get(cat_value)
-        if game.switches['naming_text'] != '':
-            cat_value.genderalign = game.switches['naming_text']
-            game.save_cats()
-            game.switches['naming_text'] = ''
+
 
 
 # BUTTONS
