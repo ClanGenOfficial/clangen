@@ -176,6 +176,10 @@ class PatrolEventScreen(Screens):
                 game.settings.get('disasters')
             )
             patrol.patrol_event = choice(possible_events)
+            if patrol.patrol_event.win_trait is not None:
+                win_trait = patrol.patrol_event.win_trait
+                patrol_trait = patrol.patrol_traits.index(win_trait)
+                patrol.patrol_stat_cat = patrol.patrol_cats[patrol_trait]
             game.switches['event'] = -1
         if game.switches['event'] == -1:
             intro_text = patrol.patrol_event.intro_text
