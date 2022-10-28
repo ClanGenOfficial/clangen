@@ -837,7 +837,7 @@ class Patrol(object):
     def handle_clan_relations(self, difference):
         other_clan = patrol.other_clan
         otherclan = game.clan.all_clans.index(other_clan)
-        clan_relations = game.clan.all_clans[otherclan].relations
+        clan_relations = int(game.clan.all_clans[otherclan].relations)
         if self.patrol_event.patrol_id in list(range(800, 806)):
             if patrol.success is True:
                 clan_relations += difference

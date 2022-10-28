@@ -768,10 +768,13 @@ class Events(object):
 
         amount = choice([1, 1, 2, 2, 2, 3]) if litter else 1
         created_cats = []
+        a = randint(0, 10)
         for number in range(amount):
             new_cat = None
             if loner_name:
                 new_cat = Cat(moons=age, prefix=name, suffix='', status=status, gender=choice(['female', 'male']))
+            elif loner_name and a == 1:
+                    new_cat = Cat(moons=age, prefix=name, status=status, gender=choice(['female', 'male']))
             else:
                 new_cat = Cat(moons=age, status=status, gender=choice(['female', 'male']))
             if skill:

@@ -219,8 +219,9 @@ def init_scars(cat):
         ])
     else:
         cat.specialty2 = None
-    if cat.specialty2 == 'NOTAIL' and cat.specialty == 'HALFTAIL':
-        cat.specialty == None
+    if cat.specialty2 == 'NOTAIL':
+        if cat.specialty == 'HALFTAIL':
+            cat.specialty == None
 
 def init_accessories(cat):
     acc_display_choice = randint(0, 35)
