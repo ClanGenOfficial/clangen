@@ -146,17 +146,17 @@ class Patrol(object):
                 else:
                     break
         else:
-            self.patrol_random_cat = choice(self.patrol_cats)
-        
+            self.patrol_random_cat = choice(self.patrol_cats)        
         if len(self.patrol_cats) >= 3:
             for cat in self.patrol_cats:
                 if cat != self.patrol_leader and cat != self.patrol_random_cat:
-                    self.patrol_other_cats.append(cat)
-                    
+                    self.patrol_other_cats.append(cat)                    
         if self.patrol_leader is not None:
             pl_index = self.patrol_cats.index(self.patrol_leader)
             patrol_leader_name = str(self.patrol_names[pl_index])
             self.patrol_leader_name = str(patrol_leader_name)
+
+        self.other_clan = choice(game.clan.all_clans)
 
 
     def get_possible_patrols(self, current_season, biome, all_clans, game_setting_disaster):
@@ -262,7 +262,7 @@ class Patrol(object):
                 'You run away from the other patrol', 60, 10,
                 other_clan,
                 win_skills=['great fighter', 'excellent fighter', 'excellent speaker'],
-                win_trait='fierce',
+                win_trait = 'fierce',
                 antagonize_text='Your cats chase o_c_n away as they flee',
                 antagonize_fail_text='r_c is killed by the o_c_n patrol'
                 )
@@ -277,7 +277,7 @@ class Patrol(object):
                 'You run away from the other patrol', 60, 10,
                 other_clan,
                 win_skills=['great fighter', 'excellent fighter', 'excellent speaker'],
-                win_trait= 'bloodthirsty',
+                win_trait = 'bloodthirsty',
                 antagonize_text= 'Your cats chase o_c_n away as they flee',
                 antagonize_fail_text= 'r_c is killed by the o_c_n patrol'
                 )
@@ -718,11 +718,6 @@ class Patrol(object):
                 win_skills = patrol["win_skills"]
             )
             all_patrol_events.append(patrol_event)
-            
-        if self.patrol_event.win_trait is not None:
-            win_trait = self.patrol_event.win_trait
-            patrol_trait = self.patrol_traits.index(win_trait)
-            self.patrol_stat_cat = self.patrol_cats[patrol_trait]
 
         return all_patrol_events
 
@@ -795,7 +790,7 @@ class Patrol(object):
 
     def handle_deaths(self):
         if self.patrol_event.patrol_id in [
-                108, 113, 114, 116, 120, 141, 250, 305, 307
+                108, 113, 114, 120, 141, 250, 305, 307, 802, 803, 804
         ]:
             if self.patrol_random_cat.status == 'leader':
                 if self.patrol_event.patrol_id in [108, 113]:
@@ -1056,10 +1051,11 @@ class PatrolEvent(object):
                  decline_text,
                  chance_of_success,
                  exp,
-                 other_clan=None,
-                 win_skills=None,
-                 antagonize_text='',
-                 antagonize_fail_text=''):
+                 other_clan = None,
+                 win_skills = None,
+                 win_trait = None,
+                 antagonize_text = '',
+                 antagonize_fail_text = ''):
         self.patrol_id = patrol_id
         self.intro_text = intro_text
         self.success_text = success_text
@@ -1069,6 +1065,7 @@ class PatrolEvent(object):
         self.exp = exp
         self.other_clan = other_clan
         self.win_skills = win_skills
+        self.win_trait = win_trait
         self.antagonize_text = antagonize_text
         self.antagonize_fail_text = antagonize_fail_text
 
