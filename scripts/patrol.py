@@ -101,6 +101,7 @@ class Patrol(object):
         self.patrol_cats = []
         self.patrol_names = []
         self.possible_patrol_leaders = []
+        self.patrol_leader_name = None
         self.patrol_skills = []
         self.patrol_statuses = []
         self.patrol_traits = []
@@ -124,9 +125,8 @@ class Patrol(object):
         self.patrol_total_experience = 0
         self.patrol_other_cats.clear()
         for cat in game.switches['current_patrol']:
-            name = str(cat.name)
             self.patrol_cats.append(cat)
-            self.patrol_names.append(name)
+            self.patrol_names.append(str(cat.name))
             if cat.status != 'apprentice':
                 self.possible_patrol_leaders.append(cat)
             self.patrol_skills.append(cat.skill)
@@ -140,18 +140,23 @@ class Patrol(object):
             self.patrol_leader = choice(self.patrol_cats)
         if len(self.patrol_cats) >= 2:
             self.patrol_random_cat = choice(self.patrol_cats)
-            for self.patrol_names in self.patrol_cats:
+            for cat in self.patrol_cats:
                 if self.patrol_random_cat == self.patrol_leader:
                     self.patrol_random_cat = choice(self.patrol_cats)
                 else:
                     break
         else:
             self.patrol_random_cat = choice(self.patrol_cats)
-
+        
         if len(self.patrol_cats) >= 3:
-            for self.patrol_names in self.patrol_cats:
+            for cat in self.patrol_cats:
                 if cat != self.patrol_leader and cat != self.patrol_random_cat:
                     self.patrol_other_cats.append(cat)
+                    
+        if self.patrol_leader is not None:
+            pl_index = self.patrol_cats.index(self.patrol_leader)
+            patrol_leader_name = str(self.patrol_names[pl_index])
+            self.patrol_leader_name = str(patrol_leader_name)
 
 
     def get_possible_patrols(self, current_season, biome, all_clans, game_setting_disaster):
@@ -606,6 +611,7 @@ class Patrol(object):
             ])            
 
         return possible_patrols
+        
 
     def generate_patrol_events(self, patrol_dict):
         all_patrol_events = []
