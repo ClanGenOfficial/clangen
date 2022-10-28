@@ -158,6 +158,13 @@ class EventsScreen(Screens):
 
 class PatrolEventScreen(Screens):
 
+    def get_list_text(self, patrol_list):
+        if not patrol_list:
+            return "None"
+        # Removes duplicates.
+        patrol_set = list(patrol_list)
+        return ", ".join(patrol_set)
+
     def on_use(self):
         verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
         if game.switches['event'] == 0:
@@ -256,11 +263,11 @@ class PatrolEventScreen(Screens):
 
         for u in range(6):
             if u < len(patrol.patrol_cats):
-                draw(game.patrol_cats[u],(50, 200 + 50 * (u)))
+                draw(patrol.patrol_cats[u],(50, 200 + 50 * (u)))
         verdana_small.blit_text('season: ' + str(game.clan.current_season),
                                 (150, 400))
         verdana_small.blit_text(
-            'patrol leader: ' + str(patrol.patrol_leader.name), (150, 430))
+            'patrol leader: ' + patrol.patrol_leader_name, (150, 430))
         verdana_small.blit_text(
             'patrol members: ' + self.get_list_text(patrol.patrol_names),
             (150, 460))
@@ -271,13 +278,6 @@ class PatrolEventScreen(Screens):
             'patrol traits: ' + self.get_list_text(patrol.patrol_traits),
             (150, 560))
         draw_menu_buttons()
-
-    def get_list_text(self, patrol_list):
-        if not patrol_list:
-            return "None"
-        # Removes duplicates.
-        patrol_set = list(set(patrol_list))
-        return ", ".join(patrol_set)
 
     def screen_switches(self):
         game.switches['event'] = 0
