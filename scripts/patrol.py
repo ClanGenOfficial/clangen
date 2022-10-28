@@ -953,6 +953,9 @@ class Patrol(object):
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
+            elif randint(0, 3) == 0: #chance to have kittypet name prefix + suffix
+                kit.name.prefix = choice(names.loner_names)
+                kit.name.suffix = choice(names.normal_suffixes)
             if self.patrol_event.patrol_id == 501:
                 num_kits = choice([2, 2, 2, 2, 3, 4])
                 for _ in range(num_kits):
@@ -1005,6 +1008,9 @@ class Patrol(object):
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
+            elif randint(0, 3) == 0:
+                kit.name.prefix = choice(names.loner_names)
+                kit.name.suffix = choice(names.normal_suffixes)
 
         elif self.patrol_event.patrol_id in [505]:  # new med cat
             new_status = choice(['medicine cat'])
@@ -1029,6 +1035,9 @@ class Patrol(object):
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
+            elif randint(0, 3) == 0:
+                kit.name.prefix = choice(names.loner_names)
+                kit.name.suffix = choice(names.normal_suffixes)
     def check_territories(self):
         hunting_claim = str(game.clan.name) + 'Clan Hunting Grounds'
         self.hunting_grounds = []
