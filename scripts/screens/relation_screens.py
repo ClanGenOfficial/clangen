@@ -799,7 +799,7 @@ class RelationshipScreen(Screens):
                             text='Back',
                             cur_screen='profile screen')
 
-    def draw_bar(value, pos_x, pos_y):
+    def draw_bar(self, value, pos_x, pos_y):
         # Loading Bar and variables
         bar_bg = pygame.image.load(
             "resources/images/relations_border.png").convert_alpha()
