@@ -337,8 +337,7 @@ class Clan(object):
             for other_clan in other_clans:
                 other_clan_info = other_clan.split(';')
                 self.all_clans.append(
-                    OtherClan(other_clan_info[0], other_clan_info[1],
-                              other_clan_info[2]))
+                    OtherClan(other_clan_info[0],int(other_clan_info[1]),other_clan_info[2]))
 
         else:
             number_other_clans = randint(3, 5)
@@ -358,7 +357,7 @@ class OtherClan(object):
 
     def __init__(self, name='', relations=0, temperament=''):
         self.name = name or choice(names.normal_prefixes)
-        self.relations = relations or randint(10, 15)
+        self.relations = relations or randint(8, 12)
         self.temperament = temperament or choice([
             'bloodthirsty', 'righteous', 'strict', 'kind', 'calm',
             'progressive', 'faithful', 'thoughtful', 'compassionate',
