@@ -771,7 +771,6 @@ class Patrol(object):
             if c < chance:
                 self.success = True
                 self.handle_exp_gain()
-                self.add_new_cats()
                 self.handle_clan_relations(difference = int(-1))
             else:
                 self.success = False
