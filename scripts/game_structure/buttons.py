@@ -343,19 +343,7 @@ class Button(object):
         game.current_screen = 'clan screen'
         game.save_cats()
 
-    def change_name(self, name, cat_value):
-        """Changes name of cat_value to name specified in textbox"""
-        cat_value = Cat.all_cats.get(cat_value)
-        if game.switches['naming_text'] != '':
-            name = game.switches['naming_text'].split(' ')
-            cat_value.name.prefix = name[0]
-            if len(name) > 1:
-                # If cat is an apprentice/kit and new suffix is paw/kit, leave hidden suffix unchanged
-                if not (cat_value.name.status == "apprentice" and name[1] == "paw") and \
-                    not (cat_value.name.status == "kitten" and name[1] == "kit"):
-                    cat_value.name.suffix = name[1]
-            game.save_cats()
-            game.switches['naming_text'] = ''
+
 
 
 

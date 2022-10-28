@@ -116,7 +116,7 @@ class ProfileScreen(Screens):
             elif game.clan.current_season == 'Leaf-fall':
                 screen.blit(self.leaffall_plt, (55, 200))
 
-        draw_large(the_cat,(100, 200)) # IMAGE
+        draw_large(the_cat, (100, 200)) # IMAGE
 
         # THOUGHT
         if len(the_cat.thought) < 100:
@@ -359,19 +359,19 @@ class ProfileScreen(Screens):
                                       button_name='see_family',
                                       text='see family',
                                       size=(172, 36),
-                                      cur_screen='relationship screen')
+                                      cur_screen='see kits screen')
             if not the_cat.dead:
                 buttons.draw_image_button((50, 486),
                                           button_name='see_relationships',
                                           text='see relationships',
                                           size=(172, 36),
-                                          cur_screen='see kits screen')
+                                          cur_screen='relationship screen')
             else:
                 buttons.draw_image_button((50, 486),
                                           button_name='see_relationships',
                                           text='see relationships',
                                           size=(172, 36),
-                                          cur_screen='see kits screen',
+                                          cur_screen='relationship screen',
                                           available=False)
             if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
                                ] and not the_cat.dead:
@@ -621,7 +621,7 @@ class ProfileScreen(Screens):
                                       cur_screen='change gender screen'
                                       )
             if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
-                               ] and not the_cat.no_kits:
+                               ] and not the_cat.no_kits and not the_cat.dead:
                 buttons.draw_image_button((402, 574),
                                           button_name='prevent_kits',
                                           text='Prevent kits',
@@ -630,7 +630,7 @@ class ProfileScreen(Screens):
                                           size=(172, 36)
                                           )
             elif the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
-                                 ] and the_cat.no_kits:
+                                 ] and the_cat.no_kits and not the_cat.dead:
                 buttons.draw_image_button((402, 574),
                                           button_name='allow_kits',
                                           text='Allow kits',
@@ -957,7 +957,6 @@ class ChangeNameScreen(Screens):
                 if not (the_cat.name.status == "apprentice" and name[1] == "paw") and \
                         not (the_cat.name.status == "kitten" and name[1] == "kit"):
                     the_cat.name.suffix = name[1]
-            game.save_cats()
             game.switches['naming_text'] = ''
             game.switches['cur_screen'] = 'name changed screen'
         draw_back(25, 25)
@@ -1002,7 +1001,6 @@ class ChangeGenderScreen(Screens):
 
         if game.switches['gender_align'] == game.switches['naming_text']:
             the_cat.genderalign = game.switches['gender_align']
-            game.save_cats()
             game.switches['naming_text'] = ''
             game.switches['cur_screen'] = 'gender changed screen'
 

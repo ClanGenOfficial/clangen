@@ -107,10 +107,12 @@ class SwitchClanScreen(Screens):
                     switch_clan=game.switches['clan_list'][i],
                     hotkey=[i + 1])
 
-        buttons.draw_button((50, 50),
-                            text='<< Back to Main Menu',
-                            cur_screen='start screen',
-                            hotkey=[0])
+        buttons.draw_image_button((25, 25),
+                                  button_name='main_menu',
+                                  text='< Back to Main Menu',
+                                  cur_screen='start screen',
+                                  size=(153, 30),
+                                  hotkey=[0])
 
 class SettingsScreen(Screens):
     text_size = {
@@ -160,9 +162,12 @@ class SettingsScreen(Screens):
                             setting='hotkey display')
 
         # other buttons
-        buttons.draw_button((50, 50),
-                            text='<< Back to Main Menu',
-                            cur_screen='start screen')
+        buttons.draw_image_button((25, 25),
+                                  button_name='main_menu',
+                                  text='< Back to Main Menu',
+                                  cur_screen='start screen',
+                                  size=(153, 30),
+                                  hotkey=[0])
         if game.settings_changed:
             buttons.draw_button(('center', -130),
                                 text='Save Settings',
@@ -231,9 +236,12 @@ class RelationshipSettingsScreen(Screens):
                             setting='romantic with former mentor')
 
         # other buttons
-        buttons.draw_button((50, 50),
-                            text='<< Back to Main Menu',
-                            cur_screen='start screen')
+        buttons.draw_image_button((25, 25),
+                                  button_name='main_menu',
+                                  text='< Back to Main Menu',
+                                  cur_screen='start screen',
+                                  size=(153, 30),
+                                  hotkey=[0])
         if game.settings_changed:
             buttons.draw_button(('center', -130),
                                 text='Save Settings',
@@ -282,9 +290,12 @@ class InfoScreen(Screens):
         verdana.text("Thank you for playing!!", ('center', 550))
 
         # other buttons
-        buttons.draw_button((50, 50),
-                            text='<< Back to Main Menu',
-                            cur_screen='start screen')
+        buttons.draw_image_button((25, 25),
+                                  button_name='main_menu',
+                                  text='< Back to Main Menu',
+                                  cur_screen='start screen',
+                                  size=(153, 30),
+                                  hotkey=[0])
 
 class LanguageScreen(Screens):
 
@@ -317,9 +328,12 @@ class LanguageScreen(Screens):
                 game.switch_language()
 
         # other buttons
-        buttons.draw_button((50, 50),
-                            text='<< Back to Main Menu',
-                            cur_screen='start screen')
+        buttons.draw_image_button((25, 25),
+                                  button_name='main_menu',
+                                  text='< Back to Main Menu',
+                                  cur_screen='start screen',
+                                  size=(153, 30),
+                                  hotkey=[0])
         if game.settings_changed:
             buttons.draw_button(('center', -150),
                                 text='Save Settings',

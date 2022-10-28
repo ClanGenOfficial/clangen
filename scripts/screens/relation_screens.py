@@ -552,11 +552,14 @@ class RelationshipScreen(Screens):
                             setting='show empty relation')
 
         # make a list of the relationships
+
         search_text = game.switches['search_text']
-        pygame.draw.rect(screen, 'lightgray', pygame.Rect((620, 670),
-                                                          (150, 20)))
-        verdana.text('Search: ', (550, 670))
-        verdana_black.text(game.switches['search_text'], (630, 670))
+        search_bar = pygame.transform.scale(
+            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
+        screen.blit(search_bar, (547, 641))
+        verdana_black.text(game.switches['search_text'], (608, 648))
+
+
         search_relations = []
         if search_text.strip() != '':
             for rel in the_cat.relationships:
@@ -795,9 +798,13 @@ class RelationshipScreen(Screens):
                                 list_page=game.switches['list_page'] + 1,
                                 hotkey=[21])
 
-        buttons.draw_button(('center', 670),
-                            text='Back',
-                            cur_screen='profile screen')
+        buttons.draw_image_button((25, 645),
+                                  button_name='back',
+                                  text='Back',
+                                  size=(105, 30),
+                                  cur_screen='profile screen')
+
+
 
     def screen_switches(self):
         cat_profiles()
