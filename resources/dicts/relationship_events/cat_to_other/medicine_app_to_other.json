@@ -7,7 +7,8 @@
         ],
         "friendly": [
             "Train playfully with (cat)",
-            "Gave (cat) a trinket they found while out on patrol today"
+            "Gave (cat) a trinket they found while out on patrol today",
+            "Is charmed to hear that (cat) really admires them"
         ],
         "close": []
     },
@@ -43,7 +44,12 @@
     },
     "medicine cat": {
         "unfriendly": [],
-        "neutral": [],
+        "neutral": [
+            "Watched (cat) show kindness and compassion towards their patients",
+            "Caught a glimpse of (cat) caring for a wounded warrior with confidence and grace",
+            "Feels like (cat) isn't taking their health seriously",
+            "Went to (cat) for advice about a dream they had"
+        ],
         "friendly": [],
         "close": []
     },

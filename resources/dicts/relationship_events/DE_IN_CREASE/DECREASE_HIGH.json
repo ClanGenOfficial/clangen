@@ -19,7 +19,9 @@
             "Is cross with (cat) for getting dirt all over the fresh-kill pile",
             "Tried to have a discussion with (cat) about what prey tastes best, but it turned into an argument"
         ],
-        "dislike": [],
+        "dislike": [
+            "Realized that they were too harsh in their judgment of (cat)"
+        ],
         "admiration": [
             "Is frustrated that (cat) won't take their duties more seriously",
             "Is annoyed by the mess (cat) made",
@@ -28,7 +30,10 @@
             "Was distracted while (cat) was telling a story"
         ],
         "comfortable": [
-            "Is stuttering while speaking to (cat)","Glaring at (cat) from across the camp"
+            "Is stuttering while speaking to (cat)",
+            "Glaring at (cat) from across the camp",
+            "Heard an ugly rumor about (cat)",
+            "Feels like (cat) isn't taking their health seriously"
         ],
         "jealousy": [],
         "trust": [

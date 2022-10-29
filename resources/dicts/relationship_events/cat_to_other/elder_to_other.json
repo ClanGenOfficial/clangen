@@ -1,7 +1,8 @@
 {
     "kitten": {
         "unfriendly": [
-            "Is scolding (cat)"
+            "Is scolding (cat)",
+            "Is charmed to hear that (cat) really admires them"
         ],
         "neutral": [],
         "friendly": [],
@@ -15,7 +16,8 @@
         "neutral": [
             "Is frustrated that (cat) won't take their duties more seriously",
             "Bestowing wisdom onto (cat)",
-            "Is asking (cat) to check them for ticks"
+            "Is asking (cat) to check them for ticks",
+            "Feels like (cat) isn't taking their health seriously"
         ],
         "friendly": [],
         "close": []
@@ -47,7 +49,7 @@
     },
     "medicine cat": {
         "unfriendly": [],
-        "neutral": [],
+        "neutral": ["Went to (cat) for advice about a dream they had"],
         "friendly": [],
         "close": []
     },
