@@ -8,7 +8,7 @@ from .names import *
 from .sprites import *
 from .thoughts import *
 from .appearance_utility import *
-from scripts.conditions import Illness, Injuries
+from scripts.conditions import Illness, Injury
 
 from scripts.utility import *
 from scripts.game_structure.game_essentials import *
@@ -122,6 +122,8 @@ class Cat(object):
         self.accessory = None
         self.birth_cooldown = 0
         self.siblings = []
+        self.illness = None
+        self.injury = None
 
         # setting ID
         if ID is None:
@@ -501,6 +503,7 @@ class Cat(object):
 # ---------------------------------------------------------------------------- #
 #                            !IMPORTANT INFORMATION!                           #
 #   conditions ar currently not integrated, this are just the base functions   #
+#    me (Lixxis) will integrate them after tests are written and completed     #
 # ---------------------------------------------------------------------------- #
 
     def moon_skip_illness(self):
@@ -592,6 +595,7 @@ class Cat(object):
 # ---------------------------------------------------------------------------- #
 #                            !IMPORTANT INFORMATION!                           #
 #   conditions ar currently not integrated, this are just the base functions   #
+#    me (Lixxis) will integrate them after tests are written and completed     #
 # ---------------------------------------------------------------------------- #
 # ---------------------------------------------------------------------------- #
 #                                  conditions                                  #
@@ -622,7 +626,7 @@ class Cat(object):
             return
 
         injury = INJURIES[name]
-        self.injury = Injuries(
+        self.injury = Injury(
             name,
             duration = injury["duration"],
             medicine_duration = injury["medicine_duration"], 

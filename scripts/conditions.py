@@ -79,7 +79,7 @@ class Illness(object):
 #                                   Injuries                                   #
 # ---------------------------------------------------------------------------- #
 
-class Injuries(object):
+class Injury(object):
     def _init_(self, 
             name,
             duration,
