@@ -628,17 +628,12 @@ class RelationshipScreen(Screens):
                                              (game.switches['list_page'] - 1) *
                                              8]
             update_sprite(the_relationship.cat_to)
-            #link = 'relationship screen'
-            #if the_relationship.cat_to.dead:
-            #    link = 'profile screen'
+
 
             buttons.draw_button((312 + pos_x, 150 + pos_y),
                                 image=the_relationship.cat_to.sprite,
                                 chosen_cat=the_relationship.cat_to,
                                 show_details=True)
-
-            # SWITCH FOCUS / GO TO PROFILE BUTTONS
-
 
 
             # name length
