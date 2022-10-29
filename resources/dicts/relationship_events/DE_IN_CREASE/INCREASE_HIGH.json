@@ -18,7 +18,8 @@
             "Left a gift in (cat)'s nest for them to find",
             "Picked out the best piece of prey to share with (cat)",
             "Sneaks out at night to sleep in (cat)'s nest",
-            "Realizes their heart always flutters whenever they see (cat)"
+            "Realizes their heart always flutters whenever they see (cat)",
+            "Never realized how much they love spending time with (cat)"
         ],
         "like": [
             "Is telling a story to (cat)",
@@ -39,7 +40,11 @@
             "Took the time to help (apprentice) work through a technique they are struggling with",
             "Watching the shooting stars with (cat)",
             "Spent the whole day playing their favorite games with (cat)",
-            "Was playing with (cat) and learned a fun new battle move from them!"
+            "Was playing with (cat) and learned a fun new battle move from them!",
+            "Tells a joke that only (cat) can understand",
+            "Can't imagine their life if they never met (cat)",
+            "Hopes (cat) will be their friend forever",
+            "Helps (cat) work through something difficult that happened to them"
         ],
         "dislike": [
             "Is mocking (cat)",
@@ -53,7 +58,8 @@
             "Hissed at (cat)",
             "Tells (cat) to leave them alone",
             "Accuses (cat) of being a bad leader",
-            "Accuses (cat) of being a bad deputy"
+            "Accuses (cat) of being a bad deputy",
+            "Feels like (cat) isn't taking their health seriously"
         ],
         "admiration": [
             "Tells (cat) that they would like to be like them when they grows up",
@@ -63,7 +69,12 @@
             "Compliments (cat) for their good disposition",
             "Thinks that (cat) tells the best stories",
             "Was playing with (cat) and learned a fun new battle move from them!",
-            "Feels like they'll never accomplish as much as (cat)"
+            "Feels like they'll never accomplish as much as (cat)",
+            "Wants to become just like (cat) someday!",
+            "Watched (cat) show kindness and compassion towards their patients",
+            "Caught a glimpse of (cat) caring for a wounded warrior with confidence and grace",
+            "Spent some time hanging out with (cat) in the medicine den",
+            "Is wowed by how well (cat) did in training today!"
         ],
         "comfortable": [
             "Is telling a story to (cat)",
@@ -77,7 +88,10 @@
             "Is helping (cat) calm down",
             "Curled around (cat) to share warmth",
             "Watching the shooting stars with (cat)",
-            "Talks about dreams with (cat)"
+            "Talks about dreams with (cat)",
+            "Has snuggled up against (cat)",
+            "Feels most like them-self when they're around (cat)",
+            "Appreciates how (cat) always seems to ask how they're doing"
         ],
         "jealousy": [
             "Is jealous that (cat) is getting more attention than them",
@@ -90,7 +104,8 @@
             "Accuses to (cat) of cheating, to win so many practice fights",
             "Is jealous that (cat) got to fight in a border skirmish when they didn't",
             "Is jealous that (cat) got to go to the last gathering",
-            "Feels like they'll never accomplish as much as (cat)"
+            "Feels like they'll never accomplish as much as (cat)",
+            "Thinks it's unfair that (cat) always gets to go to gatherings"
         ],
         "trust": [
             "Is talking with (cat)",
@@ -146,7 +161,10 @@
             "Apologized to (cat) for possibly hurting their feelings",
             "Watching the shooting stars with (cat)",
             "Calmly explains hunting techniques to (cat) again for the fourth time today",
-            "Spent the whole day playing their favorite games with (cat)"
+            "Spent the whole day playing their favorite games with (cat)",
+            "Tells a joke that only (cat) can understand",
+            "Can't imagine their life if they never met (cat)",
+            "Helps (cat) work through something difficult that happened to them"
         ],
         "dislike": [
             "Is mocking (cat)",
@@ -180,7 +198,8 @@
             "Calmly explains hunting techniques to (cat) again for the fourth time today",
             "Is teaching (cat) how to walk without making a sound",
             "Thought of (cat) on the last patrol and took a rare herb with them",
-            "Is poised to help train (apprentice)"
+            "Is poised to help train (apprentice)",
+            "Tell (cat) a trick about a certain herb"
         ],
         "comfortable": [
             "Is telling a story to (cat)",
@@ -200,7 +219,9 @@
             "Watching the shooting stars with (cat)",
             "Is giving (cat) advice",
             "Grooms the grime off (cat)'s pelt",
-            "Is soothing (cat)'s irrational thoughts"
+            "Is soothing (cat)'s irrational thoughts",
+            "Has snuggled up against (cat)",
+            "Comforts (cat) after a nightmare"
         ],
         "jealousy": [],
         "trust": [

@@ -3,7 +3,8 @@
         "unfriendly": [],
         "neutral": [
             "Trips over (cat)",
-            "Is watching over (cat)"
+            "Is watching over (cat)",
+            "Is charmed to hear that (cat) really admires them"
         ],
         "friendly": [
             "Train playfully with (cat)",
@@ -20,7 +21,7 @@
             "Has a mock battle with (cat)",
             "Has been listening to (cat) talk about how hard training has been",
             "Is jealous that (cat) got praised by the leader",
-            "Doesn't understand how (cat) got so good at hunting"
+            "Thinks it's unfair that (cat) always gets to go to gatherings"
         ],
         "friendly": [
             "Was playing with (cat) and learned a fun new battle move from them!"
@@ -36,10 +37,14 @@
             "Has a mock battle with (cat)",
             "Has been listening to (cat) talk about how hard training has been",
             "Is jealous that (cat) got praised by the leader",
-            "Doesn't understand how (cat) got so good at hunting"
+            "Doesn't understand how (cat) got so good at hunting",
+            "Brings (cat) a piece of prey to share after a long day of training",
+            "Is wowed by how well (cat) did in training today!",
+            "Saw (cat) miss an easy catch today"
         ],
         "friendly": [
-            "Was playing with (cat) and learned a fun new battle move from them!"
+            "Was playing with (cat) and learned a fun new battle move from them!",
+            "Hopes they are assigned to patrol with (cat) tomorrow"
         ],
         "close": []
     },
@@ -47,16 +52,24 @@
         "unfriendly": [],
         "neutral": [
             "Is frustrated that (cat) won't take their duties more seriously",
-            "Is jealous that (cat) got to fight in a border skirmish when they didn't"
+            "Is jealous that (cat) got to fight in a border skirmish when they didn't",
+            "Saw (cat) miss an easy catch today"
         ],
-        "friendly": [],
+        "friendly": [
+            "Hopes they are assigned to patrol with (cat) tomorrow"
+        ],
         "close": []
     },
     "medicine cat": {
         "unfriendly": [],
         "neutral": [
             "Escorted (cat) so they could gather herbs",
-            "Thought of (cat) on the last patrol and took a rare herb with them"
+            "Thought of (cat) on the last patrol and took a rare herb with them",
+            "Watched (cat) show kindness and compassion towards their patients",
+            "Caught a glimpse of (cat) caring for a wounded warrior with confidence and grace",
+            "Spent some time hanging out with (cat) in the medicine den",
+            "Feels like (cat) isn't taking their health seriously",
+            "Went to (cat) for advice about a dream they had"
         ],
         "friendly": [],
         "close": []
@@ -65,7 +78,7 @@
         "unfriendly": [
             "Accuses (cat) of being a bad leader"
         ],
-        "neutral": [],
+        "neutral": ["Saw (cat) miss an easy catch today"],
         "friendly": [],
         "close": []
     },
@@ -74,7 +87,8 @@
             "Accuses (cat) of being a bad deputy"
         ],
         "neutral": [
-            "Is tired from (cat) putting them on so many patrols"
+            "Is tired from (cat) putting them on so many patrols",
+            "Saw (cat) miss an easy catch today"
         ],
         "friendly": [],
         "close": []

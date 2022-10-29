@@ -6,10 +6,13 @@
         "like": [
             "Is hiding from (cat)",
             "Complains about (cat)",
-            "Has been listening to (cat) talk about how hard training has been"
+            "Has been listening to (cat) talk about how hard training has been",
+            "Called (cat) the wrong name"
         ],
         "dislike": [],
-        "admiration": [],
+        "admiration": [
+            "Saw (cat) miss an easy catch today"
+        ],
         "comfortable": [
             "Chomps on (cat)'s ear"
         ],
@@ -26,7 +29,8 @@
         "like": [
             "Trips over (cat)",
             "Divides (cat) into extra patrols",
-            "Is watching (cat) scornfully"
+            "Is watching (cat) scornfully",
+            "Called (cat) the wrong name"
         ],
         "dislike": [
             "Feels bad that they caused a problem for (cat)"

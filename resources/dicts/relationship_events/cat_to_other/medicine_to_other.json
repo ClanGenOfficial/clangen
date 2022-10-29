@@ -9,7 +9,8 @@
             "Trips over (cat)",
             "Had to nip (cat) on the rump because they were being naughty",
             "Is watching (cat) perform an almost-decent hunting crouch",
-            "Is watching over (cat)"
+            "Is watching over (cat)",
+            "Is charmed to hear that (cat) really admires them"
         ],
         "friendly": [
             "Is giving (cat) a badger ride on their back!",
@@ -79,7 +80,10 @@
         "neutral": [
             "Is giving (cat) a task",
             "Is frustrated that (cat) won't take their duties more seriously",
-            "Has noticed (cat) isn't doing a lot of work lately"
+            "Has noticed (cat) isn't doing a lot of work lately",
+            "Feels like (cat) isn't taking their health seriously",
+            "Tell (cat) a trick about a certain herb",
+            "Went to (cat) for advice about a dream they had"
         ],
         "friendly": [],
         "close": [
