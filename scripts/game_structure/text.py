@@ -128,6 +128,7 @@ verdana_mid = Font('verdana', 13)
 verdana_big_white = Font('verdana', 18, colour='white')
 verdana_green = Font('verdana', colour='darkgreen')
 verdana_big_light = Font('verdana', 18, colour=(239, 229, 207))
+verdana_small_light = Font('verdana', 11, colour=(239, 229, 207))
 # for relationships, same color as bar
 verdana_dark_magenta = Font('verdana', 11, colour=(226, 65, 103))
 verdana_magenta = Font('verdana', 11, colour=(133, 49, 40))

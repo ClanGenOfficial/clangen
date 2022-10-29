@@ -2,7 +2,7 @@ from math import ceil
 
 from .base_screens import Screens, draw_menu_buttons, cat_profiles, draw_next_prev_cat_buttons
 
-from scripts.utility import draw_large, update_sprite
+from scripts.utility import draw_large, draw, update_sprite
 from scripts.game_structure.buttons import buttons
 from scripts.game_structure.text import *
 from scripts.cat.cats import Cat
@@ -394,7 +394,7 @@ class ChooseMateScreen(Screens):
             'Chances of having kittens when possible is heightened though.',
             ('center', 110))
 
-        draw_large(the_cat,(200, 130))
+        draw_large(the_cat, (200, 130))
         self._extracted_from_on_use_29(the_cat, 70)
         mate = None
         if game.switches['mate'] is not None and the_cat.mate is None:
@@ -536,21 +536,6 @@ class RelationshipScreen(Screens):
         # back and next buttons on the relationships page
         draw_next_prev_cat_buttons(the_cat)
 
-        # button for better displaying
-        verdana_small.text(
-            f"Display dead {self.bool[game.settings['show dead relation']]}",
-            (50, 650))
-        buttons.draw_button((50, 670),
-                            text='switch',
-                            setting='show dead relation')
-
-        verdana_small.text(
-            f"Display empty value {self.bool[game.settings['show empty relation']]}",
-            (180, 650))
-        buttons.draw_button((180, 670),
-                            text='switch',
-                            setting='show empty relation')
-
         # USER INTERFACE ART
         search_text = game.switches['search_text']
         search_bar = pygame.transform.scale(
@@ -571,6 +556,75 @@ class RelationshipScreen(Screens):
             pygame.image.load("resources/images/relationship_list_frame.png").convert_alpha(), (502, 500))
         screen.blit(list_frame, (273, 122))
 
+        # button for better displaying
+        verdana_mid.text(
+            f"Show Dead",
+            (70, 513))
+        if game.settings['show dead relation'] is False:
+            buttons.draw_image_button((169, 505),
+                                      button_name='on',
+                                      size=(46, 34),
+                                      text='switch',
+                                      setting='show dead relation',
+                                      )
+            buttons.draw_image_button((215, 505),
+                                      button_name='off',
+                                      size=(46, 34),
+                                      text='switch',
+                                      setting='show dead relation',
+                                      available=False
+                                      )
+
+        if game.settings['show dead relation'] is True:
+            buttons.draw_image_button((169, 505),
+                                      button_name='on',
+                                      size=(46, 34),
+                                      text='switch',
+                                      setting='show dead relation',
+                                      available=False
+                                      )
+            buttons.draw_image_button((215, 505),
+                                      button_name='off',
+                                      size=(46, 34),
+                                      text='switch',
+                                      setting='show dead relation',
+                                      )
+
+        verdana_mid.text(
+            f"Show Empty",
+            (70, 558))
+        if game.settings['show empty relation'] is False:
+            buttons.draw_image_button((169, 550),
+                                      button_name='on',
+                                      size=(46, 34),
+                                      text='switch',
+                                      setting='show empty relation'
+                                      )
+            buttons.draw_image_button((215, 550),
+                                      button_name='off',
+                                      size=(46, 34),
+                                      text='switch',
+                                      setting='show empty relation',
+                                      available=False
+                                      )
+
+        if game.settings['show empty relation'] is True:
+            buttons.draw_image_button((169, 550),
+                                      button_name='on',
+                                      size=(46, 34),
+                                      text='switch',
+                                      setting='show empty relation',
+                                      available=False
+                                      )
+            buttons.draw_image_button((215, 550),
+                                      button_name='off',
+                                      size=(46, 34),
+                                      text='switch',
+                                      setting='show empty relation',
+                                      )
+
+
+
         # make a list of the relationships
         search_relations = []
         if search_text.strip() != '':
@@ -581,21 +635,23 @@ class RelationshipScreen(Screens):
             search_relations = the_cat.relationships.copy()
 
         # LAYOUT
-        verdana_big.text(str(the_cat.name) + ' Relationships', (35, 75))
+        verdana_big.text(str(the_cat.name) + ' Relationships', (80, 75))  # NAME
+        draw(the_cat, (25, 70))  #SPRITE
+
         if the_cat is None and the_cat.mate != '':
             mate = Cat.all_cats.get(the_cat.mate)
             if mate is None:
                 verdana_small.text(
                     f"{str(the_cat.genderalign)}  - {str(the_cat.age)} - {str(the_cat.trait)} -  mate: {str(mate.name)}",
-                    (50, 100))
+                    (80, 100))
             else:
                 verdana_small.text(
                     f"{str(the_cat.genderalign)}  - {str(the_cat.age)} - {str(the_cat.trait)}",
-                    (50, 100))
+                    (80, 100))
         else:
             verdana_small.text(
                 f"{str(the_cat.genderalign)}  - {str(the_cat.age)} - {str(the_cat.trait)}",
-                (50, 100))
+                (80, 100))
 
         # filter relationships based on the settings #TOGGLE IMAGES NOT DONE YET
         if not game.settings['show dead relation']:
@@ -644,7 +700,7 @@ class RelationshipScreen(Screens):
             check_age = (different_age and both_adult) or both_adult or not different_age
 
             if the_relationship.romantic_love > 49 and check_age:
-                verdana_magenta.text(
+                verdana_small_light.text(
                     'romantic love:',
                     (292 + pos_x, 181 + pos_y + count))
             else:
@@ -661,7 +717,7 @@ class RelationshipScreen(Screens):
             count += 5
 
             if the_relationship.platonic_like > 49:
-                verdana_magenta.text(
+                verdana_small_light.text(
                     'platonic love:',
                     (292 + pos_x, 179 + pos_y + count))
             else:
@@ -676,7 +732,7 @@ class RelationshipScreen(Screens):
             count += 5
 
             if the_relationship.dislike > 49:
-                verdana_magenta.text(
+                verdana_small_light.text(
                     'hate:',
                     (292 + pos_x, 177 + pos_y + count))
             else:
@@ -691,7 +747,7 @@ class RelationshipScreen(Screens):
             count += 5
 
             if the_relationship.admiration > 49:
-                verdana_magenta.text(
+                verdana_small_light.text(
                     'admiration:',
                     (292 + pos_x, 175 + pos_y + count))
             else:
