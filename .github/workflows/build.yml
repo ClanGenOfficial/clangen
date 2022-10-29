@@ -24,11 +24,10 @@ jobs:
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
       - name: Run PyInstaller
-        run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
-      - name: Create archive
-        run: |
-          mv dist clangen
-          tar -cavf Clangen_Linux64.tar.xz clangen
+        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
+        run: python -m PyInstaller Clangen.spec
+      - name: Create archive (.tar.xz)
+        run: tar -cavf Clangen_Linux64.tar.xz -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Linux64.tar.xz
@@ -60,11 +59,10 @@ jobs:
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
       - name: Run PyInstaller
-        run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
-      - name: Create archive
-        run: |
-          move dist clangen
-          tar.exe -a -c -f Clangen_Win32.zip clangen
+        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        run: python -m PyInstaller Clangen.spec
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win32.zip
@@ -96,11 +94,10 @@ jobs:
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
       - name: Run PyInstaller
-        run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
-      - name: Create archive
-        run: |
-          move dist clangen
-          tar.exe -a -c -f Clangen_Win64.zip clangen
+        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        run: python -m PyInstaller Clangen.spec
+      - name: Create archive (.zip)
+        run: tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_Win64.zip
@@ -132,11 +129,13 @@ jobs:
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
       - name: Run PyInstaller
-        run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
-      - name: Create archive
+        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
+        run: python -m PyInstaller Clangen.spec
+      - name: Create archive (.tar.xz)
         run: |
-          mv dist clangen
-          tar -cavf Clangen_macOS64.tar.xz clangen
+          rm -r dist/Clangen
+          mv dist Clangen
+          tar -cavf Clangen_macOS64.tar.xz Clangen
       - uses: actions/upload-artifact@v3
         with:
           name: Clangen_macOS64.tar.xz
