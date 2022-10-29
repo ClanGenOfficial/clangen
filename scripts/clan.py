@@ -94,7 +94,8 @@ class Clan(object):
             self.med_cat_number = 0
             self.med_cat_predecessors = 0
             if medicine_cat is not None:
-                self.medicine_cat.status_change('medicine cat')
+                if self.medicine_cat.status != 'medicine cat':
+                    self.medicine_cat.status_change('medicine cat')
                 self.clan_cats.append(self.medicine_cat.ID)
             self.age = 0
             self.current_season = 'Newleaf'
@@ -195,7 +196,8 @@ class Clan(object):
     def new_medicine_cat(self, medicine_cat):
         if medicine_cat:
             self.medicine_cat = medicine_cat
-            Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
+            if medicine_cat.status != 'medicine cat':
+                Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
             self.med_cat_predecessors += 1
             self.med_cat_number += 1
 
