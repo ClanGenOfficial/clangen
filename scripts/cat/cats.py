@@ -284,14 +284,12 @@ class Cat(object):
         elif self.status == 'medicine cat apprentice':
             self.update_med_mentor()
         # updates skill
-        if self.skill == '???':
-            if self.status == 'warrior':
-                self.skill = choice(self.skills)
-                self.update_mentor()
-            elif self.status == 'medicine cat':
-                self.skill = choice(self.med_skills)
-                game.clan.med_cat_number += 1
-                self.update_med_mentor()
+        if self.status == 'warrior':
+            self.skill = choice(self.skills)
+            self.update_mentor()
+        elif self.status == 'medicine cat':
+            self.skill = choice(self.med_skills)
+            self.update_med_mentor()
         else:
             self.skill = self.skill
         if self.status == 'elder':
