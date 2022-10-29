@@ -21,7 +21,8 @@
             "Pretends to be a warrior with (cat)",
             "Is pretending to ward off foxes with (cat)",
             "Is pretending to fight off badgers with (cat)",
-            "Is racing (cat) back and forth across the camp clearing"
+            "Is racing (cat) back and forth across the camp clearing",
+            "Hopes (cat) will be their friend forever"
         ],
         "close": [
             "Comes up with a plan to sneak out of camp with (cat)",
@@ -36,10 +37,12 @@
             "Sticks their tongue out at (cat)",
             "Is hiding under a bush from (cat), but they can't stop giggling",
             "Is pretending to be (cat)",
-            "Is asking (cat) how babies are made"
+            "Is asking (cat) how babies are made",
+            "Whines that (cat) won't play with them, even though they're always around camp"
         ],
         "friendly": [
-            "Ask (cat) what it's like to be a medicine apprentice"
+            "Ask (cat) what it's like to be a medicine apprentice",
+            "Wants to become just like (cat) someday!"
         ],
         "close": [
             "Wants to snuggle with (cat)"
@@ -54,10 +57,12 @@
             "Sticks their tongue out at (cat)",
             "Is hiding under a bush from (cat), but they can't stop giggling",
             "Is pretending to be (cat)",
-            "Is asking (cat) how babies are made"
+            "Is asking (cat) how babies are made",
+            "Doesn't understand why (cat) won't let them play in the medicine cat den"
         ],
         "friendly": [
-            "Ask (cat) what it's like to be a apprentice"
+            "Ask (cat) what it's like to be a apprentice",
+            "Wants to become just like (cat) someday!"
         ],
         "close": [
             "Wants to snuggle with (cat)"
@@ -76,7 +81,8 @@
             "Is hiding under a bush from (cat), but they can't stop giggling"
         ],
         "friendly": [
-            "Tells (cat) that they would like to be like them when they grows up"
+            "Tells (cat) that they would like to be like them when they grows up",
+            "Wants to become just like (cat) someday!"
         ],
         "close": [
             "Wants to snuggle with (cat)"
@@ -84,7 +90,13 @@
     },
     "medicine cat": {
         "unfriendly": [],
-        "neutral": [],
+        "neutral": [
+            "Wants to become just like (cat) someday!",
+            "Watched (cat) show kindness and compassion towards their patients",
+            "Caught a glimpse of (cat) caring for a wounded warrior with confidence and grace",
+            "Spent some time hanging out with (cat) in the medicine den",
+            "Went to (cat) for advice about a dream they had"
+        ],
         "friendly": [],
         "close": []
     },
@@ -92,7 +104,9 @@
         "unfriendly": [
             "Accuses (cat) of being a bad leader"
         ],
-        "neutral": [],
+        "neutral": [
+            "Wants to become just like (cat) someday!"
+        ],
         "friendly": [],
         "close": []
     },
@@ -100,7 +114,9 @@
         "unfriendly": [
             "Accuses (cat) of being a bad deputy"
         ],
-        "neutral": [],
+        "neutral": [
+            "Wants to become just like (cat) someday!"
+        ],
         "friendly": [],
         "close": []
     },
@@ -115,7 +131,8 @@
             "Was distracted while (cat) was telling a story"
         ],
         "friendly": [
-            "Thinks that (cat) tells the best stories"
+            "Thinks that (cat) tells the best stories",
+            "Wants to become just like (cat) someday!"
         ],
         "close": []
     }

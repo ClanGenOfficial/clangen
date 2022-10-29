@@ -309,7 +309,6 @@ class Cat(object):
             else:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
-                    print(self.trait in self.personality_groups[x])
                     if self.trait in self.personality_groups[x]:
                         possible_trait = self.personality_groups.get(x)
                         chosen_trait = choice(possible_trait)

@@ -21,30 +21,38 @@
             "Plays mossball with (cat)",
             "Is giving (cat) a badger ride on their back!",
             "Calmly explains hunting techniques to (cat) again for the fourth time today",
-            "Had a friendly argument with (cat) about which prey tastes the best"
+            "Had a friendly argument with (cat) about which prey tastes the best",
+            "Is charmed to hear that (cat) really admires them"
         ],
         "dislike": [
             "Divides (cat) into extra patrols",
             "Chiding (cat) for being so reckless",
-            "Told (cat) to stop padding after them like a lost kit"
+            "Told (cat) to stop padding after them like a lost kit",
+            "Saw (cat) take the last piece of prey from the freshkill pile",
+            "Thinks (cat) has a strange sense of humor"
         ],
         "admiration": [
             "Is watching (cat) perform an almost-decent hunting crouch",
             "Ask (cat) what it's like to be a apprentice",
             "Is admiring (cat) from afar...",
-            "Thinks that (cat) is so much braver than them"
+            "Thinks that (cat) is so much braver than them",
+            "Is charmed to hear that (cat) really admires them",
+            "Went to (cat) for advice about a dream they had"
         ],
         "comfortable": [
             "Is hiding under a bush from (cat), but they can't stop giggling",
             "Is watching over (cat)",
             "Bestowing wisdom onto (cat)",
             "Is telling (cat) in great detail how they would protect them from any danger",
-            "Is purring loudly to comfort (cat)"
+            "Is purring loudly to comfort (cat)",
+            "Helps (cat) work through something difficult that happened to them"
         ],
         "jealousy": [
             "Thinks that the prey (cat) is biting into on the other side of camp looks delicious",
             "Has noticed (cat) isn't doing a lot of work lately",
-            "Thinks that (cat) is so much braver than them"
+            "Thinks that (cat) is so much braver than them",
+            "Whines that (cat) won't play with them, even though they're always around camp",
+            "Doesn't understand why (cat) won't let them play in the medicine cat den"
         ],
         "trust": [
             "Is asking (cat) how babies are made",
@@ -68,7 +76,8 @@
             "Listening to (elder)'s woes",
             "Had a friendly argument with (cat) about which prey tastes the best",
             "Was playing with (cat) and learned a fun new battle move from them!",
-            "Was distracted while (cat) was telling a story"
+            "Was distracted while (cat) was telling a story",
+            "Is charmed to hear that (cat) really admires them"
         ],
         "dislike": [
             "Divides (cat) into extra patrols",
@@ -83,7 +92,8 @@
             "Smiles at (cat) whenever they meet",
             "Is purring loudly to comfort (cat)",
             "Listening to (elder)'s woes",
-            "Is being quite considerate with (cat)"
+            "Is being quite considerate with (cat)",
+            "Helps (cat) work through something difficult that happened to them"
         ],
         "jealousy": [],
         "trust": [

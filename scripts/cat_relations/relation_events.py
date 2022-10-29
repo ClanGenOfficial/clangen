@@ -324,8 +324,7 @@ class Relation_Events(object):
         if hit != 1:
             return
 
-        print("CHANCE", chance)
-        print(cat.name, " - HAVE KITS", game.clan.age, "moons")
+        print(cat.name, " - HAVE KITS", game.clan.age, "moons", "- CHANCE:", chance)
         one_kit_possibility = {"young adult": 8,"adult": 9,"senior adult": 10,"elder" : 1}
         two_kit_possibility = {"young adult": 10,"adult": 14,"senior adult": 15,"elder" : 1}
         three_kit_possibility = {"young adult": 15,"adult": 15,"senior adult": 5,"elder" : 0}
@@ -507,7 +506,6 @@ class Relation_Events(object):
         if len(relationship_from.log) > 0:
             # check last interaction
             last_log = relationship_from.log[len(relationship_from.log)-1]
-            print(last_log)
 
             if 'negative' in last_log:
                 chance_number -= 30

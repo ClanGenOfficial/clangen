@@ -808,6 +808,7 @@ class Events(object):
                 the_cat.relationships.append(Relationship(the_cat, new_cat))
                 relationships.append(Relationship(new_cat, the_cat))
             new_cat.relationships = relationships
+            new_cat.thought = 'Is looking around the camp with wonder'
             created_cats.append(new_cat)
         
         for new_cat in created_cats:
