@@ -118,35 +118,31 @@ class SwitchClanScreen(Screens):
 
 
 def draw_settings_header():
-    x_pos = 140
-    text = "Settings"
-    buttons.draw_button((x_pos, 100),
-                text=text,
-                cur_screen='settings screen')
+    buttons.draw_image_button((100, 100),
+                              button_name='general_settings',
+                              size=(150, 30),
+                              cur_screen='settings screen')
 
-    x_pos += 90
-    text = "Relation Settings"
-    buttons.draw_button((x_pos, 100),
-                text=text,
-                cur_screen='relationship setting screen')
+    buttons.draw_image_button((250, 100),
+                              button_name='relation_settings',
+                              size=(150, 30),
+                              cur_screen='relationship setting screen')
 
-    x_pos += 155
-    text = "Game Modes"
-    buttons.draw_button((x_pos, 100),
-                text=text,
-                cur_screen='game_mode screen')
+    #x_pos += 155
+    #text = "Game Modes"
+    #buttons.draw_image_button((x_pos, 100),
+    #            text=text,
+    #            cur_screen='game_mode screen')
 
-    x_pos += 125
-    text = "Language"
-    buttons.draw_button((x_pos, 100),
-                text=text,
-                cur_screen='language screen')
+    buttons.draw_image_button((400, 100),
+                              button_name='info',
+                              size=(150, 30),
+                              cur_screen='info screen')
 
-    x_pos += 100
-    text = "Info"
-    buttons.draw_button((x_pos, 100),
-                text=text,
-                cur_screen='info screen')
+    buttons.draw_image_button((550, 100),
+                              button_name='language',
+                              size=(150, 30),
+                              cur_screen='language screen')
 
 
 def draw_back_and_save():
@@ -157,17 +153,22 @@ def draw_back_and_save():
                               size=(153, 30),
                               hotkey=[0])
     if game.settings_changed:
-        buttons.draw_button(('center', 550),
-                            text='Save Settings',
-                            save_settings=True)
+        buttons.draw_image_button((327, 550),
+                                  button_name='save_settings',
+                                  text='Save Settings',
+                                  size=(146, 30),
+                                  save_settings=True)
     else:
-        buttons.draw_button(('center', 550),
-                            text='Save Settings',
-                            available=False)
+        buttons.draw_image_button((327, 550),
+                                  button_name='save_settings',
+                                  text='Save Settings',
+                                  size=(146, 30),
+                                  available=False)
 
 
 # ON / OFF BUTTONS
-def draw_on_off(x_value, y_value, setting):
+def draw_on_off(y_value, setting):
+    x_value = 100
     if game.settings[setting] is False:
         buttons.draw_image_button((x_value, y_value),
                                   button_name='on',
@@ -209,48 +210,25 @@ class SettingsScreen(Screens):
         verdana.text("Change the setting of your game here.", ('center', 140))
 
         # Setting names
-        verdana.text("Dark mode", (200, 206))
-        verdana.text("Enable clan page background", (200, 245))
-        verdana.text("Automatically save every five moons", (200, 284))
-        verdana.text("Allow mass extinction events", (200, 323))
-        verdana.text("Force cats to retire after severe injury", (200, 362))
-        verdana.text("Enable shaders", (200, 401))
-        verdana.text("Display hotkeys on text buttons", (200, 440))
+        x_value = 205
+        verdana.text("Dark mode", (x_value, 226))
+        verdana.text("Enable clan page background", (x_value, 265))
+        verdana.text("Automatically save every five moons", (x_value, 304))
+        verdana.text("Allow mass extinction events", (x_value, 343))
+        verdana.text("Force cats to retire after severe injury", (x_value, 382))
+        verdana.text("Enable shaders", (x_value, 421))
+        verdana.text("Display hotkeys on text buttons", (x_value, 460))
 
         # Setting values
-        draw_on_off(100, 200, 'dark mode')
-        draw_on_off(100, 239, 'backgrounds')
-        draw_on_off(100, 278, 'autosave')
-        draw_on_off(100, 317, 'disasters')
-        draw_on_off(100, 356, 'retirement')
-        draw_on_off(100, 395, 'shaders')
-        draw_on_off(100, 434, 'hotkey display')
-
-        #verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
-        #buttons.draw_button((-80, 200), text='SWITCH', setting='dark mode')
-        #verdana.text(self.bool[game.settings['backgrounds']], (-170, 230))
-        #buttons.draw_button((-80, 230), text='SWITCH', setting='backgrounds')
-        #verdana.text(self.bool[game.settings['autosave']], (-170, 260))
-        #buttons.draw_button((-80, 260), text='SWITCH', setting='autosave')
-        #verdana.text(self.bool[game.settings['disasters']], (-170, 290))
-        #buttons.draw_button((-80, 290), text='SWITCH', setting='disasters')
-        #verdana.text(self.bool[game.settings['retirement']], (-170, 320))
-        #buttons.draw_button((-80, 320), text='SWITCH', setting='retirement')
-        #verdana.text(self.bool[game.settings['shaders']], (-170, 350))
-        #buttons.draw_button((-80, 350), text='SWITCH', setting='shaders')
-        #verdana.text(self.bool[game.settings['hotkey display']], (-170, 380))
-        #buttons.draw_button((-80, 380),text='SWITCH',setting='hotkey display')
+        draw_on_off(220, 'dark mode')
+        draw_on_off(259, 'backgrounds')
+        draw_on_off(298, 'autosave')
+        draw_on_off(337, 'disasters')
+        draw_on_off(376, 'retirement')
+        draw_on_off(415, 'shaders')
+        draw_on_off(454, 'hotkey display')
 
         # other buttons
-
-        if game.settings_changed:
-            buttons.draw_button(('center', -130),
-                                text='Save Settings',
-                                save_settings=True)
-        else:
-            buttons.draw_button(('center', -130),
-                                text='Save Settings',
-                                available=False)
 
         draw_back_and_save()
 
