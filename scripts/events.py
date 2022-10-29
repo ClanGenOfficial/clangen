@@ -779,7 +779,7 @@ class Events(object):
             if accessory:
                 new_cat.accessory = accessory
 
-            if (kit or litter) and relevant_cat and relevant_cat in Cat.all_cats:
+            if (kit or litter) and relevant_cat and relevant_cat.ID in Cat.all_cats:
                 new_cat.parent1 = relevant_cat.ID
                 if relevant_cat.mate:
                     new_cat.parent2 = relevant_cat.mate
