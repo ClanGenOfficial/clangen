@@ -110,6 +110,7 @@ class Patrol(object):
         self.patrol_random_cat = None
         self.patrol_other_cats = []
         self.patrol_stat_cat = None
+        self.other_clan = None
         self.experience_levels = [
             'very low', 'low', 'slightly low', 'average', 'somewhat high',
             'high', 'very high', 'master', 'max'
