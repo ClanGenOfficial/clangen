@@ -640,9 +640,9 @@ class RelationshipScreen(Screens):
 
         if the_cat is None and the_cat.mate != '':
             mate = Cat.all_cats.get(the_cat.mate)
-            if mate is None:
+            if mate is not None:
                 verdana_small.text(
-                    f"{str(the_cat.genderalign)}  - {str(the_cat.age)} - {str(the_cat.trait)} -  mate: {str(mate.name)}",
+                    f"{str(the_cat.genderalign)} - {str(the_cat.age)} - {str(the_cat.trait)} - mate: {str(mate.name)}",
                     (80, 100))
             else:
                 verdana_small.text(
