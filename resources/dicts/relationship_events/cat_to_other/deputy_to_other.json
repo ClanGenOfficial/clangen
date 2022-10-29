@@ -7,7 +7,8 @@
             "Trips over (cat)",
             "Had to nip (cat) on the rump because they were being naughty",
             "Is watching (cat) perform an almost-decent hunting crouch",
-            "Is watching over (cat)"
+            "Is watching over (cat)",
+            "Is charmed to hear that (cat) really admires them"
         ],
         "friendly": [
             "Is giving (cat) a badger ride on their back!",
@@ -46,7 +47,8 @@
             "Is telling (cat) about a hunting technique",
             "Is giving (cat) a task",
             "Wishes (cat) would take things more seriously",
-            "Is jealous that (cat) got to go to the last gathering"
+            "Is jealous that (cat) got to go to the last gathering",
+            "Saw (cat) miss an easy catch today"
         ],
         "friendly": [
             "Is telling (cat) about their own days as an apprentice",
@@ -65,7 +67,8 @@
             "Is frustrated that (cat) won't take their duties more seriously",
             "Sparring with (cat)",
             "Is jealous that (cat) got to go to the last gathering",
-            "Has noticed (cat) isn't doing a lot of work lately"
+            "Has noticed (cat) isn't doing a lot of work lately",
+            "Saw (cat) miss an easy catch today"
         ],
         "friendly": [
             "Just told (cat) a hilarious joke"
@@ -78,7 +81,9 @@
         "unfriendly": [],
         "neutral": [
             "Escorted (cat) so they could gather herbs",
-            "Thought of (cat) on the last patrol and took a rare herb with them"
+            "Thought of (cat) on the last patrol and took a rare herb with them",
+            "Feels like (cat) isn't taking their health seriously",
+            "Went to (cat) for advice about a dream they had"
         ],
         "friendly": [],
         "close": []
@@ -87,7 +92,9 @@
         "unfriendly": [
             "Accuses (cat) of being a bad leader"
         ],
-        "neutral": [],
+        "neutral": [
+            "Saw (cat) miss an easy catch today"
+        ],
         "friendly": [],
         "close": []
     },
