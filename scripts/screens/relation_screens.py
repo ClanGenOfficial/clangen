@@ -551,15 +551,28 @@ class RelationshipScreen(Screens):
                             text='switch',
                             setting='show empty relation')
 
-        # make a list of the relationships
-
+        # USER INTERFACE ART
         search_text = game.switches['search_text']
         search_bar = pygame.transform.scale(
-            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
-        screen.blit(search_bar, (547, 641))
-        verdana_black.text(game.switches['search_text'], (608, 648))
+            pygame.image.load("resources/images/relationship_search.png").convert_alpha(), (228, 39))
+
+        screen.blit(search_bar, (536, 90))
+        verdana_black.text(game.switches['search_text'], (612, 97))
+
+        details_frame = pygame.transform.scale(
+            pygame.image.load("resources/images/relationship_details_frame.png").convert_alpha(), (254, 344))
+        screen.blit(details_frame, (25, 130))
+
+        toggle_frame = pygame.transform.scale(
+            pygame.image.load("resources/images/relationship_toggle_frame.png").convert_alpha(), (251, 120))
+        screen.blit(toggle_frame, (45, 484))
+
+        list_frame = pygame.transform.scale(
+            pygame.image.load("resources/images/relationship_list_frame.png").convert_alpha(), (502, 500))
+        screen.blit(list_frame, (273, 122))
 
 
+        # make a list of the relationships
         search_relations = []
         if search_text.strip() != '':
             for rel in the_cat.relationships:
@@ -568,24 +581,24 @@ class RelationshipScreen(Screens):
         else:
             search_relations = the_cat.relationships.copy()
 
-        # layout
-        verdana_big.text(str(the_cat.name) + ' Relationships', ('center', 10))
+        # LAYOUT
+        verdana_big.text(str(the_cat.name) + ' Relationships', (35, 75))
         if the_cat != None and the_cat.mate != '':
             mate = Cat.all_cats.get(the_cat.mate)
             if mate != None:
                 verdana_small.text(
-                    f"{str(the_cat.genderalign)}  - {str(the_cat.age)} -  mate: {str(mate.name)}",
-                    ('center', 40))
+                    f"{str(the_cat.genderalign)}  - {str(the_cat.age)} - {str(the_cat.trait)} -  mate: {str(mate.name)}",
+                    (50, 100))
             else:
                 verdana_small.text(
-                    f"{str(the_cat.genderalign)}  - {str(the_cat.age)}",
-                    ('center', 40))
+                    f"{str(the_cat.genderalign)}  - {str(the_cat.age)} - {str(the_cat.trait)}",
+                    (50, 100))
         else:
             verdana_small.text(
-                f"{str(the_cat.genderalign)}  - {str(the_cat.age)}",
-                ('center', 40))
+                f"{str(the_cat.genderalign)}  - {str(the_cat.age)} - {str(the_cat.trait)}",
+                (50, 100))
 
-        # filter relationships pased on the settings
+        # filter relationships based on the settings
         if not game.settings['show dead relation']:
             search_relations = list(
                 filter(lambda rel: not rel.cat_to.dead, search_relations))
@@ -599,210 +612,299 @@ class RelationshipScreen(Screens):
 
         # pages
         all_pages = 1  # amount of pages
-        if len(search_relations) > 10:
-            all_pages = int(ceil(len(search_relations) / 10))
+        if len(search_relations) > 8:
+            all_pages = int(ceil(len(search_relations) / 8))
 
         pos_x = 0
         pos_y = 0
         cats_on_page = 0  # how many are on page already
         for x in range(len(search_relations)):
             if (x +
-                (game.switches['list_page'] - 1) * 10) > len(search_relations):
+                    (game.switches['list_page'] - 1) * 8) > len(search_relations):
                 game.switches['list_page'] = 1
             if game.switches['list_page'] > all_pages:
                 game.switches['list_page'] = 1
             the_relationship = search_relations[x +
                                              (game.switches['list_page'] - 1) *
-                                             10]
+                                             8]
             update_sprite(the_relationship.cat_to)
-            link = 'relationship screen'
-            if the_relationship.cat_to.dead:
-                link = 'profile screen'
-            buttons.draw_button((90 + pos_x, 60 + pos_y),
+            #link = 'relationship screen'
+            #if the_relationship.cat_to.dead:
+            #    link = 'profile screen'
+
+            buttons.draw_button((312 + pos_x, 150 + pos_y),
                                 image=the_relationship.cat_to.sprite,
-                                cat=the_relationship.cat_to.ID,
-                                cur_screen=link)
+                                chosen_cat=the_relationship.cat_to,
+                                show_details=True)
+
+            # SWITCH FOCUS / GO TO PROFILE BUTTONS
+
+
+
             # name length
-            string_len = verdana.text(str('romantic love: '))
-            verdana.text(str(the_relationship.cat_to.name),
-                         (140 + pos_x - string_len / 1.5, 105 + pos_y))
+            verdana_mid.text(str(the_relationship.cat_to.name),
+                                (290 + pos_x, 131 + pos_y))
 
-            # display gender align
-            verdana_small.text(
-                f"{str(the_relationship.cat_to.genderalign)}",
-                (140 + pos_x - string_len / 1.5, 120 + pos_y))
 
-            # display age
-            verdana_small.text(
-                f"{str(the_relationship.cat_to.age)}",
-                (140 + pos_x - string_len / 1.5, 130 + pos_y))
-
-            # display mate situation
-            if the_cat.mate != None and the_cat.mate != '' and the_relationship.cat_to.ID == the_cat.mate:
-                verdana_small.text(
-                    'mate', (140 + pos_x - string_len / 1.5, 140 + pos_y))
-            elif the_relationship.cat_to.mate != None and the_relationship.cat_to.mate != '':
-                verdana_small.text(
-                    'has a mate',
-                    (140 + pos_x - string_len / 1.5, 140 + pos_y))
-            
-            # display dead and/or relative
-            uncle_aunt = the_relationship.cat_to.is_uncle_aunt(the_cat) or\
-                the_cat.is_uncle_aunt(the_relationship.cat_to)
-            if (the_relationship.family or uncle_aunt) and the_relationship.cat_to.dead:
-                verdana_small.text(
-                    'related (dead)',
-                    (140 + pos_x - string_len / 1.5, 150 + pos_y))
-            elif (the_relationship.family or uncle_aunt):
-                verdana_small.text(
-                    'related', (140 + pos_x - string_len / 1.5, 150 + pos_y))
-            elif the_relationship.cat_to.dead:
-                verdana_small.text(
-                    '(dead)', (140 + pos_x - string_len / 1.5, 150 + pos_y))
 
             count = 17
             different_age = the_relationship.cat_to.age != the_relationship.cat_to.age
             adult_ages = ['young adult', 'adult', 'senior adult', 'elder']
             both_adult = the_relationship.cat_to.age in adult_ages and the_relationship.cat_to.age in adult_ages
             check_age = (different_age and both_adult) or both_adult or not different_age
-            if the_relationship.romantic_love > 49 and game.settings[
-                    'dark mode'] and check_age:
-                verdana_dark_margenta.text(
+
+            if the_relationship.romantic_love > 49 and check_age:
+                verdana_magenta.text(
                     'romantic love:',
-                    (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            elif the_relationship.romantic_love > 49 and not game.settings[
-                    'dark mode'] and check_age:
-                verdana_margenta.text(
-                    'romantic love:',
-                    (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+                    (292 + pos_x, 181 + pos_y + count))
             else:
                 verdana_small.text(
                     'romantic like:',
-                    (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+                    (292 + pos_x, 181 + pos_y + count))
             count += 20
-            current_x = 140 + pos_x - string_len / 1.5
-            current_y = 145 + pos_y + count
+            current_x = 294 + pos_x
+            current_y = 180 + pos_y + count
             if check_age:
                 draw_bar(the_relationship.romantic_love, current_x, current_y)
             else:
                 draw_bar(0, current_x, current_y)
             count += 5
 
-            if the_relationship.platonic_like > 49 and game.settings[
-                    'dark mode']:
-                verdana_dark_margenta.text(
+            if the_relationship.platonic_like > 49:
+                verdana_magenta.text(
                     'platonic love:',
-                    (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            elif the_relationship.platonic_like > 49 and not game.settings[
-                    'dark mode']:
-                verdana_margenta.text(
-                    'platonic love:',
-                    (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+                    (292 + pos_x, 179 + pos_y + count))
             else:
                 verdana_small.text(
                     'platonic like:',
-                    (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+                    (292 + pos_x, 179 + pos_y + count))
             count += 20
-            current_x = 140 + pos_x - string_len / 1.5
-            current_y = 145 + pos_y + count
+            current_x = 294 + pos_x
+            current_y = 178 + pos_y + count
             draw_bar(the_relationship.platonic_like, current_x, current_y)
             count += 5
 
-            if the_relationship.dislike > 49 and game.settings['dark mode']:
-                verdana_dark_margenta.text(
+            if the_relationship.dislike > 49:
+                verdana_magenta.text(
                     'hate:',
-                    (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            elif the_relationship.dislike > 49 and not game.settings[
-                    'dark mode']:
-                verdana_margenta.text(
-                    'hate:',
-                    (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+                    (292 + pos_x, 177 + pos_y + count))
             else:
                 verdana_small.text(
                     'dislike:',
-                    (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+                    (292 + pos_x, 177 + pos_y + count))
             count += 20
-            current_x = 140 + pos_x - string_len / 1.5
-            current_y = 145 + pos_y + count
+            current_x = 294 + pos_x
+            current_y = 176 + pos_y + count
             draw_bar(the_relationship.dislike, current_x, current_y)
             count += 5
 
-            if the_relationship.admiration > 49 and game.settings['dark mode']:
-                verdana_dark_margenta.text(
+            if the_relationship.admiration > 49:
+                verdana_magenta.text(
                     'admiration:',
-                    (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
-            elif the_relationship.admiration > 49 and not game.settings[
-                    'dark mode']:
-                verdana_margenta.text(
-                    'admiration:',
-                    (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+                    (292 + pos_x, 175 + pos_y + count))
             else:
                 verdana_small.text(
                     'respect:',
-                    (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+                    (292 + pos_x, 175 + pos_y + count))
             count += 20
-            current_x = 140 + pos_x - string_len / 1.5
-            current_y = 145 + pos_y + count
+            current_x = 294 + pos_x
+            current_y = 174 + pos_y + count
             draw_bar(the_relationship.admiration, current_x, current_y)
             count += 5
 
             verdana_small.text(
                 'comfortable:',
-                (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+                (292 + pos_x, 173 + pos_y + count))
             count += 20
-            current_x = 140 + pos_x - string_len / 1.5
-            current_y = 145 + pos_y + count
+            current_x = 294 + pos_x
+            current_y = 172 + pos_y + count
             draw_bar(the_relationship.comfortable, current_x, current_y)
             count += 5
 
             verdana_small.text(
                 'jealousy:',
-                (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+                (292 + pos_x, 171 + pos_y + count))
             count += 20
-            current_x = 140 + pos_x - string_len / 1.5
-            current_y = 145 + pos_y + count
+            current_x = 294 + pos_x
+            current_y = 170 + pos_y + count
             draw_bar(the_relationship.jealousy, current_x, current_y)
             count += 5
 
             verdana_small.text(
                 'trust:',
-                (140 + pos_x - string_len / 1.5, 145 + pos_y + count))
+                (294 + pos_x, 169 + pos_y + count))
             count += 20
-            current_x = 140 + pos_x - string_len / 1.5
-            current_y = 145 + pos_y + count
+            current_x = 294 + pos_x
+            current_y = 168 + pos_y + count
             draw_bar(the_relationship.trust, current_x, current_y)
 
             cats_on_page += 1
-            pos_x += 140
-            if pos_x >= 650:
+            pos_x += 122
+            if pos_x >= 400:
                 pos_x = 0
-                pos_y += 100 + count
+                pos_y += 55 + count
 
-            if cats_on_page >= 10 or x + (game.switches['list_page'] -
-                                          1) * 10 == len(search_relations) - 1:
+            if cats_on_page >= 8 or x + (game.switches['list_page'] -
+                                          1) * 8 == len(search_relations) - 1:
                 break
 
-        # page buttons
+
+        # SHOW CAT DETAILS
+
+        if game.switches['show_details'] is True:
+            if game.switches['chosen_cat'].dead:
+                verdana_big.text(
+                    f"{str(game.switches['chosen_cat'].name)} (dead)",
+                    (60, 295)
+                )
+            else:
+                verdana_big.text(
+                    f"{str(game.switches['chosen_cat'].name)}",
+                    (60, 295)
+                )
+            draw_large(game.switches['chosen_cat'], (75, 145))
+
+            # GENDER
+            verdana_small.text(
+                f"{str(game.switches['chosen_cat'].genderalign)}",
+                (60, 325))
+
+            # AGE
+            verdana_small.text(
+                f"{str(game.switches['chosen_cat'].moons)} moons",
+                (60, 340))
+
+            # MATE
+            if game.switches['chosen_cat'].mate is not None and the_cat.ID != game.switches['chosen_cat'].mate:
+                verdana_small.text(
+                    'has a mate',
+                    (160, 325)
+                )
+
+            elif the_cat.mate is not None and the_cat.mate != '' and game.switches['chosen_cat'].ID == the_cat.mate:
+                verdana_small.text(
+                    f"{str(the_cat.name)}'s mate",
+                    (160, 325)
+                )
+            else:
+                verdana_small.text(
+                    'mate: none',
+                    (160, 325)
+                )
+
+            # TRAIT
+            verdana_small.text(
+                f"{str(game.switches['chosen_cat'].trait)}",
+                (60, 355))
+
+            # RELATED [[[ someone else pls figure out how to make this show up ]]]
+            if game.switches['chosen_cat'].is_uncle_aunt(the_cat) or\
+                    the_cat.is_uncle_aunt(game.switches['chosen_cat']):
+                verdana_small.text(
+                    'related',
+                    (60, 355))
+            if game.switches['chosen_cat'] in the_cat.siblings or\
+                    the_cat in game.switches['chosen_cat'].siblings:
+                verdana_small.text(
+                    'related',
+                    (60, 355))
+
+        # PAGE ARROW BUTTONS
         verdana.text(
             'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages),
-            ('center', 640))
+            (488, 625))
+
         if game.switches['list_page'] > 1:
-            buttons.draw_button((320, 640),
-                                text='<',
-                                list_page=game.switches['list_page'] - 1,
-                                hotkey=[23])
+            buttons.draw_image_button((440, 616),
+                                      button_name='relationship_list_arrow_l',
+                                      list_page=game.switches['list_page'] - 1,
+                                      size=(34, 34),
+                                      hotkey=[23])
+        else:
+            buttons.draw_image_button((440, 616),
+                                      button_name='relationship_list_arrow_l',
+                                      list_page=game.switches['list_page'] - 1,
+                                      size=(34, 34),
+                                      available=False,
+                                      hotkey=[23])
+
         if game.switches['list_page'] < all_pages:
 
-            buttons.draw_button((-320, 640),
-                                text='>',
-                                list_page=game.switches['list_page'] + 1,
-                                hotkey=[21])
+            buttons.draw_image_button((580, 616),
+                                      button_name='relationship_list_arrow_r',
+                                      list_page=game.switches['list_page'] + 1,
+                                      size=(34, 34),
+                                      hotkey=[21])
+        else:
+            buttons.draw_image_button((580, 616),
+                                      button_name='relationship_list_arrow_r',
+                                      list_page=game.switches['list_page'] + 1,
+                                      size=(34, 34),
+                                      available=False,
+                                      hotkey=[21])
 
+        if game.switches['chosen_cat'] is not None and not game.switches['chosen_cat'].dead:
+            the_relationship.cat_to = game.switches['chosen_cat']
+            buttons.draw_image_button((85, 390),
+                                      button_name='switch_focus',
+                                      size=(136, 30),
+                                      cat=the_relationship.cat_to.ID,
+                                      cur_screen='relationship screen',
+                                      show_details=None,
+                                      chosen_cat=None
+                                      )
+            buttons.draw_image_button((85, 420),
+                                      button_name='view_profile',
+                                      size=(136, 30),
+                                      cat=the_relationship.cat_to.ID,
+                                      cur_screen='profile screen',
+                                      show_details=None,
+                                      chosen_cat=None
+                                      )
+        elif game.switches['chosen_cat'] is not None and game.switches['chosen_cat'].dead:
+            buttons.draw_image_button((85, 390),
+                                      button_name='switch_focus',
+                                      size=(136, 30),
+                                      cat=the_relationship.cat_to.ID,
+                                      cur_screen='relationship screen',
+                                      show_details=None,
+                                      chosen_cat=None,
+                                      available=False
+                                      )
+            buttons.draw_image_button((85, 420),
+                                      button_name='view_profile',
+                                      size=(136, 30),
+                                      cat=the_relationship.cat_to.ID,
+                                      cur_screen='profile screen',
+                                      show_details=None,
+                                      chosen_cat=None
+                                      )
+
+        else:
+            buttons.draw_image_button((85, 390),
+                                      button_name='switch_focus',
+                                      size=(136, 30),
+                                      cat=the_relationship.cat_to.ID,
+                                      cur_screen='relationship screen',
+                                      show_details=None,
+                                      chosen_cat=None,
+                                      available=False
+                                      )
+            buttons.draw_image_button((85, 420),
+                                      button_name='view_profile',
+                                      size=(136, 30),
+                                      cat=the_relationship.cat_to.ID,
+                                      cur_screen='profile screen',
+                                      show_details=None,
+                                      chosen_cat=None,
+                                      available=False
+                                      )
         buttons.draw_image_button((25, 645),
                                   button_name='back',
                                   text='Back',
                                   size=(105, 30),
                                   cur_screen='profile screen')
+
 
 
 

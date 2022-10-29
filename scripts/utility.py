@@ -67,23 +67,17 @@ def draw_bar(value, pos_x, pos_y):
     original_bar = pygame.image.load(
         "resources/images/relation_bar.png").convert_alpha()
 
-    if game.settings['dark mode']:
-        bar_bg = pygame.image.load(
-            "resources/images/relations_border_dark.png").convert_alpha()
-        original_bar = pygame.image.load(
-            "resources/images/relation_bar_dark.png").convert_alpha()
-
     bg_rect = bar_bg.get_rect(midleft=(pos_x, pos_y))
     screen.blit(bar_bg, bg_rect)
     x_pos = 0
     for i in range(int(value / 10)):
         x_pos = i * 11
         bar_rect = original_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
-        bar = pygame.transform.scale(original_bar, (10, 12))
+        bar = pygame.transform.scale(original_bar, (10, 10))
         screen.blit(bar, bar_rect)
     x_pos = 11 * int(value / 10)
     bar_rect = original_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
-    bar = pygame.transform.scale(original_bar, (value % 10, 12))
+    bar = pygame.transform.scale(original_bar, (value % 10, 10))
     screen.blit(bar, bar_rect)
 
 

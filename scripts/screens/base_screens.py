@@ -135,7 +135,8 @@ def draw_next_prev_cat_buttons(the_cat):
                                   text='Next Cat',
                                   cat=next_cat,
                                   size=(153, 30),
-                                  hotkey=[21]
+                                  hotkey=[21],
+                                  show_details=False
                                   )
     else:
         buttons.draw_image_button((622, 25),
@@ -152,7 +153,8 @@ def draw_next_prev_cat_buttons(the_cat):
                                   text='Previous Cat',
                                   cat=previous_cat,
                                   size=(153, 30),
-                                  hotkey=[23]
+                                  hotkey=[23],
+                                  show_details=False
                                   )
     else:
         buttons.draw_image_button((25, 25),
