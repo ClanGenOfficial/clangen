@@ -689,8 +689,13 @@ class RelationshipScreen(Screens):
                                 chosen_cat=the_relationship.cat_to,
                                 show_details=True)
 
-            # name length
-            verdana_mid.text(str(the_relationship.cat_to.name),
+            # check name length
+            name = str(the_relationship.cat_to.name)
+            if len(name) >= 13:
+                short_name = str(the_relationship.cat_to.name)[0:12]
+                name = short_name + '...'
+
+            verdana_mid.text(name,
                                 (290 + pos_x, 131 + pos_y))
 
             count = 17
@@ -789,7 +794,6 @@ class RelationshipScreen(Screens):
             current_y = 168 + pos_y + count
             self.draw_bar(the_relationship.trust, current_x, current_y)
 
-
             cats_on_page += 1
             pos_x += 122
             if pos_x >= 400:
@@ -800,20 +804,28 @@ class RelationshipScreen(Screens):
                                           1) * 8 == len(search_relations) - 1:
                 break
 
-
         # SHOW CAT DETAILS
-
         if game.switches['show_details'] is True:
+
+            # NAME LENGTH
+            chosen_name = str(game.switches['chosen_cat'].name)
+            if len(chosen_name) >= 17:
+                chosen_short_name = str(game.switches['chosen_cat'].name)[0:16]
+                chosen_name = chosen_short_name + '...'
+
+            # NAME
             if game.switches['chosen_cat'].dead:
                 verdana_big.text(
-                    f"{str(game.switches['chosen_cat'].name)} (dead)",
+                    f"{chosen_name} (dead)",
                     (60, 295)
                 )
             else:
                 verdana_big.text(
-                    f"{str(game.switches['chosen_cat'].name)}",
+                    f"{chosen_name}",
                     (60, 295)
                 )
+
+            # DRAW CAT
             draw_large(game.switches['chosen_cat'], (75, 145))
 
             # GENDER
@@ -957,9 +969,6 @@ class RelationshipScreen(Screens):
                                   size=(105, 30),
                                   cur_screen='profile screen')
 
-
-
-
     def draw_bar(self, value, pos_x, pos_y):
         # Loading Bar and variables
         bar_bg = pygame.image.load(
@@ -970,14 +979,16 @@ class RelationshipScreen(Screens):
         bg_rect = bar_bg.get_rect(midleft=(pos_x, pos_y))
         screen.blit(bar_bg, bg_rect)
         x_pos = 0
-        for i in range(int(value / 10)):
-            x_pos = i * 11
+        bar_length_per_snippet = 8
+        number_of_bars = 10
+        for i in range(int(value / number_of_bars)):
+            x_pos = i * (bar_length_per_snippet + 1)
             bar_rect = original_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
-            bar = pygame.transform.scale(original_bar, (10, 10))
+            bar = pygame.transform.scale(original_bar, (bar_length_per_snippet, 10))
             screen.blit(bar, bar_rect)
-        x_pos = 11 * int(value / 10)
+        x_pos = (bar_length_per_snippet + 1) * int(value / number_of_bars)
         bar_rect = original_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
-        bar = pygame.transform.scale(original_bar, (value % 10, 10))
+        bar = pygame.transform.scale(original_bar, (value % number_of_bars, 10))
         screen.blit(bar, bar_rect)
 
     def screen_switches(self):

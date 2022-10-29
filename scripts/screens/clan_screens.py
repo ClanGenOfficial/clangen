@@ -229,8 +229,17 @@ class StarClanScreen(Screens):
                                     cat=the_cat.ID,
                                     cur_screen='profile screen',
                                     hotkey=[row + 1, column + 11])
+
                 name_len = verdana.text(str(the_cat.name))
-                verdana_white.text(str(the_cat.name),
+
+                # CHECK NAME LENGTH
+                name = str(the_cat.name)
+                if len(name) >= 13:
+                    short_name = str(the_cat.name)[0:12]
+                    name = short_name + '...'
+
+                # DISPLAY NAME
+                verdana_white.text(name,
                                    (155 + pos_x - name_len/2, 240 + pos_y))
                 cats_on_page += 1
                 pos_x += 120
@@ -264,6 +273,7 @@ class StarClanScreen(Screens):
 
     def screen_switches(self):
         cat_profiles()
+
 
 class ListScreen(Screens):
     # page can be found in game.switches['list_page']
@@ -301,7 +311,7 @@ class ListScreen(Screens):
                 game.switches['list_page'] = 1
             if x + (game.switches['list_page'] - 1) * 20 >= len(search_cats):
                 game.switches['list_page'] -= 1
-            if (x + (game.switches['list_page'] - 1) * 20 < len(search_cats)):
+            if x + (game.switches['list_page'] - 1) * 20 < len(search_cats):
                 the_cat = search_cats[x +
                                       (game.switches['list_page'] - 1) * 20]
             else:
@@ -315,7 +325,16 @@ class ListScreen(Screens):
                                     cur_screen='profile screen',
                                     hotkey=[row + 1, column + 11])
                 name_len = verdana.text(str(the_cat.name))
-                verdana.text(str(the_cat.name), (155 + pos_x - name_len/2, 240 + pos_y))
+
+                # CHECK NAME LENGTH
+                name = str(the_cat.name)
+                if len(name) >= 13:
+                    short_name = str(the_cat.name)[0:12]
+                    name = short_name + '...'
+
+                # DISPLAY NAME
+                verdana.text(name, (155 + pos_x - name_len/2, 240 + pos_y))
+
                 cats_on_page += 1
                 pos_x += 120
                 if pos_x >= 600:

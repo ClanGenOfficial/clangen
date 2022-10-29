@@ -168,7 +168,7 @@ def draw_back_and_save():
 
 # ON / OFF BUTTONS
 def draw_on_off(y_value, setting):
-    x_value = 100
+    x_value = 120
     if game.settings[setting] is False:
         buttons.draw_image_button((x_value, y_value),
                                   button_name='on',
@@ -207,10 +207,10 @@ class SettingsScreen(Screens):
     def on_use(self):
         # layout
         draw_settings_header()
-        verdana.text("Change the setting of your game here.", ('center', 140))
+        verdana.text("Change the settings of your game here.", ('center', 160))
 
         # Setting names
-        x_value = 205
+        x_value = 225
         verdana.text("Dark mode", (x_value, 226))
         verdana.text("Enable clan page background", (x_value, 265))
         verdana.text("Automatically save every five moons", (x_value, 304))
@@ -244,54 +244,25 @@ class RelationshipSettingsScreen(Screens):
     def on_use(self):
         # layout
         draw_settings_header()
-        verdana.text("Change the setting of the relationships here.",
-                     ('center', 140))
+        verdana.text("Change the settings of the relationships here.",
+                     ('center', 160))
 
         # Setting names
-        verdana.text("Randomize relationship values, when creating clan:",
-                     (100, 200))
-        verdana.text("Allow affairs and mate switches based on relationships:",
-                     (100, 230))
-        verdana.text("Allow couples to have kittens despite same-sex status:",
-                     (100, 260))
-        verdana.text("Allow unmated cats to have offspring:", (100, 290))
-        verdana.text(
-            "Allow romantic interactions with former apprentices/mentor:",
-            (100, 320))
+        x_value = 225
+        verdana.text("Randomize relationship values, when creating clan", (x_value, 226))
+        verdana.text("Allow affairs and mate switches based on relationships", (x_value, 265))
+        verdana.text("Allow couples to have kittens despite same-sex status", (x_value, 304))
+        verdana.text("Allow unmated cats to have offspring", (x_value, 343))
+        verdana.text("Allow romantic interactions with former apprentices/mentor", (x_value, 382))
 
         # Setting values
-        verdana.text(self.bool[game.settings['random relation']], (-170, 200))
-        buttons.draw_button((-80, 200),
-                            text='SWITCH',
-                            setting='random relation')
-        verdana.text(self.bool[game.settings['affair']], (-170, 230))
-        buttons.draw_button((-80, 230), text='SWITCH', setting='affair')
-        verdana.text(self.bool[game.settings['no gendered breeding']],
-                     (-170, 260))
-        buttons.draw_button((-80, 260),
-                            text='SWITCH',
-                            setting='no gendered breeding')
-        verdana.text(self.bool[game.settings['no unknown fathers']],
-                     (-170, 290))
-        buttons.draw_button((-80, 290),
-                            text='SWITCH',
-                            setting='no unknown fathers')
-        verdana.text(self.bool[game.settings['romantic with former mentor']],
-                     (-170, 320))
-        buttons.draw_button((-80, 320),
-                            text='SWITCH',
-                            setting='romantic with former mentor')
+        draw_on_off(220, 'random relation')
+        draw_on_off(259, 'affair')
+        draw_on_off(298, 'no gendered breeding')
+        draw_on_off(337, 'no unknown fathers')
+        draw_on_off(376, 'romantic with former mentor')
 
         # other buttons
-
-        if game.settings_changed:
-            buttons.draw_button(('center', -130),
-                                text='Save Settings',
-                                save_settings=True)
-        else:
-            buttons.draw_button(('center', -130),
-                                text='Save Settings',
-                                available=False)
         draw_back_and_save()
 
 
@@ -302,25 +273,25 @@ class InfoScreen(Screens):
         draw_settings_header()
 
         verdana.text("Welcome to Warrior Cats clan generator!",
-                     ('center', 140))
+                     ('center', 160))
         verdana.text(
             "This is fan-made generator for the Warrior Cats -book series by Erin Hunter.",
-            ('center', 175))
+            ('center', 205))
         verdana.text(
-            "Create a new clan in the 'Make New' section. That clan is saved and can be",
-            ('center', 195))
+            "Create a new clan with the 'New Clan' button. 8 clans can be saved and revisited.",
+            ('center', 245))
         verdana.text(
-            "revisited until you decide the overwrite it with a new one.",
-            ('center', 215))
+            "If you go over that number then the oldest save will be overwritten",
+            ('center', 265))
         verdana.text(
             "You're free to use the characters and sprites generated in this program",
-            ('center', 235))
+            ('center', 315))
         verdana.text(
             "as you like, as long as you don't claim the sprites as your own creations.",
-            ('center', 255))
+            ('center', 335))
         verdana.text("Original creator: just-some-cat.tumblr.com",
-                     ('center', 275))
-        verdana.text("Fan edit made by: SableSteel", ('center', 295))
+                     ('center', 375))
+        verdana.text("Fan edit made by: SableSteel", ('center', 395))
 
         verdana.text("Thank you for playing!!", ('center', 550))
 
@@ -338,17 +309,25 @@ class LanguageScreen(Screens):
     def on_use(self):
         # layout
         draw_settings_header()
-        verdana.text("Choose the language of your game here:", ('center', 140))
+        verdana.text("Choose the language of your game here:", ('center', 160))
 
         # Language options
-        a = 200
-        for language_name in game.language_list:
-            buttons.draw_button(
-                ('center', a),
-                text=language_name,
-                language=language_name,
-                available=language_name != game.switches['language'])
-            a += 30
+
+        buttons.draw_image_button((310, 200),
+                                  button_name='english',
+                                  size=(180, 51),
+                                  language='english',
+                                  available='english' != game.switches['language'])
+        buttons.draw_image_button((310, 251),
+                                  button_name='spanish',
+                                  size=(180, 37),
+                                  language='spanish',
+                                  available='spanish' != game.switches['language'])
+        buttons.draw_image_button((310, 288),
+                                  button_name='german',
+                                  size=(180, 37),
+                                  language='german',
+                                  available='german' != game.switches['language'])
 
         if game.switches['language'] != game.settings['language']:
             game.settings['language'] = game.switches['language']
@@ -357,15 +336,6 @@ class LanguageScreen(Screens):
                 game.switch_language()
 
         # other buttons
-
-        if game.settings_changed:
-            buttons.draw_button(('center', -150),
-                                text='Save Settings',
-                                save_settings=True)
-        else:
-            buttons.draw_button(('center', -150),
-                                text='Save Settings',
-                                available=False)
         draw_back_and_save()
 
 
