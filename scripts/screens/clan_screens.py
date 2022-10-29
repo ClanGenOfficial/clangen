@@ -162,7 +162,7 @@ class ClanScreen(Screens):
         if biome not in available_biome:
             biome = available_biome[0]
             game.clan.biome = biome
-        biome.lower()
+        biome = biome.lower()
 
         all_backgrounds = []
         for leaf in leaves:

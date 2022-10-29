@@ -200,6 +200,11 @@ def init_scars(cat):
     else:
         cat.specialty = None
 
+    if cat.specialty == 'NOTAIL':
+        if cat.specialty2 == 'HALFTAIL':
+            cat.specialty2 = None
+        else:
+            pass
     scar_choice2 = randint(0, 30)
     if cat.age in ['kitten', 'adolescent']:
         scar_choice2 = randint(0, 100)
@@ -214,6 +219,8 @@ def init_scars(cat):
         ])
     else:
         cat.specialty2 = None
+    if cat.specialty2 == 'NOTAIL' and cat.specialty == 'HALFTAIL':
+        cat.specialty == None
 
 def init_accessories(cat):
     acc_display_choice = randint(0, 35)
@@ -445,5 +452,9 @@ def init_white_patches(cat):
                     cat.white_patches = choice(vit)
                 else:
                     cat.white_patches = None
+        # just making sure no cats end up with no white patches and true white            
+        if cat.white_patches == None:
+            cat.white = False
     else:
         cat.white_patches = None
+        cat.white = False

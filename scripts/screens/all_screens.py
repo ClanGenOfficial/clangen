@@ -4,7 +4,7 @@ from .clan_creation_screens import ClanCreatedScreen, MakeClanScreen
 from .clan_screens import ClanScreen, StarClanScreen, ListScreen, AllegiancesScreen
 from .event_screens import EventsScreen, SingleEventScreen, PatrolEventScreen, RelationshipEventScreen
 from .organizational_screens import\
-    StartScreen, SettingsScreen, InfoScreen, SwitchClanScreen, LanguageScreen, RelationshipSettingsScreen, StatsScreen
+    StartScreen, SettingsScreen, InfoScreen, SwitchClanScreen, LanguageScreen, RelationshipSettingsScreen, StatsScreen, GameModeScreen
 from .patrol_screens import PatrolScreen
 from .relation_screens import\
     RelationshipScreen, ChooseMateScreen, ChooseMentorScreen2, ViewChildrenScreen, ChooseMentorScreen
@@ -80,6 +80,7 @@ settings_screen = SettingsScreen('settings screen')
 stats_screen = StatsScreen('stats screen')
 start_screen = StartScreen('start screen')
 switch_clan_screen = SwitchClanScreen('switch clan screen')
+game_mode_screen = GameModeScreen('game_mode screen')
 
 # ---------------------------------------------------------------------------- #
 #                               patrol_screens.py                              #

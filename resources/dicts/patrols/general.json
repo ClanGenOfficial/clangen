@@ -1,7 +1,7 @@
 [
     {
         "patrol_id": 100,
-        "intro_text": "Your patrol doesn't find anything useful'",
+        "intro_text": "Your patrol doesn't find anything useful",
         "success_text": "It was still a fun outing!",
         "fail_text": "How did you fail this??",
         "decline_text": "Your patrol decides to head home early",
@@ -13,7 +13,7 @@
     },
     {
         "patrol_id": 101,
-        "intro_text": "The patrol finds a nice spot to sun themselve",
+        "intro_text": "The patrol finds a nice spot to sun themselves",
         "success_text": "The sunlight feels great and they have a pleasant patrol",
         "fail_text": "The patrol doesn't get much done because of that",
         "decline_text": "They decide to stay focused instead",

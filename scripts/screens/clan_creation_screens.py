@@ -821,7 +821,7 @@ class MakeClanScreen(Screens):
         biome = game.switches['biome']
         if biome not in available_biome:
             biome = available_biome[0]
-        biome.lower()
+        biome = biome.lower()
 
         camp_bg_path_1 = f'{camp_bg_base_dir}/{biome}/{start_leave}_camp1_{light_dark}.png'
         camp_bg_path_2 = f'{camp_bg_base_dir}/{biome}/{start_leave}_camp2_{light_dark}.png'

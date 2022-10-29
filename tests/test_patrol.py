@@ -2,6 +2,7 @@ import unittest
 import ujson
 
 from scripts.patrol import Patrol
+from scripts.cat.cats import Cat
 
 class TestLeafPatrols(unittest.TestCase):
 
@@ -29,6 +30,8 @@ class TestLeafPatrols(unittest.TestCase):
     def test_newleaf_patrol_generation(self):
         # given
         patrol = Patrol()
+        random_cat = Cat()
+        patrol.patrol_random_cat = random_cat
 
         NEWLEAF,GREENLEAF,LEAF_FALL,LEAF_BARE = self.load_resources()
 
@@ -43,6 +46,8 @@ class TestLeafPatrols(unittest.TestCase):
     def test_greenleaf_patrol_generation(self):
         # given
         patrol = Patrol()
+        random_cat = Cat()
+        patrol.patrol_random_cat = random_cat
 
         NEWLEAF,GREENLEAF,LEAF_FALL,LEAF_BARE = self.load_resources()
 
@@ -57,6 +62,8 @@ class TestLeafPatrols(unittest.TestCase):
     def test_leaffall_patrol_generation(self):
         # given
         patrol = Patrol()
+        random_cat = Cat()
+        patrol.patrol_random_cat = random_cat
 
         NEWLEAF,GREENLEAF,LEAF_FALL,LEAF_BARE = self.load_resources()
 
@@ -71,6 +78,8 @@ class TestLeafPatrols(unittest.TestCase):
     def test_leafbare_patrol_generation(self):
         # given
         patrol = Patrol()
+        random_cat = Cat()
+        patrol.patrol_random_cat = random_cat
 
         NEWLEAF,GREENLEAF,LEAF_FALL,LEAF_BARE = self.load_resources()
 
@@ -112,6 +121,8 @@ class TestBiomePatrols(unittest.TestCase):
     def test_forest_patrol_generation(self):
         # given
         patrol = Patrol()
+        random_cat = Cat()
+        patrol.patrol_random_cat = random_cat
 
         FOREST,PLAINS,MOUNTAINOUS,SWAMP,BEACH = self.load_resources()
 
@@ -127,6 +138,8 @@ class TestBiomePatrols(unittest.TestCase):
     def test_plains_patrol_generation(self):
         # given
         patrol = Patrol()
+        random_cat = Cat()
+        patrol.patrol_random_cat = random_cat
 
         FOREST,PLAINS,MOUNTAINOUS,SWAMP,BEACH = self.load_resources()
 
@@ -142,6 +155,8 @@ class TestBiomePatrols(unittest.TestCase):
     def test_mountainous_patrol_generation(self):
         # given
         patrol = Patrol()
+        random_cat = Cat()
+        patrol.patrol_random_cat = random_cat
 
         FOREST,PLAINS,MOUNTAINOUS,SWAMP,BEACH = self.load_resources()
 
@@ -157,6 +172,8 @@ class TestBiomePatrols(unittest.TestCase):
     def test_swamp_patrol_generation(self):
         # given
         patrol = Patrol()
+        random_cat = Cat()
+        patrol.patrol_random_cat = random_cat
 
         FOREST,PLAINS,MOUNTAINOUS,SWAMP,BEACH = self.load_resources()
 
@@ -172,6 +189,8 @@ class TestBiomePatrols(unittest.TestCase):
     def test_beach_patrol_generation(self):
         # given
         patrol = Patrol()
+        random_cat = Cat()
+        patrol.patrol_random_cat = random_cat
 
         FOREST,PLAINS,MOUNTAINOUS,SWAMP,BEACH = self.load_resources()
 

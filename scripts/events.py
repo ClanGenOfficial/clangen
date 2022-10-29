@@ -84,8 +84,12 @@ class Events(object):
         game.switches['timeskip'] = False
 
     def one_moon_cat(self, cat, relation_events):
-        if cat.is_alive():
-            self.living_cats += 1
+        if cat.dead:
+            cat.thoughts()
+            cat.dead_for += 1
+            return
+        
+        self.living_cats += 1
 
         self.perform_ceremonies(cat) # here is age up included
         self.handle_deaths(cat)
@@ -216,8 +220,7 @@ class Events(object):
                     else:
                         chance = randint(0, 30)
                     print('POSSIBLE MED APP - CHANCE:', chance)
-                    print('med app chance:', chance)
-                    if chance in range(0, 11):    
+                    if chance in range(1, 11):    
                         if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
                             chance = 1
                         else:
@@ -372,7 +375,7 @@ class Events(object):
                     choice(scars4),
                     choice(scars5)
                 ])
-                if cat.specialty == 'NOTAIL':
+                if cat.specialty in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
@@ -382,9 +385,13 @@ class Events(object):
                     ]))
                 elif cat.specialty == 'SNAKE':
                     scar_text.append(f'{name} was bit by a snake but lived')
-                elif cat.specialty == 'TOETRAP':
+                elif cat.specialty == 'TOETRAP' and cat.specialty2 != 'NOPAW':
                     scar_text.append(
                         f'{name} got their paw stuck in a twoleg trap and earned a scar'
+                    )
+                elif cat.specialty == 'NOPAW' and cat.specialty2 not in ['TOETRAP', 'NOPAW']:
+                    scar_text.append(
+                        f'{name} lost their paw to a twoleg trap'
                     )
                 else:
                     scar_text.extend([
@@ -404,7 +411,7 @@ class Events(object):
                     choice(scars4),
                     choice(scars5)
                 ])
-                if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
+                if cat.specialty2 in ['NOTAIL', 'HALFTAIL'] and cat.specialty not in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
@@ -415,9 +422,13 @@ class Events(object):
                     ]))
                 elif cat.specialty2 == 'SNAKE' and cat.specialty != 'SNAKE':
                     scar_text.append(f'{name} was bit by a snake but lived')
-                elif cat.specialty2 == 'TOETRAP' and cat.specialty != 'TOETRAP':
+                elif cat.specialty2 == 'TOETRAP' and cat.specialty not in ['TOETRAP', 'NOPAW']:
                     scar_text.append(
                         f'{name} got their paw stuck in a twoleg trap and earned a scar'
+                    )
+                elif cat.specialty2 == 'NOPAW' and cat.specialty not in ['TOETRAP', 'NOPAW']:
+                    scar_text.append(
+                        f'{name} lost their paw to a twoleg trap'
                     )
                 else:
                     if clan_has_kits == True:
@@ -444,7 +455,7 @@ class Events(object):
         ]:
             if cat.specialty is None:
                 cat.specialty = choice([choice(scars1), choice(scars2)])
-                if cat.specialty == 'NOTAIL':
+                if cat.specialty in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
@@ -480,7 +491,7 @@ class Events(object):
                     ])
             elif cat.specialty2 is None:
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
-                if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
+                if cat.specialty2 in ['NOTAIL', 'HALFTAIL'] and cat.specialty not in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
@@ -519,7 +530,7 @@ class Events(object):
         ] and other_cat.status == 'leader':
             if cat.specialty is None:
                 cat.specialty = choice([choice(scars1), choice(scars2)])
-                if cat.specialty == 'NOTAIL':
+                if cat.specialty in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
@@ -542,7 +553,7 @@ class Events(object):
                     ])
             elif cat.specialty2 is None:
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
-                if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
+                if cat.specialty2 in ['NOTAIL', 'HALFTAIL'] and cat.specialty not in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
@@ -571,7 +582,7 @@ class Events(object):
         ]:
             if cat.specialty is None:
                 cat.specialty = choice([choice(scars1), choice(scars2)])
-                if cat.specialty == 'NOTAIL':
+                if cat.specialty in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
@@ -600,7 +611,7 @@ class Events(object):
                     ])
             elif cat.specialty2 is None:
                 cat.specialty2 = choice([choice(scars1), choice(scars2)])
-                if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
+                if cat.specialty2 in ['NOTAIL', 'HALFTAIL'] and cat.specialty not in ['NOTAIL', 'HALFTAIL']:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
 
@@ -1375,28 +1386,48 @@ class Events(object):
                     name3 = str(dead_cats[2].name)
                     name4 = str(dead_cats[3].name)
                     name5 = str(dead_cats[4].name)
-                    disaster.extend([
-                        ' drown after the camp becomes flooded',
-                        ' are killed in a battle against ' +
-                        choice(game.clan.all_clans).name + 'Clan',
-                        ' are killed after a fire rages through the camp',
-                        ' are killed in an ambush by a group of rogues',
-                        ' go missing in the night',
-                        ' are killed after a badger attack',
-                        ' die to a greencough outbreak',
-                        ' are taken away by twolegs',
-                        ' eat poisoned freshkill and die'
-                    ])
-                    if game.clan.current_season == 'Leaf-bare':
+                    if cat.status in dead_cats != 'kitten':
                         disaster.extend([
-                            ' die after freezing from a snowstorm',
-                            ' starve to death when no prey is found'
+                            ' drown after the camp becomes flooded',
+                            ' are killed in a battle against ' +
+                            choice(other_clan).name + 'Clan',
+                            ' are killed after a fire rages through the camp',
+                            ' are killed in an ambush by a group of rogues',
+                            ' go missing in the night',
+                            ' are killed after a badger attack',
+                            ' die to a greencough outbreak',
+                            ' are taken away by twolegs',
+                            ' eat poisoned freshkill and die'
                         ])
-                    elif game.clan.current_season == 'Greenleaf':
+                        if game.clan.current_season == 'Leaf-bare':
+                            disaster.extend([
+                                ' die after freezing from a snowstorm',
+                                ' starve to death when no prey is found'
+                            ])
+                        elif game.clan.current_season == 'Greenleaf':
+                            disaster.extend([
+                                ' die after overheating',
+                                ' die after the water dries up from drought'
+                            ])
+                    else:
                         disaster.extend([
-                            ' die after overheating',
-                            ' die after the water dries up from drought'
+                            ' drown after the camp becomes flooded',
+                            ' are killed after a fire rages through the camp',
+                            ' go missing in the night',
+                            ' are killed after a badger attack',
+                            ' die to a greencough outbreak',
+                            ' eat poisoned freshkill and die'
                         ])
+                        if game.clan.current_season == 'Leaf-bare':
+                            disaster.extend([
+                                ' die after freezing from a snowstorm',
+                                ' starve to death when no prey is found'
+                            ])
+                        elif game.clan.current_season == 'Greenleaf':
+                            disaster.extend([
+                                ' die after overheating',
+                                ' die after the water dries up from drought'
+                            ])
 
                     game.cur_events_list.append(name1 + ', ' + name2 + ', ' +
                                                 name3 + ', ' + name4 +

@@ -98,18 +98,14 @@ class Sprites(object):
         self.make_group(scars, (5, 0), 'scarsNOTAIL')
         self.make_group(f'{scars}extra', (0, 0), 'scarsextraONE', sprites_y=2)
         self.make_group(f'{scars}extra', (1, 0), 'scarsextraTWO', sprites_y=2)
-        self.make_group(f'{scars}extra', (2, 0),
-                        'scarsextraTHREE',
-                        sprites_y=2)
-        self.make_group(f'{scars}extra', (3, 0),
-                        'scarsextraLEFTEAR',
-                        sprites_y=2)
-        self.make_group(f'{scars}extra', (4, 0),
-                        'scarsextraRIGHTEAR',
-                        sprites_y=2)
-        self.make_group(f'{scars}extra', (5, 0),
-                        'scarsextraNOTAIL',
-                        sprites_y=2)
+        self.make_group(f'{scars}extra', (2, 0),'scarsextraTHREE', sprites_y=2)
+        self.make_group(f'{scars}extra', (3, 0),'scarsextraLEFTEAR', sprites_y=2)
+        self.make_group(f'{scars}extra', (4, 0),'scarsextraRIGHTEAR', sprites_y=2)
+        self.make_group(f'{scars}extra', (5, 0),'scarsextraNOTAIL', sprites_y=2)
+        self.make_group('Newscars', (3, 2), 'scarsHALFTAIL')
+        self.make_group('Newscarsextra', (3, 2), 'scarsextraHALFTAIL', sprites_y=2)
+        self.make_group('Newscars', (4, 2), 'scarsNOPAW')
+        self.make_group('Newscarsextra', (4, 2), 'scarsextraNOPAW', sprites_y=2)
         
         for a, i in enumerate(
             ["TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE"]):
@@ -122,6 +118,13 @@ class Sprites(object):
             sprites.make_group('Newscarsextra', (a, 1),
                                f'scarsextra{i}',
                                sprites_y=2)
+        for a, i in enumerate(
+            ["LEGBITE", "NECKBITE", "FACE"]):
+            sprites.make_group('Newscars', (a, 2), f'scars{i}')
+            sprites.make_group('Newscarsextra', (a, 2),
+                               f'scarsextra{i}',
+                               sprites_y=2)
+        
                                
         # Accessories
         for a, i in enumerate([

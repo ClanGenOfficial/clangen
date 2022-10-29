@@ -195,7 +195,7 @@ class Button(object):
                     game.clan.deputy.exiled = True
                     game.clan.deputy = None
                 Cat.all_cats[cat_value].exiled = True
-                Cat.cat_class.other_cats[cat_value] = Cat.all_cats[cat_value]
+                Cat.other_cats[cat_value] = Cat.all_cats[cat_value]
             elif text == 'Change to Trans Male':
                 Cat.all_cats[cat_value].genderalign = "trans male"
             elif text == 'Change to Trans Female':
@@ -205,6 +205,8 @@ class Button(object):
             elif text == 'Change to Cisgender':
                 Cat.all_cats[cat_value].genderalign = Cat.all_cats[
                     cat_value].gender
+            elif text == 'Remove accessory':
+                Cat.all_cats[str(cat_value)].accessory = None
             elif cat_value is None and arrow is None:
                 self.activate(values)
             elif arrow is None:
@@ -231,7 +233,7 @@ class Button(object):
                     cat_value.no_kits = False
                 elif text == 'Exile Cat':
                     Cat.all_cats[cat_value].exiled = True
-                    Cat.cat_class.other_cats[cat_value] = Cat.all_cats[
+                    Cat.other_cats[cat_value] = Cat.all_cats[
                         cat_value]
                     game.switches['cur_screen'] = 'other screen'
                 elif text == 'Change to Trans Male':
@@ -244,6 +246,9 @@ class Button(object):
                     Cat.all_cats[
                         cat_value].genderalign = Cat.all_cats[
                             cat_value].gender
+                elif text == 'Remove accessory':
+                    Cat.all_cats[str(cat_value)].accessory = None
+
                 elif cat_value is None and arrow is None:
                     self.activate(values)
                 elif arrow is None:

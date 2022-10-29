@@ -2,7 +2,7 @@ from math import ceil
 
 from .base_screens import Screens, draw_menu_buttons, cat_profiles, draw_next_prev_cat_buttons
 
-from scripts.utility import draw_large, update_sprite, draw_bar
+from scripts.utility import draw_large, update_sprite
 from scripts.game_structure.buttons import buttons
 from scripts.game_structure.text import *
 from scripts.cat.cats import Cat
@@ -660,9 +660,9 @@ class RelationshipScreen(Screens):
             current_x = 294 + pos_x
             current_y = 180 + pos_y + count
             if check_age:
-                draw_bar(the_relationship.romantic_love, current_x, current_y)
+                self.draw_bar(the_relationship.romantic_love, current_x, current_y)
             else:
-                draw_bar(0, current_x, current_y)
+                self.draw_bar(0, current_x, current_y)
             count += 5
 
             if the_relationship.platonic_like > 49:
@@ -676,7 +676,8 @@ class RelationshipScreen(Screens):
             count += 20
             current_x = 294 + pos_x
             current_y = 178 + pos_y + count
-            draw_bar(the_relationship.platonic_like, current_x, current_y)
+            self.draw_bar(the_relationship.platonic_like, current_x, current_y)
+
             count += 5
 
             if the_relationship.dislike > 49:
@@ -690,7 +691,8 @@ class RelationshipScreen(Screens):
             count += 20
             current_x = 294 + pos_x
             current_y = 176 + pos_y + count
-            draw_bar(the_relationship.dislike, current_x, current_y)
+            self.draw_bar(the_relationship.dislike, current_x, current_y)
+
             count += 5
 
             if the_relationship.admiration > 49:
@@ -704,7 +706,8 @@ class RelationshipScreen(Screens):
             count += 20
             current_x = 294 + pos_x
             current_y = 174 + pos_y + count
-            draw_bar(the_relationship.admiration, current_x, current_y)
+            self.draw_bar(the_relationship.admiration, current_x, current_y)
+
             count += 5
 
             verdana_small.text(
@@ -713,7 +716,8 @@ class RelationshipScreen(Screens):
             count += 20
             current_x = 294 + pos_x
             current_y = 172 + pos_y + count
-            draw_bar(the_relationship.comfortable, current_x, current_y)
+            self.draw_bar(the_relationship.comfortable, current_x, current_y)
+
             count += 5
 
             verdana_small.text(
@@ -722,7 +726,8 @@ class RelationshipScreen(Screens):
             count += 20
             current_x = 294 + pos_x
             current_y = 170 + pos_y + count
-            draw_bar(the_relationship.jealousy, current_x, current_y)
+            self.draw_bar(the_relationship.jealousy, current_x, current_y)
+
             count += 5
 
             verdana_small.text(
@@ -731,7 +736,8 @@ class RelationshipScreen(Screens):
             count += 20
             current_x = 294 + pos_x
             current_y = 168 + pos_y + count
-            draw_bar(the_relationship.trust, current_x, current_y)
+            self.draw_bar(the_relationship.trust, current_x, current_y)
+
 
             cats_on_page += 1
             pos_x += 122
@@ -902,6 +908,26 @@ class RelationshipScreen(Screens):
 
 
 
+
+    def draw_bar(self, value, pos_x, pos_y):
+        # Loading Bar and variables
+        bar_bg = pygame.image.load(
+            "resources/images/relations_border.png").convert_alpha()
+        original_bar = pygame.image.load(
+            "resources/images/relation_bar.png").convert_alpha()
+
+        bg_rect = bar_bg.get_rect(midleft=(pos_x, pos_y))
+        screen.blit(bar_bg, bg_rect)
+        x_pos = 0
+        for i in range(int(value / 10)):
+            x_pos = i * 11
+            bar_rect = original_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
+            bar = pygame.transform.scale(original_bar, (10, 10))
+            screen.blit(bar, bar_rect)
+        x_pos = 11 * int(value / 10)
+        bar_rect = original_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
+        bar = pygame.transform.scale(original_bar, (value % 10, 10))
+        screen.blit(bar, bar_rect)
 
     def screen_switches(self):
         cat_profiles()
