@@ -571,7 +571,6 @@ class RelationshipScreen(Screens):
             pygame.image.load("resources/images/relationship_list_frame.png").convert_alpha(), (502, 500))
         screen.blit(list_frame, (273, 122))
 
-
         # make a list of the relationships
         search_relations = []
         if search_text.strip() != '':
@@ -583,9 +582,9 @@ class RelationshipScreen(Screens):
 
         # LAYOUT
         verdana_big.text(str(the_cat.name) + ' Relationships', (35, 75))
-        if the_cat != None and the_cat.mate != '':
+        if the_cat is None and the_cat.mate != '':
             mate = Cat.all_cats.get(the_cat.mate)
-            if mate != None:
+            if mate is None:
                 verdana_small.text(
                     f"{str(the_cat.genderalign)}  - {str(the_cat.age)} - {str(the_cat.trait)} -  mate: {str(mate.name)}",
                     (50, 100))
@@ -598,7 +597,7 @@ class RelationshipScreen(Screens):
                 f"{str(the_cat.genderalign)}  - {str(the_cat.age)} - {str(the_cat.trait)}",
                 (50, 100))
 
-        # filter relationships based on the settings
+        # filter relationships based on the settings #TOGGLE IMAGES NOT DONE YET
         if not game.settings['show dead relation']:
             search_relations = list(
                 filter(lambda rel: not rel.cat_to.dead, search_relations))
@@ -629,18 +628,14 @@ class RelationshipScreen(Screens):
                                              8]
             update_sprite(the_relationship.cat_to)
 
-
             buttons.draw_button((312 + pos_x, 150 + pos_y),
                                 image=the_relationship.cat_to.sprite,
                                 chosen_cat=the_relationship.cat_to,
                                 show_details=True)
 
-
             # name length
             verdana_mid.text(str(the_relationship.cat_to.name),
                                 (290 + pos_x, 131 + pos_y))
-
-
 
             count = 17
             different_age = the_relationship.cat_to.age != the_relationship.cat_to.age

@@ -4,9 +4,10 @@ from .base_screens import Screens, draw_menu_buttons, draw_clan_name
 
 from scripts.clan import map_available
 from scripts.cat.cats import Cat
-#from scripts.world import save_map
+# from scripts.world import save_map
 from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
+
 
 class StartScreen(Screens):
 
@@ -82,11 +83,12 @@ class StartScreen(Screens):
         if game.clan is not None:
             game.save_cats()
             game.clan.save_clan()
-            #if map_available:
+            # if map_available:
             #    save_map(game.map_info, game.clan.name)
 
         # LOAD settings
         game.load_settings()
+
 
 class SwitchClanScreen(Screens):
 
@@ -113,6 +115,7 @@ class SwitchClanScreen(Screens):
                                   cur_screen='start screen',
                                   size=(153, 30),
                                   hotkey=[0])
+
 
 def draw_settings_header():
     x_pos = 140
@@ -145,18 +148,23 @@ def draw_settings_header():
                 text=text,
                 cur_screen='info screen')
 
+
 def draw_back_and_save():
-    buttons.draw_button((50, 50),
-                            text='<< Back to Main Menu',
-                            cur_screen='start screen')
+    buttons.draw_image_button((25, 25),
+                              button_name='main_menu',
+                              text='< Back to Main Menu',
+                              cur_screen='start screen',
+                              size=(153, 30),
+                              hotkey=[0])
     if game.settings_changed:
         buttons.draw_button(('center', 550),
-                                text='Save Settings',
-                                save_settings=True)
+                            text='Save Settings',
+                            save_settings=True)
     else:
         buttons.draw_button(('center', 550),
-                                text='Save Settings',
-                                available=False)
+                            text='Save Settings',
+                            available=False)
+
 
 class SettingsScreen(Screens):
     text_size = {
@@ -198,12 +206,6 @@ class SettingsScreen(Screens):
 
         # other buttons
 
-        buttons.draw_image_button((25, 25),
-                                  button_name='main_menu',
-                                  text='< Back to Main Menu',
-                                  cur_screen='start screen',
-                                  size=(153, 30),
-                                  hotkey=[0])
         if game.settings_changed:
             buttons.draw_button(('center', -130),
                                 text='Save Settings',
@@ -214,6 +216,7 @@ class SettingsScreen(Screens):
                                 available=False)
 
         draw_back_and_save()
+
 
 class RelationshipSettingsScreen(Screens):
     text_size = {
@@ -265,12 +268,7 @@ class RelationshipSettingsScreen(Screens):
                             setting='romantic with former mentor')
 
         # other buttons
-        buttons.draw_image_button((25, 25),
-                                  button_name='main_menu',
-                                  text='< Back to Main Menu',
-                                  cur_screen='start screen',
-                                  size=(153, 30),
-                                  hotkey=[0])
+
         if game.settings_changed:
             buttons.draw_button(('center', -130),
                                 text='Save Settings',
@@ -280,6 +278,7 @@ class RelationshipSettingsScreen(Screens):
                                 text='Save Settings',
                                 available=False)
         draw_back_and_save()
+
 
 class InfoScreen(Screens):
 
@@ -318,6 +317,7 @@ class InfoScreen(Screens):
                                   size=(153, 30),
                                   hotkey=[0])
 
+
 class LanguageScreen(Screens):
 
     def on_use(self):
@@ -342,12 +342,7 @@ class LanguageScreen(Screens):
                 game.switch_language()
 
         # other buttons
-        buttons.draw_image_button((25, 25),
-                                  button_name='main_menu',
-                                  text='< Back to Main Menu',
-                                  cur_screen='start screen',
-                                  size=(153, 30),
-                                  hotkey=[0])
+
         if game.settings_changed:
             buttons.draw_button(('center', -150),
                                 text='Save Settings',
@@ -357,6 +352,7 @@ class LanguageScreen(Screens):
                                 text='Save Settings',
                                 available=False)
         draw_back_and_save()
+
 
 class GameModeScreen(Screens):
 
@@ -397,7 +393,9 @@ class GameModeScreen(Screens):
             game.settings_changed = True
 
         # other buttons
+
         draw_back_and_save()
+
 
 class StatsScreen(Screens):
 

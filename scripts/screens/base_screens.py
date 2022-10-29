@@ -5,6 +5,7 @@ from scripts.game_structure.game_essentials import *
 from scripts.clan import map_available
 from scripts.game_structure.text import *
 
+
 class Screens(object):
     game_screen = screen
     game_x = screen_x
@@ -36,60 +37,62 @@ def cat_profiles():
         game.choose_cats[x] = Cat.all_cats[x]
         update_sprite(game.choose_cats[x])
 
+
 def draw_menu_buttons():
     buttons.draw_image_button((246, 60),
-                        button_name='events',
-                        text='EVENTS',
-                        cur_screen='events screen',
-                        size=(82, 30),
-                        hotkey=[2])
+                              button_name='events',
+                              text='EVENTS',
+                              cur_screen='events screen',
+                              size=(82, 30),
+                              hotkey=[2])
     buttons.draw_image_button((328, 60),
-                        button_name='clan',
-                        text='CLAN',
-                        cur_screen='clan screen',
-                        size=(58, 30),
-                        hotkey=[3])
+                              button_name='clan',
+                              text='CLAN',
+                              cur_screen='clan screen',
+                              size=(58, 30),
+                              hotkey=[3])
     buttons.draw_image_button((386, 60),
-                        button_name='starclan',
-                        text='STARCLAN',
-                        cur_screen='starclan screen',
-                        size=(88, 30),
-                        hotkey=[4])
+                              button_name='starclan',
+                              text='STARCLAN',
+                              cur_screen='starclan screen',
+                              size=(88, 30),
+                              hotkey=[4])
     buttons.draw_image_button((474, 60),
-                        button_name='patrol',
-                        text='PATROL',
-                        cur_screen='patrol screen',
-                        size=(80, 30),
-                        hotkey=[5])
+                              button_name='patrol',
+                              text='PATROL',
+                              cur_screen='patrol screen',
+                              size=(80, 30),
+                              hotkey=[5])
     buttons.draw_image_button((25, 25),
-                        button_name='main_menu',
-                        text='< Back to Main Menu',
-                        cur_screen='start screen',
-                        size=(153, 30),
-                        hotkey=[0])
+                              button_name='main_menu',
+                              text='< Back to Main Menu',
+                              cur_screen='start screen',
+                              size=(153, 30),
+                              hotkey=[0])
     buttons.draw_image_button((676, 60),
-                        button_name='list_cats',
-                        text='List Cats',
-                        cur_screen='list screen',
-                        size=(99, 30),
-                        hotkey=[6])
+                              button_name='list_cats',
+                              text='List Cats',
+                              cur_screen='list screen',
+                              size=(99, 30),
+                              hotkey=[6])
     buttons.draw_image_button((657, 25),
-                        button_name='allegiances',
-                        text='Allegiances',
-                        cur_screen='allegiances screen',
-                        size=(118, 30),
-                        hotkey=[7])
+                              button_name='allegiances',
+                              text='Allegiances',
+                              cur_screen='allegiances screen',
+                              size=(118, 30),
+                              hotkey=[7])
     #buttons.draw_button((-70, 110),
     #                    text='Map',
     #                    cur_screen='map screen',
     #                    available=map_available,
     #                    hotkey=[8])
     buttons.draw_image_button((25, 60),
-                        button_name='stats',
-                        text='Stats',
-                        cur_screen='stats screen',
-                        size=(81, 30),
-                        hotkey=[1])
+                              button_name='stats',
+                              text='Stats',
+                              cur_screen='stats screen',
+                              size=(81, 30),
+                              hotkey=[1])
+
 
 def draw_clan_name():
     clan_name_bg = pygame.transform.scale(
@@ -97,6 +100,7 @@ def draw_clan_name():
     screen.blit(clan_name_bg, (310, 25))
 
     verdana_big_light.text(f'{game.clan.name}Clan', ('center', 32))
+
 
 def draw_next_prev_cat_buttons(the_cat):
     is_instructor = False
@@ -136,7 +140,8 @@ def draw_next_prev_cat_buttons(the_cat):
                                   cat=next_cat,
                                   size=(153, 30),
                                   hotkey=[21],
-                                  show_details=False
+                                  show_details=False,
+                                  chosen_cat=None
                                   )
     else:
         buttons.draw_image_button((622, 25),
