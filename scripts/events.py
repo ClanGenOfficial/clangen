@@ -209,10 +209,10 @@ class Events(object):
                         chance = randint(0, 2)
                         print('POSSIBLE MED APP - ELDER MED MENTOR - CHANCE:', chance)
                     elif has_elder_med is False and has_med is True:
-                        chance = randint(0, 30)
+                        chance = randint(0, 90)
                     elif has_elder_med and has_med:
                         if very_old_med:
-                            chance = randint(0, 35)
+                            chance = randint(0, 40)
                         else:
                             chance = 0
                     else:
