@@ -667,14 +667,21 @@ class Events(object):
                 created_cats = self.create_new_cat(loner=True, loner_name=True)
                 loner_name = created_cats[0].name
                 loner_text = [
-                    f'{name} finds a loner named {loner_name} who joins the clan',
-                    f'A loner named {loner_name} waits on the border for a patrol, asking to join the clan'
+                    f'{name} finds a loner who joins the clan',
+                    f'A loner waits on the border for a patrol, asking to join the clan'
                 ]
-                game.cur_events_list.append(choice(loner_text))
-                game.cur_events_list.append(str(loner_name) + ' decides to keep their name')
+                if loner_name in [names.loner_names]:
+                    success_text = [
+                        f'{str(loner_name)} decides to keep their name'
+                ]
+                else:
+                    success_text = [ 
+                        f'The loner decides to take on a slightly more clan-like name, and is now called {str(loner_name)}'
+                    ]
+                game.cur_events_list.append(success_text)
 
             elif type_of_new_cat == 3:
-                created_cats = self.create_new_cat(loner=True)
+                created_cats = self.create_new_cat(loner=True, loner_name=True)
                 loner_name = created_cats[0].name
                 loner_text = [
                     f'{name} finds a loner who joins the clan',
@@ -703,12 +710,18 @@ class Events(object):
                 created_cats = self.create_new_cat(loner=False,loner_name=True,kittypet=True,kit=False,litter=False,relevant_cat=None)
                 loner_name = created_cats[0].name
                 loner_text = [
-                    f'{name} finds a kittypet named {str(loner_name)} who wants to join the clan',
-                    f'A kittypet named {str(loner_name)} stops {name} and asks to join the clan'
+                    f'{name} finds a kittypet who wants to join the clan',
+                    f'A kittypet stops {name} and asks to join the clan'
                 ]
-                game.cur_events_list.append(choice(loner_text))
-                game.cur_events_list.append(
-                    str(loner_name) + ' decides to keep their name')
+                if loner_name in [names.loner_names]:
+                    success_text = [
+                        f'{str(loner_name)} decides to keep their name'
+                ]
+                else:
+                    success_text = [ 
+                        f'The kittypet decides to take on a slightly more clan-like name, and is now called {str(loner_name)}'
+                    ]
+                game.cur_events_list.append(success_text)
             
             elif type_of_new_cat == 6:
                 created_cats = self.create_new_cat(loner=True)
@@ -768,9 +781,12 @@ class Events(object):
 
         amount = choice([1, 1, 2, 2, 2, 3]) if litter else 1
         created_cats = []
+        a = randint(0, 1)
         for number in range(amount):
             new_cat = None
-            if loner_name:
+            if loner_name and a == 1:
+                    new_cat = Cat(moons=age, prefix=name, status=status, gender=choice(['female', 'male']))
+            elif loner_name:
                 new_cat = Cat(moons=age, prefix=name, suffix='', status=status, gender=choice(['female', 'male']))
             else:
                 new_cat = Cat(moons=age, status=status, gender=choice(['female', 'male']))
