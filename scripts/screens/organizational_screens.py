@@ -166,6 +166,35 @@ def draw_back_and_save():
                             available=False)
 
 
+# ON / OFF BUTTONS
+def draw_on_off(x_value, y_value, setting):
+    if game.settings[setting] is False:
+        buttons.draw_image_button((x_value, y_value),
+                                  button_name='on',
+                                  size=(46, 34),
+                                  setting=setting
+                                  )
+        buttons.draw_image_button((x_value + 46, y_value),
+                                  button_name='off',
+                                  size=(46, 34),
+                                  setting=setting,
+                                  available=False
+                                  )
+
+    if game.settings[setting] is True:
+        buttons.draw_image_button((x_value, y_value),
+                                  button_name='on',
+                                  size=(46, 34),
+                                  setting=setting,
+                                  available=False
+                                  )
+        buttons.draw_image_button((x_value + 46, y_value),
+                                  button_name='off',
+                                  size=(46, 34),
+                                  setting=setting,
+                                  )
+
+
 class SettingsScreen(Screens):
     text_size = {
         '0': 'small',
@@ -180,29 +209,37 @@ class SettingsScreen(Screens):
         verdana.text("Change the setting of your game here.", ('center', 140))
 
         # Setting names
-        verdana.text("Dark mode:", (100, 200))
-        verdana.text("Enable clan page background:", (100, 230))
-        verdana.text("Automatically save every five moons:", (100, 260))
-        verdana.text("Allow mass extinction events:", (100, 290))
-        verdana.text("Force cats to retire after severe injury:", (100, 320))
-        verdana.text("Enable shaders:", (100, 350))
-        verdana.text("Display hotkeys on text buttons:", (100, 380))
+        verdana.text("Dark mode", (200, 206))
+        verdana.text("Enable clan page background", (200, 245))
+        verdana.text("Automatically save every five moons", (200, 284))
+        verdana.text("Allow mass extinction events", (200, 323))
+        verdana.text("Force cats to retire after severe injury", (200, 362))
+        verdana.text("Enable shaders", (200, 401))
+        verdana.text("Display hotkeys on text buttons", (200, 440))
 
         # Setting values
-        verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
-        buttons.draw_button((-80, 200), text='SWITCH', setting='dark mode')
-        verdana.text(self.bool[game.settings['backgrounds']], (-170, 230))
-        buttons.draw_button((-80, 230), text='SWITCH', setting='backgrounds')
-        verdana.text(self.bool[game.settings['autosave']], (-170, 260))
-        buttons.draw_button((-80, 260), text='SWITCH', setting='autosave')
-        verdana.text(self.bool[game.settings['disasters']], (-170, 290))
-        buttons.draw_button((-80, 290), text='SWITCH', setting='disasters')
-        verdana.text(self.bool[game.settings['retirement']], (-170, 320))
-        buttons.draw_button((-80, 320), text='SWITCH', setting='retirement')
-        verdana.text(self.bool[game.settings['shaders']], (-170, 350))
-        buttons.draw_button((-80, 350), text='SWITCH', setting='shaders')
-        verdana.text(self.bool[game.settings['hotkey display']], (-170, 380))
-        buttons.draw_button((-80, 380),text='SWITCH',setting='hotkey display')
+        draw_on_off(100, 200, 'dark mode')
+        draw_on_off(100, 239, 'backgrounds')
+        draw_on_off(100, 278, 'autosave')
+        draw_on_off(100, 317, 'disasters')
+        draw_on_off(100, 356, 'retirement')
+        draw_on_off(100, 395, 'shaders')
+        draw_on_off(100, 434, 'hotkey display')
+
+        #verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
+        #buttons.draw_button((-80, 200), text='SWITCH', setting='dark mode')
+        #verdana.text(self.bool[game.settings['backgrounds']], (-170, 230))
+        #buttons.draw_button((-80, 230), text='SWITCH', setting='backgrounds')
+        #verdana.text(self.bool[game.settings['autosave']], (-170, 260))
+        #buttons.draw_button((-80, 260), text='SWITCH', setting='autosave')
+        #verdana.text(self.bool[game.settings['disasters']], (-170, 290))
+        #buttons.draw_button((-80, 290), text='SWITCH', setting='disasters')
+        #verdana.text(self.bool[game.settings['retirement']], (-170, 320))
+        #buttons.draw_button((-80, 320), text='SWITCH', setting='retirement')
+        #verdana.text(self.bool[game.settings['shaders']], (-170, 350))
+        #buttons.draw_button((-80, 350), text='SWITCH', setting='shaders')
+        #verdana.text(self.bool[game.settings['hotkey display']], (-170, 380))
+        #buttons.draw_button((-80, 380),text='SWITCH',setting='hotkey display')
 
         # other buttons
 

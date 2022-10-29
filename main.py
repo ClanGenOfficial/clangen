@@ -159,6 +159,7 @@ while True:
                         game.allegiance_scroll_ct) < max_scroll_direction:
                     game.allegiance_list.append(game.allegiance_list.pop(0))
                     game.allegiance_scroll_ct -= 1
+
         if game.current_screen == 'patrol screen':
             random_options = []
             if event.type == pygame.KEYDOWN:
@@ -168,6 +169,7 @@ while True:
                         if u < i_max:
                             game.switches['current_patrol'].append(
                                 game.patrol_cats[u])
+
         if game.current_screen == 'change name screen' and game.switches[
                 'change_name'] == '' and event.type == pygame.KEYDOWN:
             if event.unicode.isalpha() or event.unicode.isspace(
@@ -175,9 +177,10 @@ while True:
                 if len(game.switches['naming_text']
                        ) < 20:  # can't type more than max name length
                     game.switches['naming_text'] += event.unicode
-            elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
+            elif event.key == pygame.K_BACKSPACE:  # delete last character
                 game.switches['naming_text'] = game.switches[
                     'naming_text'][:-1]
+
         if game.current_screen == 'change gender screen' and game.switches[
                 'change_name'] == '' and event.type == pygame.KEYDOWN:
             if event.unicode.isalpha() or event.unicode.isspace(
@@ -185,9 +188,10 @@ while True:
                 if len(game.switches['naming_text']
                        ) < 20:  # can't type more than max name length
                     game.switches['naming_text'] += event.unicode
-            elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
+            elif event.key == pygame.K_BACKSPACE:  # delete last character
                 game.switches['naming_text'] = game.switches[
                     'naming_text'][:-1]
+
         if game.current_screen in [
                 'list screen', 'starclan screen', 'other screen', 'relationship screen'
         ] and event.type == pygame.KEYDOWN:
@@ -196,7 +200,7 @@ while True:
                 if len(game.switches['search_text']
                        ) < 20:  # can't type more than max name length
                     game.switches['search_text'] += event.unicode
-            elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
+            elif event.key == pygame.K_BACKSPACE:  # delete last character
                 game.switches['search_text'] = game.switches[
                     'search_text'][:-1]
 
