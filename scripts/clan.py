@@ -78,7 +78,8 @@ class Clan(object):
                  biome='Forest',
                  world_seed=6616,
                  camp_site=(20, 22),
-                 camp_bg=None):
+                 camp_bg=None,
+                 game_mode='classic'):
         if name != "":
             self.name = name
             self.leader = leader
@@ -104,6 +105,7 @@ class Clan(object):
             self.world_seed = world_seed
             self.camp_site = camp_site
             self.camp_bg = camp_bg
+            self.game_mode = game_mode
 
     def create_clan(self):
         """ This function is only called once a new clan is created in the 'clan created' screen, not every time
@@ -146,10 +148,15 @@ class Clan(object):
         #if map_available:
         #    save_map(game.map_info, game.clan.name)
 
+        # CHECK IF CAMP BG IS SET -fail-safe in case it gets set to None-
         if game.switches['camp_bg'] is None:
             random_camp_options = ['camp1', 'camp2']
             random_camp = choice(random_camp_options)
             game.switches['camp_bg'] = random_camp
+
+        # if no game mode chosen, set to Classic
+        if game.switches['game_mode'] is None:
+            game.switches['game_mode'] = 'classic'
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""
@@ -216,7 +223,7 @@ class Clan(object):
         exit()
 
     def save_clan(self):
-        data = f'{self.name},{self.age},{self.biome},{self.camp_bg},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]}' + '\n,', {self.game_mode}
+        data = f'{self.name},{self.age},{self.biome},{self.camp_bg},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]},{self.game_mode}' + '\n'
         data = data + self.leader.ID + ',' + str(
             self.leader_lives) + ',' + str(
                 self.leader_predecessors) + ',' + '\n'
@@ -294,7 +301,25 @@ class Clan(object):
             instructor_info = sections[3]
             members = sections[4].split(',')
             other_clans = []
-        if len(general) == 7:
+        if len(general) == 8:
+            if general[4] == 'None':
+                general[4] = 0
+            elif general[3] == 'None':
+                general[3] = 'camp1'
+            elif general[7] == 'None':
+                general[7] = 'classic'
+            game.clan = Clan(general[0],
+                             Cat.all_cats[leader_info[0]],
+                             Cat.all_cats.get(deputy_info[0], None),
+                             Cat.all_cats[med_cat_info[0]],
+                             biome=general[2],
+                             camp_bg=general[3],
+                             world_seed=int(general[4]),
+                             camp_site=(int(general[5]),
+                                        int(general[6])),
+                             game_mode=general[7],
+                             )
+        elif len(general) == 7:
             if general[4] == 'None':
                 general[4] = 0
             elif general[3] == 'None':
@@ -306,7 +331,9 @@ class Clan(object):
                              biome=general[2],
                              camp_bg=general[3],
                              world_seed=int(general[4]),
-                             camp_site=(int(general[5]), int(general[6])))
+                             camp_site=(int(general[5]),
+                                        int(general[6])),
+                             )
         elif len(general) == 3:
             game.clan = Clan(general[0], Cat.all_cats[leader_info[0]],
                              Cat.all_cats.get(deputy_info[0], None),
