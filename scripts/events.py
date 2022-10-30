@@ -179,9 +179,9 @@ class Events(object):
             if cat.status == 'medicine cat' and game.clan.medicine_cat is None:
                 game.clan.medicine_cat = cat
             if cat.status in ['warrior', 'deputy'] and cat.age == 'elder' and len(cat.apprentice) < 1:
-                self.ceremony(cat, 'elder', ' has retired to the elder den')
                 if cat.status == 'deputy':
                     game.clan.deputy = None
+                self.ceremony(cat, 'elder', ' has retired to the elder den')
                 cat.status_change('elder')
             if cat.moons == cat_class.age_moons[cat.age][1]:
                 if cat.status == 'kitten':
