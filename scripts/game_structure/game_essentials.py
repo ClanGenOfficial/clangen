@@ -97,7 +97,7 @@ class Game(object):
         'profile_tab_group': None,
         'gender_align': None,
         'show_details': False,
-        'chosen_cat':None,
+        'chosen_cat': None,
         'game_mode': ''
 
     }

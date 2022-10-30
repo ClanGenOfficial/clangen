@@ -17,7 +17,7 @@ class MakeClanScreen(Screens):
 
     def game_mode(self):
         # layout
-        verdana.text("Choose the mode of your game here:", ('center', 140))
+        verdana.text("Choose the game mode:", ('center', 140))
 
 
         buttons.draw_image_button((200, 200),
@@ -53,28 +53,25 @@ class MakeClanScreen(Screens):
 
     def first_phase(self):
         # layout
-        if game.settings['dark mode']:
-            name_clan_img = pygame.image.load(
-                'resources/images/pick_clan_screen/name_clan.png').convert_alpha()
-        else:
-            name_clan_img = pygame.image.load(
-                'resources/images/pick_clan_screen/name_clan_light.png').convert_alpha()
+
+        name_clan_img = pygame.image.load(
+            'resources/images/pick_clan_screen/name_clan_light.png').convert_alpha()
         screen.blit(name_clan_img, (0, 0))
 
-        self.game_screen.blit(game.naming_box, (265, 620))
+        self.game_screen.blit(game.naming_box, (265, 600))
         if game.settings['dark mode']:
-            verdana_black.text(game.switches['naming_text'], (265, 620))
+            verdana_black.text(game.switches['naming_text'], (265, 600))
         else:
-            verdana.text(game.switches['naming_text'], (265, 620))
-        verdana.text('-Clan', (410, 620))
-        buttons.draw_image_button((222, 613),
+            verdana.text(game.switches['naming_text'], (265, 600))
+        verdana_light.text('-Clan', (410, 600))
+        buttons.draw_image_button((222, 593),
                                   button_name='random_dice',
                                   text='Randomize',
                                   naming_text=choice(names.normal_prefixes),
                                   size=(34, 34),
                                   hotkey=[1]
                                   )
-        buttons.draw_image_button((455, 615),
+        buttons.draw_image_button((455, 595),
                                   button_name='reset_name',
                                   text='Reset Name',
                                   naming_text='',
@@ -93,7 +90,7 @@ class MakeClanScreen(Screens):
                                   naming_text='',
                                   size=(153, 30)
                                   )
-        buttons.draw_image_button((333, 655),
+        buttons.draw_image_button((333, 635),
                                   button_name='name_clan',
                                   text='Name Clan',
                                   clan_name=game.switches['naming_text'],
@@ -104,12 +101,9 @@ class MakeClanScreen(Screens):
     def second_phase(self):
         game.switches['naming_text'] = ''
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        if game.settings['dark mode']:
-            leader_img = pygame.image.load(
-                'resources/images/pick_clan_screen/leader.png').convert_alpha()
-        else:
-            leader_img = pygame.image.load(
-                'resources/images/pick_clan_screen/leader_light.png').convert_alpha()
+
+        leader_img = pygame.image.load(
+            'resources/images/pick_clan_screen/leader_light.png').convert_alpha()
         screen.blit(leader_img, (0, 414))
         for u in range(6):
             buttons.draw_button((50, 150 + 50 * u),
@@ -185,12 +179,9 @@ class MakeClanScreen(Screens):
 
     def third_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        if game.settings['dark mode']:
-            deputy_img = pygame.image.load(
-                'resources/images/pick_clan_screen/deputy.png').convert_alpha()
-        else:
-            deputy_img = pygame.image.load(
-                'resources/images/pick_clan_screen/deputy_light.png').convert_alpha()
+
+        deputy_img = pygame.image.load(
+            'resources/images/pick_clan_screen/deputy_light.png').convert_alpha()
         screen.blit(deputy_img, (0, 414))
 
         for u in range(6):
@@ -261,12 +252,9 @@ class MakeClanScreen(Screens):
 
     def fourth_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        if game.settings['dark mode']:
-            medic_img = pygame.image.load(
-                'resources/images/pick_clan_screen/medic.png').convert_alpha()
-        else:
-            medic_img = pygame.image.load(
-                'resources/images/pick_clan_screen/med_light.png').convert_alpha()
+
+        medic_img = pygame.image.load(
+            'resources/images/pick_clan_screen/med_light.png').convert_alpha()
         screen.blit(medic_img, (0, 414))
 
         for u in range(6):
@@ -345,11 +333,9 @@ class MakeClanScreen(Screens):
 
     def fifth_phase(self):
         verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-        if game.settings['dark mode']:
-            clan_img = pygame.image.load('resources/images/pick_clan_screen/clan.png').convert_alpha()
-        else:
-            clan_img = pygame.image.load(
-                'resources/images/pick_clan_screen/clan_light.png').convert_alpha()
+
+        clan_img = pygame.image.load(
+            'resources/images/pick_clan_screen/clan_light.png').convert_alpha()
         screen.blit(clan_img, (0, 414))
         for u in range(6):
             if game.switches['leader'] == u:
@@ -444,6 +430,8 @@ class MakeClanScreen(Screens):
                                   naming_text='',
                                   size=(153, 30)
                                   )
+
+        # Would be nice to make this button remove the last added member rather than all the members
         buttons.draw_image_button((253, 400),
                                   button_name='last_step',
                                   text='< Last step',
@@ -453,6 +441,31 @@ class MakeClanScreen(Screens):
                                   hotkey=[0],
                                   size=(147, 30)
                                   )
+        if 0 == len(game.switches['members']):
+            clan_none_img = pygame.image.load(
+                'resources/images/pick_clan_screen/clan_none_light.png').convert_alpha()
+            screen.blit(clan_none_img, (0, 414))
+        elif 1 == len(game.switches['members']):
+            clan_one_img = pygame.image.load(
+                'resources/images/pick_clan_screen/clan_one_light.png').convert_alpha()
+            screen.blit(clan_one_img, (0, 414))
+        elif 2 == len(game.switches['members']):
+            clan_two_img = pygame.image.load(
+                'resources/images/pick_clan_screen/clan_two_light.png').convert_alpha()
+            screen.blit(clan_two_img, (0, 414))
+        elif 3 == len(game.switches['members']):
+            clan_three_img = pygame.image.load(
+                'resources/images/pick_clan_screen/clan_three_light.png').convert_alpha()
+            screen.blit(clan_three_img, (0, 414))
+        elif 3 < len(game.switches['members']) < 7:
+            clan_four_img = pygame.image.load(
+                'resources/images/pick_clan_screen/clan_four_light.png').convert_alpha()
+            screen.blit(clan_four_img, (0, 414))
+        elif 7 == len(game.switches['members']):
+            clan_full_img = pygame.image.load(
+                'resources/images/pick_clan_screen/clan_full_light.png').convert_alpha()
+            screen.blit(clan_full_img, (0, 414))
+
 
         if 3 < len(game.switches['members']) < 8:
             buttons.draw_image_button((400, 400),
