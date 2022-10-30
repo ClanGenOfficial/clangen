@@ -104,6 +104,7 @@ class Clan(object):
             self.world_seed = world_seed
             self.camp_site = camp_site
             self.camp_bg = camp_bg
+            self.pregnancy_data = {}
 
     def create_clan(self):
         """ This function is only called once a new clan is created in the 'clan created' screen, not every time
@@ -216,6 +217,7 @@ class Clan(object):
         exit()
 
     def save_clan(self):
+        self.save_pregnancy()
         data = f'{self.name},{self.age},{self.biome},{self.camp_bg},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]}' + '\n'
         data = data + self.leader.ID + ',' + str(
             self.leader_lives) + ',' + str(
@@ -352,8 +354,27 @@ class Clan(object):
                 game.clan.add_to_starclan(Cat.all_cats[cat])
             else:
                 print('Cat not found:', cat)
+        self.load_pregnancy()
         game.switches['error_message'] = ''
 
+    def load_pregnancy(self):
+        if game.clan.name == False:
+            return
+        file_path = f"saves/{game.clan.name}/pregnancy.json"
+        if os.path.exists(file_path):
+            with open('','r') as read_file:
+                self.pregnancy_data = read_file.read()
+
+    def save_pregnancy(self):
+        if game.clan.name == False:
+            return
+        file_path = f"saves/{game.clan.name}/pregnancy.json"
+        try:
+            with open(file_path,'w') as rel_file:
+                json_string = ujson.dumps(self.pregnancy_data, indent = 4)
+                rel_file.write(json_string)
+        except:
+            print(f"Saving the pregnancy data didn't work.")
 
 class OtherClan(object):
 

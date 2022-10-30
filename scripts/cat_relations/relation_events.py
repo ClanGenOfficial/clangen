@@ -151,6 +151,39 @@ class Relation_Events(object):
             second_parent_relation = list(filter(lambda r: r.cat_to.ID == second_parent.ID ,cat.relationships))
         self.have_kits(cat, second_parent, second_parent_relation)
 
+    def handle_pregnancy(self, cat, clan = game.clan):
+        """Handles pregnancy of a cat."""
+        if cat.ID in clan.pregnancy_data.keys():
+            moons = clan.pregnancy_data[cat.ID]["moons"]
+            if moons == 0:
+                clan.pregnancy_data[cat.ID]["moons"] += 1
+                self.handle_one_moon_pregnant(cat)
+                return
+            if moons >= 1:
+                clan.pregnancy_data[cat.ID]["moons"] += 1
+                self.handle_two_moon_pregnant(cat)
+                return
+        
+        can_have_kits = self.check_if_can_have_kits(cat)
+        if not can_have_kits:
+            return
+
+        mate = None
+        if cat.mate is not None:
+            if cat.mate in Cat.all_cats:
+                mate = Cat.all_cats[cat.mate]
+            else:
+                game.cur_events_list.append(
+                    f"WARNING: {str(cat.name)}  has an invalid mate # {str(cat.mate)}. This has been unset.")
+                cat.mate = None
+
+        # check if there is a cat in the clan for the second parent
+        second_parent = self.get_second_parent(cat,mate)
+        second_parent_relation = None
+        if second_parent is not None:
+            second_parent_relation = list(filter(lambda r: r.cat_to.ID == second_parent.ID ,cat.relationships))
+        self.handle_zero_moon_pregnant(cat, second_parent, second_parent_relation)
+
     # ---------------------------------------------------------------------------- #
     #                                 handle events                                #
     # ---------------------------------------------------------------------------- #
@@ -342,6 +375,168 @@ class Relation_Events(object):
             f'{name} had a litter of {str(kits)} kit(s) and refused to talk about their progenitor'
         ]
         # choose event string
+        print_event = ""
+        if other_cat == None:
+            print_event = f"{str(cat.name)} brought a litter of {str(kits)} kit(s) back to camp, but refused to talk about their origin"
+        elif cat.mate == other_cat.ID:
+            if cat.gender == 'female':
+                print_event = f"{str(cat.name)} had a litter of {str(kits)} kit(s) with {str(other_cat.name)}"
+            else:
+                print_event = f"{str(other_cat.name)} had a litter of {str(kits)} kit(s) with {str(cat.name)}"
+        else:
+            print_event = f"{str(cat.name)} had a secret litter of {str(kits)} kit(s) with {str(other_cat.name)}"
+
+        # display event
+        if len(print_event) < 100:
+            game.cur_events_list.append(print_event)
+        else:
+            cut = print_event.find(' ', int(len(print_event)/2))
+            first_part = print_event[:cut]
+            second_part = print_event[cut:]
+            game.cur_events_list.append(first_part)
+            game.cur_events_list.append(second_part)
+
+    def handle_zero_moon_pregnant(self, cat, other_cat = None, relation = None, clan = game.clan):
+        """Handles if the cat is zero moons pregnant."""
+        if other_cat != None and (other_cat.dead or other_cat.exiled or other_cat.birth_cooldown > 0):
+            return
+
+        chance = self.get_kits_chance(cat, other_cat, relation)
+        hit = randint(1, chance)
+        if hit != 1:
+            return
+        
+        # add the cat to the pregnancy dict
+        clan.pregnancy_data[cat.ID] = {
+            "second_parent": other_cat,
+            "moons": 0,
+            "amount": 0
+        }
+
+        game.cur_events_list.append(f"{cat.name} announced, that they gonna have kits")
+
+    def handle_one_moon_pregnant(self, cat, clan = game.clan):
+        """Handles if the cat is one moon pregnant."""
+        if cat.ID not in clan.pregnancy_data.keys():
+            return
+
+        # if the pregnant cat is exiled or killed meanwhile, delete it from the dictionary
+        if cat.dead or cat.exiled:
+            del clan.pregnancy_data[cat.ID]
+            return
+        
+        # get the amount of kittens, which the pregnant cat will have
+        one_kit_possibility = {"young adult": 8,"adult": 9,"senior adult": 10,"elder" : 1}
+        two_kit_possibility = {"young adult": 10,"adult": 14,"senior adult": 15,"elder" : 1}
+        three_kit_possibility = {"young adult": 15,"adult": 15,"senior adult": 5,"elder" : 0}
+        four_kit_possibility = {"young adult": 12,"adult": 6,"senior adult": 0,"elder" : 0}
+        five_kit_possibility = {"young adult": 4,"adult": 1,"senior adult": 0,"elder" : 0}
+        six_kit_possibility = {"young adult": 1,"adult": 0,"senior adult": 0,"elder" : 0}
+        one_kit = [1] * one_kit_possibility[cat.age]
+        two_kits = [2] * two_kit_possibility[cat.age]
+        three_kits = [3] * three_kit_possibility[cat.age]
+        four_kits = [4] * four_kit_possibility[cat.age]
+        five_kits = [5] * five_kit_possibility[cat.age]
+        six_kits = [6] * six_kit_possibility[cat.age]
+
+        amount = choice(one_kit + two_kits + three_kits + four_kits + five_kits + six_kits)
+        thinking_amount = choice([amount-1,amount,amount+1])
+        if thinking_amount < 1:
+            thinking_amount = 1
+
+        # add the amount to the pregnancy dict
+        clan.pregnancy_data[cat.ID]["amount"] = amount
+
+        if thinking_amount == 1:
+            game.cur_events_list.append(f"{cat.name} think, they will have one kit")
+        else:
+            game.cur_events_list.append(f"{cat.name} think, they will have {thinking_amount} kits")
+
+    def handle_two_moon_pregnant(self, cat, clan = game.clan):
+        """Handles if the cat is two moons pregnant."""
+        # if the pregnant cat is exiled or killed meanwhile, delete it from the dictionary
+        if cat.ID not in clan.pregnancy_data.keys():
+            return
+
+        # if the pregnant cat is exiled or killed meanwhile, delete it from the dictionary
+        if cat.dead or cat.exiled:
+            del clan.pregnancy_data[cat.ID]
+            return
+
+        kits = clan.pregnancy_data[cat.ID]["amount"]
+        other_cat_id = clan.pregnancy_data[cat.ID]["second_parent"]
+        other_cat = clan.all_cats[other_cat_id]
+
+        game.cur_events_list.append(f"{cat.name} will have {kits} kit(s) -  TODO")
+        return
+
+        # create amount of kits
+        all_kitten = []
+        for kit in range(kits):
+            kit = None
+            if other_cat != None:
+                if cat.gender == 'female':
+                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
+                    all_kitten.append(kit)
+                else:
+                    kit = Cat(parent1=other_cat.ID, parent2=cat.ID, moons=0)
+                    all_kitten.append(kit)
+                cat.birth_cooldown = 6
+                other_cat.birth_cooldown = 6
+            else:
+                kit = Cat(parent1=cat.ID, moons=0)
+                all_kitten.append(kit)
+                cat.birth_cooldown = 6
+            #create and update relationships
+            relationships = []
+            for cat_id in game.clan.clan_cats:
+                the_cat = Cat.all_cats.get(cat_id)
+                if the_cat.dead or the_cat.exiled:
+                    continue
+                if the_cat.ID in kit.get_parents():
+                    the_cat.relationships.append(Relationship(the_cat,kit,False,True))
+                    relationships.append(Relationship(kit,the_cat,False,True))
+                else:
+                    the_cat.relationships.append(Relationship(the_cat,kit))
+                    relationships.append(Relationship(kit,the_cat))
+            kit.relationships = relationships
+            # remove accessory
+            kit.accessory = None
+            game.clan.add_cat(kit)
+
+        # check other cats of clan for siblings
+        for kitten in all_kitten:
+            add_siblings_to_cat(kitten, cat_class)
+            add_children_to_cat(kitten, cat_class)
+
+        # save old possible strings (will be overworked)
+        name = cat.name
+        loner_name = choice(names.loner_names)
+        warrior_name = Name()
+        warrior_name_two = Name()
+        possible_strings = [
+            f'{name} had a litter of {str(kits)} kit(s) with a ' + choice(['loner', 'rogue', 'kittypet']) + ' named ' + str(loner_name),
+            f'{name} had a secret litter of {str(kits)} kit(s) with a ' + choice(['loner', 'rogue', 'kittypet']) + ' named ' + str(loner_name),
+            f'{name} had a secret litter of {str(kits)} kit(s) with a ' + choice(game.clan.all_clans).name + f'Clan warrior named {str(warrior_name)}',
+            f'{name} had a secret litter of {str(kits)} kit(s) with {str(warrior_name)} of ' + choice(game.clan.all_clans).name + 'Clan',
+            f'{name} had a secret litter of {str(kits)} kit(s) with ' + choice(game.clan.all_clans).name + f'Clan\'s deputy {str(warrior_name)}',
+            f'{name} had a secret litter of {str(kits)} kit(s) with ' + choice(game.clan.all_clans).name + f'Clan\'s leader {str(names.prefix)}star',
+            f'{name} had a secret litter of {str(kits)} kit(s) with another Clan\'s warrior',
+            f'{name} had a secret litter of {str(kits)} kit(s) with a warrior named {str(warrior_name_two)}',
+            f'{name} had a secret litter of {str(kits)} kit(s) with {str(warrior_name_two)} from another Clan\'s',
+            f'{name} had a secret litter of {str(kits)} kit(s) with {str(warrior_name)}',
+            f'{name} had a secret litter of {str(kits)} kit(s) with the medicine cat {str(warrior_name)}',
+            f'{name} had a litter of {str(kits)} kit(s) with {str(warrior_name_two)}',
+            f'{name} had a litter of {str(kits)} kit(s) with the medicine cat {str(warrior_name)}',
+            str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s) with ' + str(warrior_name),
+            f'{name} had a litter of {str(kits)} kit(s)',
+            f'{name} had a secret litter of {str(kits)} kit(s)',
+            f'{name} had a litter of {str(kits)} kit(s) with an unknown partner',
+            f'{name} had a litter of {str(kits)} kit(s) and refused to talk about their progenitor'
+        ]
+        
+        # choose event string
+
         print_event = ""
         if other_cat == None:
             print_event = f"{str(cat.name)} brought a litter of {str(kits)} kit(s) back to camp, but refused to talk about their origin"
