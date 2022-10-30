@@ -63,6 +63,7 @@ def get_dead_thoughts(cat, other_cat):
 def get_alive_thoughts(cat, other_cat):
     thoughts = []
     thoughts += GENERAL_ALIVE
+    thoughts += get_family_thoughts(cat, other_cat)
 
     if cat.status == 'kitten':
         thoughts += get_kitten_thoughts(cat,other_cat)
@@ -353,9 +354,64 @@ def get_elder_thoughts(cat, other_cat):
 
     return thoughts
 
+def get_family_thoughts(cat, other_cat):
+    thoughts = []
+    if cat.children is None or len(cat.children) <= 0:
+        return thoughts
+
+    # children
+    all_children = list(filter(lambda inter_cat: inter_cat.ID in cat.children and inter_cat.is_alive(), cat.all_cats.values()))
+    if all_children is None or len(all_children) <= 0:
+        return thoughts
+    
+    thoughts += get_adult_children_thoughts(cat,other_cat,all_children)
+
+    # young kitten
+    kitten = list(filter(lambda inter_cat: inter_cat.moons < 6 and inter_cat.is_alive(), all_children))
+    if kitten is None or len(kitten) <= 0:
+        return thoughts
+    
+    thoughts += get_young_children_thoughts(cat,other_cat,kitten)
+    
+    return thoughts
+
 # ---------------------------------------------------------------------------- #
 #                            more in depth thoughts                            #
 # ---------------------------------------------------------------------------- #
+
+def get_adult_children_thoughts(cat, other_cat, all_children):
+    thoughts = []
+    if all_children is None and len(all_children) <= 0:
+        return thoughts
+
+    thoughts += FAMILY["has_children"]
+    if other_cat.ID in all_children and other_cat.moons > 11:
+        thoughts += [
+            "Is remembering how cute r_c was when they were little",
+            "Is feeling proud of r_c",
+            "Thinks how fast time can go when looking at r_c"
+        ]
+
+    return thoughts
+
+def get_young_children_thoughts(cat, other_cat, young_children):
+    thoughts = []
+    if young_children is None and len(young_children) <= 0:
+        return thoughts
+
+    if len(young_children) == 1:
+        thoughts += FAMILY["has_young_children"]["single"]
+    else:
+        thoughts += FAMILY["has_young_children"]["multiple"]
+
+    if other_cat.ID in young_children:
+        thoughts += [
+            "Can't stop gazing at r_c with wonder",
+            "Worries that r_c may not be safe",
+            "Is grooming r_c"
+        ]
+
+    return thoughts
 
 def get_warrior_trait_role_thoughts(cat, other_cat):
     # nonspecific age trait thoughts (unused traits: bold)
@@ -530,6 +586,9 @@ GENERAL_ALIVE = None
 with open(f"{resource_directory}cat_alive_general.json", 'r') as read_file:
     GENERAL_ALIVE = ujson.loads(read_file.read())
 
+FAMILY = None
+with open(f"{resource_directory}family.json", 'r') as read_file:
+    FAMILY = ujson.loads(read_file.read())
 
 # ---------------------------------------------------------------------------- #
 #                           specific status thoughts                           #
