@@ -6,92 +6,9 @@ from scripts.cat.names import *
 from scripts.cat.cats import *
 from scripts.cat.pelts import *
 
-resource_directory = "resources/dicts/patrols/"
-leaves_path = "leaves/"
-biomes_path = "biomes/"
-condition_path = "conditions/"
-
-GENERAL_DEAD = None
-with open(f"{resource_directory}general.json", 'r') as read_file:
-    GENERAL_DEAD = ujson.loads(read_file.read())
-
-GENERAL_HUNTING = None
-with open(f"{resource_directory}general_hunting.json", 'r') as read_file:
-    GENERAL_HUNTING = ujson.loads(read_file.read())
-
-GENERAL_FIGHTING = None
-with open(f"{resource_directory}general_fighting.json", 'r') as read_file:
-    GENERAL_FIGHTING = ujson.loads(read_file.read())
-
-GENERAL_NEW_CAT = None
-with open(f"{resource_directory}general_new_cat.json", 'r') as read_file:
-    GENERAL_NEW_CAT = ujson.loads(read_file.read())
-
-# ---------------------------------------------------------------------------- #
-#                            patrols with conditions                           #
-# ---------------------------------------------------------------------------- #
-
-ONE_CAT = None
-with open(f"{resource_directory}{condition_path}one_cat_patrol.json", 'r') as read_file:
-    ONE_CAT = ujson.loads(read_file.read())
-
-ONE_CAT_APPR = None
-with open(f"{resource_directory}{condition_path}one_cat_apprentice_patrol.json", 'r') as read_file:
-    ONE_CAT_APPR = ujson.loads(read_file.read())
-
-# ---------------------------------------------------------------------------- #
-#                                    leaves                                    #
-# ---------------------------------------------------------------------------- #
-
-NEWLEAF = None
-with open(f"{resource_directory}{leaves_path}newleaf.json", 'r') as read_file:
-    NEWLEAF = ujson.loads(read_file.read())
-
-GREENLEAF = None
-with open(f"{resource_directory}{leaves_path}greenleaf.json", 'r') as read_file:
-    GREENLEAF = ujson.loads(read_file.read())
-
-LEAF_FALL = None
-with open(f"{resource_directory}{leaves_path}leaf-fall.json", 'r') as read_file:
-    LEAF_FALL = ujson.loads(read_file.read())
-
-LEAF_BARE = None
-with open(f"{resource_directory}{leaves_path}leaf-bare.json", 'r') as read_file:
-    LEAF_BARE = ujson.loads(read_file.read())
-
-# ---------------------------------------------------------------------------- #
-#                                    biomes                                    #
-# ---------------------------------------------------------------------------- #
-
-FOREST = None
-with open(f"{resource_directory}{biomes_path}forest.json", 'r') as read_file:
-    FOREST = ujson.loads(read_file.read())
-
-PLAINS = None
-with open(f"{resource_directory}{biomes_path}plains.json", 'r') as read_file:
-    PLAINS = ujson.loads(read_file.read())
-
-MOUNTAINOUS = None
-with open(f"{resource_directory}{biomes_path}mountainous.json", 'r') as read_file:
-    MOUNTAINOUS = ujson.loads(read_file.read())
-
-SWAMP = None
-with open(f"{resource_directory}{biomes_path}swamp.json", 'r') as read_file:
-    SWAMP = ujson.loads(read_file.read())
-
-BEACH = None
-with open(f"{resource_directory}{biomes_path}beach.json", 'r') as read_file:
-    BEACH = ujson.loads(read_file.read())
-
-DISASTER = None
-with open(f"{resource_directory}disaster.json", 'r') as read_file:
-    DISASTER = ujson.loads(read_file.read())
-
-
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
 # ---------------------------------------------------------------------------- #
-
 
 class Patrol(object):
 
@@ -1060,6 +977,9 @@ class Patrol(object):
                     self.hunting_claim_info[(x, y)] = game.map_info[(x, y)]
                     self.hunting_grounds.append((x, y))
 
+# ---------------------------------------------------------------------------- #
+#                               PATROL CLASS END                               #
+# ---------------------------------------------------------------------------- #
 
 class PatrolEvent(object):
 
@@ -1089,5 +1009,90 @@ class PatrolEvent(object):
         self.antagonize_text = antagonize_text
         self.antagonize_fail_text = antagonize_fail_text
 
-
 patrol = Patrol()
+
+# ---------------------------------------------------------------------------- #
+#                                LOAD RESOURCES                                #
+# ---------------------------------------------------------------------------- #
+
+resource_directory = "resources/dicts/patrols/"
+leaves_path = "leaves/"
+biomes_path = "biomes/"
+condition_path = "conditions/"
+
+GENERAL_DEAD = None
+with open(f"{resource_directory}general.json", 'r') as read_file:
+    GENERAL_DEAD = ujson.loads(read_file.read())
+
+GENERAL_HUNTING = None
+with open(f"{resource_directory}general_hunting.json", 'r') as read_file:
+    GENERAL_HUNTING = ujson.loads(read_file.read())
+
+GENERAL_FIGHTING = None
+with open(f"{resource_directory}general_fighting.json", 'r') as read_file:
+    GENERAL_FIGHTING = ujson.loads(read_file.read())
+
+GENERAL_NEW_CAT = None
+with open(f"{resource_directory}general_new_cat.json", 'r') as read_file:
+    GENERAL_NEW_CAT = ujson.loads(read_file.read())
+
+# ---------------------------------------------------------------------------- #
+#                            patrols with conditions                           #
+# ---------------------------------------------------------------------------- #
+
+ONE_CAT = None
+with open(f"{resource_directory}{condition_path}one_cat_patrol.json", 'r') as read_file:
+    ONE_CAT = ujson.loads(read_file.read())
+
+ONE_CAT_APPR = None
+with open(f"{resource_directory}{condition_path}one_cat_apprentice_patrol.json", 'r') as read_file:
+    ONE_CAT_APPR = ujson.loads(read_file.read())
+
+# ---------------------------------------------------------------------------- #
+#                                    leaves                                    #
+# ---------------------------------------------------------------------------- #
+
+NEWLEAF = None
+with open(f"{resource_directory}{leaves_path}newleaf.json", 'r') as read_file:
+    NEWLEAF = ujson.loads(read_file.read())
+
+GREENLEAF = None
+with open(f"{resource_directory}{leaves_path}greenleaf.json", 'r') as read_file:
+    GREENLEAF = ujson.loads(read_file.read())
+
+LEAF_FALL = None
+with open(f"{resource_directory}{leaves_path}leaf-fall.json", 'r') as read_file:
+    LEAF_FALL = ujson.loads(read_file.read())
+
+LEAF_BARE = None
+with open(f"{resource_directory}{leaves_path}leaf-bare.json", 'r') as read_file:
+    LEAF_BARE = ujson.loads(read_file.read())
+
+# ---------------------------------------------------------------------------- #
+#                                    biomes                                    #
+# ---------------------------------------------------------------------------- #
+
+FOREST = None
+with open(f"{resource_directory}{biomes_path}forest.json", 'r') as read_file:
+    FOREST = ujson.loads(read_file.read())
+
+PLAINS = None
+with open(f"{resource_directory}{biomes_path}plains.json", 'r') as read_file:
+    PLAINS = ujson.loads(read_file.read())
+
+MOUNTAINOUS = None
+with open(f"{resource_directory}{biomes_path}mountainous.json", 'r') as read_file:
+    MOUNTAINOUS = ujson.loads(read_file.read())
+
+SWAMP = None
+with open(f"{resource_directory}{biomes_path}swamp.json", 'r') as read_file:
+    SWAMP = ujson.loads(read_file.read())
+
+BEACH = None
+with open(f"{resource_directory}{biomes_path}beach.json", 'r') as read_file:
+    BEACH = ujson.loads(read_file.read())
+
+DISASTER = None
+with open(f"{resource_directory}disaster.json", 'r') as read_file:
+    DISASTER = ujson.loads(read_file.read())
+

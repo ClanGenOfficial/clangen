@@ -763,14 +763,14 @@ class Events(object):
         age = randint(0,5)
         if not litter and not kit:
             age = randint(6,120)
-        elif litter and kit:
-            litter_age = randint(0,5)
-            age = litter_age
 
-        if loner and not kit and not litter or kittypet and not kit and not litter:
+        if (loner or kittypet) and not kit and not litter:
             if loner_name:
                 name = choice(names.loner_names)
-            status = "warrior"
+            if age >= 12:
+                status = "warrior"
+            else:
+                status = "apprentice"
             skill = "formerly a loner"
         if kittypet:
             skill = "formerly a kittypet"
