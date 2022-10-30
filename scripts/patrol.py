@@ -159,6 +159,17 @@ class Patrol(object):
 
         self.other_clan = choice(game.clan.all_clans)
 
+    def add_cat(self, cat):
+        """Add a new cat to the patrol"""
+        self.patrol_cats.append(cat)
+        self.patrol_names.append(str(cat.name))
+        if cat.status != 'apprentice':
+            self.possible_patrol_leaders.append(cat)
+        self.patrol_skills.append(cat.skill)
+        self.patrol_statuses.append(cat.status)
+        self.patrol_traits.append(cat.trait)
+        self.patrol_total_experience += cat.experience
+        game.patrolled.append(cat)
 
     def get_possible_patrols(self, current_season, biome, all_clans, game_setting_disaster):
         possible_patrols = []
@@ -424,7 +435,7 @@ class Patrol(object):
                     ])
                         
                 # romantic patrols for two cats
-                if cat_class.is_potential_mate(self.patrol_leader, self.patrol_random_cat):
+                if self.patrol_leader.is_potential_mate(self.patrol_random_cat, for_love_interest = True):
                     possible_patrols.extend([
                     PatrolEvent(
                         1010,
@@ -701,7 +712,6 @@ class Patrol(object):
             ])            
 
         return possible_patrols
-        
 
     def generate_patrol_events(self, patrol_dict):
         all_patrol_events = []
@@ -1039,6 +1049,7 @@ class Patrol(object):
             elif randint(0, 3) == 0:
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = choice(names.normal_suffixes)
+
     def check_territories(self):
         hunting_claim = str(game.clan.name) + 'Clan Hunting Grounds'
         self.hunting_grounds = []
