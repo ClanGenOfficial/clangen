@@ -171,7 +171,7 @@ class Patrol(object):
         self.patrol_total_experience += cat.experience
         game.patrolled.append(cat)
 
-    def get_possible_patrols(self, current_season, biome, all_clans, game_setting_disaster):
+    def get_possible_patrols(self, current_season, biome, all_clans, game_setting_disaster = game.settings['disasters']):
         possible_patrols = []
         # general patrols, any number of cats
 
