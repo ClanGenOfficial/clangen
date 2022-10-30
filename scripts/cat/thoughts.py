@@ -63,7 +63,7 @@ def get_dead_thoughts(cat, other_cat):
 def get_alive_thoughts(cat, other_cat):
     thoughts = []
     thoughts += GENERAL_ALIVE
-    thoughts += get_family_thoughts(cat)
+    thoughts += get_family_thoughts(cat, other_cat)
 
     if cat.status == 'kitten':
         thoughts += get_kitten_thoughts(cat,other_cat)
