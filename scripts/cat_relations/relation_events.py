@@ -129,17 +129,20 @@ class Relation_Events(object):
             # breakup
             self.handle_breakup(relationship, relationship.opposite_relationship, cat_from, cat_to)
 
-    def handle_having_kits(self, cat, clan = game.clan, no_gendered_breeding = game.settings['no gendered breeding']):
+    def handle_having_kits(self, cat, clan = game.clan):
         """Handles pregnancy of a cat."""
+        if clan == None:
+            print("WARNING: There is no clan in game.clan")
+            return
         if cat.ID in clan.pregnancy_data.keys():
             moons = clan.pregnancy_data[cat.ID]["moons"]
             if moons == 0:
                 clan.pregnancy_data[cat.ID]["moons"] += 1
-                self.handle_one_moon_pregnant(cat)
+                self.handle_one_moon_pregnant(cat, clan)
                 return
             if moons >= 1:
                 clan.pregnancy_data[cat.ID]["moons"] += 1
-                self.handle_two_moon_pregnant(cat)
+                self.handle_two_moon_pregnant(cat, clan)
                 return
         
         can_have_kits = self.check_if_can_have_kits(cat)
@@ -165,7 +168,7 @@ class Relation_Events(object):
             else: 
                 second_parent_relation = None
         
-        self.handle_zero_moon_pregnant(cat, second_parent, second_parent_relation)
+        self.handle_zero_moon_pregnant(cat, second_parent, second_parent_relation, clan)
 
         # save old possible strings (will be overworked)
         name = cat.name

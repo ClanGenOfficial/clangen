@@ -64,6 +64,7 @@ class Events(object):
             if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
                 game.save_cats()
                 game.clan.save_clan()
+                game.clan.save_pregnancy()
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
             game.event_scroll_ct = 0
             has_med = any(
@@ -105,7 +106,7 @@ class Events(object):
         cat.one_moon()
 
         relation_events.handle_relationships(cat)
-        relation_events.handle_having_kits(cat)
+        relation_events.handle_having_kits(cat, clan = game.clan)
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0 and randint(1, 5) == 1:

@@ -217,7 +217,6 @@ class Clan(object):
         exit()
 
     def save_clan(self):
-        self.save_pregnancy()
         data = f'{self.name},{self.age},{self.biome},{self.camp_bg},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]}' + '\n'
         data = data + self.leader.ID + ',' + str(
             self.leader_lives) + ',' + str(
@@ -421,4 +420,3 @@ class StarClan(object):
 
 clan_class = Clan()
 clan_class.remove_cat(cat_class.ID)
-game.clan = clan_class
