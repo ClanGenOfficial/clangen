@@ -340,7 +340,7 @@ class Relation_Events(object):
                 "amount": 0
             }
 
-        game.cur_events_list.append(f"{cat.name} announced, that they gonna have kits")
+        game.cur_events_list.append(f"{cat.name} announced that they are expecting kits")
 
     def handle_one_moon_pregnant(self, cat, clan = game.clan):
         """Handles if the cat is one moon pregnant."""
@@ -361,9 +361,9 @@ class Relation_Events(object):
         clan.pregnancy_data[cat.ID]["amount"] = amount
 
         if thinking_amount == 1:
-            game.cur_events_list.append(f"{cat.name} think, they will have one kit")
+            game.cur_events_list.append(f"{cat.name} thinks that they will have one kit")
         else:
-            game.cur_events_list.append(f"{cat.name} think, they will have {thinking_amount} kits")
+            game.cur_events_list.append(f"{cat.name} thinks that they will have {thinking_amount} kits")
 
     def handle_two_moon_pregnant(self, cat, clan = game.clan):
         """Handles if the cat is two moons pregnant."""
