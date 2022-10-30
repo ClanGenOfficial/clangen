@@ -15,6 +15,42 @@ map_available = False
 
 class MakeClanScreen(Screens):
 
+    def game_mode(self):
+        # layout
+        verdana.text("Choose the mode of your game here:", ('center', 140))
+
+
+        buttons.draw_image_button((200, 200),
+                                  button_name='classic_mode',
+                                  size=(132, 30),
+                                  game_mode='classic',
+                                  available='classic' != game.switches['game_mode']
+                                  )
+
+        buttons.draw_image_button((200, 300),
+                                  button_name='expanded_mode',
+                                  size=(166, 76),
+                                  game_mode='expanded',
+                                  available='expanded' != game.switches['game_mode']
+                                  )
+
+        #buttons.draw_image_button((200, 400),
+        #                          button_name='cruel season',
+        #                          size=(x, y,),
+        #                          game_mode='cruel season',
+        #                          available='cruel season' != game.switches['cruel season']
+        #                          )
+
+        #        verdana.text("The player doesn't have to organize anything important and can focus on storytelling.", ('center', a))
+        #        verdana.text("classic generator game with additional functions", ('center', a))
+        #        verdana.text("The player has to organize and manage some values. Current additions:", ('center', a))
+        #        verdana.text("like expanded mode, but harder to survive", ('center', a))
+        #        verdana.text("currently not available", ('center', a))
+
+        if game.switches['game_mode'] != game.settings['game_mode']:
+            game.settings['game_mode'] = game.switches['game_mode']
+            game.settings_changed = True
+
     def first_phase(self):
         # layout
         if game.settings['dark mode']:
@@ -834,7 +870,10 @@ class MakeClanScreen(Screens):
             pygame.image.load(arg1).convert(), (450, 400))
 
     def on_use(self):
-        if len(game.switches['clan_name']) == 0:
+
+        if game.switches['game_mode'] is None:
+            self.game_mode()
+        elif len(game.switches['clan_name']) == 0 and game.switches['game_mode'] is not None:
             self.first_phase()
         elif len(game.switches['clan_name']
                  ) > 0 and game.switches['leader'] is None:
@@ -855,6 +894,7 @@ class MakeClanScreen(Screens):
             self.first_phase()
 
     def screen_switches(self):
+        game.switches['game_mode'] = None
         game.switches['clan_name'] = ''
         game.switches['leader'] = None
         game.switches['cat'] = None
@@ -888,7 +928,8 @@ class ClanCreatedScreen(Screens):
                          game.choose_cats[game.switches['deputy']],
                          game.choose_cats[game.switches['medicine_cat']],
                          game.switches['biome'], game.switches['world_seed'],
-                         game.switches['camp_site'], game.switches['camp_bg'])
+                         game.switches['camp_site'], game.switches['camp_bg'],
+                         game.switches['game_mode'])
         game.clan.create_clan()
         if map_available:
             territory_claim = str(game.clan.name) + 'Clan Territory'

@@ -214,7 +214,7 @@ class Clan(object):
         exit()
 
     def save_clan(self):
-        data = f'{self.name},{self.age},{self.biome},{self.camp_bg},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]}' + '\n'
+        data = f'{self.name},{self.age},{self.biome},{self.camp_bg},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]}' + '\n,', {self.game_mode}
         data = data + self.leader.ID + ',' + str(
             self.leader_lives) + ',' + str(
                 self.leader_predecessors) + ',' + '\n'

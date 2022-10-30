@@ -123,7 +123,7 @@ class Game(object):
         'show dead relation': True,
         'show empty relation': True,
         'romantic with former mentor': True,
-        'game_mode': 'classic'
+        'game_mode': None
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
