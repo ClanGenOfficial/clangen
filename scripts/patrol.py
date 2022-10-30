@@ -956,6 +956,7 @@ class Patrol(object):
             kit.relationships = relationships
             game.clan.add_cat(kit)
             add_siblings_to_cat(kit, cat_class)
+            add_children_to_cat(kit, cat_class)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
             if (kit.status == 'elder'):

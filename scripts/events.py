@@ -811,6 +811,7 @@ class Events(object):
         
         for new_cat in created_cats:
             add_siblings_to_cat(new_cat,cat_class)
+            add_children_to_cat(new_cat,cat_class)
             game.clan.add_cat(new_cat)
 
         return created_cats

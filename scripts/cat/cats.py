@@ -122,6 +122,7 @@ class Cat(object):
         self.accessory = None
         self.birth_cooldown = 0
         self.siblings = []
+        self.children = []
         self.illness = None
         self.injury = None
 
@@ -548,6 +549,10 @@ class Cat(object):
     def get_siblings(self):
         """Returns list of the siblings."""
         return self.siblings
+
+    def get_children(self):
+        """Returns list of the children."""
+        return self.children
 
     def is_grandparent(self, other_cat):
         """Check if the cat is the grandparent of the other cat."""
