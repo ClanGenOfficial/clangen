@@ -353,26 +353,26 @@ class Clan(object):
                 game.clan.add_to_starclan(Cat.all_cats[cat])
             else:
                 print('Cat not found:', cat)
-        self.load_pregnancy()
+        self.load_pregnancy(game.clan)
         game.switches['error_message'] = ''
 
-    def load_pregnancy(self):
+    def load_pregnancy(self, clan):
         if game.clan.name == False:
             return
         file_path = f"saves/{game.clan.name}/pregnancy.json"
         if os.path.exists(file_path):
             with open(file_path,'r') as read_file:
-                self.pregnancy_data = ujson.load(read_file)
+                clan.pregnancy_data = ujson.load(read_file)
         else:
-            self.pregnancy_data = {}
+            clan.pregnancy_data = {}
 
-    def save_pregnancy(self):
+    def save_pregnancy(self, clan):
         if game.clan.name == False:
             return
         file_path = f"saves/{game.clan.name}/pregnancy.json"
         try:
             with open(file_path,'w') as file:
-                json_string = ujson.dumps(clan_class.pregnancy_data, indent = 4)
+                json_string = ujson.dumps(clan.pregnancy_data, indent = 4)
                 file.write(json_string)
         except:
             print(f"Saving the pregnancy data didn't work.")

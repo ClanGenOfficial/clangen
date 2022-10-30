@@ -129,6 +129,12 @@ class Relation_Events(object):
             # breakup
             self.handle_breakup(relationship, relationship.opposite_relationship, cat_from, cat_to)
 
+    def handle_pregnancy_age(self, clan = game.clan):
+        """Increase the moon for each pregnancy in the pregnancy dictionary"""
+        for pregnancy_key in clan.pregnancy_data.keys():
+            clan.pregnancy_data[pregnancy_key]["moons"] += 1
+            print(pregnancy_key, clan.pregnancy_data[pregnancy_key]["moons"])
+
     def handle_having_kits(self, cat, clan = game.clan):
         """Handles pregnancy of a cat."""
         if clan == None:
@@ -136,18 +142,19 @@ class Relation_Events(object):
             return
         if cat.ID in clan.pregnancy_data.keys():
             moons = clan.pregnancy_data[cat.ID]["moons"]
-            if moons == 0:
-                clan.pregnancy_data[cat.ID]["moons"] += 1
+            print(cat.name, moons)
+            if moons == 1:
                 self.handle_one_moon_pregnant(cat, clan)
                 return
-            if moons >= 1:
-                clan.pregnancy_data[cat.ID]["moons"] += 1
+            if moons >= 2:
                 self.handle_two_moon_pregnant(cat, clan)
                 return
         
-        can_have_kits = self.check_if_can_have_kits(cat)
+        can_have_kits = self.check_if_can_have_kits(cat, game.settings['no unknown fathers'], game.settings['no gendered breeding'])
         if not can_have_kits:
             return
+
+        print(f"*********** {cat.name} can have kits")
 
         mate = None
         if cat.mate is not None:
@@ -159,7 +166,7 @@ class Relation_Events(object):
                 cat.mate = None
 
         # check if there is a cat in the clan for the second parent
-        second_parent = self.get_second_parent(cat,mate)
+        second_parent = self.get_second_parent(cat,mate,game.settings['affair'])
         second_parent_relation = None
         if second_parent is not None:
             second_parent_relation = list(filter(lambda r: r.cat_to.ID == second_parent.ID ,cat.relationships))
@@ -329,13 +336,13 @@ class Relation_Events(object):
         # if the other cat is a female and the current cat is a male, make the female cat pregnant
         if cat.gender == 'male' and other_cat != None and other_cat.gender == 'female':
             clan.pregnancy_data[other_cat.ID] = {
-                "second_parent": cat,
+                "second_parent": cat.ID,
                 "moons": 0,
                 "amount": 0
             }
-        else:
+        elif other_cat != None:
             clan.pregnancy_data[cat.ID] = {
-                "second_parent": other_cat,
+                "second_parent": other_cat.ID,
                 "moons": 0,
                 "amount": 0
             }
@@ -447,8 +454,8 @@ class Relation_Events(object):
     def check_if_can_have_kits(
         self,
         cat,
-        no_unknown_parent = game.settings['no unknown fathers'],
-        no_gendered_breeding = game.settings['no gendered breeding']
+        unknown_parent_setting,
+        no_gendered_breeding
     ):
         can_have_kits = False
         if cat.birth_cooldown > 0:
@@ -458,6 +465,7 @@ class Relation_Events(object):
         # decide chances of having kits, and if it's possible at all
         not_correct_age = cat.age in ['kitten', 'adolescent'] or cat.moons < 15
         if not_correct_age or cat.no_kits or cat.dead:
+            print(f"NO {cat.name}------------------ AGE OR DEAD OR NO KITS")
             return can_have_kits
 
         # check for mate
@@ -472,13 +480,17 @@ class Relation_Events(object):
 
         if mate:
             if mate.gender == cat.gender and not no_gendered_breeding:
+                print(f"NO {cat.name}------------------ GENDER BREEDING")
                 return can_have_kits
             if cat.gender == 'female' and cat.age == 'elder' or mate.gender == 'female' and mate.age == 'elder':
+                print(f"NO {cat.name}------------------ FEMALE ELDER")
                 return can_have_kits
         else:
-            if no_unknown_parent:
-                return
+            if not unknown_parent_setting:
+                print(f"NO {cat.name}------------------ UNKNOWN PARENT")
+                return can_have_kits
             if cat.gender == 'female' and cat.age == 'elder':
+                print(f"NO {cat.name}------------------ FEMALE ELDER")
                 return can_have_kits
 
         # if function reaches this point, having kits is possible

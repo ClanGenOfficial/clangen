@@ -27,6 +27,7 @@ class Events(object):
             self.new_cat_invited = False
             game.patrolled.clear()
             relation_events = Relation_Events()
+            relation_events.handle_pregnancy_age(clan = game.clan)
             for cat in Cat.all_cats.copy().values():
                 if not cat.exiled:
                     self.one_moon_cat(cat, relation_events)
@@ -64,7 +65,7 @@ class Events(object):
             if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
                 game.save_cats()
                 game.clan.save_clan()
-                game.clan.save_pregnancy()
+                game.clan.save_pregnancy(game.clan)
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
             game.event_scroll_ct = 0
             has_med = any(
