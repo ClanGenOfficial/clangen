@@ -375,7 +375,8 @@ class Relation_Events(object):
 
         # check other cats of clan for siblings
         for kitten in all_kitten:
-            add_siblings_to_cat(kitten,cat_class)
+            add_siblings_to_cat(kitten, cat_class)
+            add_children_to_cat(kitten, cat_class)
 
         # save old possible strings (will be overworked)
         name = cat.name

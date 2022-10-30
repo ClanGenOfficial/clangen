@@ -202,3 +202,59 @@ class TestBiomePatrols(unittest.TestCase):
         self.assertFalse(all(action["patrol_id"] in possibilities_id for action in MOUNTAINOUS))
         self.assertFalse(all(action["patrol_id"] in possibilities_id for action in SWAMP))
         self.assertTrue(all(action["patrol_id"] in possibilities_id for action in BEACH))
+
+class TestSpecificPatrols(unittest.TestCase):
+    def test_disaster(self):
+        # given
+        disaster_patrol_ids = [900,901,902]
+        patrol = Patrol()
+        random_cat = Cat()
+        patrol.patrol_random_cat = random_cat
+
+        # when
+        patrol_events = patrol.get_possible_patrols("Newleaf", "Forest", [], True)
+        possibilities_id = [p.patrol_id for p in patrol_events]
+
+        # then
+        self.assertTrue(all(id in possibilities_id for id in disaster_patrol_ids))
+        
+
+class TestCatAmount(unittest.TestCase):
+
+    def test_apprentice_warrior(self):
+        # given
+        warrior_apprentice_patrol_ids = [150,116]
+        patrol = Patrol()
+        warrior = Cat(moons=20, status="warrior")
+        apprentice = Cat(moons=8, status="apprentice")
+
+        # when
+        patrol.add_cat(warrior)
+        patrol.add_cat(apprentice)
+        patrol.patrol_random_cat = apprentice
+        patrol.patrol_leader = warrior
+        patrol_events = patrol.get_possible_patrols("Newleaf", "Beach", [], False)
+        possibilities_id = [p.patrol_id for p in patrol_events]
+
+        # then
+        self.assertTrue(all(id in possibilities_id for id in warrior_apprentice_patrol_ids))
+
+    def test_two_warriors(self):
+        # given
+        warrior_apprentice_patrol_ids = [150,116]
+        single_cat_patrol_ids = [400,401,402]
+        patrol = Patrol()
+        warrior1 = Cat(moons=20, status="warrior")
+        warrior2 = Cat(moons=8, status="warrior")
+
+        # when
+        patrol.add_cat(warrior1)
+        patrol.add_cat(warrior2)
+        patrol.patrol_random_cat = warrior2
+        patrol.patrol_leader = warrior1
+        patrol_events = patrol.get_possible_patrols("Newleaf", "Beach", [], False)
+        possibilities_id = [p.patrol_id for p in patrol_events]
+
+        # then
+        self.assertFalse(all(id in possibilities_id for id in warrior_apprentice_patrol_ids))
+        self.assertFalse(all(id in possibilities_id for id in single_cat_patrol_ids))

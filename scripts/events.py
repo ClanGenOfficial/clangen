@@ -179,9 +179,9 @@ class Events(object):
             if cat.status == 'medicine cat' and game.clan.medicine_cat is None:
                 game.clan.medicine_cat = cat
             if cat.status in ['warrior', 'deputy'] and cat.age == 'elder' and len(cat.apprentice) < 1:
-                self.ceremony(cat, 'elder', ' has retired to the elder den')
                 if cat.status == 'deputy':
                     game.clan.deputy = None
+                self.ceremony(cat, 'elder', ' has retired to the elder den')
                 cat.status_change('elder')
             if cat.moons == cat_class.age_moons[cat.age][1]:
                 if cat.status == 'kitten':
@@ -763,14 +763,14 @@ class Events(object):
         age = randint(0,5)
         if not litter and not kit:
             age = randint(6,120)
-        elif litter and kit:
-            litter_age = randint(0,5)
-            age = litter_age
 
-        if loner and not kit and not litter or kittypet and not kit and not litter:
+        if (loner or kittypet) and not kit and not litter:
             if loner_name:
                 name = choice(names.loner_names)
-            status = "warrior"
+            if age >= 12:
+                status = "warrior"
+            else:
+                status = "apprentice"
             skill = "formerly a loner"
         if kittypet:
             skill = "formerly a kittypet"
@@ -793,7 +793,7 @@ class Events(object):
             if accessory:
                 new_cat.accessory = accessory
 
-            if (kit or litter) and relevant_cat and relevant_cat in Cat.all_cats:
+            if (kit or litter) and relevant_cat and relevant_cat.ID in Cat.all_cats:
                 new_cat.parent1 = relevant_cat.ID
                 if relevant_cat.mate:
                     new_cat.parent2 = relevant_cat.mate
@@ -811,6 +811,7 @@ class Events(object):
         
         for new_cat in created_cats:
             add_siblings_to_cat(new_cat,cat_class)
+            add_children_to_cat(new_cat,cat_class)
             game.clan.add_cat(new_cat)
 
         return created_cats

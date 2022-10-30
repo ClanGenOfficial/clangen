@@ -115,10 +115,17 @@ def json_load():
                     # if the cat can't be found, drop the cat_id
                     new_apprentices.append(relevant_list[0])
             cat.former_apprentices = new_apprentices
+
         # get all the siblings ids and save them
         siblings = list(
             filter(lambda inter_cat: cat.is_sibling(inter_cat), all_cats))
         cat.siblings = [sibling.ID for sibling in siblings]
+
+        # get all the children ids and save them
+        children = list(
+            filter(lambda inter_cat: cat.is_parent(inter_cat), all_cats))
+        cat.children = [child.ID for child in children]
+
 
         # initialization of thoughts
         cat.thoughts()
