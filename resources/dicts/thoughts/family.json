@@ -1,0 +1,21 @@
+{
+    "has_children":[
+        "Is feeling proud of their children"
+    ],
+    "has_young_children": {
+        "single": [
+            "Hopes that their only child find some friends",
+            "Can't stop gazing at their kit with wonder",
+            "Worries that their kit may not be safe",
+            "Is grooming their kit"
+        ],
+        "multiple": [
+            "Can't stop gazing at their kittens with wonder",
+            "Worries that their kitten may not be safe",
+            "Is grooming their kittens"
+        ]
+    },
+    "siblings":[
+        "Is hiding beetles in their siblings nest"
+    ]
+}

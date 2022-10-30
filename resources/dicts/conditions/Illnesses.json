@@ -1,0 +1,16 @@
+{
+    "greencough": {
+        "mortality": 100,
+        "medicine_mortality": 200,
+        "duration": 2,
+        "medicine_duration": 1,
+        "infectiousness": 6
+    },
+    "infection": {
+        "mortality": 30,
+        "medicine_mortality": 150,
+        "duration": 1,
+        "medicine_duration": 1,
+        "infectiousness": 0
+    }
+}

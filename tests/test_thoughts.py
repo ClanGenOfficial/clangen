@@ -85,3 +85,42 @@ class TestsGetStatusThought(unittest.TestCase):
 
         # then
         self.assertTrue(all(t in own_collection_thoughts for t in function_thoughts))
+
+
+class TestFamilyThoughts(unittest.TestCase):
+    def load_resources(self):
+        FAMILY = None
+        with open(f"{resource_directory}family.json", 'r') as read_file:
+            FAMILY = ujson.loads(read_file.read())
+        return FAMILY
+
+    def test_family_thought_young_children(self):
+        # given
+        FAMILY = self.load_resources()
+        parent = Cat(moons=40)
+        kit = Cat(parent1=parent.ID, moons=4)
+        parent.children.append(kit.ID)
+
+        # when
+        function_thoughts = get_family_thoughts(parent, kit)
+        own_collection_thoughts = FAMILY["has_children"]
+        own_collection_thoughts += FAMILY["has_young_children"]["single"]
+
+        not_collection_thoughts = FAMILY["has_young_children"]["multiple"]
+
+        # then
+        self.assertTrue(all(t in own_collection_thoughts for t in function_thoughts))
+        self.assertFalse(all(t in not_collection_thoughts for t in function_thoughts))
+    
+    def test_family_thought_unrelated(self):
+        # given
+        FAMILY = self.load_resources()
+        cat1 = Cat(moons=40)
+        cat2 = Cat(moons=40)
+
+        # when
+        function_thoughts = get_family_thoughts(cat1, cat2)
+
+        # then
+        self.assertEqual(function_thoughts,[])
+

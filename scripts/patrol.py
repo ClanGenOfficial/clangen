@@ -6,92 +6,9 @@ from scripts.cat.names import *
 from scripts.cat.cats import *
 from scripts.cat.pelts import *
 
-resource_directory = "resources/dicts/patrols/"
-leaves_path = "leaves/"
-biomes_path = "biomes/"
-condition_path = "conditions/"
-
-GENERAL_DEAD = None
-with open(f"{resource_directory}general.json", 'r') as read_file:
-    GENERAL_DEAD = ujson.loads(read_file.read())
-
-GENERAL_HUNTING = None
-with open(f"{resource_directory}general_hunting.json", 'r') as read_file:
-    GENERAL_HUNTING = ujson.loads(read_file.read())
-
-GENERAL_FIGHTING = None
-with open(f"{resource_directory}general_fighting.json", 'r') as read_file:
-    GENERAL_FIGHTING = ujson.loads(read_file.read())
-
-GENERAL_NEW_CAT = None
-with open(f"{resource_directory}general_new_cat.json", 'r') as read_file:
-    GENERAL_NEW_CAT = ujson.loads(read_file.read())
-
-# ---------------------------------------------------------------------------- #
-#                            patrols with conditions                           #
-# ---------------------------------------------------------------------------- #
-
-ONE_CAT = None
-with open(f"{resource_directory}{condition_path}one_cat_patrol.json", 'r') as read_file:
-    ONE_CAT = ujson.loads(read_file.read())
-
-ONE_CAT_APPR = None
-with open(f"{resource_directory}{condition_path}one_cat_apprentice_patrol.json", 'r') as read_file:
-    ONE_CAT_APPR = ujson.loads(read_file.read())
-
-# ---------------------------------------------------------------------------- #
-#                                    leaves                                    #
-# ---------------------------------------------------------------------------- #
-
-NEWLEAF = None
-with open(f"{resource_directory}{leaves_path}newleaf.json", 'r') as read_file:
-    NEWLEAF = ujson.loads(read_file.read())
-
-GREENLEAF = None
-with open(f"{resource_directory}{leaves_path}greenleaf.json", 'r') as read_file:
-    GREENLEAF = ujson.loads(read_file.read())
-
-LEAF_FALL = None
-with open(f"{resource_directory}{leaves_path}leaf-fall.json", 'r') as read_file:
-    LEAF_FALL = ujson.loads(read_file.read())
-
-LEAF_BARE = None
-with open(f"{resource_directory}{leaves_path}leaf-bare.json", 'r') as read_file:
-    LEAF_BARE = ujson.loads(read_file.read())
-
-# ---------------------------------------------------------------------------- #
-#                                    biomes                                    #
-# ---------------------------------------------------------------------------- #
-
-FOREST = None
-with open(f"{resource_directory}{biomes_path}forest.json", 'r') as read_file:
-    FOREST = ujson.loads(read_file.read())
-
-PLAINS = None
-with open(f"{resource_directory}{biomes_path}plains.json", 'r') as read_file:
-    PLAINS = ujson.loads(read_file.read())
-
-MOUNTAINOUS = None
-with open(f"{resource_directory}{biomes_path}mountainous.json", 'r') as read_file:
-    MOUNTAINOUS = ujson.loads(read_file.read())
-
-SWAMP = None
-with open(f"{resource_directory}{biomes_path}swamp.json", 'r') as read_file:
-    SWAMP = ujson.loads(read_file.read())
-
-BEACH = None
-with open(f"{resource_directory}{biomes_path}beach.json", 'r') as read_file:
-    BEACH = ujson.loads(read_file.read())
-
-DISASTER = None
-with open(f"{resource_directory}disaster.json", 'r') as read_file:
-    DISASTER = ujson.loads(read_file.read())
-
-
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
 # ---------------------------------------------------------------------------- #
-
 
 class Patrol(object):
 
@@ -110,6 +27,7 @@ class Patrol(object):
         self.patrol_random_cat = None
         self.patrol_other_cats = []
         self.patrol_stat_cat = None
+        self.other_clan = None
         self.experience_levels = [
             'very low', 'low', 'slightly low', 'average', 'somewhat high',
             'high', 'very high', 'master', 'max'
@@ -158,8 +76,19 @@ class Patrol(object):
 
         self.other_clan = choice(game.clan.all_clans)
 
+    def add_cat(self, cat):
+        """Add a new cat to the patrol"""
+        self.patrol_cats.append(cat)
+        self.patrol_names.append(str(cat.name))
+        if cat.status != 'apprentice':
+            self.possible_patrol_leaders.append(cat)
+        self.patrol_skills.append(cat.skill)
+        self.patrol_statuses.append(cat.status)
+        self.patrol_traits.append(cat.trait)
+        self.patrol_total_experience += cat.experience
+        game.patrolled.append(cat)
 
-    def get_possible_patrols(self, current_season, biome, all_clans, game_setting_disaster):
+    def get_possible_patrols(self, current_season, biome, all_clans, game_setting_disaster = game.settings['disasters']):
         possible_patrols = []
         # general patrols, any number of cats
 
@@ -423,7 +352,7 @@ class Patrol(object):
                     ])
                         
                 # romantic patrols for two cats
-                if cat_class.is_potential_mate(self.patrol_leader, self.patrol_random_cat):
+                if self.patrol_leader.is_potential_mate(self.patrol_random_cat, for_love_interest = True):
                     possible_patrols.extend([
                     PatrolEvent(
                         1010,
@@ -700,7 +629,6 @@ class Patrol(object):
             ])            
 
         return possible_patrols
-        
 
     def generate_patrol_events(self, patrol_dict):
         all_patrol_events = []
@@ -771,7 +699,6 @@ class Patrol(object):
             if c < chance:
                 self.success = True
                 self.handle_exp_gain()
-                self.add_new_cats()
                 self.handle_clan_relations(difference = int(-1))
             else:
                 self.success = False
@@ -837,7 +764,7 @@ class Patrol(object):
     def handle_clan_relations(self, difference):
         other_clan = patrol.other_clan
         otherclan = game.clan.all_clans.index(other_clan)
-        clan_relations = game.clan.all_clans[otherclan].relations
+        clan_relations = int(game.clan.all_clans[otherclan].relations)
         if self.patrol_event.patrol_id in list(range(800, 806)):
             if patrol.success is True:
                 clan_relations += difference
@@ -954,6 +881,9 @@ class Patrol(object):
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
+            elif randint(0, 3) == 0: #chance to have kittypet name prefix + suffix
+                kit.name.prefix = choice(names.loner_names)
+                kit.name.suffix = choice(names.normal_suffixes)
             if self.patrol_event.patrol_id == 501:
                 num_kits = choice([2, 2, 2, 2, 3, 4])
                 for _ in range(num_kits):
@@ -1006,6 +936,9 @@ class Patrol(object):
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
+            elif randint(0, 3) == 0:
+                kit.name.prefix = choice(names.loner_names)
+                kit.name.suffix = choice(names.normal_suffixes)
 
         elif self.patrol_event.patrol_id in [505]:  # new med cat
             new_status = choice(['medicine cat'])
@@ -1023,6 +956,7 @@ class Patrol(object):
             kit.relationships = relationships
             game.clan.add_cat(kit)
             add_siblings_to_cat(kit, cat_class)
+            add_children_to_cat(kit, cat_class)
             kit.skill = 'formerly a loner'
             kit.thought = 'Is looking around the camp with wonder'
             if (kit.status == 'elder'):
@@ -1030,6 +964,10 @@ class Patrol(object):
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
+            elif randint(0, 3) == 0:
+                kit.name.prefix = choice(names.loner_names)
+                kit.name.suffix = choice(names.normal_suffixes)
+
     def check_territories(self):
         hunting_claim = str(game.clan.name) + 'Clan Hunting Grounds'
         self.hunting_grounds = []
@@ -1040,6 +978,9 @@ class Patrol(object):
                     self.hunting_claim_info[(x, y)] = game.map_info[(x, y)]
                     self.hunting_grounds.append((x, y))
 
+# ---------------------------------------------------------------------------- #
+#                               PATROL CLASS END                               #
+# ---------------------------------------------------------------------------- #
 
 class PatrolEvent(object):
 
@@ -1069,5 +1010,90 @@ class PatrolEvent(object):
         self.antagonize_text = antagonize_text
         self.antagonize_fail_text = antagonize_fail_text
 
-
 patrol = Patrol()
+
+# ---------------------------------------------------------------------------- #
+#                                LOAD RESOURCES                                #
+# ---------------------------------------------------------------------------- #
+
+resource_directory = "resources/dicts/patrols/"
+leaves_path = "leaves/"
+biomes_path = "biomes/"
+condition_path = "conditions/"
+
+GENERAL_DEAD = None
+with open(f"{resource_directory}general.json", 'r') as read_file:
+    GENERAL_DEAD = ujson.loads(read_file.read())
+
+GENERAL_HUNTING = None
+with open(f"{resource_directory}general_hunting.json", 'r') as read_file:
+    GENERAL_HUNTING = ujson.loads(read_file.read())
+
+GENERAL_FIGHTING = None
+with open(f"{resource_directory}general_fighting.json", 'r') as read_file:
+    GENERAL_FIGHTING = ujson.loads(read_file.read())
+
+GENERAL_NEW_CAT = None
+with open(f"{resource_directory}general_new_cat.json", 'r') as read_file:
+    GENERAL_NEW_CAT = ujson.loads(read_file.read())
+
+# ---------------------------------------------------------------------------- #
+#                            patrols with conditions                           #
+# ---------------------------------------------------------------------------- #
+
+ONE_CAT = None
+with open(f"{resource_directory}{condition_path}one_cat_patrol.json", 'r') as read_file:
+    ONE_CAT = ujson.loads(read_file.read())
+
+ONE_CAT_APPR = None
+with open(f"{resource_directory}{condition_path}one_cat_apprentice_patrol.json", 'r') as read_file:
+    ONE_CAT_APPR = ujson.loads(read_file.read())
+
+# ---------------------------------------------------------------------------- #
+#                                    leaves                                    #
+# ---------------------------------------------------------------------------- #
+
+NEWLEAF = None
+with open(f"{resource_directory}{leaves_path}newleaf.json", 'r') as read_file:
+    NEWLEAF = ujson.loads(read_file.read())
+
+GREENLEAF = None
+with open(f"{resource_directory}{leaves_path}greenleaf.json", 'r') as read_file:
+    GREENLEAF = ujson.loads(read_file.read())
+
+LEAF_FALL = None
+with open(f"{resource_directory}{leaves_path}leaf-fall.json", 'r') as read_file:
+    LEAF_FALL = ujson.loads(read_file.read())
+
+LEAF_BARE = None
+with open(f"{resource_directory}{leaves_path}leaf-bare.json", 'r') as read_file:
+    LEAF_BARE = ujson.loads(read_file.read())
+
+# ---------------------------------------------------------------------------- #
+#                                    biomes                                    #
+# ---------------------------------------------------------------------------- #
+
+FOREST = None
+with open(f"{resource_directory}{biomes_path}forest.json", 'r') as read_file:
+    FOREST = ujson.loads(read_file.read())
+
+PLAINS = None
+with open(f"{resource_directory}{biomes_path}plains.json", 'r') as read_file:
+    PLAINS = ujson.loads(read_file.read())
+
+MOUNTAINOUS = None
+with open(f"{resource_directory}{biomes_path}mountainous.json", 'r') as read_file:
+    MOUNTAINOUS = ujson.loads(read_file.read())
+
+SWAMP = None
+with open(f"{resource_directory}{biomes_path}swamp.json", 'r') as read_file:
+    SWAMP = ujson.loads(read_file.read())
+
+BEACH = None
+with open(f"{resource_directory}{biomes_path}beach.json", 'r') as read_file:
+    BEACH = ujson.loads(read_file.read())
+
+DISASTER = None
+with open(f"{resource_directory}disaster.json", 'r') as read_file:
+    DISASTER = ujson.loads(read_file.read())
+
