@@ -323,12 +323,19 @@ class Relation_Events(object):
                 game.cur_events_list.append(second_part)
             return
 
-        # add the cat to the pregnancy dict
-        clan.pregnancy_data[cat.ID] = {
-            "second_parent": other_cat,
-            "moons": 0,
-            "amount": 0
-        }
+        # if the other cat is a female and the current cat is a male, make the female cat pregnant
+        if cat.gender == 'male' and other_cat != None and other_cat.gender == 'female':
+            clan.pregnancy_data[other_cat.ID] = {
+                "second_parent": cat,
+                "moons": 0,
+                "amount": 0
+            }
+        else:
+            clan.pregnancy_data[cat.ID] = {
+                "second_parent": other_cat,
+                "moons": 0,
+                "amount": 0
+            }
 
         game.cur_events_list.append(f"{cat.name} announced, that they gonna have kits")
 
