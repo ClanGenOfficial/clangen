@@ -26,7 +26,7 @@ class ChanceOfKits(unittest.TestCase):
         relationship1_2 = Relationship(cat1,cat2)
 
         # when
-        relation_events.living_cats = 1
+        relation_events.living_cats = 2
 
         # then
         chance = relation_events.get_kits_chance(cat1,cat2,relationship1_2)
@@ -42,7 +42,7 @@ class ChanceOfKits(unittest.TestCase):
         relationship1_2.romantic_love += 50
     
         # when
-        relation_events.living_cats = 1
+        relation_events.living_cats = 2
         
         # then
         chance = relation_events.get_kits_chance(cat1,cat2,relationship1_2)
@@ -59,7 +59,7 @@ class ChanceOfKits(unittest.TestCase):
         relationship1_2.comfortable += 50
 
         # when
-        relation_events.living_cats = 1
+        relation_events.living_cats = 2
         
         # then
         chance = relation_events.get_kits_chance(cat1,cat2,relationship1_2)
@@ -76,7 +76,7 @@ class ChanceOfKits(unittest.TestCase):
         relationship1_2.comfortable += 100
 
         # when
-        relation_events.living_cats = 1
+        relation_events.living_cats = 2
 
         # then
         chance = relation_events.get_kits_chance(cat1,cat2,relationship1_2)
@@ -91,7 +91,7 @@ class ChanceOfKits(unittest.TestCase):
         relationship1_2 = Relationship(cat1,cat2)
 
         # when
-        relation_events.living_cats = 1
+        relation_events.living_cats = 2
 
         # then
         chance = relation_events.get_kits_chance(cat1,cat2,relationship1_2)

@@ -362,17 +362,19 @@ class Clan(object):
             return
         file_path = f"saves/{game.clan.name}/pregnancy.json"
         if os.path.exists(file_path):
-            with open('','r') as read_file:
-                self.pregnancy_data = read_file.read()
+            with open(file_path,'r') as read_file:
+                self.pregnancy_data = ujson.load(read_file)
+        else:
+            self.pregnancy_data = {}
 
     def save_pregnancy(self):
         if game.clan.name == False:
             return
         file_path = f"saves/{game.clan.name}/pregnancy.json"
         try:
-            with open(file_path,'w') as rel_file:
-                json_string = ujson.dumps(self.pregnancy_data, indent = 4)
-                rel_file.write(json_string)
+            with open(file_path,'w') as file:
+                json_string = ujson.dumps(clan_class.pregnancy_data, indent = 4)
+                file.write(json_string)
         except:
             print(f"Saving the pregnancy data didn't work.")
 
@@ -419,3 +421,4 @@ class StarClan(object):
 
 clan_class = Clan()
 clan_class.remove_cat(cat_class.ID)
+game.clan = clan_class
