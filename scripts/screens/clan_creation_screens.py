@@ -13,6 +13,14 @@ from scripts.cat.sprites import tiles
 #from scripts.world import World, save_map
 map_available = False
 
+
+def draw_clan_name(self):
+    clan_frame_img = pygame.image.load(
+        'resources/images/pick_clan_screen/clan_name_frame.png').convert_alpha()
+    screen.blit(clan_frame_img, (292, 100))
+    verdana_light.text(game.switches['clan_name'] + 'Clan', ('center', 115))
+
+
 class MakeClanScreen(Screens):
 
     def game_mode(self):
@@ -53,7 +61,6 @@ class MakeClanScreen(Screens):
 
     def first_phase(self):
         # layout
-
         name_clan_img = pygame.image.load(
             'resources/images/pick_clan_screen/name_clan_light.png').convert_alpha()
         screen.blit(name_clan_img, (0, 0))
@@ -100,8 +107,7 @@ class MakeClanScreen(Screens):
 
     def second_phase(self):
         game.switches['naming_text'] = ''
-        verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
-
+        draw_clan_name(self)
         leader_img = pygame.image.load(
             'resources/images/pick_clan_screen/leader_light.png').convert_alpha()
         screen.blit(leader_img, (0, 414))
@@ -178,7 +184,7 @@ class MakeClanScreen(Screens):
                                   )
 
     def third_phase(self):
-        verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
+        draw_clan_name(self)
 
         deputy_img = pygame.image.load(
             'resources/images/pick_clan_screen/deputy_light.png').convert_alpha()
@@ -251,7 +257,7 @@ class MakeClanScreen(Screens):
                                   )
 
     def fourth_phase(self):
-        verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
+        draw_clan_name(self)
 
         medic_img = pygame.image.load(
             'resources/images/pick_clan_screen/med_light.png').convert_alpha()
@@ -332,7 +338,7 @@ class MakeClanScreen(Screens):
                                   )
 
     def fifth_phase(self):
-        verdana.text(game.switches['clan_name'] + 'Clan', ('center', 90))
+        draw_clan_name(self)
 
         clan_img = pygame.image.load(
             'resources/images/pick_clan_screen/clan_light.png').convert_alpha()
@@ -472,6 +478,8 @@ class MakeClanScreen(Screens):
                                       button_name='next_step',
                                       text='Next Step',
                                       choosing_camp=True,
+                                      biome='forest',
+                                      camp_bg='camp1',
                                       hotkey=[2],
                                       size=(147, 30)
                                       )
