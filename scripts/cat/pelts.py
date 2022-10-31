@@ -328,7 +328,7 @@ pelt_names_M = ["SingleColour", "SingleColour", "TwoColour", "Tabby", "Tabby", "
 
 # SPRITE NAMES
 single_colours = [
-    'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK', 'PALEGINGER',
+    'WHITE', 'PALEGREY', 'SILVER', 'GREY', 'DARKGREY', 'BLACK', 'PALEGINGER', 'CREAM',
     'GOLDEN', 'GINGER', 'DARKGINGER', 'LIGHTBROWN', 'BROWN', 'DARKBROWN'
 ]
 eye_sprites = [
