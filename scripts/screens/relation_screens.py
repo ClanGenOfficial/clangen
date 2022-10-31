@@ -525,37 +525,60 @@ class ChooseMateScreen(Screens):
         game.switches['mate'] = None
         cat_profiles()
 
+def draw_bg_ui(self):  # USER INTERFACE ART
+
+    # SEARCH BAR
+    search_bar = pygame.transform.scale(
+        pygame.image.load("resources/images/relationship_search.png").convert_alpha(), (228, 39))
+    screen.blit(search_bar, (536, 90))
+
+    # LOAD AND BLIT BG FRAMES
+    details_frame = pygame.transform.scale(
+        pygame.image.load("resources/images/relationship_details_frame.png").convert_alpha(), (254, 344))
+
+    toggle_frame = pygame.transform.scale(
+        pygame.image.load("resources/images/relationship_toggle_frame.png").convert_alpha(), (251, 120))
+
+    list_frame = pygame.transform.scale(
+        pygame.image.load("resources/images/relationship_list_frame.png").convert_alpha(), (502, 500))
+
+    screen.blit(details_frame, (25, 130))
+    screen.blit(toggle_frame, (45, 484))
+    screen.blit(list_frame, (273, 122))
+
+
 class RelationshipScreen(Screens):
     bool = {True: 'on', False: 'off', None: 'None'}
+    ui = None
 
     def on_use(self):
-        # use this variable to point to the cat object in question
+        # use this variable to point to the cat object in question  # this cat is the current cat in focus
         the_cat = Cat.all_cats.get(game.switches['cat'],
-                                         game.clan.instructor)
+                                   game.clan.instructor
+                                   )
 
-        # back and next buttons on the relationships page
+        # back and next buttons on the relationships page, these will reset the show_details cat
         draw_next_prev_cat_buttons(the_cat)
 
-        # USER INTERFACE ART
+        # LOAD UI IMAGES
+        if RelationshipScreen.ui is None:
+            draw_bg_ui(self)
 
+        # SEARCH TEXT
         search_text = game.switches['search_text']
-        search_bar = pygame.transform.scale(
-            pygame.image.load("resources/images/relationship_search.png").convert_alpha(), (228, 39))
 
-        screen.blit(search_bar, (536, 90))
         verdana_black.text(game.switches['search_text'], (612, 97))
 
-        details_frame = pygame.transform.scale(
-            pygame.image.load("resources/images/relationship_details_frame.png").convert_alpha(), (254, 344))
-        screen.blit(details_frame, (25, 130))
 
-        toggle_frame = pygame.transform.scale(
-            pygame.image.load("resources/images/relationship_toggle_frame.png").convert_alpha(), (251, 120))
-        screen.blit(toggle_frame, (45, 484))
 
-        list_frame = pygame.transform.scale(
-            pygame.image.load("resources/images/relationship_list_frame.png").convert_alpha(), (502, 500))
-        screen.blit(list_frame, (273, 122))
+        # MAKE A LIST OF RELATIONSHIPS
+        search_relations = []
+        if search_text.strip() != '':
+            for rel in the_cat.relationships:
+                if search_text.lower() in str(rel.cat_to.name).lower():
+                    search_relations.append(rel)
+        else:
+            search_relations = the_cat.relationships.copy()
 
         # VIEW TOGGLES
         verdana_mid.text(
@@ -624,34 +647,7 @@ class RelationshipScreen(Screens):
                                       setting='show empty relation',
                                       )
 
-
-
-        # make a list of the relationships
-        search_relations = []
-        if search_text.strip() != '':
-            for rel in the_cat.relationships:
-                if search_text.lower() in str(rel.cat_to.name).lower():
-                    search_relations.append(rel)
-        else:
-            search_relations = the_cat.relationships.copy()
-
-        # LAYOUT
-        verdana_big.text(str(the_cat.name) + ' Relationships', (80, 75))  # NAME
-        draw(the_cat, (25, 70))  #SPRITE
-
-        if the_cat is not None:
-            mate = Cat.all_cats.get(the_cat.mate)
-            if mate is not None:
-                verdana_small.text(
-                    f"{str(the_cat.genderalign)} - {str(the_cat.age)} - {str(the_cat.trait)} - mate: {str(mate.name)}",
-                    (80, 100))
-            else:
-                verdana_small.text(
-                    f"{str(the_cat.genderalign)}  - {str(the_cat.age)} - {str(the_cat.trait)}",
-                    (80, 100))
-
-
-        # filter relationships based on the settings #TOGGLE IMAGES NOT DONE YET
+        # TOGGLE FILTERS
         if not game.settings['show dead relation']:
             search_relations = list(
                 filter(lambda rel: not rel.cat_to.dead, search_relations))
@@ -663,7 +659,23 @@ class RelationshipScreen(Screens):
                                  dislike + rel.admiration + rel.comfortable +
                                  rel.jealousy + rel.trust) > 0, search_relations))
 
-        # pages
+        # NAME AND SPRITE OF FOCUS CAT
+        verdana_big.text(str(the_cat.name) + ' Relationships', (80, 75))
+        draw(the_cat, (25, 70))
+
+        # FOCUS CAT DETAILS
+        if the_cat is not None:
+            mate = Cat.all_cats.get(the_cat.mate)
+            if mate is not None:
+                verdana_small.text(
+                    f"{str(the_cat.genderalign)} - {str(the_cat.age)} - {str(the_cat.trait)} - mate: {str(mate.name)}",
+                    (80, 100))
+            else:
+                verdana_small.text(
+                    f"{str(the_cat.genderalign)}  - {str(the_cat.age)} - {str(the_cat.trait)}",
+                    (80, 100))
+
+        # PAGES
         all_pages = 1  # amount of pages
         if len(search_relations) > 8:
             all_pages = int(ceil(len(search_relations) / 8))
@@ -671,6 +683,7 @@ class RelationshipScreen(Screens):
         pos_x = 0
         pos_y = 0
         cats_on_page = 0  # how many are on page already
+
         for x in range(len(search_relations)):
             if (x +
                     (game.switches['list_page'] - 1) * 8) > len(search_relations):
@@ -678,23 +691,22 @@ class RelationshipScreen(Screens):
             if game.switches['list_page'] > all_pages:
                 game.switches['list_page'] = 1
             the_relationship = search_relations[x +
-                                             (game.switches['list_page'] - 1) *
-                                             8]
+                                                (game.switches['list_page'] - 1) *
+                                                8]
+
             update_sprite(the_relationship.cat_to)
 
-            buttons.draw_button((312 + pos_x, 150 + pos_y),
+            buttons.draw_button((312 + pos_x, 150 + pos_y),  # if button clicked, show chosen_cat's details
                                 image=the_relationship.cat_to.sprite,
                                 chosen_cat=the_relationship.cat_to,
                                 show_details=True)
 
-            # check name length
-            name = str(the_relationship.cat_to.name)
-            if len(name) >= 13:
+            # CHECK NAME LENGTH - SHORTEN IF NECESSARY
+            name = str(the_relationship.cat_to.name)  # get name
+            if len(name) >= 13:  # check name length
                 short_name = str(the_relationship.cat_to.name)[0:12]
                 name = short_name + '...'
-
-            verdana_mid.text(name,
-                                (290 + pos_x, 131 + pos_y))
+            verdana_mid.text(name, (290 + pos_x, 131 + pos_y))  # display name
 
             count = 17
             different_age = the_relationship.cat_to.age != the_relationship.cat_to.age
