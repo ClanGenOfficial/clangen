@@ -88,7 +88,8 @@ class Clan(object):
                 self.clan_cats.append(self.deputy.ID)
             self.deputy_predecessors = 0
             self.medicine_cat = medicine_cat
-            self.medicine_cat.status_change('medicine cat')
+            if medicine_cat and medicine_cat.status != 'medicine cat': 
+                self.medicine_cat.status_change('medicine cat')
             self.med_cat_predecessors = 0
             self.clan_cats.append(self.medicine_cat.ID)
             self.age = 0
