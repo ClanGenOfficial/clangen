@@ -555,10 +555,10 @@ class RelationshipScreen(Screens):
 
     def on_use(self):
         # use this variable to point to the cat object in question
-        # this cat is the current cat in focus
         the_cat = Cat.all_cats.get(game.switches['cat'],
                                    game.clan.instructor
                                    )
+        # this cat is the current cat in focus - aka the cat we're viewing the relationships of
 
         # back and next buttons on the relationships page, these will reset the show_details cat
         draw_next_prev_cat_buttons(the_cat)
@@ -714,7 +714,6 @@ class RelationshipScreen(Screens):
             verdana_mid.text(name, (290 + pos_x, 131 + pos_y))  # display name
 
             count = 17
-
 
             # CHECK AGE DIFFERENCE
             different_age = the_relationship.cat_to.age != the_relationship.cat_to.age
@@ -891,7 +890,7 @@ class RelationshipScreen(Screens):
                 f"{str(game.switches['chosen_cat'].trait)}",
                 (60, 355))
 
-            # RELATED 
+            # RELATED
             x_value = 150
             y_value = 340
             if game.switches['chosen_cat'].is_uncle_aunt(the_cat):
