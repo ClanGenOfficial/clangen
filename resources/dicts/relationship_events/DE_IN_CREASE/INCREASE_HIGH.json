@@ -101,7 +101,7 @@
             "Thinks they should get to be an apprentice already! They're just as good as (cat)",
             "Is jealous that (cat) got praised by the leader",
             "Doesn't understand how (cat) got so good at hunting",
-            "Accuses to (cat) of cheating, to win so many practice fights",
+            "Accuses (cat) of cheating, to win so many practice fights",
             "Is jealous that (cat) got to fight in a border skirmish when they didn't",
             "Is jealous that (cat) got to go to the last gathering",
             "Feels like they'll never accomplish as much as (cat)",
@@ -184,7 +184,7 @@
             "Treats (cat)'s splinter wound more roughly",
             "Gives (cat) bitter herbs on purpose",
             "Hisses at (cat) for getting a bigger piece of prey",
-            "Accuses to (cat) of cheating, to win so many practice fights"
+            "Accuses (cat) of cheating, to win so many practice fights"
         ],
         "admiration": [
             "Is promising to take (cat) outside of camp if they behave",
