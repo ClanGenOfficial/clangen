@@ -525,6 +525,7 @@ class ChooseMateScreen(Screens):
         game.switches['mate'] = None
         cat_profiles()
 
+
 def draw_bg_ui(self):  # USER INTERFACE ART
 
     # SEARCH BAR
@@ -552,7 +553,8 @@ class RelationshipScreen(Screens):
     ui = None
 
     def on_use(self):
-        # use this variable to point to the cat object in question  # this cat is the current cat in focus
+        # use this variable to point to the cat object in question
+        # this cat is the current cat in focus
         the_cat = Cat.all_cats.get(game.switches['cat'],
                                    game.clan.instructor
                                    )
@@ -568,8 +570,6 @@ class RelationshipScreen(Screens):
         search_text = game.switches['search_text']
 
         verdana_black.text(game.switches['search_text'], (612, 97))
-
-
 
         # MAKE A LIST OF RELATIONSHIPS
         search_relations = []
@@ -694,12 +694,16 @@ class RelationshipScreen(Screens):
                                                 (game.switches['list_page'] - 1) *
                                                 8]
 
+            # CAT LIST SPRITES
             update_sprite(the_relationship.cat_to)
 
+            # MAKES SPRITES INTO BUTTONS
             buttons.draw_button((312 + pos_x, 150 + pos_y),  # if button clicked, show chosen_cat's details
                                 image=the_relationship.cat_to.sprite,
                                 chosen_cat=the_relationship.cat_to,
-                                show_details=True)
+                                show_details=True
+                                )
+            # BUG: clicking this button also causes the chosen_cat to overwrite the last cat on the list pages
 
             # CHECK NAME LENGTH - SHORTEN IF NECESSARY
             name = str(the_relationship.cat_to.name)  # get name
@@ -709,11 +713,14 @@ class RelationshipScreen(Screens):
             verdana_mid.text(name, (290 + pos_x, 131 + pos_y))  # display name
 
             count = 17
+
+            # CHECK AGE DIFFERENCE
             different_age = the_relationship.cat_to.age != the_relationship.cat_to.age
             adult_ages = ['young adult', 'adult', 'senior adult', 'elder']
             both_adult = the_relationship.cat_to.age in adult_ages and the_relationship.cat_to.age in adult_ages
             check_age = (different_age and both_adult) or both_adult or not different_age
 
+            # ROMANTIC DISPLAY
             if the_relationship.romantic_love > 49 and check_age:
                 verdana_small_light.text(
                     'romantic love:',
@@ -729,8 +736,10 @@ class RelationshipScreen(Screens):
                 self.draw_bar(the_relationship.romantic_love, current_x, current_y)
             else:
                 self.draw_bar(0, current_x, current_y)
+
             count += 5
 
+            # PLATONIC DISPLAY
             if the_relationship.platonic_like > 49:
                 verdana_small_light.text(
                     'platonic love:',
@@ -746,6 +755,7 @@ class RelationshipScreen(Screens):
 
             count += 5
 
+            # DISLIKE DISPLAY
             if the_relationship.dislike > 49:
                 verdana_small_light.text(
                     'hate:',
@@ -761,6 +771,7 @@ class RelationshipScreen(Screens):
 
             count += 5
 
+            # ADMIRE DISPLAY
             if the_relationship.admiration > 49:
                 verdana_small_light.text(
                     'admiration:',
@@ -776,6 +787,7 @@ class RelationshipScreen(Screens):
 
             count += 5
 
+            # COMFORTABLE DISPLAY
             verdana_small.text(
                 'comfortable:',
                 (292 + pos_x, 173 + pos_y + count))
@@ -786,6 +798,7 @@ class RelationshipScreen(Screens):
 
             count += 5
 
+            # JEALOUS DISPLAY
             verdana_small.text(
                 'jealousy:',
                 (292 + pos_x, 171 + pos_y + count))
@@ -796,6 +809,7 @@ class RelationshipScreen(Screens):
 
             count += 5
 
+            # TRUST DISPLAY
             verdana_small.text(
                 'trust:',
                 (294 + pos_x, 169 + pos_y + count))
@@ -804,6 +818,7 @@ class RelationshipScreen(Screens):
             current_y = 168 + pos_y + count
             self.draw_bar(the_relationship.trust, current_x, current_y)
 
+            # CAT COUNT
             cats_on_page += 1
             pos_x += 122
             if pos_x >= 400:
@@ -872,6 +887,7 @@ class RelationshipScreen(Screens):
                 (60, 355))
 
             # RELATED [[[ someone else pls figure out how to make this show up ]]]
+
             if game.switches['chosen_cat'].is_uncle_aunt(the_cat) or\
                     the_cat.is_uncle_aunt(game.switches['chosen_cat']):
                 verdana_small.text(
