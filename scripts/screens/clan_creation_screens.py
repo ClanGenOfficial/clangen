@@ -21,46 +21,147 @@ def draw_clan_name(self):
     verdana_light.text(game.switches['clan_name'] + 'Clan', ('center', 115))
 
 
+def draw_main_menu(self):
+    verdana_small.text(
+        'Note: going back to main menu resets the generated cats.',
+        (25, 25))
+    buttons.draw_image_button((25, 50),
+                              button_name='main_menu',
+                              text='<< Back to Main Menu',
+                              cur_screen='start screen',
+                              naming_text='',
+                              size=(153, 30)
+                              )
+
+
 class MakeClanScreen(Screens):
 
     def game_mode(self):
         # layout
-        verdana.text("Choose the game mode:", ('center', 140))
+        draw_main_menu(self)
+        text_box = pygame.image.load(
+            'resources/images/game_mode_text_box.png').convert_alpha()
+        screen.blit(text_box, (25, 315))
 
+        y_value = 140
 
-        buttons.draw_image_button((200, 200),
+        # DEFAULT MODE
+        if game.switches['game_mode'] is None:
+            game.switches['game_mode'] = 'classic'
+
+        #verdana.text("Choose the game mode:", ('center', y_value))
+        #y_value += 50
+
+        buttons.draw_image_button((334, y_value),
                                   button_name='classic_mode',
                                   size=(132, 30),
                                   game_mode='classic',
-                                  available='classic' != game.switches['game_mode']
                                   )
-
-        buttons.draw_image_button((200, 300),
+        y_value += 50
+        buttons.draw_image_button((319, y_value),
                                   button_name='expanded_mode',
-                                  size=(166, 76),
+                                  size=(162, 34),
                                   game_mode='expanded',
-                                  available='expanded' != game.switches['game_mode']
+                                  )
+        y_value += 50
+        buttons.draw_image_button((325, y_value),
+                                  button_name='cruel_season',
+                                  size=(150, 30),
+                                  game_mode='cruel season',
+                                  )
+        y_value += 82
+
+        if game.switches['game_mode'] == 'classic':
+            verdana_big_light.text("Classic Mode", ('center', y_value))
+            y_value += 50
+
+            verdana.text("Sit back and relax.", ('center', y_value))
+            y_value += 30
+
+            verdana.text("This mode is Clan Generator at it's most basic.  The player is not expected", ('center', y_value))
+            y_value += 20
+
+            verdana.text("to manage the minutia of clan life.  Perfect for a relaxing game session", ('center', y_value))
+            y_value += 20
+
+            verdana.text("or for focusing on storytelling.", ('center', y_value))
+            y_value += 30
+
+            verdana.text("With this mode you are the eye in the sky.", ('center', y_value))
+            y_value += 20
+
+        if game.switches['game_mode'] == 'expanded':
+            verdana_big_light.text("Expanded Mode", ('center', y_value))
+            y_value += 50
+
+            verdana.text("A more hands-on experience.", ('center', y_value))
+            y_value += 35
+
+            verdana.text("This mode has everything in Classic Mode as well as more ", ('center', y_value))
+            y_value += 20
+
+            verdana.text("management focused features.", ('center', y_value))
+            y_value += 35
+
+            verdana.text("New features added include:", ('center', y_value))
+            y_value += 20
+
+            verdana.text("----no new features as of yet----", ('center', y_value))
+            y_value += 35
+
+            verdana.text("With this mode you'll be making the important clan-life decisions.", ('center', y_value))
+            y_value += 20
+
+        if game.switches['game_mode'] == 'cruel season':
+            verdana_big_light.text("Cruel Season", ('center', y_value))
+            y_value += 50
+
+            verdana.text("This mode has all the features of Expanded mode but is significantly", ('center', y_value))
+            y_value += 20
+
+            verdana.text("more difficult.", ('center', y_value))
+            y_value += 35
+
+            verdana.text("If you'd like a challenge, then this mode is for you.", ('center', y_value))
+            y_value += 20
+
+            verdana.text("---currently unavailable---", ('center', y_value))
+            y_value += 35
+
+            verdana.text("You heard their warnings... this will be a Cruel Season.  Will you survive?", ('center', y_value))
+            y_value += 20
+
+
+        buttons.draw_image_button((253, 620),
+                                  button_name='last_step',
+                                  text='< Last step',
+                                  hotkey=[0],
+                                  size=(147, 30),
+                                  available=False
                                   )
 
-        #buttons.draw_image_button((200, 400),
-        #                          button_name='cruel season',
-        #                          size=(x, y,),
-        #                          game_mode='cruel season',
-        #                          available='cruel season' != game.switches['cruel season']
-        #                          )
+        if game.switches['game_mode'] != 'cruel season':
+            buttons.draw_image_button((400, 620),
+                                      button_name='next_step',
+                                      text='Next Step',
+                                      set_game_mode=True,
+                                      available=True,
+                                      size=(147, 30)
+                                      )
+        else:
+            buttons.draw_image_button((400, 620),
+                                      button_name='next_step',
+                                      text='Next Step',
+                                      set_game_mode=True,
+                                      available=False,
+                                      size=(147, 30)
+                                      )
+        verdana.text("The clan's game mode is permanent and cannot be changed after clan creation.", ('center', 583))
 
-        #        verdana.text("The player doesn't have to organize anything important and can focus on storytelling.", ('center', a))
-        #        verdana.text("classic generator game with additional functions", ('center', a))
-        #        verdana.text("The player has to organize and manage some values. Current additions:", ('center', a))
-        #        verdana.text("like expanded mode, but harder to survive", ('center', a))
-        #        verdana.text("currently not available", ('center', a))
-
-        if game.switches['game_mode'] != game.settings['game_mode']:
-            game.settings['game_mode'] = game.switches['game_mode']
-            game.settings_changed = True
 
     def first_phase(self):
         # layout
+        draw_main_menu(self)
         name_clan_img = pygame.image.load(
             'resources/images/pick_clan_screen/name_clan_light.png').convert_alpha()
         screen.blit(name_clan_img, (0, 0))
@@ -87,27 +188,35 @@ class MakeClanScreen(Screens):
                                   )
 
         # buttons
-        verdana_small.text(
-            'Note: going back to main menu resets the generated cats.',
-            (25, 25))
-        buttons.draw_image_button((25, 50),
-                                  button_name='main_menu',
-                                  text='<< Back to Main Menu',
-                                  cur_screen='start screen',
-                                  naming_text='',
-                                  size=(153, 30)
+        buttons.draw_image_button((253, 635),
+                                  button_name='last_step',
+                                  text='< Last step',
+                                  set_game_mode=False,
+                                  hotkey=[0],
+                                  size=(147, 30)
                                   )
-        buttons.draw_image_button((333, 635),
-                                  button_name='name_clan',
-                                  text='Name Clan',
-                                  clan_name=game.switches['naming_text'],
-                                  size=(124, 30),
-                                  hotkey=[3]
-                                  )
+
+        if game.switches['naming_text'] != '':
+            buttons.draw_image_button((400, 635),
+                                      button_name='next_step',
+                                      text='Next Step',
+                                      clan_name=game.switches['naming_text'],
+                                      available=True,
+                                      size=(147, 30)
+                                      )
+        else:
+            buttons.draw_image_button((400, 635),
+                                      button_name='next_step',
+                                      text='Next Step',
+                                      clan_name=game.switches['naming_text'],
+                                      available=False,
+                                      size=(147, 30)
+                                      )
 
     def second_phase(self):
         game.switches['naming_text'] = ''
         draw_clan_name(self)
+        draw_main_menu(self)
         leader_img = pygame.image.load(
             'resources/images/pick_clan_screen/leader_light.png').convert_alpha()
         screen.blit(leader_img, (0, 414))
@@ -155,17 +264,6 @@ class MakeClanScreen(Screens):
                                           hotkey=[1]
                                           )
 
-        verdana_small.text(
-            'Note: going back to main menu resets the generated cats.',
-            (25, 25))
-        buttons.draw_image_button((25, 50),
-                                  button_name='main_menu',
-                                  text='<< Back to Main Menu',
-                                  cur_screen='start screen',
-                                  naming_text='',
-                                  size=(153, 30)
-                                  )
-
         buttons.draw_image_button((253, 400),
                                   button_name='last_step',
                                   text='< Last step',
@@ -185,7 +283,7 @@ class MakeClanScreen(Screens):
 
     def third_phase(self):
         draw_clan_name(self)
-
+        draw_main_menu(self)
         deputy_img = pygame.image.load(
             'resources/images/pick_clan_screen/deputy_light.png').convert_alpha()
         screen.blit(deputy_img, (0, 414))
@@ -230,16 +328,7 @@ class MakeClanScreen(Screens):
                                           deputy=game.switches['cat'],
                                           size=(384, 52),
                                           hotkey=[1])
-        verdana_small.text(
-            'Note: going back to main menu resets the generated cats.',
-            (25, 25))
-        buttons.draw_image_button((25, 50),
-                                  button_name='main_menu',
-                                  text='<< Back to Main Menu',
-                                  cur_screen='start screen',
-                                  naming_text='',
-                                  size=(153, 30)
-                                  )
+
         buttons.draw_image_button((253, 400),
                                   button_name='last_step',
                                   text='< Last step',
@@ -258,7 +347,7 @@ class MakeClanScreen(Screens):
 
     def fourth_phase(self):
         draw_clan_name(self)
-
+        draw_main_menu(self)
         medic_img = pygame.image.load(
             'resources/images/pick_clan_screen/med_light.png').convert_alpha()
         screen.blit(medic_img, (0, 414))
@@ -311,16 +400,7 @@ class MakeClanScreen(Screens):
                                           medicine_cat=game.switches['cat'],
                                           hotkey=[1],
                                           size=(306, 58))
-        verdana_small.text(
-            'Note: going back to main menu resets the generated cats.',
-            (25, 25))
-        buttons.draw_image_button((25, 50),
-                                  button_name='main_menu',
-                                  text='<< Back to Main Menu',
-                                  cur_screen='start screen',
-                                  naming_text='',
-                                  size=(153, 30)
-                                  )
+
         buttons.draw_image_button((253, 400),
                                   button_name='last_step',
                                   text='< Last step',
@@ -339,7 +419,7 @@ class MakeClanScreen(Screens):
 
     def fifth_phase(self):
         draw_clan_name(self)
-
+        draw_main_menu(self)
         clan_img = pygame.image.load(
             'resources/images/pick_clan_screen/clan_light.png').convert_alpha()
         screen.blit(clan_img, (0, 414))
@@ -426,16 +506,7 @@ class MakeClanScreen(Screens):
                                           size=(95, 30),
                                           hotkey=[1])
 
-        verdana_small.text(
-            'Note: going back to main menu resets the generated cats.',
-            (25, 25))
-        buttons.draw_image_button((25, 50),
-                                  button_name='main_menu',
-                                  text='<< Back to Main Menu',
-                                  cur_screen='start screen',
-                                  naming_text='',
-                                  size=(153, 30)
-                                  )
+
 
         # Would be nice to make this button remove the last added member rather than all the members
         buttons.draw_image_button((253, 400),
@@ -696,16 +767,8 @@ class MakeClanScreen(Screens):
 
     def choose_camp(self):
         # MAIN AND BACK BUTTONS
-        verdana_small.text(
-            'Note: going back to main menu resets the generated cats.',
-            (25, 25))
-        buttons.draw_image_button((25, 50),
-                                  button_name='main_menu',
-                                  text='<< Back to Main Menu',
-                                  cur_screen='start screen',
-                                  naming_text='',
-                                  size=(153, 30)
-                                  )
+        draw_main_menu(self)
+
         buttons.draw_image_button((253, 645),
                                   button_name='last_step',
                                   text='< Last step',
@@ -892,9 +955,9 @@ class MakeClanScreen(Screens):
 
     def on_use(self):
 
-        if game.switches['game_mode'] is None:
+        if game.switches['set_game_mode'] is False:
             self.game_mode()
-        elif len(game.switches['clan_name']) == 0 and game.switches['game_mode'] is not None:
+        elif len(game.switches['clan_name']) == 0 and game.switches['set_game_mode'] is True:
             self.first_phase()
         elif len(game.switches['clan_name']
                  ) > 0 and game.switches['leader'] is None:
