@@ -537,6 +537,7 @@ class RelationshipScreen(Screens):
         draw_next_prev_cat_buttons(the_cat)
 
         # USER INTERFACE ART
+
         search_text = game.switches['search_text']
         search_bar = pygame.transform.scale(
             pygame.image.load("resources/images/relationship_search.png").convert_alpha(), (228, 39))
@@ -926,6 +927,7 @@ class RelationshipScreen(Screens):
                                       chosen_cat=None
                                       )
         elif game.switches['chosen_cat'] is not None and game.switches['chosen_cat'].dead:
+            the_relationship.cat_to = game.switches['chosen_cat']
             buttons.draw_image_button((85, 390),
                                       button_name='switch_focus',
                                       size=(136, 30),
@@ -948,19 +950,11 @@ class RelationshipScreen(Screens):
             buttons.draw_image_button((85, 390),
                                       button_name='switch_focus',
                                       size=(136, 30),
-                                      cat=the_relationship.cat_to.ID,
-                                      cur_screen='relationship screen',
-                                      show_details=None,
-                                      chosen_cat=None,
                                       available=False
                                       )
             buttons.draw_image_button((85, 420),
                                       button_name='view_profile',
                                       size=(136, 30),
-                                      cat=the_relationship.cat_to.ID,
-                                      cur_screen='profile screen',
-                                      show_details=None,
-                                      chosen_cat=None,
                                       available=False
                                       )
         buttons.draw_image_button((25, 645),

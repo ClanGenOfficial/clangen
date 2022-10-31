@@ -30,6 +30,7 @@ def draw_main_menu(self):
                               text='<< Back to Main Menu',
                               cur_screen='start screen',
                               naming_text='',
+                              set_game_mode=False,
                               size=(153, 30)
                               )
 
@@ -131,7 +132,6 @@ class MakeClanScreen(Screens):
             verdana.text("You heard their warnings... this will be a Cruel Season.  Will you survive?", ('center', y_value))
             y_value += 20
 
-
         buttons.draw_image_button((253, 620),
                                   button_name='last_step',
                                   text='< Last step',
@@ -157,7 +157,6 @@ class MakeClanScreen(Screens):
                                       size=(147, 30)
                                       )
         verdana.text("The clan's game mode is permanent and cannot be changed after clan creation.", ('center', 583))
-
 
     def first_phase(self):
         # layout

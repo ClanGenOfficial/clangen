@@ -150,6 +150,7 @@ def draw_next_prev_cat_buttons(the_cat):
                                   cat=next_cat,
                                   size=(153, 30),
                                   hotkey=[21],
+                                  show_details=False,
                                   available=False
                                   )
     if previous_cat != 0:
