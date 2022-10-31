@@ -394,8 +394,8 @@ for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
     sprites.make_group('tortiecolourssolid', (a, 3), f'tortiesolid{i}')
     sprites.make_group('tortiesextrasolid', (a, 3), f'tortiesolidextra{i}', sprites_y=2)
 for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecolourssolid', (a, 3), f'tortiesolid{i}')
-    sprites.make_group('tortiesextrasolid', (a, 3), f'tortiesolidextra{i}', sprites_y=2)
+    sprites.make_group('tortiecolourssolid', (a, 4), f'tortiesolid{i}')
+    sprites.make_group('tortiesextrasolid', (a, 4), f'tortiesolidextra{i}', sprites_y=2)
 #tabby
 for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
     sprites.make_group('tortiecolourstabby', (a, 0), f'tortietabby{i}')
@@ -410,8 +410,8 @@ for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
     sprites.make_group('tortiecolourstabby', (a, 3), f'tortietabby{i}')
     sprites.make_group('tortiesextratabby', (a, 3), f'tortietabbyextra{i}', sprites_y=2)
 for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecolourstabby', (a, 3), f'tortietabby{i}')
-    sprites.make_group('tortiesextratabby', (a, 3), f'tortietabbyextra{i}', sprites_y=2)
+    sprites.make_group('tortiecolourstabby', (a, 4), f'tortietabby{i}')
+    sprites.make_group('tortiesextratabby', (a, 4), f'tortietabbyextra{i}', sprites_y=2)
 #bengal
 for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
     sprites.make_group('tortiecoloursbengal', (a, 0), f'tortiebengal{i}')
@@ -426,8 +426,8 @@ for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
     sprites.make_group('tortiecoloursbengal', (a, 3), f'tortiebengal{i}')
     sprites.make_group('tortiesextrabengal', (a, 3), f'tortiebengalextra{i}', sprites_y=2)
 for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecoloursbengal', (a, 3), f'tortiebengal{i}')
-    sprites.make_group('tortiesextrabengal', (a, 3), f'tortiebengalextra{i}', sprites_y=2)
+    sprites.make_group('tortiecoloursbengal', (a, 4), f'tortiebengal{i}')
+    sprites.make_group('tortiesextrabengal', (a, 4), f'tortiebengalextra{i}', sprites_y=2)
 #marbled
 for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
     sprites.make_group('tortiecoloursmarbled', (a, 0), f'tortiemarbled{i}')
@@ -442,8 +442,8 @@ for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
     sprites.make_group('tortiecoloursmarbled', (a, 3), f'tortiemarbled{i}')
     sprites.make_group('tortiesextramarbled', (a, 3), f'tortiemarbledextra{i}', sprites_y=2)
 for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecoloursmarbled', (a, 3), f'tortiemarbled{i}')
-    sprites.make_group('tortiesextramarbled', (a, 3), f'tortiemarbledextra{i}', sprites_y=2)
+    sprites.make_group('tortiecoloursmarbled', (a, 4), f'tortiemarbled{i}')
+    sprites.make_group('tortiesextramarbled', (a, 4), f'tortiemarbledextra{i}', sprites_y=2)
 #ticked
 for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
     sprites.make_group('tortiecoloursticked', (a, 0), f'tortieticked{i}')
@@ -458,8 +458,8 @@ for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
     sprites.make_group('tortiecoloursticked', (a, 3), f'tortieticked{i}')
     sprites.make_group('tortiesextraticked', (a, 3), f'tortietickedextra{i}', sprites_y=2)
 for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecoloursticked', (a, 3), f'tortieticked{i}')
-    sprites.make_group('tortiesextraticked', (a, 3), f'tortietickedextra{i}', sprites_y=2)
+    sprites.make_group('tortiecoloursticked', (a, 4), f'tortieticked{i}')
+    sprites.make_group('tortiesextraticked', (a, 4), f'tortietickedextra{i}', sprites_y=2)
 #smoke
 for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
     sprites.make_group('tortiecolourssmoke', (a, 0), f'tortiesmoke{i}')
@@ -473,6 +473,9 @@ for a, i in enumerate(['GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR']):
 for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
     sprites.make_group('tortiecolourssmoke', (a, 3), f'tortiesmoke{i}')
     sprites.make_group('tortiesextrasmoke', (a, 3), f'tortiesmokeextra{i}', sprites_y=2)
+for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
+    sprites.make_group('tortiecolourssmoke', (a, 4), f'tortiesmoke{i}')
+    sprites.make_group('tortiesextrasmoke', (a, 4), f'tortiesmokeextra{i}', sprites_y=2)
 #rosette
 for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
     sprites.make_group('tortiecoloursrosette', (a, 0), f'tortierosette{i}')
@@ -487,8 +490,8 @@ for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
     sprites.make_group('tortiecoloursrosette', (a, 3), f'tortierosette{i}')
     sprites.make_group('tortiesextrarosette', (a, 3), f'tortierosetteextra{i}', sprites_y=2)
 for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecoloursrosette', (a, 3), f'tortierosette{i}')
-    sprites.make_group('tortiesextrarosette', (a, 3), f'tortierosetteextra{i}', sprites_y=2)
+    sprites.make_group('tortiecoloursrosette', (a, 4), f'tortierosette{i}')
+    sprites.make_group('tortiesextrarosette', (a, 4), f'tortierosetteextra{i}', sprites_y=2)
 #speckled
 for a, i in enumerate(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR']):
     sprites.make_group('tortiecoloursspeckled', (a, 0), f'tortiespeckled{i}')
@@ -503,8 +506,8 @@ for a, i in enumerate(['DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR']):
     sprites.make_group('tortiecoloursspeckled', (a, 3), f'tortiespeckled{i}')
     sprites.make_group('tortiesextraspeckled', (a, 3), f'tortiespeckledextra{i}', sprites_y=2)
 for a, i in enumerate(['CREAMONE', 'CREAMTWO', 'CREAMTHREE', 'CREAMFOUR']):
-    sprites.make_group('tortiecoloursspeckled', (a, 3), f'tortiespeckled{i}')
-    sprites.make_group('tortiesextraspeckled', (a, 3), f'tortiespeckledextra{i}', sprites_y=2)
+    sprites.make_group('tortiecoloursspeckled', (a, 4), f'tortiespeckled{i}')
+    sprites.make_group('tortiesextraspeckled', (a, 4), f'tortiespeckledextra{i}', sprites_y=2)
 
 # SKINS
 sprites.make_group('skin', (0, 0), 'skinBLACK')
