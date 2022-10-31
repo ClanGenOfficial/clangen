@@ -557,7 +557,7 @@ class RelationshipScreen(Screens):
             pygame.image.load("resources/images/relationship_list_frame.png").convert_alpha(), (502, 500))
         screen.blit(list_frame, (273, 122))
 
-        # button for better displaying
+        # VIEW TOGGLES
         verdana_mid.text(
             f"Show Dead",
             (70, 513))
@@ -639,7 +639,7 @@ class RelationshipScreen(Screens):
         verdana_big.text(str(the_cat.name) + ' Relationships', (80, 75))  # NAME
         draw(the_cat, (25, 70))  #SPRITE
 
-        if the_cat is None and the_cat.mate != '':
+        if the_cat is not None:
             mate = Cat.all_cats.get(the_cat.mate)
             if mate is not None:
                 verdana_small.text(
@@ -649,10 +649,7 @@ class RelationshipScreen(Screens):
                 verdana_small.text(
                     f"{str(the_cat.genderalign)}  - {str(the_cat.age)} - {str(the_cat.trait)}",
                     (80, 100))
-        else:
-            verdana_small.text(
-                f"{str(the_cat.genderalign)}  - {str(the_cat.age)} - {str(the_cat.trait)}",
-                (80, 100))
+
 
         # filter relationships based on the settings #TOGGLE IMAGES NOT DONE YET
         if not game.settings['show dead relation']:
