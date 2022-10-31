@@ -42,95 +42,115 @@ class MakeClanScreen(Screens):
         draw_main_menu(self)
         text_box = pygame.image.load(
             'resources/images/game_mode_text_box.png').convert_alpha()
-        screen.blit(text_box, (25, 315))
+        screen.blit(text_box, (325, 130))
 
-        y_value = 140
+        y_value = 240
 
         # DEFAULT MODE
         if game.switches['game_mode'] is None:
             game.switches['game_mode'] = 'classic'
 
-        #verdana.text("Choose the game mode:", ('center', y_value))
-        #y_value += 50
-
-        buttons.draw_image_button((334, y_value),
+        buttons.draw_image_button((109, y_value),
                                   button_name='classic_mode',
                                   size=(132, 30),
                                   game_mode='classic',
                                   )
-        y_value += 50
-        buttons.draw_image_button((319, y_value),
+        y_value += 80
+        buttons.draw_image_button((94, y_value),
                                   button_name='expanded_mode',
                                   size=(162, 34),
                                   game_mode='expanded',
                                   )
-        y_value += 50
-        buttons.draw_image_button((325, y_value),
+        y_value += 80
+        buttons.draw_image_button((100, y_value),
                                   button_name='cruel_season',
                                   size=(150, 30),
                                   game_mode='cruel season',
                                   )
-        y_value += 82
 
         if game.switches['game_mode'] == 'classic':
-            verdana_big_light.text("Classic Mode", ('center', y_value))
+            y_value = 136
+            x_value = 345
+            verdana_big_light.text("Classic Mode", (465, y_value))
             y_value += 50
 
-            verdana.text("Sit back and relax.", ('center', y_value))
-            y_value += 30
+            verdana_dark.text("Sit back and relax.", (x_value, y_value))
+            y_value += 40
 
-            verdana.text("This mode is Clan Generator at it's most basic.  The player is not expected", ('center', y_value))
+            verdana_dark.text("This mode is Clan Generator at it's most basic. ", (x_value, y_value))
             y_value += 20
 
-            verdana.text("to manage the minutia of clan life.  Perfect for a relaxing game session", ('center', y_value))
+            verdana_dark.text("The player is not expected to manage the", (x_value, y_value))
             y_value += 20
 
-            verdana.text("or for focusing on storytelling.", ('center', y_value))
-            y_value += 30
+            verdana_dark.text("minutia of clan life.  Perfect for a relaxing", (x_value, y_value))
+            y_value += 20
 
-            verdana.text("With this mode you are the eye in the sky.", ('center', y_value))
+            verdana_dark.text("game session or for focusing on storytelling.", (x_value, y_value))
+            y_value += 40
+
+            verdana_dark.text("With this mode you are the eye in the sky,", (x_value, y_value))
+            y_value += 20
+
+            verdana_dark.text("watching the clan as their story unfolds.", (x_value, y_value))
             y_value += 20
 
         if game.switches['game_mode'] == 'expanded':
-            verdana_big_light.text("Expanded Mode", ('center', y_value))
+            y_value = 136
+            x_value = 345
+
+            verdana_big_light.text("Expanded Mode", (453, y_value))
             y_value += 50
 
-            verdana.text("A more hands-on experience.", ('center', y_value))
-            y_value += 35
+            verdana_dark.text("A more hands-on experience.", (x_value, y_value))
+            y_value += 40
 
-            verdana.text("This mode has everything in Classic Mode as well as more ", ('center', y_value))
+            verdana_dark.text("This mode has everything in Classic Mode as ", (x_value, y_value))
             y_value += 20
 
-            verdana.text("management focused features.", ('center', y_value))
-            y_value += 35
+            verdana_dark.text("well as more management focused features.", (x_value, y_value))
+            y_value += 40
 
-            verdana.text("New features added include:", ('center', y_value))
+            verdana_dark.text("New features include:", (x_value, y_value))
             y_value += 20
 
-            verdana.text("----no new features as of yet----", ('center', y_value))
-            y_value += 35
+            verdana_dark.text("----no new features as of yet----", (x_value, y_value))
+            y_value += 40
 
-            verdana.text("With this mode you'll be making the important clan-life decisions.", ('center', y_value))
+            verdana_dark.text("With this mode you'll be making the important", (x_value, y_value))
             y_value += 20
+
+            verdana_dark.text("clan-life decisions.", (x_value, y_value))
 
         if game.switches['game_mode'] == 'cruel season':
-            verdana_big_light.text("Cruel Season", ('center', y_value))
+            y_value = 136
+            x_value = 345
+
+            verdana_big_light.text("Cruel Season", (464, y_value))
             y_value += 50
 
-            verdana.text("This mode has all the features of Expanded mode but is significantly", ('center', y_value))
+            verdana_dark.text("This mode has all the features of Expanded ", (x_value, y_value))
             y_value += 20
 
-            verdana.text("more difficult.", ('center', y_value))
-            y_value += 35
+            verdana_dark.text("mode, but is significantly more difficult.", (x_value, y_value))
+            y_value += 40
 
-            verdana.text("If you'd like a challenge, then this mode is for you.", ('center', y_value))
+            verdana_dark.text("If you'd like a challenge, then this mode", (x_value, y_value))
             y_value += 20
 
-            verdana.text("---currently unavailable---", ('center', y_value))
-            y_value += 35
+            verdana_dark.text("is for you.", (x_value, y_value))
+            y_value += 60
 
-            verdana.text("You heard their warnings... this will be a Cruel Season.  Will you survive?", ('center', y_value))
+            verdana_dark.text("---this mode is currently unavailable---", (x_value, y_value))
+            y_value += 60
+
+            verdana_dark.text("You heard the warnings... a Cruel Season is ", (x_value, y_value))
             y_value += 20
+
+            verdana_dark.text("coming.", (x_value, y_value))
+            y_value += 40
+
+            verdana_dark.text("Will you survive?", (x_value, y_value))
 
         buttons.draw_image_button((253, 620),
                                   button_name='last_step',
@@ -156,7 +176,7 @@ class MakeClanScreen(Screens):
                                       available=False,
                                       size=(147, 30)
                                       )
-        verdana.text("The clan's game mode is permanent and cannot be changed after clan creation.", ('center', 583))
+        verdana.text("Your clan's game mode is permanent and cannot be changed after clan creation.", ('center', 581))
 
     def first_phase(self):
         # layout

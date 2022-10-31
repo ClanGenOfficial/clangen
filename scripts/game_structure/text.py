@@ -85,8 +85,7 @@ class Font(object):
         for font in verdana.all_fonts:
             if game.settings['dark mode'] and font.colour == (0, 0, 0):
                 font.reset_colour(colour=(239, 229, 206))
-            elif not game.settings['dark mode'] and font.colour == (239, 229,
-                                                                    206):
+            elif not game.settings['dark mode'] and font.colour == (239, 229, 206):
                 font.reset_colour(colour=(0, 0, 0))
 
     def blit_text(self, text, pos, where=used_screen):
@@ -122,14 +121,21 @@ verdana_black = Font('verdana', colour='black')
 verdana_white = Font('verdana', colour='white')
 verdana_red = Font('verdana', colour=(242, 52, 29))
 verdana_light = Font('verdana', colour=(239, 229, 207))
+verdana_dark = Font('verdana', colour=(35, 30, 17))
 verdana_small = Font('verdana', 11)
 verdana_baby = Font('verdana', 11, (100, 100, 250))
 verdana_big = Font('verdana', 18)
 verdana_mid = Font('verdana', 13)
 verdana_big_white = Font('verdana', 18, colour='white')
 verdana_green = Font('verdana', colour='darkgreen')
+
 verdana_big_light = Font('verdana', 18, colour=(239, 229, 207))
 verdana_small_light = Font('verdana', 11, colour=(239, 229, 207))
+
+verdana_big_dark = Font('verdana', 18, colour=(35, 30, 17))
+verdana_small_dark = Font('verdana', 11, colour=(35, 30, 17))
+verdana_mid_dark = Font('verdana', 13, colour=(35, 30, 17))
+
 # for relationships, same color as bar
 verdana_dark_magenta = Font('verdana', 11, colour=(226, 65, 103))
 verdana_magenta = Font('verdana', 11, colour=(133, 49, 40))
