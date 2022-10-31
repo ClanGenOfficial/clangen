@@ -166,6 +166,7 @@ class Name(object):
         'DARKGINGER': [
             'Red', 'Red', 'Fire', 'Rust', 'Flame', 'Oak', 'Shade', 'Russet',
             'Rowan', 'Fox'
+            
         'CREAM': [
             'Sand', 'Yellow', 'Pale', 'Cream', 'Light', 'Milk', 'Fawn',
             'Bone', 'Daisy'
@@ -179,8 +180,7 @@ class Name(object):
             'Acorn', 'Mud', "Deer"
         ],
         'DARKBROWN':
-        ['Brown', 'Shade', 'Dark', 'Night', 'Russet', 'Rowan', 'Mud']
-    }
+        ['Brown', 'Shade', 'Dark', 'Night', 'Russet', 'Rowan', 'Mud']}
 
     eye_prefixes = {
         'YELLOW': ['Yellow', 'Moon', 'Daisy', 'Honey', 'Light'],
