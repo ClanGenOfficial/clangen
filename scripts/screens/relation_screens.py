@@ -15,7 +15,7 @@ def draw_choosing_bg(self):
 
     screen.blit(list_frame, (75, 360))
     screen.blit(cat1_frame, (40, 113))
-    screen.blit(cat2_frame, (490, 113))
+    screen.blit(cat2_frame, (494, 113))
 
 
 class ChooseMentorScreen(Screens):
@@ -445,8 +445,8 @@ class ChooseMateScreen(Screens):
             else:
                 the_cat.mate = None
         if mate is not None:
-            draw_large(mate,(600, 150))
-            self.show_cat_info(mate, 502, 618)
+            draw_large(mate, (600, 150))
+            self.show_cat_info(mate, 506, 622)
             if the_cat.gender == mate.gender and not game.settings[
                     'no gendered breeding'] and the_cat.mate is None:
                 verdana_small.text(
@@ -485,18 +485,17 @@ class ChooseMateScreen(Screens):
                 verdana.text('This pair has never had offspring.',
                              ('center', 333))
         if mate is not None and the_cat.mate is None:
-            buttons.draw_image_button((323, 278),
-                                      button_name='its_official',
+            buttons.draw_button((323, 278),
+                                      image='buttons/its_official',
                                       text="It\'s official!",
-                                      size=(153, 30),
                                       cat_value=the_cat,
-                                      mate=mate)
+                                      mate=mate
+                                      )
 
         elif the_cat.mate is not None:
-            buttons.draw_image_button((323, 278),
-                                      button_name='break_up',
+            buttons.draw_button((323, 278),
+                                      image='buttons/break_up',
                                       text="Break it up...",
-                                      size=(153, 30),
                                       cat_value=the_cat,
                                       mate=None)
 
@@ -505,8 +504,7 @@ class ChooseMateScreen(Screens):
                                   text='Back',
                                   size=(105, 30),
                                   cur_screen='profile screen',
-                                  chosen_cat=None,
-                                  show_details=False)
+                                  )
 
 
     def get_valid_mates(self, the_cat, valid_mates, pos_x, pos_y):
@@ -518,9 +516,9 @@ class ChooseMateScreen(Screens):
             indirect_related = the_cat.is_uncle_aunt(relevant_cat) or relevant_cat.is_uncle_aunt(the_cat)
             related = direct_related or indirect_related
 
-            not_aviable = relevant_cat.dead or relevant_cat.exiled
+            not_available = relevant_cat.dead or relevant_cat.exiled
 
-            if not related and relevant_cat.ID != the_cat.ID and invalid_age and not not_aviable and relevant_cat.mate == None:
+            if not related and relevant_cat.ID != the_cat.ID and invalid_age and not not_available and relevant_cat.mate == None:
                 valid_mates.append(relevant_cat)
         all_pages = int(ceil(len(valid_mates) /
                              30.0)) if len(valid_mates) > 30 else 1
@@ -605,9 +603,8 @@ class ChooseMateScreen(Screens):
         y_value += 15
 
         verdana_small.text(arg0.trait, (arg1, y_value))
-    def screen_switches(self):
-        game.switches['mate'] = None
-        cat_profiles()
+
+
 
 
 def draw_bg_ui(self):  # USER INTERFACE ART
@@ -1060,12 +1057,13 @@ class RelationshipScreen(Screens):
                                       hotkey=[21])
 
         # CHANGE FOCUS CAT AND VIEW PROFILE
+        # CHANGE FOCUS CAT AND VIEW PROFILE
         if game.switches['chosen_cat'] is not None and not game.switches['chosen_cat'].dead:
-            the_relationship.cat_to = game.switches['chosen_cat']
+            to_switch_id = game.switches['chosen_cat'].ID
             buttons.draw_image_button((85, 390),
                                       button_name='switch_focus',
                                       size=(136, 30),
-                                      cat=the_relationship.cat_to.ID,
+                                      cat=to_switch_id,
                                       cur_screen='relationship screen',
                                       show_details=None,
                                       chosen_cat=None
@@ -1073,17 +1071,17 @@ class RelationshipScreen(Screens):
             buttons.draw_image_button((85, 420),
                                       button_name='view_profile',
                                       size=(136, 30),
-                                      cat=the_relationship.cat_to.ID,
+                                      cat=to_switch_id,
                                       cur_screen='profile screen',
                                       show_details=None,
                                       chosen_cat=None
                                       )
         elif game.switches['chosen_cat'] is not None and game.switches['chosen_cat'].dead:
-            the_relationship.cat_to = game.switches['chosen_cat']
+            to_switch_id = game.switches['chosen_cat'].ID
             buttons.draw_image_button((85, 390),
                                       button_name='switch_focus',
                                       size=(136, 30),
-                                      cat=the_relationship.cat_to.ID,
+                                      cat=to_switch_id,
                                       cur_screen='relationship screen',
                                       show_details=None,
                                       chosen_cat=None,
@@ -1092,7 +1090,7 @@ class RelationshipScreen(Screens):
             buttons.draw_image_button((85, 420),
                                       button_name='view_profile',
                                       size=(136, 30),
-                                      cat=the_relationship.cat_to.ID,
+                                      cat=to_switch_id,
                                       cur_screen='profile screen',
                                       show_details=None,
                                       chosen_cat=None

@@ -23,7 +23,13 @@ class Button(object):
         self.clickable_colour = clickable_colour
         self.unavailable_colour = unavailable_colour
 
-    def draw_image_button(self, pos, available=True, button_name=None, size=0, **values):
+    def draw_image_button(self,
+                          pos,
+                          available=True,
+                          button_name=None,
+                          size=0,
+                          **values,
+                          ):
         """
         Draw an image button and check for collisions.
 
@@ -145,7 +151,6 @@ class Button(object):
 
         elif dynamic_image:
             new_button = pygame.image.load(f"{image}.png").convert_alpha()
-            new_button = pygame.transform.scale(new_button, (192, 35))
         else:
             new_button = image
         new_pos = list(pos)
@@ -173,7 +178,6 @@ class Button(object):
                 self.font.text(text, (self.padding[0], 0), new_button)
         elif dynamic_image:
             new_button = pygame.image.load(f"{image}.png").convert_alpha()
-            new_button = pygame.transform.scale(new_button, (192, 35))
         self.used_screen.blit(new_button, new_pos)
         if game.clicked and clickable:
             if apprentice is not None:
@@ -288,8 +292,8 @@ class Button(object):
                     value.set_mate(cat_value)
                 else:
                     cat_mate = Cat.all_cats[cat_value.mate]
-                    cat_mate.unset_mate(breakup = True)
-                    cat_value.unset_mate(breakup = True)
+                    cat_mate.unset_mate(breakup=True)
+                    cat_value.unset_mate(breakup=True)
                 game.switches['mate'] = None
         if arrow is not None and game.switches['cur_screen'] == 'events screen':
             max_scroll_direction = len(
