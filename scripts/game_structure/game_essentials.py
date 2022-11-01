@@ -175,6 +175,7 @@ class Game(object):
         if self.switches[
                 'save_clan'] and self.clan is not None and self.cat_class is not None:
             self.clan.save_clan()
+            self.clan.save_pregnancy(game.clan)
             self.save_cats()
             self.switches['save_clan'] = False
             self.switches['saved_clan'] = True
