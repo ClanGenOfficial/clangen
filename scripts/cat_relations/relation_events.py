@@ -138,7 +138,6 @@ class Relation_Events(object):
     def handle_having_kits(self, cat, clan = game.clan):
         """Handles pregnancy of a cat."""
         if clan == None:
-            print("WARNING: There is no clan in game.clan")
             return
         if cat.ID in clan.pregnancy_data.keys():
             moons = clan.pregnancy_data[cat.ID]["moons"]
@@ -153,8 +152,6 @@ class Relation_Events(object):
         can_have_kits = self.check_if_can_have_kits(cat, game.settings['no unknown fathers'], game.settings['no gendered breeding'])
         if not can_have_kits:
             return
-
-        print(f"*********** {cat.name} can have kits")
 
         mate = None
         if cat.mate is not None:
@@ -334,7 +331,9 @@ class Relation_Events(object):
             return
 
         # if the other cat is a female and the current cat is a male, make the female cat pregnant
+        pregnant_cat = cat
         if cat.gender == 'male' and other_cat != None and other_cat.gender == 'female':
+            pregnant_cat = other_cat
             clan.pregnancy_data[other_cat.ID] = {
                 "second_parent": cat.ID,
                 "moons": 0,
@@ -347,7 +346,7 @@ class Relation_Events(object):
                 "amount": 0
             }
 
-        game.cur_events_list.append(f"{cat.name} announced that they are expecting kits")
+        game.cur_events_list.append(f"{pregnant_cat.name} announced that they are expecting kits")
 
     def handle_one_moon_pregnant(self, cat, clan = game.clan):
         """Handles if the cat is one moon pregnant."""
@@ -465,7 +464,6 @@ class Relation_Events(object):
         # decide chances of having kits, and if it's possible at all
         not_correct_age = cat.age in ['kitten', 'adolescent'] or cat.moons < 15
         if not_correct_age or cat.no_kits or cat.dead:
-            print(f"NO {cat.name}------------------ AGE OR DEAD OR NO KITS")
             return can_have_kits
 
         # check for mate
@@ -478,19 +476,18 @@ class Relation_Events(object):
                     f"WARNING: {str(cat.name)}  has an invalid mate # {str(cat.mate)}. This has been unset.")
                 cat.mate = None
 
+        if mate and mate.dead:
+            return can_have_kits
+
         if mate:
             if mate.gender == cat.gender and not no_gendered_breeding:
-                print(f"NO {cat.name}------------------ GENDER BREEDING")
                 return can_have_kits
             if cat.gender == 'female' and cat.age == 'elder' or mate.gender == 'female' and mate.age == 'elder':
-                print(f"NO {cat.name}------------------ FEMALE ELDER")
                 return can_have_kits
         else:
             if not unknown_parent_setting:
-                print(f"NO {cat.name}------------------ UNKNOWN PARENT")
                 return can_have_kits
             if cat.gender == 'female' and cat.age == 'elder':
-                print(f"NO {cat.name}------------------ FEMALE ELDER")
                 return can_have_kits
 
         # if function reaches this point, having kits is possible
@@ -670,15 +667,18 @@ class Relation_Events(object):
                 if cat.gender == 'female':
                     kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
                     all_kitten.append(kit)
+                    kit.thought = f"Snuggles up to the belly of {cat.name}"
                 else:
                     kit = Cat(parent1=other_cat.ID, parent2=cat.ID, moons=0)
                     all_kitten.append(kit)
+                    kit.thought = f"Snuggles up to the belly of {other_cat.name}"
                 cat.birth_cooldown = 6
                 other_cat.birth_cooldown = 6
             else:
                 kit = Cat(parent1=cat.ID, moons=0)
                 all_kitten.append(kit)
                 cat.birth_cooldown = 6
+                kit.thought = f"Snuggles up to the belly of {cat.name}"
             #create and update relationships
             relationships = []
             for cat_id in game.clan.clan_cats:
@@ -705,17 +705,18 @@ class Relation_Events(object):
 
     def get_amount_of_kits(self, cat):
         """Get the amount of kits which will be born."""
-        one_kit_possibility = {"young adult": 8,"adult": 9,"senior adult": 10,"elder" : 1}
-        two_kit_possibility = {"young adult": 10,"adult": 14,"senior adult": 15,"elder" : 1}
-        three_kit_possibility = {"young adult": 15,"adult": 15,"senior adult": 5,"elder" : 0}
-        four_kit_possibility = {"young adult": 12,"adult": 6,"senior adult": 0,"elder" : 0}
-        five_kit_possibility = {"young adult": 4,"adult": 1,"senior adult": 0,"elder" : 0}
-        six_kit_possibility = {"young adult": 1,"adult": 0,"senior adult": 0,"elder" : 0}
+        one_kit_possibility = {"young adult": 8,"adult": 9,"senior adult": 10,"elder" : 4}
+        two_kit_possibility = {"young adult": 10,"adult": 13,"senior adult": 15,"elder" : 3}
+        three_kit_possibility = {"young adult": 17,"adult": 15,"senior adult": 5,"elder" : 1}
+        four_kit_possibility = {"young adult": 12,"adult": 8,"senior adult": 2,"elder" : 0}
+        five_kit_possibility = {"young adult": 6,"adult": 2,"senior adult": 0,"elder" : 0}
+        six_kit_possibility = {"young adult": 2,"adult": 0,"senior adult": 0,"elder" : 0}
         one_kit = [1] * one_kit_possibility[cat.age]
         two_kits = [2] * two_kit_possibility[cat.age]
         three_kits = [3] * three_kit_possibility[cat.age]
         four_kits = [4] * four_kit_possibility[cat.age]
         five_kits = [5] * five_kit_possibility[cat.age]
         six_kits = [6] * six_kit_possibility[cat.age]
+        amount = choice(one_kit + two_kits + three_kits + four_kits + five_kits + six_kits)
 
-        return choice(one_kit + two_kits + three_kits + four_kits + five_kits + six_kits)
+        return amount
