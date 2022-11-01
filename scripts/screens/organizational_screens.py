@@ -74,6 +74,7 @@ class StartScreen(Screens):
         if game.clan is not None:
             game.save_cats()
             game.clan.save_clan()
+            game.clan.save_pregnancy(game.clan)
             #if map_available:
             #    save_map(game.map_info, game.clan.name)
 
