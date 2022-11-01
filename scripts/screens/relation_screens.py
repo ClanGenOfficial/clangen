@@ -7,9 +7,33 @@ from scripts.game_structure.buttons import buttons
 from scripts.game_structure.text import *
 from scripts.cat.cats import Cat
 
-class ChooseMentorScreen(Screens):
 
+def draw_choosing_bg(self):
+    list_frame = pygame.image.load("resources/images/choosing_frame.png").convert_alpha()
+    cat1_frame = pygame.image.load("resources/images/choosing_cat1_frame.png").convert_alpha()
+    cat2_frame = pygame.image.load("resources/images/choosing_cat2_frame.png").convert_alpha()
+
+    screen.blit(list_frame, (75, 360))
+    screen.blit(cat1_frame, (40, 113))
+    screen.blit(cat2_frame, (490, 113))
+
+
+class ChooseMentorScreen(Screens):
+    ui = None
     def on_use(self):
+
+        if ChooseMentorScreen.ui is None:
+            draw_choosing_bg(self)
+            ChooseMentorScreen.ui = draw_choosing_bg(self)
+
+        buttons.draw_image_button((25, 645),
+                                  button_name='back',
+                                  text='Back',
+                                  size=(105, 30),
+                                  cur_screen='profile screen',
+                                  chosen_cat=None,
+                                  show_details=False)
+
         verdana_big.text('Choose Mentor', ('center', 30))
         living_cats = []
         for cat in Cat.all_cats.values():
@@ -63,7 +87,6 @@ class ChooseMentorScreen(Screens):
                                 list_page=game.switches['list_page'] + 1,
                                 hotkey=[21])
 
-        draw_menu_buttons()
 
 class ChooseMentorScreen2(Screens):
 
@@ -380,22 +403,39 @@ class ViewChildrenScreen(Screens):
 
 class ChooseMateScreen(Screens):
 
+    ui = None
     def on_use(self):
         the_cat = Cat.all_cats[game.switches['cat']]
-        verdana_big.text(f'Choose mate for {str(the_cat.name)}',
-                         ('center', 50))
-        verdana_small.text(
-            'If the cat has chosen a mate, they will stay loyal and not have kittens with anyone else,',
-            ('center', 80))
-        verdana_small.text(
-            'even if having kittens in said relationship is impossible.',
-            ('center', 95))
-        verdana_small.text(
-            'Chances of having kittens when possible is heightened though.',
-            ('center', 110))
 
-        draw_large(the_cat, (200, 130))
-        self._extracted_from_on_use_29(the_cat, 70)
+        if ChooseMateScreen.ui is None:
+            ChooseMateScreen.ui = draw_choosing_bg(self)
+
+        y_value = 30
+        verdana_big.text(f'Choose mate for {str(the_cat.name)}',
+                         ('center', y_value))
+        y_value += 30
+
+        verdana_small.text(
+            'If the cat has chosen a mate, they will stay loyal and not have kittens ',
+            ('center', y_value))
+        y_value += 15
+
+        verdana_small.text(
+            'with anyone else, even if having kittens in said relationship is ',
+            ('center', y_value))
+        y_value += 15
+
+        verdana_small.text(
+            'impossible.  However, their chances of having kittens when possible',
+            ('center', y_value))
+        y_value += 15
+
+        verdana_small.text(
+            'is heightened.',
+            ('center', y_value))
+
+        draw_large(the_cat, (50, 150))
+        self.show_cat_info(the_cat, 212, 71)
         mate = None
         if game.switches['mate'] is not None and the_cat.mate is None:
             mate = Cat.all_cats[game.switches['mate']]
@@ -405,22 +445,21 @@ class ChooseMateScreen(Screens):
             else:
                 the_cat.mate = None
         if mate is not None:
-            draw_large(mate,(450, 130))
-            verdana.text(str(mate.name), ('center', 300))
-            self._extracted_from_on_use_29(mate, -100)
+            draw_large(mate,(600, 150))
+            self.show_cat_info(mate, 502, 618)
             if the_cat.gender == mate.gender and not game.settings[
-                    'no gendered breeding']:
+                    'no gendered breeding'] and the_cat.mate is None:
                 verdana_small.text(
                     '(this pair will not be able to have kittens)',
-                    ('center', 320))
+                    ('center', 310))
 
         valid_mates = []
         pos_x = 0
         pos_y = 20
         if the_cat.mate is None:
-            self._extracted_from_on_use_42(the_cat, valid_mates, pos_x, pos_y)
+            self.get_valid_mates(the_cat, valid_mates, pos_x, pos_y)
         else:
-            verdana.text('Already in a relationship.', ('center', 340))
+            verdana.text('Already in a relationship.', ('center', 313))
             kittens = False
             for x in game.clan.clan_cats:
                 if the_cat.ID in [
@@ -430,39 +469,47 @@ class ChooseMateScreen(Screens):
                         Cat.all_cats[x].parent1,
                         Cat.all_cats[x].parent2
                 ]:
-                    buttons.draw_button((200 + pos_x, 370 + pos_y),
+                    buttons.draw_button((100 + pos_x, 365 + pos_y),
                                         image=Cat.all_cats[x].sprite,
                                         cat=Cat.all_cats[x].ID,
                                         cur_screen='profile screen')
 
                     kittens = True
-                    pos_x += 50
-                    if pos_x > 400:
-                        pos_y += 50
+                    pos_x += 60
+                    if pos_x > 550:
+                        pos_y += 60
                         pos_x = 0
             if kittens:
-                verdana.text('Their offspring:', ('center', 360))
+                verdana.text('Their offspring:', ('center', 333))
             else:
                 verdana.text('This pair has never had offspring.',
-                             ('center', 360))
+                             ('center', 333))
         if mate is not None and the_cat.mate is None:
-            buttons.draw_button(('center', -130),
-                                text="It\'s official!",
-                                cat_value=the_cat,
-                                mate=mate)
+            buttons.draw_image_button((323, 278),
+                                      button_name='its_official',
+                                      text="It\'s official!",
+                                      size=(153, 30),
+                                      cat_value=the_cat,
+                                      mate=mate)
 
         elif the_cat.mate is not None:
-            buttons.draw_button(('center', -130),
-                                text="Break it up...",
-                                cat_value=the_cat,
-                                mate=None)
+            buttons.draw_image_button((323, 278),
+                                      button_name='break_up',
+                                      text="Break it up...",
+                                      size=(153, 30),
+                                      cat_value=the_cat,
+                                      mate=None)
 
-        buttons.draw_button(('center', -100),
-                            text='Back',
-                            cur_screen='profile screen')
+        buttons.draw_image_button((25, 645),
+                                  button_name='back',
+                                  text='Back',
+                                  size=(105, 30),
+                                  cur_screen='profile screen',
+                                  chosen_cat=None,
+                                  show_details=False)
 
-    # TODO Rename this here and in `on_use`
-    def _extracted_from_on_use_42(self, the_cat, valid_mates, pos_x, pos_y):
+
+    def get_valid_mates(self, the_cat, valid_mates, pos_x, pos_y):
         for x in game.clan.clan_cats:
             relevant_cat = Cat.all_cats[x]
             invalid_age = relevant_cat.age not in ['kitten', 'adolescent']
@@ -476,51 +523,88 @@ class ChooseMateScreen(Screens):
             if not related and relevant_cat.ID != the_cat.ID and invalid_age and not not_aviable and relevant_cat.mate == None:
                 valid_mates.append(relevant_cat)
         all_pages = int(ceil(len(valid_mates) /
-                             27.0)) if len(valid_mates) > 27 else 1
+                             30.0)) if len(valid_mates) > 30 else 1
         cats_on_page = 0
         for x in range(len(valid_mates)):
-            if x + (game.switches['list_page'] - 1) * 27 > len(valid_mates):
+            if x + (game.switches['list_page'] - 1) * 30 > len(valid_mates):
                 game.switches['list_page'] = 1
             if game.switches['list_page'] > all_pages:
                 game.switches['list_page'] = 1
-            pot_mate = valid_mates[x + (game.switches['list_page'] - 1) * 27]
-            buttons.draw_button((100 + pos_x, 320 + pos_y),
+            pot_mate = valid_mates[x + (game.switches['list_page'] - 1) * 30]
+            buttons.draw_button((100 + pos_x, 365 + pos_y),
                                 image=pot_mate.sprite,
                                 mate=pot_mate.ID)
 
-            pos_x += 50
+            pos_x += 60
             cats_on_page += 1
-            if pos_x > 400:
-                pos_y += 50
+            if pos_x > 550:
+                pos_y += 60
                 pos_x = 0
-            if cats_on_page >= 27 or x + (game.switches['list_page'] -
-                                          1) * 27 == len(valid_mates) - 1:
+            if cats_on_page >= 30 or x + (game.switches['list_page'] -
+                                          1) * 30 == len(valid_mates) - 1:
                 break
         verdana.text(
             'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages),
             ('center', 600))
 
         if game.switches['list_page'] > 1:
-            buttons.draw_button((300, 600),
-                                text='<',
-                                list_page=game.switches['list_page'] - 1,
-                                hotkey=[23])
+            buttons.draw_image_button((315, 580),
+                                      button_name='relationship_list_arrow_l',
+                                      text='<',
+                                      size=(34, 34),
+                                      list_page=game.switches['list_page'] - 1,
+                                      hotkey=[23]
+                                      )
+        else:
+            buttons.draw_image_button((315, 580),
+                                      button_name='relationship_list_arrow_l',
+                                      text='<',
+                                      size=(34, 34),
+                                      list_page=game.switches['list_page'] - 1,
+                                      hotkey=[23],
+                                      available=False
+                                      )
 
         if game.switches['list_page'] < all_pages:
-            buttons.draw_button((-300, 600),
-                                text='>',
-                                list_page=game.switches['list_page'] + 1,
-                                hotkey=[21])
-
-    # TODO Rename this here and in `on_use`
-    def _extracted_from_on_use_29(self, arg0, arg1):
-        verdana_small.text(arg0.age, (arg1, 200))
-        if (arg0.genderalign is not None):
-            verdana_small.text(arg0.genderalign, (arg1, 215))
+            buttons.draw_image_button((451, 580),
+                                      button_name='relationship_list_arrow_r',
+                                      text='>',
+                                      size=(34, 34),
+                                      list_page=game.switches['list_page'] + 1,
+                                      hotkey=[21]
+                                      )
         else:
-            verdana_small.text(arg0.gender, (arg1, 215))
-        verdana_small.text(arg0.trait, (arg1, 230))
+            buttons.draw_image_button((451, 580),
+                                      button_name='relationship_list_arrow_r',
+                                      text='>',
+                                      size=(34, 34),
+                                      list_page=game.switches['list_page'] + 1,
+                                      hotkey=[21],
+                                      available=False
+                                      )
+    def show_cat_info(self, arg0, arg1, arg2):
+        name = str(arg0.name)  # get name
+        if len(name) >= 10:  # check name length
+            short_name = str(arg0.name)[0:9]
+            name = short_name + '...'
+        verdana.text(str(name).center(16), (arg2, 121))
 
+        y_value = 193
+
+        verdana_small.text(arg0.age, (arg1, y_value))
+        y_value += 15
+
+        if arg0.age != 'elder':
+            verdana_small.text(str(arg0.status), (arg1, y_value))
+            y_value += 15
+
+        if arg0.genderalign is not None:
+            verdana_small.text(arg0.genderalign, (arg1, y_value))
+        else:
+            verdana_small.text(arg0.gender, (arg1, y_value))
+        y_value += 15
+
+        verdana_small.text(arg0.trait, (arg1, y_value))
     def screen_switches(self):
         game.switches['mate'] = None
         cat_profiles()
@@ -565,7 +649,7 @@ class RelationshipScreen(Screens):
 
         # LOAD UI IMAGES
         if RelationshipScreen.ui is None:
-            draw_bg_ui(self)
+            RelationshipScreen.ui = draw_bg_ui(self)
 
         # SEARCH TEXT
         search_text = game.switches['search_text']
