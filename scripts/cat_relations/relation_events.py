@@ -64,7 +64,6 @@ class Relation_Events(object):
             # overcome dead mates
             if cat_from_mate != None and cat_from_mate.dead and randint(1, 25) == 1 and cat_from_mate.dead_for >= 4:
                 self.had_one_event = True
-                print(cat_from.name, cat_from_mate.name , " - OVERCOME", game.clan.age, "moons")
                 game.cur_events_list.append(
                     f'{str(cat_from.name)} will always love {str(cat_from_mate.name)} but has decided to move on'
                 )
@@ -133,7 +132,6 @@ class Relation_Events(object):
         """Increase the moon for each pregnancy in the pregnancy dictionary"""
         for pregnancy_key in clan.pregnancy_data.keys():
             clan.pregnancy_data[pregnancy_key]["moons"] += 1
-            print(pregnancy_key, clan.pregnancy_data[pregnancy_key]["moons"])
 
     def handle_having_kits(self, cat, clan = game.clan):
         """Handles pregnancy of a cat."""
@@ -141,7 +139,6 @@ class Relation_Events(object):
             return
         if cat.ID in clan.pregnancy_data.keys():
             moons = clan.pregnancy_data[cat.ID]["moons"]
-            print(cat.name, moons)
             if moons == 1:
                 self.handle_one_moon_pregnant(cat, clan)
                 return
@@ -225,11 +222,9 @@ class Relation_Events(object):
         high_comfort = relationship.comfortable > 25 and relationship.opposite_relationship.comfortable > 25
 
         if hit == 1 and relationship.romantic_love > 20 and relationship.opposite_relationship.romantic_love > 20 and semi_high_like:
-            print(cat_from.name, cat_to.name , " - LOVE", game.clan.age, "moons")
             mate_string = f"{str(cat_from.name)} and {str(cat_to.name)} have become mates"
             become_mates = True
         elif random_hit == 1 and low_dislike and (high_like or high_comfort):
-            print(cat_from.name, cat_to.name , " - RANDOM", game.clan.age, "moons")
             mate_string = f"{str(cat_from.name)} and {str(cat_to.name)} see each other in a different light and have become mates"
             become_mates = True
 
@@ -251,7 +246,6 @@ class Relation_Events(object):
 
         if not self.had_one_event and relationship_from.mates and from_mate_in_clan:
             if self.check_if_breakup(relationship_from, relationship_to, cat_from, cat_to):
-                print(cat_from.name, cat_to.name, " - BREAKUP", game.clan.age, "moons")
                 #TODO: filter log to check if last interaction was a fight
                 had_fight = False
                 self.had_one_event = True
@@ -280,7 +274,6 @@ class Relation_Events(object):
         cat_to = highest_romantic_relation.cat_to
         if cat_to.is_potential_mate(cat, True) and cat.is_potential_mate(cat_to, True):
             if cat_to.mate == None and cat.mate == None:
-                print(cat.name, cat_to.name , " - BIG LOVE", game.clan.age, "moons")
                 self.had_one_event = True
                 cat.set_mate(cat_to)
                 cat_to.set_mate(cat)
