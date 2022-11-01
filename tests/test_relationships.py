@@ -11,6 +11,8 @@ class TestRelationshipInteraction(unittest.TestCase):
         parent = Cat()
         cat1 = Cat(parent1=parent.ID)
         cat2 = Cat(parent1=parent.ID)
+        cat1.trait = "charismatic"
+        cat2.trait = "charismatic"
 
         relationship = Relationship(cat1,cat2)
         relationship.link_relationship()
@@ -34,6 +36,8 @@ class TestRelationshipInteraction(unittest.TestCase):
         # given
         cat1 = Cat()
         cat2 = Cat(parent1=cat1.ID)
+        cat1.trait = "charismatic"
+        cat2.trait = "charismatic"
 
         relationship = Relationship(cat1,cat2)
         relationship.link_relationship()
@@ -60,6 +64,9 @@ class TestRelationshipInteraction(unittest.TestCase):
         parent.siblings.append(cat1.ID)
         cat1.siblings.append(parent.ID)
         cat2 = Cat(parent1=parent.ID)
+        
+        cat1.trait = "charismatic"
+        cat2.trait = "charismatic"
 
         relationship = Relationship(cat1,cat2)
         relationship.link_relationship()
@@ -84,6 +91,8 @@ class TestRelationshipInteraction(unittest.TestCase):
         grand_parent = Cat()
         cat1 = Cat(parent1=grand_parent.ID)
         cat2 = Cat(parent1=cat1.ID)
+        cat1.trait = "charismatic"
+        cat2.trait = "charismatic"
 
         relationship = Relationship(cat1,cat2)
         relationship.link_relationship()
@@ -107,6 +116,8 @@ class TestRelationshipInteraction(unittest.TestCase):
         # given
         cat1 = Cat(moons=6)
         cat2 = Cat(moons=15)
+        cat1.trait = "charismatic"
+        cat2.trait = "charismatic"
 
         relationship = Relationship(cat1,cat2)
         relationship.link_relationship()

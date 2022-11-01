@@ -124,10 +124,8 @@
             "Is rolling around a little too playfully with (cat)...",
             "Ensnares (cat) with a charming smile",
             "Was caught enjoying a moonlit stroll with (cat) last night...",
-            "Make (cat) laugh again and again",
             "Go for a nice long walk with (cat)",
             "Wants to spend the entire day with (cat)",
-            "Charms (cat)",
             "Left a gift in (cat)'s nest for them to find",
             "Picked out the best piece of prey to share with (cat)",
             "Sneaks out at night to sleep in (cat)'s nest"
@@ -221,7 +219,8 @@
             "Grooms the grime off (cat)'s pelt",
             "Is soothing (cat)'s irrational thoughts",
             "Has snuggled up against (cat)",
-            "Comforts (cat) after a nightmare"
+            "Comforts (cat) after a nightmare",
+            "Charms (cat)"
         ],
         "jealousy": [],
         "trust": [
