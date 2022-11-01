@@ -99,7 +99,8 @@ class Game(object):
         'show_details': False,
         'chosen_cat': None,
         'game_mode': '',
-        'set_game_mode': False
+        'set_game_mode': False,
+        'broke_up': False
 
     }
     all_screens = {}

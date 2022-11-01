@@ -290,11 +290,14 @@ class Button(object):
                 if value is not None:
                     cat_value.set_mate(value)
                     value.set_mate(cat_value)
+                    game.switches['broke_up'] = False
+                    game.switches['mate'] = None
                 else:
                     cat_mate = Cat.all_cats[cat_value.mate]
+                    game.switches['mate'] = cat_value.mate
                     cat_mate.unset_mate(breakup=True)
                     cat_value.unset_mate(breakup=True)
-                game.switches['mate'] = None
+                    game.switches['broke_up'] = True
         if arrow is not None and game.switches['cur_screen'] == 'events screen':
             max_scroll_direction = len(
                 game.cur_events_list) - game.max_events_displayed
