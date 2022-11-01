@@ -4,7 +4,6 @@ on: [push]
 
 jobs:
   build_linux64:
-
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
@@ -39,7 +38,6 @@ jobs:
           files: Clangen_Linux64.tar.xz
           
   build_win32:
-
     runs-on: windows-2019
     steps:
       - uses: actions/checkout@v3
@@ -74,7 +72,6 @@ jobs:
           files: Clangen_Win32.zip    
           
   build_win64:
-
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
@@ -109,7 +106,6 @@ jobs:
           files: Clangen_Win64.zip
           
   build_macos64:
-
     runs-on: macos-11
     steps:
       - uses: actions/checkout@v3
@@ -134,14 +130,16 @@ jobs:
       - name: Create archive (.tar.xz)
         run: |
           rm -r dist/Clangen
-          mv dist Clangen
-          tar -cavf Clangen_macOS64.tar.xz Clangen
+      - name: Install appdmg
+        run: "npm install -g appdmg"
+      - name: Generate .dmg
+        run: "appdmg appdmg.json Clangen_macOS64.dmg"
       - uses: actions/upload-artifact@v3
         with:
-          name: Clangen_macOS64.tar.xz
-          path: Clangen_macOS64.tar.xz
+          name: Clangen_macOS64.dmg
+          path: Clangen_macOS64.dmg
       - name: Release 
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: Clangen_macOS64.tar.xz
+          files: Clangen_macOS64.dmg
