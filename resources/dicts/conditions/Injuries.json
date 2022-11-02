@@ -2,7 +2,14 @@
     "broken leg":{
         "duration": 3,
         "medicine_duration": 2,
-        "mortality": 300,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
         "illness_infectiousness": [
             {
                 "name": "greencough",

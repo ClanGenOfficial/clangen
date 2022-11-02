@@ -512,6 +512,10 @@ class Cat(object):
 
         if randint(1,self.illness.mortality) == 1:
             self.die()
+        
+        for risk in self.illness.risks:
+            if randint(1,risk["chance"]) == 1:
+                self.get_ill(risk["name"])
 
         self.illness.duration -= 1
         if self.illness.duration <= 0:
@@ -613,11 +617,12 @@ class Cat(object):
         illness = ILLNESSES[name]
         self.illness = Illness(
             name,
-            mortality= illness["mortality"],
+            mortality= illness["mortality"][self.age],
             infectiousness = illness["infectiousness"], 
             duration = illness["duration"], 
             medicine_duration = illness["medicine_duration"], 
-            medicine_mortality = illness["medicine_mortality"], 
+            medicine_mortality = illness["medicine_mortality"][self.age],
+            risks = illness["risks"], 
             number_medicine_cats = illness["number_medicine_cats"],
             number_medicine_apprentices = illness["number_medicine_apprentices"]
         )
@@ -633,7 +638,7 @@ class Cat(object):
             name,
             duration = injury["duration"],
             medicine_duration = injury["medicine_duration"], 
-            mortality = injury["mortality"],
+            mortality = injury["mortality"][self.age],
             medicine_mortality = injury["medicine_mortality"],
             risks = injury["risks"],
             illness_infectiousness = injury["illness_infectiousness"],

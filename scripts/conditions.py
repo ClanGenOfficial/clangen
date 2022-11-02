@@ -33,7 +33,8 @@ class Illness(object):
             infectiousness, 
             duration, 
             medicine_duration, 
-            medicine_mortality, 
+            medicine_mortality,
+            risks,
             number_medicine_cats = 1,
             number_medicine_apprentices = 2):
         self.name = name
@@ -42,6 +43,7 @@ class Illness(object):
         self.duration = duration
         self.medicine_duration = medicine_duration
         self.medicine_mortality = medicine_mortality
+        self.risks = risks
         self.number_medicine_cats = number_medicine_cats
         self.number_medicine_apprentices = number_medicine_apprentices
 

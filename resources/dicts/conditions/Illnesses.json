@@ -1,16 +1,45 @@
 {
-    "greencough": {
+    "Whitecough": {
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "medicine_mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "duration": 2,
+        "medicine_duration": 1,
+        "infectiousness": 6,
+        "risks": [
+            {
+                "name": "greencough",
+                "chance": 5
+            }
+        ]
+    },
+    "Greencough": {
         "mortality": 100,
         "medicine_mortality": 200,
         "duration": 2,
         "medicine_duration": 1,
-        "infectiousness": 6
+        "infectiousness": 6,
+        "risks": []
     },
-    "infection": {
+    "Infection": {
         "mortality": 30,
         "medicine_mortality": 150,
         "duration": 1,
         "medicine_duration": 1,
-        "infectiousness": 0
+        "infectiousness": 0,
+        "risks": []
     }
 }
