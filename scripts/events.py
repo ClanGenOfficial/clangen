@@ -973,8 +973,9 @@ class Events(object):
                     ])
                 game.clan.leader_lives -= 1
                 cat.die()
+                print(cat.moons)
                 game.cur_events_list.append(
-                    choice(cause_of_death) + ' at ' + str(cat.moons) +
+                    choice(cause_of_death) + ' at ' + str(cat.moons + 1) +
                     ' moons old')
 
         #Several/All Lives loss
@@ -1048,7 +1049,7 @@ class Events(object):
                         ]
                         game.clan.leader_lives = game.clan.leader_lives - lostlives
                         cat.die()
-                        game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old')
+                        game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons + 1) + ' moons old')
 
         elif randint(1, 400) == 1:
             name = str(cat.name)
@@ -1223,7 +1224,7 @@ class Events(object):
             cat.die()
 
             game.cur_events_list.append(
-                choice(cause_of_death) + ' at ' + str(cat.moons) +
+                choice(cause_of_death) + ' at ' + str(cat.moons + 1) +
                 ' moons old')
 
         elif randint(1, 500) == 1:  # multiple deaths
@@ -1305,7 +1306,7 @@ class Events(object):
                         other_cat.die()
                         game.cur_events_list.append(
                             choice(cause_of_death) + ' at ' +
-                            str(other_cat.moons) + ' moons old')
+                            str(other_cat.moons + 1) + ' moons old')
                 elif cat.status == 'warrior':
                     if randint(1, murder_chance - 15) == 1:
                         cause_of_death = [
@@ -1321,7 +1322,7 @@ class Events(object):
                         other_cat.die()
                         game.cur_events_list.append(
                             choice(cause_of_death) + ' at ' +
-                            str(other_cat.moons) + ' moons old')
+                            str(other_cat.moons + 1) + ' moons old')
             elif cat.trait in ['bloodthirsty', 'vengeful', 'sadistic']:
                 if randint(1, murder_chance) == 1:
                     cause_of_death = [
@@ -1334,7 +1335,7 @@ class Events(object):
                     other_cat.die()
                     game.cur_events_list.append(
                         choice(cause_of_death) + ' at ' +
-                        str(other_cat.moons) + ' moons old')
+                        str(other_cat.moons + 1) + ' moons old')
             elif cat.status in [
                     'medicine cat', 'medicine cat apprentice'
             ] and cat.trait in ['bloodthirsty', 'vengeful', 'sadistic']:
@@ -1355,7 +1356,7 @@ class Events(object):
                     other_cat.die()
                     game.cur_events_list.append(
                         choice(cause_of_death) + ' at ' +
-                        str(other_cat.moons) + ' moons old')
+                        str(other_cat.moons + 1) + ' moons old')
 
         elif cat.moons > randint(150, 200):  # extra chance of cat dying to age
             if choice([1, 2, 3, 4, 5, 6]) == 1:
@@ -1364,20 +1365,20 @@ class Events(object):
                     game.cur_events_list.append(
                         str(cat.name) +
                         ' has passed due to their old age at ' +
-                        str(cat.moons) + ' moons old')
+                        str(cat.moons + 1) + ' moons old')
                 else:
                     game.clan.leader_lives -= 1
                     cat.die()
                     game.cur_events_list.append(
                         str(cat.name) +
                         ' has lost a life due to their old age at ' +
-                        str(cat.moons) + ' moons old')
+                        str(cat.moons + 1) + ' moons old')
             if cat.status == 'leader' and cat.moons > 269:
                 game.clan.leader_lives -= 10
                 cat.die()
                 game.cur_events_list.append(
                     str(cat.name) + ' has passed due to their old age at ' +
-                    str(cat.moons) + ' moons old')
+                    str(cat.moons + 1) + ' moons old')
 
         if game.settings.get('disasters') is True:
             alive_count = 0
