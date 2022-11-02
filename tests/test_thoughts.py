@@ -112,8 +112,7 @@ class TestFamilyThoughts(unittest.TestCase):
         # then
         self.assertTrue(all(t in own_collection_thoughts for t in function_thoughts1))
         self.assertFalse(all(t in not_collection_thoughts for t in function_thoughts1))
-        self.assertFalse(all(t in own_collection_thoughts for t in function_thoughts2))
-        self.assertFalse(all(t in not_collection_thoughts for t in function_thoughts2))
+        self.assertEqual(function_thoughts2,[])
     
     def test_family_thought_unrelated(self):
         # given
