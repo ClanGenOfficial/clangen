@@ -102,25 +102,29 @@ class TestFamilyThoughts(unittest.TestCase):
         parent.children.append(kit.ID)
 
         # when
-        function_thoughts = get_family_thoughts(parent, kit)
+        function_thoughts1 = get_family_thoughts(parent, kit)
+        function_thoughts2 = get_family_thoughts(kit, parent)
         own_collection_thoughts = FAMILY["has_children"]
         own_collection_thoughts += FAMILY["has_young_children"]["single"]
 
         not_collection_thoughts = FAMILY["has_young_children"]["multiple"]
 
         # then
-        self.assertTrue(all(t in own_collection_thoughts for t in function_thoughts))
-        self.assertFalse(all(t in not_collection_thoughts for t in function_thoughts))
+        self.assertTrue(all(t in own_collection_thoughts for t in function_thoughts1))
+        self.assertFalse(all(t in not_collection_thoughts for t in function_thoughts1))
+        self.assertFalse(all(t in own_collection_thoughts for t in function_thoughts2))
+        self.assertFalse(all(t in not_collection_thoughts for t in function_thoughts2))
     
     def test_family_thought_unrelated(self):
         # given
-        FAMILY = self.load_resources()
         cat1 = Cat(moons=40)
         cat2 = Cat(moons=40)
 
         # when
-        function_thoughts = get_family_thoughts(cat1, cat2)
+        function_thoughts1 = get_family_thoughts(cat1, cat2)
+        function_thoughts2 = get_family_thoughts(cat1, cat2)
 
         # then
-        self.assertEqual(function_thoughts,[])
+        self.assertEqual(function_thoughts1,[])
+        self.assertEqual(function_thoughts2,[])
 

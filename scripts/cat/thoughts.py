@@ -355,6 +355,7 @@ def get_elder_thoughts(cat, other_cat):
     return thoughts
 
 def get_family_thoughts(cat, other_cat):
+    """Returns a list of thoughts, if the other cat is a kit from cat."""
     thoughts = []
     if cat.children is None or len(cat.children) <= 0:
         return thoughts

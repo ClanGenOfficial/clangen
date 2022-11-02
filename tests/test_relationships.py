@@ -17,10 +17,13 @@ class TestRelationshipInteraction(unittest.TestCase):
         relationship = Relationship(cat1,cat2)
         relationship.link_relationship()
 
-        LOVE = None
-        resource_directory = "resources/dicts/relationship_events/"
-        with open(f"{resource_directory}love.json", 'r') as read_file:
-            LOVE = ujson.loads(read_file.read())
+        resource_directory = "resources/dicts/relationship_events/DE_IN_CREASE/"
+        INCREASE_LOW = None
+        INCREASE_HIGH = None
+        with open(f"{resource_directory}INCREASE_HIGH.json", 'r') as read_file:
+            INCREASE_HIGH = ujson.loads(read_file.read())
+        with open(f"{resource_directory}INCREASE_LOW.json", 'r') as read_file:
+            INCREASE_LOW = ujson.loads(read_file.read())
 
         # when
         relationship.platonic_like = 60
@@ -28,9 +31,10 @@ class TestRelationshipInteraction(unittest.TestCase):
 
         # then
         possibilities = relationship.get_action_possibilities()
-        self.assertFalse(any(action in possibilities for action in LOVE['love_interest_only']))
-        self.assertFalse(any(action in possibilities for action in LOVE['love_interest']))
-        self.assertFalse(any(action in possibilities for action in LOVE['mates']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_LOW['from']['romantic_love']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_LOW['to']['romantic_love']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_HIGH['from']['romantic_love']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_HIGH['to']['romantic_love']))
 
     def test_love_action_possibilities_parent(self):
         # given
@@ -42,10 +46,13 @@ class TestRelationshipInteraction(unittest.TestCase):
         relationship = Relationship(cat1,cat2)
         relationship.link_relationship()
 
-        LOVE = None
-        resource_directory = "resources/dicts/relationship_events/"
-        with open(f"{resource_directory}love.json", 'r') as read_file:
-            LOVE = ujson.loads(read_file.read())
+        resource_directory = "resources/dicts/relationship_events/DE_IN_CREASE/"
+        INCREASE_LOW = None
+        INCREASE_HIGH = None
+        with open(f"{resource_directory}INCREASE_HIGH.json", 'r') as read_file:
+            INCREASE_HIGH = ujson.loads(read_file.read())
+        with open(f"{resource_directory}INCREASE_LOW.json", 'r') as read_file:
+            INCREASE_LOW = ujson.loads(read_file.read())
 
         # when
         relationship.platonic_like = 60
@@ -53,9 +60,10 @@ class TestRelationshipInteraction(unittest.TestCase):
 
         # then
         possibilities = relationship.get_action_possibilities()
-        self.assertFalse(any(action in possibilities for action in LOVE['love_interest_only']))
-        self.assertFalse(any(action in possibilities for action in LOVE['love_interest']))
-        self.assertFalse(any(action in possibilities for action in LOVE['mates']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_LOW['from']['romantic_love']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_LOW['to']['romantic_love']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_HIGH['from']['romantic_love']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_HIGH['to']['romantic_love']))
 
     def test_love_action_possibilities_uncle(self):
         # given
@@ -71,10 +79,13 @@ class TestRelationshipInteraction(unittest.TestCase):
         relationship = Relationship(cat1,cat2)
         relationship.link_relationship()
 
-        LOVE = None
-        resource_directory = "resources/dicts/relationship_events/"
-        with open(f"{resource_directory}love.json", 'r') as read_file:
-            LOVE = ujson.loads(read_file.read())
+        resource_directory = "resources/dicts/relationship_events/DE_IN_CREASE/"
+        INCREASE_LOW = None
+        INCREASE_HIGH = None
+        with open(f"{resource_directory}INCREASE_HIGH.json", 'r') as read_file:
+            INCREASE_HIGH = ujson.loads(read_file.read())
+        with open(f"{resource_directory}INCREASE_LOW.json", 'r') as read_file:
+            INCREASE_LOW = ujson.loads(read_file.read())
 
         # when
         relationship.platonic_like = 60
@@ -82,9 +93,10 @@ class TestRelationshipInteraction(unittest.TestCase):
 
         # then
         possibilities = relationship.get_action_possibilities()
-        self.assertFalse(any(action in possibilities for action in LOVE['love_interest_only']))
-        self.assertFalse(any(action in possibilities for action in LOVE['love_interest']))
-        self.assertFalse(any(action in possibilities for action in LOVE['mates']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_LOW['from']['romantic_love']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_LOW['to']['romantic_love']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_HIGH['from']['romantic_love']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_HIGH['to']['romantic_love']))
 
     def test_love_action_possibilities_grandparents(self):
         # given
@@ -97,10 +109,13 @@ class TestRelationshipInteraction(unittest.TestCase):
         relationship = Relationship(cat1,cat2)
         relationship.link_relationship()
 
-        LOVE = None
-        resource_directory = "resources/dicts/relationship_events/"
-        with open(f"{resource_directory}love.json", 'r') as read_file:
-            LOVE = ujson.loads(read_file.read())
+        resource_directory = "resources/dicts/relationship_events/DE_IN_CREASE/"
+        INCREASE_LOW = None
+        INCREASE_HIGH = None
+        with open(f"{resource_directory}INCREASE_HIGH.json", 'r') as read_file:
+            INCREASE_HIGH = ujson.loads(read_file.read())
+        with open(f"{resource_directory}INCREASE_LOW.json", 'r') as read_file:
+            INCREASE_LOW = ujson.loads(read_file.read())
 
         # when
         relationship.platonic_like = 60
@@ -108,9 +123,10 @@ class TestRelationshipInteraction(unittest.TestCase):
 
         # then
         possibilities = relationship.get_action_possibilities()
-        self.assertFalse(any(action in possibilities for action in LOVE['love_interest_only']))
-        self.assertFalse(any(action in possibilities for action in LOVE['love_interest']))
-        self.assertFalse(any(action in possibilities for action in LOVE['mates']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_LOW['from']['romantic_love']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_LOW['to']['romantic_love']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_HIGH['from']['romantic_love']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_HIGH['to']['romantic_love']))
 
     def test_love_action_possibilities_apprentice_warrior(self):
         # given
@@ -122,10 +138,13 @@ class TestRelationshipInteraction(unittest.TestCase):
         relationship = Relationship(cat1,cat2)
         relationship.link_relationship()
 
-        LOVE = None
-        resource_directory = "resources/dicts/relationship_events/"
-        with open(f"{resource_directory}love.json", 'r') as read_file:
-            LOVE = ujson.loads(read_file.read())
+        resource_directory = "resources/dicts/relationship_events/DE_IN_CREASE/"
+        INCREASE_LOW = None
+        INCREASE_HIGH = None
+        with open(f"{resource_directory}INCREASE_HIGH.json", 'r') as read_file:
+            INCREASE_HIGH = ujson.loads(read_file.read())
+        with open(f"{resource_directory}INCREASE_LOW.json", 'r') as read_file:
+            INCREASE_LOW = ujson.loads(read_file.read())
 
         # when
         relationship.platonic_like = 60
@@ -133,6 +152,7 @@ class TestRelationshipInteraction(unittest.TestCase):
 
         # then
         possibilities = relationship.get_action_possibilities()
-        self.assertFalse(any(action in possibilities for action in LOVE['love_interest_only']))
-        self.assertFalse(any(action in possibilities for action in LOVE['love_interest']))
-        self.assertFalse(any(action in possibilities for action in LOVE['mates']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_LOW['from']['romantic_love']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_LOW['to']['romantic_love']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_HIGH['from']['romantic_love']))
+        self.assertFalse(any(action in possibilities for action in INCREASE_HIGH['to']['romantic_love']))
