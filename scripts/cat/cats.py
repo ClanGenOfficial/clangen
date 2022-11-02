@@ -15,7 +15,7 @@ from scripts.game_structure.game_essentials import *
 from scripts.cat_relations.relationship import *
 
 
-class Cat(object):
+class Cat():
     used_screen = screen
     traits = [
         'adventurous', 'altruistic', 'ambitious', 'bloodthirsty', 'bold',
@@ -138,7 +138,7 @@ class Cat(object):
         # age and status
         if status is None and moons is None:
             self.age = choice(self.ages)
-        elif moons != None:
+        elif moons is not None:
             for key_age in self.age_moons.keys():
                 if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1]+1):
                     self.age = key_age
@@ -215,7 +215,7 @@ class Cat(object):
         self.paralyzed = False
         self.no_kits = False
         self.exiled = False
-        if self.genderalign == None:
+        if self.genderalign is None:
             self.genderalign = self.gender
 
         # Sprite sizes
@@ -243,7 +243,7 @@ class Cat(object):
         self.paralyzed = False
         self.no_kits = False
         self.exiled = False
-        if self.genderalign == None:
+        if self.genderalign is None:
             self.genderalign = self.gender
 
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
@@ -264,7 +264,7 @@ class Cat(object):
         else:
             self.dead = True
 
-        if self.mate != None:
+        if self.mate is None:
             self.mate = None
             if type(self.mate) == str:
                 mate = Cat.all_cats.get(self.mate)
@@ -472,14 +472,14 @@ class Cat(object):
                 lambda relation: str(relation.cat_to) == str(random_id) and
                 not relation.cat_to.dead, self.relationships))
         random_cat = self.all_cats.get(random_id)
-        kitten_and_exiled = random_cat != None and random_cat.exiled and self.age == "kitten"
+        kitten_and_exiled = random_cat is not None and random_cat.exiled and self.age == "kitten"
 
         # is also found in Relation_Events.MAX_ATTEMPTS
         attempts_left = 1000
         while len(relevant_relationship_list) < 1 or random_id == self.ID or kitten_and_exiled:
             random_id = random.choice(cats_to_choose)
             random_cat = self.all_cats.get(random_id)
-            kitten_and_exiled = random_cat != None and random_cat.exiled and self.age == "kitten"
+            kitten_and_exiled = random_cat is not None and random_cat.exiled and self.age == "kitten"
             relevant_relationship_list = list(
                 filter(
                     lambda relation: str(relation.cat_to) == str(random_id) and
@@ -561,14 +561,14 @@ class Cat(object):
         right_parents = []
         if len(parents) == 2:
             left_p = Cat.all_cats.get(parents[0])
-            if left_p != None:
+            if left_p is not None:
                 left_parents = left_p.get_parents()
             right_p = Cat.all_cats.get(parents[1])
-            if right_p != None:
+            if right_p is not None:
                 right_parents = right_p.get_parents()
         if len(parents) == 1:
             left_p = Cat.all_cats.get(parents[0])
-            if left_p != None:
+            if left_p is not None:
                 left_parents = left_p.get_parents()
 
         if self.ID in left_parents or self.ID in right_parents:
@@ -642,14 +642,14 @@ class Cat(object):
         )
 
     def is_ill(self):
-        return self.illness != None
+        return self.illness is not None
 
     def is_injured(self):
-        return self.injury != None
+        return self.injury is not None
 
     def contact_with_ill_cat(self, cat):
         "handles if one cat had contact with a ill cat"
-        if self.is_ill() or cat == None or not cat.is_ill() or cat.illness.infectiousness == 0:
+        if self.is_ill() or cat is None or not cat.is_ill() or cat.illness.infectiousness == 0:
             return
 
         illness_name = cat.illness.name
@@ -957,7 +957,7 @@ class Cat(object):
             clanname = game.switches['clan_name']
         elif len(game.switches['clan_name']) > 0:
             clanname = game.switches['clan_list'][0]
-        elif game.clan != None:
+        elif game.clan is not None:
             clanname = game.clan.name
         relationship_dir = 'saves/' + clanname + '/relationships'
         if not os.path.exists(relationship_dir):
@@ -1012,7 +1012,7 @@ class Cat(object):
                     relationships = []
                     for rel in rel_data:
                         cat_to = self.all_cats.get(rel['cat_to_id'])
-                        if cat_to == None:
+                        if cat_to is None:
                             continue
                         new_rel = Relationship(
                             cat_from=self,
@@ -1066,7 +1066,7 @@ class Cat(object):
             if self._moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1]+1):
                 updated_age = True
                 self.age = key_age
-        if not updated_age and self.age != None:
+        if not updated_age and self.age is not None:
             self.age = "elder"
 
 # ---------------------------------------------------------------------------- #

@@ -11,7 +11,7 @@ pygame.display.set_caption('Clan Generator')
 
 
 # G A M E
-class Game(object):
+class Game():
     # Text box variables
     naming_box = pygame.Surface((140, 20))
     naming_box.fill((230, 230, 230))
@@ -261,7 +261,7 @@ class Game(object):
             clanname = game.switches['clan_name']
         elif len(game.switches['clan_name']) > 0:
             clanname = game.switches['clan_list'][0]
-        elif game.clan != None:
+        elif game.clan is not None:
             clanname = game.clan.name
         directory = 'saves/' + clanname
         if not os.path.exists(directory):
@@ -326,7 +326,7 @@ class Game(object):
             print("Saving cats didn't work.")
 
 # M O U S E
-class Mouse(object):
+class Mouse():
     used_screen = screen
 
     def __init__(self):

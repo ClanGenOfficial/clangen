@@ -4,7 +4,7 @@ from scripts.game_structure.buttons import buttons
 from scripts.game_structure.game_essentials import *
 from scripts.clan import map_available
 
-class Screens(object):
+class Screens():
     game_screen = screen
     game_x = screen_x
     game_y = screen_y
