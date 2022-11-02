@@ -1,8 +1,10 @@
 import unittest
+from mock import patch
 
 from scripts.cat_relations.relation_events import Relation_Events
 from scripts.cat.cats import Cat
 from scripts.cat_relations.relationship import Relationship
+from scripts.clan import Clan
 
 class ChanceOfKits(unittest.TestCase):
     def test_single_cat(self):
@@ -125,3 +127,54 @@ class ChanceOfKits(unittest.TestCase):
         # then
         chance = relation_events.get_kits_chance(cat1)
         self.assertEqual(chance, 190)
+
+
+class Pregnancy(unittest.TestCase):
+    @patch('scripts.cat_relations.relation_events.Relation_Events.get_kits_chance')
+    def test_single_cat_female(self, get_kits_chance):
+        # given
+        relation_events = Relation_Events()
+        clan = Clan()
+        cat = Cat(gender = 'female')
+        clan.pregnancy_data = {}
+
+        # when
+        get_kits_chance.return_value = 1
+        relation_events.handle_zero_moon_pregnant(cat,None,None,clan)
+
+        # then
+        self.assertTrue(cat.ID in clan.pregnancy_data.keys())
+
+    @patch('scripts.cat_relations.relation_events.Relation_Events.get_kits_chance')
+    def test_pair(self, get_kits_chance):
+        # given
+        relation_events = Relation_Events()
+        clan = Clan()
+        cat1 = Cat(gender = 'female')
+        cat2 = Cat(gender = 'male')
+
+        relation = Relationship(cat1, cat2,mates=True,family=False,romantic_love=100)
+        clan.pregnancy_data = {}
+
+        # when
+        get_kits_chance.return_value = 1
+        relation_events.handle_zero_moon_pregnant(cat1,cat2,relation,clan)
+
+        # then
+        self.assertTrue(cat1.ID in clan.pregnancy_data.keys())
+
+    @patch('scripts.cat_relations.relation_events.Relation_Events.get_kits_chance')
+    def test_single_cat_male(self, get_kits_chance):
+        # given
+        relation_events = Relation_Events()
+        clan = Clan()
+        cat = Cat(gender = 'male', moons=40)
+        clan.pregnancy_data = {}
+        number_before = len(cat.all_cats)
+
+        # when
+        get_kits_chance.return_value = 1
+        relation_events.handle_zero_moon_pregnant(cat,None,None,clan)
+
+        # then
+        self.assertNotEqual(number_before, len(cat.all_cats))

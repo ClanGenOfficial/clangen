@@ -309,7 +309,7 @@ class Relation_Events(object):
         # instead, the cat should get the kit instantly
         if cat.gender == 'male' and other_cat == None:
             amount = self.get_amount_of_kits(cat)
-            self.get_kits(amount, cat)
+            self.get_kits(amount, cat, None, clan)
             print_event = f"{str(cat.name)} brought a litter of {str(amount)} kit(s) back to camp, but refused to talk about their origin"
 
             # display event
@@ -332,9 +332,9 @@ class Relation_Events(object):
                 "moons": 0,
                 "amount": 0
             }
-        elif other_cat != None:
+        else:
             clan.pregnancy_data[cat.ID] = {
-                "second_parent": other_cat.ID,
+                "second_parent": other_cat,
                 "moons": 0,
                 "amount": 0
             }
@@ -379,7 +379,7 @@ class Relation_Events(object):
         other_cat_id = clan.pregnancy_data[cat.ID]["second_parent"]
         other_cat = Cat.all_cats.get(other_cat_id)
 
-        kits_amount = self.get_kits(kits_amount, cat, other_cat)
+        kits_amount = self.get_kits(kits_amount, cat, other_cat, clan)
         kits_amount = len(kits_amount)
 
         # delete the cat out of the pregnancy dictionary
@@ -651,7 +651,7 @@ class Relation_Events(object):
 
         return second_parent
 
-    def get_kits(self, kits_amount, cat, other_cat = None):
+    def get_kits(self, kits_amount, cat, other_cat = None, clan = game.clan):
         # create amount of kits
         all_kitten = []
         for kit in range(kits_amount):
@@ -674,7 +674,7 @@ class Relation_Events(object):
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
             #create and update relationships
             relationships = []
-            for cat_id in game.clan.clan_cats:
+            for cat_id in clan.clan_cats:
                 the_cat = Cat.all_cats.get(cat_id)
                 if the_cat.dead or the_cat.exiled:
                     continue
@@ -687,7 +687,7 @@ class Relation_Events(object):
             kit.relationships = relationships
             # remove accessory
             kit.accessory = None
-            game.clan.add_cat(kit)
+            clan.add_cat(kit)
 
         # check other cats of clan for siblings
         for kitten in all_kitten:
