@@ -93,23 +93,35 @@ class StartScreen(Screens):
 
 class SwitchClanScreen(Screens):
 
+    saves_frame = pygame.image.load("resources/images/clan_saves_frame.png")
+
     def on_use(self):
-        verdana_big.text('Switch Clan:', ('center', 100))
-        verdana.text(
-            'Note: this will close the game. When you open it next, it should have the new clan.',
-            ('center', 150))
+
         game.switches['read_clans'] = True
 
-        y_pos = 200
+        y_pos = 150
+        screen.blit(SwitchClanScreen.saves_frame, (290, y_pos))
+        y_pos += 39
 
         for i in range(len(game.switches['clan_list'])):
-            if len(game.switches['clan_list'][i]) > 1 and i < 9:
+            if len(game.switches['clan_list'][i]) > 1 and i <= 7:
                 buttons.draw_button(
-                    ('center', 50 * i + y_pos),
+                    (290, y_pos),
                     text=game.switches['clan_list'][i] + 'clan',
+                    image='buttons/clan_save',
                     switch_clan=game.switches['clan_list'][i],
                     hotkey=[i + 1])
+                verdana_dark.text(str(game.switches['clan_list'][i] + 'clan'), ('center', y_pos + 10))
+            y_pos += 41
 
+        y_pos = 540
+        verdana.text(
+            'Note: This will close the game.',
+            ('center', y_pos))
+        y_pos += 25
+        verdana.text(
+            'When you open it next, it should have the new clan.',
+            ('center', y_pos))
         buttons.draw_image_button((25, 25),
                                   button_name='main_menu',
                                   text='< Back to Main Menu',
@@ -337,49 +349,6 @@ class LanguageScreen(Screens):
                 game.switch_language()
 
         # other buttons
-        draw_back_and_save()
-
-
-class GameModeScreen(Screens):
-
-    def on_use(self):
-        # layout
-        draw_settings_header()
-        verdana.text("Choose the mode of your game here:", ('center', 140))
-
-        # Mode options
-        a = 200
-        for game_mode in game.setting_lists['game_mode']:
-            buttons.draw_button(
-                ('center', a),
-                text = game_mode,
-                game_mode = game_mode,
-                available = game_mode != game.switches['game_mode'])
-            a += 30
-            if game_mode == "classic":
-                verdana.text("classic generator game", ('center', a))
-                a += 20
-                verdana.text("The player doesn't have to organize anything important and can focus on storytelling.", ('center', a))
-                a += 50
-            elif game_mode == "expanded":
-                verdana.text("classic generator game with additional functions", ('center', a))
-                a += 20
-                verdana.text("The player has to organize and manage some values. Current additions:", ('center', a))
-                a += 20
-                verdana.text("---", ('center', a))
-                a += 50
-            elif game_mode == "cruel season":
-                verdana.text("like expanded mode, but harder to survive", ('center', a))
-                a += 20
-                verdana.text("currently not available", ('center', a))
-                a += 50
-
-        if game.switches['game_mode'] != game.settings['game_mode']:
-            game.settings['game_mode'] = game.switches['game_mode']
-            game.settings_changed = True
-
-        # other buttons
-
         draw_back_and_save()
 
 

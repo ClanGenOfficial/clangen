@@ -343,9 +343,6 @@ class ProfileScreen(Screens):
                                (490, 230 + count2 * 15))
             count2 += 1
 
-        # buttons
-        count = 0
-
         the_cat = Cat.all_cats.get(game.switches['cat'])
 
         # ---------------------------------------------------------------------------- #
@@ -391,7 +388,6 @@ class ProfileScreen(Screens):
                                           size=(172, 36),
                                           available=False)
             if the_cat.status == 'apprentice' and not the_cat.dead:
-                game.switches['apprentice'] = the_cat
                 buttons.draw_image_button((50, 558),
                                           button_name='change_mentor',
                                           text='change mentor',
@@ -809,7 +805,13 @@ class NameChangedScreen(Screens):
         game.switches['change_name'] = ''
         verdana.text('Name changed!', ('center', 240))
 
-        draw_back(25, 25)
+        buttons.draw_image_button((25, 25),
+                                  button_name='back',
+                                  text='Back',
+                                  size=(105, 30),
+                                  cur_screen='profile screen',
+                                  profile_tab_group=None,
+                                  hotkey=[0])
 
 
 class ChangeGenderScreen(Screens):
@@ -852,6 +854,12 @@ class GenderChangedScreen(Screens):
 
         verdana.text('Gender changed!', ('center', 240))
 
-        draw_back(25, 25)
+        buttons.draw_image_button((25, 25),
+                                  button_name='back',
+                                  text='Back',
+                                  size=(105, 30),
+                                  cur_screen='profile screen',
+                                  profile_tab_group=None,
+                                  hotkey=[0])
 
 
