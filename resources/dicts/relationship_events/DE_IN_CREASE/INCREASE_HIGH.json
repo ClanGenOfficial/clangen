@@ -101,7 +101,7 @@
             "Thinks they should get to be an apprentice already! They're just as good as (cat)",
             "Is jealous that (cat) got praised by the leader",
             "Doesn't understand how (cat) got so good at hunting",
-            "Accuses to (cat) of cheating, to win so many practice fights",
+            "Accuses (cat) of cheating, to win so many practice fights",
             "Is jealous that (cat) got to fight in a border skirmish when they didn't",
             "Is jealous that (cat) got to go to the last gathering",
             "Feels like they'll never accomplish as much as (cat)",
@@ -124,10 +124,8 @@
             "Is rolling around a little too playfully with (cat)...",
             "Ensnares (cat) with a charming smile",
             "Was caught enjoying a moonlit stroll with (cat) last night...",
-            "Make (cat) laugh again and again",
             "Go for a nice long walk with (cat)",
             "Wants to spend the entire day with (cat)",
-            "Charms (cat)",
             "Left a gift in (cat)'s nest for them to find",
             "Picked out the best piece of prey to share with (cat)",
             "Sneaks out at night to sleep in (cat)'s nest"
@@ -184,7 +182,7 @@
             "Treats (cat)'s splinter wound more roughly",
             "Gives (cat) bitter herbs on purpose",
             "Hisses at (cat) for getting a bigger piece of prey",
-            "Accuses to (cat) of cheating, to win so many practice fights"
+            "Accuses (cat) of cheating, to win so many practice fights"
         ],
         "admiration": [
             "Is promising to take (cat) outside of camp if they behave",
@@ -221,7 +219,8 @@
             "Grooms the grime off (cat)'s pelt",
             "Is soothing (cat)'s irrational thoughts",
             "Has snuggled up against (cat)",
-            "Comforts (cat) after a nightmare"
+            "Comforts (cat) after a nightmare",
+            "Charms (cat)"
         ],
         "jealousy": [],
         "trust": [

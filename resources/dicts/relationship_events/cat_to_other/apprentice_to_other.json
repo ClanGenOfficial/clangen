@@ -14,7 +14,7 @@
     },
     "medicine cat apprentice": {
         "unfriendly": [
-            "Accuses to (cat) of cheating, to win so many practice fights"
+            "Accuses (cat) of cheating, to win so many practice fights"
         ],
         "neutral": [
             "Is frustrated that (cat) won't take their duties more seriously",
@@ -30,7 +30,7 @@
     },
     "apprentice": {
         "unfriendly": [
-            "Accuses to (cat) of cheating, to win so many practice fights"
+            "Accuses (cat) of cheating, to win so many practice fights"
         ],
         "neutral": [
             "Is frustrated that (cat) won't take their duties more seriously",
