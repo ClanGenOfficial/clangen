@@ -64,6 +64,7 @@ class Game(object):
         'naming_text': '',
         'timeskip': False,
         'mate': None,
+        'mentor': None,
         'setting': None,
         'save_settings': False,
         'list_page': 1,

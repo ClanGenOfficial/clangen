@@ -70,7 +70,7 @@ class Cat(object):
     ]
     elder_skills = [
         'good storyteller', 'great storyteller', 'fantastic storyteller',
-        'smart tactician', 'valuable tactician','valuable insight',
+        'smart tactician', 'valuable tactician', 'valuable insight',
         'good mediator', 'great mediator', 'excellent mediator',
         'good teacher', 'great teacher', 'fantastic teacher',
         'strong connection to StarClan', 'smart', 'very smart', 'extremely smart',

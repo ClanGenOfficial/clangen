@@ -348,12 +348,17 @@ class Button(object):
     def choose_mentor(self, apprentice, cat_value):
         """Chooses cat_value as mentor for apprentice."""
         if apprentice not in cat_value.apprentice:
-            apprentice.mentor.former_apprentices.append(apprentice)
-            apprentice.mentor.apprentice.remove(apprentice)
-            apprentice.mentor = cat_value
-            cat_value.apprentice.append(apprentice)
+            if apprentice.moons == 6:
+                apprentice.mentor.apprentice.remove(apprentice)
+                apprentice.mentor = cat_value
+                cat_value.apprentice.append(apprentice)
+            else:
+                apprentice.mentor.former_apprentices.append(apprentice)
+                apprentice.mentor.apprentice.remove(apprentice)
+                apprentice.mentor = cat_value
+                cat_value.apprentice.append(apprentice)
+
         game.current_screen = 'clan screen'
-        game.save_cats()
 
 
 

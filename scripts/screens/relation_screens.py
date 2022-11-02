@@ -8,25 +8,24 @@ from scripts.game_structure.text import *
 from scripts.cat.cats import Cat
 
 
-def draw_choosing_bg(self):
+def draw_choosing_bg(arg0, arg1):
     list_frame = pygame.image.load("resources/images/choosing_frame.png").convert_alpha()
-    cat1_frame = pygame.image.load("resources/images/choosing_cat1_frame.png").convert_alpha()
-    cat2_frame = pygame.image.load("resources/images/choosing_cat2_frame.png").convert_alpha()
+    cat1_frame_arg1 = pygame.image.load(f"resources/images/choosing_cat1_frame_{arg1}.png").convert_alpha()
+    cat2_frame_arg1 = pygame.image.load(f"resources/images/choosing_cat2_frame_{arg1}.png").convert_alpha()
 
+    y_value = 113
 
     screen.blit(list_frame, (75, 360))
-    screen.blit(cat1_frame, (40, 113))
-    screen.blit(cat2_frame, (494, 113))
+    screen.blit(cat1_frame_arg1, (40, y_value))
+    screen.blit(cat2_frame_arg1, (arg0, y_value))  # mate = 494, mentor = 480
 
 
 class ChooseMentorScreen(Screens):
-    ui = None
+
     def on_use(self):
         the_cat = Cat.all_cats[game.switches['cat']]
 
-        if ChooseMentorScreen.ui is None:
-            draw_choosing_bg(self)
-            ChooseMentorScreen.ui = draw_choosing_bg(self)
+        draw_choosing_bg(480, 'ment')
 
         buttons.draw_image_button((25, 645),
                                   button_name='back',
@@ -37,69 +36,77 @@ class ChooseMentorScreen(Screens):
                                   show_details=False)
 
         y_value = 30
-        verdana_big.text(f'Choose mentor for {str(the_cat.name)}',
+        mentor = None
+        verdana_big.text(f'Choose a new mentor for {str(the_cat.name)}',
                          ('center', y_value))
+        y_value += 30
+        verdana_small.text(f'If an apprentice is 6 moons old and their mentor is changed, they will',
+                           ('center', y_value))
+        y_value += 15
+        verdana_small.text(f'not be listed as a former apprentice on their old mentor\'s profile.',
+                           ('center', y_value))
+        y_value += 30
+        verdana_small.text(f'{str(the_cat.name)}\'s current mentor is {str(the_cat.mentor.name)}.',
+                           ('center', y_value))
 
         draw_large(the_cat, (50, 150))
-        show_cat_info(self, the_cat, 212, 71)
-        mentor = None
-        if game.switches['mate'] is not None and the_cat.mate is None:
-            mate = Cat.all_cats[game.switches['mate']]
-        elif the_cat.mate is not None:
-            if the_cat.mate in Cat.all_cats:
-                mate = Cat.all_cats[the_cat.mate]
-            else:
-                the_cat.mate = None
-        if mate is not None:
-            draw_large(mate, (600, 150))
-            show_cat_info(self, mate, 506, 622)
-            if the_cat.gender == mate.gender and not game.settings[
-                    'no gendered breeding'] and the_cat.mate is None:
-                verdana_small.text(
-                    '(this pair will not be able to have kittens)',
-                    ('center', 333))
-        living_cats = []
+        show_mentor_cat_info(the_cat, 210, 71)
+
+
+        if game.switches['mentor'] is not None:
+            mentor = Cat.all_cats[game.switches['mentor']]
+        elif the_cat.mentor is not None:
+            if the_cat.mentor in Cat.all_cats:
+                mentor = Cat.all_cats[the_cat.mentor]
+
+        if mentor is not None:
+            draw_large(mentor, (600, 150))
+            show_mentor_cat_info(mentor, 491, 622)
+
+        valid_mentors = []
         pos_x = 0
         pos_y = 20
 
-        self.get_valid_mentors(living_cats, pos_x, pos_y)
+        self.get_valid_mentors(valid_mentors, pos_x, pos_y)
 
+        if mentor is not None:
+            buttons.draw_button(
+                ('center', 310),
+                image='buttons/change_mentor2',
+                text='Change Mentor',
+                cat_value=mentor,
+                apprentice=the_cat)
+        else:
+            buttons.draw_button(
+                ('center', 310),
+                image='buttons/change_mentor2',
+                text='Change Mentor',
+                available=False)
 
-        buttons.draw_button(
-            ('center', -100),
-            text='Choose as ' + str(game.switches['apprentice'].name) +
-            '\'s mentor',
-            cur_screen=game.switches['last_screen'],
-            cat_value=the_cat,
-            apprentice=game.switches['apprentice'])
+    def get_valid_mentors(self, valid_mentors, pos_x, pos_y):
 
-    def get_valid_mentors(self, living_cats, pos_x, pos_y):
-
-        living_cats = []
         for cat in Cat.all_cats.values():
-            if not cat.dead and cat != game.switches[
-                'apprentice'].mentor and cat.status in [
-                'warrior', 'deputy', 'leader'
-            ]:
-                living_cats.append(cat)
+            if not cat.dead and not cat.exiled and cat != game.switches[
+                    'apprentice'].mentor and cat.status in [
+                        'warrior', 'deputy', 'leader'
+                    ]:
+                valid_mentors.append(cat)
         all_pages = 1
-        if len(living_cats) > 30:
-            all_pages = int(ceil(len(living_cats) / 30.0))
-        pos_x = 0
-        pos_y = 0
+        if len(valid_mentors) > 30:
+            all_pages = int(ceil(len(valid_mentors) / 30.0))
+
         cats_on_page = 0
 
-        for x in range(len(living_cats)):
-            if x + (game.switches['list_page'] - 1) * 30 > len(living_cats):
+        for x in range(len(valid_mentors)):
+            if x + (game.switches['list_page'] - 1) * 30 > len(valid_mentors):
                 game.switches['list_page'] = 1
             if game.switches['list_page'] > all_pages:
                 game.switches['list_page'] = 1
-            the_cat = living_cats[x + (game.switches['list_page'] - 1) * 30]
-            if not the_cat.dead:
-                pot_mentor = living_cats[x + (game.switches['list_page'] - 1) * 30]
+            new_mentor = valid_mentors[x + (game.switches['list_page'] - 1) * 30]
+            if not new_mentor.dead or new_mentor.exiled:
                 buttons.draw_button((100 + pos_x, 365 + pos_y),
-                                    image=pot_mentor.sprite,
-                                    mentor=pot_mentor.ID,
+                                    image=new_mentor.sprite,
+                                    mentor=new_mentor.ID,
                                     )
 
                 cats_on_page += 1
@@ -108,12 +115,12 @@ class ChooseMentorScreen(Screens):
                     pos_x = 0
                     pos_y += 60
                 if cats_on_page >= 30 or x + (game.switches['list_page'] -
-                                              1) * 30 == len(living_cats) - 1:
+                                              1) * 30 == len(valid_mentors) - 1:
                     break
 
         verdana.text(
             'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages),
-            ('center', 600))
+            ('center', 590))
 
         if game.switches['list_page'] > 1:
             buttons.draw_image_button((315, 580),
@@ -151,210 +158,51 @@ class ChooseMentorScreen(Screens):
                                       available=False
                                       )
 
-class ChooseMentorScreen2(Screens):
+def show_mentor_cat_info(arg0, arg1, arg2):
+    name = str(arg0.name)  # get name
+    if len(name) >= 10:  # check name length
+        short_name = str(arg0.name)[0:9]
+        name = short_name + '...'
+    verdana.text(str(name).center(16), (arg2, 121))
 
-    def on_use(self):
-        # use this variable to point to the cat object in question
-        the_cat = Cat.all_cats.get(game.switches['cat'])
+    y_value = 168
 
-        # back and next buttons on the profile page
-        previous_cat = 0
-        next_cat = 0
+    verdana_small.text(arg0.age, (arg1, y_value))
+    y_value += 15
 
-        for check_cat in Cat.all_cats:
-            if Cat.all_cats[check_cat].ID == the_cat.ID:
-                next_cat = 1
+    if arg0.age != 'elder':
+        verdana_small.text(str(arg0.status), (arg1, y_value))
+        y_value += 15
 
-            if next_cat == 0 and Cat.all_cats[
-                    check_cat].ID != the_cat.ID and not Cat.all_cats[
-                        check_cat].dead and Cat.all_cats[
-                            check_cat].status in [
-                                'warrior', 'deputy', 'leader'
-                            ] and Cat.all_cats[check_cat] != game.switches[
-                                'apprentice'].mentor and not Cat.all_cats[
-                                    check_cat].exiled:
-                previous_cat = Cat.all_cats[check_cat].ID
-            elif next_cat == 1 and Cat.all_cats[check_cat].ID != the_cat.ID and not Cat.all_cats[check_cat].dead and Cat.all_cats[check_cat].status in ['warrior',
-                                                                                                                                                                          'deputy',
-                                                                                                                                                                          'leader'] and \
-                    Cat.all_cats[check_cat] != game.switches['apprentice'].mentor and not Cat.all_cats[
-                    check_cat].exiled:
-                next_cat = Cat.all_cats[check_cat].ID
-            elif int(next_cat) > 1:
-                break
+    if arg0.genderalign is not None:
+        verdana_small.text(arg0.genderalign, (arg1, y_value))
+    else:
+        verdana_small.text(arg0.gender, (arg1, y_value))
+    y_value += 15
 
-        if next_cat == 1:
-            next_cat = 0
+    verdana_small.text(arg0.trait, (arg1, y_value))
+    y_value += 15
 
-        if next_cat != 0:
-            buttons.draw_button((-40, 40),
-                                text='Next Cat',
-                                cat=next_cat,
-                                hotkey=[21])
-        if previous_cat != 0:
-            buttons.draw_button((40, 40),
-                                text='Previous Cat',
-                                cat=previous_cat,
-                                hotkey=[23])
+    if arg0.skill == 'formerly a kittypet':
+        verdana_small.text('former kittypet', (arg1, y_value))
+    elif arg0.skill == 'strong connection to StarClan':
+        verdana_small.text('strong connection', (arg1, y_value))
+        y_value += 15
+        verdana_small.text('to StarClan', (arg1, y_value))
 
-        # Info in string
-        cat_name = str(the_cat.name)  # name
-        cat_thought = the_cat.thought  # thought
+    else:
+        verdana_small.text(arg0.skill, (arg1, y_value))
+    y_value += 15
+    if len(arg0.former_apprentices) >= 1:
+        verdana_small.text(f"{len(arg0.former_apprentices)} former app(s)", (arg1, y_value))
+        y_value += 15
 
-        # LAYOUT
-        count = 0
-        count2 = 0
-        verdana_big.text(cat_name, ('center', 70))  # NAME
-        draw_large(the_cat, ('center', 100))  # IMAGE
-        verdana_small.text(the_cat.genderalign, (250, 330 + count * 15))
-        count += 1  # SEX / GENDER
-        verdana_small.text(the_cat.status, (450, 330 + count2 * 15))
-        count2 += 1  # STATUS
-        if 'apprentice' in the_cat.status:
-            if the_cat.mentor is not None:
-                verdana_small.text('mentor: ' + str(the_cat.mentor.name),
-                                   (450, 330 + count2 * 15))
-                count2 += 1
-        if len(the_cat.apprentice) != 0:
-            if len(the_cat.apprentice) == 1:
-                apps = 'apprentice: ' + str(the_cat.apprentice[0].name)
-            else:
-                apps = 'apprentices: '
-                for cat in the_cat.apprentice:
-                    apps += str(cat.name) + ', '
-                apps = apps[:len(apps) - 2]
-            verdana_small.text(apps, (450, 330 + count2 * 15))
-            count2 += 1
-        if len(the_cat.former_apprentices
-               ) != 0 and the_cat.former_apprentices[0] is not None:
-            if len(the_cat.former_apprentices) == 1:
-                former_apps = 'former apprentice: ' + str(
-                    the_cat.former_apprentices[0].name)
-            else:
-                former_apps = 'former apprentices: '
-                for cat in the_cat.former_apprentices:
-                    former_apps += str(cat.name) + ', '
-                former_apps = former_apps[:len(former_apps) - 2]
-            verdana_small.text(former_apps, (450, 330 + count2 * 15))
-            count2 += 1
-        if the_cat.age == 'kitten':
-            verdana_small.text('young', (250, 330 + count * 15))
-        elif the_cat.age == 'elder':
-            verdana_small.text('senior', (250, 330 + count * 15))
-        else:
-            verdana_small.text(the_cat.age, (250, 330 + count * 15))
-        count += 1  # AGE
-        verdana_small.text(the_cat.trait, (450, 330 + count2 * 15))
-        count2 += 1  # CHARACTER TRAIT
-        verdana_small.text(the_cat.skill, (450, 330 + count2 * 15))
-        count2 += 1  # SPECIAL SKILL
-        verdana_small.text('eyes: ' + the_cat.eye_colour.lower(),
-                           (250, 330 + count * 15))
-        count += 1  # EYE COLOR
-        verdana_small.text('pelt: ' + the_cat.pelt.name.lower(),
-                           (250, 330 + count * 15))
-        count += 1  # PELT TYPE
-        verdana_small.text('fur length: ' + the_cat.pelt.length,
-                           (250, 330 + count * 15))
-        count += 1  # PELT LENGTH
+    if len(arg0.apprentice) >= 1:
+        verdana_small.text(f"{len(arg0.apprentice)} current app(s)", (arg1, y_value))
 
-        # PARENTS
-        if the_cat.parent1 is None:
-            verdana_small.text('parents: unknown', (250, 330 + count * 15))
-            count += 1
-        elif the_cat.parent2 is None:
-            par1 = str(the_cat.all_cats[the_cat.parent1].name)
-            verdana_small.text('parents: ' + par1 + ', unknown',
-                               (250, 330 + count * 15))
-            count += 1
-        else:
-            if the_cat.parent1 in the_cat.all_cats and the_cat.parent2 in the_cat.all_cats:
-                par1 = str(the_cat.all_cats[the_cat.parent1].name)
-                par2 = str(the_cat.all_cats[the_cat.parent2].name)
-            elif the_cat.parent1 in the_cat.all_cats:
-                par2 = "Error: Cat#" + the_cat.parent2 + " not found"
-                par1 = str(the_cat.all_cats[the_cat.parent1].name)
-            elif the_cat.parent2 in the_cat.all_cats:
-                par1 = "Error: Cat#" + the_cat.parent1 + " not found"
-                par2 = str(the_cat.all_cats[the_cat.parent2].name)
-            else:
-                par1 = "Error: Cat#" + the_cat.parent1 + " not found"
-                par2 = "Error: Cat#" + the_cat.parent2 + " not found"
+    mentor_icon = pygame.image.load("resources/images/mentor.png")
+    screen.blit(mentor_icon, (315, 160))
 
-            verdana_small.text('parents: ' + par1 + ' and ' + par2,
-                               (250, 330 + count * 15))
-            count += 1
-
-        # MOONS
-        if the_cat.dead:
-            if the_cat.moons == 1:
-                verdana_small.text(
-                    str(the_cat.moon) + ' moons (in life)',
-                    (250, 330 + count * 15))
-                count += 1
-            elif the_cat.moons != 1:
-                verdana_small.text(
-                    str(the_cat.moons) + ' moons (in life)',
-                    (250, 330 + count * 15))
-                count += 1
-            if the_cat.dead_for == 1:
-                verdana_small.text(
-                    str(the_cat.dead_for) + ' moon (in death)',
-                    (250, 330 + count * 15))
-                count += 1
-            elif the_cat.dead_for != 1:
-                verdana_small.text(
-                    str(the_cat.dead_for) + ' moons (in death)',
-                    (250, 330 + count * 15))
-                count += 1
-        else:
-            if the_cat.moons == 1:
-                verdana_small.text(
-                    str(the_cat.moons) + ' moon', (250, 330 + count * 15))
-                count += 1
-            elif the_cat.moons != 1:
-                verdana_small.text(
-                    str(the_cat.moons) + ' moons', (250, 330 + count * 15))
-                count += 1
-
-        # MATE
-        if the_cat.mate is not None and not the_cat.dead:
-            if the_cat.mate in Cat.all_cats:
-                if Cat.all_cats.get(
-                        the_cat.mate
-                ).dead:  # TODO: fix when mate dies mate becomes none
-                    verdana_small.text(
-                        'former mate: ' +
-                        str(Cat.all_cats[the_cat.mate].name),
-                        (250, 330 + count * 15))
-                else:
-                    verdana_small.text(
-                        'mate: ' + str(Cat.all_cats[the_cat.mate].name),
-                        (250, 330 + count * 15))
-                count += 1
-            else:
-                verdana_small.text(
-                    'Error: mate: ' + str(the_cat.mate) + " not found",
-                    ('center', 495))
-
-        # experience
-        if not the_cat.dead:
-            verdana_small.text('experience: ' + str(the_cat.experience_level),
-                               (450, 330 + count2 * 15))
-            count2 += 1
-        else:
-            verdana_small.text('experience: ' + str(the_cat.experience_level),
-                               (450, 330 + count2 * 15))
-            count2 += 1
-
-        # buttons
-
-
-
-        buttons.draw_button(('center', -50),
-                            text='Back',
-                            cur_screen='clan screen',
-                            hotkey=[0])
 
 class ViewChildrenScreen(Screens):
 
@@ -461,15 +309,14 @@ class ViewChildrenScreen(Screens):
 
 class ChooseMateScreen(Screens):
 
-    ui = None
     def on_use(self):
         the_cat = Cat.all_cats[game.switches['cat']]
 
-        if ChooseMateScreen.ui is None:
-            ChooseMateScreen.ui = draw_choosing_bg(self)
+        draw_choosing_bg(494, 'mate')
+
 
         y_value = 30
-        verdana_big.text(f'Choose mate for {str(the_cat.name)}',
+        verdana_big.text(f'Choose a mate for {str(the_cat.name)}',
                          ('center', y_value))
         y_value += 30
 
@@ -489,11 +336,15 @@ class ChooseMateScreen(Screens):
         y_value += 15
 
         verdana_small.text(
-            'is heightened.',
+            'is heightened.  If affairs are toggled on, cats may not be loyal in ',
             ('center', y_value))
+        y_value += 15
 
+        verdana_small.text(
+            'their relationships.',
+            ('center', y_value))
         draw_large(the_cat, (50, 150))
-        show_cat_info(self, the_cat, 212, 71)
+        show_mate_cat_info(the_cat, 212, 71)
         mate = None
         if game.switches['mate'] is not None and the_cat.mate is None:
             mate = Cat.all_cats[game.switches['mate']]
@@ -504,7 +355,7 @@ class ChooseMateScreen(Screens):
                 the_cat.mate = None
         if mate is not None:
             draw_large(mate, (600, 150))
-            show_cat_info(self, mate, 506, 622)
+            show_mate_cat_info(mate, 506, 622)
             if the_cat.gender == mate.gender and not game.settings[
                     'no gendered breeding'] and the_cat.mate is None:
                 verdana_small.text(
@@ -584,8 +435,6 @@ class ChooseMateScreen(Screens):
 
         elif the_cat.mate is not None:
             screen.blit(heart, (x_value, y_value))
-
-
 
     def show_compatibility(self, arg1, arg2):
         # compatible = pygame.image.load("resources/images/pers_compatible.png")
@@ -677,7 +526,7 @@ class ChooseMateScreen(Screens):
                 break
         verdana.text(
             'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages),
-            ('center', 600))
+            ('center', 590))
 
         if game.switches['list_page'] > 1:
             buttons.draw_image_button((315, 580),
@@ -715,7 +564,8 @@ class ChooseMateScreen(Screens):
                                       available=False
                                       )
 
-def show_cat_info(self, arg0, arg1, arg2):
+
+def show_mate_cat_info(arg0, arg1, arg2):
     name = str(arg0.name)  # get name
     if len(name) >= 10:  # check name length
         short_name = str(arg0.name)[0:9]

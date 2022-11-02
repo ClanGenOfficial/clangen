@@ -7,7 +7,7 @@ from .organizational_screens import\
     StartScreen, SettingsScreen, InfoScreen, SwitchClanScreen, LanguageScreen, RelationshipSettingsScreen, StatsScreen, GameModeScreen
 from .patrol_screens import PatrolScreen
 from .relation_screens import\
-    RelationshipScreen, ChooseMateScreen, ChooseMentorScreen2, ViewChildrenScreen, ChooseMentorScreen
+    RelationshipScreen, ChooseMateScreen, ViewChildrenScreen, ChooseMentorScreen
 from .world_screens import MapScreen, OutsideClanScreen
 
 # ---------------------------------------------------------------------------- #
@@ -93,7 +93,6 @@ patrol_screen = PatrolScreen('patrol screen')
 
 choose_mate_screen = ChooseMateScreen('choose mate screen')
 choose_mentor_screen = ChooseMentorScreen('choose mentor screen')
-choose_mentor_screen2 = ChooseMentorScreen2('choose mentor screen2')
 relationship_screen = RelationshipScreen('relationship screen')
 view_children_screen = ViewChildrenScreen('see kits screen')
 
