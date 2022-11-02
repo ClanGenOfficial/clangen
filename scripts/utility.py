@@ -112,9 +112,9 @@ def add_siblings_to_cat(cat, cat_class):
 def add_children_to_cat(cat, cat_class):
     """Iterate over all current cats and add the ID to the current cat."""
     for inter_cat in cat_class.all_cats.values():
-        if inter_cat.is_parent(cat) and inter_cat.ID not in cat.children:
+        if cat.is_parent(cat) and inter_cat.ID not in cat.children:
             cat.children.append(inter_cat.ID)
-        if cat.is_parent(inter_cat) and cat.ID not in inter_cat.children:
+        if inter_cat.is_parent(inter_cat) and cat.ID not in inter_cat.children:
             inter_cat.children.append(cat.ID)
 
 
