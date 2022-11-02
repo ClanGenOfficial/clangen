@@ -131,9 +131,6 @@ class EventsScreen(Screens):
         a = 0
         if game.cur_events_list is not None and game.cur_events_list != []:
             for x in range(min(len(game.cur_events_list), game.max_events_displayed)):
-                #TODO: Find the real cause for game.cur_events_list[x] being a function sometimes
-                if game.cur_events_list[x] is None or not isinstance(game.cur_events_list[x], str):
-                    continue
                 if "Clan has no " in game.cur_events_list[x]:
                     verdana_red.text(game.cur_events_list[x],
                                      ('center', 260 + a * 30))

@@ -22,7 +22,6 @@ class Events(object):
 
     def one_moon(self):
         if game.switches['timeskip']:
-            print("----------------------")
             game.switches['saved_clan'] = False
             self.living_cats = 0
             self.new_cat_invited = False
@@ -674,12 +673,13 @@ class Events(object):
                 if loner_name in [names.loner_names]:
                     success_text = [
                         f'{str(loner_name)} decides to keep their name'
-                ]
+                    ]
                 else:
-                    success_text = [ 
+                    success_text = [
                         f'The loner decides to take on a slightly more clan-like name, and is now called {str(loner_name)}'
                     ]
-                game.cur_events_list.append(success_text)
+                game.cur_events_list.append(choice(loner_text))
+                game.cur_events_list.append(choice(success_text))
 
             elif type_of_new_cat == 3:
                 created_cats = self.create_new_cat(loner=True, loner_name=True)
@@ -689,8 +689,7 @@ class Events(object):
                     f'A loner says that they are interested in clan life and joins the clan'
                 ]
                 game.cur_events_list.append(choice(loner_text))
-                game.cur_events_list.append(
-                    'The loner changes their name to ' + str(loner_name))
+                game.cur_events_list.append('The loner changes their name to ' + str(loner_name))
 
             elif type_of_new_cat == 4:
                 created_cats = self.create_new_cat(kit=False,litter=False,loner=True)
@@ -722,7 +721,8 @@ class Events(object):
                     success_text = [ 
                         f'The kittypet decides to take on a slightly more clan-like name, and is now called {str(loner_name)}'
                     ]
-                game.cur_events_list.append(success_text)
+                game.cur_events_list.append(choice(loner_text))
+                game.cur_events_list.append(choice(success_text))
             
             elif type_of_new_cat == 6:
                 created_cats = self.create_new_cat(loner=True)
@@ -745,17 +745,17 @@ class Events(object):
                     relevant_cat=cat
                 )
                 if len(game.clan.all_clans) > 0:
-                    Akit_text = ([
+                    A_kit_text = ([
                         f'{parent1} finds an abandoned litter and decides to adopt them',
                         f'A loner leaves their litter to the clan. {str(parent1)} decides to adopt them as their own',
                         f'A {str(choice(game.clan.all_clans).name)}Clan queen decides to leave their litter with you. {str(parent1)} takes them as their own'
                     ])
                 else:
-                    Akit_text = ([
+                    A_kit_text = ([
                         f'{parent1} finds an abandoned litter and decides to adopt them as their own',
                         f'A loner leaves their litter to the clan. {str(parent1)} decides to adopt them as their own'
                     ])
-                game.cur_events_list.append(choice(Akit_text))            
+                game.cur_events_list.append(choice(A_kit_text))            
 
     def create_new_cat(self, loner = False, loner_name = False, kittypet = False, kit = False, litter = False, relevant_cat = None):
         name = None
@@ -973,7 +973,6 @@ class Events(object):
                     ])
                 game.clan.leader_lives -= 1
                 cat.die()
-                print(cat.moons)
                 game.cur_events_list.append(
                     choice(cause_of_death) + ' at ' + str(cat.moons + 1) +
                     ' moons old')
