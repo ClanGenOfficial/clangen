@@ -160,6 +160,14 @@ def backstory_text(cat, backstory):
         bs_display = 'Refugee'
     elif bs_display == 'tragedy_survivor':
         bs_display = 'Survivor of a Tragedy'
+    if bs_display == None:
+        bs_display = None
+    else:
+        return bs_display
+    if bs_blurb == None:
+        bs_blurb = None
+    else:
+        return bs_blurb
     
 
 class ProfileScreen(Screens):
