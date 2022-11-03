@@ -129,37 +129,37 @@ def backstory_text(cat, backstory):
         bs_blurb = "Something horrible happened to this cat's previous clan. They refuse to speak about it"
     bs_display = backstory
     if bs_display == 'clanborn':
-        bs_display = 'Clanborn'
+        bs_display = 'clanborn'
     elif bs_display in ['half-clan1', 'half-clan2']:
-        bs_display = 'Half-Clan'
+        bs_display = 'half-clan'
     elif bs_display in ['outsider_roots1', 'outsider_roots2']:
-        bs_display = 'Outsider Roots'
+        bs_display = 'outsider roots'
     elif bs_display in ['loner1', 'loner2']:
-        bs_display = 'Formerly a Loner'
+        bs_display = 'formerly a loner'
     elif bs_display in ['kittypet1', 'kittypet2']:
-        bs_display = 'Formerly a Kittypet'
+        bs_display = 'formerly a kittypet'
     elif bs_display in ['rogue1', 'rogue2']:
-        bs_display = 'Formerly a Rogue'
+        bs_display = 'formerly a rogue'
     elif bs_display in ['abandoned1', 'abandoned2', 'abandoned3']:
-        bs_display = 'Formerly Abandoned'
+        bs_display = 'formerly abandoned'
     elif bs_display == 'medicine_cat':
-        bs_display = 'Formerly a Medicine Cat'
+        bs_display = 'formerly a medicine cat'
     elif bs_display in ['otherclan', 'otherclan2']:
-        bs_display = 'Formerly from another Clan'
+        bs_display = 'formerly from another clan'
     elif bs_display == 'ostracized_warrior':
-        bs_display = 'Ostracized Warrior'
+        bs_display = 'ostracized warrior'
     elif bs_display == 'disgraced':
         if cat.status == 'medicine cat':
-            bs_display = 'Disgraced Medicine Cat'
+            bs_display = 'disgraced medicine cat'
         elif cat.status in ['warrior', 'elder']:
-            bs_display = choice(['Disgraced Leader', 'Disgraced Deputy'])
+            bs_display = choice(['disgraced leader', 'disgraced deputy'])
             bs_display = bs_display
     elif bs_display == 'retired_leader':
-        bs_display = 'Retired Leader'
+        bs_display = 'retired leader'
     elif bs_display == 'refugee':
-        bs_display = 'Refugee'
+        bs_display = 'refugee'
     elif bs_display == 'tragedy_survivor':
-        bs_display = 'Survivor of a Tragedy'
+        bs_display = 'survivor of a tragedy'
     if bs_display == None:
         bs_display = None
     else:
@@ -428,15 +428,6 @@ class ProfileScreen(Screens):
             count2 += 1
 
         # backstory
-        if the_cat.backstory == None:
-            if the_cat.skill == 'formerly a loner':
-                backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2'])
-                the_cat.backstory = backstory
-            elif the_cat.skill == 'formerly a kittypet':
-                backstory = choice(['kittypet1', 'kittypet2'])
-                the_cat.backstory = backstory
-            else:
-                the_cat.backstory = 'clanborn'
         if the_cat.backstory != None:
             bs_text = backstory_text(the_cat, the_cat.backstory)
             verdana_small.text('backstory: ' + bs_text, (490, 230 + count2 * 15))
