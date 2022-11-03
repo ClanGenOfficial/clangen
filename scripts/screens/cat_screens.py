@@ -427,6 +427,24 @@ class ProfileScreen(Screens):
                                (490, 230 + count2 * 15))
             count2 += 1
 
+        # backstory
+        if the_cat.backstory == None:
+            if the_cat.skill == 'formerly a loner':
+                backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2'])
+                the_cat.backstory = backstory
+            elif the_cat.skill == 'formerly a kittypet':
+                backstory = choice(['kittypet1', 'kittypet2'])
+                the_cat.backstory = backstory
+            else:
+                the_cat.backstory = 'clanborn'
+        if the_cat.backstory != None:
+            bs_text = backstory_text(the_cat, the_cat.backstory)
+            verdana_small.text('backstory: ' + bs_text, (490, 230 + count2 * 15))
+            count2 += 1
+        else:
+            verdana_small.text('backstory: ' + 'Clanborn', (490, 230 + count2 * 15))
+            count2 += 1
+
         # buttons
         count = 0
         buttons.draw_button(('center', 400 + count),
