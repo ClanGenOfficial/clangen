@@ -31,7 +31,7 @@ def accessory_display_name(cat, accessory):
         if accessory in collars:
             collar_color = None
             if acc_display.startswith('crimson'):
-                collar_color = 'crimson'
+                collar_color = 'red'
             elif acc_display.startswith('blue'):
                 collar_color = 'blue'
             elif acc_display.startswith('yellow'):
@@ -39,7 +39,7 @@ def accessory_display_name(cat, accessory):
             elif acc_display.startswith('cyan'):
                 collar_color = 'cyan'
             elif acc_display.startswith('red'):
-                collar_color = 'red'
+                collar_color = 'orange'
             elif acc_display.startswith('lime'):
                 collar_color = 'lime'
             elif acc_display.startswith('green'):
