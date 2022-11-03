@@ -77,17 +77,9 @@ class MakeClanScreen(Screens):
             verdana_dark.text("Sit back and relax.", (x_value, y_value))
             y_value += 40
 
-            verdana_dark.text("This mode is Clan Generator at it's most basic. ", (x_value, y_value))
-            y_value += 20
-
-            verdana_dark.text("The player is not expected to manage the", (x_value, y_value))
-            y_value += 20
-
-            verdana_dark.text("minutia of clan life.  Perfect for a relaxing", (x_value, y_value))
-            y_value += 20
-
-            verdana_dark.text("game session or for focusing on storytelling.", (x_value, y_value))
-            y_value += 40
+            verdana_dark.blit_text("This mode is Clan Generator at it's most basic. The player is not expected to "
+                                   "manage the minutia of clan life. Perfect for a relaxing game session or for "
+                                   "focusing on storytelling", (x_value, y_value), x_limit=700)
 
             verdana_dark.text("With this mode you are the eye in the sky,", (x_value, y_value))
             y_value += 20

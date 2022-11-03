@@ -136,27 +136,15 @@ class PatrolScreen(Screens):
                                     patrol_remove=True,
                                     )
                 if game.switches['patrol_remove'] is True:
-                    game.switches['current_patrol'].remove(patrol_cat)
-                    able_cats.append(patrol_cat)
+                    game.switches['cat'] = patrol_cat
+
 
                 pos_x1 += 75
                 if pos_x1 >= 725:
                     pos_x1 = 525
                     pos_y1 += 50
 
-        if len(game.switches['current_patrol']) < 6:
-            buttons.draw_image_button((430, 458),
-                                      button_name='random_dice',
-                                      size=(34, 34),
-                                      cat=choice(able_cats),
-                                      hotkey=[12])
-        else:
-            buttons.draw_image_button((430, 458),
-                                      button_name='random_dice',
-                                      size=(34, 34),
-                                      cat=choice(able_cats),
-                                      hotkey=[12],
-                                      available=False)
+
 
 
         #  This keeps causing an IndexError whenever you add 6 cats and then try to click on one of those cats.
@@ -174,9 +162,6 @@ class PatrolScreen(Screens):
         #            if random_cat not in game.switches['current_patrol']:
         #                game.switches['current_patrol'].insert(1, random_cat)
         #        game.switches['fill_patrol'] = False
-
-
-
 
 
         buttons.draw_image_button((560, 627),
@@ -231,6 +216,11 @@ class PatrolScreen(Screens):
                 image='buttons/add_cat',
                 text='Add to Patrol',
                 available=False)
+            buttons.draw_image_button((433, 458),
+                                      button_name='random_dice',
+                                      size=(34, 34),
+                                      cat=choice(able_cats),
+                                      hotkey=[12])
 
         if len(game.switches['current_patrol']) > 0:
             buttons.draw_button(('center', 574),
@@ -362,9 +352,35 @@ class PatrolScreen(Screens):
                 name = short_name + '...'
             verdana.text(str(name).center(13), (552, 300))
 
+        if len(game.switches['current_patrol']) < 6 and len(able_cats) > 1:
+            if chosen_cat in game.switches['current_patrol']:
+                buttons.draw_image_button((452, 458),
+                                          button_name='random_dice',
+                                          size=(34, 34),
+                                          cat=choice(able_cats),
+                                          hotkey=[12])
+            else:
+                buttons.draw_image_button((433, 458),
+                                          button_name='random_dice',
+                                          size=(34, 34),
+                                          cat=choice(able_cats),
+                                          hotkey=[12])
+        else:
+            if chosen_cat in game.switches['current_patrol']:
+                buttons.draw_image_button((452, 458),
+                                          button_name='random_dice',
+                                          size=(34, 34),
+                                          hotkey=[12],
+                                          available=False)
+            else:
+                buttons.draw_image_button((433, 458),
+                                          button_name='random_dice',
+                                          size=(34, 34),
+                                          hotkey=[12],
+                                          available=False)
         # ADD CAT TO PATROL
         if len(game.switches['current_patrol']) < 6 and chosen_cat is not None\
-                and chosen_cat not in game.switches['current_patrol']:
+                and chosen_cat not in game.switches['current_patrol'] and game.switches['patrol_remove'] is False:
             buttons.draw_button(
                 (330, 460),
                 image='buttons/add_cat',
@@ -372,18 +388,27 @@ class PatrolScreen(Screens):
                 current_patrol=chosen_cat,
                 add=True,
                 hotkey=[11],)
-        else:
+        elif len(game.switches['current_patrol']) > 0 and chosen_cat is not None\
+                and chosen_cat in game.switches['current_patrol']:
+            buttons.draw_image_button((320, 460),
+                                      button_name='remove_cat',
+                                      size=(127, 30),
+                                      cat_remove=True,
+                                      )
+            if game.switches['cat_remove'] is True:
+                game.switches['current_patrol'].remove(chosen_cat)
+                able_cats.append(chosen_cat)
+                game.switches['patrol_remove'] = False
+                game.switches['cat_remove'] = False
+        elif len(game.switches['current_patrol']) == 6 and chosen_cat not in game.switches['current_patrol']\
+                and game.switches['patrol_remove'] is False:
             buttons.draw_button(
                 (330, 460),
                 image='buttons/add_cat',
                 text='Add to Patrol',
                 current_patrol=chosen_cat,
-                add=True,
-                hotkey=[11],
-                available=False)
-        # remove chosen_cat from able cats once they are added to the patrol
-        if chosen_cat in game.switches['current_patrol'] and chosen_cat in able_cats:
-            able_cats.remove(chosen_cat)
+                available=False,
+                hotkey=[11],)
 
         # SHOW CURRENT PATROL SKILLS AND TRAITS
         if game.switches['show_info'] is True:

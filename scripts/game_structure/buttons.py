@@ -275,6 +275,7 @@ class Button(object):
         if values is None:
             values = {}
         add = values['add'] if 'add' in values.keys() else False
+        remove = values['remove'] if 'remove' in values.keys() else False
         for key, value in values.items():
             if cat_value is None:
                 if key in game.switches.keys():

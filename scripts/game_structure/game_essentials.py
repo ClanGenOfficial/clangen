@@ -82,6 +82,7 @@ class Game(object):
         'kill_cat': False,
         'current_patrol': [],
         'patrol_remove': False,
+        'cat_remove': False,
         'fill_patrol': False,
         'error_message': '',
         'apprentice': None,

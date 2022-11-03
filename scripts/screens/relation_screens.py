@@ -23,21 +23,19 @@ def draw_choosing_bg(arg0, arg1):
 class ChooseMentorScreen(Screens):
 
     def on_use(self):
+        # APPRENTICE SELECTED
         the_cat = Cat.all_cats[game.switches['cat']]
-
         game.switches['apprentice'] = the_cat
 
+        # USER INTERFACE
         draw_next_prev_cat_buttons(the_cat)
-
         draw_choosing_bg(480, 'ment')
-
         buttons.draw_image_button((25, 645),
                                   button_name='back',
                                   text='Back',
                                   size=(105, 30),
                                   cur_screen='profile screen',
                                   )
-
         y_value = 30
         mentor = None
         verdana_big.text(f'Choose a new mentor for {str(the_cat.name)}',
@@ -52,19 +50,21 @@ class ChooseMentorScreen(Screens):
         verdana_small.text(f'{str(the_cat.name)}\'s current mentor is {str(the_cat.mentor.name)}.',
                            ('center', y_value))
 
-        draw_large(the_cat, (50, 150))
-        show_mentor_cat_info(the_cat, 210, 71)
+        # DRAW APPRENTICE AND SHOW THEIR INFO
+        draw_large(the_cat, (600, 150))
+        show_mentor_cat_info(the_cat, 491, 622)
 
-
+        # FIND MENTOR
         if game.switches['mentor'] is not None:
             mentor = Cat.all_cats[game.switches['mentor']]
         elif the_cat.mentor is not None:
             if the_cat.mentor in Cat.all_cats:
                 mentor = Cat.all_cats[the_cat.mentor]
 
+        # DRAW MENTOR AND SHOW THEIR INFO
         if mentor is not None:
-            draw_large(mentor, (600, 150))
-            show_mentor_cat_info(mentor, 491, 622)
+            draw_large(mentor, (50, 150))
+            show_mentor_cat_info(mentor, 210, 71)
 
         valid_mentors = []
         pos_x = 0
