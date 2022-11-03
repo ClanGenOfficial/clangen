@@ -76,6 +76,12 @@ class Cat(object):
         'strong connection to StarClan', 'smart', 'very smart', 'extremely smart',
         'good kitsitter', 'great kitsitter', 'excellent kitsitter', 'camp keeper', 'den builder',
     ]
+    backstories = [
+        'clanborn', 'half-clan1', 'half-clan2', 'outsider_roots1', 'outsider_roots2', 
+        'loner1', 'loner2', 'kittypet1', 'kittypet2', 'rogue1', 'rogue2', 'abandoned_kit', 
+        'medicine_cat', 'otherclan', 'ostracized_warrior', 'disgraced', 'retired_leader', 
+        'refugee', 'tragedy_survivor'
+    ]
 
     all_cats = {}  # ID: object
     other_cats = {}  # cats outside the clan
@@ -84,6 +90,7 @@ class Cat(object):
                  prefix=None,
                  gender=None,
                  status="kitten",
+                 backstory="clanborn",
                  parent1=None,
                  parent2=None,
                  pelt=None,
@@ -94,6 +101,7 @@ class Cat(object):
                  example=False):
         self.gender = gender
         self.status = status
+        self.backstory = backstory
         self.age = None
         self.skill = None
         self.trait = None
