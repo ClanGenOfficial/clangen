@@ -94,7 +94,8 @@ class Game(object):
         'hunting_territory': (0, 0),
         'training_territory': (0, 0),
         'options_tab': None,
-        'game_mode': ''
+        'game_mode': '',
+        'show_info': False
     }
     all_screens = {}
     cur_events = {}
@@ -276,7 +277,7 @@ class Game(object):
                 "gender_align": inter_cat.genderalign,
                 "birth_cooldown": inter_cat.birth_cooldown,
                 "status": inter_cat.status,
-                "backstory": inter_cat.backstory,
+                "backstory": inter_cat.backstory if inter_cat.backstory else None,
                 "age": inter_cat.age,
                 "moons": inter_cat.moons,
                 "trait": inter_cat.trait,
