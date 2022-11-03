@@ -181,6 +181,19 @@ class Cat(object):
             else:
                 self.skill = choice(self.skills)
 
+        # backstory
+        if self.backstory == None:
+            if self.skill == 'formerly a loner':
+                backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2'])
+                self.backstory = backstory
+            elif self.skill == 'formerly a kittypet':
+                backstory = choice(['kittypet1', 'kittypet2'])
+                self.backstory = backstory
+            else:
+                self.backstory = 'clanborn'
+        else:
+            self.backstory = self.backstory
+
         # sex
         if self.gender is None:
             self.gender = choice(["female", "male"])
