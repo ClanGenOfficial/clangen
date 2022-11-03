@@ -18,13 +18,14 @@ class PatrolScreen(Screens):
 
     def on_use(self):
         draw_clan_name()
-        #verdana.text(
-        #    'These cats are currently in the camp, ready for a patrol.',
-        #    ('center', 115))
-        #verdana.text('Choose up to six to take on patrol.', ('center', 135))
-        #verdana.text(
-        #    'Smaller patrols help cats gain more experience, but larger patrols are safer.',
-        #    ('center', 155))
+        y_value = 110
+        verdana.text(
+            'Chose up to six cats to take on patrol.',
+            ('center', y_value))
+        y_value += 20
+        verdana.text(
+            'Smaller patrols help cats gain more experience, but larger patrols are safer.',
+            ('center', y_value))
 
         screen.blit(PatrolScreen.able_box, (40, 460))
         screen.blit(PatrolScreen.patrol_box, (490, 460))
@@ -195,6 +196,33 @@ class PatrolScreen(Screens):
                                   show_info=True
                                   )
 
+        # PATROL TYPE BUTTONS - purely aesthetic atm until we have patrol type functionality
+        if game.game_mode != 'classic':
+            x_value = 323
+            y_value = 530
+            buttons.draw_image_button((x_value, y_value),
+                                      button_name='button_paw',
+                                      size=(34, 34),
+                                      available=False
+                                      )
+            x_value += 40
+            buttons.draw_image_button((x_value, y_value),
+                                      button_name='button_mouse',
+                                      size=(34, 34),
+                                      available=False
+                                      )
+            x_value += 40
+            buttons.draw_image_button((x_value, y_value),
+                                      button_name='button_claws',
+                                      size=(34, 34),
+                                      available=False
+                                      )
+            x_value += 40
+            buttons.draw_image_button((x_value, y_value),
+                                      button_name='button_herb',
+                                      size=(34, 34),
+                                      available=False
+                                      )
         if game.switches['cat'] is not None:
             self.show_info(able_cats)
         else:
@@ -205,13 +233,15 @@ class PatrolScreen(Screens):
                 available=False)
 
         if len(game.switches['current_patrol']) > 0:
-            buttons.draw_button(('center', 630),
+            buttons.draw_button(('center', 574),
+                                image='buttons/go_patrol',
                                 text='Start Patrol',
                                 cur_screen='patrol event screen',
                                 hotkey=[13])
 
         else:
-            buttons.draw_button(('center', 630),
+            buttons.draw_button(('center', 574),
+                                image='buttons/go_patrol',
                                 text='Start Patrol',
                                 available=False)
 
@@ -225,9 +255,16 @@ class PatrolScreen(Screens):
         draw_large(chosen_cat, (320, y_value))  # sprite
 
         y_value += 150
-        verdana.text(str(chosen_cat.name),  # name
+
+        name = str(chosen_cat.name)  # get name
+        if 14 <= len(name) >= 16:  # check name length
+            short_name = str(chosen_cat.name)[0:15]
+            name = short_name + '...'
+
+        verdana.text(str(name),  # display name
                      ('center', y_value))
         y_value += 25
+
         verdana_small.text(str(chosen_cat.status),  # rank
                            ('center', y_value))
         y_value += 15
@@ -267,7 +304,11 @@ class PatrolScreen(Screens):
                         cat=mate,
                         available=False
                         )
-                verdana.text(str(mate.name), (152, 300))
+                name = str(mate.name)  # get name
+                if 10 <= len(name) >= 16:  # check name length
+                    short_name = str(mate.name)[0:9]
+                    name = short_name + '...'
+                verdana.text(str(name).center(16), (152, 300))
 
         # SHOW MENTOR SPRITE AND BUTTON
         if chosen_cat.status == 'apprentice':
@@ -289,7 +330,11 @@ class PatrolScreen(Screens):
                         cat=chosen_cat.mentor,
                         available=False
                         )
-                verdana.text(str(chosen_cat.mentor.name), (552, 300))
+                name = str(chosen_cat.mentor.name)  # get name
+                if 10 <= len(name) >= 13:  # check name length
+                    short_name = str(chosen_cat.mentor.name)[0:9]
+                    name = short_name + '...'
+                verdana.text(str(name).center(13), (552, 300))
                 verdana_small.text(f'mentor: {str(chosen_cat.mentor.name)}', ('center', y_value))
 
         # SHOW APPRENTICE SPRITE AND BUTTON
@@ -311,7 +356,11 @@ class PatrolScreen(Screens):
                     cat=chosen_cat.apprentice[0],
                     available=False
                     )
-            verdana.text(str(chosen_cat.apprentice[0].name), (552, 300))
+            name = str(chosen_cat.apprentice[0].name)  # get name
+            if 10 <= len(name) >= 13:  # check name length
+                short_name = str(chosen_cat.apprentice[0].name)[0:9]
+                name = short_name + '...'
+            verdana.text(str(name).center(13), (552, 300))
 
         # ADD CAT TO PATROL
         if len(game.switches['current_patrol']) < 6 and chosen_cat is not None\
