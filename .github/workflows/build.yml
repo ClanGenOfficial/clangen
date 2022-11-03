@@ -106,6 +106,8 @@ jobs:
           files: Clangen_Win64.zip
           
   build_macos64:
+    # For commits to the original mac build action see:
+    # https://github.com/Thlumyn/clangen/blob/29c9e39fed9a09b8de906f5c3b91dc044fe9b9a5/.github/workflows/main.yml
     runs-on: macos-11
     steps:
       - uses: actions/checkout@v3
@@ -128,8 +130,7 @@ jobs:
         #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
         run: python -m PyInstaller Clangen.spec
       - name: Create archive (.tar.xz)
-        run: |
-          rm -r dist/Clangen
+        run: rm -r dist/Clangen
       - name: Install appdmg
         run: "npm install -g appdmg"
       - name: Generate .dmg
