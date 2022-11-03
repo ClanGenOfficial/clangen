@@ -276,6 +276,7 @@ class Game(object):
                 "gender_align": inter_cat.genderalign,
                 "birth_cooldown": inter_cat.birth_cooldown,
                 "status": inter_cat.status,
+                "backstory": inter_cat.backstory,
                 "age": inter_cat.age,
                 "moons": inter_cat.moons,
                 "trait": inter_cat.trait,

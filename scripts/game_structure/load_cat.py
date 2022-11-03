@@ -32,6 +32,7 @@ def json_load():
                       suffix=cat["name_suffix"],
                       gender=cat["gender"],
                       status=cat["status"],
+                      backstory=cat["backstory"],
                       parent1=cat["parent1"],
                       parent2=cat["parent2"],
                       moons=cat["moons"],
