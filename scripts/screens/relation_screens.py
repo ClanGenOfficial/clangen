@@ -36,8 +36,7 @@ class ChooseMentorScreen(Screens):
                                   text='Back',
                                   size=(105, 30),
                                   cur_screen='profile screen',
-                                  chosen_cat=None,
-                                  show_details=False)
+                                  )
 
         y_value = 30
         mentor = None
@@ -121,6 +120,7 @@ class ChooseMentorScreen(Screens):
                 if cats_on_page >= 30 or x + (game.switches['list_page'] -
                                               1) * 30 == len(valid_mentors) - 1:
                     break
+            all_pages = int(ceil(len(valid_mentors) / 30.0))
 
         verdana.text(
             'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages),
@@ -357,6 +357,8 @@ class ChooseMateScreen(Screens):
     def on_use(self):
         the_cat = Cat.all_cats[game.switches['cat']]
 
+        game.switches['choosing_mate'] = True
+
         draw_choosing_bg(494, 'mate')
         draw_next_prev_cat_buttons(the_cat)
 
@@ -463,7 +465,8 @@ class ChooseMateScreen(Screens):
                                   text='Back',
                                   size=(105, 30),
                                   cur_screen='profile screen',
-                                  broke_up=False
+                                  broke_up=False,
+                                  choosing_mate=False
                                   )
 
     def heart_status(self, the_cat, mate):

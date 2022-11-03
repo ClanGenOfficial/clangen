@@ -64,6 +64,7 @@ class Game(object):
         'naming_text': '',
         'timeskip': False,
         'mate': None,
+        'choosing_mate':False,
         'mentor': None,
         'setting': None,
         'save_settings': False,
@@ -80,6 +81,8 @@ class Game(object):
         'read_clans': False,
         'kill_cat': False,
         'current_patrol': [],
+        'patrol_remove': False,
+        'fill_patrol': False,
         'error_message': '',
         'apprentice': None,
         'change_name': '',
@@ -101,7 +104,8 @@ class Game(object):
         'chosen_cat': None,
         'game_mode': '',
         'set_game_mode': False,
-        'broke_up': False
+        'broke_up': False,
+        'show_info': False
 
     }
     all_screens = {}

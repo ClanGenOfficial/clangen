@@ -169,6 +169,9 @@ class Button(object):
             clickable = True
             if dynamic_image:
                 image = f'{image}_hover'
+        if available is False:
+            if dynamic_image:
+                image = f'{image}_unavailable'
         if image is None:
             if game.settings['hotkey display'] and hotkey is not None:
                 new_button.fill(colour)
@@ -285,7 +288,10 @@ class Button(object):
                                 'cur_screen']
                         game.switches[key] = value
                     else:
-                        game.switches[key].append(value)
+                        if key == 'fill_patrol':
+                            game.switches[key] = value
+                        else:
+                            game.switches[key].append(value)
             elif key == 'mate':
                 if value is not None:
                     cat_value.set_mate(value)

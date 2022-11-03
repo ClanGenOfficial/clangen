@@ -88,7 +88,7 @@ class Font(object):
             elif not game.settings['dark mode'] and font.colour == (239, 229, 206):
                 font.reset_colour(colour=(0, 0, 0))
 
-    def blit_text(self, text, pos, where=used_screen):
+    def blit_text(self, text, pos, where=used_screen, x_limit=400):
         """
         Blit text with automatically-added linebreaks.
 
@@ -96,6 +96,7 @@ class Font(object):
         text -- String to blit
         pos -- Tuple specifying position to blit text onto (default: None)
         where -- Screen to draw text onto (default: used_screen)
+        x_limit -- The farthest x_value that the text should reach (default: 400)
         """
         words = [word.split(' ') for word in text.splitlines()
                  ]  # 2D array where each row is a list of words.
@@ -106,7 +107,7 @@ class Font(object):
                 word_surface = self.font.render(word, True, self.colour)
                 word_width, word_height = word_surface.get_size()
                 word_height += 5
-                if x + word_width >= 400:
+                if x + word_width >= x_limit:
                     x = pos[0]  # Reset the x.
                     y += word_height  # Start on new row.
                 where.blit(word_surface, (x, y))

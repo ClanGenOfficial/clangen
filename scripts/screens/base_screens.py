@@ -131,6 +131,25 @@ def draw_next_prev_cat_buttons(the_cat):
                 next_cat = Cat.all_cats[check_cat].ID
             elif int(next_cat) > 1:
                 break
+        elif game.switches['choosing_mate'] is True:
+            if next_cat == 0 and Cat.all_cats[
+                    check_cat].ID != the_cat.ID and Cat.all_cats[
+                        check_cat].dead == the_cat.dead and Cat.all_cats[
+                            check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
+                                check_cat].exiled and Cat.all_cats[
+                                    check_cat].status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
+                previous_cat = Cat.all_cats[check_cat].ID
+
+            elif next_cat == 1 and Cat.all_cats[
+                    check_cat].ID != the_cat.ID and Cat.all_cats[
+                        check_cat].dead == the_cat.dead and Cat.all_cats[
+                            check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
+                                check_cat].exiled and Cat.all_cats[
+                                    check_cat].status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
+                next_cat = Cat.all_cats[check_cat].ID
+            elif int(next_cat) > 1:
+                break
+
         else:
             if next_cat == 0 and Cat.all_cats[
                     check_cat].ID != the_cat.ID and Cat.all_cats[
