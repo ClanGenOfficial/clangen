@@ -79,7 +79,7 @@ class Cat(object):
     backstories = [
         'clanborn', 'half-clan1', 'half-clan2', 'outsider_roots1', 'outsider_roots2', 
         'loner1', 'loner2', 'kittypet1', 'kittypet2', 'rogue1', 'rogue2', 'abandoned1',
-        'abandoned2', 'abandoned3', 'medicine_cat', 'otherclan', 'ostracized_warrior', 'disgraced', 
+        'abandoned2', 'abandoned3', 'medicine_cat', 'otherclan', 'otherclan2', 'ostracized_warrior', 'disgraced', 
         'retired_leader', 'refugee', 'tragedy_survivor'
     ]
 
