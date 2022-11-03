@@ -264,7 +264,7 @@ class Cat():
         else:
             self.dead = True
 
-        if self.mate is None:
+        if self.mate is not None:
             self.mate = None
             if type(self.mate) == str:
                 mate = Cat.all_cats.get(self.mate)

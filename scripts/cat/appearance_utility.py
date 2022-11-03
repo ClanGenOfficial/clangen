@@ -270,7 +270,7 @@ def init_pattern(cat):
         cat.pattern = None
 
 def init_white_patches(cat):
-    if cat.pelt is not None:
+    if cat.pelt is None:
         init_pelt(cat)
     non_white_pelt = False
     if cat.pelt.colour != 'WHITE' and cat.pelt.name in\
