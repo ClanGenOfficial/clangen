@@ -106,6 +106,12 @@ class Sprites(object):
         self.make_group('Newscarsextra', (3, 2), 'scarsextraHALFTAIL', sprites_y=2)
         self.make_group('Newscars', (4, 2), 'scarsNOPAW')
         self.make_group('Newscarsextra', (4, 2), 'scarsextraNOPAW', sprites_y=2)
+        self.make_group('Newscars', (0, 2), 'scarsLEGBITE')
+        self.make_group('Newscarsextra', (0, 2), 'scarsextraLEGBITE', sprites_y=2)
+        self.make_group('Newscars', (1, 2), 'scarsNECKBITE')
+        self.make_group('Newscarsextra', (1, 2), 'scarsextraNECKBITE', sprites_y=2)
+        self.make_group('Newscars', (2, 2), 'scarsFACE')
+        self.make_group('Newscarsextra', (2, 2), 'scarsextraFACE', sprites_y=2)
         
         for a, i in enumerate(
             ["TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE"]):
@@ -117,14 +123,7 @@ class Sprites(object):
             sprites.make_group('Newscars', (a, 1), f'scars{i}')
             sprites.make_group('Newscarsextra', (a, 1),
                                f'scarsextra{i}',
-                               sprites_y=2)
-        for a, i in enumerate(
-            ["LEGBITE", "NECKBITE", "FACE"]):
-            sprites.make_group('Newscars', (a, 2), f'scars{i}')
-            sprites.make_group('Newscarsextra', (a, 2),
-                               f'scarsextra{i}',
-                               sprites_y=2)
-        
+                               sprites_y=2)        
                                
         # Accessories
         for a, i in enumerate([
