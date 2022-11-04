@@ -1,5 +1,4 @@
 from .base_screens import Screens, cat_profiles, draw_next_prev_cat_buttons
-from random import choice
 
 from scripts.utility import draw_large
 from scripts.game_structure.text import *
@@ -42,7 +41,7 @@ def accessory_display_name(cat, accessory):
         if accessory in collars:
             collar_color = None
             if acc_display.startswith('crimson'):
-                collar_color = 'red'
+                collar_color = 'crimson'
             elif acc_display.startswith('blue'):
                 collar_color = 'blue'
             elif acc_display.startswith('yellow'):
@@ -50,7 +49,7 @@ def accessory_display_name(cat, accessory):
             elif acc_display.startswith('cyan'):
                 collar_color = 'cyan'
             elif acc_display.startswith('red'):
-                collar_color = 'orange'
+                collar_color = 'red'
             elif acc_display.startswith('lime'):
                 collar_color = 'lime'
             elif acc_display.startswith('green'):
@@ -87,99 +86,6 @@ def accessory_display_name(cat, accessory):
         acc_display = None
     return acc_display
 
-
-def backstory_text(cat, backstory):
-    backstory = cat.backstory
-    bs_blurb = None
-    if backstory is None:
-        return ''
-    if backstory == 'clanborn':
-        bs_blurb = "This cat was born into the clan where they currently reside"
-    if backstory == 'half-clan1':
-        bs_blurb = "This cat was born into the clan, but one of their parents resides in another clan"
-    if backstory == 'half-clan2':
-        bs_blurb = "This cat was born in another clan, but chose to come to this clan to be with their other parent"
-    if backstory == 'outsider_roots1':
-        bs_blurb = "This cat was born into the clan, but one of their parents is an outsider that belongs to no clan"
-    if backstory == 'outsider_roots2':
-        bs_blurb = "This cat was born outside the clan, but came to live in the clan with their parent at a young age"
-    if backstory == 'loner1':
-        bs_blurb = "This cat joined the clan by choice after living life as a loner"
-    if backstory == 'loner2':
-        bs_blurb = "This cat used to live in a barn, but mostly stayed away from twolegs. They decided clanlife might be an interesting change of pace"
-    if backstory == 'kittypet1':
-        bs_blurb = "This cat joined the clan by choice after living life with twolegs as a kittypet"
-    if backstory == 'kittypet2':
-        bs_blurb = "This cat used to live on something called a “boat” with twolegs, but decided to join the clan"
-    if backstory == 'rogue1':
-        bs_blurb = "This cat joined the clan by choice after living life as a rogue"
-    if backstory == 'rogue2':
-        bs_blurb = "This cat used to live in a twolegplace, scrounging for what they could find. They thought the clan might offer them more security"
-    if backstory == 'abandoned1':
-        bs_blurb = "This cat was found by the clan as a kit and has been living with them ever since"
-    if backstory == 'abandoned2':
-        bs_blurb = "This cat was born into a kittypet life, but was brought to the clan as a kit and has lived here ever since"
-    if backstory == 'abandoned3':
-        bs_blurb = "This cat was born into another clan, but they were left here as a kit for the clan to raise"
-    if backstory == 'medicine_cat':
-        bs_blurb = "This cat was once a medicine cat in another clan"
-    if backstory == 'otherclan':
-        bs_blurb = "This cat was born into another clan, but came to this clan by choice"
-    if backstory == 'otherclan2':
-        bs_blurb = "This cat was unhappy in their old clan and decided to come here instead"
-    if backstory == 'ostracized_warrior':
-        bs_blurb = "This cat was ostracized from their old clan, but no one really knows why"
-    if backstory == 'disgraced':
-        bs_blurb = "This cat was cast out of their old clan for some transgression that they’re not keen on talking about"
-    if backstory == 'retired_leader':
-        bs_blurb = "This cat used to be the leader of another clan before deciding they needed a change of scenery after leadership became too much.\
-        They returned their nine lives and let their deputy take over before coming here"
-    if backstory == 'refugee':
-        bs_blurb = "This cat came to this clan after fleeing from their former clan and the tyrannical leader that had taken over"
-    if backstory == 'tragedy_survivor':
-        bs_blurb = "Something horrible happened to this cat's previous clan. They refuse to speak about it"
-    bs_display = backstory
-    if bs_display == 'clanborn':
-        bs_display = 'clanborn'
-    elif bs_display in ['half-clan1', 'half-clan2']:
-        bs_display = 'half-clan'
-    elif bs_display in ['outsider_roots1', 'outsider_roots2']:
-        bs_display = 'outsider roots'
-    elif bs_display in ['loner1', 'loner2']:
-        bs_display = 'formerly a loner'
-    elif bs_display in ['kittypet1', 'kittypet2']:
-        bs_display = 'formerly a kittypet'
-    elif bs_display in ['rogue1', 'rogue2']:
-        bs_display = 'formerly a rogue'
-    elif bs_display in ['abandoned1', 'abandoned2', 'abandoned3']:
-        bs_display = 'formerly abandoned'
-    elif bs_display == 'medicine_cat':
-        bs_display = 'formerly a medicine cat'
-    elif bs_display in ['otherclan', 'otherclan2']:
-        bs_display = 'formerly from another clan'
-    elif bs_display == 'ostracized_warrior':
-        bs_display = 'ostracized warrior'
-    elif bs_display == 'disgraced':
-        if cat.status == 'medicine cat':
-            bs_display = 'disgraced medicine cat'
-        elif cat.status in ['warrior', 'elder']:
-            bs_display = choice(['disgraced leader', 'disgraced deputy'])
-            bs_display = bs_display
-    elif bs_display == 'retired_leader':
-        bs_display = 'retired leader'
-    elif bs_display == 'refugee':
-        bs_display = 'refugee'
-    elif bs_display == 'tragedy_survivor':
-        bs_display = 'survivor of a tragedy'
-    if bs_display == None:
-        bs_display = None
-    else:
-        return bs_display
-    if bs_blurb == None:
-        bs_blurb = None
-    else:
-        return bs_blurb
-    
 
 class ProfileScreen(Screens):
 
@@ -436,99 +342,6 @@ class ProfileScreen(Screens):
             verdana_small.text('experience: ' + str(the_cat.experience_level),
                                (490, 230 + count2 * 15))
             count2 += 1
-
-        # backstory
-        if the_cat.backstory != None:
-            bs_text = backstory_text(the_cat, the_cat.backstory)
-            verdana_small.text('backstory: ' + bs_text, (490, 230 + count2 * 15))
-            count2 += 1
-        else:
-            verdana_small.text('backstory: ' + 'Clanborn', (490, 230 + count2 * 15))
-            count2 += 1
-
-        # buttons
-        count = 0
-        buttons.draw_button(('center', 400 + count),
-                            text="See Family",
-                            cur_screen='see kits screen')
-        count += 30
-
-        if not the_cat.dead:
-            buttons.draw_button(('center', 400 + count),
-                                text="See Relationships",
-                                cur_screen='relationship screen')
-            count += 30
-
-        buttons.draw_button(('center', 400 + count),
-                            text='Options',
-                            cur_screen='options screen')
-
-        buttons.draw_button(('center', 510),
-                            text='Back',
-                            cur_screen=game.switches['last_screen'])
-
-    # PLATFORM
-    def update_platform(self):
-        the_cat = Cat.all_cats.get(game.switches['cat'],
-                                         game.clan.instructor)
-        
-        light_dark = "light"
-        if game.settings["dark mode"]:
-            light_dark = "dark"
-
-        platform_base_dir = 'resources/images/platforms/'
-        leaves = ["newleaf", "greenleaf", "leafbare", "leaffall"]
-        
-        available_biome = ['Forest', 'Mountainous', 'Plains', 'Beach']
-        biome = game.clan.biome
-        if biome not in available_biome:
-            biome = available_biome[0]
-        biome = biome.lower()
-
-        all_platforms = []
-        if the_cat.dead or game.clan.instructor.ID == the_cat.ID:
-            dead_platform = [f'{platform_base_dir}/starclanplatform_{light_dark}.png']
-            all_platforms = dead_platform*4
-        else:
-            for leaf in leaves:
-                platform_dir = f'{platform_base_dir}/{biome}/{leaf}_{light_dark}.png'
-                all_platforms.append(platform_dir)
-
-        self.newleaf_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[0]).convert(), (240, 210))
-        self.greenleaf_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[1]).convert(), (240, 210))
-        self.leafbare_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[2]).convert(), (240, 210))
-        self.leaffall_plt = pygame.transform.scale(
-            pygame.image.load(all_platforms[3]).convert(), (240, 210))
-
-    def screen_switches(self):
-        cat_profiles()
-        self.update_platform()
-
-class OptionsScreen(Screens):
-
-    def draw_header(self):
-        buttons.draw_button((10, 85),
-                            text="Relations Tab",
-                            options_tab="Relations Tab",
-                            hotkey=[11])
-        buttons.draw_button((150, 85),
-                            text="Roles Tab",
-                            options_tab="Roles Tab",
-                            hotkey=[12])
-        buttons.draw_button((260, 85),
-                            text="Personal Tab",
-                            options_tab="Personal Tab",
-                            hotkey=[13])
-        buttons.draw_button((-10, 85),
-                            text="Dangerous Tab",
-                            options_tab="Dangerous Tab",
-                            hotkey=[14])
-
-    def relations_tab(self):
-        self.draw_header()
 
         the_cat = Cat.all_cats.get(game.switches['cat'])
 

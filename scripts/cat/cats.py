@@ -76,12 +76,6 @@ class Cat(object):
         'strong connection to StarClan', 'smart', 'very smart', 'extremely smart',
         'good kitsitter', 'great kitsitter', 'excellent kitsitter', 'camp keeper', 'den builder',
     ]
-    backstories = [
-        'clanborn', 'half-clan1', 'half-clan2', 'outsider_roots1', 'outsider_roots2', 
-        'loner1', 'loner2', 'kittypet1', 'kittypet2', 'rogue1', 'rogue2', 'abandoned1',
-        'abandoned2', 'abandoned3', 'medicine_cat', 'otherclan', 'otherclan2', 'ostracized_warrior', 'disgraced', 
-        'retired_leader', 'refugee', 'tragedy_survivor'
-    ]
 
     all_cats = {}  # ID: object
     other_cats = {}  # cats outside the clan
@@ -90,7 +84,6 @@ class Cat(object):
                  prefix=None,
                  gender=None,
                  status="kitten",
-                 backstory="clanborn",
                  parent1=None,
                  parent2=None,
                  pelt=None,
@@ -101,7 +94,6 @@ class Cat(object):
                  example=False):
         self.gender = gender
         self.status = status
-        self.backstory = backstory
         self.age = None
         self.skill = None
         self.trait = None
@@ -180,19 +172,6 @@ class Cat(object):
                 self.skill = choice(self.med_skills)
             else:
                 self.skill = choice(self.skills)
-
-        # backstory
-        if self.backstory == None:
-            if self.skill == 'formerly a loner':
-                backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2'])
-                self.backstory = backstory
-            elif self.skill == 'formerly a kittypet':
-                backstory = choice(['kittypet1', 'kittypet2'])
-                self.backstory = backstory
-            else:
-                self.backstory = 'clanborn'
-        else:
-            self.backstory = self.backstory
 
         # sex
         if self.gender is None:
