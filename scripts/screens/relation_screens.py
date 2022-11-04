@@ -342,8 +342,13 @@ class ViewChildrenScreen(Screens):
             verdana.text('Siblings:', ('center', 210))
         else:
             verdana.text('This cat has no siblings.', ('center', 210))
-        buttons.draw_button(('center', -100),
+        if the_cat.exiled:
+            buttons.draw_button(('center', 670),
                             text='Back',
+                            cur_screen='outside profile screen')
+        else:
+            buttons.draw_button(('center', 670),
+                            text='Back',  
                             cur_screen='profile screen')
         pos_x = 0
         pos_y = 60
@@ -371,8 +376,13 @@ class ViewChildrenScreen(Screens):
             verdana.text('Offspring:', ('center', 400))
         else:
             verdana.text('This cat has never had offspring.', ('center', 400))
-        buttons.draw_button(('center', -100),
+        if the_cat.exiled:
+            buttons.draw_button(('center', 670),
                             text='Back',
+                            cur_screen='outside profile screen')
+        else:
+            buttons.draw_button(('center', 670),
+                            text='Back',  
                             cur_screen='profile screen')
 
     def screen_switches(self):
@@ -457,8 +467,13 @@ class ChooseMateScreen(Screens):
                                 cat_value=the_cat,
                                 mate=None)
 
-        buttons.draw_button(('center', -100),
+        if the_cat.exiled:
+            buttons.draw_button(('center', 670),
                             text='Back',
+                            cur_screen='outside profile screen')
+        else:
+            buttons.draw_button(('center', 670),
+                            text='Back',  
                             cur_screen='profile screen')
 
     # TODO Rename this here and in `on_use`
@@ -794,11 +809,15 @@ class RelationshipScreen(Screens):
                                 text='>',
                                 list_page=game.switches['list_page'] + 1,
                                 hotkey=[21])
-
-        buttons.draw_button(('center', 670),
+        if the_cat.exiled:
+            buttons.draw_button(('center', 670),
                             text='Back',
+                            cur_screen='outside profile screen')
+        else:
+            buttons.draw_button(('center', 670),
+                            text='Back',  
                             cur_screen='profile screen')
-
+            
     def draw_bar(self, value, pos_x, pos_y):
         # Loading Bar and variables
         bar_bg = pygame.image.load(

@@ -17,10 +17,17 @@ def draw_text_bar():
         verdana.text(game.switches['naming_text'], (315, 200))
 
 def draw_back(x_value, y_value):
-    buttons.draw_button((x_value, y_value),
+    the_cat = Cat.all_cats.get(game.switches['cat'])
+    if (the_cat.exiled):
+        buttons.draw_button((x_value, y_value),
         text='Back',
-        cur_screen='profile screen',
+        cur_screen='outside profile screen',
         hotkey=[0])
+    else:
+        buttons.draw_button((x_value, y_value),
+            text='Back',
+            cur_screen='profile screen',
+            hotkey=[0])
 
 def accessory_display_name(cat, accessory):
     accessory = cat.accessory
@@ -440,7 +447,7 @@ class OptionsScreen(Screens):
         button_count += 1
 
         if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
-                           ] and not the_cat.dead:
+                           ] and not the_cat.dead and not the_cat.exiled:
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Pick mate for ' + str(the_cat.name),
                                 cur_screen='choose mate screen',
@@ -726,3 +733,162 @@ class ChangeGenderScreen(Screens):
                             cur_screen='change gender screen',
                             cat_value=game.switches['name_cat'])
         draw_back('center', -50)
+
+
+class ExileProfileScreen(Screens):
+    def on_use(self):
+        # use this variable to point to the cat object in question
+        the_cat = Cat.all_cats.get(game.switches['cat'],game.clan.instructor)
+
+        # draw_next_prev_cat_buttons(the_cat)
+        # use these attributes to create differing profiles for starclan cats etc.
+
+        # Info in string
+        cat_name = str(the_cat.name)  # name
+
+        # LAYOUT
+        count = 0
+        count2 = 0
+        verdana_big.text(cat_name, ('center', 150))  # NAME
+
+        # if game.settings['backgrounds']:  # CAT PLATFORM
+        #     if game.clan.current_season == 'Newleaf':
+        #         screen.blit(self.newleaf_plt, (55, 200))
+        #     elif game.clan.current_season == 'Greenleaf':
+        #         screen.blit(self.greenleaf_plt, (55, 200))
+        #     elif game.clan.current_season == 'Leaf-bare':
+        #         screen.blit(self.leafbare_plt, (55, 200))
+        #     elif game.clan.current_season == 'Leaf-fall':
+        #         screen.blit(self.leaffall_plt, (55, 200))
+
+        draw_large(the_cat,(100, 200)) # IMAGE
+
+        # THOUGHT
+        if len(the_cat.thought) < 100:
+            verdana.text(the_cat.thought, ('center', 180))
+        else:
+            cut = the_cat.thought.find(' ', int(len(the_cat.thought)/2))
+            first_part = the_cat.thought[:cut]
+            second_part = the_cat.thought[cut:]
+            verdana.text(first_part, ('center', 180))
+            verdana.text(second_part, ('center', 200))
+
+        
+        if the_cat.genderalign == None or the_cat.genderalign == True or the_cat.genderalign == False:
+            verdana_small.text(str(the_cat.gender), (300, 230 + count * 15))
+        else:
+            verdana_small.text(str(the_cat.genderalign), (300, 230 + count * 15))
+        count += 1  # SEX / GENDER
+        verdana_small.text("exiled", (490, 230 + count2 * 15))
+        count2+=1
+        if the_cat.age == 'kitten':
+            verdana_small.text('young', (300, 230 + count * 15))
+        elif the_cat.age == 'elder':
+            verdana_small.text('senior', (300, 230 + count * 15))
+        else:
+            verdana_small.text(the_cat.age, (300, 230 + count * 15))
+        count += 1  # AGE
+        verdana_small.text(the_cat.trait, (490, 230 + count2 * 15))
+        count2 += 1  # CHARACTER TRAIT
+        verdana_small.text(the_cat.skill, (490, 230 + count2 * 15))
+        count2 += 1  # SPECIAL SKILL
+        verdana_small.text('eyes: ' + the_cat.eye_colour.lower(),
+                           (300, 230 + count * 15))
+        count += 1  # EYE COLOR
+        verdana_small.text('pelt: ' + the_cat.pelt.name.lower(),
+                           (300, 230 + count * 15))
+        count += 1  # PELT TYPE
+        verdana_small.text('fur length: ' + the_cat.pelt.length,
+                           (300, 230 + count * 15))
+        count += 1  # PELT LENGTH
+        verdana_small.text('accessory: ' + str(accessory_display_name(the_cat, the_cat.accessory)),
+                           (300, 230 + count * 15))
+        count += 1  # accessory
+
+        # PARENTS
+        if the_cat.parent1 is None:
+            verdana_small.text('parents: unknown', (300, 230 + count * 15))
+            count += 1
+        elif the_cat.parent2 is None and the_cat.parent1 in the_cat.all_cats:
+            par1 = str(the_cat.all_cats[the_cat.parent1].name)
+            verdana_small.text('parents: ' + par1 + ', unknown',
+                               (300, 230 + count * 15))
+            count += 1
+        elif the_cat.parent2 is None:
+            par2 = "unknown"
+            par1 = "Error: Cat#" + the_cat.parent1 + " not found"
+            verdana_small.text('parents: ' + par1 + ', unknown',
+                               (300, 230 + count * 15))
+            count += 1
+        else:
+            if the_cat.parent1 in the_cat.all_cats and the_cat.parent2 in the_cat.all_cats:
+                par1 = str(the_cat.all_cats[the_cat.parent1].name)
+                par2 = str(the_cat.all_cats[the_cat.parent2].name)
+            elif the_cat.parent1 in the_cat.all_cats:
+                par2 = "Error: Cat#" + the_cat.parent2 + " not found"
+                par1 = str(the_cat.all_cats[the_cat.parent1].name)
+            elif the_cat.parent2 in the_cat.all_cats:
+                par1 = "Error: Cat#" + the_cat.parent1 + " not found"
+                par2 = str(the_cat.all_cats[the_cat.parent2].name)
+            else:
+                par1 = "Error: Cat#" + the_cat.parent1 + " not found"
+                par2 = "Error: Cat#" + the_cat.parent2 + " not found"
+
+            verdana_small.text('parents: ' + par1 + ' and ' + par2,
+                               (300, 230 + count * 15))
+            count += 1
+
+        # MOONS
+        if the_cat.dead:
+            if the_cat.moons == 1:
+                verdana_small.text(
+                    str(the_cat.moons) + ' moon (in life)',
+                    (300, 230 + count * 15))
+                count += 1
+            elif the_cat.moons != 1:
+                verdana_small.text(
+                    str(the_cat.moons) + ' moons (in life)',
+                    (300, 230 + count * 15))
+                count += 1
+            if the_cat.dead_for == 1:
+                verdana_small.text(
+                    str(the_cat.dead_for) + ' moon (in death)',
+                    (300, 230 + count * 15))
+                count += 1
+            elif the_cat.dead_for != 1:
+                verdana_small.text(
+                    str(the_cat.dead_for) + ' moons (in death)',
+                    (300, 230 + count * 15))
+                count += 1
+        else:
+            if the_cat.moons == 1:
+                verdana_small.text(
+                    str(the_cat.moons) + ' moon', (300, 230 + count * 15))
+                count += 1
+            elif the_cat.moons != 1:
+                verdana_small.text(
+                    str(the_cat.moons) + ' moons', (300, 230 + count * 15))
+                count += 1
+
+
+        # buttons
+        count = 0
+        buttons.draw_button(('center', 400 + count),
+                            text="See Family",
+                            cur_screen='see kits screen')
+        count += 30
+
+        if not the_cat.dead:
+            buttons.draw_button(('center', 400 + count),
+                                text="See Relationships",
+                                cur_screen='relationship screen')
+            count += 30
+
+        buttons.draw_button(('center', 400 + count),
+                            text='Options',
+                            cur_screen='options screen')
+
+        buttons.draw_button(('center', 510),
+                            text='Back',
+                            cur_screen=game.switches['last_screen'])
+

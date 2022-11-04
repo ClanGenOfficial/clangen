@@ -1,5 +1,5 @@
 from .base_screens import Screens
-from .cat_screens import OptionsScreen, ProfileScreen, ChangeGenderScreen, ChangeNameScreen
+from .cat_screens import OptionsScreen, ProfileScreen, ChangeGenderScreen, ChangeNameScreen, ExileProfileScreen
 from .clan_creation_screens import ClanCreatedScreen, MakeClanScreen
 from .clan_screens import ClanScreen, StarClanScreen, ListScreen, AllegiancesScreen
 from .event_screens import EventsScreen, SingleEventScreen, PatrolEventScreen, RelationshipEventScreen
@@ -21,6 +21,8 @@ change_gender_screen = ChangeGenderScreen('change gender screen')
 change_name_screen = ChangeNameScreen('change name screen')
 option_screen = OptionsScreen('options screen')
 profile_screen = ProfileScreen('profile screen')
+exile_profile_screen = ExileProfileScreen('outside profile screen')
+
 
 # ---------------------------------------------------------------------------- #
 #                           clan_creation_screens.py                           #

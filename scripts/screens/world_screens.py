@@ -44,9 +44,9 @@ class OutsideClanScreen(Screens):
                 game.switches['list_page'] = 1
             the_cat = search_cats[x + (game.switches['list_page'] - 1) * 20]
             if not the_cat.dead:
-                buttons.draw_button((130 + pos_x, 180 + pos_y),
+                buttons.draw_button((130 + pos_x, 180 + pos_y), cur_screen='outside profile screen',
                                     image=the_cat.sprite,
-                                    cat=the_cat.ID)
+                                    cat=the_cat.ID) 
 
                 name_len = verdana.text(str(the_cat.name))
                 verdana_red.text(str(the_cat.name),
