@@ -692,13 +692,13 @@ class Events():
                     f'{name} finds a loner who joins the clan',
                     f'A loner says that they are interested in clan life and joins the clan'
                 ]
-                if str(loner_name.prefix) in names.loner_names:
+                if loner_name.suffix is not None:
                     success_text = [
-                        f'{str(loner_name)} decides to keep their name'
+                        f'The loner decides to take on a slightly more clan-like name, and is now called {str(loner_name)}'
                     ]
                 else:
                     success_text = [
-                        f'The loner decides to take on a slightly more clan-like name, and is now called {str(loner_name)}'
+                        f'{str(loner_name)} decides to keep their name'
                     ]
                 game.cur_events_list.append(choice(loner_text))
                 game.cur_events_list.append(choice(success_text))

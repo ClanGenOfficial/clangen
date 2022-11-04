@@ -159,8 +159,8 @@ def backstory_text(cat, backstory):
         if cat.status == 'medicine cat':
             bs_display = 'disgraced medicine cat'
         elif cat.status in ['warrior', 'elder']:
-            bs_display = choice(['disgraced leader', 'disgraced deputy'])
-            bs_display = bs_display
+            bs_display_choice = choice(['disgraced leader', 'disgraced deputy'])
+            bs_display = bs_display_choice
     elif bs_display == 'retired_leader':
         bs_display = 'retired leader'
     elif bs_display == 'refugee':
