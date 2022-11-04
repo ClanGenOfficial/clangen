@@ -35,7 +35,7 @@ def accessory_display_name(cat, accessory):
     if accessory is None:
         return ''
     acc_display = accessory.lower()
-    if accessory != None:
+    if accessory is not None:
         if accessory in collars:
             collar_color = None
             if acc_display.startswith('crimson'):
@@ -80,7 +80,7 @@ def accessory_display_name(cat, accessory):
             acc_display = acc_display
     else:
         acc_display = acc_display
-    if accessory == None:
+    if accessory is None:
         acc_display = None
     return acc_display
 
@@ -224,7 +224,7 @@ class ProfileScreen(Screens):
             verdana.text(second_part, ('center', 200))
 
         
-        if the_cat.genderalign == None or the_cat.genderalign == True or the_cat.genderalign == False:
+        if the_cat.genderalign is None or the_cat.genderalign or not the_cat.genderalign:
             verdana_small.text(str(the_cat.gender), (300, 230 + count * 15))
         else:
             verdana_small.text(str(the_cat.genderalign), (300, 230 + count * 15))
@@ -709,7 +709,7 @@ class OptionsScreen(Screens):
                                 hotkey=[button_count + 1])
             button_count += 1
             
-        if the_cat.accessory != None:
+        if the_cat.accessory is not None:
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Remove accessory',
                                 cat_value=the_cat,

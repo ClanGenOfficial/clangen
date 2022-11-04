@@ -2,7 +2,7 @@ import pygame
 
 from scripts.game_structure.game_essentials import *
 
-class Sprites(object):
+class Sprites():
 
     def __init__(self, original_size, new_size=None):
         self.size = original_size  # size of a single sprite in a spritesheet
