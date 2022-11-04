@@ -103,7 +103,7 @@ class Font(object):
         x_limit -- The farthest x_value that the text should reach (default: 800)
         line_break -- Specify the amount of pixels that should be between paragraphs.  Leave default to have the space
                       between paragraphs be the same as the space between lines.
-                      Use ' // ' to make a new paragraph. (default: word_width)
+                      Use \n to make a new paragraph. (default: word_width)
 
         """
         words = [word.split(' ') for word in text.splitlines()

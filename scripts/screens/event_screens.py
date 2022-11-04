@@ -184,6 +184,10 @@ class EventsScreen(Screens):
 
 class PatrolEventScreen(Screens):
 
+    event_bg = pygame.image.load("resources/images/patrol_event_frame")
+    info_bg = pygame.image.load("resources/images/patrol_info")
+    image_frame = pygame.image.load("resources/images/patrol_info")
+
     def get_list_text(self, patrol_list):
         if not patrol_list:
             return "None"
