@@ -32,18 +32,21 @@ class Font(object):
         """Change colour of text. Colour is specified by an RGB tuple."""
         self.colour = colour
 
-    def text(self, text, pos=None, where=used_screen):
+    def text(self, text, pos=None, where=used_screen, x_start=0, x_limit=800):
         """
         Blit text onto a screen and return its width.
         
         Doesn't blit if pos is None.
-        Setting one or both items in pos to 'center' centers the text to the screen.
+        Setting one or both items in pos to 'center' centers the text to the screen by default.
+        Else, specify the x margins to center between using x_limit and x_start.
         Negative pos value will be taken from the other end of the screen.
 
         Parameters:
         text -- String to blit
         pos -- Tuple specifying (x,y) position in pixels where to blit text (default: None)
         where -- Screen to draw text onto (default: used_screen)
+        x_start -- The right x-axis margin to center text within (default: 0)
+        x_limit -- The left x-axis margin to center text within (default: 800)
 
         Returns:
         int -- Width of text when drawn
@@ -51,11 +54,12 @@ class Font(object):
         text = self.translate(text)
         t = self.font.render(text, True, self.colour)
         if pos is not None:
-            # setting on or both items in tuple to 'center' centers the text to the screen.
+            # setting on or both items in tuple to 'center' centers the text to the screen by default.
             # negative pos value will be taken from the other end of the screen
             new_pos = list(pos)
             if pos[0] == 'center':
-                new_pos[0] = screen_x / 2 - t.get_width() / 2
+                x_margins = x_limit - x_start
+                new_pos[0] = x_margins / 2 - t.get_width() / 2 + x_start
             elif pos[0] < 0:
                 new_pos[0] = screen_x + pos[0] - t.get_width()
             if pos[1] == 'center':
@@ -88,32 +92,39 @@ class Font(object):
             elif not game.settings['dark mode'] and font.colour == (239, 229, 206):
                 font.reset_colour(colour=(0, 0, 0))
 
-    def blit_text(self, text, pos, where=used_screen, x_limit=400):
+    def blit_text(self, text, pos, where=used_screen, x_limit=800, line_break=0,):
         """
         Blit text with automatically-added linebreaks.
 
         Parameters:
         text -- String to blit
-        pos -- Tuple specifying position to blit text onto (default: None)
+        pos -- Tuple specifying position to blit text onto.  Use 'center' for x_pos to center text. (default: None)
         where -- Screen to draw text onto (default: used_screen)
-        x_limit -- The farthest x_value that the text should reach (default: 400)
+        x_limit -- The farthest x_value that the text should reach (default: 800)
+        line_break -- Specify the amount of pixels that should be between paragraphs.  Leave default to have the space
+                      between paragraphs be the same as the space between lines.
+                      Use ' // ' to make a new paragraph. (default: word_width)
+
         """
         words = [word.split(' ') for word in text.splitlines()
                  ]  # 2D array where each row is a list of words.
         space = 5  # The width of a space.
+
         x, y = pos
         for line in words:
             for word in line:
                 word_surface = self.font.render(word, True, self.colour)
                 word_width, word_height = word_surface.get_size()
                 word_height += 5
+                if line_break == 0:
+                    line_break = word_width
                 if x + word_width >= x_limit:
                     x = pos[0]  # Reset the x.
                     y += word_height  # Start on new row.
                 where.blit(word_surface, (x, y))
                 x += word_width + space
             x = pos[0]  # Reset the x.
-            y += word_height  # Start on new row.
+            y += line_break  # Start on new row.
 
 
 # F O N T S

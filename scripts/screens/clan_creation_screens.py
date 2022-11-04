@@ -74,18 +74,15 @@ class MakeClanScreen(Screens):
             verdana_big_light.text("Classic Mode", (465, y_value))
             y_value += 50
 
-            verdana_dark.text("Sit back and relax.", (x_value, y_value))
-            y_value += 40
-
-            verdana_dark.blit_text("This mode is Clan Generator at it's most basic. The player is not expected to "
+            verdana_dark.blit_text("Sit back and relax. \n "
+                                   "This mode is Clan Generator at it's most basic. The player is not expected to "
                                    "manage the minutia of clan life. Perfect for a relaxing game session or for "
-                                   "focusing on storytelling", (x_value, y_value), x_limit=700)
-
-            verdana_dark.text("With this mode you are the eye in the sky,", (x_value, y_value))
-            y_value += 20
-
-            verdana_dark.text("watching the clan as their story unfolds.", (x_value, y_value))
-            y_value += 20
+                                   "focusing on storytelling. \n With this mode you are the eye in the sky, "
+                                   "watching the clan as their story unfolds.",
+                                   (x_value, y_value),
+                                   line_break=40,
+                                   x_limit=700
+                                   )
 
         if game.switches['game_mode'] == 'expanded':
             y_value = 136
@@ -94,25 +91,13 @@ class MakeClanScreen(Screens):
             verdana_big_light.text("Expanded Mode", (453, y_value))
             y_value += 50
 
-            verdana_dark.text("A more hands-on experience.", (x_value, y_value))
-            y_value += 40
-
-            verdana_dark.text("This mode has everything in Classic Mode as ", (x_value, y_value))
-            y_value += 20
-
-            verdana_dark.text("well as more management focused features.", (x_value, y_value))
-            y_value += 40
-
-            verdana_dark.text("New features include:", (x_value, y_value))
-            y_value += 20
-
-            verdana_dark.text("----no new features as of yet----", (x_value, y_value))
-            y_value += 40
-
-            verdana_dark.text("With this mode you'll be making the important", (x_value, y_value))
-            y_value += 20
-
-            verdana_dark.text("clan-life decisions.", (x_value, y_value))
+            verdana_dark.blit_text("A more hands-on experience. // This mode has everything in Classic Mode as well as "
+                                   "more management focused features. // New features include: // "
+                                   "----no new features as of yet---- // With this mode you'll be making the important "
+                                   "clan-life decisions.",
+                                   (x_value, y_value),
+                                   line_break=40,
+                                   x_limit=700)
 
         if game.switches['game_mode'] == 'cruel season':
             y_value = 136
@@ -121,28 +106,13 @@ class MakeClanScreen(Screens):
             verdana_big_light.text("Cruel Season", (464, y_value))
             y_value += 50
 
-            verdana_dark.text("This mode has all the features of Expanded ", (x_value, y_value))
-            y_value += 20
-
-            verdana_dark.text("mode, but is significantly more difficult.", (x_value, y_value))
-            y_value += 40
-
-            verdana_dark.text("If you'd like a challenge, then this mode", (x_value, y_value))
-            y_value += 20
-
-            verdana_dark.text("is for you.", (x_value, y_value))
-            y_value += 60
-
-            verdana_dark.text("---this mode is currently unavailable---", (x_value, y_value))
-            y_value += 60
-
-            verdana_dark.text("You heard the warnings... a Cruel Season is ", (x_value, y_value))
-            y_value += 20
-
-            verdana_dark.text("coming.", (x_value, y_value))
-            y_value += 40
-
-            verdana_dark.text("Will you survive?", (x_value, y_value))
+            verdana_dark.blit_text("This mode has all the features of Expanded mode, but is significantly "
+                                   "more difficult.  If you'd like a challenge, then this mode is for you. // // "
+                                   "---this mode is currently unavailable--- // // You heard the warnings... "
+                                   "a Cruel Season is coming. // Will you survive?",
+                                   (x_value, y_value),
+                                   line_break=40,
+                                   x_limit=700)
 
         buttons.draw_image_button((253, 620),
                                   button_name='last_step',

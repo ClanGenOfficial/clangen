@@ -333,7 +333,11 @@ class ListScreen(Screens):
                     name = short_name + '...'
 
                 # DISPLAY NAME
-                verdana.text(name, (155 + pos_x - name_len/2, 240 + pos_y))
+                verdana.text(name,
+                             ('center', 240 + pos_y),
+                             x_start=125 + pos_x,
+                             x_limit=125 + pos_x + 60
+                             )
 
                 cats_on_page += 1
                 pos_x += 120

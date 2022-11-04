@@ -35,6 +35,7 @@ class ChooseMentorScreen(Screens):
                                   text='Back',
                                   size=(105, 30),
                                   cur_screen='profile screen',
+                                  apprentice=None,
                                   )
         y_value = 30
         mentor = None
@@ -51,8 +52,9 @@ class ChooseMentorScreen(Screens):
                            ('center', y_value))
 
         # DRAW APPRENTICE AND SHOW THEIR INFO
-        draw_large(the_cat, (600, 150))
-        show_mentor_cat_info(the_cat, 491, 622)
+        if game.switches['apprentice'] is not None:
+            draw_large(the_cat, (600, 150))
+            show_mentor_cat_info(the_cat, 490, 620)
 
         # FIND MENTOR
         if game.switches['mentor'] is not None:
@@ -62,7 +64,7 @@ class ChooseMentorScreen(Screens):
                 mentor = Cat.all_cats[the_cat.mentor]
 
         # DRAW MENTOR AND SHOW THEIR INFO
-        if mentor is not None:
+        if mentor is not None and game.switches['apprentice'] is not None:
             draw_large(mentor, (50, 150))
             show_mentor_cat_info(mentor, 210, 71)
 
@@ -70,7 +72,8 @@ class ChooseMentorScreen(Screens):
         pos_x = 0
         pos_y = 20
 
-        self.get_valid_mentors(valid_mentors, pos_x, pos_y)
+        if game.switches['apprentice'] is not None:
+            self.get_valid_mentors(valid_mentors, pos_x, pos_y)
 
         if mentor is not None:
             buttons.draw_button(
@@ -87,6 +90,7 @@ class ChooseMentorScreen(Screens):
                 available=False)
 
     def get_valid_mentors(self, valid_mentors, pos_x, pos_y):
+
 
         for cat in Cat.all_cats.values():
             if not cat.dead and not cat.exiled and cat != game.switches[
@@ -167,42 +171,89 @@ def show_mentor_cat_info(arg0, arg1, arg2):
     if 10 <= len(name) >= 16:  # check name length
         short_name = str(arg0.name)[0:9]
         name = short_name + '...'
-    verdana_dark.text(str(name).center(16), (arg2, 121))
+    verdana_dark.text(str(name),
+                      ('center', 121),
+                      x_start=arg2,
+                      x_limit=arg2+110
+                      )
 
     y_value = 168
 
-    verdana_small_dark.text(arg0.age, (arg1, y_value))
+    verdana_small_dark.text(arg0.age,
+                            ('center', y_value),
+                            x_start=arg1,
+                            x_limit=arg1+100
+                            )
     y_value += 15
 
     if arg0.age != 'elder':
-        verdana_small_dark.text(str(arg0.status), (arg1, y_value))
+        verdana_small_dark.text(str(arg0.status),
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1 + 100
+                                )
         y_value += 15
 
     if arg0.genderalign is not None:
-        verdana_small_dark.text(arg0.genderalign, (arg1, y_value))
+        verdana_small_dark.text(arg0.genderalign,
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1 + 100
+                                )
     else:
-        verdana_small_dark.text(arg0.gender, (arg1, y_value))
+        verdana_small_dark.text(arg0.gender,
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1 + 100
+                                )
     y_value += 15
 
-    verdana_small_dark.text(arg0.trait, (arg1, y_value))
+    verdana_small_dark.text(arg0.trait,
+                            ('center', y_value),
+                            x_start=arg1,
+                            x_limit=arg1 + 100
+                            )
     y_value += 15
 
     if arg0.skill == 'formerly a kittypet':
-        verdana_small_dark.text('former kittypet', (arg1, y_value))
+        verdana_small_dark.text('former kittypet',
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1 + 100
+                                )
     elif arg0.skill == 'strong connection to StarClan':
-        verdana_small_dark.text('strong connection', (arg1, y_value))
+        verdana_small_dark.text('strong connection',
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1 + 100
+                                )
         y_value += 15
-        verdana_small_dark.text('to StarClan', (arg1, y_value))
-
+        verdana_small_dark.text('to StarClan',
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1 + 100
+                                )
     else:
-        verdana_small_dark.text(arg0.skill, (arg1, y_value))
+        verdana_small_dark.text(arg0.skill,
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1 + 100
+                                )
     y_value += 15
     if len(arg0.former_apprentices) >= 1:
-        verdana_small_dark.text(f"{len(arg0.former_apprentices)} former app(s)", (arg1, y_value))
+        verdana_small_dark.text(f"{len(arg0.former_apprentices)} former app(s)",
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1 + 100
+                                )
         y_value += 15
 
     if len(arg0.apprentice) >= 1:
-        verdana_small_dark.text(f"{len(arg0.apprentice)} current app(s)", (arg1, y_value))
+        verdana_small_dark.text(f"{len(arg0.apprentice)} current app(s)",
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1 + 100
+                                )
 
     mentor_icon = pygame.image.load("resources/images/mentor.png")
     screen.blit(mentor_icon, (315, 160))
@@ -619,23 +670,47 @@ def show_mate_cat_info(arg0, arg1, arg2):
     if 10 <= len(name) >= 16:  # check name length
         short_name = str(arg0.name)[0:9]
         name = short_name + '...'
-    verdana_dark.text(str(name).center(16), (arg2, 121))
+    verdana_dark.text(str(name),
+                      ('center', 121),
+                      x_start=arg2,
+                      x_limit=arg2 + 110
+                      )
 
     y_value = 193
 
-    verdana_small_dark.text(f'{str(arg0.moons)} moons', (arg1, y_value))
+    verdana_small_dark.text(f'{str(arg0.moons)} moons',
+                            ('center', y_value),
+                            x_start=arg1,
+                            x_limit=arg1 + 80
+                            )
     y_value += 15
 
-    verdana_small_dark.text(str(arg0.status), (arg1, y_value))
+    verdana_small_dark.text(str(arg0.status),
+                            ('center', y_value),
+                            x_start=arg1,
+                            x_limit=arg1 + 80
+                            )
     y_value += 15
 
     if arg0.genderalign is not None:
-        verdana_small_dark.text(arg0.genderalign, (arg1, y_value))
+        verdana_small_dark.text(arg0.genderalign,
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1 + 80
+                                )
     else:
-        verdana_small_dark.text(arg0.gender, (arg1, y_value))
+        verdana_small_dark.text(arg0.gender,
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1 + 80
+                                )
     y_value += 15
 
-    verdana_small_dark.text(arg0.trait, (arg1, y_value))
+    verdana_small_dark.text(arg0.trait,
+                            ('center', y_value),
+                            x_start=arg1,
+                            x_limit=arg1 + 80
+                            )
 
 
 def draw_bg_ui(self):  # USER INTERFACE ART
@@ -828,7 +903,10 @@ class RelationshipScreen(Screens):
                 short_name = str(the_relationship.cat_to.name)[0:11]
                 name = short_name + '...'
 
-            verdana_mid_dark.text(name, (290 + pos_x, 131 + pos_y))  # display name
+            # display name
+            verdana_mid_dark.text(name, ('center', 131 + pos_y),
+                                  x_start=300 + pos_x,
+                                  x_limit=300 + pos_x + 82)
 
 
             count = 17
