@@ -106,6 +106,7 @@ while True:
                 if event.key == pygame.K_1:
                     game.switches['cur_screen'] = 'options screen'
                     game.switches['last_screen'] = 'profile screen'
+
         if game.current_screen == 'make clan screen' and game.switches[
                 'clan_name'] == '' and event.type == pygame.KEYDOWN:
             if event.unicode.isalpha(
@@ -138,6 +139,27 @@ while True:
                         game.event_scroll_ct) < max_scroll_direction:
                     game.cur_events_list.append(game.cur_events_list.pop(0))
                     game.event_scroll_ct -= 1
+
+        if game.current_screen == 'relationship event screen' and len(
+                game.relation_events_list) > game.max_relation_events_displayed:
+            max_scroll_direction = len(
+                game.relation_events_list) - game.max_relation_events_displayed
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_UP and game.relation_scroll_ct < 0:
+                    game.relation_events_list.insert(0, game.relation_events_list.pop())
+                    game.relation_scroll_ct += 1
+                if event.key == pygame.K_DOWN and abs(
+                        game.relation_scroll_ct) < max_scroll_direction:
+                    game.relation_events_list.append(game.relation_events_list.pop(0))
+                    game.relation_scroll_ct -= 1
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 4 and game.relation_scroll_ct < 0:
+                    game.relation_events_list.insert(0, game.relation_events_list.pop())
+                    game.relation_scroll_ct += 1
+                if event.button == 5 and abs(
+                        game.relation_scroll_ct) < max_scroll_direction:
+                    game.relation_events_list.append(game.relation_events_list.pop(0))
+                    game.relation_scroll_ct -= 1
 
         if game.current_screen == 'allegiances screen' and len(
                 game.allegiance_list) > game.max_allegiance_displayed:

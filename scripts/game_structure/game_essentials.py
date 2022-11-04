@@ -20,7 +20,7 @@ class Game(object):
     event_scroll_ct = 0
     max_allegiance_displayed = 17
     allegiance_scroll_ct = 0
-    max_relation_events_displayed = 13
+    max_relation_events_displayed = 10
     relation_scroll_ct = 0
     cur_events_list = []
     allegiance_list = []

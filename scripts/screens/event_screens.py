@@ -44,20 +44,20 @@ class RelationshipEventScreen(Screens):
 
         if game.switches['events_left'] == 0:
             buttons.draw_image_button((310, 205),
-                                button_name='timeskip_moon',
-                                text='TIMESKIP ONE MOON',
-                                size=(180, 30),
-                                timeskip=True,
-                                hotkey=[11])
+                                      button_name='timeskip_moon',
+                                      text='TIMESKIP ONE MOON',
+                                      size=(180, 30),
+                                      timeskip=True,
+                                      hotkey=[11])
             if game.switches['timeskip']:
                 game.cur_events_list = []
                 game.relation_events_list = []
         else:
             buttons.draw_image_button((310, 205),
-                                button_name='timeskip_moon',
-                                text='TIMESKIP ONE MOON',
-                                available=False,
-                                size=(180, 30),
+                                      button_name='timeskip_moon',
+                                      text='TIMESKIP ONE MOON',
+                                      available=False,
+                                      size=(180, 30),
                                 )
         events_class.one_moon()
 
@@ -77,23 +77,22 @@ class RelationshipEventScreen(Screens):
                                   size=(176, 30),
                                   )
 
+        y_pos = 0
         if game.relation_events_list is not None and game.relation_events_list != []:
-            for x in range(
-                    min(len(game.relation_events_list),
-                        game.max_relation_events_displayed)):
-                if game.relation_events_list[x] is None:
-                    continue
-                verdana.text(game.relation_events_list[x],
-                             ('center', 290 + a * 30))
-                a += 1
+            rel_events = '\n'.join(game.relation_events_list)
+            verdana.blit_text(rel_events,
+                              (100, 290 + y_pos),
+                              x_limit=700,
+                              line_break=40)
+
         else:
             verdana.text("Nothing significant happened this moon.",
-                         ('center', 290 + a * 30))
+                         ('center', 290 + y_pos))
         # buttons
         draw_menu_buttons()
 
         if len(game.relation_events_list) > game.max_relation_events_displayed:
-            buttons.draw_button((726, 250),
+            buttons.draw_button((726, 290),
                                 image=game.up,
                                 arrow="UP",
                                 hotkey=[20])
@@ -157,23 +156,31 @@ class EventsScreen(Screens):
                                   hotkey=[12]
                                   )
 
-        a = 0
+        y_pos = 0
         if game.cur_events_list is not None and game.cur_events_list != []:
-            for x in range(min(len(game.cur_events_list), game.max_events_displayed)):
-                if "Clan has no " in game.cur_events_list[x]:
-                    verdana_red.text(game.cur_events_list[x],
-                                     ('center', 290 + a * 30))
-                else:
-                    verdana.text(game.cur_events_list[x],
-                                 ('center', 290 + a * 30))
-                a += 1
+            events = '\n'.join(game.cur_events_list)
+            verdana.blit_text(events,
+                              (100, 290 + y_pos),
+                              x_limit=700,
+                              line_break=40)
+
+            #for x in range(min(len(game.cur_events_list), game.max_events_displayed)):
+            #    if "Clan has no " in game.cur_events_list[x]:
+            #        verdana_red.text(game.cur_events_list[x],
+            #                         ('center', 290 + a * 30))
+            #    else:
+            #        verdana.blit_text(game.cur_events_list[x],
+            #                          (100, 290 + a * 30),
+            #                          x_limit=700)
+            #    a += 1
+
         else:
             verdana.text("Nothing significant happened this moon.",
-                         ('center', 290 + a * 30))
+                         ('center', 290 + y_pos))
 
         draw_menu_buttons()
         if len(game.cur_events_list) > game.max_events_displayed:
-            buttons.draw_button((726, 180),
+            buttons.draw_button((726, 290),
                                 image=game.up,
                                 arrow="UP",
                                 hotkey=[20])
