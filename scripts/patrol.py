@@ -10,7 +10,7 @@ from scripts.cat.pelts import *
 #                              PATROL CLASS START                              #
 # ---------------------------------------------------------------------------- #
 
-class Patrol(object):
+class Patrol():
 
     def __init__(self):
         self.patrol_event = None
@@ -228,14 +228,14 @@ class Patrol(object):
                 ])
 
         # deadly patrols
-        if game_setting_disaster == True:
+        if game_setting_disaster:
             possible_patrols.extend(self.generate_patrol_events(DISASTER))
 
         # fighting patrols
         possible_patrols.extend(self.generate_patrol_events(GENERAL_FIGHTING))
 
 
-        if self.patrol_random_cat != None and self.patrol_random_cat.status == 'apprentice' and len(
+        if self.patrol_random_cat is not None and self.patrol_random_cat.status == 'apprentice' and len(
                 self.patrol_cats) > 1:
             possible_patrols.extend([
                 PatrolEvent(
@@ -987,7 +987,7 @@ class Patrol(object):
 #                               PATROL CLASS END                               #
 # ---------------------------------------------------------------------------- #
 
-class PatrolEvent(object):
+class PatrolEvent():
 
     def __init__(self,
                  patrol_id,

@@ -342,8 +342,13 @@ class ViewChildrenScreen(Screens):
             verdana.text('Siblings:', ('center', 210))
         else:
             verdana.text('This cat has no siblings.', ('center', 210))
-        buttons.draw_button(('center', -100),
+        if the_cat.exiled:
+            buttons.draw_button(('center', 670),
                             text='Back',
+                            cur_screen='outside profile screen')
+        else:
+            buttons.draw_button(('center', 670),
+                            text='Back',  
                             cur_screen='profile screen')
         pos_x = 0
         pos_y = 60
@@ -371,8 +376,13 @@ class ViewChildrenScreen(Screens):
             verdana.text('Offspring:', ('center', 400))
         else:
             verdana.text('This cat has never had offspring.', ('center', 400))
-        buttons.draw_button(('center', -100),
+        if the_cat.exiled:
+            buttons.draw_button(('center', 670),
                             text='Back',
+                            cur_screen='outside profile screen')
+        else:
+            buttons.draw_button(('center', 670),
+                            text='Back',  
                             cur_screen='profile screen')
 
     def screen_switches(self):
@@ -457,8 +467,13 @@ class ChooseMateScreen(Screens):
                                 cat_value=the_cat,
                                 mate=None)
 
-        buttons.draw_button(('center', -100),
+        if the_cat.exiled:
+            buttons.draw_button(('center', 670),
                             text='Back',
+                            cur_screen='outside profile screen')
+        else:
+            buttons.draw_button(('center', 670),
+                            text='Back',  
                             cur_screen='profile screen')
 
     # TODO Rename this here and in `on_use`
@@ -473,7 +488,7 @@ class ChooseMateScreen(Screens):
 
             not_aviable = relevant_cat.dead or relevant_cat.exiled
 
-            if not related and relevant_cat.ID != the_cat.ID and invalid_age and not not_aviable and relevant_cat.mate == None:
+            if not related and relevant_cat.ID != the_cat.ID and invalid_age and not not_aviable and relevant_cat.mate is None:
                 valid_mates.append(relevant_cat)
         all_pages = int(ceil(len(valid_mates) /
                              27.0)) if len(valid_mates) > 27 else 1
@@ -567,9 +582,9 @@ class RelationshipScreen(Screens):
 
         # layout
         verdana_big.text(str(the_cat.name) + ' Relationships', ('center', 10))
-        if the_cat != None and the_cat.mate != '':
+        if the_cat is not None and the_cat.mate != '':
             mate = Cat.all_cats.get(the_cat.mate)
-            if mate != None:
+            if mate is not None:
                 verdana_small.text(
                     f"{str(the_cat.genderalign)}  - {str(the_cat.age)} -  mate: {str(mate.name)}",
                     ('center', 40))
@@ -635,10 +650,10 @@ class RelationshipScreen(Screens):
                 (140 + pos_x - string_len / 1.5, 130 + pos_y))
 
             # display mate situation
-            if the_cat.mate != None and the_cat.mate != '' and the_relationship.cat_to.ID == the_cat.mate:
+            if the_cat.mate is not None and the_cat.mate != '' and the_relationship.cat_to.ID == the_cat.mate:
                 verdana_small.text(
                     'mate', (140 + pos_x - string_len / 1.5, 140 + pos_y))
-            elif the_relationship.cat_to.mate != None and the_relationship.cat_to.mate != '':
+            elif the_relationship.cat_to.mate is not None and the_relationship.cat_to.mate != '':
                 verdana_small.text(
                     'has a mate',
                     (140 + pos_x - string_len / 1.5, 140 + pos_y))
@@ -794,11 +809,15 @@ class RelationshipScreen(Screens):
                                 text='>',
                                 list_page=game.switches['list_page'] + 1,
                                 hotkey=[21])
-
-        buttons.draw_button(('center', 670),
+        if the_cat.exiled:
+            buttons.draw_button(('center', 670),
                             text='Back',
+                            cur_screen='outside profile screen')
+        else:
+            buttons.draw_button(('center', 670),
+                            text='Back',  
                             cur_screen='profile screen')
-
+            
     def draw_bar(self, value, pos_x, pos_y):
         # Loading Bar and variables
         bar_bg = pygame.image.load(

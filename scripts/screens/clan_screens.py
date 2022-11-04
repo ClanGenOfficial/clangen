@@ -144,7 +144,7 @@ class ClanScreen(Screens):
         camp_bg_base_dir = 'resources/images/camp_bg/'
         leaves = ["newleaf", "greenleaf", "leafbare", "leaffall"]
         camp_nr = game.clan.camp_bg
-        if camp_nr == None:
+        if camp_nr is None:
             camp_nr = 'camp1'
             game.clan.camp_bg = camp_nr
         

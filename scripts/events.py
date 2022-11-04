@@ -3,7 +3,7 @@ from scripts.cat_relations.relation_events import *
 from scripts.game_structure.buttons import *
 from scripts.game_structure.load_cat import * 
 
-class Events(object):
+class Events():
     all_events = {}
 
     def __init__(self, e_type=None, **cats):
@@ -40,11 +40,11 @@ class Events(object):
                     elif cat.moons == 100:
                         cat.age = 'elder'
                     if cat.moons > randint(100, 200):
-                        if choice([1, 2, 3, 4, 5]) == 1 and cat.dead == False:
+                        if choice([1, 2, 3, 4, 5]) == 1 and not cat.dead:
                             cat.dead = True
                             game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently')
 
-                    if cat.exiled and cat.status == 'leader' and cat.dead == False and randint(
+                    if cat.exiled and cat.status == 'leader' and not cat.dead and randint(
                             1, 10) == 1:
                         game.clan.leader_lives -= 1
                         if game.clan.leader_lives <= 0:
@@ -52,7 +52,7 @@ class Events(object):
                             game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently')
 
                             game.clan.leader_lives = 0
-                    elif cat.exiled and cat.status == 'leader' and cat.dead == False and randint(
+                    elif cat.exiled and cat.status == 'leader' and not cat.dead and randint(
                             1, 45) == 1:
                         game.clan.leader_lives -= 10
                         cat.dead = True
@@ -95,7 +95,7 @@ class Events(object):
 
         self.perform_ceremonies(cat) # here is age up included
         self.handle_deaths(cat)
-        if self.new_cat_invited == False or self.living_cats < 10:
+        if not self.new_cat_invited or self.living_cats < 10:
             self.invite_new_cats(cat)
         self.other_interactions(cat)
         self.coming_out(cat)
@@ -431,7 +431,7 @@ class Events(object):
                         f'{name} lost their paw to a twoleg trap'
                     )
                 else:
-                    if clan_has_kits == True:
+                    if clan_has_kits:
                         scar_text.extend([
                         f'{name} earned a scar protecting the kits'])
                     else:
@@ -465,7 +465,7 @@ class Events(object):
                             'enemy warrior', 'badger', 'tree', 'twoleg trap'
                         ]) + ' encouraged by their mentor')
                 else:
-                    if clan_has_kits == True:
+                    if clan_has_kits:
                         scar_text.extend([
                         f'{name} earned a scar protecting the kits'])
                     else:
@@ -501,7 +501,7 @@ class Events(object):
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
                     ]) + ' encouraged by their mentor')
                 else:
-                    if clan_has_kits == True:
+                    if clan_has_kits:
                         scar_text.extend([
                         f'{name} earned a scar protecting the kits'])
                     else:
@@ -673,7 +673,7 @@ class Events(object):
                     f'{name} finds a loner who joins the clan',
                     f'A loner waits on the border for a patrol, asking to join the clan'
                 ]
-                if str(loner_name) in [names.loner_names]:
+                if str(loner_name.prefix) in names.loner_names:
                     success_text = [
                         f'{str(loner_name)} decides to keep their name'
                     ]
@@ -812,9 +812,7 @@ class Events(object):
         for number in range(amount):
             new_cat = None
             if loner_name and a == 1:
-                new_cat = Cat(moons=age, prefix=name, status=status, gender=choice(['female', 'male']), backstory=backstory)
-            elif loner_name:
-                new_cat = Cat(moons=age, prefix=name, suffix='', status=status, gender=choice(['female', 'male']), backstory=backstory)
+                new_cat = Cat(moons=age, prefix=name, status=status, gender=choice(['female', 'male']), backstory=backstory)            
             else:
                 new_cat = Cat(moons=age, status=status, gender=choice(['female', 'male']), backstory=backstory)
             if skill:
@@ -1084,7 +1082,7 @@ class Events(object):
                 name + ' was found dead near a fox den',
                 name + ' was bitten by a snake and died'
             ]
-            if clan_has_kits == True and cat.status != 'kitten':
+            if clan_has_kits and cat.status != 'kitten':
                 cause_of_death.extend([
                     name + ' was bitten by a snake while saving a kit and died'
                 ])
@@ -1415,6 +1413,7 @@ class Events(object):
             if len(game.clan.all_clans) > 0:
                 other_clan = game.clan.all_clans
             addition = randint(0, 20)
+            # Are death_chance & dead_count unused? Should maybe be removed if so... -Shou
             death_chance = int(alive_count / 3)
             if addition == 1:
                 death_chance = int(death_chance + randint(0, 10) / 2)
@@ -1553,7 +1552,7 @@ class Events(object):
                 elif transing_chance == 2:
                     cat.genderalign = "nonbinary"
                     hit = True
-            if hit == True:
+            if hit:
                 if cat.gender == 'male':
                     gender = 'tom'
                 else:
