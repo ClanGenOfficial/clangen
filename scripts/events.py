@@ -673,7 +673,7 @@ class Events(object):
                     f'{name} finds a loner who joins the clan',
                     f'A loner waits on the border for a patrol, asking to join the clan'
                 ]
-                if str(loner_name) in [names.loner_names]:
+                if str(loner_name.prefix) in names.loner_names:
                     success_text = [
                         f'{str(loner_name)} decides to keep their name'
                     ]
@@ -692,7 +692,7 @@ class Events(object):
                     f'{name} finds a loner who joins the clan',
                     f'A loner says that they are interested in clan life and joins the clan'
                 ]
-                if str(loner_name) in [names.loner_names]:
+                if str(loner_name.prefix) in names.loner_names:
                     success_text = [
                         f'{str(loner_name)} decides to keep their name'
                     ]
@@ -812,9 +812,7 @@ class Events(object):
         for number in range(amount):
             new_cat = None
             if loner_name and a == 1:
-                new_cat = Cat(moons=age, prefix=name, status=status, gender=choice(['female', 'male']), backstory=backstory)
-            elif loner_name:
-                new_cat = Cat(moons=age, prefix=name, suffix='', status=status, gender=choice(['female', 'male']), backstory=backstory)
+                new_cat = Cat(moons=age, prefix=name, status=status, gender=choice(['female', 'male']), backstory=backstory)            
             else:
                 new_cat = Cat(moons=age, status=status, gender=choice(['female', 'male']), backstory=backstory)
             if skill:
