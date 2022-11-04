@@ -90,6 +90,11 @@ jobs:
         run: python -m pip install --upgrade Pillow
       - name: Install PyInstaller
         run: python -m pip install --upgrade PyInstaller
+      # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
+      #- name: Setup UPX 
+      #  run: |
+      #    curl -L -O https://github.com/upx/upx/releases/download/v4.0.0/upx-4.0.0-win64.zip
+      #    tar.exe -x -v -f upx-4.0.0-win64.zip
       - name: Run PyInstaller
         #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
         run: python -m PyInstaller Clangen.spec
