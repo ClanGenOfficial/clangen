@@ -84,6 +84,7 @@ class Game(object):
         'patrol_remove': False,
         'cat_remove': False,
         'fill_patrol': False,
+        'patrol_done': False,
         'error_message': '',
         'apprentice': None,
         'change_name': '',

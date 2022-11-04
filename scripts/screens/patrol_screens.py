@@ -37,6 +37,7 @@ class PatrolScreen(Screens):
         # CATS WHO CAN PATROL
         able_cats = []
 
+
         # ASSIGN TO ABLE CATS AND SORT BY RANK
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
@@ -226,11 +227,12 @@ class PatrolScreen(Screens):
                 image='buttons/add_cat',
                 text='Add to Patrol',
                 available=False)
-            buttons.draw_image_button((433, 458),  # DRAW AVAILABLE RANDOM BUTTON
-                                      button_name='random_dice',
-                                      size=(34, 34),
-                                      cat=choice(able_cats),
-                                      hotkey=[12])
+            if able_cats != []:
+                buttons.draw_image_button((433, 458),  # DRAW AVAILABLE RANDOM BUTTON
+                                          button_name='random_dice',
+                                          size=(34, 34),
+                                          cat=choice(able_cats),
+                                          hotkey=[12])
 
         # GO ON PATROL
         if len(game.switches['current_patrol']) > 0:

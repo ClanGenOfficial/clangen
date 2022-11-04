@@ -57,6 +57,7 @@ def draw_menu_buttons():
                               cur_screen='starclan screen',
                               size=(88, 30),
                               hotkey=[4])
+
     buttons.draw_image_button((474, 60),
                               button_name='patrol',
                               text='PATROL',

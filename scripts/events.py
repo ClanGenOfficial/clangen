@@ -26,6 +26,9 @@ class Events(object):
             self.living_cats = 0
             self.new_cat_invited = False
             game.patrolled.clear()
+            if any(str(cat.status) in {'leader', 'deputy', 'warrior', 'apprentice'}
+                    and not cat.dead and not cat.exiled for cat in Cat.all_cats.values()):
+                game.switches['no_able_left'] = False
             relation_events = Relation_Events()
             relation_events.handle_pregnancy_age(clan = game.clan)
             for cat in Cat.all_cats.copy().values():
