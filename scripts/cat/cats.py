@@ -1,6 +1,7 @@
 from random import choice, randint
 import math
 import os.path
+import itertools
 import ujson
 
 from .pelts import *
@@ -85,6 +86,7 @@ class Cat():
 
     all_cats = {}  # ID: object
     other_cats = {}  # cats outside the clan
+    id_iter = itertools.count()
 
     def __init__(self,
                  prefix=None,
@@ -136,9 +138,9 @@ class Cat():
 
         # setting ID
         if ID is None:
-            potential_ID = str(randint(10000, 9999999))
+            potential_ID = str(next(Cat.id_iter))
             while potential_ID in self.all_cats:
-                potential_ID = str(randint(10000, 9999999))
+                potential_ID = str(next(Cat.id_iter))
             self.ID = potential_ID
         else:
             self.ID = ID
