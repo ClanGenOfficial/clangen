@@ -59,6 +59,7 @@ class Game(object):
         'deputy': None,
         'medicine_cat': None,
         'members': [],
+        're_roll': False,
         'event': None,
         'cur_screen': 'start screen',
         'naming_text': '',

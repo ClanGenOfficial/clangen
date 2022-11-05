@@ -289,7 +289,7 @@ class Button(object):
                                 'cur_screen']
                         game.switches[key] = value
                     else:
-                        if key == 'fill_patrol':
+                        if key == 'cat':
                             game.switches[key] = value
                         else:
                             game.switches[key].append(value)

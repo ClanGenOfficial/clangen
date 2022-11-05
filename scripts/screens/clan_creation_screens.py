@@ -162,6 +162,7 @@ class MakeClanScreen(Screens):
 
         verdana.text("Your clan's game mode is permanent and cannot be changed after clan creation.", ('center', 581))
 
+
     def first_phase(self):
         # layout
         draw_main_menu(self)
@@ -227,18 +228,30 @@ class MakeClanScreen(Screens):
 
         screen.blit(MakeClanScreen.leader_img, (0, 414))
 
+        buttons.draw_image_button((83, 440),
+                                  button_name='random_dice',
+                                  re_roll=True,
+                                  size=(34, 34))
+
+        if game.switches['re_roll'] is True:
+            create_example_cats()
+            game.switches['re_roll'] = False
+
         # draw cats to choose from
         for u in range(6):
-            buttons.draw_button((50, 150 + 50 * u),
+            buttons.draw_button((50, 130 + 50 * u),
                                 image=game.choose_cats[u].sprite,
                                 cat=u,
                                 hotkey=[1, u + 10])
         for u in range(6, 12):
-            buttons.draw_button((100, 150 + 50 * (u - 6)),
+            buttons.draw_button((100, 130 + 50 * (u - 6)),
                                 image=game.choose_cats[u].sprite,
                                 cat=u,
                                 hotkey=[2, u + 4])
 
+
+
+        # draw clicked cat
         if game.switches['cat'] is not None and 12 > game.switches['cat'] >= 0:
             chosen_cat = game.choose_cats[game.switches['cat']]
             draw_large(chosen_cat, (270, 200))
@@ -271,6 +284,7 @@ class MakeClanScreen(Screens):
                                           size=(332, 52),
                                           hotkey=[1]
                                           )
+
         # ---------------------------------------------------------------------------- #
         #                             next and prev step                               #
         # ---------------------------------------------------------------------------- #
@@ -302,7 +316,7 @@ class MakeClanScreen(Screens):
             if game.switches['leader'] == u:
                 draw(game.choose_cats[u],(650, 200))
             else:
-                buttons.draw_button((50, 150 + 50 * u),
+                buttons.draw_button((50, 130 + 50 * u),
                                     image=game.choose_cats[u].sprite,
                                     cat=u,
                                     hotkey=[1, u + 10])
@@ -310,7 +324,7 @@ class MakeClanScreen(Screens):
             if game.switches['leader'] == u:
                 draw(game.choose_cats[u],(650, 200))
             else:
-                buttons.draw_button((100, 150 + 50 * (u - 6)),
+                buttons.draw_button((100, 130 + 50 * (u - 6)),
                                     image=game.choose_cats[u].sprite,
                                     cat=u,
                                     hotkey=[2, u + 4])
@@ -370,7 +384,7 @@ class MakeClanScreen(Screens):
             elif game.switches['deputy'] == u:
                 draw(game.choose_cats[u],(650, 250))
             else:
-                buttons.draw_button((50, 150 + 50 * u),
+                buttons.draw_button((50, 130 + 50 * u),
                                     image=game.choose_cats[u].sprite,
                                     cat=u,
                                     hotkey=[1, u + 10])
@@ -381,7 +395,7 @@ class MakeClanScreen(Screens):
             elif game.switches['deputy'] == u:
                 draw(game.choose_cats[u],(650, 250))
             else:
-                buttons.draw_button((100, 150 + 50 * (u - 6)),
+                buttons.draw_button((100, 130 + 50 * (u - 6)),
                                     image=game.choose_cats[u].sprite,
                                     cat=u,
                                     hotkey=[2, u + 4])
@@ -445,7 +459,7 @@ class MakeClanScreen(Screens):
             elif game.switches['medicine_cat'] == u:
                 draw(game.choose_cats[u],(650, 300))
             elif u not in game.switches['members']:
-                buttons.draw_button((50, 150 + 50 * u),
+                buttons.draw_button((50, 130 + 50 * u),
                                     image=game.choose_cats[u].sprite,
                                     cat=u,
                                     hotkey=[1, u + 10])
@@ -475,7 +489,7 @@ class MakeClanScreen(Screens):
             elif game.switches['medicine_cat'] == u:
                 draw(game.choose_cats[u],(650, 300))
             elif u not in game.switches['members']:
-                buttons.draw_button((100, 150 + 50 * (u - 6)),
+                buttons.draw_button((100, 130 + 50 * (u - 6)),
                                     image=game.choose_cats[u].sprite,
                                     cat=u,
                                     hotkey=[2, u + 4])

@@ -65,7 +65,6 @@ class PatrolScreen(Screens):
         pos_y = 500
         pos_x = 50
 
-        # random_options = []
 
         # DRAW ABLE CATS
         for x in range(len(able_cats)):
@@ -81,7 +80,6 @@ class PatrolScreen(Screens):
                                     image=patrol_cat.sprite,
                                     cat=patrol_cat,
                                     hotkey=[x + 1, 11])
-                # random_options.append(patrol_cat)
             else:
                 cats_on_page -= 1
                 pos_x -= 50
@@ -193,7 +191,7 @@ class PatrolScreen(Screens):
         # PATROL TYPE BUTTONS - purely aesthetic atm until we have patrol type functionality
         if game.game_mode != 'classic':
             x_value = 323
-            y_value = 530
+            y_value = 550
             buttons.draw_image_button((x_value, y_value),
                                       button_name='button_paw',
                                       size=(34, 34),
@@ -223,26 +221,36 @@ class PatrolScreen(Screens):
             self.show_info(able_cats)
         else:  # DRAW GREYED OUT ADD CAT BUTTON
             buttons.draw_button(
-                (330, 460),
+                ('center', 460),
                 image='buttons/add_cat',
                 text='Add to Patrol',
                 available=False)
             if able_cats != []:
-                buttons.draw_image_button((433, 458),  # DRAW AVAILABLE RANDOM BUTTON
+                buttons.draw_image_button((363, 495),  # DRAW AVAILABLE RANDOM BUTTON
                                           button_name='random_dice',
                                           size=(34, 34),
                                           cat=choice(able_cats),
                                           hotkey=[12])
+                buttons.draw_button((403, 495),
+                                    image='buttons/add_1',
+                                    text='add 1',
+                                    cat=choice(able_cats),
+                                    fill_patrol=True)
+
+                if game.switches['fill_patrol'] is True:
+                    game.switches['current_patrol'].append(game.switches['cat'])
+                    game.switches['fill_patrol'] = False
+
 
         # GO ON PATROL
         if len(game.switches['current_patrol']) > 0:
-            buttons.draw_button(('center', 574),
+            buttons.draw_button(('center', 589),
                                 image='buttons/go_patrol',
                                 text='Start Patrol',
                                 cur_screen='patrol event screen',
                                 hotkey=[13])
         else:
-            buttons.draw_button(('center', 574),
+            buttons.draw_button(('center', 589),
                                 image='buttons/go_patrol',
                                 text='Start Patrol',
                                 available=False)
@@ -263,26 +271,26 @@ class PatrolScreen(Screens):
             short_name = str(chosen_cat.name)[0:15]
             name = short_name + '...'
 
-        verdana_dark.text(str(name),  # display name
+        verdana.text(str(name),  # display name
                      ('center', y_value),
                      x_start=320,
                      x_limit=480)
 
         y_value += 25
 
-        verdana_small_dark.text(str(chosen_cat.status),  # rank
+        verdana_small.text(str(chosen_cat.status),  # rank
                            ('center', y_value))
         y_value += 15
 
-        verdana_small_dark.text(str(chosen_cat.trait),  # trait
+        verdana_small.text(str(chosen_cat.trait),  # trait
                            ('center', y_value))
         y_value += 15
 
-        verdana_small_dark.text(str(chosen_cat.skill),  # skill
+        verdana_small.text(str(chosen_cat.skill),  # skill
                            ('center', y_value))
         y_value += 15
 
-        verdana_small_dark.text(
+        verdana_small.text(
             'experience: ' +
             str(chosen_cat.experience_level),  # exp
             ('center', y_value))
@@ -343,11 +351,11 @@ class PatrolScreen(Screens):
                     short_name = str(chosen_cat.mentor.name)[0:9]
                     name = short_name + '...'
                 verdana_dark.text(str(name),
-                             (552, 300),
+                             ('center', 300),
                              x_start=550,
                              x_limit=650)
 
-                verdana_small_dark.text(f'mentor: {str(chosen_cat.mentor.name)}', ('center', y_value))
+                verdana_small.text(f'mentor: {str(chosen_cat.mentor.name)}', ('center', y_value))
 
         # SHOW APPRENTICE SPRITE AND BUTTON
         if chosen_cat.apprentice != []:
@@ -379,58 +387,68 @@ class PatrolScreen(Screens):
 
         # ALLOW RANDOM BUTTON TO BE PUSHED UNLESS THERE IS ONLY ONE ABLE CAT LEFT
         if len(game.switches['current_patrol']) < 6 and len(able_cats) > 1:
-            if chosen_cat in game.switches['current_patrol']:
-                buttons.draw_image_button((452, 458),
-                                          button_name='random_dice',
-                                          size=(34, 34),
-                                          cat=choice(able_cats),
-                                          hotkey=[12])
-            else:  # POSITION BUTTON DIFFERENTLY IF 'REMOVE CAT' BUTTON IS VISIBLE
-                buttons.draw_image_button((433, 458),
-                                          button_name='random_dice',
-                                          size=(34, 34),
-                                          cat=choice(able_cats),
-                                          hotkey=[12])
+            buttons.draw_image_button((363, 495),
+                                      button_name='random_dice',
+                                      size=(34, 34),
+                                      cat=choice(able_cats),
+                                      hotkey=[12])
+            buttons.draw_button((403, 495),
+                                image='buttons/add_1',
+                                text='add 1',
+                                cat=choice(able_cats),
+                                fill_patrol=True)
+
+            if game.switches['fill_patrol'] is True:
+                game.switches['current_patrol'].append(game.switches['cat'])
+                game.switches['fill_patrol'] = False
+
+        # IF ONE CAT IS LEFT, ADDING A 'RANDOM' CAT WILL ADD THE LAST AVAILABLE CAT
         elif len(game.switches['current_patrol']) < 6 and len(able_cats) == 1:
             if chosen_cat in game.switches['current_patrol']:
-                buttons.draw_image_button((452, 458),
+                buttons.draw_image_button((363, 495),
                                           button_name='random_dice',
                                           size=(34, 34),
                                           cat=able_cats[0],
                                           hotkey=[12])
-            else:  # POSITION BUTTON DIFFERENTLY IF 'REMOVE CAT' BUTTON IS VISIBLE
-                buttons.draw_image_button((433, 458),
-                                          button_name='random_dice',
-                                          size=(34, 34),
-                                          cat=able_cats[0],
-                                          hotkey=[12])
-        else:  # MAKE RANDOM BUTTON UNAVAILABLE
+
+                buttons.draw_button((403, 495),
+                                    image='buttons/add_1',
+                                    text='add 1',
+                                    cat=able_cats[0],
+                                    fill_patrol=True)
+
+                if game.switches['fill_patrol'] is True:
+                    game.switches['current_patrol'].append(game.switches['cat'])
+                    game.switches['fill_patrol'] = False
+
+        # MAKE RANDOM BUTTON UNAVAILABLE
+        else:
             if chosen_cat in game.switches['current_patrol']:
-                buttons.draw_image_button((452, 458),
+                buttons.draw_image_button((363, 495),
                                           button_name='random_dice',
                                           size=(34, 34),
                                           hotkey=[12],
                                           available=False)
-            else:  # POSITION BUTTON DIFFERENTLY IF 'REMOVE CAT' BUTTON IS VISIBLE
-                buttons.draw_image_button((433, 458),
-                                          button_name='random_dice',
-                                          size=(34, 34),
-                                          hotkey=[12],
-                                          available=False)
+                buttons.draw_button((403, 495),
+                                    image='buttons/add_1',
+                                    text='add 1',
+                                    available=False)
+
         # BUTTON TO ADD CAT TO PATROL
         if len(game.switches['current_patrol']) < 6 and chosen_cat is not None\
                 and chosen_cat not in game.switches['current_patrol'] and game.switches['patrol_remove'] is False:
             buttons.draw_button(
-                (330, 460),
+                ('center', 460),
                 image='buttons/add_cat',
                 text='Add to Patrol',
                 current_patrol=chosen_cat,
                 add=True,
                 hotkey=[11],)
+
         # BUTTON TO REMOVE CAT FROM PATROL
         elif len(game.switches['current_patrol']) > 0 and chosen_cat is not None\
                 and chosen_cat in game.switches['current_patrol']:
-            buttons.draw_image_button((320, 460),
+            buttons.draw_image_button((336, 460),
                                       button_name='remove_cat',
                                       size=(127, 30),
                                       cat_remove=True,
@@ -446,7 +464,7 @@ class PatrolScreen(Screens):
         elif len(game.switches['current_patrol']) == 6 and chosen_cat not in game.switches['current_patrol']\
                 and game.switches['patrol_remove'] is False:
             buttons.draw_button(
-                (330, 460),
+                ('center', 460),
                 image='buttons/add_cat',
                 text='Add to Patrol',
                 current_patrol=chosen_cat,

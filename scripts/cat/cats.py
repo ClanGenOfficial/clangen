@@ -1095,6 +1095,7 @@ class Cat(object):
 #                               END OF CAT CLASS                               #
 # ---------------------------------------------------------------------------- #
 
+
 # Twelve example cats
 def create_example_cats():
     e = random.sample(range(12), 3)

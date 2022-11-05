@@ -584,7 +584,11 @@ class ChooseMateScreen(Screens):
         relation = list(filter(lambda r: r.cat_to.ID == arg2.ID, arg1.relationships))
         if len(relation):
             relation = relation[0]
+        else:
+            Cat.all_cats.get(arg1.ID).create_new_relationships()
+
         romantic_love = relation.romantic_love
+
 
         if 10 <= romantic_love <= 30:
             screen.blit(s_heart, (210, y_value))
