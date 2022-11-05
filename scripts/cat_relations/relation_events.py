@@ -328,13 +328,13 @@ class Relation_Events():
         if cat.gender == 'male' and other_cat is not None and other_cat.gender == 'female':
             pregnant_cat = other_cat
             clan.pregnancy_data[other_cat.ID] = {
-                "second_parent": cat.ID,
+                "second_parent": str(cat.ID),
                 "moons": 0,
                 "amount": 0
             }
         else:
             clan.pregnancy_data[cat.ID] = {
-                "second_parent": other_cat,
+                "second_parent": str(other_cat),
                 "moons": 0,
                 "amount": 0
             }
