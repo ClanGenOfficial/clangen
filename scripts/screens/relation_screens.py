@@ -290,7 +290,7 @@ class ViewChildrenScreen(Screens):
                 cur_screen='profile screen')
 
             name = str(Cat.all_cats[the_cat.parent1].name)
-            if 8 <= len(name) >= 12:
+            if 8 <= len(name) >= 10:
                 short_name = str(Cat.all_cats[the_cat.parent1].name)[0:7]
                 name = short_name + '...'
             verdana_small.text(str(name),
@@ -315,7 +315,7 @@ class ViewChildrenScreen(Screens):
                 cur_screen='profile screen')
 
             name = str(Cat.all_cats[the_cat.parent2].name)
-            if 8 <= len(name) >= 12:
+            if 8 <= len(name) >= 10:
                 short_name = str(Cat.all_cats[the_cat.parent2].name)[0:7]
                 name = short_name + '...'
             verdana_small.text(str(name),
@@ -435,7 +435,6 @@ class ChooseMateScreen(Screens):
 
         draw_choosing_bg(494, 'mate')
         draw_next_prev_cat_buttons(the_cat)
-
 
         y_value = 30
         verdana_big.text(f'Choose a mate for {str(the_cat.name)}',

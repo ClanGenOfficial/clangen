@@ -38,6 +38,9 @@ def cat_profiles():
         update_sprite(game.choose_cats[x])
 
 
+# ---------------------------------------------------------------------------- #
+#                               menu buttons                                   #
+# ---------------------------------------------------------------------------- #
 def draw_menu_buttons():
     buttons.draw_image_button((246, 60),
                               button_name='events',
@@ -82,11 +85,6 @@ def draw_menu_buttons():
                               cur_screen='allegiances screen',
                               size=(118, 30),
                               hotkey=[7])
-    #buttons.draw_button((-70, 110),
-    #                    text='Map',
-    #                    cur_screen='map screen',
-    #                    available=map_available,
-    #                    hotkey=[8])
     buttons.draw_image_button((25, 60),
                               button_name='stats',
                               text='Stats',
@@ -94,7 +92,17 @@ def draw_menu_buttons():
                               size=(81, 30),
                               hotkey=[1])
 
+    #buttons.draw_button((-70, 110),
+    #                    text='Map',
+    #                    cur_screen='map screen',
+    #                    available=map_available,
+    #                    hotkey=[8])
 
+
+
+# ---------------------------------------------------------------------------- #
+#                      draw clan name with bg frame                            #
+# ---------------------------------------------------------------------------- #
 def draw_clan_name():
     clan_name_bg = pygame.transform.scale(
         pygame.image.load("resources/images/clan_name_bg.png").convert_alpha(), (180, 35))
@@ -103,6 +111,9 @@ def draw_clan_name():
     verdana_big_light.text(f'{game.clan.name}Clan', ('center', 32))
 
 
+# ---------------------------------------------------------------------------- #
+#                    next and previous cat buttons                             #
+# ---------------------------------------------------------------------------- #
 def draw_next_prev_cat_buttons(the_cat):
     is_instructor = False
     if the_cat.dead and game.clan.instructor.ID == the_cat.ID:
@@ -112,11 +123,14 @@ def draw_next_prev_cat_buttons(the_cat):
     next_cat = 0
     if the_cat.dead and not is_instructor:
         previous_cat = game.clan.instructor.ID
+
     if is_instructor:
         next_cat = 1
+
     for check_cat in Cat.all_cats:
         if Cat.all_cats[check_cat].ID == the_cat.ID:
             next_cat = 1
+
         if game.switches['apprentice'] is not None:
             if next_cat == 0 and Cat.all_cats[
                     check_cat].ID != the_cat.ID and Cat.all_cats[
@@ -124,14 +138,17 @@ def draw_next_prev_cat_buttons(the_cat):
                             check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
                                 check_cat].exiled and Cat.all_cats[check_cat].mentor is not None:
                 previous_cat = Cat.all_cats[check_cat].ID
+
             elif next_cat == 1 and Cat.all_cats[
                     check_cat].ID != the_cat.ID and Cat.all_cats[
                         check_cat].dead == the_cat.dead and Cat.all_cats[
                             check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
                                 check_cat].exiled and Cat.all_cats[check_cat].mentor is not None:
                 next_cat = Cat.all_cats[check_cat].ID
+
             elif int(next_cat) > 1:
                 break
+
         elif game.switches['choosing_mate'] is True:
             if next_cat == 0 and Cat.all_cats[
                     check_cat].ID != the_cat.ID and Cat.all_cats[
@@ -148,6 +165,7 @@ def draw_next_prev_cat_buttons(the_cat):
                                 check_cat].exiled and Cat.all_cats[
                                     check_cat].status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
                 next_cat = Cat.all_cats[check_cat].ID
+
             elif int(next_cat) > 1:
                 break
 
@@ -165,11 +183,16 @@ def draw_next_prev_cat_buttons(the_cat):
                             check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
                                 check_cat].exiled:
                 next_cat = Cat.all_cats[check_cat].ID
+
             elif int(next_cat) > 1:
                 break
 
     if next_cat == 1:
         next_cat = 0
+
+# ---------------------------------------------------------------------------- #
+#                               the buttons                                    #
+# ---------------------------------------------------------------------------- #
     if next_cat != 0:
         buttons.draw_image_button((622, 25),
                                   button_name='next_cat',

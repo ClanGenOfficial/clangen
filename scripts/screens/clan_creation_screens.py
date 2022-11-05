@@ -74,10 +74,10 @@ class MakeClanScreen(Screens):
             verdana_big_light.text("Classic Mode", (465, y_value))
             y_value += 50
 
-            verdana_dark.blit_text("Sit back and relax. \n "
+            verdana_dark.blit_text("Sit back and relax. \n"
                                    "This mode is Clan Generator at it's most basic. The player is not expected to "
                                    "manage the minutia of clan life. Perfect for a relaxing game session or for "
-                                   "focusing on storytelling. \n With this mode you are the eye in the sky, "
+                                   "focusing on storytelling. \nWith this mode you are the eye in the sky, "
                                    "watching the clan as their story unfolds.",
                                    (x_value, y_value),
                                    line_break=40,
@@ -91,9 +91,9 @@ class MakeClanScreen(Screens):
             verdana_big_light.text("Expanded Mode", (453, y_value))
             y_value += 50
 
-            verdana_dark.blit_text("A more hands-on experience. // This mode has everything in Classic Mode as well as "
-                                   "more management focused features. // New features include: // "
-                                   "----no new features as of yet---- // With this mode you'll be making the important "
+            verdana_dark.blit_text("A more hands-on experience. \nThis mode has everything in Classic Mode as well as "
+                                   "more management focused features. \nNew features include: \n"
+                                   "----no new features as of yet---- \nWith this mode you'll be making the important "
                                    "clan-life decisions.",
                                    (x_value, y_value),
                                    line_break=40,
@@ -107,9 +107,9 @@ class MakeClanScreen(Screens):
             y_value += 50
 
             verdana_dark.blit_text("This mode has all the features of Expanded mode, but is significantly "
-                                   "more difficult.  If you'd like a challenge, then this mode is for you. // // "
-                                   "---this mode is currently unavailable--- // // You heard the warnings... "
-                                   "a Cruel Season is coming. // Will you survive?",
+                                   "more difficult.  If you'd like a challenge, then this mode is for you. \n \n"
+                                   "---this mode is currently unavailable--- \n \nYou heard the warnings... "
+                                   "a Cruel Season is coming. \nWill you survive?",
                                    (x_value, y_value),
                                    line_break=40,
                                    x_limit=700)
