@@ -670,11 +670,11 @@ class Events():
                 ]
                 if loner_name.suffix != '':
                     success_text = [
-                        f'{str(loner_name)} decides to keep their name '
+                        f'{str(loner_name)} decides to keep their name'
                     ]
                 else:
                     success_text = [
-                        f'The loner decides to take on a slightly more clan-like name, and is now called {str(loner_name)} '
+                        f'The loner decides to take on a slightly more clan-like name, and is now called {str(loner_name)}'
                     ]
                 game.cur_events_list.append(choice(loner_text))
                 game.cur_events_list.append(choice(success_text))
