@@ -559,15 +559,12 @@ class Cat():
 # ---------------------------------------------------------------------------- #
 #                                   relative                                   #
 # ---------------------------------------------------------------------------- #
-
     def get_parents(self):
         """Returns list containing parents of cat."""
-        if self.parent1 is not None:
-            if self.parent2 is not None:
+        if self.parent1:
+            if self.parent2:
                 return [self.parent1, self.parent2]
             return [self.parent1]
-        if self.parent2 is not None:
-            return [self.parent2]
         return []
 
     def get_siblings(self):
@@ -580,17 +577,15 @@ class Cat():
 
     def is_grandparent(self, other_cat):
         """Check if the cat is the grandparent of the other cat."""
-        # Get parents
+        # Get parents ID
         parents = other_cat.get_parents()
         for parent in parents:
-            # Get grandparents
-            grandparents = Cat.all_cats.get(parent)
-            if grandparents is not None:
-                # If there are grandparents, compare ID
-                grandparents_ids = grandparents.get_parents()
-                for grandparent in grandparents_ids:
-                    if self.ID == grandparent:
-                        return True
+            # Get parent 'Cat'
+            parent_obj = Cat.all_cats.get(parent)
+            if parent_obj:
+                # If there are parents, get grandparents and check if our ID is among them.
+                if self.ID in parent_obj.get_parents():
+                    return True
         return False
 
     def is_parent(self, other_cat):
@@ -844,9 +839,10 @@ class Cat():
 
         # Relationship checks
         # We don't need to parental checks if the cats have no parents =3
-        if self.parent1 or self.parent2 or other_cat.parent1 or other_cat.parent2:
+        # Apparently, parent2 can't exist without parent1, so we only need to check parent1
+        if self.parent1 or other_cat.parent1:
             # Check for relation via other_cat's parents (parent/grandparent)
-            if other_cat.parent1 or other_cat.parent2:
+            if other_cat.parent1:
                 if self.is_grandparent(other_cat) or self.is_parent(other_cat):
                     return False
                 # Check for uncle/aunt via self's sibs & other's parents
@@ -854,11 +850,11 @@ class Cat():
                     if self.is_uncle_aunt(other_cat):
                         return False
                 # Check for sibs via self's parents and other_cat's parents
-                if self.parent1 or self.parent2:
+                if self.parent1:
                     if self.is_sibling(other_cat) or other_cat.is_sibling(self):
                         return False
             # Check for relation via self's parents (parent/grandparent)
-            if self.parent1 or self.parent2:
+            if self.parent1:
                 if other_cat.is_grandparent(self) or other_cat.is_parent(self):
                     return False
                 # Check for uncle/aunt via other_cat's sibs & self's parents
