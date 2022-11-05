@@ -152,21 +152,7 @@ class PatrolScreen(Screens):
                     pos_x1 = 525
                     pos_y1 += 50
 
-        #  This keeps causing an IndexError whenever you add 6 cats and then try to click on one of those cats.
-        #  I am at a loss as to how to fix it
 
-        # if len(game.switches['current_patrol']) == 0:
-        #    buttons.draw_image_button((450, 458),
-        #                              button_name='add_6',
-        #                              size=(34, 34),
-        #                              fill_patrol=True,)
-        #    if game.switches['fill_patrol'] is True:
-        #        game.switches['current_patrol'] = []
-        #        for x in range(6):
-        #            random_cat = choice(able_cats)
-        #            if random_cat not in game.switches['current_patrol']:
-        #                game.switches['current_patrol'].insert(1, random_cat)
-        #        game.switches['fill_patrol'] = False
 
         # REMOVE ALL CATS FROM CURRENT PATROL LIST
         buttons.draw_image_button((560, 627),
@@ -219,27 +205,136 @@ class PatrolScreen(Screens):
         # SHOW CAT INFO
         if game.switches['cat'] is not None:
             self.show_info(able_cats)
-        else:  # DRAW GREYED OUT ADD CAT BUTTON
+
+        # DRAW GREYED OUT ADD CAT BUTTON IF NO CAT SELECTED
+        else:
             buttons.draw_button(
                 ('center', 460),
                 image='buttons/add_cat',
                 text='Add to Patrol',
                 available=False)
-            if able_cats != []:
-                buttons.draw_image_button((363, 495),  # DRAW AVAILABLE RANDOM BUTTON
-                                          button_name='random_dice',
-                                          size=(34, 34),
-                                          cat=choice(able_cats),
-                                          hotkey=[12])
-                buttons.draw_button((403, 495),
-                                    image='buttons/add_1',
-                                    text='add 1',
-                                    cat=choice(able_cats),
-                                    fill_patrol=True)
 
-                if game.switches['fill_patrol'] is True:
-                    game.switches['current_patrol'].append(game.switches['cat'])
-                    game.switches['fill_patrol'] = False
+        # ---------------------------------------------------------------------------- #
+        #                             roll a random cat                                #
+        # ---------------------------------------------------------------------------- #
+        # DRAW AVAILABLE RANDOM ROLL BUTTON IF AT LEAST TWO CATS ARE IN ABLE CATS
+        if len(game.switches['current_patrol']) < 6 and len(able_cats) > 1:
+            buttons.draw_image_button((323, 495),
+                                      button_name='random_dice',
+                                      size=(34, 34),
+                                      cat=choice(able_cats),
+                                      hotkey=[12])
+
+        # DRAW AVAILABLE RANDOM ROLL BUTTON IF ONLY ONE CAT IS IN ABLE CATS
+        elif len(game.switches['current_patrol']) < 6 and len(able_cats) == 1:
+            buttons.draw_image_button((323, 495),
+                                      button_name='random_dice',
+                                      size=(34, 34),
+                                      cat=able_cats[0],
+                                      hotkey=[12])
+        else:
+            buttons.draw_image_button((323, 495),
+                                      button_name='random_dice',
+                                      size=(34, 34),
+                                      hotkey=[12],
+                                      available=False)
+
+        # ---------------------------------------------------------------------------- #
+        #                         add 1 random cat to patrol                           #
+        # ---------------------------------------------------------------------------- #
+        # DRAW ADD 1 RANDOM CAT BUTTON IF PATROL STILL HAS SPACE
+        if len(game.switches['current_patrol']) <= 5 and len(able_cats) > 1:
+            buttons.draw_button((363, 495),
+                                image='buttons/add_1',
+                                text='add 1',
+                                cat=choice(able_cats),
+                                fill_patrol=True)
+
+            if game.switches['fill_patrol'] is True:
+                game.switches['current_patrol'].append(game.switches['cat'])
+                game.switches['fill_patrol'] = False
+
+        # DRAW ADD 1 RANDOM CAT BUTTON IF ONLY ONE CAT IS IN ABLE CATS
+        elif len(game.switches['current_patrol']) < 6 and len(able_cats) == 1:
+            buttons.draw_button((403, 495),
+                                image='buttons/add_1',
+                                text='add 1',
+                                cat=able_cats[0],
+                                fill_patrol=True)
+
+            if game.switches['fill_patrol'] is True:
+                game.switches['current_patrol'].append(game.switches['cat'])
+                game.switches['fill_patrol'] = False
+
+        else:
+            buttons.draw_button((363, 495),
+                                image='buttons/add_1',
+                                text='add 1',
+                                available=False)
+
+        # ---------------------------------------------------------------------------- #
+        #                        add 3 random cats to patrol                           #
+        # ---------------------------------------------------------------------------- #
+        # DRAW ADD 3 RANDOM CATS BUTTON IF PATROL STILL HAS SPACE
+        if len(game.switches['current_patrol']) <= 3 and len(able_cats) > 3:
+            buttons.draw_image_button((403, 495),
+                                      button_name='add_3',
+                                      size=(34, 34),
+                                      fill_patrol=True,)
+
+            if game.switches['fill_patrol'] is True:
+                for x in range(3):
+                    random_cat = choice(able_cats)
+                    game.switches['current_patrol'].append(random_cat)
+                game.switches['fill_patrol'] = False
+
+        elif len(game.switches['current_patrol']) <= 3 and len(able_cats) == 3:
+            buttons.draw_image_button((403, 495),
+                                      button_name='add_3',
+                                      size=(34, 34),
+                                      fill_patrol=True, )
+
+            if game.switches['fill_patrol'] is True:
+                for x in range(3):
+                    random_cat = able_cats[x]
+                    game.switches['current_patrol'].append(random_cat)
+                game.switches['fill_patrol'] = False
+        else:
+            buttons.draw_image_button((403, 495),
+                                      button_name='add_3',
+                                      size=(34, 34),
+                                      available=False)
+
+        # ---------------------------------------------------------------------------- #
+        #                        add 6 random cats to patrol                           #
+        # ---------------------------------------------------------------------------- #
+        # DRAW ADD 6 RANDOM CATS BUTTON IF PATROL STILL HAS SPACE
+        if len(game.switches['current_patrol']) == 0 and len(able_cats) > 6:
+            buttons.draw_image_button((443, 495),
+                                      button_name='add_6',
+                                      size=(34, 34),
+                                      fill_patrol=True,)
+            if game.switches['fill_patrol'] is True:
+                for x in range(6):
+                    random_cat = choice(able_cats)
+                    game.switches['current_patrol'].append(random_cat)
+                game.switches['fill_patrol'] = False
+
+        elif len(game.switches['current_patrol']) == 0 and len(able_cats) == 6:
+            buttons.draw_image_button((443, 495),
+                                      button_name='add_6',
+                                      size=(34, 34),
+                                      fill_patrol=True,)
+            if game.switches['fill_patrol'] is True:
+                for x in range(6):
+                    random_cat = able_cats[x]
+                    game.switches['current_patrol'].append(random_cat)
+                game.switches['fill_patrol'] = False
+        else:
+            buttons.draw_image_button((443, 495),
+                                      button_name='add_6',
+                                      size=(34, 34),
+                                      available=False)
 
 
         # GO ON PATROL
@@ -385,54 +480,7 @@ class PatrolScreen(Screens):
                               x_start=550,
                               x_limit=650)
 
-        # ALLOW RANDOM BUTTON TO BE PUSHED UNLESS THERE IS ONLY ONE ABLE CAT LEFT
-        if len(game.switches['current_patrol']) < 6 and len(able_cats) > 1:
-            buttons.draw_image_button((363, 495),
-                                      button_name='random_dice',
-                                      size=(34, 34),
-                                      cat=choice(able_cats),
-                                      hotkey=[12])
-            buttons.draw_button((403, 495),
-                                image='buttons/add_1',
-                                text='add 1',
-                                cat=choice(able_cats),
-                                fill_patrol=True)
 
-            if game.switches['fill_patrol'] is True:
-                game.switches['current_patrol'].append(game.switches['cat'])
-                game.switches['fill_patrol'] = False
-
-        # IF ONE CAT IS LEFT, ADDING A 'RANDOM' CAT WILL ADD THE LAST AVAILABLE CAT
-        elif len(game.switches['current_patrol']) < 6 and len(able_cats) == 1:
-            if chosen_cat in game.switches['current_patrol']:
-                buttons.draw_image_button((363, 495),
-                                          button_name='random_dice',
-                                          size=(34, 34),
-                                          cat=able_cats[0],
-                                          hotkey=[12])
-
-                buttons.draw_button((403, 495),
-                                    image='buttons/add_1',
-                                    text='add 1',
-                                    cat=able_cats[0],
-                                    fill_patrol=True)
-
-                if game.switches['fill_patrol'] is True:
-                    game.switches['current_patrol'].append(game.switches['cat'])
-                    game.switches['fill_patrol'] = False
-
-        # MAKE RANDOM BUTTON UNAVAILABLE
-        else:
-            if chosen_cat in game.switches['current_patrol']:
-                buttons.draw_image_button((363, 495),
-                                          button_name='random_dice',
-                                          size=(34, 34),
-                                          hotkey=[12],
-                                          available=False)
-                buttons.draw_button((403, 495),
-                                    image='buttons/add_1',
-                                    text='add 1',
-                                    available=False)
 
         # BUTTON TO ADD CAT TO PATROL
         if len(game.switches['current_patrol']) < 6 and chosen_cat is not None\
