@@ -1333,7 +1333,7 @@ class Events():
                         cause_of_death = [
                         name + ' murdered ' + other_name +
                         ' to take their place, but the leader had more lives than they expected. ' +
-                        other_name + ' retaliated and killed ' + name + ' in self-defense.'
+                        other_name + ' retaliated and killed ' + name + ' in self-defense'
                         ]
                         liveslost = choice([1, 2, 3, 4])
                         game.clan.leader_lives = current_lives - liveslost                            
@@ -1354,7 +1354,7 @@ class Events():
                             cause_of_death = [
                             name + ' murdered ' + other_name +
                             ' in hopes of taking their place, but the leader had more lives than they expected. ' +
-                            other_name + ' retaliated and killed ' + name + ' in self-defense.'
+                            other_name + ' retaliated and killed ' + name + ' in self-defense'
                             ]
                             liveslost = choice([1, 2, 2, 2, 3, 3, 3, 4])
                             game.clan.leader_lives = current_lives - liveslost
