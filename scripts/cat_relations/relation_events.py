@@ -160,7 +160,7 @@ class Relation_Events():
                 cat.mate = None
 
         # check if there is a cat in the clan for the second parent
-        second_parent = self.get_second_parent(cat,mate,game.settings['affair'])
+        second_parent = self.get_second_parent(cat, mate, game.settings['affair'])
         second_parent_relation = None
         if second_parent is not None:
             second_parent_relation = list(filter(lambda r: r.cat_to.ID == second_parent.ID ,cat.relationships))
@@ -168,6 +168,12 @@ class Relation_Events():
                 second_parent_relation = second_parent_relation[0]
             else: 
                 second_parent_relation = None
+        
+        # check if the second_parent is not none, if they also can have kits
+        if second_parent:
+            parent2_can_have_kits = self.check_if_can_have_kits(second_parent, game.settings['no unknown fathers'], game.settings['no gendered breeding'])
+            if not parent2_can_have_kits:
+                return
         
         self.handle_zero_moon_pregnant(cat, second_parent, second_parent_relation, clan)
 
