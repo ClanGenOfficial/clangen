@@ -580,23 +580,17 @@ class Cat():
 
     def is_grandparent(self, other_cat):
         """Check if the cat is the grandparent of the other cat."""
+        # Get parents
         parents = other_cat.get_parents()
-        left_parents = []
-        right_parents = []
-        if len(parents) == 2:
-            left_p = Cat.all_cats.get(parents[0])
-            if left_p is not None:
-                left_parents = left_p.get_parents()
-            right_p = Cat.all_cats.get(parents[1])
-            if right_p is not None:
-                right_parents = right_p.get_parents()
-        if len(parents) == 1:
-            left_p = Cat.all_cats.get(parents[0])
-            if left_p is not None:
-                left_parents = left_p.get_parents()
-
-        if self.ID in left_parents or self.ID in right_parents:
-            return True
+        for parent in parents:
+            # Get grandparents
+            grandparents = Cat.all_cats.get(parent)
+            if grandparents is not None:
+                # If there are grandparents, compare ID
+                grandparents_ids = grandparents.get_parents()
+                for grandparent in grandparents_ids:
+                    if self.ID == grandparent:
+                        return True
         return False
 
     def is_parent(self, other_cat):
