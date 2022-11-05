@@ -39,6 +39,7 @@ def json_load():
                       pelt=new_pelt)
         new_cat.age = cat["age"]
         new_cat.genderalign = cat["gender_align"]
+        new_cat.backstory = cat["backstory"] if "backstory" in cat else None
         new_cat.birth_cooldown = cat[
             "birth_cooldown"] if "birth_cooldown" in cat else 0
         new_cat.moons = cat["moons"]
@@ -84,7 +85,7 @@ def json_load():
             cat.load_relationship_of_cat()
             game.switches[
                 'error_message'] = f'There was an error when relationships for cat #{cat} are created.'
-            if cat.relationships != None and len(cat.relationships) < 1:
+            if cat.relationships is not None and len(cat.relationships) < 1:
                 cat.create_new_relationships()
         else:
             cat.relationships = []
@@ -314,7 +315,7 @@ def csv_load(all_cats):
                 the_cat = all_cats.get(id)
                 game.switches[
                     'error_message'] = f'There was an error when relationships for cat #{the_cat} are created.'
-                if the_cat.relationships != None and len(
+                if the_cat.relationships is not None and len(
                         the_cat.relationships) < 1:
                     the_cat.create_new_relationships()
         game.switches['error_message'] = ''

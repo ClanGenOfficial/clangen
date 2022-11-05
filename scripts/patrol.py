@@ -10,7 +10,7 @@ from scripts.cat.pelts import *
 #                              PATROL CLASS START                              #
 # ---------------------------------------------------------------------------- #
 
-class Patrol(object):
+class Patrol():
 
     def __init__(self):
         self.patrol_event = None
@@ -228,14 +228,14 @@ class Patrol(object):
                 ])
 
         # deadly patrols
-        if game_setting_disaster == True:
+        if game_setting_disaster:
             possible_patrols.extend(self.generate_patrol_events(DISASTER))
 
         # fighting patrols
         possible_patrols.extend(self.generate_patrol_events(GENERAL_FIGHTING))
 
 
-        if self.patrol_random_cat != None and self.patrol_random_cat.status == 'apprentice' and len(
+        if self.patrol_random_cat is not None and self.patrol_random_cat.status == 'apprentice' and len(
                 self.patrol_cats) > 1:
             possible_patrols.extend([
                 PatrolEvent(
@@ -847,10 +847,10 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
-            new_skill = choice(['formerly a loner', 'formerly a kittypet'])
-            kit.skill = new_skill
+            new_backstory = choice(['abandoned1', 'abandoned2', 'abandoned3'])
+            kit.backstory = new_backstory
             kit.thought = 'Is looking around the camp with wonder'
-            if kit.skill == 'formerly a kittypet':
+            if kit.backstory in ['abandoned2']:
                 if randint(0, 2) == 0:  # chance to add collar
                     kit.accessory = choice(collars)
 
@@ -859,6 +859,8 @@ class Patrol(object):
                 'apprentice', 'warrior', 'warrior', 'warrior', 'warrior',
                 'elder'
             ])
+            new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2', 
+            'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee', 'tragedy_survivor'])
             if self.patrol_event.patrol_id == 501:
                 new_status = 'warrior'
             kit = Cat(status=new_status)
@@ -874,7 +876,7 @@ class Patrol(object):
                 relationships.append(Relationship(kit, the_cat))
             kit.relationships = relationships
             game.clan.add_cat(kit)
-            kit.skill = 'formerly a loner'
+            kit.backstory = new_backstory
             kit.thought = 'Is looking around the camp with wonder'
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
@@ -888,7 +890,7 @@ class Patrol(object):
                 num_kits = choice([2, 2, 2, 2, 3, 4])
                 for _ in range(num_kits):
                     kit2 = Cat(status='kitten', moons=0)
-                    kit2.skill = 'formerly a loner'
+                    kit2.backstory = 'outsider_roots2'
                     kit2.parent1 = kit.ID
                     kit2.thought = 'Is looking around the camp with wonder'
                     #create and update relationships
@@ -927,7 +929,8 @@ class Patrol(object):
             game.clan.add_cat(kit)
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
-            kit.skill = 'formerly a kittypet'
+            new_backstory = choice(['kittypet1', 'kittypet2'])
+            kit.backstory = new_backstory
             kit.thought = 'Is looking around the camp with wonder'
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
@@ -957,14 +960,16 @@ class Patrol(object):
             game.clan.add_cat(kit)
             add_siblings_to_cat(kit, cat_class)
             add_children_to_cat(kit, cat_class)
-            kit.skill = 'formerly a loner'
+            new_backstory = choice(['medicine_cat', 'disgraced', 'loner1', 'loner2'])
+            kit.backstory = new_backstory
+            kit.skill = choice(['good healer', 'great healer', 'fantastic healer'])
             kit.thought = 'Is looking around the camp with wonder'
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
-            if randint(0, 5) == 0:  # chance to keep name
+            if randint(0, 5) == 0 and kit.backstory not in ['medicine_cat', 'disgraced']:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
-            elif randint(0, 3) == 0:
+            elif randint(0, 3) == 0 and kit.backstory not in ['medicine_cat', 'disgraced']:
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = choice(names.normal_suffixes)
 
@@ -982,7 +987,7 @@ class Patrol(object):
 #                               PATROL CLASS END                               #
 # ---------------------------------------------------------------------------- #
 
-class PatrolEvent(object):
+class PatrolEvent():
 
     def __init__(self,
                  patrol_id,

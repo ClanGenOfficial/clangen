@@ -1,7 +1,7 @@
 from random import choice, randint
 
 
-class SingleColour(object):
+class SingleColour():
     name = "SingleColour"
     sprites = {1: 'single'}
     white_patches = None
@@ -14,7 +14,7 @@ class SingleColour(object):
     def __repr__(self):
         return self.colour + self.length
 
-class TwoColour(object):
+class TwoColour():
     name = "TwoColour"
     sprites = {1: 'single', 2: 'white'}
     white_patches = [
@@ -39,7 +39,7 @@ class TwoColour(object):
     def __repr__(self):
         return f"white and {self.colour}{self.length}"
 
-class Tabby(object):
+class Tabby():
     name = "Tabby"
     sprites = {1: 'tabby', 2: 'white'}
     white_patches = [
@@ -66,7 +66,7 @@ class Tabby(object):
         else:
             return self.colour + self.length + " tabby"
 
-class Marbled(object):
+class Marbled():
     name = "Marbled"
     sprites = {1: 'marbled', 2: 'white'}
     white_patches = [
@@ -93,7 +93,7 @@ class Marbled(object):
         else:
             return self.colour + self.length + " marbled"
 
-class Rosette(object):
+class Rosette():
     name = "Rosette"
     sprites = {1: 'rosette', 2: 'white'}
     white_patches = [
@@ -120,7 +120,7 @@ class Rosette(object):
         else:
             return self.colour + self.length + " rosette"
 
-class Smoke(object):
+class Smoke():
     name = "Smoke"
     sprites = {1: 'smoke', 2: 'white'}
     white_patches = [
@@ -148,7 +148,7 @@ class Smoke(object):
         else:
             return self.colour + self.length + " smoke"
 
-class Ticked(object):
+class Ticked():
     name = "Ticked"
     sprites = {1: 'ticked', 2: 'white'}
     white_patches = [
@@ -176,7 +176,7 @@ class Ticked(object):
         else:
             return self.colour + self.length + " ticked"
 
-class Speckled(object):
+class Speckled():
     name = "Speckled"
     sprites = {1: 'speckled', 2: 'white'}
     white_patches = [
@@ -203,7 +203,7 @@ class Speckled(object):
         else:
             return f"{self.colour} speckled{self.length}"
 
-class Bengal(object):
+class Bengal():
     name = "Bengal"
     sprites = {1: 'bengal', 2: 'white'}
     white_patches = [
@@ -231,7 +231,7 @@ class Bengal(object):
         else:
             return f"{self.colour} bengal{self.length}"
 
-class Tortie(object):
+class Tortie():
     name = "Tortie"
     sprites = {1: 'tortie', 2: 'white'}
     white_patches = [
@@ -254,7 +254,7 @@ class Tortie(object):
         else:
             return f"tortoiseshell{self.length}"
 
-class Calico(object):
+class Calico():
     name = "Calico"
     sprites = {1: 'calico', 2: 'white'}
     white_patches = [
@@ -299,10 +299,8 @@ pelt_length = ["short", "medium", "medium", "long"]
 eye_colours = ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE']
 scars1 = ["ONE", "TWO", "THREE"]
 scars2 = ["LEFTEAR", "RIGHTEAR", "LEFTEAR", "RIGHTEAR", "NOTAIL", "HALFTAIL", "NOPAW"]
-scars4 = [
-    "TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE", "BELLY",
-    "TOETRAP", "LEGBITE", "NECKBITE", "FACE"
-]
+scars4 = ["TAILSCAR", "SNOUT", "CHEEK", "SIDE", "THROAT", "TAILBASE", "BELLY",
+          "TOETRAP", "LEGBITE", "NECKBITE", "FACE"]
 scars5 = ["SNAKE"]
 
 plant_accessories = ["MAPLE LEAF", "HOLLY", "BLUE BERRIES", "FORGET ME NOTS", "RYE STALK", "LAUREL",
@@ -441,7 +439,7 @@ def choose_pelt(gender,colour=None,white=None,pelt=None,length=None,determined=F
 def describe_color(pelt, tortiecolour, tortiepattern, white_patches):
         color_name = ''
         color_name = str(pelt.colour).lower()
-        if tortiecolour != None:
+        if tortiecolour is not None:
             color_name = str(tortiecolour).lower()
         if color_name == 'palegrey':
             color_name = 'pale grey'

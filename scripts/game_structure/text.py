@@ -4,7 +4,7 @@ from .game_essentials import game, screen, screen_x, screen_y
 pygame.init()
 
 
-class Font(object):
+class Font():
     used_screen = screen  # The surface to draw the text on
     extra = 0  # Add extra size to text for readability
     extra_space = 0  # Extra size means extra space between text may be needed

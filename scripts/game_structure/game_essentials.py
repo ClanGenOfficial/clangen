@@ -11,7 +11,7 @@ pygame.display.set_caption('Clan Generator')
 
 
 # G A M E
-class Game(object):
+class Game():
     # Text box variables
     naming_box = pygame.Surface((140, 20))
     naming_box.fill((230, 230, 230))
@@ -94,7 +94,8 @@ class Game(object):
         'hunting_territory': (0, 0),
         'training_territory': (0, 0),
         'options_tab': None,
-        'game_mode': ''
+        'game_mode': '',
+        'show_info': False
     }
     all_screens = {}
     cur_events = {}
@@ -261,7 +262,7 @@ class Game(object):
             clanname = game.switches['clan_name']
         elif len(game.switches['clan_name']) > 0:
             clanname = game.switches['clan_list'][0]
-        elif game.clan != None:
+        elif game.clan is not None:
             clanname = game.clan.name
         directory = 'saves/' + clanname
         if not os.path.exists(directory):
@@ -276,6 +277,7 @@ class Game(object):
                 "gender_align": inter_cat.genderalign,
                 "birth_cooldown": inter_cat.birth_cooldown,
                 "status": inter_cat.status,
+                "backstory": inter_cat.backstory if inter_cat.backstory else None,
                 "age": inter_cat.age,
                 "moons": inter_cat.moons,
                 "trait": inter_cat.trait,
@@ -326,7 +328,7 @@ class Game(object):
             print("Saving cats didn't work.")
 
 # M O U S E
-class Mouse(object):
+class Mouse():
     used_screen = screen
 
     def __init__(self):

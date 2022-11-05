@@ -37,7 +37,7 @@ COMPATIBILITY_WEIGHT = 3
 #                           START Relationship class                           #
 # ---------------------------------------------------------------------------- #
 
-class Relationship(object):
+class Relationship():
     def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0, admiration=0, comfortable=0, jealousy=0, trust=0, log = []) -> None:        
         self.cat_from = cat_from
         self.cat_to = cat_to
@@ -60,7 +60,7 @@ class Relationship(object):
                 platonic_like = 20
                 comfortable = 10
 
-        if self.cat_from.mate != None and self.cat_from.mate == self.cat_to.ID:
+        if self.cat_from.mate is not None and self.cat_from.mate == self.cat_to.ID:
             self.mates = True
             if romantic_love == 0:
                 romantic_love = 20
@@ -220,7 +220,7 @@ class Relationship(object):
         if self.platonic_like > 30 or love_p == 1 or self.romantic_love > 5:
             # increase the chance of an love event for two un-mated cats
             action_possibilities = action_possibilities + LOVE['love_interest_only']
-            if self.cat_from.mate == None and self.cat_to.mate == None:
+            if self.cat_from.mate is None and self.cat_to.mate is None:
                 action_possibilities = action_possibilities + LOVE['love_interest_only']
 
         if self.opposite_relationship.romantic_love > 20:
@@ -396,7 +396,7 @@ class Relationship(object):
 
     def get_high_increase_value(self):
         compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
-        if compatibility == None:
+        if compatibility is None:
             return DIRECT_INCREASE_HIGH
         if compatibility:
             return DIRECT_INCREASE_HIGH + COMPATIBILITY_WEIGHT
@@ -405,7 +405,7 @@ class Relationship(object):
 
     def get_high_decrease_value(self):
         compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
-        if compatibility == None:
+        if compatibility is None:
             return DIRECT_DECREASE_HIGH
         if compatibility:
             return DIRECT_DECREASE_HIGH + COMPATIBILITY_WEIGHT
@@ -414,7 +414,7 @@ class Relationship(object):
 
     def get_low_increase_value(self):
         compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
-        if compatibility == None:
+        if compatibility is None:
             return DIRECT_INCREASE_LOW
         if compatibility:
             return DIRECT_INCREASE_LOW + COMPATIBILITY_WEIGHT
@@ -423,7 +423,7 @@ class Relationship(object):
 
     def get_low_decrease_value(self):
         compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
-        if compatibility == None:
+        if compatibility is None:
             return DIRECT_DECREASE_LOW
         if compatibility:
             return DIRECT_DECREASE_LOW + COMPATIBILITY_WEIGHT

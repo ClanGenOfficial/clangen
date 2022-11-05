@@ -129,6 +129,17 @@ class ChanceOfKits(unittest.TestCase):
         self.assertEqual(chance, 190)
 
 
+class CanHaveKits(unittest.TestCase):
+    def test_prevent_kits(self):
+        # given
+        relation_events = Relation_Events()
+        cat = Cat()
+        cat.no_kits = True
+
+        # then
+        self.assertFalse(relation_events.check_if_can_have_kits(cat,unknown_parent_setting=True,no_gendered_breeding=False))
+    
+
 class Pregnancy(unittest.TestCase):
     @patch('scripts.cat_relations.relation_events.Relation_Events.get_kits_chance')
     def test_single_cat_female(self, get_kits_chance):
@@ -162,6 +173,7 @@ class Pregnancy(unittest.TestCase):
 
         # then
         self.assertTrue(cat1.ID in clan.pregnancy_data.keys())
+        self.assertEqual(clan.pregnancy_data[cat1.ID]["second_parent"], cat2.ID)
 
     @patch('scripts.cat_relations.relation_events.Relation_Events.get_kits_chance')
     def test_single_cat_male(self, get_kits_chance):
@@ -177,4 +189,30 @@ class Pregnancy(unittest.TestCase):
         relation_events.handle_zero_moon_pregnant(cat,None,None,clan)
 
         # then
+        # a single male cat is not pregnant, event with the setting,
+        # but should bring kits back to the clan
         self.assertNotEqual(number_before, len(cat.all_cats))
+
+        # given
+        relation_events = Relation_Events()
+        test_clan = Clan()
+        test_clan.pregnancy_data = {}
+        cat1 = Cat(gender = 'female')
+        cat1.no_kits = True
+        cat2 = Cat(gender = 'male')
+
+        cat1.mate = cat2.ID
+        cat2.mate = cat1.ID
+        cat1.relationships.append(
+            Relationship(cat1, cat2,mates=True,family=False,romantic_love=100)
+        )
+        cat2.relationships.append(
+            Relationship(cat2, cat1,mates=True,family=False,romantic_love=100)
+        )
+
+        # when
+        get_kits_chance.return_value = 1
+        relation_events.handle_having_kits(cat=cat1,clan=test_clan)
+
+        # then
+        self.assertFalse(cat1.ID in test_clan.pregnancy_data.keys())

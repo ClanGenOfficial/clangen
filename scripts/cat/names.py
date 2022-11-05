@@ -2,7 +2,7 @@ import random
 import os
 
 
-class Name(object):
+class Name():
     special_suffixes = {
         "kitten": "kit",
         "apprentice": "paw",

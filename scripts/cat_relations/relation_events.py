@@ -1,13 +1,13 @@
 from scripts.utility import *
 from scripts.cat.cats import *
 
-class Relation_Events(object):
+class Relation_Events():
     """All relationship events."""
 
     MAX_ATTEMPTS = 1000
 
     def __init__(self) -> None:
-        self.living_cats = len(list(filter(lambda r: r.dead == False, Cat.all_cats.values())))
+        self.living_cats = len(list(filter(lambda r: not r.dead, Cat.all_cats.values())))
         self.event_sums = 0
         self.had_one_event = False
         pass
@@ -42,7 +42,7 @@ class Relation_Events(object):
             # get some cats to make easier checks
             cat_from = relationship.cat_from
             cat_from_mate = None
-            if cat_from.mate != None:
+            if cat_from.mate is not None:
                 if cat_from.mate not in Cat.all_cats.keys():
                     game.cur_events_list.insert(0, f"Cat #{cat_from} has a invalid mate. It will set to none.")
                     cat_from.mate = None
@@ -51,18 +51,18 @@ class Relation_Events(object):
 
             cat_to = relationship.cat_to
             cat_to_mate = None
-            if cat_to.mate != None:
+            if cat_to.mate is not None:
                 if cat_to.mate not in Cat.all_cats.keys():
                     game.cur_events_list.insert(0, f"Cat #{cat_to} has a invalid mate. It will set to none.")
                     cat_to.mate = None
                     return
                 cat_to_mate = Cat.all_cats.get(cat_to.mate)
 
-            if relationship.opposite_relationship == None:
+            if relationship.opposite_relationship is None:
                 relationship.link_relationship()
 
             # overcome dead mates
-            if cat_from_mate != None and cat_from_mate.dead and randint(1, 25) == 1 and cat_from_mate.dead_for >= 4:
+            if cat_from_mate is not None and cat_from_mate.dead and randint(1, 25) == 1 and cat_from_mate.dead_for >= 4:
                 self.had_one_event = True
                 game.cur_events_list.append(
                     f'{str(cat_from.name)} will always love {str(cat_from_mate.name)} but has decided to move on'
@@ -91,13 +91,13 @@ class Relation_Events(object):
                     bigger_than_current = relationship.romantic_love > mate_relationship[
                         0].romantic_love
                 else:
-                    if cat_from_mate != None:
+                    if cat_from_mate is not None:
                         cat_from_mate.relationships.append(
                             Relationship(cat_from, cat_from_mate, True))
                     bigger_than_current = True
 
                 # check cat to value
-                if cat_to_mate != None:
+                if cat_to_mate is not None:
                     opposite_mate_relationship = list(
                         filter(lambda r: r.cat_to.ID == cat_from.ID,
                                cat_to.relationships))
@@ -116,7 +116,7 @@ class Relation_Events(object):
                     cat_from_mate = Cat.all_cats.get(cat_from.mate)
                     self.check_if_breakup(cat_from, cat_from_mate)
 
-                    if cat_to_mate != None:
+                    if cat_to_mate is not None:
                         self.check_if_breakup(cat_to, cat_to_mate)
 
                     # new relationship
@@ -133,9 +133,9 @@ class Relation_Events(object):
         for pregnancy_key in clan.pregnancy_data.keys():
             clan.pregnancy_data[pregnancy_key]["moons"] += 1
 
-    def handle_having_kits(self, cat, clan = game.clan):
+    def handle_having_kits(self, cat, clan):
         """Handles pregnancy of a cat."""
-        if clan == None:
+        if clan is None:
             return
         if cat.ID in clan.pregnancy_data.keys():
             moons = clan.pregnancy_data[cat.ID]["moons"]
@@ -160,7 +160,7 @@ class Relation_Events(object):
                 cat.mate = None
 
         # check if there is a cat in the clan for the second parent
-        second_parent = self.get_second_parent(cat,mate,game.settings['affair'])
+        second_parent = self.get_second_parent(cat, mate, game.settings['affair'])
         second_parent_relation = None
         if second_parent is not None:
             second_parent_relation = list(filter(lambda r: r.cat_to.ID == second_parent.ID ,cat.relationships))
@@ -168,6 +168,12 @@ class Relation_Events(object):
                 second_parent_relation = second_parent_relation[0]
             else: 
                 second_parent_relation = None
+        
+        # check if the second_parent is not none, if they also can have kits
+        if second_parent:
+            parent2_can_have_kits = self.check_if_can_have_kits(second_parent, game.settings['no unknown fathers'], game.settings['no gendered breeding'])
+            if not parent2_can_have_kits:
+                return
         
         self.handle_zero_moon_pregnant(cat, second_parent, second_parent_relation, clan)
 
@@ -177,13 +183,14 @@ class Relation_Events(object):
         warrior_name = Name()
         warrior_name_two = Name()
         kits_amount = 0
+        other_clan_name = "FILLER_CLAN"
         possible_strings = [
             f'{name} had a litter of {str(kits_amount)} kit(s) with a ' + choice(['loner', 'rogue', 'kittypet']) + ' named ' + str(loner_name),
             f'{name} had a secret litter of {str(kits_amount)} kit(s) with a ' + choice(['loner', 'rogue', 'kittypet']) + ' named ' + str(loner_name),
-            f'{name} had a secret litter of {str(kits_amount)} kit(s) with a ' + choice(game.clan.all_clans).name + f'Clan warrior named {str(warrior_name)}',
-            f'{name} had a secret litter of {str(kits_amount)} kit(s) with {str(warrior_name)} of ' + choice(game.clan.all_clans).name + 'Clan',
-            f'{name} had a secret litter of {str(kits_amount)} kit(s) with ' + choice(game.clan.all_clans).name + f'Clan\'s deputy {str(warrior_name)}',
-            f'{name} had a secret litter of {str(kits_amount)} kit(s) with ' + choice(game.clan.all_clans).name + f'Clan\'s leader {str(names.prefix)}star',
+            f'{name} had a secret litter of {str(kits_amount)} kit(s) with a ' + other_clan_name + f'Clan warrior named {str(warrior_name)}',
+            f'{name} had a secret litter of {str(kits_amount)} kit(s) with {str(warrior_name)} of ' + other_clan_name + 'Clan',
+            f'{name} had a secret litter of {str(kits_amount)} kit(s) with ' + other_clan_name + f'Clan\'s deputy {str(warrior_name)}',
+            f'{name} had a secret litter of {str(kits_amount)} kit(s) with ' + other_clan_name + f'Clan\'s leader {str(names.prefix)}star',
             f'{name} had a secret litter of {str(kits_amount)} kit(s) with another Clan\'s warrior',
             f'{name} had a secret litter of {str(kits_amount)} kit(s) with a warrior named {str(warrior_name_two)}',
             f'{name} had a secret litter of {str(kits_amount)} kit(s) with {str(warrior_name_two)} from another Clan\'s',
@@ -236,7 +243,7 @@ class Relation_Events(object):
 
     def handle_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
         from_mate_in_clan = False
-        if cat_from.mate != None:
+        if cat_from.mate is not None:
             if cat_from.mate not in Cat.all_cats.keys():
                 game.cur_events_list.insert(0, f"Cat #{cat_from} has a invalid mate. It will set to none.")
                 cat_from.mate = None
@@ -273,7 +280,7 @@ class Relation_Events(object):
 
         cat_to = highest_romantic_relation.cat_to
         if cat_to.is_potential_mate(cat, True) and cat.is_potential_mate(cat_to, True):
-            if cat_to.mate == None and cat.mate == None:
+            if cat_to.mate is None and cat.mate is None:
                 self.had_one_event = True
                 cat.set_mate(cat_to)
                 cat_to.set_mate(cat)
@@ -297,7 +304,7 @@ class Relation_Events(object):
 
     def handle_zero_moon_pregnant(self, cat, other_cat = None, relation = None, clan = game.clan):
         """Handles if the cat is zero moons pregnant."""
-        if other_cat != None and (other_cat.dead or other_cat.exiled or other_cat.birth_cooldown > 0):
+        if other_cat is not None and (other_cat.dead or other_cat.exiled or other_cat.birth_cooldown > 0):
             return
 
         chance = self.get_kits_chance(cat, other_cat, relation)
@@ -307,7 +314,7 @@ class Relation_Events(object):
         
         # even with no_gendered_breeding on a male cat with no second parent should not be count as pregnant
         # instead, the cat should get the kit instantly
-        if cat.gender == 'male' and other_cat == None:
+        if cat.gender == 'male' and other_cat is None:
             amount = self.get_amount_of_kits(cat)
             self.get_kits(amount, cat, None, clan)
             print_event = f"{str(cat.name)} brought a litter of {str(amount)} kit(s) back to camp, but refused to talk about their origin"
@@ -325,16 +332,16 @@ class Relation_Events(object):
 
         # if the other cat is a female and the current cat is a male, make the female cat pregnant
         pregnant_cat = cat
-        if cat.gender == 'male' and other_cat != None and other_cat.gender == 'female':
+        if cat.gender == 'male' and other_cat is not None and other_cat.gender == 'female':
             pregnant_cat = other_cat
             clan.pregnancy_data[other_cat.ID] = {
-                "second_parent": cat.ID,
+                "second_parent": str(cat.ID),
                 "moons": 0,
                 "amount": 0
             }
         else:
             clan.pregnancy_data[cat.ID] = {
-                "second_parent": other_cat,
+                "second_parent": str(other_cat),
                 "moons": 0,
                 "amount": 0
             }
@@ -387,7 +394,7 @@ class Relation_Events(object):
 
         # choose event string
         print_event = ""
-        if other_cat == None:
+        if other_cat is None:
             print_event = f"{str(cat.name)} had a litter of {str(kits_amount)} kit(s), but refused to talk about their origin"
         elif cat.mate == other_cat.ID:
             if cat.gender == 'female':
@@ -524,9 +531,9 @@ class Relation_Events(object):
 
         # change the change based on the personality
         get_along = get_personality_compatibility(cat_from, cat_to)
-        if get_along != None and get_along:
+        if get_along is not None and get_along:
             chance_number += 5
-        if get_along != None and not get_along:
+        if get_along is not None and not get_along:
             chance_number -= 10
 
         # change the chance based on the last interactions
@@ -562,12 +569,12 @@ class Relation_Events(object):
         old_male = False
         if cat.gender == 'male' and cat.age == 'elder':
             old_male = True
-        if other_cat != None and other_cat.gender == 'male' and other_cat.age == 'elder':
+        if other_cat is not None and other_cat.gender == 'male' and other_cat.age == 'elder':
             old_male = True
 
         # calculate the chance of having kits
         chance = 80
-        if other_cat != None:
+        if other_cat is not None:
             chance = 45
             if relation.romantic_love >= 50:
                 chance -= 5
@@ -599,7 +606,7 @@ class Relation_Events(object):
             Returns:
                 integer (number)
         """
-        if mate_relation == None:
+        if mate_relation is None:
             return 0
 
         affair_chance = 100
@@ -621,7 +628,7 @@ class Relation_Events(object):
     def get_second_parent(self, cat, mate = None, affair = game.settings['affair']):
         """ Return the second parent of a cat, which will have kits."""
         second_parent = mate
-        if not affair or mate == None:
+        if not affair or mate is None:
             # if the cat has no mate, None will be returned
             return second_parent
 
@@ -633,7 +640,7 @@ class Relation_Events(object):
             cat.relationships.append(mate_relation)
 
         highest_romantic_relation = get_highest_romantic_relation(cat.relationships)
-        if highest_romantic_relation == None:
+        if highest_romantic_relation is None:
             return second_parent
 
         if highest_romantic_relation.cat_to.ID == mate.ID:
@@ -656,7 +663,7 @@ class Relation_Events(object):
         all_kitten = []
         for kit in range(kits_amount):
             kit = None
-            if other_cat != None:
+            if other_cat is not None:
                 if cat.gender == 'female':
                     kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
                     all_kitten.append(kit)
