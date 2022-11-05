@@ -9,6 +9,9 @@ from scripts.cat.pelts import *
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
 # ---------------------------------------------------------------------------- #
+"""
+When adding new patrols, use \n to add a paragraph break in the text
+"""
 
 class Patrol(object):
 

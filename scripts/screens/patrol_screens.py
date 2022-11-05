@@ -378,6 +378,19 @@ class PatrolScreen(Screens):
                                           size=(34, 34),
                                           cat=choice(able_cats),
                                           hotkey=[12])
+        elif len(game.switches['current_patrol']) < 6 and len(able_cats) == 1:
+            if chosen_cat in game.switches['current_patrol']:
+                buttons.draw_image_button((452, 458),
+                                          button_name='random_dice',
+                                          size=(34, 34),
+                                          cat=able_cats[0],
+                                          hotkey=[12])
+            else:  # POSITION BUTTON DIFFERENTLY IF 'REMOVE CAT' BUTTON IS VISIBLE
+                buttons.draw_image_button((433, 458),
+                                          button_name='random_dice',
+                                          size=(34, 34),
+                                          cat=able_cats[0],
+                                          hotkey=[12])
         else:  # MAKE RANDOM BUTTON UNAVAILABLE
             if chosen_cat in game.switches['current_patrol']:
                 buttons.draw_image_button((452, 458),

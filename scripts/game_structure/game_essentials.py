@@ -129,8 +129,8 @@ class Game(object):
         'shaders': False,
         'hotkey display': False,
         'random relation': True,
-        'show dead relation': True,
-        'show empty relation': True,
+        'show dead relation': False,
+        'show empty relation': False,
         'romantic with former mentor': True,
         'game_mode': None
     }  # The current settings

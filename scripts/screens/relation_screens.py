@@ -772,7 +772,7 @@ class RelationshipScreen(Screens):
             f"Show Dead",
             (70, 513))
 
-        if game.settings['show dead relation'] is False:
+        if game.settings['show dead relation'] is True:
             buttons.draw_image_button((169, 505),
                                       button_name='on',
                                       size=(46, 34),
@@ -787,7 +787,7 @@ class RelationshipScreen(Screens):
                                       available=False
                                       )
 
-        if game.settings['show dead relation'] is True:
+        if game.settings['show dead relation'] is False:
             buttons.draw_image_button((169, 505),
                                       button_name='on',
                                       size=(46, 34),
@@ -806,7 +806,7 @@ class RelationshipScreen(Screens):
             f"Show Empty",
             (70, 558))
 
-        if game.settings['show empty relation'] is False:
+        if game.settings['show empty relation'] is True:
             buttons.draw_image_button((169, 550),
                                       button_name='on',
                                       size=(46, 34),
@@ -821,7 +821,7 @@ class RelationshipScreen(Screens):
                                       available=False
                                       )
 
-        if game.settings['show empty relation'] is True:
+        if game.settings['show empty relation'] is False:
             buttons.draw_image_button((169, 550),
                                       button_name='on',
                                       size=(46, 34),

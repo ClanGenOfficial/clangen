@@ -140,13 +140,6 @@ def draw_settings_header():
                               button_name='relation_settings',
                               size=(150, 30),
                               cur_screen='relationship setting screen')
-
-    #x_pos += 155
-    #text = "Game Modes"
-    #buttons.draw_image_button((x_pos, 100),
-    #            text=text,
-    #            cur_screen='game_mode screen')
-
     buttons.draw_image_button((400, 100),
                               button_name='info',
                               size=(150, 30),
@@ -182,7 +175,7 @@ def draw_back_and_save():
 # ON / OFF BUTTONS
 def draw_on_off(y_value, setting):
     x_value = 120
-    if game.settings[setting] is False:
+    if game.settings[setting] is True:
         buttons.draw_image_button((x_value, y_value),
                                   button_name='on',
                                   size=(46, 34),
@@ -195,7 +188,7 @@ def draw_on_off(y_value, setting):
                                   available=False
                                   )
 
-    if game.settings[setting] is True:
+    if game.settings[setting] is False:
         buttons.draw_image_button((x_value, y_value),
                                   button_name='on',
                                   size=(46, 34),

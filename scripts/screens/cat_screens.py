@@ -1,3 +1,5 @@
+from random import choice
+
 from .base_screens import Screens, cat_profiles, draw_next_prev_cat_buttons
 
 from scripts.utility import draw_large
@@ -86,11 +88,10 @@ def accessory_display_name(cat, accessory):
         acc_display = None
     return acc_display
 
-def backstory_text(cat, backstory):
-    backstory = cat.backstory
+def bs_blurb_text(cat, backstory=None):
     bs_blurb = None
     if backstory is None:
-        return ''
+        bs_blurb = "This cat was born into the clan where they currently reside"
     if backstory == 'clanborn':
         bs_blurb = "This cat was born into the clan where they currently reside"
     if backstory == 'half-clan1':
@@ -136,6 +137,14 @@ def backstory_text(cat, backstory):
         bs_blurb = "This cat came to this clan after fleeing from their former clan and the tyrannical leader that had taken over"
     if backstory == 'tragedy_survivor':
         bs_blurb = "Something horrible happened to this cat's previous clan. They refuse to speak about it"
+    return bs_blurb
+
+def backstory_text(cat):
+
+    backstory = cat.backstory
+    bs_blurb = None
+    if backstory is None:
+        return ''
     bs_display = backstory
     if bs_display == 'clanborn':
         bs_display = 'clanborn'
@@ -173,16 +182,14 @@ def backstory_text(cat, backstory):
         bs_display = None
     else:
         return bs_display
-    if bs_blurb == None:
-        bs_blurb = None
-    else:
-        return bs_blurb
 
-
+    if text == 'backstory':
+        return bs_display
 
 
 
 class ProfileScreen(Screens):
+    backstory_tab = pygame.image.load("resources/images/backstory_bg.png")
 
     def on_use(self):
         # use this variable to point to the cat object in question
@@ -439,16 +446,69 @@ class ProfileScreen(Screens):
             count2 += 1
 
         # backstory
-        if the_cat.backstory != None:
-            bs_text = backstory_text(the_cat, the_cat.backstory)
+        if the_cat.backstory is not None:
+            bs_text = backstory_text(the_cat)
             verdana_small.text('backstory: ' + bs_text, (490, 230 + count2 * 15))
             count2 += 1
         else:
             verdana_small.text('backstory: ' + 'Clanborn', (490, 230 + count2 * 15))
             count2 += 1
 
-
         the_cat = Cat.all_cats.get(game.switches['cat'])
+
+        # ---------------------------------------------------------------------------- #
+        #                                 BACKSTORY TAB                                #
+        # ---------------------------------------------------------------------------- #
+
+        if game.switches['profile_tab_group'] == 'backstory':
+            buttons.draw_image_button((48, 622),
+                                      button_name='backstory',
+                                      text="backstory",
+                                      size=(176, 30),
+                                      profile_tab_group=None,
+                                      )
+            screen.blit(ProfileScreen.backstory_tab, (65, 465))
+            backstory = backstory_text(the_cat)
+            bs_blurb = bs_blurb_text(the_cat, backstory=the_cat.backstory)
+
+            if the_cat.backstory is not None:
+                verdana_dark.blit_text(f'Backstory: {backstory} \n{bs_blurb}',
+                                       (90, 485),
+                                       x_limit=460,
+                                       line_break=30)
+            else:
+                verdana_dark.blit_text(f'Backstory: Clanborn \n{bs_blurb}',
+                                       (90, 485),
+                                       x_limit=460,
+                                       line_break=30)
+
+        else:
+            buttons.draw_image_button((48, 622),
+                                      button_name='backstory',
+                                      text="backstory",
+                                      size=(176, 30),
+                                      profile_tab_group='backstory',
+                                      available=game.switches['profile_tab_group'] not in ['backstory', 'relations'],
+                                      )
+
+        # ---------------------------------------------------------------------------- #
+        #                              PLACEHOLDER TABS                                #
+        # ---------------------------------------------------------------------------- #
+        buttons.draw_image_button((224, 622),
+                                  button_name='cat_tab_3_blank',
+                                  text='placeholder',
+                                  size=(176, 30),
+                                  available=False)
+        buttons.draw_image_button((400, 622),
+                                  button_name='cat_tab_3_blank',
+                                  text='placeholder',
+                                  size=(176, 30),
+                                  available=False)
+        buttons.draw_image_button((576, 622),
+                                  button_name='cat_tab_4_blank',
+                                  text='placeholder',
+                                  size=(176, 30),
+                                  available=False)
 
         # ---------------------------------------------------------------------------- #
         #                                 RELATIONS TAB                                #
@@ -726,29 +786,26 @@ class ProfileScreen(Screens):
                                       )
             if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
                                ] and not the_cat.no_kits and not the_cat.dead:
-                buttons.draw_image_button((402, 574),
-                                          button_name='prevent_kits',
+                buttons.draw_button((402, 574),
+                                          image='buttons/prevent_kits',
                                           text='Prevent kits',
                                           no_kits=True,
                                           cat_value=the_cat,
-                                          size=(172, 36)
                                           )
             elif the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
                                  ] and the_cat.no_kits and not the_cat.dead:
-                buttons.draw_image_button((402, 574),
-                                          button_name='allow_kits',
+                buttons.draw_button((402, 574),
+                                          image='buttons/allow_kits',
                                           text='Allow kits',
                                           no_kits=False,
                                           cat_value=the_cat,
-                                          size=(172, 36)
                                           )
             else:
-                buttons.draw_image_button((402, 574),
-                                          button_name='prevent_kits',
+                buttons.draw_button((402, 574),
+                                          image='buttons/prevent_kits',
                                           text='Prevent kits',
                                           no_kits=True,
                                           cat_value=the_cat,
-                                          size=(172, 36),
                                           available=False
                                           )
             buttons.draw_image_button((402, 610),
@@ -812,6 +869,7 @@ class ProfileScreen(Screens):
                     game.clan.leader_lives -= 10
                 game.switches['kill_cat'].die()
                 game.switches['kill_cat'] = False
+
 
         # BACK BUTTON
         draw_back(25, 60)
