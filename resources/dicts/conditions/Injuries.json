@@ -12,13 +12,13 @@
         },
         "illness_infectiousness": [
             {
-                "name": "greencough",
+                "name": "whitecough",
                 "lower_by": 3
             }
         ],
         "risks": [
             {
-                "name": "infection",
+                "name": "infected wound",
                 "chance": 5
             }
         ]

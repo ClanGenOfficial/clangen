@@ -533,6 +533,7 @@ class Cat():
 
         if randint(1,self.illness.mortality) == 1:
             self.die()
+            return
         
         for risk in self.illness.risks:
             if randint(1,risk["chance"]) == 1:
@@ -549,6 +550,7 @@ class Cat():
         
         if randint(1,self.injury.mortality) == 1:
             self.die()
+            return
         
         for risk in self.injury.risks:
             if randint(1,risk["chance"]) == 1:
@@ -1122,9 +1124,9 @@ game.cat_class = cat_class
 resource_directory = "resources/dicts/conditions/"
 
 ILLNESSES = None
-with open(f"{resource_directory}Illnesses.json", 'r') as read_file:
+with open(f"{resource_directory}illnesses.json", 'r') as read_file:
     ILLNESSES = ujson.loads(read_file.read())
 
 INJURIES = None
-with open(f"{resource_directory}Injuries.json", 'r') as read_file:
+with open(f"{resource_directory}injuries.json", 'r') as read_file:
     INJURIES = ujson.loads(read_file.read())

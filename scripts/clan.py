@@ -315,7 +315,7 @@ class Clan():
                              world_seed=int(general[4]),
                              camp_site=(int(general[5]), 
                                         int(general[6])),
-                             game_mode=general[7],
+                             game_mode=general[7] if len(general) == 8 else 'classic',
                              )
         elif len(general) == 3:
             game.clan = Clan(general[0], Cat.all_cats[leader_info[0]],

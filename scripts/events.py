@@ -1,5 +1,6 @@
 from scripts.cat.cats import *
-from scripts.cat_relations.relation_events import *
+from scripts.cat_relations.relation_events import Relation_Events
+from scripts.condition_events import Condition_Events
 from scripts.game_structure.buttons import *
 from scripts.game_structure.load_cat import * 
 
@@ -19,6 +20,8 @@ class Events():
         self.living_cats = 0
         self.new_cat_invited = False
         self.ceremony_accessory = False
+        self.relation_events = Relation_Events()
+        self.condition_events = Condition_Events()
 
     def one_moon(self):
         if game.switches['timeskip']:
@@ -26,11 +29,10 @@ class Events():
             self.living_cats = 0
             self.new_cat_invited = False
             game.patrolled.clear()
-            relation_events = Relation_Events()
-            relation_events.handle_pregnancy_age(clan = game.clan)
+            self.relation_events.handle_pregnancy_age(clan = game.clan)
             for cat in Cat.all_cats.copy().values():
                 if not cat.exiled:
-                    self.one_moon_cat(cat, relation_events)
+                    self.one_moon_cat(cat)
                 else:
                     cat.moons += 1
                     if cat.moons == 6:
@@ -85,7 +87,7 @@ class Events():
 
         game.switches['timeskip'] = False
 
-    def one_moon_cat(self, cat, relation_events):
+    def one_moon_cat(self, cat):
         if cat.dead:
             cat.thoughts()
             cat.dead_for += 1
@@ -117,8 +119,8 @@ class Events():
         # are connected to cats are located in there
         cat.one_moon()
 
-        relation_events.handle_relationships(cat)
-        relation_events.handle_having_kits(cat, clan = game.clan)
+        self.relation_events.handle_relationships(cat)
+        self.relation_events.handle_having_kits(cat, clan = game.clan)
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0 and randint(1, 5) == 1:
@@ -943,7 +945,7 @@ class Events():
         """ 
         This function will handle:
             - classic mode: death events with injuries
-            - expanded mode: getting a new injuries
+            - expanded mode: getting a new injuries (extra function in own class)
         Returns: 
             - boolean if a death event occurred or not
         """
@@ -963,6 +965,9 @@ class Events():
         
         name = str(cat.name)
         other_name = str(other_cat.name)
+
+        if game.clan.game_mode == 'expanded':
+            return self.condition_events.handle_injuries(cat)
 
         if game.clan.game_mode == 'classic':
             # leader loses lives
@@ -1365,7 +1370,7 @@ class Events():
         """ 
         This function will handle:
             - classic mode: death events with illnesses
-            - expanded mode: getting a new illness
+            - expanded mode: getting a new illness (extra function in own class)
         Returns: 
             - boolean if a death event occurred or not
         """
@@ -1381,6 +1386,9 @@ class Events():
         
         name = str(cat.name)
         other_name = str(other_cat.name)
+
+        if game.clan.game_mode == 'expanded':
+            return self.condition_events.handle_illnesses(cat, game.clan.current_season)
         
         if game.clan.game_mode == 'classic':
             # leader loses lives
