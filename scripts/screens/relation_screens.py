@@ -736,45 +736,48 @@ def show_mate_cat_info(arg0, arg1, arg2):
                             )
 
 
-def draw_bg_ui(self):  # USER INTERFACE ART
-
-    # SEARCH BAR
-    search_bar = pygame.transform.scale(
-        pygame.image.load("resources/images/relationship_search.png").convert_alpha(), (228, 39))
-    screen.blit(search_bar, (536, 90))
-
-    # LOAD AND BLIT BG FRAMES
-    details_frame = pygame.transform.scale(
-        pygame.image.load("resources/images/relationship_details_frame.png").convert_alpha(), (254, 344))
-
-    toggle_frame = pygame.transform.scale(
-        pygame.image.load("resources/images/relationship_toggle_frame.png").convert_alpha(), (251, 120))
-
-    list_frame = pygame.transform.scale(
-        pygame.image.load("resources/images/relationship_list_frame.png").convert_alpha(), (502, 500))
-
-    screen.blit(details_frame, (25, 130))
-    screen.blit(toggle_frame, (45, 484))
-    screen.blit(list_frame, (273, 122))
-
-
 class RelationshipScreen(Screens):
     bool = {True: 'on', False: 'off', None: 'None'}
-    ui = None
+
+    search_bar = pygame.image.load("resources/images/relationship_search.png").convert_alpha()
+    details_frame = pygame.image.load("resources/images/relationship_details_frame.png").convert_alpha()
+    toggle_frame = pygame.image.load("resources/images/relationship_toggle_frame.png").convert_alpha()
+    list_frame = pygame.image.load("resources/images/relationship_list_frame.png").convert_alpha()
+
+    female_icon = pygame.image.load("resources/images/female_big.png").convert_alpha()
+    male_icon = pygame.image.load("resources/images/male_big.png").convert_alpha()
+    nonbi_icon = pygame.image.load("resources/images/nonbi_big.png").convert_alpha()
+    transfem_icon = pygame.image.load("resources/images/transfem_big.png").convert_alpha()
+    transmasc_icon = pygame.image.load("resources/images/transmasc_big.png").convert_alpha()
+
+    female_icon_small = pygame.transform.scale(pygame.image.load("resources/images/female_big.png").convert_alpha(), (18, 18))
+    male_icon_small = pygame.transform.scale(pygame.image.load("resources/images/male_big.png").convert_alpha(), (18, 18))
+    nonbi_icon_small = pygame.transform.scale(pygame.image.load("resources/images/nonbi_big.png").convert_alpha(), (18, 18))
+    transfem_icon_small = pygame.transform.scale(pygame.image.load("resources/images/transfem_big.png").convert_alpha(), (18, 18))
+    transmasc_icon_small = pygame.transform.scale(pygame.image.load("resources/images/transmasc_big.png").convert_alpha(), (18, 18))
+
+    mate_icon = pygame.image.load("resources/images/heart_big.png").convert_alpha()
+    family_icon = pygame.image.load("resources/images/dot_big.png").convert_alpha()
+
+    mate_icon_small = pygame.transform.scale(pygame.image.load("resources/images/heart_big.png").convert_alpha(), (11, 10))
+    family_icon_small = pygame.transform.scale(pygame.image.load("resources/images/dot_big.png").convert_alpha(), (9, 9))
 
     def on_use(self):
         # use this variable to point to the cat object in question
+        # this cat is the current cat in focus - aka the cat we're viewing the relationships of
         the_cat = Cat.all_cats.get(game.switches['cat'],
                                    game.clan.instructor
                                    )
-        # this cat is the current cat in focus - aka the cat we're viewing the relationships of
 
         # back and next buttons on the relationships page, these will reset the show_details cat
         draw_next_prev_cat_buttons(the_cat)
 
+
         # LOAD UI IMAGES
-        if RelationshipScreen.ui is None:
-            RelationshipScreen.ui = draw_bg_ui(self)
+        screen.blit(RelationshipScreen.search_bar, (536, 90))
+        screen.blit(RelationshipScreen.details_frame, (25, 130))
+        screen.blit(RelationshipScreen.toggle_frame, (45, 484))
+        screen.blit(RelationshipScreen.list_frame, (273, 122))
 
         # SEARCH TEXT
         search_text = game.switches['search_text']
@@ -918,7 +921,6 @@ class RelationshipScreen(Screens):
                                 chosen_cat=the_relationship.cat_to,
                                 show_details=True
                                 )
-            # BUG: clicking this button also causes the chosen_cat to overwrite the last cat on the list pages
 
             # CHECK NAME LENGTH - SHORTEN IF NECESSARY
             name = str(the_relationship.cat_to.name)  # get name
@@ -931,6 +933,29 @@ class RelationshipScreen(Screens):
                                   x_start=300 + pos_x,
                                   x_limit=300 + pos_x + 82)
 
+            if the_relationship.cat_to.genderalign == 'female':
+                screen.blit(RelationshipScreen.female_icon_small, (370 + pos_x, 155 + pos_y))
+            if the_relationship.cat_to.genderalign == 'male':
+                screen.blit(RelationshipScreen.male_icon_small, (370 + pos_x, 155 + pos_y))
+            if the_relationship.cat_to.genderalign != 'female' and the_relationship.cat_to.genderalign != 'male' \
+                    and the_relationship.cat_to.genderalign != 'trans female' and the_relationship.cat_to.genderalign != 'trans male':
+                screen.blit(RelationshipScreen.nonbi_icon_small, (370 + pos_x, 155 + pos_y))
+            if the_relationship.cat_to.genderalign == 'trans female':
+                screen.blit(RelationshipScreen.transfem_icon_small, (370 + pos_x, 155 + pos_y))
+            if the_relationship.cat_to.genderalign == 'trans male':
+                screen.blit(RelationshipScreen.transmasc_icon_small, (370 + pos_x, 155 + pos_y))
+
+            if the_cat.mate is not None and the_cat.mate != '' and the_relationship.cat_to.ID == the_cat.mate:
+                screen.blit(RelationshipScreen.mate_icon_small, (297 + pos_x, 158 + pos_y))
+
+            if the_relationship.cat_to.is_uncle_aunt(the_cat) or the_cat.is_uncle_aunt(the_relationship.cat_to):
+                screen.blit(RelationshipScreen.family_icon_small, (297 + pos_x, 158 + pos_y))
+            elif the_relationship.cat_to.is_grandparent(the_cat) or the_cat.is_grandparent(the_relationship.cat_to):
+                screen.blit(RelationshipScreen.family_icon_small, (297 + pos_x, 158 + pos_y))
+            elif the_relationship.cat_to.is_parent(the_cat) or the_cat.is_parent(the_relationship.cat_to):
+                screen.blit(RelationshipScreen.family_icon_small, (297 + pos_x, 158 + pos_y))
+            elif the_relationship.cat_to.is_sibling(the_cat) or the_cat.is_sibling(the_relationship.cat_to):
+                screen.blit(RelationshipScreen.family_icon_small, (297 + pos_x, 158 + pos_y))
 
             count = 17
 
@@ -1080,7 +1105,7 @@ class RelationshipScreen(Screens):
             verdana_small_dark.text(
                 f"{str(game.switches['chosen_cat'].genderalign)}",
                 (60, 325))
-            self.draw_gender_icon(235, 145)
+            self.draw_gender_icon(235, 145, game.switches['chosen_cat'])
 
             # AGE
             verdana_small_dark.text(
@@ -1099,7 +1124,7 @@ class RelationshipScreen(Screens):
                     f"{str(the_cat.name)}'s mate",
                     (150, 325)
                 )
-                self.draw_mate_icon()
+                screen.blit(RelationshipScreen.mate_icon, (45, 150))
 
             else:
                 verdana_small_dark.text(
@@ -1119,37 +1144,37 @@ class RelationshipScreen(Screens):
                 verdana_small_dark.text(
                     'related',
                     (x_value, y_value))
-                self.draw_relation_icon()
+                screen.blit(RelationshipScreen.family_icon, (45, 150))
 
             elif game.switches['chosen_cat'].is_grandparent(the_cat):
                 verdana_small_dark.text(
                     'related: grandparent',
                     (x_value, y_value))
-                self.draw_relation_icon()
+                screen.blit(RelationshipScreen.family_icon, (45, 150))
 
             elif the_cat.is_grandparent(game.switches['chosen_cat']):
                 verdana_small_dark.text(
                     'related: grandchild',
                     (x_value, y_value))
-                self.draw_relation_icon()
+                screen.blit(RelationshipScreen.family_icon, (45, 150))
 
             elif game.switches['chosen_cat'].is_parent(the_cat):
                 verdana_small_dark.text(
                     'related: parent',
                     (x_value, y_value))
-                self.draw_relation_icon()
+                screen.blit(RelationshipScreen.family_icon, (45, 150))
 
             elif the_cat.is_parent(game.switches['chosen_cat']):
                 verdana_small_dark.text(
                     'related: child',
                     (x_value, y_value))
-                self.draw_relation_icon()
+                screen.blit(RelationshipScreen.family_icon, (45, 150))
 
             elif game.switches['chosen_cat'].is_sibling(the_cat) or the_cat.is_sibling(game.switches['chosen_cat']):
                 verdana_small_dark.text(
                     'related: sibling',
                     (x_value, y_value))
-                self.draw_relation_icon()
+                screen.blit(RelationshipScreen.family_icon, (45, 150))
 
         # PAGE ARROW BUTTONS
         verdana.text(
@@ -1244,35 +1269,26 @@ class RelationshipScreen(Screens):
                                   chosen_cat=None,
                                   show_details=False)
 
-    def draw_gender_icon(self, x_pos, y_pos):
+    def draw_gender_icon(self, x_pos, y_pos, arg0):
 
-        female_icon = pygame.image.load("resources/images/female_big.png").convert_alpha()
-        male_icon = pygame.image.load("resources/images/male_big.png").convert_alpha()
-        nonbi_icon = pygame.image.load("resources/images/nonbi_big.png").convert_alpha()
-        transfem_icon = pygame.image.load("resources/images/transfem_big.png").convert_alpha()
-        transmasc_icon = pygame.image.load("resources/images/transmasc_big.png").convert_alpha()
+        if arg0.genderalign is not None:
+            cat_gender = arg0.genderalign
+        else:
+            cat_gender = arg0.gender
 
-        if game.switches['chosen_cat'].genderalign == 'female':
-            screen.blit(female_icon, (x_pos, y_pos))
-        if game.switches['chosen_cat'].genderalign == 'male':
-            screen.blit(male_icon, (x_pos, y_pos))
-        if game.switches['chosen_cat'].genderalign != 'female' and game.switches['chosen_cat'].genderalign != 'male' \
-                and game.switches['chosen_cat'].genderalign != 'trans female' and game.switches['chosen_cat'].genderalign != 'trans male':
-            screen.blit(nonbi_icon, (x_pos, y_pos))
-        if game.switches['chosen_cat'].genderalign == 'trans female':
-            screen.blit(transfem_icon, (x_pos, y_pos))
-        if game.switches['chosen_cat'].genderalign == 'trans  male':
-            screen.blit(transmasc_icon, (x_pos, y_pos))
+        if cat_gender == 'female':
+            screen.blit(RelationshipScreen.female_icon, (x_pos, y_pos))
+        if cat_gender == 'male':
+            screen.blit(RelationshipScreen.male_icon, (x_pos, y_pos))
+        if cat_gender != 'female' and cat_gender != 'male' \
+                and cat_gender != 'trans female' and cat_gender != 'trans male':
+            screen.blit(RelationshipScreen.nonbi_icon, (x_pos, y_pos))
+        if cat_gender == 'trans female':
+            screen.blit(RelationshipScreen.transfem_icon, (x_pos, y_pos))
+        if cat_gender == 'trans  male':
+            screen.blit(RelationshipScreen.transmasc_icon, (x_pos, y_pos))
 
-    def draw_mate_icon(self):
 
-        mate_icon = pygame.image.load("resources/images/heart_big.png").convert_alpha()
-        screen.blit(mate_icon, (45, 150))
-
-    def draw_relation_icon(self):
-
-        family_icon = pygame.image.load("resources/images/dot_big.png").convert_alpha()
-        screen.blit(family_icon, (45, 150))
 
     def draw_bar(self, value, pos_x, pos_y):
         # Loading Bar and variables
