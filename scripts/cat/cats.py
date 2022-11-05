@@ -562,12 +562,13 @@ class Cat():
 
     def get_parents(self):
         """Returns list containing parents of cat."""
-        parents = []
         if self.parent1 is not None:
-            parents.append(self.parent1)
             if self.parent2 is not None:
-                parents.append(self.parent2)
-        return parents
+                return [self.parent1, self.parent2]
+            return [self.parent1]
+        elif self.parent2 is not None:
+            return [self.parent2]
+        return []
 
     def get_siblings(self):
         """Returns list of the siblings."""
