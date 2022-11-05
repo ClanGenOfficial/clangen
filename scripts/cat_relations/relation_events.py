@@ -675,7 +675,12 @@ class Relation_Events():
                 cat.birth_cooldown = 6
                 other_cat.birth_cooldown = 6
             else:
-                kit = Cat(parent1=cat.ID, moons=0)
+                if cat.gender == 'female':
+                    backstory_choice = choice(['halfclan1', 'outsider_roots1'])
+                else:
+                    backstory_choice = choice(['halfclan2', 'outsider_roots2'])
+                backstory = backstory_choice
+                kit = Cat(parent1=cat.ID, moons=0, backstory=backstory)
                 all_kitten.append(kit)
                 cat.birth_cooldown = 6
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
