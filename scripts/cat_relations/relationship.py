@@ -148,8 +148,11 @@ class Relationship():
         both = action_string_all+effect_string
         if both.startswith(str(self.cat_from.name)):
             self.log.append(both)
-        game.relation_events_list.append(both)
-
+        if len(both) < 100:
+            game.relation_events_list.append(both)
+        else:
+            game.relation_events_list.append(action_string_all)
+            game.relation_events_list.append(effect_string)
 
     def get_action_possibilities(self):
         """Creates a list of possibles actions of this relationship"""

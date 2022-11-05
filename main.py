@@ -61,9 +61,9 @@ pygame.event.set_allowed([pygame.KEYDOWN, pygame.QUIT, pygame.MOUSEBUTTONDOWN])
 
 while True:
     if game.settings['dark mode']:
-        screen.fill((67, 61, 49))
+        screen.fill((40, 40, 40))
     else:
-        screen.fill((206, 194, 168))
+        screen.fill((255, 255, 255))
 
     if game.settings_changed:
         verdana.change_text_brightness()
@@ -107,7 +107,6 @@ while True:
                 if event.key == pygame.K_1:
                     game.switches['cur_screen'] = 'options screen'
                     game.switches['last_screen'] = 'profile screen'
-
         if game.current_screen == 'make clan screen' and game.switches[
                 'clan_name'] == '' and event.type == pygame.KEYDOWN:
             if event.unicode.isalpha(
@@ -141,27 +140,6 @@ while True:
                     game.cur_events_list.append(game.cur_events_list.pop(0))
                     game.event_scroll_ct -= 1
 
-        if game.current_screen == 'relationship event screen' and len(
-                game.relation_events_list) > game.max_relation_events_displayed:
-            max_scroll_direction = len(
-                game.relation_events_list) - game.max_relation_events_displayed
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_UP and game.relation_scroll_ct < 0:
-                    game.relation_events_list.insert(0, game.relation_events_list.pop())
-                    game.relation_scroll_ct += 1
-                if event.key == pygame.K_DOWN and abs(
-                        game.relation_scroll_ct) < max_scroll_direction:
-                    game.relation_events_list.append(game.relation_events_list.pop(0))
-                    game.relation_scroll_ct -= 1
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if event.button == 4 and game.relation_scroll_ct < 0:
-                    game.relation_events_list.insert(0, game.relation_events_list.pop())
-                    game.relation_scroll_ct += 1
-                if event.button == 5 and abs(
-                        game.relation_scroll_ct) < max_scroll_direction:
-                    game.relation_events_list.append(game.relation_events_list.pop(0))
-                    game.relation_scroll_ct -= 1
-
         if game.current_screen == 'allegiances screen' and len(
                 game.allegiance_list) > game.max_allegiance_displayed:
             max_scroll_direction = len(
@@ -182,7 +160,6 @@ while True:
                         game.allegiance_scroll_ct) < max_scroll_direction:
                     game.allegiance_list.append(game.allegiance_list.pop(0))
                     game.allegiance_scroll_ct -= 1
-
         if game.current_screen == 'patrol screen':
             random_options = []
             if event.type == pygame.KEYDOWN:
@@ -192,7 +169,6 @@ while True:
                         if u < i_max:
                             game.switches['current_patrol'].append(
                                 game.patrol_cats[u])
-
         if game.current_screen == 'change name screen' and game.switches[
                 'change_name'] == '' and event.type == pygame.KEYDOWN:
             if event.unicode.isalpha() or event.unicode.isspace(
@@ -200,10 +176,9 @@ while True:
                 if len(game.switches['naming_text']
                        ) < 20:  # can't type more than max name length
                     game.switches['naming_text'] += event.unicode
-            elif event.key == pygame.K_BACKSPACE:  # delete last character
+            elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
                 game.switches['naming_text'] = game.switches[
                     'naming_text'][:-1]
-
         if game.current_screen == 'change gender screen' and game.switches[
                 'change_name'] == '' and event.type == pygame.KEYDOWN:
             if event.unicode.isalpha() or event.unicode.isspace(
@@ -211,10 +186,9 @@ while True:
                 if len(game.switches['naming_text']
                        ) < 20:  # can't type more than max name length
                     game.switches['naming_text'] += event.unicode
-            elif event.key == pygame.K_BACKSPACE:  # delete last character
+            elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
                 game.switches['naming_text'] = game.switches[
                     'naming_text'][:-1]
-
         if game.current_screen in [
                 'list screen', 'starclan screen', 'other screen', 'relationship screen'
         ] and event.type == pygame.KEYDOWN:
@@ -223,7 +197,7 @@ while True:
                 if len(game.switches['search_text']
                        ) < 20:  # can't type more than max name length
                     game.switches['search_text'] += event.unicode
-            elif event.key == pygame.K_BACKSPACE:  # delete last character
+            elif event.key == pygame.K_BACKSPACE:  # delete last character of clan name
                 game.switches['search_text'] = game.switches[
                     'search_text'][:-1]
 

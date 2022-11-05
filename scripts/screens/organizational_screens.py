@@ -1,13 +1,12 @@
 import pygame
 
-from .base_screens import Screens, draw_menu_buttons, draw_clan_name
+from .base_screens import Screens, draw_menu_buttons
 
 from scripts.clan import map_available
 from scripts.cat.cats import Cat
-# from scripts.world import save_map
+#from scripts.world import save_map
 from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
-
 
 class StartScreen(Screens):
 
@@ -24,45 +23,37 @@ class StartScreen(Screens):
             buttons.draw_image_button((70, 310),
                                       button_name='continue',
                                       text='Continue >',
-                                      cur_screen='clan screen',
-                                      size=(192, 35))
+                                      cur_screen='clan screen')
             buttons.draw_image_button((70, 355),
                                       button_name='switch_clan',
                                       text='Switch Clan >',
-                                      cur_screen='switch clan screen',
-                                      size=(192, 35))
+                                      cur_screen='switch clan screen')
         elif game.clan is not None and game.switches['error_message']:
             buttons.draw_image_button((70, 310),
                                       button_name='continue',
                                       text='Continue >',
-                                      available=False,
-                                      size=(192, 35))
+                                      available=False)
             buttons.draw_image_button((70, 355),
                                       button_name='switch_clan',
                                       text='Switch Clan >',
-                                      cur_screen='switch clan screen',
-                                      size=(192, 35))
+                                      cur_screen='switch clan screen')
         else:
             buttons.draw_image_button((70, 310),
                                       button_name='continue',
                                       text='Continue >',
-                                      available=False,
-                                      size=(192, 35))
+                                      available=False)
             buttons.draw_image_button((70, 355),
                                       button_name='switch_clan',
                                       text='Switch Clan >',
-                                      available=False,
-                                      size=(192, 35))
+                                      available=False)
         buttons.draw_image_button((70, 400),
                                   button_name='new_clan',
                                   text='Make New >',
-                                  cur_screen='make clan screen',
-                                  size=(192, 35))
+                                  cur_screen='make clan screen')
         buttons.draw_image_button((70, 445),
                                   button_name='settings',
                                   text='Settings & Info >',
-                                  cur_screen='settings screen',
-                                  size=(192, 35))
+                                  cur_screen='settings screen')
 
         if game.switches['error_message']:
             buttons.draw_button((50, 50),
@@ -90,117 +81,73 @@ class StartScreen(Screens):
         # LOAD settings
         game.load_settings()
 
-
 class SwitchClanScreen(Screens):
 
-    saves_frame = pygame.image.load("resources/images/clan_saves_frame.png")
-
     def on_use(self):
-
+        verdana_big.text('Switch Clan:', ('center', 100))
+        verdana.text(
+            'Note: this will close the game. When you open it next, it should have the new clan.',
+            ('center', 150))
         game.switches['read_clans'] = True
 
-        y_pos = 150
-        screen.blit(SwitchClanScreen.saves_frame, (290, y_pos))
-        y_pos += 39
+        y_pos = 200
 
         for i in range(len(game.switches['clan_list'])):
-            if len(game.switches['clan_list'][i]) > 1 and i <= 7:
+            if len(game.switches['clan_list'][i]) > 1 and i < 9:
                 buttons.draw_button(
-                    (290, y_pos),
+                    ('center', 50 * i + y_pos),
                     text=game.switches['clan_list'][i] + 'clan',
-                    image='buttons/clan_save',
                     switch_clan=game.switches['clan_list'][i],
                     hotkey=[i + 1])
-                verdana_dark.text(str(game.switches['clan_list'][i] + 'clan'), ('center', y_pos + 10))
-            y_pos += 41
 
-        y_pos = 540
-        verdana.text(
-            'Note: This will close the game.',
-            ('center', y_pos))
-        y_pos += 25
-        verdana.text(
-            'When you open it next, it should have the new clan.',
-            ('center', y_pos))
-        buttons.draw_image_button((25, 25),
-                                  button_name='main_menu',
-                                  text='< Back to Main Menu',
-                                  cur_screen='start screen',
-                                  size=(153, 30),
-                                  hotkey=[0])
-
+        buttons.draw_button((50, 50),
+                            text='<< Back to Main Menu',
+                            cur_screen='start screen',
+                            hotkey=[0])
 
 def draw_settings_header():
-    buttons.draw_image_button((100, 100),
-                              button_name='general_settings',
-                              size=(150, 30),
-                              cur_screen='settings screen')
+    x_pos = 140
+    text = "Settings"
+    buttons.draw_button((x_pos, 100),
+                text=text,
+                cur_screen='settings screen')
 
-    buttons.draw_image_button((250, 100),
-                              button_name='relation_settings',
-                              size=(150, 30),
-                              cur_screen='relationship setting screen')
-    buttons.draw_image_button((400, 100),
-                              button_name='info',
-                              size=(150, 30),
-                              cur_screen='info screen')
+    x_pos += 90
+    text = "Relation Settings"
+    buttons.draw_button((x_pos, 100),
+                text=text,
+                cur_screen='relationship setting screen')
 
-    buttons.draw_image_button((550, 100),
-                              button_name='language',
-                              size=(150, 30),
-                              cur_screen='language screen')
+    x_pos += 155
+    text = "Game Modes"
+    buttons.draw_button((x_pos, 100),
+                text=text,
+                cur_screen='game_mode screen')
 
+    x_pos += 125
+    text = "Language"
+    buttons.draw_button((x_pos, 100),
+                text=text,
+                cur_screen='language screen')
+
+    x_pos += 100
+    text = "Info"
+    buttons.draw_button((x_pos, 100),
+                text=text,
+                cur_screen='info screen')
 
 def draw_back_and_save():
-    buttons.draw_image_button((25, 25),
-                              button_name='main_menu',
-                              text='< Back to Main Menu',
-                              cur_screen='start screen',
-                              size=(153, 30),
-                              hotkey=[0])
+    buttons.draw_button((50, 50),
+                            text='<< Back to Main Menu',
+                            cur_screen='start screen')
     if game.settings_changed:
-        buttons.draw_image_button((327, 550),
-                                  button_name='save_settings',
-                                  text='Save Settings',
-                                  size=(146, 30),
-                                  save_settings=True)
+        buttons.draw_button(('center', 550),
+                                text='Save Settings',
+                                save_settings=True)
     else:
-        buttons.draw_image_button((327, 550),
-                                  button_name='save_settings',
-                                  text='Save Settings',
-                                  size=(146, 30),
-                                  available=False)
-
-
-# ON / OFF BUTTONS
-def draw_on_off(y_value, setting):
-    x_value = 120
-    if game.settings[setting] is True:
-        buttons.draw_image_button((x_value, y_value),
-                                  button_name='on',
-                                  size=(46, 34),
-                                  setting=setting
-                                  )
-        buttons.draw_image_button((x_value + 46, y_value),
-                                  button_name='off',
-                                  size=(46, 34),
-                                  setting=setting,
-                                  available=False
-                                  )
-
-    if game.settings[setting] is False:
-        buttons.draw_image_button((x_value, y_value),
-                                  button_name='on',
-                                  size=(46, 34),
-                                  setting=setting,
-                                  available=False
-                                  )
-        buttons.draw_image_button((x_value + 46, y_value),
-                                  button_name='off',
-                                  size=(46, 34),
-                                  setting=setting,
-                                  )
-
+        buttons.draw_button(('center', 550),
+                                text='Save Settings',
+                                available=False)
 
 class SettingsScreen(Screens):
     text_size = {
@@ -213,31 +160,35 @@ class SettingsScreen(Screens):
     def on_use(self):
         # layout
         draw_settings_header()
-        verdana.text("Change the settings of your game here.", ('center', 160))
+        verdana.text("Change the setting of your game here.", ('center', 140))
 
         # Setting names
-        x_value = 225
-        verdana.text("Dark mode", (x_value, 226))
-        verdana.text("Enable clan page background", (x_value, 265))
-        verdana.text("Automatically save every five moons", (x_value, 304))
-        verdana.text("Allow mass extinction events", (x_value, 343))
-        verdana.text("Force cats to retire after severe injury", (x_value, 382))
-        verdana.text("Enable shaders", (x_value, 421))
-        verdana.text("Display hotkeys on text buttons", (x_value, 460))
+        verdana.text("Dark mode:", (100, 200))
+        verdana.text("Enable clan page background:", (100, 230))
+        verdana.text("Automatically save every five moons:", (100, 260))
+        verdana.text("Allow mass extinction events:", (100, 290))
+        verdana.text("Force cats to retire after severe injury:", (100, 320))
+        verdana.text("Enable shaders:", (100, 350))
+        verdana.text("Display hotkeys on text buttons:", (100, 380))
 
         # Setting values
-        draw_on_off(220, 'dark mode')
-        draw_on_off(259, 'backgrounds')
-        draw_on_off(298, 'autosave')
-        draw_on_off(337, 'disasters')
-        draw_on_off(376, 'retirement')
-        draw_on_off(415, 'shaders')
-        draw_on_off(454, 'hotkey display')
+        verdana.text(self.bool[game.settings['dark mode']], (-170, 200))
+        buttons.draw_button((-80, 200), text='SWITCH', setting='dark mode')
+        verdana.text(self.bool[game.settings['backgrounds']], (-170, 230))
+        buttons.draw_button((-80, 230), text='SWITCH', setting='backgrounds')
+        verdana.text(self.bool[game.settings['autosave']], (-170, 260))
+        buttons.draw_button((-80, 260), text='SWITCH', setting='autosave')
+        verdana.text(self.bool[game.settings['disasters']], (-170, 290))
+        buttons.draw_button((-80, 290), text='SWITCH', setting='disasters')
+        verdana.text(self.bool[game.settings['retirement']], (-170, 320))
+        buttons.draw_button((-80, 320), text='SWITCH', setting='retirement')
+        verdana.text(self.bool[game.settings['shaders']], (-170, 350))
+        buttons.draw_button((-80, 350), text='SWITCH', setting='shaders')
+        verdana.text(self.bool[game.settings['hotkey display']], (-170, 380))
+        buttons.draw_button((-80, 380),text='SWITCH',setting='hotkey display')
 
         # other buttons
-
         draw_back_and_save()
-
 
 class RelationshipSettingsScreen(Screens):
     text_size = {
@@ -250,27 +201,46 @@ class RelationshipSettingsScreen(Screens):
     def on_use(self):
         # layout
         draw_settings_header()
-        verdana.text("Change the settings of the relationships here.",
-                     ('center', 160))
+        verdana.text("Change the setting of the relationships here.",
+                     ('center', 140))
 
         # Setting names
-        x_value = 225
-        verdana.text("Randomize relationship values, when creating clan", (x_value, 226))
-        verdana.text("Allow affairs and mate switches based on relationships", (x_value, 265))
-        verdana.text("Allow couples to have kittens despite same-sex status", (x_value, 304))
-        verdana.text("Allow unmated cats to have offspring", (x_value, 343))
-        verdana.text("Allow romantic interactions with former apprentices/mentor", (x_value, 382))
+        verdana.text("Randomize relationship values, when creating clan:",
+                     (100, 200))
+        verdana.text("Allow affairs and mate switches based on relationships:",
+                     (100, 230))
+        verdana.text("Allow couples to have kittens despite same-sex status:",
+                     (100, 260))
+        verdana.text("Allow unmated cats to have offspring:", (100, 290))
+        verdana.text(
+            "Allow romantic interactions with former apprentices/mentor:",
+            (100, 320))
 
         # Setting values
-        draw_on_off(220, 'random relation')
-        draw_on_off(259, 'affair')
-        draw_on_off(298, 'no gendered breeding')
-        draw_on_off(337, 'no unknown fathers')
-        draw_on_off(376, 'romantic with former mentor')
+        verdana.text(self.bool[game.settings['random relation']], (-170, 200))
+        buttons.draw_button((-80, 200),
+                            text='SWITCH',
+                            setting='random relation')
+        verdana.text(self.bool[game.settings['affair']], (-170, 230))
+        buttons.draw_button((-80, 230), text='SWITCH', setting='affair')
+        verdana.text(self.bool[game.settings['no gendered breeding']],
+                     (-170, 260))
+        buttons.draw_button((-80, 260),
+                            text='SWITCH',
+                            setting='no gendered breeding')
+        verdana.text(self.bool[game.settings['no unknown fathers']],
+                     (-170, 290))
+        buttons.draw_button((-80, 290),
+                            text='SWITCH',
+                            setting='no unknown fathers')
+        verdana.text(self.bool[game.settings['romantic with former mentor']],
+                     (-170, 320))
+        buttons.draw_button((-80, 320),
+                            text='SWITCH',
+                            setting='romantic with former mentor')
 
         # other buttons
         draw_back_and_save()
-
 
 class InfoScreen(Screens):
 
@@ -279,61 +249,49 @@ class InfoScreen(Screens):
         draw_settings_header()
 
         verdana.text("Welcome to Warrior Cats clan generator!",
-                     ('center', 160))
+                     ('center', 140))
         verdana.text(
             "This is fan-made generator for the Warrior Cats -book series by Erin Hunter.",
-            ('center', 205))
+            ('center', 175))
         verdana.text(
-            "Create a new clan with the 'New Clan' button. 8 clans can be saved and revisited.",
-            ('center', 245))
+            "Create a new clan in the 'Make New' section. That clan is saved and can be",
+            ('center', 195))
         verdana.text(
-            "If you go over that number then the oldest save will be overwritten",
-            ('center', 265))
+            "revisited until you decide the overwrite it with a new one.",
+            ('center', 215))
         verdana.text(
             "You're free to use the characters and sprites generated in this program",
-            ('center', 315))
+            ('center', 235))
         verdana.text(
             "as you like, as long as you don't claim the sprites as your own creations.",
-            ('center', 335))
+            ('center', 255))
         verdana.text("Original creator: just-some-cat.tumblr.com",
-                     ('center', 375))
-        verdana.text("Fan edit made by: SableSteel", ('center', 395))
+                     ('center', 275))
+        verdana.text("Fan edit made by: SableSteel", ('center', 295))
 
         verdana.text("Thank you for playing!!", ('center', 550))
 
         # other buttons
-        buttons.draw_image_button((25, 25),
-                                  button_name='main_menu',
-                                  text='< Back to Main Menu',
-                                  cur_screen='start screen',
-                                  size=(153, 30),
-                                  hotkey=[0])
-
+        buttons.draw_button((50, 50),
+                            text='<< Back to Main Menu',
+                            cur_screen='start screen')
 
 class LanguageScreen(Screens):
 
     def on_use(self):
         # layout
         draw_settings_header()
-        verdana.text("Choose the language of your game here:", ('center', 160))
+        verdana.text("Choose the language of your game here:", ('center', 140))
 
         # Language options
-
-        buttons.draw_image_button((310, 200),
-                                  button_name='english',
-                                  size=(180, 51),
-                                  language='english',
-                                  available='english' != game.switches['language'])
-        buttons.draw_image_button((310, 251),
-                                  button_name='spanish',
-                                  size=(180, 37),
-                                  language='spanish',
-                                  available='spanish' != game.switches['language'])
-        buttons.draw_image_button((310, 288),
-                                  button_name='german',
-                                  size=(180, 37),
-                                  language='german',
-                                  available='german' != game.switches['language'])
+        a = 200
+        for language_name in game.language_list:
+            buttons.draw_button(
+                ('center', a),
+                text=language_name,
+                language=language_name,
+                available=language_name != game.switches['language'])
+            a += 30
 
         if game.switches['language'] != game.settings['language']:
             game.settings['language'] = game.switches['language']
@@ -344,11 +302,51 @@ class LanguageScreen(Screens):
         # other buttons
         draw_back_and_save()
 
+class GameModeScreen(Screens):
+
+    def on_use(self):
+        # layout
+        draw_settings_header()
+        verdana.text("Choose the mode of your game here:", ('center', 140))
+
+        # Mode options
+        a = 200
+        for game_mode in game.setting_lists['game_mode']:
+            buttons.draw_button(
+                ('center', a),
+                text = game_mode,
+                game_mode = game_mode,
+                available = game_mode != game.switches['game_mode'])
+            a += 30
+            if game_mode == "classic":
+                verdana.text("classic generator game", ('center', a))
+                a += 20
+                verdana.text("The player doesn't have to organize anything important and can focus on storytelling.", ('center', a))
+                a += 50
+            elif game_mode == "expanded":
+                verdana.text("classic generator game with additional functions", ('center', a))
+                a += 20
+                verdana.text("The player has to organize and manage some values. Current additions:", ('center', a))
+                a += 20
+                verdana.text("---", ('center', a))
+                a += 50
+            elif game_mode == "cruel season":
+                verdana.text("like expanded mode, but harder to survive", ('center', a))
+                a += 20
+                verdana.text("currently not available", ('center', a))
+                a += 50
+
+        if game.switches['game_mode'] != game.settings['game_mode']:
+            game.settings['game_mode'] = game.switches['game_mode']
+            game.settings_changed = True
+
+        # other buttons
+        draw_back_and_save()
 
 class StatsScreen(Screens):
 
     def on_use(self):
-        draw_clan_name()
+        verdana_big.text(f'{game.clan.name}Clan', ('center', 30))
         living_num = 0
         warriors_num = 0
         app_num = 0

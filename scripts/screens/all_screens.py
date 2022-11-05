@@ -1,34 +1,14 @@
 from .base_screens import Screens
-from .cat_screens import ProfileScreen, ChangeGenderScreen, ChangeNameScreen, ExileProfileScreen, GenderChangedScreen, NameChangedScreen
+from .cat_screens import OptionsScreen, ProfileScreen, ChangeGenderScreen, ChangeNameScreen, ExileProfileScreen
 from .clan_creation_screens import ClanCreatedScreen, MakeClanScreen
 from .clan_screens import ClanScreen, StarClanScreen, ListScreen, AllegiancesScreen
 from .event_screens import EventsScreen, SingleEventScreen, PatrolEventScreen, RelationshipEventScreen
 from .organizational_screens import\
-    StartScreen, SettingsScreen, InfoScreen, SwitchClanScreen, LanguageScreen, RelationshipSettingsScreen, StatsScreen
+    StartScreen, SettingsScreen, InfoScreen, SwitchClanScreen, LanguageScreen, RelationshipSettingsScreen, StatsScreen, GameModeScreen
 from .patrol_screens import PatrolScreen
 from .relation_screens import\
-    RelationshipScreen, ChooseMateScreen, ViewChildrenScreen, ChooseMentorScreen
+    RelationshipScreen, ChooseMateScreen, ChooseMentorScreen2, ViewChildrenScreen, ChooseMentorScreen
 from .world_screens import MapScreen, OutsideClanScreen
-
-# ---------------------------------------------------------------------------- #
-#                                  UI RULES                                    #
-# ---------------------------------------------------------------------------- #
-"""
-SCREEN: 700 height x 800 width
-
-MARGINS: 25px on all sides
-    ~Any new buttons or text MUST be within these margins.
-    ~Buttons on the edge of the screen should butt up right against the margin. 
-    (i.e. the <<Main Menu button is placed 25px x 25px on most screens) 
-    
-BUTTONS:
-    ~Buttons are 30px in height. Width can be anything, though generally try to keep to even numbers.
-    ~Square icons are 34px x 34px.
-    ~Generally keep text at least 5px away from the right and left /straight/ (do not count the rounded ends) edge 
-    of the button (this rule is sometimes broken. the goal is to be consistent across the entire screen or button type)
-    ~Generally, the vertical gap between buttons should be 5px
-"""
-
 
 # SCREENS
 screens = Screens()
@@ -38,9 +18,8 @@ screens = Screens()
 # ---------------------------------------------------------------------------- #
 
 change_gender_screen = ChangeGenderScreen('change gender screen')
-gender_changed_screen = GenderChangedScreen('gender changed screen')
 change_name_screen = ChangeNameScreen('change name screen')
-name_changed_screen = NameChangedScreen('name changed screen')
+option_screen = OptionsScreen('options screen')
 profile_screen = ProfileScreen('profile screen')
 exile_profile_screen = ExileProfileScreen('outside profile screen')
 
@@ -81,6 +60,7 @@ settings_screen = SettingsScreen('settings screen')
 stats_screen = StatsScreen('stats screen')
 start_screen = StartScreen('start screen')
 switch_clan_screen = SwitchClanScreen('switch clan screen')
+game_mode_screen = GameModeScreen('game_mode screen')
 
 # ---------------------------------------------------------------------------- #
 #                               patrol_screens.py                              #
@@ -94,6 +74,7 @@ patrol_screen = PatrolScreen('patrol screen')
 
 choose_mate_screen = ChooseMateScreen('choose mate screen')
 choose_mentor_screen = ChooseMentorScreen('choose mentor screen')
+choose_mentor_screen2 = ChooseMentorScreen2('choose mentor screen2')
 relationship_screen = RelationshipScreen('relationship screen')
 view_children_screen = ViewChildrenScreen('see kits screen')
 

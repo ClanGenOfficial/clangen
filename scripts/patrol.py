@@ -9,9 +9,6 @@ from scripts.cat.pelts import *
 # ---------------------------------------------------------------------------- #
 #                              PATROL CLASS START                              #
 # ---------------------------------------------------------------------------- #
-"""
-When adding new patrols, use \n to add a paragraph break in the text
-"""
 
 class Patrol():
 
@@ -862,8 +859,8 @@ class Patrol():
                 'apprentice', 'warrior', 'warrior', 'warrior', 'warrior',
                 'elder'
             ])
-            new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
-                                    'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee', 'tragedy_survivor'])
+            new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2', 
+            'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee', 'tragedy_survivor'])
             if self.patrol_event.patrol_id == 501:
                 new_status = 'warrior'
             kit = Cat(status=new_status)
@@ -970,7 +967,7 @@ class Patrol():
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
             if randint(0, 5) == 0 and kit.backstory not in ['medicine_cat', 'disgraced']:  # chance to keep name
-                # kit.name.prefix = choice(names.loner_names)
+                kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
             elif randint(0, 3) == 0 and kit.backstory not in ['medicine_cat', 'disgraced']:
                 kit.name.prefix = choice(names.loner_names)
