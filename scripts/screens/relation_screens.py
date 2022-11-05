@@ -278,7 +278,10 @@ class ViewChildrenScreen(Screens):
 
         # SHOW PARENTS
         if the_cat.parent1 is None:
-            verdana_small.text('Unknown', (93, 195))
+            verdana_small.text('Unknown',
+                               ('center', 195),
+                               x_limit=150,
+                               x_start=90)
         elif the_cat.parent1 in Cat.all_cats:
             buttons.draw_button(
                 (95, 145),
@@ -290,13 +293,20 @@ class ViewChildrenScreen(Screens):
             if 8 <= len(name) >= 12:
                 short_name = str(Cat.all_cats[the_cat.parent1].name)[0:7]
                 name = short_name + '...'
-            verdana_small.text(str(name).center(12), (88, 195))
+            verdana_small.text(str(name),
+                               ('center', 195),
+                               x_limit=150,
+                               x_start=90)
+
 
         else:
             verdana_small.text(f'Error: cat {str(the_cat.parent1)} not found',
                                (342, 165))
         if the_cat.parent2 is None:
-            verdana_small.text('Unknown', (93, 258))
+            verdana_small.text('Unknown',
+                               ('center', 258),
+                               x_limit=150,
+                               x_start=90)
         elif the_cat.parent2 in Cat.all_cats:
             buttons.draw_button(
                 (95, 210),
@@ -308,7 +318,10 @@ class ViewChildrenScreen(Screens):
             if 8 <= len(name) >= 12:
                 short_name = str(Cat.all_cats[the_cat.parent2].name)[0:7]
                 name = short_name + '...'
-            verdana_small.text(str(name).center(12), (88, 258))
+            verdana_small.text(str(name),
+                               ('center', 258),
+                               x_limit=150,
+                               x_start=90)
 
         else:
             verdana_small.text(
@@ -316,8 +329,8 @@ class ViewChildrenScreen(Screens):
                 (342, 165))
 
         # SHOW SIBLINGS
-        pos_x = 240
-        pos_y = 140
+        pos_x = 229
+        pos_y = 120
         siblings = False
         for x in game.clan.clan_cats:
             if (Cat.all_cats[x].parent1 in (the_cat.parent1, the_cat.parent2) or Cat.all_cats[x].parent2 in (
@@ -329,10 +342,13 @@ class ViewChildrenScreen(Screens):
                                     cur_screen='profile screen')
 
                 name = str(Cat.all_cats[x].name)
-                if 8 <= len(name) >= 12:
-                    short_name = str(Cat.all_cats[x].name)[0:7]
+                if 6 <= len(name) >= 9:
+                    short_name = str(Cat.all_cats[x].name)[0:5]
                     name = short_name + '...'
-                verdana_small_dark.text(str(name).center(12), (pos_x - 7, pos_y + 50))
+                verdana_small_dark.text(str(name),
+                                        ('center', pos_y + 50),
+                                        x_start=pos_x,
+                                        x_limit=pos_x + 60)
 
                 siblings = True
                 pos_x += 60
@@ -354,10 +370,14 @@ class ViewChildrenScreen(Screens):
                 cur_screen='profile screen')
 
             name = str(Cat.all_cats[the_cat.mate].name)
-            if 8 <= len(name) >= 12:
+            if 8 <= len(name) >= 11:
                 short_name = str(Cat.all_cats[the_cat.mate].name)[0:7]
                 name = short_name + '...'
-            verdana_small.text(str(name).center(12), (88, 508))
+            verdana_small.text(str(name),
+                               ('center', 508),
+                               x_limit=150,
+                               x_start=90
+            )
 
         else:
             verdana_small.text(f'Error: cat {str(the_cat.mate)} not found',
@@ -378,10 +398,13 @@ class ViewChildrenScreen(Screens):
                                     cur_screen='profile screen')
 
                 name = str(Cat.all_cats[x].name)
-                if 8 <= len(name) >= 12:
-                    short_name = str(Cat.all_cats[x].name)[0:7]
+                if 6 <= len(name) >= 9:
+                    short_name = str(Cat.all_cats[x].name)[0:5]
                     name = short_name + '...'
-                verdana_small_dark.text(str(name).center(12), (pos_x - 7, pos_y + 50))
+                verdana_small_dark.text(str(name).center(12), ('center', pos_y + 60),
+                                        x_start=pos_x,
+                                        x_limit=pos_x + 60
+                                        )
 
                 kittens = True
                 pos_x += 60
