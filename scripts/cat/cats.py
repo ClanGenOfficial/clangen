@@ -843,12 +843,27 @@ class Cat():
         if is_former_mentor and not former_mentor_setting:
             return False
 
-        # check for relation
-        far_related = self.is_grandparent(other_cat) or other_cat.is_grandparent(self)
-        direct_related = self.is_sibling(other_cat) or self.is_parent(other_cat) or other_cat.is_parent(self)
-        indirect_related = self.is_uncle_aunt(other_cat) or other_cat.is_uncle_aunt(self)
-        if direct_related or indirect_related or far_related:
-            return False
+        # Relationship checks </3
+        # We don't need to do any checks if the cats have no parents =3
+        if (
+            self.parent1 is not None
+            or self.parent2 is not None
+            or other_cat.parent1 is not None
+            or other_cat.parent2 is not None
+        ):
+            if (
+                # check for relation via other_cat's parents (parent/grandparent)
+                self.is_grandparent(other_cat)
+                or self.is_parent(other_cat)
+                # Check for relation via self's parents (parent/grandparent)
+                or other_cat.is_grandparent(self)
+                or other_cat.is_parent(self)
+                # Check for relations via both cat's parents (sib/aunt/nephew)
+                or self.is_uncle_aunt(other_cat)
+                or other_cat.is_uncle_aunt(self)
+                or self.is_sibling(other_cat)
+                ):
+                return False
 
         # check for age
         if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
