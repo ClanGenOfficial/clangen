@@ -1279,7 +1279,7 @@ class Events():
                         ' die'
                     ]
                 
-            if cat.status != ['kitten', 'leader'] and other_cat.status != ['kitten', 'leader']:
+            if cat.status not in ['elder', 'kitten'] and other_cat.status not in ['elder', 'kitten']:
                 cause_of_death.extend([
                     name + ' and ' + other_name +
                     ' are killed in a border skirmish',
