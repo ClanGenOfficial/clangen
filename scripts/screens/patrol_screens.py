@@ -264,7 +264,10 @@ class PatrolScreen(Screens):
             name = short_name + '...'
 
         verdana.text(str(name),  # display name
-                     ('center', y_value))
+                     ('center', y_value),
+                     x_start=320,
+                     x_limit=480)
+
         y_value += 25
 
         verdana_small.text(str(chosen_cat.status),  # rank
@@ -307,10 +310,13 @@ class PatrolScreen(Screens):
                         available=False
                         )
                 name = str(mate.name)  # get name
-                if 10 <= len(name) >= 16:  # check name length
+                if 10 <= len(name) >= 12:  # check name length
                     short_name = str(mate.name)[0:9]
                     name = short_name + '...'
-                verdana.text(str(name).center(16), (152, 300))
+                verdana.text(str(name),
+                             ('center', 300),
+                             x_start=150,
+                             x_limit=250)
 
         # SHOW MENTOR SPRITE AND BUTTON
         if chosen_cat.status == 'apprentice':
@@ -333,10 +339,14 @@ class PatrolScreen(Screens):
                         available=False
                         )
                 name = str(chosen_cat.mentor.name)  # get name
-                if 10 <= len(name) >= 13:  # check name length
+                if 10 <= len(name) >= 12:  # check name length
                     short_name = str(chosen_cat.mentor.name)[0:9]
                     name = short_name + '...'
-                verdana.text(str(name).center(13), (552, 300))
+                verdana.text(str(name),
+                             (552, 300),
+                             x_start=550,
+                             x_limit=650)
+
                 verdana_small.text(f'mentor: {str(chosen_cat.mentor.name)}', ('center', y_value))
 
         # SHOW APPRENTICE SPRITE AND BUTTON
@@ -359,10 +369,13 @@ class PatrolScreen(Screens):
                     available=False
                     )
             name = str(chosen_cat.apprentice[0].name)  # get name
-            if 10 <= len(name) >= 13:  # check name length
+            if 10 <= len(name) >= 12:  # check name length
                 short_name = str(chosen_cat.apprentice[0].name)[0:9]
                 name = short_name + '...'
-            verdana.text(str(name).center(13), (552, 300))
+            verdana.text(str(name),
+                         (552, 300),
+                         x_start=550,
+                         x_limit=650)
 
         # ALLOW RANDOM BUTTON TO BE PUSHED UNLESS THERE IS ONLY ONE ABLE CAT LEFT
         if len(game.switches['current_patrol']) < 6 and len(able_cats) > 1:

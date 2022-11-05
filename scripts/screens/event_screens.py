@@ -248,7 +248,7 @@ class PatrolEventScreen(Screens):
             if patrol.patrol_stat_cat is not None:
                 intro_text = intro_text.replace('s_c', str(patrol.patrol_stat_cat.name))
 
-            verdana.blit_text(intro_text,
+            verdana_dark.blit_text(intro_text,
                               (390, 185),
                               x_limit=715)
 
@@ -305,7 +305,7 @@ class PatrolEventScreen(Screens):
                         success_text = success_text.replace(
                         's_c', str(patrol.patrol_stat_cat.name))
 
-                    verdana.blit_text(success_text,
+                    verdana_dark.blit_text(success_text,
                                       (390, 185),
                                       x_limit=715)
 
@@ -333,7 +333,7 @@ class PatrolEventScreen(Screens):
                         fail_text = fail_text.replace(
                         's_c', str(patrol.patrol_stat_cat.name))
 
-                    verdana.blit_text(fail_text,
+                    verdana_dark.blit_text(fail_text,
                                       (390, 185),
                                       x_limit=715)
 
@@ -361,7 +361,7 @@ class PatrolEventScreen(Screens):
                         decline_text = decline_text.replace(
                         's_c', str(patrol.patrol_stat_cat.name))
 
-                verdana.blit_text(decline_text,
+                verdana_dark.blit_text(decline_text,
                                   (390, 185),
                                   x_limit=715)
 
@@ -413,7 +413,7 @@ class PatrolEventScreen(Screens):
                             antagonize_fail_text = antagonize_fail_text.replace(
                             's_c', str(patrol.patrol_stat_cat.name))
 
-                verdana.blit_text(antagonize_text,
+                verdana_dark.blit_text(antagonize_text,
                                   (390, 185),
                                   x_limit=715)
 
@@ -469,7 +469,7 @@ class PatrolEventScreen(Screens):
                 traits.append(x)
 
 
-        verdana_small.blit_text(
+        verdana_small_dark.blit_text(
                                 f'patrol leader: {patrol.patrol_leader_name} \n'
                                 f'patrol members: {self.get_list_text(members)} \n'
                                 f'patrol skills: {self.get_list_text(skills)} \n'

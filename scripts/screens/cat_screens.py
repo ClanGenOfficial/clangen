@@ -1081,12 +1081,16 @@ class ChangeNameScreen(Screens):
     def on_use(self):
         the_cat = Cat.all_cats.get(game.switches['cat'])
 
+        # draw bar for user input
         draw_text_bar()
+
+        # text explanation
         verdana.text('-Change Name-', ('center', 130))
         verdana.text('Add a space between the new prefix and suffix',
                      ('center', 150))
         verdana.text('i.e. Fire heart', ('center', 170))
 
+        # button to switch to Name Changed screen
         buttons.draw_image_button((365, 272),
                                   button_name='done',
                                   text='done',
@@ -1094,6 +1098,7 @@ class ChangeNameScreen(Screens):
                                   change_name=['naming_text'],
                                   )
 
+        # changes the name
         if game.switches['change_name'] != '':
             name = game.switches['naming_text'].split(' ')
             the_cat.name.prefix = name[0]
@@ -1102,21 +1107,26 @@ class ChangeNameScreen(Screens):
                 if not (the_cat.name.status == "apprentice" and name[1] == "paw") and \
                         not (the_cat.name.status == "kitten" and name[1] == "kit"):
                     the_cat.name.suffix = name[1]
+
             game.switches['naming_text'] = ''
             game.switches['cur_screen'] = 'name changed screen'
+
         draw_back(25, 25)
 
 
 class NameChangedScreen(Screens):
     def on_use(self):
-        the_cat = Cat.all_cats.get(game.switches['cat'])
 
+        # draw bar for user input, purely for UI consistency
         draw_text_bar()
+
+        # draw explanation text, purely for UI consistency
         verdana.text('-Change Name-', ('center', 130))
         verdana.text('Add a space between the new prefix and suffix',
                      ('center', 150))
         verdana.text('i.e. Fire heart', ('center', 170))
 
+        # make Done button unavailable
         buttons.draw_image_button((365, 272),
                                   button_name='done',
                                   text='done',
@@ -1125,9 +1135,11 @@ class NameChangedScreen(Screens):
                                   available=False
                                   )
 
+        # name change confirmation text
         game.switches['change_name'] = ''
         verdana.text('Name changed!', ('center', 240))
 
+        # return to cat profile
         buttons.draw_image_button((25, 25),
                                   button_name='back',
                                   text='Back',
@@ -1136,14 +1148,22 @@ class NameChangedScreen(Screens):
                                   profile_tab_group=None,
                                   hotkey=[0])
 
-
+# ---------------------------------------------------------------------------- #
+#                           change gender screen                               #
+# ---------------------------------------------------------------------------- #
 class ChangeGenderScreen(Screens):
 
     def on_use(self):
         the_cat = Cat.all_cats.get(game.switches['cat'])
+
+        # draw bar for user input
         draw_text_bar()
+
+        # draw explanation text
         verdana.text('-Change Gender-', ('center', 130))
         verdana.text('You can set this to anything.', ('center', 150))
+
+        # button to change gender
         buttons.draw_image_button((365, 272),
                                   button_name='done',
                                   text='done',
@@ -1151,6 +1171,7 @@ class ChangeGenderScreen(Screens):
                                   gender_align=game.switches['naming_text'],
                                   )
 
+        # switch gender
         if game.switches['gender_align'] == game.switches['naming_text']:
             the_cat.genderalign = game.switches['gender_align']
             game.switches['naming_text'] = ''
@@ -1162,11 +1183,15 @@ class ChangeGenderScreen(Screens):
 class GenderChangedScreen(Screens):
 
     def on_use(self):
-        gender_chosen = False
-        the_cat = Cat.all_cats.get(game.switches['cat'])
+
+        # UI consistency
         draw_text_bar()
+
+        # UI consistency
         verdana.text('Change Gender', ('center', 130))
         verdana.text('You can set this to anything.', ('center', 150))
+
+        # make unavailable
         buttons.draw_image_button((365, 272),
                                   button_name='done',
                                   text='done',
@@ -1175,8 +1200,10 @@ class GenderChangedScreen(Screens):
                                   available=False
                                   )
 
+        # confirmation text
         verdana.text('Gender changed!', ('center', 240))
 
+        # return to profile screen
         buttons.draw_image_button((25, 25),
                                   button_name='back',
                                   text='Back',

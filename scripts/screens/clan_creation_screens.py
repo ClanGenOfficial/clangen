@@ -14,13 +14,6 @@ from scripts.cat.sprites import tiles
 map_available = False
 
 
-def draw_clan_name(self):
-    clan_frame_img = pygame.image.load(
-        'resources/images/pick_clan_screen/clan_name_frame.png').convert_alpha()
-    screen.blit(clan_frame_img, (292, 100))
-    verdana_light.text(game.switches['clan_name'] + 'Clan', ('center', 115))
-
-
 def draw_main_menu(self):
     verdana_small.text(
         'Note: going back to main menu resets the generated cats.',
@@ -37,8 +30,22 @@ def draw_main_menu(self):
 
 class MakeClanScreen(Screens):
 
+    # UI images
+    clan_frame_img = pygame.image.load(
+        'resources/images/pick_clan_screen/clan_name_frame.png').convert_alpha()
+    name_clan_img = pygame.image.load(
+        'resources/images/pick_clan_screen/name_clan_light.png').convert_alpha()
+    leader_img = pygame.image.load(
+        'resources/images/pick_clan_screen/leader_light.png').convert_alpha()
+    def draw_clan_name(self):
+        # draw name and frame
+        screen.blit(MakeClanScreen.clan_frame_img, (292, 100))
+        verdana_light.text(game.switches['clan_name'] + 'Clan', ('center', 115))
+
     def game_mode(self):
-        # layout
+        # ---------------------------------------------------------------------------- #
+        #                                    layout                                    #
+        # ---------------------------------------------------------------------------- #
         draw_main_menu(self)
         text_box = pygame.image.load(
             'resources/images/game_mode_text_box.png').convert_alpha()
@@ -46,7 +53,9 @@ class MakeClanScreen(Screens):
 
         y_value = 240
 
-        # DEFAULT MODE
+        # ---------------------------------------------------------------------------- #
+        #                              mode selection                                  #
+        # ---------------------------------------------------------------------------- #
         if game.switches['game_mode'] is None:
             game.switches['game_mode'] = 'classic'
 
@@ -68,6 +77,9 @@ class MakeClanScreen(Screens):
                                   game_mode='cruel season',
                                   )
 
+        # ---------------------------------------------------------------------------- #
+        #                                 classic text                                 #
+        # ---------------------------------------------------------------------------- #
         if game.switches['game_mode'] == 'classic':
             y_value = 136
             x_value = 345
@@ -84,6 +96,9 @@ class MakeClanScreen(Screens):
                                    x_limit=700
                                    )
 
+        # ---------------------------------------------------------------------------- #
+        #                                expanded text                                 #
+        # ---------------------------------------------------------------------------- #
         if game.switches['game_mode'] == 'expanded':
             y_value = 136
             x_value = 345
@@ -99,6 +114,9 @@ class MakeClanScreen(Screens):
                                    line_break=40,
                                    x_limit=700)
 
+        # ---------------------------------------------------------------------------- #
+        #                              cruel season text                               #
+        # ---------------------------------------------------------------------------- #
         if game.switches['game_mode'] == 'cruel season':
             y_value = 136
             x_value = 345
@@ -122,6 +140,9 @@ class MakeClanScreen(Screens):
                                   available=False
                                   )
 
+        # ---------------------------------------------------------------------------- #
+        #                             next and prev step                               #
+        # ---------------------------------------------------------------------------- #
         if game.switches['game_mode'] != 'cruel season':
             buttons.draw_image_button((400, 620),
                                       button_name='next_step',
@@ -138,20 +159,20 @@ class MakeClanScreen(Screens):
                                       available=False,
                                       size=(147, 30)
                                       )
+
         verdana.text("Your clan's game mode is permanent and cannot be changed after clan creation.", ('center', 581))
 
     def first_phase(self):
         # layout
         draw_main_menu(self)
-        name_clan_img = pygame.image.load(
-            'resources/images/pick_clan_screen/name_clan_light.png').convert_alpha()
-        screen.blit(name_clan_img, (0, 0))
 
+        screen.blit(MakeClanScreen.name_clan_img, (0, 0))
+
+        # color and placement of user input text
         self.game_screen.blit(game.naming_box, (265, 600))
-        if game.settings['dark mode']:
-            verdana_black.text(game.switches['naming_text'], (265, 600))
-        else:
-            verdana.text(game.switches['naming_text'], (265, 600))
+        verdana_dark.text(game.switches['naming_text'], (265, 600))
+
+        # choose random prefix
         verdana_light.text('-Clan', (410, 600))
         buttons.draw_image_button((222, 593),
                                   button_name='random_dice',
@@ -160,6 +181,7 @@ class MakeClanScreen(Screens):
                                   size=(34, 34),
                                   hotkey=[1]
                                   )
+        # reset clan name
         buttons.draw_image_button((455, 595),
                                   button_name='reset_name',
                                   text='Reset Name',
@@ -168,7 +190,9 @@ class MakeClanScreen(Screens):
                                   hotkey=[2]
                                   )
 
-        # buttons
+        # ---------------------------------------------------------------------------- #
+        #                             next and prev step                               #
+        # ---------------------------------------------------------------------------- #
         buttons.draw_image_button((253, 635),
                                   button_name='last_step',
                                   text='< Last step',
@@ -196,11 +220,14 @@ class MakeClanScreen(Screens):
 
     def second_phase(self):
         game.switches['naming_text'] = ''
-        draw_clan_name(self)
+
+        self.draw_clan_name()
+
         draw_main_menu(self)
-        leader_img = pygame.image.load(
-            'resources/images/pick_clan_screen/leader_light.png').convert_alpha()
-        screen.blit(leader_img, (0, 414))
+
+        screen.blit(MakeClanScreen.leader_img, (0, 414))
+
+        # draw cats to choose from
         for u in range(6):
             buttons.draw_button((50, 150 + 50 * u),
                                 image=game.choose_cats[u].sprite,
@@ -244,7 +271,9 @@ class MakeClanScreen(Screens):
                                           size=(332, 52),
                                           hotkey=[1]
                                           )
-
+        # ---------------------------------------------------------------------------- #
+        #                             next and prev step                               #
+        # ---------------------------------------------------------------------------- #
         buttons.draw_image_button((253, 400),
                                   button_name='last_step',
                                   text='< Last step',
@@ -263,7 +292,7 @@ class MakeClanScreen(Screens):
                                   )
 
     def third_phase(self):
-        draw_clan_name(self)
+        self.draw_clan_name()
         draw_main_menu(self)
         deputy_img = pygame.image.load(
             'resources/images/pick_clan_screen/deputy_light.png').convert_alpha()
@@ -309,7 +338,9 @@ class MakeClanScreen(Screens):
                                           deputy=game.switches['cat'],
                                           size=(384, 52),
                                           hotkey=[1])
-
+        # ---------------------------------------------------------------------------- #
+        #                             next and prev step                               #
+        # ---------------------------------------------------------------------------- #
         buttons.draw_image_button((253, 400),
                                   button_name='last_step',
                                   text='< Last step',
@@ -327,7 +358,7 @@ class MakeClanScreen(Screens):
                                   )
 
     def fourth_phase(self):
-        draw_clan_name(self)
+        self.draw_clan_name()
         draw_main_menu(self)
         medic_img = pygame.image.load(
             'resources/images/pick_clan_screen/med_light.png').convert_alpha()
@@ -381,7 +412,9 @@ class MakeClanScreen(Screens):
                                           medicine_cat=game.switches['cat'],
                                           hotkey=[1],
                                           size=(306, 58))
-
+        # ---------------------------------------------------------------------------- #
+        #                             next and prev step                               #
+        # ---------------------------------------------------------------------------- #
         buttons.draw_image_button((253, 400),
                                   button_name='last_step',
                                   text='< Last step',
@@ -399,7 +432,7 @@ class MakeClanScreen(Screens):
                                   )
 
     def fifth_phase(self):
-        draw_clan_name(self)
+        self.draw_clan_name()
         draw_main_menu(self)
         clan_img = pygame.image.load(
             'resources/images/pick_clan_screen/clan_light.png').convert_alpha()
