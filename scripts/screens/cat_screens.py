@@ -224,7 +224,7 @@ class ProfileScreen(Screens):
             verdana.text(second_part, ('center', 200))
 
         
-        if the_cat.genderalign is None or the_cat.genderalign or not the_cat.genderalign:
+        if the_cat.genderalign is None or the_cat.genderalign == the_cat.gender:
             verdana_small.text(str(the_cat.gender), (300, 230 + count * 15))
         else:
             verdana_small.text(str(the_cat.genderalign), (300, 230 + count * 15))
