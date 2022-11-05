@@ -390,8 +390,8 @@ class ViewChildrenScreen(Screens):
                                (342, 165))
 
         #SHOW KITS
-        pos_x = 240
-        pos_y = 410
+        pos_x = 229
+        pos_y = 400
 
         kittens = False
         for x in game.clan.clan_cats:
@@ -408,7 +408,8 @@ class ViewChildrenScreen(Screens):
                 if 6 <= len(name) >= 9:
                     short_name = str(Cat.all_cats[x].name)[0:5]
                     name = short_name + '...'
-                verdana_small_dark.text(str(name).center(12), ('center', pos_y + 60),
+                verdana_small_dark.text(str(name),
+                                        ('center', pos_y + 50),
                                         x_start=pos_x,
                                         x_limit=pos_x + 60
                                         )
