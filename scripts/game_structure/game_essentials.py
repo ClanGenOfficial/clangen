@@ -20,7 +20,7 @@ class Game():
     event_scroll_ct = 0
     max_allegiance_displayed = 17
     allegiance_scroll_ct = 0
-    max_relation_events_displayed = 13
+    max_relation_events_displayed = 10
     relation_scroll_ct = 0
     cur_events_list = []
     allegiance_list = []
@@ -59,11 +59,15 @@ class Game():
         'deputy': None,
         'medicine_cat': None,
         'members': [],
+        're_roll': False,
+        'roll_count':0,
         'event': None,
         'cur_screen': 'start screen',
         'naming_text': '',
         'timeskip': False,
         'mate': None,
+        'choosing_mate':False,
+        'mentor': None,
         'setting': None,
         'save_settings': False,
         'list_page': 1,
@@ -79,6 +83,10 @@ class Game():
         'read_clans': False,
         'kill_cat': False,
         'current_patrol': [],
+        'patrol_remove': False,
+        'cat_remove': False,
+        'fill_patrol': False,
+        'patrol_done': False,
         'error_message': '',
         'apprentice': None,
         'change_name': '',
@@ -94,8 +102,15 @@ class Game():
         'hunting_territory': (0, 0),
         'training_territory': (0, 0),
         'options_tab': None,
+        'profile_tab_group': None,
+        'gender_align': None,
+        'show_details': False,
+        'chosen_cat': None,
         'game_mode': '',
+        'set_game_mode': False,
+        'broke_up': False,
         'show_info': False
+
     }
     all_screens = {}
     cur_events = {}
@@ -116,10 +131,10 @@ class Game():
         'shaders': False,
         'hotkey display': False,
         'random relation': True,
-        'show dead relation': True,
-        'show empty relation': True,
+        'show dead relation': False,
+        'show empty relation': False,
         'romantic with former mentor': True,
-        'game_mode': 'classic'
+        'game_mode': None
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
