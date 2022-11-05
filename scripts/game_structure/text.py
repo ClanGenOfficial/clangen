@@ -32,18 +32,21 @@ class Font():
         """Change colour of text. Colour is specified by an RGB tuple."""
         self.colour = colour
 
-    def text(self, text, pos=None, where=used_screen):
+    def text(self, text, pos=None, where=used_screen, x_start=0, x_limit=800):
         """
         Blit text onto a screen and return its width.
         
         Doesn't blit if pos is None.
-        Setting one or both items in pos to 'center' centers the text to the screen.
+        Setting one or both items in pos to 'center' centers the text to the screen by default.
+        Else, specify the x margins to center between using x_limit and x_start.
         Negative pos value will be taken from the other end of the screen.
 
         Parameters:
         text -- String to blit
         pos -- Tuple specifying (x,y) position in pixels where to blit text (default: None)
         where -- Screen to draw text onto (default: used_screen)
+        x_start -- The right x-axis margin to center text within (default: 0)
+        x_limit -- The left x-axis margin to center text within (default: 800)
 
         Returns:
         int -- Width of text when drawn
@@ -51,11 +54,12 @@ class Font():
         text = self.translate(text)
         t = self.font.render(text, True, self.colour)
         if pos is not None:
-            # setting on or both items in tuple to 'center' centers the text to the screen.
+            # setting on or both items in tuple to 'center' centers the text to the screen by default.
             # negative pos value will be taken from the other end of the screen
             new_pos = list(pos)
             if pos[0] == 'center':
-                new_pos[0] = screen_x / 2 - t.get_width() / 2
+                x_margins = x_limit - x_start
+                new_pos[0] = x_margins / 2 - t.get_width() / 2 + x_start
             elif pos[0] < 0:
                 new_pos[0] = screen_x + pos[0] - t.get_width()
             if pos[1] == 'center':
@@ -84,36 +88,43 @@ class Font():
         """
         for font in verdana.all_fonts:
             if game.settings['dark mode'] and font.colour == (0, 0, 0):
-                font.reset_colour(colour=(250, 250, 250))
-            elif not game.settings['dark mode'] and font.colour == (250, 250,
-                                                                    250):
+                font.reset_colour(colour=(239, 229, 206))
+            elif not game.settings['dark mode'] and font.colour == (239, 229, 206):
                 font.reset_colour(colour=(0, 0, 0))
 
-    def blit_text(self, text, pos, where=used_screen):
+    def blit_text(self, text, pos, where=used_screen, x_limit=800, line_break=0,):
         """
         Blit text with automatically-added linebreaks.
 
         Parameters:
         text -- String to blit
-        pos -- Tuple specifying position to blit text onto (default: None)
+        pos -- Tuple specifying position to blit text onto.  Use 'center' for x_pos to center text. (default: None)
         where -- Screen to draw text onto (default: used_screen)
+        x_limit -- The farthest x_value that the text should reach (default: 800)
+        line_break -- Specify the amount of pixels that should be between paragraphs.  Leave default to have the space
+                      between paragraphs be the same as the space between lines.
+                      Use \n to make a new paragraph. (default: word_width)
+
         """
         words = [word.split(' ') for word in text.splitlines()
                  ]  # 2D array where each row is a list of words.
         space = 5  # The width of a space.
+
         x, y = pos
         for line in words:
             for word in line:
                 word_surface = self.font.render(word, True, self.colour)
                 word_width, word_height = word_surface.get_size()
                 word_height += 5
-                if x + word_width >= 400:
+                if line_break == 0:
+                    line_break = word_width
+                if x + word_width >= x_limit:
                     x = pos[0]  # Reset the x.
                     y += word_height  # Start on new row.
                 where.blit(word_surface, (x, y))
                 x += word_width + space
             x = pos[0]  # Reset the x.
-            y += word_height  # Start on new row.
+            y += line_break  # Start on new row.
 
 
 # F O N T S
@@ -121,11 +132,22 @@ verdana = Font('verdana')
 verdana_black = Font('verdana', colour='black')
 verdana_white = Font('verdana', colour='white')
 verdana_red = Font('verdana', colour=(242, 52, 29))
+verdana_light = Font('verdana', colour=(239, 229, 207))
+verdana_dark = Font('verdana', colour=(35, 30, 17))
 verdana_small = Font('verdana', 11)
 verdana_baby = Font('verdana', 11, (100, 100, 250))
 verdana_big = Font('verdana', 18)
+verdana_mid = Font('verdana', 13)
 verdana_big_white = Font('verdana', 18, colour='white')
 verdana_green = Font('verdana', colour='darkgreen')
+
+verdana_big_light = Font('verdana', 18, colour=(239, 229, 207))
+verdana_small_light = Font('verdana', 11, colour=(239, 229, 207))
+
+verdana_big_dark = Font('verdana', 18, colour=(35, 30, 17))
+verdana_small_dark = Font('verdana', 11, colour=(35, 30, 17))
+verdana_mid_dark = Font('verdana', 13, colour=(35, 30, 17))
+
 # for relationships, same color as bar
-verdana_dark_margenta = Font('verdana', 11, colour=(226, 65, 103))
-verdana_margenta = Font('verdana', 11, colour=(160, 40, 69))
+verdana_dark_magenta = Font('verdana', 11, colour=(226, 65, 103))
+verdana_magenta = Font('verdana', 11, colour=(133, 49, 40))

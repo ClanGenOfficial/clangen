@@ -70,16 +70,17 @@ class Cat():
     ]
     elder_skills = [
         'good storyteller', 'great storyteller', 'fantastic storyteller',
-        'smart tactician', 'valuable tactician','valuable insight',
+        'smart tactician', 'valuable tactician', 'valuable insight',
         'good mediator', 'great mediator', 'excellent mediator',
         'good teacher', 'great teacher', 'fantastic teacher',
         'strong connection to StarClan', 'smart', 'very smart', 'extremely smart',
         'good kitsitter', 'great kitsitter', 'excellent kitsitter', 'camp keeper', 'den builder',
     ]
+
     backstories = [
-        'clanborn', 'half-clan1', 'half-clan2', 'outsider_roots1', 'outsider_roots2', 
+        'clanborn', 'half-clan1', 'half-clan2', 'outsider_roots1', 'outsider_roots2',
         'loner1', 'loner2', 'kittypet1', 'kittypet2', 'rogue1', 'rogue2', 'abandoned1',
-        'abandoned2', 'abandoned3', 'medicine_cat', 'otherclan', 'otherclan2', 'ostracized_warrior', 'disgraced', 
+        'abandoned2', 'abandoned3', 'medicine_cat', 'otherclan', 'otherclan2', 'ostracized_warrior', 'disgraced',
         'retired_leader', 'refugee', 'tragedy_survivor'
     ]
 
@@ -1093,6 +1094,7 @@ class Cat():
 # ---------------------------------------------------------------------------- #
 #                               END OF CAT CLASS                               #
 # ---------------------------------------------------------------------------- #
+
 
 # Twelve example cats
 def create_example_cats():
