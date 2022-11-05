@@ -482,7 +482,9 @@ class PatrolScreen(Screens):
         if chosen_cat.apprentice != []:
 
             x = 0
-            if chosen_cat.apprentice[0] in game.switches['current_patrol'] \
+            if len(chosen_cat.apprentice) == 1:
+                x = 0
+            elif chosen_cat.apprentice[0] in game.switches['current_patrol'] \
                     and chosen_cat.apprentice[1] not in game.switches['current_patrol']:
                 x = 1
             elif chosen_cat.apprentice[1] in game.switches['current_patrol'] \
