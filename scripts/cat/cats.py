@@ -138,10 +138,10 @@ class Cat():
 
         # setting ID
         if ID is None:
-            potential_ID = str(next(Cat.id_iter))
-            while potential_ID in self.all_cats:
-                potential_ID = str(next(Cat.id_iter))
-            self.ID = potential_ID
+            potential_id = str(next(Cat.id_iter))
+            while potential_id in self.all_cats:
+                potential_id = str(next(Cat.id_iter))
+            self.ID = potential_id
         else:
             self.ID = ID
 
@@ -566,7 +566,7 @@ class Cat():
             if self.parent2 is not None:
                 return [self.parent1, self.parent2]
             return [self.parent1]
-        elif self.parent2 is not None:
+        if self.parent2 is not None:
             return [self.parent2]
         return []
 
@@ -819,7 +819,6 @@ class Cat():
 # ---------------------------------------------------------------------------- #
 #                                 relationships                                #
 # ---------------------------------------------------------------------------- #
-
     def is_potential_mate(self, other_cat, for_love_interest = False, former_mentor_setting = game.settings['romantic with former mentor']):
         """Checks if this cat is a free and potential mate for the other cat."""
         # just to be sure, check if it is not the same cat
@@ -843,28 +842,30 @@ class Cat():
         if is_former_mentor and not former_mentor_setting:
             return False
 
-        # Relationship checks </3
-        # We don't need to do any checks if the cats have no parents =3
-        if (
-            self.parent1 is not None
-            or self.parent2 is not None
-            or other_cat.parent1 is not None
-            or other_cat.parent2 is not None
-        ):
-            if (
-                # check for relation via other_cat's parents (parent/grandparent)
-                self.is_grandparent(other_cat)
-                or self.is_parent(other_cat)
-                # Check for relation via self's parents (parent/grandparent)
-                or other_cat.is_grandparent(self)
-                or other_cat.is_parent(self)
-                # Check for relations via both cat's parents (sib/aunt/nephew)
-                or self.is_uncle_aunt(other_cat)
-                or other_cat.is_uncle_aunt(self)
-                or self.is_sibling(other_cat)
-                ):
-                return False
-
+        # Relationship checks
+        # We don't need to parental checks if the cats have no parents =3
+        if self.parent1 or self.parent2 or other_cat.parent1 or other_cat.parent2:
+            # Check for relation via other_cat's parents (parent/grandparent)
+            if other_cat.parent1 or other_cat.parent2:
+                if self.is_grandparent(other_cat) or self.is_parent(other_cat):
+                    return False
+                # Check for uncle/aunt via self's sibs & other's parents
+                if self.siblings:
+                    if self.is_uncle_aunt(other_cat):
+                        return False
+                # Check for sibs via self's parents and other_cat's parents
+                if self.parent1 or self.parent2:
+                    if self.is_sibling(other_cat) or other_cat.is_sibling(self):
+                        return False
+            # Check for relation via self's parents (parent/grandparent)
+            if self.parent1 or self.parent2:
+                if other_cat.is_grandparent(self) or other_cat.is_parent(self):
+                    return False
+                # Check for uncle/aunt via other_cat's sibs & self's parents
+                if other_cat.siblings:
+                    if other_cat.is_uncle_aunt(self):
+                        return False
+                    
         # check for age
         if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
             return False
