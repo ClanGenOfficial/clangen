@@ -565,14 +565,14 @@ class ProfileScreen(Screens):
             if the_cat.backstory is not None:
                 verdana_dark.blit_text(f'Backstory: {backstory} \n{bs_blurb}',
                                        (90, 485),
-                                       x_limit=460,
+                                       x_limit=500,
                                        line_break=30)
 
             # default display if no backstory
             else:
                 verdana_dark.blit_text(f'Backstory: Clanborn \n{bs_blurb}',
                                        (90, 485),
-                                       x_limit=460,
+                                       x_limit=500,
                                        line_break=30)
 
         # opens backstory tab if clicked
