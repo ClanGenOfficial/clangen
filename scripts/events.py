@@ -1303,8 +1303,8 @@ class Events():
             cat.die()
             other_cat.die()
 
-        elif randint(1, 1) == 1:  #Death with Personalities
-            murder_chance = 2
+        elif randint(1, 70) == 1:  #Death with Personalities
+            murder_chance = 20
             name = str(cat.name)
             countdown = int(len(Cat.all_cats) / 3)
             other_cat = choice(list(Cat.all_cats.values()))
@@ -1315,7 +1315,9 @@ class Events():
                     return
             other_name = str(other_cat.name)
             # murdering leader/deputy
-            if cat.trait in ['bloodthirsty', 'ambitious', 'vengeful', 'sneaky'] and other_cat.status in ['leader', 'deputy']\
+            if cat.trait in ['bloodthirsty', 'vengeful']:
+                murder_chance = 10
+            if cat.trait in ['bloodthirsty', 'ambitious', 'vengeful', 'sneaky'] and cat.status in ['warrior', 'deputy']\
                 and randint(1, murder_chance) == 1:
                 if cat.status == 'deputy' and other_cat.status == 'leader' and current_lives <= 6:
                         cause_of_death = [
@@ -1324,21 +1326,19 @@ class Events():
                             name + ' murdered ' + other_name +
                             ' to take their place and made it look like an accident'
                         ]
-                        game.clan.leader_lives -= 10
+                        game.clan.leader_lives = 0
                         other_cat.die()
-                        game.cur_events_list.append(
-                        choice(cause_of_death))
+                        game.cur_events_list.append(choice(cause_of_death))
                 elif cat.status == 'deputy' and other_cat.status == 'leader' and current_lives >= 7:
                         cause_of_death = [
                         name + ' murdered ' + other_name +
                         ' to take their place, but the leader had more lives than they expected. ' +
                         other_name + ' retaliated and killed ' + name + ' in self-defense.'
                         ]
-                        liveslost = choice(1, 2, 3, 4)
+                        liveslost = choice([1, 2, 3, 4])
                         game.clan.leader_lives = current_lives - liveslost                            
                         cat.die()
-                        game.cur_events_list.append(
-                        choice(cause_of_death))
+                        game.cur_events_list.append(choice(cause_of_death))
                 elif cat.status == 'warrior':
                         if other_cat.status == 'leader' and current_lives <= 6:
                             cause_of_death = [
@@ -1349,15 +1349,17 @@ class Events():
                             ]
                             game.clan.leader_lives -= 10
                             other_cat.die()
+                            game.cur_events_list.append(choice(cause_of_death))
                         elif other_cat == 'leader' and current_lives >= 7:
                             cause_of_death = [
                             name + ' murdered ' + other_name +
                             ' in hopes of taking their place, but the leader had more lives than they expected. ' +
                             other_name + ' retaliated and killed ' + name + ' in self-defense.'
                             ]
-                            liveslost = choice(1, 2, 2, 2, 3, 3, 3, 4)
+                            liveslost = choice([1, 2, 2, 2, 3, 3, 3, 4])
                             game.clan.leader_lives = current_lives - liveslost
                             cat.die()
+                            game.cur_events_list.append(choice(cause_of_death))
                         elif other_cat.status == 'deputy':
                             cause_of_death = [
                             name + ' murdered ' + other_name +
@@ -1366,10 +1368,9 @@ class Events():
                             ' in cold blood and made it look accidental in hopes of taking their place'
                             ]
                             other_cat.die()
-                        game.cur_events_list.append(
-                        choice(cause_of_death))
+                            game.cur_events_list.append(choice(cause_of_death))                        
             # just murder
-            elif cat.trait in ['bloodthirsty', 'vengeful', 'sadistic'] and randint(1, murder_chance) == 1:
+            elif cat.trait in ['bloodthirsty', 'vengeful', 'sadistic'] and randint(1, murder_chance) == 2:
                     if other_cat.status == 'leader' and current_lives <= 6:
                         cause_of_death = [
                         name + ' murdered ' + other_name +
@@ -1379,15 +1380,17 @@ class Events():
                         ]
                         game.clan.leader_lives -= 10
                         other_cat.die()
+                        game.cur_events_list.append(choice(cause_of_death))
                     elif other_cat == 'leader' and current_lives >= 7:                            
                         cause_of_death = [
                         name + ' murdered ' + other_name +
                         ', but the leader had more lives than they expected. ' +
                         other_name + ' retaliated and killed ' + name + ' in self-defense'
                         ]
-                        liveslost = choice(1, 2, 3, 4)
+                        liveslost = choice([1, 2, 3, 4])
                         game.clan.leader_lives = current_lives - liveslost
                         cat.die()
+                        game.cur_events_list.append(choice(cause_of_death))
                     else:
                         cause_of_death = [
                         name + ' murdered ' + other_name +
@@ -1396,8 +1399,7 @@ class Events():
                         ' in cold blood and made it look accidental'
                         ]
                         other_cat.die()
-                    game.cur_events_list.append(
-                        choice(cause_of_death))
+                        game.cur_events_list.append(choice(cause_of_death))
             elif cat.status in ['medicine cat', 'medicine cat apprentice']\
             and cat.trait in ['bloodthirsty', 'vengeful', 'sadistic'] and randint(1, murder_chance) == 1:
                 cause_of_death = [
