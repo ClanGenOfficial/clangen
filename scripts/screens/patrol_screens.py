@@ -15,7 +15,6 @@ class PatrolScreen(Screens):
     cat_frame = pygame.image.load("resources/images/patrol_cat_frame.png")
     app_frame = pygame.image.load("resources/images/patrol_app_frame.png")
     mate_frame = pygame.image.load("resources/images/patrol_mate_frame.png")
-    mentor_frame = pygame.image.load("resources/images/patrol_mentor_frame.png")
 
     def on_use(self):
         # USER INTERFACE
@@ -473,26 +472,34 @@ class PatrolScreen(Screens):
         # ---------------------------------------------------------------------------- #
         # SHOW APPRENTICE SPRITE AND BUTTON
         if chosen_cat.apprentice != []:
+
+            x = 0
+            if chosen_cat.apprentice[0] in game.switches['current_patrol'] \
+                    and chosen_cat.apprentice[1] not in game.switches['current_patrol']:
+                x = 1
+            elif chosen_cat.apprentice[1] in game.switches['current_patrol'] \
+                    and chosen_cat.apprentice[2] not in game.switches['current_patrol']:
+                x = 3
             screen.blit(PatrolScreen.app_frame, (495, 190))
-            draw_big(chosen_cat.apprentice[0], (550, 200))
-            if chosen_cat.apprentice[0] in able_cats:
+            draw_big(chosen_cat.apprentice[x], (550, 200))
+            if chosen_cat.apprentice[x] in able_cats:
                 buttons.draw_image_button(
                     (548, 356),
                     button_name='patrol_select',
                     size=(104, 26),
-                    cat=chosen_cat.apprentice[0]
+                    cat=chosen_cat.apprentice[x]
                     )
             else:
                 buttons.draw_image_button(
                     (548, 356),
                     button_name='patrol_select',
                     size=(104, 26),
-                    cat=chosen_cat.apprentice[0],
+                    cat=chosen_cat.apprentice[x],
                     available=False
                     )
-            name = str(chosen_cat.apprentice[0].name)  # get name
+            name = str(chosen_cat.apprentice[x].name)  # get name
             if 10 <= len(name) >= 12:  # check name length
-                short_name = str(chosen_cat.apprentice[0].name)[0:9]
+                short_name = str(chosen_cat.apprentice[x].name)[0:9]
                 name = short_name + '...'
             verdana.text(str(name),
                               ('center', 310),

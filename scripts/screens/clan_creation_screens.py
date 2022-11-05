@@ -13,7 +13,12 @@ from scripts.cat.sprites import tiles
 #from scripts.world import World, save_map
 map_available = False
 
-
+def roll_button(self, x_value, y_value, arg0):
+    buttons.draw_image_button((x_value, y_value),
+                              button_name='random_dice',
+                              re_roll=True,
+                              size=(34, 34),
+                              available=arg0)
 def draw_main_menu(self):
     verdana_small.text(
         'Note: going back to main menu resets the generated cats.',
@@ -175,6 +180,7 @@ class MakeClanScreen(Screens):
 
         # choose random prefix
         verdana_light.text('-Clan', (410, 600))
+
         buttons.draw_image_button((222, 593),
                                   button_name='random_dice',
                                   text='Randomize',
@@ -228,13 +234,53 @@ class MakeClanScreen(Screens):
 
         screen.blit(MakeClanScreen.leader_img, (0, 414))
 
-        buttons.draw_image_button((83, 440),
-                                  button_name='random_dice',
-                                  re_roll=True,
-                                  size=(34, 34))
+        if len(game.switches['clan_list']) >= 3:
+            roll_button(self, 83, 440, True)
+
+        else:
+            if game.switches['roll_count'] == 0:
+                x_pos = 155
+                y_pos = 235
+                roll_button(self, x_pos, y_pos, True)
+                y_pos += 40
+                roll_button(self, x_pos, y_pos, True)
+                y_pos += 40
+                roll_button(self, x_pos, y_pos, True)
+                y_pos += 40
+
+            if game.switches['roll_count'] == 1:
+                x_pos = 155
+                y_pos = 235
+                roll_button(self, x_pos, y_pos, True)
+                y_pos += 40
+                roll_button(self, x_pos, y_pos, True)
+                y_pos += 40
+                roll_button(self, x_pos, y_pos, False)
+                y_pos += 40
+
+            if game.switches['roll_count'] == 2:
+                x_pos = 155
+                y_pos = 235
+                roll_button(self, x_pos, y_pos, True)
+                y_pos += 40
+                roll_button(self, x_pos, y_pos, False)
+                y_pos += 40
+                roll_button(self, x_pos, y_pos, False)
+                y_pos += 40
+
+            if game.switches['roll_count'] == 3:
+                x_pos = 155
+                y_pos = 235
+                roll_button(self, x_pos, y_pos, False)
+                y_pos += 40
+                roll_button(self, x_pos, y_pos, False)
+                y_pos += 40
+                roll_button(self, x_pos, y_pos, False)
+                y_pos += 40
 
         if game.switches['re_roll'] is True:
             create_example_cats()
+            game.switches['roll_count'] += 1
             game.switches['re_roll'] = False
 
         # draw cats to choose from
@@ -1014,6 +1060,7 @@ class MakeClanScreen(Screens):
         game.switches['deputy'] = None
         game.switches['members'] = []
         game.switches['choosing_camp'] = False
+        game.switches['roll_count'] = 0
         create_example_cats()
         self.worldseed = randrange(10000)
         #if map_available:
