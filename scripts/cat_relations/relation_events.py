@@ -133,7 +133,7 @@ class Relation_Events():
         for pregnancy_key in clan.pregnancy_data.keys():
             clan.pregnancy_data[pregnancy_key]["moons"] += 1
 
-    def handle_having_kits(self, cat, clan = game.clan):
+    def handle_having_kits(self, cat, clan):
         """Handles pregnancy of a cat."""
         if clan is None:
             return
@@ -160,7 +160,7 @@ class Relation_Events():
                 cat.mate = None
 
         # check if there is a cat in the clan for the second parent
-        second_parent = self.get_second_parent(cat,mate,game.settings['affair'])
+        second_parent = self.get_second_parent(cat, mate, game.settings['affair'])
         second_parent_relation = None
         if second_parent is not None:
             second_parent_relation = list(filter(lambda r: r.cat_to.ID == second_parent.ID ,cat.relationships))
@@ -168,6 +168,12 @@ class Relation_Events():
                 second_parent_relation = second_parent_relation[0]
             else: 
                 second_parent_relation = None
+        
+        # check if the second_parent is not none, if they also can have kits
+        if second_parent:
+            parent2_can_have_kits = self.check_if_can_have_kits(second_parent, game.settings['no unknown fathers'], game.settings['no gendered breeding'])
+            if not parent2_can_have_kits:
+                return
         
         self.handle_zero_moon_pregnant(cat, second_parent, second_parent_relation, clan)
 
@@ -177,13 +183,14 @@ class Relation_Events():
         warrior_name = Name()
         warrior_name_two = Name()
         kits_amount = 0
+        other_clan_name = "FILLER_CLAN"
         possible_strings = [
             f'{name} had a litter of {str(kits_amount)} kit(s) with a ' + choice(['loner', 'rogue', 'kittypet']) + ' named ' + str(loner_name),
             f'{name} had a secret litter of {str(kits_amount)} kit(s) with a ' + choice(['loner', 'rogue', 'kittypet']) + ' named ' + str(loner_name),
-            f'{name} had a secret litter of {str(kits_amount)} kit(s) with a ' + choice(game.clan.all_clans).name + f'Clan warrior named {str(warrior_name)}',
-            f'{name} had a secret litter of {str(kits_amount)} kit(s) with {str(warrior_name)} of ' + choice(game.clan.all_clans).name + 'Clan',
-            f'{name} had a secret litter of {str(kits_amount)} kit(s) with ' + choice(game.clan.all_clans).name + f'Clan\'s deputy {str(warrior_name)}',
-            f'{name} had a secret litter of {str(kits_amount)} kit(s) with ' + choice(game.clan.all_clans).name + f'Clan\'s leader {str(names.prefix)}star',
+            f'{name} had a secret litter of {str(kits_amount)} kit(s) with a ' + other_clan_name + f'Clan warrior named {str(warrior_name)}',
+            f'{name} had a secret litter of {str(kits_amount)} kit(s) with {str(warrior_name)} of ' + other_clan_name + 'Clan',
+            f'{name} had a secret litter of {str(kits_amount)} kit(s) with ' + other_clan_name + f'Clan\'s deputy {str(warrior_name)}',
+            f'{name} had a secret litter of {str(kits_amount)} kit(s) with ' + other_clan_name + f'Clan\'s leader {str(names.prefix)}star',
             f'{name} had a secret litter of {str(kits_amount)} kit(s) with another Clan\'s warrior',
             f'{name} had a secret litter of {str(kits_amount)} kit(s) with a warrior named {str(warrior_name_two)}',
             f'{name} had a secret litter of {str(kits_amount)} kit(s) with {str(warrior_name_two)} from another Clan\'s',
@@ -328,13 +335,13 @@ class Relation_Events():
         if cat.gender == 'male' and other_cat is not None and other_cat.gender == 'female':
             pregnant_cat = other_cat
             clan.pregnancy_data[other_cat.ID] = {
-                "second_parent": cat.ID,
+                "second_parent": str(cat.ID),
                 "moons": 0,
                 "amount": 0
             }
         else:
             clan.pregnancy_data[cat.ID] = {
-                "second_parent": other_cat,
+                "second_parent": str(other_cat),
                 "moons": 0,
                 "amount": 0
             }
