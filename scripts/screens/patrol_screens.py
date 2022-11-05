@@ -15,6 +15,7 @@ class PatrolScreen(Screens):
     cat_frame = pygame.image.load("resources/images/patrol_cat_frame.png")
     app_frame = pygame.image.load("resources/images/patrol_app_frame.png")
     mate_frame = pygame.image.load("resources/images/patrol_mate_frame.png")
+    mentor_frame = pygame.image.load("resources/images/patrol_mentor_frame.png")
 
     def on_use(self):
         # USER INTERFACE
@@ -336,8 +337,9 @@ class PatrolScreen(Screens):
                                       size=(34, 34),
                                       available=False)
 
-
-        # GO ON PATROL
+        # ---------------------------------------------------------------------------- #
+        #                                 go on patrol                                 #
+        # ---------------------------------------------------------------------------- #
         if len(game.switches['current_patrol']) > 0:
             buttons.draw_button(('center', 589),
                                 image='buttons/go_patrol',
@@ -350,9 +352,11 @@ class PatrolScreen(Screens):
                                 text='Start Patrol',
                                 available=False)
 
-    # TODO Rename this here and in `on_use`
     def show_info(self, able_cats):
 
+        # ---------------------------------------------------------------------------- #
+        #                               info on chosen cat                             #
+        # ---------------------------------------------------------------------------- #
         # CHOSEN CAT INFO
         chosen_cat = game.switches['cat']  # cat
 
@@ -391,6 +395,9 @@ class PatrolScreen(Screens):
             ('center', y_value))
         y_value += 15
 
+        # ---------------------------------------------------------------------------- #
+        #                         show mate if they have one                           #
+        # ---------------------------------------------------------------------------- #
         # SHOW MATE SPRITE AND BUTTON
         if chosen_cat.status != 'apprentice':
             if chosen_cat.mate is not None:
@@ -399,16 +406,16 @@ class PatrolScreen(Screens):
                 draw_big(mate, (150, 200))
                 if mate in able_cats:
                     buttons.draw_image_button(
-                        (148, 322),
-                        button_name='patrol_add_mate',
-                        size=(104, 30),
+                        (148, 356),
+                        button_name='patrol_select',
+                        size=(104, 26),
                         cat=mate
                         )
                 else:
                     buttons.draw_image_button(
-                        (148, 322),
-                        button_name='patrol_add_mate',
-                        size=(104, 30),
+                        (148, 356),
+                        button_name='patrol_select',
+                        size=(104, 26),
                         cat=mate,
                         available=False
                         )
@@ -416,11 +423,17 @@ class PatrolScreen(Screens):
                 if 10 <= len(name) >= 12:  # check name length
                     short_name = str(mate.name)[0:9]
                     name = short_name + '...'
-                verdana_dark.text(str(name),
-                             ('center', 300),
+                verdana.text(str(name),
+                             ('center', 310),
                              x_start=150,
                              x_limit=250)
-
+                verdana_small.text('mate',
+                             ('center', 330),
+                             x_start=150,
+                             x_limit=250)
+        # ---------------------------------------------------------------------------- #
+        #                        show mentor if they have one                          #
+        # ---------------------------------------------------------------------------- #
         # SHOW MENTOR SPRITE AND BUTTON
         if chosen_cat.status == 'apprentice':
             if chosen_cat.mentor is not None:
@@ -428,16 +441,16 @@ class PatrolScreen(Screens):
                 draw_big(chosen_cat.mentor, (550, 200))
                 if chosen_cat.mentor in able_cats:
                     buttons.draw_image_button(
-                        (548, 322),
-                        button_name='patrol_add_mentor',
-                        size=(104, 30),
+                        (548, 356),
+                        button_name='patrol_select',
+                        size=(104, 26),
                         cat=chosen_cat.mentor
                         )
                 else:
                     buttons.draw_image_button(
-                        (548, 322),
-                        button_name='patrol_add_mentor',
-                        size=(104, 30),
+                        (548, 356),
+                        button_name='patrol_select',
+                        size=(104, 26),
                         cat=chosen_cat.mentor,
                         available=False
                         )
@@ -445,29 +458,35 @@ class PatrolScreen(Screens):
                 if 10 <= len(name) >= 12:  # check name length
                     short_name = str(chosen_cat.mentor.name)[0:9]
                     name = short_name + '...'
-                verdana_dark.text(str(name),
-                             ('center', 300),
+                verdana.text(str(name),
+                             ('center', 310),
                              x_start=550,
                              x_limit=650)
-
+                verdana_small.text('mentor',
+                             ('center', 330),
+                             x_start=550,
+                             x_limit=650)
                 verdana_small.text(f'mentor: {str(chosen_cat.mentor.name)}', ('center', y_value))
 
+        # ---------------------------------------------------------------------------- #
+        #                     show apprentice if they have one                         #
+        # ---------------------------------------------------------------------------- #
         # SHOW APPRENTICE SPRITE AND BUTTON
         if chosen_cat.apprentice != []:
             screen.blit(PatrolScreen.app_frame, (495, 190))
             draw_big(chosen_cat.apprentice[0], (550, 200))
             if chosen_cat.apprentice[0] in able_cats:
                 buttons.draw_image_button(
-                    (548, 322),
-                    button_name='patrol_add_app',
-                    size=(104, 30),
+                    (548, 356),
+                    button_name='patrol_select',
+                    size=(104, 26),
                     cat=chosen_cat.apprentice[0]
                     )
             else:
                 buttons.draw_image_button(
-                    (548, 322),
-                    button_name='patrol_add_app',
-                    size=(104, 30),
+                    (548, 356),
+                    button_name='patrol_select',
+                    size=(104, 26),
                     cat=chosen_cat.apprentice[0],
                     available=False
                     )
@@ -475,13 +494,17 @@ class PatrolScreen(Screens):
             if 10 <= len(name) >= 12:  # check name length
                 short_name = str(chosen_cat.apprentice[0].name)[0:9]
                 name = short_name + '...'
-            verdana_dark.text(str(name),
-                              ('center', 300),
+            verdana.text(str(name),
+                              ('center', 310),
                               x_start=550,
                               x_limit=650)
-
-
-
+            verdana_small.text('apprentice',
+                              ('center', 330),
+                              x_start=550,
+                              x_limit=650)
+        # ---------------------------------------------------------------------------- #
+        #                 add and remove chosen cat from the patrol                    #
+        # ---------------------------------------------------------------------------- #
         # BUTTON TO ADD CAT TO PATROL
         if len(game.switches['current_patrol']) < 6 and chosen_cat is not None\
                 and chosen_cat not in game.switches['current_patrol'] and game.switches['patrol_remove'] is False:
@@ -519,6 +542,9 @@ class PatrolScreen(Screens):
                 available=False,
                 hotkey=[11],)
 
+        # ---------------------------------------------------------------------------- #
+        #                      show patrol skills and traits                           #
+        # ---------------------------------------------------------------------------- #
         # SHOW CURRENT PATROL SKILLS AND TRAITS
         if game.switches['show_info'] is True:
             if game.switches['current_patrol'] is not []:
