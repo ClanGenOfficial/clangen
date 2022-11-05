@@ -1,6 +1,6 @@
 from math import ceil
 
-from .base_screens import Screens, draw_menu_buttons, cat_profiles, draw_next_prev_cat_buttons
+from .base_screens import Screens, cat_profiles, draw_next_prev_cat_buttons
 
 from scripts.utility import draw_large, draw, update_sprite, get_personality_compatibility
 from scripts.game_structure.buttons import buttons
@@ -274,7 +274,7 @@ class ViewChildrenScreen(Screens):
 
         # SHOW PARENTS
         if the_cat.parent1 is None:
-            verdana_small.text('Unknown',
+            verdana_small_dark.text('Unknown',
                                ('center', 195),
                                x_limit=150,
                                x_start=90)
@@ -289,7 +289,7 @@ class ViewChildrenScreen(Screens):
             if 8 <= len(name) >= 10:
                 short_name = str(Cat.all_cats[the_cat.parent1].name)[0:7]
                 name = short_name + '...'
-            verdana_small.text(str(name),
+            verdana_small_dark.text(str(name),
                                ('center', 195),
                                x_limit=150,
                                x_start=90)
@@ -299,7 +299,7 @@ class ViewChildrenScreen(Screens):
             verdana_small.text(f'Error: cat {str(the_cat.parent1)} not found',
                                (342, 165))
         if the_cat.parent2 is None:
-            verdana_small.text('Unknown',
+            verdana_small_dark.text('Unknown',
                                ('center', 258),
                                x_limit=150,
                                x_start=90)
@@ -314,7 +314,7 @@ class ViewChildrenScreen(Screens):
             if 8 <= len(name) >= 10:
                 short_name = str(Cat.all_cats[the_cat.parent2].name)[0:7]
                 name = short_name + '...'
-            verdana_small.text(str(name),
+            verdana_small_dark.text(str(name),
                                ('center', 258),
                                x_limit=150,
                                x_start=90)
@@ -355,9 +355,19 @@ class ViewChildrenScreen(Screens):
         if siblings is False:
             verdana.text('This cat has no siblings.', (380, 200))
 
+        if the_cat.exiled:
+            buttons.draw_button(('center', 670),
+                            text='Back',
+                            cur_screen='outside profile screen')
+        else:
+            buttons.draw_button(('center', 670),
+                            text='Back',
+                            cur_screen='profile screen')
+        pos_x = 0
+        pos_y = 60
         # SHOW MATE
         if the_cat.mate is None:
-            verdana_small.text('Unknown', (93, 510))
+            verdana_small_dark.text('Unknown', (93, 508))
         elif the_cat.mate in Cat.all_cats:
             buttons.draw_button(
                 (98, 458),
@@ -369,7 +379,7 @@ class ViewChildrenScreen(Screens):
             if 8 <= len(name) >= 11:
                 short_name = str(Cat.all_cats[the_cat.mate].name)[0:7]
                 name = short_name + '...'
-            verdana_small.text(str(name),
+            verdana_small_dark.text(str(name),
                                ('center', 508),
                                x_limit=150,
                                x_start=90
@@ -382,6 +392,7 @@ class ViewChildrenScreen(Screens):
         #SHOW KITS
         pos_x = 240
         pos_y = 410
+
         kittens = False
         for x in game.clan.clan_cats:
             if the_cat.ID in [
@@ -419,6 +430,14 @@ class ViewChildrenScreen(Screens):
                                   chosen_cat=None,
                                   show_details=False)
 
+        if the_cat.exiled:
+            buttons.draw_button(('center', 670),
+                                text='Back',
+                                cur_screen='outside profile screen')
+        else:
+            buttons.draw_button(('center', 670),
+                                text='Back',
+                                cur_screen='profile screen')
     def screen_switches(self):
         cat_profiles()
 
@@ -529,14 +548,26 @@ class ChooseMateScreen(Screens):
                                 mate=None,
                                 )
 
-        buttons.draw_image_button((25, 645),
-                                  button_name='back',
-                                  text='Back',
-                                  size=(105, 30),
-                                  cur_screen='profile screen',
-                                  broke_up=False,
-                                  choosing_mate=False
-                                  )
+        if the_cat.exiled:
+            buttons.draw_image_button((25, 645),
+                                      button_name='back',
+                                      text='Back',
+                                      size=(105, 30),
+                                      cur_screen='outside the profile screen',
+                                      broke_up=False,
+                                      choosing_mate=False
+                                      )
+        else:
+            buttons.draw_image_button((25, 645),
+                                      button_name='back',
+                                      text='Back',
+                                      size=(105, 30),
+                                      cur_screen='profile screen',
+                                      broke_up=False,
+                                      choosing_mate=False
+                                      )
+
+
 
     def heart_status(self, the_cat, mate):
         q_heart = pygame.image.load("resources/images/heart_maybe.png").convert_alpha()
@@ -624,6 +655,7 @@ class ChooseMateScreen(Screens):
             not_available = relevant_cat.dead or relevant_cat.exiled
 
             if not related and relevant_cat.ID != the_cat.ID and invalid_age and not not_available and relevant_cat.mate == None:
+
                 valid_mates.append(relevant_cat)
         all_pages = int(ceil(len(valid_mates) /
                              30.0)) if len(valid_mates) > 30 else 1
@@ -797,6 +829,7 @@ class RelationshipScreen(Screens):
         verdana_mid_dark.text(
             f"Show Dead",
             (70, 513))
+
 
         if game.settings['show dead relation'] is True:
             buttons.draw_image_button((169, 505),
@@ -1287,7 +1320,6 @@ class RelationshipScreen(Screens):
             screen.blit(RelationshipScreen.transfem_icon, (x_pos, y_pos))
         if cat_gender == 'trans  male':
             screen.blit(RelationshipScreen.transmasc_icon, (x_pos, y_pos))
-
 
 
     def draw_bar(self, value, pos_x, pos_y):

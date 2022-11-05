@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import sys
 import os
 directory = os.path.dirname(__file__)
@@ -10,7 +11,7 @@ from scripts.cat.sprites import sprites
 #from scripts.world import load_map
 from scripts.clan import clan_class
 
-# import all screens for initialization 
+# import all screens for initialization
 from scripts.screens.all_screens import *
 
 # P Y G A M E

@@ -23,7 +23,7 @@ class TestCreationAge(unittest.TestCase):
         test_cat = Cat(moons=48)
         self.assertEqual(test_cat.age,"adult")
 
-    def test_adult(self):
+    def test_senior_adult(self):
         test_cat = Cat(moons=96)
         self.assertEqual(test_cat.age,"senior adult")
 

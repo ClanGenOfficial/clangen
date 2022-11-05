@@ -5,7 +5,7 @@ from .game_essentials import *
 from scripts.cat.cats import Cat
 
 
-class Button(object):
+class Button():
     used_screen = screen
     used_mouse = mouse
 

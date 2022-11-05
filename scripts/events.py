@@ -3,7 +3,7 @@ from scripts.cat_relations.relation_events import *
 from scripts.game_structure.buttons import *
 from scripts.game_structure.load_cat import * 
 
-class Events(object):
+class Events():
     all_events = {}
 
     def __init__(self, e_type=None, **cats):
@@ -43,11 +43,11 @@ class Events(object):
                     elif cat.moons == 100:
                         cat.age = 'elder'
                     if cat.moons > randint(100, 200):
-                        if choice([1, 2, 3, 4, 5]) == 1 and cat.dead == False:
+                        if choice([1, 2, 3, 4, 5]) == 1 and not cat.dead:
                             cat.dead = True
                             game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently ')
 
-                    if cat.exiled and cat.status == 'leader' and cat.dead == False and randint(
+                    if cat.exiled and cat.status == 'leader' and not cat.dead and randint(
                             1, 10) == 1:
                         game.clan.leader_lives -= 1
                         if game.clan.leader_lives <= 0:
@@ -55,7 +55,7 @@ class Events(object):
                             game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently')
 
                             game.clan.leader_lives = 0
-                    elif cat.exiled and cat.status == 'leader' and cat.dead == False and randint(
+                    elif cat.exiled and cat.status == 'leader' and not cat.dead and randint(
                             1, 45) == 1:
                         game.clan.leader_lives -= 10
                         cat.dead = True
@@ -98,7 +98,7 @@ class Events(object):
 
         self.perform_ceremonies(cat) # here is age up included
         self.handle_deaths(cat)
-        if self.new_cat_invited == False or self.living_cats < 10:
+        if not self.new_cat_invited or self.living_cats < 10:
             self.invite_new_cats(cat)
         self.other_interactions(cat)
         self.coming_out(cat)
@@ -435,7 +435,7 @@ class Events(object):
                         f'{name} lost their paw to a twoleg trap '
                     )
                 else:
-                    if clan_has_kits == True:
+                    if clan_has_kits:
                         scar_text.extend([
                         f'{name} earned a scar protecting the kits '])
                     else:
@@ -469,7 +469,7 @@ class Events(object):
                             'enemy warrior', 'badger', 'tree', 'twoleg trap'
                         ]) + ' encouraged by their mentor ')
                 else:
-                    if clan_has_kits == True:
+                    if clan_has_kits:
                         scar_text.extend([
                         f'{name} earned a scar protecting the kits'])
                     else:
@@ -502,7 +502,7 @@ class Events(object):
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
                     ]) + ' encouraged by their mentor ')
                 else:
-                    if clan_has_kits == True:
+                    if clan_has_kits:
                         scar_text.extend([
                         f'{name} earned a scar protecting the kits '])
                     else:
@@ -668,7 +668,7 @@ class Events(object):
                     f'{name} finds a loner who joins the clan ',
                     f'A loner waits on the border for a patrol, asking to join the clan '
                 ]
-                if str(loner_name) in [names.loner_names]:
+                if str(loner_name.prefix) in names.loner_names:
                     success_text = [
                         f'{str(loner_name)} decides to keep their name '
                     ]
@@ -687,13 +687,13 @@ class Events(object):
                     f'{name} finds a loner who joins the clan ',
                     f'A loner says that they are interested in clan life and joins the clan '
                 ]
-                if str(loner_name) in [names.loner_names]:
+                if loner_name.suffix is not None:
                     success_text = [
-                        f'{str(loner_name)} decides to keep their name '
+                        f'The loner decides to take on a slightly more clan-like name, and is now called {str(loner_name)}'
                     ]
                 else:
                     success_text = [
-                        f'The loner decides to take on a slightly more clan-like name, and is now called {str(loner_name)} '
+                        f'{str(loner_name)} decides to keep their name'
                     ]
                 game.cur_events_list.append(choice(loner_text))
                 game.cur_events_list.append(choice(success_text))
@@ -807,10 +807,7 @@ class Events(object):
         for number in range(amount):
             new_cat = None
             if loner_name and a == 1:
-                new_cat = Cat(moons=age, prefix=name, status=status, gender=choice(['female', 'male']),
-                              backstory=backstory)
-            elif loner_name:
-                new_cat = Cat(moons=age, prefix=name, suffix='', status=status, gender=choice(['female', 'male']), backstory=backstory)
+                new_cat = Cat(moons=age, prefix=name, status=status, gender=choice(['female', 'male']), backstory=backstory)            
             else:
                 new_cat = Cat(moons=age, status=status, gender=choice(['female', 'male']), backstory=backstory)
             if skill:
@@ -933,6 +930,7 @@ class Events(object):
                 and not cat.dead and not cat.exiled
                 for cat in Cat.all_cats.values())
         #Leader lost a life EVENTS
+        current_lives = int(game.clan.leader_lives)
         if randint(1, 100) == 1:
             name = str(cat.name)
             other_cat = choice(list(Cat.all_cats.values()))
@@ -1069,7 +1067,7 @@ class Events(object):
                             name + ' lost ' +
                             str(lostlives) + ' lives due to an illness '
                         ]
-                        game.clan.leader_lives = game.clan.leader_lives - lostlives
+                        game.clan.leader_lives = current_lives - lostlives
                         cat.die()
                         game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons + 1) + ' moons old ')
 
@@ -1081,7 +1079,7 @@ class Events(object):
                 name + ' was found dead near a fox den ',
                 name + ' was bitten by a snake and died '
             ]
-            if clan_has_kits == True and cat.status != 'kitten':
+            if clan_has_kits and cat.status != 'kitten':
                 cause_of_death.extend([
                     name + ' was bitten by a snake while saving a kit and died '
                 ])
@@ -1277,7 +1275,7 @@ class Events(object):
                         ' die'
                     ]
                 
-            if cat.status != ['kitten', 'leader'] and other_cat.status != ['kitten', 'leader']:
+            if cat.status not in ['elder', 'kitten'] and other_cat.status not in ['elder', 'kitten']:
                 cause_of_death.extend([
                     name + ' and ' + other_name +
                     ' are killed in a border skirmish',
@@ -1301,7 +1299,7 @@ class Events(object):
             cat.die()
             other_cat.die()
 
-        elif randint(1, 80) == 1:  #Death with Personalities
+        elif randint(1, 70) == 1:  #Death with Personalities
             murder_chance = 20
             name = str(cat.name)
             countdown = int(len(Cat.all_cats) / 3)
@@ -1312,57 +1310,95 @@ class Events(object):
                 if countdown <= 0:
                     return
             other_name = str(other_cat.name)
-            if cat.trait in [
-                    'bloodthirsty', 'ambitious', 'vengeful', 'sneaky',
-                    'sadistic', 'greedy', 'selfish'
-            ] and other_cat.status in ['leader', 'deputy']:
-                if cat.status == 'deputy' and other_cat.status == 'leader':
-                    if randint(1, murder_chance - 15) == 1:
+            # murdering leader/deputy
+            if cat.trait in ['bloodthirsty', 'vengeful']:
+                murder_chance = 10
+            if cat.trait in ['bloodthirsty', 'ambitious', 'vengeful', 'sneaky'] and cat.status in ['warrior', 'deputy']\
+                and randint(1, murder_chance) == 1:
+                if cat.status == 'deputy' and other_cat.status == 'leader' and current_lives <= 6:
                         cause_of_death = [
                             name + ' murdered ' + other_name +
                             ' in cold blood to take their place',
                             name + ' murdered ' + other_name +
                             ' to take their place and made it look like an accident'
                         ]
-                        game.clan.leader_lives -= 10
+                        game.clan.leader_lives = 0
                         other_cat.die()
-                        game.cur_events_list.append(
-                            choice(cause_of_death) + ' at ' +
-                            str(other_cat.moons + 1) + ' moons old')
-                elif cat.status == 'warrior':
-                    if randint(1, murder_chance - 15) == 1:
+                        game.cur_events_list.append(choice(cause_of_death))
+                elif cat.status == 'deputy' and other_cat.status == 'leader' and current_lives >= 7:
                         cause_of_death = [
-                            name + ' murdered ' + other_name +
-                            ' in cold blood '
-                            'in hopes of taking their place',
-                            name + ' murdered ' + other_name +
-                            ' in cold blood and made it look accidental '
-                            'in hopes of taking their place'
+                        name + ' murdered ' + other_name +
+                        ' to take their place, but the leader had more lives than they expected. ' +
+                        other_name + ' retaliated and killed ' + name + ' in self-defense'
                         ]
-                        if other_cat == 'leader':
+                        liveslost = choice([1, 2, 3, 4])
+                        game.clan.leader_lives = current_lives - liveslost                            
+                        cat.die()
+                        game.cur_events_list.append(choice(cause_of_death))
+                elif cat.status == 'warrior':
+                        if other_cat.status == 'leader' and current_lives <= 6:
+                            cause_of_death = [
+                            name + ' murdered ' + other_name +
+                            ' in cold blood in hopes of taking their place',
+                            name + ' murdered ' + other_name +
+                            ' in cold blood and made it look accidental in hopes of taking their place'
+                            ]
                             game.clan.leader_lives -= 10
-                        other_cat.die()
-                        game.cur_events_list.append(
-                            choice(cause_of_death) + ' at ' +
-                            str(other_cat.moons + 1) + ' moons old')
-            elif cat.trait in ['bloodthirsty', 'vengeful', 'sadistic']:
-                if randint(1, murder_chance) == 1:
-                    cause_of_death = [
-                        name + ' murdered ' + other_name + ' in cold blood',
+                            other_cat.die()
+                            game.cur_events_list.append(choice(cause_of_death))
+                        elif other_cat == 'leader' and current_lives >= 7:
+                            cause_of_death = [
+                            name + ' murdered ' + other_name +
+                            ' in hopes of taking their place, but the leader had more lives than they expected. ' +
+                            other_name + ' retaliated and killed ' + name + ' in self-defense'
+                            ]
+                            liveslost = choice([1, 2, 2, 2, 3, 3, 3, 4])
+                            game.clan.leader_lives = current_lives - liveslost
+                            cat.die()
+                            game.cur_events_list.append(choice(cause_of_death))
+                        elif other_cat.status == 'deputy':
+                            cause_of_death = [
+                            name + ' murdered ' + other_name +
+                            ' in cold blood in hopes of taking their place',
+                            name + ' murdered ' + other_name +
+                            ' in cold blood and made it look accidental in hopes of taking their place'
+                            ]
+                            other_cat.die()
+                            game.cur_events_list.append(choice(cause_of_death))                        
+            # just murder
+            elif cat.trait in ['bloodthirsty', 'vengeful', 'sadistic'] and randint(1, murder_chance) == 2:
+                    if other_cat.status == 'leader' and current_lives <= 6:
+                        cause_of_death = [
+                        name + ' murdered ' + other_name +
+                        ' in cold blood ',
                         name + ' murdered ' + other_name +
                         ' in cold blood and made it look accidental'
-                    ]
-                    if other_cat == 'leader':
+                        ]
                         game.clan.leader_lives -= 10
-                    other_cat.die()
-                    game.cur_events_list.append(
-                        choice(cause_of_death) + ' at ' +
-                        str(other_cat.moons + 1) + ' moons old')
-            elif cat.status in [
-                    'medicine cat', 'medicine cat apprentice'
-            ] and cat.trait in ['bloodthirsty', 'vengeful', 'sadistic']:
-                if randint(1, murder_chance) == 1:
-                    cause_of_death = [
+                        other_cat.die()
+                        game.cur_events_list.append(choice(cause_of_death))
+                    elif other_cat == 'leader' and current_lives >= 7:                            
+                        cause_of_death = [
+                        name + ' murdered ' + other_name +
+                        ', but the leader had more lives than they expected. ' +
+                        other_name + ' retaliated and killed ' + name + ' in self-defense'
+                        ]
+                        liveslost = choice([1, 2, 3, 4])
+                        game.clan.leader_lives = current_lives - liveslost
+                        cat.die()
+                        game.cur_events_list.append(choice(cause_of_death))
+                    else:
+                        cause_of_death = [
+                        name + ' murdered ' + other_name +
+                        ' in cold blood ',
+                        name + ' murdered ' + other_name +
+                        ' in cold blood and made it look accidental'
+                        ]
+                        other_cat.die()
+                        game.cur_events_list.append(choice(cause_of_death))
+            elif cat.status in ['medicine cat', 'medicine cat apprentice']\
+            and cat.trait in ['bloodthirsty', 'vengeful', 'sadistic'] and randint(1, murder_chance) == 1:
+                cause_of_death = [
                         name + ' killed ' + other_name +
                         ' by giving them deathberries', name + ' killed ' +
                         other_name + ' by giving them foxglove seeds',
@@ -1373,10 +1409,10 @@ class Events(object):
                         name + ' killed ' + other_name +
                         ' by consciously giving them the wrong herbs'
                     ]
-                    if other_cat == 'leader':
-                        game.clan.leader_lives -= 10
-                    other_cat.die()
-                    game.cur_events_list.append(
+                if other_cat == 'leader':
+                    game.clan.leader_lives -= 10
+                other_cat.die()
+                game.cur_events_list.append(
                         choice(cause_of_death) + ' at ' +
                         str(other_cat.moons + 1) + ' moons old')
 
@@ -1412,6 +1448,7 @@ class Events(object):
             if len(game.clan.all_clans) > 0:
                 other_clan = game.clan.all_clans
             addition = randint(0, 20)
+            # Are death_chance & dead_count unused? Should maybe be removed if so... -Shou
             death_chance = int(alive_count / 3)
             if addition == 1:
                 death_chance = int(death_chance + randint(0, 10) / 2)
@@ -1550,7 +1587,7 @@ class Events(object):
                 elif transing_chance == 2:
                     cat.genderalign = "nonbinary"
                     hit = True
-            if hit == True:
+            if hit:
                 if cat.gender == 'male':
                     gender = 'tom'
                 else:

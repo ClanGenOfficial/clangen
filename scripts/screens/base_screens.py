@@ -6,7 +6,7 @@ from scripts.clan import map_available
 from scripts.game_structure.text import *
 
 
-class Screens(object):
+class Screens():
     game_screen = screen
     game_x = screen_x
     game_y = screen_y
@@ -231,3 +231,4 @@ def draw_next_prev_cat_buttons(the_cat):
                                   hotkey=[23],
                                   available=False
                                   )
+
