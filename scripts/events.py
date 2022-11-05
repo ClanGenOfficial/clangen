@@ -665,16 +665,16 @@ class Events():
                 created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=backstory_choice)
                 loner_name = created_cats[0].name
                 loner_text = [
-                    f'{name} finds a loner who joins the clan ',
-                    f'A loner waits on the border for a patrol, asking to join the clan '
+                    f'{name} finds a loner named {str(loner_name.prefix)} who joins the clan',
+                    f'A loner waits on the border for a patrol, asking to join the clan'
                 ]
-                if str(loner_name.prefix) in names.loner_names:
+                if loner_name.suffix != '':
                     success_text = [
-                        f'{str(loner_name)} decides to keep their name '
+                        f'{str(loner_name)} decides to keep their name'
                     ]
                 else:
                     success_text = [
-                        f'The loner decides to take on a slightly more clan-like name, and is now called {str(loner_name)} '
+                        f'The loner decides to take on a slightly more clan-like name, and is now called {str(loner_name)}'
                     ]
                 game.cur_events_list.append(choice(loner_text))
                 game.cur_events_list.append(choice(success_text))
@@ -684,10 +684,10 @@ class Events():
                 created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=backstory_choice)
                 loner_name = created_cats[0].name
                 loner_text = [
-                    f'{name} finds a loner who joins the clan ',
-                    f'A loner says that they are interested in clan life and joins the clan '
+                    f'{name} finds a loner named {str(loner_name.prefix)} who wishes to join the clan',
+                    f'A loner says that they are interested in clan life and joins the clan'
                 ]
-                if loner_name.suffix is not None:
+                if loner_name.suffix != '':
                     success_text = [
                         f'The loner decides to take on a slightly more clan-like name, and is now called {str(loner_name)}'
                     ]
@@ -720,17 +720,17 @@ class Events():
                 backstory=choice(['kittypet1', 'kittypet2']))
                 loner_name = created_cats[0].name
                 loner_text = [
-                    f'{name} finds a kittypet who wants to join the clan ',
-                    f'A kittypet stops {name} and asks to join the clan '
+                    f'{name} finds a kittypet named {str(loner_name.prefix)} who wants to join the clan',
+                    f'A kittypet called {str(loner_name.prefix)} stops {name} and asks to join the clan'
                 ]
-                if str(loner_name) in [names.loner_names]:
-                    success_text = [
-                        f'{str(loner_name)} decides to keep their name '
-                ]
-                else:
+                if loner_name.suffix != '':
                     success_text = [ 
                         f'The kittypet decides to take on a slightly more clan-like name, and is now called {str(loner_name)} '
                     ]
+                else:
+                    success_text = [
+                        f'{str(loner_name)} decides to keep their name'
+                ]
                 game.cur_events_list.append(choice(loner_text))
                 game.cur_events_list.append(choice(success_text))
             
@@ -786,13 +786,17 @@ class Events():
         backstory = backstory
         other_clan = other_clan
 
-        age = randint(0,5)
+        age = randint(0, 5)
+        kp_name_chance = (1, 5)
         if not litter and not kit:
-            age = randint(6,120)
+            age = randint(6, 120)
 
         if (loner or kittypet) and not kit and not litter:
             if loner_name:
-                name = choice(names.loner_names)
+                if loner and kp_name_chance == 1:
+                    name = choice(names.normal_prefixes)
+                else:
+                    name = choice(names.loner_names)
             if age >= 12:
                 status = "warrior"
             else:
@@ -807,7 +811,9 @@ class Events():
         for number in range(amount):
             new_cat = None
             if loner_name and a == 1:
-                new_cat = Cat(moons=age, prefix=name, status=status, gender=choice(['female', 'male']), backstory=backstory)            
+                new_cat = Cat(moons=age, prefix=name, status=status, gender=choice(['female', 'male']), backstory=backstory)
+            elif loner_name:
+                new_cat = Cat(moons=age, prefix=name, suffix='', status=status, gender=choice(['female', 'male']), backstory=backstory)
             else:
                 new_cat = Cat(moons=age, status=status, gender=choice(['female', 'male']), backstory=backstory)
             if skill:
