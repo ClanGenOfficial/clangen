@@ -283,9 +283,13 @@ class PatrolScreen(Screens):
                                       fill_patrol=True,)
 
             if game.switches['fill_patrol'] is True:
-                for x in range(3):
+                count = 3
+                for x in range(count):
                     random_cat = choice(able_cats)
-                    game.switches['current_patrol'].append(random_cat)
+                    if random_cat not in game.switches['current_patrol']:
+                        game.switches['current_patrol'].append(random_cat)
+                        able_cats.remove(random_cat)
+
                 game.switches['fill_patrol'] = False
 
         elif len(game.switches['current_patrol']) <= 3 and len(able_cats) == 3:
@@ -298,6 +302,7 @@ class PatrolScreen(Screens):
                 for x in range(3):
                     random_cat = able_cats[x]
                     game.switches['current_patrol'].append(random_cat)
+
                 game.switches['fill_patrol'] = False
         else:
             buttons.draw_image_button((403, 495),
@@ -318,6 +323,8 @@ class PatrolScreen(Screens):
                 for x in range(6):
                     random_cat = choice(able_cats)
                     game.switches['current_patrol'].append(random_cat)
+                    able_cats.remove(random_cat)
+
                 game.switches['fill_patrol'] = False
 
         elif len(game.switches['current_patrol']) == 0 and len(able_cats) == 6:
@@ -329,6 +336,7 @@ class PatrolScreen(Screens):
                 for x in range(6):
                     random_cat = able_cats[x]
                     game.switches['current_patrol'].append(random_cat)
+
                 game.switches['fill_patrol'] = False
         else:
             buttons.draw_image_button((443, 495),

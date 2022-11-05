@@ -42,6 +42,14 @@ class MakeClanScreen(Screens):
         'resources/images/pick_clan_screen/name_clan_light.png').convert_alpha()
     leader_img = pygame.image.load(
         'resources/images/pick_clan_screen/leader_light.png').convert_alpha()
+    deputy_img = pygame.image.load(
+        'resources/images/pick_clan_screen/deputy_light.png').convert_alpha()
+    medic_img = pygame.image.load(
+        'resources/images/pick_clan_screen/med_light.png').convert_alpha()
+    clan_img = pygame.image.load(
+        'resources/images/pick_clan_screen/clan_light.png').convert_alpha()
+    bg_preview_border = pygame.transform.scale(
+        pygame.image.load("resources/images/bg_preview_border.png").convert_alpha(), (466, 416))
     def draw_clan_name(self):
         # draw name and frame
         screen.blit(MakeClanScreen.clan_frame_img, (292, 100))
@@ -295,8 +303,6 @@ class MakeClanScreen(Screens):
                                 cat=u,
                                 hotkey=[2, u + 4])
 
-
-
         # draw clicked cat
         if game.switches['cat'] is not None and 12 > game.switches['cat'] >= 0:
             chosen_cat = game.choose_cats[game.switches['cat']]
@@ -354,9 +360,8 @@ class MakeClanScreen(Screens):
     def third_phase(self):
         self.draw_clan_name()
         draw_main_menu(self)
-        deputy_img = pygame.image.load(
-            'resources/images/pick_clan_screen/deputy_light.png').convert_alpha()
-        screen.blit(deputy_img, (0, 414))
+
+        screen.blit(MakeClanScreen.deputy_img, (0, 414))
 
         for u in range(6):
             if game.switches['leader'] == u:
@@ -420,9 +425,8 @@ class MakeClanScreen(Screens):
     def fourth_phase(self):
         self.draw_clan_name()
         draw_main_menu(self)
-        medic_img = pygame.image.load(
-            'resources/images/pick_clan_screen/med_light.png').convert_alpha()
-        screen.blit(medic_img, (0, 414))
+
+        screen.blit(MakeClanScreen.medic_img, (0, 414))
 
         for u in range(6):
             if game.switches['leader'] == u:
@@ -472,6 +476,7 @@ class MakeClanScreen(Screens):
                                           medicine_cat=game.switches['cat'],
                                           hotkey=[1],
                                           size=(306, 58))
+
         # ---------------------------------------------------------------------------- #
         #                             next and prev step                               #
         # ---------------------------------------------------------------------------- #
@@ -494,9 +499,9 @@ class MakeClanScreen(Screens):
     def fifth_phase(self):
         self.draw_clan_name()
         draw_main_menu(self)
-        clan_img = pygame.image.load(
-            'resources/images/pick_clan_screen/clan_light.png').convert_alpha()
-        screen.blit(clan_img, (0, 414))
+
+        screen.blit(MakeClanScreen.clan_img, (0, 414))
+
         for u in range(6):
             if game.switches['leader'] == u:
                 draw(game.choose_cats[u],(650, 200))
@@ -592,6 +597,7 @@ class MakeClanScreen(Screens):
                                   hotkey=[0],
                                   size=(147, 30)
                                   )
+
         if 0 == len(game.switches['members']):
             clan_none_img = pygame.image.load(
                 'resources/images/pick_clan_screen/clan_none_light.png').convert_alpha()
@@ -977,9 +983,7 @@ class MakeClanScreen(Screens):
                     screen.blit(self.camp2, (175, 170))
 
             # PREVIEW BORDER
-            bg_preview_border = pygame.transform.scale(
-                pygame.image.load("resources/images/bg_preview_border.png").convert_alpha(), (466, 416))
-            screen.blit(bg_preview_border, (167, 162))
+            screen.blit(MakeClanScreen.bg_preview_border, (167, 162))
 
             # CHOOSE RANDOM CAMP
             random_biome_options = ['Forest', 'Mountainous', 'Plains', 'Beach']
@@ -1026,6 +1030,7 @@ class MakeClanScreen(Screens):
             pygame.image.load(arg0).convert(), (450, 400))
         self.camp2 = pygame.transform.scale(
             pygame.image.load(arg1).convert(), (450, 400))
+
 
     def on_use(self):
 

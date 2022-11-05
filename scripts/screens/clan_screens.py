@@ -47,19 +47,19 @@ class ClanScreen(Screens):
                 if hotkey_assign_2 == 20:
                     hotkey_assign_1 = hotkey_assign_1 + 1
                     hotkey_assign_2 = hotkey_assign_1 + 1
+
         draw_menu_buttons()
 
-
-
         buttons.draw_image_button((343, 625),
-                            button_name='save_clan',
-                            text='Save Clan',
-                            save_clan=True,
-                            size=(114, 30),
-                            hotkey=[9])
+                                  button_name='save_clan',
+                                  text='Save Clan',
+                                  save_clan=True,
+                                  size=(114, 30),
+                                  hotkey=[9])
         pygame.draw.rect(screen,
                          color='gray',
                          rect=pygame.Rect(320, 660, 160, 20))
+
         if game.switches['saved_clan']:
             verdana_green.text('Saved!', ('center', -20))
         else:
@@ -279,6 +279,9 @@ class ListScreen(Screens):
     # page can be found in game.switches['list_page']
     # the amount of cats a page can hold is 20, so the amount of pages is cats/20
 
+    search_bar = pygame.transform.scale(
+        pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
+
     def on_use(self):
         draw_clan_name()
 
@@ -289,9 +292,8 @@ class ListScreen(Screens):
                 living_cats.append(the_cat)
 
         search_text = game.switches['search_text']
-        search_bar = pygame.transform.scale(
-            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
-        screen.blit(search_bar, (452, 135))
+
+        screen.blit(ListScreen.search_bar, (452, 135))
         verdana_black.text(game.switches['search_text'], (530, 142))
 
         search_cats = []

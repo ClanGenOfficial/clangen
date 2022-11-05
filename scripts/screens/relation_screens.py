@@ -91,7 +91,6 @@ class ChooseMentorScreen(Screens):
 
     def get_valid_mentors(self, valid_mentors, pos_x, pos_y):
 
-
         for cat in Cat.all_cats.values():
             if not cat.dead and not cat.exiled and cat != game.switches[
                     'apprentice'].mentor and cat.status in [
@@ -260,20 +259,17 @@ def show_mentor_cat_info(arg0, arg1, arg2):
 
 
 class ViewChildrenScreen(Screens):
-
-    def family_ui(self):
-        parents = pygame.image.load("resources/images/family_parents.png")
-        mate = pygame.image.load("resources/images/family_mate.png")
-
-        screen.blit(parents, (76, 80))
-        screen.blit(mate, (80, 360))
+    parents = pygame.image.load("resources/images/family_parents.png")
+    mate = pygame.image.load("resources/images/family_mate.png")
 
     def on_use(self):
         the_cat = Cat.all_cats[game.switches['cat']]
 
         verdana_big.text(f'Family of {str(the_cat.name)}', ('center', 28))
 
-        self.family_ui()
+        screen.blit(ViewChildrenScreen.parents, (76, 80))
+        screen.blit(ViewChildrenScreen.mate, (80, 360))
+
         draw_next_prev_cat_buttons(the_cat)
 
         # SHOW PARENTS
@@ -585,35 +581,36 @@ class ChooseMateScreen(Screens):
         if len(relation):
             relation = relation[0]
         else:
-            Cat.all_cats.get(arg1.ID).create_new_relationships()
+            Cat.all_cats.get(arg2.ID).create_new_relationships()
 
         romantic_love = relation.romantic_love
-
 
         if 10 <= romantic_love <= 30:
             screen.blit(s_heart, (210, y_value))
         elif 41 <= romantic_love <= 80:
             screen.blit(s_heart, (210, y_value))
-            screen.blit(s_heart, (232, y_value))
+            screen.blit(s_heart, (237, y_value))
         elif 81 <= romantic_love:
             screen.blit(s_heart, (210, y_value))
-            screen.blit(s_heart, (232, y_value))
-            screen.blit(s_heart, (254, y_value))
+            screen.blit(s_heart, (237, y_value))
+            screen.blit(s_heart, (264, y_value))
 
         relation = list(filter(lambda r: r.cat_to.ID == arg1.ID, arg2.relationships))
         if len(relation):
             relation = relation[0]
+        else:
+            Cat.all_cats.get(arg1.ID).create_new_relationships()
         romantic_love = relation.romantic_love
 
         if 10 <= romantic_love <= 30:
             screen.blit(s_heart, (568, y_value))
         elif 41 <= romantic_love <= 80:
             screen.blit(s_heart, (568, y_value))
-            screen.blit(s_heart, (546, y_value))
+            screen.blit(s_heart, (541, y_value))
         elif 81 <= romantic_love:
             screen.blit(s_heart, (568, y_value))
-            screen.blit(s_heart, (546, y_value))
-            screen.blit(s_heart, (568, y_value))
+            screen.blit(s_heart, (541, y_value))
+            screen.blit(s_heart, (514, y_value))
 
     def get_valid_mates(self, the_cat, valid_mates, pos_x, pos_y):
         for x in game.clan.clan_cats:
