@@ -614,7 +614,6 @@ class ChooseMateScreen(Screens):
             relation = relation[0]
         else:
             Cat.all_cats.get(arg2.ID).create_new_relationships()
-
         romantic_love = relation.romantic_love
 
         if 10 <= romantic_love <= 30:
