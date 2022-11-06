@@ -450,6 +450,7 @@ class ChooseMateScreen(Screens):
         game.switches['choosing_mate'] = True
 
         draw_choosing_bg(494, 'mate')
+
         draw_next_prev_cat_buttons(the_cat)
 
         y_value = 30
