@@ -260,8 +260,8 @@ def show_mentor_cat_info(arg0, arg1, arg2):
 
 
 class ViewChildrenScreen(Screens):
-    parents = pygame.image.load("resources/images/family_parents.png")
-    mate = pygame.image.load("resources/images/family_mate.png")
+    parents = pygame.image.load("resources/images/family_parents.png").convert_alpha()
+    mate = pygame.image.load("resources/images/family_mate.png").convert_alpha()
 
     def on_use(self):
         the_cat = Cat.all_cats[game.switches['cat']]

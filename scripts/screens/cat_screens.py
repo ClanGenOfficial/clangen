@@ -226,7 +226,7 @@ def backstory_text(cat):
 class ProfileScreen(Screens):
 
     # UI Images
-    backstory_tab = pygame.image.load("resources/images/backstory_bg.png")
+    backstory_tab = pygame.image.load("resources/images/backstory_bg.png").convert_alpha()
 
     def on_use(self):
         # use this variable to point to the cat object in question
