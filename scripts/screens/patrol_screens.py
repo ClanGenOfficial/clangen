@@ -243,7 +243,7 @@ class PatrolScreen(Screens):
         #                         add 1 random cat to patrol                           #
         # ---------------------------------------------------------------------------- #
         # DRAW ADD 1 RANDOM CAT BUTTON IF PATROL STILL HAS SPACE
-        if len(game.switches['current_patrol']) <= 5 and len(able_cats) > 1:
+        if len(game.switches['current_patrol']) <= 5 and len(able_cats) >= 1:
             buttons.draw_button((363, 495),
                                 image='buttons/add_1',
                                 text='add 1',
