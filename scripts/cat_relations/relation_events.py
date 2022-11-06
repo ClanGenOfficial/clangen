@@ -42,7 +42,7 @@ class Relation_Events():
         #for i in range(0, range_number):
         for _ in itertools.repeat(None, range_number):
             #random_index = randint(0, len(cat.relationships)-1)
-            random_index = round(random.random() * (len(cat.relationships)-1))
+            random_index = int(random.random() * len(cat.relationships))
             relationship = cat.relationships[random_index]
             # get some cats to make easier checks
             cat_from = relationship.cat_from
@@ -234,10 +234,10 @@ class Relation_Events():
         semi_high_like = relationship.platonic_like > 20 and relationship.opposite_relationship.platonic_like > 20
         high_comfort = relationship.comfortable > 25 and relationship.opposite_relationship.comfortable > 25
 
-        if hit and relationship.romantic_love > 20 and relationship.opposite_relationship.romantic_love > 20 and semi_high_like:
+        if not hit and relationship.romantic_love > 20 and relationship.opposite_relationship.romantic_love > 20 and semi_high_like:
             mate_string = f"{cat_from.name} and {cat_to.name} have become mates"
             become_mates = True
-        elif random_hit and low_dislike and (high_like or high_comfort):
+        elif not random_hit and low_dislike and (high_like or high_comfort):
             mate_string = f"{cat_from.name} and {cat_to.name} see each other in a different light and have become mates"
             become_mates = True
 
@@ -438,7 +438,7 @@ class Relation_Events():
 
         #chance = randint(1, chance_number)
         chance = (random.random() * chance_number)
-        if chance:
+        if not chance:
             if relationship_from.dislike > 30:
                 will_break_up = True
             elif relationship_from.romantic_love < 50:
@@ -662,7 +662,7 @@ class Relation_Events():
 
         # a chance of 0 should always be a "auto hit"
         #if chance_affair == 0 or randint(1, chance_affair) == 1:
-        if not chance_affair or int(random.random() * chance_affair):
+        if not chance_affair or not int(random.random() * chance_affair):
             second_parent = highest_romantic_relation.cat_to
 
         return second_parent
