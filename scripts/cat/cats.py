@@ -443,7 +443,7 @@ class Cat():
         self.moons += 1
         self.update_traits()
         self.in_camp = 1
-        
+
         if self.moons < 12:
             self.update_mentor()
 

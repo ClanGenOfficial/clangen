@@ -47,7 +47,13 @@ class ChooseMentorScreen(Screens):
         y_value += 15
         verdana_small.text(f'not be listed as a former apprentice on their old mentor\'s profile.',
                            ('center', y_value))
-        y_value += 30
+        y_value += 15
+        verdana_small.text(f'An apprentices mentor can have an influence on their trait and skill later in life.',
+                           ('center', y_value))
+        y_value += 15
+        verdana_small.text(f'Choose your mentors wisely.',
+                           ('center', y_value))
+        y_value += 25
         verdana_small.text(f'{str(the_cat.name)}\'s current mentor is {str(the_cat.mentor.name)}.',
                            ('center', y_value))
 
