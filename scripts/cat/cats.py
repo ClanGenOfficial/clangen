@@ -15,7 +15,6 @@ from scripts.utility import *
 from scripts.game_structure.game_essentials import *
 from scripts.cat_relations.relationship import *
 
-
 class Cat():
     used_screen = screen
     traits = [
@@ -869,9 +868,13 @@ class Cat():
         if self.age == other_cat.age:
             return True
 
-        invalid_age_mate = ['kitten', 'adolescent']
-        not_invalid_age = self.age not in invalid_age_mate and other_cat.age not in invalid_age_mate
-        if not_invalid_age and abs(self.moons - other_cat.moons) <= 40:
+        #if set(['kitten', 'adolescent']) & set([self.age, other_cat.age]):
+        #    return False
+        # ugly but faster
+        if self.age in "kittenadolescent" or other_cat.age in "kittenadolescent":
+            return False
+        
+        if abs(self.moons - other_cat.moons) <= 40:
             return True
 
         return False
