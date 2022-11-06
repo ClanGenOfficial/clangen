@@ -831,6 +831,7 @@ class Cat():
             # Mentor changing to chosen/specified cat
             self.mentor = new_mentor
             if new_mentor is not None:
+                self.patrol_with_mentor = 0
                 if self not in new_mentor.apprentice:
                     new_mentor.apprentice.append(self)
                 if self in new_mentor.former_apprentices:
@@ -840,6 +841,7 @@ class Cat():
         # Move from old mentor's apps to former apps
 
         if old_mentor is not None and old_mentor != self.mentor:
+            self.patrol_with_mentor = 0
             if self in old_mentor.apprentice:
                 old_mentor.apprentice.remove(self)
             if self not in old_mentor.former_apprentices:
@@ -872,6 +874,8 @@ class Cat():
             # Mentor changing to chosen/specified cat
             self.mentor = new_mentor
             if new_mentor is not None:
+                self.patrol_with_mentor = 0
+
                 if self not in new_mentor.apprentice:
                     new_mentor.apprentice.append(self)
                 if self in new_mentor.former_apprentices:
@@ -880,6 +884,7 @@ class Cat():
             self.mentor = None
         # Move from old mentor's apps to former apps
         if self.status == 'warrior' or self.status == 'medicine cat':
+            self.patrol_with_mentor = 0
             self.former_mentor.append(old_mentor)
             self.mentor = None
             if old_mentor is not None:
@@ -889,6 +894,7 @@ class Cat():
                     old_mentor.former_apprentices.append(self)
 
         if old_mentor is not None and old_mentor != self.mentor:
+            self.patrol_with_mentor = 0
             if self in old_mentor.apprentice:
                 old_mentor.apprentice.remove(self)
             if self not in old_mentor.former_apprentices:
