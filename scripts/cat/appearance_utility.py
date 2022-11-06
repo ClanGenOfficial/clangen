@@ -128,10 +128,7 @@ def plural_acc_names(accessory, plural, singular):
 
 def init_eyes(cat):
     if cat.eye_colour is not None:
-        return
-    hit = randint(0, 200)
-    if hit == 1:
-        cat.eye_colour = choice(["BLUEYELLOW", "BLUEGREEN"])
+        return   
     else:
         if cat.parent1 is None:
             cat.eye_colour = choice(eye_colours)
@@ -146,6 +143,13 @@ def init_eyes(cat):
                 par1.eye_colour, par2.eye_colour,
                 choice(eye_colours)
             ])
+        hit = randint(0, 200)
+        if hit == 0:
+            cat.eye_colour2 = choice(eye_colours)
+            #force second color to be different
+            while cat.eye_colour2 == cat.eye_colour : 
+                cat.eye_colour2 = choice(eye_colours)
+
 
 def init_pelt(cat):
     if cat.pelt is not None:

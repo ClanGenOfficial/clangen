@@ -231,6 +231,10 @@ def update_sprite(cat):
         new_sprite.blit(
             sprites.sprites['eyesextra' + cat.eye_colour +
                             str(cat.age_sprites[cat.age])], (0, 0))
+        if cat.eye_colour2 is not None:
+                new_sprite.blit(
+                sprites.sprites['eyesextra2' + cat.eye_colour2 +
+                                str(cat.age_sprites[cat.age])], (0, 0))
     else:
         if cat.specialty in scars1:
             new_sprite.blit(
@@ -259,6 +263,10 @@ def update_sprite(cat):
         new_sprite.blit(
             sprites.sprites['eyes' + cat.eye_colour +
                             str(cat.age_sprites[cat.age])], (0, 0))
+        if cat.eye_colour2 is not None:
+                new_sprite.blit(
+                sprites.sprites['eyes2' + cat.eye_colour2 +
+                                str(cat.age_sprites[cat.age])], (0, 0))
     game.switches[
         'error_message'] = 'There was an error loading a cat\'s shader sprites. Last cat read was ' + str(
             cat)

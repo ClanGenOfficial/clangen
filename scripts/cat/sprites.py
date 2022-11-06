@@ -205,8 +205,8 @@ tiles = Sprites(64)
 
 for x in [
         'lineart', 'singlecolours', 'speckledcolours', 'tabbycolours',
-        'whitepatches', 'eyes', 'singleextra', 'tabbyextra',
-        'speckledextra', 'whiteextra', 'eyesextra', 'skin',
+        'whitepatches', 'eyes', 'eyes2', 'singleextra', 'tabbyextra',
+        'speckledextra', 'whiteextra', 'eyesextra', 'eyesextra2', 'skin',
         'skinextra', 'scars', 'scarsextra', 'whitenewextra', 'whitepatchesnew',
         'scarsdark', 'scarsdarkextra', 'collars', 'collarsextra',
         'bellcollars', 'bellcollarsextra', 'bowcollars', 'bowcollarsextra',
@@ -225,7 +225,7 @@ for x in [
 
 for sprite in [
         'Paralyzed_lineart', 'singleparalyzed', 'speckledparalyzed',
-        'tabbyparalyzed', 'whiteallparalyzed', 'eyesparalyzed',
+        'tabbyparalyzed', 'whiteallparalyzed', 'eyesparalyzed', 'eyesparalyzed2',
         'tabbyparalyzed', 'tortiesparalyzed', 'scarsparalyzed', 'skinparalyzed',
         'medcatherbsparalyzed'
     
@@ -249,11 +249,14 @@ for a, i in enumerate(
     sprites.make_group('eyes', (a, 0), f'eyes{i}')
     sprites.make_group('eyesextra', (a, 0), f'eyesextra{i}', sprites_y=2)
 sprites.make_group('eyes', (0, 1), 'eyesDARKBLUE')
-sprites.make_group('eyes', (1, 1), 'eyesBLUEYELLOW')
-sprites.make_group('eyes', (2, 1), 'eyesBLUEGREEN')
 sprites.make_group('eyesextra', (0, 1), 'eyesextraDARKBLUE', sprites_y=2)
-sprites.make_group('eyesextra', (1, 1), 'eyesextraBLUEYELLOW', sprites_y=2)
-sprites.make_group('eyesextra', (2, 1), 'eyesextraBLUEGREEN', sprites_y=2)
+
+for a, i in enumerate(
+    ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE']):
+    sprites.make_group('eyes2', (a, 0), f'eyes2{i}')
+    sprites.make_group('eyesextra2', (a, 0), f'eyesextra2{i}', sprites_y=2)
+sprites.make_group('eyes2', (0, 1), 'eyes2DARKBLUE')
+sprites.make_group('eyesextra2', (0, 1), 'eyesextra2DARKBLUE', sprites_y=2)
 
 for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANY2']):
     sprites.make_group('whitepatches', (a, 0), f'white{i}')

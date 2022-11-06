@@ -73,6 +73,7 @@ def json_load():
         new_cat.dead_for = cat["dead_moons"]
         new_cat.apprentice = cat["current_apprentice"]
         new_cat.former_apprentices = cat["former_apprentices"]
+        new_cat.eye_colour2 = cat["eye_colour2"]
         all_cats.append(new_cat)
 
     # replace cat ids with cat objects and add other needed variables
@@ -181,7 +182,8 @@ def csv_load(all_cats):
                               pelt=the_pelt,
                               parent1=attr[6],
                               parent2=attr[7],
-                              eye_colour=attr[17])
+                              eye_colour=attr[17],
+                              eye_colour2=attr[47],)
                 game.switches[
                     'error_message'] = '3There was an error loading cat # ' + str(
                         attr[0])

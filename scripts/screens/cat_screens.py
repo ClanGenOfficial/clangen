@@ -411,8 +411,12 @@ class ProfileScreen(Screens):
         count2 += 1
 
         # EYE COLOR
-        verdana_small.text('eyes: ' + the_cat.eye_colour.lower(),
-                           (300, 230 + count * 15))
+        if the_cat.eye_colour2 is None:
+            verdana_small.text('eyes: ' + the_cat.eye_colour.lower(),
+                           (    300, 230 + count * 15))
+        else:
+            verdana_small.text('eyes: ' + the_cat.eye_colour.lower() + ' and ' + the_cat.eye_colour2.lower(),
+                           (    300, 230 + count * 15))
         count += 1
 
         # PELT TYPE
