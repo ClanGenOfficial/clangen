@@ -37,7 +37,7 @@ class Relation_Events():
         if cats_amount >= 30:
             range_number = 20
         else:
-            range_number = int(cats_amount / 1.5)  # with int 1.9 rounds to 1
+            range_number = int(cats_amount / 1.5)  # int(1.9) rounds to 1
 
         #for i in range(0, range_number):
         for _ in itertools.repeat(None, range_number):
@@ -87,10 +87,12 @@ class Relation_Events():
             if cat_from.mate and cat_to.mate:
                 if cat_from.is_potential_mate(cat_to):
                     love_over_30 = relationship.romantic_love > 30 and relationship.opposite_relationship.romantic_love > 30
-                    normal_chance = randint(1, 10)
+                    #normal_chance = randint(1, 10)
+                    normal_chance = int(random.random() * 10)
                     # compare love value of current mates
                     bigger_than_current = False
-                    bigger_love_chance = randint(1, 3)
+                    #bigger_love_chance = randint(1, 3)
+                    bigger_love_chance = int(random.random() * 3)
                     mate_relationship = list(
                         filter(lambda r: r.cat_to.ID == cat_from.mate,
                                cat_from.relationships))
@@ -119,8 +121,8 @@ class Relation_Events():
                                                                           cat_to_mate,
                                                                           True))
 
-                    if ((love_over_30 and normal_chance == 1)
-                        or (bigger_than_current and bigger_love_chance == 1)):
+                    if ((love_over_30 and not normal_chance)
+                        or (bigger_than_current and not bigger_love_chance)):
                         # break up the old relationships
                         cat_from_mate = Cat.all_cats.get(cat_from.mate)
                         self.check_if_breakup(cat_from, cat_from_mate)
@@ -144,9 +146,9 @@ class Relation_Events():
 
     def handle_having_kits(self, cat, clan = game.clan):
         """Handles pregnancy of a cat."""
-        if clan is None:
+        if not clan:
             return
-        if cat.ID in clan.pregnancy_data.keys():
+        if cat.ID in clan.pregnancy_data:
             moons = clan.pregnancy_data[cat.ID]["moons"]
             if moons == 1:
                 self.handle_one_moon_pregnant(cat, clan)
@@ -160,20 +162,20 @@ class Relation_Events():
             return
 
         mate = None
-        if cat.mate is not None:
+        if cat.mate:
             if cat.mate in Cat.all_cats:
                 mate = Cat.all_cats[cat.mate]
             else:
                 game.cur_events_list.append(
-                    f"WARNING: {str(cat.name)}  has an invalid mate # {str(cat.mate)}. This has been unset.")
+                    f"WARNING: {cat.name}  has an invalid mate # {cat.mate}. This has been unset.")
                 cat.mate = None
 
         # check if there is a cat in the clan for the second parent
         second_parent = self.get_second_parent(cat,mate,game.settings['affair'])
         second_parent_relation = None
-        if second_parent is not None:
-            second_parent_relation = list(filter(lambda r: r.cat_to.ID == second_parent.ID ,cat.relationships))
-            if len(second_parent_relation) > 0:
+        if second_parent:
+            second_parent_relation = list(filter(lambda r: r.cat_to.ID == second_parent.ID, cat.relationships))
+            if second_parent_relation:
                 second_parent_relation = second_parent_relation[0]
             else: 
                 second_parent_relation = None
@@ -220,20 +222,22 @@ class Relation_Events():
         become_mates = False
         mate_string = ""
         mate_chance = 5
-        hit = randint(1, mate_chance)
+        #hit = randint(1, mate_chance)
+        hit = int(random.random() * mate_chance)
 
         # has to be high because every moon this will be checked for each relationship in the came
         random_mate_chance = 300
-        random_hit = randint(1, random_mate_chance)
+        #random_hit = randint(1, random_mate_chance)
+        random_hit = int(random.random() * random_mate_chance)
         low_dislike = relationship.dislike < 15 and relationship.opposite_relationship.dislike < 15
         high_like = relationship.platonic_like > 30 and relationship.opposite_relationship.platonic_like > 30
         semi_high_like = relationship.platonic_like > 20 and relationship.opposite_relationship.platonic_like > 20
         high_comfort = relationship.comfortable > 25 and relationship.opposite_relationship.comfortable > 25
 
-        if hit == 1 and relationship.romantic_love > 20 and relationship.opposite_relationship.romantic_love > 20 and semi_high_like:
+        if hit and relationship.romantic_love > 20 and relationship.opposite_relationship.romantic_love > 20 and semi_high_like:
             mate_string = f"{cat_from.name} and {cat_to.name} have become mates"
             become_mates = True
-        elif random_hit == 1 and low_dislike and (high_like or high_comfort):
+        elif random_hit and low_dislike and (high_like or high_comfort):
             mate_string = f"{cat_from.name} and {cat_to.name} see each other in a different light and have become mates"
             become_mates = True
 
@@ -310,8 +314,9 @@ class Relation_Events():
             return
 
         chance = self.get_kits_chance(cat, other_cat, relation)
-        hit = randint(1, chance)
-        if hit != 1:
+        #hit = randint(1, chance)
+        hit = int(random.random() * chance)
+        if hit:
             return
         
         # even with no_gendered_breeding on a male cat with no second parent should not be count as pregnant
@@ -431,8 +436,9 @@ class Relation_Events():
 
         chance_number = self.get_breakup_chance(relationship_from, relationship_to, cat_from, cat_to)
 
-        chance = randint(1, chance_number)
-        if chance == 1:
+        #chance = randint(1, chance_number)
+        chance = (random.random() * chance_number)
+        if chance:
             if relationship_from.dislike > 30:
                 will_break_up = True
             elif relationship_from.romantic_love < 50:
@@ -655,7 +661,8 @@ class Relation_Events():
         )
 
         # a chance of 0 should always be a "auto hit"
-        if chance_affair == 0 or randint(1, chance_affair) == 1:
+        #if chance_affair == 0 or randint(1, chance_affair) == 1:
+        if not chance_affair or int(random.random() * chance_affair):
             second_parent = highest_romantic_relation.cat_to
 
         return second_parent
