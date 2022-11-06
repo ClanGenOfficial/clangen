@@ -825,10 +825,10 @@ class Cat():
 
         # check for current mate
         # if the cat has a mate, they are not open for a new mate
-        if not for_love_interest and self.mate is not None:
+        if not for_love_interest and self.mate:
             return False
 
-        if self.mate is not None or other_cat.mate is not None:
+        if self.mate or other_cat.mate:
             return False
 
         # check for mentor
