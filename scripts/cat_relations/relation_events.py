@@ -437,7 +437,7 @@ class Relation_Events():
         chance_number = self.get_breakup_chance(relationship_from, relationship_to, cat_from, cat_to)
 
         #chance = randint(1, chance_number)
-        chance = (random.random() * chance_number)
+        chance = int(random.random() * chance_number)
         if not chance:
             if relationship_from.dislike > 30:
                 will_break_up = True
