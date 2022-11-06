@@ -355,14 +355,7 @@ class ViewChildrenScreen(Screens):
         if siblings is False:
             verdana.text('This cat has no siblings.', (380, 200))
 
-        if the_cat.exiled:
-            buttons.draw_button(('center', 670),
-                            text='Back',
-                            cur_screen='outside profile screen')
-        else:
-            buttons.draw_button(('center', 670),
-                            text='Back',
-                            cur_screen='profile screen')
+
         pos_x = 0
         pos_y = 60
         # SHOW MATE
@@ -423,22 +416,24 @@ class ViewChildrenScreen(Screens):
         if kittens is False:
             verdana.text('This cat has never had offspring.', (350, 480))
 
-        buttons.draw_image_button((25, 645),
-                                  button_name='back',
-                                  text='Back',
-                                  size=(105, 30),
-                                  cur_screen='profile screen',
-                                  chosen_cat=None,
-                                  show_details=False)
+
 
         if the_cat.exiled:
-            buttons.draw_button(('center', 670),
-                                text='Back',
-                                cur_screen='outside profile screen')
+            buttons.draw_image_button((25, 645),
+                                      button_name='back',
+                                      text='Back',
+                                      size=(105, 30),
+                                      cur_screen='outside profile screen',
+                                      chosen_cat=None,
+                                      show_details=False)
         else:
-            buttons.draw_button(('center', 670),
-                                text='Back',
-                                cur_screen='profile screen')
+            buttons.draw_image_button((25, 645),
+                                      button_name='back',
+                                      text='Back',
+                                      size=(105, 30),
+                                      cur_screen='profile screen',
+                                      chosen_cat=None,
+                                      show_details=False)
     def screen_switches(self):
         cat_profiles()
 
