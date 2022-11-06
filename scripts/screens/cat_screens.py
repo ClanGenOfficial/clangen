@@ -116,14 +116,15 @@ def accessory_display_name(cat, accessory):
 #               assigns backstory blurbs to the backstory                      #
 # ---------------------------------------------------------------------------- #
 def bs_blurb_text(cat, backstory=None):
+    backstory = cat.backstory
     bs_blurb = None
     if backstory is None:
         bs_blurb = "This cat was born into the clan where they currently reside"
     if backstory == 'clanborn':
         bs_blurb = "This cat was born into the clan where they currently reside"
-    if backstory == 'half-clan1':
+    if backstory == 'halfclan1':
         bs_blurb = "This cat was born into the clan, but one of their parents resides in another clan"
-    if backstory == 'half-clan2':
+    if backstory == 'halfclan2':
         bs_blurb = "This cat was born in another clan, but chose to come to this clan to be with their other parent"
     if backstory == 'outsider_roots1':
         bs_blurb = "This cat was born into the clan, but one of their parents is an outsider that belongs to no clan"
@@ -177,15 +178,13 @@ def bs_blurb_text(cat, backstory=None):
 #             change how backstory info display on cat profiles                #
 # ---------------------------------------------------------------------------- #
 def backstory_text(cat):
-
     backstory = cat.backstory
-    bs_blurb = None
     if backstory is None:
         return ''
     bs_display = backstory
     if bs_display == 'clanborn':
         bs_display = 'clanborn'
-    elif bs_display in ['half-clan1', 'half-clan2']:
+    elif bs_display in ['halfclan1', 'halfclan2']:
         bs_display = 'half-clan'
     elif bs_display in ['outsider_roots1', 'outsider_roots2']:
         bs_display = 'outsider roots'
@@ -207,8 +206,7 @@ def backstory_text(cat):
         if cat.status == 'medicine cat':
             bs_display = 'disgraced medicine cat'
         elif cat.status in ['warrior', 'elder']:
-            bs_display_choice = choice(['disgraced leader', 'disgraced deputy'])
-            bs_display = bs_display_choice
+            bs_display = 'disgraced deputy'
     elif bs_display == 'retired_leader':
         bs_display = 'retired leader'
     elif bs_display == 'refugee':

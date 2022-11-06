@@ -661,6 +661,8 @@ class Relation_Events():
     def get_kits(self, kits_amount, cat, other_cat = None, clan = game.clan):
         # create amount of kits
         all_kitten = []
+        backstory_choice_1 = choice(['halfclan1', 'outsider_roots1'])
+        backstory_choice_2 = choice(['halfclan2', 'outsider_roots2'])
         for kit in range(kits_amount):
             kit = None
             if other_cat is not None:
@@ -676,10 +678,9 @@ class Relation_Events():
                 other_cat.birth_cooldown = 6
             else:
                 if cat.gender == 'female':
-                    backstory_choice = choice(['halfclan1', 'outsider_roots1'])
-                else:
-                    backstory_choice = choice(['halfclan2', 'outsider_roots2'])
-                backstory = backstory_choice
+                    backstory = backstory_choice_1
+                else:                    
+                    backstory = backstory_choice_2
                 kit = Cat(parent1=cat.ID, moons=0, backstory=backstory)
                 all_kitten.append(kit)
                 cat.birth_cooldown = 6
