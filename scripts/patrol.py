@@ -675,11 +675,13 @@ class Patrol():
             self.handle_exp_gain()
             self.add_new_cats()
             self.handle_clan_relations(difference = int(1))
+            self.handle_mentor_app_pairing()
         else:
             self.success = False
             self.handle_deaths()
             self.handle_scars()
             self.handle_clan_relations(difference = int(-1))
+            self.handle_mentor_app_pairing()
 
     def calculate_success_antagonize(self):
             if self.patrol_event is None:
@@ -774,6 +776,11 @@ class Patrol():
             else:
                 clan_relations += difference
         game.clan.all_clans[otherclan].relations = clan_relations
+
+    def handle_mentor_app_pairing(self):
+        for cat in self.patrol_cats:
+            if cat.mentor in self.patrol_cats:
+                cat.patrol_with_mentor += 1
 
     def handle_relationships(self):
         romantic_love = 0

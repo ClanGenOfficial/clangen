@@ -299,6 +299,7 @@ class Game():
                 "parent1": inter_cat.parent1,
                 "parent2": inter_cat.parent2,
                 "mentor": inter_cat.mentor.ID if inter_cat.mentor else None,
+                "patrol_with_mentor": inter_cat.patrol_with_mentor if inter_cat.patrol_with_mentor else 0,
                 "mate": inter_cat.mate,
                 "dead": inter_cat.dead,
                 "paralyzed": inter_cat.paralyzed,

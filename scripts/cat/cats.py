@@ -111,6 +111,7 @@ class Cat():
         self.eye_colour = eye_colour
         self.mentor = None
         self.former_mentor = []
+        self.patrol_with_mentor = 0
         self.apprentice = []
         self.former_apprentices = []
         self.relationships = []
@@ -343,23 +344,36 @@ class Cat():
                             self.trait = chosen_trait
                             print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
         if new_status == 'warrior' or new_status == 'medicine cat':
-            chance = randint(0, 5)  # chance for cat to gain new trait or keep old
+            chance = randint(0, 9) + self.patrol_with_mentor  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
                 print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
-            elif chance == 1 or chance == 2:
+            elif 1 >= chance >= 4:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
                     if self.trait in self.personality_groups[x]:
                         possible_trait = self.personality_groups.get(x)
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
-                            self.trait = choice(self.traits)
-                            print(self.name, 'trait type chosen was kit trait -', self.trait,
-                                  'chosen randomly instead')
+                            self.trait = possible_trait[0]
+                            print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
                         else:
                             self.trait = chosen_trait
                             print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
+            elif chance <= 9:
+                possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
+                for x in possible_groups:
+                    if self.mentor.trait in self.personality_groups[x]:
+                        possible_trait = self.personality_groups.get(x)
+                        chosen_trait = choice(possible_trait)
+                        if chosen_trait in self.kit_traits:
+                            self.trait = possible_trait[0]
+                            print(self.name, 'TRAIT TYPE from mentor:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
+                                  chance)
+                        else:
+                            self.trait = chosen_trait
+                            print(self.name, 'TRAIT TYPE from mentor:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
+                                  chance)
             else:
                 print(self.name, 'NEW TRAIT TYPE: No change', chance)
 
