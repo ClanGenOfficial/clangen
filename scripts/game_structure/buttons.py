@@ -1,7 +1,7 @@
 from .text import *
 from .load_cat import *
 from .game_essentials import *
-
+from . import image_cache
 from scripts.cat.cats import Cat
 
 
@@ -50,13 +50,13 @@ class Button():
             image_path = f'resources/images/buttons/{button_name}.png'
         else: 
             image_path = f'resources/images/buttons/{button_name}_unavailable.png'
-        image = pygame.image.load(image_path).convert_alpha()
+        image = image_cache.load_image(image_path).convert_alpha()
         button = pygame.transform.scale(image, size)
         collided = self.used_screen.blit(button, pos)
         if available and collided.collidepoint(self.used_mouse.pos):
             is_clickable = True
             image_path = f'resources/images/buttons/{button_name}_hover.png'
-            image = pygame.image.load(image_path).convert_alpha()
+            image = image_cache.load_image(image_path).convert_alpha()
             button = pygame.transform.scale(image, size)
         self.used_screen.blit(button, pos)
         if game.clicked and is_clickable:
@@ -150,7 +150,7 @@ class Button():
                      self.font.size + self.padding[1] * 2))
 
         elif dynamic_image:
-            new_button = pygame.image.load(f"{image}.png").convert_alpha()
+            new_button = image_cache.load_image(f"{image}.png").convert_alpha()
         else:
             new_button = image
         new_pos = list(pos)
@@ -180,7 +180,7 @@ class Button():
                 new_button.fill(colour)
                 self.font.text(text, (self.padding[0], 0), new_button)
         elif dynamic_image:
-            new_button = pygame.image.load(f"{image}.png").convert_alpha()
+            new_button = image_cache.load_image(f"{image}.png").convert_alpha()
         self.used_screen.blit(new_button, new_pos)
         if game.clicked and clickable:
             if apprentice is not None:
