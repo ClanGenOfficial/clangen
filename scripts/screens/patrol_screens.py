@@ -488,7 +488,7 @@ class PatrolScreen(Screens):
                     (548, 356),
                     button_name='patrol_select',
                     size=(104, 26),
-                    cat=chosen_cat.apprentice[x]
+                    cat=chosen_cat.apprentice[0]
                     )
             else:
                 buttons.draw_image_button(
