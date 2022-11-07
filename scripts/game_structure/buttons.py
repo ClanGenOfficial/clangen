@@ -356,14 +356,23 @@ class Button():
         """Chooses cat_value as mentor for apprentice."""
         if apprentice not in cat_value.apprentice:
             if apprentice.moons == 6:
+                # reset patrol number
+                apprentice.patrol_with_mentor = 0
+                # remove from former mentor without adding apprentice to former apprentice list
+                # and without adding mentor to former mentor list
                 apprentice.mentor.apprentice.remove(apprentice)
                 apprentice.mentor = cat_value
                 cat_value.apprentice.append(apprentice)
             else:
+                # reset patrol number
+                apprentice.patrol_with_mentor = 0
+                # remove and append relevant lists
                 apprentice.mentor.former_apprentices.append(apprentice)
                 apprentice.mentor.apprentice.remove(apprentice)
+                apprentice.former_mentor.append(apprentice.mentor)
                 apprentice.mentor = cat_value
                 cat_value.apprentice.append(apprentice)
+
 
         game.current_screen = 'clan screen'
 
