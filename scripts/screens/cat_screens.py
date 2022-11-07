@@ -729,7 +729,7 @@ class ProfileScreen(Screens):
             # promote a cat to deputy if no deputy is alive
             if the_cat.status in [
                 'warrior'
-            ] and not the_cat.dead and not the_cat.exiled and game.clan.deputy is None:
+            ] and not the_cat.dead and not the_cat.exiled and game.clan.deputy is None or game.clan.deputy == 0 or game.clan.deputy.exiled or game.clan.deputy.dead:
                 buttons.draw_image_button((226, 486),
                                           button_name='promote_deputy',
                                           text='promote to deputy',
