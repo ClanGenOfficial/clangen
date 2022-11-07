@@ -51,8 +51,6 @@ def draw_back(x_value, y_value):
                                   profile_tab_group=None,
                                   hotkey=[0])
 
-
-
 # ---------------------------------------------------------------------------- #
 #             change how accessory info displays on cat profiles               #
 # ---------------------------------------------------------------------------- #
@@ -176,7 +174,7 @@ def bs_blurb_text(cat, backstory=None):
 
 
 # ---------------------------------------------------------------------------- #
-#             change how backstory info display on cat profiles                #
+#             change how backstory info displays on cat profiles               #
 # ---------------------------------------------------------------------------- #
 def backstory_text(cat):
     backstory = cat.backstory
@@ -226,7 +224,7 @@ def backstory_text(cat):
 class ProfileScreen(Screens):
 
     # UI Images
-    backstory_tab = pygame.image.load("resources/images/backstory_bg.png").convert_alpha()
+    backstory_tab = image_cache.load_image("resources/images/backstory_bg.png").convert_alpha()
 
     def on_use(self):
         # use this variable to point to the cat object in question
@@ -574,6 +572,10 @@ class ProfileScreen(Screens):
 
             bs_blurb = bs_blurb_text(the_cat, backstory=the_cat.backstory)
 
+            # append backstory blurb to history
+            if bs_blurb is not None:
+                history.append(str(bs_blurb))
+
             # check if cat has any mentor influence, else assign None
             if the_cat.mentor_influence:
                 influenced_trait = str(the_cat.mentor_influence[0]).casefold()
@@ -582,57 +584,75 @@ class ProfileScreen(Screens):
                 influenced_trait = None
                 influenced_skill = None
 
-            # if they did have mentor influence, check if skill or trait influence was none and assign None
+            # if they did have mentor influence, check if skill or trait influence actually happened and assign None
             if influenced_skill == 'none':
                 influenced_skill = None
             if influenced_trait == 'none':
                 influenced_trait = None
 
-            # assign proper grammar to skills
-            if influenced_skill in Cat.skill_groups.get('special'):
-                adjust_skill = f'unlock their abilities as a {influenced_skill}'
-                influenced_skill = adjust_skill
-            elif influenced_skill in Cat.skill_groups.get('star'):
-                adjust_skill = f'grow a {influenced_skill}'
-                influenced_skill = adjust_skill
-            elif influenced_skill in Cat.skill_groups.get('smart'):
-                adjust_skill = f'become {influenced_skill}'
-                influenced_skill = adjust_skill
-
-            # for loop to assign proper grammar to all these groups
-            become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak', 'heal']
-            for x in become_group:
-                if influenced_skill in Cat.skill_groups.get(x):
-                    adjust_skill = f'become a(n) {influenced_skill}'
+            # if cat had mentor influence then write history text for those influences and append to history
+            if influenced_skill is not None and influenced_skill != 'none' \
+                    and influenced_trait is not None and influenced_trait != 'none':
+                # assign proper grammar to skills
+                if influenced_skill in Cat.skill_groups.get('special'):
+                    adjust_skill = f'unlock their abilities as a {influenced_skill}'
                     influenced_skill = adjust_skill
-                    break
+                elif influenced_skill in Cat.skill_groups.get('star'):
+                    adjust_skill = f'grow a {influenced_skill}'
+                    influenced_skill = adjust_skill
+                elif influenced_skill in Cat.skill_groups.get('smart'):
+                    adjust_skill = f'become {influenced_skill}'
+                    influenced_skill = adjust_skill
 
-            # append influence blurb to history
-            if bs_blurb is not None:
-                history.append(str(bs_blurb))
-            if influenced_trait is not None and influenced_skill is None:
-                history.append(f'The influence of their mentor caused this cat to become more {influenced_trait}.')
-            elif influenced_trait is None and influenced_skill is not None:
-                history.append(f'The influence of their mentor caused this cat to {influenced_skill}.')
-            elif influenced_trait is not None and influenced_skill is not None:
-                history.append(f'The influence of their mentor caused this cat to become more {influenced_trait} as well as {influenced_skill}.')
+                # for loop to assign proper grammar to all these groups
+                become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak', 'heal']
+                for x in become_group:
+                    if influenced_skill in Cat.skill_groups.get(x):
+                        adjust_skill = f'become a(n) {influenced_skill}'
+                        influenced_skill = adjust_skill
+                        break
+
+                # append influence blurb to history
+                if influenced_trait is not None and influenced_skill is None:
+                    history.append(f'The influence of their mentor caused this cat to become more {influenced_trait}.')
+                elif influenced_trait is None and influenced_skill is not None:
+                    history.append(f'The influence of their mentor caused this cat to {influenced_skill}.')
+                elif influenced_trait is not None and influenced_skill is not None:
+                    history.append(f'The influence of their mentor caused this cat to become more {influenced_trait} as well as {influenced_skill}.')
+
+            if the_cat.scar_event:
+                for x in range(len(the_cat.scar_event)):
+                    event_words = the_cat.scar_event[x].split()
+                    for y in range(len(event_words)):
+                        not_scarred = ['wounded', 'injured', 'battered', 'hurt', 'punished']
+                        if event_words[y] == 'is':
+                            event_words[y] = 'was'
+                        elif event_words[y] == 'loses':
+                            event_words[y] = 'lost'
+                        elif event_words[y] in not_scarred:
+                            event_words[y] = 'scarred'
+                            if event_words[y-1] == 'got':
+                                event_words[y-1] = 'was'
+                    if x == 1 and event_words[0] == str(the_cat.name):
+                        if event_words[1] == 'was':
+                            event_words.pop(1)
+                            event_words[0] = 'They were also'
+                        else:
+                            event_words[0] = 'They also'
+                    the_cat.scar_event[x] = ' '.join(event_words)
+                scar_history = '. '.join(the_cat.scar_event)
+                history.append(scar_history)
+
+
 
             # join together history list with line breaks
             display_history = '\n'.join(history)
 
             # display cat backstory and blurb in tab
-            if the_cat.backstory is not None:
-                verdana_small_dark.blit_text(f'{display_history}',
-                                       (90, 485),
-                                       x_limit=550,
-                                       line_break=30)
-
-            # default display if no backstory
-            else:
-                verdana_small_dark.blit_text(f'{display_history}',
-                                       (90, 485),
-                                       x_limit=550,
-                                       line_break=30)
+            verdana_small_dark.blit_text(f'{display_history}',
+                                   (90, 485),
+                                   x_limit=550,
+                                   line_break=30)
 
         # opens backstory tab if clicked
         else:

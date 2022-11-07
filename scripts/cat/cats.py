@@ -154,6 +154,7 @@ class Cat():
         self.children = []
         self.illness = None
         self.injury = None
+        self.scar_event = []
 
         # setting ID
         if ID is None:
@@ -369,7 +370,7 @@ class Cat():
                 self.trait = choice(self.traits)
                 self.mentor_influence.append('None')
                 print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
-            elif 1 >= chance >= 6:
+            elif 1 <= chance <= 6:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
                     if self.trait in self.personality_groups[x]:
@@ -383,17 +384,16 @@ class Cat():
                             self.trait = chosen_trait
                             self.mentor_influence.append('None')
                             print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
-            elif chance <= 8:
+            elif chance >= 8:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
                     if self.mentor is not None:
                         mentor = self.mentor
-                    elif self.mentor is None and self.former_mentor is not []:
-                        if self.former_mentor[-1]:
+                    elif self.mentor is None and len(self.former_mentor) != 0:
+                        if len(self.former_mentor) > 1:
                             mentor = self.former_mentor[-1]
                         else:
-                            print(self.name, 'NEW TRAIT TYPE: No change', chance)
-                            break
+                            mentor = self.former_mentor[0]
                     else:
                         print(self.name, 'NEW TRAIT TYPE: No change', chance)
                         break

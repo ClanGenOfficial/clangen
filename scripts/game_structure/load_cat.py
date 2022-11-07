@@ -76,6 +76,7 @@ def json_load():
         new_cat.dead_for = cat["dead_moons"]
         new_cat.apprentice = cat["current_apprentice"]
         new_cat.former_apprentices = cat["former_apprentices"]
+        new_cat.scar_event = cat["scar_event"] if "scar_event" in cat else []
         all_cats.append(new_cat)
 
     # replace cat ids with cat objects and add other needed variables

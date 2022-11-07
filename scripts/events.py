@@ -489,7 +489,9 @@ class Events():
                         ]
                     )
         if scar_text:
-            game.cur_events_list.append(choice(scar_text))
+            chosen_scar = choice(scar_text)
+            game.cur_events_list.append(chosen_scar)
+            cat.scar_event.append(chosen_scar)
 
         # Apply scar
         if specialty:
