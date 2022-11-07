@@ -745,21 +745,33 @@ class Patrol():
                     [choice(scars1),
                      choice(scars2),
                      choice(scars4)])
+                self.patrol_random_cat.scar_event.append(
+                    f'{self.patrol_random_cat.name} gained a scar while on patrol')
             elif self.patrol_random_cat.specialty2 is None:
                 self.patrol_random_cat.specialty2 = choice(
                     [choice(scars1),
                      choice(scars2),
                      choice(scars4)])
+                self.patrol_random_cat.scar_event.append(
+                    f'{self.patrol_random_cat.name} gained a scar while on patrol')
         elif self.patrol_event.patrol_id == 102:
             self.patrol_random_cat.skill = choice(
                 ['paralyzed', 'blind', 'missing a leg'])
+            self.patrol_random_cat.scar_event.append(
+                f'{self.patrol_random_cat.name} was hit by a car and is now {self.patrol_random_cat.skill}')
+
             if game.settings['retirement']:
                 self.patrol_random_cat.status_change('elder')
+                self.patrol_random_cat.scar_event.append(f'{self.patrol_random_cat.name} retired after being hit by a monster')
         elif self.patrol_event.patrol_id == 904:
             if self.patrol_random_cat.specialty is None:
                 self.patrol_random_cat.specialty = choice([choice(scars5)])
+                self.patrol_random_cat.scar_event.append(
+                    f'{self.patrol_random_cat.name} gained a scar while on patrol')
             elif self.patrol_random_cat.specialty2 is None:
                 self.patrol_random_cat.specialty2 = choice([choice(scars5)])
+                self.patrol_random_cat.scar_event.append(
+                    f'{self.patrol_random_cat.name} gained a scar while on patrol')
 
     def handle_retirements(self):
         if self.patrol_event.patrol_id == 102 and game.settings.get(

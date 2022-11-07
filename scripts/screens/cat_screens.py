@@ -603,14 +603,14 @@ class ProfileScreen(Screens):
                 elif influenced_skill in Cat.skill_groups.get('smart'):
                     adjust_skill = f'become {influenced_skill}'
                     influenced_skill = adjust_skill
-
-                # for loop to assign proper grammar to all these groups
-                become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak', 'heal']
-                for x in become_group:
-                    if influenced_skill in Cat.skill_groups.get(x):
-                        adjust_skill = f'become a(n) {influenced_skill}'
-                        influenced_skill = adjust_skill
-                        break
+                else:
+                    # for loop to assign proper grammar to all these groups
+                    become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak']
+                    for x in become_group:
+                        if influenced_skill in Cat.skill_groups.get(x):
+                            adjust_skill = f'become a(n) {influenced_skill}'
+                            influenced_skill = adjust_skill
+                            break
 
                 # append influence blurb to history
                 if influenced_trait is not None and influenced_skill is None:
