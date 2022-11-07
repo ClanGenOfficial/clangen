@@ -577,15 +577,15 @@ class ProfileScreen(Screens):
             # check if cat has any mentor influence, else assign None
             if the_cat.mentor_influence:
                 influenced_trait = str(the_cat.mentor_influence[0]).casefold()
-                influenced_skill = str(the_cat.mentor_influence[1])
+                influenced_skill = str(the_cat.mentor_influence[1]).casefold()
             else:
                 influenced_trait = None
                 influenced_skill = None
 
             # if they did have mentor influence, check if skill or trait influence was none and assign None
-            if influenced_skill == 'None':
+            if influenced_skill == 'none':
                 influenced_skill = None
-            if influenced_trait == 'None':
+            if influenced_trait == 'none':
                 influenced_trait = None
 
             # assign proper grammar to skills
