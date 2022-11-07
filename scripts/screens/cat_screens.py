@@ -1112,15 +1112,16 @@ class ChangeNameScreen(Screens):
         # changes the name
         if game.switches['change_name'] != '':
             name = game.switches['naming_text'].split(' ')
-            the_cat.name.prefix = name[0]
-            if len(name) > 1:
-                # If cat is an apprentice/kit and new suffix is paw/kit, leave hidden suffix unchanged
-                if not (the_cat.name.status == "apprentice" and name[1] == "paw") and \
-                        not (the_cat.name.status == "kitten" and name[1] == "kit"):
-                    the_cat.name.suffix = name[1]
+            if name != ['']:
+                the_cat.name.prefix = name[0]
+                if len(name) > 1:
+                    # If cat is an apprentice/kit and new suffix is paw/kit, leave hidden suffix unchanged
+                    if not (the_cat.name.status == "apprentice" and name[1] == "paw") and \
+                            not (the_cat.name.status == "kitten" and name[1] == "kit"):
+                        the_cat.name.suffix = name[1]
 
-            game.switches['naming_text'] = ''
-            game.switches['cur_screen'] = 'name changed screen'
+                game.switches['naming_text'] = ''
+                game.switches['cur_screen'] = 'name changed screen'
 
         draw_back(25, 25)
 

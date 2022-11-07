@@ -1,7 +1,7 @@
 from .base_screens import Screens
 from .cat_screens import ProfileScreen, ChangeGenderScreen, ChangeNameScreen, ExileProfileScreen, GenderChangedScreen, NameChangedScreen
 from .clan_creation_screens import ClanCreatedScreen, MakeClanScreen
-from .clan_screens import ClanScreen, StarClanScreen, ListScreen, AllegiancesScreen
+from .clan_screens import ClanScreen, StarClanScreen, DFScreen, ListScreen, AllegiancesScreen
 from .event_screens import EventsScreen, SingleEventScreen, PatrolEventScreen, RelationshipEventScreen
 from .organizational_screens import\
     StartScreen, SettingsScreen, InfoScreen, SwitchClanScreen, LanguageScreen, RelationshipSettingsScreen, StatsScreen
@@ -60,6 +60,7 @@ allegiances_screen = AllegiancesScreen('allegiances screen')
 clan_screen = ClanScreen('clan screen')
 list_screen = ListScreen('list screen')
 starclan_screen = StarClanScreen('starclan screen')
+df_screen = DFScreen('dark forest screen')
 
 # ---------------------------------------------------------------------------- #
 #                               event_screens.py                               #
