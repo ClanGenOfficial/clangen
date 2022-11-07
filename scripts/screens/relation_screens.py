@@ -423,7 +423,6 @@ class ViewChildrenScreen(Screens):
             verdana.text('This cat has never had offspring.', (350, 480))
 
 
-
         if the_cat.exiled:
             buttons.draw_image_button((25, 645),
                                       button_name='back',
@@ -440,6 +439,7 @@ class ViewChildrenScreen(Screens):
                                       cur_screen='profile screen',
                                       chosen_cat=None,
                                       show_details=False)
+
     def screen_switches(self):
         cat_profiles()
 
@@ -451,6 +451,7 @@ class ChooseMateScreen(Screens):
         game.switches['choosing_mate'] = True
 
         draw_choosing_bg(494, 'mate')
+
         draw_next_prev_cat_buttons(the_cat)
 
         y_value = 30

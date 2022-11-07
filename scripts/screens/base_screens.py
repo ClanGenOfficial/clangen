@@ -201,7 +201,8 @@ def draw_next_prev_cat_buttons(the_cat):
                                   size=(153, 30),
                                   hotkey=[21],
                                   show_details=False,
-                                  chosen_cat=None
+                                  chosen_cat=None,
+                                  mate=None
                                   )
     else:
         buttons.draw_image_button((622, 25),
@@ -220,7 +221,8 @@ def draw_next_prev_cat_buttons(the_cat):
                                   cat=previous_cat,
                                   size=(153, 30),
                                   hotkey=[23],
-                                  show_details=False
+                                  show_details=False,
+                                  mate=None
                                   )
     else:
         buttons.draw_image_button((25, 25),
