@@ -389,7 +389,11 @@ class Cat():
                     if self.mentor is not None:
                         mentor = self.mentor
                     elif self.mentor is None and self.former_mentor is not []:
-                        mentor = self.former_mentor[-1]
+                        if self.former_mentor[-1]:
+                            mentor = self.former_mentor[-1]
+                        else:
+                            print(self.name, 'NEW TRAIT TYPE: No change', chance)
+                            break
                     else:
                         print(self.name, 'NEW TRAIT TYPE: No change', chance)
                         break
