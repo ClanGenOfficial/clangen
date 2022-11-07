@@ -45,7 +45,7 @@ def json_load():
         new_cat.moons = cat["moons"]
         new_cat.trait = cat["trait"]
         new_cat.mentor = cat["mentor"]
-        new_cat.former_mentor = cat["former_mentor"] if "former_mentor" in cat else None
+        new_cat.former_mentor = cat["former_mentor"] if "former_mentor" in cat else []
         new_cat.patrol_with_mentor = cat["patrol_with_mentor"] if "patrol_with_mentor" in cat else 0
         new_cat.paralyzed = cat["paralyzed"]
         new_cat.no_kits = cat["no_kits"]
