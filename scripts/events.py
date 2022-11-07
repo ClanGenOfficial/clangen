@@ -1010,54 +1010,54 @@ class Events():
                 if allorsome == 1:
                     cause_of_death = [
                         name +
-                        ' was brutally attacked by a rogue and lost all of their lives ',
+                        ' was brutally attacked by a rogue and lost all of their lives',
                         name +
-                        ' was mauled by dogs and lost all of their lives ',
+                        ' was mauled by dogs and lost all of their lives',
                         name +
-                        ' was carried off by an eagle, never to be seen again ',
+                        ' was carried off by an eagle, never to be seen again',
                         name +
-                        ' was carried off by a hawk, never to be seen again ',
-                        name + ' was taken by twolegs, never to be seen again ',
+                        ' was carried off by a hawk, never to be seen again',
+                        name + ' was taken by twolegs, never to be seen again',
                         name +
-                        ' fell into a river and was swept away by the current, never to be seen again ',
+                        ' fell into a river and was swept away by the current, never to be seen again',
                         name +
-                        ' was burnt alive while trying to save their clanmates from a fire '
+                        ' was burnt alive while trying to save their clanmates from a fire'
                     ]
                     if self.at_war and len(game.clan.all_clans) > 0:
                         cause_of_death.extend([
                             name + ' was brutally murdered by a ' +
                             choice(game.clan.all_clans).name +
-                            'Clan warrior and lost all of their lives ',
+                            'Clan warrior and lost all of their lives',
                             name + ' was brutally murdered by the ' +
                             choice(game.clan.all_clans).name +
-                            'Clan deputy and lost all of their lives ',
+                            'Clan deputy and lost all of their lives',
                             name + ' was brutally murdered by the ' +
                             choice(game.clan.all_clans).name +
-                            'Clan leader and lost all of their lives '
+                            'Clan leader and lost all of their lives'
                         ])
                     if game.clan.biome == "Mountainous":
                         cause_of_death.extend([
-                            name + ' was buried alive in an avalanche ',
-                            name + ' was buried alive by a landslide ', name +
-                            ' was pushed off a cliff with sharp rocks at the bottom ',
+                            name + ' was buried alive in an avalanche',
+                            name + ' was buried alive by a landslide', name +
+                            ' was pushed off a cliff with sharp rocks at the bottom',
                             name +
-                            ' accidentally fell off a cliff with sharp rocks at the bottom '
+                            ' accidentally fell off a cliff with sharp rocks at the bottom'
                         ])
                     if game.clan.biome == "Beach":
                         cause_of_death.extend([
                             name +
-                            ' was washed out to sea and was never seen again ',
+                            ' was washed out to sea and was never seen again',
                             name +
-                            ' was lost to sea while saving a clanmate from drowning '
+                            ' was lost to sea while saving a clanmate from drowning'
                         ])
                     if game.clan.biome == "Plains":
                         cause_of_death.extend([
                             name +
-                            ' fell into a sinkhole and was never seen again ',
+                            ' fell into a sinkhole and was never seen again',
                             name +
-                            ' fell into a hidden burrow and was buried alive ',
+                            ' fell into a hidden burrow and was buried alive',
                             name +
-                            ' was buried alive when a burrow collapsed on them '
+                            ' was buried alive when a burrow collapsed on them'
                         ])
                     game.clan.leader_lives -= 10
                 else:
@@ -1065,13 +1065,13 @@ class Events():
                     if cat.moons >= 130 and game.clan.current_season in ['Leaf-fall', 'Leaf-bare']:
                         cause_of_death = [
                             name + ' lost ' + str(lostlives) +
-                            ' lives due to greencough ',
+                            ' lives due to greencough',
                             name + ' lost ' +
-                            str(lostlives) + ' lives due to whitecough ',
+                            str(lostlives) + ' lives due to whitecough',
                             name + ' lost ' + str(lostlives) +
-                            ' lives due to yellowcough ',
+                            ' lives due to yellowcough',
                             name + ' lost ' +
-                            str(lostlives) + ' lives due to an illness '
+                            str(lostlives) + ' lives due to an illness'
                         ]
                         game.clan.leader_lives = current_lives - lostlives
                         cat.die()
@@ -1110,7 +1110,7 @@ class Events():
                     ])
                     if cat.status == 'kitten':
                         cause_of_death.extend([
-                        name + ' died of kittencough ', name +
+                        name + ' died of kittencough', name +
                         ' was too weak to fight off whitecough and passed',
                         name + ' caught a cold and slowly faded'
                     ])
