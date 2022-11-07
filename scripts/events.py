@@ -334,6 +334,8 @@ class Events():
         tail_danger = ["rogue", "dog", "fox", "otter", "rat", "hawk",
                        "enemy warrior", "badger", "twoleg trap"]
         name = str(cat.name)
+        other_cat = choice(list(Cat.all_cats.values()))
+        other_name = str(other_cat.name)
         scar_chance = 0.015  # 1.5%
         clancats = self.living_cats
         scar_text = []
@@ -351,7 +353,6 @@ class Events():
         # Check cat mentor/leader status and traits
         risky_mentor = False
         risky_leader = False
-        other_name = "[this string should not appear :'3 ]"
         if cat.mentor:
             if cat.mentor.trait in risky_traits:
                 risky_mentor = True
@@ -386,7 +387,7 @@ class Events():
             leader_scar_chance = leader_scar_chance * 1.75
 
         # Set pools and check which scars we can still get
-        all_scars = scars1 + scars2 + scars4 + scars5
+        all_scars = scars1 + scars2 + scars3
         base_scars = scars1 + scars2  # Can be caused by other cats
         for scar_pool in [all_scars, base_scars]:
             for special in [cat.specialty, cat.specialty2]:
@@ -440,7 +441,7 @@ class Events():
             specialty = choice(base_scars)
             scar_text.extend(
                 [
-                    f"{name} earned a scar recklessly fighting a {choice(danger)} encouraged by their mentor ",
+                    f"{name} earned a scar recklessly fighting a {choice(danger)}, encouraged by their mentor ",
                     f"{name} earned a scar for not defending the territory well enough ",
                     f"{name} is injured after being pushed into a river ",
                     f"{name} is punished by their mentor after accidentally wandering over the border ",
@@ -529,13 +530,13 @@ class Events():
                     f'{name} finds a loner named {loner_name.prefix} who joins the clan',
                     f'A loner waits on the border for a patrol, asking to join the clan'
                 ]
-                if loner_name.suffix != '':
+                if loner_name.suffix:
                     success_text = [
-                        f'{loner_name} decides to keep their name'
+                        f'The loner decides to take on a slightly more clan-like name, and is now called {loner_name}'
                     ]
                 else:
                     success_text = [
-                        f'The loner decides to take on a slightly more clan-like name, and is now called {loner_name}'
+                        f'{loner_name} decides to keep their name'
                     ]
                 game.cur_events_list.append(choice(loner_text))
                 game.cur_events_list.append(choice(success_text))
@@ -548,7 +549,7 @@ class Events():
                     f'{name} finds a loner named {loner_name.prefix} who wishes to join the clan',
                     f'A loner says that they are interested in clan life and joins the clan'
                 ]
-                if loner_name.suffix != '':
+                if loner_name.suffix:
                     success_text = [
                         f'The loner decides to take on a slightly more clan-like name, and is now called {loner_name}'
                     ]
@@ -581,16 +582,16 @@ class Events():
                 backstory=choice(['kittypet1', 'kittypet2']))
                 loner_name = created_cats[0].name
                 loner_text = [
-                    f'{name} finds a kittypet named {str(loner_name.prefix)} who wants to join the clan',
-                    f'A kittypet called {str(loner_name.prefix)} stops {name} and asks to join the clan'
+                    f'{name} finds a kittypet named {loner_name.prefix} who wants to join the clan',
+                    f'A kittypet called {loner_name.prefix} stops {name} and asks to join the clan'
                 ]
-                if loner_name.suffix != '':
+                if loner_name.suffix:
                     success_text = [ 
-                        f'The kittypet decides to take on a slightly more clan-like name, and is now called {str(loner_name)} '
+                        f'The kittypet decides to take on a slightly more clan-like name, and is now called {loner_name} '
                     ]
                 else:
                     success_text = [
-                        f'{str(loner_name)} decides to keep their name'
+                        f'{loner_name} decides to keep their name'
                 ]
                 game.cur_events_list.append(choice(loner_text))
                 game.cur_events_list.append(choice(success_text))
@@ -674,7 +675,7 @@ class Events():
             if loner_name and a == 1:
                 new_cat = Cat(moons=age, prefix=name, status=status, gender=choice(['female', 'male']), backstory=backstory)
             elif loner_name:
-                new_cat = Cat(moons=age, prefix=name, suffix='', status=status, gender=choice(['female', 'male']), backstory=backstory)
+                new_cat = Cat(moons=age, prefix=name, suffix=None, status=status, gender=choice(['female', 'male']), backstory=backstory)
             else:
                 new_cat = Cat(moons=age, status=status, gender=choice(['female', 'male']), backstory=backstory)
             if skill:
@@ -847,10 +848,10 @@ class Events():
                     
                 if game.clan.all_clans:
                     cause_of_death.extend([
-                        f"{name} lost a life defending the kits from {choice(game.clan.all_clans).name} Clan warriors ",
-                        f"{name} lost a life defending {other_name} from {choice(game.clan.all_clans).name} Clan warriors ",
-                        f"{name} lost a life to a {choice(game.clan.all_clans).name} Clan apprentice ",
-                        f"{name} lost a life to a {choice(game.clan.all_clans).name} Clan warrior "
+                        f"{name} lost a life defending the kits from {choice(game.clan.all_clans).name}Clan warriors ",
+                        f"{name} lost a life defending {other_name} from {choice(game.clan.all_clans).name}Clan warriors ",
+                        f"{name} lost a life to a {choice(game.clan.all_clans).name}Clan apprentice ",
+                        f"{name} lost a life to a {choice(game.clan.all_clans).name}Clan warrior "
                     ])
                 game.clan.leader_lives -= 1
                 cat.die()
