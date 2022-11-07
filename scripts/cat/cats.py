@@ -307,7 +307,7 @@ class Cat():
             self.dead = True
 
         if self.status in ['apprentice', 'medicine cat apprentice']:
-            self.mentor.former_apprentice.remove(self)
+            self.mentor.former_apprentices.remove(self)
 
         if self.mate is not None:
             self.mate = None
