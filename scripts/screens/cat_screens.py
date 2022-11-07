@@ -7,6 +7,7 @@ from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import collars, wild_accessories
+import scripts.game_structure.image_cache as image_cache
 
 
 # ---------------------------------------------------------------------------- #
@@ -23,7 +24,7 @@ def draw_text_bar():
         verdana.text(game.switches['naming_text'], (315, 204))
 
     text_input_frame = pygame.transform.scale(
-        pygame.image.load("resources/images/text_input_frame.png").convert_alpha(), (216, 40))
+        image_cache.load_image("resources/images/text_input_frame.png").convert_alpha(), (216, 40))
     screen.blit(text_input_frame, (294, 194))
 
 
@@ -225,7 +226,7 @@ def backstory_text(cat):
 class ProfileScreen(Screens):
 
     # UI Images
-    backstory_tab = pygame.image.load("resources/images/backstory_bg.png")
+    backstory_tab = pygame.image.load("resources/images/backstory_bg.png").convert_alpha()
 
     def on_use(self):
         # use this variable to point to the cat object in question
