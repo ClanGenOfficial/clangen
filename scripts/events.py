@@ -1319,7 +1319,7 @@ class Events():
             dead_count = int(death_chance / 5)
             if alive_count > 15:
                 chance = int(alive_count / 10)
-                if randint(chance, 1000) == 999:
+                if randint(chance, 800) == 1:
                     disaster = []
                     dead_cats = random.sample(alive_cats, 5) # alive_cats, death_count for when scaling is added
                     name1 = str(dead_cats[0].name)
@@ -1370,7 +1370,7 @@ class Events():
                                 ' die after the water dries up from drought'
                             ])
 
-                    game.cur_events_list.append("{name1}, {name2}, {name3}, + {name4}, and {name5} {choice(disaster)}")
+                    game.cur_events_list.append(name1 + ", " + name2 + ", " + name3 + ", " + name4 + ", and " + name5 + choice(disaster))
                     for cat in dead_cats:
                         cat.die()
 

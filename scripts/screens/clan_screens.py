@@ -683,6 +683,14 @@ class DFScreen(Screens):
     #                                   hotkey=[21])
 
         draw_menu_buttons()
+        
+        #placeholder button
+        buttons.draw_button((150, 135),
+                              button_name='starclan',
+                              text='SC',
+                              cur_screen='starclan screen',
+                              size=(88, 30))
+
 
     # def screen_switches(self):
     #     cat_profiles()
