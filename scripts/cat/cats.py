@@ -388,7 +388,7 @@ class Cat():
                 for x in possible_groups:
                     if self.mentor is not None:
                         mentor = self.mentor
-                    elif self.mentor is None and self.former_mentor is not None:
+                    elif self.mentor is None and self.former_mentor is not []:
                         mentor = self.former_mentor[-1]
                     else:
                         print(self.name, 'NEW TRAIT TYPE: No change', chance)
