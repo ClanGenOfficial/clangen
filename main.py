@@ -61,7 +61,7 @@ pygame.event.set_allowed([pygame.KEYDOWN, pygame.QUIT, pygame.MOUSEBUTTONDOWN])
 
 while True:
     if game.settings['dark mode']:
-        screen.fill((67, 61, 49))
+        screen.fill((57, 50, 36))
     else:
         screen.fill((206, 194, 168))
 
