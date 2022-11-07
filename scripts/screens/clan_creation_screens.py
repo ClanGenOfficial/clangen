@@ -10,6 +10,7 @@ from scripts.clan import Clan, map_available
 from scripts.cat.cats import create_example_cats
 from scripts.cat.names import names
 from scripts.cat.sprites import tiles
+import scripts.game_structure.image_cache as image_cache
 #from scripts.world import World, save_map
 map_available = False
 
@@ -60,7 +61,7 @@ class MakeClanScreen(Screens):
         #                                    layout                                    #
         # ---------------------------------------------------------------------------- #
         draw_main_menu(self)
-        text_box = pygame.image.load(
+        text_box = image_cache.load_image(
             'resources/images/game_mode_text_box.png').convert_alpha()
         screen.blit(text_box, (325, 130))
 
@@ -599,27 +600,27 @@ class MakeClanScreen(Screens):
                                   )
 
         if 0 == len(game.switches['members']):
-            clan_none_img = pygame.image.load(
+            clan_none_img = image_cache.load_image(
                 'resources/images/pick_clan_screen/clan_none_light.png').convert_alpha()
             screen.blit(clan_none_img, (0, 414))
         elif 1 == len(game.switches['members']):
-            clan_one_img = pygame.image.load(
+            clan_one_img = image_cache.load_image(
                 'resources/images/pick_clan_screen/clan_one_light.png').convert_alpha()
             screen.blit(clan_one_img, (0, 414))
         elif 2 == len(game.switches['members']):
-            clan_two_img = pygame.image.load(
+            clan_two_img = image_cache.load_image(
                 'resources/images/pick_clan_screen/clan_two_light.png').convert_alpha()
             screen.blit(clan_two_img, (0, 414))
         elif 3 == len(game.switches['members']):
-            clan_three_img = pygame.image.load(
+            clan_three_img = image_cache.load_image(
                 'resources/images/pick_clan_screen/clan_three_light.png').convert_alpha()
             screen.blit(clan_three_img, (0, 414))
         elif 3 < len(game.switches['members']) < 7:
-            clan_four_img = pygame.image.load(
+            clan_four_img = image_cache.load_image(
                 'resources/images/pick_clan_screen/clan_four_light.png').convert_alpha()
             screen.blit(clan_four_img, (0, 414))
         elif 7 == len(game.switches['members']):
-            clan_full_img = pygame.image.load(
+            clan_full_img = image_cache.load_image(
                 'resources/images/pick_clan_screen/clan_full_light.png').convert_alpha()
             screen.blit(clan_full_img, (0, 414))
 
@@ -1027,9 +1028,9 @@ class MakeClanScreen(Screens):
 
     def change_camp_art(self, arg0, arg1):
         self.camp1 = pygame.transform.scale(
-            pygame.image.load(arg0).convert(), (450, 400))
+            image_cache.load_image(arg0).convert(), (450, 400))
         self.camp2 = pygame.transform.scale(
-            pygame.image.load(arg1).convert(), (450, 400))
+            image_cache.load_image(arg1).convert(), (450, 400))
 
 
     def on_use(self):
