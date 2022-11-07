@@ -305,6 +305,9 @@ class Cat():
         else:
             self.dead = True
 
+        if self.status in ['apprentice', 'medicine cat apprentice']:
+            self.mentor.former_apprentice.remove(self)
+
         if self.mate is not None:
             self.mate = None
             if type(self.mate) == str:
@@ -362,6 +365,7 @@ class Cat():
             chance = randint(0, 9) + self.patrol_with_mentor  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
+                self.mentor_influence.append('None')
                 print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
             elif 1 >= chance >= 6:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
@@ -371,9 +375,11 @@ class Cat():
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
                             self.trait = choice(self.traits)
+                            self.mentor_influence.append('None')
                             print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
                         else:
                             self.trait = chosen_trait
+                            self.mentor_influence.append('None')
                             print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
             elif chance <= 8:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
@@ -387,16 +393,21 @@ class Cat():
                         break
                     if mentor.trait in self.personality_groups[x]:
                         possible_trait = self.personality_groups.get(x)
+                        if x == 'Abrasive' and 8 <= chance <= 10:
+                            possible_trait = self.personality_groups.get('Reserved')
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
                             self.trait = choice(self.traits)
+                            self.mentor_influence.append('None')
                             print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
 
                         else:
                             self.trait = chosen_trait
+                            self.mentor_influence.append(x)
                             print(self.name, 'TRAIT TYPE from mentor:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
                                   chance)
             else:
+                self.mentor_influence.append('None')
                 print(self.name, 'NEW TRAIT TYPE: No change', chance)
 
         elif self.moons == 120:
@@ -566,12 +577,15 @@ class Cat():
                             if mentor.skill in self.skill_groups[x]:
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
+                                self.mentor_influence.append(self.skill)
                                 print('skill from mentor')
                     else:
                         self.skill = choice(self.med_skills)
+                        self.mentor_influence.append('None')
                         print('random skill')
                 else:
                     self.skill = choice(self.med_skills)
+                    self.mentor_influence.append('None')
                     print('random skill')
 
             elif self.status not in ['apprentice', 'medicine cat apprentice', 'kitten', 'elder']:
@@ -584,14 +598,18 @@ class Cat():
                             if mentor.skill in self.skill_groups[x]:
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
+                                self.mentor_influence.append(self.skill)
                                 print('skill from mentor')
+
 
                     else:
                         self.skill = choice(self.skills)
+                        self.mentor_influence.append('None')
                         print('random skill')
 
                 else:
                     self.skill = choice(self.skills)
+                    self.mentor_influence.append('None')
                     print('random skill')
 
             elif self.status == 'elder':

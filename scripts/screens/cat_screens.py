@@ -569,19 +569,66 @@ class ProfileScreen(Screens):
 
             screen.blit(ProfileScreen.backstory_tab, (65, 465))
 
-            backstory = backstory_text(the_cat)
+            history = []
+
             bs_blurb = bs_blurb_text(the_cat, backstory=the_cat.backstory)
+
+            # check if cat has any mentor influence, else assign None
+            if the_cat.mentor_influence:
+                influenced_trait = str(the_cat.mentor_influence[0]).casefold()
+                influenced_skill = str(the_cat.mentor_influence[1])
+            else:
+                influenced_trait = None
+                influenced_skill = None
+
+            # if they did have mentor influence, check if skill or trait influence was none and assign None
+            if influenced_skill == 'None':
+                influenced_skill = None
+            if influenced_trait == 'None':
+                influenced_trait = None
+
+            # assign proper grammar to skills
+            if influenced_skill in Cat.skill_groups.get('special'):
+                adjust_skill = f'unlock their abilities as a {influenced_skill}'
+                influenced_skill = adjust_skill
+            elif influenced_skill in Cat.skill_groups.get('star'):
+                adjust_skill = f'grow a {influenced_skill}'
+                influenced_skill = adjust_skill
+            elif influenced_skill in Cat.skill_groups.get('smart'):
+                adjust_skill = f'become {influenced_skill}'
+                influenced_skill = adjust_skill
+
+            # for loop to assign proper grammar to all these groups
+            become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak', 'heal']
+            for x in become_group:
+                if influenced_skill in Cat.skill_groups.get(x):
+                    adjust_skill = f'become a(n) {influenced_skill}'
+                    influenced_skill = adjust_skill
+                    break
+
+            # append influence blurb to history
+            if bs_blurb is not None:
+                history.append(str(bs_blurb))
+            if influenced_trait is not None and influenced_skill is None:
+                history.append(f'The influence of their mentor caused this cat to become more {influenced_trait}.')
+            elif influenced_trait is None and influenced_skill is not None:
+                history.append(f'The influence of their mentor caused this cat to {influenced_skill}.')
+            elif influenced_trait is not None and influenced_skill is not None:
+                history.append(f'The influence of their mentor caused this cat to become more {influenced_trait} as well as {influenced_skill}.')
+
+            # join together history list with line breaks
+            display_history = '\n'.join(history)
 
             # display cat backstory and blurb in tab
             if the_cat.backstory is not None:
-                verdana_dark.blit_text(f'Backstory: {backstory} \n{bs_blurb}',
+                verdana_small_dark.blit_text(f'{display_history}',
                                        (90, 485),
                                        x_limit=550,
                                        line_break=30)
 
             # default display if no backstory
             else:
-                verdana_dark.blit_text(f'Backstory: clanborn \n{bs_blurb}',
+                verdana_small_dark.blit_text(f'{display_history}',
                                        (90, 485),
                                        x_limit=550,
                                        line_break=30)
