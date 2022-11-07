@@ -192,42 +192,43 @@ class Events():
                 if cat.status == 'kitten':
                     # check if the medicine cat is an elder
                     has_elder_med = any(
-                        str(cat.status) == 'medicine cat' and str(cat.age) == 'elder'
+                        cat.status == 'medicine cat' and cat.age == 'elder'
                         and not cat.dead and not cat.exiled
                         for cat in Cat.all_cats.values())
                     very_old_med = any(
-                        str(cat.status) == 'medicine cat' and int(cat.moons) >= 150
+                        cat.status == 'medicine cat' and cat.moons >= 150
                         and not cat.dead and not cat.exiled
                         for cat in Cat.all_cats.values())
                     # check if a med cat of a different age exists
                     has_med = any(
-                        str(cat.status) == 'medicine cat' and str(cat.age) != 'elder'
+                        cat.status == 'medicine cat' and cat.age != 'elder'
                         and not cat.dead and not cat.exiled
                         for cat in Cat.all_cats.values())
                     # check if a med cat app already exists
                     has_med_app = any(
-                        str(cat.status) == 'medicine cat apprentice'
+                        cat.status == 'medicine cat apprentice'
                         and not cat.dead and not cat.exiled
                         for cat in Cat.all_cats.values())
                     # assign chance to become med app depending on current med cat and traits
                     if has_elder_med is True and has_med is False:
-                        chance = randint(0, 2)
+                        #chance = randint(0, 2)
+                        chance = int(random.random() * 3)  # 3 is not part of the range
                         print('POSSIBLE MED APP - ELDER MED MENTOR - CHANCE:', chance)
                     elif has_elder_med is False and has_med is True:
-                        chance = randint(0, 90)
+                        #chance = randint(0, 90)
+                        chance = int(random.random() * 91)
                     elif has_elder_med and has_med:
                         if very_old_med:
-                            chance = randint(0, 40)
+                            #chance = randint(0, 40)
+                            chance = int(random.random() * 41)
                         else:
                             chance = 0
                     else:
-                        chance = randint(0, 40)
+                        chance = int(random.random() * 41)
                     print('POSSIBLE MED APP - CHANCE:', chance)
                     if chance in range(1, 6):    
                         if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
                             chance = 1
-                        else:
-                            chance = chance
                         print('POSSIBLE MED APP - TRAIT:', cat.trait, '- CHANCE:', chance)
                     if has_med_app is False and chance == 1:
                         self.ceremony(cat, 'medicine cat apprentice', ' has chosen to walk the path of a medicine cat')
@@ -326,317 +327,177 @@ class Events():
                 self.ceremony_accessory = False   
 
     def gain_scars(self, cat):
-        if cat.specialty is not None and cat.specialty2 is not None or cat.age == 'kitten':
+        if cat.specialty and cat.specialty2 or cat.age == 'kitten':
             return
+        risky_traits = ["bloodthirsty", "ambitious", "vengeful", "strict", "cold", "fierce"]
+        danger = ["rogue", "dog", "fox", "otter", "rat", "hawk", "enemy warrior", "badger"]
+        tail_danger = ["rogue", "dog", "fox", "otter", "rat", "hawk",
+                       "enemy warrior", "badger", "twoleg trap"]
         name = str(cat.name)
-        other_cat = choice(list(Cat.all_cats.values()))
-        scar_chance = randint(0, 40)
-        clancats = int(self.living_cats)
-        countdown = int(len(Cat.all_cats) / 3)
-        while cat == other_cat or other_cat.dead or other_cat.exiled:
-            other_cat = choice(list(Cat.all_cats.values()))
-            countdown-=1
-            if countdown <= 0:
-                return
-        other_name = str(other_cat.name)
+        scar_chance = 0.015  # 1.5%
+        clancats = self.living_cats
         scar_text = []
-        clan_has_kits = any(
-                str(cat.status) in "kitten"
-                and not cat.dead and not cat.exiled
-                for cat in Cat.all_cats.values())
-        if clancats > 45:
-            scar_chance = scar_chance + 20
-        elif clancats > 120:
-            scar_chance = scar_chance * 2
-        elif clancats > 300:
-            scar_chance = scar_chance + 80
-        else:
-            scar_chance = scar_chance
-        if cat.age in ['adolescent', 'young adult']:
-            chance = scar_chance
-        elif cat.age in ['adult', 'senior adult']:
-            chance = scar_chance + 10
-        elif cat.age in [
-                'apprentice', 'medicine cat apprentice'
-        ] and cat.mentor.ID == other_cat.ID and other_cat.trait in [
-                'bloodthirsty', 'ambitious', 'vengeful', 'sadistic', 'cold',
-                'tough', 'clumsy', 'controlling', 'fierce', 'petty', 'strict'
-        ]:
-            chance = scar_chance - 15
-        elif other_cat.status in ['leader', 'deputy'] and other_cat.trait in [
-                'bloodthirsty', 'ambitious', 'vengeful', 'sadistic', 'cold',
-                'tough', 'clumsy', 'controlling', 'fierce', 'petty', 'strict'
-        ]:
-            chance = scar_chance
-        else:
-            chance = scar_chance
-        if chance == 1:
-            if cat.specialty is None:
-                cat.specialty = choice([
-                    choice(scars1),
-                    choice(scars2),
-                    choice(scars4),
-                    choice(scars5)
-                ])
-                if cat.specialty in ['NOTAIL', 'HALFTAIL']:
-                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
-                        cat.accessory = None
+        specialty = None  # Scar to be set
+        alive_kits = list(filter(lambda kitty: (kitty.age == "kitten"
+                                                and not kitty.dead
+                                                and not kitty.exiled),
+                                 Cat.all_cats.values()))
+        leader = Cat.all_cats[str(game.clan.leader)]
+        
+        # Older cats are scarred more often
+        if cat.age in ["adult", "senior adult"]:
+            scar_chance += 0.01  # + 1%
 
-                    scar_text.append(f'{name} lost their tail to a ' + choice([
-                        'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                        'enemy warrior', 'badger', 'tree', 'twoleg trap'
-                    ]))
-                elif cat.specialty == 'SNAKE':
-                    scar_text.append(f'{name} was bit by a snake but lived ')
-                elif cat.specialty == 'TOETRAP' and cat.specialty2 != 'NOPAW':
-                    scar_text.append(
-                        f'{name} got their paw stuck in a twoleg trap and earned a scar '
+        # Check cat mentor/leader status and traits
+        risky_mentor = False
+        risky_leader = False
+        other_name = "[this string should not appear :'3 ]"
+        if cat.mentor:
+            if cat.mentor.trait in risky_traits:
+                risky_mentor = True
+                scar_chance += 0.0225  # + 2.25%
+        if leader:
+            if leader.trait in risky_traits:
+                risky_leader = True
+                other_name = str(leader.name)
+                scar_chance += 0.005  # + 0.5%
+                if leader.trait in ["bloodthirsty", "vengeful"]:
+                    scar_chance += 0.005
+
+        # Modify scar chance by trait
+        # Increased chance
+        if cat.trait in ['bloodthirsty', 'vengeful']:
+            scar_chance = scar_chance * 1.75
+        elif cat.trait in cat.personality_groups["Abrasive"]:
+            scar_chance = scar_chance * 1.5
+        elif cat.trait in cat.personality_groups["Outgoing"]:
+            scar_chance = scar_chance * 1.25
+        # Reduced chance
+        elif cat.trait in ['calm', 'careful']:
+            scar_chance = scar_chance / 1.75
+        elif cat.trait in cat.personality_groups["Reserved"]:
+            scar_chance = scar_chance / 1.5
+        elif cat.trait in cat.personality_groups["Benevolent"]:
+            scar_chance = scar_chance / 1.25
+
+        # Bloodthirsty leader mod
+        leader_scar_chance = scar_chance
+        if leader.trait in ["bloodthirsty", "vengeful"]:
+            leader_scar_chance = leader_scar_chance * 1.75
+
+        # Set pools and check which scars we can still get
+        all_scars = scars1 + scars2 + scars4 + scars5
+        base_scars = scars1 + scars2  # Can be caused by other cats
+        for scar_pool in [all_scars, base_scars]:
+            for special in [cat.specialty, cat.specialty2]:
+                if special:
+                    try:
+                        if "NOPAW" == special and 'TOETRAP' in scar_pool:
+                            scar_pool.remove('TOETRAP')
+                        if "NOTAIL" == special:
+                            for scar in ["HALFTAIL", "TAILBASE", "TAILSCAR"]:
+                                if scar in scar_pool:
+                                    scar_pool.remove(scar)
+                        if special in scar_pool:
+                            scar_pool.remove(special)  # No doubles
+                    except ValueError as e:
+                        print(f"Failed to exclude scar from pool: {e}")
+
+        # Always possible scar events
+        if scar_chance > random.random():
+            specialty = choice(all_scars)
+            if specialty in ["NOTAIL", "HALFTAIL"]:
+                if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                    cat.accessory = None
+                scar_text.append(f"{name} lost their tail to a {choice(tail_danger)} ")
+                if not random.getrandbits(2):
+                    scar_text.append(f"{name} lost their tail to a falling tree ")
+            elif specialty == "SNAKE":
+                scar_text.append(f"{name} was bit by a snake but miraculously survived ")
+            elif specialty == "TOETRAP":
+                scar_text.append(
+                    f"{name} got their paw stuck in a twoleg trap and earned a scar "
+                )
+            elif specialty == "NOPAW":
+                scar_text.append(f"{name} lost their paw to a twoleg trap ")
+            else:
+                scar_text.extend(
+                    [
+                        f"{name} earned a scar fighting a {choice(danger)} ",
+                        f"{name} earned a scar defending the territory ",
+                        f"{name} is injured after falling into a river ",
+                        f"{name} is injured by enemy warriors after accidentally wandering over the border ",
+                        f"{name} is injured after messing with a twoleg object ",
+                    ]
+                )
+                if alive_kits:
+                    scar_text.extend([f"{name} earned a scar protecting the kits "])
+        
+        # MENTOR CAUSES INJURY >:O
+        elif (scar_chance * 1.5 > random.random()
+              and cat.status in ['apprentice', 'medicine cat apprentice']
+              and risky_mentor):
+            specialty = choice(base_scars)
+            scar_text.extend(
+                [
+                    f"{name} earned a scar recklessly fighting a {choice(danger)} encouraged by their mentor ",
+                    f"{name} earned a scar for not defending the territory well enough ",
+                    f"{name} is injured after being pushed into a river ",
+                    f"{name} is punished by their mentor after accidentally wandering over the border ",
+                    f"{name} is injured by their mentor after being caught messing with a twoleg object ",
+                    f"{name} is injured by their mentor while practicing with their claws out ",
+                    f"{name}'s mentor punished them for disobeying ",
+                    f"{name} gained a scar while fighting their mentor ",
+                    f"{name} is injured while practicing their battle moves with {other_name} ",
+                    f"{name} is injured after a fight broke out with {other_name} ",
+                    f"{name} could not handle their mentor's harsh training and got injured as a result ",
+                    f"{name} could not handle their mentor's harsh training and got injured as a result ",
+                ]
+            )
+            if specialty == "NOPAW":
+                scar_text.append(f"{name} lost their paw after {other_name} decided to use twoleg traps for a training exercice ")
+        # leader is sus guys
+        elif leader_scar_chance > random.random() and risky_leader and cat.ID != leader.ID:
+            specialty = choice(base_scars)
+            if specialty in ["NOTAIL", "HALFTAIL"]:
+                if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                    cat.accessory = None
+
+                scar_text.extend([
+                    f"{name} lost their tail to a {choice(tail_danger)} while following {other_name}'s orders ",
+                    f"{name} is ordered to fend off a {choice(danger)} by {other_name}, and looses their tail in the ensuing battle ",
+                    ]
+                )
+            else:
+                if specialty in ["NOPAW"]:
+                    scar_text.extend([f"{name} is maimed by {other_name} for questioning their leadership ",
+                                      f"{name} loses a paw after {other_name} forces them to fight a {choice(danger)} by themselves "])
+                else:
+                    scar_text.extend(
+                        [
+                            f"{name} earned a scar fighting a {choice(danger)} on {other_name}'s orders ",
+                            f"{name} earned a scar defending the territory from outsiders ",
+                            f"{name} earned a scar protecting the leader ",
+                            f"{name} is wounded during a harsh training exercice led by {other_name} ",
+                            f"{name} is injured during an unsupervised training exercice ",
+                            f"{name} is hurt by enemy warriors after being ordered by {other_name} to go over the border ",
+                            f"{name} is injured after being ordered by {other_name} to check out a twoleg object ",
+                            f"{name} is battered while fighting a clanmate after {other_name} encouraged a fight ",
+                            f"{name} is injured by {other_name} for disobeying orders ",
+                            f"{name} is injured by {other_name} for speaking out against them ",
+                            f"{name} is cruelly injured by {other_name} to make an example out of them ",
+                        ]
                     )
-                elif cat.specialty == 'NOPAW' and cat.specialty2 not in ['TOETRAP', 'NOPAW']:
-                    scar_text.append(
-                        f'{name} lost their paw to a twoleg trap '
-                    )
-                else:
-                    scar_text.extend([
-                        f'{name} earned a scar fighting a ' + choice([
-                            'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                            'enemy warrior', 'badger'
-                        ]),
-                        f'{name} earned a scar defending the territory ',
-                        f'{name} earned a scar protecting the kits ',
-                        f'{name} is injured after falling into a river',
-                        f'{name} is injured by enemy warriors after accidentally wandering over the border ',
-                        f'{name} is injured after messing with a twoleg object '
-                    ])
-            elif cat.specialty2 is None:
-                cat.specialty2 = choice([
-                    choice(scars1),
-                    choice(scars2),
-                    choice(scars4),
-                    choice(scars5)
-                ])
-                if cat.specialty2 in ['NOTAIL', 'HALFTAIL'] and cat.specialty not in ['NOTAIL', 'HALFTAIL']:
-                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
-                        cat.accessory = None
-
-
-                    scar_text.append(f'{name} lost their tail to a ' + choice([
-                        'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                        'enemy warrior', 'badger', 'tree', 'twoleg trap'
-                    ]))
-                elif cat.specialty2 == 'SNAKE' and cat.specialty != 'SNAKE':
-                    scar_text.append(f'{name} was bit by a snake but lived ')
-                elif cat.specialty2 == 'TOETRAP' and cat.specialty not in ['TOETRAP', 'NOPAW']:
-                    scar_text.append(
-                        f'{name} got their paw stuck in a twoleg trap and earned a scar '
-                    )
-                elif cat.specialty2 == 'NOPAW' and cat.specialty not in ['TOETRAP', 'NOPAW']:
-                    scar_text.append(
-                        f'{name} lost their paw to a twoleg trap '
-                    )
-                else:
-                    if clan_has_kits:
-                        scar_text.extend([
-                        f'{name} earned a scar protecting the kits '])
-                    else:
-                        scar_text.extend([
-                        f'{name} earned a scar fighting a ' + choice([
-                            'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                            'enemy warrior', 'badger'
-                        ]),
-                        f'{name} earned a scar defending the territory ',
-                        f'{name} is injured after falling into a river ',
-                        f'{name} is injured by enemy warriors after accidentally wandering over the border ',
-                        f'{name} is injured after messing with a twoleg object ',
-                        f'{name} is injured after a fight broke out with {other_name} '
-                    ])
-
-        elif chance == 1 and cat.status in [
-                'apprentice', 'medicine cat apprentice'
-        ] and cat.mentor.ID == other_cat.ID and other_cat.trait in [
-                'bloodthirsty', 'ambitious', 'vengeful', 'sadistic', 'cold',
-                'tough', 'clumsy', 'controlling', 'fierce', 'petty', 'strict'
-        ]:
-            if cat.specialty is None:
-                cat.specialty = choice([choice(scars1), choice(scars2)])
-                if cat.specialty in ['NOTAIL', 'HALFTAIL']:
-                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
-                        cat.accessory = None
-
-                    scar_text.append(
-                        f'{name} recklessly lost their tail to a ' + choice([
-                            'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                            'enemy warrior', 'badger', 'tree', 'twoleg trap'
-                        ]) + ' encouraged by their mentor ')
-                else:
-                    if clan_has_kits:
-                        scar_text.extend([
-                        f'{name} earned a scar protecting the kits'])
-                    else:
-                        scar_text.extend([
-                        f'{name} earned a scar  recklessly fighting a ' +
-                        choice([
-                            'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                            'enemy warrior', 'badger'
-                        ]) + ' encouraged by their mentor ',
-                        f'{name} earned a scar for not defending the territory well enough ',
-                        f'{name} is injured after being pushed into a river ',
-                        f'{name} is punished by their mentor after accidentally wandering over the border ',
-                        f'{name} is injured by their mentor after being caught messing with a twoleg object ',
-                        f'{name} is injured by their mentor while practicing with their claws out ',
-                        f'{name}\'s mentor punished them for disobeying ',
-                        f'{name} gained a scar while fighting their mentor ',
-                        f'{name} is injured while practicing their battle moves with {other_name} ',
-                        f'{name} is injured after a fight broke out with {other_name} ',
-                        f'{name} could not handle their mentor\'s harsh training and got injured as a result ',
-                        f'{name} could not handle their mentor\'s harsh training and got injured as a result '
-                    ])
-            elif cat.specialty2 is None:
-                cat.specialty2 = choice([choice(scars1), choice(scars2)])
-                if cat.specialty2 in ['NOTAIL', 'HALFTAIL'] and cat.specialty not in ['NOTAIL', 'HALFTAIL']:
-                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
-                        cat.accessory = None
-
-                    scar_text.append(f'{name} lost their tail to a ' + choice([
-                        'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                        'enemy warrior', 'badger', 'tree', 'twoleg trap'
-                    ]) + ' encouraged by their mentor ')
-                else:
-                    if clan_has_kits:
-                        scar_text.extend([
-                        f'{name} earned a scar protecting the kits '])
-                    else:
-                        scar_text.extend([
-                        f'{name} earned a scar recklessly fighting a ' +
-                        choice([
-                            'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                            'enemy warrior', 'badger'
-                        ]) + ' encouraged by their mentor ',
-                        f'{name} earned a scar for not defending the territory well enough ',
-                        f'{name} is injured after being pushed into a river ',
-                        f'{name} is punished by their mentor after accidentally wandering over the border ',
-                        f'{name} is injured by their mentor after being caught messing with a twoleg object ',
-                        f'{name} is injured by their mentor while practicing with their claws out ',
-                        f'{name}\'s mentor punished them for disobeying ',
-                        f'{name} gained a scar while fighting their mentor ',
-                        f'{name} is injured while practicing their batle moves with {other_name} ',
-                        f'{name} is injured after a fight broke out with {other_name} ',
-                        f'{name} could not handle their mentor\'s harsh training and got injured as a result '
-                    ])
-
-        elif chance == 1 and cat.status in [
-                'warrior', 'deputy', 'medicine cat'
-        ] and other_cat.status == 'leader':
-            if cat.specialty is None:
-                cat.specialty = choice([choice(scars1), choice(scars2)])
-                if cat.specialty in ['NOTAIL', 'HALFTAIL']:
-                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
-                        cat.accessory = None
-
-                    scar_text.append(f'{name} lost their tail to a ' + choice([
-                        'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                        'enemy warrior', 'badger', 'tree', 'twoleg trap'
-                    ]) + ' while following orders ')
-                else:
-                    scar_text.extend([
-                        f'While following orders {name} earned a scar fighting a '
-                        + choice([
-                            'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                            'enemy warrior', 'badger' + ' '
-                        ]),
-                        f'{name} earned a scar defending the territory from outsiders ',
-                        f'{name} earned a scar protecting the leader ',
-                        f'{name} is injured after falling into a river ',
-                        f'{name} is injured by enemy warriors after being ordered to go over the border ',
-                        f'{name} is injured after being ordered to check out a twoleg object '
-                    ])
-            elif cat.specialty2 is None:
-                cat.specialty2 = choice([choice(scars1), choice(scars2)])
-                if cat.specialty2 in ['NOTAIL', 'HALFTAIL'] and cat.specialty not in ['NOTAIL', 'HALFTAIL']:
-                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
-                        cat.accessory = None
-
-
-                    scar_text.append(f'{name} lost their tail to a ' + choice([
-                        'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                        'enemy warrior', 'badger', 'tree', 'twoleg trap'
-                    ]) + ' while following orders ')
-                else:
-                    scar_text.extend([
-                        f'While following orders, {name} earned a scar fighting a '
-                        + choice([
-                            'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                            'enemy warrior', 'badger' + ' '
-                        ]),
-                        f'{name} earned a scar defending the territory from outsiders ',
-                        f'{name} earned a scar protecting the leader ',
-                        f'{name} is injured after falling into a river ',
-                        f'{name} is injured by enemy warriors after being ordered to go over the border ',
-                        f'{name} is injured after being ordered to check out a twoleg object '
-                    ])
-
-        elif chance == 1 and other_cat.status == 'leader' and other_cat.trait in [
-                'bloodthirsty', 'ambitious', 'vengeful', 'sadistic',
-                'controlling', 'fierce', 'petty'
-        ]:
-            if cat.specialty is None:
-                cat.specialty = choice([choice(scars1), choice(scars2)])
-                if cat.specialty in ['NOTAIL', 'HALFTAIL']:
-                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
-                        cat.accessory = None
-
-                    scar_text.append(f'{name} lost their tail to a ' + choice([
-                        'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                        'enemy warrior', 'badger', 'tree', 'twoleg trap'
-                    ]) + ' while following orders ')
-                else:
-                    scar_text.extend([
-                        f'While following orders, {name} earned a scar fighting a '
-                        + choice([
-                            'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                            'enemy warrior', 'badger' + ' '
-                        ]),
-                        f'{name} earned a scar defending the territory from outsiders ',
-                        f'{name} earned a scar protecting the leader ',
-                        f'{name} is injured after falling into a river ',
-                        f'{name} is injured by enemy warriors after being ordered to go over the border ',
-                        f'{name} is injured after being ordered to check out a twoleg object ',
-                        f'{name} is injured while fighting a clanmate encouraged by {other_name} ',
-                        f'{name} is injured by {other_name} for disobeying orders ',
-                        f'{name} is injured by {other_name} for speaking out against them ',
-                        f'{name} is cruelly injured by {other_name} to make an example out of them '
-                    ])
-            elif cat.specialty2 is None:
-                cat.specialty2 = choice([choice(scars1), choice(scars2)])
-                if cat.specialty2 in ['NOTAIL', 'HALFTAIL'] and cat.specialty not in ['NOTAIL', 'HALFTAIL']:
-                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
-                        cat.accessory = None
-
-                    scar_text.append(f'{name} lost their tail to a ' + choice([
-                        'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                        'enemy warrior', 'badger', 'tree', 'twoleg trap'
-                    ]) + ' while following orders ')
-                else:
-                    scar_text.extend([
-                        f'While following orders {name} earned a scar fighting a '
-                        + choice([
-                            'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
-                            'enemy warrior', 'badger' + ' '
-                        ]),
-                        f'{name} earned a scar defending the territory from outsiders ',
-                        f'{name} earned a scar protecting the leader ',
-                        f'{name} is injured after falling into a river ',
-                        f'{name} is injured by enemy warriors after being ordered to go over the border ',
-                        f'{name} is injured after being ordered to check out a twoleg object ',
-                        f'{name} is injured while fighting a clanmate encouraged by {other_name} ' 
-                        f'{name} is injured by {other_name} for disobeying orders ',
-                        f'{name} is injured by {other_name} for speaking out against them ',
-                        f'{name} is cruelly injured by {other_name}to make an example out of them '
-                    ])
-
         if scar_text:
             game.cur_events_list.append(choice(scar_text))
 
+        # Apply scar
+        if specialty:
+            if not cat.specialty:
+                cat.specialty = specialty
+            else:
+                cat.specialty2 = specialty
+            
     def invite_new_cats(self, cat):
         chance = 100
         if self.living_cats < 10:
@@ -654,8 +515,8 @@ class Events():
                 created_cats = self.create_new_cat(loner = False, loner_name = False, kittypet = choice([True, False]), kit=True, backstory=backstory_choice)
                 kit = created_cats[0]
                 kit_text = [
-                    f'{name} finds an abandoned kit and names them {str(kit.name)} ',
-                    f'A loner brings their kit named {str(kit.name.prefix)} to the clan, stating they no longer can care for them '
+                    f'{name} finds an abandoned kit and names them {kit.name} ',
+                    f'A loner brings their kit named {kit.name.prefix} to the clan, stating they no longer can care for them '
                 ]
                 game.cur_events_list.append(choice(kit_text))
 
@@ -665,16 +526,16 @@ class Events():
                 created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=backstory_choice)
                 loner_name = created_cats[0].name
                 loner_text = [
-                    f'{name} finds a loner named {str(loner_name.prefix)} who joins the clan',
+                    f'{name} finds a loner named {loner_name.prefix} who joins the clan',
                     f'A loner waits on the border for a patrol, asking to join the clan'
                 ]
                 if loner_name.suffix != '':
                     success_text = [
-                        f'{str(loner_name)} decides to keep their name'
+                        f'{loner_name} decides to keep their name'
                     ]
                 else:
                     success_text = [
-                        f'The loner decides to take on a slightly more clan-like name, and is now called {str(loner_name)}'
+                        f'The loner decides to take on a slightly more clan-like name, and is now called {loner_name}'
                     ]
                 game.cur_events_list.append(choice(loner_text))
                 game.cur_events_list.append(choice(success_text))
@@ -684,16 +545,16 @@ class Events():
                 created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=backstory_choice)
                 loner_name = created_cats[0].name
                 loner_text = [
-                    f'{name} finds a loner named {str(loner_name.prefix)} who wishes to join the clan',
+                    f'{name} finds a loner named {loner_name.prefix} who wishes to join the clan',
                     f'A loner says that they are interested in clan life and joins the clan'
                 ]
                 if loner_name.suffix != '':
                     success_text = [
-                        f'The loner decides to take on a slightly more clan-like name, and is now called {str(loner_name)}'
+                        f'The loner decides to take on a slightly more clan-like name, and is now called {loner_name}'
                     ]
                 else:
                     success_text = [
-                        f'{str(loner_name)} decides to keep their name'
+                        f'{loner_name} decides to keep their name'
                     ]
                 game.cur_events_list.append(choice(loner_text))
                 game.cur_events_list.append(choice(success_text))
@@ -932,69 +793,64 @@ class Events():
 
     def handle_deaths(self, cat):
         clan_has_kits = any(
-                str(cat.status) in "kitten"
+                cat.status in "kitten"
                 and not cat.dead and not cat.exiled
                 for cat in Cat.all_cats.values())
         #Leader lost a life EVENTS
         current_lives = int(game.clan.leader_lives)
-        if randint(1, 100) == 1:
+        if not int(random.random() * 100):  # 1/100
             name = str(cat.name)
             other_cat = choice(list(Cat.all_cats.values()))
             countdown = int(len(Cat.all_cats) / 3)
             while cat == other_cat or other_cat.dead or other_cat.status == 'leader' or other_cat.exiled:
                 other_cat = choice(list(Cat.all_cats.values()))
-                countdown-=1
+                countdown -= 1
                 if countdown <= 0:
                     return
             if cat.status == 'leader':
-                other_name = str(other_cat.name)
+                other_name = other_cat.name
                 if game.clan.current_season in ['Leaf-fall', 'Leaf-bare']:
                     cause_of_death = [
-                        name + ' lost a life due to greencough',
-                        name + ' lost a life due to whitecough',
-                        name + ' lost a life due to yellowcough',
+                        f'{name} lost a life due to greencough ',
+                        f'{name} lost a life due to whitecough ',
+                        f'{name} lost a life due to yellowcough ',
                     ]
                 else:
                     cause_of_death = [
-                        name + ' lost a life after falling into a river',
-                        'Lightning fell in camp and ' + name + ' lost a life',
-                        name + ' was mortally wounded by a fox',
-                        name + ' lost a life to a dog',
-                        name + ' lost a life to a badger',
-                        name + ' lost a life to a hawk',
-                        name + ' lost a life while fighting off a rogue',
-                        name + ' lost a life to an eagle',
-                        name + ' was grabbed and dropped by an eagle, losing a life',
-                        name + ' was grabbed and dropped by a hawk, losing a life',
-                        name + ' lost a life after being swept away by a flood',
-                        name + ' lost a life after falling off a tree',
-                        name + ' was bit by a venomous spider and lost a life',
-                        name + ' was bit by a venomous snake and lost a life',
-                        name + ' ate poisoned fresh-kill and lost a life',
-                        name + ' failed to interpret a warning sign from StarClan and lost a life as a result',
-                        name + ' lost a life defending ' + other_name + ' from a dog',
-                        name + ' lost a life defending ' + other_name + ' from a badger',
-                        name + ' lost a life defending ' + other_name + ' from a fox',
-                        name + ' lost a life defending ' + other_name + ' from a hawk',
-                        name + ' lost a life defending ' + other_name + ' from an eagle',
-                        name + ' lost a life while saving ' + other_name + ' from drowning',
-                        name + ' lost a life while saving ' + other_name + ' from a monster',
-                        name + ' was pushed under a monster and lost a life',
-                        name + ' lost a life after saving ' + other_name + ' from a snake'
+                        f'{name} lost a life after falling into a river ',
+                        f'Lightning fell in camp and {name} lost a life ',
+                        f'{name} was mortally wounded by a fox ',
+                        f'{name} lost a life to a dog ',
+                        f'{name} lost a life to a badger ',
+                        f'{name} lost a life to a hawk ',
+                        f'{name} lost a life while fighting off a rogue ',
+                        f'{name} lost a life to an eagle ',
+                        f'{name} was grabbed and dropped by an eagle, losing a life ',
+                        f'{name} was grabbed and dropped by a hawk, losing a life ',
+                        f'{name} lost a life after being swept away by a flood ',
+                        f'{name} lost a life after falling off a tree ',
+                        f'{name} was bit by a venomous spider and lost a life ',
+                        f'{name} was bit by a venomous snake and lost a life ',
+                        f'{name} ate poisoned fresh-kill and lost a life ',
+                        f'{name} failed to interpret a warning sign from StarClan and lost a life as a result ',
+                        f'{name} lost a life defending {other_name} from a dog ',
+                        f'{name} lost a life defending {other_name} from a badger ',
+                        f'{name} lost a life defending {other_name} from a fox ',
+                        f'{name} lost a life defending {other_name} from a hawk ',
+                        f'{name} lost a life defending {other_name} from an eagle ',
+                        f'{name} lost a life while saving {other_name} from drowning ',
+                        f'{name} lost a life while saving {other_name} from a monster ',
+                        f'{name} was pushed under a monster and lost a life ',
+                        f'{name} lost a life after saving {other_name} from a snake '
                     ]
 
                     
-                if len(game.clan.all_clans) > 0:
+                if game.clan.all_clans:
                     cause_of_death.extend([
-                        name + ' lost a life defending the kits from ' +
-                        choice(game.clan.all_clans).name + 'Clan warriors',
-                        name + ' lost a life defending ' + other_name +
-                        ' from ' + choice(game.clan.all_clans).name +
-                        'Clan warriors',
-                        name + ' lost a life to a ' +
-                        choice(game.clan.all_clans).name + 'Clan apprentice',
-                        name + ' lost a life to a ' +
-                        choice(game.clan.all_clans).name + 'Clan warrior'
+                        f"{name} lost a life defending the kits from {choice(game.clan.all_clans).name} Clan warriors ",
+                        f"{name} lost a life defending {other_name} from {choice(game.clan.all_clans).name} Clan warriors ",
+                        f"{name} lost a life to a {choice(game.clan.all_clans).name} Clan apprentice ",
+                        f"{name} lost a life to a {choice(game.clan.all_clans).name} Clan warrior "
                     ])
                 game.clan.leader_lives -= 1
                 cat.die()
@@ -1003,7 +859,7 @@ class Events():
                     ' moons old ')
 
         #Several/All Lives loss
-        elif randint(1,200) == 1 and cat.status == 'leader':  
+        elif not int(random.random() * 200) and cat.status == 'leader':  # 1/200
             name = str(cat.name)
             allorsome = randint(1, 10)
             if cat.status == 'leader':
@@ -1077,7 +933,7 @@ class Events():
                         cat.die()
                         game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons + 1) + ' moons old ')
 
-        elif randint(1, 400) == 1:
+        elif not int(random.random() * 400): # 1/400
             name = str(cat.name)
             cause_of_death = [
                 name + ' was murdered',
@@ -1141,7 +997,7 @@ class Events():
                         name + ' was poisoned by a sea creature and died'
                     ])
             elif cat.status == 'warrior' or cat.status == 'deputy':
-                if len(game.clan.all_clans) > 0:
+                if game.clan.all_clans:
                     cause_of_death.append(name + ' was found dead near the ' +
                                           choice(game.clan.all_clans).name +
                                           'Clan border')
@@ -1177,7 +1033,7 @@ class Events():
             #Leader loses a life
             elif cat.status == 'leader':
                 cause_of_death = []
-                if len(game.clan.all_clans) > 0:
+                if game.clan.all_clans:
                     cause_of_death.extend([
                         name + ' lost a life to greencough',
                         'A tree fell in camp and ' + name + ' lost a life'
@@ -1253,7 +1109,7 @@ class Events():
                 choice(cause_of_death) + ' at ' + str(cat.moons + 1) +
                 ' moons old')
 
-        elif randint(1, 500) == 1:  # multiple deaths
+        elif not random.getrandbits(9):  # multiple deaths, 1/512
             name = str(cat.name)
             other_cat = choice(list(Cat.all_cats.values()))
             countdown = int(len(Cat.all_cats) / 3)
@@ -1305,7 +1161,7 @@ class Events():
             cat.die()
             other_cat.die()
 
-        elif randint(1, 70) == 1:  #Death with Personalities
+        elif not random.getrandbits(6):  #Death with Personalities (1/64)
             murder_chance = 20
             name = str(cat.name)
             countdown = int(len(Cat.all_cats) / 3)
@@ -1372,7 +1228,7 @@ class Events():
                             other_cat.die()
                             game.cur_events_list.append(choice(cause_of_death))                        
             # just murder
-            elif cat.trait in ['bloodthirsty', 'vengeful', 'sadistic'] and randint(1, murder_chance) == 2:
+            elif cat.trait in ['bloodthirsty', 'vengeful', 'sadistic'] and not int(random.random() * murder_chance):
                     if other_cat.status == 'leader' and current_lives <= 6:
                         cause_of_death = [
                         name + ' murdered ' + other_name +
@@ -1403,7 +1259,7 @@ class Events():
                         other_cat.die()
                         game.cur_events_list.append(choice(cause_of_death))
             elif cat.status in ['medicine cat', 'medicine cat apprentice']\
-            and cat.trait in ['bloodthirsty', 'vengeful', 'sadistic'] and randint(1, murder_chance) == 1:
+            and cat.trait in ['bloodthirsty', 'vengeful', 'sadistic'] and not int(random.random() * murder_chance):
                 cause_of_death = [
                         name + ' killed ' + other_name +
                         ' by giving them deathberries', name + ' killed ' +
@@ -1423,7 +1279,7 @@ class Events():
                         str(other_cat.moons + 1) + ' moons old')
 
         elif cat.moons > randint(150, 200):  # extra chance of cat dying to age
-            if choice([1, 2, 3, 4, 5, 6]) == 1:
+            if not int(random.random() * 5):  # 1/5
                 if cat.status != 'leader':
                     cat.die()
                     game.cur_events_list.append(
@@ -1451,7 +1307,7 @@ class Events():
                 if not cat.dead and not cat.exiled and cat.status != 'leader':
                     alive_count += 1
                     alive_cats.append(cat)
-            if len(game.clan.all_clans) > 0:
+            if game.clan.all_clans:
                 other_clan = game.clan.all_clans
             addition = randint(0, 20)
             # Are death_chance & dead_count unused? Should maybe be removed if so... -Shou
@@ -1514,91 +1370,40 @@ class Events():
                                 ' die after the water dries up from drought'
                             ])
 
-                    game.cur_events_list.append(name1 + ', ' + name2 + ', ' +
-                                                name3 + ', ' + name4 +
-                                                ', and ' + name5 +
-                                                choice(disaster))
+                    game.cur_events_list.append("{name1}, {name2}, {name3}, + {name4}, and {name5} {choice(disaster)}")
                     for cat in dead_cats:
                         cat.die()
 
     def coming_out(self, cat):
-        transing_chance = randint(0, 500)
-        hit = False
+        """turnin' the kitties trans..."""
         if cat.genderalign == cat.gender:
             if cat.moons < 6:
                 return
-            elif cat.moons == 6:
-                transing_chance = transing_chance - 200
-                if transing_chance == 1 and cat.gender == "male":
-                    cat.genderalign = "trans female"
-                    hit = True
-                elif transing_chance == 1 and cat.gender == "female":
-                    cat.genderalign = "trans male"
-                    hit = True
-                elif transing_chance == 2:
-                    cat.genderalign = "nonbinary"
-                    hit = True
-            elif cat.moons == 12:
-                transing_chance = transing_chance - 100
-                if transing_chance == 1 and cat.gender == "male":
-                    cat.genderalign = "trans female"
-                    hit = True
-                elif transing_chance == 1 and cat.gender == "female":
-                    cat.genderalign = "trans male"
-                    hit = True
-                elif transing_chance == 2:
-                    cat.genderalign = "nonbinary"
-                    hit = True
+
+            if cat.age == 'adolescent':
+                transing_chance = random.getrandbits(8)  # 2/256
             elif cat.age == 'young adult':
-                transing_chance = transing_chance
-                if transing_chance == 1 and cat.gender == "male":
+                transing_chance = random.getrandbits(9)  # 2/512
+            else:
+                # adult, senior adult, elder
+                transing_chance = random.getrandbits(10)  # 2/1028
+                
+            if transing_chance:
+                # transing_chance != 0, no trans kitties today...
+                return
+
+            if random.getrandbits(1):  # 50/50
+                if cat.gender == "male":
                     cat.genderalign = "trans female"
-                    hit = True
-                elif transing_chance == 1 and cat.gender == "female":
-                    cat.genderalign = "trans male"
-                    hit = True
-                elif transing_chance == 2:
-                    cat.genderalign = "nonbinary"
-                    hit = True
-            elif cat.age == 'adult':
-                transing_chance = transing_chance + 100
-                if transing_chance == 1 and cat.gender == "male":
-                    cat.genderalign = "trans female"
-                    hit = True
-                elif transing_chance == 1 and cat.gender == "female":
-                    cat.genderalign = "trans male"
-                    hit = True
-                elif transing_chance == 2:
-                    cat.genderalign = "nonbinary"
-                    hit = True
-            elif cat.age == 'senior adult':
-                transing_chance = transing_chance - 300
-                if transing_chance == 1 and cat.gender == "male":
-                    cat.genderalign = "trans female"
-                    hit = True
-                elif transing_chance == 1 and cat.gender == "female":
-                    cat.genderalign = "trans male"
-                    hit = True
-                elif transing_chance == 2:
-                    cat.genderalign = "nonbinary"
-                    hit = True
-            elif cat.age == 'elder':
-                transing_chance = transing_chance + 450
-                if transing_chance == 1 and cat.gender == "male":
-                    cat.genderalign = "trans female"
-                    hit = True
-                elif transing_chance == 1 and cat.gender == "female":
-                    cat.genderalign = "trans male"
-                    hit = True
-                elif transing_chance == 2:
-                    cat.genderalign = "nonbinary"
-                    hit = True
-            if hit:
-                if cat.gender == 'male':
-                    gender = 'tom'
                 else:
-                    gender = 'she-cat'
-                game.cur_events_list.append(
-                    str(cat.name) + " has realized that " + str(gender) + " doesn't describe how they feel anymore")
+                    cat.genderalign = "trans male"
+            else:
+                cat.genderalign = "nonbinary"
+                    
+            if cat.gender == 'male':
+                gender = 'tom'
+            else:
+                gender = 'she-cat'
+            game.cur_events_list.append(f"{cat.name} has realized that {gender} doesn't describe how they feel anymore")
 
 events_class = Events()
