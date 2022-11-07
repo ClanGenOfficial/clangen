@@ -873,34 +873,40 @@ class Cat():
                     new_mentor = choice(potential_mentors)
             # Mentor changing to chosen/specified cat
             self.mentor = new_mentor
-            if new_mentor is not None:
-                self.patrol_with_mentor = 0
-
+            if new_mentor is not None and old_mentor is None:
+                # remove and append in relevant lists
                 if self not in new_mentor.apprentice:
                     new_mentor.apprentice.append(self)
                 if self in new_mentor.former_apprentices:
                     new_mentor.former_apprentices.remove(self)
+            elif new_mentor is not None and old_mentor is not None:
+                # reset patrol number
+                self.patrol_with_mentor = 0
+                # remove and append in relevant lists
+                if self not in old_mentor.former_apprentices:
+                    old_mentor.former_apprentices.append(self)
+                if self in old_mentor.apprentice:
+                    old_mentor.apprentice.remove(self)
+                if old_mentor not in self.former_mentor:
+                    self.former_mentor.append(old_mentor)
+
         else:
             self.mentor = None
-        # Move from old mentor's apps to former apps
-        if self.status == 'warrior' or self.status == 'medicine cat':
+
+        # append and remove from lists if the app has aged up to warrior
+        if self.status == 'warrior':
+            # reset patrol number just to be safe
             self.patrol_with_mentor = 0
-            self.former_mentor.append(old_mentor)
+            # app has graduated, no mentor needed anymore
             self.mentor = None
-            if old_mentor is not None:
+            # append and remove
+            if old_mentor is not None and old_mentor != self.mentor:
                 if self in old_mentor.apprentice:
                     old_mentor.apprentice.remove(self)
                 if self not in old_mentor.former_apprentices:
                     old_mentor.former_apprentices.append(self)
-
-        if old_mentor is not None and old_mentor != self.mentor:
-            self.patrol_with_mentor = 0
-            if self in old_mentor.apprentice:
-                old_mentor.apprentice.remove(self)
-            if self not in old_mentor.former_apprentices:
-                old_mentor.former_apprentices.append(self)
-            if old_mentor not in self.former_mentor:
-                self.former_mentor.append(old_mentor)
+                if old_mentor not in self.former_mentor:
+                    self.former_mentor.append(old_mentor)
 
 
 # ---------------------------------------------------------------------------- #
