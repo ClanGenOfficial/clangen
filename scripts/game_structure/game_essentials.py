@@ -301,6 +301,7 @@ class Game():
                 "mentor": inter_cat.mentor.ID if inter_cat.mentor else None,
                 "former_mentor": [cat.ID for cat in inter_cat.former_mentor] if inter_cat.former_mentor else [],
                 "patrol_with_mentor": inter_cat.patrol_with_mentor if inter_cat.patrol_with_mentor else 0,
+                "mentor_influence": inter_cat.mentor_influence if inter_cat.mentor_influence else [],
                 "mate": inter_cat.mate,
                 "dead": inter_cat.dead,
                 "paralyzed": inter_cat.paralyzed,

@@ -130,6 +130,7 @@ class Cat():
         self.mentor = None
         self.former_mentor = []
         self.patrol_with_mentor = 0
+        self.mentor_influence = []
         self.apprentice = []
         self.former_apprentices = []
         self.relationships = []

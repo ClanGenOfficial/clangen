@@ -546,7 +546,7 @@ class ProfileScreen(Screens):
             count2 += 1
 
         else:
-            verdana_small.text('backstory: ' + 'Clanborn', (490, 230 + count2 * 15))
+            verdana_small.text('backstory: ' + 'clanborn', (490, 230 + count2 * 15))
             count2 += 1
 
         the_cat = Cat.all_cats.get(game.switches['cat'])
@@ -581,7 +581,7 @@ class ProfileScreen(Screens):
 
             # default display if no backstory
             else:
-                verdana_dark.blit_text(f'Backstory: Clanborn \n{bs_blurb}',
+                verdana_dark.blit_text(f'Backstory: clanborn \n{bs_blurb}',
                                        (90, 485),
                                        x_limit=550,
                                        line_break=30)
@@ -671,7 +671,7 @@ class ProfileScreen(Screens):
                                           available=False)
 
             # take to see the change mentor screen (only available if cat is apprentice)
-            if the_cat.status == 'apprentice' and not the_cat.dead:
+            if the_cat.status in ['apprentice', 'medicine cat apprentice'] and not the_cat.dead:
                 buttons.draw_image_button((50, 558),
                                           button_name='change_mentor',
                                           text='change mentor',

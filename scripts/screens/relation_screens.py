@@ -79,9 +79,9 @@ class ChooseMentorScreen(Screens):
         pos_y = 20
 
         if game.switches['apprentice'] is not None:
-            self.get_valid_mentors(valid_mentors, pos_x, pos_y)
+            self.get_valid_mentors(the_cat, valid_mentors, pos_x, pos_y)
 
-        if mentor is not None:
+        if mentor is not None and mentor != the_cat.mentor:
             buttons.draw_button(
                 ('center', 310),
                 image='buttons/change_mentor2',
@@ -95,14 +95,20 @@ class ChooseMentorScreen(Screens):
                 text='Change Mentor',
                 available=False)
 
-    def get_valid_mentors(self, valid_mentors, pos_x, pos_y):
+    def get_valid_mentors(self, the_cat, valid_mentors, pos_x, pos_y):
 
-        for cat in Cat.all_cats.values():
-            if not cat.dead and not cat.exiled and cat != game.switches[
-                    'apprentice'].mentor and cat.status in [
-                        'warrior', 'deputy', 'leader'
-                    ]:
-                valid_mentors.append(cat)
+        if the_cat.status == "apprentice":
+            for cat in Cat.all_cats.values():
+                if not cat.dead and not cat.exiled and cat.status in [
+                            'warrior', 'deputy', 'leader'
+                        ]:
+                    valid_mentors.append(cat)
+        elif the_cat.status == "medicine cat apprentice":
+            for cat in Cat.all_cats.values():
+                if not cat.dead and not cat.exiled and cat.status == 'medicine cat':
+                    valid_mentors.append(cat)
+
+
         all_pages = 1
         if len(valid_mentors) > 30:
             all_pages = int(ceil(len(valid_mentors) / 30.0))
@@ -184,15 +190,30 @@ def show_mentor_cat_info(arg0, arg1, arg2):
 
     y_value = 168
 
-    verdana_small_dark.text(arg0.age,
-                            ('center', y_value),
-                            x_start=arg1,
-                            x_limit=arg1+100
-                            )
-    y_value += 15
+    if arg0.status != 'elder':
+        verdana_small_dark.text(arg0.age,
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1+100
+                                )
+        y_value += 15
 
-    if arg0.age != 'elder':
+    if arg0.status != 'medicine cat apprentice':
         verdana_small_dark.text(str(arg0.status),
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1 + 100
+                                )
+        y_value += 15
+    else:
+        verdana_small_dark.text('medicine cat',
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1 + 100
+                                )
+        y_value += 15
+
+        verdana_small_dark.text('apprentice',
                                 ('center', y_value),
                                 x_start=arg1,
                                 x_limit=arg1 + 100
