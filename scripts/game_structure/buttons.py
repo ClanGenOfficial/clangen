@@ -1,7 +1,7 @@
 from .text import *
 from .load_cat import *
 from .game_essentials import *
-
+from . import image_cache
 from scripts.cat.cats import Cat
 
 
@@ -23,7 +23,13 @@ class Button():
         self.clickable_colour = clickable_colour
         self.unavailable_colour = unavailable_colour
 
-    def draw_image_button(self, pos, available=True, button_name=None, **values):
+    def draw_image_button(self,
+                          pos,
+                          available=True,
+                          button_name=None,
+                          size=0,
+                          **values,
+                          ):
         """
         Draw an image button and check for collisions.
 
@@ -42,16 +48,16 @@ class Button():
         is_clickable = False
         if available:
             image_path = f'resources/images/buttons/{button_name}.png'
-        else:
+        else: 
             image_path = f'resources/images/buttons/{button_name}_unavailable.png'
-        image = pygame.image.load(image_path).convert_alpha()
-        button = pygame.transform.scale(image, (192, 35))
+        image = image_cache.load_image(image_path).convert_alpha()
+        button = pygame.transform.scale(image, size)
         collided = self.used_screen.blit(button, pos)
         if available and collided.collidepoint(self.used_mouse.pos):
             is_clickable = True
             image_path = f'resources/images/buttons/{button_name}_hover.png'
-            image = pygame.image.load(image_path).convert_alpha()
-            button = pygame.transform.scale(image, (192, 35))
+            image = image_cache.load_image(image_path).convert_alpha()
+            button = pygame.transform.scale(image, size)
         self.used_screen.blit(button, pos)
         if game.clicked and is_clickable:
             self.activate(values)
@@ -66,7 +72,8 @@ class Button():
             new_pos[1] = screen_y / 2 - button.get_height() / 2
         elif pos[1] < 0:
             new_pos[1] = screen_y + pos[1] - button.get_height()
-        return new_pos
+        pos = new_pos
+        return pos
 
     def draw_button(self,
                     pos,
@@ -143,8 +150,7 @@ class Button():
                      self.font.size + self.padding[1] * 2))
 
         elif dynamic_image:
-            new_button = pygame.image.load(f"{image}.png").convert_alpha()
-            new_button = pygame.transform.scale(new_button, (192, 35))
+            new_button = image_cache.load_image(f"{image}.png").convert_alpha()
         else:
             new_button = image
         new_pos = list(pos)
@@ -163,6 +169,9 @@ class Button():
             clickable = True
             if dynamic_image:
                 image = f'{image}_hover'
+        if available is False:
+            if dynamic_image:
+                image = f'{image}_unavailable'
         if image is None:
             if game.settings['hotkey display'] and hotkey is not None:
                 new_button.fill(colour)
@@ -171,19 +180,13 @@ class Button():
                 new_button.fill(colour)
                 self.font.text(text, (self.padding[0], 0), new_button)
         elif dynamic_image:
-            new_button = pygame.image.load(f"{image}.png").convert_alpha()
-            new_button = pygame.transform.scale(new_button, (192, 35))
+            new_button = image_cache.load_image(f"{image}.png").convert_alpha()
         self.used_screen.blit(new_button, new_pos)
         if game.clicked and clickable:
             if apprentice is not None:
                 self.choose_mentor(apprentice, cat_value)
-            elif text == 'Change Name' and game.switches['naming_text'] != '':
-                self.change_name(game.switches['naming_text'],
-                                 game.switches['name_cat'])
-            elif text == ' Change Gender ' and game.switches[
-                    'naming_text'] != '':
-                self.change_gender(game.switches['naming_text'],
-                                   game.switches['name_cat'])
+
+
             elif text in ['Next Cat', 'Previous Cat']:
                 game.switches['cat'] = values.get('cat')
             elif text == 'Prevent kits':
@@ -272,6 +275,7 @@ class Button():
         if values is None:
             values = {}
         add = values['add'] if 'add' in values.keys() else False
+        remove = values['remove'] if 'remove' in values.keys() else False
         for key, value in values.items():
             if cat_value is None:
                 if key in game.switches.keys():
@@ -285,16 +289,22 @@ class Button():
                                 'cur_screen']
                         game.switches[key] = value
                     else:
-                        game.switches[key].append(value)
+                        if key == 'cat':
+                            game.switches[key] = value
+                        else:
+                            game.switches[key].append(value)
             elif key == 'mate':
                 if value is not None:
                     cat_value.set_mate(value)
                     value.set_mate(cat_value)
+                    game.switches['broke_up'] = False
+                    game.switches['mate'] = None
                 else:
                     cat_mate = Cat.all_cats[cat_value.mate]
-                    cat_mate.unset_mate(breakup = True)
-                    cat_value.unset_mate(breakup = True)
-                game.switches['mate'] = None
+                    game.switches['mate'] = cat_value.mate
+                    cat_mate.unset_mate(breakup=True)
+                    cat_value.unset_mate(breakup=True)
+                    game.switches['broke_up'] = True
         if arrow is not None and game.switches['cur_screen'] == 'events screen':
             max_scroll_direction = len(
                 game.cur_events_list) - game.max_events_displayed
@@ -345,33 +355,21 @@ class Button():
     def choose_mentor(self, apprentice, cat_value):
         """Chooses cat_value as mentor for apprentice."""
         if apprentice not in cat_value.apprentice:
-            apprentice.mentor.former_apprentices.append(apprentice)
-            apprentice.mentor.apprentice.remove(apprentice)
-            apprentice.mentor = cat_value
-            cat_value.apprentice.append(apprentice)
+            if apprentice.moons == 6:
+                apprentice.mentor.apprentice.remove(apprentice)
+                apprentice.mentor = cat_value
+                cat_value.apprentice.append(apprentice)
+            else:
+                apprentice.mentor.former_apprentices.append(apprentice)
+                apprentice.mentor.apprentice.remove(apprentice)
+                apprentice.mentor = cat_value
+                cat_value.apprentice.append(apprentice)
+
         game.current_screen = 'clan screen'
-        game.save_cats()
 
-    def change_name(self, name, cat_value):
-        """Changes name of cat_value to name specified in textbox"""
-        cat_value = Cat.all_cats.get(cat_value)
-        if game.switches['naming_text'] != '':
-            name = game.switches['naming_text'].split(' ')
-            cat_value.name.prefix = name[0]
-            if len(name) > 1:
-                # If cat is an apprentice/kit and new suffix is paw/kit, leave hidden suffix unchanged
-                if not (cat_value.name.status == "apprentice" and name[1] == "paw") and \
-                    not (cat_value.name.status == "kitten" and name[1] == "kit"):
-                    cat_value.name.suffix = name[1]
-            game.save_cats()
-            game.switches['naming_text'] = ''
 
-    def change_gender(self, name, cat_value):
-        cat_value = Cat.all_cats.get(cat_value)
-        if game.switches['naming_text'] != '':
-            cat_value.genderalign = game.switches['naming_text']
-            game.save_cats()
-            game.switches['naming_text'] = ''
+
+
 
 
 # BUTTONS

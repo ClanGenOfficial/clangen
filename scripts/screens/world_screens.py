@@ -7,13 +7,17 @@ from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
 from scripts.cat.cats import Cat
 from scripts.cat.sprites import tiles
+import scripts.game_structure.image_cache as image_cache
 #from scripts.world import load_map
 
 class OutsideClanScreen(Screens):
 
     def on_use(self):
-        verdana_big.text('Cats Outside The Clan', ('center', 30))
-        verdana.text('ALL CATS LIST', ('center', 100))
+        clan_name_bg = pygame.transform.scale(
+            image_cache.load_image("resources/images/outside_clan_bg.png").convert_alpha(), (242, 35))
+        screen.blit(clan_name_bg, (279, 25))
+        verdana_big_light.text('Cats Outside The Clan', ('center', 32))
+
         living_cats = []
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
@@ -21,10 +25,11 @@ class OutsideClanScreen(Screens):
                 living_cats.append(the_cat)
 
         search_text = game.switches['search_text']
-        pygame.draw.rect(screen, 'lightgray', pygame.Rect((170, 130),
-                                                          (150, 20)))
-        verdana.text('Search: ', (100, 130))
-        verdana_black.text(game.switches['search_text'], (180, 130))
+        search_bar = pygame.transform.scale(
+            image_cache.load_image("resources/images/search_bar.png").convert_alpha(), (228, 34))
+        screen.blit(search_bar, (452, 135))
+        verdana_black.text(game.switches['search_text'], (530, 142))
+
         search_cats = []
         if search_text.strip() != '':
             for cat in living_cats:
@@ -64,21 +69,32 @@ class OutsideClanScreen(Screens):
             ('center', 600))
 
         if game.switches['list_page'] > 1:
-            buttons.draw_button((300, 600),
-                                text='<',
-                                list_page=game.switches['list_page'] - 1,
-                                hotkey=[23])
+            buttons.draw_image_button((310, 595),
+                                      button_name='arrow_left',
+                                      text='<',
+                                      list_page=game.switches['list_page'] - 1,
+                                      size=(34, 34),
+                                      hotkey=[23])
 
         if game.switches['list_page'] < all_pages:
-            buttons.draw_button((-300, 600),
-                                text='>',
-                                list_page=game.switches['list_page'] + 1,
-                                hotkey=[21])
+            buttons.draw_image_button((456, 595),
+                                      button_name='arrow_right',
+                                      text='>',
+                                      list_page=game.switches['list_page'] + 1,
+                                      size=(34, 34),
+                                      hotkey=[21])
 
-        buttons.draw_button((-70, 140),
-                            text='Cats in ' + str(game.clan.name) + 'Clan',
-                            cur_screen='list screen',
-                            hotkey=[9])
+        buttons.draw_image_button((150, 135),
+                                  button_name='outside_clan',
+                                  text='Cats Outside Clans',
+                                  available=False,
+                                  size=(34, 34),
+                                  cur_screen='other screen')
+        buttons.draw_image_button((116, 135),
+                                  button_name='your_clan',
+                                  text='your clan',
+                                  size=(34, 34),
+                                  cur_screen='list screen')
         draw_menu_buttons()
 
 class MapScreen(Screens):
