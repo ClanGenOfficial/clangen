@@ -120,58 +120,58 @@ def bs_blurb_text(cat, backstory=None):
     backstory = cat.backstory
     bs_blurb = None
     if backstory is None:
-        bs_blurb = "This cat was born into the clan where they currently reside"
+        bs_blurb = "This cat was born into the clan where they currently reside."
     if backstory == 'clanborn':
-        bs_blurb = "This cat was born into the clan where they currently reside"
+        bs_blurb = "This cat was born into the clan where they currently reside."
     if backstory == 'halfclan1':
-        bs_blurb = "This cat was born into the clan, but one of their parents resides in another clan"
+        bs_blurb = "This cat was born into the clan, but one of their parents resides in another clan."
     if backstory == 'halfclan2':
-        bs_blurb = "This cat was born in another clan, but chose to come to this clan to be with their other parent"
+        bs_blurb = "This cat was born in another clan, but chose to come to this clan to be with their other parent."
     if backstory == 'outsider_roots1':
-        bs_blurb = "This cat was born into the clan, but one of their parents is an outsider that belongs to no clan"
+        bs_blurb = "This cat was born into the clan, but one of their parents is an outsider that belongs to no clan."
     if backstory == 'outsider_roots2':
-        bs_blurb = "This cat was born outside the clan, but came to live in the clan with their parent at a young age"
+        bs_blurb = "This cat was born outside the clan, but came to live in the clan with their parent at a young age."
     if backstory == 'loner1':
-        bs_blurb = "This cat joined the clan by choice after living life as a loner"
+        bs_blurb = "This cat joined the clan by choice after living life as a loner."
     if backstory == 'loner2':
         bs_blurb = "This cat used to live in a barn, but mostly stayed away from twolegs. They decided clanlife " \
-                   "might be an interesting change of pace"
+                   "might be an interesting change of pace."
     if backstory == 'kittypet1':
-        bs_blurb = "This cat joined the clan by choice after living life with twolegs as a kittypet"
+        bs_blurb = "This cat joined the clan by choice after living life with twolegs as a kittypet."
     if backstory == 'kittypet2':
-        bs_blurb = "This cat used to live on something called a “boat” with twolegs, but decided to join the clan"
+        bs_blurb = "This cat used to live on something called a “boat” with twolegs, but decided to join the clan."
     if backstory == 'rogue1':
-        bs_blurb = "This cat joined the clan by choice after living life as a rogue"
+        bs_blurb = "This cat joined the clan by choice after living life as a rogue."
     if backstory == 'rogue2':
         bs_blurb = "This cat used to live in a twolegplace, scrounging for what they could find. They thought " \
-                   "the clan might offer them more security"
+                   "the clan might offer them more security."
     if backstory == 'abandoned1':
-        bs_blurb = "This cat was found by the clan as a kit and has been living with them ever since"
+        bs_blurb = "This cat was found by the clan as a kit and has been living with them ever since."
     if backstory == 'abandoned2':
         bs_blurb = "This cat was born into a kittypet life, but was brought to the clan as a kit and has lived " \
-                   "here ever since"
+                   "here ever since."
     if backstory == 'abandoned3':
-        bs_blurb = "This cat was born into another clan, but they were left here as a kit for the clan to raise"
+        bs_blurb = "This cat was born into another clan, but they were left here as a kit for the clan to raise."
     if backstory == 'medicine_cat':
-        bs_blurb = "This cat was once a medicine cat in another clan"
+        bs_blurb = "This cat was once a medicine cat in another clan."
     if backstory == 'otherclan':
-        bs_blurb = "This cat was born into another clan, but came to this clan by choice"
+        bs_blurb = "This cat was born into another clan, but came to this clan by choice."
     if backstory == 'otherclan2':
-        bs_blurb = "This cat was unhappy in their old clan and decided to come here instead"
+        bs_blurb = "This cat was unhappy in their old clan and decided to come here instead."
     if backstory == 'ostracized_warrior':
-        bs_blurb = "This cat was ostracized from their old clan, but no one really knows why"
+        bs_blurb = "This cat was ostracized from their old clan, but no one really knows why."
     if backstory == 'disgraced':
         bs_blurb = "This cat was cast out of their old clan for some transgression that they’re not keen on " \
-                   "talking about"
+                   "talking about."
     if backstory == 'retired_leader':
         bs_blurb = "This cat used to be the leader of another clan before deciding they needed a change of scenery " \
                    "after leadership became too much.  They returned their nine lives and let their deputy " \
-                   "take over before coming here"
+                   "take over before coming here."
     if backstory == 'refugee':
         bs_blurb = "This cat came to this clan after fleeing from their former clan and the tyrannical " \
-                   "leader that had taken over"
+                   "leader that had taken over."
     if backstory == 'tragedy_survivor':
-        bs_blurb = "Something horrible happened to this cat's previous clan. They refuse to speak about it"
+        bs_blurb = "Something horrible happened to this cat's previous clan. They refuse to speak about it."
     return bs_blurb
 
 
