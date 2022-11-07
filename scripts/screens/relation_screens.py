@@ -6,12 +6,13 @@ from scripts.utility import draw_large, draw, update_sprite, get_personality_com
 from scripts.game_structure.buttons import buttons
 from scripts.game_structure.text import *
 from scripts.cat.cats import Cat
+import scripts.game_structure.image_cache as image_cache
 
 
 def draw_choosing_bg(arg0, arg1):
-    list_frame = pygame.image.load("resources/images/choosing_frame.png").convert_alpha()
-    cat1_frame_arg1 = pygame.image.load(f"resources/images/choosing_cat1_frame_{arg1}.png").convert_alpha()
-    cat2_frame_arg1 = pygame.image.load(f"resources/images/choosing_cat2_frame_{arg1}.png").convert_alpha()
+    list_frame = image_cache.load_image("resources/images/choosing_frame.png").convert_alpha()
+    cat1_frame_arg1 = image_cache.load_image(f"resources/images/choosing_cat1_frame_{arg1}.png").convert_alpha()
+    cat2_frame_arg1 = image_cache.load_image(f"resources/images/choosing_cat2_frame_{arg1}.png").convert_alpha()
 
     y_value = 113
 
@@ -254,13 +255,13 @@ def show_mentor_cat_info(arg0, arg1, arg2):
                                 x_limit=arg1 + 100
                                 )
 
-    mentor_icon = pygame.image.load("resources/images/mentor.png")
+    mentor_icon = image_cache.load_image("resources/images/mentor.png")
     screen.blit(mentor_icon, (315, 160))
 
 
 class ViewChildrenScreen(Screens):
-    parents = pygame.image.load("resources/images/family_parents.png")
-    mate = pygame.image.load("resources/images/family_mate.png")
+    parents = pygame.image.load("resources/images/family_parents.png").convert_alpha()
+    mate = pygame.image.load("resources/images/family_mate.png").convert_alpha()
 
     def on_use(self):
         the_cat = Cat.all_cats[game.switches['cat']]
@@ -355,14 +356,6 @@ class ViewChildrenScreen(Screens):
         if siblings is False:
             verdana.text('This cat has no siblings.', (380, 200))
 
-        if the_cat.exiled:
-            buttons.draw_button(('center', 670),
-                            text='Back',
-                            cur_screen='outside profile screen')
-        else:
-            buttons.draw_button(('center', 670),
-                            text='Back',
-                            cur_screen='profile screen')
         pos_x = 0
         pos_y = 60
         # SHOW MATE
@@ -423,22 +416,23 @@ class ViewChildrenScreen(Screens):
         if kittens is False:
             verdana.text('This cat has never had offspring.', (350, 480))
 
-        buttons.draw_image_button((25, 645),
-                                  button_name='back',
-                                  text='Back',
-                                  size=(105, 30),
-                                  cur_screen='profile screen',
-                                  chosen_cat=None,
-                                  show_details=False)
-
         if the_cat.exiled:
-            buttons.draw_button(('center', 670),
-                                text='Back',
-                                cur_screen='outside profile screen')
+            buttons.draw_image_button((25, 645),
+                                      button_name='back',
+                                      text='Back',
+                                      size=(105, 30),
+                                      cur_screen='outside profile screen',
+                                      chosen_cat=None,
+                                      show_details=False)
         else:
-            buttons.draw_button(('center', 670),
-                                text='Back',
-                                cur_screen='profile screen')
+            buttons.draw_image_button((25, 645),
+                                      button_name='back',
+                                      text='Back',
+                                      size=(105, 30),
+                                      cur_screen='profile screen',
+                                      chosen_cat=None,
+                                      show_details=False)
+
     def screen_switches(self):
         cat_profiles()
 
@@ -450,6 +444,7 @@ class ChooseMateScreen(Screens):
         game.switches['choosing_mate'] = True
 
         draw_choosing_bg(494, 'mate')
+
         draw_next_prev_cat_buttons(the_cat)
 
         y_value = 30
@@ -571,9 +566,9 @@ class ChooseMateScreen(Screens):
 
 
     def heart_status(self, the_cat, mate):
-        q_heart = pygame.image.load("resources/images/heart_maybe.png").convert_alpha()
-        heart = pygame.image.load("resources/images/heart_mates.png").convert_alpha()
-        b_heart = pygame.image.load("resources/images/heart_breakup.png").convert_alpha()
+        q_heart = image_cache.load_image("resources/images/heart_maybe.png").convert_alpha()
+        heart = image_cache.load_image("resources/images/heart_mates.png").convert_alpha()
+        b_heart = image_cache.load_image("resources/images/heart_breakup.png").convert_alpha()
 
         x_value = 300
         y_value = 188
@@ -591,10 +586,10 @@ class ChooseMateScreen(Screens):
         # incompatible = pygame.image.load("resources/images/pers_incompatible.png")
         # neutral = pygame.image.load("resources/images/pers_neutral.png")
 
-        compatible = pygame.image.load("resources/images/line_compatible.png").convert_alpha()
-        incompatible = pygame.image.load("resources/images/line_incompatible.png").convert_alpha()
-        neutral = pygame.image.load("resources/images/line_neutral.png").convert_alpha()
-        s_heart = pygame.image.load("resources/images/heart_big.png").convert_alpha()
+        compatible = image_cache.load_image("resources/images/line_compatible.png").convert_alpha()
+        incompatible = image_cache.load_image("resources/images/line_incompatible.png").convert_alpha()
+        neutral = image_cache.load_image("resources/images/line_neutral.png").convert_alpha()
+        s_heart = image_cache.load_image("resources/images/heart_big.png").convert_alpha()
         x_value = 300
         y_value = 190
 
@@ -614,7 +609,6 @@ class ChooseMateScreen(Screens):
             relation = relation[0]
         else:
             Cat.all_cats.get(arg2.ID).create_new_relationships()
-
         romantic_love = relation.romantic_love
 
         if 10 <= romantic_love <= 30:
@@ -772,28 +766,28 @@ def show_mate_cat_info(arg0, arg1, arg2):
 class RelationshipScreen(Screens):
     bool = {True: 'on', False: 'off', None: 'None'}
 
-    search_bar = pygame.image.load("resources/images/relationship_search.png").convert_alpha()
-    details_frame = pygame.image.load("resources/images/relationship_details_frame.png").convert_alpha()
-    toggle_frame = pygame.image.load("resources/images/relationship_toggle_frame.png").convert_alpha()
-    list_frame = pygame.image.load("resources/images/relationship_list_frame.png").convert_alpha()
+    search_bar = image_cache.load_image("resources/images/relationship_search.png").convert_alpha()
+    details_frame = image_cache.load_image("resources/images/relationship_details_frame.png").convert_alpha()
+    toggle_frame = image_cache.load_image("resources/images/relationship_toggle_frame.png").convert_alpha()
+    list_frame = image_cache.load_image("resources/images/relationship_list_frame.png").convert_alpha()
 
-    female_icon = pygame.image.load("resources/images/female_big.png").convert_alpha()
-    male_icon = pygame.image.load("resources/images/male_big.png").convert_alpha()
-    nonbi_icon = pygame.image.load("resources/images/nonbi_big.png").convert_alpha()
-    transfem_icon = pygame.image.load("resources/images/transfem_big.png").convert_alpha()
-    transmasc_icon = pygame.image.load("resources/images/transmasc_big.png").convert_alpha()
+    female_icon = image_cache.load_image("resources/images/female_big.png").convert_alpha()
+    male_icon = image_cache.load_image("resources/images/male_big.png").convert_alpha()
+    nonbi_icon = image_cache.load_image("resources/images/nonbi_big.png").convert_alpha()
+    transfem_icon = image_cache.load_image("resources/images/transfem_big.png").convert_alpha()
+    transmasc_icon = image_cache.load_image("resources/images/transmasc_big.png").convert_alpha()
 
-    female_icon_small = pygame.transform.scale(pygame.image.load("resources/images/female_big.png").convert_alpha(), (18, 18))
-    male_icon_small = pygame.transform.scale(pygame.image.load("resources/images/male_big.png").convert_alpha(), (18, 18))
-    nonbi_icon_small = pygame.transform.scale(pygame.image.load("resources/images/nonbi_big.png").convert_alpha(), (18, 18))
-    transfem_icon_small = pygame.transform.scale(pygame.image.load("resources/images/transfem_big.png").convert_alpha(), (18, 18))
-    transmasc_icon_small = pygame.transform.scale(pygame.image.load("resources/images/transmasc_big.png").convert_alpha(), (18, 18))
+    female_icon_small = pygame.transform.scale(image_cache.load_image("resources/images/female_big.png").convert_alpha(), (18, 18))
+    male_icon_small = pygame.transform.scale(image_cache.load_image("resources/images/male_big.png").convert_alpha(), (18, 18))
+    nonbi_icon_small = pygame.transform.scale(image_cache.load_image("resources/images/nonbi_big.png").convert_alpha(), (18, 18))
+    transfem_icon_small = pygame.transform.scale(image_cache.load_image("resources/images/transfem_big.png").convert_alpha(), (18, 18))
+    transmasc_icon_small = pygame.transform.scale(image_cache.load_image("resources/images/transmasc_big.png").convert_alpha(), (18, 18))
 
-    mate_icon = pygame.image.load("resources/images/heart_big.png").convert_alpha()
-    family_icon = pygame.image.load("resources/images/dot_big.png").convert_alpha()
+    mate_icon = image_cache.load_image("resources/images/heart_big.png").convert_alpha()
+    family_icon = image_cache.load_image("resources/images/dot_big.png").convert_alpha()
 
-    mate_icon_small = pygame.transform.scale(pygame.image.load("resources/images/heart_big.png").convert_alpha(), (11, 10))
-    family_icon_small = pygame.transform.scale(pygame.image.load("resources/images/dot_big.png").convert_alpha(), (9, 9))
+    mate_icon_small = pygame.transform.scale(image_cache.load_image("resources/images/heart_big.png").convert_alpha(), (11, 10))
+    family_icon_small = pygame.transform.scale(image_cache.load_image("resources/images/dot_big.png").convert_alpha(), (9, 9))
 
     def on_use(self):
         # use this variable to point to the cat object in question
@@ -1325,11 +1319,11 @@ class RelationshipScreen(Screens):
 
     def draw_bar(self, value, pos_x, pos_y):
         # Loading Bar and variables
-        bar_bg = pygame.image.load(
+        bar_bg = image_cache.load_image(
             "resources/images/relations_border.png").convert_alpha()
-        bar_bg_dark = pygame.image.load(
+        bar_bg_dark = image_cache.load_image(
             "resources/images/relations_border_dark.png").convert_alpha()
-        original_bar = pygame.image.load(
+        original_bar = image_cache.load_image(
             "resources/images/relation_bar.png").convert_alpha()
 
         bg_rect = bar_bg.get_rect(midleft=(pos_x, pos_y))

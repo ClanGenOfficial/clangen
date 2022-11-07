@@ -7,6 +7,7 @@ from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import collars, wild_accessories
+import scripts.game_structure.image_cache as image_cache
 
 
 # ---------------------------------------------------------------------------- #
@@ -23,7 +24,7 @@ def draw_text_bar():
         verdana.text(game.switches['naming_text'], (315, 204))
 
     text_input_frame = pygame.transform.scale(
-        pygame.image.load("resources/images/text_input_frame.png").convert_alpha(), (216, 40))
+        image_cache.load_image("resources/images/text_input_frame.png").convert_alpha(), (216, 40))
     screen.blit(text_input_frame, (294, 194))
 
 
@@ -225,7 +226,7 @@ def backstory_text(cat):
 class ProfileScreen(Screens):
 
     # UI Images
-    backstory_tab = pygame.image.load("resources/images/backstory_bg.png")
+    backstory_tab = pygame.image.load("resources/images/backstory_bg.png").convert_alpha()
 
     def on_use(self):
         # use this variable to point to the cat object in question
@@ -729,7 +730,7 @@ class ProfileScreen(Screens):
             # promote a cat to deputy if no deputy is alive
             if the_cat.status in [
                 'warrior'
-            ] and not the_cat.dead and not the_cat.exiled and game.clan.deputy is None:
+            ] and not the_cat.dead and not the_cat.exiled and game.clan.deputy is None or game.clan.deputy == 0 or game.clan.deputy.exiled or game.clan.deputy.dead:
                 buttons.draw_image_button((226, 486),
                                           button_name='promote_deputy',
                                           text='promote to deputy',
@@ -1112,15 +1113,16 @@ class ChangeNameScreen(Screens):
         # changes the name
         if game.switches['change_name'] != '':
             name = game.switches['naming_text'].split(' ')
-            the_cat.name.prefix = name[0]
-            if len(name) > 1:
-                # If cat is an apprentice/kit and new suffix is paw/kit, leave hidden suffix unchanged
-                if not (the_cat.name.status == "apprentice" and name[1] == "paw") and \
-                        not (the_cat.name.status == "kitten" and name[1] == "kit"):
-                    the_cat.name.suffix = name[1]
+            if name != ['']:
+                the_cat.name.prefix = name[0]
+                if len(name) > 1:
+                    # If cat is an apprentice/kit and new suffix is paw/kit, leave hidden suffix unchanged
+                    if not (the_cat.name.status == "apprentice" and name[1] == "paw") and \
+                            not (the_cat.name.status == "kitten" and name[1] == "kit"):
+                        the_cat.name.suffix = name[1]
 
-            game.switches['naming_text'] = ''
-            game.switches['cur_screen'] = 'name changed screen'
+                game.switches['naming_text'] = ''
+                game.switches['cur_screen'] = 'name changed screen'
 
         draw_back(25, 25)
 

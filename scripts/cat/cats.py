@@ -760,14 +760,19 @@ class Cat():
                     new_mentor.former_apprentices.remove(self)
         else:
             self.mentor = None
+
         # Move from old mentor's apps to former apps
         if old_mentor is not None and old_mentor != self.mentor:
-            if self in old_mentor.apprentice:
-                old_mentor.apprentice.remove(self)
-            if self not in old_mentor.former_apprentices:
-                old_mentor.former_apprentices.append(self)
-            if old_mentor not in self.former_mentor:
-                self.former_mentor.append(old_mentor)
+            if self.moons != 6:
+                if self in old_mentor.apprentice:
+                    old_mentor.apprentice.remove(self)
+                if self not in old_mentor.former_apprentices:
+                    old_mentor.former_apprentices.append(self)
+                if old_mentor not in self.former_mentor:
+                    self.former_mentor.append(old_mentor)
+            else:
+                if self in old_mentor.apprentice:
+                    old_mentor.apprentice.remove(self)
 
     def update_mentor(self, new_mentor=None):
         if new_mentor is None:
@@ -801,7 +806,7 @@ class Cat():
         else:
             self.mentor = None
         # Move from old mentor's apps to former apps
-        if self.status == 'warrior' or self.status == 'medicine cat':
+        if self.status == 'warrior':
             self.former_mentor.append(old_mentor)
             self.mentor = None
             if old_mentor is not None:
@@ -811,12 +816,16 @@ class Cat():
                     old_mentor.former_apprentices.append(self)
 
         if old_mentor is not None and old_mentor != self.mentor:
-            if self in old_mentor.apprentice:
-                old_mentor.apprentice.remove(self)
-            if self not in old_mentor.former_apprentices:
-                old_mentor.former_apprentices.append(self)
-            if old_mentor not in self.former_mentor:
-                self.former_mentor.append(old_mentor)
+            if self.moons != 6:
+                if self in old_mentor.apprentice:
+                    old_mentor.apprentice.remove(self)
+                if self not in old_mentor.former_apprentices:
+                    old_mentor.former_apprentices.append(self)
+                if old_mentor not in self.former_mentor:
+                    self.former_mentor.append(old_mentor)
+            else:
+                if self in old_mentor.apprentice:
+                    old_mentor.apprentice.remove(self)
 
 
 # ---------------------------------------------------------------------------- #

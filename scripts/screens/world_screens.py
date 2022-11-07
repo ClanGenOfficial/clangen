@@ -7,13 +7,14 @@ from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
 from scripts.cat.cats import Cat
 from scripts.cat.sprites import tiles
+import scripts.game_structure.image_cache as image_cache
 #from scripts.world import load_map
 
 class OutsideClanScreen(Screens):
 
     def on_use(self):
         clan_name_bg = pygame.transform.scale(
-            pygame.image.load("resources/images/outside_clan_bg.png").convert_alpha(), (242, 35))
+            image_cache.load_image("resources/images/outside_clan_bg.png").convert_alpha(), (242, 35))
         screen.blit(clan_name_bg, (279, 25))
         verdana_big_light.text('Cats Outside The Clan', ('center', 32))
 
@@ -25,7 +26,7 @@ class OutsideClanScreen(Screens):
 
         search_text = game.switches['search_text']
         search_bar = pygame.transform.scale(
-            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
+            image_cache.load_image("resources/images/search_bar.png").convert_alpha(), (228, 34))
         screen.blit(search_bar, (452, 135))
         verdana_black.text(game.switches['search_text'], (530, 142))
 
