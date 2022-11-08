@@ -602,7 +602,6 @@ class ProfileScreen(Screens):
             if influenced_skill is not None and influenced_skill != 'none' \
                     or influenced_trait is not None and influenced_trait != 'none':
                 # assign proper grammar to skills
-                print('test')
                 if influenced_skill in Cat.skill_groups.get('special'):
                     adjust_skill = f'unlock their abilities as a {influenced_skill}'
                     influenced_skill = adjust_skill
@@ -652,6 +651,8 @@ class ProfileScreen(Screens):
                             event_words[0] = 'They were also'
                         else:
                             event_words[0] = 'They also'
+                    elif x == 0 and event_words[0] != str(the_cat.name):
+                        event_words[0] = str(the_cat.name)
                     the_cat.scar_event[x] = ' '.join(event_words)
                 scar_history = '. '.join(the_cat.scar_event)
                 history.append(scar_history)
