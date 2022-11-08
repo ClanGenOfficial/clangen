@@ -10,6 +10,8 @@ def get_thoughts(cat, other_cat):
     # actions or thoughts for all cats. These switch either every moon or every time the game is re-opened
     if cat.is_alive():
         thoughts = get_alive_thoughts(cat, other_cat)
+    elif cat.df:
+        thoughts = get_df_thoughts(cat, other_cat)
     else:
         thoughts = get_dead_thoughts(cat, other_cat)
 
@@ -570,6 +572,12 @@ def get_warrior_trait_role_thoughts(cat, other_cat):
             'Volunteers to gather herbs',
             'Has been lending the medicine cat a paw lately'
         ]
+    return thoughts
+
+def get_df_thoughts(cat, other_cat):
+    thoughts = []
+    thoughts+= GENERAL_DEAD["df"]
+    
     return thoughts
 
 # ---------------------------------------------------------------------------- #
