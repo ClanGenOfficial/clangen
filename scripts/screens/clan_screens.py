@@ -186,23 +186,28 @@ class StarClanScreen(Screens):
         self.starclan_bg = pygame.transform.scale(
             pygame.image.load("resources/images/starclanbg.png").convert(),
             (800, 700))
-
+        self.search_bar = pygame.transform.scale(
+            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
+        self.clan_name_bg = pygame.transform.scale(
+            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (180, 35))
     def on_use(self):
         bg = self.starclan_bg
         screen.blit(bg, (0, 0))
-        draw_clan_name()
-        verdana_white.text('StarClan Cat List', ('center', 100))
+
+        screen.blit(self.clan_name_bg, (310, 25))
+
+        verdana_big_light.text(f'Starclan', ('center', 32))
+
         dead_cats = [game.clan.instructor]
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
-            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled:
+            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and not the_cat.df:
                 dead_cats.append(the_cat)
 
         search_text = game.switches['search_text']
-        pygame.draw.rect(screen, 'lightgray', pygame.Rect((530, 140),
-                                                          (150, 20)))
-        verdana.text('Search: ', (468, 140))
-        verdana_black.text(game.switches['search_text'], (540, 140))
+        screen.blit(self.search_bar, (452, 135))
+        verdana_black.text(game.switches['search_text'], (530, 142))
+
         search_cats = []
         if search_text.strip() != '':
             for cat in dead_cats:
@@ -270,7 +275,21 @@ class StarClanScreen(Screens):
                                       hotkey=[21])
 
         draw_menu_buttons()
+        
 
+        buttons.draw_image_button((150, 135),
+                                  button_name='sc_toggle',
+                                  text='SC',
+                                  size=(34, 34),
+                                  cur_screen='starclan screen',
+                                  available=False,
+                                  )
+        buttons.draw_image_button((116, 135),
+                                  button_name='df_toggle',
+                                  text='DF',
+                                  size=(34, 34),
+                                  cur_screen='dark forest screen',
+                                  )
     def screen_switches(self):
         cat_profiles()
 
@@ -592,90 +611,111 @@ class DFScreen(Screens):
         self.df_bg = pygame.transform.scale(
             pygame.image.load("resources/images/darkforestbg.png").convert(),
             (800, 700))
-
+        self.search_bar = pygame.transform.scale(
+            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
+        self.clan_name_bg = pygame.transform.scale(
+            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (180, 35))
     def on_use(self):
         bg = self.df_bg
         screen.blit(bg, (0, 0))
-        draw_clan_name()
-        verdana_white.text('Dark Forest Cat List', ('center', 100))
+
+        screen.blit(self.clan_name_bg, (310, 25))
+
+        verdana_big_light.text(f'Dark Forest', ('center', 32))
+
         dead_cats = []
-        # for x in range(len(Cat.all_cats.values())):
-        #     the_cat = list(Cat.all_cats.values())[x]
-        #     if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled:
-        #         dead_cats.append(the_cat)
+        for x in range(len(Cat.all_cats.values())):
+            the_cat = list(Cat.all_cats.values())[x]
+            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and the_cat.df:
+                dead_cats.append(the_cat)
 
-    #     search_text = game.switches['search_text']
-    #     pygame.draw.rect(screen, 'lightgray', pygame.Rect((530, 140),
-    #                                                       (150, 20)))
-    #     verdana.text('Search: ', (468, 140))
-    #     verdana_black.text(game.switches['search_text'], (540, 140))
-    #     search_cats = []
-    #     if search_text.strip() != '':
-    #         for cat in dead_cats:
-    #             if search_text.lower() in str(cat.name).lower():
-    #                 search_cats.append(cat)
-    #     else:
-    #         search_cats = dead_cats.copy()
-    #     all_pages = int(ceil(len(search_cats) /
-    #                          20.0)) if len(search_cats) > 20 else 1
-    #     pos_x = 0
-    #     pos_y = 0
-    #     cats_on_page = 0
-    #     for x in range(len(search_cats)):
-    #         if x + (game.switches['list_page'] - 1) * 20 > len(search_cats):
-    #             game.switches['list_page'] = 1
-    #         if game.switches['list_page'] > all_pages:
-    #             game.switches['list_page'] = 1
-    #         the_cat = search_cats[x + (game.switches['list_page'] - 1) * 20]
-    #         if the_cat.dead:
-    #             column = int(pos_x / 100)
-    #             row = int(pos_y / 100)
-    #             buttons.draw_button((130 + pos_x, 180 + pos_y),
-    #                                 image=the_cat.sprite,
-    #                                 cat=the_cat.ID,
-    #                                 cur_screen='profile screen',
-    #                                 hotkey=[row + 1, column + 11])
+        search_text = game.switches['search_text']
+        screen.blit(self.search_bar, (452, 135))
+        verdana_black.text(game.switches['search_text'], (530, 142))
+        search_cats = []
+        if search_text.strip() != '':
+            for cat in dead_cats:
+                if search_text.lower() in str(cat.name).lower():
+                    search_cats.append(cat)
+        else:
+            search_cats = dead_cats.copy()
+        all_pages = int(ceil(len(search_cats) /
+                             20.0)) if len(search_cats) > 20 else 1
+        pos_x = 0
+        pos_y = 0
+        cats_on_page = 0
+        for x in range(len(search_cats)):
+            if x + (game.switches['list_page'] - 1) * 20 > len(search_cats):
+                game.switches['list_page'] = 1
+            if game.switches['list_page'] > all_pages:
+                game.switches['list_page'] = 1
+            the_cat = search_cats[x + (game.switches['list_page'] - 1) * 20]
+            if the_cat.dead:
+                column = int(pos_x / 100)
+                row = int(pos_y / 100)
+                buttons.draw_button((130 + pos_x, 180 + pos_y),
+                                    image=the_cat.sprite,
+                                    cat=the_cat.ID,
+                                    cur_screen='profile screen',
+                                    hotkey=[row + 1, column + 11])
 
-    #             name_len = verdana.text(str(the_cat.name))
+                name_len = verdana.text(str(the_cat.name))
 
-    #             # CHECK NAME LENGTH
-    #             name = str(the_cat.name)
-    #             if len(name) >= 13:
-    #                 short_name = str(the_cat.name)[0:12]
-    #                 name = short_name + '...'
+                # CHECK NAME LENGTH
+                name = str(the_cat.name)
+                if len(name) >= 13:
+                    short_name = str(the_cat.name)[0:12]
+                    name = short_name + '...'
 
-    #             # DISPLAY NAME
-    #             verdana_white.text(name,
-    #                                (155 + pos_x - name_len/2, 240 + pos_y))
-    #             cats_on_page += 1
-    #             pos_x += 120
-    #             if pos_x >= 600:
-    #                 pos_x = 0
-    #                 pos_y += 100
-    #             if cats_on_page >= 20 or x + (game.switches['list_page'] -
-    #                                           1) * 20 == len(search_cats) - 1:
-    #                 break
-    #     verdana_white.text(
-    #         'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages),
-    #         ('center', 600))
+                # DISPLAY NAME
+                verdana_white.text(name,
+                                   (155 + pos_x - name_len/2, 240 + pos_y))
+                cats_on_page += 1
+                pos_x += 120
+                if pos_x >= 600:
+                    pos_x = 0
+                    pos_y += 100
+                if cats_on_page >= 20 or x + (game.switches['list_page'] -
+                                              1) * 20 == len(search_cats) - 1:
+                    break
+        verdana_white.text(
+            'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages),
+            ('center', 600))
 
-    #     if game.switches['list_page'] > 1:
-    #         buttons.draw_image_button((310, 595),
-    #                                   button_name='arrow_left',
-    #                                   text='<',
-    #                                   list_page=game.switches['list_page'] - 1,
-    #                                   size=(34, 34),
-    #                                   hotkey=[23])
+        if game.switches['list_page'] > 1:
+            buttons.draw_image_button((310, 595),
+                                      button_name='arrow_left',
+                                      text='<',
+                                      list_page=game.switches['list_page'] - 1,
+                                      size=(34, 34),
+                                      hotkey=[23])
 
-    #     if game.switches['list_page'] < all_pages:
-    #         buttons.draw_image_button((456, 595),
-    #                                   button_name='arrow_right',
-    #                                   text='>',
-    #                                   list_page=game.switches['list_page'] + 1,
-    #                                   size=(34, 34),
-    #                                   hotkey=[21])
+        if game.switches['list_page'] < all_pages:
+            buttons.draw_image_button((456, 595),
+                                      button_name='arrow_right',
+                                      text='>',
+                                      list_page=game.switches['list_page'] + 1,
+                                      size=(34, 34),
+                                      hotkey=[21])
 
-    #     draw_menu_buttons()
+        draw_menu_buttons()
+
+
+
+        buttons.draw_image_button((150, 135),
+                                  button_name='sc_toggle',
+                                  text='SC',
+                                  size=(34, 34),
+                                  cur_screen='starclan screen',
+                                  )
+        buttons.draw_image_button((116, 135),
+                                  button_name='df_toggle',
+                                  text='DF',
+                                  size=(34, 34),
+                                  cur_screen='dark forest screen',
+                                  available=False,
+                                  )
+
 
     # def screen_switches(self):
     #     cat_profiles()

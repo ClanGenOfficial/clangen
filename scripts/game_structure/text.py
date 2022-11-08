@@ -144,9 +144,9 @@ verdana_green = Font('verdana', colour='darkgreen')
 verdana_big_light = Font('verdana', 18, colour=(239, 229, 207))
 verdana_small_light = Font('verdana', 11, colour=(239, 229, 207))
 
-verdana_big_dark = Font('verdana', 18, colour=(35, 30, 17))
-verdana_small_dark = Font('verdana', 11, colour=(35, 30, 17))
-verdana_mid_dark = Font('verdana', 13, colour=(35, 30, 17))
+verdana_big_dark = Font('verdana', 18, colour=(57, 50, 36))
+verdana_small_dark = Font('verdana', 11, colour=(57, 50, 36))
+verdana_mid_dark = Font('verdana', 13, colour=(57, 50, 36))
 
 # for relationships, same color as bar
 verdana_dark_magenta = Font('verdana', 11, colour=(226, 65, 103))

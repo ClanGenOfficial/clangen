@@ -743,15 +743,13 @@ class Patrol():
             if self.patrol_random_cat.specialty is None:
                 self.patrol_random_cat.specialty = choice(
                     [choice(scars1),
-                     choice(scars2),
-                     choice(scars4)])
+                     choice(scars2)])
                 self.patrol_random_cat.scar_event.append(
                     f'{self.patrol_random_cat.name} gained a scar while on patrol')
             elif self.patrol_random_cat.specialty2 is None:
                 self.patrol_random_cat.specialty2 = choice(
                     [choice(scars1),
-                     choice(scars2),
-                     choice(scars4)])
+                     choice(scars2)])
                 self.patrol_random_cat.scar_event.append(
                     f'{self.patrol_random_cat.name} gained a scar while on patrol')
         elif self.patrol_event.patrol_id == 102:
@@ -765,11 +763,11 @@ class Patrol():
                 self.patrol_random_cat.scar_event.append(f'{self.patrol_random_cat.name} retired after being hit by a monster')
         elif self.patrol_event.patrol_id == 904:
             if self.patrol_random_cat.specialty is None:
-                self.patrol_random_cat.specialty = choice([choice(scars5)])
+                self.patrol_random_cat.specialty = "SNAKE"
                 self.patrol_random_cat.scar_event.append(
                     f'{self.patrol_random_cat.name} gained a scar while on patrol')
             elif self.patrol_random_cat.specialty2 is None:
-                self.patrol_random_cat.specialty2 = choice([choice(scars5)])
+                self.patrol_random_cat.specialty2 = "SNAKE"
                 self.patrol_random_cat.scar_event.append(
                     f'{self.patrol_random_cat.name} gained a scar while on patrol')
 

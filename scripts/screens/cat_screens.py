@@ -42,6 +42,14 @@ def draw_back(x_value, y_value):
                                   cur_screen='outside profile screen',
                                   profile_tab_group=None,
                                   hotkey=[0])
+    elif (the_cat.df):
+        buttons.draw_image_button((x_value, y_value),
+                                  button_name='back',
+                                  text='Back',
+                                  size=(105, 30),
+                                  cur_screen='dark forest screen',
+                                  profile_tab_group=None,
+                                  hotkey=[0])
     else:
         buttons.draw_image_button((x_value, y_value),
                                   button_name='back',
@@ -510,7 +518,7 @@ class ProfileScreen(Screens):
             if the_cat.mate in Cat.all_cats:
                 if Cat.all_cats.get(
                         the_cat.mate
-                ).dead:  # TODO: fix when mate dies mate becomes none
+                ).dead:  
                     verdana_small.text(
                         'former mate: ' +
                         str(Cat.all_cats[the_cat.mate].name),
@@ -1064,12 +1072,20 @@ class ProfileScreen(Screens):
                                   available=game.switches['profile_tab_group'] != 'dangerous'
                                   )
 
-        # EXILE BUTTON DISABLED FOR NOW.  remove available=False when functionality is ready again
         if game.switches['profile_tab_group'] == 'dangerous':
-            buttons.draw_image_button((578, 450),
+            if not the_cat.dead and not the_cat.exiled:
+                buttons.draw_image_button((578, 450),
+                                        button_name='exile_cat',
+                                        text='exile cat',
+                                        available=True,
+                                        size=(172, 36),
+                                        )
+            else:
+                buttons.draw_button((600, 460),
                                       button_name='exile_cat',
-                                      text='exile cat',
-                                      available=False,
+                                      text='Exile to DF',
+                                      available=True,
+                                      cat_value=the_cat,
                                       size=(172, 36),
                                       )
 

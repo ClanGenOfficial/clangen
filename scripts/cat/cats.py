@@ -155,6 +155,7 @@ class Cat():
         self.illness = None
         self.injury = None
         self.scar_event = []
+        self.df = False
 
         # setting ID
         if ID is None:
