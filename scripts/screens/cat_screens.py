@@ -629,6 +629,8 @@ class ProfileScreen(Screens):
                             event_words[y] = 'was'
                         elif event_words[y] == 'loses':
                             event_words[y] = 'lost'
+                        elif event_words[y] == 'forces':
+                            event_words[y] = 'forced'
                         elif event_words[y] in not_scarred:
                             event_words[y] = 'scarred'
                             if event_words[y-1] == 'got':
