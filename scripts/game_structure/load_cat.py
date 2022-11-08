@@ -183,7 +183,7 @@ def csv_load(all_cats):
                               parent1=attr[6],
                               parent2=attr[7],
                               eye_colour=attr[17],
-                              eye_colour2=attr[47],)
+                              eye_colour2=None,)
                 game.switches[
                     'error_message'] = '3There was an error loading cat # ' + str(
                         attr[0])

@@ -221,7 +221,7 @@ class Cat():
         # NAME
         if self.pelt is not None:
             self.name = Name(status, prefix, suffix, self.pelt.colour,
-                             self.eye_colour, self.eye_colour2, self.pelt.name)
+                             self.eye_colour, self.pelt.name)
         else:
             self.name = Name(status, prefix, suffix, eyes=self.eye_colour)
 
