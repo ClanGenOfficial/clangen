@@ -134,6 +134,7 @@ class Cat():
         self.children = []
         self.illness = None
         self.injury = None
+        self.df = False
 
         # setting ID
         if ID is None:
