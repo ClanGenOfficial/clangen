@@ -741,13 +741,11 @@ class Patrol():
             if self.patrol_random_cat.specialty is None:
                 self.patrol_random_cat.specialty = choice(
                     [choice(scars1),
-                     choice(scars2),
-                     choice(scars4)])
+                     choice(scars2)])
             elif self.patrol_random_cat.specialty2 is None:
                 self.patrol_random_cat.specialty2 = choice(
                     [choice(scars1),
-                     choice(scars2),
-                     choice(scars4)])
+                     choice(scars2)])
         elif self.patrol_event.patrol_id == 102:
             self.patrol_random_cat.skill = choice(
                 ['paralyzed', 'blind', 'missing a leg'])
@@ -755,9 +753,9 @@ class Patrol():
                 self.patrol_random_cat.status_change('elder')
         elif self.patrol_event.patrol_id == 904:
             if self.patrol_random_cat.specialty is None:
-                self.patrol_random_cat.specialty = choice([choice(scars5)])
+                self.patrol_random_cat.specialty = "SNAKE"
             elif self.patrol_random_cat.specialty2 is None:
-                self.patrol_random_cat.specialty2 = choice([choice(scars5)])
+                self.patrol_random_cat.specialty2 = "SNAKE"
 
     def handle_retirements(self):
         if self.patrol_event.patrol_id == 102 and game.settings.get(

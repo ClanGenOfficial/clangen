@@ -212,19 +212,11 @@ def update_sprite(cat):
             new_sprite.blit(
                 sprites.sprites['scarsextra' + cat.specialty2 +
                                 str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty in scars4:
+        if cat.specialty in scars3:
             new_sprite.blit(
                 sprites.sprites['scarsextra' + cat.specialty +
                                 str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty2 in scars4:
-            new_sprite.blit(
-                sprites.sprites['scarsextra' + cat.specialty2 +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty in scars5:
-            new_sprite.blit(
-                sprites.sprites['scarsextra' + cat.specialty +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty2 in scars5:
+        if cat.specialty2 in scars3:
             new_sprite.blit(
                 sprites.sprites['scarsextra' + cat.specialty2 +
                                 str(cat.age_sprites[cat.age])], (0, 0))
@@ -240,19 +232,11 @@ def update_sprite(cat):
             new_sprite.blit(
                 sprites.sprites['scars' + cat.specialty2 +
                                 str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty in scars4:
+        if cat.specialty in scars3:
             new_sprite.blit(
                 sprites.sprites['scars' + cat.specialty +
                                 str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty2 in scars4:
-            new_sprite.blit(
-                sprites.sprites['scars' + cat.specialty2 +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty in scars5:
-            new_sprite.blit(
-                sprites.sprites['scars' + cat.specialty +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty2 in scars5:
+        if cat.specialty2 in scars3:
             new_sprite.blit(
                 sprites.sprites['scars' + cat.specialty2 +
                                 str(cat.age_sprites[cat.age])], (0, 0))
