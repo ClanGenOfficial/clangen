@@ -600,8 +600,9 @@ class ProfileScreen(Screens):
 
             # if cat had mentor influence then write history text for those influences and append to history
             if influenced_skill is not None and influenced_skill != 'none' \
-                    and influenced_trait is not None and influenced_trait != 'none':
+                    or influenced_trait is not None and influenced_trait != 'none':
                 # assign proper grammar to skills
+                print('test')
                 if influenced_skill in Cat.skill_groups.get('special'):
                     adjust_skill = f'unlock their abilities as a {influenced_skill}'
                     influenced_skill = adjust_skill
@@ -620,13 +621,15 @@ class ProfileScreen(Screens):
                             influenced_skill = adjust_skill
                             break
 
+                mentor = the_cat.former_mentor[-1].name
+
                 # append influence blurb to history
                 if influenced_trait is not None and influenced_skill is None:
-                    history.append(f'The influence of their mentor caused this cat to become more {influenced_trait}.')
+                    history.append(f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait}.")
                 elif influenced_trait is None and influenced_skill is not None:
-                    history.append(f'The influence of their mentor caused this cat to {influenced_skill}.')
+                    history.append(f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}.")
                 elif influenced_trait is not None and influenced_skill is not None:
-                    history.append(f'The influence of their mentor caused this cat to become more {influenced_trait} as well as {influenced_skill}.')
+                    history.append(f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill}.")
 
             if the_cat.scar_event:
                 for x in range(len(the_cat.scar_event)):
