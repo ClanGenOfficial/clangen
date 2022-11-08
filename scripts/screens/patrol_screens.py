@@ -10,11 +10,11 @@ from scripts.cat.cats import Cat
 
 class PatrolScreen(Screens):
 
-    able_box = pygame.image.load("resources/images/patrol_able_cats.png")
-    patrol_box = pygame.image.load("resources/images/patrol_cats.png")
-    cat_frame = pygame.image.load("resources/images/patrol_cat_frame.png")
-    app_frame = pygame.image.load("resources/images/patrol_app_frame.png")
-    mate_frame = pygame.image.load("resources/images/patrol_mate_frame.png")
+    able_box = pygame.image.load("resources/images/patrol_able_cats.png").convert_alpha()
+    patrol_box = pygame.image.load("resources/images/patrol_cats.png").convert_alpha()
+    cat_frame = pygame.image.load("resources/images/patrol_cat_frame.png").convert_alpha()
+    app_frame = pygame.image.load("resources/images/patrol_app_frame.png").convert_alpha()
+    mate_frame = pygame.image.load("resources/images/patrol_mate_frame.png").convert_alpha()
 
     def on_use(self):
         # USER INTERFACE
@@ -488,7 +488,7 @@ class PatrolScreen(Screens):
                     (548, 356),
                     button_name='patrol_select',
                     size=(104, 26),
-                    cat=chosen_cat.apprentice[x]
+                    cat=chosen_cat.apprentice[0]
                     )
             else:
                 buttons.draw_image_button(

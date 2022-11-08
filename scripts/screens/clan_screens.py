@@ -270,6 +270,13 @@ class StarClanScreen(Screens):
                                       hotkey=[21])
 
         draw_menu_buttons()
+        
+        #placeholder button
+        buttons.draw_button((150, 135),
+                              button_name='darkforest',
+                              text='DF',
+                              cur_screen='dark forest screen',
+                              size=(88, 30))
 
     def screen_switches(self):
         cat_profiles()
@@ -604,11 +611,11 @@ class DFScreen(Screens):
         #     if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled:
         #         dead_cats.append(the_cat)
 
-    #     search_text = game.switches['search_text']
-    #     pygame.draw.rect(screen, 'lightgray', pygame.Rect((530, 140),
-    #                                                       (150, 20)))
-    #     verdana.text('Search: ', (468, 140))
-    #     verdana_black.text(game.switches['search_text'], (540, 140))
+        search_text = game.switches['search_text']
+        pygame.draw.rect(screen, 'lightgray', pygame.Rect((530, 140),
+                                                          (150, 20)))
+        verdana.text('Search: ', (468, 140))
+        verdana_black.text(game.switches['search_text'], (540, 140))
     #     search_cats = []
     #     if search_text.strip() != '':
     #         for cat in dead_cats:
@@ -675,7 +682,15 @@ class DFScreen(Screens):
     #                                   size=(34, 34),
     #                                   hotkey=[21])
 
-    #     draw_menu_buttons()
+        draw_menu_buttons()
+        
+        #placeholder button
+        buttons.draw_button((150, 135),
+                              button_name='starclan',
+                              text='SC',
+                              cur_screen='starclan screen',
+                              size=(88, 30))
+
 
     # def screen_switches(self):
     #     cat_profiles()

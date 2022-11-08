@@ -93,7 +93,7 @@ class StartScreen(Screens):
 
 class SwitchClanScreen(Screens):
 
-    saves_frame = pygame.image.load("resources/images/clan_saves_frame.png")
+    saves_frame = pygame.image.load("resources/images/clan_saves_frame.png").convert_alpha()
 
     def on_use(self):
 
