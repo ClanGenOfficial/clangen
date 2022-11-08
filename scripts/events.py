@@ -1136,8 +1136,9 @@ class Events():
             # murdering leader/deputy
             if cat.trait in ['bloodthirsty', 'vengeful']:
                 murder_chance = 10
-            if cat.trait in ['bloodthirsty', 'ambitious', 'vengeful', 'sneaky'] and cat.status in ['warrior', 'deputy']\
-                and randint(1, murder_chance) == 1:
+            if (cat.trait in ['bloodthirsty', 'ambitious', 'vengeful', 'sneaky']
+                and cat.status in ['warrior', 'deputy']
+                and not int(random.random() * murder_chance)):
                 if cat.status == 'deputy' and other_cat.status == 'leader' and current_lives <= 6:
                         cause_of_death = [
                             f'{name} murdered {other_name} in cold blood to take their place',
@@ -1182,30 +1183,31 @@ class Events():
                             game.cur_events_list.append(choice(cause_of_death))                        
             # just murder
             elif cat.trait in ['bloodthirsty', 'vengeful', 'sadistic'] and not int(random.random() * murder_chance):
-                    if other_cat.status == 'leader' and current_lives <= 6:
-                        cause_of_death = [
-                        f'{name} murdered {other_name} in cold blood ',
-                        f'{name} murdered {other_name} in cold blood and made it look accidental'
-                        ]
-                        game.clan.leader_lives -= 10
-                        other_cat.die()
-                        game.cur_events_list.append(choice(cause_of_death))
-                    elif other_cat == 'leader' and current_lives >= 7:                            
-                        cause_of_death = [
-                        f'{name} murdered {other_name}, but the leader had more lives than they expected.\
-                        {other_name} retaliated and killed {name} in self-defense'
-                        ]
-                        liveslost = choice([1, 2, 3, 4])
-                        game.clan.leader_lives = current_lives - liveslost
-                        cat.die()
-                        game.cur_events_list.append(choice(cause_of_death))
-                    else:
-                        cause_of_death = [
-                        f'{name} murdered {other_name} in cold blood ',
-                        f'{name} murdered {other_name} in cold blood and made it look accidental'
-                        ]
-                        other_cat.die()
-                        game.cur_events_list.append(choice(cause_of_death))
+                # Future goopsters <3
+                if other_cat.status == 'leader' and current_lives <= 6:
+                    cause_of_death = [
+                    f'{name} murdered {other_name} in cold blood ',
+                    f'{name} murdered {other_name} in cold blood and made it look accidental'
+                    ]
+                    game.clan.leader_lives -= 10
+                    other_cat.die()
+                    game.cur_events_list.append(choice(cause_of_death))
+                elif other_cat == 'leader' and current_lives >= 7:                            
+                    cause_of_death = [
+                    f'{name} murdered {other_name}, but the leader had more lives than they expected.\
+                    {other_name} retaliated and killed {name} in self-defense'
+                    ]
+                    liveslost = choice([1, 2, 3, 4])
+                    game.clan.leader_lives = current_lives - liveslost
+                    cat.die()
+                    game.cur_events_list.append(choice(cause_of_death))
+                else:
+                    cause_of_death = [
+                    f'{name} murdered {other_name} in cold blood ',
+                    f'{name} murdered {other_name} in cold blood and made it look accidental'
+                    ]
+                    other_cat.die()
+                    game.cur_events_list.append(choice(cause_of_death))
             elif cat.status in ['medicine cat', 'medicine cat apprentice']\
             and cat.trait in ['bloodthirsty', 'vengeful', 'sadistic'] and not int(random.random() * murder_chance):
                 cause_of_death = [
@@ -1239,46 +1241,44 @@ class Events():
                 game.cur_events_list.append(
                     f'{cat.name} has passed due to their old age at {cat.moons + 1} moons old')
 
-        if game.settings.get('disasters') is True:
-            alive_count = 0
-            alive_cats = []
-            for cat in list(Cat.all_cats.values()):
-                if not cat.dead and not cat.exiled and cat.status != 'leader':
-                    alive_count += 1
-                    alive_cats.append(cat)
-            if game.clan.all_clans:
-                other_clan = game.clan.all_clans
-            addition = randint(0, 20)
-            # Are death_chance & dead_count unused? Should maybe be removed if so... -Shou
-            death_chance = int(alive_count / 3)
-            if addition == 1:
-                death_chance = int(death_chance + randint(0, 10) / 2)
-            else:
-                death_chance = death_chance
-            dead_count = int(death_chance / 5)
-            if alive_count > 15:
-                chance = int(alive_count / 10)
-                if randint(chance, 800) == 1:
+        if game.settings.get('disasters'):
+            if not random.getrandbits(10):  # 1/1024
+
+                alive_cats = list(filter(lambda kitty: (kitty.status != "leader"
+                                                        and not kitty.dead
+                                                        and not kitty.exiled),
+                                         Cat.all_cats.values()))
+                alive_count = len(alive_cats)
+                if alive_count > 15:
+                    if game.clan.all_clans:
+                        other_clan = game.clan.all_clans
+
+                    # Do some population/weight scrunkling to get amount of deaths
+                    max_deaths = int(alive_count / 1.5)  # 2/3 of alive cats
+                    weights = []
+                    population = []
+                    for n in range(1, max_deaths):
+                        population.append(n)
+                        weight = 10 / ( 0.2 * n )  # Lower chance for more dead cats
+                        weights.append(weight)
+                    dead_count = random.choices(population, weights=weights)[0] # the dieded..
+                    
                     disaster = []
                     dead_names = []
-                    dead_cats = random.sample(alive_cats, dead_count) # alive_cats, death_count for when scaling is added
+                    dead_cats = random.sample(alive_cats, dead_count)
                     for cat in dead_cats:
                         dead_names.append(cat.name)
-                    print(str(dead_names))
-                    if dead_count == 2:
-                        last_name = dead_names.pop(-1)
-                        names = str(dead_names) + ' and ' + str(last_name)
-                        names = names.replace('[', '')
-                        names = names.replace(']', '')
-                        print(names)
-                    elif dead_count >= 3:
-                        last_name = dead_names.pop(-1)
-                        names = str(dead_names) + ', and ' + str(last_name)
-                        names = names.replace('[', '')
-                        names = names.replace(']', '')
-                    else:
-                        names = str(dead_names).replace('[', '')
-                        names = names.replace(']', '')
+
+                    names = f"{dead_names.pop(0)}"  # Get first
+                    if dead_names:
+                        last_name = dead_names.pop()  # Get last
+                        if dead_names:
+                            for name in dead_names:  # In-between
+                                names += f", {name}"
+                            names += f", and {last_name}"
+                        else:
+                            names += f" and {last_name}"
+                    
                     if cat.status in dead_cats != 'kitten':
                         disaster.extend([
                             f' drown after the camp becomes flooded',
@@ -1334,7 +1334,7 @@ class Events():
                         disaster_event = str(disaster_str)
                         game.cur_events_list.append(f'{names}{disaster_event}')
                     for cat in dead_cats:
-                        print(str(cat.name) + " dies")
+                        #print(str(cat.name) + " dies")
                         cat.die()
 
     def coming_out(self, cat):
