@@ -259,7 +259,7 @@ class Patrol():
                     10,
                     win_skills=['very smart', 'extremely smart']),
                 PatrolEvent(
-                    116,
+                    117,
                     'While helping gathering herbs, r_c stumbles upon a bush of red berries',
                     'Yum! r_c recognizes them as strawberries and shares the tasty treat with the patrol',
                     'The patrol scolds r_c for wasting time munching on berries',
@@ -675,11 +675,13 @@ class Patrol():
             self.handle_exp_gain()
             self.add_new_cats()
             self.handle_clan_relations(difference = int(1))
+            self.handle_mentor_app_pairing()
         else:
             self.success = False
             self.handle_deaths()
             self.handle_scars()
             self.handle_clan_relations(difference = int(-1))
+            self.handle_mentor_app_pairing()
 
     def calculate_success_antagonize(self):
             if self.patrol_event is None:
@@ -720,7 +722,7 @@ class Patrol():
 
     def handle_deaths(self):
         if self.patrol_event.patrol_id in [
-                108, 113, 114, 120, 141, 250, 305, 307, 802, 803, 804
+                108, 113, 114, 120, 141, 250, 305, 307, 802, 803, 804, 116
         ]:
             if self.patrol_random_cat.status == 'leader':
                 if self.patrol_event.patrol_id in [108, 113]:
@@ -742,20 +744,32 @@ class Patrol():
                 self.patrol_random_cat.specialty = choice(
                     [choice(scars1),
                      choice(scars2)])
+                self.patrol_random_cat.scar_event.append(
+                    f'{self.patrol_random_cat.name} gained a scar while on patrol')
             elif self.patrol_random_cat.specialty2 is None:
                 self.patrol_random_cat.specialty2 = choice(
                     [choice(scars1),
                      choice(scars2)])
+                self.patrol_random_cat.scar_event.append(
+                    f'{self.patrol_random_cat.name} gained a scar while on patrol')
         elif self.patrol_event.patrol_id == 102:
             self.patrol_random_cat.skill = choice(
                 ['paralyzed', 'blind', 'missing a leg'])
+            self.patrol_random_cat.scar_event.append(
+                f'{self.patrol_random_cat.name} was hit by a car and is now {self.patrol_random_cat.skill}')
+
             if game.settings['retirement']:
                 self.patrol_random_cat.status_change('elder')
+                self.patrol_random_cat.scar_event.append(f'{self.patrol_random_cat.name} retired after being hit by a monster')
         elif self.patrol_event.patrol_id == 904:
             if self.patrol_random_cat.specialty is None:
                 self.patrol_random_cat.specialty = "SNAKE"
+                self.patrol_random_cat.scar_event.append(
+                    f'{self.patrol_random_cat.name} gained a scar while on patrol')
             elif self.patrol_random_cat.specialty2 is None:
                 self.patrol_random_cat.specialty2 = "SNAKE"
+                self.patrol_random_cat.scar_event.append(
+                    f'{self.patrol_random_cat.name} gained a scar while on patrol')
 
     def handle_retirements(self):
         if self.patrol_event.patrol_id == 102 and game.settings.get(
@@ -772,6 +786,11 @@ class Patrol():
             else:
                 clan_relations += difference
         game.clan.all_clans[otherclan].relations = clan_relations
+
+    def handle_mentor_app_pairing(self):
+        for cat in self.patrol_cats:
+            if cat.mentor in self.patrol_cats:
+                cat.patrol_with_mentor += 1
 
     def handle_relationships(self):
         romantic_love = 0

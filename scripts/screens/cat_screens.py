@@ -59,8 +59,6 @@ def draw_back(x_value, y_value):
                                   profile_tab_group=None,
                                   hotkey=[0])
 
-
-
 # ---------------------------------------------------------------------------- #
 #             change how accessory info displays on cat profiles               #
 # ---------------------------------------------------------------------------- #
@@ -128,63 +126,63 @@ def bs_blurb_text(cat, backstory=None):
     backstory = cat.backstory
     bs_blurb = None
     if backstory is None:
-        bs_blurb = "This cat was born into the clan where they currently reside"
+        bs_blurb = "This cat was born into the clan where they currently reside."
     if backstory == 'clanborn':
-        bs_blurb = "This cat was born into the clan where they currently reside"
+        bs_blurb = "This cat was born into the clan where they currently reside."
     if backstory == 'halfclan1':
-        bs_blurb = "This cat was born into the clan, but one of their parents resides in another clan"
+        bs_blurb = "This cat was born into the clan, but one of their parents resides in another clan."
     if backstory == 'halfclan2':
-        bs_blurb = "This cat was born in another clan, but chose to come to this clan to be with their other parent"
+        bs_blurb = "This cat was born in another clan, but chose to come to this clan to be with their other parent."
     if backstory == 'outsider_roots1':
-        bs_blurb = "This cat was born into the clan, but one of their parents is an outsider that belongs to no clan"
+        bs_blurb = "This cat was born into the clan, but one of their parents is an outsider that belongs to no clan."
     if backstory == 'outsider_roots2':
-        bs_blurb = "This cat was born outside the clan, but came to live in the clan with their parent at a young age"
+        bs_blurb = "This cat was born outside the clan, but came to live in the clan with their parent at a young age."
     if backstory == 'loner1':
-        bs_blurb = "This cat joined the clan by choice after living life as a loner"
+        bs_blurb = "This cat joined the clan by choice after living life as a loner."
     if backstory == 'loner2':
         bs_blurb = "This cat used to live in a barn, but mostly stayed away from twolegs. They decided clanlife " \
-                   "might be an interesting change of pace"
+                   "might be an interesting change of pace."
     if backstory == 'kittypet1':
-        bs_blurb = "This cat joined the clan by choice after living life with twolegs as a kittypet"
+        bs_blurb = "This cat joined the clan by choice after living life with twolegs as a kittypet."
     if backstory == 'kittypet2':
-        bs_blurb = "This cat used to live on something called a “boat” with twolegs, but decided to join the clan"
+        bs_blurb = "This cat used to live on something called a “boat” with twolegs, but decided to join the clan."
     if backstory == 'rogue1':
-        bs_blurb = "This cat joined the clan by choice after living life as a rogue"
+        bs_blurb = "This cat joined the clan by choice after living life as a rogue."
     if backstory == 'rogue2':
         bs_blurb = "This cat used to live in a twolegplace, scrounging for what they could find. They thought " \
-                   "the clan might offer them more security"
+                   "the clan might offer them more security."
     if backstory == 'abandoned1':
-        bs_blurb = "This cat was found by the clan as a kit and has been living with them ever since"
+        bs_blurb = "This cat was found by the clan as a kit and has been living with them ever since."
     if backstory == 'abandoned2':
         bs_blurb = "This cat was born into a kittypet life, but was brought to the clan as a kit and has lived " \
-                   "here ever since"
+                   "here ever since."
     if backstory == 'abandoned3':
-        bs_blurb = "This cat was born into another clan, but they were left here as a kit for the clan to raise"
+        bs_blurb = "This cat was born into another clan, but they were left here as a kit for the clan to raise."
     if backstory == 'medicine_cat':
-        bs_blurb = "This cat was once a medicine cat in another clan"
+        bs_blurb = "This cat was once a medicine cat in another clan."
     if backstory == 'otherclan':
-        bs_blurb = "This cat was born into another clan, but came to this clan by choice"
+        bs_blurb = "This cat was born into another clan, but came to this clan by choice."
     if backstory == 'otherclan2':
-        bs_blurb = "This cat was unhappy in their old clan and decided to come here instead"
+        bs_blurb = "This cat was unhappy in their old clan and decided to come here instead."
     if backstory == 'ostracized_warrior':
-        bs_blurb = "This cat was ostracized from their old clan, but no one really knows why"
+        bs_blurb = "This cat was ostracized from their old clan, but no one really knows why."
     if backstory == 'disgraced':
         bs_blurb = "This cat was cast out of their old clan for some transgression that they’re not keen on " \
-                   "talking about"
+                   "talking about."
     if backstory == 'retired_leader':
         bs_blurb = "This cat used to be the leader of another clan before deciding they needed a change of scenery " \
                    "after leadership became too much.  They returned their nine lives and let their deputy " \
-                   "take over before coming here"
+                   "take over before coming here."
     if backstory == 'refugee':
         bs_blurb = "This cat came to this clan after fleeing from their former clan and the tyrannical " \
-                   "leader that had taken over"
+                   "leader that had taken over."
     if backstory == 'tragedy_survivor':
-        bs_blurb = "Something horrible happened to this cat's previous clan. They refuse to speak about it"
+        bs_blurb = "Something horrible happened to this cat's previous clan. They refuse to speak about it."
     return bs_blurb
 
 
 # ---------------------------------------------------------------------------- #
-#             change how backstory info display on cat profiles                #
+#             change how backstory info displays on cat profiles               #
 # ---------------------------------------------------------------------------- #
 def backstory_text(cat):
     backstory = cat.backstory
@@ -234,7 +232,7 @@ def backstory_text(cat):
 class ProfileScreen(Screens):
 
     # UI Images
-    backstory_tab = pygame.image.load("resources/images/backstory_bg.png").convert_alpha()
+    backstory_tab = image_cache.load_image("resources/images/backstory_bg.png").convert_alpha()
 
     def on_use(self):
         # use this variable to point to the cat object in question
@@ -555,7 +553,7 @@ class ProfileScreen(Screens):
             count2 += 1
 
         else:
-            verdana_small.text('backstory: ' + 'Clanborn', (490, 230 + count2 * 15))
+            verdana_small.text('backstory: ' + 'clanborn', (490, 230 + count2 * 15))
             count2 += 1
 
         the_cat = Cat.all_cats.get(game.switches['cat'])
@@ -578,22 +576,95 @@ class ProfileScreen(Screens):
 
             screen.blit(ProfileScreen.backstory_tab, (65, 465))
 
-            backstory = backstory_text(the_cat)
+            history = []
+
             bs_blurb = bs_blurb_text(the_cat, backstory=the_cat.backstory)
 
-            # display cat backstory and blurb in tab
-            if the_cat.backstory is not None:
-                verdana_dark.blit_text(f'Backstory: {backstory} \n{bs_blurb}',
-                                       (90, 485),
-                                       x_limit=550,
-                                       line_break=30)
+            # append backstory blurb to history
+            if bs_blurb is not None:
+                history.append(str(bs_blurb))
 
-            # default display if no backstory
+            # check if cat has any mentor influence, else assign None
+            if the_cat.mentor_influence:
+                influenced_trait = str(the_cat.mentor_influence[0]).casefold()
+                influenced_skill = str(the_cat.mentor_influence[1]).casefold()
             else:
-                verdana_dark.blit_text(f'Backstory: Clanborn \n{bs_blurb}',
-                                       (90, 485),
-                                       x_limit=550,
-                                       line_break=30)
+                influenced_trait = None
+                influenced_skill = None
+
+            # if they did have mentor influence, check if skill or trait influence actually happened and assign None
+            if influenced_skill == 'none':
+                influenced_skill = None
+            if influenced_trait == 'none':
+                influenced_trait = None
+
+            # if cat had mentor influence then write history text for those influences and append to history
+            if influenced_skill is not None and influenced_skill != 'none' \
+                    or influenced_trait is not None and influenced_trait != 'none':
+                # assign proper grammar to skills
+                if influenced_skill in Cat.skill_groups.get('special'):
+                    adjust_skill = f'unlock their abilities as a {influenced_skill}'
+                    influenced_skill = adjust_skill
+                elif influenced_skill in Cat.skill_groups.get('star'):
+                    adjust_skill = f'grow a {influenced_skill}'
+                    influenced_skill = adjust_skill
+                elif influenced_skill in Cat.skill_groups.get('smart'):
+                    adjust_skill = f'become {influenced_skill}'
+                    influenced_skill = adjust_skill
+                else:
+                    # for loop to assign proper grammar to all these groups
+                    become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak']
+                    for x in become_group:
+                        if influenced_skill in Cat.skill_groups.get(x):
+                            adjust_skill = f'become a(n) {influenced_skill}'
+                            influenced_skill = adjust_skill
+                            break
+
+                mentor = the_cat.former_mentor[-1].name
+
+                # append influence blurb to history
+                if influenced_trait is not None and influenced_skill is None:
+                    history.append(f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait}.")
+                elif influenced_trait is None and influenced_skill is not None:
+                    history.append(f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}.")
+                elif influenced_trait is not None and influenced_skill is not None:
+                    history.append(f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill}.")
+
+            if the_cat.scar_event:
+                for x in range(len(the_cat.scar_event)):
+                    event_words = the_cat.scar_event[x].split()
+                    for y in range(len(event_words)):
+                        not_scarred = ['wounded', 'injured', 'battered', 'hurt', 'punished']
+                        if event_words[y] == 'is':
+                            event_words[y] = 'was'
+                        elif event_words[y] == 'loses':
+                            event_words[y] = 'lost'
+                        elif event_words[y] == 'forces':
+                            event_words[y] = 'forced'
+                        elif event_words[y] in not_scarred:
+                            event_words[y] = 'scarred'
+                            if event_words[y-1] == 'got':
+                                event_words[y-1] = 'was'
+                    if x == 1 and event_words[0] == str(the_cat.name):
+                        if event_words[1] == 'was':
+                            event_words.pop(1)
+                            event_words[0] = 'They were also'
+                        else:
+                            event_words[0] = 'They also'
+                    the_cat.scar_event[x] = ' '.join(event_words)
+                scar_history = ' '.join(the_cat.scar_event)
+                history.append(scar_history)
+
+
+
+            # join together history list with line breaks
+            display_history = '\n'.join(history)
+
+            # display cat backstory and blurb in tab
+            verdana_small_dark.blit_text(f'{display_history}',
+                                   (90, 485),
+                                   x_limit=550,
+                                   line_break=30)
 
         # opens backstory tab if clicked
         else:
@@ -680,7 +751,7 @@ class ProfileScreen(Screens):
                                           available=False)
 
             # take to see the change mentor screen (only available if cat is apprentice)
-            if the_cat.status == 'apprentice' and not the_cat.dead:
+            if the_cat.status in ['apprentice', 'medicine cat apprentice'] and not the_cat.dead:
                 buttons.draw_image_button((50, 558),
                                           button_name='change_mentor',
                                           text='change mentor',
@@ -736,9 +807,16 @@ class ProfileScreen(Screens):
                                           available=False)
 
             # promote a cat to deputy if no deputy is alive
+            if game.clan.deputy is None:
+                deputy = None
+            elif game.clan.deputy.exiled:
+                deputy = None
+            elif game.clan.deputy.dead:
+                deputy = None
+
             if the_cat.status in [
                 'warrior'
-            ] and not the_cat.dead and not the_cat.exiled and game.clan.deputy is None or game.clan.deputy == 0 or game.clan.deputy.exiled or game.clan.deputy.dead:
+            ] and not the_cat.dead and not the_cat.exiled and deputy is None:
                 buttons.draw_image_button((226, 486),
                                           button_name='promote_deputy',
                                           text='promote to deputy',
@@ -907,7 +985,7 @@ class ProfileScreen(Screens):
                                       )
 
             # change cat to trans male
-            if the_cat.genderalign == "female":
+            if the_cat.gender == "female" and the_cat.genderalign in ['male', 'female']:
                 buttons.draw_image_button((402, 486),
                                           button_name='change_trans_male',
                                           text='change to trans male',
@@ -918,7 +996,7 @@ class ProfileScreen(Screens):
                     the_cat.genderalign = 'trans male'
 
             # change cat to trans female
-            elif the_cat.genderalign == "male":
+            elif the_cat.gender == "male" and the_cat.genderalign in ['male', 'female']:
                 buttons.draw_image_button((402, 486),
                                           button_name='change_trans_female',
                                           text='change to trans female',
@@ -1012,14 +1090,22 @@ class ProfileScreen(Screens):
                                         size=(172, 36),
                                         )
             else:
-                buttons.draw_button((600, 460),
-                                      button_name='exile_cat',
-                                      text='Exile to DF',
-                                      available=True,
-                                      cat_value=the_cat,
-                                      size=(172, 36),
-                                      )
-
+                if not the_cat.df:
+                    buttons.draw_button((600, 460),
+                                        button_name='exile_cat',
+                                        text='Exile to DF',
+                                        available=True,
+                                        cat_value=the_cat,
+                                        size=(172, 36),
+                                        )
+                else:
+                    buttons.draw_button((600, 460),
+                                        button_name='exile_cat',
+                                        text='Exile to DF',
+                                        available=False,
+                                        cat_value=the_cat,
+                                        size=(172, 36),
+                                        )
             # button to kill cat
             if not the_cat.dead and not the_cat.exiled:
                 buttons.draw_image_button((578, 486),

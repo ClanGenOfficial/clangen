@@ -216,7 +216,7 @@ while True:
                     'naming_text'][:-1]
 
         if game.current_screen in [
-                'list screen', 'starclan screen', 'other screen', 'relationship screen'
+                'list screen', 'starclan screen', 'dark forest screen', 'other screen', 'relationship screen'
         ] and event.type == pygame.KEYDOWN:
             if event.unicode.isalpha() or event.unicode.isspace(
             ):  # only allows alphabet letters/space as an input
