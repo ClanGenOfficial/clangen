@@ -1256,7 +1256,7 @@ class Events():
             dead_count = int(death_chance / 5)
             if alive_count > 15:
                 chance = int(alive_count / 10)
-                if randint(chance, 1000) == 999:
+                if randint(chance, 800) == 1:
                     disaster = []
                     dead_names = []
                     dead_cats = random.sample(alive_cats, dead_count) # alive_cats, death_count for when scaling is added
