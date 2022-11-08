@@ -1,4 +1,5 @@
 import pygame
+import math
 
 from scripts.game_structure.game_essentials import *
 
@@ -245,18 +246,13 @@ sprites.make_group('shaders', (0, 0), 'shaders', sprites_y=5)
 sprites.make_group('lineartdead', (0, 0), 'lineartdead', sprites_y=5)
 
 for a, i in enumerate(
-    ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE']):
-    sprites.make_group('eyes', (a, 0), f'eyes{i}')
-    sprites.make_group('eyesextra', (a, 0), f'eyesextra{i}', sprites_y=2)
-sprites.make_group('eyes', (0, 1), 'eyesDARKBLUE')
-sprites.make_group('eyesextra', (0, 1), 'eyesextraDARKBLUE', sprites_y=2)
-
-for a, i in enumerate(
-    ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE']):
-    sprites.make_group('eyes2', (a, 0), f'eyes2{i}')
-    sprites.make_group('eyesextra2', (a, 0), f'eyesextra2{i}', sprites_y=2)
-sprites.make_group('eyes2', (0, 1), 'eyes2DARKBLUE')
-sprites.make_group('eyesextra2', (0, 1), 'eyesextra2DARKBLUE', sprites_y=2)
+    ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE', 'DARKBLUE']):
+    eyes_x = a % 6
+    eyes_y = math.floor(a/6)
+    sprites.make_group('eyes', (eyes_x, eyes_y), f'eyes{i}')
+    sprites.make_group('eyesextra', (eyes_x, eyes_y), f'eyesextra{i}', sprites_y=2)
+    sprites.make_group('eyes2', (eyes_x, eyes_y), f'eyes2{i}')
+    sprites.make_group('eyesextra2', (eyes_x, eyes_y), f'eyesextra2{i}', sprites_y=2)
 
 for a, i in enumerate(['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANY2']):
     sprites.make_group('whitepatches', (a, 0), f'white{i}')

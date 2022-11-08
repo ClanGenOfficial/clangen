@@ -55,6 +55,7 @@ def json_load():
         new_cat.age_sprites['senior adult'] = cat["spirit_senior_adult"]
         new_cat.age_sprites['elder'] = cat["spirit_elder"]
         new_cat.eye_colour = cat["eye_colour"]
+        new_cat.eye_colour2 = cat["eye_colour2"] if "eye_colour2" in cat else None
         new_cat.reverse = cat["reverse"]
         new_cat.white_patches = cat["white_patches"]
         new_cat.pattern = cat["pattern"]
@@ -73,7 +74,6 @@ def json_load():
         new_cat.dead_for = cat["dead_moons"]
         new_cat.apprentice = cat["current_apprentice"]
         new_cat.former_apprentices = cat["former_apprentices"]
-        new_cat.eye_colour2 = cat["eye_colour2"]
         all_cats.append(new_cat)
 
     # replace cat ids with cat objects and add other needed variables
