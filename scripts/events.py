@@ -343,6 +343,8 @@ class Events():
                                                 and not kitty.exiled),
                                  Cat.all_cats.values()))
         leader = Cat.all_cats[str(game.clan.leader)]
+        if cat.mentor:
+            mentor = cat.mentor
         
         # Older cats are scarred more often
         if cat.age in ["adult", "senior adult"]:
@@ -351,15 +353,15 @@ class Events():
         # Check cat mentor/leader status and traits
         risky_mentor = False
         risky_leader = False
-        other_name = "[this string should not appear :'3 ]"
         if cat.mentor:
             if cat.mentor.trait in risky_traits:
                 risky_mentor = True
                 scar_chance += 0.0225  # + 2.25%
+                mentor_name = str(mentor.name)
         if leader:
             if leader.trait in risky_traits:
                 risky_leader = True
-                other_name = str(leader.name)
+                leader_name = str(leader.name)
                 scar_chance += 0.005  # + 0.5%
                 if leader.trait in ["bloodthirsty", "vengeful"]:
                     scar_chance += 0.005
@@ -386,7 +388,7 @@ class Events():
             leader_scar_chance = leader_scar_chance * 1.75
 
         # Set pools and check which scars we can still get
-        all_scars = scars1 + scars2 + scars4 + scars5
+        all_scars = scars1 + scars2 + scars3
         base_scars = scars1 + scars2  # Can be caused by other cats
         for scar_pool in [all_scars, base_scars]:
             for special in [cat.specialty, cat.specialty2]:
@@ -440,7 +442,7 @@ class Events():
             specialty = choice(base_scars)
             scar_text.extend(
                 [
-                    f"{name} earned a scar recklessly fighting a {choice(danger)} encouraged by their mentor ",
+                    f"{name} earned a scar recklessly fighting a {choice(danger)}, encouraged by their mentor ",
                     f"{name} earned a scar for not defending the territory well enough ",
                     f"{name} is injured after being pushed into a river ",
                     f"{name} is punished by their mentor after accidentally wandering over the border ",
@@ -448,14 +450,14 @@ class Events():
                     f"{name} is injured by their mentor while practicing with their claws out ",
                     f"{name}'s mentor punished them for disobeying ",
                     f"{name} gained a scar while fighting their mentor ",
-                    f"{name} is injured while practicing their battle moves with {other_name} ",
-                    f"{name} is injured after a fight broke out with {other_name} ",
+                    f"{name} is injured while practicing their battle moves with {mentor_name} ",
+                    f"{name} is injured after a fight broke out with {mentor_name} ",
                     f"{name} could not handle their mentor's harsh training and got injured as a result ",
                     f"{name} could not handle their mentor's harsh training and got injured as a result ",
                 ]
             )
             if specialty == "NOPAW":
-                scar_text.append(f"{name} lost their paw after {other_name} decided to use twoleg traps for a training exercice ")
+                scar_text.append(f"{name} lost their paw after {mentor_name} decided to use twoleg traps for a training exercice ")
         # leader is sus guys
         elif leader_scar_chance > random.random() and risky_leader and cat.ID != leader.ID:
             specialty = choice(base_scars)
@@ -464,28 +466,28 @@ class Events():
                     cat.accessory = None
 
                 scar_text.extend([
-                    f"{name} lost their tail to a {choice(tail_danger)} while following {other_name}'s orders ",
-                    f"{name} is ordered to fend off a {choice(danger)} by {other_name}, and looses their tail in the ensuing battle ",
+                    f"{name} lost their tail to a {choice(tail_danger)} while following {leader_name}'s orders ",
+                    f"{name} is ordered to fend off a {choice(danger)} by {leader_name}, and looses their tail in the ensuing battle ",
                     ]
                 )
             else:
                 if specialty in ["NOPAW"]:
-                    scar_text.extend([f"{name} is maimed by {other_name} for questioning their leadership ",
-                                      f"{name} loses a paw after {other_name} forces them to fight a {choice(danger)} by themselves "])
+                    scar_text.extend([f"{name} is maimed by {leader_name} for questioning their leadership ",
+                                      f"{name} loses a paw after {leader_name} forces them to fight a {choice(danger)} by themselves "])
                 else:
                     scar_text.extend(
                         [
-                            f"{name} earned a scar fighting a {choice(danger)} on {other_name}'s orders ",
+                            f"{name} earned a scar fighting a {choice(danger)} on {leader_name}'s orders ",
                             f"{name} earned a scar defending the territory from outsiders ",
                             f"{name} earned a scar protecting the leader ",
-                            f"{name} is wounded during a harsh training exercice led by {other_name} ",
+                            f"{name} is wounded during a harsh training exercice led by {leader_name} ",
                             f"{name} is injured during an unsupervised training exercice ",
-                            f"{name} is hurt by enemy warriors after being ordered by {other_name} to go over the border ",
-                            f"{name} is injured after being ordered by {other_name} to check out a twoleg object ",
-                            f"{name} is battered while fighting a clanmate after {other_name} encouraged a fight ",
-                            f"{name} is injured by {other_name} for disobeying orders ",
-                            f"{name} is injured by {other_name} for speaking out against them ",
-                            f"{name} is cruelly injured by {other_name} to make an example out of them ",
+                            f"{name} is hurt by enemy warriors after being ordered by {leader_name} to go over the border ",
+                            f"{name} is injured after being ordered by {leader_name} to check out a twoleg object ",
+                            f"{name} is battered while fighting a clanmate after {leader_name} encouraged a fight ",
+                            f"{name} is injured by {leader_name} for disobeying orders ",
+                            f"{name} is injured by {leader_name} for speaking out against them ",
+                            f"{name} is cruelly injured by {leader_name} to make an example out of them ",
                         ]
                     )
         if scar_text:
@@ -529,13 +531,13 @@ class Events():
                     f'{name} finds a loner named {loner_name.prefix} who joins the clan',
                     f'A loner waits on the border for a patrol, asking to join the clan'
                 ]
-                if loner_name.suffix != '':
+                if loner_name.suffix:
                     success_text = [
-                        f'{loner_name} decides to keep their name'
+                        f'The loner decides to take on a slightly more clan-like name, and is now called {loner_name}'
                     ]
                 else:
                     success_text = [
-                        f'The loner decides to take on a slightly more clan-like name, and is now called {loner_name}'
+                        f'{loner_name} decides to keep their name'
                     ]
                 game.cur_events_list.append(choice(loner_text))
                 game.cur_events_list.append(choice(success_text))
@@ -548,7 +550,7 @@ class Events():
                     f'{name} finds a loner named {loner_name.prefix} who wishes to join the clan',
                     f'A loner says that they are interested in clan life and joins the clan'
                 ]
-                if loner_name.suffix != '':
+                if loner_name.suffix:
                     success_text = [
                         f'The loner decides to take on a slightly more clan-like name, and is now called {loner_name}'
                     ]
@@ -581,16 +583,16 @@ class Events():
                 backstory=choice(['kittypet1', 'kittypet2']))
                 loner_name = created_cats[0].name
                 loner_text = [
-                    f'{name} finds a kittypet named {str(loner_name.prefix)} who wants to join the clan',
-                    f'A kittypet called {str(loner_name.prefix)} stops {name} and asks to join the clan'
+                    f'{name} finds a kittypet named {loner_name.prefix} who wants to join the clan',
+                    f'A kittypet called {loner_name.prefix} stops {name} and asks to join the clan'
                 ]
-                if loner_name.suffix != '':
+                if loner_name.suffix:
                     success_text = [ 
-                        f'The kittypet decides to take on a slightly more clan-like name, and is now called {str(loner_name)} '
+                        f'The kittypet decides to take on a slightly more clan-like name, and is now called {loner_name} '
                     ]
                 else:
                     success_text = [
-                        f'{str(loner_name)} decides to keep their name'
+                        f'{loner_name} decides to keep their name'
                 ]
                 game.cur_events_list.append(choice(loner_text))
                 game.cur_events_list.append(choice(success_text))
@@ -674,7 +676,7 @@ class Events():
             if loner_name and a == 1:
                 new_cat = Cat(moons=age, prefix=name, status=status, gender=choice(['female', 'male']), backstory=backstory)
             elif loner_name:
-                new_cat = Cat(moons=age, prefix=name, suffix='', status=status, gender=choice(['female', 'male']), backstory=backstory)
+                new_cat = Cat(moons=age, prefix=name, suffix=None, status=status, gender=choice(['female', 'male']), backstory=backstory)
             else:
                 new_cat = Cat(moons=age, status=status, gender=choice(['female', 'male']), backstory=backstory)
             if skill:
@@ -847,10 +849,10 @@ class Events():
                     
                 if game.clan.all_clans:
                     cause_of_death.extend([
-                        f"{name} lost a life defending the kits from {choice(game.clan.all_clans).name} Clan warriors ",
-                        f"{name} lost a life defending {other_name} from {choice(game.clan.all_clans).name} Clan warriors ",
-                        f"{name} lost a life to a {choice(game.clan.all_clans).name} Clan apprentice ",
-                        f"{name} lost a life to a {choice(game.clan.all_clans).name} Clan warrior "
+                        f"{name} lost a life defending the kits from {choice(game.clan.all_clans).name}Clan warriors ",
+                        f"{name} lost a life defending {other_name} from {choice(game.clan.all_clans).name}Clan warriors ",
+                        f"{name} lost a life to a {choice(game.clan.all_clans).name}Clan apprentice ",
+                        f"{name} lost a life to a {choice(game.clan.all_clans).name}Clan warrior "
                     ])
                 game.clan.leader_lives -= 1
                 cat.die()
@@ -865,69 +867,47 @@ class Events():
             if cat.status == 'leader':
                 if allorsome == 1:
                     cause_of_death = [
-                        name +
-                        ' was brutally attacked by a rogue and lost all of their lives',
-                        name +
-                        ' was mauled by dogs and lost all of their lives',
-                        name +
-                        ' was carried off by an eagle, never to be seen again',
-                        name +
-                        ' was carried off by a hawk, never to be seen again',
-                        name + ' was taken by twolegs, never to be seen again',
-                        name +
-                        ' fell into a river and was swept away by the current, never to be seen again',
-                        name +
-                        ' was burnt alive while trying to save their clanmates from a fire'
+                        f'{name} was brutally attacked by a rogue and lost all of their lives',
+                        f'{name} was mauled by dogs and lost all of their lives',
+                        f'{name} was carried off by an eagle, never to be seen again',
+                        f'{name} was carried off by a hawk, never to be seen again',
+                        f'{name} was taken by twolegs, never to be seen again',
+                        f'{name} fell into a river and was swept away by the current, never to be seen again',
+                        f'{name} was burnt alive while trying to save their clanmates from a fire'
                     ]
                     if self.at_war and len(game.clan.all_clans) > 0:
                         cause_of_death.extend([
-                            name + ' was brutally murdered by a ' +
-                            choice(game.clan.all_clans).name +
-                            'Clan warrior and lost all of their lives',
-                            name + ' was brutally murdered by the ' +
-                            choice(game.clan.all_clans).name +
-                            'Clan deputy and lost all of their lives',
-                            name + ' was brutally murdered by the ' +
-                            choice(game.clan.all_clans).name +
-                            'Clan leader and lost all of their lives'
+                            f'{name} was brutally murdered by a {choice(game.clan.all_clans).name}Clan warrior and lost all of their lives',
+                            f'{name} was brutally murdered by the {choice(game.clan.all_clans).name}Clan deputy and lost all of their lives',
+                            f'{name} was brutally murdered by the {choice(game.clan.all_clans).name}Clan leader and lost all of their lives'
                         ])
                     if game.clan.biome == "Mountainous":
                         cause_of_death.extend([
-                            name + ' was buried alive in an avalanche',
-                            name + ' was buried alive by a landslide', name +
-                            ' was pushed off a cliff with sharp rocks at the bottom',
-                            name +
-                            ' accidentally fell off a cliff with sharp rocks at the bottom'
+                            f'{name} was buried alive in an avalanche',
+                            f'{name} was buried alive by a landslide', 
+                            f'{name} was pushed off a cliff with sharp rocks at the bottom',
+                            f'{name} accidentally fell off a cliff with sharp rocks at the bottom'
                         ])
                     if game.clan.biome == "Beach":
                         cause_of_death.extend([
-                            name +
-                            ' was washed out to sea and was never seen again',
-                            name +
-                            ' was lost to sea while saving a clanmate from drowning'
+                            f'{name} was washed out to sea and was never seen again',
+                            f'{name} was lost to sea while saving a clanmate from drowning'
                         ])
                     if game.clan.biome == "Plains":
                         cause_of_death.extend([
-                            name +
-                            ' fell into a sinkhole and was never seen again',
-                            name +
-                            ' fell into a hidden burrow and was buried alive',
-                            name +
-                            ' was buried alive when a burrow collapsed on them'
+                            f'{name} fell into a sinkhole and was never seen again',
+                            f'{name} fell into a hidden burrow and was buried alive',
+                            f'{name} was buried alive when a burrow collapsed on them'
                         ])
                     game.clan.leader_lives -= 10
                 else:
                     lostlives = choice([2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6])
                     if cat.moons >= 130 and game.clan.current_season in ['Leaf-fall', 'Leaf-bare']:
                         cause_of_death = [
-                            name + ' lost ' + str(lostlives) +
-                            ' lives due to greencough',
-                            name + ' lost ' +
-                            str(lostlives) + ' lives due to whitecough',
-                            name + ' lost ' + str(lostlives) +
-                            ' lives due to yellowcough',
-                            name + ' lost ' +
-                            str(lostlives) + ' lives due to an illness'
+                            f'{name} lost {lostlives} lives due to greencough',
+                            f'{name} lost {lostlives} lives due to whitecough',
+                            f'{name} lost {lostlives} lives due to yellowcough',
+                            f'{name} lost {lostlives} lives due to an illness'
                         ]
                         game.clan.leader_lives = current_lives - lostlives
                         cat.die()
@@ -936,169 +916,154 @@ class Events():
         elif not int(random.random() * 400): # 1/400
             name = str(cat.name)
             cause_of_death = [
-                name + ' was murdered',
-                'A tree fell in camp and killed ' + name,
-                name + ' was found dead near a fox den',
-                name + ' was bitten by a snake and died'
+                f'{name} was murdered',
+                f'A tree fell in camp and killed {name}',
+                f'{name} was found dead near a fox den',
+                f'{name} was bitten by a snake and died'
             ]
             if clan_has_kits and cat.status != 'kitten':
                 cause_of_death.extend([
-                    name + ' was bitten by a snake while saving a kit and died'
+                    f'{name} was bitten by a snake while saving a kit and died'
                 ])
             if cat.status == 'kitten':
                 cause_of_death.extend([
-                    name + ' fell into a river and drowned',
-                    name + ' was taken by a hawk',
-                    name + ' grew weak as the days passed and died',
-                    name + ' was killed after sneaking out of camp',
-                    name + ' died after accidentally eating deathberries',
-                    name +
-                    ' was killed in their sleep after a snake snuck into camp'
+                    f'{name} fell into a river and drowned',
+                    f'{name} was taken by a hawk',
+                    f'{name} grew weak as the days passed and died',
+                    f'{name} was killed after sneaking out of camp',
+                    f'{name} died after accidentally eating deathberries',
+                    f'{name} was killed in their sleep after a snake snuck into camp'
                 ])
                 if game.clan.current_season == 'Leaf-bare':
                     cause_of_death.extend([
-                        name + ' was found dead in the snow',
-                        name + ' froze to death in a harsh snowstorm', name +
-                        ' disappeared from the nursery and was found dead in the territory',
-                        name +
-                        ' was playing on the ice when the ice cracked and they drowned',
-                        name + ' died of greencough'
+                        f'{name} was found dead in the snow',
+                        f'{name} froze to death in a harsh snowstorm', 
+                        f'{name} disappeared from the nursery and was found dead in the territory',
+                        f'{name} was playing on the ice when the ice cracked and they drowned',
+                        f'{name} died of greencough'
                     ])
                     if cat.status == 'kitten':
                         cause_of_death.extend([
-                        name + ' died of kittencough', name +
-                        ' was too weak to fight off whitecough and passed',
-                        name + ' caught a cold and slowly faded'
+                        f'{name} died of kittencough', 
+                        f'{name} was too weak to fight off whitecough and passed',
+                        f'{name} caught a cold and slowly faded'
                     ])
                     if cat.status == 'elder' or cat.moons < 150:
                         cause_of_death.extend([
-                        name + ' was already feeling weak and a case of whitecough finished them off',
-                        name + ' was too weak to recover from an illness and passed',
-                        'Weakened by a lack of prey, ' + name + ' couldn\'t fight off whitecough and passed',
-                        name + ' was taken quickly by a case of greencough'
+                        f'{name} was already feeling weak and a case of whitecough finished them off',
+                        f'{name} was too weak to recover from an illness and passed',
+                        f'Weakened by a lack of prey, {name} couldn\'t fight off whitecough and passed',
+                        f'{name} was taken quickly by a case of greencough'
                     ])
                 if game.clan.current_season == 'Greenleaf':
-                    cause_of_death.extend([name + ' died to overheating'])
+                    cause_of_death.extend([f'{name} died to overheating'])
             elif cat.status == 'apprentice':
                 cause_of_death.extend([
-                    name + ' died in a training accident',
-                    name + ' was killed by enemy warriors after accidentally wandering over the border',
-                    name + ' went missing and was found dead',
-                    name + ' died in a border skirmish'
+                    f'{name} died in a training accident',
+                    f'{name} was killed by enemy warriors after accidentally wandering over the border',
+                    f'{name} went missing and was found dead',
+                    f'{name} died in a border skirmish'
                 ])
                 if game.clan.biome == "Mountainous":
                     cause_of_death.extend([
-                        name + ' was crushed to death by an avalanche',
-                        name + ' fell from a cliff and died'
+                        f'{name} was crushed to death by an avalanche',
+                        f'{name} fell from a cliff and died'
                     ])
                 if game.clan.biome == "Beach":
                     cause_of_death.extend([
-                        name + ' was washed out to sea and drowned',
-                        name + ' was poisoned by a sea creature and died'
+                        f'{name} was washed out to sea and drowned',
+                        f'{name} was poisoned by a sea creature and died'
                     ])
             elif cat.status == 'warrior' or cat.status == 'deputy':
                 if game.clan.all_clans:
-                    cause_of_death.append(name + ' was found dead near the ' +
-                                          choice(game.clan.all_clans).name +
-                                          'Clan border')
+                    cause_of_death.append(
+                        f'{name} was found dead near the {choice(game.clan.all_clans).name}Clan border')
                 cause_of_death.extend([
-                    name + ' died from infected wounds',
-                    name + ' went missing and was found dead'
+                    f'{name} died from infected wounds',
+                    f'{name} went missing and was found dead'
                 ])
                 if self.at_war:
                     cause_of_death.extend([
-                        name + ' was killed by enemy ' + self.enemy_clan +
-                        ' warriors', name + ' was killed by enemy ' +
-                        self.enemy_clan + ' warriors',
-                        name + ' was killed by enemy ' + self.enemy_clan +
-                        ' warriors', name + ' died in a border skirmish'
+                        f'{name} was killed by enemy {self.enemy_clan} warriors', 
+                        f'{name} was killed by enemy {self.enemy_clan} warriors',
+                        f'{name} was killed by enemy {self.enemy_clan} warriors', 
+                        f'{name} died in a border skirmish with {self.enemy_clan}'
                     ])
                 if game.clan.biome == "Mountainous":
                     cause_of_death.extend([
-                        name + ' was crushed by an avalanche',
-                        name + ' fell from a cliff and died'
+                        f'{name} was crushed by an avalanche',
+                        f'{name} fell from a cliff and died'
                     ])
                 if game.clan.biome == "Beach":
                     cause_of_death.extend([
-                        name + ' was washed out to sea and drowned',
-                        name + ' was poisoned by a sea creature and died'
+                        f'{name} was washed out to sea and drowned',
+                        f'{name} was poisoned by a sea creature and died'
                     ])
                 if game.clan.biome == "Plains":
                     cause_of_death.extend([
-                        name + ' fell into a sinkhole and died', name +
-                        ' fell into a hidden burrow and could not get out',
-                        name +
-                        ' was buried alive when a burrow collapsed on them'
+                        f'{name} fell into a sinkhole and died',
+                        f'{name} fell into a hidden burrow and could not get out',
+                        f'{name} was buried alive when a burrow collapsed on them'
                     ])
             #Leader loses a life
             elif cat.status == 'leader':
                 cause_of_death = []
                 if game.clan.all_clans:
                     cause_of_death.extend([
-                        name + ' lost a life to greencough',
-                        'A tree fell in camp and ' + name + ' lost a life'
+                        f'{name} lost a life to greencough',
+                        f'A tree fell in camp and {name} lost a life'
                     ])
                     cause_of_death.extend([
-                        name + ' was found dead near the ' +
-                        choice(game.clan.all_clans).name +
-                        'Clan border mortally injured'
+                        f'{name} was found dead near the {choice(game.clan.all_clans).name}Clan border mortally injured'
                     ])
                     cause_of_death.extend([
-                        name + ' lost a life from infected wounds', name +
-                        ' went missing and was later found mortally wounded'
+                        f'{name} lost a life from infected wounds', 
+                        f'{name} went missing and was later found mortally wounded'
                     ])
                 if self.at_war:
                     cause_of_death.extend([
-                        name + ' was killed by enemy ' + self.enemy_clan +
-                        ' warriors and lost a life',
-                        name + ' was killed by enemy ' + self.enemy_clan +
-                        ' warriors and lost a life',
-                        name + ' was killed by enemy ' + self.enemy_clan +
-                        ' warriors and lost a life',
-                        name + ' lost a life in a border skirmish'
+                        f'{name} was killed by enemy {self.enemy_clan} warriors and lost a life',
+                        f'{name} was killed by enemy {self.enemy_clan} warriors and lost a life',
+                        f'{name} was killed by enemy {self.enemy_clan} warriors and lost a life',
+                        f'{name} lost a life in a border skirmish'
                     ])
                 if game.clan.biome == "Mountainous":
                     cause_of_death.extend([
-                        name + ' lost a life in an avalanche',
-                        name + ' lost a life in a landslide',
-                        name + ' was pushed off a cliff and lost a life',
-                        name + ' accidentally fell off a cliff and lost a life'
+                        f'{name} lost a life in an avalanche',
+                        f'{name} lost a life in a landslide',
+                        f'{name} was pushed off a cliff and lost a life',
+                        f'{name} accidentally fell off a cliff and lost a life'
                     ])
                 elif game.clan.biome == "Beach":
                     cause_of_death.extend([
-                        name + ' was washed out to sea and lost a life', name +
-                        ' was poisoned by a sea creature and lost a life'
+                        f'{name} was washed out to sea and lost a life', 
+                        f'{name} was poisoned by a sea creature and lost a life'
                     ])
                 elif game.clan.biome == "Plains":
                     cause_of_death.extend([
-                        name + ' fell into a sinkhole and lost a life',
-                        name + ' fell into a hidden burrow and lost a life',
-                        name + ' lost a life when a burrow collapsed on them'
+                        f'{name} fell into a sinkhole and lost a life',
+                        f'{name} fell into a hidden burrow and lost a life',
+                        f'{name} lost a life when a burrow collapsed on them'
                     ])
                 elif self.at_war:
                     cause_of_death.extend([
-                        name + ' was killed by the ' + self.enemy_clan +
-                        ' deputy and lost a life',
-                        name + ' was killed by the ' + self.enemy_clan +
-                        ' leader and lost a life'
+                        f'{name} was killed by the {self.enemy_clan} deputy and lost a life',
+                        f'{name} was killed by the {self.enemy_clan} leader and lost a life'
                     ])
 
             elif cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice':
                 cause_of_death.extend([
-                    'The herb stores were damaged and ' + name +
-                    ' was murdered by an enemy warrior'
+                    f'The herb stores were damaged and {name} was murdered by an enemy warrior'
                 ])
                 if self.at_war:
                     cause_of_death.extend([
-                        name + ' was killed by a ' + self.enemy_clan +
-                        ' warrior while pulling an injured cat out of the battlefield'
+                        f'{name} was killed by a {self.enemy_clan} warrior while pulling an injured cat out of the battlefield'
                     ])
             if cat.status == 'deputy':
                 if self.at_war:
                     cause_of_death.extend([
-                        name + ' was killed by the ' + self.enemy_clan +
-                        ' deputy', name + ' was killed by the ' +
-                        self.enemy_clan + ' leader'
+                        f'{name} was killed by the {self.enemy_clan} deputy', 
+                        f'{name} was killed by the {self.enemy_clan} leader'
                     ])
 
             if cat.status == 'leader':
@@ -1106,8 +1071,7 @@ class Events():
             cat.die()
 
             game.cur_events_list.append(
-                choice(cause_of_death) + ' at ' + str(cat.moons + 1) +
-                ' moons old')
+                f'{choice(cause_of_death)} at {cat.moons + 1} moons old')
 
         elif not random.getrandbits(9):  # multiple deaths, 1/512
             name = str(cat.name)
@@ -1120,42 +1084,37 @@ class Events():
                     return
             other_name = str(other_cat.name)
             cause_of_death = [
-                name + ' and ' + other_name + ' die from eating poisoned prey'
+                f'{name} and {other_name} die from eating poisoned prey'
             ]
             if game.clan.current_season == 'Leaf-bare':
                 if cat.status == 'kitten' and other_cat.status == 'kitten':
                     cause_of_death = [
-                        'Greencough reaches the nursery. ' + name + ' and ' + other_name + ' die',
-                        name + ' and ' + other_name + ' die from a bout of kittencough',
-                        name + ' and ' + other_name + ' catch whitecough and fade away quickly'
+                        f'Greencough reaches the nursery. {name} and {other_name} die',
+                        f'{name} and {other_name} die from a bout of kittencough',
+                        f'{name} and {other_name} catch whitecough and fade away quickly'
                     ]
                 else:
                     cause_of_death = [
-                        name + ' and ' + other_name + ' die of greencough',
-                        name + ' and ' + other_name + ' die of yellowcough',
-                        'A bad case of greencough strikes, and ' + name + ' and ' + other_name +
-                        ' die'
+                        f'{name} and {other_name} die of greencough',
+                        f'{name} and {other_name} die of yellowcough',
+                        f'A bad case of greencough strikes, and {name} and {other_name} die'
                     ]
                 
             if cat.status not in ['elder', 'kitten'] and other_cat.status not in ['elder', 'kitten']:
                 cause_of_death.extend([
-                    name + ' and ' + other_name +
-                    ' are killed in a border skirmish',
-                    name + ' and ' + other_name +
-                    ' are killed in a battle against a gang of rogues'
+                    f'{name} and {other_name} are killed in a border skirmish',
+                    f'{name} and {other_name} are killed in a battle against a gang of rogues'
                 ])
             if cat.mate is not None and cat.age == other_cat.age and other_cat.mate is None:
                 if cat.status == 'leader':
                     game.clan.leader_lives -= 10
                 game.cur_events_list.append(
-                    name + ' is killed by ' + other_name +
-                    ' in an argument over ' +
-                    str(Cat.all_cats.get(cat.mate).name))
+                    f'{name} is killed by {other_name} in an argument over {Cat.all_cats.get(cat.mate).name}')
                 cat.die()
                 return
             if cat.status == 'leader' or other_cat.status == 'leader':
                 game.clan.leader_lives -= 1
-                game.cur_events_list.append(choice(cause_of_death) + ' and the leader lost a life')
+                f'{game.cur_events_list.append(choice(cause_of_death))} and the leader lost a life'
             else:
                 game.cur_events_list.append(choice(cause_of_death))
             cat.die()
@@ -1179,19 +1138,16 @@ class Events():
                 and randint(1, murder_chance) == 1:
                 if cat.status == 'deputy' and other_cat.status == 'leader' and current_lives <= 6:
                         cause_of_death = [
-                            name + ' murdered ' + other_name +
-                            ' in cold blood to take their place',
-                            name + ' murdered ' + other_name +
-                            ' to take their place and made it look like an accident'
+                            f'{name} murdered {other_name} in cold blood to take their place',
+                            f'{name} murdered {other_name} to take their place and made it look like an accident'
                         ]
                         game.clan.leader_lives = 0
                         other_cat.die()
                         game.cur_events_list.append(choice(cause_of_death))
                 elif cat.status == 'deputy' and other_cat.status == 'leader' and current_lives >= 7:
                         cause_of_death = [
-                        name + ' murdered ' + other_name +
-                        ' to take their place, but the leader had more lives than they expected. ' +
-                        other_name + ' retaliated and killed ' + name + ' in self-defense'
+                        f'{name} murdered {other_name} to take their place, but the leader had more lives than they expected.\
+                        {other_name} retaliated and killed {name} in self-defense'
                         ]
                         liveslost = choice([1, 2, 3, 4])
                         game.clan.leader_lives = current_lives - liveslost                            
@@ -1200,19 +1156,16 @@ class Events():
                 elif cat.status == 'warrior':
                         if other_cat.status == 'leader' and current_lives <= 6:
                             cause_of_death = [
-                            name + ' murdered ' + other_name +
-                            ' in cold blood in hopes of taking their place',
-                            name + ' murdered ' + other_name +
-                            ' in cold blood and made it look accidental in hopes of taking their place'
+                            f'{name} murdered {other_name} in cold blood in hopes of taking their place',
+                            f'{name} murdered {other_name} in cold blood and made it look accidental in hopes of taking their place'
                             ]
                             game.clan.leader_lives -= 10
                             other_cat.die()
                             game.cur_events_list.append(choice(cause_of_death))
                         elif other_cat == 'leader' and current_lives >= 7:
                             cause_of_death = [
-                            name + ' murdered ' + other_name +
-                            ' in hopes of taking their place, but the leader had more lives than they expected. ' +
-                            other_name + ' retaliated and killed ' + name + ' in self-defense'
+                            f'{name} murdered {other_name} in hopes of taking their place, but the leader had more lives than they expected.\
+                            {other_name} retaliated and killed {name} in self-defense'
                             ]
                             liveslost = choice([1, 2, 2, 2, 3, 3, 3, 4])
                             game.clan.leader_lives = current_lives - liveslost
@@ -1220,10 +1173,8 @@ class Events():
                             game.cur_events_list.append(choice(cause_of_death))
                         elif other_cat.status == 'deputy':
                             cause_of_death = [
-                            name + ' murdered ' + other_name +
-                            ' in cold blood in hopes of taking their place',
-                            name + ' murdered ' + other_name +
-                            ' in cold blood and made it look accidental in hopes of taking their place'
+                            f'{name} murdered {other_name} in cold blood in hopes of taking their place',
+                            f'{name} murdered {other_name} in cold blood and made it look accidental in hopes of taking their place'
                             ]
                             other_cat.die()
                             game.cur_events_list.append(choice(cause_of_death))                        
@@ -1231,19 +1182,16 @@ class Events():
             elif cat.trait in ['bloodthirsty', 'vengeful', 'sadistic'] and not int(random.random() * murder_chance):
                     if other_cat.status == 'leader' and current_lives <= 6:
                         cause_of_death = [
-                        name + ' murdered ' + other_name +
-                        ' in cold blood ',
-                        name + ' murdered ' + other_name +
-                        ' in cold blood and made it look accidental'
+                        f'{name} murdered {other_name} in cold blood ',
+                        f'{name} murdered {other_name} in cold blood and made it look accidental'
                         ]
                         game.clan.leader_lives -= 10
                         other_cat.die()
                         game.cur_events_list.append(choice(cause_of_death))
                     elif other_cat == 'leader' and current_lives >= 7:                            
                         cause_of_death = [
-                        name + ' murdered ' + other_name +
-                        ', but the leader had more lives than they expected. ' +
-                        other_name + ' retaliated and killed ' + name + ' in self-defense'
+                        f'{name} murdered {other_name}, but the leader had more lives than they expected.\
+                        {other_name} retaliated and killed {name} in self-defense'
                         ]
                         liveslost = choice([1, 2, 3, 4])
                         game.clan.leader_lives = current_lives - liveslost
@@ -1251,25 +1199,19 @@ class Events():
                         game.cur_events_list.append(choice(cause_of_death))
                     else:
                         cause_of_death = [
-                        name + ' murdered ' + other_name +
-                        ' in cold blood ',
-                        name + ' murdered ' + other_name +
-                        ' in cold blood and made it look accidental'
+                        f'{name} murdered {other_name} in cold blood ',
+                        f'{name} murdered {other_name} in cold blood and made it look accidental'
                         ]
                         other_cat.die()
                         game.cur_events_list.append(choice(cause_of_death))
             elif cat.status in ['medicine cat', 'medicine cat apprentice']\
             and cat.trait in ['bloodthirsty', 'vengeful', 'sadistic'] and not int(random.random() * murder_chance):
                 cause_of_death = [
-                        name + ' killed ' + other_name +
-                        ' by giving them deathberries', name + ' killed ' +
-                        other_name + ' by giving them foxglove seeds',
-                        name + ' killed ' + other_name +
-                        ' by giving them nightshade berries',
-                        name + ' killed ' + other_name +
-                        ' by giving them water hemlock',
-                        name + ' killed ' + other_name +
-                        ' by consciously giving them the wrong herbs'
+                        f'{name} killed {other_name} by giving them deathberries', 
+                        f'{name} killed {other_name} by giving them foxglove seeds',
+                        f'{name} killed {other_name} by giving them nightshade berries',
+                        f'{name} killed {other_name} by giving them water hemlock',
+                        f'{name} killed {other_name} by consciously giving them the wrong herbs'
                     ]
                 if other_cat == 'leader':
                     game.clan.leader_lives -= 10
@@ -1283,22 +1225,17 @@ class Events():
                 if cat.status != 'leader':
                     cat.die()
                     game.cur_events_list.append(
-                        str(cat.name) +
-                        ' has passed due to their old age at ' +
-                        str(cat.moons + 1) + ' moons old')
+                        f'{cat.name} has passed due to their old age at {cat.moons + 1} moons old')
                 else:
                     game.clan.leader_lives -= 1
                     cat.die()
                     game.cur_events_list.append(
-                        str(cat.name) +
-                        ' has lost a life due to their old age at ' +
-                        str(cat.moons + 1) + ' moons old')
+                        f'{cat.name} has lost a life due to their old age at {cat.moons + 1} moons old')
             if cat.status == 'leader' and cat.moons > 269:
                 game.clan.leader_lives -= 10
                 cat.die()
                 game.cur_events_list.append(
-                    str(cat.name) + ' has passed due to their old age at ' +
-                    str(cat.moons + 1) + ' moons old')
+                    f'{cat.name} has passed due to their old age at {cat.moons + 1} moons old')
 
         if game.settings.get('disasters') is True:
             alive_count = 0
@@ -1321,24 +1258,36 @@ class Events():
                 chance = int(alive_count / 10)
                 if randint(chance, 800) == 1:
                     disaster = []
-                    dead_cats = random.sample(alive_cats, 5) # alive_cats, death_count for when scaling is added
-                    name1 = str(dead_cats[0].name)
-                    name2 = str(dead_cats[1].name)
-                    name3 = str(dead_cats[2].name)
-                    name4 = str(dead_cats[3].name)
-                    name5 = str(dead_cats[4].name)
+                    dead_names = []
+                    dead_cats = random.sample(alive_cats, dead_count) # alive_cats, death_count for when scaling is added
+                    for cat in dead_cats:
+                        dead_names.append(cat.name)
+                    print(str(dead_names))
+                    if dead_count == 2:
+                        last_name = dead_names.pop(-1)
+                        names = str(dead_names) + ' and ' + str(last_name)
+                        names = names.replace('[', '')
+                        names = names.replace(']', '')
+                        print(names)
+                    elif dead_count >= 3:
+                        last_name = dead_names.pop(-1)
+                        names = str(dead_names) + ', and ' + str(last_name)
+                        names = names.replace('[', '')
+                        names = names.replace(']', '')
+                    else:
+                        names = str(dead_names).replace('[', '')
+                        names = names.replace(']', '')
                     if cat.status in dead_cats != 'kitten':
                         disaster.extend([
-                            ' drown after the camp becomes flooded',
-                            ' are killed in a battle against ' +
-                            choice(other_clan).name + 'Clan',
-                            ' are killed after a fire rages through the camp',
-                            ' are killed in an ambush by a group of rogues',
-                            ' go missing in the night',
-                            ' are killed after a badger attack',
-                            ' die to a greencough outbreak',
-                            ' are taken away by twolegs',
-                            ' eat poisoned freshkill and die'
+                            f' drown after the camp becomes flooded',
+                            f' are killed in a battle against {choice(other_clan).name}Clan',
+                            f' are killed after a fire rages through the camp',
+                            f' are killed in an ambush by a group of rogues',
+                            f' go missing in the night',
+                            f' are killed after a badger attack',
+                            f' die to a greencough outbreak',
+                            f' are taken away by twolegs',
+                            f' eat poisoned freshkill and die'
                         ])
                         if game.clan.current_season == 'Leaf-bare':
                             disaster.extend([
@@ -1370,8 +1319,20 @@ class Events():
                                 ' die after the water dries up from drought'
                             ])
 
-                    game.cur_events_list.append(name1 + ", " + name2 + ", " + name3 + ", " + name4 + ", and " + name5 + choice(disaster))
+                    if dead_count >= 2:
+                        game.cur_events_list.append(f'{names}{choice(disaster)}')
+                    else:
+                        disaster_str = choice(disaster)
+                        disaster_str = disaster_str.replace('are', 'is')
+                        disaster_str = disaster_str.replace('go', 'goes')
+                        disaster_str = disaster_str.replace('die', 'dies')
+                        disaster_str = disaster_str.replace('drown', 'drowns')
+                        disaster_str = disaster_str.replace('eat', 'eats')
+                        disaster_str = disaster_str.replace('starve', 'starves')
+                        disaster_event = str(disaster_str)
+                        game.cur_events_list.append(f'{names}{disaster_event}')
                     for cat in dead_cats:
+                        print(str(cat.name) + " dies")
                         cat.die()
 
     def coming_out(self, cat):
@@ -1389,7 +1350,7 @@ class Events():
                 transing_chance = random.getrandbits(10)  # 2/1028
                 
             if transing_chance:
-                # transing_chance != 0, no trans kitties today...
+                # transing_chance != 0, no trans kitties today...    L
                 return
 
             if random.getrandbits(1):  # 50/50
