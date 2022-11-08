@@ -149,7 +149,7 @@ class Name():
         ],
         'BLACK': [
             'Black', 'Black', 'Shade', 'Crow', 'Raven', 'Ebony', 'Dark',
-            'Night', 'Shadow', 'Scorch'
+            'Night', 'Shadow', 'Scorch', 'Midnight'
         ],
         'PALEGINGER': [
             'Sand', 'Yellow', 'Pale', 'Sun', 'Light', 'Lion', 'Bright',
@@ -260,7 +260,7 @@ class Name():
         "Leo", "Tucker", "Minette", "Milo", "Fork", "Penny", "Zelda", "Jake", 
         "Felix", "Oliver", "Kitty", "Chloe", "Angel", "Samantha", "Muschi", 
         "Chicco", "Caramel", "Charlotte", "Chanel", "Lola", "Ollie", "Boo", 
-        "Frankie", "Hotdog", "Beverly"
+        "Frankie", "Hotdog", "Beverly", "Mera", "Tasha"
     ]
 
     if os.path.exists('saves/prefixlist.txt'):

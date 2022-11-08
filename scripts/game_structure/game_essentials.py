@@ -299,6 +299,9 @@ class Game():
                 "parent1": inter_cat.parent1,
                 "parent2": inter_cat.parent2,
                 "mentor": inter_cat.mentor.ID if inter_cat.mentor else None,
+                "former_mentor": [cat.ID for cat in inter_cat.former_mentor] if inter_cat.former_mentor else [],
+                "patrol_with_mentor": inter_cat.patrol_with_mentor if inter_cat.patrol_with_mentor else 0,
+                "mentor_influence": inter_cat.mentor_influence if inter_cat.mentor_influence else [],
                 "mate": inter_cat.mate,
                 "dead": inter_cat.dead,
                 "paralyzed": inter_cat.paralyzed,
@@ -330,7 +333,8 @@ class Game():
                 "experience": inter_cat.experience,
                 "dead_moons": inter_cat.dead_for,
                 "current_apprentice": [appr.ID for appr in inter_cat.apprentice],
-                "former_apprentices": [appr.ID for appr in inter_cat.former_apprentices]
+                "former_apprentices": [appr.ID for appr in inter_cat.former_apprentices],
+                "scar_event": inter_cat.scar_event if inter_cat.scar_event else []
             }
             clan_cats.append(cat_data)
             if not inter_cat.dead:
