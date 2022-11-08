@@ -654,7 +654,7 @@ class ProfileScreen(Screens):
                     elif x == 0 and event_words[0] != str(the_cat.name):
                         event_words[0] = str(the_cat.name)
                     the_cat.scar_event[x] = ' '.join(event_words)
-                scar_history = '. '.join(the_cat.scar_event)
+                scar_history = ' '.join(the_cat.scar_event)
                 history.append(scar_history)
 
 
