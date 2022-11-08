@@ -907,7 +907,7 @@ class ProfileScreen(Screens):
                                       )
 
             # change cat to trans male
-            if the_cat.genderalign == "female":
+            if the_cat.gender == "female" and the_cat.genderalign in ['male', 'female']:
                 buttons.draw_image_button((402, 486),
                                           button_name='change_trans_male',
                                           text='change to trans male',
@@ -918,7 +918,7 @@ class ProfileScreen(Screens):
                     the_cat.genderalign = 'trans male'
 
             # change cat to trans female
-            elif the_cat.genderalign == "male":
+            elif the_cat.gender == "male" and the_cat.genderalign in ['male', 'female']:
                 buttons.draw_image_button((402, 486),
                                           button_name='change_trans_female',
                                           text='change to trans female',
