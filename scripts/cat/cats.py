@@ -1,6 +1,7 @@
 from random import choice, randint
 import math
 import os.path
+import itertools
 import ujson
 
 from .pelts import *
@@ -13,7 +14,6 @@ from scripts.conditions import Illness, Injury
 from scripts.utility import *
 from scripts.game_structure.game_essentials import *
 from scripts.cat_relations.relationship import *
-
 
 class Cat():
     used_screen = screen
@@ -85,6 +85,7 @@ class Cat():
 
     all_cats = {}  # ID: object
     other_cats = {}  # cats outside the clan
+    id_iter = itertools.count()
 
     def __init__(self,
                  prefix=None,
@@ -136,10 +137,10 @@ class Cat():
 
         # setting ID
         if ID is None:
-            potential_ID = str(randint(10000, 9999999))
-            while potential_ID in self.all_cats:
-                potential_ID = str(randint(10000, 9999999))
-            self.ID = potential_ID
+            potential_id = str(next(Cat.id_iter))
+            while potential_id in self.all_cats:
+                potential_id = str(next(Cat.id_iter))
+            self.ID = potential_id
         else:
             self.ID = ID
 
@@ -557,15 +558,13 @@ class Cat():
 # ---------------------------------------------------------------------------- #
 #                                   relative                                   #
 # ---------------------------------------------------------------------------- #
-
     def get_parents(self):
         """Returns list containing parents of cat."""
-        parents = []
-        if self.parent1 is not None:
-            parents.append(self.parent1)
-            if self.parent2 is not None:
-                parents.append(self.parent2)
-        return parents
+        if self.parent1:
+            if self.parent2:
+                return [self.parent1, self.parent2]
+            return [self.parent1]
+        return []
 
     def get_siblings(self):
         """Returns list of the siblings."""
@@ -577,23 +576,15 @@ class Cat():
 
     def is_grandparent(self, other_cat):
         """Check if the cat is the grandparent of the other cat."""
+        # Get parents ID
         parents = other_cat.get_parents()
-        left_parents = []
-        right_parents = []
-        if len(parents) == 2:
-            left_p = Cat.all_cats.get(parents[0])
-            if left_p is not None:
-                left_parents = left_p.get_parents()
-            right_p = Cat.all_cats.get(parents[1])
-            if right_p is not None:
-                right_parents = right_p.get_parents()
-        if len(parents) == 1:
-            left_p = Cat.all_cats.get(parents[0])
-            if left_p is not None:
-                left_parents = left_p.get_parents()
-
-        if self.ID in left_parents or self.ID in right_parents:
-            return True
+        for parent in parents:
+            # Get parent 'Cat'
+            parent_obj = Cat.all_cats.get(parent)
+            if parent_obj:
+                # If there are parents, get grandparents and check if our ID is among them.
+                if self.ID in parent_obj.get_parents():
+                    return True
         return False
 
     def is_parent(self, other_cat):
@@ -831,7 +822,6 @@ class Cat():
 # ---------------------------------------------------------------------------- #
 #                                 relationships                                #
 # ---------------------------------------------------------------------------- #
-
     def is_potential_mate(self, other_cat, for_love_interest = False, former_mentor_setting = game.settings['romantic with former mentor']):
         """Checks if this cat is a free and potential mate for the other cat."""
         # just to be sure, check if it is not the same cat
@@ -844,10 +834,10 @@ class Cat():
 
         # check for current mate
         # if the cat has a mate, they are not open for a new mate
-        if not for_love_interest and self.mate is not None:
+        if not for_love_interest and self.mate:
             return False
 
-        if self.mate is not None or other_cat.mate is not None:
+        if self.mate or other_cat.mate:
             return False
 
         # check for mentor
@@ -855,13 +845,31 @@ class Cat():
         if is_former_mentor and not former_mentor_setting:
             return False
 
-        # check for relation
-        far_related = self.is_grandparent(other_cat) or other_cat.is_grandparent(self)
-        direct_related = self.is_sibling(other_cat) or self.is_parent(other_cat) or other_cat.is_parent(self)
-        indirect_related = self.is_uncle_aunt(other_cat) or other_cat.is_uncle_aunt(self)
-        if direct_related or indirect_related or far_related:
-            return False
-
+        # Relationship checks
+        # We don't need to parental checks if the cats have no parents =3
+        # Apparently, parent2 can't exist without parent1, so we only need to check parent1
+        if self.parent1 or other_cat.parent1:
+            # Check for relation via other_cat's parents (parent/grandparent)
+            if other_cat.parent1:
+                if self.is_grandparent(other_cat) or self.is_parent(other_cat):
+                    return False
+                # Check for uncle/aunt via self's sibs & other's parents
+                if self.siblings:
+                    if self.is_uncle_aunt(other_cat):
+                        return False
+                # Check for sibs via self's parents and other_cat's parents
+                if self.parent1:
+                    if self.is_sibling(other_cat) or other_cat.is_sibling(self):
+                        return False
+            # Check for relation via self's parents (parent/grandparent)
+            if self.parent1:
+                if other_cat.is_grandparent(self) or other_cat.is_parent(self):
+                    return False
+                # Check for uncle/aunt via other_cat's sibs & self's parents
+                if other_cat.siblings:
+                    if other_cat.is_uncle_aunt(self):
+                        return False
+                    
         # check for age
         if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
             return False
@@ -869,9 +877,13 @@ class Cat():
         if self.age == other_cat.age:
             return True
 
-        invalid_age_mate = ['kitten', 'adolescent']
-        not_invalid_age = self.age not in invalid_age_mate and other_cat.age not in invalid_age_mate
-        if not_invalid_age and abs(self.moons - other_cat.moons) <= 40:
+        #if set(['kitten', 'adolescent']) & set([self.age, other_cat.age]):
+        #    return False
+        # ugly but faster
+        if self.age in "kittenadolescent" or other_cat.age in "kittenadolescent":
+            return False
+        
+        if abs(self.moons - other_cat.moons) <= 40:
             return True
 
         return False
