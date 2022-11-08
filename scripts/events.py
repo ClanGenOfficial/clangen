@@ -95,9 +95,8 @@ class Events():
             return
         
         self.living_cats += 1
-
-        self.perform_ceremonies(cat) # here is age up included
         self.handle_deaths(cat)
+        self.perform_ceremonies(cat) # here is age up included
         if not self.new_cat_invited or self.living_cats < 10:
             self.invite_new_cats(cat)
         self.other_interactions(cat)
