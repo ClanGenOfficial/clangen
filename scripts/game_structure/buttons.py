@@ -203,6 +203,9 @@ class Button():
                     game.clan.deputy = None
                 Cat.all_cats[cat_value].exiled = True
                 Cat.other_cats[cat_value] = Cat.all_cats[cat_value]
+            elif text == 'Exile to DF':
+                if Cat.all_cats[str(cat_value)].dead:
+                    Cat.all_cats[str(cat_value)].df = True
             elif text == 'Change to Trans Male':
                 Cat.all_cats[cat_value].genderalign = "trans male"
             elif text == 'Change to Trans Female':
@@ -243,6 +246,10 @@ class Button():
                     Cat.other_cats[cat_value] = Cat.all_cats[
                         cat_value]
                     game.switches['cur_screen'] = 'other screen'
+                elif text == 'Exile to DF':
+                    if Cat.all_cats[cat_value].dead:
+                        Cat.all_cats[cat_value].df = True
+                    game.switches['cur_screen'] = 'dark forest screen'
                 elif text == 'Change to Trans Male':
                     Cat.all_cats[cat_value].genderalign = "trans male"
                 elif text == 'Change to Trans Female':

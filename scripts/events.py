@@ -1389,7 +1389,7 @@ class Events():
                 transing_chance = random.getrandbits(10)  # 2/1028
                 
             if transing_chance:
-                # transing_chance != 0, no trans kitties today...
+                # transing_chance != 0, no trans kitties today...    L
                 return
 
             if random.getrandbits(1):  # 50/50
