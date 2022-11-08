@@ -575,21 +575,33 @@ class ProfileScreen(Screens):
                                       )
 
             screen.blit(ProfileScreen.backstory_tab, (65, 465))
-
             history = []
 
+            # this is all a WIP, I'm working on both organizing history into tab categories
+            # and saving/displaying history - Scribble
+            # ---------------------------------------------------------------------------- #
+            #                                 life sub tab                                 #
+            # ---------------------------------------------------------------------------- #
             bs_blurb = bs_blurb_text(the_cat, backstory=the_cat.backstory)
 
             # append backstory blurb to history
             if bs_blurb is not None:
                 history.append(str(bs_blurb))
 
+            # ---------------------------------------------------------------------------- #
+            #                               relation sub tab                               #
+            # ---------------------------------------------------------------------------- #
+
             # check if cat has any mentor influence, else assign None
-            if the_cat.mentor_influence:
+
+
+            if len(the_cat.mentor_influence) >= 1:
                 influenced_trait = str(the_cat.mentor_influence[0]).casefold()
-                influenced_skill = str(the_cat.mentor_influence[1]).casefold()
             else:
                 influenced_trait = None
+            if len(the_cat.mentor_influence) >= 2:
+                influenced_skill = str(the_cat.mentor_influence[1]).casefold()
+            else:
                 influenced_skill = None
 
             # if they did have mentor influence, check if skill or trait influence actually happened and assign None
@@ -599,8 +611,7 @@ class ProfileScreen(Screens):
                 influenced_trait = None
 
             # if cat had mentor influence then write history text for those influences and append to history
-            if influenced_skill is not None and influenced_skill != 'none' \
-                    or influenced_trait is not None and influenced_trait != 'none':
+            if influenced_skill is not None or influenced_trait is not None:
                 # assign proper grammar to skills
                 if influenced_skill in Cat.skill_groups.get('special'):
                     adjust_skill = f'unlock their abilities as a {influenced_skill}'
@@ -630,6 +641,18 @@ class ProfileScreen(Screens):
                 elif influenced_trait is not None and influenced_skill is not None:
                     history.append(f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill}.")
 
+            # ---------------------------------------------------------------------------- #
+            #                              good deeds sub tab                              #
+            # ---------------------------------------------------------------------------- #
+
+            # ---------------------------------------------------------------------------- #
+            #                              evil deeds sub tab                              #
+            # ---------------------------------------------------------------------------- #
+
+
+
+
+
             if the_cat.scar_event:
                 for x in range(len(the_cat.scar_event)):
                     event_words = the_cat.scar_event[x].split()
@@ -655,16 +678,16 @@ class ProfileScreen(Screens):
                 scar_history = ' '.join(the_cat.scar_event)
                 history.append(scar_history)
 
-
-
             # join together history list with line breaks
             display_history = '\n'.join(history)
 
             # display cat backstory and blurb in tab
             verdana_small_dark.blit_text(f'{display_history}',
-                                   (90, 485),
-                                   x_limit=550,
-                                   line_break=30)
+                                         (90, 485),
+                                         x_limit=695,
+                                         line_break=25,
+                                         line_spacing=15
+                                         )
 
         # opens backstory tab if clicked
         else:
