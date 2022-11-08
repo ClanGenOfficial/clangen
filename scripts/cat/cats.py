@@ -148,11 +148,16 @@ class Cat():
         # age and status
         if status is None and moons is None:
             self.age = choice(self.ages)
-        elif moons is not None:
-            for key_age in self.age_moons.keys():
-                if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1]+1):
-                    self.age = key_age
-                    self.moons = moons
+        elif moons:
+            self.moons = moons
+            if moons > 300:
+                # Out of range, always elder
+                self.age = 'elder'
+            else:
+                # In range
+                for key_age in self.age_moons.keys():
+                    if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1]+1):
+                        self.age = key_age
         else:
             if status in ['kitten', 'elder']:
                 self.age = status
