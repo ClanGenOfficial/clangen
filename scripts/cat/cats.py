@@ -363,7 +363,7 @@ class Cat():
                             self.trait = chosen_trait
                             print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
         elif self.moons == 12:
-            chance = randint(0, 9) + self.patrol_with_mentor  # chance for cat to gain new trait or keep old
+            chance = randint(0, 9) + int(self.patrol_with_mentor)  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
                 self.mentor_influence.append('None')
@@ -382,7 +382,7 @@ class Cat():
                             self.trait = chosen_trait
                             self.mentor_influence.append('None')
                             print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
-            elif chance >= 8:
+            elif chance >= 7:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
                     if self.mentor is not None:
@@ -595,7 +595,7 @@ class Cat():
             elif self.status not in ['apprentice', 'medicine cat apprentice', 'kitten', 'elder']:
                 possible_groups = ['star', 'smart', 'teach', 'hunt', 'fight', 'speak']
                 if self.former_mentor is not None:
-                    chance = randint(0, 9) + self.patrol_with_mentor
+                    chance = randint(0, 9) + int(self.patrol_with_mentor)
                     mentor = self.former_mentor[-1]
                     if chance >= 9:
                         for x in possible_groups:
@@ -603,8 +603,7 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 self.mentor_influence.append(self.skill)
-                                print('skill from mentor')
-
+                                print('skill from mentor. chance:', chance)
 
                     else:
                         self.skill = choice(self.skills)
@@ -938,9 +937,7 @@ class Cat():
             self.mentor = None
 
         # append and remove from lists if the app has aged up to warrior
-        if self.status == 'warrior':
-            # reset patrol number just to be safe
-            self.patrol_with_mentor = 0
+        if self.status == 'warrior' or self.dead:
             # app has graduated, no mentor needed anymore
             self.mentor = None
             # append and remove
