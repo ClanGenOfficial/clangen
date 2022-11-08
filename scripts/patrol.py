@@ -1011,18 +1011,24 @@ class PatrolEvent():
 
     def __init__(self,
                  patrol_id,
-                 intro_text,
-                 success_text,
-                 fail_text,
-                 decline_text,
-                 chance_of_success,
-                 exp,
+                 biome='Any',
+                 season='Any',
+                 tags=None,
+                 intro_text='',
+                 decline_text='',
+                 chance_of_success=0,
+                 exp=0,
+                 success_text='',
+                 fail_text='',
                  other_clan = None,
                  win_skills = None,
                  win_trait = None,
                  antagonize_text = '',
                  antagonize_fail_text = ''):
         self.patrol_id = patrol_id
+        self.biome = biome
+        self.season = season
+        self.tags = tags
         self.intro_text = intro_text
         self.success_text = success_text
         self.fail_text = fail_text
@@ -1034,6 +1040,18 @@ class PatrolEvent():
         self.win_trait = win_trait
         self.antagonize_text = antagonize_text
         self.antagonize_fail_text = antagonize_fail_text
+
+        """
+        success [0] is the most common
+        success [1] is slightly rarer
+        success [2] is if win skill is applicable
+        success [3] is if win trait is applicable
+
+        fail text [0] is unscathed fail 1
+        fail text [1] is unscathed 2
+        fail text [2] is death
+        fail text [3] is scar
+        """
 
 patrol = Patrol()
 
