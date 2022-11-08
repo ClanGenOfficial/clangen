@@ -1272,7 +1272,7 @@ class Events():
                         last_name = dead_names.pop()  # Get last
                         for name in dead_names:  # In-between
                             names += f", {name}"
-                        names += f" and {last_name}"
+                        names += f", and {last_name}"
                     
                     if cat.status in dead_cats != 'kitten':
                         disaster.extend([
