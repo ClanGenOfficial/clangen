@@ -334,7 +334,8 @@ class Game():
                 "dead_moons": inter_cat.dead_for,
                 "current_apprentice": [appr.ID for appr in inter_cat.apprentice],
                 "former_apprentices": [appr.ID for appr in inter_cat.former_apprentices],
-                "scar_event": inter_cat.scar_event if inter_cat.scar_event else []
+                "scar_event": inter_cat.scar_event if inter_cat.scar_event else [],
+                "df": inter_cat.df
             }
             clan_cats.append(cat_data)
             if not inter_cat.dead:
