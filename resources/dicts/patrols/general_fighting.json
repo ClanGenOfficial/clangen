@@ -13,7 +13,7 @@
     },
     {
         "patrol_id": 301,
-        "intro_text": "Your patrol comes catches the scent of a fox",
+        "intro_text": "Your patrol catches the scent of a fox",
         "success_text": "Your patrol drives away the fox and her cubs",
         "fail_text": "The mother fox fights to defend her cubs, and r_c is injured in the attack",
         "decline_text": "Your patrol decides not to pursue the fox",
