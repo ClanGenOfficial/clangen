@@ -186,12 +186,18 @@ class StarClanScreen(Screens):
         self.starclan_bg = pygame.transform.scale(
             pygame.image.load("resources/images/starclanbg.png").convert(),
             (800, 700))
-
+        self.search_bar = pygame.transform.scale(
+            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
+        self.clan_name_bg = pygame.transform.scale(
+            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (180, 35))
     def on_use(self):
         bg = self.starclan_bg
         screen.blit(bg, (0, 0))
-        draw_clan_name()
-        verdana_white.text('StarClan Cat List', ('center', 100))
+
+        screen.blit(self.clan_name_bg, (310, 25))
+
+        verdana_big_light.text(f'Starclan', ('center', 32))
+
         dead_cats = [game.clan.instructor]
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
@@ -199,10 +205,9 @@ class StarClanScreen(Screens):
                 dead_cats.append(the_cat)
 
         search_text = game.switches['search_text']
-        pygame.draw.rect(screen, 'lightgray', pygame.Rect((530, 140),
-                                                          (150, 20)))
-        verdana.text('Search: ', (468, 140))
-        verdana_black.text(game.switches['search_text'], (540, 140))
+        screen.blit(self.search_bar, (452, 135))
+        verdana_black.text(game.switches['search_text'], (530, 142))
+
         search_cats = []
         if search_text.strip() != '':
             for cat in dead_cats:
@@ -271,13 +276,20 @@ class StarClanScreen(Screens):
 
         draw_menu_buttons()
         
-        #placeholder button
-        buttons.draw_button((150, 135),
-                              button_name='darkforest',
-                              text='DF',
-                              cur_screen='dark forest screen',
-                              size=(88, 30))
 
+        buttons.draw_image_button((150, 135),
+                                  button_name='sc_toggle',
+                                  text='SC',
+                                  size=(34, 34),
+                                  cur_screen='starclan screen',
+                                  available=False,
+                                  )
+        buttons.draw_image_button((116, 135),
+                                  button_name='df_toggle',
+                                  text='DF',
+                                  size=(34, 34),
+                                  cur_screen='dark forest screen',
+                                  )
     def screen_switches(self):
         cat_profiles()
 
@@ -599,12 +611,18 @@ class DFScreen(Screens):
         self.df_bg = pygame.transform.scale(
             pygame.image.load("resources/images/darkforestbg.png").convert(),
             (800, 700))
-
+        self.search_bar = pygame.transform.scale(
+            pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
+        self.clan_name_bg = pygame.transform.scale(
+            image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (180, 35))
     def on_use(self):
         bg = self.df_bg
         screen.blit(bg, (0, 0))
-        draw_clan_name()
-        verdana_white.text('Dark Forest Cat List', ('center', 100))
+
+        screen.blit(self.clan_name_bg, (310, 25))
+
+        verdana_big_light.text(f'Dark Forest', ('center', 32))
+
         dead_cats = []
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
@@ -612,10 +630,8 @@ class DFScreen(Screens):
                 dead_cats.append(the_cat)
 
         search_text = game.switches['search_text']
-        pygame.draw.rect(screen, 'lightgray', pygame.Rect((530, 140),
-                                                          (150, 20)))
-        verdana.text('Search: ', (468, 140))
-        verdana_black.text(game.switches['search_text'], (540, 140))
+        screen.blit(self.search_bar, (452, 135))
+        verdana_black.text(game.switches['search_text'], (530, 142))
         search_cats = []
         if search_text.strip() != '':
             for cat in dead_cats:
@@ -683,13 +699,22 @@ class DFScreen(Screens):
                                       hotkey=[21])
 
         draw_menu_buttons()
-        
-        #placeholder button
-        buttons.draw_button((150, 135),
-                              button_name='starclan',
-                              text='SC',
-                              cur_screen='starclan screen',
-                              size=(88, 30))
+
+
+
+        buttons.draw_image_button((150, 135),
+                                  button_name='sc_toggle',
+                                  text='SC',
+                                  size=(34, 34),
+                                  cur_screen='starclan screen',
+                                  )
+        buttons.draw_image_button((116, 135),
+                                  button_name='df_toggle',
+                                  text='DF',
+                                  size=(34, 34),
+                                  cur_screen='dark forest screen',
+                                  available=False,
+                                  )
 
 
     # def screen_switches(self):
