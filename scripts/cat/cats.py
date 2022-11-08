@@ -148,7 +148,7 @@ class Cat():
         # age and status
         if status is None and moons is None:
             self.age = choice(self.ages)
-        elif moons:
+        elif moons is not None:
             self.moons = moons
             if moons > 300:
                 # Out of range, always elder
