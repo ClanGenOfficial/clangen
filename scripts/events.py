@@ -1252,7 +1252,7 @@ class Events():
                         other_clan = game.clan.all_clans
 
                     # Do some population/weight scrunkling to get amount of deaths
-                    max_deaths = int(alive_count / 1.5)
+                    max_deaths = int(alive_count / 1.5)  # 2/3 of alive cats
                     weights = []
                     population = []
                     for n in range(1, max_deaths):
@@ -1263,7 +1263,7 @@ class Events():
                     
                     disaster = []
                     dead_names = []
-                    dead_cats = random.sample(alive_cats, dead_count) # alive_cats, death_count for when scaling is added
+                    dead_cats = random.sample(alive_cats, dead_count)
                     for cat in dead_cats:
                         dead_names.append(cat.name)
 
