@@ -1090,14 +1090,22 @@ class ProfileScreen(Screens):
                                         size=(172, 36),
                                         )
             else:
-                buttons.draw_button((600, 460),
-                                      button_name='exile_cat',
-                                      text='Exile to DF',
-                                      available=True,
-                                      cat_value=the_cat,
-                                      size=(172, 36),
-                                      )
-
+                if not the_cat.df:
+                    buttons.draw_button((600, 460),
+                                        button_name='exile_cat',
+                                        text='Exile to DF',
+                                        available=True,
+                                        cat_value=the_cat,
+                                        size=(172, 36),
+                                        )
+                else:
+                    buttons.draw_button((600, 460),
+                                        button_name='exile_cat',
+                                        text='Exile to DF',
+                                        available=False,
+                                        cat_value=the_cat,
+                                        size=(172, 36),
+                                        )
             # button to kill cat
             if not the_cat.dead and not the_cat.exiled:
                 buttons.draw_image_button((578, 486),
