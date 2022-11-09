@@ -160,7 +160,9 @@ class EventsScreen(Screens):
         if game.cur_events_list is not None and game.cur_events_list != []:
             for i in range(len(game.cur_events_list)):
                 if not isinstance(game.cur_events_list[i], str):
-                    game.cur_events_list.remove(i)
+                    game.cur_events_list.remove(game.cur_events_list[i])
+                    break
+                    
             events = '\n'.join(game.cur_events_list)
             verdana.blit_text(events,
                               (100, 290 + y_pos),

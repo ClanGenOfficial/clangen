@@ -247,10 +247,6 @@ class Button():
                     Cat.other_cats[cat_value] = Cat.all_cats[
                         cat_value]
                     game.switches['cur_screen'] = 'other screen'
-                elif text == 'Exile to DF':
-                    if Cat.all_cats[cat_value].dead:
-                        Cat.all_cats[cat_value].df = True
-                    game.switches['cur_screen'] = 'dark forest screen'
                 elif text == 'Change to Trans Male':
                     Cat.all_cats[cat_value].genderalign = "trans male"
                 elif text == 'Change to Trans Female':
@@ -285,6 +281,12 @@ class Button():
         add = values['add'] if 'add' in values.keys() else False
         remove = values['remove'] if 'remove' in values.keys() else False
         for key, value in values.items():
+            if key == 'text'and value == 'Exile to DF':
+                cat_value = Cat.all_cats[str(values['cat_value'])]
+                if cat_value.dead:
+                    cat_value.df = True
+                    cat_value.thought = "Is distraught after being sent to the Place of No Stars"
+                    game.switches['cur_screen'] = 'dark forest screen'
             if cat_value is None:
                 if key in game.switches.keys():
                     if not add:
@@ -313,6 +315,7 @@ class Button():
                     cat_mate.unset_mate(breakup=True)
                     cat_value.unset_mate(breakup=True)
                     game.switches['broke_up'] = True
+        
         if arrow is not None and game.switches['cur_screen'] == 'events screen':
             max_scroll_direction = len(
                 game.cur_events_list) - game.max_events_displayed
