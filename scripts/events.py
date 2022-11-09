@@ -80,8 +80,22 @@ class Events():
                 game.cur_events_list.insert(
                     0, f"{game.clan.name}Clan has no medicine cat!")
             if game.clan.deputy == 0 or game.clan.deputy is None or game.clan.deputy.dead or game.clan.deputy.exiled:
-                game.cur_events_list.insert(
-                    0, f"{game.clan.name}Clan has no deputy!")
+                if game.settings.get('deputy') is True:
+                    random_count = 0
+                    while random_count < 30:
+                        random_cat = str(random.choice(list(Cat.all_cats.keys())))
+                        if not Cat.all_cats[random_cat].dead and not Cat.all_cats[random_cat].exiled:
+                            if Cat.all_cats[random_cat].status == 'warrior' and (len(Cat.all_cats[random_cat].former_apprentices) > 0 or len(Cat.all_cats[random_cat].apprentice) > 0):
+                                Cat.all_cats[random_cat].status = 'deputy'
+                                game.clan.deputy = Cat.all_cats[random_cat]
+                                game.cur_events_list.append(str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy')
+                                break
+                        random_count+=1
+                    if (random_count == 30):
+                        game.cur_events_list.append('The clan decides that no cat is fit to be deputy')
+                else:
+                    game.cur_events_list.insert(
+                        0, f"{game.clan.name}Clan has no deputy!")
             if game.clan.leader.dead or game.clan.leader.exiled:
                 game.cur_events_list.insert(
                     0, f"{game.clan.name}Clan has no leader!")
