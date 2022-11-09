@@ -618,26 +618,20 @@ class ProfileScreen(Screens):
                 # adjust and append scar events to history
                 if the_cat.scar_event:
                     for x in range(len(the_cat.scar_event)):
-                        event_words = the_cat.scar_event[x].split()
-                        for y in range(len(event_words)):
-                            not_scarred = ['wounded', 'injured', 'battered', 'hurt', 'punished']
-                            if event_words[y] == 'is':
-                                event_words[y] = 'was'
-                            elif event_words[y] == 'loses':
-                                event_words[y] = 'lost'
-                            elif event_words[y] == 'forces':
-                                event_words[y] = 'forced'
-                            elif event_words[y] in not_scarred:
-                                event_words[y] = 'scarred'
-                                if event_words[y-1] == 'got':
-                                    event_words[y-1] = 'was'
-                        if x == 1 and event_words[0] == str(the_cat.name):
-                            if event_words[1] == 'was':
-                                event_words.pop(1)
-                                event_words[0] = 'They were also'
-                            else:
-                                event_words[0] = 'They also'
-                        the_cat.scar_event[x] = ' '.join(event_words)
+                        not_scarred = [' wounded ', ' injured ', ' battered ', ' hurt ', ' punished ']
+                        the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(' is ', ' was ', 1)
+                        the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(' loses ', ' lost ')
+                        the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(' forces ', ' forced ')
+                        for y in not_scarred:
+                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(y, ' scarred ')
+                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(' got ', ' was ')
+                            break
+                        if x == 1:
+                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(f'{the_cat.name} was ', 'They were also ', 1)
+                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(str(the_cat.name), 'They also', 1)
+                        if x >= 3:
+                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(f'{the_cat.name} was ', 'Then they were ', 1)
+                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(str(the_cat.name), 'Then they', 1)
                     scar_history = ' '.join(the_cat.scar_event)
                     life_history.append(scar_history)
 
