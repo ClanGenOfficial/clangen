@@ -752,15 +752,6 @@ class Patrol():
                      choice(scars2)])
                 self.patrol_random_cat.scar_event.append(
                     f'{self.patrol_random_cat.name} gained a scar while on patrol.')
-        elif self.patrol_event.patrol_id == 102:
-            self.patrol_random_cat.skill = choice(
-                ['paralyzed', 'blind', 'a 3-legged cat'])
-            self.patrol_random_cat.scar_event.append(
-                f'{self.patrol_random_cat.name} was hit by a car and became {self.patrol_random_cat.skill}.')
-
-            if game.settings['retirement']:
-                self.patrol_random_cat.status_change('elder')
-                self.patrol_random_cat.scar_event.append(f'{self.patrol_random_cat.name} retired after being hit by a monster.')
         elif self.patrol_event.patrol_id == 904:
             if self.patrol_random_cat.specialty is None:
                 self.patrol_random_cat.specialty = "SNAKE"
@@ -772,12 +763,15 @@ class Patrol():
                     f'{self.patrol_random_cat.name} gained a scar while on patrol.')
 
     def handle_retirements(self):
-        if self.patrol_event.patrol_id == 102 and game.settings.get(
-                'retirement'):
+        if game.settings['retirement'] and self.patrol_random_cat.status != 'leader':
             self.patrol_random_cat.status_change('elder')
             self.patrol_random_cat.scar_event.append(
-                f'{self.patrol_random_cat.name} retired after being hit by a monster.'
-            )
+                f'{self.patrol_random_cat.name} retired after being hit by a monster.')
+        else:
+            self.patrol_random_cat.skill = choice(
+                ['paralyzed', 'blind', 'missing a leg'])
+            self.patrol_random_cat.scar_event.append(
+                f'{self.patrol_random_cat.name} is hit by a car and is now {self.patrol_random_cat.skill}.')
 
     def handle_clan_relations(self, difference):
         other_clan = patrol.other_clan

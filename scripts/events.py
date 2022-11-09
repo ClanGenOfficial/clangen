@@ -475,7 +475,7 @@ class Events():
 
                 scar_text.extend([
                     f"{name} lost their tail to {choice(tail_danger)} while following {leader_name}'s orders.",
-                    f"{name} is ordered to fend off {choice(danger)} by {leader_name}, and looses their tail in the ensuing battle.",
+                    f"{name} is ordered to fend off {choice(danger)} by {leader_name}, and loses their tail in the ensuing battle.",
                     ]
                 )
             else:
