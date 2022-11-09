@@ -431,6 +431,7 @@ class Cat():
                             else:
                                 print(self.name, 'TRAIT TYPE from mentor: Reserved', 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
                                       chance)
+                                break
             else:
                 self.mentor_influence.append('None')
                 print(self.name, 'NEW TRAIT TYPE: No change', chance)
@@ -606,6 +607,7 @@ class Cat():
                                 self.skill = choice(possible_skill)
                                 self.mentor_influence.append(self.skill)
                                 print('skill from mentor')
+                                break
                     else:
                         self.skill = choice(self.med_skills)
                         self.mentor_influence.append('None')
@@ -627,6 +629,7 @@ class Cat():
                                 self.skill = choice(possible_skill)
                                 self.mentor_influence.append(self.skill)
                                 print('skill from mentor. chance:', chance)
+                                break
 
                     else:
                         self.skill = choice(self.skills)
