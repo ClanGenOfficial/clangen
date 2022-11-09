@@ -459,6 +459,7 @@ class Cat():
         """Handles a moon skip for a alive cat"""
         if self.exiled:
             # this is handled in events.py
+            self.thoughts()
             return
 
         self.moons += 1

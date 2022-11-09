@@ -283,14 +283,19 @@ class Button():
                     cat_value.thought = "Is distraught after being sent to the Place of No Stars"
                     game.switches['cur_screen'] = 'dark forest screen'
                     update_sprite(Cat.all_cats[str(cat_value)])
-
+            if key == 'text'and value == 'exile cat':
+                cat_value = Cat.all_cats[str(values['cat_value'])]
+                if not cat_value.dead and not cat_value.exiled:
+                    cat_value.exiled = True
+                    cat_value.thought = "Is shocked that they have been exiled"
+                    game.switches['cur_screen'] = 'other screen'
             if cat_value is None:
                 if key in game.switches.keys():
                     if not add:
                         if key == 'cur_screen' and game.switches[
                                 'cur_screen'] in [
                                     'list screen', 'clan screen',
-                                    'starclan screen'
+                                    'starclan screen', 'outside screen'
                                 ]:
                             game.switches['last_screen'] = game.switches[
                                 'cur_screen']
