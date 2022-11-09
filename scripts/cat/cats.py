@@ -402,7 +402,7 @@ class Cat():
                         break
                     if mentor.trait in self.personality_groups[x]:
                         possible_trait = self.personality_groups.get(x)
-                        if x == 'Abrasive' and 8 <= chance <= 10:
+                        if x == 'Abrasive' and chance >= 12:
                             possible_trait = self.personality_groups.get('Reserved')
                             self.mentor_influence.append('Reserved')
                             print(self.name, 'TRAIT TYPE from mentor:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
