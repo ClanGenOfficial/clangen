@@ -103,6 +103,7 @@ class Game():
         'training_territory': (0, 0),
         'options_tab': None,
         'profile_tab_group': None,
+        'sub_tab_group': None,
         'gender_align': None,
         'show_details': False,
         'chosen_cat': None,
