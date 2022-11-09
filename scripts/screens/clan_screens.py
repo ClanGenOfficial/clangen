@@ -668,7 +668,7 @@ class DFScreen(Screens):
                     name = short_name + '...'
 
                 # DISPLAY NAME
-                verdana_white.text(name,
+                verdana_red.text(name,
                                    (155 + pos_x - name_len/2, 240 + pos_y))
                 cats_on_page += 1
                 pos_x += 120
