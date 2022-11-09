@@ -364,9 +364,11 @@ class Cat():
                         if chosen_trait in self.kit_traits:
                             self.trait = choice(self.traits)
                             print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
+                            break
                         else:
                             self.trait = chosen_trait
                             print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
+                            break
         elif self.moons == 12:
             chance = randint(0, 9) + int(self.patrol_with_mentor)  # chance for cat to gain new trait or keep old
             if chance == 0:
@@ -380,13 +382,15 @@ class Cat():
                         possible_trait = self.personality_groups.get(x)
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
-                            self.trait = choice(self.traits)
+                            self.trait = self.trait
                             self.mentor_influence.append('None')
-                            print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
+                            print(self.name, 'NEW TRAIT TYPE: No change - CHANCE', chance)
+                            break
                         else:
                             self.trait = chosen_trait
                             self.mentor_influence.append('None')
                             print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
+                            break
             elif chance >= 7:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
@@ -398,26 +402,35 @@ class Cat():
                         else:
                             mentor = self.former_mentor[0]
                     else:
+                        self.mentor_influence.append('None')
                         print(self.name, 'NEW TRAIT TYPE: No change', chance)
                         break
                     if mentor.trait in self.personality_groups[x]:
                         possible_trait = self.personality_groups.get(x)
+
                         if x == 'Abrasive' and chance >= 12:
                             possible_trait = self.personality_groups.get('Reserved')
                             self.mentor_influence.append('Reserved')
-                            print(self.name, 'TRAIT TYPE from mentor:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
-                                  chance)
                         chosen_trait = choice(possible_trait)
+
                         if chosen_trait in self.kit_traits:
                             self.trait = choice(self.traits)
+                            if self.mentor_influence[0] == 'Reserved':
+                                self.mentor_influence.pop(0)
                             self.mentor_influence.append('None')
                             print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
+                            break
 
                         else:
                             self.trait = chosen_trait
-                            self.mentor_influence.append(x)
-                            print(self.name, 'TRAIT TYPE from mentor:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
-                                  chance)
+                            if 'Reserved' not in self.mentor_influence:
+                                self.mentor_influence.append(x)
+                                print(self.name, 'TRAIT TYPE from mentor:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
+                                      chance)
+                                break
+                            else:
+                                print(self.name, 'TRAIT TYPE from mentor: Reserved', 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
+                                      chance)
             else:
                 self.mentor_influence.append('None')
                 print(self.name, 'NEW TRAIT TYPE: No change', chance)
@@ -437,9 +450,11 @@ class Cat():
                             self.trait = choice(self.traits)
                             print(self.name, 'trait type chosen was kit trait -', self.trait,
                                   'chosen randomly instead')
+                            break
                         else:
                             self.trait = chosen_trait
                             print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
+                            break
             else:
                 print(self.name, 'NEW TRAIT TYPE: No change', chance)
 
