@@ -48,6 +48,8 @@ def draw_back(x_value, y_value):
                                   text='Back',
                                   size=(105, 30),
                                   cur_screen='dark forest screen',
+                                  cat_value = the_cat,
+                                  df = True,
                                   profile_tab_group=None,
                                   hotkey=[0])
     else:
