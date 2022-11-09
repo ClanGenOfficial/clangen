@@ -618,18 +618,21 @@ class ProfileScreen(Screens):
                 # adjust and append scar events to history
                 if the_cat.scar_event:
                     for x in range(len(the_cat.scar_event)):
-                        not_scarred = [' wounded ', ' injured ', ' battered ', ' hurt ', ' punished ']
                         the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(' is ', ' was ', 1)
                         the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(' loses ', ' lost ')
                         the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(' forces ', ' forced ')
+
+                        not_scarred = ['wounded', 'injured', 'battered', 'hurt', 'punished']
                         for y in not_scarred:
+                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(f' got {y} ', ' was scarred ')
                             the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(y, ' scarred ')
-                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(' got ', ' was ')
                             break
-                        if x == 1:
+                        if x == 0:
+                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(f'{the_cat.name} ', 'This cat ', 1)
+                        elif x == 1:
                             the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(f'{the_cat.name} was ', 'They were also ', 1)
                             the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(str(the_cat.name), 'They also', 1)
-                        if x >= 3:
+                        elif x >= 3:
                             the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(f'{the_cat.name} was ', 'Then they were ', 1)
                             the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(str(the_cat.name), 'Then they', 1)
                     scar_history = ' '.join(the_cat.scar_event)
