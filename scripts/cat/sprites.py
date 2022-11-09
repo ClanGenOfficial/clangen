@@ -218,7 +218,7 @@ for x in [
         'tortiecoloursticked', 'tortiecolourssmoke', 'tortiecoloursrosette', 'tortiecoloursspeckled',
         'tortiesextrasolid', 'tortiesextratabby', 'tortiesextrabengal', 'tortiesextramarbled', 'tortiesextraticked',
         'tortiesextrasmoke', 'tortiesextrarosette', 'tortiesextraspeckled', 
-        'medcatherbs', 'medcatherbsextra'
+        'medcatherbs', 'medcatherbsextra', 'lineartdf', 'eyes_df', 'eyesextra_df'
 
 ]:
     sprites.spritesheet(f"sprites/{x}.png", x)
@@ -243,6 +243,8 @@ sprites.make_group('Paralyzed_lineart', (0, 0),
                    sprites_y=1)
 sprites.make_group('shaders', (0, 0), 'shaders', sprites_y=5)
 sprites.make_group('lineartdead', (0, 0), 'lineartdead', sprites_y=5)
+sprites.make_group('lineartdf', (0, 0), 'lineartdf', sprites_y=5)
+
 
 for a, i in enumerate(
     ['YELLOW', 'AMBER', 'HAZEL', 'PALEGREEN', 'GREEN', 'BLUE']):
