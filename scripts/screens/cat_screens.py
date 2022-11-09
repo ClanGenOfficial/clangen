@@ -127,6 +127,8 @@ def bs_blurb_text(cat, backstory=None):
     bs_blurb = None
     if backstory is None:
         bs_blurb = "This cat was born into the clan where they currently reside."
+    if backstory == 'clan_founder':
+        bs_blurb = "This cat is one of the founding members of the clan."
     if backstory == 'clanborn':
         bs_blurb = "This cat was born into the clan where they currently reside."
     if backstory == 'halfclan1':
@@ -191,6 +193,8 @@ def backstory_text(cat):
     bs_display = backstory
     if bs_display == 'clanborn':
         bs_display = 'clanborn'
+    elif bs_display == 'clan_founder':
+        bs_display = 'clan founder'
     elif bs_display in ['halfclan1', 'halfclan2']:
         bs_display = 'half-clan'
     elif bs_display in ['outsider_roots1', 'outsider_roots2']:

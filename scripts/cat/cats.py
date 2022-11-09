@@ -98,7 +98,7 @@ class Cat():
         'clanborn', 'half-clan1', 'half-clan2', 'outsider_roots1', 'outsider_roots2', 
         'loner1', 'loner2', 'kittypet1', 'kittypet2', 'rogue1', 'rogue2', 'abandoned1',
         'abandoned2', 'abandoned3', 'medicine_cat', 'otherclan', 'otherclan2', 'ostracized_warrior', 'disgraced', 
-        'retired_leader', 'refugee', 'tragedy_survivor'
+        'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder'
     ]
 
     all_cats = {}  # ID: object
@@ -599,7 +599,7 @@ class Cat():
 
             elif self.status not in ['apprentice', 'medicine cat apprentice', 'kitten', 'elder']:
                 possible_groups = ['star', 'smart', 'teach', 'hunt', 'fight', 'speak']
-                if self.former_mentor is not None:
+                if self.former_mentor:
                     chance = randint(0, 9) + int(self.patrol_with_mentor)
                     mentor = self.former_mentor[-1]
                     if chance >= 9:
