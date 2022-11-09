@@ -185,8 +185,6 @@ class Button():
         if game.clicked and clickable:
             if apprentice is not None:
                 self.choose_mentor(apprentice, cat_value)
-
-
             elif text in ['Next Cat', 'Previous Cat']:
                 game.switches['cat'] = values.get('cat')
             elif text == 'Prevent kits':
@@ -203,9 +201,7 @@ class Button():
                     game.clan.deputy = None
                 Cat.all_cats[cat_value].exiled = True
                 Cat.other_cats[cat_value] = Cat.all_cats[cat_value]
-            elif text == 'Exile to DF':
-                if Cat.all_cats[str(cat_value)].dead:
-                    Cat.all_cats[str(cat_value)].df = True
+
             elif text == 'Change to Trans Male':
                 Cat.all_cats[cat_value].genderalign = "trans male"
             elif text == 'Change to Trans Female':
@@ -246,10 +242,6 @@ class Button():
                     Cat.other_cats[cat_value] = Cat.all_cats[
                         cat_value]
                     game.switches['cur_screen'] = 'other screen'
-                elif text == 'Exile to DF':
-                    if Cat.all_cats[cat_value].dead:
-                        Cat.all_cats[cat_value].df = True
-                    game.switches['cur_screen'] = 'dark forest screen'
                 elif text == 'Change to Trans Male':
                     Cat.all_cats[cat_value].genderalign = "trans male"
                 elif text == 'Change to Trans Female':
@@ -284,13 +276,26 @@ class Button():
         add = values['add'] if 'add' in values.keys() else False
         remove = values['remove'] if 'remove' in values.keys() else False
         for key, value in values.items():
+            if key == 'text'and value == 'Exile to DF':
+                cat_value = Cat.all_cats[str(values['cat_value'])]
+                if cat_value.dead:
+                    cat_value.df = True
+                    cat_value.thought = "Is distraught after being sent to the Place of No Stars"
+                    game.switches['cur_screen'] = 'dark forest screen'
+                    update_sprite(Cat.all_cats[str(cat_value)])
+            if key == 'text'and value == 'exile cat':
+                cat_value = Cat.all_cats[str(values['cat_value'])]
+                if not cat_value.dead and not cat_value.exiled:
+                    cat_value.exiled = True
+                    cat_value.thought = "Is shocked that they have been exiled"
+                    game.switches['cur_screen'] = 'other screen'
             if cat_value is None:
                 if key in game.switches.keys():
                     if not add:
                         if key == 'cur_screen' and game.switches[
                                 'cur_screen'] in [
                                     'list screen', 'clan screen',
-                                    'starclan screen'
+                                    'starclan screen', 'outside screen'
                                 ]:
                             game.switches['last_screen'] = game.switches[
                                 'cur_screen']
@@ -312,6 +317,7 @@ class Button():
                     cat_mate.unset_mate(breakup=True)
                     cat_value.unset_mate(breakup=True)
                     game.switches['broke_up'] = True
+        
         if arrow is not None and game.switches['cur_screen'] == 'events screen':
             max_scroll_direction = len(
                 game.cur_events_list) - game.max_events_displayed

@@ -103,6 +103,7 @@ class Game():
         'training_territory': (0, 0),
         'options_tab': None,
         'profile_tab_group': None,
+        'sub_tab_group': None,
         'gender_align': None,
         'show_details': False,
         'chosen_cat': None,
@@ -134,7 +135,8 @@ class Game():
         'show dead relation': False,
         'show empty relation': False,
         'romantic with former mentor': True,
-        'game_mode': None
+        'game_mode': None,
+        'deputy': False
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
@@ -153,7 +155,8 @@ class Game():
         'show dead relation': [False, True],
         'show empty relation': [False, True],
         'romantic with former mentor': [False, True],
-        'game_mode': game_mode_list
+        'game_mode': game_mode_list,
+        'deputy': [False, True]
     }  # Lists of possible options for each setting
     settings_changed = False
 
@@ -334,7 +337,8 @@ class Game():
                 "dead_moons": inter_cat.dead_for,
                 "current_apprentice": [appr.ID for appr in inter_cat.apprentice],
                 "former_apprentices": [appr.ID for appr in inter_cat.former_apprentices],
-                "scar_event": inter_cat.scar_event if inter_cat.scar_event else []
+                "scar_event": inter_cat.scar_event if inter_cat.scar_event else [],
+                "df": inter_cat.df
             }
             clan_cats.append(cat_data)
             if not inter_cat.dead:
