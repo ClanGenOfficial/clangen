@@ -1193,31 +1193,8 @@ class ProfileScreen(Screens):
                                   available=game.switches['profile_tab_group'] != 'dangerous'
                                   )
 
+
         if game.switches['profile_tab_group'] == 'dangerous':
-            if not the_cat.dead and not the_cat.exiled:
-                buttons.draw_image_button((578, 450),
-                                        button_name='exile_cat',
-                                        text='exile cat',
-                                        available=True,
-                                        size=(172, 36),
-                                        )
-            else:
-                if not the_cat.df:
-                    buttons.draw_button((600, 460),
-                                        button_name='exile_cat',
-                                        text='Exile to DF',
-                                        available=True,
-                                        cat_value=the_cat,
-                                        size=(172, 36),
-                                        )
-                else:
-                    buttons.draw_button((600, 460),
-                                        button_name='exile_cat',
-                                        text='Exile to DF',
-                                        available=False,
-                                        cat_value=the_cat,
-                                        size=(172, 36),
-                                        )
             # button to kill cat
             if not the_cat.dead and not the_cat.exiled:
                 buttons.draw_image_button((578, 486),
@@ -1234,6 +1211,31 @@ class ProfileScreen(Screens):
                                           kill_cat=the_cat,
                                           available=False
                                           )
+            if not the_cat.dead and not the_cat.exiled:
+                buttons.draw_image_button((578, 450),
+                                          button_name='exile_cat',
+                                          text='exile cat',
+                                          available=True,
+                                          size=(172, 36),
+                                          )
+            else:
+                if not the_cat.df:
+                    buttons.draw_image_button((578, 450),
+                                              button_name='exile_df',
+                                              text='Exile to DF',
+                                              available=True,
+                                              cat_value=the_cat,
+                                              size=(172, 46),
+                                              )
+                else:
+                    buttons.draw_image_button((578, 450),
+                                              button_name='exile_df',
+                                              text='Exile to DF',
+                                              available=False,
+                                              cat_value=the_cat,
+                                              size=(172, 46),
+                                              )
+
 
             # close tab group
             buttons.draw_image_button((578, 522),
