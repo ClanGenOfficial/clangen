@@ -404,6 +404,9 @@ class Cat():
                         possible_trait = self.personality_groups.get(x)
                         if x == 'Abrasive' and 8 <= chance <= 10:
                             possible_trait = self.personality_groups.get('Reserved')
+                            self.mentor_influence.append('Reserved')
+                            print(self.name, 'TRAIT TYPE from mentor:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
+                                  chance)
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
                             self.trait = choice(self.traits)
