@@ -206,6 +206,7 @@ class Button():
             elif text == 'Exile to DF':
                 if Cat.all_cats[str(cat_value)].dead:
                     Cat.all_cats[str(cat_value)].df = True
+                    Cat.all_cats[str(cat_value)].thought = "Is distraught that they have been sent to the Place of No Stars"
             elif text == 'Change to Trans Male':
                 Cat.all_cats[cat_value].genderalign = "trans male"
             elif text == 'Change to Trans Female':

@@ -271,6 +271,18 @@ def update_sprite(cat):
             new_sprite.blit(
                 sprites.sprites['lines' + str(cat.age_sprites[cat.age])],
                 (0, 0))
+    elif cat.df:
+        if cat.pelt.length == 'long' and cat.status not in [
+                'kitten', 'apprentice', 'medicine cat apprentice'
+        ] or cat.age == 'elder':
+            new_sprite.blit(
+                sprites.sprites['lineartdf' +
+                                str(cat.age_sprites[cat.age] + 9)],
+                (0, 0))
+        else:
+            new_sprite.blit(
+                sprites.sprites['lineartdf' +
+                                str(cat.age_sprites[cat.age])], (0, 0))
     elif cat.dead:
         if cat.pelt.length == 'long' and cat.status not in [
                 'kitten', 'apprentice', 'medicine cat apprentice'
