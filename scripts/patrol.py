@@ -1020,6 +1020,10 @@ class PatrolEvent():
                  other_clan = None,
                  win_skills = None,
                  win_trait = None,
+                 fail_skills = None,
+                 fail_trait = None,
+                 min_cats = 1,
+                 max_cats = 6,
                  antagonize_text = '',
                  antagonize_fail_text = ''):
         self.patrol_id = patrol_id
@@ -1035,20 +1039,28 @@ class PatrolEvent():
         self.other_clan = other_clan
         self.win_skills = win_skills
         self.win_trait = win_trait
+        self.fail_skills = fail_skills
+        self.fail_trait = fail_trait
+        self.min_cats = min_cats
+        self.max_cats = max_cats
         self.antagonize_text = antagonize_text
         self.antagonize_fail_text = antagonize_fail_text
 
-        """
-        success [0] is the most common
-        success [1] is slightly rarer
-        success [2] is if win skill is applicable
-        success [3] is if win trait is applicable
+        """ success [0] is the most common
+            success [1] is slightly rarer
+            success [2] is if win skill is applicable
+            success [3] is if win trait is applicable
 
-        fail text [0] is unscathed fail 1
-        fail text [1] is unscathed 2
-        fail text [2] is death
-        fail text [3] is scar
-        """
+            fail text [0] is unscathed fail 1
+            fail text [1] is unscathed 2, fail skill or fail traits
+            fail text [2] is death
+            fail text [3] is scar"""
+
+        tags = [
+            'hunting', 'other_clan', 'fighting', 'death', 'scar', 'new_cat', 'npc',
+            'retirement', 'injury', 'illness', 'romantic', 'platonic', 'comfort', 'respect', 'trust',
+            'dislike', 'jealousy', 'med_cat', 'training', 'apprentice', 'border', 'reputation', 'leader'
+        ]
 
 patrol = Patrol()
 
