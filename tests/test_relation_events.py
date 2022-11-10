@@ -154,7 +154,7 @@ class Pregnancy(unittest.TestCase):
         relation_events.handle_zero_moon_pregnant(cat,None,None,clan)
 
         # then
-        self.assertTrue(cat.ID in clan.pregnancy_data.keys())
+        self.assertIn(cat.ID, clan.pregnancy_data.keys())
 
     @patch('scripts.cat_relations.relation_events.Relation_Events.get_kits_chance')
     def test_pair(self, get_kits_chance):
@@ -172,7 +172,7 @@ class Pregnancy(unittest.TestCase):
         relation_events.handle_zero_moon_pregnant(cat1,cat2,relation,clan)
 
         # then
-        self.assertTrue(cat1.ID in clan.pregnancy_data.keys())
+        self.assertIn(cat1.ID, clan.pregnancy_data.keys())
         self.assertEqual(clan.pregnancy_data[cat1.ID]["second_parent"], cat2.ID)
 
     @patch('scripts.cat_relations.relation_events.Relation_Events.get_kits_chance')
@@ -215,4 +215,4 @@ class Pregnancy(unittest.TestCase):
         relation_events.handle_having_kits(cat=cat1,clan=test_clan)
 
         # then
-        self.assertFalse(cat1.ID in test_clan.pregnancy_data.keys())
+        self.assertNotIn(cat1.ID, test_clan.pregnancy_data.keys())
