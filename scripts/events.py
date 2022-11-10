@@ -835,6 +835,14 @@ class Events():
         Returns: 
             - boolean if a death event occurred or not
         """
+        #if game.clan.game_mode == 'expanded':
+            #print("TODO")
+            #if game.settings.get('disasters'):
+            #    if not random.getrandbits(10):  # 1/1024
+            #        triggered_death = True
+            #        self.handle_disasters(cat)
+            #return
+
         # get the general information about the cat and a random other cat
         triggered_death = False
         name = str(cat.name)
@@ -1294,6 +1302,10 @@ class Events():
         Returns: 
             - boolean if a death event occurred or not
         """
+        #if game.clan.game_mode == 'expanded':
+            #print("TODO")
+            #return
+    
         # get the general information about the cat and a random other cat
         triggered_death = False
         other_cat = choice(list(Cat.all_cats.values()))
@@ -1306,9 +1318,6 @@ class Events():
         
         name = str(cat.name)
         other_name = str(other_cat.name)
-
-        if game.clan.game_mode == 'expanded':
-            return self.condition_events.handle_illnesses(cat, game.clan.current_season)
         
         if game.clan.game_mode == 'classic':
             # leader loses lives
