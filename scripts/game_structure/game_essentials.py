@@ -287,7 +287,9 @@ class Game():
             os.makedirs(os.path.join("saves", clanname))
         clan_cats = []
         zip_handler = zipfile.ZipFile('saves/' + clanname + '/relationships.zip',
-                                      'w')
+                                      'w',
+                                      compression=zipfile.ZIP_DEFLATED,
+                                      compresslevel=1)
         
         for inter_cat in self.cat_class.all_cats.values():
             cat_data = {

@@ -1175,7 +1175,7 @@ class Cat():
                 "comfortable": r.comfortable,
                 "jealousy": r.jealousy,
                 "trust": r.trust,
-                "log": r.log
+                #"log": r.log
             }
             rel.append(r_data)
         #try:
@@ -1237,7 +1237,8 @@ class Cat():
                             comfortable=rel['comfortable'] if rel['comfortable'] else 0,
                             jealousy=rel['jealousy'] if rel['jealousy'] else 0,
                             trust=rel['trust'] if rel['trust'] else 0,
-                            log =rel['log'] if rel['log'] else [])
+                            #log =rel['log'] if rel['log'] else []
+                            )
                         relationships.append(new_rel)
                     self.relationships = relationships
             except:
