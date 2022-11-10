@@ -378,7 +378,7 @@ class Events():
         if cat.mentor:
             if cat.mentor.trait in risky_traits:
                 risky_mentor = True
-                scar_chance += 0.0225  # + 2.25%
+                scar_chance += 0.0125  # + 1.25%
                 mentor_name = str(mentor.name)
         if leader:
             if leader.trait in risky_traits:
@@ -407,7 +407,7 @@ class Events():
         # Bloodthirsty leader mod
         leader_scar_chance = scar_chance
         if leader.trait in ["bloodthirsty", "vengeful"]:
-            leader_scar_chance = leader_scar_chance * 1.75
+            leader_scar_chance = leader_scar_chance * 2
 
         # Set pools and check which scars we can still get
         all_scars = scars1 + scars2 + scars3
@@ -1276,12 +1276,12 @@ class Events():
                         other_clan = game.clan.all_clans
 
                     # Do some population/weight scrunkling to get amount of deaths
-                    max_deaths = int(alive_count / 1.5)  # 2/3 of alive cats
+                    max_deaths = int(alive_count / 2)  # 1/2 of alive cats
                     weights = []
                     population = []
-                    for n in range(1, max_deaths):
+                    for n in range(2, max_deaths):
                         population.append(n)
-                        weight = 10 / ( 0.2 * n )  # Lower chance for more dead cats
+                        weight = 1 / ( 0.75 * n )  # Lower chance for more dead cats
                         weights.append(weight)
                     dead_count = random.choices(population, weights=weights)[0] # the dieded..
                     
@@ -1300,48 +1300,29 @@ class Events():
                             names += f", and {last_name}"
                         else:
                             names += f" and {last_name}"
-                    
-                    if cat.status in dead_cats != 'kitten':
-                        disaster.extend([
-                            f' drown after the camp becomes flooded.',
-                            f' are killed in a battle against {choice(other_clan).name}Clan.',
-                            f' are killed after a fire rages through the camp.',
-                            f' are killed in an ambush by a group of rogues.',
-                            f' go missing in the night.',
-                            f' are killed after a badger attack.',
-                            f' die to a greencough outbreak.',
-                            f' are taken away by twolegs.',
-                            f' eat poisoned freshkill and die.'
-                        ])
-                        if game.clan.current_season == 'Leaf-bare':
-                            disaster.extend([
-                                ' die after freezing from a snowstorm.',
-                                ' starve to death when no prey is found.'
-                            ])
-                        elif game.clan.current_season == 'Greenleaf':
-                            disaster.extend([
-                                ' die after overheating.',
-                                ' die after the water dries up from drought.'
-                            ])
-                    else:
-                        disaster.extend([
+
+
+                    disaster.extend([
                             ' drown after the camp becomes flooded.',
+                            f' are killed in a battle against {choice(other_clan).name}Clan.',
                             ' are killed after a fire rages through the camp.',
+                            ' are killed in an ambush by a group of rogues.',
                             ' go missing in the night.',
                             ' are killed after a badger attack.',
                             ' die to a greencough outbreak.',
-                            ' eat poisoned freshkill and die.'
+                            ' are taken away by twolegs.',
+                            ' eat poisoned freshkill and die.',
                         ])
-                        if game.clan.current_season == 'Leaf-bare':
-                            disaster.extend([
-                                ' die after freezing from a snowstorm.',
-                                ' starve to death when no prey is found.'
-                            ])
-                        elif game.clan.current_season == 'Greenleaf':
-                            disaster.extend([
-                                ' die after overheating.',
-                                ' die after the water dries up from drought.'
-                            ])
+                    if game.clan.current_season == 'Leaf-bare':
+                        disaster.extend([
+                            ' die after freezing from a snowstorm.',
+                            ' starve to death when no prey is found.'
+                        ])
+                    elif game.clan.current_season == 'Greenleaf':
+                        disaster.extend([
+                            ' die after overheating.',
+                            ' die after the water dries up from drought.'
+                        ])
 
                     if dead_count >= 2:
                         game.cur_events_list.append(f'{names}{choice(disaster)}')
@@ -1353,10 +1334,8 @@ class Events():
                         disaster_str = disaster_str.replace('drown', 'drowns')
                         disaster_str = disaster_str.replace('eat', 'eats')
                         disaster_str = disaster_str.replace('starve', 'starves')
-                        disaster_event = str(disaster_str)
                         game.cur_events_list.append(f'{names}{disaster_event}')
                     for cat in dead_cats:
-                        #print(str(cat.name) + " dies")
                         cat.die()
 
     def coming_out(self, cat):
