@@ -1152,8 +1152,8 @@ class Cat():
                 relationships.append(rel)
         self.relationships = relationships
 
-    def save_relationship_of_cat(self):
-        # save relationships for each cat
+    def save_relationship_of_cat(self, zip_handler):
+        """Saves a cat's relationship, args is a zip file handler"""
         if game.switches['clan_name'] != '':
             clanname = game.switches['clan_name']
         elif len(game.switches['clan_name']) > 0:
@@ -1161,9 +1161,6 @@ class Cat():
         elif game.clan is not None:
             clanname = game.clan.name
         relationship_dir = 'saves/' + clanname + '/relationships'
-        if not os.path.exists(relationship_dir):
-            os.makedirs(relationship_dir)
-
         rel = []
         for r in self.relationships:
             r_data = {
@@ -1181,14 +1178,16 @@ class Cat():
                 "log": r.log
             }
             rel.append(r_data)
-
+        #try:
+         #   with open(relationship_dir + '/' + self.ID + '_relations.json',
+         #             'w') as rel_file:
+         #       ujson.dump(rel, rel_file)
+        #except:
+        #    print(f"Saving relationship of cat #{self} didn't work.")
         try:
-            with open(relationship_dir + '/' + self.ID + '_relations.json',
-                      'w') as rel_file:
-                json_string = ujson.dumps(rel, indent = 4)
-                rel_file.write(json_string)
-        except:
-            print(f"Saving relationship of cat #{self} didn't work.")
+            zip_handler.writestr(self.ID + '_relations.json', ujson.dumps(rel, indent=4))
+        except Exception as e:
+            print(f"Saving relationship of cat #{self} didn't work.", e)
 
     def load_relationship_of_cat(self):
         if game.switches['clan_name'] != '':
@@ -1198,18 +1197,29 @@ class Cat():
 
         relation_directory = 'saves/' + clanname + '/relationships/'
         relation_cat_directory = relation_directory + self.ID + '_relations.json'
-
+        
         self.relationships = []
         if os.path.exists(relation_directory):
-            if not os.path.exists(relation_cat_directory):
+            if not os.path.exists('saves/' + clanname + '/relationships.zip'):
                 self.create_new_relationships()
                 for cat in Cat.all_cats.values():
                     cat.relationships.append(Relationship(cat,self))
                 update_sprite(self)
                 return
             try:
-                with open(relation_cat_directory, 'r') as read_file:
-                    rel_data = ujson.loads(read_file.read())
+                try:
+                    with open(relation_cat_directory, 'r') as read_file:
+                        rel_data = ujson.loads(read_file.read())
+                except (OSError, ValueError) as e:
+                    print(e)
+                try:
+                    with zipfile.ZipFile('saves/' + clanname + '/relationships.zip',
+                                      'r',
+                                      compression=zipfile.ZIP_DEFLATED,
+                                      compresslevel=1) as zip_handler:
+                        rel_data = ujson.loads(zip_handler.read(self.ID + '_relations.json'))
+                except (OSError, ValueError) as e:
+                    print(e)
                     relationships = []
                     for rel in rel_data:
                         cat_to = self.all_cats.get(rel['cat_to_id'])

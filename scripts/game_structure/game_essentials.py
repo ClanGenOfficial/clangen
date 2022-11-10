@@ -1,6 +1,7 @@
 import pygame
 import ujson
 import os
+import zipfile
 from ast import literal_eval
 
 
@@ -272,7 +273,6 @@ class Game():
             # Else move on to the next item on the list
             self.settings[setting_name] = self.setting_lists[setting_name][
                 list_index + 1]
-
     def save_cats(self):
         """Save the cat data."""
         clanname = ''
@@ -282,10 +282,13 @@ class Game():
             clanname = game.switches['clan_list'][0]
         elif game.clan is not None:
             clanname = game.clan.name
-        directory = 'saves/' + clanname
-        if not os.path.exists(directory):
-            os.makedirs(directory)
+        # Verify dirs are present
+        if not os.path.exists(os.path.join("saves", clanname)):
+            os.makedirs(os.path.join("saves", clanname))
         clan_cats = []
+        zip_handler = zipfile.ZipFile('saves/' + clanname + '/relationships.zip',
+                                      'w')
+        
         for inter_cat in self.cat_class.all_cats.values():
             cat_data = {
                 "ID": inter_cat.ID,
@@ -342,13 +345,15 @@ class Game():
             }
             clan_cats.append(cat_data)
             if not inter_cat.dead:
-                inter_cat.save_relationship_of_cat()
+                inter_cat.save_relationship_of_cat(zip_handler)
         try:
             with open('saves/' + clanname + '/clan_cats.json', 'w') as write_file:
-                json_string = ujson.dumps(clan_cats, indent=4)
-                write_file.write(json_string)
+                #json_string = ujson.dumps(clan_cats, indent=4)
+                #write_file.write(json_string)
+                ujson.dump(clan_cats, write_file, indent=4)
         except:
             print("Saving cats didn't work.")
+        zip_handler.close()
 
 # M O U S E
 class Mouse():
