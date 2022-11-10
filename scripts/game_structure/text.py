@@ -92,7 +92,7 @@ class Font():
             elif not game.settings['dark mode'] and font.colour == (239, 229, 206):
                 font.reset_colour(colour=(0, 0, 0))
 
-    def blit_text(self, text, pos, where=used_screen, x_limit=800, line_break=0,):
+    def blit_text(self, text, pos, where=used_screen, x_limit=800, line_break=0, line_spacing=0):
         """
         Blit text with automatically-added linebreaks.
 
@@ -104,6 +104,7 @@ class Font():
         line_break -- Specify the amount of pixels that should be between paragraphs.  Leave default to have the space
                       between paragraphs be the same as the space between lines.
                       Use \n to make a new paragraph. (default: word_width)
+        line_spacing -- Specify space between the lines of a paragraph.  (default: word_height + 5px)
 
         """
         words = [word.split(' ') for word in text.splitlines()
@@ -116,6 +117,8 @@ class Font():
                 word_surface = self.font.render(word, True, self.colour)
                 word_width, word_height = word_surface.get_size()
                 word_height += 5
+                if line_spacing != 0:
+                    word_height = line_spacing
                 if line_break == 0:
                     line_break = word_width
                 if x + word_width >= x_limit:
@@ -144,9 +147,9 @@ verdana_green = Font('verdana', colour='darkgreen')
 verdana_big_light = Font('verdana', 18, colour=(239, 229, 207))
 verdana_small_light = Font('verdana', 11, colour=(239, 229, 207))
 
-verdana_big_dark = Font('verdana', 18, colour=(35, 30, 17))
-verdana_small_dark = Font('verdana', 11, colour=(35, 30, 17))
-verdana_mid_dark = Font('verdana', 13, colour=(35, 30, 17))
+verdana_big_dark = Font('verdana', 18, colour=(57, 50, 36))
+verdana_small_dark = Font('verdana', 11, colour=(57, 50, 36))
+verdana_mid_dark = Font('verdana', 13, colour=(57, 50, 36))
 
 # for relationships, same color as bar
 verdana_dark_magenta = Font('verdana', 11, colour=(226, 65, 103))
