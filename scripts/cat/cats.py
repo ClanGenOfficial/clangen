@@ -673,7 +673,8 @@ class Cat():
         if not self.is_ill():
             return
 
-        if randint(1,self.illness.mortality) == 1:
+        mortality = self.illness.current_mortality
+        if mortality and not int(random.random() * mortality):
             self.die()
             return
         
@@ -681,8 +682,8 @@ class Cat():
             if randint(1,risk["chance"]) == 1:
                 self.get_ill(risk["name"])
 
-        self.illness.duration -= 1
-        if self.illness.duration <= 0:
+        self.illness.current_duration -= 1
+        if self.illness.current_duration <= 0:
             self.illness = None
 
     def moon_skip_injury(self):
@@ -690,7 +691,8 @@ class Cat():
         if not self.is_injured():
             return
         
-        if randint(1,self.injury.mortality) == 1:
+        mortality = self.injury.current_mortality
+        if mortality and not int(random.random() * mortality):
             self.die()
             return
         
@@ -698,8 +700,8 @@ class Cat():
             if randint(1,risk["chance"]) == 1:
                 self.get_ill(risk["name"])
 
-        self.injuries.duration -= 1
-        if self.injuries.duration <= 0:
+        self.injuries.current_duration -= 1
+        if self.injuries.current_duration <= 0:
             self.injuries = None
 
 # ---------------------------------------------------------------------------- #
@@ -763,9 +765,9 @@ class Cat():
 #                                  conditions                                  #
 # ---------------------------------------------------------------------------- #
   
-    def get_ill(self, name):
-        if self.is_ill() or name not in ILLNESSES.keys():
-            if name not in ILLNESSES.keys():
+    def get_ill(self, name, risk= False):
+        if self.is_ill() and not risk or name not in ILLNESSES:
+            if name not in ILLNESSES:
                 print(f"WARNING: {name} is not in the illnesses collection.")
             return
         
@@ -777,14 +779,12 @@ class Cat():
             duration = illness["duration"], 
             medicine_duration = illness["medicine_duration"], 
             medicine_mortality = illness["medicine_mortality"][self.age],
-            risks = illness["risks"], 
-            number_medicine_cats = illness["number_medicine_cats"],
-            number_medicine_apprentices = illness["number_medicine_apprentices"]
+            risks = illness["risks"]
         )
 
     def get_injured(self,name):
-        if self.is_injured() or name not in INJURIES.keys():
-            if name not in INJURIES.keys():
+        if self.is_injured() or name not in INJURIES:
+            if name not in INJURIES:
                 print(f"WARNING: {name} is not in the injuries collection.")
             return
 

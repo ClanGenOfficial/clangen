@@ -2,6 +2,7 @@ from scripts.cat.cats import *
 from scripts.cat_relations.relation_events import *
 from scripts.game_structure.buttons import *
 from scripts.game_structure.load_cat import * 
+from scripts.condition_events import Condition_Events
 
 class Events():
     all_events = {}
@@ -20,6 +21,7 @@ class Events():
         self.new_cat_invited = False
         self.ceremony_accessory = False
         self.relation_events = Relation_Events()
+        self.condition_events = Condition_Events()
 
     def one_moon(self):
         if game.switches['timeskip']:
@@ -835,16 +837,17 @@ class Events():
         Returns: 
             - boolean if a death event occurred or not
         """
-        #if game.clan.game_mode == 'expanded':
-            #print("TODO")
-            #if game.settings.get('disasters'):
-            #    if not random.getrandbits(10):  # 1/1024
-            #        triggered_death = True
-            #        self.handle_disasters(cat)
-            #return
+        triggered_death = False
+
+        if game.clan.game_mode == 'expanded':
+            triggered_death = self.condition_events.handle_injuries(cat)
+            if game.settings.get('disasters'):
+                if not random.getrandbits(10):  # 1/1024
+                    triggered_death = True
+                    self.handle_disasters(cat)
+            return triggered_death
 
         # get the general information about the cat and a random other cat
-        triggered_death = False
         name = str(cat.name)
         other_cat = choice(list(Cat.all_cats.values()))
         countdown = int(len(Cat.all_cats) / 3)
@@ -1306,9 +1309,9 @@ class Events():
         Returns: 
             - boolean if a death event occurred or not
         """
-        #if game.clan.game_mode == 'expanded':
-            #print("TODO")
-            #return
+        if game.clan.game_mode == 'expanded':
+            return self.condition_events.handle_illnesses(cat, game.clan.current_season)
+            
     
         # get the general information about the cat and a random other cat
         triggered_death = False

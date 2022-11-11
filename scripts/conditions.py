@@ -11,8 +11,8 @@ from scripts.game_structure.game_essentials import game
 def medical_cats_condition_fulfilled(number_medicine_cats, number_medicine_apprentices):
     fulfilled = False
 
-    medicine_apprentices = filter(lambda c: c.status =='medicine apprentices', game.cat_class.all_cats)
-    medicine_cats = filter(lambda c: c.status == 'medicine cat', game.cat_class.all_cats)
+    medicine_apprentices = list(filter(lambda c: c.status =='medicine apprentices', game.cat_class.all_cats.values()))
+    medicine_cats = list(filter(lambda c: c.status == 'medicine cat', game.cat_class.all_cats.values()))
     if len(medicine_cats) >= number_medicine_cats or\
         len(medicine_apprentices) >= number_medicine_apprentices:
         fulfilled = True
@@ -25,7 +25,7 @@ def medical_cats_condition_fulfilled(number_medicine_cats, number_medicine_appre
 # ---------------------------------------------------------------------------- #
 
 class Illness():
-    def _init_(self, 
+    def __init__(self, 
             name, 
             mortality, 
             infectiousness, 
@@ -36,51 +36,51 @@ class Illness():
             number_medicine_cats = 1,
             number_medicine_apprentices = 2):
         self.name = name
-        self.mortality = mortality
-        self.infectiousness = infectiousness
-        self.duration = duration
-        self.medicine_duration = medicine_duration
-        self.medicine_mortality = medicine_mortality
+        self.mortality = int(mortality)
+        self.infectiousness = int(infectiousness)
+        self.duration = int(duration)
+        self.medicine_duration = int(medicine_duration)
+        self.medicine_mortality = int(medicine_mortality)
         self.risks = risks
         self.number_medicine_cats = number_medicine_cats
         self.number_medicine_apprentices = number_medicine_apprentices
 
+        self.current_duration = duration
+        self.current_mortality = mortality
+        if medical_cats_condition_fulfilled(self.number_medicine_cats, self.number_medicine_apprentices):
+            self.current_duration = medicine_duration
+            self.current_mortality = medicine_mortality
 
     @property
-    def duration(self):
-        if medical_cats_condition_fulfilled(self.number_medicine_cats, self.number_medicine_apprentices):
-            return self.medicine_duration
+    def current_duration(self):
+        return self._current_duration
 
-        return self._duration
-
-    @property
-    def medicine_duration(self):
-        if medical_cats_condition_fulfilled(self.number_medicine_cats, self.number_medicine_apprentices):
-            return self.medicine_duration
-
-        return self._duration
+    @current_duration.setter
+    def current_duration(self, value):
+        if medical_cats_condition_fulfilled(self.number_medicine_cats,self.number_medicine_apprentices):
+            if value > self.medicine_duration:
+                value = self.medicine_duration
+        
+        self._current_duration = value
 
     @property
-    def mortality(self):
+    def current_mortality(self):
+        return self._current_mortality
+
+    @current_mortality.setter
+    def current_mortality(self, value):
         if medical_cats_condition_fulfilled(self.number_medicine_cats, self.number_medicine_apprentices):
-            return self.medicine_mortality
-
-        return self._mortality
-
-    @property
-    def medicine_mortality(self):
-        if medical_cats_condition_fulfilled(self.number_medicine_cats, self.number_medicine_apprentices):
-            return self.medicine_mortality
-
-        return self._mortality
-
+            if value < self.medicine_mortality:
+                value = self.medicine_mortality
+        
+        self._current_mortality = value
 
 # ---------------------------------------------------------------------------- #
 #                                   Injuries                                   #
 # ---------------------------------------------------------------------------- #
 
 class Injury():
-    def _init_(self, 
+    def __init__(self, 
             name,
             duration,
             medicine_duration,
@@ -100,30 +100,32 @@ class Injury():
         self.number_medicine_cats = number_medicine_cats
         self.number_medicine_apprentices = number_medicine_apprentices
 
-    @property
-    def duration(self):
+        self.current_duration = duration
+        self.current_mortality = mortality
         if medical_cats_condition_fulfilled(self.number_medicine_cats, self.number_medicine_apprentices):
-            return self.medicine_duration
-
-        return self._duration
-
-    @property
-    def medicine_duration(self):
-        if medical_cats_condition_fulfilled(self.number_medicine_cats, self.number_medicine_apprentices):
-            return self.medicine_duration
-
-        return self._duration
+            self.current_duration = medicine_duration
+            self.current_mortality = medicine_mortality
 
     @property
-    def mortality(self):
-        if medical_cats_condition_fulfilled(self.number_medicine_cats, self.number_medicine_apprentices):
-            return self.medicine_mortality
+    def current_duration(self):
+        return self._current_duration
 
-        return self._mortality
+    @current_duration.setter
+    def current_duration(self, value):
+        if medical_cats_condition_fulfilled(self.number_medicine_cats,self.number_medicine_apprentices):
+            if value > self.medicine_duration:
+                value = self.medicine_duration
+        
+        self._current_duration = value
 
     @property
-    def medicine_mortality(self):
-        if medical_cats_condition_fulfilled(self.number_medicine_cats, self.number_medicine_apprentices):
-            return self.medicine_mortality
+    def current_mortality(self):
+        return self._current_mortality
 
-        return self._mortality
+    @current_mortality.setter
+    def current_mortality(self, value):
+        if medical_cats_condition_fulfilled(self.number_medicine_cats, self.number_medicine_apprentices):
+            if value < self.medicine_mortality:
+                value = self.medicine_mortality
+        
+        self._current_mortality = value
