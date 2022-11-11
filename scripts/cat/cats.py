@@ -415,10 +415,11 @@ class Cat():
 
                         if chosen_trait in self.kit_traits:
                             self.trait = choice(self.traits)
-                            if self.mentor_influence[0] == 'Reserved':
-                                self.mentor_influence.pop(0)
-                            self.mentor_influence.append('None')
-                            print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
+                            if len(self.mentor_influence) > 0:
+                                if self.mentor_influence[0] == 'Reserved':
+                                    self.mentor_influence.pop(0)
+                                self.mentor_influence.append('None')
+                                print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
                             break
 
                         else:

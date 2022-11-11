@@ -213,6 +213,7 @@ class Button():
                     cat_value].gender
             elif text == 'Remove accessory':
                 Cat.all_cats[str(cat_value)].accessory = None
+                update_sprite(Cat.all_cats[str(cat_value)])
             elif cat_value is None and arrow is None:
                 self.activate(values)
             elif arrow is None:

@@ -1178,11 +1178,10 @@ class ProfileScreen(Screens):
                                       profile_tab_group=None)
 
             # DISABLED till I make button image and re-establish functionality
-            #if the_cat.accessory != None:
-            #    buttons.draw_button((x_value, y_value + button_count * y_change),
-            #                        text='Remove accessory',
-            #                        cat_value=the_cat,
-            #                        hotkey=[button_count + 1])
+            if the_cat.accessory != None:
+               buttons.draw_button((410,650),
+                                   text='Remove accessory',
+                                   cat_value=the_cat)
 
         # ---------------------------------------------------------------------------- #
         #                                 DANGEROUS TAB                                #
@@ -1645,7 +1644,7 @@ class ExileProfileScreen(Screens):
                                   text="personal",
                                   size=(176, 30),
                                   profile_tab_group='personal',
-                                  available=False,
+                                  available=True,
                                   )
         buttons.draw_image_button((576, 420),
                                   button_name='dangerous',

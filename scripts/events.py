@@ -532,7 +532,7 @@ class Events():
             chance = 700
         elif self.living_cats > 30:
             chance = 300
-        if randint(1, chance) == 1 and cat.age != 'kitten' and cat.age != 'adolescent':
+        if randint(1, chance) == 1 and cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
             self.new_cat_invited = True
             name = str(cat.name)
             type_of_new_cat = choice([1, 2, 3, 4, 5, 6, 7])

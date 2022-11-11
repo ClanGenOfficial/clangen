@@ -224,7 +224,7 @@ class SettingsScreen(Screens):
         verdana.text("Force cats to retire after severe injury", (x_value, 382))
         verdana.text("Enable shaders", (x_value, 421))
         verdana.text("Display hotkeys on text buttons", (x_value, 460))
-        verdana.text("Allow new leaders to automatically choose a deputy", (x_value, 499))
+        verdana.text("Allow leaders to automatically choose a new deputy", (x_value, 499))
 
 
         # Setting values
