@@ -107,6 +107,7 @@ class Clan():
             self.camp_bg = camp_bg
             self.game_mode = game_mode
             self.pregnancy_data = {}
+            self.closed_borders = False
 
     def create_clan(self):
         """ This function is only called once a new clan is created in the 'clan created' screen, not every time
