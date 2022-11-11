@@ -8,8 +8,12 @@ def get_thoughts(cat, other_cat):
         return thoughts
 
     # actions or thoughts for all cats. These switch either every moon or every time the game is re-opened
-    if cat.is_alive():
+    if cat.is_alive() and not cat.exiled:
         thoughts = get_alive_thoughts(cat, other_cat)
+    elif cat.is_alive() and cat.exiled:
+        thoughts = get_exile_thoughts(cat, other_cat)
+    elif cat.df:
+        thoughts = get_df_thoughts(cat, other_cat)
     else:
         thoughts = get_dead_thoughts(cat, other_cat)
 
@@ -572,6 +576,18 @@ def get_warrior_trait_role_thoughts(cat, other_cat):
         ]
     return thoughts
 
+def get_df_thoughts(cat, other_cat):
+    thoughts = []
+    thoughts+= GENERAL_DEAD["df"]
+    
+    return thoughts
+
+def get_exile_thoughts(cat, other_cat):
+    thoughts = []
+    thoughts += EXILE
+    
+    return thoughts
+
 # ---------------------------------------------------------------------------- #
 #                             load general thoughts                            #
 # ---------------------------------------------------------------------------- #
@@ -585,6 +601,10 @@ with open(f"{resource_directory}cat_dead_general.json", 'r') as read_file:
 GENERAL_ALIVE = None
 with open(f"{resource_directory}cat_alive_general.json", 'r') as read_file:
     GENERAL_ALIVE = ujson.loads(read_file.read())
+    
+EXILE = None
+with open(f"{resource_directory}exile.json", 'r') as read_file:
+    EXILE = ujson.loads(read_file.read())
 
 FAMILY = None
 with open(f"{resource_directory}family.json", 'r') as read_file:

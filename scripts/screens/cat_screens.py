@@ -39,7 +39,18 @@ def draw_back(x_value, y_value):
                                   button_name='back',
                                   text='Back',
                                   size=(105, 30),
-                                  cur_screen='outside profile screen',
+                                  cur_screen='other screen',
+                                  cat_value = the_cat,
+                                  profile_tab_group=None,
+                                  hotkey=[0])
+    elif (the_cat.df):
+        buttons.draw_image_button((x_value, y_value),
+                                  button_name='back',
+                                  text='Back',
+                                  size=(105, 30),
+                                  cur_screen='dark forest screen',
+                                  cat_value = the_cat,
+                                  df = True,
                                   profile_tab_group=None,
                                   hotkey=[0])
     else:
@@ -50,8 +61,6 @@ def draw_back(x_value, y_value):
                                   cur_screen=game.switches['last_screen'],
                                   profile_tab_group=None,
                                   hotkey=[0])
-
-
 
 # ---------------------------------------------------------------------------- #
 #             change how accessory info displays on cat profiles               #
@@ -120,63 +129,65 @@ def bs_blurb_text(cat, backstory=None):
     backstory = cat.backstory
     bs_blurb = None
     if backstory is None:
-        bs_blurb = "This cat was born into the clan where they currently reside"
+        bs_blurb = "This cat was born into the clan where they currently reside."
+    if backstory == 'clan_founder':
+        bs_blurb = "This cat is one of the founding members of the clan."
     if backstory == 'clanborn':
-        bs_blurb = "This cat was born into the clan where they currently reside"
+        bs_blurb = "This cat was born into the clan where they currently reside."
     if backstory == 'halfclan1':
-        bs_blurb = "This cat was born into the clan, but one of their parents resides in another clan"
+        bs_blurb = "This cat was born into the clan, but one of their parents resides in another clan."
     if backstory == 'halfclan2':
-        bs_blurb = "This cat was born in another clan, but chose to come to this clan to be with their other parent"
+        bs_blurb = "This cat was born in another clan, but chose to come to this clan to be with their other parent."
     if backstory == 'outsider_roots1':
-        bs_blurb = "This cat was born into the clan, but one of their parents is an outsider that belongs to no clan"
+        bs_blurb = "This cat was born into the clan, but one of their parents is an outsider that belongs to no clan."
     if backstory == 'outsider_roots2':
-        bs_blurb = "This cat was born outside the clan, but came to live in the clan with their parent at a young age"
+        bs_blurb = "This cat was born outside the clan, but came to live in the clan with their parent at a young age."
     if backstory == 'loner1':
-        bs_blurb = "This cat joined the clan by choice after living life as a loner"
+        bs_blurb = "This cat joined the clan by choice after living life as a loner."
     if backstory == 'loner2':
         bs_blurb = "This cat used to live in a barn, but mostly stayed away from twolegs. They decided clanlife " \
-                   "might be an interesting change of pace"
+                   "might be an interesting change of pace."
     if backstory == 'kittypet1':
-        bs_blurb = "This cat joined the clan by choice after living life with twolegs as a kittypet"
+        bs_blurb = "This cat joined the clan by choice after living life with twolegs as a kittypet."
     if backstory == 'kittypet2':
-        bs_blurb = "This cat used to live on something called a “boat” with twolegs, but decided to join the clan"
+        bs_blurb = "This cat used to live on something called a “boat” with twolegs, but decided to join the clan."
     if backstory == 'rogue1':
-        bs_blurb = "This cat joined the clan by choice after living life as a rogue"
+        bs_blurb = "This cat joined the clan by choice after living life as a rogue."
     if backstory == 'rogue2':
         bs_blurb = "This cat used to live in a twolegplace, scrounging for what they could find. They thought " \
-                   "the clan might offer them more security"
+                   "the clan might offer them more security."
     if backstory == 'abandoned1':
-        bs_blurb = "This cat was found by the clan as a kit and has been living with them ever since"
+        bs_blurb = "This cat was found by the clan as a kit and has been living with them ever since."
     if backstory == 'abandoned2':
         bs_blurb = "This cat was born into a kittypet life, but was brought to the clan as a kit and has lived " \
-                   "here ever since"
+                   "here ever since."
     if backstory == 'abandoned3':
-        bs_blurb = "This cat was born into another clan, but they were left here as a kit for the clan to raise"
+        bs_blurb = "This cat was born into another clan, but they were left here as a kit for the clan to raise."
     if backstory == 'medicine_cat':
-        bs_blurb = "This cat was once a medicine cat in another clan"
+        bs_blurb = "This cat was once a medicine cat in another clan."
     if backstory == 'otherclan':
-        bs_blurb = "This cat was born into another clan, but came to this clan by choice"
+        bs_blurb = "This cat was born into another clan, but came to this clan by choice."
     if backstory == 'otherclan2':
-        bs_blurb = "This cat was unhappy in their old clan and decided to come here instead"
+        bs_blurb = "This cat was unhappy in their old clan and decided to come here instead."
     if backstory == 'ostracized_warrior':
-        bs_blurb = "This cat was ostracized from their old clan, but no one really knows why"
+        bs_blurb = "This cat was ostracized from their old clan, but no one really knows why."
     if backstory == 'disgraced':
         bs_blurb = "This cat was cast out of their old clan for some transgression that they’re not keen on " \
-                   "talking about"
+                   "talking about."
     if backstory == 'retired_leader':
         bs_blurb = "This cat used to be the leader of another clan before deciding they needed a change of scenery " \
                    "after leadership became too much.  They returned their nine lives and let their deputy " \
-                   "take over before coming here"
+                   "take over before coming here."
     if backstory == 'refugee':
         bs_blurb = "This cat came to this clan after fleeing from their former clan and the tyrannical " \
-                   "leader that had taken over"
+                   "leader that had taken over."
     if backstory == 'tragedy_survivor':
-        bs_blurb = "Something horrible happened to this cat's previous clan. They refuse to speak about it"
+        bs_blurb = "Something horrible happened to this cat's previous clan. They refuse to speak about it."
     return bs_blurb
 
 
 # ---------------------------------------------------------------------------- #
-#             change how backstory info display on cat profiles                #
+#             change how backstory info displays on cat profiles               #
 # ---------------------------------------------------------------------------- #
 def backstory_text(cat):
     backstory = cat.backstory
@@ -185,6 +196,8 @@ def backstory_text(cat):
     bs_display = backstory
     if bs_display == 'clanborn':
         bs_display = 'clanborn'
+    elif bs_display == 'clan_founder':
+        bs_display = 'clan founder'
     elif bs_display in ['halfclan1', 'halfclan2']:
         bs_display = 'half-clan'
     elif bs_display in ['outsider_roots1', 'outsider_roots2']:
@@ -226,7 +239,7 @@ def backstory_text(cat):
 class ProfileScreen(Screens):
 
     # UI Images
-    backstory_tab = pygame.image.load("resources/images/backstory_bg.png").convert_alpha()
+    backstory_tab = image_cache.load_image("resources/images/backstory_bg.png").convert_alpha()
 
     def on_use(self):
         # use this variable to point to the cat object in question
@@ -512,7 +525,7 @@ class ProfileScreen(Screens):
             if the_cat.mate in Cat.all_cats:
                 if Cat.all_cats.get(
                         the_cat.mate
-                ).dead:  # TODO: fix when mate dies mate becomes none
+                ).dead:  
                     verdana_small.text(
                         'former mate: ' +
                         str(Cat.all_cats[the_cat.mate].name),
@@ -547,7 +560,7 @@ class ProfileScreen(Screens):
             count2 += 1
 
         else:
-            verdana_small.text('backstory: ' + 'Clanborn', (490, 230 + count2 * 15))
+            verdana_small.text('backstory: ' + 'clanborn', (490, 230 + count2 * 15))
             count2 += 1
 
         the_cat = Cat.all_cats.get(game.switches['cat'])
@@ -567,25 +580,206 @@ class ProfileScreen(Screens):
                                       size=(176, 30),
                                       profile_tab_group=None,
                                       )
-
             screen.blit(ProfileScreen.backstory_tab, (65, 465))
 
-            backstory = backstory_text(the_cat)
-            bs_blurb = bs_blurb_text(the_cat, backstory=the_cat.backstory)
+            if game.switches['sub_tab_group'] is None:
+                game.switches['sub_tab_group'] = 'life sub tab'
 
-            # display cat backstory and blurb in tab
-            if the_cat.backstory is not None:
-                verdana_dark.blit_text(f'Backstory: {backstory} \n{bs_blurb}',
-                                       (90, 485),
-                                       x_limit=550,
-                                       line_break=30)
+            # this is all a WIP, I'm working on both organizing history into tab categories
+            # and saving/displaying history - Scribble
+            # ---------------------------------------------------------------------------- #
+            #                                 life sub tab                                 #
+            # ---------------------------------------------------------------------------- #
+            """
+            this will hold history related to the cat's life time.  atm i plan for this to be:
+            - backstory blurb
+            - scar events
+            - death event (will need to find a clever way to display leader death events without running out of room)
+            """
 
-            # default display if no backstory
+            buttons.draw_image_button((710, 475),
+                                      button_name='sub_tab1',
+                                      size=(42, 30),
+                                      sub_tab_group='life sub tab'
+                                      )
+
+            if game.switches['sub_tab_group'] == 'life sub tab':
+
+
+                life_history = []
+
+                bs_blurb = bs_blurb_text(the_cat, backstory=the_cat.backstory)
+
+                # append backstory blurb to history
+                if bs_blurb is not None:
+                    life_history.append(str(bs_blurb))
+                else:
+                    life_history.append("This cat was born into the clan where they currently reside.")
+
+                # adjust and append scar events to history
+                if the_cat.scar_event:
+                    for x in range(len(the_cat.scar_event)):
+                        the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(' is ', ' was ', 1)
+                        the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(' loses ', ' lost ')
+                        the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(' forces ', ' forced ')
+
+                        not_scarred = ['wounded', 'injured', 'battered', 'hurt', 'punished']
+                        for y in not_scarred:
+                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(f' got {y} ', ' was scarred ')
+                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(y, ' scarred ')
+                            break
+                        if x == 0:
+                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(f'{the_cat.name} ', 'This cat ', 1)
+                        elif x == 1:
+                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(f'{the_cat.name} was ', 'They were also ', 1)
+                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(str(the_cat.name), 'They also', 1)
+                        elif x >= 3:
+                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(f'{the_cat.name} was ', 'Then they were ', 1)
+                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(str(the_cat.name), 'Then they', 1)
+                    scar_history = ' '.join(the_cat.scar_event)
+                    life_history.append(scar_history)
+
+                # join together history list with line breaks
+                display_history = '\n'.join(life_history)
+
+                # display cat backstory and blurb in tab
+                verdana_small_dark.blit_text(f'{display_history}',
+                                             (90, 485),
+                                             x_limit=695,
+                                             line_break=25,
+                                             line_spacing=15
+                                             )
+
+            # ---------------------------------------------------------------------------- #
+            #                               relation sub tab                               #
+            # ---------------------------------------------------------------------------- #
+            """
+            this will hold history related to relationships with other cats.  atm i plan for this to be:
+            - Mentor Influence
+            - Former mates and # of kits had with them
+            - Current mate and # of kits had with them
+            """
+
+            # check if cat has any mentor influence, else assign None
+            if len(the_cat.mentor_influence) >= 1:
+                influenced_trait = str(the_cat.mentor_influence[0]).casefold()
+                if len(the_cat.mentor_influence) >= 2:
+                    influenced_skill = str(the_cat.mentor_influence[1]).casefold()
+                else:
+                    influenced_skill = None
             else:
-                verdana_dark.blit_text(f'Backstory: Clanborn \n{bs_blurb}',
-                                       (90, 485),
-                                       x_limit=550,
-                                       line_break=30)
+                game.switches['sub_tab_group'] = 'life sub tab'
+                influenced_trait = None
+                influenced_skill = None
+
+            # if they did have mentor influence, check if skill or trait influence actually happened and assign None
+            if influenced_skill == 'none':
+                influenced_skill = None
+            if influenced_trait == 'none':
+                influenced_trait = None
+
+            if influenced_skill is not None or influenced_trait is not None:
+                buttons.draw_image_button((710, 512),
+                                          button_name='sub_tab2',
+                                          size=(42, 30),
+                                          sub_tab_group='relation sub tab'
+                                          )
+            else:
+                buttons.draw_image_button((710, 512),
+                                          button_name='sub_tab',
+                                          size=(42, 30),
+                                          available=False
+                                          )
+
+            if game.switches['sub_tab_group'] == 'relation sub tab':
+                screen.blit(ProfileScreen.backstory_tab, (65, 465))
+
+                relation_history = []
+
+                # if cat had mentor influence then write history text for those influences and append to history
+                    # assign proper grammar to skills
+                if influenced_skill in Cat.skill_groups.get('special'):
+                    adjust_skill = f'unlock their abilities as a {influenced_skill}'
+                    influenced_skill = adjust_skill
+                elif influenced_skill in Cat.skill_groups.get('star'):
+                    adjust_skill = f'grow a {influenced_skill}'
+                    influenced_skill = adjust_skill
+                elif influenced_skill in Cat.skill_groups.get('smart'):
+                    adjust_skill = f'become {influenced_skill}'
+                    influenced_skill = adjust_skill
+                else:
+                    # for loop to assign proper grammar to all these groups
+                    become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak']
+                    for x in become_group:
+                        if influenced_skill in Cat.skill_groups.get(x):
+                            adjust_skill = f'become a(n) {influenced_skill}'
+                            influenced_skill = adjust_skill
+                            break
+
+                mentor = the_cat.former_mentor[-1].name
+
+                # append influence blurb to history
+                if influenced_trait is not None and influenced_skill is None:
+                    relation_history.append(f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait}.")
+                elif influenced_trait is None and influenced_skill is not None:
+                    relation_history.append(f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}.")
+                elif influenced_trait is not None and influenced_skill is not None:
+                    relation_history.append(f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill}.")
+
+                # join together history list with line breaks
+                display_history = '\n'.join(relation_history)
+
+                # display cat backstory and blurb in tab
+                verdana_small_dark.blit_text(f'{display_history}',
+                                             (90, 485),
+                                             x_limit=695,
+                                             line_break=25,
+                                             line_spacing=15
+                                             )
+
+            # ---------------------------------------------------------------------------- #
+            #                              good deeds sub tab                              #
+            # ---------------------------------------------------------------------------- #
+            """
+            this will hold history related to 'good deeds' done by the cat.  atm i plan for this to be:
+            - cats that have been saved by this cat
+            - cats they have adopted?
+            - if we further develop interactions StarClan cats have with living cats, then there is potential for 
+            this to hold any important events that a dead cat is included in.
+            """
+
+            # commented out until i have info that can be put in this tab
+            #buttons.draw_image_button((710, 549),
+            #                          button_name='sub_tab3',
+            #                          size=(42, 30),
+            #                          sub_tab_group='relation sub tab'
+            #                          )
+            buttons.draw_image_button((710, 549),
+                                      button_name='sub_tab',
+                                      size=(42, 30),
+                                      available=False
+                                      )
+
+            # ---------------------------------------------------------------------------- #
+            #                              evil deeds sub tab                              #
+            # ---------------------------------------------------------------------------- #
+            """
+            this will hold history related to 'evil deeds' done by the cat.  atm i plan for this to be:
+            - cats murdered by this cat
+            - if we implement a "corruption" mechanic for living cats targeted by DF then perhaps info on those can
+            be included here?
+            """
+            # commented out until i have info that can be put in this tab
+            #buttons.draw_image_button((710, 549),
+            #                          button_name='sub_tab3',
+            #                          size=(42, 30),
+            #                          sub_tab_group='relation sub tab'
+            #                          )
+            buttons.draw_image_button((710, 586),
+                                      button_name='sub_tab',
+                                      size=(42, 30),
+                                      available=False
+                                      )
 
         # opens backstory tab if clicked
         else:
@@ -672,7 +866,7 @@ class ProfileScreen(Screens):
                                           available=False)
 
             # take to see the change mentor screen (only available if cat is apprentice)
-            if the_cat.status == 'apprentice' and not the_cat.dead:
+            if the_cat.status in ['apprentice', 'medicine cat apprentice'] and not the_cat.dead:
                 buttons.draw_image_button((50, 558),
                                           button_name='change_mentor',
                                           text='change mentor',
@@ -728,9 +922,17 @@ class ProfileScreen(Screens):
                                           available=False)
 
             # promote a cat to deputy if no deputy is alive
+            deputy = game.clan.deputy
+            if game.clan.deputy is None:
+                deputy = None
+            elif game.clan.deputy.exiled:
+                deputy = None
+            elif game.clan.deputy.dead:
+                deputy = None
+
             if the_cat.status in [
                 'warrior'
-            ] and not the_cat.dead and not the_cat.exiled and game.clan.deputy is None or game.clan.deputy == 0 or game.clan.deputy.exiled or game.clan.deputy.dead:
+            ] and not the_cat.dead and not the_cat.exiled and deputy is None:
                 buttons.draw_image_button((226, 486),
                                           button_name='promote_deputy',
                                           text='promote to deputy',
@@ -899,7 +1101,7 @@ class ProfileScreen(Screens):
                                       )
 
             # change cat to trans male
-            if the_cat.genderalign == "female":
+            if the_cat.gender == "female" and the_cat.genderalign in ['male', 'female']:
                 buttons.draw_image_button((402, 486),
                                           button_name='change_trans_male',
                                           text='change to trans male',
@@ -910,7 +1112,7 @@ class ProfileScreen(Screens):
                     the_cat.genderalign = 'trans male'
 
             # change cat to trans female
-            elif the_cat.genderalign == "male":
+            elif the_cat.gender == "male" and the_cat.genderalign in ['male', 'female']:
                 buttons.draw_image_button((402, 486),
                                           button_name='change_trans_female',
                                           text='change to trans female',
@@ -995,15 +1197,8 @@ class ProfileScreen(Screens):
                                   available=game.switches['profile_tab_group'] != 'dangerous'
                                   )
 
-        # EXILE BUTTON DISABLED FOR NOW.  remove available=False when functionality is ready again
-        if game.switches['profile_tab_group'] == 'dangerous':
-            buttons.draw_image_button((578, 450),
-                                      button_name='exile_cat',
-                                      text='exile cat',
-                                      available=False,
-                                      size=(172, 36),
-                                      )
 
+        if game.switches['profile_tab_group'] == 'dangerous':
             # button to kill cat
             if not the_cat.dead and not the_cat.exiled:
                 buttons.draw_image_button((578, 486),
@@ -1020,6 +1215,32 @@ class ProfileScreen(Screens):
                                           kill_cat=the_cat,
                                           available=False
                                           )
+            if not the_cat.dead and not the_cat.exiled:
+                buttons.draw_image_button((578, 450),
+                                          button_name='exile_cat',
+                                          text='exile cat',
+                                          available=True,
+                                          cat_value=the_cat,
+                                          size=(172, 36),
+                                          )
+            else:
+                if not the_cat.df:
+                    buttons.draw_image_button((578, 450),
+                                              button_name='exile_df',
+                                              text='Exile to DF',
+                                              available=True,
+                                              cat_value=the_cat,
+                                              size=(172, 46),
+                                              )
+                else:
+                    buttons.draw_image_button((578, 450),
+                                              button_name='exile_df',
+                                              text='Exile to DF',
+                                              available=False,
+                                              cat_value=the_cat,
+                                              size=(172, 46),
+                                              )
+
 
             # close tab group
             buttons.draw_image_button((578, 522),
@@ -1062,10 +1283,12 @@ class ProfileScreen(Screens):
         biome = biome.lower()
 
         all_platforms = []
-        if the_cat.dead or game.clan.instructor.ID == the_cat.ID:
+        if the_cat.df:
+            dead_platform = [f'{platform_base_dir}darkforestplatform_{light_dark}.png']
+            all_platforms = dead_platform*4
+        elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
             dead_platform = [f'{platform_base_dir}/starclanplatform_{light_dark}.png']
             all_platforms = dead_platform*4
-
         else:
             for leaf in leaves:
                 platform_dir = f'{platform_base_dir}/{biome}/{leaf}_{light_dark}.png'
@@ -1227,6 +1450,46 @@ class GenderChangedScreen(Screens):
 
 
 class ExileProfileScreen(Screens):
+    def update_platform(self):
+        the_cat = Cat.all_cats.get(game.switches['cat'],
+                                         game.clan.instructor)
+        
+        light_dark = "light"
+        if game.settings["dark mode"]:
+            light_dark = "dark"
+
+        platform_base_dir = 'resources/images/platforms/'
+        leaves = ["newleaf", "greenleaf", "leafbare", "leaffall"]
+        
+        available_biome = ['Forest', 'Mountainous', 'Plains', 'Beach']
+        biome = game.clan.biome
+
+        if biome not in available_biome:
+            biome = available_biome[0]
+
+        biome = biome.lower()
+
+        all_platforms = []
+        if the_cat.df:
+            dead_platform = [f'{platform_base_dir}darkforestplatform_{light_dark}.png']
+            all_platforms = dead_platform*4
+        elif the_cat.dead or game.clan.instructor.ID == the_cat.ID:
+            dead_platform = [f'{platform_base_dir}/starclanplatform_{light_dark}.png']
+            all_platforms = dead_platform*4
+        else:
+            for leaf in leaves:
+                platform_dir = f'{platform_base_dir}/{biome}/{leaf}_{light_dark}.png'
+                all_platforms.append(platform_dir)
+
+        self.newleaf_plt = pygame.transform.scale(
+            pygame.image.load(all_platforms[0]).convert_alpha(), (240, 210))
+        self.greenleaf_plt = pygame.transform.scale(
+            pygame.image.load(all_platforms[1]).convert_alpha(), (240, 210))
+        self.leafbare_plt = pygame.transform.scale(
+            pygame.image.load(all_platforms[2]).convert_alpha(), (240, 210))
+        self.leaffall_plt = pygame.transform.scale(
+            pygame.image.load(all_platforms[3]).convert_alpha(), (240, 210))
+        
     def on_use(self):
         # use this variable to point to the cat object in question
         the_cat = Cat.all_cats.get(game.switches['cat'],game.clan.instructor)
@@ -1242,15 +1505,16 @@ class ExileProfileScreen(Screens):
         count2 = 0
         verdana_big.text(cat_name, ('center', 150))  # NAME
 
-        # if game.settings['backgrounds']:  # CAT PLATFORM
-        #     if game.clan.current_season == 'Newleaf':
-        #         screen.blit(self.newleaf_plt, (55, 200))
-        #     elif game.clan.current_season == 'Greenleaf':
-        #         screen.blit(self.greenleaf_plt, (55, 200))
-        #     elif game.clan.current_season == 'Leaf-bare':
-        #         screen.blit(self.leafbare_plt, (55, 200))
-        #     elif game.clan.current_season == 'Leaf-fall':
-        #         screen.blit(self.leaffall_plt, (55, 200))
+        if game.settings['backgrounds']:  # CAT PLATFORM
+            self.update_platform()
+            if game.clan.current_season == 'Newleaf':
+                screen.blit(self.newleaf_plt, (55, 200))
+            elif game.clan.current_season == 'Greenleaf':
+                screen.blit(self.greenleaf_plt, (55, 200))
+            elif game.clan.current_season == 'Leaf-bare':
+                screen.blit(self.leafbare_plt, (55, 200))
+            elif game.clan.current_season == 'Leaf-fall':
+                screen.blit(self.leaffall_plt, (55, 200))
 
         draw_large(the_cat,(100, 200)) # IMAGE
 

@@ -224,6 +224,8 @@ class SettingsScreen(Screens):
         verdana.text("Force cats to retire after severe injury", (x_value, 382))
         verdana.text("Enable shaders", (x_value, 421))
         verdana.text("Display hotkeys on text buttons", (x_value, 460))
+        verdana.text("Allow new leaders to automatically choose a deputy", (x_value, 499))
+
 
         # Setting values
         draw_on_off(220, 'dark mode')
@@ -233,6 +235,7 @@ class SettingsScreen(Screens):
         draw_on_off(376, 'retirement')
         draw_on_off(415, 'shaders')
         draw_on_off(454, 'hotkey display')
+        draw_on_off(493, 'deputy')
 
         # other buttons
 

@@ -53,7 +53,9 @@ class Cat():
         'senior adult': [96, 119],
         'elder': [120, 300]
     }
+
     gender_tags = {'female': 'F', 'male': 'M'}
+
     skills = [
         'good hunter', 'great hunter', 'fantastic hunter', 'smart',
         'very smart', 'extremely smart', 'good fighter', 'great fighter',
@@ -76,11 +78,27 @@ class Cat():
         'strong connection to StarClan', 'smart', 'very smart', 'extremely smart',
         'good kitsitter', 'great kitsitter', 'excellent kitsitter', 'camp keeper', 'den builder',
     ]
+
+    skill_groups = {
+        'special': ['omen sight', 'dream walker', 'clairvoyant', 'prophet', 'lore keeper', 'keen eye'],
+        'star': ['strong connection to StarClan'],
+        'heal': ['good healer', 'great healer', 'fantastic healer'],
+        'teach': ['good teacher', 'great teacher', 'fantastic teacher'],
+        'mediate': ['good mediator', 'great mediator', 'excellent mediator'],
+        'smart': ['smart', 'very smart', 'extremely smart'],
+        'hunt': ['good hunter', 'great hunter', 'fantastic hunter'],
+        'fight': ['good fighter', 'great fighter', 'excellent fighter'],
+        'speak': ['good speaker', 'great speaker', 'excellent speaker'],
+        'story': ['good storyteller', 'great storyteller', 'fantastic storyteller'],
+        'tactician': ['smart tactician', 'valuable tactician', 'valuable insight'],
+        'home': ['good kitsitter', 'great kitsitter', 'excellent kitsitter', 'camp keeper', 'den builder']
+    }
+
     backstories = [
         'clanborn', 'half-clan1', 'half-clan2', 'outsider_roots1', 'outsider_roots2', 
         'loner1', 'loner2', 'kittypet1', 'kittypet2', 'rogue1', 'rogue2', 'abandoned1',
         'abandoned2', 'abandoned3', 'medicine_cat', 'otherclan', 'otherclan2', 'ostracized_warrior', 'disgraced', 
-        'retired_leader', 'refugee', 'tragedy_survivor'
+        'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder'
     ]
 
     all_cats = {}  # ID: object
@@ -112,6 +130,8 @@ class Cat():
         self.eye_colour = eye_colour
         self.mentor = None
         self.former_mentor = []
+        self.patrol_with_mentor = 0
+        self.mentor_influence = []
         self.apprentice = []
         self.former_apprentices = []
         self.relationships = []
@@ -134,6 +154,8 @@ class Cat():
         self.children = []
         self.illness = None
         self.injury = None
+        self.scar_event = []
+        self.df = False
 
         # setting ID
         if ID is None:
@@ -148,10 +170,15 @@ class Cat():
         if status is None and moons is None:
             self.age = choice(self.ages)
         elif moons is not None:
-            for key_age in self.age_moons.keys():
-                if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1]+1):
-                    self.age = key_age
-                    self.moons = moons
+            self.moons = moons
+            if moons > 300:
+                # Out of range, always elder
+                self.age = 'elder'
+            else:
+                # In range
+                for key_age in self.age_moons.keys():
+                    if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1]+1):
+                        self.age = key_age
         else:
             if status in ['kitten', 'elder']:
                 self.age = status
@@ -286,6 +313,7 @@ class Cat():
         else:
             self.dead = True
 
+
         if self.mate is not None:
             self.mate = None
             if type(self.mate) == str:
@@ -302,8 +330,7 @@ class Cat():
     def status_change(self, new_status):
         self.status = new_status
         self.name.status = new_status
-        # revealing of traits and skills
-        self.update_traits(self.status)
+
         # updates mentors
         if self.status == 'apprentice':
             self.update_mentor()
@@ -311,10 +338,8 @@ class Cat():
             self.update_med_mentor()
         # updates skill
         if self.status == 'warrior':
-            self.skill = choice(self.skills)
             self.update_mentor()
         elif self.status == 'medicine cat':
-            self.skill = choice(self.med_skills)
             self.update_med_mentor()
         else:
             self.skill = self.skill
@@ -324,8 +349,8 @@ class Cat():
         # update class dictionary
         self.all_cats[self.ID] = self
 
-    def update_traits(self, new_status):
-        if new_status == 'apprentice' or new_status == 'medicine cat apprentice':
+    def update_traits(self):
+        if self.moons == 6:
             chance = randint(0, 5)  # chance for cat to gain trait that matches their previous trait's personality group
             if chance == 0:
                 self.trait = choice(self.traits)
@@ -338,33 +363,80 @@ class Cat():
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
                             self.trait = choice(self.traits)
-                            print(self.name, 'trait type chosen was kit trait -', self.trait,
-                                  'chosen randomly instead')
+                            print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
+                            break
                         else:
                             self.trait = chosen_trait
                             print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
-        if new_status == 'warrior' or new_status == 'medicine cat':
-            chance = randint(0, 5)  # chance for cat to gain new trait or keep old
+                            break
+        elif self.moons == 12:
+            chance = randint(0, 9) + int(self.patrol_with_mentor)  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
+                self.mentor_influence.append('None')
                 print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
-            elif chance == 1 or chance == 2:
+            elif 1 <= chance <= 6:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
                     if self.trait in self.personality_groups[x]:
                         possible_trait = self.personality_groups.get(x)
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
-                            self.trait = choice(self.traits)
-                            print(self.name, 'trait type chosen was kit trait -', self.trait,
-                                  'chosen randomly instead')
+                            self.trait = self.trait
+                            self.mentor_influence.append('None')
+                            print(self.name, 'NEW TRAIT TYPE: No change - CHANCE', chance)
+                            break
                         else:
                             self.trait = chosen_trait
+                            self.mentor_influence.append('None')
                             print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
+                            break
+            elif chance >= 7:
+                possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
+                for x in possible_groups:
+                    if self.mentor is not None:
+                        mentor = self.mentor
+                    elif self.mentor is None and len(self.former_mentor) != 0:
+                        if len(self.former_mentor) > 1:
+                            mentor = self.former_mentor[-1]
+                        else:
+                            mentor = self.former_mentor[0]
+                    else:
+                        self.mentor_influence.append('None')
+                        print(self.name, 'NEW TRAIT TYPE: No change', chance)
+                        break
+                    if mentor.trait in self.personality_groups[x]:
+                        possible_trait = self.personality_groups.get(x)
+
+                        if x == 'Abrasive' and chance >= 12:
+                            possible_trait = self.personality_groups.get('Reserved')
+                            self.mentor_influence.append('Reserved')
+                        chosen_trait = choice(possible_trait)
+
+                        if chosen_trait in self.kit_traits:
+                            self.trait = choice(self.traits)
+                            if 'Reserved' in self.mentor_influence:
+                                self.mentor_influence.pop(0)
+                            self.mentor_influence.append('None')
+                            print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
+                            break
+
+                        else:
+                            self.trait = chosen_trait
+                            if 'Reserved' not in self.mentor_influence:
+                                self.mentor_influence.append(x)
+                                print(self.name, 'TRAIT TYPE from mentor:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
+                                      chance)
+                                break
+                            else:
+                                print(self.name, 'TRAIT TYPE from mentor: Reserved', 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
+                                      chance)
+                                break
             else:
+                self.mentor_influence.append('None')
                 print(self.name, 'NEW TRAIT TYPE: No change', chance)
 
-        if new_status == 'elder':
+        elif self.moons == 120:
             chance = randint(0, 7)  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
@@ -379,9 +451,11 @@ class Cat():
                             self.trait = choice(self.traits)
                             print(self.name, 'trait type chosen was kit trait -', self.trait,
                                   'chosen randomly instead')
+                            break
                         else:
                             self.trait = chosen_trait
                             print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
+                            break
             else:
                 print(self.name, 'NEW TRAIT TYPE: No change', chance)
 
@@ -404,14 +478,19 @@ class Cat():
         """Handles a moon skip for a alive cat"""
         if self.exiled:
             # this is handled in events.py
+            self.thoughts()
             return
 
         self.moons += 1
+        self.update_traits()
         self.in_camp = 1
+
         if self.moons < 12:
             self.update_mentor()
 
-        self.update_skill() # should only called sometimes not every moon?
+        if self.moons >= 12:
+            self.update_skill()
+
         self.thoughts()
         self.create_interaction()
 
@@ -513,15 +592,77 @@ class Cat():
         relevant_relationship.start_action()
 
     def update_skill(self):
-        #checking that skill is correct
-        if self.status == 'medicine cat' and self.skill not in self.med_skills:
-            self.skill = choice(self.med_skills)
+        # checking for skill and replacing empty skill if cat is old enough
+        # also adds a chance for cat to take a skill similar to their mentor
 
         if self.skill == '???':
-            if self.status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
+            # assign skill to new medicine cat
+            if self.status == 'medicine cat' and self.skill not in self.med_skills:
+                # skill groups they can take from
+                possible_groups = ['special', 'heal', 'star', 'mediate', 'smart', 'teach']
+                # check if they had a mentor
+                if self.former_mentor:
+                    chance = randint(0, 5)
+                    mentor = self.former_mentor[-1]
+                    # give skill from mentor, this is a higher chance of happening than the warrior has
+                    # bc med cats have no patrol_with_mentor modifier
+                    if chance >= 2:
+                        for x in possible_groups:
+                            if mentor.skill in self.skill_groups[x]:
+                                possible_skill = self.skill_groups.get(x)
+                                self.skill = choice(possible_skill)
+                                self.mentor_influence.append(self.skill)
+                                print('skill from mentor')
+                                break
+                    # don't give skill from mentor
+                    else:
+                        self.skill = choice(self.med_skills)
+                        self.mentor_influence.append('None')
+                        print('random skill')
+                # if they didn't haave a mentor, give random skill
+                else:
+                    self.skill = choice(self.med_skills)
+                    self.mentor_influence.append('None')
+                    print('random skill')
+
+            # assign skill to new warrior
+            elif self.status == 'warrior':
+                # possible skill groups they can take from
+                possible_groups = ['star', 'smart', 'teach', 'hunt', 'fight', 'speak']
+                # check if they had a mentor
+                if self.former_mentor:
+                    chance = randint(0, 9) + int(self.patrol_with_mentor)
+                    mentor = self.former_mentor[-1]
+                    # give skill from mentor
+                    if chance >= 9:
+                        for x in possible_groups:
+                            if mentor.skill in self.skill_groups[x]:
+                                possible_skill = self.skill_groups.get(x)
+                                self.skill = choice(possible_skill)
+                                self.mentor_influence.append(self.skill)
+                                print('skill from mentor. chance:', chance)
+                                break
+                    # don't give skill from mentor
+                    else:
+                        self.skill = choice(self.skills)
+                        self.mentor_influence.append('None')
+                        print('random skill')
+                # if they didn't have a mentor, give random skill
+                else:
+                    self.skill = choice(self.skills)
+                    self.mentor_influence.append('None')
+                    print('random skill')
+
+            # assign new skill to elder
+            elif self.status == 'elder':
+                self.skill = choice(self.elder_skills)
+                print('random skill')
+
+            # if a cat somehow has no skill, assign one after checking that they aren't a kit or adolescent
+            elif self.skill == '???' and self.status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
                 self.skill = choice(self.skills)
 
-# ---------------------------------------------------------------------------- #
+    # ---------------------------------------------------------------------------- #
 #                            !IMPORTANT INFORMATION!                           #
 #   conditions ar currently not integrated, this are just the base functions   #
 #    me (Lixxis) will integrate them after tests are written and completed     #
@@ -751,26 +892,49 @@ class Cat():
                     new_mentor = choice(potential_mentors)
             # Mentor changing to chosen/specified cat
             self.mentor = new_mentor
-            if new_mentor is not None:
+            if new_mentor is not None and old_mentor is None:
+                # remove and append in relevant lists
                 if self not in new_mentor.apprentice:
                     new_mentor.apprentice.append(self)
                 if self in new_mentor.former_apprentices:
                     new_mentor.former_apprentices.remove(self)
+            elif new_mentor is not None and old_mentor is not None:
+                # reset patrol number
+                self.patrol_with_mentor = 0
+                # remove and append in relevant lists
+                if self.moons > 6:
+                    if self not in new_mentor.apprentice:
+                        new_mentor.apprentice.append(self)
+                    if self not in old_mentor.former_apprentices:
+                        old_mentor.former_apprentices.append(self)
+                    if self in old_mentor.apprentice:
+                        old_mentor.apprentice.remove(self)
+                    if old_mentor not in self.former_mentor:
+                        self.former_mentor.append(old_mentor)
+                else:
+                    if self not in new_mentor.apprentice:
+                        new_mentor.apprentice.append(self)
+                    if self in old_mentor.apprentice:
+                        old_mentor.apprentice.remove(self)
         else:
             self.mentor = None
 
         # Move from old mentor's apps to former apps
-        if old_mentor is not None and old_mentor != self.mentor:
-            if self.moons != 6:
+        # append and remove from lists if the app has aged up to warrior
+        if self.status == 'medicine cat':
+            # reset patrol number just to be safe
+            self.patrol_with_mentor = 0
+            # app has graduated, no mentor needed anymore
+            self.mentor = None
+            # append and remove
+            if old_mentor is not None and old_mentor != self.mentor:
                 if self in old_mentor.apprentice:
                     old_mentor.apprentice.remove(self)
                 if self not in old_mentor.former_apprentices:
                     old_mentor.former_apprentices.append(self)
                 if old_mentor not in self.former_mentor:
                     self.former_mentor.append(old_mentor)
-            else:
-                if self in old_mentor.apprentice:
-                    old_mentor.apprentice.remove(self)
+
 
     def update_mentor(self, new_mentor=None):
         if new_mentor is None:
@@ -796,34 +960,45 @@ class Cat():
                     new_mentor = choice(potential_mentors)
             # Mentor changing to chosen/specified cat
             self.mentor = new_mentor
-            if new_mentor is not None:
+            if new_mentor is not None and old_mentor is None:
+                # remove and append in relevant lists
                 if self not in new_mentor.apprentice:
                     new_mentor.apprentice.append(self)
                 if self in new_mentor.former_apprentices:
                     new_mentor.former_apprentices.remove(self)
+            elif new_mentor is not None and old_mentor is not None:
+                # reset patrol number
+                self.patrol_with_mentor = 0
+                if self.moons > 6:
+                    if self not in new_mentor.apprentice:
+                        new_mentor.apprentice.append(self)
+                    if self not in old_mentor.former_apprentices:
+                        old_mentor.former_apprentices.append(self)
+                    if self in old_mentor.apprentice:
+                        old_mentor.apprentice.remove(self)
+                    if old_mentor not in self.former_mentor:
+                        self.former_mentor.append(old_mentor)
+                else:
+                    if self not in new_mentor.apprentice:
+                        new_mentor.apprentice.append(self)
+                    if self in old_mentor.apprentice:
+                        old_mentor.apprentice.remove(self)
         else:
             self.mentor = None
-        # Move from old mentor's apps to former apps
-        if self.status == 'warrior':
-            self.former_mentor.append(old_mentor)
-            self.mentor = None
-            if old_mentor is not None:
-                if self in old_mentor.apprentice:
-                    old_mentor.apprentice.remove(self)
-                if self not in old_mentor.former_apprentices:
-                    old_mentor.former_apprentices.append(self)
 
-        if old_mentor is not None and old_mentor != self.mentor:
-            if self.moons != 6:
+        # append and remove from lists if the app has aged up to warrior
+        if self.status == 'warrior' or self.dead:
+            # app has graduated, no mentor needed anymore
+            self.mentor = None
+            # append and remove
+            if old_mentor is not None and old_mentor != self.mentor:
                 if self in old_mentor.apprentice:
                     old_mentor.apprentice.remove(self)
                 if self not in old_mentor.former_apprentices:
                     old_mentor.former_apprentices.append(self)
                 if old_mentor not in self.former_mentor:
                     self.former_mentor.append(old_mentor)
-            else:
-                if self in old_mentor.apprentice:
-                    old_mentor.apprentice.remove(self)
+
 
 
 # ---------------------------------------------------------------------------- #

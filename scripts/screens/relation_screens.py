@@ -48,7 +48,13 @@ class ChooseMentorScreen(Screens):
         y_value += 15
         verdana_small.text(f'not be listed as a former apprentice on their old mentor\'s profile.',
                            ('center', y_value))
-        y_value += 30
+        y_value += 15
+        verdana_small.text(f'An apprentices mentor can have an influence on their trait and skill later in life.',
+                           ('center', y_value))
+        y_value += 15
+        verdana_small.text(f'Choose your mentors wisely.',
+                           ('center', y_value))
+        y_value += 25
         verdana_small.text(f'{str(the_cat.name)}\'s current mentor is {str(the_cat.mentor.name)}.',
                            ('center', y_value))
 
@@ -74,9 +80,9 @@ class ChooseMentorScreen(Screens):
         pos_y = 20
 
         if game.switches['apprentice'] is not None:
-            self.get_valid_mentors(valid_mentors, pos_x, pos_y)
+            self.get_valid_mentors(the_cat, valid_mentors, pos_x, pos_y)
 
-        if mentor is not None:
+        if mentor is not None and mentor != the_cat.mentor:
             buttons.draw_button(
                 ('center', 310),
                 image='buttons/change_mentor2',
@@ -90,14 +96,20 @@ class ChooseMentorScreen(Screens):
                 text='Change Mentor',
                 available=False)
 
-    def get_valid_mentors(self, valid_mentors, pos_x, pos_y):
+    def get_valid_mentors(self, the_cat, valid_mentors, pos_x, pos_y):
 
-        for cat in Cat.all_cats.values():
-            if not cat.dead and not cat.exiled and cat != game.switches[
-                    'apprentice'].mentor and cat.status in [
-                        'warrior', 'deputy', 'leader'
-                    ]:
-                valid_mentors.append(cat)
+        if the_cat.status == "apprentice":
+            for cat in Cat.all_cats.values():
+                if not cat.dead and not cat.exiled and cat.status in [
+                            'warrior', 'deputy', 'leader'
+                        ]:
+                    valid_mentors.append(cat)
+        elif the_cat.status == "medicine cat apprentice":
+            for cat in Cat.all_cats.values():
+                if not cat.dead and not cat.exiled and cat.status == 'medicine cat':
+                    valid_mentors.append(cat)
+
+
         all_pages = 1
         if len(valid_mentors) > 30:
             all_pages = int(ceil(len(valid_mentors) / 30.0))
@@ -179,15 +191,30 @@ def show_mentor_cat_info(arg0, arg1, arg2):
 
     y_value = 168
 
-    verdana_small_dark.text(arg0.age,
-                            ('center', y_value),
-                            x_start=arg1,
-                            x_limit=arg1+100
-                            )
-    y_value += 15
+    if arg0.status != 'elder':
+        verdana_small_dark.text(arg0.age,
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1+100
+                                )
+        y_value += 15
 
-    if arg0.age != 'elder':
+    if arg0.status != 'medicine cat apprentice':
         verdana_small_dark.text(str(arg0.status),
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1 + 100
+                                )
+        y_value += 15
+    else:
+        verdana_small_dark.text('medicine cat',
+                                ('center', y_value),
+                                x_start=arg1,
+                                x_limit=arg1 + 100
+                                )
+        y_value += 15
+
+        verdana_small_dark.text('apprentice',
                                 ('center', y_value),
                                 x_start=arg1,
                                 x_limit=arg1 + 100
@@ -356,6 +383,7 @@ class ViewChildrenScreen(Screens):
         if siblings is False:
             verdana.text('This cat has no siblings.', (380, 200))
 
+
         pos_x = 0
         pos_y = 60
         # SHOW MATE
@@ -415,6 +443,7 @@ class ViewChildrenScreen(Screens):
 
         if kittens is False:
             verdana.text('This cat has never had offspring.', (350, 480))
+
 
         if the_cat.exiled:
             buttons.draw_image_button((25, 645),
@@ -998,18 +1027,24 @@ class RelationshipScreen(Screens):
                 verdana_small_dark.text(
                     'romantic love:',
                     (292 + pos_x, 181 + pos_y + count))
+                count += 20
+                current_x = 294 + pos_x
+                current_y = 180 + pos_y + count
+                if check_age:
+                    self.draw_green_bar(the_relationship.romantic_love, current_x, current_y)
+                else:
+                    self.draw_bar(0, current_x, current_y)
             else:
                 verdana_small_dark.text(
                     'romantic like:',
                     (292 + pos_x, 181 + pos_y + count))
-
-            count += 20
-            current_x = 294 + pos_x
-            current_y = 180 + pos_y + count
-            if check_age:
-                self.draw_bar(the_relationship.romantic_love, current_x, current_y)
-            else:
-                self.draw_bar(0, current_x, current_y)
+                count += 20
+                current_x = 294 + pos_x
+                current_y = 180 + pos_y + count
+                if check_age:
+                    self.draw_bar(the_relationship.romantic_love, current_x, current_y)
+                else:
+                    self.draw_bar(0, current_x, current_y)
 
             count += 5
 
@@ -1018,16 +1053,18 @@ class RelationshipScreen(Screens):
                 verdana_small_dark.text(
                     'platonic love:',
                     (292 + pos_x, 179 + pos_y + count))
-
+                count += 20
+                current_x = 294 + pos_x
+                current_y = 178 + pos_y + count
+                self.draw_green_bar(the_relationship.platonic_like, current_x, current_y)
             else:
                 verdana_small_dark.text(
                     'platonic like:',
                     (292 + pos_x, 179 + pos_y + count))
-
-            count += 20
-            current_x = 294 + pos_x
-            current_y = 178 + pos_y + count
-            self.draw_bar(the_relationship.platonic_like, current_x, current_y)
+                count += 20
+                current_x = 294 + pos_x
+                current_y = 178 + pos_y + count
+                self.draw_bar(the_relationship.platonic_like, current_x, current_y)
 
             count += 5
 
@@ -1036,14 +1073,18 @@ class RelationshipScreen(Screens):
                 verdana_small_dark.text(
                     'hate:',
                     (292 + pos_x, 177 + pos_y + count))
+                count += 20
+                current_x = 294 + pos_x
+                current_y = 176 + pos_y + count
+                self.draw_red_bar(the_relationship.dislike, current_x, current_y)
             else:
                 verdana_small_dark.text(
                     'dislike:',
                     (292 + pos_x, 177 + pos_y + count))
-            count += 20
-            current_x = 294 + pos_x
-            current_y = 176 + pos_y + count
-            self.draw_bar(the_relationship.dislike, current_x, current_y)
+                count += 20
+                current_x = 294 + pos_x
+                current_y = 176 + pos_y + count
+                self.draw_bar(the_relationship.dislike, current_x, current_y)
 
             count += 5
 
@@ -1052,47 +1093,79 @@ class RelationshipScreen(Screens):
                 verdana_small_dark.text(
                     'admiration:',
                     (292 + pos_x, 175 + pos_y + count))
+                count += 20
+                current_x = 294 + pos_x
+                current_y = 174 + pos_y + count
+                self.draw_green_bar(the_relationship.admiration, current_x, current_y)
+
             else:
                 verdana_small_dark.text(
                     'respect:',
                     (292 + pos_x, 175 + pos_y + count))
-            count += 20
-            current_x = 294 + pos_x
-            current_y = 174 + pos_y + count
-            self.draw_bar(the_relationship.admiration, current_x, current_y)
+                count += 20
+                current_x = 294 + pos_x
+                current_y = 174 + pos_y + count
+                self.draw_bar(the_relationship.admiration, current_x, current_y)
 
             count += 5
 
             # COMFORTABLE DISPLAY
-            verdana_small_dark.text(
-                'comfortable:',  # eventual progression to 'secure'?
-                (292 + pos_x, 173 + pos_y + count))
-            count += 20
-            current_x = 294 + pos_x
-            current_y = 172 + pos_y + count
-            self.draw_bar(the_relationship.comfortable, current_x, current_y)
+            if the_relationship.comfortable > 49:
+                verdana_small_dark.text(
+                    'secure:',  # eventual progression to 'secure'?
+                    (292 + pos_x, 173 + pos_y + count))
+                count += 20
+                current_x = 294 + pos_x
+                current_y = 172 + pos_y + count
+                self.draw_green_bar(the_relationship.comfortable, current_x, current_y)
+            else:
+                verdana_small_dark.text(
+                    'comfortable:',  # eventual progression to 'secure'?
+                    (292 + pos_x, 173 + pos_y + count))
+                count += 20
+                current_x = 294 + pos_x
+                current_y = 172 + pos_y + count
+                self.draw_bar(the_relationship.comfortable, current_x, current_y)
 
             count += 5
 
             # JEALOUS DISPLAY
-            verdana_small_dark.text(
-                'jealousy:',  # eventual progression to 'resentment'?
-                (292 + pos_x, 171 + pos_y + count))
-            count += 20
-            current_x = 294 + pos_x
-            current_y = 170 + pos_y + count
-            self.draw_bar(the_relationship.jealousy, current_x, current_y)
+            if the_relationship.jealousy > 49:
+                verdana_small_dark.text(
+                    'resentment:',  # eventual progression to 'resentment'?
+                    (292 + pos_x, 171 + pos_y + count))
+                count += 20
+                current_x = 294 + pos_x
+                current_y = 170 + pos_y + count
+                self.draw_red_bar(the_relationship.jealousy, current_x, current_y)
+            else:
+                verdana_small_dark.text(
+                        'jealousy:',  # eventual progression to 'resentment'?
+                        (292 + pos_x, 171 + pos_y + count))
+                count += 20
+                current_x = 294 + pos_x
+                current_y = 170 + pos_y + count
+                self.draw_bar(the_relationship.jealousy, current_x, current_y)
 
             count += 5
 
             # TRUST DISPLAY
-            verdana_small_dark.text(
-                'trust:',  # eventual progression to 'reliance'?
-                (294 + pos_x, 169 + pos_y + count))
-            count += 20
-            current_x = 294 + pos_x
-            current_y = 168 + pos_y + count
-            self.draw_bar(the_relationship.trust, current_x, current_y)
+            if the_relationship.trust > 49:
+                verdana_small_dark.text(
+                    'reliance:',  # eventual progression to 'reliance'?
+                    (294 + pos_x, 169 + pos_y + count))
+                count += 20
+                current_x = 294 + pos_x
+                current_y = 168 + pos_y + count
+                self.draw_green_bar(the_relationship.trust, current_x, current_y)
+            else:
+                verdana_small_dark.text(
+                    'trust:',  # eventual progression to 'reliance'?
+                    (294 + pos_x, 169 + pos_y + count))
+                count += 20
+                current_x = 294 + pos_x
+                current_y = 168 + pos_y + count
+                self.draw_bar(the_relationship.trust, current_x, current_y)
 
             # CAT COUNT
             cats_on_page += 1
@@ -1118,12 +1191,16 @@ class RelationshipScreen(Screens):
             if game.switches['chosen_cat'].dead:
                 verdana_big_dark.text(
                     f"{chosen_name} (dead)",
-                    (60, 295)
+                    ('center', 295),
+                    x_limit=225,
+                    x_start=75
                 )
             else:
                 verdana_big_dark.text(
                     f"{chosen_name}",
-                    (60, 295)
+                    ('center', 295),
+                    x_limit=225,
+                    x_start=75
                 )
 
             # DRAW CAT
@@ -1326,6 +1403,7 @@ class RelationshipScreen(Screens):
         original_bar = image_cache.load_image(
             "resources/images/relation_bar.png").convert_alpha()
 
+
         bg_rect = bar_bg.get_rect(midleft=(pos_x, pos_y))
         if game.settings['dark mode'] is True:
             screen.blit(bar_bg_dark, bg_rect)
@@ -1342,6 +1420,61 @@ class RelationshipScreen(Screens):
         x_pos = (bar_length_per_snippet + 1) * int(value / number_of_bars)
         bar_rect = original_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
         bar = pygame.transform.scale(original_bar, (value % number_of_bars, 10))
+        screen.blit(bar, bar_rect)
+
+
+    def draw_green_bar(self, value, pos_x, pos_y):
+        # Loading Bar and variables
+        bar_bg = pygame.image.load(
+            "resources/images/relations_border.png").convert_alpha()
+        bar_bg_dark = pygame.image.load(
+            "resources/images/relations_border_dark.png").convert_alpha()
+        green_bar = pygame.image.load(
+            "resources/images/relation_bar_green.png").convert_alpha()
+
+        bg_rect = bar_bg.get_rect(midleft=(pos_x, pos_y))
+        if game.settings['dark mode'] is True:
+            screen.blit(bar_bg_dark, bg_rect)
+        else:
+            screen.blit(bar_bg, bg_rect)
+        x_pos = 0
+        bar_length_per_snippet = 8
+        number_of_bars = 10
+        for i in range(int(value / number_of_bars)):
+            x_pos = i * (bar_length_per_snippet + 1)
+            bar_rect = green_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
+            bar = pygame.transform.scale(green_bar, (bar_length_per_snippet, 10))
+            screen.blit(bar, bar_rect)
+        x_pos = (bar_length_per_snippet + 1) * int(value / number_of_bars)
+        bar_rect = green_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
+        bar = pygame.transform.scale(green_bar, (value % number_of_bars, 10))
+        screen.blit(bar, bar_rect)
+
+    def draw_red_bar(self, value, pos_x, pos_y):
+        # Loading Bar and variables
+        bar_bg = pygame.image.load(
+            "resources/images/relations_border.png").convert_alpha()
+        bar_bg_dark = pygame.image.load(
+            "resources/images/relations_border_dark.png").convert_alpha()
+        red_bar = pygame.image.load(
+            "resources/images/relation_bar_red.png").convert_alpha()
+
+        bg_rect = bar_bg.get_rect(midleft=(pos_x, pos_y))
+        if game.settings['dark mode'] is True:
+            screen.blit(bar_bg_dark, bg_rect)
+        else:
+            screen.blit(bar_bg, bg_rect)
+        x_pos = 0
+        bar_length_per_snippet = 8
+        number_of_bars = 10
+        for i in range(int(value / number_of_bars)):
+            x_pos = i * (bar_length_per_snippet + 1)
+            bar_rect = red_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
+            bar = pygame.transform.scale(red_bar, (bar_length_per_snippet, 10))
+            screen.blit(bar, bar_rect)
+        x_pos = (bar_length_per_snippet + 1) * int(value / number_of_bars)
+        bar_rect = red_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
+        bar = pygame.transform.scale(red_bar, (value % number_of_bars, 10))
         screen.blit(bar, bar_rect)
 
     def screen_switches(self):
