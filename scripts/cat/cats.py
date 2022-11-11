@@ -354,7 +354,6 @@ class Cat():
             chance = randint(0, 5)  # chance for cat to gain trait that matches their previous trait's personality group
             if chance == 0:
                 self.trait = choice(self.traits)
-                print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
             else:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
@@ -363,18 +362,13 @@ class Cat():
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
                             self.trait = choice(self.traits)
-                            print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
-                            break
                         else:
                             self.trait = chosen_trait
-                            print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
-                            break
         elif self.moons == 12:
             chance = randint(0, 9) + int(self.patrol_with_mentor)  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
                 self.mentor_influence.append('None')
-                print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
             elif 1 <= chance <= 6:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
@@ -384,13 +378,9 @@ class Cat():
                         if chosen_trait in self.kit_traits:
                             self.trait = self.trait
                             self.mentor_influence.append('None')
-                            print(self.name, 'NEW TRAIT TYPE: No change - CHANCE', chance)
-                            break
                         else:
                             self.trait = chosen_trait
                             self.mentor_influence.append('None')
-                            print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
-                            break
             elif chance >= 7:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
@@ -403,8 +393,6 @@ class Cat():
                             mentor = self.former_mentor[0]
                     else:
                         self.mentor_influence.append('None')
-                        print(self.name, 'NEW TRAIT TYPE: No change', chance)
-                        break
                     if mentor.trait in self.personality_groups[x]:
                         possible_trait = self.personality_groups.get(x)
 
@@ -418,29 +406,17 @@ class Cat():
                             if 'Reserved' in self.mentor_influence:
                                 self.mentor_influence.pop(0)
                             self.mentor_influence.append('None')
-                            print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
-                            break
-
                         else:
                             self.trait = chosen_trait
                             if 'Reserved' not in self.mentor_influence:
                                 self.mentor_influence.append(x)
-                                print(self.name, 'TRAIT TYPE from mentor:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
-                                      chance)
-                                break
-                            else:
-                                print(self.name, 'TRAIT TYPE from mentor: Reserved', 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
-                                      chance)
-                                break
             else:
                 self.mentor_influence.append('None')
-                print(self.name, 'NEW TRAIT TYPE: No change', chance)
 
         elif self.moons == 120:
             chance = randint(0, 7)  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
-                print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
             elif chance == 1:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
@@ -449,15 +425,8 @@ class Cat():
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
                             self.trait = choice(self.traits)
-                            print(self.name, 'trait type chosen was kit trait -', self.trait,
-                                  'chosen randomly instead')
-                            break
                         else:
                             self.trait = chosen_trait
-                            print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
-                            break
-            else:
-                print(self.name, 'NEW TRAIT TYPE: No change', chance)
 
     def describe_cat(self):
         if self.genderalign == 'male' or self.genderalign == "transmasc" or self.genderalign == "trans male":
@@ -612,19 +581,14 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 self.mentor_influence.append(self.skill)
-                                print('skill from mentor')
-                                break
                     # don't give skill from mentor
                     else:
                         self.skill = choice(self.med_skills)
                         self.mentor_influence.append('None')
-                        print('random skill')
                 # if they didn't haave a mentor, give random skill
                 else:
                     self.skill = choice(self.med_skills)
                     self.mentor_influence.append('None')
-                    print('random skill')
-
             # assign skill to new warrior
             elif self.status == 'warrior':
                 # possible skill groups they can take from
@@ -640,23 +604,18 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 self.mentor_influence.append(self.skill)
-                                print('skill from mentor. chance:', chance)
-                                break
                     # don't give skill from mentor
                     else:
                         self.skill = choice(self.skills)
                         self.mentor_influence.append('None')
-                        print('random skill')
                 # if they didn't have a mentor, give random skill
                 else:
                     self.skill = choice(self.skills)
                     self.mentor_influence.append('None')
-                    print('random skill')
 
             # assign new skill to elder
             elif self.status == 'elder':
                 self.skill = choice(self.elder_skills)
-                print('random skill')
 
             # if a cat somehow has no skill, assign one after checking that they aren't a kit or adolescent
             elif self.skill == '???' and self.status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
@@ -1211,7 +1170,7 @@ class Cat():
                 json_string = ujson.dumps(rel, indent = 4)
                 rel_file.write(json_string)
         except:
-            print(f"Saving relationship of cat #{self} didn't work.")
+            print(f"WARNING: Saving relationship of cat #{self} didn't work.")
 
     def load_relationship_of_cat(self):
         if game.switches['clan_name'] != '':
@@ -1254,7 +1213,7 @@ class Cat():
                         relationships.append(new_rel)
                     self.relationships = relationships
             except:
-                print(f'There was an error reading the relationship file of cat #{self}.')
+                print(f'WARNING: There was an error reading the relationship file of cat #{self}.')
 
 
 # ---------------------------------------------------------------------------- #

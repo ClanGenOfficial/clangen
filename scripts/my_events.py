@@ -225,7 +225,6 @@ class Events():
                     # assign chance to become med app depending on current med cat and traits
                     if has_elder_med is True and has_med is False:
                         chance = randint(0, 2)
-                        print('POSSIBLE MED APP - ELDER MED MENTOR - CHANCE:', chance)
                     elif has_elder_med is False and has_med is True:
                         chance = randint(0, 90)
                     elif has_elder_med and has_med:
@@ -235,13 +234,11 @@ class Events():
                             chance = 0
                     else:
                         chance = randint(0, 40)
-                    print('POSSIBLE MED APP - CHANCE:', chance)
                     if chance in range(1, 6):    
                         if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
                             chance = 1
                         else:
                             chance = chance
-                        print('POSSIBLE MED APP - TRAIT:', cat.trait, '- CHANCE:', chance)
                     if has_med_app is False and chance == 1:
                         self.ceremony(cat, 'medicine cat apprentice', ' has chosen to walk the path of a medicine cat')
                         self.ceremony_accessory = True
