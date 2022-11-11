@@ -854,10 +854,6 @@ class Events():
             if countdown <= 0:
                 return
         other_name = other_cat.name
-        clan_has_kits = any(
-                str(cat.status) in "kitten"
-                and not cat.dead and not cat.exiled
-                for cat in Cat.all_cats.values())
         #Leader lost a life EVENTS
         current_lives = int(game.clan.leader_lives)
         if not int(random.random() * 100) and cat.status == 'leader':  # 1/100
@@ -903,8 +899,8 @@ class Events():
 
         #Several/All Lives loss
         elif not int(random.random() * 200) and cat.status == 'leader':  # 1/200
-            triggered_death = True
             if not int(random.random() * 10): # 1/10
+                triggered_death = True
                 cause_of_death = [
                     f'{name} was brutally attacked by a rogue and lost all of their lives',
                     f'{name} was mauled by dogs and lost all of their lives',
@@ -942,6 +938,12 @@ class Events():
 
         elif not int(random.random() * 400): # 1/400
             triggered_death = True
+            alive_kits = list(filter(
+                lambda kitty: (kitty.age == "kitten"
+                    and not kitty.dead
+                    and not kitty.exiled),
+                Cat.all_cats.values()
+            ))
             # GENERAL DEATHS
             if cat.status != 'leader':
                 cause_of_death = [
@@ -949,7 +951,7 @@ class Events():
                     f'{name} was found dead near a fox den',
                     f'{name} was bitten by a snake and died'
                 ]
-                if clan_has_kits and cat.status != 'kitten':
+                if alive_kits and cat.status != 'kitten':
                     cause_of_death.extend([
                         f'{name} was bitten by a snake while saving a kit and died'
                     ])
@@ -995,7 +997,9 @@ class Events():
                     ])
             elif game.clan.biome == "Forest":
                 if cat.status == 'leader':
-                    cause_of_death.extend([])
+                    cause_of_death.extend([
+                        f'A tree fell in camp and {name} lost a life'
+                    ])
                 else:
                     cause_of_death.extend([
                         f'A tree fell in camp and killed {name}'
