@@ -34,11 +34,14 @@ class Condition_Events():
                     break
 
             if not triggered:
+                illness_name = cat.illness.name
                 cat.moon_skip_illness()
 
                 if cat.dead:
                     triggered = True
-                    event_string = f"{cat.name} has died of {cat.illness.name}"
+                    event_string = f"{cat.name} has died of {illness_name}"
+                if not cat.is_ill():
+                    event_string = f"{cat.name}'s {illness_name} has cured"
 
         if not triggered and not int(random.random() * 100):
             triggered = True

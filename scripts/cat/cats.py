@@ -384,16 +384,16 @@ class Cat():
             elif chance >= 7:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
-                    if self.mentor is not None:
+                    if self.mentor:
                         mentor = self.mentor
-                    elif self.mentor is None and len(self.former_mentor) != 0:
+                    elif not self.mentor and len(self.former_mentor) != 0:
                         if len(self.former_mentor) > 1:
                             mentor = self.former_mentor[-1]
                         else:
                             mentor = self.former_mentor[0]
                     else:
                         self.mentor_influence.append('None')
-                    if mentor.trait in self.personality_groups[x]:
+                    if mentor and mentor.trait in self.personality_groups[x]:
                         possible_trait = self.personality_groups.get(x)
 
                         if x == 'Abrasive' and chance >= 12:
@@ -634,15 +634,15 @@ class Cat():
 
         mortality = self.illness.current_mortality
         print(f"MOONSKIP - {self.name} - {game.clan.age}")
-        print(f"Mortallity: {mortality}")
-        print(f"current duration: {self.illness.current_duration}")
+        print(f"{self.illness.name}, {mortality} {self.illness.current_duration}")
         if mortality and not int(random.random() * mortality):
             self.die()
+            print("____________DIED__________")
             return
 
         self.illness.current_duration -= 1
         if self.illness.current_duration <= 0:
-            print(f"IMPORTANT: {self.name} survived {self.illness.name}  - {game.clan.age}")
+            print("____________SURVIVED__________")
             self.illness = None
 
     def moon_skip_injury(self):
@@ -721,7 +721,6 @@ class Cat():
 # ---------------------------------------------------------------------------- #
   
     def get_ill(self, name, risk = False):
-        print("risk:", risk)
         if self.is_ill() and not risk or name not in ILLNESSES:
             if name not in ILLNESSES:
                 print(f"WARNING: {name} is not in the illnesses collection.")
