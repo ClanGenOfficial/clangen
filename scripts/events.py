@@ -124,9 +124,9 @@ class Events():
             triggered_death = self.handle_illnesses_or_illness_deaths(cat)
             if not triggered_death:
                 triggered_death = self.handle_injuries_or_general_death(cat)
-
-        if not self.new_cat_invited or self.living_cats < 10:
-            self.invite_new_cats(cat)
+        if game.clan.closed_borders == False:
+            if not self.new_cat_invited or self.living_cats < 10:
+                self.invite_new_cats(cat)
         self.other_interactions(cat)
         self.coming_out(cat)
         self.gain_accessories(cat)
