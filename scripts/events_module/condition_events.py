@@ -40,9 +40,10 @@ class Condition_Events():
                 if cat.dead:
                     triggered = True
                     event_string = f"{cat.name} has died of {illness_name}"
-                if not cat.is_ill():
+                elif not cat.is_ill():
                     event_string = f"{cat.name}'s {illness_name} has cured"
 
+        # handle if the cat is not sick
         if not triggered and not int(random.random() * 100):
             triggered = True
             season_dict = ILLNESSES_SEASON_LIST[season]
@@ -60,7 +61,10 @@ class Condition_Events():
                 event_string = f"{cat.name} has gotten {possible_illnesses[random_index]}"
         
         if event_string:
-            game.cur_events_list.append(event_string)
+            if cat.dead:
+                game.cur_events_list.append(f"{event_string} at {cat.moons} moons")
+            else: 
+                game.cur_events_list.append(event_string)
 
         return triggered
 
@@ -72,7 +76,7 @@ class Condition_Events():
         event_string = None
 
         # handle if the current cat is already injured
-        if cat.is_injured():
+        if cat.is_injured() and cat.is_alive():
             for risk in cat.injury.risks:
                 if not int(random.random() * risk["chance"]):
                     triggered = True

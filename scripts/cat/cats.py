@@ -384,6 +384,7 @@ class Cat():
             elif chance >= 7:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
+                    mentor = None
                     if self.mentor:
                         mentor = self.mentor
                     elif not self.mentor and len(self.former_mentor) != 0:
@@ -560,6 +561,14 @@ class Cat():
         relevant_relationship = relevant_relationship_list[0]
         relevant_relationship.start_action()
 
+        if game.game_mode == "classic":
+            return
+        # handle contact with ill cat if
+        if self.is_ill():
+            relevant_relationship.cat_to.contact_with_ill_cat(self)
+        if relevant_relationship.cat_to.is_ill():
+            self.contact_with_ill_cat(relevant_relationship.cat_to)
+
     def update_skill(self):
         # checking for skill and replacing empty skill if cat is old enough
         # also adds a chance for cat to take a skill similar to their mentor
@@ -636,6 +645,12 @@ class Cat():
         print(f"MOONSKIP - {self.name} - {game.clan.age}")
         print(f"{self.illness.name}, {mortality} {self.illness.current_duration}")
         if mortality and not int(random.random() * mortality):
+            if self.status == "leader":
+                game.clan.leader_lives -= 1
+                if game.clan.leader_lives > 0:
+                    game.cur_events_list.append(f"{self.name} lost a life to {self.illness.name}")
+                elif game.clan.leader_lives <= 0:
+                    game.cur_events_list.append(f"{self.name} lost the last life to {self.illness.name}")
             self.die()
             print("____________DIED__________")
             return
@@ -782,7 +797,9 @@ class Cat():
             print(f"WARNING: injury {self.injuries.name} has lowered chance of {illness_name} infection to {rate}")
             rate = 1
 
-        if randint(1, rate) == 1:
+        if randint(0, rate) == 1:
+            print(f"-------- GOT SICK")
+            game.cur_events_list.append(f"{self.name} had contact with {cat.name} and now has {illness_name}")
             self.get_ill(illness_name)
 
 # ---------------------------------------------------------------------------- #

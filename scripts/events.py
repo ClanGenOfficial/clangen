@@ -2,7 +2,7 @@ from scripts.cat.cats import *
 from scripts.cat_relations.relation_events import *
 from scripts.game_structure.buttons import *
 from scripts.game_structure.load_cat import * 
-from scripts.condition_events import Condition_Events
+from scripts.events_module.condition_events import Condition_Events
 
 class Events():
     all_events = {}
@@ -67,7 +67,21 @@ class Events():
             
             # relationships have to be handled separately, because of the ceremony name change
             for cat in Cat.all_cats.copy().values():
+                if cat.dead:
+                    continue
                 self.relation_events.handle_relationships(cat)
+
+                # switches between the two death handles
+                if random.getrandbits(1):
+                    triggered_death = self.handle_injuries_or_general_death(cat)
+                    if not triggered_death:
+                        triggered_death = self.handle_illnesses_or_illness_deaths(cat)
+                else:
+                    triggered_death = self.handle_illnesses_or_illness_deaths(cat)
+                    if not triggered_death:
+                        triggered_death = self.handle_injuries_or_general_death(cat)
+
+
             self.check_clan_relations()
             game.clan.age += 1
             if game.settings.get('autosave') is True and game.clan.age % 5 == 0:
@@ -116,16 +130,6 @@ class Events():
         self.living_cats += 1
 
         self.perform_ceremonies(cat) # here is age up included
-
-        # switches between the two death handles
-        if random.getrandbits(1):
-            triggered_death = self.handle_injuries_or_general_death(cat)
-            if not triggered_death:
-                triggered_death = self.handle_illnesses_or_illness_deaths(cat)
-        else:
-            triggered_death = self.handle_illnesses_or_illness_deaths(cat)
-            if not triggered_death:
-                triggered_death = self.handle_injuries_or_general_death(cat)
 
         if not self.new_cat_invited or self.living_cats < 10:
             self.invite_new_cats(cat)
@@ -895,7 +899,7 @@ class Events():
             game.clan.leader_lives -= 1
             cat.die()
             game.cur_events_list.append(
-                choice(cause_of_death) + ' at ' + str(cat.moons + 1) + ' moons old.')
+                choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old.')
 
         #Several/All Lives loss
         elif not int(random.random() * 200) and cat.status == 'leader':  # 1/200
@@ -1197,9 +1201,7 @@ class Events():
                 if other_cat == 'leader':
                     game.clan.leader_lives -= 10
                 other_cat.die()
-                game.cur_events_list.append(
-                        choice(cause_of_death) + ' at ' +
-                        str(other_cat.moons + 1) + ' moons old')
+                game.cur_events_list.append(choice(cause_of_death) + ' at ' +str(other_cat.moons) + ' moons old')
         # extra chance of cat dying to age
         elif cat.moons > int(random.random() * 51) + 150:  # cat.moons > 150 <--> 200
             triggered_death = True
@@ -1337,7 +1339,7 @@ class Events():
                     game.clan.leader_lives -= 1
                     cat.die()
                     game.cur_events_list.append(
-                        choice(cause_of_death) + ' at ' + str(cat.moons + 1) +' moons old')
+                        choice(cause_of_death) + ' at ' + str(cat.moons) +' moons old')
             elif not int(random.random() * 200) and cat.status == 'leader': # 1/200
                 triggered_death = True
                 lostlives = choice([2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6])
@@ -1350,7 +1352,7 @@ class Events():
                     ]
                     game.clan.leader_lives = current_lives - lostlives
                 cat.die()
-                game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons + 1) + ' moons old')
+                game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old')
             # normal death
             elif not int(random.random() * 400): # 1/400
                 triggered_death = True
@@ -1397,7 +1399,7 @@ class Events():
 
                 if len(cause_of_death) > 1:
                     cat.die()
-                    game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons + 1) + ' moons old')
+                    game.cur_events_list.append(choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old')
                 else:
                     triggered_death = False
             # multiple deaths
