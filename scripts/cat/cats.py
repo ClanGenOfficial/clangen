@@ -415,11 +415,10 @@ class Cat():
 
                         if chosen_trait in self.kit_traits:
                             self.trait = choice(self.traits)
-                            if len(self.mentor_influence) > 0:
-                                if self.mentor_influence[0] == 'Reserved':
-                                    self.mentor_influence.pop(0)
-                                self.mentor_influence.append('None')
-                                print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
+                            if 'Reserved' in self.mentor_influence:
+                                self.mentor_influence.pop(0)
+                            self.mentor_influence.append('None')
+                            print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
                             break
 
                         else:
@@ -597,11 +596,16 @@ class Cat():
         # also adds a chance for cat to take a skill similar to their mentor
 
         if self.skill == '???':
+            # assign skill to new medicine cat
             if self.status == 'medicine cat' and self.skill not in self.med_skills:
+                # skill groups they can take from
                 possible_groups = ['special', 'heal', 'star', 'mediate', 'smart', 'teach']
+                # check if they had a mentor
                 if self.former_mentor:
                     chance = randint(0, 5)
                     mentor = self.former_mentor[-1]
+                    # give skill from mentor, this is a higher chance of happening than the warrior has
+                    # bc med cats have no patrol_with_mentor modifier
                     if chance >= 2:
                         for x in possible_groups:
                             if mentor.skill in self.skill_groups[x]:
@@ -610,20 +614,26 @@ class Cat():
                                 self.mentor_influence.append(self.skill)
                                 print('skill from mentor')
                                 break
+                    # don't give skill from mentor
                     else:
                         self.skill = choice(self.med_skills)
                         self.mentor_influence.append('None')
                         print('random skill')
+                # if they didn't haave a mentor, give random skill
                 else:
                     self.skill = choice(self.med_skills)
                     self.mentor_influence.append('None')
                     print('random skill')
 
-            elif self.status not in ['apprentice', 'medicine cat apprentice', 'kitten', 'elder']:
+            # assign skill to new warrior
+            elif self.status == 'warrior':
+                # possible skill groups they can take from
                 possible_groups = ['star', 'smart', 'teach', 'hunt', 'fight', 'speak']
+                # check if they had a mentor
                 if self.former_mentor:
                     chance = randint(0, 9) + int(self.patrol_with_mentor)
                     mentor = self.former_mentor[-1]
+                    # give skill from mentor
                     if chance >= 9:
                         for x in possible_groups:
                             if mentor.skill in self.skill_groups[x]:
@@ -632,20 +642,25 @@ class Cat():
                                 self.mentor_influence.append(self.skill)
                                 print('skill from mentor. chance:', chance)
                                 break
-
+                    # don't give skill from mentor
                     else:
                         self.skill = choice(self.skills)
                         self.mentor_influence.append('None')
                         print('random skill')
-
+                # if they didn't have a mentor, give random skill
                 else:
                     self.skill = choice(self.skills)
                     self.mentor_influence.append('None')
                     print('random skill')
 
+            # assign new skill to elder
             elif self.status == 'elder':
                 self.skill = choice(self.elder_skills)
                 print('random skill')
+
+            # if a cat somehow has no skill, assign one after checking that they aren't a kit or adolescent
+            elif self.skill == '???' and self.status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
+                self.skill = choice(self.skills)
 
     # ---------------------------------------------------------------------------- #
 #                            !IMPORTANT INFORMATION!                           #
