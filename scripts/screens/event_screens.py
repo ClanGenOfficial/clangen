@@ -138,6 +138,7 @@ class EventsScreen(Screens):
                                 text='TIMESKIP ONE MOON',
                                 size=(180, 30),
                                 available=False)
+        # buttons.draw_button((500,500), button_name='close_borders', text='Close borders', size = (50, 30), available=True)
         events_class.one_moon()
 
         buttons.draw_image_button((224, 245),

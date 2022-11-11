@@ -224,7 +224,7 @@ class SettingsScreen(Screens):
         verdana.text("Force cats to retire after severe injury", (x_value, 382))
         verdana.text("Enable shaders", (x_value, 421))
         verdana.text("Display hotkeys on text buttons", (x_value, 460))
-        verdana.text("Allow new leaders to automatically choose a deputy", (x_value, 499))
+        verdana.text("Allow leaders to automatically choose a new deputy", (x_value, 499))
 
 
         # Setting values
@@ -296,7 +296,7 @@ class InfoScreen(Screens):
             "You're free to use the characters and sprites generated in this program",
             ('center', 315))
         verdana.text(
-            "as you like, as long as you don't claim the sprites as your own creations.",
+            "as you like, as long as you don't claim the sprites as your own creations or sell them for any reason.",
             ('center', 335))
         verdana.text("Original creator: just-some-cat.tumblr.com",
                      ('center', 375))
