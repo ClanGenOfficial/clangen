@@ -1197,7 +1197,7 @@ class Events():
                         choice(cause_of_death) + ' at ' +
                         str(other_cat.moons + 1) + ' moons old')
         # extra chance of cat dying to age
-        elif cat.moons > randint(150, 200): 
+        elif cat.moons > int(random.random() * 51) + 150:  # cat.moons > 150 <--> 200
             triggered_death = True
             if not int(random.random() * 5):  # 1/5
                 if cat.status != 'leader':
