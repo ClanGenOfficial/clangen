@@ -116,7 +116,7 @@ class Events():
         self.perform_ceremonies(cat) # here is age up included
 
         # switches between the two death handles
-        if randint(1,2):
+        if random.getrandbits(1):
             triggered_death = self.handle_injuries_or_general_death(cat)
             if not triggered_death:
                 triggered_death = self.handle_illnesses_or_illness_deaths(cat)
