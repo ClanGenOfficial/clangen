@@ -22,18 +22,25 @@ class Condition_Events():
         This function handles overall the illnesses in 'expanded' (or 'cruel season') game mode
         """
         triggered = False
-
+        event_string = None
         # handle if the current cat is already sick
         if cat.is_ill():
-            print(f"{cat.name} moon-skip with illness {cat.illness.name}")
-            cat.moon_skip_illness()
-            if cat.dead:
-                event_string = f"{cat.name} has died of a(n) {cat.illness.name}"
-                triggered = True
-                game.cur_events_list.append(event_string)
-            return triggered
+            for risk in cat.illness.risks:
+                if not int(random.random() * risk["chance"]):
+                    triggered = True
+                    new_illness = risk['name']
+                    event_string = f"{cat.name}'s {cat.illness.name}, turned into {new_illness}"
+                    cat.get_ill(new_illness , risk=True)
+                    break
 
-        if not int(random.random() * 100):
+            if not triggered:
+                cat.moon_skip_illness()
+
+                if cat.dead:
+                    triggered = True
+                    event_string = f"{cat.name} has died of {cat.illness.name}"
+
+        if not triggered and not int(random.random() * 100):
             triggered = True
             season_dict = ILLNESSES_SEASON_LIST[season]
             possible_illnesses = []
@@ -43,7 +50,14 @@ class Condition_Events():
 
             random_index = int(random.random() * len(possible_illnesses))
             cat.get_ill(possible_illnesses[random_index])
-            print(f"{cat.name} has gotten {possible_illnesses[random_index]}")
+            
+            if possible_illnesses[random_index] in ["running nose"]:
+                event_string = f"{cat.name} has gotten a {possible_illnesses[random_index]}"
+            else:
+                event_string = f"{cat.name} has gotten {possible_illnesses[random_index]}"
+        
+        if event_string:
+            game.cur_events_list.append(event_string)
 
         return triggered
 
@@ -52,15 +66,26 @@ class Condition_Events():
         This function handles overall the injuries in 'expanded' (or 'cruel season') game mode
         """
         triggered = False
+        event_string = None
 
         # handle if the current cat is already injured
         if cat.is_injured():
-            cat.moon_skip_illness()
-            if cat.dead:
-                event_string = f"{cat.name} has died in the medicine den, with a(n) {cat.injury.name}"
-                triggered = True
-                game.cur_events_list.append(event_string)
-            return triggered
+            for risk in cat.injury.risks:
+                if not int(random.random() * risk["chance"]):
+                    triggered = True
+                    new_illness = risk['name']
+                    event_string = f"{cat.name}'s {cat.illness.name}, lead to {new_illness}"
+                    cat.get_ill(new_illness , risk=True)
+                    break
+
+            if not triggered:
+                cat.moon_skip_illness()
+                if cat.dead:
+                    event_string = f"{cat.name} has died in the medicine den, with a(n) {cat.injury.name}"
+                    triggered = True
+
+        if event_string:
+            game.cur_events_list.append(event_string)
 
         return triggered
 

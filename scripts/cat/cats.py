@@ -633,16 +633,16 @@ class Cat():
             return
 
         mortality = self.illness.current_mortality
+        print(f"MOONSKIP - {self.name} - {game.clan.age}")
+        print(f"Mortallity: {mortality}")
+        print(f"current duration: {self.illness.current_duration}")
         if mortality and not int(random.random() * mortality):
             self.die()
             return
-        
-        for risk in self.illness.risks:
-            if randint(1,risk["chance"]) == 1:
-                self.get_ill(risk["name"])
 
         self.illness.current_duration -= 1
         if self.illness.current_duration <= 0:
+            print(f"IMPORTANT: {self.name} survived {self.illness.name}  - {game.clan.age}")
             self.illness = None
 
     def moon_skip_injury(self):
@@ -654,10 +654,6 @@ class Cat():
         if mortality and not int(random.random() * mortality):
             self.die()
             return
-        
-        for risk in self.injury.risks:
-            if randint(1,risk["chance"]) == 1:
-                self.get_ill(risk["name"])
 
         self.injuries.current_duration -= 1
         if self.injuries.current_duration <= 0:
@@ -724,7 +720,8 @@ class Cat():
 #                                  conditions                                  #
 # ---------------------------------------------------------------------------- #
   
-    def get_ill(self, name, risk= False):
+    def get_ill(self, name, risk = False):
+        print("risk:", risk)
         if self.is_ill() and not risk or name not in ILLNESSES:
             if name not in ILLNESSES:
                 print(f"WARNING: {name} is not in the illnesses collection.")
@@ -740,6 +737,8 @@ class Cat():
             medicine_mortality = illness["medicine_mortality"][self.age],
             risks = illness["risks"]
         )
+        
+        print(f"{self.name} has gotten {self.illness.name} - {game.clan.age} clan moons")
 
     def get_injured(self,name):
         if self.is_injured() or name not in INJURIES:

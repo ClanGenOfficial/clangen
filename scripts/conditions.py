@@ -11,8 +11,8 @@ from scripts.game_structure.game_essentials import game
 def medical_cats_condition_fulfilled(number_medicine_cats, number_medicine_apprentices):
     fulfilled = False
 
-    medicine_apprentices = list(filter(lambda c: c.status =='medicine apprentices', game.cat_class.all_cats.values()))
-    medicine_cats = list(filter(lambda c: c.status == 'medicine cat', game.cat_class.all_cats.values()))
+    medicine_apprentices = list(filter(lambda c: c.status =='medicine apprentices' and not c.dead and not c.exiled, game.cat_class.all_cats.values()))
+    medicine_cats = list(filter(lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled, game.cat_class.all_cats.values()))
     if len(medicine_cats) >= number_medicine_cats or\
         len(medicine_apprentices) >= number_medicine_apprentices:
         fulfilled = True
