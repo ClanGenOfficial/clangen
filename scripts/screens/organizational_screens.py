@@ -296,7 +296,7 @@ class InfoScreen(Screens):
             "You're free to use the characters and sprites generated in this program",
             ('center', 315))
         verdana.text(
-            "as you like, as long as you don't claim the sprites as your own creations.",
+            "as you like, as long as you don't claim the sprites as your own creations or sell them for any reason.",
             ('center', 335))
         verdana.text("Original creator: just-some-cat.tumblr.com",
                      ('center', 375))
