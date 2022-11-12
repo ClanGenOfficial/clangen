@@ -480,6 +480,10 @@ class Cat():
             # this is handled in events.py
             self.thoughts()
             return
+        
+        if self.dead:
+            self.thoughts()
+            return
 
         self.moons += 1
         self.update_traits()
@@ -491,8 +495,8 @@ class Cat():
         if self.moons >= 12:
             self.update_skill()
 
-        self.thoughts()
         self.create_interaction()
+        self.thoughts()
 
     def thoughts(self):
         all_cats = self.all_cats
@@ -1243,7 +1247,7 @@ class Cat():
                             comfortable=rel['comfortable'] if rel['comfortable'] else 0,
                             jealousy=rel['jealousy'] if rel['jealousy'] else 0,
                             trust=rel['trust'] if rel['trust'] else 0,
-                            log =rel['log'] if rel['log'] else [])
+                            log =rel['log'])
                         relationships.append(new_rel)
                     self.relationships = relationships
             except:

@@ -38,7 +38,7 @@ COMPATIBILITY_WEIGHT = 3
 # ---------------------------------------------------------------------------- #
 
 class Relationship():
-    def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0, admiration=0, comfortable=0, jealousy=0, trust=0, log = []) -> None:        
+    def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0, admiration=0, comfortable=0, jealousy=0, trust=0, log = None) -> None:        
         self.cat_from = cat_from
         self.cat_to = cat_to
         self.mates = mates
@@ -46,7 +46,10 @@ class Relationship():
         self.opposite_relationship = None #link to opposite relationship will be created later
         self.current_action_str = ''
         self.triggered_event = False
-        self.log = log
+        if log:
+            self.log = log
+        else:
+            self.log = []
 
         if self.cat_from.is_parent(self.cat_to) or self.cat_to.is_parent(self.cat_from):
             self.family = True
@@ -137,17 +140,21 @@ class Relationship():
         self_relation_effect = self.affect_relationship(action)
         other_relation_effect = self.opposite_relationship.affect_relationship(action, other=True)
 
-        # broadcast action
-        string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
+        # replace (cat) with actual name
+        start_point = action.find("(")+1
+        end_point = action.find(")")
+        string_to_replace = f"({action[start_point:end_point]})"
         self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
 
+        # add the effect of the current action
         action_string_all = f"{str(self.cat_from.name)} - {self.current_action_str} "
         if self_relation_effect == 'neutral effect':
             self_relation_effect = other_relation_effect
         effect_string =  f"({self_relation_effect})"
+    
+        # connect all information and broadcast
         both = action_string_all+effect_string
-        if both.startswith(str(self.cat_from.name)):
-            self.log.append(both)
+        self.log.append(both)
         game.relation_events_list.append(both)
 
 
