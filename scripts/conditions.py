@@ -8,13 +8,22 @@ from scripts.game_structure.game_essentials import game
 # ---------------------------------------------------------------------------- #
 
 
-def medical_cats_condition_fulfilled(number_medicine_cats, number_medicine_apprentices):
+def medical_cats_condition_fulfilled():
     fulfilled = False
 
-    medicine_apprentices = list(filter(lambda c: c.status =='medicine apprentices' and not c.dead and not c.exiled, game.cat_class.all_cats.values()))
-    medicine_cats = list(filter(lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled, game.cat_class.all_cats.values()))
-    if len(medicine_cats) >= number_medicine_cats or\
-        len(medicine_apprentices) >= number_medicine_apprentices:
+    medicine_apprentices = list(filter(
+        lambda c: c.status =='medicine apprentices' and not c.dead and not c.exiled, game.cat_class.all_cats.values()
+        ))
+    medicine_cats = list(filter(
+        lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled, game.cat_class.all_cats.values()
+        ))
+    needed_meds = int(len(list(filter(
+        lambda c: not c.dead and not c.exiled, game.cat_class.all_cats.values())
+        )) % 15)
+
+    amount_of_cats = len(medicine_cats) >= needed_meds or len(medicine_apprentices) >= needed_meds * 2
+     
+    if amount_of_cats:
         fulfilled = True
 
     return fulfilled
@@ -32,9 +41,7 @@ class Illness():
             duration, 
             medicine_duration, 
             medicine_mortality,
-            risks,
-            number_medicine_cats = 1,
-            number_medicine_apprentices = 2):
+            risks):
         self.name = name
         self.mortality = int(mortality)
         self.infectiousness = int(infectiousness)
@@ -42,12 +49,10 @@ class Illness():
         self.medicine_duration = int(medicine_duration)
         self.medicine_mortality = int(medicine_mortality)
         self.risks = risks
-        self.number_medicine_cats = number_medicine_cats
-        self.number_medicine_apprentices = number_medicine_apprentices
 
         self.current_duration = duration
         self.current_mortality = mortality
-        if medical_cats_condition_fulfilled(self.number_medicine_cats, self.number_medicine_apprentices):
+        if medical_cats_condition_fulfilled():
             self.current_duration = medicine_duration
             self.current_mortality = medicine_mortality
 
@@ -57,7 +62,7 @@ class Illness():
 
     @current_duration.setter
     def current_duration(self, value):
-        if medical_cats_condition_fulfilled(self.number_medicine_cats,self.number_medicine_apprentices):
+        if medical_cats_condition_fulfilled():
             if value > self.medicine_duration:
                 value = self.medicine_duration
         
@@ -69,7 +74,7 @@ class Illness():
 
     @current_mortality.setter
     def current_mortality(self, value):
-        if medical_cats_condition_fulfilled(self.number_medicine_cats, self.number_medicine_apprentices):
+        if medical_cats_condition_fulfilled():
             if value < self.medicine_mortality:
                 value = self.medicine_mortality
         
@@ -87,9 +92,7 @@ class Injury():
             mortality,
             medicine_mortality,
             risks,
-            illness_infectiousness,
-            number_medicine_cats = 1,
-            number_medicine_apprentices = 2):
+            illness_infectiousness):
         self.name = name
         self.duration = duration
         self.medicine_duration = medicine_duration
@@ -97,12 +100,10 @@ class Injury():
         self.medicine_mortality = medicine_mortality
         self.risks = risks
         self.illness_infectiousness = illness_infectiousness
-        self.number_medicine_cats = number_medicine_cats
-        self.number_medicine_apprentices = number_medicine_apprentices
 
         self.current_duration = duration
         self.current_mortality = mortality
-        if medical_cats_condition_fulfilled(self.number_medicine_cats, self.number_medicine_apprentices):
+        if medical_cats_condition_fulfilled():
             self.current_duration = medicine_duration
             self.current_mortality = medicine_mortality
 
@@ -112,7 +113,7 @@ class Injury():
 
     @current_duration.setter
     def current_duration(self, value):
-        if medical_cats_condition_fulfilled(self.number_medicine_cats,self.number_medicine_apprentices):
+        if medical_cats_condition_fulfilled():
             if value > self.medicine_duration:
                 value = self.medicine_duration
         
@@ -124,7 +125,7 @@ class Injury():
 
     @current_mortality.setter
     def current_mortality(self, value):
-        if medical_cats_condition_fulfilled(self.number_medicine_cats, self.number_medicine_apprentices):
+        if medical_cats_condition_fulfilled():
             if value < self.medicine_mortality:
                 value = self.medicine_mortality
         
