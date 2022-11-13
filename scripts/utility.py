@@ -74,8 +74,9 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
     }
 
     for inter_cat in all_cats:
-        relation = list(filter(lambda r: r.cat_to.ID == cat.ID, inter_cat.relationships))
-        if len(relation) < 1:
+        if cat.ID in inter_cat.relationships:
+            relation = inter_cat.relationships[cat.ID]
+        else:
             continue
         
         relation = relation[0]

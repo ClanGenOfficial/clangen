@@ -81,14 +81,13 @@ class Relationship():
 
     def link_relationship(self):
         """Add the other relationship object to this easily access and change the other side."""
-        opposite_relationship = list(filter(lambda r: r.cat_to.ID == self.cat_from.ID , self.cat_to.relationships))
-        if opposite_relationship is not None and len(opposite_relationship) > 0:
-            self.opposite_relationship = opposite_relationship[0]
+        if self.cat_from.ID in self.cat_to.relationships:
+            self.opposite_relationship = self.cat_to.relationships[self.cat_from.ID]
         else:
             # create relationship
-            relation = Relationship(self.cat_to,self.cat_from)
-            self.cat_to.relationships.append(relation)
-            self.opposite_relationship =relation
+            relation = Relationship(self.cat_to , self.cat_from)
+            self.cat_to.relationships[self.cat_from.ID] = relation
+            self.opposite_relationship = relation
             
     def start_action(self):
         """This function checks current state of relationship and decides which actions can happen."""

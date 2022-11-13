@@ -724,13 +724,11 @@ class Events():
                     new_cat.parent2 = relevant_cat.mate
 
             #create and update relationships
-            relationships = []
             for the_cat in new_cat.all_cats.values():
                 if the_cat.dead or the_cat.exiled:
                     continue
-                the_cat.relationships.append(Relationship(the_cat, new_cat))
-                relationships.append(Relationship(new_cat, the_cat))
-            new_cat.relationships = relationships
+                the_cat.relationships[new_cat.ID] = Relationship(the_cat, new_cat)
+                new_cat.relationships[the_cat.ID] = Relationship(new_cat, the_cat)
             new_cat.thought = 'Is looking around the camp with wonder'
             created_cats.append(new_cat)
         
