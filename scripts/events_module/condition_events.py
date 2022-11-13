@@ -2,6 +2,7 @@ import ujson
 import random
 
 from scripts.cat.cats import Cat, ILLNESSES, INJURIES
+from scripts.utility import save_death
 from scripts.game_structure.game_essentials import game
 
 # ---------------------------------------------------------------------------- #
@@ -62,6 +63,8 @@ class Condition_Events():
         
         if event_string:
             if cat.dead:
+                # TODO: remove afterwards
+                save_death(event_string)
                 game.cur_events_list.append(f"{event_string} at {cat.moons} moons")
             else: 
                 game.cur_events_list.append(event_string)

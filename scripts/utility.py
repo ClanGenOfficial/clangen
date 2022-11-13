@@ -119,6 +119,28 @@ def add_children_to_cat(cat, cat_class):
             inter_cat.children.append(cat.ID)
 
 
+def save_death(death_string):
+    if game.switches['clan_name'] != '':
+        clanname = game.switches['clan_name']
+    elif len(game.switches['clan_name']) > 0:
+        clanname = game.switches['clan_list'][0]
+    elif game.clan is not None:
+        clanname = game.clan.name
+
+    path = f"saves/{clanname}/deaths.json"
+
+    file_entry = []
+    if os.path.exists(path):
+        with open(path, "r") as file:
+            file_entry = ujson.loads(file.read())
+            file_entry.append(f"{death_string} - {game.clan.age} moons")
+    else:
+        file_entry.append(f"{death_string} - {game.clan.age} moons")
+
+    with open(path, "w") as file:
+        json_string = ujson.dumps(file_entry, indent = 4)
+        file.write(json_string)
+
 # ---------------------------------------------------------------------------- #
 #                                    Sprites                                   #
 # ---------------------------------------------------------------------------- #
