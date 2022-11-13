@@ -91,9 +91,9 @@ def json_load():
             game.switches[
                 'error_message'] = f'There was an error when relationships for cat #{cat} are created.'
             if cat.relationships is not None and len(cat.relationships) < 1:
-                cat.create_new_relationships()
+                cat.create_all_relationships()
         else:
-            cat.relationships = []
+            cat.relationships = {}
 
         # replace mentor id with cat instance
         mentor_relevant = list(
@@ -332,7 +332,6 @@ def csv_load(all_cats):
                 the_cat = all_cats.get(id)
                 game.switches[
                     'error_message'] = f'There was an error when relationships for cat #{the_cat} are created.'
-                if the_cat.relationships is not None and len(
-                        the_cat.relationships) < 1:
-                    the_cat.create_new_relationships()
+                if the_cat.relationships is not None and len(the_cat.relationships) < 1:
+                    the_cat.create_all_relationships()
         game.switches['error_message'] = ''

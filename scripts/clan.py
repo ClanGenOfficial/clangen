@@ -107,6 +107,7 @@ class Clan():
             self.camp_bg = camp_bg
             self.game_mode = game_mode
             self.pregnancy_data = {}
+            self.closed_borders = False
 
     def create_clan(self):
         """ This function is only called once a new clan is created in the 'clan created' screen, not every time
@@ -136,7 +137,7 @@ class Clan():
 
         # give thoughts,actions and relationships to cats
         for cat_id in Cat.all_cats:
-            Cat.all_cats.get(cat_id).create_new_relationships()
+            Cat.all_cats.get(cat_id).create_all_relationships()
             Cat.all_cats.get(cat_id).backstory = 'clan_founder'
             if Cat.all_cats.get(cat_id).status == 'apprentice':
                 Cat.all_cats.get(cat_id).status_change('apprentice')

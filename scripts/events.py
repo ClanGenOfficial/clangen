@@ -131,7 +131,17 @@ class Events():
 
         self.perform_ceremonies(cat) # here is age up included
 
-        if not self.new_cat_invited or self.living_cats < 10:
+        # switches between the two death handles
+        if random.getrandbits(1):
+            triggered_death = self.handle_injuries_or_general_death(cat)
+            if not triggered_death:
+                triggered_death = self.handle_illnesses_or_illness_deaths(cat)
+        else:
+            triggered_death = self.handle_illnesses_or_illness_deaths(cat)
+            if not triggered_death:
+                triggered_death = self.handle_injuries_or_general_death(cat)
+
+        if not game.clan.closed_borders and not self.new_cat_invited or self.living_cats < 10:
             self.invite_new_cats(cat)
         self.other_interactions(cat)
         self.coming_out(cat)
@@ -545,7 +555,7 @@ class Events():
             chance = 700
         elif self.living_cats > 30:
             chance = 300
-        if randint(1, chance) == 1 and cat.age != 'kitten' and cat.age != 'adolescent':
+        if randint(1, chance) == 1 and cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
             self.new_cat_invited = True
             name = str(cat.name)
             type_of_new_cat = choice([1, 2, 3, 4, 5, 6, 7])
@@ -727,13 +737,11 @@ class Events():
                     new_cat.parent2 = relevant_cat.mate
 
             #create and update relationships
-            relationships = []
             for the_cat in new_cat.all_cats.values():
                 if the_cat.dead or the_cat.exiled:
                     continue
-                the_cat.relationships.append(Relationship(the_cat, new_cat))
-                relationships.append(Relationship(new_cat, the_cat))
-            new_cat.relationships = relationships
+                the_cat.relationships[new_cat.ID] = Relationship(the_cat, new_cat)
+                new_cat.relationships[the_cat.ID] = Relationship(new_cat, the_cat)
             new_cat.thought = 'Is looking around the camp with wonder'
             created_cats.append(new_cat)
         
@@ -849,6 +857,7 @@ class Events():
             return triggered_death
 
         # get the general information about the cat and a random other cat
+        triggered_death = False
         name = str(cat.name)
         other_cat = choice(list(Cat.all_cats.values()))
         countdown = int(len(Cat.all_cats) / 3)
@@ -1313,6 +1322,7 @@ class Events():
             
     
         # get the general information about the cat and a random other cat
+        cause_of_death = []
         triggered_death = False
         other_cat = choice(list(Cat.all_cats.values()))
         countdown = int(len(Cat.all_cats) / 3)

@@ -201,7 +201,10 @@ class Button():
                     game.clan.deputy = None
                 Cat.all_cats[cat_value].exiled = True
                 Cat.other_cats[cat_value] = Cat.all_cats[cat_value]
-
+            elif text == 'Close Borders':
+                    game.clan.closed_borders = True
+            elif text == 'Open Borders':
+                    game.clan.closed_borders = False
             elif text == 'Change to Trans Male':
                 Cat.all_cats[cat_value].genderalign = "trans male"
             elif text == 'Change to Trans Female':
@@ -213,6 +216,7 @@ class Button():
                     cat_value].gender
             elif text == 'Remove accessory':
                 Cat.all_cats[str(cat_value)].accessory = None
+                update_sprite(Cat.all_cats[str(cat_value)])
             elif cat_value is None and arrow is None:
                 self.activate(values)
             elif arrow is None:
@@ -242,6 +246,10 @@ class Button():
                     Cat.other_cats[cat_value] = Cat.all_cats[
                         cat_value]
                     game.switches['cur_screen'] = 'other screen'
+                elif text == 'Close Borders':
+                    game.clan.close_borders = True
+                elif text == 'Open Borders':
+                    game.clan.close_borders = False
                 elif text == 'Change to Trans Male':
                     Cat.all_cats[cat_value].genderalign = "trans male"
                 elif text == 'Change to Trans Female':
