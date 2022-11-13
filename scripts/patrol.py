@@ -91,7 +91,7 @@ class Patrol():
         self.patrol_total_experience += cat.experience
         game.patrolled.append(cat)
 
-    def get_possible_patrols(self, current_season, biome, all_clans, game_setting_disaster = game.settings['disasters']):
+    def get_possible_patrols(self, current_season, biome, all_clans, min_cats, max_cats, game_setting_disaster = game.settings['disasters']):
         possible_patrols = []
         # general patrols, any number of cats
 
@@ -634,10 +634,18 @@ class Patrol():
         return possible_patrols
 
     def generate_patrol_events(self, patrol_dict):
-        all_patrol_events = []
+        all_patrol_events = []        
+        biome = game.clan.biome.lower()
+        season = game.clan.current_season.lower()
+        correct_biome = False
+        correct_season = False
+        cat_number = False
         for patrol in patrol_dict:
             patrol_event = PatrolEvent(
                 patrol_id = patrol["patrol_id"],
+                biome = patrol["biome"],
+                season = patrol["season"],
+                tags = patrol["tags"],
                 intro_text = patrol["intro_text"],
                 success_text = patrol["success_text"],
                 fail_text = patrol["fail_text"],
@@ -646,15 +654,34 @@ class Patrol():
                 antagonize_fail_text = patrol["antagonize_fail_text"],
                 chance_of_success = patrol["chance_of_success"],
                 exp = patrol["exp"],
-                win_skills = patrol["win_skills"]
+                win_skills = patrol["win_skills"],
+                win_trait = patrol["win_trait"],
+                min_cats = patrol["min_cats"],
+                max_cats = patrol["max_cats"]
             )
-            all_patrol_events.append(patrol_event)
+            if biome == patrol_event.biome:
+                correct_biome = True
+            elif patrol_event.biome == "Any":
+                correct_biome = True
+            if season == patrol_event.season:
+                correct_season = True
+            elif patrol_event.season == "Any":
+                correct_season = True
+            if len(patrol.patrol_cats) >= patrol_event.min_cats and len(patrol.patrol_cats) <= patrol_event.max_cats:
+                cat_number = True
+            if correct_season and correct_biome and cat_number:
+                all_patrol_events.append(patrol_event)
 
         return all_patrol_events
 
     def calculate_success(self):
         if self.patrol_event is None:
             return
+        # this adds the stat cat (if there is one)
+        if self.patrol_event.win_skills is not None and self.patrol_event.win_trait is not None:
+            for cat in self.patrol_cats:
+                if cat.skill in self.patrol_event.win_skills or cat.trait in self.patrol_event.win_trait:
+                    self.patrol_stat_cat = cat
         # if patrol contains cats with autowin skill, chance of success is high
         # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
         chance = self.patrol_event.chance_of_success + int(
@@ -686,6 +713,11 @@ class Patrol():
     def calculate_success_antagonize(self):
             if self.patrol_event is None:
                 return
+            # this adds the stat cat (if there is one)
+            if self.patrol_event.win_skills is not None and self.patrol_event.win_trait is not None:
+                for cat in self.patrol_cats:
+                    if cat.skill in self.patrol_event.win_skills or cat.trait in self.patrol_event.win_trait:
+                        self.patrol_stat_cat = cat
             # if patrol contains cats with autowin skill, chance of success is high
             # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
             chance = self.patrol_event.chance_of_success + int(
@@ -1025,7 +1057,8 @@ class PatrolEvent():
                  min_cats = 1,
                  max_cats = 6,
                  antagonize_text = '',
-                 antagonize_fail_text = ''):
+                 antagonize_fail_text = '',
+                 history_text = []):
         self.patrol_id = patrol_id
         self.biome = biome
         self.season = season
@@ -1045,6 +1078,7 @@ class PatrolEvent():
         self.max_cats = max_cats
         self.antagonize_text = antagonize_text
         self.antagonize_fail_text = antagonize_fail_text
+        self.history_text = history_text
 
         """ success [0] is the most common
             success [1] is slightly rarer
@@ -1059,7 +1093,8 @@ class PatrolEvent():
         tags = [
             'hunting', 'other_clan', 'fighting', 'death', 'scar', 'new_cat', 'npc',
             'retirement', 'injury', 'illness', 'romantic', 'platonic', 'comfort', 'respect', 'trust',
-            'dislike', 'jealousy', 'med_cat', 'training', 'apprentice', 'border', 'reputation', 'leader'
+            'dislike', 'jealousy', 'med_cat', 'training', 'apprentice', 'border', 'reputation', 'leader',
+            'herbs', 'gone', 'disaster'
         ]
 
 patrol = Patrol()
