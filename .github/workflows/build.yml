@@ -61,7 +61,7 @@ jobs:
         run: python -m PyInstaller Clangen.spec
       - uses: actions/upload-artifact@v3
         with:
-          name: Clangen_Win32.zip
+          name: Clangen_Win32
           path: dist/
       - name: Create archive for release (.zip)
         if: startsWith(github.ref, 'refs/tags/')
@@ -101,7 +101,7 @@ jobs:
         run: python -m PyInstaller Clangen.spec
       - uses: actions/upload-artifact@v3
         with:
-          name: Clangen_Win64.zip
+          name: Clangen_Win64
           path: dist/
       - name: Create archive for release (.zip)
         if: startsWith(github.ref, 'refs/tags/')
