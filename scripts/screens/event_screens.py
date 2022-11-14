@@ -217,8 +217,8 @@ class PatrolEventScreen(Screens):
         if game.switches['event'] == 0:
             patrol.add_patrol_cats()
             possible_events = patrol.get_possible_patrols(
-                game.clan.current_season,
-                game.clan.biome,
+                game.clan.current_season.lower(),
+                game.clan.biome.lower(),
                 game.clan.all_clans,
                 game.settings.get('disasters')
             )
@@ -290,7 +290,7 @@ class PatrolEventScreen(Screens):
         if game.switches['event'] > 0:
             if game.switches['event'] == 1:
                 if patrol.success:
-                    success_text = patrol.patrol_event.success_text
+                    success_text = patrol.final_success
                     patrol_size = len(patrol.patrol_cats)
 
                     # adjusting text for solo patrols
@@ -324,7 +324,7 @@ class PatrolEventScreen(Screens):
                                       x_limit=715)
 
                 else:
-                    fail_text = patrol.patrol_event.fail_text
+                    fail_text = patrol.final_fail
                     patrol_size = len(patrol.patrol_cats)
 
                     # adjusting text for solo patrols

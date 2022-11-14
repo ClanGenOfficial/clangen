@@ -27,6 +27,8 @@ class Patrol():
         self.patrol_traits = []
         self.patrol_total_experience = 0
         self.success = False
+        self.final_success = ""
+        self.final_fail = ""
         self.patrol_random_cat = None
         self.patrol_other_cats = []
         self.patrol_stat_cat = None
@@ -91,7 +93,7 @@ class Patrol():
         self.patrol_total_experience += cat.experience
         game.patrolled.append(cat)
 
-    def get_possible_patrols(self, current_season, biome, all_clans, min_cats, max_cats, game_setting_disaster = game.settings['disasters']):
+    def get_possible_patrols(self, current_season, biome, all_clans, game_setting_disaster = game.settings['disasters']):
         possible_patrols = []
         # general patrols, any number of cats
 
@@ -100,42 +102,15 @@ class Patrol():
         
         # general/misc patrols
         possible_patrols.extend(self.generate_patrol_events(GENERAL_DEAD))
-        if len(self.patrol_cats) >= 2:
-            possible_patrols.extend([
-                PatrolEvent(
-                    109,
-                    'r_c notices a Clanmate trapped in some brambles',
-                    'r_c frees their Clanmate',
-                    'The patrol works all day to free their Clanmate and gets nothing else done',
-                    'r_c runs back to camp to fetch help and rejoins the patrol later',
-                    50,
-                    10,
-                    win_skills=['very smart', 'extremely smart'])
-            ])
 
-        # season patrols
-        if current_season == 'Newleaf':
-            possible_patrols.extend(self.generate_patrol_events(NEWLEAF))
-        elif current_season == 'Greenleaf':
-            possible_patrols.extend(self.generate_patrol_events(GREENLEAF))
-        elif current_season == 'Leaf-fall':
-            possible_patrols.extend(self.generate_patrol_events(LEAF_FALL))
-        elif current_season == 'Leaf-bare':
-            possible_patrols.extend(self.generate_patrol_events(LEAF_BARE))
+        # deadly patrols
+        if game_setting_disaster:
+            possible_patrols.extend(self.generate_patrol_events(DISASTER))
 
-        # biome specific patrols
-        biome = biome.lower()
-        if biome == 'forest':
-            possible_patrols.extend(self.generate_patrol_events(FOREST))
-        elif biome == 'plains':
-            possible_patrols.extend(self.generate_patrol_events(PLAINS))
-        elif biome == 'mountainous':
-            possible_patrols.extend(self.generate_patrol_events(MOUNTAINOUS))
-        elif biome == 'swamp':
-            possible_patrols.extend(self.generate_patrol_events(SWAMP))
-        elif biome == 'beach':
-            possible_patrols.extend(self.generate_patrol_events(BEACH))
+        # fighting patrols
+        possible_patrols.extend(self.generate_patrol_events(GENERAL_FIGHTING))
 
+        return possible_patrols
 
         # other_clan patrols
         if randint(1, 1) == 1 and self.other_clan is not None:
@@ -230,12 +205,7 @@ class Patrol():
                 )
                 ])
 
-        # deadly patrols
-        if game_setting_disaster:
-            possible_patrols.extend(self.generate_patrol_events(DISASTER))
-
-        # fighting patrols
-        possible_patrols.extend(self.generate_patrol_events(GENERAL_FIGHTING))
+        
 
 
         if self.patrol_random_cat is not None and self.patrol_random_cat.status == 'apprentice' and len(
@@ -270,14 +240,7 @@ class Patrol():
             ])
 
         # new cat patrols
-        possible_patrols.extend(self.generate_patrol_events(GENERAL_NEW_CAT))
-
-        # single cat patrol
-        if len(self.patrol_cats) == 1:
-            possible_patrols.extend(self.generate_patrol_events(ONE_CAT))
-            if self.patrol_cats[0].status == 'apprentice':
-                possible_patrols.extend(self.generate_patrol_events(ONE_CAT_APPR))
-                
+        possible_patrols.extend(self.generate_patrol_events(GENERAL_NEW_CAT))     
         # two or more cats            
         # conversation patrols
         if len(self.patrol_cats) == 2 and self.patrol_leader != self.patrol_random_cat:
@@ -629,13 +592,14 @@ class Patrol():
                     'r_c invites their friend to join the Clan',
                     'r_c and their friend reminisce about old times',
                     'r_c says farewell to their friend and rejoins the patrol', 40, 10)
-            ])            
+            ])    
 
-        return possible_patrols
+            return possible_patrols
+        
 
     def generate_patrol_events(self, patrol_dict):
         all_patrol_events = []        
-        biome = game.clan.biome.lower()
+        clan_biome = game.clan.biome.lower()
         season = game.clan.current_season.lower()
         correct_biome = False
         correct_season = False
@@ -643,23 +607,14 @@ class Patrol():
         for patrol in patrol_dict:
             patrol_event = PatrolEvent(
                 patrol_id = patrol["patrol_id"],
-                biome = patrol["biome"],
-                season = patrol["season"],
-                tags = patrol["tags"],
                 intro_text = patrol["intro_text"],
                 success_text = patrol["success_text"],
                 fail_text = patrol["fail_text"],
                 decline_text = patrol["decline_text"],
-                antagonize_text = patrol["antagonize_text"],
-                antagonize_fail_text = patrol["antagonize_fail_text"],
                 chance_of_success = patrol["chance_of_success"],
                 exp = patrol["exp"],
-                win_skills = patrol["win_skills"],
-                win_trait = patrol["win_trait"],
-                min_cats = patrol["min_cats"],
-                max_cats = patrol["max_cats"]
             )
-            if biome == patrol_event.biome:
+            if clan_biome == patrol_event.biome:
                 correct_biome = True
             elif patrol_event.biome == "Any":
                 correct_biome = True
@@ -667,7 +622,7 @@ class Patrol():
                 correct_season = True
             elif patrol_event.season == "Any":
                 correct_season = True
-            if len(patrol.patrol_cats) >= patrol_event.min_cats and len(patrol.patrol_cats) <= patrol_event.max_cats:
+            if len(self.patrol_cats) >= patrol_event.min_cats and len(self.patrol_cats) <= patrol_event.max_cats:
                 cat_number = True
             if correct_season and correct_biome and cat_number:
                 all_patrol_events.append(patrol_event)
@@ -696,52 +651,120 @@ class Patrol():
             if set(self.patrol_traits).isdisjoint(
                     self.patrol_event.win_trait):
                 chance = 90
+        if self.patrol_event.fail_skills is not None:
+            if set(self.patrol_skills).isdisjoint(
+                    self.patrol_event.fail_skills):
+                chance = 10
+        if self.patrol_event.fail_trait is not None:
+            if set(self.patrol_traits).isdisjoint(
+                    self.patrol_event.fail_trait):
+                chance = 10
         c = randint(0, 100)
         if c < chance:
+            if self.patrol_stat_cat is not None:
+                if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
+                    x = 3
+                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills:
+                    x = 2
+            else:
+                if c >= 50:
+                    x = 1
+                else:
+                    x = 0
             self.success = True
             self.handle_exp_gain()
             self.add_new_cats()
-            self.handle_clan_relations(difference = int(1))
+            if self.patrol_event.tags is not None and "other_clan" in self.patrol_event.tags:
+                self.handle_clan_relations(difference = int(1))
             self.handle_mentor_app_pairing()
+            self.final_success = self.patrol_event.success_text[x]
         else:
+            if self.patrol_stat_cat is not None:
+                if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills:
+                    x = 1
+            elif c < 20:
+                x = 2
+            elif c < 35:
+                x = 3
+            else:
+                x = 0
             self.success = False
-            self.handle_deaths()
-            self.handle_scars()
-            self.handle_clan_relations(difference = int(-1))
+            if x == 3:
+                self.handle_scars()
+            if x == 2:  
+                self.handle_deaths()
+            if self.patrol_event.tags is not None and "other_clan" in self.patrol_event.tags:
+                self.handle_clan_relations(difference = int(-1))
             self.handle_mentor_app_pairing()
+            self.final_fail = self.patrol_event.fail_text[x]
 
     def calculate_success_antagonize(self):
-            if self.patrol_event is None:
-                return
-            # this adds the stat cat (if there is one)
-            if self.patrol_event.win_skills is not None and self.patrol_event.win_trait is not None:
-                for cat in self.patrol_cats:
-                    if cat.skill in self.patrol_event.win_skills or cat.trait in self.patrol_event.win_trait:
-                        self.patrol_stat_cat = cat
+        if self.patrol_event is None:
+           return
+        # this adds the stat cat (if there is one)
+        if self.patrol_event.win_skills is not None and self.patrol_event.win_trait is not None:
+            for cat in self.patrol_cats:
+                if cat.skill in self.patrol_event.win_skills or cat.trait in self.patrol_event.win_trait:
+                    self.patrol_stat_cat = cat
             # if patrol contains cats with autowin skill, chance of success is high
             # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
-            chance = self.patrol_event.chance_of_success + int(
-                self.patrol_total_experience / 10)
-            if self.patrol_event.patrol_id != 100:
-                chance = min(chance, 80)
-            if self.patrol_event.win_skills is not None:
-                if set(self.patrol_skills).isdisjoint(
-                        self.patrol_event.win_skills):
-                    chance = 90
+        chance = self.patrol_event.chance_of_success + int(
+            self.patrol_total_experience / 10)
+        if self.patrol_event.patrol_id != 100:
+            chance = min(chance, 80)
+        if self.patrol_event.win_skills is not None:
+            if set(self.patrol_skills).isdisjoint(
+                    self.patrol_event.win_skills):
+                chance = 90
             if self.patrol_event.win_trait is not None:
                 if set(self.patrol_traits).isdisjoint(
                         self.patrol_event.win_trait):
                     chance = 90
-            c = randint(0, 100)
-            if c < chance:
+            if self.patrol_event.fail_skills is not None:
+                if set(self.patrol_skills).isdisjoint(
+                        self.patrol_event.fail_skills):
+                    chance = 10
+            if self.patrol_event.fail_trait is not None:
+                if set(self.patrol_traits).isdisjoint(
+                        self.patrol_event.fail_trait):
+                    chance = 10
+        c = randint(0, 100)
+        if c < chance:
+            if self.patrol_stat_cat is not None:
+                if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
+                    x = 3
+                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills:
+                    x = 2
+            else:
+                if c >= 50:
+                    x = 1
+                else:
+                    x = 0
                 self.success = True
                 self.handle_exp_gain()
-                self.handle_clan_relations(difference = int(-1))
+                if self.patrol_event.tags is not None and "other_clan" in self.patrol_event.tags:
+                    self.handle_clan_relations(difference = int(-1))
+                self.handle_mentor_app_pairing()
+                self.final_success = self.patrol_event.success_text[x]
+        else:
+            if self.patrol_stat_cat is not None:
+                if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills:
+                    x = 1
+            elif c < 20:
+                x = 2
+            elif c < 35:
+                x = 3
             else:
-                self.success = False
-                self.handle_deaths()
+                x = 0
+            self.success = False
+            if x == 3:
                 self.handle_scars()
+            if x == 2:  
+                self.handle_deaths()
+            if self.patrol_event.tags is not None and "other_clan" in self.patrol_event.tags:
                 self.handle_clan_relations(difference = int(-2))
+            self.handle_mentor_app_pairing()
+            self.final_fail = self.patrol_event.fail_text[x]
 
     def handle_exp_gain(self):
         if self.success:
@@ -753,14 +776,13 @@ class Patrol():
                     cat.experience / 10)]
 
     def handle_deaths(self):
-        if self.patrol_event.patrol_id in [
-                108, 113, 114, 120, 141, 250, 305, 307, 802, 803, 804, 116
-        ]:
-            if self.patrol_random_cat.status == 'leader':
-                if self.patrol_event.patrol_id in [108, 113]:
-                    game.clan.leader_lives -= 9 # taken by twolegs, fall into ravine
-                else:
-                    game.clan.leader_lives -= 1
+        if self.patrol_event.tags is not None:
+            if "death" in self.patrol_event.tags:
+                if self.patrol_random_cat.status == 'leader':
+                    if "gone" in self.patrol_event.tags:
+                        game.clan.leader_lives -= 9 # taken by twolegs, fall into ravine
+                    else:
+                        game.clan.leader_lives -= 1
             self.patrol_random_cat.die()
         elif self.patrol_event.patrol_id in [900, 901, 902]:
             for cat in self.patrol_cats:
@@ -771,7 +793,7 @@ class Patrol():
                 cat.die()
 
     def handle_scars(self):
-        if self.patrol_event.patrol_id in [107, 251, 301, 302, 304, 306, 309]:
+        if "scar" in self.patrol_event.tags:
             if self.patrol_random_cat.specialty is None:
                 self.patrol_random_cat.specialty = choice(
                     [choice(scars1),
@@ -809,7 +831,7 @@ class Patrol():
         other_clan = patrol.other_clan
         otherclan = game.clan.all_clans.index(other_clan)
         clan_relations = int(game.clan.all_clans[otherclan].relations)
-        if self.patrol_event.patrol_id in list(range(800, 806)):
+        if "other_clan" in self.patrol_event.tags:
             if patrol.success is True:
                 clan_relations += difference
             else:
@@ -1040,15 +1062,15 @@ class PatrolEvent():
 
     def __init__(self,
                  patrol_id,
-                 biome='Any',
-                 season='Any',
-                 tags=None,
-                 intro_text='',
-                 decline_text='',
-                 chance_of_success=0,
-                 exp=0,
-                 success_text=[],
-                 fail_text=[],
+                 biome = "Any",
+                 season = "Any",
+                 tags = None,
+                 intro_text = "",
+                 decline_text = "",
+                 chance_of_success = 0,
+                 exp = 0,
+                 success_text = [],
+                 fail_text = [],
                  other_clan = None,
                  win_skills = None,
                  win_trait = None,
@@ -1056,8 +1078,8 @@ class PatrolEvent():
                  fail_trait = None,
                  min_cats = 1,
                  max_cats = 6,
-                 antagonize_text = '',
-                 antagonize_fail_text = '',
+                 antagonize_text = "",
+                 antagonize_fail_text = "",
                  history_text = []):
         self.patrol_id = patrol_id
         self.biome = biome
@@ -1128,57 +1150,9 @@ with open(f"{resource_directory}general_new_cat.json", 'r') as read_file:
 #                            patrols with conditions                           #
 # ---------------------------------------------------------------------------- #
 
-ONE_CAT = None
-with open(f"{resource_directory}{condition_path}one_cat_patrol.json", 'r') as read_file:
-    ONE_CAT = ujson.loads(read_file.read())
-
 ONE_CAT_APPR = None
 with open(f"{resource_directory}{condition_path}one_cat_apprentice_patrol.json", 'r') as read_file:
     ONE_CAT_APPR = ujson.loads(read_file.read())
-
-# ---------------------------------------------------------------------------- #
-#                                    leaves                                    #
-# ---------------------------------------------------------------------------- #
-
-NEWLEAF = None
-with open(f"{resource_directory}{leaves_path}newleaf.json", 'r') as read_file:
-    NEWLEAF = ujson.loads(read_file.read())
-
-GREENLEAF = None
-with open(f"{resource_directory}{leaves_path}greenleaf.json", 'r') as read_file:
-    GREENLEAF = ujson.loads(read_file.read())
-
-LEAF_FALL = None
-with open(f"{resource_directory}{leaves_path}leaf-fall.json", 'r') as read_file:
-    LEAF_FALL = ujson.loads(read_file.read())
-
-LEAF_BARE = None
-with open(f"{resource_directory}{leaves_path}leaf-bare.json", 'r') as read_file:
-    LEAF_BARE = ujson.loads(read_file.read())
-
-# ---------------------------------------------------------------------------- #
-#                                    biomes                                    #
-# ---------------------------------------------------------------------------- #
-
-FOREST = None
-with open(f"{resource_directory}{biomes_path}forest.json", 'r') as read_file:
-    FOREST = ujson.loads(read_file.read())
-
-PLAINS = None
-with open(f"{resource_directory}{biomes_path}plains.json", 'r') as read_file:
-    PLAINS = ujson.loads(read_file.read())
-
-MOUNTAINOUS = None
-with open(f"{resource_directory}{biomes_path}mountainous.json", 'r') as read_file:
-    MOUNTAINOUS = ujson.loads(read_file.read())
-
-SWAMP = None
-with open(f"{resource_directory}{biomes_path}swamp.json", 'r') as read_file:
-    SWAMP = ujson.loads(read_file.read())
-
-BEACH = None
-with open(f"{resource_directory}{biomes_path}beach.json", 'r') as read_file:
-    BEACH = ujson.loads(read_file.read())
 
 DISASTER = None
 with open(f"{resource_directory}disaster.json", 'r') as read_file:
