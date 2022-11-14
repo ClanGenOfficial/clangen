@@ -1,6 +1,7 @@
 [
     {
         "patrol_id": "gen_hunt_mouse1",
+        "biome": "Any",
         "tags": ["hunting"],
         "intro_text": "Your patrol comes across a mouse",
         "success_text": ["Your patrol catches the mouse!"],

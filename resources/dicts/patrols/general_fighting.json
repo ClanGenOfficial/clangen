@@ -19,38 +19,138 @@
     },
     {
         "patrol_id": "gen_bord_dog1",
-        "tags": ["fighting", "death", "injury", "scar"],
-        "intro_text": "Your patrol comes across a large dog.",
+        "tags": ["fighting", "death", "scar", "injury", "respect", "border"],
+        "intro_text": "r_c tracks the scent of a large dog, wandering along the edge of the clan's territory.",
+        "decline_text": "r_cdecides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
+        "chance_of_success": 10,
+        "exp": 50,
         "success_text": [
-            "Your patrol valiantly drives away the dog.", 
-            "Your patrol viciously attacks the dog, sending it running back to its twolegs.", 
-            "Your patrol fights valiantly. s_c manages to get a good swipe on the dog's muzzle, sending it howling as it runs away."],
-        "fail_text": [
-            "Your patrol fails to drive away the dog, but miraculously escapes without injuries.", 
             "",
-            "The dog is driven away, but not before injuring r_c", 
-            "The dog is vicious and catches r_c. The patrol fights the dog off, but r_c is fatally wounded."],
-        "decline_text": "Your patrol decides not to pursue the dog",
-        "chance_of_success": 40,
-        "exp": 20,
-        "win_skills": ["excellent fighter"]
+            "r_c bolts back to camp, yowling a warning!",
+            "s_c sets up an ambush for the wandering dog, bloodying its snout and leading it on a wild chasing dance across the border and out of c_n territory.",
+            "They don't feel like they have anything like the skill or power , but s_c would give their life for c_n, charging in to courageously lead the dog away from c_n territory. Each booming bark has to be the herald of their doom, each rancid breath the last thing they'll ever smell, but somehow, eventually, limbs and lungs burning, they leap to refuge."
+        ],
+        "fail_text": [
+            "",
+            "s_c would give their life to protect c_n, and as they charge past the huge dog to lead it far, far from c_n, they accept it. Fear gives them speed, but it only takes one successful hit. Miraculously they fly out of the dog's jaws while it shakes them, landing in a refuge. s_c is injured, desperate, and terrified - but they're alive.",
+            "r_c would give their life to protect c_n, and as they lead the huge dog away from the clan, in their heart, they accept that's what they're doing. As darkness closes in around them and the dog's jaws descend again, r_c tries to sink their claws into its face, and hopes desperately that they led it far enough."
+        ],
+        "win_skills": ["excellent fighter"],
+        "win_trait": ["altruistic", "ambitious", "compassionate", "confident", "empathetic", "faithful", "fierce", "loving", "loyal", "responsible", "righteous"], 
+        "max_cats": 1,
+        "history_text": [
+            "r_c is scarred from bravely defending the clan against a dog.",
+            "r_c died to keep c_n safe from a large dog."
+        ]
     },
     {
         "patrol_id": "gen_bord_dog2",
-        "tags": ["fighting", "scar", "injury"],
+        "tags": ["fighting", "death", "scar", "injury", "respect", "trust", "border"],
+        "intro_text": "Your patrol tracks the scent of a large dog, wandering along the edge of the clan's territory.",
+        "success_text": [
+            "The patrol shadows the dog, sending a message back to warn camp. It's an exhausting and stressful day, but by the time night falls they've confirmed that the dog is leaving the local area, and the patrol has assured c_n's safety.",
+            "Your patrol gathers their courage and valiantly tries to lead away the dog. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
+            "s_c sets up a careful ambush ahead of the dog, and the surprising, darting attack bloodies the dog's flank, dissuading it from heading further into c_n territory.",
+            "s_c selflessly takes the lion's share of the run the patrol leads the dog on, exhausting themselves almost to the point of danger, but leading the dog far away from c_n borders. Their clanmates support them on the long walk home once it's all over, their purrs mixing with s_c exhausted pants."],
+        "fail_text": [
+            "The patrol tries to keep watch on the dog from a distance, but it spots the cats and they have to scatter. Everyone escapes just fine, but they lose track of the dog. It could be anywhere still out there, lurking, waiting to attack.",
+            "s_c tries to take the lion's share of the effort to lead the dog away, but their strength fails them and the rest of the patrol needs to rescue them, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on their borders.",
+            "The patrol tries to lead the dog away from the clan's borders, but with so few cats it's impossible to cover each other's backs. r_c falls to the dog as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their clanmate.",
+            "The patrol tries bravely to lead the dog away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c gets caught while running and it's all the rest of the patrol can do to distract the dog long enough to get r_c to safety."
+        ],
+        "decline_text": "Your patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
+        "chance_of_success": 30,
+        "exp": 30,
+        "max_cats": 3,
+        "min_cats": 2,
+        "win_skills": ["excellent fighter"],
+        "win_trait": ["altruistic", "ambitious", "compassionate", "confident", "empathetic", "faithful", "fierce", "loving", "loyal", "responsible", "righteous"], 
+        "history_text": [
+            "r_c is scarred from bravely defending the clan against a dog.",
+            "r_c died to keep c_n safe from a large dog."
+        ]
+    },
+    {
+        "patrol_id": "gen_bord_dog3",
+        "tags": ["fighting", "death", "scar", "injury", "respect", "trust", "border"],
+        "intro_text": "Your patrol stumbles across a large dog, wandering in the middle of the clan's territory.",
+        "success_text": [
+            "They decide that no cat is going to be surprised by this predator again, and the patrol shadows the dog, sending a message to warn camp. With enough cats to keep watch, rest, track, and send messages forward and back from camp, c_n is kept safe from the wandering dog.",
+            "Your patrol gathers their courage and valiantly tries to lead away the dog. With such a small group of cats, they can only lead it a short distance, but it's better than nothing. Together, working as one, and with Starclan lighting their paws, they work all day, leading the dog hours away from c_n territory.",
+            "s_c sets up a careful ambush ahead of the dog, and the surprising, darting attack bloodies the dog's flank, dissuading it from heading further into c_n territory. The dog tucks tail, and runs for more friendly lands.",
+            "s_c selflessly takes the lion's share of the run the patrol leads the dog on, exhausting themselves almost to the point of danger, but leading the dog far away from c_n borders. Their clanmates support them on the long walk home once it's all over, their purrs mixing with s_c exhausted pants."],
+        "fail_text": [
+            "The patrol tries to keep watch on the dog from a distance, but it spots the cats and they have to scatter. It's not as bad as it could've been though, r_c manages to keep track of the dog's position, and it doesn't come any further into c_n territory",
+            "“s_c tries to take the lion's share of the effort to lead the dog away, but their strength fails them and the rest of the patrol needs to rescue them, cutting short the results of the patrol. The patrol has to fall back, but they do so in good order.",
+            "With so many cats all working as one to lead the dog away, for a while it looks as if everything is going to be fine. But it only needs one lucky strike, which hits r_c, and the rest of the patrol can only carry their body back to camp, to be buried with all the honor of they deserve.",
+            "The patrol leads the dog away from their borders bravely, but you only need to be unlucky once. r_c stumbles and gets caught by those snapping jaws, but the rest of the patrol rallies to defend them, and r_c is safely helped back to camp, where the medicine den awaits."
+        ],
+        "decline_text": "Your patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
+        "chance_of_success": 50,
+        "exp": 30,
+        "max_cats": 3,
+        "min_cats": 2,
+        "win_skills": ["excellent fighter"],
+        "win_trait": ["altruistic", "ambitious", "compassionate", "confident", "empathetic", "faithful", "fierce", "loving", "loyal", "responsible", "righteous"], 
+        "history_text": [
+            "r_c is scarred from bravely defending the clan against a dog.",
+            "r_c died to keep c_n safe from a large dog."
+        ]
+    },
+    {
+        "patrol_id": "gen_bord_smalldog1",
+        "tags": ["fighting", "scar", "death", "injury"],
         "intro_text": "Your patrol comes across a small dog.",
         "success_text": [
-            "Your patrol drives away the dog.", 
-            "", 
-            "Your patrol enters a standoff with the dog. s_c rushes forward and swipes it across the muzzle, sending it howling away."],
+            "r_c hisses at the dog, warning it off. It skitters back, yapping loudly but headed in the right direction. Maybe they should add dog herding to their list of accomplishments?", 
+            "r_c unsheathes their claws, puffs their fur out to as far as it'll go, gathers their courage, and drives the small dog from the border.", 
+            "s_c unleashes all their battle experience, darting this way and that, ripping chunks of dog fur out as they drive it into the distance."],
         "fail_text": [
-            "The dog's barking scares away prey.", 
+            "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait miserably and humiliatingly in a safe spot until the beast calms down.", 
             "", 
-            "", 
-            "The dog is a bit more vicious than the patrol originally thought. r_c gets injured as they go to attack it."],
+            "The animal is far more tenacious than r_c ever expected, and once the fight starts, there's no escaping from it. As r_c's world goes dark, they have their fangs sunk in the dog's throat. At least they'll take the beast with them.", 
+            "Small, yappy, but… still a dog. r_c peers down from the tree where the animal has pinned them, wincing in pain. They won't underestimate these ugly creatures again."],
         "decline_text": "The patrol decides not to pursue the dog.",
         "chance_of_success": 60,
         "exp": 10,
+        "max_cats": 1,
+        "win_skills": ["good fighter","great fighter","excellent fighter"]
+    },
+    {
+        "patrol_id": "gen_bord_smalldog2",
+        "tags": ["fighting", "scar", "injury"],
+        "intro_text": "Your patrol comes across a small dog, right on the border of c_n territory.",
+        "success_text": [
+            "p_l hisses at the small dog, and the rest of their small team back them up. The dog skitters back, yapping loudly, apparently shocked by the display, and the patrol breaks out into yowls and caterwauls, screaming until the small beast's nerve breaks, and it runs from the c_n border into the distance.", 
+            "The patrol pace towards the small dog, claws out, fur up, backed up with the courage of their clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.", 
+            "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until its nerve breaks, it tucks tail, and it runs from c_n territory headed deep into the wilderness."],
+        "fail_text": [
+            "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait exasperatedly in a safe spot until the beast calms down.", 
+            "", 
+            "", 
+            "The dog gets a lucky hit in on r_c, though together all the cats are still able to drive it off successfully."],
+        "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
+        "chance_of_success": 60,
+        "exp": 10,
+        "min_cats": 2,
+        "max_cats": 3,
+        "win_skills": ["good fighter","great fighter","excellent fighter"]
+    },
+    {
+        "patrol_id": "gen_bord_smalldog3",
+        "tags": ["fighting", "scar", "injury"],
+        "intro_text": "Your patrol comes across a small dog, right on the border of c_n territory.",
+        "success_text": [
+            "The patrol pace towards the small dog, claws out, fur up, backed up with the courage of their clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.", 
+            "Mobbed by cats and near blind with the blood in its eyes, the dog flees from c_n, yelping pitifully.", 
+            "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until its nerve breaks, it tucks tail, and it runs from c_n territory headed deep into the wilderness."],
+        "fail_text": [
+            "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait exasperatedly in a safe spot until the beast calms down."
+        ],
+        "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
+        "chance_of_success": 60,
+        "exp": 10,
+        "min_cats": 4,
         "win_skills": ["good fighter","great fighter","excellent fighter"]
     },
     {
