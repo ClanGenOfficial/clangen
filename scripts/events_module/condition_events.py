@@ -101,6 +101,7 @@ class Condition_Events():
                 cat.moon_skip_injury()
                 if cat.dead:
                     triggered = True
+                    save_death(cat, event_string)
                     if cat.injury.name in ["bruises","cracked pads","joint pain","scrapes","stomach aches","tickbites"]:
                         event_string = f"{cat.name} has died in the medicine den, with {injury_name} "
                     else:
