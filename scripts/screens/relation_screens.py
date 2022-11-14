@@ -633,11 +633,10 @@ class ChooseMateScreen(Screens):
 
         y_value = 285
 
-        relation = list(filter(lambda r: r.cat_to.ID == arg2.ID, arg1.relationships))
-        if len(relation):
-            relation = relation[0]
+        if arg2.ID in arg1.relationships:
+            relation = arg1.relationships[arg2.ID]
         else:
-            Cat.all_cats.get(arg2.ID).create_new_relationships()
+            relation = arg1.create_one_relationship(arg2)
         romantic_love = relation.romantic_love
 
         if 10 <= romantic_love <= 30:
@@ -650,11 +649,10 @@ class ChooseMateScreen(Screens):
             screen.blit(s_heart, (237, y_value))
             screen.blit(s_heart, (264, y_value))
 
-        relation = list(filter(lambda r: r.cat_to.ID == arg1.ID, arg2.relationships))
-        if len(relation):
-            relation = relation[0]
+        if arg1.ID in arg2.relationships:
+            relation = arg2.relationships[arg1.ID]
         else:
-            Cat.all_cats.get(arg1.ID).create_new_relationships()
+            relation = arg2.create_one_relationship(arg1)
         romantic_love = relation.romantic_love
 
         if 10 <= romantic_love <= 30:
@@ -843,11 +841,11 @@ class RelationshipScreen(Screens):
         # MAKE A LIST OF RELATIONSHIPS
         search_relations = []
         if search_text.strip() != '':
-            for rel in the_cat.relationships:
+            for rel in the_cat.relationships.values():
                 if search_text.lower() in str(rel.cat_to.name).lower():
                     search_relations.append(rel)
         else:
-            search_relations = the_cat.relationships.copy()
+            search_relations = list(the_cat.relationships.values()).copy()
 
         # VIEW TOGGLES
         verdana_mid_dark.text(

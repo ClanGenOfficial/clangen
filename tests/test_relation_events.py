@@ -203,12 +203,10 @@ class Pregnancy(unittest.TestCase):
 
         cat1.mate = cat2.ID
         cat2.mate = cat1.ID
-        cat1.relationships.append(
-            Relationship(cat1, cat2,mates=True,family=False,romantic_love=100)
-        )
-        cat2.relationships.append(
-            Relationship(cat2, cat1,mates=True,family=False,romantic_love=100)
-        )
+        relation1 = Relationship(cat1, cat2,mates=True,family=False,romantic_love=100)
+        relation2 = Relationship(cat2, cat1,mates=True,family=False,romantic_love=100)
+        cat1.relationships[cat2.ID] = relation1
+        cat2.relationships[cat1.ID] = relation2
 
         # when
         get_kits_chance.return_value = 1

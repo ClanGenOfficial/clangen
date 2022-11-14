@@ -98,14 +98,14 @@ class TestCountRelation(unittest.TestCase):
         cat4 = Cat()
 
         relation_1_2 = Relationship(cat_from=cat1,cat_to=cat2)
-        relation_1_2.link_relationship()
-        cat1.relationships.append(relation_1_2)
         relation_3_2 = Relationship(cat_from=cat3,cat_to=cat2)
-        relation_3_2.link_relationship()
-        cat3.relationships.append(relation_3_2)
         relation_4_2 = Relationship(cat_from=cat4,cat_to=cat2)
+        cat1.relationships[cat2.ID] = relation_1_2
+        cat3.relationships[cat2.ID] = relation_3_2
+        cat4.relationships[cat2.ID] = relation_4_2
+        relation_1_2.link_relationship()
+        relation_3_2.link_relationship()
         relation_4_2.link_relationship()
-        cat4.relationships.append(relation_4_2)
 
         # when
         relation_1_2.jealousy += 20

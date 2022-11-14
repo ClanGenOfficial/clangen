@@ -832,7 +832,7 @@ class Patrol():
         for cat in self.patrol_cats:
             relationships = list(
                 filter(lambda rel: rel.cat_to.ID in cat_ids,
-                       cat.relationships))
+                       list(cat.relationships.values())))
             for rel in relationships:
                 if self.success:
                     rel.romantic_love += romantic_love
@@ -860,9 +860,8 @@ class Patrol():
                 the_cat = Cat.all_cats.get(cat_id)
                 if the_cat.dead or the_cat.exiled:
                     continue
-                the_cat.relationships.append(Relationship(the_cat, kit))
-                relationships.append(Relationship(kit, the_cat))
-            kit.relationships = relationships
+                the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
+                kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
             game.clan.add_cat(kit)
             new_backstory = choice(['abandoned1', 'abandoned2', 'abandoned3'])
             kit.backstory = new_backstory
@@ -889,9 +888,8 @@ class Patrol():
                 the_cat = Cat.all_cats.get(cat_id)
                 if the_cat.dead or the_cat.exiled:
                     continue
-                the_cat.relationships.append(Relationship(the_cat, kit))
-                relationships.append(Relationship(kit, the_cat))
-            kit.relationships = relationships
+                the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
+                kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
             game.clan.add_cat(kit)
             kit.backstory = new_backstory
             kit.thought = 'Is looking around the camp with wonder'
@@ -911,21 +909,16 @@ class Patrol():
                     kit2.parent1 = kit.ID
                     kit2.thought = 'Is looking around the camp with wonder'
                     #create and update relationships
-                    relationships = []
                     for cat_id in game.clan.clan_cats:
                         the_cat = Cat.all_cats.get(cat_id)
                         if the_cat.dead or the_cat.exiled:
                             continue
                         if the_cat.ID in [kit2.parent1, kit2.parent2]:
-                            the_cat.relationships.append(
-                                Relationship(the_cat, kit2, False, True))
-                            relationships.append(
-                                Relationship(kit2, the_cat, False, True))
+                            the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2, False, True)
+                            kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat, False, True)
                         else:
-                            the_cat.relationships.append(
-                                Relationship(the_cat, kit2))
-                            relationships.append(Relationship(kit2, the_cat))
-                    kit2.relationships = relationships
+                            the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2)
+                            kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat)
                     game.clan.add_cat(kit2)
 
         elif self.patrol_event.patrol_id in [502, 503, 520]:  # new kittypet
@@ -940,9 +933,8 @@ class Patrol():
                 the_cat = Cat.all_cats.get(cat_id)
                 if the_cat.dead or the_cat.exiled:
                     continue
-                the_cat.relationships.append(Relationship(the_cat, kit))
-                relationships.append(Relationship(kit, the_cat))
-            kit.relationships = relationships
+                the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
+                kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
             game.clan.add_cat(kit)
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
@@ -971,9 +963,8 @@ class Patrol():
                 the_cat = cat_class.all_cats.get(cat_id)
                 if the_cat.dead or the_cat.exiled:
                     continue
-                the_cat.relationships.append(Relationship(the_cat, kit))
-                relationships.append(Relationship(kit, the_cat))
-            kit.relationships = relationships
+                the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
+                kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
             game.clan.add_cat(kit)
             add_siblings_to_cat(kit, cat_class)
             add_children_to_cat(kit, cat_class)
