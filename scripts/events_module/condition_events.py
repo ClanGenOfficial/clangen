@@ -64,7 +64,7 @@ class Condition_Events():
         if event_string:
             if cat.dead:
                 # TODO: remove afterwards
-                save_death(event_string)
+                save_death(cat, event_string)
                 game.cur_events_list.append(f"{event_string} at {cat.moons} moons")
             else: 
                 game.cur_events_list.append(event_string)

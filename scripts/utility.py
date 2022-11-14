@@ -119,7 +119,7 @@ def add_children_to_cat(cat, cat_class):
             inter_cat.children.append(cat.ID)
 
 
-def save_death(death_string):
+def save_death(cat, death_string):
     if game.switches['clan_name'] != '':
         clanname = game.switches['clan_name']
     elif len(game.switches['clan_name']) > 0:
@@ -128,14 +128,14 @@ def save_death(death_string):
         clanname = game.clan.name
 
     path = f"saves/{clanname}/deaths.json"
+    living_cats = list(filter(lambda c: not c.dead and not c.exiled, cat.all_cats.values()))
 
     file_entry = []
     if os.path.exists(path):
         with open(path, "r") as file:
             file_entry = ujson.loads(file.read())
-            file_entry.append(f"{death_string} - {game.clan.age} moons")
-    else:
-        file_entry.append(f"{death_string} - {game.clan.age} moons")
+    
+    file_entry.append(f"{death_string} ({cat.moons} moons)- {game.clan.age} moons with {len(living_cats)} living cats")
 
     with open(path, "w") as file:
         json_string = ujson.dumps(file_entry, indent = 4)

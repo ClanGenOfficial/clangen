@@ -900,7 +900,7 @@ class Events():
             cat.die()
             event_string = choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old.'
             if SAVE_DEATH:
-                save_death(event_string)
+                save_death(cat, event_string)
             game.cur_events_list.append(event_string)
             
 
@@ -1087,7 +1087,7 @@ class Events():
             cat.die()
             event_string = choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old.'
             if SAVE_DEATH:
-                save_death(event_string)
+                save_death(cat, event_string)
             game.cur_events_list.append(event_string)
 
         # multiple deaths
@@ -1108,17 +1108,17 @@ class Events():
                 event_string = f'{name} is killed by {other_name} in an argument over {Cat.all_cats.get(cat.mate).name}.'
                 game.cur_events_list.append(event_string)
                 if SAVE_DEATH:
-                    save_death(event_string)
+                    save_death(cat, event_string)
             if cat.status == 'leader' or other_cat.status == 'leader':
                 game.clan.leader_lives -= 1
                 event_string = f'{game.cur_events_list.append(choice(cause_of_death))} The leader lost a life.'
                 if SAVE_DEATH:
-                    save_death(event_string)
+                    save_death(cat, event_string)
             else:
                 event_string = choice(cause_of_death)
                 game.cur_events_list.append(event_string)
                 if SAVE_DEATH:
-                    save_death(event_string)
+                    save_death(cat, event_string)
             cat.die()
             other_cat.die()
         # death with Personalities 
@@ -1141,7 +1141,7 @@ class Events():
                         event_string = choice(cause_of_death)
                         game.cur_events_list.append(event_string)
                         if SAVE_DEATH:
-                            save_death(event_string)
+                            save_death(cat, event_string)
                 elif cat.status == 'deputy' and other_cat.status == 'leader' and current_lives >= 7:
                         cause_of_death = [
                             f'{name} murdered {other_name} to take their place, but the leader had more lives than they expected.\
@@ -1153,7 +1153,7 @@ class Events():
                         event_string = choice(cause_of_death)
                         game.cur_events_list.append(event_string)
                         if SAVE_DEATH:
-                            save_death(event_string)
+                            save_death(cat, event_string)
                 elif cat.status == 'warrior':
                         if other_cat.status == 'leader' and current_lives <= 6:
                             cause_of_death = [
@@ -1165,7 +1165,7 @@ class Events():
                             event_string = choice(cause_of_death)
                             game.cur_events_list.append(event_string)
                             if SAVE_DEATH:
-                                save_death(event_string)
+                                save_death(cat, event_string)
                         elif other_cat == 'leader' and current_lives >= 7:
                             cause_of_death = [
                                 f'{name} murdered {other_name} in hopes of taking their place, but the leader had more lives than they expected.\
@@ -1177,7 +1177,7 @@ class Events():
                             event_string = choice(cause_of_death)
                             game.cur_events_list.append(event_string)
                             if SAVE_DEATH:
-                                save_death(event_string)
+                                save_death(cat, event_string)
                         elif other_cat.status == 'deputy':
                             cause_of_death = [
                                 f'{name} murdered {other_name} in cold blood in hopes of taking their place',
@@ -1187,7 +1187,7 @@ class Events():
                             event_string = choice(cause_of_death)
                             game.cur_events_list.append(event_string)
                             if SAVE_DEATH:
-                                save_death(event_string)
+                                save_death(cat, event_string)
             # just murder
             elif cat.trait in ['bloodthirsty', 'vengeful', 'sadistic'] and not int(random.random() * murder_chance):
                 # Future goopsters <3
@@ -1201,7 +1201,7 @@ class Events():
                     event_string = choice(cause_of_death)
                     game.cur_events_list.append(event_string)
                     if SAVE_DEATH:
-                        save_death(event_string)
+                        save_death(cat, event_string)
                 elif other_cat == 'leader' and current_lives >= 7:                            
                     cause_of_death = [
                         f'{name} murdered {other_name}, but the leader had more lives than they expected.\
@@ -1213,7 +1213,7 @@ class Events():
                     event_string = choice(cause_of_death)
                     game.cur_events_list.append(event_string)
                     if SAVE_DEATH:
-                        save_death(event_string)
+                        save_death(cat, event_string)
                 else:
                     cause_of_death = [
                         f'{name} murdered {other_name} in cold blood',
@@ -1223,7 +1223,7 @@ class Events():
                     event_string = choice(cause_of_death)
                     game.cur_events_list.append(event_string)
                     if SAVE_DEATH:
-                        save_death(event_string)
+                        save_death(cat, event_string)
             elif cat.status in ['medicine cat', 'medicine cat apprentice']\
             and cat.trait in ['bloodthirsty', 'vengeful', 'sadistic'] and not int(random.random() * murder_chance):
                 cause_of_death = [
@@ -1239,7 +1239,7 @@ class Events():
                 event_string = choice(cause_of_death) + ' at ' +str(other_cat.moons) + ' moons old'
                 game.cur_events_list.append(event_string)
                 if SAVE_DEATH:
-                    save_death(event_string)
+                    save_death(cat, event_string)
         # extra chance of cat dying to age
         elif cat.moons > int(random.random() * 51) + 150:  # cat.moons > 150 <--> 200
             triggered_death = True
@@ -1249,21 +1249,21 @@ class Events():
                     event_string = f'{cat.name} has passed due to their old age at {cat.moons + 1} moons old.'
                     game.cur_events_list.append(event_string)
                     if SAVE_DEATH:
-                        save_death(event_string)
+                        save_death(cat, event_string)
                 else:
                     game.clan.leader_lives -= 1
                     cat.die()
                     event_string = f'{cat.name} has lost a life due to their old age at {cat.moons + 1} moons old.'
                     game.cur_events_list.append(event_string)
                     if SAVE_DEATH:
-                        save_death(event_string)
+                        save_death(cat, event_string)
             if cat.status == 'leader' and cat.moons > 269:
                 game.clan.leader_lives -= 10
                 cat.die()
                 event_string = f'{cat.name} has passed due to their old age at {cat.moons + 1} moons old.'
                 game.cur_events_list.append(event_string)
                 if SAVE_DEATH:
-                    save_death(event_string)
+                    save_death(cat, event_string)
 
         if game.settings.get('disasters'):
             if not random.getrandbits(10):  # 1/1024
@@ -1334,7 +1334,7 @@ class Events():
                 event_string = f'{names}{choice(disaster)}'
                 game.cur_events_list.append(event_string)
                 if SAVE_DEATH:
-                    save_death(event_string)
+                    save_death(cat, event_string)
             else:
                 disaster_str = choice(disaster)
                 disaster_str = disaster_str.replace('are', 'is')
@@ -1346,7 +1346,7 @@ class Events():
                 event_string = f'{names}{disaster_str}'
                 game.cur_events_list.append(event_string)
                 if SAVE_DEATH:
-                    save_death(event_string)
+                    save_death(cat, event_string)
             for cat in dead_cats:
                 cat.die()
 
@@ -1392,7 +1392,7 @@ class Events():
                     event_string = choice(cause_of_death) + ' at ' + str(cat.moons) +' moons old'
                     game.cur_events_list.append(event_string)
                     if SAVE_DEATH:
-                        save_death(event_string)
+                        save_death(cat, event_string)
             elif not int(random.random() * 200) and cat.status == 'leader': # 1/200
                 triggered_death = True
                 lostlives = choice([2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6])
@@ -1408,7 +1408,7 @@ class Events():
                 event_string = choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old'
                 game.cur_events_list.append(event_string)
                 if SAVE_DEATH:
-                    save_death(event_string)
+                    save_death(cat, event_string)
             # normal death
             elif not int(random.random() * 400): # 1/400
                 triggered_death = True
@@ -1458,7 +1458,7 @@ class Events():
                     event_string = choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old'
                     game.cur_events_list.append(event_string)
                     if SAVE_DEATH:
-                        save_death(event_string)
+                        save_death(cat, event_string)
                 else:
                     triggered_death = False
             # multiple deaths
@@ -1484,12 +1484,12 @@ class Events():
                         event_string = choice(cause_of_death) + ' and the leader lost a life'
                         game.cur_events_list.append(event_string)
                         if SAVE_DEATH:
-                            save_death(event_string)
+                            save_death(cat, event_string)
                     else:
                         event_string = choice(cause_of_death)
                         game.cur_events_list.append(event_string)
                         if SAVE_DEATH:
-                            save_death(event_string)
+                            save_death(cat, event_string)
                     cat.die()
                     other_cat.die()
                 else:
