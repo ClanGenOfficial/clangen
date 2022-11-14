@@ -646,8 +646,6 @@ class Cat():
             return
 
         mortality = self.illness.current_mortality
-        print(f"MOONSKIP - {self.name} - {game.clan.age}")
-        print(f"{self.illness.name}, {mortality} {self.illness.current_duration}")
         if mortality and not int(random.random() * mortality):
             if self.status == "leader":
                 game.clan.leader_lives -= 1
@@ -656,16 +654,14 @@ class Cat():
                 elif game.clan.leader_lives <= 0:
                     game.cur_events_list.append(f"{self.name} lost the last life to {self.illness.name}")
             self.die()
-            print("____________DIED__________")
             return
 
         self.illness.current_duration -= 1
         if self.illness.current_duration <= 0:
-            print("____________SURVIVED__________")
             self.illness = None
 
     def moon_skip_injury(self):
-        "handles the moon skip for injuries"
+        "handles the moon skip for injury"
         if not self.is_injured():
             return
         
@@ -674,9 +670,9 @@ class Cat():
             self.die()
             return
 
-        self.injuries.current_duration -= 1
-        if self.injuries.current_duration <= 0:
-            self.injuries = None
+        self.injury.current_duration -= 1
+        if self.injury.current_duration <= 0:
+            self.injury = None
 
 # ---------------------------------------------------------------------------- #
 #                                   relative                                   #
@@ -755,8 +751,6 @@ class Cat():
             medicine_mortality = illness["medicine_mortality"][self.age],
             risks = illness["risks"]
         )
-        
-        print(f"{self.name} has gotten {self.illness.name} - {game.clan.age} clan moons")
 
     def get_injured(self,name):
         if self.is_injured() or name not in INJURIES:
@@ -770,11 +764,8 @@ class Cat():
             duration = injury["duration"],
             medicine_duration = injury["medicine_duration"], 
             mortality = injury["mortality"][self.age],
-            medicine_mortality = injury["medicine_mortality"],
             risks = injury["risks"],
-            illness_infectiousness = injury["illness_infectiousness"],
-            number_medicine_cats = injury["number_medicine_cats"],
-            number_medicine_apprentices = injury["number_medicine_apprentices"]
+            illness_infectiousness = injury["illness_infectiousness"]
         )
 
     def is_ill(self):
@@ -791,19 +782,18 @@ class Cat():
         illness_name = cat.illness.name
         rate = cat.illness.infectiousness
         if self.is_injured():
-            illness_infect = list(filter(lambda ill: ill["name"] == illness_name ,self.injuries.illness_infectiousness))
+            illness_infect = list(filter(lambda ill: ill["name"] == illness_name ,self.injury.illness_infectiousness))
             if illness_infect is not None and len(illness_infect) > 0:
                 illness_infect = illness_infect[0]
                 rate -= illness_infect["lower_by"]
         
         # prevent rate lower 0 and print warning message
         if rate < 0:
-            print(f"WARNING: injury {self.injuries.name} has lowered chance of {illness_name} infection to {rate}")
+            print(f"WARNING: injury {self.injury.name} has lowered chance of {illness_name} infection to {rate}")
             rate = 1
 
         if randint(0, rate) == 1:
-            print(f"-------- GOT SICK")
-            game.cur_events_list.append(f"{self.name} had contact with {cat.name} and now has {illness_name}")
+            game.cur_events_list.append(f"{self.name} had contact with {cat.name} and now has {illness_name}.")
             self.get_ill(illness_name)
 
 # ---------------------------------------------------------------------------- #

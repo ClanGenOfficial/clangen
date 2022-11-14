@@ -840,7 +840,7 @@ class Events():
         triggered_death = False
 
         if game.clan.game_mode == 'expanded':
-            triggered_death = self.condition_events.handle_injuries(cat)
+            triggered_death = self.condition_events.handle_injuries(cat, game.clan.current_season)
             if game.settings.get('disasters'):
                 if not random.getrandbits(10):  # 1/1024
                     triggered_death = True

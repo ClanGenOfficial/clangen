@@ -90,14 +90,12 @@ class Injury():
             duration,
             medicine_duration,
             mortality,
-            medicine_mortality,
             risks,
             illness_infectiousness):
         self.name = name
         self.duration = duration
         self.medicine_duration = medicine_duration
         self.mortality = mortality
-        self.medicine_mortality = medicine_mortality
         self.risks = risks
         self.illness_infectiousness = illness_infectiousness
 
@@ -105,7 +103,6 @@ class Injury():
         self.current_mortality = mortality
         if medical_cats_condition_fulfilled():
             self.current_duration = medicine_duration
-            self.current_mortality = medicine_mortality
 
     @property
     def current_duration(self):
@@ -124,9 +121,5 @@ class Injury():
         return self._current_mortality
 
     @current_mortality.setter
-    def current_mortality(self, value):
-        if medical_cats_condition_fulfilled():
-            if value < self.medicine_mortality:
-                value = self.medicine_mortality
-        
+    def current_mortality(self, value):        
         self._current_mortality = value
