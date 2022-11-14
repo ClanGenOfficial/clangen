@@ -80,6 +80,7 @@ class Patrol():
             self.patrol_leader_name = str(patrol_leader_name)
 
         self.other_clan = choice(game.clan.all_clans)
+        print(self.patrol_total_experience)
 
     def add_cat(self, cat):
         """Add a new cat to the patrol"""
@@ -600,10 +601,11 @@ class Patrol():
     def generate_patrol_events(self, patrol_dict):
         all_patrol_events = []        
         clan_biome = game.clan.biome.lower()
-        season = game.clan.current_season.lower()
+        season = game.clan.current_season
         correct_biome = False
         correct_season = False
         cat_number = False
+        apprentice = True
         for patrol in patrol_dict:
             patrol_event = PatrolEvent(
                 patrol_id = patrol["patrol_id"],
@@ -612,7 +614,7 @@ class Patrol():
                 fail_text = patrol["fail_text"],
                 decline_text = patrol["decline_text"],
                 chance_of_success = patrol["chance_of_success"],
-                exp = patrol["exp"],
+                exp = patrol["exp"]
             )
             if clan_biome == patrol_event.biome:
                 correct_biome = True
@@ -624,14 +626,22 @@ class Patrol():
                 correct_season = True
             if len(self.patrol_cats) >= patrol_event.min_cats and len(self.patrol_cats) <= patrol_event.max_cats:
                 cat_number = True
-            if correct_season and correct_biome and cat_number:
+            if patrol_event.tags is not None:
+                if "apprentice" in patrol_event.tags:
+                    if "apprentice" in self.patrol_statuses:
+                        apprentice = True
+                    else:
+                        apprentice = False
+            if correct_season and correct_biome and cat_number and apprentice:
                 all_patrol_events.append(patrol_event)
-
-        return all_patrol_events
+        
+            return all_patrol_events
 
     def calculate_success(self):
         if self.patrol_event is None:
             return
+        success_text = self.patrol_event.success_text
+        fail_text = self.patrol_event.fail_text
         # this adds the stat cat (if there is one)
         if self.patrol_event.win_skills is not None and self.patrol_event.win_trait is not None:
             for cat in self.patrol_cats:
@@ -659,48 +669,50 @@ class Patrol():
             if set(self.patrol_traits).isdisjoint(
                     self.patrol_event.fail_trait):
                 chance = 10
-        c = randint(0, 100)
+        c = random.getrandbits(7)
         if c < chance:
+            self.success = True
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
                     x = 3
-                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills:
+                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] is not None:
                     x = 2
             else:
-                if c >= 50:
+                if c >= 50 and success_text[1] is not None:
                     x = 1
                 else:
                     x = 0
-            self.success = True
             self.handle_exp_gain()
             self.add_new_cats()
             if self.patrol_event.tags is not None and "other_clan" in self.patrol_event.tags:
                 self.handle_clan_relations(difference = int(1))
             self.handle_mentor_app_pairing()
             self.final_success = self.patrol_event.success_text[x]
+            print(str(self.final_success))
         else:
+            self.success = False
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills:
                     x = 1
-            elif c < 20:
+            elif c < 20 and fail_text[2] is not None:
                 x = 2
-            elif c < 35:
+                self.handle_deaths()
+            elif c < 35 and fail_text[3] is not None:
                 x = 3
+                self.handle_scars
             else:
                 x = 0
-            self.success = False
-            if x == 3:
-                self.handle_scars()
-            if x == 2:  
-                self.handle_deaths()
             if self.patrol_event.tags is not None and "other_clan" in self.patrol_event.tags:
                 self.handle_clan_relations(difference = int(-1))
             self.handle_mentor_app_pairing()
             self.final_fail = self.patrol_event.fail_text[x]
+            print(str(self.final_fail))
 
     def calculate_success_antagonize(self):
         if self.patrol_event is None:
            return
+        success_text = self.patrol_event.success_text
+        fail_text = self.patrol_event.fail_text
         # this adds the stat cat (if there is one)
         if self.patrol_event.win_skills is not None and self.patrol_event.win_trait is not None:
             for cat in self.patrol_cats:
@@ -728,15 +740,15 @@ class Patrol():
                 if set(self.patrol_traits).isdisjoint(
                         self.patrol_event.fail_trait):
                     chance = 10
-        c = randint(0, 100)
+        c = random.getrandbits(7)
         if c < chance:
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
                     x = 3
-                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills:
+                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] is not None:
                     x = 2
             else:
-                if c >= 50:
+                if c >= 50 and success_text[1] is not None:
                     x = 1
                 else:
                     x = 0
@@ -750,9 +762,9 @@ class Patrol():
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills:
                     x = 1
-            elif c < 20:
+            elif c < 20 and fail_text[3] is not None:
                 x = 2
-            elif c < 35:
+            elif c < 35 and fail_text[2] is not None:
                 x = 3
             else:
                 x = 0
@@ -1082,8 +1094,8 @@ class PatrolEvent():
                  antagonize_fail_text = "",
                  history_text = []):
         self.patrol_id = patrol_id
-        self.biome = biome
-        self.season = season
+        self.biome = biome or "Any"
+        self.season = season or "Any"
         self.tags = tags
         self.intro_text = intro_text
         self.success_text = success_text
@@ -1091,7 +1103,7 @@ class PatrolEvent():
         self.decline_text = decline_text
         self.chance_of_success = chance_of_success  # out of 100
         self.exp = exp
-        self.other_clan = other_clan
+        self.other_clan = patrol.other_clan
         self.win_skills = win_skills
         self.win_trait = win_trait
         self.fail_skills = fail_skills

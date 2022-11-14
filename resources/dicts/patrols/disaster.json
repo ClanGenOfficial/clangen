@@ -2,10 +2,10 @@
     {
         "patrol_id": "gen_disaster1",
         "tags": ["disaster", "death"],
-        "intro_text": "Your patrol hears some odd noises coming from an abandoned Twoleg nest",
-        "success_text": ["It's just an old loner singing to themselves"],
-        "fail_text": "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered",
-        "decline_text": "Your patrol decides not to investigate",
+        "intro_text": "Your patrol hears some odd noises coming from an abandoned Twoleg nest.",
+        "success_text": ["It's just an old loner singing to themselves."],
+        "fail_text": ["Your patrol walks into an ambush by a group of rogues and everyone is slaughtered."],
+        "decline_text": "Your patrol decides not to investigate.",
         "chance_of_success": 60,
         "exp": 20,
         "win_skills": ["fantastic fighter"]
@@ -13,10 +13,10 @@
     {
         "patrol_id": "gen_disaster2",
         "tags": ["disaster", "gone", "death"],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue",
-        "success_text": "The cats become wet from the rain but otherwise the patrol is successful",
-        "fail_text": "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away'",
-        "decline_text": "Your patrol decides to head back early",
+        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+        "success_text": ["The cats become wet from the rain but otherwise the patrol is successful."],
+        "fail_text": ["There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away."],
+        "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 70,
         "exp": 20,
         "win_skills": ["fantastic fighter"]
@@ -24,10 +24,10 @@
     {
         "patrol_id": "gen_disaster3",
         "tags": ["disaster", "gone"],
-        "intro_text": "Your patrol encounters a clearing where a lot of Twolegs linger",
-        "success_text": ["They continue hunting undetected"],
-        "fail_text": ["The Twolegs notice the cats and trap them in their monsters. The cats on your patrol are never seen again"],
-        "decline_text": "Your patrol decides to hunt elsewhere",
+        "intro_text": "Your patrol encounters a clearing where a lot of Twolegs linger.",
+        "success_text": ["They continue hunting undetected."],
+        "fail_text": ["The Twolegs notice the cats and trap them in their monsters. The cats on your patrol are never seen again."],
+        "decline_text": "Your patrol decides to hunt elsewhere.",
         "chance_of_success": 60,
         "exp": 20,
         "win_skills": ["extremely smart"]

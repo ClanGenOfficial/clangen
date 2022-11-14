@@ -96,7 +96,7 @@
         "exp": 10,
         "success_text": [
             "p_l leads a successful fishing session, with almost everyone walking home with a fishy mouthful.",
-            "",
+            "None",
             "s_c makes fishing look easy, giving out tips to any interested cats."
         ],
         "fail_text": ["Your patrol accidentally scares the fish away."],
@@ -122,7 +122,7 @@
         "decline_text": "They watch it go, just as startled.",
         "chance_of_success": 40,
         "exp": 20,
-        "success_text": ["",
+        "success_text": ["None",
             "The patrol rallies almost instantly, and through teamwork manage to corner and catch the rabbit!",
             "s_c reacts quicker than thought, tearing off after the rabbit and bringing it down."
         ],
@@ -236,7 +236,7 @@
         ],
         "fail_text": [
             "r_c leaps back just as the porcupine whips its tail towards them! That was close! They decide to give the porcupine a wide berth.",
-            "",
+            "None",
             "r_c doesn't react quickly enough to the porcupine's warning.  It charges sideways at them, its quills ready to impale! r_c is badly injured and dies a few days later from the wounds.",
             "The porcupine whips around, digging the quills of its tail into r_c! r_c returns to camp with a nose full of quills and a wounded pride."
         ],
@@ -314,7 +314,7 @@
         "fail_text": [
         "The squirrels are far too excited and quick - they slip right out from between the patrol's claws.",
         "s_c runs at the squirrels before anyone else can pounce, laughing at the prey's antics and playfully jumping into the middle of their game.  The squirrels scatter away at the disturbance and disappear into the canopy.",
-        "",
+        "None",
         "r_c tries to climb up after them but slips and falls, twisting their paw."],
         "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
         "fail_trait": ["troublesome", "childish", "playful"],
@@ -334,10 +334,10 @@
         "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the clan now."
         ],
         "fail_text": [
-        "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness.  Whatever used to live here is gone now.  Checking the burrow was a waste of time.",
+        "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now.  Checking the burrow was a waste of time.",
         "s_c sticks their nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
-        "",
-        "Oh no! The burrow was home to a wolverine, now angry at the disturbance.  The patrol bolts away to escape its wrath, but r_c doesn't quite move fast enough and is caught in its claws until another cat turns back to help."
+        "None",
+        "Oh no! The burrow was home to a wolverine, now angry at the disturbance. The patrol bolts away to escape its wrath, but r_c doesn't quite move fast enough and is caught in its claws until another cat turns back to help."
         ],
         "fail_trait": ["bold", "ambitious", "childish", "impulsive"],
         "min_cats":  2,
@@ -365,7 +365,7 @@
         "fail_trait": ["bold", "ambitious", "childish", "impulsive"],
         "max_cats":  2,
         "history_text": [
-            "",
+            "None",
             "r_c was killed after an unfortunate experience with a wolverine."
         ]
     },
@@ -511,7 +511,7 @@
         "min_cats": 2,
         "max_cats": 4,
         "history_text": [
-            "",
+            "None",
             "r_c was killed by a wolf protecting its meal."
         ]
     },
@@ -539,7 +539,7 @@
         "fail_trait": ["nervous", "insecure"],
         "max_cats":  1,
         "history_text": [
-            "",
+            "None",
             "r_c was killed by a wolf protecting its meal."
         ]
     },
