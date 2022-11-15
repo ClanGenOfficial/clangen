@@ -229,11 +229,6 @@ class PatrolEventScreen(Screens):
             )
             patrol.patrol_event = choice(possible_events)
 
-            if patrol.patrol_event.win_trait is not None:
-                win_trait = patrol.patrol_event.win_trait
-                patrol_trait = patrol.patrol_traits.index(win_trait)
-                patrol.patrol_stat_cat = patrol.patrol_cats[patrol_trait]
-
             game.switches['event'] = -1
 
         if game.switches['event'] == -1:
@@ -241,7 +236,7 @@ class PatrolEventScreen(Screens):
             patrol_size = len(patrol.patrol_cats)
 
             # adjusting text for solo patrols
-            if patrol_size < 2:
+            if patrol_size == 1:
                 intro_text = intro_text.replace('Your patrol',
                                                 str(patrol.patrol_leader.name))
                 intro_text = intro_text.replace('The patrol',
@@ -257,7 +252,6 @@ class PatrolEventScreen(Screens):
                                             str(patrol.patrol_leader.name))
             intro_text = intro_text.replace('o_c_n', str(patrol.other_clan.name) + 'Clan')
             intro_text = intro_text.replace('c_n', str(game.clan.name) + 'Clan')
-
             if patrol.patrol_stat_cat is not None:
                 intro_text = intro_text.replace('s_c', str(patrol.patrol_stat_cat.name))
 
@@ -299,7 +293,7 @@ class PatrolEventScreen(Screens):
                     patrol_size = len(patrol.patrol_cats)
 
                     # adjusting text for solo patrols
-                    if patrol_size < 2:
+                    if patrol_size == 1:
                         success_text = success_text.replace('Your patrol',
                                                         str(patrol.patrol_leader.name))
                         success_text = success_text.replace('The patrol',
@@ -319,7 +313,6 @@ class PatrolEventScreen(Screens):
                         'o_c_n', str(patrol.other_clan.name) + 'Clan')
                     success_text = success_text.replace(
                         'c_n', str(game.clan.name) + 'Clan')
-
                     if patrol.patrol_stat_cat is not None:
                         success_text = success_text.replace(
                         's_c', str(patrol.patrol_stat_cat.name))
@@ -333,7 +326,7 @@ class PatrolEventScreen(Screens):
                     patrol_size = len(patrol.patrol_cats)
 
                     # adjusting text for solo patrols
-                    if patrol_size < 2:
+                    if patrol_size == 1:
                         fail_text = fail_text.replace('Your patrol',
                                                             str(patrol.patrol_leader.name))
                         fail_text = fail_text.replace('The patrol',
@@ -353,7 +346,6 @@ class PatrolEventScreen(Screens):
                         'o_c_n', str(patrol.other_clan.name) + 'Clan')
                     fail_text = fail_text.replace(
                         'c_n', str(game.clan.name) + 'Clan')
-
                     if patrol.patrol_stat_cat is not None:
                         fail_text = fail_text.replace(
                         's_c', str(patrol.patrol_stat_cat.name))
@@ -367,7 +359,7 @@ class PatrolEventScreen(Screens):
                 patrol_size = len(patrol.patrol_cats)
 
                 # adjusting text for solo patrols
-                if patrol_size < 2:
+                if patrol_size == 1:
                     decline_text = decline_text.replace('Your patrol',
                                                         str(patrol.patrol_leader.name))
                     decline_text = decline_text.replace('The patrol',
@@ -399,7 +391,7 @@ class PatrolEventScreen(Screens):
 
                 # adjusting text for solo patrols
                 if patrol.success:
-                    if patrol_size < 2:  # adjusting text for solo patrols
+                    if patrol_size == 1:  # adjusting text for solo patrols
                         antagonize_text = antagonize_text.replace('Your patrol', str(patrol.patrol_leader.name))
                         antagonize_text = antagonize_text.replace('The patrol', str(patrol.patrol_leader.name))
                         antagonize_text = antagonize_text.replace(
@@ -426,7 +418,7 @@ class PatrolEventScreen(Screens):
                     antagonize_fail_text = patrol.patrol_event.antagonize_fail_text
 
                     # adjusting text for solo patrols
-                    if patrol_size < 2:
+                    if patrol_size == 1:
                         antagonize_fail_text = antagonize_fail_text.replace('Your patrol',
                                                             str(patrol.patrol_leader.name))
                         antagonize_fail_text = antagonize_fail_text.replace('The patrol',

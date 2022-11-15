@@ -96,8 +96,6 @@ class Patrol():
 
     def get_possible_patrols(self, current_season, biome, all_clans, game_setting_disaster = game.settings['disasters']):
         possible_patrols = []
-        # general patrols, any number of cats
-
         # general hunting patrols
         possible_patrols.extend(self.generate_patrol_events(GENERAL_HUNTING))
         
@@ -660,11 +658,6 @@ class Patrol():
             return
         success_text = self.patrol_event.success_text
         fail_text = self.patrol_event.fail_text
-        # this adds the stat cat (if there is one)
-        if self.patrol_event.win_skills is not None and self.patrol_event.win_trait is not None:
-            for cat in self.patrol_cats:
-                if cat.skill in self.patrol_event.win_skills or cat.trait in self.patrol_event.win_trait:
-                    self.patrol_stat_cat = cat
         # if patrol contains cats with autowin skill, chance of success is high
         # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
         chance = self.patrol_event.chance_of_success + int(
@@ -692,6 +685,11 @@ class Patrol():
         print(str(c))
         if c < chance:
             self.success = True
+            # this adds the stat cat (if there is one)
+        if self.patrol_event.win_skills is not None and self.patrol_event.win_trait is not None:
+            for cat in self.patrol_cats:
+                if cat.skill in self.patrol_event.win_skills or cat.trait in self.patrol_event.win_trait:
+                    self.patrol_stat_cat = cat
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
                     x = 3
@@ -714,6 +712,10 @@ class Patrol():
             print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
         else:
             self.success = False
+            if self.patrol_event.fail_skills is not None and self.patrol_event.fail_trait is not None:
+                for cat in self.patrol_cats:
+                    if cat.skill in self.patrol_event.fail_skills or cat.trait in self.patrol_event.fail_trait:
+                        self.patrol_stat_cat = cat
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills:
                     x = 1
