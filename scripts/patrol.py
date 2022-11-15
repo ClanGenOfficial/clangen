@@ -680,10 +680,10 @@ class Patrol():
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
                     x = 3
-                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] is not "":
+                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] != "":
                     x = 2
             else:
-                if c >= 50 and len(success_text) < 1 and success_text[1] is not "":
+                if c >= 50 and len(success_text) < 1 and success_text[1] != "":
                     x = 1
                 else:
                     x = 0
@@ -700,10 +700,10 @@ class Patrol():
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills:
                     x = 1
-            elif c < 20 and fail_text[2] is not "":
+            elif c < 20 and fail_text[2] != "":
                 x = 2
                 self.handle_deaths()
-            elif c < 35 and len(fail_text) >= 3 and fail_text[3] is not "":
+            elif c < 35 and len(fail_text) >= 3 and fail_text[3] != "":
                 x = 3
                 self.handle_scars
             else:
@@ -752,10 +752,10 @@ class Patrol():
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
                     x = 3
-                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] is not None:
+                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] != "":
                     x = 2
             else:
-                if c >= 50 and success_text[1] is not None:
+                if c >= 50 and len(fail_text) > 1 and success_text[1] != "":
                     x = 1
                 else:
                     x = 0
@@ -769,9 +769,9 @@ class Patrol():
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills:
                     x = 1
-            elif c < 20 and fail_text[3] is not None:
+            elif c < 20 and len(fail_text) >= 4 and fail_text[3] != "":
                 x = 2
-            elif c < 35 and fail_text[2] is not None:
+            elif c < 35 and len(fail_text) >= 3 and fail_text[2] != "":
                 x = 3
             else:
                 x = 0
