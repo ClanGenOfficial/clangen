@@ -1,39 +1,50 @@
 [
     {
-        "patrol_id": 500,
-        "intro_text": "Your patrol finds a loner who is interested in joining the Clan",
-        "success_text": "The patrol convinces the loner to join the Clan",
-        "fail_text": "The loner decides against joining",
-        "decline_text": "Your patrol decides not to confront the loner",
-        "antagonize_text": "Your patrol drives the loner off of the territory",
-        "antagonize_fail_text": "The loner is taken aback by their hostility and decides that Clan life is not for them",
+        "patrol_id": "gen_gen_newcat1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["border", "new_cat"],
+        "intro_text": "Your patrol finds a loner who is interested in joining the Clan.",
+        "success_text": [
+                "The patrol convinces the loner to join the Clan."
+        ],
+        "fail_text": [
+                "The loner decides against joining."
+        ],
+        "decline_text": "Your patrol decides not to confront the loner.",
+        "antagonize_text": "Your patrol drives the loner off of the territory.",
+        "antagonize_fail_text": "The loner is taken aback by their hostility and decides that Clan life is not for them.",
         "chance_of_success": 40,
         "exp": 10,
-        "win_skills": ["great speaker", "excellent speaker"]
+        "win_skills": ["great speaker", "excellent speaker"],
+        "min_cats": 1,
+        "max_cats": 6
+
     },
     {
-        "patrol_id": 501,
-        "intro_text": "Your patrol finds a loner who is interested in joining the Clan",
-        "success_text": "The patrol convinces the loner to join the Clan and they bring with them a litter of kits",
-        "fail_text": "The loner decides against joining",
-        "decline_text": "Your patrol decides not to confront the loner",
-        "antagonize_text": "Your patrol drives the loner off of the territory",
-        "antagonize_fail_text": "The loner is taken aback by their hostility and decides that Clan life is not for them",
-        "chance_of_success": 40,
-        "exp": 10,
-        "win_skills": ["great speaker","excellent speaker"]
-    },
-    {
-        "patrol_id": 502,
-        "intro_text": "Your patrol finds a kittypet who is interested in joining the Clan",
-        "success_text": "The patrol convinces the kittypet to join the Clan",
-        "fail_text": "The description of Clan life frightens the kittypet",
-        "decline_text": "Your patrol decides not to confront the kittypet",
-        "antagonize_text": "Your patrol drives the kittypet off of the territory",
-        "antagonize_fail_text": "The kittypet is taken aback by their hostility and decides that Clan life is not for them",
-        "chance_of_success": 40,
-        "exp": 10,
-        "win_skills": ["great speaker", "excellent speaker"]
+        "patrol_id": "gen_gen_newcat2",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["border", "new_cat" ],
+        "intro_text": "Your patrol finds a kittypet who is interested in joining the Clan.",
+        "decline_text": "Your patrol decides not to confront the kittypet.",
+        "chance_of_success": 0,
+        "exp": 0,
+        "success_text": [
+                "The patrol convinces the kittypet to join the Clan."
+        ],
+        "fail_text": [
+                "The description of Clan life frightens the kittypet."
+        ],
+        "min_cats": 1,
+        "max_cats": 6,
+        "win_skills": ["great speaker","excellent speaker"],
+        "antagonize_text": "Your patrol drives the kittypet off of the territory.",
+        "antagonize_fail_text": "The kittypet is taken aback by their hostility and decides that Clan life is not for them.",
+        "history_text": [
+                "Start text in this line"
+        ]
+
     },
     {
         "patrol_id": 503,

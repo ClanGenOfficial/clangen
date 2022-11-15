@@ -129,5 +129,23 @@
         "win_skills": ["smart", "very smart", "extremely smart"],
         "min_cats": 2,
         "max_cats": 6
+    },
+    {
+        "patrol_id": "gen_gen_twolegs1",
+        "biome": "Any",
+        "season": "Greenleaf",
+        "tags": ["border"],
+        "intro_text": "The patrol comes across a strange Twoleg object smelling slightly of smoke and prey.",
+        "success_text": [
+            "The patrol interprets the purpose of the object. It seems like Twolegs light their freshkill on fire before eating it! How strange."
+        ],
+        "fail_text": [
+            "The patrol can't seem to interpret the purpose of the object."],
+        "decline_text": "The patrol decides to avoid the Twoleg object",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": ["smart", "very smart", "extremely smart"],
+        "min_cats": 1,
+        "max_cats": 6
     }
 ]

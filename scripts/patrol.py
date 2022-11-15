@@ -605,7 +605,6 @@ class Patrol():
         correct_biome = False
         correct_season = False
         cat_number = False
-        apprentice = True
         for patrol in patrol_dict:
             patrol_event = PatrolEvent(
                 patrol_id = patrol["patrol_id"],
@@ -629,16 +628,29 @@ class Patrol():
                 correct_season = True
             elif patrol_event.season == "Any":
                 correct_season = True
-            if len(self.patrol_names) >= patrol_event.min_cats and len(self.patrol_names) <= patrol_event.max_cats:
+            if len(self.patrol_cats) >= patrol_event.min_cats:
+                min_cat_n = True
+            elif len(self.patrol_cats) < patrol_event.min_cats:
+                min_cat_n = False
+            if len(self.patrol_cats) <= patrol_event.max_cats:
+                max_cat_n = True
+            elif len(self.patrol_cats) > patrol_event.max_cats:
+                max_cat_n = False
+            if min_cat_n and max_cat_n:
                 cat_number = True
+                print("Min cats: " + str(patrol_event.min_cats) + " and Max cats " + str(patrol_event.max_cats))
             if patrol_event.tags is not None:
                 if "apprentice" in patrol_event.tags:
                     if "apprentice" in self.patrol_statuses:
                         apprentice = True
                     else:
                         apprentice = False
-            if correct_season and correct_biome and cat_number and apprentice:
-                all_patrol_events.append(patrol_event)
+            if correct_season and correct_biome and cat_number:
+                if patrol_event.tags is not None and "apprentice" in patrol_event.tags:
+                    if apprentice:
+                        all_patrol_events.append(patrol_event)
+                else:
+                    all_patrol_events.append(patrol_event)
         
         return all_patrol_events
 
@@ -674,7 +686,9 @@ class Patrol():
             if set(self.patrol_traits).isdisjoint(
                     self.patrol_event.fail_trait):
                 chance = 10
-        c = random.getrandbits(7)
+        c = int(random.random() * 400)
+        outcome = random.getrandbits(4)
+        print(str(c))
         if c < chance:
             self.success = True
             if self.patrol_stat_cat is not None:
@@ -683,7 +697,7 @@ class Patrol():
                 elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] != "":
                     x = 2
             else:
-                if c >= 50 and len(success_text) < 1 and success_text[1] != "":
+                if outcome >= 10 and len(fail_text) >= 2 and success_text[1] != "":
                     x = 1
                 else:
                     x = 0
@@ -693,26 +707,31 @@ class Patrol():
                 self.handle_clan_relations(difference = int(1))
             self.handle_mentor_app_pairing()
             self.final_success = self.patrol_event.success_text[x]
-            print(str(self.final_success))
+            print(str(self.final_success) + str(x))
             print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
         else:
             self.success = False
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills:
                     x = 1
-            elif c < 20 and fail_text[2] != "":
+            elif outcome >= 15 and len(fail_text) > 1 and fail_text[1] != "":
+                x = 1
+            elif outcome <= 10 and len(fail_text) > 3 and fail_text[3] != "":
+                x = 3
+                self.handle_scars()
+            elif outcome >= 11 and len(fail_text) > 2 and fail_text[2] != "":
                 x = 2
                 self.handle_deaths()
-            elif c < 35 and len(fail_text) >= 3 and fail_text[3] != "":
-                x = 3
-                self.handle_scars
             else:
                 x = 0
-            if self.patrol_event.tags is not None and "other_clan" in self.patrol_event.tags:
-                self.handle_clan_relations(difference = int(-1))
+            if self.patrol_event.tags is not None:
+                if "other_clan" in self.patrol_event.tags:
+                    self.handle_clan_relations(difference = int(-1))
+                elif "disaster" in self.patrol_event.tags:
+                    self.handle_deaths()
             self.handle_mentor_app_pairing()
             self.final_fail = self.patrol_event.fail_text[x]
-            print(str(self.final_fail))
+            print(str(self.final_fail) + str(x))
             print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
 
     def calculate_success_antagonize(self):
@@ -748,38 +767,39 @@ class Patrol():
                         self.patrol_event.fail_trait):
                     chance = 10
         c = random.getrandbits(7)
+        outcome = random.getrandbits(4)
         if c < chance:
+            self.success = True
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
                     x = 3
                 elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] != "":
                     x = 2
             else:
-                if c >= 50 and len(fail_text) > 1 and success_text[1] != "":
+                if outcome >= 10 and len(fail_text) >= 2 and success_text[1] != "":
                     x = 1
                 else:
                     x = 0
-                self.success = True
                 self.handle_exp_gain()
                 if self.patrol_event.tags is not None and "other_clan" in self.patrol_event.tags:
                     self.handle_clan_relations(difference = int(-1))
                 self.handle_mentor_app_pairing()
-                self.final_success = self.patrol_event.success_text[x]
+            self.final_success = self.patrol_event.success_text[x]
         else:
+            self.success = False
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills:
                     x = 1
-            elif c < 20 and len(fail_text) >= 4 and fail_text[3] != "":
+            elif outcome >= 15 and len(fail_text) >= 2 and fail_text[1] != "":
+                x = 1
+            elif outcome <= 10 and len(fail_text) >= 4 and fail_text[3] != "":
                 x = 2
-            elif c < 35 and len(fail_text) >= 3 and fail_text[2] != "":
+                self.handle_scars()
+            elif outcome >= 11 and len(fail_text) >= 3 and fail_text[2] != "":
                 x = 3
+                self.handle_deaths()
             else:
                 x = 0
-            self.success = False
-            if x == 3:
-                self.handle_scars()
-            if x == 2:  
-                self.handle_deaths()
             if self.patrol_event.tags is not None and "other_clan" in self.patrol_event.tags:
                 self.handle_clan_relations(difference = int(-2))
             self.handle_mentor_app_pairing()
@@ -797,35 +817,36 @@ class Patrol():
     def handle_deaths(self):
         if self.patrol_event.tags is not None:
             if "death" in self.patrol_event.tags:
+                self.patrol_random_cat.die()
                 if self.patrol_random_cat.status == 'leader':
                     if "gone" in self.patrol_event.tags:
                         game.clan.leader_lives -= 9 # taken by twolegs, fall into ravine
                     else:
                         game.clan.leader_lives -= 1
-            self.patrol_random_cat.die()
-        elif self.patrol_event.patrol_id in [900, 901, 902]:
-            for cat in self.patrol_cats:
-                cat.experience += self.patrol_event.exp
-                cat.experience = min(cat.experience, 80)
-                if cat.status == 'leader':
-                    game.clan.leader_lives -= 10
-                cat.die()
+            if "disaster" in self.patrol_event.tags:
+                for cat in self.patrol_cats:
+                    cat.experience += self.patrol_event.exp
+                    cat.experience = min(cat.experience, 80)
+                    if cat.status == 'leader':
+                        game.clan.leader_lives -= 10
+                    cat.die()
 
     def handle_scars(self):
-        if "scar" in self.patrol_event.tags:
-            if self.patrol_random_cat.specialty is None:
-                self.patrol_random_cat.specialty = choice(
-                    [choice(scars1),
-                     choice(scars2)])
-                self.patrol_random_cat.scar_event.append(
-                    f'{self.patrol_random_cat.name} gained a scar while on patrol.')
-            elif self.patrol_random_cat.specialty2 is None:
-                self.patrol_random_cat.specialty2 = choice(
-                    [choice(scars1),
-                     choice(scars2)])
-                self.patrol_random_cat.scar_event.append(
-                    f'{self.patrol_random_cat.name} gained a scar while on patrol.')
-        elif self.patrol_event.patrol_id == 904:
+        if self.patrol_event.tags is not None:
+            if "scar" in self.patrol_event.tags:
+                if self.patrol_random_cat.specialty is None:
+                    self.patrol_random_cat.specialty = choice(
+                        [choice(scars1),
+                        choice(scars2)])
+                    self.patrol_random_cat.scar_event.append(
+                        f'{self.patrol_random_cat.name} gained a scar while on patrol.')
+                elif self.patrol_random_cat.specialty2 is None:
+                    self.patrol_random_cat.specialty2 = choice(
+                        [choice(scars1),
+                        choice(scars2)])
+                    self.patrol_random_cat.scar_event.append(
+                        f'{self.patrol_random_cat.name} gained a scar while on patrol.')
+        """elif self.patrol_event.patrol_id == 904:
             if self.patrol_random_cat.specialty is None:
                 self.patrol_random_cat.specialty = "SNAKE"
                 self.patrol_random_cat.scar_event.append(
@@ -833,7 +854,7 @@ class Patrol():
             elif self.patrol_random_cat.specialty2 is None:
                 self.patrol_random_cat.specialty2 = "SNAKE"
                 self.patrol_random_cat.scar_event.append(
-                    f'{self.patrol_random_cat.name} gained a scar while on patrol.')
+                    f'{self.patrol_random_cat.name} gained a scar while on patrol.')"""
 
     def handle_retirements(self):
         if game.settings['retirement'] and self.patrol_random_cat.status != 'leader':

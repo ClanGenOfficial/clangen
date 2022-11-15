@@ -93,7 +93,7 @@
         "fail_text": [
             "The patrol tries to keep watch on the dog from a distance, but it spots the cats and they have to scatter. It's not as bad as it could've been though, r_c manages to keep track of the dog's position, and it doesn't come any further into c_n territory.",
             "s_c tries to take the lion's share of the effort to lead the dog away, but their strength fails them and the rest of the patrol needs to rescue them, cutting short the results of the patrol. The patrol has to fall back, but they do so in good order.",
-            "With so many cats all working as one to lead the dog away, for a while it looks as if everything is going to be fine. But it only needs one lucky strike, which hits r_c, and the rest of the patrol can only carry their body back to camp, to be buried with all the honor of they deserve.",
+            "With multiple cats working as one to lead the dog away, for a while it looks as if everything is going to be fine. But it only needs one lucky strike, which hits r_c. The rest of the patrol can only carry their body back to camp to be buried with all the honor of they deserve.",
             "The patrol leads the dog away from their borders bravely, but you only need to be unlucky once. r_c stumbles and gets caught by those snapping jaws, but the rest of the patrol rallies to defend them, and r_c is safely helped back to camp, where the medicine den awaits."
         ],
         "decline_text": "Your patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
@@ -290,21 +290,6 @@
         "decline_text": "r_c decides to continue with the patrol instead",
         "chance_of_success": 50,
         "exp": 5,
-        "min_cats": 1,
-        "max_cats": 6
-    },
-    {
-        "patrol_id": "gen_bord_twolegs1",
-        "biome": "Any",
-        "season": "Greenleaf",
-        "tags": ["border"],
-        "intro_text": "The patrol comes across a strange Twoleg object smelling slightly of smoke and prey",
-        "success_text": "The patrol interprets the purpose of the object. It seems like Twolegs light their freshkill on fire before eating it! How strange.",
-        "fail_text": "The patrol can't seem to interpret the purpose of the object",
-        "decline_text": "The patrol decides to avoid the Twoleg object",
-        "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": ["smart", "very smart", "extremely smart"],
         "min_cats": 1,
         "max_cats": 6
     },
