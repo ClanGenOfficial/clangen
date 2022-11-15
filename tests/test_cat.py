@@ -305,8 +305,8 @@ class TestMateFunctions(unittest.TestCase):
         relation2 = Relationship(cat2,cat1)
         old_relation2 = deepcopy(relation1)
         
-        cat1.relationships.append(relation1)
-        cat2.relationships.append(relation2)
+        cat1.relationships[cat2.ID] = relation1
+        cat2.relationships[cat1.ID] = relation2
 
         # when
         cat1.set_mate(cat2)
@@ -314,21 +314,21 @@ class TestMateFunctions(unittest.TestCase):
 
         # then
         # TODO: maybe not correct check
-        self.assertTrue(old_relation1.romantic_love < relation1.romantic_love)
-        self.assertTrue(old_relation1.platonic_like <= relation1.platonic_like)
-        self.assertTrue(old_relation1.dislike <= relation1.dislike)
-        self.assertTrue(old_relation1.comfortable < relation1.comfortable)
-        self.assertTrue(old_relation1.trust < relation1.trust)
-        self.assertTrue(old_relation1.admiration <= relation1.admiration)
-        self.assertTrue(old_relation1.jealousy <= relation1.jealousy)
+        self.assertLess(old_relation1.romantic_love, relation1.romantic_love)
+        self.assertLessEqual(old_relation1.platonic_like, relation1.platonic_like)
+        self.assertLessEqual(old_relation1.dislike, relation1.dislike)
+        self.assertLess(old_relation1.comfortable, relation1.comfortable)
+        self.assertLess(old_relation1.trust, relation1.trust)
+        self.assertLessEqual(old_relation1.admiration, relation1.admiration)
+        self.assertLessEqual(old_relation1.jealousy, relation1.jealousy)
 
-        self.assertTrue(old_relation2.romantic_love < relation2.romantic_love)
-        self.assertTrue(old_relation2.platonic_like <= relation2.platonic_like)
-        self.assertTrue(old_relation2.dislike <= relation2.dislike)
-        self.assertTrue(old_relation2.comfortable < relation2.comfortable)
-        self.assertTrue(old_relation2.trust < relation2.trust)
-        self.assertTrue(old_relation2.admiration <= relation2.admiration)
-        self.assertTrue(old_relation2.jealousy <= relation2.jealousy)
+        self.assertLess(old_relation2.romantic_love, relation2.romantic_love)
+        self.assertLessEqual(old_relation2.platonic_like, relation2.platonic_like)
+        self.assertLessEqual(old_relation2.dislike, relation2.dislike)
+        self.assertLess(old_relation2.comfortable, relation2.comfortable)
+        self.assertLess(old_relation2.trust, relation2.trust)
+        self.assertLessEqual(old_relation2.admiration, relation2.admiration)
+        self.assertLessEqual(old_relation2.jealousy, relation2.jealousy)
 
     def test_unset_mate_relationship(self):
         # given
@@ -338,10 +338,10 @@ class TestMateFunctions(unittest.TestCase):
         old_relation1 = deepcopy(relation1)
         relation2 = Relationship(cat2,cat1, family=False, mates=True, romantic_love=40, platonic_like=40, dislike=0, comfortable=40, trust=20, admiration=20,jealousy=20)
         old_relation2 = deepcopy(relation2)
-        cat1.relationships.append(relation1)
         cat1.mate = cat2.ID
-        cat2.relationships.append(relation2)
         cat2.mate = cat1.ID
+        cat1.relationships[cat2.ID] = relation1
+        cat2.relationships[cat1.ID] = relation2
 
         # when
         cat1.unset_mate(breakup=True)
@@ -349,21 +349,21 @@ class TestMateFunctions(unittest.TestCase):
 
         # then
         # TODO: maybe not correct check
-        self.assertTrue(old_relation1.romantic_love > relation1.romantic_love)
-        self.assertTrue(old_relation1.platonic_like >= relation1.platonic_like)
-        self.assertTrue(old_relation1.dislike >= relation1.dislike)
-        self.assertTrue(old_relation1.comfortable > relation1.comfortable)
-        self.assertTrue(old_relation1.trust > relation1.trust)
-        self.assertTrue(old_relation1.admiration >= relation1.admiration)
-        self.assertTrue(old_relation1.jealousy >= relation1.jealousy)
+        self.assertGreater(old_relation1.romantic_love, relation1.romantic_love)
+        self.assertGreaterEqual(old_relation1.platonic_like, relation1.platonic_like)
+        self.assertGreaterEqual(old_relation1.dislike, relation1.dislike)
+        self.assertGreater(old_relation1.comfortable, relation1.comfortable)
+        self.assertGreater(old_relation1.trust, relation1.trust)
+        self.assertGreaterEqual(old_relation1.admiration, relation1.admiration)
+        self.assertGreaterEqual(old_relation1.jealousy, relation1.jealousy)
 
-        self.assertTrue(old_relation2.romantic_love > relation2.romantic_love)
-        self.assertTrue(old_relation2.platonic_like >= relation2.platonic_like)
-        self.assertTrue(old_relation2.dislike >= relation2.dislike)
-        self.assertTrue(old_relation2.comfortable > relation2.comfortable)
-        self.assertTrue(old_relation2.trust > relation2.trust)
-        self.assertTrue(old_relation2.admiration >= relation2.admiration)
-        self.assertTrue(old_relation2.jealousy >= relation2.jealousy)
+        self.assertGreater(old_relation2.romantic_love, relation2.romantic_love)
+        self.assertGreaterEqual(old_relation2.platonic_like, relation2.platonic_like)
+        self.assertGreaterEqual(old_relation2.dislike, relation2.dislike)
+        self.assertGreater(old_relation2.comfortable, relation2.comfortable)
+        self.assertGreater(old_relation2.trust, relation2.trust)
+        self.assertGreaterEqual(old_relation2.admiration, relation2.admiration)
+        self.assertGreaterEqual(old_relation2.jealousy, relation2.jealousy)
 
 class TestStatusChange(unittest.TestCase):
 
@@ -377,11 +377,11 @@ class TestStatusChange(unittest.TestCase):
         apprentice.mentor = mentor
 
         # when
-        self.assertTrue(apprentice.mentor != None)
+        self.assertNotEqual(apprentice.mentor, None)
         apprentice.status_change("warrior")
         
         # then
-        self.assertTrue(apprentice.skill != "???")
-        self.assertTrue(apprentice.skill in apprentice.skills)
-        self.assertTrue(apprentice.mentor == None)
+        self.assertNotEqual(apprentice.skill, "???")
+        self.assertIn(apprentice.skill, apprentice.skills)
+        self.assertEqual(apprentice.mentor, None)
         self.assertFalse(mentor.apprentice)
