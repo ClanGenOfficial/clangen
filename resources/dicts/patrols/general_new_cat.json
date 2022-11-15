@@ -40,35 +40,54 @@
         "max_cats": 6,
         "win_skills": ["great speaker","excellent speaker"],
         "antagonize_text": "Your patrol drives the kittypet off of the territory.",
-        "antagonize_fail_text": "The kittypet is taken aback by their hostility and decides that Clan life is not for them.",
-        "history_text": [
-                "Start text in this line"
-        ]
+        "antagonize_fail_text": "The kittypet is taken aback by their hostility and decides that Clan life is not for them."
 
     },
     {
-        "patrol_id": 503,
-        "intro_text": "r_c finds a wounded cat near the thunderpath",
-        "success_text": "The patrol brings the cat back to camp. Once nursed back to health, the cat decides to join the Clan",
-        "fail_text": "As r_c inspects the cat, they find that they are already hunting with their ancestors ",
-        "decline_text": "They leave the wounded cat alone",
-        "antagonize_text": "Your patrol drives the cat off of the territory",
-        "antagonize_fail_text": "The wounded cat is killed in an attempt to drive them off of the territory",
+        "patrol_id": "gen_gen_newcat3",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["border", "new_cat", "reputation"],
+        "intro_text": "r_c finds a wounded cat near the thunderpath.",
+        "success_text": [
+            "The patrol brings the cat back to camp. Once nursed back to health, the cat decides to join the Clan."
+        ],
+        "fail_text": [
+            "As r_c inspects the cat, they find that they are already hunting with their ancestors.",
+            "The cats attempt to carry the cat back to camp, but the cat passes on the way. They stop to bury the cat before continuing home."
+        ],
+        "decline_text": "They leave the wounded cat alone.",
+        "antagonize_text": "Your patrol drives the cat off of the territory.",
+        "antagonize_fail_text": "The wounded cat is killed in an attempt to drive them off of the territory.",
         "chance_of_success": 40,
         "exp": 10,
-        "win_skills": ["smart", "very smart", "extremely smart"]
+        "win_skills": ["smart", "very smart", "extremely smart"],
+        "min_cats": 1,
+        "max_cats": 6
+
     },
     {
-        "patrol_id": 504,
-        "intro_text": "r_c finds an abandoned kit whose mother is nowhere to be found",
-        "success_text": "The kit is taken back to camp and nursed back to health",
-        "fail_text": "The kit is taken back to camp, but grows weak and dies a few days later",
-        "decline_text": "They leave the kit alone",
-        "antagonize_text": "Your patrol moves the kit away from the territory, they have no interest in strange kits",
-        "antagonize_fail_text": "The kit smells of two-legs, your patrol has no interest in what will surely grow to be a weak cat",
+        "patrol_id": "gen_gen_newkit1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["border", "new_cat", "reputation"],
+        "intro_text": "r_c finds an abandoned kit whose mother is nowhere to be found.",
+        "success_text": [
+            "The kit is taken back to camp and nursed back to health."
+        ],
+        "fail_text": [
+            "The kit is taken back to camp, but grows weak and dies a few days later.",
+            "The patrol approaches the kit, only to realize that it's already gone. They swiftly bury it and move on."
+        ],
+        "decline_text": "They decide to leave the kit alone.",
+        "antagonize_text": "Your patrol moves the kit away from the territory, they have no interest in strange kits.",
+        "antagonize_fail_text": "The kit smells of two-legs, your patrol has no interest in what will surely grow to be a weak cat.",
         "chance_of_success": 40,
         "exp": 10,
-        "win_skills": ["smart", "very smart", "extremely smart"]
+        "win_skills": ["smart", "very smart", "extremely smart"],
+        "min_cats": 1,
+        "max_cats": 6
+
     },
     {
         "patrol_id": 505,
