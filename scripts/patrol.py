@@ -605,11 +605,13 @@ class Patrol():
         correct_biome = False
         correct_season = False
         cat_number = False
+        patrol_size = len(self.patrol_cats)
         for patrol in patrol_dict:
             patrol_event = PatrolEvent(
                 patrol_id = patrol["patrol_id"],
                 biome = patrol["biome"],
                 season = patrol["season"],
+                tags = patrol["tags"],
                 intro_text = patrol["intro_text"],
                 success_text = patrol["success_text"],
                 fail_text = patrol["fail_text"],
@@ -628,13 +630,13 @@ class Patrol():
                 correct_season = True
             elif patrol_event.season == "Any":
                 correct_season = True
-            if len(self.patrol_cats) >= patrol_event.min_cats:
+            if patrol_size >= patrol_event.min_cats:
                 min_cat_n = True
-            elif len(self.patrol_cats) < patrol_event.min_cats:
+            elif patrol_size < patrol_event.min_cats:
                 min_cat_n = False
-            if len(self.patrol_cats) <= patrol_event.max_cats:
+            if patrol_size <= patrol_event.max_cats:
                 max_cat_n = True
-            elif len(self.patrol_cats) > patrol_event.max_cats:
+            elif patrol_size > patrol_event.max_cats:
                 max_cat_n = False
             if min_cat_n and max_cat_n:
                 cat_number = True
@@ -825,21 +827,19 @@ class Patrol():
                     cat.experience / 10)]
 
     def handle_deaths(self):
-        if self.patrol_event.tags is not None:
-            if "death" in self.patrol_event.tags:
-                self.patrol_random_cat.die()
-                if self.patrol_random_cat.status == 'leader':
-                    if "gone" in self.patrol_event.tags:
-                        game.clan.leader_lives -= 9 # taken by twolegs, fall into ravine
-                    else:
-                        game.clan.leader_lives -= 1
-            if "disaster" in self.patrol_event.tags:
-                for cat in self.patrol_cats:
-                    cat.experience += self.patrol_event.exp
-                    cat.experience = min(cat.experience, 80)
-                    if cat.status == 'leader':
-                        game.clan.leader_lives -= 10
-                    cat.die()
+        self.patrol_random_cat.die()
+        if self.patrol_random_cat.status == 'leader':
+            if "gone" in self.patrol_event.tags:
+                game.clan.leader_lives -= 9 # taken by twolegs, fall into ravine
+            else:
+                game.clan.leader_lives -= 1
+        if "disaster" in self.patrol_event.tags:
+            for cat in self.patrol_cats:
+                cat.experience += self.patrol_event.exp
+                cat.experience = min(cat.experience, 80)
+                if cat.status == 'leader':
+                    game.clan.leader_lives -= 10
+                cat.die()
 
     def handle_scars(self):
         if self.patrol_event.tags is not None:

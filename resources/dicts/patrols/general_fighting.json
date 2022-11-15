@@ -122,7 +122,7 @@
             "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait miserably and humiliatingly in a safe spot until the beast calms down.", 
             "", 
             "The animal is far more tenacious than r_c ever expected, and once the fight starts, there's no escaping from it. As r_c's world goes dark, they have their fangs sunk in the dog's throat. At least they'll take the beast with them.", 
-            "Small, yappy, but… still a dog. r_c peers down from the tree where the animal has pinned them, wincing in pain. They won't underestimate these ugly creatures again."],
+            "Small, yappy, but . . . still a dog. r_c peers down from the tree where the animal has pinned them, wincing in pain. They won't underestimate these ugly creatures again."],
         "decline_text": "The patrol decides not to pursue the dog.",
         "chance_of_success": 60,
         "exp": 10,
