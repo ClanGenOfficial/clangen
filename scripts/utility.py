@@ -25,6 +25,8 @@ def get_cats_allowed_on_patrol(Cat, ILLNESSES, INJURIES, game_mode):
 
     # ASSIGN TO ABLE CATS AND SORT BY RANK
     for the_cat in Cat.all_cats.values():
+        if the_cat.dead or the_cat.exiled or the_cat.in_camp or the_cat in game.patrolled or the_cat in game.switches['current_patrol']:
+            continue
         if game_mode == "expanded":
             if the_cat.status == 'medicine cat':
                 able_cats.insert(3, the_cat)
@@ -33,9 +35,9 @@ def get_cats_allowed_on_patrol(Cat, ILLNESSES, INJURIES, game_mode):
             if(the_cat.is_ill() and the_cat.illness.name in not_allowed_illnesses) or\
                 (the_cat.is_injured() and the_cat.injury.name in not_allowed_injuries):
                 continue
-        if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status in [
+        if the_cat.status in [
                 'leader', 'deputy', 'warrior', 'apprentice'
-        ] and not the_cat.exiled and the_cat not in game.switches['current_patrol']:
+        ]:
             if the_cat.status == 'leader':
                 able_cats.insert(0, the_cat)
             elif the_cat.status == 'deputy':
