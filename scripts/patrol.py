@@ -638,7 +638,6 @@ class Patrol():
                 max_cat_n = False
             if min_cat_n and max_cat_n:
                 cat_number = True
-                print("Min cats: " + str(patrol_event.min_cats) + " and Max cats " + str(patrol_event.max_cats))
             if patrol_event.tags is not None:
                 if "apprentice" in patrol_event.tags:
                     if "apprentice" in self.patrol_statuses:
@@ -708,6 +707,7 @@ class Patrol():
             self.handle_mentor_app_pairing()
             self.final_success = self.patrol_event.success_text[x]
             print(str(self.patrol_event.patrol_id))
+            print("Min cats: " + str(self.patrol_event.min_cats) + " and Max cats " + str(self.patrol_event.max_cats))
             print(str(self.final_fail) + " #: " + str(x))
             print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
         else:
@@ -740,6 +740,7 @@ class Patrol():
             self.handle_mentor_app_pairing()
             self.final_fail = self.patrol_event.fail_text[x]
             print(str(self.patrol_event.patrol_id))
+            print("Min cats: " + str(self.patrol_event.min_cats) + " and Max cats " + str(self.patrol_event.max_cats))
             print(str(self.final_fail) + " #: " + str(x))
             print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
 
