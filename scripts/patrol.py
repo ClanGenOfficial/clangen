@@ -609,22 +609,27 @@ class Patrol():
         for patrol in patrol_dict:
             patrol_event = PatrolEvent(
                 patrol_id = patrol["patrol_id"],
+                biome = patrol["biome"],
+                season = patrol["season"],
                 intro_text = patrol["intro_text"],
                 success_text = patrol["success_text"],
                 fail_text = patrol["fail_text"],
                 decline_text = patrol["decline_text"],
                 chance_of_success = patrol["chance_of_success"],
-                exp = patrol["exp"]
-            )
-            if clan_biome == patrol_event.biome:
+                exp = patrol["exp"],
+                min_cats = patrol["min_cats"],
+                max_cats = patrol["max_cats"])
+            if patrol_event.biome == clan_biome:
                 correct_biome = True
             elif patrol_event.biome == "Any":
                 correct_biome = True
+            elif patrol_event.biome != clan_biome:
+                correct_biome = False
             if season == patrol_event.season:
                 correct_season = True
             elif patrol_event.season == "Any":
                 correct_season = True
-            if len(self.patrol_cats) >= patrol_event.min_cats and len(self.patrol_cats) <= patrol_event.max_cats:
+            if len(self.patrol_names) >= patrol_event.min_cats and len(self.patrol_names) <= patrol_event.max_cats:
                 cat_number = True
             if patrol_event.tags is not None:
                 if "apprentice" in patrol_event.tags:
@@ -635,7 +640,7 @@ class Patrol():
             if correct_season and correct_biome and cat_number and apprentice:
                 all_patrol_events.append(patrol_event)
         
-            return all_patrol_events
+        return all_patrol_events
 
     def calculate_success(self):
         if self.patrol_event is None:
@@ -675,10 +680,10 @@ class Patrol():
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
                     x = 3
-                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] is not None:
+                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] is not "":
                     x = 2
             else:
-                if c >= 50 and success_text[1] is not None:
+                if c >= 50 and len(success_text) < 1 and success_text[1] is not "":
                     x = 1
                 else:
                     x = 0
@@ -689,15 +694,16 @@ class Patrol():
             self.handle_mentor_app_pairing()
             self.final_success = self.patrol_event.success_text[x]
             print(str(self.final_success))
+            print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
         else:
             self.success = False
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills:
                     x = 1
-            elif c < 20 and fail_text[2] is not None:
+            elif c < 20 and fail_text[2] is not "":
                 x = 2
                 self.handle_deaths()
-            elif c < 35 and fail_text[3] is not None:
+            elif c < 35 and len(fail_text) >= 3 and fail_text[3] is not "":
                 x = 3
                 self.handle_scars
             else:
@@ -707,6 +713,7 @@ class Patrol():
             self.handle_mentor_app_pairing()
             self.final_fail = self.patrol_event.fail_text[x]
             print(str(self.final_fail))
+            print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
 
     def calculate_success_antagonize(self):
         if self.patrol_event is None:

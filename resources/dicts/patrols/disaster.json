@@ -1,6 +1,8 @@
 [
     {
         "patrol_id": "gen_disaster1",
+        "biome": "Any",
+        "season": "Any",
         "tags": ["disaster", "death"],
         "intro_text": "Your patrol hears some odd noises coming from an abandoned Twoleg nest.",
         "success_text": ["It's just an old loner singing to themselves."],
@@ -8,10 +10,14 @@
         "decline_text": "Your patrol decides not to investigate.",
         "chance_of_success": 60,
         "exp": 20,
-        "win_skills": ["fantastic fighter"]
+        "win_skills": ["fantastic fighter"],
+        "min_cats": 1,
+        "max_cats": 6
     },
     {
         "patrol_id": "gen_disaster2",
+        "biome": "Any",
+        "season": "Newleaf",
         "tags": ["disaster", "gone", "death"],
         "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
         "success_text": ["The cats become wet from the rain but otherwise the patrol is successful."],
@@ -19,10 +25,14 @@
         "decline_text": "Your patrol decides to head back early.",
         "chance_of_success": 70,
         "exp": 20,
-        "win_skills": ["fantastic fighter"]
+        "win_skills": ["fantastic fighter"],
+        "min_cats": 1,
+        "max_cats": 6
     },
     {
         "patrol_id": "gen_disaster3",
+        "biome": "Any",
+        "season": "Any",
         "tags": ["disaster", "gone"],
         "intro_text": "Your patrol encounters a clearing where a lot of Twolegs linger.",
         "success_text": ["They continue hunting undetected."],
@@ -30,6 +40,8 @@
         "decline_text": "Your patrol decides to hunt elsewhere.",
         "chance_of_success": 60,
         "exp": 20,
-        "win_skills": ["extremely smart"]
+        "win_skills": ["extremely smart"],
+        "min_cats": 1,
+        "max_cats": 6
     }
 ]

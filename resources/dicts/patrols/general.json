@@ -1,38 +1,56 @@
 [
     {
-        "patrol_id": "gen_1",
+        "patrol_id": "gen_gen_1",
+        "biome": "Any",
+        "season": "Any",
         "intro_text": "Your patrol doesn't find anything useful.",
         "success_text": ["It was still a fun outing!"],
         "fail_text": ["How did you fail this??"],
         "decline_text": "Your patrol decides to head home early.",
-        "chance_of_success": 95,
-        "exp": 10
+        "chance_of_success": 100,
+        "exp": 10,
+        "min_cats": 1,
+        "max_cats": 6
     },
     {
-        "patrol_id": "gen_2",
+        "patrol_id": "gen_gen_2",
+        "biome": "Any",
+        "season": "Any",
         "intro_text": "The patrol finds a nice spot to sun themselves.",
         "success_text": ["The sunlight feels great and they have a pleasant patrol."],
         "fail_text": ["The patrol doesn't get much done because of that."],
         "decline_text": "They decide to stay focused instead.",
         "chance_of_success": 80,
-        "exp": 10
+        "exp": 10,
+        "min_cats": 1,
+        "max_cats": 6
     },
     {
-        "patrol_id": "gen_3",
+        "patrol_id": "gen_gen_thunderpath1",
+        "biome": "Any",
+        "season": "Any",
         "tags": ["retirement", "injury"],
         "intro_text": "The patrol comes across a thunderpath.",
-        "success_text": ["Your patrol crosses the thunderpath and can hunt on the other side.", "",
-        "s_c hears the growl of a monster rumbling closer and freezes in a crouch in the middle of the thunderpath. The monster goes right over them but miraculously leaves them unharmed."],
-        "fail_text": ["r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
-        "r_c is hit by a monster while crossing and dies instantly.",
-        "r_c is hit by a monster and debates retiring to the elder den."],
+        "success_text": [
+            "Your patrol crosses the thunderpath and can hunt on the other side.", 
+            "",
+            "s_c hears the growl of a monster rumbling closer and freezes in a crouch in the middle of the thunderpath. The monster goes right over them but miraculously leaves them unharmed."],
+        "fail_text": [
+            "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+            "",
+            "r_c is hit by a monster while crossing and dies instantly.",
+            "r_c is hit by a monster and debates retiring to the elder den."],
         "decline_text": "They decide it is better not to cross.",
         "chance_of_success": 50,
         "exp": 10,
-        "win_skills": ["very smart", "extremely smart"]
+        "win_skills": ["very smart", "extremely smart"],
+        "min_cats": 1,
+        "max_cats": 6
     },
     {
-        "patrol_id": "gen_4",
+        "patrol_id": "gen_gen_4",
+        "biome": "Any",
+        "season": "Any",
         "tags": ["herbs"],
         "intro_text": "p_l finds a patch of herbs that they believe the medicine cat mentioned they needed.",
         "success_text": ["The patrol brings the herbs back to camp and they are put to good use."],
@@ -40,10 +58,14 @@
         "decline_text": "They decide to focus on the patrol instead and leave the herb collecting to the medicine cat.",
         "chance_of_success": 40,
         "exp": 10,
-        "win_skills": ["very smart", "extremely smart"]
+        "win_skills": ["very smart", "extremely smart"],
+        "min_cats": 1,
+        "max_cats": 6
     },
     {
         "patrol_id": "gen_gen_5",
+        "biome": "Any",
+        "season": "Any",
         "tags": ["injury", "scar"],
         "intro_text": "r_c goes missing during the patrol.",
         "success_text": ["r_c is later found carrying loads of prey after a successful hunt."],
@@ -51,39 +73,53 @@
         "decline_text": "r_c eventually catches up.",
         "chance_of_success": 40,
         "exp": 10,
-        "min_cats": 2
+        "min_cats": 2,
+        "max_cats": 6
     },
     {
         "patrol_id": "fst_gen_1",
         "biome": "forest",
+        "season": "Any",
         "intro_text": "Your patrol comes across a small fallen tree blocking their path.",
         "success_text": ["Your patrol successfully moves the tree out of the way and continues the patrol."],
         "fail_text": ["Your patrol can't seem to move the tree out of the way and is discouraged."],
         "decline_text": "Your patrol decides to find another route to continue to patrol.",
         "chance_of_success": 40,
-        "exp": 10
+        "exp": 10,
+        "min_cats": 1,
+        "max_cats": 6
     },
     {
         "patrol_id": "gen_gen_solo1",
+        "biome": "Any",
+        "season": "Any",
         "intro_text": "While alone on patrol, r_c thinks about life.",
         "success_text": ["They find peace within themselves and enjoy the rest of the patrol."],
         "fail_text": ["Their thoughts are plagued with bad memories."],
         "decline_text": "r_c decides to focus on the patrol.",
         "chance_of_success": 40,
-        "exp": 10
+        "exp": 10,
+        "min_cats": 1,
+        "max_cats": 1
     },
     {
         "patrol_id": "gen_gen_solo2",
+        "biome": "Any",
+        "season": "Any",
         "intro_text": "Since r_c is alone, they debate taking a bite out of the freshkill they have just caught.",
         "success_text": ["They decide not to and end up catching extra prey for the kits and elders."],
         "fail_text": ["They eat the freshkill; however, they do not catch more prey to make up for it and the kits and elders go hungry."],
         "decline_text": "They shake the thought from their mind.",
         "chance_of_success": 30,
         "exp": 10,
-        "win_skills": ["smart", "very smart", "extremely smart"]
+        "win_skills": ["smart", "very smart", "extremely smart"],
+        "min_cats": 1,
+        "max_cats": 1
     },
     {
         "patrol_id": "gen_gen_bramble1",
+        "biome": "Any",
+        "season": "Any",
         "intro_text": "r_c notices a Clanmate trapped in some brambles.",
         "success_text": ["r_c frees their Clanmate."],
         "fail_text": ["The patrol works all day to free their Clanmate and gets nothing else done."],
@@ -91,6 +127,7 @@
         "chance_of_success": 50,
         "exp": 10,
         "win_skills": ["smart", "very smart", "extremely smart"],
-        "min_cats": 2
+        "min_cats": 2,
+        "max_cats": 6
     }
 ]
