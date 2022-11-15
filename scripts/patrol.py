@@ -707,7 +707,8 @@ class Patrol():
                 self.handle_clan_relations(difference = int(1))
             self.handle_mentor_app_pairing()
             self.final_success = self.patrol_event.success_text[x]
-            print(str(self.final_success) + str(x))
+            print(str(self.patrol_event.patrol_id))
+            print(str(self.final_fail) + " #: " + str(x))
             print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
         else:
             self.success = False
@@ -724,6 +725,13 @@ class Patrol():
                 self.handle_deaths()
             else:
                 x = 0
+            if len(fail_text) >= 4 and fail_text[0] != "" and fail_text[1] != "":
+                if outcome <= 10:
+                    x = 3
+                    self.handle_scars
+                elif outcome >= 11:
+                    x = 2
+                    self.handle_deaths
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     self.handle_clan_relations(difference = int(-1))
@@ -731,7 +739,8 @@ class Patrol():
                     self.handle_deaths()
             self.handle_mentor_app_pairing()
             self.final_fail = self.patrol_event.fail_text[x]
-            print(str(self.final_fail) + str(x))
+            print(str(self.patrol_event.patrol_id))
+            print(str(self.final_fail) + " #: " + str(x))
             print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
 
     def calculate_success_antagonize(self):
