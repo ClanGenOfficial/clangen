@@ -1266,10 +1266,22 @@ class Cat():
             exp = 100
         self._experience = exp
         experience_levels = [
-            'very low', 'low', 'slightly low', 'average', 'somewhat high',
-            'high', 'very high', 'master', 'max'
+            'very low', 'low', 'average', 'high', 'master', 'max'
         ]
-        self.experience_level = experience_levels[math.floor(self.experience / 10)]
+        if exp in range(0, 10):
+            experience_level = 'very low'
+        if exp in range(11, 30):
+            experience_level = 'low'
+        if exp in range(31, 69):
+            experience_level = 'average'
+        if exp in range(70, 80):
+            experience_level = 'high'
+        if exp in range(81, 99):
+            experience_level = 'master'
+        if exp == 100:
+            experience_level = 'max'
+        
+        self.experience_level = experience_level
 
     @property
     def moons(self):
