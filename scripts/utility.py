@@ -25,7 +25,7 @@ def get_cats_allowed_on_patrol(Cat, ILLNESSES, INJURIES, game_mode):
 
     # ASSIGN TO ABLE CATS AND SORT BY RANK
     for the_cat in Cat.all_cats.values():
-        if the_cat.dead or the_cat.exiled or the_cat.in_camp or the_cat in game.patrolled or the_cat in game.switches['current_patrol']:
+        if the_cat.dead or the_cat.exiled or not the_cat.in_camp or the_cat in game.patrolled or the_cat in game.switches['current_patrol']:
             continue
         if game_mode == "expanded":
             if the_cat.status == 'medicine cat':

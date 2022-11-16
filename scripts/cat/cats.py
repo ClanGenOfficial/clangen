@@ -646,6 +646,10 @@ class Cat():
             return
 
         mortality = self.illness.current_mortality
+        # leader should have a higher chance of death
+        if self.status == "leader":
+            mortality = int(mortality * 0.7)
+
         if mortality and not int(random.random() * mortality):
             if self.status == "leader":
                 game.clan.leader_lives -= 1
@@ -666,6 +670,10 @@ class Cat():
             return
         
         mortality = self.injury.current_mortality
+        # leader should have a higher chance of death
+        if self.status == "leader":
+            mortality = int(mortality * 0.7)
+
         if mortality and not int(random.random() * mortality):
             self.die()
             return

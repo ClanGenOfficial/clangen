@@ -129,6 +129,13 @@ class Events():
         
         self.living_cats += 1
 
+        # prevent injured or sick cats from unrealistic clan events
+        if cat.is_ill() or cat.is_injured():
+            self.perform_ceremonies(cat)
+            self.coming_out(cat)
+            cat.one_moon()
+            return
+           
         self.perform_ceremonies(cat) # here is age up included
 
         if not game.clan.closed_borders and not self.new_cat_invited or self.living_cats < 10:
@@ -840,7 +847,7 @@ class Events():
         triggered_death = False
 
         if game.clan.game_mode == 'expanded':
-            triggered_death = self.condition_events.handle_injuries(cat, game.clan.current_season)
+            triggered_death = self.condition_events.handle_injuries(cat, game.clan.current_season, game.clan.biome)
             if game.settings.get('disasters'):
                 if not random.getrandbits(10):  # 1/1024
                     triggered_death = True

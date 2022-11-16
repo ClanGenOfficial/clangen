@@ -1,20 +1,13 @@
 {
-    "bite": {
-        "r_c fought a fox, but got hardly injured.": 2
-    },
-    "broken bone": {
-        "r_c fought a fox, but got hardly injured.": 2
-    },
-    "bruises": {
-        "r_c fought a fox, but got hardly injured.": 2
-    },
-    "claw-wound": {
-        "r_c fought a fox, but got hardly injured.": 2
-    },
-    "dislocated bone": {
-        "r_c fought a fox, but got hardly injured.": 2
-    },
-    "sprain": {
-        "r_c fought a fox, but got hardly injured.": 2
-    }
+    "bite": {},
+    "broken bone": {},
+    "bruises": {},
+    "claw-wound": {},
+    "dislocated bone": {},
+    "sprain": {},
+    "cracked pads": {},
+    "joint pain": {},
+    "scrapes": {},
+    "torn ear": {},
+    "torn pelt": {}
 }
