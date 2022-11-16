@@ -695,7 +695,7 @@ class Patrol():
             if set(self.patrol_traits).isdisjoint(
                     self.patrol_event.fail_trait):
                 chance = 10
-        c = int(random.random() * 400)
+        c = randint(20, 100)
         outcome = random.getrandbits(4)
         print(str(c))
         if c < chance:
@@ -835,14 +835,19 @@ class Patrol():
             self.final_fail = self.patrol_event.fail_text[x]
 
     def handle_exp_gain(self):
+        gm_modifier = 1
+        patrol_exp = self.patrol_event.exp
+        if game.switches['game_mode'] == 'classic':
+            gm_modifier = gm_modifier
+        elif game.switches['game_mode'] == 'extended':
+            gm_modifier = 3
+        elif game.switches['game_mode'] == 'cruel_season':
+            gm_modifier = 6
         if self.success:
             for cat in self.patrol_cats:
                 print("EXP Before: " + str(cat.experience))
-                cat.experience = cat.experience + (
-                    self.patrol_event.exp / len(self.patrol_cats)) / 3
-                cat.experience = min(cat.experience, 80)
-                cat.experience_level = self.experience_levels[floor(
-                    cat.experience / 10)]
+                gained_exp = ((patrol_exp) / len(self.patrol_cats)) / gm_modifier
+                cat.experience = int(cat.experience + gained_exp)
                 print("After: " + str(cat.experience))
 
     def handle_deaths(self):

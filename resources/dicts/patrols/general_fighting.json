@@ -31,12 +31,13 @@
         "chance_of_success": 10,
         "exp": 50,
         "success_text": [
-            null,
             "r_c bolts back to camp, yowling a warning!",
+            null,
             "s_c sets up an ambush for the wandering dog, bloodying its snout and leading it on a wild chasing dance across the border and out of c_n territory.",
             "They don't feel like they have anything like the skill or power , but s_c would give their life for c_n, charging in to courageously lead the dog away from c_n territory. Each booming bark has to be the herald of their doom, each rancid breath the last thing they'll ever smell, but somehow, eventually, limbs and lungs burning, they leap to refuge."
         ],
         "fail_text": [
+            null,
             null,
             "s_c would give their life to protect c_n, and as they charge past the huge dog to lead it far, far from c_n, they accept it. Fear gives them speed, but it only takes one successful hit. Miraculously they fly out of the dog's jaws while it shakes them, landing in a refuge. s_c is injured, desperate, and terrified - but they're alive.",
             "r_c would give their life to protect c_n, and as they lead the huge dog away from the clan, in their heart, they accept that's what they're doing. As darkness closes in around them and the dog's jaws descend again, r_c tries to sink their claws into its face, and hopes desperately that they led it far enough."
@@ -212,8 +213,8 @@
         "fail_text": [
             "Your patrol fails to drive the badger away, but luckily manages to escape any injuries.", 
             null, 
-            "The badger is angered when the patrol nears its den and badly injures r_c.",
-            "The badger is furious when the patrol nears its den and kills r_c."
+            "The badger is furious when the patrol nears its den and kills r_c.",
+            "The badger is angered when the patrol nears its den and badly injures r_c."
         ],
         "decline_text": "The patrol avoids the badger den.",
         "chance_of_success": 40,

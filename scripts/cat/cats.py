@@ -1269,8 +1269,7 @@ class Cat():
             'very low', 'low', 'slightly low', 'average', 'somewhat high',
             'high', 'very high', 'master', 'max'
         ]
-        self.experience_level = experience_levels[math.floor(self.experience /
-                                                             10)]
+        self.experience_level = experience_levels[math.floor(self.experience / 10)]
 
     @property
     def moons(self):
