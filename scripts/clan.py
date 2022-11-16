@@ -108,6 +108,13 @@ class Clan():
             self.game_mode = game_mode
             self.pregnancy_data = {}
             self.closed_borders = False
+            self.reputation = 50
+
+            """
+            Reputation is for loners/kittypets/outsiders in general that wish to join the clan. 
+            it's a range from 1-100, with 30-70 being neutral, 71-100 being "welcoming",
+            and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
+            """
 
     def create_clan(self):
         """ This function is only called once a new clan is created in the 'clan created' screen, not every time
@@ -226,7 +233,7 @@ class Clan():
         exit()
 
     def save_clan(self):
-        data = f'{self.name},{self.age},{self.biome},{self.camp_bg},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]},{self.game_mode}' + '\n'
+        data = f'{self.name},{self.age},{self.biome},{self.camp_bg},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]},{self.game_mode},{self.reputation}' + '\n'
         data = data + self.leader.ID + ',' + str(
             self.leader_lives) + ',' + str(
                 self.leader_predecessors) + ',' + '\n'

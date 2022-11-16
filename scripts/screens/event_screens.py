@@ -271,7 +271,7 @@ class PatrolEventScreen(Screens):
                                     patrol_done=True,
                                     event=2)
 
-                if patrol.patrol_event.patrol_id in [500, 501, 502, 503, 504, 505, 510, 800, 801, 802, 803, 804, 805]:
+                if ["new_cat", "other_clan"] in patrol.patrol_event.tags:
                     buttons.draw_button((550, 491),
                                         image='buttons/antagonize',
                                         text='Antagonize',
@@ -283,7 +283,7 @@ class PatrolEventScreen(Screens):
             game.switches['event'] = 1
 
         elif game.switches['event'] == 3:
-            patrol.calculate_success_antagonize()
+            patrol.calculate_success()
             game.switches['event'] = 4
 
         if game.switches['event'] > 0:

@@ -676,6 +676,10 @@ class Patrol():
             return
         success_text = self.patrol_event.success_text
         fail_text = self.patrol_event.fail_text
+        antagonize = False
+        if self.patrol_event.tags is not None:
+            if ["new_cat", "other_clan"] in self.patrol_event.tags:
+                antagonize = True
         # if patrol contains cats with autowin skill, chance of success is high
         # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
         chance = self.patrol_event.chance_of_success + int(
@@ -720,8 +724,17 @@ class Patrol():
                     x = 0
             self.handle_exp_gain()
             self.add_new_cats()
-            if self.patrol_event.tags is not None and "other_clan" in self.patrol_event.tags:
-                self.handle_clan_relations(difference = int(1))
+            if self.patrol_event.tags is not None:
+                if "other_clan" in self.patrol_event.tags:
+                    if antagonize:
+                        self.handle_clan_relations(difference = int(-2))
+                    else:
+                        self.handle_clan_relations(difference = int(1))
+                elif "new_cat" in self.patrol_event.tags:
+                    if antagonize:
+                        self.handle_reputation(10)
+                    else:
+                        self.handle_reputation(0)
             self.handle_mentor_app_pairing()
             self.final_success = self.patrol_event.success_text[x]
             print(str(self.patrol_event.patrol_id))
@@ -756,7 +769,15 @@ class Patrol():
                     self.handle_deaths
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
-                    self.handle_clan_relations(difference = int(-1))
+                    if antagonize:
+                        self.handle_clan_relations(difference = int(-1))
+                    else:
+                        self.handle_clan_relations(difference = int(-1))
+                elif "new_cat" in self.patrol_event.tags:
+                    if antagonize:
+                        self.handle_reputation(-10)
+                    else:
+                        self.handle_reputation(-5)
                 elif "disaster" in self.patrol_event.tags:
                     self.handle_deaths()
             self.handle_mentor_app_pairing()
@@ -765,77 +786,6 @@ class Patrol():
             print("Min cats: " + str(self.patrol_event.min_cats) + " and Max cats " + str(self.patrol_event.max_cats))
             print(str(self.final_fail) + " #: " + str(x))
             print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
-
-    def calculate_success_antagonize(self):
-        if self.patrol_event is None:
-           return
-        success_text = self.patrol_event.success_text
-        fail_text = self.patrol_event.fail_text
-        # this adds the stat cat (if there is one)
-        if self.patrol_event.win_skills is not None and self.patrol_event.win_trait is not None:
-            for cat in self.patrol_cats:
-                if cat.skill in self.patrol_event.win_skills or cat.trait in self.patrol_event.win_trait:
-                    self.patrol_stat_cat = cat
-            # if patrol contains cats with autowin skill, chance of success is high
-            # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
-        chance = self.patrol_event.chance_of_success + int(
-            self.patrol_total_experience / 10)
-        if self.patrol_event.patrol_id != 100:
-            chance = min(chance, 80)
-        if self.patrol_event.win_skills is not None:
-            if set(self.patrol_skills).isdisjoint(
-                    self.patrol_event.win_skills):
-                chance = 90
-            if self.patrol_event.win_trait is not None:
-                if set(self.patrol_traits).isdisjoint(
-                        self.patrol_event.win_trait):
-                    chance = 90
-            if self.patrol_event.fail_skills is not None:
-                if set(self.patrol_skills).isdisjoint(
-                        self.patrol_event.fail_skills):
-                    chance = 10
-            if self.patrol_event.fail_trait is not None:
-                if set(self.patrol_traits).isdisjoint(
-                        self.patrol_event.fail_trait):
-                    chance = 10
-        c = random.getrandbits(7)
-        outcome = random.getrandbits(4)
-        if c < chance:
-            self.success = True
-            if self.patrol_stat_cat is not None:
-                if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
-                    x = 3
-                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] is not None:
-                    x = 2
-            else:
-                if outcome >= 10 and len(fail_text) >= 2 and success_text[1] is not None:
-                    x = 1
-                else:
-                    x = 0
-                self.handle_exp_gain()
-                if self.patrol_event.tags is not None and "other_clan" in self.patrol_event.tags:
-                    self.handle_clan_relations(difference = int(-1))
-                self.handle_mentor_app_pairing()
-            self.final_success = self.patrol_event.success_text[x]
-        else:
-            self.success = False
-            if self.patrol_stat_cat is not None:
-                if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills:
-                    x = 1
-            elif outcome >= 15 and len(fail_text) >= 2 and fail_text[1] is not None:
-                x = 1
-            elif outcome <= 10 and len(fail_text) >= 4 and fail_text[3] is not None:
-                x = 2
-                self.handle_scars()
-            elif outcome >= 11 and len(fail_text) >= 3 and fail_text[2] is not None:
-                x = 3
-                self.handle_deaths()
-            else:
-                x = 0
-            if self.patrol_event.tags is not None and "other_clan" in self.patrol_event.tags:
-                self.handle_clan_relations(difference = int(-2))
-            self.handle_mentor_app_pairing()
-            self.final_fail = self.patrol_event.fail_text[x]
 
     def handle_exp_gain(self):
         gm_modifier = 1
@@ -909,7 +859,7 @@ class Patrol():
         otherclan = game.clan.all_clans.index(other_clan)
         clan_relations = int(game.clan.all_clans[otherclan].relations)
         if "other_clan" in self.patrol_event.tags:
-            if patrol.success is True:
+            if patrol.success:
                 clan_relations += difference
             else:
                 clan_relations += difference
@@ -919,6 +869,17 @@ class Patrol():
         for cat in self.patrol_cats:
             if cat.mentor in self.patrol_cats:
                 cat.patrol_with_mentor += 1
+
+    # reputation with outsiders
+    def handle_reputation(self, difference):
+        reputation = game.clan.reputation
+        difference = int(difference)
+        if patrol.success:
+            reputation += difference
+        else:
+            reputation += difference
+        game.clan.reputation = reputation
+
 
     def handle_relationships(self):
         romantic_love = 0
