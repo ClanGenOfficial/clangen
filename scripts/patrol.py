@@ -99,17 +99,20 @@ class Patrol():
         final_patrols = []
         patrol_size = len(self.patrol_cats)
         # general hunting patrols
-        possible_patrols.extend(self.generate_patrol_events(GENERAL_HUNTING))
+        possible_patrols.extend(self.generate_patrol_events(HUNTING))
         
         # general/misc patrols
-        possible_patrols.extend(self.generate_patrol_events(GENERAL_DEAD))
+        possible_patrols.extend(self.generate_patrol_events(GENERAL))
 
         # deadly patrols
         if game_setting_disaster:
             possible_patrols.extend(self.generate_patrol_events(DISASTER))
 
         # fighting patrols
-        possible_patrols.extend(self.generate_patrol_events(GENERAL_FIGHTING))
+        possible_patrols.extend(self.generate_patrol_events(FIGHTING))
+
+        # training patrols
+        possible_patrols.extend(self.generate_patrol_events(FIGHTING))
 
         # one last check
         for patrol in possible_patrols:
@@ -1195,21 +1198,25 @@ leaves_path = "leaves/"
 biomes_path = "biomes/"
 condition_path = "conditions/"
 
-GENERAL_DEAD = None
+GENERAL = None
 with open(f"{resource_directory}general.json", 'r') as read_file:
-    GENERAL_DEAD = ujson.loads(read_file.read())
+    GENERAL = ujson.loads(read_file.read())
 
-GENERAL_HUNTING = None
-with open(f"{resource_directory}general_hunting.json", 'r') as read_file:
-    GENERAL_HUNTING = ujson.loads(read_file.read())
+HUNTING = None
+with open(f"{resource_directory}hunting.json", 'r') as read_file:
+    HUNTING = ujson.loads(read_file.read())
 
-GENERAL_FIGHTING = None
-with open(f"{resource_directory}general_fighting.json", 'r') as read_file:
-    GENERAL_FIGHTING = ujson.loads(read_file.read())
+FIGHTING = None
+with open(f"{resource_directory}fighting.json", 'r') as read_file:
+    FIGHTING = ujson.loads(read_file.read())
 
-GENERAL_NEW_CAT = None
-with open(f"{resource_directory}general_new_cat.json", 'r') as read_file:
-    GENERAL_NEW_CAT = ujson.loads(read_file.read())
+TRAINING = None
+with open(f"{resource_directory}training.json", 'r') as read_file:
+    TRAINING = ujson.loads(read_file.read())
+
+NEW_CAT = None
+with open(f"{resource_directory}new_cat.json", 'r') as read_file:
+    NEW_CAT = ujson.loads(read_file.read())
 
 # ---------------------------------------------------------------------------- #
 #                            patrols with conditions                           #
