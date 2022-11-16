@@ -103,9 +103,9 @@ class Patrol():
         neutral_rep = False
         welcoming_rep = False
         # chance for each kind to occur
-        regular_chance = int(random.getrandbits(3))
+        regular_chance = int(random.getrandbits(2))
         hostile_chance = int(random.getrandbits(5))
-        welcoming_chance = int(random.getrandbits(2))
+        welcoming_chance = int(random.getrandbits(1))
         if reputation in range(1, 30):
             hostile_rep = True
             chance = hostile_chance
@@ -132,6 +132,7 @@ class Patrol():
         # training patrols
         possible_patrols.extend(self.generate_patrol_events(TRAINING))
 
+        # new cat patrols
         if chance == 1:
             if welcoming_rep:
                 possible_patrols.extend(self.generate_patrol_events(NEW_CAT_WELCOMING))
@@ -729,8 +730,8 @@ class Patrol():
                     self.patrol_event.fail_trait):
                 chance = 10
         c = randint(20, 100)
-        outcome = random.getrandbits(4)
-        print(str(c))
+        outcome = int(random.getrandbits(4))
+        print("Outcome: " + str(outcome))
         if c < chance:
             self.success = True
             # this adds the stat cat (if there is one)
@@ -740,14 +741,14 @@ class Patrol():
                         self.patrol_stat_cat = cat
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
-                    x = 3
+                    n = 3
                 elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] is not None:
-                    x = 2
+                    n = 2
             else:
                 if outcome >= 10 and len(fail_text) >= 2 and success_text[1] is not None:
-                    x = 1
+                    n = 1
                 else:
-                    x = 0
+                    n = 0
             self.handle_exp_gain()
             self.add_new_cats()
             if self.patrol_event.tags is not None:
@@ -762,10 +763,10 @@ class Patrol():
                     else:
                         self.handle_reputation(0)
             self.handle_mentor_app_pairing()
-            self.final_success = self.patrol_event.success_text[x]
+            self.final_success = self.patrol_event.success_text[n]
             print(str(self.patrol_event.patrol_id))
-            print("Min cats: " + str(self.patrol_event.min_cats) + " and Max cats " + str(self.patrol_event.max_cats))
-            print(str(self.final_fail) + " #: " + str(x))
+            print("Min cats: " + str(self.patrol_event.min_cats) + " & Max cats: " + str(self.patrol_event.max_cats))
+            print(str(self.final_fail) + " #: " + str(n))
             print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
         else:
             self.success = False
@@ -774,24 +775,29 @@ class Patrol():
                     if cat.skill in self.patrol_event.fail_skills or cat.trait in self.patrol_event.fail_trait:
                         self.patrol_stat_cat = cat
             if self.patrol_stat_cat is not None:
-                if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills:
-                    x = 1
+                if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills and fail_text[1] is not None:
+                    n = 1
             elif outcome >= 15 and len(fail_text) > 1 and fail_text[1] is not None:
-                x = 1
+                n = 1
             elif outcome <= 10 and len(fail_text) > 3 and fail_text[3] is not None:
-                x = 3
+                n = 3
                 self.handle_scars()
             elif outcome >= 11 and len(fail_text) > 2 and fail_text[2] is not None:
-                x = 2
+                n = 2
                 self.handle_deaths()
+            elif fail_text[0] is None:
+                if fail_text[3] is not None:
+                    n = 3
+                elif fail_text[1] is not None:
+                    n = 1
             else:
-                x = 0
+                n = 0
             if len(fail_text) >= 4 and fail_text[0] is not None and fail_text[1] is not None:
                 if outcome <= 10:
-                    x = 3
+                    n = 3
                     self.handle_scars
                 elif outcome >= 11:
-                    x = 2
+                    n = 2
                     self.handle_deaths
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
@@ -807,10 +813,10 @@ class Patrol():
                 elif "disaster" in self.patrol_event.tags:
                     self.handle_deaths()
             self.handle_mentor_app_pairing()
-            self.final_fail = self.patrol_event.fail_text[x]
+            self.final_fail = self.patrol_event.fail_text[n]
             print(str(self.patrol_event.patrol_id))
             print("Min cats: " + str(self.patrol_event.min_cats) + " and Max cats " + str(self.patrol_event.max_cats))
-            print(str(self.final_fail) + " #: " + str(x))
+            print(str(self.final_fail) + " #: " + str(n))
             print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
 
     def handle_exp_gain(self):
