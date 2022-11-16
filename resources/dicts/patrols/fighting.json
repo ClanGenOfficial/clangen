@@ -39,8 +39,8 @@
         "fail_text": [
             null,
             null,
-            "s_c would give their life to protect c_n, and as they charge past the huge dog to lead it far, far from c_n, they accept it. Fear gives them speed, but it only takes one successful hit. Miraculously they fly out of the dog's jaws while it shakes them, landing in a refuge. s_c is injured, desperate, and terrified - but they're alive.",
-            "r_c would give their life to protect c_n, and as they lead the huge dog away from the clan, in their heart, they accept that's what they're doing. As darkness closes in around them and the dog's jaws descend again, r_c tries to sink their claws into its face, and hopes desperately that they led it far enough."
+            "r_c would give their life to protect c_n, and as they lead the huge dog away from the clan, in their heart, they accept that's what they're doing. As darkness closes in around them and the dog's jaws descend again, r_c tries to sink their claws into its face, and hopes desperately that they led it far enough.",
+            "s_c would give their life to protect c_n, and as they charge past the huge dog to lead it far, far from c_n, they accept it. Fear gives them speed, but it only takes one successful hit. Miraculously they fly out of the dog's jaws while it shakes them, landing in a refuge. s_c is injured, desperate, and terrified - but they're alive."
         ],
         "win_skills": ["excellent fighter"],
         "win_trait": ["altruistic", "ambitious", "compassionate", "confident", "empathetic", "faithful", "fierce", "loving", "loyal", "responsible", "righteous"], 
