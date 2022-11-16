@@ -318,6 +318,8 @@ class Clan():
                 general[3] = 'camp1'
             elif general[7] == 'None':
                 general[7] = 'classic'
+            elif general[8] == 'None':
+                general[8] == 50
             game.clan = Clan(general[0],
                              Cat.all_cats[leader_info[0]],
                              Cat.all_cats.get(deputy_info[0], None),
