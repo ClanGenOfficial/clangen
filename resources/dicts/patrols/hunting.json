@@ -9,7 +9,7 @@
         "fail_text": ["Your patrol narrowly misses the mouse."],
         "decline_text": "Your patrol ignores the mouse.",
         "chance_of_success": 60,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 3
@@ -22,7 +22,7 @@
         "intro_text": "Your patrol comes across a mouse.",
         "decline_text": "Your patrol ignores the mouse.",
         "chance_of_success": 60,
-        "exp": 10,
+        "exp": 20,
         "success_text": [
             "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
             "r_c leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"],
@@ -43,7 +43,7 @@
         "fail_text": ["Your patrol misses the rat, and their confidence is shaken."],
         "decline_text": "Your patrol ignores the rat.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 6
@@ -74,7 +74,7 @@
         "fail_text": ["Your patrol narrowly misses the bird."],
         "decline_text": "Your patrol ignores the bird.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 3
@@ -89,7 +89,7 @@
         "fail_text": ["Your patrol narrowly misses the squirrel."],
         "decline_text": "Your patrol ignores the squirrel.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 3
@@ -104,7 +104,7 @@
         "fail_text": ["Your patrol accidentally scares the fish away."],
         "decline_text": "Your patrol ignores the fish.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 3
@@ -117,7 +117,7 @@
         "intro_text": "Your patrol sees the shadow of a school of fish in the river.",
         "decline_text": "Your patrol ignores the fish.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 20,
         "success_text": [
             "p_l leads a successful fishing session, with almost everyone walking home with a fishy mouthful.",
             null,
@@ -139,7 +139,7 @@
         "fail_text": ["r_c catches the rabbit, but later r_c and the cats who eat it become violently ill."],
         "decline_text": "r_c avoids catching the rabbit and looks for other prey.",
         "chance_of_success": 40,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["smart", "very smart", "extremely smart"],
         "min_cats": 1,
         "max_cats": 6
@@ -175,7 +175,7 @@
         "fail_text": ["Twoleg kits scare the patrol away."],
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 40,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 6
@@ -196,7 +196,7 @@
             "r_c is caught in the trap and is taken by Twolegs shortly after."],
         "decline_text": "r_c loses interest and walks back to the patrol.",
         "chance_of_success": 40,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["very smart", "extremely smart"],
         "fail_trait": ["bold"],
         "min_cats": 1,
@@ -213,7 +213,7 @@
         "decline_text": "r_c decides against chasing the rabbit.",
         "other_clan": "patrol.other_clan",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["fantastic hunter"],
         "min_cats": 1,
         "max_cats": 6
@@ -228,7 +228,7 @@
         "fail_text": ["Your patrol narrowly misses the turtle."],
         "decline_text": "Your patrol decides to look for other prey.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 4
@@ -243,7 +243,7 @@
         "fail_text": ["Your patrol narrowly misses the vole."],
         "decline_text": "Your patrol decides to look for other prey.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 3
@@ -319,7 +319,7 @@
         "fail_text": ["The burrow is abandoned, with no prey to be found in there."],
         "decline_text": "r_c decides to ignore the burrow.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 6
@@ -332,7 +332,7 @@
         "intro_text": "The patrol approaches a Twoleg nest in the woods while hunting.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 40,
-        "exp": 10,
+        "exp": 20,
         "success_text": [
         "The patrol has a successful hunt, avoiding any Twolegs.",
         "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to one."
@@ -373,7 +373,7 @@
         "intro_text": "The patrol notices a commotion and finds two squirrels chasing each other across the forest floor.",
         "decline_text": "The patrol decides there's probably easier prey to find elsewhere.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 20,
         "success_text": [
         "The squirrels are so distracted that the patrol is able to quickly catch them both.",
         "The patrol springs onto the squirrels without a second thought, easily dispatching them.",
@@ -635,7 +635,7 @@
         "fail_text": ["Your patrol narrowly misses the shrew."],
         "decline_text": "Your patrol decides to look for other prey.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 3
@@ -650,7 +650,7 @@
         "fail_text": ["Your patrol narrowly misses the prairie dog."],
         "decline_text": "Your patrol decides to look for other prey.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 3
@@ -665,7 +665,7 @@
         "fail_text": ["Your patrol narrowly misses the lizard."],
         "decline_text": "Your patrol decides to look for other prey.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 3
@@ -678,7 +678,7 @@
         "intro_text": "The patrol approaches a little Twoleg nest on the prairie while hunting. Next to it, a strange tower makes a soft thump, its wooden leaves circling slowly in the wind.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 40,
-        "exp": 10,
+        "exp": 20,
         "success_text": [
             "The patrol has a successful hunt, avoiding any Twolegs.",
             "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to one."

@@ -126,7 +126,7 @@
             "Small, yappy, but . . . still a dog. r_c peers down from the tree where the animal has pinned them, wincing in pain. They won't underestimate these ugly creatures again."],
         "decline_text": "The patrol decides not to pursue the dog.",
         "chance_of_success": 60,
-        "exp": 10,
+        "exp": 20,
         "min_cats": 1,
         "max_cats": 1,
         "win_skills": ["good fighter","great fighter","excellent fighter"]
@@ -148,7 +148,7 @@
             "The dog gets a lucky hit in on r_c, though together all the cats are still able to drive it off successfully."],
         "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
         "chance_of_success": 60,
-        "exp": 10,
+        "exp": 20,
         "min_cats": 2,
         "max_cats": 3,
         "win_skills": ["good fighter","great fighter","excellent fighter"]
@@ -168,7 +168,7 @@
         ],
         "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
         "chance_of_success": 60,
-        "exp": 10,
+        "exp": 20,
         "min_cats": 4,
         "max_cats": 6,
         "win_skills": ["good fighter","great fighter","excellent fighter"]
@@ -240,7 +240,7 @@
             "The pawprints lead to a trespassing rogue who injures r_c before being driven away."],
         "decline_text": "They decide not to investigate.",
         "chance_of_success": 60,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["good fighter" ,"very smart", "extremely smart", "excellent fighter"],
         "min_cats": 2,
         "max_cats": 6
@@ -255,7 +255,7 @@
         "fail_text": ["They run back to camp, unable to continue."],
         "decline_text": "They continue the patrol but progress is slow.",
         "chance_of_success": 40,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["very smart" , "extremely smart"],
         "max_cats": 1,
         "min_cats": 1
@@ -276,7 +276,7 @@
             "r_c collapses from heat exhaustion. p_l carries them back to camp."],
         "decline_text": "The patrol decides to head back to camp, they can patrol a different day",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 20,
         "min_cats": 2,
         "max_cats": 6
     },
