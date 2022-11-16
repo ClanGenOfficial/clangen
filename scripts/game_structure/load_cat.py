@@ -77,6 +77,7 @@ def json_load():
         new_cat.apprentice = cat["current_apprentice"]
         new_cat.former_apprentices = cat["former_apprentices"]
         new_cat.scar_event = cat["scar_event"] if "scar_event" in cat else []
+        new_cat.death_event = cat["death_event"] if "death_event" in cat else []
         new_cat.df = cat["df"] if "df" in cat else False
         all_cats.append(new_cat)
 

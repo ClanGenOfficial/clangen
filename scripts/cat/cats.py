@@ -155,6 +155,7 @@ class Cat():
         self.illness = None
         self.injury = None
         self.scar_event = []
+        self.death_event = []
         self.df = False
         self.experience_level = None
 
