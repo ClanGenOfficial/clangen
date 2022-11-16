@@ -28,6 +28,33 @@
         "r_c carries a scar from a fox fight.",
         "r_c fell in battle with a fox."
         ]
-        
+    },
+    {
+        "patrol_id": "gen_train_fox2",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["fighting", "scar", "injury"],
+        "intro_text":  "Your patrol catches the scent of a fox.",
+        "decline_text": "Your patrol decides not to pursue the fox.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+        "Your patrol finds the fox and drives it away.",
+        "The patrol mobs the fox, using their number to confuse it and attack it safely until it turns tail and runs.",
+        "s_c shows their strength, leading the fight against the fox until it gives up and runs.",
+        "The patrol overcomes the fox and sends it running, thanks to s_c's bravery."
+        ],
+        "fail_text": [
+        "Your patrol fails to drive away the fox, but fortunately with so many cats to protect each other, no one was injured.",
+        "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c.",
+        null,
+        "r_c will carry their new scar with them from now on, but the fox leaves the clan's territory without further trouble."
+        ],
+        "win_skills": ["good fighter", "great fighter", "excellent fighter"],
+        "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
+        "max_cats": 6,
+        "history_text": [
+        "r_c carries a scar from a fox fight."
+        ]
     }
 ]
