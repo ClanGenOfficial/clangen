@@ -29,8 +29,8 @@
         "tags": ["border", "new_cat", "reputation"],
         "intro_text": "Your patrol scents a kittypet on the territory. They confront the cat, who quickly surrenders and begs for shelter.",
         "decline_text": "Your patrol decides the kittypet isn't worth their time.",
-        "chance_of_success": 0,
-        "exp": 0,
+        "chance_of_success": 40,
+        "exp": 20,
         "success_text": [
             "The patrol relents and the kittypet is allowed to join the Clan.",
             "The patrol relents and the kittypet is allowed to join the Clan, bringing along their litter of hungry kits."

@@ -29,8 +29,8 @@
         "tags": ["border", "new_cat", "reputation"],
         "intro_text": "Your patrol finds a kittypet who is interested in joining the Clan.",
         "decline_text": "Your patrol decides not to confront the kittypet.",
-        "chance_of_success": 0,
-        "exp": 0,
+        "chance_of_success": 40,
+        "exp": 20,
         "success_text": [
                 "The patrol convinces the kittypet to join the Clan.",
                 "The patrol convinces the kittypet to join the Clan, and they join with their litter of kits."
