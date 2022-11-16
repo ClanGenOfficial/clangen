@@ -98,6 +98,24 @@ class Patrol():
         possible_patrols = []
         final_patrols = []
         patrol_size = len(self.patrol_cats)
+        reputation = game.clan.reputation
+        hostile_rep = False
+        neutral_rep = False
+        welcoming_rep = False
+        # chance for each kind to occur
+        regular_chance = int(random.getrandbits(3))
+        hostile_chance = int(random.getrandbits(5))
+        welcoming_chance = int(random.getrandbits(2))
+        if reputation in range(1, 30):
+            hostile_rep = True
+            chance = hostile_chance
+        elif reputation in range(31, 70):
+            neutral_rep = True
+            chance = regular_chance
+        elif reputation in range(71, 100):
+            welcoming_rep = True
+            chance = welcoming_chance
+
         # general hunting patrols
         possible_patrols.extend(self.generate_patrol_events(HUNTING))
         
@@ -112,7 +130,15 @@ class Patrol():
         possible_patrols.extend(self.generate_patrol_events(FIGHTING))
 
         # training patrols
-        possible_patrols.extend(self.generate_patrol_events(FIGHTING))
+        possible_patrols.extend(self.generate_patrol_events(TRAINING))
+
+        if chance == 1:
+            if welcoming_rep:
+                possible_patrols.extend(self.generate_patrol_events(NEW_CAT_WELCOMING))
+            elif neutral_rep:
+                possible_patrols.extend(self.generate_patrol_events(NEW_CAT))
+            elif hostile_rep:
+                possible_patrols.extend(self.generate_patrol_events(NEW_CAT_HOSTILE))
 
         # one last check
         for patrol in possible_patrols:
@@ -1178,6 +1204,14 @@ with open(f"{resource_directory}training.json", 'r') as read_file:
 NEW_CAT = None
 with open(f"{resource_directory}new_cat.json", 'r') as read_file:
     NEW_CAT = ujson.loads(read_file.read())
+
+NEW_CAT_HOSTILE = None
+with open(f"{resource_directory}new_cat_hostile.json", 'r') as read_file:
+    NEW_CAT_HOSTILE = ujson.loads(read_file.read())
+
+NEW_CAT_WELCOMING = None
+with open(f"{resource_directory}new_cat_welcoming.json", 'r') as read_file:
+    NEW_CAT_WELCOMING = ujson.loads(read_file.read())
 
 # ---------------------------------------------------------------------------- #
 #                            patrols with conditions                           #
