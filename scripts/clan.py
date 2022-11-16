@@ -311,7 +311,7 @@ class Clan():
             instructor_info = sections[3]
             members = sections[4].split(',')
             other_clans = []
-        if len(general) == 8:
+        if len(general) == 9:
             if general[4] == 'None':
                 general[4] = 0
             elif general[3] == 'None':
@@ -319,7 +319,7 @@ class Clan():
             elif general[7] == 'None':
                 general[7] = 'classic'
             elif general[8] == 'None':
-                general[8] == 50
+                general[8] = 50
             game.clan = Clan(general[0],
                              Cat.all_cats[leader_info[0]],
                              Cat.all_cats.get(deputy_info[0], None),
