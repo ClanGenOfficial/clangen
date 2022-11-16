@@ -25,8 +25,8 @@
         "min_cats": 2,
         "max_cats": 3,
         "history_text": [
-        "r_c carries a scar from a fox fight.",
-        "r_c fell in battle with a fox."
+            "r_c carries a scar from a fox fight.",
+            "r_c fell in battle with a fox."
         ]
     },
     {
@@ -55,7 +55,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "history_text": [
-        "r_c carries a scar from a fox fight."
+            "r_c carries a scar from a fox fight."
         ]
     },
     {

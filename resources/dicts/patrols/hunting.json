@@ -671,7 +671,7 @@
         "max_cats": 3
     },
     {
-        "patrol_id": "pln_gen_hunt_twolegplace1",
+        "patrol_id": "pln_hunt_twolegplace1",
         "biome": "plains",
         "season": "Any",
         "tags": ["hunting"],
@@ -692,7 +692,7 @@
         "antagonize_fail_text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
     },
     {
-        "patrol_id": "pln_gen_hunt_twolegplace2",
+        "patrol_id": "pln_hunt_twolegplace2",
         "biome": "plains",
         "season": "Any",
         "tags": ["hunting"],

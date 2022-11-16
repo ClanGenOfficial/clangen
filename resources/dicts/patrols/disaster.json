@@ -12,12 +12,16 @@
         "exp": 20,
         "win_skills": ["fantastic fighter"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "history_text": [
+            null,
+            "r_c was slaughtered in an ambush by a bloodthirsty group of rogues."
+        ]
     },
     {
         "patrol_id": "gen_disaster2",
         "biome": "Any",
-        "season": "Newleaf",
+        "season": "newleaf",
         "tags": ["disaster", "gone", "death"],
         "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
         "success_text": ["The cats become wet from the rain but otherwise the patrol is successful."],
@@ -27,7 +31,11 @@
         "exp": 20,
         "win_skills": ["fantastic fighter"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "history_text": [
+            null,
+            "r_c was swept away in a flood."
+        ]
     },
     {
         "patrol_id": "gen_disaster3",
@@ -42,6 +50,10 @@
         "exp": 20,
         "win_skills": ["extremely smart"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "history_text": [
+            null,
+            "r_c was trapped by twolegs and taken away."
+        ]
     }
 ]
