@@ -1,0 +1,115 @@
+[
+    {
+        "patrol_id": "gen_gen_newcat1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["border", "new_cat", "reputation"],
+        "intro_text": "Your patrol finds a loner who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome.",
+        "success_text": [
+                "The patrol doesn't have to do much convincing. The loner seems happy to join the Clan.",
+                "The patrol doesn't have to do much convincing. The loner seems happy to join the Clan with their litter of kits."
+        ],
+        "fail_text": [
+                "The loner has a pleasant chat with the patrol, but ultimately they decide not to join."
+        ],
+        "decline_text": "Your patrol decides to leave the loner be.",
+        "antagonize_text": "Your patrol approaches the loner and tells them firmly that newcomers aren't being taken in right now. The loner seems disappointed, but leaves anyway.",
+        "antagonize_fail_text": "The patrol approaches the loner and tries to explain that c_n currently has enough mouths to feed, but the loner seems to take offense and leaves in a huff.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "win_skills": ["great speaker", "excellent speaker"],
+        "min_cats": 1,
+        "max_cats": 6
+
+    },
+    {
+        "patrol_id": "gen_gen_newcat2",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["border", "new_cat", "reputation"],
+        "intro_text": "Your patrol finds a kittypet who is interested in joining the Clan. They banter with the cat a bit, making them feel more welcome.",
+        "decline_text": "Your patrol decides to leave the kittypet be.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "The patrol doesn't have to do much convincing. The kittypet seems happy to join the Clan.",
+            "The patrol doesn't have to do much convincing. The kittypet seems happy to join the Clan with their litter of kits."
+        ],
+        "fail_text": [
+                "Though they decline politely, the descriptions of Clan life seem to have frightened the kittypet."
+        ],
+        "min_cats": 1,
+        "max_cats": 6,
+        "win_skills": ["great speaker","excellent speaker"],
+        "antagonize_text": "Your patrol approaches the loner and tells them firmly that newcomers aren't being taken in right now. The kittypet seems disappointed, but leaves anyway.",
+        "antagonize_fail_text": "The patrol approaches the kittypet and tries to explain that c_n currently has enough mouths to feed, but the kittypet seems to take offense and leaves in a huff."
+
+    },
+    {
+        "patrol_id": "gen_gen_newcat3",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["border", "new_cat", "reputation"],
+        "intro_text": "r_c finds a wounded cat near the thunderpath.",
+        "success_text": [
+            "The patrol brings the cat back to camp to let them heal. Once nursed back to health, the cat is very grateful and decides to join the Clan."
+        ],
+        "fail_text": [
+            "As r_c inspects the cat, they find that they are already hunting with their ancestors. They take a moment to say a prayer for the cat and bury them.",
+            "The cats attempt to carry the cat back to camp, but the cat passes on the way. They stop to bury the cat before continuing home."
+        ],
+        "decline_text": "They leave the wounded cat alone.",
+        "antagonize_text": "Your patrol helps the cat to the nearest healer. They can't spare the herbs for an outsider right now.",
+        "antagonize_fail_text": "The patrol attempts to help the cat to a healer nearby, but the cat passes before they can make it. They bury the cat outside their borders.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "win_skills": ["smart", "very smart", "extremely smart"],
+        "min_cats": 1,
+        "max_cats": 6
+
+    },
+    {
+        "patrol_id": "gen_gen_newkit1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["border", "new_cat", "reputation"],
+        "intro_text": "r_c finds an abandoned kit whose mother is nowhere to be found.",
+        "success_text": [
+            "r_c rushes the kit back to camp. The kit is nursed back to health and promised a place in the Clan."
+        ],
+        "fail_text": [
+            "The kit is rushed back to camp, but grows weak and dies a few days later.",
+            "The patrol approaches the kit, only to realize that it's already gone. They say a small prayer and bury it."
+        ],
+        "decline_text": "The patrol goes to approach when the mother cat appears, sliding out her claws in defense of her baby. Nevermind!",
+        "antagonize_text": "Your patrol can't bear to leave the kit alone, so they take it to the border of the closest clan and wait for a patrol to arrive. The other clan agrees to take the kit.",
+        "antagonize_fail_text": "Your patrol attempts to take the kit to a neighboring clan instead of leaving it, but it dies on the journey. They give it a small burial.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "win_skills": ["smart", "very smart", "extremely smart"],
+        "min_cats": 1,
+        "max_cats": 6
+
+    },
+    {
+        "patrol_id": "gen_gen_newmed1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["border", "new_cat", "reputation", "med_cat"],
+        "intro_text": "r_c finds a loner who offers their healing skills in exchange for shelter.",
+        "success_text": [
+            "The new medicine cat is welcomed into the clan."
+        ],
+        "fail_text": [
+            "After hearing more about your clan, the loner politely declines joining the clan."
+        ],
+        "decline_text": "Your patrol politely declines their offer.",
+        "antagonize_text": "The patrol says that they can't take on another cat right now, but they point the loner in the direction of the neighboring clan.",
+        "antagonize_fail_text": "The patrol says that they can't take on another cat right now and tries to direct the loner somewhere else, but the loner hisses and says that they can find their own way.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "win_skills": ["great speaker", "excellent speaker"],
+        "min_cats": 1,
+        "max_cats": 6
+    }
+]
