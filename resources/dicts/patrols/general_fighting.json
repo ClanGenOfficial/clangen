@@ -11,7 +11,7 @@
             "Your patrol expertly fights the fox off. s_c is snapping at the fox's heels as they drive it from the territory."],
         "fail_text": [
             "Your patrol fails to drive away to fox, but luckily there were no injuries.", 
-            "", 
+            null, 
             "Your patrol follows the scent, but they get ambushed! r_c is caught in the fox's jaws and suffers a fatal wound.", 
             "The mother fox fights to defend her cubs, and r_c is injured in the attack."],
         "decline_text": "Your patrol decides not to pursue the fox.",
@@ -31,13 +31,13 @@
         "chance_of_success": 10,
         "exp": 50,
         "success_text": [
-            "",
+            null,
             "r_c bolts back to camp, yowling a warning!",
             "s_c sets up an ambush for the wandering dog, bloodying its snout and leading it on a wild chasing dance across the border and out of c_n territory.",
             "They don't feel like they have anything like the skill or power , but s_c would give their life for c_n, charging in to courageously lead the dog away from c_n territory. Each booming bark has to be the herald of their doom, each rancid breath the last thing they'll ever smell, but somehow, eventually, limbs and lungs burning, they leap to refuge."
         ],
         "fail_text": [
-            "",
+            null,
             "s_c would give their life to protect c_n, and as they charge past the huge dog to lead it far, far from c_n, they accept it. Fear gives them speed, but it only takes one successful hit. Miraculously they fly out of the dog's jaws while it shakes them, landing in a refuge. s_c is injured, desperate, and terrified - but they're alive.",
             "r_c would give their life to protect c_n, and as they lead the huge dog away from the clan, in their heart, they accept that's what they're doing. As darkness closes in around them and the dog's jaws descend again, r_c tries to sink their claws into its face, and hopes desperately that they led it far enough."
         ],
@@ -120,7 +120,7 @@
             "s_c unleashes all their battle experience, darting this way and that, ripping chunks of dog fur out as they drive it into the distance."],
         "fail_text": [
             "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait miserably and humiliatingly in a safe spot until the beast calms down.", 
-            "", 
+            null, 
             "The animal is far more tenacious than r_c ever expected, and once the fight starts, there's no escaping from it. As r_c's world goes dark, they have their fangs sunk in the dog's throat. At least they'll take the beast with them.", 
             "Small, yappy, but . . . still a dog. r_c peers down from the tree where the animal has pinned them, wincing in pain. They won't underestimate these ugly creatures again."],
         "decline_text": "The patrol decides not to pursue the dog.",
@@ -142,8 +142,8 @@
             "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until its nerve breaks, it tucks tail, and it runs from c_n territory headed deep into the wilderness."],
         "fail_text": [
             "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait exasperatedly in a safe spot until the beast calms down.", 
-            "", 
-            "", 
+            null, 
+            null, 
             "The dog gets a lucky hit in on r_c, though together all the cats are still able to drive it off successfully."],
         "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
         "chance_of_success": 60,
@@ -186,7 +186,7 @@
         ],
         "fail_text": [
             "The patrol is outnumbered by the rogues and is forced to retreat, luckily without taking any damage.", 
-            "",
+            null,
             "The rogues are bloodthirsty and kill r_c before they leave.",
             "The rogues fight viciously and leave r_c with a deep wound before they run off."
         ],
@@ -211,7 +211,7 @@
         ],
         "fail_text": [
             "Your patrol fails to drive the badger away, but luckily manages to escape any injuries.", 
-            "", 
+            null, 
             "The badger is angered when the patrol nears its den and badly injures r_c.",
             "The badger is furious when the patrol nears its den and kills r_c."
         ],
@@ -230,11 +230,11 @@
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the ground.",
         "success_text": [
             "The pawprints lead to a trespassing rogue and the patrol drives them off of the territory.", 
-            "",
+            null,
             "s_c charges towards the rogue, making all sorts of deranged sounds as slaver drips from their mouth. The rogue is thoroughly alarmed and flees. The rest of the cats praise s_c's quick thinking."],
         "fail_text": [
             "It turns out they were r_c's own pawprints . . . how embarrassing.", 
-            "",
+            null,
             "The pawprints lead to a trespassing rogue. The rogue is fierce and kills r_c before being run off.",
             "The pawprints lead to a trespassing rogue who injures r_c before being driven away."],
         "decline_text": "They decide not to investigate.",
@@ -270,7 +270,7 @@
             "The patrol stops to cool off in the shade of a tree for a heartbeat before continuing on their way."],
         "fail_text": [
             "No way, it's too hot for this. They can try to patrol again later.", 
-            "",
+            null,
             "r_c collapses from heat exhaustion. p_l carries them back to camp, but they don't recover.",
             "r_c collapses from heat exhaustion. p_l carries them back to camp."],
         "decline_text": "The patrol decides to head back to camp, they can patrol a different day",
@@ -304,13 +304,13 @@
         "exp": 30,
         "success_text": [
             "The patrol descends into battle without a second thought, eventually driving the rogues away.",
-            "",
+            null,
             "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the clan cats, the rogues turn tail and run.",
             "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
         ],
         "fail_text": [
-            "",
-            "",
+            null,
+            null,
             "The rogues are terrifyingly coordinated and are quick to use the patrol's shock and confusion against them. The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
             "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
         ],
@@ -334,13 +334,13 @@
         "exp": 30,
         "success_text": [
             "The patrol descends into battle without a second thought, eventually driving the rogues away.",
-            "",
+            null,
             "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the clan cats, the rogues turn tail and run.",
             "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
         ],
         "fail_text": [
-            "",
-            "",
+            null,
+            null,
             "The rogues greatly outnumber the patrol and have no trouble defeating them. The warrior's bodies are found the next day, covered in battle wounds and cold.",
             "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
         ],
@@ -364,11 +364,11 @@
         "exp": 30,
         "success_text": [
             "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but they manage to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from their lungs.",
-            "",
+            null,
             "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the clan cat, the rogues freeze. s_c sees their opportunity to run and takes it, racing back to the camp to gather more warriors and return."
         ],
         "fail_text": [
-            "",
+            null,
             "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. For a moment the rogues are stunned by the reaction, but the shock doesn't last long before they descend upon the warrior once more. Eventually, s_c has no choice but to escape before they're killed.",
             "The rogues greatly outnumber r_c and have no trouble killing the lone warrior. Their body is discovered the next day, covered in wounds and cold."
         ],
@@ -377,7 +377,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": [
-            "",
+            null,
             "This cat was killed when rogues ambushed them while on a solo patrol."
         ]
     },
@@ -397,8 +397,8 @@
             "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich plains outside of c_n territory."
         ],
         "fail_text": [
-            "",
-            "",
+            null,
+            null,
             "The rogues are terrifyingly coordinated and are quick to use the patrol's momentary surprise to their advantage. The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
             "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters and eventually the patrol is forced to retreat, r_c badly injured."
         ],

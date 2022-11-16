@@ -35,11 +35,11 @@
         "intro_text": "The patrol comes across a thunderpath.",
         "success_text": [
             "Your patrol crosses the thunderpath and can hunt on the other side.", 
-            "",
+            null,
             "s_c hears the growl of a monster rumbling closer and freezes in a crouch in the middle of the thunderpath. The monster goes right over them but miraculously leaves them unharmed."],
         "fail_text": [
             "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
-            "",
+            null,
             "r_c is hit by a monster while crossing and dies instantly.",
             "r_c is hit by a monster and debates retiring to the elder den."],
         "decline_text": "They decide it is better not to cross.",

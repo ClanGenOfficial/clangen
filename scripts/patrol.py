@@ -94,8 +94,10 @@ class Patrol():
         self.patrol_total_experience += cat.experience
         game.patrolled.append(cat)
 
-    def get_possible_patrols(self, current_season, biome, all_clans, game_setting_disaster = game.settings['disasters']):
+    def get_possible_patrols(self, current_season, biome, all_clans, patrol_size, game_setting_disaster = game.settings['disasters']):
         possible_patrols = []
+        final_patrols = []
+        patrol_size = len(self.patrol_cats)
         # general hunting patrols
         possible_patrols.extend(self.generate_patrol_events(GENERAL_HUNTING))
         
@@ -109,7 +111,20 @@ class Patrol():
         # fighting patrols
         possible_patrols.extend(self.generate_patrol_events(GENERAL_FIGHTING))
 
-        return possible_patrols
+        # one last check
+        for patrol in possible_patrols:
+            if patrol_size >= patrol.min_cats:
+                min_good = True
+            elif patrol_size < patrol.min_cats:
+                min_good = False
+            if patrol_size <= patrol.max_cats:
+                max_good = True
+            elif patrol_size > patrol.max_cats:
+                max_good = False
+            if max_good and min_good:
+                final_patrols.append(patrol)
+
+        return final_patrols
 
         # other_clan patrols
         if randint(1, 1) == 1 and self.other_clan is not None:
@@ -686,17 +701,17 @@ class Patrol():
         if c < chance:
             self.success = True
             # this adds the stat cat (if there is one)
-        if self.patrol_event.win_skills is not None and self.patrol_event.win_trait is not None:
-            for cat in self.patrol_cats:
-                if cat.skill in self.patrol_event.win_skills or cat.trait in self.patrol_event.win_trait:
-                    self.patrol_stat_cat = cat
+            if self.patrol_event.win_skills is not None and self.patrol_event.win_trait is not None:
+                for cat in self.patrol_cats:
+                    if cat.skill in self.patrol_event.win_skills or cat.trait in self.patrol_event.win_trait:
+                        self.patrol_stat_cat = cat
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
                     x = 3
-                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] != "":
+                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] is not None:
                     x = 2
             else:
-                if outcome >= 10 and len(fail_text) >= 2 and success_text[1] != "":
+                if outcome >= 10 and len(fail_text) >= 2 and success_text[1] is not None:
                     x = 1
                 else:
                     x = 0
@@ -719,17 +734,17 @@ class Patrol():
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills:
                     x = 1
-            elif outcome >= 15 and len(fail_text) > 1 and fail_text[1] != "":
+            elif outcome >= 15 and len(fail_text) > 1 and fail_text[1] is not None:
                 x = 1
-            elif outcome <= 10 and len(fail_text) > 3 and fail_text[3] != "":
+            elif outcome <= 10 and len(fail_text) > 3 and fail_text[3] is not None:
                 x = 3
                 self.handle_scars()
-            elif outcome >= 11 and len(fail_text) > 2 and fail_text[2] != "":
+            elif outcome >= 11 and len(fail_text) > 2 and fail_text[2] is not None:
                 x = 2
                 self.handle_deaths()
             else:
                 x = 0
-            if len(fail_text) >= 4 and fail_text[0] != "" and fail_text[1] != "":
+            if len(fail_text) >= 4 and fail_text[0] is not None and fail_text[1] is not None:
                 if outcome <= 10:
                     x = 3
                     self.handle_scars
@@ -787,10 +802,10 @@ class Patrol():
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
                     x = 3
-                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] != "":
+                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] is not None:
                     x = 2
             else:
-                if outcome >= 10 and len(fail_text) >= 2 and success_text[1] != "":
+                if outcome >= 10 and len(fail_text) >= 2 and success_text[1] is not None:
                     x = 1
                 else:
                     x = 0
@@ -804,12 +819,12 @@ class Patrol():
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills:
                     x = 1
-            elif outcome >= 15 and len(fail_text) >= 2 and fail_text[1] != "":
+            elif outcome >= 15 and len(fail_text) >= 2 and fail_text[1] is not None:
                 x = 1
-            elif outcome <= 10 and len(fail_text) >= 4 and fail_text[3] != "":
+            elif outcome <= 10 and len(fail_text) >= 4 and fail_text[3] is not None:
                 x = 2
                 self.handle_scars()
-            elif outcome >= 11 and len(fail_text) >= 3 and fail_text[2] != "":
+            elif outcome >= 11 and len(fail_text) >= 3 and fail_text[2] is not None:
                 x = 3
                 self.handle_deaths()
             else:
@@ -823,7 +838,7 @@ class Patrol():
         if self.success:
             for cat in self.patrol_cats:
                 cat.experience = cat.experience + (
-                    self.patrol_event.exp + 6 // len(self.patrol_cats)) // 5
+                    self.patrol_event.exp + 6 / len(self.patrol_cats)) / 5
                 cat.experience = min(cat.experience, 80)
                 cat.experience_level = self.experience_levels[floor(
                     cat.experience / 10)]

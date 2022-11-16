@@ -120,7 +120,7 @@
         "exp": 10,
         "success_text": [
             "p_l leads a successful fishing session, with almost everyone walking home with a fishy mouthful.",
-            "",
+            null,
             "s_c makes fishing look easy, giving out tips to any interested cats."
         ],
         "fail_text": ["Your patrol accidentally scares the fish away."],
@@ -155,7 +155,7 @@
         "exp": 20,
         "success_text": [
             "The patrol rallies almost instantly, and through teamwork manage to corner and catch the rabbit!",
-            "",
+            null,
             "s_c reacts quicker than thought, tearing off after the rabbit and bringing it down."
         ],
         "fail_text": ["Your patrol jumps after it, but the rabbit has too great of a head start.",
@@ -289,7 +289,7 @@
         ],
         "fail_text": [
             "r_c leaps back just as the porcupine whips its tail towards them! That was close! They decide to give the porcupine a wide berth.",
-            "",
+            null,
             "r_c doesn't react quickly enough to the porcupine's warning. It charges sideways at them, its quills ready to impale! r_c is badly injured and dies a few days later from the wounds.",
             "The porcupine whips around, digging the quills of its tail into r_c! r_c returns to camp with a nose full of quills and a wounded pride."
         ],
@@ -375,7 +375,7 @@
         "fail_text": [
         "The squirrels are far too excited and quick - they slip right out from between the patrol's claws.",
         "s_c runs at the squirrels before anyone else can pounce, laughing at the prey's antics and playfully jumping into the middle of their game.  The squirrels scatter away at the disturbance and disappear into the canopy.",
-        "",
+        null,
         "r_c tries to climb up after them but slips and falls, twisting their paw."],
         "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
         "fail_trait": ["troublesome", "childish", "playful"],
@@ -400,7 +400,7 @@
         "fail_text": [
         "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now.  Checking the burrow was a waste of time.",
         "s_c sticks their nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
-        "",
+        null,
         "Oh no! The burrow was home to a wolverine, now angry at the disturbance. The patrol bolts away to escape its wrath, but r_c doesn't quite move fast enough and is caught in its claws until another cat turns back to help."
         ],
         "fail_trait": ["bold", "ambitious", "childish", "impulsive"],
@@ -432,7 +432,7 @@
         "min_cats": 1,
         "max_cats": 2,
         "history_text": [
-            "",
+            null,
             "r_c was killed after an unfortunate experience with a wolverine."
         ]
     },
@@ -584,7 +584,7 @@
         "min_cats": 2,
         "max_cats": 4,
         "history_text": [
-            "",
+            null,
             "r_c was killed by a wolf protecting its meal."
         ]
     },
@@ -614,7 +614,7 @@
         "min_cats": 1,
         "max_cats": 1,
         "history_text": [
-            "",
+            null,
             "r_c was killed by a wolf protecting its meal."
         ]
     },
