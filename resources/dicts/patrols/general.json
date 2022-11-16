@@ -139,7 +139,7 @@
     {
         "patrol_id": "gen_gen_twolegs1",
         "biome": "Any",
-        "season": "Greenleaf",
+        "season": "greenleaf",
         "tags": ["border"],
         "intro_text": "The patrol comes across a strange Twoleg object smelling slightly of smoke and prey.",
         "success_text": [

@@ -19,7 +19,11 @@
         "exp": 20,
         "win_skills": ["good fighter", "great fighter", "excellent fighter"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "history_text": [
+            "This cat is scarred from a fight with a mother fox.",
+            "This cat was killed in a fight with an angry mother fox."
+        ]
     },
     {
         "patrol_id": "gen_bord_dog1",
@@ -47,8 +51,8 @@
         "max_cats": 1,
         "min_cats": 1,
         "history_text": [
-            "r_c is scarred from bravely defending the clan against a dog.",
-            "r_c died to keep c_n safe from a large dog."
+            "This cat is scarred from bravely defending the clan against a dog.",
+            "This cat died to keep c_n safe from a large dog."
         ]
     },
     {
@@ -76,8 +80,8 @@
         "win_skills": ["excellent fighter"],
         "win_trait": ["altruistic", "ambitious", "compassionate", "confident", "empathetic", "faithful", "fierce", "loving", "loyal", "responsible", "righteous"], 
         "history_text": [
-            "r_c is scarred from bravely defending the clan against a dog.",
-            "r_c died to keep c_n safe from a large dog."
+            "This cat is scarred from bravely defending the clan against a dog.",
+            "This cat died to keep the clan safe from a large dog."
         ]
     },
     {
@@ -105,8 +109,8 @@
         "win_skills": ["excellent fighter"],
         "win_trait": ["altruistic", "ambitious", "compassionate", "confident", "empathetic", "faithful", "fierce", "loving", "loyal", "responsible", "righteous"], 
         "history_text": [
-            "r_c is scarred from bravely defending the clan against a dog.",
-            "r_c died to keep c_n safe from a large dog."
+            "This cat is scarred from bravely defending the clan against a dog.",
+            "This cat died to keep the clan safe from a large dog."
         ]
     },
     {
@@ -129,7 +133,11 @@
         "exp": 20,
         "min_cats": 1,
         "max_cats": 1,
-        "win_skills": ["good fighter","great fighter","excellent fighter"]
+        "win_skills": ["good fighter","great fighter","excellent fighter"],
+        "history_text": [
+            "This cat got a scar from a fight with a small dog, but they always say it was a huge dog.",
+            "This cat was killed in a fight with a small dog, but they took the dog out with them."
+        ]
     },
     {
         "patrol_id": "gen_bord_smalldog2",
@@ -151,7 +159,10 @@
         "exp": 20,
         "min_cats": 2,
         "max_cats": 3,
-        "win_skills": ["good fighter","great fighter","excellent fighter"]
+        "win_skills": ["good fighter","great fighter","excellent fighter"],
+        "history_text": [
+            "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
+        ]
     },
     {
         "patrol_id": "gen_bord_smalldog3",
@@ -171,7 +182,10 @@
         "exp": 20,
         "min_cats": 4,
         "max_cats": 6,
-        "win_skills": ["good fighter","great fighter","excellent fighter"]
+        "win_skills": ["good fighter","great fighter","excellent fighter"],
+        "history_text": [
+            "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
+        ]
     },
     {
         "patrol_id": "gen_bord_rogues1",
@@ -197,7 +211,11 @@
         "win_skills": ["excellent fighter"],
         "win_trait": ["fierce", "bloodthirsty"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "history_text": [
+            "This cat was scarred in a battle with rogues.",
+            "This cat died while attempting to fight off a rogue."
+        ]
     },
     {
         "patrol_id": "gen_bord_badger1",
@@ -221,7 +239,11 @@
         "exp": 20,
         "win_skills": ["excellent fighter"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "history_text": [
+            "This cat was scarred in a fight with a badger.",
+            "This cat died at jaws of an angry badger."
+        ]
     },
     {
         "patrol_id": "gen_bord_rogues2",
@@ -243,7 +265,11 @@
         "exp": 20,
         "win_skills": ["good fighter" ,"very smart", "extremely smart", "excellent fighter"],
         "min_cats": 2,
-        "max_cats": 6
+        "max_cats": 6,
+        "history_text": [
+            "This cat was scarred in a battle with rogues.",
+            "This cat died while attempting to fight off a rogue."
+        ]
     },
     {
         "patrol_id": "gen_bord_solo1",
@@ -263,7 +289,7 @@
     {
         "patrol_id": "gen_bord_heat1",
         "biome": "Any",
-        "season": "Greenleaf",
+        "season": "greenleaf",
         "tags": ["border", "death", "illness"],
         "intro_text": "It is extremely hot out today. r_c debates turning back home.",
         "success_text": [
@@ -278,17 +304,21 @@
         "chance_of_success": 50,
         "exp": 20,
         "min_cats": 2,
-        "max_cats": 6
+        "max_cats": 6,
+        "history_text": [
+            "This cat got heatstroke while on a patrol.",
+            "This cat died from heat heat stroke."
+        ]
     },
     {
         "patrol_id": "gen_bord_heat2",
         "biome": "Any",
-        "season": "Greenleaf",
+        "season": "greenleaf",
         "tags": ["border"],
-        "intro_text": "r_c spots a pond and debates if they should stop for a quick swim to cool off",
-        "success_text": ["They stop to swim for a few moments and feel rejuvenated"],
-        "fail_text": ["They get distracted while splashing in the water"],
-        "decline_text": "r_c decides to continue with the patrol instead",
+        "intro_text": "r_c spots a pond and debates if they should stop for a quick swim to cool off.",
+        "success_text": ["They stop to swim for a few moments and feel rejuvenated."],
+        "fail_text": ["They get distracted while splashing in the water."],
+        "decline_text": "r_c decides to continue with the patrol instead.",
         "chance_of_success": 50,
         "exp": 5,
         "min_cats": 1,
@@ -320,7 +350,7 @@
         "min_cats": 4,
         "max_cats": 6,
         "history_text": [
-            "r_c was badly scarred when rogues ambushed their patrol.",
+            "This cat was badly scarred when rogues ambushed their patrol.",
             "This cat was killed when rogues ambushed their patrol."
         ]
     },
@@ -350,7 +380,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "history_text": [
-            "r_c was badly scarred when rogues ambushed their patrol.",
+            "This cat was badly scarred when rogues ambushed their patrol.",
             "This cat was killed when rogues ambushed their patrol."
         ]
     },
