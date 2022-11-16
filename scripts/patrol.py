@@ -34,8 +34,7 @@ class Patrol():
         self.patrol_stat_cat = None
         self.other_clan = None
         self.experience_levels = [
-            'very low', 'low', 'slightly low', 'average', 'somewhat high',
-            'high', 'very high', 'master', 'max'
+            'very low', 'low', 'average', 'high', 'master', 'max'
         ]
 
     def add_patrol_cats(self):
