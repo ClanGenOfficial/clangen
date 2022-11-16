@@ -835,22 +835,26 @@ class Patrol():
                 print("After: " + str(cat.experience))
 
     def handle_deaths(self):
-        self.patrol_random_cat.die()
         if self.patrol_random_cat.status == 'leader':
             if "gone" in self.patrol_event.tags:
                 game.clan.leader_lives -= 9 # taken by twolegs, fall into ravine
             else:
                 game.clan.leader_lives -= 1
-            self.patrol_random_cat.death_event.append(
-                        f'{self.patrol_event.history_text[1]}')
+        if len(self.patrol_event.history_text) >= 2:
+            self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
+        else:
+            self.patrol_random_cat.death_event.append(f'This cat died while patrolling.')
+        self.patrol_random_cat.die()
         if "disaster" in self.patrol_event.tags:
             for cat in self.patrol_cats:
                 cat.experience += self.patrol_event.exp
                 cat.experience = min(cat.experience, 80)
                 if cat.status == 'leader':
                     game.clan.leader_lives -= 10
-                self.patrol_random_cat.death_event.append(
-                        f'{self.patrol_event.history_text[1]}')
+                if len(self.patrol_event.history_text) >= 2:
+                    self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
+                else:
+                    self.patrol_random_cat.death_event.append(f'This cat died while patrolling.')
                 cat.die()
 
     def handle_scars(self):
@@ -860,14 +864,20 @@ class Patrol():
                     self.patrol_random_cat.specialty = choice(
                         [choice(scars1),
                         choice(scars2)])
-                    self.patrol_random_cat.scar_event.append(
-                        f'{self.patrol_event.history_text[0]}')
+                    if len(self.patrol_event.history_text) >= 1:
+                        self.patrol_random_cat.scar_event.append(
+                            f'{self.patrol_event.history_text[0]}')
+                    else:
+                        self.patrol_random_cat.death_event.append(f'This cat gained a scar while patrolling.')
                 elif self.patrol_random_cat.specialty2 is None:
                     self.patrol_random_cat.specialty2 = choice(
                         [choice(scars1),
                         choice(scars2)])
-                    self.patrol_random_cat.scar_event.append(
-                        f'{self.patrol_event.history_text[0]}')
+                    if len(self.patrol_event.history_text) >= 1:
+                        self.patrol_random_cat.scar_event.append(
+                            f'{self.patrol_event.history_text[0]}')
+                    else:
+                        self.patrol_random_cat.death_event.append(f'This cat gained a scar while patrolling.')
         """elif self.patrol_event.patrol_id == 904:
             if self.patrol_random_cat.specialty is None:
                 self.patrol_random_cat.specialty = "SNAKE"
