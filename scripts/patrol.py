@@ -837,11 +837,13 @@ class Patrol():
     def handle_exp_gain(self):
         if self.success:
             for cat in self.patrol_cats:
+                print("EXP Before: " + str(cat.experience))
                 cat.experience = cat.experience + (
-                    self.patrol_event.exp + 6 / len(self.patrol_cats)) / 5
+                    self.patrol_event.exp / len(self.patrol_cats)) / 3
                 cat.experience = min(cat.experience, 80)
                 cat.experience_level = self.experience_levels[floor(
                     cat.experience / 10)]
+                print("After: " + str(cat.experience))
 
     def handle_deaths(self):
         self.patrol_random_cat.die()

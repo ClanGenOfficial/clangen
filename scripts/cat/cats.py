@@ -1262,8 +1262,8 @@ class Cat():
 
     @experience.setter
     def experience(self, exp):
-        if (exp > 80):
-            exp = 80
+        if (exp > 100):
+            exp = 100
         self._experience = exp
         experience_levels = [
             'very low', 'low', 'slightly low', 'average', 'somewhat high',
