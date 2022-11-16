@@ -156,6 +156,7 @@ class Cat():
         self.injury = None
         self.scar_event = []
         self.df = False
+        self.experience_level = None
 
         # setting ID
         if ID is None:
@@ -1265,6 +1266,7 @@ class Cat():
         if (exp > 100):
             exp = 100
         self._experience = exp
+        experience_level = self.experience_level
         experience_levels = [
             'very low', 'low', 'average', 'high', 'master', 'max'
         ]
