@@ -643,7 +643,7 @@ class Patrol():
     def generate_patrol_events(self, patrol_dict):
         all_patrol_events = []        
         clan_biome = game.clan.biome.lower()
-        season = game.clan.current_season
+        season = game.clan.current_season.lower()
         correct_biome = False
         correct_season = False
         cat_number = False
@@ -780,10 +780,8 @@ class Patrol():
                 n = 1
             elif outcome <= 10 and len(fail_text) > 3 and fail_text[3] is not None:
                 n = 3
-                self.handle_scars()
             elif outcome >= 11 and len(fail_text) > 2 and fail_text[2] is not None:
                 n = 2
-                self.handle_deaths()
             elif fail_text[0] is None:
                 if fail_text[3] is not None:
                     n = 3
@@ -791,13 +789,10 @@ class Patrol():
                     n = 1
             else:
                 n = 0
-            if len(fail_text) >= 4 and fail_text[0] is None and fail_text[1] is None:
-                if outcome <= 10:
-                    n = 3
-                    self.handle_scars
-                elif outcome >= 11:
-                    n = 2
-                    self.handle_deaths
+            if n == 2:
+                self.handle_deaths()
+            elif n == 3:
+                self.handle_scars()
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
@@ -840,11 +835,12 @@ class Patrol():
                 game.clan.leader_lives -= 9 # taken by twolegs, fall into ravine
             else:
                 game.clan.leader_lives -= 1
+        self.patrol_random_cat.die()
         if len(self.patrol_event.history_text) >= 2:
             self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
         else:
             self.patrol_random_cat.death_event.append(f'This cat died while patrolling.')
-        self.patrol_random_cat.die()
+        
         if "disaster" in self.patrol_event.tags:
             for cat in self.patrol_cats:
                 cat.experience += self.patrol_event.exp
