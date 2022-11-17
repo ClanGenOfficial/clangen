@@ -654,9 +654,9 @@ class Cat():
             if self.status == "leader":
                 game.clan.leader_lives -= 1
                 if game.clan.leader_lives > 0:
-                    game.cur_events_list.append(f"{self.name} lost a life to {self.illness.name}")
+                    game.cur_events_list.append(f"{self.name} lost a life to {self.illness.name}.")
                 elif game.clan.leader_lives <= 0:
-                    game.cur_events_list.append(f"{self.name} lost the last life to {self.illness.name}")
+                    game.cur_events_list.append(f"{self.name} lost the last life to {self.illness.name}.")
             self.die()
             return
 

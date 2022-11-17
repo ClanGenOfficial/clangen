@@ -13,7 +13,7 @@
     },
     "bruises": {
         "r_c fought a hawk, but got hardly injured.": 2,
-        "r_c fought a hawk and got injured": 3,
+        "r_c fought a hawk and got injured.": 3,
         "r_c defended a clanmate from a fox and got injured.": 3,
         "r_c defended a clanmate from a rough and got injured.": 4,
         "r_c defended a clanmate from a dog and got injured.": 2,
@@ -46,8 +46,8 @@
     "scrapes": {
         "r_c fought a rough and got injured.": 2,
         "r_c fought a fox and got injured.": 2,
-        "r_c fought a dog and got injured": 1,
-        "r_c fought a rat and got injured": 3
+        "r_c fought a dog and got injured.": 1,
+        "r_c fought a rat and got injured.": 3
     },
     "torn ear": {
         "r_c was wandering through some dense shrubs and fell a short, piercing pain in the ear.": 1

@@ -133,7 +133,7 @@
             },
             {
                 "name": "yellowcough",
-                "chance": 4
+                "lower_by": 4
             }
         ],
         "risks": [
@@ -345,25 +345,25 @@
             },
             {
                 "name": "yellowcough",
-                "chance": 4
+                "lower_by": 4
             }
         ],
         "risks": [
             {
                 "name": "running nose",
-                "lower_by": 4
+                "chance": 4
             },
             {
                 "name": "whitecough",
-                "lower_by": 3
+                "chance": 3
             },
             {
                 "name": "chills",
-                "lower_by": 5
+                "chance": 5
             },
             {
                 "name": "greencough",
-                "lower_by": 5
+                "chance": 5
             },
             {
                 "name": "yellowcough",
