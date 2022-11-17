@@ -758,9 +758,9 @@ class Patrol():
                         self.handle_clan_relations(difference = int(1))
                 elif "new_cat" in self.patrol_event.tags:
                     if antagonize:
-                        self.handle_reputation(10)
+                        self.handle_reputation(-10)
                     else:
-                        self.handle_reputation(0)
+                        self.handle_reputation(10)
             self.handle_mentor_app_pairing()
             self.final_success = self.patrol_event.success_text[n]
             print(str(self.patrol_event.patrol_id))
@@ -801,9 +801,9 @@ class Patrol():
                         self.handle_clan_relations(difference = int(-1))
                 elif "new_cat" in self.patrol_event.tags:
                     if antagonize:
-                        self.handle_reputation(-10)
-                    else:
                         self.handle_reputation(-5)
+                    else:
+                        self.handle_reputation(0)
                 elif "disaster" in self.patrol_event.tags:
                     self.handle_deaths()
             self.handle_mentor_app_pairing()
