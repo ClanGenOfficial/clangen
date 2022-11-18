@@ -1039,7 +1039,7 @@ class MakeClanScreen(Screens):
                                 hotkey=[2])
         else:
             buttons.draw_button(('center', 350), text='Done', available=False)
-
+    
     def sixth_phase(self):
         if mapavailable:
             for y in range(44):
@@ -1256,6 +1256,7 @@ class MakeClanScreen(Screens):
                                 biome='Beach',
                                 available=game.switches['biome'] != 'Beach',
                                 hotkey=[4])
+            
 
     def on_use(self):
         if len(game.switches['clan_name']) == 0:
@@ -2175,9 +2176,9 @@ class ListScreen(Screens):
                                 text='>',
                                 list_page=game.switches['list_page'] + 1,
                                 hotkey=[21])
-        buttons.draw_button((-70, 140),
-                            text='Cats Outside Clans',
-                            cur_screen='other screen')
+        #buttons.draw_button((-70, 140),
+        #                    text='Cats Outside Clans',
+        #                    cur_screen='other screen')
 
         draw_menu_buttons()
 
@@ -2186,7 +2187,7 @@ class ListScreen(Screens):
 
 
 class OtherScreen(Screens):
-
+    """
     def on_use(self):
         verdana_big.text('Cats Outside The Clan', ('center', 30))
         verdana.text('ALL CATS LIST', ('center', 100))
@@ -2256,6 +2257,7 @@ class OtherScreen(Screens):
                             cur_screen='list screen',
                             hotkey=[9])
         draw_menu_buttons()
+        """
 
 
 # def choose_banner():
@@ -2409,16 +2411,21 @@ class PatrolEventScreen(Screens):
                                             str(patrol.patrol_random_cat.name))
             intro_text = intro_text.replace('p_l',
                                             str(patrol.patrol_leader.name))
+            intro_text = intro_text.replace('o_c_n', str(patrol.other_clan.name) + 'Clan')
+            intro_text = intro_text.replace('c_n', str(game.clan.name) + 'Clan')
+            if patrol.patrol_stat_cat is not None:
+                intro_text = intro_text.replace('s_c', str(patrol.patrol_stat_cat.name))
             verdana.blit_text(intro_text, (150, 200))
             buttons.draw_button((290, 320), text='Proceed', event=-2)
             buttons.draw_button((150, 320), text='Do Not Proceed', event=2)
-            if patrol.patrol_event.patrol_id in [500, 501, 502, 503, 510]:
+            if patrol.patrol_event.patrol_id in [500, 501, 502, 503, 510, 800, 801, 802, 803, 804, 805]:
                 buttons.draw_button((150, 290), text='Antagonize', event=3)
 
         if game.switches['event'] == -2:
             patrol.calculate_success()
             game.switches['event'] = 1
         elif game.switches['event'] == 3:
+            patrol.calculate_success_antagonize()
             game.switches['event'] = 4
         if game.switches['event'] > 0:
             if game.switches['event'] == 1:
@@ -2428,6 +2435,13 @@ class PatrolEventScreen(Screens):
                         'r_c', str(patrol.patrol_random_cat.name))
                     success_text = success_text.replace(
                         'p_l', str(patrol.patrol_leader.name))
+                    success_text = success_text.replace(
+                        'o_c_n', str(patrol.other_clan.name) + 'Clan')
+                    success_text = success_text.replace(
+                        'c_n', str(game.clan.name) + 'Clan')
+                    if patrol.patrol_stat_cat is not None:
+                        success_text = success_text.replace(
+                        's_c', str(patrol.patrol_stat_cat.name))
                     verdana.blit_text(success_text, (150, 200))
                 else:
                     fail_text = patrol.patrol_event.fail_text
@@ -2435,6 +2449,13 @@ class PatrolEventScreen(Screens):
                         'r_c', str(patrol.patrol_random_cat.name))
                     fail_text = fail_text.replace(
                         'p_l', str(patrol.patrol_leader.name))
+                    fail_text = fail_text.replace(
+                        'o_c_n', str(patrol.other_clan.name) + 'Clan')
+                    fail_text = fail_text.replace(
+                        'c_n', str(game.clan.name) + 'Clan')
+                    if patrol.patrol_stat_cat is not None:
+                        fail_text = fail_text.replace(
+                        's_c', str(patrol.patrol_stat_cat.name))
                     verdana.blit_text(fail_text, (150, 200))
             elif game.switches['event'] == 2:
                 decline_text = patrol.patrol_event.decline_text
@@ -2442,14 +2463,43 @@ class PatrolEventScreen(Screens):
                     'r_c', str(patrol.patrol_random_cat.name))
                 decline_text = decline_text.replace(
                     'p_l', str(patrol.patrol_leader.name))
+                decline_text = decline_text.replace(
+                        'o_c_n', str(patrol.other_clan.name) + 'Clan')
+                decline_text = decline_text.replace(
+                        'c_n', str(game.clan.name) + 'Clan')
+                if patrol.patrol_stat_cat is not None:
+                        decline_text = decline_text.replace(
+                        's_c', str(patrol.patrol_stat_cat.name))
                 verdana.blit_text(decline_text, (150, 200))
             elif game.switches['event'] == 4:
-                antagonize_text = patrol.patrol_event.antagonize_text
-                antagonize_text = antagonize_text.replace(
-                    'r_c', str(patrol.patrol_random_cat.name))
-                antagonize_text = antagonize_text.replace(
-                    'p_l', str(patrol.patrol_leader.name))
-                verdana.blit_text(antagonize_text, (150, 200))
+                if patrol.success:
+                    antagonize_text = patrol.patrol_event.antagonize_text
+                    antagonize_text = antagonize_text.replace(
+                        'r_c', str(patrol.patrol_random_cat.name))
+                    antagonize_text = antagonize_text.replace(
+                        'p_l', str(patrol.patrol_leader.name))
+                    antagonize_text = antagonize_text.replace(
+                            'o_c_n', str(patrol.other_clan.name) + 'Clan')
+                    antagonize_text = antagonize_text.replace(
+                            'c_n', str(game.clan.name) + 'Clan')
+                    if patrol.patrol_stat_cat is not None:
+                            antagonize_text = antagonize_text.replace(
+                            's_c', str(patrol.patrol_stat_cat.name))
+                    verdana.blit_text(antagonize_text, (150, 200))
+                else:
+                    antagonize_fail_text = patrol.patrol_event.antagonize_fail_text
+                    antagonize_fail_text = antagonize_fail_text.replace(
+                        'r_c', str(patrol.patrol_random_cat.name))
+                    antagonize_fail_text = antagonize_fail_text.replace(
+                        'p_l', str(patrol.patrol_leader.name))
+                    antagonize_fail_text = antagonize_fail_text.replace(
+                            'o_c_n', str(patrol.other_clan.name) + 'Clan')
+                    antagonize_fail_text = antagonize_fail_text.replace(
+                            'c_n', str(game.clan.name) + 'Clan')
+                    if patrol.patrol_stat_cat is not None:
+                            antagonize_fail_text = antagonize_fail_text.replace(
+                            's_c', str(patrol.patrol_stat_cat.name))
+                    verdana.blit_text(antagonize_fail_text, (150, 200))
             buttons.draw_button((150, 350),
                                 text='Return to Clan',
                                 cur_screen='clan screen')
@@ -3261,12 +3311,14 @@ class OptionsScreen(Screens):
         y_change = 50
 
         if not the_cat.dead and not the_cat.exiled:
+            """
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Exile Cat',
                                 cat_value=game.switches['cat'],
                                 hotkey=[12],
                                 cur_screen='other screen')
             button_count += 1
+            """
             buttons.draw_button((x_value, y_value + button_count * y_change),
                                 text='Kill Cat',
                                 kill_cat=the_cat,
@@ -3382,7 +3434,7 @@ class StatsScreen(Screens):
                      (100, 400))
         draw_menu_buttons()
 
-
+"""
 class MapScreen(Screens):
 
     def on_use(self):
@@ -3539,7 +3591,7 @@ class MapScreen(Screens):
         except:
             game.map_info = load_map("Fallback")
             print("Default map loaded.")
-
+"""
 
 class RelationshipScreen(Screens):
     bool = {True: 'on', False: 'off', None: 'None'}
@@ -3948,7 +4000,7 @@ option_screen = OptionsScreen('options screen')
 language_screen = LanguageScreen('language screen')
 stats_screen = StatsScreen('stats screen')
 other_screen = OtherScreen('other screen')
-map_screen = MapScreen('map screen')
+#map_screen = MapScreen('map screen')
 relationship_screen = RelationshipScreen('relationship screen')
 relationship_event_screen = RelationshipEventScreen(
     'relationship event screen')
@@ -3994,12 +4046,14 @@ def draw_menu_buttons():
                         text='Allegiances',
                         cur_screen='allegiances screen',
                         hotkey=[7])
+    buttons.draw_button((50, 80),
+                        text='Stats',
+                        cur_screen='stats screen',
+                        hotkey=[1])
+"""
     buttons.draw_button((-70, 110),
                         text='Map',
                         cur_screen='map screen',
                         available=mapavailable,
                         hotkey=[8])
-    buttons.draw_button((50, 80),
-                        text='Stats',
-                        cur_screen='stats screen',
-                        hotkey=[1])
+"""

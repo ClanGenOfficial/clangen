@@ -156,9 +156,6 @@ class Events(object):
                     other_clan.relations = 10
                 else:
                     self.at_war = False
-                    r_num = choice([-1, 1])
-                    other_clan.relations = str(
-                        int(other_clan.relations) + r_num)
             if war_notice:
                 game.cur_events_list.append(war_notice)
 
