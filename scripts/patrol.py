@@ -187,7 +187,7 @@ class Patrol():
                 correct_season = True
             if patrol.tags is not None:
                 if "apprentice" in patrol.tags:
-                    if "apprentice" not in patrol.patrol_statuses:
+                    if "apprentice" not in self.patrol_statuses:
                         apprentice = False
                     else:
                         apprentice = True
