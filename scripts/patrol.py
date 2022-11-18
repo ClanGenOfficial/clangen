@@ -164,8 +164,6 @@ class Patrol():
                 possible_patrols.extend(self.generate_patrol_events(OTHER_CLAN_HOSTILE))
 
         # one last check
-        clan_biome = game.clan.biome.lower()
-        season = game.clan.current_season.lower()
         correct_biome = False
         correct_season = False
         for patrol in possible_patrols:
@@ -177,11 +175,11 @@ class Patrol():
                 max_good = True
             elif patrol_size > patrol.max_cats:
                 max_good = False
-            if patrol.biome == clan_biome:
+            if patrol.biome == biome:
                 correct_biome = True
             elif patrol.biome == "Any":
                 correct_biome = True
-            if patrol.season == season:
+            if patrol.season == current_season:
                 correct_season = True
             elif patrol.season == "Any":
                 correct_season = True
