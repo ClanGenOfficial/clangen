@@ -437,7 +437,7 @@
         ],
         "fail_trait": ["bold", "ambitious", "childish", "impulsive"],
         "min_cats": 1,
-        "max_cats": 2,
+        "max_cats": 1,
         "history_text": [
             null,
             "r_c was killed after an unfortunate experience with a wolverine."
