@@ -723,6 +723,7 @@ class Patrol():
 
     def handle_exp_gain(self):
         gm_modifier = 1
+        base_exp = 10
         patrol_exp = self.patrol_event.exp
         if game.switches['game_mode'] == 'classic':
             gm_modifier = gm_modifier
@@ -734,7 +735,7 @@ class Patrol():
             for cat in self.patrol_cats:
                 print("EXP Before: " + str(cat.experience))
                 gained_exp = ((patrol_exp) / len(self.patrol_cats)) / gm_modifier
-                cat.experience = int(cat.experience + gained_exp)
+                cat.experience = int(cat.experience + base_exp + gained_exp)
                 print("After: " + str(cat.experience))
 
     def handle_deaths(self):
