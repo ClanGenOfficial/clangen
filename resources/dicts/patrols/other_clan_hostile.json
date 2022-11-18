@@ -10,7 +10,7 @@
         "exp": 10,
         "success_text": [
                 "The patrol remains calm and collected, ignoring the aggression.  Eventually the o_c_n patrol gives up on their taunting and leaves the area, deflated by the lack of reaction.",
-                "",
+                null,
                 "s_c is quick to strike up conversation with the other patrol, trying to get to the root of their rudeness.  Eventually the problem is smoothed over, nothing but a misunderstanding and unfounded assumptions.",
                 "s_c is quick to strike up conversation with the other patrol, trying to get to the root of their rudeness.  Eventually the problem is smoothed over, nothing but a misunderstanding and unfounded assumptions."
         ],
@@ -46,7 +46,7 @@
         "exp": 10,
         "success_text": [
                 "The patrol remains calm and collected, ignoring the aggression.  Eventually the o_c_n patrol gives up on their taunting and leaves the area, deflated by the lack of reaction.",
-                "",
+                null,
                 "s_c postures right back at the o_c_n cats, drawing themselves up to their full height and baring their teeth.  The other patrol backs down a bit, they seem to know of s_c's reputation in battle.  The o_c_n cats eventually leave, cowed by the display but with begrudging respect for s_c's strength.",
                 "s_c is quick to strike up conversation with the other patrol, playfully poking fun at both o_c_n and c_n.  Their antics lighten the mood and make the other patrol cats laugh despite their previous aggression.  Situation successfully diffused and cats on both sides feeling surprisingly friendly toward each other, the two patrols part ways."
         ],
