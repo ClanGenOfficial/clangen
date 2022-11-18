@@ -7,7 +7,7 @@
         "intro_text": "Your patrol catches the scent of a fox.",
         "decline_text": "Your patrol decides not to pursue the fox.",
         "chance_of_success": 40,
-        "exp": 20,
+        "exp": 10,
         "success_text": [
         "Your patrol finds the fox and drives it away.",
         null,
@@ -37,7 +37,7 @@
         "intro_text":  "Your patrol catches the scent of a fox.",
         "decline_text": "Your patrol decides not to pursue the fox.",
         "chance_of_success": 40,
-        "exp": 20,
+        "exp": 10,
         "success_text": [
         "Your patrol finds the fox and drives it away.",
         "The patrol mobs the fox, using their number to confuse it and attack it safely until it turns tail and runs.",

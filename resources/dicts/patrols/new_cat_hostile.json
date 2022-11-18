@@ -16,7 +16,7 @@
         "antagonize_text": "Your patrol tells the cat to leave or feel their claws. The loner seems to choose life and quickly takes off.",
         "antagonize_fail_text": "Your patrol advances threateningly towards the loner, who retaliates with a quick swipe to p_l's muzzle. While p_l is stunned, they make their getaway.",
         "chance_of_success": 40,
-        "exp": 20,
+        "exp": 10,
         "win_skills": ["great speaker", "excellent speaker"],
         "min_cats": 1,
         "max_cats": 6
@@ -30,7 +30,7 @@
         "intro_text": "Your patrol scents a kittypet on the territory. They confront the cat, who quickly surrenders and begs for shelter.",
         "decline_text": "Your patrol decides the kittypet isn't worth their time.",
         "chance_of_success": 40,
-        "exp": 20,
+        "exp": 10,
         "success_text": [
             "The patrol relents and the kittypet is allowed to join the Clan.",
             "The patrol relents and the kittypet is allowed to join the Clan, bringing along their litter of hungry kits."
@@ -62,7 +62,7 @@
         "antagonize_text": "Your patrol drives the cat off of the territory. It's not c_n's problem.",
         "antagonize_fail_text": "The patrol tries to drive the cat away, but they trip and stumble over a loose twig. They lay on the ground and don't get back up. The patrol takes a bit of time to bury them - just to keep the scavengers away.",
         "chance_of_success": 40,
-        "exp": 20,
+        "exp": 10,
         "win_skills": ["smart", "very smart", "extremely smart"],
         "min_cats": 1,
         "max_cats": 6
@@ -85,7 +85,7 @@
         "antagonize_text": "Your patrol moves the kit away from the territory, they have no interest in strange kits.",
         "antagonize_fail_text": "The kit smells of two-legs, your patrol has no interest in what will surely grow to be a weak cat.",
         "chance_of_success": 40,
-        "exp": 20,
+        "exp": 10,
         "win_skills": ["smart", "very smart", "extremely smart"],
         "min_cats": 1,
         "max_cats": 6
@@ -107,7 +107,7 @@
         "antagonize_text": "Healer or not, your patrol tells the cat to leave or feel their claws. The loner seems to choose life and quickly takes off.",
         "antagonize_fail_text": "Your patrol advances threateningly towards the loner, who retaliates with a quick swipe to p_l's muzzle. While p_l is stunned, they make their getaway.",
         "chance_of_success": 40,
-        "exp": 20,
+        "exp": 10,
         "win_skills": ["great speaker", "excellent speaker"],
         "min_cats": 1,
         "max_cats": 6
