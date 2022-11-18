@@ -99,7 +99,7 @@ class Patrol():
         patrol_size = len(self.patrol_cats)
         reputation = game.clan.reputation
         other_clan = self.other_clan
-        clan_relations = other_clan.relations
+        clan_relations = int(other_clan.relations)
         hostile_rep = False
         neutral_rep = False
         welcoming_rep = False
@@ -164,6 +164,10 @@ class Patrol():
                 possible_patrols.extend(self.generate_patrol_events(OTHER_CLAN_HOSTILE))
 
         # one last check
+        clan_biome = game.clan.biome.lower()
+        season = game.clan.current_season.lower()
+        correct_biome = False
+        correct_season = False
         for patrol in possible_patrols:
             if patrol_size >= patrol.min_cats:
                 min_good = True
@@ -173,7 +177,15 @@ class Patrol():
                 max_good = True
             elif patrol_size > patrol.max_cats:
                 max_good = False
-            if max_good and min_good:
+            if patrol.biome == clan_biome:
+                correct_biome = True
+            elif patrol.biome == "Any":
+                correct_biome = True
+            if patrol.season == season:
+                correct_season = True
+            elif patrol.season == "Any":
+                correct_season = True
+            if max_good and min_good and correct_season and correct_biome:
                 final_patrols.append(patrol)
 
         return final_patrols
@@ -566,13 +578,7 @@ class Patrol():
         
 
     def generate_patrol_events(self, patrol_dict):
-        all_patrol_events = []        
-        clan_biome = game.clan.biome.lower()
-        season = game.clan.current_season.lower()
-        correct_biome = False
-        correct_season = False
-        cat_number = False
-        patrol_size = len(self.patrol_cats)
+        all_patrol_events = []
         for patrol in patrol_dict:
             patrol_event = PatrolEvent(
                 patrol_id = patrol["patrol_id"],
@@ -587,36 +593,14 @@ class Patrol():
                 exp = patrol["exp"],
                 min_cats = patrol["min_cats"],
                 max_cats = patrol["max_cats"])
-            if patrol_event.biome == clan_biome:
-                correct_biome = True
-            elif patrol_event.biome == "Any":
-                correct_biome = True
-            elif patrol_event.biome != clan_biome:
-                correct_biome = False
-            if season == patrol_event.season:
-                correct_season = True
-            elif patrol_event.season == "Any":
-                correct_season = True
-            if patrol_size >= patrol_event.min_cats:
-                min_cat_n = True
-            elif patrol_size < patrol_event.min_cats:
-                min_cat_n = False
-            if patrol_size <= patrol_event.max_cats:
-                max_cat_n = True
-            elif patrol_size > patrol_event.max_cats:
-                max_cat_n = False
-            if min_cat_n and max_cat_n:
-                cat_number = True
             if patrol_event.tags is not None:
                 if "apprentice" in patrol_event.tags:
                     if "apprentice" in self.patrol_statuses:
                         apprentice = True
                     else:
                         apprentice = False
-            if correct_season and correct_biome and cat_number:
-                if patrol_event.tags is not None and "apprentice" in patrol_event.tags:
-                    if apprentice:
-                        all_patrol_events.append(patrol_event)
+                if apprentice:
+                    all_patrol_events.append(patrol_event)
                 else:
                     all_patrol_events.append(patrol_event)
         
