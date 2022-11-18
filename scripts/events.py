@@ -1676,8 +1676,9 @@ class Events():
 
         cat.die()
         if str(other_name) in cause_of_death:
-            event_string = f"{cause_of_death} at {str(cat.moons)} moons old."
             other_cat.die()
+        else:
+            event_string = f"{cause_of_death} at {str(cat.moons)} moons old."
 
         game.cur_events_list.append(event_string)
 

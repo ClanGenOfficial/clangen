@@ -200,6 +200,8 @@ class Game():
             self.switches['save_clan'] = False
             self.switches['saved_clan'] = True
         if self.switches['switch_clan']:
+            self.clan.save_clan()
+            self.save_cats()
             self.clan.switch_clans()
             self.switches['switch_clan'] = False
         if self.switches['read_clans']:
@@ -344,6 +346,7 @@ class Game():
             clan_cats.append(cat_data)
             if not inter_cat.dead:
                 inter_cat.save_relationship_of_cat()
+                inter_cat.save_condition()
         try:
             with open('saves/' + clanname + '/clan_cats.json', 'w') as write_file:
                 json_string = ujson.dumps(clan_cats, indent=4)

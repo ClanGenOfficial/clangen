@@ -634,12 +634,6 @@ class Cat():
             elif self.skill == '???' and self.status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
                 self.skill = choice(self.skills)
 
-    # ---------------------------------------------------------------------------- #
-#                            !IMPORTANT INFORMATION!                           #
-#   conditions ar currently not integrated, this are just the base functions   #
-#    me (Lixxis) will integrate them after tests are written and completed     #
-# ---------------------------------------------------------------------------- #
-
     def moon_skip_illness(self):
         "handles the moon skip for illness"
         if not self.is_ill():
@@ -735,11 +729,6 @@ class Cat():
         return False
 
 # ---------------------------------------------------------------------------- #
-#                            !IMPORTANT INFORMATION!                           #
-#   conditions ar currently not integrated, this are just the base functions   #
-#    me (Lixxis) will integrate them after tests are written and completed     #
-# ---------------------------------------------------------------------------- #
-# ---------------------------------------------------------------------------- #
 #                                  conditions                                  #
 # ---------------------------------------------------------------------------- #
   
@@ -800,9 +789,96 @@ class Cat():
             print(f"WARNING: injury {self.injury.name} has lowered chance of {illness_name} infection to {rate}")
             rate = 1
 
-        if randint(0, rate) == 1:
+        if not random.random() * rate:
             game.cur_events_list.append(f"{self.name} had contact with {cat.name} and now has {illness_name}.")
             self.get_ill(illness_name)
+
+    def save_condition(self):
+        if not self.is_ill() and not self.is_injured():
+            return
+        # save relationships for each cat
+        if game.switches['clan_name'] != '':
+            clanname = game.switches['clan_name']
+        elif len(game.switches['clan_name']) > 0:
+            clanname = game.switches['clan_list'][0]
+        elif game.clan is not None:
+            clanname = game.clan.name
+        condition_directory = 'saves/' + clanname + '/conditions'
+        if not os.path.exists(condition_directory):
+            os.makedirs(condition_directory)
+
+        conditions = {}
+        if self.is_ill():
+            conditions["illness"] = {
+                "name": self.illness.name,
+                "mortality": self.illness.current_mortality,
+                "duration": self.illness.current_duration,
+                "medicine_mortality": self.illness.medicine_mortality,
+                "medicine_duration": self.illness.medicine_duration,
+                "infectiousness": self.illness.infectiousness,
+                "risks": self.illness.risks,
+            }
+        if self.is_injured():
+            conditions["injury"] = {
+                "name": self.injury.name,
+                "mortality": self.injury.current_mortality,
+                "duration": self.injury.current_duration,
+                "medicine_duration": self.injury.medicine_duration,
+                "illness_infectiousness": self.injury.illness_infectiousness,
+                "risks": self.injury.risks,
+            }
+
+        try:
+            with open(condition_directory + '/' + self.ID + '_conditions.json',
+                      'w') as rel_file:
+                json_string = ujson.dumps(conditions, indent = 4)
+                rel_file.write(json_string)
+        except:
+            print(f"WARNING: Saving conditions of cat #{self} didn't work.")
+
+    def load_conditions(self):
+        if game.switches['clan_name'] != '':
+            clanname = game.switches['clan_name']
+        else:
+            clanname = game.switches['clan_list'][0]
+
+        condition_directory = 'saves/' + clanname + '/conditions/'
+        condition_cat_directory = condition_directory + self.ID + '_conditions.json'
+        if not os.path.exists(condition_cat_directory):
+            return
+        
+        if self.dead:
+            os.remove(condition_cat_directory)
+            return
+
+        try:
+            with open(condition_cat_directory, 'r') as read_file:
+                rel_data = ujson.loads(read_file.read())
+                if "illness" in rel_data:
+                    illness = rel_data["illness"]
+                    self.illness = self.illness = Illness(
+                        illness["name"],
+                        mortality= illness["mortality"],
+                        infectiousness = illness["infectiousness"], 
+                        duration = illness["duration"], 
+                        medicine_duration = illness["medicine_duration"], 
+                        medicine_mortality = illness["medicine_mortality"],
+                        risks = illness["risks"]
+                    )
+                if "injury" in rel_data:
+                    injury = rel_data["injury"]
+                    self.injury = Injury(
+                        injury["name"],
+                        duration = injury["duration"],
+                        medicine_duration = injury["medicine_duration"], 
+                        mortality = injury["mortality"],
+                        risks = injury["risks"],
+                        illness_infectiousness = injury["illness_infectiousness"]
+                    )
+        except:
+            print(f'WARNING: There was an error reading the relationship file of cat #{self}.')
+
+        os.remove(condition_cat_directory)
 
 # ---------------------------------------------------------------------------- #
 #                                    mentor                                    #
@@ -911,7 +987,6 @@ class Cat():
                 if old_mentor not in self.former_mentor:
                     self.former_mentor.append(old_mentor)
 
-
     def update_mentor(self, new_mentor=None):
         if new_mentor is None:
             # If not reassigning and current mentor works, leave it
@@ -974,7 +1049,6 @@ class Cat():
                     old_mentor.former_apprentices.append(self)
                 if old_mentor not in self.former_mentor:
                     self.former_mentor.append(old_mentor)
-
 
 
 # ---------------------------------------------------------------------------- #
