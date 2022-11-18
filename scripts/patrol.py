@@ -804,7 +804,7 @@ class Patrol(object):
         
 
         # other_clan patrols
-        if randint(1, 1) == 1 and self.other_clan is not None:
+        if self.other_clan is not None:
             other_clan = self.other_clan
             other_clan_relations = int(other_clan.relations)
             #other_clan_temperament = int(other_clan.relations)
