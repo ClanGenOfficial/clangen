@@ -98,11 +98,24 @@ class Patrol():
         final_patrols = []
         patrol_size = len(self.patrol_cats)
         reputation = game.clan.reputation
+        other_clan = self.other_clan
+        clan_relations = game.clan.other_clan.relations
         hostile_rep = False
         neutral_rep = False
         welcoming_rep = False
+        clan_neutral = False
+        clan_hostile = False
+        clan_allies = False
         chance = 0
-        # chance for each kind to occur
+        # assigning other_clan relations
+        if clan_relations > 17:
+            clan_allies = True
+        elif clan_relations < 7:
+            clan_hostile = True
+        elif clan_relations in range(7, 17):
+            clan_neutral = True
+        other_clan_chance = 1 # this is just for separating them a bit from the other patrols, it means they can always happen
+        # chance for each kind of loner event to occur
         regular_chance = int(random.getrandbits(2))
         hostile_chance = int(random.getrandbits(5))
         welcoming_chance = int(random.getrandbits(1))
@@ -141,6 +154,15 @@ class Patrol():
             elif hostile_rep:
                 possible_patrols.extend(self.generate_patrol_events(NEW_CAT_HOSTILE))
 
+        # other clan patrols
+        if other_clan_chance == 1:
+            if clan_neutral:
+                possible_patrols.extend(self.generate_patrol_events(OTHER_CLAN))
+            elif clan_allies:
+                possible_patrols.extend(self.generate_patrol_events(OTHER_CLAN_ALLIES))
+            elif clan_hostile:
+                possible_patrols.extend(self.generate_patrol_events(OTHER_CLAN_HOSTILE))
+                
         # one last check
         for patrol in possible_patrols:
             if patrol_size >= patrol.min_cats:
