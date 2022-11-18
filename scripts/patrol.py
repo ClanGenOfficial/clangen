@@ -742,8 +742,8 @@ class Patrol():
         if self.success:
             for cat in self.patrol_cats:
                 print("EXP Before: " + str(cat.experience))
-                gained_exp = ((patrol_exp) / len(self.patrol_cats)) / gm_modifier
-                cat.experience = int(cat.experience + base_exp + gained_exp)
+                gained_exp = ((patrol_exp + base_exp) / len(self.patrol_cats)) / gm_modifier
+                cat.experience = int(cat.experience + gained_exp)
                 print("After: " + str(cat.experience))
 
     def handle_deaths(self):
@@ -948,6 +948,7 @@ class Patrol():
                 elif randint(0, 3) == 0: #chance to have kittypet name prefix + suffix
                     kit.name.prefix = choice(names.loner_names)
                     kit.name.suffix = choice(names.normal_suffixes)
+                # add kits to the added cats if the second success text is rolled
                 if len(self.patrol_event.success_text) > 1:
                     if self.final_success == self.patrol_event.success_text[1]:
                         num_kits = choice([2, 2, 2, 2, 3, 4])
@@ -1114,7 +1115,7 @@ class PatrolEvent():
             'hunting', 'other_clan', 'fighting', 'death', 'scar', 'new_cat', 'npc',
             'retirement', 'injury', 'illness', 'romantic', 'platonic', 'comfort', 'respect', 'trust',
             'dislike', 'jealousy', 'med_cat', 'training', 'apprentice', 'border', 'reputation', 'leader',
-            'herbs', 'gone', 'disaster'
+            'herbs', 'gone', 'disaster', 'multiple_deaths'
         ]
 
 patrol = Patrol()
