@@ -101,6 +101,7 @@ class Patrol():
         hostile_rep = False
         neutral_rep = False
         welcoming_rep = False
+        chance = 0
         # chance for each kind to occur
         regular_chance = int(random.getrandbits(2))
         hostile_chance = int(random.getrandbits(5))
@@ -697,9 +698,10 @@ class Patrol():
         
         return all_patrol_events
 
-    def calculate_success(self):
+    def calculate_success(self, antagonize=False):
         if self.patrol_event is None:
             return
+        antagonize = antagonize
         success_text = self.patrol_event.success_text
         fail_text = self.patrol_event.fail_text
         antagonize = False
@@ -1031,25 +1033,26 @@ class Patrol():
                 elif randint(0, 3) == 0: #chance to have kittypet name prefix + suffix
                     kit.name.prefix = choice(names.loner_names)
                     kit.name.suffix = choice(names.normal_suffixes)
-                if self.final_success == self.patrol_event.success_text[1]:
-                    num_kits = choice([2, 2, 2, 2, 3, 4])
-                    for _ in range(num_kits):
-                        kit2 = Cat(status='kitten', moons=0)
-                        kit2.backstory = 'outsider_roots2'
-                        kit2.parent1 = kit.ID
-                        kit2.thought = 'Is looking around the camp with wonder'
-                        #create and update relationships
-                        for cat_id in game.clan.clan_cats:
-                            the_cat = Cat.all_cats.get(cat_id)
-                            if the_cat.dead or the_cat.exiled:
-                                continue
-                            if the_cat.ID in [kit2.parent1, kit2.parent2]:
-                                the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2, False, True)
-                                kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat, False, True)
-                            else:
-                                the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2)
-                                kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat)
-                        game.clan.add_cat(kit2)
+                if len(self.patrol_event.success_text) > 1:
+                    if self.final_success == self.patrol_event.success_text[1]:
+                        num_kits = choice([2, 2, 2, 2, 3, 4])
+                        for _ in range(num_kits):
+                            kit2 = Cat(status='kitten', moons=0)
+                            kit2.backstory = 'outsider_roots2'
+                            kit2.parent1 = kit.ID
+                            kit2.thought = 'Is looking around the camp with wonder'
+                            #create and update relationships
+                            for cat_id in game.clan.clan_cats:
+                                the_cat = Cat.all_cats.get(cat_id)
+                                if the_cat.dead or the_cat.exiled:
+                                    continue
+                                if the_cat.ID in [kit2.parent1, kit2.parent2]:
+                                    the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2, False, True)
+                                    kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat, False, True)
+                                else:
+                                    the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2)
+                                    kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat)
+                            game.clan.add_cat(kit2)
 
             elif self.patrol_event.patrol_id in ["gen_gen_newcat2", "gen_gen_newcat3"]:  # new kittypet
                 new_status = choice([
