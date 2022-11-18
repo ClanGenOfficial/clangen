@@ -1,6 +1,6 @@
 [
     {
-        "patrol_id": "gen_border_neutral1",
+        "patrol_id": "gen_border_otherclan1",
         "biome": "Any",
         "season": "Any",
         "tags": ["border", "other_clan"],
@@ -32,7 +32,7 @@
 },
 
 {
-        "patrol_id": "gen_border_neutral2",
+        "patrol_id": "gen_border_otherclan2",
         "biome": "Any",
         "season": "Any",
         "tags": ["border", "other_clan"],
@@ -65,7 +65,7 @@
 
 
 {
-        "patrol_id": "gen_border_neutral3",
+        "patrol_id": "gen_border_otherclan3",
         "biome": "Any",
         "season": "Any",
         "tags": ["border", "other_clan", "hunting", "scar", "injury"],
