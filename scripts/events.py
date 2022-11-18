@@ -1,6 +1,6 @@
 from .cats import *
 from .buttons import *
-
+from .relation_events import * 
 
 class Events(object):
     all_events = {}
@@ -25,7 +25,7 @@ class Events(object):
 
     def one_moon(self):
         if game.switches['timeskip']:
-            game.switches['save_clan'] = False
+            game.switches['saved_clan'] = False
             self.living_cats = 0
             self.new_cat_invited = False
             game.patrolled.clear()
@@ -41,34 +41,44 @@ class Events(object):
                     elif cat.moons == 100:
                         cat.age = 'elder'
                     if cat.moons > randint(100, 200):
-                        if choice([1, 2, 3, 4, 5]) == 1:
+                        if choice([1, 2, 3, 4, 5]) == 1 and cat.dead == False:
                             cat.dead = True
                             game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently')
-                    if cat.exiled and cat.status == 'leader' and randint(
+
+                    if cat.exiled and cat.status == 'leader' and cat.dead == False and randint(
                             1, 10) == 1:
                         game.clan.leader_lives -= 1
                         if game.clan.leader_lives <= 0:
                             cat.dead = True
                             game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently')
+
                             game.clan.leader_lives = 0
-                    elif cat.exiled and cat.status == 'leader' and randint(
+                    elif cat.exiled and cat.status == 'leader' and cat.dead == False and randint(
                             1, 45) == 1:
                         game.clan.leader_lives -= 10
                         cat.dead = True
                         game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently')
+
                         game.clan.leader_lives = 0
                 else:
                     cat.dead_for += 1
+
             # interaction here so every cat may have got a new name
-            for cat in cat_class.all_cats.copy().values():
+            relation_events = Relation_Events()
+            cat_list = list(cat_class.all_cats.copy().values())
+            random.shuffle(cat_list)
+            for cat in cat_list:
                 if not cat.dead and not cat.exiled:
-                    self.create_interaction(cat)
+                    relation_events.create_interaction(cat)
+                    relation_events.handle_relationships(cat)
+                    relation_events.check_if_having_kits(cat)
+                    #relation_events.have_kits(cat)
             cat_class.thoughts()
             self.check_clan_relations()
             game.clan.age += 1
             if game.settings.get(
                     'autosave') is True and game.clan.age % 5 == 0:
-                cat_class.save_cats()
+                cat_class.json_save_cats()
                 game.clan.save_clan()
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
             game.event_scroll_ct = 0
@@ -88,22 +98,21 @@ class Events(object):
                     0, f"{game.clan.name}Clan has no leader!")
             if game.switches['birth_cooldown']:
                 birth_range -= 1
+
         game.switches['timeskip'] = False
 
     # TODO Rename this here and in `one_moon`
     def _extracted_from_one_moon_7(self, cat):
         self.living_cats += 1
         cat.in_camp = 1
+        self.check_age(cat)
         self.perform_ceremonies(cat)
-        self.handle_relationships(cat)
         if self.new_cat_invited == False or self.living_cats < 10:
             self.invite_new_cats(cat)
-        self.have_kits(cat)
         self.other_interactions(cat)
         self.gain_accessories(cat)
         self.gain_scars(cat)
         self.handle_deaths(cat)
-        self.check_age(cat)
 
     def check_clan_relations(self):
         if len(game.clan.all_clans) > 0 and randint(1, 5) == 1:
@@ -147,9 +156,6 @@ class Events(object):
                     other_clan.relations = 10
                 else:
                     self.at_war = False
-                    r_num = choice([-1, 1])
-                    other_clan.relations = str(
-                        int(other_clan.relations) + r_num)
             if war_notice:
                 game.cur_events_list.append(war_notice)
 
@@ -168,6 +174,8 @@ class Events(object):
             game.cur_events_list.append(
                 f'{str(game.clan.deputy.name)} has been promoted to the new leader of the clan'
             )
+            self.ceremony_accessory = True
+            self.gain_accessories(cat)
             game.clan.deputy = None
         if not cat.dead:
             cat.moons += 1
@@ -177,29 +185,24 @@ class Events(object):
                 if cat.age != 'elder':
                     cat.age = cat_class.ages[cat_class.ages.index(cat.age) + 1]
                 if cat.status == 'kitten' and cat.age == 'adolescent':
-                    self.ceremony_accessory = True
                     cat.status_change('apprentice')
                     game.cur_events_list.append(
                         f'{str(cat.name)} has started their apprenticeship')
+                    self.ceremony_accessory = True
                     self.gain_accessories(cat)
                     cat.update_mentor()
                 elif cat.status == 'apprentice' and cat.age == 'young adult':
-                    self.ceremony_accessory = True
                     self._extracted_from_perform_ceremonies_19(
                         cat, 'warrior', ' has earned their warrior name')
+                    self.ceremony_accessory = True
                     self.gain_accessories(cat)
                 elif cat.status == 'medicine cat apprentice' and cat.age == 'young adult':
-                    self.ceremony_accessory = True
                     self._extracted_from_perform_ceremonies_19(
                         cat, 'medicine cat',
                         ' has earned their medicine cat name')
+                    self.ceremony_accessory = True
                     self.gain_accessories(cat)
                     game.clan.new_medicine_cat(cat)
-                elif cat.status == 'warrior' and cat.age == 'elder' and len(
-                        cat.apprentice) < 1:
-                    cat.status_change('elder')
-                    game.cur_events_list.append(
-                        f'{str(cat.name)} has retired to the elder den')
                 elif cat.status == 'deputy' and cat.age == 'elder' and len(
                         cat.apprentice) < 1:
                     cat.status_change('elder')
@@ -207,11 +210,16 @@ class Events(object):
                     game.cur_events_list.append(
                         f'The deputy {str(cat.name)} has retired to the elder den'
                     )
+                elif cat.status == 'warrior' and cat.age == 'elder' and len(
+                        cat.apprentice) < 1:
+                    cat.status_change('elder')
+                    game.cur_events_list.append(
+                        f'{str(cat.name)} has retired to the elder den')
             if cat.status in [
                     'warrior', 'deputy'
             ] and cat.age == 'elder' and len(cat.apprentice) < 1:
                 cat.status_change('elder')
-                if cat.status == 'deputy':
+                if str(cat.status) == 'deputy':
                     game.clan.deputy = None
                 game.cur_events_list.append(
                     f'{str(cat.name)} has retired to the elder den')
@@ -227,8 +235,12 @@ class Events(object):
             return
         name = str(cat.name)
         other_cat = choice(list(cat_class.all_cats.values()))
+        countdown = int(len(cat_class.all_cats) / 3)
         while cat == other_cat or other_cat.dead or other_cat.exiled:
             other_cat = choice(list(cat_class.all_cats.values()))
+            countdown-=1
+            if countdown <= 0:
+                return
         other_name = str(other_cat.name)
         acc_text = []
         chance = randint(0, 50)
@@ -247,8 +259,8 @@ class Events(object):
                     choice(wild_accessories)
                 ])
                 accessory = cat.accessory
-                if self.ceremony_accessory == True:
-                    acc_text.extend([f'{other_name} gives {name} something to adorn their pelt as congratulations', f'{name} decides to pick something to adorn their pelt as celebration'])
+                #if self.ceremony_accessory == True:
+                 #   acc_text.extend([f'{other_name} gives {name} something to adorn their pelt as congratulations', f'{name} decides to pick something to adorn their pelt as celebration'])
                 if cat.age != 'kitten':
                     if cat.accessory in ["FORGET ME NOTS", "BLUEBELLS", "POPPY"]:
                         if game.clan.current_season == 'Leaf-bare':
@@ -257,29 +269,29 @@ class Events(object):
                             acc_text.extend([f'{name} received a flower from {other_name} and decided to wear it on their pelt',
                                             f'{name} found a pretty flower and decided to wear it on their pelt', f'A clanmate gave {name} a flower and they decided to wear it'
                             ])
-                    elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                    elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
                         acc_text.append(f'{name} found a bunch of pretty feathers and decided to wear them')
                     elif cat.accessory in ["HERBS", "PETALS", "DRY_HERBS"]:
-                        acc_text.append(f'{name} always tries to groom themselves clean but they always seem to have something stuck in there')
+                        acc_text.append(f'{name} always seems to have something stuck in their fur')
                     elif cat.accessory in plant_accessories and cat.status in ['medicine cat apprentice', 'medicine cat']:
-                        acc_text.extend([f'{name} decides to always bring {accessory.lower()} with them',
-                                        f'{accessory.lower()} is so important to {name} that they always carry it around',
-                                        f'{accessory.lower()} is vital for {name}, so they always have it on them'
+                        acc_text.extend([f'{name} has decided to always bring their {accessory.lower()} with them',
+                                        f'{accessory.lower()} - an item so important to {name} that they always carry it around'.capitalize,
+                                        f'{accessory.lower()} - so vital for {name} that they always have it on them'.capitalize
                         ])
                     else:
                         acc_text.extend([f'{name} finds something interesting and decides to wear it on their pelt', f'A clanmate gives {name} a pretty accessory and they decide to wear it on their pelt',
                                         f'{name} finds something interesting while out on a walk and decides to wear it on their pelt', f'{name} finds {accessory.lower()} fascinating and decides to wear it on their pelt',
-                                        f'A clanmate gives {name} something to adorn their pelt as congratulations', f'{other_name} gives {name} a pretty accessory and they decide to wear it on their pelt'
+                                        f'A clanmate gives {name} something to adorn their pelt as a gift', f'{other_name} gives {name} a pretty accessory and they decide to wear it on their pelt'
                         ])
                 else:
                     if cat.accessory in ["FORGET ME NOTS", "BLUEBELLS", "POPPY"]:
                         acc_text.extend([f'{name} received a flower from {other_name} and decided to wear it on their pelt',
                                             f'{name} found a pretty flower and decided to wear it on their pelt', f'A clanmate gave {name} a flower and they decided to wear it'
                             ])
-                    elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                    elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
                         acc_text.append(f'{name} was playing with feathers earlier and decided to wear some of them')
                     elif cat.accessory in ["HERBS", "PETALS", "DRYHERBS"]:
-                        acc_text.append(f'{name} is always groomed clean by their parents but there always seems be something stuck in there')
+                        acc_text.append(f'{name}\'s parents try their best to groom them, but something is always stuck in their fur')
                     else:    
                         acc_text.extend([f'{name} seems to have picked something up while playing out in the camp', f'{name} finds something interesting and decides to wear it on their pelt',
                                         f'A clanmate gives {name} a pretty accessory and they decide to wear it on their pelt', f'{other_name} gives {name} a pretty accessory and they decide to wear it on their pelt',
@@ -290,7 +302,7 @@ class Events(object):
             game.cur_events_list.append(choice(acc_text))
             if self.ceremony_accessory:
                 self.ceremony_accessory = False   
-    
+
     def gain_scars(self, cat):
         if cat.specialty is not None and cat.specialty2 is not None or cat.age == 'kitten':
             return
@@ -298,10 +310,18 @@ class Events(object):
         other_cat = choice(list(cat_class.all_cats.values()))
         scar_chance = randint(0, 40)
         clancats = int(self.living_cats)
+        countdown = int(len(cat_class.all_cats) / 3)
         while cat == other_cat or other_cat.dead or other_cat.exiled:
             other_cat = choice(list(cat_class.all_cats.values()))
+            countdown-=1
+            if countdown <= 0:
+                return
         other_name = str(other_cat.name)
         scar_text = []
+        clan_has_kits = any(
+                str(cat.status) in "kitten"
+                and not cat.dead and not cat.exiled
+                for cat in cat_class.all_cats.values())
         if clancats > 45:
             scar_chance = scar_chance + 20
         elif clancats > 120:
@@ -339,6 +359,7 @@ class Events(object):
                 if cat.specialty == 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -370,6 +391,8 @@ class Events(object):
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -381,12 +404,15 @@ class Events(object):
                         f'{name} got their paw stuck in a twoleg trap and earned a scar'
                     )
                 else:
-                    scar_text.extend([
+                    if clan_has_kits == True:
+                        scar_text.extend([
+                        f'{name} earned a scar protecting the kits'])
+                    else:
+                        scar_text.extend([
                         f'{name} earned a scar fighting a ' + choice([
                             'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                             'enemy warrior', 'badger'
                         ]), f'{name} earned a scar defending the territory',
-                        f'{name} earned a scar protecting the kits',
                         f'{name} is injured after falling into a river',
                         f'{name} is injured by enemy warriors after accidentally wandering over the border',
                         f'{name} is injured after messing with a twoleg object',
@@ -405,27 +431,31 @@ class Events(object):
                 if cat.specialty == 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
                     scar_text.append(
                         f'{name} recklessly lost their tail to a ' + choice([
                             'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                             'enemy warrior', 'badger', 'tree', 'twoleg trap'
                         ]) + ' encouraged by their mentor')
                 else:
-                    scar_text.extend([
+                    if clan_has_kits == True:
+                        scar_text.extend([
+                        f'{name} earned a scar protecting the kits'])
+                    else:
+                        scar_text.extend([
                         f'{name} earned a scar  recklessly fighting a ' +
                         choice([
                             'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                             'enemy warrior', 'badger'
                         ]) + ' encouraged by their mentor',
                         f'{name} earned a scar for not defending the territory well enough',
-                        f'{name} earned a scar protecting the kits',
                         f'{name} is injured after being pushed into a river',
                         f'{name} is punished by their mentor after accidentally wandering over the border',
                         f'{name} is injured by their mentor after being caught messing with a twoleg object'
                         f'{name} is injured by their mentor while practicing with their claws out',
-                        f'{name}\' mentor punished them for disobeying',
+                        f'{name}\'s mentor punished them for disobeying',
                         f'{name} gained a scar while fighting their mentor',
-                        f'{name} is injured while practicing their batle moves with '
+                        f'{name} is injured while practicing their battle moves with '
                         + other_name,
                         f'{name} is injured after a fight broke out with ' +
                         other_name,
@@ -437,24 +467,29 @@ class Events(object):
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
                     ]) + ' encouraged by their mentor')
                 else:
-                    scar_text.extend([
+                    if clan_has_kits == True:
+                        scar_text.extend([
+                        f'{name} earned a scar protecting the kits'])
+                    else:
+                        scar_text.extend([
                         f'{name} earned a scar recklessly fighting a ' +
                         choice([
                             'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                             'enemy warrior', 'badger'
                         ]) + ' encouraged by their mentor',
                         f'{name} earned a scar for not defending the territory well enough',
-                        f'{name} earned a scar protecting the kits',
                         f'{name} is injured after being pushed into a river',
                         f'{name} is punished by their mentor after accidentally wandering over the border',
                         f'{name} is injured by their mentor after being caught messing with a twoleg object'
                         f'{name} is injured by their mentor while practicing with their claws out',
-                        f'{name}\' mentor punished them for disobeying',
+                        f'{name}\'s mentor punished them for disobeying',
                         f'{name} gained a scar while fighting their mentor',
                         f'{name} is injured while practicing their batle moves with '
                         + other_name,
@@ -471,6 +506,7 @@ class Events(object):
                 if cat.specialty == 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -493,13 +529,15 @@ class Events(object):
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
                     ]) + ' while following orders')
                 else:
                     scar_text.extend([
-                        f'While following orders {name} earned a scar fighting a '
+                        f'While following orders, {name} earned a scar fighting a '
                         + choice([
                             'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                             'enemy warrior', 'badger'
@@ -520,13 +558,14 @@ class Events(object):
                 if cat.specialty == 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
                     ]) + ' while following orders')
                 else:
                     scar_text.extend([
-                        f'While following orders {name} earned a scar fighting a '
+                        f'While following orders, {name} earned a scar fighting a '
                         + choice([
                             'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                             'enemy warrior', 'badger'
@@ -548,6 +587,7 @@ class Events(object):
                 if cat.specialty2 == 'NOTAIL' and cat.specialty != 'NOTAIL':
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
                     scar_text.append(f'{name} lost their tail to a ' + choice([
                         'rogue', 'dog', 'fox', 'otter', 'rat', 'hawk',
                         'enemy warrior', 'badger', 'tree', 'twoleg trap'
@@ -574,97 +614,6 @@ class Events(object):
 
         if scar_text:
             game.cur_events_list.append(choice(scar_text))
-
-    def handle_relationships(self, cat):
-        mate_chance = randint(1, 50)
-        if self.living_cats > 60:
-            mate_chance = mate_chance + 20
-        elif self.living_cats > 120:
-            mate_chance = mate_chance + 40
-        elif self.living_cats > 300:
-            mate_chance = mate_chance * 3
-        elif self.living_cats > 500:
-            mate_chance = mate_chance * 5
-        else:
-            mate_chance = mate_chance
-        if mate_chance == 1 and cat.status not in [
-                'kitten', 'apprentice', 'medicine cat apprentice',
-                'medicine cat'
-        ] and cat.age in ['young adult', 'adult', 'senior adult'
-                          ] and cat.moons > 14 and cat.mate is None:
-            other_cat = choice(list(cat_class.all_cats.values()))
-            parents = [cat.ID]
-            if cat.parent1 is not None:
-                parents.append(cat.parent1)
-                if cat.parent2 is not None:
-                    parents.append(cat.parent2)
-            other_parents = [other_cat.ID]
-            if other_cat.parent1 is not None:
-                other_parents.append(other_cat.parent1)
-                if other_cat.parent2 is not None:
-                    other_parents.append(other_cat.parent2)
-            count = 0
-            while cat == other_cat or other_cat.dead or other_cat.exiled or other_cat.status in [
-                    'kitten', 'apprentice', 'medicine cat apprentice',
-                    'medicine cat'
-            ] or other_cat.age not in [
-                    'young adult', 'adult', 'senior adult'
-            ] or other_cat.mate is not None or other_cat.ID in cat.former_apprentices or cat.moons < 14 or cat.ID in other_cat.former_apprentices or not set(
-                    parents).isdisjoint(set(other_parents)):
-                other_cat = choice(list(cat_class.all_cats.values()))
-                other_parents = [other_cat.ID]
-                if other_cat.parent1 is not None:
-                    other_parents.append(other_cat.parent1)
-                    if other_cat.parent2 is not None:
-                        other_parents.append(other_cat.parent2)
-                count += 1
-                if count == 5:
-                    return
-            game.cur_events_list.append(
-                f'{str(cat.name)} and {str(other_cat.name)} have become mates')
-            cat.mate = other_cat.ID
-            other_cat.mate = cat.ID
-
-            # affect relationship
-            cat_relationship = list(
-                filter(lambda r: r.cat_to.ID == other_cat.ID,
-                       cat.relationships))
-            if cat_relationship is not None and len(cat_relationship) > 0:
-                cat_relationship[0].romantic_love = 20
-                cat_relationship[0].comfortable = 20
-                cat_relationship[0].trust = 10
-            else:
-                cat.relationships.append(Relationship(cat, other_cat, True))
-
-            ohter_cat_relationship = list(
-                filter(lambda r: r.cat_to.ID == cat.ID,
-                       other_cat.relationships))
-            if ohter_cat_relationship is not None and len(
-                    ohter_cat_relationship) > 0:
-                ohter_cat_relationship[0].romantic_love = 20
-                ohter_cat_relationship[0].comfortable = 20
-                ohter_cat_relationship[0].trust = 10
-            else:
-                other_cat.relationships.append(
-                    Relationship(other_cat, cat, True))
-
-        elif randint(1, 10) == 1:
-            other_cat = choice(list(cat_class.all_cats.values()))
-            if cat.mate == other_cat.ID and other_cat.dead == True:
-                game.cur_events_list.append(
-                    f'{str(cat.name)} will always love {str(other_cat.name)} but has decided to move on'
-                )
-                cat.mate = None
-                other_cat.mate = None
-        elif randint(1, 100) == 1:
-            other_cat = choice(list(cat_class.all_cats.values()))
-            if cat.mate == other_cat.ID:
-                game.cur_events_list.append(
-                    f'{str(cat.name)} and {str(other_cat.name)} have broken up'
-                )
-                cat.mate = None
-                other_cat.mate = None
-        
 
     def invite_new_cats(self, cat):
         chance = 100
@@ -896,8 +845,12 @@ class Events(object):
             return
         interactions = []
         other_cat = choice(list(cat_class.all_cats.values()))
+        countdown = int(len(cat_class.all_cats) / 3)
         while cat == other_cat or other_cat.dead or other_cat.exiled:
             other_cat = choice(list(cat_class.all_cats.values()))
+            countdown-=1
+            if countdown <= 0:
+                return
         name = str(cat.name)
         other_name = str(other_cat.name)
         if cat.status in ['warrior', 'deputy'] and randint(
@@ -907,14 +860,15 @@ class Events(object):
             )
             if cat.status == 'deputy':
                 game.clan.deputy = None
+
             cat.status_change('elder')
             return
-        if cat.status == 'kitten':
+        if cat.status == 'kitten' and other_cat.status != 'kitten':
             interactions.extend([
                 f'{name} is scolded after sneaking out of camp',
                 f'{name} falls into a river but is saved by {other_name}'
             ])
-        elif cat.status in ['apprentice', 'medicine cat apprentice']:
+        elif cat.status in ['apprentice', 'medicine cat apprentice'] and other_cat.status != 'kitten':
             interactions.extend([
                 f'{name} is scolded after sneaking out of camp',
                 f'{name} falls into a river but is saved by {other_name}',
@@ -969,17 +923,26 @@ class Events(object):
                 f'{name} tries to convince {other_name} to run away together'
             ])
 
-        game.cur_events_list.append(choice(interactions))
+        if interactions:
+            game.cur_events_list.append(choice(interactions))
 
     def handle_deaths(self, cat):
+        clan_has_kits = any(
+                str(cat.status) in "kitten"
+                and not cat.dead and not cat.exiled
+                for cat in cat_class.all_cats.values())
         #Leader lost a life EVENTS
         if randint(1, 100) == 1:
             name = str(cat.name)
             other_cat = choice(list(cat_class.all_cats.values()))
+            countdown = int(len(cat_class.all_cats) / 3)
             while cat == other_cat or other_cat.dead or other_cat.status == 'leader' or other_cat.exiled:
                 other_cat = choice(list(cat_class.all_cats.values()))
-            other_name = str(other_cat.name)
+                countdown-=1
+                if countdown <= 0:
+                    return
             if cat.status == 'leader':
+                other_name = str(other_cat.name)
                 cause_of_death = [
                     name + ' lost a life after falling into a river',
                     name + ' lost a life due to greencough',
@@ -1009,7 +972,8 @@ class Events(object):
                     name + ' lost a life while saving ' + other_name +
                     ' from drowning', name + ' lost a life while saving ' +
                     other_name + ' from a monster',
-                    name + ' was pushed under a monster and lost a life'
+                    name + ' was pushed under a monster and lost a life',
+                    name + ' lost a life after saving ' + other_name + ' from a snake'
                 ]
                 if len(game.clan.all_clans) > 0:
                     cause_of_death.extend([
@@ -1028,9 +992,8 @@ class Events(object):
                     choice(cause_of_death) + ' at ' + str(cat.moons) +
                     ' moons old')
 
-        elif randint(
-                1,
-                200) == 1 and cat.status == 'leader':  #Several/All Lives loss
+        #Several/All Lives loss
+        elif randint(1,200) == 1 and cat.status == 'leader':  
             name = str(cat.name)
             allorsome = randint(1, 10)
             if cat.status == 'leader':
@@ -1110,8 +1073,13 @@ class Events(object):
             cause_of_death = [
                 name + ' was murdered', name + ' died of greencough',
                 'A tree fell in camp and killed ' + name,
-                name + ' was found dead near a fox den'
+                name + ' was found dead near a fox den',
+                name + ' was bitten by a snake and died'
             ]
+            if clan_has_kits == True and cat.status != 'kitten':
+                cause_of_death.extend([
+                    name + ' was bitten by a snake while saving a kit and died'
+                ])
             if cat.status == 'kitten':
                 cause_of_death.extend([
                     name + ' fell into a river and drowned',
@@ -1265,8 +1233,12 @@ class Events(object):
         elif randint(1, 500) == 1:  # multiple deaths
             name = str(cat.name)
             other_cat = choice(list(cat_class.all_cats.values()))
+            countdown = int(len(cat_class.all_cats) / 3)
             while cat == other_cat or other_cat.dead or other_cat.exiled:
                 other_cat = choice(list(cat_class.all_cats.values()))
+                countdown-=1
+                if countdown <= 0:
+                    return
             other_name = str(other_cat.name)
             cause_of_death = [
                 name + ' and ' + other_name + ' die of greencough',
@@ -1274,7 +1246,7 @@ class Events(object):
                 name + ' and ' + other_name + ' die of whitecough',
                 name + ' and ' + other_name + ' die from eating poisoned prey'
             ]
-            if cat.status != 'kitten' or 'leader' and other_cat.status != 'kitten' or 'leader':
+            if cat.status == ['kitten', 'leader'] or other_cat.status == ['kitten', 'leader']:
                 cause_of_death.extend([
                     name + ' and ' + other_name +
                     ' are killed in a border skirmish',
@@ -1298,12 +1270,16 @@ class Events(object):
             self.dies(cat)
             self.dies(other_cat)
 
-        elif randint(1, 100) == 1:  #Death with Personalities
+        elif randint(1, 80) == 1:  #Death with Personalities
             murder_chance = 20
             name = str(cat.name)
+            countdown = int(len(cat_class.all_cats) / 3)
             other_cat = choice(list(cat_class.all_cats.values()))
             while cat == other_cat or other_cat.dead or other_cat.exiled:
                 other_cat = choice(list(cat_class.all_cats.values()))
+                countdown-=1
+                if countdown <= 0:
+                    return
             other_name = str(other_cat.name)
             if cat.trait in [
                     'bloodthirsty', 'ambitious', 'vengeful', 'sneaky',
@@ -1326,9 +1302,11 @@ class Events(object):
                     if randint(1, murder_chance - 15) == 1:
                         cause_of_death = [
                             name + ' murdered ' + other_name +
-                            ' in cold blood in hopes of taking their place',
+                            ' in cold blood '
+                            'in hopes of taking their place',
                             name + ' murdered ' + other_name +
-                            ' in cold blood and made it look accidental in hopes of taking their place'
+                            ' in cold blood and made it look accidental '
+                            'in hopes of taking their place'
                         ]
                         if other_cat == 'leader':
                             game.clan.leader_lives -= 10
@@ -1462,202 +1440,6 @@ class Events(object):
         cat.update_mentor()
         game.clan.add_to_starclan(cat)
 
-    def have_kits(self, cat):
-        # decide chances of having kits, and if it's possible at all
-        chance = 0
-        for kit in cat_class.all_cats.values():
-            if str(kit.status
-                   ) == 'kitten' and kit.parent1 is not None and not kit.dead:
-                if cat_class.all_cats.get(
-                        kit.parent1) == cat or cat_class.all_cats.get(
-                            kit.parent2) == cat:
-                    return
-        if cat.mate is not None:
-            if cat.mate in cat.all_cats:
-                if cat_class.all_cats[cat.mate].dead:
-                    chance = 0
-                elif cat_class.all_cats[
-                        cat.mate].gender != cat.gender and cat_class.all_cats[
-                            cat.mate].age != 'elder':
-                    if game.switches['birth_cooldown']:
-                        chance = 0
-                    else:
-                        chance = 25
-                elif game.settings[
-                        'no gendered breeding'] and cat_class.all_cats[
-                            cat.mate].age != 'elder' and chance is not None:
-                    if game.switches['birth_cooldown']:
-                        chance = 0
-                    else:
-                        chance = 25
-                else:
-                    chance = 0
-            else:
-                game.cur_events_list.append("Warning: " + str(cat.name) +
-                                            " has an invalid mate #" +
-                                            str(cat.mate) +
-                                            ". This has been unset.")
-                cat.mate = None
-        else:
-            if cat.moons > 14:
-                if game.switches['birth_cooldown']:
-                    chance = 0
-                else:
-                    chance = 50
-            if not game.settings['no unknown fathers']:
-                chance = 0
-
-        if cat.age in [
-                'kitten', 'adolescent', 'elder'
-        ] or cat.example or (not game.settings['no gendered breeding']
-                             and cat.gender == 'male'):
-            chance = 0
-
-        # Decide randomly if kits will be born, if possible
-        if chance != 0:
-            hit = randint(0, chance)
-            if self.living_cats > 50:
-                hit = randint(0, chance + 20)
-            elif self.living_cats < 10:
-                hit = randint(0, chance - 10)
-            kits = choice([1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
-                            5, 5, 5, 5, 6])
-            if hit == 1 and cat.mate is not None:
-                game.cur_events_list.append(str(cat.name) + 'just found out that they were going to have kits with ' + str(cat_class.all_cats.get(cat.mate).name))
-                has_birth = True
-                if not cat.no_kits and not cat_class.all_cats.get(cat.mate).no_kits:
-                    if game.cur_events_list is not None:
-                        game.cur_events_list.append(str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s) with ' + str(cat_class.all_cats.get(cat.mate).name))
-                    else:
-                        game.cur_events_list = str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s) with' + str(cat_class.all_cats.get(cat.mate).name)
-
-                    for kit in range(kits):
-                        kit = Cat(parent1=cat.ID, parent2=cat.mate, moons=0)
-                        #create and update relationships
-                        relationships = []
-                        for cat_id in game.clan.clan_cats:
-                            the_cat = cat_class.all_cats.get(cat_id)
-                            if the_cat.dead or the_cat.exiled:
-                                continue
-                            if the_cat.ID in [kit.parent1, kit.parent2]:
-                                the_cat.relationships.append(Relationship(the_cat,kit,False,True))
-                                relationships.append(Relationship(kit,the_cat,False,True))
-                            else:
-                                the_cat.relationships.append(Relationship(the_cat,kit))
-                                relationships.append(Relationship(kit,the_cat))
-                        kit.relationships = relationships
-                        game.clan.add_cat(kit)
-                        
-            elif hit == 1 and not cat.no_kits:
-                game.cur_events_list.append(str(cat.name) + 'just found out that they were going to have kits')
-                has_birth = True
-                name = str(cat.name)
-                loner_name = choice(names.loner_names)
-                warrior_name = names.prefix + names.suffix
-                warrior_name_two = names.prefix + names.suffix
-                mate_text= []
-                mate_textEX = []
-                other_parent = choice(list(cat_class.all_cats.values()))
-                while cat == other_parent or other_parent.dead or other_parent.age in ['kitten', 'adolescent', 'elder']\
-                or not game.settings['no gendered breeding'] and cat.gender == other_parent.gender or not game.settings['affair'] and other_parent.mate != None:
-                        other_parent = choice(list(cat_class.all_cats.values()))
-                parentless = randint(0, 2)
-                is_parent = randint(0, 3)
-                
-                if parentless == 1:
-                    has_birth = True
-                    mate_text.extend([f'{name} had a litter of {str(kits)} kit(s)', f'{name} had a secret litter of {str(kits)} kit(s)', f'{name} had a litter of {str(kits)} kit(s) with an unknown partner',
-                                        f'{name} had a litter of {str(kits)} kit(s) and refused to talk about their progenitor'])
-                    game.cur_events_list.append(choice(mate_text))
-                    for kit in range(kits):
-                        kit = Cat(parent1=cat.ID, moons=0)
-                        #create and update relationships
-                        relationships = []
-                        for cat_id in game.clan.clan_cats:
-                            the_cat = cat_class.all_cats.get(cat_id)
-                            if the_cat.dead or the_cat.exiled:
-                                continue
-                            if the_cat.ID is kit.parent1:
-                                the_cat.relationships.append(Relationship(the_cat,kit,False,True))
-                                relationships.append(Relationship(kit,the_cat,False,True))
-                            else:
-                                the_cat.relationships.append(Relationship(the_cat,kit))
-                                relationships.append(Relationship(kit,the_cat))
-                        kit.relationships = relationships
-                        game.clan.add_cat(kit)
-                        
-                else:
-                    has_birth = True
-                    if is_parent == 1:
-                        mate_textEX.extend([f'{name} had a litter of {str(kits)} kit(s) with a ' + choice(['loner', 'rogue', 'kittypet']) + ' named ' + str(loner_name),
-                                          f'{name} had a secret litter of {str(kits)} kit(s) with a ' + choice(['loner', 'rogue', 'kittypet']) + ' named ' + str(loner_name)])
-
-                    elif is_parent == 2 and len(game.clan.all_clans) > 0:
-                        mate_textEX.extend([f'{name} had a secret litter of {str(kits)} kit(s) with a ' + choice(game.clan.all_clans).name + f'Clan warrior named {str(warrior_name)}',
-                                         f'{name} had a secret litter of {str(kits)} kit(s) with ' + choice(game.clan.all_clans).name + f'Clan\'s deputy {str(warrior_name)}',
-                                         f'{name} had a secret litter of {str(kits)} kit(s) with {str(warrior_name)} of ' + choice(game.clan.all_clans).name + 'Clan',
-                                         f'{name} had a secret litter of {str(kits)} kit(s) with ' + choice(game.clan.all_clans).name + f'Clan\'s leader {str(names.prefix)}star'])
-
-                    elif is_parent == 2 and len(game.clan.all_clans) == 0:
-                        mate_textEX.extend([f'{name} had a secret litter of {str(kits)} kit(s) with another Clan\'s warrior',
-                                            f'{name} had a secret litter of {str(kits)} kit(s) with a warrior named {str(warrior_name_two)}',
-                                            f'{name} had a secret litter of {str(kits)} kit(s) with {str(warrior_name_two)} from another Clan\'s'])                          
-                    else:
-                        if other_parent.status == 'medicine cat':
-                            mate_textEX.extend([f'{name} had a secret litter of {str(kits)} kit(s) with {str(other_parent.name)}',
-                                        f'{name} had a secret litter of {str(kits)} kit(s) with the medicine cat {str(other_parent.name)}',
-                                        f'{name} had a litter of {str(kits)} kit(s) with {str(other_parent.name)}',
-                                        f'{name} had a litter of {str(kits)} kit(s) with the medicine cat {str(other_parent.name)}'])
-                        else:        
-                            mate_textEX.append(str(cat.name) + ' had a litter of ' + str(kits) + ' kit(s) with ' + str(other_parent.name))
-                    game.cur_events_list.append(choice(mate_textEX))      
-                    for kit in range(kits):
-                        if is_parent == 1:
-                            kit = Cat(parent1=cat.ID, moons=0)
-                        elif is_parent == 2 and len(game.clan.all_clans) > 0:
-                            kit = Cat(parent1=cat.ID, moons=0)
-                        elif is_parent == 2 and len(game.clan.all_clans) == 0:
-                            kit = Cat(parent1=cat.ID, moons=0)
-                        else:
-                            kit = Cat(parent1=cat.ID, parent2=other_parent.ID, moons=0)  
-                        #create and update relationships
-                        relationships = []
-                        for cat_id in game.clan.clan_cats:
-                            the_cat = cat_class.all_cats.get(cat_id)
-                            if the_cat.dead or the_cat.exiled:
-                                continue
-                            if kit.parent2 != None:
-                                if randint(0, 5) == 1:
-                                    if the_cat.ID in [kit.parent1, kit.parent2]:
-                                        the_cat.relationships.append(Relationship(the_cat,kit,False,True))
-                                        relationships.append(Relationship(kit,the_cat,False,True))
-                                    else:
-                                        the_cat.relationships.append(Relationship(the_cat,kit))
-                                        relationships.append(Relationship(kit,the_cat))
-                                else:
-                                    if the_cat.ID is kit.parent1:
-                                        the_cat.relationships.append(Relationship(the_cat,kit,False,True))
-                                        relationships.append(Relationship(kit,the_cat,False,True))
-                                    else:
-                                        the_cat.relationships.append(Relationship(the_cat,kit))
-                                        relationships.append(Relationship(kit,the_cat))
-                            else:
-                                if the_cat.ID is kit.parent1:
-                                    the_cat.relationships.append(Relationship(the_cat,kit,False,True))
-                                    relationships.append(Relationship(kit,the_cat,False,True))
-                                else:
-                                    the_cat.relationships.append(Relationship(the_cat,kit))
-                                    relationships.append(Relationship(kit,the_cat))
-                        kit.relationships = relationships
-                        game.clan.add_cat(kit)
-    
-    def had_kits(self):
-        if has_birth is True:
-            game.switches['birth_cooldown'] = True
-            has_birth = False
-        if birth_range <= 0:
-            game.switches['birth_cooldown'] = False
-    
     def check_age(self, cat):
         if 0 <= cat.moons <= 5:
             cat.age = 'kitten'
@@ -1671,229 +1453,5 @@ class Events(object):
             cat.age = 'senior adult'
         else:
             cat.age = 'elder'
-
-    def create_interaction(self, cat):
-        # if the cat has no relationships, skip
-        if len(cat.relationships) < 1 or cat.relationships is None:
-            return
-
-        cats_to_choose = list(
-            filter(lambda iter_cat_id: iter_cat_id != cat.ID,
-                   cat_class.all_cats.copy()))
-        # increase chance of cats, which are already befriended
-        like_threshold = 50
-        relevant_relationships = list(
-            filter(lambda relation: relation.platonic_like >= like_threshold,
-                   cat.relationships))
-        for relationship in relevant_relationships:
-            cats_to_choose.append(relationship.cat_to)
-            if relationship.platonic_like >= like_threshold * 2:
-                cats_to_choose.append(relationship.cat_to)
-
-        # increase chance of cats, which are already may be in love
-        love_threshold = 40
-        relevant_relationships = list(
-            filter(lambda relation: relation.romantic_love >= love_threshold,
-                   cat.relationships))
-        for relationship in relevant_relationships:
-            cats_to_choose.append(relationship.cat_to)
-            if relationship.romantic_love >= love_threshold * 2:
-                cats_to_choose.append(relationship.cat_to)
-
-        # increase the chance a kitten interact with other kittens
-        if cat.age == "kitten":
-            kittens = list(
-                filter(
-                    lambda cat_id: cat.all_cats.get(cat_id).age == "kitten" and
-                    cat_id != cat.ID, cat_class.all_cats.copy()))
-            cats_to_choose = cats_to_choose + kittens
-
-        # increase the chance a apprentice interact with otherapprentices
-        if cat.age == "adolescent":
-            apprentices = list(
-                filter(
-                    lambda cat_id: cat.all_cats.get(cat_id).age == "adolescent"
-                    and cat_id != cat.ID, cat_class.all_cats.copy()))
-            cats_to_choose = cats_to_choose + apprentices
-
-        # choose cat and start
-        random_id = random.choice(list(cat.all_cats.keys()))
-        relevant_relationship_list = list(
-            filter(
-                lambda relation: str(relation.cat_to) == str(random_id) and
-                not relation.cat_to.dead, cat.relationships))
-        while len(relevant_relationship_list) < 1 or random_id == cat.ID:
-            random_id = random.choice(list(cat.all_cats.keys()))
-            relevant_relationship_list = list(
-                filter(
-                    lambda relation: str(relation.cat_to) == str(random_id) and
-                    not relation.cat_to.dead, cat.relationships))
-        relevant_relationship = relevant_relationship_list[0]
-        relevant_relationship.start_action()
-
-        # self.relationship_outcome(relationship=relevant_relationship)
-
-    def relationship_outcome(self, relationship):
-        """Things that can happen, after relationship changes."""
-        cat_from = relationship.cat_from
-        cat_from_mate = None
-        if cat_from.mate != None or cat_from.mate != '':
-            cat_from_mate = cat_class.all_cats.get(cat_from.mate)
-
-        cat_to = relationship.cat_to
-        cat_to_mate = None
-        if cat_to.mate != None or cat_to.mate != '':
-            cat_to_mate = cat_class.all_cats.get(cat_to.mate)
-
-        if relationship.opposit_relationship == None:
-            relationship.link_relationship()
-
-        # overcome dead mates
-        if cat_from_mate != None and cat_from_mate.dead and randint(1, 20):
-            game.cur_events_list.append(
-                f'{str(cat_from.name)} will always love {str(cat_from_mate.name)} but has decided to move on'
-            )
-            cat_from.mate = None
-            cat_from_mate.mate = None
-        if cat_to_mate != None and cat_to_mate.dead and randint(1, 20):
-            game.cur_events_list.append(
-                f'{str(cat_to.name)} will always love {str(cat_to_mate.name)} but has decided to move on'
-            )
-            cat_to.mate = None
-            cat_to_mate.mate = None
-
-        # new mates
-        both_no_mates = cat_to_mate == None and cat_from_mate == None
-        # check ages of cats
-        age_group1 = ['adolescent', 'young adult', 'adult']
-        age_group2 = ['adult', 'senior adult', 'elder']
-        both_in_same_age_group = (cat_from.age in age_group1 and cat_to.age in age_group1) or\
-            (cat_from.age in age_group2 and cat_to.age in age_group2)
-        random_mates = randint(1, 200)
-        if (relationship.romantic_love > 20 and relationship.opposit_relationship.romantic_love > 20 and both_no_mates)\
-            or (random_mates == 1 and both_in_same_age_group):
-            self.new_mates(cat_from, cat_to)
-
-        # breakup and new mate
-        if game.settings[
-                'affair'] and not relationship.mates and cat_from_mate != None:
-            love_over_30 = relationship.romantic_love > 30 and relationship.opposit_relationship.romantic_love > 30
-            normal_chance = randint(1, 10)
-            # compare love value of current mates
-            bigger_than_current = False
-            bigger_love_chance = randint(1, 3)
-            mate_relationship = list(
-                filter(lambda r: r.cat_to.ID == cat_from.mate,
-                       cat_from.relationships))
-
-            # check cat from value
-            if mate_relationship is not None and len(mate_relationship) > 0:
-                bigger_than_current = relationship.romantic_love > mate_relationship[
-                    0].romantic_love
-            else:
-                if cat_from_mate != None:
-                    cat_from_mate.relationships.append(
-                        Relationship(cat_from, cat_from_mate, True))
-                bigger_than_current = True
-
-            # check cat to value
-            if cat_to_mate != None:
-                opposite_mate_relationship = list(
-                    filter(lambda r: r.cat_to.ID == cat_from.ID,
-                           cat_to.relationships))
-                if opposite_mate_relationship is not None and len(
-                        opposite_mate_relationship) > 0:
-                    bigger_than_current = bigger_than_current and relationship.romantic_love > opposite_mate_relationship[
-                        0].romantic_love
-                else:
-                    cat_to_mate.relationships.append(
-                        Relationship(cat_to, cat_to_mate, True))
-                    bigger_than_current = bigger_than_current and True
-
-            if (love_over_30
-                    and normal_chance == 1) or (bigger_than_current
-                                                and bigger_love_chance == 1):
-                # break up the old relationships
-                cat_from_mate = cat_class.all_cats.get(cat_from.mate)
-                self.breakup(cat_from, cat_from_mate)
-
-                if cat_to_mate != None:
-                    self.breakup(cat_to, cat_to_mate)
-
-                # new relationship
-                game.cur_events_list.append(
-                    f'{str(cat_from.name)} and {str(cat_to.name)} can\'t ignore their feelings for each other'
-                )
-                self.new_mates(cat_from, cat_to)
-
-        # breakup
-        if relationship.mates and 'negative' in relationship.effect:
-            chance_number = 30
-            if 'fight' in relationship.current_action_str:
-                chance_number = 20
-            chance = randint(0, chance_number)
-            if chance == 1 or relationship.dislike > 20:
-                self.breakup(cat_from, cat_to)
-
-    def new_mates(self, cat1, cat2):
-        # change cat 1
-        cat1_relation = list(
-            filter(lambda r: r.cat_to.ID == cat2.ID, cat1.relationships))
-        cat1.mate = cat2.ID
-        if cat1_relation is not None and len(cat1_relation) > 0:
-            cat1_relation = cat1_relation[0]
-            cat1_relation.mates = True
-            cat1_relation.romantic_love += 15
-            cat1_relation.comfortable += 10
-            cat1_relation.trust += 10
-        else:
-            cat1.relationships.append(Relationship(cat1, cat2, True))
-
-        # change cat 2
-        cat2_relation = list(
-            filter(lambda r: r.cat_to.ID == cat1.ID, cat2.relationships))
-        cat2.mate = cat1.ID
-        if cat2_relation is not None and len(cat2_relation) > 0:
-            cat2_relation = cat2_relation[0]
-            cat2_relation.mates = True
-            cat2_relation.romantic_love += 15
-            cat2_relation.comfortable += 10
-            cat2_relation.trust += 10
-        else:
-            cat1.relationships.append(Relationship(cat1, cat2, True))
-
-        game.cur_events_list.append(
-            f'{str(cat1.name)} and {str(cat2.name)} have become mates')
-
-    def breakup(self, cat1, cat2):
-        # change cat 1
-        cat1_relation = list(
-            filter(lambda r: r.cat_to.ID == cat2.ID, cat1.relationships))
-        cat1.mate = None
-        if cat1_relation is not None and len(cat1_relation) > 0:
-            cat1_relation = cat1_relation[0]
-            cat1_relation.mates = False
-            cat1_relation.romantic_love = 5
-            cat1_relation.comfortable -= 20
-            cat1_relation.trust -= 10
-        else:
-            cat1.relationships.append(Relationship(cat1, cat2))
-
-        # change cat 2
-        cat2_relation = list(
-            filter(lambda r: r.cat_to.ID == cat1.ID, cat2.relationships))
-        cat2.mate = None
-        if cat2_relation is not None and len(cat2_relation) > 0:
-            cat2_relation = cat2_relation[0]
-            cat2_relation.mates = False
-            cat2_relation.romantic_love = 5
-            cat2_relation.comfortable -= 20
-            cat2_relation.trust -= 10
-        else:
-            cat1.relationships.append(Relationship(cat1, cat2))
-
-        game.cur_events_list.append(
-            f'{str(cat1.name)} and {str(cat2.name)} broke up')
-
 
 events_class = Events()

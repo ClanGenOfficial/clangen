@@ -3,6 +3,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
+./scripts/__pycache__/
+scripts/__pycache__/
 
 # C extensions
 *.so
@@ -31,7 +33,7 @@ MANIFEST
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
-*.spec
+main.spec
 
 # Installer logs
 pip-log.txt
@@ -147,3 +149,8 @@ dmypy.json
 cython_debug/
 
 /saves/**
+*.png~
+.vscode/settings.json
+scripts/__pycache__/**
+/__pycache__/
+.vscode/settings.json

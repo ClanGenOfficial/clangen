@@ -1,3 +1,4 @@
+from multiprocessing import reduction
 from .pelts import *
 from .names import *
 from .sprites import *
@@ -6,7 +7,7 @@ from .relationship import *
 from random import choice, randint
 import math
 import os.path
-import json
+import ujson
 
 
 class Cat(object):
@@ -87,8 +88,11 @@ class Cat(object):
         self.dead_for = 0  # moons
         self.thought = ''
         self.genderalign = None
-        self.calicobase = None
-        self.calicocolour = None
+        self.tortiebase = None
+        self.pattern = None
+        self.tortiepattern = None
+        self.tortiecolour = None
+        self.birth_cooldown = 0
         if ID is None:
             potential_ID = str(randint(10000, 9999999))
             while potential_ID in self.all_cats:
@@ -151,30 +155,20 @@ class Cat(object):
 
         # pelt
         if self.pelt is None:
-            if self.parent1 is None:
-                # If pelt has not been picked manually, this function chooses one based on possible inheritances
-                self.pelt = choose_pelt(self.gender)
-
-            elif self.parent2 is None and self.parent1 in self.all_cats.keys():
+            if self.parent2 is None and self.parent1 in self.all_cats.keys():
                 # 1 in 3 chance to inherit a single parent's pelt
                 par1 = self.all_cats[self.parent1]
-                self.pelt = choose_pelt(self.gender,
-                                        choice([par1.pelt.colour, None]),
-                                        choice([par1.pelt.white, None]),
-                                        choice([par1.pelt.name, None]),
+                self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, None]), choice([par1.pelt.white, None]), choice([par1.pelt.name, None]),
                                         choice([par1.pelt.length, None]))
 
-            elif self.parent1 in self.all_cats.keys(
-            ) and self.parent2 in self.all_cats.keys():
+            if self.parent1 in self.all_cats.keys() and self.parent2 in self.all_cats.keys():
                 # 2 in 3 chance to inherit either parent's pelt
                 par1 = self.all_cats[self.parent1]
                 par2 = self.all_cats[self.parent2]
-                self.pelt = choose_pelt(
-                    self.gender,
-                    choice([par1.pelt.colour, par2.pelt.colour, None]),
-                    choice([par1.pelt.white, par2.pelt.white, None]),
-                    choice([par1.pelt.name, par2.pelt.name, None]),
-                    choice([par1.pelt.length, par2.pelt.length, None]))
+                self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, par2.pelt.colour, None]), choice([par1.pelt.white, par2.pelt.white, None]),
+                                        choice([par1.pelt.name, par2.pelt.name, None]), choice([par1.pelt.length, par2.pelt.length, None]))
+            else:
+                self.pelt = choose_pelt(self.gender)
 
         # NAME
         if self.pelt is not None:
@@ -248,66 +242,84 @@ class Cat(object):
             self.age_sprites[
                 'dead'] = None  # The sprite that the cat has in starclan
 
-            # WHITE PATCHES
+                # WHITE PATCHES
+        little_white_poss = little_white * 6
+        mid_white_poss = mid_white * 4
+        high_white_poss = high_white * 2
+        mostly_white_poss = mostly_white
+        if self.pelt is not None:
             if self.pelt.white and self.pelt.white_patches is not None:
                 pelt_choice = randint(0, 10)
-                if pelt_choice == 1 and self.pelt.name in [
-                        'Calico', 'TwoColour', 'Tabby', 'Speckled', 'Tabby2',
-                        'Speckled2'
-                ] and self.pelt.colour != 'WHITE':
-                    self.white_patches = choice(
-                        ['COLOURPOINT', 'COLOURPOINTCREAMY', 'RAGDOLL'])
-                elif pelt_choice == 1 and self.pelt.name in [
-                        'Calico', 'TwoColour', 'Tabby', 'Speckled', 'Tabby2',
-                        'Speckled2'
-                ]:
-                    self.white_patches = choice(['COLOURPOINT', 'RAGDOLL'])
-                elif self.pelt.name in [
-                        'Tabby', 'Speckled', 'Tabby2', 'Speckled2', 'TwoColour'
-                ] and self.pelt.colour == 'WHITE':
-                    self.white_patches = choice([
-                        'ANY', 'TUXEDO', 'LITTLE', 'VAN', 'ANY2', 'ONEEAR',
-                        'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'LIGHTSONG',
-                        'VITILIGO'
-                    ])
-                else:
-                    self.white_patches = choice(self.pelt.white_patches)
-            else:
-                self.white_patches = choice(['EXTRA', None, None])
+                vit_chance = randint(0, 40)
+                if pelt_choice == 1 and self.pelt.name in ['Tortie', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
+                and self.pelt.colour != 'WHITE':
+                    self.white_patches = choice(point_markings)
+                elif pelt_choice == 1 and self.pelt.name in 'TwoColour' and self.pelt.colour != 'WHITE':
+                    self.white_patches = choice(point_markings + ['POINTMARK'])
+                elif pelt_choice == 2 and self.pelt.name in ['Calico', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+                    self.white_patches = choice(mostly_white_poss)
+                elif pelt_choice == 3 and self.pelt.name in ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
+                and self.pelt.colour != 'WHITE':
+                    self.white_patches = choice(['EXTRA', None, 'FULLWHITE'])
 
-            # pattern for tortie/calico cats
-            if self.pelt.name == 'Calico' or self.pelt.name == 'Calico2':
-                self.pattern = choice(calico_pattern)
-            elif self.pelt.name == 'Tortie' or self.pelt.name == 'Tortie2':
-                self.pattern = choice(tortie_pattern)
+                else:
+                    if self.pelt.name in ['TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']:
+                        self.white_patches = choice(little_white_poss + mid_white_poss + high_white_poss)
+                    elif self.pelt.name in ['Tortie']:
+                        self.white_patches = choice(little_white_poss + mid_white_poss)
+                    elif self.pelt.name in ['Calico']:
+                        self.white_patches = choice(high_white_poss)
+                    elif pelt_choice == 1 and vit_chance == 1 and self.pelt.name in ['Tortie', 'TwoColour', 'Tabby', 'Speckled', 'Marbled', 'Bengal', 'Ticked', 'Smoke', 'Rosette']\
+                    and self.pelt.colour != 'WHITE':
+                        self.white_patches = choice(vit)
+                    else:
+                        self.white_patches = choice(self.pelt.white_patches)
             else:
-                self.pattern = None
+                self.white_patches = None
+            
+        # pattern for tortie/calico cats
+        if self.pelt.name in ['Calico', 'Tortie']:
+            self.tortiecolour = self.pelt.colour
+            self.tortiebase = choice(['single', 'tabby', 'bengal', 'marbled', 'ticked', 'smoke', 'rosette', 'speckled'])
+            if self.tortiebase == 'tabby':
+                self.tortiepattern = 'tortietabby'
+            elif self.tortiebase == 'bengal':
+                self.tortiepattern = 'tortiebengal'
+            elif self.tortiebase == 'marbled':
+                self.tortiepattern = 'tortiemarbled'
+            elif self.tortiebase == 'ticked':
+                self.tortiepattern = 'tortieticked'
+            elif self.tortiebase == 'rosette':
+                self.tortiepattern = 'tortierosette'
+            elif self.tortiebase == 'smoke':
+                self.tortiepattern = 'tortiesmoke'
+            elif self.tortiebase == 'speckled':
+                self.tortiepattern = 'tortiespeckled'
+            else:
+                self.tortiepattern = 'tortietabby'
         else:
-            self.white_patches = None
-            self.pattern = None
+            self.tortiebase = None
+            self.tortiepattern = None
+            self.tortiecolour = None
 
-        if self.calicobase == None:
-            if self.pattern != None:
-                if self.pattern in [
-                        'FADEDTHREE', 'FADEDFOUR', 'BLUETHREE', 'BLUEFOUR'
-                ] and self.pelt.name == "Calico":
-                    self.calicobase = "tabby"
-                elif self.pattern in [
-                        'FADEDTHREE', 'FADEDFOUR', 'BLUETHREE', 'BLUEFOUR'
-                ] and self.pelt.name == "Calico2":
-                    self.calicobase = "tabby2"
-                else:
-                    self.calicobase = "single"
-        if self.calicocolour == None:
-            if self.pattern != None:
-                if self.pattern in ['ONE', 'TWO', 'THREE', 'FOUR']:
-                    self.calicocolour = choice(["BLACK", "BROWN", "DARKBROWN", "GOLDEN"])
-                elif self.pattern in [
-                        'FADEDONE', 'FADEDTWO', 'FADEDTHREE', 'FADEDFOUR'
-                ]:
-                    self.calicocolour = choice(["PALEGREY", "LIGHTBROWN", "SILVER", "GREY", "GOLDEN"])
-                else:
-                    self.calicocolour = choice(["BROWN", "GOLDEN", "GREY", "DARKGREY"])
+        if self.pelt.name in ['Calico', 'Tortie'] and self.pelt.colour != None:
+            if self.pelt.colour in ["BLACK", "DARKBROWN"]:
+                self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR',
+                                        'DARKONE', 'DARKTWO', 'DARKTHREE', 'DARKFOUR'])
+            elif self.pelt.colour in ["DARKGREY", "BROWN"]:
+                self.pattern = choice(['GOLDONE', 'GOLDTWO', 'GOLDTHREE', 'GOLDFOUR', 'GINGERONE', 'GINGERTWO', 'GINGERTHREE', 'GINGERFOUR'])
+            elif self.pelt.colour in ["SILVER", "GREY", "LIGHTBROWN"]:
+                self.pattern = choice(['PALEONE', 'PALETWO', 'PALETHREE', 'PALEFOUR'])
+        else:
+            self.pattern = None
+            
+
+        self.paralyzed = False
+        self.no_kits = False
+        self.exiled = False
+        if self.genderalign == None:                             #gender stuff?? not sure why this is right here
+            self.genderalign = self.gender
+    
 
    
         # Sprite sizes
@@ -343,8 +355,8 @@ class Cat(object):
         self.no_kits = False
         self.exiled = False
         if self.genderalign == None:
-            self.genderalign = self.gender
-        
+            self.genderalign = self.gender        
+
 
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
@@ -355,13 +367,33 @@ class Cat(object):
     def __repr__(self):
         return self.ID
 
+    @property
+    def experience(self):
+        return self._experience
+
+    @experience.setter
+    def experience(self, exp):
+        if (exp > 80):
+            exp = 80
+        self._experience = exp
+        experience_levels = [
+            'very low', 'low', 'slightly low', 'average', 'somewhat high',
+            'high', 'very high', 'master', 'max'
+        ]
+        self.experience_level = experience_levels[math.floor(self.experience /
+                                                             10)]
+
     def thoughts(self):
         # actions or thoughts for all cats. These switch either every moon or every time the game is re-opened
 
         for c in self.all_cats.keys():
             other_cat = random.choice(list(self.all_cats.keys()))
+            countdown = int(len(cat_class.all_cats) / 3)
             while other_cat == c:
                 other_cat = random.choice(list(self.all_cats.keys()))
+                countdown-=1
+                if countdown <= 0:
+                    continue
             other_cat = self.all_cats.get(other_cat)
             other_name = str(other_cat.name)
             cat = self.all_cats.get(c)
@@ -589,14 +621,18 @@ class Cat(object):
                             ' about their own days as an apprentice',
                             'Is frustrated that ' + other_name +
                             ' won\'t take their duties more seriously',
-                            'Has successfully tricked ' + other_name +
-                            ' into believing a crazy tale about the Clan leader',
                             'Can\'t believe ' + other_name +
                             ' caught that rabbit on patrol yesterday',
                             'Doesn\'t think that ' + other_name +
                             ' has been completely honest lately',
                             'Is fuming from an argument with ' + other_name
                         ])
+                    elif cat.status in ['warrior', 'elder', 'deputy'] and other_cat.status == 'apprentice':
+                        thoughts.extend([
+                            'Has successfully tricked ' + other_name +
+                            ' into believing a crazy tale about the Clan leader',
+                        ])
+
                     # kit thoughts
                     if cat.status == 'kitten':
                         # kit thoughts with other kit
@@ -644,8 +680,6 @@ class Cat(object):
                                 'Is giving advice to ' + other_name,
                                 'Is giving ' + other_name +
                                 ' a badger ride on their back!',
-                                'Hopes that their own kits are as cute as ' +
-                                other_name + ' someday',
                                 'Had to nip ' + other_name +
                                 ' on the rump because they were being naughty',
                                 'Is promising to take ' + other_name +
@@ -657,6 +691,9 @@ class Cat(object):
                                 'Gave ' + other_name +
                                 ' a trinket they found while out on patrol today'
                             ])
+                            if cat.ID not in [other_cat.parent1, other_cat.parent2]:
+                                thoughts.append('Hopes that their own kits are as cute as ' +
+                                other_name + ' someday')
                         else:
                             thoughts.extend([
                                 'Is fighting with ' + other_name,
@@ -666,8 +703,7 @@ class Cat(object):
                                 'Just told ' + other_name + ' a hilarious joke'
                             ])
 
-                    if cat.age == other_cat.age and cat.parent1 != other_cat.parent1 and cat.parent2 != other_cat.parent2 and cat.ID not in [other_cat.parent1, other_cat.parent2] and other_cat.ID\
-                       not in [cat.parent1, cat.parent2] and cat.mate is None and other_cat.mate is None and cat.age == other_cat.age:
+                    if other_cat.is_potential_mate(cat,for_love_interest=True):
                         thoughts.extend([
                             'Is developing a crush on ' + other_name,
                             'Is spending a lot of time with ' + other_name,
@@ -910,7 +946,8 @@ class Cat(object):
                     elif cat.trait == 'troublesome':
                         thoughts.extend([
                             'Is ignoring their mentor\'s orders',
-                            'Is making other apprentices laugh'
+                            'Is making other apprentices laugh',
+                            'Got in trouble for shirking their training the other day...'
                         ])
                     elif cat.trait == 'vengeful':
                         thoughts.extend(['Snaps at another apprentice'])
@@ -1349,7 +1386,7 @@ class Cat(object):
                     thoughts.extend([
                         'Caught scent of a fox earlier',
                         'Caught scent of an enemy warrior earlier',
-                        'Is helping gathering herbs', 'Is thinking about love',
+                        'Is helping to gather herbs', 'Is thinking about love',
                         'Is decorating their nest',
                         'Is reinforcing the camp with brambles',
                         'Caught a huge rabbit',
@@ -1712,14 +1749,17 @@ class Cat(object):
                             ['Recently snapped at the kits, making them cry'])
                 elif cat.trait == 'compassionate':
                     thoughts.extend([
-                        'Is being scolded for giving their prey away to a starving loner',
                         'Spent time today with a grieving Clanmate',
                         'Is helping the medicine cat organize herb stores',
                         'Let their Clanmate have the last piece of fresh kill on the pile this morning',
-                        'Is making sure that the leader has eaten before they dig in to their own meal',
                         'Is noticing with joy how well the Clan is looking after one another as of late',
                         'Is listening to a Clanmate\'s struggles with love'
                     ])
+                    if cat.status != 'leader':
+                        thoughts.extend([
+                        'Is making sure that the leader has eaten before they dig in to their own meal',
+                        'Is being scolded for giving their prey away to a starving loner'
+                        ])
                     # checks for specific roles
                     if other_cat.status == 'elder':
                         thoughts.extend([
@@ -2004,7 +2044,6 @@ class Cat(object):
                         'Won\'t stop pulling pranks', 'Is causing problems',
                         'Recently put a dead snake at the camp entrance to scare Clanmates',
                         'Is embarrassed after getting a taste of their own bitter herbs... Serves them right!',
-                        'Got in trouble for shirking their training the other day...',
                         'Can\'t seem to sit still!',
                         'Is surprisingly on task today',
                         'Is lightening the mood around camp with their shenanigans',
@@ -2027,11 +2066,14 @@ class Cat(object):
                         'Seems to be plotting something',
                         'Is definitely plotting something',
                         'Is glaring daggers across the camp clearing',
-                        'Swears that they will get their revenge... but for what?',
-                        'Thinks that the Clan leader should declare war on a neighboring Clan',
+                        'Swears that they will get their revenge... but for what?',                        
                         'Is angrily clawing up the ground, lost in deep thought',
                         'Is shredding the grass underpaw'
                     ])
+                    if cat.status != 'leader':
+                        thoughts.extend([
+                            'Thinks that the Clan leader should declare war on a neighboring Clan'
+                        ])
                 elif cat.trait == 'wise':
                     thoughts.extend([
                         'Has a suggestion for the Clan leader that they wish to present',
@@ -2220,76 +2262,38 @@ class Cat(object):
             elif self.parent2 is None and self.parent1 in self.all_cats.keys():
                 # 1 in 3 chance to inherit a single parent's pelt
                 par1 = self.all_cats[self.parent1]
-                self.pelt = choose_pelt(self.gender,
-                                        choice([par1.pelt.colour, None]),
-                                        choice([par1.pelt.white, None]),
-                                        choice([par1.pelt.name, None]),
+                self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, None]), choice([par1.pelt.white, None]), choice([par1.pelt.name, None]),
                                         choice([par1.pelt.length, None]))
 
-            elif self.parent1 in self.all_cats.keys(
-            ) and self.parent2 in self.all_cats.keys():
+            elif self.parent1 in self.all_cats.keys() and self.parent2 in self.all_cats.keys():
                 # 2 in 3 chance to inherit either parent's pelt
                 par1 = self.all_cats[self.parent1]
                 par2 = self.all_cats[self.parent2]
-                self.pelt = choose_pelt(
-                    self.gender,
-                    choice([par1.pelt.colour, par2.pelt.colour, None]),
-                    choice([par1.pelt.white, par2.pelt.white, None]),
-                    choice([par1.pelt.name, par2.pelt.name, None]),
-                    choice([par1.pelt.length, par2.pelt.length, None]))
+                self.pelt = choose_pelt(self.gender, choice([par1.pelt.colour, par2.pelt.colour, None]), choice([par1.pelt.white, par2.pelt.white, None]),
+                                        choice([par1.pelt.name, par2.pelt.name, None]), choice([par1.pelt.length, par2.pelt.length, None]))
             else:
                 self.pelt = choose_pelt(self.gender)
 
         # THE SPRITE UPDATE
         # draw colour & style
-        new_sprite = pygame.Surface((sprites.size, sprites.size),
-                                    pygame.HWSURFACE | pygame.SRCALPHA)
-        game.switches[
-            'error_message'] = 'There was an error loading a cat\'s base coat sprite. Last cat read was ' + str(
-                self)
-        if self.pelt.name not in ['Tortie', 'Calico', 'Calico2', 'Tortie2']:
-            if self.pelt.length == 'long' and self.status not in [
-                    'kitten', 'apprentice', 'medicine cat apprentice'
-            ] or self.age == 'elder':
-                new_sprite.blit(
-                    sprites.sprites[self.pelt.sprites[1] + 'extra' +
-                                    self.pelt.colour +
-                                    str(self.age_sprites[self.age])], (0, 0))
+        new_sprite = pygame.Surface((sprites.size, sprites.size), pygame.HWSURFACE | pygame.SRCALPHA)
+        game.switches['error_message'] = 'There was an error loading a cat\'s base coat sprite. Last cat read was ' + str(self)
+        if self.pelt.name not in ['Tortie', 'Calico']:
+            if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
+                new_sprite.blit(sprites.sprites[self.pelt.sprites[1] + 'extra' + self.pelt.colour + str(self.age_sprites[self.age])], (0, 0))
             else:
-                new_sprite.blit(
-                    sprites.sprites[self.pelt.sprites[1] + self.pelt.colour +
-                                    str(self.age_sprites[self.age])], (0, 0))
+                new_sprite.blit(sprites.sprites[self.pelt.sprites[1] + self.pelt.colour + str(self.age_sprites[self.age])], (0, 0))
         else:
-            game.switches[
-                'error_message'] = 'There was an error loading a tortie\'s base coat sprite. Last cat read was ' + str(
-                    self)
-            if self.pelt.length == 'long' and self.status not in [
-                    'kitten', 'apprentice', 'medicine cat apprentice'
-            ] or self.age == 'elder':
-                new_sprite.blit(
-                    sprites.sprites[self.calicobase + 'extra' +
-                                    self.calicocolour +
-                                    str(self.age_sprites[self.age])], (0, 0))
-                game.switches[
-                    'error_message'] = 'There was an error loading a tortie\'s pattern sprite. Last cat read was ' + str(
-                        self)
-                new_sprite.blit(
-                    sprites.sprites[self.pelt.sprites[1] + 'extra' +
-                                    self.pattern +
-                                    str(self.age_sprites[self.age])], (0, 0))
+            game.switches['error_message'] = 'There was an error loading a tortie\'s base coat sprite. Last cat read was ' + str(self)
+            if self.pelt.length == 'long' and self.status not in ['kitten', 'apprentice', 'medicine cat apprentice'] or self.age == 'elder':
+                new_sprite.blit(sprites.sprites[self.tortiebase + 'extra' + self.tortiecolour + str(self.age_sprites[self.age])], (0, 0))
+                game.switches['error_message'] = 'There was an error loading a tortie\'s pattern sprite. Last cat read was ' + str(self)
+                new_sprite.blit(sprites.sprites[self.tortiepattern + 'extra' + self.pattern + str(self.age_sprites[self.age])], (0, 0))
             else:
-                new_sprite.blit(
-                    sprites.sprites[self.calicobase + self.calicocolour +
-                                    str(self.age_sprites[self.age])], (0, 0))
-                game.switches[
-                    'error_message'] = 'There was an error loading a tortie\'s pattern sprite. Last cat read was ' + str(
-                        self)
-                new_sprite.blit(
-                    sprites.sprites[self.pelt.sprites[1] + self.pattern +
-                                    str(self.age_sprites[self.age])], (0, 0))
-        game.switches[
-            'error_message'] = 'There was an error loading a cat\'s white patches sprite. Last cat read was ' + str(
-                self)
+                new_sprite.blit(sprites.sprites[self.tortiebase + self.tortiecolour + str(self.age_sprites[self.age])], (0, 0))
+                game.switches['error_message'] = 'There was an error loading a tortie\'s pattern sprite. Last cat read was ' + str(self)
+                new_sprite.blit(sprites.sprites[self.tortiepattern + self.pattern + str(self.age_sprites[self.age])], (0, 0))
+        game.switches['error_message'] = 'There was an error loading a cat\'s white patches sprite. Last cat read was ' + str(self)
         # draw white patches
         if self.white_patches is not None:
             if self.pelt.length == 'long' and self.status not in [
@@ -2531,112 +2535,77 @@ class Cat(object):
             new_pos[0] = screen_x + pos[0] - sprites.size * 3
         self.used_screen.blit(self.large_sprite, new_pos)
 
-    def save_cats(self):
-        data = ''
-        for x in self.all_cats.values():
-            if not x.dead:
-                x.save_relationship_of_cat()
-            # cat ID -- name prefix : name suffix
-            data += x.ID + ',' + x.name.prefix + ':' + x.name.suffix + ','
-            # cat gender -- status -- age -- trait
-            data += x.gender + ',' + x.status + ',' + str(
-                x.age) + ',' + x.trait + ','
-            # cat parent1 -- parent2 -- mentor
-            if x.parent1 is None:
-                data += 'None ,'
-            else:
-                data += x.parent1 + ','
-            if x.parent2 is None:
-                data += 'None ,'
-            else:
-                data += x.parent2 + ','
-            if x.mentor is None:
-                data += 'None ,'
-            else:
-                data += x.mentor.ID + ','
-
-            # pelt type -- colour -- white -- length
-            data += x.pelt.name + ',' + x.pelt.colour + ',' + str(
-                x.pelt.white) + ',' + x.pelt.length + ','
-            # sprite kitten -- adolescent
-            data += str(x.age_sprites['kitten']) + ',' + str(
-                x.age_sprites['adolescent']) + ','
-            # sprite adult -- elder
-            data += str(x.age_sprites['adult']) + ',' + str(
-                x.age_sprites['elder']) + ','
-            # eye colour -- reverse -- white patches -- pattern
-            data += x.eye_colour + ',' + str(x.reverse) + ',' + str(
-                x.white_patches) + ',' + str(x.pattern) + ','
-            # skin -- skill -- NONE  -- specs  -- moons
-            data += x.skin + ',' + x.skill + ',' + 'None' + ',' + str(
-                x.specialty) + ',' + str(x.moons) + ','
-            # mate -- dead  -- dead sprite
-            data += str(x.mate) + ',' + str(x.dead) + ',' + str(
-                x.age_sprites['dead'])
-            
-            #accessories
-            data += ',' + str(x.accessory)
-            # scar 2
-            data += ',' + str(x.specialty2)
-            # experience
-            data += ',' + str(x.experience)
-            # dead_for x moons
-            data += ',' + str(x.dead_for)
-            # apprentice
-            if len(x.apprentice) > 0:
-                data += ','
-                for cat in x.apprentice:
-                    data += str(cat.ID) + ';'
-                # remove last semicolon
-                data = data[:-1]
-            else:
-                data += ',' + 'None'
-            if x.paralyzed:
-                data += ',' + 'True'
-            else:
-                data += ',' + 'False'
-            if x.no_kits:
-                data += ',' + 'True'
-            else:
-                data += ',' + 'False'
-            if x.exiled:
-                data += ',' + 'True'
-            else:
-                data += ',' + 'False'
-            if x.genderalign:
-                data += ',' + str(x.genderalign)
-            else:
-                data += ',' + 'None'
-            if x.calicobase:
-                data += ',' + str(x.calicobase)
-            else:
-                data += ',' + 'None'
-            if x.calicocolour:
-                data += ',' + str(x.calicocolour)
-            else:
-                data += ',' + 'None'
-            # former apprentice
-            if len(x.former_apprentices) > 0:
-                data += ','
-                for cat in x.former_apprentices:
-                    if cat is not None:
-                        data += str(cat.ID) + ';'
-                # remove last semicolon
-                data = data[:-1]
-            else:
-                data += ',' + 'None'
-            # next cat
-            data += '\n'
-
-        # remove one last unnecessary new line
-        data = data[:-1]
-
+    def json_save_cats(self):
+        """Save the cat data."""
+        clanname = ''        
         if game.switches['clan_name'] != '':
             clanname = game.switches['clan_name']
-        else:
+        elif len(game.switches['clan_name']) > 0:
             clanname = game.switches['clan_list'][0]
-        with open('saves/' + clanname + 'cats.csv', 'w') as write_file:
-            write_file.write(data)
+        elif game.clan != None:
+            clanname = game.clan.name
+
+        directory = 'saves/' + clanname
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+
+        clan_cats = []
+        for inter_cat in self.all_cats.values():
+            cat_data = {
+                "ID": inter_cat.ID,
+                "name_prefix": inter_cat.name.prefix,
+                "name_suffix": inter_cat.name.suffix,
+                "gender": inter_cat.gender,
+                "gender_align": inter_cat.genderalign,
+                "status": inter_cat.status,
+                "age": inter_cat.age,
+                "moons": inter_cat.moons,
+                "trait": inter_cat.trait,
+                "parent1": inter_cat.parent1,
+                "parent2": inter_cat.parent2,
+                "mentor": inter_cat.mentor.ID if inter_cat.mentor else None,
+                "paralyzed": inter_cat.paralyzed,
+                "no_kits": inter_cat.no_kits,
+                "exiled": inter_cat.exiled,
+                "pelt_name": inter_cat.pelt.name,
+                "pelt_color": inter_cat.pelt.colour,
+                "pelt_white": inter_cat.pelt.white,
+                "pelt_length": inter_cat.pelt.length,
+                "spirit_kitten": inter_cat.age_sprites['kitten'],
+                "spirit_adolescent": inter_cat.age_sprites['adolescent'],
+                "spirit_young_adult": inter_cat.age_sprites['young adult'],
+                "spirit_adult": inter_cat.age_sprites['adult'],
+                "spirit_senior_adult": inter_cat.age_sprites['senior adult'],
+                "spirit_elder": inter_cat.age_sprites['elder'],
+                "eye_colour": inter_cat.eye_colour,
+                "reverse": inter_cat.reverse,
+                "white_patches": inter_cat.white_patches,
+                "pattern": inter_cat.pattern,
+                "tortie_base": inter_cat.tortiebase,
+                "tortie_color": inter_cat.tortiecolour,
+                "tortie_pattern": inter_cat.tortiepattern,
+                "skin": inter_cat.skin,
+                "skill": inter_cat.skill,
+                "specialty": inter_cat.specialty,
+                "specialty2": inter_cat.specialty2,
+                "accessory": inter_cat.accessory,
+                "mate": inter_cat.mate,
+                "dead": inter_cat.dead,
+                "spirit_dead": inter_cat.age_sprites['dead'],
+                "experience": inter_cat.experience,
+                "dead_moons": inter_cat.dead_for,
+                "current_apprentice": [appr.ID for appr in inter_cat.apprentice],
+                "former_apprentices" :[appr.ID for appr in inter_cat.former_apprentices]
+            }
+            clan_cats.append(cat_data)
+            inter_cat.save_relationship_of_cat()
+
+        try:
+            with open('saves/' + clanname + '/clan_cats.json', 'w') as write_file:
+                json_string = ujson.dumps(clan_cats, indent = 4)
+                write_file.write(json_string)
+        except:
+            print("Saving cats didn't work.")
 
     def save_relationship_of_cat(self):
         # save relationships for each cat
@@ -2663,16 +2632,27 @@ class Cat(object):
                 "admiration": r.admiration,
                 "comfortable": r.comfortable,
                 "jealousy": r.jealousy,
-                "trust": r.trust
+                "trust": r.trust,
+                "log": r.log
             }
             rel.append(r_data)
 
-        with open(relationship_dir + '/' + self.ID + '_relations.json',
-                  'w') as rel_file:
-            json_string = json.dumps(rel)
-            rel_file.write(json_string)
+        try:
+            with open(relationship_dir + '/' + self.ID + '_relations.json',
+                      'w') as rel_file:
+                json_string = ujson.dumps(rel, indent = 4)
+                rel_file.write(json_string)
+        except:
+            print(f"Saving relationship of cat #{self} didn't work.")
 
     def load_cats(self):
+        directory = 'saves/' + game.switches['clan_list'][0] + '/clan_cats.json'
+        if os.path.exists(directory):
+            self.json_load()
+        else:
+            self.csv_load()
+
+    def csv_load(self):
         if game.switches['clan_list'][0].strip() == '':
             cat_data = ''
         else:
@@ -2691,12 +2671,14 @@ class Cat(object):
         if len(cat_data) > 0:
             cat_data = cat_data.replace('\t', ',')
             for i in cat_data.split('\n'):
-                # CAT: ID(0) - prefix:suffix(1) - gender(2) - status(3) - age(4) - trait(5) - parent1(6) - parent2(7)
-                #  - mentor(8)
+                # CAT: ID(0) - prefix:suffix(1) - gender(2) - status(3) - age(4) - trait(5) - parent1(6) - parent2(7) - mentor(8)
                 # PELT: pelt(9) - colour(10) - white(11) - length(12)
                 # SPRITE: kitten(13) - apprentice(14) - warrior(15) - elder(16) - eye colour(17) - reverse(18)
-                # - white patches(19) - pattern(20) - skin(21) - skill(22) - NONE(23) - spec(24) - moons(25) - mate(26)
-                # dead(27) - SPRITE:dead(28)
+                # - white patches(19) - pattern(20) - tortiebase(21) - tortiepattern(22) - tortiecolour(23) - skin(24) - skill(25) - NONE(26) - spec(27) - accessory(28) -
+                # spec2(29) - moons(30) - mate(31)
+                # dead(32) - SPRITE:dead(33) - exp(34) - dead for _ moons(35) - current apprentice(36) 
+                # (BOOLS, either TRUE OR FALSE) paralyzed(37) - no kits(38) - exiled(39)
+                # genderalign(40) - former apprentices list (41)[FORMER APPS SHOULD ALWAYS BE MOVED TO THE END]
                 if i.strip() != '':
                     attr = i.split(',')
                     for x in range(len(attr)):
@@ -2708,151 +2690,194 @@ class Cat(object):
                         elif attr[x].upper() == 'FALSE':
                             attr[x] = False
 
-                    game.switches[
-                        'error_message'] = 'There was an error loading cat # ' + str(
-                            attr[0])
+                    game.switches['error_message'] = '1There was an error loading cat # ' + str(attr[0])
 
-                    the_pelt = choose_pelt(attr[2], attr[10], attr[11],
-                                           attr[9], attr[12], True)
-                    the_cat = Cat(ID=attr[0],
-                                  prefix=attr[1].split(':')[0],
-                                  suffix=attr[1].split(':')[1],
-                                  gender=attr[2],
-                                  status=attr[3],
-                                  pelt=the_pelt,
-                                  parent1=attr[6],
-                                  parent2=attr[7],
-                                  eye_colour=attr[17])
+                    the_pelt = choose_pelt(attr[2], attr[10], attr[11], attr[9], attr[12], True)
+                    game.switches['error_message'] = '2There was an error loading cat # ' + str(attr[0])
+                    the_cat = Cat(ID=attr[0], prefix=attr[1].split(':')[0], suffix=attr[1].split(':')[1], gender=attr[2], status=attr[3], pelt=the_pelt, parent1=attr[6],
+                                  parent2=attr[7], eye_colour=attr[17])
+                    game.switches['error_message'] = '3There was an error loading cat # ' + str(attr[0])
                     the_cat.age, the_cat.mentor = attr[4], attr[8]
-                    the_cat.age_sprites['kitten'], the_cat.age_sprites[
-                        'adolescent'] = int(attr[13]), int(attr[14])
-                    the_cat.age_sprites['adult'], the_cat.age_sprites[
-                        'elder'] = int(attr[15]), int(attr[16])
-                    the_cat.age_sprites['young adult'], the_cat.age_sprites[
-                        'senior adult'] = int(attr[15]), int(attr[15])
-                    the_cat.reverse, the_cat.white_patches, the_cat.pattern = attr[
-                        18], attr[19], attr[20]
-                    the_cat.trait, the_cat.skin, the_cat.specialty = attr[
-                        5], attr[21], attr[24]
+                    game.switches['error_message'] = '4There was an error loading cat # ' + str(attr[0])
+                    the_cat.age_sprites['kitten'], the_cat.age_sprites['adolescent'] = int(attr[13]), int(attr[14])
+                    game.switches['error_message'] = '5There was an error loading cat # ' + str(attr[0])
+                    the_cat.age_sprites['adult'], the_cat.age_sprites['elder'] = int(attr[15]), int(attr[16])
+                    game.switches['error_message'] = '6There was an error loading cat # ' + str(attr[0])
+                    the_cat.age_sprites['young adult'], the_cat.age_sprites['senior adult'] = int(attr[15]), int(attr[15])
+                    game.switches['error_message'] = '7There was an error loading cat # ' + str(attr[0])
+                    the_cat.reverse, the_cat.white_patches, the_cat.pattern = attr[18], attr[19], attr[20]
+                    game.switches['error_message'] = '8There was an error loading cat # ' + str(attr[0])
+                    the_cat.tortiebase, the_cat.tortiepattern, the_cat.tortiecolour = attr[21], attr[22], attr[23]
+                    game.switches['error_message'] = '9There was an error loading cat # ' + str(attr[0])
+                    the_cat.trait, the_cat.skin, the_cat.specialty = attr[5], attr[24], attr[27]
+                    game.switches['error_message'] = '10There was an error loading cat # ' + str(attr[0])
+                    the_cat.skill = attr[25]
+                    if len(attr) > 28:
+                        the_cat.accessory = attr[28]
 
                     if len(attr) > 29:
-                        the_cat.accessory = attr[29]
-                    
-                    if len(attr) > 30:
-                        the_cat.specialty2 = attr[30]
+                        the_cat.specialty2 = attr[29]
                     else:
                         the_cat.specialty2 = None
-
-                    if len(attr) > 31:
-                        the_cat.experience = int(attr[31])
-                        experiencelevels = [
-                            'very low', 'low', 'slightly low', 'average',
-                            'somewhat high', 'high', 'very high', 'master',
-                            'max'
-                        ]
-                        the_cat.experience_level = experiencelevels[math.floor(
-                            int(the_cat.experience) / 10)]
-
+                    game.switches['error_message'] = '11There was an error loading cat # ' + str(attr[0])
+                    if len(attr) > 34:
+                        the_cat.experience = int(attr[34])
+                        experiencelevels = ['very low', 'low', 'slightly low', 'average', 'somewhat high', 'high', 'very high', 'master', 'max']
+                        the_cat.experience_level = experiencelevels[math.floor(int(the_cat.experience) / 10)]
                     else:
                         the_cat.experience = 0
-
-                    if len(attr) > 25:
+                    game.switches['error_message'] = '12There was an error loading cat # ' + str(attr[0])
+                    if len(attr) > 30:
                         # Attributes that are to be added after the update
-                        the_cat.moons = int(attr[25])
-                        if len(attr) >= 27:
+                        the_cat.moons = int(attr[30])
+                        if len(attr) >= 31:
                             # assigning mate to cat, if any
-                            the_cat.mate = attr[26]
-                        if len(attr) >= 28:
+                            the_cat.mate = attr[31]
+                        if len(attr) >= 32:
                             # Is the cat dead
-                            the_cat.dead = attr[27]
-                            the_cat.age_sprites['dead'] = attr[28]
-                    if len(attr) > 32:
-                        the_cat.dead_for = int(attr[32])
-                    the_cat.skill = attr[22]
-                    if len(attr) > 33 and attr[33] is not None:
-                        the_cat.apprentice = attr[33].split(';')
-                    if len(attr) > 34:
-                        if (attr[34] != True or attr[34] != False):
-                            the_cat.paralyzed = False
-                        else:
-                            the_cat.paralyzed = bool(attr[34])
+                            the_cat.dead = attr[32]
+                            the_cat.age_sprites['dead'] = attr[33]
+                    game.switches['error_message'] = '13There was an error loading cat # ' + str(attr[0])
                     if len(attr) > 35:
-                        if (attr[35] != True or attr[35] != False):
-                            the_cat.no_kits = False
-                        else:
-                            the_cat.no_kits = bool(attr[35])
-                    if len(attr) > 36:
-                        if (attr[36] != True or attr[36] != False):
-                            the_cat.exiled = False
-                        else:
-                            the_cat.exiled = bool(attr[36])
+                        the_cat.dead_for = int(attr[35])
+                    game.switches['error_message'] = '14There was an error loading cat # ' + str(attr[0])
+                    if len(attr) > 36 and attr[36] is not None:
+                        the_cat.apprentice = attr[36].split(';')
+                    game.switches['error_message'] = '15There was an error loading cat # ' + str(attr[0])
                     if len(attr) > 37:
-                        if attr[37] != True or attr[37] != False or attr[
-                                37] != '' or attr[37] != None:
-                            the_cat.genderalign = attr[37]
-                        else:
-                            the_cat.genderalign = None
+                        the_cat.paralyzed = bool(attr[37])
                     if len(attr) > 38:
-                        if attr[38] not in [
-                                'None', 'tabby', 'tabby2', 'single', 'False',
-                                'True'
-                        ]:
-                            the_cat.calicobase = 'single'
-                        else:
-                            the_cat.calicobase = attr[38]
+                        the_cat.no_kits = bool(attr[38])
                     if len(attr) > 39:
-                        if attr[39] not in ['BLACK', 'BROWN', 'GREY']:
-                            the_cat.calicocolour = 'BLACK'
-                        else:
-                            the_cat.calicocolour = attr[39]
-                    if len(attr) > 40 and attr[40] is not None:
-                        try:
-                            the_cat.former_apprentices = attr[40].split(';')
-                        except:
-                            the_cat.former_apprentices = []
+                        the_cat.exiled = bool(attr[39])
+                    if len(attr) > 40:
+                        the_cat.genderalign = attr[40]
+                    if len(attr) > 41 and attr[41] is not None:                 #KEEP THIS AT THE END
+                        the_cat.former_apprentices = attr[41].split(';')
 
             game.switches[
                 'error_message'] = 'There was an error loading this clan\'s mentors, apprentices, relationships, or sprite info.'
 
-            for n in self.all_cats.values():
+            for inter_cat in self.all_cats.values():
                 # Load the mentors and apprentices after all cats have been loaded
                 game.switches[
                     'error_message'] = 'There was an error loading this clan\'s mentors/apprentices. Last cat read was ' + str(
-                        n)
-                n.mentor = cat_class.all_cats.get(n.mentor)
+                        inter_cat)
+                inter_cat.mentor = cat_class.all_cats.get(inter_cat.mentor)
                 apps = []
                 former_apps = []
-                for app_id in n.apprentice:
+                for app_id in inter_cat.apprentice:
                     app = cat_class.all_cats.get(app_id)
                     # Make sure if cat isn't an apprentice, they're a former apprentice
                     if 'apprentice' in app.status:
                         apps.append(app)
                     else:
                         former_apps.append(app)
-                for f_app_id in n.former_apprentices:
+                for f_app_id in inter_cat.former_apprentices:
                     f_app = cat_class.all_cats.get(f_app_id)
                     former_apps.append(f_app)
-                n.apprentice = apps
-                n.former_apprentices = former_apps
+                inter_cat.apprentice = apps
+                inter_cat.former_apprentices = former_apps
                 game.switches[
-                    'error_message'] = 'There was an error loading this clan\'s relationships. Last cat read was ' + str(
-                        n)
-                n.load_relationship_of_cat()
+                    'error_message'] = 'There was an error loading this clan\'s relationships. Last cat read was ' + str(inter_cat)
+                inter_cat.load_relationship_of_cat()
                 game.switches[
-                    'error_message'] = 'There was an error loading a cat\'s sprite info. Last cat read was ' + str(
-                        n)
-                n.update_sprite()
+                    'error_message'] = 'There was an error loading a cat\'s sprite info. Last cat read was ' + str(inter_cat)
+                inter_cat.update_sprite()
 
             # generate the relationship if some is missing
-            game.switches[
-                'error_message'] = 'There was an error when relationships where created.'
+            game.switches['error_message'] = 'There was an error when relationships where created.'
             for id in self.all_cats.keys():
                 the_cat = self.all_cats.get(id)
-                if the_cat.relationships != None and len(
-                        the_cat.relationships) < 1:
+                game.switches['error_message'] = f'There was an error when relationships for cat #{the_cat} are created.'
+                if the_cat.relationships != None and len(the_cat.relationships) < 1:
                     the_cat.create_new_relationships()
 
             game.switches['error_message'] = ''
+
+    def json_load(self):
+        all_cats = []
+        cat_data = None
+        clanname = game.switches['clan_list'][0]
+        try:
+            with open('saves/' + clanname + '/clan_cats.json', 'r') as read_file:
+                cat_data = ujson.loads(read_file.read())
+        except:
+            game.switches['error_message'] = 'There was an error loading the json cats file!'
+            return
+        # create new cat objects
+        for cat in cat_data:
+            new_pelt = choose_pelt(cat["gender"], cat["pelt_color"], cat["pelt_white"], cat["pelt_name"], cat["pelt_length"], True)
+            
+            new_cat = Cat(ID=cat["ID"], prefix=cat["name_prefix"], suffix=cat["name_suffix"], gender=cat["gender"],
+                            status=cat["status"], parent1=cat["parent1"], parent2=cat["parent2"], moons=cat["moons"],
+                            eye_colour=cat["eye_colour"], pelt=new_pelt)
+            new_cat.age = cat["age"]
+            new_cat.genderalign = cat["gender_align"]
+            new_cat.moons = cat["moons"]
+            new_cat.trait = cat["trait"]
+            new_cat.mentor = cat["mentor"]
+            new_cat.paralyzed = cat["paralyzed"]
+            new_cat.no_kits = cat["no_kits"]
+            new_cat.exiled = cat["exiled"]
+            new_cat.age_sprites['kitten'] = cat["spirit_kitten"]
+            new_cat.age_sprites['adolescent'] = cat["spirit_adolescent"]
+            new_cat.age_sprites['young adult'] = cat["spirit_young_adult"]
+            new_cat.age_sprites['adult'] = cat["spirit_adult"]
+            new_cat.age_sprites['senior adult'] = cat["spirit_senior_adult"]
+            new_cat.age_sprites['elder'] = cat["spirit_elder"]
+            new_cat.eye_colour = cat["eye_colour"]
+            new_cat.reverse = cat["reverse"]
+            new_cat.white_patches = cat["white_patches"]
+            new_cat.pattern = cat["pattern"]
+            new_cat.tortiebase = cat["tortie_base"]
+            new_cat.tortiecolour = cat["tortie_color"]
+            new_cat.tortiepattern = cat["tortie_pattern"]
+            new_cat.skin = cat["skin"]
+            new_cat.skill = cat["skill"]
+            new_cat.specialty = cat["specialty"]
+            new_cat.specialty2 = cat["specialty2"]
+            new_cat.accessory = cat["accessory"]
+            new_cat.mate = cat["mate"]
+            new_cat.dead = cat["dead"]
+            new_cat.age_sprites['dead'] = cat["spirit_dead"]
+            new_cat.experience = cat["experience"]
+            new_cat.dead_for = cat["dead_moons"]
+            new_cat.apprentice = cat["current_apprentice"]
+            new_cat.former_apprentices = cat["former_apprentices"]
+
+            all_cats.append(new_cat)
+
+            
+        # replace cat ids with cat objects (only needed by mentor)
+        for cat in all_cats:
+            # load the relationships
+            cat.load_relationship_of_cat()
+
+            mentor_relevant = list(filter(lambda inter_cat: inter_cat.ID == cat.mentor, all_cats))
+            cat.mentor = None
+            if len(mentor_relevant) == 1:
+                cat.mentor = mentor_relevant[0]
+            
+            # Update the apprentice
+            if len(cat.apprentice) > 0:
+                new_apprentices = []
+                for cat_id in cat.apprentice:
+                    relevant_list = list(filter(lambda cat: cat.ID == cat_id, all_cats))
+                    if len(relevant_list) > 0:
+                        # if the cat can't be found, drop the cat_id
+                        new_apprentices.append(relevant_list[0])
+                cat.apprentice = new_apprentices
+
+            # Update the apprentice
+            if len(cat.former_apprentices) > 0:
+                new_apprentices = []
+                for cat_id in cat.former_apprentices:
+                    relevant_list = list(filter(lambda cat: cat.ID == cat_id, all_cats))
+                    if len(relevant_list) > 0:
+                        # if the cat can't be found, drop the cat_id
+                        new_apprentices.append(relevant_list[0])
+                cat.former_apprentices = new_apprentices
 
     def load_relationship_of_cat(self):
         if game.switches['clan_name'] != '':
@@ -2863,12 +2888,11 @@ class Cat(object):
         relation_directory = 'saves/' + clanname + '/relationships/'
         relation_cat_directory = relation_directory + self.ID + '_relations.json'
 
-        if not os.path.exists(relation_directory and relation_cat_directory):
-            self.relationships = []
-        else:
+        self.relationships = []
+        if os.path.exists(relation_directory and relation_cat_directory):
             try:
                 with open(relation_cat_directory, 'r') as read_file:
-                    rel_data = json.loads(read_file.read())
+                    rel_data = ujson.loads(read_file.read())
                     relationships = []
                     for rel in rel_data:
                         cat_to = self.all_cats.get(rel['cat_to_id'])
@@ -2877,19 +2901,22 @@ class Cat(object):
                         new_rel = Relationship(
                             cat_from=self,
                             cat_to=cat_to,
-                            mates=rel['mates'],
-                            family=rel['family'],
-                            romantic_love=rel['romantic_love'],
-                            platonic_like=rel['platonic_like'],
-                            dislike=rel['dislike'],
-                            admiration=rel['admiration'],
-                            comfortable=rel['comfortable'],
-                            jealousy=rel['jealousy'],
-                            trust=rel['trust'])
+                            mates=rel['mates'] if rel['mates'] else False,
+                            family=rel['family'] if rel['family'] else False,
+                            romantic_love=rel['romantic_love'] if rel['romantic_love'] else 0,
+                            platonic_like=rel['platonic_like'] if rel['platonic_like'] else 0,
+                            dislike=rel['dislike'] if rel['dislike'] else 0,
+                            admiration=rel['admiration'] if rel['admiration'] else 0,
+                            comfortable=rel['comfortable'] if rel['comfortable'] else 0,
+                            jealousy=rel['jealousy'] if rel['jealousy'] else 0,
+                            trust=rel['trust'] if rel['trust'] else 0,
+                            log =rel['log'] if rel['log'] else [])
                         relationships.append(new_rel)
                     self.relationships = relationships
             except:
-                self.relationships = []
+                print(f'There was an error reading the relationship file of cat #{self}.')
+        else:
+            self.create_new_relationships()
 
     def load(self, cat_dict):
         """ A function that takes a dictionary containing other dictionaries with attributes and values of all(?)
@@ -2936,6 +2963,10 @@ class Cat(object):
                     new_cat.pelt = value  # PELT
                 if attr == 'eye_colour':
                     new_cat.eye_colour = value  # EYES
+                if attr == 'tortiebase':
+                    new_cat.tortiebase = value
+                if attr == 'tortiepattern':
+                    new_cat.tortiepattern = value
                 if attr == 'mate':
                     new_cat.mate = value  # MATE
                 if attr == 'trait':
@@ -2948,6 +2979,8 @@ class Cat(object):
     def describe_color(self):
         color_name = ''
         color_name = str(self.pelt.colour).lower()
+        if self.tortiecolour != None:
+            color_name = str(self.tortiecolour).lower()
         if color_name == 'palegrey':
             color_name = 'pale grey'
         elif color_name == 'darkgrey':
@@ -2964,69 +2997,54 @@ class Cat(object):
             color_name = color_name + ' tabby'
         elif self.pelt.name == "Speckled":
             color_name = color_name + ' speckled'
-        elif self.pelt.name == "Speckled2":
+        elif self.pelt.name == "Bengal":
             color_name = color_name + ' bengal'
-        elif self.pelt.name == "Tabby2":
+        elif self.pelt.name == "Marbled":
             color_name = color_name + ' marbled tabby'
         elif self.pelt.name == "Rosette":
             color_name = color_name + ' rosetted'
         elif self.pelt.name == "Ticked":
             color_name = color_name + ' ticked tabby'
-        if color_name == 'white' and self.pelt.name == "Smoke":
-            color_name = 'black tipped white'
-        elif color_name == 'palegrey' and self.pelt.name == "Smoke":
-            color_name = 'lilac silver shaded'
-        elif color_name == 'silver' and self.pelt.name == "Smoke":
-            color_name = 'blue silver shaded'
-        elif self.pelt.name == "Smoke" and color_name is not [
-                'black tipped white', 'lilac silver shaded',
-                'blue silver shaded'
-        ]:
+        elif self.pelt.name == "Smoke":
             color_name = color_name + ' smoke'
 
-        elif self.pelt.name == "Tortie" or self.pelt.name == "Tortie2" or self.pelt.name == "Calico" or self.pelt.name == "Calico2":
-            color_name = 'tortie'  # check for calico or for white later
+        elif self.pelt.name == "Tortie":
+            if self.tortiepattern not in ["tortiesolid", "tortiesmoke"]:
+                color_name = color_name + ' torbie'
+            else:
+                color_name = color_name + ' tortie'
+        elif self.pelt.name == "Calico":
+            if self.tortiepattern not in ["tortiesolid", "tortiesmoke"]:
+                color_name = color_name + ' tabico'
+            else:
+                color_name = color_name + ' calico'
         # enough to comment but not make calico
-        if self.white_patches in [
-                'LITTLE', 'LITTLECREAMY', 'LIGHTTUXEDO', 'BUZZARDFANG', 'TIP',
-                'FANCY', 'BLAZE', 'BIB', 'VEE', 'PAWS', 'DAMIEN', 'BELLY',
-                'TAILTIP', 'TOES', 'BROKENBLAZE', 'SKUNK', 'KARPATI', 'LILTWO'
-        ]:
+        if self.white_patches in [little_white, mid_white]:
             color_name = color_name + ' and white'
         # and white
-        elif self.white_patches in [
-                'ANY', 'TUXEDO', 'ANY2', 'ANYCREAMY', 'TUXEDOCREAMY',
-                'ANY2CREAMY', 'BROKEN', 'FRECKLES', 'RINGTAIL', 'HALFFACE',
-                'PANTS2', 'GOATEE', 'PRINCE', 'UNDERS', 'FAROFA', 'MISTER',
-                'PANTS', 'REVERSEPANTS', 'HALFWHITE', 'APPALOOSA', 'PIEBALD',
-                'GLASS'
-        ]:
-            if color_name == 'tortie':
-                color_name = 'calico'
-            else:
+        elif self.white_patches in high_white:
+            if self.pelt.name != "Calico":
                 color_name = color_name + ' and white'
         # white and
-        elif self.white_patches in [
-                'VAN', 'VANCREAMY', 'ONEEAR', 'LIGHTSONG', 'TAIL', 'CURVED',
-                'HEART', 'MOORISH'
-        ]:
+        elif self.white_patches in mostly_white:
             color_name = 'white and ' + color_name
         # colorpoint
-        elif self.white_patches in [
-                'COLOURPOINT', 'RAGDOLL', 'COLOURPOINTCREAMY', 'POINTMARK'
-        ]:
+        elif self.white_patches in point_markings:
             color_name = color_name + ' point'
-            if color_name == 'darkginger point':
+            if color_name == 'darkginger point' or color_name == 'ginger point':
                 color_name = 'flame point'
         # vitiligo
-        elif self.white_patches in ['VITILIGO']:
+        elif self.white_patches in [vit]:
             color_name = color_name + ' with vitiligo'
 
         if color_name == 'tortie':
             color_name = 'tortoiseshell'
 
+        if self.white_patches == 'FULLWHITE':
+            color_name = 'white'
+
         if color_name == 'white and white':
-            color = name = 'white'
+            color_name = 'white'
 
         return color_name
 
@@ -3037,9 +3055,126 @@ class Cat(object):
             sex = 'she-cat'
         else:
             sex = 'cat'
-        description = self.describe_color()
-        description += ' ' + str(self.pelt.length).lower() + '-furred ' + sex
+        description = str(self.pelt.length).lower() + '-furred'
+        description += ' ' + self.describe_color() + ' ' + sex
         return description
+
+    def set_mate(self, other_cat):
+        """Assigns other_cat as mate to self."""
+        self.mate = other_cat.ID
+        other_cat.mate = self.ID
+
+        cat_relationship = list(
+            filter(lambda r: r.cat_to.ID == other_cat.ID, self.relationships))
+        if cat_relationship is not None and len(cat_relationship) > 0:
+            cat_relationship[0].romantic_love += 20
+            cat_relationship[0].comfortable += 20
+            cat_relationship[0].trust += 10
+            cat_relationship[0].cut_boundries()
+        else:
+            self.relationships.append(
+                Relationship(self, other_cat, True))
+
+    def unset_mate(self, breakup = False, fight = False):
+        """Unset the mate."""
+        if self.mate is None:
+            return
+
+        relation = list(
+            filter(lambda r: r.cat_to.ID == self.mate, self.relationships))
+        if relation is not None and len(relation) > 0:
+            relation = relation[0]
+            relation.mates = False
+            if breakup:
+                relation.romantic_love -= 40
+                relation.comfortable -= 20
+                relation.trust -= 10
+                if fight:
+                    relation.platonic_like -= 30
+                relation.cut_boundries()
+        else:
+            mate = self.all_cats.get(self.mate)
+            self.relationships.append(Relationship(self, mate))
+
+        self.mate = None
+
+    def is_potential_mate(self, other_cat, for_love_interest = False):
+        """Checks if this cat is a free and potential mate for the other cat."""
+        # just to be sure, check if it is not the same cat
+        if self.ID == other_cat.ID:
+            return False
+
+        # check exiles and dead cats
+        if self.dead or self.exiled or other_cat.dead or other_cat.exiled:
+            return False
+
+        # check for current mate
+        # if the cat has a mate, they are not open for a new mate
+        if not for_love_interest and self.mate is not None:
+            return False
+
+        if self.mate is not None or other_cat.mate is not None:
+            return False
+
+        # check for mentor
+        is_former_mentor = (other_cat in self.former_apprentices or self in other_cat.former_apprentices)
+        if is_former_mentor and not game.settings['romantic with former mentor']:
+            return False
+
+        # check for relation
+        direct_related = self.is_sibling(other_cat) or self.is_parent(other_cat) or other_cat.is_parent(self)
+        indirect_related = self.is_uncle_aunt(other_cat) or other_cat.is_uncle_aunt(self)
+        if direct_related or indirect_related:
+            return False
+        
+        # check for age
+        if self.moons < 14 or other_cat.moons < 14:
+            return False
+
+        if self.age == other_cat.age:
+            return True
+
+        invalid_status_mate = ['kitten', 'apprentice', 'medicine cat apprentice']
+        not_invalid_status = self.status not in invalid_status_mate and other_cat.status not in invalid_status_mate
+        if not_invalid_status and abs(self.moons - other_cat.moons) <= 40:
+            return True
+
+        return False
+
+    def is_parent(self, other_cat):
+        """Check if the cat is the parent of the other cat."""
+        if self.ID in other_cat.get_parents():
+            return True
+        return False
+
+    def is_sibling(self, other_cat):
+        """Check if the cats are siblings."""
+        if set(self.get_parents()) & set(other_cat.get_parents()):
+            return True
+        return False
+
+    def is_uncle_aunt(self, other_cat):
+        """Check if the cats are related as uncle/aunt and niece/nephew."""
+        if set(self.get_siblings()) & set(other_cat.get_parents()):
+            return True
+        return False
+
+    def get_parents(self):
+        """Returns list containing parents of cat."""
+        parents = []
+        if self.parent1 is not None:
+            parents.append(self.parent1)
+            if self.parent2 is not None:
+                parents.append(self.parent2)
+        return parents
+
+    def get_siblings(self):
+        """Returns list of the siblings."""
+        siblings = []
+        for inter_cat in self.all_cats.values():
+            if self.is_sibling(inter_cat):
+                siblings.append(inter_cat.ID)
+        return siblings
 
 
 # Twelve example cats

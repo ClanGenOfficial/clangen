@@ -1,5 +1,6 @@
 from .cats import *
 from .text import *
+from .patrol import *
 try:
     from .world import *
     mapavailable = True
@@ -88,7 +89,8 @@ class Clan(object):
                 self.clan_cats.append(self.deputy.ID)
             self.deputy_predecessors = 0
             self.medicine_cat = medicine_cat
-            self.medicine_cat.status_change('medicine cat')
+            if medicine_cat and medicine_cat.status != 'medicine cat': 
+                self.medicine_cat.status_change('medicine cat')
             self.med_cat_predecessors = 0
             self.clan_cats.append(self.medicine_cat.ID)
             self.age = 0
@@ -131,7 +133,7 @@ class Clan(object):
                 cat_class.all_cats.get(cat_id).status_change('apprentice')
 
         cat_class.thoughts()
-        cat_class.save_cats()
+        cat_class.json_save_cats()
         number_other_clans = randint(3, 5)
         for _ in range(number_other_clans):
             self.all_clans.append(OtherClan())
@@ -195,6 +197,7 @@ class Clan(object):
         game.cur_events_list.clear()
         with open('saves/clanlist.txt', 'w') as write_file:
             write_file.write(list_data)
+        game.cur_events_list.clear()
 
         pygame.display.quit()
         pygame.quit()
@@ -249,6 +252,7 @@ class Clan(object):
             for _ in range(number_other_clans):
                 self.all_clans.append(OtherClan())
             return
+        game.switches['error_message'] = "There was an error loading the clan.txt"
         with open('saves/' + game.switches['clan_list'][0] + 'clan.txt',
                   'r') as read_file:
             clan_data = read_file.read()
@@ -319,8 +323,7 @@ class Clan(object):
             for other_clan in other_clans:
                 other_clan_info = other_clan.split(';')
                 self.all_clans.append(
-                    OtherClan(other_clan_info[0], other_clan_info[1],
-                              other_clan_info[2]))
+                    OtherClan(other_clan_info[0],int(other_clan_info[1]),other_clan_info[2]))
 
         else:
             number_other_clans = randint(3, 5)
@@ -333,13 +336,14 @@ class Clan(object):
                 game.clan.add_to_starclan(cat_class.all_cats[cat])
             else:
                 print('Cat not found:', cat)
+        game.switches['error_message'] = ''
 
 
 class OtherClan(object):
 
     def __init__(self, name='', relations=0, temperament=''):
         self.name = name or choice(names.normal_prefixes)
-        self.relations = relations or randint(10, 15)
+        self.relations = relations or randint(8, 13)
         self.temperament = temperament or choice([
             'bloodthirsty', 'righteous', 'strict', 'kind', 'calm',
             'progressive', 'faithful', 'thoughtful', 'compassionate',
