@@ -743,7 +743,7 @@ class Patrol():
             if self.patrol_stat_cat is not None:
                 if self.patrol_stat_cat.trait in self.patrol_event.win_trait:
                     n = 3
-                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills and success_text[2] is not None:
+                elif self.patrol_stat_cat.skill in self.patrol_event.win_skills:
                     n = 2
             else:
                 if outcome >= 10 and len(success_text) >= 2 and success_text[1] is not None:
@@ -775,11 +775,9 @@ class Patrol():
                 for cat in self.patrol_cats:
                     if cat.skill in self.patrol_event.fail_skills or cat.trait in self.patrol_event.fail_trait:
                         self.patrol_stat_cat = cat
-            if self.patrol_stat_cat is not None:
-                if self.patrol_stat_cat.trait in self.patrol_event.fail_trait or self.patrol_stat_cat.skill in self.patrol_event.fail_skills and fail_text[1] is not None:
+            if self.patrol_stat_cat is not None and len(fail_text) > 1:
+                if fail_text[1] is not None:
                     n = 1
-            elif outcome >= 15 and len(fail_text) > 1 and fail_text[1] is not None:
-                n = 1
             elif outcome <= 10 and len(fail_text) > 3 and fail_text[3] is not None:
                 n = 3
             elif outcome >= 11 and len(fail_text) > 2 and fail_text[2] is not None:
