@@ -99,7 +99,7 @@ class Patrol():
         patrol_size = len(self.patrol_cats)
         reputation = game.clan.reputation
         other_clan = self.other_clan
-        clan_relations = game.clan.other_clan.relations
+        clan_relations = other_clan.relations
         hostile_rep = False
         neutral_rep = False
         welcoming_rep = False
