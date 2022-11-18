@@ -1,0 +1,95 @@
+[
+    {
+        "patrol_id": "gen_border_ally1",
+       "biome": "Any",
+       "season": "Any",
+       "tags": ["border", "other_clan"],
+       "intro_text": "Your patrol meets o_c_n, a clan they consider to be allies, at the border.",
+       "decline_text": "You decide not to stop and talk with their patrol.",
+       "chance_of_success": 60,
+       "exp": 10,
+       "success_text": [
+               "The patrol has a nice conversation with them, remarking on the recent weather before parting to continue patrolling.",
+               "The patrols share recent clan news with each other: how prey has been running lately, new apprentices or kits, and other such information.  They part on good terms, comradery between the clans continuing to grow.",
+               "s_c approaches the other patrol first, calling out a greeting and smoothly beginning a friendly conversation. The two patrols sit and chat for a little while before once again parting to patrol their respective territories.",
+               "s_c excitedly trots up to the other patrol, greeting them pleasantly.  They seem to be on good terms with the other cats on this patrol and strike up conversation about specific happenings in their clan, asking if so-and-so had kits or if a certain apprentice had been made a warrior yet."
+       ],
+       "fail_text": [
+               "Though your patrol stops to chat, the other patrol seems standoffish and cold.  After a stilted attempt at conversation, the two patrols part and go on their way.  It seems as though your alliance with o_c_n is weakening.",
+               "Your patrol stops to talk with the other cats but s_c is quick to begin taunting them, poking fun at the other clan. When the two patrols part ways tails are whipping and voices border on a hiss."
+       ],
+       "other_clan": ["None"],
+       "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+       "win_trait": ["charismatic", "altruistic", "thoughtful", "wise", "confident"],
+       "fail_skills": ["None"],
+       "fail_trait": ["bloodthirsty", "vengeful", "troublesome", "childish"],
+       "min_cats": 1,
+       "max_cats": 6,
+       "antagonize_text": "Despite considering them allies, these cats are no friends of c_n.  Your patrol glares and hisses from their side of the border until the o_c_n patrol continues on their way, confused and wary.",
+       "antagonize_fail_text": "Your patrol meets the other with glares and taunts but the o_c_n patrol appears unfazed.  The other patrol leader meets p_l's gaze evenly and with confidence. Eventually your patrol backs down and leaves the area first, feeling a bit embarrassed at the lack of reaction.",
+       "history_text": []
+},
+
+{
+        "patrol_id": "gen_border_ally2",
+       "biome": "Any",
+       "season": "Any",
+       "tags": ["border", "other_clan"],
+       "intro_text": "Your patrol meets o_c_n, a clan they consider to be allies, at the border.",
+       "decline_text": "You decide not to stop and talk with their patrol.",
+       "chance_of_success": 60,
+       "exp": 10,
+       "success_text": [
+               "The patrol has a nice conversation with them, remarking on the recent weather before parting to continue patrolling.",
+               "The patrols share recent clan news with each other: how prey has been running lately, new apprentices or kits, and other such information.  They part on good terms, comradery between the clans continuing to grow.",
+               "s_c approaches the other patrol first, calling out a greeting and then remarking on a recent battle between o_c_n and one of the other clans. s_c compliments the o_c_n cats on their battle prowess.",
+               "s_c approaches the other patrol first, calling out a greeting and then remarking on a recent battle between o_c_n and one of the other clans. s_c compliments the o_c_n cats on their battle prowess."
+       ],
+       "fail_text": [
+               "Though your patrol stops to chat, the other patrol seems standoffish and cold.  After a stilted attempt at conversation, the two patrols part and go on their way.  It seems as though your alliance with o_c_n is weakening.",
+               "Your patrol stops to talk with the other cats but s_c is nervous to talk with o_c_n cats.  The other patrol notices and takes offense at the lack of friendly demeanor."
+       ],
+       "other_clan": ["None"],
+       "win_skills": ["good fighter", "great fighter", "excellent fighter"],
+       "win_trait": ["confident", "fierce", "bold", "righteous", "bloodthirsty", "compassionate", "empathetic"],
+       "fail_skills": ["None"],
+       "fail_trait": ["nervous", "insecure"],
+       "min_cats": 1,
+       "max_cats": 6,
+       "antagonize_text": "Despite considering them allies, these cats are no friends of c_n.  Your patrol glares and hisses from their side of the border until the o_c_n patrol continues on their way, confused and wary.",
+       "antagonize_fail_text": "Your patrol meets the other with glares and taunts but the o_c_n patrol appears unfazed.  The other patrol leader meets p_l's gaze evenly and with confidence. Eventually your patrol backs down and leaves the area first, feeling a bit embarrassed at the lack of reaction.",
+       "history_text": []
+},
+
+{
+        "patrol_id": "gen_border_ally3",
+       "biome": "Any",
+       "season": "Any",
+       "tags": ["border", "other_clan", "hunting"],
+       "intro_text": "r_c spies a fat rabbit on the other side of the o_c_n border.  A tempting opportunity to be sure, but it may not be wise to hunt on their ally's territory.",
+       "decline_text": "It's not worth ruining c_n's relationship with their ally.",
+       "chance_of_success": 60,
+       "exp": 10,
+       "success_text": [
+               "r_c pounces without hesitation!  They glance around, rabbit hanging from their muzzle, but it seems there aren't any o_c_n cats nearby.  r_c trots back over the border, their prize in tow and transgression unnoticed.",
+               "r_c leaps for the rabbit!  And promptly trips over a rock.  The rabbit hops away and r_c sheepishly picks themselves up.  It's probably for the better that they weren't able to catch the rabbit.  Trespassing could easily have damaged relations with o_c_n.",
+               "s_c leaps for the rabbit, making a swift kill just before an o_c_n patrol comes into view.  The o_c_n cats seem miffed by this trespass, but not yet hostile thanks to your alliance.  Thankfully s_c smooths things over with the other patrol, graciously gifting them the rabbit, and they part ways without damaging the relationship between clans.",
+               "r_c is about to leap for the rabbit before s_c grabs them by the scruff and pulls them back!  A moment later, r_c sees the group of o_c_n cats that had just come into view.  Good thing s_c stopped them before they could blatantly trespass in full view of the other clan."
+       ],
+       "fail_text": [
+               "r_c leaps for the rabbit!  And promptly trips over a rock.  The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border.  The other cat knows exactly what r_c was intending to do and turns away, presumably to report the incident to their own leader.",
+               "s_c pounces with no hesitation!  They easily kill the rabbit before glancing up and coming face to face with a o_c_n cat.  s_c is promptly chased back over the border and the other cat glares, hissing and spitting, until your patrol leaves the area."
+       ],
+       "other_clan": ["None"],
+       "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+       "win_trait": ["careful", "calm", "patient", "wise", "sneaky", "responsible"],
+       "fail_skills": ["None"],
+       "fail_trait": ["daring", "adventurous", "ambitious", "bold", "shameless", "troublesome"],
+       "min_cats": 2,
+       "max_cats": 6,
+       "antagonize_text": "A tempting opportunity.  And also a perfect one.  r_c pounces and swiftly kills the rabbit, intentionally leaving evidence of their deed behind.  That will show those o_c_n cats just how confident c_n is in their own power.",
+       "antagonize_fail_text": "r_c leaps for the rabbit!  And promptly trips over a rock.  The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat laughs at the pathetic display and turns to walk deeper into their own territory.  They seem to be unfazed and unimpressed by the sad attempt.",
+       "history_text": []
+}
+
+]
