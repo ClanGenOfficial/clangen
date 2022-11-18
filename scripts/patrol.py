@@ -185,7 +185,15 @@ class Patrol():
                 correct_season = True
             elif patrol.season == "Any":
                 correct_season = True
-            if max_good and min_good and correct_season and correct_biome:
+            if patrol.tags is not None:
+                if "apprentice" in patrol.tags:
+                    if "apprentice" not in patrol.patrol_statuses:
+                        apprentice = False
+                    else:
+                        apprentice = True
+                else:
+                    apprentice = True
+            if max_good and min_good and correct_season and correct_biome and apprentice:
                 final_patrols.append(patrol)
 
         return final_patrols
@@ -593,16 +601,8 @@ class Patrol():
                 exp = patrol["exp"],
                 min_cats = patrol["min_cats"],
                 max_cats = patrol["max_cats"])
-            if patrol_event.tags is not None:
-                if "apprentice" in patrol_event.tags:
-                    if "apprentice" in self.patrol_statuses:
-                        apprentice = True
-                    else:
-                        apprentice = False
-                if apprentice:
-                    all_patrol_events.append(patrol_event)
-                else:
-                    all_patrol_events.append(patrol_event)
+            
+            all_patrol_events.append(patrol_event)
         
         return all_patrol_events
 
@@ -641,6 +641,8 @@ class Patrol():
         c = randint(20, 100)
         outcome = int(random.getrandbits(4))
         print("Outcome: " + str(outcome))
+        print("Clan Rel. Before: " + str(patrol.other_clan.relations))
+        print("Rep. Before: " + str(game.clan.reputation))
         if c < chance:
             self.success = True
             # this adds the stat cat (if there is one)
@@ -677,6 +679,8 @@ class Patrol():
             print("Min cats: " + str(self.patrol_event.min_cats) + " & Max cats: " + str(self.patrol_event.max_cats))
             print(str(self.final_fail) + " #: " + str(n))
             print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
+            print("Clan Rel. After: " + str(patrol.other_clan.relations))
+            print("Rep. After: " + str(game.clan.reputation))
         else:
             self.success = False
             if self.patrol_event.fail_skills is not None and self.patrol_event.fail_trait is not None:
@@ -720,6 +724,8 @@ class Patrol():
             print("Min cats: " + str(self.patrol_event.min_cats) + " and Max cats " + str(self.patrol_event.max_cats))
             print(str(self.final_fail) + " #: " + str(n))
             print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
+            print("Clan Rel. After: " + str(patrol.other_clan.relations))
+            print("Rep. After: " + str(game.clan.reputation))
 
     def handle_exp_gain(self):
         gm_modifier = 1
