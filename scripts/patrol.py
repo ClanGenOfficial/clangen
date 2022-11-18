@@ -179,10 +179,14 @@ class Patrol():
                 correct_biome = True
             elif patrol.biome == "Any":
                 correct_biome = True
+            else:
+                correct_biome = False
             if patrol.season == current_season:
                 correct_season = True
             elif patrol.season == "Any":
                 correct_season = True
+            else:
+                correct_season = False
             if patrol.tags is not None:
                 if "apprentice" in patrol.tags:
                     if "apprentice" not in self.patrol_statuses:
