@@ -162,7 +162,7 @@ class Patrol():
                 possible_patrols.extend(self.generate_patrol_events(OTHER_CLAN_ALLIES))
             elif clan_hostile:
                 possible_patrols.extend(self.generate_patrol_events(OTHER_CLAN_HOSTILE))
-                
+
         # one last check
         for patrol in possible_patrols:
             if patrol_size >= patrol.min_cats:
@@ -178,102 +178,7 @@ class Patrol():
 
         return final_patrols
 
-        # other_clan patrols
-        if randint(1, 1) == 1 and self.other_clan is not None:
-            other_clan = self.other_clan
-            other_clan_relations = int(other_clan.relations)
-            #other_clan_temperament = int(other_clan.relations)
-            if other_clan_relations > 17:
-                possible_patrols.extend([
-                PatrolEvent(800,
-                'c_n meets their allies, o_c_n, at the border', 
-                'Your cats have a nice conversation with them',
-                'Although they act nice, the alliance seems to be weakening', 
-                'You decide not to talk with the ally patrol', 60, 10, 
-                other_clan,
-                win_skills = ['good speaker', 'great speaker', 'excellent speaker'],
-                antagonize_text= 'Your cats seem to ignore the alliance, threatening o_c_n anyway',
-                antagonize_fail_text = 'Your cats try to offend to the other clan but only make things slightly awkward'
-                )
-                ])
-
-            elif other_clan_relations < 11 and other_clan_relations > 6:
-                possible_patrols.extend([
-                PatrolEvent(801, 
-                'c_n is threatened by a o_c_n patrol at the border', 
-                'Your cats manage to smooth things out a bit',
-                'The patrol ends with threats and malice. Clan relations have worsened', 
-                'You decide to back off from the opposing patrol', 60, 10, 
-                other_clan,
-                win_skills=['great speaker', 'excellent speaker'],
-                antagonize_text='Your cats shoot back threats as well, hurting clan relations',
-                antagonize_fail_text='Your cats mostly ignore the other clan\'s threats'
-                )
-                ])
-
-            elif other_clan_relations < 7 and 'fierce' not in self.patrol_traits and 'bloodthirsty' not in self.patrol_traits:
-                possible_patrols.extend([
-                PatrolEvent(802,
-                'Your patrol is attacked by a o_c_n patrol at the border', 
-                'Your cats manage to escape without injury',
-                'r_c is killed by the o_c_n patrol', 
-                'You run away from the other patrol', 60, 10,
-                other_clan,
-                win_skills=['great fighter', 'excellent fighter', 'excellent speaker'],
-                antagonize_text='Your cats attack o_c_n right back',
-                antagonize_fail_text='r_c is killed by the o_c_n patrol'
-                )
-                ])
-
-
-            elif other_clan_relations < 7 and 'fierce' in self.patrol_traits:
-                possible_patrols.extend([
-                PatrolEvent(803,
-                'Your patrol is attacked by a o_c_n patrol at the border',
-                'Your cats manage to escape, but only after s_c kills an enemy ' + choice(['warrior', 'apprentice']),
-                'r_c is killed by the o_c_n patrol', 
-                'You run away from the other patrol', 60, 10,
-                other_clan,
-                win_skills=['great fighter', 'excellent fighter', 'excellent speaker'],
-                win_trait = 'fierce',
-                antagonize_text='Your cats chase o_c_n away as they flee',
-                antagonize_fail_text='r_c is killed by the o_c_n patrol'
-                )
-                ])
-
-            elif other_clan_relations < 7:
-                possible_patrols.extend([
-                PatrolEvent(804, 
-                'Your patrol is attacked by a o_c_n patrol at the border',
-                'Your cats manage to escape, but only after s_c kills an enemy ' + choice(['warrior', 'apprentice']),
-                'r_c is killed by the o_c_n patrol', 
-                'You run away from the other patrol', 60, 10,
-                other_clan,
-                win_skills=['great fighter', 'excellent fighter', 'excellent speaker'],
-                win_trait = 'bloodthirsty',
-                antagonize_text= 'Your cats chase o_c_n away as they flee',
-                antagonize_fail_text= 'r_c is killed by the o_c_n patrol'
-                )
-                ])
-
-
-            else:
-                possible_patrols.extend([
-                PatrolEvent(805,
-                'c_n meets a o_c_n patrol at the border, but nobody is hostile',
-                'Your cats have a nice conversation with them',
-                'Despite the lack of outright hostilities, the situation turns awkward fast',
-                'You decide not to talk with the opposing patrol', 60, 10,
-                other_clan,
-                win_skills=['great speaker', 'excellent speaker'],
-                antagonize_text= 'Your cats intentionally antagonize the other clan anyway',
-                antagonize_fail_text= 'Despite the vague threats, the situation only turns awkward',
-                )
-                ])
-
-        
-
-
+         
         if self.patrol_random_cat is not None and self.patrol_random_cat.status == 'apprentice' and len(
                 self.patrol_cats) > 1:
             possible_patrols.extend([
@@ -304,10 +209,7 @@ class Patrol():
                     10,
                     win_skills=['very smart', 'extremely smart']),
             ])
-
-        # new cat patrols
-        possible_patrols.extend(self.generate_patrol_events(GENERAL_NEW_CAT))     
-        # two or more cats            
+         
         # conversation patrols
         if len(self.patrol_cats) == 2 and self.patrol_leader != self.patrol_random_cat:
             # general relationship patrols
