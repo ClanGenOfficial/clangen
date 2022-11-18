@@ -1209,9 +1209,6 @@ patrol = Patrol()
 # ---------------------------------------------------------------------------- #
 
 resource_directory = "resources/dicts/patrols/"
-leaves_path = "leaves/"
-biomes_path = "biomes/"
-condition_path = "conditions/"
 
 GENERAL = None
 with open(f"{resource_directory}general.json", 'r') as read_file:
@@ -1241,13 +1238,21 @@ NEW_CAT_WELCOMING = None
 with open(f"{resource_directory}new_cat_welcoming.json", 'r') as read_file:
     NEW_CAT_WELCOMING = ujson.loads(read_file.read())
 
+OTHER_CLAN = None
+with open(f"{resource_directory}other_clan.json", 'r') as read_file:
+    OTHER_CLAN = ujson.loads(read_file.read())
+
+OTHER_CLAN_ALLIES = None
+with open(f"{resource_directory}other_clan_allies.json", 'r') as read_file:
+    OTHER_CLAN_ALLIES = ujson.loads(read_file.read())
+
+OTHER_CLAN_HOSTILE = None
+with open(f"{resource_directory}other_clan_hostile.json", 'r') as read_file:
+    OTHER_CLAN_HOSTILE = ujson.loads(read_file.read())
+
 # ---------------------------------------------------------------------------- #
 #                            patrols with conditions                           #
 # ---------------------------------------------------------------------------- #
-
-ONE_CAT_APPR = None
-with open(f"{resource_directory}{condition_path}one_cat_apprentice_patrol.json", 'r') as read_file:
-    ONE_CAT_APPR = ujson.loads(read_file.read())
 
 DISASTER = None
 with open(f"{resource_directory}disaster.json", 'r') as read_file:
