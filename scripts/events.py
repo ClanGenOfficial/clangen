@@ -541,7 +541,9 @@ class Events():
                 cat.get_injured("water in the lungs")
 
             # add also a injury, when a leader is cruel
-            if "injured" and (risky_mentor or risky_leader):
+            # CARE: IF SCAR TEXTS ARE ADDED, THIS MAY CHANGE
+            leader_mentor_hurt = "injured by" in chosen_scar and "enemy" not in chosen_scar
+            if leader_mentor_hurt and (risky_mentor or risky_leader):
                 possible_injuries = ["bite-wound", "bruises", "claw-wound", "scrapes", "torn pelt", "torn ear"]
                 random_index = int(random.random() * len(possible_injuries))
                 injury_name = possible_injuries[random_index]
@@ -921,7 +923,7 @@ class Events():
             game.cur_events_list.append(event_string)
 
         if game.clan.game_mode == 'expanded' and not triggered_death:
-            if not random.getrandbits(9):  # 1/512
+            if not int(random.random() * 750):  # 1/750
                 triggered_death = True
                 self.handle_deaths_expanded(cat, other_cat)
             else:
