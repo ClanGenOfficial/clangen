@@ -89,8 +89,8 @@
         "fail_text": [
                 "r_c leaps for the rabbit!  And promptly trips over a rock.  The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border.  The other cat knows exactly what r_c was intending to do and hisses crossly before turning away, presumably to report the incident to their own leader.",
                 "s_c pounces with no hesitation!  They easily kill the rabbit before glancing up and coming face to face with a o_c_n cat.  s_c is promptly chased back over the border and the other cat glares, hissing and spitting, until your patrol leaves the area.",
-                "r_c pounces with no hesitation!  They easily kill the rabbit before glancing up and coming face to face with a o_c_n cat.  After a short tussle, r_c flees back over the border and limps their way home, that rabbit certainly wasn't worth the trouble.",
-                "r_c checks the area, it seems to be clear of o_c_n patrols.  They leap for the rabbit, easily killing it, but very quickly find that they should've double checked before trespassing.  An o_c_n patrol rushes into view from where they were hiding and descends upon r_c, killing them before anyone else can help.  Was one rabbit worth this?"
+                "r_c checks the area, it seems to be clear of o_c_n patrols.  They leap for the rabbit, easily killing it, but very quickly find that they should've double checked before trespassing.  An o_c_n patrol rushes into view from where they were hiding and descends upon r_c, killing them before anyone else can help.  Was one rabbit worth this?",
+                "r_c pounces with no hesitation!  They easily kill the rabbit before glancing up and coming face to face with a o_c_n cat.  After a short tussle, r_c flees back over the border and limps their way home, that rabbit certainly wasn't worth the trouble."
         ],
         "other_clan": ["None"],
         "win_skills": ["good speaker", "great speaker", "excellent speaker"],
