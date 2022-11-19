@@ -85,10 +85,8 @@
                 null,
                 "r_c pounces with no hesitation! They easily kill the rabbit before glancing up and coming face to face with a o_c_n cat. After a short tussle, r_c flees back over the border and limps their way home, that rabbit certainly wasn't worth the trouble."
         ],
-        "other_clan": ["None"],
         "win_skills": ["good speaker", "great speaker", "excellent speaker"],
         "win_trait": ["careful", "calm", "patient", "wise", "sneaky", "responsible"],
-        "fail_skills": ["None"],
         "fail_trait": ["daring", "adventurous", "ambitious", "bold", "shameless", "troublesome"],
         "min_cats": 2,
         "max_cats": 6,

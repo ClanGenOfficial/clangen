@@ -30,6 +30,8 @@ class Patrol():
         self.success = False
         self.final_success = ""
         self.final_fail = ""
+        self.antagonize = ""
+        self.antagonize_fail = ""
         self.patrol_random_cat = None
         self.patrol_other_cats = []
         self.patrol_stat_cat = None
@@ -216,7 +218,6 @@ class Patrol():
                     correct_button = False
                 if max_good and min_good and correct_season and correct_biome and apprentice and correct_button:
                     final_patrols.append(patrol)
-                    print(str(patrol_type))
             else:
                 if max_good and min_good and correct_season and correct_biome and apprentice:
                     final_patrols.append(patrol)
@@ -636,10 +637,6 @@ class Patrol():
         antagonize = antagonize
         success_text = self.patrol_event.success_text
         fail_text = self.patrol_event.fail_text
-        antagonize = False
-        if self.patrol_event.tags is not None:
-            if ["new_cat", "other_clan"] in self.patrol_event.tags:
-                antagonize = True
         # if patrol contains cats with autowin skill, chance of success is high
         # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
         chance = self.patrol_event.chance_of_success + int(
@@ -699,9 +696,13 @@ class Patrol():
                         self.handle_reputation(10)
             self.handle_mentor_app_pairing()
             self.final_success = self.patrol_event.success_text[n]
+            if antagonize:
+                self.antagonize = self.patrol_event.antagonize_text
+
             print(str(self.patrol_event.patrol_id))
             print("Min cats: " + str(self.patrol_event.min_cats) + " & Max cats: " + str(self.patrol_event.max_cats))
-            print(str(self.final_fail) + " #: " + str(n))
+            if antagonize is False: print(str(self.final_success) + " #: " + str(n))
+            if antagonize: print(str(self.patrol_event.antagonize_text))
             print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
             print("Clan Rel. After: " + str(patrol.other_clan.relations))
             print("Rep. After: " + str(game.clan.reputation))
@@ -744,9 +745,13 @@ class Patrol():
                     self.handle_deaths()
             self.handle_mentor_app_pairing()
             self.final_fail = self.patrol_event.fail_text[n]
+            if antagonize:
+                self.antagonize_fail = self.patrol_event.antagonize_fail_text
+
             print(str(self.patrol_event.patrol_id))
             print("Min cats: " + str(self.patrol_event.min_cats) + " and Max cats " + str(self.patrol_event.max_cats))
-            print(str(self.final_fail) + " #: " + str(n))
+            if antagonize is False: print(str(self.final_fail) + " #: " + str(n))
+            if antagonize: print(str(self.patrol_event.antagonize_fail_text))
             print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
             print("Clan Rel. After: " + str(patrol.other_clan.relations))
             print("Rep. After: " + str(game.clan.reputation))
