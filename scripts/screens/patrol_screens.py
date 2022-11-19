@@ -360,7 +360,7 @@ class PatrolScreen(Screens):
         #                                 go on patrol                                 #
         # ---------------------------------------------------------------------------- #
         if game.clan.game_mode != 'classic':
-            if len(game.switches['current_patrol']) > 0 and game.switches['patrol_chosen'] is not 'general':
+            if len(game.switches['current_patrol']) > 0 and game.switches['patrol_chosen'] != 'general':
                 buttons.draw_button(('center', 599),
                                     image='buttons/go_patrol',
                                     text='Start Patrol',
