@@ -37,19 +37,19 @@
     "diarrhea": {
         "mortality": {
             "kitten": 3,
-            "adolescent": 20,
-            "young adult": 30,
-            "adult": 40,
-            "senior adult": 30,
-            "elder": 10
+            "adolescent": 10,
+            "young adult": 15,
+            "adult": 25,
+            "senior adult": 15,
+            "elder": 8
         },
         "medicine_mortality": {
             "kitten": 10,
-            "adolescent": 30,
-            "young adult": 40,
-            "adult": 50,
-            "senior adult": 40,
-            "elder": 20
+            "adolescent": 15,
+            "young adult": 30,
+            "adult": 45,
+            "senior adult": 30,
+            "elder": 13
         },
         "duration": 2,
         "medicine_duration": 1,
@@ -81,19 +81,19 @@
     "greencough": {
         "mortality": {
             "kitten": 3,
-            "adolescent": 10,
-            "young adult": 20,
-            "adult": 30,
-            "senior adult": 20,
-            "elder": 5
+            "adolescent": 8,
+            "young adult": 10,
+            "adult": 15,
+            "senior adult": 10,
+            "elder": 3
         },
         "medicine_mortality": {
             "kitten": 10,
-            "adolescent": 20,
-            "young adult": 30,
-            "adult": 40,
-            "senior adult": 30,
-            "elder": 15
+            "adolescent": 15,
+            "young adult": 25,
+            "adult": 30,
+            "senior adult": 25,
+            "elder": 10
         },
         "duration": 2,
         "medicine_duration": 1,
@@ -107,20 +107,20 @@
     },
     "kitten-cough": {
         "mortality": {
-            "kitten": 3,
-            "adolescent": 30,
+            "kitten": 2,
+            "adolescent": 20,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 8
+            "elder": 5
         },
         "medicine_mortality": {
-            "kitten": 10,
+            "kitten": 8,
             "adolescent": 60,
             "young adult": 0,
             "adult": 0,
             "senior adult": 0,
-            "elder": 15
+            "elder": 10
         },
         "duration": 2,
         "medicine_duration": 1,
@@ -134,20 +134,20 @@
     },
     "infected wound": {
         "mortality": {
-            "kitten": 3,
-            "adolescent": 10,
-            "young adult": 15,
-            "adult": 15,
-            "senior adult": 15,
-            "elder": 8
+            "kitten": 2,
+            "adolescent": 5,
+            "young adult": 8,
+            "adult": 10,
+            "senior adult": 8,
+            "elder": 5
         },
         "medicine_mortality": {
-            "kitten": 6,
-            "adolescent": 20,
-            "young adult": 25,
-            "adult": 25,
-            "senior adult": 25,
-            "elder": 15
+            "kitten": 4,
+            "adolescent": 10,
+            "young adult": 15,
+            "adult": 20,
+            "senior adult": 15,
+            "elder": 8
         },
         "duration": 1,
         "medicine_duration": 1,
@@ -178,20 +178,20 @@
     },
     "redcough": {
         "mortality": {
-            "kitten": 8,
-            "adolescent": 15,
-            "young adult": 25,
-            "adult": 25,
-            "senior adult": 25,
-            "elder": 10
+            "kitten": 2,
+            "adolescent": 5,
+            "young adult": 8,
+            "adult": 10,
+            "senior adult": 8,
+            "elder": 5
         },
         "medicine_mortality": {
-            "kitten": 13,
-            "adolescent": 30,
-            "young adult": 50,
-            "adult": 50,
-            "senior adult": 50,
-            "elder": 15
+            "kitten": 4,
+            "adolescent": 10,
+            "young adult": 15,
+            "adult": 20,
+            "senior adult": 15,
+            "elder": 8
         },
         "duration": 2,
         "medicine_duration": 1,
@@ -235,20 +235,20 @@
     },
     "whitecough": {
         "mortality": {
-            "kitten": 8,
-            "adolescent": 30,
+            "kitten": 5,
+            "adolescent": 20,
+            "young adult": 25,
+            "adult": 30,
+            "senior adult": 25,
+            "elder": 8
+        },
+        "medicine_mortality": {
+            "kitten": 10,
+            "adolescent": 60,
             "young adult": 70,
             "adult": 70,
             "senior adult": 70,
-            "elder": 10
-        },
-        "medicine_mortality": {
-            "kitten": 15,
-            "adolescent": 60,
-            "young adult": 140,
-            "adult": 140,
-            "senior adult": 140,
-            "elder": 20
+            "elder": 15
         },
         "duration": 2,
         "medicine_duration": 1,
@@ -269,7 +269,7 @@
             "kitten": 3,
             "adolescent": 10,
             "young adult": 15,
-            "adult": 20,
+            "adult": 15,
             "senior adult": 15,
             "elder": 3
         },

@@ -67,6 +67,8 @@ class Events():
             
             # relationships have to be handled separately, because of the ceremony name change
             for cat in Cat.all_cats.copy().values():
+                if cat.dead or cat.exiled:
+                    continue
                 # switches between the two death handles
                 if random.getrandbits(1):
                     triggered_death = self.handle_injuries_or_general_death(cat)
@@ -77,8 +79,6 @@ class Events():
                     if not triggered_death:
                         triggered_death = self.handle_injuries_or_general_death(cat)
 
-                if cat.dead:
-                    continue
                 self.relation_events.handle_relationships(cat)
 
 
@@ -922,12 +922,36 @@ class Events():
                 save_death(cat, event_string)
             game.cur_events_list.append(event_string)
 
-        if game.clan.game_mode == 'expanded' and not triggered_death:
+        if game.clan.game_mode in ["expanded", "cruel season"] and not triggered_death:
             if not int(random.random() * 750):  # 1/750
                 triggered_death = True
                 self.handle_deaths_expanded(cat, other_cat)
             else:
                 triggered_death = self.condition_events.handle_injuries(cat, game.clan.current_season, game.clan.biome)
+                if not triggered_death and cat.moons > int(random.random() * 51) + 150:  # cat.moons > 150 <--> 200
+                    triggered_death = True
+                    if not int(random.random() * 5):  # 1/5
+                        if cat.status != 'leader':
+                            cat.die()
+                            event_string = f'{cat.name} has passed due to their old age at {cat.moons + 1} moons old.'
+                            game.cur_events_list.append(event_string)
+                            if SAVE_DEATH:
+                                save_death(cat, event_string)
+                        else:
+                            game.clan.leader_lives -= 1
+                            cat.die()
+                            event_string = f'{cat.name} has lost a life due to their old age at {cat.moons + 1} moons old.'
+                            game.cur_events_list.append(event_string)
+                            if SAVE_DEATH:
+                                save_death(cat, event_string)
+                    if cat.status == 'leader' and cat.moons > 269:
+                        game.clan.leader_lives -= 10
+                        cat.die()
+                        event_string = f'{cat.name} has passed due to their old age at {cat.moons + 1} moons old.'
+                        game.cur_events_list.append(event_string)
+                        if SAVE_DEATH:
+                            save_death(cat, event_string)
+
 
             if game.settings.get('disasters'):
                 if not random.getrandbits(10):  # 1/1024
@@ -1389,9 +1413,33 @@ class Events():
         Returns: 
             - boolean if a death event occurred or not
         """
-        if game.clan.game_mode == 'expanded':
-            return self.condition_events.handle_illnesses(cat, game.clan.current_season)
-            
+        if game.clan.game_mode in ["expanded", "cruel season"]:
+            triggered_death = self.condition_events.handle_illnesses(cat, game.clan.current_season)
+            if not triggered_death and cat.moons > int(random.random() * 51) + 150:  # cat.moons > 150 <--> 200
+                triggered_death = True
+                if not int(random.random() * 5):  # 1/5
+                    if cat.status != 'leader':
+                        cat.die()
+                        event_string = f'{cat.name} has passed due to their old age at {cat.moons + 1} moons old.'
+                        game.cur_events_list.append(event_string)
+                        if SAVE_DEATH:
+                            save_death(cat, event_string)
+                    else:
+                        game.clan.leader_lives -= 1
+                        cat.die()
+                        event_string = f'{cat.name} has lost a life due to their old age at {cat.moons + 1} moons old.'
+                        game.cur_events_list.append(event_string)
+                        if SAVE_DEATH:
+                            save_death(cat, event_string)
+                if cat.status == 'leader' and cat.moons > 269:
+                    game.clan.leader_lives -= 10
+                    cat.die()
+                    event_string = f'{cat.name} has passed due to their old age at {cat.moons + 1} moons old.'
+                    game.cur_events_list.append(event_string)
+                    if SAVE_DEATH:
+                        save_death(cat, event_string)
+            return triggered_death
+
     
         # get the general information about the cat and a random other cat
         cause_of_death = []
@@ -1407,124 +1455,123 @@ class Events():
         name = str(cat.name)
         other_name = str(other_cat.name)
         
-        if game.clan.game_mode == 'classic':
-            # leader loses lives
-            current_lives = int(game.clan.leader_lives)
-            if not int(random.random() * 100) and cat.status == 'leader': # 1/100
-                triggered_death = True
-                if game.clan.current_season in ['Leaf-fall', 'Leaf-bare']:
-                    cause_of_death = [
-                        f"{name} lost a life due to greencough",
-                        f"{name} lost a life due to whitecough",
-                        f"{name} lost a life due to yellowcough",
-                    ]
-                    game.clan.leader_lives -= 1
-                    cat.die()
-                    event_string = choice(cause_of_death) + ' at ' + str(cat.moons) +' moons old'
-                    game.cur_events_list.append(event_string)
-                    if SAVE_DEATH:
-                        save_death(cat, event_string)
-            elif not int(random.random() * 200) and cat.status == 'leader': # 1/200
-                triggered_death = True
-                lostlives = choice([2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6])
-                if cat.moons >= 130 and game.clan.current_season in ['Leaf-fall', 'Leaf-bare']:
-                    cause_of_death = [
-                        f'{name} lost {lostlives} lives due to greencough',
-                        f'{name} lost {lostlives} lives due to whitecough',
-                        f'{name} lost {lostlives} lives due to yellowcough',
-                        f'{name} lost {lostlives} lives due to an illness'
-                    ]
-                    game.clan.leader_lives = current_lives - lostlives
+        # leader loses lives
+        current_lives = int(game.clan.leader_lives)
+        if not int(random.random() * 100) and cat.status == 'leader': # 1/100
+            triggered_death = True
+            if game.clan.current_season in ['Leaf-fall', 'Leaf-bare']:
+                cause_of_death = [
+                    f"{name} lost a life due to greencough",
+                    f"{name} lost a life due to whitecough",
+                    f"{name} lost a life due to yellowcough",
+                ]
+                game.clan.leader_lives -= 1
+                cat.die()
+                event_string = choice(cause_of_death) + ' at ' + str(cat.moons) +' moons old'
+                game.cur_events_list.append(event_string)
+                if SAVE_DEATH:
+                    save_death(cat, event_string)
+        elif not int(random.random() * 200) and cat.status == 'leader': # 1/200
+            triggered_death = True
+            lostlives = choice([2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6])
+            if cat.moons >= 130 and game.clan.current_season in ['Leaf-fall', 'Leaf-bare']:
+                cause_of_death = [
+                    f'{name} lost {lostlives} lives due to greencough',
+                    f'{name} lost {lostlives} lives due to whitecough',
+                    f'{name} lost {lostlives} lives due to yellowcough',
+                    f'{name} lost {lostlives} lives due to an illness'
+                ]
+                game.clan.leader_lives = current_lives - lostlives
+            cat.die()
+            event_string = choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old'
+            game.cur_events_list.append(event_string)
+            if SAVE_DEATH:
+                save_death(cat, event_string)
+        # normal death
+        elif not int(random.random() * 400): # 1/400
+            triggered_death = True
+            cause_of_death = []
+
+            # STATUS
+            if cat.status == 'kitten':
+                if game.clan.current_season == 'Leaf-bare':
+                    cause_of_death.extend([
+                        f'{name} died of greencough',
+                        f'{name} died of kittencough',
+                        f'{name} was too weak to fight off whitecough and passed',
+                        f'{name} caught a cold and slowly faded'
+                    ])
+            elif cat.status == 'apprentice':
+                cause_of_death.extend([
+                    f'{name} died from infected wounds'
+                ])
+            elif cat.status == 'warrior' or cat.status == 'deputy':
+                cause_of_death.extend([
+                    f'{name} died from infected wounds'
+                ])
+            elif cat.status == 'elder':
+                if game.clan.current_season == 'Leaf-bare':
+                    cause_of_death.extend([
+                        f'{name} was already feeling weak and a case of whitecough finished them off',
+                        f'{name} was too weak to recover from an illness and passed',
+                        f'Weakened by a lack of prey, {name} couldn\'t fight off whitecough and passed',
+                        f'{name}  was taken quickly by a case of greencough'
+                    ])
+            elif cat.status == 'leader':
+                # reset the cause_of_death, because for leaders the text is different
+                cause_of_death = [
+                    f'{name} lost a life to greencough',
+                    f'{name} lost a life from infected wounds'
+                ]
+            elif cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice':
+                cause_of_death.extend([])
+            elif cat.status == 'deputy':
+                cause_of_death.extend([])
+
+            if cat.status == 'leader':
+                game.clan.leader_lives -= 1
+    
+            if len(cause_of_death) > 1:
                 cat.die()
                 event_string = choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old'
                 game.cur_events_list.append(event_string)
                 if SAVE_DEATH:
                     save_death(cat, event_string)
-            # normal death
-            elif not int(random.random() * 400): # 1/400
-                triggered_death = True
-                cause_of_death = []
-
-                # STATUS
-                if cat.status == 'kitten':
-                    if game.clan.current_season == 'Leaf-bare':
-                        cause_of_death.extend([
-                            f'{name} died of greencough',
-                            f'{name} died of kittencough',
-                            f'{name} was too weak to fight off whitecough and passed',
-                            f'{name} caught a cold and slowly faded'
-                        ])
-                elif cat.status == 'apprentice':
-                    cause_of_death.extend([
-                        f'{name} died from infected wounds'
-                    ])
-                elif cat.status == 'warrior' or cat.status == 'deputy':
-                    cause_of_death.extend([
-                        f'{name} died from infected wounds'
-                    ])
-                elif cat.status == 'elder':
-                    if game.clan.current_season == 'Leaf-bare':
-                        cause_of_death.extend([
-                            f'{name} was already feeling weak and a case of whitecough finished them off',
-                            f'{name} was too weak to recover from an illness and passed',
-                            f'Weakened by a lack of prey, {name} couldn\'t fight off whitecough and passed',
-                            f'{name}  was taken quickly by a case of greencough'
-                        ])
-                elif cat.status == 'leader':
-                    # reset the cause_of_death, because for leaders the text is different
+            else:
+                triggered_death = False
+        # multiple deaths
+        elif not random.getrandbits(9):  # 1/512
+            triggered_death = True
+            cause_of_death = []
+            if game.clan.current_season == 'Leaf-bare':
+                if cat.status == 'kitten' and other_cat.status == 'kitten':
                     cause_of_death = [
-                        f'{name} lost a life to greencough',
-                        f'{name} lost a life from infected wounds'
+                        f'Greencough reaches the nursery. {name} and {other_name} die',
+                        f'{name}  and {other_name} die from a bout of kittencough',
+                        f'{name}  and {other_name} catch whitecough and fade away quickly'
                     ]
-                elif cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice':
-                    cause_of_death.extend([])
-                elif cat.status == 'deputy':
-                    cause_of_death.extend([])
-
-                if cat.status == 'leader':
+                else:
+                    cause_of_death = [
+                        f'{name}  and {other_name} die of greencough',
+                        f'{name}  and {other_name} die of yellowcough',
+                        f'A bad case of greencough strikes, and {name}  and {other_name} die'
+                    ]
+            if len(cause_of_death) > 1:
+                if cat.status == 'leader' or other_cat.status == 'leader':
                     game.clan.leader_lives -= 1
-
-                if len(cause_of_death) > 1:
-                    cat.die()
-                    event_string = choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old'
+                    event_string = choice(cause_of_death) + ' and the leader lost a life'
                     game.cur_events_list.append(event_string)
                     if SAVE_DEATH:
                         save_death(cat, event_string)
                 else:
-                    triggered_death = False
-            # multiple deaths
-            elif not random.getrandbits(9):  # 1/512
-                triggered_death = True
-                cause_of_death = []
-                if game.clan.current_season == 'Leaf-bare':
-                    if cat.status == 'kitten' and other_cat.status == 'kitten':
-                        cause_of_death = [
-                            f'Greencough reaches the nursery. {name} and {other_name} die',
-                            f'{name}  and {other_name} die from a bout of kittencough',
-                            f'{name}  and {other_name} catch whitecough and fade away quickly'
-                        ]
-                    else:
-                        cause_of_death = [
-                            f'{name}  and {other_name} die of greencough',
-                            f'{name}  and {other_name} die of yellowcough',
-                            f'A bad case of greencough strikes, and {name}  and {other_name} die'
-                        ]
-                if len(cause_of_death) > 1:
-                    if cat.status == 'leader' or other_cat.status == 'leader':
-                        game.clan.leader_lives -= 1
-                        event_string = choice(cause_of_death) + ' and the leader lost a life'
-                        game.cur_events_list.append(event_string)
-                        if SAVE_DEATH:
-                            save_death(cat, event_string)
-                    else:
-                        event_string = choice(cause_of_death)
-                        game.cur_events_list.append(event_string)
-                        if SAVE_DEATH:
-                            save_death(cat, event_string)
-                    cat.die()
-                    other_cat.die()
-                else:
-                    triggered_death = False
+                    event_string = choice(cause_of_death)
+                    game.cur_events_list.append(event_string)
+                    if SAVE_DEATH:
+                        save_death(cat, event_string)
+                cat.die()
+                other_cat.die()
+            else:
+                triggered_death = False
 
         return triggered_death
 

@@ -14,17 +14,15 @@ def medical_cats_condition_fulfilled(all_cats, amount_per_med):
     fulfilled = False
 
     medicine_apprentices = list(filter(
-        lambda c: c.status =='medicine apprentices' and not c.dead and not c.exiled, all_cats))
+        lambda c: c.status =='medicine apprentices' and not c.dead and not c.exiled and not c.is_ill(), all_cats))
     medicine_cats = list(filter(
-        lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled, all_cats))
-    number = len(list(filter(
-        lambda c: not c.dead and not c.exiled, all_cats)
-        )) / (amount_per_med +1)
+        lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled and not c.is_ill(), all_cats))
+    relevant_cats = list(filter(lambda c: not c.dead and not c.exiled, all_cats))
+    number = len(relevant_cats) / (amount_per_med +1)
 
     needed_meds = math.ceil(number)
 
     fulfilled = len(medicine_cats) >= needed_meds or len(medicine_apprentices) >= needed_meds * 2
-
     return fulfilled
 
 def get_amount_cat_for_one_medic(clan):

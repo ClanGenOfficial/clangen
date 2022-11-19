@@ -17,7 +17,7 @@ class Name():
         "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart", "heart", 'heart',
 
         # regular suffixes
-        "acorn", "ash", "aster", "back", "beam", "bee", "belly", "berry", "bite-wound", "bird", "blaze", "blink",
+        "acorn", "ash", "aster", "back", "beam", "bee", "belly", "berry", "bite", "bird", "blaze", "blink",
         "blossom", "bloom", "blotch", "bounce", "branch", "breeze", "briar", "bright", "brook", "burr", "bush",
         "call", "cloud", "clover", "coral", "creek", "cry", "dapple", "daisy", "dawn", "drift", "drop",
         "dusk", "dust", "ear", "ears", "eye", "eyes", "face", "fall", "fang", "feather", "fern", "fin", "fire",

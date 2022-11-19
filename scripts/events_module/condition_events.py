@@ -1,7 +1,7 @@
 import ujson
 import random
 
-from scripts.cat.cats import Cat, ILLNESSES, INJURIES
+from scripts.cat.cats import Cat
 from scripts.utility import save_death
 from scripts.game_structure.game_essentials import game, SAVE_DEATH
 
@@ -21,7 +21,7 @@ class Condition_Events():
     def handle_illnesses(self, cat, season):
         """ 
         This function handles overall the illnesses in 'expanded' (or 'cruel season') game mode
-        """        
+        """
         # one if-statement has a range of 10
         number_of_conditions = 1 * 10
         ratio = 80 # 1/80 times triggering for each cat each moon
@@ -187,7 +187,7 @@ class Condition_Events():
             if cat.dead:
                 triggered = True
                 save_death(cat, event_string)
-                if cat.injury.name in ["bruises","cracked pads","joint pain","scrapes","stomach aches","tickbites"]:
+                if injury_name in ["bruises","cracked pads","joint pain","scrapes","stomach aches","tickbites"]:
                     event_string = f"{cat.name} has died in the medicine den, with {injury_name} "
                 else:
                     event_string = f"{cat.name} has died in the medicine den, with a(n) {injury_name}."
