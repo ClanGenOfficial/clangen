@@ -390,8 +390,8 @@ class PatrolEventScreen(Screens):
                                   (390, 185),
                                   x_limit=715)
 
-            if game.switches['event'] == 4:
-                antagonize_text = patrol.antagonize
+            elif game.switches['event'] == 4:
+                antagonize_text = patrol.patrol_event.antagonize_text
                 patrol_size = len(patrol.patrol_cats)
 
                 # adjusting text for solo patrols
@@ -420,7 +420,7 @@ class PatrolEventScreen(Screens):
                                 's_c', str(patrol.patrol_stat_cat.name))
 
                 else:
-                    antagonize_fail_text = patrol.antagonize_fail
+                    antagonize_fail_text = patrol.patrol_event.antagonize_fail_text
 
                     # adjusting text for solo patrols
                     if patrol_size == 1:

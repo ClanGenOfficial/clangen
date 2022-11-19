@@ -625,7 +625,9 @@ class Patrol():
                 chance_of_success=patrol["chance_of_success"],
                 exp=patrol["exp"],
                 min_cats=patrol["min_cats"],
-                max_cats=patrol["max_cats"])
+                max_cats=patrol["max_cats"],
+                antagonize_text=patrol["antagonize_text"],
+                antagonize_fail_text=patrol["antagonize_fail_text"])
 
             all_patrol_events.append(patrol_event)
 
