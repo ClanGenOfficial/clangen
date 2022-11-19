@@ -1,0 +1,193 @@
+name: PyInstaller build
+
+on: [push]
+
+jobs:
+  build_linux64:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python 3.11 x64
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          architecture: 'x64'
+      - name: Update pip
+        run: python -m pip install --upgrade pip
+      - name: Update setuptools and wheel
+        run: python -m pip install --upgrade setuptools wheel
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Install Pillow for icon format conversion
+        run: python -m pip install --upgrade Pillow
+      - name: Install PyInstaller
+        run: python -m pip install --upgrade PyInstaller
+      - name: Run PyInstaller
+        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
+        run: python -m PyInstaller Clangen.spec
+      - name: Create archive (.tar.xz)
+        run: tar -cavf Clangen_Linux64.tar.xz -C dist Clangen
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Clangen_Linux64.tar.xz
+          path: Clangen_Linux64.tar.xz
+      - name: Release 
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: Clangen_Linux64.tar.xz
+          
+  build_win32:
+    runs-on: windows-2019
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python 3.8 x86
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8' # 3.8 to support older versions of Windows
+          architecture: 'x86'
+      - name: Update pip
+        run: python -m pip install --upgrade pip
+      - name: Update setuptools and wheel
+        run: python -m pip install --upgrade setuptools wheel
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Install Pillow for icon format conversion
+        run: python -m pip install --upgrade Pillow
+      - name: Install PyInstaller
+        run: python -m pip install --upgrade PyInstaller
+      - name: Run PyInstaller
+        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        run: python -m PyInstaller Clangen.spec
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Clangen_Win32
+          path: dist/
+      - name: Create archive for release (.zip)
+        if: startsWith(github.ref, 'refs/tags/')
+        run: tar.exe -a -c -f Clangen_Win32.zip -C dist Clangen
+      - name: Release 
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: Clangen_Win32.zip    
+          
+  build_win64:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python 3.8 x64
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8' # 3.8 to support older versions of Windows
+          architecture: 'x64'
+      - name: Update pip
+        run: python -m pip install --upgrade pip
+      - name: Update setuptools and wheel
+        run: python -m pip install --upgrade setuptools wheel
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Install Pillow for icon format conversion
+        run: python -m pip install --upgrade Pillow
+      - name: Install PyInstaller
+        run: python -m pip install --upgrade PyInstaller
+      # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
+      #- name: Setup UPX 
+      #  run: |
+      #    curl -L -O https://github.com/upx/upx/releases/download/v4.0.0/upx-4.0.0-win64.zip
+      #    tar.exe -x -v -f upx-4.0.0-win64.zip
+      - name: Run PyInstaller
+        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        run: python -m PyInstaller Clangen.spec
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Clangen_Win64
+          path: dist/
+      - name: Create archive for release (.zip)
+        if: startsWith(github.ref, 'refs/tags/')
+        run: tar.exe -a -c -f Clangen_Win64.zip -C dist Clangen
+      - name: Release 
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: Clangen_Win64.zip   
+          
+  build_win64_py311:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python 3.11 x64
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          architecture: 'x64'
+      - name: Update pip
+        run: python -m pip install --upgrade pip
+      - name: Update setuptools and wheel
+        run: python -m pip install --upgrade setuptools wheel
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Install Pillow for icon format conversion
+        run: python -m pip install --upgrade Pillow
+      - name: Install PyInstaller
+        run: python -m pip install --upgrade PyInstaller
+      # Example of an upx install, also requires adding "--upx-dir upx-4.0.0-win64" to the pyinst run
+      #- name: Setup UPX 
+      #  run: |
+      #    curl -L -O https://github.com/upx/upx/releases/download/v4.0.0/upx-4.0.0-win64.zip
+      #    tar.exe -x -v -f upx-4.0.0-win64.zip
+      - name: Run PyInstaller
+        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --noupx --onedir --clean --add-data "sprites;sprites" --add-data "resources;resources" --add-data "README.md;." main.py
+        run: python -m PyInstaller Clangen.spec
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Clangen_Win64_Windows10+
+          path: dist/
+      - name: Create archive for release (.zip)
+        if: startsWith(github.ref, 'refs/tags/')
+        run: tar.exe -a -c -f Clangen_Win64_Windows10+.zip -C dist Clangen
+      - name: Release 
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: Clangen_Win64_Windows10+.zip
+          
+  build_macos64:
+    # For commits to the original mac build action see:
+    # https://github.com/Thlumyn/clangen/blob/29c9e39fed9a09b8de906f5c3b91dc044fe9b9a5/.github/workflows/main.yml
+    runs-on: macos-11
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python 3.10 x64
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          architecture: 'x64'
+      - name: Update pip
+        run: python -m pip install --upgrade pip
+      - name: Update setuptools and wheel
+        run: python -m pip install --upgrade setuptools wheel
+      - name: Install dependencies
+        run: python -m pip install pygame==2.1.2 ujson
+      - name: Install Pillow for icon format conversion
+        run: python -m pip install --upgrade Pillow
+      - name: Install PyInstaller
+        run: python -m pip install --upgrade PyInstaller
+      - name: Run PyInstaller
+        #run: python -m PyInstaller -i resources/images/icon.png --name clangen --windowed --onedir --clean --add-data sprites:sprites --add-data resources:resources --add-data README.md:. main.py
+        run: python -m PyInstaller Clangen.spec
+      - name: Create archive (.tar.xz)
+        run: rm -r dist/Clangen
+      - name: Install appdmg
+        run: "npm install -g appdmg"
+      - name: Generate .dmg
+        run: "appdmg appdmg.json Clangen_macOS64.dmg"
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Clangen_macOS64.dmg
+          path: Clangen_macOS64.dmg
+      - name: Release 
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: Clangen_macOS64.dmg

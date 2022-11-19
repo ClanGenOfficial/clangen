@@ -1,0 +1,38 @@
+{
+    "unfriendly": [
+        "Doesn't think that (cat) has been completely honest lately",
+        "Is mocking (cat)",
+        "Ignores (cat)",
+        "Is telling jokes about (cat)",
+        "Is spreading a rumour about (cat)",
+        "Realized that they were too harsh in their judgment of (cat)"
+    ],
+    "neutral": [
+        "Complains about (cat)",
+        "Is telling a story to (cat)",
+        "Is talking with (cat)",
+        "Is sharing prey with (cat)",
+        "Had a huge argument with (cat)",
+        "Had a fight with (cat)",
+        "Thinks that the prey (cat) is biting into on the other side of camp looks delicious",
+        "Called (cat) the wrong name",
+        "Saw (cat) take the last piece of prey from the freshkill pile",
+        "Thinks (cat) has a strange sense of humor",
+        "Appreciates how (cat) always seems to ask how they're doing",
+        "Heard an ugly rumor about (cat)"
+    ],
+    "friendly": [
+        "Is sharing tongue with (cat)",
+        "Has been spending time with (cat) lately",
+        "Tells a joke that only (cat) can understand",
+        "Thinks about how lucky they are to have someone like (cat) as a friend",
+        "Helps (cat) work through something difficult that happened to them",
+        "Comforts (cat) after a nightmare"
+    ],
+    "close": [
+        "Tells (cat) a secret",
+        "Can't imagine their life if they never met (cat)",
+        "Has snuggled up against (cat)",
+        "Feels most like them-self when they're around (cat)"
+    ]
+}

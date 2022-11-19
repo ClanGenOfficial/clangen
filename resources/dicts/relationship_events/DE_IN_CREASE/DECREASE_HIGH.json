@@ -1,0 +1,94 @@
+{
+    "from": {
+        "romantic_love": [
+            "(cat) turned their nose up at their gift",
+            "Told (cat) to stop padding after them like a lost kit",
+            "Heard a rumor that (cat) likes someone else",
+            "Worries that (cat) will never feel the same way they do"
+        ],
+        "like": [
+            "Is telling jokes about (cat)",
+            "Whines about (cat)",
+            "Is tired from (cat) putting them on so many patrols",
+            "Is bossing (cat) around",
+            "Started a fight with (cat)",
+            "Has a fight with (cat) about what's right",
+            "Hissed at (cat)",
+            "Tells (cat) to leave them alone",
+            "Blamed (cat) for their own mistake",
+            "Is cross with (cat) for getting dirt all over the fresh-kill pile",
+            "Tried to have a discussion with (cat) about what prey tastes best, but it turned into an argument"
+        ],
+        "dislike": [
+            "Realized that they were too harsh in their judgment of (cat)"
+        ],
+        "admiration": [
+            "Is frustrated that (cat) won't take their duties more seriously",
+            "Is annoyed by the mess (cat) made",
+            "Wishes (cat) would take things more seriously",
+            "Thinks they should be deputy instead of (cat)",
+            "Was distracted while (cat) was telling a story"
+        ],
+        "comfortable": [
+            "Is stuttering while speaking to (cat)",
+            "Glaring at (cat) from across the camp",
+            "Heard an ugly rumor about (cat)",
+            "Feels like (cat) isn't taking their health seriously"
+        ],
+        "jealousy": [],
+        "trust": [
+            "Doesn't think that (cat) has been completely honest lately",
+            "Accuses (cat) of being a bad leader",
+            "Accuses (cat) of being a bad deputy"
+        ]
+    },
+    "to": {
+        "romantic_love": [
+            "Started a fight with (cat)",
+            "(cat) turned their nose up at their gift",
+            "Told (cat) to stop padding after them like a lost kit"
+        ],
+        "like": [
+            "Is telling jokes about (cat)",
+            "Started a fight with (cat)",
+            "Has a fight with (cat) about what's right",
+            "Is not backing down in an argument with (cat)",
+            "Scorns (apprentice) for not catching enough prey",
+            "Hissed at (cat)",
+            "Tells (cat) to leave them alone",
+            "Blamed (cat) for their own mistake",
+            "Rejects (cat)'s advice without letting them finish",
+            "Is cross with (cat) for getting dirt all over the fresh-kill pile",
+            "Punishes (cat) with extra work",
+            "Tried to have a discussion with (cat) about what prey tastes best, but it turned into an argument"
+        ],
+        "dislike": [],
+        "admiration": [
+            "Is scolding (cat)",
+            "Rejects (cat)'s advice without letting them finish"
+        ],
+        "comfortable": [
+            "Tells (cat) that they're pelt looks like a different color today",
+            "Is following (cat) around",
+            "Glaring at (cat) from across the camp",
+            "Pulled a prank on (cat)",
+            "Won't stop bothering (cat)",
+            "Interrupts (cat) during a conversation",
+            "Gets distracted from conversation with (cat)",
+            "Is glaring daggers at (cat)",
+            "Gives (cat) bitter herbs on purpose"
+        ],
+        "jealousy": [
+            "Has been listening to (cat) talk about how hard training has been"
+        ],
+        "trust": [
+            "Is spreading a rumour about (cat)",
+            "Tries to scare (cat)",
+            "Pulled a prank on (cat)",
+            "Has successfully tricked (cat) into believing a crazy tale about the clan leader",
+            "Blamed (cat) for their own mistake",
+            "Is gossiping about (cat)",
+            "Treats (cat)'s splinter wound more roughly"
+        ]
+    }
+}

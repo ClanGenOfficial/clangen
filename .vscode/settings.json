@@ -1,5 +1,32 @@
 {
     "python.formatting.provider": "yapf",
     "python.linting.enabled": false,
-    "python.linting.pylintEnabled": true
+    "python.linting.pylintEnabled": true,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./tests",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true,
+    "cSpell.words": [
+        "blit",
+        "cooldown",
+        "freshkill",
+        "greenleaf",
+        "kittypet",
+        "leafbare",
+        "leaffall",
+        "newleaf",
+        "parentless",
+        "pygame",
+        "starclan",
+        "Thunderpath",
+        "Twoleg",
+        "Twolegs",
+        "ujson",
+        "verdana"
+    ]
 }

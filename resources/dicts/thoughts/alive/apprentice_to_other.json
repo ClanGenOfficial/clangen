@@ -1,0 +1,53 @@
+{
+    "dead": {
+        "kitten": ["Is wondering if r_c would have been their friend"],
+        "medicine cat apprentice": ["Is wondering if r_c would have been their friend"],
+        "apprentice": ["Is wondering if r_c would have been their friend"],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [],
+        "all": []
+    },
+    "alive": {
+        "kitten": [
+            "Is awkwardly deflecting kits' questions about where kits come from",
+            "Was put on kit-sitting duty",
+            "Is showing off to the kits",
+            "Is telling off kits for being immature",
+            "Is rambling on to kits about the importance of respecting their elders"
+        ],
+        "medicine cat apprentice": [],
+        "apprentice": [],
+        "warrior": [],
+        "medicine cat": [],
+        "leader": [],
+        "deputy": [],
+        "elder": [
+            "Was asked to gather fresh moss for the elders' bedding",
+            "Plans to visit the elders soon",
+            "Is checking in on the elder's den",
+            "Plans to help the elders with their ticks",
+            "Is helping to repair the elder's den"
+        ],
+        "all": []
+    },
+    "all": [
+        "Is gathering moss",
+        "Is gossiping",
+        "Is acting angsty",
+        "Is dreading their apprentice duties",
+        "Fell into the nearby creek yesterday and is still feeling damp",
+        "Is making their mentor laugh",
+        "Is really bonding with their mentor",
+        "Is having a hard time keeping up with their training",
+        "Was tasked with lining nests with fresh moss today",
+        "Is dreaming of someday making their Clan proud",
+        "Is thinking about the time they caught a huge rabbit",
+        "Practices some battle moves",
+        "Is helping to reinforce the camp wall with brambles",
+        "Is daydreaming about having a mate and kits someday",
+        "Had quite the adventure today"
+    ]
+}
