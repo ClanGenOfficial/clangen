@@ -200,9 +200,15 @@ class Patrol():
             if game.clan.game_mode != 'classic':
                 if patrol_type == 'hunting' and "hunting" in patrol.tags:
                     correct_button = True
+                elif patrol_type == 'hunting' and "general" in patrol.tags:
+                    correct_button = True
                 elif patrol_type == 'border' and "border" in patrol.tags:
                     correct_button = True
+                elif patrol_type == 'border' and "general" in patrol.tags:
+                    correct_button = True
                 elif patrol_type == 'training' and "training" in patrol.tags:
+                    correct_button = True
+                elif patrol_type == 'training' and "general" in patrol.tags:
                     correct_button = True
                 # elif patrol_type == 'med' and ["med", "general"] in patrol.tags:
                 #    correct_button
@@ -210,11 +216,13 @@ class Patrol():
                     correct_button = False
                 if max_good and min_good and correct_season and correct_biome and apprentice and correct_button:
                     final_patrols.append(patrol)
+                    print(str(patrol_type))
             else:
                 if max_good and min_good and correct_season and correct_biome and apprentice:
                     final_patrols.append(patrol)
-
+        
         return final_patrols
+        
 
         if self.patrol_random_cat is not None and self.patrol_random_cat.status == 'apprentice' and len(
                 self.patrol_cats) > 1:
@@ -963,7 +971,7 @@ class Patrol():
                     kit.name.prefix = choice(names.loner_names)
                     kit.name.suffix = choice(names.normal_suffixes)
                 # add kits to the added cats if the second success text is rolled
-                if len(self.patrol_event.success_text) > 1:
+                if len(self.patrol_event.success_text) >= 2:
                     if self.final_success == self.patrol_event.success_text[1]:
                         num_kits = choice([2, 2, 2, 2, 3, 4])
                         for _ in range(num_kits):
