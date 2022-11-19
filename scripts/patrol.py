@@ -196,7 +196,6 @@ class Patrol():
                         apprentice = True
                 else:
                     apprentice = True
-            print(str(patrol_type))
 
             if game.clan.game_mode != 'classic':
                 if patrol_type == 'hunting' and "hunting" in patrol.tags:
