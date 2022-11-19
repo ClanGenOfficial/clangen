@@ -870,32 +870,19 @@ class Patrol():
         trust = 0
 
         # change the values
-        if self.patrol_event.patrol_id in [
-            1010, 1011, 1012, 1013, 1014, 1015
-        ]:
+        if "romantic" in self.patrol_event.tags:
             romantic_love = 10
-        if self.patrol_event.patrol_id in [
-            2, 3, 6, 100, 103, 140, 141, 200, 204, 605, 1000, 1001, 1002, 1003,
-            1010, 1011, 1012, 1020, 1021, 1003, 1006
-        ]:
+        if "platonic" in self.patrol_event.tags:
             platonic_like = 10
-        if self.patrol_event.patrol_id in [103, 110, 1000, 1001, 1002, 1010]:
+        if "dislike" in self.patrol_event.tags:
             dislike = 5
-        if self.patrol_event.patrol_id in [
-            2, 3, 6, 104, 105, 108, 130, 131, 261, 300, 301, 302, 303, 305,
-            307, 600, 1002, 1005
-        ]:
+        if "respect" in self.patrol_event.tags:
             admiration = 10
-        if self.patrol_event.patrol_id in [
-            102, 120, 150, 202, 203, 250, 251, 260, 261, 1010, 1011, 1012, 1022,
-            1004, 1023, 1007
-        ]:
+        if "comfort" in self.patrol_event.tags:
             comfortable = 5
-        if self.patrol_event.patrol_id in []:
+        if "jealous" in self.patrol_event.tags:
             jealousy = 5
-        if self.patrol_event.patrol_id in [
-            7, 8, 102, 107, 110, 114, 115, 141, 250, 251, 605, 1001, 1007
-        ]:
+        if "trust" in self.patrol_event.tags:
             trust = 10
 
         # affect the relationship
