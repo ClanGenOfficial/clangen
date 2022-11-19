@@ -196,22 +196,24 @@ class Patrol():
                         apprentice = True
                 else:
                     apprentice = True
+            print(str(patrol_type))
+            """
             if game.clan.game_mode != 'classic':
                 correct_button = False
-                if patrol_type == 'hunting' and ['hunting', 'general'] in patrol.tags:
+                if patrol_type == 'hunting':
                     correct_button = True
-                elif patrol_type == 'border' and ['border', 'general'] in patrol.tags:
+                elif patrol_type == 'border' and ["border", "general"] in patrol.tags:
                     correct_button = True
-                elif patrol_type == 'training' and ['training', 'general'] in patrol.tags:
+                elif patrol_type == 'training' and ["training", "general"] in patrol.tags:
                     correct_button = True
-                #elif patrol_type == 'med' and ['med', 'general'] in patrol.tags:
+                #elif patrol_type == 'med' and ["med", "general"] in patrol.tags:
                 #    correct_button
                 else:
                     correct_button = False
                 if max_good and min_good and correct_season and correct_biome and apprentice and correct_button:
                     final_patrols.append(patrol)
-            else:
-                if max_good and min_good and correct_season and correct_biome and apprentice:
+            else:"""
+            if max_good and min_good and correct_season and correct_biome and apprentice:
                     final_patrols.append(patrol)
 
         return final_patrols
