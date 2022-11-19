@@ -809,7 +809,7 @@ class Cat():
         if not os.path.exists(condition_directory):
             os.makedirs(condition_directory)
 
-        if not self.is_ill() and not self.is_injured():
+        if (not self.is_ill() and not self.is_injured()) or self.dead or self.exiled:
             if os.path.exists(condition_file_path):
                 os.remove(condition_file_path)
             return
@@ -852,10 +852,6 @@ class Cat():
         condition_cat_directory = condition_directory + self.ID + '_conditions.json'
         if not os.path.exists(condition_cat_directory):
             return
-        
-        if self.dead:
-            os.remove(condition_cat_directory)
-            return
 
         try:
             with open(condition_cat_directory, 'r') as read_file:
@@ -881,10 +877,10 @@ class Cat():
                         risks = injury["risks"],
                         illness_infectiousness = injury["illness_infectiousness"]
                     )
-        except:
-            print(f'WARNING: There was an error reading the relationship file of cat #{self}.')
+        except Exception as e:
+            print(e)
+            print(f'WARNING: There was an error reading the condition file of cat #{self}.')
 
-        os.remove(condition_cat_directory)
 
 # ---------------------------------------------------------------------------- #
 #                                    mentor                                    #

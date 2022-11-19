@@ -30,7 +30,7 @@ def medical_cats_condition_fulfilled(all_cats, amount_per_med):
 def get_amount_cat_for_one_medic(clan):
     """Returns """
     amount = 15
-    if clan.game_mode == 'cruel season':
+    if clan and clan.game_mode == 'cruel season':
         amount = 10
     return amount
 

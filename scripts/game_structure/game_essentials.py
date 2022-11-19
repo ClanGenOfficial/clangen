@@ -344,9 +344,9 @@ class Game():
                 "df": inter_cat.df
             }
             clan_cats.append(cat_data)
+            inter_cat.save_condition()
             if not inter_cat.dead:
                 inter_cat.save_relationship_of_cat()
-                inter_cat.save_condition()
         try:
             with open('saves/' + clanname + '/clan_cats.json', 'w') as write_file:
                 json_string = ujson.dumps(clan_cats, indent=4)
