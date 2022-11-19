@@ -24,6 +24,8 @@
         "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
         "min_cats": 2,
         "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "r_c carries a scar from a fox fight.",
             "r_c fell in battle with a fox."
@@ -54,6 +56,8 @@
         "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
         "min_cats": 4,
         "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "r_c carries a scar from a fox fight."
         ]
@@ -83,6 +87,8 @@
         "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
         "min_cats": 1,
         "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "r_c carries a scar from a solo fox fight.",
             "r_c fell in a solo battle with a fox."
@@ -110,7 +116,9 @@
         ],
         "win_skills": ["very smart", "extremely smart"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_berrybush2",
@@ -132,7 +140,9 @@
         "Whatever. Identifying them is a medicine cat problem.  r_c plucks the horrible tasting berries and brings them back to camp, where the medicine cat immediately starts work trying to save them from deathberry poisoning."
     ],
     "min_cats": 1,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_berrybush3",
@@ -156,7 +166,9 @@
     ],
     "win_skills": ["very smart", "extremely smart"],
     "min_cats": 1,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_berrybush4",
@@ -178,7 +190,9 @@
         "Whatever. Identifying them is a medicine cat problem.  r_c plucks the horrible tasting berries and brings them back to camp, where the medicine cat immediately starts work trying to save them from deathberry poisoning."
     ],
     "min_cats": 1,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_sunny1",
@@ -201,7 +215,9 @@
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
                     "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 2,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_sunny2",
@@ -220,7 +236,9 @@
             "The patrol doesn't get much done because of that."
     ],
     "min_cats": 1,
-    "max_cats": 1
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_argue1",
@@ -247,7 +265,9 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict",
                     "troublesome", "vengeful", "bossy"],
     "min_cats": 2,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_argue2",
@@ -274,7 +294,9 @@
     "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
                     "patient", "responsible", "thoughtful", "wise", "inquisitive"],
     "min_cats": 2,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_vision1",
@@ -296,7 +318,9 @@
     ],
     "win_skills": ["strong connection to starclan"],
     "min_cats": 2,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_vision2",
@@ -317,7 +341,9 @@
     ],
     "win_skills": ["strong connection to starclan"],
     "min_cats": 1,
-    "max_cats": 1
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_ghost1",
@@ -338,7 +364,9 @@
     ],
     "win_skills": ["strong connection to StarClan"],
     "min_cats": 2,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_ghost2",
@@ -361,7 +389,9 @@
     ],
     "win_trait": ["charismatic", "childish", "confident", "playful", "attention-seeker", "shameless", "strange"],
     "min_cats": 2,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_sneakprey1",
@@ -385,7 +415,9 @@
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous", "attention-seeker"],
     "fail_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
     "min_cats": 1,
-    "max_cats": 1
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_sneakprey2",
@@ -409,7 +441,9 @@
     "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
     "fail_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "min_cats": 1,
-    "max_cats": 1
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_sneakprey3",
@@ -427,13 +461,15 @@
         "It definitely doesn't count as a proper hunting patrol. But just to be safe, r_c chooses to eat their afternoon snack under cover."
     ],
     "fail_text": [
-            "r_c eats the prey, but later they feel terrible about it, slinking around guilty and ashamed for the rest of the day.",
-"r_c ignores their rumbling belly, and dutifully brings the prey back to camp, only for their mentor to tell them to pick out a bite to eat before their stomach wakes every cat in camp. This would've all been much quicker if they'd eaten it when they first caught it."
+        "r_c eats the prey, but later they feel terrible about it, slinking around guilty and ashamed for the rest of the day.",
+        "r_c ignores their rumbling belly, and dutifully brings the prey back to camp, only for their mentor to tell them to pick out a bite to eat before their stomach wakes every cat in camp. This would've all been much quicker if they'd eaten it when they first caught it."
     ],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy", "bullying", "impulsive"],
     "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "min_cats": 1,
-    "max_cats": 1
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_sneakprey4",
@@ -457,7 +493,9 @@
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy", "bullying", "impulsive"],
     "min_cats": 1,
-    "max_cats": 1
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_teamwork1",
@@ -478,7 +516,9 @@
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
     "min_cats": 3,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_teamwork2",
@@ -499,7 +539,9 @@
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
     "min_cats": 2,
-    "max_cats": 2
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_teamwork3",
@@ -520,7 +562,9 @@
     ],
     "win_skills": ["great teacher", "fantastic teacher"],
     "min_cats": 3,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_teamwork4",
@@ -541,7 +585,9 @@
     ],
     "win_skills": ["great teacher", "fantastic teacher"],
     "min_cats": 2,
-    "max_cats": 2
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_huntingskill1",
@@ -562,7 +608,9 @@
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
     "min_cats": 3,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_huntingskill2",
@@ -583,7 +631,9 @@
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
     "min_cats": 2,
-    "max_cats": 2
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_huntingskill3",
@@ -604,7 +654,9 @@
     ],
     "win_skills": ["great teacher", "fantastic teacher"],
     "min_cats": 3,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_huntingskill4",
@@ -625,7 +677,9 @@
     ],
     "win_skills": ["great teacher", "fantastic teacher"],
     "min_cats": 2,
-    "max_cats": 2
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_fightingskill1",
@@ -646,7 +700,9 @@
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
     "min_cats": 3,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_fightingskill2",
@@ -667,7 +723,9 @@
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
     "min_cats": 2,
-    "max_cats": 2
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_fightingskill3",
@@ -688,7 +746,9 @@
     ],
     "win_skills": ["great teacher", "fantastic teacher"],
     "min_cats": 3,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_fightingskill4",
@@ -709,6 +769,8 @@
     ],
     "win_skills": ["great teacher", "fantastic teacher"],
     "min_cats": 2,
-    "max_cats": 2
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 ]

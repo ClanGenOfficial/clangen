@@ -16,7 +16,9 @@
         "history_text": [
             null,
             "r_c was slaughtered in an ambush by a bloodthirsty group of rogues."
-        ]
+        ],
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_disaster2",
@@ -35,7 +37,9 @@
         "history_text": [
             null,
             "r_c was swept away in a flood."
-        ]
+        ],
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_disaster3",
@@ -54,6 +58,8 @@
         "history_text": [
             null,
             "r_c was trapped by twolegs and taken away."
-        ]
+        ],
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     }
 ]

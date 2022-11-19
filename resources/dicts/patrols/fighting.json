@@ -20,6 +20,8 @@
         "win_skills": ["good fighter", "great fighter", "excellent fighter"],
         "min_cats": 1,
         "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "This cat is scarred from a fight with a mother fox.",
             "This cat was killed in a fight with an angry mother fox."
@@ -50,6 +52,8 @@
         "win_trait": ["altruistic", "ambitious", "compassionate", "confident", "empathetic", "faithful", "fierce", "loving", "loyal", "responsible", "righteous"], 
         "max_cats": 1,
         "min_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "This cat is scarred from bravely defending the clan against a dog.",
             "This cat died to keep c_n safe from a large dog."
@@ -77,6 +81,8 @@
         "exp": 20,
         "max_cats": 3,
         "min_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "win_skills": ["excellent fighter"],
         "win_trait": ["altruistic", "ambitious", "compassionate", "confident", "empathetic", "faithful", "fierce", "loving", "loyal", "responsible", "righteous"], 
         "history_text": [
@@ -106,6 +112,8 @@
         "exp": 20,
         "max_cats": 3,
         "min_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "win_skills": ["excellent fighter"],
         "win_trait": ["altruistic", "ambitious", "compassionate", "confident", "empathetic", "faithful", "fierce", "loving", "loyal", "responsible", "righteous"], 
         "history_text": [
@@ -133,6 +141,8 @@
         "exp": 10,
         "min_cats": 1,
         "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "win_skills": ["good fighter","great fighter","excellent fighter"],
         "history_text": [
             "This cat got a scar from a fight with a small dog, but they always say it was a huge dog.",
@@ -159,6 +169,8 @@
         "exp": 10,
         "min_cats": 2,
         "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "win_skills": ["good fighter","great fighter","excellent fighter"],
         "history_text": [
             "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
@@ -182,6 +194,8 @@
         "exp": 10,
         "min_cats": 4,
         "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "win_skills": ["good fighter","great fighter","excellent fighter"],
         "history_text": [
             "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
@@ -212,6 +226,8 @@
         "win_trait": ["fierce", "bloodthirsty"],
         "min_cats": 1,
         "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "This cat was scarred in a battle with rogues.",
             "This cat died while attempting to fight off a rogue."
@@ -240,6 +256,8 @@
         "win_skills": ["excellent fighter"],
         "min_cats": 1,
         "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "This cat was scarred in a fight with a badger.",
             "This cat died at jaws of an angry badger."
@@ -266,6 +284,8 @@
         "win_skills": ["good fighter", "very smart", "extremely smart", "excellent fighter"],
         "min_cats": 2,
         "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "This cat was scarred in a battle with rogues.",
             "This cat died while attempting to fight off a rogue."
@@ -284,7 +304,9 @@
         "exp": 10,
         "win_skills": ["very smart" , "extremely smart"],
         "max_cats": 1,
-        "min_cats": 1
+        "min_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_bord_heat1",
@@ -305,6 +327,8 @@
         "exp": 5,
         "min_cats": 2,
         "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "This cat got heatstroke while on a patrol.",
             "This cat died from heat heat stroke."
@@ -322,7 +346,9 @@
         "chance_of_success": 50,
         "exp": 5,
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "fst_bord_rogue1",
@@ -349,6 +375,8 @@
         "win_trait": ["bloodthirsty", "fierce", "vengeful"],
         "min_cats": 4,
         "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "This cat was badly scarred when rogues ambushed their patrol.",
             "This cat was killed when rogues ambushed their patrol."
@@ -379,6 +407,8 @@
         "win_trait": ["bloodthirsty", "fierce", "vengeful"],
         "min_cats": 2,
         "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "This cat was badly scarred when rogues ambushed their patrol.",
             "This cat was killed when rogues ambushed their patrol."
@@ -407,6 +437,8 @@
         "fail_traits": ["bloodthirsty", "fierce", "vengeful"],
         "min_cats": 1,
         "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             null,
             "This cat was killed when rogues ambushed them while on a solo patrol."

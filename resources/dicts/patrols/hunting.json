@@ -12,7 +12,9 @@
         "exp": 10,
         "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
         "min_cats": 1,
-        "max_cats": 3
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_hunt_mouse2",
@@ -28,7 +30,9 @@
             "r_c leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"],
         "fail_text": ["Your patrol narrowly misses the mouse."],
         "min_cats": 1,
-        "max_cats": 3
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_hunt_rat1",
@@ -46,7 +50,9 @@
         "exp": 10,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_hunt_hare1",
@@ -65,7 +71,9 @@
         "exp": 10,
         "win_skills": ["fantastic hunter"],
         "min_cats": 4,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_hunt_bird1",
@@ -80,7 +88,9 @@
         "exp": 10,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
-        "max_cats": 3
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_hunt_squirrel1",
@@ -95,7 +105,9 @@
         "exp": 10,
         "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
         "min_cats": 1,
-        "max_cats": 3
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_hunt_fish1",
@@ -110,7 +122,9 @@
         "exp": 10,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
-        "max_cats": 3
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_hunt_fish2",
@@ -129,7 +143,9 @@
         "fail_text": ["Your patrol accidentally scares the fish away."],
         "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
         "min_cats": 4,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
 
     },
     {
@@ -145,7 +161,9 @@
         "exp": 10,
         "win_skills": ["smart", "very smart", "extremely smart"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_hunt_rabbit2",
@@ -166,7 +184,9 @@
         ],
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_hunt_twolegs1",
@@ -181,7 +201,9 @@
         "exp": 10,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_hunt_twolegs2",
@@ -203,7 +225,9 @@
         "win_skills": ["very smart", "extremely smart"],
         "fail_trait": ["bold"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_hunt_rabbit3",
@@ -219,7 +243,9 @@
         "exp": 10,
         "win_skills": ["fantastic hunter"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "bch_hunt_turtle1",
@@ -234,7 +260,9 @@
         "exp": 10,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
-        "max_cats": 4
+        "max_cats": 4,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "fst_hunt_vole1",
@@ -249,7 +277,9 @@
         "exp": 10,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
-        "max_cats": 3
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "fst_hunt_porcupine1",
@@ -280,7 +310,9 @@
         "history_text": [
             "r_c was scarred by a porcupine while on patrol.",
             "r_c was killed by an angry porcupine while on patrol."
-        ]
+        ],
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "fst_hunt_porcupine2",
@@ -307,6 +339,8 @@
         "win_trait": ["calm", "careful", "strange", "thoughtful", "wise"],
         "min_cats": 1,
         "max_cats": 2,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "r_c was scarred by a porcupine while on patrol.",
             "r_c was killed by an angry porcupine while on patrol."
@@ -325,7 +359,9 @@
         "exp": 10,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "fst_hunt_twolegplace1",
@@ -393,7 +429,9 @@
         "max_cats": 6,
         "history_text": [
         "r_c gained a scar after trying to chase some squirrels up a tree."
-        ]
+        ],
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "fst_hunt_burrow1",
@@ -416,6 +454,8 @@
         "fail_trait": ["bold", "ambitious", "childish", "impulsive"],
         "min_cats": 2,
         "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "r_c was scarred after an unfortunate encounter with a wolverine."
         ]
@@ -441,6 +481,8 @@
         "fail_trait": ["bold", "ambitious", "childish", "impulsive"],
         "min_cats": 1,
         "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             null,
             "r_c was killed after an unfortunate experience with a wolverine."
@@ -472,6 +514,8 @@
         "fail_trait": ["nervous", "insecure"],
         "min_cats": 4,
         "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "r_c was scarred by a coyote protecting its scavenged meal.",
             "r_c was killed by a coyote protecting its scavenged meal."
@@ -503,6 +547,8 @@
         "fail_trait": ["nervous", "insecure"],
         "min_cats": 2,
         "max_cats": 4,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "r_c was scarred by a coyote protecting its scavenged meal.",
             "r_c was killed by a coyote protecting its scavenged meal."
@@ -533,6 +579,8 @@
         "fail_trait": ["nervous", "insecure"],
         "min_cats": 1,
         "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "r_c was killed by a coyote protecting its scavenged meal."
         ]
@@ -563,6 +611,8 @@
         "fail_trait": ["nervous", "insecure"],
         "min_cats": 5,
         "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "r_c was scarred by a wolf protecting its scavenged meal.",
             "r_c was killed by a wolf pack protecting its meal."
@@ -593,6 +643,8 @@
         "fail_trait": ["nervous", "insecure"],
         "min_cats": 2,
         "max_cats": 4,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             null,
             "r_c was killed by a wolf protecting its meal."
@@ -623,6 +675,8 @@
         "fail_trait": ["nervous", "insecure"],
         "min_cats": 1,
         "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             null,
             "r_c was killed by a wolf protecting its meal."
@@ -641,7 +695,9 @@
         "exp": 10,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
-        "max_cats": 3
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "pln_hunt_prairiedog1",
@@ -656,7 +712,9 @@
         "exp": 10,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
-        "max_cats": 3
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "wtlnd_hunt_lizard1",
@@ -671,7 +729,9 @@
         "exp": 10,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
-        "max_cats": 3
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "pln_hunt_twolegplace1",
@@ -760,6 +820,8 @@
         "fail_trait": ["bold", "ambitious", "childish", "impulsive"],
         "min_cats": 2,
         "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
         "r_c was scarred after an unfortunate encounter with a wolverine."
         ]
@@ -786,6 +848,8 @@
         "fail_trait": ["bold", "ambitious", "childish", "impulsive"],
         "min_cats": 1,
         "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
         null,
         "r_c was killed after an unfortunate experience with a wolverine."
@@ -812,7 +876,9 @@
         ],
         "win_skills": ["strong connection to starclan"],
         "min_cats": 2,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_hunt_vision2",
@@ -834,7 +900,9 @@
     ],
     "win_skills": ["strong connection to starclan"],
     "min_cats": 1,
-    "max_cats": 1
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_hunt_sneakprey1",
@@ -853,7 +921,9 @@
             "r_c gives in to their grumbling belly, reasoning that no one will notice, but when they arrive back at camp empty-pawed and with blood on their lips they feel the stares of the warriors on their pelt."
     ],
     "min_cats": 1,
-    "max_cats": 1
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_hunt_sneakprey2",
@@ -872,7 +942,9 @@
             "r_c gives in to their grumbling belly, reasoning that no one will notice, but when they arrive back at camp empty-pawed and with blood on their lips they feel the stares of the warriors on their pelt. r_c slinks back to the apprentice's den, tail and ears low."
     ],
     "min_cats": 1,
-    "max_cats": 1
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_hunt_sneakprey3",
@@ -892,7 +964,9 @@
         "They think they've gotten away with their clandestine snacking, but when r_c arrives back at camp another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns them to dig a new trench for the clan's dirtplace, and r_c hears snide remarks when they slink in to their nest that night."
     ],
     "min_cats": 2,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_hunt_sneakprey4",
@@ -912,7 +986,9 @@
         "They think they've gotten away with their clandestine snacking, but when r_c arrives back at camp another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns them to dig a new trench for the clan's dirtplace, r_c prickles with humiliation and terrible smells."
     ],
     "min_cats": 2,
-    "max_cats": 6
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 
 ]

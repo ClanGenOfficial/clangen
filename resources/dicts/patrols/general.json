@@ -11,7 +11,9 @@
         "chance_of_success": 100,
         "exp": 10,
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_gen_2",
@@ -25,7 +27,9 @@
         "chance_of_success": 80,
         "exp": 10,
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_gen_thunderpath1",
@@ -47,7 +51,9 @@
         "exp": 10,
         "win_skills": ["very smart", "extremely smart"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_gen_4",
@@ -62,7 +68,9 @@
         "exp": 10,
         "win_skills": ["very smart", "extremely smart"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "fst_gen_1",
@@ -76,7 +84,9 @@
         "chance_of_success": 40,
         "exp": 10,
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_gen_solo1",
@@ -90,7 +100,9 @@
         "chance_of_success": 40,
         "exp": 10,
         "min_cats": 1,
-        "max_cats": 1
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_gen_bramble1",
@@ -105,7 +117,9 @@
         "exp": 10,
         "win_skills": ["smart", "very smart", "extremely smart"],
         "min_cats": 2,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     },
     {
         "patrol_id": "gen_gen_twolegs1",
@@ -123,6 +137,8 @@
         "exp": 10,
         "win_skills": ["smart", "very smart", "extremely smart"],
         "min_cats": 1,
-        "max_cats": 6
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     }
 ]
