@@ -93,9 +93,10 @@ class Patrol():
         self.patrol_total_experience += cat.experience
         game.patrolled.append(cat)
 
-    def get_possible_patrols(self, current_season, biome, all_clans, patrol_size, game_setting_disaster = game.settings['disasters']):
+    def get_possible_patrols(self, current_season, biome, all_clans, patrol_size, patrol_type, game_setting_disaster = game.settings['disasters']):
         possible_patrols = []
         final_patrols = []
+        patrol_type = patrol_type
         patrol_size = len(self.patrol_cats)
         reputation = game.clan.reputation
         other_clan = self.other_clan
@@ -131,7 +132,7 @@ class Patrol():
 
         # general hunting patrols
         possible_patrols.extend(self.generate_patrol_events(HUNTING))
-        
+            
         # general/misc patrols
         possible_patrols.extend(self.generate_patrol_events(GENERAL))
 
@@ -195,8 +196,23 @@ class Patrol():
                         apprentice = True
                 else:
                     apprentice = True
-            if max_good and min_good and correct_season and correct_biome and apprentice:
-                final_patrols.append(patrol)
+            if game.clan.game_mode != 'classic':
+                correct_button = False
+                if patrol_type == 'hunting' and ['hunting', 'general'] in patrol.tags:
+                    correct_button = True
+                elif patrol_type == 'border' and ['border', 'general'] in patrol.tags:
+                    correct_button = True
+                elif patrol_type == 'training' and ['training', 'general'] in patrol.tags:
+                    correct_button = True
+                #elif patrol_type == 'med' and ['med', 'general'] in patrol.tags:
+                #    correct_button
+                else:
+                    correct_button = False
+                if max_good and min_good and correct_season and correct_biome and apprentice and correct_button:
+                    final_patrols.append(patrol)
+            else:
+                if max_good and min_good and correct_season and correct_biome and apprentice:
+                    final_patrols.append(patrol)
 
         return final_patrols
 
@@ -1115,7 +1131,7 @@ class PatrolEvent():
             'hunting', 'other_clan', 'fighting', 'death', 'scar', 'new_cat', 'npc',
             'retirement', 'injury', 'illness', 'romantic', 'platonic', 'comfort', 'respect', 'trust',
             'dislike', 'jealousy', 'med_cat', 'training', 'apprentice', 'border', 'reputation', 'leader',
-            'herbs', 'gone', 'disaster', 'multiple_deaths'
+            'herbs', 'gone', 'disaster', 'multiple_deaths', 'general'
         ]
 
 patrol = Patrol()
