@@ -181,25 +181,29 @@ class PatrolScreen(Screens):
             buttons.draw_image_button((x_value, y_value),
                                       button_name='button_paw',
                                       size=(34, 34),
-                                      available=False
+                                      available=True,
+                                      patrol_chosen = 'training'
                                       )
             x_value += 40
             buttons.draw_image_button((x_value, y_value),
                                       button_name='button_mouse',
                                       size=(34, 34),
-                                      available=False
+                                      available=True,
+                                      patrol_chosen = 'hunting'
                                       )
             x_value += 40
             buttons.draw_image_button((x_value, y_value),
                                       button_name='button_claws',
                                       size=(34, 34),
-                                      available=False
+                                      available=True,
+                                      patrol_chosen = 'border'
                                       )
             x_value += 40
             buttons.draw_image_button((x_value, y_value),
                                       button_name='button_herb',
                                       size=(34, 34),
-                                      available=False
+                                      available=False,
+                                      patrol_chosen = 'med'
                                       )
 
         # SHOW CAT INFO

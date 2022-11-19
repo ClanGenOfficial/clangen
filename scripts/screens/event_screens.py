@@ -225,6 +225,7 @@ class PatrolEventScreen(Screens):
                 game.clan.current_season.lower(),
                 game.clan.biome.lower(),
                 game.clan.all_clans,
+                game.switches['patrol_chosen'],
                 game.settings.get('disasters')
             )
             patrol.patrol_event = choice(possible_events)
