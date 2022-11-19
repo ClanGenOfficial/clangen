@@ -9,14 +9,14 @@
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
-                "When the two patrols get closer to each other the patrol leaders share a quick nod of acknowledgement.  The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
-                "p_l approaches the other clan patrol, striking up a conversation about the weather.  After talking for a short time, the two patrols part ways.  p_l remarks on the o_c_n cats' kindness to the leader once the patrol has returned to camp.",
-                "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation.  The two patrols eventually return to their tasks feeling confident in their good relations with the opposite clan.",
-                "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation.  The two patrols eventually return to their tasks feeling confident in their good relations with the opposite clan."
+                "When the two patrols get closer to each other the patrol leaders share a quick nod of acknowledgement. The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
+                "p_l approaches the other clan patrol, striking up a conversation about the weather. After talking for a short time, the two patrols part ways. p_l remarks on the o_c_n cats' kindness to the leader once the patrol has returned to camp.",
+                "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks feeling confident in their good relations with the opposite clan.",
+                "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks feeling confident in their good relations with the opposite clan."
         ],
         "fail_text": [
-                "The patrols eventually cross paths and an awkward tension fills the air.  No one is quite sure what to say to break the silence and eventually everyone involved slowly shuffles away to continue their respective patrols.",
-                "s_c bounds ahead to the other patrol, not bothering to greet them or exchange pleasantries before remarking on the funny smell of the other clan cats.  Offended, the other patrol stalks away, their tails whipping and ears pinned."
+                "The patrols eventually cross paths and an awkward tension fills the air. No one is quite sure what to say to break the silence and eventually everyone involved slowly shuffles away to continue their respective patrols.",
+                "s_c bounds ahead to the other patrol, not bothering to greet them or exchange pleasantries before remarking on the funny smell of the other clan cats. Offended, the other patrol stalks away, their tails whipping and ears pinned."
         ],
         "other_clan": ["None"],
         "win_skills": ["good speaker", "great speaker", "excellent speaker"],
@@ -25,8 +25,8 @@
         "fail_trait": ["troublesome", "strange", "playful", "daring", "childish"],
         "min_cats": 1,
         "max_cats": 6,
-        "antagonize_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats.  They need to be sure that o_c_n knows how strong c_n cats are.  r_c spits and hisses until the other patrol leaves the area, intimidated by how your patrol is acting.",
-        "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats.  They need to be sure that o_c_n knows how strong c_n cats are.  r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing.",
+        "antagonize_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, intimidated by how your patrol is acting.",
+        "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing.",
         "history_text": [
         ]
 },
@@ -41,14 +41,14 @@
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
-                "When the two patrols get closer to each other the patrol leaders share a quick nod of acknowledgement.  The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
-                "p_l approaches the other clan patrol, striking up a conversation about the weather.  After talking for a short time, the two patrols part ways.  p_l remarks on the o_c_n cats' kindness to the leader once the patrol has returned to camp.",
-                "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation.  s_c remembers some of the news that o_c_n shared at a recent gathering and brings it up, impressing the other patrol with their polite interest.",
-                "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting.  The patrols pause to converse for a little while, s_c bringing up a story that, while slightly embarrassing for s_c, is entertaining and lighthearted.  The patrols part in good spirits."
+                "When the two patrols get closer to each other the patrol leaders share a quick nod of acknowledgement. The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
+                "p_l approaches the other clan patrol, striking up a conversation about the weather. After talking for a short time, the two patrols part ways. p_l remarks on the o_c_n cats' kindness to the leader once the patrol has returned to camp.",
+                "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. s_c remembers some of the news that o_c_n shared at a recent gathering and brings it up, impressing the other patrol with their polite interest.",
+                "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting. The patrols pause to converse for a little while, s_c bringing up a story that, while slightly embarrassing for s_c, is entertaining and lighthearted. The patrols part in good spirits."
         ],
         "fail_text": [
-                "The patrols eventually cross paths and an awkward tension fills the air.  No one is quite sure what to say to break the silence and eventually everyone involved slowly shuffles away to continue their respective patrols.",
-                "s_c pins their ears at the sight of the o_c_n cats.  As the patrols cross paths, s_c's aggression is obvious and the other patrol definitely notices.  While they don't remark on the hostility, your patrol gets the sense that the rude behavior has been noted."
+                "The patrols eventually cross paths and an awkward tension fills the air. No one is quite sure what to say to break the silence and eventually everyone involved slowly shuffles away to continue their respective patrols.",
+                "s_c pins their ears at the sight of the o_c_n cats. As the patrols cross paths, s_c's aggression is obvious and the other patrol definitely notices. While they don't remark on the hostility, your patrol gets the sense that the rude behavior has been noted."
         ],
         "other_clan": ["None"],
         "win_skills": ["'smart'", "great 'smart'", "excellent 'smart'"],
@@ -57,8 +57,8 @@
         "fail_trait": ["vengeful", "bloodthirsty", "righteous", "vengeful", "cold"],
         "min_cats": 1,
         "max_cats": 6,
-        "antagonize_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats.  They need to be sure that o_c_n knows how strong c_n cats are.  r_c spits and hisses until the other patrol leaves the area, intimidated by how your patrol is acting.",
-        "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats.  They need to be sure that o_c_n knows how strong c_n cats are.  r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing.",
+        "antagonize_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, intimidated by how your patrol is acting.",
+        "antagonize_fail_text": "Your patrol stands tall and approaches the o_c_n cats with insults and threats. They need to be sure that o_c_n knows how strong c_n cats are. r_c spits and hisses until the other patrol leaves the area, annoyed and unimpressed by your patrol's posturing.",
         "history_text": [
         ]
 },
@@ -69,21 +69,21 @@
         "biome": "Any",
         "season": "Any",
         "tags": ["border", "other_clan", "hunting", "scar", "injury"],
-        "intro_text": "r_c spies a fat rabbit on the other side of the o_c_n border.  A tempting opportunity to be sure, but it may not be wise to hunt on a different clans territory.",
+        "intro_text": "r_c spies a fat rabbit on the other side of the o_c_n border. A tempting opportunity to be sure, but it may not be wise to hunt on a different clans territory.",
         "decline_text": "Your patrol decides that one rabbit isn't worth making an enemy.",
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
-                "r_c pounces without hesitation!  They glance around, rabbit hanging from their muzzle, but it seems there aren't any o_c_n cats nearby.  r_c trots back over the border, their prize in tow and transgression unnoticed.",
-                "r_c leaps for the rabbit!  And promptly trips over a rock.  The rabbit hops away and r_c sheepishly picks themselves up.  It's probably for the better that they weren't able to catch the rabbit.  Trespassing could easily have damaged relations with o_c_n.",
-                "s_c leaps for the rabbit, making a swift kill just before an o_c_n patrol comes into view. The o_c_n cats bristle at the trespass and a fight seems to be brewing.  Thankfully s_c smooths things over with the other patrol, graciously gifting them the rabbit, and they part ways without damaging the relationship between clans.",
-                "r_c is about to leap for the rabbit before s_c grabs them by the scruff and pulls them back! A moment later, r_c sees the group of o_c_n cats that had just come into view.  Good thing s_c stopped them before they could blatantly trespass in full view of the other clan."
+                "r_c pounces without hesitation! They glance around, rabbit hanging from their muzzle, but it seems there aren't any o_c_n cats nearby. r_c trots back over the border, their prize in tow and transgression unnoticed.",
+                "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up. It's probably for the better that they weren't able to catch the rabbit. Trespassing could easily have damaged relations with o_c_n.",
+                "s_c leaps for the rabbit, making a swift kill just before an o_c_n patrol comes into view. The o_c_n cats bristle at the trespass and a fight seems to be brewing. Thankfully s_c smooths things over with the other patrol, graciously gifting them the rabbit, and they part ways without damaging the relationship between clans.",
+                "r_c is about to leap for the rabbit before s_c grabs them by the scruff and pulls them back! A moment later, r_c sees the group of o_c_n cats that had just come into view. Good thing s_c stopped them before they could blatantly trespass in full view of the other clan."
         ],
         "fail_text": [
-                "r_c leaps for the rabbit!  And promptly trips over a rock.  The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat knows exactly what r_c was intending to do and turns away, presumably to report the incident to their own leader.",
-                "s_c pounces with no hesitation! They easily kill the rabbit before glancing up and coming face to face with a o_c_n cat.  s_c is promptly chased back over the border and the other cat glares, hissing and spitting, until your patrol leaves the area.",
+                "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat knows exactly what r_c was intending to do and turns away, presumably to report the incident to their own leader.",
+                "s_c pounces with no hesitation! They easily kill the rabbit before glancing up and coming face to face with a o_c_n cat. s_c is promptly chased back over the border and the other cat glares, hissing and spitting, until your patrol leaves the area.",
                 null,
-                "r_c pounces with no hesitation! They easily kill the rabbit before glancing up and coming face to face with a o_c_n cat.  After a short tussle, r_c flees back over the border and limps their way home, that rabbit certainly wasn't worth the trouble."
+                "r_c pounces with no hesitation! They easily kill the rabbit before glancing up and coming face to face with a o_c_n cat. After a short tussle, r_c flees back over the border and limps their way home, that rabbit certainly wasn't worth the trouble."
         ],
         "other_clan": ["None"],
         "win_skills": ["good speaker", "great speaker", "excellent speaker"],
@@ -92,8 +92,8 @@
         "fail_trait": ["daring", "adventurous", "ambitious", "bold", "shameless", "troublesome"],
         "min_cats": 2,
         "max_cats": 6,
-        "antagonize_text": "A tempting opportunity.  And also a perfect one.  r_c pounces and swiftly kills the rabbit, intentionally leaving evidence of their deed behind.  That will show those o_c_n cats just how confident c_n is in their own power.",
-        "antagonize_fail_text": "r_c leaps for the rabbit!  And promptly trips over a rock.  The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat laughs at the pathetic display and turns to walk deeper into their own territory.  They seem to be unfazed and unimpressed by the sad attempt.",
+        "antagonize_text": "A tempting opportunity. And also a perfect one. r_c pounces and swiftly kills the rabbit, intentionally leaving evidence of their deed behind. That will show those o_c_n cats just how confident c_n is in their own power.",
+        "antagonize_fail_text": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat laughs at the pathetic display and turns to walk deeper into their own territory. They seem to be unfazed and unimpressed by the sad attempt.",
         "history_text": [
             "r_c disrespected the border lines and was scarred by an enemy warrior for it."
         ]
