@@ -65,20 +65,6 @@
         "max_cats": 6
     },
     {
-        "patrol_id": "gen_gen_5",
-        "biome": "Any",
-        "season": "Any",
-        "tags": ["injury", "scar", "general"],
-        "intro_text": "r_c goes missing during the patrol.",
-        "success_text": ["r_c is later found carrying loads of prey after a successful hunt."],
-        "fail_text": ["r_c is found lying injured on the ground."],
-        "decline_text": "r_c eventually catches up.",
-        "chance_of_success": 40,
-        "exp": 10,
-        "min_cats": 2,
-        "max_cats": 6
-    },
-    {
         "patrol_id": "fst_gen_1",
         "biome": "forest",
         "season": "Any",
@@ -103,21 +89,6 @@
         "decline_text": "r_c decides to focus on the patrol.",
         "chance_of_success": 40,
         "exp": 10,
-        "min_cats": 1,
-        "max_cats": 1
-    },
-    {
-        "patrol_id": "gen_gen_solo2",
-        "biome": "Any",
-        "season": "Any",
-        "tags": ["general"],
-        "intro_text": "Since r_c is alone, they debate taking a bite out of the freshkill they have just caught.",
-        "success_text": ["They decide not to and end up catching extra prey for the kits and elders."],
-        "fail_text": ["They eat the freshkill; however, they do not catch more prey to make up for it and the kits and elders go hungry."],
-        "decline_text": "They shake the thought from their mind.",
-        "chance_of_success": 30,
-        "exp": 10,
-        "win_skills": ["smart", "very smart", "extremely smart"],
         "min_cats": 1,
         "max_cats": 1
     },
