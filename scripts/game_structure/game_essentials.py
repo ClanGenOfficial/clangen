@@ -111,7 +111,7 @@ class Game():
         'set_game_mode': False,
         'broke_up': False,
         'show_info': False,
-        'patrol_chosen': ''
+        'patrol_chosen': 'general'
 
     }
     all_screens = {}

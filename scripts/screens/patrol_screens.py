@@ -177,30 +177,41 @@ class PatrolScreen(Screens):
         # PATROL TYPE BUTTONS - purely aesthetic atm until we have patrol type functionality
         if game.game_mode != 'classic':
             x_value = 323
-            y_value = 550
+            y_value = 560
+            y_pos = 535
+
+            if game.switches['patrol_chosen'] == 'training':
+                verdana.text("training patrol", ('center', y_pos))
+            elif game.switches['patrol_chosen'] == 'hunting':
+                verdana.text("hunting patrol", ('center', y_pos))
+            elif game.switches['patrol_chosen'] == 'border':
+                verdana.text("border patrol", ('center', y_pos))
+            elif game.switches['patrol_chosen'] == 'med':
+                verdana.text("medicine patrol", ('center', y_pos))
+
             buttons.draw_image_button((x_value, y_value),
                                       button_name='button_paw',
                                       size=(34, 34),
-                                      patrol_chosen = 'training'
+                                      patrol_chosen='training'
                                       )
             x_value += 40
             buttons.draw_image_button((x_value, y_value),
                                       button_name='button_mouse',
                                       size=(34, 34),
-                                      patrol_chosen = 'hunting'
+                                      patrol_chosen='hunting'
                                       )
             x_value += 40
             buttons.draw_image_button((x_value, y_value),
                                       button_name='button_claws',
                                       size=(34, 34),
-                                      patrol_chosen = 'border'
+                                      patrol_chosen='border'
                                       )
             x_value += 40
             buttons.draw_image_button((x_value, y_value),
                                       button_name='button_herb',
                                       size=(34, 34),
                                       available=False,
-                                      patrol_chosen = 'med'
+                                      patrol_chosen='med'
                                       )
 
         # SHOW CAT INFO
@@ -348,18 +359,30 @@ class PatrolScreen(Screens):
         # ---------------------------------------------------------------------------- #
         #                                 go on patrol                                 #
         # ---------------------------------------------------------------------------- #
-        if len(game.switches['current_patrol']) > 0:
-            buttons.draw_button(('center', 589),
-                                image='buttons/go_patrol',
-                                text='Start Patrol',
-                                cur_screen='patrol event screen',
-                                hotkey=[13])
+        if game.clan.game_mode != 'classic':
+            if len(game.switches['current_patrol']) > 0 and game.switches['patrol_chosen'] is not 'general':
+                buttons.draw_button(('center', 599),
+                                    image='buttons/go_patrol',
+                                    text='Start Patrol',
+                                    cur_screen='patrol event screen',
+                                    hotkey=[13])
+            else:
+                buttons.draw_button(('center', 599),
+                                    image='buttons/go_patrol',
+                                    text='Start Patrol',
+                                    available=False)
         else:
-            buttons.draw_button(('center', 589),
-                                image='buttons/go_patrol',
-                                text='Start Patrol',
-                                available=False)
-
+            if len(game.switches['current_patrol']) > 0:
+                buttons.draw_button(('center', 599),
+                                    image='buttons/go_patrol',
+                                    text='Start Patrol',
+                                    cur_screen='patrol event screen',
+                                    hotkey=[13])
+            else:
+                buttons.draw_button(('center', 599),
+                                    image='buttons/go_patrol',
+                                    text='Start Patrol',
+                                    available=False)
     def show_info(self, able_cats):
 
         # ---------------------------------------------------------------------------- #
