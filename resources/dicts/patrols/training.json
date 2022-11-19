@@ -87,6 +87,283 @@
             "r_c carries a scar from a solo fox fight.",
             "r_c fell in a solo battle with a fox."
         ]
-        
-    }
+    },
+    {
+        "patrol_id": "gen_train_berrybush1",
+        "biome": "Any",
+        "season": "greenleaf",
+        "tags": ["herbs", "training", "injury", "illness"],
+        "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
+        "decline_text": "r_c decides not to touch the berries.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "Unsure but remembering the kittentales of red deathberries, r_c avoids them.",
+	        "After careful consideration, r_c recognizes them as strawberries and brings the rare berries  back to the medicine cat's den.",
+	        "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
+        ],
+        "fail_text": [
+            "Confidently gathering them and prancing back to camp, r_c is then informed that raspberries aren't a useful medicinal herb.",
+            null,
+            null,
+            "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. They're rushed back to camp, where the medicine cat might have a chance at saving them from deathberry poisoning."
+        ],
+        "win_skills": ["very smart", "extremely smart"],
+        "min_cats": 1,
+        "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_berrybush2",
+    "biome": "Any",
+    "season": "greenleaf",
+    "tags": ["herbs", "training", "apprentice", "injury", "illness", "death"],
+    "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
+    "decline_text": "r_c decides not to touch the berries.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "Unsure but remembering the kittentales of red deathberries, r_c avoids them.",
+        "Whatever. Identifying them is a medicine cat problem.  r_c plucks the berries and brings them back to camp, where it turns out they're called strawberries."
+    ],
+    "fail_text": [
+        "Confidently gathering them and prancing back to camp, r_c is then informed that raspberries aren't a useful medicinal herb.",
+        null,
+        "Whatever. Identifying them is a medicine cat problem.  r_c plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all medicine cat herbs taste horrible. Right? They collapse on the way back to camp, and there's nothing any cat can do for them.",
+        "Whatever. Identifying them is a medicine cat problem.  r_c plucks the horrible tasting berries and brings them back to camp, where the medicine cat immediately starts work trying to save them from deathberry poisoning."
+    ],
+    "min_cats": 1,
+    "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_berrybush3",
+    "biome": "Any",
+    "season": "leaffall",
+    "tags": ["herbs", "training", "injury", "illness"],
+    "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
+    "decline_text": "r_c decides not to touch the berries.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "Unsure but remembering the kittentales of red deathberries, r_c avoids them.",
+        "After careful consideration, r_c recognizes them as strawberries and brings the rare berries  back to the medicine cat's den.",
+        "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
+    ],
+    "fail_text": [
+        "Confidently gathering them and prancing back to camp, r_c is then informed that raspberries aren't a useful medicinal herb.",
+        null,
+        null,
+        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. They're rushed back to camp, where the medicine cat might have a chance at saving them from deathberry poisoning."
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "min_cats": 1,
+    "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_berrybush4",
+    "biome": "Any",
+    "season": "leaffall",
+    "tags": ["herbs", "training", "apprentice", "injury", "illness", "death"],
+    "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
+    "decline_text": "r_c decides not to touch the berries.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "Unsure but remembering the kittentales of red deathberries, r_c avoids them.",
+        "Whatever. Identifying them is a medicine cat problem.  r_c plucks the berries and brings them back to camp, where it turns out they're called strawberries."
+    ],
+    "fail_text": [
+        "Confidently gathering them and prancing back to camp, r_c is then informed that raspberries aren't a useful medicinal herb.",
+        null,
+        "Whatever. Identifying them is a medicine cat problem.  r_c plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all medicine cat herbs taste horrible. Right? They collapse on the way back to camp, and there's nothing any cat can do for them.",
+        "Whatever. Identifying them is a medicine cat problem.  r_c plucks the horrible tasting berries and brings them back to camp, where the medicine cat immediately starts work trying to save them from deathberry poisoning."
+    ],
+    "min_cats": 1,
+    "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_sunny1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training"],
+    "intro_text": "The patrol finds a nice spot to sun themselves.",
+    "decline_text": "They decide to stay focused instead.",
+    "chance_of_success": 80,
+    "exp": 20,
+    "success_text": [
+        "The sunlight feels great and the cats have a successful patrol.",
+        "The sunlight energizes the cats for a training session.",
+        null,
+        "s_c makes sure everyone gets a good basking spot as the cats pause for a little break before resuming their training."
+    ],
+    "fail_text": [
+            "The patrol doesn't get much done because of that."
+    ],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
+                    "patient", "responsible", "thoughtful", "wise"],
+    "min_cats": 2,
+    "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_sunny2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training"],
+    "intro_text": "r_c finds a nice spot to sun themselves.",
+    "decline_text": "They decide to stay focused instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "The sunlight feels great and r_c has a successful patrol.",
+        "The sunlight energizes r_c for a solo training session."
+    ],
+    "fail_text": [
+            "The patrol doesn't get much done because of that."
+    ],
+    "min_cats": 1,
+    "max_cats": 1
+},
+{
+    "patrol_id": "gen_train_argue1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "dislike", "comfort"],
+    "intro_text": "Your patrol has a disagreement and look to p_l to settle the dispute.",
+    "decline_text": "Your patrol decides to head home.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "p_l manages to skillfully smooth over any disagreement.",
+        "p_l listens to both sides, then makes a careful judgment. It keeps no one happy, the mark of an excellent compromise.",
+        "Talking everyone down, p_l encourages the patrol to focus on their work collecting nesting material.",
+        "p_l nods sympathetically, hearing out every side to the argument, and with their help the patrol feels comfortable, even with their differences."
+    ],
+    "fail_text": [
+        "p_l stutters; they don't think they are fit to lead the patrol.",
+        "p_l rudely reminds the patrol cats to focus on their star-damned jobs and stop quarreling like kittens."
+    ],
+    "win_skills": ["great speaker", "excellent speaker"],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
+                    "patient", "responsible", "thoughtful", "wise", "inquisitive"],
+    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict",
+                    "troublesome", "vengeful", "bossy"],
+    "min_cats": 2,
+    "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_argue2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "dislike", "respect"],
+    "intro_text": "Your patrol has a disagreement and look to p_l to settle the dispute.",
+    "decline_text": "Your patrol decides to head home.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "p_l manages to skillfully smooth over any disagreement.",
+        "p_l listens to both sides, then makes a careful judgment. It keeps no one happy, the mark of an excellent compromise.",
+        "Talking everyone down, p_l encourages the patrol to focus on their work.",
+        "p_l has no time for this scat, and pulls the patrol to a halt to remind them that they have a Star-damned job to do, and quarreling like kittens will not be tolerated. The patrol returns to their work collecting nesting material with newfound vigor."
+    ],
+    "fail_text": [
+        "p_l stutters; they don't think they are fit to lead the patrol",
+        "p_l spends so much time listening sympathetically to every cat that the patrol gets nothing done, and as they return back home the quarrel continues."
+    ],
+    "win_skills": ["great speaker", "excellent speaker"],
+    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict",
+                    "troublesome", "vengeful"],
+    "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
+                    "patient", "responsible", "thoughtful", "wise", "inquisitive"],
+    "min_cats": 2,
+    "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_vision1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "respect", "trust", "jealousy"],
+    "intro_text": "As the patrol gathers together to train, r_c admits they think they had a vision from StarClan last night.",
+    "decline_text": "The patrol doesn't talk about the vision.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "The patrol talks to them about whether it was a real vision as they train.",
+        "p_l takes r_c aside, giving them the full benefits of p_l's seniority and experience as they discuss r_c's vision.",
+        "s_c chooses to train with r_c, the spiritual warrior gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in them."
+    ],
+    "fail_text": [
+        "No one can make sense of the vision.",
+        "r_c notices p_l looking at them enviously, withdraws from the rest of the patrol, and dismisses the dream as unimportant."
+    ],
+    "win_skills": ["strong connection to starclan"],
+    "min_cats": 2,
+    "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_vision2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training"],
+    "intro_text": "As they head out to work on their skills, r_c thinks about the dream they had last night . . . was it sent by Starclan?",
+    "decline_text": "They push it from their mind.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "It definitely distracts them from their training, but r_c uses the time by themselves to put their thoughts in order. It was a sign from their ancestors. Now they need to figure out what to do next.",
+        "Somehow training brings r_c to almost a meditative state, and not only are they fairly confident of their next steps having been given this vision, but they also take the opportunity to improve on a skill they think they're weak at.",
+        "s_c often feels like Starclan walks with them, and this is just another instance on the path. They use the solo patrol to collect their thoughts, and by the time they pad home with a hard day's training done, they're ready for the next step their vision hinted at."
+    ],
+    "fail_text": [
+            "r_c can't make sense of the vision."
+    ],
+    "win_skills": ["strong connection to starclan"],
+    "min_cats": 1,
+    "max_cats": 1
+},
+{
+    "patrol_id": "gen_train_ghost1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic"],
+    "intro_text": "The patrol quickly devolves into ghost stories, leaving everyone on edge.",
+    "decline_text": "p_l quickly silences any talk about ghosts.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "Despite the tense mood, the patrol is successful.",
+        "r_c spins a thrilling tale, and the patrol shivers with exciting, thrilled fear.",
+        "s_c sees the patrol competing to scare each other, and derails it completely. Instead they spin a tale of truth, bringing the story of one of c_n's warrior ancestors to life. With how clear their words are, it's almost like they know the Starclan cat, even though that's impossible."
+    ],
+    "fail_text": [
+            "A branch snaps and the whole patrol runs back to camp."
+    ],
+    "win_skills": ["strong connection to StarClan"],
+    "min_cats": 2,
+    "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_ghost2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "dislike", "apprentice"],
+    "intro_text": "The patrol quickly devolves into ghost stories, leaving everyone on edge.",
+    "decline_text": "p_l quickly silences any talk about ghosts.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "p_l and r_c wind each other up, making up story after story in ever increasing tales of horror, until finally one sounds a little too ridiculous and both of them nearly fall over laughing, the tension erased as they giggle.",
+        "r_c wonders aloud if one of the ghost stories is true . . . the other cats gather close and comfort them. Time for the silly game to end, before someone actually gets upset.",
+        null,
+        "s_c looks around, and with a deep breath, shakes off the tense vibe. Instead they start telling tall tales of long ago cats, completely disregarding anything approaching truth, so that the other cats on patrol start laughing and purring again."
+    ],
+    "fail_text": [
+        "r_c tries to look brave in front of the other cats, but hears a rustle behind them and startles so badly they fall over.",
+        "p_l makes fun of r_c for being so scared."
+    ],
+    "win_trait": ["charismatic", "childish", "confident", "playful", "attention-seeker", "shameless", "strange"],
+    "min_cats": 2,
+    "max_cats": 6
+}
+
+
+
 ]
