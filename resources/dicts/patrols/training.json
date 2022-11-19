@@ -362,8 +362,353 @@
     "win_trait": ["charismatic", "childish", "confident", "playful", "attention-seeker", "shameless", "strange"],
     "min_cats": 2,
     "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_sneakprey1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["hunting", "training", "apprentice"],
+    "intro_text": "r_c is tempted to eat the prey they just caught. After all, they're only practicing hunting, right? So this is theirs, it doesn't count as a true hunting patrol?",
+    "decline_text": "r_c decides against breaking the warrior code, resisting the temptation.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "They eat the prey without anyone noticing.",
+        null,
+        null,
+        "Whatever, it's not a big deal, and r_c's hungry. They polish off the little snack, and keep working on their pounce."
+    ],
+    "fail_text": [
+        "r_c eats the prey, but later they feel terrible about it, slinking around guilty and ashamed for the rest of the day.",
+        "r_c freezes in indecision, and eventually a warrior spots them sitting under cover with their prey and accuses r_c of eating it anyway."
+    ],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous", "attention-seeker"],
+    "fail_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
+    "min_cats": 1,
+    "max_cats": 1
+},
+{
+    "patrol_id": "gen_train_sneakprey2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["hunting", "training", "apprentice"],
+    "intro_text": "r_c is tempted to eat the prey they just caught. After all, they're only practicing hunting, right? So this is theirs, it doesn't count as a true hunting patrol?",
+    "decline_text": "r_c decides against breaking the warrior code, resisting the temptation.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "They eat the prey without anyone noticing.",
+        null,
+        null,
+        "r_c freezes in indecision. But the moment of peace allows them to collect their thoughts, and decide that the warrior code matters more to them than a silly afternoon snack."
+    ],
+    "fail_text": [
+        "r_c eats the prey, but later they feel terrible about it, slinking around guilty and ashamed for the rest of the day.",
+        "Whatever, it's not a big deal, and r_c's hungry. But as they eat, a passing warrior spots them, and begins an outraged lecture on the values of the warrior code."
+    ],
+    "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
+    "fail_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "min_cats": 1,
+    "max_cats": 1
+},
+{
+    "patrol_id": "gen_train_sneakprey3",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["hunting", "training", "apprentice"],
+    "intro_text": "r_c is tempted to eat the prey they just caught. After all, they're only practicing hunting, right? So this is theirs, it doesn't count as a true hunting patrol?",
+    "decline_text": "r_c decides against breaking the warrior code, resisting the temptation.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "They eat the prey without anyone noticing.",
+        null,
+        null,
+        "It definitely doesn't count as a proper hunting patrol. But just to be safe, r_c chooses to eat their afternoon snack under cover."
+    ],
+    "fail_text": [
+            "r_c eats the prey, but later they feel terrible about it, slinking around guilty and ashamed for the rest of the day.",
+"r_c ignores their rumbling belly, and dutifully brings the prey back to camp, only for their mentor to tell them to pick out a bite to eat before their stomach wakes every cat in camp. This would've all been much quicker if they'd eaten it when they first caught it."
+    ],
+    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy", "bullying", "impulsive"],
+    "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "min_cats": 1,
+    "max_cats": 1
+},
+{
+    "patrol_id": "gen_train_sneakprey4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["hunting", "training", "apprentice"],
+    "intro_text": "r_c is tempted to eat the prey they just caught. After all, they're only practicing hunting, right? So this is theirs, it doesn't count as a true hunting patrol?",
+    "decline_text": "r_c decides against breaking the warrior code, resisting the temptation.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "They eat the prey without anyone noticing.",
+        null,
+        null,
+        "r_c ignores their rumbling belly, and dutifully brings the prey back to camp. Their mentor congratulates them on the catch, and they get to share it with all their friends, feeling a warm glow in their heart at feeding their clan."
+    ],
+    "fail_text": [
+        "r_c eats the prey, but later they feel terrible about it, slinking around guilty and ashamed for the rest of the day.",
+        "It definitely doesn't count as a proper hunting patrol. But irritatingly the warrior that comes past and spots r_c eating doesn't seem to agree, and a surly r_c is brought back to camp for a lecture."
+    ],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy", "bullying", "impulsive"],
+    "min_cats": 1,
+    "max_cats": 1
+},
+{
+    "patrol_id": "gen_train_teamwork1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust"],
+    "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "Everyone has a nice practice session and their coordination with their Clanmates grows stronger.",
+        null,
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a clanmates' fall, and working on treading exactly in each other's pawsteps."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "min_cats": 3,
+    "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_teamwork2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust"],
+    "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "Both cats have a nice practice session and their coordination with each other grows stronger.",
+        null,
+        "s_c takes charge and coordinates exercises for the duo. They practice mirroring each other, until by the end of the afternoon they can almost act as one cat."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "min_cats": 2,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_train_teamwork3",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust", "apprentice"],
+    "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "Everyone has a nice practice session and their coordination with their Clanmates grows stronger.",
+        null,
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a clanmates' fall, and working on treading exactly in each other's pawsteps."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach."
+    ],
+    "win_skills": ["great teacher", "fantastic teacher"],
+    "min_cats": 3,
+    "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_teamwork4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust", "apprentice"],
+    "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "Both cats have a nice practice session and their coordination with each other grows stronger. p_l really helps r_c gain confidence working with other cats.",
+        null,
+        "s_c takes charge and coordinates exercises for the duo. They practice mirroring each other, until by the end of the afternoon they can almost act as one cat. The warrior praises how quickly r_c picks it up, and the apprentice comes back to camp fluffed up with pride."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach."
+    ],
+    "win_skills": ["great teacher", "fantastic teacher"],
+    "min_cats": 2,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_train_huntingskill1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust"],
+    "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol.",
+        null,
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing their stalking on each other, sharing tips about different terrain types, and discussing prey selection."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "min_cats": 3,
+    "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_huntingskill2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust"],
+    "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "Both cats have a nice practice session, swapping their best tips and tricks with each other.",
+        null,
+        "s_c takes charge and coordinates exercises for the duo. They practice how to bring down prey together, their confidence in each other growing."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "min_cats": 2,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_train_huntingskill3",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust", "apprentice"],
+    "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "Everyone has a nice practice session, picking up a nice selection of new tricks to try out on their next hunting patrol.",
+        null,
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing stalking on each other, sharing tips about different terrain types, and discussing prey selection."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach."
+    ],
+    "win_skills": ["great teacher", "fantastic teacher"],
+    "min_cats": 3,
+    "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_huntingskill4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust", "apprentice"],
+    "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "Both cats have a nice practice session, with r_c soaking up all p_l's best tips and tricks.",
+        null,
+        "s_c takes charge and coordinates exercises for the duo. They practice taking down prey together, their confidence in their team hunting growing. The warrior praises how quickly r_c picks it up, and the apprentice comes back to camp fluffed up with pride."
+    ],
+    "fail_text": [
+        "Unfortunately, no one steps up to teach."
+    ],
+    "win_skills": ["great teacher", "fantastic teacher"],
+    "min_cats": 2,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_train_fightingskill1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust"],
+    "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish.",
+        null,
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, tricks, and tumbles."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "min_cats": 3,
+    "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_fightingskill2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust"],
+    "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with r_c.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "Both cats have a nice practice session, swapping their best tips and tricks with each other.",
+        null,
+        "s_c takes charge and coordinates exercises for the duo. They practice how to weave around an opponent, feeling more and more confident in their teamwork."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "min_cats": 2,
+    "max_cats": 2
+},
+{
+    "patrol_id": "gen_train_fightingskill3",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust", "apprentice"],
+    "intro_text": "p_l suggests this might be a good chance for the cats to practice new fighting techniques.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "Everyone has a nice practice session, picking up a nice selection of new tricks to try out in their next skirmish.",
+        null,
+        "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, tricks, and tumbles."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach."
+    ],
+    "win_skills": ["great teacher", "fantastic teacher"],
+    "min_cats": 3,
+    "max_cats": 6
+},
+{
+    "patrol_id": "gen_train_fightingskill4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "trust", "apprentice"],
+    "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with r_c.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "Both cats have a nice practice session, with r_c soaking up all p_l's best tips and tricks.",
+        null,
+        "s_c takes charge and coordinates exercises for the duo. They practice how to weave around an opponent, feeling more and more confident in their teamwork. The warrior praises how quickly r_c picks it up, and the apprentice comes back to camp fluffed up with pride."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach."
+    ],
+    "win_skills": ["great teacher", "fantastic teacher"],
+    "min_cats": 2,
+    "max_cats": 2
 }
-
-
-
 ]
