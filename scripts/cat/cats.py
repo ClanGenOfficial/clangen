@@ -313,6 +313,8 @@ class Cat():
         else:
             self.dead = True
 
+        self.injury = None
+        self.illness = None
 
         if self.mate is not None:
             self.mate = None
@@ -794,8 +796,6 @@ class Cat():
             self.get_ill(illness_name)
 
     def save_condition(self):
-        if not self.is_ill() and not self.is_injured():
-            return
         # save relationships for each cat
         if game.switches['clan_name'] != '':
             clanname = game.switches['clan_name']
@@ -804,8 +804,15 @@ class Cat():
         elif game.clan is not None:
             clanname = game.clan.name
         condition_directory = 'saves/' + clanname + '/conditions'
+        condition_file_path = condition_directory + '/' + self.ID + '_conditions.json'
+
         if not os.path.exists(condition_directory):
             os.makedirs(condition_directory)
+
+        if not self.is_ill() and not self.is_injured():
+            if os.path.exists(condition_file_path):
+                os.remove(condition_file_path)
+            return
 
         conditions = {}
         if self.is_ill():
@@ -829,8 +836,7 @@ class Cat():
             }
 
         try:
-            with open(condition_directory + '/' + self.ID + '_conditions.json',
-                      'w') as rel_file:
+            with open(condition_file_path, 'w') as rel_file:
                 json_string = ujson.dumps(conditions, indent = 4)
                 rel_file.write(json_string)
         except:

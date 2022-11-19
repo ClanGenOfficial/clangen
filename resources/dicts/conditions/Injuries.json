@@ -1,5 +1,5 @@
 {
-    "bite":{
+    "bite-wound":{
         "duration": 2,
         "medicine_duration": 1,
         "mortality": {
@@ -120,20 +120,8 @@
                 "lower_by": 5
             },
             {
-                "name": "greencough",
-                "lower_by": 5
-            },
-            {
                 "name": "running nose",
                 "lower_by": 6
-            },
-            {
-                "name": "whitecough",
-                "lower_by": 3
-            },
-            {
-                "name": "yellowcough",
-                "lower_by": 4
             }
         ],
         "risks": [
@@ -142,20 +130,8 @@
                 "chance": 5
             },
             {
-                "name": "greencough",
-                "chance": 5
-            },
-            {
                 "name": "running nose",
                 "chance": 4
-            },
-            {
-                "name": "whitecough",
-                "chance": 8
-            },
-            {
-                "name": "yellowcough",
-                "chance": 6
             }
         ]
     },
@@ -315,7 +291,7 @@
             }
         ]
     },
-    "watered lung":{
+    "water in the lungs":{
         "duration": 2,
         "medicine_duration": 1,
         "mortality": {

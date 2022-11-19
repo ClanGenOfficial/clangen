@@ -28,10 +28,6 @@ def get_cats_allowed_on_patrol(Cat, ILLNESSES, INJURIES, game_mode):
         if the_cat.dead or the_cat.exiled or not the_cat.in_camp or the_cat in game.patrolled or the_cat in game.switches['current_patrol']:
             continue
         if game_mode == "expanded":
-            if the_cat.status == 'medicine cat':
-                able_cats.insert(3, the_cat)
-            if the_cat.status == "medicine apprentice":
-                able_cats.append(the_cat)
             if(the_cat.is_ill() and the_cat.illness.name in not_allowed_illnesses) or\
                 (the_cat.is_injured() and the_cat.injury.name in not_allowed_injuries):
                 continue
