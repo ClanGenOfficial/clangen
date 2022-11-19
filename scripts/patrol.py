@@ -929,7 +929,7 @@ class Patrol():
                     if randint(0, 2) == 0:  # chance to add collar
                         kit.accessory = choice(collars)
 
-            if self.patrol_event.patrol_id in ["gen_gen_newcat1", "gen_gen_newcat3"]:  # new loner
+            if self.patrol_event.patrol_id in ["gen_gen_newcat1", "gen_gen_newcat3", "gen_gen_lonerchase1"]:  # new loner
                 new_status = choice([
                     'apprentice', 'warrior', 'warrior', 'warrior', 'warrior',
                     'elder'
