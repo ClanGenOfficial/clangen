@@ -418,6 +418,7 @@ class PatrolEventScreen(Screens):
                         if patrol.patrol_stat_cat is not None:
                                 antagonize_text = antagonize_text.replace(
                                 's_c', str(patrol.patrol_stat_cat.name))
+                        antagonize_text = antagonize_text
 
                 else:
                     antagonize_fail_text = patrol.patrol_event.antagonize_fail_text
@@ -448,6 +449,7 @@ class PatrolEventScreen(Screens):
                         if patrol.patrol_stat_cat is not None:
                                 antagonize_fail_text = antagonize_fail_text.replace(
                                 's_c', str(patrol.patrol_stat_cat.name))
+                        antagonize_text = antagonize_fail_text
 
                 verdana_dark.blit_text(antagonize_text,
                                   (390, 185),
