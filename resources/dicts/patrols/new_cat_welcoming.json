@@ -111,5 +111,32 @@
         "win_skills": ["great speaker", "excellent speaker"],
         "min_cats": 1,
         "max_cats": 6
+    },
+    {
+        "patrol_id": "gen_gen_lonerchase1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["border", "new_cat", "reputation", "scar"],
+        "intro_text": "Your patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
+        "success_text": [
+                "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stays hidden and goes to the cat while the rest of the patrol lures the dog away. They're unharmed, and this display of bravery makes them want to join the clan!",
+                null,
+                "s_c leaps into action, pelting towards the dog with a yowl rising in their throat. The dog looks alarmed by this newcomer and abandons the chase as s_c swipes at it. The loner, ruffled but unharmed, is amazed by this display. After some chatting, they decide to join the clan."
+        ],
+        "fail_text": [
+                "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stayed hidden while the rest of the patrol lured the dog away, but when they go to find the cat, they see that it's still running! Oh well, at least they're alright.",
+                null,
+                null,
+                "The patrol jumps into action and chases the dog off without much difficulty. A group of cats is much different than a single one. However, the distressed loner seems to think that they're a threat and takes a swipe at r_c before running off."
+        ],
+        "decline_text": "The patrol decides not to interfere. Surely the cat can handle itself, the dog isn't even that big.",
+        "antagonize_text": "Your patrol watches as the loner climbs up a spindly tree to escape the dog, and then prompty proceed to chase the dog out of the territory. On their way back, they advise the loner that this is a dangerous area and maybe they shouldn't return.",
+        "antagonize_fail_text": "The loner escapes the dog by climbing a tree and scowls at the patrol, who stood by watching. The patrol leaves, guilt pricking at them.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "win_skills": ["good fighter", "great fighter", "excellent fighter"],
+        "min_cats": 3,
+        "max_cats": 5
+
     }
 ]
