@@ -1,6 +1,6 @@
 import pygame
 from math import ceil
-from random import choice, randint
+from random import choice, randint, sample
 
 from .base_screens import Screens, draw_menu_buttons, cat_profiles, draw_clan_name
 
@@ -36,8 +36,9 @@ class ClanScreen(Screens):
         hotkey_assign_1 = 1
         hotkey_assign_2 = 2
         for x in game.clan.clan_cats:
-            if not Cat.all_cats[x].dead and Cat.all_cats[
-                    x].in_camp and not Cat.all_cats[x].exiled:
+            if (not Cat.all_cats[x].dead and Cat.all_cats[
+                    x].in_camp and not Cat.all_cats[x].exiled and
+                    Cat.all_cats[x].placement):
                 buttons.draw_button(Cat.all_cats[x].placement,
                                     image=Cat.all_cats[x].sprite,
                                     cat=x,
@@ -70,21 +71,35 @@ class ClanScreen(Screens):
         self.update_camp_bg()
         game.switches['cat'] = None
         p = game.clan.cur_layout
+
+        occupied = set()
         game.clan.leader.placement = choice(p['leader place'])
+        occupied.add(game.clan.leader.placement)
         game.clan.medicine_cat.placement = choice(p['medicine place'])
-        for x in game.clan.clan_cats:
+        occupied.add(game.clan.medicine_cat.placement)
+
+        # shuffles b/c otherwise it only displays the first few cats
+        for x in sample(game.clan.clan_cats, len(game.clan.clan_cats)):
+            # leader and medicine cat are set above
+            if x == game.clan.leader.ID or x == game.clan.medicine_cat.ID:
+                continue
             i = randint(0, 20)
+
+            # have to remove existing positions or else they'll stay there
+            Cat.all_cats[x].placement = None
+
+            placement = None
             if Cat.all_cats[x].status == 'apprentice':
                 if i < 13:
-                    Cat.all_cats[x].placement = choice([
+                    placement = choice([
                         choice(p['apprentice place']),
                         choice(p['clearing place'])
                     ])
 
                 elif i >= 19:
-                    Cat.all_cats[x].placement = choice(p['leader place'])
+                    placement = choice(p['leader place'])
                 else:
-                    Cat.all_cats[x].placement = choice([
+                    placement = choice([
                         choice(p['nursery place']),
                         choice(p['warrior place']),
                         choice(p['elder place']),
@@ -93,14 +108,14 @@ class ClanScreen(Screens):
 
             elif Cat.all_cats[x].status == 'deputy':
                 if i < 17:
-                    Cat.all_cats[x].placement = choice([
+                    placement = choice([
                         choice(p['warrior place']),
                         choice(p['leader place']),
                         choice(p['clearing place'])
                     ])
 
                 else:
-                    Cat.all_cats[x].placement = choice([
+                    placement = choice([
                         choice(p['nursery place']),
                         choice(p['leader place']),
                         choice(p['elder place']),
@@ -109,15 +124,15 @@ class ClanScreen(Screens):
                     ])
 
             elif Cat.all_cats[x].status == 'elder':
-                Cat.all_cats[x].placement = choice(p['elder place'])
+                placement = choice(p['elder place'])
             elif Cat.all_cats[x].status == 'kitten':
                 if i < 13:
-                    Cat.all_cats[x].placement = choice(
+                    placement = choice(
                         p['nursery place'])
                 elif i == 19:
-                    Cat.all_cats[x].placement = choice(p['leader place'])
+                    placement = choice(p['leader place'])
                 else:
-                    Cat.all_cats[x].placement = choice([
+                    placement = choice([
                         choice(p['clearing place']),
                         choice(p['warrior place']),
                         choice(p['elder place']),
@@ -128,22 +143,26 @@ class ClanScreen(Screens):
             elif Cat.all_cats[x].status in [
                     'medicine cat apprentice', 'medicine cat'
             ]:
-                Cat.all_cats[x].placement = choice(p['medicine place'])
+                placement = choice(p['medicine place'])
             elif Cat.all_cats[x].status == 'warrior':
                 if i < 15:
-                    Cat.all_cats[x].placement = choice([
+                    placement = choice([
                         choice(p['warrior place']),
                         choice(p['clearing place'])
                     ])
 
                 else:
-                    Cat.all_cats[x].placement = choice([
+                    placement = choice([
                         choice(p['nursery place']),
                         choice(p['leader place']),
                         choice(p['elder place']),
                         choice(p['medicine place']),
                         choice(p['apprentice place'])
                     ])
+            # place cats in unoccupied coords
+            if placement and placement not in occupied:
+                occupied.add(placement)
+                Cat.all_cats[x].placement = placement
 
     def update_camp_bg(self):
         light_dark = "light"
