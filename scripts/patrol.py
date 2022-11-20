@@ -1151,8 +1151,9 @@ patrol = Patrol()
 # ---------------------------------------------------------------------------- #
 
 resource_directory = "resources/dicts/patrols/"
-hunting_directory = "resources/dicts/patrols/hunting"
-training_directory = "resources/dicts/patrols/training"
+hunting_directory = "hunting/"
+training_directory = "training/"
+border_directory = "border/"
 
 GENERAL = None
 with open(f"{resource_directory}general.json", 'r') as read_file:
@@ -1185,7 +1186,7 @@ with open(f"{resource_directory}{hunting_directory}hunting_wetlands.json", 'r') 
 
 # BORDER #
 FIGHTING = None
-with open(f"{resource_directory}fighting.json", 'r') as read_file:
+with open(f"{resource_directory}{border_directory}fighting.json", 'r') as read_file:
     FIGHTING = ujson.loads(read_file.read())
 
 # TRAINING #
