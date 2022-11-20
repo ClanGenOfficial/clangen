@@ -1020,6 +1020,8 @@
     "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
     "min_cats": 4,
     "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "history_text": [
     "r_c carries a scar from a fox fight."
     ]
@@ -1337,6 +1339,7 @@
 {
     "patrol_id": "pln_any_train_session1",
     "biome": "plains",
+    "season": "Any",
     "tags": ["apprentice", "training","scar", "injury"],
     "intro_text": "The patrol wants to hold a training session for r_c.  They decide to focus on how best to hide within the tall grass.",
     "decline_text": "They decide to focus on the patrolling the territory instead, training can wait for another day.",
@@ -1617,6 +1620,7 @@
 {
     "patrol_id": "mtn_train_session1",
     "biome": "mountainous",
+    "season": "Any",
     "tags": ["apprentice", "training","scar", "injury"],
     "intro_text": "The patrol wants to hold a training session for r_c.  They decide to focus on how best to leap up a rocky cliff.",
     "decline_text": "They decide to focus on the patrolling the territory instead, training can wait for another day.",
@@ -1647,6 +1651,7 @@
 {
     "patrol_id": "mtn_train_sett1",
     "biome": "mountainous",
+    "season": "Any",
     "tags": ["death", "scar", "training"],
     "intro_text": "r_c wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour.",
     "decline_text": "Surely it must be nothing… uneasily, r_c continues on.",
@@ -1667,6 +1672,7 @@
     "win_skills": [ "smart", "very smart", "extremely smart"], 
     "win_trait": ["patient", "responsible", "thoughtful", "wise", "calm", "careful", "nervous", "sneaky", "strange"],
     "fail_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "insecure", "playful", "shameless", "troublesome", "vengeful"], 
+    "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null,
