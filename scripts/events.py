@@ -537,12 +537,12 @@ class Events():
 
             # add the injury, when the cat fell into a river
             if "river" in chosen_scar and not cat.is_ill() and random.random() * 5:
-                chosen_scar = f"{chosen_scar} {name} has now water in the lungs."
+                chosen_scar = f"{chosen_scar} {name} now has water in the lungs."
                 cat.get_injured("water in the lungs")
 
             # add also a injury, when a leader is cruel
             # CARE: IF SCAR TEXTS ARE ADDED, THIS MAY CHANGE
-            leader_mentor_hurt = "injured by" in chosen_scar and "enemy" not in chosen_scar
+            leader_mentor_hurt = "injured by" in chosen_scar
             if leader_mentor_hurt and (risky_mentor or risky_leader):
                 possible_injuries = ["bite-wound", "bruises", "claw-wound", "scrapes", "torn pelt", "torn ear"]
                 random_index = int(random.random() * len(possible_injuries))

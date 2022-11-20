@@ -24,7 +24,7 @@ class Condition_Events():
         """
         # one if-statement has a range of 10
         number_of_conditions = 1 * 10
-        ratio = 80 # 1/80 times triggering for each cat each moon
+        ratio = 70 # 1/70 times triggering for each cat each moon
         chance_number = number_of_conditions * ratio
 
         random_number = int(random.random() * chance_number)
@@ -40,7 +40,7 @@ class Condition_Events():
                 if not int(random.random() * risk["chance"]):
                     triggered = True
                     new_illness = risk['name']
-                    event_string = f"{cat.name}'s {cat.illness.name}, turned into {new_illness}."
+                    event_string = f"{cat.name}'s {cat.illness.name} turned into {new_illness}."
                     cat.get_ill(new_illness , risk=True)
                     break
 
@@ -89,7 +89,7 @@ class Condition_Events():
         """
         # one if-statement has a range of 10
         number_of_conditions = 4 * 10
-        ratio = 40 # 1/25 times triggering for each cat each moon
+        ratio = 45 # 1/45 times triggering for each cat each moon
         chance_number = number_of_conditions * ratio
 
         random_number = int(random.random() * chance_number)

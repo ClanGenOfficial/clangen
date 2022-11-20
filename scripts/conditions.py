@@ -13,12 +13,34 @@ from scripts.game_structure.game_essentials import game
 def medical_cats_condition_fulfilled(all_cats, amount_per_med):
     fulfilled = False
 
+    allowed_injuries = [
+        "bruises",
+        "scrapes",
+        "tickbites",
+        "torn pelt",
+        "torn ear",
+        "splinter",
+        "joint pain"
+    ]
+    allowed_illnesses = [
+        "fleas",
+        "running nose"
+    ]
     medicine_apprentices = list(filter(
-        lambda c: c.status =='medicine apprentices' and not c.dead and not c.exiled and not c.is_ill(), all_cats))
+        lambda c: c.status =='medicine apprentices' and not c.dead and not c.exiled and\
+            (not c.is_ill() or c.is_ill() and c.illness.name in allowed_illnesses) and\
+            (not c.is_injured() or c.is_injured() and c.injury.name in allowed_injuries)
+            , all_cats
+    ))
     medicine_cats = list(filter(
-        lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled and not c.is_ill(), all_cats))
+        lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled and\
+            (not c.is_ill() or c.is_ill() and c.illness.name in allowed_illnesses) and\
+            (not c.is_injured() or c.is_injured() and c.injury.name in allowed_injuries)
+            , all_cats
+    ))
+
     relevant_cats = list(filter(lambda c: not c.dead and not c.exiled, all_cats))
-    number = len(relevant_cats) / (amount_per_med +1)
+    number = len(relevant_cats) / (amount_per_med + 1)
 
     needed_meds = math.ceil(number)
 

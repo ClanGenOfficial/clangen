@@ -6,7 +6,7 @@ from scripts.cat.cats import Cat
 from scripts.conditions import Illness, Injury, medical_cats_condition_fulfilled
 
 class TestsMedCondition(unittest.TestCase):
-    def test_medicine_condition_not_fulfilled(self):
+    def test_not_fulfilled(self):
         cat1 = Cat(moons=20)
         cat1.status = "warrior"
         cat2 = Cat(moons=20)
@@ -15,8 +15,7 @@ class TestsMedCondition(unittest.TestCase):
         all_cats = [cat1, cat2]
         self.assertFalse(medical_cats_condition_fulfilled(all_cats, 15))
 
-
-    def test_medicine_condition_fulfilled(self):
+    def test_fulfilled(self):
         cat1 = Cat(moons=20)
         cat1.status = "warrior"
 
@@ -26,7 +25,7 @@ class TestsMedCondition(unittest.TestCase):
         all_cats = [cat1, med]
         self.assertTrue(medical_cats_condition_fulfilled(all_cats, 15))
 
-    def test_medicine_condition_fulfilled_many_cats(self):
+    def test_fulfilled_many_cats(self):
         cat1 = Cat(moons=20)
         cat1.status = "warrior"
         cat2 = Cat(moons=20)
@@ -44,7 +43,7 @@ class TestsMedCondition(unittest.TestCase):
         all_cats = [cat1, cat2, cat3, cat4, med1, med2]
         self.assertTrue(medical_cats_condition_fulfilled(all_cats, 2))
 
-    def test_medicine_condition_not_fulfilled_many_cats(self):
+    def test_not_fulfilled_many_cats(self):
         cat1 = Cat(moons=20)
         cat1.status = "warrior"
         cat2 = Cat(moons=20)
@@ -59,6 +58,52 @@ class TestsMedCondition(unittest.TestCase):
 
         all_cats = [cat1, cat2, cat3, cat4, med]
         self.assertFalse(medical_cats_condition_fulfilled(all_cats, 2))
+
+    def test_injured_fulfilled(self):
+        cat1 = Cat(moons=20)
+        cat1.status = "warrior"
+
+        med = Cat(moons=20)
+        med.status = "medicine cat"
+        med.injury = Injury("splinter",1,1,1,[],[])
+
+        all_cats = [cat1, med]
+        self.assertTrue(medical_cats_condition_fulfilled(all_cats, 15))
+
+    def test_injured_not_fulfilled(self):
+        cat1 = Cat(moons=20)
+        cat1.status = "warrior"
+
+        med = Cat(moons=20)
+        med.status = "medicine cat"
+        med.injury = Injury("broken bone",1,1,1,[],[])
+
+        all_cats = [cat1, med]
+        self.assertFalse(medical_cats_condition_fulfilled(all_cats, 15))
+
+    def test_illness_fulfilled(self):
+        cat1 = Cat(moons=20)
+        cat1.status = "warrior"
+
+        med = Cat(moons=20)
+        med.status = "medicine cat"
+        med.illness = Illness("running nose",1,1,1,1,1,[])
+
+        all_cats = [cat1, med]
+        self.assertTrue(medical_cats_condition_fulfilled(all_cats, 15))
+
+    def test_illness_not_fulfilled(self):
+        cat1 = Cat(moons=20)
+        cat1.status = "warrior"
+
+        med = Cat(moons=20)
+        med.status = "medicine cat"
+        med.illness = Illness("whitecough",1,1,1,1,1,[])
+
+        all_cats = [cat1, med]
+        self.assertFalse(medical_cats_condition_fulfilled(all_cats, 15))
+
+
 
 class TestsIllnesses(unittest.TestCase):
     def load_resources(self):

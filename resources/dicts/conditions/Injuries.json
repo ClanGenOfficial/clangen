@@ -89,7 +89,7 @@
             }
         ]
     },
-    "dislocated bone":{
+    "dislocated joint":{
         "duration": 4,
         "medicine_duration": 1,
         "mortality": {
@@ -182,7 +182,7 @@
             }
         ]
     },
-    "splitter":{
+    "splinter":{
         "duration": 1,
         "medicine_duration": 1,
         "mortality": {

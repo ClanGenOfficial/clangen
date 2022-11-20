@@ -1,20 +1,20 @@
 {
     "Newleaf":{
         "cracked pads": 2,
-        "splitter": 2,
+        "splinter": 2,
         "stomach aches": 1,
         "tickbites": 2
     },
     "Greenleaf":{
         "heat exhaustion": 2,
         "scrapes": 2,
-        "splitter": 3,
+        "splinter": 3,
         "stomach aches": 1,
         "tickbites": 2
     },
     "Leaf-fall":{
         "scrapes": 2,
-        "splitter": 3,
+        "splinter": 3,
         "stomach aches": 1,
         "torn pelt": 2,
         "torn ear": 2

@@ -19,7 +19,8 @@ def get_cats_allowed_on_patrol(Cat, ILLNESSES, INJURIES, game_mode):
         "tickbites",
         "torn pelt",
         "torn ear",
-        "splitter"
+        "splinter",
+        "joint pain"
     ]
     not_allowed_injuries = list(filter(lambda x: x not in allowed_injuries, INJURIES.keys()))
 
