@@ -1,0 +1,141 @@
+[
+{
+    "patrol_id": "pln_hunt_prairiedog1",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["hunting"],
+    "intro_text": "Your patrol comes across a prairie dog.",
+    "success_text": ["Your patrol catches the prairie dog!"],
+    "fail_text": ["Your patrol narrowly misses the prairie dog."],
+    "decline_text": "Your patrol decides to look for other prey.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "win_skills": ["great hunter", "fantastic hunter"],
+    "min_cats": 1,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "pln_hunt_twolegplace1",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["hunting"],
+    "intro_text": "The patrol approaches a little Twoleg nest on the prairie while hunting. Next to it, a strange tower makes a soft thump, its wooden leaves circling slowly in the wind.",
+    "decline_text": "The patrol decides to hunt elsewhere.",
+    "chance_of_success": 40,
+    "exp": 10,
+    "success_text": [
+        "The patrol has a successful hunt, avoiding any Twolegs.",
+        "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to one."
+    ],
+    "fail_text": [
+        "Twoleg kits scare the patrol away."
+    ],
+    "min_cats": 1,
+    "max_cats": 3,
+    "antagonize_text": "A Twoleg kit approaches the patrol, and they send it away squawking with it's blood on their claws.",
+    "antagonize_fail_text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
+},
+{
+    "patrol_id": "pln_hunt_twolegplace2",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["hunting"],
+    "intro_text": "The patrol approaches a little Twoleg nest on the prairie while hunting. Next to it, a strange tower makes a soft thump, its leaves circling slowly in the wind.",
+    "decline_text": "The patrol decides to hunt elsewhere.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "The patrol cats split up, using sentries to ensure that the Twolegs don't disturb their hunts.",
+        "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to as many as they can carry."
+    ],
+    "fail_text": [
+        "Twoleg kits stomp through the long grass, scaring away prey and ruining the hunt."
+    ],
+    "min_cats": 4,
+    "max_cats": 6,
+    "antagonize_text": "Finding a Twoleg kit wandering alone, the cats harass it until it flees squawking, it's blood on their claws.",
+    "antagonize_fail_text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
+},
+{
+    "patrol_id": "pln_border_windmill1",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["hunting"],
+    "intro_text": "As the patrol travels the territory, they come upon a strange metal forest that the twolegs have built.  Smooth, white tree trunks rise up into the sky, completely bare apart from the very top, where three massive branches grow outwards and spin in slow circles. A low hum permeates the air.",
+    "decline_text": "The patrol decides to hunt elsewhere",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "The patrol moves among the white trunks, checking the ground underneath them.  Sometimes dead birds can be found scattered about in this area and if not yet rotten, make for acceptable freshkill.  They manage to find some carcasses worth taking.",
+        "This place is unnerving and the patrol hunts carefully and cautiously, keeping an eye out for twolegs all the while."
+    ],
+    "fail_text": [
+        "This place is unnerving and the patrol can't stand the tense atmosphere and grating, constant noise. They don't stay long enough to find prey.",
+        "The patrol considers their options. s_c is adamant that they find somewhere else to hunt. It's not safe here and the threat of twolegs is too high. They decide to move on but struggle to find any prey during the rest of the patrol."
+    ],
+    "fail_trait": ["strict", "careful", "nervous", "insecure"],
+    "min_cats": 1,
+    "max_cats": 6,
+    "antagonize_text": "The patrol is frustrated by this seemingly permanent proof of twolegs on their territory and takes the time to thoroughly and aggressively mark the area. There. That will show the twolegs whose land this is.",
+    "antagonize_fail_text": "The atmosphere in this place is eerie and r_c takes out their tenseness on one of the white trunks.  A few shallow scrapes are left on the surface, but little other evidence of their aggression remains."
+},
+{
+    "patrol_id": "pln_hunt_burrow1",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["hunting", "injury", "scar", "fighting"],
+    "intro_text": "The patrol finds a small burrow in the ground with a strange scent.  They hesitate, unsure if this is worth checking.",
+    "decline_text": "The patrol decides to avoid the burrow.  There's no telling what could await inside.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "The patrol flushes a gopher out of the burrow! More fresh kill!",
+        "Inside the burrow is a rabbit, curled up and alone.  Perhaps a buck recently kicked from his birth warren?  Whatever the case, this rabbit will feed the clan now."
+    ],
+    "fail_text": [
+        "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness.  Whatever used to live here is gone now.  Checking the burrow was a waste of time.",
+        "s_c sticks their nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
+        null,
+        "Oh no! The burrow was home to a wolverine, now angry at the disturbance.  The patrol bolts away to escape its wrath, but r_c doesn't quite move fast enough and is caught in its claws until another cat turns back to help."
+    ],
+    "fail_trait": ["bold", "ambitious", "childish", "impulsive"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+    "r_c was scarred after an unfortunate encounter with a wolverine."
+    ]
+},
+{
+    "patrol_id": "pln_hunt_burrow2",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["hunting", "death", "fighting"],
+    "intro_text": "The patrol finds a small burrow in the ground with a strange scent.  They hesitate, unsure if this is worth checking.",
+    "decline_text": "The patrol decides to avoid the burrow.  There's no telling what could await inside.",
+    "chance_of_success": 40,
+    "exp": 10,
+    "success_text": [
+    "r_c flushes a gopher out of the burrow! More fresh kill!",
+    "Inside the burrow is a rabbit, curled up and alone.  Perhaps a buck recently kicked from his birth warren?  Whatever the case, this rabbit will feed the clan now."
+    ],
+    "fail_text": [
+    "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness.  Whatever used to live here is gone now.  Checking the burrow was a waste of time.",
+    "s_c sticks their nose into the hole only to come face to face with a skunk! The whole patrol is sprayed!",
+    "Oh no! The burrow was home to a wolverine, now angry at the disturbance.  r_c bolts away to escape its wrath, but doesn't quite move fast enough and is caught in its claws.  With no other cats around to help, r_c is quickly killed by the predator.",
+    null
+    ],
+    "fail_trait": ["bold", "ambitious", "childish", "impulsive"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+    null,
+    "r_c was killed after an unfortunate experience with a wolverine."
+    ]
+}
+]

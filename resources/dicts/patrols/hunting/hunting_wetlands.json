@@ -1,0 +1,19 @@
+[
+{
+    "patrol_id": "wtlnd_hunt_lizard1",
+    "biome": "wetlands",
+    "season": "Any",
+    "tags": ["hunting"],
+    "intro_text": "Your patrol comes across a lizard.",
+    "success_text": ["Your patrol catches the lizard!"],
+    "fail_text": ["Your patrol narrowly misses the lizard."],
+    "decline_text": "Your patrol decides to look for other prey.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "win_skills": ["great hunter", "fantastic hunter"],
+    "min_cats": 1,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+}
+]
