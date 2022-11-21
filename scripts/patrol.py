@@ -992,7 +992,7 @@ class Patrol():
                                 else:
                                     the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2)
                                     kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat)
-                            game.clan.add_cat(kit2)
+                                game.clan.add_cat(kit2)
 
             elif self.patrol_event.patrol_id in ["gen_gen_newcat2", "gen_gen_newcat3"]:  # new kittypet
                 new_status = choice([
@@ -1040,7 +1040,7 @@ class Patrol():
                             else:
                                 the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2)
                                 kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat)
-                        game.clan.add_cat(kit2)
+                            game.clan.add_cat(kit2)
 
             elif self.patrol_event.patrol_id == "gen_gen_newmed1":  # new med cat
                 new_status = 'medicine cat'
@@ -1066,6 +1066,25 @@ class Patrol():
                 elif randint(0, 3) == 0 and kit.backstory not in ['medicine_cat', 'disgraced']:
                     kit.name.prefix = choice(names.loner_names)
                     kit.name.suffix = choice(names.normal_suffixes)
+                if self.final_success == self.patrol_event.success_text[1]:
+                        num_kits = choice([2, 2, 2, 2, 3, 4])
+                        for _ in range(num_kits):
+                            kit2 = Cat(status='kitten', moons=0)
+                            kit2.backstory = 'outsider_roots2'
+                            kit2.parent1 = kit.ID
+                            kit2.thought = 'Is looking around the camp with wonder'
+                            # create and update relationships
+                            for cat_id in game.clan.clan_cats:
+                                the_cat = Cat.all_cats.get(cat_id)
+                                if the_cat.dead or the_cat.exiled:
+                                    continue
+                                if the_cat.ID in [kit2.parent1, kit2.parent2]:
+                                    the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2, False, True)
+                                    kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat, False, True)
+                                else:
+                                    the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2)
+                                    kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat)
+                                game.clan.add_cat(kit2)
 
     def check_territories(self):
         hunting_claim = str(game.clan.name) + 'Clan Hunting Grounds'

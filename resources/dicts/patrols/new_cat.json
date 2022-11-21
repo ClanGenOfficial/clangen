@@ -3,7 +3,7 @@
         "patrol_id": "gen_gen_newcat1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["border", "new_cat", "reputation"],
+        "tags": ["border", "new_cat", "reputation", "kits"],
         "intro_text": "Your patrol finds a loner who is interested in joining the Clan.",
         "success_text": [
                 "The patrol convinces the loner to join the Clan.",
@@ -26,7 +26,7 @@
         "patrol_id": "gen_gen_newcat2",
         "biome": "Any",
         "season": "Any",
-        "tags": ["border", "new_cat", "reputation"],
+        "tags": ["border", "new_cat", "reputation", "kits"],
         "intro_text": "Your patrol finds a kittypet who is interested in joining the Clan.",
         "decline_text": "Your patrol decides not to confront the kittypet.",
         "chance_of_success": 40,
@@ -40,7 +40,7 @@
         ],
         "min_cats": 1,
         "max_cats": 6,
-        "win_skills": ["great speaker","excellent speaker"],
+        "win_skills": ["great speaker", "excellent speaker"],
         "antagonize_text": "Your patrol drives the kittypet off of the territory.",
         "antagonize_fail_text": "The kittypet is taken aback by their hostility and decides that Clan life is not for them."
 
@@ -95,10 +95,11 @@
         "patrol_id": "gen_gen_newmed1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["border", "new_cat", "reputation", "med_cat"],
+        "tags": ["border", "new_cat", "reputation", "med_cat", "kits"],
         "intro_text": "r_c finds a loner who offers their healing skills in exchange for shelter.",
         "success_text": [
-            "The new medicine cat is welcomed into the clan."
+            "The new medicine cat is welcomed into the clan.",
+            "The new medicine cat is welcomed into the clan along with their litter of kits."
         ],
         "fail_text": [
             "After hearing more about your clan, the loner decides not to join."

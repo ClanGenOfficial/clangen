@@ -3,7 +3,7 @@
         "patrol_id": "gen_gen_newcat1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["border", "new_cat", "reputation"],
+        "tags": ["border", "new_cat", "reputation", "kits"],
         "intro_text": "Your patrol scents a loner on the territory. They confront the cat, who quickly surrenders and begs for shelter.",
         "success_text": [
                 "The patrol relents and the loner is allowed to join the Clan.",
@@ -26,7 +26,7 @@
         "patrol_id": "gen_gen_newcat2",
         "biome": "Any",
         "season": "Any",
-        "tags": ["border", "new_cat", "reputation"],
+        "tags": ["border", "new_cat", "reputation", "kits"],
         "intro_text": "Your patrol scents a kittypet on the territory. They confront the cat, who quickly surrenders and begs for shelter.",
         "decline_text": "Your patrol decides the kittypet isn't worth their time.",
         "chance_of_success": 40,
@@ -95,10 +95,11 @@
         "patrol_id": "gen_gen_newmed1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["border", "new_cat", "reputation", "med_cat"],
+        "tags": ["border", "new_cat", "reputation", "med_cat", "kits"],
         "intro_text": "Your patrol scents a loner on the territory. r_c finds the loner, who offers their healing skills in exchange for shelter.",
         "success_text": [
-            "The new medicine cat is welcomed into the clan."
+            "The new medicine cat is welcomed into the clan.",
+            "The new medicine cat is welcomed into the clan along with their litter of kits."
         ],
         "fail_text": [
             "After hearing more about your clan, the loner decides not to join, quickly turning and taking off."
