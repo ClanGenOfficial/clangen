@@ -1016,6 +1016,10 @@ class Cat():
         if self.dead or self.exiled or other_cat.dead or other_cat.exiled:
             return False
 
+        # check for age
+        if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
+            return False
+
         # check for current mate
         # if the cat has a mate, they are not open for a new mate
         if not for_love_interest and self.mate:
@@ -1052,10 +1056,6 @@ class Cat():
                 if other_cat.siblings:
                     if other_cat.is_uncle_aunt(self):
                         return False
-                    
-        # check for age
-        if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
-            return False
 
         if self.age == other_cat.age:
             return True
@@ -1067,7 +1067,6 @@ class Cat():
             return True
 
         return False
-        
 
     def unset_mate(self, breakup = False, fight = False):
         """Unset the mate."""

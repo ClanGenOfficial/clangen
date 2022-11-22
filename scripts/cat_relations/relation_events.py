@@ -259,7 +259,7 @@ class Relation_Events():
             return False
 
         cat_to = highest_romantic_relation.cat_to
-        if cat_to.is_potential_mate(cat, True) and cat.is_potential_mate(cat_to, True):
+        if cat_to.is_potential_mate(cat) and cat.is_potential_mate(cat_to):
             if cat_to.mate is None and cat.mate is None:
                 self.had_one_event = True
                 cat.set_mate(cat_to)
