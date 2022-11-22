@@ -256,15 +256,15 @@ class TestPossibleMateFunction(unittest.TestCase):
         former_appr = Cat(moons=20)
         mentor.former_apprentices.append(former_appr)
 
-        self.assertFalse(mentor.is_potential_mate(former_appr,False,False))
-        self.assertFalse(former_appr.is_potential_mate(mentor,False,False))
-        self.assertTrue(mentor.is_potential_mate(former_appr,False,True))
-        self.assertTrue(former_appr.is_potential_mate(mentor,False,True))
+        self.assertFalse(mentor._intern_potential_mate(former_appr,False,False))
+        self.assertFalse(former_appr._intern_potential_mate(mentor,False,False))
+        self.assertTrue(mentor._intern_potential_mate(former_appr,False,True))
+        self.assertTrue(former_appr._intern_potential_mate(mentor,False,True))
 
-        self.assertFalse(mentor.is_potential_mate(former_appr,True,False))
-        self.assertFalse(former_appr.is_potential_mate(mentor,True,False))
-        self.assertTrue(mentor.is_potential_mate(former_appr,True,True))
-        self.assertTrue(former_appr.is_potential_mate(mentor,True,True))
+        self.assertFalse(mentor._intern_potential_mate(former_appr,True,False))
+        self.assertFalse(former_appr._intern_potential_mate(mentor,True,False))
+        self.assertTrue(mentor._intern_potential_mate(former_appr,True,True))
+        self.assertTrue(former_appr._intern_potential_mate(mentor,True,True))
 
 class TestMateFunctions(unittest.TestCase):
 

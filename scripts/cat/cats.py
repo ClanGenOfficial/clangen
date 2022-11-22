@@ -1001,7 +1001,12 @@ class Cat():
 # ---------------------------------------------------------------------------- #
 #                                 relationships                                #
 # ---------------------------------------------------------------------------- #
-    def is_potential_mate(self, other_cat, for_love_interest = False, former_mentor_setting = game.settings['romantic with former mentor']):
+    def is_potential_mate(self, other_cat, for_love_interest = False):
+        """Add aditional information to call the check."""
+        former_mentor_setting = game.settings['romantic with former mentor']
+        return self._intern_potential_mate(other_cat, for_love_interest, former_mentor_setting)
+
+    def _intern_potential_mate(self, other_cat, for_love_interest, former_mentor_setting):
         """Checks if this cat is a free and potential mate for the other cat."""
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
@@ -1025,7 +1030,6 @@ class Cat():
             return False
 
         # Relationship checks
-        # We don't need to parental checks if the cats have no parents =3
         # Apparently, parent2 can't exist without parent1, so we only need to check parent1
         if self.parent1 or other_cat.parent1:
             # Check for relation via other_cat's parents (parent/grandparent)
@@ -1056,9 +1060,6 @@ class Cat():
         if self.age == other_cat.age:
             return True
 
-        #if set(['kitten', 'adolescent']) & set([self.age, other_cat.age]):
-        #    return False
-        # ugly but faster
         if self.age in "kittenadolescent" or other_cat.age in "kittenadolescent":
             return False
         
@@ -1066,6 +1067,7 @@ class Cat():
             return True
 
         return False
+        
 
     def unset_mate(self, breakup = False, fight = False):
         """Unset the mate."""
