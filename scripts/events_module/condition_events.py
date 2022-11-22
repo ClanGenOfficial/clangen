@@ -121,7 +121,7 @@ class Condition_Events():
             cat.get_injured(possible_injuries[random_index])
             
             if possible_injuries[random_index] in\
-                ["bruises","cracked pads","joint pain","scrapes","stomach aches","tickbites"]:
+                ["bruises","cracked pads","joint pain","scrapes","tickbites"]:
                 event_string = f"{cat.name} has gotten {possible_injuries[random_index]}."
             else:
                 event_string = f"{cat.name} has gotten a(n) {possible_injuries[random_index]}."
@@ -141,17 +141,17 @@ class Condition_Events():
             random_index = int(random.random() * len(injury_dict))
             injury_name = list(injury_dict.keys())[random_index]
             cat.get_injured(injury_name)
-            if injury_name in ["bruises","cracked pads","joint pain","scrapes","stomach aches","tickbites"]:
+            if injury_name in ["bruises","cracked pads","joint pain","scrapes","tickbites"]:
                 event_string = f"{injury_dict[injury_name]} {cat.name} has gotten {injury_name}."
             else:
                 event_string = f"{injury_dict[injury_name]} {cat.name} has gotten a(n) {injury_name}."
 
-        # handle if a rat attack has happened --> lead to rat-borne infections
+        # handle if a rat attack has happened --> lead to rat fever
         if event_string and "rat" in event_string:
             chance_number = 15
             if int(random.random() * chance_number):
-                cat.get_ill("rat-borne infections")
-                event_string = f"{event_string} The bites of the rat doesn't look good and {cat.name} has gotten a rat-borne infections."
+                cat.get_ill("rat fever")
+                event_string = f"{event_string} The bites of the rat doesn't look good and {cat.name} has gotten a rat fever."
 
 
         if event_string:
@@ -187,7 +187,7 @@ class Condition_Events():
             if cat.dead:
                 triggered = True
                 save_death(cat, event_string)
-                if injury_name in ["bruises","cracked pads","joint pain","scrapes","stomach aches","tickbites"]:
+                if injury_name in ["bruises","cracked pads","joint pain","scrapes","tickbites"]:
                     event_string = f"{cat.name} has died in the medicine den, with {injury_name} "
                 else:
                     event_string = f"{cat.name} has died in the medicine den, with a(n) {injury_name}."
@@ -254,7 +254,7 @@ class Condition_Events():
 
         # choose one string and injure the cat and replace the string inserts
         event_string = random.choice(possible_events)
-        if injury_name in ["bruises","cracked pads","joint pain","scrapes", "stomach aches", "tickbites"]:
+        if injury_name in ["bruises","cracked pads","joint pain","scrapes", "stomachache", "tickbites"]:
             event_string = f"{event_string} {cat.name} has gotten {injury_name}."
         elif injury_name in []:
             event_string = f"{event_string} {cat.name} has gotten an {injury_name}."
@@ -298,6 +298,7 @@ with open(f"{resource_directory}biome_injuries.json", 'r') as read_file:
 # ---------------------------------------------------------------------------- #
 
 not_integrated_illness = ["redcough"]
+not_integrated_injuries = ["carrionplace disease"]
 
 # define how likely each status can have this injury
 EVENT_INJURIES = None

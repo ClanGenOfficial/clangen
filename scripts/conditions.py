@@ -67,7 +67,8 @@ class Illness():
             duration, 
             medicine_duration, 
             medicine_mortality,
-            risks):
+            risks,
+            event_triggered = False):
         self.name = name
         self.mortality = int(mortality)
         self.infectiousness = int(infectiousness)
@@ -75,6 +76,7 @@ class Illness():
         self.medicine_duration = int(medicine_duration)
         self.medicine_mortality = int(medicine_mortality)
         self.risks = risks
+        self.new = event_triggered
 
         self.current_duration = duration
         self.current_mortality = mortality
@@ -120,13 +122,15 @@ class Injury():
             medicine_duration,
             mortality,
             risks,
-            illness_infectiousness):
+            illness_infectiousness,
+            event_triggered = False):
         self.name = name
         self.duration = duration
         self.medicine_duration = medicine_duration
         self.mortality = mortality
         self.risks = risks
         self.illness_infectiousness = illness_infectiousness
+        self.new = event_triggered
 
         self.current_duration = duration
         self.current_mortality = mortality

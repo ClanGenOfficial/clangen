@@ -1,4 +1,5 @@
 from scripts.cat.cats import *
+from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.cat_relations.relation_events import *
 from scripts.game_structure.buttons import *
 from scripts.game_structure.load_cat import * 
@@ -90,14 +91,19 @@ class Events():
                 game.clan.save_pregnancy(game.clan)
             game.clan.current_season = game.clan.seasons[game.clan.age % 12]
             game.event_scroll_ct = 0
-            has_med = any(
-                str(cat.status) in {"medicine cat", "medicine cat apprentice"}
-                and not cat.dead and not cat.exiled
-                for cat in Cat.all_cats.values())
 
-            if not has_med:
-                game.cur_events_list.insert(
-                    0, f"{game.clan.name}Clan has no medicine cat!")
+            if game.clan.game_mode in ["expanded", "cruel season"]:
+                amount_per_med = get_amount_cat_for_one_medic(game.clan)
+                med_fullfiled = medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med)
+                if not med_fullfiled:
+                    game.cur_events_list.insert(0, f"{game.clan.name}Clan has not enough (healthy) medicine cat!")
+            else:
+                has_med = any(
+                    str(cat.status) in {"medicine cat", "medicine cat apprentice"}
+                    and not cat.dead and not cat.exiled
+                    for cat in Cat.all_cats.values())
+                if not has_med:
+                    game.cur_events_list.insert(0, f"{game.clan.name}Clan has no medicine cat!")
             if game.clan.deputy == 0 or game.clan.deputy is None or game.clan.deputy.dead or game.clan.deputy.exiled:
                 if game.settings.get('deputy') is True:
                     random_count = 0
@@ -538,12 +544,11 @@ class Events():
             # add the injury, when the cat fell into a river
             if "river" in chosen_scar and not cat.is_ill() and random.random() * 5:
                 chosen_scar = f"{chosen_scar} {name} now has water in the lungs."
-                cat.get_injured("water in the lungs")
+                cat.get_injured("water in the lungs", event_triggered = True)
 
             # add also a injury, when a leader is cruel
             # CARE: IF SCAR TEXTS ARE ADDED, THIS MAY CHANGE
-            leader_mentor_hurt = "injured by" in chosen_scar
-            if leader_mentor_hurt and (risky_mentor or risky_leader):
+            if "injured by" in chosen_scar:
                 possible_injuries = ["bite-wound", "bruises", "claw-wound", "scrapes", "torn pelt", "torn ear"]
                 random_index = int(random.random() * len(possible_injuries))
                 injury_name = possible_injuries[random_index]
@@ -551,7 +556,16 @@ class Events():
                     chosen_scar = f"{chosen_scar} {name} got a scar but also {injury_name}."
                 else:
                     chosen_scar = f"{chosen_scar} {name} got a scar but also a {injury_name}."
-                cat.get_injured(injury_name)
+                cat.get_injured(injury_name, event_triggered = True)
+            elif "injured" in chosen_scar:
+                possible_injuries = ["bruises", "scrapes", "torn pelt", "torn ear", "joint pain", "dislocated joint"]
+                random_index = int(random.random() * len(possible_injuries))
+                injury_name = possible_injuries[random_index]
+                if injury_name in ["bruises", "scrapes"]:
+                    chosen_scar = f"{chosen_scar} {name} got a scar but also {injury_name}."
+                else:
+                    chosen_scar = f"{chosen_scar} {name} got a scar but also a {injury_name}."
+                cat.get_injured(injury_name, event_triggered = True)
 
             game.cur_events_list.append(chosen_scar)
             cat.scar_event.append(chosen_scar)

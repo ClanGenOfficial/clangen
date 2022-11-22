@@ -215,7 +215,7 @@
         "illness_infectiousness": [],
         "risks": []
     },
-    "stomach aches":{
+    "stomachache":{
         "duration": 2,
         "medicine_duration": 1,
         "mortality": {

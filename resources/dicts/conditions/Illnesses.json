@@ -134,27 +134,32 @@
     },
     "infected wound": {
         "mortality": {
-            "kitten": 2,
-            "adolescent": 5,
-            "young adult": 8,
-            "adult": 10,
-            "senior adult": 8,
-            "elder": 5
+            "kitten": 5,
+            "adolescent": 8,
+            "young adult": 10,
+            "adult": 15,
+            "senior adult": 10,
+            "elder": 8
         },
         "medicine_mortality": {
-            "kitten": 4,
-            "adolescent": 10,
+            "kitten": 8,
+            "adolescent": 13,
             "young adult": 15,
             "adult": 20,
             "senior adult": 15,
-            "elder": 8
+            "elder": 13
         },
         "duration": 1,
         "medicine_duration": 1,
         "infectiousness": 0,
-        "risks": []
+        "risks": [
+            {
+                "name": "rat fever",
+                "chance": 10
+            }
+        ]
     },
-    "rat-borne infections": {
+    "carrionplace disease": {
         "mortality": {
             "kitten": 2,
             "adolescent": 5,
@@ -166,10 +171,10 @@
         "medicine_mortality": {
             "kitten": 4,
             "adolescent": 10,
-            "young adult": 15,
-            "adult": 20,
-            "senior adult": 15,
-            "elder": 8
+            "young adult": 13,
+            "adult": 17,
+            "senior adult": 13,
+            "elder": 10
         },
         "duration": 2,
         "medicine_duration": 1,
@@ -284,6 +289,28 @@
         "duration": 2,
         "medicine_duration": 1,
         "infectiousness": 6,
+        "risks": []
+    },
+    "rat fever": {
+        "mortality": {
+            "kitten": 2,
+            "adolescent": 3,
+            "young adult": 5,
+            "adult": 8,
+            "senior adult": 5,
+            "elder": 2
+        },
+        "medicine_mortality": {
+            "kitten": 3,
+            "adolescent": 5,
+            "young adult": 8,
+            "adult": 10,
+            "senior adult": 8,
+            "elder": 3
+        },
+        "duration": 2,
+        "medicine_duration": 1,
+        "infectiousness": 0,
         "risks": []
     }
 }

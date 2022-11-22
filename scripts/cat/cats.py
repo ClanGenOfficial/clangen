@@ -641,6 +641,10 @@ class Cat():
         if not self.is_ill():
             return
 
+        if self.illness.new:
+            self.illness.new = False
+            return
+
         mortality = self.illness.current_mortality
         # leader should have a higher chance of death
         if self.status == "leader":
@@ -664,6 +668,10 @@ class Cat():
         "handles the moon skip for injury"
         if not self.is_injured():
             return
+
+        if self.injury.new:
+            self.injury.new = False
+            return
         
         mortality = self.injury.current_mortality
         # leader should have a higher chance of death
@@ -674,7 +682,9 @@ class Cat():
             self.die()
             return
 
-        self.injury.current_duration -= 1
+        # if the cat has a infected wound, the wound shouldn't heal till the illness is cured
+        if not self.is_ill() or (self.is_ill() and self.illness != "infected wound"):
+            self.injury.current_duration -= 1
         if self.injury.current_duration <= 0:
             self.injury = None
 
@@ -734,7 +744,7 @@ class Cat():
 #                                  conditions                                  #
 # ---------------------------------------------------------------------------- #
   
-    def get_ill(self, name, risk = False):
+    def get_ill(self, name, risk = False, event_triggered = False):
         if self.is_ill() and not risk or name not in ILLNESSES:
             if name not in ILLNESSES:
                 print(f"WARNING: {name} is not in the illnesses collection.")
@@ -748,10 +758,11 @@ class Cat():
             duration = illness["duration"], 
             medicine_duration = illness["medicine_duration"], 
             medicine_mortality = illness["medicine_mortality"][self.age],
-            risks = illness["risks"]
+            risks = illness["risks"],
+            event_triggered=event_triggered
         )
 
-    def get_injured(self,name):
+    def get_injured(self, name, event_triggered = False):
         if self.is_injured() or name not in INJURIES:
             if name not in INJURIES:
                 print(f"WARNING: {name} is not in the injuries collection.")
@@ -764,7 +775,8 @@ class Cat():
             medicine_duration = injury["medicine_duration"], 
             mortality = injury["mortality"][self.age],
             risks = injury["risks"],
-            illness_infectiousness = injury["illness_infectiousness"]
+            illness_infectiousness = injury["illness_infectiousness"],
+            event_triggered=event_triggered
         )
 
     def is_ill(self):
