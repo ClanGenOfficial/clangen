@@ -78,8 +78,7 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
             relation = inter_cat.relationships[cat.ID]
         else:
             continue
-        
-        relation = relation[0]
+
         relation_dict['romantic_love'].append(relation.romantic_love >= value)
         relation_dict['platonic_like'].append(relation.platonic_like >= value)
         relation_dict['dislike'].append(relation.dislike >= value)

@@ -212,33 +212,10 @@ class Relation_Events():
 
     def handle_new_mates(self, relationship, cat_from, cat_to):
         """More in depth check if the cats will become mates."""
-        young_age = ['kitten', 'adolescent']
-        if cat_from.age in young_age or cat_to.age in young_age:
-            return
+        relationship_to = relationship.opposite_relationship
+        become_mates, mate_string = self.check_if_new_mate(relationship, relationship_to, cat_from,cat_to)
 
-        become_mates = False
-        mate_string = ""
-        mate_chance = 5
-        #hit = randint(1, mate_chance)
-        hit = int(random.random() * mate_chance)
-
-        # has to be high because every moon this will be checked for each relationship in the came
-        random_mate_chance = 300
-        #random_hit = randint(1, random_mate_chance)
-        random_hit = int(random.random() * random_mate_chance)
-        low_dislike = relationship.dislike < 15 and relationship.opposite_relationship.dislike < 15
-        high_like = relationship.platonic_like > 30 and relationship.opposite_relationship.platonic_like > 30
-        semi_high_like = relationship.platonic_like > 20 and relationship.opposite_relationship.platonic_like > 20
-        high_comfort = relationship.comfortable > 25 and relationship.opposite_relationship.comfortable > 25
-
-        if not hit and relationship.romantic_love > 20 and relationship.opposite_relationship.romantic_love > 20 and semi_high_like:
-            mate_string = f"{cat_from.name} and {cat_to.name} have become mates"
-            become_mates = True
-        elif not random_hit and low_dislike and (high_like or high_comfort):
-            mate_string = f"{cat_from.name} and {cat_to.name} see each other in a different light and have become mates"
-            become_mates = True
-
-        if become_mates:
+        if become_mates and mate_string:
             self.had_one_event = True
             cat_from.set_mate(cat_to)
             cat_to.set_mate(cat_from)
@@ -498,6 +475,35 @@ class Relation_Events():
         # if function reaches this point, having kits is possible
         can_have_kits = True
         return can_have_kits
+
+    def check_if_new_mate(self, relationship_from, relationship_to, cat_from, cat_to):
+        """Checks if the two cats can become mates, or not. Returns: boolean and event_string"""
+        become_mates = False
+        young_age = ['kitten', 'adolescent']
+        if cat_from.age in young_age or cat_to.age in young_age:
+            return become_mates
+
+        mate_string = None
+        mate_chance = 5
+        hit = int(random.random() * mate_chance)
+
+        # has to be high because every moon this will be checked for each relationship in the came
+        random_mate_chance = 300
+        random_hit = int(random.random() * random_mate_chance)
+
+        low_dislike = relationship_from.dislike < 15 and relationship_to.dislike < 15
+        high_like = relationship_from.platonic_like > 30 and relationship_to.platonic_like > 30
+        semi_high_like = relationship_from.platonic_like > 20 and relationship_to.platonic_like > 20
+        high_comfort = relationship_from.comfortable > 25 and relationship_to.comfortable > 25
+
+        if not hit and relationship_from.romantic_love > 20 and relationship_to.romantic_love > 20 and semi_high_like:
+            mate_string = f"{cat_from.name} and {cat_to.name} have become mates"
+            become_mates = True
+        elif not random_hit and low_dislike and (high_like or high_comfort):
+            mate_string = f"{cat_from.name} and {cat_to.name} see each other in a different light and have become mates"
+            become_mates = True
+
+        return become_mates, mate_string
 
     # ---------------------------------------------------------------------------- #
     #                             get/calculate chances                            #
