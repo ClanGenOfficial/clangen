@@ -174,17 +174,21 @@ class Relation_Events(object):
                 if (love_over_30 and normal_chance == 1) or (bigger_than_current
                                                     and bigger_love_chance == 1):
                     # break up the old relationships
-                    cat_from_mate = cat_class.all_cats.get(cat_from.mate)
-                    self.check_if_breakup(cat_from, cat_from_mate)
+                    # FIXME
+                    try:
+                        cat_from_mate = cat_class.all_cats.get(cat_from.mate)
+                        self.check_if_breakup(cat_from, cat_from_mate)
 
-                    if cat_to_mate != None:
-                        self.check_if_breakup(cat_to, cat_to_mate)
+                        if cat_to_mate != None:
+                            self.check_if_breakup(cat_to, cat_to_mate)
 
-                    # new relationship
-                    game.cur_events_list.append(
-                        f'{str(cat_from.name)} and {str(cat_to.name)} can\'t ignore their feelings for each other'
-                    )
-                    self.check_if_new_mates(cat_from, cat_to)
+                        # new relationship
+                        game.cur_events_list.append(
+                            f"{cat_from.name} and {cat_to.name} can't ignore their feelings for each other"
+                        )
+                        self.check_if_new_mates(cat_from, cat_to)
+                    except Exception as breakup_error:
+                        print("i forgor 💀", breakup_error)
 
             # breakup
             if not self.had_one_event and relationship.mates and from_mate_in_clan:
@@ -685,8 +689,10 @@ class Relation_Events(object):
         if has_birth is True:
             game.switches['birth_cooldown'] = True
             has_birth = False
-        if self.birth_range <= 0:
-            game.switches['birth_cooldown'] = False
+        # "Relation_Events" doesn't have "birth_range"
+        if hasattr(self, "birth_range"):
+            if self.birth_range <= 0:
+                game.switches['birth_cooldown'] = False
 
     def big_love_check(self, cat):
         # check romantic love

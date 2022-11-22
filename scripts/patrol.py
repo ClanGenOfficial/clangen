@@ -687,7 +687,9 @@ class Patrol(object):
                     'r_c finds an old friend of their\'s from when they were a loner',
                     'r_c invites their friend to join the Clan',
                     'r_c and their friend reminisce about old times',
-                    'r_c says farewell to their friend and rejoins the patrol')
+                    'r_c says farewell to their friend and rejoins the patrol',
+                    40,
+                    10)
             ])
 
         if self.patrol_random_cat.status == 'formerly a kittypet':
@@ -697,7 +699,9 @@ class Patrol(object):
                     'r_c finds an old friend of their\'s from when they were a kittypet',
                     'r_c invites their friend to join the Clan',
                     'r_c and their friend reminisce about old times',
-                    'r_c says farewell to their friend and rejoins the patrol')
+                    'r_c says farewell to their friend and rejoins the patrol',
+                    40,
+                    10)
             ])
 
         # status specific patrols
@@ -1214,16 +1218,6 @@ class Patrol(object):
             if randint(0, 5) == 0:  # chance to keep name
                 kit.name.prefix = choice(names.loner_names)
                 kit.name.suffix = ''
-
-    def check_territories(self):
-        hunting_claim = str(game.clan.name) + 'Clan Hunting Grounds'
-        self.hunting_grounds = []
-        for y in range(44):
-            for x in range(40):
-                claim_type = game.map_info[(x, y)][3]
-                if claim_type == hunting_claim:
-                    self.hunting_claim_info[(x, y)] = game.map_info[(x, y)]
-                    self.hunting_grounds.append((x, y))
 
 
 class PatrolEvent(object):

@@ -316,7 +316,7 @@ class Name(object):
                     a = random.randint(0, 7)
                     if a == 1:
                         self.suffix = random.choice(self.pelt_suffixes[pelt])
-                    elif a == 1 and self.pelt.name in ["Tortie", "Calico"]:
+                    elif a == 1 and pelt.name in ["Tortie", "Calico"]:
                         self.suffix = random.choice(self.tortie_pelt_suffixes)
                     else:
                         self.suffix = random.choice(self.normal_suffixes)

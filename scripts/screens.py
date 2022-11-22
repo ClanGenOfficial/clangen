@@ -3,8 +3,6 @@ from re import T
 from .clan import *
 from .events import *
 from .patrol import *
-#if mapavailable:
-#    from .world import *
 
 import random
 
@@ -101,8 +99,6 @@ class StartScreen(Screens):
         if game.clan is not None:
             cat_class.json_save_cats()
             game.clan.save_clan()
-            if mapavailable:
-                save_map(game.map_info, game.clan.name)
 
         # LOAD settings
         game.load_settings()
@@ -1287,9 +1283,6 @@ class MakeClanScreen(Screens):
         game.switches['choosing_camp'] = False
         create_example_cats()
         self.worldseed = random.randrange(10000)
-        if mapavailable:
-            self.world = World((44, 44), self.worldseed)
-
 
 class ClanCreatedScreen(Screens):
 
@@ -1312,155 +1305,6 @@ class ClanCreatedScreen(Screens):
                          game.switches['biome'], game.switches['world_seed'],
                          game.switches['camp_site'])
         game.clan.create_clan()
-        if mapavailable:
-            territory_claim = str(game.clan.name) + 'Clan Territory'
-            otherclan_campsite = {}
-            for clan in game.clan.all_clans:
-                x = random.randrange(40)
-                y = random.randrange(44)
-                clan_camp = self.choose_other_clan_territory(x, y)
-                territory_biome = str(game.map_info[clan_camp][2])
-                territory_twolegs = str(game.map_info[clan_camp][4])
-                territory_thunderpath = str(game.map_info[clan_camp][5])
-                territory_prey = str(game.map_info[clan_camp][6])
-                territory_plants = str(game.map_info[clan_camp][7])
-                game.map_info[clan_camp] = [
-                    clan_camp[0], clan_camp[1], territory_biome,
-                    str(clan) + " Camp", territory_twolegs,
-                    territory_thunderpath, territory_prey, territory_plants
-                ]
-                otherclan_campsite[str(clan)] = clan_camp
-            for y in range(44):
-                for x in range(40):
-                    if (x, y) == (game.switches['camp_site'][0] - 1,
-                                  game.switches['camp_site'][1]):
-                        territory_biome = str(game.map_info[(x, y)][2])
-                        territory_twolegs = str(game.map_info[(x, y)][4])
-                        territory_thunderpath = str(game.map_info[(x, y)][5])
-                        territory_prey = str(game.map_info[(x, y)][6])
-                        territory_plants = str(game.map_info[(x, y)][7])
-                        if str(game.map_info[(x, y)][3]) != 'Unclaimable':
-                            game.map_info[(x, y)] = [
-                                x, y, territory_biome, territory_claim,
-                                territory_twolegs, territory_thunderpath,
-                                territory_prey, territory_plants
-                            ]
-                    elif (x, y) == (game.switches['camp_site'][0],
-                                    game.switches['camp_site'][1] - 1):
-                        territory_biome = str(game.map_info[(x, y)][2])
-                        territory_twolegs = str(game.map_info[(x, y)][4])
-                        territory_thunderpath = str(game.map_info[(x, y)][5])
-                        territory_prey = str(game.map_info[(x, y)][6])
-                        territory_plants = str(game.map_info[(x, y)][7])
-                        if str(game.map_info[(x, y)][3]) != 'Unclaimable':
-                            game.map_info[(x, y)] = [
-                                x, y, territory_biome, territory_claim,
-                                territory_twolegs, territory_thunderpath,
-                                territory_prey, territory_plants
-                            ]
-                    elif (x, y) == (game.switches['camp_site'][0] + 1,
-                                    game.switches['camp_site'][1]):
-                        territory_biome = str(game.map_info[(x, y)][2])
-                        territory_twolegs = str(game.map_info[(x, y)][4])
-                        territory_thunderpath = str(game.map_info[(x, y)][5])
-                        territory_prey = str(game.map_info[(x, y)][6])
-                        territory_plants = str(game.map_info[(x, y)][7])
-                        if str(game.map_info[(x, y)][3]) != 'Unclaimable':
-                            game.map_info[(x, y)] = [
-                                x, y, territory_biome, territory_claim,
-                                territory_twolegs, territory_thunderpath,
-                                territory_prey, territory_plants
-                            ]
-                    elif (x, y) == (game.switches['camp_site'][0],
-                                    game.switches['camp_site'][1] + 1):
-                        territory_biome = str(game.map_info[(x, y)][2])
-                        territory_twolegs = str(game.map_info[(x, y)][4])
-                        territory_thunderpath = str(game.map_info[(x, y)][5])
-                        territory_prey = str(game.map_info[(x, y)][6])
-                        territory_plants = str(game.map_info[(x, y)][7])
-                        if str(game.map_info[(x, y)][3]) != 'Unclaimable':
-                            game.map_info[(x, y)] = [
-                                x, y, territory_biome, territory_claim,
-                                territory_twolegs, territory_thunderpath,
-                                territory_prey, territory_plants
-                            ]
-                    for clan in game.clan.all_clans:
-                        if (x, y) == (otherclan_campsite[str(clan)][0] - 1,
-                                      otherclan_campsite[str(clan)][1]):
-                            territory_biome = str(game.map_info[(x, y)][2])
-                            territory_twolegs = str(game.map_info[(x, y)][4])
-                            territory_thunderpath = str(game.map_info[(x,
-                                                                       y)][5])
-                            territory_prey = str(game.map_info[(x, y)][6])
-                            territory_plants = str(game.map_info[(x, y)][7])
-                            if str(game.map_info[(x, y)][3]) != 'Unclaimable':
-                                game.map_info[(x, y)] = [
-                                    x, y, territory_biome,
-                                    str(clan) + ' Territory',
-                                    territory_twolegs, territory_thunderpath,
-                                    territory_prey, territory_plants
-                                ]
-                        elif (x, y) == (otherclan_campsite[str(clan)][0],
-                                        otherclan_campsite[str(clan)][1] - 1):
-                            territory_biome = str(game.map_info[(x, y)][2])
-                            territory_twolegs = str(game.map_info[(x, y)][4])
-                            territory_thunderpath = str(game.map_info[(x,
-                                                                       y)][5])
-                            territory_prey = str(game.map_info[(x, y)][6])
-                            territory_plants = str(game.map_info[(x, y)][7])
-                            if str(game.map_info[(x, y)][3]) != 'Unclaimable':
-                                game.map_info[(x, y)] = [
-                                    x, y, territory_biome,
-                                    str(clan) + ' Territory',
-                                    territory_twolegs, territory_thunderpath,
-                                    territory_prey, territory_plants
-                                ]
-                        elif (x, y) == (otherclan_campsite[str(clan)][0] + 1,
-                                        otherclan_campsite[str(clan)][1]):
-                            territory_biome = str(game.map_info[(x, y)][2])
-                            territory_twolegs = str(game.map_info[(x, y)][4])
-                            territory_thunderpath = str(game.map_info[(x,
-                                                                       y)][5])
-                            territory_prey = str(game.map_info[(x, y)][6])
-                            territory_plants = str(game.map_info[(x, y)][7])
-                            if str(game.map_info[(x, y)][3]) != 'Unclaimable':
-                                game.map_info[(x, y)] = [
-                                    x, y, territory_biome,
-                                    str(clan) + ' Territory',
-                                    territory_twolegs, territory_thunderpath,
-                                    territory_prey, territory_plants
-                                ]
-                        elif (x, y) == (otherclan_campsite[str(clan)][0],
-                                        otherclan_campsite[str(clan)][1] + 1):
-                            territory_biome = str(game.map_info[(x, y)][2])
-                            territory_twolegs = str(game.map_info[(x, y)][4])
-                            territory_thunderpath = str(game.map_info[(x,
-                                                                       y)][5])
-                            territory_prey = str(game.map_info[(x, y)][6])
-                            territory_plants = str(game.map_info[(x, y)][7])
-                            if str(game.map_info[(x, y)][3]) != 'Unclaimable':
-                                game.map_info[(x, y)] = [
-                                    x, y, territory_biome,
-                                    str(clan) + ' Territory',
-                                    territory_twolegs, territory_thunderpath,
-                                    territory_prey, territory_plants
-                                ]
-            save_map(game.map_info, game.switches['clan_name'])
-
-    def choose_other_clan_territory(self, x, y):
-        self.x = x
-        self.y = y
-        if game.map_info[(self.x, self.y)][3] != "Unclaimed":
-            self.x = random.randrange(40)
-            self.y = random.randrange(44)
-            if game.map_info[(self.x, self.y)][3] == "Unclaimed":
-                return self.x, self.y
-            else:
-                self.x = random.randrange(40)
-                self.y = random.randrange(44)
-                return self.x, self.y
-        else:
-            return self.x, self.y
 
 
 class EventsScreen(Screens):
@@ -3355,46 +3199,31 @@ class OptionsScreen(Screens):
         else:
             self.relations_tab()
 
-        if game.switches['deputy_switch'] is not False and game.switches[
-                'deputy_switch'] is not None and game.switches[
-                    'deputy_switch'].status == 'warrior':
-            game.clan.deputy = game.switches['deputy_switch']
-            game.switches['deputy_switch'].status_change('deputy')
-            game.switches['deputy_switch'] = False
-        elif game.switches['deputy_switch'] is not False and game.switches[
-                'deputy_switch'] is not None and game.switches[
-                    'deputy_switch'].status == 'deputy':
-            game.clan.deputy = None
-            game.switches['deputy_switch'].status_change('warrior')
-            game.switches['deputy_switch'] = False
+        if hasattr(game.switches['deputy_switch'], "status"):
+            if game.switches['deputy_switch'].status == 'warrior':
+                game.clan.deputy = game.switches['deputy_switch']
+                game.switches['deputy_switch'].status_change('deputy')
+                game.switches['deputy_switch'] = False
+            elif game.switches['deputy_switch'].status == 'deputy':
+                game.clan.deputy = None
+                game.switches['deputy_switch'].status_change('warrior')
+                game.switches['deputy_switch'] = False
 
-        if game.switches['apprentice_switch'] is not False and game.switches[
-                'apprentice_switch'] is not None and game.switches[
-                    'apprentice_switch'].status == 'apprentice':
-            game.switches['apprentice_switch'].status_change(
-                'medicine cat apprentice')
-            game.switches['apprentice_switch'] = False
+        if hasattr(game.switches['apprentice_switch'], "status"):
+            if game.switches['apprentice_switch'].status == 'apprentice':
+                game.switches['apprentice_switch'].status_change('medicine cat apprentice')
+                game.switches['apprentice_switch'] = False
+            elif game.switches['apprentice_switch'].status == 'medicine cat apprentice':
+                game.switches['apprentice_switch'].status_change('apprentice')
+                game.switches['apprentice_switch'] = False
+            elif game.switches['apprentice_switch'].status == 'warrior':
+                game.switches['apprentice_switch'].status_change('medicine cat')
+                game.switches['apprentice_switch'] = False
+            elif game.switches['apprentice_switch'].status == 'medicine cat':
+                game.switches['apprentice_switch'].status_change('warrior')
+                game.switches['apprentice_switch'] = False
 
-        if game.switches['apprentice_switch'] is not False and game.switches[
-                'apprentice_switch'] is not None and game.switches[
-                    'apprentice_switch'].status == 'medicine cat apprentice':
-            game.switches['apprentice_switch'].status_change('apprentice')
-            game.switches['apprentice_switch'] = False
-
-        if game.switches['apprentice_switch'] is not False and game.switches[
-                'apprentice_switch'] is not None and game.switches[
-                    'apprentice_switch'].status == 'warrior':
-            game.switches['apprentice_switch'].status_change('medicine cat')
-            game.switches['apprentice_switch'] = False
-
-        if game.switches['apprentice_switch'] is not False and game.switches[
-                'apprentice_switch'] is not None and game.switches[
-                    'apprentice_switch'].status == 'medicine cat':
-            game.switches['apprentice_switch'].status_change('warrior')
-            game.switches['apprentice_switch'] = False
-
-        if game.switches['kill_cat'] is not False and game.switches[
-                'kill_cat'] is not None:
+        if hasattr(game.switches['kill_cat'], "status"):
             if game.switches['kill_cat'].status == 'leader':
                 game.clan.leader_lives -= 10
             events_class.dies(game.switches['kill_cat'])

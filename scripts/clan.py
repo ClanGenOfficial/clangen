@@ -134,8 +134,8 @@ class Clan(object):
         for _ in range(number_other_clans):
             self.all_clans.append(OtherClan())
         self.save_clan()
-        if mapavailable:
-            save_map(game.map_info, game.clan.name)
+        #if mapavailable:
+        #    save_map(game.map_info, game.clan.name)
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""

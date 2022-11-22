@@ -21,7 +21,7 @@ class Events(object):
         game.switches['pregnancy'] = False
         game.switches['birth_cooldown'] = False
         if game.switches['birth_cooldown']:
-            birth_range = randint(6, 9)
+            self.birth_range = randint(6, 9)
 
     def one_moon(self):
         if game.switches['timeskip']:
@@ -97,7 +97,7 @@ class Events(object):
                 game.cur_events_list.insert(
                     0, f"{game.clan.name}Clan has no leader!")
             if game.switches['birth_cooldown']:
-                birth_range -= 1
+                self.birth_range -= 1
 
         game.switches['timeskip'] = False
 
