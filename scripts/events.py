@@ -545,18 +545,15 @@ class Events():
             if "river" in chosen_scar and not cat.is_ill() and random.random() * 5:
                 chosen_scar = f"{chosen_scar} {name} now has water in the lungs."
                 cat.get_injured("water in the lungs", event_triggered = True)
-
-            # add also a injury, when a leader is cruel
-            # CARE: IF SCAR TEXTS ARE ADDED, THIS MAY CHANGE
-            if specialty in ["LEFTEAR", "RIGHTEAR"] and "injured" in chosen_scar:
+            elif specialty in ["LEFTEAR", "RIGHTEAR"] and "injured" in chosen_scar:
                 injury_name = "torn ear"
-                chosen_scar = f"{chosen_scar} {name} got a scar but also {injury_name}."
+                chosen_scar = f"{chosen_scar} {name} got a scar but also a {injury_name}."
                 cat.get_injured(injury_name, event_triggered = True)
             elif "injured by" in chosen_scar:
                 possible_injuries = ["bite-wound", "bruises", "claw-wound", "scrapes", "torn pelt"]
                 random_index = int(random.random() * len(possible_injuries))
                 injury_name = possible_injuries[random_index]
-                if injury_name in ["bruises", "scrapes"]:
+                if injury_name in ["bruises", "scrapes", "joint pain"]:
                     chosen_scar = f"{chosen_scar} {name} got a scar but also {injury_name}."
                 else:
                     chosen_scar = f"{chosen_scar} {name} got a scar but also a {injury_name}."
@@ -565,7 +562,7 @@ class Events():
                 possible_injuries = ["bruises", "scrapes", "torn pelt", "joint pain", "dislocated joint"]
                 random_index = int(random.random() * len(possible_injuries))
                 injury_name = possible_injuries[random_index]
-                if injury_name in ["bruises", "scrapes"]:
+                if injury_name in ["bruises", "scrapes", "joint pain"]:
                     chosen_scar = f"{chosen_scar} {name} got a scar but also {injury_name}."
                 else:
                     chosen_scar = f"{chosen_scar} {name} got a scar but also a {injury_name}."
