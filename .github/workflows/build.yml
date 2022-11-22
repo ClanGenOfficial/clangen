@@ -112,7 +112,7 @@ jobs:
         with:
           files: Clangen_Win64.zip   
           
-  build_win64_py311:
+  build_win64_py310:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
