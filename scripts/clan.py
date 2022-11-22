@@ -1,13 +1,9 @@
 from .cats import *
 from .text import *
 from .patrol import *
-try:
-    from .world import *
-    mapavailable = True
-except:
-    mapavailable = False
 from sys import exit
 
+mapavailable = False
 
 class Clan(object):
     leader_lives = 0

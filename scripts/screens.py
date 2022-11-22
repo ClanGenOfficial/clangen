@@ -3,8 +3,8 @@ from re import T
 from .clan import *
 from .events import *
 from .patrol import *
-if mapavailable:
-    from .world import *
+#if mapavailable:
+#    from .world import *
 
 import random
 
