@@ -548,8 +548,12 @@ class Events():
 
             # add also a injury, when a leader is cruel
             # CARE: IF SCAR TEXTS ARE ADDED, THIS MAY CHANGE
-            if "injured by" in chosen_scar:
-                possible_injuries = ["bite-wound", "bruises", "claw-wound", "scrapes", "torn pelt", "torn ear"]
+            if specialty in ["LEFTEAR", "RIGHTEAR"] and "injured" in chosen_scar:
+                injury_name = "torn ear"
+                chosen_scar = f"{chosen_scar} {name} got a scar but also {injury_name}."
+                cat.get_injured(injury_name, event_triggered = True)
+            elif "injured by" in chosen_scar:
+                possible_injuries = ["bite-wound", "bruises", "claw-wound", "scrapes", "torn pelt"]
                 random_index = int(random.random() * len(possible_injuries))
                 injury_name = possible_injuries[random_index]
                 if injury_name in ["bruises", "scrapes"]:
@@ -558,7 +562,7 @@ class Events():
                     chosen_scar = f"{chosen_scar} {name} got a scar but also a {injury_name}."
                 cat.get_injured(injury_name, event_triggered = True)
             elif "injured" in chosen_scar:
-                possible_injuries = ["bruises", "scrapes", "torn pelt", "torn ear", "joint pain", "dislocated joint"]
+                possible_injuries = ["bruises", "scrapes", "torn pelt", "joint pain", "dislocated joint"]
                 random_index = int(random.random() * len(possible_injuries))
                 injury_name = possible_injuries[random_index]
                 if injury_name in ["bruises", "scrapes"]:
