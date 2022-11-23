@@ -823,7 +823,7 @@ class Patrol():
                 if "gone" in self.patrol_event.tags:
                     game.clan.leader_lives -= 9  # taken by twolegs, fall into ravine
                 else:
-                    game.clan.leader_lives -= 1
+                    game.clan.leader_lives = int(game.clan.leader_lives) - 1
             if len(self.patrol_event.history_text) >= 2:
                 self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
             else:
