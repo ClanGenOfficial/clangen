@@ -35,7 +35,7 @@
         "patrol_id": "fst_bord_rogue2",
         "biome": "forest",
         "season":"Any",
-        "tags": ["border", "fighting", "scar", "injury", "multiple_deaths", "reputation"],
+        "tags": ["border", "fighting", "scar", "injury", "multi_deaths", "reputation"],
         "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
         "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
         "chance_of_success": 40,
@@ -49,7 +49,7 @@
         "fail_text": [
             null,
             null,
-            "The rogues greatly outnumber the patrol and have no trouble defeating them. The warrior's bodies are found the next day, covered in battle wounds and cold.",
+            "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold.",
             "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
         ],
         "win_skills": ["excellent fighter"],
@@ -97,7 +97,7 @@
         "patrol_id": "fst_bord_rogue4",
         "biome": "forest",
         "season": "Any",
-        "tags": ["border", "fighting", "scar", "injury", "death", "reputation", "respect", "trust"],
+        "tags": ["border", "fighting", "scar", "injury", "death", "reputation", "respect", "trust", "multi_deaths"],
         "intro_text": "As the patrol is marking the border lines, a gang of rogues strides out of the brush, challenging the clan cats.",
         "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
         "chance_of_success": 70,

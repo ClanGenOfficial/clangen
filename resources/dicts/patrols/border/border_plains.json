@@ -9,16 +9,16 @@
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
-        "The tunnels must have been an abandoned badger set!  No one has been here in a while, this could be a good location to return to.",
+        "The tunnels must have been an abandoned badger sett!  No one has been here in a while, this could be a good location to return to.",
         "The tunnels prove to be a new entrance to a set of tunnels c_n already uses.  This could be helpful in the future.",
-        "s_c stops the patrol before they can move to enter the tunnels.  After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home.  The predator seems to be away for the moment, but could return soon.  The patrol quickly moves on.",
-        "s_c stops the patrol before they can move to enter the tunnels.  After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home.  The predator seems to be away for the moment, but could return soon.  The patrol quickly moves on."
+        "s_c stops the patrol before they can move to enter the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon. The patrol quickly moves on.",
+        "s_c stops the patrol before they can move to enter the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon. The patrol quickly moves on."
     ],
     "fail_text": [
         "Whoops! It seems a fox was calling this home.  The patrol backs out of the tunnels and thankfully the fox doesn't follow, just as surprised as they were.",
         "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover!  They're brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance.",
         "It seems this hole is home to a cranky wolverine, a fact that the patrol learns very quickly when p_l, who was leading the group, cries out in pain. The cats back out of the tunnel quickly, but not quickly enough to save their clanmate.",
-        "The tunnels prove to be a currently in-use badger set. The patrol quickly retreats, but not before r_c gains a nasty wound."
+        "The tunnels prove to be a currently in-use badger sett. The patrol quickly retreats, but not before r_c gains a nasty wound."
     ],
     "win_skills": ["fantastic hunter", "smart", "very smart", "extremely smart", "fantastic teacher"],
     "win_trait": ["careful", "wise", "patient", "responsible"],
@@ -42,16 +42,16 @@
     "chance_of_success": 40,
     "exp": 20,
     "success_text": [
-        "The tunnels must have been an abandoned badger set!  No one has been here in a while, this could be a good location to return to.",
-        "The tunnels prove to be a new entrance to a set of tunnels c_n already uses.  This could be helpful in the future.",
+        "The tunnels must have been an abandoned badger sett! No one has been here in a while, this could be a good location to return to.",
+        "The tunnels prove to be a new entrance to a set of tunnels c_n already uses. This could be helpful in the future.",
         "s_c pauses before entering the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon.  The patrol quickly moves on.",
         "s_c pauses before entering the tunnels. After a careful inspection of the entrance, s_c concludes that a wolverine has claimed this as its home. The predator seems to be away for the moment, but could return soon. The patrol quickly moves on."
     ],
     "fail_text": [
         "Whoops! It seems a fox was calling this home.  The patrol backs out of the tunnels and thankfully the fox doesn't follow, just as surprised as they were.",
         "s_c rushes into the tunnels with a gleeful meow! A new place to explore and discover!  They're brought up short when the tunnel abruptly ends. It seems this tunnel leads to nothing but a dead end only a few fox-lengths from the entrance.",
-        "It seems this hole is home to a cranky wolverine, a fact that the patrol learns very quickly when r_c is snagged by the jaws of the predator.  r_c won't be making it back to camp…",
-        "The tunnels prove to be a currently in-use badger set. The patrol quickly retreats, but not before r_c gains a nasty wound."
+        "It seems this hole is home to a cranky wolverine, a fact that the patrol learns very quickly when r_c is snagged by the jaws of the predator. r_c won't be making it back to camp . . .",
+        "The tunnels prove to be a currently in-use badger sett. The patrol quickly retreats, but not before r_c gains a nasty wound."
     ],
     "win_skills": ["fantastic hunter", "smart", "very smart", "extremely smart", "fantastic teacher"],
     "win_trait": ["careful", "wise", "patient", "responsible"],
@@ -69,7 +69,7 @@
     "patrol_id": "pln_bord_rogue1",
     "biome": "plains",
     "season": "Any",
-    "tags": ["border", "fighting", "scar", "injury", "death", "reputation"],
+    "tags": ["border", "fighting", "scar", "injury", "multi_deaths", "reputation"],
     "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the long grass! An ambush!",
     "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
     "chance_of_success": 70,
@@ -83,8 +83,8 @@
     "fail_text": [
         null,
         null,
-        "The rogues are terrifyingly coordinated and are quick to use the patrol's shock and confusion against them.  The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
-        "Taken by surprise, the patrol scatters and loses cohesion.  The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
+        "The rogues are terrifyingly coordinated and are quick to use the patrol's shock and confusion against them. The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
+        "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
     ],
     "win_skills": ["excellent fighter"],
     "win_trait": ["bloodthirsty", "fierce", "vengeful"],
@@ -101,7 +101,7 @@
     "patrol_id": "pln_bord_rogue2",
     "biome": "plains",
     "season": "Any",
-    "tags": ["border", "fighting", "scar", "injury", "death", "reputation"],
+    "tags": ["border", "fighting", "scar", "injury", "multi_deaths", "reputation"],
     "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the long grass! An ambush!",
     "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
     "chance_of_success": 40,
@@ -109,14 +109,14 @@
     "success_text": [
         "The patrol descends into battle without a second thought, eventually driving the rogues away.",
         null,
-        "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues.  Realizing that they've sorely underestimated the clan cats, the rogues turn tail and run.",
-        "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready.  The rogues are quickly driven away by the patrol."
+        "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the clan cats, the rogues turn tail and run.",
+        "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
     ],
     "fail_text": [
         null,
         null,
-        "The rogues greatly outnumber the patrol and have no trouble defeating them.  The warrior's bodies are found the next day, covered in battle wounds and cold.",
-        "Taken by surprise, the patrol scatters and loses cohesion.  The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
+        "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold.",
+        "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
     ],
     "win_skills": ["excellent fighter"],
     "win_trait": ["bloodthirsty", "fierce", "vengeful"],
@@ -162,22 +162,22 @@
 {    "patrol_id": "pln_bord_rogue4",
     "biome": "plains",
     "season": "Any",
-    "tags": ["border", "fighting", "scar", "injury", "death", "reputation", "respect", "trust"],
+    "tags": ["border", "fighting", "scar", "injury", "multi_deaths", "reputation", "respect", "trust"],
     "intro_text": "As the patrol is marking the border lines, a gang of rogues stride out of the long grass to confront the clan cats!",
     "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
     "chance_of_success": 70,
     "exp": 30,
     "success_text": [
-        "The rogues posture and jeer, eventually provoking a battle.  The clan cats are strong, however, and the rogues seem to be weakened by hunger.  The patrol easily drives the intruders away.",
-        "The rogues posture and jeer, eventually provoking a battle.  The clan cats are strong, however, and after a short fight, the rogues are forced to retreat.",
-        "s_c takes the lead, confronting the gang with confidence.  Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory.",
-        "s_c takes the lead, confronting the gang with confidence.  Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory."
+        "The rogues posture and jeer, eventually provoking a battle. The clan cats are strong, however, and the rogues seem to be weakened by hunger.  The patrol easily drives the intruders away.",
+        "The rogues posture and jeer, eventually provoking a battle. The clan cats are strong, however, and after a short fight, the rogues are forced to retreat.",
+        "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory.",
+        "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory."
     ],
     "fail_text": [
         null,
         null,
-        "The rogues are terrifyingly coordinated and are quick to use the patrol's momentary surprise to their advantage.  The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
-        "The rogues posture and jeer, eventually provoking a battle.  They prove to be strong fighters and eventually the patrol is forced to retreat, r_c badly injured."
+        "The rogues are terrifyingly coordinated and are quick to use the patrol's momentary surprise to their advantage. The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
+        "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters and eventually the patrol is forced to retreat, r_c badly injured."
     ],
     "win_skills":  ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["bold", "confident", "charming"],
