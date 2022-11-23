@@ -150,7 +150,10 @@ class Patrol():
             possible_patrols.extend(self.generate_patrol_events(DISASTER))
 
         # fighting patrols
-        possible_patrols.extend(self.generate_patrol_events(FIGHTING))
+        possible_patrols.extend(self.generate_patrol_events(BORDER))
+        possible_patrols.extend(self.generate_patrol_events(BORDER_FST))
+        possible_patrols.extend(self.generate_patrol_events(BORDER_PLN))
+        possible_patrols.extend(self.generate_patrol_events(BORDER_MTN))
 
         # training patrols
         possible_patrols.extend(self.generate_patrol_events(TRAINING))
@@ -1164,9 +1167,21 @@ with open(f"{resource_directory}{hunting_directory}hunting_wetlands.json", 'r') 
     HUNTING_WTLND = ujson.loads(read_file.read())
 
 # BORDER #
-FIGHTING = None
-with open(f"{resource_directory}{border_directory}fighting.json", 'r') as read_file:
-    FIGHTING = ujson.loads(read_file.read())
+BORDER = None
+with open(f"{resource_directory}{border_directory}border.json", 'r') as read_file:
+    BORDER = ujson.loads(read_file.read())
+
+BORDER_FST = None
+with open(f"{resource_directory}{border_directory}border_forest.json", 'r') as read_file:
+    BORDER_FST = ujson.loads(read_file.read())
+
+BORDER_PLN = None
+with open(f"{resource_directory}{border_directory}border_plains.json", 'r') as read_file:
+    BORDER_PLN = ujson.loads(read_file.read())
+
+BORDER_MTN = None
+with open(f"{resource_directory}{border_directory}border_mountain.json", 'r') as read_file:
+    BORDER_MTN = ujson.loads(read_file.read())
 
 # TRAINING #
 TRAINING = None
