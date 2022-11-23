@@ -204,13 +204,27 @@ class Patrol():
             if patrol.tags is not None:
                 if "apprentice" in patrol.tags:
                     if "apprentice" not in self.patrol_statuses:
-                        apprentice = False
+                        status = False
                     else:
-                        apprentice = True
-                        app_index = self.patrol_statuses.index("apprentice")
-                        self.patrol_random_cat = self.patrol_cats[app_index]
+                        status = True
+                        st_index = self.patrol_statuses.index("apprentice")
+                        self.patrol_random_cat = self.patrol_cats[st_index]
+                elif "deputy" in patrol.tags:
+                    if "deputy" not in self.patrol_statuses:
+                        status = False
+                    else:
+                        status = True
+                        st_index = self.patrol_statuses.index("deputy")
+                        self.patrol_random_cat = self.patrol_cats[st_index]
+                elif "leader" in patrol.tags:
+                    if "leader" not in self.patrol_statuses:
+                        status = False
+                    else:
+                        status = True
+                        st_index = self.patrol_statuses.index("leader")
+                        self.patrol_random_cat = self.patrol_cats[st_index]
                 else:
-                    apprentice = True
+                    status = True
 
             if game.clan.game_mode != 'classic':
                 if patrol_type == 'hunting' and "hunting" in patrol.tags:
@@ -229,10 +243,10 @@ class Patrol():
                 #    correct_button
                 else:
                     correct_button = False
-                if max_good and min_good and correct_season and correct_biome and apprentice and correct_button:
+                if max_good and min_good and correct_season and correct_biome and status and correct_button:
                     final_patrols.append(patrol)
             else:
-                if max_good and min_good and correct_season and correct_biome and apprentice:
+                if max_good and min_good and correct_season and correct_biome and status:
                     final_patrols.append(patrol)
         
         return final_patrols
