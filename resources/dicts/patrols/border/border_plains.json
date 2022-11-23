@@ -25,6 +25,8 @@
     "fail_trait": ["childish", "impulsive", "playful", "adventurous"],
     "min_cats": 3,
     "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "history_text": [
     "r_c was injured after disturbing a badger in its set",
     "p_l was killed after an unfortunate meeting with a wolverine."
@@ -56,9 +58,11 @@
     "fail_trait": ["childish", "impulsive", "playful", "adventurous"],
     "min_cats": 1,
     "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "history_text": [
-    "r_c was injured after disturbing a badger in its set",
-    "p_l was killed after an unfortunate meeting with a wolverine."
+        "r_c was injured after disturbing a badger in its set",
+        "p_l was killed after an unfortunate meeting with a wolverine."
     ]
    },
 {
@@ -71,24 +75,26 @@
     "chance_of_success": 70,
     "exp": 30,
     "success_text": [
-    "The patrol descends into battle without a second thought, eventually driving the rogues away.",
-    null,
-    "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues.  Realizing that they've sorely underestimated the clan cats, the rogues turn tail and run.",
-    "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready.  The rogues are quickly driven away by the patrol."
+        "The patrol descends into battle without a second thought, eventually driving the rogues away.",
+        null,
+        "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues.  Realizing that they've sorely underestimated the clan cats, the rogues turn tail and run.",
+        "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready.  The rogues are quickly driven away by the patrol."
     ],
     "fail_text": [
-    null,
-    null,
-    "The rogues are terrifyingly coordinated and are quick to use the patrol's shock and confusion against them.  The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
-    "Taken by surprise, the patrol scatters and loses cohesion.  The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
+        null,
+        null,
+        "The rogues are terrifyingly coordinated and are quick to use the patrol's shock and confusion against them.  The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
+        "Taken by surprise, the patrol scatters and loses cohesion.  The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
     ],
     "win_skills": ["excellent fighter"],
     "win_trait": ["bloodthirsty", "fierce", "vengeful"],
     "min_cats": 4,
     "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "history_text": [
-    "r_c was badly scarred when rogues ambushed their patrol.",
-    "This cat was killed when rogues ambushed their patrol."
+        "r_c was badly scarred when rogues ambushed their patrol.",
+        "This cat was killed when rogues ambushed their patrol."
     ]
 },
 {    
@@ -116,6 +122,8 @@
     "win_trait": ["bloodthirsty", "fierce", "vengeful"],
     "min_cats": 2,
     "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "history_text": [
         "r_c was badly scarred when rogues ambushed their patrol.",
         "This cat was killed when rogues ambushed their patrol."
@@ -144,6 +152,8 @@
     "fail_traits": ["bloodthirsty", "fierce", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "history_text": [
     null,
         "This cat was killed when rogues ambushed them while on a solo patrol."

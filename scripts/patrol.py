@@ -1180,7 +1180,7 @@ with open(f"{resource_directory}{border_directory}border_plains.json", 'r') as r
     BORDER_PLN = ujson.loads(read_file.read())
 
 BORDER_MTN = None
-with open(f"{resource_directory}{border_directory}border_mountain.json", 'r') as read_file:
+with open(f"{resource_directory}{border_directory}border_mountains.json", 'r') as read_file:
     BORDER_MTN = ujson.loads(read_file.read())
 
 # TRAINING #

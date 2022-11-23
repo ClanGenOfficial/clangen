@@ -24,6 +24,8 @@
     "win_trait": ["bloodthirsty", "fierce", "vengeful"],
     "min_cats": 4,
     "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "history_text": [
         "r_c was badly scarred when rogues ambushed their patrol.",
         "This cat was killed when rogues ambushed their patrol."
@@ -54,6 +56,8 @@
     "win_trait": ["bloodthirsty", "fierce", "vengeful"],
     "min_cats": 2,
     "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "history_text": [
         "r_c was badly scarred when rogues ambushed their patrol.",
         "This cat was killed when rogues ambushed their patrol."
@@ -84,9 +88,11 @@
     "fail_traits": ["bloodthirsty", "fierce", "vengeful"],
     "min_cats": 1,
     "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "history_text": [
-    null,
-    "This cat was killed when rogues ambushed them while on a solo patrol."
+        null,
+        "This cat was killed when rogues ambushed them while on a solo patrol."
     ]
 },
 {    
