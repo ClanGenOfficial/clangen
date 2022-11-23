@@ -652,10 +652,17 @@ class Patrol():
         antagonize = antagonize
         success_text = self.patrol_event.success_text
         fail_text = self.patrol_event.fail_text
+        gm_modifier = 1
+        if game.clan.game_mode == "classic":
+            gm_modifier = 1
+        elif game.clan.game_mode == "expanded":
+            gm_modifier = 2
+        elif game.clan.game_mode == "cruel_season":
+            gm_modifier = 3
         # if patrol contains cats with autowin skill, chance of success is high
         # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
         chance = self.patrol_event.chance_of_success + int(
-            self.patrol_total_experience / 10)
+            self.patrol_total_experience / (10 * gm_modifier))
         if self.patrol_event.win_skills is not None:
             if set(self.patrol_skills).isdisjoint(
                     self.patrol_event.win_skills):
@@ -782,11 +789,11 @@ class Patrol():
         gm_modifier = 1
         base_exp = 10
         patrol_exp = self.patrol_event.exp
-        if game.switches['game_mode'] == 'classic':
+        if game.clan.game_mode == 'classic':
             gm_modifier = gm_modifier
-        elif game.switches['game_mode'] == 'extended':
+        elif game.clan.game_mode == 'expanded':
             gm_modifier = 3
-        elif game.switches['game_mode'] == 'cruel_season':
+        elif game.clan.game_mode == 'cruel_season':
             gm_modifier = 6
         if self.success:
             for cat in self.patrol_cats:
