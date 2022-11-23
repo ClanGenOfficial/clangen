@@ -954,6 +954,8 @@ class Patrol():
                 if litter_choice == True:
                     new_backstory = 'outsider_roots2'
                     created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory, litter=True, relevant_cat=new_cat)
+                    if new_cat.moons < 12:
+                        new_cat.moons = 16
                 
             elif self.patrol_event.patrol_id in ["gen_gen_newcat2", "gen_gen_newcat3"]:  # new kittypet
                 created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, kit=False, litter=False, relevant_cat=None,
@@ -963,6 +965,8 @@ class Patrol():
                 if litter_choice == True:
                     new_backstory = 'outsider_roots2'
                     created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory, litter=True, relevant_cat=new_cat)
+                    if new_cat.moons < 12:
+                        new_cat.moons = 16
                 
             elif self.patrol_event.patrol_id == "gen_gen_newmed1":  # new med cat
                 new_status = 'medicine cat'
@@ -976,6 +980,8 @@ class Patrol():
                 if litter_choice == True:
                     new_backstory = 'outsider_roots2'
                     created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory, litter=True, relevant_cat=new_cat)
+                    if new_cat.moons < 12:
+                        new_cat.moons = 16
                 
     def create_new_cat(self,
                        loner=False,
