@@ -656,8 +656,6 @@ class Patrol():
         # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
         chance = self.patrol_event.chance_of_success + int(
             self.patrol_total_experience / 10)
-        if self.patrol_event.patrol_id != 100:
-            chance = min(chance, 80)
         if self.patrol_event.win_skills is not None:
             if set(self.patrol_skills).isdisjoint(
                     self.patrol_event.win_skills):
