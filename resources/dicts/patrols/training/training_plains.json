@@ -3,7 +3,7 @@
     "patrol_id": "pln_any_train_session1",
     "biome": "plains",
     "season": "Any",
-    "tags": ["apprentice", "training","scar", "injury"],
+    "tags": ["apprentice", "training", "scar", "injury"],
     "intro_text": "The patrol wants to hold a training session for r_c.  They decide to focus on how best to hide within the tall grass.",
     "decline_text": "They decide to focus on the patrolling the territory instead, training can wait for another day.",
     "chance_of_success": 50,
@@ -122,8 +122,8 @@
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "bossy"],
     "min_cats": 2,
     "max_cats": 6,
-"antagonize_text": null,
-"antagonize_fail_text": null,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from being trapped on patrol",
         "r_c tragically died after being trapped on patrol."
@@ -271,8 +271,7 @@
         "s_c wavers in their decision. They have so much work to do, so many other things pulling on their time. . . no, definitely not. They turn around and go straight back to camp."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
-    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring",
-                    "playful", "righteous"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_skills": ["None"],
     "fail_trait": ["insecure", "lonesome", "nervous"],
     "min_cats": 1,

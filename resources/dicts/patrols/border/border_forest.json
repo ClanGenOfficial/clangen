@@ -1,0 +1,128 @@
+[
+    {
+        "patrol_id": "fst_bord_rogue1",
+        "biome": "forest",
+        "season": "Any",
+        "tags": ["border", "fighting", "scar", "injury", "multiple_deaths", "reputation"],
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
+        "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
+        "chance_of_success": 70,
+        "exp": 20,
+        "success_text": [
+            "The patrol descends into battle without a second thought, eventually driving the rogues away.",
+            null,
+            "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the clan cats, the rogues turn tail and run.",
+            "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "The rogues are terrifyingly coordinated and are quick to use the patrol's shock and confusion against them. The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
+            "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
+        ],
+        "win_skills": ["excellent fighter"],
+        "win_trait": ["bloodthirsty", "fierce", "vengeful"],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "This cat was badly scarred when rogues ambushed their patrol.",
+            "This cat was killed when rogues ambushed their patrol."
+        ]
+    },
+    {
+        "patrol_id": "fst_bord_rogue2",
+        "biome": "forest",
+        "season":"Any",
+        "tags": ["border", "fighting", "scar", "injury", "multiple_deaths", "reputation"],
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
+        "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "The patrol descends into battle without a second thought, eventually driving the rogues away.",
+            null,
+            "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the clan cats, the rogues turn tail and run.",
+            "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "The rogues greatly outnumber the patrol and have no trouble defeating them. The warrior's bodies are found the next day, covered in battle wounds and cold.",
+            "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
+        ],
+        "win_skills": ["excellent fighter"],
+        "win_trait": ["bloodthirsty", "fierce", "vengeful"],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "This cat was badly scarred when rogues ambushed their patrol.",
+            "This cat was killed when rogues ambushed their patrol."
+        ]
+    },
+    {
+        "patrol_id": "fst_bord_rogue3",
+        "biome": "forest",
+        "season":"Any",
+        "tags": ["border", "fighting", "scar", "injury", "death", "reputation"],
+        "intro_text": "As r_c is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
+        "decline_text": "r_c turns tail and races away! The rogues have them far outnumbered, warning the clan is more important than dying needlessly.",
+        "chance_of_success": 10,
+        "exp": 20,
+        "success_text": [
+            "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but they manage to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from their lungs.",
+            null,
+            "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the clan cat, the rogues freeze. s_c sees their opportunity to run and takes it, racing back to the camp to gather more warriors and return."
+        ],
+        "fail_text": [
+            null,
+            "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. For a moment the rogues are stunned by the reaction, but the shock doesn't last long before they descend upon the warrior once more. Eventually, s_c has no choice but to escape before they're killed.",
+            "The rogues greatly outnumber r_c and have no trouble killing the lone warrior. Their body is discovered the next day, covered in wounds and cold."
+        ],
+        "win_skills": ["excellent fighter"],
+        "fail_traits": ["bloodthirsty", "fierce", "vengeful"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            "This cat was killed when rogues ambushed them while on a solo patrol."
+        ]
+    },
+    {
+        "patrol_id": "fst_bord_rogue4",
+        "biome": "forest",
+        "season": "Any",
+        "tags": ["border", "fighting", "scar", "injury", "death", "reputation", "respect", "trust"],
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues strides out of the brush, challenging the clan cats.",
+        "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
+        "chance_of_success": 70,
+        "exp": 20,
+        "success_text": [
+            "The rogues posture and jeer, eventually provoking a battle. The clan cats are strong, however, and the rogues seem to be weakened by hunger.  The patrol easily drives the intruders away.",
+            "The rogues posture and jeer, eventually provoking a battle. The clan cats are strong, however, and after a short fight, the rogues are forced to retreat.",
+            "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich plains outside of c_n territory.",
+            "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich plains outside of c_n territory."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "The rogues are terrifyingly coordinated and are quick to use the patrol's momentary surprise to their advantage. The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
+            "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters and eventually the patrol is forced to retreat, r_c badly injured."
+        ],
+        "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+        "win_trait": ["bold", "confident"],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
+        "antagonize_fail_text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected and eventually the patrol is forced to retreat.",
+        "history_text": [
+            "r_c was badly scarred when rogues attacked their patrol.",
+            "This cat was killed when rogues attacked their patrol."
+        ]
+    }
+]
