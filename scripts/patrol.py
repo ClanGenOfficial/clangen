@@ -798,18 +798,19 @@ class Patrol():
                 print("After: " + str(cat.experience))
 
     def handle_deaths(self):
-        if self.patrol_random_cat.status == 'leader':
-            if "gone" in self.patrol_event.tags:
-                game.clan.leader_lives -= 9  # taken by twolegs, fall into ravine
+        if "death" in self.patrol_event.tags:
+            self.patrol_random_cat.die()
+            if self.patrol_random_cat.status == 'leader':
+                if "gone" in self.patrol_event.tags:
+                    game.clan.leader_lives -= 9  # taken by twolegs, fall into ravine
+                else:
+                    game.clan.leader_lives -= 1
+            if len(self.patrol_event.history_text) >= 2:
+                self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
             else:
-                game.clan.leader_lives -= 1
-        self.patrol_random_cat.die()
-        if len(self.patrol_event.history_text) >= 2:
-            self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
-        else:
-            self.patrol_random_cat.death_event.append(f'This cat died while patrolling.')
+                self.patrol_random_cat.death_event.append(f'This cat died while patrolling.')
 
-        if "disaster" in self.patrol_event.tags:
+        elif "disaster" in self.patrol_event.tags:
             for cat in self.patrol_cats:
                 cat.experience += self.patrol_event.exp
                 cat.experience = min(cat.experience, 80)
@@ -820,6 +821,12 @@ class Patrol():
                 else:
                     self.patrol_random_cat.death_event.append(f'This cat died while patrolling.')
                 cat.die()
+
+        elif "multi_deaths" in self.patrol_event.tags:
+            cats_dying = choice([2, 3, 4])
+            for d in range(0, cats_dying):
+                self.patrol_cats[d].die()
+                
 
     def handle_scars(self):
         if self.patrol_event.tags is not None:
@@ -1128,7 +1135,7 @@ class PatrolEvent():
             'hunting', 'other_clan', 'fighting', 'death', 'scar', 'new_cat', 'npc',
             'retirement', 'injury', 'illness', 'romantic', 'platonic', 'comfort', 'respect', 'trust',
             'dislike', 'jealousy', 'med_cat', 'training', 'apprentice', 'border', 'reputation', 'leader',
-            'herbs', 'gone', 'disaster', 'multiple_deaths', 'general'
+            'herbs', 'gone', 'disaster', 'multi_deaths', 'general'
         ]
 
 
