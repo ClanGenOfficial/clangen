@@ -843,6 +843,8 @@ class Patrol():
 
         elif "multi_deaths" in self.patrol_event.tags:
             cats_dying = choice([2, 3, 4])
+            if cats_dying > len(self.patrol_cats):
+                cats_dying = int(len(self.patrol_cats - 1))
             for d in range(0, cats_dying):
                 self.patrol_cats[d].die()
                 
