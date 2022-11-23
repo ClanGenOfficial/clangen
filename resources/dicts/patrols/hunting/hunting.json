@@ -230,24 +230,6 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_hunt_rabbit3",
-        "biome": "Any",
-        "season": "Any",
-        "tags": ["hunting", "other_clan"],
-        "intro_text": "r_c spots a large rabbit, but it is just over the border.",
-        "success_text": ["r_c catches the rabbit without the enemy Clan noticing."],
-        "fail_text": ["r_c is caught by an enemy Clan patrol and is sent on their way."],
-        "decline_text": "r_c decides against chasing the rabbit.",
-        "other_clan": "patrol.other_clan",
-        "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": ["fantastic hunter"],
-        "min_cats": 1,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
-    },
-    {
         "patrol_id": "gen_hunt_vision1",
         "biome": "Any",
         "season": "Any",
