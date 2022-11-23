@@ -225,7 +225,6 @@
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange", "patient", "thoughtful", "wise"],
-    "fail_skills": ["None"],
     "fail_trait": [ "bold", "childish", "confident", "daring", "playful"],
     "min_cats": 1,
     "max_cats": 1,
@@ -242,19 +241,17 @@
     "chance_of_success": 80,
     "exp": 10,
     "success_text": [
-            "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise.  They find themselves to be correct when they pounce into the grass and return to the patrol with the tasty morsel dangling from their mouth.",
+            "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the grass and return to the patrol with the tasty morsel dangling from their mouth.",
             null,
-            "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out!  s_c is quick to react and manages to snag the rabbit before it can disappear."
+            "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
     ],
     "fail_text": [
-            "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out!  None of the cats are quick enough to catch it, but at least the noise was nothing dangerous.",
-            "s_c doesn't hesitate before splitting from the patrol to check on the source of the noise. They regret their impulsivity, however, when the crab inside the grass begins clacking its claws, nearly catching s_c's nose in its grasp!  s_c gets quite the scare, but thankfully the crab only wanted to get away from them and quickly retreats back into the grass",
-            "p_l takes the lead in checking the source of the noise and comes face to face with an angry fox!  Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
+            "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out! None of the cats are quick enough to catch it, but at least the noise was nothing dangerous.",
+            "s_c doesn't hesitate before splitting from the patrol to check on the source of the noise. They regret their impulsivity, however, when the crab inside the grass begins clacking its claws, nearly catching s_c's nose in its grasp! s_c gets quite the scare, but thankfully the crab only wanted to get away from them and quickly retreats back into the grass",
+            null,
+            "p_l takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
     ],
-    "other_clan": ["None"],
     "win_skills": ["good hunter", "great hunter", "excellent hunter"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
     "fail_trait": ["daring", "bold", "ambitious"],
     "min_cats": 5,
     "max_cats": 6,
@@ -265,8 +262,8 @@
     ]
 },
 {
-    "patrol_id": "mtn_hunt_noise2",
-    "biome": "mountainous",
+    "patrol_id": "bch_hunt_noise2",
+    "biome": "beach",
     "season": "Any",
     "tags": ["hunting", "injury", "scar", "death"],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a patch of beach grass.",
@@ -281,13 +278,11 @@
     "fail_text": [
             "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out!  None of the cats are quick enough to catch it, but at least the noise was nothing dangerous.",
             "s_c doesn't hesitate before splitting from the patrol to check on the source of the noise. They regret their impulsivity, however, when the crab inside the grass begins clacking its claws, nearly catching s_c's nose in its grasp!  s_c gets quite the scare, but thankfully the crab only wanted to get away from them and quickly retreats back into the grass",
-            "p_l takes the lead in checking the source of the noise and comes face to face with an angry fox!  Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up.",
-            "p_l takes the lead in checking the source of the noise and comes face to face with a snarling dog!  p_l yowls for their patrol but the other cats aren't quick enough to stop the dog from killing p_l in one quick and deadly swipe."
+            "p_l takes the lead in checking the source of the noise and comes face to face with a snarling dog! p_l yowls for their patrol but the other cats aren't quick enough to stop the dog from killing p_l in one quick and deadly swipe.",
+            "p_l takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
+            
     ],
-    "other_clan": ["None"],
     "win_skills": ["good hunter", "great hunter", "excellent hunter"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
     "fail_trait": ["daring", "bold", "ambitious"],
     "min_cats": 2,
     "max_cats": 4,
@@ -300,8 +295,8 @@
     ]
 },
 {
-    "patrol_id": "mtn_hunt_noise3",
-    "biome": "mountainous",
+    "patrol_id": "bch_hunt_noise3",
+    "biome": "beach",
     "season": "Any",
     "tags": ["hunting", "injury", "scar", "death"],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a patch of beach grass.",
@@ -315,14 +310,12 @@
     ],
     "fail_text": [
             "p_l pads towards the rock fall to check on the noise when a rabbit suddenly bursts out!  They aren't quick enough to catch it, but at least the noise was nothing dangerous.",
-            "s_c doesn't even hesitate before going to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts across the rocks, chattering loudly!  s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back behind the rocks.",
-            "p_l  heads toward the source of the noise and comes face to face with an angry fox!  Though they backpedal rapidly, the fox still manages to take a bite out of them before they can sprint away.",
-            "p_l takes the lead in checking the source of the noise and comes face to face with a snarling dog!  p_l yowls for help, but they're alone on this patrol and they have the sudden realization that no one can help them now.  The dog kills the lone cat with little trouble."
+            "s_c doesn't even hesitate before going to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts across the rocks, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back behind the rocks.",
+            "p_l takes the lead in checking the source of the noise and comes face to face with a snarling dog! p_l yowls for help, but they're alone on this patrol and they have the sudden realization that no one can help them now. The dog kills the lone cat with little trouble.",
+            "p_l  heads toward the source of the noise and comes face to face with an angry fox!  Though they backpedal rapidly, the fox still manages to take a bite out of them before they can sprint away."
+            
     ],
-    "other_clan": ["None"],
     "win_skills": ["good hunter", "great hunter", "excellent hunter"],
-    "win_trait": ["None"],
-    "fail_skills": ["None"],
     "fail_trait": ["daring", "bold", "ambitious"],
     "min_cats": 1,
     "max_cats": 1,
