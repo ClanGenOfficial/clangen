@@ -691,8 +691,17 @@ class Patrol():
                     n = 1
                 else:
                     n = 0
+            # this is specifically for new cat events that can come with kits
+            litter_choice = False
+            if self.patrol_event.tags is not None:
+                if "kits" in self.patrol_event.tags:
+                    litter_choice = choice([True, False])
+                    if litter_choice == True:
+                        n = 1
+                    else:
+                        n = 0
             self.handle_exp_gain()
-            self.add_new_cats()
+            self.add_new_cats(litter_choice=litter_choice)
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
@@ -924,167 +933,116 @@ class Patrol():
                     rel.jealousy += jealousy
                     rel.trust -= trust
 
-    def add_new_cats(self):
+    def add_new_cats(self, litter_choice):
         if "new_cat" in self.patrol_event.tags:
             if self.patrol_event.patrol_id == "gen_gen_newkit1":  # new kit
-                kit = Cat(status='kitten', moons=0)
-                # create and update relationships
-                relationships = []
-                for cat_id in game.clan.clan_cats:
-                    the_cat = Cat.all_cats.get(cat_id)
-                    if the_cat.dead or the_cat.exiled:
-                        continue
-                    the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
-                    kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
-                game.clan.add_cat(kit)
-                new_backstory = choice(['abandoned1', 'abandoned2', 'abandoned3'])
-                kit.backstory = new_backstory
-                kit.thought = 'Is looking around the camp with wonder'
-                if kit.backstory in ['abandoned2']:
-                    if randint(0, 2) == 0:  # chance to add collar
-                        kit.accessory = choice(collars)
-
+                backstory_choice = choice(['abandoned2', 'abandoned1', 'abandoned3'])
+                created_cats = self.create_new_cat(loner=False, loner_name=False, kittypet=choice([True, False]), kit=True, backstory=backstory_choice)
+                
             if self.patrol_event.patrol_id in ["gen_gen_newcat1", "gen_gen_newcat3", "gen_gen_lonerchase1"]:  # new loner
-                new_status = choice([
-                    'apprentice', 'warrior', 'warrior', 'warrior', 'warrior',
-                    'elder'
-                ])
                 new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
                                         'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
                                         'tragedy_survivor'])
-                kit = Cat(status=new_status)
-                if (kit.status == 'elder'):
-                    kit.moons = randint(120, 150)
-                # create and update relationships
-                relationships = []
-                for cat_id in game.clan.clan_cats:
-                    the_cat = Cat.all_cats.get(cat_id)
-                    if the_cat.dead or the_cat.exiled:
-                        continue
-                    the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
-                    kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
-                game.clan.add_cat(kit)
-                kit.backstory = new_backstory
-                kit.thought = 'Is looking around the camp with wonder'
-                if randint(0, 5) == 0:  # chance to keep name
-                    kit.name.prefix = choice(names.loner_names)
-                    kit.name.suffix = ''
-                elif randint(0, 3) == 0:  # chance to have kittypet name prefix + suffix
-                    kit.name.prefix = choice(names.loner_names)
-                    kit.name.suffix = choice(names.normal_suffixes)
-                # add kits to the added cats if the second success text is rolled
-                if len(self.patrol_event.success_text) >= 2:
-                    if self.final_success == self.patrol_event.success_text[1]:
-                        num_kits = choice([2, 2, 2, 2, 3, 4])
-                        for _ in range(num_kits):
-                            kit2 = Cat(status='kitten', moons=0)
-                            kit2.backstory = 'outsider_roots2'
-                            kit2.parent1 = kit.ID
-                            kit2.thought = 'Is looking around the camp with wonder'
-                            # create and update relationships
-                            for cat_id in game.clan.clan_cats:
-                                the_cat = Cat.all_cats.get(cat_id)
-                                if the_cat.dead or the_cat.exiled:
-                                    continue
-                                if the_cat.ID in [kit2.parent1, kit2.parent2]:
-                                    the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2, False, True)
-                                    kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat, False, True)
-                                else:
-                                    the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2)
-                                    kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat)
-                                game.clan.add_cat(kit2)
-
+                created_cats = self.create_new_cat(loner = True, kittypet=False, backstory=new_backstory)
+                new_cat = created_cats[0]
+                # add litter if the kits text is rolled
+                if litter_choice == True:
+                    new_backstory = 'outsider_roots2'
+                    created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory, litter=True, relevant_cat=new_cat)
+                
             elif self.patrol_event.patrol_id in ["gen_gen_newcat2", "gen_gen_newcat3"]:  # new kittypet
-                new_status = choice([
-                    'apprentice', 'warrior', 'warrior', 'warrior', 'warrior',
-                    'elder'
-                ])
-                kit = Cat(status=new_status)
-                # create and update relationships
-                relationships = []
-                for cat_id in game.clan.clan_cats:
-                    the_cat = Cat.all_cats.get(cat_id)
-                    if the_cat.dead or the_cat.exiled:
-                        continue
-                    the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
-                    kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
-                game.clan.add_cat(kit)
-                new_backstory = choice(['kittypet1', 'kittypet2'])
-                kit.backstory = new_backstory
-                kit.thought = 'Is looking around the camp with wonder'
-                if (kit.status == 'elder'):
-                    kit.moons = randint(120, 150)
-                if randint(0, 2) == 0:  # chance to add collar
-                    kit.accessory = choice(collars)
-                if randint(0, 5) == 0:  # chance to keep name
-                    kit.name.prefix = choice(names.loner_names)
-                    kit.name.suffix = ''
-                elif randint(0, 3) == 0:
-                    kit.name.prefix = choice(names.loner_names)
-                    kit.name.suffix = choice(names.normal_suffixes)
-                if self.final_success == self.patrol_event.success_text[1]:
-                    num_kits = choice([2, 2, 2, 2, 3, 4])
-                    for _ in range(num_kits):
-                        kit2 = Cat(status='kitten', moons=0)
-                        kit2.backstory = 'outsider_roots2'
-                        kit2.parent1 = kit.ID
-                        kit2.thought = 'Is looking around the camp with wonder'
-                        # create and update relationships
-                        for cat_id in game.clan.clan_cats:
-                            the_cat = Cat.all_cats.get(cat_id)
-                            if the_cat.dead or the_cat.exiled:
-                                continue
-                            if the_cat.ID in [kit2.parent1, kit2.parent2]:
-                                the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2, False, True)
-                                kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat, False, True)
-                            else:
-                                the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2)
-                                kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat)
-                            game.clan.add_cat(kit2)
-
+                created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, kit=False, litter=False, relevant_cat=None,
+                backstory=choice(['kittypet1', 'kittypet2']))
+                new_cat = created_cats[0]
+                # add litter if the kits text is rolled
+                if litter_choice == True:
+                    new_backstory = 'outsider_roots2'
+                    created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory, litter=True, relevant_cat=new_cat)
+                
             elif self.patrol_event.patrol_id == "gen_gen_newmed1":  # new med cat
                 new_status = 'medicine cat'
-                kit = Cat(status=new_status)
-                # create and update relationships
-                relationships = []
-                for cat_id in game.clan.clan_cats:
-                    the_cat = cat_class.all_cats.get(cat_id)
-                    if the_cat.dead or the_cat.exiled:
-                        continue
-                    the_cat.relationships[kit.ID] = Relationship(the_cat, kit)
-                    kit.relationships[the_cat.ID] = Relationship(kit, the_cat)
-                game.clan.add_cat(kit)
-                add_siblings_to_cat(kit, cat_class)
-                add_children_to_cat(kit, cat_class)
                 new_backstory = choice(['medicine_cat', 'disgraced', 'loner1', 'loner2'])
-                kit.backstory = new_backstory
-                kit.skill = choice(['good healer', 'great healer', 'fantastic healer'])
-                kit.thought = 'Is looking around the camp with wonder'
-                if randint(0, 5) == 0 and kit.backstory not in ['medicine_cat', 'disgraced']:  # chance to keep name
-                    # kit.name.prefix = choice(names.loner_names)
-                    kit.name.suffix = ''
-                elif randint(0, 3) == 0 and kit.backstory not in ['medicine_cat', 'disgraced']:
-                    kit.name.prefix = choice(names.loner_names)
-                    kit.name.suffix = choice(names.normal_suffixes)
-                if self.final_success == self.patrol_event.success_text[1]:
-                        num_kits = choice([2, 2, 2, 2, 3, 4])
-                        for _ in range(num_kits):
-                            kit2 = Cat(status='kitten', moons=0)
-                            kit2.backstory = 'outsider_roots2'
-                            kit2.parent1 = kit.ID
-                            kit2.thought = 'Is looking around the camp with wonder'
-                            # create and update relationships
-                            for cat_id in game.clan.clan_cats:
-                                the_cat = Cat.all_cats.get(cat_id)
-                                if the_cat.dead or the_cat.exiled:
-                                    continue
-                                if the_cat.ID in [kit2.parent1, kit2.parent2]:
-                                    the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2, False, True)
-                                    kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat, False, True)
-                                else:
-                                    the_cat.relationships[kit2.ID] = Relationship(the_cat, kit2)
-                                    kit2.relationships[the_cat.ID] = Relationship(kit2, the_cat)
-                                game.clan.add_cat(kit2)
+                created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, kit=False, litter=False, relevant_cat=None,
+                backstory=new_backstory)
+                new_cat = created_cats[0]
+                new_cat.status == new_status
+                new_cat.skill = choice(['good healer', 'great healer', 'fantastic healer'])
+                # add litter if the kits text is rolled
+                if litter_choice == True:
+                    new_backstory = 'outsider_roots2'
+                    created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory, litter=True, relevant_cat=new_cat)
+                
+    def create_new_cat(self,
+                       loner=False,
+                       loner_name=False,
+                       kittypet=False,
+                       kit=False,
+                       litter=False,
+                       relevant_cat=None,
+                       backstory=None,
+                       other_clan=None):
+        name = None
+        skill = None
+        accessory = None
+        status = "kitten"
+        backstory = backstory
+        other_clan = other_clan
+
+        age = randint(0, 5)
+        kp_name_chance = (1, 5)
+        if not litter and not kit:
+            age = randint(6, 120)
+
+        if (loner or kittypet) and not kit and not litter:
+            if loner_name:
+                if loner and kp_name_chance == 1:
+                    name = choice(names.normal_prefixes)
+                else:
+                    name = choice(names.loner_names)
+            if age >= 12:
+                status = "warrior"
+            else:
+                status = "apprentice"
+        if kittypet:
+            if choice([1, 2]) == 1:
+                accessory = choice(collars)
+
+        amount = choice([1, 1, 2, 2, 2, 3]) if litter else 1
+        created_cats = []
+        a = randint(0, 1)
+        for number in range(amount):
+            new_cat = None
+            if loner_name and a == 1:
+                new_cat = Cat(moons=age, prefix=name, status=status, gender=choice(['female', 'male']), backstory=backstory)
+            elif loner_name:
+                new_cat = Cat(moons=age, prefix=name, suffix=None, status=status, gender=choice(['female', 'male']), backstory=backstory)
+            else:
+                new_cat = Cat(moons=age, status=status, gender=choice(['female', 'male']), backstory=backstory)
+            if skill:
+                new_cat.skill = skill
+            if accessory:
+                new_cat.accessory = accessory
+
+            if (kit or litter) and relevant_cat and relevant_cat.ID in Cat.all_cats:
+                new_cat.parent1 = relevant_cat.ID
+                if relevant_cat.mate:
+                    new_cat.parent2 = relevant_cat.mate
+
+            #create and update relationships
+            for the_cat in new_cat.all_cats.values():
+                if the_cat.dead or the_cat.exiled:
+                    continue
+                the_cat.relationships[new_cat.ID] = Relationship(the_cat, new_cat)
+                new_cat.relationships[the_cat.ID] = Relationship(new_cat, the_cat)
+            new_cat.thought = 'Is looking around the camp with wonder'
+            created_cats.append(new_cat)
+        
+        for new_cat in created_cats:
+            add_siblings_to_cat(new_cat,cat_class)
+            add_children_to_cat(new_cat,cat_class)
+            game.clan.add_cat(new_cat)
+
+        return created_cats
 
     def check_territories(self):
         hunting_claim = str(game.clan.name) + 'Clan Hunting Grounds'
