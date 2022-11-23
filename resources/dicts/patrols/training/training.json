@@ -147,7 +147,7 @@
 {
     "patrol_id": "gen_train_berrybush3",
     "biome": "Any",
-    "season": "leaffall",
+    "season": "leaf-fall",
     "tags": ["herbs", "training", "injury", "illness"],
     "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
@@ -173,7 +173,7 @@
 {
     "patrol_id": "gen_train_berrybush4",
     "biome": "Any",
-    "season": "leaffall",
+    "season": "leaf=fall",
     "tags": ["herbs", "training", "apprentice", "injury", "illness", "death"],
     "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
@@ -387,7 +387,7 @@
         "r_c tries to look brave in front of the other cats, but hears a rustle behind them and startles so badly they fall over.",
         "p_l makes fun of r_c for being so scared."
     ],
-    "win_trait": ["charismatic", "childish", "confident", "playful", "attention-seeker", "shameless", "strange"],
+    "win_trait": ["charismatic", "childish", "confident", "playful", "shameless", "strange"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -412,7 +412,7 @@
         "r_c eats the prey, but later they feel terrible about it, slinking around guilty and ashamed for the rest of the day.",
         "r_c freezes in indecision, and eventually a warrior spots them sitting under cover with their prey and accuses r_c of eating it anyway."
     ],
-    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous", "attention-seeker"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "fail_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
     "min_cats": 1,
     "max_cats": 1,
