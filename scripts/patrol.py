@@ -823,11 +823,12 @@ class Patrol():
                     game.clan.leader_lives -= 9  # taken by twolegs, fall into ravine
                 else:
                     game.clan.leader_lives = int(game.clan.leader_lives) - 1
+            else:
+                self.patrol_random_cat.die()
             if len(self.patrol_event.history_text) >= 2:
                 self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
             else:
                 self.patrol_random_cat.death_event.append(f'This cat died while patrolling.')
-            self.patrol_random_cat.die()
 
         elif "disaster" in self.patrol_event.tags:
             for cat in self.patrol_cats:
