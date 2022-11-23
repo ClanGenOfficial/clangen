@@ -96,7 +96,7 @@ class Events():
                 amount_per_med = get_amount_cat_for_one_medic(game.clan)
                 med_fullfiled = medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med)
                 if not med_fullfiled:
-                    game.cur_events_list.insert(0, f"{game.clan.name}Clan has not enough (healthy) medicine cat!")
+                    game.cur_events_list.insert(0, f"{game.clan.name}Clan has not enough (healthy) medicine cats!")
             else:
                 has_med = any(
                     str(cat.status) in {"medicine cat", "medicine cat apprentice"}

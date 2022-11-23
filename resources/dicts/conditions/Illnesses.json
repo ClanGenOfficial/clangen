@@ -154,7 +154,7 @@
         "infectiousness": 0,
         "risks": [
             {
-                "name": "rat fever",
+                "name": "festering wounds",
                 "chance": 10
             }
         ]
@@ -291,7 +291,7 @@
         "infectiousness": 6,
         "risks": []
     },
-    "rat fever": {
+    "festering wounds": {
         "mortality": {
             "kitten": 2,
             "adolescent": 3,

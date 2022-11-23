@@ -146,12 +146,12 @@ class Condition_Events():
             else:
                 event_string = f"{injury_dict[injury_name]} {cat.name} has gotten a(n) {injury_name}."
 
-        # handle if a rat attack has happened --> lead to rat fever
+        # handle if a rat attack has happened --> lead to festering wounds
         if event_string and "rat" in event_string:
             chance_number = 15
             if int(random.random() * chance_number):
-                cat.get_ill("rat fever")
-                event_string = f"{event_string} The bites of the rat doesn't look good and {cat.name} has gotten a rat fever."
+                cat.get_ill("festering wounds")
+                event_string = f"{event_string} The bites of the rat doesn't look good and {cat.name} has gotten a festering wounds."
 
 
         if event_string:
