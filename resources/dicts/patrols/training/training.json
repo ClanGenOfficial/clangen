@@ -264,7 +264,7 @@
                     "patient", "responsible", "thoughtful", "wise", "inquisitive"],
     "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict",
                     "troublesome", "vengeful", "bossy"],
-    "min_cats": 2,
+    "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
@@ -293,7 +293,7 @@
                     "troublesome", "vengeful"],
     "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
                     "patient", "responsible", "thoughtful", "wise", "inquisitive"],
-    "min_cats": 2,
+    "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
