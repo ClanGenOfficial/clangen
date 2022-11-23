@@ -204,6 +204,8 @@ class Patrol():
                         apprentice = False
                     else:
                         apprentice = True
+                        app_index = self.patrol_statuses.index("apprentice")
+                        self.patrol_random_cat = self.patrol_cats[app_index]
                 else:
                     apprentice = True
 
