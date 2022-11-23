@@ -765,8 +765,8 @@ class Patrol():
             elif fail_text[0] is None:
                 if len(fail_text) >= 4 and fail_text[3] is not None:
                     n = 3
-                elif fail_text[1] is not None:
-                    n = 1
+                elif len(fail_text) >= 3 and fail_text[2] is not None:
+                    n = 2
             else:
                 n = 0
             if n == 2:
