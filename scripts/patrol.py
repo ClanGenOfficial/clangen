@@ -758,12 +758,12 @@ class Patrol():
             if self.patrol_stat_cat is not None and len(fail_text) > 1:
                 if fail_text[1] is not None:
                     n = 1
-            elif outcome <= 10 and len(fail_text) > 3 and fail_text[3] is not None:
+            elif outcome <= 10 and len(fail_text) >= 4 and fail_text[3] is not None:
                 n = 3
-            elif outcome >= 11 and len(fail_text) > 2 and fail_text[2] is not None:
+            elif outcome >= 11 and len(fail_text) >= 3 and fail_text[2] is not None:
                 n = 2
             elif fail_text[0] is None:
-                if fail_text[3] is not None:
+                if len(fail_text) >= 4 and fail_text[3] is not None:
                     n = 3
                 elif fail_text[1] is not None:
                     n = 1
