@@ -1160,6 +1160,10 @@ class PatrolEvent():
             'herbs', 'gone', 'disaster', 'multi_deaths', 'general'
         ]
 
+        """tag info:
+        death tags: you can only have ONE death tag. if you have multiple, it picks the first one in this order:
+        "death" (kills r_c) > "disaster" (kills whole patrol) > "multi_deaths" (kills 2-4 cats)"""
+
 
 patrol = Patrol()
 
