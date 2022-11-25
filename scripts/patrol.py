@@ -876,6 +876,23 @@ class Patrol():
                 cats_dying = int(len(self.patrol_cats - 1))
             for d in range(0, cats_dying):
                 self.patrol_cats[d].die()
+
+        # cats disappearing on patrol is also handled under this def for simplicity's sake
+        elif "gone" in self.patrol_event.tags:
+                self.patrol_random_cat.gone()
+
+        elif "disaster_gone" in self.patrol_event.tags:
+            for cat in self.patrol_cats:
+                cat.experience += self.patrol_event.exp
+                cat.experience = min(cat.experience, 80)
+                cat.gone()
+
+        elif "multi_gone" in self.patrol_event.tags:
+            cats_gone = choice([2, 3, 4])
+            if cats_gone > len(self.patrol_cats):
+                cats_gone = int(len(self.patrol_cats - 1))
+            for g in range(0, cats_gone):
+                self.patrol_cats[g].gone()
                 
 
     def handle_scars(self):
