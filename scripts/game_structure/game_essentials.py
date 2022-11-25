@@ -339,7 +339,8 @@ class Game():
                 "current_apprentice": [appr.ID for appr in inter_cat.apprentice],
                 "former_apprentices": [appr.ID for appr in inter_cat.former_apprentices],
                 "scar_event": inter_cat.scar_event if inter_cat.scar_event else [],
-                "df": inter_cat.df
+                "df": inter_cat.df,
+                "outside": inter_cat.outside,                
             }
             clan_cats.append(cat_data)
             if not inter_cat.dead:

@@ -14,6 +14,7 @@ class Clan():
     leader_lives = 0
     clan_cats = []
     starclan_cats = []
+    outside_cats = Cat.outside_cats
     seasons = [
         'Newleaf',
         'Newleaf',
@@ -180,6 +181,14 @@ class Clan():
         ) and cat.dead and cat.ID not in self.starclan_cats:
             # The dead-value must be set to True before the cat can go to starclan
             self.starclan_cats.append(cat.ID)
+
+    def add_to_outside(self, cat): #same as add_cat
+        """ Places the gone cat into starclan. It should not be removed from the list of cats in the clan"""
+        if cat.ID in Cat.all_cats.keys(
+        ) and cat.outside and cat.ID not in self.outside_cats:
+            # The outside-value must be set to True before the cat can go to starclan
+            self.outside_cats.append(cat.ID)
+            Cat.outside_cats[cat] = Cat.all_cats[cat]
 
     def remove_cat(self, ID):  # ID is cat.ID
         """This function is for completely removing the cat from the game, it's not meant for a cat that's

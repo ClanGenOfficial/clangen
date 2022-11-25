@@ -102,7 +102,7 @@ class Cat():
     ]
 
     all_cats = {}  # ID: object
-    other_cats = {}  # cats outside the clan
+    outside_cats = {}  # cats outside the clan
     id_iter = itertools.count()
 
     def __init__(self,
@@ -139,6 +139,7 @@ class Cat():
         self.placement = None
         self.example = example
         self.dead = False
+        self.outside = False
         self.died_by = None  # once the cat dies, tell the cause
         self.dead_for = 0  # moons
         self.thought = ''
@@ -328,6 +329,23 @@ class Cat():
             app.update_mentor()
         self.update_mentor()
         game.clan.add_to_starclan(self)
+
+    def gone(self):
+        if self.status == 'leader':
+            self.outside = True
+            self.status = 'warrior'
+            game.clan.leader = None
+        elif self.status == 'deputy':
+            self.outside = True
+            self.status = 'warrior'
+            game.clan.deputy = None
+        else:
+            self.outside = True
+
+        for app in self.apprentice.copy():
+            app.update_mentor()
+        self.update_mentor()
+        game.clan.add_to_outside(self)
 
     def status_change(self, new_status):
         self.status = new_status
