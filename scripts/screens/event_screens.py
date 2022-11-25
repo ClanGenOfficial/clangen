@@ -223,10 +223,10 @@ class PatrolEventScreen(Screens):
                                             str(patrol.patrol_leader.name))
             text = text.replace('The patrol',
                                             str(patrol.patrol_leader.name))
-        text = text.replace('r_c',
-                                        str(patrol.patrol_random_cat.name))
-        text = text.replace('p_l',
-                                        str(patrol.patrol_leader.name))
+        text = text.replace('r_c', str(patrol.patrol_random_cat.name))
+        text = text.replace('p_l', str(patrol.patrol_leader.name))
+        text = text.replace('app1', str(patrol.app1_name))
+        text = text.replace('app2', str(patrol.app2_name))
 
         if patrol.patrol_stat_cat is not None:
             text = text.replace('s_c', str(patrol.patrol_stat_cat.name))
