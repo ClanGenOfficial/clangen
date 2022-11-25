@@ -1149,7 +1149,7 @@ class PatrolEvent():
             success [3] is if win trait is applicable
 
             fail text [0] is unscathed fail 1
-            fail text [1] is unscathed 2, fail skill or fail traits
+            fail text [1] is unscathed 2 - fail skill or fail traits
             fail text [2] is death
             fail text [3] is scar"""
 
