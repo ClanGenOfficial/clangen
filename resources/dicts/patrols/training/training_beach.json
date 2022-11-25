@@ -1,0 +1,238 @@
+    // success[0]: most common
+    // success[1]: slightly rarer
+    // success[2]: skill win condition
+    // success[4]: trait win condition
+
+    // fail[0]: unscathed 1
+    // fail[1]: unscathed 2/skill or trait failure
+    // fail[2]: death
+    // fail[3]: scar
+
+    // history[0]: scar text
+    // history[1]: death text
+[
+{
+    "Patrol_id": "bch_any_train_session1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["apprentice", "training", "scar", "injury"],
+    "intro_text": "The patrol wants to hold a training session for r_c. They decide to focus on how best to navigate the rocky tide pools.",
+    "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+            "r_c listens carefully as p_l explains where to find the best prey within the rich waters of the pools.",
+            "r_c picks up the instruction quicky and is soon hopping from pool to pool, picking out the tasty morsels within.",
+            null,
+            "By the end of the patrol s_c is easily fishing freshkill out of the pools, not an ounce of hesitation in their movements."
+    ],
+    "fail_text": [
+            "r_c tries to remember the differences and nuances between the creatures within the pools, but fails to retain any of the information.",
+            "s_c struggles to take the lesson seriously and eventually the training session ends early with no real progress made.",
+            null,
+            "r_c tries to poke around in the pools for potential food. Ouch! Oops, that was a sea urchin. r_c limps the whole way home."
+    ],
+    "win_trait": ["adventurous", "bold", "confident", "daring", "ambitious"],
+    "fail_trait": ["troublesome", "playful"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c got spiked by a sea urchin while training as an apprentice."
+    ]
+},
+{
+    "Patrol_id": "bch_train_stuck1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "platonic", "comfort", "injury", "death", "scar"],
+    "intro_text": "Up at the front of the patrol, p_l hears a quiet swish and startled yowling. Turning back, they spot r_c being swallowed by a collapsing sand dune.",
+    "decline_text": "p_l runs back to camp to fetch help.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+            "p_l frees their clanmate and settles down to groom the sand from their pelt, everyone relieved to have gotten off so lightly.",
+            "p_l digs through the sand, helping r_c clear it away enough for the other cat to scramble free.",
+            "Without letting themselves panic, s_c carefully assesses the collapsed dune trapping their clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay.",
+            "Creeping in as close as possible, s_c purrs to their clanmate, keeping them calm as the patrol carefully digs down to them."
+    ],
+    "fail_text": [
+            "The patrol works all day to free their clanmate and gets nothing else done.",
+            "Harshly, s_c tells their clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck in the sand.",
+            "p_l works frantically, but r_c just can't keep the sand clear of their muzzle, and slips away as the patrol tries desperately to free them.",
+            "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, wheezing and injured."
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise", "inquisitive"],
+    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c carries a scar from being trapped on patrol.",
+            "r_c tragically died after being trapped on patrol."
+    ]
+        // should increase platonic like and comfort if success
+        // trait-based failures should override skill wins?
+},
+{
+    "Patrol_id": "bch_train_stuck2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "platonic", "comfort", "injury", "death", "scar"],
+    "intro_text": "Trailing behind the patrol, there's a quiet swish below r_c. They look around wildly, just in time for the world to tip upside-down as the sand dune beneath them collapses.",
+    "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+            "Their clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
+            "p_l digs through the sand, helping r_c clear it away enough for the other cat to scramble free.",
+            "Without letting themselves panic, s_c carefully assesses the collapsed dune trapping their clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay.",
+            "Creeping in as close as possible, s_c purrs to their clanmate, keeping them calm as the patrol carefully digs down to them."
+    ],
+    "fail_text": [
+            "The patrol works all day to free r_C and gets nothing else done.",
+            "Harshly, s_c tells their clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck in the sand.",
+            "Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan.",
+            "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise", "inquisitive"],
+    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c carries a scar from being trapped on patrol.",
+            "r_c tragically died after being trapped on patrol."
+    ]
+        // should increase platonic like and comfort if success
+        // trait-based failures should override skill wins?
+},
+{
+    "Patrol_id": "bch_train_solo1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "apprentice", "injury", "scar"],
+    "intro_text": "r_c heads out along the coast alone, but maybe an apprentice shouldn't try to do a solo patrol.",
+    "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
+    "chance_of_success": 20,
+    "exp": 20,
+    "success_text": [
+            "At least this is a good chance to learn the territory! r_c heads off to map out a field of sand dunes they've always found confusing.",
+            "r_c clambers over a rise in the ground and stumbles across a tiny, perfect waterfall!",
+            null,
+            "There's nothing to worry about! s_c pads confidently through c_n territory, assured in their safety by the strength of c_n borders."
+    ],
+    "fail_text": [
+            "r_c gets lost in the territory and doesn't learn anything.",
+            "s_c shivers a little, imagining what could be out there. . .No, definitely not. They turn around and slink straight back to camp.",
+            null,
+            "The apprentice wanders along obliviously and slips, tumbling right down into a rocky pool. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_trait": ["insecure", "lonesome", "nervous"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c got injured as an apprentice, exploring alone."
+    ]
+},
+{
+    "Patrol_id": "bch_train_solo2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training"],
+    "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to themselves.",
+    "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that their duties have to come first.",
+    "chance_of_success": 30,
+    "exp": 20,
+    "success_text": [
+            "r_c heads off to map out a field of sand dunes they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date.",
+            "r_c rounds a corner and stumbles across a tiny, perfect waterfall!",
+            "s_c rounds a corner and stumbles across a tiny, perfect waterfall! Further investigation shows that it emerges from equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought.",
+            "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
+    ],
+    "fail_text": [
+            "r_c gets lost in the territory. Somehow.",
+            "s_c shivers a little, thinking of the dangers of solo patrols. . .No, definitely not. They turn around and slink straight back to camp.",
+            null,
+            null
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["insecure", "lonesome", "nervous"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "Patrol_id": "bch_train_solo3",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "deputy"],
+    "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to themselves.",
+    "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that their duties have to come first.",
+    "chance_of_success": 30,
+    "exp": 20,
+    "success_text": [
+            "r_c heads off to map out a field of sand dunes they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and it isn't exactly the peaceful break they hoped for.",
+            "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+            "s_c rounds a corner and stumbles across a tiny, perfect waterfall! Further investigation shows its origin is an equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought, and its discovery helps to ease one of the many worries on the deputy's mind.",
+            "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
+    ],
+    "fail_text": [
+            "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
+            "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . .No, definitely not. They turn around and march straight back to camp.",
+            null,
+            null
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["insecure", "lonesome", "nervous"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "Patrol_id": "bch_train_solo4",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "leader"],
+    "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to themselves.",
+    "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that their duties have to come first.",
+    "chance_of_success": 30,
+    "exp": 20,
+    "success_text": [
+            "r_c heads off to map out a field of sand dunes they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and it isn't exactly the peaceful break they hoped for.",
+            "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+            "s_c rounds a corner and stumbles across a tiny, perfect waterfall! Further investigation shows its origin is an equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought, and its discovery helps to ease one of the many worries on the leader's mind.",
+            "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
+    ],
+    "fail_text": [
+            "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
+            "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . .No, definitely not. They turn around and march straight back to camp.",
+            null,
+            null
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["insecure", "lonesome", "nervous"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+}
+]
+
