@@ -34,7 +34,7 @@
     {
         "patrol_id": "fst_bord_rogue2",
         "biome": "forest",
-        "season":"Any",
+        "season": "Any",
         "tags": ["border", "fighting", "scar", "injury", "multi_deaths", "reputation"],
         "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
         "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
@@ -66,7 +66,7 @@
     {
         "patrol_id": "fst_bord_rogue3",
         "biome": "forest",
-        "season":"Any",
+        "season": "Any",
         "tags": ["border", "fighting", "scar", "injury", "death", "reputation"],
         "intro_text": "As r_c is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
         "decline_text": "r_c turns tail and races away! The rogues have them far outnumbered, warning the clan is more important than dying needlessly.",
