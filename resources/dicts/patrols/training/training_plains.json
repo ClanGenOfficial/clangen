@@ -21,7 +21,7 @@
         "r_c makes their way into the tall grass to try out the advice p_l has given them, but they go crashing down into a hole, where whatever lives there gives them a sharp bite!  It seems the grass was hiding more than just cats.  r_c ends up limping back to camp."
     ],
     "win_trait": ["calm", "careful", "sneak", "quiet", "patient"],
-    "fail_trait": ["troublesome", "playful", "noisy"],
+    "fail_trait": ["troublesome", "playful"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
