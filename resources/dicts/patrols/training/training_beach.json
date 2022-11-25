@@ -1,15 +1,3 @@
-    // success[0]: most common
-    // success[1]: slightly rarer
-    // success[2]: skill win condition
-    // success[4]: trait win condition
-
-    // fail[0]: unscathed 1
-    // fail[1]: unscathed 2/skill or trait failure
-    // fail[2]: death
-    // fail[3]: scar
-
-    // history[0]: scar text
-    // history[1]: death text
 [
 {
     "Patrol_id": "bch_any_train_session1",
@@ -74,8 +62,6 @@
             "r_c carries a scar from being trapped on patrol.",
             "r_c tragically died after being trapped on patrol."
     ]
-        // should increase platonic like and comfort if success
-        // trait-based failures should override skill wins?
 },
 {
     "Patrol_id": "bch_train_stuck2",
@@ -109,8 +95,6 @@
             "r_c carries a scar from being trapped on patrol.",
             "r_c tragically died after being trapped on patrol."
     ]
-        // should increase platonic like and comfort if success
-        // trait-based failures should override skill wins?
 },
 {
     "Patrol_id": "bch_train_solo1",

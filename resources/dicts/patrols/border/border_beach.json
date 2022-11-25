@@ -1,18 +1,6 @@
-    // success[0]: most common
-    // success[1]: slightly rarer
-    // success[2]: skill win condition
-    // success[4]: trait win condition
-
-    // fail[0]: unscathed 1
-    // fail[1]: unscathed 2/skill or trait failure
-    // fail[2]: death
-    // fail[3]: scar
-
-    // history[0]: scar text
-    // history[1]: death text
 [
 {
-    "Patrol_id": "bch_bord_rogue1",
+    "patrol_id": "bch_bord_rogue1",
     "biome": "beach",
     "season": "Any",
     "tags": ["border", "fighting", "scar", "injury", "reputation", "multiple_deaths"],
@@ -44,7 +32,7 @@
     ]
 },
 {
-    "Patrol_id": "bch_bord_rogue2",
+    "patrol_id": "bch_bord_rogue2",
     "biome": "beach",
     "season": "Any",
     "tags": ["border", "fighting", "scar", "injury", "reputation", "disaster"],
@@ -76,7 +64,7 @@
     ]
 },
 {
-    "Patrol_id": "bch_bord_rogue3",
+    "patrol_id": "bch_bord_rogue3",
     "biome": "beach",
     "season": "Any",
     "tags": ["border", "fighting", "scar", "injury", "death", "reputation"],
@@ -109,7 +97,7 @@
     ]
 },
 {
-    "Patrol_id": "bch_bord_rogue4",
+    "patrol_id": "bch_bord_rogue4",
     "biome": "beach",
     "season": "Any",
     "tags": ["border", "fighting", "scar", "injury", "reputation", "respect", "trust", "multiple_deaths"],
@@ -141,7 +129,7 @@
     ]
 },
 {
-    "Patrol_id": "bch_bord_solo1",
+    "patrol_id": "bch_bord_solo1",
     "biome": "beach",
     "season": "Any",
     "tags": ["border", "other_clan", "injury", "scar"],
@@ -174,7 +162,7 @@
     ]
 },
 {
-    "Patrol_id": "bch_bord_solo2",
+    "patrol_id": "bch_bord_solo2",
     "biome": "beach",
     "season": "Any",
     "tags": ["border", "other_clan", "injury", "scar", "deputy", "death"],
@@ -208,7 +196,7 @@
     ]
 },
 {
-    "Patrol_id": "bch_borD_solo3",
+    "patrol_id": "bch_borD_solo3",
     "biome": "beach",
     "season": "Any",
     "tags": ["border", "other_clan", "injury", "scar", "leader", "death"],
@@ -242,7 +230,7 @@
     ]
 },
 {
-    "Patrol_id": "bch_bord_solo4",
+    "patrol_id": "bch_bord_solo4",
     "biome": "beach",
     "season": "Any",
     "tags": ["border", "other_clan", "injury", "scar", "deputy"],
@@ -273,7 +261,7 @@
     ]
 },
 {
-    "Patrol_id": "bch_bord_solo5",
+    "patrol_id": "bch_bord_solo5",
     "biome": "beach",
     "season": "Any",
     "tags": ["border", "other_clan", "injury", "scar", "leader"],
@@ -304,7 +292,7 @@
     ]
 },
 {
-    "Patrol_id": "bch_bord_abandontwoleg1",
+    "patrol_id": "bch_bord_abandontwoleg1",
     "biome": "beach",
     "season": "Any",
     "tags": ["fighting", "border", "new_cat", "disaster"],
@@ -336,7 +324,7 @@
     ]
 },
 {
-    "Patrol_id": "bch_bord_abandontwoleg2",
+    "patrol_id": "bch_bord_abandontwoleg2",
     "biome": "beach",
     "season": "Any",
     "tags": ["fighting", "border", "new_cat", "disaster"],
