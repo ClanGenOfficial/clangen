@@ -136,7 +136,8 @@ class Game():
         'show empty relation': False,
         'romantic with former mentor': True,
         'game_mode': None,
-        'deputy': False
+        'deputy': False,
+        'den labels': True
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
@@ -156,7 +157,8 @@ class Game():
         'show empty relation': [False, True],
         'romantic with former mentor': [False, True],
         'game_mode': game_mode_list,
-        'deputy': [False, True]
+        'deputy': [False, True],
+        'den labels': [False, True]
     }  # Lists of possible options for each setting
     settings_changed = False
 
