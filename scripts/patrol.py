@@ -166,12 +166,14 @@ class Patrol():
         possible_patrols.extend(self.generate_patrol_events(BORDER_FST))
         possible_patrols.extend(self.generate_patrol_events(BORDER_PLN))
         possible_patrols.extend(self.generate_patrol_events(BORDER_MTN))
+        possible_patrols.extend(self.generate_patrol_events(BORDER_BCH))
 
         # training patrols
         possible_patrols.extend(self.generate_patrol_events(TRAINING))
         possible_patrols.extend(self.generate_patrol_events(TRAINING_FST))
         possible_patrols.extend(self.generate_patrol_events(TRAINING_PLN))
         possible_patrols.extend(self.generate_patrol_events(TRAINING_MTN))
+        possible_patrols.extend(self.generate_patrol_events(TRAINING_BCH))
 
         # new cat patrols
         if chance == 1:
@@ -1248,6 +1250,10 @@ BORDER_MTN = None
 with open(f"{resource_directory}{border_directory}border_mountains.json", 'r') as read_file:
     BORDER_MTN = ujson.loads(read_file.read())
 
+BORDER_BCH = None
+with open(f"{resource_directory}{border_directory}border_beach.json", 'r') as read_file:
+    BORDER_BCH = ujson.loads(read_file.read())
+
 # TRAINING #
 TRAINING = None
 with open(f"{resource_directory}{training_directory}training.json", 'r') as read_file:
@@ -1264,6 +1270,10 @@ with open(f"{resource_directory}{training_directory}training_plains.json", 'r') 
 TRAINING_MTN = None
 with open(f"{resource_directory}{training_directory}training_mountains.json", 'r') as read_file:
     TRAINING_MTN = ujson.loads(read_file.read())
+
+TRAINING_BCH = None
+with open(f"{resource_directory}{training_directory}training_beach.json", 'r') as read_file:
+    TRAINING_BCH = ujson.loads(read_file.read())
 
 
 # NEW CAT #
