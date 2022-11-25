@@ -1,65 +1,1065 @@
 [
-    {
-        "patrol_id": "gen_disaster1",
-        "biome": "Any",
-        "season": "Any",
-        "tags": ["disaster", "death"],
-        "intro_text": "Your patrol hears some odd noises coming from an abandoned Twoleg nest.",
-        "success_text": ["It's just an old loner singing to themselves."],
-        "fail_text": ["Your patrol walks into an ambush by a group of rogues and everyone is slaughtered."],
-        "decline_text": "Your patrol decides not to investigate.",
-        "chance_of_success": 60,
-        "exp": 10,
-        "win_skills": ["fantastic fighter"],
-        "min_cats": 1,
-        "max_cats": 6,
-        "history_text": [
+{
+    "patrol_id": "gen_disaster1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["disaster"],
+    "intro_text": "Your patrol hears some odd noises coming from an abandoned Twoleg nest.",
+    "success_text": ["It's just an old loner singing to themselves."],
+    "fail_text": ["Your patrol walks into an ambush by a group of rogues and everyone is slaughtered."],
+    "decline_text": "Your patrol decides not to investigate.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "win_skills": ["fantastic fighter"],
+    "min_cats": 1,
+    "max_cats": 6,
+    "history_text": [
+        null,
+        "r_c was slaughtered in an ambush by a bloodthirsty group of rogues."
+    ],
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_disaster3",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["disaster_gone"],
+    "intro_text": "Your patrol encounters a clearing where a lot of Twolegs linger.",
+    "success_text": ["They continue hunting undetected."],
+    "fail_text": ["The Twolegs notice the cats and trap them in their monsters. The cats on your patrol are never seen again."],
+    "decline_text": "Your patrol decides to hunt elsewhere.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "win_skills": ["extremely smart"],
+    "min_cats": 1,
+    "max_cats": 6,
+    "history_text": [
+        null,
+        "r_c was trapped by twolegs and taken away."
+    ],
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_bord_flashflood1",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": ["border", "disaster", "respect", "trust"],
+    "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "While it's pretty gray up there, the promised rain never comes.",
+        "The cats become wet from the rain but otherwise the patrol is successful.",
+        "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+        "It's not worth the risk - s_c convinces the patrol to head for home."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+        null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": null,
+    "fail_trait": null,
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "This cat was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "fst_bord_flashflood2",
+    "biome": "forest",
+    "season": "greenleaf",
+    "tags": ["border", "disaster", "respect", "trust"],
+    "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "While it's pretty gray up there, the promised rain never comes.",
+        "The cats become wet from the rain but otherwise the patrol is successful.",
+        "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+        "It's not worth the risk - s_c convinces the patrol to head for home."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+        null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "This cat was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "fst_bord_flashflood3",
+    "biome": "forest",
+    "season": "leaffall",
+    "tags": ["border", "disaster", "respect", "trust"],
+    "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "While it's pretty gray up there, the promised rain never comes.",
+        "The cats become wet from the rain but otherwise the patrol is successful.",
+        "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+        "It's not worth the risk - s_c convinces the patrol to head for home."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+        null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "This cat was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "fst_bord_flashflood4",
+    "biome": "forest",
+    "season": "newleaf",
+    "tags": ["border", "disaster"],
+    "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "While it's pretty gray up there, the promised rain never comes.",
+        "r_c becomes wet from the rain but otherwise the patrol is successful.",
+        "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+        "It's not worth the risk - s_c heads for home."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+        null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "r_c was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "fst_bord_flashflood5",
+    "biome": "forest",
+    "season": "greenleaf",
+    "tags": ["border", "disaster"],
+    "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "While it's pretty gray up there, the promised rain never comes.",
+        "r_c becomes wet from the rain but otherwise the patrol is successful.",
+        "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+        "It's not worth the risk - s_c heads for home."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+        null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "r_c was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "fst_bord_flashflood6",
+    "biome": "forest",
+    "season": "leaf-fall",
+    "tags": ["border", "disaster"],
+    "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "While it's pretty gray up there, the promised rain never comes.",
+        "r_c becomes wet from the rain but otherwise the patrol is successful.",
+        "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+        "It's not worth the risk - s_c heads for home."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+        null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
             null,
-            "r_c was slaughtered in an ambush by a bloodthirsty group of rogues."
-        ],
-        "antagonize_text": null,
-        "antagonize_fail_text": null
-    },
-    {
-        "patrol_id": "gen_disaster2",
-        "biome": "Any",
-        "season": "newleaf",
-        "tags": ["disaster", "gone", "death"],
-        "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
-        "success_text": ["The cats become wet from the rain but otherwise the patrol is successful."],
-        "fail_text": ["There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away."],
-        "decline_text": "Your patrol decides to head back early.",
-        "chance_of_success": 70,
-        "exp": 10,
-        "win_skills": ["fantastic fighter"],
-        "min_cats": 1,
-        "max_cats": 6,
-        "history_text": [
+            "r_c was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "pln_bord_abandontwoleg1",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["fighting", "border", "new_cat", "disaster"],
+    "intro_text": "Your patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
+    "decline_text": "Your patrol decides not to investigate.",
+    "chance_of_success": 40,
+    "exp": 30,
+    "success_text": [
+            "It's just an odd loner singing to themselves. The patrol greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
+            "It's just an odd loner singing to themselves. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+            "Your patrol walks into an ambush by a group of rogues. It's only by the grace of Starclan that s_c is there, fighting with the ferocity of Lionclan, the strength of Tigerclan, and the flexibility of Leopardclan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
+            "s_c signals for the patrol to stop. Carefully, quietly, they explain their concerns about the unknown situation. And maybe they're being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
+    ],
+    "fail_text": [
             null,
-            "r_c was swept away in a flood."
-        ],
-        "antagonize_text": null,
-        "antagonize_fail_text": null
-    },
-    {
-        "patrol_id": "gen_disaster3",
-        "biome": "Any",
-        "season": "Any",
-        "tags": ["disaster", "gone"],
-        "intro_text": "Your patrol encounters a clearing where a lot of Twolegs linger.",
-        "success_text": ["They continue hunting undetected."],
-        "fail_text": ["The Twolegs notice the cats and trap them in their monsters. The cats on your patrol are never seen again."],
-        "decline_text": "Your patrol decides to hunt elsewhere.",
-        "chance_of_success": 60,
-        "exp": 10,
-        "win_skills": ["extremely smart"],
-        "min_cats": 1,
-        "max_cats": 6,
-        "history_text": [
             null,
-            "r_c was trapped by twolegs and taken away."
-        ],
-        "antagonize_text": null,
-        "antagonize_fail_text": null
-    }
+            "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered.",
+            null
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "This cat died from being ambushed by rogues."
+    ]
+},
+{
+    "patrol_id": "pln_bord_abandontwoleg2",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["fighting", "border", "new_cat", "disaster"],
+    "intro_text": "r_c hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
+    "decline_text": "Your patrol decides not to investigate.",
+    "chance_of_success": 10,
+    "exp": 30,
+    "success_text": [
+            "It's just an odd loner singing to themselves. r _cgreets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
+            "It's just an odd loner singing to themselves. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+            "s_c walks into an ambush by a group of rogues. It's only by the grace of Starclan that s_c has the fighting skill and confidence to escape, running for their life.",
+            "s_c has a bad feeling about this. And maybe they're being too cautious - but then they pick up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered.",
+            null
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "This cat died from being ambushed by rogues."
+    ]
+},
+{
+    "patrol_id": "pln_bord_flashflood1",
+    "biome": "plains",
+    "season": "newleaf",
+    "tags": ["border", "disaster", "respect", "trust"],
+    "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "The cats become wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay far from the riverbanks as the rain begins to pour around them.",
+            "It's not worth the risk - s_c convinces the patrol to head for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "This cat was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "pln_bord_flashflood2",
+    "biome": "plains",
+    "season": "greenleaf",
+    "tags": ["border", "disaster", "respect", "trust"],
+    "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "The cats become wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+            "It's not worth the risk - s_c convinces the patrol to head for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "This cat was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "pln_bord_flashflood3",
+    "biome": "plains",
+    "season": "leaffall",
+    "tags": ["border", "disaster", "respect", "trust"],
+    "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "The cats become wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment, and the patrol keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+            "It's not worth the risk - s_c convinces the patrol to head for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "This cat was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "pln_bord_flashflood4",
+    "biome": "plains",
+    "season": "newleaf",
+    "tags": ["border", "disaster"],
+    "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "r_c becomes wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+            "It's not worth the risk - s_c heads for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "r_c was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "pln_bord_flashflood5",
+    "biome": "plains",
+    "season": "greenleaf",
+    "tags": ["border", "disaster"],
+    "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "r_c becomes wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+            "It's not worth the risk - s_c heads for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "r_c was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "pln_bord_flashflood6",
+    "biome": "plains",
+    "season": "leaffall",
+    "tags": ["border", "disaster"],
+    "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "r_c becomes wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment and keeps going, but they make sure to stay on the high ground as the rain pours down around them.",
+            "It's not worth the risk - s_c heads for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "r_c was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "mtn_bord_flashflood1",
+    "biome": "mountainous",
+    "season": "newleaf",
+    "tags": ["border", "disaster", "respect", "trust"],
+    "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "The cats become wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment, and the patrol keeps going. They stick to the ridges, avoiding the mountain valleys as the rain begins to pour around them.",
+            "It's not worth the risk - s_c convinces the patrol to head for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "This cat was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "mtn_bord_flashflood2",
+    "biome": "mountainous",
+    "season": "greenleaf",
+    "tags": ["border", "disaster", "respect", "trust"],
+    "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "The cats become wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment, and the patrol keeps going. They stick to the ridges, avoiding the mountain valleys as the rain begins to pour around them.",
+            "It's not worth the risk - s_c convinces the patrol to head for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "This cat was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "mtn_bord_flashflood3",
+    "biome": "mountainous",
+    "season": "leaffall",
+    "tags": ["border", "disaster", "respect", "trust"],
+    "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "The cats become wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment, and the patrol keeps going. They stick to the ridges, avoiding the mountain valleys as the rain begins to pour around them.",
+            "It's not worth the risk - s_c convinces the patrol to head for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "This cat was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "mtn_bord_flashflood4",
+    "biome": "mountainous",
+    "season": "newleaf",
+    "tags": ["border", "disaster"],
+    "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "r_c becomes wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment and keeps going, but they make sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
+            "It's not worth the risk - s_c heads for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "r_c was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "mtn_bord_flashflood5",
+    "biome": "mountainous",
+    "season": "greenleaf",
+    "tags": ["border", "disaster"],
+    "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "r_c becomes wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment and keeps going, but they make sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
+            "It's not worth the risk - s_c heads for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "r_c was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "mtn_bord_flashflood6",
+    "biome": "mountainous",
+    "season": "leaf-fall",
+    "tags": ["border", "disaster"],
+    "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "r_c becomes wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment and keeps going, but they make sure to stay on the ridges and avoid the mountain valleys as the rain pours down around them.",
+            "It's not worth the risk - s_c heads for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "r_c was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "bch_bord_abandontwoleg1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["fighting", "border", "new_cat", "disaster"],
+    "intro_text": "Your patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
+    "decline_text": "Your patrol decides not to investigate.",
+    "chance_of_success": 40,
+    "exp": 30,
+    "success_text": [
+            "It's just an odd loner singing to themselves. The patrol greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
+            "It's just an odd loner singing to themselves. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+            "Your patrol walks into an ambush by a group of rogues. It's only by the grace of Starclan that s_c is there, fighting with the ferocity of Lionclan, the strength of Tigerclan, and the flexibility of Leopardclan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
+            "s_c signals for the patrol to stop. Carefully, quietly, they explain their concerns about the unknown situation. And maybe they're being too cautious - but then p_l picks up on the scent of strange cats around the Twoleg den. Forewarned, the patrol retreats to safety."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered.",
+            null
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "This cat died from being ambushed by rogues."
+    ]
+},
+{
+    "patrol_id": "bch_bord_abandontwoleg2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["fighting", "border", "new_cat", "disaster"],
+    "intro_text": "r_c hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
+    "decline_text": "Your patrol decides not to investigate.",
+    "chance_of_success": 10,
+    "exp": 30,
+    "success_text": [
+            "It's just an odd loner singing to themselves. r_c greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
+            "It's just an odd loner singing to themselves. When they see the patrol they invite them to sing too, but instead, p_l offers the somewhat battered looking and strange cat an introduction to c_n. It's got to be far less lonely than their current life.",
+            "s_c walks into an ambush by a group of rogues. It's only by the grace of Starclan that s_c has the fighting skill and confidence to escape, running for their life.",
+            "s_c has a bad feeling about this. And maybe they're being too cautious - but then they pick up on the scent of strange cats around the Twoleg den. Forewarned, s_c retreats to safety."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "Your patrol walks into an ambush by a group of rogues and everyone is slaughtered.",
+            null
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "This cat died from being ambushed by rogues."
+    ]
+},
+{
+    "patrol_id": "bch_bord_flashflood1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["border", "disaster", "respect", "trust"],
+    "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "The cats become wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment, and the patrol keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
+            "It's not worth the risk - s_c convinces the patrol to head for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "This cat was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "bch_bord_flashflood2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["border", "multi_deaths", "injury", "respect", "trust"],
+    "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "The cats become wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment, and the patrol keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
+            "It's not worth the risk - s_c convinces the patrol to head for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. Some manage to ride the waves, paddling for their lives, but many are lost forever.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "This cat was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "bch_bord_flashflood3",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["border", "death", "injury", "respect", "trust"],
+    "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "The cats become wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment, and the patrol keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
+            "It's not worth the risk - s_c convinces the patrol to head for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. p_l yowls out a warning, and most of the patrol are able to react quickly, striking out strongly for passing pieces of driftwood, but r_c doesn't make it, sinking beneath the water.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "r_c was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "bch_bord_flashflood4",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["border", "disaster"],
+    "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "r_c becomes wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment and keeps going, but they stick to the clifftops, avoiding the low beaches as the rain pours down around them.",
+            "It's not worth the risk - s_c heads for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "r_c was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "bch_bord_flashflood5",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["border", "death", "injury"],
+    "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "r_c becomes wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment, and keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
+            "It's not worth the risk - s_c heads for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. Somehow, gasping for air and paddling desperately, r_c is able to remember enough of their training to keep an eye out for driftwood, and sinks their claws into the first piece that's swept past them. It saves their life."
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "r_c was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "bch_bord_flashflood6",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["border", "injury"],
+    "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "r_c becomes wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment, and keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
+            "It's not worth the risk - s_c heads for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. With the little warning they have, they spot a branch being carried by the water, and strike out strongly for it. Exhausted and shivering, they nevertheless cling to safety as the floodwaters run their course."
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "r_c was drowned by floodwaters."
+    ]
+},
+{
+    "patrol_id": "bch_bord_flashflood7",
+    "biome": "beach",
+    "season": "leafbare",
+    "tags": ["border", "disaster", "big_prey", "respect", "trust", "platonic"],
+    "intro_text": "As the patrol crosses a beach, shivering with the cold, there's a creaking, rushing sound, like a wave - but out of sync with the ocean.",
+    "decline_text": "Your patrol scrambles back the way they came, fluffed up and panting.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "The cats leap forward, dashing to the other side of the beach and up onto the rocks. They make in in time to watch the beach get lost under a tide of water from inland.",
+            null,
+            "s_c shouts to get back! The patrol scrambles back the way they came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. Your cats pounce on the opportunity to scavenge.",
+            "s_c shrieks at the strange sound, paws digging into the sand as they turn and run for home. The rest of the patrol yowls at them to stop, running after them, but s_c is proven right when the beach disappears under a flood of water from inland. They've saved them all."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "The cats are in the middle of the beach when the flood hits them, freezing water rushing from inland, sweeping them straight out to sea to die in the cold ocean.",
+            null
+    ],
+    "win_skills": ["extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "This cat was swept out to sea by a flood."
+    ]
+},
+{
+    "patrol_id": "bch_bord_flashflood8",
+    "biome": "beach",
+    "season": "leafbare",
+    "tags": ["border", "death", "big_prey"],
+    "intro_text": "As r_c crosses a beach, shivering with the cold, there's a creaking, rushing sound, like a wave - but out of sync with the ocean.",
+    "decline_text": "r_c decides to head back early.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+            "r_c leaps forward, dashing to the other side of the beach and up onto the rocks. They make in in time to watch the beach get lost under a tide of water from inland.",
+            null,
+            "s_c scrambles back the way they came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
+            "s_c shrieks at the strange sound, paws digging into the sand as they turn and run for home. They are proven right when the beach disappears under a flood of water from inland. Their caution saved their life."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "r_c is in the middle of the beach when the flood hits them, freezing water rushing from inland, sweeping them straight out to sea to die in the cold ocean.",
+            null
+    ],
+    "win_skills": ["extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "r_c was swept out to sea by a flood."
+    ]
+}
+
 ]
