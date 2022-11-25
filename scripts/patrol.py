@@ -21,6 +21,7 @@ class Patrol():
         self.patrol_leader = None
         self.patrol_cats = []
         self.patrol_names = []
+        self.patrol_apprentices = []
         self.possible_patrol_leaders = []
         self.patrol_leader_name = None
         self.patrol_skills = []
@@ -47,6 +48,7 @@ class Patrol():
         self.patrol_skills.clear()
         self.patrol_statuses.clear()
         self.patrol_traits.clear()
+        self.patrol_apprentices.clear()
         self.patrol_total_experience = 0
         self.patrol_other_cats.clear()
         for cat in game.switches['current_patrol']:
@@ -63,6 +65,10 @@ class Patrol():
             self.patrol_leader = choice(self.possible_patrol_leaders)
         elif not self.possible_patrol_leaders:
             self.patrol_leader = choice(self.patrol_cats)
+        if 'apprentice' in self.patrol_statuses:
+            for cat in game.switches['current_patrol']:
+                if cat.status == 'apprentice':
+                    self.patrol_apprentices.append(cat)
         if len(self.patrol_cats) > 1:
             self.patrol_random_cat = choice(self.patrol_cats)
             for cat in self.patrol_cats:
@@ -80,6 +86,12 @@ class Patrol():
             pl_index = self.patrol_cats.index(self.patrol_leader)
             patrol_leader_name = str(self.patrol_names[pl_index])
             self.patrol_leader_name = str(patrol_leader_name)
+        if len(self.patrol_apprentices) != 0:
+            if len(self.patrol_apprentices) >= 1:
+                self.app1_name = self.patrol_apprentices[0].name
+            elif len(self.patrol_apprentices) >= 2:
+                self.app1_name = self.patrol_apprentices[0].name
+                self.app2_name = self.patrol_apprentices[1].name
 
         self.other_clan = choice(game.clan.all_clans)
         print(self.patrol_total_experience)
@@ -180,6 +192,8 @@ class Patrol():
                 possible_patrols.extend(self.generate_patrol_events(OTHER_CLAN_HOSTILE))
 
         # one last check
+        two_apprentices = False
+        status = False
         for patrol in possible_patrols:
             if patrol_size >= patrol.min_cats:
                 min_good = True
@@ -201,53 +215,65 @@ class Patrol():
                 correct_season = True
             else:
                 correct_season = False
-            if patrol.tags is not None:
-                if "apprentice" in patrol.tags:
-                    if "apprentice" not in self.patrol_statuses:
-                        status = False
-                    else:
-                        status = True
-                        st_index = self.patrol_statuses.index("apprentice")
-                        self.patrol_random_cat = self.patrol_cats[st_index]
-                elif "deputy" in patrol.tags:
-                    if "deputy" not in self.patrol_statuses:
-                        status = False
-                    else:
-                        status = True
-                        st_index = self.patrol_statuses.index("deputy")
-                        self.patrol_random_cat = self.patrol_cats[st_index]
-                elif "leader" in patrol.tags:
-                    if "leader" not in self.patrol_statuses:
-                        status = False
-                    else:
-                        status = True
-                        st_index = self.patrol_statuses.index("leader")
-                        self.patrol_random_cat = self.patrol_cats[st_index]
+            if "apprentice" in patrol.tags:
+                if "apprentice" not in self.patrol_statuses:
+                    status = False
                 else:
                     status = True
-
-            if game.clan.game_mode != 'classic':
-                if patrol_type == 'hunting' and "hunting" in patrol.tags:
-                    correct_button = True
-                elif patrol_type == 'hunting' and "general" in patrol.tags:
-                    correct_button = True
-                elif patrol_type == 'border' and "border" in patrol.tags:
-                    correct_button = True
-                elif patrol_type == 'border' and "general" in patrol.tags:
-                    correct_button = True
-                elif patrol_type == 'training' and "training" in patrol.tags:
-                    correct_button = True
-                elif patrol_type == 'training' and "general" in patrol.tags:
-                    correct_button = True
-                # elif patrol_type == 'med' and ["med", "general"] in patrol.tags:
-                #    correct_button
+                    st_index = self.patrol_statuses.index("apprentice")
+                    self.patrol_random_cat = self.patrol_cats[st_index]
+            elif "deputy" in patrol.tags:
+                if "deputy" not in self.patrol_statuses:
+                    status = False
                 else:
-                    correct_button = False
-                if max_good and min_good and correct_season and correct_biome and status and correct_button:
-                    final_patrols.append(patrol)
+                    status = True
+                    st_index = self.patrol_statuses.index("deputy")
+                    self.patrol_random_cat = self.patrol_cats[st_index]
+            elif "leader" in patrol.tags:
+                if "leader" not in self.patrol_statuses:
+                    status = False
+                else:
+                    status = True
+                    st_index = self.patrol_statuses.index("leader")
+                    self.patrol_random_cat = self.patrol_cats[st_index]
             else:
+                status = True
+
+            if "two_apprentices" in patrol.tags:
+                if len(self.patrol_apprentices) >= 2:
+                    two_apprentices = True
+                else:
+                    two_apprentices = False
+
+            if patrol_type == 'hunting' and "hunting" in patrol.tags:
+                correct_button = True
+            elif patrol_type == 'hunting' and "general" in patrol.tags:
+                correct_button = True
+            elif patrol_type == 'border' and "border" in patrol.tags:
+                correct_button = True
+            elif patrol_type == 'border' and "general" in patrol.tags:
+                correct_button = True
+            elif patrol_type == 'training' and "training" in patrol.tags:
+                correct_button = True
+            elif patrol_type == 'training' and "general" in patrol.tags:
+                correct_button = True
+            # elif patrol_type == 'med' and ["med", "general"] in patrol.tags:
+            #    correct_button
+            else:
+                correct_button = False
+
+            if game.clan.game_mode == 'classic':
                 if max_good and min_good and correct_season and correct_biome and status:
                     final_patrols.append(patrol)
+            else:
+                if "two_apprentices" in patrol.tags:
+                    if max_good and min_good and correct_season and correct_biome and status and correct_button and two_apprentices:
+                        final_patrols.append(patrol)
+                else:
+                    if max_good and min_good and correct_season and correct_biome and status and correct_button:
+                        final_patrols.append(patrol)
+
+                
         
         return final_patrols
         
