@@ -226,7 +226,11 @@ class StarClanScreen(Screens):
 
         verdana_big_light.text(f'Starclan', ('center', 32))
 
-        dead_cats = [game.clan.instructor]
+        if game.clan.instructor.df is False:
+            dead_cats = [game.clan.instructor]
+        else:
+            dead_cats = []
+
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and not the_cat.df:
@@ -651,7 +655,11 @@ class DFScreen(Screens):
 
         verdana_big_light.text(f'Dark Forest', ('center', 32))
 
-        dead_cats = []
+        if game.clan.instructor.df is True:
+            dead_cats = [game.clan.instructor]
+        else:
+            dead_cats = []
+
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and the_cat.df:

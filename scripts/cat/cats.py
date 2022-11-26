@@ -325,7 +325,11 @@ class Cat():
         for app in self.apprentice.copy():
             app.update_mentor()
         self.update_mentor()
-        game.clan.add_to_starclan(self)
+
+        if game.clan.instructor.df is False:
+            game.clan.add_to_starclan(self)
+        elif game.clan.instructor.df is True:
+            game.clan.add_to_darkforest(self)
 
     def status_change(self, new_status):
         self.status = new_status
