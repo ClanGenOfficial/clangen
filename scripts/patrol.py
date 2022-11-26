@@ -194,6 +194,7 @@ class Patrol():
                 possible_patrols.extend(self.generate_patrol_events(OTHER_CLAN_ALLIES))
             elif clan_hostile:
                 possible_patrols.extend(self.generate_patrol_events(OTHER_CLAN_HOSTILE))
+                
 
         # one last check
         two_apprentices = False
@@ -875,7 +876,7 @@ class Patrol():
         elif "multi_deaths" in self.patrol_event.tags:
             cats_dying = choice([2, 3, 4])
             if cats_dying > len(self.patrol_cats):
-                cats_dying = int(len(self.patrol_cats - 1))
+                cats_dying = int(len(self.patrol_cats) - 1)
             for d in range(0, cats_dying):
                 self.patrol_cats[d].die()
 
@@ -892,7 +893,7 @@ class Patrol():
         elif "multi_gone" in self.patrol_event.tags:
             cats_gone = choice([2, 3, 4])
             if cats_gone > len(self.patrol_cats):
-                cats_gone = int(len(self.patrol_cats - 1))
+                cats_gone = int(len(self.patrol_cats) - 1)
             for g in range(0, cats_gone):
                 self.patrol_cats[g].gone()
                 
