@@ -327,12 +327,13 @@ class Cat():
     def gone(self):
         if self.status == 'leader':
             self.outside = True
-            self.status = 'warrior'
-            game.clan.leader = None
+            game.clan.leader_lives = 1
+            game.clan.leader.outside = True
+
         elif self.status == 'deputy':
             self.outside = True
             self.status = 'warrior'
-            game.clan.deputy = None
+            game.clan.deputy.outside = True
         else:
             self.outside = True
 
