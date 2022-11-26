@@ -291,6 +291,13 @@ class Button():
                     cat_value.thought = "Is distraught after being sent to the Place of No Stars"
                     game.switches['cur_screen'] = 'dark forest screen'
                     update_sprite(Cat.all_cats[str(cat_value)])
+            if key == 'text'and value == 'Guide to SC':
+                cat_value = Cat.all_cats[str(values['cat_value'])]
+                if cat_value.dead:
+                    cat_value.df = False
+                    cat_value.thought = "Is truly relieved to walk the stars of Silverpelt"
+                    game.switches['cur_screen'] = 'starclan screen'
+                    update_sprite(Cat.all_cats[str(cat_value)])
             if key == 'text'and value == 'exile cat':
                 cat_value = Cat.all_cats[str(values['cat_value'])]
                 if not cat_value.dead and not cat_value.exiled:

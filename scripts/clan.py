@@ -174,6 +174,15 @@ class Clan():
             # The dead-value must be set to True before the cat can go to starclan
             self.starclan_cats.append(cat.ID)
 
+    def add_to_darkforest(self, cat):  # Same as add_cat
+        """ Places the dead cat into the dark forest. It should not be removed from the list of cats in the clan"""
+        if cat.ID in Cat.all_cats.keys(
+        ) and cat.dead and cat.df is False:
+            cat.df = True
+            cat.thought = "Is distraught after being sent to the Place of No Stars"
+            update_sprite(Cat.all_cats[str(cat)])
+            # The dead-value must be set to True before the cat can go to starclan
+
     def remove_cat(self, ID):  # ID is cat.ID
         """This function is for completely removing the cat from the game, it's not meant for a cat that's
         simply dead"""
