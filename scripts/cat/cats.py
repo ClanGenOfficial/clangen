@@ -753,15 +753,27 @@ class Cat():
             if name not in ILLNESSES:
                 print(f"WARNING: {name} is not in the illnesses collection.")
             return
-        
+
         illness = ILLNESSES[name]
+        mortality = illness["mortality"][self.age]
+        med_mortality = illness["medicine_mortality"][self.age]
+        if game.clan.game_mode == "cruel season":
+            mortality = int(mortality * 0.65)
+            med_mortality = int(med_mortality * 0.65)
+
+            # to prevent a illness gets no mortality, check and set it to 1 if needed
+            if illness["mortality"][self.age] and not mortality:
+                mortality = 1
+            if illness["medicine_mortality"][self.age] and not med_mortality:
+                med_mortality = 1
+
         self.illness = Illness(
             name,
-            mortality= illness["mortality"][self.age],
+            mortality= mortality,
             infectiousness = illness["infectiousness"], 
             duration = illness["duration"], 
             medicine_duration = illness["medicine_duration"], 
-            medicine_mortality = illness["medicine_mortality"][self.age],
+            medicine_mortality = med_mortality,
             risks = illness["risks"],
             event_triggered=event_triggered
         )
@@ -773,11 +785,19 @@ class Cat():
             return
 
         injury = INJURIES[name]
+        mortality = injury["mortality"][self.age]
+        if game.clan.game_mode == "cruel season":
+            mortality = int(mortality * 0.65)
+
+            # to prevent a injury gets no mortality, check and set it to 1 if needed
+            if injury["mortality"][self.age] and not mortality:
+                mortality = 1
+
         self.injury = Injury(
             name,
             duration = injury["duration"],
             medicine_duration = injury["medicine_duration"], 
-            mortality = injury["mortality"][self.age],
+            mortality = mortality,
             risks = injury["risks"],
             illness_infectiousness = injury["illness_infectiousness"],
             event_triggered=event_triggered

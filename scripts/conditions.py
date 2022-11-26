@@ -3,13 +3,6 @@ import math
 from scripts.game_structure.game_essentials import game
 
 
-# ---------------------------------------------------------------------------- #
-#                            !IMPORTANT INFORMATION!                           #
-#              currently not integrated, this are just the base classes        #
-#    me (Lixxis) will integrate them after tests are written and completed     #
-# ---------------------------------------------------------------------------- #
-
-
 def medical_cats_condition_fulfilled(all_cats, amount_per_med):
     fulfilled = False
 
