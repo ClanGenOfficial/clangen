@@ -36,6 +36,8 @@ class Patrol():
         self.patrol_random_cat = None
         self.patrol_other_cats = []
         self.patrol_stat_cat = None
+        self.app1_name = None
+        self.app2_name = None
         self.other_clan = None
         self.experience_levels = [
             'very low', 'low', 'average', 'high', 'master', 'max'
@@ -1043,12 +1045,10 @@ class Patrol():
                         new_cat.moons = 16
                 
             elif self.patrol_event.patrol_id == "gen_gen_newmed1":  # new med cat
-                new_status = 'medicine cat'
                 new_backstory = choice(['medicine_cat', 'disgraced', 'loner1', 'loner2'])
-                created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, kit=False, litter=False, relevant_cat=None,
+                created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, kit=False, litter=False, med=True,
                 backstory=new_backstory)
                 new_cat = created_cats[0]
-                new_cat.status == new_status
                 new_cat.skill = choice(['good healer', 'great healer', 'fantastic healer'])
                 # add litter if the kits text is rolled
                 if litter_choice == True:
@@ -1063,6 +1063,7 @@ class Patrol():
                        kittypet=False,
                        kit=False,
                        litter=False,
+                       med=False,
                        relevant_cat=None,
                        backstory=None,
                        other_clan=None):
@@ -1091,6 +1092,8 @@ class Patrol():
         if kittypet:
             if choice([1, 2]) == 1:
                 accessory = choice(collars)
+        if med:
+            status = "medicine cat"
 
         amount = choice([1, 1, 2, 2, 2, 3]) if litter else 1
         created_cats = []
