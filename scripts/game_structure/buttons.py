@@ -194,6 +194,7 @@ class Button():
             elif text == 'Exile Cat':
                 # it is the leader, manage all the things
                 current_cat = Cat.all_cats[cat_value]
+                current_cat.exiled = True
                 if current_cat.status == 'leader':
                     game.clan.leader.exiled = True
                     game.clan.leader_lives = 1
@@ -201,8 +202,7 @@ class Button():
                     game.clan.deputy.exiled = True
                     game.clan.deputy = None
                 if current_cat.status == 'apprentice':
-                   current_cat.update_mentor()
-                current_cat.exiled = True
+                    current_cat.update_mentor()
                 Cat.other_cats[cat_value] = current_cat
             elif text == 'Close Borders':
                     game.clan.closed_borders = True
@@ -246,6 +246,8 @@ class Button():
                     cat_value.no_kits = False
                 elif text == 'Exile Cat':
                     Cat.all_cats[cat_value].exiled = True
+                    if Cat.all_cats[cat_value].status == 'apprentice':
+                        Cat.all_cats[cat_value].update_mentor()
                     Cat.other_cats[cat_value] = Cat.all_cats[
                         cat_value]
                     game.switches['cur_screen'] = 'other screen'
@@ -305,6 +307,8 @@ class Button():
                 cat_value = Cat.all_cats[str(values['cat_value'])]
                 if not cat_value.dead and not cat_value.exiled:
                     cat_value.exiled = True
+                    if cat_value.status == 'apprentice':
+                        cat_value.update_mentor()
                     cat_value.thought = "Is shocked that they have been exiled"
                     game.switches['cur_screen'] = 'other screen'
             if cat_value is None:
