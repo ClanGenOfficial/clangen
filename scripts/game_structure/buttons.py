@@ -200,6 +200,7 @@ class Button():
                     game.clan.deputy.exiled = True
                     game.clan.deputy = None
                 Cat.all_cats[cat_value].exiled = True
+                Cat.all_cats[cat_value].outside = True
                 Cat.outside_cats[cat_value] = Cat.all_cats[cat_value]
             elif text == 'Close Borders':
                     game.clan.closed_borders = True
@@ -243,6 +244,7 @@ class Button():
                     cat_value.no_kits = False
                 elif text == 'Exile Cat':
                     Cat.all_cats[cat_value].exiled = True
+                    Cat.all_cats[cat_value].outside = True
                     Cat.outside_cats[cat_value] = Cat.all_cats[
                         cat_value]
                     game.switches['cur_screen'] = 'other screen'
@@ -295,6 +297,7 @@ class Button():
                 cat_value = Cat.all_cats[str(values['cat_value'])]
                 if not cat_value.dead and not cat_value.exiled:
                     cat_value.exiled = True
+                    cat_value.outside = True
                     cat_value.thought = "Is shocked that they have been exiled"
                     game.switches['cur_screen'] = 'other screen'
             if cat_value is None:
