@@ -340,13 +340,15 @@ class Cat():
             self.update_mentor()
         elif self.status == 'medicine cat apprentice':
             self.update_med_mentor()
+
         # updates skill
         if self.status == 'warrior':
             self.update_mentor()
+            self.update_skill()
         elif self.status == 'medicine cat':
             self.update_med_mentor()
-        else:
-            self.skill = self.skill
+            self.update_skill()
+
         if self.status == 'elder':
             self.skill = choice(self.elder_skills)
 
