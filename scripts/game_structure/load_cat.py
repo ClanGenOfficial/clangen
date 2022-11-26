@@ -82,6 +82,7 @@ def json_load():
 
     # replace cat ids with cat objects and add other needed variables
     for cat in all_cats:
+        cat.load_conditions()
         # load the relationships
         if not cat.dead:
             game.switches[

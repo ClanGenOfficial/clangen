@@ -1,16 +1,316 @@
 {
-    "greencough": {
-        "mortality": 100,
-        "medicine_mortality": 200,
+    "chills": {
+        "mortality": {
+            "kitten": 25,
+            "adolescent": 45,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 35
+        },
+        "medicine_mortality": {
+            "kitten": 50,
+            "adolescent": 70,
+            "young adult": 120,
+            "adult": 120,
+            "senior adult": 120,
+            "elder": 70
+        },
         "duration": 2,
         "medicine_duration": 1,
-        "infectiousness": 6
+        "infectiousness": 20,
+        "risks": [
+            {
+                "name": "greencough",
+                "chance": 5
+            },
+            {
+                "name": "whitecough",
+                "chance": 3
+            },
+            {
+                "name": "yellowcough",
+                "chance": 8
+            }
+        ]
     },
-    "infection": {
-        "mortality": 30,
-        "medicine_mortality": 150,
+    "diarrhea": {
+        "mortality": {
+            "kitten": 3,
+            "adolescent": 10,
+            "young adult": 15,
+            "adult": 25,
+            "senior adult": 15,
+            "elder": 8
+        },
+        "medicine_mortality": {
+            "kitten": 10,
+            "adolescent": 15,
+            "young adult": 30,
+            "adult": 45,
+            "senior adult": 30,
+            "elder": 13
+        },
+        "duration": 2,
+        "medicine_duration": 1,
+        "infectiousness": 70,
+        "risks": []
+    },
+    "fleas": {
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "medicine_mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "duration": 2,
+        "medicine_duration": 1,
+        "infectiousness": 3,
+        "risks": []
+    },
+    "greencough": {
+        "mortality": {
+            "kitten": 3,
+            "adolescent": 8,
+            "young adult": 10,
+            "adult": 15,
+            "senior adult": 10,
+            "elder": 3
+        },
+        "medicine_mortality": {
+            "kitten": 10,
+            "adolescent": 15,
+            "young adult": 25,
+            "adult": 30,
+            "senior adult": 25,
+            "elder": 10
+        },
+        "duration": 2,
+        "medicine_duration": 1,
+        "infectiousness": 5,
+        "risks": [
+            {
+                "name": "yellowcough",
+                "chance": 15
+            }
+        ]
+    },
+    "kitten-cough": {
+        "mortality": {
+            "kitten": 2,
+            "adolescent": 20,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 5
+        },
+        "medicine_mortality": {
+            "kitten": 8,
+            "adolescent": 60,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 10
+        },
+        "duration": 2,
+        "medicine_duration": 1,
+        "infectiousness": 6,
+        "risks": [
+            {
+                "name": "whitecough",
+                "chance": 15
+            }
+        ]
+    },
+    "infected wound": {
+        "mortality": {
+            "kitten": 5,
+            "adolescent": 8,
+            "young adult": 10,
+            "adult": 15,
+            "senior adult": 10,
+            "elder": 8
+        },
+        "medicine_mortality": {
+            "kitten": 8,
+            "adolescent": 13,
+            "young adult": 15,
+            "adult": 20,
+            "senior adult": 15,
+            "elder": 13
+        },
         "duration": 1,
         "medicine_duration": 1,
-        "infectiousness": 0
+        "infectiousness": 0,
+        "risks": [
+            {
+                "name": "festering wounds",
+                "chance": 10
+            }
+        ]
+    },
+    "carrionplace disease": {
+        "mortality": {
+            "kitten": 2,
+            "adolescent": 5,
+            "young adult": 8,
+            "adult": 10,
+            "senior adult": 8,
+            "elder": 5
+        },
+        "medicine_mortality": {
+            "kitten": 4,
+            "adolescent": 10,
+            "young adult": 13,
+            "adult": 17,
+            "senior adult": 13,
+            "elder": 10
+        },
+        "duration": 2,
+        "medicine_duration": 1,
+        "infectiousness": 0,
+        "risks": []
+    },
+    "redcough": {
+        "mortality": {
+            "kitten": 2,
+            "adolescent": 5,
+            "young adult": 8,
+            "adult": 10,
+            "senior adult": 8,
+            "elder": 5
+        },
+        "medicine_mortality": {
+            "kitten": 4,
+            "adolescent": 10,
+            "young adult": 15,
+            "adult": 20,
+            "senior adult": 15,
+            "elder": 8
+        },
+        "duration": 2,
+        "medicine_duration": 1,
+        "infectiousness": 15,
+        "risks": []
+    },
+    "running nose": {
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "medicine_mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "duration": 3,
+        "medicine_duration": 1,
+        "infectiousness": 20,
+        "risks": [
+            {
+                "name": "greencough",
+                "chance": 5
+            },
+            {
+                "name": "whitecough",
+                "chance": 3
+            },
+            {
+                "name": "yellowcough",
+                "chance": 8
+            }
+        ]
+    },
+    "whitecough": {
+        "mortality": {
+            "kitten": 5,
+            "adolescent": 20,
+            "young adult": 25,
+            "adult": 30,
+            "senior adult": 25,
+            "elder": 8
+        },
+        "medicine_mortality": {
+            "kitten": 10,
+            "adolescent": 60,
+            "young adult": 70,
+            "adult": 70,
+            "senior adult": 70,
+            "elder": 15
+        },
+        "duration": 2,
+        "medicine_duration": 1,
+        "infectiousness": 6,
+        "risks": [
+            {
+                "name": "greencough",
+                "chance": 10
+            },
+            {
+                "name": "yellowcough",
+                "chance": 15
+            }
+        ]
+    },
+    "yellowcough": {
+        "mortality": {
+            "kitten": 3,
+            "adolescent": 10,
+            "young adult": 15,
+            "adult": 15,
+            "senior adult": 15,
+            "elder": 3
+        },
+        "medicine_mortality": {
+            "kitten": 10,
+            "adolescent": 30,
+            "young adult": 40,
+            "adult": 50,
+            "senior adult": 40,
+            "elder": 10
+        },
+        "duration": 2,
+        "medicine_duration": 1,
+        "infectiousness": 6,
+        "risks": []
+    },
+    "festering wounds": {
+        "mortality": {
+            "kitten": 2,
+            "adolescent": 3,
+            "young adult": 5,
+            "adult": 8,
+            "senior adult": 5,
+            "elder": 2
+        },
+        "medicine_mortality": {
+            "kitten": 3,
+            "adolescent": 5,
+            "young adult": 8,
+            "adult": 10,
+            "senior adult": 8,
+            "elder": 3
+        },
+        "duration": 2,
+        "medicine_duration": 1,
+        "infectiousness": 0,
+        "risks": []
     }
 }

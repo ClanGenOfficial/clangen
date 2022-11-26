@@ -1,0 +1,58 @@
+{
+    "bite-wound": {
+        "r_c got bitten by a snake.": 2,
+        "r_c fought a fox, but got hardly injured.": 2,
+        "r_c fought a dog, but got hardly injured.": 2,
+        "r_c fought an otter, but got hardly injured.": 1,
+        "r_c fought a rat, but got hardly injured.": 2
+    },
+    "broken bone": {
+        "r_c was grabbed and dropped by an eagle, and somehow survive.": 1,
+        "r_c fought a fox, but got hardly injured.": 2,
+        "r_c fought a dog, but got hardly injured.": 2
+    },
+    "bruises": {
+        "r_c fought a hawk, but got hardly injured.": 2,
+        "r_c fought a hawk and got injured.": 3,
+        "r_c defended a clanmate from a fox and got injured.": 3,
+        "r_c defended a clanmate from a rogue and got injured.": 4,
+        "r_c defended a clanmate from a dog and got injured.": 2,
+        "r_c defended a clanmate from a otter and got injured.": 1,
+        "r_c defended a clanmate from a rat and got injured.": 3,
+        "r_c defended a clanmate from a hawk and got injured.": 2
+    },
+    "claw-wound": {
+        "r_c got their paw stuck in a twoleg trap, but luckily managed to get out.": 1,
+        "r_c fought a rogue and got injured.": 2,
+        "r_c fought a fox, but got hardly injured.": 2,
+        "r_c fought a dog, but got hardly injured.": 2,
+        "r_c fought an otter, but got hardly injured.": 1,
+        "r_c defended the territory.": 2,
+        "r_c's paws slipped on some rocks and they got injured.": 2
+    },
+    "dislocated joint": {
+        "r_c missteps and slipped from a rock.": 1
+    },
+    "sprain": {
+        "r_c after they jumped from a rock, they didn't landed correct.": 1,
+        "r_c got their paw stuck in a twoleg trap, but luckily managed to get out.": 1
+    },
+    "cracked pads": {
+        "r_c helped to strengthen the camp walls.": 1
+    },
+    "joint pain": {
+        "r_c's paws slipped on some rocks and they got injured.": 1
+    },
+    "scrapes": {
+        "r_c fought a rogue and got injured.": 2,
+        "r_c fought a fox and got injured.": 2,
+        "r_c fought a dog and got injured.": 1,
+        "r_c fought a rat and got injured.": 3
+    },
+    "torn ear": {
+        "r_c was wandering through some dense shrubs and fell a short, piercing pain in the ear.": 1
+    },
+    "torn pelt": {
+        "r_c was wandering through some dense shrubs and fell the tore on their pelt.": 1
+    }
+}
