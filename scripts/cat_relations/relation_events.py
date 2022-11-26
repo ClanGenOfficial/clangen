@@ -453,9 +453,9 @@ class Relation_Events():
 
         # check for mate
         mate = None
-        if cat.mate is not None:
-            if cat.mate in Cat.all_cats:
-                mate = Cat.all_cats[cat.mate]
+        if cat.mate:
+            if cat.mate in cat.all_cats:
+                mate = cat.all_cats[cat.mate]
             else:
                 game.cur_events_list.append(
                     f"WARNING: {str(cat.name)}  has an invalid mate # {str(cat.mate)}. This has been unset.")

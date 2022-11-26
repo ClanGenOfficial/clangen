@@ -138,7 +138,25 @@ class CanHaveKits(unittest.TestCase):
 
         # then
         self.assertFalse(relation_events.check_if_can_have_kits(cat,unknown_parent_setting=True,no_gendered_breeding=False))
-    
+
+    def test_same_sex(self):
+        # given
+        relation_events = Relation_Events()
+        cat1 = Cat(moons=20)
+        cat1.gender = 'male'
+        cat2 = Cat(moons=20)
+        cat2.gender = 'male'
+        
+        cat1.mate = cat2.ID
+        cat2.mate = cat1.ID
+
+        # then
+        self.assertFalse(relation_events.check_if_can_have_kits(cat1,unknown_parent_setting=False,no_gendered_breeding=False))
+        self.assertFalse(relation_events.check_if_can_have_kits(cat2,unknown_parent_setting=False,no_gendered_breeding=False))
+        self.assertTrue(relation_events.check_if_can_have_kits(cat1,unknown_parent_setting=False,no_gendered_breeding=True))
+        self.assertTrue(relation_events.check_if_can_have_kits(cat2,unknown_parent_setting=False,no_gendered_breeding=True))
+
+
 
 class Pregnancy(unittest.TestCase):
     @patch('scripts.cat_relations.relation_events.Relation_Events.get_kits_chance')

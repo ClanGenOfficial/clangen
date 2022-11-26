@@ -385,3 +385,21 @@ class TestStatusChange(unittest.TestCase):
         self.assertIn(apprentice.skill, apprentice.skills)
         self.assertEqual(apprentice.mentor, None)
         self.assertFalse(mentor.apprentice)
+
+class TestUpdateMentor(unittest.TestCase):
+    def test_exile_apprentice(self):
+        # given
+        app = Cat(moons=7)
+        mentor = Cat(moons=20)
+        app.mentor = mentor
+        mentor.apprentice.append(app)
+
+        # when
+        self.assertTrue(app in mentor.apprentice and app not in mentor.former_apprentices)
+        self.assertTrue(app.mentor is mentor)
+        app.exiled = True
+        app.update_mentor()
+
+        # then
+        self.assertTrue(app not in mentor.apprentice and app in mentor.former_apprentices)
+        self.assertTrue(app.mentor is None)
