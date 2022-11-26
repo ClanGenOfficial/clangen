@@ -209,7 +209,7 @@
         "patrol_id": "gen_hunt_twolegs2",
         "biome": "Any",
         "season": "Any",
-        "tags": ["gone", "hunting", "death"],
+        "tags": ["gone", "hunting"],
         "intro_text": "The smell of food lures r_c close to a Twoleg trap.",
         "success_text": [
             "r_c grabs the food before the trap goes off.",
