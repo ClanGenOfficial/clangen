@@ -49,8 +49,8 @@ def draw_back(x_value, y_value):
                                   text='Back',
                                   size=(105, 30),
                                   cur_screen='dark forest screen',
-                                  cat_value = the_cat,
-                                  df = True,
+                                  cat_value=the_cat,
+                                  df=True,
                                   profile_tab_group=None,
                                   hotkey=[0])
     else:
@@ -248,16 +248,22 @@ class ProfileScreen(Screens):
         draw_next_prev_cat_buttons(the_cat)
 
         # use these attributes to create differing profiles for starclan cats etc.
-        is_instructor = False
-        if the_cat.dead and game.clan.instructor.ID == the_cat.ID:
-            is_instructor = True
+        is_sc_instructor = False
+        is_df_instructor = False
+        if the_cat.dead and game.clan.instructor.ID == the_cat.ID and the_cat.df is False:
+            is_sc_instructor = True
+        elif the_cat.dead and game.clan.instructor.ID == the_cat.ID and the_cat.df is True:
+            is_df_instructor = True
+
 
         # Info in string
         cat_name = str(the_cat.name)  # name
         if the_cat.dead:
             cat_name += " (dead)"  # A dead cat will have the (dead) sign next to their name
-        if is_instructor:
+        if is_sc_instructor:
             the_cat.thought = "Hello. I am here to guide the dead cats of " + game.clan.name + "Clan into StarClan."
+        if is_df_instructor:
+            the_cat.thought = "Hello. I am here to pull the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
         # ---------------------------------------------------------------------------- #
         #                                   layout                                     #
@@ -1251,17 +1257,15 @@ class ProfileScreen(Screens):
                     buttons.draw_image_button((578, 450),
                                               button_name='exile_df',
                                               text='Exile to DF',
-                                              available=True,
                                               cat_value=the_cat,
                                               size=(172, 46),
                                               )
                 else:
                     buttons.draw_image_button((578, 450),
-                                              button_name='exile_df',
-                                              text='Exile to DF',
-                                              available=False,
+                                              button_name='guide_sc',
+                                              text='Guide to SC',
                                               cat_value=the_cat,
-                                              size=(172, 46),
+                                              size=(172, 36),
                                               )
 
 

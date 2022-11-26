@@ -174,32 +174,22 @@ def draw_back_and_save():
 
 # ON / OFF BUTTONS
 def draw_on_off(y_value, setting):
-    x_value = 120
+    x_value = 140
     if game.settings[setting] is True:
         buttons.draw_image_button((x_value, y_value),
-                                  button_name='on',
-                                  size=(46, 34),
+                                  button_name='checkmark_on',
+                                  size=(34, 34),
                                   setting=setting
                                   )
-        buttons.draw_image_button((x_value + 46, y_value),
-                                  button_name='off',
-                                  size=(46, 34),
-                                  setting=setting,
-                                  available=False
-                                  )
+
 
     if game.settings[setting] is False:
         buttons.draw_image_button((x_value, y_value),
-                                  button_name='on',
-                                  size=(46, 34),
-                                  setting=setting,
-                                  available=False
-                                  )
-        buttons.draw_image_button((x_value + 46, y_value),
-                                  button_name='off',
-                                  size=(46, 34),
+                                  button_name='checkmark_off',
+                                  size=(34, 34),
                                   setting=setting,
                                   )
+
 
 
 class SettingsScreen(Screens):
@@ -216,7 +206,7 @@ class SettingsScreen(Screens):
         verdana.text("Change the settings of your game here.", ('center', 160))
 
         # Setting names
-        x_value = 225
+        x_value = 190
         verdana.text("Dark mode", (x_value, 226))
         verdana.text("Enable clan page background", (x_value, 265))
         verdana.text("Automatically save every five moons", (x_value, 304))
@@ -257,7 +247,7 @@ class RelationshipSettingsScreen(Screens):
                      ('center', 160))
 
         # Setting names
-        x_value = 225
+        x_value = 190
         verdana.text("Randomize relationship values, when creating clan", (x_value, 226))
         verdana.text("Allow affairs and mate switches based on relationships", (x_value, 265))
         verdana.text("Allow couples to have kittens despite same-sex status (they always can adopt)", (x_value, 304))

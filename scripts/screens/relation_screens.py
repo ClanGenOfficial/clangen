@@ -850,69 +850,43 @@ class RelationshipScreen(Screens):
         # VIEW TOGGLES
         verdana_mid_dark.text(
             f"Show Dead",
-            (70, 513))
+            (110, 513))
 
 
         if game.settings['show dead relation'] is True:
-            buttons.draw_image_button((169, 505),
-                                      button_name='on',
-                                      size=(46, 34),
+            buttons.draw_image_button((70, 505),
+                                      button_name='checkmark_on',
+                                      size=(34, 34),
                                       text='switch',
                                       setting='show dead relation',
-                                      )
-            buttons.draw_image_button((215, 505),
-                                      button_name='off',
-                                      size=(46, 34),
-                                      text='switch',
-                                      setting='show dead relation',
-                                      available=False
                                       )
 
+
         if game.settings['show dead relation'] is False:
-            buttons.draw_image_button((169, 505),
-                                      button_name='on',
-                                      size=(46, 34),
-                                      text='switch',
-                                      setting='show dead relation',
-                                      available=False
-                                      )
-            buttons.draw_image_button((215, 505),
-                                      button_name='off',
-                                      size=(46, 34),
+            buttons.draw_image_button((70, 505),
+                                      button_name='checkmark_off',
+                                      size=(34, 34),
                                       text='switch',
                                       setting='show dead relation',
                                       )
 
         verdana_mid_dark.text(
             f"Show Empty",
-            (70, 558))
+            (110, 558))
 
         if game.settings['show empty relation'] is True:
-            buttons.draw_image_button((169, 550),
-                                      button_name='on',
-                                      size=(46, 34),
+            buttons.draw_image_button((70, 550),
+                                      button_name='checkmark_on',
+                                      size=(34, 34),
                                       text='switch',
                                       setting='show empty relation'
                                       )
-            buttons.draw_image_button((215, 550),
-                                      button_name='off',
-                                      size=(46, 34),
-                                      text='switch',
-                                      setting='show empty relation',
-                                      available=False
-                                      )
+
 
         if game.settings['show empty relation'] is False:
-            buttons.draw_image_button((169, 550),
-                                      button_name='on',
-                                      size=(46, 34),
-                                      text='switch',
-                                      setting='show empty relation',
-                                      available=False
-                                      )
-            buttons.draw_image_button((215, 550),
-                                      button_name='off',
-                                      size=(46, 34),
+            buttons.draw_image_button((70, 550),
+                                      button_name='checkmark_off',
+                                      size=(34, 34),
                                       text='switch',
                                       setting='show empty relation',
                                       )
