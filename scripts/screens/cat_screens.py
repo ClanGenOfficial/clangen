@@ -49,8 +49,8 @@ def draw_back(x_value, y_value):
                                   text='Back',
                                   size=(105, 30),
                                   cur_screen='dark forest screen',
-                                  cat_value = the_cat,
-                                  df = True,
+                                  cat_value=the_cat,
+                                  df=True,
                                   profile_tab_group=None,
                                   hotkey=[0])
     else:
@@ -248,16 +248,22 @@ class ProfileScreen(Screens):
         draw_next_prev_cat_buttons(the_cat)
 
         # use these attributes to create differing profiles for starclan cats etc.
-        is_instructor = False
-        if the_cat.dead and game.clan.instructor.ID == the_cat.ID:
-            is_instructor = True
+        is_sc_instructor = False
+        is_df_instructor = False
+        if the_cat.dead and game.clan.instructor.ID == the_cat.ID and the_cat.df is False:
+            is_sc_instructor = True
+        elif the_cat.dead and game.clan.instructor.ID == the_cat.ID and the_cat.df is True:
+            is_df_instructor = True
+
 
         # Info in string
         cat_name = str(the_cat.name)  # name
         if the_cat.dead:
             cat_name += " (dead)"  # A dead cat will have the (dead) sign next to their name
-        if is_instructor:
+        if is_sc_instructor:
             the_cat.thought = "Hello. I am here to guide the dead cats of " + game.clan.name + "Clan into StarClan."
+        if is_df_instructor:
+            the_cat.thought = "Hello. I am here to pull the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
         # ---------------------------------------------------------------------------- #
         #                                   layout                                     #
@@ -618,25 +624,26 @@ class ProfileScreen(Screens):
 
                 # adjust and append scar events to history
                 if the_cat.scar_event:
+                    scar_text = the_cat.scar_event
                     for x in range(len(the_cat.scar_event)):
-                        the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(' is ', ' was ', 1)
-                        the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(' loses ', ' lost ')
-                        the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(' forces ', ' forced ')
+                        scar_text[x] = str(the_cat.scar_event[x]).replace(' is ', ' was ', 1)
+                        scar_text[x] = str(the_cat.scar_event[x]).replace(' loses ', ' lost ')
+                        scar_text[x] = str(the_cat.scar_event[x]).replace(' forces ', ' forced ')
 
                         not_scarred = ['wounded', 'injured', 'battered', 'hurt', 'punished']
                         for y in not_scarred:
-                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(f' got {y} ', ' was scarred ')
-                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(y, ' scarred ')
+                            scar_text[x] = str(the_cat.scar_event[x]).replace(f' got {y} ', ' was scarred ')
+                            scar_text[x] = str(the_cat.scar_event[x]).replace(y, ' scarred ')
                             break
                         if x == 0:
-                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(f'{the_cat.name} ', 'This cat ', 1)
+                            scar_text[x] = str(the_cat.scar_event[x]).replace(f'{the_cat.name} ', 'This cat ', 1)
                         elif x == 1:
-                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(f'{the_cat.name} was ', 'They were also ', 1)
-                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(str(the_cat.name), 'They also', 1)
+                            scar_text[x] = str(the_cat.scar_event[x]).replace(f'{the_cat.name} was ', 'They were also ', 1)
+                            scar_text[x] = str(the_cat.scar_event[x]).replace(str(the_cat.name), 'They also', 1)
                         elif x >= 3:
-                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(f'{the_cat.name} was ', 'Then they were ', 1)
-                            the_cat.scar_event[x] = str(the_cat.scar_event[x]).replace(str(the_cat.name), 'Then they', 1)
-                    scar_history = ' '.join(the_cat.scar_event)
+                            scar_text[x] = str(the_cat.scar_event[x]).replace(f'{the_cat.name} was ', 'Then they were ', 1)
+                            scar_text[x] = str(the_cat.scar_event[x]).replace(str(the_cat.name), 'Then they', 1)
+                    scar_history = ' '.join(scar_text)
                     life_history.append(scar_history)
 
                 # join together history list with line breaks
@@ -662,9 +669,9 @@ class ProfileScreen(Screens):
 
             # check if cat has any mentor influence, else assign None
             if len(the_cat.mentor_influence) >= 1:
-                influenced_trait = str(the_cat.mentor_influence[0]).casefold()
+                influenced_trait = str(the_cat.mentor_influence[0])
                 if len(the_cat.mentor_influence) >= 2:
-                    influenced_skill = str(the_cat.mentor_influence[1]).casefold()
+                    influenced_skill = str(the_cat.mentor_influence[1])
                 else:
                     influenced_skill = None
             else:
@@ -673,9 +680,9 @@ class ProfileScreen(Screens):
                 influenced_skill = None
 
             # if they did have mentor influence, check if skill or trait influence actually happened and assign None
-            if influenced_skill == 'none':
+            if influenced_skill in ['None', 'none']:
                 influenced_skill = None
-            if influenced_trait == 'none':
+            if influenced_trait in ['None', 'none']:
                 influenced_trait = None
 
             if influenced_skill is not None or influenced_trait is not None:
@@ -698,8 +705,13 @@ class ProfileScreen(Screens):
 
                 # if cat had mentor influence then write history text for those influences and append to history
                     # assign proper grammar to skills
+                vowels = ['e', 'a', 'i', 'o', 'u']
                 if influenced_skill in Cat.skill_groups.get('special'):
                     adjust_skill = f'unlock their abilities as a {influenced_skill}'
+                    for y in vowels:
+                        if influenced_skill.startswith(y):
+                            adjust_skill = adjust_skill.replace(' a ', ' an ')
+                            break
                     influenced_skill = adjust_skill
                 elif influenced_skill in Cat.skill_groups.get('star'):
                     adjust_skill = f'grow a {influenced_skill}'
@@ -712,7 +724,11 @@ class ProfileScreen(Screens):
                     become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak']
                     for x in become_group:
                         if influenced_skill in Cat.skill_groups.get(x):
-                            adjust_skill = f'become a(n) {influenced_skill}'
+                            adjust_skill = f'become a {influenced_skill}'
+                            for y in vowels:
+                                if influenced_skill.startswith(y):
+                                    adjust_skill = adjust_skill.replace(' a ', ' an ')
+                                    break
                             influenced_skill = adjust_skill
                             break
 
@@ -1227,17 +1243,15 @@ class ProfileScreen(Screens):
                     buttons.draw_image_button((578, 450),
                                               button_name='exile_df',
                                               text='Exile to DF',
-                                              available=True,
                                               cat_value=the_cat,
                                               size=(172, 46),
                                               )
                 else:
                     buttons.draw_image_button((578, 450),
-                                              button_name='exile_df',
-                                              text='Exile to DF',
-                                              available=False,
+                                              button_name='guide_sc',
+                                              text='Guide to SC',
                                               cat_value=the_cat,
-                                              size=(172, 46),
+                                              size=(172, 36),
                                               )
 
 

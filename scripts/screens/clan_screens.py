@@ -11,6 +11,13 @@ from scripts.game_structure.buttons import *
 
 
 class ClanScreen(Screens):
+    leader_den = image_cache.load_image("resources/images/leader_den.png").convert_alpha()
+    med_den = image_cache.load_image("resources/images/med_den.png").convert_alpha()
+    app_den = image_cache.load_image("resources/images/app_den.png").convert_alpha()
+    elder_den = image_cache.load_image("resources/images/elder_den.png").convert_alpha()
+    warrior_den = image_cache.load_image("resources/images/warrior_den.png").convert_alpha()
+    nursery = image_cache.load_image("resources/images/nursery_den.png").convert_alpha()
+    clearing = image_cache.load_image("resources/images/clearing.png").convert_alpha()
 
     def on_use(self):
         if game.settings['backgrounds']:
@@ -25,14 +32,35 @@ class ClanScreen(Screens):
 
         draw_clan_name()
 
-        verdana.text("Leader\'s Den", game.clan.cur_layout['leader den'])
-        verdana.text('Medicine Cat Den', game.clan.cur_layout['medicine den'])
-        verdana.text('Nursery', game.clan.cur_layout['nursery'])
-        verdana.text('Clearing', game.clan.cur_layout['clearing'])
-        verdana.text("Apprentices\' Den",
-                     game.clan.cur_layout['apprentice den'])
-        verdana.text("Warriors\' Den", game.clan.cur_layout['warrior den'])
-        verdana.text("Elders\' Den", game.clan.cur_layout['elder den'])
+        x_value = 25
+        y_value = 641
+
+        verdana.text('Show Den Labels', (x_value + 35, y_value + 6))
+
+        if game.settings['den labels'] is True:
+            buttons.draw_image_button((x_value, y_value),
+                                      button_name='checkmark_on',
+                                      size=(34, 34),
+                                      setting='den labels'
+                                      )
+
+        if game.settings['den labels'] is False:
+            buttons.draw_image_button((x_value, y_value),
+                                      button_name='checkmark_off',
+                                      size=(34, 34),
+                                      setting='den labels',
+                                      )
+
+        if game.settings['den labels'] is True:
+            screen.blit(self.leader_den, (344, 94))
+            screen.blit(self.med_den, (80, 200))
+            screen.blit(self.app_den, (82, 430))
+            screen.blit(self.warrior_den, (590, 430))
+            screen.blit(self.elder_den, (348, 490))
+            screen.blit(self.nursery, (620, 200))
+            screen.blit(self.clearing, (360, 290))
+
+
         hotkey_assign_1 = 1
         hotkey_assign_2 = 2
         for x in game.clan.clan_cats:
@@ -198,7 +226,11 @@ class StarClanScreen(Screens):
 
         verdana_big_light.text(f'Starclan', ('center', 32))
 
-        dead_cats = [game.clan.instructor]
+        if game.clan.instructor.df is False:
+            dead_cats = [game.clan.instructor]
+        else:
+            dead_cats = []
+
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and not the_cat.df:
@@ -623,7 +655,11 @@ class DFScreen(Screens):
 
         verdana_big_light.text(f'Dark Forest', ('center', 32))
 
-        dead_cats = []
+        if game.clan.instructor.df is True:
+            dead_cats = [game.clan.instructor]
+        else:
+            dead_cats = []
+
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and the_cat.df:
