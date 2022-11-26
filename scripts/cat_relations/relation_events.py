@@ -127,8 +127,9 @@ class Relation_Events():
                     self.handle_new_mates(cat_from, cat_to)
 
             # breakup
-            if not self.had_one_event and current_relationship.mates:
-                self.check_if_breakup(current_relationship, current_relationship.opposite_relationship, cat_from, cat_to)
+            if not self.had_one_event and current_relationship.mates and not cat_from.dead and not cat_to.dead:
+                if self.check_if_breakup(current_relationship, current_relationship.opposite_relationship, cat_from, cat_to):
+                    self.handle_breakup(current_relationship, current_relationship.opposite_relationship, cat_from, cat_to)
 
     def handle_pregnancy_age(self, clan = game.clan):
         """Increase the moon for each pregnancy in the pregnancy dictionary"""

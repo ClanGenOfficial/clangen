@@ -939,9 +939,7 @@ class ProfileScreen(Screens):
 
             # promote a cat to deputy if no deputy is alive
             deputy = game.clan.deputy
-            if game.clan.deputy is None:
-                deputy = None
-            elif game.clan.deputy.exiled:
+            if game.clan.deputy.exiled:
                 deputy = None
             elif game.clan.deputy.dead:
                 deputy = None
