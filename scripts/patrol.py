@@ -277,8 +277,6 @@ class Patrol():
                 else:
                     if max_good and min_good and correct_season and correct_biome and status and correct_button:
                         final_patrols.append(patrol)
-
-                
         
         return final_patrols   
 
@@ -359,7 +357,10 @@ class Patrol():
                 if outcome >= 10 and len(success_text) >= 2 and success_text[1] is not None:
                     n = 1
                 else:
-                    n = 0
+                    if success_text[0] is not None:
+                        n = 0
+                    else:
+                        n = 1
             # this is specifically for new cat events that can come with kits
             litter_choice = False
             if self.patrol_event.tags is not None:

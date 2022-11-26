@@ -975,10 +975,10 @@
             "It's not worth the risk - s_c heads for home."
     ],
     "fail_text": [
-            null,
-            null,
-null,
-            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. With the little warning they have, they spot a branch being carried by the water, and strike out strongly for it. Exhausted and shivering, they nevertheless cling to safety as the floodwaters run their course."
+        null,
+        null,
+        null,
+         "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. With the little warning they have, they spot a branch being carried by the water, and strike out strongly for it. Exhausted and shivering, they nevertheless cling to safety as the floodwaters run their course."
     ],
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
