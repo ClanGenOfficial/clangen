@@ -37,7 +37,7 @@ class ClanScreen(Screens):
         hotkey_assign_2 = 2
         for x in game.clan.clan_cats:
             if not Cat.all_cats[x].dead and Cat.all_cats[
-                    x].in_camp and not Cat.all_cats[x].exiled:
+                    x].in_camp and not Cat.all_cats[x].outside:
                 buttons.draw_button(Cat.all_cats[x].placement,
                                     image=Cat.all_cats[x].sprite,
                                     cat=x,
@@ -201,7 +201,7 @@ class StarClanScreen(Screens):
         dead_cats = [game.clan.instructor]
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
-            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and not the_cat.df:
+            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df:
                 dead_cats.append(the_cat)
 
         search_text = game.switches['search_text']
@@ -307,7 +307,7 @@ class ListScreen(Screens):
         living_cats = []
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
-            if not the_cat.dead and not the_cat.exiled:
+            if not the_cat.dead and not the_cat.outside:
                 living_cats.append(the_cat)
 
         search_text = game.switches['search_text']
@@ -438,10 +438,10 @@ class AllegiancesScreen(Screens):
         game.allegiance_list = []
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
-            if not the_cat.dead and not the_cat.exiled:
+            if not the_cat.dead and not the_cat.outside:
                 living_cats.append(the_cat)
         if game.clan.leader is not None:
-            if not game.clan.leader.dead and not game.clan.leader.exiled:
+            if not game.clan.leader.dead and not game.clan.leader.outside:
                 game.allegiance_list.append([
                     'LEADER:',
                     f"{str(game.clan.leader.name)} - a {game.clan.leader.describe_cat()}"
@@ -459,7 +459,7 @@ class AllegiancesScreen(Screens):
                             app_names += str(app.name) + ', '
                         game.allegiance_list.append(
                             ['', '      Apprentices: ' + app_names[:-2]])
-        if game.clan.deputy != 0 and game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.exiled:
+        if game.clan.deputy != 0 and game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.outside:
             game.allegiance_list.append([
                 'DEPUTY:',
                 f"{str(game.clan.deputy.name)} - a {game.clan.deputy.describe_cat()}"
@@ -493,7 +493,7 @@ class AllegiancesScreen(Screens):
         for living_cat__ in living_cats:
             if str(
                     living_cat__.status
-            ) == 'warrior' and living_cat__.ID not in queens and not living_cat__.exiled:
+            ) == 'warrior' and living_cat__.ID not in queens and not living_cat__.outside:
                 if not cat_count:
                     game.allegiance_list.append([
                         'WARRIORS:',
@@ -576,7 +576,7 @@ class AllegiancesScreen(Screens):
     def _extracted_from_screen_switches_24(self, living_cats, arg1, arg2):
         result = 0
         for living_cat in living_cats:
-            if str(living_cat.status) == arg1 and not living_cat.exiled:
+            if str(living_cat.status) == arg1 and not living_cat.outside:
                 if result == 0:
                     game.allegiance_list.append([
                         arg2,
@@ -626,7 +626,7 @@ class DFScreen(Screens):
         dead_cats = []
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
-            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and the_cat.df:
+            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and the_cat.df:
                 dead_cats.append(the_cat)
 
         search_text = game.switches['search_text']

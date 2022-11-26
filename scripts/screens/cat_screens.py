@@ -34,7 +34,7 @@ def draw_text_bar():
 def draw_back(x_value, y_value):
     the_cat = Cat.all_cats.get(game.switches['cat'])
 
-    if (the_cat.exiled):
+    if (the_cat.outside):
         buttons.draw_image_button((x_value, y_value),
                                   button_name='back',
                                   text='Back',
@@ -300,9 +300,11 @@ class ProfileScreen(Screens):
             verdana_small.text(str(the_cat.genderalign), (300, 230 + count * 15))
         count += 1
 
-        if the_cat.exiled:
-            verdana_red.text("exiled", (490, 230 + count2 * 15))
-
+        if the_cat.outside:
+            if the_cat.exiled:
+                verdana_red.text("exiled", (490, 230 + count2 * 15))
+            else:
+                verdana_red.text("gone", (490, 230 + count2 * 15))
         else:
             verdana_small.text(the_cat.status, (490, 230 + count2 * 15))
 
@@ -852,7 +854,7 @@ class ProfileScreen(Screens):
 
             # take to see the choose mate screen (only available if cat is old enough)
             if the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'
-                               ] and not the_cat.dead and not the_cat.exiled:
+                               ] and not the_cat.dead and not the_cat.outside:
                 buttons.draw_image_button((50, 522),
                                           button_name='choose_mate',
                                           text='choose mate',
@@ -907,7 +909,7 @@ class ProfileScreen(Screens):
             if game.switches['new_leader'] is not False and game.switches['new_leader'] is not None:
                 game.clan.new_leader(game.switches['new_leader'])
             if the_cat.status in ['warrior'
-                                  ] and not the_cat.dead and game.clan.leader.dead and not the_cat.exiled:
+                                  ] and not the_cat.dead and (game.clan.leader.dead or game.clan.leader.outside) and not the_cat.outside:
                 buttons.draw_image_button((226, 450),
                                           button_name='promote_leader',
                                           text='promote to leader',
@@ -925,14 +927,14 @@ class ProfileScreen(Screens):
             deputy = game.clan.deputy
             if game.clan.deputy is None:
                 deputy = None
-            elif game.clan.deputy.exiled:
-                deputy = None
             elif game.clan.deputy.dead:
+                deputy = None
+            elif game.clan.deputy.outside:
                 deputy = None
 
             if the_cat.status in [
                 'warrior'
-            ] and not the_cat.dead and not the_cat.exiled and deputy is None:
+            ] and not the_cat.dead and not the_cat.outside and deputy is None:
                 buttons.draw_image_button((226, 486),
                                           button_name='promote_deputy',
                                           text='promote to deputy',
@@ -948,7 +950,7 @@ class ProfileScreen(Screens):
                                           )
 
             # demote a cat from deputy
-            if the_cat.status in ['deputy'] and not the_cat.dead and not the_cat.exiled:
+            if the_cat.status in ['deputy'] and not the_cat.dead and not the_cat.outside:
                 buttons.draw_image_button((226, 486),
                                           button_name='demote_deputy',
                                           text='demote from deputy',
@@ -957,7 +959,7 @@ class ProfileScreen(Screens):
                                           )
 
             # switch an apprentice from warrior to med cat apprentice
-            if the_cat.status in ['apprentice'] and not the_cat.dead and not the_cat.exiled:
+            if the_cat.status in ['apprentice'] and not the_cat.dead and not the_cat.outside:
                 buttons.draw_image_button((226, 522),
                                           button_name='switch_med_app',
                                           text='switch to medicine cat apprentice',
@@ -972,7 +974,7 @@ class ProfileScreen(Screens):
 
             # switch an apprentice from med cat apprentice to warrior apprentice
             elif the_cat.status in ['medicine cat apprentice'
-                                    ] and not the_cat.dead and not the_cat.exiled:
+                                    ] and not the_cat.dead and not the_cat.outside:
                 buttons.draw_image_button((226, 522),
                                           button_name='switch_warrior_app',
                                           text='switch to warrior apprentice',
@@ -986,7 +988,7 @@ class ProfileScreen(Screens):
                                           profile_tab_group=None)
 
             # switch a warrior to med cat
-            elif the_cat.status == 'warrior' and not the_cat.dead and not the_cat.exiled:
+            elif the_cat.status == 'warrior' and not the_cat.dead and not the_cat.outside:
                 buttons.draw_image_button((226, 522),
                                           button_name='switch_med_cat',
                                           text='switch to medicine cat',
@@ -1000,7 +1002,7 @@ class ProfileScreen(Screens):
                                           profile_tab_group=None)
 
             # switch an elder to med cat
-            elif the_cat.status == 'elder' and not the_cat.dead and not the_cat.exiled:
+            elif the_cat.status == 'elder' and not the_cat.dead and not the_cat.outside:
                 buttons.draw_image_button((226, 522),
                                               button_name='switch_med_cat',
                                               text='switch to medicine cat',
@@ -1015,7 +1017,7 @@ class ProfileScreen(Screens):
                                               profile_tab_group=None)
 
             # switch a med cat to warrior
-            elif the_cat.status == 'medicine cat' and not the_cat.dead and not the_cat.exiled:
+            elif the_cat.status == 'medicine cat' and not the_cat.dead and not the_cat.outside:
                 buttons.draw_image_button((226, 522),
                                           button_name='switch_warrior',
                                           text='switch to warrior',
@@ -1199,7 +1201,7 @@ class ProfileScreen(Screens):
 
         if game.switches['profile_tab_group'] == 'dangerous':
             # button to kill cat
-            if not the_cat.dead and not the_cat.exiled:
+            if not the_cat.dead and not the_cat.outside:
                 buttons.draw_image_button((578, 486),
                                           button_name='kill_cat',
                                           text='kill cat',
@@ -1214,7 +1216,7 @@ class ProfileScreen(Screens):
                                           kill_cat=the_cat,
                                           available=False
                                           )
-            if not the_cat.dead and not the_cat.exiled:
+            if not the_cat.dead and not the_cat.outside:
                 buttons.draw_image_button((578, 450),
                                           button_name='exile_cat',
                                           text='exile cat',
@@ -1493,7 +1495,7 @@ class ExileProfileScreen(Screens):
         # use this variable to point to the cat object in question
         the_cat = Cat.all_cats.get(game.switches['cat'],game.clan.instructor)
 
-        # draw_next_prev_cat_buttons(the_cat)
+        draw_next_prev_cat_buttons(the_cat)
         # use these attributes to create differing profiles for starclan cats etc.
 
         # Info in string
@@ -1532,7 +1534,10 @@ class ExileProfileScreen(Screens):
         else:
             verdana_small.text(str(the_cat.genderalign), (300, 230 + count * 15))
         count += 1  # SEX / GENDER
-        verdana_small.text("exiled", (490, 230 + count2 * 15))
+        if the_cat.exiled is True:
+            verdana_small.text("exiled", (490, 230 + count2 * 15))
+        else:
+            verdana_small.text("gone", (490, 230 + count2 * 15))
         count2+=1
         if the_cat.age == 'kitten':
             verdana_small.text('young', (300, 230 + count * 15))
