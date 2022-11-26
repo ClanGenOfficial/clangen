@@ -1,6 +1,6 @@
 [
 {
-    "Patrol_id": "bch_any_train_session1",
+    "patrol_id": "bch_any_train_session1",
     "biome": "beach",
     "season": "Any",
     "tags": ["apprentice", "training", "scar", "injury"],
@@ -31,7 +31,7 @@
     ]
 },
 {
-    "Patrol_id": "bch_train_stuck1",
+    "patrol_id": "bch_train_stuck1",
     "biome": "beach",
     "season": "Any",
     "tags": ["training", "platonic", "comfort", "injury", "death", "scar"],
@@ -64,7 +64,7 @@
     ]
 },
 {
-    "Patrol_id": "bch_train_stuck2",
+    "patrol_id": "bch_train_stuck2",
     "biome": "beach",
     "season": "Any",
     "tags": ["training", "platonic", "comfort", "injury", "death", "scar"],
@@ -97,7 +97,7 @@
     ]
 },
 {
-    "Patrol_id": "bch_train_solo1",
+    "patrol_id": "bch_train_solo1",
     "biome": "beach",
     "season": "Any",
     "tags": ["training", "apprentice", "injury", "scar"],
@@ -129,7 +129,7 @@
     ]
 },
 {
-    "Patrol_id": "bch_train_solo2",
+    "patrol_id": "bch_train_solo2",
     "biome": "beach",
     "season": "Any",
     "tags": ["training"],
@@ -159,7 +159,7 @@
     "antagonize_fail_text": null
 },
 {
-    "Patrol_id": "bch_train_solo3",
+    "patrol_id": "bch_train_solo3",
     "biome": "beach",
     "season": "Any",
     "tags": ["training", "deputy"],
@@ -189,7 +189,7 @@
     "antagonize_fail_text": null
 },
 {
-    "Patrol_id": "bch_train_solo4",
+    "patrol_id": "bch_train_solo4",
     "biome": "beach",
     "season": "Any",
     "tags": ["training", "leader"],

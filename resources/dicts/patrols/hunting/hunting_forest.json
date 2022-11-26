@@ -444,6 +444,8 @@
     "win_trait": ["strange"],
     "fail_skills": ["None"],
     "fail_trait": ["None"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "min_cats": 2,
     "max_cats": 6
 },
@@ -470,6 +472,8 @@
     "win_trait": ["strange"],
     "fail_skills": ["None"],
     "fail_trait": ["None"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "min_cats": 1,
     "max_cats": 1
 },
@@ -500,6 +504,8 @@
     "fail_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
     "min_cats": 1,
     "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "history_text": [
             "r_c got injured as an apprentice, exploring alone."
     ]
@@ -529,6 +535,8 @@
     "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange", "patient", "thoughtful", "wise"],
     "fail_skills": ["None"],
     "fail_trait": [ "bold", "childish", "confident", "daring", "playful"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "min_cats": 1,
     "max_cats": 1
 },
@@ -557,6 +565,8 @@
     "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange", "patient", "thoughtful", "wise"],
     "fail_skills": ["None"],
     "fail_trait": [ "bold", "childish", "confident", "daring", "playful"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "min_cats": 1,
     "max_cats": 1
 },
@@ -585,6 +595,8 @@
     "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange", "patient", "thoughtful", "wise"],
     "fail_skills": ["None"],
     "fail_trait": [ "bold", "childish", "confident", "daring", "playful"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
     "min_cats": 1,
     "max_cats": 1
 },
