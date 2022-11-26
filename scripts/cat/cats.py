@@ -313,6 +313,8 @@ class Cat():
         else:
             self.dead = True
 
+        self.injury = None
+        self.illness = None
 
         if self.mate is not None:
             self.mate = None
@@ -358,7 +360,6 @@ class Cat():
             chance = randint(0, 5)  # chance for cat to gain trait that matches their previous trait's personality group
             if chance == 0:
                 self.trait = choice(self.traits)
-                print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
             else:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
@@ -367,18 +368,13 @@ class Cat():
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
                             self.trait = choice(self.traits)
-                            print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
-                            break
                         else:
                             self.trait = chosen_trait
-                            print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
-                            break
         elif self.moons == 12:
             chance = randint(0, 9) + int(self.patrol_with_mentor)  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
                 self.mentor_influence.append('None')
-                print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
             elif 1 <= chance <= 6:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
@@ -388,28 +384,23 @@ class Cat():
                         if chosen_trait in self.kit_traits:
                             self.trait = self.trait
                             self.mentor_influence.append('None')
-                            print(self.name, 'NEW TRAIT TYPE: No change - CHANCE', chance)
-                            break
                         else:
                             self.trait = chosen_trait
                             self.mentor_influence.append('None')
-                            print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
-                            break
             elif chance >= 7:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
-                    if self.mentor is not None:
+                    mentor = None
+                    if self.mentor:
                         mentor = self.mentor
-                    elif self.mentor is None and len(self.former_mentor) != 0:
+                    elif not self.mentor and len(self.former_mentor) != 0:
                         if len(self.former_mentor) > 1:
                             mentor = self.former_mentor[-1]
                         else:
                             mentor = self.former_mentor[0]
                     else:
                         self.mentor_influence.append('None')
-                        print(self.name, 'NEW TRAIT TYPE: No change', chance)
-                        break
-                    if mentor.trait in self.personality_groups[x]:
+                    if mentor and mentor.trait in self.personality_groups[x]:
                         possible_trait = self.personality_groups.get(x)
 
                         if x == 'Abrasive' and chance >= 12:
@@ -422,29 +413,17 @@ class Cat():
                             if 'Reserved' in self.mentor_influence:
                                 self.mentor_influence.pop(0)
                             self.mentor_influence.append('None')
-                            print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
-                            break
-
                         else:
                             self.trait = chosen_trait
                             if 'Reserved' not in self.mentor_influence:
                                 self.mentor_influence.append(x)
-                                print(self.name, 'TRAIT TYPE from mentor:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
-                                      chance)
-                                break
-                            else:
-                                print(self.name, 'TRAIT TYPE from mentor: Reserved', 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:',
-                                      chance)
-                                break
             else:
                 self.mentor_influence.append('None')
-                print(self.name, 'NEW TRAIT TYPE: No change', chance)
 
         elif self.moons == 120:
             chance = randint(0, 7)  # chance for cat to gain new trait or keep old
             if chance == 0:
                 self.trait = choice(self.traits)
-                print(self.name, 'NEW TRAIT TYPE: Random - CHANCE', chance)
             elif chance == 1:
                 possible_groups = ['Outgoing', 'Benevolent', 'Abrasive', 'Reserved']
                 for x in possible_groups:
@@ -453,15 +432,8 @@ class Cat():
                         chosen_trait = choice(possible_trait)
                         if chosen_trait in self.kit_traits:
                             self.trait = choice(self.traits)
-                            print(self.name, 'trait type chosen was kit trait -', self.trait,
-                                  'chosen randomly instead')
-                            break
                         else:
                             self.trait = chosen_trait
-                            print(self.name, 'TRAIT TYPE:', x, 'NEW TRAIT PICKED:', chosen_trait, 'CHANCE:', chance)
-                            break
-            else:
-                print(self.name, 'NEW TRAIT TYPE: No change', chance)
 
     def describe_cat(self):
         if self.genderalign == 'male' or self.genderalign == "transmasc" or self.genderalign == "trans male":
@@ -599,6 +571,14 @@ class Cat():
         relevant_relationship = relevant_relationship_list[0]
         relevant_relationship.start_action()
 
+        if game.game_mode == "classic":
+            return
+        # handle contact with ill cat if
+        if self.is_ill():
+            relevant_relationship.cat_to.contact_with_ill_cat(self)
+        if relevant_relationship.cat_to.is_ill():
+            self.contact_with_ill_cat(relevant_relationship.cat_to)
+
     def update_skill(self):
         # checking for skill and replacing empty skill if cat is old enough
         # also adds a chance for cat to take a skill similar to their mentor
@@ -620,19 +600,14 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 self.mentor_influence.append(self.skill)
-                                print('skill from mentor')
-                                break
                     # don't give skill from mentor
                     else:
                         self.skill = choice(self.med_skills)
                         self.mentor_influence.append('None')
-                        print('random skill')
                 # if they didn't haave a mentor, give random skill
                 else:
                     self.skill = choice(self.med_skills)
                     self.mentor_influence.append('None')
-                    print('random skill')
-
             # assign skill to new warrior
             elif self.status == 'warrior':
                 # possible skill groups they can take from
@@ -648,61 +623,74 @@ class Cat():
                                 possible_skill = self.skill_groups.get(x)
                                 self.skill = choice(possible_skill)
                                 self.mentor_influence.append(self.skill)
-                                print('skill from mentor. chance:', chance)
-                                break
                     # don't give skill from mentor
                     else:
                         self.skill = choice(self.skills)
                         self.mentor_influence.append('None')
-                        print('random skill')
                 # if they didn't have a mentor, give random skill
                 else:
                     self.skill = choice(self.skills)
                     self.mentor_influence.append('None')
-                    print('random skill')
 
             # assign new skill to elder
             elif self.status == 'elder':
                 self.skill = choice(self.elder_skills)
-                print('random skill')
 
             # if a cat somehow has no skill, assign one after checking that they aren't a kit or adolescent
             elif self.skill == '???' and self.status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
                 self.skill = choice(self.skills)
-
-    # ---------------------------------------------------------------------------- #
-#                            !IMPORTANT INFORMATION!                           #
-#   conditions ar currently not integrated, this are just the base functions   #
-#    me (Lixxis) will integrate them after tests are written and completed     #
-# ---------------------------------------------------------------------------- #
 
     def moon_skip_illness(self):
         "handles the moon skip for illness"
         if not self.is_ill():
             return
 
-        if randint(1,self.illness.mortality) == 1:
-            self.die()
+        if self.illness.new:
+            self.illness.new = False
+            return
 
-        self.illness.duration -= 1
-        if self.illness.duration <= 0:
+        mortality = self.illness.current_mortality
+        # leader should have a higher chance of death
+        if self.status == "leader":
+            mortality = int(mortality * 0.7)
+
+        if mortality and not int(random.random() * mortality):
+            if self.status == "leader":
+                game.clan.leader_lives -= 1
+                if game.clan.leader_lives > 0:
+                    game.cur_events_list.append(f"{self.name} lost a life to {self.illness.name}.")
+                elif game.clan.leader_lives <= 0:
+                    game.cur_events_list.append(f"{self.name} lost the last life to {self.illness.name}.")
+            self.die()
+            return
+
+        self.illness.current_duration -= 1
+        if self.illness.current_duration <= 0:
             self.illness = None
 
     def moon_skip_injury(self):
-        "handles the moon skip for injuries"
+        "handles the moon skip for injury"
         if not self.is_injured():
             return
-        
-        if randint(1,self.injury.mortality) == 1:
-            self.die()
-        
-        for risk in self.injury.risks:
-            if randint(1,risk["chance"]) == 1:
-                self.get_ill(risk["name"])
 
-        self.injuries.duration -= 1
-        if self.injuries.duration <= 0:
-            self.injuries = None
+        if self.injury.new:
+            self.injury.new = False
+            return
+        
+        mortality = self.injury.current_mortality
+        # leader should have a higher chance of death
+        if self.status == "leader":
+            mortality = int(mortality * 0.7)
+
+        if mortality and not int(random.random() * mortality):
+            self.die()
+            return
+
+        # if the cat has a infected wound, the wound shouldn't heal till the illness is cured
+        if not self.is_ill() or (self.is_ill() and self.illness != "infected wound"):
+            self.injury.current_duration -= 1
+        if self.injury.current_duration <= 0:
+            self.injury = None
 
 # ---------------------------------------------------------------------------- #
 #                                   relative                                   #
@@ -757,49 +745,62 @@ class Cat():
         return False
 
 # ---------------------------------------------------------------------------- #
-#                            !IMPORTANT INFORMATION!                           #
-#   conditions ar currently not integrated, this are just the base functions   #
-#    me (Lixxis) will integrate them after tests are written and completed     #
-# ---------------------------------------------------------------------------- #
-# ---------------------------------------------------------------------------- #
 #                                  conditions                                  #
 # ---------------------------------------------------------------------------- #
   
-    def get_ill(self, name):
-        if self.is_ill() or name not in ILLNESSES.keys():
-            if name not in ILLNESSES.keys():
+    def get_ill(self, name, risk = False, event_triggered = False):
+        if self.is_ill() and not risk or name not in ILLNESSES:
+            if name not in ILLNESSES:
                 print(f"WARNING: {name} is not in the illnesses collection.")
             return
-        
+
         illness = ILLNESSES[name]
+        mortality = illness["mortality"][self.age]
+        med_mortality = illness["medicine_mortality"][self.age]
+        if game.clan.game_mode == "cruel season":
+            mortality = int(mortality * 0.65)
+            med_mortality = int(med_mortality * 0.65)
+
+            # to prevent a illness gets no mortality, check and set it to 1 if needed
+            if illness["mortality"][self.age] and not mortality:
+                mortality = 1
+            if illness["medicine_mortality"][self.age] and not med_mortality:
+                med_mortality = 1
+
         self.illness = Illness(
             name,
-            mortality= illness["mortality"],
+            mortality= mortality,
             infectiousness = illness["infectiousness"], 
             duration = illness["duration"], 
             medicine_duration = illness["medicine_duration"], 
-            medicine_mortality = illness["medicine_mortality"], 
-            number_medicine_cats = illness["number_medicine_cats"],
-            number_medicine_apprentices = illness["number_medicine_apprentices"]
+            medicine_mortality = med_mortality,
+            risks = illness["risks"],
+            event_triggered=event_triggered
         )
 
-    def get_injured(self,name):
-        if self.is_injured() or name not in INJURIES.keys():
-            if name not in INJURIES.keys():
+    def get_injured(self, name, event_triggered = False):
+        if self.is_injured() or name not in INJURIES:
+            if name not in INJURIES:
                 print(f"WARNING: {name} is not in the injuries collection.")
             return
 
         injury = INJURIES[name]
+        mortality = injury["mortality"][self.age]
+        if game.clan.game_mode == "cruel season":
+            mortality = int(mortality * 0.65)
+
+            # to prevent a injury gets no mortality, check and set it to 1 if needed
+            if injury["mortality"][self.age] and not mortality:
+                mortality = 1
+
         self.injury = Injury(
             name,
             duration = injury["duration"],
             medicine_duration = injury["medicine_duration"], 
-            mortality = injury["mortality"],
-            medicine_mortality = injury["medicine_mortality"],
+            mortality = mortality,
             risks = injury["risks"],
             illness_infectiousness = injury["illness_infectiousness"],
-            number_medicine_cats = injury["number_medicine_cats"],
-            number_medicine_apprentices = injury["number_medicine_apprentices"]
+            event_triggered=event_triggered
         )
 
     def is_ill(self):
@@ -816,18 +817,106 @@ class Cat():
         illness_name = cat.illness.name
         rate = cat.illness.infectiousness
         if self.is_injured():
-            illness_infect = list(filter(lambda ill: ill["name"] == illness_name ,self.injuries.illness_infectiousness))
+            illness_infect = list(filter(lambda ill: ill["name"] == illness_name ,self.injury.illness_infectiousness))
             if illness_infect is not None and len(illness_infect) > 0:
                 illness_infect = illness_infect[0]
                 rate -= illness_infect["lower_by"]
         
         # prevent rate lower 0 and print warning message
         if rate < 0:
-            print(f"WARNING: injury {self.injuries.name} has lowered chance of {illness_name} infection to {rate}")
+            print(f"WARNING: injury {self.injury.name} has lowered chance of {illness_name} infection to {rate}")
             rate = 1
 
-        if randint(1, rate) == 1:
+        if not random.random() * rate:
+            game.cur_events_list.append(f"{self.name} had contact with {cat.name} and now has {illness_name}.")
             self.get_ill(illness_name)
+
+    def save_condition(self):
+        # save relationships for each cat
+        if game.switches['clan_name'] != '':
+            clanname = game.switches['clan_name']
+        elif len(game.switches['clan_name']) > 0:
+            clanname = game.switches['clan_list'][0]
+        elif game.clan is not None:
+            clanname = game.clan.name
+        condition_directory = 'saves/' + clanname + '/conditions'
+        condition_file_path = condition_directory + '/' + self.ID + '_conditions.json'
+
+        if not os.path.exists(condition_directory):
+            os.makedirs(condition_directory)
+
+        if (not self.is_ill() and not self.is_injured()) or self.dead or self.exiled:
+            if os.path.exists(condition_file_path):
+                os.remove(condition_file_path)
+            return
+
+        conditions = {}
+        if self.is_ill():
+            conditions["illness"] = {
+                "name": self.illness.name,
+                "mortality": self.illness.current_mortality,
+                "duration": self.illness.current_duration,
+                "medicine_mortality": self.illness.medicine_mortality,
+                "medicine_duration": self.illness.medicine_duration,
+                "infectiousness": self.illness.infectiousness,
+                "risks": self.illness.risks,
+            }
+        if self.is_injured():
+            conditions["injury"] = {
+                "name": self.injury.name,
+                "mortality": self.injury.current_mortality,
+                "duration": self.injury.current_duration,
+                "medicine_duration": self.injury.medicine_duration,
+                "illness_infectiousness": self.injury.illness_infectiousness,
+                "risks": self.injury.risks,
+            }
+
+        try:
+            with open(condition_file_path, 'w') as rel_file:
+                json_string = ujson.dumps(conditions, indent = 4)
+                rel_file.write(json_string)
+        except:
+            print(f"WARNING: Saving conditions of cat #{self} didn't work.")
+
+    def load_conditions(self):
+        if game.switches['clan_name'] != '':
+            clanname = game.switches['clan_name']
+        else:
+            clanname = game.switches['clan_list'][0]
+
+        condition_directory = 'saves/' + clanname + '/conditions/'
+        condition_cat_directory = condition_directory + self.ID + '_conditions.json'
+        if not os.path.exists(condition_cat_directory):
+            return
+
+        try:
+            with open(condition_cat_directory, 'r') as read_file:
+                rel_data = ujson.loads(read_file.read())
+                if "illness" in rel_data:
+                    illness = rel_data["illness"]
+                    self.illness = self.illness = Illness(
+                        illness["name"],
+                        mortality= illness["mortality"],
+                        infectiousness = illness["infectiousness"], 
+                        duration = illness["duration"], 
+                        medicine_duration = illness["medicine_duration"], 
+                        medicine_mortality = illness["medicine_mortality"],
+                        risks = illness["risks"]
+                    )
+                if "injury" in rel_data:
+                    injury = rel_data["injury"]
+                    self.injury = Injury(
+                        injury["name"],
+                        duration = injury["duration"],
+                        medicine_duration = injury["medicine_duration"], 
+                        mortality = injury["mortality"],
+                        risks = injury["risks"],
+                        illness_infectiousness = injury["illness_infectiousness"]
+                    )
+        except Exception as e:
+            print(e)
+            print(f'WARNING: There was an error reading the condition file of cat #{self}.')
+
 
 # ---------------------------------------------------------------------------- #
 #                                    mentor                                    #
@@ -936,7 +1025,6 @@ class Cat():
                 if old_mentor not in self.former_mentor:
                     self.former_mentor.append(old_mentor)
 
-
     def update_mentor(self, new_mentor=None):
         if new_mentor is None:
             # If not reassigning and current mentor works, leave it
@@ -999,7 +1087,6 @@ class Cat():
                     old_mentor.former_apprentices.append(self)
                 if old_mentor not in self.former_mentor:
                     self.former_mentor.append(old_mentor)
-
 
 
 # ---------------------------------------------------------------------------- #
@@ -1213,7 +1300,7 @@ class Cat():
                 json_string = ujson.dumps(rel, indent = 4)
                 rel_file.write(json_string)
         except:
-            print(f"Saving relationship of cat #{self} didn't work.")
+            print(f"WARNING: Saving relationship of cat #{self} didn't work.")
 
     def load_relationship_of_cat(self):
         if game.switches['clan_name'] != '':
@@ -1253,7 +1340,7 @@ class Cat():
                             log =rel['log'])
                         self.relationships[rel['cat_to_id']] = new_rel
             except:
-                print(f'There was an error reading the relationship file of cat #{self}.')
+                print(f'WARNING: There was an error reading the relationship file of cat #{self}.')
 
 
 # ---------------------------------------------------------------------------- #
@@ -1319,9 +1406,9 @@ game.cat_class = cat_class
 resource_directory = "resources/dicts/conditions/"
 
 ILLNESSES = None
-with open(f"{resource_directory}Illnesses.json", 'r') as read_file:
+with open(f"{resource_directory}illnesses.json", 'r') as read_file:
     ILLNESSES = ujson.loads(read_file.read())
 
 INJURIES = None
-with open(f"{resource_directory}Injuries.json", 'r') as read_file:
+with open(f"{resource_directory}injuries.json", 'r') as read_file:
     INJURIES = ujson.loads(read_file.read())

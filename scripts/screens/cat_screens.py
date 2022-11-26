@@ -526,6 +526,20 @@ class ProfileScreen(Screens):
                     str(the_cat.moons) + ' moons', (300, 230 + count * 15))
                 count += 1
 
+        # CONDITIONS (temporary)
+        if the_cat.is_ill() and the_cat.is_injured():
+            verdana_small.text(
+                f"condition: {the_cat.illness.name}, {the_cat.injury.name}" , (300, 230 + count * 15))
+            count += 1
+        elif the_cat.is_ill():
+            verdana_small.text(
+                f"condition: {the_cat.illness.name}", (300, 230 + count * 15))
+            count += 1
+        elif the_cat.is_injured():
+            verdana_small.text(
+                f"condition: {the_cat.injury.name}", (300, 230 + count * 15))
+            count += 1
+
         # MATE
         if the_cat.mate is not None and not the_cat.dead:
             if the_cat.mate in Cat.all_cats:

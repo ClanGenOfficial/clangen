@@ -122,7 +122,8 @@ class MakeClanScreen(Screens):
 
             verdana_dark.blit_text("A more hands-on experience. \nThis mode has everything in Classic Mode as well as "
                                    "more management focused features. \nNew features include: \n"
-                                   "----no new features as of yet---- \nWith this mode you'll be making the important "
+                                   " * injuries and illnesses system \n"
+                                   "\nWith this mode you'll be making the important "
                                    "clan-life decisions.",
                                    (x_value, y_value),
                                    line_break=40,
@@ -139,8 +140,8 @@ class MakeClanScreen(Screens):
             y_value += 50
 
             verdana_dark.blit_text("This mode has all the features of Expanded mode, but is significantly "
-                                   "more difficult.  If you'd like a challenge, then this mode is for you. \n \n"
-                                   "---this mode is currently unavailable--- \n \nYou heard the warnings... "
+                                   "more difficult.  If you'd like a challenge, then this mode is for you. \n"
+                                   "\nYou heard the warnings... "
                                    "a Cruel Season is coming. \nWill you survive?",
                                    (x_value, y_value),
                                    line_break=40,
@@ -157,22 +158,15 @@ class MakeClanScreen(Screens):
         # ---------------------------------------------------------------------------- #
         #                             next and prev step                               #
         # ---------------------------------------------------------------------------- #
-        if game.switches['game_mode'] != 'cruel season':
-            buttons.draw_image_button((400, 620),
-                                      button_name='next_step',
-                                      text='Next Step',
-                                      set_game_mode=True,
-                                      available=True,
-                                      size=(147, 30)
-                                      )
-        else:
-            buttons.draw_image_button((400, 620),
-                                      button_name='next_step',
-                                      text='Next Step',
-                                      set_game_mode=True,
-                                      available=False,
-                                      size=(147, 30)
-                                      )
+
+        buttons.draw_image_button((400, 620),
+                                  button_name='next_step',
+                                  text='Next Step',
+                                  set_game_mode=True,
+                                  available=True,
+                                  size=(147, 30)
+                                  )
+
 
         verdana.text("Your clan's game mode is permanent and cannot be changed after clan creation.", ('center', 581))
 

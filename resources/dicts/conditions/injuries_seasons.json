@@ -1,0 +1,27 @@
+{
+    "Newleaf":{
+        "cracked pads": 2,
+        "splinter": 2,
+        "stomachache": 1,
+        "tickbites": 2
+    },
+    "Greenleaf":{
+        "heat exhaustion": 2,
+        "scrapes": 2,
+        "splinter": 3,
+        "stomachache": 1,
+        "tickbites": 2
+    },
+    "Leaf-fall":{
+        "scrapes": 2,
+        "splinter": 3,
+        "stomachache": 1,
+        "torn pelt": 2,
+        "torn ear": 2
+    },
+    "Leaf-bare":{
+        "frostbite": 2,
+        "joint pain": 1,
+        "cracked pads": 1
+    }
+}

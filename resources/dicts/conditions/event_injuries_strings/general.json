@@ -1,0 +1,37 @@
+{
+    "bite-wound": {
+        "r_c got bitten by a snake.": 2
+    },
+    "broken bone": {
+        "r_c was grabbed and dropped by an eagle, and somehow survive.": 1
+    },
+    "bruises": {
+        "r_c didn't looked where they go and tripped over a small trunk.": 1
+    },
+    "claw-wound": {
+        "A rat got into the clan and hurt r_c.": 1
+    },
+    "dislocated joint": {
+        "r_c missteps and slipped from a rock.": 1,
+        "r_c's paws slipped on some rocks and they got injured.": 1
+    },
+    "sprain": {
+        "r_c's paws slipped on some rocks and they got injured.": 2,
+        "r_c after they jumped from a rock, they didn't landed correct.": 1
+    },
+    "cracked pads": {
+        "r_c rushed too fast over a harsh ground.": 1
+    },
+    "joint pain": {
+        "r_c's paws slipped on some rocks and they got injured.": 1
+    },
+    "scrapes": {
+        "A rat got into the clan and hurt r_c.": 1
+    },
+    "torn ear": {
+        "While r_c was on a walk, they bumped against a thorned shrub.": 1
+    },
+    "torn pelt": {
+        "While r_c was on a walk, they bumped against a thorned shrub.": 1
+    }
+}
