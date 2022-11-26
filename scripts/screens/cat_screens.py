@@ -263,7 +263,7 @@ class ProfileScreen(Screens):
         if is_sc_instructor:
             the_cat.thought = "Hello. I am here to guide the dead cats of " + game.clan.name + "Clan into StarClan."
         if is_df_instructor:
-            the_cat.thought = "Hello. I am here to pull the dead cats of " + game.clan.name + "Clan into the Dark Forest."
+            the_cat.thought = "Hello. I am here to drag the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
         # ---------------------------------------------------------------------------- #
         #                                   layout                                     #
