@@ -292,12 +292,6 @@ class Cat():
         else:
             self.experience = 0
 
-        self.paralyzed = False
-        self.no_kits = False
-        self.exiled = False
-        if self.genderalign is None:
-            self.genderalign = self.gender
-
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
 
@@ -496,7 +490,7 @@ class Cat():
 
     def one_moon(self):
         """Handles a moon skip for a alive cat"""
-        if self.exiled:
+        if self.exiled or self.outside:
             # this is handled in events.py
             self.thoughts()
             return
@@ -597,14 +591,14 @@ class Cat():
                 lambda relation: str(relation.cat_to) == str(random_id) and
                 not relation.cat_to.dead, self.relationships.values()))
         random_cat = self.all_cats.get(random_id)
-        kitten_and_exiled = random_cat is not None and random_cat.exiled and self.age == "kitten"
+        kitten_and_outside = random_cat is not None and random_cat.outside and self.age == "kitten"
 
         # is also found in Relation_Events.MAX_ATTEMPTS
         attempts_left = 1000
-        while len(relevant_relationship_list) < 1 or random_id == self.ID or kitten_and_exiled:
+        while len(relevant_relationship_list) < 1 or random_id == self.ID or kitten_and_outside:
             random_id = random.choice(cats_to_choose)
             random_cat = self.all_cats.get(random_id)
-            kitten_and_exiled = random_cat is not None and random_cat.exiled and self.age == "kitten"
+            kitten_and_outside = random_cat is not None and random_cat.outside and self.age == "kitten"
             relevant_relationship_list = list(
                 filter(
                     lambda relation: str(relation.cat_to) == str(random_id) and
@@ -850,8 +844,8 @@ class Cat():
 # ---------------------------------------------------------------------------- #
 
     def is_valid_med_mentor(self, potential_mentor):
-        # Dead or exiled cats can't be mentors
-        if potential_mentor.dead or potential_mentor.exiled:
+        # Dead or outside cats can't be mentors
+        if potential_mentor.dead or potential_mentor.outside:
             return False
         # Match jobs
         if self.status == 'medicine cat apprentice' and potential_mentor.status == 'medicine cat':
@@ -867,8 +861,8 @@ class Cat():
         return True
 
     def is_valid_mentor(self, potential_mentor):
-        # Dead or exiled cats can't be mentors
-        if potential_mentor.dead or potential_mentor.exiled:
+        # Dead or outside cats can't be mentors
+        if potential_mentor.dead or potential_mentor.outside:
             return False
         # Match jobs
         if self.status == 'medicine cat apprentice' and potential_mentor.status != 'medicine cat':
@@ -892,7 +886,7 @@ class Cat():
                 return
         old_mentor = self.mentor
         # Should only have mentor if alive and some kind of apprentice
-        if 'medicine cat apprentice' in self.status and not self.dead and not self.exiled:
+        if 'medicine cat apprentice' in self.status and not self.dead and not self.outside:
             # Need to pick a random mentor if not specified
             if new_mentor is None:
                 potential_mentors = []
@@ -960,7 +954,7 @@ class Cat():
                 return
         old_mentor = self.mentor
         # Should only have mentor if alive and some kind of apprentice
-        if 'apprentice' in self.status and not self.dead and not self.exiled:
+        if 'apprentice' in self.status and not self.dead and not self.outside:
             # Need to pick a random mentor if not specified
             if new_mentor is None:
                 potential_mentors = []
@@ -1027,8 +1021,8 @@ class Cat():
         if self.ID == other_cat.ID:
             return False
 
-        # check exiles and dead cats
-        if self.dead or self.exiled or other_cat.dead or other_cat.exiled:
+        # check exiled, outside, and dead cats
+        if self.dead or self.outside or other_cat.dead or other_cat.outside:
             return False
 
         # check for current mate
