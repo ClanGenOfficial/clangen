@@ -30,7 +30,7 @@ class Events():
             if any(str(cat.status) in {'leader', 'deputy', 'warrior', 'apprentice'}
                     and not cat.dead and not cat.exiled for cat in Cat.all_cats.values()):
                 game.switches['no_able_left'] = False
-            self.relation_events.handle_pregnancy_age(clan = game.clan)
+            self.relation_events.handle_pregnancy_age(game.clan)
             for cat in Cat.all_cats.copy().values():
                 if not cat.exiled:
                     self.one_moon_cat(cat)

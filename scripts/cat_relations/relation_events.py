@@ -131,7 +131,7 @@ class Relation_Events():
                 if self.check_if_breakup(current_relationship, current_relationship.opposite_relationship, cat_from, cat_to):
                     self.handle_breakup(current_relationship, current_relationship.opposite_relationship, cat_from, cat_to)
 
-    def handle_pregnancy_age(self, clan = game.clan):
+    def handle_pregnancy_age(self, clan):
         """Increase the moon for each pregnancy in the pregnancy dictionary"""
         for pregnancy_key in clan.pregnancy_data.keys():
             clan.pregnancy_data[pregnancy_key]["moons"] += 1
@@ -288,8 +288,13 @@ class Relation_Events():
         if other_cat and (other_cat.dead or other_cat.exiled or other_cat.birth_cooldown > 0):
             return
 
+        if cat.ID in clan.pregnancy_data:
+            return
+        
+        if other_cat and other_cat.ID in clan.pregnancy_data:
+            return
+
         chance = self.get_kits_chance(cat, other_cat, relation)
-        #hit = randint(1, chance)
         hit = int(random.random() * chance)
         if hit:
             return
@@ -300,33 +305,30 @@ class Relation_Events():
             amount = self.get_amount_of_kits(cat)
             self.get_kits(amount, cat, None, clan)
             print_event = f"{str(cat.name)} brought a litter of {str(amount)} kit(s) back to camp, but refused to talk about their origin"
-
+            game.cur_events_list.append(print_event)
             # display event
-            if len(print_event) < 100:
-                game.cur_events_list.append(print_event)
-            else:
-                cut = print_event.find(' ', int(len(print_event)/2))
-                first_part = print_event[:cut]
-                second_part = print_event[cut:]
-                game.cur_events_list.append(first_part)
-                game.cur_events_list.append(second_part)
+            #if len(print_event) < 100:
+            #    game.cur_events_list.append(print_event)
+            #else:
+            #    cut = print_event.find(' ', int(len(print_event)/2))
+            #    first_part = print_event[:cut]
+            #    second_part = print_event[cut:]
+            #    game.cur_events_list.append(first_part)
+            #    game.cur_events_list.append(second_part)
             return
 
         # if the other cat is a female and the current cat is a male, make the female cat pregnant
         pregnant_cat = cat
+        second_parent = other_cat
         if cat.gender == 'male' and other_cat is not None and other_cat.gender == 'female':
             pregnant_cat = other_cat
-            clan.pregnancy_data[other_cat.ID] = {
-                "second_parent": str(cat.ID),
-                "moons": 0,
-                "amount": 0
-            }
-        else:
-            clan.pregnancy_data[cat.ID] = {
-                "second_parent": str(other_cat),
-                "moons": 0,
-                "amount": 0
-            }
+            second_parent = cat
+
+        clan.pregnancy_data[pregnant_cat.ID] = {
+            "second_parent": str(second_parent.ID) if second_parent else None,
+            "moons": 0,
+            "amount": 0
+        }
 
         game.cur_events_list.append(f"{pregnant_cat.name} announced that they are expecting kits")
 
