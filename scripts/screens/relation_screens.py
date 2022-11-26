@@ -797,6 +797,7 @@ class RelationshipScreen(Screens):
     details_frame = image_cache.load_image("resources/images/relationship_details_frame.png").convert_alpha()
     toggle_frame = image_cache.load_image("resources/images/relationship_toggle_frame.png").convert_alpha()
     list_frame = image_cache.load_image("resources/images/relationship_list_frame.png").convert_alpha()
+    log_frame = image_cache.load_image("resources/images/relationship_log_frame.png").convert_alpha()
 
     female_icon = image_cache.load_image("resources/images/female_big.png").convert_alpha()
     male_icon = image_cache.load_image("resources/images/male_big.png").convert_alpha()
@@ -831,7 +832,6 @@ class RelationshipScreen(Screens):
         screen.blit(RelationshipScreen.search_bar, (536, 90))
         screen.blit(RelationshipScreen.details_frame, (25, 130))
         screen.blit(RelationshipScreen.toggle_frame, (45, 484))
-        screen.blit(RelationshipScreen.list_frame, (273, 122))
 
         # SEARCH TEXT
         search_text = game.switches['search_text']
@@ -922,233 +922,269 @@ class RelationshipScreen(Screens):
                     f"{str(the_cat.genderalign)}  - {str(the_cat.moons)} moons - {str(the_cat.trait)}",
                     (80, 100))
 
-        # PAGES
-        all_pages = 1  # amount of pages
-        if len(search_relations) > 8:
-            all_pages = int(ceil(len(search_relations) / 8))
+        if game.switches['show_info'] is False:
+            screen.blit(RelationshipScreen.list_frame, (273, 122))
+            # PAGES
+            all_pages = 1  # amount of pages
+            if len(search_relations) > 8:
+                all_pages = int(ceil(len(search_relations) / 8))
 
-        pos_x = 0
-        pos_y = 0
-        cats_on_page = 0  # how many are on page already
+            pos_x = 0
+            pos_y = 0
+            cats_on_page = 0  # how many are on page already
 
-        for x in range(len(search_relations)):
-            if (x +
-                    (game.switches['list_page'] - 1) * 8) > len(search_relations):
-                game.switches['list_page'] = 1
-            if game.switches['list_page'] > all_pages:
-                game.switches['list_page'] = 1
-            the_relationship = search_relations[x +
-                                                (game.switches['list_page'] - 1) *
-                                                8]
+            for x in range(len(search_relations)):
+                if (x +
+                        (game.switches['list_page'] - 1) * 8) > len(search_relations):
+                    game.switches['list_page'] = 1
+                if game.switches['list_page'] > all_pages:
+                    game.switches['list_page'] = 1
+                the_relationship = search_relations[x +
+                                                    (game.switches['list_page'] - 1) *
+                                                    8]
 
-            # CAT LIST SPRITES
-            update_sprite(the_relationship.cat_to)
+                # CAT LIST SPRITES
+                update_sprite(the_relationship.cat_to)
 
-            # MAKES SPRITES INTO BUTTONS
-            buttons.draw_button((312 + pos_x, 150 + pos_y),  # if button clicked, show chosen_cat's details
-                                image=the_relationship.cat_to.sprite,
-                                chosen_cat=the_relationship.cat_to,
-                                show_details=True
-                                )
+                # MAKES SPRITES INTO BUTTONS
+                buttons.draw_button((312 + pos_x, 150 + pos_y),  # if button clicked, show chosen_cat's details
+                                    image=the_relationship.cat_to.sprite,
+                                    chosen_cat=the_relationship.cat_to,
+                                    show_details=True
+                                    )
 
-            # CHECK NAME LENGTH - SHORTEN IF NECESSARY
-            name = str(the_relationship.cat_to.name)  # get name
-            if 12 <= len(name) >= 14:  # check name length
-                short_name = str(the_relationship.cat_to.name)[0:11]
-                name = short_name + '...'
+                # CHECK NAME LENGTH - SHORTEN IF NECESSARY
+                name = str(the_relationship.cat_to.name)  # get name
+                if 12 <= len(name) >= 14:  # check name length
+                    short_name = str(the_relationship.cat_to.name)[0:11]
+                    name = short_name + '...'
 
-            # display name
-            verdana_mid_dark.text(name, ('center', 131 + pos_y),
-                                  x_start=300 + pos_x,
-                                  x_limit=300 + pos_x + 82)
+                # display name
+                verdana_mid_dark.text(name, ('center', 131 + pos_y),
+                                      x_start=300 + pos_x,
+                                      x_limit=300 + pos_x + 82)
 
-            if the_relationship.cat_to.genderalign == 'female':
-                screen.blit(RelationshipScreen.female_icon_small, (370 + pos_x, 155 + pos_y))
-            if the_relationship.cat_to.genderalign == 'male':
-                screen.blit(RelationshipScreen.male_icon_small, (370 + pos_x, 155 + pos_y))
-            if the_relationship.cat_to.genderalign != 'female' and the_relationship.cat_to.genderalign != 'male' \
-                    and the_relationship.cat_to.genderalign != 'trans female' and the_relationship.cat_to.genderalign != 'trans male':
-                screen.blit(RelationshipScreen.nonbi_icon_small, (370 + pos_x, 155 + pos_y))
-            if the_relationship.cat_to.genderalign == 'trans female':
-                screen.blit(RelationshipScreen.transfem_icon_small, (370 + pos_x, 155 + pos_y))
-            if the_relationship.cat_to.genderalign == 'trans male':
-                screen.blit(RelationshipScreen.transmasc_icon_small, (370 + pos_x, 155 + pos_y))
+                if the_relationship.cat_to.genderalign == 'female':
+                    screen.blit(RelationshipScreen.female_icon_small, (370 + pos_x, 155 + pos_y))
+                if the_relationship.cat_to.genderalign == 'male':
+                    screen.blit(RelationshipScreen.male_icon_small, (370 + pos_x, 155 + pos_y))
+                if the_relationship.cat_to.genderalign != 'female' and the_relationship.cat_to.genderalign != 'male' \
+                        and the_relationship.cat_to.genderalign != 'trans female' and the_relationship.cat_to.genderalign != 'trans male':
+                    screen.blit(RelationshipScreen.nonbi_icon_small, (370 + pos_x, 155 + pos_y))
+                if the_relationship.cat_to.genderalign == 'trans female':
+                    screen.blit(RelationshipScreen.transfem_icon_small, (370 + pos_x, 155 + pos_y))
+                if the_relationship.cat_to.genderalign == 'trans male':
+                    screen.blit(RelationshipScreen.transmasc_icon_small, (370 + pos_x, 155 + pos_y))
 
-            if the_cat.mate is not None and the_cat.mate != '' and the_relationship.cat_to.ID == the_cat.mate:
-                screen.blit(RelationshipScreen.mate_icon_small, (297 + pos_x, 158 + pos_y))
+                if the_cat.mate is not None and the_cat.mate != '' and the_relationship.cat_to.ID == the_cat.mate:
+                    screen.blit(RelationshipScreen.mate_icon_small, (297 + pos_x, 158 + pos_y))
 
-            if the_relationship.cat_to.is_uncle_aunt(the_cat) or the_cat.is_uncle_aunt(the_relationship.cat_to):
-                screen.blit(RelationshipScreen.family_icon_small, (297 + pos_x, 158 + pos_y))
-            elif the_relationship.cat_to.is_grandparent(the_cat) or the_cat.is_grandparent(the_relationship.cat_to):
-                screen.blit(RelationshipScreen.family_icon_small, (297 + pos_x, 158 + pos_y))
-            elif the_relationship.cat_to.is_parent(the_cat) or the_cat.is_parent(the_relationship.cat_to):
-                screen.blit(RelationshipScreen.family_icon_small, (297 + pos_x, 158 + pos_y))
-            elif the_relationship.cat_to.is_sibling(the_cat) or the_cat.is_sibling(the_relationship.cat_to):
-                screen.blit(RelationshipScreen.family_icon_small, (297 + pos_x, 158 + pos_y))
+                if the_relationship.cat_to.is_uncle_aunt(the_cat) or the_cat.is_uncle_aunt(the_relationship.cat_to):
+                    screen.blit(RelationshipScreen.family_icon_small, (297 + pos_x, 158 + pos_y))
+                elif the_relationship.cat_to.is_grandparent(the_cat) or the_cat.is_grandparent(the_relationship.cat_to):
+                    screen.blit(RelationshipScreen.family_icon_small, (297 + pos_x, 158 + pos_y))
+                elif the_relationship.cat_to.is_parent(the_cat) or the_cat.is_parent(the_relationship.cat_to):
+                    screen.blit(RelationshipScreen.family_icon_small, (297 + pos_x, 158 + pos_y))
+                elif the_relationship.cat_to.is_sibling(the_cat) or the_cat.is_sibling(the_relationship.cat_to):
+                    screen.blit(RelationshipScreen.family_icon_small, (297 + pos_x, 158 + pos_y))
 
-            count = 17
+                count = 17
 
-            # CHECK AGE DIFFERENCE
-            different_age = the_relationship.cat_to.age != the_relationship.cat_to.age
-            adult_ages = ['young adult', 'adult', 'senior adult', 'elder']
-            both_adult = the_relationship.cat_to.age in adult_ages and the_relationship.cat_to.age in adult_ages
-            check_age = (different_age and both_adult) or both_adult or not different_age
+                # CHECK AGE DIFFERENCE
+                different_age = the_relationship.cat_to.age != the_relationship.cat_to.age
+                adult_ages = ['young adult', 'adult', 'senior adult', 'elder']
+                both_adult = the_relationship.cat_to.age in adult_ages and the_relationship.cat_to.age in adult_ages
+                check_age = (different_age and both_adult) or both_adult or not different_age
 
-            # ROMANTIC DISPLAY
-            if the_relationship.romantic_love > 49 and check_age:
-                verdana_small_dark.text(
-                    'romantic love:',
-                    (292 + pos_x, 181 + pos_y + count))
-                count += 20
-                current_x = 294 + pos_x
-                current_y = 180 + pos_y + count
-                if check_age:
-                    self.draw_green_bar(the_relationship.romantic_love, current_x, current_y)
+                # ROMANTIC DISPLAY
+                if the_relationship.romantic_love > 49 and check_age:
+                    verdana_small_dark.text(
+                        'romantic love:',
+                        (292 + pos_x, 181 + pos_y + count))
+                    count += 20
+                    current_x = 294 + pos_x
+                    current_y = 180 + pos_y + count
+                    if check_age:
+                        self.draw_green_bar(the_relationship.romantic_love, current_x, current_y)
+                    else:
+                        self.draw_bar(0, current_x, current_y)
                 else:
-                    self.draw_bar(0, current_x, current_y)
-            else:
-                verdana_small_dark.text(
-                    'romantic like:',
-                    (292 + pos_x, 181 + pos_y + count))
-                count += 20
-                current_x = 294 + pos_x
-                current_y = 180 + pos_y + count
-                if check_age:
-                    self.draw_bar(the_relationship.romantic_love, current_x, current_y)
+                    verdana_small_dark.text(
+                        'romantic like:',
+                        (292 + pos_x, 181 + pos_y + count))
+                    count += 20
+                    current_x = 294 + pos_x
+                    current_y = 180 + pos_y + count
+                    if check_age:
+                        self.draw_bar(the_relationship.romantic_love, current_x, current_y)
+                    else:
+                        self.draw_bar(0, current_x, current_y)
+
+                count += 5
+
+                # PLATONIC DISPLAY
+                if the_relationship.platonic_like > 49:
+                    verdana_small_dark.text(
+                        'platonic love:',
+                        (292 + pos_x, 179 + pos_y + count))
+                    count += 20
+                    current_x = 294 + pos_x
+                    current_y = 178 + pos_y + count
+                    self.draw_green_bar(the_relationship.platonic_like, current_x, current_y)
                 else:
-                    self.draw_bar(0, current_x, current_y)
+                    verdana_small_dark.text(
+                        'platonic like:',
+                        (292 + pos_x, 179 + pos_y + count))
+                    count += 20
+                    current_x = 294 + pos_x
+                    current_y = 178 + pos_y + count
+                    self.draw_bar(the_relationship.platonic_like, current_x, current_y)
 
-            count += 5
+                count += 5
 
-            # PLATONIC DISPLAY
-            if the_relationship.platonic_like > 49:
-                verdana_small_dark.text(
-                    'platonic love:',
-                    (292 + pos_x, 179 + pos_y + count))
-                count += 20
-                current_x = 294 + pos_x
-                current_y = 178 + pos_y + count
-                self.draw_green_bar(the_relationship.platonic_like, current_x, current_y)
-            else:
-                verdana_small_dark.text(
-                    'platonic like:',
-                    (292 + pos_x, 179 + pos_y + count))
-                count += 20
-                current_x = 294 + pos_x
-                current_y = 178 + pos_y + count
-                self.draw_bar(the_relationship.platonic_like, current_x, current_y)
+                # DISLIKE DISPLAY
+                if the_relationship.dislike > 49:
+                    verdana_small_dark.text(
+                        'hate:',
+                        (292 + pos_x, 177 + pos_y + count))
+                    count += 20
+                    current_x = 294 + pos_x
+                    current_y = 176 + pos_y + count
+                    self.draw_red_bar(the_relationship.dislike, current_x, current_y)
+                else:
+                    verdana_small_dark.text(
+                        'dislike:',
+                        (292 + pos_x, 177 + pos_y + count))
+                    count += 20
+                    current_x = 294 + pos_x
+                    current_y = 176 + pos_y + count
+                    self.draw_bar(the_relationship.dislike, current_x, current_y)
 
-            count += 5
+                count += 5
 
-            # DISLIKE DISPLAY
-            if the_relationship.dislike > 49:
-                verdana_small_dark.text(
-                    'hate:',
-                    (292 + pos_x, 177 + pos_y + count))
-                count += 20
-                current_x = 294 + pos_x
-                current_y = 176 + pos_y + count
-                self.draw_red_bar(the_relationship.dislike, current_x, current_y)
-            else:
-                verdana_small_dark.text(
-                    'dislike:',
-                    (292 + pos_x, 177 + pos_y + count))
-                count += 20
-                current_x = 294 + pos_x
-                current_y = 176 + pos_y + count
-                self.draw_bar(the_relationship.dislike, current_x, current_y)
+                # ADMIRE DISPLAY
+                if the_relationship.admiration > 49:
+                    verdana_small_dark.text(
+                        'admiration:',
+                        (292 + pos_x, 175 + pos_y + count))
+                    count += 20
+                    current_x = 294 + pos_x
+                    current_y = 174 + pos_y + count
+                    self.draw_green_bar(the_relationship.admiration, current_x, current_y)
 
-            count += 5
+                else:
+                    verdana_small_dark.text(
+                        'respect:',
+                        (292 + pos_x, 175 + pos_y + count))
+                    count += 20
+                    current_x = 294 + pos_x
+                    current_y = 174 + pos_y + count
+                    self.draw_bar(the_relationship.admiration, current_x, current_y)
 
-            # ADMIRE DISPLAY
-            if the_relationship.admiration > 49:
-                verdana_small_dark.text(
-                    'admiration:',
-                    (292 + pos_x, 175 + pos_y + count))
-                count += 20
-                current_x = 294 + pos_x
-                current_y = 174 + pos_y + count
-                self.draw_green_bar(the_relationship.admiration, current_x, current_y)
+                count += 5
 
-            else:
-                verdana_small_dark.text(
-                    'respect:',
-                    (292 + pos_x, 175 + pos_y + count))
-                count += 20
-                current_x = 294 + pos_x
-                current_y = 174 + pos_y + count
-                self.draw_bar(the_relationship.admiration, current_x, current_y)
+                # COMFORTABLE DISPLAY
+                if the_relationship.comfortable > 49:
+                    verdana_small_dark.text(
+                        'secure:',  # eventual progression to 'secure'?
+                        (292 + pos_x, 173 + pos_y + count))
+                    count += 20
+                    current_x = 294 + pos_x
+                    current_y = 172 + pos_y + count
+                    self.draw_green_bar(the_relationship.comfortable, current_x, current_y)
+                else:
+                    verdana_small_dark.text(
+                        'comfortable:',  # eventual progression to 'secure'?
+                        (292 + pos_x, 173 + pos_y + count))
+                    count += 20
+                    current_x = 294 + pos_x
+                    current_y = 172 + pos_y + count
+                    self.draw_bar(the_relationship.comfortable, current_x, current_y)
 
-            count += 5
+                count += 5
 
-            # COMFORTABLE DISPLAY
-            if the_relationship.comfortable > 49:
-                verdana_small_dark.text(
-                    'secure:',  # eventual progression to 'secure'?
-                    (292 + pos_x, 173 + pos_y + count))
-                count += 20
-                current_x = 294 + pos_x
-                current_y = 172 + pos_y + count
-                self.draw_green_bar(the_relationship.comfortable, current_x, current_y)
-            else:
-                verdana_small_dark.text(
-                    'comfortable:',  # eventual progression to 'secure'?
-                    (292 + pos_x, 173 + pos_y + count))
-                count += 20
-                current_x = 294 + pos_x
-                current_y = 172 + pos_y + count
-                self.draw_bar(the_relationship.comfortable, current_x, current_y)
-
-            count += 5
-
-            # JEALOUS DISPLAY
-            if the_relationship.jealousy > 49:
-                verdana_small_dark.text(
-                    'resentment:',  # eventual progression to 'resentment'?
-                    (292 + pos_x, 171 + pos_y + count))
-                count += 20
-                current_x = 294 + pos_x
-                current_y = 170 + pos_y + count
-                self.draw_red_bar(the_relationship.jealousy, current_x, current_y)
-            else:
-                verdana_small_dark.text(
-                        'jealousy:',  # eventual progression to 'resentment'?
+                # JEALOUS DISPLAY
+                if the_relationship.jealousy > 49:
+                    verdana_small_dark.text(
+                        'resentment:',  # eventual progression to 'resentment'?
                         (292 + pos_x, 171 + pos_y + count))
-                count += 20
-                current_x = 294 + pos_x
-                current_y = 170 + pos_y + count
-                self.draw_bar(the_relationship.jealousy, current_x, current_y)
+                    count += 20
+                    current_x = 294 + pos_x
+                    current_y = 170 + pos_y + count
+                    self.draw_red_bar(the_relationship.jealousy, current_x, current_y)
+                else:
+                    verdana_small_dark.text(
+                            'jealousy:',  # eventual progression to 'resentment'?
+                            (292 + pos_x, 171 + pos_y + count))
+                    count += 20
+                    current_x = 294 + pos_x
+                    current_y = 170 + pos_y + count
+                    self.draw_bar(the_relationship.jealousy, current_x, current_y)
 
-            count += 5
+                count += 5
 
-            # TRUST DISPLAY
-            if the_relationship.trust > 49:
-                verdana_small_dark.text(
-                    'reliance:',  # eventual progression to 'reliance'?
-                    (294 + pos_x, 169 + pos_y + count))
-                count += 20
-                current_x = 294 + pos_x
-                current_y = 168 + pos_y + count
-                self.draw_green_bar(the_relationship.trust, current_x, current_y)
-            else:
-                verdana_small_dark.text(
-                    'trust:',  # eventual progression to 'reliance'?
-                    (294 + pos_x, 169 + pos_y + count))
-                count += 20
-                current_x = 294 + pos_x
-                current_y = 168 + pos_y + count
-                self.draw_bar(the_relationship.trust, current_x, current_y)
+                # TRUST DISPLAY
+                if the_relationship.trust > 49:
+                    verdana_small_dark.text(
+                        'reliance:',  # eventual progression to 'reliance'?
+                        (294 + pos_x, 169 + pos_y + count))
+                    count += 20
+                    current_x = 294 + pos_x
+                    current_y = 168 + pos_y + count
+                    self.draw_green_bar(the_relationship.trust, current_x, current_y)
+                else:
+                    verdana_small_dark.text(
+                        'trust:',  # eventual progression to 'reliance'?
+                        (294 + pos_x, 169 + pos_y + count))
+                    count += 20
+                    current_x = 294 + pos_x
+                    current_y = 168 + pos_y + count
+                    self.draw_bar(the_relationship.trust, current_x, current_y)
 
-            # CAT COUNT
-            cats_on_page += 1
-            pos_x += 122
-            if pos_x >= 400:
-                pos_x = 0
-                pos_y += 55 + count
+                # CAT COUNT
+                cats_on_page += 1
+                pos_x += 122
+                if pos_x >= 400:
+                    pos_x = 0
+                    pos_y += 55 + count
 
-            if cats_on_page >= 8 or x + (game.switches['list_page'] -
-                                          1) * 8 == len(search_relations) - 1:
-                break
+                if cats_on_page >= 8 or x + (game.switches['list_page'] -
+                                              1) * 8 == len(search_relations) - 1:
+                    break
+                # PAGE ARROW BUTTONS
+                verdana.text(
+                    'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages),
+                    (488, 625))
+                if game.switches['list_page'] > 1:
+                    buttons.draw_image_button((440, 616),
+                                              button_name='relationship_list_arrow_l',
+                                              list_page=game.switches['list_page'] - 1,
+                                              size=(34, 34),
+                                              hotkey=[23])
+                else:
+                    buttons.draw_image_button((440, 616),
+                                              button_name='relationship_list_arrow_l',
+                                              list_page=game.switches['list_page'] - 1,
+                                              size=(34, 34),
+                                              available=False,
+                                              hotkey=[23])
+
+                if game.switches['list_page'] < all_pages:
+
+                    buttons.draw_image_button((580, 616),
+                                              button_name='relationship_list_arrow_r',
+                                              list_page=game.switches['list_page'] + 1,
+                                              size=(34, 34),
+                                              hotkey=[21])
+                else:
+                    buttons.draw_image_button((580, 616),
+                                              button_name='relationship_list_arrow_r',
+                                              list_page=game.switches['list_page'] + 1,
+                                              size=(34, 34),
+                                              available=False,
+                                              hotkey=[21])
+        else:
+            screen.blit(self.log_frame, (273, 122))
 
         # SHOW CAT DETAILS
         if game.switches['show_details'] is True:
@@ -1253,45 +1289,15 @@ class RelationshipScreen(Screens):
                     (x_value, y_value))
                 screen.blit(RelationshipScreen.family_icon, (45, 150))
 
-        # PAGE ARROW BUTTONS
-        verdana.text(
-            'page ' + str(game.switches['list_page']) + ' / ' + str(all_pages),
-            (488, 625))
 
-        if game.switches['list_page'] > 1:
-            buttons.draw_image_button((440, 616),
-                                      button_name='relationship_list_arrow_l',
-                                      list_page=game.switches['list_page'] - 1,
-                                      size=(34, 34),
-                                      hotkey=[23])
-        else:
-            buttons.draw_image_button((440, 616),
-                                      button_name='relationship_list_arrow_l',
-                                      list_page=game.switches['list_page'] - 1,
-                                      size=(34, 34),
-                                      available=False,
-                                      hotkey=[23])
 
-        if game.switches['list_page'] < all_pages:
 
-            buttons.draw_image_button((580, 616),
-                                      button_name='relationship_list_arrow_r',
-                                      list_page=game.switches['list_page'] + 1,
-                                      size=(34, 34),
-                                      hotkey=[21])
-        else:
-            buttons.draw_image_button((580, 616),
-                                      button_name='relationship_list_arrow_r',
-                                      list_page=game.switches['list_page'] + 1,
-                                      size=(34, 34),
-                                      available=False,
-                                      hotkey=[21])
 
         # CHANGE FOCUS CAT AND VIEW PROFILE
         # CHANGE FOCUS CAT AND VIEW PROFILE
         if game.switches['chosen_cat'] is not None and not game.switches['chosen_cat'].dead:
             to_switch_id = game.switches['chosen_cat'].ID
-            buttons.draw_image_button((85, 390),
+            buttons.draw_image_button((65, 390),
                                       button_name='switch_focus',
                                       size=(136, 30),
                                       cat=to_switch_id,
@@ -1299,7 +1305,7 @@ class RelationshipScreen(Screens):
                                       show_details=None,
                                       chosen_cat=None
                                       )
-            buttons.draw_image_button((85, 420),
+            buttons.draw_image_button((65, 420),
                                       button_name='view_profile',
                                       size=(136, 30),
                                       cat=to_switch_id,
@@ -1307,9 +1313,24 @@ class RelationshipScreen(Screens):
                                       show_details=None,
                                       chosen_cat=None
                                       )
+            if game.switches['show_info'] is False:
+                buttons.draw_image_button((210, 402),
+                                          button_name='log_icon',
+                                          size=(34, 34),
+                                          show_info=True,
+                                          available=False
+                                          )
+            else:
+                buttons.draw_image_button((210, 402),
+                                          button_name='cat_icon',
+                                          size=(34, 34),
+                                          show_info=False,
+                                          available=False
+                                          )
+
         elif game.switches['chosen_cat'] is not None and game.switches['chosen_cat'].dead:
             to_switch_id = game.switches['chosen_cat'].ID
-            buttons.draw_image_button((85, 390),
+            buttons.draw_image_button((65, 390),
                                       button_name='switch_focus',
                                       size=(136, 30),
                                       cat=to_switch_id,
@@ -1318,7 +1339,7 @@ class RelationshipScreen(Screens):
                                       chosen_cat=None,
                                       available=False
                                       )
-            buttons.draw_image_button((85, 420),
+            buttons.draw_image_button((65, 420),
                                       button_name='view_profile',
                                       size=(136, 30),
                                       cat=to_switch_id,
@@ -1326,16 +1347,37 @@ class RelationshipScreen(Screens):
                                       show_details=None,
                                       chosen_cat=None
                                       )
+            if game.switches['show_info'] is False:
+                buttons.draw_image_button((210, 402),
+                                          button_name='log_icon',
+                                          size=(34, 34),
+                                          show_info=True,
+                                          available=False
+                                          )
+            else:
+                buttons.draw_image_button((210, 402),
+                                          button_name='cat_icon',
+                                          size=(34, 34),
+                                          show_info=False,
+                                          available=False
+                                          )
+
 
         else:
-            buttons.draw_image_button((85, 390),
+            buttons.draw_image_button((65, 390),
                                       button_name='switch_focus',
                                       size=(136, 30),
                                       available=False
                                       )
-            buttons.draw_image_button((85, 420),
+            buttons.draw_image_button((65, 420),
                                       button_name='view_profile',
                                       size=(136, 30),
+                                      available=False
+                                      )
+            buttons.draw_image_button((210, 402),
+                                      button_name='log_icon',
+                                      size=(34, 34),
+                                      show_info=True,
                                       available=False
                                       )
         buttons.draw_image_button((25, 645),
