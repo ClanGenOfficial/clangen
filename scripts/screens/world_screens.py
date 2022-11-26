@@ -23,6 +23,8 @@ class OutsideClanScreen(Screens):
             the_cat = list(Cat.all_cats.values())[x]
             if not the_cat.dead and the_cat.exiled:
                 living_cats.append(the_cat)
+            elif not the_cat.dead and the_cat.outside:
+                living_cats.append(the_cat)
 
         search_text = game.switches['search_text']
         search_bar = pygame.transform.scale(
