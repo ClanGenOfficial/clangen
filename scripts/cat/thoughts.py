@@ -200,7 +200,7 @@ def get_warrior_thoughts(cat, other_cat):
         elif cat.trait == 'fierce':
             thoughts += [
                 'Is roaring playfully at kits, making them laugh',
-                'Has been rough housing with the kits a little too hard lately'
+                'Has been rogue housing with the kits a little too hard lately'
             ]
         elif cat.trait == 'loving':
             thoughts += [
@@ -494,7 +494,7 @@ def get_warrior_trait_role_thoughts(cat, other_cat):
         if other_cat.status == 'kitten':
             thoughts += [
                 'Is roaring playfully at kits, making them laugh',
-                'Has been rough housing with the kits a little to hard lately',
+                'Has been rogue housing with the kits a little to hard lately',
                 'Is telling the kits tales about valiant warriors in the thick of epic battles'
             ]
     

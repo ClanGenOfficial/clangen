@@ -1,0 +1,21 @@
+{
+    "Beach":{
+        "cracked pads": "r_c stepped on some sharp stones near the beach."
+    },
+    "Forest":{
+        "broken bone": "r_c fell from the tree.",
+        "splinter": "r_c was climbing on a tree.",
+        "torn pelt": "r_c pelt's has become entangled with the walls of the camp."
+    },
+    "Mountainous":{
+        "broken bone": "r_c fell from a cliff, but did somehow survive.",
+        "joint pain": "r_c's paws slipped on some rocks and they got injured.",
+        "sprain": "r_c jumped from a rock, but they didn't landed correct."
+    },
+    "Plains":{
+        "bruises": "r_c while running over the hills, they falls over their own legs and hit the ground hard."
+    },
+    "Swamp":{
+        "sprain": "r_c got stuck in a swamp, and tried too hard to get out on his own, until clanmate's helped them."
+    }
+}

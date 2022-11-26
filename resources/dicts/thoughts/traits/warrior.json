@@ -75,8 +75,8 @@
         "Is chiding a younger cat for being so reckless",
         "Is padding back and forth, across the camp",
         "Is dutifully standing guard outside of camp",
-        "Is helping to reinforce the nursery walls",
-        "Is helping to reinforce the camp walls",
+        "Is helping to reinforce the nursery walls.",
+        "Is helping to reinforce the camp walls.",
         "Is patching up a hole in the camp wall",
         "Is helping to reinforce the walls of the elders' den",
         "Is going back to check out an old fox burrow they discovered yesterday, just to be safe"
@@ -290,7 +290,7 @@
         "Isn't sure that they should be idling around at the moment",
         "Is planning on going to sleep early tonight",
         "Is making sure no work is being shirked!",
-        "Is repairing one of the camp walls",
+        "Is repairing one of the camp walls.",
         "Is offering to lead the next patrol out"
     ],
     "righteous": [
