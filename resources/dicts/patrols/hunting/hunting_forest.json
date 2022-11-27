@@ -701,6 +701,477 @@
             "scar",
             "death"
     ]
+},
+{
+    "patrol_id": "fst_hunt_gonetnr2",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["hunting", "gone", "big_prey"],
+    "intro_text": "Your patrol encounters a clearing where a lot of Twolegs linger.",
+    "decline_text": "Your patrol decides to hunt elsewhere.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "They continue hunting undetected, using the presence of the Twolegs startling the local wildlife to bring back a good haul.",
+        "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, before darting forward and making off with a large lump of meat in their mouth.",
+        "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+        "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "The patrol mostly ignores the Twolegs. As they hunt they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
+        null,
+        "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before they can decide whether to step closer, there's a swoosh, and a net falls around them. s_c fights desperately, but the Twolegs take them away in the monster."
+    ],
+    "win_skills": ["extremely smart"],
+    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
+    "fail_skills": ["None"],
+    "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "min_cats": 4,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            null
+    ]
+},
+{
+    "patrol_id": "fst_hunt_gonetnr3",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["hunting", "multi_gone", "big_prey"],
+    "intro_text": "Your patrol encounters a clearing where a lot of Twolegs linger.",
+    "decline_text": "Your patrol decides to hunt elsewhere.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+            "They continue hunting undetected.",
+            "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, before darting forward and making off with a sandwich in their mouth.",
+            "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+            "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "The patrol mostly ignores the Twolegs. But as they hunt, the cats encounter appealing, delicious smelling mush in little burrows. Some of the patrol investigates, and doors slam down behind them. There's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and the trapped cats are taken.",
+            null,
+    "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? They wander closer, drawing more of the patrol in with them. Before they can decide whether to step away, there's a swoosh, and a net falls around the cats. They fight desperately, but the Twolegs take them away in the monster."
+    ],
+    "win_skills": ["extremely smart"],
+    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
+    "fail_skills": ["None"],
+    "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "min_cats": 4,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            null
+    ]
+},
+{
+    "patrol_id": "fst_hunt_gonetwolegden1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["hunting", "gone", "small_prey"],
+    "intro_text": "r_c decides to hunt out near the Twoleg dens.",
+    "decline_text": "On second thought, they decide to reline their nest today instead.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+            "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
+            "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. They've always wondered what it might taste like . . . dry, is the answer. Very odd.",
+            "s_c gets distracted from hunting by strange Twoleg activity around one of their dens. They appear to be hauling all their many, many varieties of nest lining out and into a big monster. s_c take the opportunity to grab a little soft thing, something that's almost shaped like prey. It'll be good for the nursery.",
+            "Calmly, s_c weaves around the Twoleg dens, picking out the mice from the tunnels and the birds off the strange metal hanging fruit. A successful, sneaky hunt."
+    ],
+    "fail_text": [
+            null,
+            "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+            "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
+            "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
+    "fail_skills": ["None"],
+    "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            null
+    ]
+},
+{
+    "patrol_id": "fst_hunt_gonetwolegden2",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["hunting", "gone", "small_prey", "apprentice"],
+    "intro_text": "app1 decides to hunt out near the Twoleg dens.",
+    "decline_text": "On second thought, they decide to reline their nest today instead.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+            "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
+            "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app1. They've always wondered what it might taste like… dry, is the answer. It's strangely appealing.",
+            null,
+            "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with their belly low to the ground. A successful, sneaky hunt."
+    ],
+    "fail_text": [
+            null,
+            "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+            "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
+            "Carelessly, app1 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they discover that a broken window is just wide enough to push themselves out to safety through, but the glass leaves them bleeding as they run back to c_n."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
+    "fail_skills": ["None"],
+    "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            null
+    ]
+},
+{
+    "patrol_id": "fst_hunt_gonetwolegden3",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["hunting", "gone", "small_prey", "romantic", "platonic"],
+    "intro_text": "Boldly, eyes daring p_l to say no, r_c suggests hunting by the Twoleg dens.",
+    "decline_text": "On second thought, they decide to reline their nests today instead.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+            "They're interrupted by Twolegs wandering through the woods a couple times, but it's a successful hunt.",
+            "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for r_c. They fetch p_l, and both cats investigate the food, loudly proclaiming how much better fresh kill is, but both a little thrilled by the experience.",
+            "s_c shows the other cat all around the outskirts of the Twoleg dens, showing off how much they know about the strange animals and their weird behavior, and enjoying getting to feel clever.",
+            "It's a strange adventure, odd and weird and a little thrilling. s_c takes the lead, but both s_c and r_c are wide eyed and a little scared, in a fun way."
+    ],
+    "fail_text": [
+                            "Carelessly, r_c is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they hear p_l yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, r_c presses their pelt against p_l on the way back to c_n.",
+            "The Twolegs here are friendly, and a little carelessly, s_c goes to hunt in their garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+            "Carelessly, r_c is seen by Twolegs, and taken from c_n.",
+null
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
+    "fail_skills": ["None"],
+    "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            null
+    ]
+},
+{
+    "patrol_id": "fst_hunt_gonetwolegden4",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["hunting", "gone", "small_prey", "apprentice", "romantic", "platonic"],
+    "intro_text": "Boldly, eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
+    "decline_text": "On second thought, they decide to reline their nests today instead.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+            "They're interrupted by Twolegs wandering through the woods a couple times, so they miss a couple catches, but overall it works out.",
+            "A friendly Twolegs makes a psspsspss noise, and pours kittypet food on the ground for app2. They fetch app1, and both apprentices loudly proclaim how much better fresh kill is, but both are also wide eyed and thrilled by the experience.",
+            null,
+            "Tail lashing excitedly, app1 hunts in the strange, forbidden land, ducking around corners and crawling over gardens with their belly low to the ground. app2 tries to be even sneakier, and so app1 ups their game, until they're both probably the most obvious pair of cats in the neighborhood."
+    ],
+    "fail_text": [
+            "Carelessly, app2 is seen by Twolegs, and is taken hissing and spitting to be locked in a monster's den. Overnight, they hear app1 yowling from outside, and the two cats manage to craft an escape plan through a broken window. Shivering, app2 presses their pelt against app1 as they pad home.",
+            "A little carelessly, s_c jumps a fence to hunt in a den's garden. But there's a new thing there, a box, suspicious and strange. Wisely, s_c avoids it, and returns to c_n territory.",
+            "Carelessly, app1 is seen by Twolegs, and taken from c_n.",
+            null
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
+    "fail_skills": ["None"],
+    "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            null
+    ]
+},
+{
+    "patrol_id": "fst_hunt_gonetwolegtrap1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["hunting", "gone"],
+    "intro_text": "The smell of food lures r_c into what looks like a tunnel between some bushes.",
+    "decline_text": "Turning their nose up at the temptation, they continue on their way.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+            "Darting through quickly, they see that the lovely smell is Twoleg mush, and keep running.",
+            "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around them, only for their fur to stand on end as they realize they're standing in a metal tunnel, cloaked in rust and camouflage. It's to their great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. They leave quickly.",
+            "Something about this situation sets all of s_c's instincts off. They investigate, carefully, and strip the cover of the bushes away from a Twoleg trap underneath.",
+            "Something isn't right. Nervously pawing at the bushes, s_c thinks that the smell is too good to be true. They leave it, deciding to return to camp and report it to the deputy instead."
+    ],
+    "fail_text": [
+            null,
+            "Easily swayed by the delicious smell, s_c wanders recklessly into the sheltered space, only to smack into a metal wall. Inside the trap, a young fox starts up a distressed wail, and s_c feels sympathy for it they never expected to feel for a fox, as well as the heart stopping realization that it could easily have been them.",
+             "r_c is caught in a trap hidden in the bushes and is taken by Twolegs shortly after.",
+            null
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
+    "fail_skills": ["None"],
+    "fail_trait": ["adventurous", "bold", "confident", "daring", "playful"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            null
+    ]
+},
+{
+    "patrol_id": "fst_hunt_gonetwolegtrap2",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["hunting", "gone"],
+    "intro_text": "The smell of food lures r_c into what looks like a tunnel between some bushes.",
+    "decline_text": "Turning their nose up at the temptation, the patrol continues on their way.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+            "Darting through quickly, r_c sees that the lovely smell is Twoleg mush, and keeps running.",
+            "The lovely smell leads to Twoleg mush. Puzzled, r_c checks around them, only for their fur to stand on end as they realize they're standing in a metal tunnel, cloaked in rust and camouflage. It's to their great fortune that this trap seems to be broken, but whatever Twoleg restocked the bait might still be around. They leave quickly.",
+            "Something about this situation sets all of s_c's instincts off. They investigate, carefully, and the patrol helps them strip the cover of the bushes away from a Twoleg trap underneath.",
+            "Something isn't right. Nervously pawing at the bushes, s_c thinks that the smell is too good to be true. They leave it, convincing the patrol to return to camp and report it to the deputy instead."
+    ],
+    "fail_text": [
+            null,
+            "Easily swayed by the delicious smell, s_c wanders recklessly into the sheltered space, only to smack into a metal wall. Inside the trap, a young fox starts up a distressed wail, and s_c feels sympathy for it they never expected to feel for a fox, as well as the heart stopping realization that it could easily have been them.",
+             "r_c is caught in a trap hidden in the bushes! There's nothing the patrol is able to do to help them, and r_c is taken by Twolegs shortly after.",
+            null
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange"],
+    "fail_skills": ["None"],
+    "fail_trait": ["adventurous", "bold", "confident", "daring", "playful"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            null
+    ]
+},
+{
+    "patrol_id": "fst_hunt_thunderpath1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["death", "scar", "retirement", "injury", "hunting", "small_prey"],
+    "intro_text": "The patrol comes across a thunderpath running through the forest.",
+    "decline_text": "They decide it is better not to cross.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "Your patrol crosses the thunderpath and can hunt on the other side.",
+        "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+        "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
+        "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side."
+    ],
+    "fail_text": [
+        "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+        null,
+        "r_c is hit by a monster while crossing and dies instantly.",
+        "r_c is hit by a monster and seems quite injured, but miraculously still alive."
+],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["calm", "careful", "insecure", "nervous", "sneaky", "strange", "patient", "responsible", "thoughtful", "wise"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was heavily injured by a monster, and carries the scars from it.",
+            "r_c was hit by a monster and killed."
+    ]
+},
+{
+    "patrol_id": "fst_hunt_thunderpath2",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["death", "scar", "retirement", "injury", "hunting", "small_prey", "cruel_season"],
+    "intro_text": "The patrol comes across a thunderpath running through the forest.",
+    "decline_text": "They decide it is better not to cross.",
+    "chance_of_success": 30,
+    "exp": 10,
+    "success_text": [
+            "Your patrol crosses the thunderpath and can hunt on the other side.",
+            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side."
+    ],
+    "fail_text": [
+            "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+        null,
+        "r_c is crossing the thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly.",
+        "r_c is hit by a monster and seems quite injured, but miraculously still alive."
+],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["calm", "careful", "insecure", "nervous", "sneaky", "strange", "patient", "responsible", "thoughtful", "wise"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was heavily injured by a monster, and carries the scars from it.",
+            "r_c was hit by a monster and killed."
+    ]
+},
+{
+    "patrol_id": "fst_hunt_thunderpath3",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["multi_deaths", "scar", "retirement", "injury", "hunting", "big_prey"],
+    "intro_text": "The patrol comes across a thunderpath running through the forest.",
+    "decline_text": "They decide it is better not to cross.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+            "Your patrol crosses the thunderpath and can hunt on the other side.",
+            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
+            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds several flattened pieces of roadkill. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly with the patrol to hunt on the other side."
+    ],
+    "fail_text": [
+            null,
+        null,
+        "As the group crosses the thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit and die.",
+        "r_c is hit by a monster and seems quite injured, but miraculously still alive."
+],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["calm", "careful", "insecure", "nervous", "sneaky", "strange", "patient", "responsible", "thoughtful", "wise"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 5,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was heavily injured by a monster, and carries the scars from it.",
+            "This cat was hit by a monster and killed."
+    ]
+},
+{
+    "patrol_id": "fst_hunt_thunderpath4",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["multi_deaths", "scar", "retirement", "injury", "hunting", "big_prey", "cruel_season"],
+    "intro_text": "The patrol comes across a thunderpath running through the forest.",
+    "decline_text": "They decide it is better not to cross.",
+    "chance_of_success": 30,
+    "exp": 10,
+    "success_text": [
+        "Your patrol crosses the thunderpath and can hunt on the other side.",
+        "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of lots of prey.",
+        "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
+        "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly with the patrol to hunt on the other side."
+    ],
+    "fail_text": [
+        "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+        null,
+        "As the group crosses the thunderpath, a speeding monster appears out of nowhere. The cats run panicked in all directions, and several of them get hit as the monster swerves to hit them deliberately, killing them instantly.",
+        "r_c is hit by a monster and seems quite injured, but miraculously still alive."
+],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["calm", "careful", "insecure", "nervous", "sneaky", "strange", "patient", "responsible", "thoughtful", "wise"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 5,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was heavily injured by a monster, and carries the scars from it.",
+            "r_c was hit by a monster and killed."
+    ]
+},
+{
+    "patrol_id": "fst_hunt_fun1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["hunting", "small_prey"],
+    "intro_text": "As r_c tears through the forest, stretching their legs on a  run, they spot movement out of the corner of their eye.",
+    "decline_text": "They keep going, not wanting to slow down.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+            "With a huge leap, they dart sideways and pull a blackbird out of the air. What a great catch!",
+            "Laughing, they bounce gleefully off a tree trunk, redirecting their momentum to slam into a very surprised mouse.",
+            "Nothing's going to escape their claws! r_c skids to a halt and then leaps into action, claw just barely catching in the tail of the squirrel they saw and bringing it down. They purr with satisfaction and trot back to camp with their prize."
+    ],
+    "fail_text": [
+            "r_c darts to the side, but wherever made the flash of movement is long gone. How frustrating!",
+            "r_c skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life."
+    ],
+    "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            null
+    ]
+},
+{
+    "patrol_id": "fst_hunt_fun2",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["hunting", "small_prey", "apprentice"],
+    "intro_text": "As app1 tears through the forest, stretching their legs on a  run, they spot movement out of the corner of their eye.",
+    "decline_text": "They keep going, not wanting to slow down.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+            "With a huge leap, they dart sideways and pull the tail off a taking flight into blackbird the air. A missed catch, but new nest lining?",
+            "Laughing, they bounce gleefully off a tree trunk. It redirects their momentum far better than they were expecting, and it's difficult to say who's more surprised - the mouse, or the apprentice slamming into it! Not a very clean catch, but one they're proud of anyway."
+    ],
+    "fail_text": [
+            "app1 darts to the side, but wherever made the flash of movement is long gone. How frustrating!",
+            "app1 skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            null
+    ]
 }
 
 ]
