@@ -1068,7 +1068,7 @@ class Events():
         current_lives = int(game.clan.leader_lives)
 
         # chance to kill leader
-        if not int(random.random() * 90) and cat.status == 'leader':  # 1/90
+        if not int(random.random() * 85) and cat.status == 'leader':  # 1/90
             triggered_death = True
 
         # chance to die of old age
@@ -1077,7 +1077,7 @@ class Events():
 
         # extra death chance and injury deaths in expanded & cruel season
         if game.clan.game_mode in ["expanded", "cruel season"] and not triggered_death:
-            if not int(random.random() * 500):  # 1/600
+            if not int(random.random() * 450):  # 1/600
                 triggered_death = True
             else:
                 triggered_death = self.condition_events.handle_injuries(cat, game.clan.current_season, game.clan.biome)
@@ -1283,8 +1283,8 @@ class Events():
                     cat.die()
                     cat.died_by = history_text
 
-            if "rel_down" in death_cause.death_tags:
-                other_clan.relations -= 5
+            # if "rel_down" in death_cause.death_tags:
+            #    other_clan.relations -= 5
 
             game.cur_events_list.append(death_text)
 
