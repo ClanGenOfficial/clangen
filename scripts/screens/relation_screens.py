@@ -100,13 +100,13 @@ class ChooseMentorScreen(Screens):
 
         if the_cat.status == "apprentice":
             for cat in Cat.all_cats.values():
-                if not cat.dead and not cat.exiled and cat.status in [
+                if not cat.dead and not cat.outside and cat.status in [
                             'warrior', 'deputy', 'leader'
                         ]:
                     valid_mentors.append(cat)
         elif the_cat.status == "medicine cat apprentice":
             for cat in Cat.all_cats.values():
-                if not cat.dead and not cat.exiled and cat.status == 'medicine cat':
+                if not cat.dead and not cat.outside and cat.status == 'medicine cat':
                     valid_mentors.append(cat)
 
 
@@ -122,7 +122,7 @@ class ChooseMentorScreen(Screens):
             if game.switches['list_page'] > all_pages:
                 game.switches['list_page'] = 1
             new_mentor = valid_mentors[x + (game.switches['list_page'] - 1) * 30]
-            if not new_mentor.dead or new_mentor.exiled:
+            if not new_mentor.dead or new_mentor.outside:
                 buttons.draw_button((100 + pos_x, 365 + pos_y),
                                     image=new_mentor.sprite,
                                     mentor=new_mentor.ID,
@@ -445,7 +445,7 @@ class ViewChildrenScreen(Screens):
             verdana.text('This cat has never had offspring.', (350, 480))
 
 
-        if the_cat.exiled:
+        if the_cat.outside:
             buttons.draw_image_button((25, 645),
                                       button_name='back',
                                       text='Back',
@@ -674,7 +674,7 @@ class ChooseMateScreen(Screens):
             indirect_related = the_cat.is_uncle_aunt(relevant_cat) or relevant_cat.is_uncle_aunt(the_cat)
             related = direct_related or indirect_related
 
-            not_available = relevant_cat.dead or relevant_cat.exiled
+            not_available = relevant_cat.dead or relevant_cat.outside
 
             if not related and relevant_cat.ID != the_cat.ID and invalid_age and not not_available and relevant_cat.mate == None:
 

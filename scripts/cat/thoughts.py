@@ -8,7 +8,7 @@ def get_thoughts(cat, other_cat):
         return thoughts
 
     # actions or thoughts for all cats. These switch either every moon or every time the game is re-opened
-    if cat.is_alive() and not cat.exiled:
+    if cat.is_alive() and not cat.outside:
         thoughts = get_alive_thoughts(cat, other_cat)
     elif cat.is_alive() and cat.exiled:
         thoughts = get_exile_thoughts(cat, other_cat)

@@ -195,8 +195,10 @@ class Button():
                 # it is the leader, manage all the things
                 if Cat.all_cats[cat_value].status == 'leader':
                     game.clan.leader.exiled = True
+                    game.clan.leader.outside = True
                     game.clan.leader_lives = 1
                 if Cat.all_cats[cat_value].status == 'deputy':
+                    game.clan.deputy.outside = True
                     game.clan.deputy.exiled = True
                     game.clan.deputy = None
                 Cat.all_cats[cat_value].exiled = True

@@ -85,13 +85,13 @@ while True:
                         check_cat].ID != the_cat.ID and Cat.all_cats[
                             check_cat].dead == the_cat.dead and Cat.all_cats[
                                 check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                                    check_cat].exiled:
+                                    check_cat].outside:
                     previous_cat = Cat.all_cats[check_cat].ID
                 elif next_cat == 1 and Cat.all_cats[
                         check_cat].ID != the_cat.ID and Cat.all_cats[
                             check_cat].dead == the_cat.dead and Cat.all_cats[
                                 check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                                    check_cat].exiled:
+                                    check_cat].outside:
                     next_cat = Cat.all_cats[check_cat].ID
                 elif int(next_cat) > 1:
                     break

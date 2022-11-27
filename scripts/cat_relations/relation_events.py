@@ -252,7 +252,7 @@ class Relation_Events():
                 cat_from.mate = None
                 return
             cat_from_mate = Cat.all_cats.get(cat_from.mate)
-            from_mate_in_clan = cat_from_mate.is_alive() and not cat_from_mate.exiled
+            from_mate_in_clan = cat_from_mate.is_alive() and not cat_from_mate.outside
 
         if not self.had_one_event and relationship_from.mates and from_mate_in_clan:
             if self.check_if_breakup(relationship_from, relationship_to, cat_from, cat_to):
@@ -358,7 +358,7 @@ class Relation_Events():
             return
 
         # if the pregnant cat is exiled or killed meanwhile, delete it from the dictionary
-        if cat.dead or cat.exiled:
+        if cat.dead or cat.outside:
             del clan.pregnancy_data[cat.ID]
             return
         
@@ -377,12 +377,12 @@ class Relation_Events():
 
     def handle_two_moon_pregnant(self, cat, clan = game.clan):
         """Handles if the cat is two moons pregnant."""
-        # if the pregnant cat is exiled or killed meanwhile, delete it from the dictionary
+        # if the pregnant cat is outside or killed meanwhile, delete it from the dictionary
         if cat.ID not in clan.pregnancy_data.keys():
             return
 
-        # if the pregnant cat is exiled or killed meanwhile, delete it from the dictionary
-        if cat.dead or cat.exiled:
+        # if the pregnant cat is outside or killed meanwhile, delete it from the dictionary
+        if cat.dead or cat.outside:
             del clan.pregnancy_data[cat.ID]
             return
 

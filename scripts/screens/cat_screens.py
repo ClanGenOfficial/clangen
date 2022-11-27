@@ -310,7 +310,7 @@ class ProfileScreen(Screens):
             if the_cat.exiled:
                 verdana_red.text("exiled", (490, 230 + count2 * 15))
             else:
-                verdana_red.text("gone", (490, 230 + count2 * 15))
+                verdana_red.text("outsider", (490, 230 + count2 * 15))
         else:
             verdana_small.text(the_cat.status, (490, 230 + count2 * 15))
 
@@ -1551,7 +1551,7 @@ class ExileProfileScreen(Screens):
         if the_cat.exiled is True:
             verdana_small.text("exiled", (490, 230 + count2 * 15))
         else:
-            verdana_small.text("gone", (490, 230 + count2 * 15))
+            verdana_small.text("outsider", (490, 230 + count2 * 15))
         count2+=1
         if the_cat.age == 'kitten':
             verdana_small.text('young', (300, 230 + count * 15))
