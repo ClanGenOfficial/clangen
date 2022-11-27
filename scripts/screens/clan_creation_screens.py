@@ -140,7 +140,8 @@ class MakeClanScreen(Screens):
             y_value += 50
 
             verdana_dark.blit_text("This mode has all the features of Expanded mode, but is significantly "
-                                   "more difficult.  If you'd like a challenge, then this mode is for you. \n"
+                                   "more difficult.  If you'd like a challenge, then this mode is for you.  \n"
+                                   "--this mode is available but under heavy development--"
                                    "\nYou heard the warnings... "
                                    "a Cruel Season is coming. \nWill you survive?",
                                    (x_value, y_value),
@@ -163,10 +164,8 @@ class MakeClanScreen(Screens):
                                   button_name='next_step',
                                   text='Next Step',
                                   set_game_mode=True,
-                                  available=True,
                                   size=(147, 30)
                                   )
-
 
         verdana.text("Your clan's game mode is permanent and cannot be changed after clan creation.", ('center', 581))
 
