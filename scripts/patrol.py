@@ -471,10 +471,9 @@ class Patrol():
     def handle_deaths(self):
         if "death" in self.patrol_event.tags:
             if self.patrol_random_cat.status == 'leader':
-                if "gone" in self.patrol_event.tags:
-                    game.clan.leader_lives -= 9  # taken by twolegs, fall into ravine
-                else:
-                    game.clan.leader_lives = int(game.clan.leader_lives) - 1
+                game.clan.leader_lives = int(game.clan.leader_lives) - 1
+            elif len(self.patrol_event.fail_text) > 4 and self.final_fail == self.patrol_event.fail_text[4]:
+                self.patrol_stat_cat.die()
             else:
                 self.patrol_random_cat.die()
             if len(self.patrol_event.history_text) >= 2:
@@ -503,6 +502,9 @@ class Patrol():
 
         # cats disappearing on patrol is also handled under this def for simplicity's sake
         elif "gone" in self.patrol_event.tags:
+            if len(self.patrol_event.fail_text) > 4 and self.final_fail == self.patrol_event.fail_text[4]:
+                self.patrol_stat_cat.die()
+            else:
                 self.patrol_random_cat.gone()
 
         elif "disaster_gone" in self.patrol_event.tags:
