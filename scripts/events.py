@@ -652,31 +652,32 @@ class Events():
             chosen_scar = choice(scar_text)
 
             # add the injury, when the cat fell into a river
-            if "river" in chosen_scar and not cat.is_ill() and random.random() * 5:
-                chosen_scar = f"{chosen_scar} {name} now has water in the lungs."
-                cat.get_injured("water in the lungs", event_triggered = True)
-            elif specialty in ["LEFTEAR", "RIGHTEAR"] and "injured" in chosen_scar:
-                injury_name = "torn ear"
-                chosen_scar = f"{chosen_scar} {name} gained a scar and also a {injury_name}."
-                cat.get_injured(injury_name, event_triggered = True)
-            elif "injured by" in chosen_scar:
-                possible_injuries = ["bite-wound", "bruises", "claw-wound", "scrapes", "torn pelt"]
-                random_index = int(random.random() * len(possible_injuries))
-                injury_name = possible_injuries[random_index]
-                if injury_name in ["bruises", "scrapes", "joint pain"]:
-                    chosen_scar = f"{chosen_scar} {name} gained a scar and also {injury_name}."
-                else:
+            if game.clan.game_mode != 'classic':
+                if "river" in chosen_scar and not cat.is_ill() and random.random() * 5:
+                    chosen_scar = f"{chosen_scar} {name} now has water in their lungs."
+                    cat.get_injured("water in the lungs", event_triggered = True)
+                elif specialty in ["LEFTEAR", "RIGHTEAR"] and "injured" in chosen_scar:
+                    injury_name = "torn ear"
                     chosen_scar = f"{chosen_scar} {name} gained a scar and also a {injury_name}."
-                cat.get_injured(injury_name, event_triggered = True)
-            elif "injured" in chosen_scar:
-                possible_injuries = ["bruises", "scrapes", "torn pelt", "joint pain", "dislocated joint"]
-                random_index = int(random.random() * len(possible_injuries))
-                injury_name = possible_injuries[random_index]
-                if injury_name in ["bruises", "scrapes", "joint pain"]:
-                    chosen_scar = f"{chosen_scar} {name} gained a scar and also {injury_name}."
-                else:
-                    chosen_scar = f"{chosen_scar} {name} gained a scar and also a {injury_name}."
-                cat.get_injured(injury_name, event_triggered = True)
+                    cat.get_injured(injury_name, event_triggered = True)
+                elif "injured by" in chosen_scar:
+                    possible_injuries = ["bite-wound", "bruises", "claw-wound", "scrapes", "torn pelt"]
+                    random_index = int(random.random() * len(possible_injuries))
+                    injury_name = possible_injuries[random_index]
+                    if injury_name in ["bruises", "scrapes", "joint pain"]:
+                        chosen_scar = f"{chosen_scar} {name} gained a scar and also {injury_name}."
+                    else:
+                        chosen_scar = f"{chosen_scar} {name} gained a scar and also a {injury_name}."
+                    cat.get_injured(injury_name, event_triggered = True)
+                elif "injured" in chosen_scar:
+                    possible_injuries = ["bruises", "scrapes", "torn pelt", "joint pain", "dislocated joint"]
+                    random_index = int(random.random() * len(possible_injuries))
+                    injury_name = possible_injuries[random_index]
+                    if injury_name in ["bruises", "scrapes", "joint pain"]:
+                        chosen_scar = f"{chosen_scar} {name} gained a scar and also {injury_name}."
+                    else:
+                        chosen_scar = f"{chosen_scar} {name} gained a scar and also a {injury_name}."
+                    cat.get_injured(injury_name, event_triggered = True)
 
             game.cur_events_list.append(chosen_scar)
             cat.scar_event.append(chosen_scar)
@@ -1067,16 +1068,8 @@ class Events():
         enemy_clan = f'{str(self.enemy_clan)}'
         current_lives = int(game.clan.leader_lives)
 
-        # chance to kill leader
-        if not int(random.random() * 85) and cat.status == 'leader':  # 1/90
-            triggered_death = True
-
-        # chance to die of old age
-        if cat.moons > int(random.random() * 51) + 150:  # cat.moons > 150 <--> 200
-            triggered_death = True
-
-        # extra death chance and injury deaths in expanded & cruel season
-        if game.clan.game_mode in ["expanded", "cruel season"] and not triggered_death:
+        # extra death chance and injuries in expanded & cruel season
+        if game.clan.game_mode in ["expanded", "cruel season"]:
             if not int(random.random() * 450):  # 1/600
                 triggered_death = True
             else:
@@ -1090,6 +1083,14 @@ class Events():
 
         # base death chance
         if not triggered_death and not int(random.random() * 300):  # 1/400
+            triggered_death = True
+
+        # chance to kill leader
+        if not int(random.random() * 85) and cat.status == 'leader' and not triggered_death:  # 1/90
+            triggered_death = True
+
+        # chance to die of old age
+        if cat.moons > int(random.random() * 51) + 150 and not triggered_death:  # cat.moons > 150 <--> 200
             triggered_death = True
 
         # ---------------------------------------------------------------------------- #

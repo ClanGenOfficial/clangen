@@ -31,7 +31,7 @@ class Condition_Events():
         triggered = False
         event_string = None
 
-        if cat.dead:
+        if cat.dead or game.clan.game_mode == "classic":
             return triggered
 
         # handle if the current cat is already sick
@@ -96,7 +96,7 @@ class Condition_Events():
         triggered = False
         event_string = None
 
-        if cat.dead:
+        if cat.dead or game.clan.game_mode == "classic":
             return triggered
 
         # handle if the current cat is already injured
@@ -171,6 +171,10 @@ class Condition_Events():
         Returns: boolean (if something happened) and the event_string
         """
         triggered = False
+
+        if game.clan.game_mode == "classic":
+            return triggered
+
         event_string = None
         for risk in cat.injury.risks:
             if risk["chance"] and not int(random.random() * risk["chance"]):
