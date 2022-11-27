@@ -109,7 +109,7 @@ class Condition_Events():
             event_string = self.handle_event_injuries(cat)
 
         # NORMAL SEASON
-        if not triggered and random_number > 10 and random_number <= 20:
+        if not triggered and 10 < random_number <= 20:
             triggered = True
             season_dict = INJURIES_SEASON_LIST[season]
             possible_injuries = []
@@ -121,27 +121,28 @@ class Condition_Events():
             cat.get_injured(possible_injuries[random_index])
             
             if possible_injuries[random_index] in\
-                ["bruises","cracked pads","joint pain","scrapes","tickbites"]:
+                    ["bruises", "cracked pads", "joint pain", "scrapes", "tickbites"]:
                 event_string = f"{cat.name} has gotten {possible_injuries[random_index]}."
             else:
                 event_string = f"{cat.name} has gotten a(n) {possible_injuries[random_index]}."
 
         # SPECIAL SEASON EVENTS
-        if not triggered and random_number > 20 and random_number <= 30:
+        if not triggered and 20 < random_number <= 30:
             if season == "Leaf-bare" and cat.status == "elder":
                 triggered = True
-                event_string = f"{cat.name} did go for a walk outside the camp, but it was so slippery that they fell and broke their bone."
+                event_string = f"{cat.name} went for a walk outside the camp, " \
+                               f"but it was so slippery that they fell and broke a bone."
                 cat.get_injured("broken bone")
 
         # handle if the cat is not injured
         # BIOME EVENTS
-        if not triggered and random_number > 30 and random_number <= 40:
+        if not triggered and 30 < random_number <= 40:
             triggered = True
             injury_dict = BIOME_INJURIES[biome]
             random_index = int(random.random() * len(injury_dict))
             injury_name = list(injury_dict.keys())[random_index]
             cat.get_injured(injury_name)
-            if injury_name in ["bruises","cracked pads","joint pain","scrapes","tickbites"]:
+            if injury_name in ["bruises", "cracked pads", "joint pain", "scrapes", "tickbites"]:
                 event_string = f"{injury_dict[injury_name]} {cat.name} has gotten {injury_name}."
             else:
                 event_string = f"{injury_dict[injury_name]} {cat.name} has gotten a(n) {injury_name}."
@@ -151,8 +152,8 @@ class Condition_Events():
             chance_number = 15
             if int(random.random() * chance_number):
                 cat.get_ill("festering wounds")
-                event_string = f"{event_string} The bites of the rat doesn't look good and {cat.name} has gotten a festering wounds."
-
+                event_string = f"{event_string} The rat bites that {cat.name} " \
+                               f"got don't look good and have begun to fester."
 
         if event_string:
             event_string = event_string.replace('r_c', str(cat.name))
@@ -187,12 +188,12 @@ class Condition_Events():
             if cat.dead:
                 triggered = True
                 save_death(cat, event_string)
-                if injury_name in ["bruises","cracked pads","joint pain","scrapes","tickbites"]:
-                    event_string = f"{cat.name} has died in the medicine den, with {injury_name} "
+                if injury_name in ["bruises", "cracked pads", "joint pain", "scrapes", "tickbites"]:
+                    event_string = f"{cat.name} has died in the medicine den from {injury_name} "
                 else:
-                    event_string = f"{cat.name} has died in the medicine den, with a(n) {injury_name}."
+                    event_string = f"{cat.name} has died in the medicine den from a(n) {injury_name}."
             elif not cat.is_injured():
-                event_string = f"{cat.name}'s {injury_name} has been cured."
+                event_string = f"{cat.name}'s {injury_name} has healed."
 
         return triggered, event_string
 
@@ -254,7 +255,7 @@ class Condition_Events():
 
         # choose one string and injure the cat and replace the string inserts
         event_string = random.choice(possible_events)
-        if injury_name in ["bruises","cracked pads","joint pain","scrapes", "stomachache", "tickbites"]:
+        if injury_name in ["bruises", "cracked pads", "joint pain", "scrapes", "stomachache", "tickbites"]:
             event_string = f"{event_string} {cat.name} has gotten {injury_name}."
         elif injury_name in []:
             event_string = f"{event_string} {cat.name} has gotten an {injury_name}."
