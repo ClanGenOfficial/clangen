@@ -218,7 +218,7 @@
         "fail_text": [
             "r_c tries to stick their paw into the trap and barely manages to snatch it back as the trap snaps closed. Close one! But now there's no way to get the food.",
             "s_c boldly walks up to the trap and attempts to grab the food. They're barely able to jump back as the trap snaps closed.",
-            "r_c is caught in the trap and is taken by Twolegs shortly after."],
+            "r_c is caught in the trap. Despite the patrol's attempts, Twolegs soon arrive and take the trap with the cat inside."],
         "decline_text": "r_c loses interest and walks back to the patrol.",
         "chance_of_success": 40,
         "exp": 10,

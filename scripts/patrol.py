@@ -402,7 +402,13 @@ class Patrol():
                     if cat.skill in self.patrol_event.fail_skills or cat.trait in self.patrol_event.fail_trait:
                         self.patrol_stat_cat = cat
             if self.patrol_stat_cat is not None and len(fail_text) > 1:
-                if fail_text[1] is not None:
+                if outcome >= 11 and fail_text[1] is not None:
+                    n = 1
+                elif outcome <= 10 and len(fail_text) > 4 and fail_text[4] is not None:
+                    n = 4
+                elif fail_text[1] is None:
+                    n = 4
+                elif fail_text[4] is None:
                     n = 1
             elif outcome <= 10 and len(fail_text) >= 4 and fail_text[3] is not None:
                 n = 3
@@ -415,7 +421,7 @@ class Patrol():
                     n = 2
             else:
                 n = 0
-            if n == 2:
+            if n == 2 or n == 4:
                 self.handle_deaths()
             elif n == 3:
                 self.handle_scars()
@@ -670,8 +676,6 @@ class Patrol():
                 if litter_choice == True:
                     new_backstory = 'outsider_roots2'
                     created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory, litter=True, relevant_cat=new_cat)
-                    if new_cat.moons < 12:
-                        new_cat.moons = 16
                 
     def create_new_cat(self,
                        loner=False,
@@ -694,6 +698,8 @@ class Patrol():
         kp_name_chance = (1, 5)
         if not litter and not kit:
             age = randint(6, 120)
+        if med:
+            age = randint(16, 120)
 
         if (loner or kittypet) and not kit and not litter:
             if loner_name:
