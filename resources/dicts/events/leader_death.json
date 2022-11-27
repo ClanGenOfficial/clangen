@@ -450,7 +450,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_cat", "murder", "mate", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_cat", "all_lives", "mate", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
     "death_text": "d_c was killed by r_c in an argument over c_m.",
     "history_text": "were killed by r_c in an argument over c_m.",
     "cat_trait": null,
@@ -459,7 +459,7 @@
     "other_cat_skill": ["great fighter", "excellent fighter"]
 },
 {
-    "death_tags": ["leader", "all_lives", "other_cat", "rank_murder", "mate", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "other_cat_dep", "murder", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
     "death_text": "d_c was murdered by r_c in cold blood with the intention of taking their place.",
     "history_text": "were murdered by r_c.",
     "cat_trait": null,
@@ -468,7 +468,7 @@
     "other_cat_skill": ["great fighter", "excellent fighter"]
 },
 {
-    "death_tags": ["leader", "other_cat", "rank_murder", "other_cat_death", "mate", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_cat_dep", "other_cat_death", "murder", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
     "death_text": "d_c was murdered by r_c with the intention of taking their place, but r_c miscalculated how many lives d_c had left!  d_c retaliated and killed r_c in self defense.",
     "history_text": "r_c was killed by d_c in self defense.",
     "cat_trait": null,
