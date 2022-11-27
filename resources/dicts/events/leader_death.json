@@ -1,6 +1,6 @@
 [
 {
-    "death_tags": ["leader", "forest", "plains", "mountainous", "greenleaf", "newleaf", "leaffall"],
+    "death_tags": ["leader", "Forest", "Plains", "Mountainous", "Greenleaf", "Newleaf", "Leaf-fall"],
     "death_text": "d_c lost a life after falling into a river.",
     "history_text": "fell into a river.",
     "cat_trait": null,
@@ -9,7 +9,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "forest", "greenleaf", "newleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "Forest", "Greenleaf", "Newleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was crushed when a tree fell into camp and they lost a life.",
     "history_text": "were crushed by a falling tree.",
     "cat_trait": null,
@@ -18,7 +18,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall"],
+    "death_tags": ["leader", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall"],
     "death_text": "Lightning struck in camp and d_c lost a life.",
     "history_text": "were struck by lightning.",
     "cat_trait": null,
@@ -27,7 +27,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was mortally wounded by a fox.",
     "history_text": "were wounded by a fox.",
     "cat_trait": null,
@@ -36,7 +36,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life to a dog.",
     "history_text": "were mauled by a dog.",
     "cat_trait": null,
@@ -45,7 +45,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life to a badger.",
     "history_text": "were killed by a badger.",
     "cat_trait": null,
@@ -54,7 +54,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "forest", "plains", "mountainous", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "Forest", "Plains", "Mountainous", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life when a hawk attempted to grab and lift them.",
     "history_text": "were grabbed by a hawk.",
     "cat_trait": null,
@@ -63,7 +63,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life while fighting off a rogue.",
     "history_text": "fought a rogue.",
     "cat_trait": null,
@@ -72,7 +72,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "plains", "mountainous", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "Plains", "Mountainous", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was grabbed and dropped by an eagle, losing a life.",
     "history_text": "were grabbed by an eagle.",
     "cat_trait": null,
@@ -81,7 +81,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "plains", "mountainous", "forest", "newleaf", "greenleaf"],
+    "death_tags": ["leader", "Plains", "Mountainous", "Forest", "Newleaf", "Greenleaf"],
     "death_text": "d_c lost a life after being swept away by a flood.",
     "history_text": "were swept away by a flood.",
     "cat_trait": null,
@@ -90,8 +90,8 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "mountainous", "forest", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
-    "death_text": "d_c falling from the top branches of a tree.",
+    "death_tags": ["leader", "Mountainous", "Forest", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_text": "d_c lost a life when they fell from the top branches of a tree.",
     "history_text": "fell from a tall tree.",
     "cat_trait": null,
     "cat_skill": null,
@@ -99,7 +99,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was bit by a venomous spider and lost a life.",
     "history_text": "were bit by a venomous spider.",
     "cat_trait": null,
@@ -108,7 +108,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was bit by a venomous snake and lost a life.",
     "history_text": "were bit by a venomous snake.",
     "cat_trait": null,
@@ -117,7 +117,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c ate tainted fresh-kill and lost of life.",
     "history_text": "ate tainted fresh-kill.",
     "cat_trait": null,
@@ -126,7 +126,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c failed to interpret a warning sign from StarClan and lost a life as a result.",
     "history_text": "failed to interpret a warning from StarClan.",
     "cat_trait": null,
@@ -135,7 +135,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_cat", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_cat", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life defending r_c from a dog.",
     "history_text": "defended r_c from a dog.",
     "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
@@ -144,7 +144,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_cat", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_cat", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life defending r_c from a badger.",
     "history_text": "defended r_c from a badger.",
     "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
@@ -153,7 +153,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_cat", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_cat", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life defending r_c from a fox.",
     "history_text": "defended r_c from a fox.",
     "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
@@ -162,7 +162,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_cat", "forest", "plains", "mountainous", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_cat", "Forest", "Plains", "Mountainous", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life defending r_c from a hawk.",
     "history_text": "defended r_c from a hawk.",
     "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
@@ -171,7 +171,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_cat", "plains", "mountainous", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_cat", "Plains", "Mountainous", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life defending r_c from an eagle.",
     "history_text": "defended r_c from an eagle.",
     "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
@@ -180,7 +180,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_cat", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_cat", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life saving r_c from drowning.",
     "history_text": "saved r_c from drowning.",
     "cat_trait": ["altruistic", "bold", "compassionate", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
@@ -189,7 +189,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_cat", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_cat", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life saving r_c from a monster.",
     "history_text": "saved r_c from a monster.",
     "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
@@ -198,7 +198,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_cat", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_cat", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life saving r_c from a snake.",
     "history_text": "saved r_c from a snake.",
     "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
@@ -207,7 +207,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_cat", "murder", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_cat", "murder", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was pushed under a monster and lost a life",
     "history_text": "were pushed under a monster.",
     "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
@@ -216,7 +216,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_clan", "rel_down", "clan_kits", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_clan", "rel_down", "clan_kits", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life defending the kits from o_c warriors.",
     "history_text": "defended the kits from o_c warriors.",
     "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
@@ -225,7 +225,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_clan", "rel_down", "other_cat", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_clan", "rel_down", "other_cat", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life defending r_c from o_c warriors.",
     "history_text": "defended r_c from o_c warriors.",
     "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
@@ -234,7 +234,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_clan", "rel_down", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_clan", "rel_down", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life to a o_c apprentice.",
     "history_text": "fought a o_c apprentice.",
     "cat_trait": null,
@@ -243,7 +243,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_clan", "rel_down", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_clan", "rel_down", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life to a o_c warrior.",
     "history_text": "fought a o_c warrior.",
     "cat_trait": null,
@@ -252,7 +252,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_clan", "rel_down", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_clan", "rel_down", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life to the o_c leader.",
     "history_text": "fought the o_c leader.",
     "cat_trait": null,
@@ -261,7 +261,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_clan", "rel_down", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_clan", "rel_down", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life to the o_c deputy.",
     "history_text": "fought the o_c deputy.",
     "cat_trait": null,
@@ -270,7 +270,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life to their old age.",
     "history_text": "succumbed to old age.",
     "cat_trait": null,
@@ -279,7 +279,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was brutally attacked by a rogue and lost all of their lives.",
     "history_text": "were brutally attached by a rogue.",
     "cat_trait": null,
@@ -288,7 +288,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was mauled by dogs and lost all of their lives.",
     "history_text": "were mauled by dogs.",
     "cat_trait": null,
@@ -297,7 +297,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "plains", "mountainous", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "Plains", "Mountainous", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was carried off by an eagle and never seen again.",
     "history_text": "were carried away by an eagle.",
     "cat_trait": null,
@@ -306,7 +306,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "forest", "plains", "mountainous", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "Forest", "Plains", "Mountainous", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was carried off by a hawk, never to be seen again.",
     "history_text": "were carried away by a hawk.",
     "cat_trait": null,
@@ -315,7 +315,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "forest", "plains", "mountainous", "newleaf", "greenleaf", "leaffall"],
+    "death_tags": ["leader", "all_lives", "Forest", "Plains", "Mountainous", "Newleaf", "Greenleaf", "Leaf-fall"],
     "death_text": "d_c fell into a river and was swept away by the current, never to be seen again.",
     "history_text": "were swept away by the river.",
     "cat_trait": null,
@@ -324,7 +324,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "other_cat", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "other_cat", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was burnt alive while trying to save their clanmates from a fire.",
     "history_text": "were killed in a fire trying to save their clanmates.",
     "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
@@ -333,7 +333,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "other_clan", "rel_down", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "other_clan", "rel_down", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was brutally murdered by a o_c warrior who cruelly took all their lives.",
     "history_text": "were brutally murdered by a o_c warrior.",
     "cat_trait": null,
@@ -342,7 +342,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "other_clan", "rel_down", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "other_clan", "rel_down", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was brutally murdered by the o_c leader who cruelly took all their lives.",
     "history_text": "were brutally murdered by the o_c leader.",
     "cat_trait": null,
@@ -351,7 +351,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "other_clan", "rel_down", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "other_clan", "rel_down", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was brutally murdered by the o_c deputy who cruelly took all their lives.",
     "history_text": "were brutally murdered by the o_c deputy.",
     "cat_trait": null,
@@ -360,7 +360,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "mountainous", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "Mountainous", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was buried alive in an avalanche and lost all their lives.",
     "history_text": "were buried alive in an avalanche.",
     "cat_trait": null,
@@ -369,7 +369,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "mountainous", "newleaf", "greenleaf", "leaffall"],
+    "death_tags": ["leader", "all_lives", "Mountainous", "Newleaf", "Greenleaf", "Leaf-fall"],
     "death_text": "d_c was buried alive in an landslide and lost all their lives.",
     "history_text": "were buried alive in an landslide.",
     "cat_trait": null,
@@ -378,7 +378,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "mountainous", "newleaf"],
+    "death_tags": ["leader", "all_lives", "Mountainous", "Newleaf"],
     "death_text": "d_c was buried alive in an mudslide and lost all their lives.",
     "history_text": "were buried alive in an mudslide.",
     "cat_trait": null,
@@ -387,7 +387,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "other_cat", "murder", "mountainous", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "other_cat", "murder", "Mountainous", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was pushed off a cliff onto the sharp rocks at the bottom and couldn't recover.",
     "history_text": "were pushed off a cliff.",
     "cat_trait": null,
@@ -396,7 +396,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "mountainous", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "Mountainous", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c slipped off a cliff onto the sharp rocks at the bottom and couldn't recover.",
     "history_text": "slipped off a cliff edge.",
     "cat_trait": null,
@@ -405,7 +405,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was washed out to sea and never seen again.",
     "history_text": "were washed out to sea.",
     "cat_trait": null,
@@ -414,16 +414,16 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "other_cat", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
-    "death_text": "d_c was lost to the sea while trying to save a clanmate from drowning.",
-    "history_text": "were lost to the sea while trying to save a drowning clanmate.",
+    "death_tags": ["leader", "all_lives", "other_cat", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_text": "d_c was lost to the sea while trying to save r_c from drowning.",
+    "history_text": "were lost to the sea while trying to save r_c.",
     "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
     "cat_skill": null,
     "other_cat_trait": null,
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "plains", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "Plains", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c fell into a sinkhole and was never seen again.",
     "history_text": "fell into a sinkhole.",
     "cat_trait": null,
@@ -432,7 +432,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "plains", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "Plains", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c fell into a hidden burrow and was buried alive.",
     "history_text": "fell into a hidden burrow.",
     "cat_trait": null,
@@ -441,7 +441,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "all_lives", "plains", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "Plains", "Newleaf", "Green-leaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was buried alive when a burrow collapsed on them.",
     "history_text": "were buried alive by a collapsing burrow.",
     "cat_trait": null,
@@ -450,7 +450,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["leader", "other_cat", "all_lives", "mate", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_cat", "all_lives", "mate", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was killed by r_c in an argument over c_m.",
     "history_text": "were killed by r_c in an argument over c_m.",
     "cat_trait": null,
@@ -459,7 +459,7 @@
     "other_cat_skill": ["great fighter", "excellent fighter"]
 },
 {
-    "death_tags": ["leader", "all_lives", "other_cat_dep", "murder", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "all_lives", "other_cat_dep", "murder", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was murdered by r_c in cold blood with the intention of taking their place.",
     "history_text": "were murdered by r_c.",
     "cat_trait": null,
@@ -468,7 +468,7 @@
     "other_cat_skill": ["great fighter", "excellent fighter"]
 },
 {
-    "death_tags": ["leader", "other_cat_dep", "other_cat_death", "murder", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["leader", "other_cat_dep", "other_cat_death", "murder", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was murdered by r_c with the intention of taking their place, but r_c miscalculated how many lives d_c had left!  d_c retaliated and killed r_c in self defense.",
     "history_text": "r_c was killed by d_c in self defense.",
     "cat_trait": null,

@@ -1,6 +1,6 @@
 [
 {
-    "death_tags": ["apprentice", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["apprentice", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c died in a training accident.",
     "history_text": "d_c died in a training accident.",
     "cat_trait": null,
@@ -9,7 +9,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["apprentice", "other_clan", "rel_down", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["apprentice", "other_clan", "rel_down", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was killed by o_c warriors after accidentally wandering over the border.",
     "history_text": "d_c was killed by o_c warriors after accidentally trespassing.",
     "cat_trait": null,

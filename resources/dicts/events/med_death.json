@@ -1,6 +1,6 @@
 [
 {
-    "death_tags": ["medicine_cat", "war", "other_clan", "rel_down", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["medicine_cat", "war", "other_clan", "rel_down", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "o_c warriors broke into the camp and killed d_c after damaging the herb stores.",
     "history_text": "d_c was killed when o_c warriors broke into camp.",
     "cat_trait": null,
@@ -9,7 +9,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["medicine_cat", "other_clan", "rel_down", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["medicine_cat", "other_clan", "rel_down", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was killed by a o_c warrior while pulling an injured clanmate away from battle.",
     "history_text": "d_c was killed by a o_c warrior while trying to aid an injured clanmate.",
     "cat_trait": null,

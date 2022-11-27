@@ -1,6 +1,6 @@
 [
 {
-    "death_tags": ["kitten", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["kitten", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was taken by a hawk.",
     "history_text": "d_c was taken by a hawk.",
     "cat_trait": null,
@@ -9,8 +9,8 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["kitten", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
-    "death_text": "d_c grew weak as the days passed and died.",
+    "death_tags": ["kitten", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_text": "d_c grew weak as the days passed and now walks the stars of silverpelt.",
     "history_text": "d_c failed to thrive.",
     "cat_trait": ["quiet"],
     "cat_skill": null,
@@ -18,7 +18,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["kitten", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["kitten", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c fell into a river and drowned.",
     "history_text": "d_c fell into a river and drowned.",
     "cat_trait": ["daring", "impulsive"],
@@ -27,7 +27,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["kitten", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["kitten", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was killed when they snuck out of camp.",
     "history_text": "d_c was killed when they snuck out of camp.",
     "cat_trait": ["troublesome", "daring", "impulsive", "attention-seeker"],
@@ -36,7 +36,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["kitten", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["kitten", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c died after getting into the herb stores and accidentally eating deathberries.",
     "history_text": "d_c died after accidentally eating deathberries.",
     "cat_trait": ["troublesome", "impulsive", "attention-seeker", "inquisitive"],
@@ -45,7 +45,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["kitten", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_tags": ["kitten", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was killed in their sleep by a snake that had snuck into camp.",
     "history_text": "d_c was killed by a snake.",
     "cat_trait": null,
@@ -54,7 +54,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["kitten", "forest", "plains", "mountainous", "leafbare"],
+    "death_tags": ["kitten", "Forest", "Plains", "Mountainous", "Leaf-bare"],
     "death_text": "d_c was found dead and cold in the snow.",
     "history_text": "d_c froze to death.",
     "cat_trait": null,
@@ -63,7 +63,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["kitten", "forest", "plains", "mountainous", "leafbare"],
+    "death_tags": ["kitten", "forest", "Plains", "Mountainous", "Leaf-bare"],
     "death_text": "d_c froze to death during a harsh snowstorm.",
     "history_text": "d_c froze to death.",
     "cat_trait": null,
@@ -72,7 +72,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["kitten", "forest", "plains", "mountainous", "leafbare"],
+    "death_tags": ["kitten", "Forest", "Plains", "Mountainous", "Leaf-bare"],
     "death_text": "d_c disappeared from the nursery and was found dead not far from camp.",
     "history_text": "d_c froze to death.",
     "cat_trait": ["daring", "impulsive", "attention-seeker", "troublesome"],
@@ -81,7 +81,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["kitten", "forest", "plains", "mountainous", "leafbare"],
+    "death_tags": ["kitten", "Forest", "Plains", "Mountainous", "Leaf-bare"],
     "death_text": "d_c was playing on the ice when the ice cracked and they fell in.",
     "history_text": "d_c froze to death after falling through ice.",
     "cat_trait": ["daring", "attention-seeker", "impulsive"],
@@ -90,7 +90,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["kitten", "forest", "plains", "beach", "greenleaf"],
+    "death_tags": ["kitten", "Forest", "Plains", "Beach", "Greenleaf"],
     "death_text": "d_c died from dehydration and heat stroke.",
     "history_text": "d_c died from dehydration and heat stroke.",
     "cat_trait": null,
