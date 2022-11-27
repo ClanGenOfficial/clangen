@@ -1,38 +1,38 @@
 [
-    {
-        "death_tags": ["multi_death", "other_cat", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
-        "death_text": "d_c and r_c die from eating tainted prey.",
-        "history_text": "died from eating tainted prey.",
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
-    },
-    {
-        "death_tags": ["multi_death", "other_cat", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
-        "death_text": "d_c fell into the river and r_c drowned alongside d_c while trying to rescue them.",
-        "history_text": "died from drowning.",
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
-        "other_cat_skill": null
-    },
-    {
-        "death_tags": ["multi_death", "other_cat", "other_clan", "rel_down", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
-        "death_text": "d_c and r_c are killed in a border skirmish against o_c.",
-        "history_text": "was killed in a border skirmish against o_c.",
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
-    },
-    {
-        "death_tags": ["multi_death", "other_cat", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
-        "death_text": "d_c and r_c are killed by a gang of rogues.",
-        "history_text": "was killed by a gang of rogues.",
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": null,
-        "other_cat_skill": null
-    }
+{
+    "death_tags": ["multi_death", "other_cat", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_text": "d_c and r_c die from eating tainted prey.",
+    "history_text": "died from eating tainted prey.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+},
+{
+    "death_tags": ["multi_death", "other_cat", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_text": "d_c fell into the river and r_c drowned alongside d_c while trying to rescue them.",
+    "history_text": "died from drowning.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
+    "other_cat_skill": null
+},
+{
+    "death_tags": ["multi_death", "other_cat", "other_clan", "rel_down", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_text": "d_c and r_c are killed in a border skirmish against o_c.",
+    "history_text": "was killed in a border skirmish against o_c.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+},
+{
+    "death_tags": ["multi_death", "other_cat", "forest", "plains", "mountainous", "beach", "newleaf", "greenleaf", "leaffall", "leafbare"],
+    "death_text": "d_c and r_c are killed by a gang of rogues.",
+    "history_text": "was killed by a gang of rogues.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+}
 ]

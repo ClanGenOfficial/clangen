@@ -1022,26 +1022,66 @@ class Events():
 
     def generate_death_events(self, events_dict):
         all_death_events = []
-        for event in events_dict:
+        for death in events_dict:
             death_event = DeathEvent(
-                death_tags=event["death_tags"],
-                death_text=event["death_text"],
-                history_text=event["history_text"],
-                cat_trait=event["cat_trait"],
-                cat_skill=event["cat_skill"],
-                other_cat_trait=event["other_cat_trait"],
-                other_cat_skill=event["other_cat_skill"]
+                death_tags=death["death_tags"],
+                death_text=death["death_text"],
+                history_text=death["history_text"],
+                cat_trait=death["cat_trait"],
+                cat_skill=death["cat_skill"],
+                other_cat_trait=death["other_cat_trait"],
+                other_cat_skill=death["other_cat_skill"]
             )
             all_death_events.append(death_event)
 
         return all_death_events
 
     def handle_general_deaths(self, cat):
+        death: DeathEvent
         possible_deaths = []
+        final_deaths = []
 
-        if cat.status == 'leader':
-            self.generate_death_events(LEADER_DEATH)
-            
+        possible_deaths.append(self.generate_death_events(GEN_DEATH))
+        possible_deaths.append(self.generate_death_events(LEADER_DEATH))
+        possible_deaths.append(self.generate_death_events(DEP_DEATH))
+        possible_deaths.append(self.generate_death_events(MED_DEATH))
+        possible_deaths.append(self.generate_death_events(APP_DEATH))
+        possible_deaths.append(self.generate_death_events(KIT_DEATH))
+
+        correct_rank = False
+        correct_biome = False
+        correct_season = False
+
+        for death in possible_deaths:
+            if game.clan.biome in death.death_tags:
+                correct_biome = True
+
+            if game.clan.current_season in death.death_tags:
+                correct_season = True
+
+            if "leader" in death.death_tags and cat.status == "leader":
+                correct_rank = True
+            elif "deputy" in death.death_tags and cat.status == "deputy":
+                correct_rank = True
+            elif "medicine_cat" in death.death_tags and cat.status in ["medicine_cat", "medicine_cat_apprentice"]:
+                correct_rank = True
+            elif "apprentice" in death.death_tags and cat.status == "apprentice":
+                correct_rank = True
+            elif "kitten" in death.death_tags and cat.status == "kitten":
+                correct_rank = True
+            elif "elder" in death.death_tags and cat.status == "elder":
+                correct_rank = True
+
+            if cat.status not in ["leader", "medicine cat", "medicine cat apprentice", "elder", "kitten"]:
+                correct_rank = True
+
+            if correct_rank and correct_season and correct_biome:
+                final_deaths.append(death)
+
+
+
+
+
 
     def handle_injuries_or_general_death(self, cat):
         """ 
