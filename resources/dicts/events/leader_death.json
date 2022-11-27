@@ -243,6 +243,15 @@
     "other_cat_skill": null
 },
 {
+    "death_tags": ["leader", "other_clan", "rel_up", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_text": "d_c lost a life trying to save a o_c apprentice.",
+    "history_text": "saving a o_c apprentice.",
+    "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+},
+{
     "death_tags": ["leader", "other_clan", "rel_down", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life to a o_c warrior.",
     "history_text": "fought a o_c warrior.",
@@ -252,10 +261,37 @@
     "other_cat_skill": null
 },
 {
+    "death_tags": ["leader", "other_clan", "rel_up", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_text": "d_c lost a life trying to save a o_c warrior.",
+    "history_text": "saving a o_c warrior.",
+    "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+},
+{
     "death_tags": ["leader", "other_clan", "rel_down", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c lost a life to the o_c leader.",
     "history_text": "fought the o_c leader.",
     "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+},
+{
+    "death_tags": ["leader", "other_clan", "rel_up", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_text": "d_c lost a life trying to save the o_c leader.",
+    "history_text": "saving the o_c leader.",
+    "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+},
+{
+    "death_tags": ["leader", "other_clan", "rel_up", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_text": "d_c lost a life trying to save the o_c deputy.",
+    "history_text": "saving the o_c deputy.",
+    "cat_trait": ["altruistic", "bold", "compassionate", "confident", "daring", "empathetic", "fierce", "loving", "responsible", "strange", "wise"],
     "cat_skill": null,
     "other_cat_trait": null,
     "other_cat_skill": null

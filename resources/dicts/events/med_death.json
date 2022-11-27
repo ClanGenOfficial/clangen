@@ -12,7 +12,7 @@
     "death_tags": ["medicine_cat", "other_clan", "rel_down", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was killed by a o_c warrior while pulling an injured clanmate away from battle.",
     "history_text": "d_c was killed by a o_c warrior while trying to aid an injured clanmate.",
-    "cat_trait": null,
+    "cat_trait": ["compassionate", "calm", "bold", "ambitious", "daring", "fierce", "empathetic", "loving", "loyal", "responsible", "thoughtful"],
     "cat_skill": null,
     "other_cat_trait": null,
     "other_cat_skill": null
