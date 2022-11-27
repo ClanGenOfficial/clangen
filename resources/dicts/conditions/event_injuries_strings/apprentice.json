@@ -1,21 +1,21 @@
 {
     "bite-wound": {
-        "r_c was bitten hard by a mouse while they trained hunting. Fortunately nobody else was watching, how embarrassing!": 1
+        "r_c was bitten hard by a mouse while they were hunting. Fortunately nobody else was watching, how embarrassing!": 1
     },
     "broken bone": {},
     "bruises": {
-        "r_c trained extra hard to impress their mentor, but sadly got injured.": 1
+        "r_c trained extra hard to impress their mentor, but were a bit too rough with themselves.": 1
     },
     "claw-wound": {},
     "dislocated joint": {},
     "sprain": {
-        "r_c trained extra hard to impress their mentor, but sadly got injured.": 1
+        "r_c trained extra hard to impress their mentor, but twisted their paw at an awkward angle.": 1
     },
     "cracked pads": {
-        "r_c trained extra hard to impress their mentor, but sadly got injured.": 1
+        "r_c trained extra hard to impress their mentor, but now finds their paws to be sore and bleeding.": 1
     },
     "joint pain": {
-        "r_c trained extra hard to impress their mentor, but sadly got injured.": 1
+        "r_c trained extra hard to impress their mentor, but is extremely sore when they wake the next morning.": 1
     },
     "scrapes": {
 
