@@ -1059,7 +1059,7 @@ class Events():
 
         # extra death chance and injury deaths in expanded & cruel season
         if game.clan.game_mode in ["expanded", "cruel season"] and not triggered_death:
-            if not int(random.random() * 600):  # 1/600
+            if not int(random.random() * 500):  # 1/600
                 triggered_death = True
             else:
                 triggered_death = self.condition_events.handle_injuries(cat, game.clan.current_season, game.clan.biome)
@@ -1071,10 +1071,8 @@ class Events():
             return triggered_death
 
         # base death chance
-        if not triggered_death and not int(random.random() * 400):  # 1/400
+        if not triggered_death and not int(random.random() * 300):  # 1/400
             triggered_death = True
-
-
 
         # ---------------------------------------------------------------------------- #
         #                           compile possible deaths                            #
@@ -1261,7 +1259,7 @@ class Events():
                     cat.died_by = history_text
 
             game.cur_events_list.append(death_text)
-            
+
             if SAVE_DEATH:
                 save_death(cat, death_text)
 
