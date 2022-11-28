@@ -158,7 +158,44 @@
     "history_text": "d_c was killed when r_c consciously gave them the wrong herbs.",
     "cat_trait": null,
     "cat_skill": null,
-    "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
+    "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous", "loving", "compassionate", "confident", "empathetic"],
+    "other_cat_skill": null
+},
+{
+    "death_tags": ["elder", "illness", "Forest", "Plains", "Mountainous", "Beach", "Leaf-bare"],
+    "death_text": "d_c was already feeling weak and couldn't make it through a case of whitecough.",
+    "history_text": "d_c died from whitecough.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+},
+{
+    "death_tags": ["elder", "illness", "Forest", "Plains", "Mountainous", "Beach", "Leaf-bare"],
+    "death_text": "d_c was too weak to recover from an illness and passed.",
+    "history_text": "d_c died from illness.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+},
+{
+    "death_tags": ["elder", "illness", "Forest", "Plains", "Mountainous", "Beach", "Leaf-bare"],
+    "death_text": "Weakened by lack of prey, d_c couldn't fight off whitecough and passed away.",
+    "history_text": "d_c died from whitecough.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+},
+{
+    "death_tags": ["elder", "illness", "Forest", "Plains", "Mountainous", "Beach", "Leaf-bare"],
+    "death_text": "d_c was taken quickly by a case of greencough.",
+    "history_text": "d_c died from greencough.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
     "other_cat_skill": null
 }
+
 ]

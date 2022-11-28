@@ -312,7 +312,7 @@ class Game():
                 "mentor_influence": inter_cat.mentor_influence if inter_cat.mentor_influence else [],
                 "mate": inter_cat.mate,
                 "dead": inter_cat.dead,
-                "died_by": inter_cat.died_by if inter_cat.died_by else None,
+                "died_by": inter_cat.died_by if inter_cat.died_by else [],
                 "paralyzed": inter_cat.paralyzed,
                 "no_kits": inter_cat.no_kits,
                 "exiled": inter_cat.exiled,

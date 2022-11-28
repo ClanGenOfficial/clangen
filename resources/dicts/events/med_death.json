@@ -16,5 +16,14 @@
     "cat_skill": null,
     "other_cat_trait": null,
     "other_cat_skill": null
+},
+{
+    "death_tags": ["medicine_cat", "illness", "other_clan", "rel_down", "Forest", "Plains", "Mountainous", "Beach", "Leaf-bare"],
+    "death_text": "d_c caught greencough while caring for their patients and couldn't manage to fight it off.",
+    "history_text": "d_c died from greencough.",
+    "cat_trait": ["compassionate", "calm", "bold", "ambitious", "fierce", "empathetic", "loving", "loyal", "responsible", "thoughtful"],
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
 }
 ]

@@ -71,7 +71,7 @@ def json_load():
         new_cat.accessory = cat["accessory"]
         new_cat.mate = cat["mate"]
         new_cat.dead = cat["dead"]
-        new_cat.died_by = cat["died_by"] if "died_by" in cat else None
+        new_cat.died_by = cat["died_by"] if "died_by" in cat else []
         new_cat.age_sprites['dead'] = cat["spirit_dead"]
         new_cat.experience = cat["experience"]
         new_cat.dead_for = cat["dead_moons"]

@@ -27,10 +27,10 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["apprentice", "other_clan", "rel_down", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-    "death_text": "d_c was killed by o_c warriors after deliberately going over the border.",
-    "history_text": "d_c was killed by o_c warriors after deliberately trespassing.",
-    "cat_trait": ["daring", "bold", "confident", "playful", "fierce", "ambitious", "bloodthirsty", "fierce", "shameless", "troublesome", "vengeful", "strange", "sneaky"],
+    "death_tags": ["apprentice", "illness", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_text": "d_c died from infected wounds.",
+    "history_text": "d_c died from infected wounds.",
+    "cat_trait": null,
     "cat_skill": null,
     "other_cat_trait": null,
     "other_cat_skill": null

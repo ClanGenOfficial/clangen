@@ -349,5 +349,23 @@
     "cat_skill": null,
     "other_cat_trait": ["bloodthirsty", "vengeful", "sneaky", "righteous"],
     "other_cat_skill": null
+},
+ {
+    "death_tags": ["general", "illness", "Forest", "Plains", "Mountainous", "Beach", "Leaf-bare"],
+    "death_text": "r_c died after catching greencough.",
+    "history_text": "d_c died from greencough.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+},
+ {
+    "death_tags": ["general", "illness", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_text": "r_c died from infected wounds.",
+    "history_text": "d_c died from infected wounds.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
 }
 ]
