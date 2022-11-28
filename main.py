@@ -1,6 +1,9 @@
 import sys
 import os
-directory = os.path.dirname(__file__)
+if getattr(sys, 'frozen', False):
+    directory = os.path.dirname(sys.executable)
+elif __file__:
+    directory = os.path.dirname(__file__)
 if directory:
     os.chdir(directory)
 from scripts.screens import *
