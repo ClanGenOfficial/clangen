@@ -293,10 +293,10 @@ class InfoScreen(Screens):
             "revisited until you decide the overwrite it with a new one.",
             ('center', 215))
         verdana.text(
-            "You're free to use the characters and sprites generated in this program",
+            "All art assets in this program are licensed under",
             ('center', 235))
         verdana.text(
-            "as you like, as long as you don't claim the sprites as your own creations.",
+            "https://creativecommons.org/licenses/by-nc/4.0",
             ('center', 255))
         verdana.text("Original creator: just-some-cat.tumblr.com",
                      ('center', 275))
