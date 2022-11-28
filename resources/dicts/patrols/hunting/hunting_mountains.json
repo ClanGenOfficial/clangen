@@ -272,10 +272,183 @@
     "antagonize_text": null,
     "antagonize_fail_text": null,
     "history_text": [
-            "p_l gained a scar from a fox.",
-            "p_l was killed by a wolverine while patrolling alone."
-
+        "p_l gained a scar from a fox.",
+        "p_l was killed by a wolverine while patrolling alone."
+    ]
+},
+{
+    "patrol_id": "mtn_hunt_gonetnr1",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["hunting", "gone", "small_prey"],
+    "intro_text": "r_c encounters a swarm of Twolegs, gathered at the foot of the mountain.",
+    "decline_text": "Your patrol decides to hunt elsewhere.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "r_c immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
+        "Slyly, r_c uses the unusual presence of the weird twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+        "s_c spots the Twolegs unloading metal boxes from their monsters, and recognises that it can't be anything good, leaving immediately.",
+        "s_c spits in the Twolegs' direction and decides to pick a different place to hunt."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "r_c mostly ignores the Twolegs as they hunt, crawling into a metal box to follow the scent of food. But when they try to back up, the way is blocked, and there's nothing they can do - eventually the Twolegs notice, and r_c is taken by them.",
+        null,
+        "s_c has heard terrible things about Twolegs, but they still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around them. They're taken out of the mountains with the injured Twoleg."
+    ],
+    "win_skills": ["extremely smart"],
+    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
+    "fail_skills": ["None"],
+    "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            null
+    ]
+},
+{
+    "patrol_id": "mtn_hunt_gonetnr2",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["hunting", "gone", "small_prey"],
+    "intro_text": "Your patrol encounters a swarm of Twolegs, gathered at the foot of the mountain.",
+    "decline_text": "Your patrol decides to hunt elsewhere.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
+        "Slyly, the cats use the unusual presence of the weird twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+        "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+        "s_c stops anyone from going near the twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back up the mountain."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "r_c mostly ignores the Twolegs as they hunt, crawling into a metal box to follow the scent of food. But when they try to back up, the way is blocked, and there's nothing they or the patrol can do - eventually the Twolegs notice, and r_c is taken by them.",
+        null,
+        "s_c has heard terrible things about Twolegs, but they still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around them. They're taken out of the mountains with the injured Twoleg."
+    ],
+    "win_skills": ["extremely smart"],
+    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
+    "fail_skills": ["None"],
+    "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "min_cats": 2,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            null
+    ]
+},
+{
+    "patrol_id": "mtn_hunt_gonetnr3",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["hunting", "gone", "big_prey"],
+    "intro_text": "Your patrol encounters a swarm of Twolegs, gathered at the foot of the mountain.",
+    "decline_text": "Your patrol decides to hunt elsewhere.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
+        "Slyly, the cats use the unusual presence of the weird twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+        "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+        "s_c stops anyone from going near the twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back up the mountain."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "r_c mostly ignores the Twolegs as they hunt, crawling into a metal box to follow the scent of food. But when they try to back up, the way is blocked, and there's nothing they or the patrol can do - eventually the Twolegs notice, and r_c is taken by them.",
+        null,
+        "s_c has heard terrible things about Twolegs, but they still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around them. They're taken out of the mountains with the injured Twoleg."
+    ],
+    "win_skills": ["extremely smart"],
+    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
+    "fail_skills": ["None"],
+    "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "min_cats": 4,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            null
+    ]
+},
+{
+    "patrol_id": "mtn_hunt_thunderpath1",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["death", "scar", "retirement", "injury", "hunting", "small_prey"],
+    "intro_text": "The patrol comes across a thunderpath running through the mountains.",
+    "decline_text": "They decide it is better not to cross.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "Your patrol waits until they can hear the wind whistling, not a murmur of a monster, and crosses the thunderpath to hunt on the other side.",
+        "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+        "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
+        "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side. The mountains have so few monsters passing through anyway, there's no need to be hasty."
+    ],
+    "fail_text": [
+        "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+        null,
+        "r_c is hit by a monster while crossing and dies instantly. c_n is shaken by the death, and it's a reminder to every cat that just because their territory contains few thunderpaths doesn't mean they can forget their dangers.",
+        "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because their territory contains few thunderpaths doesn't mean they can forget their dangers."
+],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["calm", "careful", "insecure", "nervous", "sneaky", "strange", "patient", "responsible", "thoughtful", "wise"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was heavily injured by a monster, and carries the scars from it.",
+            "r_c was hit by a monster and killed."
+    ]
+},
+{
+    "patrol_id": "mtn_hunt_thunderpath2",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["death", "scar", "retirement", "injury", "hunting", "small_prey", "cruel_season"],
+    "intro_text": "The patrol comes across a thunderpath running through the mountains.",
+    "decline_text": "They decide it is better not to cross.",
+    "chance_of_success": 30,
+    "exp": 10,
+    "success_text": [
+        "Your patrol waits until they can hear the wind whistling, not a murmur of a monster, and crosses the thunderpath to hunt on the other side.",
+        "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+        "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
+        "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side. The mountains have so few monsters passing through anyway, there's no need to be hasty."
+    ],
+    "fail_text": [
+        "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+        null,
+        "r_c is crossing the thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly. c_n is shaken by the death, and it's a reminder to every cat that just because their territory contains few thunderpaths doesn't mean they can forget their dangers.",
+        "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because their territory contains few thunderpaths doesn't mean they can forget their dangers."
+],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["calm", "careful", "insecure", "nervous", "sneaky", "strange", "patient", "responsible", "thoughtful", "wise"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was heavily injured by a monster, and carries the scars from it.",
+            "r_c was hit by a monster and killed."
     ]
 }
+
 
 ]
