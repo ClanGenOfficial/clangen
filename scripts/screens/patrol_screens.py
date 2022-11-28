@@ -43,7 +43,7 @@ class PatrolScreen(Screens):
             the_cat = list(Cat.all_cats.values())[x]
             if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status in [
                     'leader', 'deputy', 'warrior', 'apprentice'
-            ] and not the_cat.exiled and the_cat not in game.switches['current_patrol']:
+            ] and not the_cat.outside and the_cat not in game.switches['current_patrol']:
                 if the_cat.status == 'leader':
                     able_cats.insert(0, the_cat)
                 elif the_cat.status == 'deputy':
