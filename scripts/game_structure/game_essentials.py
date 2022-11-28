@@ -9,6 +9,7 @@ screen_y = 700
 screen = pygame.display.set_mode((screen_x, screen_y), pygame.HWSURFACE)
 pygame.display.set_caption('Clan Generator')
 
+SAVE_DEATH = False
 
 # G A M E
 class Game():
@@ -202,6 +203,8 @@ class Game():
             self.switches['save_clan'] = False
             self.switches['saved_clan'] = True
         if self.switches['switch_clan']:
+            self.clan.save_clan()
+            self.save_cats()
             self.clan.switch_clans()
             self.switches['switch_clan'] = False
         if self.switches['read_clans']:
@@ -345,6 +348,7 @@ class Game():
                 "outside": inter_cat.outside,                
             }
             clan_cats.append(cat_data)
+            inter_cat.save_condition()
             if not inter_cat.dead:
                 inter_cat.save_relationship_of_cat()
         try:

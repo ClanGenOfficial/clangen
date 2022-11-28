@@ -55,12 +55,21 @@ def draw_menu_buttons():
                               cur_screen='clan screen',
                               size=(58, 30),
                               hotkey=[3])
-    buttons.draw_image_button((386, 60),
-                              button_name='starclan',
-                              text='STARCLAN',
-                              cur_screen='starclan screen',
-                              size=(88, 30),
-                              hotkey=[4])
+
+    if game.clan.instructor.df is False:
+        buttons.draw_image_button((386, 60),
+                                  button_name='starclan',
+                                  text='STARCLAN',
+                                  cur_screen='starclan screen',
+                                  size=(88, 30),
+                                  hotkey=[4])
+    else:
+        buttons.draw_image_button((386, 60),
+                                  button_name='starclan',
+                                  text='STARCLAN',
+                                  cur_screen='dark forest screen',
+                                  size=(88, 30),
+                                  hotkey=[4])
 
     buttons.draw_image_button((474, 60),
                               button_name='patrol',

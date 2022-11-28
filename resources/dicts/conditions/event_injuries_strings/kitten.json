@@ -1,0 +1,15 @@
+{
+    "bite-wound": {},
+    "broken bone": {},
+    "bruises": {},
+    "claw-wound": {},
+    "dislocated joint": {},
+    "sprain": {},
+    "cracked pads": {},
+    "joint pain": {},
+    "scrapes": {
+        "r_c tried to sneak out of the camp, but got injured.": 1
+    },
+    "torn ear": {},
+    "torn pelt": {}
+}

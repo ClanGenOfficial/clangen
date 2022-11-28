@@ -263,7 +263,7 @@ class ProfileScreen(Screens):
         if is_sc_instructor:
             the_cat.thought = "Hello. I am here to guide the dead cats of " + game.clan.name + "Clan into StarClan."
         if is_df_instructor:
-            the_cat.thought = "Hello. I am here to pull the dead cats of " + game.clan.name + "Clan into the Dark Forest."
+            the_cat.thought = "Hello. I am here to drag the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
         # ---------------------------------------------------------------------------- #
         #                                   layout                                     #
@@ -527,6 +527,20 @@ class ProfileScreen(Screens):
                 verdana_small.text(
                     str(the_cat.moons) + ' moons', (300, 230 + count * 15))
                 count += 1
+
+        # CONDITIONS (temporary)
+        if the_cat.is_ill() and the_cat.is_injured():
+            verdana_small.text(
+                f"condition: {the_cat.illness.name}, {the_cat.injury.name}" , (300, 230 + count * 15))
+            count += 1
+        elif the_cat.is_ill():
+            verdana_small.text(
+                f"condition: {the_cat.illness.name}", (300, 230 + count * 15))
+            count += 1
+        elif the_cat.is_injured():
+            verdana_small.text(
+                f"condition: {the_cat.injury.name}", (300, 230 + count * 15))
+            count += 1
 
         # MATE
         if the_cat.mate is not None and not the_cat.dead:
@@ -941,11 +955,11 @@ class ProfileScreen(Screens):
 
             # promote a cat to deputy if no deputy is alive
             deputy = game.clan.deputy
-            if game.clan.deputy is None:
+            if game.clan.deputy.outside:
                 deputy = None
             elif game.clan.deputy.dead:
                 deputy = None
-            elif game.clan.deputy.outside:
+            elif game.clan.deputy.exiled:
                 deputy = None
 
             if the_cat.status in [
@@ -1092,6 +1106,14 @@ class ProfileScreen(Screens):
                     'apprentice_switch'].status == 'medicine cat':
             game.switches['apprentice_switch'].status_change('warrior')
             game.switches['apprentice_switch'] = False
+            clan_still_has_med = list(filter(
+                lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled
+                , Cat.all_cats.values()
+            ))
+            if not clan_still_has_med:
+                game.clan.medicine_cat = None
+            else:
+                game.clan.medicine_cat = clan_still_has_med[0]
 
         # ---------------------------------------------------------------------------- #
         #                                 PERSONAL TAB                                 #

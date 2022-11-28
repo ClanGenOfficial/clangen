@@ -1,18 +1,349 @@
 {
-    "broken leg":{
-        "duration": 3,
-        "medicine_duration": 2,
-        "mortality": 300,
+    "bite-wound":{
+        "duration": 2,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 45,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 15
+        },
         "illness_infectiousness": [
             {
-                "name": "greencough",
+                "name": "whitecough",
                 "lower_by": 3
             }
         ],
         "risks": [
             {
-                "name": "infection",
+                "name": "infected wound",
                 "chance": 5
+            }
+        ]
+    },
+    "broken bone":{
+        "duration": 3,
+        "medicine_duration": 2,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": []
+    },
+    "bruises":{
+        "duration": 1,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": []
+    },
+    "claw-wound":{
+        "duration": 2,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 5,
+            "adolescent": 40,
+            "young adult": 50,
+            "adult": 50,
+            "senior adult": 50,
+            "elder": 10
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "infected wound",
+                "chance": 5
+            }
+        ]
+    },
+    "cracked pads":{
+        "duration": 1,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "infected wound",
+                "chance": 15
+            }
+        ]
+    },
+    "dislocated joint":{
+        "duration": 4,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": []
+    },
+    "frostbite":{
+        "duration": 2,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 30,
+            "young adult": 40,
+            "adult": 40,
+            "senior adult": 40,
+            "elder": 20
+        },
+        "illness_infectiousness": [
+            {
+                "name": "chills",
+                "lower_by": 5
+            },
+            {
+                "name": "running nose",
+                "lower_by": 6
+            }
+        ],
+        "risks": [
+            {
+                "name": "chills",
+                "chance": 5
+            },
+            {
+                "name": "running nose",
+                "chance": 4
+            }
+        ]
+    },
+    "heat exhaustion":{
+        "duration": 2,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 5,
+            "adolescent": 20,
+            "young adult": 30,
+            "adult": 30,
+            "senior adult": 30,
+            "elder": 15
+        },
+        "illness_infectiousness": [],
+        "risks": []
+    },
+    "joint pain":{
+        "duration": 2,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": []
+    },
+    "scrapes":{
+        "duration": 1,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "infected wound",
+                "chance": 20
+            }
+        ]
+    },
+    "splinter":{
+        "duration": 1,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "infected wound",
+                "chance": 20
+            }
+        ]
+    },
+    "sprain":{
+        "duration": 1,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": []
+    },
+    "stomachache":{
+        "duration": 2,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "diarrhea",
+                "chance": 8
+            }
+        ]
+    },
+    "tickbites":{
+        "duration": 1,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "infected wound",
+                "chance": 40
+            }
+        ]
+    },
+    "torn pelt":{
+        "duration": 1,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "infected wound",
+                "chance": 30
+            }
+        ]
+    },
+    "torn ear":{
+        "duration": 1,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "infected wound",
+                "chance": 30
+            }
+        ]
+    },
+    "water in the lungs":{
+        "duration": 2,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 30,
+            "adolescent": 60,
+            "young adult": 80,
+            "adult": 80,
+            "senior adult": 80,
+            "elder": 50
+        },
+        "illness_infectiousness": [
+            {
+                "name": "running nose",
+                "lower_by": 5
+            },
+            {
+                "name": "whitecough",
+                "lower_by": 3
+            },
+            {
+                "name": "chills",
+                "lower_by": 5
+            },
+            {
+                "name": "greencough",
+                "lower_by": 5
+            },
+            {
+                "name": "yellowcough",
+                "lower_by": 4
+            }
+        ],
+        "risks": [
+            {
+                "name": "running nose",
+                "chance": 4
+            },
+            {
+                "name": "whitecough",
+                "chance": 3
+            },
+            {
+                "name": "chills",
+                "chance": 5
+            },
+            {
+                "name": "greencough",
+                "chance": 5
+            },
+            {
+                "name": "yellowcough",
+                "chance": 4
             }
         ]
     }

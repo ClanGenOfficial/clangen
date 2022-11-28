@@ -193,17 +193,19 @@ class Button():
                 cat_value.no_kits = False
             elif text == 'Exile Cat':
                 # it is the leader, manage all the things
-                if Cat.all_cats[cat_value].status == 'leader':
+                current_cat = Cat.all_cats[cat_value]
+                current_cat.exiled = True
+                if current_cat.status == 'leader':
                     game.clan.leader.exiled = True
                     game.clan.leader.outside = True
                     game.clan.leader_lives = 1
-                if Cat.all_cats[cat_value].status == 'deputy':
-                    game.clan.deputy.outside = True
+                if current_cat.status == 'deputy':
                     game.clan.deputy.exiled = True
+                    game.clan.deputy.outside = True
                     game.clan.deputy = None
-                Cat.all_cats[cat_value].exiled = True
-                Cat.all_cats[cat_value].outside = True
-                Cat.outside_cats[cat_value] = Cat.all_cats[cat_value]
+                if current_cat.status == 'apprentice':
+                    current_cat.update_mentor()
+                Cat.other_cats[cat_value] = current_cat
             elif text == 'Close Borders':
                     game.clan.closed_borders = True
             elif text == 'Open Borders':
@@ -247,7 +249,9 @@ class Button():
                 elif text == 'Exile Cat':
                     Cat.all_cats[cat_value].exiled = True
                     Cat.all_cats[cat_value].outside = True
-                    Cat.outside_cats[cat_value] = Cat.all_cats[
+                    if Cat.all_cats[cat_value].status == 'apprentice':
+                        Cat.all_cats[cat_value].update_mentor()
+                    Cat.other_cats[cat_value] = Cat.all_cats[
                         cat_value]
                     game.switches['cur_screen'] = 'other screen'
                 elif text == 'Close Borders':
@@ -307,6 +311,8 @@ class Button():
                 if not cat_value.dead and not cat_value.exiled:
                     cat_value.exiled = True
                     cat_value.outside = True
+                    if cat_value.status == 'apprentice':
+                        cat_value.update_mentor()
                     cat_value.thought = "Is shocked that they have been exiled"
                     game.switches['cur_screen'] = 'other screen'
             if cat_value is None:

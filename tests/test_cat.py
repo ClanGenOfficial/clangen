@@ -256,15 +256,15 @@ class TestPossibleMateFunction(unittest.TestCase):
         former_appr = Cat(moons=20)
         mentor.former_apprentices.append(former_appr)
 
-        self.assertFalse(mentor.is_potential_mate(former_appr,False,False))
-        self.assertFalse(former_appr.is_potential_mate(mentor,False,False))
-        self.assertTrue(mentor.is_potential_mate(former_appr,False,True))
-        self.assertTrue(former_appr.is_potential_mate(mentor,False,True))
+        self.assertFalse(mentor._intern_potential_mate(former_appr,False,False))
+        self.assertFalse(former_appr._intern_potential_mate(mentor,False,False))
+        self.assertTrue(mentor._intern_potential_mate(former_appr,False,True))
+        self.assertTrue(former_appr._intern_potential_mate(mentor,False,True))
 
-        self.assertFalse(mentor.is_potential_mate(former_appr,True,False))
-        self.assertFalse(former_appr.is_potential_mate(mentor,True,False))
-        self.assertTrue(mentor.is_potential_mate(former_appr,True,True))
-        self.assertTrue(former_appr.is_potential_mate(mentor,True,True))
+        self.assertFalse(mentor._intern_potential_mate(former_appr,True,False))
+        self.assertFalse(former_appr._intern_potential_mate(mentor,True,False))
+        self.assertTrue(mentor._intern_potential_mate(former_appr,True,True))
+        self.assertTrue(former_appr._intern_potential_mate(mentor,True,True))
 
 class TestMateFunctions(unittest.TestCase):
 
@@ -385,3 +385,21 @@ class TestStatusChange(unittest.TestCase):
         self.assertIn(apprentice.skill, apprentice.skills)
         self.assertEqual(apprentice.mentor, None)
         self.assertFalse(mentor.apprentice)
+
+class TestUpdateMentor(unittest.TestCase):
+    def test_exile_apprentice(self):
+        # given
+        app = Cat(moons=7)
+        mentor = Cat(moons=20)
+        app.mentor = mentor
+        mentor.apprentice.append(app)
+
+        # when
+        self.assertTrue(app in mentor.apprentice and app not in mentor.former_apprentices)
+        self.assertTrue(app.mentor is mentor)
+        app.exiled = True
+        app.update_mentor()
+
+        # then
+        self.assertTrue(app not in mentor.apprentice and app in mentor.former_apprentices)
+        self.assertTrue(app.mentor is None)
