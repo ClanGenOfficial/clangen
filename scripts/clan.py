@@ -240,13 +240,17 @@ class Clan():
             self.leader_lives) + ',' + str(
                 self.leader_predecessors) + ',' + '\n'
 
-        if self.deputy is not None:
+        if self.deputy:
             data = data + self.deputy.ID + ',' + str(
                 self.deputy_predecessors) + ',' + '\n'
         else:
             data = data + '\n'
-        data = data + self.medicine_cat.ID + ',' + str(
-            self.med_cat_predecessors)  + '\n'
+        
+        if self.medicine_cat:
+            data = data + self.medicine_cat.ID + ',' + str(
+                self.med_cat_predecessors)  + '\n'
+        else:
+            data = data + '\n'
 
         data = data + self.instructor.ID + '\n'
 
@@ -323,7 +327,7 @@ class Clan():
             game.clan = Clan(general[0],
                              Cat.all_cats[leader_info[0]],
                              Cat.all_cats.get(deputy_info[0], None),
-                             Cat.all_cats[med_cat_info[0]],
+                             Cat.all_cats.get(med_cat_info[0], None),
                              biome=general[2],
                              camp_bg=general[3],
                              world_seed=int(general[4]),
@@ -339,7 +343,7 @@ class Clan():
             game.clan = Clan(general[0],
                              Cat.all_cats[leader_info[0]],
                              Cat.all_cats.get(deputy_info[0], None),
-                             Cat.all_cats[med_cat_info[0]],
+                             Cat.all_cats.get(med_cat_info[0], None),
                              biome=general[2],
                              camp_bg=general[3],
                              world_seed=int(general[4]),
@@ -349,21 +353,21 @@ class Clan():
         elif len(general) == 3:
             game.clan = Clan(general[0], Cat.all_cats[leader_info[0]],
                              Cat.all_cats.get(deputy_info[0], None),
-                             Cat.all_cats[med_cat_info[0]], general[2])
+                             Cat.all_cats.get(med_cat_info[0], None),
+                             general[2])
         else:
             game.clan = Clan(general[0], Cat.all_cats[leader_info[0]],
                              Cat.all_cats.get(deputy_info[0], None),
-                             Cat.all_cats[med_cat_info[0]])
-
+                             Cat.all_cats.get(med_cat_info[0], None))
         game.clan.age = int(general[1])
         game.clan.current_season = game.clan.seasons[game.clan.age % 12]
         game.clan.leader_lives, game.clan.leader_predecessors = int(
             leader_info[1]), int(leader_info[2])
 
-
         if len(deputy_info) > 1:
             game.clan.deputy_predecessors = int(deputy_info[1])
-        game.clan.med_cat_predecessors = int(med_cat_info[1])
+        if len(med_cat_info) > 1:
+            game.clan.med_cat_predecessors = int(med_cat_info[1])
         if len(sections) > 4:
             if instructor_info in Cat.all_cats.keys():
                 game.clan.instructor = Cat.all_cats[instructor_info]

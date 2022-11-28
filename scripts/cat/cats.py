@@ -342,13 +342,15 @@ class Cat():
             self.update_mentor()
         elif self.status == 'medicine cat apprentice':
             self.update_med_mentor()
+
         # updates skill
         if self.status == 'warrior':
             self.update_mentor()
+            self.update_skill()
         elif self.status == 'medicine cat':
             self.update_med_mentor()
-        else:
-            self.skill = self.skill
+            self.update_skill()
+
         if self.status == 'elder':
             self.skill = choice(self.elder_skills)
 
@@ -1026,7 +1028,16 @@ class Cat():
                     self.former_mentor.append(old_mentor)
 
     def update_mentor(self, new_mentor=None):
-        if new_mentor is None:
+        if not new_mentor:
+            # handle if the current cat is exiled and still a apprentice
+            if self.exiled and self.mentor:
+                if self in self.mentor.apprentice:
+                    self.mentor.apprentice.remove(self)
+                if self not in self.mentor.former_apprentices:
+                    self.mentor.former_apprentices.append(self)
+                if self.mentor not in self.former_mentor:
+                    self.former_mentor.append(self.mentor)
+                self.mentor = None
             # If not reassigning and current mentor works, leave it
             if self.mentor and self.is_valid_mentor(self.mentor):
                 return
@@ -1034,7 +1045,7 @@ class Cat():
         # Should only have mentor if alive and some kind of apprentice
         if 'apprentice' in self.status and not self.dead and not self.exiled:
             # Need to pick a random mentor if not specified
-            if new_mentor is None:
+            if not new_mentor:
                 potential_mentors = []
                 priority_mentors = []
                 for cat in self.all_cats.values():
@@ -1049,13 +1060,13 @@ class Cat():
                     new_mentor = choice(potential_mentors)
             # Mentor changing to chosen/specified cat
             self.mentor = new_mentor
-            if new_mentor is not None and old_mentor is None:
+            if new_mentor and old_mentor:
                 # remove and append in relevant lists
                 if self not in new_mentor.apprentice:
                     new_mentor.apprentice.append(self)
                 if self in new_mentor.former_apprentices:
                     new_mentor.former_apprentices.remove(self)
-            elif new_mentor is not None and old_mentor is not None:
+            elif new_mentor and old_mentor:
                 # reset patrol number
                 self.patrol_with_mentor = 0
                 if self.moons > 6:
@@ -1080,7 +1091,7 @@ class Cat():
             # app has graduated, no mentor needed anymore
             self.mentor = None
             # append and remove
-            if old_mentor is not None and old_mentor != self.mentor:
+            if old_mentor and old_mentor != self.mentor:
                 if self in old_mentor.apprentice:
                     old_mentor.apprentice.remove(self)
                 if self not in old_mentor.former_apprentices:
@@ -1092,7 +1103,12 @@ class Cat():
 # ---------------------------------------------------------------------------- #
 #                                 relationships                                #
 # ---------------------------------------------------------------------------- #
-    def is_potential_mate(self, other_cat, for_love_interest = False, former_mentor_setting = game.settings['romantic with former mentor']):
+    def is_potential_mate(self, other_cat, for_love_interest = False):
+        """Add aditional information to call the check."""
+        former_mentor_setting = game.settings['romantic with former mentor']
+        return self._intern_potential_mate(other_cat, for_love_interest, former_mentor_setting)
+
+    def _intern_potential_mate(self, other_cat, for_love_interest, former_mentor_setting):
         """Checks if this cat is a free and potential mate for the other cat."""
         # just to be sure, check if it is not the same cat
         if self.ID == other_cat.ID:
@@ -1100,6 +1116,10 @@ class Cat():
 
         # check exiles and dead cats
         if self.dead or self.exiled or other_cat.dead or other_cat.exiled:
+            return False
+
+        # check for age
+        if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
             return False
 
         # check for current mate
@@ -1116,7 +1136,6 @@ class Cat():
             return False
 
         # Relationship checks
-        # We don't need to parental checks if the cats have no parents =3
         # Apparently, parent2 can't exist without parent1, so we only need to check parent1
         if self.parent1 or other_cat.parent1:
             # Check for relation via other_cat's parents (parent/grandparent)
@@ -1139,17 +1158,10 @@ class Cat():
                 if other_cat.siblings:
                     if other_cat.is_uncle_aunt(self):
                         return False
-                    
-        # check for age
-        if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
-            return False
 
         if self.age == other_cat.age:
             return True
 
-        #if set(['kitten', 'adolescent']) & set([self.age, other_cat.age]):
-        #    return False
-        # ugly but faster
         if self.age in "kittenadolescent" or other_cat.age in "kittenadolescent":
             return False
         

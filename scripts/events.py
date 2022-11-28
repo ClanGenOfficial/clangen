@@ -33,7 +33,7 @@ class Events():
             if any(str(cat.status) in {'leader', 'deputy', 'warrior', 'apprentice'}
                     and not cat.dead and not cat.exiled for cat in Cat.all_cats.values()):
                 game.switches['no_able_left'] = False
-            self.relation_events.handle_pregnancy_age(clan = game.clan)
+            self.relation_events.handle_pregnancy_age(game.clan)
             for cat in Cat.all_cats.copy().values():
                 if not cat.exiled:
                     self.one_moon_cat(cat)
@@ -63,7 +63,6 @@ class Events():
                         game.clan.leader_lives -= 10
                         cat.dead = True
                         game.cur_events_list.append(f'Rumors reach your clan that the exiled {str(cat.name)} has died recently.')
-
                         game.clan.leader_lives = 0
             
             # relationships have to be handled separately, because of the ceremony name change
@@ -80,7 +79,8 @@ class Events():
                     if not triggered_death:
                         triggered_death = self.handle_injuries_or_general_death(cat)
 
-                self.relation_events.handle_relationships(cat)
+                if not cat.dead:
+                    self.relation_events.handle_relationships(cat)
 
 
             self.check_clan_relations()
@@ -356,7 +356,7 @@ class Events():
                                          f'{name} found a {acc_singular} and decided to wear it on their pelt.',
                                          f'A clanmate gave {name} a {acc_singular} and they decided to wear it.'
                             ])
-                    elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
+                    elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"] and cat.specialty not in ["NOTAIL", "HALFTAIL"] and cat.specialty2 not in ["NOTAIL", "HALFTAIL"]:
                         acc_text.append(f'{name} was playing with {acc_plural} earlier and decided to wear some of them.')
                     elif cat.accessory in ["HERBS", "PETALS", "DRYHERBS"]:
                         acc_text.append(f'{name}\'s parents try their best to groom them, but something is always stuck in their fur.')
@@ -1012,6 +1012,7 @@ class Events():
                         f'{name} was buried alive when a burrow collapsed on them'
                     ])
                 game.clan.leader_lives -= 10
+                cat.die()
 
         elif not int(random.random() * 400): # 1/400
             triggered_death = True
@@ -1125,7 +1126,7 @@ class Events():
             elif cat.status == 'leader':
                 if game.clan.all_clans:
                     cause_of_death.extend([
-                        f'{name} was found dead near the {choice(game.clan.all_clans).name}Clan border mortally injured'
+                        f'{name} was found dead near the {choice(game.clan.all_clans).name}Clan border mortally injured',
                         f'{name} went missing and was later found mortally wounded'
                     ])
                 if self.at_war:
@@ -1473,8 +1474,8 @@ class Events():
         # leader loses lives
         current_lives = int(game.clan.leader_lives)
         if not int(random.random() * 100) and cat.status == 'leader': # 1/100
-            triggered_death = True
             if game.clan.current_season in ['Leaf-fall', 'Leaf-bare']:
+                triggered_death = True
                 cause_of_death = [
                     f"{name} lost a life due to greencough",
                     f"{name} lost a life due to whitecough",
@@ -1487,9 +1488,9 @@ class Events():
                 if SAVE_DEATH:
                     save_death(cat, event_string)
         elif not int(random.random() * 200) and cat.status == 'leader': # 1/200
-            triggered_death = True
-            lostlives = choice([2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6])
             if cat.moons >= 130 and game.clan.current_season in ['Leaf-fall', 'Leaf-bare']:
+                triggered_death = True
+                lostlives = choice([2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 6])
                 cause_of_death = [
                     f'{name} lost {lostlives} lives due to greencough',
                     f'{name} lost {lostlives} lives due to whitecough',
@@ -1497,11 +1498,11 @@ class Events():
                     f'{name} lost {lostlives} lives due to an illness'
                 ]
                 game.clan.leader_lives = current_lives - lostlives
-            cat.die()
-            event_string = choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old'
-            game.cur_events_list.append(event_string)
-            if SAVE_DEATH:
-                save_death(cat, event_string)
+                cat.die()
+                event_string = choice(cause_of_death) + ' at ' + str(cat.moons) + ' moons old'
+                game.cur_events_list.append(event_string)
+                if SAVE_DEATH:
+                    save_death(cat, event_string)
         # normal death
         elif not int(random.random() * 400): # 1/400
             triggered_death = True
@@ -1543,7 +1544,7 @@ class Events():
             elif cat.status == 'deputy':
                 cause_of_death.extend([])
 
-            if cat.status == 'leader':
+            if len(cause_of_death) > 1 and cat.status == 'leader':
                 game.clan.leader_lives -= 1
     
             if len(cause_of_death) > 1:
@@ -1660,6 +1661,7 @@ class Events():
                     game.clan.leader_lives -= 10
                 event_string = f'{name} is killed by {other_name} in an argument over {Cat.all_cats.get(cat.mate).name}.'
                 game.cur_events_list.append(event_string)
+                cat.die()
                 if SAVE_DEATH:
                     save_death(cat, event_string)
                 return
@@ -1707,7 +1709,7 @@ class Events():
         elif cat.status == 'leader':
             if game.clan.all_clans:
                 cause_of_death.extend([
-                    f'{name} was found dead near the {choice(game.clan.all_clans).name}Clan border mortally injured'
+                    f'{name} was found dead near the {choice(game.clan.all_clans).name}Clan border mortally injured',
                     f'{name} went missing and was later found mortally wounded'
                 ])
             if self.at_war:
