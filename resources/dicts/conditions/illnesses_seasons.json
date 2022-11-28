@@ -5,7 +5,9 @@
     },
     "Greenleaf":{
         "fleas": 2,
-        "diarrhea":1
+        "diarrhea":1,
+        "heat exhaustion":3,
+        "heat stroke":2
     },
     "Leaf-fall":{
         "greencough": 4,

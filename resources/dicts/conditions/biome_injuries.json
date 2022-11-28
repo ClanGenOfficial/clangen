@@ -3,7 +3,7 @@
         "cracked pads": "r_c stepped on some sharp stones near the beach."
     },
     "Forest":{
-        "broken bone": "r_c fell from the tree.",
+        "broken bone": "r_c fell from a tree.",
         "splinter": "r_c was climbing on a tree.",
         "torn pelt": "r_c pelt's has become entangled with the walls of the camp."
     },
@@ -13,7 +13,7 @@
         "sprain": "r_c jumped from a rock, but they didn't land quite right."
     },
     "Plains":{
-        "bruises": "r_c was running over the hills when they tripped over their own legs and hit the ground hard."
+        "bruises": "r_c was running across the plains when they tripped over their own legs and hit the ground hard."
     },
     "Swamp":{
         "sprain": "r_c got stuck in a swamp and struggled for hours to escape before their clanmates found them."

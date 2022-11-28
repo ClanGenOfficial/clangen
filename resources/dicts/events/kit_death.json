@@ -97,5 +97,42 @@
     "cat_skill": null,
     "other_cat_trait": null,
     "other_cat_skill": null
+},
+{
+    "death_tags": ["kitten", "illness", "Forest", "Plains", "Mountainous", "Beach", "Leaf-fall", "Leaf-bare"],
+    "death_text": "d_c died of greencough.",
+    "history_text": "d_c died of greencough.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+},
+{
+    "death_tags": ["kitten", "illness", "Forest", "Plains", "Mountainous", "Beach", "Leaf-fall", "Leaf-bare"],
+    "death_text": "d_c died of kittencough.",
+    "history_text": "d_c died of kittencough.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+},
+{
+    "death_tags": ["kitten", "illness", "Forest", "Plains", "Mountainous", "Beach", "Leaf-fall", "Leaf-bare"],
+    "death_text": "d_c was too weak to fight off whitecough and died.",
+    "history_text": "d_c died of whitecough.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
+},
+{
+    "death_tags": ["kitten", "illness", "Forest", "Plains", "Mountainous", "Beach", "Leaf-fall", "Leaf-bare"],
+    "death_text": "d_c caught a cold and slowly faded.",
+    "history_text": "d_c was killed by sickness.",
+    "cat_trait": null,
+    "cat_skill": null,
+    "other_cat_trait": null,
+    "other_cat_skill": null
 }
+
 ]

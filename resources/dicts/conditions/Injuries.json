@@ -24,8 +24,8 @@
         ]
     },
     "broken bone":{
-        "duration": 3,
-        "medicine_duration": 2,
+        "duration": 6,
+        "medicine_duration": 5,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -35,7 +35,12 @@
             "elder": 0
         },
         "illness_infectiousness": [],
-        "risks": []
+        "risks": [
+            {
+                "name": "infected wound",
+                "chance": 5
+            }
+        ]
     },
     "bruises":{
         "duration": 1,
@@ -108,11 +113,11 @@
         "medicine_duration": 1,
         "mortality": {
             "kitten": 10,
-            "adolescent": 30,
-            "young adult": 40,
-            "adult": 40,
-            "senior adult": 40,
-            "elder": 20
+            "adolescent": 20,
+            "young adult": 30,
+            "adult": 30,
+            "senior adult": 20,
+            "elder": 10
         },
         "illness_infectiousness": [
             {
@@ -134,20 +139,6 @@
                 "chance": 4
             }
         ]
-    },
-    "heat exhaustion":{
-        "duration": 2,
-        "medicine_duration": 1,
-        "mortality": {
-            "kitten": 5,
-            "adolescent": 20,
-            "young adult": 30,
-            "adult": 30,
-            "senior adult": 30,
-            "elder": 15
-        },
-        "illness_infectiousness": [],
-        "risks": []
     },
     "joint pain":{
         "duration": 2,
@@ -291,9 +282,9 @@
             }
         ]
     },
-    "water in the lungs":{
-        "duration": 2,
-        "medicine_duration": 1,
+    "water in their lungs":{
+        "duration": 3,
+        "medicine_duration": 2,
         "mortality": {
             "kitten": 30,
             "adolescent": 60,

@@ -182,7 +182,7 @@ class Condition_Events():
                     risk["chance"] = 0
                 triggered = True
                 new_illness = risk['name']
-                event_string = f"{cat.name}'s {cat.injury.name}, lead to {new_illness}."
+                event_string = f"{cat.name}'s {cat.injury.name} lead to {new_illness}."
                 cat.get_ill(new_illness)
                 break
 

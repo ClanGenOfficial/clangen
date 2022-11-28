@@ -111,8 +111,8 @@ class Events():
 
             if game.clan.game_mode in ["expanded", "cruel season"]:
                 amount_per_med = get_amount_cat_for_one_medic(game.clan)
-                med_fullfiled = medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med)
-                if not med_fullfiled:
+                med_fullfilled = medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med)
+                if not med_fullfilled:
                     game.cur_events_list.insert(0, f"{game.clan.name}Clan does not have enough (healthy) medicine cats!")
             else:
                 has_med = any(
@@ -655,7 +655,7 @@ class Events():
             if game.clan.game_mode != 'classic':
                 if "river" in chosen_scar and not cat.is_ill() and random.random() * 5:
                     chosen_scar = f"{chosen_scar} {name} now has water in their lungs."
-                    cat.get_injured("water in the lungs", event_triggered = True)
+                    cat.get_injured("water in their lungs", event_triggered = True)
                 elif specialty in ["LEFTEAR", "RIGHTEAR"] and "injured" in chosen_scar:
                     injury_name = "torn ear"
                     chosen_scar = f"{chosen_scar} {name} gained a scar and also a {injury_name}."
@@ -1042,7 +1042,6 @@ class Events():
         # ---------------------------------------------------------------------------- #
         # if triggered_death is True then the cat will die
         triggered_death = False
-
         # choose other cat
         other_cat = choice(list(Cat.all_cats.values()))
         countdown = int(len(Cat.all_cats) / 2)
@@ -1068,31 +1067,32 @@ class Events():
         enemy_clan = f'{str(self.enemy_clan)}'
         current_lives = int(game.clan.leader_lives)
 
+
+        # chance to kill leader
+        if not int(random.random() * 80) and cat.status == 'leader' and not triggered_death:  # 1/80
+            triggered_death = True
+
+        # chance to die of old age
+        if cat.moons > int(random.random() * 51) + 140 and not triggered_death:  # cat.moons > 150 <--> 200
+            triggered_death = True
+
         # extra death chance and injuries in expanded & cruel season
         if game.clan.game_mode in ["expanded", "cruel season"]:
-            if not int(random.random() * 450):  # 1/600
+            if not int(random.random() * 350):  # 1/400
                 triggered_death = True
             else:
                 triggered_death = self.condition_events.handle_injuries(cat, game.clan.current_season, game.clan.biome)
+                return triggered_death
+
             # disaster death chance
             if game.settings.get('disasters') and not triggered_death:
                 if not random.getrandbits(10):  # 1/1024
                     triggered_death = True
                     self.handle_disasters(cat)
-            return triggered_death
 
-        # base death chance
-        if not triggered_death and not int(random.random() * 300):  # 1/400
+        # classic scar chance
+        elif game.clan.game_mode == "classic" and not int(random.random() * 300):  # 1/300
             triggered_death = True
-
-        # chance to kill leader
-        if not int(random.random() * 85) and cat.status == 'leader' and not triggered_death:  # 1/90
-            triggered_death = True
-
-        # chance to die of old age
-        if cat.moons > int(random.random() * 51) + 150 and not triggered_death:  # cat.moons > 150 <--> 200
-            triggered_death = True
-
         # ---------------------------------------------------------------------------- #
         #                           compile possible deaths                            #
         # ---------------------------------------------------------------------------- #
@@ -1267,8 +1267,8 @@ class Events():
                     game.clan.leader_lives -= 10
                     cat.die()
                     cat.died_by = history_text
-                elif "murder" in death_cause.death_tags:
-                    game.clan.leader_lives -= random.randrange(1, current_lives - 1)
+                elif "murder" in death_cause.death_tags or "some_lives" in death_cause.death_tags:
+                    game.clan.leader_lives -= random.randrange(2, current_lives - 1)
                     cat.die()
                     cat.died_by = history_text
                 else:
@@ -1342,7 +1342,7 @@ class Events():
                 ' are killed after a badger attack.',
                 ' die to a greencough outbreak.',
                 ' are taken away by twolegs.',
-                ' eat poisoned freshkill and die.',
+                ' eat tainted freshkill and die.',
             ])
             if game.clan.current_season == 'Leaf-bare':
                 disaster.extend([
