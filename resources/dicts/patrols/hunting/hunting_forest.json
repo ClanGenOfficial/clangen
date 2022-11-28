@@ -878,7 +878,7 @@ null
     "patrol_id": "fst_hunt_gonetwolegden4",
     "biome": "forest",
     "season": "Any",
-    "tags": ["hunting", "gone", "small_prey", "apprentice", "romantic", "platonic"],
+    "tags": ["hunting", "gone", "small_prey", "apprentice", "romantic", "platonic", "two_apprentices"],
     "intro_text": "Boldly, eyes daring app1 to say no, app2 suggests hunting by the Twoleg dens. Where apprentices are definitely not allowed.",
     "decline_text": "On second thought, they decide to reline their nests today instead.",
     "chance_of_success": 50,
