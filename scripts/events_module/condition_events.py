@@ -24,7 +24,7 @@ class Condition_Events():
         """
         # one if-statement has a range of 10
         number_of_conditions = 1 * 10
-        ratio = 90  # 1/90 times triggering for each cat each moon
+        ratio = 100  # 1/100 times triggering for each cat each moon
         chance_number = number_of_conditions * ratio
 
         random_number = int(random.random() * chance_number)
@@ -50,9 +50,9 @@ class Condition_Events():
 
                 if cat.dead:
                     triggered = True
-                    event_string = f"{cat.name} has died of {illness_name}"
+                    event_string = f"{cat.name} has died of {illness_name}."
                 elif not cat.is_ill():
-                    event_string = f"{cat.name}'s {illness_name} has been cured."
+                    event_string = f"{cat.name}'s has been cured of {illness_name}."
 
         # handle if the cat is not sick
         # SEASON
@@ -76,13 +76,13 @@ class Condition_Events():
             if cat.dead:
                 if SAVE_DEATH:
                     save_death(cat, event_string)
-                game.cur_events_list.append(f"{event_string} at {cat.moons} moons")
+                game.cur_events_list.append(event_string)
             else: 
                 game.cur_events_list.append(event_string)
 
         return triggered
 
-    def handle_injuries(self, cat, season, biome):
+    def handle_injuries(self, cat, other_cat, alive_kits, season, biome):
         """ 
         This function handles overall the injuries in 'expanded' (or 'cruel season') game mode.
         Returns: boolean - if an event was triggered
@@ -94,72 +94,120 @@ class Condition_Events():
 
         random_number = int(random.random() * chance_number)
         triggered = False
-        event_string = None
+        text = None
 
-        if cat.dead or game.clan.game_mode == "classic":
+        if cat.dead:
             return triggered
 
         # handle if the current cat is already injured
         if cat.is_injured():
             triggered, event_string = self.handle_already_injured(cat)
+            text = event_string
+        else:
+            # EVENTS
+            possible_events = []
+            final_events = []
+            if not triggered and random_number <= 50:
+                if cat.status == "kitten":
+                    possible_events.extend((self.generate_injury_event(KITTEN_EVENT_INJURIES)))
+                elif cat.status == "apprentice":
+                    possible_events.extend((self.generate_injury_event(GENERAL_EVENT_INJURIES)))
+                    possible_events.extend((self.generate_injury_event(APPRENTICE_EVENT_INJURIES)))
+                elif cat.status in ["warrior", "deputy"]:
+                    possible_events.extend((self.generate_injury_event(GENERAL_EVENT_INJURIES)))
+                    possible_events.extend((self.generate_injury_event(WARRIOR_EVENT_INJURIES)))
+                elif cat.status == "elder":
+                    possible_events.extend((self.generate_injury_event(GENERAL_EVENT_INJURIES)))
+                    possible_events.extend((self.generate_injury_event(ELDER_EVENT_INJURIES)))
+                elif cat.status in ["medicine cat", "medicine cat apprentice"]:
+                    possible_events.extend((self.generate_injury_event(GENERAL_EVENT_INJURIES)))
+                    possible_events.extend((self.generate_injury_event(MED_ALIKE_EVENT_INJURIES)))
+                elif cat.status == "leader":
+                    possible_events.extend((self.generate_injury_event(GENERAL_EVENT_INJURIES)))
+                    possible_events.extend((self.generate_injury_event(WARRIOR_EVENT_INJURIES)))
+                    possible_events.extend((self.generate_injury_event(LEADER_EVENT_INJURIES)))
 
-        # NORMAL EVENTS
-        if not triggered and random_number <= 10:
-            triggered = True
-            event_string = self.handle_event_injuries(cat)
-
-        # NORMAL SEASON
-        if not triggered and 10 < random_number <= 20:
-            triggered = True
-            season_dict = INJURIES_SEASON_LIST[season]
-            possible_injuries = []
-
-            for injury_name in season_dict:
-                possible_injuries += [injury_name] * season_dict[injury_name]
-
-            random_index = int(random.random() * len(possible_injuries))
-            cat.get_injured(possible_injuries[random_index])
-            
-            if possible_injuries[random_index] in\
-                    ["bruises", "cracked pads", "joint pain", "scrapes", "tickbites"]:
-                event_string = f"{cat.name} has gotten {possible_injuries[random_index]}."
-            else:
-                event_string = f"{cat.name} has gotten a(n) {possible_injuries[random_index]}."
-
-        # SPECIAL SEASON EVENTS
-        if not triggered and 20 < random_number <= 30:
-            if season == "Leaf-bare" and cat.status == "elder":
                 triggered = True
-                event_string = f"{cat.name} went for a walk outside the camp, " \
-                               f"but it was so slippery that they fell and broke a bone."
-                cat.get_injured("broken bone")
 
-        # handle if the cat is not injured
-        # BIOME EVENTS
-        if not triggered and 30 < random_number <= 40:
-            triggered = True
-            injury_dict = BIOME_INJURIES[biome]
-            random_index = int(random.random() * len(injury_dict))
-            injury_name = list(injury_dict.keys())[random_index]
-            cat.get_injured(injury_name)
-            if injury_name in ["bruises", "cracked pads", "joint pain", "scrapes", "tickbites"]:
-                event_string = f"{injury_dict[injury_name]} {cat.name} has gotten {injury_name}."
-            else:
-                event_string = f"{injury_dict[injury_name]} {cat.name} has gotten a(n) {injury_name}."
+                correct_biome = False
+                correct_season = False
+                kit_check = False
+                chance_add = False
 
-        # handle if a rat attack has happened --> lead to festering wounds
-        if event_string and "rat" in event_string:
-            chance_number = 15
-            if int(random.random() * chance_number):
-                cat.get_ill("festering wounds")
-                event_string = f"{event_string} The rat bites that {cat.name} " \
-                               f"got don't look good and have begun to fester."
+                for event in possible_events:
+                    if str(biome) in event.tags:
+                        correct_biome = True
+                    if str(season) in event.tags:
+                        correct_season = True
 
-        if event_string:
-            event_string = event_string.replace('r_c', str(cat.name))
-            game.cur_events_list.append(event_string)
+                    if "clan_kits" in event.tags and alive_kits:
+                        kit_check = True
+                    elif "clan_kits" not in event.tags:
+                        kit_check = True
 
-        return triggered
+                    if event.cat_trait is not None:
+                        if cat.trait in event.cat_trait:
+                            chance_add = True
+                        elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with trait
+                            chance_add = True
+                    else:
+                        chance_add = True
+
+                    if event.cat_skill is not None:
+                        if cat.skill in event.cat_skill:
+                            chance_add = True
+                        elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with trait
+                            chance_add = True
+                    else:
+                        chance_add = True
+
+                    if event.other_cat_trait is not None:
+                        if other_cat.trait in event.other_cat_trait:
+                            chance_add = True
+                        elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with trait
+                            chance_add = True
+                    else:
+                        chance_add = True
+
+                    if event.other_cat_skill is not None:
+                        if other_cat.skill in event.other_cat_skill:
+                            chance_add = True
+                        elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with trait
+                            chance_add = True
+                    else:
+                        chance_add = True
+
+                    if correct_biome and correct_season and kit_check and chance_add:
+                        final_events.append(event)
+
+                name = str(cat.name)
+                other_name = str(other_cat.name)
+                danger = ["a rogue", "a dog", "a fox", "an otter", "a hawk", "an enemy warrior", "a badger"]
+                tail_danger = ["a rogue", "a dog", "a fox", "an otter", "a hawk",
+                               "an enemy warrior", "a badger", "a twoleg trap"]
+
+                injury_event = random.choice(final_events)
+
+                text = injury_event.event_text
+                text = text.replace("m_c", name)
+                text = text.replace("r_c", other_name)
+                text = text.replace("d_l", random.choice(danger))
+
+                if injury_event.scar_text is not None:
+                    scar_text = injury_event.scar_text
+                    scar_text = scar_text.replace("m_c", name)
+                    scar_text = scar_text.replace("r_c", other_name)
+                    scar_text = scar_text.replace("d_l", random.choice(danger))
+                    cat.possible_scar = str(scar_text)
+
+                cat.get_injured(injury_event.injury)
+
+        if not triggered:
+            return triggered
+        else:
+            game.cur_events_list.append(text)
+
+            return triggered
 
 # ---------------------------------------------------------------------------- #
 #                               helper functions                               #
@@ -182,7 +230,7 @@ class Condition_Events():
                     risk["chance"] = 0
                 triggered = True
                 new_illness = risk['name']
-                event_string = f"{cat.name}'s {cat.injury.name} lead to {new_illness}."
+                event_string = f"The {cat.injury.name} caused {cat.name} to get {new_illness}."
                 cat.get_ill(new_illness)
                 break
 
@@ -192,83 +240,65 @@ class Condition_Events():
             if cat.dead:
                 triggered = True
                 save_death(cat, event_string)
-                if injury_name in ["bruises", "cracked pads", "joint pain", "scrapes", "tickbites"]:
+                if injury_name in ["bruises", "cracked pads", "joint pain", "scrapes", "tick bites", "water in their lungs", "frostbite"]:
                     event_string = f"{cat.name} has died in the medicine den from {injury_name} "
+                    if cat.status == "leader":
+                        cat.died_by = f"died from {injury_name}."
+                    else:
+                        cat.died_by = f"{cat.name} died from {injury_name}."
                 else:
-                    event_string = f"{cat.name} has died in the medicine den from a(n) {injury_name}."
-            elif not cat.is_injured():
-                event_string = f"{cat.name}'s {injury_name} has healed."
+                    event_string = f"{cat.name} has died in the medicine den from a {injury_name}."
+                    if cat.status == "leader":
+                        cat.died_by = f"died from a {injury_name}."
+                    else:
+                        cat.died_by = f"{cat.name} died from a {injury_name}."
+
+            elif cat.injury is None:
+                triggered = True
+                if injury_name in ["bruises", "cracked pads", "scrapes", "tick bites"]:
+                    event_string = f"{cat.name}'s {injury_name} have healed."
+                else:
+                    event_string = f"{cat.name}'s {injury_name} has healed."
 
         return triggered, event_string
 
-    def handle_event_injuries(self, cat):
-        """
-        This function handles, when the cat is already injured
-        Returns: event_string
-        """
-        event_string = None
-
-        # create a list of possible injuries and get one
-        poss_injuries = POSSIBLE_INJURIES_DICT[cat.status]
-        random_index = int(random.random() * len(poss_injuries))
-        injury_name = poss_injuries[random_index]
-
-        # get the needed event string dicts
-        if GENERAL_EVENT_INJURIES[injury_name]:
-            event_dicts = [GENERAL_EVENT_INJURIES[injury_name]]
-        else:
-            event_dicts = []
-
-        # event strings based on status
-        if cat.status == "kitten":
-            if KITTEN_EVENT_INJURIES[injury_name]:
-                event_dicts.append(KITTEN_EVENT_INJURIES[injury_name])
-        elif cat.status == "apprentice":
-            if WARRIOR_ALIKE_EVENT_INJURIES[injury_name]:
-                event_dicts.append(WARRIOR_ALIKE_EVENT_INJURIES[injury_name])
-            if APPRENTICE_EVENT_INJURIES[injury_name]:
-                event_dicts.append(APPRENTICE_EVENT_INJURIES[injury_name])
-        elif cat.status == "medicine cat apprentice":
-            if MED_ALIKE_EVENT_INJURIES[injury_name]:
-                event_dicts.append(MED_ALIKE_EVENT_INJURIES[injury_name])
-        elif cat.status == "warrior":
-            if WARRIOR_ALIKE_EVENT_INJURIES[injury_name]:
-                event_dicts.append(WARRIOR_ALIKE_EVENT_INJURIES[injury_name])
-            if WARRIOR_EVENT_INJURIES[injury_name]:
-                event_dicts.append(WARRIOR_EVENT_INJURIES[injury_name])
-        elif cat.status == "elder":
-            if ELDER_EVENT_INJURIES[injury_name]:
-                event_dicts.append(ELDER_EVENT_INJURIES[injury_name])
-        elif cat.status == "medicine cat":
-            if MED_ALIKE_EVENT_INJURIES[injury_name]:
-                event_dicts.append(MED_ALIKE_EVENT_INJURIES[injury_name])
-        elif cat.status == "deputy":
-            if WARRIOR_ALIKE_EVENT_INJURIES[injury_name]:
-                event_dicts.append(WARRIOR_ALIKE_EVENT_INJURIES[injury_name])
-        elif cat.status == "leader":
-            if WARRIOR_ALIKE_EVENT_INJURIES[injury_name]:
-                event_dicts.append(WARRIOR_ALIKE_EVENT_INJURIES[injury_name])
-            if LEADER_EVENT_INJURIES[injury_name]:
-                event_dicts.append(LEADER_EVENT_INJURIES[injury_name])
-
-        # create a list with all event strings
+    def generate_injury_event(self, events_dict):
         possible_events = []
-        for event_dict in event_dicts:
-            for p_event_string in event_dict:
-                possible_events += [p_event_string] * event_dict[p_event_string]
+        for event in events_dict:
+            injury_event = InjuryEvent(
+                injury=event["injury"],
+                tags=event["tags"],
+                event_text=event["event_text"],
+                scar_text=event["scar_text"],
+                cat_trait=event["cat_trait"],
+                cat_skill=event["cat_skill"],
+                other_cat_trait=event["other_cat_trait"],
+                other_cat_skill=event["other_cat_skill"]
+            )
+            possible_events.append(injury_event)
 
-        # choose one string and injure the cat and replace the string inserts
-        event_string = random.choice(possible_events)
-        if injury_name in ["bruises", "cracked pads", "joint pain", "scrapes", "stomachache", "tickbites"]:
-            event_string = f"{event_string} {cat.name} has gotten {injury_name}."
-        elif injury_name in []:
-            event_string = f"{event_string} {cat.name} has gotten an {injury_name}."
-        else:
-            event_string = f"{event_string} {cat.name} has gotten a {injury_name}."
+        return possible_events
 
-        cat.get_injured(injury_name)
-        
-        return event_string
+
+class InjuryEvent:
+    def __init__(self,
+                 injury=None,
+                 tags=[],
+                 event_text='',
+                 scar_text='',
+                 cat_trait=None,
+                 cat_skill=None,
+                 other_cat_trait=None,
+                 other_cat_skill=None):
+        self.injury = injury
+        self.tags = tags
+        self.event_text = event_text
+        self.scar_text = scar_text
+        self.cat_trait = cat_trait
+        self.cat_skill = cat_skill
+        self.other_cat_trait = other_cat_trait
+        self.other_cat_skill = other_cat_skill
+
 
 # ---------------------------------------------------------------------------- #
 #                                LOAD RESOURCES                                #
@@ -285,19 +315,6 @@ ILLNESSES_SEASON_LIST = None
 with open(f"{resource_directory}illnesses_seasons.json", 'r') as read_file:
     ILLNESSES_SEASON_LIST = ujson.loads(read_file.read())
 
-INJURIES_SEASON_LIST = None
-with open(f"{resource_directory}injuries_seasons.json", 'r') as read_file:
-    INJURIES_SEASON_LIST = ujson.loads(read_file.read())
-
-
-# ---------------------------------------------------------------------------- #
-#                                    BIOMES                                    #
-# ---------------------------------------------------------------------------- #
-
-BIOME_INJURIES = None
-with open(f"{resource_directory}biome_injuries.json", 'r') as read_file:
-    BIOME_INJURIES = ujson.loads(read_file.read())
-
 # ---------------------------------------------------------------------------- #
 #                                    EVENTS                                    #
 # ---------------------------------------------------------------------------- #
@@ -305,62 +322,6 @@ with open(f"{resource_directory}biome_injuries.json", 'r') as read_file:
 not_integrated_illness = ["redcough"]
 not_integrated_injuries = ["carrionplace disease"]
 
-# define how likely each status can have this injury
-EVENT_INJURIES = None
-with open(f"{resource_directory}event_injuries_distribution.json", 'r') as read_file:
-    EVENT_INJURIES = ujson.loads(read_file.read())
-
-kitten_injuries_possibilities = []
-for injury in EVENT_INJURIES:
-    kitten_injuries_possibilities += [injury] * EVENT_INJURIES[injury]["kitten"]
-
-apprentice_injuries_possibilities = []
-for injury in EVENT_INJURIES:
-    apprentice_injuries_possibilities += [injury] * EVENT_INJURIES[injury]["apprentice"]
-
-warrior_injuries_possibilities = []
-for injury in EVENT_INJURIES:
-    warrior_injuries_possibilities += [injury] * EVENT_INJURIES[injury]["warrior"]
-
-med_injuries_possibilities = []
-for injury in EVENT_INJURIES:
-    med_injuries_possibilities += [injury] * EVENT_INJURIES[injury]["medicine cat"]
-
-med_app_injuries_possibilities = []
-for injury in EVENT_INJURIES:
-    med_injuries_possibilities += [injury] * EVENT_INJURIES[injury]["medicine cat apprentice"]
-
-deputy_injuries_possibilities = []
-for injury in EVENT_INJURIES:
-    deputy_injuries_possibilities += [injury] * EVENT_INJURIES[injury]["deputy"]
-
-leader_injuries_possibilities = []
-for injury in EVENT_INJURIES:
-    leader_injuries_possibilities += [injury] * EVENT_INJURIES[injury]["leader"]
-
-elder_injuries_possibilities = []
-for injury in EVENT_INJURIES:
-    elder_injuries_possibilities += [injury] * EVENT_INJURIES[injury]["elder"]
-
-
-general_injuries_possibilities = []
-for injury in EVENT_INJURIES:
-    general_injuries_possibilities += [injury] * EVENT_INJURIES[injury]["general"]
-
-POSSIBLE_INJURIES_DICT = {
-        "kitten": general_injuries_possibilities + kitten_injuries_possibilities,
-        "apprentice": general_injuries_possibilities + apprentice_injuries_possibilities,
-        "warrior": general_injuries_possibilities + warrior_injuries_possibilities,
-        "medicine cat": general_injuries_possibilities + med_injuries_possibilities,
-        "medicine cat apprentice": general_injuries_possibilities + med_app_injuries_possibilities,
-        "deputy": general_injuries_possibilities + deputy_injuries_possibilities,
-        "leader": general_injuries_possibilities + leader_injuries_possibilities,
-        "elder": general_injuries_possibilities + elder_injuries_possibilities
-}
-
-# ---------------------------------------------------------------------------- #
-#                                 event_string                                 #
-# ---------------------------------------------------------------------------- #
 
 KITTEN_EVENT_INJURIES = None
 with open(f"{resource_directory}{event_triggered}kitten.json", 'r') as read_file:

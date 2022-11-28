@@ -77,6 +77,7 @@ def json_load():
         new_cat.dead_for = cat["dead_moons"]
         new_cat.apprentice = cat["current_apprentice"]
         new_cat.former_apprentices = cat["former_apprentices"]
+        new_cat.possible_scar = cat["possible_scar"] if "possible_scar" in cat else None
         new_cat.scar_event = cat["scar_event"] if "scar_event" in cat else []
         new_cat.df = cat["df"] if "df" in cat else False
         new_cat.corruption = cat["corruption"] if "corruption" in cat else 0

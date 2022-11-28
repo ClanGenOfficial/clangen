@@ -1,25 +1,236 @@
-{
-    "bite-wound": {
-        "r_c was bitten hard by a mouse while they were hunting. Fortunately nobody else was watching, how embarrassing!": 1
+[
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c mistook a hare for a rabbit while hunting and was bitten for the trouble, a valuable lesson learnt.",
+        "scar_text": "m_c got a scar when a hare bit them in retaliation.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
     },
-    "broken bone": {},
-    "bruises": {
-        "r_c trained extra hard to impress their mentor, but were a bit too rough with themselves.": 1
+    {
+        "injury": "bruises",
+        "tags": [
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c trained extra hard to impress their mentor, but were a bit too rough with their body and have the bruises to show it.",
+        "scar_text": null,
+        "cat_trait": ["ambitious", "daring", "bold", "loyal"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
     },
-    "claw-wound": {},
-    "dislocated joint": {},
-    "sprain": {
-        "r_c trained extra hard to impress their mentor, but twisted their paw at an awkward angle.": 1
+    {
+        "injury": "bruises",
+        "tags": [
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c took a tumble off a rock while practicing their battle moves. They'll be tender for the next few days.",
+        "scar_text": null,
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
     },
-    "cracked pads": {
-        "r_c trained extra hard to impress their mentor, but now finds their paws to be sore and bleeding.": 1
+    {
+        "injury": "bruises",
+        "tags": [
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was practicing their hunting pounce when they pounced right into a rock! Ow, they might be sore for a while.",
+        "scar_text": null,
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
     },
-    "joint pain": {
-        "r_c trained extra hard to impress their mentor, but is extremely sore when they wake the next morning.": 1
+    {
+        "injury": "sprain",
+        "tags": [
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c trained extra hard to impress their mentor, but twisted their paw at an awkward angle.",
+        "scar_text": null,
+        "cat_trait": ["ambitious", "daring", "bold", "loyal"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
     },
-    "scrapes": {
-
+    {
+        "injury": "sprain",
+        "tags": [
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was rushing around the camp in excitement for a patrol when their paw landed wrong on a rock! They took a tumble and can't help limping the rest of the day.",
+        "scar_text": null,
+        "cat_trait": ["adventurous", "bold", "daring", "playful", "childish"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
     },
-    "torn ear": {},
-    "torn pelt": {}
-}
+    {
+        "injury": "sprain",
+        "tags": [
+            "Forest",
+            "Plains",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was running around excitedly on patrol when their paw landed right in a rabbit hole, twisting uncomfortably.  They limped the whole way home.",
+        "scar_text": null,
+        "cat_trait": ["adventurous", "bold", "daring", "playful", "childish"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "cracked pads",
+        "tags": [
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c trained extra hard to impress their mentor, but now finds their paws to be sore and bleeding.",
+        "scar_text": null,
+        "cat_trait": ["ambitious", "daring", "bold", "loyal"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "joint pain",
+        "tags": [
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c trained extra hard to impress their mentor, but is extremely sore when they wake the next morning.",
+        "scar_text": null,
+        "cat_trait": ["ambitious", "daring", "bold", "loyal"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "broken bone",
+        "tags": [
+            "Forest",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c couldn't help but try to show off by climbing the tallest tree they could find. Their plan backfired when they fell out of the tree.",
+        "scar_text": "m_c was scarred after falling from a tree.",
+        "cat_trait": ["adventurous", "ambitious", "bold", "childish", "confident", "daring", "playful", "troublesome"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "broken bone",
+        "tags": [
+            "Mountainous",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c couldn't help but try to show off by scaling the tallest cliff they could find. Their plan backfired when they slipped and plummetted to the ground.",
+        "scar_text": "m_c was scarred after falling from a cliff.",
+        "cat_trait": ["adventurous", "ambitious", "bold", "childish", "confident", "daring", "playful", "troublesome"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "broken bone",
+        "tags": [
+            "Forest",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was practicing their tree climbing skills when they slipped from a branch! Thankfully they survived, though badly injured.",
+        "scar_text": "m_c was scarred after falling out of a tree.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "Forest",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hunting on a night patrol and was nearly carried off by an owl! They're alive but with many a scratch as proof of their adventure.",
+        "scar_text": "m_c was scarred after being grabbed by an owl.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    }
+]

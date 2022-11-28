@@ -343,6 +343,7 @@ class Game():
                 "dead_moons": inter_cat.dead_for,
                 "current_apprentice": [appr.ID for appr in inter_cat.apprentice],
                 "former_apprentices": [appr.ID for appr in inter_cat.former_apprentices],
+                "possible_scar": inter_cat.possible_scar if inter_cat.possible_scar else None,
                 "scar_event": inter_cat.scar_event if inter_cat.scar_event else [],
                 "df": inter_cat.df,
                 "corruption": inter_cat.corruption if inter_cat.corruption else 0

@@ -132,7 +132,7 @@
             }
         ]
     },
-    "infected wound": {
+    "an infected wound": {
         "mortality": {
             "kitten": 3,
             "adolescent": 8,
@@ -291,7 +291,7 @@
         "infectiousness": 6,
         "risks": []
     },
-    "festering wounds": {
+    "a festering wound": {
         "mortality": {
             "kitten": 2,
             "adolescent": 3,
@@ -359,6 +359,33 @@
             {
                 "name": "heat stroke",
                 "chance": 5
+            }
+        ]
+    },
+        "stomachache": {
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "medicine_mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "duration": 2,
+        "medicine_duration": 1,
+        "infectiousness": 0,
+        "risks": [
+            {
+                "name": "diarrhea",
+                "chance": 8
             }
         ]
     }

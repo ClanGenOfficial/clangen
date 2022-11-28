@@ -154,6 +154,7 @@ class Cat():
         self.children = []
         self.illness = None
         self.injury = None
+        self.possible_scar = None
         self.scar_event = []
         self.df = False
         self.corruption = 0

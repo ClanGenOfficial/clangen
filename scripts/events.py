@@ -113,7 +113,7 @@ class Events():
                 amount_per_med = get_amount_cat_for_one_medic(game.clan)
                 med_fullfilled = medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med)
                 if not med_fullfilled:
-                    game.cur_events_list.insert(0, f"{game.clan.name}Clan does not have enough (healthy) medicine cats!")
+                    game.cur_events_list.insert(0, f"{game.clan.name}Clan does not have enough healthy medicine cats!")
             else:
                 has_med = any(
                     str(cat.status) in {"medicine cat", "medicine cat apprentice"}
@@ -1061,7 +1061,7 @@ class Events():
 
         # get names for cats and clans
         name = str(cat.name)
-        other_name = other_cat.name
+        other_name = str(other_cat.name)
         other_clan = choice(game.clan.all_clans)
         other_clan_name = f'{str(other_clan.name)}Clan'
         enemy_clan = f'{str(self.enemy_clan)}'
@@ -1081,7 +1081,7 @@ class Events():
             if not int(random.random() * 350):  # 1/400
                 triggered_death = True
             else:
-                triggered_death = self.condition_events.handle_injuries(cat, game.clan.current_season, game.clan.biome)
+                triggered_death = self.condition_events.handle_injuries(cat, other_cat, alive_kits, game.clan.current_season, game.clan.biome)
                 return triggered_death
 
             # disaster death chance
@@ -1300,7 +1300,6 @@ class Events():
                 save_death(cat, death_text)
 
             return triggered_death
-
 
 
     def handle_disasters(self, cat):
@@ -1679,6 +1678,16 @@ class DeathEvent:
         self.other_cat_trait = other_cat_trait
         self.other_cat_skill = other_cat_skill
 
+
+"""
+possible tags: 
+"illness", "multi_death", "old_age", "all_lives", "some_lives", "murder", "war"
+"leader", "kitten", "deputy", "medicine_cat", "apprentice", "elder"
+"other_cat", "other_cat_med", "other_cat_app", "other_cat_kit", "other_cat_dep",  
+"other_clan", "rel_down", "rel_up", 
+"Forest", "Plains", "Mountainous", "Beach", 
+"Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"
+"""
 
 events_class = Events()
 
