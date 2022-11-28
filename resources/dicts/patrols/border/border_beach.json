@@ -1,176 +1,176 @@
 [
-{
-    "patrol_id": "bch_bord_rogue1",
-    "biome": "beach",
-    "season": "Any",
-    "tags": ["border", "fighting", "scar", "injury", "reputation", "multiple_deaths"],
-    "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the beach grass! An ambush!",
-    "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
-    "chance_of_success": 70,
-    "exp": 30,
-    "success_text": [
+    {
+        "patrol_id": "bch_bord_rogue1",
+        "biome": "beach",
+        "season": "Any",
+        "tags": ["border", "fighting", "scar", "injury", "reputation", "multi_deaths"],
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the beach grass! An ambush!",
+        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "chance_of_success": 70,
+        "exp": 30,
+        "success_text": [
             "The patrol descends into battle without a second thought, eventually driving the rogues away.",
             null,
             "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they’ve sorely underestimated the clan cats, the rogues turn tail and run.",
             "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
-    ],
-    "fail_text": [
+        ],
+        "fail_text": [
             null,
             null,
             "The rogues are terrifyingly coordinated and are quick to use the patrol's shock and confuson against them. The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
             "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and r_c is badly wounded, forcing the patrol to retreat."
-    ],
-    "win_skills": ["excellent fighter"],
-    "win_trait": ["bloodthirsty", "fierce", "vengeful"],
-    "min_cats": 4,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
+        ],
+        "win_skills": ["excellent fighter"],
+        "win_trait": ["bloodthirsty", "fierce", "vengeful"],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
             "r_c was badly scarred when rogues ambushed their patrol.",
             "This cat was killed when rogues ambushed their patrol."
-    ]
-},
-{
-    "patrol_id": "bch_bord_rogue2",
-    "biome": "beach",
-    "season": "Any",
-    "tags": ["border", "fighting", "scar", "injury", "reputation", "disaster"],
-    "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the beach grass! An ambush!",
-    "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
-    "chance_of_success": 40,
-    "exp": 30,
-    "success_text": [
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_rogue2",
+        "biome": "beach",
+        "season": "Any",
+        "tags": ["border", "fighting", "scar", "injury", "reputation", "disaster"],
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the beach grass! An ambush!",
+        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": [
             "The patrol descends into battle without a second thought, eventually driving the rogues away.",
             null,
-            "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they’ve sorely underestimated the clan cats, the rogues turn tail and run.",
+            "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the clan cats, the rogues turn tail and run.",
             "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
-    ],
-    "fail_text": [
+        ],
+        "fail_text": [
             null,
             null,
-            "The rogues greatly outnumber the patrol and have no trouble defeating them. The warriors' bodies are found the next day, covered in battle wounds and cold.",
+            "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are found the next day, covered in battle wounds and cold.",
             "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and r_c is badly wounded, forcing the patrol to retreat."
-    ],
-    "win_skills": ["excellent fighter"],
-    "win_trait": ["bloodthirsty", "fierce", "vengeful"],
-    "min_cats": 2,
-    "max_cats": 3,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
+        ],
+        "win_skills": ["excellent fighter"],
+        "win_trait": ["bloodthirsty", "fierce", "vengeful"],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
             "r_c was badly scarred when rogues ambushed their patrol.",
             "This cat was killed when rogues ambushed their patrol."
-    ]
-},
-{
-    "patrol_id": "bch_bord_rogue3",
-    "biome": "beach",
-    "season": "Any",
-    "tags": ["border", "fighting", "scar", "injury", "death", "reputation"],
-    "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the beach grass! An ambush!",
-    "decline_text": "r_c turns tail and races away! The rogues have them far outnumbered; warning the clan is more important than playing the hero.",
-    "chance_of_success": 10,
-    "exp": 30,
-    "success_text": [
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_rogue3",
+        "biome": "beach",
+        "season": "Any",
+        "tags": ["border", "fighting", "scar", "injury", "death", "reputation"],
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the beach grass! An ambush!",
+        "decline_text": "r_c turns tail and races away! The rogues have them far outnumbered; warning the clan is more important than playing the hero.",
+        "chance_of_success": 10,
+        "exp": 30,
+        "success_text": [
             "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but they manage to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from their lungs.",
             null,
             "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the clan cat, the rogues freeze. s_c sees their opportunity to run and takes it, racing back to the cmap to gather more warriors and return.",
             "success3"
-    ],
-    "fail_text": [
+        ],
+        "fail_text": [
             null,
             "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. The shock only lasts a moment before they descend upon the warrior once more. Eventually, s_c has no choice but to escape before they're killed.",
             "The rogues greatly outnumber r_c and have no trouble killing the lone warrior. Their body is discovered the next day, covered in wounds and cold.",
             null
-    ],
-    "win_skills": ["excellent fighter"],
-    "fail_skills": ["None"],
-    "fail_trait": ["bloodthirsty", "fierce", "vengeful"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
+        ],
+        "win_skills": ["excellent fighter"],
+        "fail_skills": ["None"],
+        "fail_trait": ["bloodthirsty", "fierce", "vengeful"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
             null,
             "This cat was killed when rogues ambushed them while on a solo patrol."
-    ]
-},
-{
-    "patrol_id": "bch_bord_rogue4",
-    "biome": "beach",
-    "season": "Any",
-    "tags": ["border", "fighting", "scar", "injury", "reputation", "respect", "trust", "multiple_deaths"],
-    "intro_text": "As the patrol is marking the border lines, a gang of rogues stalks out of the beach grass to confront the clan cats!",
-    "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
-    "chance_of_success": 70,
-    "exp": 30,
-    "success_text": [
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_rogue4",
+        "biome": "beach",
+        "season": "Any",
+        "tags": ["border", "fighting", "scar", "injury", "reputation", "respect", "trust", "multi_deaths"],
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues stalks out of the beach grass to confront the clan cats!",
+        "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+        "chance_of_success": 70,
+        "exp": 30,
+        "success_text": [
             "The rogues posture and jeer, eventually provoking a battle. The clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away.",
             "The rogues posture and jeer, eventually provoking a battle. The clan cats are strong, however, and after a short fight, the rogues are forced to retreat.",
             "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory.",
             "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory."
-    ],
-    "fail_text": [
+        ],
+        "fail_text": [
             null,
             null,
             "The rogues are terrifyingly coordinated and are quick to use the patrol's momentary surprise to their adventage. The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
             "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters and r_c is badly injured, forcing the patrol to retreat."
-    ],
-    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": ["bold", "confident", "charming"],
-    "min_cats": 4,
-    "max_cats": 6,
-    "antagonize_text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
-    "antagonize_fail_text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected and eventually the patrol is forced to retreat.",
-    "history_text": [
+        ],
+        "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+        "win_trait": ["bold", "confident", "charming"],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
+        "antagonize_fail_text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected and eventually the patrol is forced to retreat.",
+        "history_text": [
             "r_c was badly scarred when rogues attacked their patrol.",
             "This cat was killed when rogues attacked their patrol."
-    ]
-},
-{
-    "patrol_id": "bch_bord_solo1",
-    "biome": "beach",
-    "season": "Any",
-    "tags": ["border", "other_clan", "injury", "scar"],
-    "intro_text": "r_c heads out onto the beach alone to check on the border.",
-    "decline_text": "r_c reconsiders and turns back to camp, deciding that their other duties have to come first.",
-    "chance_of_success": 30,
-    "exp": 20,
-    "success_text": [
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_solo1",
+        "biome": "beach",
+        "season": "Any",
+        "tags": ["border", "other_clan", "injury", "scar"],
+        "intro_text": "r_c heads out onto the beach alone to check on the border.",
+        "decline_text": "r_c reconsiders and turns back to camp, deciding that their other duties have to come first.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
             "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the territorial marks. r_c remarks and heads home, a simple but necessary task completed.",
             "r_c comes across a o_c_n apprentice on the wrong side of the border with a mouthful of prey. They see the younger cat off with a furious yowl, then take the dropped prey back to c_n camp to report the incident to the deputy.",
             "s_c comes across a o_c_n patrol, out on a similar mission, and decides to follow the same marking path as them. s_c strikes up a friendly conversation, and while they don't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation.",
             "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who goes round-eyed and fluffy at encountering a real c_n cat! s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully."
-    ],
-    "fail_text": [
+        ],
+        "fail_text": [
             "r_c marks a little, but they reach a section of border that is too muddled to make sense of, and have to give up and go home.",
             "s_c is marking along the territory line when they encounter a o_c_n patrol, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. Though no words are exchanged, the tension is palpable.",
             null,
             "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n sees them doing it! They return to camp scratched up and embarrassed, and immediately apologize to the deputy for the diplomatic incident they've inadvertently caused."
-    ],
-    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
-    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
+            ],
+        "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+        "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+        "fail_skills": ["None"],
+        "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
             "r_c was injured by an enemy patrol while marking the border."
-    ]
-},
-{
-    "patrol_id": "bch_bord_solo2",
-    "biome": "beach",
-    "season": "Any",
-    "tags": ["border", "other_clan", "injury", "scar", "deputy", "death"],
-    "intro_text": "r_c heads out onto the beach alone to check on the border.",
-    "decline_text": "r_c reconsiders and turns back to camp, deciding that their other duties have to come first.",
-    "chance_of_success": 30,
-    "exp": 20,
-    "success_text": [
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_solo2",
+        "biome": "beach",
+        "season": "Any",
+        "tags": ["border", "other_clan", "injury", "scar", "deputy", "death"],
+        "intro_text": "r_c heads out onto the beach alone to check on the border.",
+        "decline_text": "r_c reconsiders and turns back to camp, deciding that their other duties have to come first.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
             "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the territorial marks. r_c remarks and heads home, a simple but necessary task completed.",
             "r_c comes across a o_c_n apprentice on the wrong side of the border with a mouthful of prey. Furious, they snarl their anger. The young cat turns tail and flees, r_c hot on their tail. When they dart back across the border to hide behind their mentor, the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
             "s_c comes across a o_c_n patrol, out on a similar mission. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on the neighbors.",
@@ -194,165 +194,165 @@
             "r_c was injured by an enemy patrol while marking the border.",
             "r_c lost their life in an ambush on the border."
     ]
-},
-{
-    "patrol_id": "bch_borD_solo3",
-    "biome": "beach",
-    "season": "Any",
-    "tags": ["border", "other_clan", "injury", "scar", "leader", "death"],
-    "intro_text": "r_c heads out onto the beach alone to check on the border.",
-    "decline_text": "r_c reconsiders and turns back to camp, deciding that their other duties have to come first.",
-    "chance_of_success": 30,
-    "exp": 20,
-    "success_text": [
+    },
+    {
+        "patrol_id": "bch_borD_solo3",
+        "biome": "beach",
+        "season": "Any",
+        "tags": ["border", "other_clan", "injury", "scar", "leader", "death"],
+        "intro_text": "r_c heads out onto the beach alone to check on the border.",
+        "decline_text": "r_c reconsiders and turns back to camp, deciding that their other duties have to come first.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
             "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the territorial marks. r_c remarks and heads home, a simple but necessary task completed.",
             "r_c comes across a o_c_n apprentice on the wrong side of the border with a mouthful of prey. Furious, they snarl their anger. The young cat turns tail and flees, r_c hot on their tail. When they dart back across the border to hide behind their mentor, the o_c_n warrior's tail tucks at the sight of c_n's outraged leader.",
             "s_c comes across a o_c_n patrol, out on a similar mission. They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on the neighbors. Trust, but verify.",
             "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c gently coaxes them out. s_c praises the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness."
-    ],
-    "fail_text": [
+        ],
+        "fail_text": [
             "r_c marks a little, but they reach a section of border that is too muddled to make sense of, and have to give up and go home.",
             "s_c is marking along the territory line when they encounter a o_c_n patrol, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. Though no words are exchanged, the tension is palpable.",
             "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. . .r_c returns to camp late, blood soaked through their fur and a new hardness in their heart.",
             "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n sees them doing it! The diplomatic incident spirals into a full-blown conflict, and r_c hauls themselves back to camp, wounded and bleeding."
-    ],
-    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
-    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
+        ],
+        "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+        "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+        "fail_skills": ["None"],
+        "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
             "r_c was injured by an enemy patrol while marking the border.",
             "r_c lost a life in an ambush on the border."
-    ]
-},
-{
-    "patrol_id": "bch_bord_solo4",
-    "biome": "beach",
-    "season": "Any",
-    "tags": ["border", "other_clan", "injury", "scar", "deputy"],
-    "intro_text": "r_c heads out onto the beach alone to check on the border.",
-    "decline_text": "r_c reconsiders and turns back to camp, deciding that their other duties have to come first.",
-    "chance_of_success": 30,
-    "exp": 20,
-    "success_text": [
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_solo4",
+        "biome": "beach",
+        "season": "Any",
+        "tags": ["border", "other_clan", "injury", "scar", "deputy"],
+        "intro_text": "r_c heads out onto the beach alone to check on the border.",
+        "decline_text": "r_c reconsiders and turns back to camp, deciding that their other duties have to come first.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
             "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the territorial marks. r_c remarks and heads home, a simple but necessary task completed.",
             "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the o_c_n deputy out doing the same thing. They commiserate over the incompetence of the apprentices on both sides that caused the issue, and walk away with greater respect for one another.",
             "s_c comes across a o_c_n patrol, out on a similar mission and being led by their deputy. The deputies strike up a conversation, and the o_c_n warriors eventually wander off. The unexpected opportunity gives the two a chance to privately exchange news about an ongoing problem on the coast.",
             "As s_c marks the border, they encounter the o_c_n deputy out with their new apprentice. The fellow deputy greets s_c and encourages their apprentice to quiz them. s_c plays along and compliments them both on how the young cat's training is progressing before parting ways."
-    ],
-    "fail_text": [
+        ],
+        "fail_text": [
             "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the o_c_n deputy out doing the same thing. Unable to agree on exactly where the borders are meant to lie, both deputies must return to camp and raise the issue with their leaders.",
             null,
             null,
             "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n sees them doing it! The diplomatic incident spirals into a full-blown conflict, and r_c hauls themselves back to camp, wounded and bleeding."
-    ],
-    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
+        ],
+        "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+        "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
             "r_c was injured by an enemy patrol while marking the border."
-    ]
-},
-{
-    "patrol_id": "bch_bord_solo5",
-    "biome": "beach",
-    "season": "Any",
-    "tags": ["border", "other_clan", "injury", "scar", "leader"],
-    "intro_text": "r_c heads out onto the beach alone to check on the border.",
-    "decline_text": "r_c reconsiders and turns back to camp, deciding that their other duties have to come first.",
-    "chance_of_success": 30,
-    "exp": 20,
-    "success_text": [
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_solo5",
+        "biome": "beach",
+        "season": "Any",
+        "tags": ["border", "other_clan", "injury", "scar", "leader"],
+        "intro_text": "r_c heads out onto the beach alone to check on the border.",
+        "decline_text": "r_c reconsiders and turns back to camp, deciding that their other duties have to come first.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
             "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the territorial marks. r_c remarks and heads home, a simple but necessary task completed.",
             "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the o_c_n leader out doing the same thing. They commiserate over the incompetence of the apprentices on both sides that caused the issue, and walk away with greater respect for one another.",
             "s_c comes across a o_c_n patrol, out on a similar mission and being led by their deputy. The leaders strike up a conversation, and the o_c_n warriors eventually wander off. The unexpected opportunity gives the two a chance to privately exchange news about an ongoing problem on the coast.",
             "As s_c marks the border, they encounter the o_c_n leader out with their new apprentice. The fellow deputy greets s_c and encourages their apprentice to quiz them. s_c plays along and compliments them both on how the young cat's training is progressing before parting ways."
-    ],
-    "fail_text": [
+        ],
+        "fail_text": [
             "r_c heads out to clarify a portion of the border that there's been confusion over recently and encounters the o_c_n leader out doing the same thing. Unable to agree on exactly where the borders are meant to lie, both leaders agree to raise it at the next gathering instead.",
             null,
             null,
             "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n sees them doing it! The diplomatic incident spirals into a full-blown conflict, and r_c hauls themselves back to camp, wounded and bleeding."
-    ],
-    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
+        ],
+        "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+        "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
             "r_c was injured by an enemy patrol while marking the border."
-    ]
-},
-{
-    "patrol_id": "bch_bord_abandontwoleg1",
-    "biome": "beach",
-    "season": "Any",
-    "tags": ["fighting", "border", "new_cat", "disaster"],
-    "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
-    "decline_text": "The patrol decides not to investigate.",
-    "chance_of_success": 40,
-    "exp": 30,
-    "success_text": [
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_abandontwoleg1",
+        "biome": "beach",
+        "season": "Any",
+        "tags": ["fighting", "border", "new_cat", "disaster"],
+        "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
+        "decline_text": "The patrol decides not to investigate.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": [
             "It's just an odd loner singing to themselves. The patrol greets them, and as the loner's home isn't on c_n territory, it's a polite interaction without any hostility.",
             "It's just an odd loner singing to themselves. When they see the patrol they invite them to sing along, but instead, p_l offers the strange, battered-looking cat an introduction to c_n. It's got to be far less lonely than their current life.",
             "The patrol walks into an ambush set by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the agility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
             "s_c signals for the patrol to stop. Carefully, quietly, they explain their concerns about the unknown situation. At first it seems like they're being too cautious - but then p_l picks up on the scent of strange cats lingering around the Twoleg nest. Forewarned, the patrol retreats to safety."
-    ],
-    "fail_text": [
+        ],
+        "fail_text": [
             null,
             null,
             "Your patrol walks into an ambush. Before p_l can so much as yowl a warning, a group of rogues creeps from the shadows to surround the clan cats on all sides. The patrol is never seen or heard from again.",
             null
-    ],
-    "win_skills": ["excellent fighter"],
-    "win_trait": ["careful", "insecure", "nervous"],
-    "min_cats": 2,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
+        ],
+        "win_skills": ["excellent fighter"],
+        "win_trait": ["careful", "insecure", "nervous"],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
             null,
             "This cat died in an ambush set by rogues."
-    ]
-},
-{
-    "patrol_id": "bch_bord_abandontwoleg2",
-    "biome": "beach",
-    "season": "Any",
-    "tags": ["fighting", "border", "new_cat", "disaster"],
-    "intro_text": "r_c hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
-    "decline_text": "r_c decides not to investigate.",
-    "chance_of_success": 10,
-    "exp": 30,
-    "success_text": [
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_abandontwoleg2",
+        "biome": "beach",
+        "season": "Any",
+        "tags": ["fighting", "border", "new_cat", "disaster"],
+        "intro_text": "r_c hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
+        "decline_text": "r_c decides not to investigate.",
+        "chance_of_success": 10,
+        "exp": 30,
+        "success_text": [
             "It's just an odd loner singing to themselves. r_c greets them, and as the loner's home isn't on c_n territory, it's a polite interaction without any hostility.",
             "It's just an odd loner singing to themselves. When they see r_c they invite them to sing along, but instead, r_c offers the strange, battered-looking cat an introduction to c_n. It's got to be far less lonely than their current life.",
             "s_c walks into an ambush set by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for their life to get back to camp. ",
             "s_c has a bad feeling about this. At first it seems like they're being too cautious - but then they pick up on the scent of strange cats lingering around the Twoleg nest. Forewarned, s_c retreats to safety."
-    ],
-    "fail_text": [
+        ],
+        "fail_text": [
             null,
             null,
             "r_c decides that a quick peek can't hurt. As they venture into the nest, ears pricked with curiosity, they don't notice the lithe forms of rogues moving to block the entrance until it's too late. s_c never makes it back to camp.",
             null
-    ],
-    "win_skills": ["excellent fighter"],
-    "win_trait": ["careful", "insecure", "nervous"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
+        ],
+        "win_skills": ["excellent fighter"],
+        "win_trait": ["careful", "insecure", "nervous"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
             null,
             "This cat died in an ambush set by rogues."
-    ]
-}
+        ]
+    }
 ]
