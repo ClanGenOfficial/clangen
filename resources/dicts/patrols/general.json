@@ -89,23 +89,6 @@
         "antagonize_fail_text": null
     },
     {
-        "patrol_id": "gen_gen_bramble1",
-        "biome": "Any",
-        "season": "Any",
-        "tags": ["general"],
-        "intro_text": "r_c notices a Clanmate trapped in some brambles.",
-        "success_text": ["r_c frees their Clanmate."],
-        "fail_text": ["The patrol works all day to free their Clanmate and gets nothing else done."],
-        "decline_text": "r_c runs back to camp to fetch help and rejoins the patrol later.",
-        "chance_of_success": 50,
-        "exp": 10,
-        "win_skills": ["smart", "very smart", "extremely smart"],
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
-    },
-    {
         "patrol_id": "gen_gen_twolegs1",
         "biome": "Any",
         "season": "greenleaf",
