@@ -24,7 +24,7 @@ class Condition_Events():
         """
         # one if-statement has a range of 10
         number_of_conditions = 1 * 10
-        ratio = 100  # 1/100 times triggering for each cat each moon
+        ratio = 125  # 1/100 times triggering for each cat each moon
         chance_number = number_of_conditions * ratio
 
         random_number = int(random.random() * chance_number)
@@ -52,7 +52,10 @@ class Condition_Events():
                     triggered = True
                     event_string = f"{cat.name} has died of {illness_name}."
                 elif not cat.is_ill():
-                    event_string = f"{cat.name}'s has been cured of {illness_name}."
+                    if illness_name in ["running nose", "stomachache"]:
+                        event_string = f"{cat.name} has been cured of their {illness_name}."
+                    else:
+                        event_string = f"{cat.name} has been cured of {illness_name}."
 
         # handle if the cat is not sick
         # SEASON
@@ -67,7 +70,7 @@ class Condition_Events():
             random_index = int(random.random() * len(possible_illnesses))
             cat.get_ill(possible_illnesses[random_index])
             
-            if possible_illnesses[random_index] in ["running nose"]:
+            if possible_illnesses[random_index] in ["running nose", "stomachache"]:
                 event_string = f"{cat.name} has gotten a {possible_illnesses[random_index]}."
             else:
                 event_string = f"{cat.name} has gotten {possible_illnesses[random_index]}."
@@ -113,6 +116,7 @@ class Condition_Events():
                 elif cat.status == "apprentice":
                     possible_events.extend((self.generate_injury_event(GENERAL_EVENT_INJURIES)))
                     possible_events.extend((self.generate_injury_event(APPRENTICE_EVENT_INJURIES)))
+                    possible_events.extend((self.generate_injury_event(WARRIOR_EVENT_INJURIES)))
                 elif cat.status in ["warrior", "deputy"]:
                     possible_events.extend((self.generate_injury_event(GENERAL_EVENT_INJURIES)))
                     possible_events.extend((self.generate_injury_event(WARRIOR_EVENT_INJURIES)))
@@ -130,6 +134,7 @@ class Condition_Events():
                 triggered = True
 
                 correct_biome = False
+                correct_rank = True
                 correct_season = False
                 kit_check = False
                 chance_add = False
@@ -137,8 +142,17 @@ class Condition_Events():
                 for event in possible_events:
                     if str(biome) in event.tags:
                         correct_biome = True
+                    else:
+                        correct_biome = False
                     if str(season) in event.tags:
                         correct_season = True
+                    else:
+                        correct_season = False
+
+                    if "other_cat_leader" in event.tags and other_cat.status != "leader":
+                        correct_rank = False
+                    if "other_cat_mentor" in event.tags and cat.mentor != other_cat.ID:
+                        correct_rank = False
 
                     if "clan_kits" in event.tags and alive_kits:
                         kit_check = True
@@ -177,14 +191,14 @@ class Condition_Events():
                     else:
                         chance_add = True
 
-                    if correct_biome and correct_season and kit_check and chance_add:
+                    if correct_biome and correct_season and correct_rank and kit_check and chance_add:
                         final_events.append(event)
 
                 name = str(cat.name)
                 other_name = str(other_cat.name)
                 danger = ["a rogue", "a dog", "a fox", "an otter", "a hawk", "an enemy warrior", "a badger"]
                 tail_danger = ["a rogue", "a dog", "a fox", "an otter", "a hawk",
-                               "an enemy warrior", "a badger", "a twoleg trap"]
+                               "an enemy warrior", "a badger", "a Twoleg trap"]
 
                 injury_event = random.choice(final_events)
 
@@ -192,6 +206,7 @@ class Condition_Events():
                 text = text.replace("m_c", name)
                 text = text.replace("r_c", other_name)
                 text = text.replace("d_l", random.choice(danger))
+                text = text.replace("t_l", random.choice(danger))
 
                 if injury_event.scar_text is not None:
                     scar_text = injury_event.scar_text
@@ -283,7 +298,7 @@ class Condition_Events():
 class InjuryEvent:
     def __init__(self,
                  injury=None,
-                 tags=[],
+                 tags=None,
                  event_text='',
                  scar_text='',
                  cat_trait=None,

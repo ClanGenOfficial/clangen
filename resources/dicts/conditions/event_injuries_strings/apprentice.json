@@ -19,6 +19,185 @@
         "other_cat_skill": null
     },
     {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was injured recklessly fighting d_l after their mentor, r_c, encouraged them to attack.",
+        "scar_text": "m_c was scarred recklessly fighting d_l after their mentor, r_c, encouraged them to attack.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "shameless", "strict", "troublesome", "vengeful"],
+        "other_cat_skill": [ "good fighter", "great fighter", "excellent fighter"]
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by r_c for not defending the territory well enough.",
+        "scar_text": "m_c was scarred by r_c for not defending the territory well enough.",
+        "cat_trait": ["insecure", "nervous", "careful", "loving"],
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by their mentor, r_c, as a punishment for accidentally wandering over the border.",
+        "scar_text": "m_c was scarred by r_c for accidentally wandering over the border.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by their mentor, r_c, as a punishment for messing with a Twoleg object.",
+        "scar_text": "m_c was scarred by r_c for messing with a Twoleg object.",
+        "cat_trait": ["troublesome", "childish", "playful", "adventurous"],
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c and r_c were practicing battle moves. r_c insisted they keep their claws out and m_c was hurt.",
+        "scar_text": "m_c was scarred while practicing battle moves with r_c.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "daring", "bold"],
+        "other_cat_skill": ["good fighter", "great fighter", "excellent fighter"]
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by their mentor, r_c, as a punishment for disobeying them.",
+        "scar_text": "m_c was scarred by r_c for disobeying them.",
+        "cat_trait": ["troublesome", "childish", "playful"],
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by their mentor, r_c, as a punishment for disobeying them.",
+        "scar_text": "m_c was scarred by r_c for disobeying them.",
+        "cat_trait": ["troublesome", "childish", "playful"],
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c fought with their mentor, r_c, and was injured.",
+        "scar_text": "m_c was scarred during a fight with their mentor, r_c.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": ["good fighter", "great fighter", "excellent fighter"]
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c could not handle their mentor's harsh training and was injured.",
+        "scar_text": "m_c was scarred by their mentor's harsh training.",
+        "cat_trait": ["careful", "compassionate", "childish", "insecure", "lonesome", "loving", "nervous", "playful", "strange", "thoughtful"],
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
         "injury": "bruises",
         "tags": [
             "Forest",
@@ -231,6 +410,205 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was injured recklessly fighting d_l after their mentor, r_c, encouraged them to attack.",
+        "scar_text": "m_c was scarred recklessly fighting d_l after their mentor, r_c, encouraged them to attack.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "shameless", "strict", "troublesome", "vengeful"],
+        "other_cat_skill": [ "good fighter", "great fighter", "excellent fighter"]
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by r_c for not defending the territory well enough.",
+        "scar_text": "m_c was scarred by r_c for not defending the territory well enough.",
+        "cat_trait": ["insecure", "nervous", "careful", "loving"],
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by their mentor, r_c, as a punishment for accidentally wandering over the border.",
+        "scar_text": "m_c was scarred by r_c for accidentally wandering over the border.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by their mentor, r_c, as a punishment for messing with a Twoleg object.",
+        "scar_text": "m_c was scarred by r_c for messing with a Twoleg object.",
+        "cat_trait": ["troublesome", "childish", "playful", "adventurous"],
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "loyal"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c and r_c were practicing battle moves. r_c insisted they keep their claws out and m_c was hurt.",
+        "scar_text": "m_c was scarred while practicing battle moves with r_c.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "daring", "bold"],
+        "other_cat_skill": ["good fighter", "great fighter", "excellent fighter"]
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by their mentor, r_c, as a punishment for disobeying them.",
+        "scar_text": "m_c was scarred by r_c for disobeying them.",
+        "cat_trait": ["troublesome", "childish", "playful"],
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by their mentor, r_c, as a punishment for disobeying them.",
+        "scar_text": "m_c was scarred by r_c for disobeying them.",
+        "cat_trait": ["troublesome", "childish", "playful"],
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c fought with their mentor, r_c, and was injured.",
+        "scar_text": "m_c was scarred during a fight with their mentor, r_c.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": ["good fighter", "great fighter", "excellent fighter"]
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c could not handle their mentor's harsh training and was injured.",
+        "scar_text": "m_c was scarred by their mentor's harsh training.",
+        "cat_trait": ["careful", "compassionate", "childish", "insecure", "lonesome", "loving", "nervous", "playful", "strange", "thoughtful"],
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "mangled leg",
+        "tags": [
+            "other_cat_mentor",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's leg was badly hurt after their mentor used a Twoleg trap during a training exercise'.",
+        "scar_text": "m_c was scarred when their mentor used a Twoleg trap for training.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "strict"],
         "other_cat_skill": null
     }
 ]

@@ -145,7 +145,7 @@
             "Leaf-bare"
         ],
         "event_text": "m_c fought d_l and got hurt.",
-        "scar_text": null,
+        "scar_text": "m_c was scarred by d_l.",
         "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -164,10 +164,94 @@
             "Leaf-bare"
         ],
         "event_text": "m_c saved r_c from d_l, but was hurt.",
-        "scar_text": null,
+        "scar_text": "m_c was scarred by d_l.",
         "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_leader",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt while protecting the leader from d_l.",
+        "scar_text": "m_c was scarred by d_l.",
+        "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_leader",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was wounded during a harsh training exercise lead by r_c.",
+        "scar_text": "m_c was scarred during a harsh training exercise.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "daring", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_leader",
+            "other_clan",
+            "rel_down",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by o_c warriors after being ordered by r_c to go over the border.",
+        "scar_text": "m_c was scarred by o_c warriors.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "daring", "bold", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_leader",
+            "other_clan",
+            "rel_down",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was injured after a fight with a clanmate that r_c encouraged.",
+        "scar_text": "m_c was scarred by a fellow clanmate on r_c's encouragement.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "vengeful", "ambitiuos", "bold", "fierce", "insecure"],
         "other_cat_skill": null
     },
     {
@@ -221,7 +305,7 @@
             "Leaf-bare"
         ],
         "event_text": "m_c fought d_l and got hurt.",
-        "scar_text": null,
+        "scar_text": "m_c was scarred by d_l.",
         "cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -240,10 +324,134 @@
             "Leaf-bare"
         ],
         "event_text": "m_c saved r_c from d_l, but was hurt.",
-        "scar_text": null,
+        "scar_text": "m_c was scarred by d_l.",
         "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
         "cat_skill": null,
         "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_leader",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt while protecting the leader from d_l.",
+        "scar_text": "m_c was scarred by d_l.",
+        "cat_trait": ["altruistic", "compassionate", "loving", "empathetic", "responsible", "loyal", "adventurous", "ambitious", "bloodthirsty", "bold", "daring", "fierce", "vengeful"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_leader",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was wounded during a harsh training exercise lead by r_c.",
+        "scar_text": "m_c was scarred during a harsh training exercise.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "daring", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_leader",
+            "other_clan",
+            "rel_down",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by o_c warriors after being ordered by r_c to go over the border.",
+        "scar_text": "m_c was scarred by o_c warriors.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "daring", "bold", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_leader",
+            "other_clan",
+            "rel_down",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was injured after a fight with a clanmate that r_c encouraged.",
+        "scar_text": "m_c was scarred by a fellow clanmate on r_c's encouragement.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "vengeful", "ambitiuos", "bold", "fierce", "insecure"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "mangled tail",
+        "tags": [
+            "other_cat_leader",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's tail was badly hurt by d_l while they were trying to follow r_c's orders.",
+        "scar_text": "m_c was scarred by d_l.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "mangled leg",
+        "tags": [
+            "other_cat_leader",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's leg was badly injured after r_c forces them to fight a d_l.",
+        "scar_text": "m_c was scarred by d_l.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "strict", "vengeful"],
         "other_cat_skill": null
     }
 ]

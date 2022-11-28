@@ -1,6 +1,6 @@
 [
     {
-        "injury": "bite-wound",
+        "injury": "snake bite",
         "tags": [
             "Forest",
             "Plains",
@@ -11,8 +11,8 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was bitten by a snake.",
-        "scar_text": "m_c was scarred a snake.",
+        "event_text": "m_c was bitten by a snake and miraculously survived!",
+        "scar_text": "m_c was scarred by a snake bite.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -327,7 +327,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c ran too fast over harsh ground.",
+        "event_text": "m_c ran too fast over harsh ground and hurt their paws.",
         "scar_text": null,
         "cat_trait": null,
         "cat_skill": null,
@@ -493,6 +493,66 @@
         "other_cat_skill": null
     },
     {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_leader",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's was hurt by r_c for disobeying orders.",
+        "scar_text": "m_c was hurt by r_c for disobeying orders.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_leader",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's was hurt by r_c for speaking out against them.",
+        "scar_text": "m_c was hurt by r_c for speaking out against them.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_leader",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's was hurt by r_c to make an example out of them.",
+        "scar_text": "m_c was hurt by r_c to make an example out of them.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
         "injury": "mangled leg",
         "tags": [
             "Forest",
@@ -509,6 +569,26 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "mangled leg",
+        "tags": [
+            "other_cat_leader",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's was maimed by r_c for questioning their leadership.",
+        "scar_text": "m_c was maimed by r_c for questioning their leadership.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "strict", "vengeful"],
         "other_cat_skill": null
     },
     {
@@ -560,6 +640,150 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "water in their lungs",
+        "tags": [
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall"
+        ],
+        "event_text": "m_c fell into a river and inhaled a lot of water before managing to get out, they've been hacking ever since.",
+        "scar_text": null,
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "water in their lungs",
+        "tags": [
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was dragged out into the ocean by the tide and inhaled a lot of water before managing to get out, they've been hacking ever since.",
+        "scar_text": null,
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "mangled tail",
+        "tags": [
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's tail was badly injured by t_l.",
+        "scar_text": "m_c was scarred by t_l",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "mangled tail",
+        "tags": [
+            "Forest",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's tail was badly injured by a falling tree.",
+        "scar_text": "m_c was scarred by a falling tree.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "mangled tail",
+        "tags": [
+            "Mountainous",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's tail was badly injured by falling rocks.",
+        "scar_text": "m_c was scarred by falling rocks.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_leader",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's was hurt by r_c for disobeying orders.",
+        "scar_text": "m_c was hurt by r_c for disobeying orders.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_leader",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's was hurt by r_c for speaking out against them.",
+        "scar_text": "m_c was hurt by r_c for speaking out against them.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_leader",
+            "Forest",
+            "Plains",
+            "Mountainous",
+            "Beach",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's was hurt by r_c to make an example out of them.",
+        "scar_text": "m_c was hurt by r_c to make an example out of them.",
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
         "other_cat_skill": null
     }
 ]

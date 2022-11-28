@@ -177,7 +177,7 @@ class Events():
         self.other_interactions(cat)
         self.coming_out(cat)
         self.gain_accessories(cat)
-        self.gain_scars(cat)
+        # self.gain_scars(cat)
         self.relation_events.handle_having_kits(cat, clan=game.clan)
 
         # all actions, which do not trigger an event display and
@@ -1043,6 +1043,7 @@ class Events():
         # if triggered_death is True then the cat will die
         triggered_death = False
         # choose other cat
+
         other_cat = choice(list(Cat.all_cats.values()))
         countdown = int(len(Cat.all_cats) / 2)
         while cat == other_cat or other_cat.dead:
@@ -1050,6 +1051,9 @@ class Events():
             countdown -= 1
             if countdown <= 0:
                 return
+
+        if cat.status in ["apprentice", "medicine cat apprentice"] and not int(random.random() * 3):
+            other_cat = cat.mentor
 
         # check if clan has kits, if True then clan has kits
         alive_kits = list(filter(

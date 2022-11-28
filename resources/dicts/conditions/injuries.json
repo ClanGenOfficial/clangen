@@ -19,6 +19,26 @@
             }
         ]
     },
+    "snake bite":{
+        "duration": 2,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 45,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 15
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            }
+        ]
+    },
     "rat bite":{
         "duration": 2,
         "medicine_duration": 1,
@@ -67,6 +87,25 @@
         ]
     },
     "mangled leg":{
+        "duration": 3,
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 15,
+            "adolescent": 50,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 15
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            }
+        ]
+    },
+    "mangled tail":{
         "duration": 3,
         "medicine_duration": 1,
         "mortality": {
