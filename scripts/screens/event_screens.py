@@ -255,10 +255,8 @@ class PatrolEventScreen(Screens):
             for y in vowels:
                 if str(clan_name).startswith(y):
                     modify = text.split()
-                    if 'c_n' in modify:
+                    if ('c_n' or 'c_n,' or "c_n's" or "c_n's,") in modify:
                         pos = modify.index('c_n')
-                    elif "c_n's" in modify:
-                        pos = modify.index("c_n's")
                     if modify[pos-1] == 'a':
                         modify.remove('a')
                         modify.insert(pos-1, 'an')
