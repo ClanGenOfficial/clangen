@@ -35,7 +35,7 @@
         "patrol_id": "fst_bord_rogue2",
         "biome": "forest",
         "season": "Any",
-        "tags": ["border", "fighting", "scar", "injury", "multi_deaths", "reputation"],
+        "tags": ["border", "fighting", "scar", "injury", "disaster", "reputation"],
         "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
         "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
         "chance_of_success": 40,
@@ -83,7 +83,7 @@
             "The rogues greatly outnumber r_c and have no trouble killing the lone warrior. Their body is discovered the next day, covered in wounds and cold."
         ],
         "win_skills": ["excellent fighter"],
-        "fail_traits": ["bloodthirsty", "fierce", "vengeful"],
+        "fail_trait": ["bloodthirsty", "fierce", "vengeful"],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
@@ -103,7 +103,7 @@
         "chance_of_success": 70,
         "exp": 20,
         "success_text": [
-            "The rogues posture and jeer, eventually provoking a battle. The clan cats are strong, however, and the rogues seem to be weakened by hunger.  The patrol easily drives the intruders away.",
+            "The rogues posture and jeer, eventually provoking a battle. The clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away.",
             "The rogues posture and jeer, eventually provoking a battle. The clan cats are strong, however, and after a short fight, the rogues are forced to retreat.",
             "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich plains outside of c_n territory.",
             "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich plains outside of c_n territory."

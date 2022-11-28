@@ -29,128 +29,128 @@
         "antagonize_text": null,
         "antagonize_fail_text": null
 
-},
-{
-    "patrol_id": "dst_bord_solo2",
-    "biome": "desert",
-    "season": "Any",
-    "tags": ["border", "other_clan", "injury", "scar", "deputy"],
-    "intro_text": "r_c heads out into the desert alone, wanting to make a quick check on the border.",
-    "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
-    "chance_of_success": 30,
-    "exp": 20,
-    "success_text": [
-        "A section of their border with o_c_n has had the territorial marks wiped off the map by a duststorm. Not that seeing any sign of o_c_n other than their scent is very common, but r_c remarks it, and heads home, a simple but necessary mission completed.",
-        "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding precious prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
-        "s_c comes across a patrol from o_c_n, out on a similar mission to them. How unusual to meet a patrol in person! They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors.",
-        "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness."
-    ],
-    "fail_text": [
-        "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
-        null,
-        "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
-    ],
-    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
-    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-            "r_c got injured patrolling on the border."
-    ]
-},
-{
-    "patrol_id": "dst_bord_solo3",
-    "biome": "desert",
-    "season": "Any",
-    "tags": ["border", "other_clan", "injury", "scar", "leader"],
-    "intro_text": "r_c heads out into the desert alone, wanting to make a quick check on the border.",
-    "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
-    "chance_of_success": 30,
-    "exp": 20,
-    "success_text": [
-        "A section of their border with o_c_n has had the territorial marks wiped off the map by a duststorm. Not that seeing any sign of o_c_n other than their scent is very common, but r_c remarks it, and heads home, a simple but necessary mission completed.",
-        "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's tail tucks at the sight of c_n's outraged leader.",
-        "s_c comes across a patrol from o_c_n, out on a similar mission to them.  How unusual to meet a patrol in person! They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. Trust, but verify.",
-        "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness."
-    ],
-    "fail_text": [
-        "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
-        null,
-        "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
-    ],
-    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "fail_skills": ["None"],
-    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-            "r_c got injured patrolling on the border."
-    ]
-},
-{
-    "patrol_id": "dst_bord_solo4",
-    "biome": "desert",
-    "season": "Any",
-    "tags": ["border", "other_clan", "deputy"],
-    "intro_text": "r_c heads out into the desert alone, wanting to make a quick check on the border.",
-    "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
-    "chance_of_success": 30,
-    "exp": 20,
-    "success_text": [
-        "A section of their border with o_c_n has had the territorial marks wiped off the map by a duststorm. Not that seeing any sign of o_c_n other than their scent is very common, but r_c remarks it, and heads home, a simple but necessary mission completed.",
-        "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. They commiserate over the incompetence of the apprentices on both sides that caused the issue, and walk away with a greater respect for one another.",
-        "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their deputy.  How unusual to meet a patrol in person! They strike up a friendly conversation. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the desert.",
-        "As s_c marks the border, they encounter the o_c_n deputy out with their new apprentice. Their fellow deputy encourages their apprentice to quiz s_c, and s_c compliments them both on how the young cat's training is progressing."
-    ],
-    "fail_text": [
-        "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. Both deputies find a point where they can't agree on the right border path, and have to return to camp and raise it with their leaders.",
-        null,
-        null,
-        null
-    ],
-    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-    "patrol_id": "dst_bord_solo5",
-    "biome": "desert",
-    "season": "Any",
-    "tags": ["border", "other_clan", "leader"],
-    "intro_text": "r_c heads out into the desert alone, wanting to make a quick check on the border.",
-    "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
-    "chance_of_success": 30,
-    "exp": 20,
-    "success_text": [
-        "A section of their border with o_c_n has had the territorial marks wiped off the map by a duststorm. Not that seeing any sign of o_c_n other than their scent is very common, but r_c remarks it, and heads home, a simple but necessary mission completed.",
-        "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. They commiserate over the incompetence of the apprentices on both sides that caused the issue, and walk away with a greater respect for one another.",
-        "s_c comes across a patrol from o_c_n, out on a similar mission to s_c with their leader.  How unusual to meet a patrol in person! They strike up a friendly conversation. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the desert.",
-        "As s_c marks the border, they encounter the o_c_n leader out with their new apprentice. Their fellow leader encourages their apprentice to quiz s_c, and s_c compliments them both on how the young cat's training is progressing."
-    ],
-    "fail_text": [
-        "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. Both leaders find a point where they can't agree on the right border path, and agree to raise it next gathering instead.",
-        null,
-        null,
-        null
-    ],
-    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
-    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-}
+    },
+    {
+        "patrol_id": "dst_bord_solo2",
+        "biome": "desert",
+        "season": "Any",
+        "tags": ["border", "other_clan", "injury", "scar", "deputy"],
+        "intro_text": "r_c heads out into the desert alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "A section of their border with o_c_n has had the territorial marks wiped off the map by a duststorm. Not that seeing any sign of o_c_n other than their scent is very common, but r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding precious prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to them. How unusual to meet a patrol in person! They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. It's always worth keeping an eye on their neighbors.",
+            "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they tuck their paws together neatly, sitting pretty for inspection. s_c plays along, acting very impressed with the hard working apprentice, and the apprentice's mentor purrs gratefully at the c_n deputy's kindness."
+        ],
+        "fail_text": [
+            "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
+            "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
+            null,
+            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
+        ],
+        "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+        "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+        "fail_skills": ["None"],
+        "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+                "r_c got injured patrolling on the border."
+        ]
+    },
+    {
+        "patrol_id": "dst_bord_solo3",
+        "biome": "desert",
+        "season": "Any",
+        "tags": ["border", "other_clan", "injury", "scar", "leader"],
+        "intro_text": "r_c heads out into the desert alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "A section of their border with o_c_n has had the territorial marks wiped off the map by a duststorm. Not that seeing any sign of o_c_n other than their scent is very common, but r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's tail tucks at the sight of c_n's outraged leader.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to them.  How unusual to meet a patrol in person! They strike up a friendly conversation, and while s_c doesn't give anything away about c_n, they're able to pick up on a lot of gossip about o_c_n through careful conversation. Trust, but verify.",
+            "As s_c marks the border, they encounter a o_c_n border patrol, which includes a young apprentice. Their eyes go round and they hide behind their mentor, but s_c manages to coax them out, praising the little apprentice to their mentor, who purrs gratefully at the c_n leader's kindness."
+        ],
+        "fail_text": [
+            "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
+            "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
+            null,
+            "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
+        ],
+        "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+        "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+        "fail_skills": ["None"],
+        "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+                "r_c got injured patrolling on the border."
+        ]
+    },
+    {
+        "patrol_id": "dst_bord_solo4",
+        "biome": "desert",
+        "season": "Any",
+        "tags": ["border", "other_clan", "deputy"],
+        "intro_text": "r_c heads out into the desert alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "A section of their border with o_c_n has had the territorial marks wiped off the map by a duststorm. Not that seeing any sign of o_c_n other than their scent is very common, but r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. They commiserate over the incompetence of the apprentices on both sides that caused the issue, and walk away with a greater respect for one another.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their deputy.  How unusual to meet a patrol in person! They strike up a friendly conversation. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the desert.",
+            "As s_c marks the border, they encounter the o_c_n deputy out with their new apprentice. Their fellow deputy encourages their apprentice to quiz s_c, and s_c compliments them both on how the young cat's training is progressing."
+        ],
+        "fail_text": [
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the deputy of o_c_n out doing the same thing. Both deputies find a point where they can't agree on the right border path, and have to return to camp and raise it with their leaders.",
+            null,
+            null,
+            null
+        ],
+        "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+        "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "dst_bord_solo5",
+        "biome": "desert",
+        "season": "Any",
+        "tags": ["border", "other_clan", "leader"],
+        "intro_text": "r_c heads out into the desert alone, wanting to make a quick check on the border.",
+        "decline_text": "r_c turns back to camp, deciding that their other duties have to come first.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "A section of their border with o_c_n has had the territorial marks wiped off the map by a duststorm. Not that seeing any sign of o_c_n other than their scent is very common, but r_c remarks it, and heads home, a simple but necessary mission completed.",
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. They commiserate over the incompetence of the apprentices on both sides that caused the issue, and walk away with a greater respect for one another.",
+            "s_c comes across a patrol from o_c_n, out on a similar mission to s_c with their leader.  How unusual to meet a patrol in person! They strike up a friendly conversation. The unexpected opportunity turns into the perfect chance to casually but purposefully keep each other informed on an ongoing problem in the desert.",
+            "As s_c marks the border, they encounter the o_c_n leader out with their new apprentice. Their fellow leader encourages their apprentice to quiz s_c, and s_c compliments them both on how the young cat's training is progressing."
+        ],
+        "fail_text": [
+            "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. Both leaders find a point where they can't agree on the right border path, and agree to raise it next gathering instead.",
+            null,
+            null,
+            null
+        ],
+        "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+        "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    }
 
 ]
