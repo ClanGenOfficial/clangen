@@ -66,7 +66,7 @@ class Patrol():
                     self.patrol_apprentices.append(cat)
             game.patrolled.append(cat)
         if game.clan.leader in self.patrol_cats:
-            self.patrol_leader == game.clan.leader
+            self.patrol_leader = game.clan.leader
         else:
             if self.possible_patrol_leaders:
                 self.patrol_leader = choice(self.possible_patrol_leaders)
@@ -254,7 +254,7 @@ class Patrol():
                     mode = True
             else:
                 mode = True
-                
+
             if "two_apprentices" in patrol.tags:
                 if len(self.patrol_apprentices) >= 2:
                     two_apprentices = True
