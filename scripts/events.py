@@ -1071,7 +1071,6 @@ class Events():
         enemy_clan = f'{str(self.enemy_clan)}'
         current_lives = int(game.clan.leader_lives)
 
-
         # chance to kill leader
         if not int(random.random() * 80) and cat.status == 'leader' and not triggered_death:  # 1/80
             triggered_death = True

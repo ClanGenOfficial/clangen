@@ -110,7 +110,25 @@ class Condition_Events():
             # EVENTS
             possible_events = []
             final_events = []
-            if not triggered and random_number <= 50:
+
+            if not triggered and\
+                    cat.trait in ["adventurous",
+                                 "bold",
+                                 "daring",
+                                 "confident",
+                                 "ambitious",
+                                 "bloodthirsty",
+                                 "fierce",
+                                 "strict",
+                                 "troublesome",
+                                 "vengeful",
+                                 "impulsive"] and\
+                    random_number <= 60:
+                triggered = True
+            elif not triggered and random_number <= 50:
+                triggered = True
+
+            if triggered:
                 if cat.status == "kitten":
                     possible_events.extend((self.generate_injury_event(KITTEN_EVENT_INJURIES)))
                 elif cat.status == "apprentice":
