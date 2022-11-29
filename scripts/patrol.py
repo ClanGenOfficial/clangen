@@ -67,6 +67,8 @@ class Patrol():
             game.patrolled.append(cat)
         if game.clan.leader in self.patrol_cats:
             self.patrol_leader = game.clan.leader
+        elif game.clan.medicine_cat in self.patrol_cats:
+            self.patrol_leader = game.clan.medicine_cat
         else:
             if self.possible_patrol_leaders:
                 self.patrol_leader = choice(self.possible_patrol_leaders)
@@ -74,6 +76,8 @@ class Patrol():
                 self.patrol_leader = choice(self.patrol_cats)
         self.patrol_leader_name = str(self.patrol_leader.name)
         self.patrol_random_cat = choice(self.patrol_cats)
+        if self.patrol_random_cat is None:
+            choice(self.patrol_apprentices)
         if self.patrol_random_cat == self.patrol_leader:
             """if len(self.patrol_cats) >= 2:
                 for cat in self.patrol_cats:
@@ -112,6 +116,9 @@ class Patrol():
 
     def get_possible_patrols(self, current_season, biome, all_clans, patrol_type,
                              game_setting_disaster=game.settings['disasters']):
+
+        if ("medicine cat" or "medicine cat apprentice") in self.patrol_statuses:
+            game.switches['patrol_chosen'] = 'med'
         possible_patrols = []
         final_patrols = []
         patrol_type = patrol_type
@@ -176,6 +183,9 @@ class Patrol():
         possible_patrols.extend(self.generate_patrol_events(TRAINING_PLN))
         possible_patrols.extend(self.generate_patrol_events(TRAINING_MTN))
         possible_patrols.extend(self.generate_patrol_events(TRAINING_BCH))
+
+        # med patrols
+        possible_patrols.extend(self.generate_patrol_events(MEDCAT))
 
         # new cat patrols
         if chance == 1:
@@ -273,8 +283,8 @@ class Patrol():
                 correct_button = True
             elif patrol_type == 'training' and "general" in patrol.tags:
                 correct_button = True
-            # elif patrol_type == 'med' and ["med", "general"] in patrol.tags:
-            #    correct_button
+            elif patrol_type == 'med' and "med" in patrol.tags:
+                correct_button = True
             else:
                 correct_button = False
 
@@ -862,6 +872,7 @@ resource_directory = "resources/dicts/patrols/"
 hunting_directory = "hunting/"
 training_directory = "training/"
 border_directory = "border/"
+med_directory = "med/"
 
 GENERAL = None
 with open(f"{resource_directory}general.json", 'r') as read_file:
@@ -933,6 +944,12 @@ with open(f"{resource_directory}{training_directory}training_mountains.json", 'r
 TRAINING_BCH = None
 with open(f"{resource_directory}{training_directory}training_beach.json", 'r') as read_file:
     TRAINING_BCH = ujson.loads(read_file.read())
+
+# MED CAT #
+
+MEDCAT = None
+with open(f"{resource_directory}{med_directory}medcat.json", 'r') as read_file:
+    MEDCAT = ujson.loads(read_file.read())
 
 
 # NEW CAT #
