@@ -179,7 +179,8 @@ class Events():
         self.other_interactions(cat)
         self.coming_out(cat)
         self.gain_accessories(cat)
-        # self.gain_scars(cat)
+        if game.clan.game_mode == "classic":
+            self.gain_scars(cat)
         self.relation_events.handle_having_kits(cat, clan=game.clan)
 
         # all actions, which do not trigger an event display and
@@ -1184,39 +1185,40 @@ class Events():
             triggered_death = self.condition_events.handle_illnesses(cat, game.clan.current_season)
             return triggered_death
 
-        # choose other cat
-        other_cat = choice(list(Cat.all_cats.values()))
-        countdown = int(len(Cat.all_cats) / 2)
-        while cat == other_cat or other_cat.dead:
+        elif game.clan.game_mode == "classic":
+            # choose other cat
             other_cat = choice(list(Cat.all_cats.values()))
-            countdown -= 1
-            if countdown <= 0:
-                return
+            countdown = int(len(Cat.all_cats) / 2)
+            while cat == other_cat or other_cat.dead:
+                other_cat = choice(list(Cat.all_cats.values()))
+                countdown -= 1
+                if countdown <= 0:
+                    return
 
-        # check if clan has kits, if True then clan has kits
-        alive_kits = list(filter(
-            lambda kitty: (kitty.age == "kitten"
-                           and not kitty.dead
-                           and not kitty.exiled),
-            Cat.all_cats.values()
-        ))
+            # check if clan has kits, if True then clan has kits
+            alive_kits = list(filter(
+                lambda kitty: (kitty.age == "kitten"
+                               and not kitty.dead
+                               and not kitty.exiled),
+                Cat.all_cats.values()
+            ))
 
-        # chance to kill leader
-        if not int(random.random() * 80) and cat.status == 'leader' and not triggered_death:  # 1/80
-            self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
-            triggered_death = True
+            # chance to kill leader
+            if not int(random.random() * 80) and cat.status == 'leader' and not triggered_death:  # 1/80
+                self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
+                triggered_death = True
 
-        # chance to die of old age
-        if cat.moons > int(random.random() * 51) + 140 and not triggered_death:  # cat.moons > 150 <--> 200
-            self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
-            triggered_death = True
+            # chance to die of old age
+            if cat.moons > int(random.random() * 51) + 140 and not triggered_death:  # cat.moons > 150 <--> 200
+                self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
+                triggered_death = True
 
-        # classic death chance
-        if not int(random.random() * 300):  # 1/300
-            self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
-            triggered_death = True
+            # classic death chance
+            if not int(random.random() * 300):  # 1/300
+                self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
+                triggered_death = True
 
-        return triggered_death
+            return triggered_death
 
     def coming_out(self, cat):
         """turnin' the kitties trans..."""

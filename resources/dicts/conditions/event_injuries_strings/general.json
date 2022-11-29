@@ -486,7 +486,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c's was hurt by r_c for disobeying orders.",
+        "event_text": "m_c was hurt by r_c for disobeying orders.",
         "scar_text": "m_c was hurt by r_c for disobeying orders.",
         "cat_trait": null,
         "cat_skill": null,
@@ -506,7 +506,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c's was hurt by r_c for speaking out against them.",
+        "event_text": "m_c was hurt by r_c for speaking out against them.",
         "scar_text": "m_c was hurt by r_c for speaking out against them.",
         "cat_trait": null,
         "cat_skill": null,
@@ -526,7 +526,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c's was hurt by r_c to make an example out of them.",
+        "event_text": "m_c was hurt by r_c to make an example out of them.",
         "scar_text": "m_c was hurt by r_c to make an example out of them.",
         "cat_trait": null,
         "cat_skill": null,
@@ -617,7 +617,7 @@
             "Leaf-bare"
         ],
         "event_text": "m_c was out wandering the territory for a bit too long and came back with frostbite.",
-        "scar_text": null,
+        "scar_text": "m_c was permanently scarred by frostbite.",
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -720,7 +720,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c's was hurt by r_c for disobeying orders.",
+        "event_text": "m_c was hurt by r_c for disobeying orders.",
         "scar_text": "m_c was hurt by r_c for disobeying orders.",
         "cat_trait": null,
         "cat_skill": null,
@@ -740,7 +740,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c's was hurt by r_c for speaking out against them.",
+        "event_text": "m_c was hurt by r_c for speaking out against them.",
         "scar_text": "m_c was hurt by r_c for speaking out against them.",
         "cat_trait": null,
         "cat_skill": null,
@@ -760,7 +760,7 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c's was hurt by r_c to make an example out of them.",
+        "event_text": "m_c was hurt by r_c to make an example out of them.",
         "scar_text": "m_c was hurt by r_c to make an example out of them.",
         "cat_trait": null,
         "cat_skill": null,

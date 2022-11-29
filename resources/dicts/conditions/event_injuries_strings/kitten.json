@@ -176,7 +176,7 @@
             "Leaf-bare"
         ],
         "event_text": "m_c snuck out of camp and returned cold and shivering, frostbite nipping at their paws.",
-        "scar_text": null,
+        "scar_text": "m_c was permanently scarred by frostbite.",
         "cat_trait": ["daring", "impulsive", "inquisitive", "troublesome"],
         "cat_skill": null,
         "other_cat_trait": null,

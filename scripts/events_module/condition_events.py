@@ -4,6 +4,7 @@ import random
 from scripts.cat.cats import Cat
 from scripts.utility import save_death
 from scripts.game_structure.game_essentials import game, SAVE_DEATH
+from scripts.events_module.scar_events import Scar_Events
 
 # ---------------------------------------------------------------------------- #
 #                             Condition Event Class                            #
@@ -16,6 +17,7 @@ class Condition_Events():
         self.living_cats = len(list(filter(lambda r: not r.dead, Cat.all_cats.values())))
         self.event_sums = 0
         self.had_one_event = False
+        self.scar_events = Scar_Events()
         pass
 
     def handle_illnesses(self, cat, season):
@@ -151,66 +153,38 @@ class Condition_Events():
 
                 triggered = True
 
-                correct_biome = False
-                correct_rank = True
-                correct_season = False
-                kit_check = False
-                chance_add = False
-
                 for event in possible_events:
-                    if str(biome) in event.tags:
-                        correct_biome = True
-                    else:
-                        correct_biome = False
-                    if str(season) in event.tags:
-                        correct_season = True
-                    else:
-                        correct_season = False
+                    if biome not in event.tags:
+                        continue
+
+                    if season not in event.tags:
+                        continue
 
                     if "other_cat_leader" in event.tags and other_cat.status != "leader":
-                        correct_rank = False
+                        continue
                     if "other_cat_mentor" in event.tags and cat.mentor != other_cat.ID:
-                        correct_rank = False
+                        continue
 
-                    if "clan_kits" in event.tags and alive_kits:
-                        kit_check = True
-                    elif "clan_kits" not in event.tags:
-                        kit_check = True
+                    if "clan_kits" in event.tags and not alive_kits:
+                        continue
 
                     if event.cat_trait is not None:
-                        if cat.trait in event.cat_trait:
-                            chance_add = True
-                        elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with trait
-                            chance_add = True
-                    else:
-                        chance_add = True
+                        if cat.trait not in event.cat_trait and int(random.random() * 8):
+                            continue
 
                     if event.cat_skill is not None:
-                        if cat.skill in event.cat_skill:
-                            chance_add = True
-                        elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with trait
-                            chance_add = True
-                    else:
-                        chance_add = True
+                        if cat.skill not in event.cat_skill and int(random.random() * 8):
+                            continue
 
                     if event.other_cat_trait is not None:
-                        if other_cat.trait in event.other_cat_trait:
-                            chance_add = True
-                        elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with trait
-                            chance_add = True
-                    else:
-                        chance_add = True
+                        if other_cat.trait not in event.other_cat_trait and int(random.random() * 8):
+                            continue
 
                     if event.other_cat_skill is not None:
-                        if other_cat.skill in event.other_cat_skill:
-                            chance_add = True
-                        elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with trait
-                            chance_add = True
-                    else:
-                        chance_add = True
+                        if other_cat.skill not in event.other_cat_skill and int(random.random() * 8):
+                            continue
 
-                    if correct_biome and correct_season and correct_rank and kit_check and chance_add:
-                        final_events.append(event)
+                    final_events.append(event)
 
                 name = str(cat.name)
                 other_name = str(other_cat.name)
@@ -219,25 +193,25 @@ class Condition_Events():
                                "an enemy warrior", "a badger", "a Twoleg trap"]
 
                 injury_event = random.choice(final_events)
+                danger_chosen = random.choice(danger)
+                tail_danger_chosen = random.choice(danger)
 
                 text = injury_event.event_text
                 text = text.replace("m_c", name)
                 text = text.replace("r_c", other_name)
-                text = text.replace("d_l", random.choice(danger))
-                text = text.replace("t_l", random.choice(danger))
+                text = text.replace("d_l", danger_chosen)
+                text = text.replace("t_l", tail_danger_chosen)
 
                 if injury_event.scar_text is not None:
                     scar_text = injury_event.scar_text
                     scar_text = scar_text.replace("m_c", name)
                     scar_text = scar_text.replace("r_c", other_name)
-                    scar_text = scar_text.replace("d_l", random.choice(danger))
+                    scar_text = scar_text.replace("d_l", danger_chosen)
+                    scar_text = scar_text.replace("t_l", tail_danger_chosen)
                     cat.possible_scar = str(scar_text)
 
                 cat.get_injured(injury_event.injury)
 
-                for injury in cat.injury.also_got:
-                    if not int(random.random() * 2):
-                        cat.get_injured(injury)
 
         if not triggered:
             return triggered
@@ -292,10 +266,13 @@ class Condition_Events():
 
             elif cat.injury is None:
                 triggered = True
-                if injury_name in ["bruises", "cracked pads", "scrapes", "tick bites"]:
-                    event_string = f"{cat.name}'s {injury_name} have healed."
+                if cat.possible_scar is not None:
+                    event_string = self.scar_events.handle_scars(cat, injury_name)
                 else:
-                    event_string = f"{cat.name}'s {injury_name} has healed."
+                    if injury_name in ["bruises", "cracked pads", "scrapes", "tick bites"]:
+                        event_string = f"{cat.name}'s {injury_name} have healed."
+                    else:
+                        event_string = f"{cat.name}'s {injury_name} has healed."
 
         return triggered, event_string
 

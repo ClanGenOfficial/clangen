@@ -99,7 +99,7 @@
     },
     "mangled leg":{
         "duration": 3,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "mortality": {
             "kitten": 15,
             "adolescent": 50,
@@ -123,7 +123,7 @@
     },
     "mangled tail":{
         "duration": 3,
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "mortality": {
             "kitten": 15,
             "adolescent": 50,

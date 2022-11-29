@@ -154,7 +154,7 @@
         "infectiousness": 0,
         "risks": [
             {
-                "name": "festering wounds",
+                "name": "a festering wound",
                 "chance": 10
             }
         ]
@@ -240,15 +240,15 @@
     },
     "whitecough": {
         "mortality": {
-            "kitten": 5,
+            "kitten": 10,
             "adolescent": 20,
-            "young adult": 25,
-            "adult": 30,
-            "senior adult": 25,
-            "elder": 8
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 50,
+            "elder": 10
         },
         "medicine_mortality": {
-            "kitten": 10,
+            "kitten": 15,
             "adolescent": 60,
             "young adult": 70,
             "adult": 70,

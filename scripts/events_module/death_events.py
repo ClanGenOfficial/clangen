@@ -6,7 +6,7 @@ from scripts.utility import save_death
 from scripts.game_structure.game_essentials import game, SAVE_DEATH
 
 # ---------------------------------------------------------------------------- #
-#                             Condition Event Class                            #
+#                               Death Event Class                              #
 # ---------------------------------------------------------------------------- #
 
 class Death_Events():
@@ -81,6 +81,11 @@ class Death_Events():
 
             # check for old age
             if "old_age" in death.death_tags and cat.moons < 150:
+                continue
+
+            if "leader" in death.death_tags and cat.status != "leader":
+                continue
+            if cat.status == "leader" and "leader" not in death.death_tags:
                 continue
 
             # check other_cat rank
