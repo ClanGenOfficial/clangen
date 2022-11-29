@@ -270,6 +270,8 @@ class Patrol():
                     two_apprentices = True
                 else:
                     two_apprentices = False
+            else:
+                two_apprentices = True
 
             if patrol_type == 'hunting' and "hunting" in patrol.tags:
                 correct_button = True
@@ -289,16 +291,12 @@ class Patrol():
                 correct_button = False
 
             if game.clan.game_mode == 'classic':
-                if max_good and min_good and correct_season and correct_biome and status_a and status_b and status_c:
+                if max_good and min_good and correct_season and correct_biome and status_a and status_b and status_c\
+                    and two_apprentices:
                     final_patrols.append(patrol)
             else:
-                if "two_apprentices" in patrol.tags:
-                    if max_good and min_good and correct_season and correct_biome and status_a and status_b and status_c\
+                if max_good and min_good and correct_season and correct_biome and status_a and status_b and status_c\
                      and correct_button and two_apprentices and mode:
-                        final_patrols.append(patrol)
-                else:
-                    if max_good and min_good and correct_season and correct_biome and status_a and status_b and status_c\
-                     and correct_button and mode:
                         final_patrols.append(patrol)
         
         return final_patrols   
