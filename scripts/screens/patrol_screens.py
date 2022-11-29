@@ -158,7 +158,7 @@ class PatrolScreen(Screens):
                                   show_info=True
                                   )
 
-        # PATROL TYPE BUTTONS - purely aesthetic atm until we have patrol type functionality
+        # PATROL TYPE BUTTONS
         if game.game_mode != 'classic':
             x_value = 323
             y_value = 560
