@@ -117,8 +117,6 @@ class Patrol():
     def get_possible_patrols(self, current_season, biome, all_clans, patrol_type,
                              game_setting_disaster=game.settings['disasters']):
 
-        if ("medicine cat" or "medicine cat apprentice") in self.patrol_statuses:
-            game.switches['patrol_chosen'] = 'med'
         possible_patrols = []
         final_patrols = []
         patrol_type = patrol_type
@@ -285,7 +283,7 @@ class Patrol():
                 correct_button = True
             elif patrol_type == 'training' and "general" in patrol.tags:
                 correct_button = True
-            elif patrol_type == 'med' and "med" in patrol.tags:
+            elif patrol_type == 'med' and "med_cat" in patrol.tags:
                 correct_button = True
             else:
                 correct_button = False
