@@ -33,14 +33,18 @@ def get_cats_allowed_on_patrol(Cat, ILLNESSES, INJURIES, game_mode):
                 (the_cat.is_injured() and the_cat.injury.name in not_allowed_injuries):
                 continue
         if the_cat.status in [
-                'leader', 'deputy', 'warrior', 'apprentice'
+                'leader', 'deputy', 'medicine cat', 'medicine cat apprentice', 'warrior', 'apprentice'
         ]:
             if the_cat.status == 'leader':
                 able_cats.insert(0, the_cat)
             elif the_cat.status == 'deputy':
                 able_cats.insert(1, the_cat)
-            elif the_cat.status == 'warrior':
+            elif the_cat.status == 'medicine cat':
                 able_cats.insert(2, the_cat)
+            elif the_cat.status == 'medicine cat apprentice':
+                able_cats.insert(3, the_cat)
+            elif the_cat.status == 'warrior':
+                able_cats.insert(4, the_cat)
             elif the_cat.status == 'apprentice':
                 able_cats.append(the_cat)
 
