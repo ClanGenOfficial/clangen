@@ -780,7 +780,7 @@ class Cat():
             event_triggered=event_triggered
         )
 
-    def get_injured(self, name, event_triggered = False):
+    def get_injured(self, name, event_triggered=False):
         if self.is_injured() or name not in INJURIES:
             if name not in INJURIES:
                 print(f"WARNING: {name} is not in the injuries collection.")
@@ -797,11 +797,12 @@ class Cat():
 
         self.injury = Injury(
             name,
-            duration = injury["duration"],
-            medicine_duration = injury["medicine_duration"], 
-            mortality = mortality,
-            risks = injury["risks"],
-            illness_infectiousness = injury["illness_infectiousness"],
+            duration=injury["duration"],
+            medicine_duration=injury["medicine_duration"],
+            mortality=mortality,
+            risks=injury["risks"],
+            illness_infectiousness=injury["illness_infectiousness"],
+            also_got=injury["also_got"],
             event_triggered=event_triggered
         )
 
@@ -871,6 +872,7 @@ class Cat():
                 "medicine_duration": self.injury.medicine_duration,
                 "illness_infectiousness": self.injury.illness_infectiousness,
                 "risks": self.injury.risks,
+                "also_got": self.injury.also_got,
             }
 
         try:

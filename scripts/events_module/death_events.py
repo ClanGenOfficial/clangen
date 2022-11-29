@@ -59,108 +59,69 @@ class Death_Events():
         # everyone gets multi death
         possible_deaths.extend(self.generate_death_events(MULTI_DEATH))
 
-        correct_rank = True
-        correct_biome = False
-        correct_season = False
-        chance_add = False
-        mate_check = False
-        war_check = False
-        kit_check = False
-        age_check = False
-
         for death in possible_deaths:
-            # check biome
-            if str(game.clan.biome) in death.death_tags:
-                correct_biome = True
+
+            if game.clan.game_mode in ["expanded", "cruel season"] and "illness" in death.death_tags:
+                continue
+
+            if game.clan.biome not in death.death_tags:
+                continue
 
             # check season
-            if str(game.clan.current_season) in death.death_tags:
-                correct_season = True
+            if game.clan.current_season not in death.death_tags:
+                continue
 
             # check that war events only happen when at war
-            if "war" in death.death_tags and war:
-                war_check = True
-            elif "war" not in death.death_tags:
-                war_check = True
+            if "war" in death.death_tags and not war:
+                continue
 
             # check if clan has kits
-            if "clan_kits" in death.death_tags and alive_kits:
-                kit_check = True
-            if "clan_kits" not in death.death_tags:
-                kit_check = True
+            if "clan_kits" in death.death_tags and not alive_kits:
+                continue
 
             # check for old age
-            if "old_age" in death.death_tags and cat.moons > 150:
-                age_check = True
-            elif "old_age" not in death.death_tags:
-                age_check = True
+            if "old_age" in death.death_tags and cat.moons < 150:
+                continue
 
             # check other_cat rank
             if "other_cat_leader" in death.death_tags and other_cat.status != "leader":
-                correct_rank = False
+                continue
             elif "other_cat_dep" in death.death_tags and other_cat.status != "deputy":
-                correct_rank = False
+                continue
             elif "other_cat_med" in death.death_tags and \
                     other_cat.status not in ["medicine cat", "medicine cat apprentice"]:
-                correct_rank = False
+                continue
             elif "other_cat_adult" in death.death_tags and other_cat.age in ["elder", "kitten"]:
-                correct_rank = False
+                continue
             elif "other_cat_kit" in death.death_tags and other_cat.status != "kitten":
-                correct_rank = False
+                continue
 
             # check for mate if the death requires one
-            if "mate" in death.death_tags and cat.mate is not None:
-                mate_check = True
-            elif "mate" in death.death_tags and cat.mate is None:
-                mate_check = False
-            elif "mate" not in death.death_tags:
-                mate_check = True
+            if "mate" in death.death_tags and cat.mate is None:
+                continue
 
             # check cat trait
             if death.cat_trait is not None:
-                if cat.trait in death.cat_trait:
-                    chance_add = True
-                elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with trait
-                    chance_add = True
-            else:
-                chance_add = True
+                if cat.trait not in death.cat_trait and int(random.random() * 8):
+                    continue
 
             # check cat skill
             if death.cat_skill is not None:
-                if cat.skill in death.cat_skill:
-                    chance_add = True
-                elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with skill
-                    chance_add = True
-            else:
-                chance_add = True
+                if cat.skill not in death.cat_skill and int(random.random() * 8):
+                    continue
 
             # check other_cat trait
             if death.other_cat_trait is not None:
-                if other_cat.trait in death.other_cat_trait:
-                    chance_add = True
-                elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with trait
-                    chance_add = True
-            else:
-                chance_add = True
+                if other_cat.trait not in death.other_cat_trait and int(random.random() * 8):
+                    continue
 
             # check other_cat skill
             if death.other_cat_skill is not None:
-                if other_cat.skill in death.other_cat_skill:
-                    chance_add = True
-                elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with skill
-                    chance_add = True
-            else:
-                chance_add = True
+                if other_cat.skill not in death.other_cat_skill and int(random.random() * 8):
+                    continue
 
-            if correct_rank and \
-                    correct_season and \
-                    correct_biome and \
-                    chance_add and \
-                    mate_check and \
-                    war_check and \
-                    kit_check and \
-                    age_check:
-                final_deaths.append(death)
+            final_deaths.append(death)
+
 
         # ---------------------------------------------------------------------------- #
         #                                  kill cats                                   #
@@ -202,9 +163,14 @@ class Death_Events():
                 cat.die()
                 cat.died_by.append(history_text)
             elif "murder" in death_cause.death_tags or "some_lives" in death_cause.death_tags:
-                game.clan.leader_lives -= random.randrange(2, current_lives - 1)
-                cat.die()
-                cat.died_by.append(history_text)
+                if game.clan.leader_lives > 2:
+                    game.clan.leader_lives -= random.randrange(2, current_lives - 1)
+                    cat.die()
+                    cat.died_by.append(history_text)
+                else:
+                    game.clan.leader_lives -= 3
+                    cat.die()
+                    cat.died_by.append(history_text)
             else:
                 game.clan.leader_lives -= 1
                 cat.die()

@@ -421,7 +421,7 @@
         "other_cat_skill": null
     },
     {
-        "injury": "torn ear",
+        "injury": "torn pelt",
         "tags": [
             "Forest",
             "Plains",
@@ -432,29 +432,10 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was out on a walk alone when they heard d_l approaching! They crawled into a thorny shrub to hide, but tore their ear in the process.",
-        "scar_text": "m_c tore their ear while hiding in a thorny shrub.",
+        "event_text": "m_c was out on a walk alone when they heard d_l approaching! They crawled into a thorny shrub to hide, but got some nasty scratches in the process.",
+        "scar_text": null,
         "cat_trait": ["nervous", "wise", "insecure", "careful", "calm", "sneaky", "strange"],
         "cat_skill": ["smart", "very smart", "extremely smart"],
-        "other_cat_trait": null,
-        "other_cat_skill": null
-    },
-    {
-        "injury": "torn ear",
-        "tags": [
-            "Forest",
-            "Plains",
-            "Mountainous",
-            "Beach",
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare"
-        ],
-        "event_text": "m_c was wandering through some dense shrubs and felt a short, piercing pain in their ear.",
-        "scar_text": "m_c tore their ear while walking through a dense shrub.",
-        "cat_trait": null,
-        "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
     },
@@ -468,8 +449,8 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was wandering through some dense shrubs and felt it tear at their pelt.",
-        "scar_text": "m_c tore their pelt while walking through a dense shrub.",
+        "event_text": "m_c was pushing through some dense shrubs and felt the branches tear painfully at their pelt.",
+        "scar_text": null,
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,

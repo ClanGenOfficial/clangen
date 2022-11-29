@@ -82,8 +82,8 @@
 },
 {
     "death_tags": ["general", "other_cat", "murder", "Mountainous", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-    "death_text": "d_c was pushed off a cliff onto the sharp rocks at the bottom. o_c stands above them, watching as they fall.",
-    "history_text": "d_c was pushed off a cliff by o_c.",
+    "death_text": "d_c was pushed off a cliff onto the sharp rocks at the bottom. r_c stands above them, watching as they fall.",
+    "history_text": "d_c was pushed off a cliff by r_c.",
     "cat_trait": null,
     "cat_skill": null,
     "other_cat_trait": ["bloodthirsty", "vengeful", "ambitious", "righteous", "cold", "patient"],

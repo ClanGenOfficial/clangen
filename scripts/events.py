@@ -1025,21 +1025,6 @@ class Events():
         if interactions:
             game.cur_events_list.append(choice(interactions))
 
-    def generate_death_events(self, events_dict):
-        all_death_events = []
-        for death in events_dict:
-            death_event = DeathEvent(
-                death_tags=death["death_tags"],
-                death_text=death["death_text"],
-                history_text=death["history_text"],
-                cat_trait=death["cat_trait"],
-                cat_skill=death["cat_skill"],
-                other_cat_trait=death["other_cat_trait"],
-                other_cat_skill=death["other_cat_skill"]
-            )
-            all_death_events.append(death_event)
-
-        return all_death_events
 
     def handle_injuries_or_general_death(self, cat):
         # ---------------------------------------------------------------------------- #
@@ -1067,10 +1052,6 @@ class Events():
                            and not kitty.exiled),
             Cat.all_cats.values()
         ))
-
-        # choose other clan
-        other_clan = choice(game.clan.all_clans)
-
 
         # chance to kill leader
         if not int(random.random() * 80) and cat.status == 'leader' and not triggered_death:  # 1/80
@@ -1220,214 +1201,22 @@ class Events():
             Cat.all_cats.values()
         ))
 
-        # get info for cats and clans
-        name = str(cat.name)
-        other_name = other_cat.name
-        current_lives = int(game.clan.leader_lives)
-
         # chance to kill leader
         if not int(random.random() * 80) and cat.status == 'leader' and not triggered_death:  # 1/80
+            self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
 
         # chance to die of old age
         if cat.moons > int(random.random() * 51) + 140 and not triggered_death:  # cat.moons > 150 <--> 200
+            self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
 
         # classic death chance
         if not int(random.random() * 300):  # 1/300
+            self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
 
-        # ---------------------------------------------------------------------------- #
-        #                           compile possible deaths                            #
-        # ---------------------------------------------------------------------------- #
-        if triggered_death:
-            possible_deaths = []
-            final_deaths = []
-
-            possible_deaths.extend(self.generate_death_events(GEN_DEATH))
-            possible_deaths.extend(self.generate_death_events(ELDER_DEATH))
-            possible_deaths.extend(self.generate_death_events(LEADER_DEATH))
-            possible_deaths.extend(self.generate_death_events(DEP_DEATH))
-            possible_deaths.extend(self.generate_death_events(MED_DEATH))
-            possible_deaths.extend(self.generate_death_events(APP_DEATH))
-            possible_deaths.extend(self.generate_death_events(KIT_DEATH))
-            possible_deaths.extend(self.generate_death_events(MULTI_DEATH))
-            possible_deaths.extend(self.generate_death_events(AGE_DEATH))
-
-            illness = False
-            correct_rank = False
-            correct_biome = False
-            correct_season = False
-            chance_add = False
-            mate_check = False
-            kit_check = False
-            age_check = False
-
-            for death in possible_deaths:
-                # check if illness
-                if "illness" in death.death_tags:
-                    illness = True
-
-                # check biome
-                if str(game.clan.biome) in death.death_tags:
-                    correct_biome = True
-
-                # check season
-                if str(game.clan.current_season) in death.death_tags:
-                    correct_season = True
-
-                # check if clan has kits
-                if "clan_kits" in death.death_tags and alive_kits:
-                    kit_check = True
-                if "clan_kits" not in death.death_tags:
-                    kit_check = True
-
-                # check for old age
-                if "old_age" in death.death_tags and cat.moons > 150:
-                    age_check = True
-                elif "old_age" not in death.death_tags:
-                    age_check = True
-
-                # check cat rank
-                if "leader" in death.death_tags and cat.status == "leader":
-                    correct_rank = True
-                elif "deputy" in death.death_tags and cat.status == "deputy":
-                    correct_rank = True
-                elif "medicine_cat" in death.death_tags and cat.status in ["medicine cat", "medicine cat apprentice"]:
-                    correct_rank = True
-                elif "apprentice" in death.death_tags and cat.status == "apprentice":
-                    correct_rank = True
-                elif "kitten" in death.death_tags and cat.status == "kitten":
-                    correct_rank = True
-                elif "elder" in death.death_tags and cat.status == "elder":
-                    correct_rank = True
-                else:
-                    correct_rank = False
-
-                if "general" in death.death_tags and \
-                        cat.status in ["warrior", "deputy", "apprentice"]:
-                    correct_rank = True
-
-                # check other_cat rank
-                if "other_cat_leader" in death.death_tags and other_cat.status != "leader":
-                    correct_rank = False
-                elif "other_cat_dep" in death.death_tags and other_cat.status != "deputy":
-                    correct_rank = False
-                elif "other_cat_med" in death.death_tags and \
-                        other_cat.status not in ["medicine cat", "medicine cat apprentice"]:
-                    correct_rank = False
-                elif "other_cat_adult" in death.death_tags and other_cat.age in ["elder", "kitten"]:
-                    correct_rank = False
-                elif "other_cat_kit" in death.death_tags and other_cat.status != "kitten":
-                    correct_rank = False
-
-                # check for mate if the death requires one
-                if "mate" in death.death_tags and cat.mate is not None:
-                    mate_check = True
-                elif "mate" in death.death_tags and cat.mate is None:
-                    mate_check = False
-                elif "mate" not in death.death_tags:
-                    mate_check = True
-
-                # check cat trait
-                if death.cat_trait is not None:
-                    if cat.trait in death.cat_trait:
-                        chance_add = True
-                    elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with trait
-                        chance_add = True
-                else:
-                    chance_add = True
-
-                # check cat skill
-                if death.cat_skill is not None:
-                    if cat.skill in death.cat_skill:
-                        chance_add = True
-                    elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with skill
-                        chance_add = True
-                else:
-                    chance_add = True
-
-                # check other_cat trait
-                if death.other_cat_trait is not None:
-                    if other_cat.trait in death.other_cat_trait:
-                        chance_add = True
-                    elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with trait
-                        chance_add = True
-                else:
-                    chance_add = True
-
-                # check other_cat skill
-                if death.other_cat_skill is not None:
-                    if other_cat.skill in death.other_cat_skill:
-                        chance_add = True
-                    elif not int(random.random() * 5):  # 1/5 chance to add death that doesn't align with skill
-                        chance_add = True
-                else:
-                    chance_add = True
-
-                if correct_rank and \
-                        correct_season and \
-                        correct_biome and \
-                        chance_add and \
-                        mate_check and \
-                        kit_check and \
-                        age_check and \
-                        illness:
-                    final_deaths.append(death)
-
-        # ---------------------------------------------------------------------------- #
-        #                                  kill cats                                   #
-        # ---------------------------------------------------------------------------- #
-            print(cat.name, cat.status, len(final_deaths), other_cat.name)
-            death_cause = (choice(final_deaths))
-
-            # text adjust
-            death_text = death_cause.death_text
-            death_text = death_text.replace("d_c", str(name))
-            death_text = death_text.replace("r_c", str(other_name))
-            if "mate" in death_cause.death_tags:
-                death_text = death_text.replace("c_m", str(Cat.all_cats.get(cat.mate).name))
-
-            history_text = death_cause.history_text
-            history_text = history_text.replace("d_c", str(name))
-            history_text = history_text.replace("r_c", str(other_name))
-            if "mate" in death_cause.death_tags:
-                history_text = history_text.replace("c_m", str(Cat.all_cats.get(cat.mate).name))
-
-            # check if other_cat dies and kill them
-            if "other_cat_death" in death_cause.death_tags or "multi_death" in death_cause.death_tags:
-                other_cat.die()
-                other_cat.died_by.append(f'{other_name} {history_text}')
-
-            # handle leader lives
-            if cat.status == "leader":
-                if "all_lives" in death_cause.death_tags:
-                    game.clan.leader_lives -= 10
-                    cat.die()
-                    cat.died_by.append(history_text)
-                elif "murder" in death_cause.death_tags or "some_lives" in death_cause.death_tags:
-                    game.clan.leader_lives -= random.randrange(2, current_lives - 1)
-                    cat.die()
-                    cat.died_by.append(history_text)
-                else:
-                    game.clan.leader_lives -= 1
-                    cat.die()
-                    cat.died_by.append(history_text)
-
-            else:
-                if "multi_death" in death_cause.death_tags:
-                    cat.die()
-                    cat.died_by.append(f'{name} {history_text}')
-                else:
-                    cat.die()
-                    cat.died_by.append(history_text)
-
-            game.cur_events_list.append(death_text)
-
-            if SAVE_DEATH:
-                save_death(cat, death_text)
-
-            return triggered_death
+        return triggered_death
 
     def coming_out(self, cat):
         """turnin' the kitties trans..."""
@@ -1462,75 +1251,5 @@ class Events():
             game.cur_events_list.append(
                 f"{cat.name} has realized that {gender} doesn't describe how they feel anymore.")
 
-
-class DeathEvent:
-    def __init__(self,
-                 death_tags=None,
-                 death_text='',
-                 history_text='',
-                 cat_trait=None,
-                 cat_skill=None,
-                 other_cat_trait=None,
-                 other_cat_skill=None,
-                 ):
-        self.death_tags = death_tags
-        self.death_text = death_text
-        self.history_text = history_text
-        self.cat_trait = cat_trait
-        self.cat_skill = cat_skill
-        self.other_cat_trait = other_cat_trait
-        self.other_cat_skill = other_cat_skill
-
-
-"""
-possible tags: 
-"illness", "multi_death", "old_age", "all_lives", "some_lives", "murder", "war"
-"leader", "kitten", "deputy", "medicine_cat", "apprentice", "elder"
-"other_cat", "other_cat_med", "other_cat_app", "other_cat_kit", "other_cat_dep",  
-"other_clan", "rel_down", "rel_up", 
-"Forest", "Plains", "Mountainous", "Beach", 
-"Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"
-"""
-
 events_class = Events()
 
-# ---------------------------------------------------------------------------- #
-#                                LOAD RESOURCES                                #
-# ---------------------------------------------------------------------------- #
-resource_directory = "resources/dicts/events/"
-
-GEN_DEATH = None
-with open(f"{resource_directory}gen_death.json", 'r') as read_file:
-    GEN_DEATH = ujson.loads(read_file.read())
-
-ELDER_DEATH = None
-with open(f"{resource_directory}elder_death.json", 'r') as read_file:
-    ELDER_DEATH = ujson.loads(read_file.read())
-
-LEADER_DEATH = None
-with open(f"{resource_directory}leader_death.json", 'r') as read_file:
-    LEADER_DEATH = ujson.loads(read_file.read())
-
-DEP_DEATH = None
-with open(f"{resource_directory}dep_death.json", 'r') as read_file:
-    DEP_DEATH = ujson.loads(read_file.read())
-
-MED_DEATH = None
-with open(f"{resource_directory}med_death.json", 'r') as read_file:
-    MED_DEATH = ujson.loads(read_file.read())
-
-APP_DEATH = None
-with open(f"{resource_directory}app_death.json", 'r') as read_file:
-    APP_DEATH = ujson.loads(read_file.read())
-
-KIT_DEATH = None
-with open(f"{resource_directory}kit_death.json", 'r') as read_file:
-    KIT_DEATH = ujson.loads(read_file.read())
-
-MULTI_DEATH = None
-with open(f"{resource_directory}multi_death.json", 'r') as read_file:
-    MULTI_DEATH = ujson.loads(read_file.read())
-
-AGE_DEATH = None
-with open(f"{resource_directory}age_death.json", 'r') as read_file:
-    AGE_DEATH = ujson.loads(read_file.read())

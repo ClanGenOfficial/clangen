@@ -235,6 +235,10 @@ class Condition_Events():
 
                 cat.get_injured(injury_event.injury)
 
+                for injury in cat.injury.also_got:
+                    if not int(random.random() * 2):
+                        cat.get_injured(injury)
+
         if not triggered:
             return triggered
         else:

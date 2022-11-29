@@ -17,6 +17,9 @@
                 "name": "an infected wound",
                 "chance": 5
             }
+        ],
+        "also_got": [
+            "torn pelt"
         ]
     },
     "snake bite":{
@@ -37,7 +40,8 @@
                 "name": "an infected wound",
                 "chance": 5
             }
-        ]
+        ],
+        "also_got": []
     },
     "rat bite":{
         "duration": 2,
@@ -65,6 +69,9 @@
                 "name": "a festering wound",
                 "chance": 5
             }
+        ],
+        "also_got": [
+            "torn pelt"
         ]
     },
     "broken bone":{
@@ -84,6 +91,10 @@
                 "name": "an infected wound",
                 "chance": 5
             }
+        ],
+        "also_got": [
+            "torn pelt",
+            "mangled leg"
         ]
     },
     "mangled leg":{
@@ -103,6 +114,11 @@
                 "name": "an infected wound",
                 "chance": 5
             }
+        ],
+        "also_got": [
+            "torn pelt",
+            "broken leg",
+            "dislocated joint"
         ]
     },
     "mangled tail":{
@@ -122,6 +138,9 @@
                 "name": "an infected wound",
                 "chance": 5
             }
+        ],
+        "also_got": [
+            "torn pelt"
         ]
     },
     "bruises":{
@@ -136,7 +155,9 @@
             "elder": 0
         },
         "illness_infectiousness": [],
-        "risks": []
+        "risks": [],
+        "also_got": []
+
     },
     "claw-wound":{
         "duration": 2,
@@ -155,6 +176,10 @@
                 "name": "an infected wound",
                 "chance": 5
             }
+        ],
+        "also_got": [
+            "torn pelt",
+            "torn ear"
         ]
     },
     "cracked pads":{
@@ -174,7 +199,8 @@
                 "name": "an infected wound",
                 "chance": 15
             }
-        ]
+        ],
+        "also_got": []
     },
     "dislocated joint":{
         "duration": 4,
@@ -188,7 +214,10 @@
             "elder": 0
         },
         "illness_infectiousness": [],
-        "risks": []
+        "risks": [],
+        "also_got": [
+            "joint pain"
+        ]
     },
     "frostbite":{
         "duration": 2,
@@ -220,7 +249,8 @@
                 "name": "running nose",
                 "chance": 4
             }
-        ]
+        ],
+        "also_got": []
     },
     "joint pain":{
         "duration": 2,
@@ -234,7 +264,8 @@
             "elder": 0
         },
         "illness_infectiousness": [],
-        "risks": []
+        "risks": [],
+        "also_got": []
     },
     "scrapes":{
         "duration": 1,
@@ -253,7 +284,8 @@
                 "name": "an infected wound",
                 "chance": 20
             }
-        ]
+        ],
+        "also_got": []
     },
     "splinter":{
         "duration": 1,
@@ -272,7 +304,8 @@
                 "name": "an infected wound",
                 "chance": 20
             }
-        ]
+        ],
+        "also_got": []
     },
     "sprain":{
         "duration": 1,
@@ -286,7 +319,8 @@
             "elder": 0
         },
         "illness_infectiousness": [],
-        "risks": []
+        "risks": [],
+        "also_got": []
     },
     "tick bites":{
         "duration": 1,
@@ -305,7 +339,8 @@
                 "name": "an infected wound",
                 "chance": 40
             }
-        ]
+        ],
+        "also_got": []
     },
     "torn pelt":{
         "duration": 1,
@@ -324,6 +359,9 @@
                 "name": "an infected wound",
                 "chance": 30
             }
+        ],
+        "also_got": [
+            "torn ear"
         ]
     },
     "torn ear":{
@@ -343,7 +381,8 @@
                 "name": "an infected wound",
                 "chance": 30
             }
-        ]
+        ],
+        "also_got": []
     },
     "water in their lungs":{
         "duration": 3,
@@ -399,6 +438,7 @@
                 "name": "yellowcough",
                 "chance": 4
             }
-        ]
+        ],
+        "also_got": []
     }
 }
