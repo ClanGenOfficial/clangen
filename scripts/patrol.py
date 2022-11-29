@@ -65,8 +65,10 @@ class Patrol():
             if cat.status == 'apprentice':
                     self.patrol_apprentices.append(cat)
             game.patrolled.append(cat)
+        # sets leader as patrol leader
         if game.clan.leader in self.patrol_cats:
             self.patrol_leader = game.clan.leader
+        # EXCEPT IF there's a medicine cat in the patrol, then medcat is leader
         elif game.clan.medicine_cat in self.patrol_cats:
             self.patrol_leader = game.clan.medicine_cat
         else:
@@ -79,12 +81,6 @@ class Patrol():
         if self.patrol_random_cat is None:
             choice(self.patrol_apprentices)
         if self.patrol_random_cat == self.patrol_leader:
-            """if len(self.patrol_cats) >= 2:
-                for cat in self.patrol_cats:
-                    if cat != self.patrol_leader:
-                        self.remaining_patrollers.append(cat)
-                self.patrol_random_cat = choice(self.remaining_patrollers)
-            else:"""
             self.patrol_random_cat = choice(self.patrol_cats)
 
         if len(self.patrol_cats) >= 3:
@@ -210,6 +206,7 @@ class Patrol():
         status_b = False
         status_c = False
         mode = False
+        # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
             if patrol_size >= patrol.min_cats:
                 min_good = True
@@ -231,6 +228,7 @@ class Patrol():
                 correct_season = True
             else:
                 correct_season = False
+            # makes sure that an apprentice is present if the apprentice tag is
             if "apprentice" in patrol.tags:
                 if "apprentice" not in self.patrol_statuses:
                     status_a = False
@@ -238,6 +236,7 @@ class Patrol():
                     status_a = True
             else:
                 status_a = True
+            # makes sure that the deputy is present if the deputy tag is
             if "deputy" in patrol.tags:
                 if "deputy" not in self.patrol_statuses:
                     status_b = False
@@ -247,6 +246,7 @@ class Patrol():
                     self.patrol_random_cat = self.patrol_cats[st_index]
             else:
                 status_b = True
+            # makes sure the leader is present when the leader tag is
             if "leader" in patrol.tags:
                 if "leader" not in self.patrol_statuses:
                     status_c = False
@@ -255,6 +255,7 @@ class Patrol():
             else:
                 status_c = True
 
+            # cruel season tag check
             if "cruel_season" in patrol.tags:
                 if game.clan.game_mode != 'cruel_season':
                     mode = False
@@ -263,6 +264,7 @@ class Patrol():
             else:
                 mode = True
 
+            # two apprentices check
             if "two_apprentices" in patrol.tags:
                 if len(self.patrol_apprentices) >= 2:
                     two_apprentices = True
@@ -271,6 +273,7 @@ class Patrol():
             else:
                 two_apprentices = True
 
+            # correct button check
             if patrol_type == 'hunting' and "hunting" in patrol.tags:
                 correct_button = True
             elif patrol_type == 'hunting' and "general" in patrol.tags:
@@ -288,10 +291,13 @@ class Patrol():
             else:
                 correct_button = False
 
+
+            # one last mode check for classic
             if game.clan.game_mode == 'classic':
                 if max_good and min_good and correct_season and correct_biome and status_a and status_b and status_c\
                     and two_apprentices:
                     final_patrols.append(patrol)
+            # this is for all patrols that aren't classic
             else:
                 if max_good and min_good and correct_season and correct_biome and status_a and status_b and status_c\
                      and correct_button and two_apprentices and mode:
