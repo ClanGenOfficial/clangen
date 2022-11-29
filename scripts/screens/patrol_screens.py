@@ -159,10 +159,18 @@ class PatrolScreen(Screens):
                                   )
 
         # PATROL TYPE BUTTONS
-        if game.game_mode != 'classic':
+        if game.clan.game_mode != 'classic':
             x_value = 323
             y_value = 560
             y_pos = 535
+
+            available = True
+
+            for x in range(len(game.switches['current_patrol'])):
+                patrol_cat = game.switches['current_patrol'][x]
+                if patrol_cat.status in ["medicine cat", "medicine cat apprentice"]:
+                    available = False
+                    continue
 
             if game.switches['patrol_chosen'] == 'training':
                 verdana.text("training patrol", ('center', y_pos))
@@ -176,30 +184,33 @@ class PatrolScreen(Screens):
             buttons.draw_image_button((x_value, y_value),
                                       button_name='button_paw',
                                       size=(34, 34),
-                                      available = False if game.clan.game_mode == 'classic' else True,
+                                      available=available,
                                       patrol_chosen='training'
                                       )
             x_value += 40
             buttons.draw_image_button((x_value, y_value),
                                       button_name='button_mouse',
                                       size=(34, 34),
-                                      available = False if game.clan.game_mode == 'classic' else True,
+                                      available=available,
                                       patrol_chosen='hunting'
                                       )
             x_value += 40
             buttons.draw_image_button((x_value, y_value),
                                       button_name='button_claws',
                                       size=(34, 34),
-                                      available = False if game.clan.game_mode == 'classic' else True,
+                                      available=available,
                                       patrol_chosen='border'
                                       )
             x_value += 40
             buttons.draw_image_button((x_value, y_value),
                                       button_name='button_herb',
                                       size=(34, 34),
-                                      available = False if game.clan.game_mode == 'classic' else True,
+                                      available=True,
                                       patrol_chosen='med'
                                       )
+
+
+
 
         # SHOW CAT INFO
         if game.switches['cat'] is not None:
