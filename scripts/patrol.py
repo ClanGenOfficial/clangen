@@ -431,6 +431,7 @@ class Patrol():
                     else:
                         self.handle_reputation(10)
             self.handle_mentor_app_pairing()
+            self.handle_relationships()
             self.final_success = self.patrol_event.success_text[n]
             if antagonize:
                 self.antagonize = self.patrol_event.antagonize_text
@@ -486,6 +487,7 @@ class Patrol():
                 elif "disaster" in self.patrol_event.tags:
                     self.handle_deaths()
             self.handle_mentor_app_pairing()
+            self.handle_relationships()
             self.final_fail = self.patrol_event.fail_text[n]
             if antagonize:
                 self.antagonize_fail = self.patrol_event.antagonize_fail_text
@@ -647,19 +649,20 @@ class Patrol():
 
         # change the values
         if "romantic" in self.patrol_event.tags:
-            romantic_love = 10
+            romantic_love = 5
         if "platonic" in self.patrol_event.tags:
-            platonic_like = 10
+            platonic_like = 5
         if "dislike" in self.patrol_event.tags:
             dislike = 5
         if "respect" in self.patrol_event.tags:
-            admiration = 10
+            admiration = 5
         if "comfort" in self.patrol_event.tags:
             comfortable = 5
         if "jealous" in self.patrol_event.tags:
             jealousy = 5
         if "trust" in self.patrol_event.tags:
-            trust = 10
+            trust = 5
+        
 
         # affect the relationship
         cat_ids = [cat.ID for cat in self.patrol_cats]
@@ -676,6 +679,14 @@ class Patrol():
                     rel.comfortable += comfortable
                     rel.jealousy -= jealousy
                     rel.trust += trust
+                    print("Gained relationship: " +
+                    "Romantic: +" + str(romantic_love) +
+                    " Platonic: +" + str(platonic_like) +
+                    " Dislike: -" + str(dislike) +
+                    " Respect: +" + str(admiration) +
+                    " Comfort: +" + str(comfortable) +
+                    " Jealousy: -" + str(jealousy) +
+                    " Trust: +" + str(trust))
                 elif not self.success:
                     rel.romantic_love -= romantic_love
                     rel.platonic_like -= platonic_like
@@ -684,6 +695,14 @@ class Patrol():
                     rel.comfortable -= comfortable
                     rel.jealousy += jealousy
                     rel.trust -= trust
+                    print("Gained relationship: " +
+                    "Romantic: -" + str(romantic_love) +
+                    " Platonic: -" + str(platonic_like) +
+                    " Dislike: +" + str(dislike) +
+                    " Respect: -" + str(admiration) +
+                    " Comfort: -" + str(comfortable) +
+                    " Jealousy: +" + str(jealousy) +
+                    " Trust: -" + str(trust))
 
     def add_new_cats(self, litter_choice):
         if "new_cat" in self.patrol_event.tags:
