@@ -1,46 +1,18 @@
 [
     {
-        "patrol_id": "gen_bord_fox1",
-        "biome": "Any",
-        "season": "Any",
-        "tags": ["fighting", "death", "scar", "injury"],
-        "intro_text": "Your patrol catches the scent of a fox.",
-        "success_text": [
-            "Your patrol finds the fox and drives it away.", 
-            "Your patrol manages to catch the fox by surprise and chase it all the way to the border.",
-            "Your patrol expertly fights the fox off. s_c is snapping at the fox's heels as they drive it from the territory."],
-        "fail_text": [
-            "Your patrol fails to drive away to fox, but luckily there were no injuries.", 
-            null, 
-            "Your patrol follows the scent, but they get ambushed! r_c is caught in the fox's jaws and suffers a fatal wound.", 
-            "The mother fox fights to defend her cubs, and r_c is injured in the attack."],
-        "decline_text": "Your patrol decides not to pursue the fox.",
-        "chance_of_success": 40,
-        "exp": 10,
-        "win_skills": ["good fighter", "great fighter", "excellent fighter"],
-        "min_cats": 1,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "This cat is scarred from a fight with a mother fox.",
-            "This cat was killed in a fight with an angry mother fox."
-        ]
-    },
-    {
         "patrol_id": "gen_bord_dog1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["fighting", "death", "scar", "injury", "respect", "border"],
+        "tags": ["fighting", "death", "scar", "injury", "border", "clan_respect"],
         "intro_text": "r_c tracks the scent of a large dog, wandering along the edge of the clan's territory.",
-        "decline_text": "r_cdecides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
+        "decline_text": "r_c decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
         "chance_of_success": 10,
         "exp": 40,
         "success_text": [
             "r_c bolts back to camp, yowling a warning!",
             null,
             "s_c sets up an ambush for the wandering dog, bloodying its snout and leading it on a wild chasing dance across the border and out of c_n territory.",
-            "They don't feel like they have anything like the skill or power , but s_c would give their life for c_n, charging in to courageously lead the dog away from c_n territory. Each booming bark has to be the herald of their doom, each rancid breath the last thing they'll ever smell, but somehow, eventually, limbs and lungs burning, they leap to refuge."
+            "They don't feel like they have anything like the skill or power, but s_c would give their life for c_n, charging in to courageously lead the dog away from c_n territory. Each booming bark has to be the herald of their doom, each rancid breath the last thing they'll ever smell, but somehow, eventually, limbs and lungs burning, they leap to refuge."
         ],
         "fail_text": [
             null,
@@ -50,8 +22,8 @@
         ],
         "win_skills": ["excellent fighter"],
         "win_trait": ["altruistic", "ambitious", "compassionate", "confident", "empathetic", "faithful", "fierce", "loving", "loyal", "responsible", "righteous"], 
-        "max_cats": 1,
         "min_cats": 1,
+        "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
         "history_text": [
@@ -65,6 +37,9 @@
         "season": "Any",
         "tags": ["fighting", "death", "scar", "injury", "respect", "trust", "border"],
         "intro_text": "Your patrol tracks the scent of a large dog, wandering along the edge of the clan's territory.",
+        "decline_text": "Your patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
+        "chance_of_success": 30,
+        "exp": 20,
         "success_text": [
             "The patrol shadows the dog, sending a message back to warn camp. It's an exhausting and stressful day, but by the time night falls they've confirmed that the dog is leaving the local area, and the patrol has assured c_n's safety.",
             "Your patrol gathers their courage and valiantly tries to lead away the dog. With such a small group of cats, they can only lead it a short distance, but it's better than nothing.",
@@ -76,15 +51,14 @@
             "The patrol tries to lead the dog away from the clan's borders, but with so few cats it's impossible to cover each other's backs. r_c falls to the dog as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their clanmate.",
             "The patrol tries bravely to lead the dog away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c gets caught while running and it's all the rest of the patrol can do to distract the dog long enough to get r_c to safety."
         ],
-        "decline_text": "Your patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
-        "chance_of_success": 30,
-        "exp": 20,
-        "max_cats": 3,
+        "win_skills": ["excellent fighter"],
+        "win_trait": ["altruistic", "compassionate", "confident", "empathetic", "faithful", "fierce", "loving", "loyal", "responsible", "righteous"],
+        "fail_skills": ["None"],
+        "fail_trait": ["ambitious", "bloodthirsty", "troublesome", "vengeful"],
         "min_cats": 2,
+        "max_cats": 3,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "win_skills": ["excellent fighter"],
-        "win_trait": ["altruistic", "ambitious", "compassionate", "confident", "empathetic", "faithful", "fierce", "loving", "loyal", "responsible", "righteous"], 
         "history_text": [
             "This cat is scarred from bravely defending the clan against a dog.",
             "This cat died to keep the clan safe from a large dog."
@@ -96,6 +70,9 @@
         "season": "Any",
         "tags": ["fighting", "death", "scar", "injury", "respect", "trust", "border"],
         "intro_text": "Your patrol stumbles across a large dog, wandering in the middle of the clan's territory.",
+        "decline_text": "Your patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
+        "chance_of_success": 50,
+        "exp": 20,
         "success_text": [
             "They decide that no cat is going to be surprised by this predator again, and the patrol shadows the dog, sending a message to warn camp. With enough cats to keep watch, rest, track, and send messages forward and back from camp, c_n is kept safe from the wandering dog.",
             "Your patrol gathers their courage and valiantly drives away the dog. Together, working as one, and with all the strength of Starclan behind them, the patrol presses the dog. By keeping up a series of small skirmishes through the entire day, they drive it all the way off c_n territory.",
@@ -108,15 +85,14 @@
             "With so many cats all working as one, the dog started to get beaten back. But just as the tide of the fight seems about to turn, one lucky strike hits r_c, and those vicious jaws take them to starclan.",
             "The patrol fights bravely, but you only need to be unlucky once. r_c gets taken out of the fight with one snap of the beast's huge jaws. The rest of the patrol rallies to defend them, and r_c is safely helped back to camp, where the medicine den awaits."
         ],
-        "decline_text": "Your patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
-        "chance_of_success": 50,
-        "exp": 20,
-        "max_cats": 6,
-        "min_cats": 4,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
         "win_skills": ["excellent fighter"],
-        "win_trait": ["altruistic", "ambitious", "compassionate", "confident", "empathetic", "faithful", "fierce", "loving", "loyal", "responsible", "righteous"], 
+        "win_trait": ["altruistic", "compassionate", "confident", "empathetic", "faithful", "fierce", "loving", "loyal", "responsible", "righteous"],
+        "fail_skills": ["None"],
+        "fail_trait": ["ambitious", "bloodthirsty", "troublesome", "vengeful"],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null, 
         "history_text": [
             "This cat is scarred from bravely defending the clan against a dog.",
             "This cat died to keep the clan safe from a large dog."
@@ -128,6 +104,9 @@
         "season": "Any",
         "tags": ["fighting", "scar", "death", "injury"],
         "intro_text": "Your patrol comes across a small dog.",
+        "decline_text": "The patrol decides not to pursue the dog.",
+        "chance_of_success": 60,
+        "exp": 10,
         "success_text": [
             "r_c hisses at the dog, warning it off. It skitters back, yapping loudly but headed in the right direction. Maybe they should add dog herding to their list of accomplishments?", 
             "r_c unsheathes their claws, puffs their fur out to as far as it'll go, gathers their courage, and drives the small dog from the border.", 
@@ -137,14 +116,11 @@
             null, 
             "The animal is far more tenacious than r_c ever expected, and once the fight starts, there's no escaping from it. As r_c's world goes dark, they have their fangs sunk in the dog's throat. At least they'll take the beast with them.", 
             "Small, yappy, but . . . still a dog. r_c peers down from the tree where the animal has pinned them, wincing in pain. They won't underestimate these ugly creatures again."],
-        "decline_text": "The patrol decides not to pursue the dog.",
-        "chance_of_success": 60,
-        "exp": 10,
+        "win_skills": ["good fighter","great fighter","excellent fighter"],
         "min_cats": 1,
         "max_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "win_skills": ["good fighter","great fighter","excellent fighter"],
         "history_text": [
             "This cat got a scar from a fight with a small dog, but they always say it was a huge dog.",
             "This cat was killed in a fight with a small dog, but they took the dog out with them."
@@ -156,6 +132,9 @@
         "season": "Any",
         "tags": ["fighting", "scar", "injury"],
         "intro_text": "Your patrol comes across a small dog, right on the border of c_n territory.",
+        "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
+        "chance_of_success": 60,
+        "exp": 10,
         "success_text": [
             "p_l hisses at the small dog, and the rest of their small team back them up. The dog skitters back, yapping loudly, apparently shocked by the display, and the patrol breaks out into yowls and caterwauls, screaming until the small beast's nerve breaks, and it runs from the c_n border into the distance.", 
             "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.", 
@@ -165,14 +144,10 @@
             null, 
             null, 
             "The dog gets a lucky hit in on r_c, though together all the cats are still able to drive it off successfully."],
-        "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
-        "chance_of_success": 60,
-        "exp": 10,
+        "win_skills": ["good fighter","great fighter","excellent fighter"],
         "min_cats": 2,
         "max_cats": 3,
         "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "win_skills": ["good fighter","great fighter","excellent fighter"],
         "history_text": [
             "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
         ]
@@ -183,21 +158,24 @@
         "season": "Any",
         "tags": ["fighting", "scar", "injury"],
         "intro_text": "Your patrol comes across a small dog, right on the border of c_n territory.",
+        "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
+        "chance_of_success": 60,
+        "exp": 10,
         "success_text": [
             "The patrol paces towards the small dog, claws out, fur up, backed up with the courage of their clanmates. The dog breaks into a barking fit, but that's their opportunity to attack, covering each other as they push the creature away from their lands.", 
             "Mobbed by cats and near blind with the blood in its eyes, the dog flees from c_n, yelping pitifully.", 
             "s_c calls out a battle plan, and the cats flow into it, carefully covering each other and driving the dog backwards until its nerve breaks, it tucks tail, and it runs from c_n territory headed deep into the wilderness."],
         "fail_text": [
-            "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait exasperatedly in a safe spot until the beast calms down."
+            "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait exasperatedly in a safe spot until the beast calms down.",
+            null,
+            null,
+            "The dog gets a lucky hit in on r_c, though together all the cats are still able to drive it off successfully."
         ],
-        "decline_text": "p_l decides not to pursue the dog, instead cutting the patrol short to head back to camp and report it.",
-        "chance_of_success": 60,
-        "exp": 10,
         "min_cats": 4,
         "max_cats": 6,
+        "win_skills": ["good fighter","great fighter","excellent fighter"],
         "antagonize_text": null,
         "antagonize_fail_text": null,
-        "win_skills": ["good fighter","great fighter","excellent fighter"],
         "history_text": [
             "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
         ]
@@ -208,6 +186,9 @@
         "season": "Any",
         "tags": ["fighting", "injury", "death", "scar"],
         "intro_text": "A gang of rogues confronts your patrol.",
+        "decline_text": "The patrol sprints back to camp.",
+        "chance_of_success": 40,
+        "exp": 10,
         "success_text": [
             "Your patrol drives away the rogues.", 
             "Your patrol gives the rogues a thrashing they won't soon forget. Don't mess with c_n.",
@@ -220,9 +201,6 @@
             "The rogues are bloodthirsty and kill r_c before they leave.",
             "The rogues fight viciously and leave r_c with a deep wound before they run off."
         ],
-        "decline_text": "The patrol sprints back to camp.",
-        "chance_of_success": 40,
-        "exp": 10,
         "win_skills": ["excellent fighter"],
         "win_trait": ["fierce", "bloodthirsty"],
         "min_cats": 1,
@@ -235,41 +213,14 @@
         ]
     },
     {
-        "patrol_id": "gen_bord_badger1",
-        "biome": "Any",
-        "season": "Any",
-        "tags": ["fighting", "death", "scar", "injury"],
-        "intro_text": "There is a badger den up ahead.",
-        "success_text": [
-            "Your patrol chases the badger off of the territory.", 
-            "Your patrol swiftly takes care of the threat, chasing the badger far off the territory.",
-            "s_c rushes in, clawing at the badger's sensitive eyes. The badger bellows in pain and blindly lumbers off the territory with the patrol not far behind."
-        ],
-        "fail_text": [
-            "Your patrol fails to drive the badger away, but luckily manages to escape any injuries.", 
-            null, 
-            "The badger is furious when the patrol nears its den and kills r_c.",
-            "The badger is angered when the patrol nears its den and badly injures r_c."
-        ],
-        "decline_text": "The patrol avoids the badger den.",
-        "chance_of_success": 40,
-        "exp": 10,
-        "win_skills": ["excellent fighter"],
-        "min_cats": 1,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "This cat was scarred in a fight with a badger.",
-            "This cat died at jaws of an angry badger."
-        ]
-    },
-    {
         "patrol_id": "gen_bord_rogues2",
         "biome": "Any",
         "season": "Any",
-        "tags": ["fighting"],
+        "tags": ["fighting", "death", "injury", "scar"],
         "intro_text": "While on patrol, r_c notices some suspicious pawprints in the ground.",
+        "decline_text": "They decide not to investigate.",
+        "chance_of_success": 60,
+        "exp": 10,
         "success_text": [
             "The pawprints lead to a trespassing rogue and the patrol drives them off of the territory.", 
             null,
@@ -279,9 +230,6 @@
             null,
             "The pawprints lead to a trespassing rogue. The rogue is fierce and kills r_c before being run off.",
             "The pawprints lead to a trespassing rogue who injures r_c before being driven away."],
-        "decline_text": "They decide not to investigate.",
-        "chance_of_success": 60,
-        "exp": 10,
         "win_skills": ["good fighter", "very smart", "extremely smart", "excellent fighter"],
         "min_cats": 2,
         "max_cats": 6,
@@ -298,56 +246,14 @@
         "season": "Any",
         "tags": ["border"],
         "intro_text": "r_c is nervous doing a patrol by themselves.",
-        "success_text": ["They don't let their nerves get to them and continue the patrol successfully."],
-        "fail_text": ["They run back to camp, unable to continue."],
         "decline_text": "They continue the patrol but progress is slow.",
         "chance_of_success": 40,
         "exp": 10,
+        "success_text": ["They don't let their nerves get to them and continue the patrol successfully."],
+        "fail_text": ["They run back to camp, unable to continue."],
         "win_skills": ["very smart" , "extremely smart"],
         "max_cats": 1,
         "min_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
-    },
-    {
-        "patrol_id": "gen_bord_heat1",
-        "biome": "Any",
-        "season": "greenleaf",
-        "tags": ["border", "death", "illness"],
-        "intro_text": "It is extremely hot out today. r_c debates turning back home.",
-        "success_text": [
-            "They decide to power through the weather and the patrol successfully marks all of the borders.",
-            "The patrol stops to cool off in the shade of a tree for a heartbeat before continuing on their way."],
-        "fail_text": [
-            "No way, it's too hot for this. They can try to patrol again later.", 
-            null,
-            "r_c collapses from heat exhaustion. p_l carries them back to camp, but they don't recover.",
-            "r_c collapses from heat exhaustion. p_l carries them back to camp."],
-        "decline_text": "The patrol decides to head back to camp, they can patrol a different day",
-        "chance_of_success": 50,
-        "exp": 5,
-        "min_cats": 2,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "This cat got heatstroke while on a patrol.",
-            "This cat died from heat heat stroke."
-        ]
-    },
-    {
-        "patrol_id": "gen_bord_heat2",
-        "biome": "Any",
-        "season": "greenleaf",
-        "tags": ["border"],
-        "intro_text": "r_c spots a pond and debates if they should stop for a quick swim to cool off.",
-        "success_text": ["They stop to swim for a few moments and feel rejuvenated."],
-        "fail_text": ["They get distracted while splashing in the water."],
-        "decline_text": "r_c decides to continue with the patrol instead.",
-        "chance_of_success": 50,
-        "exp": 5,
-        "min_cats": 1,
-        "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null
     }
