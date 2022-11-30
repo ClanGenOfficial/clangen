@@ -256,5 +256,47 @@
         "min_cats": 1,
         "antagonize_text": null,
         "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "gen_bord_heat1",
+        "biome": "Any",
+        "season": "greenleaf",
+        "tags": ["border", "death", "illness"],
+        "intro_text": "It is extremely hot out today. r_c debates turning back home.", 
+        "decline_text": "The patrol decides to head back to camp. They can patrol a different day.",
+        "chance_of_success": 50,
+        "exp": 5,
+        "success_text": [
+            "They decide to power through the weather and the patrol successfully marks all of the borders.",
+            "The patrol stops to cool off in the shade of a tree for a heartbeat before continuing on their way."],
+        "fail_text": [
+            "No way, it's too hot for this. They can try to patrol again later.", 
+            null,
+            "r_c collapses from heat exhaustion. p_l carries them back to camp, but they don't recover.",
+            "r_c collapses from heat exhaustion. p_l carries them back to camp."],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "This cat got heatstroke while on a patrol.",
+            "This cat died from heat stroke."
+        ]
+    },
+    {
+        "patrol_id": "gen_bord_heat2",
+        "biome": "Any",
+        "season": "greenleaf",
+        "tags": ["border"],
+        "intro_text": "r_c spots a pond and debates if they should stop for a quick swim to cool off.",
+        "decline_text": "r_c decides to continue with the patrol instead.",
+        "chance_of_success": 50,
+        "exp": 5,
+        "success_text": ["They stop to swim for a few moments and feel rejuvenated."],
+        "fail_text": ["They get distracted while splashing in the water."],
+        "min_cats": 1,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
     }
 ]
