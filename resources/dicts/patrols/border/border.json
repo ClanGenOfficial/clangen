@@ -3,7 +3,7 @@
         "patrol_id": "gen_bord_dog1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["fighting", "death", "scar", "injury", "border", "clan_respect"],
+        "tags": ["fighting", "death", "scar", "injury", "border", "respect", "clan_to_patrol"],
         "intro_text": "r_c tracks the scent of a large dog, wandering along the edge of the clan's territory.",
         "decline_text": "r_c decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
         "chance_of_success": 10,
