@@ -1312,11 +1312,13 @@ class PatrolEvent():
         tags = [
             "hunting", "other_clan", "fighting", "death", "scar", "new_cat", 
             "npc", "retirement", "injury", "illness", "romantic", "platonic", 
-            "comfort", "respect", "trust", "dislike", "jealousy", "relation_r_c", 
-            "relation_p_l" "med_cat", "training", "apprentice", "border", "reputation", 
-            "leader", "gone", "multi_gone", "disaster_gone", "herbs", "deputy", "small_prey", 
-            "big_prey", "disaster", "multi_deaths", "kits", "cruel_season", "two_apprentices", 
-            "warrior", "relation_two_app", "no_app", "clan_respect", 
+            "comfort", "respect", "trust", "dislike", "jealousy", "med_cat", 
+            "training", "apprentice", "border", "reputation", "leader", "gone", 
+            "multi_gone", "disaster_gone", "herbs", "deputy", "small_prey", "big_prey", 
+            "disaster", "multi_deaths", "kits", "cruel_season", "two_apprentices", 
+            "warrior", "no_app", "clan_to_p_l", "clan_to_r_c", "patrol_to_p_l", "patrol_to_r_c", 
+            "rel_two_apps", "p_l_to_r_c", "clan_to_patrol", "rel_patrol"
+
         ]
 
         """tag info:
