@@ -205,6 +205,8 @@ class Patrol():
         status_a = False
         status_b = False
         status_c = False
+        status_d = False
+        no_app = False
         mode = False
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
@@ -234,6 +236,7 @@ class Patrol():
                     status_a = False
                 else:
                     status_a = True
+            # sets it as true if the status tag is not in bc the check no longer applies
             else:
                 status_a = True
             # makes sure that the deputy is present if the deputy tag is
@@ -254,6 +257,25 @@ class Patrol():
                     status_c = True
             else:
                 status_c = True
+
+            # makes sure at least one warrior is present
+            if "warrior" in patrol.tags:
+                if ("warrior" or "deputy" or "leader") not in self.patrol_statuses:
+                    status_d = False
+                else:
+                    status_d = True
+            else:
+                status_d = True
+
+            # makes sure no apps are present if they're not supposed to be
+            # mostly for romance patrols between warriors
+            if "no app" in patrol.tags:
+                if "apprentice" in self.patrol_statuses:
+                    no_app = False
+                else:
+                    no_app = True
+            else:
+                no_app = True
 
             # cruel season tag check
             if "cruel_season" in patrol.tags:
@@ -295,12 +317,12 @@ class Patrol():
             # one last mode check for classic
             if game.clan.game_mode == 'classic':
                 if max_good and min_good and correct_season and correct_biome and status_a and status_b and status_c\
-                    and two_apprentices:
+                    and status_d and no_app and two_apprentices:
                     final_patrols.append(patrol)
             # this is for all patrols that aren't classic
             else:
                 if max_good and min_good and correct_season and correct_biome and status_a and status_b and status_c\
-                     and correct_button and two_apprentices and mode:
+                    and status_d and correct_button and no_app and two_apprentices and mode:
                         final_patrols.append(patrol)
         
         return final_patrols   
