@@ -148,6 +148,7 @@
         "min_cats": 2,
         "max_cats": 3,
         "antagonize_text": null,
+        "antagonize_fail_text": null,
         "history_text": [
             "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
         ]
