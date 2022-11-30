@@ -268,8 +268,8 @@ class Patrol():
                 status_d = True
 
             # makes sure no apps are present if they're not supposed to be
-            # mostly for romance patrols between warriors
-            if "no app" in patrol.tags:
+            # mostly for romance patrols between warriors/dumb stuff that they wouldn't involve apprentices in
+            if "no_app" in patrol.tags:
                 if "apprentice" in self.patrol_statuses:
                     no_app = False
                 else:
@@ -873,17 +873,20 @@ class PatrolEvent():
             fail text [3] is scar"""
 
         tags = [
-            "hunting", "other_clan", "fighting", "death", "scar", "new_cat", "npc", 
-            "retirement", "injury", "illness", "romantic", "platonic", "comfort", 
-            "respect", "trust", "dislike", "jealousy", "relation_r_c", "relation_p_l",
-            "med_cat", "training", "apprentice", "border", "reputation", "leader", 
-            "gone", "multi_gone", "disaster_gone", "herbs", "deputy", "small_prey", 
-            "big_prey", "disaster", "multi_deaths", "kits", "cruel_season", "two_apprentices"
+            "hunting", "other_clan", "fighting", "death", "scar", "new_cat", 
+            "npc", "retirement", "injury", "illness", "romantic", "platonic", 
+            "comfort", "respect", "trust", "dislike", "jealousy", "relation_r_c", 
+            "relation_p_l" "med_cat", "training", "apprentice", "border", "reputation", 
+            "leader", "gone", "multi_gone", "disaster_gone", "herbs", "deputy", "small_prey", 
+            "big_prey", "disaster", "multi_deaths", "kits", "cruel_season", "two_apprentices", 
+            "warrior", "relation_two_app", "no_app", "clan_respect", 
         ]
 
         """tag info:
         death tags: you can only have ONE death tag. if you have multiple, it picks the first one in this order:
-        "death" (kills r_c) > "disaster" (kills whole patrol) > "multi_deaths" (kills 2-4 cats)"""
+        "death" (kills r_c) > "disaster" (kills whole patrol) > "multi_deaths" (kills 2-4 cats)
+        
+        relation_r_c also works for s_c"""
 
 
 patrol = Patrol()
