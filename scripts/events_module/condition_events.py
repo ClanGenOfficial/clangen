@@ -94,7 +94,7 @@ class Condition_Events():
         """
         # one if-statement has a range of 10
         number_of_conditions = 4 * 10
-        ratio = 75 # 1/75 times triggering for each cat each moon
+        ratio = 40 # 1/75 times triggering for each cat each moon
         chance_number = number_of_conditions * ratio
 
         random_number = int(random.random() * chance_number)
@@ -164,24 +164,26 @@ class Condition_Events():
                         continue
                     if "other_cat_mentor" in event.tags and cat.mentor != other_cat.ID:
                         continue
+                    elif "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten"]:
+                        continue
 
                     if "clan_kits" in event.tags and not alive_kits:
                         continue
 
                     if event.cat_trait is not None:
-                        if cat.trait not in event.cat_trait and int(random.random() * 8):
+                        if cat.trait not in event.cat_trait and int(random.random() * 10):
                             continue
 
                     if event.cat_skill is not None:
-                        if cat.skill not in event.cat_skill and int(random.random() * 8):
+                        if cat.skill not in event.cat_skill and int(random.random() * 10):
                             continue
 
                     if event.other_cat_trait is not None:
-                        if other_cat.trait not in event.other_cat_trait and int(random.random() * 8):
+                        if other_cat.trait not in event.other_cat_trait and int(random.random() * 10):
                             continue
 
                     if event.other_cat_skill is not None:
-                        if other_cat.skill not in event.other_cat_skill and int(random.random() * 8):
+                        if other_cat.skill not in event.other_cat_skill and int(random.random() * 10):
                             continue
 
                     final_events.append(event)
@@ -194,7 +196,9 @@ class Condition_Events():
 
                 injury_event = random.choice(final_events)
                 danger_chosen = random.choice(danger)
-                tail_danger_chosen = random.choice(danger)
+                tail_danger_chosen = random.choice(tail_danger)
+
+                print(cat.name, cat.status, len(final_events), other_cat.name)
 
                 text = injury_event.event_text
                 text = text.replace("m_c", name)
@@ -211,7 +215,6 @@ class Condition_Events():
                     cat.possible_scar = str(scar_text)
 
                 cat.get_injured(injury_event.injury)
-
 
         if not triggered:
             return triggered
@@ -230,51 +233,79 @@ class Condition_Events():
         Returns: boolean (if something happened) and the event_string
         """
         triggered = False
+        healed_injury = []
 
         if game.clan.game_mode == "classic":
             return triggered
 
         event_string = None
-        for risk in cat.injury.risks:
-            if risk["chance"] and not int(random.random() * risk["chance"]):
-                for risk in cat.injury.risks:
-                    risk["chance"] = 0
-                triggered = True
-                new_illness = risk['name']
-                event_string = f"The {cat.injury.name} caused {cat.name} to get {new_illness}."
-                cat.get_ill(new_illness)
-                break
+        for injury in cat.injuries:
+            risks = cat.injuries[injury]["risks"]
+            for risk in risks:
+                if risk["chance"] and not int(random.random() * risk["chance"]):
+                    for chosen_risk in risks:
+                        # this stops the cat from gaining a risk condition that they've already gotten
+                        chosen_risk["chance"] = 0
+                    triggered = True
+                    new_illness = risk['name']
+                    event_string = f'The {injury} caused {cat.name} to get {new_illness}.'
+                    cat.get_ill(new_illness)
+                    break
 
         if not triggered:
-            injury_name = cat.injury.name
-            cat.moon_skip_injury()
-            if cat.dead:
-                triggered = True
-                save_death(cat, event_string)
-                if injury_name in ["bruises", "cracked pads", "joint pain", "scrapes", "tick bites", "water in their lungs", "frostbite"]:
-                    event_string = f"{cat.name} has died in the medicine den from {injury_name} "
-                    if cat.status == "leader":
-                        cat.died_by = f"died from {injury_name}."
+            for y in cat.injuries:
+                injury = y
+                cat.moon_skip_injury(injury)
+                if cat.dead:
+                    triggered = True
+                    save_death(cat, event_string)
+                    if injury in ["bruises", "cracked pads", "joint pain", "scrapes", "tick bites", "water in their lungs", "frostbite"]:
+                        event_string = f"{cat.name} has died in the medicine den from {injury} "
+                        if cat.status == "leader":
+                            cat.died_by = f"died from {injury}."
+                        else:
+                            cat.died_by = f"{cat.name} died from {injury}."
                     else:
-                        cat.died_by = f"{cat.name} died from {injury_name}."
-                else:
-                    event_string = f"{cat.name} has died in the medicine den from a {injury_name}."
-                    if cat.status == "leader":
-                        cat.died_by = f"died from a {injury_name}."
-                    else:
-                        cat.died_by = f"{cat.name} died from a {injury_name}."
+                        event_string = f"{cat.name} has died in the medicine den from a {injury}."
+                        if cat.status == "leader":
+                            cat.died_by = f"died from a {injury}."
+                        else:
+                            cat.died_by = f"{cat.name} died from a {injury}."
 
-            elif cat.injury is None:
-                triggered = True
-                if cat.possible_scar is not None:
-                    event_string = self.scar_events.handle_scars(cat, injury_name)
-                else:
-                    if injury_name in ["bruises", "cracked pads", "scrapes", "tick bites"]:
-                        event_string = f"{cat.name}'s {injury_name} have healed."
+                    cat.not_working = False
+
+                elif cat.healed_injury is not None:
+                    triggered = True
+                    scar_given = None
+                    if cat.possible_scar is not None:
+                        event_string, scar_given = self.scar_events.handle_scars(cat, injury)
                     else:
-                        event_string = f"{cat.name}'s {injury_name} has healed."
+                        if injury in ["bruises", "cracked pads", "scrapes", "tick bites"]:
+                            event_string = f"{cat.name}'s {injury} have healed."
+                        else:
+                            event_string = f"{cat.name}'s {injury} has healed."
+
+                    healed_injury.append(injury)
+                    cat.not_working = False
+                    self.handle_permanent_conditions(cat, injury, scar_given)
+
+        if cat.healed_injury is not None:
+            for y in healed_injury:
+                cat.injuries.pop(y)
+            cat.healed_injury = None
+
 
         return triggered, event_string
+
+    def handle_permanent_conditions(self, cat, injury_name, scar):
+        """
+        need to check for what injury was healed and assign condition that may have been caused
+
+        need to check for what scar was assigned and assign condition that may have been caused
+
+        epilepsy, allergies, recovering from birth, shock, lingering shock, phantom pain, sore muscles, loss of balance, concussion
+        """
+
 
     def generate_injury_event(self, events_dict):
         possible_events = []
@@ -348,10 +379,6 @@ with open(f"{resource_directory}{event_triggered}apprentice.json", 'r') as read_
 WARRIOR_EVENT_INJURIES = None
 with open(f"{resource_directory}{event_triggered}warrior.json", 'r') as read_file:
     WARRIOR_EVENT_INJURIES = ujson.loads(read_file.read())
-
-WARRIOR_ALIKE_EVENT_INJURIES = None
-with open(f"{resource_directory}{event_triggered}warrior_and_alike.json", 'r') as read_file:
-    WARRIOR_ALIKE_EVENT_INJURIES = ujson.loads(read_file.read())
 
 MED_ALIKE_EVENT_INJURIES = None
 with open(f"{resource_directory}{event_triggered}medicine_and_alike.json", 'r') as read_file:

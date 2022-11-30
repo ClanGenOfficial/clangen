@@ -1,0 +1,221 @@
+{
+    "missing a leg": {
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 20
+            },
+            {
+                "name": "phantom pain",
+                "chance": 10
+            },
+            {
+                "name": "sore muscles",
+                "chance": 20
+            },
+            {
+                "name": "joint pain",
+                "chance": 40
+            }
+        ]
+    },
+    "weak leg": {
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "sore muscles",
+                "chance": 20
+            },
+            {
+                "name": "joint pain",
+                "chance": 40
+            }
+        ]
+    },
+    "twisted leg": {
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "sore muscles",
+                "chance": 20
+            },
+            {
+                "name": "joint pain",
+                "chance": 40
+            }
+        ]
+    },
+    "missing a tail": {
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 20
+            },
+            {
+                "name": "phantom pain",
+                "chance": 10
+            }
+        ]
+    },
+    "paralyzed": {
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 20
+            },
+            {
+                "name": "phantom pain",
+                "chance": 10
+            },
+            {
+                "name": "torn pelt",
+                "chance": 15
+            }
+        ]
+    },
+    "raspy lungs": {
+        "mortality": {
+            "kitten": 15,
+            "adolescent": 60,
+            "young adult": 80,
+            "adult": 80,
+            "senior adult": 60,
+            "elder": 30
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "whitecough",
+                "chance": 20
+            }
+        ]
+    },
+    "blind": {
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ]
+    },
+    "one bad eye": {
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "blind",
+                "chance": 50
+            }
+        ]
+    },
+    "partial hearing loss": {
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "deaf",
+                "chance": 50
+            }
+        ]
+    },
+    "deaf": {
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ]
+
+    },
+    "joint pain": {
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ]
+    }
+}

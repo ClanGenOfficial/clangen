@@ -1,6 +1,6 @@
 [
 {
-    "death_tags": ["multi_death", "other_cat", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_tags": ["multi_death", "illness", "other_cat", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c and r_c die from eating tainted prey.",
     "history_text": "died from eating tainted prey.",
     "cat_trait": null,
@@ -36,7 +36,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["multi_death", "other_cat_kit", "kitten", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_tags": ["multi_death", "illness", "other_cat_kit", "kitten", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "Greencough reaches the nursery. r_c and d_c die.",
     "history_text": "died from greencough.",
     "cat_trait": null,
@@ -45,7 +45,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["multi_death", "other_cat_kit", "kitten", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_tags": ["multi_death", "illness", "other_cat_kit", "kitten", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "r_c and d_c die from a bout of kittencough.",
     "history_text": "died from greencough.",
     "cat_trait": null,
@@ -54,7 +54,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["multi_death", "other_cat_kit", "kitten", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_tags": ["multi_death", "illness", "other_cat_kit", "kitten", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "r_c and d_c catch whitecough and fade away quickly.",
     "history_text": "died from whitecough.",
     "cat_trait": null,
@@ -63,7 +63,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["multi_death", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_tags": ["multi_death", "illness", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "r_c and d_c die of greencough.",
     "history_text": "died from greencough.",
     "cat_trait": null,
@@ -72,7 +72,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["multi_death", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_tags": ["multi_death", "illness", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "r_c and d_c die of yellowcough.",
     "history_text": "died from yellowcough.",
     "cat_trait": null,
@@ -81,7 +81,7 @@
     "other_cat_skill": null
 },
 {
-    "death_tags": ["multi_death", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_tags": ["multi_death", "illness", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "A bad case of greencough strikes, r_c and d_c die.",
     "history_text": "died from greencough.",
     "cat_trait": null,

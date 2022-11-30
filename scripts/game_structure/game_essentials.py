@@ -346,7 +346,8 @@ class Game():
                 "possible_scar": inter_cat.possible_scar if inter_cat.possible_scar else None,
                 "scar_event": inter_cat.scar_event if inter_cat.scar_event else [],
                 "df": inter_cat.df,
-                "corruption": inter_cat.corruption if inter_cat.corruption else 0
+                "corruption": inter_cat.corruption if inter_cat.corruption else 0,
+                "not_working": inter_cat.not_working if inter_cat.not_working else False
             }
             clan_cats.append(cat_data)
             inter_cat.save_condition()

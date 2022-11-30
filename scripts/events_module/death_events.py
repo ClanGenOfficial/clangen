@@ -87,6 +87,8 @@ class Death_Events():
                 continue
             if cat.status == "leader" and "leader" not in death.death_tags:
                 continue
+            if "kitten" in death.death_tags and cat.status != "kitten":
+                continue
 
             # check other_cat rank
             if "other_cat_leader" in death.death_tags and other_cat.status != "leader":

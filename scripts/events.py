@@ -657,34 +657,6 @@ class Events():
         if scar_text:
             chosen_scar = choice(scar_text)
 
-            # add the injury, when the cat fell into a river
-            if game.clan.game_mode != 'classic':
-                if "river" in chosen_scar and not cat.is_ill() and random.random() * 5:
-                    chosen_scar = f"{chosen_scar} {name} now has water in their lungs."
-                    cat.get_injured("water in their lungs", event_triggered = True)
-                elif specialty in ["LEFTEAR", "RIGHTEAR"] and "injured" in chosen_scar:
-                    injury_name = "torn ear"
-                    chosen_scar = f"{chosen_scar} {name} gained a scar and also a {injury_name}."
-                    cat.get_injured(injury_name, event_triggered = True)
-                elif "injured by" in chosen_scar:
-                    possible_injuries = ["bite-wound", "bruises", "claw-wound", "scrapes", "torn pelt"]
-                    random_index = int(random.random() * len(possible_injuries))
-                    injury_name = possible_injuries[random_index]
-                    if injury_name in ["bruises", "scrapes", "joint pain"]:
-                        chosen_scar = f"{chosen_scar} {name} gained a scar and also {injury_name}."
-                    else:
-                        chosen_scar = f"{chosen_scar} {name} gained a scar and also a {injury_name}."
-                    cat.get_injured(injury_name, event_triggered = True)
-                elif "injured" in chosen_scar:
-                    possible_injuries = ["bruises", "scrapes", "torn pelt", "joint pain", "dislocated joint"]
-                    random_index = int(random.random() * len(possible_injuries))
-                    injury_name = possible_injuries[random_index]
-                    if injury_name in ["bruises", "scrapes", "joint pain"]:
-                        chosen_scar = f"{chosen_scar} {name} gained a scar and also {injury_name}."
-                    else:
-                        chosen_scar = f"{chosen_scar} {name} gained a scar and also a {injury_name}."
-                    cat.get_injured(injury_name, event_triggered = True)
-
             game.cur_events_list.append(chosen_scar)
             cat.scar_event.append(chosen_scar)
 
@@ -951,17 +923,6 @@ class Events():
                 return
         name = str(cat.name)
         other_name = str(other_cat.name)
-
-        # commented out because this doesn't trigger an injury in the injury system?
-        # if cat.status in ['warrior', 'deputy'] and randint(
-        #        1, 15) == 1 and game.settings.get('retirement') is True:
-        #    game.cur_events_list.append(
-        #        f'{name} retires to the elders den after injuries sustained defending {other_name}.'
-        #    )
-        #    if cat.status == 'deputy':
-        #        game.clan.deputy = None
-        #    cat.status_change('elder')
-        #    return
 
         if cat.status == 'kitten' and other_cat.status != 'kitten':
             interactions.extend([

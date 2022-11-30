@@ -9,11 +9,11 @@ def medical_cats_condition_fulfilled(all_cats, amount_per_med):
     allowed_injuries = [
         "bruises",
         "scrapes",
-        "tickbites",
+        "tick bites",
         "torn pelt",
         "torn ear",
         "splinter",
-        "joint pain"
+        "sore muscles"
     ]
     allowed_illnesses = [
         "fleas",
@@ -22,13 +22,13 @@ def medical_cats_condition_fulfilled(all_cats, amount_per_med):
     medicine_apprentices = list(filter(
         lambda c: c.status == 'medicine apprentices' and not c.dead and not c.exiled and \
                   (not c.is_ill() or c.is_ill() and c.illness.name in allowed_illnesses) and \
-                  (not c.is_injured() or c.is_injured() and c.injury.name in allowed_injuries)
+                  (not c.is_injured() or c.is_injured() and not c.not_working)
         , all_cats
     ))
     medicine_cats = list(filter(
         lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled and \
                   (not c.is_ill() or c.is_ill() and c.illness.name in allowed_illnesses) and \
-                  (not c.is_injured() or c.is_injured() and c.injury.name in allowed_injuries)
+                  (not c.is_injured() or c.is_injured() and not c.not_working)
         , all_cats
     ))
 
@@ -56,6 +56,7 @@ def get_amount_cat_for_one_medic(clan):
 class Illness():
     def __init__(self,
                  name,
+                 severity,
                  mortality,
                  infectiousness,
                  duration,
@@ -64,6 +65,7 @@ class Illness():
                  risks,
                  event_triggered=False):
         self.name = name
+        self.severity = severity
         self.mortality = int(mortality)
         self.infectiousness = int(infectiousness)
         self.duration = int(duration)
@@ -113,6 +115,7 @@ class Illness():
 class Injury():
     def __init__(self,
                  name,
+                 severity,
                  duration,
                  medicine_duration,
                  mortality,
@@ -121,6 +124,7 @@ class Injury():
                  also_got=None,
                  event_triggered=False):
         self.name = name
+        self.severity = severity
         self.duration = duration
         self.medicine_duration = medicine_duration
         self.mortality = mortality
@@ -147,6 +151,34 @@ class Injury():
                 value = self.medicine_duration
 
         self._current_duration = value
+
+    @property
+    def current_mortality(self):
+        return self._current_mortality
+
+    @current_mortality.setter
+    def current_mortality(self, value):
+        self._current_mortality = value
+
+# ---------------------------------------------------------------------------- #
+#                             Permanent Conditions                             #
+# ---------------------------------------------------------------------------- #
+
+
+class Permanent_Condition():
+    def __init__(self,
+                 name,
+                 mortality,
+                 risks=None,
+                 illness_infectiousness=None,
+                 event_triggered=False):
+        self.name = name
+        self.mortality = mortality
+        self.risks = risks
+        self.illness_infectiousness = illness_infectiousness
+        self.new = event_triggered
+
+        self.current_mortality = mortality
 
     @property
     def current_mortality(self):

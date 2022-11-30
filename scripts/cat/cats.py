@@ -153,7 +153,11 @@ class Cat():
         self.siblings = []
         self.children = []
         self.illness = None
-        self.injury = None
+        self.injuries = {}
+        self.healed_injury = None
+        self.also_got = False
+        self.not_working = False
+        self.permanent_condition = None
         self.possible_scar = None
         self.scar_event = []
         self.df = False
@@ -315,7 +319,7 @@ class Cat():
         else:
             self.dead = True
 
-        self.injury = None
+        self.injuries = []
         self.illness = None
 
         if self.mate is not None:
@@ -670,16 +674,17 @@ class Cat():
         if self.illness.current_duration <= 0:
             self.illness = None
 
-    def moon_skip_injury(self):
-        "handles the moon skip for injury"
+    def moon_skip_injury(self, injury):
+        """handles the moon skip for injury"""
         if not self.is_injured():
             return
 
-        if self.injury.new:
-            self.injury.new = False
+        if self.injuries[injury]["event_triggered"]:
+            self.injuries[injury]["event_triggered"] = False
             return
-        
-        mortality = self.injury.current_mortality
+
+        mortality = self.injuries[injury]["mortality"]
+
         # leader should have a higher chance of death
         if self.status == "leader":
             mortality = int(mortality * 0.7)
@@ -688,11 +693,15 @@ class Cat():
             self.die()
             return
 
-        # if the cat has a infected wound, the wound shouldn't heal till the illness is cured
-        if not self.is_ill() or (self.is_ill() and self.illness != "infected wound"):
-            self.injury.current_duration -= 1
-        if self.injury.current_duration <= 0:
-            self.injury = None
+        # if the cat has an infected wound, the wound shouldn't heal till the illness is cured
+        if not self.is_ill() or (self.is_ill() and self.illness not in ["an infected wound", "a festering wound"]):
+            self.injuries[injury]["duration"] -= 1
+        if self.injuries[injury]["duration"] <= 0:
+            if self.is_ill() and self.illness in ["an infected wound", "a festering wound"]:
+                self.injuries[injury]["duration"] += 1
+                return
+            self.healed_injury = self.injuries[injury]
+
 
 # ---------------------------------------------------------------------------- #
 #                                   relative                                   #
@@ -750,7 +759,7 @@ class Cat():
 #                                  conditions                                  #
 # ---------------------------------------------------------------------------- #
   
-    def get_ill(self, name, risk = False, event_triggered = False):
+    def get_ill(self, name, risk=False, event_triggered = False):
         if self.is_ill() and not risk or name not in ILLNESSES:
             if name not in ILLNESSES:
                 print(f"WARNING: {name} is not in the illnesses collection.")
@@ -771,17 +780,18 @@ class Cat():
 
         self.illness = Illness(
             name,
-            mortality= mortality,
-            infectiousness = illness["infectiousness"], 
-            duration = illness["duration"], 
-            medicine_duration = illness["medicine_duration"], 
-            medicine_mortality = med_mortality,
-            risks = illness["risks"],
+            severity=illness["severity"],
+            mortality=mortality,
+            infectiousness=illness["infectiousness"],
+            duration=illness["duration"],
+            medicine_duration=illness["medicine_duration"],
+            medicine_mortality=med_mortality,
+            risks=illness["risks"],
             event_triggered=event_triggered
         )
 
     def get_injured(self, name, event_triggered=False):
-        if self.is_injured() or name not in INJURIES:
+        if (self.is_injured() and self.also_got is False) or name not in INJURIES:
             if name not in INJURIES:
                 print(f"WARNING: {name} is not in the injuries collection.")
             return
@@ -791,12 +801,13 @@ class Cat():
         if game.clan.game_mode == "cruel season":
             mortality = int(mortality * 0.65)
 
-            # to prevent a injury gets no mortality, check and set it to 1 if needed
+            # to prevent an injury getting no mortality, check and set it to 1 if needed
             if injury["mortality"][self.age] and not mortality:
                 mortality = 1
 
-        self.injury = Injury(
-            name,
+        new_injury = Injury(
+            name=name,
+            severity=injury["severity"],
             duration=injury["duration"],
             medicine_duration=injury["medicine_duration"],
             mortality=mortality,
@@ -806,11 +817,40 @@ class Cat():
             event_triggered=event_triggered
         )
 
+        if new_injury.name not in self.injuries:
+            self.injuries[new_injury.name] = {
+                "severity": new_injury.severity,
+                "mortality": new_injury.current_mortality,
+                "duration": new_injury.current_duration,
+                "medicine_duration": new_injury.medicine_duration,
+                "illness_infectiousness": new_injury.illness_infectiousness,
+                "risks": new_injury.risks,
+                "also_got": new_injury.also_got,
+                "event_triggered": new_injury.new
+            }
+            print('new injury', new_injury.name)
+
+        if new_injury.severity in ["major", "severe"]:
+            self.not_working = True
+
+        if len(new_injury.also_got) > 0 and self.also_got is False and not int(random.random() * 5):
+            self.also_got = True
+            additional_injury = choice(new_injury.also_got)
+            self.additional_injury(additional_injury)
+        else:
+            self.also_got = False
+    def additional_injury(self, injury):
+        self.get_injured(injury)
+        print('additional injury', injury)
+
     def is_ill(self):
         return self.illness is not None
 
     def is_injured(self):
-        return self.injury is not None
+        is_injured = True
+        if len(self.injuries) <= 0:
+            is_injured = False
+        return is_injured is not False
 
     def contact_with_ill_cat(self, cat):
         "handles if one cat had contact with a ill cat"
@@ -820,28 +860,31 @@ class Cat():
         illness_name = cat.illness.name
         rate = cat.illness.infectiousness
         if self.is_injured():
-            illness_infect = list(filter(lambda ill: ill["name"] == illness_name ,self.injury.illness_infectiousness))
-            if illness_infect is not None and len(illness_infect) > 0:
-                illness_infect = illness_infect[0]
-                rate -= illness_infect["lower_by"]
+            for y in self.injuries:
+                illness_infect = list(filter(lambda ill: ill["name"] == illness_name, self.injuries[y]["illness_infectiousness"]))
+                if illness_infect is not None and len(illness_infect) > 0:
+                    illness_infect = illness_infect[0]
+                    rate -= illness_infect["lower_by"]
         
-        # prevent rate lower 0 and print warning message
-        if rate < 0:
-            print(f"WARNING: injury {self.injury.name} has lowered chance of {illness_name} infection to {rate}")
-            rate = 1
+                # prevent rate lower 0 and print warning message
+                if rate < 0:
+                    print("WARNING: injury " + self.injuries[y]["name"] + " has lowered chance of " + illness_name + " infection to " + rate)
+                    rate = 1
 
         if not random.random() * rate:
             game.cur_events_list.append(f"{self.name} had contact with {cat.name} and now has {illness_name}.")
             self.get_ill(illness_name)
 
     def save_condition(self):
-        # save relationships for each cat
+        # save conditions for each cat
+        clanname = None
         if game.switches['clan_name'] != '':
             clanname = game.switches['clan_name']
         elif len(game.switches['clan_name']) > 0:
             clanname = game.switches['clan_list'][0]
         elif game.clan is not None:
             clanname = game.clan.name
+
         condition_directory = 'saves/' + clanname + '/conditions'
         condition_file_path = condition_directory + '/' + self.ID + '_conditions.json'
 
@@ -854,9 +897,13 @@ class Cat():
             return
 
         conditions = {}
+        injuries = {}
+
         if self.is_ill():
-            conditions["illness"] = {
+            # save info under illnesses in conditions save
+            conditions["illnesses"] = {
                 "name": self.illness.name,
+                "severity": self.illness.severity,
                 "mortality": self.illness.current_mortality,
                 "duration": self.illness.current_duration,
                 "medicine_mortality": self.illness.medicine_mortality,
@@ -864,20 +911,13 @@ class Cat():
                 "infectiousness": self.illness.infectiousness,
                 "risks": self.illness.risks,
             }
+
         if self.is_injured():
-            conditions["injury"] = {
-                "name": self.injury.name,
-                "mortality": self.injury.current_mortality,
-                "duration": self.injury.current_duration,
-                "medicine_duration": self.injury.medicine_duration,
-                "illness_infectiousness": self.injury.illness_infectiousness,
-                "risks": self.injury.risks,
-                "also_got": self.injury.also_got,
-            }
+            conditions["injuries"] = self.injuries
 
         try:
             with open(condition_file_path, 'w') as rel_file:
-                json_string = ujson.dumps(conditions, indent = 4)
+                json_string = ujson.dumps(conditions, indent=4)
                 rel_file.write(json_string)
         except:
             print(f"WARNING: Saving conditions of cat #{self} didn't work.")
@@ -896,27 +936,21 @@ class Cat():
         try:
             with open(condition_cat_directory, 'r') as read_file:
                 rel_data = ujson.loads(read_file.read())
-                if "illness" in rel_data:
-                    illness = rel_data["illness"]
+                if "illnesses" in rel_data:
+                    illness = rel_data["illnesses"]
                     self.illness = self.illness = Illness(
                         illness["name"],
-                        mortality= illness["mortality"],
-                        infectiousness = illness["infectiousness"], 
-                        duration = illness["duration"], 
-                        medicine_duration = illness["medicine_duration"], 
-                        medicine_mortality = illness["medicine_mortality"],
-                        risks = illness["risks"]
+                        severity=illness["severity"],
+                        mortality=illness["mortality"],
+                        infectiousness=illness["infectiousness"],
+                        duration=illness["duration"],
+                        medicine_duration=illness["medicine_duration"],
+                        medicine_mortality=illness["medicine_mortality"],
+                        risks=illness["risks"]
                     )
-                if "injury" in rel_data:
-                    injury = rel_data["injury"]
-                    self.injury = Injury(
-                        injury["name"],
-                        duration = injury["duration"],
-                        medicine_duration = injury["medicine_duration"], 
-                        mortality = injury["mortality"],
-                        risks = injury["risks"],
-                        illness_infectiousness = injury["illness_infectiousness"]
-                    )
+                if "injuries" in rel_data:
+                    self.injuries = rel_data.get("injuries")
+
         except Exception as e:
             print(e)
             print(f'WARNING: There was an error reading the condition file of cat #{self}.')
@@ -1270,6 +1304,7 @@ class Cat():
 
     def save_relationship_of_cat(self):
         # save relationships for each cat
+        clanname = None
         if game.switches['clan_name'] != '':
             clanname = game.switches['clan_name']
         elif len(game.switches['clan_name']) > 0:

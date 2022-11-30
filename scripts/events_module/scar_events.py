@@ -83,27 +83,32 @@ class Scar_Events():
                     except ValueError as e:
                         print(f"Failed to exclude scar from pool: {e}")
 
-            specialty = random.choice(scar_pool)
-            if specialty in ["NOTAIL", "HALFTAIL"]:
-                if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
-                    cat.accessory = None
+            if len(scar_pool) > 0:
+                specialty = random.choice(scar_pool)
+                if specialty in ["NOTAIL", "HALFTAIL"]:
+                    if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
+                        cat.accessory = None
 
-            if specialty:
-                if not cat.specialty:
-                    cat.specialty = specialty
-                else:
-                    cat.specialty2 = specialty
+                if specialty:
+                    if not cat.specialty:
+                        cat.specialty = specialty
+                    else:
+                        cat.specialty2 = specialty
 
-            scar_gain_strings = [
-                f"{cat.name}'s {injury_name} has healed, but they'll always carry evidence of the injury on their body.",
-                f"{cat.name} healed from their {injury_name} but will forever be marked by a scar.",
-                f"{cat.name}'s {injury_name} has healed, but the injury left them scarred.",
-            ]
-
-            event_string = random.choice(scar_gain_strings)
+                scar_gain_strings = [
+                    f"{cat.name}'s {injury_name} has healed, but they'll always carry evidence of the injury on their pelt.",
+                    f"{cat.name} healed from their {injury_name} but will forever be marked by a scar.",
+                    f"{cat.name}'s {injury_name} has healed, but the injury left them scarred.",
+                ]
+                scar_given = specialty
+                event_string = random.choice(scar_gain_strings)
+            else:
+                event_string = f"{cat.name}'s {injury_name} has healed so well that you can't even tell it happened."
+                scar_given = None
         else:
             event_string = f"{cat.name}'s {injury_name} has healed so well that you can't even tell it happened."
+            scar_given = None
 
         cat.possible_scar = None  # reset potential scar text
-        return event_string
+        return event_string, scar_given
 

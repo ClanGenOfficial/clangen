@@ -116,7 +116,7 @@
     {
         "injury": "claw-wound",
         "tags": [
-            "other_cat",
+            "other_cat_adult",
             "Beach",
             "Newleaf",
             "Greenleaf",
@@ -133,7 +133,7 @@
     {
         "injury": "claw-wound",
         "tags": [
-            "other_cat",
+            "other_cat_adult",
             "Plains",
             "Mountainous",
             "Newleaf",
@@ -151,7 +151,7 @@
     {
         "injury": "claw-wound",
         "tags": [
-            "other_cat",
+            "other_cat_adult",
             "Forest",
             "Plains",
             "Mountainous",

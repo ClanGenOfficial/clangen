@@ -1,5 +1,6 @@
 {
     "chills": {
+        "severity": "minor",
         "mortality": {
             "kitten": 15,
             "adolescent": 35,
@@ -35,6 +36,7 @@
         ]
     },
     "diarrhea": {
+        "severity": "major",
         "mortality": {
             "kitten": 3,
             "adolescent": 8,
@@ -57,6 +59,7 @@
         "risks": []
     },
     "fleas": {
+        "severity": "minor",
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -79,6 +82,7 @@
         "risks": []
     },
     "greencough": {
+        "severity": "severe",
         "mortality": {
             "kitten": 3,
             "adolescent": 8,
@@ -106,6 +110,7 @@
         ]
     },
     "kitten-cough": {
+        "severity": "severe",
         "mortality": {
             "kitten": 2,
             "adolescent": 15,
@@ -133,6 +138,7 @@
         ]
     },
     "an infected wound": {
+        "severity": "major",
         "mortality": {
             "kitten": 3,
             "adolescent": 8,
@@ -160,6 +166,7 @@
         ]
     },
     "carrionplace disease": {
+        "severity": "severe",
         "mortality": {
             "kitten": 2,
             "adolescent": 5,
@@ -182,6 +189,7 @@
         "risks": []
     },
     "redcough": {
+        "severity": "severe",
         "mortality": {
             "kitten": 2,
             "adolescent": 5,
@@ -204,6 +212,7 @@
         "risks": []
     },
     "running nose": {
+        "severity": "minor",
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -239,6 +248,7 @@
         ]
     },
     "whitecough": {
+        "severity": "minor",
         "mortality": {
             "kitten": 10,
             "adolescent": 20,
@@ -270,6 +280,7 @@
         ]
     },
     "yellowcough": {
+        "severity": "major",
         "mortality": {
             "kitten": 3,
             "adolescent": 8,
@@ -292,6 +303,7 @@
         "risks": []
     },
     "a festering wound": {
+        "severity": "severe",
         "mortality": {
             "kitten": 2,
             "adolescent": 3,
@@ -313,7 +325,8 @@
         "infectiousness": 0,
         "risks": []
     },
-        "heat stroke": {
+    "heat stroke": {
+        "severity": "severe",
         "mortality": {
             "kitten": 2,
             "adolescent": 5,
@@ -335,7 +348,8 @@
         "infectiousness": 0,
         "risks": []
     },
-        "heat exhaustion": {
+    "heat exhaustion": {
+        "severity": "major",
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -362,7 +376,8 @@
             }
         ]
     },
-        "stomachache": {
+    "stomachache": {
+        "severity": "minor",
         "mortality": {
             "kitten": 0,
             "adolescent": 0,

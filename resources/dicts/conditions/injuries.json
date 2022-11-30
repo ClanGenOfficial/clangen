@@ -1,6 +1,7 @@
 {
     "bite-wound":{
         "duration": 2,
+        "severity": "major",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 10,
@@ -24,6 +25,7 @@
     },
     "snake bite":{
         "duration": 2,
+        "severity": "major",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 10,
@@ -45,6 +47,7 @@
     },
     "rat bite":{
         "duration": 2,
+        "severity": "major",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 10,
@@ -76,6 +79,7 @@
     },
     "broken bone":{
         "duration": 6,
+        "severity": "severe",
         "medicine_duration": 5,
         "mortality": {
             "kitten": 10,
@@ -99,6 +103,7 @@
     },
     "mangled leg":{
         "duration": 3,
+        "severity": "severe",
         "medicine_duration": 2,
         "mortality": {
             "kitten": 15,
@@ -117,12 +122,13 @@
         ],
         "also_got": [
             "torn pelt",
-            "broken leg",
+            "broken bone",
             "dislocated joint"
         ]
     },
     "mangled tail":{
         "duration": 3,
+        "severity": "severe",
         "medicine_duration": 2,
         "mortality": {
             "kitten": 15,
@@ -145,6 +151,23 @@
     },
     "bruises":{
         "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [],
+        "also_got": []
+    },
+    "joint pain":{
+        "duration": 1,
+        "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 0,
@@ -161,6 +184,7 @@
     },
     "claw-wound":{
         "duration": 2,
+        "severity": "major",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 5,
@@ -184,6 +208,7 @@
     },
     "cracked pads":{
         "duration": 1,
+        "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 0,
@@ -204,6 +229,7 @@
     },
     "dislocated joint":{
         "duration": 4,
+        "severity": "major",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 0,
@@ -221,6 +247,7 @@
     },
     "frostbite":{
         "duration": 2,
+        "severity": "major",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 10,
@@ -252,9 +279,42 @@
         ],
         "also_got": []
     },
-    "joint pain":{
-        "duration": 2,
+    "sore muscles":{
+        "duration": 1,
+        "severity": "minor",
         "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [],
+        "also_got": []
+    },
+    "phantom pain":{
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [],
+        "also_got": []
+    },
+    "recovering from birth":{
+        "duration": 3,
+        "severity": "major",
+        "medicine_duration": 6,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -269,6 +329,7 @@
     },
     "scrapes":{
         "duration": 1,
+        "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 0,
@@ -289,6 +350,7 @@
     },
     "splinter":{
         "duration": 1,
+        "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 0,
@@ -309,6 +371,7 @@
     },
     "sprain":{
         "duration": 1,
+        "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 0,
@@ -324,6 +387,7 @@
     },
     "tick bites":{
         "duration": 1,
+        "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 0,
@@ -344,6 +408,7 @@
     },
     "torn pelt":{
         "duration": 1,
+        "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 0,
@@ -366,6 +431,7 @@
     },
     "torn ear":{
         "duration": 1,
+        "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 0,
@@ -386,6 +452,7 @@
     },
     "water in their lungs":{
         "duration": 3,
+        "severity": "major",
         "medicine_duration": 2,
         "mortality": {
             "kitten": 30,
@@ -437,6 +504,48 @@
             {
                 "name": "yellowcough",
                 "chance": 4
+            }
+        ],
+        "also_got": []
+    },
+    "burn":{
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 30,
+            "young adult": 50,
+            "adult": 60,
+            "senior adult": 50,
+            "elder": 30
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 30
+            }
+        ],
+        "also_got": []
+    },
+    "severe burn":{
+        "duration": 4,
+        "severity": "severe",
+        "medicine_duration": 2,
+        "mortality": {
+            "kitten": 5,
+            "adolescent": 10,
+            "young adult": 30,
+            "adult": 30,
+            "senior adult": 30,
+            "elder": 10
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 30
             }
         ],
         "also_got": []
