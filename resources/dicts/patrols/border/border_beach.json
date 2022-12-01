@@ -179,7 +179,7 @@
     "fail_text": [
             "r_c marks a little, but they reach a section of border that is too muddled to make sense of, and have to give up and go home.",
             "s_c is marking along the territory line when they encounter a o_c_n patrol, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. Though no words are exchanged, the tension is palpable.",
-            "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. . .r_c never returns to camp.",
+            "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. . . r_c never returns to camp.",
             "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n sees them doing it! The diplomatic incident spirals into a full-blown conflict, and r_c hauls themselves back to camp, wounded and bleeding."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
@@ -213,7 +213,7 @@
         "fail_text": [
             "r_c marks a little, but they reach a section of border that is too muddled to make sense of, and have to give up and go home.",
             "s_c is marking along the territory line when they encounter a o_c_n patrol, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. Though no words are exchanged, the tension is palpable.",
-            "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. . .r_c returns to camp late, blood soaked through their fur and a new hardness in their heart.",
+            "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. . . r_c returns to camp late, blood soaked through their fur and a new hardness in their heart.",
             "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n sees them doing it! The diplomatic incident spirals into a full-blown conflict, and r_c hauls themselves back to camp, wounded and bleeding."
         ],
         "win_skills": ["good speaker", "great speaker", "excellent speaker"],
