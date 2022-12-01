@@ -165,11 +165,13 @@ class PatrolScreen(Screens):
             y_pos = 535
 
             available = True
+            available_med = False
 
             for x in range(len(game.switches['current_patrol'])):
                 patrol_cat = game.switches['current_patrol'][x]
                 if patrol_cat.status in ["medicine cat", "medicine cat apprentice"]:
                     available = False
+                    available_med = True
                     continue
 
             if game.switches['patrol_chosen'] == 'training':
@@ -205,7 +207,7 @@ class PatrolScreen(Screens):
             buttons.draw_image_button((x_value, y_value),
                                       button_name='button_herb',
                                       size=(34, 34),
-                                      available=True,
+                                      available=available_med,
                                       patrol_chosen='med'
                                       )
 
