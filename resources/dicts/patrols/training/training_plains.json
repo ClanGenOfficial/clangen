@@ -69,7 +69,7 @@
     "season": "Any",
     "tags": ["death", "scar", "training"],
     "intro_text": "p_l wanders past an old badger sett overlooking a crook in a little river, only to freeze. There's new scent here, acrid and sour.",
-    "decline_text": "Surely it must be nothing… uneasily, the patrol continues on.",
+    "decline_text": "Surely it must be nothing . . . uneasily, the patrol continues on.",
     "chance_of_success": 40,
     "exp": 30,
     "success_text": [

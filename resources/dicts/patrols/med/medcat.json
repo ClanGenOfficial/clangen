@@ -39,7 +39,7 @@
     "exp": 30,
     "success_text": [
         "app1 identifies them as cranberries, and carefully chews off a branch laden with them to bring back to camp. They can't quite remember what cranberries treat, but it's something to do with making dirt.",
-        "These… could be deathberries. Might be strawberries. But maybe deathberries. It's not worth the risk, they can ask their mentor for more training about it later."
+        "these . . . could be deathberries. Might be strawberries. But maybe deathberries. It's not worth the risk, they can ask their mentor for more training about it later."
     ],
     "fail_text": [
         "Confidently gathering them and prancing back to camp, app1 is then informed that they've gathered raspberries, not cranberries, and this isn't going to help the clan's elders with their problems.",
@@ -96,7 +96,7 @@
     "exp": 30,
     "success_text": [
         "app1 identifies them as cranberries, and carefully chews off a branch laden with them to bring back to camp. They can't quite remember what cranberries treat, but it's something to do with making dirt.",
-        "These… could be deathberries. Might be strawberries. But maybe deathberries. It's not worth the risk, they can ask their mentor for more training about it later."
+        "these . . . could be deathberries. Might be strawberries. But maybe deathberries. It's not worth the risk, they can ask their mentor for more training about it later."
     ],
     "fail_text": [
         "Confidently gathering them and prancing back to camp, app1 is then informed that they've gathered raspberries, not cranberries, and this isn't going to help the clan's elders with their problems.",

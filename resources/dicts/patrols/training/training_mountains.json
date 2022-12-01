@@ -36,7 +36,7 @@
     "season": "Any",
     "tags": ["death", "scar", "training"],
     "intro_text": "r_c wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour.",
-    "decline_text": "Surely it must be nothing… uneasily, r_c continues on.",
+    "decline_text": "Surely it must be nothing . . . uneasily, r_c continues on.",
     "chance_of_success": 40,
     "exp": 30,
     "success_text": [
@@ -69,7 +69,7 @@
     "season": "Any",
     "tags": ["death", "scar", "training"],
     "intro_text": "p_l wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour.",
-    "decline_text": "Surely it must be nothing… uneasily, the patrol continues on.",
+    "decline_text": "Surely it must be nothing . . . uneasily, the patrol continues on.",
     "chance_of_success": 40,
     "exp": 30,
     "success_text": [
