@@ -3,7 +3,7 @@
         "patrol_id": "gen_train_fox1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["fighting", "death", "scar", "injury", "training"],
+        "tags": ["fighting", "death", "scar", "injury", "training", "clan_to_patrol", "respect"],
         "intro_text": "Your patrol catches the scent of a fox.",
         "decline_text": "Your patrol decides not to pursue the fox.",
         "chance_of_success": 40,
@@ -35,7 +35,7 @@
         "patrol_id": "gen_train_fox2",
         "biome": "Any",
         "season": "Any",
-        "tags": ["fighting", "scar", "injury", "training"],
+        "tags": ["fighting", "scar", "injury", "training", "clan_to_patrol", "respect"],
         "intro_text":  "Your patrol catches the scent of a fox.",
         "decline_text": "Your patrol decides not to pursue the fox.",
         "chance_of_success": 40,
@@ -66,7 +66,7 @@
         "patrol_id": "gen_train_fox3",
         "biome": "Any",
         "season": "Any",
-        "tags": ["fighting", "death", "scar", "injury", "training"],
+        "tags": ["fighting", "death", "scar", "injury", "training", "clan_to_patrol", "respect"],
         "intro_text":  "Your patrol catches the scent of a fox.",
         "decline_text": "Your patrol decides not to pursue the fox.",
         "chance_of_success": 10,
@@ -397,7 +397,7 @@
     "patrol_id": "gen_train_sneakprey1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["hunting", "training", "apprentice"],
+    "tags": ["hunting", "training", "apprentice", "trust", "respect", "disrespect", "distrust", "clan_to_r_c"],
     "intro_text": "r_c is tempted to eat the prey they just caught. After all, they're only practicing hunting, right? So this is theirs, it doesn't count as a true hunting patrol?",
     "decline_text": "r_c decides against breaking the warrior code, resisting the temptation.",
     "chance_of_success": 40,
@@ -423,7 +423,7 @@
     "patrol_id": "gen_train_sneakprey2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["hunting", "training", "apprentice"],
+    "tags": ["hunting", "training", "apprentice", "trust", "respect", "disrespect", "distrust", "clan_to_r_c"],
     "intro_text": "r_c is tempted to eat the prey they just caught. After all, they're only practicing hunting, right? So this is theirs, it doesn't count as a true hunting patrol?",
     "decline_text": "r_c decides against breaking the warrior code, resisting the temptation.",
     "chance_of_success": 40,
@@ -475,7 +475,7 @@
     "patrol_id": "gen_train_sneakprey4",
     "biome": "Any",
     "season": "Any",
-    "tags": ["hunting", "training", "apprentice"],
+    "tags": ["hunting", "training", "apprentice", "trust", "respect", "disrespect", "distrust", "clan_to_r_c"],
     "intro_text": "r_c is tempted to eat the prey they just caught. After all, they're only practicing hunting, right? So this is theirs, it doesn't count as a true hunting patrol?",
     "decline_text": "r_c decides against breaking the warrior code, resisting the temptation.",
     "chance_of_success": 40,
@@ -606,7 +606,7 @@
     "fail_text": [
             "Unfortunately, no one steps up to teach."
     ],
-    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "fantastic hunter"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -629,7 +629,7 @@
     "fail_text": [
             "Unfortunately, no one steps up to teach."
     ],
-    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "fantastic hunter"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -652,7 +652,7 @@
     "fail_text": [
             "Unfortunately, no one steps up to teach."
     ],
-    "win_skills": ["great teacher", "fantastic teacher"],
+    "win_skills": ["great teacher", "fantastic teacher", "fantastic hunter"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -675,7 +675,7 @@
     "fail_text": [
         "Unfortunately, no one steps up to teach."
     ],
-    "win_skills": ["great teacher", "fantastic teacher"],
+    "win_skills": ["great teacher", "fantastic teacher", "fantastic hunter"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -698,7 +698,7 @@
     "fail_text": [
             "Unfortunately, no one steps up to teach."
     ],
-    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "fantastic fighter"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -721,7 +721,7 @@
     "fail_text": [
             "Unfortunately, no one steps up to teach."
     ],
-    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "fantastic fighter"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -744,7 +744,7 @@
     "fail_text": [
             "Unfortunately, no one steps up to teach."
     ],
-    "win_skills": ["great teacher", "fantastic teacher"],
+    "win_skills": ["great teacher", "fantastic teacher", "fantastic fighter"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -767,7 +767,7 @@
     "fail_text": [
             "Unfortunately, no one steps up to teach."
     ],
-    "win_skills": ["great teacher", "fantastic teacher"],
+    "win_skills": ["great teacher", "fantastic teacher", "fantastic fighter"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
