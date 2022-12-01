@@ -176,12 +176,12 @@
     "chance_of_success": 40,
     "exp": 20,
     "success_text": [
-        "The medicine cats have an in depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
-        "p_l takes r_c aside, giving them the full benefits of p_l's seniority and experience as they discuss r_c's vision. As medicine cats, they don't take the responsibility lightly, and both of them work together to divine the vision's meaning.",
-        "s_c chooses to pad pelt to pelt with r_c, the spiritual medicine cats gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in them, knowing that c_n is in safe paws."
+        "They have an in depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
+        "p_l takes r_c aside, giving them the full benefits of p_l's seniority and experience as they discuss r_c's vision. As a medicine cat, they don't take the responsibility lightly, and both of them work together to divine the vision's meaning.",
+        "p_l chooses to pad pelt to pelt with r_c, the spiritual medicine cats gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in them, knowing that c_n is in safe paws."
     ],
     "fail_text": [
-        "No one can make sense of the vision.",
+        "p_l shakes their head sadly. They can't make sense of the vision.",
         "r_c notices p_l looking at them enviously, and withdraws from the group, dismissing the dream as unimportant."
     ],
     "win_skills": ["strong connection to starclan"],
