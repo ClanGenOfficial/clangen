@@ -1,4 +1,29 @@
 {
+    "seizure": {
+        "severity": "severe",
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 20,
+            "young adult": 30,
+            "adult": 30,
+            "senior adult": 30,
+            "elder": 10
+        },
+        "medicine_mortality": {
+            "kitten": 50,
+            "adolescent": 70,
+            "young adult": 100,
+            "adult": 100,
+            "senior adult": 100,
+            "elder": 70
+        },
+        "duration": 1,
+        "medicine_duration": 1,
+        "infectiousness": 0,
+        "risks": [
+
+        ]
+    },
     "chills": {
         "severity": "minor",
         "mortality": {

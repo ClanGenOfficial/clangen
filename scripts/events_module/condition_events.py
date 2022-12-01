@@ -194,27 +194,30 @@ class Condition_Events():
                 tail_danger = ["a rogue", "a dog", "a fox", "an otter", "a hawk",
                                "an enemy warrior", "a badger", "a Twoleg trap"]
 
-                injury_event = random.choice(final_events)
-                danger_chosen = random.choice(danger)
-                tail_danger_chosen = random.choice(tail_danger)
+                if len(final_events) > 0:
+                    injury_event = random.choice(final_events)
+                    danger_chosen = random.choice(danger)
+                    tail_danger_chosen = random.choice(tail_danger)
 
-                print(cat.name, cat.status, len(final_events), other_cat.name)
+                    print(cat.name, cat.status, len(final_events), other_cat.name)
 
-                text = injury_event.event_text
-                text = text.replace("m_c", name)
-                text = text.replace("r_c", other_name)
-                text = text.replace("d_l", danger_chosen)
-                text = text.replace("t_l", tail_danger_chosen)
+                    text = injury_event.event_text
+                    text = text.replace("m_c", name)
+                    text = text.replace("r_c", other_name)
+                    text = text.replace("d_l", danger_chosen)
+                    text = text.replace("t_l", tail_danger_chosen)
 
-                if injury_event.scar_text is not None:
-                    scar_text = injury_event.scar_text
-                    scar_text = scar_text.replace("m_c", name)
-                    scar_text = scar_text.replace("r_c", other_name)
-                    scar_text = scar_text.replace("d_l", danger_chosen)
-                    scar_text = scar_text.replace("t_l", tail_danger_chosen)
-                    cat.possible_scar = str(scar_text)
+                    if injury_event.scar_text is not None:
+                        scar_text = injury_event.scar_text
+                        scar_text = scar_text.replace("m_c", name)
+                        scar_text = scar_text.replace("r_c", other_name)
+                        scar_text = scar_text.replace("d_l", danger_chosen)
+                        scar_text = scar_text.replace("t_l", tail_danger_chosen)
+                        cat.possible_scar = str(scar_text)
 
-                cat.get_injured(injury_event.injury)
+                    cat.get_injured(injury_event.injury)
+                else:
+                    triggered = False
 
         if not triggered:
             return triggered
@@ -258,9 +261,12 @@ class Condition_Events():
                 cat.moon_skip_injury(injury)
                 if cat.dead:
                     triggered = True
-                    save_death(cat, event_string)
+                    """
+                    need to make death events for these so that we can have more variety
+                    death history tho needs to be determined by the event that caused the injury, not sure yet how to do that best
+                    """
                     if injury in ["bruises", "cracked pads", "joint pain", "scrapes", "tick bites", "water in their lungs", "frostbite"]:
-                        event_string = f"{cat.name} has died in the medicine den from {injury} "
+                        event_string = "{cat.name} has died in the medicine den from {injury}."
                         if cat.status == "leader":
                             cat.died_by = f"died from {injury}."
                         else:
@@ -272,12 +278,13 @@ class Condition_Events():
                         else:
                             cat.died_by = f"{cat.name} died from a {injury}."
 
+                    save_death(cat, event_string)
                     cat.not_working = False
 
                 elif cat.healed_injury is not None:
                     triggered = True
                     scar_given = None
-                    if cat.possible_scar is not None:
+                    if cat.possible_scar is not None and injury != "blood loss":
                         event_string, scar_given = self.scar_events.handle_scars(cat, injury)
                     else:
                         if injury in ["bruises", "cracked pads", "scrapes", "tick bites"]:
@@ -294,6 +301,15 @@ class Condition_Events():
                 cat.injuries.pop(y)
             cat.healed_injury = None
 
+        if 1 < len(healed_injury) < 3:
+            adjust_text = " and ".join(healed_injury)
+            event_string = f"{cat.name}'s {adjust_text} have healed"
+        elif 2 < len(healed_injury):
+            extra_word = healed_injury[-1]
+            healed_injury.pop(-1)
+            adjust_text = ", ".join(healed_injury)
+            event_string = f"{cat.name}'s {adjust_text}, and {extra_word} have healed"
+
 
         return triggered, event_string
 
@@ -303,7 +319,6 @@ class Condition_Events():
 
         need to check for what scar was assigned and assign condition that may have been caused
 
-        epilepsy, allergies, recovering from birth, shock, lingering shock, phantom pain, sore muscles, loss of balance, concussion
         """
 
 

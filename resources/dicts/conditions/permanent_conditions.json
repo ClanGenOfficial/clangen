@@ -1,5 +1,22 @@
 {
-    "missing a leg": {
+    "crooked jaw": {
+        "severity": "major",
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+
+        ]
+    },
+    "lost a leg": {
+        "severity": "major",
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -29,7 +46,31 @@
             }
         ]
     },
+    "born without a leg": {
+        "severity": "major",
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "sore muscles",
+                "chance": 20
+            },
+            {
+                "name": "joint pain",
+                "chance": 40
+            }
+        ]
+    },
     "weak leg": {
+        "severity": "minor",
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -52,6 +93,7 @@
         ]
     },
     "twisted leg": {
+        "severity": "major",
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -73,7 +115,8 @@
             }
         ]
     },
-    "missing a tail": {
+    "lost their tail": {
+        "severity": "minor",
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -95,7 +138,23 @@
             }
         ]
     },
+    "born without a tail": {
+        "severity": "minor",
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ]
+    },
     "paralyzed": {
+        "severity": "severe",
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -118,10 +177,19 @@
             {
                 "name": "torn pelt",
                 "chance": 15
+            },
+            {
+                "name": "sore muscles",
+                "chance": 20
+            },
+            {
+                "name": "joint pain",
+                "chance": 40
             }
         ]
     },
     "raspy lungs": {
+        "severity": "minor",
         "mortality": {
             "kitten": 15,
             "adolescent": 60,
@@ -139,7 +207,63 @@
             }
         ]
     },
+    "wasting disease": {
+        "severity": "major",
+        "mortality": {
+            "kitten": 15,
+            "adolescent": 60,
+            "young adult": 150,
+            "adult": 100,
+            "senior adult": 60,
+            "elder": 30
+        },
+        "illness_infectiousness": [
+            {
+                "name": "running nose",
+                "chance": 4
+            },
+            {
+                "name": "whitecough",
+                "chance": 3
+            },
+            {
+                "name": "chills",
+                "chance": 5
+            },
+            {
+                "name": "greencough",
+                "chance": 5
+            },
+            {
+                "name": "yellowcough",
+                "chance": 4
+            }
+        ],
+        "risks": [
+            {
+                "name": "running nose",
+                "chance": 10
+            },
+            {
+                "name": "whitecough",
+                "chance": 20
+            },
+            {
+                "name": "chills",
+                "chance": 10
+            },
+            {
+                "name": "greencough",
+                "chance": 30
+            },
+            {
+                "name": "yellowcough",
+                "chance": 40
+            }
+        ]
+    },
     "blind": {
+        "severity": "major",
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -154,6 +278,7 @@
         ]
     },
     "one bad eye": {
+        "severity": "major",
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -166,12 +291,30 @@
         ],
         "risks": [
             {
-                "name": "blind",
-                "chance": 50
+
+            }
+        ]
+    },
+    "failing eyesight": {
+        "severity": "major",
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+
             }
         ]
     },
     "partial hearing loss": {
+        "severity": "minor",
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -184,12 +327,12 @@
         ],
         "risks": [
             {
-                "name": "deaf",
-                "chance": 50
+
             }
         ]
     },
     "deaf": {
+        "severity": "major",
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -204,7 +347,61 @@
         ]
 
     },
-    "joint pain": {
+    "constant joint pain": {
+        "severity": "minor",
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ]
+    },
+    "seizure prone": {
+        "severity": "major",
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "seizure",
+                "chance": 20
+            }
+        ]
+    },
+    "allergies": {
+        "severity": "minor",
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "running nose",
+                "chance": 20
+            }
+        ]
+    },
+    "constantly dizzy": {
+        "severity": "major",
         "mortality": {
             "kitten": 0,
             "adolescent": 0,

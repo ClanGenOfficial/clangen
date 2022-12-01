@@ -504,7 +504,7 @@
     "other_cat_skill": ["great fighter", "excellent fighter"]
 },
 {
-    "death_tags": ["leader", "other_cat_dep", "other_cat_death", "murder", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+    "death_tags": ["leader", "other_cat_dep", "multi-death", "murder", "Forest", "Plains", "Mountainous", "Beach", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
     "death_text": "d_c was murdered by r_c with the intention of taking their place, but r_c miscalculated how many lives d_c had left!  d_c retaliated and killed r_c in self defense.",
     "history_text": "r_c was killed by d_c in self defense.",
     "cat_trait": null,

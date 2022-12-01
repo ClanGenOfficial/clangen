@@ -839,9 +839,9 @@ class Cat():
             self.additional_injury(additional_injury)
         else:
             self.also_got = False
+
     def additional_injury(self, injury):
         self.get_injured(injury)
-        print('additional injury', injury)
 
     def is_ill(self):
         return self.illness is not None

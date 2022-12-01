@@ -168,17 +168,23 @@ class Injury():
 class Permanent_Condition():
     def __init__(self,
                  name,
+                 severity,
                  mortality,
                  risks=None,
                  illness_infectiousness=None,
                  event_triggered=False):
         self.name = name
+        self.severity = severity
         self.mortality = mortality
         self.risks = risks
         self.illness_infectiousness = illness_infectiousness
         self.new = event_triggered
 
         self.current_mortality = mortality
+
+    """
+    severity level determines retirement: severe - auto retire, major - chance retire, minor - no retire
+    """
 
     @property
     def current_mortality(self):
