@@ -115,7 +115,7 @@
             "All r_c's attempts to drive the small dog off only send it into greater and greater fits of excitement, until the only thing to do is wait miserably and humiliatingly in a safe spot until the beast calms down.", 
             null, 
             "The animal is far more tenacious than r_c ever expected, and once the fight starts, there's no escaping from it. As r_c's world goes dark, they have their fangs sunk in the dog's throat. At least they'll take the beast with them.", 
-            "Small, yappy, but . . . still a dog. r_c peers down from the tree where the animal has pinned them, wincing in pain. They won't underestimate these ugly creatures again."],
+            "Small, yappy, but. . . still a dog. r_c peers down from the tree where the animal has pinned them, wincing in pain. They won't underestimate these ugly creatures again."],
         "win_skills": ["good fighter","great fighter","excellent fighter"],
         "min_cats": 1,
         "max_cats": 1,
@@ -227,7 +227,7 @@
             null,
             "s_c charges towards the rogue, making all sorts of deranged sounds as slaver drips from their mouth. The rogue is thoroughly alarmed and flees. The rest of the cats praise s_c's quick thinking."],
         "fail_text": [
-            "It turns out they were r_c's own pawprints . . . how embarrassing.", 
+            "It turns out they were r_c's own pawprints. . . how embarrassing.", 
             null,
             "The pawprints lead to a trespassing rogue. The rogue is fierce and kills r_c before being run off.",
             "The pawprints lead to a trespassing rogue who injures r_c before being driven away."],
