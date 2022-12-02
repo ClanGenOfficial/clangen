@@ -1106,7 +1106,7 @@ class Cat():
             # app has graduated, no mentor needed anymore
             self.mentor = None
             # append and remove
-            if old_mentor and old_mentor != self.mentor:
+            if old_mentor is not None and old_mentor != self.mentor:
                 if self in old_mentor.apprentice:
                     old_mentor.apprentice.remove(self)
                 if self not in old_mentor.former_apprentices:
