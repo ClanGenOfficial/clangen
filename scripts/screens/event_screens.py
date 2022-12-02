@@ -440,5 +440,7 @@ class PatrolEventScreen(Screens):
     def screen_switches(self):
         game.switches['event'] = 0
         game.switches['patrol_done'] = False
+        if game.switches['patrol_chosen'] == 'med':
+            game.switches['patrol_chosen'] = 'general'
         cat_profiles()
 
