@@ -1060,7 +1060,7 @@ class Cat():
         # Should only have mentor if alive and some kind of apprentice
         if 'apprentice' in self.status and not self.dead and not self.outside:
             # Need to pick a random mentor if not specified
-            if not new_mentor:
+            if new_mentor is None:
                 potential_mentors = []
                 priority_mentors = []
                 for cat in self.all_cats.values():
@@ -1075,13 +1075,13 @@ class Cat():
                     new_mentor = choice(potential_mentors)
             # Mentor changing to chosen/specified cat
             self.mentor = new_mentor
-            if new_mentor and old_mentor:
+            if new_mentor is not None and old_mentor is None:
                 # remove and append in relevant lists
                 if self not in new_mentor.apprentice:
                     new_mentor.apprentice.append(self)
                 if self in new_mentor.former_apprentices:
                     new_mentor.former_apprentices.remove(self)
-            elif new_mentor and old_mentor:
+            elif new_mentor is not None and old_mentor is not None:
                 # reset patrol number
                 self.patrol_with_mentor = 0
                 if self.moons > 6:
