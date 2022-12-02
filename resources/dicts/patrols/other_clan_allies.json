@@ -90,6 +90,32 @@
        "antagonize_text": "A tempting opportunity. And also a perfect one. r_c pounces and swiftly kills the rabbit, intentionally leaving evidence of their deed behind. That will show those o_c_n cats just how confident c_n is in their own power.",
        "antagonize_fail_text": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat laughs at the pathetic display and turns to walk deeper into their own territory.  They seem to be unfazed and unimpressed by the sad attempt.",
        "history_text": []
+},
+{
+        "patrol_id": "gen_med_borderherb1",
+        "biome": "Any",
+        "season": "leaf-bare",
+        "tags": ["med_cat", "herbs", "other_clan", "med_only"],
+        "intro_text": "p_l pads along, mouth open slightly as they scent for any traces of herbs. Oh! They can smell some bearberries nearby - but it seems that they’re just over the border.",
+        "decline_text": "They decide that trespassing isn’t worth it in this case.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+                "They pad over to the border and hesitate only momentarily before crossing. They quickly gather some of the berries, making sure to leave plenty for o_c_n’s medicine cat if they need some, too.",
+                "They pad to the border and pause for a heartbeat to scent the air. o_c_n’s scent is very strong, but there’s something else . . . o_c_n’s medicine cat appears at that moment. They’re walking towards the bearberries when they spot p_l and wave their tail in greeting. They invite p_l to gather some, as there’s plenty. p_l gratefully accepts.",
+                "p_l is about to step over the border when a hiss stops them in their tracks. A o_c_n warrior bounds into view, bristling. However, when the warrior realizes who the other cat is, they quickly apologize to p_l and invite them to gather herbs. o_c_n is happy to share with friends."
+        ],
+        "fail_text": [
+                "p_l starts to step over the border but a hiss stops them in their tracks. A o_c_n patrol is padding their way. Though the patrol seems to calm down as they recognize p_l, they look gravely at the medicine cat and explain that they can’t spare any herbs - their medicine cat sent them to collect the last of the berries. p_l nods and thanks them anyway."
+        ],
+        "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+        "win_trait": ["None"],
+        "fail_skills": ["None"],
+        "fail_trait": ["None"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
 }
 
 ]
