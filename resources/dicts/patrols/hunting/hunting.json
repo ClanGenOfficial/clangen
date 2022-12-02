@@ -292,7 +292,7 @@
         "After all, they have caught enough on this solo hunt that they won't be able to carry it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile."
     ],
     "fail_text": [
-            "r_c gives in to their grumbling belly, reasoning that no one will notice, but when they arrive back at camp empty-pawed and with blood on their lips they feel the stares of the warriors on their pelt."
+            "r_c gives in to their grumbling belly, reasoning that no one will notice, but when they arrive back at camp empty-pawed and with blood on their lips they feel the stares of the other warriors on their pelt."
     ],
     "min_cats": 1,
     "max_cats": 1,
@@ -334,7 +334,7 @@
         "After all, the patrol has caught enough on this hunt that they'll have trouble carrying it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile."
     ],
     "fail_text": [
-        "r_c gives in to their grumbling belly, reasoning that no one will notice, but when the patrol reforms and r_c arrives back empty-pawed with blood on their lips they feel the stares of the warriors on their pelt.",
+        "r_c gives in to their grumbling belly, reasoning that no one will notice, but when the patrol reforms and r_c arrives back empty-pawed with blood on their lips they feel the suspicious stares of the other warriors on their pelt.",
         "They think they've gotten away with their clandestine snacking, but when r_c arrives back at camp another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns them to dig a new trench for the clan's dirtplace, and r_c hears snide remarks when they slink in to their nest that night."
     ],
     "min_cats": 2,
@@ -356,8 +356,7 @@
         "After all, the patrol has caught enough on this hunt that they'll have trouble carrying it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile."
     ],
     "fail_text": [
-        "r_c gives in to their grumbling belly, reasoning that no one will notice, but when they arrive back at camp empty-pawed and with blood on their lips they feel the stares of the warriors on their pelt. r_c slinks back to the apprentice's den, tail and ears low.",
-        "They think they've gotten away with their clandestine snacking, but when r_c arrives back at camp another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns them to dig a new trench for the clan's dirtplace, r_c prickles with humiliation and terrible smells."
+        "They think they've gotten away with their clandestine snacking, but when r_c arrives back at camp, another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns them to dig a new trench for the clan's dirtplace; r_c prickles with humiliation and terrible smells."
     ],
     "min_cats": 2,
     "max_cats": 6,
