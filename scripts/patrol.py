@@ -1356,33 +1356,64 @@ class PatrolEvent():
         self.antagonize_fail_text = antagonize_fail_text
         self.history_text = history_text
 
-        """ success [0] is the most common
-            success [1] is slightly rarer
-            success [2] is if win skill is applicable
-            success [3] is if win trait is applicable
-
-            fail text [0] is unscathed fail 1
-            fail text [1] is unscathed 2 - fail skill or fail traits
-            fail text [2] is death
-            fail text [3] is scar"""
-
         tags = [
             "hunting", "other_clan", "fighting", "death", "scar", "new_cat", 
-            "npc", "retirement", "injury", "illness", "romantic", "platonic", 
-            "comfort", "respect", "trust", "dislike", "jealousy", "med_cat", 
-            "training", "apprentice", "border", "reputation", "leader", "gone", 
-            "multi_gone", "disaster_gone", "herbs", "deputy", "small_prey", "big_prey", 
+            "npc", "retirement", "injury", "illness", 
+            "romantic", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", 
+            "med_cat", "training", "apprentice", "border", "reputation", "leader", 
+            "gone", "multi_gone", "disaster_gone", "herbs", "deputy", "small_prey", "big_prey", 
             "disaster", "multi_deaths", "kits", "cruel_season", "two_apprentices", 
             "warrior", "no_app", "clan_to_p_l", "clan_to_r_c", "patrol_to_p_l", "patrol_to_r_c", 
-            "rel_two_apps", "p_l_to_r_c", "clan_to_patrol", "rel_patrol", "distrust", "disrespect"
-
+            "rel_two_apps", "p_l_to_r_c", "s_c_to_r_c", "clan_to_patrol", "rel_patrol", "distrust", 
+            "disrespect", "heat_illness", "med_only"
         ]
 
-        """tag info:
-        death tags: you can only have ONE death tag. if you have multiple, it picks the first one in this order:
-        "death" (kills r_c) > "disaster" (kills whole patrol) > "multi_deaths" (kills 2-4 cats)
-        
-        relation_r_c also works for s_c"""
+        # patrol notes (successes and fails)
+        """Success[0] is the most common
+        Success[1] is slightly rarer
+        Success[2] is if win skill is applicable
+        Success[3] is if win trait is applicable
+
+        Fail text[0] is unscathed fail 1
+        Fail text[1] is unscathed 2, fail skill or fail traits
+        Fail text[2] is death
+        Fail text[3] is scar/injury
+        Fail text[4] is death for s_c
+        fail text[5] is scar/injury for s_c
+        fail text[6] is alt leader death
+
+        History text[0] is scar text
+        History text[1] is death text
+
+        TAG INFO:
+        You can ONLY have one of these:
+        "death" (r_c dies), "disaster" (all die), "multi_deaths" (2-4 cats die)
+        If you have more than one, it takes the first one in this order.
+
+        You can ONLY have one of these:
+        "gone" (r_c leaves the clan), "disaster_gone" (all leave the clan), "multi_gone" (2-4 cats leave the clan)
+        If you have more than one, it takes the first one in this order.
+
+        "p_l_to_r_c" is for specifically pl and rc gaining relationship with EACH OTHER
+
+        "two_apprentices" is for patrols with two apprentices (at least) in them. It works with the "apprentice" tag. "rel_two_apps" is for patrols with relationship changes between app1 and app2 that don't affect the rest of the patrol, and also works with "two_apprentices" and "apprentice".
+
+        "warrior" is used to specify that the patrol should only trigger with at least 1 warrior in it. 
+        "no_app" is for when no apps should be on the patrol
+
+        "distrust" is for the clan distrusting a cat for an outcome
+        "disrespect" is for the clan respecting a cat less for an outcome
+        whole clan gains relationship towards p_l - "clan_to_p_l"
+        whole clan gains relationship towards s_c - "clan_to_r_c" (triggers to be s_c if s_c is present)
+        whole clan gains relationship towards r_c - "clan_to_r_c"
+        patrol gains relationship towards p_l - "patrol_to_p_l"
+        patrol gains relationship towards s_c - "patrol_to_r_c" (triggers to be s_c if s_c is present)
+        patrol gains relationship towards r_c - "patrol_to_r_c"
+        two apps gain relationship towards each other - "rel_two_apps"
+        whole clan gains relationship towards patrol - "clan_to_patrol"
+        whole patrol gains relationship with each other - "rel_patrol" (also default, so if you don't add any other tags, 
+        it goes to this. If you want this outcome, you don't need to add any tags, this is just if you need to add one of the other tags)
+        """
 
 
 patrol = Patrol()
