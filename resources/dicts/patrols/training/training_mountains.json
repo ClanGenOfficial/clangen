@@ -1,277 +1,419 @@
 [
-    {
-            "patrol_id": "mtn_train_session1",
-            "biome": "mountainous",
-            "season": "Any",
-            "tags": ["apprentice", "training", "scar", "injury", "warrior"],
-            "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to leap up a rocky cliff.",
-            "decline_text": "They decide to focus on the patrolling the territory instead. Training can wait for another day.",
-            "chance_of_success": 50,
-            "exp": 20,
-            "success_text": [
-                "app1 listens carefully as p_l explains how to find paw holds and take advantage of the cliff's craggy surface.",
-                "app1 picks up the instruction quickly and is soon able to make their way up the cliff.",
-                null,
-                "By the end of the patrol s_c is hopping nimbly from crack to crag, easily scaling the cliff walls."
-            ],
-            "fail_text":[
-                "app1 tries to see the paw holds that p_l pointed out to them, but the cliff still seems unscalable in their eyes.",
-                "s_c struggles to take the lesson seriously and eventually the training session ends early with no real progress made.",
-                null,
-                "app1 begins making their way up the cliff, but a loose paw hold gives way as soon as they step on it! The apprentice tumbles back down the cliff, hurting their leg in the process."
-            ],
-            "win_traits": ["adventurous", "bold", "confident", "daring", "ambitious"],
-            "fail_trait": ["troublesome", "playful"],
-            "min_cats": 2,
-            "max_cats": 6,
-            "antagonize_text": null,
-            "antagonize_fail_text": null,
-            "history_text": [
-                "r_c got scarred tumbling off a cliff during apprentice training."
-            ]
-    },
-    {
-            "patrol_id": "mtn_train_sett1",
-            "biome": "mountainous",
-            "season": "Any",
-            "tags": ["death", "scar", "training", "injury", "trust", "respect", "clan_to_r_c"],
-            "intro_text": "r_c wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour.",
-            "decline_text": "Surely it must be nothing. . . uneasily, r_c continues on.",
-            "chance_of_success": 40,
-            "exp": 30,
-            "success_text": [
-            "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence. Heart pounding, r_c sprints back to camp to warn everyone.",
-            "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but after a few moments, realizes that the scent is relatively weak. A badger was here, no doubt about it, but it doesn't seem to have taken up residence. This will be important information to report back at camp.",
-            "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They search the slope around the sett thoroughly until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
-            "Carefully considering their options, r_c decides on a stakeout, and watches from a safe distance on the slopes above. When the badger pokes its head above ground at dusk, they're prepared, and dart off back to camp to warn everyone before the predator has blinked the sleep out of its eyes."
-            ],
-            "fail_text": [
-            null,
-            "Well, the only way to know is to check! s_c scrambles into the den for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
-            "r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same . . . They try to creep just a little closer - but the ground drops away steeply beneath their paws and they lose their footing, skidding right into the disturbed badger's lethal jaws.",
-            "While r_c is carefully sniffing at the burrow entrance, there's a clatter of rocks behind them. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett and r_c leaps out of the way, but its claws catch their pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure."
-            ],
-            "win_skills": [ "smart", "very smart", "extremely smart"], 
-            "win_trait": ["patient", "responsible", "thoughtful", "wise", "calm", "careful", "nervous", "sneaky", "strange"],
-            "fail_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "insecure", "playful", "shameless", "troublesome", "vengeful"], 
-            "min_cats": 1,
-            "max_cats": 1,
-            "antagonize_text": null,
-            "antagonize_fail_text": null,
-            "history_text": [
-            "r_c was scarred by a badger.",
-            "r_c lost their life to a badger."
-            ]
-        },
-        {
-            "patrol_id": "mtn_train_sett2",
-            "biome": "mountainous",
-            "season": "Any",
-            "tags": ["scar", "injury", "training", "trust", "respect", "patrol_to_p_l", "patrol_to_r_c"],
-            "intro_text": "p_l wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour.",
-            "decline_text": "Surely it must be nothing. . . uneasily, the patrol continues on.",
-            "chance_of_success": 40,
-            "exp": 30,
-            "success_text": [
-                "Calling the rest of the patrol over, the cats discuss their next move. If a badger has moved in, they need to confirm it. Eventually p_l comes up with a plan - pushing loose rocks in front of the sett's mouth. The cats will be able to come back tomorrow to see if anything has shoved them out of the way.",
-                "The patrol brainstorms ideas, and the solution they hit upon is almost a game - batting pebbles into the sett with as much force as each cat can muster. p_l wins the grand prize, thwacking a pebble down into the sett that causes an explosion of outraged fizzing as the badger inside is rudely awakened. Smartly, the patrol retreats back to camp.",
-                "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They lead the patrol on a search of the slope around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
-                "Carefully considering their options, s_c decides to set up a stakeout with the patrol. When the badger pokes its head above the ground at dusk, they're prepared, and in unison everyone turns for home. The cats fade into the grass before the predator has even blinked the sleep out of its eyes."
-            ],
-            "fail_text": [
-                "The cats try to find enough rubble to barricade the opening to the sett, but the area is pretty bare. Before they know it they're tired, thirsty, and returning home with nothing to show for it.",
-                "Well, the only way to know is to check! s_c scrambles into the den for a look, and it's only by the grace of Starclan that they're able to redirect that speed to twist around just as fast, furious fizzing following them up the burrow tunnel, leaving behind clumps of their own fur.",
-                null,
-                "As the patrol is sniffing around the burrow entrance there's a clatter of rocks. It's difficult to say who's more surprised - cats or badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end. . . including the badger."
-            ],
-            "win_skills": ["smart", "very smart", "extremely smart"], 
-            "win_trait": ["patient", "responsible", "thoughtful", "wise", "calm", "careful", "nervous", "sneaky", "strange"],
-            "fail_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "insecure", "playful", "shameless", "troublesome", "vengeful"], 
-            "min_cats": 2,
-            "max_cats": 6,
-            "antagonize_text": null,
-            "antagonize_fail_text": null,
-            "history_text": [
-            "This cat was scarred by a badger."
-            ]
-    },
-    {
-            "patrol_id": "mtn_train_stuck1",
-            "biome": "mountainous",
-            "season": "Any",
-            "tags": ["training", "platonic", "comfort", "trust", "injury", "death", "scar", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
-            "intro_text": "Trailing behind the patrol, there's a mighty clatter of stones somewhere below r_c. They look around wildly - just in time for the world to tip upside-down as the scree slope beneath them collapses.",
-            "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
-            "chance_of_success": 50,
-            "exp": 20,
-            "success_text": [
-                "Their clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
-                "p_l digs through the loose rocks, helping r_c clear them away enough for the other cat to scramble free.",
-                "Without letting themselves panic, s_c carefully assesses the collapsed slope trapping their clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay.",
-                "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as the patrol carefully digs down to them. r_c blinks up at them, holding on to their presence in the scary situation."
-            ],
-            "fail_text": [
-                "The patrol works all day to free r_c and gets nothing else done.",
-                "Harshly, s_c tells r_c that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
-                "Hurt and wheezing, r_c hears the patrol panicking as they drift to Starclan.",
-                "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
-            ],
-            "win_skills": ["very smart", "extremely smart"],
-            "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-            "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
-            "min_cats": 2,
-            "max_cats": 6,
-            "antagonize_text": null,
-            "antagonize_fail_text": null,
-            "history_text": [
-                "r_c carries a scar from being trapped on patrol",
-                "r_c tragically died after being trapped on patrol."
-            ]
-    },
-    {
-        "patrol_id": "mtn_train_stuck2",
-        "biome": "mountainous",
-        "season": "Any",
-        "tags": ["training", "injury", "death", "scar"],
-        "intro_text": "r_c is training alone out on the mountainside when suddenly, there's a mighty clatter of stones somewhere below them. r_c looks around wildly - just in time for the world to tip upside-down as the scree slope beneath them collapses.",
-        "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
-        "chance_of_success": 50,
-        "exp": 20,
-        "success_text": [
-            "r_c spends the entire day carefully working their way free and gets nothing else done, but at least they're unharmed.",
-            null,
-            "s_c thinks fast, scrambling on top of one of the larger rocks in the midst of the tumble. It isn't the most stable thing to push off of, but it gives their leap enough momentum to get them clear of the collapse. Badly shaken, they waste no time heading back to camp.",
-            null
-        ],
-        "fail_text": [
-            "Pinned under the rocks, r_c yowls until their voice is hoarse and their throat is sore, and thankfully, a patrol passes by after a few hours and frees their hapless clanmate.",
-            null,
-            "Hurt and wheezing, r_c does their best to hang on and wait for a patrol, but they succumb to their injuries and drift to StarClan alone.",
-            "r_c eventually manages to pull themselves free, but they're battered and injured. It's all they can do to find a small cave to shelter in through the night on the cold mountain until a patrol finds them the next morning and helps them to the medicine den."
-        ],
-        "win_skills": ["smart", "very smart", "extremely smart"],
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "r_c carries a scar from being trapped on patrol.",
-            "r_c tragically died after trapped on patrol."
-        ]
+{
+    "patrol_id": "mtn_train_session1",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["apprentice", "training", "scar", "injury", "warrior"],
+    "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to leap up a rocky cliff.",
+    "decline_text": "They decide to focus on the patrolling the territory instead. Training can wait for another day.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "app1 listens carefully as p_l explains how to find paw holds and take advantage of the cliff's craggy surface.",
+        "app1 picks up the instruction quickly and is soon able to make their way up the cliff.",
+        null,
+        "By the end of the patrol s_c is hopping nimbly from crack to crag, easily scaling the cliff walls."
+    ],
+    "fail_text":[
+        "app1 tries to see the paw holds that p_l pointed out to them, but the cliff still seems unscalable in their eyes.",
+        "s_c struggles to take the lesson seriously and eventually the training session ends early with no real progress made.",
+        null,
+        "app1 begins making their way up the cliff, but a loose paw hold gives way as soon as they step on it! The apprentice tumbles back down the cliff, hurting their leg in the process."
+    ],
+    "win_traits": ["adventurous", "bold", "confident", "daring", "ambitious"],
+    "fail_trait": ["troublesome", "playful"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c got scarred tumbling off a cliff during apprentice training."
+    ]
+},
+{
+    "patrol_id": "mtn_train_sett1",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["death", "scar", "training", "injury", "trust", "respect", "clan_to_r_c"],
+    "intro_text": "r_c wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour.",
+    "decline_text": "Surely it must be nothing. . . uneasily, r_c continues on.",
+    "chance_of_success": 40,
+    "exp": 30,
+    "success_text": [
+    "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence. Heart pounding, r_c sprints back to camp to warn everyone.",
+    "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but after a few moments, realizes that the scent is relatively weak. A badger was here, no doubt about it, but it doesn't seem to have taken up residence. This will be important information to report back at camp.",
+    "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They search the slope around the sett thoroughly until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
+    "Carefully considering their options, r_c decides on a stakeout, and watches from a safe distance on the slopes above. When the badger pokes its head above ground at dusk, they're prepared, and dart off back to camp to warn everyone before the predator has blinked the sleep out of its eyes."
+    ],
+    "fail_text": [
+    null,
+    "Well, the only way to know is to check! s_c scrambles into the den for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
+    "r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same . . . They try to creep just a little closer - but the ground drops away steeply beneath their paws and they lose their footing, skidding right into the disturbed badger's lethal jaws.",
+    "While r_c is carefully sniffing at the burrow entrance, there's a clatter of rocks behind them. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett and r_c leaps out of the way, but its claws catch their pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure."
+    ],
+    "win_skills": [ "smart", "very smart", "extremely smart"], 
+    "win_trait": ["patient", "responsible", "thoughtful", "wise", "calm", "careful", "nervous", "sneaky", "strange"],
+    "fail_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "insecure", "playful", "shameless", "troublesome", "vengeful"], 
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+    "r_c was scarred by a badger.",
+    "r_c lost their life to a badger."
+    ]
+},
+{
+    "patrol_id": "mtn_train_sett2",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["scar", "injury", "training", "trust", "respect", "patrol_to_p_l", "patrol_to_r_c"],
+    "intro_text": "p_l wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour.",
+    "decline_text": "Surely it must be nothing. . . uneasily, the patrol continues on.",
+    "chance_of_success": 40,
+    "exp": 30,
+    "success_text": [
+        "Calling the rest of the patrol over, the cats discuss their next move. If a badger has moved in, they need to confirm it. Eventually p_l comes up with a plan - pushing loose rocks in front of the sett's mouth. The cats will be able to come back tomorrow to see if anything has shoved them out of the way.",
+        "The patrol brainstorms ideas, and the solution they hit upon is almost a game - batting pebbles into the sett with as much force as each cat can muster. p_l wins the grand prize, thwacking a pebble down into the sett that causes an explosion of outraged fizzing as the badger inside is rudely awakened. Smartly, the patrol retreats back to camp.",
+        "s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They lead the patrol on a search of the slope around the sett until they come upon some fresh badger scat - stinky, horrible, and perfect proof of the new occupant of the sett.",
+        "Carefully considering their options, s_c decides to set up a stakeout with the patrol. When the badger pokes its head above the ground at dusk, they're prepared, and in unison everyone turns for home. The cats fade into the grass before the predator has even blinked the sleep out of its eyes."
+    ],
+    "fail_text": [
+        "The cats try to find enough rubble to barricade the opening to the sett, but the area is pretty bare. Before they know it they're tired, thirsty, and returning home with nothing to show for it.",
+        "Well, the only way to know is to check! s_c scrambles into the den for a look, and it's only by the grace of Starclan that they're able to redirect that speed to twist around just as fast, furious fizzing following them up the burrow tunnel, leaving behind clumps of their own fur.",
+        null,
+        "As the patrol is sniffing around the burrow entrance there's a clatter of rocks. It's difficult to say who's more surprised - cats or badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end. . . including the badger."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"], 
+    "win_trait": ["patient", "responsible", "thoughtful", "wise", "calm", "careful", "nervous", "sneaky", "strange"],
+    "fail_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "insecure", "playful", "shameless", "troublesome", "vengeful"], 
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+    "This cat was scarred by a badger."
+    ]
+},
+{
+    "patrol_id": "mtn_train_stuck1",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["training", "platonic", "comfort", "trust", "injury", "death", "scar", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
+    "intro_text": "Trailing behind the patrol, there's a mighty clatter of stones somewhere below r_c. They look around wildly - just in time for the world to tip upside-down as the scree slope beneath them collapses.",
+    "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "Their clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
+        "p_l digs through the loose rocks, helping r_c clear them away enough for the other cat to scramble free.",
+        "Without letting themselves panic, s_c carefully assesses the collapsed slope trapping their clanmate. They point out a stable path to dig them out from above, and r_c is recovered, scared but okay.",
+        "Creeping in as close as possible, s_c purrs to r_c, keeping them calm as the patrol carefully digs down to them. r_c blinks up at them, holding on to their presence in the scary situation."
+    ],
+    "fail_text": [
+        "The patrol works all day to free r_c and gets nothing else done.",
+        "Harshly, s_c tells r_c that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
+        "Hurt and wheezing, r_c hears the patrol panicking as they drift to Starclan.",
+        "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c carries a scar from being trapped on patrol",
+        "r_c tragically died after being trapped on patrol."
+    ]
+},
+{
+    "patrol_id": "mtn_train_stuck2",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["training", "injury", "death", "scar"],
+    "intro_text": "r_c is training alone out on the mountainside when suddenly, there's a mighty clatter of stones somewhere below them. r_c looks around wildly - just in time for the world to tip upside-down as the scree slope beneath them collapses.",
+    "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "r_c spends the entire day carefully working their way free and gets nothing else done, but at least they're unharmed.",
+        null,
+        "s_c thinks fast, scrambling on top of one of the larger rocks in the midst of the tumble. It isn't the most stable thing to push off of, but it gives their leap enough momentum to get them clear of the collapse. Badly shaken, they waste no time heading back to camp.",
+        null
+    ],
+    "fail_text": [
+        "Pinned under the rocks, r_c yowls until their voice is hoarse and their throat is sore, and thankfully, a patrol passes by after a few hours and frees their hapless clanmate.",
+        null,
+        "Hurt and wheezing, r_c does their best to hang on and wait for a patrol, but they succumb to their injuries and drift to StarClan alone.",
+        "r_c eventually manages to pull themselves free, but they're battered and injured. It's all they can do to find a small cave to shelter in through the night on the cold mountain until a patrol finds them the next morning and helps them to the medicine den."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c carries a scar from being trapped on patrol.",
+        "r_c tragically died after trapped on patrol."
+    ]
 
-    },
-    {
-            "patrol_id": "mtn_train_solo1",
-            "biome": "mountainous",
-            "season": "Any",
-            "tags": ["training", "apprentice", "injury", "scar"],
-            "intro_text": "r_c heads out into the mountains alone, but maybe an apprentice shouldn't try to do a solo patrol.",
-            "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
-            "chance_of_success": 30,
-            "exp": 20,
-            "success_text": [
-                "At least this is a good chance to learn the territory! r_c heads off to map out a field of boulders they've always found confusing.",
-                "r_c clambers over a rise in the ground and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent.",
-                null,
-                "There's nothing to worry about! s_c pads confidently through c_n territory, assured in their safety by the strength of c_n borders."
-            ],
-            "fail_text": [
-                "r_c gets lost in the territory and doesn't learn anything.",
-                "s_c shivers a little, imagining what could be out there. . . No, definitely not. They turn around and slink straight back to camp.",
-                null,
-                "The apprentice wanders along obliviously and slips, tumbling right down through a gap in the path. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
-            ],
-            "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-            "fail_trait": ["insecure", "lonesome", "nervous"],
-            "min_cats": 1,
-            "max_cats": 1,
-            "antagonize_text": null,
-            "antagonize_fail_text": null,
-            "history_text": [
-                    "r_c got injured as an apprentice, exploring alone."
-            ]
-    },
-    {
-            "patrol_id": "mtn_train_solo2",
-            "biome": "mountainous",
-            "season": "Any",
-            "tags": ["training"],
-            "intro_text": "r_c heads out into the mountains alone, wanting to explore and have some time to themselves.",
-            "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
-            "chance_of_success": 30,
-            "exp": 20,
-            "success_text": [
-                "r_c heads off to map out a field of boulders they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date.",
-                "r_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent.",
-                "s_c rounds a corner and stumbles across a  tiny, perfect, sheltered gully, thick with bushes and prey scent. Further investigation shows it will be sheltered from almost all wind directions, and s_c purrs. This reliable prey source will be important during Leaf-bare.",
-                "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
-            ],
-            "fail_text": [
-                "r_c gets lost in the territory. Somehow.",
-                "s_c shivers a little, thinking of the dangers of solo patrols. . . No, definitely not. They turn around and slink straight back to camp."
-            ],
-            "win_skills": ["smart", "very smart", "extremely smart"],
-            "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-            "fail_trait": ["insecure", "lonesome", "nervous"],
-            "min_cats": 1,
-            "max_cats": 1,
-            "antagonize_text": null,
-            "antagonize_fail_text": null
-    },
-    {
-            "patrol_id": "mtn_train_solo3",
-            "biome": "mountainous",
-            "season": "Any",
-            "tags": ["training", "deputy"],
-            "intro_text": "r_c heads out into the mountains alone, wanting to explore and have some time to themselves.",
-            "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
-            "chance_of_success": 30,
-            "exp": 20,
-            "success_text": [
-                "r_c heads off to map out a field of boulders they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
-                "r_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Purring, they take the opportunity for a small moment of peace, stretching out in the shade to relax.",
-                "s_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Further investigation shows it will be sheltered from almost all wind directions, and s_c purrs. This reliable prey source will be important during Leaf-bare, and its discovery helps to ease one of the many worries on the deputy's mind.",
-                "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
-            ],
-            "fail_text": [
-                "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
-                "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . . No, definitely not. They turn around and go straight back to camp."
-            ],
-            "win_skills": ["smart", "very smart", "extremely smart"],
-            "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
-            "fail_trait": ["insecure", "lonesome", "nervous"],
-            "min_cats": 1,
-            "max_cats": 1,
-            "antagonize_text": null,
-            "antagonize_fail_text": null
-    },
-    {
-            "patrol_id": "mtn_train_solo4",
-            "biome": "mountainous",
-            "season": "Any",
-            "tags": ["training", "leader"],
-            "intro_text": "r_c heads out into the mountains alone, wanting to explore and have some time to themselves.",
-            "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
-            "chance_of_success": 30,
-            "exp": 20,
-            "success_text": [
-                "r_c heads off to map out a field of boulders they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
-                "r_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Purring, they take the opportunity for a small moment of peace, stretching out in the shade to relax.",
-                "s_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Further investigation shows it will be sheltered from almost all wind directions, and s_c purrs. This reliable prey source will be important during Leaf-bare, and its discovery helps to ease one of the many worries on the leader's mind.",
-                "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
-            ],
-            "fail_text": [
-                "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
-                "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . . No, definitely not. They turn around and go straight back to camp."
-            ],
-            "win_skills": ["smart", "very smart", "extremely smart"],
-            "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring",
-                            "playful", "righteous"],
-            "fail_skills": ["None"],
-            "fail_trait": ["insecure", "lonesome", "nervous"],
-            "min_cats": 1,
-            "max_cats": 1,
-            "antagonize_text": null,
-            "antagonize_fail_text": null
-    }
+},
+{
+    "patrol_id": "mtn_train_solo1",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["training", "apprentice", "injury", "scar"],
+    "intro_text": "r_c heads out into the mountains alone, but maybe an apprentice shouldn't try to do a solo patrol.",
+    "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
+    "chance_of_success": 30,
+    "exp": 20,
+    "success_text": [
+        "At least this is a good chance to learn the territory! r_c heads off to map out a field of boulders they've always found confusing.",
+        "r_c clambers over a rise in the ground and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent.",
+        null,
+        "There's nothing to worry about! s_c pads confidently through c_n territory, assured in their safety by the strength of c_n borders."
+    ],
+    "fail_text": [
+        "r_c gets lost in the territory and doesn't learn anything.",
+        "s_c shivers a little, imagining what could be out there. . . No, definitely not. They turn around and slink straight back to camp.",
+        null,
+        "The apprentice wanders along obliviously and slips, tumbling right down through a gap in the path. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
+    ],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_trait": ["insecure", "lonesome", "nervous"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c got injured as an apprentice, exploring alone."
+    ]
+},
+{
+    "patrol_id": "mtn_train_solo2",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["training"],
+    "intro_text": "r_c heads out into the mountains alone, wanting to explore and have some time to themselves.",
+    "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+    "chance_of_success": 30,
+    "exp": 20,
+    "success_text": [
+        "r_c heads off to map out a field of boulders they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date.",
+        "r_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent.",
+        "s_c rounds a corner and stumbles across a  tiny, perfect, sheltered gully, thick with bushes and prey scent. Further investigation shows it will be sheltered from almost all wind directions, and s_c purrs. This reliable prey source will be important during Leaf-bare.",
+        "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
+    ],
+    "fail_text": [
+        "r_c gets lost in the territory. Somehow.",
+        "s_c shivers a little, thinking of the dangers of solo patrols. . . No, definitely not. They turn around and slink straight back to camp."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_trait": ["insecure", "lonesome", "nervous"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_train_solo3",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["training", "deputy"],
+    "intro_text": "r_c heads out into the mountains alone, wanting to explore and have some time to themselves.",
+    "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+    "chance_of_success": 30,
+    "exp": 20,
+    "success_text": [
+        "r_c heads off to map out a field of boulders they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+        "r_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Purring, they take the opportunity for a small moment of peace, stretching out in the shade to relax.",
+        "s_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Further investigation shows it will be sheltered from almost all wind directions, and s_c purrs. This reliable prey source will be important during Leaf-bare, and its discovery helps to ease one of the many worries on the deputy's mind.",
+        "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
+    ],
+    "fail_text": [
+        "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
+        "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . . No, definitely not. They turn around and go straight back to camp."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_trait": ["insecure", "lonesome", "nervous"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_train_solo4",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["training", "leader"],
+    "intro_text": "r_c heads out into the mountains alone, wanting to explore and have some time to themselves.",
+    "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
+    "chance_of_success": 30,
+    "exp": 20,
+    "success_text": [
+        "r_c heads off to map out a field of boulders they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+        "r_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Purring, they take the opportunity for a small moment of peace, stretching out in the shade to relax.",
+        "s_c rounds a corner and stumbles across a tiny, perfect, sheltered gully, thick with bushes and prey scent. Further investigation shows it will be sheltered from almost all wind directions, and s_c purrs. This reliable prey source will be important during Leaf-bare, and its discovery helps to ease one of the many worries on the leader's mind.",
+        "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
+    ],
+    "fail_text": [
+        "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
+        "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . . No, definitely not. They turn around and go straight back to camp."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring",
+                    "playful", "righteous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["insecure", "lonesome", "nervous"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_train_stuck2",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["training", "injury", "death", "scar"],
+    "intro_text": "Out on the mountain training alone, there's a mighty crash below r_c. They look around wildly, just in time for the world to tip upside-down as the scree slope beneath them collapses.",
+    "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "r_c spends the entire day carefully working their way free, and gets nothing else done.",
+        "r_c reacts quickly, scrambling on top of a larger rock in the falling tumble. It gives them solid ground to push against as they leap clear of the collapse.",
+        null,
+        null
+    ],
+    "fail_text": [
+        "r_c yowls until their voice is hoarse and croaky, and it takes hours before any of their clanmates pass by to hear them, but eventually they're freed.",
+        null,
+        "Hurt and wheezing, r_c is alone as they drift to StarClan.",
+        "r_c eventually manages to pull themselves free, but they're battered and injured, and have to spend the night out alone in the cold mountains before a patrol finds them the next morning and helps them back to camp."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c carries a scar from being trapped on patrol",
+        "r_c tragically died after being trapped on patrol."
+    ]
+},
+{
+    "patrol_id": "mtn_train_eagles1",
+    "biome": "mountainous",
+    "season": "newleaf",
+    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
+    "intro_text": "The cats head out into the crisp clear newleaf sun, p_l leading them towards a massive messy eagle nest.",
+    "decline_text": "When they get there they discover that this nest isn't being used this newleaf. Disappointing.",
+    "chance_of_success": 50,
+    "exp": 15,
+    "success_text": [
+        "This close to the nest the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's a great opportunity to watch the birds and learn their body language, and a side of them app1 never expected to see, observing them with their chicks.",
+        "p_l tells app1 to watch carefully as the parents arrive at and leave the nest - this is one of the only times a cat can study how an eagle flies without danger. The adults are far too focused on their brood, and their brood far too focused on squabbling, for either to notice the c_n cats.",
+        "As they hide, watching the eagles feed their chicks, s_c tells app1 the story of an eagle chick that once fell from its nest and was abandoned by its parents. c_n took it in, and when it fledged over it's first winter it turned into a fierce she-cat whose claws could stand up to even the mightiest predator."
+    ],
+    "fail_text": [
+        "app1 refuses to believe that going near an eagle camp could ever possibly be safe and flatly refuses to go.",
+        "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity."
+    ],
+    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_train_eagles2",
+    "biome": "mountainous",
+    "season": "newleaf",
+    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
+    "intro_text": "The cats head out into the crisp clear newleaf sun, p_l leading them towards a massive messy eagle nest.",
+    "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
+    "chance_of_success": 50,
+    "exp": 15,
+    "success_text": [
+        "This close to the nest the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's a great opportunity to watch the birds and learn their body language, and a side of them app1 never expected to see, observing them with their chicks.",
+        "p_l tells app1 to watch carefully as the parents arrive at and leave the nest - this is one of the only times a cat can study how an eagle flies without danger. The adults are far too focused on their brood, and their brood far too focused on squabbling, for either to notice the c_n cats.",
+        "s_c shows app1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak is lethal at ripping and twisting, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive, if scary lesson, and app1 learns a lot."
+    ],
+    "fail_text": [
+        "app1 refuses to believe that going near an eagle camp could ever possibly be safe and flatly refuses to go.",
+        "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+
+{
+    "patrol_id": "mtn_train_eagles3",
+    "biome": "mountainous",
+    "season": "newleaf",
+    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
+    "intro_text": "The cats head out into the crisp clear newleaf sun, p_l leading them towards a massive messy eagle nest.",
+    "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "This close to the nest the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's a great opportunity to watch the birds and learn their body language, and a parental side of them that the apprentices never expected.",
+        "p_l tells the apprentices to watch carefully as the parents arrive at and leave the nest - this is one of the only times a cat can study how an eagle flies without danger. The adults are far too focused on their brood, and their brood far too focused on squabbling, for either to notice the c_n cats.",
+        "As they hide, watching the eagles feed their chicks, s_c tells the apprentices the story of an eagle chick that once fell from its nest and was abandoned by its parents. c_n took it in, and when it fledged over it's first winter it turned into a fierce she-cat whose claws could stand up to even the mightiest predator."
+    ],
+    "fail_text": [
+        "app1 refuses to believe that going near an eagle camp could ever possibly be safe and flatly refuses to go. app2 tries to comfort them, but the patrol is called off.",
+        "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity. They distract app2 as well, and eventually p_l has to give up on teaching."
+    ],
+    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_train_eagles4",
+    "biome": "mountainous",
+    "season": "newleaf",
+    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
+    "intro_text": "The cats head out into the crisp clear newleaf sun, p_l leading them towards a massive messy eagle nest.",
+    "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
+    "chance_of_success": 50,
+    "exp": 15,
+    "success_text": [
+        "This close to the nest the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's a great opportunity to watch the birds and learn their body language, and a parental side of them that the apprentices never expected.",
+        "p_l tells the apprentices to watch carefully as the parents arrive at and leave the nest - this is one of the only times a cat can study how an eagle flies without danger. The adults are far too focused on their brood, and their brood far too focused on squabbling, for either to notice the c_n cats.",
+        "s_c shows app1 the way the eagle rips apart its prey to feed to its nestlings, explaining how that beak is lethal at ripping and twisting, pointing out how the eagle holds its claws to grip its prey. It's a comprehensive, if scary lesson, and app1 learns a lot."
+    ],
+    "fail_text": [
+        "app1 refuses to believe that going near an eagle camp could ever possibly be safe and flatly refuses to go. app2 tries to comfort them, but the patrol is called off.",
+        "p_l can't get app1 to take the training session seriously. They keep making too much noise, not understanding the importance and danger of the opportunity. They distract app2 as well, and eventually p_l has to give up on teaching."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+}
 ]
