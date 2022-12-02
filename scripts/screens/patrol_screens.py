@@ -174,6 +174,12 @@ class PatrolScreen(Screens):
                     available_med = True
                     continue
 
+
+            if available_med:
+                game.switches['patrol_chosen'] = 'med'
+            if not available_med and game.switches['patrol_chosen'] == 'med':
+                game.switches['patrol_chosen'] = 'general'
+
             if game.switches['patrol_chosen'] == 'training':
                 verdana.text("training patrol", ('center', y_pos))
             elif game.switches['patrol_chosen'] == 'hunting':
@@ -210,8 +216,6 @@ class PatrolScreen(Screens):
                                       available=available_med,
                                       patrol_chosen='med'
                                       )
-
-
 
 
         # SHOW CAT INFO
