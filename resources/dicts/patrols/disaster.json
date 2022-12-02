@@ -1,47 +1,5 @@
 [
 {
-    "patrol_id": "gen_disaster1",
-    "biome": "Any",
-    "season": "Any",
-    "tags": ["disaster"],
-    "intro_text": "Your patrol hears some odd noises coming from an abandoned Twoleg nest.",
-    "success_text": ["It's just an old loner singing to themselves."],
-    "fail_text": ["Your patrol walks into an ambush by a group of rogues and everyone is slaughtered."],
-    "decline_text": "Your patrol decides not to investigate.",
-    "chance_of_success": 60,
-    "exp": 10,
-    "win_skills": ["fantastic fighter"],
-    "min_cats": 1,
-    "max_cats": 6,
-    "history_text": [
-        null,
-        "r_c was slaughtered in an ambush by a bloodthirsty group of rogues."
-    ],
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
-    "patrol_id": "gen_disaster3",
-    "biome": "Any",
-    "season": "Any",
-    "tags": ["disaster_gone"],
-    "intro_text": "Your patrol encounters a clearing where a lot of Twolegs linger.",
-    "success_text": ["They continue hunting undetected."],
-    "fail_text": ["The Twolegs notice the cats and trap them in their monsters. The cats on your patrol are never seen again."],
-    "decline_text": "Your patrol decides to hunt elsewhere.",
-    "chance_of_success": 60,
-    "exp": 10,
-    "win_skills": ["extremely smart"],
-    "min_cats": 1,
-    "max_cats": 6,
-    "history_text": [
-        null,
-        "r_c was trapped by twolegs and taken away."
-    ],
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
     "patrol_id": "fst_bord_flashflood1",
     "biome": "forest",
     "season": "newleaf",
