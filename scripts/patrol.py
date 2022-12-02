@@ -1368,7 +1368,7 @@ class PatrolEvent():
             "disrespect", "heat_illness", "med_only"
         ]
 
-        # patrol notes (successes and fails)
+        # ! Patrol Notes
         """Success[0] is the most common
         Success[1] is slightly rarer
         Success[2] is if win skill is applicable
@@ -1389,10 +1389,7 @@ class PatrolEvent():
         You can ONLY have one of these:
         "death" (r_c dies), "disaster" (all die), "multi_deaths" (2-4 cats die)
         If you have more than one, it takes the first one in this order.
-
-        You can ONLY have one of these:
-        "gone" (r_c leaves the clan), "disaster_gone" (all leave the clan), "multi_gone" (2-4 cats leave the clan)
-        If you have more than one, it takes the first one in this order.
+        same for: "gone" (r_c leaves the clan), "disaster_gone" (all leave the clan), "multi_gone" (2-4 cats leave the clan)
 
         "p_l_to_r_c" is for specifically pl and rc gaining relationship with EACH OTHER
 
