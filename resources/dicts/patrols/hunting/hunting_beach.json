@@ -769,6 +769,181 @@
             "r_c was heavily injured by a monster, and carries the scars from it.",
             "This cat was hit by a monster and killed."
     ]
+},
+{
+    "patrol_id": "bch_hunt_octopus1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["hunting", "platonic", "comfort", "small_prey"],
+    "intro_text": "As the patrol passes a series of swallow rockpools, they spot a small octopus trapped by the tide.",
+    "decline_text": "They move on to find easier prey.",
+    "chance_of_success": 60,
+    "exp": 15,
+    "success_text": [
+            "r_c professionally flips the octopus out of its refuge and dispatches it with a quick bite. One for the fresh-kill pile!",
+            "This rockpool proves a good fishing ground, and as well as the octopus, the patrol pulls crabs and limpets out from where the tides have left them.",
+            "The octopus sees the cats and vanishes into a crevice, but s_c is able to lever it out with a thin strip of driftwood.",
+            "s_c pounces on the octopus enthusiastically. It thwacks it's tentacles around their head, trying to avoid their snapping muzzle, but s_c takes it in stride, prancing out of the rockpool to cheers and hilarity from the patrol, letting their friends guide them and their semi-captured prey blindly back to camp as everyone murrps with laughter."
+    ],
+    "fail_text": [
+            "The octopus spots the patrol and vanishes into an impossibly small crevice. The cats check it carefully, but there doesn't seem to be a way to get it out.",
+            "s_c pounces on the octopus enthusiastically. It thwacks its tentacles around their head, trying to avoid their snapping muzzle, and s_c skitters backwards, uncoordinated flailing about until the rest of the patrol is able to help them. The octopus escapes."
+    ],
+    "win_skills": ["great hunter", "fantastic hunter", "very smart", "extremely smart"],
+    "win_trait": ["charismatic", "childish", "confident", "playful"],
+    "fail_skills": ["None"],
+    "fail_trait": ["adventurous", "bold", "daring", "righteous"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_hunt_octopus2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["hunting", "small_prey"],
+    "intro_text": "As the patrol passes along the sand between the waves and some rockpools, they find one of the oddest things any of them have ever seen - an octopus on land. It's clearly trying to head for the ocean.",
+    "decline_text": "A little impressed, a lot weirded out, the patrol decided to leave the poor creature alone.",
+    "chance_of_success": 60,
+    "exp": 15,
+    "success_text": [
+            "r_c pounces, feeling almost sorry for the sea creature, which is too small to put up much of a fight.",
+            "The cats watch the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The small octopus is almost to the sea before someone thinks to catch the thing, and it's not exactly a true hunt, more an undignified scramble.",
+            null,
+            "Well, this octopus decided to cross at the wrong time. Ruthlessly, s_c dispatches it, paws squishing through the very squishy squish."
+    ],
+    "fail_text": [
+            "The cats watch the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The octopus is almost to the sea before someone thinks to catch the thing, and in the resulting undignified scramble the octopus gets away entirely.",
+            "s_c convinces the patrol to let it go - the poor thing is clearly struggling so much already, this feels unfair."
+    ],
+    "win_skills": ["None"],
+    "win_trait": [ "bloodthirsty", "cold", "fierce", "strict"],
+    "fail_skills": ["None"],
+    "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_hunt_octopus3",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["hunting", "small_prey"],
+    "intro_text": "As r_c passes along the sand between the waves and some rockpools, they find one of the oddest things they've ever seen - an octopus on land. It's clearly trying to head for the ocean.",
+    "decline_text": "A little impressed, a lot weirded out, r_c decided to leave the poor creature alone.",
+    "chance_of_success": 60,
+    "exp": 15,
+    "success_text": [
+            "r_c pounces, feeling almost sorry for the sea creature, which is too small to put up much of a fight.",
+            "r_c watches the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The small octopus is almost to the sea before r_c thinks to catch the thing, and it's not exactly a true hunt, more an undignified scramble.",
+            null,
+            "Well, this octopus decided to cross at the wrong time. Ruthlessly, s_c dispatches it, paws squishing through the very squishy squish."
+    ],
+    "fail_text": [
+            "r_c watches the roiling, uncoordinated, twisting mass of limbs, completely weirded out. The small octopus is almost to the sea before r_c thinks to catch the thing, and in the resulting undignified scramble the octopus gets away entirely.",
+            "s_c lets it go - the poor thing is clearly struggling so much already, this feels unfair."
+    ],
+    "win_skills": ["None"],
+    "win_trait": [ "bloodthirsty", "cold", "fierce", "strict"],
+    "fail_skills": ["None"],
+    "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_hunt_octopus4",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["hunting", "big_prey", "trust"],
+    "intro_text": "As the patrol passes along the sand between the waves and some rockpools, they find one of the oddest things any of them have ever seen - a huge octopus on land. It's clearly trying to head for the ocean.",
+    "decline_text": "A little impressed, a lot weirded out, the patrol decided to leave the poor creature alone.",
+    "chance_of_success": 50,
+    "exp": 30,
+    "success_text": [
+            "The patrol pounces in a coordinated strike on the massive potential prey - but this prey has more arms than there are cats, and it takes all their energy to wrestle with the titanicly strong long arms. The patrol takes a couple hours to rest afterwards before they try moving it, and in the end almost lose the octopus' body to the tides.",
+            null,
+            "s_c coordinates the cats, and they all work together, distracting the octopus while another member of the patrol grabs an arm and hauls it backwards. Through repeated short jerks, and avoiding it's snapping beak, they manage to drag the octopus away from the ocean. Then it's just a matter of time before it dies.",
+            "Keeping a cool head under very odd circumstances, s_c manages to keep the patrol focused on the prey opportunity, and not how weird the whole thing is. The octopus is an individual so large that if it was in the water the patrol would never have a chance, but on land and working together calmly, they manage to win."
+    ],
+    "fail_text": [
+            "The cats watch the roiling, uncoordinated, twisting mass of limbs, completely weirded out. r_c darts in to try and catch it, but one long tentacle almost lazily smacks them back. Even on land, this octopus seems too big to tackle.",
+            "Confronted with the roiling mass of flesh, s_c panics, and is no help as the patrol tries to decide what to do. In the end, the octopus slithers into the ocean and disappears.",
+            null,
+            "r_c pounces, trying to end the weird encounter quickly, but a tentacle grabs them and hauls them closer, revealing a massive hooked beak. With r_c yowling and wriggling and a complete lack of bones to hold itself up the octopus only manages to take a small chunk out of them, but it's enough to make the patrol back off.",
+            null,
+            "s_c dances around nervously, but the patrol wants to give this hunt a try. Their anxiety doesn't help, and the deflated octopus manages to grab and bite them with its hooked beak, proving that maybe s_c was right to be cautious."
+    ],
+    "win_skills": ["very smart", "extremely smart", "great fighter", "excellent fighter"],
+    "win_trait": ["calm", "careful", "loyal", "strange", "patient", "responsible", "thoughtful", "wise", "cold"],
+    "fail_skills": ["None"],
+    "fail_trait": ["childish", "shameless", "troublesome", "insecure", "nervous"],
+    "min_cats": 4,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was bit by an octopus, and it left a scar."
+    ]
+},
+{
+    "patrol_id": "bch_hunt_octopus5",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["hunting", "small_prey", "trust", "distrust"],
+    "intro_text": "As the patrol passes along the sand between the waves and some rockpools, they find one of the oddest things any of them have ever seen - a huge octopus on land. It's clearly trying to head for the ocean.",
+    "decline_text": "A little impressed, a lot weirded out, the patrol decided to leave the poor creature alone.",
+    "chance_of_success": 50,
+    "exp": 30,
+    "success_text": [
+            "The patrol pounces in a coordinated strike on the massive potential prey - but this prey has more arms than there are cats, and it takes all their energy to wrestle with the enormously strong, long arms. They fail to stop the octopus, although it leaves one of it's arms behind. The arm keeps trying to fight long after the body has swum away.",
+            null,
+            "s_c coordinates the cats, and they all work together, distracting the octopus while another member of the patrol grabs an arm and hauls it backwards. There's too few of them for it to work, although they manage to rip an arm off. The arm keeps trying to fight the patrol as they carry it back to camp, not making it any easier.",
+            "Keeping a cool head under very odd circumstances, s_c manages to keep the patrol focused on the prey opportunity, and not how weird the whole thing is. They manage to rip off an arm, and carry it back to camp as a group as it keeps struggling."
+    ],
+    "fail_text": [
+            "The cats watch the roiling, uncoordinated, twisting mass of limbs, completely weirded out. r_c darts in to try and catch it, but one long tentacle almost lazily smacks them back. Even on land, this octopus seems too big to tackle.",
+            "Confronted with the roiling mass of flesh, s_c panics, and is no help as the patrol tries to decide what to do. In the end, the octopus slithers into the ocean and disappears.",
+            null,
+            "r_c pounces, trying to end the weird encounter quickly, but a tentacle grabs them and hauls them closer, revealing a massive hooked beak. With r_c yowling and wriggling and a complete lack of bones to hold itself up the octopus only manages to take a small chunk out of them, but it's enough to make the patrol back off.",
+            null,
+            "s_c dances around nervously, but the patrol wants to give this hunt a try. Their anxiety doesn't help, and the deflated octopus manages to grab and bite them with its hooked beak, proving that maybe s_c was right to be cautious."
+    ],
+    "win_skills": ["very smart", "extremely smart", "great fighter", "excellent fighter"],
+    "win_trait": ["calm", "careful", "loyal", "strange", "patient", "responsible", "thoughtful", "wise", "cold"],
+    "fail_skills": ["None"],
+    "fail_trait": ["childish", "shameless", "troublesome", "insecure", "nervous"],
+    "min_cats": 1,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was bit by an octopus, and it left a scar."
+    ]
+},
+{
+    "patrol_id": "bch_hunt_heat1",
+    "biome": "beach",
+    "season": "greenleaf",
+    "tags": ["hunting", "big_prey", "rel_patrol", "platonic"],
+    "intro_text": "It's extremely hot out today, and the hunting patrol lingers around the ocean shore, where the spray from the waves keeps them cool.",
+    "decline_text": "The patrol decides to head back to camp. They can hunt a different day.",
+    "chance_of_success": 50,
+    "exp": 15,
+    "success_text": [
+        "The prey gets sluggish in the heat, as the cats stay cool and ready. When the patrol spots a beach littered with crab-holes, they get to work, fishing out the small dry and exhausted crabs by the dozens until every cats has almost too many to carry home.",
+        "The cats find a vast and shallow rockpool. While paddling for the pleasure of water on their pawpads, they discover the sun has heated the water to body-heat. Very weird, but a great opportunity. The warm bath has killed the little creepy crawlies that are usually not worth the effort of chasing, and they take a strange but fruitful bounty home."
+],
+    "fail_text": [
+        "No way, it's too hot for this. They can try to hunt again later."
+        ],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 
 ]

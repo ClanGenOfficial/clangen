@@ -3,9 +3,13 @@
     "patrol_id": "mtn_hunt_shrew1",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["hunting"],
+    "tags": ["hunting", "small_prey"],
     "intro_text": "Your patrol comes across a shrew.",
-    "success_text": ["Your patrol catches the shrew!"],
+    "success_text": [
+        "r_c drops into a crouch and stalks towards the shrew. They pounce on it, swiftly killing it with a bite to the back of the head.",
+        "r_c drops into a crouch and silently treads towards the shrew. At the last second, the shrew looks up, but r_c is quick to pounce and cut off its escape.",
+        "s_c drops into a perfect hunting crouch and stalks the oblivious shrew until they're in striking distance. The shrew almost slips away, but s_c catches it with one paw and flings it towards their mouth for the killing bite."
+    ],
     "fail_text": ["Your patrol narrowly misses the shrew."],
     "decline_text": "Your patrol decides to look for other prey.",
     "chance_of_success": 50,
@@ -447,6 +451,30 @@
     "history_text": [
             "r_c was heavily injured by a monster, and carries the scars from it.",
             "r_c was hit by a monster and killed."
+    ]
+},
+{
+    "patrol_id": "mtn_hunt_heat1",
+    "biome": "mountainous",
+    "season": "greenleaf",
+    "tags": ["hunting", "big_prey", "platonic"],
+    "intro_text": "It's hot out today, and the hunting patrol bounces around, infused with energy as they seek out prey.",
+    "decline_text": "The patrol decides to head back to camp. They can hunt a different day.",
+    "chance_of_success": 50,
+    "exp": 15,
+    "success_text": [
+        "It feels like every creature on the mountains is out enjoying the weather and fattening up, and the cats have what feels like the perfect day, sun and heat and prey dripping from every moment.",
+        "In the heat of midday, yawning with the sleepy pleasure of the heat, r_c hears a croaking bleat. The patrol trots off to investigate, and finds an upside-down mountain sheep stuck in a crevice. Not only do they bring back as much meat as they can carry, but they make sure to bring back wool too. Never to early to be thinking about next Leaf-bare."],
+    "fail_text": [
+        "No way, it's too hot for this. They can try to hunt again later."
+],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        null
     ]
 }
 

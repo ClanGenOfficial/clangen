@@ -1172,6 +1172,86 @@ null
             null,
             null
     ]
+},
+{
+    "patrol_id": "fst_hunt_fun3",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["hunting", "small_prey", "romantic", "platonic", "respect"],
+    "intro_text": "As r_c tears through the forest with p_l, stretching their legs on a run, they spot movement out of the corner of their eye.",
+    "decline_text": "They keep going, not wanting to slow down.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+            "With a huge leap, r_c darts sideways and pulls a blackbird out of the air. p_l trots over to congratulate them on the fantastic catch, purring.",
+            "Laughing, they bounce gleefully off a tree trunk, redirecting their momentum to slam into a very surprised mouse. p_l skids to a halt, gasping over their beautiful catch with their eyes shining.",
+            "Nothing's going to escape their claws! s_c skids to a halt and then leaps into action, claw just barely catching in the tail of the squirrel they saw and bringing it down. They purr with satisfaction and pad back to r_c, sharing in the excitement of the hunt with them."
+    ],
+    "fail_text": [
+            "r_c darts to the side, but wherever made the flash of movement is long gone. How frustrating!",
+            "r_c skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life. p_l snickers at them a bit too, but it's all in good fun."
+    ],
+    "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_fun4",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["hunting", "small_prey", "apprentice",  "romantic", "platonic", "respect", "two_apprentices"],
+    "intro_text": "As app1 tears through the forest with app2, stretching their legs on a run, they spot movement out of the corner of their eye.",
+    "decline_text": "They keep going, not wanting to slow down.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+            "With a huge leap, app1 darts sideways and pulls the tail off a blackbird taking flight into the air. A missed catch, but new nest lining? They toss some of the feathers at app2, and the two apprentices end up scuffling like kits.",
+            "Laughing, app1 bounces gleefully off a tree trunk. It redirects their momentum far better than they were expecting, and it's difficult to say who's more surprised - the mouse, or the apprentice slamming into it! Not a very clean catch, but the look on app2's face, so shocked and impressed, makes them blush."
+    ],
+    "fail_text": [
+            "app1 darts to the side, but wherever made the flash of movement is long gone. How frustrating!",
+            "app1 skids to a halt and tries to sprint after it, but the bird they saw escapes their paws. They chatter angrily at it, and it tries to poop on them. Such is life. app2 snickers at them too, but in a lighthearted way, and soon both apprentices are giggling about it as they continue their run."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_hunt_heat1",
+    "biome": "forest",
+    "season": "greenleaf",
+    "tags": ["hunting", "small_prey", "big_prey", "heat_illness"],
+    "intro_text": "It is extremely hot out today, and the hunting patrol is having a hard time staying on task. r_c debates turning back home.",
+    "decline_text": "The patrol decides to head back to camp. They can hunt a different day.",
+    "chance_of_success": 50,
+    "exp": 15,
+    "success_text": [
+        "They decide to power through the weather and the patrol eventually has a successful, if exhausting, hunt.",
+        "The patrol stops to cool off in the shade of a tree for a heartbeat before continuing on their way. As they do, they notice a half-grown deer fawn tottering about in the distance. It's confused by the heat and underweight, and by working together the cats manage to bring it down, a huge prize for the clan."],
+    "fail_text": [
+        "No way, it's too hot for this. They can try to hunt again later.",
+        null,
+        null,
+        "r_c collapses from heat exhaustion. p_l carries them back to camp."],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "This cat got heatstroke while on a patrol.",
+        "This cat died from heat stroke."
+    ]
 }
+
 
 ]

@@ -847,6 +847,31 @@
             "r_c was heavily injured by a monster, and carries the scars from it.",
             "r_c was hit by a monster and killed."
     ]
+},
+{
+    "patrol_id": "pln_hunt_heat1",
+    "biome": "plains",
+    "season": "greenleaf",
+    "tags": ["hunting", "heat_illness", "small_prey", "big_prey"],
+    "intro_text": "It is extremely hot out today, and the hunting patrol is having a hard time staying on task. r_c debates turning back home.",
+    "decline_text": "The patrol decides to head back to camp. They can hunt a different day.",
+    "chance_of_success": 50,
+    "exp": 15,
+    "success_text": [
+        "They decide to power through the weather and the patrol eventually has a successful, if exhausting, hunt.",
+        "The patrol seeks out an abandoned badger sett to wait out the heat of the day, one that c_n often uses to train apprentices. While they wait, r_c spots a hawk flying oddly. It lands a short distance away, dehydrated and panting, and the patrol silently closes in on it through the grass."],
+    "fail_text": [
+        "No way, it's too hot for this. They can try to hunt again later.",
+        null,
+        null,
+        "r_c collapses from heat exhaustion. p_l carries them back to camp."],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "This cat got heat exhaustion while on a patrol."
+    ]
 }
 
 ]
