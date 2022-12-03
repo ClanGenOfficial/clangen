@@ -316,7 +316,7 @@ class PatrolEventScreen(Screens):
                                     patrol_done=True,
                                     event=2)
 
-                if "other_clan" in patrol.patrol_event.tags or "new_cat" in patrol.patrol_event.tags:
+                if patrol.patrol_event.antagonize_text != None:
                     buttons.draw_button((550, 491),
                                         image='buttons/antagonize',
                                         text='Antagonize',

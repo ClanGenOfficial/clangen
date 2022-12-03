@@ -518,8 +518,6 @@ class Patrol():
                         self.handle_reputation(-5)
                     else:
                         self.handle_reputation(0)
-                elif "disaster" in self.patrol_event.tags:
-                    self.handle_deaths()
             self.handle_mentor_app_pairing()
             self.handle_relationships()
             self.final_fail = self.patrol_event.fail_text[n]
