@@ -537,7 +537,7 @@ class ProfileScreen(Screens):
                 injury_list.append(y)
             injury_string = ", ".join(injury_list)
         if the_cat.is_disabled():
-            for y in the_cat.permanent_conditions:
+            for y in the_cat.permanent_condition:
                 permanent_conditions_list.append(y)
             permanent_conditions_string = ", ".join(permanent_conditions_list)
 
@@ -556,7 +556,7 @@ class ProfileScreen(Screens):
 
         if the_cat.is_disabled():
             verdana_small.text(
-                f"permanent condtions: {permanent_conditions_string}", (300, 230 + count * 15))
+                f"permanent conditions: {permanent_conditions_string}", (300, 230 + count * 15))
             count += 1
 
         # MATE

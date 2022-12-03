@@ -157,7 +157,7 @@ class Cat():
         self.healed_injury = None
         self.also_got = False
         self.not_working = False
-        self.permanent_condition = None
+        self.permanent_condition = {}
         self.retired = False
         self.possible_scar = None
         self.possible_death = None
@@ -840,6 +840,7 @@ class Cat():
             risks=injury["risks"],
             illness_infectiousness=injury["illness_infectiousness"],
             also_got=injury["also_got"],
+            cause_permanent=injury["cause_permanent"],
             event_triggered=event_triggered
         )
 
@@ -852,6 +853,7 @@ class Cat():
                 "illness_infectiousness": new_injury.illness_infectiousness,
                 "risks": new_injury.risks,
                 "also_got": new_injury.also_got,
+                "cause_permanent": new_injury.cause_permanent,
                 "event_triggered": new_injury.new
             }
             print('new injury', new_injury.name)
@@ -866,11 +868,12 @@ class Cat():
         else:
             self.also_got = False
 
-    def get_permanent_condition(self, cat, condition, born_with, event_triggered=False):
-        if condition not in PERMANENT:
-            print(f"WARNING: {condition} is not in the permanent conditions collection.")
+    def get_permanent_condition(self, cat, name, born_with, event_triggered=False):
+        if name not in PERMANENT:
+            print(f"WARNING: {name} is not in the permanent conditions collection.")
             return
 
+        condition = PERMANENT[name]
         new_condition = False
         mortality = condition["mortality"][self.age]
         if game.clan.game_mode == "cruel season":
@@ -883,7 +886,7 @@ class Cat():
                 moons_until = 0
 
         new_perm_condition = PermanentCondition(
-            name=condition,
+            name=name,
             severity=condition["severity"],
             congenital=condition["congenital"],
             moons_until=moons_until,
@@ -929,7 +932,10 @@ class Cat():
         return is_injured is not False
 
     def is_disabled(self):
-        return self.permanent_condition is not None
+        is_disabled = True
+        if len(self.permanent_condition) <= 0:
+            is_disabled = False
+        return is_disabled is not False
 
     def contact_with_ill_cat(self, cat):
         "handles if one cat had contact with a ill cat"
@@ -970,7 +976,7 @@ class Cat():
         if not os.path.exists(condition_directory):
             os.makedirs(condition_directory)
 
-        if (not self.is_ill() and not self.is_injured()) or self.dead or self.exiled:
+        if (not self.is_ill() and not self.is_injured() and not self.is_disabled()) or self.dead or self.exiled:
             if os.path.exists(condition_file_path):
                 os.remove(condition_file_path)
             return
@@ -995,7 +1001,7 @@ class Cat():
             conditions["injuries"] = self.injuries
 
         if self.is_disabled():
-            conditions["permanent condtions"] = self.permanent_condition
+            conditions["permanent conditions"] = self.permanent_condition
 
         try:
             with open(condition_file_path, 'w') as rel_file:
@@ -1032,6 +1038,8 @@ class Cat():
                     )
                 if "injuries" in rel_data:
                     self.injuries = rel_data.get("injuries")
+                if "permanent conditions" in rel_data:
+                    self.permanent_condition = rel_data.get("permanent conditions")
 
         except Exception as e:
             print(e)

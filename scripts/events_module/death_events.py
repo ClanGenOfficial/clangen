@@ -34,8 +34,8 @@ class Death_Events():
             other_clan = game.clan.all_clans[0]
             other_clan_name = f'{str(other_clan.name)}Clan'
 
-        possible_deaths = self.generate_events.generate_death_events(cat.status)
-        final_deaths = []
+        possible_events = self.generate_events.possible_death_events(cat.status)
+        final_events = []
 
         for event in possible_events:
 
@@ -95,32 +95,32 @@ class Death_Events():
                 if other_cat.skill not in event.other_cat_skill and int(random.random() * 10):
                     continue
 
-            final_deaths.append(event)
+            final_events.append(event)
 
         # ---------------------------------------------------------------------------- #
         #                                  kill cats                                   #
         # ---------------------------------------------------------------------------- #
-        print(cat.name, cat.status, len(final_deaths), other_cat.name)
-        death_cause = (random.choice(final_deaths))
+        print(cat.name, cat.status, len(final_events), other_cat.name)
+        death_cause = (random.choice(final_events))
 
         if "war" in death_cause.tags:
             other_clan_name = enemy_clan
 
-        death_text = event_text_adjust(death_cause.death_text, cat, other_cat, other_clan_name)
+        death_text = event_text_adjust(Cat, death_cause.death_text, cat, other_cat, other_clan_name)
         history_text = 'this should not show up'
         other_history_text = 'this should not show up'
 
         if cat.status != "leader" and death_cause.history_text[0] is not None:
-            history_text = event_text_adjust(death_cause.history_text[0], cat, other_cat, other_clan_name)
+            history_text = event_text_adjust(Cat, death_cause.history_text[0], cat, other_cat, other_clan_name)
         elif cat.status == "leader" and death_cause.history_text[1] is not None:
-            history_text = event_text_adjust(death_cause.history_text[1], cat, other_cat, other_clan_name)
+            history_text = event_text_adjust(Cat, death_cause.history_text[1], cat, other_cat, other_clan_name)
 
         # check if other_cat dies and kill them
         if "other_cat_death" in death_cause.tags or "multi_death" in death_cause.tags:
             if cat.status != "leader" and death_cause.history_text[0] is not None:
-                other_history_text = event_text_adjust(death_cause.history_text[0], cat, other_cat, other_clan_name)
+                other_history_text = event_text_adjust(Cat, death_cause.history_text[0], cat, other_cat, other_clan_name)
             elif cat.status == "leader" and death_cause.history_text[1] is not None:
-                other_history_text = event_text_adjust(death_cause.history_text[1], cat, other_cat, other_clan_name)
+                other_history_text = event_text_adjust(Cat, death_cause.history_text[1], cat, other_cat, other_clan_name)
 
         # handle leader lives
         if cat.status == "leader":

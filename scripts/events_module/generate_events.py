@@ -8,6 +8,8 @@ class GenerateEvents():
 
         event_list = []
 
+        print(game.clan.biome, status, 'test')
+
         if game.clan.biome == 'Forest':
             if status == "kitten":
                 event_list.extend(self.generate_injury_event(ALL_FOREST_KITTEN_EVENT_INJURIES))
@@ -100,7 +102,7 @@ class GenerateEvents():
                 event_list.extend(self.generate_injury_event(ALL_BEACH_LEADER_EVENT_INJURIES))
                 event_list.extend(self.generate_injury_event(GEN_LEADER_EVENT_INJURIES))
 
-            return event_list
+        return event_list
 
     def generate_injury_event(self, events_dict):
         injury_list = []
@@ -116,7 +118,6 @@ class GenerateEvents():
                 other_cat_skill=event["other_cat_skill"]
             )
             injury_list.append(injury_event)
-
         return injury_list
     
     def possible_death_events(self, status):
@@ -215,7 +216,7 @@ class GenerateEvents():
                 event_list.extend(self.generate_death_events(ALL_BEACH_LEADER_EVENT_DEATH))
                 event_list.extend(self.generate_death_events(GEN_LEADER_EVENT_DEATH))
 
-            return event_list
+        return event_list
 
     def generate_death_events(self, events_dict):
         death_list = []
@@ -223,7 +224,7 @@ class GenerateEvents():
             death_event = DeathEvent(
                 camp=event["camp"],
                 tags=event["tags"],
-                death_text=event["event_text"],
+                death_text=event["death_text"],
                 history_text=event["history_text"],
                 cat_trait=event["cat_trait"],
                 cat_skill=event["cat_skill"],
