@@ -21,8 +21,10 @@
         "also_got": [
             "torn pelt",
             "torn ear",
-            "blood loss"
-        ]
+            "blood loss",
+            "shock"
+        ],
+        "cause_permanent": []
     },
 
     "bite-wound":{
@@ -47,8 +49,10 @@
         ],
         "also_got": [
             "torn pelt",
-            "blood loss"
-        ]
+            "blood loss",
+            "shock"
+        ],
+        "cause_permanent": []
     },
 
     "snake bite":{
@@ -71,7 +75,10 @@
                 "chance": 5
             }
         ],
-        "also_got": []
+        "also_got": [
+            "shock"
+        ],
+        "cause_permanent": []
     },
 
     "rat bite":{
@@ -104,7 +111,8 @@
         ],
         "also_got": [
             "torn pelt"
-        ]
+        ],
+        "cause_permanent": []
     },
 
     "tick bites":{
@@ -126,7 +134,8 @@
                 "chance": 40
             }
         ],
-        "also_got": []
+        "also_got": [],
+        "cause_permanent": []
     },
 
     "blood loss":{
@@ -143,12 +152,11 @@
         },
         "illness_infectiousness": [],
         "risks": [
-            {
-                "name": "shock",
-                "chance": 20
-            }
         ],
-        "also_got": []
+        "also_got": [
+            "shock"
+        ],
+        "cause_permanent": []
     },
 
     "broken jaw":{
@@ -173,7 +181,11 @@
         "also_got": [
             "blood loss",
             "scrapes",
-            "bruises"
+            "bruises",
+            "shock"
+        ],
+        "cause_permanent": [
+            "crooked jaw"
         ]
     },
 
@@ -201,7 +213,12 @@
             "mangled leg",
             "blood loss",
             "scrapes",
-            "bruises"
+            "bruises",
+            "shock"
+        ],
+        "cause_permanent": [
+            "weak leg",
+            "twisted leg"
         ]
     },
 
@@ -230,7 +247,13 @@
             "dislocated joint",
             "blood loss",
             "scrapes",
-            "bruises"
+            "bruises",
+            "shock"
+        ],
+        "cause_permanent": [
+            "lost a leg",
+            "weak leg",
+            "twisted leg"
         ]
     },
 
@@ -249,9 +272,32 @@
         "illness_infectiousness": [],
         "risks": [],
         "also_got": [
-            "joint pain",
             "bruises",
-            "sore muscles"
+            "sore"
+        ],
+        "cause_permanent": [
+            "constant joint pain"
+        ]
+    },
+
+        "joint pain":{
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [],
+        "also_got": [
+        ],
+        "cause_permanent": [
+            "constant joint pain"
         ]
     },
 
@@ -269,7 +315,9 @@
         },
         "illness_infectiousness": [],
         "risks": [],
-        "also_got": []
+        "also_got": [],
+        "cause_permanent": [
+        ]
     },
 
     "mangled tail":{
@@ -294,6 +342,9 @@
         "also_got": [
             "torn pelt",
             "blood loss"
+        ],
+        "cause_permanent": [
+            "lost their tail"
         ]
     },
 
@@ -311,24 +362,9 @@
         },
         "illness_infectiousness": [],
         "risks": [],
-        "also_got": []
-    },
-
-    "joint pain":{
-        "duration": 1,
-        "severity": "minor",
-        "medicine_duration": 1,
-        "mortality": {
-            "kitten": 0,
-            "adolescent": 0,
-            "young adult": 0,
-            "adult": 0,
-            "senior adult": 0,
-            "elder": 0
-        },
-        "illness_infectiousness": [],
-        "risks": [],
-        "also_got": []
+        "also_got": [],
+        "cause_permanent": [
+        ]
     },
 
     "cracked pads":{
@@ -350,10 +386,12 @@
                 "chance": 15
             }
         ],
-        "also_got": []
+        "also_got": [],
+        "cause_permanent": [
+        ]
     },
 
-    "sore muscles":{
+    "sore":{
         "duration": 1,
         "severity": "minor",
         "medicine_duration": 1,
@@ -367,12 +405,14 @@
         },
         "illness_infectiousness": [],
         "risks": [],
-        "also_got": []
+        "also_got": [],
+        "cause_permanent": [
+        ]
     },
 
     "phantom pain":{
         "duration": 1,
-        "severity": "minor",
+        "severity": "major",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 0,
@@ -384,7 +424,9 @@
         },
         "illness_infectiousness": [],
         "risks": [],
-        "also_got": []
+        "also_got": [],
+        "cause_permanent": [
+        ]
     },
 
     "scrapes":{
@@ -406,7 +448,9 @@
                 "chance": 20
             }
         ],
-        "also_got": []
+        "also_got": [],
+        "cause_permanent": [
+        ]
     },
 
     "splinter":{
@@ -428,7 +472,9 @@
                 "chance": 20
             }
         ],
-        "also_got": []
+        "also_got": [],
+        "cause_permanent": [
+        ]
     },
 
     "torn pelt":{
@@ -452,6 +498,8 @@
         ],
         "also_got": [
             "torn ear"
+        ],
+        "cause_permanent": [
         ]
     },
     "torn ear":{
@@ -473,7 +521,10 @@
                 "chance": 30
             }
         ],
-        "also_got": []
+        "also_got": [],
+        "cause_permanent": [
+            "partial hearing loss"
+        ]
     },
 
     "frostbite":{
@@ -508,7 +559,11 @@
                 "chance": 4
             }
         ],
-        "also_got": []
+        "also_got": [],
+        "cause_permanent": [
+            "lost a leg",
+            "lost their tail"
+        ]
     },
 
     "recovering from birth":{
@@ -533,6 +588,8 @@
         "also_got": [
             "blood loss",
             "shock"
+        ],
+        "cause_permanent": [
         ]
     },
 
@@ -592,7 +649,10 @@
                 "chance": 4
             }
         ],
-        "also_got": []
+        "also_got": [],
+        "cause_permanent": [
+            "raspy lungs"
+        ]
     },
 
     "burn":{
@@ -614,7 +674,9 @@
                 "chance": 30
             }
         ],
-        "also_got": []
+        "also_got": [],
+        "cause_permanent": [
+        ]
     },
 
     "severe burn":{
@@ -636,6 +698,53 @@
                 "chance": 30
             }
         ],
-        "also_got": []
+        "also_got": [],
+        "cause_permanent": [
+            "lost their tail",
+            "lost a leg"
+        ]
+    },
+    "shock":{
+        "duration": 1,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 8,
+            "adolescent": 15,
+            "young adult": 30,
+            "adult": 30,
+            "senior adult": 30,
+            "elder": 15
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "lingering shock",
+                "chance": 20
+            }
+        ],
+        "also_got": [],
+        "cause_permanent": [
+        ]
+    },
+    "lingering shock":{
+        "duration": 12,
+        "severity": "major",
+        "medicine_duration": 8,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [0
+        ],
+        "also_got": [],
+        "cause_permanent": [
+            "recurring shock"
+        ]
     }
 }

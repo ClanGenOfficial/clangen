@@ -1,0 +1,462 @@
+[
+    {
+        "injury": "snake bite",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was bitten by a snake and miraculously survived!",
+        "history_text": [
+            "m_c was scarred by a snake bite.",
+            "m_c died after they were bit by a snake.",
+            "bit by a snake"
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bruises",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c didn't look where they were going and tripped over a small trunk, gaining a few bruises.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "rat bite",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "A rat got through the camp walls and bit m_c.",
+        "history_text": [
+            "m_c was scarred when a rat bit them.",
+            "m_c died from a rat bite.",
+            "bit by a rat"
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "dislocated joint",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c misstepped and slipped from a rock, dislocating a joint.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "dislocated joint",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's paws slipped on some rocks and their leg was dislocated.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "sprain",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's paws slipped on some rocks and they twisted their paw.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "sprain",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c leapt from a rock, but they didn't land quite right.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "sprain",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c misstepped and slipped from a rock, spraining their paw.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "sprain",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c didn't look where they were going and tripped over a small trunk, spraining their paw.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "sprain",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c got their paw stuck in a Twoleg trap, but luckily escaped with only a sprain.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "cracked pads",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c ran too fast over harsh ground and hurt their paws.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "cracked pads",
+        "tags": [
+            "Leaf-bare"
+        ],
+        "event_text": "The weather has been cold and dry, m_c's paw pads have cracked as a result.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "cracked pads",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c helped to strengthen the camp walls, but scraped up their paw pads in the process.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": ["ambitious", "loyal", "responsible", "strict", "thoughtful", "wise"],
+        "cat_skill": ["camp keeper", "den builder"],
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "sore muscles",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c overexerted themselves and is feeling extremely sore.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "torn pelt",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was out on a walk alone when they heard d_l approaching! They crawled into a thorny shrub to hide, but got some nasty scratches in the process.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": ["nervous", "wise", "insecure", "careful", "calm", "sneaky", "strange"],
+        "cat_skill": ["smart", "very smart", "extremely smart"],
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_leader",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by r_c for disobeying orders.",
+        "history_text": [
+            "m_c was hurt by r_c for disobeying orders.",
+            "m_c died from their wounds after r_c hurt them for disobeying.",
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_leader",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by r_c for speaking out against them.",
+        "history_text": [
+            "m_c was hurt by r_c for speaking out against them.",
+            "m_c died from their wounds after r_c hurt them for their dissent.",
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_leader",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by r_c to make an example out of them.",
+        "history_text": [
+            "m_c was hurt by r_c to make an example out of them.",
+            "m_c died from their wounds after r_c hurt them to make them an example.",
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "mangled leg",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c got their paw stuck in a Twoleg trap and while they eventually escaped, their leg is heavily injured.",
+        "history_text": [
+            "m_c was scarred by a Twoleg trap.",
+            "m_c died from their injuries caused by a Twoleg trap.",
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "mangled leg",
+        "tags": [
+            "other_cat_leader",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's was maimed by r_c for questioning their leadership.",
+        "history_text": [
+            "m_c was maimed by r_c for questioning their leadership.",
+            "m_c died after r_c maimed them for questioning r_c's leadership.",
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "mangled tail",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's tail was badly injured by t_l.",
+        "history_text": [
+            "m_c was scarred by t_l",
+            "m_c died from their wounds after they were hurt by t_l.",
+            "were hurt by t_l"
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_leader",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by r_c for disobeying orders.",
+        "history_text": [
+            "m_c was hurt by r_c for disobeying orders.",
+            "m_c died after r_c hurt them for disobeying orders.",
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_leader",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by r_c for speaking out against them.",
+        "history_text": [
+            "m_c was hurt by r_c for speaking out against them.",
+            "m_c died after r_c hurt them for their dissent",
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat_leader",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was hurt by r_c to make an example out of them.",
+        "history_text": [
+            "m_c was hurt by r_c to make an example out of them.",
+            "m_c died after r_c hurt them to make them an example.",
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    }
+]

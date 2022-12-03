@@ -428,5 +428,29 @@
                 "chance": 8
             }
         ]
+    },
+    "constant nightmares": {
+        "severity": "major",
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "medicine_mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "duration": 1,
+        "medicine_duration": 1,
+        "infectiousness": 0,
+        "risks": [
+        ]
     }
 }

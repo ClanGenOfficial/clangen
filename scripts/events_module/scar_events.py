@@ -96,7 +96,7 @@ class Scar_Events():
                         cat.specialty2 = specialty
 
                 scar_gain_strings = [
-                    f"{cat.name}'s {injury_name} has healed, but they'll always carry evidence of the injury on their pelt.",
+                    f"{cat.name}'s {injury_name} has healed, but they'll always carry evidence of the incident on their pelt.",
                     f"{cat.name} healed from their {injury_name} but will forever be marked by a scar.",
                     f"{cat.name}'s {injury_name} has healed, but the injury left them scarred.",
                 ]

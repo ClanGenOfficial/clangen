@@ -32,12 +32,21 @@ def medical_cats_condition_fulfilled(all_cats, amount_per_med):
         , all_cats
     ))
 
+    good_healer = float(len(list(filter(lambda c: c.skill == 'good healer', medicine_cats))) * 1.5)
+    great_healer = float(len(list(filter(lambda c: c.skill == 'great healer', medicine_cats))) * 1.75)
+    fantastic_healer = float(len(list(filter(lambda c: c.skill == 'fantastic healer', medicine_cats))) * 2)
+    normal_med = float(
+        len(list(filter(lambda c: c.skill not in ['good healer', 'great healer', 'fantastic healer'], medicine_cats))))
+
+    total_adult_med_number = good_healer + great_healer + fantastic_healer + normal_med
+
     relevant_cats = list(filter(lambda c: not c.dead and not c.exiled, all_cats))
     number = len(relevant_cats) / (amount_per_med + 1)
 
+    meds_available = int(total_adult_med_number + (len(medicine_apprentices) / 2))
     needed_meds = math.ceil(number)
 
-    fulfilled = len(medicine_cats) >= needed_meds or len(medicine_apprentices) >= needed_meds * 2
+    fulfilled = meds_available >= needed_meds
     return fulfilled
 
 
@@ -53,7 +62,7 @@ def get_amount_cat_for_one_medic(clan):
 #                                    Illness                                   #
 # ---------------------------------------------------------------------------- #
 
-class Illness():
+class Illness:
     def __init__(self,
                  name,
                  severity,
@@ -112,7 +121,7 @@ class Illness():
 #                                   Injuries                                   #
 # ---------------------------------------------------------------------------- #
 
-class Injury():
+class Injury:
     def __init__(self,
                  name,
                  severity,
@@ -122,6 +131,7 @@ class Injury():
                  risks=None,
                  illness_infectiousness=None,
                  also_got=None,
+                 cause_permanent=None,
                  event_triggered=False):
         self.name = name
         self.severity = severity
@@ -131,6 +141,7 @@ class Injury():
         self.risks = risks
         self.illness_infectiousness = illness_infectiousness
         self.also_got = also_got
+        self.cause_permanent = cause_permanent
         self.new = event_triggered
 
         self.current_duration = duration
@@ -160,21 +171,25 @@ class Injury():
     def current_mortality(self, value):
         self._current_mortality = value
 
+
 # ---------------------------------------------------------------------------- #
 #                             Permanent Conditions                             #
 # ---------------------------------------------------------------------------- #
 
-
-class Permanent_Condition():
+class PermanentCondition:
     def __init__(self,
                  name,
                  severity,
-                 mortality,
+                 moons_until,
+                 congenital='never',
+                 mortality=0,
                  risks=None,
                  illness_infectiousness=None,
                  event_triggered=False):
         self.name = name
         self.severity = severity
+        self.congenital = congenital
+        self.moons_until = moons_until
         self.mortality = mortality
         self.risks = risks
         self.illness_infectiousness = illness_infectiousness
@@ -184,6 +199,8 @@ class Permanent_Condition():
 
     """
     severity level determines retirement: severe - auto retire, major - chance retire, minor - no retire
+    congenital determines if a cat can be born with it or not: never, sometimes, always
+    moons_until is used if you want a delay between when the cat contracts the condition and when the cat presents that condition
     """
 
     @property

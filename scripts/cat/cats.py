@@ -9,7 +9,7 @@ from .names import *
 from .sprites import *
 from .thoughts import *
 from .appearance_utility import *
-from scripts.conditions import Illness, Injury
+from scripts.conditions import Illness, Injury, PermanentCondition
 
 from scripts.utility import *
 from scripts.game_structure.game_essentials import *
@@ -158,7 +158,9 @@ class Cat():
         self.also_got = False
         self.not_working = False
         self.permanent_condition = None
+        self.retired = False
         self.possible_scar = None
+        self.possible_death = None
         self.scar_event = []
         self.df = False
         self.corruption = 0
@@ -702,6 +704,33 @@ class Cat():
                 return
             self.healed_injury = self.injuries[injury]
 
+    def moon_skip_permanent_condition(self, condition):
+        """handles the moon skip for permanent conditions"""
+        if not self.is_disabled():
+            return
+
+        if self.permanent_condition[condition]["event_triggered"]:
+            self.permanent_condition[condition]["event_triggered"] = False
+            return
+
+        mortality = self.permanent_condition[condition]["mortality"]
+        moons_until = self.permanent_condition[condition]["moons_until"]
+
+        if moons_until != 0:
+            self.permanent_condition[condition]["moons_until"] = moons_until - 1
+            if self.permanent_condition[condition]["moons_until"] == 0:
+                return True
+
+        # leader should have a higher chance of death
+        if self.status == "leader":
+            mortality = int(mortality * 0.7)
+
+        if mortality and not int(random.random() * mortality):
+            self.die()
+            return
+
+
+
 
 # ---------------------------------------------------------------------------- #
 #                                   relative                                   #
@@ -801,10 +830,6 @@ class Cat():
         if game.clan.game_mode == "cruel season":
             mortality = int(mortality * 0.65)
 
-            # to prevent an injury getting no mortality, check and set it to 1 if needed
-            if injury["mortality"][self.age] and not mortality:
-                mortality = 1
-
         new_injury = Injury(
             name=name,
             severity=injury["severity"],
@@ -833,12 +858,62 @@ class Cat():
         if new_injury.severity in ["major", "severe"]:
             self.not_working = True
 
-        if len(new_injury.also_got) > 0 and self.also_got is False and not int(random.random() * 5):
+        if len(new_injury.also_got) > 0 and not int(random.random() * 5):
             self.also_got = True
             additional_injury = choice(new_injury.also_got)
             self.additional_injury(additional_injury)
         else:
             self.also_got = False
+
+    def get_permanent_condition(self, cat, condition, born_with, event_triggered=False):
+        if condition not in PERMANENT:
+            print(f"WARNING: {condition} is not in the permanent conditions collection.")
+            return
+
+        new_condition = False
+        mortality = condition["mortality"][self.age]
+        if game.clan.game_mode == "cruel season":
+            mortality = int(mortality * 0.65)
+
+        moons_until = condition["moons_until"]
+        if born_with is True:
+            moons_until = randint(moons_until - 1, moons_until + 1)  # creating a range in which a condition can present
+            if moons_until < 0:
+                moons_until = 0
+
+        new_perm_condition = PermanentCondition(
+            name=condition,
+            severity=condition["severity"],
+            congenital=condition["congenital"],
+            moons_until=moons_until,
+            mortality=mortality,
+            risks=condition["risks"],
+            illness_infectiousness=condition["illness_infectiousness"],
+            event_triggered=event_triggered
+        )
+
+        if new_perm_condition.name not in self.permanent_condition:
+            self.permanent_condition[new_perm_condition.name] = {
+                "severity": new_perm_condition.severity,
+                "born_with": born_with,
+                "moons_until": new_perm_condition.moons_until,
+                "mortality": new_perm_condition.current_mortality,
+                "illness_infectiousness": new_perm_condition.illness_infectiousness,
+                "risks": new_perm_condition.risks,
+                "event_triggered": new_perm_condition.new
+            }
+            print('new permanent condition', new_perm_condition.name)
+            new_condition = True
+
+        if moons_until == 0 and (new_perm_condition.severity == 'major' and not int(random.random() * 4)) or new_perm_condition.severity == 'severe':
+            self.retire_cat(cat)
+
+        return new_condition
+
+    def retire_cat(self, cat):
+        cat.retired = True
+        cat.status = 'elder'
+        self.not_working = True
 
     def additional_injury(self, injury):
         self.get_injured(injury)
@@ -851,6 +926,9 @@ class Cat():
         if len(self.injuries) <= 0:
             is_injured = False
         return is_injured is not False
+
+    def is_disabled(self):
+        return self.permanent_condition is not None
 
     def contact_with_ill_cat(self, cat):
         "handles if one cat had contact with a ill cat"
@@ -914,6 +992,9 @@ class Cat():
 
         if self.is_injured():
             conditions["injuries"] = self.injuries
+
+        if self.is_disabled():
+            conditions["permanent condtions"] = self.permanent_condition
 
         try:
             with open(condition_file_path, 'w') as rel_file:
@@ -1418,6 +1499,8 @@ class Cat():
         if not updated_age and self.age is not None:
             self.age = "elder"
 
+
+
 # ---------------------------------------------------------------------------- #
 #                               END OF CAT CLASS                               #
 # ---------------------------------------------------------------------------- #
@@ -1451,3 +1534,7 @@ with open(f"{resource_directory}illnesses.json", 'r') as read_file:
 INJURIES = None
 with open(f"{resource_directory}injuries.json", 'r') as read_file:
     INJURIES = ujson.loads(read_file.read())
+
+PERMANENT = None
+with open(f"resources/dicts/conditions/permanent_conditions.json", 'r') as read_file:
+    PERMANENT = ujson.loads(read_file.read())

@@ -1031,7 +1031,7 @@ class Events():
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
                 triggered_death = True
             else:
-                triggered_death = self.condition_events.handle_injuries(cat, other_cat, alive_kits, game.clan.current_season, game.clan.biome)
+                triggered_death = self.condition_events.handle_injuries(cat, other_cat, alive_kits, self.at_war, self.enemy_clan, game.clan.current_season)
                 return triggered_death
 
             # disaster death chance

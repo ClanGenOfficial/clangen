@@ -1,6 +1,8 @@
 {
     "crooked jaw": {
         "severity": "major",
+        "congenital": "never",
+        "moons_until": null,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -17,6 +19,8 @@
     },
     "lost a leg": {
         "severity": "major",
+        "congenital": "never",
+        "moons_until": null,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -37,17 +41,15 @@
                 "chance": 10
             },
             {
-                "name": "sore muscles",
+                "name": "sore",
                 "chance": 20
-            },
-            {
-                "name": "joint pain",
-                "chance": 40
             }
         ]
     },
     "born without a leg": {
         "severity": "major",
+        "congenital": "always",
+        "moons_until": null,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -60,7 +62,7 @@
         ],
         "risks": [
             {
-                "name": "sore muscles",
+                "name": "sore",
                 "chance": 20
             },
             {
@@ -71,6 +73,8 @@
     },
     "weak leg": {
         "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 2,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -83,7 +87,7 @@
         ],
         "risks": [
             {
-                "name": "sore muscles",
+                "name": "sore",
                 "chance": 20
             },
             {
@@ -94,6 +98,8 @@
     },
     "twisted leg": {
         "severity": "major",
+        "congenital": "sometimes",
+        "moons_until": null,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -106,7 +112,7 @@
         ],
         "risks": [
             {
-                "name": "sore muscles",
+                "name": "sore",
                 "chance": 20
             },
             {
@@ -117,6 +123,8 @@
     },
     "lost their tail": {
         "severity": "minor",
+        "congenital": "never",
+        "moons_until": null,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -140,6 +148,8 @@
     },
     "born without a tail": {
         "severity": "minor",
+        "congenital": "always",
+        "moons_until": null,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -155,6 +165,8 @@
     },
     "paralyzed": {
         "severity": "severe",
+        "congenital": "sometimes",
+        "moons_until": 0,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -179,7 +191,7 @@
                 "chance": 15
             },
             {
-                "name": "sore muscles",
+                "name": "sore",
                 "chance": 20
             },
             {
@@ -190,6 +202,8 @@
     },
     "raspy lungs": {
         "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 0,
         "mortality": {
             "kitten": 15,
             "adolescent": 60,
@@ -209,6 +223,8 @@
     },
     "wasting disease": {
         "severity": "major",
+        "congenital": "never",
+        "moons_until": null,
         "mortality": {
             "kitten": 15,
             "adolescent": 60,
@@ -264,6 +280,8 @@
     },
     "blind": {
         "severity": "major",
+        "congenital": "sometimes",
+        "moons_until": 1,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -279,6 +297,8 @@
     },
     "one bad eye": {
         "severity": "major",
+        "congenital": "sometimes",
+        "moons_until": 2,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -297,6 +317,8 @@
     },
     "failing eyesight": {
         "severity": "major",
+        "congenital": "sometimes",
+        "moons_until": 5,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -315,6 +337,8 @@
     },
     "partial hearing loss": {
         "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 4,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -333,6 +357,8 @@
     },
     "deaf": {
         "severity": "major",
+        "congenital": "sometimes",
+        "moons_until": 3,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -349,6 +375,8 @@
     },
     "constant joint pain": {
         "severity": "minor",
+        "congenital": "sometimes",
+        "moons_until": 2,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -360,10 +388,16 @@
         "illness_infectiousness": [
         ],
         "risks": [
+            {
+                "name": "joint pain",
+                "chance": 10
+            }
         ]
     },
     "seizure prone": {
         "severity": "major",
+        "congenital": "sometimes",
+        "moons_until": 4,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -383,6 +417,8 @@
     },
     "allergies": {
         "severity": "minor",
+        "congenital": "always",
+        "moons_until": 4,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -402,6 +438,8 @@
     },
     "constantly dizzy": {
         "severity": "major",
+        "congenital": "never",
+        "moons_until": null,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -413,6 +451,27 @@
         "illness_infectiousness": [
         ],
         "risks": [
+        ]
+    },
+    "recurring shock": {
+        "severity": "major",
+        "congenital": "never",
+        "moons_until": null,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "constant nightmares",
+                "chance": 20
+            }
         ]
     }
 }
