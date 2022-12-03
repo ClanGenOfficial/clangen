@@ -31,40 +31,8 @@
             "This cat was killed when rogues ambushed their patrol."
         ]
     },  
-    {
-        "patrol_id": "mtn_bord_rogue2",
-        "biome": "mountainous",
-        "season": "Any",
-        "tags": ["border", "fighting", "scar", "injury", "disaster", "reputation"],
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
-        "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
-        "chance_of_success": 60,
-        "exp": 30,
-        "success_text": [
-            "The patrol descends into battle without a second thought, easily driving the rogues away as they use their knowledge of the rocky terrain to their advantage.",
-            null,
-            "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the clan cats, the rogues turn tail and run.",
-            "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
-        ],
-        "fail_text": [
-            null,
-            null,
-            "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are recovered the next day, covered in battle wounds and cold.",
-            "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and eventually the patrol retreats, r_c badly wounded."
-        ],
-        "win_skills": ["excellent fighter"],
-        "win_trait": ["bloodthirsty", "fierce", "vengeful"],
-        "min_cats": 2,
-        "max_cats": 3,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-            "r_c was badly scarred when rogues ambushed their patrol.",
-            "This cat was killed when rogues ambushed their patrol."
-        ]
-    },
     {    
-        "patrol_id": "mtn_bord_rogue3",
+        "patrol_id": "mtn_bord_rogue2",
         "biome": "mountainous",
         "season": "Any",
         "tags": ["border", "fighting", "scar", "injury", "death", "reputation"],
@@ -94,7 +62,7 @@
         ]
     },
     {    
-        "patrol_id": "mtn_bord_rogue4",
+        "patrol_id": "mtn_bord_rogue3",
         "biome": "mountainous",
         "season": "Any",
         "tags": ["border", "fighting", "scar", "injury", "multi_deaths", "reputation", "respect", "trust"],
