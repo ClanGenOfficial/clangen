@@ -83,6 +83,14 @@ class Patrol():
         if self.patrol_random_cat == self.patrol_leader:
             self.patrol_random_cat = choice(self.patrol_cats)
 
+        # big check for p_l and r_c not being the same cat if we can help it
+        if len(self.patrol_cats) >= 2:
+            for c in range(len(self.patrol_cats)):
+                if self.patrol_leader == self.patrol_random_cat:
+                    self.patrol_random_cat = self.patrol_cats[c]
+                else:
+                    break
+
         if len(self.patrol_cats) >= 3:
             for cat in self.patrol_cats:
                 if cat != self.patrol_leader and cat != self.patrol_random_cat:
