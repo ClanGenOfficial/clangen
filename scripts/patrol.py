@@ -210,6 +210,8 @@ class Patrol():
         status_d = False
         status_e = False
         no_app = False
+        no_leader = False
+        med_only = False
         mode = False
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
@@ -290,6 +292,24 @@ class Patrol():
             else:
                 no_app = True
 
+            # makes sure no warriors/warrior apps are present. for med patrols
+            if "med_only" in patrol.tags:
+                if ("leader" or "deputy" or "warrior" or "apprentice") in self.patrol_statuses:
+                    med_only = False
+                else:
+                    med_only = True
+            else:
+                med_only = True
+
+            # makes sure the leader isn't present if they're not supposed to be
+            if "no_leader" in patrol.tags:
+                if "leader" in self.patrol_statuses:
+                    no_leader = False
+                else:
+                    no_leader = True
+            else:
+                no_leader = True
+
             # cruel season tag check
             if "cruel_season" in patrol.tags:
                 if game.clan.game_mode != 'cruel_season':
@@ -330,12 +350,12 @@ class Patrol():
             # one last mode check for classic
             if game.clan.game_mode == 'classic':
                 if max_good and min_good and correct_season and correct_biome and status_a and status_b and status_c\
-                    and status_d and status_e and no_app and two_apprentices:
+                    and status_d and status_e and no_app and med_only and no_leader and two_apprentices:
                     final_patrols.append(patrol)
             # this is for all patrols that aren't classic
             else:
                 if max_good and min_good and correct_season and correct_biome and status_a and status_b and status_c\
-                    and status_d and status_e and correct_button and no_app and two_apprentices and mode:
+                    and status_d and status_e and correct_button and no_app and med_only and no_leader and two_apprentices and mode:
                         final_patrols.append(patrol)
         
         return final_patrols   
