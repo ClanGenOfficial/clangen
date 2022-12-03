@@ -725,11 +725,14 @@ class Patrol():
 
         # affect the relationship
         pl_rc = []
+        sc_rc = []
         all_cats = list(filter(lambda c: not c.dead and not c.outside, Cat.all_cats.values()))
         cat_ids = [cat.ID for cat in self.patrol_cats]
         r_c_id = self.patrol_random_cat.ID
         if self.patrol_stat_cat is not None:
             s_c_id = self.patrol_stat_cat.ID
+            sc_rc = [self.patrol_stat_cat, self.patrol_random_cat]
+            sc_rc_ids = [s_c_id, r_c_id]
         p_l_id = self.patrol_leader.ID
         app_ids = [cat.ID for cat in self.patrol_apprentices]
         pl_rc = [self.patrol_leader, self.patrol_random_cat]
@@ -1076,6 +1079,48 @@ class Patrol():
             for cat in pl_rc:
                 relationships = list(
                     filter(lambda rel: rel.cat_to.ID in pl_rc_ids,
+                        list(cat.relationships.values())))
+                for rel in relationships:
+                    if cat.ID in cat_ids:
+                        continue
+                    if self.success:
+                        rel.romantic_love += romantic_love
+                        rel.platonic_like += platonic_like
+                        rel.dislike -= dislike
+                        rel.admiration += admiration
+                        rel.comfortable += comfortable
+                        rel.jealousy -= jealousy
+                        rel.trust += trust
+                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
+                        "Romantic: +" + str(romantic_love) +
+                        " /Platonic: +" + str(platonic_like) +
+                        " /Dislike: -" + str(dislike) +
+                        " /Respect: +" + str(admiration) +
+                        " /Comfort: +" + str(comfortable) +
+                        " /Jealousy: -" + str(jealousy) +
+                        " /Trust: +" + str(trust)) if changed else print("No relationship change")
+                    elif not self.success:
+                        rel.romantic_love -= romantic_love
+                        rel.platonic_like -= platonic_like
+                        rel.dislike += dislike
+                        rel.comfortable -= comfortable
+                        rel.jealousy += jealousy
+                        if "disrespect" in self.patrol_event.tags:
+                            rel.admiration -= admiration
+                        if "distrust" in self.patrol_event.tags:
+                            rel.trust -= trust
+                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
+                        "Romantic: -" + str(romantic_love) +
+                        " /Platonic: -" + str(platonic_like) +
+                        " /Dislike: +" + str(dislike) +
+                        " /Comfort: -" + str(comfortable) +
+                        " /Jealousy: +" + str(jealousy)) if changed else print("No relationship change")
+
+        elif "s_c_to_r_c" in self.patrol_event.tags:
+        # s_c gains relationship with r_c and vice versa
+            for cat in sc_rc:
+                relationships = list(
+                    filter(lambda rel: rel.cat_to.ID in sc_rc_ids,
                         list(cat.relationships.values())))
                 for rel in relationships:
                     if cat.ID in cat_ids:
