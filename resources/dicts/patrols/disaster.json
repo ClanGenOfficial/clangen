@@ -944,5 +944,37 @@
         "r_c was badly scarred when rogues ambushed their patrol.",
         "This cat was killed when rogues ambushed their patrol."
     ]
+},
+{
+    "patrol_id": "bch_bord_roguedis1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["border", "fighting", "scar", "injury", "reputation", "disaster"],
+    "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the beach grass! An ambush!",
+    "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+    "chance_of_success": 40,
+    "exp": 30,
+    "success_text": [
+        "The patrol descends into battle without a second thought, eventually driving the rogues away.",
+        null,
+        "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the clan cats, the rogues turn tail and run.",
+        "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "The rogues greatly outnumber the patrol and have no trouble defeating them. The fallen warriors' bodies are found the next day, covered in battle wounds and cold.",
+        "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and r_c is badly wounded, forcing the patrol to retreat."
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["bloodthirsty", "fierce", "vengeful"],
+    "min_cats": 2,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c was badly scarred when rogues ambushed their patrol.",
+        "This cat was killed when rogues ambushed their patrol."
+    ]
 }
 ]

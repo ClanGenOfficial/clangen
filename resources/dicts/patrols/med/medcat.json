@@ -176,9 +176,9 @@
     "chance_of_success": 40,
     "exp": 20,
     "success_text": [
-        "They have an in depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
-        "p_l takes r_c aside, giving them the full benefits of p_l's seniority and experience as they discuss r_c's vision. As a medicine cat, they don't take the responsibility lightly, and both of them work together to divine the vision's meaning.",
-        "p_l chooses to pad pelt to pelt with r_c, the spiritual medicine cats gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in them, knowing that c_n is in safe paws."
+        "They have an in-depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
+        "p_l takes r_c aside, giving them the full benefits of p_l's experience as they discuss r_c's vision. As a medicine cat, they don't take the responsibility lightly, and both of them work together to divine the vision's meaning.",
+        "p_l chooses to pad pelt to pelt with r_c, the spiritual medicine cat gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in them, knowing that c_n is in safe paws."
     ],
     "fail_text": [
         "p_l shakes their head sadly. They can't make sense of the vision.",
@@ -192,6 +192,30 @@
 },
 {
     "patrol_id": "gen_med_vision2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["med_cat", "respect", "trust", "jealousy", "p_l_to_r_c"],
+    "intro_text": "As the medicine cat's patrol pads out into c_n territory, r_c tells p_l about the dream they had last night, and what the StarClan vision could mean for c_n.",
+    "decline_text": "The cats don't talk about the vision, mouths too full of herbs.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "They have an in depth conversation about r_c's vision as they walk. By the time they head back to camp, they have a good idea of what they should do with the information.",
+        "p_l takes r_c aside, giving them the full benefits of p_l's seniority and experience as they discuss r_c's vision. As a medicine cat, they don't take the responsibility lightly, and both of them work together to divine the vision's meaning.",
+        "s_c listens intently and tells r_c not to be weirded out, but they had seen the dream, too. r_c is alarmed but s_c soothes them and explains that StarClan sometimes shows them others' dreams, but this one luckily was just a mild warning."
+    ],
+    "fail_text": [
+        "p_l shakes their head sadly. They can't make sense of the vision.",
+        "r_c notices p_l looking at them enviously, and withdraws from the group, dismissing the dream as unimportant."
+    ],
+    "win_skills": ["dreamwalker"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_vision3",
     "biome": "Any",
     "season": "Any",
     "tags": ["med_cat"],
@@ -231,7 +255,7 @@
         "The connection wavers, and as quickly as the feeling of company appears, it vanishes.",
         "r_c turns to the ghost with a smile, but the StarClan cat meets their eyes with fire in their gaze. StarClan is unhappy with c_n, and things must change."
     ],
-    "win_skills": ["strong connection to starclan"],
+    "win_skills": ["strong connection to starclan", "clairvoyant"],
     "min_cats": 1,
     "max_cats": 1,
     "antagonize_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
@@ -255,7 +279,7 @@
         "The connection wavers, and as quickly as the feeling of company appears, it vanishes.",
         "r_c turns to the ghost with a smile, but the StarClan cat meets their eyes with fire in their gaze. StarClan is unhappy with c_n, and things must change."
     ],
-    "win_skills": ["strong connection to starclan"],
+    "win_skills": ["strong connection to starclan", "clairvoyant"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "r_c feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
@@ -287,7 +311,7 @@
     "patrol_id": "gen_med_ghost_star4",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "apprentice"],
+    "tags": ["med_cat", "apprentice", "med_only"],
     "intro_text": "As app1 pads through c_n territory, they feel a presence join them.",
     "decline_text": "Their companion stays with them as silent support while they work.",
     "chance_of_success": 30,
@@ -301,7 +325,7 @@
         "The connection wavers, and as quickly as the feeling of company appears, it vanishes.",
         "app1 turns to the ghost with a smile, but the StarClan cat meets their eyes with fire in their gaze. StarClan is unhappy with c_n, and things must change."
     ],
-    "win_skills": ["strong connection to starclan"],
+    "win_skills": ["strong connection to starclan", "clairvoyant"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": "app1 feels hounded, never given a moment's peace, and they hiss at the StarClan cat. The ghost vanishes like a puff of fog in the morning sun, hopefully not to return.",
