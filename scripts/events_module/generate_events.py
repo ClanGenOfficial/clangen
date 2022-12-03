@@ -125,95 +125,95 @@ class GenerateEvents():
 
         if game.clan.biome == 'Forest':
             if status == "kitten":
-                event_list.extend(self.generate_death_events(ALL_FOREST_KITTEN_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_KITTEN_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_FOREST_KITTEN_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_KITTEN_EVENT_DEATH))
             elif status == "apprentice":
-                event_list.extend(self.generate_death_events(ALL_FOREST_APPRENTICE_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_APPRENTICE_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_FOREST_APPRENTICE_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_APPRENTICE_EVENT_DEATH))
             elif status == "warrior":
-                event_list.extend(self.generate_death_events(ALL_FOREST_WARRIOR_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_FOREST_WARRIOR_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_DEATH))
             elif status == "elder":
-                event_list.extend(self.generate_death_events(ALL_FOREST_ELDER_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_ELDER_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_FOREST_ELDER_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_ELDER_EVENT_DEATH))
             elif status in ["medicine cat", "medicine cat apprentice"]:
-                event_list.extend(self.generate_death_events(ALL_FOREST_MEDICINE_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_MEDICINE_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_FOREST_MEDICINE_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_MEDICINE_EVENT_DEATH))
             elif status == "deputy":
-                event_list.extend(self.generate_death_events(ALL_FOREST_DEPUTY_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_DEPUTY_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_FOREST_DEPUTY_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_DEPUTY_EVENT_DEATH))
             elif status == "leader":
-                event_list.extend(self.generate_death_events(ALL_FOREST_LEADER_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_LEADER_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_FOREST_LEADER_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_LEADER_EVENT_DEATH))
 
         elif game.clan.biome == 'Plains':
             if status == "kitten":
-                event_list.extend(self.generate_death_events(ALL_PLAINS_KITTEN_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_KITTEN_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_PLAINS_KITTEN_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_KITTEN_EVENT_DEATH))
             elif status == "apprentice":
-                event_list.extend(self.generate_death_events(ALL_PLAINS_APPRENTICE_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_APPRENTICE_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_PLAINS_APPRENTICE_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_APPRENTICE_EVENT_DEATH))
             elif status == "warrior":
-                event_list.extend(self.generate_death_events(ALL_PLAINS_WARRIOR_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_PLAINS_WARRIOR_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_DEATH))
             elif status == "elder":
-                event_list.extend(self.generate_death_events(ALL_PLAINS_ELDER_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_ELDER_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_PLAINS_ELDER_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_ELDER_EVENT_DEATH))
             elif status in ["medicine cat", "medicine cat apprentice"]:
-                event_list.extend(self.generate_death_events(ALL_PLAINS_MEDICINE_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_MEDICINE_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_PLAINS_MEDICINE_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_MEDICINE_EVENT_DEATH))
             elif status == "deputy":
-                event_list.extend(self.generate_death_events(ALL_PLAINS_DEPUTY_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_DEPUTY_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_PLAINS_DEPUTY_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_DEPUTY_EVENT_DEATH))
             elif status == "leader":
-                event_list.extend(self.generate_death_events(ALL_PLAINS_LEADER_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_LEADER_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_PLAINS_LEADER_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_LEADER_EVENT_DEATH))
 
         elif game.clan.biome == 'Mountainous':
             if status == "kitten":
-                event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_KITTEN_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_KITTEN_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_KITTEN_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_KITTEN_EVENT_DEATH))
             elif status == "apprentice":
-                event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_APPRENTICE_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_APPRENTICE_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_APPRENTICE_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_APPRENTICE_EVENT_DEATH))
             elif status == "warrior":
-                event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_WARRIOR_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_WARRIOR_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_DEATH))
             elif status == "elder":
-                event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_ELDER_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_ELDER_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_ELDER_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_ELDER_EVENT_DEATH))
             elif status in ["medicine cat", "medicine cat apprentice"]:
-                event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_MEDICINE_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_MEDICINE_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_MEDICINE_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_MEDICINE_EVENT_DEATH))
             elif status == "deputy":
-                event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_DEPUTY_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_DEPUTY_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_DEPUTY_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_DEPUTY_EVENT_DEATH))
             elif status == "leader":
-                event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_LEADER_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_LEADER_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_LEADER_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_LEADER_EVENT_DEATH))
 
         elif game.clan.biome == 'Beach':
             if status == "kitten":
-                event_list.extend(self.generate_death_events(ALL_BEACH_KITTEN_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_KITTEN_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_BEACH_KITTEN_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_KITTEN_EVENT_DEATH))
             elif status == "apprentice":
-                event_list.extend(self.generate_death_events(ALL_BEACH_APPRENTICE_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_APPRENTICE_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_BEACH_APPRENTICE_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_APPRENTICE_EVENT_DEATH))
             elif status == "warrior":
-                event_list.extend(self.generate_death_events(ALL_BEACH_WARRIOR_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_BEACH_WARRIOR_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_DEATH))
             elif status == "elder":
-                event_list.extend(self.generate_death_events(ALL_BEACH_ELDER_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_ELDER_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_BEACH_ELDER_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_ELDER_EVENT_DEATH))
             elif status in ["medicine cat", "medicine cat apprentice"]:
-                event_list.extend(self.generate_death_events(ALL_BEACH_MEDICINE_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_MEDICINE_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_BEACH_MEDICINE_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_MEDICINE_EVENT_DEATH))
             elif status == "deputy":
-                event_list.extend(self.generate_death_events(ALL_BEACH_DEPUTY_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_DEPUTY_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_BEACH_DEPUTY_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_DEPUTY_EVENT_DEATH))
             elif status == "leader":
-                event_list.extend(self.generate_death_events(ALL_BEACH_LEADER_EVENT_INJURIES))
-                event_list.extend(self.generate_death_events(GEN_LEADER_EVENT_INJURIES))
+                event_list.extend(self.generate_death_events(ALL_BEACH_LEADER_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_LEADER_EVENT_DEATH))
 
             return event_list
 

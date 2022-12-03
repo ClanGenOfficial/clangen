@@ -137,73 +137,78 @@ class Condition_Events():
 
                 triggered = True
 
-                for event in possible_events:
+                if possible_events is not None:
+                    for event in possible_events:
 
-                    if season not in event.tags:
-                        continue
-
-                    if "other_cat_leader" in event.tags and other_cat.status != "leader":
-                        continue
-                    if "other_cat_mentor" in event.tags and cat.mentor != other_cat.ID:
-                        continue
-                    elif "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten"]:
-                        continue
-
-                    if "clan_kits" in event.tags and not alive_kits:
-                        continue
-
-                    if event.cat_trait is not None:
-                        if cat.trait not in event.cat_trait and int(random.random() * 10):
+                        if season not in event.tags:
                             continue
 
-                    if event.cat_skill is not None:
-                        if cat.skill not in event.cat_skill and int(random.random() * 10):
+                        if "other_cat_leader" in event.tags and other_cat.status != "leader":
+                            continue
+                        if "other_cat_mentor" in event.tags and cat.mentor != other_cat.ID:
+                            continue
+                        elif "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten"]:
                             continue
 
-                    if event.other_cat_trait is not None:
-                        if other_cat.trait not in event.other_cat_trait and int(random.random() * 10):
+                        if "clan_kits" in event.tags and not alive_kits:
                             continue
 
-                    if event.other_cat_skill is not None:
-                        if other_cat.skill not in event.other_cat_skill and int(random.random() * 10):
-                            continue
+                        if event.cat_trait is not None:
+                            if cat.trait not in event.cat_trait and int(random.random() * 10):
+                                continue
 
-                    final_events.append(event)
+                        if event.cat_skill is not None:
+                            if cat.skill not in event.cat_skill and int(random.random() * 10):
+                                continue
 
-                other_clan = random.choice(game.clan.all_clans)
-                other_clan_name = f'{str(other_clan.name)}Clan'
-                enemy_clan = f'{str(enemy_clan)}'
-                current_lives = int(game.clan.leader_lives)
+                        if event.other_cat_trait is not None:
+                            if other_cat.trait not in event.other_cat_trait and int(random.random() * 10):
+                                continue
 
-                if other_clan_name == 'None':
-                    other_clan = game.clan.all_clans[0]
+                        if event.other_cat_skill is not None:
+                            if other_cat.skill not in event.other_cat_skill and int(random.random() * 10):
+                                continue
+
+                        final_events.append(event)
+
+                    other_clan = random.choice(game.clan.all_clans)
                     other_clan_name = f'{str(other_clan.name)}Clan'
+                    enemy_clan = f'{str(enemy_clan)}'
+                    current_lives = int(game.clan.leader_lives)
 
-                if len(final_events) > 0:
-                    injury_event = random.choice(final_events)
+                    if other_clan_name == 'None':
+                        other_clan = game.clan.all_clans[0]
+                        other_clan_name = f'{str(other_clan.name)}Clan'
 
-                    if "war" in injury_event.tags:
-                        other_clan_name = enemy_clan
+                    if len(final_events) > 0:
+                        injury_event = random.choice(final_events)
 
-                    print(cat.name, cat.status, len(final_events), other_cat.name)
+                        if "war" in injury_event.tags:
+                            other_clan_name = enemy_clan
 
-                    text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
+                        print(cat.name, cat.status, len(final_events), other_cat.name)
 
-                    # record proper history text possibilities
-                    if injury_event.history_text is not None:
-                        if injury_event.history_text[0] is not None:
-                            history_text = event_text_adjust(Cat, injury_event.history_text[0], cat, other_cat, other_clan_name)
-                            cat.possible_scar = str(history_text)
-                        if injury_event.history_text[1] is not None and cat.status != "leader":
-                            history_text = event_text_adjust(Cat, injury_event.history_text[1], cat, other_cat,
-                                                             other_clan_name)
-                            cat.possible_death = str(history_text)
-                        elif injury_event.history_text[2] is not None and cat.status == "leader":
-                            history_text = event_text_adjust(Cat, injury_event.history_text[2], cat, other_cat,
-                                                             other_clan_name)
-                            cat.possible_death = str(history_text)
+                        text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
 
-                    cat.get_injured(injury_event.injury)
+                        # record proper history text possibilities
+                        if injury_event.history_text is not None:
+                            if injury_event.history_text[0] is not None:
+                                history_text = event_text_adjust(Cat, injury_event.history_text[0], cat, other_cat,
+                                                                 other_clan_name)
+                                cat.possible_scar = str(history_text)
+                            if injury_event.history_text[1] is not None and cat.status != "leader":
+                                history_text = event_text_adjust(Cat, injury_event.history_text[1], cat, other_cat,
+                                                                 other_clan_name)
+                                cat.possible_death = str(history_text)
+                            elif injury_event.history_text[2] is not None and cat.status == "leader":
+                                history_text = event_text_adjust(Cat, injury_event.history_text[2], cat, other_cat,
+                                                                 other_clan_name)
+                                cat.possible_death = str(history_text)
+
+                        cat.get_injured(injury_event.injury)
+                    else:
+                        triggered = False
+                        print('possible events is 0')
                 else:
                     triggered = False
 
@@ -242,7 +247,6 @@ class Condition_Events():
                     event_string = f'The {injury} caused {cat.name} to get {new_illness}.'
                     cat.get_ill(new_illness)
                     break
-
 
         if not triggered:
             for y in cat.injuries:
@@ -339,12 +343,11 @@ class Condition_Events():
                 perm_condition = possible_conditions
             else:
                 if cat.injuries[injury_name] is not None:
-                    risks = cat.injuries[injury_name]["risks"]
-                    for risk in risks:
-                        if risk["name"] in PERMANENT:
-                            possible_conditions.append(risk)
-                        else:
-                            continue
+                    conditions = cat.injuries[injury_name]["cause_permanent"]
+                    for x in conditions:
+                        possible_conditions.append(x)
+
+                    # TODO: give a random chance to gain condition - for now always assign for testing purposes
                     if len(possible_conditions) > 0:
                         perm_condition = random.choice(possible_conditions)
         elif condition is not None:
@@ -381,4 +384,3 @@ with open(f"resources/dicts/conditions/illnesses_seasons.json", 'r') as read_fil
 
 not_integrated_illness = ["redcough"]
 not_integrated_injuries = ["carrionplace disease"]
-

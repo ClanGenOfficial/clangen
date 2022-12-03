@@ -272,6 +272,7 @@ class Cat():
         self.paralyzed = False
         self.no_kits = False
         self.exiled = False
+        self.retired = False
         if self.genderalign is None:
             self.genderalign = self.gender
 
