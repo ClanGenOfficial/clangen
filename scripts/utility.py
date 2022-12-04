@@ -5,15 +5,8 @@ from scripts.cat.pelts import *
 from scripts.game_structure.game_essentials import *
 
 
-def get_cats_allowed_on_patrol(Cat, ILLNESSES, game_mode):
+def get_cats_allowed_on_patrol(Cat, game_mode):
     able_cats = []
-
-    # create a list of illnesses and injuries which are not allowed to join the patrol
-    allowed_illnesses = [
-        "fleas",
-        "running nose"
-    ]
-    not_allowed_illnesses = list(filter(lambda x: x not in allowed_illnesses, ILLNESSES.keys()))
 
     # ASSIGN TO ABLE CATS AND SORT BY RANK
     for the_cat in Cat.all_cats.values():
@@ -21,7 +14,7 @@ def get_cats_allowed_on_patrol(Cat, ILLNESSES, game_mode):
                 game.switches['current_patrol']:
             continue
         if game_mode == "expanded":
-            if the_cat.not_working:
+            if the_cat.not_working():
                 continue
         if the_cat.status in [
             'leader', 'deputy', 'warrior', 'apprentice'

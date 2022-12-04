@@ -14,7 +14,6 @@
         "stomachache":1,
         "greencough": 4,
         "whitecough": 1,
-        "chills": 2,
         "yellowcough": 2,
         "running nose": 5
     },
@@ -22,7 +21,6 @@
         "stomachache":1,
         "greencough": 4,
         "whitecough": 1,
-        "chills": 2,
         "yellowcough": 2,
         "running nose": 5
     }

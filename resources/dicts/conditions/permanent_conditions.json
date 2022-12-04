@@ -243,10 +243,6 @@
                 "chance": 3
             },
             {
-                "name": "chills",
-                "chance": 5
-            },
-            {
                 "name": "greencough",
                 "chance": 5
             },
@@ -263,10 +259,6 @@
             {
                 "name": "whitecough",
                 "chance": 20
-            },
-            {
-                "name": "chills",
-                "chance": 10
             },
             {
                 "name": "greencough",
@@ -310,9 +302,6 @@
         "illness_infectiousness": [
         ],
         "risks": [
-            {
-
-            }
         ]
     },
     "failing eyesight": {
@@ -330,9 +319,6 @@
         "illness_infectiousness": [
         ],
         "risks": [
-            {
-
-            }
         ]
     },
     "partial hearing loss": {
@@ -350,9 +336,6 @@
         "illness_infectiousness": [
         ],
         "risks": [
-            {
-
-            }
         ]
     },
     "deaf": {

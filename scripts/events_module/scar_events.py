@@ -37,6 +37,9 @@ class Scar_Events():
             bite_scars = [
                 "LEGBITE", "NECKBITE", "TAILSCAR"
             ]
+            snake_scars = [
+                "SNAKE"
+            ]
             claw_scars = [
                 "ONE", "TWO", "THREE", "SNOUT", "TAILSCAR", "CHEEK",
                 "SIDE", "THROAT", "TAILBASE", "BELLY", "FACE"
@@ -56,8 +59,10 @@ class Scar_Events():
 
             scar_pool = []
 
-            if injury_name in ["bite-wound", "snake bite", "rat bite"]:
+            if injury_name in ["bite-wound", "rat bite"]:
                 scar_pool = bite_scars
+            elif injury_name == "snake bite":
+                scar_pool = snake_scars
             elif injury_name == "claw-wound":
                 scar_pool = claw_scars
             elif injury_name == "mangled tail":

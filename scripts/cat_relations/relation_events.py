@@ -691,6 +691,11 @@ class Relation_Events():
                 all_kitten.append(kit)
                 cat.birth_cooldown = 6
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
+
+            # try to give them a permanent condition. 1/200 chance
+            if not int(random.random() * 200):
+                kit.congenital_condition(kit)
+
             #create and update relationships
             for cat_id in clan.clan_cats:
                 the_cat = Cat.all_cats.get(cat_id)

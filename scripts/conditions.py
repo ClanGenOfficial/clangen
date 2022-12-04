@@ -6,39 +6,22 @@ from scripts.game_structure.game_essentials import game
 def medical_cats_condition_fulfilled(all_cats, amount_per_med):
     fulfilled = False
 
-    allowed_injuries = [
-        "bruises",
-        "scrapes",
-        "tick bites",
-        "torn pelt",
-        "torn ear",
-        "splinter",
-        "sore muscles"
-    ]
-    allowed_illnesses = [
-        "fleas",
-        "running nose"
-    ]
     medicine_apprentices = list(filter(
-        lambda c: c.status == 'medicine apprentices' and not c.dead and not c.exiled and \
-                  (not c.is_ill() or c.is_ill() and c.illness.name in allowed_illnesses) and \
-                  (not c.is_injured() or c.is_injured() and not c.not_working)
+        lambda c: c.status == 'medicine apprentices' and not c.dead and not c.exiled and not c.not_working()
         , all_cats
     ))
     medicine_cats = list(filter(
-        lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled and \
-                  (not c.is_ill() or c.is_ill() and c.illness.name in allowed_illnesses) and \
-                  (not c.is_injured() or c.is_injured() and not c.not_working)
+        lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled and not c.not_working()
         , all_cats
     ))
 
     good_healer = float(len(list(filter(lambda c: c.skill == 'good healer', medicine_cats))) * 1.5)
     great_healer = float(len(list(filter(lambda c: c.skill == 'great healer', medicine_cats))) * 1.75)
     fantastic_healer = float(len(list(filter(lambda c: c.skill == 'fantastic healer', medicine_cats))) * 2)
-    normal_med = float(
+    normal_meds = float(
         len(list(filter(lambda c: c.skill not in ['good healer', 'great healer', 'fantastic healer'], medicine_cats))))
 
-    total_adult_med_number = good_healer + great_healer + fantastic_healer + normal_med
+    total_adult_med_number = good_healer + great_healer + fantastic_healer + normal_meds
 
     relevant_cats = list(filter(lambda c: not c.dead and not c.exiled, all_cats))
     number = len(relevant_cats) / (amount_per_med + 1)
@@ -46,7 +29,8 @@ def medical_cats_condition_fulfilled(all_cats, amount_per_med):
     meds_available = int(total_adult_med_number + (len(medicine_apprentices) / 2))
     needed_meds = math.ceil(number)
 
-    fulfilled = meds_available >= needed_meds
+    if meds_available >= needed_meds:
+        fulfilled = True
     return fulfilled
 
 

@@ -115,7 +115,7 @@ class Events():
                 amount_per_med = get_amount_cat_for_one_medic(game.clan)
                 med_fullfilled = medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med)
                 if not med_fullfilled:
-                    game.cur_events_list.insert(0, f"{game.clan.name}Clan does not have enough healthy medicine cats!")
+                    game.cur_events_list.insert(0, f"{game.clan.name}Clan does not have enough healthy medicine cats! Cats will be sick/hurt for longer and have a higher chance of dying.")
             else:
                 has_med = any(
                     str(cat.status) in {"medicine cat", "medicine cat apprentice"}
@@ -170,8 +170,11 @@ class Events():
             self.coming_out(cat)
             cat.one_moon()
             return
-           
-        self.perform_ceremonies(cat) # here is age up included
+
+        # check for death/reveal/risks/retire caused by permanent conditions
+        if cat.is_disabled():
+            self.condition_events.handle_already_disabled(cat)
+        self.perform_ceremonies(cat)  # here is age up included
 
         if not game.clan.closed_borders and not self.new_cat_invited or self.living_cats < 10:
             self.invite_new_cats(cat)
@@ -901,6 +904,14 @@ class Events():
                 the_cat.relationships[new_cat.ID] = Relationship(the_cat, new_cat)
                 new_cat.relationships[the_cat.ID] = Relationship(new_cat, the_cat)
             new_cat.thought = 'Is looking around the camp with wonder'
+
+            # chance to give the new cat a permanent condition
+            if not int(random.random() * 200):
+                possible_conditions = []
+                for condition in PERMANENT:
+                    possible_conditions.append(condition)
+                chosen_condition = choice(possible_conditions)
+                new_cat.get_permanent_condition(new_cat, chosen_condition)
             created_cats.append(new_cat)
 
         for new_cat in created_cats:

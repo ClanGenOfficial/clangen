@@ -643,10 +643,6 @@
             {
                 "name": "greencough",
                 "chance": 5
-            },
-            {
-                "name": "yellowcough",
-                "chance": 4
             }
         ],
         "also_got": [],

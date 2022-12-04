@@ -2,12 +2,12 @@
     "seizure": {
         "severity": "severe",
         "mortality": {
-            "kitten": 10,
-            "adolescent": 20,
-            "young adult": 30,
-            "adult": 30,
-            "senior adult": 30,
-            "elder": 10
+            "kitten": 5,
+            "adolescent": 10,
+            "young adult": 20,
+            "adult": 20,
+            "senior adult": 20,
+            "elder": 5
         },
         "medicine_mortality": {
             "kitten": 50,
@@ -24,49 +24,13 @@
 
         ]
     },
-    "chills": {
-        "severity": "minor",
-        "mortality": {
-            "kitten": 15,
-            "adolescent": 35,
-            "young adult": 50,
-            "adult": 50,
-            "senior adult": 50,
-            "elder": 25
-        },
-        "medicine_mortality": {
-            "kitten": 50,
-            "adolescent": 70,
-            "young adult": 120,
-            "adult": 120,
-            "senior adult": 120,
-            "elder": 70
-        },
-        "duration": 2,
-        "medicine_duration": 1,
-        "infectiousness": 20,
-        "risks": [
-            {
-                "name": "greencough",
-                "chance": 5
-            },
-            {
-                "name": "whitecough",
-                "chance": 3
-            },
-            {
-                "name": "yellowcough",
-                "chance": 8
-            }
-        ]
-    },
     "diarrhea": {
         "severity": "major",
         "mortality": {
             "kitten": 3,
             "adolescent": 8,
-            "young adult": 15,
-            "adult": 20,
+            "young adult": 10,
+            "adult": 15,
             "senior adult": 10,
             "elder": 5
         },
@@ -80,7 +44,7 @@
         },
         "duration": 2,
         "medicine_duration": 1,
-        "infectiousness": 70,
+        "infectiousness": 50,
         "risks": []
     },
     "fleas": {
@@ -130,11 +94,11 @@
         "risks": [
             {
                 "name": "yellowcough",
-                "chance": 15
+                "chance": 40
             }
         ]
     },
-    "kitten-cough": {
+    "kittencough": {
         "severity": "severe",
         "mortality": {
             "kitten": 2,
@@ -216,12 +180,12 @@
     "redcough": {
         "severity": "severe",
         "mortality": {
-            "kitten": 2,
+            "kitten": 1,
             "adolescent": 5,
-            "young adult": 8,
-            "adult": 10,
-            "senior adult": 8,
-            "elder": 3
+            "young adult": 5,
+            "adult": 5,
+            "senior adult": 5,
+            "elder": 2
         },
         "medicine_mortality": {
             "kitten": 4,
@@ -265,10 +229,6 @@
             {
                 "name": "whitecough",
                 "chance": 3
-            },
-            {
-                "name": "yellowcough",
-                "chance": 8
             }
         ]
     },
@@ -292,15 +252,11 @@
         },
         "duration": 3,
         "medicine_duration": 1,
-        "infectiousness": 6,
+        "infectiousness": 4,
         "risks": [
             {
                 "name": "greencough",
                 "chance": 10
-            },
-            {
-                "name": "yellowcough",
-                "chance": 15
             }
         ]
     },
@@ -308,10 +264,10 @@
         "severity": "major",
         "mortality": {
             "kitten": 3,
-            "adolescent": 8,
-            "young adult": 10,
-            "adult": 15,
-            "senior adult": 10,
+            "adolescent": 5,
+            "young adult": 5,
+            "adult": 5,
+            "senior adult": 5,
             "elder": 3
         },
         "medicine_mortality": {
@@ -324,13 +280,13 @@
         },
         "duration": 3,
         "medicine_duration": 2,
-        "infectiousness": 6,
+        "infectiousness": 4,
         "risks": []
     },
     "a festering wound": {
         "severity": "severe",
         "mortality": {
-            "kitten": 2,
+            "kitten": 1,
             "adolescent": 3,
             "young adult": 3,
             "adult": 5,
@@ -355,10 +311,10 @@
         "mortality": {
             "kitten": 2,
             "adolescent": 5,
-            "young adult": 8,
-            "adult": 10,
-            "senior adult": 10,
-            "elder": 5
+            "young adult": 5,
+            "adult": 8,
+            "senior adult": 8,
+            "elder": 3
         },
         "medicine_mortality": {
             "kitten": 5,
@@ -425,7 +381,7 @@
         "risks": [
             {
                 "name": "diarrhea",
-                "chance": 8
+                "chance": 10
             }
         ]
     },

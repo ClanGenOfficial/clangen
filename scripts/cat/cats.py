@@ -152,11 +152,10 @@ class Cat():
         self.birth_cooldown = 0
         self.siblings = []
         self.children = []
-        self.illness = None
+        self.illnesses = {}
         self.injuries = {}
-        self.healed_injury = None
+        self.healed_condition = None
         self.also_got = False
-        self.not_working = False
         self.permanent_condition = {}
         self.retired = False
         self.possible_scar = None
@@ -322,8 +321,8 @@ class Cat():
         else:
             self.dead = True
 
-        self.injuries = []
-        self.illness = None
+        self.injuries = {}
+        self.illnesses = {}
 
         if self.mate is not None:
             self.mate = None
@@ -649,16 +648,17 @@ class Cat():
             elif self.skill == '???' and self.status not in ['apprentice', 'medicine cat apprentice', 'kitten']:
                 self.skill = choice(self.skills)
 
-    def moon_skip_illness(self):
-        "handles the moon skip for illness"
+    def moon_skip_illness(self, illness):
+        """handles the moon skip for illness"""
         if not self.is_ill():
             return
 
-        if self.illness.new:
-            self.illness.new = False
+        if self.illnesses[illness]["event_triggered"]:
+            self.illnesses[illness]["event_triggered"] = False
             return
 
-        mortality = self.illness.current_mortality
+        mortality = self.illnesses[illness]["mortality"]
+
         # leader should have a higher chance of death
         if self.status == "leader":
             mortality = int(mortality * 0.7)
@@ -667,15 +667,15 @@ class Cat():
             if self.status == "leader":
                 game.clan.leader_lives -= 1
                 if game.clan.leader_lives > 0:
-                    game.cur_events_list.append(f"{self.name} lost a life to {self.illness.name}.")
+                    game.cur_events_list.append(f"{self.name} lost a life to {illness}.")
                 elif game.clan.leader_lives <= 0:
-                    game.cur_events_list.append(f"{self.name} lost their last life to {self.illness.name}.")
+                    game.cur_events_list.append(f"{self.name} lost their last life to {illness}.")
             self.die()
             return
 
-        self.illness.current_duration -= 1
-        if self.illness.current_duration <= 0:
-            self.illness = None
+        self.illnesses[illness]["duration"] -= 1
+        if self.illnesses[illness]["duration"] <= 0:
+            self.healed_condition = True
 
     def moon_skip_injury(self, injury):
         """handles the moon skip for injury"""
@@ -693,17 +693,16 @@ class Cat():
             mortality = int(mortality * 0.7)
 
         if mortality and not int(random.random() * mortality):
+            if self.status == 'leader':
+                game.clan.leader_lives -= 1
             self.die()
             return
 
         # if the cat has an infected wound, the wound shouldn't heal till the illness is cured
-        if not self.is_ill() or (self.is_ill() and self.illness not in ["an infected wound", "a festering wound"]):
+        if not self.is_ill():
             self.injuries[injury]["duration"] -= 1
         if self.injuries[injury]["duration"] <= 0:
-            if self.is_ill() and self.illness in ["an infected wound", "a festering wound"]:
-                self.injuries[injury]["duration"] += 1
-                return
-            self.healed_injury = self.injuries[injury]
+            self.healed_condition = True
 
     def moon_skip_permanent_condition(self, condition):
         """handles the moon skip for permanent conditions"""
@@ -717,8 +716,9 @@ class Cat():
         mortality = self.permanent_condition[condition]["mortality"]
         moons_until = self.permanent_condition[condition]["moons_until"]
 
-        if moons_until != 0:
-            self.permanent_condition[condition]["moons_until"] = moons_until - 1
+        # handling the countdown till a congenital condition is revealed
+        if moons_until != 0 and moons_until is not None:
+            self.permanent_condition[condition]["moons_until"] = int(moons_until - 1)
             if self.permanent_condition[condition]["moons_until"] == 0:
                 return True
 
@@ -729,8 +729,6 @@ class Cat():
         if mortality and not int(random.random() * mortality):
             self.die()
             return
-
-
 
 
 # ---------------------------------------------------------------------------- #
@@ -789,27 +787,26 @@ class Cat():
 #                                  conditions                                  #
 # ---------------------------------------------------------------------------- #
   
-    def get_ill(self, name, risk=False, event_triggered = False):
-        if self.is_ill() and not risk or name not in ILLNESSES:
-            if name not in ILLNESSES:
-                print(f"WARNING: {name} is not in the illnesses collection.")
+    def get_ill(self, name, event_triggered=False):
+        if name not in ILLNESSES:
+            print(f"WARNING: {name} is not in the illnesses collection.")
             return
 
         illness = ILLNESSES[name]
         mortality = illness["mortality"][self.age]
         med_mortality = illness["medicine_mortality"][self.age]
         if game.clan.game_mode == "cruel season":
-            mortality = int(mortality * 0.65)
-            med_mortality = int(med_mortality * 0.65)
+            if mortality != 0:
+                mortality = int(mortality * 0.5)
+                med_mortality = int(med_mortality * 0.5)
 
-            # to prevent a illness gets no mortality, check and set it to 1 if needed
-            if illness["mortality"][self.age] and not mortality:
-                mortality = 1
-            if illness["medicine_mortality"][self.age] and not med_mortality:
-                med_mortality = 1
+                # to prevent an illness gets no mortality, check and set it to 1 if needed
+                if mortality == 0 or med_mortality == 0:
+                    mortality = 1
+                    med_mortality = 1
 
-        self.illness = Illness(
-            name,
+        new_illness = Illness(
+            name=name,
             severity=illness["severity"],
             mortality=mortality,
             infectiousness=illness["infectiousness"],
@@ -820,6 +817,19 @@ class Cat():
             event_triggered=event_triggered
         )
 
+        if new_illness.name not in self.illnesses:
+            self.illnesses[new_illness.name] = {
+                "severity": new_illness.severity,
+                "mortality": new_illness.current_mortality,
+                "infectiousness": new_illness.infectiousness,
+                "duration": new_illness.current_duration,
+                "risks": new_illness.risks,
+                "event_triggered": new_illness.new
+            }
+            print('new illness', new_illness.name)
+
+
+
     def get_injured(self, name, event_triggered=False):
         if (self.is_injured() and self.also_got is False) or name not in INJURIES:
             if name not in INJURIES:
@@ -828,8 +838,13 @@ class Cat():
 
         injury = INJURIES[name]
         mortality = injury["mortality"][self.age]
-        if game.clan.game_mode == "cruel season":
-            mortality = int(mortality * 0.65)
+
+        if mortality != 0:
+            if game.clan.game_mode == "cruel season":
+                mortality = int(mortality * 0.5)
+
+                if mortality == 0:
+                    mortality = 1
 
         new_injury = Injury(
             name=name,
@@ -858,9 +873,6 @@ class Cat():
             }
             print('new injury', new_injury.name)
 
-        if new_injury.severity in ["major", "severe"]:
-            self.not_working = True
-
         if len(new_injury.also_got) > 0 and not int(random.random() * 5):
             self.also_got = True
             additional_injury = choice(new_injury.also_got)
@@ -868,7 +880,17 @@ class Cat():
         else:
             self.also_got = False
 
-    def get_permanent_condition(self, cat, name, born_with, event_triggered=False):
+    def congenital_condition(self, cat):
+        possible_conditions = []
+
+        for condition in PERMANENT:
+            if condition["congenital"] in ['always', 'sometimes']:
+                possible_conditions.append(condition)
+
+        new_condition = choice(possible_conditions)
+        self.get_permanent_condition(cat, new_condition, born_with=True)
+
+    def get_permanent_condition(self, cat, name, born_with=False, event_triggered=False):
         if name not in PERMANENT:
             print(f"WARNING: {name} is not in the permanent conditions collection.")
             return
@@ -909,21 +931,32 @@ class Cat():
             print('new permanent condition', new_perm_condition.name)
             new_condition = True
 
-        if moons_until == 0 and (new_perm_condition.severity == 'major' and not int(random.random() * 4)) or new_perm_condition.severity == 'severe':
-            self.retire_cat(cat)
-
         return new_condition
 
-    def retire_cat(self, cat):
-        cat.retired = True
-        cat.status = 'elder'
-        self.not_working = True
+    def not_working(self):
+        not_working = False
+        for illness in self.illnesses:
+            if self.illnesses[illness]['severity'] != 'minor':
+                not_working = True
+                break
+        for injury in self.injuries:
+            if self.injuries[injury]['severity'] != 'minor':
+                not_working = True
+                break
+        return not_working
+
+    def retire_cat(self):
+        self.retired = True
+        self.status = 'elder'
 
     def additional_injury(self, injury):
         self.get_injured(injury)
 
     def is_ill(self):
-        return self.illness is not None
+        is_ill = True
+        if len(self.illnesses) <= 0:
+            is_ill = False
+        return is_ill is not False
 
     def is_injured(self):
         is_injured = True
@@ -938,27 +971,36 @@ class Cat():
         return is_disabled is not False
 
     def contact_with_ill_cat(self, cat):
-        "handles if one cat had contact with a ill cat"
-        if self.is_ill() or cat is None or not cat.is_ill() or cat.illness.infectiousness == 0:
+        """handles if one cat had contact with an ill cat"""
+
+        infectious_illnesses = []
+        if self.is_ill() or cat is None or not cat.is_ill():
             return
+        elif cat.is_ill():
+            for illness in cat.illnesses:
+                if cat.illnesses[illness]["infectiousness"] != 0:
+                    infectious_illnesses.append(illness)
+            if len(infectious_illnesses) == 0:
+                return
 
-        illness_name = cat.illness.name
-        rate = cat.illness.infectiousness
-        if self.is_injured():
-            for y in self.injuries:
-                illness_infect = list(filter(lambda ill: ill["name"] == illness_name, self.injuries[y]["illness_infectiousness"]))
-                if illness_infect is not None and len(illness_infect) > 0:
-                    illness_infect = illness_infect[0]
-                    rate -= illness_infect["lower_by"]
-        
-                # prevent rate lower 0 and print warning message
-                if rate < 0:
-                    print("WARNING: injury " + self.injuries[y]["name"] + " has lowered chance of " + illness_name + " infection to " + rate)
-                    rate = 1
+        for illness in infectious_illnesses:
+            illness_name = illness
+            rate = cat.illnesses[illness]["infectiousness"]
+            if self.is_injured():
+                for y in self.injuries:
+                    illness_infect = list(filter(lambda ill: ill["name"] == illness_name, self.injuries[y]["illness_infectiousness"]))
+                    if illness_infect is not None and len(illness_infect) > 0:
+                        illness_infect = illness_infect[0]
+                        rate -= illness_infect["lower_by"]
 
-        if not random.random() * rate:
-            game.cur_events_list.append(f"{self.name} had contact with {cat.name} and now has {illness_name}.")
-            self.get_ill(illness_name)
+                    # prevent rate lower 0 and print warning message
+                    if rate < 0:
+                        print(f"WARNING: injury {self.injuries[y]['name']} has lowered chance of {illness_name} infection to {rate}")
+                        rate = 1
+
+            if not random.random() * rate:
+                game.cur_events_list.append(f"{self.name} had contact with {cat.name} and now has {illness_name}.")
+                self.get_ill(illness_name)
 
     def save_condition(self):
         # save conditions for each cat
@@ -982,20 +1024,9 @@ class Cat():
             return
 
         conditions = {}
-        injuries = {}
 
         if self.is_ill():
-            # save info under illnesses in conditions save
-            conditions["illnesses"] = {
-                "name": self.illness.name,
-                "severity": self.illness.severity,
-                "mortality": self.illness.current_mortality,
-                "duration": self.illness.current_duration,
-                "medicine_mortality": self.illness.medicine_mortality,
-                "medicine_duration": self.illness.medicine_duration,
-                "infectiousness": self.illness.infectiousness,
-                "risks": self.illness.risks,
-            }
+            conditions["illnesses"] = self.illnesses
 
         if self.is_injured():
             conditions["injuries"] = self.injuries
@@ -1025,17 +1056,7 @@ class Cat():
             with open(condition_cat_directory, 'r') as read_file:
                 rel_data = ujson.loads(read_file.read())
                 if "illnesses" in rel_data:
-                    illness = rel_data["illnesses"]
-                    self.illness = self.illness = Illness(
-                        illness["name"],
-                        severity=illness["severity"],
-                        mortality=illness["mortality"],
-                        infectiousness=illness["infectiousness"],
-                        duration=illness["duration"],
-                        medicine_duration=illness["medicine_duration"],
-                        medicine_mortality=illness["medicine_mortality"],
-                        risks=illness["risks"]
-                    )
+                    self.illnesses = rel_data.get("illnesses")
                 if "injuries" in rel_data:
                     self.injuries = rel_data.get("injuries")
                 if "permanent conditions" in rel_data:

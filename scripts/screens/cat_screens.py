@@ -529,8 +529,10 @@ class ProfileScreen(Screens):
         # CONDITIONS (temporary)
         injury_list = []
         permanent_conditions_list = []
+        illness_list = []
         injury_string = None
         permanent_conditions_string = None
+        illness_string = None
 
         if the_cat.is_injured():
             for y in the_cat.injuries:
@@ -540,14 +542,18 @@ class ProfileScreen(Screens):
             for y in the_cat.permanent_condition:
                 permanent_conditions_list.append(y)
             permanent_conditions_string = ", ".join(permanent_conditions_list)
+        if the_cat.is_ill():
+            for y in the_cat.illnesses:
+                illness_list.append(y)
+            illness_string = ', '.join(illness_list)
 
         if the_cat.is_ill() and the_cat.is_injured():
             verdana_small.text(
-                f"condition: {the_cat.illness.name}, {injury_string}", (300, 230 + count * 15))
+                f"condition: {illness_string}, {injury_string}", (300, 230 + count * 15))
             count += 1
         elif the_cat.is_ill():
             verdana_small.text(
-                f"condition: {the_cat.illness.name}", (300, 230 + count * 15))
+                f"condition: {illness_string}", (300, 230 + count * 15))
             count += 1
         elif the_cat.is_injured():
             verdana_small.text(

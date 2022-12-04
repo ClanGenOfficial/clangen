@@ -28,6 +28,7 @@ class GenerateEvents():
                 event_list.extend(self.generate_injury_event(GEN_MEDICINE_EVENT_INJURIES))
             elif status == "deputy":
                 event_list.extend(self.generate_injury_event(ALL_FOREST_DEPUTY_EVENT_INJURIES))
+                event_list.extend(self.generate_injury_event(GEN_WARRIOR_EVENT_INJURIES))
                 event_list.extend(self.generate_injury_event(GEN_DEPUTY_EVENT_INJURIES))
             elif status == "leader":
                 event_list.extend(self.generate_injury_event(ALL_FOREST_LEADER_EVENT_INJURIES))
@@ -51,6 +52,7 @@ class GenerateEvents():
                 event_list.extend(self.generate_injury_event(GEN_MEDICINE_EVENT_INJURIES))
             elif status == "deputy":
                 event_list.extend(self.generate_injury_event(ALL_PLAINS_DEPUTY_EVENT_INJURIES))
+                event_list.extend(self.generate_injury_event(GEN_WARRIOR_EVENT_INJURIES))
                 event_list.extend(self.generate_injury_event(GEN_DEPUTY_EVENT_INJURIES))
             elif status == "leader":
                 event_list.extend(self.generate_injury_event(ALL_PLAINS_LEADER_EVENT_INJURIES))
@@ -74,6 +76,7 @@ class GenerateEvents():
                 event_list.extend(self.generate_injury_event(GEN_MEDICINE_EVENT_INJURIES))
             elif status == "deputy":
                 event_list.extend(self.generate_injury_event(ALL_MOUNTAINOUS_DEPUTY_EVENT_INJURIES))
+                event_list.extend(self.generate_injury_event(GEN_WARRIOR_EVENT_INJURIES))
                 event_list.extend(self.generate_injury_event(GEN_DEPUTY_EVENT_INJURIES))
             elif status == "leader":
                 event_list.extend(self.generate_injury_event(ALL_MOUNTAINOUS_LEADER_EVENT_INJURIES))
@@ -97,10 +100,14 @@ class GenerateEvents():
                 event_list.extend(self.generate_injury_event(GEN_MEDICINE_EVENT_INJURIES))
             elif status == "deputy":
                 event_list.extend(self.generate_injury_event(ALL_BEACH_DEPUTY_EVENT_INJURIES))
+                event_list.extend(self.generate_injury_event(GEN_WARRIOR_EVENT_INJURIES))
                 event_list.extend(self.generate_injury_event(GEN_DEPUTY_EVENT_INJURIES))
             elif status == "leader":
                 event_list.extend(self.generate_injury_event(ALL_BEACH_LEADER_EVENT_INJURIES))
                 event_list.extend(self.generate_injury_event(GEN_LEADER_EVENT_INJURIES))
+
+        if status != 'kitten':
+            event_list.extend(self.generate_injury_event(GEN_GENERAL_EVENT_INJURIES))
 
         return event_list
 
@@ -142,6 +149,7 @@ class GenerateEvents():
                 event_list.extend(self.generate_death_events(GEN_MEDICINE_EVENT_DEATH))
             elif status == "deputy":
                 event_list.extend(self.generate_death_events(ALL_FOREST_DEPUTY_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_DEATH))
                 event_list.extend(self.generate_death_events(GEN_DEPUTY_EVENT_DEATH))
             elif status == "leader":
                 event_list.extend(self.generate_death_events(ALL_FOREST_LEADER_EVENT_DEATH))
@@ -165,6 +173,7 @@ class GenerateEvents():
                 event_list.extend(self.generate_death_events(GEN_MEDICINE_EVENT_DEATH))
             elif status == "deputy":
                 event_list.extend(self.generate_death_events(ALL_PLAINS_DEPUTY_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_DEATH))
                 event_list.extend(self.generate_death_events(GEN_DEPUTY_EVENT_DEATH))
             elif status == "leader":
                 event_list.extend(self.generate_death_events(ALL_PLAINS_LEADER_EVENT_DEATH))
@@ -188,6 +197,7 @@ class GenerateEvents():
                 event_list.extend(self.generate_death_events(GEN_MEDICINE_EVENT_DEATH))
             elif status == "deputy":
                 event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_DEPUTY_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_DEATH))
                 event_list.extend(self.generate_death_events(GEN_DEPUTY_EVENT_DEATH))
             elif status == "leader":
                 event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_LEADER_EVENT_DEATH))
@@ -211,10 +221,14 @@ class GenerateEvents():
                 event_list.extend(self.generate_death_events(GEN_MEDICINE_EVENT_DEATH))
             elif status == "deputy":
                 event_list.extend(self.generate_death_events(ALL_BEACH_DEPUTY_EVENT_DEATH))
+                event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_DEATH))
                 event_list.extend(self.generate_death_events(GEN_DEPUTY_EVENT_DEATH))
             elif status == "leader":
                 event_list.extend(self.generate_death_events(ALL_BEACH_LEADER_EVENT_DEATH))
                 event_list.extend(self.generate_death_events(GEN_LEADER_EVENT_DEATH))
+
+        if status not in ['kitten', 'leader']:
+            event_list.extend(self.generate_death_events(GEN_GENERAL_EVENT_DEATH))
 
         return event_list
 
