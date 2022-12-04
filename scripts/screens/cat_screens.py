@@ -540,8 +540,10 @@ class ProfileScreen(Screens):
             injury_string = ", ".join(injury_list)
         if the_cat.is_disabled():
             for y in the_cat.permanent_condition:
-                permanent_conditions_list.append(y)
-            permanent_conditions_string = ", ".join(permanent_conditions_list)
+                if the_cat.permanent_condition[y]["moons_until"] == 0:
+                    permanent_conditions_list.append(y)
+            if len(permanent_conditions_list) > 0:
+                permanent_conditions_string = ", ".join(permanent_conditions_list)
         if the_cat.is_ill():
             for y in the_cat.illnesses:
                 illness_list.append(y)
@@ -561,9 +563,10 @@ class ProfileScreen(Screens):
             count += 1
 
         if the_cat.is_disabled():
-            verdana_small.text(
-                f"permanent conditions: {permanent_conditions_string}", (300, 230 + count * 15))
-            count += 1
+            if permanent_conditions_string is not None:
+                verdana_small.text(
+                    f"permanent conditions: {permanent_conditions_string}", (300, 230 + count * 15))
+                count += 1
 
         # MATE
         if the_cat.mate is not None and not the_cat.dead:

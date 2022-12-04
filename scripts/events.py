@@ -306,7 +306,7 @@ class Events():
                     # check if a med cat of a different age exists
                     has_med = any(
                         cat.status == 'medicine cat' and cat.age != 'elder'
-                        and not cat.dead and not cat.exiled
+                        and not cat.dead and not cat.exiled and not cat.not_working()
                         for cat in Cat.all_cats.values())
 
                     # check if a med cat app already exists
@@ -322,7 +322,7 @@ class Events():
                         chance = int(random.random() * 91)
                     elif has_elder_med and has_med:
                         if very_old_med:
-                            chance = int(random.random() * 41)
+                            chance = int(random.random() * 30)
                         else:
                             chance = 0
                     else:

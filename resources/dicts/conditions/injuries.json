@@ -411,9 +411,9 @@
     },
 
     "phantom pain":{
-        "duration": 1,
+        "duration": 2,
         "severity": "major",
-        "medicine_duration": 1,
+        "medicine_duration": 2,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -613,18 +613,6 @@
             {
                 "name": "whitecough",
                 "lower_by": 3
-            },
-            {
-                "name": "chills",
-                "lower_by": 5
-            },
-            {
-                "name": "greencough",
-                "lower_by": 5
-            },
-            {
-                "name": "yellowcough",
-                "lower_by": 4
             }
         ],
         "risks": [
@@ -635,14 +623,6 @@
             {
                 "name": "whitecough",
                 "chance": 3
-            },
-            {
-                "name": "chills",
-                "chance": 5
-            },
-            {
-                "name": "greencough",
-                "chance": 5
             }
         ],
         "also_got": [],

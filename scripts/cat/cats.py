@@ -720,7 +720,7 @@ class Cat():
         moons_until = self.permanent_condition[condition]["moons_until"]
 
         # handling the countdown till a congenital condition is revealed
-        if moons_until != 0 and moons_until is not None:
+        if moons_until is not None and moons_until != 0:
             self.permanent_condition[condition]["moons_until"] = int(moons_until - 1)
             if self.permanent_condition[condition]["moons_until"] == 0:
                 return True
@@ -729,7 +729,7 @@ class Cat():
         if self.status == "leader":
             mortality = int(mortality * 0.7)
 
-        if mortality and not int(random.random() * mortality):
+        if mortality and not int(random.random() * mortality) and moons_until == 0:
             self.die()
             return
 
@@ -834,11 +834,12 @@ class Cat():
 
 
     def get_injured(self, name, event_triggered=False):
-        if (self.is_injured() and self.also_got is False) or name not in INJURIES:
+        if name not in INJURIES:
             if name not in INJURIES:
                 print(f"WARNING: {name} is not in the injuries collection.")
             return
 
+        print('test', name)
         injury = INJURIES[name]
         mortality = injury["mortality"][self.age]
 
@@ -887,7 +888,8 @@ class Cat():
         possible_conditions = []
 
         for condition in PERMANENT:
-            if condition["congenital"] in ['always', 'sometimes']:
+            possible = PERMANENT[condition]
+            if possible["congenital"] in ['always', 'sometimes']:
                 possible_conditions.append(condition)
 
         new_condition = choice(possible_conditions)
@@ -905,7 +907,7 @@ class Cat():
             mortality = int(mortality * 0.65)
 
         moons_until = condition["moons_until"]
-        if born_with is True:
+        if born_with is True and moons_until != 0:
             moons_until = randint(moons_until - 1, moons_until + 1)  # creating a range in which a condition can present
             if moons_until < 0:
                 moons_until = 0

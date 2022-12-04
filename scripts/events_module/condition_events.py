@@ -103,7 +103,10 @@ class Condition_Events():
                     cat.get_ill(new_illness[y])
 
         # joining event list into one event string
-        event_string = " ".join(event_list)
+        if len(event_list) > 0:
+            event_string = ' '.join(event_list)
+        else:
+            event_string = None
 
         # if the cat healed from illnesses, then remove those illnesses
         if cat.healed_condition is True and not cat.dead:
@@ -312,7 +315,7 @@ class Condition_Events():
                         if x in scarless_conditions:
                             possible_conditions.append(x)
 
-                    if len(possible_conditions) > 0 and not int(random.random() * 50):
+                    if len(possible_conditions) > 0 and not int(random.random() * 40):
                         perm_condition = random.choice(possible_conditions)
                     else:
                         return perm_condition
@@ -338,6 +341,7 @@ class Condition_Events():
         triggered = False
         healed_injury = []
         event_list = []
+        new_condition = None
 
         if game.clan.game_mode == "classic":
             return triggered
@@ -346,14 +350,24 @@ class Condition_Events():
         for injury in cat.injuries:
             risks = cat.injuries[injury]["risks"]
             for risk in risks:
-                if not int(random.random() * risk["chance"]):
+                if not random.random() * risk["chance"]:
                     if risk['name'] not in cat.injuries and risk['name'] not in cat.illnesses:
                         triggered = True
-                        new_illness = risk['name']
-                        event_string = f'The {injury} caused {cat.name} to get {new_illness}.'
+                        new_condition = risk['name']
+                        event_string = f'The {injury} caused {cat.name} to get {new_condition}.'
                         event_list.append(event_string)
-                        cat.get_ill(new_illness)
                         break
+            if new_condition is not None:
+                break
+
+        if new_condition in ILLNESSES:
+            cat.get_ill(new_condition)
+        elif new_condition in INJURIES:
+            if new_condition == 'lingering shock':
+                print(new_condition)
+                cat.injuries.pop('shock')
+            cat.get_injured(new_condition)
+
 
         if not triggered:
             for y in cat.injuries:
@@ -408,7 +422,10 @@ class Condition_Events():
                 cat.injuries.pop(y)
             cat.healed_condition = False
 
-        event_string = " ".join(event_list)
+        if len(event_list) > 0:
+            event_string = ' '.join(event_list)
+        else:
+            event_string = None
         return triggered, event_string
 
     def handle_already_disabled(self, cat):
@@ -422,6 +439,7 @@ class Condition_Events():
             return triggered
 
         event_string = None
+        event_list = []
         for condition in cat.permanent_condition:
             # checking if the cat has a congenital condition to reveal
             condition_appears = cat.moon_skip_permanent_condition(condition)
@@ -429,11 +447,12 @@ class Condition_Events():
                 triggered = True
 
                 event_string = f"{cat.name} has died from complications caused by {condition}."
-
+                event_list.append(event_string)
                 save_death(cat, event_string)
 
             elif condition_appears:
                 event_string = f"The clan has noticed that {cat.name} behaves a little different from other kits. They realize it's because {cat.name} has {condition}."
+                event_list.append(event_string)
                 triggered = True
 
         if not triggered:
@@ -444,6 +463,7 @@ class Condition_Events():
                             triggered = True
                             new_ouchie = risk["name"]
                             event_string = f'Due to their {condition}, {cat.name} is now {new_ouchie}.'
+                            event_list.append(event_string)
                             if new_ouchie in INJURIES:
                                 cat.get_injured(new_ouchie)
                                 break
@@ -463,18 +483,24 @@ class Condition_Events():
             'elder': 0
         }
 
-        if not triggered and not cat.dead and not cat.retired and cat.status not in ['leader', 'medicine cat']:
+        if not triggered and not cat.dead and not cat.retired and cat.status not in ['leader', 'medicine cat', 'kitten']:
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]['severity'] == 'major':
                     chance = int(retire_chances.get(cat.age))
                     if not int(random.random() * chance):
                         cat.retire_cat()
                         event_string = f'{cat.name} has decided to retire from normal clan duty.'
+                        event_list.append(event_string)
+
                 if cat.permanent_condition[condition]['severity'] == 'severe':
                     cat.retire_cat()
                     event_string = f'{cat.name} has decided to retire from normal clan duty.'
+                    event_list.append(event_string)
 
-        return triggered, event_string
+        if len(event_list) > 0:
+            event_string = ' '.join(event_list)
+            game.cur_events_list.append(event_string)
+        return
 
 # ---------------------------------------------------------------------------- #
 #                                LOAD RESOURCES                                #
