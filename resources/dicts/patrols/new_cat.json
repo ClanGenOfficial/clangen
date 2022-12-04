@@ -114,6 +114,70 @@
         "max_cats": 6
     },
     {
+        "patrol_id": "bch_bord_newcat_abandontwoleg1",
+        "biome": "beach",
+        "season": "Any",
+        "tags": ["fighting", "border", "new_cat", "death"],
+        "intro_text": "r_c hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
+        "decline_text": "r_c decides not to investigate.",
+        "chance_of_success": 10,
+        "exp": 30,
+        "success_text": [
+            "It's just an odd loner singing to themselves. r_c greets them, and as the loner's home isn't on c_n territory, it's a polite interaction without any hostility.",
+            "It's just an odd loner singing to themselves. When they see r_c they invite them to sing along, but instead, r_c offers the strange, battered-looking cat an introduction to c_n. It's got to be far less lonely than their current life.",
+            "s_c walks into an ambush set by a group of rogues. It's only by the grace of StarClan that s_c has the fighting skill and confidence to escape, running for their life to get back to camp. ",
+            "s_c has a bad feeling about this. At first it seems like they're being too cautious - but then they pick up on the scent of strange cats lingering around the Twoleg nest. Forewarned, s_c retreats to safety."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "r_c decides that a quick peek can't hurt. As they venture into the nest, ears pricked with curiosity, they don't notice the lithe forms of rogues moving to block the entrance until it's too late. s_c never makes it back to camp.",
+            null
+        ],
+        "win_skills": ["excellent fighter"],
+        "win_trait": ["careful", "insecure", "nervous"],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            "This cat died in an ambush set by rogues."
+        ]
+    },
+    {
+        "patrol_id": "bch_bord_newcat_abandontwoleg1",
+        "biome": "beach",
+        "season": "Any",
+        "tags": ["fighting", "border", "new_cat", "multi_deaths"],
+        "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
+        "decline_text": "The patrol decides not to investigate.",
+        "chance_of_success": 40,
+        "exp": 30,
+        "success_text": [
+            "It's just an odd loner singing to themselves. The patrol greets them, and as the loner's home isn't on c_n territory, it's a polite interaction without any hostility.",
+            "It's just an odd loner singing to themselves. When they see r_c they invite them to sing along, but instead, r_c offers the strange, battered-looking cat an introduction to c_n. It's got to be far less lonely than their current life.",
+            "The patrol walks into an ambush set by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the agility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
+            "s_c signals for the patrol to stop. Carefully, quietly, they explain their concerns about the unknown situation. At first it seems like they're being too cautious - but then p_l picks up on the scent of strange cats lingering around the Twoleg nest. Forewarned, the patrol retreats to safety."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "Your patrol walks into an ambush. Before p_l can so much as yowl a warning, a group of rogues creeps from the shadows to surround the clan cats on all sides. Few of the cats manage to escape, and any that are left behind are found the next morning, cold and covered in battle wounds.",
+            null
+        ],
+        "win_skills": ["excellent fighter"],
+        "win_trait": ["careful", "insecure", "nervous"],
+        "min_cats": 3,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            "This cat died in an ambush set by rogues."
+        ]
+    },
+    {
         "patrol_id": "gen_gen_lonerchase1",
         "biome": "Any",
         "season": "Any",
