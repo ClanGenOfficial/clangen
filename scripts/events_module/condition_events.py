@@ -350,7 +350,7 @@ class Condition_Events():
         for injury in cat.injuries:
             risks = cat.injuries[injury]["risks"]
             for risk in risks:
-                if not random.random() * risk["chance"]:
+                if not int(random.random() * risk["chance"]):
                     if risk['name'] not in cat.injuries and risk['name'] not in cat.illnesses:
                         triggered = True
                         new_condition = risk['name']
