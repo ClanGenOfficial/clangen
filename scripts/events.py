@@ -912,6 +912,12 @@ class Events():
                     possible_conditions.append(condition)
                 chosen_condition = choice(possible_conditions)
                 new_cat.get_permanent_condition(new_cat, chosen_condition)
+                for condition in new_cat.permanent_condition:
+                    if new_cat.permanent_condition[condition] in ['lost a leg', 'born without a leg']:
+                        new_cat.specialty = 'NOPAW'
+                    elif new_cat.permanent_condition[condition] in ['lost their tail', 'born without a tail']:
+                        new_cat.specialty = "NOTAIL"
+
             created_cats.append(new_cat)
 
         for new_cat in created_cats:

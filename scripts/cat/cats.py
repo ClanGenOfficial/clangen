@@ -204,6 +204,9 @@ class Cat():
             else:
                 self.trait = choice(self.kit_traits)
 
+        if self.trait in self.kit_traits and self.status != 'kitten':
+            self.trait = choice(self.traits)
+
         if self.skill is None:
             if self.moons <= 11:
                 self.skill = '???'
