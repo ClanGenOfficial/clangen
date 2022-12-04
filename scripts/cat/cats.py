@@ -911,6 +911,8 @@ class Cat():
             moons_until = randint(moons_until - 1, moons_until + 1)  # creating a range in which a condition can present
             if moons_until < 0:
                 moons_until = 0
+        elif born_with is False:
+            moons_until = 0
 
         new_perm_condition = PermanentCondition(
             name=name,

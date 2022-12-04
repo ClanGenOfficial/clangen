@@ -196,6 +196,14 @@ class Condition_Events():
 
                 for event in possible_events:
 
+                    if event.injury in INJURIES:
+                        injury = INJURIES[event.injury]
+                        severity = injury['severity']
+                        if cat.status in INJURY_DISTRIBUTION:
+                            severity_chance = INJURY_DISTRIBUTION[cat.status][severity]
+                            if int(random.random() * severity_chance):
+                                continue
+
                     if season not in event.tags:
                         continue
 
@@ -520,16 +528,16 @@ PERMANENT = None
 with open(f"resources/dicts/conditions/permanent_conditions.json", 'r') as read_file:
     PERMANENT = ujson.loads(read_file.read())
 # ---------------------------------------------------------------------------- #
-#                                    SEASONS                                   #
+#                                    CHANCE                                    #
 # ---------------------------------------------------------------------------- #
 
 ILLNESSES_SEASON_LIST = None
 with open(f"resources/dicts/conditions/illnesses_seasons.json", 'r') as read_file:
     ILLNESSES_SEASON_LIST = ujson.loads(read_file.read())
 
-# ---------------------------------------------------------------------------- #
-#                                    EVENTS                                    #
-# ---------------------------------------------------------------------------- #
+INJURY_DISTRIBUTION = None
+with open(f"resources/dicts/conditions/event_injuries_distribution.json", 'r') as read_file:
+    INJURY_DISTRIBUTION = ujson.loads(read_file.read())
 
 not_integrated_illness = ["redcough"]
 not_integrated_injuries = ["carrionplace disease"]

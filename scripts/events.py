@@ -1022,7 +1022,8 @@ class Events():
                 return
 
         if cat.status in ["apprentice", "medicine cat apprentice"] and not int(random.random() * 3):
-            other_cat = cat.mentor
+            if cat.mentor is not None:
+                other_cat = cat.mentor
 
         # check if clan has kits, if True then clan has kits
         alive_kits = list(filter(
