@@ -976,5 +976,37 @@
         "r_c was badly scarred when rogues ambushed their patrol.",
         "This cat was killed when rogues ambushed their patrol."
     ]
+},
+{
+    "patrol_id": "bch_bord_abandontwoleg1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["fighting", "border", "new_cat", "disaster"],
+    "intro_text": "The patrol hears some odd noises coming from an abandoned Twoleg nest out on the cliffs above the beach.",
+    "decline_text": "The patrol decides not to investigate.",
+    "chance_of_success": 40,
+    "exp": 30,
+    "success_text": [
+        "It's just an odd loner singing to themselves. The patrol greets them, and as the loner's home isn't on c_n territory, it's a polite interaction without any hostility.",
+        null,
+        "The patrol walks into an ambush set by a group of rogues. It's only by the grace of StarClan that s_c is there, fighting with the ferocity of LionClan, the strength of TigerClan, and the agility of LeopardClan. Shaken, but no more than bruised, the patrol manages to retreat to safety.",
+        "s_c signals for the patrol to stop. Carefully, quietly, they explain their concerns about the unknown situation. At first it seems like they're being too cautious - but then p_l picks up on the scent of strange cats lingering around the Twoleg nest. Forewarned, the patrol retreats to safety."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "Your patrol walks into an ambush. Before p_l can so much as yowl a warning, a group of rogues creeps from the shadows to surround the clan cats on all sides. The patrol is never seen or heard from again.",
+        null
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "This cat died in an ambush set by rogues."
+    ]
 }
 ]
