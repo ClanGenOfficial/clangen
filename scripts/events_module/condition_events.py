@@ -312,9 +312,10 @@ class Condition_Events():
                         if x in scarless_conditions:
                             possible_conditions.append(x)
 
-                    # TODO: give a random chance to gain condition - for now always assign for testing purposes
-                    if len(possible_conditions) > 0:
+                    if len(possible_conditions) > 0 and not int(random.random() * 50):
                         perm_condition = random.choice(possible_conditions)
+                    else:
+                        return perm_condition
 
         elif condition is not None:
             perm_condition = condition
@@ -396,7 +397,7 @@ class Condition_Events():
                     healed_injury.append(injury)
                     condition_got = self.handle_permanent_conditions(cat, injury_name=injury, scar=scar_given)
 
-                    if condition_got:
+                    if condition_got is not None:
                         event_string = f"Despite healing from {injury}, {cat.name} now has {condition_got}."
 
                     if event_string is not None:
