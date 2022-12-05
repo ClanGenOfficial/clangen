@@ -362,9 +362,12 @@ class Cat():
         if self.status == 'warrior':
             self.update_mentor()
             self.update_skill()
+            if self.ID in game.clan.med_cat_list:
+                game.clan.med_cat_list.remove(self.ID)
         elif self.status == 'medicine cat':
             self.update_med_mentor()
             self.update_skill()
+            game.clan.new_medicine_cat(self)
 
         if self.status == 'elder':
             self.skill = choice(self.elder_skills)
