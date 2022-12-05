@@ -672,6 +672,7 @@ class Patrol():
             self.patrol_random_cat.scar_event.append(
                 f'{self.patrol_random_cat.name} is hit by a car and is now {self.patrol_random_cat.skill}.')
 
+    # clan relations
     def handle_clan_relations(self, difference):
         other_clan = patrol.other_clan
         otherclan = game.clan.all_clans.index(other_clan)
