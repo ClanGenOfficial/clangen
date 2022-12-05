@@ -1,0 +1,123 @@
+{
+    "bite-wound": {
+        "kitten": 1,
+        "apprentice": 1,
+        "warrior": 1,
+        "medicine cat": 1,
+        "medicine cat apprentice": 1,
+        "deputy": 1,
+        "leader": 1,
+        "elder": 1,
+        "general": 1
+    },
+    "broken bone": {
+        "kitten": 1,
+        "apprentice": 1,
+        "warrior": 1,
+        "medicine cat": 1,
+        "medicine cat apprentice": 1,
+        "deputy": 1,
+        "leader": 1,
+        "elder": 2,
+        "general": 1
+    },
+    "bruises": {
+        "kitten": 3,
+        "apprentice": 2,
+        "warrior": 1,
+        "medicine cat": 1,
+        "medicine cat apprentice": 1,
+        "deputy": 1,
+        "leader": 1,
+        "elder": 1,
+        "general": 1
+    },
+    "claw-wound": {
+        "kitten": 1,
+        "apprentice": 2,
+        "warrior": 2,
+        "medicine cat": 1,
+        "medicine cat apprentice": 1,
+        "deputy": 2,
+        "leader": 2,
+        "elder": 1,
+        "general": 1
+    },
+    "dislocated joint": {
+        "kitten": 1,
+        "apprentice": 2,
+        "warrior": 1,
+        "medicine cat": 1,
+        "medicine cat apprentice": 1,
+        "deputy": 1,
+        "leader": 1,
+        "elder": 2,
+        "general": 1
+    },
+    "sprain": {
+        "kitten": 2,
+        "apprentice": 2,
+        "warrior": 1,
+        "medicine cat": 1,
+        "medicine cat apprentice": 2,
+        "deputy": 1,
+        "leader": 1,
+        "elder": 2,
+        "general": 1
+    },
+    "cracked pads": {
+        "kitten": 1,
+        "apprentice": 2,
+        "warrior": 3,
+        "medicine cat": 2,
+        "medicine cat apprentice": 2,
+        "deputy": 2,
+        "leader": 2,
+        "elder": 1,
+        "general": 1
+    },
+    "joint pain": {
+        "kitten": 1,
+        "apprentice": 1,
+        "warrior": 1,
+        "medicine cat": 1,
+        "medicine cat apprentice": 1,
+        "deputy": 1,
+        "leader": 1,
+        "elder": 3,
+        "general": 1
+    },
+    "scrapes": {
+        "kitten": 2,
+        "apprentice": 3,
+        "warrior": 3,
+        "medicine cat": 1,
+        "medicine cat apprentice": 1,
+        "deputy": 3,
+        "leader": 3,
+        "elder": 2,
+        "general": 1
+    },
+    "torn ear": {
+        "kitten": 2,
+        "apprentice": 3,
+        "warrior": 3,
+        "medicine cat": 1,
+        "medicine cat apprentice": 1,
+        "deputy": 3,
+        "leader": 3,
+        "elder": 2,
+        "general": 1
+    },
+    "torn pelt": {
+        "kitten": 2,
+        "apprentice": 3,
+        "warrior": 3,
+        "medicine cat": 1,
+        "medicine cat apprentice": 1,
+        "deputy": 3,
+        "leader": 3,
+        "elder": 2,
+        "general": 1
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "Newleaf":{
+        "whitecough": 1,
+        "running nose": 2
+    },
+    "Greenleaf":{
+        "fleas": 2,
+        "diarrhea":1
+    },
+    "Leaf-fall":{
+        "greencough": 4,
+        "whitecough": 1,
+        "chills": 2,
+        "yellowcough": 2,
+        "running nose": 5
+    },
+    "Leaf-bare":{
+        "greencough": 4,
+        "whitecough": 1,
+        "chills": 2,
+        "yellowcough": 2,
+        "running nose": 5
+    }
+}

@@ -4,6 +4,71 @@ from scripts.cat.sprites import *
 from scripts.cat.pelts import *
 from scripts.game_structure.game_essentials import *
 
+def get_cats_allowed_on_patrol(Cat, ILLNESSES, INJURIES, game_mode):
+    able_cats = []
+
+    # create a list of illnesses and injuries which are not allowed to join the patrol
+    allowed_illnesses = [
+        "fleas",
+        "running nose"
+    ]
+    not_allowed_illnesses = list(filter(lambda x: x not in allowed_illnesses, ILLNESSES.keys()))
+    allowed_injuries = [
+        "bruises",
+        "scrapes",
+        "tickbites",
+        "torn pelt",
+        "torn ear",
+        "splinter",
+        "joint pain"
+    ]
+    not_allowed_injuries = list(filter(lambda x: x not in allowed_injuries, INJURIES.keys()))
+
+    # ASSIGN TO ABLE CATS AND SORT BY RANK
+    for the_cat in Cat.all_cats.values():
+        if the_cat.dead or the_cat.exiled or not the_cat.in_camp or the_cat in game.patrolled or the_cat in game.switches['current_patrol']:
+            continue
+        if game_mode == "expanded":
+            if(the_cat.is_ill() and the_cat.illness.name in not_allowed_illnesses) or\
+                (the_cat.is_injured() and the_cat.injury.name in not_allowed_injuries):
+                continue
+        if the_cat.status in [
+                'leader', 'deputy', 'warrior', 'apprentice'
+        ]:
+            if the_cat.status == 'leader':
+                able_cats.insert(0, the_cat)
+            elif the_cat.status == 'deputy':
+                able_cats.insert(1, the_cat)
+            elif the_cat.status == 'warrior':
+                able_cats.insert(2, the_cat)
+            elif the_cat.status == 'apprentice':
+                able_cats.append(the_cat)
+
+    return able_cats
+
+def save_death(cat, death_string):
+    if game.switches['clan_name'] != '':
+        clanname = game.switches['clan_name']
+    elif len(game.switches['clan_name']) > 0:
+        clanname = game.switches['clan_list'][0]
+    elif game.clan is not None:
+        clanname = game.clan.name
+
+    path = f"saves/{clanname}/deaths.json"
+    living_cats = list(filter(lambda c: not c.dead and not c.exiled, cat.all_cats.values()))
+
+    file_entry = []
+    if os.path.exists(path):
+        with open(path, "r") as file:
+            file_entry = ujson.loads(file.read())
+    
+    file_entry.append(f"{death_string} ({cat.moons} moons)- {game.clan.age} moons with {len(living_cats)} living cats")
+
+    with open(path, "w") as file:
+        json_string = ujson.dumps(file_entry, indent = 4)
+        file.write(json_string)
+
+
 # ---------------------------------------------------------------------------- #
 #                       Relationship / Traits / Relative                       #
 # ---------------------------------------------------------------------------- #
@@ -78,8 +143,7 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
             relation = inter_cat.relationships[cat.ID]
         else:
             continue
-        
-        relation = relation[0]
+
         relation_dict['romantic_love'].append(relation.romantic_love >= value)
         relation_dict['platonic_like'].append(relation.platonic_like >= value)
         relation_dict['dislike'].append(relation.dislike >= value)
@@ -100,7 +164,6 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
 
     return return_dict
 
-
 def add_siblings_to_cat(cat, cat_class):
     """Iterate over all current cats and add the ID to the current cat."""
     for inter_cat in cat_class.all_cats.values():
@@ -109,7 +172,6 @@ def add_siblings_to_cat(cat, cat_class):
         if cat.is_sibling(inter_cat) and cat.ID not in inter_cat.siblings:
             inter_cat.siblings.append(cat.ID)
 
-
 def add_children_to_cat(cat, cat_class):
     """Iterate over all current cats and add the ID to the current cat."""
     for inter_cat in cat_class.all_cats.values():
@@ -117,7 +179,6 @@ def add_children_to_cat(cat, cat_class):
             cat.children.append(inter_cat.ID)
         if inter_cat.is_parent(inter_cat) and cat.ID not in inter_cat.children:
             inter_cat.children.append(cat.ID)
-
 
 # ---------------------------------------------------------------------------- #
 #                                    Sprites                                   #

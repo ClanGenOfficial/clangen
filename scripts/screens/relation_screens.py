@@ -1069,7 +1069,6 @@ class RelationshipScreen(Screens):
                 current_x = 294 + pos_x
                 current_y = 174 + pos_y + count
                 self.draw_green_bar(the_relationship.admiration, current_x, current_y)
-
             else:
                 verdana_small_dark.text(
                     'respect:',

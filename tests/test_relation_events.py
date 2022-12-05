@@ -138,7 +138,25 @@ class CanHaveKits(unittest.TestCase):
 
         # then
         self.assertFalse(relation_events.check_if_can_have_kits(cat,unknown_parent_setting=True,no_gendered_breeding=False))
-    
+
+    def test_same_sex(self):
+        # given
+        relation_events = Relation_Events()
+        cat1 = Cat(moons=20)
+        cat1.gender = 'male'
+        cat2 = Cat(moons=20)
+        cat2.gender = 'male'
+        
+        cat1.mate = cat2.ID
+        cat2.mate = cat1.ID
+
+        # then
+        self.assertFalse(relation_events.check_if_can_have_kits(cat1,unknown_parent_setting=False,no_gendered_breeding=False))
+        self.assertFalse(relation_events.check_if_can_have_kits(cat2,unknown_parent_setting=False,no_gendered_breeding=False))
+        self.assertTrue(relation_events.check_if_can_have_kits(cat1,unknown_parent_setting=False,no_gendered_breeding=True))
+        self.assertTrue(relation_events.check_if_can_have_kits(cat2,unknown_parent_setting=False,no_gendered_breeding=True))
+
+
 
 class Pregnancy(unittest.TestCase):
     @patch('scripts.cat_relations.relation_events.Relation_Events.get_kits_chance')
@@ -214,3 +232,85 @@ class Pregnancy(unittest.TestCase):
 
         # then
         self.assertNotIn(cat1.ID, test_clan.pregnancy_data.keys())
+
+
+class Mates(unittest.TestCase):
+    def test_platonic_kitten_mating(self):
+        # given
+        relation_events = Relation_Events()
+        cat1 = Cat(moons=3)
+        cat2 = Cat(moons=3)
+
+        relationship1 = Relationship(cat1,cat2)
+        relationship2 = Relationship(cat2,cat1)
+        relationship1.opposite_relationship = relationship2
+        relationship2.opposite_relationship = relationship1
+        cat1.relationships[cat2.ID] = relationship1
+        cat2.relationships[cat1.ID] = relationship2
+
+        # when
+        relationship1.platonic_like = 100
+        relationship2.platonic_like = 100
+
+        # then
+        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2))
+
+    def test_platonic_apprentice_mating(self):
+        # given
+        relation_events = Relation_Events()
+        cat1 = Cat(moons=6)
+        cat2 = Cat(moons=6)
+
+        relationship1 = Relationship(cat1,cat2)
+        relationship2 = Relationship(cat2,cat1)
+        relationship1.opposite_relationship = relationship2
+        relationship2.opposite_relationship = relationship1
+        cat1.relationships[cat2.ID] = relationship1
+        cat2.relationships[cat1.ID] = relationship2
+
+        # when
+        relationship1.platonic_like = 100
+        relationship2.platonic_like = 100
+
+        # then
+        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2))
+
+    def test_romantic_kitten_mating(self):
+        # given
+        relation_events = Relation_Events()
+        cat1 = Cat(moons=3)
+        cat2 = Cat(moons=3)
+
+        relationship1 = Relationship(cat1,cat2)
+        relationship2 = Relationship(cat2,cat1)
+        relationship1.opposite_relationship = relationship2
+        relationship2.opposite_relationship = relationship1
+        cat1.relationships[cat2.ID] = relationship1
+        cat2.relationships[cat1.ID] = relationship2
+
+        # when
+        relationship1.romantic_love = 100
+        relationship2.romantic_love = 100
+
+        # then
+        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2))
+
+    def test_romantic_apprentice_mating(self):
+        # given
+        relation_events = Relation_Events()
+        cat1 = Cat(moons=6)
+        cat2 = Cat(moons=6)
+
+        relationship1 = Relationship(cat1,cat2)
+        relationship2 = Relationship(cat2,cat1)
+        relationship1.opposite_relationship = relationship2
+        relationship2.opposite_relationship = relationship1
+        cat1.relationships[cat2.ID] = relationship1
+        cat2.relationships[cat1.ID] = relationship2
+
+        # when
+        relationship1.romantic_love = 100
+        relationship2.romantic_love = 100
+
+        # then
+        self.assertFalse(relation_events.check_if_new_mate(relationship1,relationship2,cat1,cat2))

@@ -3,10 +3,10 @@ from random import choice, choices
 
 from .base_screens import Screens, draw_menu_buttons, cat_profiles, draw_clan_name
 
-from scripts.utility import draw, draw_large, draw_big
+from scripts.utility import draw_large, draw_big, get_cats_allowed_on_patrol
 from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
-from scripts.cat.cats import Cat
+from scripts.cat.cats import Cat, INJURIES, ILLNESSES
 
 class PatrolScreen(Screens):
 
@@ -35,23 +35,7 @@ class PatrolScreen(Screens):
         draw_menu_buttons()
 
         # CATS WHO CAN PATROL
-        able_cats = []
-
-
-        # ASSIGN TO ABLE CATS AND SORT BY RANK
-        for x in range(len(Cat.all_cats.values())):
-            the_cat = list(Cat.all_cats.values())[x]
-            if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status in [
-                    'leader', 'deputy', 'warrior', 'apprentice'
-            ] and not the_cat.exiled and the_cat not in game.switches['current_patrol']:
-                if the_cat.status == 'leader':
-                    able_cats.insert(0, the_cat)
-                elif the_cat.status == 'deputy':
-                    able_cats.insert(1, the_cat)
-                elif the_cat.status == 'warrior':
-                    able_cats.insert(2, the_cat)
-                elif the_cat.status == 'apprentice':
-                    able_cats.append(the_cat)
+        able_cats = get_cats_allowed_on_patrol(Cat, ILLNESSES, INJURIES, game.clan.game_mode)
 
         # PAGE COUNT
         all_pages = 1
