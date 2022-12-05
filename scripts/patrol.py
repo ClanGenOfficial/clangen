@@ -999,7 +999,7 @@ class Patrol():
                         " /Comfort: -" + str(comfortable) +
                         " /Jealousy: +" + str(jealousy)) if changed else print("No relationship change")
 
-        elif "relation_two_apps" in self.patrol_event.tags:
+        elif "rel_two_apps" in self.patrol_event.tags:
         # two apps gain relationship towards each other
             for cat in self.patrol_apprentices:
                 relationships = list(
