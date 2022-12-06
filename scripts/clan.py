@@ -98,6 +98,8 @@ class Clan():
             if medicine_cat is not None:
                 self.clan_cats.append(self.medicine_cat.ID)
                 self.med_cat_list.append(self.medicine_cat.ID)
+            if medicine_cat.status != 'medicine cat':
+                Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
             self.age = 0
             self.current_season = 'Newleaf'
             self.instructor = None  # This is the first cat in starclan, to "guide" the other dead cats there.
