@@ -35,7 +35,7 @@
         "patrol_id": "mtn_bord_rogue2",
         "biome": "mountainous",
         "season": "Any",
-        "tags": ["border", "fighting", "scar", "injury", "death", "reputation"],
+        "tags": ["border", "fighting", "death", "reputation"],
         "intro_text": "As the patrol is marking the border lines, a gang of rogues leaps out from behind a tumble of rocks! An ambush!",
         "decline_text": "r_c turns tail and races away! The rogues have them far outnumbered, warning the clan is more important than dying needlessly.",
         "chance_of_success": 30,
