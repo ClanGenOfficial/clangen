@@ -352,7 +352,8 @@ class Cat():
         elif self.status == 'medicine cat':
             self.update_med_mentor()
             self.update_skill()
-            game.clan.new_medicine_cat(self)
+            if game.clan is not None:
+                game.clan.new_medicine_cat(self)
 
         if self.status == 'elder':
             self.skill = choice(self.elder_skills)
