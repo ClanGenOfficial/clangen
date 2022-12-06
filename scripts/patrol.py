@@ -225,6 +225,7 @@ class Patrol():
         no_leader = False
         med_only = False
         mode = False
+        no_incest = False
         # makes sure that it grabs patrols in the correct biomes, season, with the correct number of cats
         for patrol in possible_patrols:
             if patrol_size >= patrol.min_cats:
@@ -358,16 +359,27 @@ class Patrol():
             else:
                 correct_button = False
 
+            # making sure related cats don't accidentally go on romantic patrols together
+            if "romantic" in patrol.tags:
+                if self.patrol_leader.is_potential_mate(self.patrol_random_cat, for_love_interest = True):
+                    no_incest = True
+                elif "rel_two_apps" in patrol.tags and self.patrol_apprentices[0].is_potential_mate(self.patrol_apprentices[1], for_love_interest = True):
+                    no_incest = True
+                else:
+                    no_incest = False
+            else:
+                no_incest = True
 
             # one last mode check for classic
             if game.clan.game_mode == 'classic':
                 if max_good and min_good and correct_season and correct_biome and status_a and status_b and status_c\
-                    and status_d and status_e and no_app and med_only and no_leader and two_apprentices:
+                    and status_d and status_e and no_app and med_only and no_leader and two_apprentices and no_incest:
                     final_patrols.append(patrol)
             # this is for all patrols that aren't classic
             else:
                 if max_good and min_good and correct_season and correct_biome and status_a and status_b and status_c\
-                    and status_d and status_e and correct_button and no_app and med_only and no_leader and two_apprentices and mode:
+                    and status_d and status_e and correct_button and no_app and med_only and no_leader and two_apprentices and no_incest\
+                    and mode:
                         final_patrols.append(patrol)
         
         return final_patrols   
