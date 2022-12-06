@@ -1,0 +1,81 @@
+[
+{
+    "patrol_id": "mtn_med_soloripples1",
+    "biome": "mountain",
+    "season": "Any",
+    "tags": ["comfort", "respect", "trust", "med_cat","med_only"],
+    "intro_text": "p_l sees weird ripples on the water of a puddle while gathering fresh water." ,
+    "decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
+    "chance_of_success": 45,
+    "exp": 10, 
+    "success_text": [
+            "As p_l looks into the puddle they are greeted by an intense vision. They drop what they are doing and race back to the camp to tell and consult with their leader.",
+            "They are greeted with the vision of a cat they had failed to save looking content and happy in StarClan saying that they were not at fault for their death. They feel unburdened and at peace after receiving that vision."
+    ],
+    "fail_text": [
+            "They gaze into the puddle only to see the weird ripples were caused by a feather falling on the puddle. p_l feels disappointed because they really could have used some guidance from StarClan."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_med_herblocation1",
+    "biome": "mountain",
+    "season": "Any",
+    "tags": ["med_cat", "apprentice", "trust", "respect", "med_only"],
+    "intro_text": "p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory, both on even and uneven ground.",
+    "decline_text": "As they see app1's absent minded gaze they change their mind. Maybe another day when app1 is more focused and less liable to slip and fall off the mountain.",
+    "chance_of_success": 65,
+    "exp": 10,
+    "success_text": [
+        "app1 is focused and attentive. p_l is confident that next time when there is an emergency app1 will be able to find those herbs both on even and uneven ground without them if needed.",
+        "As p_l is explaining why and where the herbs are growing app1 lets out a shout. To p_l's surprise they have found a previously unknown patch of a uncommon herb. Stunned and filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh kill.",
+        null,
+        null
+    ],
+    "fail_text": [ "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_med_herblocation2",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["med_cat", "apprentice", "med_only"],
+    "intro_text": "app1 has been sent out into the mountains to try to find herbs alone.",
+    "decline_text": "Nervous and with an eerie sound on the wind scaring them, they decide to go back to camp with their tail dragging behind them and try again another day.",
+    "chance_of_success": 65,
+    "exp": 10,
+    "success_text": [
+        "app1 is focused and determined to prove their independence. They find the herbs easily, and bring them back to camp with their head held up high, no sweat, no stress, no fuss.",
+        "app1 goes to a known herb patch - but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it.",
+        null,
+        null
+    ],
+    "fail_text": [ 
+        "app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+}
+
+]

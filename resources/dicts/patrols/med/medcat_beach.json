@@ -1,31 +1,82 @@
 [
 {
-        "patrol_id": "bch_med_soloripples1",
-        "biome": "beach",
-        "season": "Any",
-        "tags": ["comfort", "respect", "trust", "med_cat"],
-        "intro_text": "p_l sees weird ripples on the water of a puddle while gathering fresh water.",
-        "decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
-        "chance_of_success": 45,
-        "exp": 10, 
-        "success_text": [
-                "As p_l looks into the puddle they are greeted by an intense vision. They drop what they are doing and race back to the camp to tell and consult with their leader.",
-                "They are greeted with the vision of a cat they had failed to save looking content and happy in StarClan saying that they were not at fault for their death. They feel unburdened and at peace after recieving that vision."
-        ],
-        "fail_text": [
-                "They gaze into the puddle only to see the weird ripples were caused by a small frog. p_l feels dissapointed because they really could have used some guidance from StarClan."
-        ],
-        "win_skills": null,
-        "win_trait": null,
-        "fail_skills": null,
-        "fail_trait": null,
-        "min_cats": 1,
-        "max_cats": 1,
-        "antagonize_text": null,
-        "antagonize_fail_text": null,
-        "history_text": [
-                null,
-                null
-        ]
+    "patrol_id": "bch_med_soloripples1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["comfort", "respect", "trust", "med_cat", "med_only"],
+    "intro_text": "p_l sees weird ripples on the water of a puddle while gathering fresh water.",
+    "decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
+    "chance_of_success": 45,
+    "exp": 10, 
+    "success_text": [
+        "As p_l looks into the puddle they are greeted by an intense vision. They drop what they are doing and race back to the camp to tell and consult with their leader.",
+        "They are greeted with the vision of a cat they had failed to save looking content and happy in StarClan saying that they were not at fault for their death. They feel unburdened and at peace after receiving that vision."
+    ],
+    "fail_text": [
+        "They gaze into the puddle only to see the weird ripples were caused by a small frog. p_l feels disappointed because they really could have used some guidance from StarClan." 
+    ],
+    "win_skills":["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_herblocation1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["med_cat", "apprentice", "trust", "respect", "med_only"],
+    "intro_text": "p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory, also teaching them where to dig in the sand to find some of the more potent plant roots.",
+    "decline_text": "As they see app1's absent minded gaze they change their mind. Maybe another day when app1 is more focused and less liable to get sand everywhere and damage the herbs",
+    "chance_of_success": 65,
+    "exp": 10,
+    "success_text": [
+        "app1 is focused and attentive. p_l is confident that next time when there is an emergency app1 will be able to find those herbs both in and out of the sand.",
+        "As p_l is explaining why and where the herbs are growing, app1 lets out a shout. To p_l's surprise they have found a previously unknown patch of an uncommon herb. Stunned and filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh kill.",
+        null,
+        null
+    ],
+    "fail_text": [ 
+        "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day." 
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_herblocation2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["med_cat", "apprentice", "med_only"],
+    "intro_text": "app1 has been sent out onto the beaches to try to find some specific herbs alone.",
+    "decline_text": "Nervous and sneezing because of the salty air, they decide to go back to camp and try again another day. Their mentor will not be pleased . . .",
+    "chance_of_success": 65,
+    "exp": 10,
+    "success_text": [
+        "app1 is focused and determined to prove their independence. They find the herbs easily, and bring them back to camp with their head held up high, no sweat, no stress, no fuss.",
+        "app1 goes to a known herb patch - but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked patch that still has leaves on it.",
+        null,
+        null
+    ],
+    "fail_text": [ 
+        "app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible and with their tail dragging behind them."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
+
 ]

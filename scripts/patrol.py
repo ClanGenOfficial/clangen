@@ -190,6 +190,10 @@ class Patrol():
 
         # med patrols
         possible_patrols.extend(self.generate_patrol_events(MEDCAT))
+        possible_patrols.extend(self.generate_patrol_events(MEDCAT_FST))
+        possible_patrols.extend(self.generate_patrol_events(MEDCAT_PLN))
+        possible_patrols.extend(self.generate_patrol_events(MEDCAT_MTN))
+        possible_patrols.extend(self.generate_patrol_events(MEDCAT_BCH))
 
         # new cat patrols
         if chance == 1:
@@ -1573,6 +1577,22 @@ with open(f"{resource_directory}{training_directory}training_beach.json", 'r') a
 MEDCAT = None
 with open(f"{resource_directory}{med_directory}medcat.json", 'r') as read_file:
     MEDCAT = ujson.loads(read_file.read())
+
+MEDCAT_FST = None
+with open(f"{resource_directory}{med_directory}medcat_forest.json", 'r') as read_file:
+    MEDCAT_FST = ujson.loads(read_file.read())
+
+MEDCAT_PLN = None
+with open(f"{resource_directory}{med_directory}medcat_plains.json", 'r') as read_file:
+    MEDCAT_PLN = ujson.loads(read_file.read())
+
+MEDCAT_MTN = None
+with open(f"{resource_directory}{med_directory}medcat_mountains.json", 'r') as read_file:
+    MEDCAT_MTN = ujson.loads(read_file.read())
+
+MEDCAT_BCH = None
+with open(f"{resource_directory}{med_directory}medcat_beach.json", 'r') as read_file:
+    MEDCAT_BCH = ujson.loads(read_file.read())
 
 
 # NEW CAT #
