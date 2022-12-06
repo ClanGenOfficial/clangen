@@ -234,7 +234,7 @@
 {
     "patrol_id": "bch_bord_flashflood5",
     "biome": "beach",
-    "season": "leafbare",
+    "season": "leaf-bare",
     "tags": ["border", "death", "big_prey"],
     "intro_text": "As r_c crosses a beach, shivering with the cold, there's a creaking, rushing sound, like a wave - but out of sync with the ocean.",
     "decline_text": "r_c decides to head back early.",
