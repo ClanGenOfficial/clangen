@@ -1,0 +1,67 @@
+{
+    "broken jaw": {
+        "crooked jaw": [
+            ""
+        ]
+    },
+    "broken bone": {
+        "weak leg": [
+            ""
+        ],
+        "twisted leg": [
+            ""
+        ]
+    },
+    "mangled leg": {
+        "lost a leg": [
+            ""
+        ],
+        "weak leg": [
+            ""
+        ],
+        "twisted leg": [
+            ""
+        ]
+    },
+    "dislocated joint": {
+        "constant joint pain": [
+            ""
+        ]
+    },
+    "mangled tail":{
+        "lost their tail": [
+            ""
+        ]
+    },
+    "torn ear": {
+        "partial hearing loss": [
+            ""
+        ]
+    },
+    "frostbite": {
+        "lost a leg": [
+            ""
+        ],
+        "lost their tail": [
+            ""
+        ]
+    },
+    "water in their lung": {
+        "raspy lungs": [
+            ""
+        ]
+    },
+    "severe burn": {
+        "lost their tail": [
+            ""
+        ],
+        "lost a leg": [
+            ""
+        ]
+    },
+    "lingering shock": {
+        "recurring shock": [
+            ""
+        ]
+    }
+}

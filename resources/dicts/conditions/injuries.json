@@ -273,7 +273,8 @@
         "risks": [],
         "also_got": [
             "bruises",
-            "sore"
+            "sore",
+            "joint pain"
         ],
         "cause_permanent": [
             "constant joint pain"
@@ -297,7 +298,6 @@
         "also_got": [
         ],
         "cause_permanent": [
-            "constant joint pain"
         ]
     },
 
@@ -383,7 +383,7 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 15
+                "chance": 30
             }
         ],
         "also_got": [],
@@ -411,9 +411,9 @@
     },
 
     "phantom pain":{
-        "duration": 2,
+        "duration": 1,
         "severity": "major",
-        "medicine_duration": 2,
+        "medicine_duration": 1,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -445,7 +445,7 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 20
+                "chance": 30
             }
         ],
         "also_got": [],
@@ -469,7 +469,7 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 20
+                "chance": 40
             }
         ],
         "also_got": [],
@@ -541,19 +541,11 @@
         },
         "illness_infectiousness": [
             {
-                "name": "chills",
-                "lower_by": 5
-            },
-            {
                 "name": "running nose",
                 "lower_by": 6
             }
         ],
         "risks": [
-            {
-                "name": "chills",
-                "chance": 5
-            },
             {
                 "name": "running nose",
                 "chance": 4
@@ -716,11 +708,125 @@
             "elder": 0
         },
         "illness_infectiousness": [],
-        "risks": [0
+        "risks": [
         ],
         "also_got": [],
         "cause_permanent": [
             "recurring shock"
+        ]
+    },
+    "shivering":{
+        "duration": 2,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 30,
+            "young adult": 50,
+            "adult": 80,
+            "senior adult": 50,
+            "elder": 20
+        },
+        "illness_infectiousness": [
+            {
+                "name": "running nose",
+                "lower_by": 5
+            },
+            {
+                "name": "whitecough",
+                "lower_by": 3
+            }
+        ],
+        "risks": [
+            {
+                "name": "frostbite",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "frostbite"
+        ],
+        "cause_permanent": [
+        ]
+    },
+    "dehydrated":{
+        "duration": 1,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 30,
+            "young adult": 50,
+            "adult": 80,
+            "senior adult": 50,
+            "elder": 20
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "heat exhaustion",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "heat exhaustion"
+        ],
+        "cause_permanent": [
+        ]
+    },
+    "head damage":{
+        "duration": 5,
+        "severity": "major",
+        "medicine_duration": 2,
+        "mortality": {
+            "kitten": 15,
+            "adolescent": 30,
+            "young adult": 40,
+            "adult": 50,
+            "senior adult": 40,
+            "elder": 20
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+            "failing eyesight",
+            "one bad eye",
+            "blind",
+            "loss of balance",
+            "partial hearing loss",
+        ]
+    },
+    "damaged eyes":{
+        "duration": 6,
+        "severity": "major",
+        "medicine_duration": 4,
+        "mortality": {
+            "kitten": 30,
+            "adolescent": 50,
+            "young adult": 70,
+            "adult": 70,
+            "senior adult": 70,
+            "elder": 50
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 4
+            }
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+            "blind",
+            "one bad eye",
+            "failing eyesight"
         ]
     }
 }

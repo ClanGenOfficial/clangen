@@ -1,0 +1,42 @@
+{
+    "greencough": {
+        "yellowcough": [
+            ""
+        ]
+    },
+    "kittencough": {
+        "whitecough": [
+            ""
+        ]
+    },
+    "an infected wound": {
+        "a festering wound": [
+            ""
+        ]
+    },
+    "running nose": {
+        "whitecough": [
+
+        ]
+    },
+    "whitecough": {
+        "greencough":[
+            ""
+        ]
+    },
+    "yellowcough": {
+        "redcough": [
+            ""
+        ]
+    },
+    "heat exhaustion": {
+        "heat stroke": [
+            ""
+        ]
+    },
+    "stomachache": {
+        "diarrhea": [
+            ""
+        ]
+    }
+}

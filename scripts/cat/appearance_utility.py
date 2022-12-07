@@ -198,6 +198,8 @@ def init_scars(cat):
         ])
     else:
         cat.specialty = None
+    if cat.specialty == 'NOPAW':
+        cat.get_permanent_condition('lost a leg')
         
     scar_choice2 = randint(0, 30)
     if cat.age in ['kitten', 'adolescent']:
@@ -215,6 +217,10 @@ def init_scars(cat):
     if cat.specialty2 == 'NOTAIL':
         if cat.specialty == 'HALFTAIL':
             cat.specialty = None
+    if cat.specialty2 in ['NOTAIL', 'HALFTAIL']:
+        cat.get_permanent_condition('lost their tail')
+
+
 
 def init_accessories(cat):
     acc_display_choice = randint(0, 35)

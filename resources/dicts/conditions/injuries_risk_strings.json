@@ -1,0 +1,123 @@
+{
+    "claw-wound": {
+        "an infected wound": [
+            ""
+        ]
+    },
+    "bite-wound": {
+        "an infected wound": [
+            ""
+        ]
+    },
+    "snake bite": {
+        "an infected wound": [
+            ""
+        ]
+    },
+    "rat bite": {
+        "an infected wound": [
+            ""
+        ],
+        "a festering wound": [
+            ""
+        ]
+    },
+    "tick bites": {
+        "an infected wound": [
+            ""
+        ]
+    },
+    "broken jaw": {
+        "an infected wound": [
+            ""
+        ]
+    },
+    "broken bone": {
+        "an infected wound": [
+            ""
+        ]
+    },
+    "mangled leg": {
+        "an infected wound": [
+            ""
+        ]
+    },
+    "mangled tail": {
+        "an infected wound": [
+            ""
+        ]
+    },
+    "cracked pads": {
+        "an infected wound": [
+            ""
+        ]
+    },
+    "scrapes": {
+        "an infected wound": [
+            ""
+        ]
+    },
+    "splinter": {
+        "an infected wound": [
+            ""
+        ]
+    },
+    "torn pelt": {
+        "an infected wound": [
+            ""
+        ]
+    },
+    "torn ear": {
+        "an infected wound": [
+            ""
+        ]
+    },
+    "frostbite": {
+        "running nose": [
+            ""
+        ]
+    },
+    "recovering from birth": {
+        "an infected wound": [
+            ""
+        ]
+    },
+    "water in their lungs": {
+        "running nose": [
+            ""
+        ],
+        "whitecough": [
+            ""
+        ]
+    },
+    "burn": {
+        "an infected wound": [
+
+        ]
+    },
+    "severe burn": {
+        "an infected wound": [
+            ""
+        ]
+    },
+    "shock": {
+        "lingering shock": [
+            ""
+        ]
+    },
+    "shivering": {
+        "frostbite": [
+            ""
+        ]
+    },
+    "dehydrated": {
+        "heat exhaustion": [
+            ""
+        ]
+    },
+    "damaged eyes": {
+        "an infected wound": [
+            ""
+        ]
+    }
+}

@@ -175,7 +175,7 @@ def add_children_to_cat(cat, cat_class):
 #                               Text Adjust                                    #
 # ---------------------------------------------------------------------------- #
 
-def event_text_adjust(Cat, text, cat, other_cat, other_clan_name):
+def event_text_adjust(Cat, text, cat, other_cat, other_clan_name=None):
     name = str(cat.name)
     other_name = str(other_cat.name)
     if cat.mate is not None:

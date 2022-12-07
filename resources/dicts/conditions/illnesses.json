@@ -67,7 +67,7 @@
         },
         "duration": 2,
         "medicine_duration": 1,
-        "infectiousness": 3,
+        "infectiousness": 2,
         "risks": []
     },
     "greencough": {
@@ -94,7 +94,7 @@
         "risks": [
             {
                 "name": "yellowcough",
-                "chance": 40
+                "chance": 60
             }
         ]
     },
@@ -150,7 +150,7 @@
         "risks": [
             {
                 "name": "a festering wound",
-                "chance": 10
+                "chance": 15
             }
         ]
     },
@@ -180,24 +180,24 @@
     "redcough": {
         "severity": "severe",
         "mortality": {
-            "kitten": 1,
+            "kitten": 2,
+            "adolescent": 2,
+            "young adult": 2,
+            "adult": 2,
+            "senior adult": 2,
+            "elder": 2
+        },
+        "medicine_mortality": {
+            "kitten": 5,
             "adolescent": 5,
             "young adult": 5,
             "adult": 5,
             "senior adult": 5,
-            "elder": 2
+            "elder": 5
         },
-        "medicine_mortality": {
-            "kitten": 4,
-            "adolescent": 10,
-            "young adult": 15,
-            "adult": 20,
-            "senior adult": 15,
-            "elder": 8
-        },
-        "duration": 3,
-        "medicine_duration": 2,
-        "infectiousness": 15,
+        "duration": 50,
+        "medicine_duration": 50,
+        "infectiousness": 0,
         "risks": []
     },
     "running nose": {
@@ -223,12 +223,8 @@
         "infectiousness": 20,
         "risks": [
             {
-                "name": "greencough",
-                "chance": 5
-            },
-            {
                 "name": "whitecough",
-                "chance": 3
+                "chance": 15
             }
         ]
     },
@@ -281,7 +277,12 @@
         "duration": 3,
         "medicine_duration": 2,
         "infectiousness": 4,
-        "risks": []
+        "risks": [
+            {
+                "name": "redcough",
+                "chance": 60
+            }
+        ]
     },
     "a festering wound": {
         "severity": "severe",

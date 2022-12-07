@@ -34,11 +34,11 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 50
+                "chance": 70
             },
             {
                 "name": "phantom pain",
-                "chance": 10
+                "chance": 20
             },
             {
                 "name": "sore",
@@ -99,7 +99,7 @@
     "twisted leg": {
         "severity": "major",
         "congenital": "sometimes",
-        "moons_until": 0,
+        "moons_until": 1,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -138,7 +138,7 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 50
+                "chance": 70
             },
             {
                 "name": "phantom pain",
@@ -180,15 +180,11 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 20
-            },
-            {
-                "name": "phantom pain",
-                "chance": 10
+                "chance": 60
             },
             {
                 "name": "torn pelt",
-                "chance": 15
+                "chance": 30
             },
             {
                 "name": "sore",
@@ -196,7 +192,7 @@
             },
             {
                 "name": "joint pain",
-                "chance": 40
+                "chance": 20
             }
         ]
     },
@@ -223,11 +219,11 @@
     },
     "wasting disease": {
         "severity": "major",
-        "congenital": "never",
+        "congenital": "sometimes",
         "moons_until": 0,
         "mortality": {
-            "kitten": 15,
-            "adolescent": 60,
+            "kitten": 20,
+            "adolescent": 70,
             "young adult": 150,
             "adult": 100,
             "senior adult": 60,
@@ -257,16 +253,12 @@
                 "chance": 10
             },
             {
-                "name": "whitecough",
-                "chance": 20
-            },
-            {
-                "name": "greencough",
-                "chance": 30
-            },
-            {
                 "name": "yellowcough",
-                "chance": 40
+                "chance": 70
+            },
+            {
+                "name": "redcough",
+                "chance": 100
             }
         ]
     },
@@ -301,7 +293,10 @@
         },
         "illness_infectiousness": [
         ],
-        "risks": [
+        "risks": [{
+                "name": "failing eyesight",
+                "chance": 80
+            }
         ]
     },
     "failing eyesight": {
@@ -319,6 +314,10 @@
         "illness_infectiousness": [
         ],
         "risks": [
+            {
+                "name": "blind",
+                "chance": 50
+            }
         ]
     },
     "partial hearing loss": {
@@ -336,6 +335,10 @@
         "illness_infectiousness": [
         ],
         "risks": [
+            {
+                "name": "deaf",
+                "chance": 80
+            }
         ]
     },
     "deaf": {
@@ -394,7 +397,7 @@
         "risks": [
             {
                 "name": "seizure",
-                "chance": 20
+                "chance": 10
             }
         ]
     },
