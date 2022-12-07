@@ -100,7 +100,9 @@ class ClanScreen(Screens):
         game.switches['cat'] = None
         p = game.clan.cur_layout
         game.clan.leader.placement = choice(p['leader place'])
-        game.clan.medicine_cat.placement = choice(p['medicine place'])
+        # prevent error if the clan has no medicine cat (last medicine cat is now a warrior)
+        if game.clan.medicine_cat:
+            game.clan.medicine_cat.placement = choice(p['medicine place'])
         for x in game.clan.clan_cats:
             i = randint(0, 20)
             if Cat.all_cats[x].status == 'apprentice':

@@ -981,12 +981,11 @@ class ProfileScreen(Screens):
 
             # promote a cat to deputy if no deputy is alive
             deputy = game.clan.deputy
-            if game.clan.deputy is None:
-                deputy = None
-            elif game.clan.deputy.exiled:
-                deputy = None
-            elif game.clan.deputy.dead:
-                deputy = None
+            if game.clan.deputy is not None:
+                if game.clan.deputy.exiled:
+                    deputy = None
+                elif game.clan.deputy.dead:
+                    deputy = None
 
             if the_cat.status in [
                 'warrior'
@@ -1132,6 +1131,14 @@ class ProfileScreen(Screens):
                     'apprentice_switch'].status == 'medicine cat':
             game.switches['apprentice_switch'].status_change('warrior')
             game.switches['apprentice_switch'] = False
+            clan_still_has_med = list(filter(
+                lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled
+                , Cat.all_cats.values()
+            ))
+            if not clan_still_has_med:
+                game.clan.medicine_cat = None
+            else:
+                game.clan.medicine_cat = clan_still_has_med[0]
 
         # ---------------------------------------------------------------------------- #
         #                                 PERSONAL TAB                                 #

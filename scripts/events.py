@@ -36,8 +36,7 @@ class Events():
             if any(str(cat.status) in {'leader', 'deputy', 'warrior', 'apprentice'}
                    and not cat.dead and not cat.exiled for cat in Cat.all_cats.values()):
                 game.switches['no_able_left'] = False
-            self.relation_events.handle_pregnancy_age(clan=game.clan)
-
+            self.relation_events.handle_pregnancy_age(game.clan)
             for cat in Cat.all_cats.copy().values():
                 if not cat.exiled:
                     self.one_moon_cat(cat)
@@ -76,7 +75,6 @@ class Events():
                         cat.dead = True
                         game.cur_events_list.append(
                             f'Rumors reach your clan that the exiled {str(cat.name)} has died recently.')
-
                         game.clan.leader_lives = 0
 
             # relationships have to be handled separately, because of the ceremony name change
@@ -93,7 +91,8 @@ class Events():
                     if not triggered_death:
                         triggered_death = self.handle_injuries_or_general_death(cat)
 
-                self.relation_events.handle_relationships(cat)
+                if not cat.dead:
+                    self.relation_events.handle_relationships(cat)
 
             self.check_clan_relations()
 
@@ -238,9 +237,6 @@ class Events():
                     other_clan.relations = 10
                 else:
                     self.at_war = False
-                    r_num = choice([-1, 1])
-                    other_clan.relations = str(
-                        int(other_clan.relations) + r_num)
             if war_notice:
                 game.cur_events_list.append(war_notice)
 
@@ -457,6 +453,7 @@ class Events():
                             f'{name} received a {acc_singular} from {other_name} and decided to wear it on their pelt.',
                             f'{name} found a {acc_singular} and decided to wear it on their pelt.',
                             f'A clanmate gave {name} a {acc_singular} and they decided to wear it.'
+
                         ])
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS",
                                            "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
@@ -1063,6 +1060,7 @@ class Events():
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
 
+
         return triggered_death
 
 
@@ -1174,6 +1172,7 @@ class Events():
                 if countdown <= 0:
                     return
 
+
             # check if clan has kits, if True then clan has kits
             alive_kits = list(filter(
                 lambda kitty: (kitty.age == "kitten"
@@ -1187,6 +1186,7 @@ class Events():
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
                 triggered_death = True
 
+
             # chance to die of old age
             if cat.moons > int(random.random() * 51) + 140 and not triggered_death:  # cat.moons > 150 <--> 200
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
@@ -1198,6 +1198,7 @@ class Events():
                 triggered_death = True
 
             return triggered_death
+
 
     def coming_out(self, cat):
         """turnin' the kitties trans..."""
