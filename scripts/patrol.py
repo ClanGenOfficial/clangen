@@ -363,10 +363,11 @@ class Patrol():
             if "romantic" in patrol.tags:
                 if self.patrol_leader.is_potential_mate(self.patrol_random_cat, for_love_interest = True):
                     no_incest = True
-                elif "rel_two_apps" in patrol.tags and self.patrol_apprentices[0].is_potential_mate(self.patrol_apprentices[1], for_love_interest = True):
-                    no_incest = True
-                else:
-                    no_incest = False
+                elif ("rel_two_apps" and "two_apprentices") in patrol.tags and len(self.patrol_apprentices) >= 2:
+                    if self.patrol_apprentices[0].is_potential_mate(self.patrol_apprentices[1], for_love_interest = True):
+                        no_incest = True
+                    else:
+                        no_incest = False
             else:
                 no_incest = True
 
