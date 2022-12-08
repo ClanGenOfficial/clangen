@@ -149,8 +149,15 @@
     "rat bite": {
         "weak leg": [
             "The rat bite that m_c suffered has healed, but r_c informs them that permanent damage was still done and the injured leg will never be quite the same.",
-            "m_c complains to r_c that their leg, the one savaged by a rat, seems weaker than it used to be. r_c tells them that is probably a permanent consequence of the injury.",
+            "m_c complains to r_c that their leg, the one savaged by a rat, seems weaker than it used to be. r_c tells them that it's probably a permanent consequence of the injury.",
             "Ever since they were bitten by that rat, m_c's injured leg has felt weaker than the rest. The wound may have healed, but it seems something deeper beneath the skin never will."
+        ]
+    },
+    "bite-wound": {
+        "weak leg": [
+            "r_c informs m_c that the bite-wound they've healed from has left their leg permanently weakened.",
+            "m_c finds that they have a new limp, despite healed from their bite-wound. r_c tells them it's likely permanent.",
+            "r_c limps around camp, fully healed from their bite-wound but still marked by it for the rest of their life."
         ]
     }
 }

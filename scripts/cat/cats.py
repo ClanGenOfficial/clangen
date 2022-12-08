@@ -804,6 +804,9 @@ class Cat():
         if name not in ILLNESSES:
             print(f"WARNING: {name} is not in the illnesses collection.")
             return
+        if name == 'kittencough' and self.status != 'kitten':
+            return
+
 
         illness = ILLNESSES[name]
         mortality = illness["mortality"][self.age]

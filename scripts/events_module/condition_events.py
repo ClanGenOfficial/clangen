@@ -75,10 +75,14 @@ class Condition_Events():
 
                 # heal
                 elif cat.healed_condition is True:
-                    if illness_name in ["running nose", "stomachache"]:
-                        event = f"{cat.name} has been cured of their {illness_name}."
-                    else:
-                        event = f"{cat.name} has been cured of {illness_name}."
+                    # gather potential event strings for healed illness
+                    possible_string_list = ILLNESS_HEALED_STRINGS[illness]
+
+                    # choose event string
+                    random_index = int(random.random() * len(possible_string_list))
+
+                    event = possible_string_list[random_index]
+                    event = event_text_adjust(Cat, event, cat, other_cat=None)
                     healed_illnesses.append(illness_name)
 
                 # if not dead or healed try to assign new illness from current illness risks
@@ -456,6 +460,8 @@ class Condition_Events():
                     else:
                         if injury in ["bruises", "cracked pads", "scrapes", "tick bites"]:
                             event = f"{cat.name}'s {injury} have healed."
+                        elif injury == 'recovering from birth':
+                            event = f'{cat.name} is no longer recovering from birth.'
                         else:
                             event = f"{cat.name}'s {injury} has healed."
 
@@ -636,22 +642,25 @@ not_integrated_injuries = ["carrionplace disease"]
 # ---------------------------------------------------------------------------- #
 
 PERM_CONDITION_RISK_STRINGS = None
-with open(f"resources/dicts/conditions/permanent_condition_risk_strings.json", 'r') as read_file:
+with open(f"resources/dicts/conditions/risk_strings/permanent_condition_risk_strings.json", 'r') as read_file:
     PERM_CONDITION_RISK_STRINGS = ujson.loads(read_file.read())
 
 ILLNESS_RISK_STRINGS = None
-with open(f"resources/dicts/conditions/illness_risk_strings.json", 'r') as read_file:
+with open(f"resources/dicts/conditions/risk_strings/illness_risk_strings.json", 'r') as read_file:
     ILLNESS_RISK_STRINGS = ujson.loads(read_file.read())
 
 INJURY_RISK_STRINGS = None
-with open(f"resources/dicts/conditions/injuries_risk_strings.json", 'r') as read_file:
+with open(f"resources/dicts/conditions/risk_strings/injuries_risk_strings.json", 'r') as read_file:
     INJURY_RISK_STRINGS = ujson.loads(read_file.read())
 
 CONGENITAL_CONDITION_GOT_STRINGS = None
-with open(f"resources/dicts/conditions/gain_congenital_condition_strings.json", 'r') as read_file:
+with open(f"resources/dicts/conditions/condition_got_strings/gain_congenital_condition_strings.json", 'r') as read_file:
     CONGENITAL_CONDITION_GOT_STRINGS = ujson.loads(read_file.read())
 
 PERMANENT_CONDITION_GOT_STRINGS = None
-with open(f"resources/dicts/conditions/gain_permanent_condition_strings.json", 'r') as read_file:
+with open(f"resources/dicts/conditions/condition_got_strings/gain_permanent_condition_strings.json", 'r') as read_file:
     PERMANENT_CONDITION_GOT_STRINGS = ujson.loads(read_file.read())
 
+ILLNESS_HEALED_STRINGS = None
+with open(f"resources/dicts/conditions/healed_strings/illness_healed_strings.json", 'r') as read_file:
+    ILLNESS_HEALED_STRINGS = ujson.loads(read_file.read())

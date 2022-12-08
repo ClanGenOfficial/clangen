@@ -388,15 +388,12 @@ class Relation_Events():
         else:
             print_event = f"{str(cat.name)} had a secret litter of {str(kits_amount)} kit(s) with {str(other_cat.name)}"
 
+        cat.get_injured("recovering from birth", event_triggered=True)
+
         # display event
-        if len(print_event) < 100:
-            game.cur_events_list.append(print_event)
-        else:
-            cut = print_event.find(' ', int(len(print_event)/2))
-            first_part = print_event[:cut]
-            second_part = print_event[cut:]
-            game.cur_events_list.append(first_part)
-            game.cur_events_list.append(second_part)
+        game.cur_events_list.append(print_event)
+
+
 
     # ---------------------------------------------------------------------------- #
     #                          check if event is triggered                         #
@@ -610,7 +607,7 @@ class Relation_Events():
             if self.living_cats > 60:
                 chance += chance * 2
             if self.living_cats > 90:
-                chance += chance * 2
+                chance += chance * 3
         if self.living_cats < 10 and chance > 10:
             chance -= 10
 

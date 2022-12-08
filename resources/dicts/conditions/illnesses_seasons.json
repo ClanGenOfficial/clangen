@@ -14,14 +14,13 @@
         "stomachache":1,
         "greencough": 4,
         "whitecough": 1,
-        "yellowcough": 2,
         "running nose": 5
     },
     "Leaf-bare":{
         "stomachache":1,
         "greencough": 4,
         "whitecough": 1,
-        "yellowcough": 2,
-        "running nose": 5
+        "running nose": 5,
+        "kittencough": 3
     }
 }

@@ -196,7 +196,7 @@
             "elder": 5
         },
         "duration": 50,
-        "medicine_duration": 50,
+        "medicine_duration": 40,
         "infectiousness": 0,
         "risks": []
     },
