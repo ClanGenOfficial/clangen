@@ -1,3 +1,4 @@
+import random
 from .pelts import *
 
 # ---------------------------------------------------------------------------- #
@@ -174,7 +175,9 @@ def init_sprite(cat):
         'elder': randint(3, 5)
     }
     cat.reverse = choice([True, False])
+    # skin chances
     cat.skin = choice(skin_sprites)
+            
     if cat.pelt is not None:
         if cat.pelt.length != 'long':
             cat.age_sprites['adult'] = randint(6, 8)
