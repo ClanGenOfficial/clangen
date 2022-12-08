@@ -725,12 +725,15 @@ class Cat():
 
         mortality = self.permanent_condition[condition]["mortality"]
         moons_until = self.permanent_condition[condition]["moons_until"]
+        born_with = self.permanent_condition[condition]["born_with"]
 
         # handling the countdown till a congenital condition is revealed
-        if moons_until is not None and moons_until != 0:
+        if moons_until is not None and moons_until >= 0 and born_with is True:
             self.permanent_condition[condition]["moons_until"] = int(moons_until - 1)
-            if self.permanent_condition[condition]["moons_until"] == 0:
-                return True
+        if self.permanent_condition[condition]["moons_until"] == -1 and\
+                self.permanent_condition[condition]["born_with"] is True:
+            self.permanent_condition[condition]["moons_until"] = -2
+            return True
 
         # leader should have a higher chance of death
         if self.status == "leader":
@@ -900,6 +903,12 @@ class Cat():
                 possible_conditions.append(condition)
 
         new_condition = choice(possible_conditions)
+
+        if new_condition == "born without a leg":
+            cat.specialty = 'NOPAW'
+        elif new_condition == "born without a tail":
+            cat.specialty = 'NOTAIL'
+
         self.get_permanent_condition(cat, new_condition, born_with=True)
 
     def get_permanent_condition(self, cat, name, born_with=False, event_triggered=False):
@@ -910,8 +919,9 @@ class Cat():
         condition = PERMANENT[name]
         new_condition = False
         mortality = condition["mortality"][self.age]
-        if game.clan.game_mode == "cruel season":
-            mortality = int(mortality * 0.65)
+        if mortality != 0:
+            if game.clan.game_mode == "cruel season":
+                mortality = int(mortality * 0.65)
 
         moons_until = condition["moons_until"]
         if born_with is True and moons_until != 0:

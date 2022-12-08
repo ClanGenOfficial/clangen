@@ -575,7 +575,7 @@ class Relation_Events():
 
         return chance_number
 
-    def get_kits_chance(self, cat, other_cat = None, relation = None):
+    def get_kits_chance(self, cat, other_cat=None, relation=None):
         """ Looks into the current values and calculate the chance of having kittens. The lower, the more likely they will have kittens.
             Returns:
                 integer (number)
@@ -587,7 +587,7 @@ class Relation_Events():
             old_male = True
 
         # calculate the chance of having kits
-        chance = 80
+        chance = 100
         if other_cat is not None:
             chance = 45
             if relation.romantic_love >= 50:
@@ -606,7 +606,7 @@ class Relation_Events():
             chance = int(chance * 2)
 
         if self.living_cats > 30:
-            chance += int(int(self.living_cats/2) * int(self.living_cats % 10))
+            chance += int(int(self.living_cats/2) * int(self.living_cats % 30))
         if self.living_cats < 10 and chance > 10:
             chance -= 10
 

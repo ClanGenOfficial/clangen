@@ -63,5 +63,33 @@
         "recurring shock": [
             ""
         ]
+    },
+    "head damage": {
+        "failing eyesight": [
+            ""
+        ],
+        "one bad eye": [
+            ""
+        ],
+        "blind": [
+            ""
+        ],
+        "loss of balance": [
+            ""
+        ],
+        "partial hearing loss": [
+            ""
+        ]
+    },
+    "damaged eyes": {
+        "blind": [
+            ""
+        ],
+        "one bad eye": [
+            ""
+        ],
+        "failing eyesight": [
+            ""
+        ]
     }
 }

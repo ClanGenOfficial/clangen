@@ -102,7 +102,7 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 8
+                "chance": 5
             },
             {
                 "name": "a festering wound",
@@ -497,7 +497,6 @@
             }
         ],
         "also_got": [
-            "torn ear"
         ],
         "cause_permanent": [
         ]
@@ -798,7 +797,7 @@
             "one bad eye",
             "blind",
             "loss of balance",
-            "partial hearing loss",
+            "partial hearing loss"
         ]
     },
     "damaged eyes":{

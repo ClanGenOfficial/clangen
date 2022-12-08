@@ -167,6 +167,7 @@ class Events():
         if cat.is_ill() or cat.is_injured():
             self.perform_ceremonies(cat)
             self.coming_out(cat)
+            self.relation_events.handle_having_kits(cat, clan=game.clan)
             cat.one_moon()
             return
 

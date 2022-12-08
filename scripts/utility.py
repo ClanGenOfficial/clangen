@@ -177,15 +177,20 @@ def add_children_to_cat(cat, cat_class):
 
 def event_text_adjust(Cat, text, cat, other_cat, other_clan_name=None):
     name = str(cat.name)
-    other_name = str(other_cat.name)
+    other_name = None
+    if other_cat is not None:
+        other_name = str(other_cat.name)
+    mate = None
     if cat.mate is not None:
         mate = Cat.all_cats.get(cat.mate).name
 
     adjust_text = text
     adjust_text = adjust_text.replace("m_c", str(name))
-    adjust_text = adjust_text.replace("r_c", str(other_name))
-    adjust_text = adjust_text.replace("o_c", str(other_clan_name))
-    if cat.mate is not None:
+    if other_name is not None:
+        adjust_text = adjust_text.replace("r_c", str(other_name))
+    if other_clan_name is not None:
+        adjust_text = adjust_text.replace("o_c", str(other_clan_name))
+    if mate is not None:
         adjust_text = adjust_text.replace("c_m", str(mate))
 
     return adjust_text

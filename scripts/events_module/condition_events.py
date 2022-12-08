@@ -4,6 +4,7 @@ import random
 import ujson as ujson
 
 from scripts.cat.cats import Cat
+from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
 from scripts.utility import save_death, event_text_adjust
 from scripts.game_structure.game_essentials import game, SAVE_DEATH
 from scripts.events_module.scar_events import Scar_Events
@@ -48,6 +49,7 @@ class Condition_Events():
             "kitten-cough": ["whitecough"],
             "whitecough": ["greencough", "yellowcough"],
             "greencough": ["yellowcough"],
+            "yellowcough": ["redcough"],
             "an infected wound": ["a festering wound"],
             "heat exhaustion": ["heat stroke"],
             "stomachache": ["diarrhea"],
@@ -81,8 +83,16 @@ class Condition_Events():
                 # if not dead or healed try to assign new illness from current illness risks
                 else:
                     for risk in cat.illnesses[illness]["risks"]:
-                        if not int(random.random() * risk["chance"]) and risk['name'] not in cat.illnesses:
-
+                        # adjust chance of risk gain if clan has enough meds
+                        amount_per_med = get_amount_cat_for_one_medic(game.clan)
+                        chance = risk["chance"]
+                        if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
+                            chance = risk["chance"] + 10
+                        if game.clan.medicine_cat is None:
+                            chance = chance - 3
+                            if chance <= 0:
+                                chance = 1
+                        if not int(random.random() * chance) and risk['name'] not in cat.illnesses:
                             new_illness_name = risk['name']
                             risk["chance"] = 0
                             new_illness.append(new_illness_name)
@@ -99,8 +109,10 @@ class Condition_Events():
                 for y in range(len(new_illness)):
                     for x in illness_progression:
                         if x == old_illness[y]:
-                            if new_illness[y] in illness_progression.get(x):
+                            if new_illness[y] in illness_progression.get(x) and old_illness[y] in cat.illnesses:
                                 cat.illnesses.pop(old_illness[y])
+                            else:
+                                continue
                     cat.get_ill(new_illness[y])
 
         # joining event list into one event string
@@ -353,7 +365,16 @@ class Condition_Events():
         for injury in cat.injuries:
             risks = cat.injuries[injury]["risks"]
             for risk in risks:
-                if not int(random.random() * risk["chance"]):
+                # adjust chance of risk gain if clan has enough meds
+                amount_per_med = get_amount_cat_for_one_medic(game.clan)
+                chance = risk["chance"]
+                if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
+                    chance = risk["chance"] + 10
+                if game.clan.medicine_cat is None:
+                    chance = chance - 3
+                    if chance <= 0:
+                        chance = 1
+                if not int(random.random() * chance):
                     if risk['name'] not in cat.injuries and risk['name'] not in cat.illnesses:
                         if risk['name'] == 'an infected wound' and 'a festering wound' in cat.illnesses:
                             break  # prevents a cat with a festering wound from receiving an infected wound
@@ -404,7 +425,7 @@ class Condition_Events():
                 elif cat.healed_condition is True:
                     triggered = True
                     scar_given = None
-                    if cat.possible_scar is not None and injury != "blood loss":
+                    if cat.possible_scar is not None and injury not in ["blood loss", "shock", "lingering shock"]:
                         event, scar_given = self.scar_events.handle_scars(cat, injury)
                     else:
                         if injury in ["bruises", "cracked pads", "scrapes", "tick bites"]:
@@ -464,7 +485,16 @@ class Condition_Events():
                 save_death(cat, event)
 
             elif condition_appears:
-                event = f"The clan has noticed that {cat.name} behaves a little different from other kits. They realize it's because {cat.name} has {condition}."
+                possible_string_list = CONGENITAL_CONDITION_GOT_STRINGS[condition]
+
+                random_index = int(random.random() * len(possible_string_list))
+                med_cat = None
+                if len(game.clan.med_cat_list) != 0:
+                    med_cat = game.clan.medicine_cat
+                if med_cat is None or (cat.parent1 is None and cat.parent2 is None) and random_index == 0:
+                    random_index = 1
+                event = possible_string_list[random_index]
+                event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
                 event_list.append(event)
                 triggered = True
 
@@ -481,11 +511,13 @@ class Condition_Events():
 
                             # choose event string and ensure clan's med cat number aligns with event text
                             random_index = int(random.random() * len(possible_string_list))
-                            if game.clan.medicine_cat is None and random_index == 0:
+                            med_cat = None
+                            if len(game.clan.med_cat_list) != 0:
+                                med_cat = game.clan.medicine_cat
+                            if med_cat is None and random_index == 0:
                                 random_index = 1
                             event = possible_string_list[random_index]
-                            event = event_text_adjust(Cat, event, cat, other_cat=game.clan.medicine_cat)  # adjust the text
-
+                            event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
                             event_list.append(event)
                             if new_ouchie in INJURIES:
                                 cat.get_injured(new_ouchie, event_triggered=True)
@@ -495,7 +527,7 @@ class Condition_Events():
                                 old_condition.append(condition)
                                 break
                             elif new_ouchie in PERMANENT:
-                                cat.get_permanent_condition(new_ouchie, event_triggered=True)
+                                cat.get_permanent_condition(cat, new_ouchie, event_triggered=True)
                                 break
 
             if len(new_condition) > 0:
@@ -573,3 +605,7 @@ not_integrated_injuries = ["carrionplace disease"]
 PERM_CONDITION_RISK_GOT_STRINGS = None
 with open(f"resources/dicts/conditions/permanent_condition_risk_strings.json", 'r') as read_file:
     PERM_CONDITION_RISK_GOT_STRINGS = ujson.loads(read_file.read())
+
+CONGENITAL_CONDITION_GOT_STRINGS = None
+with open(f"resources/dicts/conditions/gain_congenital_condition_strings.json", 'r') as read_file:
+    CONGENITAL_CONDITION_GOT_STRINGS = ujson.loads(read_file.read())
