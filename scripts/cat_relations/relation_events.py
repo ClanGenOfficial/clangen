@@ -702,6 +702,10 @@ class Relation_Events():
                 cat.birth_cooldown = 6
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
 
+            # remove scars
+            kit.specialty = None
+            kit.specialty2 = None
+
             # try to give them a permanent condition. 1/100 chance
             if not int(random.random() * 100):
                 kit.congenital_condition(kit)
@@ -725,6 +729,8 @@ class Relation_Events():
             # remove accessory
             kit.accessory = None
             clan.add_cat(kit)
+
+
 
         # check other cats of clan for siblings
         for kitten in all_kitten:

@@ -207,7 +207,7 @@ class Cat():
         if self.trait in self.kit_traits and self.status != 'kitten':
             self.trait = choice(self.traits)
 
-        if self.skill is None:
+        if self.skill is None or self.skill == '???':
             if self.moons <= 11:
                 self.skill = '???'
             elif self.status == 'warrior':
@@ -1581,6 +1581,10 @@ def create_example_cats():
         else:
             game.choose_cats[a] = Cat(status=choice(
                 ['kitten', 'apprentice', 'warrior', 'warrior', 'elder']))
+        if game.choose_cats[a].specialty in ['NOPAW', 'NOTAIL', 'HALFTAIL']:
+            game.choose_cats[a].specialty = None
+        if game.choose_cats[a].specialty2 in ['NOPAW', 'NOTAIL', 'HALFTAIL']:
+            game.choose_cats[a].specialty2 = None
         update_sprite(game.choose_cats[a])
 
 
