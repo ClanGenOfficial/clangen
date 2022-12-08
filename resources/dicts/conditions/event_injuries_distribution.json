@@ -1,38 +1,38 @@
 {
     "kitten": {
         "minor": 1,
-        "major": 5,
-        "severe": 10
+        "major": 3,
+        "severe": 6
     },
     "apprentice": {
         "minor": 1,
-        "major": 4,
-        "severe": 8
+        "major": 2,
+        "severe": 4
     },
     "medicine cat apprentice": {
         "minor": 1,
-        "major": 4,
-        "severe": 10
+        "major": 2,
+        "severe": 5
     },
     "warrior": {
         "minor": 3,
         "major": 1,
-        "severe": 5
+        "severe": 2
     },
     "elder": {
         "minor": 1,
-        "major": 6,
-        "severe": 10
+        "major": 3,
+        "severe": 6
     },
     "medicine cat": {
         "minor": 1,
-        "major": 4,
-        "severe": 8
+        "major": 2,
+        "severe": 4
     },
     "deputy": {
-        "minor": 3,
+        "minor": 4,
         "major": 1,
-        "severe": 4
+        "severe": 2
     },
     "leader": {
         "minor": 5,

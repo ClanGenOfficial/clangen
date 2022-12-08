@@ -606,7 +606,9 @@ class Relation_Events():
             chance = int(chance * 2)
 
         if self.living_cats > 30:
-            chance += int(int(self.living_cats/2) * int(self.living_cats % 30))
+            chance += int(int(self.living_cats/2) * int(self.living_cats % 40))
+            if self.living_cats > 60:
+                chance += chance * 2
         if self.living_cats < 10 and chance > 10:
             chance -= 10
 

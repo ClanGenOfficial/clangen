@@ -5,6 +5,27 @@ from scripts.cat.pelts import *
 from scripts.game_structure.game_essentials import *
 
 
+def get_med_cats(Cat):
+    """
+    returns a list of all meds and med apps currently alive, in the clan, and able to work
+    """
+    all_cats = Cat.all_cats.values()
+
+    medicine_apprentices = list(filter(
+        lambda c: c.status == 'medicine apprentices' and not c.dead and not c.exiled and not c.not_working()
+        , all_cats
+    ))
+    medicine_cats = list(filter(
+        lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled and not c.not_working()
+        , all_cats
+    ))
+
+    possible_med_cats = []
+    possible_med_cats.extend(medicine_cats)
+    possible_med_cats.extend(medicine_apprentices)
+
+    return possible_med_cats
+
 def get_cats_allowed_on_patrol(Cat, game_mode):
     able_cats = []
 
@@ -176,6 +197,10 @@ def add_children_to_cat(cat, cat_class):
 # ---------------------------------------------------------------------------- #
 
 def event_text_adjust(Cat, text, cat, other_cat, other_clan_name=None):
+    danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk", "an enemy warrior", "a badger"]
+    tail_danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk",
+                   "an enemy warrior", "a badger", "a twoleg trap"]
+
     name = str(cat.name)
     other_name = None
     if other_cat is not None:
@@ -192,6 +217,8 @@ def event_text_adjust(Cat, text, cat, other_cat, other_clan_name=None):
         adjust_text = adjust_text.replace("o_c", str(other_clan_name))
     if mate is not None:
         adjust_text = adjust_text.replace("c_m", str(mate))
+    adjust_text = adjust_text.replace("d_l", choice(danger))
+    adjust_text = adjust_text.replace("t_l", choice(tail_danger))
 
     return adjust_text
 

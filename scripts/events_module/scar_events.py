@@ -41,7 +41,7 @@ class Scar_Events():
                 "SNAKE"
             ]
             claw_scars = [
-                "ONE", "TWO", "THREE", "SNOUT", "TAILSCAR", "CHEEK",
+                "ONE", "TWO", "SNOUT", "TAILSCAR", "CHEEK",
                 "SIDE", "THROAT", "TAILBASE", "BELLY", "FACE"
             ]
             leg_scars = [
@@ -55,6 +55,9 @@ class Scar_Events():
             ]
             frostbite_scars = [
                 "HALFTAIL", "NOTAIL", "NOPAW"
+            ]
+            eye_scars = [
+                "THREE"
             ]
 
             scar_pool = []
@@ -73,6 +76,8 @@ class Scar_Events():
                 scar_pool = ear_scars
             elif injury_name == "frostbite":
                 scar_pool = frostbite_scars
+            elif injury_name == "damaged eyes":
+                scar_pool = eye_scars
 
             for special in [cat.specialty, cat.specialty2]:
                 if special:

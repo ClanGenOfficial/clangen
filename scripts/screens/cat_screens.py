@@ -540,8 +540,11 @@ class ProfileScreen(Screens):
             injury_string = ", ".join(injury_list)
         if the_cat.is_disabled():
             for y in the_cat.permanent_condition:
-                if the_cat.permanent_condition[y]["moons_until"] == -2:
+                if the_cat.permanent_condition[y]["moons_until"] == -2 and the_cat.permanent_condition[y]["born_with"] is True:
                     permanent_conditions_list.append(y)
+                elif the_cat.permanent_condition[y]["born_with"] is False:
+                    permanent_conditions_list.append(y)
+
             if len(permanent_conditions_list) > 0:
                 permanent_conditions_string = ", ".join(permanent_conditions_list)
         if the_cat.is_ill():

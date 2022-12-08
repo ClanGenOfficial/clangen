@@ -1,67 +1,97 @@
 {
     "broken jaw": {
         "crooked jaw": [
-            ""
+            "Despite r_c's best efforts, m_c's jaw is healing crooked. They're just glad it's healing at all.",
+            "m_c has been feeling the pain in their broken jaw lessen, but their teeth just don't fit together neatly like they used to."
+
         ]
     },
     "broken bone": {
         "weak leg": [
-            ""
+            "m_c has been impatient, and r_c has noticed they haven’t been the most diligent with their leg strengthening exercises. It's unfortunately having consequences, as their healing broken bone has given them a weaker leg.",
+            "m_c pads along on all four legs for the first time in a long time, wincing. Their healed broken bone has definitely left the leg weaker, but it's manageable as far as they're concerned."
+
         ],
         "twisted leg": [
-            ""
+            "r_c considers m_c's leg. It might be possible to re-break it, but it will likely always heal twisted after this. Instead, they leave it as it's healing.",
+            "Their broken bone has healed twisted, but m_c is just so glad to be free of the boredom of recovery."
+
         ]
     },
     "mangled leg": {
         "lost a leg": [
-            ""
+            "The leg is too mangled - r_c sighs, and prepares the poppy seeds to knock m_c out while it's removed.",
+            "m_c wakes up one leg less than they went to sleep with, and it's both upsetting and a relief. Their leg was so mangled, and m_c in so much pain, that this might be for the best. But it's still a loss."
+
         ],
         "weak leg": [
-            ""
+            "r_c tells m_c that they might have to accept that their leg that was so badly mangled will always now be weaker. At least they still have it, but that's cold consolation to m_c, who feels like they were so close to healing perfectly.",
+            "m_c stands triumphantly on a leg that, while it'll always be weaker than their others, now works only a little worse than them. It's been a long journey to heal such a badly injured limb."
+
         ],
         "twisted leg": [
-            ""
+            "m_c tells r_c it's fine, and they know r_c did their best. Their leg was too badly mangled, to heal this far is a miracle from StarClan, even if it is twisted.",
+            "Their twisted limb frustrates them constantly, but m_c tells themselves it could've been worse, and that at least they're still there to feel irritated by it."
+
         ]
     },
     "dislocated joint": {
         "constant joint pain": [
-            ""
+            "It feels like their formerly dislocated joint just isn't the same anymore. r_c is understanding, but prepares m_c for the possibility that this could be permanent.",
+            "m_c needs pain relief far more often these days, the joint they dislocated giving them trouble."
+
         ]
     },
     "mangled tail":{
         "lost their tail": [
-            ""
+            "r_c helps m_c bury their tail wordlessly, hoping the ritual brings them closure to the trauma of losing it.",
+            "It's okay, m_c tells themselves. A tail isn't the worst thing to lose, they're going to be fine! But they still feel it's absence no matter how hard they try to force it from their mind."
+
         ]
     },
     "torn ear": {
         "partial hearing loss": [
-            ""
+            "r_c continues their test, but it's clear that m_c's hearing isn't what it used to be, probably related to their ear injury.",
+            "m_c realizes that it's not that the camp has been more peaceful lately - they just can't hear as much as they used to."
+
         ]
     },
     "frostbite": {
         "lost a leg": [
-            ""
+            "m_c doesn't want to look at their leg. They can no longer feel it at all and it's starting to produce a smell - obviously dead flesh. r_c says that it's probably best to remove it now before it gets worse, and m_c can't help but agree.",
+            "m_c awakes with one less leg than they went to sleep with. Admittedly, it's more of a relief than anything. Their dead, frostbitten flesh no longer had any feeling left anyway."
+
         ],
         "lost their tail": [
-            ""
+            "m_c sighs sadly as r_c suggests that it's time to take their tail off. The flesh is blackened from frostbite and is obviously dead - there's no use in leaving it attached. m_c agrees.",
+            "m_c's tail is finally gone. It was more of a relief than anything. The frostbitten flesh was already dead and blackened, so they had no issue with taking it off before it fell off on its own."
+
         ]
     },
     "water in their lung": {
         "raspy lungs": [
-            ""
+            "r_c put a bunch of fragrant herbs under m_c's nose, hoping the scent will help the rasp in their throat they've had since inhaling water, unfortunately it seems this rasp may never leave.",
+            "Ever since they almost drowned, m_c's lungs haven't felt right."
+
         ]
     },
     "severe burn": {
         "lost their tail": [
-            ""
+            "m_c makes a weak, very bad joke about their tail smelling like Twoleg food. Gently, r_c breaks the news that their burned flesh is going to need to be removed.",
+            "m_c is almost glad to be rid of their burned tail, which had long since ceased to feel like a real part of their body except for the pain. Almost."
+
         ],
         "lost a leg": [
-            ""
+            "As m_c sleeps under poppyseed influence, r_c prepares for the grim task of removing their burned leg, before the festering illness in it can spread to the rest of them.",
+            "m_c feels almost guilty, but the absence of their leg is just so much less painful then how it felt while burned that it's impossible not to be relieved."
+
         ]
     },
     "lingering shock": {
         "recurring shock": [
-            ""
+            "m_c demands to know when they'll stop freezing in fear at what they know are just memories. r_c doesn't have answers, but they comfort their clanmate, saying that forcing themselves to be okay is just hurting m_c.",
+            "m_c jumps, then realizes that it was just a leaf blowing in the wind. They feel exhausted, and their memories feel like a trap that rears up to bite them whenever they relax."
+
         ]
     },
     "head damage": {
