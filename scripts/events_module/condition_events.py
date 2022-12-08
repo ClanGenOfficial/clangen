@@ -473,9 +473,11 @@ class Condition_Events():
                         med_list = get_med_cats(Cat)
                         med_cat = None
                         if len(med_list) == 0 and random_index == 0:
-                            random_index = 1
+                            random_index = 2
                         else:
                             med_cat = random.choice(med_list)
+                            if med_cat == cat:
+                                random_index = 2
                         event = possible_string_list[random_index]
                         event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
 
