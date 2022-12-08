@@ -44,7 +44,7 @@
         },
         "duration": 2,
         "medicine_duration": 1,
-        "infectiousness": 50,
+        "infectiousness": 0,
         "risks": []
     },
     "fleas": {
@@ -67,8 +67,13 @@
         },
         "duration": 2,
         "medicine_duration": 1,
-        "infectiousness": 2,
-        "risks": []
+        "infectiousness": 15,
+        "risks": [
+            {
+                "name": "torn pelt",
+                "chance": 20
+            }
+        ]
     },
     "greencough": {
         "severity": "severe",
@@ -90,11 +95,11 @@
         },
         "duration": 3,
         "medicine_duration": 2,
-        "infectiousness": 5,
+        "infectiousness": 30,
         "risks": [
             {
                 "name": "yellowcough",
-                "chance": 60
+                "chance": 70
             }
         ]
     },
@@ -118,7 +123,7 @@
         },
         "duration": 3,
         "medicine_duration": 1,
-        "infectiousness": 6,
+        "infectiousness": 15,
         "risks": [
             {
                 "name": "whitecough",
@@ -220,7 +225,7 @@
         },
         "duration": 3,
         "medicine_duration": 1,
-        "infectiousness": 20,
+        "infectiousness": 0,
         "risks": [
             {
                 "name": "whitecough",
@@ -248,11 +253,11 @@
         },
         "duration": 3,
         "medicine_duration": 1,
-        "infectiousness": 4,
+        "infectiousness": 30,
         "risks": [
             {
                 "name": "greencough",
-                "chance": 10
+                "chance": 20
             }
         ]
     },
@@ -276,7 +281,7 @@
         },
         "duration": 3,
         "medicine_duration": 2,
-        "infectiousness": 4,
+        "infectiousness": 30,
         "risks": [
             {
                 "name": "redcough",

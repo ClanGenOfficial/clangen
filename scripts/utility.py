@@ -12,7 +12,7 @@ def get_med_cats(Cat):
     all_cats = Cat.all_cats.values()
 
     medicine_apprentices = list(filter(
-        lambda c: c.status == 'medicine apprentices' and not c.dead and not c.exiled and not c.not_working()
+        lambda c: c.status == 'medicine apprentice' and not c.dead and not c.exiled and not c.not_working()
         , all_cats
     ))
     medicine_cats = list(filter(

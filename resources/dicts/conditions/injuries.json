@@ -303,7 +303,7 @@
 
     "sprain":{
         "duration": 1,
-        "severity": "minor",
+        "severity": "major",
         "medicine_duration": 1,
         "mortality": {
             "kitten": 0,
@@ -577,8 +577,7 @@
             }
         ],
         "also_got": [
-            "blood loss",
-            "shock"
+            "blood loss"
         ],
         "cause_permanent": [
         ]
@@ -609,11 +608,11 @@
         "risks": [
             {
                 "name": "running nose",
-                "chance": 4
+                "chance": 10
             },
             {
                 "name": "whitecough",
-                "chance": 3
+                "chance": 20
             }
         ],
         "also_got": [],

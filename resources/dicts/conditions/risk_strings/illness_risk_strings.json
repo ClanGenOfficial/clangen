@@ -2,7 +2,7 @@
     "greencough": {
         "yellowcough": [
              "There has to be a solution - if r_c tries hard enough, surely they can still save m_c from the yellowcough their greencough has progressed to.",
-             "m_s sits in the medicine cat den, miserable, coughing so hard it feels like they can barely get a breath in. Their greencough has progressed to yellowcough, and the lookout looks grim."
+             "m_c sits in the medicine cat den, miserable, coughing so hard it feels like they can barely get a breath in. Their greencough has progressed to yellowcough, and the lookout looks grim."
 
         ]
     },
@@ -53,6 +53,15 @@
             "Embarrassed, m_c reports to r_c that their stomachache is now having consequences at the other end of their digestive system. r_c, as non-squeamish as all medicine cats, tells m_c that it's now very important they keep drinking water, as the diarrhea will make them lose it quickly.",
             "m_c is now spending more time at the dirtplace than in camp, as their stomachache has progressed to diarrhea."
 
+        ]
+    },
+    "fleas": {
+        "torn pelt": [
+            "m_c has been scratching incessantly at the fleas infesting their pelt and r_c scolds them for it as they gently clean the now raw areas of m_c's pelt.",
+            "m_c scratches and scratches and scratches, ever frustrated by their fleas. The constant scratching has begun to tear up their pelt, leaving raw patches of skin exposed.",
+            "m_c's constant flea scratching has torn their pelt.",
+            "m_c can't help scratching at their fleas and has left raw spots on their pelt.",
+            "Raw hairless patches are forming on m_c's pelt as they scratch and scratch at their fleas."
         ]
     }
 }

@@ -664,7 +664,7 @@ class Cat():
 
         if self.illnesses[illness]["event_triggered"]:
             self.illnesses[illness]["event_triggered"] = False
-            return
+            return True
 
         mortality = self.illnesses[illness]["mortality"]
 

@@ -88,7 +88,7 @@
 
         ]
     },
-    "water in their lung": {
+    "water in their lungs": {
         "raspy lungs": [
             "r_c put a bunch of fragrant herbs under m_c's nose, hoping the scent will help the rasp in their throat they've had since inhaling water, unfortunately it seems this rasp may never leave.",
             "The damage to m_c's lungs is permanent and r_c gives them strict instructions about not overexerting themselves.",
@@ -157,7 +157,7 @@
         "weak leg": [
             "r_c informs m_c that the bite-wound they've healed from has left their leg permanently weakened.",
             "m_c finds that they have a new limp, despite healed from their bite-wound. r_c tells them it's likely permanent.",
-            "r_c limps around camp, fully healed from their bite-wound but still marked by it for the rest of their life."
+            "m_c limps around camp, fully healed from their bite-wound but still marked by it for the rest of their life."
         ]
     }
 }

@@ -82,6 +82,7 @@ class Events():
                 if cat.dead or cat.exiled:
                     continue
                 # switches between the two death handles
+                self.handle_outbreaks(cat)
                 if random.getrandbits(1):
                     triggered_death = self.handle_injuries_or_general_death(cat)
                     if not triggered_death:
@@ -327,7 +328,7 @@ class Events():
                     if chance in range(1, 6):
                         if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
                             chance = 1
-                    if has_med_app is False and chance == 1:
+                    if has_med_app is False and len(get_med_cats(Cat)) != 0 and chance == 1:
                         self.ceremony(cat, 'medicine cat apprentice', ' has chosen to walk the path of a medicine cat.')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
@@ -1199,6 +1200,91 @@ class Events():
                 triggered_death = True
 
             return triggered_death
+
+    def handle_outbreaks(self, cat):
+        """
+        try to infect some cats
+        """
+        # check if the cat is ill, if game mode is classic, or if clan has sufficient med cats in expanded mode
+        amount_per_med = get_amount_cat_for_one_medic(game.clan)
+        if not cat.is_ill() or game.clan.game_mode == 'classic' or \
+                (medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med) and game.clan.game_mode != 'cruel season'):
+            return
+
+        # check how many kitties are already ill
+        already_sick = list(filter(
+            lambda kitty: (not kitty.dead
+                           and not kitty.exiled
+                           and kitty.is_ill()),
+            Cat.all_cats.values()
+        ))
+        already_sick_count = len(already_sick)
+
+        # round up the living kitties
+        alive_cats = list(filter(
+            lambda kitty: (not kitty.dead
+                           and not kitty.exiled
+                           and not kitty.is_ill()),
+            Cat.all_cats.values()
+        ))
+        alive_count = len(alive_cats)
+        print('INFECTION ATTEMPTED')
+
+        # if large amount of the population is already sick, stop spreading
+        if already_sick_count >= alive_count * .20:
+            print('CURRENT SICK COUNT TOO HIGH', already_sick_count, alive_count)
+            return
+
+        for illness in cat.illnesses:
+            # check if illness can infect other cats
+            if cat.illnesses[illness]["infectiousness"] == 0:
+                continue
+            chance = cat.illnesses[illness]["infectiousness"]
+            if not int(random.random() * chance):  # 1/chance to infect
+                # fleas are the only condition allowed to spread outside of cold seasons
+                if game.clan.current_season not in ["Leaf-bare", "Leaf-fall"] and illness != 'fleas':
+                    continue
+                if illness == 'kittencough':
+                    # adjust alive cats list to only include kittens
+                    alive_cats = list(filter(
+                        lambda kitty: (kitty.status == "kitten"
+                                       and not kitty.dead
+                                       and not kitty.exiled),
+                        Cat.all_cats.values()
+                    ))
+                    alive_count = len(alive_cats)
+
+                max_infected = int(alive_count / 2)  # 1/2 of alive cats
+                weights = []
+                population = []
+                for n in range(2, max_infected):
+                    population.append(n)
+                    weight = 1 / (0.75 * n)  # Lower chance for more infected cats
+                    weights.append(weight)
+                infected_count = random.choices(population, weights=weights)[0]  # the infected..
+
+                infected_names = []
+                infected_cats = random.sample(alive_cats, infected_count)
+                for cat in infected_cats:
+                    infected_names.append(str(cat.name))
+                    cat.get_ill(illness, event_triggered=True)  # SPREAD THE GERMS >:)
+
+                illness_name = str(illness).capitalize()
+                if illness == 'kittencough':
+                    event = f'{illness_name} has spread around the nursery. ' \
+                            f'{", ".join(infected_names[:-1])}, and {infected_names[-1]} have been infected.'
+                elif illness == 'fleas':
+                    event = f'Fleas have been hopping from pelt to pelt and now {", ".join(infected_names[:-1])}, and {infected_names[-1]} are all infested.'
+                else:
+                    event = f'{illness_name} has spread around the camp. '\
+                            f'{", ".join(infected_names[:-1])}, and {infected_names[-1]} have been infected.'
+
+                print('INFECTION INFECTION PANDEMIC ALERT')
+                game.cur_events_list.append(event)
+                break
+
+
+
 
 
     def coming_out(self, cat):
