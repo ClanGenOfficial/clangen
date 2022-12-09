@@ -68,7 +68,7 @@ class Condition_Events():
                 # event trigger was true, so events should be skipped for this illness
                 if skipped is True:
                     continue
-
+                print(illness, cat.name, cat.healed_condition)
                 # kill
                 if cat.dead and cat.status != 'leader':
                     event = f"{cat.name} has died of {illness}."
@@ -89,58 +89,58 @@ class Condition_Events():
                     event = event_text_adjust(Cat, event, cat, other_cat=None)
                     healed_illnesses.append(illness)
                     cat.healed_condition = False
+                    event_list.append(event)
+
                     continue
 
-                # if not dead or healed try to assign new illness from current illness risks
-                for risk in cat.illnesses[illness]["risks"]:
-                    # adjust chance of risk gain if clan has enough meds
-                    amount_per_med = get_amount_cat_for_one_medic(game.clan)
-                    chance = risk["chance"]
-                    if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
-                        chance = risk["chance"] + 10
-                    if game.clan.medicine_cat is None:
-                        chance = chance / 2
-                        if chance <= 0:
-                            chance = 1
-                    if not int(random.random() * chance) and risk['name'] not in cat.illnesses:
-                        # check if the new risk is a previous stage of a current illness
-                        skip = False
-                        if risk['name'] in illness_progression:
-                            if illness_progression[risk['name']] in cat.illnesses:
-                                skip = True
-                        if skip is True:
-                            break
-                        new_illness_name = risk['name']
-                        risk["chance"] = 0
-                        if new_illness_name == 'torn pelt':
-                            cat.get_injured(new_illness_name)
-                        else:
-                            new_illness.append(new_illness_name)
-                            old_illness.append(illness)
-                        # gather potential event strings for gotten illness
-                        possible_string_list = ILLNESS_RISK_STRINGS[illness][new_illness_name]
-
-                        # choose event string and ensure clan's med cat number aligns with event text
-                        random_index = int(random.random() * len(possible_string_list))
-                        med_list = get_med_cats(Cat)
-                        med_cat = None
-                        if len(med_list) == 0:
-                            if random_index == 0:
-                                random_index = 1
+                else:
+                    # if not dead or healed try to assign new illness from current illness risks
+                    for risk in cat.illnesses[illness]["risks"]:
+                        # adjust chance of risk gain if clan has enough meds
+                        amount_per_med = get_amount_cat_for_one_medic(game.clan)
+                        chance = risk["chance"]
+                        if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
+                            chance = risk["chance"] + 10
+                        if game.clan.medicine_cat is None:
+                            chance = chance / 2
+                            if chance <= 0:
+                                chance = 1
+                        if not int(random.random() * chance) and risk['name'] not in cat.illnesses:
+                            # check if the new risk is a previous stage of a current illness
+                            skip = False
+                            if risk['name'] in illness_progression:
+                                if illness_progression[risk['name']] in cat.illnesses:
+                                    skip = True
+                            if skip is True:
+                                break
+                            new_illness_name = risk['name']
+                            risk["chance"] = 0
+                            if new_illness_name == 'torn pelt':
+                                cat.get_injured(new_illness_name)
                             else:
-                                med_cat = None
-                        else:
-                            med_cat = random.choice(med_list)
-                            if med_cat == cat:
-                                random_index = 1
-                        event = possible_string_list[random_index]
-                        event = event_text_adjust(Cat, event, cat, med_cat)  # adjust the text
-                        break
+                                new_illness.append(new_illness_name)
+                                old_illness.append(illness)
+                            # gather potential event strings for gotten illness
+                            possible_string_list = ILLNESS_RISK_STRINGS[illness][new_illness_name]
 
-                # add whatever event string to the event list
-                if event is not None:
-                    event_list.append(event)
-                    break
+                            # choose event string and ensure clan's med cat number aligns with event text
+                            random_index = int(random.random() * len(possible_string_list))
+                            med_list = get_med_cats(Cat)
+                            med_cat = None
+                            if len(med_list) == 0:
+                                if random_index == 0:
+                                    random_index = 1
+                                else:
+                                    med_cat = None
+                            else:
+                                med_cat = random.choice(med_list)
+                                if med_cat == cat:
+                                    random_index = 1
+                            event = possible_string_list[random_index]
+                            event = event_text_adjust(Cat, event, cat, med_cat)  # adjust the text
+                            event_list.append(event)
+
+                            break
 
             # making sure that when an illness progresses, the old illness is not kept and new illness is given
             if len(new_illness) > 0:
@@ -408,6 +408,8 @@ class Condition_Events():
             for y in cat.injuries:
                 injury = y
                 skipped = cat.moon_skip_injury(injury)
+                if skipped:
+                    continue
                 if cat.dead:
                     triggered = True
                     # TODO: need to make death events for these so that we can have more variety
@@ -473,7 +475,7 @@ class Condition_Events():
                     if event is not None:
                         event_list.append(event)
 
-                elif not triggered and not skipped:
+                elif not triggered:
                     risks = cat.injuries[injury]["risks"]
                     for risk in risks:
                         # adjust chance of risk gain if clan has enough meds or if clan has no meds at all

@@ -554,7 +554,7 @@
     "recovering from birth":{
         "duration": 3,
         "severity": "major",
-        "medicine_duration": 6,
+        "medicine_duration": 5,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,

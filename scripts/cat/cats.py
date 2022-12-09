@@ -661,7 +661,7 @@ class Cat():
     def moon_skip_illness(self, illness):
         """handles the moon skip for illness"""
         if not self.is_ill():
-            return
+            return False
 
         if self.illnesses[illness]["event_triggered"]:
             self.illnesses[illness]["event_triggered"] = False
@@ -681,11 +681,12 @@ class Cat():
                 elif game.clan.leader_lives <= 0:
                     game.cur_events_list.append(f"{self.name} lost their last life to {illness}.")
             self.die()
-            return
+            return False
 
         self.illnesses[illness]["duration"] -= 1
         if self.illnesses[illness]["duration"] <= 0:
             self.healed_condition = True
+            return False
 
     def moon_skip_injury(self, injury):
         """handles the moon skip for injury"""
@@ -879,7 +880,6 @@ class Cat():
                 "severity": new_injury.severity,
                 "mortality": new_injury.current_mortality,
                 "duration": new_injury.current_duration,
-                "medicine_duration": new_injury.medicine_duration,
                 "illness_infectiousness": new_injury.illness_infectiousness,
                 "risks": new_injury.risks,
                 "also_got": new_injury.also_got,
