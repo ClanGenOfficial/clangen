@@ -69,6 +69,7 @@ class Illness:
 
         self.current_duration = duration
         self.current_mortality = mortality
+
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if medical_cats_condition_fulfilled(game.cat_class.all_cats.values(), amount_per_med):
             self.current_duration = medicine_duration
@@ -130,6 +131,7 @@ class Injury:
 
         self.current_duration = duration
         self.current_mortality = mortality
+        
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if medical_cats_condition_fulfilled(game.cat_class.all_cats.values(), amount_per_med):
             self.current_duration = medicine_duration

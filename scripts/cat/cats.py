@@ -9,7 +9,8 @@ from .names import *
 from .sprites import *
 from .thoughts import *
 from .appearance_utility import *
-from scripts.conditions import Illness, Injury, PermanentCondition
+from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
+    medical_cats_condition_fulfilled
 
 from scripts.utility import *
 from scripts.game_structure.game_essentials import *
@@ -809,10 +810,17 @@ class Cat():
         if name == 'kittencough' and self.status != 'kitten':
             return
 
-
         illness = ILLNESSES[name]
         mortality = illness["mortality"][self.age]
         med_mortality = illness["medicine_mortality"][self.age]
+
+        duration = illness['duration']
+        med_duration = illness['medicine_duration']
+
+        amount_per_med = get_amount_cat_for_one_medic(game.clan)
+
+        if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
+            duration = med_duration
         if game.clan.game_mode == "cruel season":
             if mortality != 0:
                 mortality = int(mortality * 0.5)
@@ -828,7 +836,7 @@ class Cat():
             severity=illness["severity"],
             mortality=mortality,
             infectiousness=illness["infectiousness"],
-            duration=illness["duration"],
+            duration=duration,
             medicine_duration=illness["medicine_duration"],
             medicine_mortality=med_mortality,
             risks=illness["risks"],
@@ -840,7 +848,7 @@ class Cat():
                 "severity": new_illness.severity,
                 "mortality": new_illness.current_mortality,
                 "infectiousness": new_illness.infectiousness,
-                "duration": new_illness.current_duration,
+                "duration": new_illness.duration,
                 "risks": new_illness.risks,
                 "event_triggered": new_illness.new
             }
@@ -854,6 +862,13 @@ class Cat():
 
         injury = INJURIES[name]
         mortality = injury["mortality"][self.age]
+        duration = injury['duration']
+        med_duration = injury['medicine_duration']
+
+        amount_per_med = get_amount_cat_for_one_medic(game.clan)
+
+        if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
+            duration = med_duration
 
         if mortality != 0:
             if game.clan.game_mode == "cruel season":
@@ -866,7 +881,7 @@ class Cat():
             name=name,
             severity=injury["severity"],
             duration=injury["duration"],
-            medicine_duration=injury["medicine_duration"],
+            medicine_duration=duration,
             mortality=mortality,
             risks=injury["risks"],
             illness_infectiousness=injury["illness_infectiousness"],
@@ -879,7 +894,7 @@ class Cat():
             self.injuries[new_injury.name] = {
                 "severity": new_injury.severity,
                 "mortality": new_injury.current_mortality,
-                "duration": new_injury.current_duration,
+                "duration": new_injury.duration,
                 "illness_infectiousness": new_injury.illness_infectiousness,
                 "risks": new_injury.risks,
                 "also_got": new_injury.also_got,

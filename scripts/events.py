@@ -139,7 +139,7 @@ class Events():
                                     str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy')
                                 break
                         random_count += 1
-                    if (random_count == 30):
+                    if random_count == 30:
                         game.cur_events_list.append('The clan decides that no cat is fit to be deputy')
                 else:
                     game.cur_events_list.insert(
