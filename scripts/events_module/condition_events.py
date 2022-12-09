@@ -114,7 +114,7 @@ class Condition_Events():
                             med_cat = None
                             if len(med_list) == 0 and random_index == 0:
                                 random_index = 1
-                            else:
+                            elif len(med_list) != 0:
                                 med_cat = random.choice(med_list)
                             event = possible_string_list[random_index]
                             event = event_text_adjust(Cat, event, cat, med_cat)  # adjust the text
@@ -443,7 +443,7 @@ class Condition_Events():
                         med_cat = None
                         if len(med_list) == 0 and random_index == 0:
                             random_index = 2
-                        else:
+                        elif len(med_list) != 0:
                             med_cat = random.choice(med_list)
                             if med_cat == cat:
                                 random_index = 2
@@ -478,7 +478,7 @@ class Condition_Events():
                                 med_cat = None
                                 if len(med_list) == 0 and random_index == 0:
                                     random_index = 1
-                                else:
+                                elif len(med_list) != 0:
                                     med_cat = random.choice(med_list)
                                 event = possible_string_list[random_index]
                                 event = event_text_adjust(Cat, event, cat, med_cat)  # adjust the text
@@ -558,7 +558,7 @@ class Condition_Events():
                             med_cat = None
                             if len(med_list) == 0 and random_index == 0:
                                 random_index = 1
-                            else:
+                            elif len(med_list) != 0:
                                 med_cat = random.choice(med_list)
                             event = possible_string_list[random_index]
                             event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
