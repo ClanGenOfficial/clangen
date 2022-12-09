@@ -76,6 +76,82 @@
     "max_cats": 1,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_herbs1",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["med_cat", "apprentice", "med_only", "herbs"],
+    "intro_text": "p_l and app1 are going out to gather dandelions. app1 asks their mentor what they'll do if the rabbits have eaten all of it. p_l responds that they'll cross that river when they get to it.",
+    "decline_text": "A cat grabs p_l's attention before they can leave.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "The two medicine cats find the plants in good shape and are able to collect plenty.",
+        "The dandelions are so plentiful that it seems like there's enough for both cats and rabbits to take what they need."
+    ],
+    "fail_text": [
+        "app1 reaches the patch first and p_l can tell by their drooping ears that there must not be enough left to collect."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_herbs2",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["med_cat", "herbs", "no_app"],
+    "intro_text": "p_l is on a mission to find herbs. They know a nice place where mullein grows and it's always good to have some on paw for coughs and sore throats.",
+    "decline_text": "A cat grabs p_l's attention before they can leave camp.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "p_l is relieved to find that the mullein is still intact. They knock a stray weevil off of a leaf as they're gathering the herb.",
+        "Not only is the mullein intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l purrs in satisfaction - seems like they've caught two prey in one blow on this trip."
+    ],
+    "fail_text": [
+        "p_l reaches the mullein plant that the clan has used for many seasons and finds that it's being torn to shreds by bugs. They hiss in exasperation and bat some of the leaf bugs off the plant. Maybe it'll grow back next newleaf."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "fst_med_herbs3",
+    "biome": "forest",
+    "season": "Any",
+    "tags": ["med_cat", "warrior", "herbs", "dislike"],
+    "intro_text": "p_l needs to go and gather some burdock root. They take along what warriors they can find around camp to help gather and carry the roots back.",
+    "decline_text": "A cat grabs p_l's attention before they can leave.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "The medicine cat and their entourage find the herbs in good time. The warriors don't even complain much when p_l instructs them to dig for the roots.",
+        "The burdock plants are plentiful in the area that p_l chose. They'll have a good supply to last a while!"
+    ],
+    "fail_text": [
+        "p_l can't find the burdock plant they were thinking about. Maybe it was trampled by some animal. Oh well.",
+        "By the time they reach the burdock plants, p_l is about ready to claw r_c's ears off. Great StarClan! How can a cat be so annoying? p_l hisses in exasperation and they notice that the burdock is wilted on top of that. The roots will surely be no good."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 
 ]

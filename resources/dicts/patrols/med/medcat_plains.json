@@ -30,12 +30,12 @@
     "season": "Any",
     "tags": ["med_cat", "apprentice", "trust", "respect", "med_only"],
     "intro_text": "p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory, both above and underground.",
-    "decline_text": "As they see app1’s absent minded gaze they change their mind. Maybe another day when app1 is more focused and less liable to get lost in the tunnels",
+    "decline_text": "As they see app1's absent minded gaze they change their mind. Maybe another day when app1 is more focused and less liable to get lost in the tunnels",
     "chance_of_success": 65,
     "exp": 10,
     "success_text": [
         "app1 is focused and attentive. p_l is confident that next time when there is an emergency app1 will be able to find those herbs both under and above ground without them if needed.",
-        "As p_l is explaining why and where the herbs are growing, app1 lets out a shout. To p_l’s surprise they have found a previously unknown patch of an uncommon herb. Stunned and filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh kill.",
+        "As p_l is explaining why and where the herbs are growing, app1 lets out a shout. To p_l's surprise they have found a previously unknown patch of an uncommon herb. Stunned and filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh kill.",
         null,
         null
     ],
@@ -54,9 +54,9 @@
     "patrol_id": "pln_med_herblocation2",
     "biome": "plains",
     "season": "Any",
-    "tags": ["med_cat","apprentice", "med_only"],
+    "tags": ["med_cat", "apprentice", "med_only"],
     "intro_text": "app1 has been sent out into the grasslands to try to find some specific herbs alone.",
-    "decline_text": "Nervous and with the feeling of being watched on the wide open plains, they decide to go back to camp and try again another day. Their mentor will not be pleased. . .",
+    "decline_text": "Nervous and with the feeling of being watched on the wide open plains, they decide to go back to camp and try again another day. Their mentor will not be pleased . . .",
     "chance_of_success": 65,
     "exp": 10,
     "success_text": [

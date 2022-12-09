@@ -39,7 +39,8 @@
         null,
         null
     ],
-    "fail_text": [ "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
+    "fail_text": [ 
+        "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
     ],
     "win_skills": ["None"],
     "win_trait": ["None"],
