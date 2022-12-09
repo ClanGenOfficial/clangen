@@ -447,6 +447,9 @@ class Relation_Events():
             cat.birth_cooldown -= 1
             return can_have_kits
 
+        if 'recovering from birth' in cat.injuries:
+            return can_have_kits
+
         # decide chances of having kits, and if it's possible at all
         not_correct_age = cat.age in ['kitten', 'adolescent'] or cat.moons < 15
         if not_correct_age or cat.no_kits or cat.dead:
