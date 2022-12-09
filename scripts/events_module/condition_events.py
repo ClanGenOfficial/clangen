@@ -165,10 +165,10 @@ class Condition_Events():
                 chosen_illness = 'whitecough'
             cat.get_ill(chosen_illness)
 
-            if possible_illnesses[random_index] in ["running nose", "stomachache"]:
-                event_string = f"{cat.name} has gotten a {possible_illnesses[random_index]}."
+            if chosen_illness in ["running nose", "stomachache"]:
+                event_string = f"{cat.name} has gotten a {chosen_illness}."
             else:
-                event_string = f"{cat.name} has gotten {possible_illnesses[random_index]}."
+                event_string = f"{cat.name} has gotten {chosen_illness}."
 
         # if an event happened, then add event to cur_event_list and save death if it happened.
         if event_string:
