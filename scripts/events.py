@@ -908,8 +908,12 @@ class Events():
                 new_cat.relationships[the_cat.ID] = Relationship(new_cat, the_cat)
             new_cat.thought = 'Is looking around the camp with wonder'
 
-            # chance to give the new cat a permanent condition
-            if not int(random.random() * 200):
+            # chance to give the new cat a permanent condition, higher chance for found kits and litters
+            if kit or litter:
+                chance = 10
+            else:
+                chance = 200
+            if not int(random.random() * chance):
                 possible_conditions = []
                 for condition in PERMANENT:
                     possible_conditions.append(condition)
