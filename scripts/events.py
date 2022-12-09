@@ -301,11 +301,8 @@ class Events():
                         and not cat.dead and not cat.exiled
                         for cat in Cat.all_cats.values())
 
-                    # check if a med cat of a different age exists
-                    has_med = any(
-                        cat.status == 'medicine cat' and cat.age != 'elder'
-                        and not cat.dead and not cat.exiled and not cat.not_working()
-                        for cat in Cat.all_cats.values())
+                    # check if the clan has sufficient med cats
+                    has_med = medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med=get_amount_cat_for_one_medic(game.clan))
 
                     # check if a med cat app already exists
                     has_med_app = any(
@@ -316,6 +313,8 @@ class Events():
                     # assign chance to become med app depending on current med cat and traits
                     if has_elder_med is True and has_med is False:
                         chance = int(random.random() * 3)  # 3 is not part of the range
+                    elif has_med is False:
+                        chance = int(random.random() * 10)
                     elif has_elder_med is False and has_med is True:
                         chance = int(random.random() * 91)
                     elif has_elder_med and has_med:
@@ -325,6 +324,7 @@ class Events():
                             chance = 0
                     else:
                         chance = int(random.random() * 41)
+
                     if chance in range(1, 6):
                         if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
                             chance = 1
