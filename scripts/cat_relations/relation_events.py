@@ -9,7 +9,6 @@ class Relation_Events():
     MAX_ATTEMPTS = 1000
 
     def __init__(self) -> None:
-        self.living_cats = len(list(filter(lambda r: not r.dead, Cat.all_cats.values())))
         self.event_sums = 0
         self.had_one_event = False
         pass
@@ -298,6 +297,7 @@ class Relation_Events():
         hit = int(random.random() * chance)
         if hit:
             return
+        print(chance)
         
         # even with no_gendered_breeding on a male cat with no second parent should not be count as pregnant
         # instead, the cat should get the kit instantly
@@ -398,8 +398,6 @@ class Relation_Events():
         print_event = " ".join(event_list)
         # display event
         game.cur_events_list.append(print_event)
-
-
 
     # ---------------------------------------------------------------------------- #
     #                          check if event is triggered                         #
@@ -583,6 +581,8 @@ class Relation_Events():
             Returns:
                 integer (number)
         """
+        living_cats = len(list(filter(lambda r: not r.dead, Cat.all_cats.values())))
+
         old_male = False
         if cat.gender == 'male' and cat.age == 'elder':
             old_male = True
@@ -608,13 +608,9 @@ class Relation_Events():
         if old_male:
             chance = int(chance * 2)
 
-        if self.living_cats > 30 and other_cat is None:
-            chance += int(int(self.living_cats/2) * int(self.living_cats % 60))
-            if self.living_cats > 60:
-                chance += chance * 2
-            if self.living_cats > 90:
-                chance += chance * 3
-        if self.living_cats < 10 and chance > 10:
+        if other_cat is None:
+            chance = int(int(living_cats) * 50)
+        if chance > 10 > living_cats:
             chance -= 10
 
         return chance

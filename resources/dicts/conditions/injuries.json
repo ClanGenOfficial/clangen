@@ -21,8 +21,7 @@
         "also_got": [
             "torn pelt",
             "torn ear",
-            "blood loss",
-            "shock"
+            "blood loss"
         ],
         "cause_permanent": []
     },
@@ -49,8 +48,7 @@
         ],
         "also_got": [
             "torn pelt",
-            "blood loss",
-            "shock"
+            "blood loss"
         ],
         "cause_permanent": []
     },
@@ -76,7 +74,6 @@
             }
         ],
         "also_got": [
-            "shock"
         ],
         "cause_permanent": []
     },
@@ -181,8 +178,7 @@
         "also_got": [
             "blood loss",
             "scrapes",
-            "bruises",
-            "shock"
+            "bruises"
         ],
         "cause_permanent": [
             "crooked jaw"
@@ -213,8 +209,7 @@
             "mangled leg",
             "blood loss",
             "scrapes",
-            "bruises",
-            "shock"
+            "bruises"
         ],
         "cause_permanent": [
             "weak leg",
@@ -247,8 +242,7 @@
             "dislocated joint",
             "blood loss",
             "scrapes",
-            "bruises",
-            "shock"
+            "bruises"
         ],
         "cause_permanent": [
             "lost a leg",

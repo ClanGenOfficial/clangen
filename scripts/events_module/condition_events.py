@@ -32,7 +32,7 @@ class Condition_Events():
         """
         # one if-statement has a range of 10
         number_of_conditions = 1 * 10
-        ratio = 125  # 1/100 times triggering for each cat each moon
+        ratio = 125  # 1/125 times triggering for each cat each moon
         chance_number = number_of_conditions * ratio
 
         random_number = int(random.random() * chance_number)
@@ -45,14 +45,14 @@ class Condition_Events():
         old_illness = []
 
         illness_progression = {
-            "running nose": ["greencough", "whitecough", "yellowcough"],
-            "kitten-cough": ["whitecough"],
-            "whitecough": ["greencough", "yellowcough"],
-            "greencough": ["yellowcough"],
-            "yellowcough": ["redcough"],
-            "an infected wound": ["a festering wound"],
-            "heat exhaustion": ["heat stroke"],
-            "stomachache": ["diarrhea"],
+            "running nose": "whitecough",
+            "kittencough": "whitecough",
+            "whitecough": "yellowcough",
+            "greencough": "yellowcough",
+            "yellowcough": "redcough",
+            "an infected wound": "a festering wound",
+            "heat exhaustion": "heat stroke",
+            "stomachache": "diarrhea"
         }
 
         if cat.dead or game.clan.game_mode == "classic":
@@ -98,6 +98,13 @@ class Condition_Events():
                             if chance <= 0:
                                 chance = 1
                         if not int(random.random() * chance) and risk['name'] not in cat.illnesses:
+                            # check if the new risk is a previous stage of a current illness
+                            skip = False
+                            if risk['name'] in illness_progression:
+                                if illness_progression[risk['name']] in cat.illnesses:
+                                    skip = True
+                            if skip is True:
+                                break
                             new_illness_name = risk['name']
                             risk["chance"] = 0
                             if new_illness_name == 'torn pelt':
@@ -112,10 +119,15 @@ class Condition_Events():
                             random_index = int(random.random() * len(possible_string_list))
                             med_list = get_med_cats(Cat)
                             med_cat = None
-                            if len(med_list) == 0 and random_index == 0:
-                                random_index = 1
-                            elif len(med_list) != 0:
+                            if len(med_list) == 0:
+                                if random_index == 0:
+                                    random_index = 1
+                                else:
+                                    med_cat = None
+                            else:
                                 med_cat = random.choice(med_list)
+                                if med_cat == cat:
+                                    random_index = 1
                             event = possible_string_list[random_index]
                             event = event_text_adjust(Cat, event, cat, med_cat)  # adjust the text
                             break
@@ -130,7 +142,7 @@ class Condition_Events():
                 for y in range(len(new_illness)):
                     for x in illness_progression:
                         if x == old_illness[y]:
-                            if new_illness[y] in illness_progression.get(x) and old_illness[y] in cat.illnesses:
+                            if new_illness[y] == illness_progression.get(x) and old_illness[y] in cat.illnesses:
                                 cat.illnesses.pop(old_illness[y])
                             else:
                                 continue
@@ -395,7 +407,7 @@ class Condition_Events():
                     # TODO: need to make death events for these so that we can have more variety
 
                     if injury in ["bruises", "cracked pads", "joint pain", "scrapes", "tick bites",
-                                  "water in their lungs", "frostbite"]:
+                                  "water in their lungs", "frostbite", "shock"]:
                         if cat.status == "leader":
                             event = f"{cat.name} has died in the medicine den from {injury}, losing a life."
                             cat.died_by = f"died from {injury}."
@@ -441,9 +453,12 @@ class Condition_Events():
                         random_index = int(random.random() * len(possible_string_list))
                         med_list = get_med_cats(Cat)
                         med_cat = None
-                        if len(med_list) == 0 and random_index == 0:
-                            random_index = 2
-                        elif len(med_list) != 0:
+                        if len(med_list) == 0:
+                            if random_index == 0 or random_index == 1:
+                                random_index = 2
+                            else:
+                                med_cat = None
+                        else:
                             med_cat = random.choice(med_list)
                             if med_cat == cat:
                                 random_index = 2
@@ -476,10 +491,15 @@ class Condition_Events():
                                 random_index = int(random.random() * len(possible_string_list))
                                 med_list = get_med_cats(Cat)
                                 med_cat = None
-                                if len(med_list) == 0 and random_index == 0:
-                                    random_index = 1
-                                elif len(med_list) != 0:
+                                if len(med_list) == 0:
+                                    if random_index == 0:
+                                        random_index = 1
+                                    else:
+                                        med_cat = None
+                                else:
                                     med_cat = random.choice(med_list)
+                                    if med_cat == cat:
+                                        random_index = 1
                                 event = possible_string_list[random_index]
                                 event = event_text_adjust(Cat, event, cat, med_cat)  # adjust the text
                                 event_list.append(event)
@@ -490,7 +510,8 @@ class Condition_Events():
 
             if len(healed_injury) != 0:
                 for y in healed_injury:
-                    cat.injuries.pop(y)
+                    if y in cat.injuries:
+                        cat.injuries.pop(y)
 
         if new_condition in ILLNESSES:
             cat.get_ill(new_condition)
@@ -538,7 +559,25 @@ class Condition_Events():
                 save_death(cat, event)
 
             elif condition_appears:
+                # gather potential event strings for gotten risk
+                possible_string_list = CONGENITAL_CONDITION_GOT_STRINGS[condition]
 
+                # choose event string and ensure clan's med cat number aligns with event text
+                random_index = int(random.random() * len(possible_string_list))
+                med_list = get_med_cats(Cat)
+                med_cat = None
+                if len(med_list) == 0:
+                    if random_index == 0:
+                        random_index = 1
+                    else:
+                        med_cat = None
+                else:
+                    med_cat = random.choice(med_list)
+                    if med_cat == cat:
+                        random_index = 1
+                event = possible_string_list[random_index]
+                event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
+                event_list.append(event)
                 triggered = True
 
         if not triggered:
@@ -556,10 +595,15 @@ class Condition_Events():
                             random_index = int(random.random() * len(possible_string_list))
                             med_list = get_med_cats(Cat)
                             med_cat = None
-                            if len(med_list) == 0 and random_index == 0:
-                                random_index = 1
-                            elif len(med_list) != 0:
+                            if len(med_list) == 0:
+                                if random_index == 0:
+                                    random_index = 1
+                                else:
+                                    med_cat = None
+                            else:
                                 med_cat = random.choice(med_list)
+                                if med_cat == cat:
+                                    random_index = 1
                             event = possible_string_list[random_index]
                             event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
                             event_list.append(event)

@@ -72,7 +72,7 @@
     {
         "camp": "any",
         "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c ate tainted fresh-kill and lost of life.",
+        "death_text": "m_c ate tainted fresh-kill and lost a life.",
         "history_text": [null, "ate tainted fresh-kill"],
         "cat_trait": null,
         "cat_skill": null,

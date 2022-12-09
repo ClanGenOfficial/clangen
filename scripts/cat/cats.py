@@ -15,6 +15,7 @@ from scripts.utility import *
 from scripts.game_structure.game_essentials import *
 from scripts.cat_relations.relationship import *
 
+
 class Cat():
     used_screen = screen
     traits = [

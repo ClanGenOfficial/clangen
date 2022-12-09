@@ -149,6 +149,7 @@ class Events():
             if game.clan.leader.dead or game.clan.leader.exiled:
                 game.cur_events_list.insert(
                     0, f"{game.clan.name}Clan has no leader!")
+                self.perform_ceremonies(game.clan.leader)
 
         game.switches['timeskip'] = False
 
@@ -302,8 +303,11 @@ class Events():
                         for cat in Cat.all_cats.values())
 
                     # check if the clan has sufficient med cats
-                    has_med = medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med=get_amount_cat_for_one_medic(game.clan))
-
+                    if game.clan.game_mode != 'classic':
+                        has_med = medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med=get_amount_cat_for_one_medic(game.clan))
+                    else:
+                        has_med = any(str(cat.status) in {"medicine cat", "medicine cat apprentice"}
+                                      and not cat.dead and not cat.exiled for cat in Cat.all_cats.values())
                     # check if a med cat app already exists
                     has_med_app = any(
                         cat.status == 'medicine cat apprentice'
@@ -313,7 +317,7 @@ class Events():
                     # assign chance to become med app depending on current med cat and traits
                     if has_elder_med is True and has_med is False:
                         chance = int(random.random() * 3)  # 3 is not part of the range
-                    elif has_med is False:
+                    elif has_med is False and game.clan.game_mode != 'classic':
                         chance = int(random.random() * 10)
                     elif has_elder_med is False and has_med is True:
                         chance = int(random.random() * 91)
