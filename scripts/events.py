@@ -147,9 +147,9 @@ class Events():
 
             # check for leader
             if game.clan.leader.dead or game.clan.leader.exiled:
-                game.cur_events_list.insert(
-                    0, f"{game.clan.name}Clan has no leader!")
                 self.perform_ceremonies(game.clan.leader)
+                if game.clan.leader.dead or game.clan.leader.exiled:
+                    game.cur_events_list.insert(0, f"{game.clan.name}Clan has no leader!")
 
         game.switches['timeskip'] = False
 
@@ -318,12 +318,12 @@ class Events():
                     if has_elder_med is True and has_med is False:
                         chance = int(random.random() * 3)  # 3 is not part of the range
                     elif has_med is False and game.clan.game_mode != 'classic':
-                        chance = int(random.random() * 10)
+                        chance = int(random.random() * 8)
                     elif has_elder_med is False and has_med is True:
                         chance = int(random.random() * 91)
                     elif has_elder_med and has_med:
                         if very_old_med:
-                            chance = int(random.random() * 30)
+                            chance = int(random.random() * 20)
                         else:
                             chance = 0
                     else:

@@ -325,8 +325,8 @@ class Cat():
         else:
             self.dead = True
 
-        self.injuries = {}
-        self.illnesses = {}
+        self.injuries.clear()
+        self.illnesses.clear()
 
         if self.mate is not None:
             self.mate = None

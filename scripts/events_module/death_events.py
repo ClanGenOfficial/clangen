@@ -34,7 +34,7 @@ class Death_Events():
             other_clan = game.clan.all_clans[0]
             other_clan_name = f'{str(other_clan.name)}Clan'
 
-        possible_events = self.generate_events.possible_death_events(cat.status)
+        possible_events = self.generate_events.possible_death_events(cat.status, cat.age)
         final_events = []
 
         for event in possible_events:

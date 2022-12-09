@@ -127,7 +127,7 @@ class Game():
         'backgrounds': True,
         'autosave': False,
         'disasters': False,
-        'retirement': True,
+        'retirement': False,
         'language': 'english',
         'affair': False,
         'shaders': False,

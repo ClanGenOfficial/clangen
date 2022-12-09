@@ -233,7 +233,7 @@ class Condition_Events():
                 triggered = True
 
             if triggered:
-                possible_events = self.generate_events.possible_injury_events(cat.status)
+                possible_events = self.generate_events.possible_injury_events(cat.status, cat.age)
                 final_events = []
 
                 triggered = True
@@ -635,7 +635,7 @@ class Condition_Events():
             'elder': 0
         }
 
-        if not triggered and not cat.dead and not cat.retired and cat.status not in ['leader', 'medicine cat', 'kitten']:
+        if not triggered and not cat.dead and not cat.retired and cat.status not in ['leader', 'medicine cat', 'kitten'] and game.settings['retirement'] is False:
             for condition in cat.permanent_condition:
                 if cat.permanent_condition[condition]['severity'] == 'major':
                     chance = int(retire_chances.get(cat.age))

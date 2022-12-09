@@ -4,11 +4,9 @@ from scripts.game_structure.game_essentials import game
 
 class GenerateEvents():
 
-    def possible_injury_events(self, status):
+    def possible_injury_events(self, status, age):
 
         event_list = []
-
-        print(game.clan.biome, status, 'test')
 
         if game.clan.biome == 'Forest':
             if status == "kitten":
@@ -20,7 +18,7 @@ class GenerateEvents():
             elif status == "warrior":
                 event_list.extend(self.generate_injury_event(ALL_FOREST_WARRIOR_EVENT_INJURIES))
                 event_list.extend(self.generate_injury_event(GEN_WARRIOR_EVENT_INJURIES))
-            elif status == "elder":
+            elif status == "elder" and age == 'elder':
                 event_list.extend(self.generate_injury_event(ALL_FOREST_ELDER_EVENT_INJURIES))
                 event_list.extend(self.generate_injury_event(GEN_ELDER_EVENT_INJURIES))
             elif status in ["medicine cat", "medicine cat apprentice"]:
@@ -44,7 +42,7 @@ class GenerateEvents():
             elif status == "warrior":
                 event_list.extend(self.generate_injury_event(ALL_PLAINS_WARRIOR_EVENT_INJURIES))
                 event_list.extend(self.generate_injury_event(GEN_WARRIOR_EVENT_INJURIES))
-            elif status == "elder":
+            elif status == "elder" and age == 'elder':
                 event_list.extend(self.generate_injury_event(ALL_PLAINS_ELDER_EVENT_INJURIES))
                 event_list.extend(self.generate_injury_event(GEN_ELDER_EVENT_INJURIES))
             elif status in ["medicine cat", "medicine cat apprentice"]:
@@ -68,7 +66,7 @@ class GenerateEvents():
             elif status == "warrior":
                 event_list.extend(self.generate_injury_event(ALL_MOUNTAINOUS_WARRIOR_EVENT_INJURIES))
                 event_list.extend(self.generate_injury_event(GEN_WARRIOR_EVENT_INJURIES))
-            elif status == "elder":
+            elif status == "elder" and age == 'elder':
                 event_list.extend(self.generate_injury_event(ALL_MOUNTAINOUS_ELDER_EVENT_INJURIES))
                 event_list.extend(self.generate_injury_event(GEN_ELDER_EVENT_INJURIES))
             elif status in ["medicine cat", "medicine cat apprentice"]:
@@ -92,7 +90,7 @@ class GenerateEvents():
             elif status == "warrior":
                 event_list.extend(self.generate_injury_event(ALL_BEACH_WARRIOR_EVENT_INJURIES))
                 event_list.extend(self.generate_injury_event(GEN_WARRIOR_EVENT_INJURIES))
-            elif status == "elder":
+            elif status == "elder" and age == 'elder':
                 event_list.extend(self.generate_injury_event(ALL_BEACH_ELDER_EVENT_INJURIES))
                 event_list.extend(self.generate_injury_event(GEN_ELDER_EVENT_INJURIES))
             elif status in ["medicine cat", "medicine cat apprentice"]:
@@ -127,7 +125,7 @@ class GenerateEvents():
             injury_list.append(injury_event)
         return injury_list
     
-    def possible_death_events(self, status):
+    def possible_death_events(self, status, age):
 
         event_list = []
 
@@ -141,7 +139,7 @@ class GenerateEvents():
             elif status == "warrior":
                 event_list.extend(self.generate_death_events(ALL_FOREST_WARRIOR_EVENT_DEATH))
                 event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_DEATH))
-            elif status == "elder":
+            elif status == "elder" and age == 'elder':
                 event_list.extend(self.generate_death_events(ALL_FOREST_ELDER_EVENT_DEATH))
                 event_list.extend(self.generate_death_events(GEN_ELDER_EVENT_DEATH))
             elif status in ["medicine cat", "medicine cat apprentice"]:
@@ -165,7 +163,7 @@ class GenerateEvents():
             elif status == "warrior":
                 event_list.extend(self.generate_death_events(ALL_PLAINS_WARRIOR_EVENT_DEATH))
                 event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_DEATH))
-            elif status == "elder":
+            elif status == "elder" and age == 'elder':
                 event_list.extend(self.generate_death_events(ALL_PLAINS_ELDER_EVENT_DEATH))
                 event_list.extend(self.generate_death_events(GEN_ELDER_EVENT_DEATH))
             elif status in ["medicine cat", "medicine cat apprentice"]:
@@ -189,7 +187,7 @@ class GenerateEvents():
             elif status == "warrior":
                 event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_WARRIOR_EVENT_DEATH))
                 event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_DEATH))
-            elif status == "elder":
+            elif status == "elder" and age == 'elder':
                 event_list.extend(self.generate_death_events(ALL_MOUNTAINOUS_ELDER_EVENT_DEATH))
                 event_list.extend(self.generate_death_events(GEN_ELDER_EVENT_DEATH))
             elif status in ["medicine cat", "medicine cat apprentice"]:
@@ -213,7 +211,7 @@ class GenerateEvents():
             elif status == "warrior":
                 event_list.extend(self.generate_death_events(ALL_BEACH_WARRIOR_EVENT_DEATH))
                 event_list.extend(self.generate_death_events(GEN_WARRIOR_EVENT_DEATH))
-            elif status == "elder":
+            elif status == "elder" and age == 'elder':
                 event_list.extend(self.generate_death_events(ALL_BEACH_ELDER_EVENT_DEATH))
                 event_list.extend(self.generate_death_events(GEN_ELDER_EVENT_DEATH))
             elif status in ["medicine cat", "medicine cat apprentice"]:
