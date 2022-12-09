@@ -1033,7 +1033,7 @@ class Events():
         ))
 
         # chance to kill leader
-        if not int(random.random() * 80) and cat.status == 'leader' and not triggered_death:  # 1/80
+        if not int(random.random() * 80) and cat.status == 'leader' and not triggered_death and not cat.not_working():  # 1/80
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
 
@@ -1044,7 +1044,7 @@ class Events():
 
         # extra death chance and injuries in expanded & cruel season
         if game.clan.game_mode in ["expanded", "cruel season"]:
-            if not int(random.random() * 350):  # 1/400
+            if not int(random.random() * 350) and not cat.not_working():  # 1/400
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
                 triggered_death = True
             else:

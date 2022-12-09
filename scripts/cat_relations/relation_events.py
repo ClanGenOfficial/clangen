@@ -378,18 +378,24 @@ class Relation_Events():
 
         # choose event string
         print_event = ""
+        event_list = []
         if other_cat is None:
-            print_event = f"{str(cat.name)} had a litter of {str(kits_amount)} kit(s), but refused to talk about their origin"
+            print_event = f"{str(cat.name)} had a litter of {str(kits_amount)} kit(s), but refused to talk about their origin."
         elif cat.mate == other_cat.ID:
             if cat.gender == 'female':
-                print_event = f"{str(cat.name)} had a litter of {str(kits_amount)} kit(s) with {str(other_cat.name)}"
+                print_event = f"{str(cat.name)} had a litter of {str(kits_amount)} kit(s) with {str(other_cat.name)}."
             else:
-                print_event = f"{str(other_cat.name)} had a litter of {str(kits_amount)} kit(s) with {str(cat.name)}"
+                print_event = f"{str(other_cat.name)} had a litter of {str(kits_amount)} kit(s) with {str(cat.name)}."
         else:
-            print_event = f"{str(cat.name)} had a secret litter of {str(kits_amount)} kit(s) with {str(other_cat.name)}"
+            print_event = f"{str(cat.name)} had a secret litter of {str(kits_amount)} kit(s) with {str(other_cat.name)}."
+        event_list.append(print_event)
 
         cat.get_injured("recovering from birth", event_triggered=True)
+        if 'blood loss' in cat.injuries:
+            print_event = f"The birth was stressful and {str(cat.name)} lost a lot of blood."
+            event_list.append(print_event)
 
+        print_event = " ".join(event_list)
         # display event
         game.cur_events_list.append(print_event)
 

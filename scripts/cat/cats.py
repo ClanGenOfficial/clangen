@@ -689,11 +689,11 @@ class Cat():
     def moon_skip_injury(self, injury):
         """handles the moon skip for injury"""
         if not self.is_injured():
-            return False
+            return
 
         if self.injuries[injury]["event_triggered"]:
             self.injuries[injury]["event_triggered"] = False
-            return False
+            return True
 
         mortality = self.injuries[injury]["mortality"]
 
@@ -705,14 +705,14 @@ class Cat():
             if self.status == 'leader':
                 game.clan.leader_lives -= 1
             self.die()
-            return True
+            return
 
         # if the cat has an infected wound, the wound shouldn't heal till the illness is cured
         if not self.is_ill():
             self.injuries[injury]["duration"] -= 1
         if self.injuries[injury]["duration"] <= 0:
             self.healed_condition = True
-            return True
+            return
 
     def moon_skip_permanent_condition(self, condition):
         """handles the moon skip for permanent conditions"""
@@ -977,7 +977,7 @@ class Cat():
         self.status = 'elder'
 
     def additional_injury(self, injury):
-        self.get_injured(injury)
+        self.get_injured(injury, event_triggered=True)
 
     def is_ill(self):
         is_ill = True

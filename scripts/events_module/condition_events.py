@@ -389,7 +389,7 @@ class Condition_Events():
         if not triggered:
             for y in cat.injuries:
                 injury = y
-                cat.moon_skip_injury(injury)
+                skipped = cat.moon_skip_injury(injury)
                 if cat.dead:
                     triggered = True
                     # TODO: need to make death events for these so that we can have more variety
@@ -428,6 +428,7 @@ class Condition_Events():
                         event = event_text_adjust(Cat, event, cat, other_cat=None)  # adjust the text
 
                     healed_injury.append(injury)
+                    cat.healed_condition = False
 
                     # try to give a permanent condition based on healed injury and new scar if any
                     condition_got = self.handle_permanent_conditions(cat, injury_name=injury, scar=scar_given)
@@ -448,51 +449,48 @@ class Condition_Events():
                                 random_index = 2
                         event = possible_string_list[random_index]
                         event = event_text_adjust(Cat, event, cat, other_cat=med_cat)  # adjust the text
-
                     if event is not None:
                         event_list.append(event)
 
-        if cat.healed_condition is True:
-            for y in healed_injury:
-                cat.injuries.pop(y)
-            cat.healed_condition = False
+                elif not triggered and not skipped:
+                    risks = cat.injuries[injury]["risks"]
+                    for risk in risks:
+                        # adjust chance of risk gain if clan has enough meds or if clan has no meds at all
+                        amount_per_med = get_amount_cat_for_one_medic(game.clan)
+                        chance = risk["chance"]
+                        if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
+                            chance = risk["chance"] + 10
+                        if game.clan.medicine_cat is None:
+                            chance = chance / 2
+                            if chance <= 0:
+                                chance = 1
+                        if not int(random.random() * chance):
+                            if risk['name'] not in cat.injuries and risk['name'] not in cat.illnesses:
+                                if risk['name'] == 'an infected wound' and 'a festering wound' in cat.illnesses:
+                                    break  # prevents a cat with a festering wound from receiving an infected wound
+                                new_condition = risk['name']
+                                # gather potential event strings for gotten condition
+                                possible_string_list = INJURY_RISK_STRINGS[injury][new_condition]
 
-        if not triggered:
-            for injury in cat.injuries:
-                risks = cat.injuries[injury]["risks"]
-                for risk in risks:
-                    # adjust chance of risk gain if clan has enough meds or if clan has no meds at all
-                    amount_per_med = get_amount_cat_for_one_medic(game.clan)
-                    chance = risk["chance"]
-                    if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
-                        chance = risk["chance"] + 10
-                    if game.clan.medicine_cat is None:
-                        chance = chance / 2
-                        if chance <= 0:
-                            chance = 1
-                    if not int(random.random() * chance):
-                        if risk['name'] not in cat.injuries and risk['name'] not in cat.illnesses:
-                            if risk['name'] == 'an infected wound' and 'a festering wound' in cat.illnesses:
-                                break  # prevents a cat with a festering wound from receiving an infected wound
-                            new_condition = risk['name']
-                            # gather potential event strings for gotten condition
-                            possible_string_list = INJURY_RISK_STRINGS[injury][new_condition]
+                                # choose event string and ensure clan's med cat number aligns with event text
+                                random_index = int(random.random() * len(possible_string_list))
+                                med_list = get_med_cats(Cat)
+                                med_cat = None
+                                if len(med_list) == 0 and random_index == 0:
+                                    random_index = 1
+                                else:
+                                    med_cat = random.choice(med_list)
+                                event = possible_string_list[random_index]
+                                event = event_text_adjust(Cat, event, cat, med_cat)  # adjust the text
+                                event_list.append(event)
+                                break
+                    if new_condition is not None:
+                        triggered = True
+                        break
 
-                            # choose event string and ensure clan's med cat number aligns with event text
-                            random_index = int(random.random() * len(possible_string_list))
-                            med_list = get_med_cats(Cat)
-                            med_cat = None
-                            if len(med_list) == 0 and random_index == 0:
-                                random_index = 1
-                            else:
-                                med_cat = random.choice(med_list)
-                            event = possible_string_list[random_index]
-                            event = event_text_adjust(Cat, event, cat, med_cat)  # adjust the text
-                            event_list.append(event)
-                            break
-                if new_condition is not None:
-                    triggered = True
-                    break
+            if len(healed_injury) != 0:
+                for y in healed_injury:
+                    cat.injuries.pop(y)
 
         if new_condition in ILLNESSES:
             cat.get_ill(new_condition)
