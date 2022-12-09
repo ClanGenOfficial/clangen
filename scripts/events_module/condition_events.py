@@ -92,7 +92,6 @@ class Condition_Events():
                     continue
 
                 # if not dead or healed try to assign new illness from current illness risks
-                print(illness, cat.healed_condition)
                 for risk in cat.illnesses[illness]["risks"]:
                     # adjust chance of risk gain if clan has enough meds
                     amount_per_med = get_amount_cat_for_one_medic(game.clan)
@@ -301,7 +300,7 @@ class Condition_Events():
                     if "war" in injury_event.tags:
                         other_clan_name = enemy_clan
 
-                    print(cat.name, cat.status, len(final_events), other_cat.name)
+                    print('INJURY:', cat.name, cat.status, len(final_events), other_cat.name, other_cat.status)
 
                     text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
 
@@ -524,7 +523,6 @@ class Condition_Events():
             cat.get_ill(new_condition)
         elif new_condition in INJURIES:
             if new_condition == 'lingering shock':
-                print(new_condition)
                 cat.injuries.pop('shock')
             cat.get_injured(new_condition)
 
@@ -595,7 +593,6 @@ class Condition_Events():
                             triggered = True
                             new_ouchie = risk["name"]
 
-                            print(condition, new_ouchie)
                             # gather potential event strings for gotten risk
                             possible_string_list = PERM_CONDITION_RISK_STRINGS[condition][new_ouchie]
 

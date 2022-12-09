@@ -304,7 +304,12 @@ class Relation_Events():
         if not other_cat and cat.gender == 'male':
             amount = self.get_amount_of_kits(cat)
             self.get_kits(amount, cat, None, clan)
-            print_event = f"{str(cat.name)} brought a litter of {str(amount)} kit(s) back to camp, but refused to talk about their origin"
+            insert = 'this should not display'
+            if amount == 1:
+                insert = 'a single kitten'
+            if amount > 1:
+                insert = f'a litter of {str(amount)} kits'
+            print_event = f"{str(cat.name)} brought {insert} back to camp, but refused to talk about their origin"
             game.cur_events_list.append(print_event)
             # display event
             #if len(print_event) < 100:
@@ -376,18 +381,24 @@ class Relation_Events():
         # delete the cat out of the pregnancy dictionary
         del clan.pregnancy_data[cat.ID]
 
+        insert = 'this should not display'
+        if kits_amount == 1:
+            insert = 'a single kitten'
+        if kits_amount > 1:
+            insert = f'a litter of {str(kits_amount)} kits'
+
         # choose event string
         print_event = ""
         event_list = []
         if other_cat is None:
-            print_event = f"{str(cat.name)} had a litter of {str(kits_amount)} kit(s), but refused to talk about their origin."
+            print_event = f"{str(cat.name)} had {insert}, but refused to talk about their origin."
         elif cat.mate == other_cat.ID:
             if cat.gender == 'female':
-                print_event = f"{str(cat.name)} had a litter of {str(kits_amount)} kit(s) with {str(other_cat.name)}."
+                print_event = f"{str(cat.name)} had {insert} with {str(other_cat.name)}."
             else:
-                print_event = f"{str(other_cat.name)} had a litter of {str(kits_amount)} kit(s) with {str(cat.name)}."
+                print_event = f"{str(other_cat.name)} had {insert} with {str(cat.name)}."
         else:
-            print_event = f"{str(cat.name)} had a secret litter of {str(kits_amount)} kit(s) with {str(other_cat.name)}."
+            print_event = f"{str(cat.name)} secretly had {insert} with {str(other_cat.name)}."
         event_list.append(print_event)
 
         cat.get_injured("recovering from birth", event_triggered=True)

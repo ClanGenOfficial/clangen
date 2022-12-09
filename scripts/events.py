@@ -1236,10 +1236,9 @@ class Events():
             Cat.all_cats.values()
         ))
         alive_count = len(alive_cats)
-        print('INFECTION ATTEMPTED')
 
         # if large amount of the population is already sick, stop spreading
-        if already_sick_count >= alive_count * .20:
+        if already_sick_count >= alive_count * .25:
             print('CURRENT SICK COUNT TOO HIGH', already_sick_count, alive_count)
             return
 
@@ -1287,12 +1286,9 @@ class Events():
                     event = f'{illness_name} has spread around the camp. '\
                             f'{", ".join(infected_names[:-1])}, and {infected_names[-1]} have been infected.'
 
-                print('INFECTION INFECTION PANDEMIC ALERT')
+                print('OUTBREAK - PANDEMIC ALERT')
                 game.cur_events_list.append(event)
                 break
-
-
-
 
 
     def coming_out(self, cat):

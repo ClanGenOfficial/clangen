@@ -843,8 +843,6 @@ class Cat():
                 "risks": new_illness.risks,
                 "event_triggered": new_illness.new
             }
-            print('new illness', new_illness.name)
-
 
 
     def get_injured(self, name, event_triggered=False):
@@ -853,7 +851,6 @@ class Cat():
                 print(f"WARNING: {name} is not in the injuries collection.")
             return
 
-        print('test', name)
         injury = INJURIES[name]
         mortality = injury["mortality"][self.age]
 
@@ -889,7 +886,6 @@ class Cat():
                 "cause_permanent": new_injury.cause_permanent,
                 "event_triggered": new_injury.new
             }
-            print('new injury', new_injury.name)
 
         if len(new_injury.also_got) > 0 and not int(random.random() * 5):
             self.also_got = True
@@ -956,7 +952,6 @@ class Cat():
                 "risks": new_perm_condition.risks,
                 "event_triggered": new_perm_condition.new
             }
-            print('new permanent condition', new_perm_condition.name)
             new_condition = True
 
         return new_condition
