@@ -1,0 +1,21 @@
+[
+    {
+        "injury": "broken bone",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c couldn't help but try to show off by scaling the tallest cliff they could find. Their plan backfired when they slipped and plummetted to the ground.",
+        "history_text": [
+            "m_c was scarred after falling from a cliff.",
+            "m_c died from their wounds after falling from a cliff",
+            null
+        ],
+        "cat_trait": ["adventurous", "ambitious", "bold", "childish", "confident", "daring", "playful", "troublesome"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    }
+]

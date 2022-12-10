@@ -1,3 +1,5 @@
+from random import choice
+
 import ujson
 
 def get_thoughts(cat, other_cat):
@@ -354,6 +356,8 @@ def get_elder_thoughts(cat, other_cat):
 
     # trait specific medicine cat apprentice thoughts    
     trait = cat.trait
+    if trait in cat.kit_traits:
+        cat.trait = choice(cat.traits)
     thoughts += ELDER_TRAITS[trait]
 
     return thoughts

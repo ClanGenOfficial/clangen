@@ -211,7 +211,7 @@ class SettingsScreen(Screens):
         verdana.text("Enable clan page background", (x_value, 265))
         verdana.text("Automatically save every five moons", (x_value, 304))
         verdana.text("Allow mass extinction events", (x_value, 343))
-        verdana.text("Force cats to retire after severe injury", (x_value, 382))
+        verdana.text("Cats will never retire from a permanent condition", (x_value, 382))
         verdana.text("Enable shaders", (x_value, 421))
         verdana.text("Display hotkeys on text buttons", (x_value, 460))
         verdana.text("Allow leaders to automatically choose a new deputy", (x_value, 499))

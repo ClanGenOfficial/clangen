@@ -138,6 +138,7 @@ class EventsScreen(Screens):
                                 text='TIMESKIP ONE MOON',
                                 size=(180, 30),
                                 available=False)
+
         if game.clan.closed_borders == False:
             buttons.draw_button((500,210), button_name='close_borders', text='Close Borders', size = (50, 30), available=True)
         else:

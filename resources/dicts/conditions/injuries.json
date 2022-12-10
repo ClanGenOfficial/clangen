@@ -1,0 +1,824 @@
+{
+    "claw-wound":{
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 5,
+            "adolescent": 40,
+            "young adult": 50,
+            "adult": 50,
+            "senior adult": 50,
+            "elder": 10
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "torn pelt",
+            "torn ear",
+            "blood loss"
+        ],
+        "cause_permanent": []
+    },
+
+    "bite-wound":{
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 45,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 15
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "torn pelt",
+            "blood loss"
+        ],
+        "cause_permanent": []
+    },
+
+    "snake bite":{
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 45,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 15
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": []
+    },
+
+    "rat bite":{
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 45,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 15
+        },
+        "illness_infectiousness": [
+            {
+                "name": "whitecough",
+                "lower_by": 3
+            }
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            },
+            {
+                "name": "a festering wound",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "torn pelt"
+        ],
+        "cause_permanent": []
+    },
+
+    "tick bites":{
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 40
+            }
+        ],
+        "also_got": [],
+        "cause_permanent": []
+    },
+
+    "blood loss":{
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 5,
+            "adolescent": 15,
+            "young adult": 30,
+            "adult": 30,
+            "senior adult": 30,
+            "elder": 20
+        },
+        "illness_infectiousness": [],
+        "risks": [
+        ],
+        "also_got": [
+            "shock"
+        ],
+        "cause_permanent": []
+    },
+
+    "broken jaw":{
+        "duration": 6,
+        "severity": "severe",
+        "medicine_duration": 5,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 45,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 15
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "blood loss",
+            "scrapes",
+            "bruises"
+        ],
+        "cause_permanent": [
+            "crooked jaw"
+        ]
+    },
+
+    "broken bone":{
+        "duration": 6,
+        "severity": "severe",
+        "medicine_duration": 5,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 45,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 15
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "torn pelt",
+            "mangled leg",
+            "blood loss",
+            "scrapes",
+            "bruises"
+        ],
+        "cause_permanent": [
+            "weak leg",
+            "twisted leg"
+        ]
+    },
+
+    "mangled leg":{
+        "duration": 3,
+        "severity": "severe",
+        "medicine_duration": 2,
+        "mortality": {
+            "kitten": 15,
+            "adolescent": 50,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 15
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "torn pelt",
+            "broken bone",
+            "dislocated joint",
+            "blood loss",
+            "scrapes",
+            "bruises"
+        ],
+        "cause_permanent": [
+            "lost a leg",
+            "weak leg",
+            "twisted leg"
+        ]
+    },
+
+    "dislocated joint":{
+        "duration": 4,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [],
+        "also_got": [
+            "bruises",
+            "sore",
+            "joint pain"
+        ],
+        "cause_permanent": [
+            "constant joint pain"
+        ]
+    },
+
+        "joint pain":{
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [],
+        "also_got": [
+        ],
+        "cause_permanent": [
+        ]
+    },
+
+    "sprain":{
+        "duration": 1,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [],
+        "also_got": [],
+        "cause_permanent": [
+        ]
+    },
+
+    "mangled tail":{
+        "duration": 3,
+        "severity": "severe",
+        "medicine_duration": 2,
+        "mortality": {
+            "kitten": 15,
+            "adolescent": 50,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 15
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "torn pelt",
+            "blood loss"
+        ],
+        "cause_permanent": [
+            "lost their tail"
+        ]
+    },
+
+    "bruises":{
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [],
+        "also_got": [],
+        "cause_permanent": [
+        ]
+    },
+
+    "cracked pads":{
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 30
+            }
+        ],
+        "also_got": [],
+        "cause_permanent": [
+        ]
+    },
+
+    "sore":{
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [],
+        "also_got": [],
+        "cause_permanent": [
+        ]
+    },
+
+    "phantom pain":{
+        "duration": 1,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [],
+        "also_got": [],
+        "cause_permanent": [
+        ]
+    },
+
+    "scrapes":{
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 30
+            }
+        ],
+        "also_got": [],
+        "cause_permanent": [
+        ]
+    },
+
+    "splinter":{
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 40
+            }
+        ],
+        "also_got": [],
+        "cause_permanent": [
+        ]
+    },
+
+    "torn pelt":{
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 30
+            }
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+        ]
+    },
+    "torn ear":{
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 30
+            }
+        ],
+        "also_got": [],
+        "cause_permanent": [
+            "partial hearing loss"
+        ]
+    },
+
+    "frostbite":{
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 20,
+            "young adult": 30,
+            "adult": 30,
+            "senior adult": 20,
+            "elder": 10
+        },
+        "illness_infectiousness": [
+            {
+                "name": "running nose",
+                "lower_by": 6
+            }
+        ],
+        "risks": [
+            {
+                "name": "running nose",
+                "chance": 4
+            }
+        ],
+        "also_got": [],
+        "cause_permanent": [
+            "lost a leg",
+            "lost their tail"
+        ]
+    },
+
+    "recovering from birth":{
+        "duration": 3,
+        "severity": "major",
+        "medicine_duration": 5,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 20
+            }
+        ],
+        "also_got": [
+            "blood loss"
+        ],
+        "cause_permanent": [
+        ]
+    },
+
+    "water in their lungs":{
+        "duration": 3,
+        "severity": "major",
+        "medicine_duration": 2,
+        "mortality": {
+            "kitten": 30,
+            "adolescent": 60,
+            "young adult": 80,
+            "adult": 80,
+            "senior adult": 80,
+            "elder": 50
+        },
+        "illness_infectiousness": [
+            {
+                "name": "running nose",
+                "lower_by": 5
+            },
+            {
+                "name": "whitecough",
+                "lower_by": 3
+            }
+        ],
+        "risks": [
+            {
+                "name": "running nose",
+                "chance": 10
+            },
+            {
+                "name": "whitecough",
+                "chance": 20
+            }
+        ],
+        "also_got": [],
+        "cause_permanent": [
+            "raspy lungs"
+        ]
+    },
+
+    "burn":{
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 30,
+            "young adult": 50,
+            "adult": 60,
+            "senior adult": 50,
+            "elder": 30
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 30
+            }
+        ],
+        "also_got": [],
+        "cause_permanent": [
+        ]
+    },
+
+    "severe burn":{
+        "duration": 4,
+        "severity": "severe",
+        "medicine_duration": 2,
+        "mortality": {
+            "kitten": 5,
+            "adolescent": 10,
+            "young adult": 30,
+            "adult": 30,
+            "senior adult": 30,
+            "elder": 10
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 30
+            }
+        ],
+        "also_got": [],
+        "cause_permanent": [
+            "lost their tail",
+            "lost a leg"
+        ]
+    },
+    "shock":{
+        "duration": 1,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 8,
+            "adolescent": 15,
+            "young adult": 30,
+            "adult": 30,
+            "senior adult": 30,
+            "elder": 15
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "lingering shock",
+                "chance": 20
+            }
+        ],
+        "also_got": [],
+        "cause_permanent": [
+        ]
+    },
+    "lingering shock":{
+        "duration": 12,
+        "severity": "major",
+        "medicine_duration": 8,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+        ],
+        "also_got": [],
+        "cause_permanent": [
+            "recurring shock"
+        ]
+    },
+    "shivering":{
+        "duration": 2,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 30,
+            "young adult": 50,
+            "adult": 80,
+            "senior adult": 50,
+            "elder": 20
+        },
+        "illness_infectiousness": [
+            {
+                "name": "running nose",
+                "lower_by": 5
+            },
+            {
+                "name": "whitecough",
+                "lower_by": 3
+            }
+        ],
+        "risks": [
+            {
+                "name": "frostbite",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "frostbite"
+        ],
+        "cause_permanent": [
+        ]
+    },
+    "dehydrated":{
+        "duration": 1,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 30,
+            "young adult": 50,
+            "adult": 80,
+            "senior adult": 50,
+            "elder": 20
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "heat exhaustion",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "heat exhaustion"
+        ],
+        "cause_permanent": [
+        ]
+    },
+    "head damage":{
+        "duration": 5,
+        "severity": "major",
+        "medicine_duration": 2,
+        "mortality": {
+            "kitten": 15,
+            "adolescent": 30,
+            "young adult": 40,
+            "adult": 50,
+            "senior adult": 40,
+            "elder": 20
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+            "failing eyesight",
+            "one bad eye",
+            "blind",
+            "loss of balance",
+            "partial hearing loss"
+        ]
+    },
+    "damaged eyes":{
+        "duration": 6,
+        "severity": "major",
+        "medicine_duration": 4,
+        "mortality": {
+            "kitten": 30,
+            "adolescent": 50,
+            "young adult": 70,
+            "adult": 70,
+            "senior adult": 70,
+            "elder": 50
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 4
+            }
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+            "blind",
+            "one bad eye",
+            "failing eyesight"
+        ]
+    }
+}

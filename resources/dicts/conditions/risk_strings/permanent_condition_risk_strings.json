@@ -1,0 +1,144 @@
+{
+    "lost a leg": {
+        "an infected wound": [
+            "The stump where m_c's leg used to be has become infected. r_c rubs paste into it, as m_c grits their teeth and tries not to yowl.",
+            "The stump where m_c's leg used to be has become infected.",
+            "Losing the leg was bad enough, but now it feels like there's fire in m_c's veins.  Something is definitely wrong with their stump."
+        ],
+        "phantom pain": [
+            "m_c reports to r_c in the medicine den - they could swear their toes feel cramped and in spasm, but it's on the limb they don't have anymore.",
+            "Groaning, m_c lies in the sunshine as one of their friends massages the stump of their missing leg. They just don't understand how something that's not even there any more can hurt so much.",
+            "m_c sinks their claws into a branch, hoping that ripping something up will at least distract them from the sparking pain coming from the leg they don't even have any more."
+        ],
+        "sore": [
+            "While they've adapted well to life with a missing limb, the strain of walking with only three legs has left m_c feeling sore all over. r_c devises a list of exercises that will ease the pain, not helping m_c's mood.",
+            "m_c just hasn't been sleeping right, and feels bruised and tender on the side of their body where their limb used to be.",
+            "The muscles in m_c's stump don't seem to understand they aren't connected to anything any more - m_c purrs gratefully when a clanmate helps massage them."
+
+        ]
+    },
+    "born without a leg": {
+        "sore": [
+            "m_c reports to r_c with the ease of familiarity, asking for help sleeping at night - their missing limb is giving them a bit of pain on that side of their body.",
+            "m_c has spent their whole life with only three legs, but that doesn't mean they never feel the strain of moving in a way their body wasn't meant to.  This moon's activities have left m_c particularly sore."
+
+        ],
+        "joint pain": [
+            "m_c spends the morning with r_c, who helps them with a paste on their joints that'll reduce their pain.",
+            "m_c's joints are feeling the strain of their missing leg and they've been moving slower this moon."
+        ]
+    },
+    "weak leg": {
+        "sore": [
+            "r_c notices m_c limping from across the other side of the camp, and gives them some exercises to help strengthen their weak leg and reduce the pain.",
+            "m_c's bad leg is feeling particularly sore this moon."
+        ],
+        "joint pain": [
+            "m_c comes to r_c, feeling like their weak leg is going to collapse under them from the pain in it's joints.",
+            "They must have put a foot wrong or something - the joints in m_c's weak leg feel inflamed and painful."
+        ]
+    },
+    "twisted leg": {
+        "sore": [
+            "Seeing how m_c is slow to get up in the morning, r_c brings them pain relief herbs for their twisted leg.",
+            "m_c is finding it hard to be cheerful, with how sore their twisted leg is."
+
+        ],
+        "joint pain": [
+            "m_c slowly does their morning stretches, remembering r_c's promise that it'll help with the pain in their joints.",
+            "m_c just wants to sleep, very still and quiet, as they wait for the joint pain in their twisted leg to die down."
+        ]
+    },
+    "lost their tail": {
+        "an infected wound": [
+            "r_c drags m_c into the medicine cat den, to apply a herbal salve despite m_c's protests - they've begun to smell infection in the tail stump.",
+            "The stump where m_c's tail used to be has become infected."
+        ],
+        "phantom pain": [
+            "r_c can't give m_c answers - their tail is gone, and yet the pain in it remains.",
+            "m_c can't understand how an appendage that isn't there can possibly itch so badly, but it's driving them insane."
+        ]
+    },
+    "paralyzed": {
+        "an infected wound": [
+            "r_c brings m_c into the medicine cat den and starts searching - the sick stink of infection is coming from them, but m_c hasn't noticed anything that could cause it.",
+            "It seems that m_c has gotten a scratch on the part of their body they can't feel. The wound went unnoticed until the stench of infection began to waft from it."
+        ],
+        "joint pain": [
+            "m_c has been ordered by r_c to sit still and let their joints recover - it's the only way the joint pain in their front half will ease up.",
+            "The effort of dragging their paralyzed half across camp has left m_c's joints aching and sore."
+        ],
+        "sore": [
+            "m_c stares, curious. They can't feel the spasms wracking their paralysed half, but r_c seems worried anyway, completely focused on massaging them out.",
+            "Despite all the work they've put into strengthening their front half, today m_c is sore and uncomfortable from the effort it takes to get anywhere."
+        ],
+        "torn pelt": [
+            "m_c licks the scrape on their pelt fastidiously. They might not be able to feel it, but they've been warned of the danger of infection by r_c.",
+            "Rough ground in camp has torn m_c's pelt as they drag themselves around."
+        ]
+    },
+    "raspy lungs": {
+        "whitecough": [
+            "r_c worst fears are realized, as whitecough has infected m_c with their weakened lungs.",
+            "m_c's weak lungs have left them coughing and wheezing this moon, unable to resist potential sickness."
+        ]
+    },
+    "wasting disease": {
+        "running nose": [
+            "r_c feeds m_c disgusting herbs with their supper, concerned over their running nose. m_c thinks they should be more concerned with ruining their appetite!",
+            "m_c's nose has been running perpetually all moon."
+        ],
+        "yellowcough": [
+            "If only they had lungwort… r_c searches the herb stores, desperate for a way to help m_c through yellowcough.",
+            "m_c has been weak and fevered, only barely coherent, it seems they have yellowcough."
+        ],
+        "redcough": [
+            "r_c has quietly begun making m_c comfortable, or as comfortable as they can be hacking up so much blood.",
+            "m_c has been hacking up blood, their body growing weaker and weaker.  They may not last much longer."
+        ]
+    },
+    "one bad eye": {
+        "failing eyesight": [
+            "m_c wanders directly into a rock on their bad side, and r_c takes them aside. Softly, they tell m_c their bad vision is progressing.",
+            "m_c has noticed their vision growing blurrier and blurrier."
+
+        ]
+    },
+    "failing eyesight": {
+        "blind": [
+            "m_c's vision seems to narrow and darken day by day. Now with only a vague sense of light and shadow, there's nothing more r_c can do to help them.",
+            "m_c's eyesight had only been getting worse and now it seems to have finally left altogether."
+        ]
+    },
+    "partial hearing loss": {
+        "deaf": [
+            "m_c explains to r_c with signs and body language that it doesn't seem like they're able to hear any details of the world anymore.",
+            "m_c realizes one day that the noises around them are no longer just quiet, but completely silent. It seems they've lost their hearing entirely."
+
+        ]
+    },
+    "constant joint pain": {
+        "joint pain": [
+            "Sleepily, m_c thanks r_c for the pain relief. it feels like moons since they've been able to have a good rest without the awful pain that's been so intense lately.",
+            "m_c's joint pain is worse than usual this moon, they find themselves barely able to get up out of their nest."
+        ]
+    },
+    "seizure prone": {
+        "seizure": [
+            "r_c spots the seizure coming, and brings m_c to their nest where it's always a little less upsetting to wake up.",
+            "m_c is exhausted and stressed, both the cause of and consequence of their seizures."
+        ]
+    },
+    "allergies": {
+        "running nose": [
+            "r_c sighs to see m_c headed towards them, and goes to fix up their normal herbal mix, hoping that the allergic reaction m_c keeps having fades soon.",
+            "Seems it's allergy season! m_c has been sneezing and sniffling all moon."
+        ]
+    },
+    "recurring shock": {
+        "constant nightmares": [
+            "r_c sits with m_c, listening to their troubles and providing a comforting, sympathetic ear. m_c has had a rough moon, haunted by constant nightmares.",
+            "Haunted by the memories of their past, m_c gets so little sleep this month that they find themselves unable to function."
+        ]
+    }
+}

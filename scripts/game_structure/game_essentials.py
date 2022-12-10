@@ -127,7 +127,7 @@ class Game():
         'backgrounds': True,
         'autosave': False,
         'disasters': False,
-        'retirement': True,
+        'retirement': False,
         'language': 'english',
         'affair': False,
         'shaders': False,
@@ -312,6 +312,7 @@ class Game():
                 "mentor_influence": inter_cat.mentor_influence if inter_cat.mentor_influence else [],
                 "mate": inter_cat.mate,
                 "dead": inter_cat.dead,
+                "died_by": inter_cat.died_by if inter_cat.died_by else [],
                 "paralyzed": inter_cat.paralyzed,
                 "no_kits": inter_cat.no_kits,
                 "exiled": inter_cat.exiled,
@@ -342,8 +343,11 @@ class Game():
                 "dead_moons": inter_cat.dead_for,
                 "current_apprentice": [appr.ID for appr in inter_cat.apprentice],
                 "former_apprentices": [appr.ID for appr in inter_cat.former_apprentices],
+                "possible_scar": inter_cat.possible_scar if inter_cat.possible_scar else None,
                 "scar_event": inter_cat.scar_event if inter_cat.scar_event else [],
-                "df": inter_cat.df
+                "df": inter_cat.df,
+                "corruption": inter_cat.corruption if inter_cat.corruption else 0,
+                "retired": inter_cat.retired if inter_cat.retired else False
             }
             clan_cats.append(cat_data)
             inter_cat.save_condition()

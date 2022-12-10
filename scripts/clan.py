@@ -185,6 +185,9 @@ class Clan():
         ) and cat.dead and cat.df is False:
             cat.df = True
             cat.thought = "Is distraught after being sent to the Place of No Stars"
+            if cat.ID in self.med_cat_list:
+                self.med_cat_list.remove(cat.ID)
+                self.med_cat_predecessors += 1
             update_sprite(Cat.all_cats[str(cat)])
             # The dead-value must be set to True before the cat can go to starclan
 
@@ -221,7 +224,7 @@ class Clan():
         if medicine_cat:
             if medicine_cat.status != 'medicine cat':
                 Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
-            self.med_cat_list.append(str(medicine_cat.ID))
+            self.med_cat_list.append(medicine_cat.ID)
             medicine_cat = self.med_cat_list[0]
             self.medicine_cat = Cat.all_cats[medicine_cat]
             self.med_cat_number = len(self.med_cat_list)

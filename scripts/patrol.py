@@ -1006,6 +1006,7 @@ class Patrol():
 #                               PATROL CLASS END                               #
 # ---------------------------------------------------------------------------- #
 
+
 class PatrolEvent():
 
     def __init__(self,
