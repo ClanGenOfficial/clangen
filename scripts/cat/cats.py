@@ -142,7 +142,7 @@ class Cat():
         self.example = example
         self.dead = False
         self.outside = False
-        self.died_by = None  # once the cat dies, tell the cause
+        self.died_by = [] # once the cat dies, tell the cause
         self.dead_for = 0  # moons
         self.thought = ''
         self.genderalign = None
