@@ -35,7 +35,7 @@ class PatrolScreen(Screens):
         draw_menu_buttons()
 
         # CATS WHO CAN PATROL
-        able_cats = get_cats_allowed_on_patrol(Cat, ILLNESSES, INJURIES, game.clan.game_mode)
+        able_cats = get_cats_allowed_on_patrol(Cat, game.clan.game_mode)
 
         # PAGE COUNT
         all_pages = 1

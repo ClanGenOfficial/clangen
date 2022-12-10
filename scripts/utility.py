@@ -5,25 +5,29 @@ from scripts.cat.pelts import *
 from scripts.game_structure.game_essentials import *
 
 
-def get_cats_allowed_on_patrol(Cat, ILLNESSES, INJURIES, game_mode):
-    able_cats = []
+def get_med_cats(Cat):
+    """
+    returns a list of all meds and med apps currently alive, in the clan, and able to work
+    """
+    all_cats = Cat.all_cats.values()
 
-    # create a list of illnesses and injuries which are not allowed to join the patrol
-    allowed_illnesses = [
-        "fleas",
-        "running nose"
-    ]
-    not_allowed_illnesses = list(filter(lambda x: x not in allowed_illnesses, ILLNESSES.keys()))
-    allowed_injuries = [
-        "bruises",
-        "scrapes",
-        "tickbites",
-        "torn pelt",
-        "torn ear",
-        "splinter",
-        "joint pain"
-    ]
-    not_allowed_injuries = list(filter(lambda x: x not in allowed_injuries, INJURIES.keys()))
+    medicine_apprentices = list(filter(
+        lambda c: c.status == 'medicine apprentice' and not c.dead and not c.exiled and not c.not_working()
+        , all_cats
+    ))
+    medicine_cats = list(filter(
+        lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled and not c.not_working()
+        , all_cats
+    ))
+
+    possible_med_cats = []
+    possible_med_cats.extend(medicine_cats)
+    possible_med_cats.extend(medicine_apprentices)
+
+    return possible_med_cats
+
+def get_cats_allowed_on_patrol(Cat, game_mode):
+    able_cats = []
 
     # ASSIGN TO ABLE CATS AND SORT BY RANK
     for the_cat in Cat.all_cats.values():
@@ -31,11 +35,10 @@ def get_cats_allowed_on_patrol(Cat, ILLNESSES, INJURIES, game_mode):
                 game.switches['current_patrol']:
             continue
         if game_mode == "expanded":
-            if (the_cat.is_ill() and the_cat.illness.name in not_allowed_illnesses) or \
-                    (the_cat.is_injured() and the_cat.injury.name in not_allowed_injuries):
+            if the_cat.not_working():
                 continue
         if the_cat.status in [
-            'leader', 'deputy', 'medicine cat', 'medicine cat apprentice', 'warrior', 'apprentice'
+            'leader', 'deputy', 'warrior', 'apprentice'
         ]:
             if the_cat.status == 'leader':
                 able_cats.insert(0, the_cat)
@@ -54,6 +57,7 @@ def get_cats_allowed_on_patrol(Cat, ILLNESSES, INJURIES, game_mode):
 
 
 def save_death(cat, death_string):
+    clanname = None
     if game.switches['clan_name'] != '':
         clanname = game.switches['clan_name']
     elif len(game.switches['clan_name']) > 0:
@@ -191,6 +195,37 @@ def add_children_to_cat(cat, cat_class):
             cat.children.append(inter_cat.ID)
         if inter_cat.is_parent(inter_cat) and cat.ID not in inter_cat.children:
             inter_cat.children.append(cat.ID)
+
+
+# ---------------------------------------------------------------------------- #
+#                               Text Adjust                                    #
+# ---------------------------------------------------------------------------- #
+
+def event_text_adjust(Cat, text, cat, other_cat, other_clan_name=None):
+    danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk", "an enemy warrior", "a badger"]
+    tail_danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk",
+                   "an enemy warrior", "a badger", "a twoleg trap"]
+
+    name = str(cat.name)
+    other_name = None
+    if other_cat is not None:
+        other_name = str(other_cat.name)
+    mate = None
+    if cat.mate is not None:
+        mate = Cat.all_cats.get(cat.mate).name
+
+    adjust_text = text
+    adjust_text = adjust_text.replace("m_c", str(name))
+    if other_name is not None:
+        adjust_text = adjust_text.replace("r_c", str(other_name))
+    if other_clan_name is not None:
+        adjust_text = adjust_text.replace("o_c", str(other_clan_name))
+    if mate is not None:
+        adjust_text = adjust_text.replace("c_m", str(mate))
+    adjust_text = adjust_text.replace("d_l", choice(danger))
+    adjust_text = adjust_text.replace("t_l", choice(tail_danger))
+
+    return adjust_text
 
 
 # ---------------------------------------------------------------------------- #
@@ -338,6 +373,7 @@ def update_sprite(cat):
         new_sprite.blit(
             sprites.sprites['eyes' + cat.eye_colour +
                             str(cat.age_sprites[cat.age])], (0, 0))
+
     game.switches[
         'error_message'] = 'There was an error loading a cat\'s shader sprites. Last cat read was ' + str(
         cat)

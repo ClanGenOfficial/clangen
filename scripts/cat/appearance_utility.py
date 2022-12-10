@@ -201,7 +201,7 @@ def init_scars(cat):
         ])
     else:
         cat.specialty = None
-        
+
     scar_choice2 = randint(0, 30)
     if cat.age in ['kitten', 'adolescent']:
         scar_choice2 = randint(0, 100)
@@ -218,6 +218,9 @@ def init_scars(cat):
     if cat.specialty2 == 'NOTAIL':
         if cat.specialty == 'HALFTAIL':
             cat.specialty = None
+
+
+
 
 def init_accessories(cat):
     acc_display_choice = randint(0, 35)

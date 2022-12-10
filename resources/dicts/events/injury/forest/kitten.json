@@ -1,0 +1,38 @@
+[
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat_adult",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was grabbed by a hawk, but luckily r_c saves them! The kit is still left injured from the ordeal.",
+        "history_text": [
+            "m_c was scarred as a kit when an hawk tried to take them.",
+            "m_c died from their wounds after an hawk tried to take them.",
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "frostbite",
+        "tags": [
+            "Leaf-bare"
+        ],
+        "event_text": "m_c snuck out of camp and returned cold and shivering, frostbite nipping at their paws.",
+        "history_text": [
+            "m_c was permanently scarred by frostbite.",
+            "m_c died from frostbite after sneaking out of camp.",
+            null
+        ],
+        "cat_trait": ["daring", "impulsive", "inquisitive", "troublesome"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    }
+]

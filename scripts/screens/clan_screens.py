@@ -82,6 +82,7 @@ class ClanScreen(Screens):
                                   button_name='save_clan',
                                   text='Save Clan',
                                   save_clan=True,
+                                  save_settings=True,
                                   size=(114, 30),
                                   hotkey=[9])
         pygame.draw.rect(screen,
