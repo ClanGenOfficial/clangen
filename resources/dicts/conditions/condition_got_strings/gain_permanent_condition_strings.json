@@ -159,5 +159,11 @@
             "m_c finds that they have a new limp, despite healed from their bite-wound. r_c tells them it's likely permanent.",
             "m_c limps around camp, fully healed from their bite-wound but still marked by it for the rest of their life."
         ]
+    },
+    "grief stricken": {
+        "reoccurring shock": [
+            "m_c gazes blankly at the wall of the medicine den, not acknowledging r_c beside them. r_c sighs and sits beside them, hoping that their presence can provide some comfort.",
+            "m_c curls up in their nest, numb to the other cats beside them. There's a hole inside their heart now that they feel could never again be filled."
+        ]
     }
 }

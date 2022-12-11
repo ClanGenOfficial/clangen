@@ -1,5 +1,6 @@
 [
     {
+
         "patrol_id": "gen_train_berrybush1",
         "biome": "Any",
         "season": "greenleaf",
@@ -29,9 +30,9 @@
     "patrol_id": "gen_train_berrybush2",
     "biome": "Any",
     "season": "greenleaf",
-    "tags": ["herbs", "training", "apprentice", "injury", "comfort", "trust", "death"],
-    "intro_text": "While out training, app1 stumbles upon a bush of red berries.",
-    "decline_text": "app1 decides not to touch the berries.",
+    "tags": ["herbs", "training", "apprentice", "injury", "poisoned", "death"],
+    "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
+    "decline_text": "r_c decides not to touch the berries.",
     "chance_of_success": 50,
     "exp": 20,
     "success_text": [
@@ -53,8 +54,8 @@
     "patrol_id": "gen_train_berrybush3",
     "biome": "Any",
     "season": "leaf-fall",
-    "tags": ["herbs", "training", "injury", "comfort", "trust"],
-    "intro_text": "While out training, r_c stumbles upon a bush of red berries.",
+    "tags": ["herbs", "training", "injury", "poisoned"],
+    "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
     "chance_of_success": 50,
     "exp": 20,
@@ -79,9 +80,9 @@
     "patrol_id": "gen_train_berrybush4",
     "biome": "Any",
     "season": "leaf-fall",
-    "tags": ["herbs", "training", "apprentice", "injury", "comfort", "trust", "death"],
-    "intro_text": "WWhile out training, app1 stumbles upon a bush of red berries.",
-    "decline_text": "app1 decides not to touch the berries.",
+    "tags": ["herbs", "training", "apprentice", "injury", "poisoned", "death"],
+    "intro_text": "While helping gathering herbs, r_c stumbles upon a bush of red berries.",
+    "decline_text": "r_c decides not to touch the berries.",
     "chance_of_success": 50,
     "exp": 20,
     "success_text": [
@@ -676,5 +677,290 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_vixen1",
+    "biome": "Any",
+    "season": "newleaf",
+    "tags": ["fighting", "death", "scar", "battle_injury", "respect", "trust"],
+    "intro_text": "Your patrol catches the scent of a fox.",
+    "decline_text": "Your patrol decides not to pursue the fox.",
+    "chance_of_success": 30,
+    "exp": 30,
+    "success_text": [
+        "The vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the clan.",
+        "Your patrol drives away the fox, seeks out her den, and kills her young cubs.",
+        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the clan.",
+        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment."
+    ],
+    "fail_text": [
+        "The mother fox is vicious and determined, and the small patrol is beaten back.",
+        "s_c is determined to win, but their confidence is misplaced, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up the fight.",
+        "Never threaten a mother's young - the vixen kills r_c in the skirmish.",
+        "The mother fox's snapping jaws leave a permanent mark on r_c, and force the patrol to back off."
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
+    "min_cats": 2,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c carries a scar from a fox fight.",
+        "r_c fell in battle with a fox."
+    ]
+},
+{
+    "patrol_id": "gen_train_vixen2",
+    "biome": "Any",
+    "season": "newleaf",
+    "tags": ["fighting", "death", "scar", "battle_injury", "respect", "trust"],
+    "intro_text": "Your patrol catches the scent of a fox.",
+    "decline_text": "Your patrol decides not to pursue the fox.",
+    "chance_of_success": 30,
+    "exp": 30,
+    "success_text": [
+    "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the fox, seeks out her den, and kills her young cubs.",
+    "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the clan that she and her cubs pose.",
+    "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the clan.",
+    "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment."
+    ],
+    "fail_text": [
+    "The mother fox is vicious and determined, but although they lose this battle, through teamwork the cats manage to retreat without injury.",
+    "s_c is determined to win, but their confidence is misplaced, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up the fight.",
+    null,
+    "r_c is left with a small scar, as the patrol and the mother vixen fight to a stalemate."
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
+    "min_cats": 4,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+    "r_c carries a scar from a fox fight."
+    ]
+},
+{
+    "patrol_id": "gen_train_vixen3",
+    "biome": "Any",
+    "season": "newleaf",
+    "tags": ["fighting", "death", "scar", "battle_injury", "respect", "trust"],
+    "intro_text": "Your patrol catches the scent of a fox.",
+    "decline_text": "Your patrol decides not to pursue the fox.",
+    "chance_of_success": 20,
+    "exp": 50,
+    "success_text": [
+    null,
+    "The vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the clan.",
+    "s_c displays incredible skill, driving the mother vixen out of the territory all by themselves. Now neither the fox nor her cubs pose a threat to the clan.",
+    "A brilliant battle move by s_c at a critical moment knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it."
+    ],
+    "fail_text": [
+    null,
+    "s_c is determined to win, but the vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way.",
+    "Never threaten a mother's young - the vixen kills r_c in the skirmish, and carries off the body to feed her litter.",
+    "The mother fox's snapping jaws leave a permanent mark on r_c, and force the patrol to back off."
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+    "r_c carries a scar from a solo fight with a vixen.",
+    "r_c fell in a solo battle with a vixen."
+    ]
+},
+{
+    "patrol_id": "gen_train_vixen4",
+    "biome": "Any",
+    "season": "greenleaf",
+    "tags": ["fighting", "death", "scar", "battle_injury", "respect", "trust"],
+    "intro_text": "Your patrol catches the scent of a fox.",
+    "decline_text": "Your patrol decides not to pursue the fox.",
+    "chance_of_success": 30,
+    "exp": 30,
+    "success_text": [
+    "The vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the clan.",
+    "Your patrol drives away the fox, seeks out her den, and kills her cubs.",
+    "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the clan.",
+    "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment."
+    ],
+    "fail_text": [
+    "The mother fox is vicious and determined, and the small patrol is beaten back.",
+    "s_c is determined to win, but their confidence is misplaced, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up the fight.",
+    "Never threaten a mother's young - the vixen kills r_c in the skirmish.",
+    "The mother fox's snapping jaws leave a permanent mark on r_c, and force the patrol to back off."
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
+    "min_cats": 2,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+    "r_c carries a scar from a fox fight.",
+    "r_c fell in battle with a fox."
+    ]    
+},
+{
+    "patrol_id": "gen_train_vixen5",
+    "biome": "Any",
+    "season": "greenleaf",
+    "tags": ["fighting", "death", "scar", "battle_injury", "respect", "trust"],
+    "intro_text": "Your patrol catches the scent of a fox.",
+    "decline_text": "Your patrol decides not to pursue the fox.",
+    "chance_of_success": 30,
+    "exp": 30,
+    "success_text": [
+    "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the fox, seeks out her den, and kills her growing cubs.",
+    "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the clan that she and her cubs pose.",
+    "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the clan.",
+    "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment."
+    ],
+    "fail_text": [
+    "The mother fox is vicious and determined, but although they lose this battle, through teamwork the cats manage to retreat without injury.",
+    "s_c is determined to win, but their confidence is misplaced, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up the fight.",
+    null,
+    "r_c is left with a small scar, as the patrol and the mother vixen fight to a stalemate."
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
+    "min_cats": 4,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+    "r_c carries a scar from a fox fight."
+    ]
+},
+{
+    "patrol_id": "gen_train_vixen6",
+    "biome": "Any",
+    "season": "greenleaf",
+    "tags": ["fighting", "death", "scar", "battle_injury", "respect", "trust"],
+    "intro_text": "Your patrol catches the scent of a fox.",
+    "decline_text": "Your patrol decides not to pursue the fox.",
+    "chance_of_success": 10,
+    "exp": 50,
+    "success_text": [
+    null,
+    "The vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the clan.",
+    "s_c displays incredible skill, driving the mother vixen out of the territory all by themselves. Now neither the fox nor her cubs pose a threat to the clan.",
+    "A brilliant battle move by s_c at a critical moment knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it."
+    ],
+    "fail_text": [
+    null,
+    "s_c is determined to win, but the vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way.",
+    "Never threaten a mother's young - the vixen kills r_c in the skirmish, and carries off the body to feed her litter.",
+    "The mother fox's snapping jaws leave a permanent mark on r_c, and force the patrol to back off."
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+    "r_c carries a scar from a solo fight with a vixen.",
+    "r_c fell in a solo battle with a vixen."
+    ]
+},
+{
+    "patrol_id": "gen_train_vixen7",
+    "biome": "Any",
+    "season": "leaf-fall",
+    "tags": ["fighting", "death", "scar", "battle_injury", "respect", "trust"],
+    "intro_text": "Your patrol catches the scent of a fox.",
+    "decline_text": "Your patrol decides not to pursue the fox.",
+    "chance_of_success": 30,
+    "exp": 30,
+    "success_text": [
+    "The vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger.",
+    "Your patrol drives away the fox, and seeks out her den, but her Leaf-fall cubs are near full-grown, and scatter from the patrol into the wilderness. Hopefully Leaf-bare takes care of them.",
+    "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the clan.",
+    "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment."
+    ],
+    "fail_text": [
+    "The mother fox is vicious and determined, and the small patrol is beaten back.",
+    "s_c is determined to win, but their confidence is misplaced, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up the fight.",
+    "Never threaten a mother's young - the vixen kills r_c in the skirmish.",
+    "The mother fox's snapping jaws leave a permanent mark on r_c, and force the patrol to back off."
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
+    "min_cats": 2,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+    "r_c carries a scar from a fox fight.",
+    "r_c fell in battle with a fox."
+    ]
+},
+{
+    "patrol_id": "gen_train_vixen8",
+    "biome": "Any",
+    "season": "leaf-fall",
+    "tags": ["fighting", "death", "scar", "battle_injury", "respect", "trust"],
+    "intro_text": "Your patrol catches the scent of a fox.",
+    "decline_text": "Your patrol decides not to pursue the fox.",
+    "chance_of_success": 30,
+    "exp": 30,
+    "success_text": [
+    "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the fox, and seeks out her den. But her cubs are near full-grown with the bounty of Leaf-fall, and scatter from the patrol into the wilderness. Hopefully Leaf-bare takes care of them.",
+    "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the clan that she poses. The patrol drives her near-full grown litter of fox cubs out from the territory. Hopefully the coming Leaf-bare will take care of them.",
+    "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to c_n.",
+    "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment."
+    ],
+    "fail_text": [
+    "The mother fox is vicious and determined, but although they lose this battle, through teamwork the cats manage to retreat without injury.",
+    "s_c is determined to win, but their confidence is misplaced, and the vixen manages to sink her teeth into them. The patrol rallies around s_c, but they have to give up the fight.",
+    null,
+    "r_c is left with a small scar, as the patrol and the mother vixen fight to a stalemate."
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
+    "min_cats": 4,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+    "r_c carries a scar from a fox fight."
+    ]
+},
+{
+    "patrol_id": "gen_train_vixen9",
+    "biome": "Any",
+    "season": "leaf-fall",
+    "tags": ["fighting", "death", "scar", "battle_injury", "respect", "trust"],
+    "intro_text": "Your patrol catches the scent of a fox.",
+    "decline_text": "Your patrol decides not to pursue the fox.",
+    "chance_of_success": 20,
+    "exp": 50,
+    "success_text": [
+    null,
+    "It takes r_c's every bit of bravery and strength to drives away the vixen - her near grown litter, fat on the bounty of Leaf-fall, is a challenge for another day.",
+    "s_c displays incredible skill, driving the mother vixen out of the territory all by themselves. Now neither the fox nor her cubs pose a threat to the clan.",
+    "A brilliant battle move by s_c at a critical moment knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it."
+    ],
+    "fail_text": [
+    null,
+    "s_c is determined to win, but the vixen is determined to live, and that makes all the difference. s_c ends up pinned in a defensible hiding spot, bleeding and terrified, until the vixen judges them no longer a threat and continues on her way.",
+    "Never threaten a mother's young - the vixen kills r_c in the skirmish, and carries off the body to feed her litter.",
+    "The mother fox's snapping jaws leave a permanent mark on r_c, and force the patrol to back off."
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["adventurous", "altruistic", "ambitious", "bloodthirsty", "bold", "confident", "daring", "fierce", "responsible", "righteous", "troublesome", "vengeful"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+    "r_c carries a scar from a solo fight with a vixen.",
+    "r_c fell in a solo battle with a vixen."
+    ]
 }
 ]

@@ -169,7 +169,7 @@
         "patrol_id": "gen_hunt_rabbit2",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting", "trust", "injury"],
+        "tags": ["hunting", "trust", "minor_injury"],
         "intro_text": "A rabbit bursts out from cover, startled by the patrol.",
         "decline_text": "They watch it go, just as startled.",
         "chance_of_success": 40,
