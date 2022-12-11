@@ -19,7 +19,7 @@
         "patrol_id": "gen_gen_thunderpath1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["retirement", "injury", "general", "death"],
+        "tags": ["retirement", "blunt_force_injury", "general", "death"],
         "intro_text": "The patrol comes across a thunderpath.",
         "success_text": [
             "Your patrol crosses the thunderpath and can hunt on the other side.", 

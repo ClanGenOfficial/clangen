@@ -275,7 +275,7 @@
         ]
     },
 
-        "joint pain":{
+    "joint pain":{
         "duration": 1,
         "severity": "minor",
         "medicine_duration": 1,
@@ -820,5 +820,56 @@
             "one bad eye",
             "failing eyesight"
         ]
+    },
+    "quilled by a porcupine":{
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 30,
+            "adolescent": 50,
+            "young adult": 70,
+            "adult": 70,
+            "senior adult": 50,
+            "elder": 30
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 6
+            }
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+        ]
+    },
+    "poisoned": {
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 5,
+            "adolescent": 15,
+            "young adult": 20,
+            "adult": 30,
+            "senior adult": 20,
+            "elder": 15
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "redcough",
+                "chance": 10
+            }
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+        ]
     }
 }
+

@@ -155,7 +155,8 @@
         "m_c is no longer suffering from shock.",
         "m_c feels much better and is no longer suffering from shock.",
         "m_c's shock is gone.",
-        "m_c's shock has abated."
+        "m_c is no longer in shock.",
+        "m_c finally feels more like themselves, their shock is gone."
     ],
     "lingering shock": [
         "It took a little while, but m_c finally feels normal again.",
@@ -183,6 +184,16 @@
         "m_c's eyes have healed.",
         "m_c's eyes are no longer damaged.",
         "m_c's eyes have recovered from their injury."
+    ],
+    "quilled by a porcupine": [
+        "The porcupine quills stuck in m_c's pelt have finally been removed.",
+        "m_c has recovered from the wounds they got from the porcupine.",
+        "The barbed quills were no fun to remove, but at least m_c is feeling better now."
+    ],
+    "poisoned": [
+        "m_c got very lucky and has managed to recover from the poison.",
+        "Despite the lethality of the poison that coursed through them, m_c has managed to stay alive.",
+        "m_c has recovered from the poison.",
+        "m_c is no longer poisoned."
     ]
-
 }

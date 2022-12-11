@@ -171,5 +171,19 @@
             "m_c can't open their eyes for the swelling and crust that has accumulated. Hopefully this infection doesn't spread."
 
         ]
+    },
+    "quilled by a porcupine": {
+        "an infected wound": [
+            "r_c was careful when removing the quills from m_c's face, but unfortunately infection still found it's way in.",
+            "The wounds left behind on m_c by the porcupine quills have become infected.",
+            "m_c is distraught to find that infection has set in on their quill wounds."
+        ]
+    },
+    "poisoned": {
+        "redcough": [
+            "r_c watches as the inevitable happens and m_c begins to cough and choke on their own blood. The end is coming quickly for them.",
+            "m_c has been left weak and barely responsive from the poison, and now they've begun to choke up blood. That can't be a good sign.",
+            "m_c hacks and sputters on their own blood, they know the end is soon."
+        ]
     }
 }
