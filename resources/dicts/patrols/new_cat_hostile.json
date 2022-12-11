@@ -143,7 +143,7 @@
         "patrol_id": "fst_border_noise1",
         "biome": "forest",
         "season": "Any",
-        "tags": ["border", "injury", "scar", "death", "reputation"],
+        "tags": ["border", "battle_injury", "scar", "death", "reputation"],
         "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
         "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
         "chance_of_success": 60,
