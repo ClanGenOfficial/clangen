@@ -180,37 +180,5 @@
     "history_text": [
         "This cat got a scar from a fight with a small dog, but they always say it was a huge dog."
     ]
-},
-{
-    "patrol_id": "gen_bord_rogues1",
-    "biome": "Any",
-    "season": "Any",
-    "tags": ["fighting", "injury", "death", "scar", "border"],
-    "intro_text": "A gang of rogues confronts your patrol.",
-    "decline_text": "The patrol sprints back to camp.",
-    "chance_of_success": 40,
-    "exp": 10,
-    "success_text": [
-        "Your patrol drives away the rogues.", 
-        "Your patrol gives the rogues a thrashing they won't soon forget. Don't mess with c_n.",
-        "Your patrol fights the rogues off. s_c can be seen expertly fighting two cats at once before the rogues finally retreat.",
-        "s_c rushes in without hesitation, eager to dig their claws into the trespassers. The rogues flee and s_c lets out a victory yowl."
-    ],
-    "fail_text": [
-        "The patrol is outnumbered by the rogues and is forced to retreat, luckily without taking any damage.", 
-        null,
-        "The rogues are bloodthirsty and kill r_c before they leave.",
-        "The rogues fight viciously and leave r_c with a deep wound before they run off."
-    ],
-    "win_skills": ["excellent fighter"],
-    "win_trait": ["fierce", "bloodthirsty"],
-    "min_cats": 1,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "This cat was scarred in a battle with rogues.",
-        "This cat died while attempting to fight off a rogue."
-    ]
 }
 ]
