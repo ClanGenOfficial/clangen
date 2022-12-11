@@ -1,30 +1,29 @@
 [
-    {
-
-        "patrol_id": "gen_train_berrybush1",
-        "biome": "Any",
-        "season": "greenleaf",
-        "tags": ["herbs", "training", "injury", "comfort", "trust"],
-        "intro_text": "While out training, r_c stumbles upon a bush of red berries.",
-        "decline_text": "r_c decides not to touch the berries.",
-        "chance_of_success": 50,
-        "exp": 20,
-        "success_text": [
-            "Unsure but remembering the kittentales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
-	        "After careful consideration and consulting with the other cats, r_c recognizes them as strawberries and brings the rare berries  back to the medicine cat's den.",
-	        "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
-        ],
-        "fail_text": [
-            "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that raspberries aren't a useful medicinal herb.",
-            null,
-            null,
-            "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. They're rushed back to camp, where the medicine cat might have a chance at saving them from deathberry poisoning."
-        ],
-        "win_skills": ["very smart", "extremely smart"],
-        "min_cats": 3,
-        "max_cats": 6,
-        "antagonize_text": null,
-        "antagonize_fail_text": null
+{
+    "patrol_id": "gen_train_berrybush1",
+    "biome": "Any",
+    "season": "greenleaf",
+    "tags": ["herbs", "training", "injury", "comfort", "trust"],
+    "intro_text": "While out training, r_c stumbles upon a bush of red berries.",
+    "decline_text": "r_c decides not to touch the berries.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "Unsure but remembering the kittentales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
+        "After careful consideration and consulting with the other cats, r_c recognizes them as strawberries and brings the rare berries  back to the medicine cat's den.",
+        "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
+    ],
+    "fail_text": [
+        "Confidently gathering them and prancing back to camp with the patrol, r_c is then informed that raspberries aren't a useful medicinal herb.",
+        null,
+        null,
+        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. They're rushed back to camp, where the medicine cat might have a chance at saving them from deathberry poisoning."
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "gen_train_berrybush2",
