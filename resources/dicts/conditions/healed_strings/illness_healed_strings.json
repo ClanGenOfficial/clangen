@@ -69,5 +69,10 @@
         "m_c was struggling with a recent flood of nightmares, but thankfully they seem to have stopped.",
         "m_c's nightmares have stopped.",
         "m_c is no longer having constant nightmares."
+    ],
+    "grief stricken": [
+        "m_c will always feel their grief, but time has softened it, at least a little.",
+        "m_c gazes up into silverpelt and finds that, finally, the grief has begun to lessen.",
+        "m_c wakes one day, after moons of numbness, and feels as though the world is less dull."
     ]
 }

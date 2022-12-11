@@ -414,5 +414,37 @@
         "infectiousness": 0,
         "risks": [
         ]
+    },
+    "grief stricken": {
+        "severity": "major",
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "medicine_mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "duration": 10,
+        "medicine_duration": 5,
+        "infectiousness": 0,
+        "risks": [
+            {
+                "name": "reoccurring shock",
+                "chance": 30
+            },
+            {
+                "name": "constant nightmares",
+                "chance": 10
+            }
+        ]
     }
 }

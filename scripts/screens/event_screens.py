@@ -251,6 +251,7 @@ class PatrolEventScreen(Screens):
 
         clan_name = game.clan.name
         s = 0
+        pos = 0
         for x in range(text.count('c_n')):
             index = text.index('c_n', s)
             for y in vowels:
@@ -290,6 +291,7 @@ class PatrolEventScreen(Screens):
                 game.switches['patrol_chosen'],
                 game.settings.get('disasters')
             )
+            print(len(possible_events))
             patrol.patrol_event = choice(possible_events)
 
             game.switches['event'] = -1

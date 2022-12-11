@@ -869,7 +869,7 @@ class Cat():
             }
 
 
-    def get_injured(self, name, event_triggered=False):
+    def get_injured(self, name, event_triggered=False, lethal=True):
         if name not in INJURIES:
             if name not in INJURIES:
                 print(f"WARNING: {name} is not in the injuries collection.")
@@ -891,6 +891,8 @@ class Cat():
 
                 if mortality == 0:
                     mortality = 1
+        if lethal is False:
+            mortality = 0
 
         new_injury = Injury(
             name=name,
