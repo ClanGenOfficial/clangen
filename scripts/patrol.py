@@ -1484,6 +1484,18 @@ class PatrolEvent():
         If you have more than one, it takes the first one in this order.
         same for: "gone" (r_c leaves the clan), "disaster_gone" (all leave the clan), "multi_gone" (2-4 cats leave the clan)
 
+        #!FOR INJURIES, SEE CONDITIONS LIST FOR TAGGING
+        Tag all injury patrols that should give a scar with “scar” to ensure that classic mode will still scar the cat.
+        If you'd like a patrol to have an injury from one of the injury pools, tag with the pool name
+        If you want to specify a certain condition, tag both with “injury” and the condition
+        This will work with any condition whether they are an illness, injury, or perm condition
+        If you want to ensure that a cat cannot die from the condition, tag with “non_lethal”
+        Keep in mind that minor injuries are already non lethal by default and permanent conditions will not be affected by this tag.
+        These tags will stack! So you could tag a patrol as “blunt_force_injury”, “injury”, “water in their lungs” to give all the 
+        conditions from blunt_force_injury AND water in their lungs as possible conditions for that patrol. 
+        Keep in mind that the “non_lethal” tag will apply to ALL the conditions for that patrol.
+        Right now, nonlethal shock is auto applied to all cats present when another cat dies. This may change in the future.
+
         "p_l_to_r_c" is for specifically pl and rc gaining relationship with EACH OTHER
 
         "two_apprentices" is for patrols with two apprentices (at least) in them. It works with the "apprentice" tag. "rel_two_apps" is for patrols with relationship changes between app1 and app2 that don't affect the rest of the patrol, and also works with "two_apprentices" and "apprentice".
