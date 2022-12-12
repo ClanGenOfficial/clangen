@@ -1,24 +1,24 @@
 [
 {
-    "patrol_id": "pln_any_train_session1",
+    "patrol_id": "pln_train_session1",
     "biome": "plains",
     "season": "Any",
-    "tags": ["apprentice", "training", "scar", "injury", "bite-wound", "warrior"],
-    "intro_text": "The patrol wants to hold a training session for r_c. They decide to focus on how best to hide within the tall grass.",
+    "tags": ["apprentice", "training", "comfort", "trust", "scar", "injury", "bite-wound", "warrior"],
+    "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to hide within the tall grass.",
     "decline_text": "They decide to focus on the patrolling the territory instead. Training can wait for another day.",
     "chance_of_success": 50,
     "exp": 20,
     "success_text": [
-        "r_c listens carefully as p_l explains how to move through the grass unseen and undetected.",
-        "r_c picks up the instruction quickly and the patrol is soon playing a small game of hide and seek within the grass to test the apprentice's abilities.",
+        "app1 listens carefully as p_l explains how to move through the grass unseen and undetected.",
+        "app1 picks up the instruction quickly and the patrol is soon playing a small game of hide and seek within the grass to test the apprentice's abilities.",
         null,
         "By the end of the patrol s_c is able to hide stealthily within the grass, their movements barely noticeable."
     ],
     "fail_text": [
-        "r_c tries to hide within the grass, but they can't quite manage to make themselves still and quiet enough to avoid detection.",
+        "app1 tries to hide within the grass, but they can't quite manage to make themselves still and quiet enough to avoid detection.",
         "s_c struggles to take the lesson seriously and eventually the training session ends early with no real progress made.",
         null,
-        "r_c makes their way into the tall grass to try out the advice p_l has given them, but they go crashing down into a hole, where whatever lives there gives them a sharp bite! It seems the grass was hiding more than just cats. r_c ends up limping back to camp."
+        "app1 makes their way into the tall grass to try out the advice p_l has given them, but they go crashing down into a hole, where whatever lives there gives them a sharp bite! It seems the grass was hiding more than just cats. r_c ends up limping back to camp."
     ],
     "win_trait": ["calm", "careful", "sneaky", "quiet", "patient"],
     "fail_trait": ["troublesome", "playful"],
@@ -166,21 +166,21 @@
     "biome": "plains",
     "season": "Any",
     "tags": ["training", "apprentice", "minor_injury", "scar"],
-    "intro_text": "r_c heads out into the grasslands alone, but maybe an apprentice shouldn't try to do a solo patrol.",
-    "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
+    "intro_text": "app1 heads out into the grasslands alone, but maybe an apprentice shouldn't try to do a solo patrol.",
+    "decline_text": "app1 turns back to camp, deciding that this is a bad idea.",
     "chance_of_success": 30,
     "exp": 20,
     "success_text": [
-        "At least this is a good chance to learn the territory! r_c heads off to map out a thick field of tall grass they've always found confusing.",
-        "r_c clambers over a rise in the ground and stumbles across a tiny, perfect pond!",
+        "At least this is a good chance to learn the territory! app1 heads off to map out a thick field of tall grass they've always found confusing.",
+        "app1 clambers over a rise in the ground and stumbles across a tiny, perfect pond!",
         null,
         "There's nothing to worry about! s_c pads confidently through c_n territory, assured in their safety by the strength of c_n borders."
     ],
     "fail_text": [
-        "r_c gets lost in the territory and doesn't learn anything.",
+        "app1 gets lost in the territory and doesn't learn anything.",
         "s_c shivers a little, imagining what could be out there. . . No, definitely not. They turn around and slink straight back to camp.",
         null,
-        "The apprentice wanders along obliviously and slips, and tumbling right down into a well-hidden gully. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
+        "The apprentice wanders along obliviously and slips, and tumbling right down into a well-hidden gully. Bruised and sore, app1 has to report to the medicine cat den when they return to camp."
     ],
     "win_skills": ["None"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
@@ -197,7 +197,7 @@
     "patrol_id": "pln_train_solo2",
     "biome": "plains",
     "season": "Any",
-    "tags": ["training"],
+    "tags": ["training", "warrior"],
     "intro_text": "r_c heads out into the grasslands alone, wanting to explore and have some time to themselves.",
     "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
     "chance_of_success": 30,
