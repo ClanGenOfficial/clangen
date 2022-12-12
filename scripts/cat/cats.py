@@ -345,7 +345,8 @@ class Cat():
         elif game.clan.instructor.df is True:
             game.clan.add_to_darkforest(self)
 
-        self.grief()
+        if game.clan.game_mode != 'classic':
+            self.grief()
 
     def grief(self):
         # apply grief to cats with high positive relationships to dead cat
@@ -831,7 +832,6 @@ class Cat():
 
     def moon_skip_injury(self, injury):
         """handles the moon skip for injury"""
-        print('moon skip  injury')
         if not self.is_injured():
             return
 
@@ -850,12 +850,10 @@ class Cat():
                 game.clan.leader_lives -= 1
             self.die()
             return
-        print('not dead')
 
         # if the cat has an infected wound, the wound shouldn't heal till the illness is cured
         if "an infected wound" not in self.illnesses and "a festering wound" not in self.illnesses:
             self.injuries[injury]["duration"] -= 1
-            print('duration')
         if self.injuries[injury]["duration"] <= 0:
             self.healed_condition = True
             return
