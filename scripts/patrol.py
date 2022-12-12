@@ -186,7 +186,6 @@ class Patrol():
         elif biome == 'wetlands':
             possible_patrols.extend(self.generate_patrol_events(HUNTING_WTLND))
 
-        possible_patrols.extend(self.generate_patrol_events(GENERAL))
         possible_patrols.extend(self.generate_patrol_events(HUNTING))
         possible_patrols.extend(self.generate_patrol_events(BORDER))
         possible_patrols.extend(self.generate_patrol_events(TRAINING))
@@ -1490,10 +1489,6 @@ hunting_directory = "hunting/"
 training_directory = "training/"
 border_directory = "border/"
 med_directory = "med/"
-
-GENERAL = None
-with open(f"{resource_directory}general.json", 'r') as read_file:
-    GENERAL = ujson.loads(read_file.read())
 
 # HUNTING #
 HUNTING = None
