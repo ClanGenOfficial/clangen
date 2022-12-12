@@ -1420,7 +1420,6 @@ class PatrolEvent():
                  exp=0,
                  success_text=[],
                  fail_text=[],
-                 other_clan=None,
                  win_skills=None,
                  win_trait=None,
                  fail_skills=None,
@@ -1440,7 +1439,6 @@ class PatrolEvent():
         self.decline_text = decline_text
         self.chance_of_success = chance_of_success  # out of 100
         self.exp = exp
-        self.other_clan = patrol.other_clan
         self.win_skills = win_skills
         self.win_trait = win_trait
         self.fail_skills = fail_skills
