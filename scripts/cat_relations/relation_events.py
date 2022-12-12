@@ -63,7 +63,7 @@ class Relation_Events():
                 current_relationship.link_relationship()
 
             # overcome dead mates
-            if cat_from_mate and cat_from_mate.dead and cat_from_mate.dead_for >= 4:
+            if cat_from_mate and cat_from_mate.dead and cat_from_mate.dead_for >= 4 and "grief stricken" not in cat_from.illnesses:
                 # randint is a slow function, don't call it unless we have to.
                 if random.random() > 0.96:  # Roughly 1/25
                     self.had_one_event = True

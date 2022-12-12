@@ -252,7 +252,7 @@
     },
 
     "dislocated joint":{
-        "duration": 4,
+        "duration": 2,
         "severity": "major",
         "medicine_duration": 1,
         "mortality": {

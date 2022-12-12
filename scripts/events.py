@@ -97,6 +97,10 @@ class Events():
 
             self.check_clan_relations()
 
+            for string in Cat.grief_strings:
+                game.cur_events_list.append(string)
+            Cat.grief_strings.clear()
+
             # age up the clan
             game.clan.age += 1
 
@@ -918,7 +922,7 @@ class Events():
                 for condition in PERMANENT:
                     possible_conditions.append(condition)
                 chosen_condition = choice(possible_conditions)
-                new_cat.get_permanent_condition(new_cat, chosen_condition)
+                new_cat.get_permanent_condition(chosen_condition)
                 for condition in new_cat.permanent_condition:
                     if new_cat.permanent_condition[condition] in ['lost a leg', 'born without a leg']:
                         new_cat.specialty = 'NOPAW'
