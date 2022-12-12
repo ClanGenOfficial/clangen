@@ -386,7 +386,14 @@ class Patrol():
         # ---------------------------------------------------------------------------- #
         """
         n = the outcome chosen
+        rare and common denote the outcome chance
         """
+        rare = False
+        common = False
+        if outcome >= 11:
+            rare = True
+        else:
+            common = True
 
         if c < chance:
             self.success = True
@@ -401,7 +408,7 @@ class Patrol():
                 elif self.patrol_stat_cat.skill in self.patrol_event.win_skills:
                     n = 2
             else:
-                if outcome >= 10 and len(success_text) >= 2 and success_text[1] is not None:
+                if rare and len(success_text) >= 2 and success_text[1] is not None:
                     n = 1
                 else:
                     if success_text[0] is not None:
@@ -450,33 +457,53 @@ class Patrol():
         else:
             self.success = False
 
+            # unscathed or not
+            unscathed = False
+            u = int(random.getrandbits(4))
+            if u >= 10:
+                unscathed = True
+            else:
+                unscathed = False
             # pick stat cat
             if self.patrol_event.fail_skills is not None and self.patrol_event.fail_trait is not None:
                 for cat in self.patrol_cats:
                     if cat.skill in self.patrol_event.fail_skills or cat.trait in self.patrol_event.fail_trait:
                         self.patrol_stat_cat = cat
             if self.patrol_stat_cat is not None and len(fail_text) > 1:
-                if outcome >= 11 and fail_text[1] is not None:
+                if rare and unscathed and fail_text[1] is not None:
                     n = 1
-                elif outcome <= 10 and len(fail_text) > 4 and fail_text[4] is not None:
+                elif common and not unscathed and len(fail_text) > 5 and fail_text[5] is not None:
+                    n = 5
+                elif rare and not unscathed and len(fail_text) > 4 and fail_text[4] is not None:
                     n = 4
                 elif fail_text[1] is None:
-                    n = 4
-                elif fail_text[4] is None:
+                    n = 5
+                elif fail_text[5] is None:
                     n = 1
-            elif outcome <= 10 and len(fail_text) >= 4 and fail_text[3] is not None:
+                else:
+                    n = 4
+            elif len(fail_text) >= 7 and fail_text[6] is not None:
+                if not unscathed:
+                    n = 6
+            elif common and len(fail_text) >= 4 and fail_text[3] is not None:
                 n = 3
-            elif outcome >= 11 and len(fail_text) >= 3 and fail_text[2] is not None:
+            elif rare and len(fail_text) >= 3 and fail_text[2] is not None:
                 n = 2
             elif fail_text[0] is None:
                 if len(fail_text) >= 4 and fail_text[3] is not None:
                     n = 3
                 elif len(fail_text) >= 3 and fail_text[2] is not None:
                     n = 2
+            elif rare and len(fail_text) >= 7 and fail_text[6] is not None:
+                n = 6
             else:
                 n = 0
-            if n == 2 or n == 4:
-                self.handle_deaths()
+            if n == 2:
+                self.handle_deaths(self.patrol_random_cat)
+            elif n == 4:
+                self.handle_deaths(self.patrol_stat_cat)
+            elif n == 6:
+                self.handle_deaths(self.patrol_leader)
             elif n == 3 or n == 5:
                 if game.clan.game_mode == 'classic':
                     self.handle_scars()
@@ -524,14 +551,16 @@ class Patrol():
                 cat.experience = int(cat.experience + gained_exp)
                 print("After: " + str(cat.experience))
 
-    def handle_deaths(self):
+    def handle_deaths(self, cat):
         if "death" in self.patrol_event.tags:
-            if self.patrol_random_cat.status == 'leader':
-                game.clan.leader_lives = int(game.clan.leader_lives) - 1
-            elif len(self.patrol_event.fail_text) > 4 and self.final_fail == self.patrol_event.fail_text[4]:
-                self.patrol_stat_cat.die()
+            if cat == game.clan.leader:
+                if "all_lives" in self.patrol_event.tags:
+                    game.clan.leader_lives = int(game.clan.leader_lives) - 10
+                else:
+                    game.clan.leader_lives = int(game.clan.leader_lives) - 1
             else:
-                self.patrol_random_cat.die()
+                cat.die()
+                
             if len(self.patrol_event.history_text) >= 2:
                 self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
             else:
@@ -1423,15 +1452,15 @@ class PatrolEvent():
         self.history_text = history_text
 
         tags = [
-            "hunting", "other_clan", "fighting", "death", "scar", "new_cat",
-            "npc", "retirement", "injury", "illness",
-            "romantic", "platonic", "comfort", "respect", "trust", "dislike", "jealousy",
-            "med_cat", "training", "apprentice", "border", "reputation", "leader",
-            "gone", "multi_gone", "disaster_gone", "herbs", "deputy", "small_prey", "big_prey",
-            "disaster", "multi_deaths", "kits", "cruel_season", "two_apprentices",
-            "warrior", "no_app", "clan_to_p_l", "clan_to_r_c", "patrol_to_p_l", "patrol_to_r_c",
-            "rel_two_apps", "p_l_to_r_c", "s_c_to_r_c", "clan_to_patrol", "rel_patrol", "distrust",
-            "disrespect", "heat_illness", "med_only"
+            "hunting", "small_prey", "big_prey", "training", "border", "med_cat", "herbs", 
+            "other_clan", "reputation", "fighting", "new_cat", "kits", "npc", 
+            "death", "disaster", "multi_deaths", "cruel_season", "gone", "multi_gone", "disaster_gone",
+            "romantic", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", "distrust", "disrespect",
+            "apprentice", "two_apprentices", "warrior", "no_app", "med_only", "no_leader", "no_deputy", "leader", "deputy", 
+            "clan_to_p_l", "clan_to_r_c", "patrol_to_p_l", "patrol_to_r_c", 
+            "rel_two_apps", "p_l_to_r_c", "s_c_to_r_c", "clan_to_patrol", "rel_patrol",
+            "all_lives"
+
         ]
 
         # ! Patrol Notes
