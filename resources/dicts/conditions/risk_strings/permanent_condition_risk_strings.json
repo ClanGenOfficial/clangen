@@ -140,5 +140,12 @@
             "r_c sits with m_c, listening to their troubles and providing a comforting, sympathetic ear. m_c has had a rough moon, haunted by constant nightmares.",
             "Haunted by the memories of their past, m_c gets so little sleep this month that they find themselves unable to function."
         ]
+    },
+    "lasting grief": {
+        "grief stricken": [
+            "r_c presses themselves against m_c's side and purrs in the most comforting way they can. m_c remains still and staring, their eyes full of a deep sadness.",
+            "m_c stalks angrily from camp, the grief welling up in their throat feels like it will choke them and m_c can't help but find it unfair that this sadness won't go away.",
+            "m_c breathes deeply, trying not to let this sudden wave of grief overtake them, but it's hard and it never really goes away."
+        ]
     }
 }

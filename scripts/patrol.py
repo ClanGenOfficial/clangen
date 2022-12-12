@@ -621,17 +621,18 @@ class Patrol():
                     break
 
             # check for lethality
-            if "nonlethal" in self.patrol_event.tags:
+            if "non_lethal" in self.patrol_event.tags:
                 lethal = False
 
             # now we hurt the kitty
-            new_condition = choice(possible_conditions)
-            if new_condition in INJURIES:
-                cat.get_injured(new_condition, lethal=lethal)
-            elif new_condition in ILLNESSES:
-                cat.get_ill(new_condition, lethal=lethal)
-            elif new_condition in PERMANENT:
-                cat.get_permanent_condition(new_condition)
+            if len(possible_conditions) > 0:
+                new_condition = choice(possible_conditions)
+                if new_condition in INJURIES:
+                    cat.get_injured(new_condition, lethal=lethal)
+                elif new_condition in ILLNESSES:
+                    cat.get_ill(new_condition, lethal=lethal)
+                elif new_condition in PERMANENT:
+                    cat.get_permanent_condition(new_condition)
 
     def handle_scars(self):
         if self.patrol_event.tags is not None:

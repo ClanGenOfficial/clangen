@@ -117,7 +117,7 @@
         "patrol_id": "gen_gen_lonerchase1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["border", "new_cat", "reputation", "scar"],
+        "tags": ["border", "new_cat", "reputation", "battle_injury", "scar"],
         "intro_text": "Your patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
         "success_text": [
                 "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stays hidden and goes to the cat while the rest of the patrol lures the dog away. They're unharmed, and this display of bravery makes them want to join the clan!",

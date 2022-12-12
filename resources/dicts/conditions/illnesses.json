@@ -433,13 +433,13 @@
             "senior adult": 0,
             "elder": 0
         },
-        "duration": 10,
+        "duration": 9,
         "medicine_duration": 5,
         "infectiousness": 0,
         "risks": [
             {
-                "name": "reoccurring shock",
-                "chance": 30
+                "name": "lasting grief",
+                "chance": 60
             },
             {
                 "name": "constant nightmares",

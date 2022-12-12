@@ -3,7 +3,7 @@
     "patrol_id": "gen_med_soloberrybush1",
     "biome": "Any",
     "season": "greenleaf",
-    "tags": ["herbs", "med_cat"],
+    "tags": ["herbs", "med_cat", "injury", "poisoned"],
     "intro_text": "While gathering herbs, r_c spots a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
     "chance_of_success": 50,
@@ -15,9 +15,9 @@
     ],
     "fail_text": [
         "While r_c thinks they're probably cranberries, they aren't confident enough with the identification to risk being wrong and plucking deathberries instead.",
-        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. These aren't strawberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day.",
         null,
-        null
+        null,
+        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. These aren't strawberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["None"],
@@ -60,7 +60,7 @@
     "patrol_id": "gen_med_soloberrybush3",
     "biome": "Any",
     "season": "leaf-fall",
-    "tags": ["herbs", "med_cat"],
+    "tags": ["herbs", "med_cat", "poisoned", "injury"],
     "intro_text": "While gathering herbs, r_c spots a bush of red berries.",
     "decline_text": "r_c decides not to touch the berries.",
     "chance_of_success": 50,
@@ -72,9 +72,9 @@
     ],
     "fail_text": [
         "While r_c thinks they're probably cranberries, they aren't confident enough with the identification to risk being wrong and plucking deathberries instead.",
-        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. These aren't strawberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day.",
         null,
-        null
+        null,
+        "While plucking them from the bush, r_c feels one of the berries split in their mouth, and a horrible taste coats their tongue. These aren't strawberries. They rush to force themselves to throw up, and it works, expelling the deathberries from their system, but they're weak and shaky for the rest of the day."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["None"],
