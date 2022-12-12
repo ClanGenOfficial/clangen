@@ -1457,7 +1457,7 @@ class PatrolEvent():
             "apprentice", "two_apprentices", "warrior", "no_app", "med_only", "no_leader", "no_deputy", "leader", "deputy", 
             "clan_to_p_l", "clan_to_r_c", "patrol_to_p_l", "patrol_to_r_c", 
             "rel_two_apps", "p_l_to_r_c", "s_c_to_r_c", "clan_to_patrol", "rel_patrol",
-            "all_lives"
+            "all_lives", "poisoned"
 
         ]
 
