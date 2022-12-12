@@ -72,6 +72,8 @@ class Condition_Events():
                 # kill
                 if cat.dead and cat.status != 'leader':
                     event = f"{cat.name} has died of {illness}."
+                    # clear event list to get rid of any healed or risk event texts from other illnesses
+                    event_list.clear()
                     event_list.append(event)
                     break
                 elif cat.dead and cat.status == 'leader':
@@ -195,6 +197,12 @@ class Condition_Events():
                     save_death(cat, event_string)
             game.cur_events_list.append(event_string)
 
+        # just double-checking that trigger is only returned True if the cat is dead
+        if cat.dead:
+            triggered = True
+        else:
+            triggered = False
+
         return triggered
 
     def handle_injuries(self, cat, other_cat, alive_kits, war, enemy_clan, season):
@@ -212,6 +220,7 @@ class Condition_Events():
         text = None
 
         if cat.dead:
+            triggered = True
             return triggered
 
         # handle if the current cat is already injured
@@ -241,8 +250,6 @@ class Condition_Events():
             if triggered:
                 possible_events = self.generate_events.possible_injury_events(cat.status, cat.age)
                 final_events = []
-
-                triggered = True
 
                 for event in possible_events:
 
@@ -320,15 +327,17 @@ class Condition_Events():
                             cat.possible_death = str(history_text)
 
                     cat.get_injured(injury_event.injury)
-                else:
-                    triggered = False
 
-        if not triggered:
-            return triggered
+        # just double-checking that trigger is only returned True if the cat is dead
+        if cat.dead:
+            triggered = True
         else:
+            triggered = False
+
+        if text is not None:
             game.cur_events_list.append(text)
 
-            return triggered
+        return triggered
 
     def handle_permanent_conditions(self,
                                     cat,
@@ -429,6 +438,9 @@ class Condition_Events():
                         else:
                             event = f"{cat.name} has died in the medicine den from a {injury}."
                             cat.died_by = f"{cat.name} died from a {injury}."
+
+                    # clear event list first to make sure any heal or risk events from other injuries are not shown
+                    event_list.clear()
                     event_list.append(event)
                     save_death(cat, event)
                     break
