@@ -755,7 +755,7 @@ class Relation_Events():
             kit.specialty2 = None
 
             # try to give them a permanent condition. 1/100 chance
-            if not int(random.random() * 100):
+            if not int(random.random() * 100) and game.clan.game_mode != 'classic':
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:
                     if kit.permanent_condition[condition] == 'born without a leg':

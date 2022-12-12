@@ -391,7 +391,7 @@ class Condition_Events():
             perm_condition = condition
 
         if perm_condition is not None:
-            got_condition = cat.get_permanent_condition(cat, perm_condition, born_with)
+            got_condition = cat.get_permanent_condition(perm_condition, born_with)
 
         if got_condition is True:
             return perm_condition
@@ -643,7 +643,7 @@ class Condition_Events():
                         if x == old_condition[y]:
                             if new_condition[y] in condition_progression.get(x):
                                 cat.permanent_condition.pop(old_condition[y])
-                    cat.get_permanent_condition(cat, new_condition[y], event_triggered=True)
+                    cat.get_permanent_condition(new_condition[y], event_triggered=True)
 
         retire_chances = {
             'kitten': 0,
