@@ -66,8 +66,9 @@ class Patrol():
                 self.patrol_apprentices.append(cat)
             game.patrolled.append(cat)
         # sets medcat as leader if they're in the patrol
-        if game.clan.medicine_cat in self.patrol_cats:
-            self.patrol_leader = game.clan.medicine_cat
+        if "medicine cat" in self.patrol_statuses:
+            med_index = self.patrol_statuses.index("medicine cat")
+            self.patrol_leader = self.patrol_cats[med_index]
         # sets leader as patrol leader
         elif game.clan.leader in self.patrol_cats:
             self.patrol_leader = game.clan.leader
