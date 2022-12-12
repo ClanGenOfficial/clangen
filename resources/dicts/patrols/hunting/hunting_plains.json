@@ -319,15 +319,15 @@
     "chance_of_success": 80,
     "exp": 10,
     "success_text": [
-            "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise.  They find themselves to be correct when they pounce into the grass and return to the patrol with the tasty morsel dangling from their mouth.",
+            "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the grass and return to the patrol with the tasty morsel dangling from their mouth.",
             null,
-            "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out!  s_c is quick to react and manages to snag the rabbit before it can disappear."
+            "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
     ],
     "fail_text": [
             "p_l pads closer to the grass, intent on finding the source of the noise, only to come face to face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
-            "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts from the grass, chattering loudly!  s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back into the grass.",
+            "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts from the grass, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back into the grass.",
             null,
-            "p_l takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
+            "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
     ],
     "win_skills": ["good hunter", "great hunter", "excellent hunter"],
     "fail_trait": ["daring", "bold", "ambitious"],
@@ -349,15 +349,15 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-        "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise.  They find themselves to be correct when they pounce into the grass and return to the patrol with the tasty morsel dangling from their mouth.",
+        "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the grass and return to the patrol with the tasty morsel dangling from their mouth.",
         null,
-        "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out!  s_c is quick to react and manages to snag the rabbit before it can disappear."
+        "p_l pads towards the grass to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
     ],
     "fail_text": [
-        "p_l pads closer to the grass , intent on finding the source of the noise, only to come face to face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
+        "p_l pads closer to the grass, intent on finding the source of the noise, only to come face to face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",
         "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts out of the grass, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back into the grass.",
-        "p_l takes the lead in checking the source of the noise and comes face to face with a snarling wolverine!  p_l yowls for their patrol but the other cats aren't quick enough to stop the wolverine from killing p_l in one quick and deadly swipe.",
-        "p_l takes the lead in checking the source of the noise and comes face to face with an angry fox!  Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
+        "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for their patrol but the other cats aren't quick enough to stop the wolverine from killing r_c in one quick and deadly swipe.",
+        "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
     ],
     "win_skills": ["good hunter", "great hunter", "excellent hunter"],
     "fail_trait": ["daring", "bold", "ambitious"],
@@ -381,15 +381,15 @@
     "chance_of_success": 40,
     "exp": 10,
     "success_text": [
-        "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise.  They find themselves to be correct when they pounce into the grass and continue on their patrol with the tasty morsel dangling from their mouth.",
+        "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the grass and continue on their patrol with the tasty morsel dangling from their mouth.",
         null,
-        "s_c pads towards the grass to check on the noise when a rabbit suddenly bursts out!  s_c is quick to react and manages to snag the rabbit before it can disappear."
+        "s_c pads towards the grass to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
     ],
     "fail_text": [
         "p_l pads closer to the grass, intent on finding the source of the noise, only to come face to face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
-        "s_c doesn't even hesitate before going to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts out of the grass, chattering loudly!  s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back into the grass.",
-        "p_l takes the lead in checking the source of the noise and comes face to face with a snarling wolverine!  p_l yowls for help, but they're alone on this patrol and they have the sudden realization that no one can help them now.  The wolverine kills the lone cat with little trouble.",
-        "p_l  heads toward the source of the noise and comes face to face with an angry fox!  Though they backpedal rapidly, the fox still manages to take a bite out of them before they can sprint away."
+        "s_c doesn't even hesitate before going to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts out of the grass, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back into the grass.",
+        "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for help, but they're alone on this patrol and they have the sudden realization that no one can help them now. The wolverine kills the lone cat with little trouble.",
+        "r_c heads toward the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before they can sprint away."
     ],
     "win_skills": ["good hunter", "great hunter", "excellent hunter"],
     "fail_trait": ["daring", "bold", "ambitious"],

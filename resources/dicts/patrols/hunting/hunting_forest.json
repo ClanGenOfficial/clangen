@@ -621,7 +621,7 @@
             "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
             "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry raccoon bursts from the bush!  s_c gets quite the scare, but thankfully the raccoon only wanted to get away from them and quickly runs off back into the undergrowth.",
             null,
-            "p_l takes the lead in checking the source of the noise and comes face to face with an angry fox!  Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
+            "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
 
     ],
     "other_clan": ["None"],
@@ -634,7 +634,7 @@
     "antagonize_text": null,
     "antagonize_fail_text": null,
     "history_text": [
-            "p_l gained a scar from a fox."
+            "r_c gained a scar from a fox."
     ]
 },
 {
@@ -647,15 +647,15 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-            "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise.  They find themselves to be correct when they pounce into the bush and return to the patrol with the tasty morsel dangling from their mouth.",
+            "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce into the bush and return to the patrol with the tasty morsel dangling from their mouth.",
             null,
-            "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out!  s_c is quick to react and manages to snag the rabbit before it can disappear."
+            "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
     ],
     "fail_text": [
-            "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
-            "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry raccoon bursts from the bush!  s_c gets quite the scare, but thankfully the raccoon only wanted to get away from them and quickly runs off back into the undergrowth.",
-            "p_l takes the lead in checking the source of the noise and comes face to face with a snarling wolverine!  p_l yowls for their patrol but the other cats aren't quick enough to stop the wolverine from killing p_l in one quick and deadly swipe.",
-            "p_l takes the lead in checking the source of the noise and comes face to face with an angry fox!  Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
+            "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk! The poor cat ends up stinking for days after the unfortunate incident.",
+            "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry raccoon bursts from the bush! s_c gets quite the scare, but thankfully the raccoon only wanted to get away from them and quickly runs off back into the undergrowth.",
+            "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for their patrol but the other cats aren't quick enough to stop the wolverine from killing r_c in one quick and deadly swipe.",
+            "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
     ],
     "other_clan": ["None"],
     "win_skills": ["good hunter", "great hunter", "excellent hunter"],
@@ -761,7 +761,7 @@
         null,
         "The patrol mostly ignores the Twolegs. But as they hunt, the cats encounter appealing, delicious smelling mush in little burrows. Some of the patrol investigates, and doors slam down behind them. There's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and the trapped cats are taken.",
         null,
-    "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? They wander closer, drawing more of the patrol in with them. Before they can decide whether to step away, there's a swoosh, and a net falls around the cats. They fight desperately, but the Twolegs take them away in the monster."
+        "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? They wander closer, drawing more of the patrol in with them. Before they can decide whether to step away, there's a swoosh, and a net falls around the cats. They fight desperately, but the Twolegs take them away in the monster."
     ],
     "win_skills": ["extremely smart"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
