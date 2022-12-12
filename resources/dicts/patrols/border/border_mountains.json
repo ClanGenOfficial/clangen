@@ -208,7 +208,7 @@
             "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
             "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
             "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, leaping from the rocky outcrops above, and quickly overwhelms the lone cat. They accept the rogue's surrender graciously, and escort them out of c_n territory promptly.",
-"Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
+            "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
     ],
     "fail_text": [
             "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
@@ -239,10 +239,10 @@
     "chance_of_success": 50,
     "exp": 10,
     "success_text": [
-            "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
-            "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
-            "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. They yowl a warning and the rogue scrambles out of the way, but it's enough warning. The intruder leaves the mountains.",
-"Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
+        "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
+        "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
+        "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. They yowl a warning and the rogue scrambles out of the way, but it's enough warning. The intruder leaves the mountains.",
+        "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
     ],
     "fail_text": [
             "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
@@ -307,16 +307,16 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
-            "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
-            "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, leaping from the rocky outcrops above, and quickly overwhelms the lone cat. They accept the rogue's surrender graciously, and escort them out of c_n territory promptly.",
-"Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
+        "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
+        "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
+        "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, leaping from the rocky outcrops above, and quickly overwhelms the lone cat. They accept the rogue's surrender graciously, and escort them out of c_n territory promptly.",
+        "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
     ],
     "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
-            "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
-            null,
-            null
+        "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+        "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by starting a rockslide, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
+        null,
+        null
     ],
     "win_skills": ["good fighter", "great fighter", "excellent fighter"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
@@ -337,16 +337,16 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-            "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
-            "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
-            "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. They yowl a warning and the rogue scrambles out of the way, but it's enough warning. The intruder leaves the mountains.",
-"Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
+        "The scent leads to a trespassing rogue. Weird. The patrol runs down the scree slope to see what's up with them, but the rogue turns and flees c_n territory.",
+        "r_c soon realizes that there are pawprints smelling of fox cubs. One must have wandered through this section of the border recently, but it's not a threat.",
+        "The scent leads to a trespassing rogue. s_c sets up a trap, using an unstable slope above the cat to start a rockslide. They yowl a warning and the rogue scrambles out of the way, but it's enough warning. The intruder leaves the mountains.",
+        "Boldy, s_c follows the scent to a trespassing rogue and confronts them, pointing out the clearly marked border which the rogue has crossed. From their seat above the rogue, perched on a high rock, they listen to the rogue stutter out an explanation and a quick apology, unimpressed and confident in their own strength."
     ],
     "fail_text": [
-            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
-            "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
-            null,
-            null
+        "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+        "The scent leads to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
+        null,
+        null
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
