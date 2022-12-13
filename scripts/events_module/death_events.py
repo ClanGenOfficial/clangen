@@ -103,6 +103,12 @@ class Death_Events():
         print('DEATH:', cat.name, cat.status, len(final_events), other_cat.name, other_cat.status)
         death_cause = (random.choice(final_events))
 
+        # check if the cat's body was retrievable
+        if "no_body" in death_cause.tags:
+            body = False
+        else:
+            body = True
+
         if "war" in death_cause.tags:
             other_clan_name = enemy_clan
 
@@ -126,33 +132,33 @@ class Death_Events():
         if cat.status == "leader":
             if "all_lives" in death_cause.tags:
                 game.clan.leader_lives -= 10
-                cat.die()
+                cat.die(body)
                 cat.died_by.append(history_text)
             elif "murder" in death_cause.tags or "some_lives" in death_cause.tags:
                 if game.clan.leader_lives > 2:
                     game.clan.leader_lives -= random.randrange(2, current_lives - 1)
-                    cat.die()
+                    cat.die(body)
                     cat.died_by.append(history_text)
                 else:
                     game.clan.leader_lives -= 3
-                    cat.die()
+                    cat.die(body)
                     cat.died_by.append(history_text)
             else:
                 game.clan.leader_lives -= 1
-                cat.die()
+                cat.die(body)
                 cat.died_by.append(history_text)
         else:
             if ("multi_death" in death_cause.tags or "other_cat_death" in death_cause.tags) \
                     and other_cat.status != 'leader':
-                other_cat.die()
+                other_cat.die(body)
                 other_cat.died_by.append(other_history_text)
             elif ("multi_death" in death_cause.tags or "other_cat_death" in death_cause.tags) \
                     and other_cat.status == 'leader':
                 game.clan.leader_lives -= 1
-                other_cat.die()
+                other_cat.die(body)
                 other_cat.died_by.append(other_history_text)
             if "other_cat_death" not in death_cause.tags:
-                cat.die()
+                cat.die(body)
                 cat.died_by.append(history_text)
 
         # if "rel_down" in death_cause.tags:

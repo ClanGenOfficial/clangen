@@ -316,7 +316,7 @@ class Cat():
     def is_alive(self):
         return not self.dead
 
-    def die(self):
+    def die(self, body=True):
         if self.status == 'leader' and game.clan.leader_lives > 0:
             return
         elif self.status == 'leader' and game.clan.leader_lives <= 0:
@@ -346,9 +346,23 @@ class Cat():
             game.clan.add_to_darkforest(self)
 
         if game.clan.game_mode != 'classic':
-            self.grief()
+            self.grief(body)
 
-    def grief(self):
+    def grief(self, body):
+        """
+        compiles grief moon event text
+        """
+        if body is True:
+            body_status = 'body'
+        else:
+            body_status = 'no_body'
+
+        romantic_strings = GRIEF_GENERAL_POSITIVE["romantic"][body_status]
+        platonic_strings = GRIEF_GENERAL_POSITIVE["platonic"][body_status]
+        admiration_strings = GRIEF_GENERAL_POSITIVE["admiration"][body_status]
+        comfort_strings = GRIEF_GENERAL_POSITIVE["comfort"][body_status]
+        trust_strings = GRIEF_GENERAL_POSITIVE["trust"][body_status]
+
         # apply grief to cats with high positive relationships to dead cat
         for cat in Cat.all_cats.values():
             if cat.dead or cat.outside:
@@ -361,48 +375,37 @@ class Cat():
             comfort_relation = list(filter(lambda rel: rel.comfortable > 50, relationships))
             trust_relation = list(filter(lambda rel: rel.trust > 60, relationships))
 
-            dead_cat_name = self.name
-            living_cat_name = cat.name
             possible_strings = []
-
-            # strings for specific family relations
-
 
             for y in range(len(romantic_relation)):
                 cat_to = romantic_relation[y].cat_to
                 if cat_to == self:
                     cat.get_ill("grief stricken", event_triggered=True)
-                    romantic_strings = [
-                        f"{living_cat_name} bends over the body of their love, wailing their despair into {dead_cat_name}'s fur. They sit vigil next to the body, wishing they could wake from this nightmare.",
-                        f"{living_cat_name} stares dully at {dead_cat_name}, the world fading from awareness as they try to comprehend their death. All the things they;ll never do together, the places {living_cat_name} wanted to show them, the life they could have lived by each other's sides, all wiped away in an instant.",
-                        f"As the clan sits vigil for {dead_cat_name}, {living_cat_name} refuses to even move from their nest, refuses to eat or drink or talk, as though by refusing to face the world will bring them back.",
-                        f"Surely, surely the world can't go on, surely the sun won't rise and the seasons won't turn, not now that {dead_cat_name} is dead. {living_cat_name} doesn't know how to go on without them.",
-                        f"{living_cat_name} lies next to {dead_cat_name} as the clan sits vigil for them. Their world has ended with {dead_cat_name}."
-                    ]
+                    possible_strings.extend(romantic_strings)
+                    family_strings = self.familial_grief(living_cat=cat, body=body_status)
+
+                    if family_strings is not None:
+                        possible_strings.extend(family_strings)
+
             for y in range(len(platonic_relation)):
                 cat_to = platonic_relation[y].cat_to
                 if cat_to == self:
                     cat.get_ill("grief stricken", event_triggered=True)
-                    platonic_strings = [
-                        f"{living_cat_name} wails when they see the body of {dead_cat_name}, still and cold in the clearing. They sit vigil that night as grief fills their heart.",
-                        f"{living_cat_name} fusses gently with {dead_cat_name}'s fur, hiding the evidence of what killed them. They want to remember them as they were in life, not like this.",
-                        f"As the clan sits vigil, {living_cat_name}'s voice cracks with grief, talking about the time they had with {dead_cat_name}."
-                    ]
                     possible_strings.extend(platonic_strings)
-                    family_strings = self.familial_grief(cat)
+
+                    family_strings = self.familial_grief(living_cat=cat, body=body_status)
+
                     if family_strings is not None:
                         possible_strings.extend(family_strings)
+
             for y in range(len(admiration_relation)):
                 cat_to = admiration_relation[y].cat_to
                 if cat_to == self:
                     cat.get_ill("grief stricken", event_triggered=True)
-                    admiration_strings = [
-                        f"{living_cat_name} had always looked up to {dead_cat_name} and the sight of their dead body doesn't feel real. Their vigil that night is numb and cold.",
-                        f"{dead_cat_name} was one of those cats who you'd always find right in the thick of things, and it's something {living_cat_name} greatly admired about them, their drive to help c_n. It's so strange and hard to comprehend, that they'll never see {dead_cat_name} do that again.",
-                        f"As the clan sits vigil for {dead_cat_name}, swapping stories of their life, {living_cat_name} speaks of what they admired about them, of how {dead_cat_name} inspired them."
-                    ]
                     possible_strings.extend(admiration_strings)
-                    family_strings = self.familial_grief(cat)
+
+                    family_strings = self.familial_grief(living_cat=cat, body=body_status)
+
                     if family_strings is not None:
                         possible_strings.extend(family_strings)
 
@@ -410,13 +413,10 @@ class Cat():
                 cat_to = comfort_relation[y].cat_to
                 if cat_to == self:
                     cat.get_ill("grief stricken", event_triggered=True)
-                    comfort_strings = [
-                        f"{living_cat_name} can hardly process the sight of {dead_cat_name}'s body before them. Somehow the world feels colder and crueler now.",
-                        f"{living_cat_name} looks at all the cats sitting vigil for {dead_cat_name}, and wonders how any of them will cope without {dead_cat_name} in their lives.",
-                        f"It just doesn't feel real. {living_cat_name} stares at {dead_cat_name}'s body blankly, waiting for this horrible nightmare to end."
-                    ]
                     possible_strings.extend(comfort_strings)
-                    family_strings = self.familial_grief(cat)
+
+                    family_strings = self.familial_grief(living_cat=cat, body=body_status)
+
                     if family_strings is not None:
                         possible_strings.extend(family_strings)
 
@@ -424,48 +424,32 @@ class Cat():
                 cat_to = trust_relation[y].cat_to
                 if cat_to == self:
                     cat.get_ill("grief stricken", event_triggered=True)
-                    trust_strings = [
-                        f"{living_cat_name} will miss {dead_cat_name}, truly. There was no other cat they trusted more and they already miss {dead_cat_name}'s steady presence at their side.",
-                        f"How is {living_cat_name} supposed to keep going? They thought {dead_cat_name} was always going to be there, was supposed to always be by their side, but now. . .",
-                        f"It's like losing a tail, or a limb, or their shadow. {living_cat_name} relied on {dead_cat_name}, trusted them, and contemplating trying to move on from their loss seems impossible."
-                    ]
                     possible_strings.extend(trust_strings)
-                    family_strings = self.familial_grief(cat)
+
+                    family_strings = self.familial_grief(living_cat=cat, body=body_status)
+
                     if family_strings is not None:
                         possible_strings.extend(family_strings)
 
             if len(possible_strings) != 0:
-                Cat.grief_strings.append(choice(possible_strings))
+                # choose string, then adjust string text, then append to grief string list
+                text = choice(possible_strings)
+                text = event_text_adjust(Cat, text, self, cat)
+                Cat.grief_strings.append(text)
 
-    def familial_grief(self, living_cat):
+    def familial_grief(self, living_cat, body):
+        """
+        returns relevant grief strings for family members, if no relevant strings then returns None
+        """
+
         dead_cat = self
-        dead_cat_name = dead_cat.name
-        living_cat_name = living_cat.name
-
-        parental_strings = [
-            f"{living_cat_name} nuzzles against the fur of their dead child, their kit, their {dead_cat_name}, and feels as though the world has ended.",
-            f"No parent wants to outlive their child and {living_cat_name} wails over {dead_cat_name}'s body.",
-            f"{living_cat_name} lays next to {dead_cat_name}'s body, numb to the world around them.",
-            f"{living_cat_name} feels as though they're living through a nightmare. {dead_cat_name}, their kit, can't really be dead.",
-            f"When {living_cat_name} hears the news of {dead_cat_name}'s death, they collapse and wail as though their own life was ending."
-        ]
-        child_strings = [
-            f"{living_cat_name} wails when they see the body of their parent, {dead_cat_name} lying still and cold.",
-            f"{living_cat_name} feels numb with grief when they hear what's happened to {dead_cat_name}. They can hardly imagine a world without their parent's love and support.",
-            f"{dead_cat_name}'s body lays in the clearing and {living_cat_name} nuzzles up beside them, wishing only to feel the warmth of their parent's presence."
-        ]
-        sibling_strings = [
-            f"{living_cat_name} stares at the body of their sibling, {dead_cat_name}, and can only think of the time they had together and all the time they've now lost.",
-            f"{living_cat_name} feels numb to the news of {dead_cat_name}'s death, as though walking through a dream. How could they ever walk through a world without their sibling at their side?",
-            f"A world without {dead_cat_name} at their side seems cold and empty to {living_cat_name}, how can the world continue on like nothing has happened?"
-        ]
 
         if dead_cat.is_parent(living_cat):
-            return child_strings
+            return GRIEF_FAMILY_POSITIVE["child_reaction"][body]
         elif living_cat.is_parent(dead_cat):
-            return parental_strings
+            return GRIEF_FAMILY_POSITIVE["parent_reaction"][body]
         elif dead_cat.is_sibling(living_cat):
-            return sibling_strings
+            return GRIEF_FAMILY_POSITIVE["sibling_reaction"][body]
         else:
             return None
 
@@ -1014,7 +998,7 @@ class Cat():
 
         if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
             duration = med_duration
-        duration += random.randrange(-1, 1)
+        duration += random.randrange(0, 1)
 
 
         if mortality != 0:
@@ -1779,5 +1763,23 @@ with open(f"{resource_directory}injuries.json", 'r') as read_file:
     INJURIES = ujson.loads(read_file.read())
 
 PERMANENT = None
-with open(f"resources/dicts/conditions/permanent_conditions.json", 'r') as read_file:
+with open(f"{resource_directory}permanent_conditions.json", 'r') as read_file:
     PERMANENT = ujson.loads(read_file.read())
+
+resource_directory = "resources/dicts/events/death/death_reactions/"
+
+GRIEF_GENERAL_POSITIVE = None
+with open(f"{resource_directory}general_positive.json", 'r') as read_file:
+    GRIEF_GENERAL_POSITIVE = ujson.loads(read_file.read())
+
+GRIEF_GENERAL_NEGATIVE = None
+with open(f"{resource_directory}general_negative.json", 'r') as read_file:
+    GRIEF_GENERAL_NEGATIVE = ujson.loads(read_file.read())
+
+GRIEF_FAMILY_POSITIVE = None
+with open(f"{resource_directory}family_positive.json", 'r') as read_file:
+    GRIEF_FAMILY_POSITIVE = ujson.loads(read_file.read())
+
+GRIEF_FAMILY_NEGATIVE = None
+with open(f"{resource_directory}family_negative.json", 'r') as read_file:
+    GRIEF_FAMILY_NEGATIVE = ujson.loads(read_file.read())

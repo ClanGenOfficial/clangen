@@ -104,7 +104,7 @@ class GenerateEvents():
                 event_list.extend(self.generate_injury_event(ALL_BEACH_LEADER_EVENT_INJURIES))
                 event_list.extend(self.generate_injury_event(GEN_LEADER_EVENT_INJURIES))
 
-        if status != 'kitten':
+        if status not in ['kitten', 'leader']:
             event_list.extend(self.generate_injury_event(GEN_GENERAL_EVENT_INJURIES))
 
         return event_list
