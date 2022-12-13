@@ -445,20 +445,38 @@ class Relation_Events():
 
         event_list.append(choice(possible_events))
 
-        cat.get_injured("recovering from birth", event_triggered=True)
-        if 'blood loss' in cat.injuries:
-            possible_events = [f"The birth was stressful and {str(cat.name)} lost a lot of blood.",
-                               f"{str(cat.name)} pants, looking at their wonderful {insert} and deciding that the pain and blood loss was all worth it.",
-                               f"Weak with blood loss, {str(cat.name)} nevertheless purrs at the sight of their {insert}.",
-                               f"Though the blood loss did not make the birth any easier for {str(cat.name)}.",
-                               f"Though {str(cat.name)} seems overly exhausted and weak from the birth.",
-                               f"{str(cat.name)} wasn't expecting this birth to be so intensely painful.",
-                               f"Everyone says giving birth is difficult, but {str(cat.name)} feels like this one has been worse than most.",
-                               f"This will all be worth it, {str(cat.name)} groans, promising themselves that as the pains of afterbirth rock their exhausted and bleeding body.",
-                               f"{str(cat.name)} chokes down the herbs given to them, retching at the taste but knowing they need them to stop the blood loss."
+        if not int(random.random() * 40):  # 1/40 chance for a cat to die during childbirth
+            possible_events = [
+                f"Later, as the medicine cat wails with {str(cat.name)}'s blood streaked through their pelt, and a warrior comes to move the body for its vigil, no one knows what to do with the {insert}.",
+                f"As the sun tracks across the sky, {str(cat.name)}'s bleeding gets worse and worse. It was still worth it, {str(cat.name)} decides, even as the medicine cat fights an impossible battle to keep them out of Starclan. Still so worth it.",
+                f"The birth was stressful, and {str(cat.name)} is exhausted and still bleeding and really just wants to sleep. Unfortunately, they don't ever wake up again.",
+                f"{str(cat.name)} wasn't expecting their birth to be so incredibly painful, and as the day wears on their condition deteriorates, leaving their {insert} mewling and trying to suckle a cooling body.",
+                f"It breaks their heart that they won't get to be with their {insert} as they grow. {str(cat.name)} pants out instructions and pleads to their friends around them, as the blood loss from birth slowly takes their life.",
+                f"However, {str(cat.name)} is too far gone for the herbs they're given to choke down to fix this blood loss, and the cats are helpless as {str(cat.name)} slowly slips to Starclan.",
+                f"Later, hours later, eons laters, the {insert} mews. Outside, {str(cat.name)}'s body cools, the toll of birth too much for it.",
+                f"Though all looks fine, the clan will wake to discover {str(cat.name)}'s body cold in the nursery, their {insert} mewing in vain for their parent.",
+                f"Though birth is always considered a difficult and risky event, no one thought they'd lose {str(cat.name)} to it, not after the {insert} was all born and seemed fine. They thought the blood loss was under control."
+            ]
+            if len(get_med_cats(Cat)) == 0:  # check number of med cats in the clan
+                event_list.append(choice(possible_events[2:]))  # limit possible events to those not mentioned med cats
+            else:
+                event_list.append(choice(possible_events))
+            cat.die()
+        else:  # if cat doesn't die, give recovering from birth
+            cat.get_injured("recovering from birth", event_triggered=True)
+            if 'blood loss' in cat.injuries:
+                possible_events = [f"The birth was stressful and {str(cat.name)} lost a lot of blood.",
+                                   f"{str(cat.name)} pants, looking at their wonderful {insert} and deciding that the pain and blood loss was all worth it.",
+                                   f"Weak with blood loss, {str(cat.name)} nevertheless purrs at the sight of their {insert}.",
+                                   f"Though the blood loss did not make the birth any easier for {str(cat.name)}.",
+                                   f"Though {str(cat.name)} seems overly exhausted and weak from the birth.",
+                                   f"{str(cat.name)} wasn't expecting this birth to be so intensely painful.",
+                                   f"Everyone says giving birth is difficult, but {str(cat.name)} feels like this one has been worse than most.",
+                                   f"This will all be worth it, {str(cat.name)} groans, promising themselves that as the pains of afterbirth rock their exhausted and bleeding body.",
+                                   f"{str(cat.name)} chokes down the herbs given to them, retching at the taste but knowing they need them to stop the blood loss."
 
-                               ]
-            event_list.append(choice(possible_events))
+                                   ]
+                event_list.append(choice(possible_events))
 
         print_event = " ".join(event_list)
         # display event

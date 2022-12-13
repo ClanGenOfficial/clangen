@@ -433,13 +433,13 @@
             "senior adult": 0,
             "elder": 0
         },
-        "duration": 9,
-        "medicine_duration": 5,
+        "duration": 5,
+        "medicine_duration": 2,
         "infectiousness": 0,
         "risks": [
             {
                 "name": "lasting grief",
-                "chance": 60
+                "chance": 50
             },
             {
                 "name": "constant nightmares",
