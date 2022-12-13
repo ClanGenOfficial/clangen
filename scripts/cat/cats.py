@@ -118,6 +118,8 @@ class Cat():
                  parent2=None,
                  pelt=None,
                  eye_colour=None,
+                 specialty=None,
+                 specialty2=None,
                  suffix=None,
                  ID=None,
                  moons=None,
@@ -132,6 +134,8 @@ class Cat():
         self.parent2 = parent2
         self.pelt = pelt
         self.eye_colour = eye_colour
+        self.specialty = specialty
+        self.specialty2 = specialty2
         self.mentor = None
         self.former_mentor = []
         self.patrol_with_mentor = 0
@@ -277,13 +281,6 @@ class Cat():
         init_accessories(self)
         init_white_patches(self)
         init_pattern(self)
-
-        self.paralyzed = False
-        self.no_kits = False
-        self.exiled = False
-        self.retired = False
-        if self.genderalign is None:
-            self.genderalign = self.gender
 
         # Sprite sizes
         self.sprite = None
@@ -1079,6 +1076,12 @@ class Cat():
         if name not in PERMANENT:
             print(f"WARNING: {name} is not in the permanent conditions collection.")
             return
+
+        # remove accessories if need be
+        if 'NOTAIL' in (self.specialty, self.specialty2) and self.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
+            self.accessory = None
+        if 'HALFTAIL' in (self.specialty, self.specialty2) and self.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
+            self.accessory = None
 
         condition = PERMANENT[name]
         new_condition = False
