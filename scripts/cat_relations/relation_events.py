@@ -425,15 +425,16 @@ class Relation_Events():
                                ]
         event_list.append(choice(possible_events))
 
-        cat.get_injured("recovering from birth", event_triggered=True)
-        if 'blood loss' in cat.injuries:
-            possible_events = [f"The birth was stressful and {str(cat.name)} lost a lot of blood.",
-                           f"{str(cat.name)} pants, looking at their wonderful {insert} and deciding that the pain and blood loss was all worth it.",
-                           f"Weak with blood loss, {str(cat.name)} nevertheless purrs at the sight of their {insert}.",
-                           f"Though the blood loss did not make the birth any easier for {str(cat.name)}.",
-                           f"Though {str(cat.name)} seems overly exhausted and weak from the birth."
-                           ]
-            event_list.append(choice(possible_events))
+        if game.clan.game_mode != 'classic':
+            cat.get_injured("recovering from birth", event_triggered=True)
+            if 'blood loss' in cat.injuries:
+                possible_events = [f"The birth was stressful and {str(cat.name)} lost a lot of blood.",
+                               f"{str(cat.name)} pants, looking at their wonderful {insert} and deciding that the pain and blood loss was all worth it.",
+                               f"Weak with blood loss, {str(cat.name)} nevertheless purrs at the sight of their {insert}.",
+                               f"Though the blood loss did not make the birth any easier for {str(cat.name)}.",
+                               f"Though {str(cat.name)} seems overly exhausted and weak from the birth."
+                               ]
+                event_list.append(choice(possible_events))
 
         print_event = " ".join(event_list)
         # display event
@@ -754,7 +755,7 @@ class Relation_Events():
             kit.specialty2 = None
 
             # try to give them a permanent condition. 1/100 chance
-            if not int(random.random() * 100):
+            if not int(random.random() * 100) and game.clan.game_mode != 'classic':
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:
                     if kit.permanent_condition[condition] == 'born without a leg':
