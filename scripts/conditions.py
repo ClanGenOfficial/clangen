@@ -7,11 +7,11 @@ def medical_cats_condition_fulfilled(all_cats, amount_per_med):
     fulfilled = False
 
     medicine_apprentices = list(filter(
-        lambda c: c.status == 'medicine apprentices' and not c.dead and not c.exiled and not c.not_working()
+        lambda c: c.status == 'medicine apprentices' and not c.dead and not c.outside and not c.not_working()
         , all_cats
     ))
     medicine_cats = list(filter(
-        lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled and not c.not_working()
+        lambda c: c.status == 'medicine cat' and not c.dead and not c.outside and not c.not_working()
         , all_cats
     ))
 
@@ -23,7 +23,7 @@ def medical_cats_condition_fulfilled(all_cats, amount_per_med):
 
     total_adult_med_number = good_healer + great_healer + fantastic_healer + normal_meds
 
-    relevant_cats = list(filter(lambda c: not c.dead and not c.exiled, all_cats))
+    relevant_cats = list(filter(lambda c: not c.dead and not c.outside, all_cats))
     number = len(relevant_cats) / (amount_per_med + 1)
 
     meds_available = int(total_adult_med_number + (len(medicine_apprentices) / 2))

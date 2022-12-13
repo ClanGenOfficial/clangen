@@ -147,6 +147,7 @@ class Cat():
         self.placement = None
         self.example = example
         self.dead = False
+        self.exiled = False
         self.outside = False
         self.died_by = [] # once the cat dies, tell the cause
         self.dead_for = 0  # moons
@@ -174,6 +175,9 @@ class Cat():
         self.df = False
         self.experience_level = None
         self.corruption = 0
+        self.no_kits = False
+        self.genderalign = None
+        self.paralyzed = False
 
         # setting ID
         if ID is None:
