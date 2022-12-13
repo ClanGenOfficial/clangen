@@ -204,6 +204,7 @@ class ProfileScreen(Screens):
                 self.clear_profile()
                 game.switches['cat'] = self.previous_cat
                 self.build_profile()
+                self.update_disabled_buttons_and_text()
             elif event.ui_element == self.next_cat_button:
                 self.clear_profile()
                 game.switches['cat'] = self.next_cat
@@ -607,6 +608,11 @@ class ProfileScreen(Screens):
             #NEWLINE ----------
             output += "\n"
 
+        #MENTOR
+        #Only shows up if the cat has a mentor.
+        if the_cat.mentor is not None:
+            output += "mentor: " + str(the_cat.mentor.name) + "\n"
+
         #FORMER APPRENTICES
         #Optional - Only shows up if the cat has previous apprentice(s)
         # FORMER APPRENTICES
@@ -622,6 +628,7 @@ class ProfileScreen(Screens):
             
             #NEWLINE ----------
             output += "\n"
+
 
         # CHARACTER TRAIT
         output += the_cat.trait
