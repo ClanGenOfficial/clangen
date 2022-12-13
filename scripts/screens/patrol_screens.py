@@ -1,12 +1,15 @@
 from math import ceil
-from random import choice, choices
-
-from .base_screens import Screens, draw_menu_buttons, cat_profiles, draw_clan_name
-
-from scripts.utility import draw, draw_large, draw_big
+from random import choice, sample
+import pygame_gui
+from .base_screens import Screens, cat_profiles
+from scripts.patrol import patrol
+from scripts.utility import get_text_box_theme
 from scripts.game_structure.text import *
 from scripts.game_structure.buttons import buttons
 from scripts.cat.cats import Cat
+from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
+from scripts.patrol import patrol
+
 
 class PatrolScreen(Screens):
 
@@ -16,570 +19,614 @@ class PatrolScreen(Screens):
     app_frame = pygame.image.load("resources/images/patrol_app_frame.png").convert_alpha()
     mate_frame = pygame.image.load("resources/images/patrol_mate_frame.png").convert_alpha()
 
-    def on_use(self):
-        # USER INTERFACE
-        draw_clan_name()
-        y_value = 110
-        verdana.text(
-            'Chose up to six cats to take on patrol.',
-            ('center', y_value))
-        y_value += 20
-        verdana.text(
+    current_patrol = []
+    patrol_stage = 'choose_cats'  # Can be 'choose_cats' or 'patrol_events' Controls the stage of patrol.
+    patrol_screen = 'patrol_cats'  # Can be "patrol_cats" or "skills". Controls the tab on the select_cats stage
+    current_page = 1
+    elements = {}  # hold elements for sub-page
+    cat_buttons = {}  # Hold cat image sprites.
+    selected_cat = None  # Holds selected cat.
+
+    def handle_event(self, event):
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if self.patrol_stage == "choose_cats":
+                self.handle_choose_cats_events(event)
+            elif self.patrol_stage == 'patrol_events':
+                self.handle_patrol_events_event(event)
+            
+            self.menu_button_pressed(event)
+
+            # Checking if the mentor or mate selection buttons are clicked. This must be seperate, because
+            # these buttons may not exist. 
+            if "mate_button" in self.elements:
+                if event.ui_element == self.elements['mate_button']:
+                    self.selected_cat = Cat.all_cats[self.selected_cat.mate]
+                    self.update_cat_images_buttons()
+                    self.update_selected_cat()
+            elif 'app_mentor_button' in self.elements:
+                if event.ui_element == self.elements['app_mentor_button']:
+                    self.selected_cat = self.app_mentor
+                    self.update_cat_images_buttons()
+                    self.update_selected_cat()
+            
+    def handle_choose_cats_events(self, event):
+        if event.ui_element == self.elements["random"]:
+            self.selected_cat = choice(self.able_cats)
+            self.update_selected_cat()
+        # Check is a cat is clicked
+        elif event.ui_element in self.cat_buttons.values():
+            self.selected_cat = event.ui_element.return_cat_object()
+            self.update_selected_cat()
+            self.update_button()
+        elif event.ui_element == self.elements["add_remove_cat"]:
+            if self.selected_cat in self.current_patrol:
+                self.current_patrol.remove(self.selected_cat)
+            else:
+                self.current_patrol.append(self.selected_cat)
+            self.update_cat_images_buttons()
+            self.update_button()
+        elif event.ui_element == self.elements['add_one']:
+            self.current_patrol.append(choice(self.able_cats))
+            self.update_cat_images_buttons()
+            self.update_button()
+        elif event.ui_element == self.elements['add_three']:
+            self.current_patrol += sample(self.able_cats, k=3)
+            self.update_cat_images_buttons()
+            self.update_button()
+        elif event.ui_element == self.elements['add_six']:
+            self.current_patrol += sample(self.able_cats, k=6)
+            self.update_cat_images_buttons()
+            self.update_button()
+        elif event.ui_element == self.elements['remove_all']:
+            self.current_patrol = []
+            self.update_cat_images_buttons()
+            self.update_button()
+        elif event.ui_element == self.elements['patrol_tab']:
+            self.patrol_screen = 'patrol_cats'
+            self.update_cat_images_buttons()
+            self.update_button()
+        elif event.ui_element == self.elements['skills']:
+            self.patrol_screen = 'skills'
+            self.update_cat_images_buttons()
+            self.update_button()
+        elif event.ui_element == self.elements["next_page"]:
+            self.current_page += 1
+            self.update_cat_images_buttons()
+        elif event.ui_element == self.elements["last_page"]:
+            self.current_page -= 1
+            self.update_cat_images_buttons()
+        elif event.ui_element == self.elements['patrol_start']:
+            self.open_patrol_event_screen() # Starting patrol.
+
+    def handle_patrol_events_event(self, event):
+        if event.ui_element == self.elements["proceed"]:
+            self.open_patrol_events_page("proceed")
+        elif event.ui_element == self.elements["not_proceed"]:
+            self.open_patrol_events_page("notproceed")
+        elif event.ui_element == self.elements["antagonize"]:
+            self.open_patrol_events_page("antagonize")
+        elif event.ui_element == self.elements['patrol_again']:
+            self.open_choose_cats_screen()
+        elif event.ui_element == self.elements["clan_return"]:
+            self.change_screen('clan screen')
+
+    def screen_switches(self):
+        self.set_disabled_menu_buttons(["patrol_screen"])
+        self.update_heading_text(f'{game.clan.name}Clan')
+        self.show_menu_buttons()
+        self.open_choose_cats_screen()
+        cat_profiles()
+
+    def update_button(self):
+        """" Updates button avilablities. """
+        if self.patrol_stage == 'choose_cats':
+            # Killing it now, because we have to switch it out for a "remove cat" button if the cat if
+            # already in the patrol
+            self.elements["add_remove_cat"].kill() 
+            
+            if self.selected_cat in self.current_patrol:
+                self.elements["add_remove_cat"] = UIImageButton(pygame.Rect((336,460),(127,30)), "",
+                                                                object_id = "#remove_cat_button")
+            elif self.selected_cat is None or len(self.current_patrol) >= 6:
+                self.elements["add_remove_cat"] = UIImageButton(pygame.Rect((350,460),(98,30)), "",
+                                                                object_id = "#add_cat_button")
+                self.elements["add_remove_cat"].disable()
+            else:
+                self.elements["add_remove_cat"] = UIImageButton(pygame.Rect((350,460),(98,30)), "",
+                                                                object_id = "#add_cat_button")
+            
+            # Update start patrol button
+            if not self.current_patrol:
+                self.elements['patrol_start'].disable()
+            else:
+                self.elements['patrol_start'].enable()
+
+            # Update add random cat buttons
+            # Enable all the buttons, to reset them
+            self.elements['add_one'].enable() 
+            self.elements['add_three'].enable() 
+            self.elements['add_six'].enable()
+            self.elements["random"].enable()
+            if len(self.current_patrol) >= 6 or len(self.able_cats) < 1:
+                self.elements['add_one'].disable()
+                self.elements["random"].disable()
+            if len(self.current_patrol) > 3 or len(self.able_cats) < 3:
+                self.elements['add_three'].disable() 
+            if len(self.current_patrol) >= 1 or len(self.able_cats) < 6:
+                self.elements['add_six'].disable() 
+
+            # Update the aviablity of the tab buttons
+            if self.patrol_screen == 'patrol_cats':
+                self.elements['patrol_tab'].disable()
+                self.elements['skills'].enable()
+            elif self.patrol_screen == 'skills':
+                self.elements['patrol_tab'].enable()
+                self.elements['skills'].disable()
+
+            if self.patrol_screen == 'patrol_cats':
+                self.elements['patrol_tab'].disable()
+                self.elements['skills'].enable()
+            elif self.patrol_screen == 'skills':
+                self.elements['patrol_tab'].enable()
+                self.elements['skills'].disable()
+
+    def open_choose_cats_screen(self):
+        """Opens the choose-cat patrol stage. """
+        self.clear_page()  # Clear the page
+        self.clear_cat_buttons()
+        cat_profiles()
+        
+        self.current_patrol = []
+        self.current_page = 1
+        self.patrol_stage = 'choose_cats'
+        self.patrol_screen = 'patrol_cats'  # List
+
+        self.elements["info"] = pygame_gui.elements.UITextBox(
+            'Chose up to six cats to take on patrol.\n'
             'Smaller patrols help cats gain more experience, but larger patrols are safer.',
-            ('center', y_value))
+            pygame.Rect((50, 95), (700, -1)), object_id=get_text_box_theme())
+        self.elements["cat_frame"] = pygame_gui.elements.UIImage(pygame.Rect((300,165),(200,275)),
+                                                                pygame.image.load("resources/images/patrol_cat_frame.png").convert_alpha())
 
-        screen.blit(PatrolScreen.able_box, (40, 460))
-        screen.blit(PatrolScreen.patrol_box, (490, 460))
-        screen.blit(PatrolScreen.cat_frame, (300, 165))
+        # Buttons
+        self.elements["add_remove_cat"] = UIImageButton(pygame.Rect((350,460),(98,30)), "",
+                                                        object_id = "#add_cat_button")
+        # No cat is selected when the screen is opened, so the button is disabled
+        self.elements["add_remove_cat"].disable()
 
-        draw_menu_buttons()
+        # Randomizing buttons
+        self.elements["random"] = UIImageButton(pygame.Rect((323,495),(34,34)), "", object_id = "#random_dice_button")
+        self.elements["add_one"] = UIImageButton(pygame.Rect((363,495),(34,34)), "", object_id = "#add_one_button")
+        self.elements["add_three"] = UIImageButton(pygame.Rect((403,495),(34,34)), "", object_id = "#add_three_button")
+        self.elements["add_six"] = UIImageButton(pygame.Rect((443,495),(34,34)), "", object_id = "#add_six_button")
 
-        # CATS WHO CAN PATROL
-        able_cats = []
+        # patrol type buttons - disabled for now
+        self.elements['paw'] = UIImageButton(pygame.Rect((323,550), (34,34)), "", object_id = "#paw_patrol_button")
+        self.elements['paw'].disable()
+        self.elements['mouse'] = UIImageButton(pygame.Rect((363,550), (34,34)), "", object_id = "#mouse_patrol_button")
+        self.elements['mouse'].disable()
+        self.elements['claws'] = UIImageButton(pygame.Rect((403,550), (34,34)), "", object_id = "#claws_patrol_button")
+        self.elements['claws'].disable()
+        self.elements['herb'] = UIImageButton(pygame.Rect((443,550), (34,34)), "", object_id = "#herb_patrol_button")
+        self.elements['herb'].disable()
 
+        # Able cat page buttons
+        self.elements['last_page'] = UIImageButton(pygame.Rect((75,462), (34,34)), "", object_id="#patrol_last_page")
+        self.elements['next_page'] = UIImageButton(pygame.Rect((241,462), (34,34)), "", object_id="#patrol_next_page")
 
+        # Tabs for the current patrol
+        self.elements['patrol_tab'] = UIImageButton(pygame.Rect((505,460),(80,35)), "", object_id="#patrol_cats_tab")
+        self.elements['patrol_tab'].disable()  # We start on the patrol_cats_tab
+        self.elements['skills']= UIImageButton(pygame.Rect((590,460),(154,35)), "",
+                                               object_id = "#skills_cats_tab")
+
+        # Remove all button
+        self.elements['remove_all'] = UIImageButton(pygame.Rect((560,627),(124,35)), "",
+                                                    object_id = "#remove_all_button")
+
+        # Text box for skills and traits. Hidden for now, and with no text in it
+        self.elements["skills_box"] = UITextBoxTweaked("", pygame.Rect((510,510), (240, 90)), visible = False,
+                                                       object_id ="#cat_profile_info_box", line_spacing = 0.95)
+
+        # Start Patrol Button
+        self.elements['patrol_start'] = UIImageButton(pygame.Rect((333, 589), (135, 30)), "",
+                                                      object_id="#start_patrol_button")
+        self.elements['patrol_start'].disable()
+
+        self.update_cat_images_buttons()
+        self.update_button()
+
+    def open_patrol_event_screen(self):
+        """Open the patrol event screen. This sets up the patrol starting"""
+        self.clear_page()
+        self.clear_cat_buttons()
+        self.patrol_stage = 'patrol_events'
+
+        # Layout images
+        self.elements['event_bg'] = pygame_gui.elements.UIImage(pygame.Rect((381,165),(354,270)),
+                                                                pygame.image.load("resources/images/patrol_event_frame.png").convert_alpha())
+        self.elements['info_bg'] = pygame_gui.elements.UIImage(pygame.Rect((90,456),(420,204)),
+                                                               pygame.image.load("resources/images/patrol_info.png").convert_alpha())
+        self.elements['image_frame'] = pygame_gui.elements.UIImage(pygame.Rect((65,140),(320,320)),
+                                                                   pygame.image.load("resources/images/patrol_sprite_frame.png").convert_alpha())
+
+        # Add selected cats to the patrol.
+        patrol.add_patrol_cats(self.current_patrol)
+        possible_events = patrol.get_possible_patrols(
+                game.clan.current_season,
+                game.clan.biome,
+                game.clan.all_clans,
+                game.settings.get('disasters')
+            )
+        patrol.patrol_event = choice(possible_events) # Set patrol event.
+        intro_text = patrol.patrol_event.intro_text
+        patrol_size = len(patrol.patrol_cats)
+
+        # Grab win trait.
+        if patrol.patrol_event.win_trait is not None:
+            win_trait = patrol.patrol_event.win_trait
+            patrol_trait = patrol.patrol_traits.index(win_trait)
+            patrol.patrol_stat_cat = patrol.patrol_cats[patrol_trait]
+
+        ######### Prepare Into Text ##############
+        # adjusting text for solo patrols
+        if patrol_size < 2:
+            intro_text = intro_text.replace('Your patrol',
+                                            str(patrol.patrol_leader.name))
+            intro_text = intro_text.replace('The patrol',
+                                            str(patrol.patrol_leader.name))
+            intro_text = intro_text.replace('o_c_n', str(patrol.other_clan.name) + 'Clan')
+            intro_text = intro_text.replace('c_n', str(game.clan.name) + 'Clan')
+            if patrol.patrol_stat_cat is not None:
+                intro_text = intro_text.replace('s_c', str(patrol.patrol_stat_cat.name))
+        intro_text = patrol.patrol_event.intro_text
+        intro_text = intro_text.replace('r_c',
+                                        str(patrol.patrol_random_cat.name))
+        intro_text = intro_text.replace('p_l',
+                                        str(patrol.patrol_leader.name))
+        intro_text = intro_text.replace('o_c_n', str(patrol.other_clan.name) + 'Clan')
+        intro_text = intro_text.replace('c_n', str(game.clan.name) + 'Clan')
+
+        self.elements["patrol_text"] = pygame_gui.elements.UITextBox(intro_text, pygame.Rect((390,185),(325,270)),
+                                                                     object_id="#patrol_text_box")
+
+        ####################### Patrol Info
+        # TEXT CATEGORIES AND CHECKING FOR REPEATS
+        members = []
+        skills = []
+        traits = []
+        for x in patrol.patrol_names:
+            if x not in patrol.patrol_leader_name:
+                members.append(x)
+        for x in patrol.patrol_skills:
+            if x not in skills:
+                skills.append(x)
+        for x in patrol.patrol_traits:
+            if x not in traits:
+                traits.append(x)
+        
+        self.elements['patrol_info'] = pygame_gui.elements.UITextBox(
+                                f'patrol leader: {patrol.patrol_leader_name} \n'
+                                f'patrol members: {self.get_list_text(members)} \n'
+                                f'patrol skills: {self.get_list_text(skills)} \n'
+                                f'patrol traits: {self.get_list_text(traits)}', pygame.Rect((105,460),(240,200)),
+                                object_id= "#cat_profile_info_box")
+
+        ######################### Draw Patrol Cats
+        pos_x = 400
+        pos_y = 475
+        for u in range(6):
+            if u < len(patrol.patrol_cats):
+                self.elements["cat" + str(u)] = pygame_gui.elements.UIImage(pygame.Rect((pos_x,pos_y),(50,50)), patrol.patrol_cats[u].sprite)
+                pos_x += 50
+                if pos_x > 450:
+                    pos_y += 50
+                    pos_x = 400
+            else:
+                break
+
+        ##################### Buttons:
+        self.elements["proceed"] = UIImageButton(pygame.Rect((550,433),(172,30)), "",
+                                                 object_id = "#proceed_button",
+                                                 starting_height=2)
+        self.elements["not_proceed"] = UIImageButton(pygame.Rect((550,461),(172,30)), "",
+                                                     object_id = "#not_proceed_button",
+                                                     starting_height=2)
+
+        self.elements["antagonize"] = UIImageButton(pygame.Rect((550,461),(172,30)), "",
+                                                    object_id = "#antagonize_button")
+        if patrol.patrol_event.patrol_id not in [500, 501, 502, 503, 504, 505, 510, 800, 801, 802, 803, 804, 805]:
+            self.elements["antagonize"].hide()
+
+    def open_patrol_events_page(self, user_input):
+        """Deals with the next stage of the patrol, including antagonize, proceed, and do not proceed.
+        You must put the type of next step (user input) into the user_input parameter.
+        For antagonize: user_input = "antag" or "antagonize"
+        For Proceed: user_input = "pro" or "proceed"
+        For do not Proceed: user_input = "nopro" or "notproceed" """
+
+        if user_input in ["antag", "antagonize"]:
+            patrol.calculate_success_antagonize()
+            if patrol.success:
+                display_text = patrol.patrol_event.antagonize_text
+            else:
+                display_text = patrol.patrol_event.antagonize_fail_text
+        elif user_input in ["pro", "proceed"]:
+            patrol.calculate_success()
+            if patrol.success:
+                display_text = patrol.patrol_event.success_text
+            else:
+                display_text = patrol.patrol_event.fail_text
+        elif user_input in ["nopro", "notproceed"]:
+            display_text = patrol.patrol_event.decline_text
+        else:
+            display_text = "ERROR"
+
+        # Adjust text for solo patrols
+        if len(patrol.patrol_cats) < 2:
+            display_text = display_text.replace('Your patrol',
+                                                str(patrol.patrol_leader.name))
+            display_text = display_text.replace('The patrol',
+                                                str(patrol.patrol_leader.name))
+            display_text = display_text.replace(
+                'o_c_n', str(patrol.other_clan.name) + 'Clan')
+            display_text = display_text.replace(
+                'c_n', str(game.clan.name) + 'Clan')
+        display_text = display_text.replace(
+            'r_c', str(patrol.patrol_random_cat.name))
+        display_text = display_text.replace(
+            'p_l', str(patrol.patrol_leader.name))
+        display_text = display_text.replace(
+            'o_c_n', str(patrol.other_clan.name) + 'Clan')
+        display_text = display_text.replace(
+            'c_n', str(game.clan.name) + 'Clan')
+
+        if patrol.patrol_stat_cat is not None:
+            display_text = display_text.replace(
+                's_c', str(patrol.patrol_stat_cat.name))
+
+        self.elements["patrol_text"].set_text(display_text)
+
+        self.elements["clan_return"] = UIImageButton(pygame.Rect((400, 137), (162, 30)), "",
+                                                     object_id="#return_to_clan")
+        self.elements['patrol_again'] = UIImageButton(pygame.Rect((560, 137), (162, 30)), "",
+                                                      object_id="#patrol_again")
+
+        self.elements["proceed"].disable()
+        self.elements["not_proceed"].disable()
+        self.elements["antagonize"].hide()
+
+    def update_cat_images_buttons(self):
+        """Updates all the cat sprite buttons. Also updates the skills tab, if open, and the next and
+            previous page buttons.  """
+        self.clear_cat_buttons()  # Clear all the cat buttons
+        self.able_cats = []
         # ASSIGN TO ABLE CATS AND SORT BY RANK
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
             if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status in [
                     'leader', 'deputy', 'warrior', 'apprentice'
-            ] and not the_cat.exiled and the_cat not in game.switches['current_patrol']:
+            ] and not the_cat.exiled and the_cat not in self.current_patrol:
                 if the_cat.status == 'leader':
-                    able_cats.insert(0, the_cat)
+                    self.able_cats.insert(0, the_cat)
                 elif the_cat.status == 'deputy':
-                    able_cats.insert(1, the_cat)
+                    self.able_cats.insert(1, the_cat)
                 elif the_cat.status == 'warrior':
-                    able_cats.insert(2, the_cat)
+                    self.able_cats.insert(2, the_cat)
                 elif the_cat.status == 'apprentice':
-                    able_cats.append(the_cat)
+                    self.able_cats.append(the_cat)
 
-        # PAGE COUNT
-        all_pages = 1
-        if len(able_cats) > 15:
-            all_pages = int(ceil(len(able_cats) / 15.0))
+        if not self.able_cats:
+            all_pages = []
+        else:
+            all_pages = self.chunks(self.able_cats, 15)
 
-        # CATS ON PAGE COUNT
-        cats_on_page = 0
+        if self.current_page > len(all_pages):
+            if len(all_pages) == 0:
+                self.current_page = 1
+            else:
+                self.current_page = len(all_pages)
 
-        # POSITION OF ABLE CAT SPRITES START
+        # Check for empty list (no able cats)
+        if all_pages != []:
+            display_cats = all_pages[self.current_page - 1]
+        else:
+            display_cats = []
+
+        # Update next and previous page buttons
+        if len(all_pages) <= 1:
+            self.elements["next_page"].disable()
+            self.elements["last_page"].disable()
+        else:
+            if self.current_page >= len(all_pages):
+                self.elements["next_page"].disable()
+            else:
+                self.elements["next_page"].enable()
+
+            if self.current_page <= 1:
+                self.elements["last_page"].disable()
+            else:
+                self.elements["last_page"].enable()
+
+        # Draw able cats.
         pos_y = 500
         pos_x = 50
-
-
-        # DRAW ABLE CATS
-        for x in range(len(able_cats)):
-            if x + (game.switches['list_page'] - 1) * 15 > len(able_cats):
-                game.switches['list_page'] = 1
-            if game.switches['list_page'] > all_pages:
-                game.switches['list_page'] = 1
-
-            patrol_cat = able_cats[x + (game.switches['list_page'] - 1) * 15]
-
-            if patrol_cat not in game.switches['current_patrol']:
-                buttons.draw_button((0 + pos_x, pos_y),
-                                    image=patrol_cat.sprite,
-                                    cat=patrol_cat,
-                                    hotkey=[x + 1, 11])
-            else:
-                cats_on_page -= 1
-                pos_x -= 50
-
-            cats_on_page += 1
+        i = 0
+        for cat in display_cats:
+            self.cat_buttons["able_cat" + str(i)] = UISpriteButton(pygame.Rect((pos_x, pos_y),(50,50)),
+                                                                   cat.sprite, cat_object = cat)
             pos_x += 50
             if pos_x >= 300:
                 pos_x = 50
                 pos_y += 50
-            if cats_on_page >= 15 or x + (game.switches['list_page'] - 1) * 15 == len(able_cats) - 1:
-                break
+            i += 1
+        
+        if self.patrol_screen == 'patrol_cats':
+            # Hide Skills Info
+            self.elements["skills_box"].hide()
+            # Draw cats in patrol
+            pos_y = 508
+            pos_x = 525
+            i = 0
+            for cat in self.current_patrol:
+                self.cat_buttons["patrol_cat" + str(i)] = UISpriteButton(pygame.Rect((pos_x,pos_y), (50,50)),
+                                                                         cat.sprite, cat_object = cat)
+                pos_x += 75
+                if pos_x >= 725:
+                    pos_x = 525
+                    pos_y += 50
+                i += 1
+        elif self.patrol_screen == 'skills':
+            self.update_skills_tab()
 
-        # CAT LIST ARROWS
-        if game.switches['list_page'] > 1:
-            buttons.draw_image_button((75, 462),
-                                      button_name='patrol_arrow_l',
-                                      text='<',
-                                      size=(34, 34),
-                                      list_page=game.switches['list_page'] - 1,
-                                      hotkey=[23]
-                                      )
-        else:
-            buttons.draw_image_button((75, 462),
-                                      button_name='patrol_arrow_l',
-                                      text='<',
-                                      size=(34, 34),
-                                      list_page=game.switches['list_page'] - 1,
-                                      hotkey=[23],
-                                      available=False
-                                      )
+    def update_skills_tab(self):
+        self.elements["skills_box"].show()
+        if self.current_patrol is not []:
+            patrol_skills = []
+            patrol_traits = []
+            for x in self.current_patrol:
+                if x.skill not in patrol_skills:
+                    patrol_skills.append(x.skill)
+                if x.trait not in patrol_traits:
+                    patrol_traits.append(x.trait)
+        
+        self.elements["skills_box"].set_text(
+            f"Current Patrol Skills: {', '.join(patrol_skills)}\nCurrent Patrol Traits: {', '.join(patrol_traits)}"
+        )
 
-        if game.switches['list_page'] < all_pages:
-            buttons.draw_image_button((241, 462),
-                                      button_name='patrol_arrow_r',
-                                      text='>',
-                                      size=(34, 34),
-                                      list_page=game.switches['list_page'] + 1,
-                                      hotkey=[21]
-                                      )
-        else:
-            buttons.draw_image_button((241, 462),
-                                      button_name='patrol_arrow_r',
-                                      text='>',
-                                      size=(34, 34),
-                                      list_page=game.switches['list_page'] + 1,
-                                      hotkey=[21],
-                                      available=False
-                                      )
+    def update_selected_cat(self):
+        """Refreshes the image displaing the selected cat, traits, mentor/apprentice/mate ext"""
 
-        # CURRENT PATROL CAT SPRITE START
-        pos_y1 = 508
-        pos_x1 = 525
+        # Kill and delete all relevent elements
+        if "selected_image" in self.elements:
+            self.elements["selected_image"].kill()
+            del self.elements["selected_image"]
+        if 'selected_name' in self.elements:
+            self.elements["selected_name"].kill()
+            del self.elements["selected_name"]
+        if 'selected_bio' in self.elements:
+            self.elements["selected_bio"].kill()
+            del self.elements["selected_bio"]
 
-        # DRAW CURRENT PATROL CAT SPRITES
-        if game.switches['show_info'] is False:
-            for x in range(len(game.switches['current_patrol'])):
+        # Kill mate frame, apprentice/mentor frame, and respective images, if they exist:
+        if 'mate_frame' in self.elements:
+            self.elements['mate_frame'].kill()
+            del self.elements['mate_frame']  # No need to keep this in memory
+        if 'mate_image' in self.elements:
+            self.elements['mate_image'].kill()
+            del self.elements['mate_image']  # No need to keep this in memory
+        if 'mate_name' in self.elements:
+            self.elements['mate_name'].kill()
+            del self.elements['mate_name']  # No need to keep this in memory
+        if 'mate_info' in self.elements:
+            self.elements['mate_info'].kill()
+            del self.elements['mate_info']
+        if 'mate_button' in self.elements:
+            self.elements['mate_button'].kill()
+            del self.elements['mate_button']  # No need to keep this in memory
+        if 'app_mentor_frame' in self.elements:
+            self.elements['app_mentor_frame'].kill()
+            del self.elements['app_mentor_frame']  # No need to keep this in memory
+        if 'app_mentor_image' in self.elements:
+            self.elements['app_mentor_image'].kill()
+            del self.elements['app_mentor_image']  # No need to keep this in memory
+        if 'app_mentor_name' in self.elements:
+            self.elements['app_mentor_name'].kill()
+            del self.elements['app_mentor_name']  # No need to keep this in memory
+        if 'app_mentor_button' in self.elements:
+            self.elements['app_mentor_button'].kill()
+            del self.elements['app_mentor_button']  # No need to keep this in memory
+        if 'app_mentor_info' in self.elements:
+            self.elements['app_mentor_info'].kill()
+            del self.elements['app_mentor_info']
 
-                patrol_cat = game.switches['current_patrol'][x]
-                game.switches['patrol_remove'] = False
-
-                buttons.draw_button((0 + pos_x1, 0 + pos_y1),
-                                    image=patrol_cat.sprite,
-                                    patrol_remove=True,
-                                    )
-                if game.switches['patrol_remove'] is True:
-                    game.switches['cat'] = patrol_cat
-
-                pos_x1 += 75
-                if pos_x1 >= 725:
-                    pos_x1 = 525
-                    pos_y1 += 50
-
-
-
-        # REMOVE ALL CATS FROM CURRENT PATROL LIST
-        buttons.draw_image_button((560, 627),
-                                  button_name='remove_all',
-                                  size=(124, 35),
-                                  current_patrol=[],
-                                  )
-
-        # BUTTON TO SHOW SPRITES OF CATS IN CURRENT PATROL
-        buttons.draw_image_button((505, 460),
-                                  button_name='patrol2',
-                                  size=(80, 35),
-                                  show_info=False
-                                  )
-        # BUTTON TO SHOW SKILLS AND TRAITS OF CATS IN CURRENT PATROL
-        buttons.draw_image_button((590, 460),
-                                  button_name='skills_traits',
-                                  size=(154, 35),
-                                  show_info=True
-                                  )
-
-        # PATROL TYPE BUTTONS - purely aesthetic atm until we have patrol type functionality
-        if game.game_mode != 'classic':
-            x_value = 323
-            y_value = 550
-            buttons.draw_image_button((x_value, y_value),
-                                      button_name='button_paw',
-                                      size=(34, 34),
-                                      available=False
-                                      )
-            x_value += 40
-            buttons.draw_image_button((x_value, y_value),
-                                      button_name='button_mouse',
-                                      size=(34, 34),
-                                      available=False
-                                      )
-            x_value += 40
-            buttons.draw_image_button((x_value, y_value),
-                                      button_name='button_claws',
-                                      size=(34, 34),
-                                      available=False
-                                      )
-            x_value += 40
-            buttons.draw_image_button((x_value, y_value),
-                                      button_name='button_herb',
-                                      size=(34, 34),
-                                      available=False
-                                      )
-
-        # SHOW CAT INFO
-        if game.switches['cat'] is not None:
-            self.show_info(able_cats)
-
-        # DRAW GREYED OUT ADD CAT BUTTON IF NO CAT SELECTED
-        else:
-            buttons.draw_button(
-                ('center', 460),
-                image='buttons/add_cat',
-                text='Add to Patrol',
-                available=False)
-
-        # ---------------------------------------------------------------------------- #
-        #                             roll a random cat                                #
-        # ---------------------------------------------------------------------------- #
-        # DRAW AVAILABLE RANDOM ROLL BUTTON IF AT LEAST TWO CATS ARE IN ABLE CATS
-        if len(game.switches['current_patrol']) < 6 and len(able_cats) > 1:
-            buttons.draw_image_button((323, 495),
-                                      button_name='random_dice',
-                                      size=(34, 34),
-                                      cat=choice(able_cats),
-                                      hotkey=[12])
-
-        # DRAW AVAILABLE RANDOM ROLL BUTTON IF ONLY ONE CAT IS IN ABLE CATS
-        elif len(game.switches['current_patrol']) < 6 and len(able_cats) == 1:
-            buttons.draw_image_button((323, 495),
-                                      button_name='random_dice',
-                                      size=(34, 34),
-                                      cat=able_cats[0],
-                                      hotkey=[12])
-        else:
-            buttons.draw_image_button((323, 495),
-                                      button_name='random_dice',
-                                      size=(34, 34),
-                                      hotkey=[12],
-                                      available=False)
-
-        # ---------------------------------------------------------------------------- #
-        #                         add 1 random cat to patrol                           #
-        # ---------------------------------------------------------------------------- #
-        # DRAW ADD 1 RANDOM CAT BUTTON IF PATROL STILL HAS SPACE
-        if len(game.switches['current_patrol']) <= 5 and len(able_cats) >= 1:
-            buttons.draw_button((363, 495),
-                                image='buttons/add_1',
-                                text='add 1',
-                                cat=choice(able_cats),
-                                fill_patrol=True)
-
-            if game.switches['fill_patrol'] is True:
-                game.switches['current_patrol'].append(game.switches['cat'])
-                game.switches['fill_patrol'] = False
-
-        # DRAW ADD 1 RANDOM CAT BUTTON IF ONLY ONE CAT IS IN ABLE CATS
-        elif len(game.switches['current_patrol']) < 6 and len(able_cats) == 1:
-            buttons.draw_button((403, 495),
-                                image='buttons/add_1',
-                                text='add 1',
-                                cat=able_cats[0],
-                                fill_patrol=True)
-
-            if game.switches['fill_patrol'] is True:
-                game.switches['current_patrol'].append(game.switches['cat'])
-                game.switches['fill_patrol'] = False
-
-        else:
-            buttons.draw_button((363, 495),
-                                image='buttons/add_1',
-                                text='add 1',
-                                available=False)
-
-        # ---------------------------------------------------------------------------- #
-        #                        add 3 random cats to patrol                           #
-        # ---------------------------------------------------------------------------- #
-        # DRAW ADD 3 RANDOM CATS BUTTON IF PATROL STILL HAS SPACE
-        if len(game.switches['current_patrol']) <= 3 and len(able_cats) > 3:
-            buttons.draw_image_button((403, 495),
-                                      button_name='add_3',
-                                      size=(34, 34),
-                                      fill_patrol=True,)
-
-            if game.switches['fill_patrol'] is True:
-                count = 3
-                for x in range(count):
-                    random_cat = choice(able_cats)
-                    if random_cat not in game.switches['current_patrol']:
-                        game.switches['current_patrol'].append(random_cat)
-                        able_cats.remove(random_cat)
-
-                game.switches['fill_patrol'] = False
-
-        elif len(game.switches['current_patrol']) <= 3 and len(able_cats) == 3:
-            buttons.draw_image_button((403, 495),
-                                      button_name='add_3',
-                                      size=(34, 34),
-                                      fill_patrol=True, )
-
-            if game.switches['fill_patrol'] is True:
-                for x in range(3):
-                    random_cat = able_cats[x]
-                    game.switches['current_patrol'].append(random_cat)
-
-                game.switches['fill_patrol'] = False
-        else:
-            buttons.draw_image_button((403, 495),
-                                      button_name='add_3',
-                                      size=(34, 34),
-                                      available=False)
-
-        # ---------------------------------------------------------------------------- #
-        #                        add 6 random cats to patrol                           #
-        # ---------------------------------------------------------------------------- #
-        # DRAW ADD 6 RANDOM CATS BUTTON IF PATROL STILL HAS SPACE
-        if len(game.switches['current_patrol']) == 0 and len(able_cats) > 6:
-            buttons.draw_image_button((443, 495),
-                                      button_name='add_6',
-                                      size=(34, 34),
-                                      fill_patrol=True,)
-            if game.switches['fill_patrol'] is True:
-                for x in range(6):
-                    random_cat = choice(able_cats)
-                    game.switches['current_patrol'].append(random_cat)
-                    able_cats.remove(random_cat)
-
-                game.switches['fill_patrol'] = False
-
-        elif len(game.switches['current_patrol']) == 0 and len(able_cats) == 6:
-            buttons.draw_image_button((443, 495),
-                                      button_name='add_6',
-                                      size=(34, 34),
-                                      fill_patrol=True,)
-            if game.switches['fill_patrol'] is True:
-                for x in range(6):
-                    random_cat = able_cats[x]
-                    game.switches['current_patrol'].append(random_cat)
-
-                game.switches['fill_patrol'] = False
-        else:
-            buttons.draw_image_button((443, 495),
-                                      button_name='add_6',
-                                      size=(34, 34),
-                                      available=False)
-
-        # ---------------------------------------------------------------------------- #
-        #                                 go on patrol                                 #
-        # ---------------------------------------------------------------------------- #
-        if len(game.switches['current_patrol']) > 0:
-            buttons.draw_button(('center', 589),
-                                image='buttons/go_patrol',
-                                text='Start Patrol',
-                                cur_screen='patrol event screen',
-                                hotkey=[13])
-        else:
-            buttons.draw_button(('center', 589),
-                                image='buttons/go_patrol',
-                                text='Start Patrol',
-                                available=False)
-
-    def show_info(self, able_cats):
-
-        # ---------------------------------------------------------------------------- #
-        #                               info on chosen cat                             #
-        # ---------------------------------------------------------------------------- #
-        # CHOSEN CAT INFO
-        chosen_cat = game.switches['cat']  # cat
-
-        y_value = 175
-        draw_large(chosen_cat, (320, y_value))  # sprite
-
-        y_value += 150
-
-        name = str(chosen_cat.name)  # get name
-        if 14 <= len(name) >= 16:  # check name length
-            short_name = str(chosen_cat.name)[0:15]
-            name = short_name + '...'
-
-        verdana.text(str(name),  # display name
-                     ('center', y_value),
-                     x_start=320,
-                     x_limit=480)
-
-        y_value += 25
-
-        verdana_small.text(str(chosen_cat.status),  # rank
-                           ('center', y_value))
-        y_value += 15
-
-        verdana_small.text(str(chosen_cat.trait),  # trait
-                           ('center', y_value))
-        y_value += 15
-
-        verdana_small.text(str(chosen_cat.skill),  # skill
-                           ('center', y_value))
-        y_value += 15
-
-        verdana_small.text(
-            'experience: ' +
-            str(chosen_cat.experience_level),  # exp
-            ('center', y_value))
-        y_value += 15
-
-        # ---------------------------------------------------------------------------- #
-        #                         show mate if they have one                           #
-        # ---------------------------------------------------------------------------- #
-        # SHOW MATE SPRITE AND BUTTON
-        if chosen_cat.status != 'apprentice':
-            if chosen_cat.mate is not None:
-                mate = Cat.all_cats[chosen_cat.mate]
-                screen.blit(PatrolScreen.mate_frame, (140, 190))
-                draw_big(mate, (150, 200))
-                if mate in able_cats:
-                    buttons.draw_image_button(
-                        (148, 356),
-                        button_name='patrol_select',
-                        size=(104, 26),
-                        cat=mate
-                        )
-                else:
-                    buttons.draw_image_button(
-                        (148, 356),
-                        button_name='patrol_select',
-                        size=(104, 26),
-                        cat=mate,
-                        available=False
-                        )
-                name = str(mate.name)  # get name
-                if 10 <= len(name) >= 12:  # check name length
-                    short_name = str(mate.name)[0:9]
-                    name = short_name + '...'
-                verdana.text(str(name),
-                             ('center', 310),
-                             x_start=150,
-                             x_limit=250)
-                verdana_small.text('mate',
-                             ('center', 330),
-                             x_start=150,
-                             x_limit=250)
-        # ---------------------------------------------------------------------------- #
-        #                        show mentor if they have one                          #
-        # ---------------------------------------------------------------------------- #
-        # SHOW MENTOR SPRITE AND BUTTON
-        if chosen_cat.status == 'apprentice':
-            if chosen_cat.mentor is not None:
-                screen.blit(PatrolScreen.app_frame, (494, 190))
-                draw_big(chosen_cat.mentor, (550, 200))
-                if chosen_cat.mentor in able_cats:
-                    buttons.draw_image_button(
-                        (548, 356),
-                        button_name='patrol_select',
-                        size=(104, 26),
-                        cat=chosen_cat.mentor
-                        )
-                else:
-                    buttons.draw_image_button(
-                        (548, 356),
-                        button_name='patrol_select',
-                        size=(104, 26),
-                        cat=chosen_cat.mentor,
-                        available=False
-                        )
-                name = str(chosen_cat.mentor.name)  # get name
-                if 10 <= len(name) >= 12:  # check name length
-                    short_name = str(chosen_cat.mentor.name)[0:9]
-                    name = short_name + '...'
-                verdana.text(str(name),
-                             ('center', 310),
-                             x_start=550,
-                             x_limit=650)
-                verdana_small.text('mentor',
-                             ('center', 330),
-                             x_start=550,
-                             x_limit=650)
-                verdana_small.text(f'mentor: {str(chosen_cat.mentor.name)}', ('center', y_value))
-
-        # ---------------------------------------------------------------------------- #
-        #                     show apprentice if they have one                         #
-        # ---------------------------------------------------------------------------- #
-        # SHOW APPRENTICE SPRITE AND BUTTON
-        if chosen_cat.apprentice != []:
-
-            screen.blit(PatrolScreen.app_frame, (495, 190))
-            draw_big(chosen_cat.apprentice[0], (550, 200))
-            if chosen_cat.apprentice[0] in able_cats:
-                buttons.draw_image_button(
-                    (548, 356),
-                    button_name='patrol_select',
-                    size=(104, 26),
-                    cat=chosen_cat.apprentice[0]
-                    )
-            else:
-                buttons.draw_image_button(
-                    (548, 356),
-                    button_name='patrol_select',
-                    size=(104, 26),
-                    cat=chosen_cat.apprentice[0],
-                    available=False
-                    )
-            name = str(chosen_cat.apprentice[0].name)  # get name
-            if 10 <= len(name) >= 12:  # check name length
-                short_name = str(chosen_cat.apprentice[0].name)[0:9]
+        if self.selected_cat is not None:
+            # Now, if the selected cat is not None, we rebuild everything with the correct cat info
+            # Selected Cat Image
+            self.elements["selected_image"] = pygame_gui.elements.UIImage(pygame.Rect((320, 175),(150,150)), self.selected_cat.large_sprite)
+            
+            name = str(self.selected_cat.name)  # get name
+            if 14 <= len(name) >= 16:  # check name length
+                short_name = str(self.selected_cat.name)[0:15]
                 name = short_name + '...'
-            verdana.text(str(name),
-                              ('center', 310),
-                              x_start=550,
-                              x_limit=650)
-            verdana_small.text('apprentice',
-                              ('center', 330),
-                              x_start=550,
-                              x_limit=650)
-        # ---------------------------------------------------------------------------- #
-        #                 add and remove chosen cat from the patrol                    #
-        # ---------------------------------------------------------------------------- #
-        # BUTTON TO ADD CAT TO PATROL
-        if len(game.switches['current_patrol']) < 6 and chosen_cat is not None\
-                and chosen_cat not in game.switches['current_patrol'] and game.switches['patrol_remove'] is False:
-            buttons.draw_button(
-                ('center', 460),
-                image='buttons/add_cat',
-                text='Add to Patrol',
-                current_patrol=chosen_cat,
-                add=True,
-                hotkey=[11],)
 
-        # BUTTON TO REMOVE CAT FROM PATROL
-        elif len(game.switches['current_patrol']) > 0 and chosen_cat is not None\
-                and chosen_cat in game.switches['current_patrol']:
-            buttons.draw_image_button((336, 460),
-                                      button_name='remove_cat',
-                                      size=(127, 30),
-                                      cat_remove=True,
-                                      )
-            # REMOVE FROM PATROL, ADD TO ABLE CATS
-            if game.switches['cat_remove'] is True:
-                game.switches['current_patrol'].remove(chosen_cat)
-                able_cats.append(chosen_cat)
-                game.switches['patrol_remove'] = False
-                game.switches['cat_remove'] = False
+            self.elements['selected_name'] = pygame_gui.elements.UITextBox(name, pygame.Rect((300,325),(200,30)))
+            self.elements['selected_bio'] = UITextBoxTweaked(str(self.selected_cat.status) +
+                                                            "\n" + str(self.selected_cat.trait) +
+                                                            "\n" + str(self.selected_cat.skill) +
+                                                            "\n" + str(self.selected_cat.experience_level),
+                                                            pygame.Rect((300,350),(200,75)),
+                                                            object_id= "#cat_patrol_info_box",
+                                                            line_spacing = 0.95
+                                                            )
 
-        # MAKE ADD CAT BUTTON UNAVAILABLE IF NO SPACE IS LEFT IN PATROL
-        elif len(game.switches['current_patrol']) == 6 and chosen_cat not in game.switches['current_patrol']\
-                and game.switches['patrol_remove'] is False:
-            buttons.draw_button(
-                ('center', 460),
-                image='buttons/add_cat',
-                text='Add to Patrol',
-                current_patrol=chosen_cat,
-                available=False,
-                hotkey=[11],)
+            # Show Cat's Mate, if they have one
+            if self.selected_cat.status != 'apprentice':
+                if self.selected_cat.mate is not None:
+                    self.elements['mate_frame'] = pygame_gui.elements.UIImage(pygame.Rect((140,190),(166,170)), self.mate_frame)
+                    mate = Cat.all_cats[self.selected_cat.mate]
+                    self.elements['mate_image'] = pygame_gui.elements.UIImage(pygame.Rect((150,200),(100,100)), mate.large_sprite)
+                    # Check for name length
+                    name = str(mate.name)  # get name
+                    if 10 <= len(name) >= 12:  # check name length
+                        short_name = str(mate.name)[0:9]
+                        name = short_name + '...'
+                    self.elements['mate_name'] = pygame_gui.elements.UITextBox(name, pygame.Rect((150,300),(100,30)))
+                    self.elements['mate_info'] = pygame_gui.elements.UITextBox("mate", pygame.Rect((150,330),(100,30)), object_id = "#cat_patrol_info_box")
+                    self.elements['mate_button'] = UIImageButton(pygame.Rect((148,356),(104,26)), "", object_id = "#patrol_select_button")
+                    # Disable mate_button if the cat it not able to go on a patrol
+                    if mate not in self.able_cats:
+                        self.elements['mate_button'].disable()
+            # Draw mentor or apprentice
+            if self.selected_cat.status == 'apprentice' or self.selected_cat.apprentice != []:
+                self.elements['app_mentor_frame'] = pygame_gui.elements.UIImage(pygame.Rect((495,190),(166,170)), self.app_frame)
 
-        # ---------------------------------------------------------------------------- #
-        #                      show patrol skills and traits                           #
-        # ---------------------------------------------------------------------------- #
-        # SHOW CURRENT PATROL SKILLS AND TRAITS
-        if game.switches['show_info'] is True:
-            if game.switches['current_patrol'] is not []:
-                patrol_skills = []
-                patrol_traits = []
-                for x in game.switches['current_patrol']:
-                    if x.skill not in patrol_skills:
-                        patrol_skills.append(x.skill)
-                    if x.trait not in patrol_traits:
-                        patrol_traits.append(x.trait)
+                if self.selected_cat.status == 'apprentice' and self.selected_cat.mentor is not None:
+                    self.app_mentor = self.selected_cat.mentor
+                    relation = 'mentor'
+                elif self.selected_cat.apprentice != []:
+                    self.app_mentor = self.selected_cat.apprentice[0]
+                    relation = 'apprentice'
+                else:
+                    self.app_mentor = None
+                
+                # Failsave, if apprentice or mentor is set to none. It should never happen.
+                if self.app_mentor != None:
+                    name = str(self.app_mentor.name)  # get name
+                    if 10 <= len(name) >= 12:  # check name length
+                        short_name = str(self.app_mentor.name)[0:9]
+                        name = short_name + '...'
+                    self.elements['app_mentor_name'] = pygame_gui.elements.UITextBox(name, pygame.Rect((550,300),(100,30)))
+                    self.elements['app_mentor_info'] = pygame_gui.elements.UITextBox(relation, pygame.Rect((550,330),(100,30)), object_id = "#cat_patrol_info_box")
+                    self.elements['app_mentor_image'] = pygame_gui.elements.UIImage(pygame.Rect((550,200),(100,100)), self.app_mentor.large_sprite)
+                    
+                    # Button to switch to that cat
+                    self.elements['app_mentor_button'] = UIImageButton(pygame.Rect((548,356),(104,26)), "", object_id = "#patrol_select_button")
+                    # Disable mate_button if the cat it not able to go on a patrol
+                    if self.app_mentor not in self.able_cats:
+                        self.elements['app_mentor_button'].disable()
+                    
+    def clear_page(self):
+        """Clears all the elements"""
+        for ele in self.elements:
+            self.elements[ele].kill()
+        self.elements = {}
 
-                pos_x = 510
-                pos_y = 510
+    def clear_cat_buttons(self):
+        for cat in self.cat_buttons:
+            self.cat_buttons[cat].kill()
+        self.cat_buttons = {}
 
-                verdana_small_dark.blit_text(
-                    f'current patrol skills: {self.get_list_text(patrol_skills)}',
-                    (pos_x, pos_y),
-                    x_limit=750
-                )
+    def exit_screen(self):
+        self.clear_page()
+        self.clear_cat_buttons()
 
-                pos_y = 575
+    def on_use(self):
 
-                verdana_small_dark.blit_text(
-                    f'current patrol traits: {self.get_list_text(patrol_traits)}',
-                    (pos_x, pos_y),
-                    x_limit=750
-                )
+        # Due to an bug in pygame where buttons on top if UIImage don;t register hover imput, we must do this.
+        if self.patrol_stage == 'choose_cats':
+            screen.blit(PatrolScreen.able_box, (40, 460))
+            screen.blit(PatrolScreen.patrol_box, (490, 460))
 
     def get_list_text(self, patrol_list):
         if not patrol_list:
@@ -587,9 +634,11 @@ class PatrolScreen(Screens):
         patrol_set = list(patrol_list)
         return ", ".join(patrol_set)
 
-    def screen_switches(self):
-        game.switches['current_patrol'] = []
-        game.switches['cat'] = None
-        game.patrol_cats = {}
-        game.switches['event'] = 0
-        cat_profiles()
+    def chunks(self, L, n): return [L[x: x+n] for x in range(0, len(L), n)]
+
+    def get_list_text(self, patrol_list):
+        if not patrol_list:
+            return "None"
+        # Removes duplicates.
+        patrol_set = list(patrol_list)
+        return ", ".join(patrol_set)

@@ -30,6 +30,10 @@ class Game():
     game_mode_list = ['classic', 'expanded', 'cruel season']
     relation_events_list = []
 
+    #Keeping track of various last screen for various purposes
+    last_screen_forupdate = 'start screen'
+    last_screen_forProfile = 'list screen'
+
     down = pygame.image.load("resources/images/buttons/arrow_down.png").convert_alpha()
     up = pygame.image.load("resources/images/buttons/arrow_up.png").convert_alpha()
 
@@ -90,6 +94,7 @@ class Game():
         'error_message': '',
         'apprentice': None,
         'change_name': '',
+        'change_suffix': '',
         'name_cat': None,
         'biome': None,
         'camp_bg': None,
@@ -178,7 +183,7 @@ class Game():
         self.keyspressed = []
         # carry commands
         self.carry_commands()
-
+    
     def carry_commands(self):
         """ Run this function to go through commands added to the switch-dictionary and carry them, then
         reset them back to normal after the action"""
@@ -191,13 +196,13 @@ class Game():
         if self.switches['save_settings']:
             self.save_settings()
             self.switches['save_settings'] = False
-        if self.switches[
+        '''if self.switches[
                 'save_clan'] and self.clan is not None and self.cat_class is not None:
             self.clan.save_clan()
             self.clan.save_pregnancy(game.clan)
             self.save_cats()
             self.switches['save_clan'] = False
-            self.switches['saved_clan'] = True
+            self.switches['saved_clan'] = True'''
         if self.switches['switch_clan']:
             self.clan.switch_clans()
             self.switches['switch_clan'] = False
@@ -208,6 +213,17 @@ class Game():
             if if_clans > 0:
                 game.switches['clan_list'] = clan_list.split('\n')
             self.switches['read_clans'] = False
+
+    def read_clans(self):
+        with open('saves/clanlist.txt', 'r') as read_file:
+            clan_list = read_file.read()
+            if_clans = len(clan_list)
+        if if_clans > 0:
+            clan_list = clan_list.split('\n')
+            clan_list = [i for i in clan_list if i] #Remove empty 
+            return clan_list
+        else:
+            return None
 
     def save_settings(self):
         """ Save user settings for later use """

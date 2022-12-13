@@ -1,8 +1,8 @@
 from .base_screens import Screens
-from .cat_screens import ProfileScreen, ChangeGenderScreen, ChangeNameScreen, ExileProfileScreen, GenderChangedScreen, NameChangedScreen
+from .cat_screens import ProfileScreen, ChangeGenderScreen, ChangeNameScreen, ExileProfileScreen
 from .clan_creation_screens import ClanCreatedScreen, MakeClanScreen
 from .clan_screens import ClanScreen, StarClanScreen, DFScreen, ListScreen, AllegiancesScreen
-from .event_screens import EventsScreen, SingleEventScreen, PatrolEventScreen, RelationshipEventScreen
+from .event_screens import EventsScreen, SingleEventScreen, PatrolEventScreen
 from .organizational_screens import\
     StartScreen, SettingsScreen, InfoScreen, SwitchClanScreen, LanguageScreen, RelationshipSettingsScreen, StatsScreen
 from .patrol_screens import PatrolScreen
@@ -30,6 +30,46 @@ BUTTONS:
 """
 
 
+"""
+Currently in the process of converting all screens and UI elements to pygame_gui.  -keyraven
+My main goal is it make things FUNCTIONAL. Some tweaks to visual elements may still be needed when a screen is "done". 
+Some small bits of text may also still be using the old system, and not text-boxes. 
+
+DONE:
+NameChangeScreen 
+StartScreen
+GenderChangeScreen
+ClanScreen
+AllegiancesScreen
+ListScreen 
+OutsideClanScreen
+StarclanScreen
+ProfileScreen
+SettingsScreen
+DFScreen
+MakeClanScreen
+ChooseClanScreen
+
+
+#TODO:
+-PatrolEventScreen
+-ChooseMateScreen
+-ChooseMentorScreen
+-RelationshipScreen
+-ViewChildrenScreen
+
+
+REMOVED SCREENS:
+NameChangedScreen
+GenderChangedScreen
+InfoScreen
+RelationshipSettingsScreen
+LanguageScreen
+
+Is SingleEventScreen screen ever used??
+"""
+
+
 # SCREENS
 screens = Screens()
 
@@ -38,9 +78,7 @@ screens = Screens()
 # ---------------------------------------------------------------------------- #
 
 change_gender_screen = ChangeGenderScreen('change gender screen')
-gender_changed_screen = GenderChangedScreen('gender changed screen')
 change_name_screen = ChangeNameScreen('change name screen')
-name_changed_screen = NameChangedScreen('name changed screen')
 profile_screen = ProfileScreen('profile screen')
 exile_profile_screen = ExileProfileScreen('outside profile screen')
 
@@ -68,7 +106,6 @@ df_screen = DFScreen('dark forest screen')
 
 events_screen = EventsScreen('events screen')
 patrol_event_screen = PatrolEventScreen('patrol event screen')
-relationship_event_screen = RelationshipEventScreen('relationship event screen')
 single_event_screen = SingleEventScreen('single event screen')
 
 # ---------------------------------------------------------------------------- #
