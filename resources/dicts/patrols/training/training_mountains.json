@@ -6,7 +6,7 @@
     "tags": ["apprentice", "training", "scar", "minor_injury", "warrior"],
     "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to leap up a rocky cliff.",
     "decline_text": "They decide to focus on the patrolling the territory instead. Training can wait for another day.",
-    "chance_of_success": 50,
+    "chance_of_success": 70,
     "exp": 20,
     "success_text": [
         "app1 listens carefully as p_l explains how to find paw holds and take advantage of the cliff's craggy surface.",
@@ -37,7 +37,7 @@
     "tags": ["death", "scar", "training", "battle_injury", "trust", "respect", "clan_to_r_c"],
     "intro_text": "r_c wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour.",
     "decline_text": "Surely it must be nothing. . . uneasily, r_c continues on.",
-    "chance_of_success": 40,
+    "chance_of_success": 80,
     "exp": 30,
     "success_text": [
     "Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence. Heart pounding, r_c sprints back to camp to warn everyone.",
@@ -70,7 +70,7 @@
     "tags": ["scar", "battle_injury", "training", "trust", "respect", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "p_l wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour.",
     "decline_text": "Surely it must be nothing. . . uneasily, the patrol continues on.",
-    "chance_of_success": 40,
+    "chance_of_success": 80,
     "exp": 30,
     "success_text": [
         "Calling the rest of the patrol over, the cats discuss their next move. If a badger has moved in, they need to confirm it. Eventually p_l comes up with a plan - pushing loose rocks in front of the sett's mouth. The cats will be able to come back tomorrow to see if anything has shoved them out of the way.",
@@ -102,7 +102,7 @@
     "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "p_l_to_r_c", "s_c_to_r_c", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "Trailing behind the patrol, there's a mighty clatter of stones somewhere below r_c. They look around wildly - just in time for the world to tip upside-down as the scree slope beneath them collapses.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
-    "chance_of_success": 50,
+    "chance_of_success": 90,
     "exp": 20,
     "success_text": [
         "Their clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
@@ -135,7 +135,7 @@
     "tags": ["training", "blunt_force_injury", "death", "scar"],
     "intro_text": "r_c is training alone out on the mountainside when suddenly, there's a mighty clatter of stones somewhere below them. r_c looks around wildly - just in time for the world to tip upside-down as the scree slope beneath them collapses.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
-    "chance_of_success": 50,
+    "chance_of_success": 70,
     "exp": 20,
     "success_text": [
         "r_c spends the entire day carefully working their way free and gets nothing else done, but at least they're unharmed.",
@@ -167,7 +167,7 @@
     "tags": ["training", "apprentice", "minor_injury", "scar"],
     "intro_text": "r_c heads out into the mountains alone, but maybe an apprentice shouldn't try to do a solo patrol.",
     "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
-    "chance_of_success": 30,
+    "chance_of_success": 50,
     "exp": 20,
     "success_text": [
         "At least this is a good chance to learn the territory! r_c heads off to map out a field of boulders they've always found confusing.",
@@ -195,10 +195,10 @@
     "patrol_id": "mtn_train_solo2",
     "biome": "mountainous",
     "season": "Any",
-    "tags": ["training"],
+    "tags": ["training", "warrior"],
     "intro_text": "r_c heads out into the mountains alone, wanting to explore and have some time to themselves.",
     "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
-    "chance_of_success": 30,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
         "r_c heads off to map out a field of boulders they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date.",
@@ -225,7 +225,7 @@
     "tags": ["training", "deputy"],
     "intro_text": "r_c heads out into the mountains alone, wanting to explore and have some time to themselves.",
     "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
-    "chance_of_success": 30,
+    "chance_of_success": 70,
     "exp": 20,
     "success_text": [
         "r_c heads off to map out a field of boulders they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
@@ -252,7 +252,7 @@
     "tags": ["training", "leader"],
     "intro_text": "r_c heads out into the mountains alone, wanting to explore and have some time to themselves.",
     "decline_text": "r_c turns back to camp, deciding that their duties have to come first.",
-    "chance_of_success": 30,
+    "chance_of_success": 70,
     "exp": 20,
     "success_text": [
         "r_c heads off to map out a field of boulders they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
@@ -275,46 +275,13 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "mtn_train_stuck2",
-    "biome": "mountainous",
-    "season": "Any",
-    "tags": ["training", "blunt_force_injury", "death", "scar"],
-    "intro_text": "Out on the mountain training alone, there's a mighty crash below r_c. They look around wildly, just in time for the world to tip upside-down as the scree slope beneath them collapses.",
-    "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
-    "chance_of_success": 50,
-    "exp": 20,
-    "success_text": [
-        "r_c spends the entire day carefully working their way free, and gets nothing else done.",
-        "r_c reacts quickly, scrambling on top of a larger rock in the falling tumble. It gives them solid ground to push against as they leap clear of the collapse.",
-        null,
-        null
-    ],
-    "fail_text": [
-        "r_c yowls until their voice is hoarse and croaky, and it takes hours before any of their clanmates pass by to hear them, but eventually they're freed.",
-        null,
-        "Hurt and wheezing, r_c is alone as they drift to StarClan.",
-        "r_c eventually manages to pull themselves free, but they're battered and injured, and have to spend the night out alone in the cold mountains before a patrol finds them the next morning and helps them back to camp."
-    ],
-    "win_skills": ["None"],
-    "win_trait": ["None"],
-    "fail_trait": ["None"],
-    "min_cats": 1,
-    "max_cats": 1,
-    "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-        "r_c carries a scar from being trapped on patrol",
-        "r_c tragically died after being trapped on patrol."
-    ]
-},
-{
     "patrol_id": "mtn_train_eagles1",
     "biome": "mountainous",
     "season": "newleaf",
     "tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
     "intro_text": "The cats head out into the crisp clear newleaf sun, p_l leading them towards a massive messy eagle nest.",
     "decline_text": "When they get there they discover that this nest isn't being used this newleaf. Disappointing.",
-    "chance_of_success": 50,
+    "chance_of_success": 80,
     "exp": 15,
     "success_text": [
         "This close to the nest the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's a great opportunity to watch the birds and learn their body language, and a side of them app1 never expected to see, observing them with their chicks.",
@@ -341,7 +308,7 @@
     "tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
     "intro_text": "The cats head out into the crisp clear newleaf sun, p_l leading them towards a massive messy eagle nest.",
     "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
-    "chance_of_success": 50,
+    "chance_of_success": 80,
     "exp": 15,
     "success_text": [
         "This close to the nest the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's a great opportunity to watch the birds and learn their body language, and a side of them app1 never expected to see, observing them with their chicks.",
@@ -361,7 +328,6 @@
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
-
 {
     "patrol_id": "mtn_train_eagles3",
     "biome": "mountainous",
@@ -369,7 +335,7 @@
     "tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "The cats head out into the crisp clear newleaf sun, p_l leading them towards a massive messy eagle nest.",
     "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
-    "chance_of_success": 50,
+    "chance_of_success": 90,
     "exp": 20,
     "success_text": [
         "This close to the nest the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's a great opportunity to watch the birds and learn their body language, and a parental side of them that the apprentices never expected.",
@@ -396,7 +362,7 @@
     "tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
     "intro_text": "The cats head out into the crisp clear newleaf sun, p_l leading them towards a massive messy eagle nest.",
     "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
-    "chance_of_success": 50,
+    "chance_of_success": 90,
     "exp": 15,
     "success_text": [
         "This close to the nest the eagles take remarkably little notice of other animals. app1 can even see sparrows nipping in and out of their own nests, tiny things woven into the eagle one. It's a great opportunity to watch the birds and learn their body language, and a parental side of them that the apprentices never expected.",
@@ -413,6 +379,148 @@
     "fail_trait": ["None"],
     "min_cats": 3,
     "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_train_stargazing1",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort"],
+    "intro_text": "On top of a rocky outlook, watching over the rolling surface of the foothills below, app1 waits for app2, the dark night cloaking the steep mountain. The tip of their tail keeps twitching in excitement.",
+    "decline_text": "Oh no! They both forgot that they were on elder nest change duty this evening!",
+    "chance_of_success": 70,
+    "exp": 10,
+    "success_text": [
+            "app1 bursts out from cover, pouncing on app2 with claws sheathed and giggling. app2 rolls with the gentle blow and bats app1 off, bounding after them with promises of getting them back! On and on the chase goes, neither interested in winning it as they play under the light of the full moon.",
+            "app2 emerges from the dark, trotting up to app1 and asking why they wanted to meet there. app1 blushes, making up some nonsense about fight training that makes no sense. Instead both apprentices hang out under the stars, awkward and thrilled.",
+            null,
+            "app2 emerges from the thick dark of the night, the stars reflected in their eyes. Seeing s_c, they trot up, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a . . . date? app2 blushes and murmurs a soft yes to the ground, suddenly unable to make eye contact."
+    ],
+    "fail_text": [
+            "app1 bursts out from cover, pouncing on app2 with claws sheathed and giggling. app2 rolls with the blow and kicks app1 off, but they scramble to their feet looking hurt and alarmed - a rocky outlook is no place for games that knock you off balance.",
+            "app2 emerges from the soft dark. Seeing app1, they trot up, asking why app1 wanted to meet there. app1 stutters out some nonsense about hunting, and then runs off into the shadowed slopes of the mountain."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_train_snowcrunching1",
+    "biome": "mountainous",
+    "season": "leaf-fall",
+    "tags": ["training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort"],
+    "intro_text": "The apprentices emerge into a predawn world hushed and smothered in a new coating of snow! app1 and app2 tear off into the territory near camp, looking to play.",
+    "decline_text": "Their mentors are already up for the day, and call them back. There'll be time to play later.",
+    "chance_of_success": 70,
+    "exp": 10,
+    "success_text": [
+            "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their haunches in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
+            "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
+            null,
+            "After a while romping around in the snow, app1 complains of the cold seeping into their fur. app2 digs a little hollow, and invites them in to curl up with them. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth."
+    ],
+    "fail_text": [
+            "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, they have to clean it up and try hid that they disturbed it, and it leaves them both irritated and stressed.",
+            "As they play in the snow, app1 falls over themselves embarrassingly, and suddenly decides they remember that they have other things they should be doing."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_train_snowcrunching2",
+    "biome": "mountainous",
+    "season": "leaf-bare",
+    "tags": ["training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort", "shivering", "injury"],
+    "intro_text": "The apprentices emerge into a predawn world hushed and smothered in a fresh blanket of snow! app1 and app2 tear off into the territory near camp, looking to play.",
+    "decline_text": "Their mentors are already up for the day, and call them back. There'll be time to play later.",
+    "chance_of_success": 70,
+    "exp": 10,
+    "success_text": [
+            "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their eartips in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
+            "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
+            null,
+            "After a while romping around in the heavy snow, app1 complains of the cold seeping into their fur. app2 digs a little hollow, and invites them in to curl up with them. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth."
+    ],
+    "fail_text": [
+            "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, they have to clean it up and try hid that they disturbed it, and it leaves them both irritated and stressed.",
+            "As they play in the snow, app1 falls over themselves embarrassingly, and suddenly decides they remember that they have other things they should be doing."
+            null,
+            "Both apprentices are back at camp in time for a normal day of training, but app1 has to confess their predawn adventure when they go to medicine cat den with a running nose."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_train_snowcrunching3",
+    "biome": "mountainous",
+    "season": "newleaf",
+    "tags": ["training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort"],
+    "intro_text": "The apprentices emerge into a predawn world hushed and smothered in a new coating of snow! app1 and app2 tear off into the territory near camp, looking to play.",
+    "decline_text": "Their mentors are already up for the day, and call them back. There'll be time to play later.",
+    "chance_of_success": 70,
+    "exp": 10,
+    "success_text": [
+            "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their haunches in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
+            "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
+            null,
+            "After a while romping around in the snow, app1 complains of the cold seeping into their fur. app2 digs a little hollow, and invites them in to curl up with them. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth."
+    ],
+    "fail_text": [
+            "The apprentices find a promising looking patch of fresh snow, only to find it conceals an old dirtplace trench underneath. Not only does it stink, they have to clean it up and try hid that they disturbed it, and it leaves them both irritated and stressed.",
+            "As they play in the snow, app1 falls over themselves embarrassingly, and suddenly decides they remember that they have other things they should be doing."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_train_sunset1",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["training", "warrior", "romantic", "platonic", "comfort", "no_app"],
+    "intro_text": "p_l approaches r_c, asking if they wouldn't mind showing p_l their hunting techniques, and perhaps doing some training with them?",
+    "decline_text": "r_c declines gently, explaining that they have too much work to do.",
+    "chance_of_success": 80,
+    "exp": 10,
+    "success_text": [
+            "The cats go out together in the late of the day, as the mountains catch the last of the light. r_c goes through their tricks, showing p_l how they shift their balance to make less noise on unstable scree slopes, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
+            "It's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
+            "s_c is a fantastic hunter, and p_l isn't shy about telling them so. They blush, but work through it, showing p_l how to nearly surf on large rocks as they bound down slopes, giving them stable footing in the middle of a semi-controlled small landslide.",
+            "p_l marvels at the opportunity to have s_c's time to themselves. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
+    ],
+    "fail_text": [
+            "r_c tries, but both the cats are too tired after a long day's work, and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
+            "r_c spots p_l looking at them a little bit too admiringly, and ends the training session early, diplomatically making up an excuse."
+    ],
+    "win_skills": ["fantastic hunter"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
 }
