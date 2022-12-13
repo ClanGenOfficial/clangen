@@ -1396,7 +1396,7 @@ class Patrol():
 
             # create and update relationships
             for the_cat in new_cat.all_cats.values():
-                if the_cat.dead or the_cat.exiled:
+                if the_cat.dead or the_cat.outside:
                     continue
                 the_cat.relationships[new_cat.ID] = Relationship(the_cat, new_cat)
                 new_cat.relationships[the_cat.ID] = Relationship(new_cat, the_cat)

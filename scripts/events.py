@@ -79,7 +79,7 @@ class Events():
 
             # relationships have to be handled separately, because of the ceremony name change
             for cat in Cat.all_cats.copy().values():
-                if cat.dead or cat.exiled:
+                if cat.dead or cat.outside:
                     continue
                 # switches between the two death handles
                 self.handle_outbreaks(cat)
@@ -1049,7 +1049,7 @@ class Events():
         alive_kits = list(filter(
             lambda kitty: (kitty.age == "kitten"
                            and not kitty.dead
-                           and not kitty.exiled),
+                           and not kitty.outside),
             Cat.all_cats.values()
         ))
 
@@ -1234,7 +1234,7 @@ class Events():
         # check how many kitties are already ill
         already_sick = list(filter(
             lambda kitty: (not kitty.dead
-                           and not kitty.exiled
+                           and not kitty.outside
                            and kitty.is_ill()),
             Cat.all_cats.values()
         ))
@@ -1243,7 +1243,7 @@ class Events():
         # round up the living kitties
         alive_cats = list(filter(
             lambda kitty: (not kitty.dead
-                           and not kitty.exiled
+                           and not kitty.outside
                            and not kitty.is_ill()),
             Cat.all_cats.values()
         ))
@@ -1268,7 +1268,7 @@ class Events():
                     alive_cats = list(filter(
                         lambda kitty: (kitty.status == "kitten"
                                        and not kitty.dead
-                                       and not kitty.exiled),
+                                       and not kitty.outside),
                         Cat.all_cats.values()
                     ))
                     alive_count = len(alive_cats)

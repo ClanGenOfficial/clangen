@@ -295,7 +295,7 @@ class Relation_Events():
 
     def handle_zero_moon_pregnant(self, cat, other_cat=None, relation=None, clan=game.clan):
         """Handles if the cat is zero moons pregnant."""
-        if other_cat and (other_cat.dead or other_cat.exiled or other_cat.birth_cooldown > 0):
+        if other_cat and (other_cat.dead or other_cat.outside or other_cat.birth_cooldown > 0):
             return
 
         if cat.ID in clan.pregnancy_data:
@@ -353,7 +353,7 @@ class Relation_Events():
         if cat.ID not in clan.pregnancy_data.keys():
             return
 
-        # if the pregnant cat is exiled or killed meanwhile, delete it from the dictionary
+        # if the pregnant cat is outside or killed meanwhile, delete it from the dictionary
         if cat.dead or cat.outside:
             del clan.pregnancy_data[cat.ID]
             return
@@ -809,7 +809,7 @@ class Relation_Events():
             # create and update relationships
             for cat_id in clan.clan_cats:
                 the_cat = Cat.all_cats.get(cat_id)
-                if the_cat.dead or the_cat.exiled:
+                if the_cat.dead or the_cat.outside:
                     continue
                 if the_cat.ID in kit.get_parents():
                     the_cat.relationships[kit.ID] = Relationship(the_cat, kit, False, True)

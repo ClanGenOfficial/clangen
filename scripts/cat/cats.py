@@ -1192,7 +1192,7 @@ class Cat():
         if not os.path.exists(condition_directory):
             os.makedirs(condition_directory)
 
-        if (not self.is_ill() and not self.is_injured() and not self.is_disabled()) or self.dead or self.exiled:
+        if (not self.is_ill() and not self.is_injured() and not self.is_disabled()) or self.dead or self.outside:
             if os.path.exists(condition_file_path):
                 os.remove(condition_file_path)
             return
@@ -1350,8 +1350,8 @@ class Cat():
 
     def update_mentor(self, new_mentor=None):
         if not new_mentor:
-            # handle if the current cat is exiled and still a apprentice
-            if self.exiled and self.mentor:
+            # handle if the current cat is outside and still a apprentice
+            if self.outside and self.mentor:
                 if self in self.mentor.apprentice:
                     self.mentor.apprentice.remove(self)
                 if self not in self.mentor.former_apprentices:
