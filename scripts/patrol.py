@@ -563,6 +563,10 @@ class Patrol():
                 print("After: " + str(cat.experience))
 
     def handle_deaths(self, cat):
+        if "no_body" in self.patrol_event.tags:
+            body = False
+        else:
+            body = True
         if "death" in self.patrol_event.tags:
             if cat == game.clan.leader:
                 if "all_lives" in self.patrol_event.tags:
@@ -570,7 +574,8 @@ class Patrol():
                 else:
                     game.clan.leader_lives = int(game.clan.leader_lives) - 1
             else:
-                cat.die()
+
+                cat.die(body)
                 
             if len(self.patrol_event.history_text) >= 2:
                 self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
@@ -591,27 +596,29 @@ class Patrol():
                     self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
                 else:
                     self.patrol_random_cat.death_event.append(f'This cat died while patrolling.')
-                cat.die()
+                cat.die(body)
 
         elif "multi_deaths" in self.patrol_event.tags:
             cats_dying = choice([2, 3, 4])
             if cats_dying > len(self.patrol_cats):
                 cats_dying = int(len(self.patrol_cats) - 1)
             for d in range(0, cats_dying):
-                self.patrol_cats[d].die()
+                self.patrol_cats[d].die(body)
 
         # cats disappearing on patrol is also handled under this def for simplicity's sake
         elif "gone" in self.patrol_event.tags:
             if len(self.patrol_event.fail_text) > 4 and self.final_fail == self.patrol_event.fail_text[4]:
-                self.patrol_stat_cat.die()
+                self.patrol_stat_cat.die(body)
             else:
                 self.patrol_random_cat.gone()
+                self.patrol_random_cat.grief(body=False)
 
         elif "disaster_gone" in self.patrol_event.tags:
             for cat in self.patrol_cats:
                 cat.experience += self.patrol_event.exp
                 cat.experience = min(cat.experience, 80)
                 cat.gone()
+                cat.grief(body=False)
 
         elif "multi_gone" in self.patrol_event.tags:
             cats_gone = choice([2, 3, 4])
@@ -619,6 +626,7 @@ class Patrol():
                 cats_gone = int(len(self.patrol_cats) - 1)
             for g in range(0, cats_gone):
                 self.patrol_cats[g].gone()
+                self.patrol_cats[g].grief(body=False)
 
     def handle_conditions(self, outcome):
 

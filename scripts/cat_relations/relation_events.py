@@ -401,39 +401,82 @@ class Relation_Events():
         # choose event string
         print_event = ""
         event_list = []
+        possible_events = []
         if other_cat is None:
             possible_events = [f"{str(cat.name)} had a {insert}, but refused to talk about their origin.",
                                f"{str(cat.name)} secretly had a {insert}.",
                                f"{str(cat.name)} had a {insert} with an unknown partner.",
                                f"{str(cat.name)} had a {insert} and refused to talk about their progenitor.",
                                f"{str(cat.name)} had a {insert} and is absolutely refusing to talk about it or acknowledge it at all.",
-                               f"{str(cat.name)} doesn't feel ready to be a parent of this {insert}. But they promise to the tiny flailing limbs by their side that they'll do their best, they swear on Starclan itself."
+                               f"{str(cat.name)} doesn't feel ready to be a parent of this {insert}. But they promise to the tiny flailing limbs by their side that they'll do their best, they swear on Starclan itself.",
+                               f"No one knows who {str(cat.name)} has had their {insert} with, but they seem very happy watching over their little offspring in the nursery",
+                               f"Whenever someone asks whether {str(cat.name)} will be alright raising their {insert} alone, they just smile, and reply that everything is going to work out fine.",
+                               f"A {insert}! {str(cat.name)} welcomes them happily, and seems unperturbed by the lack of a partner in the nursery with them."
                                ]
-        elif cat.mate == other_cat.ID:
+        elif cat.mate == other_cat.ID and not other_cat.dead:
             possible_events = [f"{str(cat.name)} had a {insert} with {str(other_cat.name)}.",
                                f"In the nursery, {str(cat.name)} lies suckling a {insert}, {str(other_cat.name)} watching over them and purring so hard their body vibrates.",
                                f"{str(cat.name)} and {str(other_cat.name)}'s eyes meet over their {insert}, full of love for their growing family.",
                                f"In the quiet of the nursery, in the nest they've spent so long preparing, {str(cat.name)} and {str(other_cat.name)} welcome a {insert}.",
                                f"With their {insert} mewling at their belly, {str(cat.name)}'s long pregnancy has finally given them and {str(other_cat.name)} the expansion to their family they've been hoping and waiting for.",
-                               f"Even with {str(other_cat.name)} by their side, {str(cat.name)} doesn't feel ready to be a parent of this {insert}. But they promise to the tiny flailing limbs by their side that they'll do their best, they swear on Starclan itself."
+                               f"Even with {str(other_cat.name)} by their side, {str(cat.name)} doesn't feel ready to be a parent of this {insert}. But they promise to the tiny flailing limbs by their side that they'll do their best, they swear on Starclan itself.",
+                               f"{str(other_cat.name)} has been waiting eagerly to meet their offspring. At {str(cat.name)}'s invitation, they crawl into the nursery, purring and joining {str(cat.name)} in licking their {insert} clean.",
+                               f"{str(other_cat.name)} has been impatient for the end of {str(cat.name)}'s pregnancy, and when they hear {str(cat.name)} has gone into labor they drop what they're doing and sprint for the nursery, where {str(cat.name)} is bringing a {insert} into the world.",
+                               f"{str(cat.name)} is go, so grateful that their adorable {insert} is here - both thrilled to meet them, and thrilled that {str(other_cat.name)} can take a turn parenting while {str(cat.name)} finally takes a little break from the stuffy air of the nursery.",
+                               f"{str(cat.name)} and {str(other_cat.name)} were so busy worrying about and looking forward to the birth that it's only now that they look at their {insert}, and wonder what to name them.",
+                               f"Purring with {str(other_cat.name)} against their back, {str(cat.name)} feels like they're going to explode with love, looking at their tiny new {insert}."
                                ]
-        else:
+        elif cat.mate == other_cat.ID and other_cat.dead:
+            possible_events = [
+                f"{str(cat.name)} looks at their {insert}, choking on both a purr and a wail. How are they supposed to do this without {str(other_cat.name)}?",
+                f"{str(cat.name)} sobs and pushes their new {insert} away from them. They look far too much like {str(other_cat.name)} for {str(cat.name)} to stand the sight of them.",
+                f"{str(cat.name)} purrs sadly over the tiny {insert} Starclan has blessed them with. They see {str(other_cat.name)} in their little pawpads, in their ears and eyes and mews.",
+                f"Cats call out, but {str(cat.name)} can't be convinced to go back to the nursery. Not with the new {insert} made from them and {str(other_cat.name)} there, taunting {str(cat.name)} with what should have been.",
+                f"Looking down at {str(other_cat.name)}'s last gift to them, {str(cat.name)} vows to protect their new {insert}.",
+                f"It's so hard, so very, very, nearly insurmountably hard doing this without their mate, but {str(cat.name)} wouldn't change it for the world. This {insert} is the last piece of {str(other_cat.name)} they have."
+
+            ]
+        elif cat.mate != other_cat.ID and cat.mate is not None:
             possible_events = [f"{str(cat.name)} secretly had a {insert} with {str(other_cat.name)}.",
                                f"{str(cat.name)} hopes that their {insert} doesn't look too much like {str(other_cat.name)}, otherwise questions might follow.",
                                f"{str(other_cat.name)} goes to visit {str(cat.name)} in the nursery with their new {insert}, on a completely innocent mission to deliver food to the new parent.",
                                f"The newly arrived {insert} that {str(cat.name)} has just given birth to looks suspiciously like {str(other_cat.name)}."
                                ]
+
         event_list.append(choice(possible_events))
 
-        if game.clan.game_mode != 'classic':
+        if not int(random.random() * 40):  # 1/40 chance for a cat to die during childbirth
+            possible_events = [
+                f"Later, as the medicine cat wails with {str(cat.name)}'s blood streaked through their pelt, and a warrior comes to move the body for its vigil, no one knows what to do with the {insert}.",
+                f"As the sun tracks across the sky, {str(cat.name)}'s bleeding gets worse and worse. It was still worth it, {str(cat.name)} decides, even as the medicine cat fights an impossible battle to keep them out of Starclan. Still so worth it.",
+                f"The birth was stressful, and {str(cat.name)} is exhausted and still bleeding and really just wants to sleep. Unfortunately, they don't ever wake up again.",
+                f"{str(cat.name)} wasn't expecting their birth to be so incredibly painful, and as the day wears on their condition deteriorates, leaving their {insert} mewling and trying to suckle a cooling body.",
+                f"It breaks their heart that they won't get to be with their {insert} as they grow. {str(cat.name)} pants out instructions and pleads to their friends around them, as the blood loss from birth slowly takes their life.",
+                f"However, {str(cat.name)} is too far gone for the herbs they're given to choke down to fix this blood loss, and the cats are helpless as {str(cat.name)} slowly slips to Starclan.",
+                f"Later, hours later, eons laters, the {insert} mews. Outside, {str(cat.name)}'s body cools, the toll of birth too much for it.",
+                f"Though all looks fine, the clan will wake to discover {str(cat.name)}'s body cold in the nursery, their {insert} mewing in vain for their parent.",
+                f"Though birth is always considered a difficult and risky event, no one thought they'd lose {str(cat.name)} to it, not after the {insert} was all born and seemed fine. They thought the blood loss was under control."
+            ]
+            if len(get_med_cats(Cat)) == 0:  # check number of med cats in the clan
+                event_list.append(choice(possible_events[2:]))  # limit possible events to those not mentioned med cats
+            else:
+                event_list.append(choice(possible_events))
+            cat.die()
+        else:  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
             if 'blood loss' in cat.injuries:
                 possible_events = [f"The birth was stressful and {str(cat.name)} lost a lot of blood.",
-                               f"{str(cat.name)} pants, looking at their wonderful {insert} and deciding that the pain and blood loss was all worth it.",
-                               f"Weak with blood loss, {str(cat.name)} nevertheless purrs at the sight of their {insert}.",
-                               f"Though the blood loss did not make the birth any easier for {str(cat.name)}.",
-                               f"Though {str(cat.name)} seems overly exhausted and weak from the birth."
-                               ]
+                                   f"{str(cat.name)} pants, looking at their wonderful {insert} and deciding that the pain and blood loss was all worth it.",
+                                   f"Weak with blood loss, {str(cat.name)} nevertheless purrs at the sight of their {insert}.",
+                                   f"Though the blood loss did not make the birth any easier for {str(cat.name)}.",
+                                   f"Though {str(cat.name)} seems overly exhausted and weak from the birth.",
+                                   f"{str(cat.name)} wasn't expecting this birth to be so intensely painful.",
+                                   f"Everyone says giving birth is difficult, but {str(cat.name)} feels like this one has been worse than most.",
+                                   f"This will all be worth it, {str(cat.name)} groans, promising themselves that as the pains of afterbirth rock their exhausted and bleeding body.",
+                                   f"{str(cat.name)} chokes down the herbs given to them, retching at the taste but knowing they need them to stop the blood loss."
+
+                                   ]
+
                 event_list.append(choice(possible_events))
 
         print_event = " ".join(event_list)
@@ -672,17 +715,17 @@ class Relation_Events():
         if mate_relation is None:
             return 0
 
-        affair_chance = 100
+        affair_chance = 10
 
         love_diff_mate_other = mate_relation.romantic_love - affair_relation.romantic_love
         if love_diff_mate_other < 0:
-            affair_chance = 25
+            affair_chance = 5
             if abs(love_diff_mate_other) > 20:
-                affair_chance -= 5
+                affair_chance -= 1
             if abs(love_diff_mate_other) > 25:
-                affair_chance -= 10
+                affair_chance -= 3
             if abs(love_diff_mate_other) > 30:
-                affair_chance -= 10
+                affair_chance -= 4
         else:
             affair_chance += love_diff_mate_other
 

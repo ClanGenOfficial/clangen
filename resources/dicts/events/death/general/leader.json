@@ -291,7 +291,7 @@
     },
     {
         "camp": "any",
-        "tags": ["all_lives", "other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["all_lives", "other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
         "death_text": "m_c was burnt alive while trying to save their clanmates from a fire.",
         "history_text": [null, "were killed in a fire trying to save their clanmates"],
         "cat_trait": ["altruistic", "bold", "ambitious", "compassionate", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible"],
@@ -463,7 +463,7 @@
     {
         "camp": "any",
         "tags": ["old_age", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "One day the medicine cat finds m_c dead in the leader's den, it seems they lost a life to old age.",
+        "death_text": "One day m_c is found dead in the leader's den, it seems they lost a life to old age.",
         "history_text": [null, "died of old age"],
         "cat_trait": null,
         "cat_skill": null,
