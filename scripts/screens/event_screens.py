@@ -1,3 +1,4 @@
+import re
 from random import choice
 
 from .base_screens import Screens, draw_menu_buttons, cat_profiles, draw_clan_name
@@ -238,6 +239,7 @@ class PatrolEventScreen(Screens):
             index = text.index('o_c_n', s)
             for y in vowels:
                 if str(other_clan_name).startswith(y):
+                    text = re.sub(r".,'?!", '', text)
                     modify = text.split()
                     pos = modify.index('o_c_n')
                     if modify[pos-1] == 'a':
