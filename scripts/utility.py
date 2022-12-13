@@ -217,6 +217,9 @@ def event_text_adjust(Cat, text, cat, other_cat, other_clan_name=None):
     tail_danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk",
                    "an enemy warrior", "a badger", "a twoleg trap"]
 
+    danger_choice = choice(danger)
+    tail_choice = choice(tail_danger)
+
     name = str(cat.name)
     other_name = None
     if other_cat is not None:
@@ -233,8 +236,8 @@ def event_text_adjust(Cat, text, cat, other_cat, other_clan_name=None):
         adjust_text = adjust_text.replace("o_c", str(other_clan_name))
     if mate is not None:
         adjust_text = adjust_text.replace("c_m", str(mate))
-    adjust_text = adjust_text.replace("d_l", choice(danger))
-    adjust_text = adjust_text.replace("t_l", choice(tail_danger))
+    adjust_text = adjust_text.replace("d_l", danger_choice)
+    adjust_text = adjust_text.replace("t_l", tail_choice)
 
     return adjust_text
 
