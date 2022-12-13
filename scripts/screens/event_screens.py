@@ -235,11 +235,11 @@ class PatrolEventScreen(Screens):
 
         other_clan_name = patrol.other_clan.name
         s = 0
+        text = re.sub(r".,'?!", '', text)
         for x in range(text.count('o_c_n')):
             index = text.index('o_c_n', s)
             for y in vowels:
                 if str(other_clan_name).startswith(y):
-                    text = re.sub(r".,'?!", '', text)
                     modify = text.split()
                     pos = modify.index('o_c_n')
                     if modify[pos-1] == 'a':
