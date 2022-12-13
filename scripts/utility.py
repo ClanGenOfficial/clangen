@@ -230,6 +230,7 @@ def event_text_adjust(Cat, text, cat, other_cat, other_clan_name=None):
 
     adjust_text = text
     adjust_text = adjust_text.replace("m_c", str(name))
+    adjust_text = adjust_text.replace("c_n", str(game.clan.name + 'Clan'))
     if other_name is not None:
         adjust_text = adjust_text.replace("r_c", str(other_name))
     if other_clan_name is not None:
