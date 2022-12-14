@@ -118,8 +118,6 @@ class Cat():
                  parent2=None,
                  pelt=None,
                  eye_colour=None,
-                 specialty=None,
-                 specialty2=None,
                  suffix=None,
                  ID=None,
                  moons=None,
@@ -134,8 +132,8 @@ class Cat():
         self.parent2 = parent2
         self.pelt = pelt
         self.eye_colour = eye_colour
-        self.specialty = specialty
-        self.specialty2 = specialty2
+        self.specialty = []
+        self.specialty2 = []
         self.mentor = None
         self.former_mentor = []
         self.patrol_with_mentor = 0
@@ -1130,9 +1128,9 @@ class Cat():
         new_condition = choice(possible_conditions)
 
         if new_condition == "born without a leg":
-            cat.specialty = 'NOPAW'
+            cat.specialty.append('NOPAW')
         elif new_condition == "born without a tail":
-            cat.specialty = 'NOTAIL'
+            cat.specialty.append('NOTAIL')
 
         self.get_permanent_condition(new_condition, born_with=True)
 
@@ -1820,10 +1818,10 @@ def create_example_cats():
         else:
             game.choose_cats[a] = Cat(status=choice(
                 ['kitten', 'apprentice', 'warrior', 'warrior', 'elder']))
-        if game.choose_cats[a].specialty in ['NOPAW', 'NOTAIL', 'HALFTAIL']:
-            game.choose_cats[a].specialty = None
-        if game.choose_cats[a].specialty2 in ['NOPAW', 'NOTAIL', 'HALFTAIL']:
-            game.choose_cats[a].specialty2 = None
+        if ('NOPAW', 'NOTAIL', 'HALFTAIL') in game.choose_cats[a].specialty:
+            game.choose_cats[a].specialty.clear()
+        if ('NOPAW', 'NOTAIL', 'HALFTAIL') in game.choose_cats[a].specialty2:
+            game.choose_cats[a].specialty2.clear()
         update_sprite(game.choose_cats[a])
 
 

@@ -442,7 +442,7 @@ class Events():
                                 f'A clanmate gave {name} some {acc_plural} and they decided to wear them.'
                             ])
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS",
-                                           "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
+                                           "JAY FEATHERS"] and "NOTAIL" in (cat.specialty, cat.specialty2):
                         acc_text.append(f'{name} found a bunch of pretty {acc_plural} and decided to wear them.')
                     elif cat.accessory in ["HERBS", "PETALS", "DRY_HERBS"]:
                         acc_text.append(f'{name} always seems to have {acc_plural} stuck in their fur.')
@@ -474,7 +474,7 @@ class Events():
 
                         ])
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS",
-                                           "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
+                                           "JAY FEATHERS"] and "NOTAIL" in (cat.specialty, cat.specialty2):
                         acc_text.append(
                             f'{name} was playing with {acc_plural} earlier and decided to wear some of them.')
                     elif cat.accessory in ["HERBS", "PETALS", "DRYHERBS"]:
@@ -505,7 +505,7 @@ class Events():
         # ---------------------------------------------------------------------------- #
         #                                    scars                                     #
         # ---------------------------------------------------------------------------- #
-        if cat.specialty and cat.specialty2 or cat.age == 'kitten':
+        if len(cat.specialty) == 2 and len(cat.specialty2) == 2 or cat.age == 'kitten':
             return
 
         risky_traits = ["bloodthirsty", "ambitious", "vengeful", "strict", "cold", "fierce"]
@@ -572,7 +572,7 @@ class Events():
         all_scars = scars1 + scars2 + scars3
         base_scars = scars1 + scars2  # Can be caused by other cats
         for scar_pool in [all_scars, base_scars]:
-            for special in [cat.specialty, cat.specialty2]:
+            for special in (cat.specialty, cat.specialty2):
                 if special:
                     try:
                         if "NOPAW" == special and 'TOETRAP' in scar_pool:
@@ -680,10 +680,10 @@ class Events():
 
         # Apply scar
         if specialty:
-            if not cat.specialty:
-                cat.specialty = specialty
+            if len(cat.specialty) < 2:
+                cat.specialty.append(specialty)
             else:
-                cat.specialty2 = specialty
+                cat.specialty2.append(specialty)
 
     def invite_new_cats(self, cat):
         # ---------------------------------------------------------------------------- #
@@ -935,9 +935,9 @@ class Events():
 
                     # assign scars
                     if chosen_condition in ['lost a leg', 'born without a leg']:
-                        new_cat.specialty = 'NOPAW'
+                        new_cat.specialty.append('NOPAW')
                     elif chosen_condition in ['lost their tail', 'born without a tail']:
-                        new_cat.specialty = "NOTAIL"
+                        new_cat.specialty.append("NOTAIL")
 
             created_cats.append(new_cat)
 

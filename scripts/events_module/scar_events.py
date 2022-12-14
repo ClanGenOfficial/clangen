@@ -26,7 +26,7 @@ class Scar_Events():
         """
         scar_text = cat.possible_scar
 
-        if not cat.specialty and not cat.specialty2 and not int(random.random() * 2):  # 1/2 chance to gain scar
+        if len(cat.specialty) < 2 and len(cat.specialty2) < 2 and not int(random.random() * 2):  # 1/2 chance to gain scar
 
             # move potential scar text into displayed scar text
             cat.scar_event.append(scar_text)
@@ -79,7 +79,7 @@ class Scar_Events():
             elif injury_name == "damaged eyes":
                 scar_pool = eye_scars
 
-            for special in [cat.specialty, cat.specialty2]:
+            for special in (cat.specialty, cat.specialty2):
                 if special:
                     try:
                         if "NOPAW" == special and 'TOETRAP' in scar_pool:
@@ -100,10 +100,10 @@ class Scar_Events():
                         cat.accessory = None
 
                 if specialty:
-                    if not cat.specialty:
-                        cat.specialty = specialty
+                    if len(cat.specialty) < 2:
+                        cat.specialty.append(specialty)
                     else:
-                        cat.specialty2 = specialty
+                        cat.specialty2.append(specialty)
 
                 scar_gain_strings = [
                     f"{cat.name}'s {injury_name} has healed, but they'll always carry evidence of the incident on their pelt.",

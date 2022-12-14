@@ -3,7 +3,8 @@ from .game_essentials import *
 
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import choose_pelt
-from scripts.utility import update_sprite
+from scripts.utility import update_sprite, is_iterable
+
 
 def load_cats():
     directory = 'saves/' + game.switches['clan_list'][0] + '/clan_cats.json'
@@ -66,8 +67,20 @@ def json_load():
         new_cat.tortiepattern = cat["tortie_pattern"]
         new_cat.skin = cat["skin"]
         new_cat.skill = cat["skill"]
-        new_cat.specialty = cat["specialty"]
-        new_cat.specialty2 = cat["specialty2"]
+        if is_iterable(cat["specialty"]):
+            new_cat.specialty = cat["specialty"]
+        elif cat["specialty"] is not None:
+            new_cat.specialty = []
+            new_cat.specialty.append(cat["specialty"])
+        else:
+            new_cat.specialty = []
+        if is_iterable(cat["specialty2"]):
+            new_cat.specialty = cat["specialty2"]
+        elif cat["specialty2"] is not None:
+            new_cat.specialty2 = []
+            new_cat.specialty2.append(cat["specialty2"])
+        else:
+            new_cat.specialty2 = []
         new_cat.accessory = cat["accessory"]
         new_cat.mate = cat["mate"]
         new_cat.dead = cat["dead"]

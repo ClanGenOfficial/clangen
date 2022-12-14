@@ -349,42 +349,46 @@ def update_sprite(cat):
     if cat.pelt.length == 'long' and cat.status not in [
         'kitten', 'apprentice', 'medicine cat apprentice'
     ] or cat.age == 'elder':
-        if cat.specialty in scars1:
-            new_sprite.blit(
-                sprites.sprites['scarsextra' + cat.specialty +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty2 in scars1:
-            new_sprite.blit(
-                sprites.sprites['scarsextra' + cat.specialty2 +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty in scars3:
-            new_sprite.blit(
-                sprites.sprites['scarsextra' + cat.specialty +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty2 in scars3:
-            new_sprite.blit(
-                sprites.sprites['scarsextra' + cat.specialty2 +
-                                str(cat.age_sprites[cat.age])], (0, 0))
+        for specialty in cat.specialty:
+            if specialty in scars1:
+                new_sprite.blit(
+                    sprites.sprites['scarsextra' + specialty +
+                                    str(cat.age_sprites[cat.age])], (0, 0))
+            if specialty in scars3:
+                new_sprite.blit(
+                    sprites.sprites['scarsextra' + specialty +
+                                    str(cat.age_sprites[cat.age])], (0, 0))
+        for specialty in cat.specialty2:
+            if specialty in scars1:
+                new_sprite.blit(
+                    sprites.sprites['scarsextra' + specialty +
+                                    str(cat.age_sprites[cat.age])], (0, 0))
+            if specialty in scars3:
+                new_sprite.blit(
+                    sprites.sprites['scarsextra' + specialty +
+                                    str(cat.age_sprites[cat.age])], (0, 0))
         new_sprite.blit(
             sprites.sprites['eyesextra' + cat.eye_colour +
                             str(cat.age_sprites[cat.age])], (0, 0))
     else:
-        if cat.specialty in scars1:
-            new_sprite.blit(
-                sprites.sprites['scars' + cat.specialty +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty2 in scars1:
-            new_sprite.blit(
-                sprites.sprites['scars' + cat.specialty2 +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty in scars3:
-            new_sprite.blit(
-                sprites.sprites['scars' + cat.specialty +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty2 in scars3:
-            new_sprite.blit(
-                sprites.sprites['scars' + cat.specialty2 +
-                                str(cat.age_sprites[cat.age])], (0, 0))
+        for specialty in cat.specialty:
+            if specialty in scars1:
+                new_sprite.blit(
+                    sprites.sprites['scars' + specialty +
+                                    str(cat.age_sprites[cat.age])], (0, 0))
+            if specialty in scars3:
+                new_sprite.blit(
+                    sprites.sprites['scars' + specialty +
+                                    str(cat.age_sprites[cat.age])], (0, 0))
+        for specialty in cat.specialty2:
+            if specialty in scars1:
+                new_sprite.blit(
+                    sprites.sprites['scars' + specialty +
+                                    str(cat.age_sprites[cat.age])], (0, 0))
+            if specialty in scars3:
+                new_sprite.blit(
+                    sprites.sprites['scars' + specialty +
+                                    str(cat.age_sprites[cat.age])], (0, 0))
         new_sprite.blit(
             sprites.sprites['eyes' + cat.eye_colour +
                             str(cat.age_sprites[cat.age])], (0, 0))
@@ -452,23 +456,27 @@ def update_sprite(cat):
         new_sprite.blit(
             sprites.sprites['skinextra' + cat.skin +
                             str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty in scars2:
-            new_sprite.blit(sprites.sprites['scarsextra' + cat.specialty +
-                                            str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
-        if cat.specialty2 in scars2:
-            new_sprite.blit(sprites.sprites['scarsextra' + cat.specialty2 +
-                                            str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
+        for specialty in cat.specialty:
+            if specialty in scars2:
+                new_sprite.blit(sprites.sprites['scarsextra' + specialty +
+                                                str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
+        for specialty in cat.specialty2:
+            if specialty in scars2:
+                new_sprite.blit(sprites.sprites['scarsextra' + specialty +
+                                                str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
 
     else:
         new_sprite.blit(
             sprites.sprites['skin' + cat.skin +
                             str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty in scars2:
-            new_sprite.blit(sprites.sprites['scars' + cat.specialty +
-                                            str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
-        if cat.specialty2 in scars2:
-            new_sprite.blit(sprites.sprites['scars' + cat.specialty2 +
-                                            str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
+        for specialty in cat.specialty:
+            if specialty in scars2:
+                new_sprite.blit(sprites.sprites['scars' + specialty +
+                                                str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
+        for specialty in cat.specialty2:
+            if specialty in scars2:
+                new_sprite.blit(sprites.sprites['scars' + specialty +
+                                                str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
 
     game.switches[
         'error_message'] = 'There was an error loading a cat\'s accessory. Last cat read was ' + str(
@@ -535,3 +543,15 @@ def update_sprite(cat):
     # update class dictionary
     cat.all_cats[cat.ID] = cat
     game.switches['error_message'] = ''
+
+
+# ---------------------------------------------------------------------------- #
+#                                     OTHER                                    #
+# ---------------------------------------------------------------------------- #
+def is_iterable(y):
+    try:
+        0 in y
+    except TypeError:
+        return False
+    else:
+        return True
