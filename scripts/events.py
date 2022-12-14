@@ -186,7 +186,7 @@ class Events():
         self.other_interactions(cat)
         self.coming_out(cat)
         self.gain_accessories(cat)
-        if game.clan.game_mode == "classic":
+        if game.clan.game_mode == "classic" and not int(random.random() * 3):
             self.gain_scars(cat)
         self.relation_events.handle_having_kits(cat, clan=game.clan)
 
@@ -419,9 +419,9 @@ class Events():
                 ])
                 # check if the cat is missing a tail before giving feather acc
                 if cat.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
-                    if 'NOTAIL' in (cat.specialty, cat.specialty2):
+                    if 'NOTAIL' in cat.scars:
                         cat.accessory = choice(plant_accessories)
-                    if 'HALFTAIL' in (cat.specialty, cat.specialty2):
+                    if 'HALFTAIL' in cat.scars:
                         cat.accessory = choice(plant_accessories)
                 acc_singular = plural_acc_names(cat.accessory, False, True)
                 acc_plural = plural_acc_names(cat.accessory, True, False)
@@ -442,7 +442,7 @@ class Events():
                                 f'A clanmate gave {name} some {acc_plural} and they decided to wear them.'
                             ])
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS",
-                                           "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
+                                           "JAY FEATHERS"] and "NOTAIL" in cat.scars:
                         acc_text.append(f'{name} found a bunch of pretty {acc_plural} and decided to wear them.')
                     elif cat.accessory in ["HERBS", "PETALS", "DRY_HERBS"]:
                         acc_text.append(f'{name} always seems to have {acc_plural} stuck in their fur.')
@@ -474,7 +474,7 @@ class Events():
 
                         ])
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS",
-                                           "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
+                                           "JAY FEATHERS"] and "NOTAIL" in cat.scars:
                         acc_text.append(
                             f'{name} was playing with {acc_plural} earlier and decided to wear some of them.')
                     elif cat.accessory in ["HERBS", "PETALS", "DRYHERBS"]:
@@ -505,7 +505,7 @@ class Events():
         # ---------------------------------------------------------------------------- #
         #                                    scars                                     #
         # ---------------------------------------------------------------------------- #
-        if cat.specialty and cat.specialty2 or cat.age == 'kitten':
+        if len(cat.scars) == 4 or cat.age == 'kitten':
             return
 
         risky_traits = ["bloodthirsty", "ambitious", "vengeful", "strict", "cold", "fierce"]
@@ -572,17 +572,17 @@ class Events():
         all_scars = scars1 + scars2 + scars3
         base_scars = scars1 + scars2  # Can be caused by other cats
         for scar_pool in [all_scars, base_scars]:
-            for special in [cat.specialty, cat.specialty2]:
-                if special:
+            for scar in cat.scars:
+                if scar:
                     try:
-                        if "NOPAW" == special and 'TOETRAP' in scar_pool:
+                        if "NOPAW" == scar and 'TOETRAP' in scar_pool:
                             scar_pool.remove('TOETRAP')
-                        if "NOTAIL" == special:
-                            for scar in ["HALFTAIL", "TAILBASE", "TAILSCAR"]:
-                                if scar in scar_pool:
-                                    scar_pool.remove(scar)
-                        if special in scar_pool:
-                            scar_pool.remove(special)  # No doubles
+                        if "NOTAIL" == scar:
+                            for option in ["HALFTAIL", "TAILBASE", "TAILSCAR"]:
+                                if option in scar_pool:
+                                    scar_pool.remove(option)
+                        if scar in scar_pool:
+                            scar_pool.remove(scar)  # No doubles
                     except ValueError as e:
                         print(f"Failed to exclude scar from pool: {e}")
 
@@ -680,10 +680,7 @@ class Events():
 
         # Apply scar
         if specialty:
-            if not cat.specialty:
-                cat.specialty = specialty
-            else:
-                cat.specialty2 = specialty
+            cat.scars.append(specialty)
 
     def invite_new_cats(self, cat):
         # ---------------------------------------------------------------------------- #
@@ -935,9 +932,9 @@ class Events():
 
                     # assign scars
                     if chosen_condition in ['lost a leg', 'born without a leg']:
-                        new_cat.specialty = 'NOPAW'
+                        new_cat.scars.append('NOPAW')
                     elif chosen_condition in ['lost their tail', 'born without a tail']:
-                        new_cat.specialty = "NOTAIL"
+                        new_cat.scars.append("NOTAIL")
 
             created_cats.append(new_cat)
 
@@ -1055,7 +1052,7 @@ class Events():
 
         # chance to kill leader
         if not int(
-                random.random() * 90) and cat.status == 'leader' and not triggered_death and not cat.not_working():  # 1/80
+                random.random() * 100) and cat.status == 'leader' and not triggered_death and not cat.not_working():  # 1/80
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
 
@@ -1080,8 +1077,8 @@ class Events():
                     triggered_death = True
                     self.handle_disasters(cat)
 
-        # classic scar chance
-        elif game.clan.game_mode == "classic" and not int(random.random() * 300):  # 1/300
+        # classic death chance
+        elif game.clan.game_mode == "classic" and not int(random.random() * 500):  # 1/500
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
 
@@ -1204,17 +1201,17 @@ class Events():
             ))
 
             # chance to kill leader
-            if not int(random.random() * 80) and cat.status == 'leader' and not triggered_death:  # 1/80
+            if not int(random.random() * 100) and cat.status == 'leader' and not triggered_death:  # 1/100
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
                 triggered_death = True
 
             # chance to die of old age
-            if cat.moons > int(random.random() * 51) + 140 and not triggered_death:  # cat.moons > 150 <--> 200
+            if cat.moons > int(random.random() * 51) + 150 and not triggered_death:  # cat.moons > 150 <--> 200
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
                 triggered_death = True
 
             # classic death chance
-            if not int(random.random() * 300):  # 1/300
+            if not int(random.random() * 500):  # 1/500
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
                 triggered_death = True
 
