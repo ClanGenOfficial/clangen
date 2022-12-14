@@ -34,7 +34,7 @@
             "Is feeling proud of (cat)"
         ],
         "close": [
-            "Tells (cat) about the last encounter with the Starclan"
+            "Tells (cat) about the last encounter with the StarClan"
         ]
     },
     "apprentice": {
@@ -74,7 +74,7 @@
         ],
         "close": [
             "Talks with (cat) about difficult decisions",
-            "Tells (cat) about the last encounter with the Starclan",
+            "Tells (cat) about the last encounter with the StarClan",
             "Thinks that (cat) is so much braver than them"
         ]
     },
@@ -83,7 +83,7 @@
         "neutral": [
             "Escorted (cat) so they could gather herbs",
             "Thought of (cat) on the last patrol and took a rare herb with them",
-            "Tells (cat) about the last encounter with the Starclan",
+            "Tells (cat) about the last encounter with the StarClan",
             "Feels like (cat) isn't taking their health seriously",
             "Went to (cat) for advice about a dream they had"
         ],
@@ -109,7 +109,7 @@
             "Talks with (cat) about difficult decisions"
         ],
         "close": [
-            "Tells (cat) about the last encounter with the Starclan"
+            "Tells (cat) about the last encounter with the StarClan"
         ]
     },
     "elder": {
@@ -120,7 +120,7 @@
         ],
         "close": [
             "Talks with (cat) about difficult decisions",
-            "Tells (cat) about the last encounter with the Starclan"
+            "Tells (cat) about the last encounter with the StarClan"
         ]
     }
 }

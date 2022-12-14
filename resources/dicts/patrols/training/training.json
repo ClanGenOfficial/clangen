@@ -231,14 +231,14 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["training"],
-    "intro_text": "As they head out to work on their skills, r_c thinks about the dream they had last night . . . was it sent by Starclan?",
+    "intro_text": "As they head out to work on their skills, r_c thinks about the dream they had last night . . . was it sent by StarClan?",
     "decline_text": "They push it from their mind.",
     "chance_of_success": 70,
     "exp": 20,
     "success_text": [
         "It definitely distracts them from their training, but r_c uses the time by themselves to put their thoughts in order. It was a sign from their ancestors. Now they need to figure out what to do next.",
         "Somehow training brings r_c to almost a meditative state, and not only are they fairly confident of their next steps having been given this vision, but they also take the opportunity to improve on a skill they think they're weak at.",
-        "s_c often feels like Starclan walks with them, and this is just another instance on the path. They use the solo patrol to collect their thoughts, and by the time they pad home with a hard day's training done, they're ready for the next step their vision hinted at."
+        "s_c often feels like StarClan walks with them, and this is just another instance on the path. They use the solo patrol to collect their thoughts, and by the time they pad home with a hard day's training done, they're ready for the next step their vision hinted at."
     ],
     "fail_text": [
             "r_c can't make sense of the vision."
@@ -261,7 +261,7 @@
     "success_text": [
         "Despite the tense mood, the patrol is successful, and as the afternoon wears on the cats relax with each other.",
         "r_c spins a thrilling tale, and the patrol shivers with exciting, thrilled fear.",
-        "s_c sees the patrol competing to scare each other, and derails it completely. Instead they spin a tale of truth, bringing the story of one of c_n's warrior ancestors to life. With how clear their words are, it's almost like they know the Starclan cat, even though that's impossible."
+        "s_c sees the patrol competing to scare each other, and derails it completely. Instead they spin a tale of truth, bringing the story of one of c_n's warrior ancestors to life. With how clear their words are, it's almost like they know the StarClan cat, even though that's impossible."
     ],
     "fail_text": [
             "A branch snaps and the whole patrol runs back to camp."

@@ -80,7 +80,7 @@
     ],
     "fail_text": [
         "The cats try to find enough rubble to barricade the opening to the sett, but the area is pretty bare. Before they know it they're tired, thirsty, and returning home with nothing to show for it.",
-        "Well, the only way to know is to check! s_c scrambles into the den for a look, and it's only by the grace of Starclan that they're able to redirect that speed to twist around just as fast, furious fizzing following them up the burrow tunnel, leaving behind clumps of their own fur.",
+        "Well, the only way to know is to check! s_c scrambles into the den for a look, and it's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, furious fizzing following them up the burrow tunnel, leaving behind clumps of their own fur.",
         null,
         "As the patrol is sniffing around the burrow entrance there's a clatter of rocks. It's difficult to say who's more surprised - cats or badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end. . . including the badger."
     ],
@@ -113,7 +113,7 @@
     "fail_text": [
         "The patrol works all day to free r_c and gets nothing else done.",
         "Harshly, s_c tells r_c that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
-        "Hurt and wheezing, r_c hears the patrol panicking as they drift to Starclan.",
+        "Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan.",
         "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
     ],
     "win_skills": ["very smart", "extremely smart"],

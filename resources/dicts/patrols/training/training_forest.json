@@ -113,7 +113,7 @@
     "fail_text": [
         "The patrol works all day to free r_c and gets nothing else done.",
         "Harshly, s_c tells r_c that they're on their own - if they're too much of an idiot to get out from under some branches on their own then they'd probably just mess up the patrol anyway.",
-        "Hurt and wheezing, r_c hears the patrol panicking as they drift to Starclan.",
+        "Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan.",
         "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
     ],
     "win_skills": ["very smart", "extremely smart"],

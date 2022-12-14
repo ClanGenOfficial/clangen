@@ -34,7 +34,7 @@
         "friendly": [
             "Is telling (cat) about their own days as an apprentice",
             "Is feeling proud of (cat)",
-            "Tells (cat) about the last encounter with the Starclan"
+            "Tells (cat) about the last encounter with the StarClan"
         ],
         "close": []
     },
@@ -69,7 +69,7 @@
             "Just told (cat) a hilarious joke"
         ],
         "close": [
-            "Tells (cat) about the last encounter with the Starclan"
+            "Tells (cat) about the last encounter with the StarClan"
         ]
     },
     "medicine cat": {
@@ -87,7 +87,7 @@
         ],
         "friendly": [],
         "close": [
-            "Tells (cat) about the last encounter with the Starclan"
+            "Tells (cat) about the last encounter with the StarClan"
         ]
     },
     "leader": {
@@ -103,7 +103,7 @@
         ],
         "friendly": [],
         "close": [
-            "Tells (cat) about the last encounter with the Starclan"
+            "Tells (cat) about the last encounter with the StarClan"
         ]
     },
     "deputy": {
@@ -119,7 +119,7 @@
         ],
         "friendly": [],
         "close": [
-            "Tells (cat) about the last encounter with the Starclan"
+            "Tells (cat) about the last encounter with the StarClan"
         ]
     },
     "elder": {
@@ -131,7 +131,7 @@
         "friendly": [],
         "close": [
             "Feels like they'll never accomplish as much as (cat)",
-            "Tells (cat) about the last encounter with the Starclan"
+            "Tells (cat) about the last encounter with the StarClan"
         ]
     }
 }

@@ -227,7 +227,7 @@ class StarClanScreen(Screens):
 
         screen.blit(self.clan_name_bg, (310, 25))
 
-        verdana_big_light.text(f'Starclan', ('center', 32))
+        verdana_big_light.text(f'StarClan', ('center', 32))
 
         if game.clan.instructor.df is False:
             dead_cats = [game.clan.instructor]

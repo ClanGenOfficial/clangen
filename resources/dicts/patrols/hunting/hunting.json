@@ -218,14 +218,14 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["hunting"],
-    "intro_text": "As they head out to hunt, r_c thinks about the dream they had last night . . . was it sent by Starclan?",
+    "intro_text": "As they head out to hunt, r_c thinks about the dream they had last night . . . was it sent by StarClan?",
     "decline_text": "They push it from their mind.",
     "chance_of_success": 40,
     "exp": 20,
     "success_text": [
         "It definitely distracts them from the hunt, but r_c uses the time by themselves to put their thoughts in order. It was a sign from their ancestors. Now they need to figure out what to do next.",
         "Somehow hunting brings r_c to almost a meditative state, and not only are they fairly confident of their next steps having been given this vision, but they also bring back a good haul to the prey pile.",
-        "s_c often feels like Starclan walks with them, and this is just another instance on the path. They use the solo patrol to collect their thoughts, and by the time they pad home with a good catch, they're ready for the next step their vision hinted at.",
+        "s_c often feels like StarClan walks with them, and this is just another instance on the path. They use the solo patrol to collect their thoughts, and by the time they pad home with a good catch, they're ready for the next step their vision hinted at.",
         null
     ],
     "fail_text": [

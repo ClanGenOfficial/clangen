@@ -114,7 +114,7 @@
             "Escorted (cat) so they could gather herbs",
             "Let (cat) lean on their shoulder after a recent injury",
             "Ask (cat) to collect herbs on the next patrol",
-            "Tells (cat) about the last encounter with the Starclan"
+            "Tells (cat) about the last encounter with the StarClan"
         ]
     },
     "to": {
@@ -231,7 +231,7 @@
             "Let (cat) lean on their shoulder after a recent injury",
             "Talks with (cat) about difficult decisions",
             "Thought of (cat) on the last patrol and took a rare herb with them",
-            "Tells (cat) about the last encounter with the Starclan"
+            "Tells (cat) about the last encounter with the StarClan"
         ]
     }
 }
