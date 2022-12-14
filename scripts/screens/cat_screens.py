@@ -576,56 +576,12 @@ class ProfileScreen(Screens):
                 output += ' moon'
             elif the_cat.moons != 1:
                 output += ' moons'
-        #NEWLINE ----------
-        output += "\n"
 
-        # CONDITIONS (temporary)
-        injury_list = []
-        permanent_conditions_list = []
-        illness_list = []
-        injury_string = None
-        permanent_conditions_string = None
-        illness_string = None
-
-        if the_cat.is_injured():
-            for y in the_cat.injuries:
-                injury_list.append(y)
-            injury_string = ", ".join(injury_list)
-        if the_cat.is_disabled():
-            for y in the_cat.permanent_condition:
-                if the_cat.permanent_condition[y]["moons_until"] == -2 and the_cat.permanent_condition[y]["born_with"] is True:
-                    permanent_conditions_list.append(y)
-                elif the_cat.permanent_condition[y]["born_with"] is False:
-                    permanent_conditions_list.append(y)
-
-            if len(permanent_conditions_list) > 0:
-                permanent_conditions_string = ", ".join(permanent_conditions_list)
-        if the_cat.is_ill():
-            for y in the_cat.illnesses:
-                illness_list.append(y)
-            illness_string = ', '.join(illness_list)
-
-        if the_cat.is_ill() and the_cat.is_injured():
-            verdana_small.text(
-                f"condition: {illness_string}, {injury_string}", (300, 230 + count * 15))
-            count += 1
-        elif the_cat.is_ill():
-            verdana_small.text(
-                f"condition: {illness_string}", (300, 230 + count * 15))
-            count += 1
-        elif the_cat.is_injured():
-            verdana_small.text(
-                f"condition: {injury_string}", (300, 230 + count * 15))
-            count += 1
-
-        if the_cat.is_disabled():
-            if permanent_conditions_string is not None:
-                verdana_small.text(
-                    f"permanent conditions: {permanent_conditions_string}", (300, 230 + count * 15))
-                count += 1
 
         # MATE
         if the_cat.mate is not None and not the_cat.dead:
+            # NEWLINE ----------
+            output += "\n"
             if the_cat.mate in Cat.all_cats:
                 if Cat.all_cats.get(
                         the_cat.mate
@@ -635,6 +591,49 @@ class ProfileScreen(Screens):
                     output += 'mate: ' + str(Cat.all_cats[the_cat.mate].name)
             else:
                 output += 'Error: mate: ' + str(the_cat.mate) + " not found"
+
+        if not the_cat.dead:
+            # NEWLINE ----------
+            output += "\n"
+
+            # CONDITIONS (temporary)
+            injury_list = []
+            permanent_conditions_list = []
+            illness_list = []
+            injury_string = None
+            permanent_conditions_string = None
+            illness_string = None
+
+            if the_cat.is_injured():
+                for y in the_cat.injuries:
+                    injury_list.append(y)
+                injury_string = ", ".join(injury_list)
+            if the_cat.is_disabled():
+                for y in the_cat.permanent_condition:
+                    if the_cat.permanent_condition[y]["moons_until"] == -2 and the_cat.permanent_condition[y][
+                                                                            "born_with"] is True:
+                        permanent_conditions_list.append(y)
+                    elif the_cat.permanent_condition[y]["born_with"] is False:
+                        permanent_conditions_list.append(y)
+
+                if len(permanent_conditions_list) > 0:
+                    permanent_conditions_string = ", ".join(permanent_conditions_list)
+
+            if the_cat.is_ill():
+                for y in the_cat.illnesses:
+                    illness_list.append(y)
+                illness_string = ', '.join(illness_list)
+
+            if the_cat.is_ill() and the_cat.is_injured():
+                output += f"condition: {illness_string}, {injury_string}\n"
+            elif the_cat.is_ill():
+                output += f"condition: {illness_string}\n"
+            elif the_cat.is_injured():
+                output += f"condition: {injury_string}\n"
+
+            if the_cat.is_disabled():
+                if permanent_conditions_string is not None:
+                    output += f"permanent conditions: {permanent_conditions_string}\n"
 
         return output
 

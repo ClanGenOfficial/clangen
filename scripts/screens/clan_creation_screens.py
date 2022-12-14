@@ -111,7 +111,7 @@ class MakeClanScreen(Screens):
             elif self.sub_screen == 'name clan':
                 self.handle_name_clan_event(event)
             elif self.sub_screen == 'choose leader':
-                self.handle_chooose_leader_event(event)
+                self.handle_choose_leader_event(event)
             elif self.sub_screen == 'choose deputy':
                 self.handle_choose_deputy_event(event)
             elif self.sub_screen == 'choose med cat':
@@ -152,7 +152,7 @@ class MakeClanScreen(Screens):
             self.clan_name = ""
             self.open_game_mode()
 
-    def handle_chooose_leader_event(self, event):
+    def handle_choose_leader_event(self, event):
         if event.ui_element in [self.elements['roll1'], self.elements['roll2'], self.elements['roll3']]:
             event.ui_element.disable()
             create_example_cats()  # create new cats
@@ -166,6 +166,9 @@ class MakeClanScreen(Screens):
             self.leader = self.selected_cat
             self.selected_cat = None
             self.open_choose_deputy()
+        elif event.ui_element == self.elements['previous_step']:
+            self.clan_name = ""
+            self.open_name_clan()
 
     def handle_choose_deputy_event(self, event):
         if event.ui_element == self.elements['previous_step']:
