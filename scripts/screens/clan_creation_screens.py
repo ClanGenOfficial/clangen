@@ -11,6 +11,7 @@ from scripts.clan import Clan, map_available
 from scripts.cat.cats import create_example_cats
 from scripts.cat.names import names
 from scripts.cat.sprites import tiles
+from re import sub
 import scripts.game_structure.image_cache as image_cache
 #from scripts.world import World, save_map
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
@@ -145,7 +146,7 @@ class MakeClanScreen(Screens):
         elif  event.ui_element == self.elements["reset_name"]:
             self.elements["name_entry"].set_text("")
         elif event.ui_element == self.elements['next_step']:
-            self.clan_name = self.elements["name_entry"].get_text()
+            self.clan_name = sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text())
             self.open_choose_leader()
         elif event.ui_element == self.elements['previous_step']:
             self.clan_name = ""
@@ -271,7 +272,7 @@ class MakeClanScreen(Screens):
 
         #Don't allow someone to enter no name for their clan
         if self.sub_screen == 'name clan':
-            if self.elements["name_entry"].get_text() == "":
+            if sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text()) == "":
                 self.elements['next_step'].disable()
             else:
                 self.elements['next_step'].enable()
