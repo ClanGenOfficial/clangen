@@ -199,6 +199,15 @@
             "shadow_width": "0",
             "text_horiz_alignment": "left"
         }
+    },
+    "#header_left_dark":
+    {
+        "prototype":  "#header_text_box_dark",
+    "misc":
+        {
+            "text_horiz_alignment": "left",
+            "padding": "(0,0)"
+        }
     }
 }
 

@@ -2792,8 +2792,113 @@
                 "path":"resources/images/buttons/break_up_unavailable.png"
             }
         }
+    },
+  "#relation_bar":
+  {
+    "colours":
+    {
+      "normal_border":  "#CEC2A8",
+      "filled_bar": "#796045",
+      "unfilled_bar": "#CEC2A8"
+    },
+    "misc":
+    {
+      "shape": "rounded_rectangle",
+      "shape_corner_radius": "3",
+      "border_width": "2",
+      "shadow_width": "0"
+    }
+  },
+  "#relation_bar_neg":
+  {
+    "prototype": "#relation_bar",
+    "colours":
+    {
+      "filled_bar": "#E67161"
+    }
+  },
+  "#relation_bar_pos":
+  {
+    "prototype": "#relation_bar",
+    "colours":
+    {
+      "filled_bar": "#8CB250"
+    }
+  },
+  "#relation_bar_dark":
+  {
+    "prototype": "#relation_bar",
+    "colours":
+    {
+      "normal_border":  "#2F2918",
+      "unfilled_bar": "#2F2918"
+    }
+  },
+  "#relation_bar_neg_dark":
+  {
+    "prototype": "#relation_bar_dark",
+    "colours":
+    {
+      "filled_bar": "#E67161"
+    }
+  },
+  "#relation_bar_pos_dark":
+  {
+    "prototype": "#relation_bar_dark",
+    "colours":
+    {
+      "filled_bar": "#8CB250"
+    }
+  },
+  "#switch_focus_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/switch_focus.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/switch_focus_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/switch_focus_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/switch_focus_unavailable.png"
+            }
+        }
+    },
+  "#view_profile_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/view_profile.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/view_profile_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/view_profile_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/view_profile_unavailable.png"
+            }
+        }
     }
 }
+
+
 
 
 

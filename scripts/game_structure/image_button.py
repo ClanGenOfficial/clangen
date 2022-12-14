@@ -3,6 +3,7 @@ import pygame_gui
 from pygame_gui.core.text.html_parser import HTMLParser
 from pygame_gui.core.text.text_box_layout import TextBoxLayout
 from pygame_gui.core.utility import translate
+import scripts.game_structure.image_cache as image_cache
 import html
 
 class UIImageButton(pygame_gui.elements.UIButton):
@@ -250,15 +251,45 @@ class UIImageTextBox():
 class UIRelationStatusBar():
     """ Wraps together a status bar """
 
-    def __int__(self,
+    def __init__(self,
                 relative_rect,
+                percent_full=0,
+                positive_trait=True,
                 dark_mode=False,
-                percent_method=None):
-        if dark_mode:
-            theme = "#relation_bar_dark"
-            overlay = 1
+                style="bars"):
+
+        # Change the color of the bar depending on the value and if it's a negative or positive trait
+        if percent_full > 49:
+            if positive_trait:
+                theme = "#relation_bar_pos"
+            else:
+                theme = "#relation_bar_neg"
         else:
             theme = "#relation_bar"
 
-        self.status_bar = pygame_gui.elements.UIStatusBar(relative_rect, percent_method = percent_method,
-                                                          object_id=theme)
+        # Determine dark mode or light mode
+        if dark_mode:
+            theme += "_dark"
+
+        self.status_bar = pygame_gui.elements.UIStatusBar(relative_rect, object_id=theme)
+        self.status_bar.percent_full = percent_full
+
+        # Now to make the overlay
+        overlay_path = "resources/images/"
+        if style == "bars":
+            if dark_mode:
+                overlay_path += "relations_border_bars_dark.png"
+            else:
+                overlay_path += "relations_border_bars.png"
+        elif style == "dots":
+            if dark_mode:
+                overlay_path += "relations_border_dots_dark.png"
+            else:
+                overlay_path += "relations_border_dots.png"
+
+        self.overlay = pygame_gui.elements.UIImage(relative_rect, image_cache.load_image(overlay_path).convert_alpha())
+
+    def kill(self):
+        self.status_bar.kill()
+        self.overlay.kill()
+        del self

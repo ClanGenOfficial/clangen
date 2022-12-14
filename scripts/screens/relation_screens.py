@@ -1,5 +1,6 @@
 from math import ceil
 
+import pygame
 import pygame_gui.elements
 
 from .base_screens import Screens, cat_profiles, draw_next_prev_cat_buttons
@@ -9,7 +10,7 @@ from scripts.game_structure.buttons import buttons
 from scripts.game_structure.text import *
 from scripts.cat.cats import Cat
 import scripts.game_structure.image_cache as image_cache
-from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
+from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton, UIRelationStatusBar
 
 
 class ChooseMentorScreen(Screens):
@@ -1160,44 +1161,653 @@ class ChooseMateScreen(Screens):
 
 
 class RelationshipScreen(Screens):
-    bool = {True: 'on', False: 'off', None: 'None'}
+
+    checkboxes = {} #To hold the checkboxes.
+    focus_cat_elements = {}
+    relation_list_elements = {}
+    sprite_buttons = {}
+    inspect_cat_elements = {}
+    previous_search_text = ""
+
+    current_page = 1
+
+    inspect_cat = None
 
     search_bar = image_cache.load_image("resources/images/relationship_search.png").convert_alpha()
     details_frame = image_cache.load_image("resources/images/relationship_details_frame.png").convert_alpha()
     toggle_frame = image_cache.load_image("resources/images/relationship_toggle_frame.png").convert_alpha()
     list_frame = image_cache.load_image("resources/images/relationship_list_frame.png").convert_alpha()
 
-    female_icon = image_cache.load_image("resources/images/female_big.png").convert_alpha()
-    male_icon = image_cache.load_image("resources/images/male_big.png").convert_alpha()
-    nonbi_icon = image_cache.load_image("resources/images/nonbi_big.png").convert_alpha()
-    transfem_icon = image_cache.load_image("resources/images/transfem_big.png").convert_alpha()
-    transmasc_icon = image_cache.load_image("resources/images/transmasc_big.png").convert_alpha()
-
-    female_icon_small = pygame.transform.scale(image_cache.load_image("resources/images/female_big.png").convert_alpha(), (18, 18))
-    male_icon_small = pygame.transform.scale(image_cache.load_image("resources/images/male_big.png").convert_alpha(), (18, 18))
-    nonbi_icon_small = pygame.transform.scale(image_cache.load_image("resources/images/nonbi_big.png").convert_alpha(), (18, 18))
-    transfem_icon_small = pygame.transform.scale(image_cache.load_image("resources/images/transfem_big.png").convert_alpha(), (18, 18))
-    transmasc_icon_small = pygame.transform.scale(image_cache.load_image("resources/images/transmasc_big.png").convert_alpha(), (18, 18))
-
-    mate_icon = image_cache.load_image("resources/images/heart_big.png").convert_alpha()
-    family_icon = image_cache.load_image("resources/images/dot_big.png").convert_alpha()
-
-    mate_icon_small = pygame.transform.scale(image_cache.load_image("resources/images/heart_big.png").convert_alpha(), (11, 10))
-    family_icon_small = pygame.transform.scale(image_cache.load_image("resources/images/dot_big.png").convert_alpha(), (9, 9))
-
     def handle_event(self, event):
-        if event.type == pygame.KEYDOWN:
-            if event.unicode.isalpha() or event.unicode.isspace(
-            ):  # only allows alphabet letters/space as an input
-                if len(game.switches['search_text']
-                       ) < 20:  # can't type more than max name length
-                    game.switches['search_text'] += event.unicode
-            elif event.key == pygame.K_BACKSPACE:  # delete last character
-                game.switches['search_text'] = game.switches[
-                    'search_text'][:-1]
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element in self.sprite_buttons.values():
+                self.inspect_cat = event.ui_element.return_cat_object()
+                self.update_inspected_relation()
+            elif event.ui_element == self.back_button:
+                self.change_screen("profile screen")
+            elif event.ui_element == self.switch_focus_button:
+                game.switches["cat"] = self.inspect_cat.ID
+                self.update_focus_cat()
+            elif event.ui_element == self.view_profile_button:
+                game.switches["cat"] = self.inspect_cat.ID
+                self.change_screen('profile screen')
+            elif event.ui_element == self.next_cat_button:
+                game.switches["cat"] = self.next_cat
+                self.update_focus_cat()
+            elif event.ui_element == self.previous_cat_button:
+                game.switches["cat"] = self.previous_cat
+                self.update_focus_cat()
+            elif event.ui_element == self.previous_page_button:
+                self.current_page -= 1
+                self.update_cat_page()
+            elif event.ui_element == self.next_page_button:
+                self.current_page += 1
+                self.update_cat_page()
+            elif event.ui_element == self.checkboxes["show_dead"]:
+                if game.settings['show dead relation']:
+                    game.settings['show dead relation'] = False
+                else:
+                    game.settings['show dead relation'] = True
+                self.update_checkboxes()
+                self.apply_cat_filter()
+                self.update_cat_page()
+            elif event.ui_element == self.checkboxes["show_empty"]:
+                if game.settings['show empty relation']:
+                    game.settings['show empty relation'] = False
+                else:
+                    game.settings['show empty relation'] = True
+                self.update_checkboxes()
+                self.apply_cat_filter()
+                self.update_cat_page()
+
+
+
+
+    def screen_switches(self):
+        cat_profiles()
+
+        self.previous_cat_button = UIImageButton(pygame.Rect((25, 25), (153, 30)), "", object_id="#previous_cat_button")
+        self.next_cat_button = UIImageButton(pygame.Rect((622, 25), (153, 30)), "", object_id="#next_cat_button")
+        self.back_button = UIImageButton(pygame.Rect((25, 645), (105, 30)), "", object_id="#back_button")
+
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((610, 97), (145, 23)))
+
+        self.show_dead_text = pygame_gui.elements.UITextBox("Show Dead", pygame.Rect((100,505), (100, 30)),
+                                                            object_id="#relation_list_name")
+        self.show_empty_text = pygame_gui.elements.UITextBox("Show Empty", pygame.Rect((100,550), (100,30)),
+                                                             object_id="#relation_list_name")
+        #Draw the checkboxes
+        self.update_checkboxes()
+
+        self.previous_page_button = UIImageButton(pygame.Rect((440, 616), (34, 34)), "",
+                                                  object_id="#relation_list_previous")
+        self.next_page_button = UIImageButton(pygame.Rect((580, 616), (34, 34)), "", object_id="#relation_list_next")
+
+        self.page_number = pygame_gui.elements.UITextBox("", pygame.Rect((445, 616), (150, 34)),
+                                                         object_id=get_text_box_theme())
+
+        self.switch_focus_button = UIImageButton(pygame.Rect((85, 390), (136, 30)), "",
+                                                 object_id="#switch_focus_button")
+        self.switch_focus_button.disable()
+        self.view_profile_button = UIImageButton(pygame.Rect((85, 420), (136, 30)), "",
+                                                 object_id="#view_profile_button")
+        self.view_profile_button.disable()
+
+        #Updates all info for the currently focused cat.
+        self.update_focus_cat()
+
+    def exit_screen(self):
+        for ele in self.checkboxes:
+            self.checkboxes[ele].kill()
+        self.checkboxes = {}
+
+        for ele in self.focus_cat_elements:
+            self.focus_cat_elements[ele].kill()
+        self.focus_cat_elements = {}
+
+        for ele in self.relation_list_elements:
+            self.relation_list_elements[ele].kill()
+        self.relation_list_elements = {}
+
+        for ele in self.sprite_buttons:
+            self.sprite_buttons[ele].kill()
+        self.sprite_buttons = {}
+
+        for ele in self.inspect_cat_elements:
+            self.inspect_cat_elements[ele].kill()
+        self.inspect_cat_elements = {}
+
+        self.previous_cat_button.kill()
+        del self.previous_cat_button
+        self.next_cat_button.kill()
+        del self.next_cat_button
+        self.back_button.kill()
+        del self.back_button
+        self.search_bar.kill()
+        del self.search_bar
+        self.show_dead_text.kill()
+        del self.show_dead_text
+        self.show_empty_text.kill()
+        del self.show_empty_text
+        self.previous_page_button.kill()
+        del self.previous_page_button
+        self.next_page_button.kill()
+        del self.next_page_button
+        self.page_number.kill()
+        del self.page_number
+        self.switch_focus_button.kill()
+        del self.switch_focus_button
+        self.view_profile_button.kill()
+        del self.view_profile_button
+
+    def get_previous_next_cat(self):
+        """Determines where the previous the next buttons should lead, and enables/diables them"""
+        is_instructor = False
+        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
+            is_instructor = True
+
+        previous_cat = 0
+        next_cat = 0
+        if self.the_cat.dead and not is_instructor and not self.the_cat.df:
+            previous_cat = game.clan.instructor.ID
+
+        if is_instructor:
+            next_cat = 1
+
+        for check_cat in Cat.all_cats:
+            if Cat.all_cats[check_cat].ID == self.the_cat.ID:
+                next_cat = 1
+            else:
+                if next_cat == 0 and Cat.all_cats[
+                    check_cat].ID != self.the_cat.ID and Cat.all_cats[
+                    check_cat].dead == self.the_cat.dead and Cat.all_cats[
+                    check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
+                    check_cat].exiled and Cat.all_cats[
+                    check_cat].df == self.the_cat.df:
+                    previous_cat = Cat.all_cats[check_cat].ID
+
+                elif next_cat == 1 and Cat.all_cats[
+                    check_cat].ID != self.the_cat.ID and Cat.all_cats[
+                    check_cat].dead == self.the_cat.dead and Cat.all_cats[
+                    check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
+                    check_cat].exiled and Cat.all_cats[
+                    check_cat].df == self.the_cat.df:
+                    next_cat = Cat.all_cats[check_cat].ID
+
+                elif int(next_cat) > 1:
+                    break
+
+        if next_cat == 1:
+            next_cat = 0
+
+        self.next_cat = next_cat
+        self.previous_cat = previous_cat
+
+        if self.next_cat == 0:
+            self.next_cat_button.disable()
+        else:
+            self.next_cat_button.enable()
+
+        if self.previous_cat == 0:
+            self.previous_cat_button.disable()
+        else:
+            self.previous_cat_button.enable()
+    def update_checkboxes(self):
+        #Remove all checkboxes
+        for ele in self.checkboxes:
+            self.checkboxes[ele].kill()
+        self.checkboxes = {}
+
+        if game.settings['show dead relation']:
+            checkbox_type = "#checked_checkbox"
+        else:
+            checkbox_type = "#unchecked_checkbox"
+
+        self.checkboxes["show_dead"] = UIImageButton(pygame.Rect((76, 505), (34, 34)), "",
+                                                     object_id= checkbox_type)
+
+        if game.settings['show empty relation']:
+            checkbox_type = "#checked_checkbox"
+        else:
+            checkbox_type = "#unchecked_checkbox"
+
+        self.checkboxes["show_empty"] = UIImageButton(pygame.Rect((76, 550), (34, 34)), "",
+                                                     object_id=checkbox_type)
+
+    def update_focus_cat(self):
+        for ele in self.focus_cat_elements:
+            self.focus_cat_elements[ele].kill()
+        self.focus_cat_elements = {}
+
+        self.the_cat = Cat.all_cats.get(game.switches['cat'],
+                                   game.clan.instructor
+                                   )
+
+        self.current_page = 1
+        self.inspect_cat = None
+
+        #Keep a list of all the relations
+        self.all_relations = list(self.the_cat.relationships.values()).copy()
+
+        self.focus_cat_elements["header"] = pygame_gui.elements.UITextBox(str(self.the_cat.name) + " Relationships",
+                                                                           pygame.Rect((75,75), (400,50)),
+                                                                           object_id=get_text_box_theme("#header_left"))
+        self.focus_cat_elements["details"] = pygame_gui.elements.UITextBox(self.the_cat.genderalign + " - " + \
+                                                                           str(self.the_cat.moons) + " moons - " + \
+                                                                           self.the_cat.trait,
+                                                                           pygame.Rect((80,105), (400, 30)),
+                                                                           object_id=get_text_box_theme(
+                                                                               "#cat_profile_info_box"))
+        self.focus_cat_elements["image"] = pygame_gui.elements.UIImage(pygame.Rect((25, 75), (50,50)),
+                                                                       self.the_cat.sprite)
+
+        self.get_previous_next_cat()
+        self.apply_cat_filter(self.search_bar.get_text())
+        self.update_inspected_relation()
+        self.update_cat_page()
+
+    def update_inspected_relation(self):
+        for ele in self.inspect_cat_elements:
+            self.inspect_cat_elements[ele].kill()
+        self.inspect_cat_elements = {}
+
+        if self.inspect_cat != None:
+            # NAME LENGTH
+            chosen_name = str(self.inspect_cat.name)
+            if 17 <= len(chosen_name) >= 19:
+                chosen_short_name = str(self.inspect_cat.name)[0:16]
+                chosen_name = chosen_short_name + '...'
+
+            if self.inspect_cat.dead:
+                chosen_name += " (dead)"
+
+            self.inspect_cat_elements["name"] = pygame_gui.elements.UITextBox(chosen_name,
+                                                                              pygame.Rect((75 ,295), (150, 40)),
+                                                                              object_id="#header_text_box")
+
+            #Cat Image
+            self.inspect_cat_elements["image"] = pygame_gui.elements.UIImage(pygame.Rect((75, 145), (150,150)),
+                                                                             self.inspect_cat.large_sprite)
+
+            #Family Dot
+            if self.inspect_cat.is_uncle_aunt(self.the_cat) or self.the_cat.is_uncle_aunt(
+                    self.inspect_cat) or \
+                    self.inspect_cat.is_grandparent(self.the_cat) or self.the_cat.is_grandparent(
+                    self.inspect_cat) or \
+                    self.inspect_cat.is_parent(self.the_cat) or self.the_cat.is_parent(
+                    self.inspect_cat) or \
+                    self.inspect_cat.is_sibling(self.the_cat):
+                self.inspect_cat_elements['family'] = pygame_gui.elements.UIImage(pygame.Rect((45, 150), (18,18)),
+                                                                                  image_cache.load_image("resources/images/dot_big.png").convert_alpha())
+
+            #Mate Heart
+            if self.the_cat.mate is not None and self.the_cat.mate != '' and self.inspect_cat.ID == self.the_cat.mate:
+                self.inspect_cat_elements["mate"] = pygame_gui.elements.UIImage(pygame.Rect((45, 150),(22,20)),
+                                                                                image_cache.load_image(
+                                                                                    "resources/images/heart_big.png").convert_alpha())
+
+
+            #Gender
+            if self.inspect_cat.genderalign == 'female':
+                gender_icon = image_cache.load_image("resources/images/female_big.png").convert_alpha()
+            elif self.inspect_cat.genderalign == 'male':
+                gender_icon = image_cache.load_image("resources/images/male_big.png").convert_alpha()
+            elif self.inspect_cat.genderalign == 'trans female':
+                gender_icon = image_cache.load_image("resources/images/transfem_big.png").convert_alpha()
+            elif self.inspect_cat.genderalign == 'trans male':
+                gender_icon = image_cache.load_image("resources/images/transmasc_big.png").convert_alpha()
+            else:
+                # Everyone else gets the nonbinary icon
+                gender_icon = image_cache.load_image("resources/images/nonbi_big.png").convert_alpha()
+
+            self.inspect_cat_elements["gender"] = pygame_gui.elements.UIImage(pygame.Rect((235, 145),(34,34)),
+                                                                              gender_icon)
+
+            #Column One Details:
+            col1 = ""
+            #Gender-Align
+            col1 += self.inspect_cat.genderalign + "\n"
+
+            #Age
+            col1 += f"{self.inspect_cat.moons} moons\n"
+
+            #Trait
+            col1 += f"{self.inspect_cat.trait}\n"
+
+            self.inspect_cat_elements["col1"] = UITextBoxTweaked(col1, pygame.Rect((60, 335), (70, -1)),
+                                                                 object_id="#cat_profile_info_box",
+                                                                 line_spacing=0.95)
+
+            #Column Two Details:
+            col2 = ""
+
+            #Mate
+            if self.inspect_cat.mate is not None and self.the_cat.ID != self.inspect_cat.mate:
+                col2 += "has a mate\n"
+            elif self.the_cat.mate is not None and self.the_cat.mate != '' and self.inspect_cat.ID == self.the_cat.mate:
+                col2 += f"{str(self.the_cat.name)}'s mate\n"
+            else:
+                col2 += "mate: none\n"
+
+            #Relation info:
+            if self.inspect_cat.is_uncle_aunt(self.the_cat) or self.the_cat.is_uncle_aunt(self.inspect_cat):
+                col2 += "related\n"
+            elif self.inspect_cat.is_grandparent(self.the_cat):
+                col2 += "related: grandparent"
+            elif self.the_cat.is_grandparent(self.inspect_cat):
+                col2 += "related: grandchild"
+            elif self.inspect_cat.is_parent(self.the_cat):
+                col2 += "related: parent"
+            elif self.the_cat.is_parent(self.inspect_cat):
+                col2 += "related: child"
+            elif self.inspect_cat.is_sibling(self.the_cat) or self.the_cat.is_sibling(self.inspect_cat):
+                col2 += "related: sibling"
+
+            self.inspect_cat_elements["col2"] = UITextBoxTweaked(col2, pygame.Rect((150, 335), (80, -1)),
+                                                                 object_id="#cat_profile_info_box",
+                                                                 line_spacing=0.95)
+
+            if self.inspect_cat.dead:
+                self.view_profile_button.enable()
+                self.switch_focus_button.disable()
+            else:
+                self.view_profile_button.enable()
+                self.switch_focus_button.enable()
+        else:
+            self.view_profile_button.disable()
+            self.switch_focus_button.disable()
+
+
+    def apply_cat_filter(self, search_text = ""):
+        #Filter for dead or empty cats
+        self.filtered_cats = self.all_relations.copy()
+        if not game.settings["show dead relation"]:
+            self.filtered_cats = list(
+                filter(lambda rel: not rel.cat_to.dead, self.filtered_cats))
+
+        if not game.settings["show empty relation"]:
+            self.filtered_cats = list(
+                filter(
+                    lambda rel: (rel.romantic_love + rel.platonic_like + rel.
+                                 dislike + rel.admiration + rel.comfortable +
+                                 rel.jealousy + rel.trust) > 0,  self.filtered_cats))
+
+        #Filter for search
+        search_cats = []
+        if search_text.strip() != "":
+            print(search_text)
+            for cat in self.filtered_cats:
+                if search_text.lower() in str(cat.cat_to.name).lower():
+                    search_cats.append(cat)
+            self.filtered_cats = search_cats
+
+
+    def update_cat_page(self):
+        for ele in self.relation_list_elements:
+            self.relation_list_elements[ele].kill()
+        self.relation_list_elements = {}
+
+        for ele in self.sprite_buttons:
+            self.sprite_buttons[ele].kill()
+        self.sprite_buttons = {}
+
+
+        all_pages = self.chunks(self.filtered_cats, 8)
+
+        if self.current_page > len(all_pages):
+            self.current_page = len(all_pages)
+
+        if all_pages:
+            display_rel = all_pages[self.current_page - 1]
+        else:
+            display_rel = []
+
+        pos_x = 290
+        pos_y = 150
+        i = 0
+        for rel in display_rel:
+            self.generate_relation_block((pos_x, pos_y), rel, i)
+
+            i += 1
+            pos_x += 122
+            if pos_x > 700:
+                pos_y += 242
+                pos_x = 290
+
+        self.page_number.set_text(f"{self.current_page} / {len(all_pages)}")
+
+        # Enable and disable page buttons.
+        if len(all_pages) <= 1:
+            self.previous_page_button.disable()
+            self.next_page_button.disable()
+        elif self.current_page >= len(all_pages):
+            self.previous_page_button.enable()
+            self.next_page_button.disable()
+        elif self.current_page == 1 and len(all_pages) > 1:
+            self.previous_page_button.disable()
+            self.next_page_button.enable()
+        else:
+            self.previous_page_button.enable()
+            self.next_page_button.enable()
+
+
+    def generate_relation_block(self, pos, the_relationship, i):
+        # Generates a relation_block starting at postion, from the relationship object "the_relation"
+        # "postion" should refer to the top left corner of the *main* relation box, not including the name.
+        pos_x = pos[0]
+        pos_y = pos[1]
+
+        self.sprite_buttons["image" + str(i)] = UISpriteButton(pygame.Rect((pos_x + 22, pos_y), (50,50)),
+                                                               the_relationship.cat_to.sprite,
+                                                               cat_object=the_relationship.cat_to)
+
+        # CHECK NAME LENGTH - SHORTEN IF NECESSARY
+        name = str(the_relationship.cat_to.name)  # get name
+        if 12 <= len(name) >= 13:  # check name length
+            short_name = str(the_relationship.cat_to.name)[0:10]
+            name = short_name + '...'
+        self.relation_list_elements["name" + str(i)] = pygame_gui.elements.UITextBox(name, pygame.Rect(
+                                                                  (pos_x, pos_y - 24), (102, 30)),
+                                                                                     object_id="#relation_list_name")
+
+        #Gender alignment
+        if the_relationship.cat_to.genderalign == 'female':
+            gender_icon = image_cache.load_image("resources/images/female_big.png").convert_alpha()
+        elif the_relationship.cat_to.genderalign == 'male':
+            gender_icon = image_cache.load_image("resources/images/male_big.png").convert_alpha()
+        elif the_relationship.cat_to.genderalign == 'trans female':
+            gender_icon = image_cache.load_image("resources/images/transfem_big.png").convert_alpha()
+        elif the_relationship.cat_to.genderalign == 'trans male':
+            gender_icon = image_cache.load_image("resources/images/transmasc_big.png").convert_alpha()
+        else:
+            #Everyone else gets the nonbinary icon
+            gender_icon = image_cache.load_image("resources/images/nonbi_big.png").convert_alpha()
+
+        self.relation_list_elements["gender" + str(i)] = pygame_gui.elements.UIImage(pygame.Rect((pos_x + 80,
+                                                                                                  pos_y + 5),
+                                                                                                 (18,18)),
+                                                                                     gender_icon)
+
+        #FAMILY DOT
+        if the_relationship.cat_to.is_uncle_aunt(self.the_cat) or self.the_cat.is_uncle_aunt(the_relationship.cat_to) or \
+                the_relationship.cat_to.is_grandparent(self.the_cat) or self.the_cat.is_grandparent(the_relationship.cat_to) or \
+                the_relationship.cat_to.is_parent(self.the_cat) or self.the_cat.is_parent(the_relationship.cat_to) or \
+                the_relationship.cat_to.is_sibling(self.the_cat):
+           self.relation_list_elements['relation_icon' + str(i)] = pygame_gui.elements.UIImage(pygame.Rect((pos_x + 5,
+                                                                                                            pos_y + 5),
+                                                                                                           (9,9)),
+                                                                                               image_cache.load_image("resources/images/dot_big.png").convert_alpha())
+
+        #MATE
+        if self.the_cat.mate is not None and self.the_cat.mate != '' and the_relationship.cat_to.ID == self.the_cat.mate:
+            self.relation_list_elements['mate_icon' + str(i)] = pygame_gui.elements.UIImage(pygame.Rect((pos_x + 5,pos_y + 5),
+                                                                                                             (11,10)),
+                                                                                                 image_cache.load_image(
+                                                                                                     "resources/images/heart_big.png").convert_alpha())
+
+        # ------------------------------------------------------------------------------------------------------------ #
+        # RELATION BARS
+
+        barbar = 22
+        bar_count = 0
+
+        #ROMANTIC LOVE
+        # CHECK AGE DIFFERENCE
+        different_age = the_relationship.cat_to.age != self.the_cat.age
+        adult_ages = ['young adult', 'adult', 'senior adult', 'elder']
+        both_adult = the_relationship.cat_to.age in adult_ages and self.the_cat.age in adult_ages
+        check_age = both_adult or not different_age
+
+        if the_relationship.romantic_love > 49 and check_age:
+            text = "romantic love:"
+        else:
+            text = "romantic like:"
+
+        self.relation_list_elements[f'romantic_text{i}'] = pygame_gui.elements.UITextBox(text, pygame.Rect((pos_x + 3, pos_y + 50 + (barbar*bar_count)),
+                                                                                                     (80, 30)),
+                                                                                         object_id="#cat_profile_info_box")
+        self.relation_list_elements[f'romantic_bar{i}'] = UIRelationStatusBar(pygame.Rect((pos_x + 3,
+                                                                                       pos_y + 65 + (barbar*bar_count)),
+                                                                                       (94,10)),
+                                                                          the_relationship.romantic_love,
+                                                                          positive_trait = True,
+                                                                          dark_mode=game.settings['dark mode']
+                                                                        )
+        bar_count += 1
+
+        #PLANTONIC
+        if the_relationship.platonic_like > 49:
+            text = "platonic love:"
+        else:
+            text = "platonic like:"
+        self.relation_list_elements[f'plantonic_text{i}'] = pygame_gui.elements.UITextBox(text, pygame.Rect((pos_x + 3,
+                                                                                                             pos_y + 50 + (barbar*bar_count)),
+                                                                                                     (74, 30)),
+                                                                                         object_id="#cat_profile_info_box")
+        self.relation_list_elements[f'platonic_bar{i}'] = UIRelationStatusBar(pygame.Rect((pos_x + 3,
+                                                                                       pos_y + 65 + (barbar*bar_count)),
+                                                                                       (94,10)),
+                                                                              the_relationship.platonic_like,
+                                                                              positive_trait = True,
+                                                                              dark_mode=game.settings['dark mode'])
+
+        bar_count += 1
+
+        #DISLIKE
+        if the_relationship.dislike > 49:
+            text = "hate:"
+        else:
+            text = "dislike:"
+        self.relation_list_elements[f'dislike_text{i}'] = pygame_gui.elements.UITextBox(text, pygame.Rect((pos_x + 3,
+                                                                                                             pos_y + 50 + (barbar*bar_count)),
+                                                                                                     (74, 30)),
+                                                                                         object_id="#cat_profile_info_box")
+        self.relation_list_elements[f'dislike_bar{i}'] = UIRelationStatusBar(pygame.Rect((pos_x + 3,
+                                                                                       pos_y + 65 + (barbar*bar_count)),
+                                                                                       (94,10)),
+                                                                              the_relationship.dislike,
+                                                                              positive_trait = False,
+                                                                              dark_mode=game.settings['dark mode'])
+
+        bar_count += 1
+
+        # ADMIRE
+        if the_relationship.admiration > 49:
+            text = "admiration:"
+        else:
+            text = "respect:"
+        self.relation_list_elements[f'admiration_text{i}'] = pygame_gui.elements.UITextBox(text, pygame.Rect((pos_x + 3,
+                                                                                                           pos_y + 50 + (
+                                                                                                                       barbar * bar_count)),
+                                                                                                          (74, 30)),
+                                                                                        object_id="#cat_profile_info_box")
+        self.relation_list_elements[f'admiration_bar{i}'] = UIRelationStatusBar(pygame.Rect((pos_x + 3,
+                                                                                          pos_y + 65 + (
+                                                                                                      barbar * bar_count)),
+                                                                                         (94, 10)),
+                                                                             the_relationship.admiration,
+                                                                             positive_trait=True,
+                                                                             dark_mode=game.settings['dark mode'])
+
+        bar_count += 1
+
+        # COMFORTABLE
+        if the_relationship.comfortable > 49:
+            text = "secure:"
+        else:
+            text = "comfortable:"
+        self.relation_list_elements[f'comfortable_text{i}'] = pygame_gui.elements.UITextBox(text, pygame.Rect((pos_x + 3,
+                                                                                                              pos_y + 50 + (
+                                                                                                                      barbar * bar_count)),
+                                                                                                             (74, 30)),
+                                                                                           object_id="#cat_profile_info_box")
+        self.relation_list_elements[f'comfortable_bar{i}'] = UIRelationStatusBar(pygame.Rect((pos_x + 3,
+                                                                                             pos_y + 65 + (
+                                                                                                     barbar * bar_count)),
+                                                                                            (94, 10)),
+                                                                                the_relationship.comfortable,
+                                                                                positive_trait=True,
+                                                                                dark_mode=game.settings['dark mode'])
+
+        bar_count += 1
+
+        # JEALOUS
+        if the_relationship.jealousy > 49:
+            text = "resentment:"
+        else:
+            text = "jealousy:"
+        self.relation_list_elements[f'jealous_text{i}'] = pygame_gui.elements.UITextBox(text,
+                                                                                            pygame.Rect((pos_x + 3,
+                                                                                                         pos_y + 50 + (
+                                                                                                                 barbar * bar_count)),
+                                                                                                        (74, 30)),
+                                                                                            object_id="#cat_profile_info_box")
+        self.relation_list_elements[f'jealous_bar{i}'] = UIRelationStatusBar(pygame.Rect((pos_x + 3,
+                                                                                              pos_y + 65 + (
+                                                                                                      barbar * bar_count)),
+                                                                                             (94, 10)),
+                                                                                 the_relationship.jealousy,
+                                                                                 positive_trait=False,
+                                                                                 dark_mode=game.settings['dark mode'])
+
+        bar_count += 1
+
+        # TRUST
+        if the_relationship.trust > 49:
+            text = "reliance:"
+        else:
+            text = "trust:"
+        self.relation_list_elements[f'trust_text{i}'] = pygame_gui.elements.UITextBox(text,
+                                                                                        pygame.Rect((pos_x + 3,
+                                                                                                     pos_y + 50 + (
+                                                                                                             barbar * bar_count)),
+                                                                                                    (74, 30)),
+                                                                                        object_id="#cat_profile_info_box")
+        self.relation_list_elements[f'trust_bar{i}'] = UIRelationStatusBar(pygame.Rect((pos_x + 3,
+                                                                                          pos_y + 65 + (
+                                                                                                  barbar * bar_count)),
+                                                                                         (94, 10)),
+                                                                             the_relationship.trust,
+                                                                             positive_trait=True,
+                                                                             dark_mode=game.settings['dark mode'])
 
     def on_use(self):
-        # use this variable to point to the cat object in question
+
+        # LOAD UI IMAGES
+        screen.blit(RelationshipScreen.search_bar, (536, 90))
+        screen.blit(RelationshipScreen.details_frame, (25, 130))
+        screen.blit(RelationshipScreen.toggle_frame, (45, 484))
+        screen.blit(RelationshipScreen.list_frame, (273, 122))
+
+        # Only update the postions if the search text changes
+        if self.search_bar.get_text() != self.previous_search_text:
+            self.apply_cat_filter(self.search_bar.get_text())
+            self.update_cat_page()
+        self.previous_search_text = self.search_bar.get_text()
+
+        # -----------------------------------------------------------------------------------------#
+
+        '''# use this variable to point to the cat object in question
         # this cat is the current cat in focus - aka the cat we're viewing the relationships of
         the_cat = Cat.all_cats.get(game.switches['cat'],
                                    game.clan.instructor
@@ -1750,110 +2360,7 @@ class RelationshipScreen(Screens):
                                   size=(105, 30),
                                   cur_screen='profile screen',
                                   chosen_cat=None,
-                                  show_details=False)
+                                  show_details=False)'''
 
-    def draw_gender_icon(self, x_pos, y_pos, arg0):
-
-        if arg0.genderalign is not None:
-            cat_gender = arg0.genderalign
-        else:
-            cat_gender = arg0.gender
-
-        if cat_gender == 'female':
-            screen.blit(RelationshipScreen.female_icon, (x_pos, y_pos))
-        if cat_gender == 'male':
-            screen.blit(RelationshipScreen.male_icon, (x_pos, y_pos))
-        if cat_gender != 'female' and cat_gender != 'male' \
-                and cat_gender != 'trans female' and cat_gender != 'trans male':
-            screen.blit(RelationshipScreen.nonbi_icon, (x_pos, y_pos))
-        if cat_gender == 'trans female':
-            screen.blit(RelationshipScreen.transfem_icon, (x_pos, y_pos))
-        if cat_gender == 'trans  male':
-            screen.blit(RelationshipScreen.transmasc_icon, (x_pos, y_pos))
-
-
-    def draw_bar(self, value, pos_x, pos_y):
-        # Loading Bar and variables
-        bar_bg = image_cache.load_image(
-            "resources/images/relations_border.png").convert_alpha()
-        bar_bg_dark = image_cache.load_image(
-            "resources/images/relations_border_dark.png").convert_alpha()
-        original_bar = image_cache.load_image(
-            "resources/images/relation_bar.png").convert_alpha()
-
-
-        bg_rect = bar_bg.get_rect(midleft=(pos_x, pos_y))
-        if game.settings['dark mode'] is True:
-            screen.blit(bar_bg_dark, bg_rect)
-        else:
-            screen.blit(bar_bg, bg_rect)
-        x_pos = 0
-        bar_length_per_snippet = 8
-        number_of_bars = 10
-        for i in range(int(value / number_of_bars)):
-            x_pos = i * (bar_length_per_snippet + 1)
-            bar_rect = original_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
-            bar = pygame.transform.scale(original_bar, (bar_length_per_snippet, 10))
-            screen.blit(bar, bar_rect)
-        x_pos = (bar_length_per_snippet + 1) * int(value / number_of_bars)
-        bar_rect = original_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
-        bar = pygame.transform.scale(original_bar, (value % number_of_bars, 10))
-        screen.blit(bar, bar_rect)
-
-
-    def draw_green_bar(self, value, pos_x, pos_y):
-        # Loading Bar and variables
-        bar_bg = pygame.image.load(
-            "resources/images/relations_border.png").convert_alpha()
-        bar_bg_dark = pygame.image.load(
-            "resources/images/relations_border_dark.png").convert_alpha()
-        green_bar = pygame.image.load(
-            "resources/images/relation_bar_green.png").convert_alpha()
-
-        bg_rect = bar_bg.get_rect(midleft=(pos_x, pos_y))
-        if game.settings['dark mode'] is True:
-            screen.blit(bar_bg_dark, bg_rect)
-        else:
-            screen.blit(bar_bg, bg_rect)
-        x_pos = 0
-        bar_length_per_snippet = 8
-        number_of_bars = 10
-        for i in range(int(value / number_of_bars)):
-            x_pos = i * (bar_length_per_snippet + 1)
-            bar_rect = green_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
-            bar = pygame.transform.scale(green_bar, (bar_length_per_snippet, 10))
-            screen.blit(bar, bar_rect)
-        x_pos = (bar_length_per_snippet + 1) * int(value / number_of_bars)
-        bar_rect = green_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
-        bar = pygame.transform.scale(green_bar, (value % number_of_bars, 10))
-        screen.blit(bar, bar_rect)
-
-    def draw_red_bar(self, value, pos_x, pos_y):
-        # Loading Bar and variables
-        bar_bg = pygame.image.load(
-            "resources/images/relations_border.png").convert_alpha()
-        bar_bg_dark = pygame.image.load(
-            "resources/images/relations_border_dark.png").convert_alpha()
-        red_bar = pygame.image.load(
-            "resources/images/relation_bar_red.png").convert_alpha()
-
-        bg_rect = bar_bg.get_rect(midleft=(pos_x, pos_y))
-        if game.settings['dark mode'] is True:
-            screen.blit(bar_bg_dark, bg_rect)
-        else:
-            screen.blit(bar_bg, bg_rect)
-        x_pos = 0
-        bar_length_per_snippet = 8
-        number_of_bars = 10
-        for i in range(int(value / number_of_bars)):
-            x_pos = i * (bar_length_per_snippet + 1)
-            bar_rect = red_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
-            bar = pygame.transform.scale(red_bar, (bar_length_per_snippet, 10))
-            screen.blit(bar, bar_rect)
-        x_pos = (bar_length_per_snippet + 1) * int(value / number_of_bars)
-        bar_rect = red_bar.get_rect(midleft=(pos_x + x_pos + 2, pos_y))
-        bar = pygame.transform.scale(red_bar, (value % number_of_bars, 10))
-        screen.blit(bar, bar_rect)
-
-    def screen_switches(self):
-        cat_profiles()
+    def chunks(self, L, n):
+        return [L[x: x + n] for x in range(0, len(L), n)]
