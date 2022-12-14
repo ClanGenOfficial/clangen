@@ -26,7 +26,7 @@ class Scar_Events():
         """
         scar_text = cat.possible_scar
 
-        if len(cat.scars) < 4 and not int(random.random() * 1):  # 1/2 chance to gain scar
+        if len(cat.scars) < 4 and not int(random.random() * 2):  # 1/2 chance to gain scar
 
             # move potential scar text into displayed scar text
             cat.scar_event.append(scar_text)
