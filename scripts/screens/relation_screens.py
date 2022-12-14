@@ -1535,7 +1535,6 @@ class RelationshipScreen(Screens):
         #Filter for search
         search_cats = []
         if search_text.strip() != "":
-            print(search_text)
             for cat in self.filtered_cats:
                 if search_text.lower() in str(cat.cat_to.name).lower():
                     search_cats.append(cat)
@@ -1556,6 +1555,9 @@ class RelationshipScreen(Screens):
 
         if self.current_page > len(all_pages):
             self.current_page = len(all_pages)
+
+        if self.current_page == 0:
+            self.current_page = 1
 
         if all_pages:
             display_rel = all_pages[self.current_page - 1]
