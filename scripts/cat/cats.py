@@ -132,8 +132,7 @@ class Cat():
         self.parent2 = parent2
         self.pelt = pelt
         self.eye_colour = eye_colour
-        self.specialty = []
-        self.specialty2 = []
+        self.scars = []
         self.mentor = None
         self.former_mentor = []
         self.patrol_with_mentor = 0
@@ -1128,9 +1127,9 @@ class Cat():
         new_condition = choice(possible_conditions)
 
         if new_condition == "born without a leg":
-            cat.specialty.append('NOPAW')
+            cat.scars.append('NOPAW')
         elif new_condition == "born without a tail":
-            cat.specialty.append('NOTAIL')
+            cat.scars.append('NOTAIL')
 
         self.get_permanent_condition(new_condition, born_with=True)
 
@@ -1140,9 +1139,9 @@ class Cat():
             return
 
         # remove accessories if need be
-        if 'NOTAIL' in (self.specialty, self.specialty2) and self.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
+        if 'NOTAIL' in self.scars and self.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
             self.accessory = None
-        if 'HALFTAIL' in (self.specialty, self.specialty2) and self.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
+        if 'HALFTAIL' in self.scars and self.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
             self.accessory = None
 
         condition = PERMANENT[name]
@@ -1812,17 +1811,17 @@ class Cat():
 # Twelve example cats
 def create_example_cats():
     e = random.sample(range(12), 3)
+    not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL']
     for a in range(12):
         if a in e:
             game.choose_cats[a] = Cat(status='warrior')
         else:
             game.choose_cats[a] = Cat(status=choice(
                 ['kitten', 'apprentice', 'warrior', 'warrior', 'elder']))
-        if ('NOPAW', 'NOTAIL', 'HALFTAIL') in game.choose_cats[a].specialty:
-            game.choose_cats[a].specialty.clear()
-        if ('NOPAW', 'NOTAIL', 'HALFTAIL') in game.choose_cats[a].specialty2:
-            game.choose_cats[a].specialty2.clear()
-        update_sprite(game.choose_cats[a])
+        for scar in not_allowed:
+            if scar in game.choose_cats[a].scars:
+                game.choose_cats[a].scars.remove(scar)
+            update_sprite(game.choose_cats[a])
 
 
 # CAT CLASS ITEMS

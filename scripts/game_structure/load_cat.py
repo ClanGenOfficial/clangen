@@ -67,20 +67,15 @@ def json_load():
         new_cat.tortiepattern = cat["tortie_pattern"]
         new_cat.skin = cat["skin"]
         new_cat.skill = cat["skill"]
-        if is_iterable(cat["specialty"]):
-            new_cat.specialty = cat["specialty"]
-        elif cat["specialty"] is not None:
-            new_cat.specialty = []
-            new_cat.specialty.append(cat["specialty"])
-        else:
-            new_cat.specialty = []
-        if is_iterable(cat["specialty2"]):
-            new_cat.specialty = cat["specialty2"]
-        elif cat["specialty2"] is not None:
-            new_cat.specialty2 = []
-            new_cat.specialty2.append(cat["specialty2"])
-        else:
-            new_cat.specialty2 = []
+        new_cat.scars = cat["scars"] if "scars" in cat else []
+
+        # converting old specialty saves into new scar parameter
+        if "specialty" in cat or "specialty2" in cat:
+            if cat["specialty"] is not None:
+                new_cat.scars.append(cat["specialty"])
+            if cat["specialty2"] is not None:
+                new_cat.scars.append(cat["specialty2"])
+
         new_cat.accessory = cat["accessory"]
         new_cat.mate = cat["mate"]
         new_cat.dead = cat["dead"]

@@ -26,7 +26,7 @@ class Scar_Events():
         """
         scar_text = cat.possible_scar
 
-        if len(cat.specialty) < 2 and len(cat.specialty2) < 2 and not int(random.random() * 2):  # 1/2 chance to gain scar
+        if len(cat.scars) < 4 and not int(random.random() * 1):  # 1/2 chance to gain scar
 
             # move potential scar text into displayed scar text
             cat.scar_event.append(scar_text)
@@ -79,17 +79,17 @@ class Scar_Events():
             elif injury_name == "damaged eyes":
                 scar_pool = eye_scars
 
-            for special in (cat.specialty, cat.specialty2):
-                if special:
+            for scar in cat.scars:
+                if scar:
                     try:
-                        if "NOPAW" == special and 'TOETRAP' in scar_pool:
+                        if "NOPAW" == scar and 'TOETRAP' in scar_pool:
                             scar_pool.remove('TOETRAP')
-                        if "NOTAIL" in special:
-                            for scar in ["HALFTAIL", "TAILBASE", "TAILSCAR"]:
-                                if scar in scar_pool:
-                                    scar_pool.remove(scar)
-                        if special in scar_pool:
-                            scar_pool.remove(special)  # no duplicate scars
+                        if "NOTAIL" in scar:
+                            for option in ["HALFTAIL", "TAILBASE", "TAILSCAR"]:
+                                if option in scar_pool:
+                                    scar_pool.remove(option)
+                        if scar in scar_pool:
+                            scar_pool.remove(scar)  # no duplicate scars
                     except ValueError as e:
                         print(f"Failed to exclude scar from pool: {e}")
 
@@ -100,10 +100,8 @@ class Scar_Events():
                         cat.accessory = None
 
                 if specialty:
-                    if len(cat.specialty) < 2:
-                        cat.specialty.append(specialty)
-                    else:
-                        cat.specialty2.append(specialty)
+                    if len(cat.scars) < 4:
+                        cat.scars.append(specialty)
 
                 scar_gain_strings = [
                     f"{cat.name}'s {injury_name} has healed, but they'll always carry evidence of the incident on their pelt.",

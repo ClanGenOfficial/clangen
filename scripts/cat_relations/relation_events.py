@@ -794,17 +794,16 @@ class Relation_Events():
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
 
             # remove scars
-            kit.specialty.clear()
-            kit.specialty2.clear()
+            kit.scars.clear()
 
             # try to give them a permanent condition. 1/100 chance
             if not int(random.random() * 100) and game.clan.game_mode != 'classic':
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:
                     if kit.permanent_condition[condition] == 'born without a leg':
-                        kit.specialty.append('NOPAW')
+                        kit.scars.append('NOPAW')
                     elif kit.permanent_condition[condition] == 'born without a tail':
-                        kit.specialty.append('NOTAIL')
+                        kit.scars.append('NOTAIL')
 
             # create and update relationships
             for cat_id in clan.clan_cats:

@@ -685,17 +685,8 @@ class Patrol():
     def handle_scars(self):
         if self.patrol_event.tags is not None:
             if "scar" in self.patrol_event.tags:
-                if len(self.patrol_random_cat.specialty) < 2:
-                    self.patrol_random_cat.specialty.append(choice(
-                        [choice(scars1),
-                         choice(scars2)]))
-                    if len(self.patrol_event.history_text) >= 1:
-                        self.patrol_random_cat.scar_event.append(
-                            f'{self.patrol_event.history_text[0]}')
-                    else:
-                        self.patrol_random_cat.death_event.append(f'This cat gained a scar while patrolling.')
-                elif len(self.patrol_random_cat.specialty2) < 2:
-                    self.patrol_random_cat.specialty2.append(choice(
+                if len(self.patrol_random_cat.scars) < 4:
+                    self.patrol_random_cat.scars.append(choice(
                         [choice(scars1),
                          choice(scars2)]))
                     if len(self.patrol_event.history_text) >= 1:
