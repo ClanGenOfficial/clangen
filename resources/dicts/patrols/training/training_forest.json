@@ -438,5 +438,32 @@
     "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+	"patrol_id": "fst_train_groveclan1",
+	"biome": "forest",
+	"season": "Any",
+	"tags": ["training", "apprentice", "trust", "comfort", "dislike", "platonic", "warrior"],
+	"intro_text": "Out in the forest, p_l asks app1 if they know why c_n chooses to live in the woods, under the canopy, rather than any other environment.",
+	"decline_text": "app1 seems distracted. p_l shrugs, and decides to focus on more active training today instead.",
+	"chance_of_success": 60,
+	"exp": 15,
+	"success_text": [
+        	"Their ancestors lived in a sheltered redwood grove, and it protected them from the elements and fed their prey and kept their kits dry, p_l explains. But one day, Twolegs destroyed their home with fire and monsters, and the cats of that clan scattered. Some, after many trials, founded c_n, and chose a place that seemed familiar and safe.",
+        	"p_l shows app1 how the trees protect from wind and rain, how, like their ancestors have done for generations, c_n has learnt to jump between branches like the squirrels they hunt. app1 nods, talking about how the plains or beaches wouldn't have those advantages.",
+        	"c_n myths tell of the clan their founders were descended from, who lived in a grove of redwood trees shielding them from the world. The clan has taken lessons from it, about how to use the resources of the forest to keep themselves safe, and to this day they still live with tree trunks standing sentry around camp."
+	],
+	"fail_text": [
+        	"app1 launches into a speech about how c_n is awesome because they aren't kittypets, only for p_l to stop them. That wasn't the point of the lesson.",
+        	"Churlish and grumpy, app1 storms past p_l, not interested in hearing their dumb lesson."
+	],
+	"win_skills": ["good speaker", "great speaker", "excellent speaker", "good teacher", "great teacher", "fantastic teacher"],
+	"win_trait": ["None"],
+	"fail_skills": ["None"],
+	"fail_trait": ["troublesome"],
+	"min_cats": 2,
+	"max_cats": 2,
+	"antagonize_text": null,
+	"antagonize_fail_text": null
 }
 ]
