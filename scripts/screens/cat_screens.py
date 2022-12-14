@@ -10,6 +10,7 @@ from scripts.cat.cats import Cat
 from scripts.cat.pelts import collars, wild_accessories
 import scripts.game_structure.image_cache as image_cache
 import pygame_gui
+from re import sub
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton, UITextBoxTweaked, UIImageTextBox
 
 # ---------------------------------------------------------------------------- #
@@ -1088,7 +1089,7 @@ class ChangeNameScreen(Screens):
 
         self.prefix_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((220,200),(180,30)),
                                                                     placeholder_text=self.the_cat.name.prefix)
-        if self.the_cat.name.status in ["apprentice", "leader", "medicine cat apprentice", "leader"]:
+        if self.the_cat.name.status in ["apprentice", "leader", "medicine cat apprentice", "kitten"]:
             self.suffix_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((400, 200),(180,30)),
                                                                         placeholder_text=self.the_cat.name.special_suffixes[self.the_cat.name.status])
             self.suffix_entry_box.disable() #You can't change a special suffix
@@ -1116,11 +1117,11 @@ class ChangeNameScreen(Screens):
     def handle_event(self,event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.done_button:
-                if self.prefix_entry_box.get_text() != '':
-                    self.the_cat.name.prefix = self.prefix_entry_box.get_text()
+                if sub(r'[^A-Za-z0-9 ]+', '', self.prefix_entry_box.get_text()) != '':
+                    self.the_cat.name.prefix = sub(r'[^A-Za-z0-9 ]+', '', self.prefix_entry_box.get_text())
                     self.name_changed.show()
-                if self.suffix_entry_box.get_text() != '':
-                    self.the_cat.name.suffix = self.suffix_entry_box.get_text()
+                if sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text()) != '':
+                    self.the_cat.name.suffix = sub(r'[^A-Za-z0-9 ]+', '', self.suffix_entry_box.get_text())
                     self.name_changed.show()
             elif event.ui_element == self.back_button:
                 self.change_screen('profile screen')

@@ -799,9 +799,9 @@ class DFScreen(Screens):
     def screen_switches(self):
         #Determine the dead, non-exiled cats.
         if game.clan.instructor.df is True:
-            dead_cats = [game.clan.instructor]
+            self.dead_cats = [game.clan.instructor]
         else:
-            dead_cats = []
+            self.dead_cats = []
 
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
