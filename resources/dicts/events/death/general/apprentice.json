@@ -1,0 +1,32 @@
+[
+    {
+        "camp": "any",
+        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c died in a training accident.",
+        "history_text": ["m_c died in a training accident.", null],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["other_clan", "rel_down", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c was killed by o_c warriors after accidentally wandering over the border.",
+        "history_text": ["m_c was killed by o_c warriors after accidentally trespassing.", null],
+        "cat_trait": ["nervous", "strange", "childish", "troublesome", "lonesome"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c was killed by o_c warriors after deliberately going over the border.",
+        "history_text": ["m_c was killed by o_c warriors after deliberately trespassing.", null],
+        "cat_trait": ["daring", "bold", "confident", "playful", "fierce", "ambitious", "bloodthirsty", "fierce", "shameless", "troublesome", "vengeful", "strange", "sneaky"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    }
+]

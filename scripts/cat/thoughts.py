@@ -1,3 +1,5 @@
+from random import choice
+
 import ujson
 
 def get_thoughts(cat, other_cat):
@@ -200,7 +202,7 @@ def get_warrior_thoughts(cat, other_cat):
         elif cat.trait == 'fierce':
             thoughts += [
                 'Is roaring playfully at kits, making them laugh',
-                'Has been rough housing with the kits a little too hard lately'
+                'Has been rogue housing with the kits a little too hard lately'
             ]
         elif cat.trait == 'loving':
             thoughts += [
@@ -354,6 +356,8 @@ def get_elder_thoughts(cat, other_cat):
 
     # trait specific medicine cat apprentice thoughts    
     trait = cat.trait
+    if trait in cat.kit_traits:
+        cat.trait = choice(cat.traits)
     thoughts += ELDER_TRAITS[trait]
 
     return thoughts
@@ -494,7 +498,7 @@ def get_warrior_trait_role_thoughts(cat, other_cat):
         if other_cat.status == 'kitten':
             thoughts += [
                 'Is roaring playfully at kits, making them laugh',
-                'Has been rough housing with the kits a little to hard lately',
+                'Has been rogue housing with the kits a little to hard lately',
                 'Is telling the kits tales about valiant warriors in the thick of epic battles'
             ]
     

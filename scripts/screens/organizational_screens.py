@@ -147,6 +147,7 @@ class SwitchClanScreen(Screens):
         screen.blit(self.screen, (290,150))
         pass
 
+
 class SettingsScreen(Screens):
     text_size = {
         '0': 'small',
@@ -606,10 +607,10 @@ class RelationshipSettingsScreen(Screens):
                      ('center', 160))
 
         # Setting names
-        x_value = 225
+        x_value = 190
         verdana.text("Randomize relationship values, when creating clan", (x_value, 226))
         verdana.text("Allow affairs and mate switches based on relationships", (x_value, 265))
-        verdana.text("Allow couples to have kittens despite same-sex status", (x_value, 304))
+        verdana.text("Allow couples to have kittens despite same-sex status (they always can adopt)", (x_value, 304))
         verdana.text("Allow unmated cats to have offspring", (x_value, 343))
         verdana.text("Allow romantic interactions with former apprentices/mentor", (x_value, 382))
 

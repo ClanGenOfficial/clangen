@@ -1,0 +1,74 @@
+[
+    {
+        "camp": "any",
+        "tags": ["other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c died in a border skirmish against o_c.",
+        "history_text": ["m_c died in a border skirmish with o_c.", null],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["other_clan", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c was killed while trying to save the o_c medicine cat.",
+        "history_text": ["m_c was killed while trying to save the o_c medicine cat.", null],
+        "cat_trait": ["bold", "charismatic", "confident", "daring", "altruistic", "empathetic", "compassionate", "loving", "responsible", "thoughtful", "strange"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["other_clan", "rel_down", "war", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c was killed by the o_c deputy.",
+        "history_text": ["m_c was killed by the o_c deputy.", null],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["other_clan", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c was killed while trying to save the o_c deputy.",
+        "history_text": ["m_c was killed while trying to save the o_c deputy.", null],
+        "cat_trait": ["bold", "charismatic", "confident", "daring", "altruistic", "empathetic", "compassionate", "loving", "responsible", "thoughtful", "strange"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["other_clan", "rel_down", "war", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c was killed by the o_c leader.",
+        "history_text": ["m_c was killed by the o_c leader.", null],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["other_clan", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c was killed while trying to save the o_c leader.",
+        "history_text": ["m_c was killed while trying to save the o_c leader.", null],
+        "cat_trait": ["bold", "charismatic", "confident", "daring", "altruistic", "empathetic", "compassionate", "loving", "responsible", "thoughtful", "strange"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "camp": "any",
+        "tags": ["multi_death", "other_cat_adult", "other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "death_text": "m_c and r_c are killed in a border skirmish against o_c.",
+        "history_text": [
+            "m_c was killed in a border skirmish against o_c",
+            "was killed in a border skirmish against o_c."],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    }
+]

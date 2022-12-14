@@ -1,0 +1,25 @@
+{
+    "Newleaf":{
+        "running nose": 3,
+        "stomachache": 1
+    },
+    "Greenleaf":{
+        "fleas": 2,
+        "stomachache":1,
+        "heat exhaustion":3,
+        "heat stroke":1
+    },
+    "Leaf-fall":{
+        "stomachache":1,
+        "greencough": 1,
+        "whitecough": 3,
+        "running nose": 5
+    },
+    "Leaf-bare":{
+        "stomachache":1,
+        "greencough": 2,
+        "whitecough": 1,
+        "running nose": 5,
+        "kittencough": 5
+    }
+}

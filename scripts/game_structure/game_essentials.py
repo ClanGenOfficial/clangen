@@ -9,6 +9,7 @@ screen_y = 700
 screen = pygame.display.set_mode((screen_x, screen_y), pygame.HWSURFACE)
 pygame.display.set_caption('Clan Generator')
 
+SAVE_DEATH = False
 
 # G A M E
 class Game():
@@ -131,7 +132,7 @@ class Game():
         'backgrounds': True,
         'autosave': False,
         'disasters': False,
-        'retirement': True,
+        'retirement': False,
         'language': 'english',
         'affair': False,
         'shaders': False,
@@ -141,7 +142,8 @@ class Game():
         'show empty relation': False,
         'romantic with former mentor': True,
         'game_mode': None,
-        'deputy': False
+        'deputy': False,
+        'den labels': True
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
@@ -161,7 +163,8 @@ class Game():
         'show empty relation': [False, True],
         'romantic with former mentor': [False, True],
         'game_mode': game_mode_list,
-        'deputy': [False, True]
+        'deputy': [False, True],
+        'den labels': [False, True]
     }  # Lists of possible options for each setting
     settings_changed = False
 
@@ -204,6 +207,8 @@ class Game():
             self.switches['save_clan'] = False
             self.switches['saved_clan'] = True'''
         if self.switches['switch_clan']:
+            self.clan.save_clan()
+            self.save_cats()
             self.clan.switch_clans()
             self.switches['switch_clan'] = False
         if self.switches['read_clans']:
@@ -323,6 +328,7 @@ class Game():
                 "mentor_influence": inter_cat.mentor_influence if inter_cat.mentor_influence else [],
                 "mate": inter_cat.mate,
                 "dead": inter_cat.dead,
+                "died_by": inter_cat.died_by if inter_cat.died_by else [],
                 "paralyzed": inter_cat.paralyzed,
                 "no_kits": inter_cat.no_kits,
                 "exiled": inter_cat.exiled,
@@ -353,10 +359,14 @@ class Game():
                 "dead_moons": inter_cat.dead_for,
                 "current_apprentice": [appr.ID for appr in inter_cat.apprentice],
                 "former_apprentices": [appr.ID for appr in inter_cat.former_apprentices],
+                "possible_scar": inter_cat.possible_scar if inter_cat.possible_scar else None,
                 "scar_event": inter_cat.scar_event if inter_cat.scar_event else [],
-                "df": inter_cat.df
+                "df": inter_cat.df,
+                "corruption": inter_cat.corruption if inter_cat.corruption else 0,
+                "retired": inter_cat.retired if inter_cat.retired else False
             }
             clan_cats.append(cat_data)
+            inter_cat.save_condition()
             if not inter_cat.dead:
                 inter_cat.save_relationship_of_cat()
         try:

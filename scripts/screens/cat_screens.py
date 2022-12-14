@@ -374,19 +374,23 @@ class ProfileScreen(Screens):
             or for changes in the profile. 
             the_cat should be a Cat object. '''
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
+        # use these attributes to create differing profiles for starclan cats etc.
+        is_sc_instructor = False
+        is_df_instructor = False
+        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID and self.the_cat.df is False:
+            is_sc_instructor = True
+        elif self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID and self.the_cat.df is True:
+            is_df_instructor = True
 
-        if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
-            is_instructor = True
-        else:
-            is_instructor = False
 
         # Info in string
         cat_name = str(self.the_cat.name)  # name
         if self.the_cat.dead:
             cat_name += " (dead)"  # A dead cat will have the (dead) sign next to their name
-        if is_instructor:
-            self.the_cat.thought = "Hello. I am here to guide the dead cats of " + game.clan.name + \
-                                   "Clan into StarClan."
+        if is_sc_instructor:
+            self.the_cat.thought = "Hello. I am here to guide the dead cats of " + game.clan.name + "Clan into StarClan."
+        if is_df_instructor:
+            self.the_cat.thought = "Hello. I am here to drag the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
         #Write cat name
         self.cat_name = pygame_gui.elements.UITextBox(cat_name, pygame.Rect((200,140),(400,40)),
@@ -573,6 +577,51 @@ class ProfileScreen(Screens):
                 output += ' moons'
         #NEWLINE ----------
         output += "\n"
+
+        # CONDITIONS (temporary)
+        injury_list = []
+        permanent_conditions_list = []
+        illness_list = []
+        injury_string = None
+        permanent_conditions_string = None
+        illness_string = None
+
+        if the_cat.is_injured():
+            for y in the_cat.injuries:
+                injury_list.append(y)
+            injury_string = ", ".join(injury_list)
+        if the_cat.is_disabled():
+            for y in the_cat.permanent_condition:
+                if the_cat.permanent_condition[y]["moons_until"] == -2 and the_cat.permanent_condition[y]["born_with"] is True:
+                    permanent_conditions_list.append(y)
+                elif the_cat.permanent_condition[y]["born_with"] is False:
+                    permanent_conditions_list.append(y)
+
+            if len(permanent_conditions_list) > 0:
+                permanent_conditions_string = ", ".join(permanent_conditions_list)
+        if the_cat.is_ill():
+            for y in the_cat.illnesses:
+                illness_list.append(y)
+            illness_string = ', '.join(illness_list)
+
+        if the_cat.is_ill() and the_cat.is_injured():
+            verdana_small.text(
+                f"condition: {illness_string}, {injury_string}", (300, 230 + count * 15))
+            count += 1
+        elif the_cat.is_ill():
+            verdana_small.text(
+                f"condition: {illness_string}", (300, 230 + count * 15))
+            count += 1
+        elif the_cat.is_injured():
+            verdana_small.text(
+                f"condition: {injury_string}", (300, 230 + count * 15))
+            count += 1
+
+        if the_cat.is_disabled():
+            if permanent_conditions_string is not None:
+                verdana_small.text(
+                    f"permanent conditions: {permanent_conditions_string}", (300, 230 + count * 15))
+                count += 1
 
         # MATE
         if the_cat.mate is not None and not the_cat.dead:
