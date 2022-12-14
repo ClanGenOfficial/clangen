@@ -165,6 +165,7 @@ class Cat():
         self.illnesses = {}
         self.injuries = {}
         self.healed_condition = None
+        self.leader_death_heal = None
         self.also_got = False
         self.permanent_condition = {}
         self.retired = False
@@ -364,6 +365,15 @@ class Cat():
         comfort_strings = GRIEF_GENERAL_POSITIVE["comfort"][body_status]
         trust_strings = GRIEF_GENERAL_POSITIVE["trust"][body_status]
 
+        # major, cat won't patrol
+        grief_major = [
+            'loving', 'compassionate', 'empathetic', 'insecure', 'lonesome', 'nervous'
+        ]
+        # minor, cat will patrol
+        grief_minor = [
+            'daring', 'cold', 'bold', 'ambitious', 'bloodthirsty', 'responsible', 'loyal', 'strict', 'vengeful'
+        ]
+
         # apply grief to cats with high positive relationships to dead cat
         for cat in Cat.all_cats.values():
             if cat.dead or cat.outside or cat.moons < 1:
@@ -381,7 +391,6 @@ class Cat():
             for y in range(len(romantic_relation)):
                 cat_to = romantic_relation[y].cat_to
                 if cat_to == self:
-                    cat.get_ill("grief stricken", event_triggered=True)
                     possible_strings.extend(romantic_strings)
                     family_strings = self.familial_grief(living_cat=cat, body=body_status)
 
@@ -391,7 +400,6 @@ class Cat():
             for y in range(len(platonic_relation)):
                 cat_to = platonic_relation[y].cat_to
                 if cat_to == self:
-                    cat.get_ill("grief stricken", event_triggered=True)
                     possible_strings.extend(platonic_strings)
 
                     family_strings = self.familial_grief(living_cat=cat, body=body_status)
@@ -402,7 +410,6 @@ class Cat():
             for y in range(len(admiration_relation)):
                 cat_to = admiration_relation[y].cat_to
                 if cat_to == self:
-                    cat.get_ill("grief stricken", event_triggered=True)
                     possible_strings.extend(admiration_strings)
 
                     family_strings = self.familial_grief(living_cat=cat, body=body_status)
@@ -413,7 +420,6 @@ class Cat():
             for y in range(len(comfort_relation)):
                 cat_to = comfort_relation[y].cat_to
                 if cat_to == self:
-                    cat.get_ill("grief stricken", event_triggered=True)
                     possible_strings.extend(comfort_strings)
 
                     family_strings = self.familial_grief(living_cat=cat, body=body_status)
@@ -424,7 +430,6 @@ class Cat():
             for y in range(len(trust_relation)):
                 cat_to = trust_relation[y].cat_to
                 if cat_to == self:
-                    cat.get_ill("grief stricken", event_triggered=True)
                     possible_strings.extend(trust_strings)
 
                     family_strings = self.familial_grief(living_cat=cat, body=body_status)
@@ -433,10 +438,68 @@ class Cat():
                         possible_strings.extend(family_strings)
 
             if len(possible_strings) != 0:
-                # choose string, then adjust string text, then append to grief string list
-                text = choice(possible_strings)
+                # choose string
+                text = []
+                text.append(choice(possible_strings))
+
+                # check if the cat will get Major or Minor severity for grief
+                chance = [1, 1]
+                if cat.trait in grief_major:
+                    chance = [2, 1]
+                if cat.trait in grief_minor:
+                    chance = [2, 1]
+                severity = random.choices(['major', 'minor'], weights=chance, k=1)
+                print(severity, chance)
+                # give the cat the relevant severity text
+                severity = severity[0]
+                if severity == 'major':
+                    text.append(choice([
+                        "r_c can't be bothered to get up out of their nest the next day and refuses to speak a word "
+                        "to those around them. ",
+                        "As the vigil draws to a close, someone suggests that r_c should eat. They refuse, not moving "
+                        "their eyes from where they vacantly gaze.",
+                        "When no one needs anything from them r_c breaks down, wailing uncontrollably and cursing the "
+                        "world that took m_c and not them.",
+                        "In the days to come, r_c barely stirs from their nest.",
+                        "As the days pass from the vigil, r_c becomes angry and withdrawn. It feels like the entire "
+                        "clan is just moving on from m_c's death, and they categorically refuse to do so.",
+                        "Cats come to r_c afterwards, offering them the choicest cuts of prey, the juiciest still "
+                        "beating heart of a mouse, but they're uninterested, staring at the wall of their nest and "
+                        "refusing to talk.",
+                        "Things are never going to be the same now. Could never be the same. r_c doesn't know how "
+                        "they're supposed to rise the next morning and go on patrol. They refuse to.",
+                        "r_c spends time by themselves, letting themselves mourn m_c and the time they should have "
+                        "had together. They'll return to their duties eventually, of course they will, but no one can "
+                        "begrudge them the need to grieve.",
+                        "Cats offer r_c comfort and care. They refuse all of it."
+                    ]))
+                elif severity == 'minor':
+                    text.append(choice([
+                        "r_c is eager to get up and busy themselves the next day, refusing to sit still for even a "
+                        "moment lest their thoughts begin to linger on m_c's death. ",
+                        "As the vigil draws to a close, someone suggests that r_c should eat. It feels like dung in "
+                        "their mouth, but they know m_c would want them to take care of themselves. ",
+                        "r_c keeps searching for tasks to do, for cats to comfort, for distractions against the hole "
+                        "in their heart, as they fight to keep the grief from consuming them.",
+                        "The world seems dim and lifeless, and r_c keeps close to their clan, seeking out their "
+                        "comfort and company.",
+                        "r_c goes over the best of the moments they shared with m_c in their mind, again and again, "
+                        "like wearing a rut into the ground, until they're sure that they will remember m_c forever. "
+                        "One day, the clan will have kittens who never knew m_c in life, but r_c vows to ensure m_c's "
+                        "memory will live on through them.",
+                        "Some of the memories shared at m_c's vigil make r_c laugh. Some cry. Most of them do both, "
+                        "as r_c marvels at what a special cat m_c was.",
+                        "r_c wonders if, maybe, if they're lucky, m_c might visit them in a vision from StarClan."
+                    ]))
+
+                # grief the cat
+                cat.get_ill("grief stricken", event_triggered=True, severity=severity)
+
+                # adjust and append text to grief string list
+                text = ' '.join(text)
                 text = event_text_adjust(Cat, text, self, cat)
                 Cat.grief_strings.append(text)
+
 
     def familial_grief(self, living_cat, body):
         """
@@ -802,6 +865,7 @@ class Cat():
 
         if mortality and not int(random.random() * mortality):
             if self.status == "leader":
+                self.leader_death_heal = True
                 game.clan.leader_lives -= 1
                 if game.clan.leader_lives > 0:
                     game.cur_events_list.append(f"{self.name} lost a life to {illness}.")
@@ -929,7 +993,16 @@ class Cat():
 #                                  conditions                                  #
 # ---------------------------------------------------------------------------- #
   
-    def get_ill(self, name, event_triggered=False, lethal=True):
+    def get_ill(self, name, event_triggered=False, lethal=True, severity='default'):
+        """
+        use to make a cat ill.
+        name = name of the illness you want the cat to get
+        event_triggered = make True to have this illness skip the illness_moonskip for 1 moon
+        lethal = set True to leave the illness mortality rate at its default level.
+                 set False to force the illness to have 0 mortality
+        severity = leave 'default' to keep default severity, otherwise set to the desired severity
+                   ('minor', 'major', 'severe')
+        """
         if name not in ILLNESSES:
             print(f"WARNING: {name} is not in the illnesses collection.")
             return
@@ -939,6 +1012,10 @@ class Cat():
         illness = ILLNESSES[name]
         mortality = illness["mortality"][self.age]
         med_mortality = illness["medicine_mortality"][self.age]
+        if severity == 'default':
+            illness_severity = illness["severity"]
+        else:
+            illness_severity = severity
 
         duration = illness['duration']
         med_duration = illness['medicine_duration']
@@ -947,7 +1024,7 @@ class Cat():
 
         if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
             duration = med_duration
-        duration += random.randrange(-1, 1)
+        duration += random.randrange(0, 1)
 
         if game.clan.game_mode == "cruel season":
             if mortality != 0:
@@ -963,7 +1040,7 @@ class Cat():
 
         new_illness = Illness(
             name=name,
-            severity=illness["severity"],
+            severity=illness_severity,
             mortality=mortality,
             infectiousness=illness["infectiousness"],
             duration=duration,
@@ -1000,7 +1077,6 @@ class Cat():
         if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
             duration = med_duration
         duration += random.randrange(0, 1)
-
 
         if mortality != 0:
             if game.clan.game_mode == "cruel season":

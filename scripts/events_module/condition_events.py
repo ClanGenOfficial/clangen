@@ -52,7 +52,8 @@ class Condition_Events():
             "yellowcough": "redcough",
             "an infected wound": "a festering wound",
             "heat exhaustion": "heat stroke",
-            "stomachache": "diarrhea"
+            "stomachache": "diarrhea",
+            "grief stricken": "lasting grief"
         }
 
         if cat.dead or game.clan.game_mode == "classic":
@@ -78,6 +79,10 @@ class Condition_Events():
                     break
                 elif cat.dead and cat.status == 'leader':
                     break
+
+                # heal the leader completely if they lost a life
+                elif cat.leader_death_heal is True:
+                    continue
 
                 # heal
                 elif cat.healed_condition is True:
@@ -120,6 +125,8 @@ class Condition_Events():
                             if new_illness_name == 'torn pelt':
                                 cat.get_injured(new_illness_name)
                             if new_illness_name == 'lasting grief':
+                                old_illness.append(illness)
+                                new_illness.append(new_illness_name)
                                 cat.get_permanent_condition(new_illness_name)
                             else:
                                 new_illness.append(new_illness_name)
@@ -155,7 +162,8 @@ class Condition_Events():
                                 cat.illnesses.pop(old_illness[y])
                             else:
                                 continue
-                    cat.get_ill(new_illness[y])
+                    if new_illness[y] in ILLNESSES:
+                        cat.get_ill(new_illness[y])
 
         # joining event list into one event string
         if len(event_list) > 0:
@@ -163,13 +171,16 @@ class Condition_Events():
         else:
             event_string = None
 
+        # if the cat was a leader who lost a life, remove all conditions except permanent ones
+        if cat.leader_death_heal is True:
+            cat.illnesses.clear()
+            cat.injuries.clear()
+
         # if the cat healed from illnesses, then remove those illnesses
         if len(healed_illnesses) != 0:
             for y in healed_illnesses:
                 if y in cat.illnesses:
                     cat.illnesses.pop(y)
-            # reset healed_condition value
-            cat.healed_condition = False
 
         # handle if the cat is not sick
         # SEASON
