@@ -1129,34 +1129,33 @@ class ChangeNameScreen(Screens):
 #                           change gender screen                               #
 # ---------------------------------------------------------------------------- #
 class ChangeGenderScreen(Screens):
-    gender_changed = False
 
     def screen_switches(self):
         self.hide_menu_buttons()
 
         self.header = pygame_gui.elements.UITextBox("-Change Gender-\nYou can set this to anything. "
                                                     "Gender alignment does not effect gameplay",
-                                                    pygame.Rect((100, 130), (600, 100)),
+                                                    pygame.Rect((100, 130), (600, -1)),
                                                     object_id=get_text_box_theme())
         self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
                                                             pygame.Rect((100, 240), (600, 40)),
                                                             object_id=get_text_box_theme(),
                                                             visible=False)
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
-        self.gender_changed = False
-    
-        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((300, 200),(200, 24)),
-                                                                    placeholder_text=self.the_cat.genderalign)
+
         self.done_button = UIImageButton(pygame.Rect((365, 282),(77, 30)), "",
                                         object_id="#done_button")
         self.back_button = UIImageButton(pygame.Rect((25, 25),(105, 30)), "",
                                          object_id="#back_button")
-        
+
+        self.gender_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((300, 200), (200, 24)),
+                                                                    placeholder_text=self.the_cat.genderalign)
+
     def exit_screen(self):
         self.header.kill()
         del self.header
         self.gender_changed.kill()
-        del self.header
+        del self.gender_changed
         self.gender_entry_box.kill()
         del self.gender_entry_box
         self.done_button.kill()
