@@ -121,13 +121,13 @@
     "patrol_id": "gen_med_sunny1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat"],
+    "tags": ["med_only", "med_cat"],
     "intro_text": "The patrol finds a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
-        "The sunlight feels great and the cats have a successful patrol.",
+        "The sunlight feels great and the cats have a successful discussion, talking about what came up at the last half-moon meetings and whether it'll affect c_n.",
         "The sunlight energizes the cats for their herb-gathering.",
         null,
         "s_c makes sure everyone gets a good basking spot as the cats pause for a little break before resuming their herb gathering."
@@ -152,7 +152,7 @@
     "tags": ["med_cat", "herbs"],
     "intro_text": "r_c finds a nice spot to sun themselves.",
     "decline_text": "They decide to stay focused instead.",
-    "chance_of_success": 40,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
         "The sunlight feels great and r_c has a successful patrol.",
