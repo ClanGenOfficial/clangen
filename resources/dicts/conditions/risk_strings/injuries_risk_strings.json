@@ -1,0 +1,175 @@
+{
+    "claw-wound": {
+        "an infected wound": [
+            "r_c fusses over their wound with a foul smelling herbal poultice, and m_c hopes it'll fight off the infection growing in their claw wound.",
+            "m_c itches uncomfortably, wishing their wound would close up and heal already. Instead it seems to be getting worse."
+
+        ]
+    },
+    "bite-wound": {
+        "an infected wound": [
+            "The bite wound feels hot, and m_c winces as r_c cleans it. It's becoming infected.",
+            "m_c's skin is starting to feel feverish around the area of their wound. It looks a bit worse than it did yesterday."
+
+        ]
+    },
+    "snake bite": {
+        "an infected wound": [
+            "r_c mutters something about plantain, as m_c carefully licks around their snake bite wound. It's not healing like it should.",
+            "Though the plantain leaves seem to be doing their job of healing the toxins, m_c's wound has started to feel warm to the touch."
+
+        ]
+    },
+    "rat bite": {
+        "an infected wound": [
+            "m_c watches r_c apply their strange paste. r_c tells them that, as the wound is becoming infected, this is going to be a daily routine until their rat bite heals.",
+            "It seems inevitable that all rat bites are nasty, so m_c isn't really surprised when their rat bite starts to show signs of infection."
+
+        ],
+        "a festering wound": [
+            "m_c sees the worry in r_c's face while they examine their sour smelling rate bite, and it makes their heart sink.",
+            "m_c tries to stay strong despite the odor beginning to emanate from the area of their rat bite. Hopefully it can still heal despite the festering state of it."
+
+        ]
+    },
+    "tick bites": {
+        "an infected wound": [
+            "r_c sighs, and tries to gently extract the head of the tick that was left when the insect was plucked off of m_c. With the contaminant, the little tick bite has become infected.",
+            "The tick on m_c was left for far too long. The area is now swollen and warm - definite signs of infection."
+
+        ]
+    },
+    "broken jaw": {
+        "an infected wound": [
+            "A meat paste for getting food and water into m_c's stomach, a herb paste to fight the infection growing in their broken jaw, r_c wracks their brain for anything else that might help their patient.",
+            "m_c drifts in and out of consciousness as an infection grows in their broken jaw."
+
+        ]
+    },
+    "broken bone": {
+        "an infected wound": [
+            "Despite the enforced nest rest, and how tightly their broken bone is bound, m_c's injury is beginning to look concerning to r_c, and they've begun to plan what to do if the infection progresses any further.",
+            "There seems to be an infection growing in m_c's broken bone."
+
+        ]
+    },
+    "mangled leg": {
+        "an infected wound": [
+            "r_c wonders if they might need to consult with a medicine cat from another clan. m_c's mangled leg has become infected and swollen, and they need more ideas.",
+            "As if the injury wasn't bad enough, the skin around m_c's mangled leg has started to swell and feel feverish."
+
+        ]
+    },
+    "mangled tail": {
+        "an infected wound": [
+            "m_c's poor mangled tail is swollen and hot the touch, and r_c searches the herb stores for those that fight infection.",
+            "As if the injury wasn't bad enough, the skin of m_c's mangled tail has started to swell and feel feverish."
+
+        ]
+    },
+    "cracked pads": {
+        "an infected wound": [
+            "r_c spreads the last of the salve on m_c's cracked and swollen pads, and sternly tells them to stay off their feet unless they'd like the infection to get any worse.",
+            "m_c swears they’ve been washing their pads, but they still seem to have become infected."
+
+        ]
+    },
+    "scrapes": {
+        "an infected wound": [
+            "m_c hangs their head, embarrassed. They thought they could get away with not cleaning their scrapes, with such a minor wounds, but now the skin is irritated and infected, and r_c is clearly judging them for not taking care of themselves.",
+            "The scrapes m_c had gotten seemed minor at first, but even the smallest wounds can get infected."
+        ]
+    },
+    "splinter": {
+        "an infected wound": [
+            "When r_c finally manages to pull out the stubborn splinter, pus erupts from m_c's wound, and it's clear that the area is infected.",
+            "The splinter in m_c's paw still hasn't come out, but the area around it has begun to get inflamed and gross-looking."
+
+        ]
+    },
+    "torn pelt": {
+        "an infected wound": [
+            "r_c drips the juice of herbs over m_c's torn pelt. It should help m_c fight off the minor infection that's developing there.",
+            "The tears in m_c's pelt seem to have become inflamed. It's most likely an infection."
+
+        ]
+    },
+    "torn ear": {
+        "an infected wound": [
+            "r_c examines their ear, as m_c keeps twitching it involuntarily. The area is swollen and irritated, probably an infection developing from the tear wound.",
+            "m_c's torn ear has become inflamed and itchy. It's most likely infected."
+
+        ]
+    },
+    "frostbite": {
+        "running nose": [
+            "It's minor compared to the frostbite, but r_c remembers to bring along herbs for m_c's running nose when they go to check up on them.",
+            "As if frostbite wasn't a big enough worry, m_c has also developed a running nose.",
+            "m_c was out in the cold far too long and while the frostbite is the biggest concern, a running nose isn't a good sign either."
+
+        ]
+    },
+    "recovering from birth": {
+        "an infected wound": [
+            "r_c gently asks m_c to turn over, and winces when they do. The strain of birth isn't healing as r_c had hoped it might, and instead the area looks swollen and painful.",
+            "m_c tries not to hiss as their litter suckles. They love them, they do, but giving birth was so painful, and the area feels swollen and infected now."
+
+        ]
+    },
+    "water in their lungs": {
+        "running nose": [
+            "Some of the water m_c inhaled appears to be draining from their nose, as well as coming up in hacking coughs. r_c puts them on nest rest to help them recover.",
+            "Along with a bit of coughing, m_c has developed a runny nose from the water in their lungs."
+
+        ],
+        "whitecough": [
+            "m_c hasn't managed to avoid whitecough, r_c tells them. The water they inhaled must have been carrying illness with it, and they're confined to camp while they recover.",
+            "m_c's hacking no longer just seems to be from the water they inhaled. It must have progressed into whitecough.",
+            "With their lungs already weakened by the water still in them, m_c is unable to fight off the whitecough that finds them."
+
+        ]
+    },
+    "burn": {
+        "an infected wound": [
+            "The skin and flesh of m_c's burn is far too warm, and r_c applies a salve to try and help fight off the developing infection.",
+            "m_c has been feeling feverish. Their burn looks a bit discolored. It must be developing an infection."
+
+        ]
+    },
+    "severe burn": {
+        "an infected wound": [
+            "It's hard to tell with such a severe burn, but r_c is now certain than in addition to the burn damage, m_c is carrying an infection in the tissue as well.",
+            "m_c has been feeling feverish. Their burn looks discolored and swollen. It must be developing an infection."
+
+        ]
+    },
+    "shock": {
+        "lingering shock": [
+            "r_c gives m_c the poppy seeds they ask for, to help them sleep, but it worries them that m_c's shock has lingered so long.",
+            "m_c wakes again from another nightmare, feeling adrenaline rush through their veins as they try not to bolt. It feels like days since they've been able to sleep through the night, and it's wearing them down."
+
+        ]
+    },
+    "shivering": {
+        "frostbite": [
+            "r_c massages m_c's pawpads, looking for signs that bloodflow is returning to them. This has definitely crossed the line into frostbite.",
+            "m_c says that their extremities feel like they’re being pricked by claws, and numbness soon follows. That's a sign of frostbite.",
+            "The skin of m_c's extremities is a worrying black and blue, one of their friends spends some time licking at the cold bits of skin but they seem to be frostbitten."
+
+        ]
+    },
+    "dehydrated": {
+        "heat exhaustion": [
+            "r_c has managed to get some water into m_c, but m_c is showing signs of confusion and fatigue, clear indications of heat exhaustion.",
+            "m_c pants, helplessly searching for a cooler place to lie and nap. They feel utterly exhausted by this heat."
+
+        ]
+    },
+    "damaged eyes": {
+        "an infected wound": [
+            "r_c drips the juice of herbs into m_c's damaged eyes, not paying any attention to their protests. This infection needs to be stopped before it goes any further.",
+            "m_c can't open their eyes for the swelling and crust that has accumulated. Hopefully this infection doesn't spread."
+
+        ]
+    }
+}

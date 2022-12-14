@@ -9,7 +9,7 @@ from scripts.game_structure.buttons import buttons
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
 from scripts.patrol import patrol
-
+from scripts.cat.cats import Cat, INJURIES, ILLNESSES
 
 class PatrolScreen(Screens):
 

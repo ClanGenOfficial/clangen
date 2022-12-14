@@ -71,17 +71,22 @@ def json_load():
         new_cat.accessory = cat["accessory"]
         new_cat.mate = cat["mate"]
         new_cat.dead = cat["dead"]
+        new_cat.died_by = cat["died_by"] if "died_by" in cat else []
         new_cat.age_sprites['dead'] = cat["spirit_dead"]
         new_cat.experience = cat["experience"]
         new_cat.dead_for = cat["dead_moons"]
         new_cat.apprentice = cat["current_apprentice"]
         new_cat.former_apprentices = cat["former_apprentices"]
+        new_cat.possible_scar = cat["possible_scar"] if "possible_scar" in cat else None
         new_cat.scar_event = cat["scar_event"] if "scar_event" in cat else []
         new_cat.df = cat["df"] if "df" in cat else False
+        new_cat.corruption = cat["corruption"] if "corruption" in cat else 0
+        new_cat.retired = cat["retired"] if "retired" in cat else False
         all_cats.append(new_cat)
 
     # replace cat ids with cat objects and add other needed variables
     for cat in all_cats:
+        cat.load_conditions()
         # load the relationships
         if not cat.dead:
             game.switches[

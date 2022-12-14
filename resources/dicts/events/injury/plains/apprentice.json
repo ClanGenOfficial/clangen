@@ -1,0 +1,21 @@
+[
+    {
+        "injury": "sprain",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was running around excitedly on patrol when their paw landed right in a rabbit hole, twisting uncomfortably.  They limped the whole way home.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": ["adventurous", "bold", "daring", "playful", "childish"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    }
+]

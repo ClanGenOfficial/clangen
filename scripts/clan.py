@@ -93,12 +93,14 @@ class Clan():
                 self.clan_cats.append(self.deputy.ID)
             self.deputy_predecessors = 0
             self.medicine_cat = medicine_cat
-            self.med_cat_number = 0
+            self.med_cat_list = []
+            self.med_cat_number = len(self.med_cat_list)
             self.med_cat_predecessors = 0
             if medicine_cat is not None:
-                if self.medicine_cat.status != 'medicine cat':
-                    self.medicine_cat.status_change('medicine cat')
                 self.clan_cats.append(self.medicine_cat.ID)
+                self.med_cat_list.append(self.medicine_cat.ID)
+            if medicine_cat.status != 'medicine cat':
+                Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
             self.age = 0
             self.current_season = 'Newleaf'
             self.instructor = None  # This is the first cat in starclan, to "guide" the other dead cats there.
@@ -175,6 +177,21 @@ class Clan():
         ) and cat.dead and cat.ID not in self.starclan_cats:
             # The dead-value must be set to True before the cat can go to starclan
             self.starclan_cats.append(cat.ID)
+            if cat.ID in self.med_cat_list:
+                self.med_cat_list.remove(cat.ID)
+                self.med_cat_predecessors += 1
+
+    def add_to_darkforest(self, cat):  # Same as add_cat
+        """ Places the dead cat into the dark forest. It should not be removed from the list of cats in the clan"""
+        if cat.ID in Cat.all_cats.keys(
+        ) and cat.dead and cat.df is False:
+            cat.df = True
+            cat.thought = "Is distraught after being sent to the Place of No Stars"
+            if cat.ID in self.med_cat_list:
+                self.med_cat_list.remove(cat.ID)
+                self.med_cat_predecessors += 1
+            update_sprite(Cat.all_cats[str(cat)])
+            # The dead-value must be set to True before the cat can go to starclan
 
     def remove_cat(self, ID):  # ID is cat.ID
         """This function is for completely removing the cat from the game, it's not meant for a cat that's
@@ -207,11 +224,12 @@ class Clan():
 
     def new_medicine_cat(self, medicine_cat):
         if medicine_cat:
-            self.medicine_cat = medicine_cat
             if medicine_cat.status != 'medicine cat':
                 Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
-            self.med_cat_predecessors += 1
-            self.med_cat_number += 1
+            self.med_cat_list.append(medicine_cat.ID)
+            medicine_cat = self.med_cat_list[0]
+            self.medicine_cat = Cat.all_cats[medicine_cat]
+            self.med_cat_number = len(self.med_cat_list)
 
     def switch_clans(self, clan):
         list_data = clan + "\n"
@@ -233,13 +251,17 @@ class Clan():
             self.leader_lives) + ',' + str(
                 self.leader_predecessors) + ',' + '\n'
 
-        if self.deputy is not None:
+        if self.deputy:
             data = data + self.deputy.ID + ',' + str(
                 self.deputy_predecessors) + ',' + '\n'
         else:
             data = data + '\n'
-        data = data + self.medicine_cat.ID + ',' + str(
-            self.med_cat_predecessors)  + '\n'
+        
+        if self.medicine_cat:
+            data = data + self.medicine_cat.ID + ',' + str(
+            self.med_cat_predecessors) + ','  + str(self.med_cat_number)   + '\n'
+        else:
+            data = data + '\n'
 
         data = data + self.instructor.ID + '\n'
 
@@ -316,7 +338,7 @@ class Clan():
             game.clan = Clan(general[0],
                              Cat.all_cats[leader_info[0]],
                              Cat.all_cats.get(deputy_info[0], None),
-                             Cat.all_cats[med_cat_info[0]],
+                             Cat.all_cats.get(med_cat_info[0], None),
                              biome=general[2],
                              camp_bg=general[3],
                              world_seed=int(general[4]),
@@ -332,7 +354,7 @@ class Clan():
             game.clan = Clan(general[0],
                              Cat.all_cats[leader_info[0]],
                              Cat.all_cats.get(deputy_info[0], None),
-                             Cat.all_cats[med_cat_info[0]],
+                             Cat.all_cats.get(med_cat_info[0], None),
                              biome=general[2],
                              camp_bg=general[3],
                              world_seed=int(general[4]),
@@ -342,21 +364,23 @@ class Clan():
         elif len(general) == 3:
             game.clan = Clan(general[0], Cat.all_cats[leader_info[0]],
                              Cat.all_cats.get(deputy_info[0], None),
-                             Cat.all_cats[med_cat_info[0]], general[2])
+                             Cat.all_cats.get(med_cat_info[0], None),
+                             general[2])
         else:
             game.clan = Clan(general[0], Cat.all_cats[leader_info[0]],
                              Cat.all_cats.get(deputy_info[0], None),
-                             Cat.all_cats[med_cat_info[0]])
-
+                             Cat.all_cats.get(med_cat_info[0], None))
         game.clan.age = int(general[1])
         game.clan.current_season = game.clan.seasons[game.clan.age % 12]
         game.clan.leader_lives, game.clan.leader_predecessors = int(
             leader_info[1]), int(leader_info[2])
 
-
         if len(deputy_info) > 1:
             game.clan.deputy_predecessors = int(deputy_info[1])
-        game.clan.med_cat_predecessors = int(med_cat_info[1])
+        if len(med_cat_info) > 1:
+            game.clan.med_cat_predecessors = int(med_cat_info[1])
+        if len(med_cat_info) > 2:
+            game.clan.med_cat_number = int(med_cat_info[2])
         if len(sections) > 4:
             if instructor_info in Cat.all_cats.keys():
                 game.clan.instructor = Cat.all_cats[instructor_info]

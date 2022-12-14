@@ -160,7 +160,7 @@ class Relationship():
     def get_action_possibilities(self):
         """Creates a list of possibles actions of this relationship"""
         # check if opposite_relationship is here, otherwise creates it       
-        action_possibilities = copy.deepcopy(NEWLEAF['neutral'])
+        action_possibilities = copy.deepcopy(GENERAL['neutral'])
 
         key = self.cat_to.status
         if key == "senior warrior":
@@ -170,16 +170,16 @@ class Relationship():
         # check how the relationship is
         relation_keys = ['neutral']
         if self.dislike > 20 or self.jealousy > 20:
-            action_possibilities += NEWLEAF['unfriendly']
+            action_possibilities += GENERAL['unfriendly']
             relation_keys.append('unfriendly')
             # increase the chance for unfriendly behavior
             if self.dislike > 30:
                 relation_keys.append('unfriendly')
         if self.platonic_like > 40 or self.comfortable > 30:
-            action_possibilities += NEWLEAF['friendly']
+            action_possibilities += GENERAL['friendly']
             relation_keys.append('friendly')
         if self.platonic_like > 50 and self.comfortable > 40 and self.trust > 30:
-            action_possibilities += NEWLEAF['close']
+            action_possibilities += GENERAL['close']
             relation_keys.append('close')
 
         # add the interactions to the possible ones
@@ -533,9 +533,9 @@ cat_to_other_path = "cat_to_other/"
 # ---------------------------------------------------------------------------- #
 
 
-NEWLEAF = None
+GENERAL = None
 with open(f"{resource_directory}{cat_to_other_path}not_age_specific.json", 'r') as read_file:
-    NEWLEAF = ujson.loads(read_file.read())
+    GENERAL = ujson.loads(read_file.read())
 
 KITTEN_TO_OTHER = None
 with open(f"{resource_directory}{cat_to_other_path}kitten_to_other.json", 'r') as read_file:

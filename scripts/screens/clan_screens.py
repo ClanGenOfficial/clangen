@@ -152,7 +152,9 @@ class ClanScreen(Screens):
         '''Determines the postions of cat on the clan screen.'''
         p = game.clan.cur_layout
         game.clan.leader.placement = choice(p['leader place'])
-        game.clan.medicine_cat.placement = choice(p['medicine place'])
+        # prevent error if the clan has no medicine cat (last medicine cat is now a warrior)
+        if game.clan.medicine_cat:
+            game.clan.medicine_cat.placement = choice(p['medicine place'])
         for x in game.clan.clan_cats:
             i = randint(0, 20)
             if Cat.all_cats[x].status == 'apprentice':
@@ -795,8 +797,12 @@ class DFScreen(Screens):
             name.kill()
 
     def screen_switches(self):
-        #Determine the dead, non-exiled cats. 
-        self.dead_cats = [game.clan.instructor]
+        #Determine the dead, non-exiled cats.
+        if game.clan.instructor.df is True:
+            dead_cats = [game.clan.instructor]
+        else:
+            dead_cats = []
+
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and the_cat.df:

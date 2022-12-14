@@ -789,6 +789,17 @@ class Patrol():
             if cat.mentor in self.patrol_cats:
                 cat.patrol_with_mentor += 1
 
+    def handle_clan_relations(self, difference):
+        other_clan = patrol.other_clan
+        otherclan = game.clan.all_clans.index(other_clan)
+        clan_relations = game.clan.all_clans[otherclan].relations
+        if self.patrol_event.patrol_id in list(range(800, 806)):
+            if patrol.success is True:
+                clan_relations += difference
+            else:
+                clan_relations += difference
+        game.clan.all_clans[otherclan].relations = clan_relations
+
     def handle_relationships(self):
         romantic_love = 0
         platonic_like = 0
@@ -994,6 +1005,7 @@ class Patrol():
 # ---------------------------------------------------------------------------- #
 #                               PATROL CLASS END                               #
 # ---------------------------------------------------------------------------- #
+
 
 class PatrolEvent():
 
