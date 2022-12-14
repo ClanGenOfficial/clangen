@@ -33,6 +33,8 @@ class PatrolScreen(Screens):
                 self.handle_choose_cats_events(event)
             elif self.patrol_stage == 'patrol_events':
                 self.handle_patrol_events_event(event)
+            elif self.patrol_stage == 'patrol_complete':
+                self.handle_patrol_complete_events(event)
             
             self.menu_button_pressed(event)
 
@@ -100,12 +102,14 @@ class PatrolScreen(Screens):
 
     def handle_patrol_events_event(self, event):
         if event.ui_element == self.elements["proceed"]:
-            self.open_patrol_events_page("proceed")
+            self.open_patrol_complete_screen("proceed")
         elif event.ui_element == self.elements["not_proceed"]:
-            self.open_patrol_events_page("notproceed")
+            self.open_patrol_complete_screen("notproceed")
         elif event.ui_element == self.elements["antagonize"]:
-            self.open_patrol_events_page("antagonize")
-        elif event.ui_element == self.elements['patrol_again']:
+            self.open_patrol_complete_screen("antagonize")
+
+    def handle_patrol_complete_events(self, event):
+        if event.ui_element == self.elements['patrol_again']:
             self.open_choose_cats_screen()
         elif event.ui_element == self.elements["clan_return"]:
             self.change_screen('clan screen')
@@ -333,17 +337,23 @@ class PatrolScreen(Screens):
                                                      object_id = "#not_proceed_button",
                                                      starting_height=2)
 
-        self.elements["antagonize"] = UIImageButton(pygame.Rect((550,461),(172,30)), "",
+        self.elements["antagonize"] = UIImageButton(pygame.Rect((550,490),(172,36)), "",
                                                     object_id = "#antagonize_button")
         if patrol.patrol_event.patrol_id not in [500, 501, 502, 503, 504, 505, 510, 800, 801, 802, 803, 804, 805]:
             self.elements["antagonize"].hide()
 
-    def open_patrol_events_page(self, user_input):
+    def open_patrol_complete_screen(self, user_input):
         """Deals with the next stage of the patrol, including antagonize, proceed, and do not proceed.
         You must put the type of next step (user input) into the user_input parameter.
         For antagonize: user_input = "antag" or "antagonize"
         For Proceed: user_input = "pro" or "proceed"
         For do not Proceed: user_input = "nopro" or "notproceed" """
+        self.patrol_stage = "patrol_complete"
+
+        self.elements["clan_return"] = UIImageButton(pygame.Rect((400, 137), (162, 30)), "",
+                                                     object_id="#return_to_clan")
+        self.elements['patrol_again'] = UIImageButton(pygame.Rect((560, 137), (162, 30)), "",
+                                                      object_id="#patrol_again")
 
         if user_input in ["antag", "antagonize"]:
             patrol.calculate_success_antagonize()
@@ -386,11 +396,6 @@ class PatrolScreen(Screens):
                 's_c', str(patrol.patrol_stat_cat.name))
 
         self.elements["patrol_text"].set_text(display_text)
-
-        self.elements["clan_return"] = UIImageButton(pygame.Rect((400, 137), (162, 30)), "",
-                                                     object_id="#return_to_clan")
-        self.elements['patrol_again'] = UIImageButton(pygame.Rect((560, 137), (162, 30)), "",
-                                                      object_id="#patrol_again")
 
         self.elements["proceed"].disable()
         self.elements["not_proceed"].disable()
@@ -550,13 +555,15 @@ class PatrolScreen(Screens):
                 short_name = str(self.selected_cat.name)[0:15]
                 name = short_name + '...'
 
-            self.elements['selected_name'] = pygame_gui.elements.UITextBox(name, pygame.Rect((300,325),(200,30)))
+            self.elements['selected_name'] = pygame_gui.elements.UITextBox(name, pygame.Rect((300,325),(200,30)),
+                                                                           object_id=get_text_box_theme())
+
             self.elements['selected_bio'] = UITextBoxTweaked(str(self.selected_cat.status) +
                                                             "\n" + str(self.selected_cat.trait) +
                                                             "\n" + str(self.selected_cat.skill) +
                                                             "\n" + str(self.selected_cat.experience_level),
                                                             pygame.Rect((300,350),(200,75)),
-                                                            object_id= "#cat_patrol_info_box",
+                                                            object_id= get_text_box_theme("#cat_patrol_info_box"),
                                                             line_spacing = 0.95
                                                             )
 
@@ -571,9 +578,12 @@ class PatrolScreen(Screens):
                     if 10 <= len(name) >= 12:  # check name length
                         short_name = str(mate.name)[0:9]
                         name = short_name + '...'
-                    self.elements['mate_name'] = pygame_gui.elements.UITextBox(name, pygame.Rect((150,300),(100,30)))
-                    self.elements['mate_info'] = pygame_gui.elements.UITextBox("mate", pygame.Rect((150,330),(100,30)), object_id = "#cat_patrol_info_box")
-                    self.elements['mate_button'] = UIImageButton(pygame.Rect((148,356),(104,26)), "", object_id = "#patrol_select_button")
+                    self.elements['mate_name'] = pygame_gui.elements.UITextBox(name, pygame.Rect((150,300),(100,30)),
+                                                                               object_id=get_text_box_theme())
+                    self.elements['mate_info'] = pygame_gui.elements.UITextBox("mate", pygame.Rect((150,330),(100,30)),
+                                                                               object_id = get_text_box_theme("#cat_patrol_info_box"))
+                    self.elements['mate_button'] = UIImageButton(pygame.Rect((148,356),(104,26)), "",
+                                                                 object_id = "#patrol_select_button")
                     # Disable mate_button if the cat it not able to go on a patrol
                     if mate not in self.able_cats:
                         self.elements['mate_button'].disable()
@@ -596,8 +606,10 @@ class PatrolScreen(Screens):
                     if 10 <= len(name) >= 12:  # check name length
                         short_name = str(self.app_mentor.name)[0:9]
                         name = short_name + '...'
-                    self.elements['app_mentor_name'] = pygame_gui.elements.UITextBox(name, pygame.Rect((550,300),(100,30)))
-                    self.elements['app_mentor_info'] = pygame_gui.elements.UITextBox(relation, pygame.Rect((550,330),(100,30)), object_id = "#cat_patrol_info_box")
+                    self.elements['app_mentor_name'] = pygame_gui.elements.UITextBox(name, pygame.Rect((550,300),(100,30)),
+                                                                                     object_id=get_text_box_theme())
+                    self.elements['app_mentor_info'] = pygame_gui.elements.UITextBox(relation, pygame.Rect((550,330),(100,30)),
+                                                                                     object_id = get_text_box_theme("#cat_patrol_info_box"))
                     self.elements['app_mentor_image'] = pygame_gui.elements.UIImage(pygame.Rect((550,200),(100,100)), self.app_mentor.large_sprite)
                     
                     # Button to switch to that cat

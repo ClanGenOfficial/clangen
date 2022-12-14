@@ -620,19 +620,7 @@ class ViewChildrenScreen(Screens):
                 pos_x = 229
             i += 1
 
-        #Enable and disable page buttons.
-        if len(self.all_siblings) <= 1:
-            self.previous_sibling_page.disable()
-            self.next_sibling_page.disable()
-        elif self.siblings_page_number >= len(self.all_siblings):
-            self.previous_sibling_page.enable()
-            self.next_sibling_page.disable()
-        elif self.siblings_page_number == 1 and len(self.all_siblings) > 1:
-            self.previous_sibling_page.disable()
-            self.next_sibling_page.enable()
-        else:
-            self.previous_sibling_page.enable()
-            self.next_sibling_page.enable()
+        6
     def update_offspring_page(self):
         """Updates the offspring page"""
         for ele in self.offspring_elements:
