@@ -1171,8 +1171,8 @@ class ChangeGenderScreen(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.done_button:
-                if self.gender_entry_box.get_text() != "":
-                    self.the_cat.genderalign = self.gender_entry_box.get_text()
+                if sub(r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text()) != "":
+                    self.the_cat.genderalign = sub(r'[^A-Za-z0-9 ]+', "", self.gender_entry_box.get_text())
                     self.gender_changed.show()
             elif event.ui_element == self.back_button:
                 self.change_screen('profile screen')
