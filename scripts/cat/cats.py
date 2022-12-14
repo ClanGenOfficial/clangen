@@ -177,7 +177,6 @@ class Cat():
         self.experience_level = None
         self.corruption = 0
         self.no_kits = False
-        self.genderalign = None
         self.paralyzed = False
 
         # setting ID
@@ -263,13 +262,15 @@ class Cat():
                 self.genderalign = "nonbinary"
             else:
                 self.genderalign = self.gender
-        if self.gender == "male" and not self.age == 'kitten':
+        elif self.gender == "male" and not self.age == 'kitten':
             if trans_chance == 1:
                 self.genderalign = "trans female"
             elif nb_chance == 1:
                 self.genderalign = "nonbinary"
             else:
                 self.genderalign = self.gender
+        else:
+            self.genderalign = self.gender
 
         # NAME
         if self.pelt is not None:
