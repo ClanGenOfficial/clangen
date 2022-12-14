@@ -234,22 +234,22 @@
     "patrol_id": "fst_hunt_howl1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["hunting", "scar", "battle_injury", "fighting", "death"],
+    "tags": ["hunting", "scar", "battle_injury", "fighting", "death", "no_leader"],
     "intro_text": "The patrol hears distant howling and wonders whether to investigate the noise.",
     "decline_text": "The patrol decides not to investigate the source of the noise.  Whatever is making it will not be friendly to them.",
     "chance_of_success": 50,
     "exp": 30,
     "success_text": [
-        "The patrol tracks the noise and discovers a coyote scavenging off a carcass.  This is a predator they cannot fight, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what the coyote leaves behind.",
-        "The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of coyote.  They quickly scavenge what little is left and leave before the predator can return.",
+        "The patrol tracks the noise and discovers a coyote scavenging off a carcass. This is a predator they cannot fight, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what the coyote leaves behind.",
+        "The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of coyote. They quickly scavenge what little is left and leave before the predator can return.",
         "The patrol follows the noise to a coyote who quickly spots them in the brush. A fight ensues and thanks to the skills of s_c, the coyote eventually runs away, deeming the carcass they had been scavenging from to not be worth the hassle.  Your patrol brings back what meat had still been left.",
-        "The noise leads them to a coyote, scavenging from a carcass.  s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
+        "The noise leads them to a coyote, scavenging from a carcass. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the coyote eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
     ],
     "fail_text": [
-        "The noise leads them to a coyote that's busy stripping the last of the meat from a carcass.  The patrol waits till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
-        "They track the noise to a coyote.  Before the patrol can investigate further, s_c whimpers in terror at the sight of the beast and dashes away.  The patrol follows anxiously, not wanting to lose sight of their clanmate while a coyote is about.",
-        "The patrol finds a coyote at the source of the noise.  It seems to be scavenging from an old carcass and upon seeing the cats, proves to be fiercely protective of its meal.  The patrol doesn't move fast enough and r_c is killed before they can run.",
-        "The sound leads them to a coyote, scavenging from a carcass.  The coyote notices them before they can hide and lunges, making it clear that this food has been claimed.  r_c is momentarily caught in its jaws before the patrol retaliates and drives it off their clanmate."
+        "The noise leads them to a coyote that's busy stripping the last of the meat from a carcass. The patrol waits till the coyote leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
+        "They track the noise to a coyote. Before the patrol can investigate further, s_c whimpers in terror at the sight of the beast and dashes away.  The patrol follows anxiously, not wanting to lose sight of their clanmate while a coyote is about.",
+        "The patrol finds a coyote at the source of the noise. It seems to be scavenging from an old carcass and upon seeing the cats, proves to be fiercely protective of its meal.  The patrol doesn't move fast enough and r_c is killed before they can run.",
+        "The sound leads them to a coyote, scavenging from a carcass. The coyote notices them before they can hide and lunges, making it clear that this food has been claimed.  r_c is momentarily caught in its jaws before the patrol retaliates and drives it off their clanmate."
     ],
     "win_skills": ["excellent fighter"],
     "win_trait": ["careful", "calm", "patient", "responsible", "sneaky", "thoughtful", "wise"],
@@ -267,7 +267,7 @@
     "patrol_id": "fst_hunt_howl2",
     "biome": "forest",
     "season": "Any",
-    "tags": ["hunting", "scar", "battle_injury", "fighting", "death"],
+    "tags": ["hunting", "scar", "battle_injury", "fighting", "death", "no_leader"],
     "intro_text": "The patrol hears distant howling and wonders whether to investigate the noise.",
     "decline_text": "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them.",
     "chance_of_success": 30,
@@ -300,7 +300,7 @@
     "patrol_id": "fst_hunt_howl3",
     "biome": "forest",
     "season": "Any",
-    "tags": ["hunting", "fighting", "death"],
+    "tags": ["hunting", "fighting", "death", "no_leader"],
     "intro_text": "r_c hears distant howling and wonders whether to investigate the noise.",
     "decline_text": "r_cl decides not to investigate the source of the noise. Whatever is making it will not be friendly to them and they are only one cat.",
     "chance_of_success": 10,
@@ -331,22 +331,22 @@
     "patrol_id": "fst_hunt_howl4",
     "biome": "forest",
     "season": "Any",
-    "tags": ["hunting", "scar", "battle_injury", "fighting", "death"],
+    "tags": ["hunting", "scar", "battle_injury", "fighting", "death", "no_leader"],
     "intro_text": "The patrol hears distant howling and wonders whether to investigate the noise.",
     "decline_text": "The patrol decides not to investigate the source of the noise.  Whatever is making it will not be friendly to them.",
     "chance_of_success": 40,
     "exp": 30,
     "success_text": [
-        "The patrol tracks the noise and discovers a wolf eating from its kill.  This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what freshkill is left behind.",
-        "The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of wolves.  They quickly scavenge what little is left and leave before the predators can return.",
+        "The patrol tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight and more wolves may be nearby, the patrol decides to return to camp and report the intruder to the leader, perhaps they can return later to take what freshkill is left behind.",
+        "The patrol tracks the noise and finds a mostly stripped carcass covered in the scent of wolves. They quickly scavenge what little is left and leave before the predators can return.",
         "The noise leads them to a wolf, eating from its kill. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones.",
         "The noise leads them to a wolf, eating from its kill. s_c instructs them to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. When s_c deems it safe, the patrol takes their turn stripping the leftover meat from the bones."
     ],
     "fail_text": [
-        "The noise leads them to a wolf that's busy stripping the last of the meat from a carcass.  The patrol waits till the wolf leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
-        "They track the noise to a wolf.  Before the patrol can investigate further, s_c whimpers in terror at the sight of the beast and dashes away. The patrol follows anxiously, not wanting to lose sight of their clanmate while a wolf is about.",
-        "The patrol finds a wolf pack at the source of the noise.  The wolves are tearing into a dead deer and upon seeing the cats, proves to be fiercely protective of their meal. The patrol doesn't move fast enough and r_c is killed before they can run.",
-        "The sound leads them to a wolf, scavenging from a carcass.  The wolf notices them before they can hide and lunges, making it clear that this food has been claimed. r_c is momentarily caught in its jaws before the patrol retaliates and drives it off their clanmate."
+        "The noise leads them to a wolf that's busy stripping the last of the meat from a carcass. The patrol waits till the wolf leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
+        "They track the noise to a wolf. Before the patrol can investigate further, s_c whimpers in terror at the sight of the beast and dashes away. The patrol follows anxiously, not wanting to lose sight of their clanmate while a wolf is about.",
+        "The patrol finds a wolf pack at the source of the noise. The wolves are tearing into a dead deer and upon seeing the cats, proves to be fiercely protective of their meal. The patrol doesn't move fast enough and r_c is killed before they can run.",
+        "The sound leads them to a wolf, scavenging from a carcass. The wolf notices them before they can hide and lunges, making it clear that this food has been claimed. r_c is momentarily caught in its jaws before the patrol retaliates and drives it off their clanmate."
     ],
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "calm", "patient", "responsible", "sneaky", "thoughtful", "wise"],
@@ -364,7 +364,7 @@
     "patrol_id": "fst_hunt_howl5",
     "biome": "forest",
     "season": "Any",
-    "tags": ["hunting", "fighting", "death"],
+    "tags": ["hunting", "fighting", "death", "no_leader"],
     "intro_text": "The patrol hears distant howling and wonders whether to investigate the noise.",
     "decline_text": "The patrol decides not to investigate the source of the noise. Whatever is making it will not be friendly to them.",
     "chance_of_success": 20,
@@ -396,21 +396,21 @@
     "patrol_id": "fst_hunt_howl6",
     "biome": "forest",
     "season": "Any",
-    "tags": ["hunting", "fighting", "death"],
+    "tags": ["hunting", "fighting", "death", "no_leader"],
     "intro_text": "r_c hears distant howling and wonders whether to investigate the noise.",
     "decline_text": "r_cl decides not to investigate the source of the noise.  Whatever is making it will not be friendly to them and they are only one cat.",
     "chance_of_success": 10,
     "exp": 40,
     "success_text": [
-        "r_c tracks the noise and discovers a wolf eating from its kill.  This is a predator they cannot fight, they decide to return to camp and report the intruder to the leader, perhaps a patrol can return later to take what the wolf leaves behind.",
+        "r_c tracks the noise and discovers a wolf eating from its kill. This is a predator they cannot fight, they decide to return to camp and report the intruder to the leader, perhaps a patrol can return later to take what the wolf leaves behind.",
         "r_c tracks the noise and finds a mostly stripped carcass covered in the scent of wolf. They quickly scavenge what little is left and leave before the predator can return.",
-        "The noise leads them to a wolf, tearing into the carcass of a deer.  s_c decides to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. s_c waits a while longer, ensuring the wolf has truly left, and takes their turn stripping the leftover meat from the bones.",
-        "The noise leads them to a wolf, tearing into the carcass of a deer.  s_c decides to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. s_c waits a while longer, ensuring the wolf has truly left, and takes their turn stripping the leftover meat from the bones."
+        "The noise leads them to a wolf, tearing into the carcass of a deer. s_c decides to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. s_c waits a while longer, ensuring the wolf has truly left, and takes their turn stripping the leftover meat from the bones.",
+        "The noise leads them to a wolf, tearing into the carcass of a deer. s_c decides to wait in the brush, downwind from the canine, until it leaves. Eventually the wolf eats its fill and disappears into the forest. s_c waits a while longer, ensuring the wolf has truly left, and takes their turn stripping the leftover meat from the bones."
     ],
     "fail_text": [
-        "The noise leads them to a wolf that's busy stripping the last of the meat from a carcass.  They wait till the wolf leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
-        "They track the noise to a wolf.  s_c whimpers in terror at the sight of the beast and dashes away, running straight back to camp.",
-        "r_c finds a wolf pack at the source of the noise.  The pack is tearing into a deer carcass and upon seeing the cat, prove to be fiercely protective of their meal.  r_c doesn't move fast enough and with no clanmates to save them, is quickly killed."
+        "The noise leads them to a wolf that's busy stripping the last of the meat from a carcass. They wait till the wolf leaves, hoping to pick up any leftovers, but unfortunately the bones have been thoroughly cleaned.",
+        "They track the noise to a wolf. s_c whimpers in terror at the sight of the beast and dashes away, running straight back to camp.",
+        "r_c finds a wolf pack at the source of the noise. The pack is tearing into a deer carcass and upon seeing the cat, prove to be fiercely protective of their meal. r_c doesn't move fast enough and with no clanmates to save them, is quickly killed."
     ],
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "calm", "patient", "responsible", "sneaky", "thoughtful", "wise"],
