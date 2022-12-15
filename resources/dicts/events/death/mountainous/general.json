@@ -41,7 +41,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_platonic", "dislike"],
         "death_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom. r_c stands above them, watching as they fall.",
         "history_text": ["m_c was pushed off a cliff by r_c.", null],
         "cat_trait": null,

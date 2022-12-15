@@ -41,7 +41,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_dislike", "platonic", "respect", "trust", "secure"],
         "death_text": "m_c lost a life defending r_c from a hawk.",
         "history_text": [null, "defended r_c from a hawk."],
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
@@ -51,7 +51,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_dislike", "platonic", "respect", "trust", "secure"],
         "death_text": "m_c lost a life defending r_c from an eagle.",
         "history_text": [null, "defended r_c from an eagle."],
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
@@ -111,7 +111,7 @@
     },
     {
         "camp": "any",
-        "tags": ["all_lives", "other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["all_lives", "other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "to_both", "neg_platonic", "dislike", "neg_trust", "neg_comfort"],
         "death_text": "m_c was pushed off a cliff onto the sharp rocks at the bottom and couldn't recover.",
         "history_text": [null, "were pushed off a cliff."],
         "cat_trait": null,

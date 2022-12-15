@@ -91,6 +91,35 @@ def save_death(cat, death_string):
         file.write(json_string)
 
 
+def change_clan_reputation(difference=0):
+    """
+    will change the clan's reputation with outsider cats according to the difference parameter.
+    """
+    # grab rep
+    reputation = game.clan.reputation
+    # ensure this is an int value
+    difference = int(difference)
+    # change rep
+    reputation += difference
+    game.clan.reputation = reputation
+    print('CLAN REPUTATION: new rep', reputation)
+
+
+def change_clan_relations(other_clan, difference=0):
+    """
+    will change the clan's relation with other clans according to the difference parameter.
+    """
+    # grab the clan that has been indicated
+    other_clan = other_clan
+    # grab the relation value for that clan
+    y = game.clan.all_clans.index(other_clan)
+    clan_relations = int(game.clan.all_clans[y].relations)
+    # change the value
+    clan_relations += difference
+    game.clan.all_clans[y].relations = clan_relations
+    print('CLAN RELATIONS:', other_clan.name, difference)
+
+
 # ---------------------------------------------------------------------------- #
 #                       Relationship / Traits / Relative                       #
 # ---------------------------------------------------------------------------- #
@@ -206,6 +235,72 @@ def add_children_to_cat(cat, cat_class):
             cat.children.append(inter_cat.ID)
         if inter_cat.is_parent(inter_cat) and cat.ID not in inter_cat.children:
             inter_cat.children.append(cat.ID)
+
+
+def change_relationship_values(cats_to,
+                               cats_from,
+                               romantic_love=0,
+                               platonic_like=0,
+                               dislike=0,
+                               admiration=0,
+                               comfortable=0,
+                               jealousy=0,
+                               trust=0,
+                               auto_romance=False
+                               ):
+    """
+    changes relationship values according to the parameters.
+
+    cats_from - a list of cats for the cats whose rel values are being affected
+    cats_to - a list of cat IDs for the cats who are the target of that rel value
+            i.e. cats in cats_from lose respect towards the cats in cats_to
+    auto_romance - if this is set to False (which is the default) then if the cat_from already has romantic value
+            with cat_to then the platonic_like param value will also be used for the romantic_love param
+            if you don't want this to happen, then set auto_romance to False
+
+    use the relationship value params to indicate how much the values should change.
+    """
+    # this is just for prints, if it's still here later, just remove it
+    changed = False
+    if romantic_love == 0 and platonic_like == 0 and dislike == 0 and admiration == 0 and \
+            comfortable == 0 and jealousy == 0 and trust == 0:
+        changed = False
+    else:
+        changed = True
+
+    # pick out the correct cats
+    for cat in cats_from:
+        relationships = list(filter(lambda rel: rel.cat_to.ID in cats_to,
+                                    list(cat.relationships.values())))
+
+        # make sure that cats don't gain rel with themselves
+        for rel in relationships:
+            if cat.ID == rel.cat_to.ID:
+                continue
+
+            # if cat already has romantic feelings then automatically increase romantic feelings
+            # when platonic feelings would increase
+            if rel.romantic_love > 0 and auto_romance:
+                romantic_love = platonic_like
+
+            # now gain the values
+            rel.romantic_love += romantic_love
+            rel.platonic_like += platonic_like
+            rel.dislike += dislike
+            rel.admiration += admiration
+            rel.comfortable += comfortable
+            rel.jealousy += jealousy
+            rel.trust += trust
+
+            # for testing purposes
+            print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
+                  "Romantic: " + str(romantic_love) +
+                  " /Platonic: " + str(platonic_like) +
+                  " /Dislike: " + str(dislike) +
+                  " /Respect: " + str(admiration) +
+                  " /Comfort: " + str(comfortable) +
+                  " /Jealousy: " + str(jealousy) +
+                  " /Trust: " + str(trust)) if changed else print("No relationship change")
 
 
 # ---------------------------------------------------------------------------- #

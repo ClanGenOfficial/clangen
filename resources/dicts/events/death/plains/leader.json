@@ -41,7 +41,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_dislike", "platonic", "respect", "trust", "secure"],
         "death_text": "m_c lost a life defending r_c from a hawk.",
         "history_text": [null, "defended r_c from a hawk."],
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
@@ -51,7 +51,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_dislike", "platonic", "respect", "trust", "secure"],
         "death_text": "m_c lost a life defending r_c from an eagle.",
         "history_text": [null, "defended r_c from an eagle."],
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],

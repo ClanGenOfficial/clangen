@@ -1,7 +1,7 @@
 [
         {
             "camp": "any",
-            "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+            "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "dislike", "neg_platonic", "jealousy"],
             "death_text": "m_c was murdered by r_c in cold blood with the hope of taking their place.",
             "history_text": ["m_c was murdered by r_c.", null],
             "cat_trait": null,
@@ -11,7 +11,7 @@
         },
         {
             "camp": "any",
-            "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+            "tags": ["other_cat", "murder", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "dislike", "neg_platonic", "jealousy"],
             "death_text": "m_c was murdered by r_c in cold blood. r_c staged the death as an accident and hopes to take their place.",
             "history_text": ["m_c was murdered by r_c.", null],
             "cat_trait": null,
