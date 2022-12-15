@@ -10,6 +10,7 @@ from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.game_essentials import *
 
 
+
 class EventsScreen(Screens):
     event_display_type = "clan events"
     clan_events = ""
@@ -25,17 +26,16 @@ class EventsScreen(Screens):
                     for i in range(len(game.cur_events_list)):
                         if not isinstance(game.cur_events_list[i], str):
                             game.cur_events_list.remove(game.cur_events_list[i])
-                            break        
+                            break
                     self.clan_events = '\n\n'.join(game.cur_events_list)
                 else:
                     self.clan_events = "Nothing significant happened this moon"
-
 
                 if game.relation_events_list is not None and game.relation_events_list != []:
                     for i in range(len(game.relation_events_list)):
                         if not isinstance(game.relation_events_list[i], str):
                             game.game.relation_events_list(game.relation_events_list[i])
-                            break        
+                            break
                     self.relation_events = '\n'.join(game.relation_events_list)
                 else:
                     self.relation_events = "Nothing significant happened this moon."
@@ -46,7 +46,7 @@ class EventsScreen(Screens):
                     self.display_events = self.relation_events
 
                 self.update_events_display()
-        
+
             elif event.ui_element == self.toggle_borders_button:
                 if game.clan.closed_borders == True:
                     game.clan.closed_borders = False
@@ -55,36 +55,36 @@ class EventsScreen(Screens):
                     game.clan.closed_borders = True
                     self.toggle_borders_button.set_text("Open Clan Borders")
 
-            #Change the type of events displayed
+            # Change the type of events displayed
             elif event.ui_element == self.relationship_events_button:
                 self.event_display_type = "relationship events"
                 self.clan_events_button.enable()
                 self.relationship_events_button.disable()
-                #Update Display
+                # Update Display
                 self.display_events = self.relation_events
                 self.update_events_display()
             elif event.ui_element == self.clan_events_button:
                 self.event_display_type = "clan events"
                 self.clan_events_button.disable()
                 self.relationship_events_button.enable()
-                #Update Display
+                # Update Display
                 self.display_events = self.clan_events
                 self.update_events_display()
             else:
-                self.menu_button_pressed(event) 
+                self.menu_button_pressed(event)
 
     def screen_switches(self):
         cat_profiles()
 
         self.heading = pygame_gui.elements.UITextBox("Check this page to which event are currently happening in the "
                                                      "Clan",
-                                                     pygame.Rect((100,110), (600, 40)),
+                                                     pygame.Rect((100, 110), (600, 40)),
                                                      object_id=get_text_box_theme())
         self.season = pygame_gui.elements.UITextBox(f'Current season: {str(game.clan.current_season)}',
-                                                    pygame.Rect((100 ,140), (600, 40)),
+                                                    pygame.Rect((100, 140), (600, 40)),
                                                     object_id=get_text_box_theme())
         self.clan_age = pygame_gui.elements.UITextBox("",
-                                                    pygame.Rect((100, 170), (600, 40)),
+                                                      pygame.Rect((100, 170), (600, 40)),
                                                       object_id=get_text_box_theme())
         # Set text for clan age
         if game.clan.age == 1:
@@ -92,27 +92,30 @@ class EventsScreen(Screens):
         if game.clan.age != 1:
             self.clan_age.set_text(f'Clan age: {str(game.clan.age)} moons')
 
-        self.timeskip_button = UIImageButton(pygame.Rect((310, 205),(180, 30)), "", object_id = "#timeskip_button")
+        self.timeskip_button = UIImageButton(pygame.Rect((310, 205), (180, 30)), "", object_id="#timeskip_button")
         if game.clan.closed_borders == True:
-            self.toggle_borders_button = pygame_gui.elements.UIButton(pygame.Rect((500,210),(200, 30)), "Open Clan orders")
+            self.toggle_borders_button = pygame_gui.elements.UIButton(pygame.Rect((500, 210), (200, 30)),
+                                                                      "Open Clan orders")
         else:
-            self.toggle_borders_button = pygame_gui.elements.UIButton(pygame.Rect((500,210),(200, 30)), "Close Clan Borders")
-        
-        #Sets up the buttons to switch between the event types. 
-        self.clan_events_button = UIImageButton(pygame.Rect((224, 245),(176, 30)), "", object_id = "#clan_events_button")
-        self.relationship_events_button = UIImageButton(pygame.Rect((400, 245),(176, 30)), "", object_id = "#relationship_events_button")
-        if self.event_display_type == "clan events":
-            self.clan_events_button.disable() 
-        elif self.event_display_type == "relationship events":
-            self.relationship_events_button.disable() 
+            self.toggle_borders_button = pygame_gui.elements.UIButton(pygame.Rect((500, 210), (200, 30)),
+                                                                      "Close Clan Borders")
 
-        self.events_list_box = pygame_gui.elements.UITextBox(self.display_events, pygame.Rect((100,290),(600,400)),
+        # Sets up the buttons to switch between the event types.
+        self.clan_events_button = UIImageButton(pygame.Rect((224, 245), (176, 30)), "", object_id="#clan_events_button")
+        self.relationship_events_button = UIImageButton(pygame.Rect((400, 245), (176, 30)), "",
+                                                        object_id="#relationship_events_button")
+        if self.event_display_type == "clan events":
+            self.clan_events_button.disable()
+        elif self.event_display_type == "relationship events":
+            self.relationship_events_button.disable()
+
+        self.events_list_box = pygame_gui.elements.UITextBox(self.display_events, pygame.Rect((100, 290), (600, 400)),
                                                              object_id=get_text_box_theme())
 
         # Display text
-        #self.explain_text = pygame_gui.elements.UITextBox(self.display_text, pygame.Rect((25,110),(750,40)))
+        # self.explain_text = pygame_gui.elements.UITextBox(self.display_text, pygame.Rect((25,110),(750,40)))
 
-        #Draw and disable the correct menu buttons. 
+        # Draw and disable the correct menu buttons.
         self.set_disabled_menu_buttons(["events_screen"])
         self.show_menu_buttons()
 
