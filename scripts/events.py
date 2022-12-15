@@ -217,7 +217,7 @@ class Events():
                         self.time_at_war += 1
                         self.at_war = True
                     else:
-                        self.enemy_clan = f'{str(other_clan.name)}Clan'
+                        self.enemy_clan = other_clan
                         possible_text = [
                             f'War rages between {game.clan.name}Clan and {other_clan.name}Clan.',
                             f'{other_clan.name}Clan has taken some of {game.clan.name}'
@@ -1063,7 +1063,7 @@ class Events():
 
         # extra death chance and injuries in expanded & cruel season
         if game.clan.game_mode in ["expanded", "cruel season"]:
-            if not int(random.random() * 400) and not cat.not_working():  # 1/400
+            if not int(random.random() * 500) and not cat.not_working():  # 1/400
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
                 triggered_death = True
             else:

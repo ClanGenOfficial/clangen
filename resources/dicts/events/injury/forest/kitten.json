@@ -2,11 +2,17 @@
     {
         "injury": "claw-wound",
         "tags": [
+            "other_cat",
             "other_cat_adult",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "platonic",
+            "respect",
+            "comfort",
+            "neg_dislike"
         ],
         "event_text": "m_c was grabbed by a hawk, but luckily r_c saves them! The kit is still left injured from the ordeal.",
         "history_text": [

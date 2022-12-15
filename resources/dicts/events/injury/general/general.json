@@ -284,11 +284,18 @@
     {
         "injury": "claw-wound",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c was hurt by r_c for disobeying orders.",
         "history_text": [
@@ -304,11 +311,18 @@
     {
         "injury": "claw-wound",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c was hurt by r_c for speaking out against them.",
         "history_text": [
@@ -324,11 +338,18 @@
     {
         "injury": "claw-wound",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c was hurt by r_c to make an example out of them.",
         "history_text": [
@@ -363,11 +384,18 @@
     {
         "injury": "mangled leg",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c's was maimed by r_c for questioning their leadership.",
         "history_text": [
@@ -402,11 +430,18 @@
     {
         "injury": "bite-wound",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c was hurt by r_c for disobeying orders.",
         "history_text": [
@@ -422,11 +457,18 @@
     {
         "injury": "bite-wound",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c was hurt by r_c for speaking out against them.",
         "history_text": [
@@ -442,11 +484,18 @@
     {
         "injury": "bite-wound",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c was hurt by r_c to make an example out of them.",
         "history_text": [

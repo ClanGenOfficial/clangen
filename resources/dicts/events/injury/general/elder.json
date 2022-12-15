@@ -274,7 +274,13 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c tried to interject and de-escalate an argument between two clanmates but r_c retaliated at the interruption.  m_c limps away, new clawmarks on their pelt.",
         "history_text": [
@@ -294,7 +300,13 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "rc_to_mc",
+            "platonic",
+            "neg_dislike",
+            "trust",
+            "comfort",
+            "respect"
         ],
         "event_text": "m_c was on a walk when they saw r_c being attacked by d_l! They helped r_c escape, but not before gaining a few wounds.",
         "history_text": [
