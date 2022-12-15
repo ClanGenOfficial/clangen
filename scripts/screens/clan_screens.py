@@ -5,16 +5,15 @@ import pygame_gui
 
 from .base_screens import Screens, cat_profiles
 
-from scripts.game_structure.text import *
-from scripts.game_structure.buttons import buttons
 from scripts.cat.cats import Cat
-from scripts.game_structure.buttons import *
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton
-from scripts.utility import get_text_box_theme
+from scripts.utility import get_text_box_theme, update_sprite
+from scripts.game_structure import image_cache
+from scripts.game_structure.game_essentials import *
 
 
 class ClanScreen(Screens):
-    max_sprites_displayed = 400 #we don't want 100,000 sprites rendering at once. 
+    max_sprites_displayed = 400 # we don't want 100,000 sprites rendering at once. 400 is enough.
 
 
     def on_use(self):
@@ -28,23 +27,14 @@ class ClanScreen(Screens):
             elif game.clan.current_season == 'Leaf-fall':
                 screen.blit(self.leaffall_bg, (0, 0))
 
-        verdana.text("Leader\'s Den", game.clan.cur_layout['leader den'])
+        '''verdana.text("Leader\'s Den", game.clan.cur_layout['leader den'])
         verdana.text('Medicine Cat Den', game.clan.cur_layout['medicine den'])
         verdana.text('Nursery', game.clan.cur_layout['nursery'])
         verdana.text('Clearing', game.clan.cur_layout['clearing'])
         verdana.text("Apprentices\' Den",
                      game.clan.cur_layout['apprentice den'])
         verdana.text("Warriors\' Den", game.clan.cur_layout['warrior den'])
-        verdana.text("Elders\' Den", game.clan.cur_layout['elder den'])
-
-        pygame.draw.rect(screen,
-                         color='gray',
-                         rect=pygame.Rect(320, 660, 160, 20))
-
-        if game.switches['saved_clan']:
-            verdana_green.text('Saved!', ('center', -20))
-        else:
-            verdana_red.text('Remember to save!', ('center', -20))
+        verdana.text("Elders\' Den", game.clan.cur_layout['elder den'])'''
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -53,6 +43,7 @@ class ClanScreen(Screens):
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
                 game.switches['saved_clan'] = True
+                self.update_buttons_and_text()
             if event.ui_element in self.cat_buttons:
                 #print("cat pressed")
                 game.switches["cat"] = event.ui_element.return_cat_id()
@@ -106,6 +97,10 @@ class ClanScreen(Screens):
 
         self.save_button = UIImageButton(pygame.Rect(((343, 625),(114, 30))), "", object_id="#save_button")
 
+        self.save_text = pygame_gui.elements.UITextBox("", pygame.Rect(320, 660, 160, 20),
+                                                       object_id="#save_text_box")
+        self.update_buttons_and_text()
+
     def exit_screen(self):
         #removes the cat sprites. 
         for button in self.cat_buttons:
@@ -113,6 +108,9 @@ class ClanScreen(Screens):
         self.cat_buttons = []
 
         self.save_button.kill() #kill the save button.
+        del self.save_button
+        self.save_text.kill()
+        del self.save_text
 
     def update_camp_bg(self):
         light_dark = "light"
@@ -227,6 +225,12 @@ class ClanScreen(Screens):
                         choice(p['medicine place']),
                         choice(p['apprentice place'])
                     ])
+
+    def update_buttons_and_text(self):
+        if game.switches['saved_clan']:
+            self.save_text.set_text("<font color=#006600>Saved!</font>")
+        else:
+            self.save_text.set_text("Remember to save!")
 
     
 class StarClanScreen(Screens):

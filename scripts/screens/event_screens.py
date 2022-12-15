@@ -1,29 +1,14 @@
 from random import choice
 import pygame_gui
 
-from .base_screens import Screens, draw_menu_buttons, cat_profiles
-
+from .base_screens import Screens, cat_profiles
+import pygame
 from scripts.events import events_class
-from scripts.patrol import patrol
 from scripts.utility import draw, get_text_box_theme
-from scripts.game_structure.buttons import buttons
-from scripts.game_structure.text import *
+#from scripts.game_structure.text import *
 from scripts.game_structure.image_button import UIImageButton
+from scripts.game_structure.game_essentials import *
 
-class SingleEventScreen(Screens):
-
-    def on_use(self):
-        # LAYOUT
-        if game.switches['event'] is not None:
-            events_class.all_events[game.switches['event']].page()
-
-        # buttons
-        buttons.draw_button(('center', -150),
-                            text='Continue',
-                            cur_screen='events screen')
-
-    def screen_switches(self):
-        pass
 
 class EventsScreen(Screens):
     event_display_type = "clan events"
@@ -164,3 +149,20 @@ class EventsScreen(Screens):
             self.clan_age.set_text(f'Clan age: {str(game.clan.age)} moon')
         if game.clan.age != 1:
             self.clan_age.set_text(f'Clan age: {str(game.clan.age)} moons')
+
+
+'''class SingleEventScreen(Screens):
+
+    def on_use(self):
+        # LAYOUT
+        if game.switches['event'] is not None:
+            events_class.all_events[game.switches['event']].page()
+
+        # buttons
+        buttons.draw_button(('center', -150),
+                            text='Continue',
+                            cur_screen='events screen')
+
+    def screen_switches(self):
+        pass
+'''

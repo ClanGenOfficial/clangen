@@ -3,14 +3,14 @@ from math import ceil
 import pygame
 import pygame_gui.elements
 
-from .base_screens import Screens, cat_profiles, draw_next_prev_cat_buttons
+from .base_screens import Screens, cat_profiles
 
 from scripts.utility import draw_large, draw, update_sprite, get_personality_compatibility, get_text_box_theme
-from scripts.game_structure.buttons import buttons
-from scripts.game_structure.text import *
+#from scripts.game_structure.text import *
 from scripts.cat.cats import Cat
 import scripts.game_structure.image_cache as image_cache
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton, UIRelationStatusBar
+from scripts.game_structure.game_essentials import *
 
 
 class ChooseMentorScreen(Screens):
@@ -138,8 +138,6 @@ class ChooseMentorScreen(Screens):
         self.app_frame.kill()
         del self.app_frame
 
-
-
     def update_apprentice(self):
         """Updates the apprentice focused on. """
         for ele in self.apprentice_details:
@@ -222,11 +220,14 @@ class ChooseMentorScreen(Screens):
 
         if self.next_cat == 1:
             self.next_cat = 0
+
     def change_mentor(self, new_mentor = None):
         if new_mentor:
             self.the_cat.mentor.apprentice.remove(self.the_cat)
             if self.the_cat.moons > 6:
                 self.the_cat.mentor.former_apprentices.append(self.the_cat)
+
+            self.the_cat.patrol_with_mentor = 0
             self.the_cat.mentor = new_mentor
             new_mentor.apprentice.append(self.the_cat)
             self.mentor = self.the_cat.mentor
@@ -333,6 +334,7 @@ class ChooseMentorScreen(Screens):
         screen.blit(self.list_frame, (75, 360))
 
     def chunks(self, L, n): return [L[x: x+n] for x in range(0, len(L), n)]
+
 
 class ViewChildrenScreen(Screens):
     parents = pygame.image.load("resources/images/family_parents.png").convert_alpha()
@@ -690,6 +692,7 @@ class ViewChildrenScreen(Screens):
         screen.blit(ViewChildrenScreen.mate, (80, 360))
 
     def chunks(self, L, n): return [L[x: x + n] for x in range(0, len(L), n)]
+
 
 class ChooseMateScreen(Screens):
     list_frame = image_cache.load_image("resources/images/choosing_frame.png").convert_alpha()
@@ -1696,8 +1699,6 @@ class RelationshipScreen(Screens):
         bar_count += 1
 
         #DISLIKE
-        print(str(the_relationship.cat_to.name))
-        print(the_relationship.dislike)
         if the_relationship.dislike > 49:
             text = "hate:"
         else:

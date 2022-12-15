@@ -1,10 +1,10 @@
 from .base_screens import Screens
-from .cat_screens import ProfileScreen, ChangeGenderScreen, ChangeNameScreen, ExileProfileScreen
-from .clan_creation_screens import ClanCreatedScreen, MakeClanScreen
+from .cat_screens import ProfileScreen, ChangeGenderScreen, ChangeNameScreen
+from .clan_creation_screens import MakeClanScreen
 from .clan_screens import ClanScreen, StarClanScreen, DFScreen, ListScreen, AllegiancesScreen
-from .event_screens import EventsScreen, SingleEventScreen
+from .event_screens import EventsScreen
 from .organizational_screens import\
-    StartScreen, SettingsScreen, InfoScreen, SwitchClanScreen, LanguageScreen, RelationshipSettingsScreen, StatsScreen
+    StartScreen, SettingsScreen, SwitchClanScreen, StatsScreen
 from .patrol_screens import PatrolScreen
 from .relation_screens import\
     RelationshipScreen, ChooseMateScreen, ViewChildrenScreen, ChooseMentorScreen
@@ -39,14 +39,11 @@ screens = Screens()
 change_gender_screen = ChangeGenderScreen('change gender screen')
 change_name_screen = ChangeNameScreen('change name screen')
 profile_screen = ProfileScreen('profile screen')
-exile_profile_screen = ExileProfileScreen('outside profile screen')
-
 
 # ---------------------------------------------------------------------------- #
 #                           clan_creation_screens.py                           #
 # ---------------------------------------------------------------------------- #
 
-clan_created_screen = ClanCreatedScreen('clan created screen')
 make_clan_screen = MakeClanScreen('make clan screen')
 
 # ---------------------------------------------------------------------------- #
@@ -64,15 +61,11 @@ df_screen = DFScreen('dark forest screen')
 # ---------------------------------------------------------------------------- #
 
 events_screen = EventsScreen('events screen')
-single_event_screen = SingleEventScreen('single event screen')
 
 # ---------------------------------------------------------------------------- #
 #                           organizational_screens.py                          #
 # ---------------------------------------------------------------------------- #
 
-info_screen = InfoScreen('info screen')
-language_screen = LanguageScreen('language screen')
-relationship_setting_screen = RelationshipSettingsScreen('relationship setting screen')
 settings_screen = SettingsScreen('settings screen')
 stats_screen = StatsScreen('stats screen')
 start_screen = StartScreen('start screen')

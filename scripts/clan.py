@@ -1,5 +1,4 @@
 from scripts.cat.cats import *
-from scripts.game_structure.text import *
 from scripts.game_structure.load_cat import *
 
 try:
