@@ -356,17 +356,17 @@ class PatrolScreen(Screens):
                                                       object_id="#patrol_again")
 
         if user_input in ["antag", "antagonize"]:
-            patrol.calculate_success_antagonize()
+            patrol.calculate_success(antagonize=True)
             if patrol.success:
                 display_text = patrol.patrol_event.antagonize_text
             else:
                 display_text = patrol.patrol_event.antagonize_fail_text
         elif user_input in ["pro", "proceed"]:
-            patrol.calculate_success()
+            patrol.calculate_success(antagonize=False)
             if patrol.success:
-                display_text = patrol.patrol_event.success_text
+                display_text = patrol.final_success
             else:
-                display_text = patrol.patrol_event.fail_text
+                display_text = patrol.final_fail
         elif user_input in ["nopro", "notproceed"]:
             display_text = patrol.patrol_event.decline_text
         else:
