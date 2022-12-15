@@ -125,7 +125,7 @@ class Condition_Events():
                             risk["chance"] = 0
                             if new_illness_name == 'torn pelt':
                                 cat.get_injured(new_illness_name)
-                            if new_illness_name == 'lasting grief':
+                            if new_illness_name in PERMANENT:
                                 old_illness.append(illness)
                                 new_illness.append(new_illness_name)
                                 cat.get_permanent_condition(new_illness_name)
@@ -444,7 +444,8 @@ class Condition_Events():
 
         scarless_conditions = [
             "weak leg", "paralyzed", "raspy lungs", "wasting disease", "blind", "failing eyesight", "one bad eye",
-            "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy", "recurring shock"
+            "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy", "recurring shock",
+            "lasting grief"
         ]
 
         got_condition = False

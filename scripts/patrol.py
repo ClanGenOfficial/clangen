@@ -720,6 +720,8 @@ class Patrol():
 
     def handle_relationships(self):
         n = 5
+        if "big_change" in self.patrol_event.tags:
+            n = 10
 
         romantic_love = 0
         platonic_like = 0
@@ -729,57 +731,53 @@ class Patrol():
         jealousy = 0
         trust = 0
 
-        # change the values
-        if "romantic" in self.patrol_event.tags:
-            romantic_love = n
-        if "platonic" in self.patrol_event.tags:
-            platonic_like = n
-        if "dislike" in self.patrol_event.tags:
-            dislike = n
-        if "respect" in self.patrol_event.tags:
-            admiration = n
-        if "disrespect" in self.patrol_event.tags:
-            admiration = -abs(n)
-        if "comfort" in self.patrol_event.tags:
-            comfortable = n
-        if "jealous" in self.patrol_event.tags:
-            jealousy = n
-        if "trust" in self.patrol_event.tags:
-            trust = n
-        if "distrust" in self.patrol_event.tags:
-            trust = -abs(n)
-
         if self.success:
-            dislike = -abs(n)
-            jealousy = -abs(n)
+            if "no_change_success" in self.patrol_event.tags:
+                n = 0
+
+            if "romantic" in self.patrol_event.tags:
+                romantic_love = n
+            if "platonic" in self.patrol_event.tags:
+                platonic_like = n
+            if "dislike" in self.patrol_event.tags:
+                dislike = -n
+            if "respect" in self.patrol_event.tags:
+                admiration = n
+            if "comfort" in self.patrol_event.tags:
+                comfortable = n
+            if "jealous" in self.patrol_event.tags:
+                jealousy = -n
+            if "trust" in self.patrol_event.tags:
+                trust = n
+
         elif "sacrificial" in self.patrol_event.tags:  # for when a cat risks themselves valiantly and still fails
             admiration = 15
             trust = 15
+
         elif not self.success and "pos_fail" not in self.patrol_event.tags:
-            # default fail rel value loss
+            if "no_change_fail" in self.patrol_event.tags:
+                n = 0
 
             if "romantic" in self.patrol_event.tags:
-                romantic_love = -abs(n)
+                romantic_love = -n
             if "platonic" in self.patrol_event.tags:
-                platonic_like = -abs(n)
+                platonic_like = -n
             if "dislike" in self.patrol_event.tags:
                 dislike = n
             if "respect" in self.patrol_event.tags:
-                admiration = -abs(n)
+                admiration = -n
             if "comfort" in self.patrol_event.tags:
-                comfortable = -abs(n)
+                comfortable = -n
             if "jealous" in self.patrol_event.tags:
                 jealousy = n
             if "trust" in self.patrol_event.tags:
-                trust = -abs(n)
+                trust = -n
 
-        # this is just for prints, if it's still here later, just remove it
-        changed = False
-        if romantic_love == 0 and platonic_like == 0 and dislike == 0 and admiration == 0 and \
-                comfortable == 0 and jealousy == 0 and trust == 0:
-            changed = False
-        else:
-            changed = True
+        # always do these if tagged for, no matter the outcome
+        if "distrust" in self.patrol_event.tags:
+            trust = -n
+        if "disrespect" in self.patrol_event.tags:
+            admiration = -n
 
         # affect the relationship
         all_cats = list(filter(lambda c: not c.dead and not c.outside, Cat.all_cats.values()))
@@ -1064,7 +1062,7 @@ class PatrolEvent():
             "deputy",
             "clan_to_p_l", "clan_to_r_c", "patrol_to_p_l", "patrol_to_r_c",
             "rel_two_apps", "p_l_to_r_c", "s_c_to_r_c", "clan_to_patrol", "rel_patrol",
-            "all_lives", "poisoned"
+            "all_lives"
 
         ]
 
@@ -1103,25 +1101,44 @@ class PatrolEvent():
         Keep in mind that the “non_lethal” tag will apply to ALL the conditions for that patrol.
         Right now, nonlethal shock is auto applied to all cats present when another cat dies. This may change in the future.
 
-        "p_l_to_r_c" is for specifically pl and rc gaining relationship with EACH OTHER
-
         "two_apprentices" is for patrols with two apprentices (at least) in them. It works with the "apprentice" tag. "rel_two_apps" is for patrols with relationship changes between app1 and app2 that don't affect the rest of the patrol, and also works with "two_apprentices" and "apprentice".
 
         "warrior" is used to specify that the patrol should only trigger with at least 1 warrior in it. 
         "no_app" is for when no apps should be on the patrol
 
-        "distrust" is for the clan distrusting a cat for an outcome
-        "disrespect" is for the clan respecting a cat less for an outcome
-        whole clan gains relationship towards p_l - "clan_to_p_l"
-        whole clan gains relationship towards s_c - "clan_to_r_c" (triggers to be s_c if s_c is present)
-        whole clan gains relationship towards r_c - "clan_to_r_c"
-        patrol gains relationship towards p_l - "patrol_to_p_l"
-        patrol gains relationship towards s_c - "patrol_to_r_c" (triggers to be s_c if s_c is present)
-        patrol gains relationship towards r_c - "patrol_to_r_c"
-        two apps gain relationship towards each other - "rel_two_apps"
-        whole clan gains relationship towards patrol - "clan_to_patrol"
-        whole patrol gains relationship with each other - "rel_patrol" (also default, so if you don't add any other tags, 
-        it goes to this. If you want this outcome, you don't need to add any tags, this is just if you need to add one of the other tags)
+        Relationship tags:
+        I think all of these can be used together. the tag for which relationships are increased should ALSO be used
+        # whole clan gains relationship towards p_l - "clan_to_p_l"
+        # whole clan gains relationship towards s_c - "clan_to_r_c" (triggers to be s_c if s_c is present)
+        # whole clan gains relationship towards r_c - "clan_to_r_c"
+        # patrol gains relationship towards p_l - "patrol_to_p_l"
+        # patrol gains relationship towards s_c - "patrol_to_r_c" (triggers to be s_c if s_c is present)
+        # patrol gains relationship towards r_c - "patrol_to_r_c"
+        # "p_l_to_r_c" is for specifically pl and rc gaining relationship with EACH OTHER
+        # two apps gain relationship towards each other - "rel_two_apps"
+        # whole clan gains relationship towards patrol - "clan_to_patrol"
+        # whole patrol gains relationship with each other - "rel_patrol" (also default, so if you don’t add any other tags, it goes to this. If you want this outcome, you don’t need to add any tags, this is just if you need to add one of the other tags)
+        
+        "romantic" < change romantic value
+        "platonic" < change platonic value
+         "comfort" < change comfort value
+        "respect" < change admiration/respect value
+        "trust" < change trust value
+         "dislike" < change dislike value
+        "jealousy < change jealousy value
+         "distrust" < always decrease trust
+        "disrespect" < always decrease respect
+        
+        ^^^ On a success, the above tagged values will increase (or if values are dislike and jealousy, they will decrease).  On a fail, the tagged values will decrease (or if values are dislike and jealousy, they will increase)
+        
+        “sacrificial” is for fail outcomes where a cat valiantly sacrifices themselves for the clan (such as the single cat big dog patrol) this will give the tagged for group (“clan_to_r_c”, “patrol_to_r_c”, ect) a big boost to respect and trust in that cat even though they failed (if the cat survives lol) Other tagged for values will be disregarded for these fail outcomes.
+        “pos_fail” is for if you want the tagged relationship values to still be positive on a failure, rather than negative.
+        
+        “big_change” is for if you want the values to increment by a larger number.  This will make all tagged relationship values change by 10 instead of 5
+        
+        “no_change_fail” to set all relationship value changes to 0 on fail outcomes
+        “no_change_success” to set all relationship value changes to 0 on success outcomes
+
         """
 
 

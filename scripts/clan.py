@@ -195,6 +195,7 @@ class Clan():
         ) and cat.outside and cat.ID not in Cat.outside_cats.keys():
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.update({cat.ID:cat})
+            self.clan_cats.remove(cat.ID)
             
     def add_to_darkforest(self, cat):  # Same as add_cat
         """ Places the dead cat into the dark forest. It should not be removed from the list of cats in the clan"""
