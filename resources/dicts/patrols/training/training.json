@@ -206,7 +206,7 @@
     "patrol_id": "gen_train_vision1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "respect", "trust", "jealousy", "patrol_to_r_c"],
+    "tags": ["training", "respect", "trust", "jealousy", "big_change", "s_c_to_r_c", "patrol_to_r_c"],
     "intro_text": "As the patrol gathers together to train under p_l's leadership, r_c admits they think they had a vision from StarClan last night.",
     "decline_text": "The patrol doesn't talk about the vision.",
     "chance_of_success": 70,
@@ -253,7 +253,7 @@
     "patrol_id": "gen_train_ghost1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic"],
+    "tags": ["training", "no_app", "platonic"],
     "intro_text": "The patrol quickly devolves into ghost stories, leaving everyone on edge.",
     "decline_text": "p_l quickly silences any talk about ghosts.",
     "chance_of_success": 80,
@@ -264,7 +264,7 @@
         "s_c sees the patrol competing to scare each other, and derails it completely. Instead they spin a tale of truth, bringing the story of one of c_n's warrior ancestors to life. With how clear their words are, it's almost like they know the StarClan cat, even though that's impossible."
     ],
     "fail_text": [
-            "A branch snaps and the whole patrol runs back to camp."
+            "A branch snaps and the whole patrol runs back to camp. Later and argument starts about what caused the noise."
     ],
     "win_skills": ["strong connection to StarClan"],
     "min_cats": 2,
@@ -289,9 +289,10 @@
     ],
     "fail_text": [
         "app1 tries to look brave in front of the other cats, but hears a rustle behind them and startles so badly they fall over.",
-        "app2 makes fun of app1 for being so scared."
+        "s_c makes fun of app1 for being so scared."
     ],
     "win_trait": ["charismatic", "childish", "confident", "playful", "shameless", "strange"],
+    "fail_trait": ["ambitious", "bloodthirsty", "childish", "cold", "confident", "fierce", "insecure","troublesome"],
     "min_cats": 2,
     "max_cats": 6,
     "antagonize_text": null,
@@ -405,7 +406,7 @@
     "patrol_id": "gen_train_teamwork1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust"],
+    "tags": ["training", "platonic", "trust", "no_change_fail"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -416,7 +417,7 @@
         "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a clanmates' fall, and working on treading exactly in each other's pawsteps."
     ],
     "fail_text": [
-            "Unfortunately, no one steps up to teach."
+            "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
     "min_cats": 3,
@@ -428,7 +429,7 @@
     "patrol_id": "gen_train_teamwork2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust"],
+    "tags": ["training", "platonic", "trust", "no_change_fail"],
     "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -439,7 +440,7 @@
         "s_c takes charge and coordinates exercises for the duo. They practice mirroring each other, until by the end of the afternoon they can almost act as one cat."
     ],
     "fail_text": [
-            "Unfortunately, no one steps up to teach."
+            "Unfortunately, no one steps up to teach. It's a little awkward, but they wander back to camp to attend to other duties."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
     "min_cats": 2,
@@ -451,7 +452,7 @@
     "patrol_id": "gen_train_teamwork3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "apprentice"],
+    "tags": ["training", "platonic", "trust", "apprentice", "no_change_fail"],
     "intro_text": "p_l suggests this might be a good chance for the cats to practice teamwork, particularly with app1.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -462,7 +463,7 @@
         "s_c takes charge and coordinates exercises for the training patrol. Soon cats are using each other as springboards, practicing breaking a clanmates' fall, and working on treading exactly in each other's pawsteps."
     ],
     "fail_text": [
-            "Unfortunately, no one steps up to teach."
+            "Unfortunately, no one steps up to teach. It's a little awkward, but the patrol disbands to attend to other duties."
     ],
     "win_skills": ["great teacher", "fantastic teacher"],
     "min_cats": 3,
@@ -474,7 +475,7 @@
     "patrol_id": "gen_train_teamwork4",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "apprentice"],
+    "tags": ["training", "platonic", "trust", "warrior", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance to practice teamwork with app1.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -485,7 +486,7 @@
         "s_c takes charge and coordinates exercises for the duo. They practice mirroring each other, until by the end of the afternoon they can almost act as one cat. The warrior praises how quickly app1 picks it up, and the apprentice comes back to camp fluffed up with pride."
     ],
     "fail_text": [
-            "Unfortunately, no one steps up to teach."
+            "Unfortunately, no one steps up to teach. app1 looks disappointed - what was p_l expecting, for them to led the training?"
     ],
     "win_skills": ["great teacher", "fantastic teacher"],
     "min_cats": 2,
@@ -508,9 +509,9 @@
         "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing their stalking on each other, sharing tips about different terrain types, and discussing prey selection."
     ],
     "fail_text": [
-            "Unfortunately, no one steps up to teach."
+            "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
     ],
-    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "fantastic hunter"],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -531,9 +532,9 @@
         "s_c takes charge and coordinates exercises for the duo. They practice how to bring down prey together, their confidence in each other growing."
     ],
     "fail_text": [
-            "Unfortunately, no one steps up to teach."
+            "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
     ],
-    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "fantastic hunter"],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -554,9 +555,9 @@
         "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing stalking on each other, sharing tips about different terrain types, and discussing prey selection."
     ],
     "fail_text": [
-            "Unfortunately, no one steps up to teach."
+            "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
     ],
-    "win_skills": ["great teacher", "fantastic teacher", "fantastic hunter"],
+    "win_skills": ["great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -566,7 +567,7 @@
     "patrol_id": "gen_train_huntingskill4",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "apprentice"],
+    "tags": ["training", "platonic", "trust", "warrior", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with app1.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -577,9 +578,9 @@
         "s_c takes charge and coordinates exercises for the duo. They practice taking down prey together, their confidence in their team hunting growing. The warrior praises how quickly app1 picks it up, and the apprentice comes back to camp fluffed up with pride."
     ],
     "fail_text": [
-        "Unfortunately, no one steps up to teach."
+        "Unfortunately, no one steps up to teach. app1 looks disappointed - what was p_l expecting, for them to led the training?"
     ],
-    "win_skills": ["great teacher", "fantastic teacher", "fantastic hunter"],
+    "win_skills": ["great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -600,7 +601,7 @@
         "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, tricks, and tumbles."
     ],
     "fail_text": [
-            "Unfortunately, no one steps up to teach."
+            "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "fantastic fighter"],
     "min_cats": 3,
@@ -623,7 +624,7 @@
         "s_c takes charge and coordinates exercises for the duo. They practice how to weave around an opponent, feeling more and more confident in their teamwork."
     ],
     "fail_text": [
-            "Unfortunately, no one steps up to teach."
+            "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
     ],
     "win_skills": ["good teacher", "great teacher", "fantastic teacher", "fantastic fighter"],
     "min_cats": 2,
@@ -646,7 +647,7 @@
         "s_c takes charge and coordinates exercises for the training patrol. Soon cats are practicing trips, tricks, and tumbles."
     ],
     "fail_text": [
-            "Unfortunately, no one steps up to teach."
+            "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
     ],
     "win_skills": ["great teacher", "fantastic teacher", "fantastic fighter"],
     "min_cats": 3,
@@ -658,7 +659,7 @@
     "patrol_id": "gen_train_fightingskill4",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "apprentice"],
+    "tags": ["training", "platonic", "trust", "warrior", "apprentice"],
     "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with app1.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -669,7 +670,7 @@
         "s_c takes charge and coordinates exercises for the duo. They practice how to weave around an opponent, feeling more and more confident in their teamwork. The warrior praises how quickly app1 picks it up, and the apprentice comes back to camp fluffed up with pride."
     ],
     "fail_text": [
-            "Unfortunately, no one steps up to teach."
+            "Unfortunately, no one steps up to teach. app1 looks disappointed - what was p_l expecting, for them to led the training?"
     ],
     "win_skills": ["great teacher", "fantastic teacher", "fantastic fighter"],
     "min_cats": 2,
