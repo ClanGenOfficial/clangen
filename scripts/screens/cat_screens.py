@@ -1463,35 +1463,4 @@ class ExileProfileScreen(Screens):
                     str(the_cat.moons) + ' moons', (300, 230 + count * 15))
                 count += 1
 
-        # buttons
-
-        buttons.draw_image_button((48, 420),
-                                  button_name='relations',
-                                  text="relations",
-                                  size=(176, 30),
-                                  profile_tab_group='relations',
-                                  available=False
-                                  )
-        buttons.draw_image_button((224, 420),
-                                  button_name='roles',
-                                  text="roles",
-                                  size=(176, 30),
-                                  profile_tab_group='roles',
-                                  available=False
-                                  )
-        buttons.draw_image_button((400, 420),
-                                  button_name='personal',
-                                  text="personal",
-                                  size=(176, 30),
-                                  profile_tab_group='personal',
-                                  available=True,
-                                  )
-        buttons.draw_image_button((576, 420),
-                                  button_name='dangerous',
-                                  text="dangerous",
-                                  size=(176, 30),
-                                  profile_tab_group='dangerous',
-                                  available=False
-                                  )
-        draw_back(25, 60)
 
