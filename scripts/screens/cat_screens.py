@@ -463,7 +463,7 @@ class ProfileScreen(Screens):
                         check_cat].ID != self.the_cat.ID and Cat.all_cats[
                             check_cat].dead == self.the_cat.dead and Cat.all_cats[
                                 check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                                    check_cat].exiled and Cat.all_cats[
+                                    check_cat].outside and Cat.all_cats[
                         check_cat].df == self.the_cat.df:
                     previous_cat = Cat.all_cats[check_cat].ID
 
@@ -471,7 +471,7 @@ class ProfileScreen(Screens):
                         check_cat].ID != self.the_cat.ID and Cat.all_cats[
                             check_cat].dead == self.the_cat.dead and Cat.all_cats[
                                 check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                                    check_cat].exiled and Cat.all_cats[
+                                    check_cat].outside and Cat.all_cats[
                         check_cat].df == self.the_cat.df:
                     next_cat = Cat.all_cats[check_cat].ID
 
@@ -484,10 +484,11 @@ class ProfileScreen(Screens):
         self.next_cat = next_cat
         self.previous_cat = previous_cat
 
+
     def generate_column1(self, the_cat):
         '''Generate the left column information'''
         output = ""
-
+        count2 = 0
         #SEX/GENDER
         if the_cat.genderalign is None or the_cat.genderalign == the_cat.gender:
             output += str(the_cat.gender)
