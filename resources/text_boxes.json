@@ -296,8 +296,27 @@
     "misc":
         {
             "text_horiz_alignment": "left",
-            "padding": "(0,0)"
+            "padding": "0,0"
         }
+    },
+    "#game_mode_details":
+    {
+        "colours":
+            {
+                "dark_bg": "#00000000",
+                "normal_text": "#000000"
+            },
+        "font":
+            {
+                "name": "nonosans",
+                "size": "15",
+                "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            },
+        "misc":
+            {
+                "text_horiz_alignment": "left",
+                "padding": "20,20"
+            }
     }
 }
 
