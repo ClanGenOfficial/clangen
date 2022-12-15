@@ -363,6 +363,9 @@ class Cat():
         comfort_strings = GRIEF_GENERAL_POSITIVE["comfort"][body_status]
         trust_strings = GRIEF_GENERAL_POSITIVE["trust"][body_status]
 
+        dislike_strings = GRIEF_GENERAL_NEGATIVE["dislike"][body_status]
+        jealousy_strings = GRIEF_GENERAL_NEGATIVE["jealousy"][body_status]
+
         # major, cat won't patrol
         grief_major = [
             'loving', 'compassionate', 'empathetic', 'insecure', 'lonesome', 'nervous'
@@ -372,17 +375,22 @@ class Cat():
             'daring', 'cold', 'bold', 'ambitious', 'bloodthirsty', 'responsible', 'loyal', 'strict', 'vengeful'
         ]
 
+        text = None
+
         # apply grief to cats with high positive relationships to dead cat
         for cat in Cat.all_cats.values():
             if cat.dead or cat.outside or cat.moons < 1:
                 continue
             relationships = cat.relationships.values()
 
-            romantic_relation = list(filter(lambda rel: rel.romantic_love > 50, relationships))
+            romantic_relation = list(filter(lambda rel: rel.romantic_love > 55, relationships))
             platonic_relation = list(filter(lambda rel: rel.platonic_like > 50, relationships))
-            admiration_relation = list(filter(lambda rel: rel.admiration > 60, relationships))
-            comfort_relation = list(filter(lambda rel: rel.comfortable > 50, relationships))
-            trust_relation = list(filter(lambda rel: rel.trust > 60, relationships))
+            admiration_relation = list(filter(lambda rel: rel.admiration > 70, relationships))
+            comfort_relation = list(filter(lambda rel: rel.comfortable > 60, relationships))
+            trust_relation = list(filter(lambda rel: rel.trust > 70, relationships))
+
+            dislike_relation = list(filter(lambda rel: rel.dislike > 50, relationships))
+            jealousy_relation = list(filter(lambda rel: rel.jealousy > 50, relationships))
 
             possible_strings = []
 
@@ -435,10 +443,9 @@ class Cat():
                     if family_strings is not None:
                         possible_strings.extend(family_strings)
 
-            if len(possible_strings) != 0:
+            if possible_strings:
                 # choose string
-                text = []
-                text.append(choice(possible_strings))
+                text = [choice(possible_strings)]
 
                 # check if the cat will get Major or Minor severity for grief
                 chance = [1, 1]
@@ -493,28 +500,62 @@ class Cat():
                 # grief the cat
                 cat.get_ill("grief stricken", event_triggered=True, severity=severity)
 
+            # negative reactions, no grief
+            else:
+                for y in range(len(dislike_relation)):
+                    cat_to = dislike_relation[y].cat_to
+                    if cat_to == self:
+                        possible_strings.extend(dislike_strings)
+                        family_strings = self.familial_grief(living_cat=cat, body=body_status, neg=True)
+
+                        if family_strings is not None:
+                            possible_strings.extend(family_strings)
+                for y in range(len(jealousy_relation)):
+                    cat_to = jealousy_relation[y].cat_to
+                    if cat_to == self:
+                        possible_strings.extend(jealousy_strings)
+                        family_strings = self.familial_grief(living_cat=cat, body=body_status, neg=True)
+
+                        if family_strings is not None:
+                            possible_strings.extend(family_strings)
+                if possible_strings:
+                    # choose string
+                    text = [choice(possible_strings)]
+
+            if text:
                 # adjust and append text to grief string list
                 text = ' '.join(text)
                 text = event_text_adjust(Cat, text, self, cat)
                 Cat.grief_strings.append(text)
+                possible_strings.clear()
+                text = None
 
 
-    def familial_grief(self, living_cat, body):
+    def familial_grief(self, living_cat, body, neg=False):
         """
         returns relevant grief strings for family members, if no relevant strings then returns None
         """
 
         dead_cat = self
 
-        if dead_cat.is_parent(living_cat):
-            return GRIEF_FAMILY_POSITIVE["child_reaction"][body]
-        elif living_cat.is_parent(dead_cat):
-            return GRIEF_FAMILY_POSITIVE["parent_reaction"][body]
-        elif dead_cat.is_sibling(living_cat):
-            return GRIEF_FAMILY_POSITIVE["sibling_reaction"][body]
+        if neg is False:
+            if dead_cat.is_parent(living_cat):
+                return GRIEF_FAMILY_POSITIVE["child_reaction"][body]
+            elif living_cat.is_parent(dead_cat):
+                return GRIEF_FAMILY_POSITIVE["parent_reaction"][body]
+            elif dead_cat.is_sibling(living_cat):
+                return GRIEF_FAMILY_POSITIVE["sibling_reaction"][body]
+            else:
+                return None
         else:
-            return None
-
+            if dead_cat.is_parent(living_cat):
+                return GRIEF_FAMILY_NEGATIVE["child_reaction"][body]
+            elif living_cat.is_parent(dead_cat):
+                return GRIEF_FAMILY_NEGATIVE["parent_reaction"][body]
+            elif dead_cat.is_sibling(living_cat):
+                return GRIEF_FAMILY_NEGATIVE["sibling_reaction"][body]
+            else:
+                return None
     def gone(self):
         if self.status == 'leader':
             self.outside = True
@@ -1022,7 +1063,9 @@ class Cat():
 
         if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
             duration = med_duration
-        duration += random.randrange(0, 1)
+        duration += random.randrange(-1, 1)
+        if duration == 0:
+            duration = 1
 
         if game.clan.game_mode == "cruel season":
             if mortality != 0:
@@ -1074,7 +1117,9 @@ class Cat():
 
         if medical_cats_condition_fulfilled(Cat.all_cats.values(), amount_per_med):
             duration = med_duration
-        duration += random.randrange(0, 1)
+        duration += random.randrange(-1, 1)
+        if duration == 0:
+            duration = 1
 
         if mortality != 0:
             if game.clan.game_mode == "cruel season":

@@ -5,7 +5,7 @@ import ujson as ujson
 
 from scripts.cat.cats import Cat
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
-from scripts.utility import save_death, event_text_adjust, get_med_cats
+from scripts.utility import save_death, event_text_adjust, get_med_cats, change_relationship_values
 from scripts.game_structure.game_essentials import game, SAVE_DEATH
 from scripts.events_module.scar_events import Scar_Events
 from scripts.events_module.generate_events import GenerateEvents
@@ -70,6 +70,7 @@ class Condition_Events():
                 if skipped is True:
                     continue
                 print(illness, cat.name, cat.healed_condition)
+
                 # kill
                 if cat.dead and cat.status != 'leader':
                     event = f"{cat.name} has died of {illness}."
@@ -163,7 +164,10 @@ class Condition_Events():
                             else:
                                 continue
                     if new_illness[y] in ILLNESSES:
-                        cat.get_ill(new_illness[y])
+                        severity = 'default'
+                        if new_illness[y] == 'grief stricken':
+                            severity = 'minor'
+                        cat.get_ill(new_illness[y], severity=severity)
 
         # joining event list into one event string
         if len(event_list) > 0:
@@ -225,7 +229,7 @@ class Condition_Events():
         """
         # one if-statement has a range of 10
         number_of_conditions = 4 * 10
-        ratio = 40  # 1/75 times triggering for each cat each moon
+        ratio = 60  # 1/75 times triggering for each cat each moon
         chance_number = number_of_conditions * ratio
 
         random_number = int(random.random() * chance_number)
@@ -322,6 +326,10 @@ class Condition_Events():
 
                     print('INJURY:', cat.name, cat.status, len(final_events), other_cat.name, other_cat.status)
 
+                    # let's change some relationship values \o/ check if another cat is mentioned
+                    if "other_cat" in injury_event.tags:
+                        self.handle_relationship_changes(cat, injury_event, other_cat)
+
                     text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
 
                     # record proper history text possibilities
@@ -351,6 +359,65 @@ class Condition_Events():
             game.cur_events_list.append(text)
 
         return triggered
+
+    def handle_relationship_changes(self, cat, injury_event, other_cat):
+        cat_to = None
+        cat_from = None
+        n = 10
+        romantic = 0
+        platonic = 0
+        dislike = 0
+        admiration = 0
+        comfortable = 0
+        jealousy = 0
+        trust = 0
+        if "rc_to_mc" in injury_event.tags:
+            cat_to = [cat.ID]
+            cat_from = [other_cat]
+        elif "mc_to_rc" in injury_event.tags:
+            cat_to = [other_cat.ID]
+            cat_from = [cat]
+        elif "to_both" in injury_event.tags:
+            cat_to = [cat.ID, other_cat.ID]
+            cat_from = [other_cat, cat]
+        if "romantic" in injury_event.tags:
+            romantic = n
+        elif "neg_romantic" in injury_event.tags:
+            romantic = -n
+        if "platonic" in injury_event.tags:
+            platonic = n
+        elif "neg_platonic" in injury_event.tags:
+            platonic = -n
+        if "dislike" in injury_event.tags:
+            dislike = n
+        elif "neg_dislike" in injury_event.tags:
+            dislike = -n
+        if "respect" in injury_event.tags:
+            admiration = n
+        elif "neg_respect" in injury_event.tags:
+            admiration = -n
+        if "comfort" in injury_event.tags:
+            comfortable = n
+        elif "neg_comfort" in injury_event.tags:
+            comfortable = -n
+        if "jealousy" in injury_event.tags:
+            jealousy = n
+        elif "neg_jealousy" in injury_event.tags:
+            jealousy = -n
+        if "trust" in injury_event.tags:
+            trust = n
+        elif "neg_trust" in injury_event.tags:
+            trust = -n
+        change_relationship_values(
+            cat_to,
+            cat_from,
+            romantic,
+            platonic,
+            dislike,
+            admiration,
+            comfortable,
+            jealousy,
+            trust)
 
     def handle_permanent_conditions(self,
                                     cat,

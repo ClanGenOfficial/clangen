@@ -43,7 +43,7 @@ class Patrol():
             'very low', 'low', 'average', 'high', 'master', 'max'
         ]
 
-    def add_patrol_cats(self):
+    def add_patrol_cats(self, patrol_cats):
         self.patrol_cats.clear()
         self.patrol_names.clear()
         self.possible_patrol_leaders.clear()
@@ -53,7 +53,7 @@ class Patrol():
         self.patrol_apprentices.clear()
         self.patrol_total_experience = 0
         self.patrol_other_cats.clear()
-        for cat in game.switches['current_patrol']:
+        for cat in patrol_cats:
             self.patrol_cats.append(cat)
             self.patrol_names.append(str(cat.name))
             if cat.status != 'apprentice':
@@ -305,7 +305,8 @@ class Patrol():
             # making sure related cats don't accidentally go on romantic patrols together
             if "romantic" in patrol.tags:
                 if ("rel_two_apps" and "two_apprentices") in patrol.tags and len(self.patrol_apprentices) >= 2:
-                    if not self.patrol_apprentices[0].is_potential_mate(self.patrol_apprentices[1], for_love_interest=True):
+                    if not self.patrol_apprentices[0].is_potential_mate(self.patrol_apprentices[1],
+                                                                        for_love_interest=True):
                         continue
 
             final_patrols.append(patrol)
@@ -579,7 +580,7 @@ class Patrol():
             else:
 
                 cat.die(body)
-                
+
             if len(self.patrol_event.history_text) >= 2:
                 self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
             else:
@@ -587,7 +588,8 @@ class Patrol():
 
             if len(patrol.patrol_cats) > 1:
                 for cat in patrol.patrol_cats:
-                    cat.get_injured("shock", lethal=False)
+                    if not cat.dead:
+                        cat.get_injured("shock", lethal=False)
 
         elif "disaster" in self.patrol_event.tags:
             for cat in self.patrol_cats:
@@ -638,7 +640,9 @@ class Patrol():
             "minor_injury": ["sprain", "sore", "bruises", "scrapes"],
             "blunt_force_injury": ["broken bone", "paralyzed", "head damage", "broken jaw"],
             "hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
-            "cold_injury": ["shivering", "frostbite"]
+            "cold_injury": ["shivering", "frostbite"],
+            "big_bite_injury": ["bite-wound", "broken bone", "torn pelt", "mangled leg", "mangled tail"],
+            "small_bite_injury": ["bite-wound", "torn ear", "torn pelt", "scrapes"]
         }
 
         possible_conditions = []
@@ -656,20 +660,20 @@ class Patrol():
             # conditions list
             if "injury" in self.patrol_event.tags:
                 for tag in self.patrol_event.tags:
-                    if tag in INJURIES and tag != 'shock':
+                    if tag in INJURIES:
                         possible_conditions.append(tag)
-                        break
+                        continue
                     elif tag in ILLNESSES:
                         possible_conditions.append(tag)
-                        break
+                        continue
                     elif tag in PERMANENT:
                         possible_conditions.append(tag)
-                        break
+                        continue
             # next we check if a list (y) has been tagged for and add that list to possible conditions
             for y in condition_lists:
                 if y in self.patrol_event.tags:
                     possible_conditions.extend(condition_lists[y])
-                    break
+                    continue
 
             # check for lethality
             if "non_lethal" in self.patrol_event.tags:
@@ -698,34 +702,28 @@ class Patrol():
                     else:
                         self.patrol_random_cat.death_event.append(f'This cat gained a scar while patrolling.')
 
-    # clan relations
     def handle_clan_relations(self, difference):
-        other_clan = patrol.other_clan
-        otherclan = game.clan.all_clans.index(other_clan)
-        clan_relations = int(game.clan.all_clans[otherclan].relations)
+        """
+        relations with other clans
+        """
         if "other_clan" in self.patrol_event.tags:
-            if patrol.success:
-                clan_relations += difference
-            else:
-                clan_relations += difference
-        game.clan.all_clans[otherclan].relations = clan_relations
+            other_clan = patrol.other_clan
+            change_clan_relations(other_clan, difference)
 
     def handle_mentor_app_pairing(self):
         for cat in self.patrol_cats:
             if cat.mentor in self.patrol_cats:
                 cat.patrol_with_mentor += 1
 
-    # reputation with outsiders
     def handle_reputation(self, difference):
-        reputation = game.clan.reputation
-        difference = int(difference)
-        if patrol.success:
-            reputation += difference
-        else:
-            reputation += difference
-        game.clan.reputation = reputation
+        """
+        reputation with outsiders
+        """
+        change_clan_reputation(difference)
 
     def handle_relationships(self):
+        n = 5
+
         romantic_love = 0
         platonic_like = 0
         dislike = 0
@@ -736,19 +734,47 @@ class Patrol():
 
         # change the values
         if "romantic" in self.patrol_event.tags:
-            romantic_love = 5
+            romantic_love = n
         if "platonic" in self.patrol_event.tags:
-            platonic_like = 5
+            platonic_like = n
         if "dislike" in self.patrol_event.tags:
-            dislike = 5
+            dislike = n
         if "respect" in self.patrol_event.tags:
-            admiration = 5
+            admiration = n
+        if "disrespect" in self.patrol_event.tags:
+            admiration = -abs(n)
         if "comfort" in self.patrol_event.tags:
-            comfortable = 5
+            comfortable = n
         if "jealous" in self.patrol_event.tags:
-            jealousy = 5
+            jealousy = n
         if "trust" in self.patrol_event.tags:
-            trust = 5
+            trust = n
+        if "distrust" in self.patrol_event.tags:
+            trust = -abs(n)
+
+        if self.success:
+            dislike = -abs(n)
+            jealousy = -abs(n)
+        elif "sacrificial" in self.patrol_event.tags:  # for when a cat risks themselves valiantly and still fails
+            admiration = 15
+            trust = 15
+        elif not self.success and "pos_fail" not in self.patrol_event.tags:
+            # default fail rel value loss
+
+            if "romantic" in self.patrol_event.tags:
+                romantic_love = -abs(n)
+            if "platonic" in self.patrol_event.tags:
+                platonic_like = -abs(n)
+            if "dislike" in self.patrol_event.tags:
+                dislike = n
+            if "respect" in self.patrol_event.tags:
+                admiration = -abs(n)
+            if "comfort" in self.patrol_event.tags:
+                comfortable = -abs(n)
+            if "jealous" in self.patrol_event.tags:
+                jealousy = n
+            if "trust" in self.patrol_event.tags:
+                trust = -abs(n)
 
         # this is just for prints, if it's still here later, just remove it
         changed = False
@@ -759,11 +785,10 @@ class Patrol():
             changed = True
 
         # affect the relationship
-        pl_rc = []
-        sc_rc = []
         all_cats = list(filter(lambda c: not c.dead and not c.outside, Cat.all_cats.values()))
         cat_ids = [cat.ID for cat in self.patrol_cats]
         r_c_id = self.patrol_random_cat.ID
+        sc_rc = []
         if self.patrol_stat_cat is not None:
             s_c_id = self.patrol_stat_cat.ID
             sc_rc = [self.patrol_stat_cat, self.patrol_random_cat]
@@ -776,506 +801,77 @@ class Patrol():
 
         if "clan_to_p_l" in self.patrol_event.tags:
             # whole clan gains relationship towards p_l
-            for cat in all_cats:
-                relationships = list(
-                    filter(lambda rel: rel.rel.cat_to.ID == p_l_id,
-                           list(cat.relationships.values())))
-                for rel in relationships:
-                    if cat.ID == p_l_id:
-                        continue
-                    if self.success:
-                        rel.romantic_love += romantic_love
-                        rel.platonic_like += platonic_like
-                        rel.dislike -= dislike
-                        rel.admiration += admiration
-                        rel.comfortable += comfortable
-                        rel.jealousy -= jealousy
-                        rel.trust += trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: +" + str(romantic_love) +
-                              " /Platonic: +" + str(platonic_like) +
-                              " /Dislike: -" + str(dislike) +
-                              " /Respect: +" + str(admiration) +
-                              " /Comfort: +" + str(comfortable) +
-                              " /Jealousy: -" + str(jealousy) +
-                              " /Trust: +" + str(trust)) if changed else print("No relationship change")
-                    elif not self.success:
-                        rel.romantic_love -= romantic_love
-                        rel.platonic_like -= platonic_like
-                        rel.dislike += dislike
-                        rel.comfortable -= comfortable
-                        rel.jealousy += jealousy
-                        if "distrust" in self.patrol_event.tags:
-                            rel.trust -= trust
-                        if "disrespect" in self.patrol_event.tags:
-                            rel.admiration -= admiration
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: -" + str(romantic_love) +
-                              " /Platonic: -" + str(platonic_like) +
-                              " /Dislike: +" + str(dislike) +
-                              " /Respect: -" + str(admiration) +
-                              " /Comfort: -" + str(comfortable) +
-                              " /Jealousy: +" + str(jealousy) +
-                              " /Trust: -" + str(trust)) if changed else print("No relationship change")
+            cats_to = [p_l_id]
+            cats_from = all_cats
 
         elif "clan_to_r_c" in self.patrol_event.tags and self.patrol_stat_cat is not None:
             # whole clan gains relationship towards s_c
-            for cat in all_cats:
-                relationships = list(
-                    filter(lambda rel: rel.cat_to.ID == s_c_id,
-                           list(cat.relationships.values())))
-                for rel in relationships:
-                    if cat.ID == s_c_id:
-                        continue
-                    if self.success:
-                        rel.romantic_love += romantic_love
-                        rel.platonic_like += platonic_like
-                        rel.dislike -= dislike
-                        rel.admiration += admiration
-                        rel.comfortable += comfortable
-                        rel.jealousy -= jealousy
-                        rel.trust += trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: +" + str(romantic_love) +
-                              " /Platonic: +" + str(platonic_like) +
-                              " /Dislike: -" + str(dislike) +
-                              " /Respect: +" + str(admiration) +
-                              " /Comfort: +" + str(comfortable) +
-                              " /Jealousy: -" + str(jealousy) +
-                              " /Trust: +" + str(trust)) if changed else print("No relationship change")
-                    elif not self.success:
-                        rel.romantic_love -= romantic_love
-                        rel.platonic_like -= platonic_like
-                        rel.dislike += dislike
-                        rel.comfortable -= comfortable
-                        rel.jealousy += jealousy
-                        if "disrespect" in self.patrol_event.tags:
-                            rel.admiration -= admiration
-                        if "distrust" in self.patrol_event.tags:
-                            rel.trust -= trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: -" + str(romantic_love) +
-                              " /Platonic: -" + str(platonic_like) +
-                              " /Dislike: +" + str(dislike) +
-                              " /Comfort: -" + str(comfortable) +
-                              " /Jealousy: +" + str(jealousy)) if changed else print("No relationship change")
+            cats_to = [s_c_id]
+            cats_from = all_cats
 
-        elif "clan_to_r_c" in self.patrol_event.tags:
+        elif "patrol_to_r_c" in self.patrol_event.tags:
             # whole clan gains relationship towards r_c
-            for cat in all_cats:
-                relationships = list(
-                    filter(lambda rel: rel.cat_to.ID == r_c_id,
-                           list(cat.relationships.values())))
-                for rel in relationships:
-                    if cat.ID == r_c_id:
-                        continue
-                    if self.success:
-                        rel.romantic_love += romantic_love
-                        rel.platonic_like += platonic_like
-                        rel.dislike -= dislike
-                        rel.admiration += admiration
-                        rel.comfortable += comfortable
-                        rel.jealousy -= jealousy
-                        rel.trust += trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: +" + str(romantic_love) +
-                              " /Platonic: +" + str(platonic_like) +
-                              " /Dislike: -" + str(dislike) +
-                              " /Respect: +" + str(admiration) +
-                              " /Comfort: +" + str(comfortable) +
-                              " /Jealousy: -" + str(jealousy) +
-                              " /Trust: +" + str(trust)) if changed else print("No relationship change")
-                    elif not self.success:
-                        rel.romantic_love -= romantic_love
-                        rel.platonic_like -= platonic_like
-                        rel.dislike += dislike
-                        rel.comfortable -= comfortable
-                        rel.jealousy += jealousy
-                        if "disrespect" in self.patrol_event.tags:
-                            rel.admiration -= admiration
-                        if "distrust" in self.patrol_event.tags:
-                            rel.trust -= trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: -" + str(romantic_love) +
-                              " /Platonic: -" + str(platonic_like) +
-                              " /Dislike: +" + str(dislike) +
-                              " /Comfort: -" + str(comfortable) +
-                              " /Jealousy: +" + str(jealousy)) if changed else print("No relationship change")
+            cats_to = [r_c_id]
+            cats_from = all_cats
 
         elif "patrol_to_p_l" in self.patrol_event.tags:
             # patrol gains relationship towards p_l
-            for cat in self.patrol_cats:
-                relationships = list(
-                    filter(lambda rel: rel.cat_to.ID == p_l_id,
-                           list(cat.relationships.values())))
-                for rel in relationships:
-                    if cat.ID == p_l_id:
-                        continue
-                    if self.success:
-                        rel.romantic_love += romantic_love
-                        rel.platonic_like += platonic_like
-                        rel.dislike -= dislike
-                        rel.admiration += admiration
-                        rel.comfortable += comfortable
-                        rel.jealousy -= jealousy
-                        rel.trust += trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: +" + str(romantic_love) +
-                              " /Platonic: +" + str(platonic_like) +
-                              " /Dislike: -" + str(dislike) +
-                              " /Respect: +" + str(admiration) +
-                              " /Comfort: +" + str(comfortable) +
-                              " /Jealousy: -" + str(jealousy) +
-                              " /Trust: +" + str(trust)) if changed else print("No relationship change")
-                    elif not self.success:
-                        rel.romantic_love -= romantic_love
-                        rel.platonic_like -= platonic_like
-                        rel.dislike += dislike
-                        rel.comfortable -= comfortable
-                        rel.jealousy += jealousy
-                        if "disrespect" in self.patrol_event.tags:
-                            rel.admiration -= admiration
-                        if "distrust" in self.patrol_event.tags:
-                            rel.trust -= trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: -" + str(romantic_love) +
-                              " /Platonic: -" + str(platonic_like) +
-                              " /Dislike: +" + str(dislike) +
-                              " /Comfort: -" + str(comfortable) +
-                              " /Jealousy: +" + str(jealousy)) if changed else print("No relationship change")
+            cats_to = [p_l_id]
+            cats_from = self.patrol_cats
 
         elif "patrol_to_r_c" in self.patrol_event.tags and self.patrol_stat_cat is not None:
             # patrol gains relationship towards s_c
-            for cat in self.patrol_cats:
-                relationships = list(
-                    filter(lambda rel: rel.cat_to.ID == s_c_id,
-                           list(cat.relationships.values())))
-                for rel in relationships:
-                    if cat.ID == s_c_id:
-                        continue
-                    if self.success:
-                        rel.romantic_love += romantic_love
-                        rel.platonic_like += platonic_like
-                        rel.dislike -= dislike
-                        rel.admiration += admiration
-                        rel.comfortable += comfortable
-                        rel.jealousy -= jealousy
-                        rel.trust += trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: +" + str(romantic_love) +
-                              " /Platonic: +" + str(platonic_like) +
-                              " /Dislike: -" + str(dislike) +
-                              " /Respect: +" + str(admiration) +
-                              " /Comfort: +" + str(comfortable) +
-                              " /Jealousy: -" + str(jealousy) +
-                              " /Trust: +" + str(trust)) if changed else print("No relationship change")
-                    elif not self.success:
-                        rel.romantic_love -= romantic_love
-                        rel.platonic_like -= platonic_like
-                        rel.dislike += dislike
-                        rel.comfortable -= comfortable
-                        rel.jealousy += jealousy
-                        if "disrespect" in self.patrol_event.tags:
-                            rel.admiration -= admiration
-                        if "distrust" in self.patrol_event.tags:
-                            rel.trust -= trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: -" + str(romantic_love) +
-                              " /Platonic: -" + str(platonic_like) +
-                              " /Dislike: +" + str(dislike) +
-                              " /Comfort: -" + str(comfortable) +
-                              " /Jealousy: +" + str(jealousy)) if changed else print("No relationship change")
+            cats_to = [s_c_id]
+            cats_from = self.patrol_cats
 
         elif "patrol_to_r_c" in self.patrol_event.tags:
             # patrol gains relationship towards r_c
-            for cat in self.patrol_cats:
-                relationships = list(
-                    filter(lambda rel: rel.cat_to.ID == r_c_id,
-                           list(cat.relationships.values())))
-                for rel in relationships:
-                    if cat.ID == r_c_id:
-                        continue
-                    if self.success:
-                        rel.romantic_love += romantic_love
-                        rel.platonic_like += platonic_like
-                        rel.dislike -= dislike
-                        rel.admiration += admiration
-                        rel.comfortable += comfortable
-                        rel.jealousy -= jealousy
-                        rel.trust += trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: +" + str(romantic_love) +
-                              " /Platonic: +" + str(platonic_like) +
-                              " /Dislike: -" + str(dislike) +
-                              " /Respect: +" + str(admiration) +
-                              " /Comfort: +" + str(comfortable) +
-                              " /Jealousy: -" + str(jealousy) +
-                              " /Trust: +" + str(trust)) if changed else print("No relationship change")
-                    elif not self.success:
-                        rel.romantic_love -= romantic_love
-                        rel.platonic_like -= platonic_like
-                        rel.dislike += dislike
-                        rel.admiration -= admiration
-                        rel.comfortable -= comfortable
-                        rel.jealousy += jealousy
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: -" + str(romantic_love) +
-                              " /Platonic: -" + str(platonic_like) +
-                              " /Dislike: +" + str(dislike) +
-                              " /Comfort: -" + str(comfortable) +
-                              " /Jealousy: +" + str(jealousy)) if changed else print("No relationship change")
+            cats_to = [r_c_id]
+            cats_from = self.patrol_cats
 
         elif "rel_two_apps" in self.patrol_event.tags:
             # two apps gain relationship towards each other
-            for cat in self.patrol_apprentices:
-                relationships = list(
-                    filter(lambda rel: rel.cat_to.ID in app_ids,
-                           list(cat.relationships.values())))
-                for rel in relationships:
-                    if cat.ID == rel.cat_to.ID:
-                        continue
-                    if self.success:
-                        rel.romantic_love += romantic_love
-                        rel.platonic_like += platonic_like
-                        rel.dislike -= dislike
-                        rel.admiration += admiration
-                        rel.comfortable += comfortable
-                        rel.jealousy -= jealousy
-                        rel.trust += trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: +" + str(romantic_love) +
-                              " /Platonic: +" + str(platonic_like) +
-                              " /Dislike: -" + str(dislike) +
-                              " /Respect: +" + str(admiration) +
-                              " /Comfort: +" + str(comfortable) +
-                              " /Jealousy: -" + str(jealousy) +
-                              " /Trust: +" + str(trust)) if changed else print("No relationship change")
-                    elif not self.success:
-                        rel.romantic_love -= romantic_love
-                        rel.platonic_like -= platonic_like
-                        rel.dislike += dislike
-                        rel.comfortable -= comfortable
-                        rel.jealousy += jealousy
-                        if "disrespect" in self.patrol_event.tags:
-                            rel.admiration -= admiration
-                        if "distrust" in self.patrol_event.tags:
-                            rel.trust -= trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: -" + str(romantic_love) +
-                              " /Platonic: -" + str(platonic_like) +
-                              " /Dislike: +" + str(dislike) +
-                              " /Comfort: -" + str(comfortable) +
-                              " /Jealousy: +" + str(jealousy)) if changed else print("No relationship change")
+            cats_to = app_ids
+            cats_from = self.patrol_apprentices
 
-        elif "clan_to_patrol" in self.patrol_event.tags:
+        elif "clan to patrol" in self.patrol_event.tags:
             # whole clan gains relationship towards patrol, but the cats IN the patrol do not gain this relationship value
-            for cat in all_cats:
-                relationships = list(
-                    filter(lambda rel: rel.cat_to.ID in cat_ids,
-                           list(cat.relationships.values())))
-                for rel in relationships:
-                    if cat.ID in cat_ids:
-                        continue
-                    if self.success:
-                        rel.romantic_love += romantic_love
-                        rel.platonic_like += platonic_like
-                        rel.dislike -= dislike
-                        rel.admiration += admiration
-                        rel.comfortable += comfortable
-                        rel.jealousy -= jealousy
-                        rel.trust += trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: +" + str(romantic_love) +
-                              " /Platonic: +" + str(platonic_like) +
-                              " /Dislike: -" + str(dislike) +
-                              " /Respect: +" + str(admiration) +
-                              " /Comfort: +" + str(comfortable) +
-                              " /Jealousy: -" + str(jealousy) +
-                              " /Trust: +" + str(trust)) if changed else print("No relationship change")
-                    elif not self.success:
-                        rel.romantic_love -= romantic_love
-                        rel.platonic_like -= platonic_like
-                        rel.dislike += dislike
-                        rel.comfortable -= comfortable
-                        rel.jealousy += jealousy
-                        if "disrespect" in self.patrol_event.tags:
-                            rel.admiration -= admiration
-                        if "distrust" in self.patrol_event.tags:
-                            rel.trust -= trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: -" + str(romantic_love) +
-                              " /Platonic: -" + str(platonic_like) +
-                              " /Dislike: +" + str(dislike) +
-                              " /Comfort: -" + str(comfortable) +
-                              " /Jealousy: +" + str(jealousy)) if changed else print("No relationship change")
+            cats_to = cat_ids
+            cats_from = all_cats
 
         elif "p_l_to_r_c" in self.patrol_event.tags:
             # p_l gains relationship with r_c and vice versa
-            for cat in pl_rc:
-                relationships = list(
-                    filter(lambda rel: rel.cat_to.ID in pl_rc_ids,
-                           list(cat.relationships.values())))
-                for rel in relationships:
-                    if cat.ID in cat_ids:
-                        continue
-                    if self.success:
-                        rel.romantic_love += romantic_love
-                        rel.platonic_like += platonic_like
-                        rel.dislike -= dislike
-                        rel.admiration += admiration
-                        rel.comfortable += comfortable
-                        rel.jealousy -= jealousy
-                        rel.trust += trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: +" + str(romantic_love) +
-                              " /Platonic: +" + str(platonic_like) +
-                              " /Dislike: -" + str(dislike) +
-                              " /Respect: +" + str(admiration) +
-                              " /Comfort: +" + str(comfortable) +
-                              " /Jealousy: -" + str(jealousy) +
-                              " /Trust: +" + str(trust)) if changed else print("No relationship change")
-                    elif not self.success:
-                        rel.romantic_love -= romantic_love
-                        rel.platonic_like -= platonic_like
-                        rel.dislike += dislike
-                        rel.comfortable -= comfortable
-                        rel.jealousy += jealousy
-                        if "disrespect" in self.patrol_event.tags:
-                            rel.admiration -= admiration
-                        if "distrust" in self.patrol_event.tags:
-                            rel.trust -= trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: -" + str(romantic_love) +
-                              " /Platonic: -" + str(platonic_like) +
-                              " /Dislike: +" + str(dislike) +
-                              " /Comfort: -" + str(comfortable) +
-                              " /Jealousy: +" + str(jealousy)) if changed else print("No relationship change")
+            cats_to = pl_rc_ids
+            cats_from = pl_rc
 
-        elif "s_c_to_r_c" in self.patrol_event.tags:
+        elif "s_c to r_c" in self.patrol_event.tags:
             # s_c gains relationship with r_c and vice versa
-            for cat in sc_rc:
-                relationships = list(
-                    filter(lambda rel: rel.cat_to.ID in sc_rc_ids,
-                           list(cat.relationships.values())))
-                for rel in relationships:
-                    if cat.ID in cat_ids:
-                        continue
-                    if self.success:
-                        rel.romantic_love += romantic_love
-                        rel.platonic_like += platonic_like
-                        rel.dislike -= dislike
-                        rel.admiration += admiration
-                        rel.comfortable += comfortable
-                        rel.jealousy -= jealousy
-                        rel.trust += trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: +" + str(romantic_love) +
-                              " /Platonic: +" + str(platonic_like) +
-                              " /Dislike: -" + str(dislike) +
-                              " /Respect: +" + str(admiration) +
-                              " /Comfort: +" + str(comfortable) +
-                              " /Jealousy: -" + str(jealousy) +
-                              " /Trust: +" + str(trust)) if changed else print("No relationship change")
-                    elif not self.success:
-                        rel.romantic_love -= romantic_love
-                        rel.platonic_like -= platonic_like
-                        rel.dislike += dislike
-                        rel.comfortable -= comfortable
-                        rel.jealousy += jealousy
-                        if "disrespect" in self.patrol_event.tags:
-                            rel.admiration -= admiration
-                        if "distrust" in self.patrol_event.tags:
-                            rel.trust -= trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: -" + str(romantic_love) +
-                              " /Platonic: -" + str(platonic_like) +
-                              " /Dislike: +" + str(dislike) +
-                              " /Comfort: -" + str(comfortable) +
-                              " /Jealousy: +" + str(jealousy)) if changed else print("No relationship change")
+            cats_to = sc_rc_ids
+            cats_from = sc_rc
 
         elif "rel_patrol" in self.patrol_event.tags:
             # whole patrol gains relationship with each other
-            for cat in self.patrol_cats:
-                relationships = list(
-                    filter(lambda rel: rel.cat_to.ID in cat_ids,
-                           list(cat.relationships.values())))
-                for rel in relationships:
-                    if cat.ID == rel.cat_to.ID:
-                        continue
-                    if self.success:
-                        rel.romantic_love += romantic_love
-                        rel.platonic_like += platonic_like
-                        rel.dislike -= dislike
-                        rel.admiration += admiration
-                        rel.comfortable += comfortable
-                        rel.jealousy -= jealousy
-                        rel.trust += trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: +" + str(romantic_love) +
-                              " /Platonic: +" + str(platonic_like) +
-                              " /Dislike: -" + str(dislike) +
-                              " /Respect: +" + str(admiration) +
-                              " /Comfort: +" + str(comfortable) +
-                              " /Jealousy: -" + str(jealousy) +
-                              " /Trust: +" + str(trust)) if changed else print("No relationship change")
-                    elif not self.success:
-                        rel.romantic_love -= romantic_love
-                        rel.platonic_like -= platonic_like
-                        rel.dislike += dislike
-                        rel.comfortable -= comfortable
-                        rel.jealousy += jealousy
-                        if "disrespect" in self.patrol_event.tags:
-                            rel.admiration -= admiration
-                        if "distrust" in self.patrol_event.tags:
-                            rel.trust -= trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: -" + str(romantic_love) +
-                              " /Platonic: -" + str(platonic_like) +
-                              " /Dislike: +" + str(dislike) +
-                              " /Comfort: -" + str(comfortable) +
-                              " /Jealousy: +" + str(jealousy)) if changed else print("No relationship change")
+            cats_to = cat_ids
+            cats_from = self.patrol_cats
 
         else:
-            # whole patrol gains relationship with each other / same as last one, makes this one happen if no other tags are added
-            for cat in self.patrol_cats:
-                relationships = list(
-                    filter(lambda rel: rel.cat_to.ID in cat_ids,
-                           list(cat.relationships.values())))
-                for rel in relationships:
-                    if cat.ID == rel.cat_to.ID:
-                        continue
-                    if self.success:
-                        rel.romantic_love += romantic_love
-                        rel.platonic_like += platonic_like
-                        rel.dislike -= dislike
-                        rel.admiration += admiration
-                        rel.comfortable += comfortable
-                        rel.jealousy -= jealousy
-                        rel.trust += trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: +" + str(romantic_love) +
-                              " /Platonic: +" + str(platonic_like) +
-                              " /Dislike: -" + str(dislike) +
-                              " /Respect: +" + str(admiration) +
-                              " /Comfort: +" + str(comfortable) +
-                              " /Jealousy: -" + str(jealousy) +
-                              " /Trust: +" + str(trust)) if changed else print("No relationship change")
-                    elif not self.success:
-                        rel.romantic_love -= romantic_love
-                        rel.platonic_like -= platonic_like
-                        rel.dislike += dislike
-                        rel.comfortable -= comfortable
-                        rel.jealousy += jealousy
-                        if "disrespect" in self.patrol_event.tags:
-                            rel.admiration -= admiration
-                        if "distrust" in self.patrol_event.tags:
-                            rel.trust -= trust
-                        print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
-                              "Romantic: -" + str(romantic_love) +
-                              " /Platonic: -" + str(platonic_like) +
-                              " /Dislike: +" + str(dislike) +
-                              " /Comfort: -" + str(comfortable) +
-                              " /Jealousy: +" + str(jealousy)) if changed else print("No relationship change")
+            # whole patrol gains relationship with each other
+            # same as last one, just makes this happen if no other rel tags are added
+            cats_to = cat_ids
+            cats_from = self.patrol_cats
+
+        # now change the values
+        change_relationship_values(
+            cats_to,
+            cats_from,
+            romantic_love,
+            platonic_like,
+            dislike,
+            admiration,
+            comfortable,
+            jealousy,
+            trust
+        )
 
     def add_new_cats(self, litter_choice):
         if "new_cat" in self.patrol_event.tags:
@@ -1463,12 +1059,13 @@ class PatrolEvent():
         self.history_text = history_text
 
         tags = [
-            "hunting", "small_prey", "big_prey", "training", "border", "med_cat", "herbs", 
-            "other_clan", "reputation", "fighting", "new_cat", "kits", "npc", 
+            "hunting", "small_prey", "big_prey", "training", "border", "med_cat", "herbs",
+            "other_clan", "reputation", "fighting", "new_cat", "kits", "npc",
             "death", "disaster", "multi_deaths", "cruel_season", "gone", "multi_gone", "disaster_gone",
             "romantic", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", "distrust", "disrespect",
-            "apprentice", "two_apprentices", "warrior", "no_app", "med_only", "no_leader", "no_deputy", "leader", "deputy", 
-            "clan_to_p_l", "clan_to_r_c", "patrol_to_p_l", "patrol_to_r_c", 
+            "apprentice", "two_apprentices", "warrior", "no_app", "med_only", "no_leader", "no_deputy", "leader",
+            "deputy",
+            "clan_to_p_l", "clan_to_r_c", "patrol_to_p_l", "patrol_to_r_c",
             "rel_two_apps", "p_l_to_r_c", "s_c_to_r_c", "clan_to_patrol", "rel_patrol",
             "all_lives", "poisoned"
 
