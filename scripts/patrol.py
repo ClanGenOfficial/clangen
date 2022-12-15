@@ -43,7 +43,7 @@ class Patrol():
             'very low', 'low', 'average', 'high', 'master', 'max'
         ]
 
-    def add_patrol_cats(self):
+    def add_patrol_cats(self, patrol_cats):
         self.patrol_cats.clear()
         self.patrol_names.clear()
         self.possible_patrol_leaders.clear()
@@ -53,7 +53,7 @@ class Patrol():
         self.patrol_apprentices.clear()
         self.patrol_total_experience = 0
         self.patrol_other_cats.clear()
-        for cat in game.switches['current_patrol']:
+        for cat in patrol_cats:
             self.patrol_cats.append(cat)
             self.patrol_names.append(str(cat.name))
             if cat.status != 'apprentice':
