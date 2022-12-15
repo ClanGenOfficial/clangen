@@ -1205,9 +1205,9 @@ class RelationshipScreen(Screens):
                 self.update_cat_page()
             elif event.ui_element == self.checkboxes["show_dead"]:
                 if game.settings['show dead relation']:
-                    game.settings['show dead relation'] = False
-                else:
                     game.settings['show dead relation'] = True
+                else:
+                    game.settings['show dead relation'] = False
                 self.update_checkboxes()
                 self.apply_cat_filter()
                 self.update_cat_page()
