@@ -3,7 +3,7 @@
         "patrol_id": "gen_bord_newcat1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["border", "new_cat", "reputation", "kits"],
+        "tags": ["border", "new_cat", "new_cat_adult", "reputation", "kits"],
         "intro_text": "Your patrol finds a loner who is interested in joining the Clan.",
         "success_text": [
                 "The patrol convinces the loner to join the Clan.",
@@ -26,7 +26,7 @@
         "patrol_id": "gen_bord_newcat2",
         "biome": "Any",
         "season": "Any",
-        "tags": ["border", "new_cat", "reputation", "kits"],
+        "tags": ["border", "new_cat", "new_cat_adult", "reputation", "kits"],
         "intro_text": "Your patrol finds a kittypet who is interested in joining the Clan.",
         "decline_text": "Your patrol decides not to confront the kittypet.",
         "chance_of_success": 40,
@@ -49,7 +49,7 @@
         "patrol_id": "gen_bord_newcat3",
         "biome": "Any",
         "season": "Any",
-        "tags": ["border", "new_cat", "reputation"],
+        "tags": ["border", "new_cat", "new_cat_majorinjury", "reputation"],
         "intro_text": "r_c finds a wounded cat near the thunderpath.",
         "success_text": [
             "The patrol brings the cat back to camp. Once nursed back to health, the cat decides to join the Clan."
@@ -72,7 +72,7 @@
         "patrol_id": "gen_bord_newkit1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["border", "new_cat", "reputation"],
+        "tags": ["border", "new_cat", "new_cat_kit", "reputation"],
         "intro_text": "r_c finds an abandoned kit whose mother is nowhere to be found.",
         "success_text": [
             "The kit is taken back to camp and nursed back to health."
@@ -95,7 +95,7 @@
         "patrol_id": "gen_med_newmed1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["border", "new_cat", "reputation", "med_cat", "kits"],
+        "tags": ["border", "new_cat", "new_cat_med", "reputation", "kits"],
         "intro_text": "r_c finds a loner who offers their healing skills in exchange for shelter.",
         "success_text": [
             "The new medicine cat is welcomed into the clan.",
@@ -153,7 +153,7 @@
                 "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. r_c sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help the queen joins c_n with their kits."
         ],
         "fail_text": [
-                "p_l follows the strange sounds on the wind and finds the bodies of a unknown queen, with her kits slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects."
+                "p_l follows the strange sounds on the wind and finds the body of a unknown queen, with her kits beside her slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects."
         ],
         "win_skills": ["None"],
         "win_trait": ["None"],
@@ -178,7 +178,7 @@
                 "It takes ages for p_l to pin point the sounds, but eventually they uncover the hidden birthing nest of a dead, cold queen, her newborn kits by her side. p_l makes sure the queen is given a vigil - as her kits grow, they'll have questions about her."
         ],
         "fail_text": [
-                "p_l follows the strange sounds on the wind and finds the bodies of a unknown queen, with her kits slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects."
+                "p_l follows the strange sounds on the wind and finds the body of a unknown queen, with her kits beside her slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects."
         ],
         "win_skills": ["None"],
         "win_trait": ["None"],
@@ -203,7 +203,7 @@
                 "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. p_l tries to make the queen eat some strengthening herbs, and slowly helps her back to camp. Thankful for the help the queen joins c_n with their kits."
         ],
         "fail_text": [
-                "p_l follows the strange sounds on the wind and finds the bodies of a unknown queen, with her kits slowly going cold. They cancel their patrol and return to camp, to get help sending these lost souls to StarClan."
+                "p_l follows the strange sounds on the wind and finds the body of a unknown queen, with her kits beside her slowly going cold. They cancel their patrol and return to camp, to get help sending these lost souls to StarClan."
         ],
         "win_skills": ["None"],
         "win_trait": ["None"],
@@ -228,7 +228,7 @@
                 "It takes ages for p_l to pin point the sounds, but eventually they uncover the hidden birthing nest of a dead, cold queen, her newborn kits by her side. p_l makes sure the queen is given a vigil - as her kits grow, they'll have questions about her."
         ],
         "fail_text": [
-                "p_l follows the strange sounds on the wind and finds the bodies of a unknown queen, with her kits slowly going cold. They cancel their patrol and return to camp, to get help sending these lost souls to StarClan."
+                "p_l follows the strange sounds on the wind and finds the bodies of a unknown queen, with her kits beside her slowly going cold. They cancel their patrol and return to camp, to get help sending these lost souls to StarClan."
         ],
         "win_skills": ["None"],
         "win_trait": ["None"],
@@ -253,7 +253,7 @@
                 "app1 follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. Panicking, they ask her to hold on just a little longer while they fetch help, and sprint for home, yowling in case any patrol is nearby to assist."
         ],
         "fail_text": [
-                "app1 follows the strange sounds on the wind and finds the bodies of a unknown queen, with her kits slowly going cold. They desperately try to save a kitten, but can't, and their mentor find them there sobbing hours later."
+                "app1 follows the strange sounds on the wind and finds the bodies of a unknown queen, with her kits beside her slowly going cold. They desperately try to save a kitten, but can't, and their mentor find them there sobbing hours later."
         ],
         "win_skills": ["None"],
         "win_trait": ["None"],
@@ -278,7 +278,7 @@
                 "It takes ages for app1 to pin point the sounds, but eventually they uncover the hidden birthing nest of a dead, cold queen, her newborn kits by her side. app1 vows to be the new kits family, to make sure they'll grow up loved and accepted."
         ],
         "fail_text": [
-                "app1 follows the strange sounds on the wind and finds the bodies of a unknown queen, with her kits slowly going cold. They desperately try to save a kitten, but can't, and their mentor find them there sobbing hours later."
+                "app1 follows the strange sounds on the wind and finds the bodies of a unknown queen, with her kits beside her slowly going cold. They desperately try to save a kitten, but can't, and their mentor find them there sobbing hours later."
         ],
         "win_skills": ["None"],
         "win_trait": ["None"],
@@ -357,21 +357,21 @@
     "patrol_id": "fst_border_noise1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["border", "battle_injury", "scar", "reputation"],
+    "tags": ["border", "battle_injury", "scar", "reputation", "new_cat"],
     "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from a nearby bush.",
     "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-            "p_l goes to check the bush and finds a loner sheepishly hiding inside.  It seems the stranger was thinking of asking to join the clan.  They're a bit intimidated though and, after speaking to p_l for a little while, they decide not to join.",
-            "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out!  None of the cats are quick enough to catch it, but at least the noise was nothing dangerous.",
-            "s_c takes the lead in checking the noise, and it's a good thing they did, because the moment they step closer to the bush a rogue comes springing out! s_c is quick to bat them away, hissing and spitting, before promptly chasing the rogue out of the territory.  It was hardly a fight, really. "
+        "p_l goes to check the bush and finds a loner sheepishly hiding inside. It seems the stranger was thinking of asking to join the clan.  They're a bit intimidated though and, after speaking to p_l for a little while, they decide not to join.",
+        "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out!  None of the cats are quick enough to catch it, but at least the noise was nothing dangerous.",
+        "s_c takes the lead in checking the noise, and it's a good thing they did, because the moment they step closer to the bush a rogue comes springing out! s_c is quick to bat them away, hissing and spitting, before promptly chasing the rogue out of the territory.  It was hardly a fight, really. "
     ],
     "fail_text": [
-            "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
-            "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry raccoon bursts from the bush!  s_c gets quite the scare, but thankfully the raccoon only wanted to get away from them and quickly runs off back into the undergrowth.",
-            null,
-            "p_l takes the lead in checking the source of the noise and comes face to face with a rogue hiding in the bush!  The rogue takes a swipe at p_l, but doesn't get much damage in before p_l retaliates and chases the intruder out c_n territory."
+        "p_l pads closer to the bush, intent on finding the source of the noise, only to come face to face with a skunk!  The poor cat ends up stinking for days after the unfortunate incident.",
+        "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry raccoon bursts from the bush!  s_c gets quite the scare, but thankfully the raccoon only wanted to get away from them and quickly runs off back into the undergrowth.",
+        null,
+        "p_l takes the lead in checking the source of the noise and comes face to face with a rogue hiding in the bush!  The rogue takes a swipe at p_l, but doesn't get much damage in before p_l retaliates and chases the intruder out c_n territory."
     ],
     "win_skills": ["good fighter", "great fighter", "excellent fighter"],
     "fail_trait": ["daring", "bold", "ambitious"],
