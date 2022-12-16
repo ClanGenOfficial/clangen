@@ -885,41 +885,38 @@ class Patrol():
         )
 
     def add_new_cats(self, litter_choice):
-        if "new_cat" in self.patrol_event.tags:
-            if self.patrol_event.patrol_id == "gen_gen_newkit1":  # new kit
+        tags = self.patrol_event.tags
+        if "new_cat" in tags:
+            if "new_cat_kit" in tags:  # new kit
                 backstory_choice = choice(['abandoned2', 'abandoned1', 'abandoned3'])
                 created_cats = self.create_new_cat(loner=False, loner_name=False, kittypet=choice([True, False]),
                                                    kit=True, backstory=backstory_choice)
 
-            if self.patrol_event.patrol_id in ["gen_gen_newcat1", "gen_gen_newcat3",
-                                               "gen_gen_lonerchase1"]:  # new loner
-                new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
-                                        'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
-                                        'tragedy_survivor'])
-                created_cats = self.create_new_cat(loner=True, kittypet=False, backstory=new_backstory)
-                new_cat = created_cats[0]
-                # add litter if the kits text is rolled
-                if litter_choice == True:
-                    new_backstory = 'outsider_roots2'
-                    created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
-                                                       litter=True, relevant_cat=new_cat)
-                    if new_cat.moons < 12:
-                        new_cat.moons = 16
-
-            elif self.patrol_event.patrol_id in ["gen_gen_newcat2", "gen_gen_newcat3"]:  # new kittypet
-                created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, kit=False, litter=False,
+            elif "new_cat_adult" in tags: 
+                if "kittypet" in self.patrol_event.patrol_id: # new kittypet
+                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, kit=False, litter=False,
                                                    relevant_cat=None,
                                                    backstory=choice(['kittypet1', 'kittypet2']))
-                new_cat = created_cats[0]
-                # add litter if the kits text is rolled
-                if litter_choice == True:
-                    new_backstory = 'outsider_roots2'
-                    created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
-                                                       litter=True, relevant_cat=new_cat)
-                    if new_cat.moons < 12:
-                        new_cat.moons = 16
+                    new_cat = created_cats[0]
+                    # add litter if the kits text is rolled
+                    if litter_choice == True:
+                        new_backstory = 'outsider_roots2'
+                        created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
+                                                        litter=True, relevant_cat=new_cat)
+                        
+                else: # new loner
+                    new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
+                                            'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
+                                            'tragedy_survivor'])
+                    created_cats = self.create_new_cat(loner=True, kittypet=False, backstory=new_backstory)
+                    new_cat = created_cats[0]
+                    # add litter if the kits text is rolled
+                    if litter_choice == True:
+                        new_backstory = 'outsider_roots2'
+                        created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
+                                                        litter=True, relevant_cat=new_cat)
 
-            elif self.patrol_event.patrol_id == "gen_gen_newmed1":  # new med cat
+            elif "new_cat_med" in tags:  # new med cat
                 new_backstory = choice(['medicine_cat', 'disgraced', 'loner1', 'loner2'])
                 created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, kit=False, litter=False,
                                                    med=True,
@@ -931,14 +928,50 @@ class Patrol():
                     new_backstory = 'outsider_roots2'
                     created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
                                                        litter=True, relevant_cat=new_cat)
+            elif "new_cat_queen" in tags:
+                kittypet = choice([True, False])
+                if kittypet is True:
+                    new_backstory=choice(['kittypet1', 'kittypet2'])
+                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, backstory=new_backstory)
+                else:
+                    new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
+                                            'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
+                                            'tragedy_survivor'])
+                    created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, backstory=new_backstory)
+                    new_cat = created_cats[0]
+                if "new_cat_kits" in tags:
+                    if "new_cat_newborn" in tags:
+                        new_backstory = 'outsider_roots2'
+                        created_cats = self.create_new_cat(loner=False, loner_name=True, backstory=new_backstory,
+                                                        litter=True, relevant_cat=new_cat, age='newborn')
+                    else:
+                        new_backstory = 'outsider_roots2'
+                        created_cats = self.create_new_cat(loner=False, loner_name=True, backstory=new_backstory,
+                                                        litter=True, relevant_cat=new_cat)
+                
+            elif "new_cat_kits" in tags:  # new kits
+                if "new_cat_newborn" in tags:
+                    created_cats = self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
+                                                        litter=True, age='newborn')
+                else:
+                    created_cats = self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
+                                                        litter=True)
+            
+            elif "new_cat_apprentice" in tags:
+                new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee',
+                                            'tragedy_survivor'])
+                created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, backstory=new_backstory,
+                                                age='young')                
+
 
     def create_new_cat(self,
                        loner=False,
-                       loner_name=False,
+                       loner_name=False, # loner name actually means kittypet name
                        kittypet=False,
                        kit=False,
                        litter=False,
                        med=False,
+                       age=None,
                        relevant_cat=None,
                        backstory=None,
                        other_clan=None):
@@ -948,17 +981,32 @@ class Patrol():
         status = "kitten"
         backstory = backstory
         other_clan = other_clan
+        tags = self.patrol_event.tags
+        gender = None
+        if "new_cat_tom" in tags:
+            gender == 'male'
+        if "new_cat_female" in tags:
+            gender == 'female'
 
-        age = randint(0, 5)
-        kp_name_chance = (1, 5)
         if not litter and not kit:
-            age = randint(6, 120)
-        if med:
-            age = randint(16, 120)
+            if age == 'young':
+                age = randint(6, 11)
+            elif age == 'old':
+                age = randint(100, 150)
+            else:
+                age = randint(12, 99)
+
+        if litter or kit:
+            if age == 'newborn':
+                age = 0
+            else:
+                age = randint(0, 5)
+
+        kp_name_chance = (1, 5)
 
         if (loner or kittypet) and not kit and not litter:
             if loner_name:
-                if loner and kp_name_chance == 1:
+                if loner and kp_name_chance != 1:
                     name = choice(names.normal_prefixes)
                 else:
                     name = choice(names.loner_names)
@@ -978,13 +1026,13 @@ class Patrol():
         for number in range(amount):
             new_cat = None
             if loner_name and a == 1:
-                new_cat = Cat(moons=age, prefix=name, status=status, gender=choice(['female', 'male']),
+                new_cat = Cat(moons=age, prefix=name, status=status, gender=gender if gender is not None else choice(['female', 'male']),
                               backstory=backstory)
             elif loner_name:
-                new_cat = Cat(moons=age, prefix=name, suffix=None, status=status, gender=choice(['female', 'male']),
+                new_cat = Cat(moons=age, prefix=name, suffix=None, status=status, gender=gender if gender is not None else choice(['female', 'male']),
                               backstory=backstory)
             else:
-                new_cat = Cat(moons=age, status=status, gender=choice(['female', 'male']), backstory=backstory)
+                new_cat = Cat(moons=age, status=status, gender=gender if gender is not None else choice(['female', 'male']), backstory=backstory)
             if skill:
                 new_cat.skill = skill
             if accessory:
@@ -1070,15 +1118,21 @@ class PatrolEvent():
         self.history_text = history_text
 
         tags = [
-            "hunting", "small_prey", "big_prey", "training", "border", "med_cat", "herbs",
-            "other_clan", "reputation", "fighting", "new_cat", "kits", "npc",
-            "death", "disaster", "multi_deaths", "cruel_season", "gone", "multi_gone", "disaster_gone",
+            "hunting", "small_prey", "big_prey", "training", "border", "med_cat", "herbs", 
+            "other_clan", "reputation", "fighting", 
+            "new_cat", "new_cat_med", "new_cat_queen", "new_cat_female", "new_cat_tom", "new_cat_neutered",
+            "new_cat_elder", "new_cat_majorinjury", "new_cat_kit", "new_cat_kits", "new_cat_newborn", 
+            "new_cat_apprentice", "new_cat_adult", 
+            "npc", "gone_cat"
+            "death", "disaster", "multi_deaths", "no_body", "cruel_season", "gone", "multi_gone", "disaster_gone",
             "romantic", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", "distrust", "disrespect",
-            "apprentice", "two_apprentices", "warrior", "no_app", "med_only", "no_leader", "no_deputy", "leader",
-            "deputy",
-            "clan_to_p_l", "clan_to_r_c", "patrol_to_p_l", "patrol_to_r_c",
+            "apprentice", "two_apprentices", "three_apprentices", "warrior", "no_app", "med_only", "no_leader", 
+            "no_deputy", "leader", "deputy", 
+            "clan_to_p_l", "clan_to_r_c", "patrol_to_p_l", "patrol_to_r_c", 
             "rel_two_apps", "p_l_to_r_c", "s_c_to_r_c", "clan_to_patrol", "rel_patrol",
-            "all_lives"
+            "sacrificial", "pos_fail", "no_change_fail", "no_change_success", "big_change",
+            "all_lives", "some_lives"
+
 
         ]
 
@@ -1133,7 +1187,9 @@ class PatrolEvent():
         # "p_l_to_r_c" is for specifically pl and rc gaining relationship with EACH OTHER
         # two apps gain relationship towards each other - "rel_two_apps"
         # whole clan gains relationship towards patrol - "clan_to_patrol"
-        # whole patrol gains relationship with each other - "rel_patrol" (also default, so if you don’t add any other tags, it goes to this. If you want this outcome, you don’t need to add any tags, this is just if you need to add one of the other tags)
+        # whole patrol gains relationship with each other - "rel_patrol" 
+        (also default, so if you don’t add any other tags, it goes to this. If you want this outcome, 
+        you don’t need to add any tags, this is just if you need to add one of the other tags)
         
         "romantic" < change romantic value
         "platonic" < change platonic value
@@ -1145,9 +1201,13 @@ class PatrolEvent():
          "distrust" < always decrease trust
         "disrespect" < always decrease respect
         
-        ^^^ On a success, the above tagged values will increase (or if values are dislike and jealousy, they will decrease).  On a fail, the tagged values will decrease (or if values are dislike and jealousy, they will increase)
+        ^^^ On a success, the above tagged values will increase (or if values are dislike and jealousy, 
+        they will decrease).  On a fail, the tagged values will decrease (or if values are dislike and jealousy, they will increase)
         
-        “sacrificial” is for fail outcomes where a cat valiantly sacrifices themselves for the clan (such as the single cat big dog patrol) this will give the tagged for group (“clan_to_r_c”, “patrol_to_r_c”, ect) a big boost to respect and trust in that cat even though they failed (if the cat survives lol) Other tagged for values will be disregarded for these fail outcomes.
+        “sacrificial” is for fail outcomes where a cat valiantly sacrifices themselves for the clan 
+        (such as the single cat big dog patrol) this will give the tagged for group (“clan_to_r_c”, “patrol_to_r_c”, ect) 
+        a big boost to respect and trust in that cat even though they failed (if the cat survives lol) Other tagged for values 
+        will be disregarded for these fail outcomes.
         “pos_fail” is for if you want the tagged relationship values to still be positive on a failure, rather than negative.
         
         “big_change” is for if you want the values to increment by a larger number.  This will make all tagged relationship values change by 10 instead of 5
