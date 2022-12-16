@@ -645,7 +645,7 @@ class AllegiancesScreen(Screens):
         if game.clan.leader is not None:
             if not game.clan.leader.dead and not game.clan.leader.exiled:
                 self.allegiance_list.append([
-                    'LEADER:',
+                    '<b><u>LEADER</u></b>',
                     f"{str(game.clan.leader.name)} - a {game.clan.leader.describe_cat()}"
                 ])
 
@@ -663,7 +663,7 @@ class AllegiancesScreen(Screens):
                             ['', '      Apprentices: ' + app_names[:-2]])
         if game.clan.deputy != 0 and game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.exiled:
             self.allegiance_list.append([
-                'DEPUTY:',
+                '<b><u>DEPUTY</u></b>',
                 f"{str(game.clan.deputy.name)} - a {game.clan.deputy.describe_cat()}"
             ])
 
@@ -680,7 +680,7 @@ class AllegiancesScreen(Screens):
                     self.allegiance_list.append(
                         ['', '      Apprentices: ' + app_names[:-2]])
         cat_count = self._extracted_from_screen_switches_24(
-            living_cats, 'medicine cat', 'MEDICINE CAT:')
+            living_cats, 'medicine cat', '<b><u>MEDICINE CATS</u></b>')
         queens = []
         for living_cat_ in living_cats:
             if str(living_cat_.status
@@ -698,7 +698,7 @@ class AllegiancesScreen(Screens):
             ) == 'warrior' and living_cat__.ID not in queens and not living_cat__.exiled:
                 if not cat_count:
                     self.allegiance_list.append([
-                        'WARRIORS:',
+                        '<b><u>WARRIORS</u></b>',
                         f"{str(living_cat__.name)} - a {living_cat__.describe_cat()}"
                     ])
                 else:
@@ -720,7 +720,7 @@ class AllegiancesScreen(Screens):
                             ['', '      Apprentices: ' + app_names[:-2]])
                 cat_count += 1
         if not cat_count:
-            self.allegiance_list.append(['WARRIORS:', ''])
+            self.allegiance_list.append(['<b><u>WARRIORS</u></b>', ''])
         cat_count = 0
         for living_cat___ in living_cats:
             if str(living_cat___.status) in [
@@ -728,7 +728,7 @@ class AllegiancesScreen(Screens):
             ]:
                 if cat_count == 0:
                     self.allegiance_list.append([
-                        'APPRENTICES:',
+                        '<b><u>APPRENTICES</u></b>',
                         f"{str(living_cat___.name)} - a {living_cat___.describe_cat()}"
                     ])
                 else:
@@ -738,13 +738,13 @@ class AllegiancesScreen(Screens):
                     ])
                 cat_count += 1
         if not cat_count:
-            self.allegiance_list.append(['APPRENTICES:', ''])
+            self.allegiance_list.append(['<b><u>APPRENTICES</u></b>', ''])
         cat_count = 0
         for living_cat____ in living_cats:
             if living_cat____.ID in queens:
                 if cat_count == 0:
                     self.allegiance_list.append([
-                        'QUEENS:',
+                        '<b><u>QUEENS</u></b>',
                         f"{str(living_cat____.name)} - a {living_cat____.describe_cat()}"
                     ])
                 else:
@@ -766,21 +766,32 @@ class AllegiancesScreen(Screens):
                         self.allegiance_list.append(
                             ['', '      Apprentices: ' + app_names[:-2]])
         if not cat_count:
-            self.allegiance_list.append(['QUEENS:', ''])
+            self.allegiance_list.append(['<b><u>QUEENS</u></b>', ''])
         cat_count = self._extracted_from_screen_switches_24(
-            living_cats, 'elder', 'ELDERS:')
+            living_cats, 'elder', '<b><u>ELDERS</u></b>')
         cat_count = self._extracted_from_screen_switches_24(
-            living_cats, 'kitten', 'KITS:')
+            living_cats, 'kitten', '<b><u>KITS</u></b>')
 
         #print(self.allegiance_list)
 
-        self.allegiance_box = pygame_gui.elements.UITextBox("\n".join(["".join(i) for i in self.allegiance_list]),
-                                                            pygame.Rect((50,150),(700,500)),
-                                                            object_id= get_text_box_theme("#allegiances_box"))
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((50,150),(700,500)))
+        self.ranks_box = pygame_gui.elements.UITextBox("\n".join([i[0] for i in self.allegiance_list]),
+                                                            pygame.Rect((0,0),(150,-1)),
+                                                            object_id= get_text_box_theme("#allegiances_box"),
+                                                       container=self.scroll_container)
+        self.cat_names_box = pygame_gui.elements.UITextBox("\n".join([i[1] for i in self.allegiance_list]),
+                                                            pygame.Rect((150,0),(550,-1)),
+                                                            object_id= get_text_box_theme("#allegiances_box"),
+                                                       container=self.scroll_container)
+        self.scroll_container.set_scrollable_area_dimensions((680,self.cat_names_box.rect[3]))
+        self.ranks_box.disable()
+        self.cat_names_box.disable()
 
     def exit_screen(self):
-        self.allegiance_box.kill()
-        del self.allegiance_box
+        self.ranks_box.kill()
+        self.cat_names_box.kill()
+        del self.ranks_box
+        del self.cat_names_box
         self.heading.kill()
         del self.heading
 
