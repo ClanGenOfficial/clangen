@@ -272,7 +272,7 @@ class UIRelationStatusBar():
             theme += "_dark"
 
         self.status_bar = pygame_gui.elements.UIStatusBar(relative_rect, object_id=theme)
-        self.status_bar.percent_full = percent_full
+        self.status_bar.percent_full = percent_full/100
 
         # Now to make the overlay
         overlay_path = "resources/images/"

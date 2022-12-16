@@ -296,8 +296,48 @@
     "misc":
         {
             "text_horiz_alignment": "left",
-            "padding": "(0,0)"
+            "padding": "0,0"
         }
+    },
+    "#save_text_box":
+    {
+        "colours":
+            {
+                "dark_bg": "#C5C5C5",
+                "normal_text": "#b30000"
+            },
+            "font":
+            {
+                "name": "nonosans",
+                "size": "14",
+                "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            },
+            "misc":
+            {
+                "border_width": "0",
+                "shadow_width": "0",
+                "text_horiz_alignment": "center",
+                "text_vert_alignment": "center"
+            }
+        },
+    "#game_mode_details":
+    {
+        "colours":
+            {
+                "dark_bg": "#00000000",
+                "normal_text": "#000000"
+            },
+        "font":
+            {
+                "name": "nonosans",
+                "size": "15",
+                "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            },
+        "misc":
+            {
+                "text_horiz_alignment": "left",
+                "padding": "20,20"
+            }
     }
 }
 
