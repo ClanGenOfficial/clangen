@@ -33,10 +33,7 @@
     "Twoleg kits scare the patrol away."
     ],
     "min_cats": 1,
-    "max_cats": 3,
-    "antagonize_text": "A Twoleg kit approaches the patrol, and they send it away squawking with it's blood on their claws.",
-    "antagonize_fail_text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
-    
+    "max_cats": 3
 },
 {
     "patrol_id": "bch_gen_hunt_twolegplace2",
@@ -55,15 +52,13 @@
         "Twoleg kits stomp through the sand dunes, scaring away prey and ruining the hunt."
     ],
     "min_cats": 4,
-    "max_cats": 6,
-    "antagonize_text": "Finding a Twoleg kit wandering alone, the cats harass it until it flees squawking, it's blood on their claws.",
-    "antagonize_fail_text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
+    "max_cats": 6
 },
 {
     "patrol_id": "bch_hunt_strange1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["hunting"],
+    "tags": ["hunting", "platonic", "trust"],
     "intro_text": "The patrol looks around for something to disguise their scent while hunting.",
     "decline_text": "On second thought, maybe not.",
     "chance_of_success": 50,
@@ -88,53 +83,25 @@
     "antagonize_fail_text": null
 },
 {
-    "patrol_id": "bch_hunt_strange1",
-    "biome": "beach",
-    "season": "Any",
-    "tags": ["hunting"],
-    "intro_text": "The patrol looks around for something to disguise their scent while hunting.",
-    "decline_text": "On second thought, maybe not.",
-    "chance_of_success": 50,
-    "exp": 20,
-    "success_text": [
-            "They can't think of anything that would work, but their hunt goes well regardless.",
-"A quick dip in seawater will do! The plan works and their hunt goes well.",
-"s_c leads them to some seaweed on the beach - it's not clean, but it's extremely effective, and the patrol hunts well.",
-"s_c tells the patrol to roll in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelts though."
-    ],
-    "fail_text": [
-            "The patrol finds nothing to disguise their scent, and no prey either.",
-"The patrol finds no prey; it seems like all the prey was scared off because of their stench!"
-    ],
-    "win_skills": ["very smart", "extremely smart"],
-    "win_trait": ["strange"],
-    "fail_skills": ["None"],
-    "fail_trait": ["None"],
-    "min_cats": 2,
-    "max_cats": 6,
-    "antagonize_text": null,
-    "antagonize_fail_text": null
-},
-{
     "patrol_id": "bch_hunt_solo1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["hunting", "apprentice", "minor_injury", "scar"],
-    "intro_text": "r_c's mentor assesses them by sending them on a solo hunt.",
-    "decline_text": "r_c asks their mentor to do the assessment some other time.",
+    "tags": ["hunting", "apprentice", "respect", "clan_to_r_c", "minor_injury", "scar"],
+    "intro_text": "app1's mentor assesses them by sending them on a solo hunt.",
+    "decline_text": "app1 asks their mentor to do the assessment some other time.",
     "chance_of_success": 40,
     "exp": 20,
     "success_text": [
-        "r_c manages a skillful catch, and brings it back to the camp to show everyone!",
-        "r_c focuses completely on their test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually they've caught enough to need their mentor's help carrying it back to camp, and the feeling seeing their prey stock the fresh-kill pile - they feel ready to burst with happiness!",
+        "app1 manages a skillful catch, and brings it back to the camp to show everyone!",
+        "app1 focuses completely on their test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually they've caught enough to need their mentor's help carrying it back to camp, and the feeling seeing their prey stock the fresh-kill pile - they feel ready to burst with happiness!",
         null,
         "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place and they pull off a perfect catch!"
     ],
     "fail_text": [
-        "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
+        "Hunting is poor, and while app1's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
         "s_c is too hasty, bouncing after first one prey, then another, and it ends with them empty pawed and exhausted. Their mentor is disappointed - they clearly need more training.",
         null,
-        "While on the hunt, r_c tumbles right down into a rock pool while their attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
+        "While on the hunt, app1 tumbles right down into a rock pool while their attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
     ],
     "win_skills": ["None"],
     "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "sneaky", "strange", "patient", "thoughtful", "wise"],
@@ -152,7 +119,7 @@
     "patrol_id": "bch_hunt_solo2",
     "biome": "beach",
     "season": "Any",
-    "tags": ["hunting"],
+    "tags": ["hunting", "warrior"],
     "intro_text": "r_c heads out along the coast alone, wanting to sink their teeth into some prey and have some time to themselves.",
     "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
     "chance_of_success": 40,
@@ -436,7 +403,7 @@
     "patrol_id": "bch_hunt_gonetwolegden1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["hunting", "gone", "small_prey"],
+    "tags": ["hunting", "gone", "small_prey", "warrior"],
     "intro_text": "r_c decides to hunt out near the Twoleg dens.",
     "decline_text": "On second thought, they decide to reline their nest today instead.",
     "chance_of_success": 50,
@@ -802,7 +769,7 @@
     "patrol_id": "bch_hunt_octopus2",
     "biome": "beach",
     "season": "Any",
-    "tags": ["hunting", "small_prey"],
+    "tags": ["hunting", "platonic", "comfort", "small_prey"],
     "intro_text": "As the patrol passes along the sand between the waves and some rockpools, they find one of the oddest things any of them have ever seen - an octopus on land. It's clearly trying to head for the ocean.",
     "decline_text": "A little impressed, a lot weirded out, the patrol decided to leave the poor creature alone.",
     "chance_of_success": 60,
@@ -928,7 +895,7 @@
     "patrol_id": "bch_hunt_heat1",
     "biome": "beach",
     "season": "greenleaf",
-    "tags": ["hunting", "big_prey", "rel_patrol", "platonic"],
+    "tags": ["hunting", "big_prey", "rel_patrol", "platonic", "no_change_fail"],
     "intro_text": "It's extremely hot out today, and the hunting patrol lingers around the ocean shore, where the spray from the waves keeps them cool.",
     "decline_text": "The patrol decides to head back to camp. They can hunt a different day.",
     "chance_of_success": 50,

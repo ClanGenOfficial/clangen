@@ -4,10 +4,9 @@ from math import ceil
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton
 from .base_screens import Screens, cat_profiles
 
-from .base_screens import Screens, draw_menu_buttons
+from .base_screens import Screens
 
-from scripts.game_structure.text import *
-from scripts.game_structure.buttons import buttons
+from scripts.game_structure.game_essentials import *
 from scripts.cat.cats import Cat
 from scripts.cat.sprites import tiles
 import scripts.game_structure.image_cache as image_cache
@@ -15,14 +14,12 @@ import scripts.game_structure.image_cache as image_cache
 
 class OutsideClanScreen(Screens):
 
-    # the amount of cats a page can hold is 20, so the amount of pages is cats/20
-    list_page = 1
-    display_cats = []
-    cat_names = []
+    list_page = 1  # Holds the current page
+    display_cats = []  # Holds the cat sprite objects
+    cat_names = []  # Holds the cat name text-box objects
 
-
-    search_bar_image = pygame.transform.scale(
-    pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
+    search_bar_image = pygame.transform.scale(pygame.image.load(
+        "resources/images/search_bar.png").convert_alpha(), (228, 34))
     previous_search_text = ""
 
     def handle_event(self, event):
@@ -30,9 +27,7 @@ class OutsideClanScreen(Screens):
             if event.ui_element == self.your_clan_button:
                 self.change_screen("list screen")
             elif event.ui_element in self.display_cats:
-                #print("cat pressed")
                 game.switches["cat"] = event.ui_element.return_cat_id()
-                #print(event.ui_element.return_cat_id())
                 self.change_screen('profile screen')
             elif event.ui_element == self.next_page_button:
                 self.list_page += 1
@@ -44,7 +39,7 @@ class OutsideClanScreen(Screens):
                 self.menu_button_pressed(event)
 
     def screen_switches(self):
-        #Determine the living, non-exiled cats. 
+        # Determine the living, exiled cats.
         self.living_cats = []
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
@@ -53,18 +48,20 @@ class OutsideClanScreen(Screens):
 
         self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525,142), (147,20)))
 
-        self.your_clan_button = UIImageButton(pygame.Rect((115,135),(34,34)),"",object_id = "#your_clan_button")
-        self.outside_clan_button =  UIImageButton(pygame.Rect((150,135),(34,34)),"",object_id = "#outside_clan_button")
+        self.your_clan_button = UIImageButton(pygame.Rect((115, 135), (34, 34)), "", object_id="#your_clan_button")
+        self.outside_clan_button = UIImageButton(pygame.Rect((150, 135),(34, 34)), "", object_id="#outside_clan_button")
         self.outside_clan_button.disable()
-        self.next_page_button = UIImageButton(pygame.Rect((456, 595),(34, 34)), "", object_id = "#arrow_right_button")
-        self.previous_page_button = UIImageButton(pygame.Rect((310, 595),(34, 34)), "", object_id = "#arrow_left_button")
-        self.page_number = pygame_gui.elements.UITextBox("",pygame.Rect((340,595),(110,30))) #Text will be filled in later
+        self.next_page_button = UIImageButton(pygame.Rect((456, 595), (34, 34)), "", object_id="#arrow_right_button")
+        self.previous_page_button = UIImageButton(pygame.Rect((310, 595), (34, 34)), "", object_id="#arrow_left_button")
+
+        # Text will be filled in later
+        self.page_number = pygame_gui.elements.UITextBox("", pygame.Rect((340, 595),(110, 30)))
 
         self.set_disabled_menu_buttons(["list_screen"])
         self.update_heading_text('<font size=4.0>Cats Outside The Clan</font>')
         self.show_menu_buttons()
 
-        self.update_search_cats("") #This will list all the cats, and create the button objects. 
+        self.update_search_cats("") # This will list all the cats, and create the button objects.
 
         cat_profiles()
     
@@ -77,7 +74,7 @@ class OutsideClanScreen(Screens):
         self.page_number.kill()
         self.search_bar.kill()
 
-        #Remove currently displayed cats and cat names. 
+        # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
             cat.kill()
 
@@ -86,7 +83,7 @@ class OutsideClanScreen(Screens):
         
 
     def update_search_cats(self, search_text):
-        '''Run this function when the search text changes, or when the screen is switched to.'''
+        """ Run this function when the search text changes, or when the screen is switched to."""
         self.current_listed_cats = []
         search_text = search_text.strip()
         if search_text != '':
@@ -103,14 +100,14 @@ class OutsideClanScreen(Screens):
 
         
     def update_page(self):
-        '''Run this function when page changes.'''
+        """Run this function when page changes."""
         
-        #If the number of pages becomes smaller than the number of our current page, set 
+        # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
         if self.list_page > self.all_pages:
             self.list_page = self.all_pages
 
-        #Handle which next buttons are clickable. 
+        # Handle which next buttons are clickable.
         if self.all_pages <= 1:
             self.previous_page_button.disable()
             self.next_page_button.disable()
@@ -129,14 +126,14 @@ class OutsideClanScreen(Screens):
                                                         str(self.all_pages) + "</font>",
                                                             pygame.Rect((340,595),(110,30)))
 
-        #Remove the images for currently listed cats
+        # Remove the images for currently listed cats
         for cat in self.display_cats:
             cat.kill()
 
         for name in self.cat_names:
             name.kill()
         
-        #Generate object for the current cats
+        # Generate object for the current cats
         pos_x = 0
         pos_y = 0
         print(self.current_listed_cats)
@@ -157,7 +154,7 @@ class OutsideClanScreen(Screens):
 
     def on_use(self):
 
-        #Only update the postions if the search text changes
+        # Only update the postions if the search text changes
         if self.search_bar.get_text() != self.previous_search_text:
             self.update_search_cats(self.search_bar.get_text())
         self.previous_search_text = self.search_bar.get_text()
@@ -167,6 +164,7 @@ class OutsideClanScreen(Screens):
             image_cache.load_image("resources/images/outside_clan_bg.png").convert_alpha(), (242, 35))
 
     def chunks(self, L, n): return [L[x: x+n] for x in range(0, len(L), n)]
+
 
 class MapScreen(Screens):
 
@@ -316,7 +314,8 @@ class MapScreen(Screens):
                             text='<< Back',
                             cur_screen=game.switches['last_screen'],
                             hotkey=[0])
-"""
+
+
     def screen_switches(self):
         try:
             game.map_info = load_map('saves/' + game.clan.name)
@@ -324,4 +323,3 @@ class MapScreen(Screens):
         except:
             game.map_info = load_map("Fallback")
             print("Default map loaded.")
-"""

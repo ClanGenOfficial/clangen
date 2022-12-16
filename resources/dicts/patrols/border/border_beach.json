@@ -3,7 +3,7 @@
     "patrol_id": "bch_bord_rogue1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["border", "fighting", "scar", "battle_injury", "reputation", "multi_deaths", "respect", "trust", "platonic"],
+    "tags": ["border", "fighting", "scar", "battle_injury", "reputation", "multi_deaths", "respect", "trust", "platonic", "no_change_fail"],
     "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the beach grass! An ambush!",
     "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
     "chance_of_success": 70,
@@ -100,10 +100,10 @@
     "patrol_id": "bch_bord_flashflood1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["border", "multi_deaths", "respect", "trust", "no_body"],
+    "tags": ["border", "multi_deaths", "respect", "trust", "no_change_fail", "no_body"],
     "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
     "decline_text": "Your patrol decides to head back early.",
-    "chance_of_success": 40,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
             "While it's pretty gray up there, the promised rain never comes.",
@@ -134,10 +134,10 @@
     "patrol_id": "bch_bord_flashflood2",
     "biome": "beach",
     "season": "Any",
-    "tags": ["border", "death", "respect", "trust", "no_body"],
+    "tags": ["border", "death", "respect", "trust", "no_change_fail", "no_body"],
     "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
     "decline_text": "Your patrol decides to head back early.",
-    "chance_of_success": 40,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
             "While it's pretty gray up there, the promised rain never comes.",
@@ -171,7 +171,7 @@
     "tags": ["border", "death", "blunt_force_injury", "water in their lungs", "injury", "no_body"],
     "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
     "decline_text": "Your patrol decides to head back early.",
-    "chance_of_success": 40,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
             "While it's pretty gray up there, the promised rain never comes.",
@@ -205,7 +205,7 @@
     "tags": ["border", "blunt_force_injury", "water in their lungs", "injury"],
     "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
     "decline_text": "Your patrol decides to head back early.",
-    "chance_of_success": 40,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
             "While it's pretty gray up there, the promised rain never comes.",
@@ -238,7 +238,7 @@
     "tags": ["border", "death", "big_prey", "no_body"],
     "intro_text": "As r_c crosses a beach, shivering with the cold, there's a creaking, rushing sound, like a wave - but out of sync with the ocean.",
     "decline_text": "r_c decides to head back early.",
-    "chance_of_success": 40,
+    "chance_of_success": 60,
     "exp": 20,
     "success_text": [
             "r_c leaps forward, dashing to the other side of the beach and up onto the rocks. They make in in time to watch the beach get lost under a tide of water from inland.",
@@ -272,7 +272,7 @@
     "tags": ["fighting", "battle_injury", "scar", "border", "death", "clan_to_patrol", "respect", "trust"],
     "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 30,
+    "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. r_c quickly hides themselves in the grass on the sand dunes and sets up an ambush that sends the rogue fleeing off c_n territory.",
@@ -306,7 +306,7 @@
     "tags": ["fighting", "battle_injury", "scar", "border", "death", "clan_to_patrol", "respect", "trust"],
     "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 30,
+    "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. r_c quickly hides themselves in the grass on the sand dunes and sets up an ambush that sends the rogue fleeing off c_n territory.",
@@ -340,7 +340,7 @@
     "tags": ["fighting", "battle_injury", "scar", "border", "apprentice", "death"],
     "intro_text": "While on patrol, app1 notices some suspicious pawprints in the wet sand on the beach.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 30,
+    "chance_of_success": 40,
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. app1 quickly hides themselves in the grass on the sand dunes, and sets up an ambush that lets them pretend to be a far bigger and more impressive fighter, sending the rogue fleeing off c_n territory.",
@@ -374,7 +374,7 @@
     "tags": ["fighting", "battle_injury", "scar", "border", "respect", "trust"],
     "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 50,
+    "chance_of_success": 70,
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
@@ -407,7 +407,7 @@
     "tags": ["fighting", "battle_injury", "scar", "border", "respect", "trust"],
     "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 50,
+    "chance_of_success": 70,
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
@@ -474,7 +474,7 @@
     "tags": ["fighting", "border", "respect", "trust"],
     "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 70,
+    "chance_of_success": 80,
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
@@ -504,7 +504,7 @@
     "tags": ["fighting", "border", "respect", "trust"],
     "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
     "decline_text": "They decide not to investigate.",
-    "chance_of_success": 70,
+    "chance_of_success": 80,
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",

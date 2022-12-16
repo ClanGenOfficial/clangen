@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 import sys
 import os
-from scripts.game_structure.text import verdana
-from scripts.game_structure.buttons import buttons
 from scripts.game_structure.load_cat import *
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
@@ -10,6 +8,7 @@ import pygame_gui
 import pygame
 # from scripts.world import load_map
 
+pygame.init()
 
 directory = os.path.dirname(__file__)
 if directory:
@@ -63,8 +62,6 @@ if not os.path.exists('saves/settings.txt'):
 game.load_settings()
 
 # reset brightness to allow for dark mode to not look crap
-verdana.change_text_brightness()
-buttons.change_button_brightness()
 sprites.load_scars()
 
 start_screen.screen_switches()
@@ -75,10 +72,6 @@ while True:
             screen.fill((57, 50, 36))
         else:
             screen.fill((206, 194, 168))
-
-    if game.settings_changed:
-        verdana.change_text_brightness()
-        buttons.change_button_brightness()
 
     mouse.check_pos()
 

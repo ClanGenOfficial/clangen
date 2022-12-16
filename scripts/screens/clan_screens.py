@@ -5,16 +5,16 @@ import pygame_gui
 
 from .base_screens import Screens, cat_profiles
 
-from scripts.game_structure.text import *
-from scripts.game_structure.buttons import buttons
 from scripts.cat.cats import Cat
-from scripts.game_structure.buttons import *
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton
-from scripts.utility import get_text_box_theme
+from scripts.utility import get_text_box_theme, update_sprite
+from scripts.game_structure import image_cache
+from scripts.game_structure.game_essentials import *
 
 
 class ClanScreen(Screens):
-    max_sprites_displayed = 400  # we don't want 100,000 sprites rendering at once.
+    max_sprites_displayed = 400 # we don't want 100,000 sprites rendering at once. 400 is enough.
+    cat_buttons = []
 
     def on_use(self):
         if game.settings['backgrounds']:
@@ -27,23 +27,14 @@ class ClanScreen(Screens):
             elif game.clan.current_season == 'Leaf-fall':
                 screen.blit(self.leaffall_bg, (0, 0))
 
-        verdana.text("Leader\'s Den", game.clan.cur_layout['leader den'])
+        '''verdana.text("Leader\'s Den", game.clan.cur_layout['leader den'])
         verdana.text('Medicine Cat Den', game.clan.cur_layout['medicine den'])
         verdana.text('Nursery', game.clan.cur_layout['nursery'])
         verdana.text('Clearing', game.clan.cur_layout['clearing'])
         verdana.text("Apprentices\' Den",
                      game.clan.cur_layout['apprentice den'])
         verdana.text("Warriors\' Den", game.clan.cur_layout['warrior den'])
-        verdana.text("Elders\' Den", game.clan.cur_layout['elder den'])
-
-        pygame.draw.rect(screen,
-                         color='gray',
-                         rect=pygame.Rect(320, 660, 160, 20))
-
-        if game.switches['saved_clan']:
-            verdana_green.text('Saved!', ('center', -20))
-        else:
-            verdana_red.text('Remember to save!', ('center', -20))
+        verdana.text("Elders\' Den", game.clan.cur_layout['elder den'])'''
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -52,12 +43,19 @@ class ClanScreen(Screens):
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
                 game.switches['saved_clan'] = True
+                self.update_buttons_and_text()
             if event.ui_element in self.cat_buttons:
                 # print("cat pressed")
                 game.switches["cat"] = event.ui_element.return_cat_id()
                 print(game.switches["cat"])
                 # print(event.ui_element.return_cat_id())
                 self.change_screen('profile screen')
+            if event.ui_element == self.label_toggle:
+                if game.settings['den labels']:
+                    game.settings['den labels'] = False
+                else:
+                    game.settings['den labels'] = True
+                self.update_buttons_and_text()
             else:
                 self.menu_button_pressed(event)
 
@@ -71,11 +69,34 @@ class ClanScreen(Screens):
         self.update_heading_text(f'{game.clan.name}Clan')
         self.show_menu_buttons()
 
-        # Creates and places the cat sprites.
-        self.cat_buttons = []  # To contain all the buttons.
+        # Den Labels
+        # Redo the locations, so that it uses layout on the clan page
+        self.warrior_den_label = pygame_gui.elements.UIImage(pygame.Rect((590, 430), (121, 28)),
+                                                             image_cache.load_image('resources/images/warrior_den.png'))
+        self.leader_den_label = pygame_gui.elements.UIImage(pygame.Rect((344, 94), (112, 28)),
+                                                            image_cache.load_image('resources/images/leader_den.png'))
+        self.med_den_label = pygame_gui.elements.UIImage(pygame.Rect((80, 200), (151, 28)),
+                                                            image_cache.load_image('resources/images/med_den.png'))
+        self.elder_den_label = pygame_gui.elements.UIImage(pygame.Rect((348, 490), (103, 28)),
+                                                         image_cache.load_image('resources/images/elder_den.png'))
+        self.nursery_label = pygame_gui.elements.UIImage(pygame.Rect((620, 200), (80, 28)),
+                                                           image_cache.load_image('resources/images/nursery_den.png'))
+        self.clearing_label = pygame_gui.elements.UIImage(pygame.Rect((360, 290), (81, 28)),
+                                                         image_cache.load_image('resources/images/clearing.png'))
+        self.app_den_label = pygame_gui.elements.UIImage(pygame.Rect((82, 430), (147, 28)),
+                                                         image_cache.load_image('resources/images/app_den.png'))
 
-        # We have to convert the positions to something pygame_gui buttons will understand
-        # This should be a temp solution. We should change the code that determines positions.
+        #Draw the toggle and text
+        self.label_toggle = UIImageButton(pygame.Rect((25, 641),(34, 34)), "", object_id="#checked_checkbox")
+        self.show_den_text = pygame_gui.elements.UITextBox("<font color=#000000>Show Den Labels</font>",
+                                                           pygame.Rect((60, 647), (145, 25)),
+                                                           object_id="#save_text_box")
+
+        # Creates and places the cat sprites.
+        self.cat_buttons = [] #To contain all the buttons. 
+
+        # We have to convert the postions to something pygame_gui buttons will understand
+        # This should be a temp solution. We should change the code that determines postions.
         i = 0
         for x in game.clan.clan_cats:
             i += 1
@@ -106,13 +127,39 @@ class ClanScreen(Screens):
 
         self.save_button = UIImageButton(pygame.Rect(((343, 625), (114, 30))), "", object_id="#save_button")
 
+        self.save_text = pygame_gui.elements.UITextBox("", pygame.Rect(320, 660, 160, 20),
+                                                       object_id="#save_text_box")
+        self.update_buttons_and_text()
+
     def exit_screen(self):
         # removes the cat sprites.
         for button in self.cat_buttons:
             button.kill()
         self.cat_buttons = []
 
-        self.save_button.kill()  # kill the save button.
+        # Kill all other elements, and destroy the reference so they aren't hanging around
+        self.save_button.kill()
+        del self.save_button
+        self.save_text.kill()
+        del self.save_text
+        self.warrior_den_label.kill()
+        del self.warrior_den_label
+        self.leader_den_label.kill()
+        del self.leader_den_label
+        self.med_den_label.kill()
+        del self.med_den_label
+        self.elder_den_label.kill()
+        del self.elder_den_label
+        self.nursery_label.kill()
+        del self.nursery_label
+        self.clearing_label.kill()
+        del self.clearing_label
+        self.app_den_label.kill()
+        del self.app_den_label
+        self.label_toggle.kill()
+        del self.label_toggle
+        self.show_den_text.kill()
+        del self.show_den_text
 
     def update_camp_bg(self):
         light_dark = "light"
@@ -228,7 +275,33 @@ class ClanScreen(Screens):
                         choice(p['apprentice place'])
                     ])
 
+    def update_buttons_and_text(self):
+        if game.switches['saved_clan']:
+            self.save_text.set_text("<font color=#006600>Saved!</font>")
+        else:
+            self.save_text.set_text("Remember to save!")
 
+        self.label_toggle.kill()
+        if game.settings['den labels']:
+            self.label_toggle = UIImageButton(pygame.Rect((25, 641),(34, 34)), "", object_id="#checked_checkbox")
+            self.warrior_den_label.show()
+            self.clearing_label.show()
+            self.nursery_label.show()
+            self.app_den_label.show()
+            self.leader_den_label.show()
+            self.med_den_label.show()
+            self.elder_den_label.show()
+        else:
+            self.label_toggle = UIImageButton(pygame.Rect((25, 641), (34, 34)), "", object_id="#unchecked_checkbox")
+            self.warrior_den_label.hide()
+            self.clearing_label.hide()
+            self.nursery_label.hide()
+            self.app_den_label.hide()
+            self.leader_den_label.hide()
+            self.med_den_label.hide()
+            self.elder_den_label.hide()
+
+    
 class StarClanScreen(Screens):
     list_page = 1
     display_cats = []
@@ -573,13 +646,17 @@ class AllegiancesScreen(Screens):
         for the_cat in Cat.all_cats.values():
             if not the_cat.dead and not the_cat.outside:
                 living_cats.append(the_cat)
+        living_meds = []
+        for the_cat in Cat.all_cats.values():
+            if the_cat.status == 'medicine cat' and not the_cat.dead\
+            and not the_cat.outside:
+                living_meds.append(the_cat)
 
         # Pull the clan leaders
-        leader = []
         if game.clan.leader is not None:
             if not game.clan.leader.dead and not game.clan.leader.outside:
                 self.allegiance_list.append([
-                    'LEADER:',
+                    'LEADER:    ',
                     f"{str(game.clan.leader.name)} - a {game.clan.leader.describe_cat()}"
                 ])
 
@@ -595,9 +672,10 @@ class AllegiancesScreen(Screens):
                             app_names += str(app.name) + ', '
                         self.allegiance_list.append(
                             ['', '      Apprentices: ' + app_names[:-2]])
+        # deputy
         if game.clan.deputy != 0 and game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.outside:
             game.allegiance_list.append([
-                'DEPUTY:',
+                '<b>DEPUTY:</b>    ',
                 f"{str(game.clan.deputy.name)} - a {game.clan.deputy.describe_cat()}"
             ])
 
@@ -613,8 +691,44 @@ class AllegiancesScreen(Screens):
                         app_names += str(app.name) + ', '
                     self.allegiance_list.append(
                         ['', '      Apprentices: ' + app_names[:-2]])
-        cat_count = self._extracted_from_screen_switches_24(
-            living_cats, 'medicine cat', 'MEDICINE CAT:')
+        # medcats
+        if game.clan.medicine_cat is not None and game.clan.med_cat_number == 1:
+            game.allegiance_list.append([
+                'MEDICINE CAT:    ',
+                f"{str(game.clan.medicine_cat.name)} - a {game.clan.medicine_cat.describe_cat()}"
+            ])
+            if len(game.clan.medicine_cat.apprentice) > 0:
+                if len(game.clan.medicine_cat.apprentice) == 1:
+                    self.allegiance_list.append([
+                        '', '      Apprentice: ' +
+                            str(game.clan.medicine_cat.apprentice[0].name)
+                    ])
+                else:
+                    app_names = ''
+                    for app in game.clan.medicine_cat.apprentice:
+                        app_names += str(app.name) + ', '
+                    self.allegiance_list.append(
+                        ['', '      Apprentices: ' + app_names[:-2]])
+        elif game.clan.medicine_cat is not None and game.clan.med_cat_number > 1:
+            self.allegiance_list.append([
+                    'MEDICINE CATS:'])
+            for living_cat__ in living_meds:
+                self.allegiance_list.append([
+                    f"    {str(living_cat__.name)} - a {living_cat__.describe_cat()}"
+                    ])
+                if len(living_cat__.apprentice) >= 1:
+                    if len(living_cat__.apprentice) == 1:
+                        self.allegiance_list.append([
+                            '', '      Apprentice: ' +
+                                str(living_cat__.apprentice[0].name)
+                        ])
+                    else:
+                        app_names = ''
+                        for app in living_cat__.apprentice:
+                            app_names += str(app.name) + ', '
+                        self.allegiance_list.append(
+                            ['', '      Apprentices: ' + app_names[:-2]])
+        cat_count = 0
         queens = []
         for living_cat_ in living_cats:
             if str(living_cat_.status
@@ -632,13 +746,13 @@ class AllegiancesScreen(Screens):
             ) == 'warrior' and living_cat__.ID not in queens and not living_cat__.outside:
                 if not cat_count:
                     self.allegiance_list.append([
-                        'WARRIORS:',
-                        f"{str(living_cat__.name)} - a {living_cat__.describe_cat()}"
+                        'WARRIORS:\n',
+                        f"    {str(living_cat__.name)} - a {living_cat__.describe_cat()}"
                     ])
                 else:
                     self.allegiance_list.append([
                         '',
-                        f"{str(living_cat__.name)} - a {living_cat__.describe_cat()}"
+                        f"    {str(living_cat__.name)} - a {living_cat__.describe_cat()}"
                     ])
                 if len(living_cat__.apprentice) >= 1:
                     if len(living_cat__.apprentice) == 1:
@@ -654,7 +768,7 @@ class AllegiancesScreen(Screens):
                             ['', '      Apprentices: ' + app_names[:-2]])
                 cat_count += 1
         if not cat_count:
-            self.allegiance_list.append(['WARRIORS:', ''])
+            self.allegiance_list.append(['WARRIORS: \n', ''])
         cat_count = 0
         for living_cat___ in living_cats:
             if str(living_cat___.status) in [
@@ -662,29 +776,29 @@ class AllegiancesScreen(Screens):
             ]:
                 if cat_count == 0:
                     self.allegiance_list.append([
-                        'APPRENTICES:',
-                        f"{str(living_cat___.name)} - a {living_cat___.describe_cat()}"
+                        'APPRENTICES: \n',
+                        f"    {str(living_cat___.name)} - a {living_cat___.describe_cat()}"
                     ])
                 else:
                     self.allegiance_list.append([
                         '',
-                        f"{str(living_cat___.name)} - a {living_cat___.describe_cat()}"
+                        f"    {str(living_cat___.name)} - a {living_cat___.describe_cat()}"
                     ])
                 cat_count += 1
         if not cat_count:
-            self.allegiance_list.append(['APPRENTICES:', ''])
+            self.allegiance_list.append(['APPRENTICES: \n', ''])
         cat_count = 0
         for living_cat____ in living_cats:
             if living_cat____.ID in queens:
                 if cat_count == 0:
                     self.allegiance_list.append([
-                        'QUEENS:',
-                        f"{str(living_cat____.name)} - a {living_cat____.describe_cat()}"
+                        'QUEENS:\n',
+                        f"    {str(living_cat____.name)} - a {living_cat____.describe_cat()}"
                     ])
                 else:
                     self.allegiance_list.append([
                         '',
-                        f"{str(living_cat____.name)} - a {living_cat____.describe_cat()}"
+                        f"    {str(living_cat____.name)} - a {living_cat____.describe_cat()}"
                     ])
                 cat_count += 1
                 if len(living_cat____.apprentice) > 0:
@@ -700,11 +814,11 @@ class AllegiancesScreen(Screens):
                         self.allegiance_list.append(
                             ['', '      Apprentices: ' + app_names[:-2]])
         if not cat_count:
-            self.allegiance_list.append(['QUEENS:', ''])
+            self.allegiance_list.append(['QUEENS:\n', ''])
         cat_count = self._extracted_from_screen_switches_24(
-            living_cats, 'elder', 'ELDERS:')
+            living_cats, 'elder', 'ELDERS:\n')
         cat_count = self._extracted_from_screen_switches_24(
-            living_cats, 'kitten', 'KITS:')
+            living_cats, 'kitten', 'KITS:\n')
 
         # print(self.allegiance_list)
 
