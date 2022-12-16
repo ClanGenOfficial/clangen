@@ -109,7 +109,7 @@ class EventsScreen(Screens):
             self.relationship_events_button.disable()
 
         self.events_list_box = pygame_gui.elements.UITextBox(self.display_events, pygame.Rect((100, 290), (600, 400)),
-                                                             object_id=get_text_box_theme())
+                                                             object_id=get_text_box_theme("#events_box"))
 
         # Display text
         # self.explain_text = pygame_gui.elements.UITextBox(self.display_text, pygame.Rect((25,110),(750,40)))
