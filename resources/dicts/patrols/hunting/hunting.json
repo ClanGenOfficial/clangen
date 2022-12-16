@@ -241,13 +241,13 @@
     "patrol_id": "gen_hunt_sneakprey1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["hunting", "trust", "respect", "disrespect", "distrust", "clan_to_r_c"],
+    "tags": ["hunting", "trust", "respect", "disrespect", "distrust", "no_app", "clan_to_r_c"],
     "intro_text": "r_c is tempted to eat the prey they just caught.",
     "decline_text": "r_c decides against breaking the warrior code",
     "chance_of_success": 50,
     "exp": 20,
     "success_text": [
-        "They eat the prey without anyone noticing.",
+        "They resist the temptation, going on to make a couple of great catches to make sure the elders are fed.",
         "After all, they have caught enough on this solo hunt that they won't be able to carry it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile."
     ],
     "fail_text": [
@@ -268,7 +268,7 @@
     "chance_of_success": 50,
     "exp": 20,
     "success_text": [
-        "They eat the prey without anyone noticing.",
+        "They resist the temptation, going on to make a couple of great catches to make sure the elders are fed.",
         "After all, they have caught enough on this solo hunt that they won't be able to carry it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile."
     ],
     "fail_text": [
@@ -283,13 +283,13 @@
     "patrol_id": "gen_hunt_sneakprey3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["hunting", "trust", "dislike", "respect", "disrespect", "distrust", "clan_to_r_c", "patrol_to_r_c"],
+    "tags": ["hunting", "trust", "dislike", "respect", "disrespect", "distrust", "no_app", "clan_to_r_c", "patrol_to_r_c"],
     "intro_text": "r_c is tempted to eat the prey they just caught.",
     "decline_text": "r_c decides against breaking the warrior code",
     "chance_of_success": 50,
     "exp": 20,
     "success_text": [
-        "They eat the prey without anyone noticing.",
+        "They resist the temptation, going on to make a couple of great catches to make sure the elders are fed.",
         "After all, the patrol has caught enough on this hunt that they'll have trouble carrying it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile."
     ],
     "fail_text": [
