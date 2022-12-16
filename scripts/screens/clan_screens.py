@@ -802,8 +802,10 @@ class AllegiancesScreen(Screens):
     def exit_screen(self):
         self.ranks_box.kill()
         self.cat_names_box.kill()
+        self.scroll_container.kill()
         del self.ranks_box
         del self.cat_names_box
+        del self.scroll_container
         self.heading.kill()
         del self.heading
 
