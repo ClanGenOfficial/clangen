@@ -210,7 +210,7 @@
     "tags": ["fighting", "border", "new_cat", "disaster"],
     "intro_text": "Your patrol hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
     "decline_text": "Your patrol decides not to investigate.",
-    "chance_of_success": 40,
+    "chance_of_success": 70,
     "exp": 30,
     "success_text": [
             "It's just an odd loner singing to themselves. The patrol greets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
@@ -244,7 +244,7 @@
     "tags": ["fighting", "border", "new_cat", "disaster"],
     "intro_text": "r_c hears some odd noises coming from an abandoned Twoleg nest out on the plains.",
     "decline_text": "Your patrol decides not to investigate.",
-    "chance_of_success": 10,
+    "chance_of_success": 30,
     "exp": 30,
     "success_text": [
             "It's just an odd loner singing to themselves. r _cgreets them, and as the loner isn't inside c_n territory, it's a polite interaction without any hostility.",
