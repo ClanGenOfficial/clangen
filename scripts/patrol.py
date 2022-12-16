@@ -596,7 +596,19 @@ class Patrol():
                 cat.experience += self.patrol_event.exp
                 cat.experience = min(cat.experience, 80)
                 if cat.status == 'leader':
-                    game.clan.leader_lives -= 10
+                    if 'all_lives' in self.patrol_event.tags:
+                        game.clan.leader_lives -= 10
+                    elif "some_lives" in self.patrol_event.tags:
+                        if game.clan.leader_lives > 2:
+                            current_lives = int(game.clan.leader_lives)
+                            game.clan.leader_lives -= random.randrange(1, current_lives - 1)
+                            cat.die(body)
+                        else:
+                            game.clan.leader_lives -= 1
+                            cat.die(body)
+                    else:
+                        game.clan.leader_lives -= 1
+                        cat.die(body)
                 if len(self.patrol_event.history_text) >= 2:
                     self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
                 else:
