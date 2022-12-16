@@ -518,3 +518,17 @@ def update_sprite(cat):
     # update class dictionary
     cat.all_cats[cat.ID] = cat
     game.switches['error_message'] = ''
+
+
+def get_text_box_theme(themename = ""):
+    """Updates the name of the theme based on dark or light mode"""
+    if game.settings['dark mode']:
+        if themename == "":
+            return "#default_dark"
+        else:
+            return themename + "_dark"
+    else:
+        if themename == "":
+            return "text_box"
+        else:
+            return themename
