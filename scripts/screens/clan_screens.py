@@ -716,7 +716,7 @@ class AllegiancesScreen(Screens):
                 else:
                     self.allegiance_list.append([
                         '',
-                        f"    {str(living_cat__.name)} - a {living_cat__.describe_cat()}"
+                        f"{str(living_cat__.name)} - a {living_cat__.describe_cat()}"
                     ])
                 if len(living_cat__.apprentice) >= 1:
                     if len(living_cat__.apprentice) == 1:
@@ -746,7 +746,7 @@ class AllegiancesScreen(Screens):
                 else:
                     self.allegiance_list.append([
                         '',
-                        f"    {str(living_cat___.name)} - a {living_cat___.describe_cat()}"
+                        f"{str(living_cat___.name)} - a {living_cat___.describe_cat()}"
                     ])
                 cat_count += 1
         if not cat_count:
@@ -762,7 +762,7 @@ class AllegiancesScreen(Screens):
                 else:
                     self.allegiance_list.append([
                         '',
-                        f"    {str(living_cat____.name)} - a {living_cat____.describe_cat()}"
+                        f"{str(living_cat____.name)} - a {living_cat____.describe_cat()}"
                     ])
                 cat_count += 1
                 if len(living_cat____.apprentice) > 0:
