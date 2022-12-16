@@ -802,6 +802,8 @@ class AllegiancesScreen(Screens):
                                                             object_id= get_text_box_theme("#allegiances_box"),
                                                        container=self.scroll_container)
         self.scroll_container.set_scrollable_area_dimensions((680,self.cat_names_box.rect[3]))
+        self.ranks_box.disable()
+        self.cat_names_box.disable()
 
     def exit_screen(self):
         self.ranks_box.kill()
