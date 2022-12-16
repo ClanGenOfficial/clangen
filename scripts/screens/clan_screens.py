@@ -691,13 +691,7 @@ class AllegiancesScreen(Screens):
                         app_names += str(app.name) + ', '
                     self.allegiance_list.append(
                         ['', '      Apprentices: ' + app_names[:-2]])
-        if game.clan.med_cat_number <= 1:
-            cat_count = self._extracted_from_screen_switches_24(
-            living_cats, 'medicine cat', '<b><u>MEDICINE CAT</u></b>')
-        else:
-            for living_cat__ in living_cats:
-                if str(living_cat__.status) == 'medicine cat' and not living_cat__.outside:
-                    cat_count = self._extracted_from_screen_switches_24(
+        cat_count = self._extracted_from_screen_switches_24(
             living_cats, 'medicine cat', '<b><u>MEDICINE CATS</u></b>')
         queens = []
         for living_cat_ in living_cats:
@@ -738,7 +732,7 @@ class AllegiancesScreen(Screens):
                             ['', '      Apprentices: ' + app_names[:-2]])
                 cat_count += 1
         if not cat_count:
-            self.allegiance_list.append(['WARRIORS: \n', ''])
+            self.allegiance_list.append(['<b><u>WARRIORS</u></b>', ''])
         cat_count = 0
         for living_cat___ in living_cats:
             if str(living_cat___.status) in [
@@ -756,7 +750,7 @@ class AllegiancesScreen(Screens):
                     ])
                 cat_count += 1
         if not cat_count:
-            self.allegiance_list.append(['APPRENTICES: \n', ''])
+            self.allegiance_list.append(['<b><u>APPRENTICES</u></b>', ''])
         cat_count = 0
         for living_cat____ in living_cats:
             if living_cat____.ID in queens:
