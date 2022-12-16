@@ -782,7 +782,7 @@ class Patrol():
         if "disrespect" in self.patrol_event.tags:
             admiration = -n
 
-        # affect the relationship
+        # collect the needed IDs and lists
         all_cats = list(filter(lambda c: not c.dead and not c.outside, Cat.all_cats.values()))
         cat_ids = [cat.ID for cat in self.patrol_cats]
         r_c_id = self.patrol_random_cat.ID
@@ -833,7 +833,7 @@ class Patrol():
             cats_from = self.patrol_apprentices
 
         elif "clan to patrol" in self.patrol_event.tags:
-            # whole clan gains relationship towards patrol, but the cats IN the patrol do not gain this relationship value
+            # whole clan gains relationship towards patrol, the cats IN the patrol do not gain this relationship value
             cats_to = cat_ids
             cats_from = all_cats
 

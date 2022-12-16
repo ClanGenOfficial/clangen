@@ -469,6 +469,8 @@ class Relation_Events():
                 event_list.append(choice(possible_events[2:]))  # limit possible events to those not mentioned med cats
             else:
                 event_list.append(choice(possible_events))
+            if cat.status == 'leader':
+                game.clan.leader_lives -= 1
             cat.die()
         else:  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
