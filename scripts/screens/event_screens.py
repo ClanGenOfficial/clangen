@@ -10,8 +10,6 @@ from scripts.utility import draw, get_text_box_theme
 from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.game_essentials import *
 
-
-
 class EventsScreen(Screens):
     event_display_type = "clan events"
     clan_events = ""
@@ -156,69 +154,6 @@ class EventsScreen(Screens):
 
 
 '''class SingleEventScreen(Screens):
-
-    def text_adjust(self, text, size=1):
-        """
-        set text parameter to whichever patrol text you want to change (i.e. intro_text, success_text, ect.)
-        always set size to patrol_size
-        """
-        vowels = ['A', 'E', 'I', 'O', 'U']
-        if size == 1:
-            text = text.replace('Your patrol',
-                                            str(patrol.patrol_leader.name))
-            text = text.replace('The patrol',
-                                            str(patrol.patrol_leader.name))
-        text = text.replace('r_c', str(patrol.patrol_random_cat.name))
-        text = text.replace('p_l', str(patrol.patrol_leader.name))
-        text = text.replace('app1', str(patrol.app1_name))
-        text = text.replace('app2', str(patrol.app2_name))
-
-        if patrol.patrol_stat_cat is not None:
-            text = text.replace('s_c', str(patrol.patrol_stat_cat.name))
-
-        other_clan_name = patrol.other_clan.name
-        s = 0
-        text = re.sub(r".,'?!", '', text)
-        for x in range(text.count('o_c_n')):
-            index = text.index('o_c_n', s)
-            for y in vowels:
-                if str(other_clan_name).startswith(y):
-                    modify = text.split()
-                    pos = modify.index('o_c_n')
-                    if modify[pos-1] == 'a':
-                        modify.remove('a')
-                        modify.insert(pos-1, 'an')
-                    text = " ".join(modify)
-                    break
-            s += index + 3
-
-        text = text.replace('o_c_n', str(other_clan_name) + 'Clan')
-
-        clan_name = game.clan.name
-        s = 0
-        pos = 0
-        for x in range(text.count('c_n')):
-            index = text.index('c_n', s)
-            for y in vowels:
-                if str(clan_name).startswith(y):
-                    modify = text.split()
-                    if 'c_n' in modify:
-                        pos = modify.index('c_n')
-                    elif "c_n's" in modify:
-                        pos = modify.index("c_n's")
-                    if 'c_n.' in modify:
-                        pos = modify.index('c_n.')
-                    if modify[pos-1] == 'a':
-                        modify.remove('a')
-                        modify.insert(pos-1, 'an')
-                    text = " ".join(modify)
-                    break
-            s += index + 3
-
-        text = text.replace('c_n', str(game.clan.name) + 'Clan')
-
-
-        return text
 
     def on_use(self):
         # LAYOUT
