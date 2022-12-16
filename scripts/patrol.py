@@ -254,12 +254,14 @@ class Patrol():
 
             # makes sure at least one warrior is present
             if "warrior" in patrol.tags:
-                if ("warrior" or "deputy" or "leader") not in self.patrol_statuses:
+                warrior = ["warrior", "deputy", "leader"]
+                if not any(status in self.patrol_statuses for status in warrior):
                     continue
 
             # makes sure there's a med in a med patrol
             if "med_cat" in patrol.tags:
-                if ("medicine cat" or "medicine cat apprentice") not in self.patrol_statuses:
+                med = ["medicine cat", "medicine cat apprentice"]
+                if not any(status in self.patrol_statuses for status in med):
                     continue
 
             # makes sure no apps are present if they're not supposed to be
@@ -270,7 +272,8 @@ class Patrol():
 
             # makes sure no warriors/warrior apps are present. for med patrols
             if "med_only" in patrol.tags:
-                if ("leader" or "deputy" or "warrior" or "apprentice") in self.patrol_statuses:
+                non_med = ["leader", "deputy", "warrior", "apprentice"]
+                if any(status in self.patrol_statuses for status in non_med):
                     continue
 
             # makes sure the leader isn't present if they're not supposed to be

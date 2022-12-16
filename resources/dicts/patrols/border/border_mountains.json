@@ -390,6 +390,60 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_bord_shortswim1",
+    "biome": "mountain",
+    "season": "greenleaf",
+    "tags": ["border"],
+    "intro_text": "r_c looks at the small stream they have to cross to continue on to mark the border, and debates if they should stop for a quick swim to cool off.",
+    "decline_text": "r_c decides to continue with the patrol instead.",
+    "chance_of_success": 50,
+    "exp": 5,
+    "success_text": [
+            "They stop to swim for a few moments and feel rejuvenated, cooled and ready to continue.",
+            null,
+            null,
+            "They keep going, responsibly, although instead of leaping the little stream r_c wades through it, letting the icy mountain water cool their paws pleasantly."
+    ],
+    "fail_text": [
+            "They get distracted while splashing in the water. r_c swears they saw a fish, but it derails their border patrol completely and they get nothing done."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["responsible", "thoughtful", "loyal", "righteous", "cold", "strict"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+"patrol_id": "mtn_bord_story1",
+"biome": "mountainous",
+"season": "Any",
+"tags": ["border", "platonic", "comfort", "respect", "rel_patrol", "patrol_to_r_c"],
+"intro_text": "On their way to mark the far corners of their mountain, r_c starts telling a story of their ancestors to keep every cat entertained.",
+"decline_text": "A shadow flies over them, and r_c’s storytelling is forgotten as the patrol makes sure it wasn’t an eagle.",
+"chance_of_success": 60,
+"exp": 20,
+"success_text": [
+        "It keeps the cats' minds off their sore pads and the sharp stones they walk on. The patrol goes quickly and easily.",
+        null,
+        "s_c spins a story, vivid and engaging, telling the tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, it really emphasizes the importance of the patrol and motivates everyone.",
+        "It's a fantastic idea, making the patrol fly by as cats chat and laugh with their clanmates, and everyone ends the day feeling much closer to each other."
+],
+"fail_text": [
+        "The rocky terrain is too rough to keep up a story, and eventually r_c peters out, breathless and panting.",
+        "s_c takes r_c aside, and reminds them coldly to focus on their duties."
+],
+"win_skills": ["good speaker", "great speaker", "excellent speaker"],
+"win_trait": ["charismatic", "childish", "playful", "empathetic", "loving", "patient"],
+"fail_skills": ["None"],
+"fail_trait": ["cold", "strict", "righteous", "responsible", "thoughtful", "wise"],
+"min_cats": 3,
+"max_cats": 6,
+"antagonize_text": null,
+"antagonize_fail_text": null
 }
-
 ]

@@ -34,7 +34,7 @@
     "patrol_id": "bch_train_stuck1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "p_l_to_r_c", "s_c to r_c", "patrol_to_p_l", "patrol_to_r_c"],
+    "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "no_change_fail", "p_l_to_r_c", "s_c to r_c", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "Trailing behind the patrol, the dune they're crossing shifts beneath r_c's paws. They look around wildly for safe footing - just as the sand caves in beneath them and the world goes dark.",
     "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
     "chance_of_success": 90,
@@ -221,7 +221,7 @@
     "patrol_id": "bch_train_elephantseal1",
     "biome": "beach",
     "season": "newleaf",
-    "tags": ["training", "apprentice", "platonic", "comfort", "respect", "warrior"],
+    "tags": ["training", "apprentice", "platonic", "comfort", "respect", "warrior", "no_change_fail"],
     "intro_text": "As the sun creeps over the horizon, p_l leads the patrol carefully towards a familiar beach, stopping the cats on the clifftop. Below them, the familiar sand is hidden under a mass of boulders, as long as twenty cats and as wide as ten.",
     "decline_text": "They return to camp to report the new beach layout.",
     "chance_of_success": 90,
@@ -396,7 +396,6 @@
             "app1 finds a shell that shines with a brilliant internal sheen. Picking it up, they shyly present it to app2, wondering if app2 might like it for their nest. Blushing to the tips of their ears, app2 accepts their gift."
     ],
     "fail_text": [
-            "The cats settle down for a nap instead of exploring, tired from their training and searching for a peaceful place where no one will ask them to kitsit.",
             "app1 tries to give app2 a shell, but they don't want it, and the crestfallen apprentice slinks off sadly."
     ],
     "win_skills": ["None"],
@@ -440,7 +439,7 @@
     "patrol_id": "bch_train_biolumin1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["training", "warrior", "romantic", "platonic", "comfort", "no_app"],
+    "tags": ["training", "warrior", "romantic", "platonic", "comfort", "no_app", "no_change_fail"],
     "intro_text": "As p_l and r_c wander across the beach with only the stars to light their way, they notices sparkles of light where the waves break upon the shore.",
     "decline_text": "A little freaked out, the warriors go to fetch a medicine cat to interpret this omen for them.",
     "chance_of_success": 80,
