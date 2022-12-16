@@ -288,7 +288,7 @@ class Patrol():
 
             # two apprentices check
             if "two_apprentices" in patrol.tags:
-                if len(self.patrol_apprentices) < 2:
+                if len(self.patrol_apprentices) < 2 or len(self.patrol_apprentices) > 2:
                     continue
 
             # correct button check
