@@ -1,15 +1,14 @@
 from math import ceil
 from random import choice, sample
+import pygame
 import pygame_gui
 from .base_screens import Screens, cat_profiles
-from scripts.patrol import patrol
 from scripts.utility import get_text_box_theme
-from scripts.game_structure.text import *
-from scripts.game_structure.buttons import buttons
-from scripts.cat.cats import Cat
+#from scripts.game_structure.text import *
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
 from scripts.patrol import patrol
 from scripts.cat.cats import Cat, INJURIES, ILLNESSES
+from scripts.game_structure.game_essentials import *
 
 class PatrolScreen(Screens):
 

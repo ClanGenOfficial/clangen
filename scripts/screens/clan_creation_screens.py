@@ -4,9 +4,7 @@ import pygame_gui
 
 from .base_screens import Screens
 
-from scripts.game_structure.text import *
-from scripts.game_structure.buttons import buttons
-from scripts.utility import draw, draw_big, get_text_box_theme
+from scripts.utility import get_text_box_theme
 from scripts.clan import Clan, map_available
 from scripts.cat.cats import create_example_cats
 from scripts.cat.names import names
@@ -15,7 +13,7 @@ from re import sub
 import scripts.game_structure.image_cache as image_cache
 # from scripts.world import World, save_map
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
-
+from scripts.game_structure.game_essentials import *
 map_available = False
 
 
@@ -981,8 +979,9 @@ class MakeClanScreen(Screens):
                                 ]
             # save_map(game.map_info, game.switches['clan_name'])
 
-    def sixth_phase(self):
-        """Not currently in use"""
+    #This is not currently in use.
+    '''def sixth_phase(self):
+        Not currently in use
         if map_available:
             for y in range(44):
                 for x in range(40):
@@ -1182,7 +1181,7 @@ class MakeClanScreen(Screens):
                                     text='Done',
                                     available=False)
         else:
-            self.choose_camp()
+            self.choose_camp()'''
 
     def get_camp_art_path(self, campnum):
         camp_bg_base_dir = "resources/images/camp_bg/"
@@ -1198,8 +1197,8 @@ class MakeClanScreen(Screens):
         else:
             return None
 
-
-class ClanCreatedScreen(Screens):
+#I will leave this here, but commented out. It has some ma code on it.
+'''class ClanCreatedScreen(Screens):
 
     def on_use(self):
         # LAYOUT
@@ -1375,4 +1374,5 @@ class ClanCreatedScreen(Screens):
                 return self.x, self.y
         else:
             return self.x, self.y
-"""
+    '''
+
