@@ -572,14 +572,18 @@ class Patrol():
         else:
             body = True
         if "death" in self.patrol_event.tags:
-            if cat == game.clan.leader:
-                if "all_lives" in self.patrol_event.tags:
-                    game.clan.leader_lives = int(game.clan.leader_lives) - 10
+            if cat.status == 'leader':
+                if 'all_lives' in self.patrol_event.tags:
+                    game.clan.leader_lives -= 10
+                elif "some_lives" in self.patrol_event.tags:
+                    if game.clan.leader_lives > 2:
+                        current_lives = int(game.clan.leader_lives)
+                        game.clan.leader_lives -= random.randrange(1, current_lives - 1)
+                    else:
+                        game.clan.leader_lives -= 1
                 else:
-                    game.clan.leader_lives = int(game.clan.leader_lives) - 1
-            else:
-
-                cat.die(body)
+                    game.clan.leader_lives -= 1
+            cat.die(body)
 
             if len(self.patrol_event.history_text) >= 2:
                 self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
@@ -596,7 +600,16 @@ class Patrol():
                 cat.experience += self.patrol_event.exp
                 cat.experience = min(cat.experience, 80)
                 if cat.status == 'leader':
-                    game.clan.leader_lives -= 10
+                    if 'all_lives' in self.patrol_event.tags:
+                        game.clan.leader_lives -= 10
+                    elif "some_lives" in self.patrol_event.tags:
+                        if game.clan.leader_lives > 2:
+                            current_lives = int(game.clan.leader_lives)
+                            game.clan.leader_lives -= random.randrange(1, current_lives - 1)
+                        else:
+                            game.clan.leader_lives -= 1
+                    else:
+                        game.clan.leader_lives -= 1
                 if len(self.patrol_event.history_text) >= 2:
                     self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
                 else:
@@ -782,7 +795,7 @@ class Patrol():
         if "disrespect" in self.patrol_event.tags:
             admiration = -n
 
-        # affect the relationship
+        # collect the needed IDs and lists
         all_cats = list(filter(lambda c: not c.dead and not c.outside, Cat.all_cats.values()))
         cat_ids = [cat.ID for cat in self.patrol_cats]
         r_c_id = self.patrol_random_cat.ID
@@ -833,7 +846,7 @@ class Patrol():
             cats_from = self.patrol_apprentices
 
         elif "clan to patrol" in self.patrol_event.tags:
-            # whole clan gains relationship towards patrol, but the cats IN the patrol do not gain this relationship value
+            # whole clan gains relationship towards patrol, the cats IN the patrol do not gain this relationship value
             cats_to = cat_ids
             cats_from = all_cats
 
