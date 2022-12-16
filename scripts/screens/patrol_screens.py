@@ -235,7 +235,7 @@ class PatrolScreen(Screens):
         self.patrol_screen = 'patrol_cats'  # List
 
         self.elements["info"] = pygame_gui.elements.UITextBox(
-            'Chose up to six cats to take on patrol.\n'
+            'Choose up to six cats to take on patrol.\n'
             'Smaller patrols help cats gain more experience, but larger patrols are safer.',
             pygame.Rect((50, 95), (700, -1)), object_id=get_text_box_theme())
         self.elements["cat_frame"] = pygame_gui.elements.UIImage(pygame.Rect((300, 165), (200, 275)),
@@ -307,33 +307,37 @@ class PatrolScreen(Screens):
 
         other_clan_name = patrol.other_clan.name
         s = 0
-        text = re.sub(r".,'?!", '', text)
         for x in range(text.count('o_c_n')):
-            index = text.index('o_c_n', s)
+            index = text.index('o_c_n', s) or text.index("o_c_n's", s) or text.index('o_c_n.', s)
             for y in vowels:
                 if str(other_clan_name).startswith(y):
                     modify = text.split()
-                    pos = modify.index('o_c_n')
+                    if 'o_c_n' in modify:
+                        pos = modify.index('o_c_n')
+                    if "o_c_n's" in modify:
+                        pos = modify.index("o_c_n's")
+                    if 'o_c_n.' in modify:
+                        pos = modify.index('o_c_n.')
                     if modify[pos - 1] == 'a':
                         modify.remove('a')
                         modify.insert(pos - 1, 'an')
                     text = " ".join(modify)
                     break
             s += index + 3
-
+        
         text = text.replace('o_c_n', str(other_clan_name) + 'Clan')
 
         clan_name = game.clan.name
         s = 0
         pos = 0
         for x in range(text.count('c_n')):
-            index = text.index('c_n', s)
+            index = text.index('c_n', s) or text.index("c_n's", s) or text.index('c_n.', s)
             for y in vowels:
                 if str(clan_name).startswith(y):
                     modify = text.split()
                     if 'c_n' in modify:
                         pos = modify.index('c_n')
-                    elif "c_n's" in modify:
+                    if "c_n's" in modify:
                         pos = modify.index("c_n's")
                     if 'c_n.' in modify:
                         pos = modify.index('c_n.')
