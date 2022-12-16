@@ -33,7 +33,7 @@
     "Twoleg kits scare the patrol away."
     ],
     "min_cats": 1,
-    "max_cats": 3,   
+    "max_cats": 3
 },
 {
     "patrol_id": "bch_gen_hunt_twolegplace2",
@@ -52,7 +52,7 @@
         "Twoleg kits stomp through the sand dunes, scaring away prey and ruining the hunt."
     ],
     "min_cats": 4,
-    "max_cats": 6,
+    "max_cats": 6
 },
 {
     "patrol_id": "bch_hunt_strange1",
