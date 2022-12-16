@@ -3,7 +3,7 @@
     "patrol_id": "bch_med_soloripples1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["comfort", "respect", "trust", "clan_to_p_l", "med_cat", "med_only"],
+    "tags": ["comfort", "respect", "trust", "clan_to_p_l", "no_change_fail", "med_cat", "med_only"],
     "intro_text": "p_l sees weird ripples on the water of a puddle while gathering fresh water.",
     "decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
     "chance_of_success": 45,
