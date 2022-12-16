@@ -100,7 +100,7 @@ class Cat():
         'clanborn', 'half-clan1', 'half-clan2', 'outsider_roots1', 'outsider_roots2', 
         'loner1', 'loner2', 'kittypet1', 'kittypet2', 'rogue1', 'rogue2', 'abandoned1',
         'abandoned2', 'abandoned3', 'medicine_cat', 'otherclan', 'otherclan2', 'ostracized_warrior', 'disgraced', 
-        'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder'
+        'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder', 'orphaned'
     ]
 
     all_cats = {}  # ID: object
