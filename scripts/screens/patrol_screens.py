@@ -5,7 +5,7 @@ import pygame
 import pygame_gui
 from .base_screens import Screens, cat_profiles
 from scripts.utility import get_text_box_theme
-#from scripts.game_structure.text import *
+# from scripts.game_structure.text import *
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton
 from scripts.patrol import patrol
 from scripts.cat.cats import Cat, INJURIES, ILLNESSES
@@ -28,6 +28,11 @@ class PatrolScreen(Screens):
     cat_buttons = {}  # Hold cat image sprites.
     selected_cat = None  # Holds selected cat.
 
+    def __init__(self, name=None):
+        super().__init__(name)
+        self.app_mentor = None
+        self.able_cats = None
+
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if self.patrol_stage == "choose_cats":
@@ -44,9 +49,10 @@ class PatrolScreen(Screens):
             if "mate_button" in self.elements:
                 if event.ui_element == self.elements['mate_button']:
                     self.selected_cat = Cat.all_cats[self.selected_cat.mate]
+                    self.update_button()
                     self.update_cat_images_buttons()
                     self.update_selected_cat()
-            elif 'app_mentor_button' in self.elements:
+            if 'app_mentor_button' in self.elements:
                 if event.ui_element == self.elements['app_mentor_button']:
                     self.selected_cat = self.app_mentor
                     self.update_button()
@@ -256,10 +262,14 @@ class PatrolScreen(Screens):
         self.elements["add_six"] = UIImageButton(pygame.Rect((443, 495), (34, 34)), "", object_id="#add_six_button")
 
         # patrol type buttons - disabled for now
-        self.elements['paw'] = UIImageButton(pygame.Rect((323, 560), (34, 34)), "", object_id="#paw_patrol_button")
-        self.elements['mouse'] = UIImageButton(pygame.Rect((363, 560), (34, 34)), "", object_id="#mouse_patrol_button")
-        self.elements['claws'] = UIImageButton(pygame.Rect((403, 560), (34, 34)), "", object_id="#claws_patrol_button")
-        self.elements['herb'] = UIImageButton(pygame.Rect((443, 560), (34, 34)), "", object_id="#herb_patrol_button")
+        self.elements['paw'] = UIImageButton(pygame.Rect((323, 550), (34, 34)), "", object_id="#paw_patrol_button")
+        self.elements['paw'].disable()
+        self.elements['mouse'] = UIImageButton(pygame.Rect((363, 550), (34, 34)), "", object_id="#mouse_patrol_button")
+        self.elements['mouse'].disable()
+        self.elements['claws'] = UIImageButton(pygame.Rect((403, 550), (34, 34)), "", object_id="#claws_patrol_button")
+        self.elements['claws'].disable()
+        self.elements['herb'] = UIImageButton(pygame.Rect((443, 550), (34, 34)), "", object_id="#herb_patrol_button")
+        self.elements['herb'].disable()
 
         # Able cat page buttons
         self.elements['last_page'] = UIImageButton(pygame.Rect((75, 462), (34, 34)), "", object_id="#patrol_last_page")
@@ -408,7 +418,7 @@ class PatrolScreen(Screens):
         for x in patrol.patrol_traits:
             if x not in traits:
                 traits.append(x)
-
+                
         self.elements['patrol_info'] = pygame_gui.elements.UITextBox(
             f'patrol leader: {patrol.patrol_leader_name} \n'
             f'patrol members: {self.get_list_text(members)} \n'
@@ -430,7 +440,7 @@ class PatrolScreen(Screens):
             else:
                 break
 
-        # Buttons:
+        ##################### Buttons:
         self.elements["proceed"] = UIImageButton(pygame.Rect((550, 433), (172, 30)), "",
                                                  object_id="#proceed_button",
                                                  starting_height=2)
@@ -701,21 +711,25 @@ class PatrolScreen(Screens):
                                                                               mate.large_sprite)
                     # Check for name length
                     name = str(mate.name)  # get name
-                    if 10 <= len(name) >= 12:  # check name length
-                        short_name = str(mate.name)[0:9]
+                    if 11 <= len(name):  # check name length
+                        short_name = str(mate.name)[0:10]
                         name = short_name + '...'
-                    self.elements['mate_name'] = pygame_gui.elements.UITextBox(name, pygame.Rect((150, 300), (100, 30)),
-                                                                               object_id=get_text_box_theme())
-                    self.elements['mate_info'] = pygame_gui.elements.UITextBox("mate",
-                                                                               pygame.Rect((150, 330), (100, 30)),
-                                                                               object_id=get_text_box_theme(
-                                                                                   "#cat_patrol_info_box"))
+                    self.elements['mate_name'] = pygame_gui.elements.ui_label.UILabel(
+                        pygame.Rect((153, 300), (95, 30)),
+                        name,
+                        object_id=get_text_box_theme())
+                    self.elements['mate_info'] = pygame_gui.elements.ui_label.UILabel(
+                        pygame.Rect((150, 320), (100, 30)),
+                        "mate",
+                        object_id=get_text_box_theme(
+                            "#cat_patrol_info_box"))
                     self.elements['mate_button'] = UIImageButton(pygame.Rect((148, 356), (104, 26)), "",
                                                                  object_id="#patrol_select_button")
-                    # Disable mate_button if the cat it not able to go on a patrol
+                    # Disable mate_button if the cat is not able to go on a patrol
                     if mate not in self.able_cats:
                         self.elements['mate_button'].disable()
             # Draw mentor or apprentice
+            relation = "should not display"
             if self.selected_cat.status == 'apprentice' or self.selected_cat.apprentice != []:
                 self.elements['app_mentor_frame'] = pygame_gui.elements.UIImage(pygame.Rect((495, 190), (166, 170)),
                                                                                 self.app_frame)
@@ -732,16 +746,18 @@ class PatrolScreen(Screens):
                 # Failsafe, if apprentice or mentor is set to none. It should never happen.
                 if self.app_mentor is not None:
                     name = str(self.app_mentor.name)  # get name
-                    if 10 <= len(name) >= 12:  # check name length
-                        short_name = str(self.app_mentor.name)[0:9]
+                    if 11 <= len(name):  # check name length
+                        short_name = str(self.app_mentor.name)[0:10]
                         name = short_name + '...'
-                    self.elements['app_mentor_name'] = pygame_gui.elements.UITextBox(name,
-                                                                                     pygame.Rect((550, 300), (100, 30)),
-                                                                                     object_id=get_text_box_theme())
-                    self.elements['app_mentor_info'] = pygame_gui.elements.UITextBox(relation,
-                                                                                     pygame.Rect((550, 330), (100, 30)),
-                                                                                     object_id=get_text_box_theme(
-                                                                                         "#cat_patrol_info_box"))
+                    self.elements['app_mentor_name'] = pygame_gui.elements.ui_label.UILabel(
+                        pygame.Rect((553, 300), (95, 30)),
+                        name,
+                        object_id=get_text_box_theme())
+                    self.elements['app_mentor_info'] = pygame_gui.elements.ui_label.UILabel(
+                        pygame.Rect((550, 320), (100, 30)),
+                        relation,
+                        object_id=get_text_box_theme(
+                            "#cat_patrol_info_box"))
                     self.elements['app_mentor_image'] = pygame_gui.elements.UIImage(pygame.Rect((550, 200), (100, 100)),
                                                                                     self.app_mentor.large_sprite)
 

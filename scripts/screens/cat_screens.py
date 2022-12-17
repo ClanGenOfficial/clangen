@@ -4,7 +4,6 @@ from scripts.utility import update_sprite
 from .base_screens import Screens, cat_profiles
 
 from scripts.utility import get_text_box_theme
-# from scripts.game_structure.text import *
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import collars, wild_accessories
 import scripts.game_structure.image_cache as image_cache
@@ -204,6 +203,29 @@ class ProfileScreen(Screens):
     open_tab = None
     open_sub_tab = default_sub_tab
 
+    def __init__(self, name=None):
+        super().__init__(name)
+        self.previous_cat = None
+        self.next_cat = None
+        self.cat_image = None
+        self.background = None
+        self.cat_info_column2 = None
+        self.cat_info_column1 = None
+        self.cat_thought = None
+        self.cat_name = None
+        self.placeholder_tab_4 = None
+        self.placeholder_tab_3 = None
+        self.placeholder_tab_2 = None
+        self.backstory_tab_button = None
+        self.dangerous_tab_button = None
+        self.personal_tab_button = None
+        self.roles_tab_button = None
+        self.relations_tab_button = None
+        self.back_button = None
+        self.previous_cat_button = None
+        self.next_cat_button = None
+        self.the_cat = None
+
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
@@ -329,7 +351,7 @@ class ProfileScreen(Screens):
     def screen_switches(self):
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
 
-        # Set-up the menu buttons, which appear on all cat profile images.
+        # Set up the menu buttons, which appear on all cat profile images.
         self.next_cat_button = UIImageButton(pygame.Rect((622, 25), (153, 30)), "", object_id="#next_cat_button")
         self.previous_cat_button = UIImageButton(pygame.Rect((25, 25), (153, 30)), "", object_id="#previous_cat_button")
         self.back_button = UIImageButton(pygame.Rect((25, 60), (105, 30)), "", object_id="#back_button")
@@ -501,7 +523,7 @@ class ProfileScreen(Screens):
         self.previous_cat = previous_cat
 
     def generate_column1(self, the_cat):
-        '''Generate the left column information'''
+        """Generate the left column information"""
         output = ""
         # SEX/GENDER
         if the_cat.genderalign is None or the_cat.genderalign == the_cat.gender:
@@ -999,10 +1021,10 @@ class ProfileScreen(Screens):
             if self.the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not self.the_cat.dead:
                 if self.the_cat.no_kits:
                     self.toggle_kits = UIImageButton(pygame.Rect((402, 574), (172, 36)), "",
-                                                     object_id="#prevent_kits_button")
+                                                     object_id="#allow_kits_button")
                 else:
                     self.toggle_kits = UIImageButton(pygame.Rect((402, 574), (172, 36)), "",
-                                                     object_id="#allow_kits_button")
+                                                     object_id="#prevent_kits_button")
             else:
                 self.toggle_kits = UIImageButton(pygame.Rect((402, 574), (172, 36)), "",
                                                  object_id="#prevent_kits_button")
@@ -1039,8 +1061,8 @@ class ProfileScreen(Screens):
                                                                   object_id="#history_tab_text_box")
 
     def close_current_tab(self):
-        '''Closes current tab. '''
-        if self.open_tab == None:
+        """Closes current tab. """
+        if self.open_tab is None:
             pass
         elif self.open_tab == 'relations':
             self.see_family_button.kill()

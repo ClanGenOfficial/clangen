@@ -13,7 +13,7 @@ from scripts.game_structure.game_essentials import *
 
 
 class ClanScreen(Screens):
-    max_sprites_displayed = 400 # we don't want 100,000 sprites rendering at once. 400 is enough.
+    max_sprites_displayed = 400  # we don't want 100,000 sprites rendering at once. 400 is enough.
     cat_buttons = []
 
     def on_use(self):
@@ -76,24 +76,24 @@ class ClanScreen(Screens):
         self.leader_den_label = pygame_gui.elements.UIImage(pygame.Rect((344, 94), (112, 28)),
                                                             image_cache.load_image('resources/images/leader_den.png'))
         self.med_den_label = pygame_gui.elements.UIImage(pygame.Rect((80, 200), (151, 28)),
-                                                            image_cache.load_image('resources/images/med_den.png'))
+                                                         image_cache.load_image('resources/images/med_den.png'))
         self.elder_den_label = pygame_gui.elements.UIImage(pygame.Rect((348, 490), (103, 28)),
-                                                         image_cache.load_image('resources/images/elder_den.png'))
+                                                           image_cache.load_image('resources/images/elder_den.png'))
         self.nursery_label = pygame_gui.elements.UIImage(pygame.Rect((620, 200), (80, 28)),
-                                                           image_cache.load_image('resources/images/nursery_den.png'))
+                                                         image_cache.load_image('resources/images/nursery_den.png'))
         self.clearing_label = pygame_gui.elements.UIImage(pygame.Rect((360, 290), (81, 28)),
-                                                         image_cache.load_image('resources/images/clearing.png'))
+                                                          image_cache.load_image('resources/images/clearing.png'))
         self.app_den_label = pygame_gui.elements.UIImage(pygame.Rect((82, 430), (147, 28)),
                                                          image_cache.load_image('resources/images/app_den.png'))
 
-        #Draw the toggle and text
-        self.label_toggle = UIImageButton(pygame.Rect((25, 641),(34, 34)), "", object_id="#checked_checkbox")
+        # Draw the toggle and text
+        self.label_toggle = UIImageButton(pygame.Rect((25, 641), (34, 34)), "", object_id="#checked_checkbox")
         self.show_den_text = pygame_gui.elements.UITextBox("<font color=#000000>Show Den Labels</font>",
                                                            pygame.Rect((60, 647), (145, 25)),
                                                            object_id="#save_text_box")
 
         # Creates and places the cat sprites.
-        self.cat_buttons = [] #To contain all the buttons. 
+        self.cat_buttons = []  # To contain all the buttons.
 
         # We have to convert the postions to something pygame_gui buttons will understand
         # This should be a temp solution. We should change the code that determines postions.
@@ -283,7 +283,7 @@ class ClanScreen(Screens):
 
         self.label_toggle.kill()
         if game.settings['den labels']:
-            self.label_toggle = UIImageButton(pygame.Rect((25, 641),(34, 34)), "", object_id="#checked_checkbox")
+            self.label_toggle = UIImageButton(pygame.Rect((25, 641), (34, 34)), "", object_id="#checked_checkbox")
             self.warrior_den_label.show()
             self.clearing_label.show()
             self.nursery_label.show()
@@ -301,7 +301,7 @@ class ClanScreen(Screens):
             self.med_den_label.hide()
             self.elder_den_label.hide()
 
-    
+
 class StarClanScreen(Screens):
     list_page = 1
     display_cats = []
@@ -360,7 +360,10 @@ class StarClanScreen(Screens):
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df:
                 self.dead_cats.append(the_cat)
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 20)))
+
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 23)),
+                                                              object_id="#search_entry_box")
+
 
         self.starclan_button = UIImageButton(pygame.Rect((150, 135), (34, 34)), "", object_id="#starclan_button")
         self.starclan_button.disable()
@@ -502,7 +505,10 @@ class ListScreen(Screens):
             if not the_cat.dead and not the_cat.outside:
                 self.living_cats.append(the_cat)
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 20)))
+
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 23)),
+                                                              object_id="#search_entry_box")
+
 
         self.your_clan_button = UIImageButton(pygame.Rect((115, 135), (34, 34)), "", object_id="#your_clan_button")
         self.your_clan_button.disable()
@@ -653,6 +659,7 @@ class AllegiancesScreen(Screens):
                 living_meds.append(the_cat)
 
         # Pull the clan leaders
+        leader = []
         if game.clan.leader is not None:
             if not game.clan.leader.dead and not game.clan.leader.outside:
                 self.allegiance_list.append([
@@ -786,16 +793,17 @@ class AllegiancesScreen(Screens):
 
         # print(self.allegiance_list)
 
-        self.scroll_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((50,150),(700,500)))
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((50, 150), (700, 500)))
         self.ranks_box = pygame_gui.elements.UITextBox("\n".join([i[0] for i in self.allegiance_list]),
-                                                            pygame.Rect((0,0),(150,-1)),
-                                                            object_id= get_text_box_theme("#allegiances_box"),
+                                                       pygame.Rect((0, 0), (150, -1)),
+                                                       object_id=get_text_box_theme("#allegiances_box"),
                                                        container=self.scroll_container)
         self.cat_names_box = pygame_gui.elements.UITextBox("\n".join([i[1] for i in self.allegiance_list]),
-                                                            pygame.Rect((150,0),(550,-1)),
-                                                            object_id= get_text_box_theme("#allegiances_box"),
-                                                       container=self.scroll_container)
-        self.scroll_container.set_scrollable_area_dimensions((680,self.cat_names_box.rect[3]))
+                                                           pygame.Rect((150, 0), (550, -1)),
+                                                           object_id=get_text_box_theme("#allegiances_box"),
+                                                           container=self.scroll_container)
+        self.scroll_container.set_scrollable_area_dimensions((680, self.cat_names_box.rect[3]))
+
         self.ranks_box.disable()
         self.cat_names_box.disable()
 
@@ -905,7 +913,8 @@ class DFScreen(Screens):
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and the_cat.df:
                 self.dead_cats.append(the_cat)
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 20)))
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525,142), (147,23)),
+                                                              object_id="#search_entry_box")
 
         self.starclan_button = UIImageButton(pygame.Rect((150, 135), (34, 34)), "", object_id="#starclan_button")
         self.dark_forest_button = UIImageButton(pygame.Rect((115, 135), (34, 34)), "", object_id="#dark_forest_button")

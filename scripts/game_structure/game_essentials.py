@@ -3,13 +3,13 @@ import ujson
 import os
 from ast import literal_eval
 
-
 screen_x = 800
 screen_y = 700
 screen = pygame.display.set_mode((screen_x, screen_y), pygame.HWSURFACE)
 pygame.display.set_caption('Clan Generator')
 
 SAVE_DEATH = False
+
 
 # G A M E
 class Game():
@@ -24,14 +24,19 @@ class Game():
     max_relation_events_displayed = 10
     relation_scroll_ct = 0
     cur_events_list = []
+    ceremony_events_list = []
+    birth_death_events_list = []
+    relation_events_list = []
+    health_events_list = []
+    other_clans_events_list = []
+    misc_events_list = []
     allegiance_list = []
     language = {}
     game_mode = ''
     language_list = ['english', 'spanish', 'german']
     game_mode_list = ['classic', 'expanded', 'cruel season']
-    relation_events_list = []
 
-    #Keeping track of various last screen for various purposes
+    # Keeping track of various last screen for various purposes
     last_screen_forupdate = 'start screen'
     last_screen_forProfile = 'list screen'
 
@@ -65,13 +70,13 @@ class Game():
         'medicine_cat': None,
         'members': [],
         're_roll': False,
-        'roll_count':0,
+        'roll_count': 0,
         'event': None,
         'cur_screen': 'start screen',
         'naming_text': '',
         'timeskip': False,
         'mate': None,
-        'choosing_mate':False,
+        'choosing_mate': False,
         'mentor': None,
         'setting': None,
         'save_settings': False,
@@ -187,7 +192,7 @@ class Game():
         self.keyspressed = []
         # carry commands
         self.carry_commands()
-    
+
     def carry_commands(self):
         """ Run this function to go through commands added to the switch-dictionary and carry them, then
         reset them back to normal after the action"""
@@ -226,7 +231,7 @@ class Game():
             if_clans = len(clan_list)
         if if_clans > 0:
             clan_list = clan_list.split('\n')
-            clan_list = [i for i in clan_list if i] #Remove empty 
+            clan_list = [i for i in clan_list if i]  # Remove empty
             return clan_list
         else:
             return None
@@ -271,7 +276,7 @@ class Game():
             self.switch_language()
 
     def switch_language(self):
-        #add translation information here
+        # add translation information here
         if os.path.exists('languages/' + game.settings['language'] + '.txt'):
             with open('languages/' + game.settings['language'] + '.txt',
                       'r') as read_file:
@@ -376,6 +381,7 @@ class Game():
                 write_file.write(json_string)
         except:
             print("Saving cats didn't work.")
+
 
 # M O U S E
 class Mouse():
