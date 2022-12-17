@@ -205,7 +205,7 @@ class Patrol():
 
         if game_setting_disaster:
             possible_patrols.extend(self.generate_patrol_events(DISASTER))
-
+        
         # new cat patrols
         if chance == 1:
             if welcoming_rep:
@@ -938,6 +938,8 @@ class Patrol():
                                                        litter=True, relevant_cat=new_cat)
             elif "new_cat_queen" in tags:
                 kittypet = choice([True, False])
+                if "kittypet" in self.patrol_event.patrol_id:
+                    kittypet = True
                 if kittypet is True:
                     new_backstory=choice(['kittypet1', 'kittypet2'])
                     created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True, backstory=new_backstory)
@@ -961,30 +963,55 @@ class Patrol():
                                                         litter=True, relevant_cat=new_cat)
                 
             elif "new_cat_kits" in tags:  # new kits
-                queen_list = []
-                queen = any(status == "queen" for status in Cat.all_cats)
-                if queen:
-                    for cat in Cat.all_cats:
-                        if cat.status == "queen":
-                            queen_list.append(cat)
+                kittypet = choice([True, False])
+                if "kittypet" in self.patrol_event.patrol_id:
+                    kittypet = True
+                if kittypet is True:
+                    new_backstory=choice(['kittypet1', 'kittypet2'])
+                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True, backstory=new_backstory)
+                    new_cat = created_cats[0]
+                    new_cat.name = "unknown queen"
+                    new_cat.outside = True
+                    new_cat.dead = True
                 else:
-                    relevant_cat = self.patrol_random_cat
+                    new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
+                                            'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
+                                            'tragedy_survivor'])
+                    created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True, backstory=new_backstory)
+                    new_cat = created_cats[0]
+                    new_cat.name = "unknown queen"
+                    new_cat.outside = True
+                    new_cat.dead = True
                 if "new_cat_newborn" in tags:
                     created_cats = self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
-                                                        litter=True, age='newborn', relevant_cat=choice(queen_list) if queen else relevant_cat)
+                                                        litter=True, age='newborn', relevant_cat=new_cat)
                 else:
                     created_cats = self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
-                                                        litter=True, relevant_cat=choice(queen_list) if queen else relevant_cat)
+                                                        litter=True, relevant_cat=new_cat)
             
             elif "new_cat_apprentice" in tags:
-                new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee',
-                                            'tragedy_survivor'])
-                created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, backstory=new_backstory,
-                                                age='young')
+                kittypet = choice([True, False])
+                if "kittypet" in self.patrol_event.patrol_id:
+                    kittypet = True
+                if kittypet is True: # new kittypet
+                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True,
+                                                   age='young', backstory=choice(['kittypet1', 'kittypet2']))
+                    new_cat = created_cats[0]
+                    if majoryinjury:
+                        new_cat.get_injured("broken bone")
+                else:
+                    new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee',
+                                                'tragedy_survivor'])
+                    created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, backstory=new_backstory,
+                                                    age='young')
+                    if majoryinjury:
+                        new_cat.get_injured("broken bone")
 
             else:
-                kittypet_choice = choice([True, False])
-                if kittypet_choice: # new kittypet
+                kittypet = choice([True, False])
+                if "kittypet" in self.patrol_event.patrol_id:
+                    kittypet = True
+                if kittypet is True: # new kittypet
                     created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, kit=False, litter=False,
                                                    relevant_cat=None,
                                                    backstory=choice(['kittypet1', 'kittypet2']))
@@ -1027,7 +1054,7 @@ class Patrol():
             gender = 'female'
 
         if queen:
-            if game.settings_list['no gendered breeding']:
+            if game.settings['no gendered breeding']:
                 gender = gender
             else:
                 gender = 'female'
@@ -1086,6 +1113,7 @@ class Patrol():
                 new_cat.parent1 = relevant_cat.ID
                 if relevant_cat.mate:
                     new_cat.parent2 = relevant_cat.mate
+                relevant_cat.thought = 'Is watching their new kit with fascination'
 
             # create and update relationships
             for the_cat in new_cat.all_cats.values():
