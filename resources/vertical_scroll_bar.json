@@ -1,0 +1,59 @@
+ {
+     "vertical_scroll_bar":
+     {
+        "colours": {
+          "dark_bg": "#2F2918",
+          "normal_border": "#2F2918"
+        },
+         "misc":
+         {
+            "enable_arrow_buttons": "1",
+            "border_width": "0"
+         }
+     },
+     "vertical_scroll_bar.#sliding_button":
+     {
+         "colours":
+         {
+            "normal_bg": "#735B41",
+            "hovered_bg": "#826657",
+            "selected_bg": "#826657",
+            "active_bg": "#826657"
+         },
+         "misc":
+         {
+           "border_width": "0",
+           "shadow_width": "1"
+         }
+     },
+     "vertical_scroll_bar.#top_button":
+     {
+        "colours":
+         {
+            "normal_bg": "#735B41",
+            "hovered_bg": "#826657",
+            "selected_bg": "#826657",
+            "active_bg": "#826657"
+         },
+         "misc":
+         {
+           "border_width": "0",
+           "shadow_width": "1"
+         }
+    },
+    "vertical_scroll_bar.#bottom_button":
+    {
+        "colours":
+         {
+            "normal_bg": "#735B41",
+            "hovered_bg": "#826657",
+            "selected_bg": "#826657",
+            "active_bg": "#826657"
+         },
+         "misc":
+         {
+           "border_width": "0",
+           "shadow_width": "1"
+         }
+    }
+ }
