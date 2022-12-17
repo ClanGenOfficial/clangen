@@ -360,7 +360,10 @@ class StarClanScreen(Screens):
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and not the_cat.df:
                 self.dead_cats.append(the_cat)
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 20)))
+
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 23)),
+                                                              object_id="#search_entry_box")
+
 
         self.starclan_button = UIImageButton(pygame.Rect((150, 135), (34, 34)), "", object_id="#starclan_button")
         self.starclan_button.disable()
@@ -502,7 +505,10 @@ class ListScreen(Screens):
             if not the_cat.dead and not the_cat.exiled:
                 self.living_cats.append(the_cat)
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 20)))
+
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 23)),
+                                                              object_id="#search_entry_box")
+
 
         self.your_clan_button = UIImageButton(pygame.Rect((115, 135), (34, 34)), "", object_id="#your_clan_button")
         self.your_clan_button.disable()
@@ -901,7 +907,8 @@ class DFScreen(Screens):
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and the_cat.df:
                 self.dead_cats.append(the_cat)
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 20)))
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525,142), (147,23)),
+                                                              object_id="#search_entry_box")
 
         self.starclan_button = UIImageButton(pygame.Rect((150, 135), (34, 34)), "", object_id="#starclan_button")
         self.dark_forest_button = UIImageButton(pygame.Rect((115, 135), (34, 34)), "", object_id="#dark_forest_button")
