@@ -878,10 +878,7 @@
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
-}
-
-,
-
+},
 {
     "patrol_id": "fst_med_romance3",
     "biome": "forest",
