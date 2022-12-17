@@ -4,7 +4,7 @@ from scripts.utility import update_sprite
 from .base_screens import Screens, cat_profiles
 
 from scripts.utility import get_text_box_theme
-#from scripts.game_structure.text import *
+# from scripts.game_structure.text import *
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import collars, wild_accessories
 import scripts.game_structure.image_cache as image_cache
@@ -13,7 +13,6 @@ from re import sub
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton, UITextBoxTweaked, UIImageTextBox
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import *
-
 
 
 # ---------------------------------------------------------------------------- #
@@ -621,7 +620,7 @@ class ProfileScreen(Screens):
             if the_cat.is_disabled():
                 for y in the_cat.permanent_condition:
                     if the_cat.permanent_condition[y]["moons_until"] == -2 and the_cat.permanent_condition[y][
-                        "born_with"] is True:
+                            "born_with"] is True:
                         permanent_conditions_list.append(y)
                     elif the_cat.permanent_condition[y]["born_with"] is False:
                         permanent_conditions_list.append(y)
@@ -672,9 +671,20 @@ class ProfileScreen(Screens):
         if the_cat.mentor is not None:
             output += "mentor: " + str(the_cat.mentor.name) + "\n"
 
+        # CURRENT APPRENTICES
+        # Optional - only shows up if the cat has an apprentice currently
+        if the_cat.apprentice:
+            app_count = len(the_cat.apprentice)
+            if app_count == 1:
+                output += 'apprentice: ' + str(the_cat.apprentice[0].name)
+            elif app_count > 1:
+                output += 'apprentice: ' + ", ".join([str(i.name) for i in the_cat.apprentice])
+
+            # NEWLINE ----------
+            output += "\n"
+
         # FORMER APPRENTICES
         # Optional - Only shows up if the cat has previous apprentice(s)
-        # FORMER APPRENTICES
         if len(the_cat.former_apprentices
                ) != 0 and the_cat.former_apprentices[0] is not None:
 
@@ -713,7 +723,7 @@ class ProfileScreen(Screens):
         return output
 
     def toggle_backstory_tab(self):
-        '''Opens the backstory tab'''
+        """Opens the backstory tab"""
         previous_open_tab = self.open_tab
 
         # This closes the current tab, so only one can be open as a time
@@ -740,7 +750,7 @@ class ProfileScreen(Screens):
             self.update_disabled_buttons_and_text()
 
     def toggle_history_sub_tab(self):
-        '''To toggle the sub-tab, when that's added'''
+        """To toggle the sub-tab, when that's added"""
 
     def get_history_text(self):
         output = ""
@@ -782,7 +792,7 @@ class ProfileScreen(Screens):
         return output
 
     def toggle_relations_tab(self):
-        '''Opens relations tab'''
+        """Opens relations tab"""
         # Save what is previously open, for toggle purposes.
         previous_open_tab = self.open_tab
 
@@ -851,7 +861,7 @@ class ProfileScreen(Screens):
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
             #    If you can think of a better way to do this, please fix! 
             self.cis_trans_button = UIImageButton(pygame.Rect((402, 486), (0, 0)), "", visible=False)
-            self.toggle_kits = UIImageButton(pygame.Rect(((402, 574)), (0, 0)), "", visible=False)
+            self.toggle_kits = UIImageButton(pygame.Rect((402, 574), (0, 0)), "", visible=False)
             self.update_disabled_buttons_and_text()
 
     def toggle_dangerous_tab(self):
@@ -876,7 +886,7 @@ class ProfileScreen(Screens):
             self.update_disabled_buttons_and_text()
 
     def update_disabled_buttons_and_text(self):
-        '''Sets which tab buttons should be disabled. This is run when the cat is switched. '''
+        """Sets which tab buttons should be disabled. This is run when the cat is switched. """
         if self.open_tab == None:
             pass
         elif self.open_tab == 'relations':
@@ -1222,4 +1232,4 @@ class ChangeGenderScreen(Screens):
                     self.gender_changed.show()
             elif event.ui_element == self.back_button:
                 self.change_screen('profile screen')
-        return 
+        return

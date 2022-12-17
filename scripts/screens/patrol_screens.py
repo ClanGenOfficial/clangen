@@ -49,6 +49,7 @@ class PatrolScreen(Screens):
             elif 'app_mentor_button' in self.elements:
                 if event.ui_element == self.elements['app_mentor_button']:
                     self.selected_cat = self.app_mentor
+                    self.update_button()
                     self.update_cat_images_buttons()
                     self.update_selected_cat()
 
@@ -622,9 +623,9 @@ class PatrolScreen(Screens):
         )
 
     def update_selected_cat(self):
-        """Refreshes the image displaing the selected cat, traits, mentor/apprentice/mate ext"""
+        """Refreshes the image displaying the selected cat, traits, mentor/apprentice/mate ext"""
 
-        # Kill and delete all relevent elements
+        # Kill and delete all relevant elements
         if "selected_image" in self.elements:
             self.elements["selected_image"].kill()
             del self.elements["selected_image"]
