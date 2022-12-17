@@ -23,7 +23,7 @@
         "font": {
             "name": "nonosans",
             "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
         },
         "misc": {
             "border_width": "12",
