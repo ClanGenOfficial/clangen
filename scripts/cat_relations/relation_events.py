@@ -45,7 +45,7 @@ class Relation_Events():
             cat_from_mate = None
             if cat_from.mate:
                 if cat_from.mate not in Cat.all_cats:
-                    game.cur_events_list.insert(0, f"Cat #{cat_from} has a invalid mate. It will set to none.")
+                    print(f"Cat #{cat_from} has a invalid mate. It will set to none.")
                     cat_from.mate = None
                     return
                 cat_from_mate = Cat.all_cats.get(cat_from.mate)
@@ -54,7 +54,7 @@ class Relation_Events():
             cat_to_mate = None
             if cat_to.mate:
                 if cat_to.mate not in Cat.all_cats:
-                    game.cur_events_list.insert(0, f"Cat #{cat_to} has a invalid mate. It will set to none.")
+                    print(f"Cat #{cat_to} has a invalid mate. It will set to none.")
                     cat_to.mate = None
                     return
                 cat_to_mate = Cat.all_cats.get(cat_to.mate)
@@ -67,9 +67,9 @@ class Relation_Events():
                 # randint is a slow function, don't call it unless we have to.
                 if random.random() > 0.96:  # Roughly 1/25
                     self.had_one_event = True
-                    game.cur_events_list.append(
-                        f'{cat_from.name} will always love {cat_from_mate.name} but has decided to move on'
-                    )
+                    text = f'{cat_from.name} will always love {cat_from_mate.name} but has decided to move on'
+                    game.relation_events_list.append(text)
+                    game.cur_events_list.append(text)
                     current_relationship.mate = False
                     cat_from.mate = None
                     cat_from_mate.mate = None
@@ -123,9 +123,9 @@ class Relation_Events():
                                             cat_to, cat_to_mate)
 
                     # new relationship
-                    game.cur_events_list.append(
-                        f"{cat_from.name} and {cat_to.name} can't ignore their feelings for each other"
-                    )
+                    text = f"{cat_from.name} and {cat_to.name} can't ignore their feelings for each other"
+                    game.relation_events_list.append(text)
+                    game.cur_events_list.append(text)
                     self.handle_new_mates(cat_from, cat_to)
 
             # breakup
@@ -163,8 +163,7 @@ class Relation_Events():
             if cat.mate in Cat.all_cats:
                 mate = Cat.all_cats[cat.mate]
             else:
-                game.cur_events_list.append(
-                    f"WARNING: {cat.name}  has an invalid mate # {cat.mate}. This has been unset.")
+                print(f"WARNING: {cat.name}  has an invalid mate # {cat.mate}. This has been unset.")
                 cat.mate = None
 
         # check if there is a cat in the clan for the second parent
@@ -229,12 +228,13 @@ class Relation_Events():
             cat_from.set_mate(cat_to)
             cat_to.set_mate(cat_from)
             game.cur_events_list.append(mate_string)
+            game.relation_events_list.append(mate_string)
 
     def handle_breakup(self, relationship_from, relationship_to, cat_from, cat_to):
         from_mate_in_clan = False
         if cat_from.mate:
             if cat_from.mate not in Cat.all_cats.keys():
-                game.cur_events_list.insert(0, f"Cat #{cat_from} has a invalid mate. It will set to none.")
+                print(f"Cat #{cat_from} has a invalid mate. It will set to none.")
                 cat_from.mate = None
                 return
             cat_from_mate = Cat.all_cats.get(cat_from.mate)
@@ -247,7 +247,9 @@ class Relation_Events():
                 self.had_one_event = True
                 cat_from.unset_mate(breakup=True, fight=had_fight)
                 cat_to.unset_mate(breakup=True, fight=had_fight)
-                game.cur_events_list.append(f"{cat_from.name} and {cat_to.name} broke up")
+                text = f"{cat_from.name} and {cat_to.name} broke up"
+                game.relation_events_list.append(text)
+                game.cur_events_list.append(text)
 
     def big_love_check(self, cat, upper_threshold=40, lower_threshold=15):
         """
@@ -284,12 +286,14 @@ class Relation_Events():
                     second_name = cat.name
 
                 if highest_romantic_relation.opposite_relationship.romantic_love <= lower_threshold:
-                    game.cur_events_list.append(
-                        f"{first_name} confessed their feelings to {second_name}, but they got rejected")
+                    text = f"{first_name} confessed their feelings to {second_name}, but they got rejected"
+                    game.relation_events_list.append(text)
+                    game.cur_events_list.append(text)
                     return False
                 else:
-                    game.cur_events_list.append(
-                        f"{first_name} confessed their feelings to {second_name} and they have become mates")
+                    text = f"{first_name} confessed their feelings to {second_name} and they have become mates"
+                    game.relation_events_list.append(text)
+                    game.cur_events_list.append(text)
                     return True
         return False
 
@@ -321,6 +325,7 @@ class Relation_Events():
             if amount > 1:
                 insert = f'a litter of {str(amount)} kits'
             print_event = f"{str(cat.name)} brought {insert} back to camp, but refused to talk about their origin"
+            game.birth_death_events_list.append(print_event)
             game.cur_events_list.append(print_event)
             # display event
             # if len(print_event) < 100:
@@ -345,8 +350,9 @@ class Relation_Events():
             "moons": 0,
             "amount": 0
         }
-
-        game.cur_events_list.append(f"{pregnant_cat.name} announced that they are expecting kits")
+        text = f"{pregnant_cat.name} announced that they are expecting kits"
+        game.birth_death_events_list.append(text)
+        game.cur_events_list.append(text)
 
     def handle_one_moon_pregnant(self, cat, clan=game.clan):
         """Handles if the cat is one moon pregnant."""
@@ -367,9 +373,13 @@ class Relation_Events():
         clan.pregnancy_data[cat.ID]["amount"] = amount
 
         if thinking_amount == 1:
-            game.cur_events_list.append(f"{cat.name} thinks that they will have one kit")
+            text = f"{cat.name} thinks that they will have one kit"
+            game.birth_death_events_list.append(text)
+            game.cur_events_list.append(text)
         else:
-            game.cur_events_list.append(f"{cat.name} thinks that they will have {thinking_amount} kits")
+            text = f"{cat.name} thinks that they will have {thinking_amount} kits"
+            game.birth_death_events_list.append(text)
+            game.cur_events_list.append(text)
 
     def handle_two_moon_pregnant(self, cat, clan=game.clan):
         """Handles if the cat is two moons pregnant."""
@@ -406,22 +416,35 @@ class Relation_Events():
                                f"{str(cat.name)} secretly had a {insert}.",
                                f"{str(cat.name)} had a {insert} with an unknown partner.",
                                f"{str(cat.name)} had a {insert} and refused to talk about their progenitor.",
-                               f"{str(cat.name)} had a {insert} and is absolutely refusing to talk about it or acknowledge it at all.",
-                               f"{str(cat.name)} doesn't feel ready to be a parent of this {insert}. But they promise to the tiny flailing limbs by their side that they'll do their best, they swear on Starclan itself."
+                               f"{str(cat.name)} had a {insert} and is absolutely refusing to talk about it or "
+                               f"acknowledge it at all.",
+                               f"{str(cat.name)} doesn't feel ready to be a parent of this {insert}. But they promise "
+                               f"to the tiny flailing limbs by their side that they'll do their best, they swear on "
+                               f"Starclan itself. "
                                ]
         elif cat.mate == other_cat.ID:
             possible_events = [f"{str(cat.name)} had a {insert} with {str(other_cat.name)}.",
-                               f"In the nursery, {str(cat.name)} lies suckling a {insert}, {str(other_cat.name)} watching over them and purring so hard their body vibrates.",
-                               f"{str(cat.name)} and {str(other_cat.name)}'s eyes meet over their {insert}, full of love for their growing family.",
-                               f"In the quiet of the nursery, in the nest they've spent so long preparing, {str(cat.name)} and {str(other_cat.name)} welcome a {insert}.",
-                               f"With their {insert} mewling at their belly, {str(cat.name)}'s long pregnancy has finally given them and {str(other_cat.name)} the expansion to their family they've been hoping and waiting for.",
-                               f"Even with {str(other_cat.name)} by their side, {str(cat.name)} doesn't feel ready to be a parent of this {insert}. But they promise to the tiny flailing limbs by their side that they'll do their best, they swear on Starclan itself."
+                               f"In the nursery, {str(cat.name)} lies suckling a {insert}, {str(other_cat.name)}"
+                               f" watching over them and purring so hard their body vibrates.",
+                               f"{str(cat.name)} and {str(other_cat.name)}'s eyes meet over their {insert}, full of "
+                               f"love for their growing family.",
+                               f"In the quiet of the nursery, in the nest they've spent so long preparing, "
+                               f"{str(cat.name)} and {str(other_cat.name)} welcome a {insert}.",
+                               f"With their {insert} mewling at their belly, {str(cat.name)}'s long pregnancy has "
+                               f"finally given them and {str(other_cat.name)} the expansion to their family they've "
+                               f"been hoping and waiting for.",
+                               f"Even with {str(other_cat.name)} by their side, {str(cat.name)} doesn't feel ready to "
+                               f"be a parent of this {insert}. But they promise to the tiny flailing limbs by their "
+                               f"side that they'll do their best, they swear on Starclan itself. "
                                ]
         else:
             possible_events = [f"{str(cat.name)} secretly had a {insert} with {str(other_cat.name)}.",
-                               f"{str(cat.name)} hopes that their {insert} doesn't look too much like {str(other_cat.name)}, otherwise questions might follow.",
-                               f"{str(other_cat.name)} goes to visit {str(cat.name)} in the nursery with their new {insert}, on a completely innocent mission to deliver food to the new parent.",
-                               f"The newly arrived {insert} that {str(cat.name)} has just given birth to looks suspiciously like {str(other_cat.name)}."
+                               f"{str(cat.name)} hopes that their {insert} doesn't look too much like "
+                               f"{str(other_cat.name)}, otherwise questions might follow.",
+                               f"{str(other_cat.name)} goes to visit {str(cat.name)} in the nursery with their "
+                               f"new {insert}, on a completely innocent mission to deliver food to the new parent.",
+                               f"The newly arrived {insert} that {str(cat.name)} has just given birth to looks "
+                               f"suspiciously like {str(other_cat.name)}. "
                                ]
         event_list.append(choice(possible_events))
 
@@ -429,15 +452,19 @@ class Relation_Events():
             cat.get_injured("recovering from birth", event_triggered=True)
             if 'blood loss' in cat.injuries:
                 possible_events = [f"The birth was stressful and {str(cat.name)} lost a lot of blood.",
-                               f"{str(cat.name)} pants, looking at their wonderful {insert} and deciding that the pain and blood loss was all worth it.",
-                               f"Weak with blood loss, {str(cat.name)} nevertheless purrs at the sight of their {insert}.",
-                               f"Though the blood loss did not make the birth any easier for {str(cat.name)}.",
-                               f"Though {str(cat.name)} seems overly exhausted and weak from the birth."
-                               ]
+                                   f"{str(cat.name)} pants, looking at their wonderful {insert} and deciding that the "
+                                   f"pain and blood loss was all worth it.",
+                                   f"Weak with blood loss, {str(cat.name)} nevertheless purrs at the sight of their "
+                                   f"{insert}.",
+                                   f"Though the blood loss did not make the birth any easier for {str(cat.name)}.",
+                                   f"Though {str(cat.name)} seems overly exhausted and weak from the birth."
+                                   ]
                 event_list.append(choice(possible_events))
 
         print_event = " ".join(event_list)
         # display event
+        game.health_events_list.append(print_event)
+        game.birth_death_events_list.append(print_event)
         game.cur_events_list.append(print_event)
 
     # ---------------------------------------------------------------------------- #
@@ -463,11 +490,13 @@ class Relation_Events():
             elif relationship_from.romantic_love < 50:
                 will_break_up = True
             elif had_fight:
-                game.cur_events_list.append(
-                    f"{str(cat_from.name)} and {str(cat_to.name)} had a fight and nearly broke up")
+                text = f"{str(cat_from.name)} and {str(cat_to.name)} had a fight and nearly broke up"
+                game.relation_events_list.append(text)
+                game.cur_events_list.append(text)
             else:
-                game.cur_events_list.append(
-                    f"{str(cat_from.name)} and {str(cat_to.name)} have somewhat different views about their relationship")
+                text = f"{str(cat_from.name)} and {str(cat_to.name)} have somewhat different views about their relationship"
+                game.relation_events_list.append(text)
+                game.cur_events_list.append(text)
                 relationship_from.romantic_love -= 10
                 relationship_to.romantic_love -= 10
                 relationship_from.comfortable -= 20
@@ -504,8 +533,7 @@ class Relation_Events():
             if cat.mate in cat.all_cats:
                 mate = cat.all_cats[cat.mate]
             else:
-                game.cur_events_list.append(
-                    f"WARNING: {str(cat.name)}  has an invalid mate # {str(cat.mate)}. This has been unset.")
+                print(f"WARNING: {str(cat.name)}  has an invalid mate # {str(cat.mate)}. This has been unset.")
                 cat.mate = None
 
         if mate and mate.dead:

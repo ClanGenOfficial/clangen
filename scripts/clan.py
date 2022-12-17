@@ -237,9 +237,21 @@ class Clan():
             if c != clan:
                 list_data += c + "\n"
         game.cur_events_list.clear()
+        game.other_clans_events_list.clear()
+        game.birth_death_events_list.clear()
+        game.relation_events_list.clear()
+        game.health_events_list.clear()
+        game.ceremony_events_list.clear()
+        game.misc_events_list.clear()
         with open('saves/clanlist.txt', 'w') as write_file:
             write_file.write(list_data)
         game.cur_events_list.clear()
+        game.other_clans_events_list.clear()
+        game.birth_death_events_list.clear()
+        game.relation_events_list.clear()
+        game.health_events_list.clear()
+        game.ceremony_events_list.clear()
+        game.misc_events_list.clear()
 
         pygame.display.quit()
         pygame.quit()
