@@ -961,12 +961,20 @@ class Patrol():
                                                         litter=True, relevant_cat=new_cat)
                 
             elif "new_cat_kits" in tags:  # new kits
+                queen_list = []
+                queen = any(status == "queen" for status in Cat.all_cats)
+                if queen:
+                    for cat in Cat.all_cats:
+                        if cat.status == "queen":
+                            queen_list.append(cat)
+                else:
+                    relevant_cat = self.patrol_random_cat
                 if "new_cat_newborn" in tags:
                     created_cats = self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
-                                                        litter=True, age='newborn')
+                                                        litter=True, age='newborn', relevant_cat=choice(queen_list) if queen else relevant_cat)
                 else:
                     created_cats = self.create_new_cat(loner=False, loner_name=True, backstory='orphaned',
-                                                        litter=True)
+                                                        litter=True, relevant_cat=choice(queen_list) if queen else relevant_cat)
             
             elif "new_cat_apprentice" in tags:
                 new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee',
@@ -1088,12 +1096,8 @@ class Patrol():
             new_cat.thought = 'Is looking around the camp with wonder'
             created_cats.append(new_cat)
 
-        if new_cat.backstory == 'orphaned':
-            orphan = True
-        else:
-            orphan = False
         for new_cat in created_cats:
-            add_siblings_to_cat(new_cat, cat_class, orphan=orphan)
+            add_siblings_to_cat(new_cat, cat_class)
             add_children_to_cat(new_cat, cat_class)
             game.clan.add_cat(new_cat)
 
