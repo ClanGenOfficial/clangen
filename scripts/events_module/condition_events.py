@@ -195,7 +195,9 @@ class Condition_Events():
             if cat.dead:
                 if SAVE_DEATH:
                     save_death(cat, event_string)
+                game.birth_death_events_list.append(event_string)
             game.cur_events_list.append(event_string)
+            game.health_events_list.append(event_string)
 
         # just double-checking that trigger is only returned True if the cat is dead
         if cat.dead:
@@ -214,6 +216,7 @@ class Condition_Events():
         number_of_conditions = 4 * 10
         ratio = 40  # 1/75 times triggering for each cat each moon
         chance_number = number_of_conditions * ratio
+        has_other_clan = False
 
         random_number = int(random.random() * chance_number)
         triggered = False
@@ -304,6 +307,8 @@ class Condition_Events():
                 if len(final_events) > 0:
                     injury_event = random.choice(final_events)
 
+                    if "other_clan" in injury_event.tags or "war" in injury_event.tags:
+                        has_other_clan = True
                     if "war" in injury_event.tags:
                         other_clan_name = enemy_clan
 
@@ -336,6 +341,9 @@ class Condition_Events():
 
         if text is not None:
             game.cur_events_list.append(text)
+            game.health_events_list.append(text)
+            if has_other_clan:
+                game.other_clans_events_list.append(text)
 
         return triggered
 
@@ -671,6 +679,9 @@ class Condition_Events():
         if len(event_list) > 0:
             event_string = ' '.join(event_list)
             game.cur_events_list.append(event_string)
+            game.health_events_list.append(event_string)
+            if cat.dead:
+                game.birth_death_events_list.append(event_string)
         return
 
 # ---------------------------------------------------------------------------- #

@@ -675,9 +675,15 @@ class Cat():
             if self.status == "leader":
                 game.clan.leader_lives -= 1
                 if game.clan.leader_lives > 0:
-                    game.cur_events_list.append(f"{self.name} lost a life to {illness}.")
+                    text = f"{self.name} lost a life to {illness}."
+                    game.health_events_list.append(text)
+                    game.birth_death_events_list.append(text)
+                    game.cur_events_list.append(text)
                 elif game.clan.leader_lives <= 0:
-                    game.cur_events_list.append(f"{self.name} lost their last life to {illness}.")
+                    text = f"{self.name} lost their last life to {illness}."
+                    game.health_events_list.append(text)
+                    game.birth_death_events_list.append(text)
+                    game.cur_events_list.append(text)
             self.die()
             return False
 
@@ -1040,7 +1046,9 @@ class Cat():
                         rate = 1
 
             if not random.random() * rate:
-                game.cur_events_list.append(f"{self.name} had contact with {cat.name} and now has {illness_name}.")
+                text = f"{self.name} had contact with {cat.name} and now has {illness_name}."
+                game.health_events_list.append(text)
+                game.cur_events_list.append(text)
                 self.get_ill(illness_name)
 
     def save_condition(self):

@@ -159,6 +159,9 @@ class Death_Events():
         #    other_clan.relations -= 5
 
         game.cur_events_list.append(death_text)
+        game.birth_death_events_list.append(death_text)
+        if "other_clan" in death_cause.tags:
+            game.other_clans_events_list.append(death_text)
 
         if SAVE_DEATH:
             save_death(cat, death_text)
