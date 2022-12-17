@@ -623,7 +623,7 @@ class Condition_Events():
                         cat.injuries.pop(y)
 
         if new_condition in ILLNESSES:
-            cat.get_ill(new_condition)
+            cat.get_ill(new_condition, event_triggered=True)
         elif new_condition in INJURIES:
             if new_condition == 'lingering shock':
                 cat.injuries.pop('shock')

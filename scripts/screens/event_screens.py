@@ -147,7 +147,7 @@ class EventsScreen(Screens):
                 if game.misc_events_list is not None and game.misc_events_list != []:
                     for i in range(len(game.misc_events_list)):
                         if not isinstance(game.misc_events_list[i], str):
-                            game.game.misc_events_list(game.misc_events_list[i])
+                            game.misc_events_list(game.misc_events_list[i])
                             break
                     self.misc_events = '\n\n'.join(game.misc_events_list)
                     self.misc_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 590), (4, 22)),
