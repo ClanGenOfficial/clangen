@@ -589,21 +589,25 @@ class PatrolScreen(Screens):
                                                                               mate.large_sprite)
                     # Check for name length
                     name = str(mate.name)  # get name
-                    if 10 <= len(name) >= 12:  # check name length
-                        short_name = str(mate.name)[0:9]
+                    if 11 <= len(name):  # check name length
+                        short_name = str(mate.name)[0:10]
                         name = short_name + '...'
-                    self.elements['mate_name'] = pygame_gui.elements.UITextBox(name, pygame.Rect((150, 300), (100, 30)),
-                                                                               object_id=get_text_box_theme())
-                    self.elements['mate_info'] = pygame_gui.elements.UITextBox("mate",
-                                                                               pygame.Rect((150, 330), (100, 30)),
-                                                                               object_id=get_text_box_theme(
-                                                                                   "#cat_patrol_info_box"))
+                    self.elements['mate_name'] = pygame_gui.elements.ui_label.UILabel(
+                        pygame.Rect((153, 300), (95, 30)),
+                        name,
+                        object_id=get_text_box_theme())
+                    self.elements['mate_info'] = pygame_gui.elements.ui_label.UILabel(
+                        pygame.Rect((150, 320), (100, 30)),
+                        "mate",
+                        object_id=get_text_box_theme(
+                            "#cat_patrol_info_box"))
                     self.elements['mate_button'] = UIImageButton(pygame.Rect((148, 356), (104, 26)), "",
                                                                  object_id="#patrol_select_button")
                     # Disable mate_button if the cat is not able to go on a patrol
                     if mate not in self.able_cats:
                         self.elements['mate_button'].disable()
             # Draw mentor or apprentice
+            relation = "should not display"
             if self.selected_cat.status == 'apprentice' or self.selected_cat.apprentice != []:
                 self.elements['app_mentor_frame'] = pygame_gui.elements.UIImage(pygame.Rect((495, 190), (166, 170)),
                                                                                 self.app_frame)
@@ -620,16 +624,18 @@ class PatrolScreen(Screens):
                 # Failsafe, if apprentice or mentor is set to none. It should never happen.
                 if self.app_mentor is not None:
                     name = str(self.app_mentor.name)  # get name
-                    if 10 <= len(name) >= 12:  # check name length
-                        short_name = str(self.app_mentor.name)[0:9]
+                    if 11 <= len(name):  # check name length
+                        short_name = str(self.app_mentor.name)[0:10]
                         name = short_name + '...'
-                    self.elements['app_mentor_name'] = pygame_gui.elements.UITextBox(name,
-                                                                                     pygame.Rect((550, 300), (100, 30)),
-                                                                                     object_id=get_text_box_theme())
-                    self.elements['app_mentor_info'] = pygame_gui.elements.UITextBox(relation,
-                                                                                     pygame.Rect((550, 330), (100, 30)),
-                                                                                     object_id=get_text_box_theme(
-                                                                                         "#cat_patrol_info_box"))
+                    self.elements['app_mentor_name'] = pygame_gui.elements.ui_label.UILabel(
+                        pygame.Rect((553, 300), (95, 30)),
+                        name,
+                        object_id=get_text_box_theme())
+                    self.elements['app_mentor_info'] = pygame_gui.elements.ui_label.UILabel(
+                        pygame.Rect((550, 320), (100, 30)),
+                        relation,
+                        object_id=get_text_box_theme(
+                            "#cat_patrol_info_box"))
                     self.elements['app_mentor_image'] = pygame_gui.elements.UIImage(pygame.Rect((550, 200), (100, 100)),
                                                                                     self.app_mentor.large_sprite)
 
