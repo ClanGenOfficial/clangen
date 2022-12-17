@@ -23,7 +23,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newcat2",
+    "patrol_id": "gen_gen_newcatkittypet1",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_adult", "reputation", "kits"],
@@ -46,7 +46,7 @@
 
 },
 {
-    "patrol_id": "gen_gen_newcat3",
+    "patrol_id": "gen_gen_newcat2",
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "new_cat", "new_cat_adult", "new_cat_majorinjury", "reputation"],
