@@ -138,7 +138,7 @@ def bs_blurb_text(cat):
     if backstory == 'tragedy_survivor':
         bs_blurb = "Something horrible happened to this cat's previous clan. They refuse to speak about it."
     if backstory == 'orphaned':
-        bs_blurb = "This cat was found with a deceased parent. The clan took them in, but doesn't hide where" \
+        bs_blurb = "This cat was found with a deceased parent. The clan took them in, but doesn't hide where " \
                     "they came from."
     return bs_blurb
 
