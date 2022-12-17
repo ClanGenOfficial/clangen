@@ -940,14 +940,14 @@ class Patrol():
                 kittypet = choice([True, False])
                 if kittypet is True:
                     new_backstory=choice(['kittypet1', 'kittypet2'])
-                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, backstory=new_backstory)
+                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True, backstory=new_backstory)
                     new_cat = created_cats[0]
                     new_cat.get_injured("recovering from birth")
                 else:
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
                                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
                                             'tragedy_survivor'])
-                    created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, backstory=new_backstory)
+                    created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True, backstory=new_backstory)
                     new_cat = created_cats[0]
                     new_cat.get_injured("recovering from birth")
                 if "new_cat_kits" in tags:
@@ -1000,6 +1000,7 @@ class Patrol():
                        kit=False,
                        litter=False,
                        med=False,
+                       queen=False,
                        age=None,
                        relevant_cat=None,
                        backstory=None,
@@ -1013,9 +1014,15 @@ class Patrol():
         tags = self.patrol_event.tags
         gender = None
         if "new_cat_tom" in tags:
-            gender == 'male'
+            gender = 'male'
         if "new_cat_female" in tags:
-            gender == 'female'
+            gender = 'female'
+
+        if queen:
+            if game.settings_list['no gendered breeding']:
+                gender = gender
+            else:
+                gender = 'female'
 
         if not litter and not kit:
             if age == 'young':
