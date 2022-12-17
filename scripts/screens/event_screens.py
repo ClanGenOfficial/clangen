@@ -306,6 +306,13 @@ class EventsScreen(Screens):
         elif self.event_display_type == "misc events":
             self.misc_events_button.disable()
 
+        self.misc_alert = None
+        self.other_clans_alert = None
+        self.health_alert = None
+        self.relation_alert = None
+        self.birth_death_alert = None
+        self.ceremony_alert = None
+
         self.events_list_box = pygame_gui.elements.UITextBox(self.display_events, pygame.Rect((218, 274), (514, 354)),
                                                              object_id=get_text_box_theme("#events_box"))
 
