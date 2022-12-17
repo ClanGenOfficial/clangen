@@ -887,10 +887,13 @@ class Patrol():
     def add_new_cats(self, litter_choice):
         tags = self.patrol_event.tags
         if "new_cat" in tags:
+            if "new_cat_majorinjury" in tags:
+                majoryinjury = True
             if "new_cat_kit" in tags:  # new kit
                 backstory_choice = choice(['abandoned2', 'abandoned1', 'abandoned3'])
                 created_cats = self.create_new_cat(loner=False, loner_name=False, kittypet=choice([True, False]),
                                                    kit=True, backstory=backstory_choice)
+                new_cat = created_cats[0]
 
             elif "new_cat_adult" in tags: 
                 if "kittypet" in self.patrol_event.patrol_id: # new kittypet
@@ -903,7 +906,8 @@ class Patrol():
                         new_backstory = 'outsider_roots2'
                         created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
                                                         litter=True, relevant_cat=new_cat)
-                        
+                    if majoryinjury:
+                        new_cat.get_injured("broken bone")                      
                 else: # new loner
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
                                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
@@ -915,6 +919,8 @@ class Patrol():
                         new_backstory = 'outsider_roots2'
                         created_cats = self.create_new_cat(loner=True, loner_name=True, backstory=new_backstory,
                                                         litter=True, relevant_cat=new_cat)
+                    if majoryinjury:
+                        new_cat.get_injured("broken bone")
 
             elif "new_cat_med" in tags:  # new med cat
                 new_backstory = choice(['medicine_cat', 'disgraced', 'loner1', 'loner2'])
@@ -933,12 +939,15 @@ class Patrol():
                 if kittypet is True:
                     new_backstory=choice(['kittypet1', 'kittypet2'])
                     created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, backstory=new_backstory)
+                    new_cat = created_cats[0]
+                    new_cat.get_injured("recovering from birth")
                 else:
                     new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
                                             'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
                                             'tragedy_survivor'])
                     created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, backstory=new_backstory)
                     new_cat = created_cats[0]
+                    new_cat.get_injured("recovering from birth")
                 if "new_cat_kits" in tags:
                     if "new_cat_newborn" in tags:
                         new_backstory = 'outsider_roots2'
@@ -961,7 +970,7 @@ class Patrol():
                 new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2', 'refugee',
                                             'tragedy_survivor'])
                 created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, backstory=new_backstory,
-                                                age='young')                
+                                                age='young')
 
 
     def create_new_cat(self,
