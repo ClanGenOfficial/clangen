@@ -889,6 +889,8 @@ class Patrol():
         if "new_cat" in tags:
             if "new_cat_majorinjury" in tags:
                 majoryinjury = True
+            else:
+                majoryinjury = False
             if "new_cat_kit" in tags:  # new kit
                 backstory_choice = choice(['abandoned2', 'abandoned1', 'abandoned3'])
                 created_cats = self.create_new_cat(loner=False, loner_name=False, kittypet=choice([True, False]),
