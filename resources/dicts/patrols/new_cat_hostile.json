@@ -49,7 +49,7 @@
     "patrol_id": "gen_gen_newcat3",
     "biome": "Any",
     "season": "Any",
-    "tags": ["border", "new_cat", "new_cat_adult", "reputation"],
+    "tags": ["border", "new_cat", "new_cat_adult", "new_cat_majorinjury", "reputation"],
     "intro_text": "r_c finds a wounded cat near the thunderpath.",
     "success_text": [
         "The patrol brings the cat back to camp. Once nursed back to health, the cat decides to join the Clan."
