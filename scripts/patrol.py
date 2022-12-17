@@ -1081,8 +1081,12 @@ class Patrol():
             new_cat.thought = 'Is looking around the camp with wonder'
             created_cats.append(new_cat)
 
+        if new_cat.backstory == 'orphaned':
+            orphan = True
+        else:
+            orphan = False
         for new_cat in created_cats:
-            add_siblings_to_cat(new_cat, cat_class)
+            add_siblings_to_cat(new_cat, cat_class, orphan=orphan)
             add_children_to_cat(new_cat, cat_class)
             game.clan.add_cat(new_cat)
 
