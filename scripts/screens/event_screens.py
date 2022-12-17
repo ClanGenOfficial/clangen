@@ -7,7 +7,7 @@ import pygame
 from scripts.events import events_class
 from scripts.utility import draw, get_text_box_theme
 #from scripts.game_structure.text import *
-from scripts.game_structure.image_button import UIImageButton
+from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.game_structure.game_essentials import *
 
 class EventsScreen(Screens):
@@ -108,7 +108,7 @@ class EventsScreen(Screens):
         elif self.event_display_type == "relationship events":
             self.relationship_events_button.disable()
 
-        self.events_list_box = pygame_gui.elements.UITextBox(self.display_events, pygame.Rect((100, 290), (600, 400)),
+        self.events_list_box = UITextBoxTweaked(self.display_events, pygame.Rect((100, 290), (600, 400)),
                                                              object_id=get_text_box_theme("#events_box"))
 
         # Display text

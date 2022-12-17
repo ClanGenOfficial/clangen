@@ -137,7 +137,7 @@ class UITextBoxTweaked(pygame_gui.elements.UITextBox):
                  html_text: str,
                  relative_rect,
                  manager = None,
-                 line_spacing = 1.25,
+                 line_spacing = 1,
                  wrap_to_height: bool = False,
                  layer_starting_height: int = 1,
                  container = None,
