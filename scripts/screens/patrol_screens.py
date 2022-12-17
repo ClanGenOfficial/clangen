@@ -262,13 +262,13 @@ class PatrolScreen(Screens):
         self.elements["add_six"] = UIImageButton(pygame.Rect((443, 495), (34, 34)), "", object_id="#add_six_button")
 
         # patrol type buttons - disabled for now
-        self.elements['paw'] = UIImageButton(pygame.Rect((323, 550), (34, 34)), "", object_id="#paw_patrol_button")
+        self.elements['paw'] = UIImageButton(pygame.Rect((323, 560), (34, 34)), "", object_id="#paw_patrol_button")
         self.elements['paw'].disable()
-        self.elements['mouse'] = UIImageButton(pygame.Rect((363, 550), (34, 34)), "", object_id="#mouse_patrol_button")
+        self.elements['mouse'] = UIImageButton(pygame.Rect((363, 560), (34, 34)), "", object_id="#mouse_patrol_button")
         self.elements['mouse'].disable()
-        self.elements['claws'] = UIImageButton(pygame.Rect((403, 550), (34, 34)), "", object_id="#claws_patrol_button")
+        self.elements['claws'] = UIImageButton(pygame.Rect((403, 560), (34, 34)), "", object_id="#claws_patrol_button")
         self.elements['claws'].disable()
-        self.elements['herb'] = UIImageButton(pygame.Rect((443, 550), (34, 34)), "", object_id="#herb_patrol_button")
+        self.elements['herb'] = UIImageButton(pygame.Rect((443, 560), (34, 34)), "", object_id="#herb_patrol_button")
         self.elements['herb'].disable()
 
         # Able cat page buttons
