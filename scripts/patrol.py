@@ -972,6 +972,24 @@ class Patrol():
                 created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, backstory=new_backstory,
                                                 age='young')
 
+            else:
+                kittypet_choice = choice([True, False])
+                if kittypet_choice: # new kittypet
+                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, kit=False, litter=False,
+                                                   relevant_cat=None,
+                                                   backstory=choice(['kittypet1', 'kittypet2']))
+                    new_cat = created_cats[0]
+                    if majoryinjury:
+                        new_cat.get_injured("broken bone")                      
+                else: # new loner
+                    new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
+                                            'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
+                                            'tragedy_survivor'])
+                    created_cats = self.create_new_cat(loner=True, kittypet=False, backstory=new_backstory)
+                    new_cat = created_cats[0]
+                    if majoryinjury:
+                        new_cat.get_injured("broken bone")
+
 
     def create_new_cat(self,
                        loner=False,
