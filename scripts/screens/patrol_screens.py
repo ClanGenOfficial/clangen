@@ -439,7 +439,7 @@ class PatrolScreen(Screens):
 
         self.elements["antagonize"] = UIImageButton(pygame.Rect((550, 490), (172, 36)), "",
                                                     object_id="#antagonize_button")
-        if patrol.patrol_event.patrol_id not in [500, 501, 502, 503, 504, 505, 510, 800, 801, 802, 803, 804, 805]:
+        if patrol.patrol_event.antagonize_text is None:
             self.elements["antagonize"].hide()
 
     def open_patrol_complete_screen(self, user_input):
