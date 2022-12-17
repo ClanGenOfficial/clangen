@@ -1018,6 +1018,8 @@ class Cat():
         """Check if the cats are siblings."""
         if set(self.get_parents()) & set(other_cat.get_parents()):
             return True
+        if self.backstory == "orphaned":
+            return True
         return False
 
     def is_uncle_aunt(self, other_cat):
@@ -1601,6 +1603,9 @@ class Cat():
                 # Check for uncle/aunt via other_cat's sibs & self's parents
                 if other_cat.siblings:
                     if other_cat.is_uncle_aunt(self):
+                        return False
+        else:
+            if self.is_sibling(other_cat) or other_cat.is_sibling(self):
                         return False
 
         if self.age == other_cat.age:
