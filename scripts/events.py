@@ -805,14 +805,16 @@ class Events():
                 warrior_text = []
                 if len(game.clan.all_clans) > 0:
                     warrior_text.extend([
-                        f'{name} finds a warrior from {otherclan}Clan named {warrior_name} who asks to join the clan.',
-                        f'An injured warrior from {otherclan}Clan asks to join in exchange for healing.'
+                        f'{name} finds a warrior from {otherclan}Clan named {warrior_name} who asks to join the clan.'
+                        # f'An injured warrior from {otherclan}Clan asks to join in exchange for healing.'
+                        # commenting out until I can make these new cats come injured
                     ])
                 else:
                     warrior_text.extend([
                         f'{name} finds a warrior from a different clan named {warrior_name} who asks to join the clan.'
                     ])
                 text = choice(warrior_text)
+
                 game.other_clans_events_list.append(text)
                 game.cur_events_list.append(text)
 
@@ -970,7 +972,7 @@ class Events():
                         possible_conditions.append(condition)
                     chosen_condition = choice(possible_conditions)
                     born_with = False
-                    if PERMANENT[chosen_condition]['congenital'] != 'never':
+                    if PERMANENT[chosen_condition]['congenital'] in ['never', 'sometimes']:
                         born_with = True
                     new_cat.get_permanent_condition(chosen_condition, born_with)
 

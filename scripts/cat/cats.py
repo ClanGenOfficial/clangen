@@ -316,6 +316,8 @@ class Cat():
 
     def die(self):
         if self.status == 'leader' and game.clan.leader_lives > 0:
+            self.injuries.clear()
+            self.illnesses.clear()
             return
         elif self.status == 'leader' and game.clan.leader_lives <= 0:
             self.dead = True

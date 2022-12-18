@@ -753,7 +753,7 @@ class ProfileScreen(Screens):
         """Opens the backstory tab"""
         previous_open_tab = self.open_tab
 
-        # This closes the current tab, so only one can be open as a time
+        # This closes the current tab, so only one can be open at a time
         self.close_current_tab()
 
         if previous_open_tab == 'backstory':
@@ -822,7 +822,7 @@ class ProfileScreen(Screens):
         """Opens the conditions tab"""
         previous_open_tab = self.open_tab
         print('toggled')
-        # This closes the current tab, so only one can be open as a time
+        # This closes the current tab, so only one can be open at a time
         self.close_current_tab()
 
         if previous_open_tab == 'conditions':
@@ -852,7 +852,7 @@ class ProfileScreen(Screens):
                 visible=self.first_page_visible)
             container = self.first_page
 
-            # holds next five conditions, displays only once arrow button is hit
+            # holds next four conditions, displays only once arrow button is hit
             self.second_page_visible = False
             self.second_page = pygame_gui.core.UIContainer(
                 pygame.Rect((89, 471), (624, 151)),
@@ -865,14 +865,14 @@ class ProfileScreen(Screens):
         manager = pygame_gui.UIManager((800, 700), 'resources/defaults.json')
 
         # tracks the position of the detail boxes
-        x_pos = 13
+        x_pos = 14
 
         # tracks the number of boxes so that we don't go out of bounds
         count = 0
         next_injuries = []
         next_illnesses = []
 
-        # holds first five conditions, default display
+        # holds first four conditions, default display
         self.first_page_visible = True
         self.first_page = pygame_gui.core.UIContainer(
             pygame.Rect((89, 471), (624, 151)),
@@ -880,7 +880,7 @@ class ProfileScreen(Screens):
             visible=self.first_page_visible)
         container = self.first_page
 
-        # holds next five conditions, displays only once arrow button is hit
+        # holds next four conditions, displays only once arrow button is hit
         self.second_page_visible = False
         self.second_page = pygame_gui.core.UIContainer(
             pygame.Rect((89, 471), (624, 151)),
@@ -897,7 +897,7 @@ class ProfileScreen(Screens):
                 container = self.first_page
             else:
                 container = self.second_page
-                x_pos = 13
+                x_pos = 14
             # display the detail box
             self.condition_box = pygame_gui.elements.UIImage(
                 pygame.Rect((x_pos, 13), (140, 138)),
@@ -905,6 +905,7 @@ class ProfileScreen(Screens):
                 container=container)
             # display the detail text
             y_adjust = 30
+            # title
             if len(str(condition)) > 18:
                 y_adjust += 18
             self.condition_name_text = UITextBoxTweaked(
@@ -914,16 +915,17 @@ class ProfileScreen(Screens):
                 object_id="text_box",
                 container=container
             )
+            # details
             text = self.get_condition_details(condition)
             self.condition_detail_text = UITextBoxTweaked(
                 text,
-                pygame.Rect((x_pos, y_adjust), (140, 138)),
+                pygame.Rect((x_pos, y_adjust), (138, 138)),
                 line_spacing=.90,
                 object_id="#condition_details_text_box",
                 container=container
             )
             # adjust the x_pos for the next box
-            x_pos += 165
+            x_pos += 152
             count += 1
 
         # check for injuries and display their detail boxes
@@ -933,17 +935,18 @@ class ProfileScreen(Screens):
                 container = self.first_page
             else:
                 container = self.second_page
-                x_pos = 13
+                x_pos = 14
             # display the detail box
             self.condition_box = pygame_gui.elements.UIImage(
                 pygame.Rect((x_pos, 13), (140, 138)),
                 self.condition_details_box,
                 container=container
             )
+            # display the detail text
             y_adjust = 30
+            # title
             if len(str(injury)) > 17:
                 y_adjust += 18
-            # display the detail text
             self.condition_name_text = UITextBoxTweaked(
                 injury,
                 pygame.Rect((x_pos, 13), (138, -1)),
@@ -951,16 +954,17 @@ class ProfileScreen(Screens):
                 object_id="text_box",
                 container=container
             )
+            # details
             text = self.get_condition_details(injury)
             self.condition_detail_text = UITextBoxTweaked(
                 text,
-                pygame.Rect((x_pos, y_adjust), (140, 138)),
+                pygame.Rect((x_pos, y_adjust), (138, 138)),
                 line_spacing=.90,
                 object_id="#condition_details_text_box",
                 container=container
             )
             # adjust the x_pos for the next box
-            x_pos += 165
+            x_pos += 152
             count += 1
 
         # check for illnesses and display their detail boxes
@@ -973,7 +977,7 @@ class ProfileScreen(Screens):
                 container = self.first_page
             else:
                 container = self.second_page
-                x_pos = 13
+                x_pos = 14
             # display the detail box
             self.condition_box = pygame_gui.elements.UIImage(
                 pygame.Rect((x_pos, 13), (140, 138)),
@@ -982,6 +986,7 @@ class ProfileScreen(Screens):
             )
             # display the detail text
             y_adjust = 30
+            # title
             if len(str(illness)) > 17:
                 y_adjust += 18
             self.condition_name_text = UITextBoxTweaked(
@@ -991,16 +996,17 @@ class ProfileScreen(Screens):
                 object_id="text_box",
                 container=container
             )
+            # details
             text = self.get_condition_details(illness)
             self.condition_detail_text = UITextBoxTweaked(
                 text,
-                pygame.Rect((x_pos, y_adjust), (140, 138)),
+                pygame.Rect((x_pos, y_adjust), (138, 138)),
                 line_spacing=.90,
                 object_id="#condition_details_text_box",
                 container=container
             )
             # adjust the x_pos for the next box
-            x_pos += 165
+            x_pos += 152
             count += 1
 
         if count > 4:
@@ -1015,9 +1021,11 @@ class ProfileScreen(Screens):
         if name in self.the_cat.permanent_condition:
             # moons with condition
             keys = self.the_cat.permanent_condition[name].keys()
+            # display if the cat was born with it
             if self.the_cat.permanent_condition[name]["born_with"] is True:
                 text_list.append(f"born with this condition.")
-            if 'moons_with' in keys:  # need to check if it exists for older saves
+            # moons with the condition if not born with condition
+            elif 'moons_with' in keys:  # need to check if it exists for older saves
                 moons_with = self.the_cat.permanent_condition[name]["moons_with"]
                 if moons_with != 1:
                     text_list.append(f"{moons_with} moons")
@@ -1027,8 +1035,11 @@ class ProfileScreen(Screens):
             text_list.append('permanent condition')
             # infected or festering
             if 'complication' in keys:
-                if self.the_cat.permanent_condition[name]["complication"] is not None:
-                    text_list.append(f'Is {self.the_cat.permanent_condition[name]["complication"]}.')
+                complication = self.the_cat.permanent_condition[name]["complication"]
+                if complication is not None:
+                    if 'a festering wound' in self.the_cat.illnesses:
+                        complication = 'festering'
+                    text_list.append(f'Is {complication}!')
 
         # collect details for injuries
         if name in self.the_cat.injuries:
@@ -1042,11 +1053,14 @@ class ProfileScreen(Screens):
                     text_list.append(f"1 moon")
             # infected or festering
             if 'complication' in keys:
-                if self.the_cat.injuries[name]["complication"] is not None:
-                    text_list.append(f'Is {self.the_cat.injuries[name]["complication"]}.')
+                complication = self.the_cat.injuries[name]["complication"]
+                if complication is not None:
+                    if 'a festering wound' in self.the_cat.illnesses:
+                        complication = 'festering'
+                    text_list.append(f'Is {complication}!')
             # can or can't patrol
             if self.the_cat.injuries[name]["severity"] != 'minor':
-                text_list.append("They cannot work with this condition.")
+                text_list.append("They cannot work with this condition")
 
         # collect details for illnesses
         if name in self.the_cat.illnesses:
@@ -1062,7 +1076,7 @@ class ProfileScreen(Screens):
                 text_list.append("infectious!")
             # can or can't patrol
             if self.the_cat.illnesses[name]["severity"] != 'minor':
-                text_list.append("They cannot work with this condition.")
+                text_list.append("They cannot work with this condition")
 
         text = "<br><br>".join(text_list)
         return text
