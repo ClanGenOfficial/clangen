@@ -1023,7 +1023,7 @@ class ProfileScreen(Screens):
             keys = self.the_cat.permanent_condition[name].keys()
             # display if the cat was born with it
             if self.the_cat.permanent_condition[name]["born_with"] is True:
-                text_list.append(f"born with this condition.")
+                text_list.append(f"born with this condition")
             # moons with the condition if not born with condition
             elif 'moons_with' in keys:  # need to check if it exists for older saves
                 moons_with = self.the_cat.permanent_condition[name]["moons_with"]
