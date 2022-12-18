@@ -13,6 +13,26 @@
             "text_horiz_alignment": "center"
         }
     },
+    "#events_box_dark":
+    {
+        "colours": 
+        {
+            "dark_bg": "#00000000",
+            "normal_text": "#EFE5CE"
+        },
+        "font":
+        {
+            "name": "nonosans",
+            "size": "15",
+            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
+        },
+        "misc":
+        {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left"
+        }
+    },
     "#allegiances_box_dark":
     {
         "colours": 
@@ -24,7 +44,7 @@
         {
             "name": "nonosans",
             "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
         },
         "misc":
         {
@@ -44,7 +64,7 @@
         {
             "name": "nonosans",
             "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
         },
         "misc":
         {
@@ -208,6 +228,26 @@
             "text_horiz_alignment": "left",
             "padding": "(0,0)"
         }
+    },
+        "#game_mode_details_dark":
+    {
+        "colours":
+            {
+                "dark_bg": "#00000000",
+                "normal_text": "#EFE5CE"
+            },
+        "font":
+            {
+                "name": "nonosans",
+                "size": "13",
+                "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            },
+        "misc":
+            {
+                "border_width": "0",
+                "shadow_width": "0",
+                "text_horiz_alignment": "left"
+            }
     }
 }
 

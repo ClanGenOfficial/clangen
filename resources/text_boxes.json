@@ -1,305 +1,314 @@
 {
     "text_entry_line":
     {
-        "colours":
-        {
+        "colours": {
             "dark_bg": "#FFFFFF",
             "selected_bg": "#6E6759",
-            "normal_text" :"#000000",
+            "normal_text": "#000000",
             "selected_text": "#DCDCDC"
         },
-        "misc":
-        {
-            "shape":"rounded_rectangle",
+        "misc": {
+            "shape": "rounded_rectangle",
             "shape_corner_radius": "3",
-            "shadow_width": "0"
+            "shadow_width": "0",
+            "padding": "(0,0)"
         },
-        "font":
-        {
+        "font": {
             "name": "notosans",
             "size": "15",
             "regular_path": "resources/fonts/NotoSans-Regular.ttf"
         }
     },
-    "text_box":
-    {
-        "colours": 
-        {
+    "text_box": {
+        "colours": {
             "dark_bg": "#00000000",
             "normal_text": "#000000"
         },
-        "font":
-        {
+        "font": {
             "name": "notosans",
             "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
         },
-        "misc":
-        {
+        "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "center"
         }
     },
-    "#allegiances_box":
-    {
-        "colours": 
-        {
+    "#events_box": {
+        "colours": {
             "dark_bg": "#00000000",
             "normal_text": "#000000"
         },
-        "font":
-        {
+        "font": {
             "name": "nonosans",
             "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
         },
-        "misc":
-        {
+        "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "left"
         }
     },
-    "#setting_text_box":
-    {
-        "colours": 
-        {
+    "#allegiances_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "nonosans",
+            "size": "15",
+            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left"
+        }
+    },
+    "#setting_text_box": {
+        "colours": {
             "dark_bg": "#FFFF0000",
             "normal_text": "#000000"
         },
-        "font":
-        {
+        "font": {
             "name": "nonosans",
             "size": "15",
             "regular_path": "resources/fonts/NotoSans-Regular.ttf"
         },
-        "misc":
-        {
+        "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "left",
             "padding": "0,0"
         }
     },
-    "#cat_profile_info_box":
-    {
-        "colours": 
-        {
+    "#cat_profile_info_box": {
+        "colours": {
             "dark_bg": "#00000000"
         },
-        "font":
-        {
+        "font": {
             "name": "nonosans",
             "size": "11",
             "regular_path": "resources/fonts/NotoSans-Regular.ttf"
         },
-        "misc":
-        {
+        "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "left",
             "padding": "0,0"
         }
     },
-    "#cat_patrol_info_box":
-    {
-        "colours": 
-        {
+
+    "#cat_patrol_info_box": {
+        "colours": {
             "dark_bg": "#00000000"
+
         },
-        "font":
-        {
+        "font": {
             "name": "nonosans",
             "size": "11",
             "regular_path": "resources/fonts/NotoSans-Regular.ttf"
         },
-        "misc":
-        {
+        "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "center",
             "padding": "0,0"
         }
     },
-
-    "#cat_profile_name_box":
-    {
-        "colours": 
-        {
+    "#cat_profile_name_box": {
+        "colours": {
             "dark_bg": "#00000000"
         },
-        "font":
-        {
+        "font": {
             "name": "nonosans",
             "size": "20",
             "regular_path": "resources/fonts/NotoSans-Regular.ttf"
         },
-        "misc":
-        {
+        "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "center",
             "padding": "0,0"
         }
     },
-    "#cat_profile_thoughts_box":
-    {
-        "colours": 
-        {
+    "#cat_profile_thoughts_box": {
+        "colours": {
             "dark_bg": "#00000000"
         },
-        "font":
-        {
+        "font": {
             "name": "nonosans",
             "size": "15",
             "regular_path": "resources/fonts/NotoSans-Regular.ttf"
         },
-        "misc":
-        {
+        "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "center",
             "padding": "0,0"
         }
     },
-    "#history_tab_text_box": 
-    {
-        "colours": 
-        {
+    "#history_tab_text_box": {
+        "colours": {
             "dark_bg": "#00000000"
         },
-        "font":
-        {
+        "font": {
             "name": "nonosans2",
             "size": "13",
             "regular_path": "resources/fonts/NotoSans-Regular.ttf"
         },
-        "misc":
-        {
+        "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "center",
             "padding": "0,0"
         }
     },
-    "#clan_header_text_box": 
-    {
-        "colours": 
-        {
+    "#clan_header_text_box": {
+        "colours": {
             "dark_bg": "#00000000",
             "normal_text": "#FFFFFF"
         },
-        "font":
-        {
+        "font": {
             "name": "nonosans",
             "size": "15",
             "regular_path": "resources/fonts/NotoSans-Regular.ttf"
         },
-        "misc":
-        {
+        "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "center"
         }
     },
-    "#menu_header_text_box": 
-    {
-        "colours": 
-        {
+    "#menu_header_text_box": {
+        "colours": {
             "dark_bg": "#00000000",
             "normal_text": "#FFFFFF"
         },
-        "font":
-        {
+        "font": {
             "name": "nonosans",
             "size": "17",
             "regular_path": "resources/fonts/NotoSans-Regular.ttf"
         },
-        "misc":
-        {
+        "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "center"
         }
     },
-    "#patrol_text_box":
-    {
-        "misc":
-        {
+    "#patrol_text_box": {
+        "misc": {
             "text_horiz_alignment": "left"
         }
     },
-    "#header_text_box":
-    {
-        "colours":
-        {
+    "#header_text_box": {
+        "colours": {
             "dark_bg": "#00000000",
             "normal_text": "#000000"
         },
-        "font":
-        {
+        "font": {
             "name": "nonosans",
             "size": "17",
             "regular_path": "resources/fonts/NotoSans-Regular.ttf"
         },
-        "misc":
-        {
+        "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "center"
         }
     },
-    "#allegiances_header_text_box":
-    {
-        "colours":
-        {
+    "#allegiances_header_text_box": {
+        "colours": {
             "dark_bg": "#00000000",
             "normal_text": "#000000"
         },
-        "font":
-        {
+        "font": {
             "name": "nonosans",
             "size": "17",
             "regular_path": "resources/fonts/NotoSans-Regular.ttf"
         },
-        "misc":
-        {
+        "misc": {
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "left"
         }
     },
-    "#relation_list_name":
-    {
-        "colours":
-            {
-                "dark_bg": "#00000000",
-                "normal_text": "#000000"
-            },
-            "font":
-            {
-                "name": "nonosans",
-                "size": "13",
-                "regular_path": "resources/fonts/NotoSans-Regular.ttf"
-            },
-            "misc":
-            {
-                "border_width": "0",
-                "shadow_width": "0",
-                "text_horiz_alignment": "center"
-            }
+    "#relation_list_name": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "nonosans",
+            "size": "13",
+            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center"
+        }
     },
-    "#header_left":
-    {
-        "prototype":  "#header_text_box",
-    "misc":
-        {
+    "#header_left": {
+        "prototype": "#header_text_box",
+        "misc": {
             "text_horiz_alignment": "left",
-            "padding": "(0,0)"
+            "padding": "0,0"
+        }
+    },
+    "#save_text_box": {
+        "colours": {
+            "dark_bg": "#C5C5C5",
+            "normal_text": "#b30000"
+        },
+        "font": {
+            "name": "nonosans",
+            "size": "14",
+            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "center",
+            "text_vert_alignment": "center"
+        }
+    },
+    "#game_mode_details": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "normal_text": "#000000"
+        },
+        "font": {
+            "name": "nonosans",
+            "size": "15",
+            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+        },
+        "misc": {
+            "text_horiz_alignment": "left",
+            "padding": "20,20"
+        }
+    },
+    "#search_entry_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "selected_bg": "#00000000",
+            "normal_text": "#000000",
+            "selected_text": "#DCDCDC"
+        },
+        "misc": {
+            "shape": "rectangle",
+            "shadow_width": "0",
+            "padding": "(0,0)",
+            "border_width": "0"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "14",
+            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
         }
     }
 }
-
 
 

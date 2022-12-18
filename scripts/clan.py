@@ -1,5 +1,4 @@
 from scripts.cat.cats import *
-from scripts.game_structure.text import *
 from scripts.game_structure.load_cat import *
 
 try:
@@ -85,6 +84,7 @@ class Clan():
             self.name = name
             self.leader = leader
             self.leader.status_change('leader')
+            self.leader_lives = 9
             self.leader_predecessors = 0
             self.clan_cats.append(self.leader.ID)
             self.deputy = deputy
@@ -195,6 +195,7 @@ class Clan():
         ) and cat.outside and cat.ID not in Cat.outside_cats.keys():
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.update({cat.ID:cat})
+            self.clan_cats.remove(cat.ID)
             
     def add_to_darkforest(self, cat):  # Same as add_cat
         """ Places the dead cat into the dark forest. It should not be removed from the list of cats in the clan"""
@@ -252,9 +253,21 @@ class Clan():
             if c != clan:
                 list_data += c + "\n"
         game.cur_events_list.clear()
+        game.other_clans_events_list.clear()
+        game.birth_death_events_list.clear()
+        game.relation_events_list.clear()
+        game.health_events_list.clear()
+        game.ceremony_events_list.clear()
+        game.misc_events_list.clear()
         with open('saves/clanlist.txt', 'w') as write_file:
             write_file.write(list_data)
         game.cur_events_list.clear()
+        game.other_clans_events_list.clear()
+        game.birth_death_events_list.clear()
+        game.relation_events_list.clear()
+        game.health_events_list.clear()
+        game.ceremony_events_list.clear()
+        game.misc_events_list.clear()
 
         pygame.display.quit()
         pygame.quit()

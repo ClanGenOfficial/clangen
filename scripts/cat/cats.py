@@ -100,7 +100,7 @@ class Cat():
         'clanborn', 'half-clan1', 'half-clan2', 'outsider_roots1', 'outsider_roots2', 
         'loner1', 'loner2', 'kittypet1', 'kittypet2', 'rogue1', 'rogue2', 'abandoned1',
         'abandoned2', 'abandoned3', 'medicine_cat', 'otherclan', 'otherclan2', 'ostracized_warrior', 'disgraced', 
-        'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder'
+        'retired_leader', 'refugee', 'tragedy_survivor', 'clan_founder', 'orphaned'
     ]
 
     all_cats = {}  # ID: object
@@ -489,7 +489,7 @@ class Cat():
                         "The world seems dim and lifeless, and r_c keeps close to their clan, seeking out their "
                         "comfort and company.",
                         "r_c goes over the best of the moments they shared with m_c in their mind, again and again, "
-                        "like wearing a rut into the ground, until they're sure that they will remember m_c forever. "
+                        "like wearing a rut into the ground, until they're sure that they will remember m_c forever.",
                         "One day, the clan will have kittens who never knew m_c in life, but r_c vows to ensure m_c's "
                         "memory will live on through them.",
                         "Some of the memories shared at m_c's vigil make r_c laugh. Some cry. Most of them do both, "
@@ -907,9 +907,15 @@ class Cat():
                 self.leader_death_heal = True
                 game.clan.leader_lives -= 1
                 if game.clan.leader_lives > 0:
-                    game.cur_events_list.append(f"{self.name} lost a life to {illness}.")
+                    text = f"{self.name} lost a life to {illness}."
+                    game.health_events_list.append(text)
+                    game.birth_death_events_list.append(text)
+                    game.cur_events_list.append(text)
                 elif game.clan.leader_lives <= 0:
-                    game.cur_events_list.append(f"{self.name} lost their last life to {illness}.")
+                    text = f"{self.name} lost their last life to {illness}."
+                    game.health_events_list.append(text)
+                    game.birth_death_events_list.append(text)
+                    game.cur_events_list.append(text)
             self.die()
             return False
 
@@ -1296,7 +1302,9 @@ class Cat():
                         rate = 1
 
             if not random.random() * rate:
-                game.cur_events_list.append(f"{self.name} had contact with {cat.name} and now has {illness_name}.")
+                text = f"{self.name} had contact with {cat.name} and now has {illness_name}."
+                game.health_events_list.append(text)
+                game.cur_events_list.append(text)
                 self.get_ill(illness_name)
 
     def save_condition(self):
@@ -1601,6 +1609,9 @@ class Cat():
                 # Check for uncle/aunt via other_cat's sibs & self's parents
                 if other_cat.siblings:
                     if other_cat.is_uncle_aunt(self):
+                        return False
+        else:
+            if self.is_sibling(other_cat) or other_cat.is_sibling(self):
                         return False
 
         if self.age == other_cat.age:

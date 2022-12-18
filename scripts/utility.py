@@ -219,13 +219,19 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
     return return_dict
 
 
-def add_siblings_to_cat(cat, cat_class):
+def add_siblings_to_cat(cat, cat_class, orphan=False):
     """Iterate over all current cats and add the ID to the current cat."""
-    for inter_cat in cat_class.all_cats.values():
-        if inter_cat.is_sibling(cat) and inter_cat.ID not in cat.siblings:
+    orphan = orphan
+    if orphan:
+        for inter_cat in cat_class.all_cats.values():
             cat.siblings.append(inter_cat.ID)
-        if cat.is_sibling(inter_cat) and cat.ID not in inter_cat.siblings:
             inter_cat.siblings.append(cat.ID)
+    else:
+        for inter_cat in cat_class.all_cats.values():
+            if inter_cat.is_sibling(cat) and inter_cat.ID not in cat.siblings:
+                cat.siblings.append(inter_cat.ID)
+            if cat.is_sibling(inter_cat) and cat.ID not in inter_cat.siblings:
+                inter_cat.siblings.append(cat.ID)
 
 
 def add_children_to_cat(cat, cat_class):
