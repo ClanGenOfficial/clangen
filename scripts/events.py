@@ -1218,8 +1218,8 @@ class Events():
         
     def handle_twoleg_capture(self, cat):
         cat.outside = True
-        if cat.ID in Cat.all_cats.keys(
-        ) and cat.outside and cat.ID not in Cat.outside_cats.keys():
+        cat.thought = "Is terrified as they are trapped in a large silver twoleg den"
+        if cat.ID in Cat.all_cats.keys() and cat.outside and cat.ID not in Cat.outside_cats.keys():
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.update({cat.ID:cat})
             game.clan.clan_cats.remove(cat.ID)    
