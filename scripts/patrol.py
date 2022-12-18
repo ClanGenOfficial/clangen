@@ -1000,7 +1000,7 @@ class Patrol():
                 kittypet = choice([True, False])
                 if "kittypet" in self.patrol_event.patrol_id:
                     kittypet = True
-                if kittypet is True: # new kittypet
+                if kittypet: # new kittypet
                     created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True,
                                                    age='young', backstory=choice(['kittypet1', 'kittypet2']))
                     new_cat = created_cats[0]
@@ -1014,13 +1014,31 @@ class Patrol():
                     if majoryinjury:
                         new_cat.get_injured("broken bone")
 
+            elif "new_cat_elder" in tags:
+                kittypet = choice([True, False])
+                if "kittypet" in self.patrol_event.patrol_id:
+                    kittypet = True
+                if kittypet: # new kittypet
+                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, age='old',
+                                                   backstory=choice(['kittypet1', 'kittypet2']))
+                    new_cat = created_cats[0]
+                    if majoryinjury:
+                        new_cat.get_injured("broken bone")                      
+                else: # new loner
+                    new_backstory = choice(['loner1', 'loner2', 'rogue1', 'rogue2',
+                                            'ostracized_warrior', 'disgraced', 'retired_leader', 'refugee',
+                                            'tragedy_survivor'])
+                    created_cats = self.create_new_cat(loner=True, kittypet=False, backstory=new_backstory, age='old')
+                    new_cat = created_cats[0]
+                    if majoryinjury:
+                        new_cat.get_injured("broken bone")
+
             else:
                 kittypet = choice([True, False])
                 if "kittypet" in self.patrol_event.patrol_id:
                     kittypet = True
                 if kittypet is True: # new kittypet
-                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, kit=False, litter=False,
-                                                   relevant_cat=None,
+                    created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True,
                                                    backstory=choice(['kittypet1', 'kittypet2']))
                     new_cat = created_cats[0]
                     if majoryinjury:
