@@ -970,7 +970,8 @@ class Patrol():
                     new_backstory=choice(['kittypet1', 'kittypet2'])
                     created_cats = self.create_new_cat(loner=False, loner_name=True, kittypet=True, queen=True, backstory=new_backstory)
                     new_cat = created_cats[0]
-                    new_cat.name = "unknown queen"
+                    new_cat.name.prefix = "unnamed"
+                    new_cat.name.suffix = " queen"
                     new_cat.outside = True
                     new_cat.dead = True
                 else:
@@ -979,7 +980,8 @@ class Patrol():
                                             'tragedy_survivor'])
                     created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, queen=True, backstory=new_backstory)
                     new_cat = created_cats[0]
-                    new_cat.name = "unknown queen"
+                    new_cat.name.prefix = "unnamed"
+                    new_cat.name.suffix = " queen"
                     new_cat.outside = True
                     new_cat.dead = True
                 if "new_cat_newborn" in tags:
