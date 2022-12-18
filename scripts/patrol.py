@@ -308,6 +308,11 @@ class Patrol():
                     if not self.patrol_apprentices[0].is_potential_mate(self.patrol_apprentices[1],
                                                                         for_love_interest=True):
                         continue
+                else:
+                    if not self.patrol_leader.is_potential_mate(self.patrol_random_cat,
+                                                                        for_love_interest=True):
+                        continue
+
 
             final_patrols.append(patrol)
 
