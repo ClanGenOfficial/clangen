@@ -40,7 +40,7 @@
     ],
     "min_cats": 1,
     "max_cats": 6,
-    "win_skills": ["great speaker","excellent speaker"],
+    "win_skills": ["great speaker", "excellent speaker"],
     "antagonize_text": "Your patrol tells the cat to leave or feel their claws. The loner seems to choose life and quickly takes off.",
     "antagonize_fail_text": "Your patrol advances threateningly towards the loner, who retaliates with a quick swipe to p_l's muzzle. While p_l is stunned, they make their getaway."
 
@@ -184,7 +184,7 @@
             "p_l sees a worn and weary queen protecting their mewling litter. Not happy but unwilling and unable to go against their beloved code they take them back to camp, refusing to let r_c say a word against it."
     ],
     "fail_text": [
-            "p_l sees the bodies of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and p_l and the rest of the patrol take the time to carry and bury them outside their borders."
+            "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and p_l and the rest of the patrol take the time to carry and bury them outside their borders."
     ],
     "win_skills": ["None"],
     "win_trait": ["None"],
@@ -209,7 +209,7 @@
             "p_l and their patrol comes across frantically mewling kits desperately trying to wake up their dead parent. Unsure but not willing for them to die they bring the kits back to the clan to be raised as one of them."
     ],
     "fail_text": [
-            "p_l sees the bodies of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and p_l and the rest of the patrol take the time to carry and bury them outside their borders."
+            "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and p_l and the rest of the patrol take the time to carry and bury them outside their borders."
     ],
     "win_skills": ["None"],
     "win_trait": ["None"],
@@ -234,7 +234,7 @@
             "p_l sees a worn and weary queen protecting their mewling litter. Not happy but unwilling and unable to go against their beloved code they take them back to camp."
     ],
     "fail_text": [
-            "p_l sees the bodies of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
+            "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
     ],
     "win_skills": ["None"],
     "win_trait": ["None"],
@@ -259,7 +259,7 @@
             "p_l comes across frantically mewling kits desperately trying to wake up their dead parent. Unsure but not willing for them to die they bring the kits back to the clan to be raised as one of them."
     ],
     "fail_text": [
-            "p_l sees the bodies of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
+            "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
     ],
     "win_skills": ["None"],
     "win_trait": ["None"],
@@ -284,7 +284,7 @@
             "app1 follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. Panicking, they run for home. It alerts c_n tp the problem, and begrudingly they take the queen and kits in."
     ],
     "fail_text": [
-            "app1 sees the bodies of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
+            "app1 sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
     ],
     "win_skills": ["None"],
     "win_trait": ["None"],
@@ -309,7 +309,7 @@
             "It takes ages for app1 to pin point the sounds. Eventually they uncover the hidden birthing nest of a dead, cold queen, their newborn kits by their side. It's against everything app1 has been told about outsiders, but they can't leave the kittens to die."
     ],
     "fail_text": [
-            "app1 sees the bodies of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
+            "app1 sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
     ],
     "win_skills": ["None"],
     "win_trait": ["None"],

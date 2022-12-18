@@ -150,7 +150,7 @@
     "exp": 10,
     "success_text": [
             "Before p_l can move to check the bush, a loner emerges. The cat explains that they would like to join the clan and after a short conversation with p_l, the loner joins the patrol on the journey back to camp.",
-            "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out!  None of the cats are quick enough to catch it, but at least the noise was nothing dangerous.",
+            "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out! None of the cats are quick enough to catch it, but at least the noise was nothing dangerous.",
             "s_c takes the lead in checking the noise, and it's a good thing they did, because the moment they step closer to the bush a rogue comes springing out! s_c is quick to bat them away, hissing and spitting, before promptly chasing the rogue out of the territory.  It was hardly a fight, really. ",
             "s_c takes the lead in checking the noise and finds that the bush is hiding a loner and their litter! The kits are freshly born, new to the world, and s_c is quick to sit and talk quietly with the new parent.  After some coaxing, s_c convinces them to come stay with the clan for a while, maybe even to join permanently."
     ],
@@ -210,7 +210,7 @@
             "It takes ages for p_l to pin point the sounds, but eventually they uncover the hidden birthing nest of a dead, cold queen, their newborn kits by their side. p_l makes sure the queen is given a vigil - as the kits grow older, they'll have questions about their parent."
     ],
     "fail_text": [
-            "p_l follows the strange sounds on the wind and finds the bodies of an unknown queen with their kits beside them, slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects."
+            "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. r_c goes back to camp to find help bringing their bodies back to camp to pay respects."
     ],
     "win_skills": ["None"],
     "win_trait": ["None"],
@@ -235,7 +235,7 @@
             "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. p_l tries to make the queen eat some strengthening herbs, and slowly helps them back to camp. Thankful for the help the queen joins c_n with their kits."
     ],
     "fail_text": [
-            "p_l follows the strange sounds on the wind and finds the bodies of an unknown queen with their kits beside them, slowly going cold. They cancel their patrol and return to camp to get help sending these lost souls to StarClan."
+            "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They cancel their patrol and return to camp to get help sending these lost souls to StarClan."
     ],
     "win_skills": ["None"],
     "win_trait": ["None"],
@@ -260,7 +260,7 @@
             "It takes ages for p_l to pin point the sounds, but eventually they uncover the hidden birthing nest of a dead, cold queen, their newborn kits by their side. p_l makes sure the queen is given a vigil - as the kits grow older, they'll have questions about their parent."
     ],
     "fail_text": [
-            "p_l follows the strange sounds on the wind and finds the bodies of an unknown queen with their kits beside them, slowly going cold. They cancel their patrol and return to camp to get help sending these lost souls to StarClan."
+            "p_l follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They cancel their patrol and return to camp to get help sending these lost souls to StarClan."
     ],
     "win_skills": ["None"],
     "win_trait": ["None"],
@@ -285,7 +285,7 @@
             "app1 follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. Panicking, they ask the queen to hold on just a little longer while they fetch help, then sprint for home, yowling in case any patrol is nearby to assist."
     ],
     "fail_text": [
-            "app1 follows the strange sounds on the wind and finds the bodies of an unknown queen with their kits beside them, slowly going cold. They desperately try to save a kitten, but can't, and their mentor fin them there sobbing hours later."
+            "app1 follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They desperately try to save a kitten, but can't, and their mentor fin them there sobbing hours later."
     ],
     "win_skills": ["None"],
     "win_trait": ["None"],
@@ -310,7 +310,7 @@
             "It takes ages for app1 to pin point the sounds, but eventually they uncover the hidden birthing nest of a dead, cold queen, their newborn kits by their side. app1 vows to be the new kits' family, to make sure they'll grow up loved and accepted."
     ],
     "fail_text": [
-            "app1 follows the strange sounds on the wind and finds the bodies of an unknown queen with their kits beside them, slowly going cold. They desperately try to save a kitten, but can't, and their mentor finds them there sobbing hours later."
+            "app1 follows the strange sounds on the wind and finds the body of an unknown queen with their kits beside them, slowly going cold. They desperately try to save a kitten, but can't, and their mentor finds them there sobbing hours later."
     ],
     "win_skills": ["None"],
     "win_trait": ["None"],
