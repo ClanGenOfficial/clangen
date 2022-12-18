@@ -70,7 +70,7 @@ class EventsScreen(Screens):
                 if game.ceremony_events_list is not None and game.ceremony_events_list != []:
                     for i in range(len(game.ceremony_events_list)):
                         if not isinstance(game.ceremony_events_list[i], str):
-                            game.game.ceremony_events_list(game.ceremony_events_list[i])
+                            game.ceremony_events_list.remove(game.ceremony_events_list[i])
                             break
                     self.ceremony_events = '\n\n'.join(game.ceremony_events_list)
 
@@ -86,7 +86,7 @@ class EventsScreen(Screens):
                 if game.birth_death_events_list is not None and game.birth_death_events_list != []:
                     for i in range(len(game.birth_death_events_list)):
                         if not isinstance(game.birth_death_events_list[i], str):
-                            game.game.birth_death_events_list(game.birth_death_events_list[i])
+                            game.birth_death_events_list.remove(game.birth_death_events_list[i])
                             break
                     self.birth_death_events = '\n\n'.join(game.birth_death_events_list)
                     self.birth_death_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 390), (4, 22)),
@@ -101,7 +101,7 @@ class EventsScreen(Screens):
                 if game.relation_events_list is not None and game.relation_events_list != []:
                     for i in range(len(game.relation_events_list)):
                         if not isinstance(game.relation_events_list[i], str):
-                            game.game.relation_events_list(game.relation_events_list[i])
+                            game.relation_events_list.remove(game.relation_events_list[i])
                             break
                     self.relation_events = '\n\n'.join(game.relation_events_list)
                     self.relation_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 440), (4, 22)),
@@ -116,7 +116,7 @@ class EventsScreen(Screens):
                 if game.health_events_list is not None and game.health_events_list != []:
                     for i in range(len(game.health_events_list)):
                         if not isinstance(game.health_events_list[i], str):
-                            game.game.health_events_list(game.health_events_list[i])
+                            game.health_events_list.remove(game.health_events_list[i])
                             break
                     self.health_events = '\n\n'.join(game.health_events_list)
                     self.health_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 490), (4, 22)),
@@ -131,7 +131,7 @@ class EventsScreen(Screens):
                 if game.other_clans_events_list is not None and game.other_clans_events_list != []:
                     for i in range(len(game.other_clans_events_list)):
                         if not isinstance(game.other_clans_events_list[i], str):
-                            game.game.other_clans_events_list(game.other_clans_events_list[i])
+                            game.other_clans_events_list.remove(game.other_clans_events_list[i])
                             break
                     self.other_clans_events = '\n\n'.join(game.other_clans_events_list)
                     self.other_clans_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 540), (4, 22)),
@@ -146,7 +146,7 @@ class EventsScreen(Screens):
                 if game.misc_events_list is not None and game.misc_events_list != []:
                     for i in range(len(game.misc_events_list)):
                         if not isinstance(game.misc_events_list[i], str):
-                            game.misc_events_list(game.misc_events_list[i])
+                            game.misc_events_list.remove(game.misc_events_list[i])
                             break
                     self.misc_events = '\n\n'.join(game.misc_events_list)
                     self.misc_alert = pygame_gui.elements.UIImage(pygame.Rect((44, 590), (4, 22)),
@@ -247,6 +247,7 @@ class EventsScreen(Screens):
         self.events_frame = pygame_gui.elements.UIImage(pygame.Rect((206, 266), (534, 370)),
                                                         image_cache.load_image(
                                                             "resources/images/event_page_frame.png").convert_alpha())
+        self.events_frame.disable()
         # Set text for clan age
         if game.clan.age == 1:
             self.clan_age.set_text(f'Clan age: {str(game.clan.age)} moon')

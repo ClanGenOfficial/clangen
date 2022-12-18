@@ -166,6 +166,17 @@ class Condition_Events():
             for y in healed_illnesses:
                 if y in cat.illnesses:
                     cat.illnesses.pop(y)
+                # check if illness was a complication and erase if it was
+                if y in ['an infected wound', 'a festering wound']:
+                    for injury in cat.injuries:
+                        keys = cat.injuries[injury].keys()
+                        if 'complication' in keys:
+                            cat.injuries[injury]['complication'] = None
+                    for condition in cat.permanent_condition:
+                        keys = cat.permanent_condition[condition].keys()
+                        if 'complication' in keys:
+                            cat.permanent_condition[condition]['complication'] = None
+
             # reset healed_condition value
             cat.healed_condition = False
 
@@ -512,6 +523,16 @@ class Condition_Events():
                                 if risk['name'] == 'an infected wound' and 'a festering wound' in cat.illnesses:
                                     break  # prevents a cat with a festering wound from receiving an infected wound
                                 new_condition = risk['name']
+                                complication = None
+                                if new_condition == 'an infected wound':
+                                    complication = 'infected'
+                                elif new_condition == 'a festering wound':
+                                    complication = 'festering'
+                                keys = cat.injuries[injury].keys()
+                                if 'complication' in keys:
+                                    cat.injuries[injury]["complication"] = complication
+                                else:
+                                    cat.injuries[injury].update({'complication': complication})
                                 # gather potential event strings for gotten condition
                                 possible_string_list = INJURY_RISK_STRINGS[injury][new_condition]
 
@@ -639,6 +660,17 @@ class Condition_Events():
                                 break
                             elif new_ouchie in ILLNESSES:
                                 cat.get_ill(new_ouchie, event_triggered=True)
+                                keys = cat.permanent_condition[condition].keys()
+                                complication = None
+                                if new_ouchie == 'an infected wound':
+                                    complication = 'infected'
+                                elif new_ouchie == 'a festering wound':
+                                    complication = 'festering'
+                                if complication is not None:
+                                    if 'complication' in keys:
+                                        cat.permanent_condition[condition]['complication'] = complication
+                                    else:
+                                        cat.permanent_condition[condition].update({'complication': complication})
                                 break
                             elif new_ouchie in PERMANENT:
                                 new_condition.append(new_ouchie)

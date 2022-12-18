@@ -969,7 +969,10 @@ class Events():
                     for condition in PERMANENT:
                         possible_conditions.append(condition)
                     chosen_condition = choice(possible_conditions)
-                    new_cat.get_permanent_condition(chosen_condition)
+                    born_with = False
+                    if PERMANENT[chosen_condition]['congenital'] != 'never':
+                        born_with = True
+                    new_cat.get_permanent_condition(chosen_condition, born_with)
 
                     # assign scars
                     if chosen_condition in ['lost a leg', 'born without a leg']:
