@@ -363,6 +363,9 @@ class MakeClanScreen(Screens):
                 self.elements["background"].set_image(
                     pygame.image.load("resources/images/pick_clan_screen/clan_four_light.png").convert_alpha())
                 self.elements['next_step'].enable()
+                # In order for the "previous step" to work properly, we must enable this button, just in case it
+                # was disabled in the next step.
+                self.elements["select_cat"].enable()
             elif len(self.members) == 7:
                 self.elements["background"].set_image(
                     pygame.image.load("resources/images/pick_clan_screen/clan_full_light.png").convert_alpha())

@@ -1270,10 +1270,10 @@ class ProfileScreen(Screens):
             if self.the_cat.age in ['young adult', 'adult', 'senior adult', 'elder'] and not self.the_cat.dead:
                 if self.the_cat.no_kits:
                     self.toggle_kits = UIImageButton(pygame.Rect((402, 574), (172, 36)), "",
-                                                     object_id="#prevent_kits_button")
+                                                     object_id="#allow_kits_button")
                 else:
                     self.toggle_kits = UIImageButton(pygame.Rect((402, 574), (172, 36)), "",
-                                                     object_id="#allow_kits_button")
+                                                     object_id="#prevent_kits_button")
             else:
                 self.toggle_kits = UIImageButton(pygame.Rect((402, 574), (172, 36)), "",
                                                  object_id="#prevent_kits_button")

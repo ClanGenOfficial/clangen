@@ -771,10 +771,12 @@ class ChooseMateScreen(Screens):
                     game.switches['cat'] = event.ui_element.return_cat_object().ID
                     self.change_screen("profile screen")
             # return to profile screen
-            if event.ui_element == self.back_button:
+            elif event.ui_element == self.back_button:
                 self.change_screen('profile screen')
+
             if event.ui_element == self.toggle_mate:
                 if self.the_cat.mate is None:
+
                     self.selected_cat.mate = self.the_cat.ID
                     self.the_cat.mate = self.selected_cat.ID
                     self.update_mate_screen()
@@ -783,14 +785,20 @@ class ChooseMateScreen(Screens):
                     self.the_cat.mate = None
                     self.update_choose_mate(breakup=True)
                 self.update_cat_list()
-            if event.ui_element == self.previous_cat_button:
+            elif event.ui_element == self.previous_cat_button:
                 game.switches["cat"] = self.previous_cat
                 self.update_current_cat_info()
                 self.update_buttons()
-            if event.ui_element == self.next_cat_button:
+            elif event.ui_element == self.next_cat_button:
                 game.switches["cat"] = self.next_cat
                 self.update_current_cat_info()
                 self.update_buttons()
+            elif event.ui_element == self.previous_page_button:
+                self.current_page -= 1
+                self.update_cat_list()
+            elif event.ui_element == self.next_page_button:
+                self.current_page += 1
+                self.update_cat_list()
 
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
@@ -1317,7 +1325,8 @@ class RelationshipScreen(Screens):
         self.next_cat_button = UIImageButton(pygame.Rect((622, 25), (153, 30)), "", object_id="#next_cat_button")
         self.back_button = UIImageButton(pygame.Rect((25, 645), (105, 30)), "", object_id="#back_button")
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((610, 97), (145, 23)))
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((610, 97), (145, 23)),
+                                                              object_id="#search_entry_box")
 
         self.show_dead_text = pygame_gui.elements.UITextBox("Show Dead", pygame.Rect((100, 505), (100, 30)),
                                                             object_id="#relation_list_name")

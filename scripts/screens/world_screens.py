@@ -46,7 +46,8 @@ class OutsideClanScreen(Screens):
             if not the_cat.dead and the_cat.exiled:
                 self.living_cats.append(the_cat)
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525,142), (147,20)))
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 23)),
+                                                              object_id="#search_entry_box")
 
         self.your_clan_button = UIImageButton(pygame.Rect((115, 135), (34, 34)), "", object_id="#your_clan_button")
         self.outside_clan_button = UIImageButton(pygame.Rect((150, 135),(34, 34)), "", object_id="#outside_clan_button")
