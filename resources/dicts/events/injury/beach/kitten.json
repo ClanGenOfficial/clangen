@@ -8,13 +8,7 @@
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare",
-            "mc_to_rc",
-            "comfort",
-            "trust",
-            "respect",
-            "platonic",
-            "neg_dislike"
+            "Leaf-bare"
         ],
         "event_text": "m_c was grabbed by a seagull, but luckily r_c saves them! The kit is still left injured from the ordeal.",
         "history_text": [

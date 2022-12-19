@@ -26,6 +26,7 @@ def get_med_cats(Cat):
 
     return possible_med_cats
 
+
 def get_cats_allowed_on_patrol(Cat, game_mode):
     able_cats = []
 
@@ -50,6 +51,15 @@ def get_cats_allowed_on_patrol(Cat, game_mode):
                 able_cats.append(the_cat)
 
     return able_cats
+
+
+def get_living_cat_count(Cat):
+    count = 0
+    for the_cat in Cat.all_cats.values():
+        if the_cat.dead or the_cat.exiled:
+            continue
+        count += 1
+    return count
 
 
 def save_death(cat, death_string):
@@ -191,6 +201,7 @@ def add_children_to_cat(cat, cat_class):
             cat.children.append(inter_cat.ID)
         if inter_cat.is_parent(inter_cat) and cat.ID not in inter_cat.children:
             inter_cat.children.append(cat.ID)
+
 
 # ---------------------------------------------------------------------------- #
 #                               Text Adjust                                    #
@@ -520,7 +531,7 @@ def update_sprite(cat):
     game.switches['error_message'] = ''
 
 
-def get_text_box_theme(themename = ""):
+def get_text_box_theme(themename=""):
     """Updates the name of the theme based on dark or light mode"""
     if game.settings['dark mode']:
         if themename == "":

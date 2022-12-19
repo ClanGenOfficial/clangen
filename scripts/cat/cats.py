@@ -542,7 +542,7 @@ class Cat():
             if relationship.romantic_love >= love_threshold * 2:
                 cats_to_choose.append(relationship.cat_to)
 
-        # increase the chance a kitten interact with other kittens
+        # increase the chance a kitten interacts with other kittens
         if self.age == "kitten":
             kittens = list(
                 filter(
@@ -553,7 +553,7 @@ class Cat():
                 amount = int(len(cats_to_choose) / len(kittens))
             cats_to_choose = cats_to_choose + kittens * amount
 
-        # increase the chance a apprentice interact with other apprentices
+        # increase the chance an apprentice interacts with other apprentices
         if self.age == "adolescent":
             apprentices = list(
                 filter(
