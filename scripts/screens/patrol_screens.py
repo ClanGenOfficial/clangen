@@ -718,9 +718,9 @@ class PatrolScreen(Screens):
                         pygame.Rect((153, 300), (95, 30)),
                         name,
                         object_id=get_text_box_theme())
-                    self.elements['mate_info'] = pygame_gui.elements.ui_label.UILabel(
-                        pygame.Rect((150, 320), (100, 30)),
+                    self.elements['mate_info'] = pygame_gui.elements.UITextBox(
                         "mate",
+                        pygame.Rect((150, 325), (100, 30)),
                         object_id=get_text_box_theme(
                             "#cat_patrol_info_box"))
                     self.elements['mate_button'] = UIImageButton(pygame.Rect((148, 356), (104, 26)), "",
@@ -753,9 +753,9 @@ class PatrolScreen(Screens):
                         pygame.Rect((553, 300), (95, 30)),
                         name,
                         object_id=get_text_box_theme())
-                    self.elements['app_mentor_info'] = pygame_gui.elements.ui_label.UILabel(
-                        pygame.Rect((550, 320), (100, 30)),
+                    self.elements['app_mentor_info'] = pygame_gui.elements.UITextBox(
                         relation,
+                        pygame.Rect((550, 325), (100, 30)),
                         object_id=get_text_box_theme(
                             "#cat_patrol_info_box"))
                     self.elements['app_mentor_image'] = pygame_gui.elements.UIImage(pygame.Rect((550, 200), (100, 100)),

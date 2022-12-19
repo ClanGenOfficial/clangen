@@ -757,7 +757,7 @@ class ProfileScreen(Screens):
             else:
                 output += "injured!"
         elif the_cat.is_ill():
-            if "grief stricken" in the_cat.injuries:
+            if "grief stricken" in the_cat.illnesses:
                 output += 'grieving!'
             else:
                 output += 'sick!'
