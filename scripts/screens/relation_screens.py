@@ -6,7 +6,7 @@ import pygame_gui.elements
 from .base_screens import Screens, cat_profiles
 
 from scripts.utility import draw_large, draw, update_sprite, get_personality_compatibility, get_text_box_theme
-#from scripts.game_structure.text import *
+# from scripts.game_structure.text import *
 from scripts.cat.cats import Cat
 import scripts.game_structure.image_cache as image_cache
 from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked, UISpriteButton, UIRelationStatusBar
@@ -20,6 +20,27 @@ class ChooseMentorScreen(Screens):
     apprentice_details = {}
     selected_details = {}
     cat_list_buttons = {}
+
+    def __init__(self, name=None):
+        super().__init__(name)
+        self.list_page = None
+        self.next_cat = None
+        self.previous_cat = None
+        self.next_page_button = None
+        self.previous_page_button = None
+        self.current_mentor_warning = None
+        self.confirm_mentor = None
+        self.back_button = None
+        self.next_cat_button = None
+        self.previous_cat_button = None
+        self.mentor_icon = None
+        self.app_frame = None
+        self.mentor_frame = None
+        self.current_mentor_text = None
+        self.info = None
+        self.heading = None
+        self.mentor = None
+        self.the_cat = None
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -139,7 +160,7 @@ class ChooseMentorScreen(Screens):
         del self.app_frame
 
     def update_apprentice(self):
-        """Updates the apprentice focused on. """
+        """ Updates the apprentice focused on. """
         for ele in self.apprentice_details:
             self.apprentice_details[ele].kill()
         self.apprentice_details = {}
@@ -157,17 +178,20 @@ class ChooseMentorScreen(Screens):
 
         info = self.the_cat.age + "\n" + self.the_cat.status + "\n" + self.the_cat.genderalign + \
                "\n" + self.the_cat.trait + "\n" + self.the_cat.skill
-        self.apprentice_details["apprentice_info"] = UITextBoxTweaked(info,
-                                                                      pygame.Rect((490, 170), (100, 100)),
-                                                                      object_id="#cat_patrol_info_box",
-                                                                      line_spacing=0.95)
+        self.apprentice_details["apprentice_info"] = UITextBoxTweaked(
+            info,
+            pygame.Rect((490, 170), (100, 100)),
+            object_id="#cat_patrol_info_box",
+            line_spacing=0.95)
 
         name = str(self.the_cat.name)  # get name
-        if 10 <= len(name) >= 16:  # check name length
-            short_name = str(arg0.name)[0:9]
+        if 11 <= len(name):  # check name length
+            short_name = str(name)[0:9]
             name = short_name + '...'
-        self.apprentice_details["apprentice_name"] = pygame_gui.elements.UITextBox(name,
-                                                                                   pygame.Rect((620, 115), (110, 30)))
+        self.apprentice_details["apprentice_name"] = pygame_gui.elements.ui_label.UILabel(
+            pygame.Rect((620, 115), (110, 30)),
+            name,
+            object_id="#header_text_box")
 
         self.find_next_previous_cats()  # Determine where the next and previous cat buttons lead
 
@@ -221,7 +245,7 @@ class ChooseMentorScreen(Screens):
         if self.next_cat == 1:
             self.next_cat = 0
 
-    def change_mentor(self, new_mentor = None):
+    def change_mentor(self, new_mentor=None):
         if new_mentor:
             self.the_cat.mentor.apprentice.remove(self.the_cat)
             if self.the_cat.moons > 6:
@@ -251,16 +275,18 @@ class ChooseMentorScreen(Screens):
         if len(self.selected_mentor.apprentice) >= 1:
             info += f"\n{len(self.selected_mentor.apprentice)} current app(s)"
         self.selected_details["selected_info"] = UITextBoxTweaked(info,
-                                                                  pygame.Rect((210, 170), (100, 100)),
+                                                                  pygame.Rect((210, 170), (105, 115)),
                                                                   object_id="#cat_patrol_info_box",
                                                                   line_spacing=0.95)
 
         name = str(self.selected_mentor.name)  # get name
-        if 10 <= len(name) >= 16:  # check name length
-            short_name = str(arg0.name)[0:9]
+        if 11 <= len(name):  # check name length
+            short_name = str(name)[0:9]
             name = short_name + '...'
-        self.selected_details["mentor_name"] = pygame_gui.elements.UITextBox(name,
-                                                                             pygame.Rect((71, 115), (110, 30)))
+        self.selected_details["mentor_name"] = pygame_gui.elements.ui_label.UILabel(
+            pygame.Rect((65, 115), (110, 30)),
+            name,
+            object_id="#header_text_box")
 
     def update_cat_list(self):
         """Updates the cat sprite buttons. """
@@ -338,7 +364,6 @@ class ChooseMentorScreen(Screens):
         return [L[x: x + n] for x in range(0, len(L), n)]
 
 
-
 class ViewChildrenScreen(Screens):
     parents = pygame.image.load("resources/images/family_parents.png").convert_alpha()
     mate = pygame.image.load("resources/images/family_mate.png").convert_alpha()
@@ -352,6 +377,10 @@ class ViewChildrenScreen(Screens):
     # Page numbers for siblings and offspring
     siblings_page_number = 1
     offspring_page_number = 2
+
+    def __init__(self, name=None):
+        super().__init__(name)
+        self.the_cat = None
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -462,7 +491,7 @@ class ViewChildrenScreen(Screens):
                                                                                  object_id="#cat_patrol_info_box")
         else:
             self.family_elements["parent1"] = pygame_gui.elements.UITextBox(
-                f'Error: cat {str(the_cat.parent1)} not found',
+                f'Error: cat {str(self.the_cat.parent1)} not found',
                 pygame.Rect((90, 165), (60, 30)),
                 object_id="#cat_patrol_info_box")
 
@@ -483,7 +512,7 @@ class ViewChildrenScreen(Screens):
                                                                                  object_id="#cat_patrol_info_box")
         else:
             self.family_elements["parent2"] = pygame_gui.elements.UITextBox(
-                f'Error: cat {str(the_cat.parent2)} not found',
+                f'Error: cat {str(self.the_cat.parent2)} not found',
                 pygame.Rect((90, 250), (60, 30)),
                 object_id="#cat_patrol_info_box")
 
@@ -519,8 +548,8 @@ class ViewChildrenScreen(Screens):
                                                                               object_id="#cat_patrol_info_box")
 
         else:
-            verdana_small.text(f'Error: cat {str(self.the_cat.mate)} not found',
-                               (342, 165))
+            print(f'Error: cat {str(self.the_cat.mate)} not found',
+                  (342, 165))
 
         # OFFSPRING
         # Get offspring
@@ -699,7 +728,6 @@ class ViewChildrenScreen(Screens):
         return [L[x: x + n] for x in range(0, len(L), n)]
 
 
-
 class ChooseMateScreen(Screens):
     list_frame = image_cache.load_image("resources/images/choosing_frame.png").convert_alpha()
     current_cat_elements = {}
@@ -710,24 +738,45 @@ class ChooseMateScreen(Screens):
 
     cat_list_buttons = {}
 
+    def __init__(self, name=None):
+        super().__init__(name)
+        self.next_cat = None
+        self.previous_cat = None
+        self.list_page = None
+        self.kittens = None
+        self.the_cat = None
+        self.kitten_message = None
+        self.toggle_mate = None
+        self.page_number = None
+        self.next_page_button = None
+        self.previous_page_button = None
+        self.back_button = None
+        self.next_cat_button = None
+        self.previous_cat_button = None
+        self.mate_frame = None
+        self.the_cat_frame = None
+        self.info = None
+
     def handle_event(self, event):
         """ Handles events. """
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             # Cat buttons list
             if event.ui_element in self.cat_list_buttons.values():
-                if self.the_cat.mate == None:
+                if self.the_cat.mate is None:
                     self.selected_cat = event.ui_element.return_cat_object()
                     self.update_buttons()
                     self.update_choose_mate()
                 else:
-                    # if the cat already has a mate, the it lists offspring instead. Take to profile.
+                    # if the cat already has a mate, then it lists offspring instead. Take to profile.
                     game.switches['cat'] = event.ui_element.return_cat_object().ID
                     self.change_screen("profile screen")
             # return to profile screen
-            if event.ui_element == self.back_button:
+            elif event.ui_element == self.back_button:
                 self.change_screen('profile screen')
+
             if event.ui_element == self.toggle_mate:
-                if self.the_cat.mate == None:
+                if self.the_cat.mate is None:
+
                     self.selected_cat.mate = self.the_cat.ID
                     self.the_cat.mate = self.selected_cat.ID
                     self.update_mate_screen()
@@ -736,14 +785,20 @@ class ChooseMateScreen(Screens):
                     self.the_cat.mate = None
                     self.update_choose_mate(breakup=True)
                 self.update_cat_list()
-            if event.ui_element == self.previous_cat_button:
+            elif event.ui_element == self.previous_cat_button:
                 game.switches["cat"] = self.previous_cat
                 self.update_current_cat_info()
                 self.update_buttons()
-            if event.ui_element == self.next_cat_button:
+            elif event.ui_element == self.next_cat_button:
                 game.switches["cat"] = self.next_cat
                 self.update_current_cat_info()
                 self.update_buttons()
+            elif event.ui_element == self.previous_page_button:
+                self.current_page -= 1
+                self.update_cat_list()
+            elif event.ui_element == self.next_page_button:
+                self.current_page += 1
+                self.update_cat_list()
 
     def screen_switches(self):
         """Sets up the elements that are always on the page"""
@@ -845,11 +900,13 @@ class ChooseMateScreen(Screens):
         self.current_cat_elements["image"] = pygame_gui.elements.UIImage(pygame.Rect((50, 150), (150, 150)),
                                                                          self.the_cat.large_sprite)
         name = str(self.the_cat.name)  # get name
-        if 10 <= len(name) >= 16:  # check name length
-            short_name = str(arg0.name)[0:9]
+        if 11 <= len(name):  # check name length
+            short_name = str(name)[0:9]
             name = short_name + '...'
-        self.current_cat_elements["name"] = pygame_gui.elements.UITextBox(name,
-                                                                          pygame.Rect((70, 115), (120, 30)))
+        self.current_cat_elements["name"] = pygame_gui.elements.ui_label.UILabel(
+            pygame.Rect((65, 115), (120, 30)),
+            name,
+            object_id="#header_text_box")
 
         info = str(self.the_cat.moons) + " moons\n" + self.the_cat.status + "\n" + self.the_cat.genderalign + "\n" + \
                self.the_cat.trait
@@ -859,7 +916,7 @@ class ChooseMateScreen(Screens):
 
         # Determine what to draw regarding the othe cat. If they have a mate, set the screen up for that.
         # if they don't, set the screen up to choose a mate.
-        if self.the_cat.mate != None:
+        if self.the_cat.mate is not None:
             self.update_mate_screen()
         else:
             self.update_choose_mate()
@@ -896,10 +953,13 @@ class ChooseMateScreen(Screens):
         self.mate_elements["image"] = pygame_gui.elements.UIImage(pygame.Rect((600, 150), (150, 150)),
                                                                   self.selected_cat.large_sprite)
         name = str(self.selected_cat.name)
-        if 10 <= len(name) >= 16:  # check name length
-            short_name = str(self.selected_cat.name)[0:9]
+        if 11 <= len(name):  # check name length
+            short_name = str(name)[0:9]
             name = short_name + '...'
-        self.mate_elements["name"] = pygame_gui.elements.UITextBox(name, pygame.Rect((620, 115), (110, 30)))
+        self.mate_elements["name"] = pygame_gui.elements.ui_label.UILabel(
+            pygame.Rect((620, 115), (110, 30)),
+            name,
+            object_id="#header_text_box")
 
         info = str(self.selected_cat.moons) + " moons\n" + self.selected_cat.status + "\n" + \
                self.selected_cat.genderalign + "\n" + self.selected_cat.trait
@@ -913,7 +973,7 @@ class ChooseMateScreen(Screens):
 
         self.update_cat_list()
 
-        # Display messgae
+        # Display message
         if self.kittens:
             self.kitten_message.set_text("Their offspring:")
         else:
@@ -1000,28 +1060,34 @@ class ChooseMateScreen(Screens):
             self.draw_compatible_line_affection()
 
             if breakup:
-                self.mate_elements["center_heart"] = pygame_gui.elements.UIImage(pygame.Rect((300, 188), (200, 78)),
-                                                                                 image_cache.load_image(
-                                                                                     "resources/images/heart_breakup.png").convert_alpha())
+                self.mate_elements["center_heart"] = pygame_gui.elements.UIImage(
+                    pygame.Rect((300, 188), (200, 78)),
+                    image_cache.load_image(
+                        "resources/images/heart_breakup.png").convert_alpha())
             else:
-                self.mate_elements["center_heart"] = pygame_gui.elements.UIImage(pygame.Rect((300, 188), (200, 78)),
-                                                                                 image_cache.load_image(
-                                                                                     "resources/images/heart_maybe.png").convert_alpha())
-            self.mate_elements["image"] = pygame_gui.elements.UIImage(pygame.Rect((600, 150), (150, 150)),
-                                                                      self.selected_cat.large_sprite)
+                self.mate_elements["center_heart"] = pygame_gui.elements.UIImage(
+                    pygame.Rect((300, 188), (200, 78)),
+                    image_cache.load_image(
+                        "resources/images/heart_maybe.png").convert_alpha())
+            self.mate_elements["image"] = pygame_gui.elements.UIImage(
+                pygame.Rect((600, 150), (150, 150)),
+                self.selected_cat.large_sprite)
 
             name = str(self.selected_cat.name)
-            if 10 <= len(name) >= 16:  # check name length
-                short_name = str(self.selected_cat.name)[0:9]
+            if 11 <= len(name):  # check name length
+                short_name = str(name)[0:9]
                 name = short_name + '...'
-            self.mate_elements["name"] = pygame_gui.elements.UITextBox(name, pygame.Rect((620, 115), (110, 30)))
+            self.mate_elements["name"] = pygame_gui.elements.ui_label.UILabel(
+                pygame.Rect((620, 115), (110, 30)),
+                name,
+                object_id="#header_text_box")
 
             info = str(self.selected_cat.moons) + " moons\n" + self.selected_cat.status + "\n" + \
                    self.selected_cat.genderalign + "\n" + self.selected_cat.trait
             self.mate_elements["info"] = UITextBoxTweaked(info, pygame.Rect((500, 190), (100, 100)),
                                                           object_id="#cat_patrol_info_box",
                                                           line_spacing=0.95)
-            # Display messgae
+            # Display message
             if self.the_cat.gender == self.selected_cat.gender and not game.settings[
                 'no gendered breeding']:
                 self.kitten_message.set_text(
@@ -1041,7 +1107,7 @@ class ChooseMateScreen(Screens):
         self.update_buttons()
 
     def draw_compatible_line_affection(self):
-        """Draws the heart-line based on campatablity, and draws the hearts based on romantic love. """
+        """Draws the heart-line based on capability, and draws the hearts based on romantic love. """
 
         # Set the lines
         self.mate_elements["compat_line"] = pygame_gui.elements.UIImage(pygame.Rect((300, 190), (200, 78)),
@@ -1054,7 +1120,7 @@ class ChooseMateScreen(Screens):
             self.mate_elements["compat_line"].set_image(
                 image_cache.load_image("resources/images/line_incompatible.png").convert_alpha())
 
-        # Set romamtic hearts of current cat towards mate or selected cat.
+        # Set romantic hearts of current cat towards mate or selected cat.
         if self.selected_cat.ID in self.the_cat.relationships:
             relation = self.the_cat.relationships[self.selected_cat.ID]
         else:
@@ -1077,7 +1143,7 @@ class ChooseMateScreen(Screens):
                                                                                     "resources/images/heart_big.png").convert_alpha())
             x_pos += 27
 
-        # Set romamtic hearts of mate/selected cat towards current_cat.
+        # Set romantic hearts of mate/selected cat towards current_cat.
         if self.the_cat.ID in self.selected_cat.relationships:
             relation = self.selected_cat.relationships[self.the_cat.ID]
         else:
@@ -1101,8 +1167,8 @@ class ChooseMateScreen(Screens):
             x_pos -= 27
 
     def update_buttons(self):
-        """This undates the state of buttons. For this screen, it only deals with the toggle-mates button"""
-        if self.selected_cat == None:
+        """This updates the state of buttons. For this screen, it only deals with the toggle-mates button"""
+        if self.selected_cat is None:
             self.toggle_mate.disable()
         else:
             self.toggle_mate.enable()
@@ -1167,7 +1233,7 @@ class ChooseMateScreen(Screens):
             not_available = relevant_cat.dead or relevant_cat.exiled
 
             if not related and relevant_cat.ID != self.the_cat.ID and invalid_age \
-                    and not not_available and relevant_cat.mate == None:
+                    and not not_available and relevant_cat.mate is None:
                 valid_mates.append(relevant_cat)
 
         return valid_mates
@@ -1192,6 +1258,23 @@ class RelationshipScreen(Screens):
     details_frame = image_cache.load_image("resources/images/relationship_details_frame.png").convert_alpha()
     toggle_frame = image_cache.load_image("resources/images/relationship_toggle_frame.png").convert_alpha()
     list_frame = image_cache.load_image("resources/images/relationship_list_frame.png").convert_alpha()
+
+    def __init__(self, name=None):
+        super().__init__(name)
+        self.all_relations = None
+        self.the_cat = None
+        self.previous_cat = None
+        self.next_cat = None
+        self.view_profile_button = None
+        self.switch_focus_button = None
+        self.page_number = None
+        self.next_page_button = None
+        self.previous_page_button = None
+        self.show_empty_text = None
+        self.show_dead_text = None
+        self.back_button = None
+        self.next_cat_button = None
+        self.previous_cat_button = None
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -1242,7 +1325,8 @@ class RelationshipScreen(Screens):
         self.next_cat_button = UIImageButton(pygame.Rect((622, 25), (153, 30)), "", object_id="#next_cat_button")
         self.back_button = UIImageButton(pygame.Rect((25, 645), (105, 30)), "", object_id="#back_button")
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((610, 97), (145, 23)))
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((610, 97), (145, 23)),
+                                                              object_id="#search_entry_box")
 
         self.show_dead_text = pygame_gui.elements.UITextBox("Show Dead", pygame.Rect((100, 505), (100, 30)),
                                                             object_id="#relation_list_name")
@@ -1424,19 +1508,22 @@ class RelationshipScreen(Screens):
             self.inspect_cat_elements[ele].kill()
         self.inspect_cat_elements = {}
 
-        if self.inspect_cat != None:
+        if self.inspect_cat is not None:
             # NAME LENGTH
             chosen_name = str(self.inspect_cat.name)
-            if 17 <= len(chosen_name) >= 19:
-                chosen_short_name = str(self.inspect_cat.name)[0:16]
-                chosen_name = chosen_short_name + '...'
+            if 19 <= len(chosen_name):
+                if self.inspect_cat.dead:
+                    chosen_short_name = str(self.inspect_cat.name)[0:11]
+                    chosen_name = chosen_short_name + '...'
+                    chosen_name += " (dead)"
+                else:
+                    chosen_short_name = str(self.inspect_cat.name)[0:16]
+                    chosen_name = chosen_short_name + '...'
 
-            if self.inspect_cat.dead:
-                chosen_name += " (dead)"
-
-            self.inspect_cat_elements["name"] = pygame_gui.elements.UITextBox(chosen_name,
-                                                                              pygame.Rect((75, 295), (150, 40)),
-                                                                              object_id="#header_text_box")
+            self.inspect_cat_elements["name"] = pygame_gui.elements.ui_label.UILabel(
+                pygame.Rect((75, 295), (150, 40)),
+                chosen_name,
+                object_id="#header_text_box")
 
             # Cat Image
             self.inspect_cat_elements["image"] = pygame_gui.elements.UIImage(pygame.Rect((75, 145), (150, 150)),
@@ -1683,7 +1770,7 @@ class RelationshipScreen(Screens):
                                                                                          object_id="#cat_profile_info_box")
         self.relation_list_elements[f'romantic_bar{i}'] = UIRelationStatusBar(pygame.Rect((pos_x + 3,
                                                                                            pos_y + 65 + (
-                                                                                                       barbar * bar_count)),
+                                                                                                   barbar * bar_count)),
                                                                                           (94, 10)),
                                                                               the_relationship.romantic_love,
                                                                               positive_trait=True,
@@ -1698,12 +1785,12 @@ class RelationshipScreen(Screens):
             text = "platonic like:"
         self.relation_list_elements[f'plantonic_text{i}'] = pygame_gui.elements.UITextBox(text, pygame.Rect((pos_x + 3,
                                                                                                              pos_y + 50 + (
-                                                                                                                         barbar * bar_count)),
+                                                                                                                     barbar * bar_count)),
                                                                                                             (74, 30)),
                                                                                           object_id="#cat_profile_info_box")
         self.relation_list_elements[f'platonic_bar{i}'] = UIRelationStatusBar(pygame.Rect((pos_x + 3,
                                                                                            pos_y + 65 + (
-                                                                                                       barbar * bar_count)),
+                                                                                                   barbar * bar_count)),
                                                                                           (94, 10)),
                                                                               the_relationship.platonic_like,
                                                                               positive_trait=True,
@@ -1718,12 +1805,12 @@ class RelationshipScreen(Screens):
             text = "dislike:"
         self.relation_list_elements[f'dislike_text{i}'] = pygame_gui.elements.UITextBox(text, pygame.Rect((pos_x + 3,
                                                                                                            pos_y + 50 + (
-                                                                                                                       barbar * bar_count)),
+                                                                                                                   barbar * bar_count)),
                                                                                                           (74, 30)),
                                                                                         object_id="#cat_profile_info_box")
         self.relation_list_elements[f'dislike_bar{i}'] = UIRelationStatusBar(pygame.Rect((pos_x + 3,
                                                                                           pos_y + 65 + (
-                                                                                                      barbar * bar_count)),
+                                                                                                  barbar * bar_count)),
                                                                                          (94, 10)),
                                                                              the_relationship.dislike,
                                                                              positive_trait=False,

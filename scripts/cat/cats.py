@@ -316,6 +316,8 @@ class Cat():
 
     def die(self):
         if self.status == 'leader' and game.clan.leader_lives > 0:
+            self.injuries.clear()
+            self.illnesses.clear()
             return
         elif self.status == 'leader' and game.clan.leader_lives <= 0:
             self.dead = True
@@ -667,6 +669,7 @@ class Cat():
 
         mortality = self.illnesses[illness]["mortality"]
 
+
         # leader should have a higher chance of death
         if self.status == "leader":
             mortality = int(mortality * 0.7)
@@ -675,11 +678,23 @@ class Cat():
             if self.status == "leader":
                 game.clan.leader_lives -= 1
                 if game.clan.leader_lives > 0:
-                    game.cur_events_list.append(f"{self.name} lost a life to {illness}.")
+                    text = f"{self.name} lost a life to {illness}."
+                    game.health_events_list.append(text)
+                    game.birth_death_events_list.append(text)
+                    game.cur_events_list.append(text)
                 elif game.clan.leader_lives <= 0:
-                    game.cur_events_list.append(f"{self.name} lost their last life to {illness}.")
+                    text = f"{self.name} lost their last life to {illness}."
+                    game.health_events_list.append(text)
+                    game.birth_death_events_list.append(text)
+                    game.cur_events_list.append(text)
             self.die()
             return False
+
+        keys = self.illnesses[illness].keys()
+        if 'moons_with' in keys:
+            self.illnesses[illness]["moons_with"] += 1
+        else:
+            self.illnesses[illness].update({'moons_with': 1})
 
         self.illnesses[illness]["duration"] -= 1
         if self.illnesses[illness]["duration"] <= 0:
@@ -707,6 +722,11 @@ class Cat():
             self.die()
             return
 
+        keys = self.injuries[injury].keys()
+        if 'moons_with' in keys:
+            self.injuries[injury]["moons_with"] += 1
+        else:
+            self.injuries[injury].update({'moons_with': 1})
         # if the cat has an infected wound, the wound shouldn't heal till the illness is cured
         if not self.is_ill():
             self.injuries[injury]["duration"] -= 1
@@ -727,9 +747,16 @@ class Cat():
         moons_until = self.permanent_condition[condition]["moons_until"]
         born_with = self.permanent_condition[condition]["born_with"]
 
+        keys = self.permanent_condition[condition].keys()
+        if 'moons_with' in keys:
+            self.permanent_condition[condition]["moons_with"] += 1
+        else:
+            self.permanent_condition[condition].update({'moons_with': 1})
+
         # handling the countdown till a congenital condition is revealed
         if moons_until is not None and moons_until >= 0 and born_with is True:
             self.permanent_condition[condition]["moons_until"] = int(moons_until - 1)
+            self.permanent_condition[condition]["moons_with"] = 0
         if self.permanent_condition[condition]["moons_until"] == -1 and\
                 self.permanent_condition[condition]["born_with"] is True:
             self.permanent_condition[condition]["moons_until"] = -2
@@ -846,6 +873,7 @@ class Cat():
                 "mortality": new_illness.current_mortality,
                 "infectiousness": new_illness.infectiousness,
                 "duration": new_illness.duration,
+                "moons_with": 1,
                 "risks": new_illness.risks,
                 "event_triggered": new_illness.new
             }
@@ -892,8 +920,10 @@ class Cat():
                 "severity": new_injury.severity,
                 "mortality": new_injury.current_mortality,
                 "duration": new_injury.duration,
+                "moons_with": 1,
                 "illness_infectiousness": new_injury.illness_infectiousness,
                 "risks": new_injury.risks,
+                "complication": None,
                 "also_got": new_injury.also_got,
                 "cause_permanent": new_injury.cause_permanent,
                 "event_triggered": new_injury.new
@@ -941,6 +971,8 @@ class Cat():
             if game.clan.game_mode == "cruel season":
                 mortality = int(mortality * 0.65)
 
+        if condition['congenital'] == 'always':
+            born_with = True
         moons_until = condition["moons_until"]
         if born_with is True and moons_until != 0:
             moons_until = randint(moons_until - 1, moons_until + 1)  # creating a range in which a condition can present
@@ -965,9 +997,11 @@ class Cat():
                 "severity": new_perm_condition.severity,
                 "born_with": born_with,
                 "moons_until": new_perm_condition.moons_until,
+                "moons_with": 1,
                 "mortality": new_perm_condition.current_mortality,
                 "illness_infectiousness": new_perm_condition.illness_infectiousness,
                 "risks": new_perm_condition.risks,
+                "complication": None,
                 "event_triggered": new_perm_condition.new
             }
             new_condition = True
@@ -1040,7 +1074,9 @@ class Cat():
                         rate = 1
 
             if not random.random() * rate:
-                game.cur_events_list.append(f"{self.name} had contact with {cat.name} and now has {illness_name}.")
+                text = f"{self.name} had contact with {cat.name} and now has {illness_name}."
+                game.health_events_list.append(text)
+                game.cur_events_list.append(text)
                 self.get_ill(illness_name)
 
     def save_condition(self):

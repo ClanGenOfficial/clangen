@@ -394,19 +394,157 @@
         {
             "normal_image":
             {
-                "path": "resources/images/buttons/relationship_events.png"
+                "path": "resources/images/buttons/event_relationships.png"
             },
 			"hovered_image":
             {
-                "path": "resources/images/buttons/relationship_events_hover.png"
+                "path": "resources/images/buttons/event_relationships_hover.png"
             },
 			"selected_image":
             {
-                "path": "resources/images/buttons/relationship_events_hover.png"
+                "path": "resources/images/buttons/event_relationships_hover.png"
             },
             "disabled_image":
             {
-				"path": "resources/images/buttons/relationship_events_unavailable.png"
+				"path": "resources/images/buttons/event_relationships_unavailable.png"
+			}
+        }
+    },
+  "#all_events_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/event_all.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/event_all_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/event_all_hover.png"
+            },
+            "disabled_image":
+            {
+				"path": "resources/images/buttons/event_all_unavailable.png"
+			}
+        }
+    },
+  "#birth_death_events_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/event_birth_death.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/event_birth_death_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/event_birth_death_hover.png"
+            },
+            "disabled_image":
+            {
+				"path": "resources/images/buttons/event_birth_death_unavailable.png"
+			}
+        }
+    },
+  "#ceremony_events_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/event_ceremonies.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/event_ceremonies_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/event_ceremonies_hover.png"
+            },
+            "disabled_image":
+            {
+				"path": "resources/images/buttons/event_ceremonies_unavailable.png"
+			}
+        }
+    },
+  "#health_events_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/event_health.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/event_health_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/event_health_hover.png"
+            },
+            "disabled_image":
+            {
+				"path": "resources/images/buttons/event_health_unavailable.png"
+			}
+        }
+    },
+  "#misc_events_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/event_misc.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/event_misc_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/event_misc_hover.png"
+            },
+            "disabled_image":
+            {
+				"path": "resources/images/buttons/event_misc_unavailable.png"
+			}
+        }
+    },
+  "#other_clans_events_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/event_other_clans.png"
+            },
+			"hovered_image":
+            {
+                "path": "resources/images/buttons/event_other_clans_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/event_other_clans_hover.png"
+            },
+            "disabled_image":
+            {
+				"path": "resources/images/buttons/event_other_clans_unavailable.png"
 			}
         }
     },
@@ -1238,6 +1376,29 @@
             }
         }
     },
+    "#conditions_tab_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/conditions.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/conditions_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/conditions_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/conditions_unavailable.png"
+            }
+        }
+    },
     "#cat_tab_3_blank_button": 
     {
         "prototype": "#image_button",
@@ -1360,7 +1521,26 @@
             }
         }
     },
-    "#checked_checkbox": 
+    "#alert_hover_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/alert_mark.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/alert_mark.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/alert_mark.png"
+            }
+        }
+    },
+    "#checked_checkbox":
     {
         "prototype": "#image_button",
 		"images":
