@@ -108,6 +108,7 @@ class Events():
             game.cur_events_list.append(grief_strings)
             game.birth_death_events_list.append(grief_strings)
             game.relation_events_list.append(grief_strings)
+            Cat.grief_strings.clear()
 
         self.check_clan_relations()
 

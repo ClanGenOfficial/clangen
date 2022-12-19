@@ -384,7 +384,7 @@ class PatrolScreen(Screens):
         patrol.add_patrol_cats(self.current_patrol)
         possible_events = patrol.get_possible_patrols(
             game.clan.current_season,
-            game.clan.biome,
+            str(game.clan.biome).casefold(),
             game.clan.all_clans,
             self.patrol_type,
             game.settings.get('disasters')

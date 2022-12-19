@@ -434,7 +434,7 @@
             "elder": 0
         },
         "duration": 5,
-        "medicine_duration": 2,
+        "medicine_duration": 3,
         "infectiousness": 0,
         "risks": [
             {

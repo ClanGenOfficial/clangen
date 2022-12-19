@@ -171,31 +171,31 @@ class Patrol():
             welcoming_rep = True
             chance = welcoming_chance
 
-        if biome == 'Forest':
+        if biome == 'forest':
             possible_patrols.extend(self.generate_patrol_events(HUNTING_FST))
             possible_patrols.extend(self.generate_patrol_events(BORDER_FST))
             possible_patrols.extend(self.generate_patrol_events(TRAINING_FST))
             possible_patrols.extend(self.generate_patrol_events(MEDCAT_FST))
 
-        elif biome == 'Plains':
+        elif biome == 'plains':
             possible_patrols.extend(self.generate_patrol_events(HUNTING_PLN))
             possible_patrols.extend(self.generate_patrol_events(BORDER_PLN))
             possible_patrols.extend(self.generate_patrol_events(TRAINING_PLN))
             possible_patrols.extend(self.generate_patrol_events(MEDCAT_PLN))
 
-        elif biome == 'Mountainous':
+        elif biome == 'mountainous':
             possible_patrols.extend(self.generate_patrol_events(HUNTING_MTN))
             possible_patrols.extend(self.generate_patrol_events(BORDER_MTN))
             possible_patrols.extend(self.generate_patrol_events(TRAINING_MTN))
             possible_patrols.extend(self.generate_patrol_events(MEDCAT_MTN))
 
-        elif biome == 'Beach':
+        elif biome == 'beach':
             possible_patrols.extend(self.generate_patrol_events(HUNTING_BCH))
             possible_patrols.extend(self.generate_patrol_events(BORDER_BCH))
             possible_patrols.extend(self.generate_patrol_events(TRAINING_BCH))
             possible_patrols.extend(self.generate_patrol_events(MEDCAT_BCH))
 
-        elif biome == 'Wetlands':
+        elif biome == 'wetlands':
             possible_patrols.extend(self.generate_patrol_events(HUNTING_WTLND))
 
         possible_patrols.extend(self.generate_patrol_events(HUNTING))
