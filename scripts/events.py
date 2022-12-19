@@ -103,6 +103,12 @@ class Events():
             if not cat.dead:
                 self.relation_events.handle_relationships(cat)
 
+        if Cat.grief_strings:
+            grief_strings = "<br><br>".join(Cat.grief_strings)
+            game.cur_events_list.append(grief_strings)
+            game.birth_death_events_list.append(grief_strings)
+            game.relation_events_list.append(grief_strings)
+
         self.check_clan_relations()
 
         # age up the clan

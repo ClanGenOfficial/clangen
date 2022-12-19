@@ -497,7 +497,6 @@ class Relation_Events():
                                    f"Everyone says giving birth is difficult, but {str(cat.name)} feels like this one has been worse than most.",
                                    f"This will all be worth it, {str(cat.name)} groans, promising themselves that as the pains of afterbirth rock their exhausted and bleeding body.",
                                    f"{str(cat.name)} chokes down the herbs given to them, retching at the taste but knowing they need them to stop the blood loss."
-
                                    ]
 
                 event_list.append(choice(possible_events))
