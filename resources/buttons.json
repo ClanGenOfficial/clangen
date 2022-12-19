@@ -1376,6 +1376,29 @@
             }
         }
     },
+    "#conditions_tab_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/conditions.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/conditions_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/conditions_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/conditions_unavailable.png"
+            }
+        }
+    },
     "#cat_tab_3_blank_button": 
     {
         "prototype": "#image_button",
@@ -1498,7 +1521,26 @@
             }
         }
     },
-    "#checked_checkbox": 
+    "#alert_hover_button":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/alert_mark.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/alert_mark.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/alert_mark.png"
+            }
+        }
+    },
+    "#checked_checkbox":
     {
         "prototype": "#image_button",
 		"images":

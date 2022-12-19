@@ -138,7 +138,7 @@ class CatButton(pygame_gui.elements.UIButton):
 
 class UITextBoxTweaked(pygame_gui.elements.UITextBox):
     """The default class has 1.25 line spacing. It would be fairly easy to allow the user to change that,
-    but it doesn't allow it... for some reason This class only exists as a way to specfiy the line spacing. Please
+    but it doesn't allow it... for some reason This class only exists as a way to specify the line spacing. Please
     only use if you want to have control over the line spacing. """
 
     def __init__(self,
@@ -172,7 +172,7 @@ class UITextBoxTweaked(pygame_gui.elements.UITextBox):
                          allow_split_dashes=allow_split_dashes
                          )
 
-    # 99% of this is copy-pasted from the orginal function.
+    # 99% of this is copy-pasted from the original function.
     def _reparse_and_rebuild(self):
         self.parser = HTMLParser(self.ui_theme, self.combined_element_ids,
                                  self.link_style,
