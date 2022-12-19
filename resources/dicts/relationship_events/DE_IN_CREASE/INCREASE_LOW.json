@@ -7,7 +7,12 @@
             "just noticed how beautiful (cat)'s eyes are.",
             "is hoping that (cat) notices them.",
             "is prancing around in front of (cat).",
-            "is the first cat (cat) thinks of when they get good news."
+            "is the first cat (cat) thinks of when they get good news.",
+            "stayed up all night thinking of ways to impress (cat).",
+            "feels like no one understands them the way (cat) does.",
+            "thinks (cat) is the most beautiful cat in the clan.",
+            "could spend hours listening to (cat)'s voice."
+
 
         ],
         "like": [
@@ -34,7 +39,12 @@
             "gently grooms some cobwebs off of (cat)'s fur.",
             "tells (cat) that they'll be an amazing medicine cat someday.",
             "noticed that (cat) is falling behind in training and offered to help them catch up.",
-            "is excitedly trying to guess what their and (cat)'s warrior names will be."
+            "is excitedly trying to guess what their and (cat)'s warrior names will be.",
+            "playfully teases (cat) for missing a catch.",
+            "saved a piece of freshkill that they know is (cat)'s favorite.",
+            "could recognize (cat) just by the sound of their paw steps.",
+            "convinces (cat) to help them pull a prank on a clanmate.",
+            "won't stop copying everything (cat) does."
         ],
         "dislike": [
             "divides (cat) into extra patrols.",
@@ -44,7 +54,12 @@
             "thinks (cat) has a strange sense of humor.",
             "has a disagreement with (cat) over who is the better hunter.",
             "is complaining that (cat) never does anything helpful.",
-            "is annoyed that they have to pull ticks off (cat) today."
+            "is annoyed that they have to pull ticks off (cat) today.",
+            "feels like (cat) was too rough while playing.",
+            "is boasting about their accomplishments to (cat), but (cat) isn't impressed.",
+            "bickered about something trivial with (cat).",
+            "thinks that (cat) has been behaving stuck up and rude.",
+            "is dissatisfied that (cat) can't seem to get rid of their chronic pain."
         ],
         "admiration": [
             "is watching (cat) perform an almost-decent hunting crouch.",
@@ -58,7 +73,8 @@
             "comforts (cat) after a hard day's training.",
             "tells (cat) that they'll be an amazing medicine cat someday.",
             "is pestering (cat) for a story.",
-            "settles down next to (cat) to listen to their stories."
+            "settles down next to (cat) to listen to their stories.",
+            "won't stop copying everything (cat) does."
         ],
         "comfortable": [
             "is hiding under a bush from (cat), but they can't stop giggling.",
@@ -68,7 +84,8 @@
             "is purring loudly to comfort (cat).",
             "helps (cat) work through something difficult that happened to them.",
             "is playfully making fun of their mentors with (cat).",
-            "settles down next to (cat) to listen to their stories."
+            "settles down next to (cat) to listen to their stories.",
+            "playfully teases (cat) for missing a catch."
         ],
         "jealousy": [
             "thinks that the prey (cat) is biting into on the other side of camp looks delicious.",
@@ -90,7 +107,8 @@
             "wants to sneak along the border with (cat).",
             "listens closely as (cat) tells them about the new herb they learned to recognize today.",
             "tells (cat) that they'll be an amazing medicine cat someday.",
-            "is playfully making fun of their mentors with (cat)."
+            "is playfully making fun of their mentors with (cat).",
+            "convinces (cat) to help them pull a prank on a clanmate."
         ]
     },
     "to": {
@@ -119,7 +137,11 @@
             "tells (cat) that they'll be an amazing medicine cat someday.",
             "noticed that (cat) is falling behind in training and offered to help them catch up.",
             "is excitedly trying to guess what their and (cat)'s warrior names will be.",
-            "settles down next to (cat) to listen to their stories."
+            "settles down next to (cat) to listen to their stories.",
+            "playfully teases (cat) for missing a catch.",
+            "is thinking about how much (cat) reminds them of their own apprentice days.",
+            "saved a piece of freshkill that they know is (cat)'s favorite.",
+            "convinces (cat) to help them pull a prank on a clanmate."
         ],
         "dislike": [
             "divides (cat) into extra patrols.",
@@ -127,11 +149,16 @@
             "told (cat) to stop padding after them like a lost kit.",
             "has a disagreement with (cat) over who is the better hunter.",
             "is complaining that (cat) never does anything helpful.",
-            "is pestering (cat) for a story."
+            "is pestering (cat) for a story.",
+            "is boasting about their accomplishments to (cat), but (cat) isn't impressed.",
+            "prays that they aren't on patrol with (cat) tomorrow.",
+            "bickered about something trivial with (cat).",
+            "is dissatisfied that (cat) can't seem to get rid of their chronic pain."
         ],
         "admiration": [
             "bestowing wisdom onto (cat).",
-            "noticed that (cat) is falling behind in training and offered to help them catch up."
+            "noticed that (cat) is falling behind in training and offered to help them catch up.",
+            "is thinking about how much (cat) reminds them of their own apprentice days."
         ],
         "comfortable": [
             "hopes that their own kits are as cute as (cat) someday.",
@@ -146,7 +173,8 @@
             "tells (cat) that they'll be an amazing medicine cat someday.",
             "noticed that (cat) is falling behind in training and offered to help them catch up.",
             "is playfully making fun of their mentors with (cat).",
-            "settles down next to (cat) to listen to their stories."
+            "settles down next to (cat) to listen to their stories.",
+            "playfully teases (cat) for missing a catch."
         ],
         "jealousy": [],
         "trust": [
@@ -158,7 +186,8 @@
             "gently grooms some cobwebs off of (cat)'s fur.",
             "tells (cat) that they'll be an amazing medicine cat someday.",
             "noticed that (cat) is falling behind in training and offered to help them catch up.",
-            "is playfully making fun of their mentors with (cat)."
+            "is playfully making fun of their mentors with (cat).",
+            "saved a piece of freshkill that they know is (cat)'s favorite."
         ]
     }
 }

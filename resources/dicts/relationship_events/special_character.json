@@ -54,13 +54,16 @@
       "is glaring daggers at (cat)."
     ],
     "shameless": [
-      "is asking (cat) to tell them about how good they look."
+      "is asking (cat) to tell them about how good they look.",
+      "offends (cat) with their brutal honesty.",
+      "is boasting about their accomplishments to (cat), but (cat) isn't impressed."
     ],
     "troublesome": [
       "pulled a prank on (cat).",
       "blamed (cat) for their own mistake.",
       "won't stop bothering (cat).",
-      "feels bad that they caused a problem for (cat)."
+      "feels bad that they caused a problem for (cat).",
+      "convinces (cat) to help them pull a prank on a clanmate."
     ],
     "empathetic": [
       "listening to (elder)'s woes.",
@@ -110,7 +113,8 @@
     "sneaky": [
       "is gossiping about (cat).",
       "is teaching (cat) how to walk without making a sound.",
-      "is showing (cat) how to sneak up on their enemies."
+      "is showing (cat) how to sneak up on their enemies.",
+      "convinces (cat) to help them pull a prank on a clanmate."
     ],
     "wise": [
       "is giving (cat) advice."

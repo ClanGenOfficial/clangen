@@ -5,7 +5,14 @@
         "ignores (cat).",
         "is telling jokes about (cat).",
         "is spreading a rumour about (cat).",
-        "realized that they were too harsh in their judgment of (cat)."
+        "realized that they were too harsh in their judgment of (cat).",
+        "caught (cat) in a lie.",
+        "had a spat with (cat) over a piece of prey on the freshkill pile.",
+        "bickered about something trivial with (cat).",
+        "finds the way (cat) acts increasingly uncomfortable.",
+        "said something that rubbed (cat) the wrong way.",
+        "caught (cat) complaining about them behind their back.",
+        "shudders at the sound of (cat)'s voice."
     ],
     "neutral": [
         "complains about (cat).",
@@ -19,7 +26,12 @@
         "saw (cat) take the last piece of prey from the freshkill pile.",
         "thinks (cat) has a strange sense of humor.",
         "appreciates how (cat) always seems to ask how they're doing.",
-        "heard an ugly rumor about (cat)."
+        "heard an ugly rumor about (cat).",
+        "caught (cat) in a lie.",
+        "bickered about something trivial with (cat).",
+        "finds the way (cat) acts increasingly uncomfortable.",
+        "said something that rubbed (cat) the wrong way.",
+        "caught (cat) complaining about them behind their back."
     ],
     "friendly": [
         "is sharing tongues with (cat).",
@@ -27,12 +39,23 @@
         "tells a joke that only (cat) can understand.",
         "thinks about how lucky they are to have someone like (cat) as a friend.",
         "helps (cat) work through something difficult that happened to them.",
-        "comforts (cat) after a nightmare."
+        "comforts (cat) after a nightmare.",
+        "defends (cat) from a clanmate's rude remarks.",
+        "caught (cat) in a lie.",
+        "bickered about something trivial with (cat).",
+        "said something that rubbed (cat) the wrong way.",
+        "caught (cat) complaining about them behind their back."
     ],
     "close": [
         "tells (cat) a secret.",
         "can't imagine their life if they never met (cat).",
         "has snuggled up against (cat).",
-        "feels most like them-self when they're around (cat)."
+        "feels most like them-self when they're around (cat).",
+        "thinks of (cat) as their best friend.",
+        "saved a piece of freshkill that they know is (cat)'s favorite.",
+        "defends (cat) from a clanmate's rude remarks.",
+        "could recognize (cat) just by the sound of their paw steps.",
+        "caught (cat) in a lie.",
+        "caught (cat) complaining about them behind their back."
     ]
 }

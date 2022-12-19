@@ -40,7 +40,9 @@
     "apprentice": {
         "unfriendly": [
             "is scolding (cat).",
-            "punishes (cat) with extra work."
+            "punishes (cat) with extra work.",
+            "had a disagreement with (cat) while on patrol earlier.",
+            "stole (cat)'s catch right out from under their claws."
         ],
         "neutral": [
             "is giving advice to (cat).",
@@ -48,7 +50,8 @@
             "is telling (cat) about a hunting technique.",
             "is giving (cat) a task.",
             "wishes (cat) would take things more seriously.",
-            "saw (cat) miss an easy catch today."
+            "saw (cat) miss an easy catch today.",
+            "is thinking about how much (cat) reminds them of their own apprentice days."
         ],
         "friendly": [
             "is telling (cat) about their own days as an apprentice.",
@@ -58,7 +61,9 @@
     },
     "warrior": {
         "unfriendly": [
-            "punishes (cat) with extra work."
+            "punishes (cat) with extra work.",
+            "stole (cat)'s catch right out from under their claws.",
+            "had a disagreement with (cat) while on patrol earlier."
         ],
         "neutral": [
             "is telling (cat) about a hunting technique.",
@@ -75,7 +80,8 @@
         "close": [
             "talks with (cat) about difficult decisions.",
             "tells (cat) about their last encounter with StarClan.",
-            "thinks that (cat) is so much braver than them."
+            "thinks that (cat) is so much braver than them.",
+            "playfully teases (cat) for missing a catch."
         ]
     },
     "medicine cat": {
@@ -100,16 +106,20 @@
     },
     "deputy": {
         "unfriendly": [
-            "accuses (cat) of being a bad deputy."
+            "accuses (cat) of being a bad deputy.",
+            "had a disagreement with (cat) while on patrol earlier.",
+            "stole (cat)'s catch right out from under their claws."
         ],
         "neutral": [
-            "saw (cat) miss an easy catch today."
+            "saw (cat) miss an easy catch today.",
+            "had a disagreement with (cat) while on patrol earlier."
         ],
         "friendly": [
             "talks with (cat) about difficult decisions."
         ],
         "close": [
-            "tells (cat) about their last encounter with StarClan."
+            "tells (cat) about their last encounter with StarClan.",
+            "playfully teases (cat) for missing a catch."
         ]
     },
     "elder": {

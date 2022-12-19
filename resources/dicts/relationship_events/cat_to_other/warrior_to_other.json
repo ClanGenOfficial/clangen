@@ -37,7 +37,10 @@
     },
     "apprentice": {
         "unfriendly": [
-            "is scolding (cat)."
+            "is scolding (cat).",
+            "prays that they aren't on patrol with (cat) tomorrow.",
+            "had a disagreement with (cat) while on patrol earlier.",
+            "stole (cat)'s catch right out from under their claws."
         ],
         "neutral": [
             "is giving advice to (cat).",
@@ -46,17 +49,27 @@
             "is giving (cat) a task.",
             "wishes (cat) would take things more seriously.",
             "is jealous that (cat) got to go to the last gathering.",
-            "saw (cat) miss an easy catch today."
+            "saw (cat) miss an easy catch today.",
+            "is thinking about how much (cat) reminds them of their own apprentice days.",
+            "prays that they aren't on patrol with (cat) tomorrow.",
+            "had a disagreement with (cat) while on patrol earlier."
         ],
         "friendly": [
             "is telling (cat) about their own days as an apprentice.",
             "is feeling proud of (cat).",
-            "hopes they are assigned to patrol with (cat) tomorrow."
+            "hopes they are assigned to patrol with (cat) tomorrow.",
+            "playfully teases (cat) for missing a catch."
         ],
-        "close": []
+        "close": [
+            "playfully teases (cat) for missing a catch."
+        ]
     },
     "warrior": {
-        "unfriendly": [],
+        "unfriendly": [
+            "prays that they aren't on patrol with (cat) tomorrow.",
+            "had a disagreement with (cat) while on patrol earlier.",
+            "stole (cat)'s catch right out from under their claws."
+        ],
         "neutral": [
             "is telling (cat) about a hunting technique.",
             "is giving (cat) a task.",
@@ -64,14 +77,18 @@
             "is sparring with (cat).",
             "is jealous that (cat) got to go to the last gathering.",
             "has noticed (cat) isn't doing a lot of work lately.",
-            "saw (cat) miss an easy catch today."
+            "saw (cat) miss an easy catch today.",
+            "prays that they aren't on patrol with (cat) tomorrow.",
+            "had a disagreement with (cat) while on patrol earlier."
         ],
         "friendly": [
             "just told (cat) a hilarious joke.",
-            "hopes they are assigned to patrol with (cat) tomorrow."
+            "hopes they are assigned to patrol with (cat) tomorrow.",
+            "playfully teases (cat) for missing a catch."
         ],
         "close": [
-            "thinks that (cat) is so much braver than them."
+            "thinks that (cat) is so much braver than them.",
+            "playfully teases (cat) for missing a catch."
         ]
     },
     "medicine cat": {
@@ -87,25 +104,35 @@
     },
     "leader": {
         "unfriendly": [
-            "accuses (cat) of being a bad leader."
+            "accuses (cat) of being a bad leader.",
+            "had a disagreement with (cat) while on patrol earlier.",
+            "stole (cat)'s catch right out from under their claws."
         ],
         "neutral": [
-            "saw (cat) miss an easy catch today."
+            "saw (cat) miss an easy catch today.",
+            "had a disagreement with (cat) while on patrol earlier."
         ],
         "friendly": [],
-        "close": []
+        "close": [
+            "playfully teases (cat) for missing a catch."
+        ]
     },
     "deputy": {
         "unfriendly": [
             "thinks they should be deputy instead of (cat).",
-            "accuses (cat) of being a bad deputy."
+            "accuses (cat) of being a bad deputy.",
+            "had a disagreement with (cat) while on patrol earlier.",
+            "stole (cat)'s catch right out from under their claws."
         ],
         "neutral": [
             "is tired from (cat) putting them on so many patrols.",
-            "saw (cat) miss an easy catch today."
+            "saw (cat) miss an easy catch today.",
+            "had a disagreement with (cat) while on patrol earlier."
         ],
         "friendly": [],
-        "close": []
+        "close": [
+            "playfully teases (cat) for missing a catch."
+        ]
     },
     "elder": {
         "unfriendly": [],
