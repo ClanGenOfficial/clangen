@@ -77,17 +77,50 @@
             "Was almost eaten by a monster",
             "Is playing with kits"
         ],
-        "elder": ["Wonders if they should have joined a Clan when they were younger",
-        "Debates finding housefolk to care for them in their old age. ",
-        "Is enjoying the sun on their back.",
-        "Purring as the sun’s warmth eases their old joints",
-        "Is glad they chose this life of freedom.",
-        "Thinks about old friends",
-        "Hopes it isn’t too late to join a clan",
-        "Wonders where they’ll go when they die",
-        "Telling stories about their younger days"]
+        "elder": [
+            "Wonders if they should have joined a Clan when they were younger",
+            "Debates finding housefolk to care for them in their old age. ",
+            "Is enjoying the sun on their back.",
+            "Purring as the sun’s warmth eases their old joints",
+            "Is glad they chose this life of freedom.",
+            "Thinks about old friends",
+            "Hopes it isn’t too late to join a clan",
+            "Wonders where they’ll go when they die",
+            "Telling stories about their younger days"
+        ]
     },
-    "rogue": [],
+    "rogue": {
+        "general": [
+            "Wishes the other rogues would leave them alone",
+            "Snarls at any cat that comes near",
+            "Wanders off on their own",
+            "Has been going missing quite a lot lately",
+            "Sniffs for their next meal",
+            "Wonders if they can find a warm place to sleep tonight",
+            "Was chased by a fox recently",
+            "Wishes they were in a warm nest"
+        ],
+        "adolescent": [
+            "Is setting up a pile of thorns to catch a cat off guard",
+            "Wishes they still had their family around",
+            "Has been teaching themselves how to hunt",
+            "Misses their friends",
+            "Regrets their actions",
+            "Wonders what being in a clan is like"
+        ],
+        "adult": [
+            "Hisses at a missed catch",
+            "Is hoping they can find something to fill their belly tonight",
+            "Licks at an old, aching scar in an attempt to soothe it",
+            "Was almost found by a c_n patrol",
+            "Is lurking in c_n territory"
+        ],
+        "elder": [
+            "Thinks about finding some twolegs to help them in their old age",
+            "Thinks their joints are aching too much to hunt today",
+            "Wonders if they can carry on"
+        ]
+    },
     "lost": {
         "general": [
             "Wonders how their family is doing",

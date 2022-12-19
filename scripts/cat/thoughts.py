@@ -12,6 +12,8 @@ def get_thoughts(cat, other_cat):
     # actions or thoughts for all cats. These switch either every moon or every time the game is re-opened
     if cat.is_alive() and not cat.exiled:
         thoughts = get_alive_thoughts(cat, other_cat)
+    elif cat.is_alive() and cat.outside:
+        thoughts = get_outside_thoughts(cat, other_cat)
     elif cat.is_alive() and cat.exiled:
         thoughts = get_exile_thoughts(cat, other_cat)
     elif cat.df:
@@ -592,6 +594,12 @@ def get_exile_thoughts(cat, other_cat):
     
     return thoughts
 
+def get_outside_thoughts(cat, other_cat):
+    thoughts = []
+    thoughts += OUTSIDE['lost']['general']
+    
+    return thoughts
+
 # ---------------------------------------------------------------------------- #
 #                             load general thoughts                            #
 # ---------------------------------------------------------------------------- #
@@ -609,6 +617,10 @@ with open(f"{resource_directory}cat_alive_general.json", 'r') as read_file:
 EXILE = None
 with open(f"{resource_directory}exile.json", 'r') as read_file:
     EXILE = ujson.loads(read_file.read())
+    
+OUTSIDE = None
+with open(f"{resource_directory}other.json", 'r') as read_file:
+    OUTSIDE = ujson.loads(read_file.read())
 
 FAMILY = None
 with open(f"{resource_directory}family.json", 'r') as read_file:
