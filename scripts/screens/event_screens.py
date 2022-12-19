@@ -314,8 +314,10 @@ class EventsScreen(Screens):
         self.birth_death_alert = None
         self.ceremony_alert = None
 
-        self.events_list_box = pygame_gui.elements.UITextBox(self.display_events, pygame.Rect((218, 274), (514, 354)),
-                                                             object_id=get_text_box_theme("#events_box"))
+        self.events_list_box = pygame_gui.elements.UITextBox(
+            self.display_events,
+            pygame.Rect((218, 271), (514, 360)),
+            object_id=get_text_box_theme("#events_box"))
 
         # Display text
         # self.explain_text = pygame_gui.elements.UITextBox(self.display_text, pygame.Rect((25,110),(750,40)))
