@@ -39,9 +39,7 @@ class Patrol():
         self.app1_name = None
         self.app2_name = None
         self.other_clan = None
-        self.experience_levels = [
-            'very low', 'low', 'average', 'high', 'master', 'max'
-        ]
+        self.experience_levels = []
 
     def add_patrol_cats(self, patrol_cats):
         self.patrol_cats.clear()
@@ -52,6 +50,7 @@ class Patrol():
         self.patrol_traits.clear()
         self.patrol_apprentices.clear()
         self.patrol_total_experience = 0
+        self.experience_levels.clear()
         self.patrol_other_cats.clear()
         for cat in patrol_cats:
             self.patrol_cats.append(cat)
@@ -62,6 +61,7 @@ class Patrol():
             self.patrol_statuses.append(cat.status)
             self.patrol_traits.append(cat.trait)
             self.patrol_total_experience += cat.experience
+            self.experience_levels.append(cat.experience_level)
             if cat.status == 'apprentice':
                 self.patrol_apprentices.append(cat)
             game.patrolled.append(cat)
@@ -372,7 +372,7 @@ class Patrol():
                         chance = chance + 10
                     elif "fantastic" in self.patrol_stat_cat.skill:
                         chance = chance + 20
-        elif self.patrol_event.win_trait is not None:
+        if self.patrol_event.win_trait is not None:
             if set(self.patrol_traits).isdisjoint(
                     self.patrol_event.win_trait):
                 chance = 90
@@ -394,7 +394,7 @@ class Patrol():
         if self.patrol_event.fail_trait is not None:
             if set(self.patrol_traits).isdisjoint(
                     self.patrol_event.fail_trait):
-                chance = 10
+                chance = 20
         c = randint(20, 100)
         outcome = int(random.getrandbits(4))
         print("Outcome: " + str(outcome))
@@ -462,14 +462,6 @@ class Patrol():
             self.final_success = self.patrol_event.success_text[n]
             if antagonize:
                 self.antagonize = self.patrol_event.antagonize_text
-
-            print(str(self.patrol_event.patrol_id))
-            print("Min cats: " + str(self.patrol_event.min_cats) + " & Max cats: " + str(self.patrol_event.max_cats))
-            if antagonize is False: print(str(self.final_success) + " #: " + str(n))
-            if antagonize: print(str(self.patrol_event.antagonize_text))
-            print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
-            print("Clan Rel. After: " + str(patrol.other_clan.relations))
-            print("Rep. After: " + str(game.clan.reputation))
 
         # ---------------------------------------------------------------------------- #
         #                                   FAILURE                                    #
@@ -546,17 +538,13 @@ class Patrol():
             if antagonize:
                 self.antagonize_fail = self.patrol_event.antagonize_fail_text
 
-            print(str(self.patrol_event.patrol_id))
-            print("Min cats: " + str(self.patrol_event.min_cats) + " and Max cats " + str(self.patrol_event.max_cats))
-            if antagonize is False: print(str(self.final_fail) + " #: " + str(n))
-            if antagonize: print(str(self.patrol_event.antagonize_fail_text))
-            print(str(self.patrol_event.biome) + " vs " + str(game.clan.biome).lower())
-            print("Clan Rel. After: " + str(patrol.other_clan.relations))
-            print("Rep. After: " + str(game.clan.reputation))
-
     def handle_exp_gain(self):
         gm_modifier = 1
         base_exp = 10
+        if "max" in self.experience_levels:
+            max_boost = 10
+        else:
+            max_boost = 0
         patrol_exp = self.patrol_event.exp
         if game.clan.game_mode == 'classic':
             gm_modifier = gm_modifier
@@ -564,12 +552,16 @@ class Patrol():
             gm_modifier = 3
         elif game.clan.game_mode == 'cruel_season':
             gm_modifier = 6
-        if self.success:
             for cat in self.patrol_cats:
                 print("EXP Before: " + str(cat.experience))
-                gained_exp = ((patrol_exp + base_exp) / len(self.patrol_cats)) / gm_modifier
-                cat.experience = int(cat.experience + gained_exp)
-                print("After: " + str(cat.experience))
+                if self.success:
+                    gained_exp = ((patrol_exp + base_exp + max_boost) / len(self.patrol_cats)) / gm_modifier
+                    if cat.experience_level == "master":
+                        final_exp = gained_exp / 2
+                    else:
+                        final_exp = gained_exp
+                    cat.experience = cat.experience + final_exp
+                print("EXP After: " + str(cat.experience))
 
     def handle_deaths(self, cat):
         if "no_body" in self.patrol_event.tags:
