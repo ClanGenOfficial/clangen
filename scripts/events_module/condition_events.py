@@ -477,17 +477,17 @@ class Condition_Events():
                                   "water in their lungs", "frostbite", "shock"]:
                         if cat.status == "leader":
                             event = f"{cat.name} has died in the medicine den from {injury}, losing a life."
-                            cat.died_by = f"died from {injury}."
+                            cat.died_by.append(f"died from {injury}.")
                         else:
                             event = f"{cat.name} has died in the medicine den from {injury}."
-                            cat.died_by = f"{cat.name} died from {injury}."
+                            cat.died_by.append(f"{cat.name} died from {injury}.")
                     else:
                         if cat.status == "leader":
                             event = f"{cat.name} has died in the medicine den from a {injury}, losing a life."
-                            cat.died_by = f"died from a {injury}."
+                            cat.died_by.append(f"died from a {injury}.")
                         else:
                             event = f"{cat.name} has died in the medicine den from a {injury}."
-                            cat.died_by = f"{cat.name} died from a {injury}."
+                            cat.died_by.append(f"{cat.name} died from a {injury}.")
 
                     # clear event list first to make sure any heal or risk events from other injuries are not shown
                     event_list.clear()
