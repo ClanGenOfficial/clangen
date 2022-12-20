@@ -38,6 +38,7 @@ class Patrol():
         self.patrol_stat_cat = None
         self.app1_name = None
         self.app2_name = None
+        self.app3_name = None
         self.other_clan = None
         self.experience_levels = []
 
@@ -55,14 +56,14 @@ class Patrol():
         for cat in patrol_cats:
             self.patrol_cats.append(cat)
             self.patrol_names.append(str(cat.name))
-            if cat.status != 'apprentice':
+            if 'apprentice' not in cat.status:
                 self.possible_patrol_leaders.append(cat)
             self.patrol_skills.append(cat.skill)
             self.patrol_statuses.append(cat.status)
             self.patrol_traits.append(cat.trait)
             self.patrol_total_experience += cat.experience
             self.experience_levels.append(cat.experience_level)
-            if cat.status == 'apprentice':
+            if 'apprentice' in cat.status:
                 self.patrol_apprentices.append(cat)
             game.patrolled.append(cat)
         # sets medcat as leader if they're in the patrol
@@ -103,6 +104,13 @@ class Patrol():
             elif len(self.patrol_apprentices) == 2:
                 self.app1_name = str(self.patrol_apprentices[0].name)
                 self.app2_name = str(self.patrol_apprentices[1].name)
+            elif len(self.patrol_apprentices) >= 3:
+                self.app1_name = str(self.patrol_apprentices[0].name)
+                self.app2_name = str(self.patrol_apprentices[1].name)
+                self.app3_name = str(self.patrol_apprentices[2].name)
+                self.app4_name = str(self.patrol_apprentices[3].name)
+                self.app5_name = str(self.patrol_apprentices[4].name)
+                self.app6_name = str(self.patrol_apprentices[5].name)
 
         self.other_clan = choice(game.clan.all_clans)
         print(self.patrol_total_experience)
@@ -397,9 +405,6 @@ class Patrol():
                 chance = 20
         c = randint(20, 100)
         outcome = int(random.getrandbits(4))
-        print("Outcome: " + str(outcome))
-        print("Clan Rel. Before: " + str(patrol.other_clan.relations))
-        print("Rep. Before: " + str(game.clan.reputation))
 
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
@@ -540,9 +545,10 @@ class Patrol():
 
     def handle_exp_gain(self):
         gm_modifier = 1
-        base_exp = 10
+        base_exp = 0
         if "max" in self.experience_levels:
             max_boost = 10
+            print("Max cat detected")
         else:
             max_boost = 0
         patrol_exp = self.patrol_event.exp
@@ -552,16 +558,19 @@ class Patrol():
             gm_modifier = 3
         elif game.clan.game_mode == 'cruel_season':
             gm_modifier = 6
-            for cat in self.patrol_cats:
-                print("EXP Before: " + str(cat.experience))
-                if self.success:
-                    gained_exp = ((patrol_exp + base_exp + max_boost) / len(self.patrol_cats)) / gm_modifier
-                    if cat.experience_level == "master":
-                        final_exp = gained_exp / 2
-                    else:
-                        final_exp = gained_exp
-                    cat.experience = cat.experience + final_exp
-                print("EXP After: " + str(cat.experience))
+        lvl_modifier = 1 # this makes exp gain slower after the cat reaches average
+        for cat in self.patrol_cats:
+            print("EXP Before: " + str(cat.experience))
+            gained_exp = ((patrol_exp + base_exp + max_boost) / len(self.patrol_cats)) / gm_modifier
+            if cat.experience_level == "average":
+                lvl_modifier = 1.25
+            if cat.experience_level == "high":
+                lvl_modifier = 1.75
+            if cat.experience_level == "master":
+                lvl_modifier = 2
+            final_exp = gained_exp / lvl_modifier
+            cat.experience = cat.experience + final_exp
+            print("EXP After: " + str(cat.experience))
 
     def handle_deaths(self, cat):
         if "no_body" in self.patrol_event.tags:
@@ -777,20 +786,14 @@ class Patrol():
                 platonic_like = -n
             if "dislike" in self.patrol_event.tags:
                 dislike = n
-            if "respect" in self.patrol_event.tags:
+            if "disrespect" in self.patrol_event.tags:
                 admiration = -n
             if "comfort" in self.patrol_event.tags:
                 comfortable = -n
             if "jealous" in self.patrol_event.tags:
                 jealousy = n
-            if "trust" in self.patrol_event.tags:
+            if "distrust" in self.patrol_event.tags:
                 trust = -n
-
-        # always do these if tagged for, no matter the outcome
-        if "distrust" in self.patrol_event.tags:
-            trust = -n
-        if "disrespect" in self.patrol_event.tags:
-            admiration = -n
 
         # collect the needed IDs and lists
         all_cats = list(filter(lambda c: not c.dead and not c.outside, Cat.all_cats.values()))
@@ -820,7 +823,7 @@ class Patrol():
         elif "patrol_to_r_c" in self.patrol_event.tags:
             # whole clan gains relationship towards r_c
             cats_to = [r_c_id]
-            cats_from = all_cats
+            cats_from = self.patrol_cats
 
         elif "patrol_to_p_l" in self.patrol_event.tags:
             # patrol gains relationship towards p_l
