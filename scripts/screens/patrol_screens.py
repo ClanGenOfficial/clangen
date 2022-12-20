@@ -308,14 +308,29 @@ class PatrolScreen(Screens):
                                 str(patrol.patrol_leader.name))
             text = text.replace('The patrol',
                                 str(patrol.patrol_leader.name))
-        text = text.replace('r_c', str(patrol.patrol_random_cat.name))
         text = text.replace('p_l', str(patrol.patrol_leader.name))
+        text = text.replace('r_c', str(patrol.patrol_random_cat.name))
         text = text.replace('app1', str(patrol.app1_name))
         text = text.replace('app2', str(patrol.app2_name))
         text = text.replace('app3', str(patrol.app3_name))
         text = text.replace('app4', str(patrol.app4_name))
         text = text.replace('app5', str(patrol.app5_name))
         text = text.replace('app6', str(patrol.app6_name))
+        if len(patrol.patrol_other_cats) == 1:
+            text = text.replace('o_c1', str(patrol.patrol_other_cats[0].name))
+        elif len(patrol.patrol_other_cats) == 2:
+            text = text.replace('o_c1', str(patrol.patrol_other_cats[0].name))
+            text = text.replace('o_c2', str(patrol.patrol_other_cats[1].name))
+        elif len(patrol.patrol_other_cats) == 3:
+            text = text.replace('o_c1', str(patrol.patrol_other_cats[0].name))
+            text = text.replace('o_c2', str(patrol.patrol_other_cats[1].name))
+            text = text.replace('o_c3', str(patrol.patrol_other_cats[2].name))
+        elif len(patrol.patrol_other_cats) == 4:
+            text = text.replace('o_c1', str(patrol.patrol_other_cats[0].name))
+            text = text.replace('o_c2', str(patrol.patrol_other_cats[1].name))
+            text = text.replace('o_c3', str(patrol.patrol_other_cats[2].name))
+            text = text.replace('o_c4', str(patrol.patrol_other_cats[3].name))
+        
 
         if patrol.patrol_stat_cat is not None:
             text = text.replace('s_c', str(patrol.patrol_stat_cat.name))
