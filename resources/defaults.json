@@ -29,27 +29,5 @@
             "border_width": "12",
             "shadow_width": "0"
         }
-    },
-        "tool_tip.text_box":
-    {
-        "colours":
-        {
-            "dark_bg": "#735B41",
-            "normal_border": "#2F2918"
-
-        },
-        "font": {
-            "name": "nonosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
-        },
-        "misc":
-        {
-            "shape": "rounded_rectangle",
-            "shape_corner_radius": 10,
-            "padding": "8, 8",
-            "border_width": 5,
-            "shadow_width": 2
-        }
     }
 }

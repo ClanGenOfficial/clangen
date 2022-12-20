@@ -3075,6 +3075,52 @@
                 "path":"resources/images/buttons/view_profile_unavailable.png"
             }
         }
+    },
+  "#begin_anew_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/begin_anew.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/begin_anew_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/begin_anew_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/begin_anew.png"
+            }
+        }
+    },
+  "#not_yet_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/not_yet.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/not_yet_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/not_yet_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/not_yet.png"
+            }
+        }
     }
 }
 

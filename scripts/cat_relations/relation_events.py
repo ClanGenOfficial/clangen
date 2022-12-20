@@ -67,8 +67,8 @@ class Relation_Events():
                 # randint is a slow function, don't call it unless we have to.
                 if random.random() > 0.96:  # Roughly 1/25
                     self.had_one_event = True
-                    text = f'{cat_from.name} will always love {cat_from_mate.name} but has decided to move on'
-                    game.relation_events_list.append(text)
+                    text = f'{cat_from.name} will always love {cat_from_mate.name} but has decided to move on.'
+                    game.relation_events_list.insert(0, text)
                     game.cur_events_list.append(text)
                     current_relationship.mate = False
                     cat_from.mate = None
@@ -123,8 +123,8 @@ class Relation_Events():
                                             cat_to, cat_to_mate)
 
                     # new relationship
-                    text = f"{cat_from.name} and {cat_to.name} can't ignore their feelings for each other"
-                    game.relation_events_list.append(text)
+                    text = f"{cat_from.name} and {cat_to.name} can't ignore their feelings for each other."
+                    game.relation_events_list.insert(0, text)
                     game.cur_events_list.append(text)
                     self.handle_new_mates(cat_from, cat_to)
 
@@ -248,7 +248,7 @@ class Relation_Events():
                 cat_from.unset_mate(breakup=True, fight=had_fight)
                 cat_to.unset_mate(breakup=True, fight=had_fight)
                 text = f"{cat_from.name} and {cat_to.name} broke up"
-                game.relation_events_list.append(text)
+                game.relation_events_list.insert(0, text)
                 game.cur_events_list.append(text)
 
     def big_love_check(self, cat, upper_threshold=40, lower_threshold=15):
@@ -286,13 +286,13 @@ class Relation_Events():
                     second_name = cat.name
 
                 if highest_romantic_relation.opposite_relationship.romantic_love <= lower_threshold:
-                    text = f"{first_name} confessed their feelings to {second_name}, but they got rejected"
-                    game.relation_events_list.append(text)
+                    text = f"{first_name} confessed their feelings to {second_name}, but they got rejected."
+                    game.relation_events_list.insert(0, text)
                     game.cur_events_list.append(text)
                     return False
                 else:
-                    text = f"{first_name} confessed their feelings to {second_name} and they have become mates"
-                    game.relation_events_list.append(text)
+                    text = f"{first_name} confessed their feelings to {second_name} and they have become mates."
+                    game.relation_events_list.insert(0, text)
                     game.cur_events_list.append(text)
                     return True
         return False
@@ -324,7 +324,7 @@ class Relation_Events():
                 insert = 'a single kitten'
             if amount > 1:
                 insert = f'a litter of {str(amount)} kits'
-            print_event = f"{str(cat.name)} brought {insert} back to camp, but refused to talk about their origin"
+            print_event = f"{str(cat.name)} brought {insert} back to camp, but refused to talk about their origin."
             game.birth_death_events_list.append(print_event)
             game.cur_events_list.append(print_event)
             # display event
@@ -350,7 +350,7 @@ class Relation_Events():
             "moons": 0,
             "amount": 0
         }
-        text = f"{pregnant_cat.name} announced that they are expecting kits"
+        text = f"{pregnant_cat.name} announced that they are expecting kits."
         game.birth_death_events_list.append(text)
         game.cur_events_list.append(text)
 
@@ -373,11 +373,11 @@ class Relation_Events():
         clan.pregnancy_data[cat.ID]["amount"] = amount
 
         if thinking_amount == 1:
-            text = f"{cat.name} thinks that they will have one kit"
+            text = f"{cat.name} thinks that they will have one kit."
             game.birth_death_events_list.append(text)
             game.cur_events_list.append(text)
         else:
-            text = f"{cat.name} thinks that they will have {thinking_amount} kits"
+            text = f"{cat.name} thinks that they will have {thinking_amount} kits."
             game.birth_death_events_list.append(text)
             game.cur_events_list.append(text)
 
@@ -530,12 +530,12 @@ class Relation_Events():
             elif relationship_from.romantic_love < 50:
                 will_break_up = True
             elif had_fight:
-                text = f"{str(cat_from.name)} and {str(cat_to.name)} had a fight and nearly broke up"
-                game.relation_events_list.append(text)
+                text = f"{str(cat_from.name)} and {str(cat_to.name)} had a fight and nearly broke up."
+                game.relation_events_list.insert(0, text)
                 game.cur_events_list.append(text)
             else:
-                text = f"{str(cat_from.name)} and {str(cat_to.name)} have somewhat different views about their relationship"
-                game.relation_events_list.append(text)
+                text = f"{str(cat_from.name)} and {str(cat_to.name)} have somewhat different views about their relationship."
+                game.relation_events_list.insert(0, text)
                 game.cur_events_list.append(text)
                 relationship_from.romantic_love -= 10
                 relationship_to.romantic_love -= 10
@@ -615,10 +615,10 @@ class Relation_Events():
         high_comfort = relationship_from.comfortable > 25 and relationship_to.comfortable > 25
 
         if not hit and relationship_from.romantic_love > 20 and relationship_to.romantic_love > 20 and semi_high_like:
-            mate_string = f"{cat_from.name} and {cat_to.name} have become mates"
+            mate_string = f"{cat_from.name} and {cat_to.name} have become mates."
             become_mates = True
         elif not random_hit and low_dislike and (high_like or high_comfort):
-            mate_string = f"{cat_from.name} and {cat_to.name} see each other in a different light and have become mates"
+            mate_string = f"{cat_from.name} and {cat_to.name} see each other in a different light and have become mates."
             become_mates = True
 
         return become_mates, mate_string
@@ -777,7 +777,7 @@ class Relation_Events():
         if highest_romantic_relation.cat_to.ID == mate.ID:
             return second_parent
 
-        # the function should only called if highest_romantic_cat is not the mate
+        # the function should only call if highest_romantic_cat is not the mate
         chance_affair = self.get_affair_chance(
             mate_relation,
             highest_romantic_relation

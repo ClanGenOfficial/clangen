@@ -1,6 +1,7 @@
 [
     {
         "injury": "bruises",
+        "camp": "any",
         "tags": [
             "Newleaf",
             "Greenleaf",
@@ -20,6 +21,7 @@
     },
     {
         "injury": "sprain",
+        "camp": "any",
         "tags": [
             "Newleaf",
             "Greenleaf",
@@ -39,6 +41,7 @@
     },
     {
         "injury": "torn pelt",
+        "camp": "any",
         "tags": [
             "Newleaf",
             "Greenleaf",
@@ -58,6 +61,7 @@
     },
     {
         "injury": "splinter",
+        "camp": "any",
         "tags": [
             "Newleaf",
             "Greenleaf",
@@ -77,6 +81,7 @@
     },
     {
         "injury": "splinter",
+        "camp": "any",
         "tags": [
             "Newleaf",
             "Greenleaf",
@@ -96,6 +101,7 @@
     },
     {
         "injury": "frostbite",
+        "camp": "any",
         "tags": [
             "Leaf-fall",
             "Leaf-bare"
@@ -113,6 +119,7 @@
     },
     {
         "injury": "water in their lungs",
+        "camp": "any",
         "tags": [
             "Newleaf",
             "Greenleaf",
@@ -131,6 +138,7 @@
     },
     {
         "injury": "mangled tail",
+        "camp": "any",
         "tags": [
             "Newleaf",
             "Greenleaf",
@@ -144,6 +152,90 @@
             "their tail was crushed by a falling tree."
         ],
         "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "burn",
+        "camp": "any",
+        "tags": [
+            "Greenleaf"
+        ],
+        "event_text": "A fire rages through the forest and m_c manages to escape, though not unscathed by the experience.",
+        "history_text": [
+            "m_c was scarred by a forest fire.",
+            "m_c died from their burns.",
+            "they were hurt in a forest fire."
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "severe burn",
+        "camp": "any",
+        "tags": [
+            "Greenleaf"
+        ],
+        "event_text": "A fire rages through the forest and m_c manages to escape, though not unscathed by the experience.",
+        "history_text": [
+            "m_c was scarred by a forest fire.",
+            "m_c died from their burns.",
+            "they were hurt in a forest fire."
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "burn",
+        "camp": "any",
+        "tags": [
+            "Greenleaf",
+            "other_cat",
+            "other_cat_kit",
+            "rc_to_mc",
+            "respect",
+            "comfort",
+            "trust",
+            "platonic",
+            "neg_dislike"
+        ],
+        "event_text": "The dry Greenleaf weather leads to a fire bursting to life in camp, dangerously close to the nursery. There's still one kit inside, m_c dives into the den and makes it out, burnt, but with r_c safely swinging in their grasp.",
+        "history_text": [
+            "m_c was scarred by a forest fire.",
+            "m_c died from their burns.",
+            "they were hurt in a forest fire."
+        ],
+        "cat_trait": ["ambitious", "bold", "altruistic", "daring", "fierce", "responsible"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "severe burn",
+        "camp": "any",
+        "tags": [
+            "Greenleaf",
+            "other_cat",
+            "other_cat_kit",
+            "rc_to_mc",
+            "respect",
+            "comfort",
+            "trust",
+            "platonic",
+            "neg_dislike"
+        ],
+        "event_text": "The dry Greenleaf weather leads to a fire bursting to life in camp, dangerously close to the nursery. There's still one kit inside, m_c dives into the den and makes it out, burnt, but with r_c safely swinging in their grasp.",
+        "history_text": [
+            "m_c was scarred by a forest fire.",
+            "m_c died from their burns.",
+            "they were hurt in a forest fire."
+        ],
+        "cat_trait": ["ambitious", "bold", "altruistic", "daring", "fierce", "responsible"],
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null

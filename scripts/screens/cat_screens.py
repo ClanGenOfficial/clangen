@@ -2,7 +2,7 @@ from random import choice
 
 import pygame
 
-from scripts.utility import update_sprite
+from scripts.utility import update_sprite, event_text_adjust
 
 from .base_screens import Screens, cat_profiles
 
@@ -277,6 +277,7 @@ class ProfileScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             if event.ui_element == self.alert:
                 print('Test button hovered')
+
     def handle_tab_events(self, event):
         """Handles buttons presses on the tabs"""
         if self.open_tab is not None and self.open_tab != 'backstory' and self.open_tab != 'conditions':
@@ -485,8 +486,6 @@ class ProfileScreen(Screens):
                                                  object_id=get_text_box_theme("#cat_profile_info_box"),
                                                  line_spacing=0.95)
 
-
-
         # Set the cat backgrounds.
         self.update_platform()
         if game.settings['backgrounds']:
@@ -679,7 +678,9 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if the_cat.exiled:
+        if the_cat.outside:
+            output += "<font color='#FF0000'>lost</font>"
+        elif the_cat.exiled and not the_cat.outside:
             output += "<font color='#FF0000'>exiled</font>"
         else:
             output += the_cat.status
@@ -748,6 +749,11 @@ class ProfileScreen(Screens):
         else:
             output += 'backstory: ' + 'clanborn'
 
+        if the_cat.is_disabled():
+            # NEWLINE ----------
+            output += "\n"
+            output += 'has a permanent condition'
+
         # NEWLINE ----------
         output += "\n"
 
@@ -778,13 +784,14 @@ class ProfileScreen(Screens):
             self.open_tab = 'backstory'
             self.backstory_background = pygame_gui.elements.UIImage(pygame.Rect((64, 465), (645, 157)),
                                                                     self.backstory_tab)
-            self.sub_tab_1 = UIImageButton(pygame.Rect((710, 475), (42, 30)), "", object_id="#sub_tab_1_button")
+            self.backstory_background.disable()
+            self.sub_tab_1 = UIImageButton(pygame.Rect((709, 475), (42, 30)), "", object_id="#sub_tab_1_button")
             self.sub_tab_1.disable()
-            self.sub_tab_2 = UIImageButton(pygame.Rect((710, 512), (42, 30)), "", object_id="#sub_tab_2_button")
+            self.sub_tab_2 = UIImageButton(pygame.Rect((709, 512), (42, 30)), "", object_id="#sub_tab_2_button")
             self.sub_tab_2.disable()
-            self.sub_tab_3 = UIImageButton(pygame.Rect((710, 549), (42, 30)), "", object_id="#sub_tab_3_button")
+            self.sub_tab_3 = UIImageButton(pygame.Rect((709, 549), (42, 30)), "", object_id="#sub_tab_3_button")
             self.sub_tab_3.disable()
-            self.sub_tab_4 = UIImageButton(pygame.Rect((710, 586), (42, 30)), "", object_id="#sub_tab_4_button")
+            self.sub_tab_4 = UIImageButton(pygame.Rect((709, 586), (42, 30)), "", object_id="#sub_tab_4_button")
             self.sub_tab_4.disable()
 
             # This will be overwritten in update_disabled_buttons_and_text()
@@ -794,44 +801,170 @@ class ProfileScreen(Screens):
     def toggle_history_sub_tab(self):
         """To toggle the sub-tab, when that's added"""
 
-    def get_history_text(self):
+    def get_all_history_text(self):
         output = ""
         if self.open_sub_tab == 'relation':
-            life_history = []
-            bs_blurb = bs_blurb_text(self.the_cat)
-            if bs_blurb is not None:
-                life_history.append(str(bs_blurb))
-            else:
-                life_history.append("This cat was born into the clan where they currently reside.")
+            # start our history with the backstory, since all cats get one
+            life_history = [str(self.get_backstory_text())]
+            body_history = []
 
-            if self.the_cat.scar_event:
-                scar_text = self.the_cat.scar_event
-                for x in range(len(self.the_cat.scar_event)):
-                    scar_text[x] = str(self.the_cat.scar_event[x]).replace(' is ', ' was ', 1)
-                    scar_text[x] = str(self.the_cat.scar_event[x]).replace(' loses ', ' lost ')
-                    scar_text[x] = str(self.the_cat.scar_event[x]).replace(' forces ', ' forced ')
+            # now get mentor influence history and add that if any exists
+            influence_history = self.get_influence_text()
+            if influence_history:
+                life_history.append(str(influence_history))
 
-                    not_scarred = ['wounded', 'injured', 'battered', 'hurt', 'punished']
-                    for y in not_scarred:
-                        scar_text[x] = str(self.the_cat.scar_event[x]).replace(f' got {y} ', ' was scarred ')
-                        scar_text[x] = str(self.the_cat.scar_event[x]).replace(y, ' scarred ')
-                        break
-                    if x == 0:
-                        scar_text[x] = str(self.the_cat.scar_event[x]).replace(f'{self.the_cat.name} ', 'This cat ', 1)
-                    elif x == 1:
-                        scar_text[x] = str(self.the_cat.scar_event[x]).replace(f'{self.the_cat.name} was ',
-                                                                               'They were also ', 1)
-                        scar_text[x] = str(self.the_cat.scar_event[x]).replace(str(self.the_cat.name), 'They also', 1)
-                    elif x >= 3:
-                        scar_text[x] = str(self.the_cat.scar_event[x]).replace(f'{self.the_cat.name} was ',
-                                                                               'Then they were ', 1)
-                        scar_text[x] = str(self.the_cat.scar_event[x]).replace(str(self.the_cat.name), 'Then they', 1)
-                scar_history = ' '.join(scar_text)
-                life_history.append(scar_history)
+            # now go get the scar history and add that if any exists
+            scar_history = self.get_scar_text()
+            if scar_history:
+                body_history.append(str(scar_history))
+
+            if self.the_cat.dead or (self.the_cat.status == 'leader' and game.clan.leader_lives < 9):
+                death_history = self.get_death_text()
+                if death_history:
+                    body_history.append(str(death_history))
+                else:
+                    body_history.append(f"The cause of {self.the_cat.name}'s death is unknown.")
+
+            # join scar and death into one paragraph
+            if body_history:
+                life_history.append(" ".join(body_history))
 
             # join together history list with line breaks
-            output = '\n'.join(life_history)
+            output = '\n\n'.join(life_history)
         return output
+
+    def get_backstory_text(self):
+        text = None
+        bs_blurb = bs_blurb_text(self.the_cat)
+        if bs_blurb is not None:
+            adjust_text = str(bs_blurb).replace('This cat', str(self.the_cat.name))
+            text = adjust_text
+        else:
+            text = f"{str(self.the_cat.name)} was born into the clan where they currently reside."
+        return text
+
+    def get_scar_text(self):
+        scar_history = None
+
+        if self.the_cat.scar_event:
+            scar_text = self.the_cat.scar_event
+            for x in range(len(self.the_cat.scar_event)):
+                # first event in the list will keep the cat's name, so we don't want to permanently change the text in
+                # the save else the name end up different later in the cat's life
+                if x == 0:
+                    scar_text[x] = event_text_adjust(Cat, self.the_cat.scar_event[x], self.the_cat)
+                # however, for all other events we want to permanently alter the saved text as none of these events will
+                # use the cat's name, rather they'll use one of the provided sentence beginners.  We don't want this
+                # sentence beginning to change everytime this text is pulled, so we need to make it permanent.
+                else:
+                    self.the_cat.scar_event[x] = event_text_adjust(Cat, self.the_cat.scar_event[x], self.the_cat)
+
+                sentence_beginners = [
+                    "This cat",
+                    "Then they",
+                    "They also"
+                ]
+
+                # first event needs no adjustments, as it's keeping the cat's name. all other events are adjusted.
+                if x != 0:
+                    chosen = choice(sentence_beginners)
+                    self.the_cat.scar_event[x] = str(self.the_cat.scar_event[x]).replace(f'{self.the_cat.name}',
+                                                                                         chosen, 1)
+                    if chosen != 'This cat':
+                        self.the_cat.scar_event[x] = str(self.the_cat.scar_event[x]).replace(f' was ', ' were ', 1)
+                    scar_text[x] = self.the_cat.scar_event[x]
+            scar_history = ' '.join(scar_text)
+
+        return scar_history
+
+    def get_influence_text(self):
+        influence_history = None
+
+        # check if cat has any mentor influence, else assign None
+        if len(self.the_cat.mentor_influence) >= 1:
+            influenced_skill = str(self.the_cat.mentor_influence[0])
+            if len(self.the_cat.mentor_influence) >= 2:
+                influenced_trait = str(self.the_cat.mentor_influence[1]).casefold()
+            else:
+                influenced_trait = None
+        else:
+            game.switches['sub_tab_group'] = 'life sub tab'
+            influenced_trait = None
+            influenced_skill = None
+
+        # if they did have mentor influence, check if skill or trait influence actually happened and assign None
+        if influenced_skill in ['None', 'none']:
+            influenced_skill = None
+        if influenced_trait in ['None', 'none']:
+            influenced_trait = None
+
+        # if cat had mentor influence then write history text for those influences and append to history
+        # assign proper grammar to skills
+        vowels = ['e', 'a', 'i', 'o', 'u']
+        if influenced_skill in Cat.skill_groups.get('special'):
+            adjust_skill = f'unlock their abilities as a {influenced_skill}'
+            for y in vowels:
+                if influenced_skill.startswith(y):
+                    adjust_skill = adjust_skill.replace(' a ', ' an ')
+                    break
+            influenced_skill = adjust_skill
+        elif influenced_skill in Cat.skill_groups.get('star'):
+            adjust_skill = f'grow a {influenced_skill}'
+            influenced_skill = adjust_skill
+        elif influenced_skill in Cat.skill_groups.get('smart'):
+            adjust_skill = f'become {influenced_skill}'
+            influenced_skill = adjust_skill
+        else:
+            # for loop to assign proper grammar to all these groups
+            become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak']
+            for x in become_group:
+                if influenced_skill in Cat.skill_groups.get(x):
+                    adjust_skill = f'become a {influenced_skill}'
+                    for y in vowels:
+                        if influenced_skill.startswith(y):
+                            adjust_skill = adjust_skill.replace(' a ', ' an ')
+                            break
+                    influenced_skill = adjust_skill
+                    break
+
+            if self.the_cat.former_mentor:
+                mentor = self.the_cat.former_mentor[-1].name
+            else:
+                mentor = None
+
+            # append influence blurb to history
+            if mentor is None:
+                influence_history = None
+            elif influenced_trait is not None and influenced_skill is None:
+                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait}."
+            elif influenced_trait is None and influenced_skill is not None:
+                influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
+            elif influenced_trait is not None and influenced_skill is not None:
+                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill}."
+            else:
+                influence_history = None
+
+        return influence_history
+
+    def get_death_text(self):
+        text = None
+        if self.the_cat.died_by:
+            if self.the_cat.status == 'leader':
+                insert2 = f"lost their lives"
+                if len(self.the_cat.died_by) > 2:
+                    insert = f"{', '.join(self.the_cat.died_by[:-2])}, and {self.the_cat.died_by[-1]}"
+                elif len(self.the_cat.died_by) == 2:
+                    insert = f"{self.the_cat.died_by[0]} and {self.the_cat.died_by[1]}"
+                else:
+                    insert = f"{self.the_cat.died_by[0]}"
+                    if self.the_cat.dead:
+                        insert2 = f'lost all their lives'
+                    elif game.clan.leader_lives == 8:
+                        insert2 = f"lost a life"
+                text = f"{self.the_cat.name} {insert2} when they {insert}."
+            else:
+                text = str(self.the_cat.died_by[0]).replace(f"{self.the_cat.name} was", 'They were')
+        return text
 
     def toggle_conditions_tab(self):
         """Opens the conditions tab"""
@@ -1043,9 +1176,9 @@ class ProfileScreen(Screens):
             elif 'moons_with' in keys:  # need to check if it exists for older saves
                 moons_with = self.the_cat.permanent_condition[name]["moons_with"]
                 if moons_with != 1:
-                    text_list.append(f"{moons_with} moons")
+                    text_list.append(f"has had this condition for {moons_with} moons")
                 else:
-                    text_list.append(f"1 moon")
+                    text_list.append(f"has had this condition for 1 moon")
             # is permanent
             text_list.append('permanent condition')
             # infected or festering
@@ -1054,7 +1187,7 @@ class ProfileScreen(Screens):
                 if complication is not None:
                     if 'a festering wound' in self.the_cat.illnesses:
                         complication = 'festering'
-                    text_list.append(f'Is {complication}!')
+                    text_list.append(f'is {complication}!')
 
         # collect details for injuries
         if name in self.the_cat.injuries:
@@ -1062,20 +1195,23 @@ class ProfileScreen(Screens):
             keys = self.the_cat.injuries[name].keys()
             if 'moons_with' in keys:  # need to check if it exists for older saves
                 moons_with = self.the_cat.injuries[name]["moons_with"]
+                insert = 'has been hurt for'
+                if name == 'recovering from birth':
+                    insert = 'has been recovering for'
                 if moons_with != 1:
-                    text_list.append(f"{moons_with} moons")
+                    text_list.append(f"{insert} {moons_with} moons")
                 else:
-                    text_list.append(f"1 moon")
+                    text_list.append(f"{insert} 1 moon")
             # infected or festering
             if 'complication' in keys:
                 complication = self.the_cat.injuries[name]["complication"]
                 if complication is not None:
                     if 'a festering wound' in self.the_cat.illnesses:
                         complication = 'festering'
-                    text_list.append(f'Is {complication}!')
+                    text_list.append(f'is {complication}!')
             # can or can't patrol
             if self.the_cat.injuries[name]["severity"] != 'minor':
-                text_list.append("They cannot work with this condition")
+                text_list.append("they cannot work with this condition")
 
         # collect details for illnesses
         if name in self.the_cat.illnesses:
@@ -1083,10 +1219,13 @@ class ProfileScreen(Screens):
             keys = self.the_cat.illnesses[name].keys()
             if 'moons_with' in keys:  # need to check if it exists for older saves
                 moons_with = self.the_cat.illnesses[name]["moons_with"]
+                insert = "has been sick for"
+                if name == 'grief stricken':
+                    insert = 'has been grieving for'
                 if moons_with != 1:
-                    text_list.append(f"{moons_with} moons")
+                    text_list.append(f"{insert} {moons_with} moons")
                 else:
-                    text_list.append(f"1 moon")
+                    text_list.append(f"{insert} 1 moon")
             if self.the_cat.illnesses[name]['infectiousness'] != 0:
                 text_list.append("infectious!")
             # can or can't patrol
@@ -1334,9 +1473,10 @@ class ProfileScreen(Screens):
         # Backstory_tab:
         elif self.open_tab == 'backstory':
             self.history_text_box.kill()
-            self.history_text_box = pygame_gui.elements.UITextBox(self.get_history_text(),
-                                                                  pygame.Rect((80, 480), (615, 142)),
-                                                                  object_id="#history_tab_text_box")
+            self.history_text_box = UITextBoxTweaked(self.get_all_history_text(),
+                                                     pygame.Rect((80, 473), (620, 149)),
+                                                     object_id="#history_tab_text_box",
+                                                     line_spacing=1)
 
         elif self.open_tab == 'conditions':
             self.left_arrow.disable()

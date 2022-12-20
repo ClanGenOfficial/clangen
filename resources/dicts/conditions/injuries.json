@@ -74,6 +74,7 @@
             }
         ],
         "also_got": [
+            "poisoned"
         ],
         "cause_permanent": []
     },
@@ -758,7 +759,7 @@
         "risks": [
             {
                 "name": "heat exhaustion",
-                "chance": 5
+                "chance": 10
             }
         ],
         "also_got": [
@@ -833,6 +834,18 @@
             "senior adult": 50,
             "elder": 30
         },
+    "broken back":{
+        "duration": 12,
+        "severity": "severe",
+        "medicine_duration": 8,
+        "mortality": {
+            "kitten": 5,
+            "adolescent": 25,
+            "young adult": 40,
+            "adult": 40,
+            "senior adult": 30,
+            "elder": 10
+        },
         "illness_infectiousness": [
         ],
         "risks": [
@@ -867,8 +880,13 @@
             }
         ],
         "also_got": [
+            "torn pelt",
+            "bruises",
+            "scrapes",
+            "shock"
         ],
         "cause_permanent": [
+            "paralyzed"
         ]
     }
 }

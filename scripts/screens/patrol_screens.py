@@ -505,54 +505,17 @@ class PatrolScreen(Screens):
         # ASSIGN TO ABLE CATS AND SORT BY RANK
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
-
-            if game.clan.game_mode == 'classic':
-                if not \
-                        the_cat.dead and \
-                        the_cat.in_camp and \
-                        the_cat not in game.patrolled and \
-                        the_cat.status in ['leader', 'deputy', 'warrior', 'apprentice'] and \
-                        not the_cat.exiled and \
-                        not the_cat.outside and \
-                        not the_cat.not_working() and \
-                        the_cat not in self.current_patrol:
-
-                    if the_cat.status == 'leader':
-                        self.able_cats.insert(0, the_cat)
-                    elif the_cat.status == 'deputy':
-                        self.able_cats.insert(1, the_cat)
-                    elif the_cat.status == 'warrior':
-                        warriors.append(the_cat)
-                    elif the_cat.status == 'apprentice':
-                        apprentices.append(the_cat)
-            else:
-                if \
-                        not the_cat.dead and \
-                                the_cat.in_camp and \
-                                the_cat not in game.patrolled and \
-                                the_cat.status not in ['elder', 'kitten'] and \
-                                not the_cat.exiled and \
-                                not the_cat.outside and \
-                                not the_cat.not_working() and \
-                                the_cat not in self.current_patrol:
-
-                    if the_cat.status == 'leader':
-                        self.able_cats.insert(0, the_cat)
-                    elif the_cat.status == 'deputy':
-                        self.able_cats.insert(1, the_cat)
-                    elif the_cat.status in ['medicine cat', 'medicine cat apprentice']:
-                        med_cats.append(the_cat)
-                    elif the_cat.status == 'warrior':
-                        warriors.append(the_cat)
-                    elif the_cat.status == 'apprentice':
-                        apprentices.append(the_cat)
-
-        if med_cats:
-            self.able_cats.extend(med_cats)
-        if warriors:
-            self.able_cats.extend(warriors)
-        if apprentices:
-            self.able_cats.extend(apprentices)
+            if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status in [
+                'leader', 'deputy', 'warrior', 'apprentice'
+            ] and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working():
+                if the_cat.status == 'leader':
+                    self.able_cats.insert(0, the_cat)
+                elif the_cat.status == 'deputy':
+                    self.able_cats.insert(1, the_cat)
+                elif the_cat.status == 'warrior':
+                    self.able_cats.insert(2, the_cat)
+                elif the_cat.status == 'apprentice':
+                    self.able_cats.append(the_cat)
 
         if not self.able_cats:
             all_pages = []

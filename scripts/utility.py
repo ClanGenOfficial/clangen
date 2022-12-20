@@ -67,6 +67,15 @@ def get_cats_allowed_on_patrol(Cat, game_mode):
     return able_cats
 
 
+def get_living_cat_count(Cat):
+    count = 0
+    for the_cat in Cat.all_cats.values():
+        if the_cat.dead or the_cat.exiled:
+            continue
+        count += 1
+    return count
+
+
 def save_death(cat, death_string):
     clanname = None
     if game.switches['clan_name'] != '':
@@ -313,7 +322,7 @@ def change_relationship_values(cats_to,
 #                               Text Adjust                                    #
 # ---------------------------------------------------------------------------- #
 
-def event_text_adjust(Cat, text, cat, other_cat, other_clan_name=None):
+def event_text_adjust(Cat, text, cat, other_cat=None, other_clan_name=None, keep_m_c=False):
     danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk", "an enemy warrior", "a badger"]
     tail_danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk",
                    "an enemy warrior", "a badger", "a twoleg trap"]
@@ -330,8 +339,8 @@ def event_text_adjust(Cat, text, cat, other_cat, other_clan_name=None):
         mate = Cat.all_cats.get(cat.mate).name
 
     adjust_text = text
-    adjust_text = adjust_text.replace("m_c", str(name))
-    adjust_text = adjust_text.replace("c_n", str(game.clan.name + 'Clan'))
+    if keep_m_c is False:
+        adjust_text = adjust_text.replace("m_c", str(name))
     if other_name is not None:
         adjust_text = adjust_text.replace("r_c", str(other_name))
     if other_clan_name is not None:
@@ -632,7 +641,7 @@ def is_iterable(y):
     except TypeError:
         return False
 
-def get_text_box_theme(themename = ""):
+def get_text_box_theme(themename=""):
     """Updates the name of the theme based on dark or light mode"""
     if game.settings['dark mode']:
         if themename == "":

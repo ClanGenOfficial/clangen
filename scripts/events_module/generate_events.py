@@ -251,6 +251,7 @@ class GenerateEvents():
 class InjuryEvent:
     def __init__(self,
                  injury=None,
+                 camp='any',
                  tags=None,
                  event_text='',
                  history_text=None,
@@ -259,6 +260,7 @@ class InjuryEvent:
                  other_cat_trait=None,
                  other_cat_skill=None):
         self.injury = injury
+        self.camp = camp
         self.tags = tags
         self.event_text = event_text
         self.history_text = history_text

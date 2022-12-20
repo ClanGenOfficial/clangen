@@ -195,5 +195,9 @@
         "Despite the lethality of the poison that coursed through them, m_c has managed to stay alive.",
         "m_c has recovered from the poison.",
         "m_c is no longer poisoned."
+    ],
+    "broken back": [
+        "m_c's broken back has healed and they've made a full recovery against all odds.",
+        "m_c is ecstatic to be walking around freely again, their broken back finally healed."
     ]
 }

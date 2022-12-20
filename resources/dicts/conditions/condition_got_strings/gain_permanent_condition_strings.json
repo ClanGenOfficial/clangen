@@ -159,5 +159,12 @@
             "m_c finds that they have a new limp, despite healed from their bite-wound. r_c tells them it's likely permanent.",
             "m_c limps around camp, fully healed from their bite-wound but still marked by it for the rest of their life."
         ]
+    },
+    "broken back": {
+        "paralyzed": [
+            "r_c is gentle when they break the news, but m_c had already expected it. They'll never walk again.",
+            "m_c tries to keep the disappointment down. Logically, they knew this was inevitable. Emotionally, they just can't accept that they'll never walk again.",
+            "m_c continues to do their exercises dutifully, hoping beyond hope that someday it will pay off. For now though, they know this paralysis is their new reality."
+        ]
     }
 }

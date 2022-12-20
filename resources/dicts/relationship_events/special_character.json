@@ -1,47 +1,131 @@
 {
-    "strange": ["Is following (cat) around", "Tells (cat) that their pelt looks like a different colour today"],
-    "bloodthirsty": ["Talks to (cat) how best to kill prey, very enthusiastic", "Started a fight with (cat)"],
-    "righteous": ["Makes sure (cat) is following the warrior code", "Has a fight with (cat) about what's right"],
-    "fierce": [ "Is not backing down in an argument with (cat)", 
-                "Is telling (cat) in great detail how they would protect them from any danger"],
-    "nervous": ["Is stuttering while speaking to (cat)"],
-    "strict":["Scorns (apprentice) for not catching enough prey"],
-    "charismatic": ["Charms (cat)", "Smiles at (cat) whenever they meet", "Knows what to say to make (cat) feel better", 
-                    "Compliments (cat) for their good disposition"],
-    "calm": ["Relaxing with (cat)","Is soothing (cat)'s irrational thoughts", "Is helping (cat) calm down"],
-    "daring": ["Challenges (cat) to a race"],
-    "loving": [ "Is making sure (cat) knows that they are loved","Is telling (cat) how much they cherish them", 
-                "Is purring loudly to comfort (cat)"],
-    "playful": ["Is playing tag with (cat)"],
-    "cold": ["Hissed at (cat)", "Tells (cat) to leave them alone", "Glaring at (cat) from across the camp"],
-    "vengeful": ["Thinking about how (cat) wronged them", "Is watching (cat) scornfully", "Is glaring daggers at (cat)"],
-    "shameless": ["Is asking (cat) to tell them about how good they look"],
-    "troublesome": ["Pulled a prank on (cat)", "Blamed (cat) for their own mistake", "Won't stop bothering (cat)",
-                    "Feels bad that they caused a problem for (cat)"],
-    "empathetic": [ "Listening to (elder)'s woes", "Is listening to (cat)'s troubles",
-                    "Noticed (apprentice) was struggling, and offered to help them"],
-    "adventurous": ["Wants to explore Twoleg place with (cat)", "Wants to sneak along the border with (cat)", 
-                    "Tells (cat) that there's so much to see in the world!"],
-    "thoughful": [  "Gave (cat) their favorite piece of prey", "Is being quite considerate with (cat)", 
-                    "Took the time to help (apprentice) work through a technique they are struggling with"],
-    "compassionate": [  "Curled around (cat) to share warmth", "Lets (cat) have the last piece of fresh kill", 
-                        "Listening to (cat)'s problems", "Gives (cat) an item they may like", 
-                        "Helps (elder) get around camp"],
-    "childish": ["Is hiding behind a bush ready to pounce on (cat)"],
-    "confident": ["Is building up (cat)'s confidence", "Stands tall when (cat) walks by"],
-    "careful": ["Tells (cat) to get their ailment treated as soon as possible", "Chiding (cat) for being so reckless",
-                "Apologized to (cat) for possibly hurting their feelings"],
-    "altruistic": ["Let (cat) lean on their shoulder after a recent injury", "Is poised to help train (apprentice)"],
-    "bold": ["Challenged (cat) to spar with them"],
-    "patient": ["Watching the shooting stars with (cat)", 
-                "Calmly explains hunting techniques to (cat) again for the fourth time today"],
-    "sneaky": [ "Is gossiping about (cat)", "Is teaching (cat) how to walk without making a sound", 
-                "Is showing (cat) how to sneak up on their enemies"],
-    "wise": ["Is giving (cat) advice"],
-    "cowardly": ["Is hiding from (cat)"],
-    "impulsive": [  "Crashes into (cat) while eager for patrol", "Rejects (cat)'s advice without letting them finish", 
-                    "Interrupts (cat) during a conversation"],
-    "tidy": [   "Is annoyed by the mess (cat) made", "Grooms the grime off (cat)'s pelt", 
-                "Is cross with (cat) for getting dirt all over the fresh-kill pile"],
-    "dreamy": ["Talks about dreams with (cat)", "Gets distracted from conversation with (cat)"]
+    "strange": [
+      "is following (cat) around.",
+      "tells (cat) that their pelt looks like a different colour today."
+    ],
+    "bloodthirsty": [
+      "talks to (cat) how best to kill prey, very enthusiastic.",
+      "started a fight with (cat)."
+    ],
+    "righteous": [
+      "makes sure (cat) is following the warrior code.",
+      "has a fight with (cat) about what's right."
+    ],
+    "fierce": [
+      "is not backing down in an argument with (cat).",
+      "is telling (cat) in great detail how they would protect them from any danger."
+    ],
+    "nervous": [
+      "is stuttering while speaking to (cat)."
+    ],
+    "strict":[
+      "scorns (apprentice) for not catching enough prey."
+    ],
+    "charismatic": [
+      "charms (cat).",
+      "smiles at (cat) whenever they meet.",
+      "knows what to say to make (cat) feel better.",
+      "compliments (cat) for their good disposition."
+    ],
+    "calm": [
+      "relaxing with (cat).",
+      "is soothing (cat)'s irrational thoughts.",
+      "is helping (cat) calm down."
+    ],
+    "daring": [
+      "challenges (cat) to a race."
+    ],
+    "loving": [
+      "is making sure (cat) knows that they are loved.",
+      "is telling (cat) how much they cherish them.",
+      "is purring loudly to comfort (cat)."
+    ],
+    "playful": [
+      "is playing tag with (cat)."
+    ],
+    "cold": [
+      "hissed at (cat).",
+      "tells (cat) to leave them alone.",
+      "glaring at (cat) from across the camp."
+    ],
+    "vengeful": [
+      "thinking about how (cat) wronged them.",
+      "is watching (cat) scornfully.",
+      "is glaring daggers at (cat)."
+    ],
+    "shameless": [
+      "is asking (cat) to tell them about how good they look.",
+      "offends (cat) with their brutal honesty.",
+      "is boasting about their accomplishments to (cat), but (cat) isn't impressed."
+    ],
+    "troublesome": [
+      "pulled a prank on (cat).",
+      "blamed (cat) for their own mistake.",
+      "won't stop bothering (cat).",
+      "feels bad that they caused a problem for (cat).",
+      "convinces (cat) to help them pull a prank on a clanmate."
+    ],
+    "empathetic": [
+      "listening to (elder)'s woes.",
+      "is listening to (cat)'s troubles.",
+      "noticed (apprentice) was struggling, and offered to help them."
+    ],
+    "adventurous": [
+      "wants to explore twoleg place with (cat).",
+      "wants to sneak along the border with (cat).",
+      "tells (cat) that there's so much to see in the world!"
+    ],
+    "thoughful": [
+      "gave (cat) their favorite piece of prey.",
+      "is being quite considerate with (cat).",
+      "took the time to help (apprentice) work through a technique they are struggling with."
+    ],
+    "compassionate": [
+      "curled around (cat) to share warmth.",
+      "lets (cat) have the last piece of fresh kill.",
+      "listening to (cat)'s problems.",
+      "gives (cat) an item they may like.",
+      "helps (elder) get around camp."
+    ],
+    "childish": [
+      "is hiding behind a bush ready to pounce on (cat)."
+    ],
+    "confident": [
+      "is building up (cat)'s confidence.",
+      "stands tall when (cat) walks by."
+    ],
+    "careful": [
+      "tells (cat) to get their ailment treated as soon as possible.",
+      "chiding (cat) for being so reckless.",
+      "apologized to (cat) for possibly hurting their feelings."
+    ],
+    "altruistic": [
+      "let (cat) lean on their shoulder after a recent injury.",
+      "is poised to help train (apprentice)."
+    ],
+    "bold": [
+      "challenged (cat) to spar with them."
+    ],
+    "patient": [
+      "watching the shooting stars with (cat).",
+      "calmly explains hunting techniques to (cat) again for the fourth time today."
+    ],
+    "sneaky": [
+      "is gossiping about (cat).",
+      "is teaching (cat) how to walk without making a sound.",
+      "is showing (cat) how to sneak up on their enemies.",
+      "convinces (cat) to help them pull a prank on a clanmate."
+    ],
+    "wise": [
+      "is giving (cat) advice."
+    ],
+    "cowardly": ["is hiding from (cat)"],
+    "impulsive": [
+      "crashes into (cat) while eager for patrol.",
+      "rejects (cat)'s advice without letting them finish.",
+      "interrupts (cat) during a conversation."
+    ],
+    "tidy": [   "is annoyed by the mess (cat) made", "grooms the grime off (cat)'s pelt",
+                "is cross with (cat) for getting dirt all over the fresh-kill pile"],
+    "dreamy": ["talks about dreams with (cat)", "gets distracted from conversation with (cat)"]
 }
