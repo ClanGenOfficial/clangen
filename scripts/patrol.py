@@ -83,10 +83,6 @@ class Patrol():
                 self.patrol_leader = choice(self.patrol_cats)
         self.patrol_leader_name = str(self.patrol_leader.name)
         self.patrol_random_cat = choice(self.patrol_cats)
-        if self.patrol_random_cat is None:
-            choice(self.patrol_apprentices)
-        if self.patrol_random_cat == self.patrol_leader:
-            self.patrol_random_cat = choice(self.patrol_cats)
 
         # big check for p_l and r_c not being the same cat if we can help it
         if len(self.patrol_cats) >= 2:
@@ -96,10 +92,12 @@ class Patrol():
                 else:
                     break
 
+        # adds the other cats to an other cat list just in case
         if len(self.patrol_cats) >= 3:
             for cat in self.patrol_cats:
                 if cat != self.patrol_leader and cat != self.patrol_random_cat:
                     self.patrol_other_cats.append(cat)
+
         # grabbing the apprentices' names
         if len(self.patrol_apprentices) != 0:
             if len(self.patrol_apprentices) == 1:
@@ -107,7 +105,22 @@ class Patrol():
             elif len(self.patrol_apprentices) == 2:
                 self.app1_name = str(self.patrol_apprentices[0].name)
                 self.app2_name = str(self.patrol_apprentices[1].name)
-            elif len(self.patrol_apprentices) >= 3:
+            elif len(self.patrol_apprentices) == 3:
+                self.app1_name = str(self.patrol_apprentices[0].name)
+                self.app2_name = str(self.patrol_apprentices[1].name)
+                self.app3_name = str(self.patrol_apprentices[2].name)
+            elif len(self.patrol_apprentices) == 4:
+                self.app1_name = str(self.patrol_apprentices[0].name)
+                self.app2_name = str(self.patrol_apprentices[1].name)
+                self.app3_name = str(self.patrol_apprentices[2].name)
+                self.app4_name = str(self.patrol_apprentices[3].name)
+            elif len(self.patrol_apprentices) == 5:
+                self.app1_name = str(self.patrol_apprentices[0].name)
+                self.app2_name = str(self.patrol_apprentices[1].name)
+                self.app3_name = str(self.patrol_apprentices[2].name)
+                self.app4_name = str(self.patrol_apprentices[3].name)
+                self.app5_name = str(self.patrol_apprentices[4].name)
+            elif len(self.patrol_apprentices) == 6:
                 self.app1_name = str(self.patrol_apprentices[0].name)
                 self.app2_name = str(self.patrol_apprentices[1].name)
                 self.app3_name = str(self.patrol_apprentices[2].name)
