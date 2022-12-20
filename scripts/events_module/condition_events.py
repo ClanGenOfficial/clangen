@@ -414,7 +414,7 @@ class Condition_Events():
 
         scarless_conditions = [
             "weak leg", "paralyzed", "raspy lungs", "wasting disease", "blind", "failing eyesight", "one bad eye",
-            "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy", "recurring shock"
+            "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy", "recurring shock", "broken back"
         ]
 
         got_condition = False

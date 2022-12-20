@@ -1,137 +1,130 @@
 {
     "kitten": {
         "unfriendly": [
-            "Is scolding (cat)",
-            "Treats (cat)'s splinter wound more roughly",
-            "Gives (cat) bitter herbs on purpose"
+            "is scolding (cat).",
+            "gives (cat) bitter herbs on purpose."
         ],
         "neutral": [
-            "Trips over (cat)",
-            "Had to nip (cat) on the rump because they were being naughty",
-            "Is watching (cat) perform an almost-decent hunting crouch",
-            "Is watching over (cat)",
-            "Is charmed to hear that (cat) really admires them"
+            "trips over (cat).",
+            "had to nip (cat) on the rump because they were being naughty.",
+            "is watching (cat) perform an almost-decent hunting crouch.",
+            "is watching over (cat).",
+            "is charmed to hear that (cat) really admires them."
         ],
         "friendly": [
-            "Is giving (cat) a badger ride on their back!",
-            "Is promising to take (cat) outside of camp if they behave",
-            "Gave (cat) a trinket they found while out on patrol today",
-            "Is feeling proud of (cat)"
+            "is giving (cat) a badger ride on their back!",
+            "is promising to take (cat) outside of camp if they behave.",
+            "gave (cat) a trinket they found while out on patrol today.",
+            "is feeling proud of (cat)."
         ],
         "close": []
     },
     "medicine cat apprentice": {
         "unfriendly": [
-            "Is scolding (cat)",
-            "Treats (cat)'s splinter wound more roughly",
-            "Gives (cat) bitter herbs on purpose"
+            "is scolding (cat).",
+            "gives (cat) bitter herbs on purpose."
         ],
         "neutral": [
-            "Is giving advice to (cat)",
-            "Is giving (cat) a task",
-            "Wishes (cat) would take things more seriously"
+            "is giving advice to (cat).",
+            "is giving (cat) a task.",
+            "wishes (cat) would take things more seriously.",
+            "is thinking about how much (cat) reminds them of their own apprentice days."
         ],
         "friendly": [
-            "Is telling (cat) about their own days as an apprentice",
-            "Is feeling proud of (cat)",
-            "Tells (cat) about the last encounter with the Starclan"
+            "is telling (cat) about their own days as an apprentice.",
+            "is feeling proud of (cat).",
+            "tells (cat) about their last encounter with StarClan."
         ],
         "close": []
     },
     "apprentice": {
         "unfriendly": [
-            "Is scolding (cat)",
-            "Treats (cat)'s splinter wound more roughly",
-            "Gives (cat) bitter herbs on purpose"
+            "is scolding (cat).",
+            "gives (cat) bitter herbs on purpose."
         ],
         "neutral": [
-            "Is giving advice to (cat)",
-            "Is giving (cat) a task",
-            "Wishes (cat) would take things more seriously"
+            "is giving advice to (cat).",
+            "is giving (cat) a task.",
+            "wishes (cat) would take things more seriously."
         ],
         "friendly": [
-            "Is feeling proud of (cat)"
+            "is feeling proud of (cat)."
         ],
         "close": []
     },
     "warrior": {
         "unfriendly": [
-            "Treats (cat)'s splinter wound more roughly",
-            "Gives (cat) bitter herbs on purpose"
+            "gives (cat) bitter herbs on purpose."
         ],
         "neutral": [
-            "Is giving (cat) a task",
-            "Is frustrated that (cat) won't take their duties more seriously",
-            "Has noticed (cat) isn't doing a lot of work lately"
+            "is giving (cat) a task.",
+            "is frustrated that (cat) won't take their duties more seriously.",
+            "has noticed (cat) isn't doing a lot of work lately."
         ],
         "friendly": [
-            "Thinks that (cat) is so much braver than them",
-            "Just told (cat) a hilarious joke"
+            "thinks that (cat) is so much braver than them.",
+            "just told (cat) a hilarious joke."
         ],
         "close": [
-            "Tells (cat) about the last encounter with the Starclan"
+            "tells (cat) about their last encounter with StarClan."
         ]
     },
     "medicine cat": {
         "unfriendly": [
-            "Treats (cat)'s splinter wound more roughly",
-            "Gives (cat) bitter herbs on purpose"
+            "gives (cat) bitter herbs on purpose."
         ],
         "neutral": [
-            "Is giving (cat) a task",
-            "Is frustrated that (cat) won't take their duties more seriously",
-            "Has noticed (cat) isn't doing a lot of work lately",
-            "Feels like (cat) isn't taking their health seriously",
-            "Tell (cat) a trick about a certain herb",
-            "Went to (cat) for advice about a dream they had"
+            "is giving (cat) a task",
+            "is frustrated that (cat) won't take their duties more seriously.",
+            "has noticed (cat) isn't doing a lot of work lately.",
+            "feels like (cat) isn't taking their health seriously.",
+            "tell (cat) a trick about a certain herb.",
+            "went to (cat) for advice about a dream they had."
         ],
         "friendly": [],
         "close": [
-            "Tells (cat) about the last encounter with the Starclan"
+            "tells (cat) about their last encounter with StarClan."
         ]
     },
     "leader": {
         "unfriendly": [
-            "Accuses (cat) of being a bad leader",
-            "Treats (cat)'s splinter wound more roughly",
-            "Gives (cat) bitter herbs on purpose"
+            "accuses (cat) of being a bad leader.",
+            "gives (cat) bitter herbs on purpose."
         ],
         "neutral": [
-            "Is giving (cat) a task",
-            "Is frustrated that (cat) won't take their duties more seriously",
-            "Has noticed (cat) isn't doing a lot of work lately"
+            "is giving (cat) a task.",
+            "is frustrated that (cat) won't take their duties more seriously.",
+            "has noticed (cat) isn't doing a lot of work lately."
         ],
         "friendly": [],
         "close": [
-            "Tells (cat) about the last encounter with the Starclan"
+            "tells (cat) about their last encounter with StarClan."
         ]
     },
     "deputy": {
         "unfriendly": [
-            "Accuses (cat) of being a bad deputy",
-            "Treats (cat)'s splinter wound more roughly",
-            "Gives (cat) bitter herbs on purpose"
+            "accuses (cat) of being a bad deputy.",
+            "gives (cat) bitter herbs on purpose."
         ],
         "neutral": [
-            "Is giving (cat) a task",
-            "Is frustrated that (cat) won't take their duties more seriously",
-            "Has noticed (cat) isn't doing a lot of work lately"
+            "is giving (cat) a task.",
+            "is frustrated that (cat) won't take their duties more seriously.",
+            "has noticed (cat) isn't doing a lot of work lately."
         ],
         "friendly": [],
         "close": [
-            "Tells (cat) about the last encounter with the Starclan"
+            "tells (cat) about their last encounter with StarClan."
         ]
     },
     "elder": {
         "unfriendly": [
-            "Treats (cat)'s splinter wound more roughly",
-            "Gives (cat) bitter herbs on purpose"
+            "gives (cat) bitter herbs on purpose."
         ],
         "neutral": [],
         "friendly": [],
         "close": [
-            "Feels like they'll never accomplish as much as (cat)",
-            "Tells (cat) about the last encounter with the Starclan"
+            "feels like they'll never accomplish as much as (cat).",
+            "tells (cat) about their last encounter with StarClan."
         ]
     }
 }

@@ -7,19 +7,18 @@ from scripts.game_structure.game_essentials import *
 
 # if another cat is involved
 THIRD_RELATIONSHIP_INCLUDED = {
-    "charismatic": ['Is convincing (cat 1) that (cat 2) isn\'t so bad once you get to know them'],
-    "troublesome": ['Made (cat) and (cat) start an argument'],
-    "sneaky": ['Is gossiping about (cat) and (cat)'],
-    "like": '(cat) confesses to (cat) that they think they like (cat)',
-    "trick": 'Has successfully tricked (cat) into believing a crazy tale about the clan leader'
+    "charismatic": ['is convincing (cat 1) that (cat 2) isn\'t so bad once you get to know them.'],
+    "troublesome": ['made (cat) and (cat) start an argument.'],
+    "sneaky": ['is gossiping about (cat) and (cat).'],
+    "like": '(cat) confesses to (cat) that they think they like (cat).',
+    "trick": 'has successfully tricked (cat) into believing a crazy tale about the clan leader.'
 }
 
 EXILED_CATS = {
-    "cat_to": ['Bumped into (cat) at the clan border', 'Caught a glimpse of (cat) from the distance'],
-    "cat_from": ['Was wandering near the clan territory and met (cat)'],
-    "both":['Ran into (cat) by chance']
+    "cat_to": ['bumped into (cat) at the clan border', 'Caught a glimpse of (cat) from the distance.'],
+    "cat_from": ['was wandering near the clan territory and met (cat).'],
+    "both": ['ran into (cat) by chance.']
 }
-
 
 # weights of the stat change
 DIRECT_INCREASE_HIGH = 12
@@ -38,12 +37,13 @@ COMPATIBILITY_WEIGHT = 3
 # ---------------------------------------------------------------------------- #
 
 class Relationship():
-    def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0, admiration=0, comfortable=0, jealousy=0, trust=0, log = None) -> None:        
+    def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0,
+                 admiration=0, comfortable=0, jealousy=0, trust=0, log=None) -> None:
         self.cat_from = cat_from
         self.cat_to = cat_to
         self.mates = mates
         self.family = family
-        self.opposite_relationship = None #link to opposite relationship will be created later
+        self.opposite_relationship = None  # link to opposite relationship will be created later
         self.current_action_str = ''
         self.triggered_event = False
         if log:
@@ -85,10 +85,10 @@ class Relationship():
             self.opposite_relationship = self.cat_to.relationships[self.cat_from.ID]
         else:
             # create relationship
-            relation = Relationship(self.cat_to , self.cat_from)
+            relation = Relationship(self.cat_to, self.cat_from)
             self.cat_to.relationships[self.cat_from.ID] = relation
             self.opposite_relationship = relation
-            
+
     def start_action(self):
         """This function checks current state of relationship and decides which actions can happen."""
         # update relationship
@@ -101,21 +101,21 @@ class Relationship():
         # quick fix for exiled cat relationships
         if self.cat_to.exiled and not self.cat_from.exiled:
             action = choice(EXILED_CATS['cat_to'])
-            string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
-            self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name)) 
-            game.relation_events_list.append(f"{str(self.cat_from.name)} - {self.current_action_str} (neutral effect)")
+            string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
+            self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
+            game.relation_events_list.append(f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
             return
         elif self.cat_from.exiled and not self.cat_to.exiled:
             action = choice(EXILED_CATS['cat_from'])
-            string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
-            self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name)) 
-            game.relation_events_list.append(f"{str(self.cat_from.name)} - {self.current_action_str} (neutral effect)")
+            string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
+            self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
+            game.relation_events_list.append(f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
             return
         elif self.cat_from.exiled and self.cat_to.exiled:
             action = choice(EXILED_CATS['both'])
-            string_to_replace = '(' + action[action.find("(")+1:action.find(")")] + ')'
-            self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name)) 
-            game.relation_events_list.append(f"{str(self.cat_from.name)} - {self.current_action_str} (neutral effect)")
+            string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
+            self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
+            game.relation_events_list.append(f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
             return
 
         # get action possibilities
@@ -126,7 +126,7 @@ class Relationship():
         action = None
         while not action_relevant:
             action = choice(action_possibilities)
-            relevant_ages = action[action.find("(")+1:action.find(")")]
+            relevant_ages = action[action.find("(") + 1:action.find(")")]
             relevant_ages = relevant_ages.split(',')
             relevant_ages = [age.strip() for age in relevant_ages]
 
@@ -134,28 +134,27 @@ class Relationship():
                 action_relevant = True
             if self.cat_to.age in relevant_ages:
                 action_relevant = True
-                    
+
         # change the stats of the relationships
         self_relation_effect = self.affect_relationship(action)
         other_relation_effect = self.opposite_relationship.affect_relationship(action, other=True)
 
         # replace (cat) with actual name
-        start_point = action.find("(")+1
+        start_point = action.find("(") + 1
         end_point = action.find(")")
         string_to_replace = f"({action[start_point:end_point]})"
         self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
 
         # add the effect of the current action
-        action_string_all = f"{str(self.cat_from.name)} - {self.current_action_str} "
+        action_string_all = f"{str(self.cat_from.name)} {self.current_action_str} "
         if self_relation_effect == 'neutral effect':
             self_relation_effect = other_relation_effect
-        effect_string =  f"({self_relation_effect})"
-    
+        effect_string = f"({self_relation_effect})"
+
         # connect all information and broadcast
-        both = action_string_all+effect_string
+        both = action_string_all + effect_string
         self.log.append(both)
         game.relation_events_list.append(both)
-
 
     def get_action_possibilities(self):
         """Creates a list of possibles actions of this relationship"""
@@ -192,7 +191,7 @@ class Relationship():
         if self.cat_from.status == "medicine cat apprentice":
             for relation_key in relation_keys:
                 action_possibilities += MEDICINE_APP_TO_OTHER[key][relation_key]
-        if (self.cat_from.status == "warrior" or self.cat_from.status == "senior warrior"):
+        if self.cat_from.status == "warrior" or self.cat_from.status == "senior warrior":
             for relation_key in relation_keys:
                 action_possibilities += WARRIOR_TO_OTHER[key][relation_key]
         if self.cat_from.status == "medicine cat":
@@ -214,12 +213,12 @@ class Relationship():
             action_possibilities += SPECIAL_CHARACTER[self.cat_from.trait]
 
         # LOVE
-        if not self.cat_from.is_potential_mate(self.cat_to, for_love_interest = True) or\
-            not self.cat_to.is_potential_mate(self.cat_from, for_love_interest = True):
+        if not self.cat_from.is_potential_mate(self.cat_to, for_love_interest=True) or \
+                not self.cat_to.is_potential_mate(self.cat_from, for_love_interest=True):
             return action_possibilities
 
         # chance to fall in love with some the character is not close to:
-        love_p = randint(0,30)
+        love_p = randint(0, 30)
         if self.platonic_like > 30 or love_p == 1 or self.romantic_love > 5:
             # increase the chance of an love event for two un-mated cats
             action_possibilities = action_possibilities + LOVE['love_interest_only']
@@ -232,12 +231,12 @@ class Relationship():
         if self.romantic_love > 25 and self.opposite_relationship.romantic_love > 15:
             action_possibilities = action_possibilities + LOVE['love_interest']
 
-        if self.mates and self.romantic_love > 30 and self.opposite_relationship.romantic_love > 25 :
+        if self.mates and self.romantic_love > 30 and self.opposite_relationship.romantic_love > 25:
             action_possibilities = action_possibilities + LOVE['mates']
 
         return action_possibilities
 
-    def affect_relationship(self, action, other = False):
+    def affect_relationship(self, action, other=False):
         """Affect the relationship according to the action."""
         # How increasing one state influences another directly: (an increase of one state doesn't trigger a chain reaction)
         # increase romantic_love -> decreases: dislike | increases: like, comfortable
@@ -398,7 +397,7 @@ class Relationship():
         return effect
 
     def get_high_increase_value(self):
-        compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
+        compatibility = get_personality_compatibility(self.cat_from, self.cat_to)
         if compatibility is None:
             return DIRECT_INCREASE_HIGH
         if compatibility:
@@ -407,7 +406,7 @@ class Relationship():
             return DIRECT_INCREASE_HIGH - COMPATIBILITY_WEIGHT
 
     def get_high_decrease_value(self):
-        compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
+        compatibility = get_personality_compatibility(self.cat_from, self.cat_to)
         if compatibility is None:
             return DIRECT_DECREASE_HIGH
         if compatibility:
@@ -416,7 +415,7 @@ class Relationship():
             return DIRECT_DECREASE_HIGH - COMPATIBILITY_WEIGHT
 
     def get_low_increase_value(self):
-        compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
+        compatibility = get_personality_compatibility(self.cat_from, self.cat_to)
         if compatibility is None:
             return DIRECT_INCREASE_LOW
         if compatibility:
@@ -425,7 +424,7 @@ class Relationship():
             return DIRECT_INCREASE_LOW - COMPATIBILITY_WEIGHT
 
     def get_low_decrease_value(self):
-        compatibility = get_personality_compatibility(self.cat_from,self.cat_to)
+        compatibility = get_personality_compatibility(self.cat_from, self.cat_to)
         if compatibility is None:
             return DIRECT_DECREASE_LOW
         if compatibility:
@@ -440,9 +439,9 @@ class Relationship():
     @property
     def romantic_love(self):
         return self._romantic_love
-    
+
     @romantic_love.setter
-    def romantic_love(self,value):
+    def romantic_love(self, value):
         if value > 100:
             value = 100
         if value < 0:
@@ -452,9 +451,9 @@ class Relationship():
     @property
     def platonic_like(self):
         return self._platonic_like
-    
+
     @platonic_like.setter
-    def platonic_like(self,value):
+    def platonic_like(self, value):
         if value > 100:
             value = 100
         if value < 0:
@@ -464,9 +463,9 @@ class Relationship():
     @property
     def dislike(self):
         return self._dislike
-    
+
     @dislike.setter
-    def dislike(self,value):
+    def dislike(self, value):
         if value > 100:
             value = 100
         if value < 0:
@@ -476,9 +475,9 @@ class Relationship():
     @property
     def admiration(self):
         return self._admiration
- 
+
     @admiration.setter
-    def admiration(self,value):
+    def admiration(self, value):
         if value > 100:
             value = 100
         if value < 0:
@@ -488,9 +487,9 @@ class Relationship():
     @property
     def comfortable(self):
         return self._comfortable
-    
+
     @comfortable.setter
-    def comfortable(self,value):
+    def comfortable(self, value):
         if value > 100:
             value = 100
         if value < 0:
@@ -500,9 +499,9 @@ class Relationship():
     @property
     def jealousy(self):
         return self._jealousy
-    
+
     @jealousy.setter
-    def jealousy(self,value):
+    def jealousy(self, value):
         if value > 100:
             value = 100
         if value < 0:
@@ -512,15 +511,14 @@ class Relationship():
     @property
     def trust(self):
         return self._trust
-    
+
     @trust.setter
-    def trust(self,value):
+    def trust(self, value):
         if value > 100:
             value = 100
         if value < 0:
             value = 0
         self._trust = value
-
 
 
 # IN increase or decrease
@@ -577,7 +575,6 @@ SPECIAL_CHARACTER = None
 with open(f"{resource_directory}special_character.json", 'r') as read_file:
     SPECIAL_CHARACTER = ujson.loads(read_file.read())
 
-
 # ---------------------------------------------------------------------------- #
 #                             load de- and increase                            #
 # ---------------------------------------------------------------------------- #
@@ -597,13 +594,12 @@ try:
 except:
     game.switches['error_message'] = 'There was an error loading the 1_INCREASE_LOW.json file of relationship_events!'
 
-DECREASE_HIGH  = None
+DECREASE_HIGH = None
 try:
     with open(f"{resource_directory}{de_in_crease_path}DECREASE_HIGH.json", 'r') as read_file:
         DECREASE_HIGH = ujson.loads(read_file.read())
 except:
     game.switches['error_message'] = 'There was an error loading the 1_DECREASE_HIGH.json file of relationship_events!'
-
 
 DECREASE_LOW = None
 try:

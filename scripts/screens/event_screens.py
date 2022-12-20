@@ -4,10 +4,11 @@ import pygame_gui
 from .base_screens import Screens, cat_profiles
 import pygame
 from scripts.events import events_class
-from scripts.utility import draw, get_text_box_theme
+from scripts.utility import draw, get_text_box_theme, get_living_cat_count
 # from scripts.game_structure.text import *
 from scripts.game_structure.image_button import UIImageButton
 from scripts.game_structure.game_essentials import *
+from ..cat.cats import Cat
 from ..game_structure import image_cache
 
 
@@ -50,7 +51,10 @@ class EventsScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.timeskip_button:
                 events_class.one_moon()
+                if get_living_cat_count(Cat) == 0:
+                    GameOver('events screen')
 
+                print(get_living_cat_count(Cat))
                 self.all_events = ""
                 self.event_display_type = 'all events'
                 self.all_events_button.disable()
@@ -314,8 +318,10 @@ class EventsScreen(Screens):
         self.birth_death_alert = None
         self.ceremony_alert = None
 
-        self.events_list_box = pygame_gui.elements.UITextBox(self.display_events, pygame.Rect((218, 274), (514, 354)),
-                                                             object_id=get_text_box_theme("#events_box"))
+        self.events_list_box = pygame_gui.elements.UITextBox(
+            self.display_events,
+            pygame.Rect((218, 271), (514, 360)),
+            object_id=get_text_box_theme("#events_box"))
 
         # Display text
         # self.explain_text = pygame_gui.elements.UITextBox(self.display_text, pygame.Rect((25,110),(750,40)))

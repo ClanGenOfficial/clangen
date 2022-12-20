@@ -183,6 +183,10 @@
         "m_c's eyes have healed.",
         "m_c's eyes are no longer damaged.",
         "m_c's eyes have recovered from their injury."
+    ],
+    "broken back": [
+        "m_c's broken back has healed and they've made a full recovery against all odds.",
+        "m_c is ecstatic to be walking around freely again, their broken back finally healed."
     ]
 
 }

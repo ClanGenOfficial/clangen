@@ -733,6 +733,11 @@ class ProfileScreen(Screens):
         else:
             output += 'backstory: ' + 'clanborn'
 
+        if the_cat.is_disabled():
+            # NEWLINE ----------
+            output += "\n"
+            output += 'has a permanent condition'
+
         # NEWLINE ----------
         output += "\n"
 
