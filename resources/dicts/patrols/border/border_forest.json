@@ -111,7 +111,7 @@
         "fail_text": [
             null,
             "Well, the only way to know is to check! Once they find the sett, s_c scrambles inside for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
-            "r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same . . . They try to creep just a little closer - but the ground drops away steeply beneath their paws and they lose their footing, skidding right into the disturbed badger's lethal jaws.",
+            "r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same... They try to creep just a little closer - but the ground drops away steeply beneath their paws and they lose their footing, skidding right into the disturbed badger's lethal jaws.",
             "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind them. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett and r_c leaps out of the way, but its claws catch their pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure."
         ],
         "win_skills": ["great fighter", "excellent fighter"],
@@ -206,7 +206,7 @@
                 "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
         ],
         "fail_text": [
-                "It turns out they were r_c's own pawprints . . . r_c huffs with embarrassment, suddenly grateful they're alone.",
+                "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful they're alone.",
                 "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
                 "Nose to the ground following the trail, r_c doesn't see the blow that kills them.",
                 "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
@@ -240,7 +240,7 @@
                 "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
         ],
         "fail_text": [
-                "It turns out they were r_c's own pawprints . . . r_c huffs with embarrassment, suddenly grateful they're alone.",
+                "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful they're alone.",
                 "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
                 "Nose to the ground following the trail, r_c doesn't see the blow that kills them.",
                 "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
@@ -274,7 +274,7 @@
                 null
         ],
         "fail_text": [
-                "It turns out they were app1's own pawprints . . . app1 huffs with embarrassment, suddenly grateful they're alone. They don't want to look dumb in front of other cats.",
+                "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful they're alone. They don't want to look dumb in front of other cats.",
                  "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores them completely.",
                 "Nose to the ground following the trail, app1 doesn't see the blow that kills them.",
                 "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
@@ -308,7 +308,7 @@
                 "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
         ],
         "fail_text": [
-                "It turns out they were r_c's own pawprints . . . r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
+                "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
                 "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
                 null,
                 "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol."
@@ -343,7 +343,7 @@
     
         ],
         "fail_text": [
-                "It turns out they were r_c's own pawprints . . . r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
+                "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
                 "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
                 null,
                 "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
@@ -377,7 +377,7 @@
                 null
         ],
         "fail_text": [
-                "It turns out they were app1's own pawprints . . . app1 huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment. They don't want to look dumb in front of other cats.",
+                "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment. They don't want to look dumb in front of other cats.",
                  "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory.",
                 null,
                 "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
@@ -411,7 +411,7 @@
                 "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight."
         ],
         "fail_text": [
-                "It turns out they were r_c's own pawprints . . . r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+                "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
                 "The pawprints lead to a trespassing rogue. s_c tries to set up a trap, climbing into the trees and trying to break a branch onto the rogue's head, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
                 null,
                 null
@@ -441,7 +441,7 @@
                 "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight."
         ],
         "fail_text": [
-                "It turns out they were r_c's own pawprints . . . r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+                "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
                 "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
                 null,
                 null
@@ -475,7 +475,7 @@
                 null
         ],
         "fail_text": [
-                "It turns out they were app1's own pawprints . . . app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. They don't want to look dumb in front of other cats.",
+                "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. They don't want to look dumb in front of other cats.",
                  "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but with the full patrol backing them up, leaves c_n territory.",
                 null,
                 null

@@ -36,7 +36,7 @@
     "season": "Any",
     "tags": ["death", "scar", "training", "battle_injury", "trust", "respect", "clan_to_r_c"],
     "intro_text": "r_c wanders past an old badger sett in the roots of a hazelnut tree, only to freeze. There's new scent here, acrid and sour.",
-    "decline_text": "Surely it must be nothing. . . uneasily, r_c continues on.",
+    "decline_text": "Surely it must be nothing... uneasily, r_c continues on.",
     "chance_of_success": 80,
     "exp": 40,
     "success_text": [
@@ -48,7 +48,7 @@
     "fail_text": [
         null,
         "Well, the only way to know is to check! s_c scrambles into the den for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
-        "r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same . . . They try to creep just a little closer - but the ground drops away steeply beneath their paws and they lose their footing, skidding right into the disturbed badger's lethal jaws.",
+        "r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same... They try to creep just a little closer - but the ground drops away steeply beneath their paws and they lose their footing, skidding right into the disturbed badger's lethal jaws.",
         "While r_c is carefully sniffing at the burrow entrance, there's a rustle from the woods behind them. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett and r_c leaps out of the way, but its claws catch their pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"], 
@@ -69,7 +69,7 @@
     "season": "Any",
     "tags": ["scar", "battle_injury", "training", "trust", "respect", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "p_l wanders past an old badger sett in the roots of a hazelnut tree, only to freeze. There's new scent here, acrid and sour.",
-    "decline_text": "Surely it must be nothing. . . uneasily, the patrol continues on.",
+    "decline_text": "Surely it must be nothing... uneasily, the patrol continues on.",
     "chance_of_success": 80,
     "exp": 40,
     "success_text": [
@@ -82,7 +82,7 @@
         "The cats try to find enough bits of undergrowth in the nearby forest to block the opening to the sett, but the area is pretty bare. Before they know it they're tired, thirsty, and returning home with nothing to show for it.",
         "Well, the only way to know is to check! s_c scrambles into the den for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
         null,
-        "As the patrol is sniffing around the burrow entrance there's a rustle from the woods. It's difficult to say who's more surprised - cats or badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end. . . including the badger."
+        "As the patrol is sniffing around the burrow entrance there's a rustle from the woods. It's difficult to say who's more surprised - cats or badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end... including the badger."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"], 
     "win_trait": ["patient", "responsible", "thoughtful", "wise", "calm", "careful", "nervous", "sneaky", "strange"],
@@ -178,7 +178,7 @@
     ],
     "fail_text": [
         "r_c gets lost in the territory and doesn't learn anything.",
-        "s_c shivers a little, imagining what could be out there. . . No, definitely not. They turn around and slink straight back to camp.",
+        "s_c shivers a little, imagining what could be out there... No, definitely not. They turn around and slink straight back to camp.",
         null,
         "The apprentice wanders along obliviously and slips, tumbling right down a well-hidden gully. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
     ],
@@ -210,7 +210,7 @@
     ],
     "fail_text": [
         "r_c gets lost in the territory. Somehow.",
-        "s_c shivers a little, thinking of the dangers of solo patrols. . . No, definitely not. They turn around and slink straight back to camp."
+        "s_c shivers a little, thinking of the dangers of solo patrols... No, definitely not. They turn around and slink straight back to camp."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
@@ -237,7 +237,7 @@
     ],
     "fail_text": [
         "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
-        "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . . No, definitely not. They turn around and march straight back to camp."
+        "s_c wavers in their decision. They have so much work to do, so many other things demanding their time... No, definitely not. They turn around and march straight back to camp."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
@@ -264,7 +264,7 @@
     ],
     "fail_text": [
         "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
-        "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . . No, definitely not. They turn around and march straight back to camp."
+        "s_c wavers in their decision. They have so much work to do, so many other things demanding their time... No, definitely not. They turn around and march straight back to camp."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
@@ -395,7 +395,7 @@
             "app1 bursts out from cover, pouncing on app2 with claws sheathed and giggling. app2 rolls with the blow and kicks app1 off, bounding after them with promises of getting them back! On and on the chase goes, neither interested in winning it as they play under the dappled light of the canopy.",
             "app2 emerges into the hidden soft light under the willow tree. Seeing app1, they trot up, asking why app1 wanted to meet there. app1 blushes, making up some nonsense about fight training that makes no sense. Instead both apprentices hang out there all afternoon, awkward and thrilled.",
             null,
-            "app2 emerges into the hidden soft light under the willow tree. Seeing s_c, they trot up, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a . . . date? app2 blushes and murmurs a soft yes to the willow roots, suddenly unable to make eye contact."
+            "app2 emerges into the hidden soft light under the willow tree. Seeing s_c, they trot up, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a... date? app2 blushes and murmurs a soft yes to the willow roots, suddenly unable to make eye contact."
     ],
     "fail_text": [
             "app1 bursts out from cover, pouncing on app2 with claws sheathed and giggling. app2 rolls with the blow and kicks app1 off, but they scramble to their feet looking hurt, and storm off in a huff.",

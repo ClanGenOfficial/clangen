@@ -231,7 +231,7 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["training"],
-    "intro_text": "As they head out to work on their skills, r_c thinks about the dream they had last night . . . was it sent by StarClan?",
+    "intro_text": "As they head out to work on their skills, r_c thinks about the dream they had last night... was it sent by StarClan?",
     "decline_text": "They push it from their mind.",
     "chance_of_success": 70,
     "exp": 20,
@@ -283,7 +283,7 @@
     "exp": 20,
     "success_text": [
         "app2 and app1 wind each other up, making up story after story in ever increasing tales of horror, until finally one sounds a little too ridiculous and both of them nearly fall over laughing, the tension erased as they giggle.",
-        "app1 wonders aloud if one of the ghost stories is true . . . the other cats gather close and comfort them. Time for the silly game to end, before someone actually gets upset.",
+        "app1 wonders aloud if one of the ghost stories is true... the other cats gather close and comfort them. Time for the silly game to end, before someone actually gets upset.",
         null,
         "s_c looks around, and with a deep breath, shakes off the tense vibe. Instead they start telling tall tales of long ago cats, completely disregarding anything approaching truth, so that the other cats on patrol start laughing and purring again."
     ],

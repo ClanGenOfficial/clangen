@@ -36,7 +36,7 @@
     "season": "Any",
     "tags": ["death", "scar", "training", "battle_injury", "trust", "respect", "sacrificial", "clan_to_r_c"],
     "intro_text": "r_c wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour.",
-    "decline_text": "Surely it must be nothing. . . uneasily, r_c continues on.",
+    "decline_text": "Surely it must be nothing... uneasily, r_c continues on.",
     "chance_of_success": 80,
     "exp": 30,
     "success_text": [
@@ -48,7 +48,7 @@
     "fail_text": [
     null,
     "Well, the only way to know is to check! s_c scrambles into the den for a look and comes nose to nose with its occupant. It's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, shedding fur in clumps as the badger's furious snarling and fizzing follows them up the burrow tunnel.",
-    "r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same . . . They try to creep just a little closer - but the ground drops away steeply beneath their paws and they lose their footing, skidding right into the disturbed badger's lethal jaws.",
+    "r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same... They try to creep just a little closer - but the ground drops away steeply beneath their paws and they lose their footing, skidding right into the disturbed badger's lethal jaws.",
     "While r_c is carefully sniffing at the burrow entrance, there's a clatter of rocks behind them. It's difficult to say who's more surprised - r_c or the badger. It charges for the sett and r_c leaps out of the way, but its claws catch their pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure."
     ],
     "win_skills": [ "smart", "very smart", "extremely smart"], 
@@ -69,7 +69,7 @@
     "season": "Any",
     "tags": ["scar", "battle_injury", "training", "trust", "respect", "no_change_fail", "patrol_to_p_l", "patrol_to_r_c"],
     "intro_text": "p_l wanders past an old badger sett dug into the rocky hillside, only to freeze. There's new scent here, acrid and sour.",
-    "decline_text": "Surely it must be nothing. . . uneasily, the patrol continues on.",
+    "decline_text": "Surely it must be nothing... uneasily, the patrol continues on.",
     "chance_of_success": 80,
     "exp": 30,
     "success_text": [
@@ -82,7 +82,7 @@
         "The cats try to find enough rubble to barricade the opening to the sett, but the area is pretty bare. Before they know it they're tired, thirsty, and returning home with nothing to show for it.",
         "Well, the only way to know is to check! s_c scrambles into the den for a look, and it's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, furious fizzing following them up the burrow tunnel, leaving behind clumps of their own fur.",
         null,
-        "As the patrol is sniffing around the burrow entrance there's a clatter of rocks. It's difficult to say who's more surprised - cats or badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end. . . including the badger."
+        "As the patrol is sniffing around the burrow entrance there's a clatter of rocks. It's difficult to say who's more surprised - cats or badger. There's a confused rush of paws and flying fur as the patrol scatters and the beast charges for the sett. r_c is battered in the process but everyone gets home safe in the end... including the badger."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"], 
     "win_trait": ["patient", "responsible", "thoughtful", "wise", "calm", "careful", "nervous", "sneaky", "strange"],
@@ -177,7 +177,7 @@
     ],
     "fail_text": [
         "r_c gets lost in the territory and doesn't learn anything.",
-        "s_c shivers a little, imagining what could be out there. . . No, definitely not. They turn around and slink straight back to camp.",
+        "s_c shivers a little, imagining what could be out there... No, definitely not. They turn around and slink straight back to camp.",
         null,
         "The apprentice wanders along obliviously and slips, tumbling right down through a gap in the path. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
     ],
@@ -208,7 +208,7 @@
     ],
     "fail_text": [
         "r_c gets lost in the territory. Somehow.",
-        "s_c shivers a little, thinking of the dangers of solo patrols. . . No, definitely not. They turn around and slink straight back to camp."
+        "s_c shivers a little, thinking of the dangers of solo patrols... No, definitely not. They turn around and slink straight back to camp."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
@@ -235,7 +235,7 @@
     ],
     "fail_text": [
         "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
-        "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . . No, definitely not. They turn around and go straight back to camp."
+        "s_c wavers in their decision. They have so much work to do, so many other things demanding their time... No, definitely not. They turn around and go straight back to camp."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
@@ -262,7 +262,7 @@
     ],
     "fail_text": [
         "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
-        "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . . No, definitely not. They turn around and go straight back to camp."
+        "s_c wavers in their decision. They have so much work to do, so many other things demanding their time... No, definitely not. They turn around and go straight back to camp."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring",
@@ -395,7 +395,7 @@
             "app1 bursts out from cover, pouncing on app2 with claws sheathed and giggling. app2 rolls with the gentle blow and bats app1 off, bounding after them with promises of getting them back! On and on the chase goes, neither interested in winning it as they play under the light of the full moon.",
             "app2 emerges from the dark, trotting up to app1 and asking why they wanted to meet there. app1 blushes, making up some nonsense about fight training that makes no sense. Instead both apprentices hang out under the stars, awkward and thrilled.",
             null,
-            "app2 emerges from the thick dark of the night, the stars reflected in their eyes. Seeing s_c, they trot up, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a . . . date? app2 blushes and murmurs a soft yes to the ground, suddenly unable to make eye contact."
+            "app2 emerges from the thick dark of the night, the stars reflected in their eyes. Seeing s_c, they trot up, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a... date? app2 blushes and murmurs a soft yes to the ground, suddenly unable to make eye contact."
     ],
     "fail_text": [
             "app1 bursts out from cover, pouncing on app2 with claws sheathed and giggling. app2 rolls with the blow and kicks app1 off, but they scramble to their feet looking hurt and alarmed - a rocky outlook is no place for games that knock you off balance.",
@@ -956,7 +956,7 @@
 	"success_text": [
     	"app1 tests the wind. They correctly identify that because of the wind they'd need to approach the thrush from the side. p_l purrs, complimenting them on how much they've learned.",
     	"There's a wooded valley just below where the thrush is foraging - app1 would approach from there!",
-    	"p_l stops, suddenly reminded of an old tale. The thrush below is breaking a snail open on a rock. There was a prophecy about that once, although p_l can't quite remember how the story goes. . ."
+    	"p_l stops, suddenly reminded of an old tale. The thrush below is breaking a snail open on a rock. There was a prophecy about that once, although p_l can't quite remember how the story goes..."
 	],
 	"fail_text": [
     	"app1 rolls their eyes, and asks why they can't just try catching it. Irritably, p_l replies that they're welcome to try, and the bird spots app1 coming immediately."
@@ -1008,7 +1008,7 @@
 	"success_text": [
     	"app1 tests the wind. They correctly identify that because of the wind they'd need to approach the thrush from the side, but app2 counters by pointing out a great vantage point to pounce from, if the wind wasn't against them. p_l purrs, complimenting them both on how much they've learned.",
     	"There's a wooded valley just below where the thrush is foraging - app1 would approach from there! app2 argues for approaching from above and pouncing from on high instead. p_l praises them both for solid plans of attack.",
-    	"p_l stops, suddenly reminded of an old tale. The thrush below is breaking a snail open on a rock. There was a prophecy about that once, although p_l can't quite remember how the story goes. . ."
+    	"p_l stops, suddenly reminded of an old tale. The thrush below is breaking a snail open on a rock. There was a prophecy about that once, although p_l can't quite remember how the story goes..."
 	],
 	"fail_text": [
     	"app1 rolls their eyes, and asks why they can't just try catching it. Irritably, p_l replies that they're welcome to try, and the bird spots app1 coming immediately, also spoiling app2's chances."
@@ -1059,7 +1059,7 @@
 	"exp": 15,
 	"success_text": [
     	"app1 leaps backwards, falling in their haste and scrambling upright. Then in one of the weirdest moments of their young life, the green bird does the same thing, chattering as it leans sideways to tumble a little way down the slope. It's not broken, p_l grumbles, coming up to stand by app1. Kea are just, well, like that.",
-    	"p_l hisses for app1 to back away. Slowly. That's a kea, and while it's been a long time since the clan lost anyone to one. . . app1 suddenly notices the claws the size of their head. The kea chirps weirdly, tilting its head sideways, but when the cats don't move it seems to scoff at them, spreading its wings with their shocking orange undersides and flapping back into the air.",
+    	"p_l hisses for app1 to back away. Slowly. That's a kea, and while it's been a long time since the clan lost anyone to one... app1 suddenly notices the claws the size of their head. The kea chirps weirdly, tilting its head sideways, but when the cats don't move it seems to scoff at them, spreading its wings with their shocking orange undersides and flapping back into the air.",
     	"app1 freezes in fear, but p_l comes up next to them, and bats a stone down the slope. The bird shrieks, startlingly loud, and waves its wings around. p_l offers it a branch from a shrub, dangling it like playing with a kit in the nursery, and the kea merrily hops after it, as p_l leads it teasingly away from app1. Later, app1 apologizes for being scared, and is shocked when p_l tells them that no, kea are very dangerous. "
 	],
 	"fail_text": [

@@ -344,12 +344,12 @@
     "exp": 10,
     "success_text": [
             "The pawprints lead to a trespassing rogue. app1 quickly hides themselves in the grass on the sand dunes, and sets up an ambush that lets them pretend to be a far bigger and more impressive fighter, sending the rogue fleeing off c_n territory.",
-            "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact . . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
+            "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
             null,
             null
     ],
     "fail_text": [
-            "It turns out they were app1's own pawprints . . . app1 huffs with embarrassment, suddenly grateful they're alone. They don't want to look dumb in front of other cats.",
+            "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful they're alone. They don't want to look dumb in front of other cats.",
             "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores them completely.",
             "Nose to the ground following the trail, app1 doesn't see the blow that kills them.",
             "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."

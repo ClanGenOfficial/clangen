@@ -112,7 +112,7 @@
     ],
     "fail_text": [
             "r_c gets lost in the territory and doesn't learn anything.",
-            "s_c shivers a little, imagining what could be out there. . . No, definitely not. They turn around and slink straight back to camp.",
+            "s_c shivers a little, imagining what could be out there... No, definitely not. They turn around and slink straight back to camp.",
             null,
             "The apprentice wanders along obliviously and slips, tumbling right down into a rocky pool. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
     ],
@@ -144,7 +144,7 @@
     ],
     "fail_text": [
             "r_c gets lost in the territory. Somehow.",
-            "s_c shivers a little, thinking of the dangers of solo patrols. . . No, definitely not. They turn around and slink straight back to camp.",
+            "s_c shivers a little, thinking of the dangers of solo patrols... No, definitely not. They turn around and slink straight back to camp.",
             null,
             null
     ],
@@ -174,7 +174,7 @@
     ],
     "fail_text": [
             "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
-            "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . . No, definitely not. They turn around and march straight back to camp.",
+            "s_c wavers in their decision. They have so much work to do, so many other things demanding their time... No, definitely not. They turn around and march straight back to camp.",
             null,
             null
     ],
@@ -204,7 +204,7 @@
     ],
     "fail_text": [
             "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
-            "s_c wavers in their decision. They have so much work to do, so many other things demanding their time. . . No, definitely not. They turn around and march straight back to camp.",
+            "s_c wavers in their decision. They have so much work to do, so many other things demanding their time... No, definitely not. They turn around and march straight back to camp.",
             null,
             null
     ],
@@ -365,7 +365,7 @@
             "app2 wanders carefully up the cliff path, asking what app1 wanted to show them. app1 brings them to a point where the wind hits the land, and app2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling and a little scary and very cool.",
             "When app2 arrives, app1 spots them the spot they've found, where the apprentices can see the gigantic storm waves breaking against the land. Both of them gasp when a thunderbolt hits out to sea, throwing the world into black and white, pressed up safely against each other, warmed by the other's pelt.",
             null,
-            "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a . . . date? app2 blushes and murmurs a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled."
+            "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a... date? app2 blushes and murmurs a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled."
     ],
     "fail_text": [
             "app2 refuses to come up the cliff while it's so stormy, and app1 gives up on their idea, disappointed they didn't get to spend time with app2.",

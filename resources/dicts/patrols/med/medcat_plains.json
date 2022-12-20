@@ -56,7 +56,7 @@
     "season": "Any",
     "tags": ["med_cat", "apprentice", "med_only"],
     "intro_text": "app1 has been sent out into the grasslands to try to find some specific herbs alone.",
-    "decline_text": "Nervous and with the feeling of being watched on the wide open plains, they decide to go back to camp and try again another day. Their mentor will not be pleased . . .",
+    "decline_text": "Nervous and with the feeling of being watched on the wide open plains, they decide to go back to camp and try again another day. Their mentor will not be pleased...",
     "chance_of_success": 65,
     "exp": 10,
     "success_text": [
