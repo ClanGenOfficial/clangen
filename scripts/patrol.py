@@ -366,19 +366,19 @@ class Patrol():
         if self.patrol_event.win_skills is not None:
             if set(self.patrol_skills).isdisjoint(
                     self.patrol_event.win_skills):
-                chance = 60
+                chance = 90
                 if self.patrol_stat_cat is not None:
                     if "excellent" in self.patrol_stat_cat.skill:
-                        chance = 80
+                        chance = chance + 10
                     elif "fantastic" in self.patrol_stat_cat.skill:
-                        chance = 90
-        if self.patrol_event.win_trait is not None:
+                        chance = chance + 20
+        elif self.patrol_event.win_trait is not None:
             if set(self.patrol_traits).isdisjoint(
                     self.patrol_event.win_trait):
                 chance = 90
 
         # resetting stat_cat to fails
-        if self.patrol_event.fail_skills is not None and self.patrol_event.faiil_trait is not None:
+        if self.patrol_event.fail_skills is not None and self.patrol_event.fail_trait is not None:
             for cat in self.patrol_cats:
                 if cat.skill in self.patrol_event.fail_skills or cat.trait in self.patrol_event.fail_trait:
                     self.patrol_stat_cat = cat
@@ -388,9 +388,9 @@ class Patrol():
                 chance = 20
                 if self.patrol_stat_cat is not None:
                     if "bad" in self.patrol_stat_cat.skill:
-                        chance = 15
+                        chance = chance - 5
                     elif "awful" in self.patrol_stat_cat.skill:
-                        chance = 10
+                        chance = chance - 10
         if self.patrol_event.fail_trait is not None:
             if set(self.patrol_traits).isdisjoint(
                     self.patrol_event.fail_trait):
