@@ -39,6 +39,9 @@ class Patrol():
         self.app1_name = None
         self.app2_name = None
         self.app3_name = None
+        self.app4_name = None
+        self.app5_name = None
+        self.app6_name = None
         self.other_clan = None
         self.experience_levels = []
 
@@ -370,11 +373,11 @@ class Patrol():
         # if patrol contains cats with autowin skill, chance of success is high
         # otherwise it will calculate the chance by adding the patrolevent's chance of success plus the patrol's total exp
         chance = self.patrol_event.chance_of_success + int(
-            self.patrol_total_experience / (10 * gm_modifier))
+            self.patrol_total_experience / (2 * gm_modifier))
         if self.patrol_event.win_skills is not None:
             if set(self.patrol_skills).isdisjoint(
                     self.patrol_event.win_skills):
-                chance = 90
+                chance = chance + 50
                 if self.patrol_stat_cat is not None:
                     if "excellent" in self.patrol_stat_cat.skill:
                         chance = chance + 10
@@ -383,7 +386,7 @@ class Patrol():
         if self.patrol_event.win_trait is not None:
             if set(self.patrol_traits).isdisjoint(
                     self.patrol_event.win_trait):
-                chance = 90
+                chance = chance + 50
 
         # resetting stat_cat to fails
         if self.patrol_event.fail_skills is not None and self.patrol_event.fail_trait is not None:
@@ -393,7 +396,7 @@ class Patrol():
         if self.patrol_event.fail_skills is not None:
             if set(self.patrol_skills).isdisjoint(
                     self.patrol_event.fail_skills):
-                chance = 20
+                chance = chance - 50
                 if self.patrol_stat_cat is not None:
                     if "bad" in self.patrol_stat_cat.skill:
                         chance = chance - 5
@@ -402,8 +405,9 @@ class Patrol():
         if self.patrol_event.fail_trait is not None:
             if set(self.patrol_traits).isdisjoint(
                     self.patrol_event.fail_trait):
-                chance = 20
-        c = randint(20, 100)
+                chance = chance - 50
+        
+        c = randint(0, 100)
         outcome = int(random.getrandbits(4))
 
         # ---------------------------------------------------------------------------- #
