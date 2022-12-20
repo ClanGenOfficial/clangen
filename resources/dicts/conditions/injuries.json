@@ -496,6 +496,7 @@
         "cause_permanent": [
         ]
     },
+
     "torn ear":{
         "duration": 1,
         "severity": "minor",
@@ -665,6 +666,7 @@
             "lost a leg"
         ]
     },
+
     "shock":{
         "duration": 1,
         "severity": "major",
@@ -688,6 +690,7 @@
         "cause_permanent": [
         ]
     },
+
     "lingering shock":{
         "duration": 12,
         "severity": "major",
@@ -708,6 +711,7 @@
             "recurring shock"
         ]
     },
+
     "shivering":{
         "duration": 2,
         "severity": "minor",
@@ -742,6 +746,7 @@
         "cause_permanent": [
         ]
     },
+
     "dehydrated":{
         "duration": 1,
         "severity": "major",
@@ -768,6 +773,7 @@
         "cause_permanent": [
         ]
     },
+
     "head damage":{
         "duration": 5,
         "severity": "major",
@@ -794,6 +800,7 @@
             "partial hearing loss"
         ]
     },
+
     "damaged eyes":{
         "duration": 6,
         "severity": "major",
@@ -822,6 +829,7 @@
             "failing eyesight"
         ]
     },
+
     "quilled by a porcupine":{
         "duration": 1,
         "severity": "minor",
@@ -833,7 +841,9 @@
             "adult": 70,
             "senior adult": 50,
             "elder": 30
-        },
+        }
+    },
+
     "broken back":{
         "duration": 12,
         "severity": "severe",
@@ -859,6 +869,7 @@
         "cause_permanent": [
         ]
     },
+    
     "poisoned": {
         "duration": 2,
         "severity": "major",
