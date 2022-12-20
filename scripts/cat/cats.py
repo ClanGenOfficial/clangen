@@ -1859,17 +1859,17 @@ class Cat():
         experience_levels = [
             'very low', 'low', 'average', 'high', 'master', 'max'
         ]
-        if exp in range(0, 10):
+        if exp < 11:
             experience_level = 'very low'
-        if exp in range(11, 30):
+        elif exp < 31:
             experience_level = 'low'
-        if exp in range(31, 69):
+        elif exp < 70:
             experience_level = 'average'
-        if exp in range(70, 80):
+        elif exp < 81:
             experience_level = 'high'
-        if exp in range(81, 99):
+        elif exp < 100:
             experience_level = 'master'
-        if exp == 100:
+        elif exp == 100:
             experience_level = 'max'
         
         self.experience_level = experience_level
