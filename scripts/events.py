@@ -203,7 +203,7 @@ class Events():
         if game.clan.game_mode == "classic":
             self.gain_scars(cat)
         self.relation_events.handle_having_kits(cat, clan=game.clan)
-
+        
         # all actions, which do not trigger an event display and
         # are connected to cats are located in there
         cat.one_moon()
@@ -1193,6 +1193,12 @@ class Events():
                 ])
             if dead_count >= 2:
                 event_string = f'{names}{choice(disaster)}'
+                if event_string == f'{names} are taken away by twolegs.':
+                    for cat in dead_cats:
+                        self.handle_twoleg_capture(cat)
+                    game.cur_events_list.append(event_string)
+                    game.birth_death_events_list.append(event_string)
+                    return
                 game.cur_events_list.append(event_string)
                 game.birth_death_events_list.append(event_string)
                 if SAVE_DEATH:
@@ -1267,6 +1273,15 @@ class Events():
                 triggered_death = True
 
             return triggered_death
+        
+    def handle_twoleg_capture(self, cat):
+        cat.outside = True
+        cat.exiled = True
+        if cat.ID in cat_class.all_cats.keys() and cat.outside and cat.ID not in cat_class.other_cats.keys():
+            # The outside-value must be set to True before the cat can go to cotc
+            cat.thought = "Is terrified as they are trapped in a large silver twoleg den"
+            cat_class.other_cats[cat.ID] = cat
+            game.clan.clan_cats.remove(cat.ID)    
 
     def handle_outbreaks(self, cat):
         """

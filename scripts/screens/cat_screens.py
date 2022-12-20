@@ -675,7 +675,9 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if the_cat.exiled:
+        if the_cat.outside:
+            output += "<font color='#FF0000'>lost</font>"
+        elif the_cat.exiled and not the_cat.outside:
             output += "<font color='#FF0000'>exiled</font>"
         else:
             output += the_cat.status

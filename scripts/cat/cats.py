@@ -169,7 +169,7 @@ class Cat():
         self.scar_event = []
         self.df = False
         self.corruption = 0
-
+        self.outside = False
         # setting ID
         if ID is None:
             potential_id = str(next(Cat.id_iter))
