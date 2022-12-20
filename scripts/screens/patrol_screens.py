@@ -506,14 +506,18 @@ class PatrolScreen(Screens):
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
             if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status in [
-                'leader', 'deputy', 'warrior', 'apprentice'
+                'leader', 'deputy', 'warrior', 'medicine cat', 'medicine cat apprentice', 'apprentice'
             ] and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working():
                 if the_cat.status == 'leader':
                     self.able_cats.insert(0, the_cat)
                 elif the_cat.status == 'deputy':
                     self.able_cats.insert(1, the_cat)
-                elif the_cat.status == 'warrior':
+                elif the_cat.status == 'medicine cat':
                     self.able_cats.insert(2, the_cat)
+                elif the_cat.status == 'medicine cat apprentice':
+                    self.able_cats.insert(3, the_cat)
+                elif the_cat.status == 'warrior':
+                    self.able_cats.insert(4, the_cat)
                 elif the_cat.status == 'apprentice':
                     self.able_cats.append(the_cat)
 
