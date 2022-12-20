@@ -972,7 +972,7 @@ class Events():
                         possible_conditions.append(condition)
                     chosen_condition = choice(possible_conditions)
                     born_with = False
-                    if PERMANENT[chosen_condition]['congenital'] in ['never', 'sometimes']:
+                    if PERMANENT[chosen_condition]['congenital'] in ['always', 'sometimes']:
                         born_with = True
                     new_cat.get_permanent_condition(chosen_condition, born_with)
 
