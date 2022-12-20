@@ -160,7 +160,7 @@
             "border_width": "0",
             "shadow_width": "0",
             "text_horiz_alignment": "left",
-            "padding": "0,0"
+            "padding": "5,7"
         }
     },
     "#clan_header_text_box": {

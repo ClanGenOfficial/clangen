@@ -2,7 +2,7 @@ from random import choice
 
 import pygame
 
-from scripts.utility import update_sprite
+from scripts.utility import update_sprite, event_text_adjust
 
 from .base_screens import Screens, cat_profiles
 
@@ -272,6 +272,7 @@ class ProfileScreen(Screens):
         if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             if event.ui_element == self.alert:
                 print('Test button hovered')
+
     def handle_tab_events(self, event):
         """Handles buttons presses on the tabs"""
         if self.open_tab is not None and self.open_tab != 'backstory' and self.open_tab != 'conditions':
@@ -479,8 +480,6 @@ class ProfileScreen(Screens):
                                                  pygame.Rect((490, 230), (230, 180)),
                                                  object_id=get_text_box_theme("#cat_profile_info_box"),
                                                  line_spacing=0.95)
-
-
 
         # Set the cat backgrounds.
         self.update_platform()
@@ -768,6 +767,7 @@ class ProfileScreen(Screens):
             self.open_tab = 'backstory'
             self.backstory_background = pygame_gui.elements.UIImage(pygame.Rect((64, 465), (645, 157)),
                                                                     self.backstory_tab)
+            self.backstory_background.disable()
             self.sub_tab_1 = UIImageButton(pygame.Rect((709, 475), (42, 30)), "", object_id="#sub_tab_1_button")
             self.sub_tab_1.disable()
             self.sub_tab_2 = UIImageButton(pygame.Rect((709, 512), (42, 30)), "", object_id="#sub_tab_2_button")
@@ -789,26 +789,31 @@ class ProfileScreen(Screens):
         if self.open_sub_tab == 'relation':
             # start our history with the backstory, since all cats get one
             life_history = [str(self.get_backstory_text())]
-
-            # now go get the scar history and add that if any exists
-            scar_history = self.get_scar_text()
-            if scar_history:
-                life_history.append(str(scar_history))
+            body_history = []
 
             # now get mentor influence history and add that if any exists
             influence_history = self.get_influence_text()
             if influence_history:
                 life_history.append(str(influence_history))
 
+            # now go get the scar history and add that if any exists
+            scar_history = self.get_scar_text()
+            if scar_history:
+                body_history.append(str(scar_history))
+
             if self.the_cat.dead or (self.the_cat.status == 'leader' and game.clan.leader_lives < 9):
                 death_history = self.get_death_text()
                 if death_history:
-                    life_history.append(str(death_history))
+                    body_history.append(str(death_history))
                 else:
-                    life_history.append(f"The cause of {self.the_cat.name}'s death is unknown.")
+                    body_history.append(f"The cause of {self.the_cat.name}'s death is unknown.")
+
+            # join scar and death into one paragraph
+            if body_history:
+                life_history.append(" ".join(body_history))
 
             # join together history list with line breaks
-            output = '\n'.join(life_history)
+            output = '\n\n'.join(life_history)
         return output
 
     def get_backstory_text(self):
@@ -827,25 +832,30 @@ class ProfileScreen(Screens):
         if self.the_cat.scar_event:
             scar_text = self.the_cat.scar_event
             for x in range(len(self.the_cat.scar_event)):
-                scar_text[x] = str(self.the_cat.scar_event[x]).replace(' is ', ' was ', 1)
-                scar_text[x] = str(self.the_cat.scar_event[x]).replace(' loses ', ' lost ')
-                scar_text[x] = str(self.the_cat.scar_event[x]).replace(' forces ', ' forced ')
-
-                not_scarred = ['wounded', 'injured', 'battered', 'hurt', 'punished']
-                for y in not_scarred:
-                    scar_text[x] = str(self.the_cat.scar_event[x]).replace(f' got {y} ', ' was scarred ')
-                    scar_text[x] = str(self.the_cat.scar_event[x]).replace(y, ' scarred ')
-                    break
+                # first event in the list will keep the cat's name, so we don't want to permanently change the text in
+                # the save else the name end up different later in the cat's life
                 if x == 0:
-                    scar_text[x] = str(self.the_cat.scar_event[x]).replace(f'{self.the_cat.name} ', 'This cat ', 1)
-                elif x == 1:
-                    scar_text[x] = str(self.the_cat.scar_event[x]).replace(f'{self.the_cat.name} was ',
-                                                                           'They were also ', 1)
-                    scar_text[x] = str(self.the_cat.scar_event[x]).replace(str(self.the_cat.name), 'They also', 1)
-                elif x >= 3:
-                    scar_text[x] = str(self.the_cat.scar_event[x]).replace(f'{self.the_cat.name} was ',
-                                                                           'Then they were ', 1)
-                    scar_text[x] = str(self.the_cat.scar_event[x]).replace(str(self.the_cat.name), 'Then they', 1)
+                    scar_text[x] = event_text_adjust(Cat, self.the_cat.scar_event[x], self.the_cat)
+                # however, for all other events we want to permanently alter the saved text as none of these events will
+                # use the cat's name, rather they'll use one of the provided sentence beginners.  We don't want this
+                # sentence beginning to change everytime this text is pulled, so we need to make it permanent.
+                else:
+                    self.the_cat.scar_event[x] = event_text_adjust(Cat, self.the_cat.scar_event[x], self.the_cat)
+
+                sentence_beginners = [
+                    "This cat",
+                    "Then they",
+                    "They also"
+                ]
+
+                # first event needs no adjustments, as it's keeping the cat's name. all other events are adjusted.
+                if x != 0:
+                    chosen = choice(sentence_beginners)
+                    self.the_cat.scar_event[x] = str(self.the_cat.scar_event[x]).replace(f'{self.the_cat.name}',
+                                                                                         chosen, 1)
+                    if chosen != 'This cat':
+                        self.the_cat.scar_event[x] = str(self.the_cat.scar_event[x]).replace(f' was ', ' were ', 1)
+                    scar_text[x] = self.the_cat.scar_event[x]
             scar_history = ' '.join(scar_text)
 
         return scar_history
@@ -923,9 +933,9 @@ class ProfileScreen(Screens):
         text = None
         if self.the_cat.died_by:
             if self.the_cat.status == 'leader':
-                insert2 = f"lost lives"
+                insert2 = f"lost their lives"
                 if len(self.the_cat.died_by) > 2:
-                    insert = f"{', '.join(self.the_cat.died_by[:-2])} and {self.the_cat.died_by[-1]}"
+                    insert = f"{', '.join(self.the_cat.died_by[:-2])}, and {self.the_cat.died_by[-1]}"
                 elif len(self.the_cat.died_by) == 2:
                     insert = f"{self.the_cat.died_by[0]} and {self.the_cat.died_by[1]}"
                 else:
@@ -936,10 +946,8 @@ class ProfileScreen(Screens):
                         insert2 = f"lost a life"
                 text = f"{self.the_cat.name} {insert2} when they {insert}."
             else:
-                text = str(self.the_cat.died_by[0])
+                text = str(self.the_cat.died_by[0]).replace(f"{self.the_cat.name} was", 'They were')
         return text
-
-
 
     def toggle_conditions_tab(self):
         """Opens the conditions tab"""
@@ -1448,9 +1456,10 @@ class ProfileScreen(Screens):
         # Backstory_tab:
         elif self.open_tab == 'backstory':
             self.history_text_box.kill()
-            self.history_text_box = pygame_gui.elements.UITextBox(self.get_all_history_text(),
-                                                                  pygame.Rect((80, 480), (615, 142)),
-                                                                  object_id="#history_tab_text_box")
+            self.history_text_box = UITextBoxTweaked(self.get_all_history_text(),
+                                                     pygame.Rect((80, 473), (620, 149)),
+                                                     object_id="#history_tab_text_box",
+                                                     line_spacing=1)
 
         elif self.open_tab == 'conditions':
             self.left_arrow.disable()

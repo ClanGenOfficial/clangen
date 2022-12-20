@@ -207,7 +207,7 @@ def add_children_to_cat(cat, cat_class):
 #                               Text Adjust                                    #
 # ---------------------------------------------------------------------------- #
 
-def event_text_adjust(Cat, text, cat, other_cat, other_clan_name=None):
+def event_text_adjust(Cat, text, cat, other_cat=None, other_clan_name=None, keep_m_c=False):
     danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk", "an enemy warrior", "a badger"]
     tail_danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk",
                    "an enemy warrior", "a badger", "a twoleg trap"]
@@ -224,7 +224,8 @@ def event_text_adjust(Cat, text, cat, other_cat, other_clan_name=None):
         mate = Cat.all_cats.get(cat.mate).name
 
     adjust_text = text
-    adjust_text = adjust_text.replace("m_c", str(name))
+    if keep_m_c is False:
+        adjust_text = adjust_text.replace("m_c", str(name))
     if other_name is not None:
         adjust_text = adjust_text.replace("r_c", str(other_name))
     if other_clan_name is not None:

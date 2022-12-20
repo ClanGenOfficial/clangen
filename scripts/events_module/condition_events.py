@@ -362,7 +362,7 @@ class Condition_Events():
                     if injury_event.history_text is not None:
                         if injury_event.history_text[0] is not None:
                             history_text = event_text_adjust(Cat, injury_event.history_text[0], cat, other_cat,
-                                                             other_clan_name)
+                                                             other_clan_name, keep_m_c=True)
                             cat.possible_scar = str(history_text)
                         if injury_event.history_text[1] is not None and cat.status != "leader":
                             history_text = event_text_adjust(Cat, injury_event.history_text[1], cat, other_cat,
