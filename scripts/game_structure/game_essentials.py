@@ -154,7 +154,8 @@ class Game():
         'romantic with former mentor': True,
         'game_mode': None,
         'deputy': False,
-        'den labels': True
+        'den labels': True,
+        'favorite sub tab': None
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
@@ -175,7 +176,8 @@ class Game():
         'romantic with former mentor': [False, True],
         'game_mode': game_mode_list,
         'deputy': [False, True],
-        'den labels': [False, True]
+        'den labels': [False, True],
+        'favorite sub tab': [None, 'life events', 'user notes']
     }  # Lists of possible options for each setting
     settings_changed = False
 

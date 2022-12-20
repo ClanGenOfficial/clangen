@@ -57,7 +57,8 @@
             "wants to explore the whole territory with (cat)!",
             "thinks of (cat) as their best friend.",
             "lets (cat) play with their favorite toy.",
-            "takes a nap with (cat) after a long day playing mossball."
+            "takes a nap with (cat) after a long day playing mossball.",
+            "brings (cat) a piece of prey to share after a long day of training."
         ],
         "dislike": [
             "is mocking (cat).",
@@ -212,7 +213,8 @@
             "tells (cat) that they're an amazing storyteller.",
             "defends (cat) from a clanmate's rude remarks.",
             "lets (cat) play with their favorite toy.",
-            "takes a nap with (cat) after a long day playing mossball."
+            "takes a nap with (cat) after a long day playing mossball.",
+            "brings (cat) a piece of prey to share after a long day of training."
         ],
         "dislike": [
             "is mocking (cat).",

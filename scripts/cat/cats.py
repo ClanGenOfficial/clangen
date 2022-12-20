@@ -924,7 +924,6 @@ class Cat():
                 "illness_infectiousness": new_injury.illness_infectiousness,
                 "risks": new_injury.risks,
                 "complication": None,
-                "also_got": new_injury.also_got,
                 "cause_permanent": new_injury.cause_permanent,
                 "event_triggered": new_injury.new
             }
