@@ -486,7 +486,7 @@
         "s_c takes charge and coordinates exercises for the duo. They practice mirroring each other, until by the end of the afternoon they can almost act as one cat. The warrior praises how quickly app1 picks it up, and the apprentice comes back to camp fluffed up with pride."
     ],
     "fail_text": [
-            "Unfortunately, no one steps up to teach. app1 looks disappointed - what was p_l expecting, for them to led the training?"
+            "Unfortunately, no one steps up to teach. app1 looks disappointed - what was p_l expecting, for them to lead the training?"
     ],
     "win_skills": ["great teacher", "fantastic teacher"],
     "min_cats": 2,
@@ -578,7 +578,7 @@
         "s_c takes charge and coordinates exercises for the duo. They practice taking down prey together, their confidence in their team hunting growing. The warrior praises how quickly app1 picks it up, and the apprentice comes back to camp fluffed up with pride."
     ],
     "fail_text": [
-        "Unfortunately, no one steps up to teach. app1 looks disappointed - what was p_l expecting, for them to led the training?"
+        "Unfortunately, no one steps up to teach. app1 looks disappointed - what was p_l expecting, for them to lead the training?"
     ],
     "win_skills": ["great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 2,
@@ -670,7 +670,7 @@
         "s_c takes charge and coordinates exercises for the duo. They practice how to weave around an opponent, feeling more and more confident in their teamwork. The warrior praises how quickly app1 picks it up, and the apprentice comes back to camp fluffed up with pride."
     ],
     "fail_text": [
-            "Unfortunately, no one steps up to teach. app1 looks disappointed - what was p_l expecting, for them to led the training?"
+            "Unfortunately, no one steps up to teach. app1 looks disappointed - what was p_l expecting, for them to lead the training?"
     ],
     "win_skills": ["great teacher", "fantastic teacher", "fantastic fighter"],
     "min_cats": 2,
