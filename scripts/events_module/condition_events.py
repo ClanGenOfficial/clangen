@@ -362,7 +362,7 @@ class Condition_Events():
                     if injury_event.history_text is not None:
                         if injury_event.history_text[0] is not None:
                             history_text = event_text_adjust(Cat, injury_event.history_text[0], cat, other_cat,
-                                                             other_clan_name)
+                                                             other_clan_name, keep_m_c=True)
                             cat.possible_scar = str(history_text)
                         if injury_event.history_text[1] is not None and cat.status != "leader":
                             history_text = event_text_adjust(Cat, injury_event.history_text[1], cat, other_cat,
@@ -477,17 +477,17 @@ class Condition_Events():
                                   "water in their lungs", "frostbite", "shock"]:
                         if cat.status == "leader":
                             event = f"{cat.name} has died in the medicine den from {injury}, losing a life."
-                            cat.died_by = f"died from {injury}."
+                            cat.died_by.append(f"died from {injury}.")
                         else:
                             event = f"{cat.name} has died in the medicine den from {injury}."
-                            cat.died_by = f"{cat.name} died from {injury}."
+                            cat.died_by.append(f"{cat.name} died from {injury}.")
                     else:
                         if cat.status == "leader":
                             event = f"{cat.name} has died in the medicine den from a {injury}, losing a life."
-                            cat.died_by = f"died from a {injury}."
+                            cat.died_by.append(f"died from a {injury}.")
                         else:
                             event = f"{cat.name} has died in the medicine den from a {injury}."
-                            cat.died_by = f"{cat.name} died from a {injury}."
+                            cat.died_by.append(f"{cat.name} died from a {injury}.")
 
                     # clear event list first to make sure any heal or risk events from other injuries are not shown
                     event_list.clear()
