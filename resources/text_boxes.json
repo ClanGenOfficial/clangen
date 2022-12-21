@@ -4,7 +4,8 @@
             "dark_bg": "#FFFFFF",
             "selected_bg": "#6E6759",
             "normal_text": "#000000",
-            "selected_text": "#DCDCDC"
+            "selected_text": "#DCDCDC",
+            "text_cursor": "#000000"
         },
         "misc": {
             "shape": "rounded_rectangle",

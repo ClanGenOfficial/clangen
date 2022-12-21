@@ -1043,6 +1043,8 @@ class Cat():
 
     def is_sibling(self, other_cat):
         """Check if the cats are siblings."""
+        if other_cat == self:
+            return False
         if set(self.get_parents()) & set(other_cat.get_parents()):
             return True
         return False

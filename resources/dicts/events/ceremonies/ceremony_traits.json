@@ -1,0 +1,202 @@
+{
+    "adventurous": [
+        "fearlessness",
+        "valiance",
+        "daring",
+        "bravery"
+    ],
+    "ambitious": [
+        "initiative",
+        "loyalty",
+        "determination",
+        "bravery"
+    ],
+    "altruistic": [
+        "selflessness",
+        "kindness",
+        "compassion",
+        "generosity"
+    ],
+    "bloodthirsty": [
+        "ferocity",
+        "strength",
+        "skill",
+        "courage"
+    ],
+    "bold": [
+        "boldness",
+        "fearlessness",
+        "valiance",
+        "daring",
+        "bravery"
+    ],
+    "calm": [
+        "serenity",
+        "tranquility",
+        "forethought",
+        "patience"
+    ],
+    "careful": [
+        "mindfulness",
+        "intelligence",
+        "initiative",
+        "thoughtfulness"
+    ],
+    "charismatic": [
+        "warmth",
+        "compassion",
+        "kindness",
+        "energy"
+    ],
+    "childish": [
+        "energy",
+        "resilience",
+        "spirit",
+        "enthusiasm"
+    ],
+    "cold": [
+        "honesty",
+        "cleverness",
+        "skill",
+        "intelligence"
+    ],
+    "compassionate": [
+        "compassion",
+        "kindness",
+        "warmth",
+        "generosity"
+    ],
+    "confident": [
+        "confidence",
+        "resilience",
+        "boldness",
+        "initiative"
+    ],
+    "daring": [
+        "boldness",
+        "fearlessness",
+        "valiance",
+        "daring",
+        "bravery"
+    ],
+    "empathetic": [
+        "compassion",
+        "kindness",
+        "spirit",
+        "generosity"
+    ],
+    "faithful": [
+        "spirit",
+        "wisdom",
+        "dedication",
+        "forethought"
+    ],
+    "fierce": [
+        "bravery",
+        "courage",
+        "commitment",
+        "skill"
+    ],
+    "insecure": [
+        "loyalty",
+        "dedication",
+        "forethought",
+        "strategy"
+    ],
+    "lonesome": [
+        "independence",
+        "wisdom",
+        "patience",
+        "intelligence"
+    ],
+    "loving": [
+        "compassion",
+        "kindness",
+        "spirit",
+        "generosity"
+    ],
+    "loyal": [
+        "loyalty",
+        "dedication",
+        "enterprise",
+        "intelligence"
+    ],
+    "nervous": [
+        "loyalty",
+        "dedication",
+        "forethought",
+        "strategy"
+    ],
+    "patient": [
+        "patience",
+        "forethought",
+        "serenity",
+        "tranquility"
+    ],
+    "playful": [
+        "enthusiasm",
+        "spirit",
+        "energy",
+        "determination"
+    ],
+    "responsible": [
+        "strength",
+        "dedication",
+        "initiative",
+        "loyalty"
+    ],
+    "righteous": [
+        "loyalty",
+        "commitment",
+        "enterprise",
+        "thoughtfulness"
+    ],
+    "shameless": [
+        "enthusiasm",
+        "spirit",
+        "energy",
+        "honesty"
+    ],
+    "sneaky": [
+        "skill",
+        "strategy",
+        "intelligence",
+        "determination"
+    ],
+    "strange": [
+        "enthusiasm",
+        "spirit",
+        "energy",
+        "honesty"
+    ],
+    "strict": [
+        "loyalty",
+        "commitment",
+        "enterprise",
+        "thoughtfulness"
+    ],
+    "thoughtful": [
+        "compassion",
+        "dedication",
+        "initiative",
+        "loyalty"
+    ],
+    "troublesome": [
+        "energy",
+        "resilience",
+        "spirit",
+        "enthusiasm"
+    ],
+    "vengeful": [
+        "honesty",
+        "cleverness",
+        "skill",
+        "intelligence"
+    ],
+    "wise": [
+        "wisdom",
+        "intelligence",
+        "serenity",
+        "patience"
+    ]
+}

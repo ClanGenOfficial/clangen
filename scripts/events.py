@@ -210,7 +210,7 @@ class Events():
         if game.clan.game_mode == "classic" and not int(random.random() * 3):
             self.gain_scars(cat)
         self.relation_events.handle_having_kits(cat, clan=game.clan)
-        
+
         # all actions, which do not trigger an event display and
         # are connected to cats are located in there
         cat.one_moon()
@@ -383,9 +383,40 @@ class Events():
         # ---------------------------------------------------------------------------- #
         #                      promote cats and add to event list                      #
         # ---------------------------------------------------------------------------- #
+        ceremony = []
+        if (promoted_to == 'warrior'):
+            resource_directory = "resources/dicts/events/ceremonies/"
+
+            TRAITS = None
+            with open(f"{resource_directory}ceremony_traits.json", 'r') as read_file:
+                TRAITS = ujson.loads(read_file.read())
+            
+            random_honor = choice(TRAITS[cat.trait])
+            ceremony.extend([
+                str(game.clan.leader.name) +
+                " calls the clan to a meeting, and declares " + str(cat.name) +
+                " to be a warrior. They are now called " +
+                str(cat.name.prefix) + str(cat.name.suffix) +
+                " and are celebrated for their " + str(random_honor) + ".",
+                str(game.clan.leader.name) +
+                " stands above the clan and proclaims that " + str(cat.name) +
+                " shall now be known as " + str(cat.name.prefix) +
+                str(cat.name.suffix) + ", honoring their " + str(random_honor) +
+                ".",
+                str(game.clan.name) + "Clan welcomes " + str(cat.name.prefix) +
+                str(cat.name.suffix) + " as a new warrior, honoring their " +
+                str(random_honor) + ".",
+                str(game.clan.leader.name) + " rests their muzzle on " +
+                str(cat.name) +
+                "'s head and declares them to be a full warrior of " +
+                str(game.clan.name) + "Clan, honoring their " + str(random_honor) +
+                "."
+            ])
         cat.status_change(promoted_to)
-        game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
-        game.cur_events_list.append(f'{str(cat.name)}{ceremony_text}')
+        if (promoted_to == 'warrior'):
+            game.cur_events_list.append(choice(ceremony))
+        else:
+            game.cur_events_list.append(f'{str(cat.name)}{ceremony_text}')
 
     def gain_accessories(self, cat):
         # ---------------------------------------------------------------------------- #
@@ -1277,7 +1308,7 @@ class Events():
                 triggered_death = True
 
             return triggered_death
-        
+
     def handle_twoleg_capture(self, cat):
         cat.outside = True
         cat.exiled = True
@@ -1285,7 +1316,7 @@ class Events():
             # The outside-value must be set to True before the cat can go to cotc
             cat.thought = "Is terrified as they are trapped in a large silver twoleg den"
             cat_class.other_cats[cat.ID] = cat
-            game.clan.clan_cats.remove(cat.ID)    
+            game.clan.clan_cats.remove(cat.ID)
 
     def handle_outbreaks(self, cat):
         """
