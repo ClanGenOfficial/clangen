@@ -762,6 +762,10 @@ class Relation_Events():
                     kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
                     all_kitten.append(kit)
                     kit.thought = f"Snuggles up to the belly of {cat.name}"
+                elif cat.gender == 'male' and other_cat.gender == 'male':
+                    kit = Cat(parent1=cat.ID, parent2=other_cat.ID, moons=0)
+                    all_kitten.append(kit)
+                    kit.thought = f"Snuggles up to the belly of {cat.name}"
                 else:
                     kit = Cat(parent1=other_cat.ID, parent2=cat.ID, moons=0)
                     all_kitten.append(kit)
