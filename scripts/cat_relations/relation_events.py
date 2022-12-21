@@ -769,9 +769,9 @@ class Relation_Events():
         highest_romantic_relation = get_highest_romantic_relation(cat.relationships.values())
         if highest_romantic_relation is None:
             return second_parent
-
-        if highest_romantic_relation.cat_to.ID == mate.ID:
-            return second_parent
+        if mate:
+            if highest_romantic_relation.cat_to.ID == mate.ID:
+                return second_parent
 
         # the function should only call if highest_romantic_cat is not the mate
         chance_affair = self.get_affair_chance(mate_relation, highest_romantic_relation)
