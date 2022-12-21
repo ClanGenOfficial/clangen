@@ -38,7 +38,7 @@ class Events():
         self.living_cats = 0
         self.new_cat_invited = False
         game.patrolled.clear()
-        if any(str(cat.status) in {'leader', 'deputy', 'warrior', 'apprentice'}
+        if any(str(cat.status) in {'leader', 'deputy', 'warrior', 'medicine cat', 'medicine cat apprentice', 'apprentice'}
                 and not cat.dead and not cat.outside for cat in Cat.all_cats.values()):
             game.switches['no_able_left'] = False
         self.relation_events.handle_pregnancy_age(game.clan)
@@ -85,7 +85,7 @@ class Events():
                     game.birth_death_events_list.append(text)
                     game.clan.leader_lives = 0
 
-            # relationships have to be handled separately, because of the ceremony name change
+        # relationships have to be handled separately, because of the ceremony name change
         for cat in Cat.all_cats.copy().values():
             if cat.dead or cat.outside:
                 continue
@@ -100,7 +100,7 @@ class Events():
                 if not triggered_death:
                     triggered_death = self.handle_injuries_or_general_death(cat)
 
-            if not cat.dead:
+            if not cat.dead or cat.outside:
                 self.relation_events.handle_relationships(cat)
 
         if Cat.grief_strings:
