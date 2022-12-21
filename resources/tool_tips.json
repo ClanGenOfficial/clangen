@@ -1,14 +1,17 @@
 {
-
+    "tool_tip": {
+        "misc": {
+            "rect_width": "200"
+        }
+    },
     "tool_tip.text_box": {
         "colours": {
             "normal_border": "#2F2918",
             "dark_bg": "#AC9D72"
         },
         "font": {
-            "name": "nonosans2",
-            "size": "13",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "13"
         },
         "misc": {
             "shape": "rounded_rectangle",

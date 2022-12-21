@@ -203,6 +203,7 @@ class ProfileScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.help_button = None
         self.open_sub_tab = None
         self.editing_notes = False
         self.user_notes = None
@@ -390,6 +391,7 @@ class ProfileScreen(Screens):
                         self.edit_text.kill()
                     if self.save_text:
                         self.save_text.kill()
+                    self.help_button.kill()
                 self.open_sub_tab = 'life events'
                 self.toggle_history_sub_tab()
             elif event.ui_element == self.sub_tab_2:
@@ -406,7 +408,7 @@ class ProfileScreen(Screens):
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
             elif event.ui_element == self.save_text:
-                self.user_notes = sub(r'[^A-Za-z0-9<->/ ]+', "", self.notes_entry.get_text())
+                self.user_notes = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| ]+", "", self.notes_entry.get_text())
                 self.save_user_notes()
                 self.editing_notes = False
                 self.update_disabled_buttons_and_text()
@@ -834,13 +836,13 @@ class ProfileScreen(Screens):
             self.sub_tab_4 = UIImageButton(pygame.Rect((709, 586), (42, 30)), "", object_id="#sub_tab_4_button")
             self.sub_tab_4.disable()
             self.fav_tab = UIImageButton(
-                pygame.Rect((57, 480), (28, 28)),
+                pygame.Rect((55, 480), (28, 28)),
                 "",
                 object_id="#fav_star",
                 tool_tip_text='un-favorite this tab'
             )
             self.not_fav_tab = UIImageButton(
-                pygame.Rect((57, 480), (28, 28)),
+                pygame.Rect((55, 480), (28, 28)),
                 "",
                 object_id="#not_fav_star",
                 tool_tip_text='favorite this tab'
@@ -1633,10 +1635,24 @@ class ProfileScreen(Screens):
                     self.edit_text.kill()
                 if self.display_notes:
                     self.display_notes.kill()
+                if self.help_button:
+                    self.help_button.kill()
 
+                self.help_button = UIImageButton(pygame.Rect(
+                    (52, 584), (34, 34)),
+                     "",
+                     object_id="#help_button",
+                     tool_tip_text="The notes section has limited html capabilities.<br>"
+                                   "Use the following commands with < and > in place of the apostrophes.<br>"
+                                   "-Use 'br' to start a new line.<br>"
+                                   "-Encase text between 'b' and '/b' to bold.<br>"
+                                   "-Encase text between 'i' and '/i' to italicize.<br>"
+                                   "-Encase text between 'u' and '/u' to underline.",
+
+                     )
                 if self.editing_notes is True:
                     self.save_text = UIImageButton(pygame.Rect(
-                        (54, 514), (34, 34)),
+                        (52, 514), (34, 34)),
                         "",
                         object_id="#unchecked_checkbox",
                         tool_tip_text='lock and save text'
@@ -1645,11 +1661,11 @@ class ProfileScreen(Screens):
                     self.notes_entry = pygame_gui.elements.UITextEntryBox(
                         pygame.Rect((100, 473), (600, 149)),
                         initial_text=self.user_notes,
-                        object_id='#history_tab_text_box'
+                        object_id='#history_tab_entry_box'
                     )
                 else:
                     self.edit_text = UIImageButton(pygame.Rect(
-                        (54, 514), (34, 34)),
+                        (52, 514), (34, 34)),
                         "",
                         object_id="#checked_checkbox",
                         tool_tip_text='edit text'
@@ -1710,6 +1726,7 @@ class ProfileScreen(Screens):
                     self.notes_entry.kill()
                 if self.display_notes:
                     self.display_notes.kill()
+                self.help_button.kill()
             elif self.open_sub_tab == 'life events':
                 if self.history_text_box:
                     self.history_text_box.kill()
