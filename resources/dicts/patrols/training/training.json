@@ -119,7 +119,7 @@
     ],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
                     "patient", "responsible", "thoughtful", "wise"],
-    "min_cats": 2,
+    "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
     "antagonize_fail_text": null
@@ -141,6 +141,56 @@
     ],
     "min_cats": 1,
     "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_sunny3",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["platonic", "romantic", "no_app", "training"],
+    "intro_text": "p_l and r_c find a nice spot to sun themselves.",
+    "decline_text": "They decide to stay focused instead.",
+    "chance_of_success": 90,
+    "exp": 20,
+    "success_text": [
+        "The sunlight feels so warm on p_l's pelt, and they stretch, lazily lengthening into one long arc of cat. r_c's whiskers twitch with interest as they studiously look elsewhere.",
+        "The sunlight energizes the cats for a training session, and soon everyone puts that energy to good use!",
+        null,
+        "s_c makes sure r_c gets a good basking spot as the cats pause for a little break before resuming their training."
+    ],
+    "fail_text": [
+            "The patrol doesn't get much done, lazing about and snapping at each other irritably."
+    ],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
+                    "patient", "responsible", "thoughtful", "wise"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_sunny4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["platonic", "romantic", "apprentice", "two_apprentices", "training"],
+    "intro_text": "app1 and app2 find a nice spot to sun themselves.",
+    "decline_text": "They decide to stay focused instead.",
+    "chance_of_success": 90,
+    "exp": 20,
+    "success_text": [
+        "app1 nearly dozes off, but they can't quite get to sleep, app2 seems shifting around. Are they uncomfortable? app1 opens one of their eyes, to see app2 staring at them.",
+        "app1 and app2 end up napping for far longer than they intended, curled up together with their tials brushing up against each other.",
+        null,
+        "s_c courteously offers app2 the better basking spot, making them blush."
+    ],
+    "fail_text": [
+            "The patrol doesn't get much done, lazing about and snapping at each other irritably."
+    ],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving",
+                    "patient", "responsible", "thoughtful", "wise"],
+    "min_cats": 2,
+    "max_cats": 2,
     "antagonize_text": null,
     "antagonize_fail_text": null
 },
@@ -429,7 +479,7 @@
     "patrol_id": "gen_train_teamwork2",
     "biome": "Any",
     "season": "Any",
-    "tags": ["training", "platonic", "trust", "no_change_fail"],
+    "tags": ["training", "platonic", "trust", "no_app", "big_change", "no_change_fail"],
     "intro_text": "p_l suggests this might be a good chance to practice teamwork with r_c.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
@@ -557,7 +607,7 @@
     "fail_text": [
             "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
     ],
-    "win_skills": ["great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -580,7 +630,7 @@
     "fail_text": [
         "Unfortunately, no one steps up to teach. app1 looks disappointed - what was p_l expecting, for them to lead the training?"
     ],
-    "win_skills": ["great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good hunter", "great hunter", "fantastic hunter"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -603,7 +653,7 @@
     "fail_text": [
             "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
     ],
-    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "fantastic fighter"],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -626,7 +676,7 @@
     "fail_text": [
             "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
     ],
-    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "fantastic fighter"],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
@@ -649,7 +699,7 @@
     "fail_text": [
             "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
     ],
-    "win_skills": ["great teacher", "fantastic teacher", "fantastic fighter"],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
     "min_cats": 3,
     "max_cats": 6,
     "antagonize_text": null,
@@ -672,7 +722,145 @@
     "fail_text": [
             "Unfortunately, no one steps up to teach. app1 looks disappointed - what was p_l expecting, for them to lead the training?"
     ],
-    "win_skills": ["great teacher", "fantastic teacher", "fantastic fighter"],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher", "good fighter", "great fighter", "excellent fighter"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_huntingromance1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "romantic", "no_app"],
+    "intro_text": "p_l suggests this might be a good chance to practice new hunting techniques with r_c.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 70,
+    "exp": 10,
+    "success_text": [
+        "As p_l and r_c run around c_n's territory, theoretically training, r_c feels wild and free and like they're going to burst with unexpected happiness! They turn and pounce on p_l, starting a little play fight with their mock-prey.",
+        "As r_c creeps forward, practising their stalk, p_l notices their butt wiggling in excitement. They laugh to themselves softly, and pad over to give r_c a head's up about the bad habit.",
+        "s_c takes charge and coordinates exercises for the duo. They practice how to bring down prey together, their confidence and admiration for each other growing."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    ],
+    "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_fightingromance1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "romantic", "no_app"],
+    "intro_text": "p_l suggests this might be a good chance to practice new fighting techniques with r_c.",
+    "decline_text": "They decide to focus on working on a different skill instead.",
+    "chance_of_success": 70,
+    "exp": 10,
+    "success_text": [
+        "The two cats set up in the sparring area. p_l can't lay a paw on r_c, their focus completely disrupted as r_c whips their tail along p_l's throat teasingly.",
+        "r_c takes p_l down with a fantastic pounce, and p_l hits the ground with an audible gasp, shocked and impressed.",
+        "s_c takes charge and coordinates exercises for the duo. They practice how to weave around an opponent, feeling more and more confident in their teamwork."
+    ],
+    "fail_text": [
+            "Unfortunately, no one steps up to teach. It makes everything feel awkward and a waste of time, and the cats give up and return to camp a little irritated."
+    ],
+    "win_skills": ["good fighter", "great fighter", "excellent fighter"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_smartromance1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "romantic", "no_app"],
+    "intro_text": "As they wander aimlessly towards the sparring area for a training session, r_c stops p_l and asks for their advice with something.",
+    "decline_text": "It's not the right time for this conversation, maybe once they're back at camp.",
+    "chance_of_success": 70,
+    "exp": 10,
+    "success_text": [
+        "As p_l nods along sympathetically, r_c describes a recent stupid decision they made. They're not looking to earse it, but they ask p_l what they'd do in r_c's place to fix it - and p_l feels a lot of pride to be the cat r_c chooses to confide in.",
+        "Maybe it's a stupid idea, this vague plan r_c has been thinking about for getting more freshkill. But p_l reassures them, making them feel listened to and valued, and the cats work on the idea, evolving it together.",
+        "s_c knows just what to do, and the smile on r_c's face when they present their solution makes all the effort of solving things worth it."
+    ],
+    "fail_text": [
+            "p_l refuses, saying they have no time to talk. r_c accepts that answer, crestfallen with tail drooping."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_speakingromance1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "romantic", "no_app"],
+    "intro_text": "Quietly, r_c brings p_l aside as they work on their chores, asking for help with wording something difficult.",
+    "decline_text": "Both of them are interrupted by a request form a clanmate - this conversion will have to wait.",
+    "chance_of_success": 70,
+    "exp": 10,
+    "success_text": [
+        "p_l gives them all their attention, as r_c talks about how, hypothetically, if they were interested in another warrior, how one might possibly maybe go about talking to them about it? Hypothetically. For a friend.",
+        "r_c talks about how, sometimes, often even, they feel like they're tripping over their own tongue, never able to say anything helpful or pretty. But p_l meows that no way, r_c says such meaningful and beautiful things! They don't want r_c to change.",
+        "s_c talks about how making the right words, teh right effects, can sometimes feel impossible. But that it's always better to try, than to never talk at all, and talking things out can create wonderful connections."
+    ],
+    "fail_text": [
+            "It's a terrible place to try carrying on a conversation, carrying away old bedding, and their private talk dies off awkwardly."
+    ],
+    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_teachingromance1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "romantic", "no_app"],
+    "intro_text": "During an odd moment of downtime, r_c asks p_l if they think r_c is a good teacher.",
+    "decline_text": "They're interrupted by some clanmates who need help, and go off to attend to their duties.",
+    "chance_of_success": 70,
+    "exp": 10,
+    "success_text": [
+        "Helping their clanmates is so important, and r_c feels like they never do a good enough job. p_l interrupts them, shocked - they've always thought r_c has done great! r_c blushes, and hides their nose in their paws.",
+        "r_c talks about how they want to get better at mentoring and helping c_n's apprentices. p_l really admires them for their determination to always improve upon themselves.",
+        "s_c describes their personal approach to teaching other cats, and r_c admires them for how much thought they put into it - it's a whole lot of work!"
+    ],
+    "fail_text": [
+            "The conversation dies off awkwardly as p_l refuses to give r_c an answer."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_train_starclanromance1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["training", "platonic", "romantic", "no_app"],
+    "intro_text": "p_l get taken aside by r_c, as they ask why they feel like StarClan ignores them.",
+    "decline_text": "Neither of them have the time for such a conversation today - it'll have to wait.",
+    "chance_of_success": 70,
+    "exp": 10,
+    "success_text": [
+        "It is easy to wonder why Starclan place their paws on some cats and not others. r_c is comforted to know p_l feels that too sometimes, and they end up spending the afternoon discussing it together, both cats feeling validated and reassured.",
+        "p_L tells r_c hope one day StarClan will call on them, for all their many talents and their drive and determination to help c_n. r_c ducks their head, embarassed and pleased.",
+        "s_c knows how hard it is, feeling the pull of the ancestors watching over them. With r_c, they go to a quiet area near camp and show them how to breath, to feel connected to the world around them and let their worries evapourate from their pelt."
+    ],
+    "fail_text": [
+            "p_l tells r_c they should be glad to escape StarCLan's attention, and r_c pads away disappointed."
+    ],
+    "win_skills": ["strong connection to StarClan"],
     "min_cats": 2,
     "max_cats": 2,
     "antagonize_text": null,
