@@ -81,6 +81,7 @@ def json_load():
         new_cat.scar_event = cat["scar_event"] if "scar_event" in cat else []
         new_cat.df = cat["df"] if "df" in cat else False
         new_cat.corruption = cat["corruption"] if "corruption" in cat else 0
+        new_cat.outside = cat["outside"] if "outside" in cat else False
         new_cat.retired = cat["retired"] if "retired" in cat else False
         all_cats.append(new_cat)
 

@@ -20,6 +20,7 @@ manager.get_theme().load_theme('resources/buttons.json')
 manager.get_theme().load_theme('resources/text_boxes.json')
 manager.get_theme().load_theme('resources/text_boxes_dark.json')
 manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
+manager.get_theme().load_theme('resources/windows.json')
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens.all_screens import *

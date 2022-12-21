@@ -1,7 +1,13 @@
 import pygame
+import pygame_gui
 import ujson
 import os
 from ast import literal_eval
+
+from pygame_gui.elements import UIWindow
+
+from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
+
 
 screen_x = 800
 screen_y = 700
@@ -368,6 +374,7 @@ class Game():
                 "scar_event": inter_cat.scar_event if inter_cat.scar_event else [],
                 "df": inter_cat.df,
                 "corruption": inter_cat.corruption if inter_cat.corruption else 0,
+                "outside": inter_cat.outside,
                 "retired": inter_cat.retired if inter_cat.retired else False
             }
             clan_cats.append(cat_data)
@@ -391,6 +398,65 @@ class Mouse():
 
     def check_pos(self):
         self.pos = pygame.mouse.get_pos()
+
+
+class GameOver(UIWindow):
+    def __init__(self, last_screen):
+        super().__init__(pygame.Rect((250, 200), (300, 180)),
+                         window_display_title='Game Over',
+                         object_id='#game_over_window',
+                         resizable=False)
+
+        self.clan_name = str(game.clan.name + 'Clan')
+        self.last_screen = last_screen
+        self.game_over_message = UITextBoxTweaked(
+            f"{self.clan_name} has died out. For now, this is where their story ends. Perhaps it's time to tell a new "
+            f"tale?",
+            pygame.Rect((20, 20), (260, -1)),
+            line_spacing=1,
+            object_id="",
+            container=self
+        )
+
+        self.game_over_message = UITextBoxTweaked(
+            f"(leaving will not erase the save file)",
+            pygame.Rect((20, 155), (260, -1)),
+            line_spacing=.8,
+            object_id="#cat_patrol_info_box",
+            container=self
+        )
+
+        self.begin_anew_button = UIImageButton(
+            pygame.Rect((25, 115), (111, 30)),
+            "",
+            object_id="#begin_anew_button",
+            container=self
+        )
+        self.not_yet_button = UIImageButton(
+            pygame.Rect((159, 115), (111, 30)),
+            "",
+            object_id="#not_yet_button",
+            container=self
+        )
+
+        self.not_yet_button.enable()
+        self.begin_anew_button.enable()
+
+    def process_event(self, event):
+        super().process_event(event)
+
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.begin_anew_button:
+                game.last_screen_forupdate = self.last_screen
+                game.switches['cur_screen'] = 'start screen'
+                game.switch_screens = True
+                self.kill()
+                print('begin anew')
+            elif event.ui_element == self.not_yet_button:
+                self.kill()
+                print('not yet')
+
+
 
 
 mouse = Mouse()

@@ -1,5 +1,8 @@
 from random import choice
-from scripts.utility import update_sprite
+
+import pygame
+
+from scripts.utility import update_sprite, event_text_adjust
 
 from .base_screens import Screens, cat_profiles
 
@@ -191,15 +194,31 @@ def backstory_text(cat):
 class ProfileScreen(Screens):
     # UI Images
     backstory_tab = image_cache.load_image("resources/images/backstory_bg.png").convert_alpha()
+    conditions_tab = image_cache.load_image("resources/images/conditions_tab_backdrop.png").convert_alpha()
+    condition_details_box = image_cache.load_image("resources/images/condition_details_box.png").convert_alpha()
 
     # Keep track of current tabs open. Can be used to keep tabs open when pages are switched, and
-    #   helps with exiting the screen
+    # helps with exiting the screen
     default_sub_tab = 'relation'
     open_tab = None
     open_sub_tab = default_sub_tab
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.alert_tool_tip = None
+        self.alert_visible = None
+        self.alert = None
+        self.first_page = None
+        self.second_page = None
+        self.conditions_tab_button = None
+        self.second_page_visible = None
+        self.first_page_visible = None
+        self.left_arrow = None
+        self.right_arrow = None
+        self.condition_detail_text = None
+        self.condition_name_text = None
+        self.condition_box = None
+        self.conditions_background = None
         self.previous_cat = None
         self.next_cat = None
         self.cat_image = None
@@ -245,12 +264,18 @@ class ProfileScreen(Screens):
                 self.toggle_dangerous_tab()
             elif event.ui_element == self.backstory_tab_button:
                 self.toggle_backstory_tab()
+            elif event.ui_element == self.conditions_tab_button:
+                self.toggle_conditions_tab()
             else:
                 self.handle_tab_events(event)
 
+        if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
+            if event.ui_element == self.alert:
+                print('Test button hovered')
+
     def handle_tab_events(self, event):
         """Handles buttons presses on the tabs"""
-        if self.open_tab is not None and self.open_tab != 'backstory':
+        if self.open_tab is not None and self.open_tab != 'backstory' and self.open_tab != 'conditions':
             if event.ui_element == self.close_tab_button:
                 self.close_current_tab()
         elif self.open_tab is None:
@@ -342,6 +367,17 @@ class ProfileScreen(Screens):
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
+        elif self.open_tab == 'conditions':
+            if event.ui_element == self.right_arrow:
+                self.first_page_visible = False
+                self.second_page_visible = True
+                self.left_arrow.enable()
+                self.right_arrow.disable()
+            if event.ui_element == self.left_arrow:
+                self.second_page_visible = False
+                self.first_page_visible = True
+                self.right_arrow.enable()
+                self.left_arrow.disable()
 
     def screen_switches(self):
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
@@ -360,16 +396,19 @@ class ProfileScreen(Screens):
 
         self.backstory_tab_button = UIImageButton(pygame.Rect((48, 622), (176, 30)), "",
                                                   object_id="#backstory_tab_button")
-        self.placeholder_tab_2 = UIImageButton(pygame.Rect((224, 622), (176, 30)), "",
-                                               object_id="#cat_tab_3_blank_button")
-        self.placeholder_tab_2.disable()
+
+        self.conditions_tab_button = UIImageButton(
+            pygame.Rect((224, 622), (176, 30)),
+            "",
+            object_id="#conditions_tab_button"
+        )
+
         self.placeholder_tab_3 = UIImageButton(pygame.Rect((400, 622), (176, 30)), "",
                                                object_id="#cat_tab_3_blank_button")
         self.placeholder_tab_3.disable()
         self.placeholder_tab_4 = UIImageButton(pygame.Rect((576, 622), (176, 30)), "",
                                                object_id="#cat_tab_4_blank_button")
         self.placeholder_tab_4.disable()
-
         self.build_profile()
 
         self.hide_menu_buttons()  # Menu buttons don't appear on the profile screen
@@ -396,7 +435,7 @@ class ProfileScreen(Screens):
         self.personal_tab_button.kill()
         self.dangerous_tab_button.kill()
         self.backstory_tab_button.kill()
-        self.placeholder_tab_2.kill()
+        self.conditions_tab_button.kill()
         self.placeholder_tab_3.kill()
         self.placeholder_tab_4.kill()
         self.close_current_tab()
@@ -474,7 +513,7 @@ class ProfileScreen(Screens):
             self.previous_cat_button.enable()
 
     def determine_previous_and_next_cat(self):
-        ''''Determines where the next and previous buttons point too.'''
+        """'Determines where the next and previous buttons point too."""
 
         is_instructor = False
         if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
@@ -628,45 +667,6 @@ class ProfileScreen(Screens):
             # NEWLINE ----------
             output += "\n"
 
-            # CONDITIONS (temporary)
-            injury_list = []
-            permanent_conditions_list = []
-            illness_list = []
-            injury_string = None
-            permanent_conditions_string = None
-            illness_string = None
-
-            if the_cat.is_injured():
-                for y in the_cat.injuries:
-                    injury_list.append(y)
-                injury_string = ", ".join(injury_list)
-            if the_cat.is_disabled():
-                for y in the_cat.permanent_condition:
-                    if the_cat.permanent_condition[y]["moons_until"] == -2 and the_cat.permanent_condition[y][
-                        "born_with"] is True:
-                        permanent_conditions_list.append(y)
-                    elif the_cat.permanent_condition[y]["born_with"] is False:
-                        permanent_conditions_list.append(y)
-
-                if len(permanent_conditions_list) > 0:
-                    permanent_conditions_string = ", ".join(permanent_conditions_list)
-
-            if the_cat.is_ill():
-                for y in the_cat.illnesses:
-                    illness_list.append(y)
-                illness_string = ', '.join(illness_list)
-
-            if the_cat.is_ill() and the_cat.is_injured():
-                output += f"condition: {illness_string}, {injury_string}\n"
-            elif the_cat.is_ill():
-                output += f"condition: {illness_string}\n"
-            elif the_cat.is_injured():
-                output += f"condition: {injury_string}\n"
-
-            if the_cat.is_disabled():
-                if permanent_conditions_string is not None:
-                    output += f"permanent conditions: {permanent_conditions_string}\n"
-
         return output
 
     def generate_column2(self, the_cat):
@@ -674,7 +674,9 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if the_cat.exiled:
+        if the_cat.outside:
+            output += "<font color='#FF0000'>lost</font>"
+        elif the_cat.exiled and not the_cat.outside:
             output += "<font color='#FF0000'>exiled</font>"
         else:
             output += the_cat.status
@@ -732,13 +734,32 @@ class ProfileScreen(Screens):
         else:
             output += 'backstory: ' + 'clanborn'
 
+        if the_cat.is_disabled():
+            # NEWLINE ----------
+            output += "\n"
+            output += 'has a permanent condition'
+
+        # NEWLINE ----------
+        output += "\n"
+
+        if the_cat.is_injured():
+            if "recovering from birth" in the_cat.injuries:
+                output += 'recovering from birth!'
+            else:
+                output += "injured!"
+        elif the_cat.is_ill():
+            if "grief stricken" in the_cat.injuries:
+                output += 'grieving!'
+            else:
+                output += 'sick!'
+
         return output
 
     def toggle_backstory_tab(self):
         """Opens the backstory tab"""
         previous_open_tab = self.open_tab
 
-        # This closes the current tab, so only one can be open as a time
+        # This closes the current tab, so only one can be open at a time
         self.close_current_tab()
 
         if previous_open_tab == 'backstory':
@@ -748,13 +769,14 @@ class ProfileScreen(Screens):
             self.open_tab = 'backstory'
             self.backstory_background = pygame_gui.elements.UIImage(pygame.Rect((64, 465), (645, 157)),
                                                                     self.backstory_tab)
-            self.sub_tab_1 = UIImageButton(pygame.Rect((710, 475), (42, 30)), "", object_id="#sub_tab_1_button")
+            self.backstory_background.disable()
+            self.sub_tab_1 = UIImageButton(pygame.Rect((709, 475), (42, 30)), "", object_id="#sub_tab_1_button")
             self.sub_tab_1.disable()
-            self.sub_tab_2 = UIImageButton(pygame.Rect((710, 512), (42, 30)), "", object_id="#sub_tab_2_button")
+            self.sub_tab_2 = UIImageButton(pygame.Rect((709, 512), (42, 30)), "", object_id="#sub_tab_2_button")
             self.sub_tab_2.disable()
-            self.sub_tab_3 = UIImageButton(pygame.Rect((710, 549), (42, 30)), "", object_id="#sub_tab_3_button")
+            self.sub_tab_3 = UIImageButton(pygame.Rect((709, 549), (42, 30)), "", object_id="#sub_tab_3_button")
             self.sub_tab_3.disable()
-            self.sub_tab_4 = UIImageButton(pygame.Rect((710, 586), (42, 30)), "", object_id="#sub_tab_4_button")
+            self.sub_tab_4 = UIImageButton(pygame.Rect((709, 586), (42, 30)), "", object_id="#sub_tab_4_button")
             self.sub_tab_4.disable()
 
             # This will be overwritten in update_disabled_buttons_and_text()
@@ -764,44 +786,439 @@ class ProfileScreen(Screens):
     def toggle_history_sub_tab(self):
         """To toggle the sub-tab, when that's added"""
 
-    def get_history_text(self):
+    def get_all_history_text(self):
         output = ""
         if self.open_sub_tab == 'relation':
-            life_history = []
-            bs_blurb = bs_blurb_text(self.the_cat)
-            if bs_blurb is not None:
-                life_history.append(str(bs_blurb))
-            else:
-                life_history.append("This cat was born into the clan where they currently reside.")
+            # start our history with the backstory, since all cats get one
+            life_history = [str(self.get_backstory_text())]
+            body_history = []
 
-            if self.the_cat.scar_event:
-                scar_text = self.the_cat.scar_event
-                for x in range(len(self.the_cat.scar_event)):
-                    scar_text[x] = str(self.the_cat.scar_event[x]).replace(' is ', ' was ', 1)
-                    scar_text[x] = str(self.the_cat.scar_event[x]).replace(' loses ', ' lost ')
-                    scar_text[x] = str(self.the_cat.scar_event[x]).replace(' forces ', ' forced ')
+            # now get mentor influence history and add that if any exists
+            influence_history = self.get_influence_text()
+            if influence_history:
+                life_history.append(str(influence_history))
 
-                    not_scarred = ['wounded', 'injured', 'battered', 'hurt', 'punished']
-                    for y in not_scarred:
-                        scar_text[x] = str(self.the_cat.scar_event[x]).replace(f' got {y} ', ' was scarred ')
-                        scar_text[x] = str(self.the_cat.scar_event[x]).replace(y, ' scarred ')
-                        break
-                    if x == 0:
-                        scar_text[x] = str(self.the_cat.scar_event[x]).replace(f'{self.the_cat.name} ', 'This cat ', 1)
-                    elif x == 1:
-                        scar_text[x] = str(self.the_cat.scar_event[x]).replace(f'{self.the_cat.name} was ',
-                                                                               'They were also ', 1)
-                        scar_text[x] = str(self.the_cat.scar_event[x]).replace(str(self.the_cat.name), 'They also', 1)
-                    elif x >= 3:
-                        scar_text[x] = str(self.the_cat.scar_event[x]).replace(f'{self.the_cat.name} was ',
-                                                                               'Then they were ', 1)
-                        scar_text[x] = str(self.the_cat.scar_event[x]).replace(str(self.the_cat.name), 'Then they', 1)
-                scar_history = ' '.join(scar_text)
-                life_history.append(scar_history)
+            # now go get the scar history and add that if any exists
+            scar_history = self.get_scar_text()
+            if scar_history:
+                body_history.append(str(scar_history))
+
+            if self.the_cat.dead or (self.the_cat.status == 'leader' and game.clan.leader_lives < 9):
+                death_history = self.get_death_text()
+                if death_history:
+                    body_history.append(str(death_history))
+                else:
+                    body_history.append(f"The cause of {self.the_cat.name}'s death is unknown.")
+
+            # join scar and death into one paragraph
+            if body_history:
+                life_history.append(" ".join(body_history))
 
             # join together history list with line breaks
-            output = '\n'.join(life_history)
+            output = '\n\n'.join(life_history)
         return output
+
+    def get_backstory_text(self):
+        text = None
+        bs_blurb = bs_blurb_text(self.the_cat)
+        if bs_blurb is not None:
+            adjust_text = str(bs_blurb).replace('This cat', str(self.the_cat.name))
+            text = adjust_text
+        else:
+            text = f"{str(self.the_cat.name)} was born into the clan where they currently reside."
+        return text
+
+    def get_scar_text(self):
+        scar_history = None
+
+        if self.the_cat.scar_event:
+            scar_text = self.the_cat.scar_event
+            for x in range(len(self.the_cat.scar_event)):
+                # first event in the list will keep the cat's name, so we don't want to permanently change the text in
+                # the save else the name end up different later in the cat's life
+                if x == 0:
+                    scar_text[x] = event_text_adjust(Cat, self.the_cat.scar_event[x], self.the_cat)
+                # however, for all other events we want to permanently alter the saved text as none of these events will
+                # use the cat's name, rather they'll use one of the provided sentence beginners.  We don't want this
+                # sentence beginning to change everytime this text is pulled, so we need to make it permanent.
+                else:
+                    self.the_cat.scar_event[x] = event_text_adjust(Cat, self.the_cat.scar_event[x], self.the_cat)
+
+                sentence_beginners = [
+                    "This cat",
+                    "Then they",
+                    "They also"
+                ]
+
+                # first event needs no adjustments, as it's keeping the cat's name. all other events are adjusted.
+                if x != 0:
+                    chosen = choice(sentence_beginners)
+                    self.the_cat.scar_event[x] = str(self.the_cat.scar_event[x]).replace(f'{self.the_cat.name}',
+                                                                                         chosen, 1)
+                    if chosen != 'This cat':
+                        self.the_cat.scar_event[x] = str(self.the_cat.scar_event[x]).replace(f' was ', ' were ', 1)
+                    scar_text[x] = self.the_cat.scar_event[x]
+            scar_history = ' '.join(scar_text)
+
+        return scar_history
+
+    def get_influence_text(self):
+        influence_history = None
+
+        # check if cat has any mentor influence, else assign None
+        if len(self.the_cat.mentor_influence) >= 1:
+            influenced_skill = str(self.the_cat.mentor_influence[0])
+            if len(self.the_cat.mentor_influence) >= 2:
+                influenced_trait = str(self.the_cat.mentor_influence[1]).casefold()
+            else:
+                influenced_trait = None
+        else:
+            game.switches['sub_tab_group'] = 'life sub tab'
+            influenced_trait = None
+            influenced_skill = None
+
+        # if they did have mentor influence, check if skill or trait influence actually happened and assign None
+        if influenced_skill in ['None', 'none']:
+            influenced_skill = None
+        if influenced_trait in ['None', 'none']:
+            influenced_trait = None
+
+        # if cat had mentor influence then write history text for those influences and append to history
+        # assign proper grammar to skills
+        vowels = ['e', 'a', 'i', 'o', 'u']
+        if influenced_skill in Cat.skill_groups.get('special'):
+            adjust_skill = f'unlock their abilities as a {influenced_skill}'
+            for y in vowels:
+                if influenced_skill.startswith(y):
+                    adjust_skill = adjust_skill.replace(' a ', ' an ')
+                    break
+            influenced_skill = adjust_skill
+        elif influenced_skill in Cat.skill_groups.get('star'):
+            adjust_skill = f'grow a {influenced_skill}'
+            influenced_skill = adjust_skill
+        elif influenced_skill in Cat.skill_groups.get('smart'):
+            adjust_skill = f'become {influenced_skill}'
+            influenced_skill = adjust_skill
+        else:
+            # for loop to assign proper grammar to all these groups
+            become_group = ['heal', 'teach', 'mediate', 'hunt', 'fight', 'speak']
+            for x in become_group:
+                if influenced_skill in Cat.skill_groups.get(x):
+                    adjust_skill = f'become a {influenced_skill}'
+                    for y in vowels:
+                        if influenced_skill.startswith(y):
+                            adjust_skill = adjust_skill.replace(' a ', ' an ')
+                            break
+                    influenced_skill = adjust_skill
+                    break
+
+            if self.the_cat.former_mentor:
+                mentor = self.the_cat.former_mentor[-1].name
+            else:
+                mentor = None
+
+            # append influence blurb to history
+            if mentor is None:
+                influence_history = None
+            elif influenced_trait is not None and influenced_skill is None:
+                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait}."
+            elif influenced_trait is None and influenced_skill is not None:
+                influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
+            elif influenced_trait is not None and influenced_skill is not None:
+                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill}."
+            else:
+                influence_history = None
+
+        return influence_history
+
+    def get_death_text(self):
+        text = None
+        if self.the_cat.died_by:
+            if self.the_cat.status == 'leader':
+                insert2 = f"lost their lives"
+                if len(self.the_cat.died_by) > 2:
+                    insert = f"{', '.join(self.the_cat.died_by[:-2])}, and {self.the_cat.died_by[-1]}"
+                elif len(self.the_cat.died_by) == 2:
+                    insert = f"{self.the_cat.died_by[0]} and {self.the_cat.died_by[1]}"
+                else:
+                    insert = f"{self.the_cat.died_by[0]}"
+                    if self.the_cat.dead:
+                        insert2 = f'lost all their lives'
+                    elif game.clan.leader_lives == 8:
+                        insert2 = f"lost a life"
+                text = f"{self.the_cat.name} {insert2} when they {insert}."
+            else:
+                text = str(self.the_cat.died_by[0]).replace(f"{self.the_cat.name} was", 'They were')
+        return text
+
+    def toggle_conditions_tab(self):
+        """Opens the conditions tab"""
+        previous_open_tab = self.open_tab
+        print('toggled')
+        # This closes the current tab, so only one can be open at a time
+        self.close_current_tab()
+
+        if previous_open_tab == 'conditions':
+            '''If the current open tab is relations, just close the tab and do nothing else. '''
+            pass
+        else:
+            self.open_tab = 'conditions'
+            self.right_arrow = UIImageButton(
+                pygame.Rect((709, 540), (34, 34)),
+                "",
+                object_id='#arrow_right_button'
+            )
+            self.left_arrow = UIImageButton(
+                pygame.Rect((59, 540), (34, 34)),
+                "",
+                object_id='#arrow_left_button'
+            )
+            self.conditions_background = pygame_gui.elements.UIImage(
+                pygame.Rect((89, 471), (624, 151)),
+                self.conditions_tab
+            )
+            manager = pygame_gui.UIManager((800, 700), 'resources/defaults.json')
+            self.first_page_visible = True
+            self.first_page = pygame_gui.core.UIContainer(
+                pygame.Rect((89, 471), (624, 151)),
+                manager,
+                visible=self.first_page_visible)
+            container = self.first_page
+
+            # holds next four conditions, displays only once arrow button is hit
+            self.second_page_visible = False
+            self.second_page = pygame_gui.core.UIContainer(
+                pygame.Rect((89, 471), (624, 151)),
+                manager,
+                visible=self.second_page_visible)
+            # This will be overwritten in update_disabled_buttons_and_text()
+            self.update_disabled_buttons_and_text()
+
+    def get_conditions(self):
+        manager = pygame_gui.UIManager((800, 700), 'resources/defaults.json')
+
+        # tracks the position of the detail boxes
+        x_pos = 14
+
+        # tracks the number of boxes so that we don't go out of bounds
+        count = 0
+        next_injuries = []
+        next_illnesses = []
+
+        # holds first four conditions, default display
+        self.first_page_visible = True
+        self.first_page = pygame_gui.core.UIContainer(
+            pygame.Rect((89, 471), (624, 151)),
+            manager,
+            visible=self.first_page_visible)
+        container = self.first_page
+
+        # holds next four conditions, displays only once arrow button is hit
+        self.second_page_visible = False
+        self.second_page = pygame_gui.core.UIContainer(
+            pygame.Rect((89, 471), (624, 151)),
+            manager,
+            visible=self.second_page_visible)
+
+        # check for permanent conditions and create their detail boxes
+        for condition in self.the_cat.permanent_condition:
+            if self.the_cat.permanent_condition[condition]["born_with"] is True and \
+                    self.the_cat.permanent_condition[condition]["moons_until"] != -2:
+                continue
+            # move to second page if count gets too high
+            if count < 4 and container != self.second_page:
+                container = self.first_page
+            else:
+                container = self.second_page
+                x_pos = 14
+            # display the detail box
+            self.condition_box = pygame_gui.elements.UIImage(
+                pygame.Rect((x_pos, 13), (140, 138)),
+                self.condition_details_box,
+                container=container)
+            # display the detail text
+            y_adjust = 30
+            # title
+            if len(str(condition)) > 18:
+                y_adjust += 18
+            self.condition_name_text = UITextBoxTweaked(
+                condition,
+                pygame.Rect((x_pos, 13), (138, -1)),
+                line_spacing=.90,
+                object_id="text_box",
+                container=container
+            )
+            # details
+            text = self.get_condition_details(condition)
+            self.condition_detail_text = UITextBoxTweaked(
+                text,
+                pygame.Rect((x_pos, y_adjust), (138, 138)),
+                line_spacing=.90,
+                object_id="#condition_details_text_box",
+                container=container
+            )
+            # adjust the x_pos for the next box
+            x_pos += 152
+            count += 1
+
+        # check for injuries and display their detail boxes
+        for injury in self.the_cat.injuries:
+            # move to second page if count gets too high
+            if count < 4 and container != self.second_page:
+                container = self.first_page
+            else:
+                container = self.second_page
+                x_pos = 14
+            # display the detail box
+            self.condition_box = pygame_gui.elements.UIImage(
+                pygame.Rect((x_pos, 13), (140, 138)),
+                self.condition_details_box,
+                container=container
+            )
+            # display the detail text
+            y_adjust = 30
+            # title
+            if len(str(injury)) > 17:
+                y_adjust += 18
+            self.condition_name_text = UITextBoxTweaked(
+                injury,
+                pygame.Rect((x_pos, 13), (138, -1)),
+                line_spacing=.90,
+                object_id="text_box",
+                container=container
+            )
+            # details
+            text = self.get_condition_details(injury)
+            self.condition_detail_text = UITextBoxTweaked(
+                text,
+                pygame.Rect((x_pos, y_adjust), (138, 138)),
+                line_spacing=.90,
+                object_id="#condition_details_text_box",
+                container=container
+            )
+            # adjust the x_pos for the next box
+            x_pos += 152
+            count += 1
+
+        # check for illnesses and display their detail boxes
+        for illness in self.the_cat.illnesses:
+            # don't display infected or festering as their own condition
+            if illness in ['an infected wound', 'a festering wound']:
+                continue
+            # move to second page if count gets too high
+            if count < 4 and container != self.second_page:
+                container = self.first_page
+            else:
+                container = self.second_page
+                x_pos = 14
+            # display the detail box
+            self.condition_box = pygame_gui.elements.UIImage(
+                pygame.Rect((x_pos, 13), (140, 138)),
+                self.condition_details_box,
+                container=container
+            )
+            # display the detail text
+            y_adjust = 30
+            # title
+            if len(str(illness)) > 17:
+                y_adjust += 18
+            self.condition_name_text = UITextBoxTweaked(
+                illness,
+                pygame.Rect((x_pos, 13), (138, -1)),
+                line_spacing=.90,
+                object_id="text_box",
+                container=container
+            )
+            # details
+            text = self.get_condition_details(illness)
+            self.condition_detail_text = UITextBoxTweaked(
+                text,
+                pygame.Rect((x_pos, y_adjust), (138, 138)),
+                line_spacing=.90,
+                object_id="#condition_details_text_box",
+                container=container
+            )
+            # adjust the x_pos for the next box
+            x_pos += 152
+            count += 1
+
+        if count > 4:
+            self.right_arrow.enable()
+
+    def get_condition_details(self, name):
+        """returns the relevant condition details as one string with line breaks"""
+        text_list = []
+        cat_name = self.the_cat.name
+
+        # collect details for perm conditions
+        if name in self.the_cat.permanent_condition:
+            # moons with condition
+            keys = self.the_cat.permanent_condition[name].keys()
+            # display if the cat was born with it
+            if self.the_cat.permanent_condition[name]["born_with"] is True:
+                text_list.append(f"born with this condition")
+            # moons with the condition if not born with condition
+            elif 'moons_with' in keys:  # need to check if it exists for older saves
+                moons_with = self.the_cat.permanent_condition[name]["moons_with"]
+                if moons_with != 1:
+                    text_list.append(f"has had this condition for {moons_with} moons")
+                else:
+                    text_list.append(f"has had this condition for 1 moon")
+            # is permanent
+            text_list.append('permanent condition')
+            # infected or festering
+            if 'complication' in keys:
+                complication = self.the_cat.permanent_condition[name]["complication"]
+                if complication is not None:
+                    if 'a festering wound' in self.the_cat.illnesses:
+                        complication = 'festering'
+                    text_list.append(f'is {complication}!')
+
+        # collect details for injuries
+        if name in self.the_cat.injuries:
+            # moons with condition
+            keys = self.the_cat.injuries[name].keys()
+            if 'moons_with' in keys:  # need to check if it exists for older saves
+                moons_with = self.the_cat.injuries[name]["moons_with"]
+                insert = 'has been hurt for'
+                if name == 'recovering from birth':
+                    insert = 'has been recovering for'
+                if moons_with != 1:
+                    text_list.append(f"{insert} {moons_with} moons")
+                else:
+                    text_list.append(f"{insert} 1 moon")
+            # infected or festering
+            if 'complication' in keys:
+                complication = self.the_cat.injuries[name]["complication"]
+                if complication is not None:
+                    if 'a festering wound' in self.the_cat.illnesses:
+                        complication = 'festering'
+                    text_list.append(f'is {complication}!')
+            # can or can't patrol
+            if self.the_cat.injuries[name]["severity"] != 'minor':
+                text_list.append("they cannot work with this condition")
+
+        # collect details for illnesses
+        if name in self.the_cat.illnesses:
+            # moons with condition
+            keys = self.the_cat.illnesses[name].keys()
+            if 'moons_with' in keys:  # need to check if it exists for older saves
+                moons_with = self.the_cat.illnesses[name]["moons_with"]
+                insert = "has been sick for"
+                if name == 'grief stricken':
+                    insert = 'has been grieving for'
+                if moons_with != 1:
+                    text_list.append(f"{insert} {moons_with} moons")
+                else:
+                    text_list.append(f"{insert} 1 moon")
+            if self.the_cat.illnesses[name]['infectiousness'] != 0:
+                text_list.append("infectious!")
+            # can or can't patrol
+            if self.the_cat.illnesses[name]["severity"] != 'minor':
+                text_list.append("They cannot work with this condition")
+
+        text = "<br><br>".join(text_list)
+        return text
 
     def toggle_relations_tab(self):
         """Opens relations tab"""
@@ -934,7 +1351,7 @@ class ProfileScreen(Screens):
             elif game.clan.deputy.dead:
                 deputy = None
 
-            # This one is bit different. Since the image on the tab depends on the cat's status, we have to
+            # This one is a bit different. Since the image on the tab depends on the cat's status, we have to
             #   recreate the button.
             self.toggle_deputy_button.kill()
             if self.the_cat.status in [
@@ -1041,9 +1458,17 @@ class ProfileScreen(Screens):
         # Backstory_tab:
         elif self.open_tab == 'backstory':
             self.history_text_box.kill()
-            self.history_text_box = pygame_gui.elements.UITextBox(self.get_history_text(),
-                                                                  pygame.Rect((80, 480), (615, 142)),
-                                                                  object_id="#history_tab_text_box")
+            self.history_text_box = UITextBoxTweaked(self.get_all_history_text(),
+                                                     pygame.Rect((80, 473), (620, 149)),
+                                                     object_id="#history_tab_text_box",
+                                                     line_spacing=1)
+
+        elif self.open_tab == 'conditions':
+            self.left_arrow.disable()
+            self.right_arrow.disable()
+            self.first_page.kill()
+            self.second_page.kill()
+            self.get_conditions()
 
     def close_current_tab(self):
         """Closes current tab. """
@@ -1077,6 +1502,12 @@ class ProfileScreen(Screens):
             self.sub_tab_3.kill()
             self.sub_tab_4.kill()
             self.history_text_box.kill()
+        elif self.open_tab == 'conditions':
+            self.first_page.kill()
+            self.second_page.kill()
+            self.left_arrow.kill()
+            self.right_arrow.kill()
+            self.conditions_background.kill()
 
         self.open_tab = None
 

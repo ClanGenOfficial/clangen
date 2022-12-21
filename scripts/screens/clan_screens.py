@@ -7,7 +7,7 @@ from .base_screens import Screens, cat_profiles
 
 from scripts.cat.cats import Cat
 from scripts.game_structure.image_button import UISpriteButton, UIImageButton
-from scripts.utility import get_text_box_theme, update_sprite
+from scripts.utility import get_text_box_theme, update_sprite, get_living_cat_count
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import *
 
@@ -130,6 +130,9 @@ class ClanScreen(Screens):
         self.save_text = pygame_gui.elements.UITextBox("", pygame.Rect(320, 660, 160, 20),
                                                        object_id="#save_text_box")
         self.update_buttons_and_text()
+
+        if get_living_cat_count(Cat) == 0:
+            GameOver('events screen')
 
     def exit_screen(self):
         # removes the cat sprites.

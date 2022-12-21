@@ -1,116 +1,143 @@
 {
     "kitten": {
         "unfriendly": [
-            "Is scolding (cat)"
+            "is scolding (cat)."
         ],
         "neutral": [
-            "Trips over (cat)",
-            "Had to nip (cat) on the rump because they were being naughty",
-            "Is watching (cat) perform an almost-decent hunting crouch",
-            "Is watching over (cat)",
-            "Is charmed to hear that (cat) really admires them"
+            "trips over (cat).",
+            "had to nip (cat) on the rump because they were being naughty.",
+            "is watching (cat) perform an almost-decent hunting crouch.",
+            "is watching over (cat).",
+            "is charmed to hear that (cat) really admires them."
         ],
         "friendly": [
-            "Is giving (cat) a badger ride on their back!",
-            "Hopes that their own kits are as cute as (cat) someday",
-            "Is promising to take (cat) outside of camp if they behave",
-            "Gave (cat) a trinket they found while out on patrol today",
-            "Is feeling proud of (cat)"
+            "is giving (cat) a badger ride on their back!",
+            "hopes that their own kits are as cute as (cat) someday.",
+            "is promising to take (cat) outside of camp if they behave.",
+            "gave (cat) a trinket they found while out on patrol today.",
+            "is feeling proud of (cat)."
         ],
         "close": [
-            "Train playfully with (cat)"
+            "trains playfully with (cat)."
         ]
     },
     "medicine cat apprentice": {
         "unfriendly": [
-            "Is scolding (cat)"
+            "is scolding (cat)."
         ],
         "neutral": [
-            "Is giving advice to (cat)",
-            "Is giving (cat) a task",
-            "Wishes (cat) would take things more seriously"
+            "is giving advice to (cat).",
+            "is giving (cat) a task.",
+            "wishes (cat) would take things more seriously."
         ],
         "friendly": [
-            "Is feeling proud of (cat)"
+            "is feeling proud of (cat)."
         ],
         "close": []
     },
     "apprentice": {
         "unfriendly": [
-            "Is scolding (cat)"
+            "is scolding (cat).",
+            "prays that they aren't on patrol with (cat) tomorrow.",
+            "had a disagreement with (cat) while on patrol earlier.",
+            "stole (cat)'s catch right out from under their claws."
         ],
         "neutral": [
-            "Is giving advice to (cat)",
-            "Is watching (cat) perform an almost-decent hunting crouch",
-            "Is telling (cat) about a hunting technique",
-            "Is giving (cat) a task",
-            "Wishes (cat) would take things more seriously",
-            "Is jealous that (cat) got to go to the last gathering",
-            "Saw (cat) miss an easy catch today"
+            "is giving advice to (cat).",
+            "is watching (cat) perform an almost-decent hunting crouch.",
+            "is telling (cat) about a hunting technique.",
+            "is giving (cat) a task.",
+            "wishes (cat) would take things more seriously.",
+            "is jealous that (cat) got to go to the last gathering.",
+            "saw (cat) miss an easy catch today.",
+            "is thinking about how much (cat) reminds them of their own apprentice days.",
+            "prays that they aren't on patrol with (cat) tomorrow.",
+            "had a disagreement with (cat) while on patrol earlier."
         ],
         "friendly": [
-            "Is telling (cat) about their own days as an apprentice",
-            "Is feeling proud of (cat)",
-            "Hopes they are assigned to patrol with (cat) tomorrow"
-        ],
-        "close": []
-    },
-    "warrior": {
-        "unfriendly": [],
-        "neutral": [
-            "Is telling (cat) about a hunting technique",
-            "Is giving (cat) a task",
-            "Is frustrated that (cat) won't take their duties more seriously",
-            "Sparring with (cat)",
-            "Is jealous that (cat) got to go to the last gathering",
-            "Has noticed (cat) isn't doing a lot of work lately",
-            "Saw (cat) miss an easy catch today"
-        ],
-        "friendly": [
-            "Just told (cat) a hilarious joke",
-            "Hopes they are assigned to patrol with (cat) tomorrow"
+            "is telling (cat) about their own days as an apprentice.",
+            "is feeling proud of (cat).",
+            "hopes they are assigned to patrol with (cat) tomorrow.",
+            "playfully teases (cat) for missing a catch."
         ],
         "close": [
-            "Thinks that (cat) is so much braver than them"
+            "playfully teases (cat) for missing a catch."
+        ]
+    },
+    "warrior": {
+        "unfriendly": [
+            "prays that they aren't on patrol with (cat) tomorrow.",
+            "had a disagreement with (cat) while on patrol earlier.",
+            "stole (cat)'s catch right out from under their claws."
+        ],
+        "neutral": [
+            "is telling (cat) about a hunting technique.",
+            "is giving (cat) a task.",
+            "is frustrated that (cat) won't take their duties more seriously.",
+            "is sparring with (cat).",
+            "is jealous that (cat) got to go to the last gathering.",
+            "has noticed (cat) isn't doing a lot of work lately.",
+            "saw (cat) miss an easy catch today.",
+            "prays that they aren't on patrol with (cat) tomorrow.",
+            "had a disagreement with (cat) while on patrol earlier."
+        ],
+        "friendly": [
+            "just told (cat) a hilarious joke.",
+            "hopes they are assigned to patrol with (cat) tomorrow.",
+            "playfully teases (cat) for missing a catch."
+        ],
+        "close": [
+            "thinks that (cat) is so much braver than them.",
+            "playfully teases (cat) for missing a catch."
         ]
     },
     "medicine cat": {
         "unfriendly": [],
         "neutral": [
-            "Escorted (cat) so they could gather herbs",
-            "Thought of (cat) on the last patrol and took a rare herb with them",
-            "Feels like (cat) isn't taking their health seriously",
-            "Went to (cat) for advice about a dream they had"
+            "escorted (cat) so they could gather herbs.",
+            "thought of (cat) on the last patrol and took a rare herb with them.",
+            "feels like (cat) isn't taking their health seriously.",
+            "went to (cat) for advice about a dream they had."
         ],
         "friendly": [],
         "close": []
     },
     "leader": {
         "unfriendly": [
-            "Accuses (cat) of being a bad leader"
+            "accuses (cat) of being a bad leader.",
+            "had a disagreement with (cat) while on patrol earlier.",
+            "stole (cat)'s catch right out from under their claws."
         ],
         "neutral": [
-            "Saw (cat) miss an easy catch today"
+            "saw (cat) miss an easy catch today.",
+            "had a disagreement with (cat) while on patrol earlier."
         ],
         "friendly": [],
-        "close": []
+        "close": [
+            "playfully teases (cat) for missing a catch."
+        ]
     },
     "deputy": {
         "unfriendly": [
-            "Thinks they should be deputy instead of (cat)",
-            "Accuses (cat) of being a bad deputy"
+            "thinks they should be deputy instead of (cat).",
+            "accuses (cat) of being a bad deputy.",
+            "had a disagreement with (cat) while on patrol earlier.",
+            "stole (cat)'s catch right out from under their claws."
         ],
         "neutral": [
-            "Is tired from (cat) putting them on so many patrols",
-            "Saw (cat) miss an easy catch today"
+            "is tired from (cat) putting them on so many patrols.",
+            "saw (cat) miss an easy catch today.",
+            "had a disagreement with (cat) while on patrol earlier."
         ],
         "friendly": [],
-        "close": []
+        "close": [
+            "playfully teases (cat) for missing a catch."
+        ]
     },
     "elder": {
         "unfriendly": [],
         "neutral": [
-            "Feels like they'll never accomplish as much as (cat)"
+            "feels like they'll never accomplish as much as (cat)."
         ],
         "friendly": [],
         "close": []

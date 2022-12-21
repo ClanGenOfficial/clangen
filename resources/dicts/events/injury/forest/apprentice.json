@@ -1,6 +1,7 @@
 [
     {
         "injury": "sprain",
+        "camp": "any",
         "tags": [
             "Newleaf",
             "Greenleaf",
@@ -20,6 +21,7 @@
     },
     {
         "injury": "broken bone",
+        "camp": "any",
         "tags": [
             "Newleaf",
             "Greenleaf",
@@ -39,6 +41,7 @@
     },
     {
         "injury": "broken bone",
+        "camp": "any",
         "tags": [
             "Newleaf",
             "Greenleaf",
@@ -58,6 +61,7 @@
     },
     {
         "injury": "claw-wound",
+        "camp": "any",
         "tags": [
             "Newleaf",
             "Greenleaf",
@@ -73,6 +77,33 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "broken back",
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "other_cat",
+            "other_cat_app",
+            "mc_to_rc",
+            "dislike",
+            "neg_trust",
+            "neg_comfort",
+            "neg_platonic"
+        ],
+        "event_text": "r_c dares m_c to climb one of the tallest trees in the territory. m_c gets pretty high, but a branch breaks and it's a long way to the ground. r_c goes sprinting for camp to get help.",
+        "history_text": [
+            null,
+            "m_c died after falling from a tree and breaking their back.",
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["adventurous", "bold", "daring", "troublesome"],
         "other_cat_skill": null
     }
 ]

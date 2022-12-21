@@ -11,44 +11,54 @@
         ],
         "dislike": [],
         "admiration": [
-            "Saw (cat) miss an easy catch today"
+            "Saw (cat) miss an easy catch today",
+            "thinks that (cat) has been behaving stuck up and rude.",
+            "is dissatisfied that (cat) can't seem to get rid of their chronic pain."
         ],
         "comfortable": [
-            "Chomps on (cat)'s ear"
+            "chomps on (cat)'s ear.",
+            "noticed (cat) flirting with someone else.",
+            "bickered about something trivial with (cat)."
         ],
         "jealousy": [
-            "Was playing with (cat) and learned a fun new battle move from them!"
+            "was playing with (cat) and learned a fun new battle move from them!"
         ],
         "trust": [
-            "Chiding (cat) for being so reckless",
-            "Has noticed (cat) isn't doing a lot of work lately"
+            "chiding (cat) for being so reckless.",
+            "has noticed (cat) isn't doing a lot of work lately."
         ]
     },
     "to": {
         "romantic_love": [],
         "like": [
-            "Trips over (cat)",
-            "Divides (cat) into extra patrols",
-            "Is watching (cat) scornfully",
-            "Called (cat) the wrong name"
+            "trips over (cat).",
+            "divides (cat) into extra patrols.",
+            "is watching (cat) scornfully.",
+            "called (cat) the wrong name."
         ],
         "dislike": [
-            "Feels bad that they caused a problem for (cat)"
+            "feels bad that they caused a problem for (cat).",
+            "won't stop copying everything (cat) does."
         ],
         "admiration": [
-            "Is asking (cat) to tell them about how good they look",
-            "Accuses (cat) of cheating, to win so many practice fights"
+            "is asking (cat) to tell them about how good they look.",
+            "accuses (cat) of cheating, to win so many practice fights.",
+            "said something that rubbed (cat) the wrong way."
         ],
         "comfortable": [
-            "Is biting (cat)'s tail",
-            "Tells (cat) that their pelt looks like a different color today",
-            "Talks to (cat) how best to kill prey, very enthusiastic",
-            "Makes sure (cat) is following the warrior code",
-            "Crashes into (cat) while eager for patrol"
+            "is biting (cat)'s tail.",
+            "tells (cat) that their pelt looks like a different color today.",
+            "talks to (cat) how best to kill prey, very enthusiastic.",
+            "makes sure (cat) is following the warrior code.",
+            "crashes into (cat) while eager for patrol.",
+            "bickered about something trivial with (cat).",
+            "said something that rubbed (cat) the wrong way."
         ],
         "jealousy": [],
         "trust": [
-            "Trips over (cat)"
+            "trips over (cat).",
+            "convinces (cat) to help them pull a prank on a clanmate.",
+            "said something that rubbed (cat) the wrong way."
         ]
     }
 }

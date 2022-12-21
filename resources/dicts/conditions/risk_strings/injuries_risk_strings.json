@@ -152,7 +152,7 @@
     },
     "shivering": {
         "frostbite": [
-            "r_c massages m_c's pawpads, looking for signs that bloodflow is returning to them. This has definitely crossed the line into frostbite.",
+            "r_c massages m_c's paw pads, looking for signs that blood flow is returning to them. This has definitely crossed the line into frostbite.",
             "m_c says that their extremities feel like they’re being pricked by claws, and numbness soon follows. That's a sign of frostbite.",
             "The skin of m_c's extremities is a worrying black and blue, one of their friends spends some time licking at the cold bits of skin but they seem to be frostbitten."
 
@@ -170,6 +170,12 @@
             "r_c drips the juice of herbs into m_c's damaged eyes, not paying any attention to their protests. This infection needs to be stopped before it goes any further.",
             "m_c can't open their eyes for the swelling and crust that has accumulated. Hopefully this infection doesn't spread."
 
+        ]
+    },
+    "broken back": {
+        "an infected wound": [
+            "r_c does their best to further prop up m_c's body and feels growing concern at the rancid smell coming from the broken and twisted part of m_c's back.",
+            "m_c can smell the infection from their back and feels the fever coming over them, this injury feels less and less survivable with the day."
         ]
     }
 }
