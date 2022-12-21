@@ -333,8 +333,8 @@ class Patrol():
                                                                         for_love_interest=True):
                         continue
                 else:
-                    if not self.patrol_leader.is_potential_mate(self.patrol_random_cat,
-                                                                        for_love_interest=True):
+                    if not self.patrol_leader.is_potential_mate(self.patrol_random_cat, for_love_interest=True)\
+                        or not self.patrol_leader.mate == self.patrol_random_cat:
                         continue
 
 
