@@ -131,25 +131,13 @@ class Patrol():
         self.other_clan = choice(game.clan.all_clans)
         print(self.patrol_total_experience)
 
-    def add_cat(self, cat):
-        """Add a new cat to the patrol"""
-        self.patrol_cats.append(cat)
-        self.patrol_names.append(str(cat.name))
-        if cat.status != 'apprentice':
-            self.possible_patrol_leaders.append(cat)
-        self.patrol_skills.append(cat.skill)
-        self.patrol_statuses.append(cat.status)
-        self.patrol_traits.append(cat.trait)
-        self.patrol_total_experience += cat.experience
-        game.patrolled.append(cat)
-
     def get_possible_patrols(self, current_season, biome, all_clans, patrol_type,
                              game_setting_disaster=game.settings['disasters']):
 
         possible_patrols = []
         final_patrols = []
-        patrol_type = "med" if ("medicine cat" or "medicine cat apprentice") in self.patrol_statuses else patrol_type
-        if patrol_type == "med" and ("medicine cat" or "medicine cat apprentice") not in self.patrol_statuses:
+        patrol_type = "med" if ["medicine cat", "medicine cat apprentice"] in self.patrol_statuses else patrol_type
+        if patrol_type == "med" and ["medicine cat", "medicine cat apprentice"] not in self.patrol_statuses:
             patrol_type = choice(["hunting", "border", "training"])
         patrol_size = len(self.patrol_cats)
         reputation = game.clan.reputation
@@ -422,6 +410,7 @@ class Patrol():
         
         c = randint(0, 100)
         outcome = int(random.getrandbits(4))
+        print(str(self.patrol_event.patrol_id))
 
         # ---------------------------------------------------------------------------- #
         #                                   SUCCESS                                    #
