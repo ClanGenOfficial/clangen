@@ -1150,7 +1150,6 @@ class Patrol():
                 new_cat.parent1 = relevant_cat.ID
                 if relevant_cat.mate:
                     new_cat.parent2 = relevant_cat.mate
-                relevant_cat.thought = 'Is watching their new kit with fascination'
 
             # create and update relationships
             for the_cat in new_cat.all_cats.values():
