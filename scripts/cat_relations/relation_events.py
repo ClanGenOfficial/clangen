@@ -719,8 +719,8 @@ class Relation_Events():
             chance = int(chance * 2)
 
         if other_cat is None:
-            chance = int(int(living_cats) * 50)
-        if chance > 10 > living_cats:
+            chance = int(int(living_cats) * 45)
+        if chance > 20 > living_cats:
             chance -= 10
 
         return chance
@@ -755,7 +755,7 @@ class Relation_Events():
     def get_second_parent(self, cat, mate=None, affair=game.settings['affair']):
         """ Return the second parent of a cat, which will have kits."""
         second_parent = mate
-        if not affair or mate is None:
+        if not affair or mate is None and not game.settings['no unknown fathers']:
             # if the cat has no mate, None will be returned
             return second_parent
 
@@ -774,10 +774,7 @@ class Relation_Events():
             return second_parent
 
         # the function should only call if highest_romantic_cat is not the mate
-        chance_affair = self.get_affair_chance(
-            mate_relation,
-            highest_romantic_relation
-        )
+        chance_affair = self.get_affair_chance(mate_relation, highest_romantic_relation)
 
         # a chance of 0 should always be a "auto hit"
         # if chance_affair == 0 or randint(1, chance_affair) == 1:
