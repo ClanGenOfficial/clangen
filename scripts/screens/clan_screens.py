@@ -42,6 +42,7 @@ class ClanScreen(Screens):
                 game.save_cats()
                 game.clan.save_clan()
                 game.clan.save_pregnancy(game.clan)
+                game.save_settings()
                 game.switches['saved_clan'] = True
                 self.update_buttons_and_text()
             if event.ui_element in self.cat_buttons:

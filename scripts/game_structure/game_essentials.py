@@ -41,6 +41,7 @@ class Game():
     game_mode = ''
     language_list = ['english', 'spanish', 'german']
     game_mode_list = ['classic', 'expanded', 'cruel season']
+    sub_tab_list = ['life events', 'user notes']
 
     # Keeping track of various last screen for various purposes
     last_screen_forupdate = 'start screen'
@@ -127,7 +128,8 @@ class Game():
         'game_mode': '',
         'set_game_mode': False,
         'broke_up': False,
-        'show_info': False
+        'show_info': False,
+        'favorite_sub_tab': None
 
     }
     all_screens = {}
@@ -177,7 +179,7 @@ class Game():
         'game_mode': game_mode_list,
         'deputy': [False, True],
         'den labels': [False, True],
-        'favorite sub tab': [None, 'life events', 'user notes']
+        'favorite sub tab': sub_tab_list
     }  # Lists of possible options for each setting
     settings_changed = False
 

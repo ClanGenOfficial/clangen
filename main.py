@@ -22,6 +22,12 @@ manager.get_theme().load_theme('resources/text_boxes_dark.json')
 manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
 manager.get_theme().load_theme('resources/windows.json')
 manager.get_theme().load_theme('resources/tool_tips.json')
+pygame_gui.ui_manager.UIManager.add_font_paths(
+    font_name='nonosans2',
+    regular_path='resources/fonts/NotoSans-Black.ttf',
+    bold_path='resources/fonts/NotoSans-Bold.ttf',
+    italic_path='resources/'
+)
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens.all_screens import *

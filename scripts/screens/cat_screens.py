@@ -199,14 +199,11 @@ class ProfileScreen(Screens):
 
     # Keep track of current tabs open. Can be used to keep tabs open when pages are switched, and
     # helps with exiting the screen
-    default_sub_tab = game.settings['favorite sub tab']
-    if default_sub_tab is None:
-        default_sub_tab = 'life events'
     open_tab = None
-    open_sub_tab = default_sub_tab
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.open_sub_tab = None
         self.editing_notes = False
         self.user_notes = None
         self.save_text = None
@@ -257,7 +254,7 @@ class ProfileScreen(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
-                self.open_sub_tab = self.default_sub_tab
+                self.close_current_tab()
                 self.change_screen(game.last_screen_forProfile)
             elif event.ui_element == self.previous_cat_button:
                 self.clear_profile()
@@ -278,6 +275,7 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.dangerous_tab_button:
                 self.toggle_dangerous_tab()
             elif event.ui_element == self.backstory_tab_button:
+                self.open_sub_tab = game.settings['favorite sub tab']
                 self.toggle_history_tab()
             elif event.ui_element == self.conditions_tab_button:
                 self.toggle_conditions_tab()
@@ -385,13 +383,22 @@ class ProfileScreen(Screens):
         # History Tab
         elif self.open_tab == 'history':
             if event.ui_element == self.sub_tab_1:
+                if self.open_sub_tab == 'user notes':
+                    self.notes_entry.kill()
+                    self.display_notes.kill()
+                    if self.edit_text:
+                        self.edit_text.kill()
+                    if self.save_text:
+                        self.save_text.kill()
                 self.open_sub_tab = 'life events'
                 self.toggle_history_sub_tab()
             elif event.ui_element == self.sub_tab_2:
+                if self.open_sub_tab == 'life events':
+                    self.history_text_box.kill()
                 self.open_sub_tab = 'user notes'
                 self.toggle_history_sub_tab()
             elif event.ui_element == self.fav_tab:
-                game.settings['favorite sub tab'] = 'life events'
+                game.settings['favorite sub tab'] = None
                 self.fav_tab.hide()
                 self.not_fav_tab.show()
             elif event.ui_element == self.not_fav_tab:
@@ -399,13 +406,13 @@ class ProfileScreen(Screens):
                 self.fav_tab.show()
                 self.not_fav_tab.hide()
             elif event.ui_element == self.save_text:
-                self.user_notes = sub(r'[^A-Za-z0-9 ]+', "", self.notes_entry.get_text())
+                self.user_notes = sub(r'[^A-Za-z0-9<->/ ]+', "", self.notes_entry.get_text())
                 self.save_user_notes()
                 self.editing_notes = False
-                self.toggle_user_notes_tab()
+                self.update_disabled_buttons_and_text()
             elif event.ui_element == self.edit_text:
                 self.editing_notes = True
-                self.toggle_user_notes_tab()
+                self.update_disabled_buttons_and_text()
 
         # Conditions Tab
         elif self.open_tab == 'conditions':
@@ -465,6 +472,8 @@ class ProfileScreen(Screens):
         self.cat_image.kill()
         if self.background is not None:
             self.background.kill()
+        if self.user_notes:
+            self.user_notes = 'Click the check mark to enter notes about your cat!'
 
     def exit_screen(self):
         self.clear_profile()
@@ -552,6 +561,9 @@ class ProfileScreen(Screens):
             self.previous_cat_button.disable()
         else:
             self.previous_cat_button.enable()
+
+        if self.open_tab == "history" and self.open_sub_tab == 'user notes':
+            self.load_user_notes()
 
     def determine_previous_and_next_cat(self):
         """'Determines where the next and previous buttons point too."""
@@ -797,7 +809,9 @@ class ProfileScreen(Screens):
         return output
 
     def toggle_history_tab(self, sub_tab_switch=False):
-        """Opens the history tab"""
+        """Opens the history tab
+        param sub_tab_switch should be set to True if switching between sub tabs within the History tab
+        """
         previous_open_tab = self.open_tab
 
         # This closes the current tab, so only one can be open at a time
@@ -819,7 +833,6 @@ class ProfileScreen(Screens):
             self.sub_tab_3.disable()
             self.sub_tab_4 = UIImageButton(pygame.Rect((709, 586), (42, 30)), "", object_id="#sub_tab_4_button")
             self.sub_tab_4.disable()
-
             self.fav_tab = UIImageButton(
                 pygame.Rect((57, 480), (28, 28)),
                 "",
@@ -833,20 +846,14 @@ class ProfileScreen(Screens):
                 tool_tip_text='favorite this tab'
             )
 
-            self.notes_entry = pygame_gui.elements.UITextEntryBox(
-                pygame.Rect((100, 473), (600, 149)),
-                initial_text="",
-                object_id='#history_tab_text_box'
-            )
+            print(self.open_sub_tab, game.settings['favorite sub tab'])
+            if self.open_sub_tab != 'life events':
+                self.toggle_history_sub_tab()
+            else:
+                # This will be overwritten in update_disabled_buttons_and_text()
+                self.history_text_box = pygame_gui.elements.UITextBox("", pygame.Rect((80, 480), (615, 142)))
+                self.update_disabled_buttons_and_text()
 
-            self.display_notes = UITextBoxTweaked("",
-                                                  pygame.Rect((100, 473), (600, 149)),
-                                                  object_id="#history_tab_text_box",
-                                                  line_spacing=1)
-
-            # This will be overwritten in update_disabled_buttons_and_text()
-            self.history_text_box = pygame_gui.elements.UITextBox("", pygame.Rect((80, 480), (615, 142)))
-            self.update_disabled_buttons_and_text()
 
     def toggle_user_notes_tab(self):
         """Opens the User Notes portion of the History Tab"""
@@ -854,31 +861,17 @@ class ProfileScreen(Screens):
         if self.user_notes is None:
             self.user_notes = 'Click the check mark to enter notes about your cat!'
 
-        if self.editing_notes is True:
-            self.notes_entry = pygame_gui.elements.UITextEntryBox(
-                pygame.Rect((100, 473), (600, 149)),
-                initial_text=self.user_notes,
-                object_id='#history_tab_text_box'
-            )
-
-        else:
-            self.display_notes = UITextBoxTweaked(self.user_notes,
-                                                  pygame.Rect((100, 473), (600, 149)),
-                                                  object_id="#history_tab_text_box",
-                                                  line_spacing=1)
-
-        self.edit_text = UIImageButton(pygame.Rect(
-            (54, 514), (34, 34)),
-            "",
-            object_id="#checked_checkbox",
-            tool_tip_text='edit text'
+        self.notes_entry = pygame_gui.elements.UITextEntryBox(
+            pygame.Rect((100, 473), (600, 149)),
+            initial_text=self.user_notes,
+            object_id='#history_tab_text_box'
         )
-        self.save_text = UIImageButton(pygame.Rect(
-            (54, 514), (34, 34)),
-            "",
-            object_id="#unchecked_checkbox",
-            tool_tip_text='save text'
-        )
+
+        self.display_notes = UITextBoxTweaked(self.user_notes,
+                                              pygame.Rect((100, 473), (600, 149)),
+                                              object_id="#history_tab_text_box",
+                                              line_spacing=1)
+
 
         self.update_disabled_buttons_and_text()
 
@@ -891,7 +884,7 @@ class ProfileScreen(Screens):
         notes = self.user_notes
 
         notes_directory = 'saves/' + clanname + '/notes'
-        notes_file_path = notes_directory + '.json'
+        notes_file_path = notes_directory + '/' + self.the_cat.ID + '_notes.json'
 
         if not os.path.exists(notes_directory):
             os.makedirs(notes_directory)
@@ -916,13 +909,15 @@ class ProfileScreen(Screens):
             clanname = game.switches['clan_list'][0]
 
         notes_directory = 'saves/' + clanname + '/notes'
-        notes_file_path = notes_directory + '.json'
+        notes_file_path = notes_directory + '/' + self.the_cat.ID + '_notes.json'
+
         if not os.path.exists(notes_file_path):
             return
 
         try:
             with open(notes_file_path, 'r') as read_file:
                 rel_data = ujson.loads(read_file.read())
+                self.user_notes = 'Click the check mark to enter notes about your cat!'
                 if str(self.the_cat.ID) in rel_data:
                     self.user_notes = rel_data.get(str(self.the_cat.ID))
         except Exception as e:
@@ -1618,8 +1613,6 @@ class ProfileScreen(Screens):
                 self.not_fav_tab.show()
 
             if self.open_sub_tab == 'life events':
-                self.notes_entry.kill()
-                self.display_notes.kill()
                 self.sub_tab_1.disable()
                 self.sub_tab_2.enable()
                 self.history_text_box.kill()
@@ -1628,29 +1621,44 @@ class ProfileScreen(Screens):
                                                          object_id="#history_tab_text_box",
                                                          line_spacing=1)
             elif self.open_sub_tab == 'user notes':
-                self.save_text.kill()
-                self.edit_text.kill()
                 self.sub_tab_1.enable()
                 self.sub_tab_2.disable()
-                self.history_text_box.kill()
+                if self.history_text_box:
+                    self.history_text_box.kill()
+                if self.save_text:
+                    self.save_text.kill()
+                if self.notes_entry:
+                    self.notes_entry.kill()
+                if self.edit_text:
+                    self.edit_text.kill()
+                if self.display_notes:
+                    self.display_notes.kill()
 
                 if self.editing_notes is True:
-                    self.display_notes.kill()
                     self.save_text = UIImageButton(pygame.Rect(
                         (54, 514), (34, 34)),
                         "",
                         object_id="#unchecked_checkbox",
-                        tool_tip_text='save text'
+                        tool_tip_text='lock and save text'
                     )
 
+                    self.notes_entry = pygame_gui.elements.UITextEntryBox(
+                        pygame.Rect((100, 473), (600, 149)),
+                        initial_text=self.user_notes,
+                        object_id='#history_tab_text_box'
+                    )
                 else:
-                    self.notes_entry.kill()
                     self.edit_text = UIImageButton(pygame.Rect(
                         (54, 514), (34, 34)),
                         "",
                         object_id="#checked_checkbox",
                         tool_tip_text='edit text'
                     )
+
+                    self.display_notes = UITextBoxTweaked(self.user_notes,
+                                                          pygame.Rect((100, 473), (600, 149)),
+                                                          object_id="#history_tab_text_box",
+                                                          line_spacing=1)
 
         # Conditions Tab
         elif self.open_tab == 'conditions':
@@ -1691,19 +1699,27 @@ class ProfileScreen(Screens):
             self.sub_tab_2.kill()
             self.sub_tab_3.kill()
             self.sub_tab_4.kill()
-            self.history_text_box.kill()
-            self.save_text.kill()
-            self.edit_text.kill()
             self.fav_tab.kill()
             self.not_fav_tab.kill()
+            if self.open_sub_tab == 'user notes':
+                if self.edit_text:
+                    self.edit_text.kill()
+                if self.save_text:
+                    self.save_text.kill()
+                if self.notes_entry:
+                    self.notes_entry.kill()
+                if self.display_notes:
+                    self.display_notes.kill()
+            elif self.open_sub_tab == 'life events':
+                if self.history_text_box:
+                    self.history_text_box.kill()
+
         elif self.open_tab == 'conditions':
             self.first_page.kill()
             self.second_page.kill()
             self.left_arrow.kill()
             self.right_arrow.kill()
             self.conditions_background.kill()
-            self.fav_tab.kill()
-            self.not_fav_tab.kill()
 
         self.open_tab = None
 
