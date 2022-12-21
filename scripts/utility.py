@@ -349,6 +349,7 @@ def event_text_adjust(Cat, text, cat, other_cat=None, other_clan_name=None, keep
         adjust_text = adjust_text.replace("c_m", str(mate))
     adjust_text = adjust_text.replace("d_l", danger_choice)
     adjust_text = adjust_text.replace("t_l", tail_choice)
+    adjust_text = adjust_text.replace("c_n", str(game.clan.name) + "Clan")
 
     return adjust_text
 
