@@ -702,8 +702,8 @@ class Relation_Events():
         # calculate the chance of having kits
         chance = 100
         if other_cat is not None:
-            chance = 45
-            if relation.romantic_love >= 50:
+            chance = 40
+            if relation.romantic_love >= 45:
                 chance -= 5
             if relation.romantic_love >= 70:
                 chance -= 5
