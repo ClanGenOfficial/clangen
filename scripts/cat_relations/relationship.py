@@ -224,7 +224,7 @@ class Relationship():
             return action_possibilities
 
         # chance to fall in love with some the character is not close to:
-        love_p = randint(0, 30)
+        love_p = randint(0, 20)
         if self.platonic_like > 30 or love_p == 1 or self.romantic_love > 5:
             # increase the chance of an love event for two un-mated cats
             action_possibilities = action_possibilities + LOVE['love_interest_only']
