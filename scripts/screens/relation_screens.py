@@ -776,9 +776,8 @@ class ChooseMateScreen(Screens):
 
             if event.ui_element == self.toggle_mate:
                 if self.the_cat.mate is None:
-
-                    self.selected_cat.mate = self.the_cat.ID
-                    self.the_cat.mate = self.selected_cat.ID
+                    Cat.set_mate(self.the_cat, self.selected_cat)
+                    Cat.set_mate(self.selected_cat, self.the_cat)
                     self.update_mate_screen()
                 else:
                     self.selected_cat.mate = None
