@@ -582,12 +582,8 @@ class Relation_Events():
         if mate:
             if mate.gender == cat.gender and not no_gendered_breeding:
                 return can_have_kits
-            if cat.gender == 'female' and cat.age == 'elder' or mate.gender == 'female' and mate.age == 'elder':
-                return can_have_kits
         else:
             if not unknown_parent_setting:
-                return can_have_kits
-            if cat.gender == 'female' and cat.age == 'elder':
                 return can_have_kits
 
         # if function reaches this point, having kits is possible
