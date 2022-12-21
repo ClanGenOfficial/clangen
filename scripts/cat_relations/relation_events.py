@@ -755,8 +755,8 @@ class Relation_Events():
     def get_second_parent(self, cat, mate=None, affair=game.settings['affair']):
         """ Return the second parent of a cat, which will have kits."""
         second_parent = mate
-        if not affair or mate is None and not game.settings['no unknown fathers']:
-            # if the cat has no mate, None will be returned
+        if not affair:
+            # if affairs setting is OFF, None will be returned
             return second_parent
 
         mate_relation = None
