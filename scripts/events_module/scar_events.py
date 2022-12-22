@@ -26,7 +26,7 @@ class Scar_Events():
         """
         scar_text = cat.possible_scar
 
-        chance = random.choice([1, 2], [2, 1])  # making scars slightly more common
+        chance = random.choice([1, 2])  # making scars slightly more common
         if not cat.specialty and not cat.specialty2 and not int(random.random() * chance):
 
             # move potential scar text into displayed scar text
