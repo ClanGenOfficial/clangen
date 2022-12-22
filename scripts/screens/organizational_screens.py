@@ -1,4 +1,5 @@
 import pygame
+import os
 
 from .base_screens import Screens
 
@@ -206,9 +207,12 @@ class SettingsScreen(Screens):
                 "beejeans<br></i>" \
                 "Thank you to the beta testers and all those who have helped with development.<br><br>" \
                 "<b>Thank you for playing!!</b><br><br>" \
-                "Licensed under Mozilla Public License Version 2.0"
+                "Code is licensed under <a href=https://www.mozilla.org/en-US/MPL/2.0/>Mozilla Public License Version 2.0</a><br>" \
+                "Art is liscensed under <a href=https://creativecommons.org/licenses/by-nc/4.0/legalcode>CC-BY-NC 4.0</a> "
 
     def handle_event(self, event):
+        if event.type == pygame_gui.UI_TEXT_BOX_LINK_CLICKED:
+            os.system(f"start \"\" {event.link_target}")
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.main_menu_button:
                 self.change_screen('start screen')
@@ -230,7 +234,7 @@ class SettingsScreen(Screens):
                 return
             elif event.ui_element == self.language_button:
                 self.open_lang_settings()
-                return
+
 
             if self.sub_menu == 'general':
                 self.handle_general_events(event)
