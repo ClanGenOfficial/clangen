@@ -795,9 +795,18 @@ class ProfileScreen(Screens):
             output += 'backstory: ' + 'clanborn'
 
         if the_cat.is_disabled():
+            for condition in the_cat.permanent_condition:
+                if the_cat.permanent_condition[condition]["born_with"] is True and the_cat.permanent_condition[condition]["moons_until"] == -2:
+                    output += 'has a permanent condition'
+                    break
+                elif the_cat.permanent_condition[condition]["born_with"] is False:
+                    output += 'has a permanent condition'
+                    break
+                else:
+                    continue
+
             # NEWLINE ----------
             output += "\n"
-            output += 'has a permanent condition'
 
         # NEWLINE ----------
         output += "\n"

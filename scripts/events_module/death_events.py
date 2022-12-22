@@ -123,7 +123,7 @@ class Death_Events():
                 other_history_text = event_text_adjust(Cat, death_cause.history_text[1], cat, other_cat, other_clan_name)
 
         # handle leader lives
-        if cat.status == "leader":
+        if cat.status == "leader" and "other_cat_death" not in death_cause.tags:
             if "all_lives" in death_cause.tags:
                 game.clan.leader_lives -= 10
                 cat.die()
