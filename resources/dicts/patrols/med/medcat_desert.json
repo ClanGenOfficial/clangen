@@ -634,7 +634,8 @@
 			"platonic",
 			"respect",
 			"p_l_to_r_c",
-			"s_c_to_r_c"
+			"s_c_to_r_c",
+			"no_app"
 		],
 		"intro_text":"p_l goes out with a warrior escort, both for safety as they look for Newleaf's fresh buds, and for carrying capacity should they find anything.",
 		"decline_text":"Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
