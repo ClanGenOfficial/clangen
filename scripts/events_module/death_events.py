@@ -42,6 +42,9 @@ class Death_Events():
             if game.clan.game_mode in ["expanded", "cruel season"] and "classic" in event.tags:
                 continue
 
+            if "all_lives" in event.tags and int(random.random() * 10):
+                continue
+
             # check season
             if game.clan.current_season not in event.tags:
                 continue
