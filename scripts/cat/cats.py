@@ -1649,9 +1649,6 @@ class Cat():
 
         if self.age == other_cat.age:
             return True
-
-        if self.age in "kittenadolescent" or other_cat.age in "kittenadolescent":
-            return False
         
         if abs(self.moons - other_cat.moons) <= 40:
             return True

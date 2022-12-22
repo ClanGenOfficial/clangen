@@ -136,9 +136,8 @@ class Patrol():
 
         possible_patrols = []
         final_patrols = []
-        patrol_type = "med" if ("medicine cat" or "medicine cat apprentice") in self.patrol_statuses else patrol_type
-        if patrol_type == "med" and ("medicine cat" or "medicine cat apprentice") not in self.patrol_statuses:
-            patrol_type = choice(["hunting", "border", "training"])
+        patrol_type = "med" if 'medicine cat' in self.patrol_statuses else patrol_type
+        patrol_type = "med" if 'medicine cat apprentice' in self.patrol_statuses else patrol_type
         patrol_size = len(self.patrol_cats)
         reputation = game.clan.reputation
         other_clan = self.other_clan
