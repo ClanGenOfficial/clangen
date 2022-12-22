@@ -227,11 +227,9 @@ class Game():
             self.clan.switch_clans()
             self.switches['switch_clan'] = False
         if self.switches['read_clans']:
-            with open('saves/clanlist.txt', 'r') as read_file:
-                clan_list = read_file.read()
-                if_clans = len(clan_list)
-            if if_clans > 0:
-                game.switches['clan_list'] = clan_list.split('\n')
+            clan_list = self.read_clans()
+            if clan_list:
+                game.switches['clan_list'] = clan_list
             self.switches['read_clans'] = False
 
     def read_clans(self):
