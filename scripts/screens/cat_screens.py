@@ -1079,7 +1079,7 @@ class ProfileScreen(Screens):
             elif influenced_trait is not None and influenced_skill is None:
                 influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait}."
             elif influenced_trait is None and influenced_skill is not None:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
+                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_skill}."
             elif influenced_trait is not None and influenced_skill is not None:
                 influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill}."
             else:
@@ -1808,7 +1808,7 @@ class ChangeNameScreen(Screens):
         self.heading = pygame_gui.elements.UITextBox("-Change Name-", pygame.Rect((100, 130), (600, 40)),
                                                      object_id=get_text_box_theme())
 
-        self.name_changed = pygame_gui.elements.UITextBox("Named Changed!", pygame.Rect((100, 350), (600, 40)),
+        self.name_changed = pygame_gui.elements.UITextBox("Name Changed!", pygame.Rect((100, 350), (600, 40)),
                                                           visible=False,
                                                           object_id=get_text_box_theme())
 

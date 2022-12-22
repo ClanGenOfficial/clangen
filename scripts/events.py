@@ -410,7 +410,7 @@ class Events():
                 ceremony.extend([str(game.clan.name) + "Clan welcomes " + str(cat.name.prefix) +
                 str(cat.name.suffix) + " as a new warrior, honoring their " +
                 str(random_honor) + "."])
-        if (promoted_to == 'apprentice') and cat.mentor is not None:
+        elif (promoted_to == 'apprentice') and cat.mentor is not None:
             ceremony.extend([
                 str(cat.name) +
                 " has reached the age of six moons and has been made an apprentice, with "
@@ -441,7 +441,29 @@ class Events():
         elif (promoted_to == 'apprentice') and cat.mentor is None:
             ceremony.extend(["Newly-made apprentice " + str(cat.name) +
                 " wished they had someone to mentor them."])
-        if (promoted_to == 'warrior' or promoted_to == 'apprentice'):
+        elif (promoted_to == 'medicine cat apprentice') and cat.mentor is not None:
+            ceremony.extend([
+                str(cat.name) +
+                " has decided that hunting and fighting is not the way they can provide for their clan. Instead, they have decided to serve their clan by healing and communing with StarClan"
+                + str(cat.mentor.name) + " proudly becomes their mentor."
+            ])
+        elif (promoted_to =='medicine cat apprentice') and cat.mentor is None:
+            ceremony.extend(["Newly-made medicine cat apprentice " + str(cat.name) +
+                " learns the way of healing through guidance from StarClan."])
+        elif (promoted_to == 'medicine cat'):
+            ceremony.extend([str(cat.name) + " is taken to speak with StarClan. They are now a full medicine cat of the clan."])
+        elif (promoted_to == 'elder' and not game.clan.leader.dead):
+            ceremony.extend([
+                str(game.clan.leader.name) +
+                " proudly calls a clan meeting to honor " + str(cat.name) +
+                "'s service to the clan. It is time they retire peacefully to the elder's den.",
+                str(cat.name) + " wished to join the elders. The clan honors them and all the service they have given to them."
+            ])
+        elif (promoted_to == 'elder' and game.clan.leader.dead):
+            ceremony.extend([
+                str(cat.name) + "wished to join the elders. The clan honors them and all the service they have given to them."
+            ])
+        if (promoted_to == 'warrior' or promoted_to == 'apprentice' or promoted_to == 'medicine cat apprentice' or promoted_to == 'medicine cat' or promoted_to == 'elder'):
             ceremony_text = choice(ceremony)
             game.cur_events_list.append(ceremony_text)
             game.ceremony_events_list.append(ceremony_text)
