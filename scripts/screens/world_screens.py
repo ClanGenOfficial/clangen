@@ -137,7 +137,7 @@ class OutsideClanScreen(Screens):
         # Generate object for the current cats
         pos_x = 0
         pos_y = 0
-        print(self.current_listed_cats)
+        # print(self.current_listed_cats)
         if self.current_listed_cats != []:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
                 self.display_cats.append(UISpriteButton(pygame.Rect((130 + pos_x, 180 + pos_y),(50,50)),cat.sprite, cat.ID))

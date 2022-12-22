@@ -48,7 +48,7 @@ class ClanScreen(Screens):
             if event.ui_element in self.cat_buttons:
                 # print("cat pressed")
                 game.switches["cat"] = event.ui_element.return_cat_id()
-                print(game.switches["cat"])
+                # print(game.switches["cat"])
                 # print(event.ui_element.return_cat_id())
                 self.change_screen('profile screen')
             if event.ui_element == self.label_toggle:

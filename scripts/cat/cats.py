@@ -1047,10 +1047,6 @@ class Cat():
         is_disabled = True
         if len(self.permanent_condition) <= 0:
             is_disabled = False
-        for condition in self.permanent_condition:
-            if self.permanent_condition[condition]['born_with'] is True and self.permanent_condition[condition]['moons_until'] != -2:
-                is_disabled = False
-
         return is_disabled is not False
 
     def contact_with_ill_cat(self, cat):
