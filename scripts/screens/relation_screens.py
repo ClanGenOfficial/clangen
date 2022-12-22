@@ -84,10 +84,11 @@ class ChooseMentorScreen(Screens):
                                      "trait and skill later in life.\nChoose your mentors wisely",
                                      pygame.Rect((180, 60), (440, 100)), line_spacing=0.95,
                                      object_id=get_text_box_theme("#cat_patrol_info_box"))
-        self.current_mentor_text = pygame_gui.elements.UITextBox(f"{str(self.the_cat.name)}'s current mentor is "
-                                                                 f"{str(self.mentor.name)}",
-                                                                 pygame.Rect((230, 130), (340, 30)),
-                                                                 object_id=get_text_box_theme("#cat_patrol_info_box"))
+        if self.mentor is not None:
+            self.current_mentor_text = pygame_gui.elements.UITextBox(f"{str(self.the_cat.name)}'s current mentor is "
+                                                                    f"{str(self.mentor.name)}",
+                                                                    pygame.Rect((230, 130), (340, 30)),
+                                                                    object_id=get_text_box_theme("#cat_patrol_info_box"))
 
         # Layout Images:
         self.mentor_frame = pygame_gui.elements.UIImage(pygame.Rect((40, 113), (281, 197)),
@@ -136,8 +137,9 @@ class ChooseMentorScreen(Screens):
         del self.heading
         self.info.kill()
         del self.info
-        self.current_mentor_text.kill()
-        del self.current_mentor_text
+        if (self.current_mentor_text):
+            self.current_mentor_text.kill()
+            del self.current_mentor_text
         self.mentor_frame.kill()
         del self.mentor_frame
         self.mentor_icon.kill()
@@ -170,8 +172,9 @@ class ChooseMentorScreen(Screens):
         self.selected_mentor = self.the_cat.mentor
 
         self.heading.set_text(f"Choose a new mentor for {str(self.the_cat.name)}")
-        self.current_mentor_text.set_text(
-            f"{str(self.the_cat.name)}'s current mentor is {str(self.the_cat.mentor.name)}")
+        if self.the_cat.mentor is not None:
+            self.current_mentor_text.set_text(
+                f"{str(self.the_cat.name)}'s current mentor is {str(self.the_cat.mentor.name)}")
 
         self.apprentice_details["apprentice_image"] = pygame_gui.elements.UIImage(pygame.Rect((600, 150), (150, 150)),
                                                                                   self.the_cat.large_sprite)
@@ -263,30 +266,31 @@ class ChooseMentorScreen(Screens):
         for ele in self.selected_details:
             self.selected_details[ele].kill()
         self.selected_details = {}
+        if (self.selected_mentor is not None):
 
-        self.selected_details["selected_image"] = pygame_gui.elements.UIImage(pygame.Rect((50, 150), (150, 150)),
-                                                                              self.selected_mentor.large_sprite)
+            self.selected_details["selected_image"] = pygame_gui.elements.UIImage(pygame.Rect((50, 150), (150, 150)),
+                                                                                self.selected_mentor.large_sprite)
 
-        info = self.selected_mentor.age + "\n" + self.selected_mentor.status + "\n" + \
-               self.selected_mentor.genderalign + "\n" + self.selected_mentor.trait + "\n" + \
-               self.selected_mentor.skill
-        if len(self.selected_mentor.former_apprentices) >= 1:
-            info += f"\n{len(self.selected_mentor.former_apprentices)} former app(s)"
-        if len(self.selected_mentor.apprentice) >= 1:
-            info += f"\n{len(self.selected_mentor.apprentice)} current app(s)"
-        self.selected_details["selected_info"] = UITextBoxTweaked(info,
-                                                                  pygame.Rect((210, 170), (105, 115)),
-                                                                  object_id="#cat_patrol_info_box",
-                                                                  line_spacing=0.95)
+            info = self.selected_mentor.age + "\n" + self.selected_mentor.status + "\n" + \
+                self.selected_mentor.genderalign + "\n" + self.selected_mentor.trait + "\n" + \
+                self.selected_mentor.skill
+            if len(self.selected_mentor.former_apprentices) >= 1:
+                info += f"\n{len(self.selected_mentor.former_apprentices)} former app(s)"
+            if len(self.selected_mentor.apprentice) >= 1:
+                info += f"\n{len(self.selected_mentor.apprentice)} current app(s)"
+            self.selected_details["selected_info"] = UITextBoxTweaked(info,
+                                                                    pygame.Rect((210, 170), (105, 115)),
+                                                                    object_id="#cat_patrol_info_box",
+                                                                    line_spacing=0.95)
 
-        name = str(self.selected_mentor.name)  # get name
-        if 11 <= len(name):  # check name length
-            short_name = str(name)[0:9]
-            name = short_name + '...'
-        self.selected_details["mentor_name"] = pygame_gui.elements.ui_label.UILabel(
-            pygame.Rect((65, 115), (110, 30)),
-            name,
-            object_id="#header_text_box")
+            name = str(self.selected_mentor.name)  # get name
+            if 11 <= len(name):  # check name length
+                short_name = str(name)[0:9]
+                name = short_name + '...'
+            self.selected_details["mentor_name"] = pygame_gui.elements.ui_label.UILabel(
+                pygame.Rect((65, 115), (110, 30)),
+                name,
+                object_id="#header_text_box")
 
     def update_cat_list(self):
         """Updates the cat sprite buttons. """
@@ -310,8 +314,9 @@ class ChooseMentorScreen(Screens):
         else:
             self.previous_page_button.enable()
             self.next_page_button.enable()
-
-        display_cats = valid_mentors[self.current_page - 1]
+        display_cats = []
+        if valid_mentors:
+            display_cats = valid_mentors[self.current_page - 1]
 
         # Kill all the currently displayed cats.
         for ele in self.cat_list_buttons:
@@ -664,7 +669,7 @@ class ViewChildrenScreen(Screens):
             self.next_sibling_page.disable()
         elif self.sibling_page_number == 1 and len(self.all_siblings) > 1:
             self.previous_sibling_page.disable()
-            self.next_sibling_page.ensable()
+            self.next_sibling_page.enable()
         else:
             self.previous_offspring_page.enable()
             self.next_offspring_page.enable()
@@ -715,7 +720,7 @@ class ViewChildrenScreen(Screens):
             self.next_offspring_page.disable()
         elif self.offspring_page_number == 1 and len(self.all_offspring) > 1:
             self.previous_offspring_page.disable()
-            self.next_offspring_page.ensable()
+            self.next_offspring_page.enable()
         else:
             self.previous_offspring_page.enable()
             self.next_offspring_page.enable()
