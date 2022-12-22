@@ -188,7 +188,7 @@ class SettingsScreen(Screens):
                 "CrumbsDeluxe<br>" \
                 "Hatsune Miku<br>" \
                 "Key<br>" \
-                "lago<br>" \
+                "larkgz<br>" \
                 "ozzie<br>" \
                 "sami(RAYTRAC3R)<br>" \
                 "scribble<br>" \
