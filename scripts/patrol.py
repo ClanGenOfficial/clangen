@@ -323,7 +323,8 @@ class Patrol():
                         print(str(self.patrol_apprentices[0]) + ' and ' + str(self.patrol_apprentices[1]))
                         continue
                 elif "no_app" in patrol.tags:
-                    if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_love_interest=True):
+                    if not self.patrol_leader.mate == self.patrol_random_cat or\
+                    not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_love_interest=True):
                         continue
 
 
