@@ -684,8 +684,8 @@ class AllegiancesScreen(Screens):
                         self.allegiance_list.append(
                             ['', '      Apprentices: ' + app_names[:-2]])
         # deputy
-        if game.clan.deputy != 0 and game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.outside:
-            game.allegiance_list.append([
+        if game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.outside:
+            self.allegiance_list.append([
                 '<b><u>DEPUTY</u></b>',
                 f"{str(game.clan.deputy.name)} - a {game.clan.deputy.describe_cat()}"
             ])
