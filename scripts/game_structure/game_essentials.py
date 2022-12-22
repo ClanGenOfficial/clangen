@@ -244,6 +244,22 @@ class Game():
             return clan_list
         else:
             return None
+    
+    def save_clanlist(self, loaded_clan = None):
+        """
+        Save list of clans to saves/clanlist.txt with the loaded_clan first in the list.
+        """
+        clans = []
+        if loaded_clan:
+            clans.append(f"{loaded_clan}\n")
+
+        for clan_name in self.switches['clan_list']:
+            if clan_name and clan_name != loaded_clan:
+                clans.append(f"{clan_name}\n")
+
+        if clans:
+            with open('saves/clanlist.txt', 'w') as f:
+                f.writelines(clans)
 
     def save_settings(self):
         """ Save user settings for later use """
