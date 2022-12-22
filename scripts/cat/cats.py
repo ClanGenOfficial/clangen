@@ -1667,7 +1667,7 @@ class Cat():
         """Checks if this cat can go on romantic patrols with the other cat."""
         # just to be sure, check if it is not the same cat
         affair = False
-        if game.settings['affairs']:
+        if game.settings['affair']:
             affair = True
         if self.ID == other_cat.ID:
             return False
