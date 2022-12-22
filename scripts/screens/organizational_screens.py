@@ -188,7 +188,7 @@ class SettingsScreen(Screens):
                 "Shou<br>" \
                 "Tanukigami<br>" \
                 "Tiri<br>" \
-                "Victor the IT guy<br>" \
+                "MathKangaroo (Victor)<br>" \
                 "ZtheCorgi<br>" \
                 "Charlie<br>" \
                 "green?<br>" \
