@@ -733,22 +733,30 @@ class Relation_Events():
             Returns:
                 integer (number)
         """
-        if mate_relation is None:
-            return 0
-
         affair_chance = 10
 
-        love_diff_mate_other = mate_relation.romantic_love - affair_relation.romantic_love
-        if love_diff_mate_other < 0:
-            affair_chance = 5
-            if abs(love_diff_mate_other) > 20:
-                affair_chance -= 1
-            if abs(love_diff_mate_other) > 25:
+        if mate_relation is None:
+            if affair_relation.romantic_love > 20:
+                affair_chance -= 2
+            if affair_relation.platonic_like > 20:
+                affair_chance -= 2
+            if affair_relation.comfortable > 20:
                 affair_chance -= 3
-            if abs(love_diff_mate_other) > 30:
-                affair_chance -= 4
+            if affair_relation.trust > 20:
+                affair_chance -= 3
+
         else:
-            affair_chance += love_diff_mate_other
+            love_diff_mate_other = mate_relation.romantic_love - affair_relation.romantic_love
+            if love_diff_mate_other < 0:
+                affair_chance = 5
+                if abs(love_diff_mate_other) > 20:
+                    affair_chance -= 1
+                if abs(love_diff_mate_other) > 25:
+                    affair_chance -= 3
+                if abs(love_diff_mate_other) > 30:
+                    affair_chance -= 4
+            else:
+                affair_chance += love_diff_mate_other
 
         return affair_chance
 
