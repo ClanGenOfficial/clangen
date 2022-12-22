@@ -214,7 +214,8 @@ class PatrolScreen(Screens):
                         self.patrol_type = 'med'
                 if med is False:
                     self.elements['herb'].disable()
-                    self.patrol_type = 'general'
+                    if self.patrol_type == 'med':
+                        self.patrol_type = 'general'
 
                 text = 'general patrol'
                 self.elements['info'].kill()  # clearing the text before displaying new text
