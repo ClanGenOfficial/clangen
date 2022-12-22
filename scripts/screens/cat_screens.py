@@ -798,10 +798,13 @@ class ProfileScreen(Screens):
         output += "\n"
 
         if the_cat.is_disabled():
-            output += 'has a permanent condition'
+            for condition in the_cat.permanent_condition:
+                if the_cat.permanent_condition[condition]['born_with'] is True and the_cat.permanent_condition[condition]["moons_until"] != -2:
+                    continue
+                output += 'has a permanent condition'
 
-            # NEWLINE ----------
-            output += "\n"
+                # NEWLINE ----------
+                output += "\n"
 
         if the_cat.is_injured():
             if "recovering from birth" in the_cat.injuries:
@@ -1079,7 +1082,7 @@ class ProfileScreen(Screens):
             elif influenced_trait is not None and influenced_skill is None:
                 influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait}."
             elif influenced_trait is None and influenced_skill is not None:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_skill}."
+                influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
             elif influenced_trait is not None and influenced_skill is not None:
                 influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill}."
             else:
@@ -1179,6 +1182,10 @@ class ProfileScreen(Screens):
         # check for permanent conditions and create their detail boxes
         if self.the_cat.is_disabled():
             for condition in self.the_cat.permanent_condition:
+                if self.the_cat.permanent_condition[condition]['born_with'] is True and \
+                        self.the_cat.permanent_condition[condition][
+                            "moons_until"] != -2:
+                    continue
                 # move to second page if count gets too high
                 if count < 4 and container != self.second_page:
                     container = self.first_page

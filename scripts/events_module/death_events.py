@@ -113,16 +113,17 @@ class Death_Events():
         history_text = 'this should not show up'
         other_history_text = 'this should not show up'
 
-        if cat.status != "leader" and death_cause.history_text[0] is not None:
+        # give history to cat if they die
+        if cat.status != "leader" and death_cause.history_text[0] is not None and "other_cat_death" not in death_cause.tags:
             history_text = event_text_adjust(Cat, death_cause.history_text[0], cat, other_cat, other_clan_name)
-        elif cat.status == "leader" and death_cause.history_text[1] is not None:
+        elif cat.status == "leader" and death_cause.history_text[1] is not None and "other_cat_death" not in death_cause.tags:
             history_text = event_text_adjust(Cat, death_cause.history_text[1], cat, other_cat, other_clan_name)
 
-        # check if other_cat dies and kill them
+        # give death history to other cat if they die
         if "other_cat_death" in death_cause.tags or "multi_death" in death_cause.tags:
-            if cat.status != "leader" and death_cause.history_text[0] is not None:
-                other_history_text = event_text_adjust(Cat, death_cause.history_text[0], cat, other_cat, other_clan_name)
-            elif cat.status == "leader" and death_cause.history_text[1] is not None:
+            if other_cat.status != "leader" and death_cause.history_text[0] is not None:
+                other_history_text = event_text_adjust(Cat, death_cause.history_text[0], other_cat, cat, other_clan_name)
+            elif other_cat.status == "leader" and death_cause.history_text[1] is not None:
                 other_history_text = event_text_adjust(Cat, death_cause.history_text[1], other_cat, cat, other_clan_name)
 
         # handle leader lives
