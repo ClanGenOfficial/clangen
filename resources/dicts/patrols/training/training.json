@@ -10,7 +10,7 @@
     "exp": 20,
     "success_text": [
         "Unsure but remembering the kittentales of red deathberries, r_c avoids them, and gives the rest of the patrol a head's up about the potentially dangerous bush.",
-        "After careful consideration and consulting with the other cats, r_c recognizes them as strawberries and brings the rare berries  back to the medicine cat's den.",
+        "After careful consideration and consulting with the other cats, r_c recognizes them as strawberries and brings the rare berries back to the medicine cat's den.",
         "Astutely, s_c recognises the cranberries, and carefully chews off a branch laden with them to bring back to camp - the herb stocks can use this odd fruit."
     ],
     "fail_text": [
@@ -35,14 +35,14 @@
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
-        "Unsure but remembering the kittentales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a a deathberry bush.",
-        "Whatever. Identifying them is a medicine cat problem.  app1 plucks the berries and brings them back to camp, where it turns out they're called strawberries."
+        "Unsure but remembering the kittentales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries and brings them back to camp, where it turns out they're called strawberries."
     ],
     "fail_text": [
         "Confidently gathering them and prancing back to camp, app1 is then informed that raspberries aren't a useful medicinal herb.",
         null,
-        "Whatever. Identifying them is a medicine cat problem.  app1 plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all medicine cat herbs taste horrible. Right? They collapse on the way back to camp, and there's nothing any cat can do for them.",
-        "Whatever. Identifying them is a medicine cat problem.  app1 plucks the horrible tasting berries and brings them back to camp, where the medicine cat immediately starts work trying to save them from deathberry poisoning."
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all medicine cat herbs taste horrible. Right? They collapse on the way back to camp, and there's nothing any cat can do for them.",
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the horrible tasting berries and brings them back to camp, where the medicine cat immediately starts work trying to save them from deathberry poisoning."
     ],
     "min_cats": 3,
     "max_cats": 6,
@@ -85,14 +85,14 @@
     "chance_of_success": 80,
     "exp": 20,
     "success_text": [
-        "Unsure but remembering the kittentales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a a deathberry bush.",
+        "Unsure but remembering the kittentales of red deathberries, app1 avoids them and alerts the patrol, who, extremely worried, confirm that this a deathberry bush.",
         "Whatever. Identifying them is a medicine cat problem.  app1 plucks the berries and brings them back to camp, where it turns out they're called strawberries."
     ],
     "fail_text": [
         "Confidently gathering them and prancing back to camp, app1 is then informed that raspberries aren't a useful medicinal herb.",
         null,
-        "Whatever. Identifying them is a medicine cat problem.  app1 plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all medicine cat herbs taste horrible. Right? They collapse on the way back to camp, and there's nothing any cat can do for them.",
-        "Whatever. Identifying them is a medicine cat problem.  app1 plucks the horrible tasting berries and brings them back to camp, where the medicine cat immediately starts work trying to save them from deathberry poisoning."
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the berries, several splitting in their mouth, and tries not to gag at the horrible taste - after all, all medicine cat herbs taste horrible. Right? They collapse on the way back to camp, and there's nothing any cat can do for them.",
+        "Whatever. Identifying them is a medicine cat problem. app1 plucks the horrible tasting berries and brings them back to camp, where the medicine cat immediately starts work trying to save them from deathberry poisoning."
     ],
     "min_cats": 3,
     "max_cats": 6,
@@ -236,7 +236,7 @@
         "p_l manages to skillfully smooth over any disagreement.",
         "p_l listens to both sides, then makes a careful judgment. It keeps no one happy, the mark of an excellent compromise.",
         "Talking everyone down, p_l encourages the patrol to focus on their work.",
-        "p_l has no time for this scat, and pulls the patrol to a halt to remind them that they have a Star-damned job to do, and quarreling like kittens will not be tolerated. The patrol returns to their work collecting nesting material with newfound vigor."
+        "p_l has no time for this spat, and pulls the patrol to a halt to remind them that they have a Star-damned job to do, and quarreling like kittens will not be tolerated. The patrol returns to their work collecting nesting material with newfound vigor."
     ],
     "fail_text": [
         "p_l stutters; they don't think they are fit to lead the patrol",
@@ -784,7 +784,7 @@
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
-        "As p_l nods along sympathetically, r_c describes a recent stupid decision they made. They're not looking to earse it, but they ask p_l what they'd do in r_c's place to fix it - and p_l feels a lot of pride to be the cat r_c chooses to confide in.",
+        "As p_l nods along sympathetically, r_c describes a recent stupid decision they made. They're not looking for sympathy, but they ask p_l what they'd do in r_c's place to fix it - and p_l feels a lot of pride to be the cat r_c chooses to confide in.",
         "Maybe it's a stupid idea, this vague plan r_c has been thinking about for getting more freshkill. But p_l reassures them, making them feel listened to and valued, and the cats work on the idea, evolving it together.",
         "s_c knows just what to do, and the smile on r_c's face when they present their solution makes all the effort of solving things worth it."
     ],
@@ -803,7 +803,7 @@
     "season": "Any",
     "tags": ["training", "platonic", "romantic", "no_app"],
     "intro_text": "Quietly, r_c brings p_l aside as they work on their chores, asking for help with wording something difficult.",
-    "decline_text": "Both of them are interrupted by a request form a clanmate - this conversion will have to wait.",
+    "decline_text": "Both of them are interrupted by a request form a clanmate - this conversation will have to wait.",
     "chance_of_success": 70,
     "exp": 10,
     "success_text": [
@@ -825,7 +825,7 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["training", "platonic", "romantic", "no_app"],
-    "intro_text": "During an odd moment of downtime, r_c asks p_l if they think r_c is a good teacher.",
+    "intro_text": "During an odd moment of downtime, r_c asks p_l if they think r_c they're a good teacher.",
     "decline_text": "They're interrupted by some clanmates who need help, and go off to attend to their duties.",
     "chance_of_success": 70,
     "exp": 10,
