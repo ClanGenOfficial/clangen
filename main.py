@@ -23,13 +23,6 @@ manager.add_font_paths(
     italic_path='resources/fonts/NotoSans-MediumItalic.ttf',
     bold_italic_path='resources/fonts/NotoSans-ExtraBoldItalic.ttf'
 )
-manager.get_theme().load_theme('resources/buttons.json')
-manager.get_theme().load_theme('resources/text_boxes.json')
-manager.get_theme().load_theme('resources/text_boxes_dark.json')
-manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
-manager.get_theme().load_theme('resources/windows.json')
-manager.get_theme().load_theme('resources/tool_tips.json')
-
 manager.preload_fonts([
     {'name': 'notosans', 'point_size': 11, 'style': 'regular'},
     {'name': 'notosans', 'point_size': 11, 'style': 'bold'},
@@ -52,6 +45,14 @@ manager.preload_fonts([
     {'name': 'notosans', 'point_size': 20, 'style': 'italic'},
     {'name': 'notosans', 'point_size': 20, 'style': 'bold_italic'},
 ])
+manager.get_theme().load_theme('resources/buttons.json')
+manager.get_theme().load_theme('resources/text_boxes.json')
+manager.get_theme().load_theme('resources/text_boxes_dark.json')
+manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
+manager.get_theme().load_theme('resources/windows.json')
+manager.get_theme().load_theme('resources/tool_tips.json')
+
+
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens.all_screens import *
 

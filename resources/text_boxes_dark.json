@@ -234,8 +234,7 @@
         "font":
             {
                 "name": "notosans",
-                "size": "13",
-                "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+                "size": "13"
             },
         "misc":
             {
