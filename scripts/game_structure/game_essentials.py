@@ -129,7 +129,7 @@ class Game():
         'set_game_mode': False,
         'broke_up': False,
         'show_info': False,
-        'patrol_chosen': 'general'
+        'patrol_chosen': 'general',
         'favorite_sub_tab': None
 
     }
