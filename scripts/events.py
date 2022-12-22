@@ -377,24 +377,23 @@ class Events():
         #                      promote cats and add to event list                      #
         # ---------------------------------------------------------------------------- #
         ceremony = []
+        cat.status_change(promoted_to)
         if (promoted_to == 'warrior'):
             resource_directory = "resources/dicts/events/ceremonies/"
-
             TRAITS = None
             with open(f"{resource_directory}ceremony_traits.json", 'r') as read_file:
                 TRAITS = ujson.loads(read_file.read())
-
             random_honor = choice(TRAITS[cat.trait])
             if not game.clan.leader.dead:
                 ceremony.extend([
                     str(game.clan.leader.name) +
-                    " calls the clan to a meeting, and declares " + str(cat.name) +
-                    " to be a warrior. They are now called " +
+                    " calls the clan to a meeting, and declares " + str(cat.name.prefix) +
+                    "paw to be a warrior. They are now called " +
                     str(cat.name.prefix) + str(cat.name.suffix) +
                     " and are celebrated for their " + str(random_honor) + ".",
                     str(game.clan.leader.name) +
-                    " stands above the clan and proclaims that " + str(cat.name) +
-                    " shall now be known as " + str(cat.name.prefix) +
+                    " stands above the clan and proclaims that " + str(cat.name.prefix) +
+                    "paw shall now be known as " + str(cat.name.prefix) +
                     str(cat.name.suffix) + ", honoring their " +
                     str(random_honor) + ".",
                     str(game.clan.name) + "Clan welcomes " + str(cat.name.prefix) +
@@ -410,19 +409,18 @@ class Events():
                 ceremony.extend([str(game.clan.name) + "Clan welcomes " + str(cat.name.prefix) +
                 str(cat.name.suffix) + " as a new warrior, honoring their " +
                 str(random_honor) + "."])
-        cat.status_change(promoted_to)
-        if (promoted_to == 'apprentice'):
+        if (promoted_to == 'apprentice') and cat.mentor is not None:
             ceremony.extend([
                 str(cat.name) +
                 " has reached the age of six moons and has been made an apprentice, with "
                 + str(cat.mentor.name) + " as their mentor.",
                 "Newly-made apprentice " + str(cat.name) +
                 " touched noses with their new mentor, " +
-                str(cat.mentor.name) + ".",
+                str(cat.mentor.name) + "."
             ])
             if cat.parent1 is not None and str(
                     cat_class.all_cats[cat.parent1].name) != str(
-                        cat.mentor.name):
+                        cat.mentor.name) and cat.parent1 != "unnamed queen":
                 ceremony.extend([
                     str(cat_class.all_cats[cat.parent1].name) +
                     " is watching in pride as " + str(cat.name) +
@@ -439,9 +437,13 @@ class Events():
                     str(cat.mentor.name) +
                     " as their mentor to make sure that happens."
                 ])
+        elif (promoted_to == 'apprentice') and cat.mentor is None:
+            ceremony.extend(["Newly-made apprentice " + str(cat.name) +
+                " wished they had someone to mentor them."])
         if (promoted_to == 'warrior' or promoted_to == 'apprentice'):
-            game.cur_events_list.append(choice(ceremony))
-            game.ceremony_events_list.append(choice(ceremony))
+            ceremony_text = choice(ceremony)
+            game.cur_events_list.append(ceremony_text)
+            game.ceremony_events_list.append(ceremony_text)
         else:
             game.cur_events_list.append(f'{str(cat.name)}{ceremony_text}')
 

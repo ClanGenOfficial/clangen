@@ -79,7 +79,7 @@
         "comfortable": [
             "is hiding under a bush from (cat), but they can't stop giggling.",
             "is watching over (cat).",
-            "bestowing wisdom onto (cat).",
+            "bestows wisdom onto (cat).",
             "is telling (cat) in great detail how they would protect them from any danger.",
             "is purring loudly to comfort (cat).",
             "helps (cat) work through something difficult that happened to them.",
@@ -158,7 +158,7 @@
 
         ],
         "admiration": [
-            "bestowing wisdom onto (cat).",
+            "bestows wisdom onto (cat).",
             "noticed that (cat) is falling behind in training and offered to help them catch up.",
             "is thinking about how much (cat) reminds them of their own apprentice days."
         ],
