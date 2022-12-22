@@ -25,8 +25,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
+            "size": "15"
         },
         "misc": {
             "border_width": "0",
@@ -40,9 +39,8 @@
             "normal_text": "#000000"
         },
         "font": {
-            "name": "nonosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
+            "name": "notosans",
+            "size": "15"
         },
         "misc": {
             "border_width": "0",
@@ -56,9 +54,8 @@
             "normal_text": "#000000"
         },
         "font": {
-            "name": "nonosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
+            "name": "notosans",
+            "size": "15"
         },
         "misc": {
             "border_width": "0",
@@ -73,8 +70,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
+            "size": "15"
         },
         "misc": {
             "border_width": "0",

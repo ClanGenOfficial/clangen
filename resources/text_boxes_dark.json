@@ -28,8 +28,7 @@
         "font":
         {
             "name": "nonosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
+            "size": "15"
         },
         "misc":
         {
@@ -47,9 +46,8 @@
         },
         "font":
         {
-            "name": "nonosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
+            "name": "notosans",
+            "size": "15"
         },
         "misc":
         {
@@ -67,9 +65,8 @@
         },
         "font":
         {
-            "name": "nonosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
+            "name": "notosans",
+            "size": "15"
         },
         "misc":
         {
@@ -237,8 +234,7 @@
         "font":
             {
                 "name": "notosans",
-                "size": "13",
-                "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+                "size": "13"
             },
         "misc":
             {
