@@ -21,9 +21,8 @@
             "active_border": "#776045"
         },
         "font": {
-            "name": "nonosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
+            "name": "notosans",
+            "size": "15"
         },
         "misc": {
             "border_width": "12",
