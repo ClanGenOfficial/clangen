@@ -249,7 +249,7 @@ class ChooseMentorScreen(Screens):
             self.next_cat = 0
 
     def change_mentor(self, new_mentor=None):
-        if new_mentor:
+        if new_mentor and self.the_cat.mentor is not None:
             self.the_cat.mentor.apprentice.remove(self.the_cat)
             if self.the_cat.moons > 6:
                 self.the_cat.mentor.former_apprentices.append(self.the_cat)

@@ -160,6 +160,8 @@ class Clan():
         for _ in range(number_other_clans):
             self.all_clans.append(OtherClan())
         self.save_clan()
+        game.save_clanlist(self.name)
+        game.switches['clan_list'] = game.read_clans()
         #if map_available:
         #    save_map(game.map_info, game.clan.name)
 
@@ -248,10 +250,7 @@ class Clan():
             self.med_cat_number = len(self.med_cat_list)
 
     def switch_clans(self, clan):
-        list_data = clan + "\n"
-        for c in game.read_clans():
-            if c != clan:
-                list_data += c + "\n"
+        game.save_clanlist(clan)
         game.cur_events_list.clear()
         game.other_clans_events_list.clear()
         game.birth_death_events_list.clear()
@@ -259,8 +258,6 @@ class Clan():
         game.health_events_list.clear()
         game.ceremony_events_list.clear()
         game.misc_events_list.clear()
-        with open('saves/clanlist.txt', 'w') as write_file:
-            write_file.write(list_data)
         game.cur_events_list.clear()
         game.other_clans_events_list.clear()
         game.birth_death_events_list.clear()
@@ -307,12 +304,7 @@ class Clan():
 
         with open(f'saves/{self.name}clan.txt', 'w') as write_file:
             write_file.write(data)
-        list_data = self.name + "\n"
-        for i in range(len(game.switches['clan_list'])):
-            if game.switches['clan_list'][i] != self.name:
-                list_data = list_data + game.switches['clan_list'][i] + "\n"
-        with open('saves/clanlist.txt', 'w') as write_file:
-            write_file.write(list_data)
+        #game.save_clanlist(self.name)
 
     def load_clan(self):
         other_clans = []

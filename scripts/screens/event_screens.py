@@ -55,7 +55,7 @@ class EventsScreen(Screens):
                 if get_living_cat_count(Cat) == 0:
                     GameOver('events screen')
 
-                print(get_living_cat_count(Cat))
+                # print(get_living_cat_count(Cat))
                 self.all_events = ""
                 self.event_display_type = 'all events'
                 self.all_events_button.disable()

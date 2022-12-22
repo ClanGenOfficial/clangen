@@ -312,7 +312,7 @@ class Relation_Events():
         hit = int(random.random() * chance)
         if hit:
             return
-        print(chance)
+        # print(chance)
 
         # even with no_gendered_breeding on a male cat with no second parent should not be count as pregnant
         # instead, the cat should get the kit instantly

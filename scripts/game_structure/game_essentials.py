@@ -228,11 +228,9 @@ class Game():
             self.clan.switch_clans()
             self.switches['switch_clan'] = False
         if self.switches['read_clans']:
-            with open('saves/clanlist.txt', 'r') as read_file:
-                clan_list = read_file.read()
-                if_clans = len(clan_list)
-            if if_clans > 0:
-                game.switches['clan_list'] = clan_list.split('\n')
+            clan_list = self.read_clans()
+            if clan_list:
+                game.switches['clan_list'] = clan_list
             self.switches['read_clans'] = False
 
     def read_clans(self):
@@ -241,10 +239,26 @@ class Game():
             if_clans = len(clan_list)
         if if_clans > 0:
             clan_list = clan_list.split('\n')
-            clan_list = [i for i in clan_list if i]  # Remove empty
+            clan_list = [i.strip() for i in clan_list if i]  # Remove empty and whitespace
             return clan_list
         else:
             return None
+    
+    def save_clanlist(self, loaded_clan = None):
+        """
+        Save list of clans to saves/clanlist.txt with the loaded_clan first in the list.
+        """
+        clans = []
+        if loaded_clan:
+            clans.append(f"{loaded_clan}\n")
+
+        for clan_name in self.switches['clan_list']:
+            if clan_name and clan_name != loaded_clan:
+                clans.append(f"{clan_name}\n")
+
+        if clans:
+            with open('saves/clanlist.txt', 'w') as f:
+                f.writelines(clans)
 
     def save_settings(self):
         """ Save user settings for later use """
