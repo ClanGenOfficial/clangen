@@ -441,6 +441,7 @@ class Events():
                 ])
         if (promoted_to == 'warrior' or promoted_to == 'apprentice'):
             game.cur_events_list.append(choice(ceremony))
+            game.ceremony_events_list.append(choice(ceremony))
         else:
             game.cur_events_list.append(f'{str(cat.name)}{ceremony_text}')
 
