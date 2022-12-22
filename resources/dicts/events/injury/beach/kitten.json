@@ -101,7 +101,7 @@
             "Greenleaf",
             "Leaf-fall"
         ],
-        "event_text": "r_c is hopping around in the tide pools when they trip and fall onto the rocks. Thankfully they're only a bit bruised.",
+        "event_text": "m_c is hopping around in the tide pools when they trip and fall onto the rocks. Thankfully they're only a bit bruised.",
         "history_text": [
             null,
             null,
@@ -119,7 +119,7 @@
             "Leaf-bare",
             "Leaf-fall"
         ],
-        "event_text": "r_c is playing around on the iced over tide pools, slipping and sliding every which way, when they slip a little too much and take a tumble.",
+        "event_text": "r=m_c is playing around on the iced over tide pools, slipping and sliding every which way, when they slip a little too much and take a tumble.",
         "history_text": [
             null,
             null,
@@ -137,7 +137,7 @@
             "Leaf-bare",
             "Leaf-fall"
         ],
-        "event_text": "r_c is playing around on the iced over tide pools, slipping and sliding every which way, when they slip a little too much and take a tumble.",
+        "event_text": "m_c is playing around on the iced over tide pools, slipping and sliding every which way, when they slip a little too much and take a tumble.",
         "history_text": [
             null,
             null,
@@ -155,7 +155,7 @@
             "Leaf-bare",
             "Leaf-fall"
         ],
-        "event_text": "r_c is playing around on the iced over tide pools, slipping and sliding every which way, when they slip a little too much and twist their paw.",
+        "event_text": "m_c is playing around on the iced over tide pools, slipping and sliding every which way, when they slip a little too much and twist their paw.",
         "history_text": [
             null,
             null,
@@ -175,7 +175,7 @@
             "Leaf-bare",
             "Leaf-fall"
         ],
-        "event_text": "r_c is jumping around on the rocks when they slip and fall. The soft sand of the cave floor softens their landing, but they're still sporting some new bruises.",
+        "event_text": "m_c is jumping around on the rocks when they slip and fall. The soft sand of the cave floor softens their landing, but they're still sporting some new bruises.",
         "history_text": [
             null,
             null,
