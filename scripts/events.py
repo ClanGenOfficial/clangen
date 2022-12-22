@@ -50,6 +50,7 @@ class Events():
                 #                              exiled cat events                               #
                 # ---------------------------------------------------------------------------- #
                 # aging the cat
+                cat.one_moon()
                 cat.moons += 1
                 if cat.moons == 6:
                     cat.age = 'adolescent'

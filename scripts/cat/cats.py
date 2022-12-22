@@ -505,6 +505,11 @@ class Cat():
 
         # get possible thoughts
         thought_possibilities = get_thoughts(self, other_cat)
+        print(str(self.exiled))
+        if (self.exiled):
+            thought_possibilities = get_thoughts(self, other_cat)
+
+
         chosen_thought = random.choice(thought_possibilities)
 
         # insert name if it is needed
