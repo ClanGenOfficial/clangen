@@ -386,6 +386,8 @@ class Condition_Events():
         if text is not None:
             game.cur_events_list.append(text)
             game.health_events_list.append(text)
+            if cat.dead:
+                game.birth_death_events_list.append(text)
             if has_other_clan:
                 game.other_clans_events_list.append(text)
 
