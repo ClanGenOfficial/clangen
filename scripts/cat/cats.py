@@ -1592,10 +1592,14 @@ class Cat():
 # ---------------------------------------------------------------------------- #
 #                                 relationships                                #
 # ---------------------------------------------------------------------------- #
-    def is_potential_mate(self, other_cat, for_love_interest = False):
+    def is_potential_mate(self, other_cat, for_love_interest = False, for_patrol = False):
         """Add aditional information to call the check."""
         former_mentor_setting = game.settings['romantic with former mentor']
-        return self._intern_potential_mate(other_cat, for_love_interest, former_mentor_setting)
+        for_patrol = for_patrol
+        if for_patrol:
+            return self._patrol_potential_mate(other_cat, for_love_interest, former_mentor_setting)
+        else:
+            return self._intern_potential_mate(other_cat, for_love_interest, former_mentor_setting)
 
     def _intern_potential_mate(self, other_cat, for_love_interest, former_mentor_setting):
         """Checks if this cat is a free and potential mate for the other cat."""
@@ -1617,6 +1621,68 @@ class Cat():
             return False
 
         if self.mate or other_cat.mate:
+            return False
+
+        # check for mentor
+        is_former_mentor = (other_cat in self.former_apprentices or self in other_cat.former_apprentices)
+        if is_former_mentor and not former_mentor_setting:
+            return False
+
+        # Relationship checks
+        # Apparently, parent2 can't exist without parent1, so we only need to check parent1
+        if self.parent1 or other_cat.parent1:
+            # Check for relation via other_cat's parents (parent/grandparent)
+            if other_cat.parent1:
+                if self.is_grandparent(other_cat) or self.is_parent(other_cat):
+                    return False
+                # Check for uncle/aunt via self's sibs & other's parents
+                if self.siblings:
+                    if self.is_uncle_aunt(other_cat):
+                        return False
+                # Check for sibs via self's parents and other_cat's parents
+                if self.parent1:
+                    if self.is_sibling(other_cat) or other_cat.is_sibling(self):
+                        return False
+            # Check for relation via self's parents (parent/grandparent)
+            if self.parent1:
+                if other_cat.is_grandparent(self) or other_cat.is_parent(self):
+                    return False
+                # Check for uncle/aunt via other_cat's sibs & self's parents
+                if other_cat.siblings:
+                    if other_cat.is_uncle_aunt(self):
+                        return False
+        else:
+            if self.is_sibling(other_cat) or other_cat.is_sibling(self):
+                        return False
+
+        if self.age != other_cat.age:
+            return False
+        
+        if abs(self.moons - other_cat.moons) >= 40:
+            return False
+
+        return True
+
+    def _patrol_potential_mate(self, other_cat, for_love_interest, former_mentor_setting):
+        """Checks if this cat can go on romantic patrols with the other cat."""
+        # just to be sure, check if it is not the same cat
+        affair = False
+        if game.settings['affairs']:
+            affair = True
+        if self.ID == other_cat.ID:
+            return False
+
+        # check exiled, outside, and dead cats
+        if self.dead or self.outside or other_cat.dead or other_cat.outside:
+            return False
+
+        # check for age
+        if (self.moons < 14 or other_cat.moons < 14) and not for_love_interest:
+            return False
+
+        # check for current mate
+        # if the cat has a mate, they are not open for a new mate UNLESS AFFAIRS ARE ON
+        if not affair and self.mate:
             return False
 
         # check for mentor
