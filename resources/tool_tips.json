@@ -1,0 +1,25 @@
+{
+    "tool_tip": {
+        "misc": {
+            "rect_width": "200"
+        }
+    },
+    "tool_tip.text_box": {
+        "colours": {
+            "normal_border": "#2F2918",
+            "dark_bg": "#AC9D72"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "13"
+        },
+        "misc": {
+            "shape": "rounded_rectangle",
+            "shape_corner_radius": "8",
+            "border_width": "2",
+            "shadow_width": "0",
+            "enable_title_bar": "0"
+        }
+    }
+
+}

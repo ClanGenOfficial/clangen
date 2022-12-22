@@ -8,8 +8,8 @@ import html
 
 
 class UIImageButton(pygame_gui.elements.UIButton):
-    '''Subclass of pygame_gui's button class. This allows for auto-scaling of the 
-        button image.'''
+    """Subclass of pygame_gui's button class. This allows for auto-scaling of the
+        button image."""
 
     def _set_any_images_from_theme(self):
 

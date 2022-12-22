@@ -6,6 +6,11 @@
             "dark_bg": "#00000000",
             "normal_text": "#EFE5CE"
         },
+        "font":
+        {
+            "name": "notosans",
+            "size": "15"
+        },
         "misc":
         {
             "border_width": "0",
@@ -83,9 +88,8 @@
         },
         "font":
         {
-            "name": "nonosans",
-            "size": "11",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "11"
         },
         "misc":
         {
@@ -104,9 +108,8 @@
         },
         "font":
         {
-            "name": "nonosans",
-            "size": "11",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "11"
         },
         "misc":
         {
@@ -126,9 +129,8 @@
         },
         "font":
         {
-            "name": "nonosans",
-            "size": "20",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "20"
         },
         "misc":
         {
@@ -147,9 +149,8 @@
         },
         "font":
         {
-            "name": "nonosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "15"
         },
         "misc":
         {
@@ -168,9 +169,8 @@
         },
         "font":
         {
-            "name": "nonosans2",
-            "size": "13",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "13"
         },
         "misc":
         {
@@ -189,9 +189,8 @@
         },
         "font":
         {
-            "name": "nonosans",
-            "size": "17",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "17"
         },
         "misc":
         {
@@ -209,9 +208,8 @@
         },
         "font":
         {
-            "name": "nonosans",
-            "size": "17",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "17"
         },
         "misc":
         {
@@ -238,7 +236,7 @@
             },
         "font":
             {
-                "name": "nonosans",
+                "name": "notosans",
                 "size": "13",
                 "regular_path": "resources/fonts/NotoSans-Regular.ttf"
             },

@@ -15,13 +15,14 @@ def medical_cats_condition_fulfilled(all_cats, amount_per_med):
         , all_cats
     ))
 
+    max_exp = float(len(list(filter(lambda c: c.experience == 100, medicine_cats))) * 2)
     good_healer = float(len(list(filter(lambda c: c.skill == 'good healer', medicine_cats))) * 1.5)
     great_healer = float(len(list(filter(lambda c: c.skill == 'great healer', medicine_cats))) * 1.75)
     fantastic_healer = float(len(list(filter(lambda c: c.skill == 'fantastic healer', medicine_cats))) * 2)
     normal_meds = float(
         len(list(filter(lambda c: c.skill not in ['good healer', 'great healer', 'fantastic healer'], medicine_cats))))
 
-    total_adult_med_number = good_healer + great_healer + fantastic_healer + normal_meds
+    total_adult_med_number = good_healer + great_healer + fantastic_healer + normal_meds + max_exp
 
     relevant_cats = list(filter(lambda c: not c.dead and not c.outside, all_cats))
     number = len(relevant_cats) / (amount_per_med + 1)

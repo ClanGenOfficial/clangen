@@ -41,6 +41,7 @@ class Game():
     game_mode = ''
     language_list = ['english', 'spanish', 'german']
     game_mode_list = ['classic', 'expanded', 'cruel season']
+    sub_tab_list = ['life events', 'user notes']
 
     # Keeping track of various last screen for various purposes
     last_screen_forupdate = 'start screen'
@@ -129,6 +130,7 @@ class Game():
         'broke_up': False,
         'show_info': False,
         'patrol_chosen': 'general'
+        'favorite_sub_tab': None
 
     }
     all_screens = {}
@@ -155,7 +157,8 @@ class Game():
         'romantic with former mentor': True,
         'game_mode': None,
         'deputy': False,
-        'den labels': True
+        'den labels': True,
+        'favorite sub tab': None
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
@@ -176,7 +179,8 @@ class Game():
         'romantic with former mentor': [False, True],
         'game_mode': game_mode_list,
         'deputy': [False, True],
-        'den labels': [False, True]
+        'den labels': [False, True],
+        'favorite sub tab': sub_tab_list
     }  # Lists of possible options for each setting
     settings_changed = False
 
