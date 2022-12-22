@@ -251,6 +251,7 @@ class Patrol():
             if "apprentice" in patrol.tags:
                 if "apprentice" not in self.patrol_statuses:
                     continue
+                
 
             # makes sure that the deputy is present if the deputy tag is
             if "deputy" in patrol.tags:
@@ -320,11 +321,11 @@ class Patrol():
                 if ("rel_two_apps" and "two_apprentices") in patrol.tags and len(self.patrol_apprentices) >= 2:
                     if not self.patrol_apprentices[0].is_potential_mate(self.patrol_apprentices[1],
                                                                         for_love_interest=True):
+                        print(str(self.patrol_apprentices[0]) + ' and ' + str(self.patrol_apprentices[1]))
                         continue
-                """else:
-                    if not self.patrol_leader.is_potential_mate(self.patrol_random_cat, for_love_interest=True)\
-                        or not self.patrol_leader.mate == self.patrol_random_cat:
-                        continue"""
+                elif "no_app" in patrol.tags:
+                    if not self.patrol_random_cat.is_potential_mate(self.patrol_leader):
+                        continue
 
 
             final_patrols.append(patrol)
