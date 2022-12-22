@@ -191,7 +191,7 @@ class Events():
             return
 
         # check for death/reveal/risks/retire caused by permanent conditions
-        if cat.is_disabled():
+        if cat.is_disabled() or len(cat.permanent_condition) > 0:
             self.condition_events.handle_already_disabled(cat)
         self.perform_ceremonies(cat)  # here is age up included
 
@@ -429,7 +429,7 @@ class Events():
                     " to apprentice under. They know that " +
                     str(cat.mentor.name) + " was a good choice."
                 ])
-            if cat.permanent_condition and not game.clan.leader.dead:
+            if cat.is_disabled() and not game.clan.leader.dead:
                 ceremony.extend([
                     str(cat.name) + " is confidently telling " +
                     str(game.clan.leader.name) +
@@ -447,6 +447,7 @@ class Events():
             game.ceremony_events_list.append(ceremony_text)
         else:
             game.cur_events_list.append(f'{str(cat.name)}{ceremony_text}')
+            game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
 
     def gain_accessories(self, cat):
         # ---------------------------------------------------------------------------- #
@@ -911,7 +912,7 @@ class Events():
                 game.cur_events_list.append(choice(loner_text))
                 game.misc_events_list.append(choice(loner_text))
                 game.cur_events_list.append(choice(success_text))
-                game.misc_events_list.append(choice(loner_text))
+                game.misc_events_list.append(choice(success_text))
 
             elif type_of_new_cat == 6:
                 created_cats = self.create_new_cat(
