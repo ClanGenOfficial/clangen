@@ -153,6 +153,7 @@ class Clan():
             self.all_clans.append(OtherClan())
         self.save_clan()
         game.save_clanlist(self.name)
+        game.switches['clan_list'] = game.read_clans()
         #if map_available:
         #    save_map(game.map_info, game.clan.name)
 
