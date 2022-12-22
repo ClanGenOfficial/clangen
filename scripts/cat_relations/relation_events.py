@@ -787,7 +787,8 @@ class Relation_Events():
         # a chance of 0 should always be a "auto hit"
         # if chance_affair == 0 or randint(1, chance_affair) == 1:
         if not chance_affair or not int(random.random() * chance_affair):
-            second_parent = highest_romantic_relation.cat_to
+            if highest_romantic_relation.is_potential_mate(cat):
+                second_parent = highest_romantic_relation.cat_to
 
         return second_parent
 
