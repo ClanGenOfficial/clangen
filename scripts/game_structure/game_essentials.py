@@ -379,7 +379,6 @@ class Game():
                 "df": inter_cat.df,
                 "outside": inter_cat.outside,                
                 "corruption": inter_cat.corruption if inter_cat.corruption else 0,
-                "outside": inter_cat.outside,
                 "retired": inter_cat.retired if inter_cat.retired else False
             }
             clan_cats.append(cat_data)
