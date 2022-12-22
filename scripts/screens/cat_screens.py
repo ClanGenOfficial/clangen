@@ -281,9 +281,12 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.dangerous_tab_button:
                 self.toggle_dangerous_tab()
             elif event.ui_element == self.backstory_tab_button:
-                self.open_sub_tab = game.settings['favorite sub tab']
                 if self.open_sub_tab is None:
-                    self.open_sub_tab = 'life events'
+                    if game.settings['favorite sub tab'] is None:
+                        self.open_sub_tab = 'life events'
+                    else:
+                        self.open_sub_tab = game.settings['favorite sub tab']
+
                 self.toggle_history_tab()
             elif event.ui_element == self.conditions_tab_button:
                 self.toggle_conditions_tab()
@@ -839,7 +842,8 @@ class ProfileScreen(Screens):
         self.close_current_tab()
 
         if previous_open_tab == 'history' and sub_tab_switch is False:
-            '''If the current open tab is relations, just close the tab and do nothing else. '''
+            '''If the current open tab is history and we aren't switching between sub tabs,
+             just close the tab and do nothing else. '''
             pass
         else:
             self.open_tab = 'history'
@@ -897,10 +901,7 @@ class ProfileScreen(Screens):
         self.update_disabled_buttons_and_text()
 
     def save_user_notes(self):
-        if game.switches['clan_name'] != '':
-            clanname = game.switches['clan_name']
-        else:
-            clanname = game.switches['clan_list'][0]
+        clanname = game.clan.name
 
         notes = self.user_notes
 

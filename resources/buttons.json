@@ -2366,9 +2366,8 @@
         },
         "font":
         {
-        "name": "nonosans",
-        "size": "15",
-        "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+        "name": "notosans",
+        "size": "15"
         },
         "misc":
         {
