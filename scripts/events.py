@@ -407,9 +407,12 @@ class Events():
             ])
         cat.status_change(promoted_to)
         if (promoted_to == 'warrior'):
-            game.cur_events_list.append(choice(ceremony))
+            ceremony = choice(ceremony)
+            game.cur_events_list.append(ceremony)
+            game.ceremony_events_list.append(ceremony)
         else:
             game.cur_events_list.append(f'{str(cat.name)}{ceremony_text}')
+            game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
 
     def gain_accessories(self, cat):
         # ---------------------------------------------------------------------------- #
