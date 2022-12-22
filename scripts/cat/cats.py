@@ -1655,13 +1655,13 @@ class Cat():
             if self.is_sibling(other_cat) or other_cat.is_sibling(self):
                         return False
 
-        if self.age == other_cat.age:
-            return True
+        if self.age != other_cat.age:
+            return False
         
-        if abs(self.moons - other_cat.moons) <= 40:
-            return True
+        if abs(self.moons - other_cat.moons) >= 40:
+            return False
 
-        return False
+        return True
 
     def unset_mate(self, breakup = False, fight = False):
         """Unset the mate."""
