@@ -171,15 +171,42 @@ class SettingsScreen(Screens):
     # Contains the text for the checkboxes.
     checkboxes_text = {}
 
-    info_text = '''
-    Welcome to Warrior Cats clan generator!
-    This is fan-made generator for the Warrior Cats -book series by Erin Hunter.
-    Create a new clan with the 'New Clan' button. 8 clans can be saved and revisited. If you go over that number then the oldest save will be overwritten
-    You're free to use the characters and sprites generated in this program, as you like, as long as you don't claim the sprites as your own creations or sell them for any reason.
-    Original creator: just-some-cat.tumblr.com
-    Fan edit made by: SableSteel
-
-    Thank you for playing!!'''
+    info_text = "<b>Welcome to Warrior Cats clan generator!</b><br><br>" \
+                "This is fan-made generator for the Warrior Cats -book series by Erin Hunter.<br><br>" \
+                "You're welcome to use the characters and sprites generated in this program, " \
+                "as long as you don't claim the sprites as your own creations or sell them for any reason.<br><br>" \
+                "<b>Original creator:</b> <i>just-some-cat.tumblr.com (anju)</i><br><br>" \
+                "<b>Fan edit made by:</b> <i>SableSteel</i><br>" \
+                "<b>With contributions from:</b><br><i>" \
+                "Blackfur<br>" \
+                "coffee<br>" \
+                "Desmond The Furry<br>" \
+                "ikethefifth<br>" \
+                "Lixxis<br>" \
+                "Ryos<br>" \
+                "clayteeth<br>" \
+                "CrumbsDeluxe<br>" \
+                "Hatsune Miku<br>" \
+                "Key<br>" \
+                "lago<br>" \
+                "ozzie<br>" \
+                "sami(RAYTRAC3R)<br>" \
+                "scribble<br>" \
+                "Shou<br>" \
+                "Tanukigami<br>" \
+                "Tiri<br>" \
+                "Victor the IT guy<br>" \
+                "ZtheCorgi<br>" \
+                "Charlie<br>" \
+                "green?<br>" \
+                "Owanora<br>" \
+                "Salix<br>" \
+                "Silverstar<br>" \
+                "Thrae<br>" \
+                "beejeans<br></i>" \
+                "Thank you to the beta testers and all those who have helped with development.<br><br>" \
+                "<b>Thank you for playing!!</b><br><br>" \
+                "Licensed under Mozilla Public License Version 2.0"
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -348,6 +375,8 @@ class SettingsScreen(Screens):
         self.general_settings_button.disable()
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = 'general'
+        self.save_settings_button.show()
+
 
         # Text_boxes:
         # For consistency’s sake, use the name of the setting as the key for the
@@ -404,6 +433,8 @@ class SettingsScreen(Screens):
         self.relation_settings_button.disable()
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = 'relation'
+        self.save_settings_button.show()
+
 
         x_value = 225
         self.checkboxes_text['random relation'] = pygame_gui.elements.UITextBox(
@@ -417,12 +448,12 @@ class SettingsScreen(Screens):
             object_id=get_text_box_theme("#setting_text_box")
         )
         self.checkboxes_text['no gendered breeding'] = pygame_gui.elements.UITextBox(
-            "Allow couples to have kittens despite same-sex status (they can always adopt)",
+            "Allow couples to birth kittens despite same-sex status",
             pygame.Rect((x_value, 298), (600, 50)),
             object_id=get_text_box_theme("#setting_text_box")
         )
         self.checkboxes_text['no unknown fathers'] = pygame_gui.elements.UITextBox(
-            "Allow unmated cats to have offspring. This may lead to very large clans.",
+            "Allow unmated cats to have offspring.",
             pygame.Rect((x_value, 337), (500, 50)),
             object_id=get_text_box_theme("#setting_text_box")
         )
@@ -443,9 +474,10 @@ class SettingsScreen(Screens):
         self.info_button.disable()
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = 'info'
+        self.save_settings_button.hide()
 
         self.checkboxes_text['info_text_box'] = pygame_gui.elements.UITextBox(self.info_text,
-                                                                              pygame.Rect((100, 140), (600, 400)),
+                                                                              pygame.Rect((100, 150), (600, 500)),
                                                                               object_id=get_text_box_theme())
 
     def open_lang_settings(self):
@@ -454,6 +486,7 @@ class SettingsScreen(Screens):
         self.language_button.disable()
         self.clear_sub_settings_buttons_and_text()
         self.sub_menu = 'language'
+        self.save_settings_button.show()
 
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Change the languange of the game here. NOT FULLY IMPLEMENTED",
@@ -476,58 +509,95 @@ class SettingsScreen(Screens):
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
-            self.checkboxes['dark mode'] = UIImageButton(pygame.Rect((x_value, 220), (34, 34)), "", object_id=box_type)
+            self.checkboxes['dark mode'] = UIImageButton(
+                pygame.Rect((x_value, 220), (34, 34)),
+                "",
+                object_id=box_type,
+                tool_tip_text='Camp backgrounds will match with the mode. Nighttime for Dark mode and daytime for Light mode.'
+            )
 
             # Enable clan page background
             if game.settings['backgrounds']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
-            self.checkboxes['backgrounds'] = UIImageButton(pygame.Rect((x_value, 259), (34, 34)), "",
-                                                           object_id=box_type)
+            self.checkboxes['backgrounds'] = UIImageButton(
+                pygame.Rect((x_value, 259), (34, 34)),
+                "",
+                object_id=box_type,
+                tool_tip_text='Even with this off, the camp you choose will still affect the events you encounter.'
+            )
 
             # Automatically save every five moons
             if game.settings['autosave']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
-            self.checkboxes['autosave'] = UIImageButton(pygame.Rect((x_value, 298), (34, 34)), "", object_id=box_type)
+            self.checkboxes['autosave'] = UIImageButton(
+                pygame.Rect((x_value, 298), (34, 34)),
+                "",
+                object_id=box_type
+            )
 
             # Allow mass extinction events
             if game.settings['disasters']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
-            self.checkboxes['disasters'] = UIImageButton(pygame.Rect((x_value, 337), (34, 34)), "", object_id=box_type)
+            self.checkboxes['disasters'] = UIImageButton \
+                (pygame.Rect((x_value, 337), (34, 34)),
+                 "",
+                 object_id=box_type,
+                 tool_tip_text='This may result in up to 1/3rd of your clan dying in one moon.'
+                 )
 
             # Cats will never retire due to a permanent condition
             if game.settings['retirement']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
-            self.checkboxes['retirement'] = UIImageButton(pygame.Rect((x_value, 376), (34, 34)), "", object_id=box_type)
+            self.checkboxes['retirement'] = UIImageButton(
+                pygame.Rect((x_value, 376), (34, 34)),
+                "",
+                object_id=box_type,
+                tool_tip_text='When this setting is off, cats with permanent conditions will choose whether or not '
+                              'they want to retire. '
+            )
 
             # Enable Shaders
             if game.settings['shaders']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
-            self.checkboxes['shaders'] = UIImageButton(pygame.Rect((x_value, 415), (34, 34)), "", object_id=box_type)
+            self.checkboxes['shaders'] = UIImageButton(
+                pygame.Rect((x_value, 415), (34, 34)),
+                "",
+                object_id=box_type,
+                tool_tip_text='This will add a shading layer onto the cat sprites.'
+            )
 
             # Display hotkeys on text buttons -- NOT IMPLEMENTED
             if game.settings['hotkey display']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
-            self.checkboxes['hotkey display'] = UIImageButton(pygame.Rect((x_value, 454), (34, 34)), "",
-                                                              object_id=box_type)
+            self.checkboxes['hotkey display'] = UIImageButton(
+                pygame.Rect((x_value, 454), (34, 34)),
+                "",
+                object_id=box_type,
+            )
 
             # Allow leaders to automatically choose a new deputy
             if game.settings['deputy']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
-            self.checkboxes['deputy'] = UIImageButton(pygame.Rect((x_value, 493), (34, 34)), "", object_id=box_type)
+            self.checkboxes['deputy'] = UIImageButton(
+                pygame.Rect((x_value, 493), (34, 34)),
+                "",
+                object_id=box_type,
+                tool_tip_text="The warrior code rules will be taken into account when choosing a deputy."
+            )
 
         # CHECKBOXES FOR RELATION SETTINGS #################################################################
         elif self.sub_menu == 'relation':
@@ -537,28 +607,46 @@ class SettingsScreen(Screens):
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
-            self.checkboxes['random relation'] = UIImageButton(pygame.Rect((x_value, 220), (34, 34)), "",
-                                                               object_id=box_type)
+            self.checkboxes['random relation'] = UIImageButton(
+                pygame.Rect((x_value, 220), (34, 34)),
+                "",
+                object_id=box_type,
+                tool_tip_text="Clan founder cats will start the game with established relationships."
+            )
             # Allow affairs and mate switches based on relationship
             if game.settings['affair']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
-            self.checkboxes['affair'] = UIImageButton(pygame.Rect((x_value, 259), (34, 34)), "", object_id=box_type)
+            self.checkboxes['affair'] = UIImageButton(
+                pygame.Rect((x_value, 259), (34, 34)),
+                "",
+                object_id=box_type,
+                tool_tip_text="Cats may have kits before mating regardless of the Un-mated Cat Offspring setting."
+            )
+
             # Allow couples to have kittens despite same-sex status
             if game.settings['no gendered breeding']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
-            self.checkboxes['no gendered breeding'] = UIImageButton(pygame.Rect((x_value, 298), (34, 34)), "",
-                                                                    object_id=box_type)
+            self.checkboxes['no gendered breeding'] = UIImageButton(
+                pygame.Rect((x_value, 298), (34, 34)),
+                "",
+                object_id=box_type,
+                tool_tip_text="A cat's biological sex will no longer be a constraining factor for pregnancies."
+            )
             # Allow unmated cats to have offspring
             if game.settings['no unknown fathers']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
-            self.checkboxes['no unknown fathers'] = UIImageButton(pygame.Rect((x_value, 337), (34, 34)), "",
-                                                                  object_id=box_type)
+            self.checkboxes['no unknown fathers'] = UIImageButton(
+                pygame.Rect((x_value, 337), (34, 34)),
+                "",
+                object_id=box_type,
+                tool_tip_text="This setting will not affect the Affairs setting."
+            )
             # Allow romantic interactions with former apprentices/mentor
             if game.settings['romantic with former mentor']:
                 box_type = "#checked_checkbox"
