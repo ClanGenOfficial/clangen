@@ -42,6 +42,9 @@ class Death_Events():
             if game.clan.game_mode in ["expanded", "cruel season"] and "classic" in event.tags:
                 continue
 
+            if "all_lives" in event.tags and int(random.random() * 10):
+                continue
+
             # check season
             if game.clan.current_season not in event.tags:
                 continue
@@ -120,10 +123,10 @@ class Death_Events():
             if cat.status != "leader" and death_cause.history_text[0] is not None:
                 other_history_text = event_text_adjust(Cat, death_cause.history_text[0], cat, other_cat, other_clan_name)
             elif cat.status == "leader" and death_cause.history_text[1] is not None:
-                other_history_text = event_text_adjust(Cat, death_cause.history_text[1], cat, other_cat, other_clan_name)
+                other_history_text = event_text_adjust(Cat, death_cause.history_text[1], other_cat, cat, other_clan_name)
 
         # handle leader lives
-        if cat.status == "leader":
+        if cat.status == "leader" and "other_cat_death" not in death_cause.tags:
             if "all_lives" in death_cause.tags:
                 game.clan.leader_lives -= 10
                 cat.die()

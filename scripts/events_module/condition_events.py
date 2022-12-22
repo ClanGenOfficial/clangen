@@ -313,7 +313,9 @@ class Condition_Events():
                         continue
                     if "other_cat_mentor" in event.tags and cat.mentor != other_cat.ID:
                         continue
-                    elif "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten"]:
+                    if "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten"]:
+                        continue
+                    if "other_cat_kit" in event.tags and other_cat.age != 'kitten':
                         continue
 
                     if "clan_kits" in event.tags and not alive_kits:
@@ -384,6 +386,8 @@ class Condition_Events():
         if text is not None:
             game.cur_events_list.append(text)
             game.health_events_list.append(text)
+            if cat.dead:
+                game.birth_death_events_list.append(text)
             if has_other_clan:
                 game.other_clans_events_list.append(text)
 
