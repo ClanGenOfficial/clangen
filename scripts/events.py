@@ -877,7 +877,7 @@ class Events():
                 game.cur_events_list.append(choice(loner_text))
                 game.misc_events_list.append(choice(loner_text))
                 game.cur_events_list.append(choice(success_text))
-                game.misc_events_list.append(choice(loner_text))
+                game.misc_events_list.append(choice(success_text))
 
             elif type_of_new_cat == 6:
                 created_cats = self.create_new_cat(
