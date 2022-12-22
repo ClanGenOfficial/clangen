@@ -151,6 +151,7 @@ class Patrol():
         clan_allies = False
         clan_size = int(len(game.clan.clan_cats))
         chance = 0
+        print(str(self.patrol_statuses))
         # assigning other_clan relations
         if clan_relations > 17:
             clan_allies = True
@@ -320,10 +321,10 @@ class Patrol():
                     if not self.patrol_apprentices[0].is_potential_mate(self.patrol_apprentices[1],
                                                                         for_love_interest=True):
                         continue
-                else:
+                """else:
                     if not self.patrol_leader.is_potential_mate(self.patrol_random_cat, for_love_interest=True)\
                         or not self.patrol_leader.mate == self.patrol_random_cat:
-                        continue
+                        continue"""
 
 
             final_patrols.append(patrol)
