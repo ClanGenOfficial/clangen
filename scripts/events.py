@@ -190,7 +190,7 @@ class Events():
             return
 
         # check for death/reveal/risks/retire caused by permanent conditions
-        if cat.is_disabled():
+        if cat.is_disabled() or len(cat.permanent_condition) > 0:
             self.condition_events.handle_already_disabled(cat)
         self.perform_ceremonies(cat)  # here is age up included
 
