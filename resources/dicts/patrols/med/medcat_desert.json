@@ -143,7 +143,7 @@
 		"chance_of_success":50,
 		"exp":20,
 		"success_text":[
-			"Guided by the visions and dreams sent by Starclan, images of the suffering of greenleaf and the hope for new life flash before their eyes. p_l awakes relieved and determined. They know now what actions they should take to save c_n",
+			"Guided by the visions and dreams sent by StarClan, images of the suffering of greenleaf and the hope for new life flash before their eyes. p_l awakes relieved and determined. They know now what actions they should take to save c_n",
 			null,
 			"Strong connection to starclan",
 			"faithfull"
@@ -151,7 +151,7 @@
 		"fail_text":[
 			"p_l wakes up confused and unable to remember if they have communicated with starclan. The only thought bouncing around in their head for some reason is the word quenchy. Frustrated p_l realizes that starclan won’t help them this time.",
 			null,
-			"r_c has an unexpected severe reaction to the cacti, their throat swelling shut in seconds. Unable to call for help, they fade away toward Starclan. c_n will have to mourn one more cat."
+			"r_c has an unexpected severe reaction to the cacti, their throat swelling shut in seconds. Unable to call for help, they fade away toward StarClan. c_n will have to mourn one more cat."
 		],
 		"win_skills":[
 			"strong connection to StarClan",

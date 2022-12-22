@@ -541,7 +541,7 @@ class PatrolScreen(Screens):
                 elif the_cat.status == 'deputy':
                     self.able_cats.insert(1, the_cat)
                 elif the_cat.status == 'medicine cat':
-                    med_cats.insert(0, the_cat)
+                    med_cats.insert(2, the_cat)
                 elif the_cat.status == 'medicine cat apprentice':
                     med_cats.append(the_cat)
                 elif the_cat.status == 'warrior':

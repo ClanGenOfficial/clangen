@@ -378,7 +378,7 @@ class StarClanScreen(Screens):
                                                                          (110, 30)))  # Text will be filled in later
 
         self.set_disabled_menu_buttons(["starclan_screen"])
-        self.update_heading_text("Starclan")
+        self.update_heading_text("StarClan")
         self.show_menu_buttons()
 
         self.update_search_cats("")  # This will list all the cats, and create the button objects.
