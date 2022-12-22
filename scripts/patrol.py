@@ -457,7 +457,8 @@ class Patrol():
                     else:
                         n = 0
             self.handle_exp_gain()
-            self.add_new_cats(litter_choice=litter_choice)
+            if not antagonize:
+                self.add_new_cats(litter_choice=litter_choice)
             if self.patrol_event.tags is not None:
                 if "other_clan" in self.patrol_event.tags:
                     if antagonize:
