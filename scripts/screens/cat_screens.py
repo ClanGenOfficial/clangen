@@ -794,22 +794,14 @@ class ProfileScreen(Screens):
         else:
             output += 'backstory: ' + 'clanborn'
 
+        # NEWLINE ----------
+        output += "\n"
+
         if the_cat.is_disabled():
-            for condition in the_cat.permanent_condition:
-                if the_cat.permanent_condition[condition]["born_with"] is True and the_cat.permanent_condition[condition]["moons_until"] == -2:
-                    output += 'has a permanent condition'
-                    break
-                elif the_cat.permanent_condition[condition]["born_with"] is False:
-                    output += 'has a permanent condition'
-                    break
-                else:
-                    continue
+            output += 'has a permanent condition'
 
             # NEWLINE ----------
             output += "\n"
-
-        # NEWLINE ----------
-        output += "\n"
 
         if the_cat.is_injured():
             if "recovering from birth" in the_cat.injuries:
@@ -1185,126 +1177,126 @@ class ProfileScreen(Screens):
             visible=self.second_page_visible)
 
         # check for permanent conditions and create their detail boxes
-        for condition in self.the_cat.permanent_condition:
-            if self.the_cat.permanent_condition[condition]["born_with"] is True and \
-                    self.the_cat.permanent_condition[condition]["moons_until"] != -2:
-                continue
-            # move to second page if count gets too high
-            if count < 4 and container != self.second_page:
-                container = self.first_page
-            else:
-                container = self.second_page
-                x_pos = 14
-            # display the detail box
-            self.condition_box = pygame_gui.elements.UIImage(
-                pygame.Rect((x_pos, 13), (140, 138)),
-                self.condition_details_box,
-                container=container)
-            # display the detail text
-            y_adjust = 30
-            # title
-            if len(str(condition)) > 18:
-                y_adjust += 18
-            self.condition_name_text = UITextBoxTweaked(
-                condition,
-                pygame.Rect((x_pos, 13), (138, -1)),
-                line_spacing=.90,
-                object_id="text_box",
-                container=container
-            )
-            # details
-            text = self.get_condition_details(condition)
-            self.condition_detail_text = UITextBoxTweaked(
-                text,
-                pygame.Rect((x_pos, y_adjust), (138, 138)),
-                line_spacing=.90,
-                object_id="#condition_details_text_box",
-                container=container
-            )
-            # adjust the x_pos for the next box
-            x_pos += 152
-            count += 1
+        if self.the_cat.is_disabled():
+            for condition in self.the_cat.permanent_condition:
+                # move to second page if count gets too high
+                if count < 4 and container != self.second_page:
+                    container = self.first_page
+                else:
+                    container = self.second_page
+                    x_pos = 14
+                # display the detail box
+                self.condition_box = pygame_gui.elements.UIImage(
+                    pygame.Rect((x_pos, 13), (140, 138)),
+                    self.condition_details_box,
+                    container=container)
+                # display the detail text
+                y_adjust = 30
+                # title
+                if len(str(condition)) > 18:
+                    y_adjust += 18
+                self.condition_name_text = UITextBoxTweaked(
+                    condition,
+                    pygame.Rect((x_pos, 13), (138, -1)),
+                    line_spacing=.90,
+                    object_id="text_box",
+                    container=container
+                )
+                # details
+                text = self.get_condition_details(condition)
+                self.condition_detail_text = UITextBoxTweaked(
+                    text,
+                    pygame.Rect((x_pos, y_adjust), (138, 138)),
+                    line_spacing=.90,
+                    object_id="#condition_details_text_box",
+                    container=container
+                )
+                # adjust the x_pos for the next box
+                x_pos += 152
+                count += 1
 
         # check for injuries and display their detail boxes
-        for injury in self.the_cat.injuries:
-            # move to second page if count gets too high
-            if count < 4 and container != self.second_page:
-                container = self.first_page
-            else:
-                container = self.second_page
-                x_pos = 14
-            # display the detail box
-            self.condition_box = pygame_gui.elements.UIImage(
-                pygame.Rect((x_pos, 13), (140, 138)),
-                self.condition_details_box,
-                container=container
-            )
-            # display the detail text
-            y_adjust = 30
-            # title
-            if len(str(injury)) > 17:
-                y_adjust += 18
-            self.condition_name_text = UITextBoxTweaked(
-                injury,
-                pygame.Rect((x_pos, 13), (138, -1)),
-                line_spacing=.90,
-                object_id="text_box",
-                container=container
-            )
-            # details
-            text = self.get_condition_details(injury)
-            self.condition_detail_text = UITextBoxTweaked(
-                text,
-                pygame.Rect((x_pos, y_adjust), (138, 138)),
-                line_spacing=.90,
-                object_id="#condition_details_text_box",
-                container=container
-            )
-            # adjust the x_pos for the next box
-            x_pos += 152
-            count += 1
+        if self.the_cat.is_injured():
+            for injury in self.the_cat.injuries:
+                # move to second page if count gets too high
+                if count < 4 and container != self.second_page:
+                    container = self.first_page
+                else:
+                    container = self.second_page
+                    x_pos = 14
+                # display the detail box
+                self.condition_box = pygame_gui.elements.UIImage(
+                    pygame.Rect((x_pos, 13), (140, 138)),
+                    self.condition_details_box,
+                    container=container
+                )
+                # display the detail text
+                y_adjust = 30
+                # title
+                if len(str(injury)) > 17:
+                    y_adjust += 18
+                self.condition_name_text = UITextBoxTweaked(
+                    injury,
+                    pygame.Rect((x_pos, 13), (138, -1)),
+                    line_spacing=.90,
+                    object_id="text_box",
+                    container=container
+                )
+                # details
+                text = self.get_condition_details(injury)
+                self.condition_detail_text = UITextBoxTweaked(
+                    text,
+                    pygame.Rect((x_pos, y_adjust), (138, 138)),
+                    line_spacing=.90,
+                    object_id="#condition_details_text_box",
+                    container=container
+                )
+                # adjust the x_pos for the next box
+                x_pos += 152
+                count += 1
 
         # check for illnesses and display their detail boxes
-        for illness in self.the_cat.illnesses:
-            # don't display infected or festering as their own condition
-            if illness in ['an infected wound', 'a festering wound']:
-                continue
-            # move to second page if count gets too high
-            if count < 4 and container != self.second_page:
-                container = self.first_page
-            else:
-                container = self.second_page
-                x_pos = 14
-            # display the detail box
-            self.condition_box = pygame_gui.elements.UIImage(
-                pygame.Rect((x_pos, 13), (140, 138)),
-                self.condition_details_box,
-                container=container
-            )
-            # display the detail text
-            y_adjust = 30
-            # title
-            if len(str(illness)) > 17:
-                y_adjust += 18
-            self.condition_name_text = UITextBoxTweaked(
-                illness,
-                pygame.Rect((x_pos, 13), (138, -1)),
-                line_spacing=.90,
-                object_id="text_box",
-                container=container
-            )
-            # details
-            text = self.get_condition_details(illness)
-            self.condition_detail_text = UITextBoxTweaked(
-                text,
-                pygame.Rect((x_pos, y_adjust), (138, 138)),
-                line_spacing=.90,
-                object_id="#condition_details_text_box",
-                container=container
-            )
-            # adjust the x_pos for the next box
-            x_pos += 152
-            count += 1
+        if self.the_cat.is_ill():
+            for illness in self.the_cat.illnesses:
+                # don't display infected or festering as their own condition
+                if illness in ['an infected wound', 'a festering wound']:
+                    continue
+                # move to second page if count gets too high
+                if count < 4 and container != self.second_page:
+                    container = self.first_page
+                else:
+                    container = self.second_page
+                    x_pos = 14
+                # display the detail box
+                self.condition_box = pygame_gui.elements.UIImage(
+                    pygame.Rect((x_pos, 13), (140, 138)),
+                    self.condition_details_box,
+                    container=container
+                )
+                # display the detail text
+                y_adjust = 30
+                # title
+                if len(str(illness)) > 17:
+                    y_adjust += 18
+                self.condition_name_text = UITextBoxTweaked(
+                    illness,
+                    pygame.Rect((x_pos, 13), (138, -1)),
+                    line_spacing=.90,
+                    object_id="text_box",
+                    container=container
+                )
+                # details
+                text = self.get_condition_details(illness)
+                self.condition_detail_text = UITextBoxTweaked(
+                    text,
+                    pygame.Rect((x_pos, y_adjust), (138, 138)),
+                    line_spacing=.90,
+                    object_id="#condition_details_text_box",
+                    container=container
+                )
+                # adjust the x_pos for the next box
+                x_pos += 152
+                count += 1
 
         if count > 4:
             self.right_arrow.enable()

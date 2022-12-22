@@ -431,7 +431,7 @@ class Events():
                     " to apprentice under. They know that " +
                     str(cat.mentor.name) + " was a good choice."
                 ])
-            if cat.permanent_condition and not game.clan.leader.dead:
+            if cat.is_disabled() and not game.clan.leader.dead:
                 ceremony.extend([
                     str(cat.name) + " is confidently telling " +
                     str(game.clan.leader.name) +
