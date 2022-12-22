@@ -736,7 +736,7 @@ class Relation_Events():
         affair_chance = 10
 
         if mate_relation is None:
-            if affair_relation.romantic_love > 20:
+            if affair_relation.romantic_love > 10:
                 affair_chance -= 2
             if affair_relation.platonic_like > 20:
                 affair_chance -= 2
