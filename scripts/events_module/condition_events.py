@@ -313,7 +313,9 @@ class Condition_Events():
                         continue
                     if "other_cat_mentor" in event.tags and cat.mentor != other_cat.ID:
                         continue
-                    elif "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten"]:
+                    if "other_cat_adult" in event.tags and other_cat.age in ["elder", "kitten"]:
+                        continue
+                    if "other_cat_kit" in event.tags and other_cat.age != 'kitten':
                         continue
 
                     if "clan_kits" in event.tags and not alive_kits:
