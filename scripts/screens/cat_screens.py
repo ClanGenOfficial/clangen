@@ -919,10 +919,7 @@ class ProfileScreen(Screens):
             print(f"WARNING: Saving notes of cat #{self.the_cat.ID} didn't work.")
 
     def load_user_notes(self):
-        if game.switches['clan_name'] != '':
-            clanname = game.switches['clan_name']
-        else:
-            clanname = game.switches['clan_list'][0]
+        clanname = game.clan.name
 
         notes_directory = 'saves/' + clanname + '/notes'
         notes_file_path = notes_directory + '/' + self.the_cat.ID + '_notes.json'

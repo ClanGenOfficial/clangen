@@ -123,7 +123,7 @@ class Death_Events():
             if cat.status != "leader" and death_cause.history_text[0] is not None:
                 other_history_text = event_text_adjust(Cat, death_cause.history_text[0], cat, other_cat, other_clan_name)
             elif cat.status == "leader" and death_cause.history_text[1] is not None:
-                other_history_text = event_text_adjust(Cat, death_cause.history_text[1], cat, other_cat, other_clan_name)
+                other_history_text = event_text_adjust(Cat, death_cause.history_text[1], other_cat, cat, other_clan_name)
 
         # handle leader lives
         if cat.status == "leader" and "other_cat_death" not in death_cause.tags:
