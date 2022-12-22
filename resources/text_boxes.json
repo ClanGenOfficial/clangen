@@ -73,7 +73,8 @@
         },
         "font": {
             "name": "notosans",
-            "size": "15"
+            "size": "15",
+            "regular_path": "resources/fonts/NotoSans-Medium.ttf"
         },
         "misc": {
             "border_width": "0",
