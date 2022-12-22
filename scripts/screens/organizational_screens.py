@@ -196,6 +196,7 @@ class SettingsScreen(Screens):
                 "Salix<br>" \
                 "Silverstar<br>" \
                 "Thrae<br>" \
+                "Chase<br>" \
                 "beejeans<br></i>" \
                 "Thank you to the beta testers and all those who have helped with development.<br><br>" \
                 "<b>Thank you for playing!!</b><br><br>" \
