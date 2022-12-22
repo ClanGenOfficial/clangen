@@ -215,7 +215,7 @@
         "other_cat_skill": null
     },
     {
-        "injury": "bite-wound",
+        "injury": "cat bite",
         "tags": [
             "other_cat",
             "other_cat_leader",
@@ -242,7 +242,7 @@
         "other_cat_skill": null
     },
     {
-        "injury": "bite-wound",
+        "injury": "cat bite",
         "tags": [
             "other_cat",
             "other_cat_leader",
@@ -271,7 +271,7 @@
         "other_cat_skill": null
     },
     {
-        "injury": "bite-wound",
+        "injury": "cat bite",
         "tags": [
             "other_cat",
             "other_cat_leader",

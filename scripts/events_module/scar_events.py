@@ -35,7 +35,16 @@ class Scar_Events():
 
             # scar pools
             bite_scars = [
-                "LEGBITE", "NECKBITE", "TAILSCAR"
+                "CATBITE"
+            ]
+            rat_scars = [
+                "RATBITE"
+            ]
+            beak_scars = [
+                'BEAKCHEEK', 'BEAKLOWER'
+            ]
+            canid_scars = [
+                "LEGBITE", "NECKBITE", "TAILSCAR", "BRIGHTHEART"
             ]
             snake_scars = [
                 "SNAKE"
@@ -45,25 +54,36 @@ class Scar_Events():
                 "SIDE", "THROAT", "TAILBASE", "BELLY", "FACE"
             ]
             leg_scars = [
-                "NOPAW", "TOETRAP"
+                "NOPAW", "TOETRAP", "MANLEG"
             ]
             tail_scars = [
-                "TAILSCAR", "TAILBASE", "NOTAIL", "HALFTAIL"
+                "TAILSCAR", "TAILBASE", "NOTAIL", "HALFTAIL", "MANTAIL"
             ]
             ear_scars = [
-                "LEFTEAR", "RIGHTEAR"
+                "LEFTEAR", "RIGHTEAR", 'NOLEFTEAR', 'NORIGHTEAR'
             ]
             frostbite_scars = [
-                "HALFTAIL", "NOTAIL", "NOPAW"
+                "HALFTAIL", "NOTAIL", "NOPAW", 'NOLEFTEAR', 'NORIGHTEAR', 'NOEAR'
             ]
             eye_scars = [
-                "THREE"
+                "THREE", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND"
+            ]
+            burn_scars = [
+                "BRIGHTHEART", "BURNPAWS", "BURNTAIL", "BURNBELLY", "BURNRUMP"
             ]
 
             scar_pool = []
 
-            if injury_name in ["bite-wound", "rat bite"]:
+            if injury_name == "bite-wound":
+                scar_pool = canid_scars
+            elif injury_name == 'cat bite':
                 scar_pool = bite_scars
+            elif injury_name == 'beak bite':
+                scar_pool = beak_scars
+            elif injury_name == 'severe burn':
+                scar_pool = burn_scars
+            elif injury_name == 'rat bite':
+                scar_pool = rat_scars
             elif injury_name == "snake bite":
                 scar_pool = snake_scars
             elif injury_name == "claw-wound":
@@ -82,14 +102,37 @@ class Scar_Events():
             for scar in cat.scars:
                 if scar:
                     try:
-                        if "NOPAW" == scar and 'TOETRAP' in scar_pool:
-                            scar_pool.remove('TOETRAP')
-                        if "NOTAIL" in scar:
-                            for option in ["HALFTAIL", "TAILBASE", "TAILSCAR"]:
-                                if option in scar_pool:
-                                    scar_pool.remove(option)
                         if scar in scar_pool:
                             scar_pool.remove(scar)  # no duplicate scars
+                        if "NOPAW" == scar:
+                            for option in ['TOETRAP', 'RATBITE']:
+                                if option in scar_pool:
+                                    scar_pool.remove(option)
+                        if "NOTAIL" in scar:
+                            for option in ["HALFTAIL", "TAILBASE", "TAILSCAR", "MANTAIL", "BURNTAIL"]:
+                                if option in scar_pool:
+                                    scar_pool.remove(option)
+                        if "BRIGHTHEART" in scar:
+                            for option in ["RIGHTBLIND", "BOTHBLIND"]:
+                                if option in scar_pool:
+                                    scar_pool.remove(option)
+                        if "BOTHBLIND" in scar:
+                            for option in ["THREE", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND", "BRIGHTHEART"]:
+                                if option in scar_pool:
+                                    scar_pool.remove(option)
+                        if "NOEAR" in scar:
+                            for option in ["LEFTEAR", "RIGHTEAR", 'NOLEFTEAR', 'NORIGHTEAR']:
+                                if option in scar_pool:
+                                    scar_pool.remove(option)
+                        if 'MANTAIL' in scar and 'BURNTAIL' in scar_pool:
+                            scar_pool.remove('BURNTAIL')
+                        if 'BURNTAIL' in scar and 'MANTAIL' in scar_pool:
+                            scar_pool.remove('MANTAIL')
+                        if 'NOLEFT' in scar and 'LEFTEAR' in scar_pool:
+                            scar_pool.remove('LEFTEAR')
+                        if 'NORIGHT' in scar and 'RIGHTEAR' in scar_pool:
+                            scar_pool.remove('RIGHTEAR')
+
                     except ValueError as e:
                         print(f"Failed to exclude scar from pool: {e}")
 
@@ -98,6 +141,21 @@ class Scar_Events():
                 if specialty in ["NOTAIL", "HALFTAIL"]:
                     if cat.accessory in ["RED FEATHERS", "BLUE FEATHERS", "JAY FEATHERS"]:
                         cat.accessory = None
+
+                # combining left/right variations into the both version
+                if "NOLEFTEAR" in cat.scars and specialty == 'NORIGHTEAR':
+                    cat.scars.remove("NOLEFTEAR")
+                    specialty = 'NOEAR'
+                elif "NORIGHTEAR" in cat.scars and specialty == 'NOLEFTEAR':
+                    cat.scars.remove("NORIGHTEAR")
+                    specialty = 'NOEAR'
+
+                if 'RIGHTBLIND' in cat.scars and specialty == 'LEFTBLIND':
+                    cat.scars.remove("LEFTBLIND")
+                    specialty = 'BOTHBLIND'
+                elif 'LEFTBLIND' in cat.scars and specialty == 'RIGHTBLIND':
+                    cat.scars.remove("RIGHTBLIND")
+                    specialty = 'BOTHBLIND'
 
                 if specialty:
                     if len(cat.scars) < 4:

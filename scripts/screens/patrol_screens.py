@@ -76,7 +76,9 @@ class PatrolScreen(Screens):
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['add_one']:
-            self.current_patrol.append(choice(self.able_cats))
+            self.selected_cat = choice(self.able_cats)
+            self.update_selected_cat()
+            self.current_patrol.append(self.selected_cat)
             self.update_cat_images_buttons()
             self.update_button()
         elif event.ui_element == self.elements['add_three']:
@@ -118,6 +120,7 @@ class PatrolScreen(Screens):
             self.patrol_type = 'hunting'
             self.update_button()
         elif event.ui_element == self.elements['patrol_start']:
+            self.selected_cat = None
             self.open_patrol_event_screen()  # Starting patrol.
 
     def handle_patrol_events_event(self, event):
@@ -211,8 +214,9 @@ class PatrolScreen(Screens):
                         self.patrol_type = 'med'
                 if med is False:
                     self.elements['herb'].disable()
+                    self.patrol_type = 'general'
 
-                text = 'pick a patrol type!'
+                text = 'general patrol'
                 self.elements['info'].kill()  # clearing the text before displaying new text
 
                 if self.patrol_type == 'training' and med is False:
@@ -408,6 +412,7 @@ class PatrolScreen(Screens):
             self.patrol_type,
             game.settings.get('disasters')
         )
+        print(self.patrol_type, len(possible_events))
         patrol.patrol_event = choice(possible_events)  # Set patrol event.
         intro_text = patrol.patrol_event.intro_text
         patrol_size = len(patrol.patrol_cats)
@@ -518,27 +523,35 @@ class PatrolScreen(Screens):
             previous page buttons.  """
         self.clear_cat_buttons()  # Clear all the cat buttons
         self.able_cats = []
+
+        # sorting lists
         med_cats = []
         warriors = []
         apprentices = []
+
         # ASSIGN TO ABLE CATS AND SORT BY RANK
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
-            if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status in [
-                'leader', 'deputy', 'warrior', 'medicine cat', 'medicine cat apprentice', 'apprentice'
+            if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status not in [
+                'elder', 'kitten'
             ] and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working():
                 if the_cat.status == 'leader':
                     self.able_cats.insert(0, the_cat)
                 elif the_cat.status == 'deputy':
                     self.able_cats.insert(1, the_cat)
                 elif the_cat.status == 'medicine cat':
-                    self.able_cats.insert(2, the_cat)
+                    med_cats.insert(0, the_cat)
                 elif the_cat.status == 'medicine cat apprentice':
-                    self.able_cats.insert(3, the_cat)
+                    med_cats.append(the_cat)
                 elif the_cat.status == 'warrior':
-                    self.able_cats.insert(4, the_cat)
+                    warriors.append(the_cat)
                 elif the_cat.status == 'apprentice':
-                    self.able_cats.append(the_cat)
+                    apprentices.append(the_cat)
+
+        # append all the sorting lists
+        self.able_cats.extend(med_cats)
+        self.able_cats.extend(warriors)
+        self.able_cats.extend(apprentices)
 
         if not self.able_cats:
             all_pages = []

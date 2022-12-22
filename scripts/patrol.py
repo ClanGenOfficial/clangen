@@ -305,7 +305,7 @@ class Patrol():
                     continue
 
             # correct button check
-            if 'general' not in patrol.tags:
+            if 'general' not in patrol.tags and patrol_type != 'general':
                 if 'hunting' not in patrol.tags and patrol_type == 'hunting':
                     continue
                 elif 'border' not in patrol.tags and patrol_type == 'border':

@@ -13,6 +13,18 @@
 
         ]
     },
+    "cat bite": {
+        "an infected wound": [
+            "The cat bite feels hot, and m_c winces as r_c cleans it. It's becoming infected.",
+            "m_c's skin is starting to feel feverish around the area of their wound. It looks a bit worse than it did yesterday."
+        ]
+    },
+    "beak bite": {
+        "an infected wound": [
+            "The beak wound feels hot, and m_c winces as r_c cleans it. It's becoming infected.",
+            "m_c's skin is starting to feel feverish around the area of their wound. It looks a bit worse than it did yesterday."
+        ]
+    },
     "snake bite": {
         "an infected wound": [
             "r_c mutters something about plantain, as m_c carefully licks around their snake bite wound. It's not healing like it should.",

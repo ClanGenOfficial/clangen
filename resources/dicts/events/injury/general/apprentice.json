@@ -1,15 +1,15 @@
 [
     {
-        "injury": "bite-wound",
+        "injury": "damaged eyes",
         "tags": [
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c mistook a hare for a rabbit while hunting and was bitten for the trouble, a valuable lesson learnt.",
+        "event_text": "m_c mistook a hare for a rabbit while hunting and their eyes were scratched, a valuable lesson learnt.",
         "history_text": [
-            "m_c got a scar when a hare bit them in retaliation.",
+            "m_c got a scar when a hare scratched them in retaliation.",
             "m_c died after they were wounded by a hare.",
             null
         ],
@@ -46,7 +46,7 @@
         "other_cat_skill": [ "good fighter", "great fighter", "excellent fighter"]
     },
     {
-        "injury": "bite-wound",
+        "injury": "cat bite",
         "tags": [
             "other_cat",
             "Newleaf",
@@ -72,7 +72,7 @@
         "other_cat_skill": null
     },
     {
-        "injury": "bite-wound",
+        "injury": "cat bite",
         "tags": [
             "other_cat",
             "other_cat_mentor",
@@ -99,7 +99,7 @@
         "other_cat_skill": null
     },
     {
-        "injury": "bite-wound",
+        "injury": "cat bite",
         "tags": [
             "other_cat",
             "other_cat_mentor",
@@ -126,34 +126,7 @@
         "other_cat_skill": null
     },
     {
-        "injury": "bite-wound",
-        "tags": [
-            "other_cat",
-            "other_cat_mentor",
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare",
-            "mc_to_rc",
-            "neg_respect",
-            "neg_trust",
-            "neg_comfort",
-            "dislike",
-            "neg_platonic"
-        ],
-        "event_text": "m_c and r_c were practicing battle moves. r_c insisted they keep their claws out and m_c was hurt.",
-        "history_text": [
-            "m_c was scarred while practicing battle moves with r_c.",
-            "m_c died after their mentor hurt them during training.",
-            null
-        ],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": ["bloodthirsty", "cold", "fierce", "righteous", "strict", "vengeful", "daring", "bold"],
-        "other_cat_skill": ["good fighter", "great fighter", "excellent fighter"]
-    },
-    {
-        "injury": "bite-wound",
+        "injury": "cat bite",
         "tags": [
             "other_cat",
             "other_cat_mentor",
@@ -180,7 +153,7 @@
         "other_cat_skill": null
     },
     {
-        "injury": "bite-wound",
+        "injury": "cat bite",
         "tags": [
             "other_cat",
             "other_cat_mentor",
@@ -207,7 +180,7 @@
         "other_cat_skill": ["good fighter", "great fighter", "excellent fighter"]
     },
     {
-        "injury": "bite-wound",
+        "injury": "cat bite",
         "tags": [
             "other_cat",
             "other_cat_mentor",
