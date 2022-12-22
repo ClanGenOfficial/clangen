@@ -1138,6 +1138,11 @@ class Cat():
                 print(f"WARNING: {name} is not in the injuries collection.")
             return
 
+        if name == 'mangled tail' and 'NOTAIL' in self.scars:
+            return
+        if name == 'torn ear' and 'NOEAR' in self.scars:
+            return
+
         injury = INJURIES[name]
         mortality = injury["mortality"][self.age]
         duration = injury['duration']

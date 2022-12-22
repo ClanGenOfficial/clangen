@@ -336,6 +336,12 @@ class Condition_Events():
                         if other_cat.skill not in event.other_cat_skill and int(random.random() * 10):
                             continue
 
+                    if event.injury == 'mangled tail' and ('NOTAIL' in cat.scars or 'HALFTAIL' in cat.scars):
+                        continue
+
+                    if event.injury == 'torn ear' and 'NOEAR' in cat.scars:
+                        continue
+
                     final_events.append(event)
 
                 other_clan = random.choice(game.clan.all_clans)
@@ -474,12 +480,21 @@ class Condition_Events():
             "HALFTAIL": ["lost their tail"],
             "LEFTEAR": ["partial hearing loss"],
             "RIGHTEAR": ["partial hearing loss"],
+            "MANLEG": ["weak leg"],
+            "BRIGHTHEART": ["one bad eye"],
+            "NOLEFTEAR": ["partial hearing loss"],
+            "NORIGHTEAR": ["partial hearing loss"],
+            "NOEAR": ["partial hearing loss, deaf"],
+            "LEFTBLIND": ["one bad eye", "failing eyesight"],
+            "RIGHTBLIND": ["one bad eye", "failing eyesight"],
+            "BOTHBLIND": ["blind"],
+            "RATBITE": ["weak leg"]
         }
 
         scarless_conditions = [
             "weak leg", "paralyzed", "raspy lungs", "wasting disease", "blind", "failing eyesight", "one bad eye",
             "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy", "recurring shock",
-            "lasting grief", "broken back"
+            "lasting grief"
         ]
 
         got_condition = False

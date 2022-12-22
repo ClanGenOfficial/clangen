@@ -53,6 +53,60 @@
         "cause_permanent": []
     },
 
+        "cat bite":{
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 45,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 15
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "torn pelt",
+            "blood loss"
+        ],
+        "cause_permanent": []
+    },
+
+        "beak bite":{
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 45,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 15
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "torn pelt",
+            "blood loss"
+        ],
+        "cause_permanent": []
+    },
+
     "snake bite":{
         "duration": 2,
         "severity": "major",

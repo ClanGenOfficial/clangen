@@ -137,13 +137,19 @@
     },
     "damaged eyes": {
         "blind": [
-            ""
+            "When r_c tells them that their vision will never return, m_c wants to wail. They hold it in, however, till they have a moment alone and away from their clanmates.",
+            "m_c had been expecting it, but they still feel disappointed when r_c tells them that their vision is permanently gone. They don't want to let this hold them back, though, they have plans and they will see those plans through.",
+            "Eventually m_c just accepts the truth that has made itself apparent, their vision will never come back. This is life now, this fog of shadows and shapes."
         ],
         "one bad eye": [
-            ""
+            "r_c breaks the new gently, that m_c is never going to see out of that eye again. This doesn't have to hinder them, though! They still have one good eye and they plan to make full use of it.",
+            "m_c growls when r_c tells them that the lack of vision in their eye is permanent. It feels unfair, to have half of their vision stolen away.",
+            "m_c won't let this hold them back, they're determined to adapt to their newly limited eyesight and continue living as normal."
         ],
         "failing eyesight": [
-            ""
+            "r_c tells m_c that they're lucky to have regained any eyesight at all and hopefully, their sight won't degrade further.",
+            "m_c stalks out the medicine den, nearly running into another cat, which only increases their frustration at the news that their eyesight won't be getting better.",
+            "m_c closes their eyes and after a few moments, opens them again, trying to get a sense of just how bad their eyesight is now."
         ]
     },
     "rat bite": {

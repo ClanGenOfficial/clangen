@@ -27,46 +27,6 @@ def get_med_cats(Cat):
     return possible_med_cats
 
 
-def get_cats_allowed_on_patrol(Cat, game_mode):
-    able_cats = []
-
-    # ASSIGN TO ABLE CATS AND SORT BY RANK
-    for the_cat in Cat.all_cats.values():
-        if the_cat.dead \
-                or the_cat.outside \
-                or the_cat.not_working() \
-                or not the_cat.in_camp \
-                or the_cat in game.patrolled \
-                or the_cat in game.switches['current_patrol']:
-            continue
-
-        if game_mode != 'classic':
-            if the_cat.status in [
-                'elder', 'kitten'
-            ]:
-                continue
-        elif game_mode == 'classic':
-            if the_cat.status in [
-                'elder', 'kitten', 'medicine cat', 'medicine cat apprentice'
-            ]:
-                continue
-
-        if the_cat.status == 'leader':
-            able_cats.insert(0, the_cat)
-        elif the_cat.status == 'deputy':
-            able_cats.insert(1, the_cat)
-        elif the_cat.status == 'medicine cat':
-            able_cats.insert(2, the_cat)
-        elif the_cat.status == 'medicine cat apprentice':
-            able_cats.insert(3, the_cat)
-        elif the_cat.status == 'warrior':
-            able_cats.insert(4, the_cat)
-        elif the_cat.status == 'apprentice':
-            able_cats.append(the_cat)
-
-    return able_cats
-
-
 def get_living_cat_count(Cat):
     count = 0
     for the_cat in Cat.all_cats.values():
