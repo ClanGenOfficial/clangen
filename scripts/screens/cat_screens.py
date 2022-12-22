@@ -1200,7 +1200,7 @@ class ProfileScreen(Screens):
                 # display the detail text
                 y_adjust = 30
                 # title
-                if len(str(condition)) > 18:
+                if len(str(condition)) > 17:
                     y_adjust += 18
                 self.condition_name_text = UITextBoxTweaked(
                     condition,
