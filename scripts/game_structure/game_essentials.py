@@ -240,7 +240,7 @@ class Game():
             if_clans = len(clan_list)
         if if_clans > 0:
             clan_list = clan_list.split('\n')
-            clan_list = [i for i in clan_list if i]  # Remove empty
+            clan_list = [i.strip() for i in clan_list if i]  # Remove empty and whitespace
             return clan_list
         else:
             return None
