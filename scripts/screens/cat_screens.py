@@ -277,6 +277,8 @@ class ProfileScreen(Screens):
                 self.toggle_dangerous_tab()
             elif event.ui_element == self.backstory_tab_button:
                 self.open_sub_tab = game.settings['favorite sub tab']
+                if self.open_sub_tab is None:
+                    self.open_sub_tab = 'life events'
                 self.toggle_history_tab()
             elif event.ui_element == self.conditions_tab_button:
                 self.toggle_conditions_tab()
