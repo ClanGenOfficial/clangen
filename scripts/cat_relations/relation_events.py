@@ -763,6 +763,10 @@ class Relation_Events():
     def get_second_parent(self, cat, mate=None, affair=game.settings['affair']):
         """ Return the second parent of a cat, which will have kits."""
         second_parent = mate
+        if game.settings['no gendered breeding'] is True:
+            samesex = True
+        else:
+            samesex = False
         if not affair:
             # if affairs setting is OFF, None will be returned
             return second_parent
@@ -788,7 +792,8 @@ class Relation_Events():
         # if chance_affair == 0 or randint(1, chance_affair) == 1:
         if not chance_affair or not int(random.random() * chance_affair):
             if highest_romantic_relation.cat_to.is_potential_mate(cat):
-                second_parent = highest_romantic_relation.cat_to
+                if cat.gender == highest_romantic_relation.cat_to.gender and samesex:
+                    second_parent = highest_romantic_relation.cat_to
 
         return second_parent
 
