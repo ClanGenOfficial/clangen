@@ -59,14 +59,14 @@ class Patrol():
         for cat in patrol_cats:
             self.patrol_cats.append(cat)
             self.patrol_names.append(str(cat.name))
-            if 'apprentice' not in cat.status:
+            if cat.status != 'apprentice':
                 self.possible_patrol_leaders.append(cat)
             self.patrol_skills.append(cat.skill)
             self.patrol_statuses.append(cat.status)
             self.patrol_traits.append(cat.trait)
             self.patrol_total_experience += cat.experience
             self.experience_levels.append(cat.experience_level)
-            if 'apprentice' in cat.status:
+            if cat.status == 'apprentice':
                 self.patrol_apprentices.append(cat)
             game.patrolled.append(cat)
         # sets medcat as leader if they're in the patrol
@@ -136,8 +136,8 @@ class Patrol():
 
         possible_patrols = []
         final_patrols = []
-        patrol_type = "med" if ["medicine cat", "medicine cat apprentice"] in self.patrol_statuses else patrol_type
-        if patrol_type == "med" and ["medicine cat", "medicine cat apprentice"] not in self.patrol_statuses:
+        patrol_type = "med" if ("medicine cat" or "medicine cat apprentice") in self.patrol_statuses else patrol_type
+        if patrol_type == "med" and ("medicine cat" or "medicine cat apprentice") not in self.patrol_statuses:
             patrol_type = choice(["hunting", "border", "training"])
         patrol_size = len(self.patrol_cats)
         reputation = game.clan.reputation
