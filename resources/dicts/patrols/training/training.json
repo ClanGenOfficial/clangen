@@ -825,7 +825,7 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["training", "platonic", "romantic", "no_app"],
-    "intro_text": "During an odd moment of downtime, r_c asks p_l if they think r_c they're a good teacher.",
+    "intro_text": "During an odd moment of downtime, r_c asks p_l if they think they're a good teacher.",
     "decline_text": "They're interrupted by some clanmates who need help, and go off to attend to their duties.",
     "chance_of_success": 70,
     "exp": 10,
