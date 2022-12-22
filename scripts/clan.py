@@ -152,6 +152,7 @@ class Clan():
         for _ in range(number_other_clans):
             self.all_clans.append(OtherClan())
         self.save_clan()
+        game.save_clanlist(self.name)
         #if map_available:
         #    save_map(game.map_info, game.clan.name)
 
@@ -286,7 +287,7 @@ class Clan():
 
         with open(f'saves/{self.name}clan.txt', 'w') as write_file:
             write_file.write(data)
-        game.save_clanlist(self.name)
+        #game.save_clanlist(self.name)
 
     def load_clan(self):
         other_clans = []
