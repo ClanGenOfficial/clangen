@@ -630,7 +630,7 @@ class Patrol():
                 cat.die(body)
 
         elif "multi_deaths" in self.patrol_event.tags:
-            cats_dying = choice([2, 3, 4])
+            cats_dying = choice([2, 3])
             if cats_dying > len(self.patrol_cats):
                 cats_dying = int(len(self.patrol_cats) - 1)
             for d in range(0, cats_dying):
@@ -652,7 +652,7 @@ class Patrol():
                 cat.grief(body=False)
 
         elif "multi_gone" in self.patrol_event.tags:
-            cats_gone = choice([2, 3, 4])
+            cats_gone = choice([2, 3])
             if cats_gone > len(self.patrol_cats):
                 cats_gone = int(len(self.patrol_cats) - 1)
             for g in range(0, cats_gone):
