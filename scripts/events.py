@@ -444,7 +444,7 @@ class Events():
         elif (promoted_to == 'medicine cat apprentice') and cat.mentor is not None:
             ceremony.extend([
                 str(cat.name) +
-                " has decided that hunting and fighting is not the way they can provide for their clan. Instead, they have decided to serve their clan by healing and communing with StarClan"
+                " has decided that hunting and fighting is not the way they can provide for their clan. Instead, they have decided to serve their clan by healing and communing with StarClan. "
                 + str(cat.mentor.name) + " proudly becomes their mentor."
             ])
         elif (promoted_to =='medicine cat apprentice') and cat.mentor is None:
