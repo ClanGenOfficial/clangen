@@ -485,31 +485,31 @@
     "antagonize_fail_text": null
 },
 {
-"patrol_id": "plains_bord_story1",
-"biome": "plains",
-"season": "Any",
-"tags": ["border", "platonic", "comfort", "respect", "big_change", "rel_patrol", "patrol_to_r_c"],
-"intro_text": "On their way to mark the far corners of their plains, r_c starts telling a story of their ancestors to keep every cat entertained.",
-"decline_text": "r_c nearly trips into a rabbit burrow, and decides to watch where their paws are going instead.",
-"chance_of_success": 60,
-"exp": 20,
-"success_text": [
+    "patrol_id": "plains_bord_story1",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["border", "platonic", "comfort", "respect", "big_change", "rel_patrol", "patrol_to_r_c"],
+    "intro_text": "On their way to mark the far corners of their plains, r_c starts telling a story of their ancestors to keep every cat entertained.",
+    "decline_text": "r_c nearly trips into a rabbit burrow, and decides to watch where their paws are going instead.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
         "It keeps the cats' minds off the distance they have to cover. The patrol goes quickly and easily.",
         null,
         "s_c spins a story, vivid and engaging, telling the tale of a massive war their ancestors fought over the border the patrol is headed to mark. Not only does it keep every cat entertained, it really emphasizes the importance of the patrol and motivates everyone.",
         "It's a fantastic idea, making the patrol fly by as cats chat and laugh with their clanmates, and everyone ends the day feeling much closer to each other."
-],
-"fail_text": [
+    ],
+    "fail_text": [
         "They try, but their clanmates seem unenthused, so r_c stops.",
         "s_c takes r_c aside, and reminds them coldly to focus on their duties."
-],
-"win_skills": ["good speaker", "great speaker", "excellent speaker"],
-"win_trait": ["charismatic", "childish", "playful", "empathetic", "loving", "patient"],
-"fail_skills": ["None"],
-"fail_trait": ["cold", "strict", "righteous", "responsible", "thoughtful", "wise"],
-"min_cats": 3,
-"max_cats": 6,
-"antagonize_text": null,
-"antagonize_fail_text": null
+    ],
+    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+    "win_trait": ["charismatic", "childish", "playful", "empathetic", "loving", "patient"],
+    "fail_skills": ["None"],
+    "fail_trait": ["cold", "strict", "righteous", "responsible", "thoughtful", "wise"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 ]
