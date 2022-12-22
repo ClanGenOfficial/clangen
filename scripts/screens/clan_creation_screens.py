@@ -144,7 +144,7 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements["reset_name"]:
             self.elements["name_entry"].set_text("")
         elif event.ui_element == self.elements['next_step']:
-            self.clan_name = sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text())
+            self.clan_name = sub(r'[^A-Za-z0-9 ]+', "", self.elements["name_entry"].get_text()).strip()
             self.open_choose_leader()
         elif event.ui_element == self.elements['previous_step']:
             self.clan_name = ""
