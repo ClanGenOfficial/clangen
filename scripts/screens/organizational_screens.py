@@ -82,14 +82,6 @@ class StartScreen(Screens):
                 if x not in game.clan.clan_cats:
                     game.clan.remove_cat(x)
 
-        # SAVE cats
-        if game.clan is not None:
-            game.save_cats()
-            game.clan.save_clan()
-            game.clan.save_pregnancy(game.clan)
-            # if map_available:
-            #    save_map(game.map_info, game.clan.name)
-
         # LOAD settings
         game.load_settings()
 
