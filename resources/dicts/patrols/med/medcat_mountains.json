@@ -547,7 +547,7 @@
     "season": "leaf-fall",
     "tags": ["med_cat", "med_only", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "p_l heads out, leading a patrol of medicine cats to go stock up on the ripening harvest available in Leaf-fall.",
-    "decline_text": ". . .And they're called back almost immediately, as one of the elders starts hacking up something.",
+    "decline_text": "...And they're called back almost immediately, as one of the elders starts hacking up something.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
@@ -601,7 +601,7 @@
     "season": "leaf-bare",
     "tags": ["med_cat", "med_only", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "p_l heads out, leading a patrol of medicine cats to go find any fresh herbs that have survived Leaf-bare so far.",
-    "decline_text": ". . .And they're called back almost immediately, as one of the elders starts hacking up something.",
+    "decline_text": "...And they're called back almost immediately, as one of the elders starts hacking up something.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
