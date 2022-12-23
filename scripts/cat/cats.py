@@ -121,7 +121,8 @@ class Cat():
                  suffix=None,
                  ID=None,
                  moons=None,
-                 example=False):
+                 example=False,
+                 transparency=100):
         self.gender = gender
         self.status = status
         self.backstory = backstory
@@ -170,6 +171,11 @@ class Cat():
         self.df = False
         self.corruption = 0
         self.outside = False
+        self.prevent_fading = False
+
+        self.faded = False  # This is only used to flag cat that are faded, but won't be added to the faded list until
+                            # the next save.
+
         # setting ID
         if ID is None:
             potential_id = str(next(Cat.id_iter))

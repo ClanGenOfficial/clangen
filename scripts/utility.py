@@ -270,6 +270,11 @@ def draw_large(cat, pos):
 
 
 def update_sprite(cat):
+    # First, check if the cat is faded.
+    if cat.faded:
+
+        return
+
     # First make pelt, if it wasn't possible before
     if cat.pelt is None:
         if cat.parent1 is None:

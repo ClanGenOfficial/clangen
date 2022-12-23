@@ -162,7 +162,11 @@ class Screens():
 # CAT PROFILES
 def cat_profiles():
     game.choose_cats.clear()
-    game.cat_buttons.clear()
-    for x in game.clan.clan_cats:
-        game.choose_cats[x] = Cat.all_cats[x]
-        update_sprite(game.choose_cats[x])
+    #print(game.choose_cats)
+    #game.cat_buttons.clear()
+    for x in Cat.all_cats:
+        #game.choose_cats[x] = Cat.all_cats[x]
+        update_sprite(Cat.all_cats[x])
+
+    #print(game.choose_cats)
+

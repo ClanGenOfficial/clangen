@@ -63,7 +63,6 @@ if not os.path.exists('saves/settings.txt'):
         write_file.write('')
 game.load_settings()
 
-# reset brightness to allow for dark mode to not look crap
 sprites.load_scars()
 
 start_screen.screen_switches()

@@ -19,16 +19,14 @@ SAVE_DEATH = False
 
 # G A M E
 class Game():
-    # Text box variables
-    naming_box = pygame.Surface((140, 20))
-    naming_box.fill((230, 230, 230))
     max_name_length = 10
-    max_events_displayed = 10
-    event_scroll_ct = 0
-    max_allegiance_displayed = 17
-    allegiance_scroll_ct = 0
-    max_relation_events_displayed = 10
-    relation_scroll_ct = 0
+    #max_events_displayed = 10
+    #event_scroll_ct = 0
+    #max_allegiance_displayed = 17
+    #allegiance_scroll_ct = 0
+    #max_relation_events_displayed = 10
+    #relation_scroll_ct = 0
+
     cur_events_list = []
     ceremony_events_list = []
     birth_death_events_list = []
@@ -42,15 +40,18 @@ class Game():
     language_list = ['english', 'spanish', 'german']
     game_mode_list = ['classic', 'expanded', 'cruel season']
 
+    cat_to_fade = []
+    loaded_faded_cats = [] #This is a list of Cat object, which are the loaded faded cats. This should be cleared freqenctly.
+
     # Keeping track of various last screen for various purposes
     last_screen_forupdate = 'start screen'
     last_screen_forProfile = 'list screen'
 
-    down = pygame.image.load("resources/images/buttons/arrow_down.png").convert_alpha()
-    up = pygame.image.load("resources/images/buttons/arrow_up.png").convert_alpha()
+    #down = pygame.image.load("resources/images/buttons/arrow_down.png").convert_alpha()
+    #up = pygame.image.load("resources/images/buttons/arrow_up.png").convert_alpha()
 
     choose_cats = {}
-    cat_buttons = {
+    '''cat_buttons = {
         'cat0': None,
         'cat1': None,
         'cat2': None,
@@ -63,7 +64,7 @@ class Game():
         'cat9': None,
         'cat10': None,
         'cat11': None
-    }
+    }'''
     patrol_cats = {}
     patrolled = []
 
@@ -127,8 +128,7 @@ class Game():
         'game_mode': '',
         'set_game_mode': False,
         'broke_up': False,
-        'show_info': False
-
+        'show_info': False,
     }
     all_screens = {}
     cur_events = {}
@@ -154,7 +154,9 @@ class Game():
         'romantic with former mentor': True,
         'game_mode': None,
         'deputy': False,
-        'den labels': True
+        'den labels': True,
+        'fading': True,
+        "save_faded_copy": False
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
@@ -195,40 +197,6 @@ class Game():
             self.switch_screens = True
         self.clicked = False
         self.keyspressed = []
-        # carry commands
-        self.carry_commands()
-
-    def carry_commands(self):
-        """ Run this function to go through commands added to the switch-dictionary and carry them, then
-        reset them back to normal after the action"""
-        if self.switches['setting'] is not None:
-            if self.switches['setting'] in self.settings.keys():
-                self.switch_setting(self.switches['setting'])
-            else:
-                print('Wrong settings value:', self.switches['setting'])
-            self.switches['setting'] = None
-        if self.switches['save_settings']:
-            self.save_settings()
-            self.switches['save_settings'] = False
-        '''if self.switches[
-                'save_clan'] and self.clan is not None and self.cat_class is not None:
-            self.clan.save_clan()
-            self.clan.save_pregnancy(game.clan)
-            self.save_cats()
-            self.switches['save_clan'] = False
-            self.switches['saved_clan'] = True'''
-        if self.switches['switch_clan']:
-            self.clan.save_clan()
-            self.save_cats()
-            self.clan.switch_clans()
-            self.switches['switch_clan'] = False
-        if self.switches['read_clans']:
-            with open('saves/clanlist.txt', 'r') as read_file:
-                clan_list = read_file.read()
-                if_clans = len(clan_list)
-            if if_clans > 0:
-                game.switches['clan_list'] = clan_list.split('\n')
-            self.switches['read_clans'] = False
 
     def read_clans(self):
         with open('saves/clanlist.txt', 'r') as read_file:
@@ -307,16 +275,20 @@ class Game():
 
     def save_cats(self):
         """Save the cat data."""
+
         clanname = ''
-        if game.switches['clan_name'] != '':
+        ''' if game.switches['clan_name'] != '':
             clanname = game.switches['clan_name']
         elif len(game.switches['clan_name']) > 0:
-            clanname = game.switches['clan_list'][0]
-        elif game.clan is not None:
+            clanname = game.switches['clan_list'][0]'''
+        if game.clan is not None:
             clanname = game.clan.name
         directory = 'saves/' + clanname
         if not os.path.exists(directory):
             os.makedirs(directory)
+
+        self.save_faded_cats(clanname)  # Fades cat and saves them, if needed
+
         clan_cats = []
         for inter_cat in self.cat_class.all_cats.values():
             cat_data = {
@@ -388,6 +360,39 @@ class Game():
         except:
             print("Saving cats didn't work.")
 
+    def save_faded_cats(self, clanname):
+        """Deals with fades cats, if needed, adding them as faded """
+        if game.cat_to_fade:
+            directory = 'saves/' + clanname + "/faded_cats"
+            if not os.path.exists(directory):
+                os.makedirs(directory)
+
+        print(game.cat_to_fade)
+        for cat in game.cat_to_fade:
+            if game.settings["save_faded_copy"]:
+                # SAVE A COPY OF FADED DATA
+                pass
+
+            # SAVE TO IT'S OWN LITTLE FILE. This is a trimmed-down version for relation keeping only.
+            cat_data = {
+                "ID": cat,
+                "name_prefix": self.cat_class.all_cats[cat].name.prefix,
+                "name_suffix": self.cat_class.all_cats[cat].name.suffix,
+                "age": self.cat_class.all_cats[cat].age,
+                "parent1": self.cat_class.all_cats[cat].parent1,
+                "parent2": self.cat_class.all_cats[cat].parent2,
+                "paralyzed": self.cat_class.all_cats[cat].paralyzed
+            }
+            try:
+
+                with open('saves/' + clanname + '/faded_cats/' + cat + ".json", 'w') as write_file:
+                    json_string = ujson.dumps(cat_data, indent=4)
+                    write_file.write(json_string)
+            except:
+                print("Something went wrong while saving a faded cat")
+
+            self.clan.remove_cat(cat) # Remove the cat from the active cats lists
+        game.cat_to_fade = []
 
 # M O U S E
 class Mouse():
