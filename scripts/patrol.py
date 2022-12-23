@@ -623,7 +623,7 @@ class Patrol():
                         else:
                             game.clan.leader_lives -= 1
                     else:
-                        game.clan.leader_lives -= 1
+                        game.clan.leader_lives -= 10
                 if len(self.patrol_event.history_text) >= 2:
                     self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
                 else:
