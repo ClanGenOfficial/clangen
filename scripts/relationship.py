@@ -481,7 +481,7 @@ class Relationship(object):
         self.current_action_str = ''
         self.triggerd_event = False
         if log:
-             self.log = log
+             self.log = [log[-1]]
         else:
              self.log = []
 
