@@ -597,11 +597,11 @@ def get_exile_thoughts(cat, other_cat):
 def get_outside_thoughts(cat, other_cat):
     thoughts = []
     thoughts += OUTSIDE['lost']['general']
-    if cat.status == 'kitten':
+    if cat.age == 'kitten':
         thoughts += OUTSIDE['lost']['kitten']
-    elif cat.status == 'apprentice':
+    elif cat.age == 'adolescent':
         thoughts += OUTSIDE['lost']['apprentice']
-    elif cat.status == 'warrior':
+    elif cat.age in ['young adult', 'adult', 'senior adult']:
         thoughts += OUTSIDE['lost']['warrior']
     elif cat.status == 'medicine cat' or cat.status == 'medicine cat apprentice':
         thoughts += OUTSIDE['lost']['med']
@@ -609,7 +609,7 @@ def get_outside_thoughts(cat, other_cat):
         thoughts += OUTSIDE['lost']['deputy']
     elif cat.status == 'leader':
         thoughts += OUTSIDE['lost']['leader']
-    elif cat.status == 'elder':
+    elif cat.age == 'elder':
         thoughts += OUTSIDE['lost']['elder']
     return thoughts
 
