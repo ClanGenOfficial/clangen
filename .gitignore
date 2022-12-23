@@ -154,4 +154,6 @@ cython_debug/
 .vscode/settings.json
 scripts/__pycache__/**
 /__pycache__/
-.vscode/settings.json
+.vscode/**
+
+.vscode/launch.json
