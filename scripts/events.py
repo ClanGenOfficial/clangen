@@ -148,8 +148,29 @@ class Events():
                                 len(Cat.all_cats[random_cat].former_apprentices) > 0 or len(
                                 Cat.all_cats[random_cat].apprentice) > 0):
                             Cat.all_cats[random_cat].status = 'deputy'
+                            text = ''
+                            if game.clan.deputy is not None:
+                                if game.clan.deputy.dead and not game.clan.leader.dead and not game.clan.leader.exiled:
+                                    text = str(game.clan.leader.name) + ' chooses ' + str(Cat.all_cats[random_cat].name) + ' to take over as deputy. They know that ' + str(game.clan.deputy.name) + ' would agree.'
+                                if not game.clan.deputy.dead:
+                                    text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. The retired deputy nods their approval.'
+                            else:
+                                if Cat.all_cats[random_cat].trait == 'bloodthirsty':
+                                    text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. They look at the clan leader with an odd glint in their eyes.' 
+                                else:
+                                    r = choice([1, 2, 3, 4, 5])
+                                    if r == 1:
+                                        text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. The clan yowls their name in approval.'
+                                    elif r == 2:
+                                        text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. The clan chants their name out in support of the choice.'
+                                    elif r == 3:
+                                        text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. Some of the older clan members question the wisdom in this choice.'
+                                    elif r == 4:
+                                        text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. They hold their head up high and promise to do their best for the clan.'
+                                    else:
+                                        text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. They pray to StarClan that they are the right choice for the clan.'
+
                             game.clan.deputy = Cat.all_cats[random_cat]
-                            text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy'
                             game.cur_events_list.append(text)
                             game.ceremony_events_list.append(text)
                             break
@@ -195,7 +216,7 @@ class Events():
             self.condition_events.handle_already_disabled(cat)
         self.perform_ceremonies(cat)  # here is age up included
 
-        if not game.clan.closed_borders and not self.new_cat_invited or self.living_cats < 10:
+        if not game.clan.closed_borders:
             self.invite_new_cats(cat)
 
         self.other_interactions(cat)
@@ -349,10 +370,10 @@ class Events():
                     else:
                         chance = int(random.random() * 41)
 
-                    if chance in range(1, 6):
+                    if chance in range(1, 10):
                         if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
                             chance = 1
-                    if has_med_app is False and len(get_med_cats(Cat)) != 0 and chance == 1:
+                    if has_med_app is False and chance == 1:
                         self.ceremony(cat, 'medicine cat apprentice', ' has chosen to walk the path of a medicine cat.')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
@@ -461,7 +482,7 @@ class Events():
             ])
         elif (promoted_to == 'elder' and game.clan.leader.dead):
             ceremony.extend([
-                str(cat.name) + "wished to join the elders. The clan honors them and all the service they have given to them."
+                str(cat.name) + " wished to join the elders. The clan honors them and all the service they have given to them."
             ])
         if (promoted_to == 'warrior' or promoted_to == 'apprentice' or promoted_to == 'medicine cat apprentice' or promoted_to == 'medicine cat' or promoted_to == 'elder'):
             ceremony_text = choice(ceremony)
