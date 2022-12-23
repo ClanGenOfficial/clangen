@@ -16,9 +16,15 @@ THIRD_RELATIONSHIP_INCLUDED = {
 }
 
 EXILED_CATS = {
-    "cat_to": ['bumped into (cat) at the clan border', 'Caught a glimpse of (cat) from the distance.'],
+    "cat_to": ['bumped into (cat) at the clan border', 'caught a glimpse of (cat) from the distance.'],
     "cat_from": ['was wandering near the clan territory and met (cat).'],
     "both": ['ran into (cat) by chance.']
+}
+
+OUTSIDE_CATS = {
+    "cat_to": ['is thinking about (cat)'],
+    "cat_from": ['is thinking about (cat) as they wander far from Clan territory.'],
+    "both": ['wonders where (cat) is right now. ']
 }
 
 # weights of the stat change
@@ -122,6 +128,29 @@ class Relationship():
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
             game.relation_events_list.append(f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            return
+
+        # quick fix for outside cat relationships
+        if self.cat_to.outside and not self.cat_from.outside:
+            action = choice(OUTSIDE_CATS['cat_to'])
+            string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
+            self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
+            game.relation_events_list.append(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            return
+        elif self.cat_from.outside and not self.cat_to.outside:
+            action = choice(OUTSIDE_CATS['cat_from'])
+            string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
+            self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
+            game.relation_events_list.append(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            return
+        elif self.cat_from.outside and self.cat_to.outside:
+            action = choice(OUTSIDE_CATS['both'])
+            string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
+            self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
+            game.relation_events_list.append(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
             return
 
         # get action possibilities
