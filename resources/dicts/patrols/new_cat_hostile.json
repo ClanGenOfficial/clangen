@@ -52,7 +52,7 @@
     "tags": ["border", "new_cat", "new_cat_adult", "new_cat_majorinjury", "reputation"],
     "intro_text": "r_c finds a wounded cat near the thunderpath.",
     "success_text": [
-        "The patrol brings the cat back to camp. Once nursed back to health, the cat decides to join the Clan."
+        "The patrol approaches the cat and sees some signs of life. The patrol, after some hesitation, decides to bring the cat back to camp so that they can be treated by the medicine cat. The cat thanks them profusely and promises to repay them by joining the Clan and being the best warrior they can."
     ],
     "fail_text": [
         "As r_c inspects the cat, they find that they are already hunting with their ancestors.",
