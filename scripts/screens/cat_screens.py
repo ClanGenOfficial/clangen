@@ -1066,26 +1066,26 @@ class ProfileScreen(Screens):
                     influenced_skill = adjust_skill
                     break
 
-            if self.the_cat.former_mentor:
-                mentor = self.the_cat.former_mentor[-1].name
-            else:
-                mentor = None
+        if self.the_cat.former_mentor:
+            mentor = self.the_cat.former_mentor[-1].name
+        else:
+            mentor = None
 
-            # append influence blurb to history
-            if mentor is None:
-                influence_history = "This cat either did not have a mentor, or their mentor is unknown."
-                if self.the_cat.status == 'kitten':
-                    influence_history = 'This cat has not begun training.'
-                if self.the_cat.status in ['apprentice', 'medicine cat apprentice']:
-                    influence_history = 'This cat has not finished training.'
-            elif influenced_trait is not None and influenced_skill is None:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait}."
-            elif influenced_trait is None and influenced_skill is not None:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
-            elif influenced_trait is not None and influenced_skill is not None:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill}."
-            else:
-                influence_history = f"This cat's mentor was {mentor}."
+        # append influence blurb to history
+        if mentor is None:
+            influence_history = "This cat either did not have a mentor, or their mentor is unknown."
+            if self.the_cat.status == 'kitten':
+                influence_history = 'This cat has not begun training.'
+            if self.the_cat.status in ['apprentice', 'medicine cat apprentice']:
+                influence_history = 'This cat has not finished training.'
+        elif influenced_trait is not None and influenced_skill is None:
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait}."
+        elif influenced_trait is None and influenced_skill is not None:
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
+        elif influenced_trait is not None and influenced_skill is not None:
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill}."
+        else:
+            influence_history = f"This cat's mentor was {mentor}."
 
         return influence_history
 
