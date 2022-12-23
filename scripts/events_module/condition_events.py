@@ -62,7 +62,11 @@ class Condition_Events():
         # ---------------------------------------------------------------------------- #
         #                         handle currently sick cats                           #
         # ---------------------------------------------------------------------------- #
-        if cat.is_ill() and not cat.dead:
+        # need to hold this number so that we can check if the leader has died
+        starting_life_count = game.clan.leader_lives
+        clear_leader_conditions = False
+
+        if cat.is_ill():
             triggered = True
             for illness in cat.illnesses:
 
@@ -85,6 +89,9 @@ class Condition_Events():
 
                 # if the leader died, then break before handling other illnesses cus they'll be fully healed
                 elif cat.dead and cat.status == 'leader':
+                    break
+                elif cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
+                    clear_leader_conditions = True
                     break
 
                 # heal the cat
@@ -164,6 +171,15 @@ class Condition_Events():
 
                             # break out of risk giving loop cus we don't want to give multiple risks for one illness
                             break
+
+            if clear_leader_conditions is True or cat.dead:
+                # reset leader after death
+                cat.injuries.clear()
+                cat.illnesses.clear()
+                new_illness.clear()
+                old_illness.clear()
+                healed_illnesses.clear()
+                cat.healed_condition = False
 
             # making sure that when an illness progresses, the old illness is not kept and new illness is given
             if len(new_illness) > 0:
@@ -256,13 +272,9 @@ class Condition_Events():
         This function handles overall the injuries in 'expanded' (or 'cruel season') game mode.
         Returns: boolean - if an event was triggered
         """
-        # one if-statement has a range of 10
-        number_of_conditions = 4 * 10
-        ratio = 60  # 1/75 times triggering for each cat each moon
-        chance_number = number_of_conditions * ratio
         has_other_clan = False
 
-        random_number = int(random.random() * chance_number)
+        random_number = int(random.random() * 150)
         triggered = False
         text = None
 
@@ -289,9 +301,9 @@ class Condition_Events():
                                   "troublesome",
                                   "vengeful",
                                   "impulsive"] and \
-                    random_number <= 60:
+                    random_number <= 15:
                 triggered = True
-            elif not triggered and random_number <= 50:
+            elif not triggered and random_number <= 5:
                 triggered = True
 
             if triggered:
@@ -485,7 +497,7 @@ class Condition_Events():
             "HALFTAIL": ["lost their tail"],
             "LEFTEAR": ["partial hearing loss"],
             "RIGHTEAR": ["partial hearing loss"],
-            "MANLEG": ["weak leg"],
+            "MANLEG": ["weak leg", "twisted leg"],
             "BRIGHTHEART": ["one bad eye"],
             "NOLEFTEAR": ["partial hearing loss"],
             "NORIGHTEAR": ["partial hearing loss"],
@@ -545,6 +557,10 @@ class Condition_Events():
         event_list = []
         new_condition = None
 
+        # need to hold this number so that we can check if the leader has died
+        starting_life_count = game.clan.leader_lives
+        clear_leader_conditions = False
+
         if game.clan.game_mode == "classic":
             return triggered
 
@@ -554,6 +570,11 @@ class Condition_Events():
                 skipped = cat.moon_skip_injury(injury)
                 if skipped:
                     continue
+
+                elif cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
+                    clear_leader_conditions = True
+                    break
+
                 if cat.dead:
                     triggered = True
                     # TODO: need to make death events for these so that we can have more variety
@@ -673,6 +694,16 @@ class Condition_Events():
                     if new_condition is not None:
                         triggered = True
                         break
+
+            if clear_leader_conditions is True or cat.dead:
+                # reset leader after death
+                cat.injuries.clear()
+                cat.illnesses.clear()
+                if new_condition is not None:
+                    new_condition.clear()
+                if healed_injury is not None:
+                    healed_injury.clear()
+                cat.healed_condition = False
 
             if len(healed_injury) != 0:
                 for y in healed_injury:

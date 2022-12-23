@@ -316,10 +316,20 @@ class Cat():
     def is_alive(self):
         return not self.dead
 
-    def die(self, body=True):
-        if self.status == 'leader' and game.clan.leader_lives > 0:
+    def die(self, body=True, died_by_condition=False):
+        """
+        This is used to kill a cat.
+
+        body - defaults to True, use this to mark if the body was recovered so
+        that grief messages will align with body status
+
+        died_by_condition - defaults to False, use this to mark if the cat is dying via a condition.
+        """
+        if self.status == 'leader' and game.clan.leader_lives > 0 and died_by_condition is False:
             self.injuries.clear()
             self.illnesses.clear()
+            return
+        elif self.status == 'leader' and game.clan.leader_lives > 0 and died_by_condition is True:
             return
         elif self.status == 'leader' and game.clan.leader_lives <= 0:
             self.dead = True
@@ -327,8 +337,9 @@ class Cat():
         else:
             self.dead = True
 
-        self.injuries.clear()
-        self.illnesses.clear()
+        if self.status != 'leader' and died_by_condition is False:
+            self.injuries.clear()
+            self.illnesses.clear()
 
         if self.mate is not None:
             self.mate = None
@@ -900,10 +911,11 @@ class Cat():
 
         mortality = self.illnesses[illness]["mortality"]
 
-
         # leader should have a higher chance of death
-        if self.status == "leader":
+        if self.status == "leader" and mortality != 0:
             mortality = int(mortality * 0.7)
+            if mortality == 0:
+                mortality = 1
 
         if mortality and not int(random.random() * mortality):
             if self.status == "leader":
@@ -919,7 +931,7 @@ class Cat():
                     game.health_events_list.append(text)
                     game.birth_death_events_list.append(text)
                     game.cur_events_list.append(text)
-            self.die()
+            self.die(died_by_condition=True)
             return False
 
         keys = self.illnesses[illness].keys()
@@ -945,13 +957,15 @@ class Cat():
         mortality = self.injuries[injury]["mortality"]
 
         # leader should have a higher chance of death
-        if self.status == "leader":
+        if self.status == "leader" and mortality != 0:
             mortality = int(mortality * 0.7)
+            if mortality == 0:
+                mortality = 1
 
         if mortality and not int(random.random() * mortality):
             if self.status == 'leader':
                 game.clan.leader_lives -= 1
-            self.die()
+            self.die(died_by_condition=True)
             return
 
         keys = self.injuries[injury].keys()
@@ -995,11 +1009,15 @@ class Cat():
             return True
 
         # leader should have a higher chance of death
-        if self.status == "leader":
+        if self.status == "leader" and mortality != 0:
             mortality = int(mortality * 0.7)
+            if mortality == 0:
+                mortality = 1
 
         if mortality and not int(random.random() * mortality) and moons_until == 0:
-            self.die()
+            if self.status == 'leader':
+                game.clan.leader_lives -= 1
+            self.die(died_by_condition=True)
             return False
 
 
