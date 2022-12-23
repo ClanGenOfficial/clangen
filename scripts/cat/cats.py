@@ -1990,7 +1990,8 @@ class Cat():
 # Twelve example cats
 def create_example_cats():
     e = random.sample(range(12), 3)
-    not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL']
+    not_allowed = ['NOPAW', 'NOTAIL', 'HALFTAIL', 'NOEAR', 'BOTHBLIND', 'RIGHTBLIND', 'LEFTBLIND', 'BRIGHTHEART'
+                   'NOLEFTEAR', 'NORIGHTEAR', 'MANLEG']
     for a in range(12):
         if a in e:
             game.choose_cats[a] = Cat(status='warrior')
