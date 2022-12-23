@@ -1287,8 +1287,8 @@ class PatrolEvent():
         # two apps gain relationship towards each other - "rel_two_apps"
         # whole clan gains relationship towards patrol - "clan_to_patrol"
         # whole patrol gains relationship with each other - "rel_patrol" 
-        (also default, so if you don’t add any other tags, it goes to this. If you want this outcome, 
-        you don’t need to add any tags, this is just if you need to add one of the other tags)
+        (also default, so if you don't add any other tags, it goes to this. If you want this outcome, 
+        you don't need to add any tags, this is just if you need to add one of the other tags)
         
         "romantic" < change romantic value
         "platonic" < change platonic value

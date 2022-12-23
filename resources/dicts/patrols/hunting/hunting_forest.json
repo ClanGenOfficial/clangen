@@ -1290,18 +1290,18 @@ null
     "biome": "forest",
     "season": "Any",
     "tags": ["hunting", "rel_two_apps", "platonic", "comfort", "romantic", "two_apprentices", "apprentice"],
-    "intro_text": "Something skitters across the leaf litter, catching the patrol’s eyes. A little lizard!",
+    "intro_text": "Something skitters across the leaf litter, catching the patrol's eyes. A little lizard!",
     "decline_text": "Startled by the lizard, the patrol watches it scurry away.",
     "chance_of_success": 60,
     "exp": 15,
     "success_text": [
-            "app1 pounces on the little creature and misses, but they don't seem overly concerned, stopping nearly every step to chat to app2, who's just as keen to talk.",
-            "app1 and app2 go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing, and they don't leave each other's side for the rest of the patrol, apologies turning to chatting turning to whispered conversations.",
-            null,
-            null
+        "app1 pounces on the little creature and misses, but they don't seem overly concerned, stopping nearly every step to chat to app2, who's just as keen to talk.",
+        "app1 and app2 go for the prey at the same time, bonking their heads together. It makes both of them laugh while apologizing, and they don't leave each other's side for the rest of the patrol, apologies turning to chatting turning to whispered conversations.",
+        null,
+        null
     ],
     "fail_text": [
-            "The patrol is unable to catch the small reptile quick enough and the little lizard lives another day."
+        "The patrol is unable to catch the small reptile quick enough and the little lizard lives another day."
     ],
     "win_skills": ["None"],
     "win_trait": ["None"],
@@ -1322,15 +1322,15 @@ null
     "chance_of_success": 50,
     "exp": 10,
     "success_text": [
-            "The patrol interprets the purpose of the object. It seems like Twolegs light their freshkill on fire before eating it! How strange.",
-            null,
-            "s_c looks closely at the Twoleg object, studying it, wondering how specifically the Twolegs harness and contain the power of fire without it escaping. Wouldn't it be wonderful if c_n could do that?"
+        "The patrol interprets the purpose of the object. It seems like Twolegs light their freshkill on fire before eating it! How strange.",
+        null,
+        "s_c looks closely at the Twoleg object, studying it, wondering how specifically the Twolegs harness and contain the power of fire without it escaping. Wouldn't it be wonderful if c_n could do that?"
     ],
     "fail_text": [
-            "The patrol can't seem to interpret the purpose of the object. Twolegs are just mystifying.",
-            null,
-            null,
-            "As r_c pokes around the strange smelling whatever-it-is, they poke a piece of metal still holding the heat of fire in it, and skitter backwards with a yelp."
+        "The patrol can't seem to interpret the purpose of the object. Twolegs are just mystifying.",
+        null,
+        null,
+        "As r_c pokes around the strange smelling whatever-it-is, they poke a piece of metal still holding the heat of fire in it, and skitter backwards with a yelp."
     ],
     "win_skills": ["smart", "very smart", "extremely smart"],
     "win_trait": ["None"],
@@ -1446,7 +1446,7 @@ null
     "patrol_id": "fst_hunt_fox_newleafscavenge1",
     "biome": "forest",
     "season": "newleaf",
-    "tags": ["hunting", "big_prey", "fighting", "scar", "injury", "bite-wound",  "clan_to_patrol", "respect", "rel_patrol"],
+    "tags": ["hunting", "big_prey", "fighting", "scar", "injury", "bite-wound", "clan_to_patrol", "respect", "rel_patrol"],
     "intro_text": "Your patrol catches the scent of a fox - but is it red, or gray? Tracking it, they find their red enemy feeding on a deer fawn carcass. It's impossible to say whether the fox killed it or found it.",
     "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
     "chance_of_success": 50,

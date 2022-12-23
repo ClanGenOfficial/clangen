@@ -82,7 +82,7 @@
     "cracked pads": {
         "an infected wound": [
             "r_c spreads the last of the salve on m_c's cracked and swollen pads, and sternly tells them to stay off their feet unless they'd like the infection to get any worse.",
-            "m_c swears they’ve been washing their pads, but they still seem to have become infected."
+            "m_c swears they've been washing their pads, but they still seem to have become infected."
 
         ]
     },
@@ -165,7 +165,7 @@
     "shivering": {
         "frostbite": [
             "r_c massages m_c's paw pads, looking for signs that blood flow is returning to them. This has definitely crossed the line into frostbite.",
-            "m_c says that their extremities feel like they’re being pricked by claws, and numbness soon follows. That's a sign of frostbite.",
+            "m_c says that their extremities feel like they're being pricked by claws, and numbness soon follows. That's a sign of frostbite.",
             "The skin of m_c's extremities is a worrying black and blue, one of their friends spends some time licking at the cold bits of skin but they seem to be frostbitten."
 
         ]

@@ -14,15 +14,15 @@
 		"exp":20,
 		"success_text":[
 			"r_c listens carefully as the p_l explains how to move through the water unseen and undetected.",
-			"r_c picks up the instruction quickly and the patrol soon plays a small game of leap frog within the shallow pools to test the apprentice’s abilities.",
+			"r_c picks up the instruction quickly and the patrol soon plays a small game of leap frog within the shallow pools to test the apprentice's abilities.",
 			null,
 			"By the end of the patrol s_c is able to hide stealthily within the water, their movements barely noticeable."
 		],
 		"fail_text":[
-			"r_c tries to hide within the water, but they can’t quite manage to make themselves still and quiet enough to avoid detection.",
+			"r_c tries to hide within the water, but they can't quite manage to make themselves still and quiet enough to avoid detection.",
 			"s_c struggles to take the lesson seriously and eventually the training session ends early with no real progress made.",
 			null,
-			"r_c makes their way into the muddy water to try out the advice p_l has given them, but they go crashing down into a deeper section, catching themselves on something sharp in the murky water! An important lesson is learned about watching where you step in water you can’t see through, and r_c returns to camp damp, cold, and injured."
+			"r_c makes their way into the muddy water to try out the advice p_l has given them, but they go crashing down into a deeper section, catching themselves on something sharp in the murky water! An important lesson is learned about watching where you step in water you can't see through, and r_c returns to camp damp, cold, and injured."
 		],
 		"win_trait":[
 			"calm",
@@ -66,7 +66,7 @@
 		],
 		"fail_text":[
 			"The patrol works all day to free their clanmate and gets nothing else done.",
-			"Harshly, s_c tells their clanmate that they’re on their own - this patrol is too important to wait for some idiot who got stuck.",
+			"Harshly, s_c tells their clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
 			"p_l works frantically, but r_c is under the water for too long, and slips away as the patrol tries desperately to find them.",
 			"The patrol eventually manages to rescue r_c, but they need to be helped back to camp, wheezing the water out of their lungs."
 		],
@@ -119,8 +119,8 @@
 			"death",
 			"scar"
 		],
-		"intro_text":"Trailing behind the patrol, there’s a roar as a Twoleg monster passes the patrol on the nearby water. r_c looks up just in time to screech in terror as the wake from the monster sweeps over the path, knocking them into the water.",
-		"decline_text":"Thankfully, they’re near the bank, and wriggle their way clear.",
+		"intro_text":"Trailing behind the patrol, there's a roar as a Twoleg monster passes the patrol on the nearby water. r_c looks up just in time to screech in terror as the wake from the monster sweeps over the path, knocking them into the water.",
+		"decline_text":"Thankfully, they're near the bank, and wriggle their way clear.",
 		"chance_of_success":50,
 		"exp":20,
 		"success_text":[
@@ -131,7 +131,7 @@
 		],
 		"fail_text":[
 			"The patrol works all day to free r_c and gets nothing else done.",
-			"Harshly, s_c tells r_c that they’re on their own - this patrol is too important to wait for some idiot who got stuck.",
+			"Harshly, s_c tells r_c that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
 			"Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan under the water.",
 			"The patrol eventually manages to rescue r_c, but they need to be helped back to camp, wheezing the water out of their lungs."
 		],
@@ -182,8 +182,8 @@
 			"death",
 			"scar"
 		],
-		"intro_text":"Out in the wetlands training alone, there’s a roar as a Twoleg monster passes r_c on the nearby water. r_c looks up just in time to screech in terror as the wake from the monster sweeps over the path, knocking them into the water.",
-		"decline_text":"Thankfully, they’re near the bank, and wriggle their way clear.",
+		"intro_text":"Out in the wetlands training alone, there's a roar as a Twoleg monster passes r_c on the nearby water. r_c looks up just in time to screech in terror as the wake from the monster sweeps over the path, knocking them into the water.",
+		"decline_text":"Thankfully, they're near the bank, and wriggle their way clear.",
 		"chance_of_success":50,
 		"exp":20,
 		"success_text":[
@@ -229,12 +229,12 @@
 			"injury",
 			"scar"
 		],
-		"intro_text":"r_c heads out into the swamps alone, but maybe an apprentice shouldn’t try to do a solo patrol.",
+		"intro_text":"r_c heads out into the swamps alone, but maybe an apprentice shouldn't try to do a solo patrol.",
 		"decline_text":"r_c turns back to camp, deciding that this is a bad idea.",
 		"chance_of_success":30,
 		"exp":20,
 		"success_text":[
-			"At least this is a good chance to learn the territory! r_c heads off to map out the paths of solid ground through a boggy section they’ve always found confusing.",
+			"At least this is a good chance to learn the territory! r_c heads off to map out the paths of solid ground through a boggy section they've always found confusing.",
 			"r_c clambers through a muddy section and stumbles across a tiny island rising from the swamp.",
 			null,
 			"There's nothing to worry about! s_c pads confidently through c_n territory, assured in their safety by the strength of c_n borders."
@@ -284,7 +284,7 @@
 		"chance_of_success":30,
 		"exp":20,
 		"success_text":[
-			"r_c heads off to map out the paths of solid ground through a boggy section they’ve always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date.",
+			"r_c heads off to map out the paths of solid ground through a boggy section they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date.",
 			"r_c clambers through a muddy section and stumbles across a tiny island rising from the swamp.",
 			"s_c rounds a corner and stumbles across a tiny island rising from the swamp. Further investigation shows it's dry and lush, and s_c purrs. This reliable prey hunting ground could be important during times of scarcity.",
 			"s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
@@ -334,7 +334,7 @@
 		"chance_of_success":30,
 		"exp":20,
 		"success_text":[
-			"r_c heads off to map out the paths of solid ground through a boggy section they’ve always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+			"r_c heads off to map out the paths of solid ground through a boggy section they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
 			"r_c rounds a corner and stumbles across a tiny island rising from the swamp. Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
 			"s_c rounds a corner and stumbles across a tiny island rising from the swamp. Further investigation shows it's dry and lush, and s_c purrs. This reliable prey hunting ground could be important during times of scarcity, there's a relief to discovering it.",
 			"s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
@@ -384,7 +384,7 @@
 		"chance_of_success":30,
 		"exp":20,
 		"success_text":[
-			"r_c heads off to map out the paths of solid ground through a boggy section they’ve always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+			"r_c heads off to map out the paths of solid ground through a boggy section they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
 			"r_c rounds a corner and stumbles across a tiny island rising from the swamp. Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
 			"s_c rounds a corner and stumbles across a tiny island rising from the swamp. Further investigation shows it's dry and lush, and s_c purrs. This reliable prey hunting ground could be important during times of scarcity, there's a relief to discovering it.",
 			"s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."

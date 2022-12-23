@@ -240,7 +240,7 @@ class Name():
         "Moon", "Twilight", "River", "Glass", "Goose", "Hunter", "Amity",
         "Stripes", "Cowbell", "Rory", "Lobster", "Slug", "Starfish", "Salmon",
         "Judy", "Johnny", "Kerry", "Evelyn", "Holly", "Bolt", "Millie",
-        "Jessica", "Laku", "Dragonfly", "X’ek", "Silva", "Dreamy", "Decay",
+        "Jessica", "Laku", "Dragonfly", "X'ek", "Silva", "Dreamy", "Decay",
         "Twister", "Shay", "Louis", "Oleander", "Spots", "Cream", "Omelet",
         "Gizmo", "Feather", "Twix", "Silver", "Ghost", "Wisp", "Obi Wan",
         "Pikachu", "Mango", "Via", "Olivia", "Mr. Whiskers", "Fluffy",

@@ -13,12 +13,12 @@
 		"exp":10,
 		"success_text":[
 			"r_c listens carefully as the p_l explains how to spot a gust of wind approaching and how to use the noise and stinging sand to your advantage.",
-			"r_c picks up the instruction quickly and the patrol soon plays a small game, freezing and only moving to tag each other during wind gusts, to test the apprentice’s abilities.",
+			"r_c picks up the instruction quickly and the patrol soon plays a small game, freezing and only moving to tag each other during wind gusts, to test the apprentice's abilities.",
 			null,
 			"By the end of the patrol s_c is able to move steadily with the wind and sand, their movements sure and confident"
 		],
 		"fail_text":[
-			"r_c tries to learn to track the wind gusts, but they can’t quite manage to pick up the trick to it.",
+			"r_c tries to learn to track the wind gusts, but they can't quite manage to pick up the trick to it.",
 			"s_c struggles to take the lesson seriously and eventually the training session ends early with no real progress made.",
 			null,
 			"r_c makes their way into the sand dunes to try out the advice p_l has given them, but they open their eyes at exactly the wrong point in time and get a blast full of sand to the face!  Just like it can blind prey, the stinging sand wind can also bind yourself, a lesson that r_c has learnt the hard way."
@@ -47,21 +47,21 @@
 			"scar",
 			"training"
 		],
-		"intro_text":"r_c wanders past an old badger sett overlooking a dried up riverbed, only to freeze. There’s new scent here, acrid and sour.",
+		"intro_text":"r_c wanders past an old badger sett overlooking a dried up riverbed, only to freeze. There's new scent here, acrid and sour.",
 		"decline_text":"Surely it must be nothing… uneasily, r_c continues on.",
 		"chance_of_success":40,
 		"exp":30,
 		"success_text":[
 			"Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but the scent change is unmistakable - a new badger occupant has moved in. Creeping forward, belly flat in the dirt, they manage just enough of a glimpse to confirm the badger's presence before it moves and r_c shots backwards, sprinting back to camp to warn everyone.",
-			"Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but after a few moments, realizes that the scent is relatively weak.  A badger was here, no doubt about it, but it doesn’t seem to have taken up residence.  This will be important information to report back at camp.",
-			"s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn’t involve sticking their head in front of a predator. They search the scrubland around the sett thoroughly, and come up with fresh badger scat, stinky, horrible, and perfect proof of the new occupant of the sett.",
-			"Carefully considering their options, r_c decides on stakeout, and watches from a shaded vantage point. When the badger pokes its head above ground at dusk, they’re prepared, and dart off back to camp to warn everyone before the predator has blinked the sleep out of its eyes."
+			"Feeling ever so alone on their solo patrol, r_c carefully sniffs around the mouth of the burrow, but after a few moments, realizes that the scent is relatively weak.  A badger was here, no doubt about it, but it doesn't seem to have taken up residence.  This will be important information to report back at camp.",
+			"s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They search the scrubland around the sett thoroughly, and come up with fresh badger scat, stinky, horrible, and perfect proof of the new occupant of the sett.",
+			"Carefully considering their options, r_c decides on stakeout, and watches from a shaded vantage point. When the badger pokes its head above ground at dusk, they're prepared, and dart off back to camp to warn everyone before the predator has blinked the sleep out of its eyes."
 		],
 		"fail_text":[
 			null,
-			"Well, the only way to know is to check! s_c scrambles into the den for a look, and it’s only by the grace of StarClan that they’re able to redirect that speed to twist around just as fast, furious fizzing following them up the burrow tunnel, leaving behind clumps of their own fur.",
-			"r_c carefully approaches the burrow, trying to figure out if there’s anything new inside. It’s so dark, and it all smells the same, so they try to creep just a little closer - but the floor drops away steeply below their paws, and they lose their grip, skidding downwards into a disturbed and lethal badger.",
-			"While r_c is carefully sniffing at the burrow entrance, there’s a soft pawstep on the dry ground behind them. It’s difficult to say who’s more surprised, r_c or the badger, and it charges towards the sett. r_c leaps out of the way, but its claws catch their pelt, and it’s a bloodied cat that limps back into camp to report the whole sorry adventure."
+			"Well, the only way to know is to check! s_c scrambles into the den for a look, and it's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, furious fizzing following them up the burrow tunnel, leaving behind clumps of their own fur.",
+			"r_c carefully approaches the burrow, trying to figure out if there's anything new inside. It's so dark, and it all smells the same, so they try to creep just a little closer - but the floor drops away steeply below their paws, and they lose their grip, skidding downwards into a disturbed and lethal badger.",
+			"While r_c is carefully sniffing at the burrow entrance, there's a soft pawstep on the dry ground behind them. It's difficult to say who's more surprised, r_c or the badger, and it charges towards the sett. r_c leaps out of the way, but its claws catch their pelt, and it's a bloodied cat that limps back into camp to report the whole sorry adventure."
 		],
 		"win_skills":[
 			"smart",
@@ -109,21 +109,21 @@
 			"scar",
 			"training"
 		],
-		"intro_text":"p_l wanders past an old badger sett overlooking a dried up riverbed, only to freeze. There’s new scent here, acrid and sour.",
+		"intro_text":"p_l wanders past an old badger sett overlooking a dried up riverbed, only to freeze. There's new scent here, acrid and sour.",
 		"decline_text":"Surely it must be nothing… uneasily, the patrol continues on.",
 		"chance_of_success":40,
 		"exp":30,
 		"success_text":[
 			"Calling the rest of the patrol over, the cats discuss their next move. If a badger has moved in, they need to confirm it. Eventually p_l comes up with a plan, sweeping the ground in front of the sett entrance clean with their tails. The cats will be able to come back tomorrow, and see if anything has left tracks.",
-			"This can’t be left unknown. The patrol brainstorms ideas, until eventually they have a workable plan. p_l takes the most unpleasant job, carefully moving fallen cacti spikes and thorny scrubs, until the cats gingerly push them down the slope of the badger set. Outraged, pained fizzing confirms the new occupant.",
-			"s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn’t involve sticking their head in front of a predator. They lead the patrol on a search of the scrubland around the sett, and come up with fresh badger scat, stinky, horrible, and perfect proof of the new occupant.",
-			"Carefully considering their options, s_c decides to set up a stakeout with the patrol. When the badger pokes its head above the ground at dusk, they’re prepared, and everyone turns for home, fading through the grass before the predator has blinked the sleep out of its eyes."
+			"This can't be left unknown. The patrol brainstorms ideas, until eventually they have a workable plan. p_l takes the most unpleasant job, carefully moving fallen cacti spikes and thorny scrubs, until the cats gingerly push them down the slope of the badger set. Outraged, pained fizzing confirms the new occupant.",
+			"s_c decides there has to be a smarter way of figuring out if a badger has moved in, one that doesn't involve sticking their head in front of a predator. They lead the patrol on a search of the scrubland around the sett, and come up with fresh badger scat, stinky, horrible, and perfect proof of the new occupant.",
+			"Carefully considering their options, s_c decides to set up a stakeout with the patrol. When the badger pokes its head above the ground at dusk, they're prepared, and everyone turns for home, fading through the grass before the predator has blinked the sleep out of its eyes."
 		],
 		"fail_text":[
-			"The cats try to clean the opening to the sett free of tracks, but the ground is slightly too damp and the dirt just ends up clumped oddly to their tails. Before they know it they’re tired, thirsty, and going home with nothing to show for it.",
-			"Well, the only way to know is to check! s_c scrambles into the den for a look, and it’s only by the grace of StarClan that they’re able to redirect that speed to twist around just as fast, furious fizzing following them up the burrow tunnel, leaving behind clumps of their own fur.",
+			"The cats try to clean the opening to the sett free of tracks, but the ground is slightly too damp and the dirt just ends up clumped oddly to their tails. Before they know it they're tired, thirsty, and going home with nothing to show for it.",
+			"Well, the only way to know is to check! s_c scrambles into the den for a look, and it's only by the grace of StarClan that they're able to redirect that speed to twist around just as fast, furious fizzing following them up the burrow tunnel, leaving behind clumps of their own fur.",
 			null,
-			"While the patrol are sniffing at the burrow entrance there's a rustle from the scrubland. It’s difficult to say who’s more surprised, cats or badger, and it charges towards the sett. There’s a confused rush with paws and fur flying as the melee of creatures tries to sort itself out, and it ends with one badger returned to home and a couple of battered patrol members. In a couple moons, this’ll probably be a funny story."
+			"While the patrol are sniffing at the burrow entrance there's a rustle from the scrubland. It's difficult to say who's more surprised, cats or badger, and it charges towards the sett. There's a confused rush with paws and fur flying as the melee of creatures tries to sort itself out, and it ends with one badger returned to home and a couple of battered patrol members. In a couple moons, this'll probably be a funny story."
 		],
 		"win_skills":[
 			"smart",
@@ -185,7 +185,7 @@
 		],
 		"fail_text":[
 			"The patrol works all day to free their clanmate and gets nothing else done.",
-			"Harshly, s_c tells their clanmate that they’re on their own - this patrol is too important to wait for some idiot who got stuck.",
+			"Harshly, s_c tells their clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
 			"p_l works frantically, but r_c is under the sand for too long, and slips away as the patrol tries desperately to free them.",
 			"The patrol eventually manages to rescue r_c, but they need to be helped back to camp, wheezing and injured."
 		],
@@ -238,8 +238,8 @@
 			"death",
 			"scar"
 		],
-		"intro_text":"Trailing behind the patrol, there’s a quiet swish below r_c. They look around wildly, just in time for the world to tip upside-down as the sand dune beneath them collapses.",
-		"decline_text":"Thankfully, they’re on the edge of the obstruction, and wriggle their way clear.",
+		"intro_text":"Trailing behind the patrol, there's a quiet swish below r_c. They look around wildly, just in time for the world to tip upside-down as the sand dune beneath them collapses.",
+		"decline_text":"Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
 		"chance_of_success":50,
 		"exp":20,
 		"success_text":[
@@ -250,7 +250,7 @@
 		],
 		"fail_text":[
 			"The patrol works all day to free r_c and gets nothing else done.",
-			"Harshly, s_c tells r_c that they’re on their own - this patrol is too important to wait for some idiot who got stuck.",
+			"Harshly, s_c tells r_c that they're on their own - this patrol is too important to wait for some idiot who got stuck.",
 			"Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan.",
 			"The patrol eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
 		],
@@ -348,12 +348,12 @@
 			"injury",
 			"scar"
 		],
-		"intro_text":"r_c heads out into the desert alone, but maybe an apprentice shouldn’t try to do a solo patrol.",
+		"intro_text":"r_c heads out into the desert alone, but maybe an apprentice shouldn't try to do a solo patrol.",
 		"decline_text":"r_c turns back to camp, deciding that this is a bad idea.",
 		"chance_of_success":30,
 		"exp":20,
 		"success_text":[
-			"At least this is a good chance to learn the territory! r_c heads off to map out the paths through a rocky maze they’ve always found confusing.",
+			"At least this is a good chance to learn the territory! r_c heads off to map out the paths through a rocky maze they've always found confusing.",
 			"r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow!",
 			null,
 			"There's nothing to worry about! s_c pads confidently through c_n territory, assured in their safety by the strength of c_n borders."
@@ -403,7 +403,7 @@
 		"chance_of_success":30,
 		"exp":20,
 		"success_text":[
-			"r_c heads off to map out the paths through a rocky maze they’ve always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date.",
+			"r_c heads off to map out the paths through a rocky maze they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date.",
 			"r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow!",
 			"r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot Greenleaf.",
 			"s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
@@ -453,7 +453,7 @@
 		"chance_of_success":30,
 		"exp":20,
 		"success_text":[
-			"r_c heads off to map out the paths through a rocky maze they’ve always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+			"r_c heads off to map out the paths through a rocky maze they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
 			"r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
 			"r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot Greenleaf, there's a relief to discovering it.",
 			"s_c pads confidently through c_n territory. there's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
@@ -503,7 +503,7 @@
 		"chance_of_success":30,
 		"exp":20,
 		"success_text":[
-			"r_c heads off to map out the paths through a rocky maze they’ve always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
+			"r_c heads off to map out the paths through a rocky maze they've always found confusing. Hunting, fighting, driving off predators, it all requires knowledge of their home turf, it's always worth making sure their mental map is up to date. It feels a little like more work though, and isn't exactly the peaceful break they hoped for.",
 			"r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
 			"r_c squeezes through a tight gap between two massive rock pillars and stumbles across a tiny pool of water hidden in their shadow! Further investigation shows it's springfed, and s_c purrs. This reliable water source will be important during baking hot Greenleaf, there's a relief to discovering it.",
 			"s_c pads confidently through c_n territory. there's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."

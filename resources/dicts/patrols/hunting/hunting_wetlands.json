@@ -32,7 +32,7 @@
         "tags": [
             "hunting"
         ],
-        "intro_text": "The patrol approaches a Twoleg nest perched on the edge of a swamp, with smoke rising from it’s corner.",
+        "intro_text": "The patrol approaches a Twoleg nest perched on the edge of a swamp, with smoke rising from it's corner.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 40,
         "exp": 20,
@@ -45,7 +45,7 @@
         ],
         "min_cats": 1,
         "max_cats": 3,
-        "antagonize_text": "A Twoleg kit approaches the patrol, and they send it away squawking with it’s blood on their claws.",
+        "antagonize_text": "A Twoleg kit approaches the patrol, and they send it away squawking with it's blood on their claws.",
         "antagonize_fail_text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
     },
     {
@@ -55,12 +55,12 @@
         "tags": [
             "hunting"
         ],
-        "intro_text": "The patrol approaches a Twoleg nest perched on the edge of a swamp, with smoke rising from it’s corner.",
+        "intro_text": "The patrol approaches a Twoleg nest perched on the edge of a swamp, with smoke rising from it's corner.",
         "decline_text": "The patrol decides to hunt elsewhere.",
         "chance_of_success": 60,
         "exp": 20,
         "success_text": [
-            "The patrol cats split up, using sentries to ensure that the Twolegs don’t disturb their hunts.",
+            "The patrol cats split up, using sentries to ensure that the Twolegs don't disturb their hunts.",
             "The patrol finds some astonishingly fat chickens running around the Twoleg nest, and helps themselves to as many as they can carry."
         ],
         "fail_text": [
@@ -68,7 +68,7 @@
         ],
         "min_cats": 4,
         "max_cats": 6,
-        "antagonize_text": "Finding a Twoleg kit wandering alone, the cats harass it until it flees squawking, it’s blood on their claws.",
+        "antagonize_text": "Finding a Twoleg kit wandering alone, the cats harass it until it flees squawking, it's blood on their claws.",
         "antagonize_fail_text": "The Twoleg kits wandering around are unimpressed by the patrol and chase the cats for fun."
     },
     {
@@ -83,10 +83,10 @@
         "chance_of_success": 50,
         "exp": 20,
         "success_text": [
-            "They can’t think of anything that would work, but their hunt goes well regardless.",
+            "They can't think of anything that would work, but their hunt goes well regardless.",
             "A quick dip in a stagnant pond will do! The plan works and their hunt goes well.",
-            "s_c leads them to some rotting muddy grass - it’s not clean, but it’s extremely effective, and the patrol hunts well.",
-            "s_c tells the patrol to roll in a patch of garlic to disguise their scent, which works perfectly. It’s a funny taste to wash off their pelts though."
+            "s_c leads them to some rotting muddy grass - it's not clean, but it's extremely effective, and the patrol hunts well.",
+            "s_c tells the patrol to roll in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelts though."
         ],
         "fail_text": [
             "The patrol finds nothing to disguise their scent, and no prey either.",
@@ -120,10 +120,10 @@
         "chance_of_success": 50,
         "exp": 20,
         "success_text": [
-            "They can’t think of anything that would work, but their hunt goes well regardless.",
+            "They can't think of anything that would work, but their hunt goes well regardless.",
             null,
-            "s_c finds some rotting muddy grass - it’s not clean, but it’s extremely effective, and the hunt goes well.",
-            "s_c rolls in a patch of garlic to disguise their scent, which works perfectly. It’s a funny taste to wash off their pelt though."
+            "s_c finds some rotting muddy grass - it's not clean, but it's extremely effective, and the hunt goes well.",
+            "s_c rolls in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelt though."
         ],
         "fail_text": [
             "The patrol finds nothing to disguise their scent, and no prey either.",

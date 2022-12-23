@@ -424,7 +424,7 @@
 "season": "Any",
 "tags": ["border", "platonic", "comfort", "respect", "big_change", "rel_patrol", "patrol_to_r_c"],
 "intro_text": "On their way to mark the far corners of their mountain, r_c starts telling a story of their ancestors to keep every cat entertained.",
-"decline_text": "A shadow flies over them, and r_c’s storytelling is forgotten as the patrol makes sure it wasn’t an eagle.",
+"decline_text": "A shadow flies over them, and r_c's storytelling is forgotten as the patrol makes sure it wasn't an eagle.",
 "chance_of_success": 60,
 "exp": 20,
 "success_text": [

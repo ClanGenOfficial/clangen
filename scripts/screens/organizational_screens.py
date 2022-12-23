@@ -376,7 +376,7 @@ class SettingsScreen(Screens):
 
 
         # Text_boxes:
-        # For consistency’s sake, use the name of the setting as the key for the
+        # For consistency's sake, use the name of the setting as the key for the
         #   checkbox text and checkbox
         x_value = 225
         self.checkboxes_text['dark mode'] = pygame_gui.elements.UITextBox(

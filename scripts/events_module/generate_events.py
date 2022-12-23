@@ -296,7 +296,7 @@ Tagging Guidelines: (if you add more tags, please add guidelines for them here)
 
 “classic” < use for death events caused by illness.  This tag ensures that illness death events only happen in classic mode since illness deaths are caused differently in enhanced/cruel mode
 
-“multi_death” < use to indicate that two cats have died.  Two cats is the limit here.  Any more than that is a disaster death and i haven’t touched disasters yet (and might not touch at all bc the code is scary lol)
+“multi_death” < use to indicate that two cats have died.  Two cats is the limit here.  Any more than that is a disaster death and i haven't touched disasters yet (and might not touch at all bc the code is scary lol)
 
 “old_age” < use to mark deaths caused by old age
 
@@ -319,12 +319,12 @@ Tagging Guidelines: (if you add more tags, please add guidelines for them here)
 
 “other_cat_med”, “other_cat_med_app”, “other_cat_warrior”, “other_cat_app”, “other_cat_kit”, “other_cat_lead”, “other_cat_dep”, “other_cat_elder” < mark the other cat as having to be a certain status, if none of these tags are used then other_cat can be anyone
 
-“other_cat_mate” < mark the other cat as having to be the m_c’s mate
-“other_cat_child” < mark the other cat as having to be the m_c’s kit
-“other_cat_parent” < mark the other cat as having to be m_c’s parent
+“other_cat_mate” < mark the other cat as having to be the m_c's mate
+“other_cat_child” < mark the other cat as having to be the m_c's kit
+“other_cat_parent” < mark the other cat as having to be m_c's parent
 “other_cat_adult” < mark the other cat as not being able to be a kit or elder
 
-“other_cat_own_app”, “other_cat_mentor” < mark the other cat has having to be the m_c’s mentor or app respectively
+“other_cat_own_app”, “other_cat_mentor” < mark the other cat has having to be the m_c's mentor or app respectively
 
 “clan_kits” < clan must have kits for this event to appear
 
@@ -333,9 +333,9 @@ Tagging Guidelines: (if you add more tags, please add guidelines for them here)
 rel_down_self < event decreases tagged relationship parameter clan wide. Not used for injury or death events.
 rel_up_self < event increases tagged relationship parameter clan wide. Not used for injury or death events.
 
-mc_to_rc < change mc’s relationship values towards rc
-rc_to_mc < change rc’s relationship values towards mc
-to_both < change both cat’s relationship values
+mc_to_rc < change mc's relationship values towards rc
+rc_to_mc < change rc's relationship values towards mc
+to_both < change both cat's relationship values
 
 Tagged relationship parameters are: "romantic", "platonic", "comfort", "respect", "trust", "dislike", "jealousy", 
 Add “neg_” in front of parameter to make it a negative value change (i.e. “neg_romantic”, “neg_platonic”, ect)
@@ -347,7 +347,7 @@ Add “neg_” in front of parameter to make it a negative value change (i.e. �
 Use these to determine what corruption level the main cat should have, if relevant
 “corruption_low” - main cat generally cares for the wellbeing of others and avoids hurting other cats, even if it benefits them to do so.
 “corruption_mid” - main cat cares more for their own wellbeing.  Does not necessarily want to hurt others, but will not explicitly avoid it if it benefits them.
-“corruption_high” - main cat doesn’t care about the wellbeing of others and will happily hurt other cats if it benefits them.
+“corruption_high” - main cat doesn't care about the wellbeing of others and will happily hurt other cats if it benefits them.
 You can mix and match corruption tags if you feel an event is on the line between two of them, the code will allow the event for a cat with either of the corruption levels tagged
 
 """

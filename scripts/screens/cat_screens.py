@@ -127,7 +127,7 @@ def bs_blurb_text(cat):
     if backstory == 'ostracized_warrior':
         bs_blurb = "This cat was ostracized from their old clan, but no one really knows why."
     if backstory == 'disgraced':
-        bs_blurb = "This cat was cast out of their old clan for some transgression that they’re not keen on " \
+        bs_blurb = "This cat was cast out of their old clan for some transgression that they're not keen on " \
                    "talking about."
     if backstory == 'retired_leader':
         bs_blurb = "This cat used to be the leader of another clan before deciding they needed a change of scenery " \
