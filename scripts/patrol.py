@@ -893,6 +893,8 @@ class Patrol():
             kit = Cat(status=new_status)
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
+            if (kit.status == 'apprentice'):
+                kit.update_mentor()
             #create and update relationships
             relationships = []
             for cat_id in game.clan.clan_cats:
