@@ -461,7 +461,7 @@ class Events():
             ])
         elif (promoted_to == 'elder' and game.clan.leader.dead):
             ceremony.extend([
-                str(cat.name) + "wished to join the elders. The clan honors them and all the service they have given to them."
+                str(cat.name) + " wished to join the elders. The clan honors them and all the service they have given to them."
             ])
         if (promoted_to == 'warrior' or promoted_to == 'apprentice' or promoted_to == 'medicine cat apprentice' or promoted_to == 'medicine cat' or promoted_to == 'elder'):
             ceremony_text = choice(ceremony)
