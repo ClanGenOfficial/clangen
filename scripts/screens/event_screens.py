@@ -262,7 +262,7 @@ class EventsScreen(Screens):
         self.timeskip_button = UIImageButton(pygame.Rect((310, 205), (180, 30)), "", object_id="#timeskip_button")
         if game.clan.closed_borders:
             self.toggle_borders_button = pygame_gui.elements.UIButton(pygame.Rect((500, 210), (200, 30)),
-                                                                      "Open Clan orders")
+                                                                      "Open Clan Borders")
         else:
             self.toggle_borders_button = pygame_gui.elements.UIButton(pygame.Rect((500, 210), (200, 30)),
                                                                       "Close Clan Borders")

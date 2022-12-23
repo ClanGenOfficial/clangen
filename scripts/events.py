@@ -202,7 +202,7 @@ class Events():
             self.condition_events.handle_already_disabled(cat)
         self.perform_ceremonies(cat)  # here is age up included
 
-        if not game.clan.closed_borders and not self.new_cat_invited or self.living_cats < 10:
+        if not game.clan.closed_borders:
             self.invite_new_cats(cat)
 
         self.other_interactions(cat)
@@ -356,10 +356,10 @@ class Events():
                     else:
                         chance = int(random.random() * 41)
 
-                    if chance in range(1, 6):
+                    if chance in range(1, 10):
                         if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
                             chance = 1
-                    if has_med_app is False and len(get_med_cats(Cat)) != 0 and chance == 1:
+                    if has_med_app is False and chance == 1:
                         self.ceremony(cat, 'medicine cat apprentice', ' has chosen to walk the path of a medicine cat.')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
