@@ -139,7 +139,7 @@ class Death_Events():
         # handle leader lives
         if cat.status == "leader" and "other_cat_death" not in death_cause.tags:
             if "all_lives" in death_cause.tags:
-                game.clan.leader_lives -= 10
+                game.clan.leader_lives -= game.clan.leader_lives - 1
                 cat.die(body)
                 cat.died_by.append(history_text)
             elif "murder" in death_cause.tags or "some_lives" in death_cause.tags:

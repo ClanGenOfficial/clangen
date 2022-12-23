@@ -10,6 +10,9 @@ from scripts.game_structure.game_essentials import *
 from scripts.cat.cats import Cat
 from scripts.cat.sprites import tiles
 import scripts.game_structure.image_cache as image_cache
+from ..utility import get_text_box_theme
+
+
 #from scripts.world import load_map
 
 class OutsideClanScreen(Screens):
@@ -146,8 +149,9 @@ class OutsideClanScreen(Screens):
                 if len(name) >= 13:
                     short_name = str(cat.name)[0:12]
                     name = short_name + '...'
-                self.cat_names.append(pygame_gui.elements.UITextBox("<font color='#000000'>" + name + "</font>"
-                                                    ,pygame.Rect((80 + pos_x, 230 + pos_y),(150,30))))
+                self.cat_names.append(pygame_gui.elements.UITextBox(name,
+                                                                    pygame.Rect((80 + pos_x, 230 + pos_y), (150, 30)),
+                                                                    object_id=get_text_box_theme()))
                 pos_x += 120
                 if pos_x >= 600:
                     pos_x = 0
@@ -166,7 +170,7 @@ class OutsideClanScreen(Screens):
 
     def chunks(self, L, n): return [L[x: x+n] for x in range(0, len(L), n)]
 
-
+"""
 class MapScreen(Screens):
 
     def on_use(self):
@@ -324,3 +328,4 @@ class MapScreen(Screens):
         except:
             game.map_info = load_map("Fallback")
             print("Default map loaded.")
+"""
