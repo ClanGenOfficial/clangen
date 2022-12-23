@@ -702,7 +702,7 @@ class PatrolScreen(Screens):
                                                              )
 
             # Show Cat's Mate, if they have one
-            if self.selected_cat.status != 'apprentice':
+            if self.selected_cat.status not in ['medicine cat apprentice', 'apprentice']:
                 if self.selected_cat.mate is not None:
                     self.elements['mate_frame'] = pygame_gui.elements.UIImage(pygame.Rect((140, 190), (166, 170)),
                                                                               self.mate_frame)
@@ -730,18 +730,20 @@ class PatrolScreen(Screens):
                         self.elements['mate_button'].disable()
             # Draw mentor or apprentice
             relation = "should not display"
-            if self.selected_cat.status == 'apprentice' or self.selected_cat.apprentice != []:
+            if self.selected_cat.status in ['medicine cat apprentice', 'apprentice'] or self.selected_cat.apprentice != []:
                 self.elements['app_mentor_frame'] = pygame_gui.elements.UIImage(pygame.Rect((495, 190), (166, 170)),
                                                                                 self.app_frame)
 
-                if self.selected_cat.status == 'apprentice' and self.selected_cat.mentor is not None:
+                if self.selected_cat.status in ['medicine cat apprentice', 'apprentice'] and self.selected_cat.mentor is not None:
                     self.app_mentor = self.selected_cat.mentor
                     relation = 'mentor'
+
                 elif self.selected_cat.apprentice:
                     self.app_mentor = self.selected_cat.apprentice[0]
                     relation = 'apprentice'
                 else:
                     self.app_mentor = None
+                    self.elements['app_mentor_frame'].hide()
 
                 # Failsafe, if apprentice or mentor is set to none. It should never happen.
                 if self.app_mentor is not None:
