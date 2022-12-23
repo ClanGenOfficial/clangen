@@ -799,7 +799,8 @@ class ProfileScreen(Screens):
 
         if the_cat.is_disabled():
             for condition in the_cat.permanent_condition:
-                if the_cat.permanent_condition[condition]['born_with'] is True and the_cat.permanent_condition[condition]["moons_until"] != -2:
+                if the_cat.permanent_condition[condition]['born_with'] is True and \
+                        the_cat.permanent_condition[condition]["moons_until"] != -2:
                     continue
                 output += 'has a permanent condition'
 
@@ -868,7 +869,6 @@ class ProfileScreen(Screens):
                 self.history_text_box = pygame_gui.elements.UITextBox("", pygame.Rect((80, 480), (615, 142)))
                 self.update_disabled_buttons_and_text()
 
-
     def toggle_user_notes_tab(self):
         """Opens the User Notes portion of the History Tab"""
         self.load_user_notes()
@@ -885,7 +885,6 @@ class ProfileScreen(Screens):
                                               pygame.Rect((100, 473), (600, 149)),
                                               object_id="#history_tab_text_box",
                                               line_spacing=1)
-
 
         self.update_disabled_buttons_and_text()
 
@@ -1468,13 +1467,23 @@ class ProfileScreen(Screens):
             pass
         else:
             self.open_tab = 'dangerous'
-            self.kill_cat_button = UIImageButton(pygame.Rect((578, 486), (172, 36)), "", object_id="#kill_cat_button")
+            self.kill_cat_button = UIImageButton \
+                (pygame.Rect((578, 486), (172, 36)),
+                 "",
+                 object_id="#kill_cat_button",
+                 tool_tip_text='This cannot be reversed.'
+                 )
             self.close_tab_button = UIImageButton(pygame.Rect((578, 522), (172, 36)), "", object_id="#close_tab_button")
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons_and_text().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
             #    If you can think of a better way to do this, please fix! 
-            self.exile_cat_button = UIImageButton(pygame.Rect((578, 486), (172, 36)), "", visible=False)
+            self.exile_cat_button = UIImageButton(
+                pygame.Rect((578, 486), (172, 36)),
+                "",
+                visible=False,
+                tool_tip_text='This cannot be reversed.'
+            )
             self.update_disabled_buttons_and_text()
 
     def update_disabled_buttons_and_text(self):
@@ -1600,8 +1609,11 @@ class ProfileScreen(Screens):
             # Button to exile cat
             self.exile_cat_button.kill()
             if not self.the_cat.dead:
-                self.exile_cat_button = UIImageButton(pygame.Rect((578, 450), (172, 36)), "",
-                                                      object_id="#exile_cat_button")
+                self.exile_cat_button = UIImageButton(
+                    pygame.Rect((578, 450), (172, 36)),
+                    "",
+                    object_id="#exile_cat_button",
+                    tool_tip_text='This cannot be reversed.')
                 if self.the_cat.exiled:
                     self.exile_cat_button.disable()
             elif self.the_cat.dead:
@@ -1610,8 +1622,11 @@ class ProfileScreen(Screens):
                 if self.the_cat.df:
                     self.exile_cat_button.disable()
             else:
-                self.exile_cat_button = UIImageButton(pygame.Rect((578, 450), (172, 36)), "",
-                                                      object_id="#exile_cat_button")
+                self.exile_cat_button = UIImageButton(
+                    pygame.Rect((578, 450), (172, 36)),
+                    "",
+                    object_id="#exile_cat_button",
+                    tool_tip_text='This cannot be reversed.')
                 self.exile_cat_button.disable()
 
             if not self.the_cat.dead:
@@ -1654,16 +1669,21 @@ class ProfileScreen(Screens):
 
                 self.help_button = UIImageButton(pygame.Rect(
                     (52, 584), (34, 34)),
-                     "",
-                     object_id="#help_button",
-                     tool_tip_text="The notes section has limited html capabilities.<br>"
-                                   "Use the following commands with < and > in place of the apostrophes.<br>"
-                                   "-Use 'br' to start a new line.<br>"
-                                   "-Encase text between 'b' and '/b' to bold.<br>"
-                                   "-Encase text between 'i' and '/i' to italicize.<br>"
-                                   "-Encase text between 'u' and '/u' to underline.",
+                    "",
+                    object_id="#help_button",
+                    tool_tip_text="The notes section has limited html capabilities.<br>"
+                                  "Use the following commands with < and > in place of the apostrophes.<br>"
+                                  "-'br' to start a new line.<br>"
+                                  "-Encase text between 'b' and '/b' to bold.<br>"
+                                  "-Encase text between 'i' and '/i' to italicize.<br>"
+                                  "-Encase text between 'u' and '/u' to underline.<br><br>"
+                                  "The following font related codes can be used, "
+                                  "but keep in mind that not all font faces will work.<br>"
+                                  "-Encase text between 'font face = name of font you wish to use' and '/font' to change the font face.<br>"
+                                  "-Encase text between 'font color= #hex code of the color' and '/font' to change the color of the text.<br>"
+                                  "-Encase text between 'font size=number of size' and '/font' to change the text size.",
 
-                     )
+                )
                 if self.editing_notes is True:
                     self.save_text = UIImageButton(pygame.Rect(
                         (52, 514), (34, 34)),
@@ -1675,13 +1695,13 @@ class ProfileScreen(Screens):
                     self.notes_entry = pygame_gui.elements.UITextEntryBox(
                         pygame.Rect((100, 473), (600, 149)),
                         initial_text=self.user_notes,
-                        object_id='#history_tab_entry_box'
+                        object_id='#history_tab_entry_box_smalltooltip'
                     )
                 else:
                     self.edit_text = UIImageButton(pygame.Rect(
                         (52, 514), (34, 34)),
                         "",
-                        object_id="#checked_checkbox",
+                        object_id="#checked_checkbox_smalltooltip",
                         tool_tip_text='edit text'
                     )
 
