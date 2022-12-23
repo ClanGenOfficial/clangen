@@ -380,6 +380,7 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.exile_cat_button:
                 if not self.the_cat.dead and not self.the_cat.exiled:
                     self.the_cat.exiled = True
+                    self.the_cat.outside = True
                     self.the_cat.thought = "Is shocked that they have been exiled"
                     self.clear_profile()
                     self.build_profile()
@@ -738,9 +739,9 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if the_cat.outside:
+        if the_cat.outside and not the_cat.exiled:
             output += "<font color='#FF0000'>lost</font>"
-        elif the_cat.exiled and not the_cat.outside:
+        elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"
         else:
             output += the_cat.status
