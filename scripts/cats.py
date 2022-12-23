@@ -2910,7 +2910,7 @@ class Cat(object):
                             comfortable=rel['comfortable'] if rel['comfortable'] else 0,
                             jealousy=rel['jealousy'] if rel['jealousy'] else 0,
                             trust=rel['trust'] if rel['trust'] else 0,
-                            log =rel['log'] if rel['log'] else [])
+                            log =rel['log'])
                         relationships.append(new_rel)
                     self.relationships = relationships
             except:

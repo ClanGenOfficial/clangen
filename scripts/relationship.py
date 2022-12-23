@@ -472,7 +472,7 @@ INDIRECT_INCREASE = 6
 INDIRECT_DECREASE = 3
 
 class Relationship(object):
-    def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0, admiration=0, comfortable=0, jealousy=0, trust=0, log = []) -> None:        
+    def __init__(self, cat_from, cat_to, mates=False, family=False, romantic_love=0, platonic_like=0, dislike=0, admiration=0, comfortable=0, jealousy=0, trust=0, log = None) -> None:        
         self.cat_from = cat_from
         self.cat_to = cat_to
         self.mates = mates
@@ -480,7 +480,10 @@ class Relationship(object):
         self.opposit_relationship = None #link to oppositting relationship will be created later
         self.current_action_str = ''
         self.triggerd_event = False
-        self.log = log
+        if log:
+             self.log = log
+        else:
+             self.log = []
 
         if self.cat_from.is_parent(self.cat_to) or self.cat_to.is_parent(self.cat_from):
             self.family = True
