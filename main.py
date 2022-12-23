@@ -1,26 +1,57 @@
 #!/usr/bin/env python3
 import sys
 import os
+directory = os.path.dirname(__file__)
+if directory:
+    os.chdir(directory)
 from scripts.game_structure.load_cat import *
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
 import pygame_gui
 import pygame
+
 # from scripts.world import load_map
 
 pygame.init()
 
-directory = os.path.dirname(__file__)
-if directory:
-    os.chdir(directory)
-
 # initialize pygame_gui manager, and load themes
-manager = pygame_gui.UIManager((800, 700), 'resources/defaults.json')
+manager = pygame_gui.ui_manager.UIManager((800, 700), 'resources/defaults.json')
+manager.add_font_paths(
+    font_name='notosans',
+    regular_path='resources/fonts/NotoSans-Medium.ttf',
+    bold_path='resources/fonts/NotoSans-ExtraBold.ttf',
+    italic_path='resources/fonts/NotoSans-MediumItalic.ttf',
+    bold_italic_path='resources/fonts/NotoSans-ExtraBoldItalic.ttf'
+)
+manager.preload_fonts([
+    {'name': 'notosans', 'point_size': 11, 'style': 'regular'},
+    {'name': 'notosans', 'point_size': 11, 'style': 'bold'},
+    {'name': 'notosans', 'point_size': 11, 'style': 'italic'},
+    {'name': 'notosans', 'point_size': 11, 'style': 'bold_italic'},
+    {'name': 'notosans', 'point_size': 13, 'style': 'regular'},
+    {'name': 'notosans', 'point_size': 13, 'style': 'bold'},
+    {'name': 'notosans', 'point_size': 13, 'style': 'italic'},
+    {'name': 'notosans', 'point_size': 13, 'style': 'bold_italic'},
+    {'name': 'notosans', 'point_size': 15, 'style': 'regular'},
+    {'name': 'notosans', 'point_size': 15, 'style': 'bold'},
+    {'name': 'notosans', 'point_size': 15, 'style': 'italic'},
+    {'name': 'notosans', 'point_size': 15, 'style': 'bold_italic'},
+    {'name': 'notosans', 'point_size': 17, 'style': 'regular'},
+    {'name': 'notosans', 'point_size': 17, 'style': 'bold'},
+    {'name': 'notosans', 'point_size': 17, 'style': 'italic'},
+    {'name': 'notosans', 'point_size': 17, 'style': 'bold_italic'},
+    {'name': 'notosans', 'point_size': 20, 'style': 'regular'},
+    {'name': 'notosans', 'point_size': 20, 'style': 'bold'},
+    {'name': 'notosans', 'point_size': 20, 'style': 'italic'},
+    {'name': 'notosans', 'point_size': 20, 'style': 'bold_italic'},
+])
 manager.get_theme().load_theme('resources/buttons.json')
 manager.get_theme().load_theme('resources/text_boxes.json')
 manager.get_theme().load_theme('resources/text_boxes_dark.json')
 manager.get_theme().load_theme('resources/vertical_scroll_bar.json')
 manager.get_theme().load_theme('resources/windows.json')
+manager.get_theme().load_theme('resources/tool_tips.json')
+
 
 # import all screens for initialization (Note - must be done after pygame_gui manager is created)
 from scripts.screens.all_screens import *
@@ -34,16 +65,15 @@ if not os.path.exists('saves/clanlist.txt'):
     os.makedirs('saves', exist_ok=True)
     with open('saves/clanlist.txt', 'w') as write_file:
         write_file.write('')
-with open('saves/clanlist.txt', 'r') as read_file:
-    clan_list = read_file.read()
-    if_clans = len(clan_list.strip())
-if if_clans > 0:
-    game.switches['clan_list'] = clan_list.split('\n')
+
+clan_list = game.read_clans()
+if clan_list:
+    game.switches['clan_list'] = clan_list
     try:
         load_cats()
         clan_class.load_clan()
     except Exception as e:
-        print("\nERROR MESSAGE:\n",e,"\n")
+        print("\nERROR MESSAGE:\n", e, "\n")
         if not game.switches['error_message']:
             game.switches[
                 'error_message'] = 'There was an error loading the cats file!'
@@ -101,7 +131,7 @@ while True:
                     manager.set_visual_debug_mode(True)
                 else:
                     manager.set_visual_debug_mode(False)
-        
+
         manager.process_events(event)
 
     manager.update(time_delta)

@@ -234,7 +234,7 @@
         ]
     },
     "whitecough": {
-        "severity": "minor",
+        "severity": "major",
         "mortality": {
             "kitten": 10,
             "adolescent": 20,

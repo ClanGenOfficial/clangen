@@ -25,7 +25,8 @@
 		},
         "misc":
         {
-            "shadow_width": "0"
+            "shadow_width": "0",
+            "tool_tip_delay": "0"
         }
     },
     "#continue_button": 
@@ -1578,6 +1579,44 @@
             }
         }
     },
+  "#checked_checkbox_smalltooltip":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/checkmark_on.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/checkmark_on_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/checkmark_on_hover.png"
+            }
+        }
+    },
+    "#unchecked_checkbox_smalltooltip":
+    {
+        "prototype": "#image_button",
+		"images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/checkmark_off.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/checkmark_off_hover.png"
+            },
+			"selected_image":
+            {
+                "path": "resources/images/buttons/checkmark_off_hover.png"
+            }
+        }
+    },
     "#general_settings_button": 
     {
         "prototype": "#image_button",
@@ -2365,9 +2404,8 @@
         },
         "font":
         {
-        "name": "nonosans",
-        "size": "15",
-        "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+        "name": "notosans",
+        "size": "15"
         },
         "misc":
         {
@@ -3119,6 +3157,75 @@
             "disabled_image":
             {
                 "path":"resources/images/buttons/not_yet.png"
+            }
+        }
+    },
+    "#fav_star":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/fav_star.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/fav_star_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/fav_star_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/fav_star_unavailable.png"
+            }
+        }
+    },
+      "#not_fav_star":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/fav_star_unavailable.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/fav_star_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/fav_star_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/fav_star_unavailable.png"
+            }
+        }
+    },
+    "#help_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/help.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/help_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/help_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/help_hover.png"
             }
         }
     }

@@ -3,6 +3,7 @@ from scripts.game_structure.load_cat import *
 
 try:
     from scripts.world import *
+
     map_available = True
 except:
     map_available = False
@@ -79,7 +80,7 @@ class Clan():
                  camp_site=(20, 22),
                  camp_bg=None,
                  game_mode='classic',
-                 starting_members = []):
+                 starting_members=[]):
         if name != "":
             self.name = name
             self.leader = leader
@@ -152,7 +153,9 @@ class Clan():
         for _ in range(number_other_clans):
             self.all_clans.append(OtherClan())
         self.save_clan()
-        #if map_available:
+        game.save_clanlist(self.name)
+        game.switches['clan_list'] = game.read_clans()
+        # if map_available:
         #    save_map(game.map_info, game.clan.name)
 
         # CHECK IF CAMP BG IS SET -fail-safe in case it gets set to None-
@@ -187,6 +190,8 @@ class Clan():
         ) and cat.dead and cat.df is False:
             cat.df = True
             cat.thought = "Is distraught after being sent to the Place of No Stars"
+            if cat in self.starclan_cats:
+                self.starclan_cats.remove(cat.ID)
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
@@ -232,10 +237,7 @@ class Clan():
             self.med_cat_number = len(self.med_cat_list)
 
     def switch_clans(self, clan):
-        list_data = clan + "\n"
-        for c in game.read_clans():
-            if c != clan:
-                list_data += c + "\n"
+        game.save_clanlist(clan)
         game.cur_events_list.clear()
         game.other_clans_events_list.clear()
         game.birth_death_events_list.clear()
@@ -243,8 +245,6 @@ class Clan():
         game.health_events_list.clear()
         game.ceremony_events_list.clear()
         game.misc_events_list.clear()
-        with open('saves/clanlist.txt', 'w') as write_file:
-            write_file.write(list_data)
         game.cur_events_list.clear()
         game.other_clans_events_list.clear()
         game.birth_death_events_list.clear()
@@ -379,12 +379,11 @@ class Clan():
             update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
-
-
-        for name, relation, temper in zip(clan_data["other_clans_names"].split(","),
-                                          clan_data["other_clans_relations"].split(","),
-                                          clan_data["other_clan_temperament"].split(",")):
-            self.all_clans.append(OtherClan(name, int(relation), temper))
+        if other_clans != [""]:
+            for other_clan in other_clans:
+                other_clan_info = other_clan.split(';')
+                self.all_clans.append(
+                    OtherClan(other_clan_info[0],int(other_clan_info[1]),other_clan_info[2]))
 
 
         for cat in clan_data["clan_cats"].split(","):
@@ -401,7 +400,7 @@ class Clan():
             return
         file_path = f"saves/{game.clan.name}/pregnancy.json"
         if os.path.exists(file_path):
-            with open(file_path,'r') as read_file:
+            with open(file_path, 'r') as read_file:
                 clan.pregnancy_data = ujson.load(read_file)
         else:
             clan.pregnancy_data = {}
@@ -411,11 +410,12 @@ class Clan():
             return
         file_path = f"saves/{game.clan.name}/pregnancy.json"
         try:
-            with open(file_path,'w') as file:
-                json_string = ujson.dumps(clan.pregnancy_data, indent = 4)
+            with open(file_path, 'w') as file:
+                json_string = ujson.dumps(clan.pregnancy_data, indent=4)
                 file.write(json_string)
         except:
             print(f"Saving the pregnancy data didn't work.")
+
 
 class OtherClan():
 

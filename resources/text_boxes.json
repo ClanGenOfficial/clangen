@@ -4,7 +4,8 @@
             "dark_bg": "#FFFFFF",
             "selected_bg": "#6E6759",
             "normal_text": "#000000",
-            "selected_text": "#DCDCDC"
+            "selected_text": "#DCDCDC",
+            "text_cursor": "#000000"
         },
         "misc": {
             "shape": "rounded_rectangle",
@@ -14,8 +15,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "size": "15"
         }
     },
     "text_box": {
@@ -25,8 +25,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "size": "15"
         },
         "misc": {
             "border_width": "0",
@@ -40,9 +39,8 @@
             "normal_text": "#000000"
         },
         "font": {
-            "name": "nonosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "15"
         },
         "misc": {
             "border_width": "0",
@@ -56,9 +54,8 @@
             "normal_text": "#000000"
         },
         "font": {
-            "name": "nonosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "15"
         },
         "misc": {
             "border_width": "0",
@@ -72,9 +69,8 @@
             "normal_text": "#000000"
         },
         "font": {
-            "name": "nonosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "15"
         },
         "misc": {
             "border_width": "0",
@@ -88,9 +84,8 @@
             "dark_bg": "#00000000"
         },
         "font": {
-            "name": "nonosans",
-            "size": "11",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "11"
         },
         "misc": {
             "border_width": "0",
@@ -104,9 +99,8 @@
             "dark_bg": "#00000000"
         },
         "font": {
-            "name": "nonosans",
-            "size": "11",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "11"
         },
         "misc": {
             "border_width": "0",
@@ -120,9 +114,8 @@
             "dark_bg": "#00000000"
         },
         "font": {
-            "name": "nonosans",
-            "size": "20",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "20"
         },
         "misc": {
             "border_width": "0",
@@ -136,9 +129,8 @@
             "dark_bg": "#00000000"
         },
         "font": {
-            "name": "nonosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "15"
         },
         "misc": {
             "border_width": "0",
@@ -149,12 +141,31 @@
     },
     "#history_tab_text_box": {
         "colours": {
-            "dark_bg": "#00000000"
+            "dark_bg": "#00000000",
+            "selected_bg": "#776045",
+            "selected_text": "#AC9D72"
         },
         "font": {
-            "name": "nonosans2",
-            "size": "13",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "13"
+
+        },
+        "misc": {
+            "border_width": "0",
+            "shadow_width": "0",
+            "text_horiz_alignment": "left",
+            "padding": "5,7"
+        }
+    },
+    "#history_tab_entry_box": {
+        "colours": {
+            "dark_bg": "#00000000",
+            "selected_bg": "#826657",
+            "selected_text": "#AC9D72"
+        },
+        "font": {
+            "name": "notosans",
+            "size": "13"
         },
         "misc": {
             "border_width": "0",
@@ -169,9 +180,8 @@
             "normal_text": "#FFFFFF"
         },
         "font": {
-            "name": "nonosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "15"
         },
         "misc": {
             "border_width": "0",
@@ -185,9 +195,8 @@
             "normal_text": "#FFFFFF"
         },
         "font": {
-            "name": "nonosans",
-            "size": "17",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "17"
         },
         "misc": {
             "border_width": "0",
@@ -206,9 +215,8 @@
             "normal_text": "#000000"
         },
         "font": {
-            "name": "nonosans",
-            "size": "17",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "17"
         },
         "misc": {
             "border_width": "0",
@@ -222,9 +230,8 @@
             "normal_text": "#000000"
         },
         "font": {
-            "name": "nonosans",
-            "size": "17",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "17"
         },
         "misc": {
             "border_width": "0",
@@ -238,9 +245,8 @@
             "normal_text": "#000000"
         },
         "font": {
-            "name": "nonosans",
-            "size": "13",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "13"
         },
         "misc": {
             "border_width": "0",
@@ -261,9 +267,8 @@
             "normal_text": "#b30000"
         },
         "font": {
-            "name": "nonosans",
-            "size": "14",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "14"
         },
         "misc": {
             "border_width": "0",
@@ -278,9 +283,8 @@
             "normal_text": "#000000"
         },
         "font": {
-            "name": "nonosans",
-            "size": "15",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "15"
         },
         "misc": {
             "text_horiz_alignment": "left",
@@ -302,8 +306,7 @@
         },
         "font": {
             "name": "notosans",
-            "size": "14",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "size": "13"
         }
     },
     "#condition_details_text_box": {
@@ -312,9 +315,8 @@
             "normal_text": "#000000"
         },
         "font": {
-            "name": "nonosans",
-            "size": "11",
-            "regular_path": "resources/fonts/NotoSans-Regular.ttf"
+            "name": "notosans",
+            "size": "11"
         },
         "misc": {
             "border_width": "0",

@@ -50,6 +50,7 @@ class Events():
                 #                              exiled cat events                               #
                 # ---------------------------------------------------------------------------- #
                 # aging the cat
+                cat.one_moon()
                 cat.moons += 1
                 if cat.moons == 6:
                     cat.age = 'adolescent'
@@ -147,8 +148,29 @@ class Events():
                                 len(Cat.all_cats[random_cat].former_apprentices) > 0 or len(
                                 Cat.all_cats[random_cat].apprentice) > 0):
                             Cat.all_cats[random_cat].status = 'deputy'
+                            text = ''
+                            if game.clan.deputy is not None:
+                                if game.clan.deputy.dead and not game.clan.leader.dead and not game.clan.leader.exiled:
+                                    text = str(game.clan.leader.name) + ' chooses ' + str(Cat.all_cats[random_cat].name) + ' to take over as deputy. They know that ' + str(game.clan.deputy.name) + ' would agree.'
+                                if not game.clan.deputy.dead:
+                                    text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. The retired deputy nods their approval.'
+                            else:
+                                if Cat.all_cats[random_cat].trait == 'bloodthirsty':
+                                    text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. They look at the clan leader with an odd glint in their eyes.' 
+                                else:
+                                    r = choice([1, 2, 3, 4, 5])
+                                    if r == 1:
+                                        text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. The clan yowls their name in approval.'
+                                    elif r == 2:
+                                        text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. The clan chants their name out in support of the choice.'
+                                    elif r == 3:
+                                        text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. Some of the older clan members question the wisdom in this choice.'
+                                    elif r == 4:
+                                        text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. They hold their head up high and promise to do their best for the clan.'
+                                    else:
+                                        text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. They pray to StarClan that they are the right choice for the clan.'
+
                             game.clan.deputy = Cat.all_cats[random_cat]
-                            text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy'
                             game.cur_events_list.append(text)
                             game.ceremony_events_list.append(text)
                             break
@@ -213,11 +235,11 @@ class Events():
             return
 
         # check for death/reveal/risks/retire caused by permanent conditions
-        if cat.is_disabled():
+        if cat.is_disabled() or len(cat.permanent_condition) > 0:
             self.condition_events.handle_already_disabled(cat)
         self.perform_ceremonies(cat)  # here is age up included
 
-        if not game.clan.closed_borders and not self.new_cat_invited or self.living_cats < 10:
+        if not game.clan.closed_borders:
             self.invite_new_cats(cat)
 
         self.other_interactions(cat)
@@ -371,10 +393,10 @@ class Events():
                     else:
                         chance = int(random.random() * 41)
 
-                    if chance in range(1, 6):
+                    if chance in range(1, 10):
                         if cat.trait in ['polite', 'quiet', 'sweet', 'daydreamer']:
                             chance = 1
-                    if has_med_app is False and len(get_med_cats(Cat)) != 0 and chance == 1:
+                    if has_med_app is False and chance == 1:
                         self.ceremony(cat, 'medicine cat apprentice', ' has chosen to walk the path of a medicine cat.')
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
@@ -400,39 +422,98 @@ class Events():
         #                      promote cats and add to event list                      #
         # ---------------------------------------------------------------------------- #
         ceremony = []
+        cat.status_change(promoted_to)
         if (promoted_to == 'warrior'):
             resource_directory = "resources/dicts/events/ceremonies/"
-
             TRAITS = None
             with open(f"{resource_directory}ceremony_traits.json", 'r') as read_file:
                 TRAITS = ujson.loads(read_file.read())
-            
             random_honor = choice(TRAITS[cat.trait])
+            if not game.clan.leader.dead:
+                ceremony.extend([
+                    str(game.clan.leader.name) +
+                    " calls the clan to a meeting, and declares " + str(cat.name.prefix) +
+                    "paw to be a warrior. They are now called " +
+                    str(cat.name.prefix) + str(cat.name.suffix) +
+                    " and are celebrated for their " + str(random_honor) + ".",
+                    str(game.clan.leader.name) +
+                    " stands above the clan and proclaims that " + str(cat.name.prefix) +
+                    "paw shall now be known as " + str(cat.name.prefix) +
+                    str(cat.name.suffix) + ", honoring their " +
+                    str(random_honor) + ".",
+                    str(game.clan.name) + "Clan welcomes " + str(cat.name.prefix) +
+                    str(cat.name.suffix) + " as a new warrior, honoring their " +
+                    str(random_honor) + ".",
+                    str(game.clan.leader.name) + " rests their muzzle on " +
+                    str(cat.name.prefix) + str(cat.name.suffix) +
+                    "'s head and declares them to be a full warrior of " +
+                    str(game.clan.name) + "Clan, honoring their " +
+                    str(random_honor) + "."
+                ])
+            else:
+                ceremony.extend([str(game.clan.name) + "Clan welcomes " + str(cat.name.prefix) +
+                str(cat.name.suffix) + " as a new warrior, honoring their " +
+                str(random_honor) + "."])
+        elif (promoted_to == 'apprentice') and cat.mentor is not None:
+            ceremony.extend([
+                str(cat.name) +
+                " has reached the age of six moons and has been made an apprentice, with "
+                + str(cat.mentor.name) + " as their mentor.",
+                "Newly-made apprentice " + str(cat.name) +
+                " touched noses with their new mentor, " +
+                str(cat.mentor.name) + "."
+            ])
+            if cat.parent1 is not None and str(
+                    cat_class.all_cats[cat.parent1].name) != str(
+                        cat.mentor.name) and cat.parent1 != "unnamed queen":
+                ceremony.extend([
+                    str(cat_class.all_cats[cat.parent1].name) +
+                    " is watching in pride as " + str(cat.name) +
+                    " is named and given to " + str(cat.mentor.name) +
+                    " to apprentice under. They know that " +
+                    str(cat.mentor.name) + " was a good choice."
+                ])
+            if cat.is_disabled() and not game.clan.leader.dead:
+                ceremony.extend([
+                    str(cat.name) + " is confidently telling " +
+                    str(game.clan.leader.name) +
+                    " that they can do anything any cat can. " +
+                    str(game.clan.leader.name) + " assigns " +
+                    str(cat.mentor.name) +
+                    " as their mentor to make sure that happens."
+                ])
+        elif (promoted_to == 'apprentice') and cat.mentor is None:
+            ceremony.extend(["Newly-made apprentice " + str(cat.name) +
+                " wished they had someone to mentor them."])
+        elif (promoted_to == 'medicine cat apprentice') and cat.mentor is not None:
+            ceremony.extend([
+                str(cat.name) +
+                " has decided that hunting and fighting is not the way they can provide for their clan. Instead, they have decided to serve their clan by healing and communing with StarClan. "
+                + str(cat.mentor.name) + " proudly becomes their mentor."
+            ])
+        elif (promoted_to =='medicine cat apprentice') and cat.mentor is None:
+            ceremony.extend(["Newly-made medicine cat apprentice " + str(cat.name) +
+                " learns the way of healing through guidance from StarClan."])
+        elif (promoted_to == 'medicine cat'):
+            ceremony.extend([str(cat.name) + " is taken to speak with StarClan. They are now a full medicine cat of the clan."])
+        elif (promoted_to == 'elder' and not game.clan.leader.dead):
             ceremony.extend([
                 str(game.clan.leader.name) +
-                " calls the clan to a meeting, and declares " + str(cat.name) +
-                " to be a warrior. They are now called " +
-                str(cat.name.prefix) + str(cat.name.suffix) +
-                " and are celebrated for their " + str(random_honor) + ".",
-                str(game.clan.leader.name) +
-                " stands above the clan and proclaims that " + str(cat.name) +
-                " shall now be known as " + str(cat.name.prefix) +
-                str(cat.name.suffix) + ", honoring their " + str(random_honor) +
-                ".",
-                str(game.clan.name) + "Clan welcomes " + str(cat.name.prefix) +
-                str(cat.name.suffix) + " as a new warrior, honoring their " +
-                str(random_honor) + ".",
-                str(game.clan.leader.name) + " rests their muzzle on " +
-                str(cat.name) +
-                "'s head and declares them to be a full warrior of " +
-                str(game.clan.name) + "Clan, honoring their " + str(random_honor) +
-                "."
+                " proudly calls a clan meeting to honor " + str(cat.name) +
+                "'s service to the clan. It is time they retire peacefully to the elder's den.",
+                str(cat.name) + " wished to join the elders. The clan honors them and all the service they have given to them."
             ])
-        cat.status_change(promoted_to)
-        if (promoted_to == 'warrior'):
-            game.cur_events_list.append(choice(ceremony))
+        elif (promoted_to == 'elder' and game.clan.leader.dead):
+            ceremony.extend([
+                str(cat.name) + " wished to join the elders. The clan honors them and all the service they have given to them."
+            ])
+        if (promoted_to == 'warrior' or promoted_to == 'apprentice' or promoted_to == 'medicine cat apprentice' or promoted_to == 'medicine cat' or promoted_to == 'elder'):
+            ceremony_text = choice(ceremony)
+            game.cur_events_list.append(ceremony_text)
+            game.ceremony_events_list.append(ceremony_text)
         else:
             game.cur_events_list.append(f'{str(cat.name)}{ceremony_text}')
+            game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
 
     def gain_accessories(self, cat):
         # ---------------------------------------------------------------------------- #
@@ -897,7 +978,7 @@ class Events():
                 game.cur_events_list.append(choice(loner_text))
                 game.misc_events_list.append(choice(loner_text))
                 game.cur_events_list.append(choice(success_text))
-                game.misc_events_list.append(choice(loner_text))
+                game.misc_events_list.append(choice(success_text))
 
             elif type_of_new_cat == 6:
                 created_cats = self.create_new_cat(

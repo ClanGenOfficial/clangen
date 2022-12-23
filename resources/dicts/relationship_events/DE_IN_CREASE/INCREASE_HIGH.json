@@ -44,7 +44,7 @@
             "noticed (apprentice) was struggling, and offered to help them.",
             "gave (cat) their favorite piece of prey.",
             "took the time to help (apprentice) work through a technique they are struggling with.",
-            "watching the shooting stars with (cat).",
+            "is watching the shooting stars with (cat).",
             "spent the whole day playing their favorite games with (cat).",
             "was playing with (cat) and learned a fun new battle move from them!",
             "tells a joke that only (cat) can understand.",
@@ -57,7 +57,8 @@
             "wants to explore the whole territory with (cat)!",
             "thinks of (cat) as their best friend.",
             "lets (cat) play with their favorite toy.",
-            "takes a nap with (cat) after a long day playing mossball."
+            "takes a nap with (cat) after a long day playing mossball.",
+            "brings (cat) a piece of prey to share after a long day of training."
         ],
         "dislike": [
             "is mocking (cat).",
@@ -116,7 +117,7 @@
             "escorted (cat) so they could gather herbs.",
             "is helping (cat) calm down.",
             "curled around (cat) to share warmth.",
-            "watching the shooting stars with (cat).",
+            "is watching the shooting stars with (cat).",
             "talks about dreams with (cat).",
             "has snuggled up against (cat).",
             "feels most like them-self when they're around (cat).",
@@ -198,7 +199,7 @@
             "lets (cat) have the last piece of fresh kill.",
             "gives (cat) an item they may like.",
             "apologized to (cat) for possibly hurting their feelings.",
-            "watching the shooting stars with (cat).",
+            "is watching the shooting stars with (cat).",
             "calmly explains hunting techniques to (cat) again for the fourth time today.",
             "spent the whole day playing their favorite games with (cat).",
             "tells a joke that only (cat) can understand.",
@@ -212,7 +213,8 @@
             "tells (cat) that they're an amazing storyteller.",
             "defends (cat) from a clanmate's rude remarks.",
             "lets (cat) play with their favorite toy.",
-            "takes a nap with (cat) after a long day playing mossball."
+            "takes a nap with (cat) after a long day playing mossball.",
+            "brings (cat) a piece of prey to share after a long day of training."
         ],
         "dislike": [
             "is mocking (cat).",
@@ -274,7 +276,7 @@
             "listening to (cat)'s problems.",
             "is building up (cat)'s confidence.",
             "apologized to (cat) for possibly hurting their feelings.",
-            "watching the shooting stars with (cat).",
+            "is watching the shooting stars with (cat).",
             "is giving (cat) advice.",
             "grooms the grime off (cat)'s pelt.",
             "is soothing (cat)'s irrational thoughts.",

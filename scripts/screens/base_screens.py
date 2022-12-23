@@ -146,6 +146,13 @@ class Screens():
         elif event.ui_element == self.menu_buttons["patrol_screen"]:
             self.change_screen('patrol screen')
         elif event.ui_element == self.menu_buttons["main_menu"]:
+            # save on return to menu
+            if game.clan is not None:
+                game.save_cats()
+                game.clan.save_clan()
+                game.clan.save_pregnancy(game.clan)
+                # if map_available:
+                #    save_map(game.map_info, game.clan.name)
             self.change_screen('start screen')
         elif event.ui_element == self.menu_buttons["list_screen"]:
             self.change_screen('list screen')

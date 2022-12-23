@@ -199,12 +199,24 @@ class ProfileScreen(Screens):
 
     # Keep track of current tabs open. Can be used to keep tabs open when pages are switched, and
     # helps with exiting the screen
-    default_sub_tab = 'relation'
     open_tab = None
-    open_sub_tab = default_sub_tab
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.help_button = None
+        self.open_sub_tab = None
+        self.editing_notes = False
+        self.user_notes = None
+        self.save_text = None
+        self.not_fav_tab = None
+        self.fav_tab = None
+        self.edit_text = None
+        self.sub_tab_4 = None
+        self.sub_tab_3 = None
+        self.sub_tab_2 = None
+        self.sub_tab_1 = None
+        self.backstory_background = None
+        self.history_text_box = None
         self.alert_tool_tip = None
         self.alert_visible = None
         self.alert = None
@@ -243,6 +255,7 @@ class ProfileScreen(Screens):
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
+                self.close_current_tab()
                 self.change_screen(game.last_screen_forProfile)
             elif event.ui_element == self.previous_cat_button:
                 self.clear_profile()
@@ -263,7 +276,13 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.dangerous_tab_button:
                 self.toggle_dangerous_tab()
             elif event.ui_element == self.backstory_tab_button:
-                self.toggle_backstory_tab()
+                if self.open_sub_tab is None:
+                    if game.settings['favorite sub tab'] is None:
+                        self.open_sub_tab = 'life events'
+                    else:
+                        self.open_sub_tab = game.settings['favorite sub tab']
+
+                self.toggle_history_tab()
             elif event.ui_element == self.conditions_tab_button:
                 self.toggle_conditions_tab()
             else:
@@ -275,7 +294,7 @@ class ProfileScreen(Screens):
 
     def handle_tab_events(self, event):
         """Handles buttons presses on the tabs"""
-        if self.open_tab is not None and self.open_tab != 'backstory' and self.open_tab != 'conditions':
+        if self.open_tab is not None and self.open_tab != 'history' and self.open_tab != 'conditions':
             if event.ui_element == self.close_tab_button:
                 self.close_current_tab()
         elif self.open_tab is None:
@@ -367,6 +386,42 @@ class ProfileScreen(Screens):
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
+        # History Tab
+        elif self.open_tab == 'history':
+            if event.ui_element == self.sub_tab_1:
+                if self.open_sub_tab == 'user notes':
+                    self.notes_entry.kill()
+                    self.display_notes.kill()
+                    if self.edit_text:
+                        self.edit_text.kill()
+                    if self.save_text:
+                        self.save_text.kill()
+                    self.help_button.kill()
+                self.open_sub_tab = 'life events'
+                self.toggle_history_sub_tab()
+            elif event.ui_element == self.sub_tab_2:
+                if self.open_sub_tab == 'life events':
+                    self.history_text_box.kill()
+                self.open_sub_tab = 'user notes'
+                self.toggle_history_sub_tab()
+            elif event.ui_element == self.fav_tab:
+                game.settings['favorite sub tab'] = None
+                self.fav_tab.hide()
+                self.not_fav_tab.show()
+            elif event.ui_element == self.not_fav_tab:
+                game.settings['favorite sub tab'] = self.open_sub_tab
+                self.fav_tab.show()
+                self.not_fav_tab.hide()
+            elif event.ui_element == self.save_text:
+                self.user_notes = sub(r"[^A-Za-z0-9<->/.()*'&#!?,| ]+", "", self.notes_entry.get_text())
+                self.save_user_notes()
+                self.editing_notes = False
+                self.update_disabled_buttons_and_text()
+            elif event.ui_element == self.edit_text:
+                self.editing_notes = True
+                self.update_disabled_buttons_and_text()
+
+        # Conditions Tab
         elif self.open_tab == 'conditions':
             if event.ui_element == self.right_arrow:
                 self.first_page_visible = False
@@ -424,6 +479,8 @@ class ProfileScreen(Screens):
         self.cat_image.kill()
         if self.background is not None:
             self.background.kill()
+        if self.user_notes:
+            self.user_notes = 'Click the check mark to enter notes about your cat!'
 
     def exit_screen(self):
         self.clear_profile()
@@ -511,6 +568,9 @@ class ProfileScreen(Screens):
             self.previous_cat_button.disable()
         else:
             self.previous_cat_button.enable()
+
+        if self.open_tab == "history" and self.open_sub_tab == 'user notes':
+            self.load_user_notes()
 
     def determine_previous_and_next_cat(self):
         """'Determines where the next and previous buttons point too."""
@@ -734,13 +794,18 @@ class ProfileScreen(Screens):
         else:
             output += 'backstory: ' + 'clanborn'
 
-        if the_cat.is_disabled():
-            # NEWLINE ----------
-            output += "\n"
-            output += 'has a permanent condition'
-
         # NEWLINE ----------
         output += "\n"
+
+        if the_cat.is_disabled():
+            for condition in the_cat.permanent_condition:
+                if the_cat.permanent_condition[condition]['born_with'] is True and \
+                        the_cat.permanent_condition[condition]["moons_until"] != -2:
+                    continue
+                output += 'has a permanent condition'
+
+                # NEWLINE ----------
+                output += "\n"
 
         if the_cat.is_injured():
             if "recovering from birth" in the_cat.injuries:
@@ -748,26 +813,31 @@ class ProfileScreen(Screens):
             else:
                 output += "injured!"
         elif the_cat.is_ill():
-            if "grief stricken" in the_cat.injuries:
+            if "grief stricken" in the_cat.illnesses:
                 output += 'grieving!'
+            elif "fleas" in the_cat.illnesses:
+                output += 'flea-ridden!'
             else:
                 output += 'sick!'
 
         return output
 
-    def toggle_backstory_tab(self):
-        """Opens the backstory tab"""
+    def toggle_history_tab(self, sub_tab_switch=False):
+        """Opens the history tab
+        param sub_tab_switch should be set to True if switching between sub tabs within the History tab
+        """
         previous_open_tab = self.open_tab
 
         # This closes the current tab, so only one can be open at a time
         self.close_current_tab()
 
-        if previous_open_tab == 'backstory':
-            '''If the current open tab is relations, just close the tab and do nothing else. '''
+        if previous_open_tab == 'history' and sub_tab_switch is False:
+            '''If the current open tab is history and we aren't switching between sub tabs,
+             just close the tab and do nothing else. '''
             pass
         else:
-            self.open_tab = 'backstory'
-            self.backstory_background = pygame_gui.elements.UIImage(pygame.Rect((64, 465), (645, 157)),
+            self.open_tab = 'history'
+            self.backstory_background = pygame_gui.elements.UIImage(pygame.Rect((89, 465), (620, 157)),
                                                                     self.backstory_tab)
             self.backstory_background.disable()
             self.sub_tab_1 = UIImageButton(pygame.Rect((709, 475), (42, 30)), "", object_id="#sub_tab_1_button")
@@ -778,17 +848,101 @@ class ProfileScreen(Screens):
             self.sub_tab_3.disable()
             self.sub_tab_4 = UIImageButton(pygame.Rect((709, 586), (42, 30)), "", object_id="#sub_tab_4_button")
             self.sub_tab_4.disable()
+            self.fav_tab = UIImageButton(
+                pygame.Rect((55, 480), (28, 28)),
+                "",
+                object_id="#fav_star",
+                tool_tip_text='un-favorite this tab'
+            )
+            self.not_fav_tab = UIImageButton(
+                pygame.Rect((55, 480), (28, 28)),
+                "",
+                object_id="#not_fav_star",
+                tool_tip_text='favorite this tab'
+            )
 
-            # This will be overwritten in update_disabled_buttons_and_text()
-            self.history_text_box = pygame_gui.elements.UITextBox("", pygame.Rect((80, 480), (615, 142)))
-            self.update_disabled_buttons_and_text()
+            print(self.open_sub_tab, game.settings['favorite sub tab'])
+            if self.open_sub_tab != 'life events':
+                self.toggle_history_sub_tab()
+            else:
+                # This will be overwritten in update_disabled_buttons_and_text()
+                self.history_text_box = pygame_gui.elements.UITextBox("", pygame.Rect((80, 480), (615, 142)))
+                self.update_disabled_buttons_and_text()
+
+    def toggle_user_notes_tab(self):
+        """Opens the User Notes portion of the History Tab"""
+        self.load_user_notes()
+        if self.user_notes is None:
+            self.user_notes = 'Click the check mark to enter notes about your cat!'
+
+        self.notes_entry = pygame_gui.elements.UITextEntryBox(
+            pygame.Rect((100, 473), (600, 149)),
+            initial_text=self.user_notes,
+            object_id='#history_tab_text_box'
+        )
+
+        self.display_notes = UITextBoxTweaked(self.user_notes,
+                                              pygame.Rect((100, 473), (600, 149)),
+                                              object_id="#history_tab_text_box",
+                                              line_spacing=1)
+
+        self.update_disabled_buttons_and_text()
+
+    def save_user_notes(self):
+        clanname = game.clan.name
+
+        notes = self.user_notes
+
+        notes_directory = 'saves/' + clanname + '/notes'
+        notes_file_path = notes_directory + '/' + self.the_cat.ID + '_notes.json'
+
+        if not os.path.exists(notes_directory):
+            os.makedirs(notes_directory)
+
+        if notes is None or notes == 'Click the check mark to enter notes about your cat!':
+            return
+
+        new_notes = {str(self.the_cat.ID): notes}
+
+        try:
+            with open(notes_file_path, 'w') as rel_file:
+                json_string = ujson.dumps(new_notes, indent=2)
+                rel_file.write(json_string)
+
+        except:
+            print(f"WARNING: Saving notes of cat #{self.the_cat.ID} didn't work.")
+
+    def load_user_notes(self):
+        clanname = game.clan.name
+
+        notes_directory = 'saves/' + clanname + '/notes'
+        notes_file_path = notes_directory + '/' + self.the_cat.ID + '_notes.json'
+
+        if not os.path.exists(notes_file_path):
+            return
+
+        try:
+            with open(notes_file_path, 'r') as read_file:
+                rel_data = ujson.loads(read_file.read())
+                self.user_notes = 'Click the check mark to enter notes about your cat!'
+                if str(self.the_cat.ID) in rel_data:
+                    self.user_notes = rel_data.get(str(self.the_cat.ID))
+        except Exception as e:
+            print(e)
+            print(f'WARNING: there was an error reading the Notes file of cat #{self.the_cat.ID}.')
 
     def toggle_history_sub_tab(self):
         """To toggle the sub-tab, when that's added"""
 
+        if self.open_sub_tab == 'life events':
+            self.toggle_history_tab(sub_tab_switch=True)
+
+        elif self.open_sub_tab == 'user notes':
+            self.toggle_user_notes_tab()
+
     def get_all_history_text(self):
         output = ""
-        if self.open_sub_tab == 'relation':
+        if self.open_sub_tab == 'life events':
             # start our history with the backstory, since all cats get one
             life_history = [str(self.get_backstory_text())]
             body_history = []
@@ -912,22 +1066,26 @@ class ProfileScreen(Screens):
                     influenced_skill = adjust_skill
                     break
 
-            if self.the_cat.former_mentor:
-                mentor = self.the_cat.former_mentor[-1].name
-            else:
-                mentor = None
+        if self.the_cat.former_mentor:
+            mentor = self.the_cat.former_mentor[-1].name
+        else:
+            mentor = None
 
-            # append influence blurb to history
-            if mentor is None:
-                influence_history = None
-            elif influenced_trait is not None and influenced_skill is None:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait}."
-            elif influenced_trait is None and influenced_skill is not None:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
-            elif influenced_trait is not None and influenced_skill is not None:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill}."
-            else:
-                influence_history = None
+        # append influence blurb to history
+        if mentor is None:
+            influence_history = "This cat either did not have a mentor, or their mentor is unknown."
+            if self.the_cat.status == 'kitten':
+                influence_history = 'This cat has not begun training.'
+            if self.the_cat.status in ['apprentice', 'medicine cat apprentice']:
+                influence_history = 'This cat has not finished training.'
+        elif influenced_trait is not None and influenced_skill is None:
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait}."
+        elif influenced_trait is None and influenced_skill is not None:
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
+        elif influenced_trait is not None and influenced_skill is not None:
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill}."
+        else:
+            influence_history = f"This cat's mentor was {mentor}."
 
         return influence_history
 
@@ -1021,126 +1179,130 @@ class ProfileScreen(Screens):
             visible=self.second_page_visible)
 
         # check for permanent conditions and create their detail boxes
-        for condition in self.the_cat.permanent_condition:
-            if self.the_cat.permanent_condition[condition]["born_with"] is True and \
-                    self.the_cat.permanent_condition[condition]["moons_until"] != -2:
-                continue
-            # move to second page if count gets too high
-            if count < 4 and container != self.second_page:
-                container = self.first_page
-            else:
-                container = self.second_page
-                x_pos = 14
-            # display the detail box
-            self.condition_box = pygame_gui.elements.UIImage(
-                pygame.Rect((x_pos, 13), (140, 138)),
-                self.condition_details_box,
-                container=container)
-            # display the detail text
-            y_adjust = 30
-            # title
-            if len(str(condition)) > 18:
-                y_adjust += 18
-            self.condition_name_text = UITextBoxTweaked(
-                condition,
-                pygame.Rect((x_pos, 13), (138, -1)),
-                line_spacing=.90,
-                object_id="text_box",
-                container=container
-            )
-            # details
-            text = self.get_condition_details(condition)
-            self.condition_detail_text = UITextBoxTweaked(
-                text,
-                pygame.Rect((x_pos, y_adjust), (138, 138)),
-                line_spacing=.90,
-                object_id="#condition_details_text_box",
-                container=container
-            )
-            # adjust the x_pos for the next box
-            x_pos += 152
-            count += 1
+        if self.the_cat.is_disabled():
+            for condition in self.the_cat.permanent_condition:
+                if self.the_cat.permanent_condition[condition]['born_with'] is True and \
+                        self.the_cat.permanent_condition[condition][
+                            "moons_until"] != -2:
+                    continue
+                # move to second page if count gets too high
+                if count < 4 and container != self.second_page:
+                    container = self.first_page
+                else:
+                    container = self.second_page
+                    x_pos = 14
+                # display the detail box
+                self.condition_box = pygame_gui.elements.UIImage(
+                    pygame.Rect((x_pos, 13), (140, 138)),
+                    self.condition_details_box,
+                    container=container)
+                # display the detail text
+                y_adjust = 30
+                # title
+                if len(str(condition)) > 17:
+                    y_adjust += 18
+                self.condition_name_text = UITextBoxTweaked(
+                    condition,
+                    pygame.Rect((x_pos, 13), (138, -1)),
+                    line_spacing=.90,
+                    object_id="text_box",
+                    container=container
+                )
+                # details
+                text = self.get_condition_details(condition)
+                self.condition_detail_text = UITextBoxTweaked(
+                    text,
+                    pygame.Rect((x_pos, y_adjust), (138, 138)),
+                    line_spacing=.90,
+                    object_id="#condition_details_text_box",
+                    container=container
+                )
+                # adjust the x_pos for the next box
+                x_pos += 152
+                count += 1
 
         # check for injuries and display their detail boxes
-        for injury in self.the_cat.injuries:
-            # move to second page if count gets too high
-            if count < 4 and container != self.second_page:
-                container = self.first_page
-            else:
-                container = self.second_page
-                x_pos = 14
-            # display the detail box
-            self.condition_box = pygame_gui.elements.UIImage(
-                pygame.Rect((x_pos, 13), (140, 138)),
-                self.condition_details_box,
-                container=container
-            )
-            # display the detail text
-            y_adjust = 30
-            # title
-            if len(str(injury)) > 17:
-                y_adjust += 18
-            self.condition_name_text = UITextBoxTweaked(
-                injury,
-                pygame.Rect((x_pos, 13), (138, -1)),
-                line_spacing=.90,
-                object_id="text_box",
-                container=container
-            )
-            # details
-            text = self.get_condition_details(injury)
-            self.condition_detail_text = UITextBoxTweaked(
-                text,
-                pygame.Rect((x_pos, y_adjust), (138, 138)),
-                line_spacing=.90,
-                object_id="#condition_details_text_box",
-                container=container
-            )
-            # adjust the x_pos for the next box
-            x_pos += 152
-            count += 1
+        if self.the_cat.is_injured():
+            for injury in self.the_cat.injuries:
+                # move to second page if count gets too high
+                if count < 4 and container != self.second_page:
+                    container = self.first_page
+                else:
+                    container = self.second_page
+                    x_pos = 14
+                # display the detail box
+                self.condition_box = pygame_gui.elements.UIImage(
+                    pygame.Rect((x_pos, 13), (140, 138)),
+                    self.condition_details_box,
+                    container=container
+                )
+                # display the detail text
+                y_adjust = 30
+                # title
+                if len(str(injury)) > 17:
+                    y_adjust += 18
+                self.condition_name_text = UITextBoxTweaked(
+                    injury,
+                    pygame.Rect((x_pos, 13), (138, -1)),
+                    line_spacing=.90,
+                    object_id="text_box",
+                    container=container
+                )
+                # details
+                text = self.get_condition_details(injury)
+                self.condition_detail_text = UITextBoxTweaked(
+                    text,
+                    pygame.Rect((x_pos, y_adjust), (138, 138)),
+                    line_spacing=.90,
+                    object_id="#condition_details_text_box",
+                    container=container
+                )
+                # adjust the x_pos for the next box
+                x_pos += 152
+                count += 1
 
         # check for illnesses and display their detail boxes
-        for illness in self.the_cat.illnesses:
-            # don't display infected or festering as their own condition
-            if illness in ['an infected wound', 'a festering wound']:
-                continue
-            # move to second page if count gets too high
-            if count < 4 and container != self.second_page:
-                container = self.first_page
-            else:
-                container = self.second_page
-                x_pos = 14
-            # display the detail box
-            self.condition_box = pygame_gui.elements.UIImage(
-                pygame.Rect((x_pos, 13), (140, 138)),
-                self.condition_details_box,
-                container=container
-            )
-            # display the detail text
-            y_adjust = 30
-            # title
-            if len(str(illness)) > 17:
-                y_adjust += 18
-            self.condition_name_text = UITextBoxTweaked(
-                illness,
-                pygame.Rect((x_pos, 13), (138, -1)),
-                line_spacing=.90,
-                object_id="text_box",
-                container=container
-            )
-            # details
-            text = self.get_condition_details(illness)
-            self.condition_detail_text = UITextBoxTweaked(
-                text,
-                pygame.Rect((x_pos, y_adjust), (138, 138)),
-                line_spacing=.90,
-                object_id="#condition_details_text_box",
-                container=container
-            )
-            # adjust the x_pos for the next box
-            x_pos += 152
-            count += 1
+        if self.the_cat.is_ill():
+            for illness in self.the_cat.illnesses:
+                # don't display infected or festering as their own condition
+                if illness in ['an infected wound', 'a festering wound']:
+                    continue
+                # move to second page if count gets too high
+                if count < 4 and container != self.second_page:
+                    container = self.first_page
+                else:
+                    container = self.second_page
+                    x_pos = 14
+                # display the detail box
+                self.condition_box = pygame_gui.elements.UIImage(
+                    pygame.Rect((x_pos, 13), (140, 138)),
+                    self.condition_details_box,
+                    container=container
+                )
+                # display the detail text
+                y_adjust = 30
+                # title
+                if len(str(illness)) > 17:
+                    y_adjust += 18
+                self.condition_name_text = UITextBoxTweaked(
+                    illness,
+                    pygame.Rect((x_pos, 13), (138, -1)),
+                    line_spacing=.90,
+                    object_id="text_box",
+                    container=container
+                )
+                # details
+                text = self.get_condition_details(illness)
+                self.condition_detail_text = UITextBoxTweaked(
+                    text,
+                    pygame.Rect((x_pos, y_adjust), (138, 138)),
+                    line_spacing=.90,
+                    object_id="#condition_details_text_box",
+                    container=container
+                )
+                # adjust the x_pos for the next box
+                x_pos += 152
+                count += 1
 
         if count > 4:
             self.right_arrow.enable()
@@ -1305,18 +1467,28 @@ class ProfileScreen(Screens):
             pass
         else:
             self.open_tab = 'dangerous'
-            self.kill_cat_button = UIImageButton(pygame.Rect((578, 486), (172, 36)), "", object_id="#kill_cat_button")
+            self.kill_cat_button = UIImageButton \
+                (pygame.Rect((578, 486), (172, 36)),
+                 "",
+                 object_id="#kill_cat_button",
+                 tool_tip_text='This cannot be reversed.'
+                 )
             self.close_tab_button = UIImageButton(pygame.Rect((578, 522), (172, 36)), "", object_id="#close_tab_button")
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons_and_text().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
             #    If you can think of a better way to do this, please fix! 
-            self.exile_cat_button = UIImageButton(pygame.Rect((578, 486), (172, 36)), "", visible=False)
+            self.exile_cat_button = UIImageButton(
+                pygame.Rect((578, 486), (172, 36)),
+                "",
+                visible=False,
+                tool_tip_text='This cannot be reversed.'
+            )
             self.update_disabled_buttons_and_text()
 
     def update_disabled_buttons_and_text(self):
         """Sets which tab buttons should be disabled. This is run when the cat is switched. """
-        if self.open_tab == None:
+        if self.open_tab is None:
             pass
         elif self.open_tab == 'relations':
             if self.the_cat.dead:
@@ -1437,8 +1609,11 @@ class ProfileScreen(Screens):
             # Button to exile cat
             self.exile_cat_button.kill()
             if not self.the_cat.dead:
-                self.exile_cat_button = UIImageButton(pygame.Rect((578, 450), (172, 36)), "",
-                                                      object_id="#exile_cat_button")
+                self.exile_cat_button = UIImageButton(
+                    pygame.Rect((578, 450), (172, 36)),
+                    "",
+                    object_id="#exile_cat_button",
+                    tool_tip_text='This cannot be reversed.')
                 if self.the_cat.exiled:
                     self.exile_cat_button.disable()
             elif self.the_cat.dead:
@@ -1447,22 +1622,95 @@ class ProfileScreen(Screens):
                 if self.the_cat.df:
                     self.exile_cat_button.disable()
             else:
-                self.exile_cat_button = UIImageButton(pygame.Rect((578, 450), (172, 36)), "",
-                                                      object_id="#exile_cat_button")
+                self.exile_cat_button = UIImageButton(
+                    pygame.Rect((578, 450), (172, 36)),
+                    "",
+                    object_id="#exile_cat_button",
+                    tool_tip_text='This cannot be reversed.')
                 self.exile_cat_button.disable()
 
             if not self.the_cat.dead:
                 self.kill_cat_button.enable()
             else:
                 self.kill_cat_button.disable()
-        # Backstory_tab:
-        elif self.open_tab == 'backstory':
-            self.history_text_box.kill()
-            self.history_text_box = UITextBoxTweaked(self.get_all_history_text(),
-                                                     pygame.Rect((80, 473), (620, 149)),
-                                                     object_id="#history_tab_text_box",
-                                                     line_spacing=1)
+        # History Tab:
+        elif self.open_tab == 'history':
+            # show/hide fav tab star
+            if self.open_sub_tab == game.settings['favorite sub tab']:
+                self.fav_tab.show()
+                self.not_fav_tab.hide()
+            else:
+                self.fav_tab.hide()
+                self.not_fav_tab.show()
 
+            if self.open_sub_tab == 'life events':
+                self.sub_tab_1.disable()
+                self.sub_tab_2.enable()
+                self.history_text_box.kill()
+                self.history_text_box = UITextBoxTweaked(self.get_all_history_text(),
+                                                         pygame.Rect((100, 473), (600, 149)),
+                                                         object_id="#history_tab_text_box",
+                                                         line_spacing=1)
+            elif self.open_sub_tab == 'user notes':
+                self.sub_tab_1.enable()
+                self.sub_tab_2.disable()
+                if self.history_text_box:
+                    self.history_text_box.kill()
+                if self.save_text:
+                    self.save_text.kill()
+                if self.notes_entry:
+                    self.notes_entry.kill()
+                if self.edit_text:
+                    self.edit_text.kill()
+                if self.display_notes:
+                    self.display_notes.kill()
+                if self.help_button:
+                    self.help_button.kill()
+
+                self.help_button = UIImageButton(pygame.Rect(
+                    (52, 584), (34, 34)),
+                    "",
+                    object_id="#help_button",
+                    tool_tip_text="The notes section has limited html capabilities.<br>"
+                                  "Use the following commands with < and > in place of the apostrophes.<br>"
+                                  "-'br' to start a new line.<br>"
+                                  "-Encase text between 'b' and '/b' to bold.<br>"
+                                  "-Encase text between 'i' and '/i' to italicize.<br>"
+                                  "-Encase text between 'u' and '/u' to underline.<br><br>"
+                                  "The following font related codes can be used, "
+                                  "but keep in mind that not all font faces will work.<br>"
+                                  "-Encase text between 'font face = name of font you wish to use' and '/font' to change the font face.<br>"
+                                  "-Encase text between 'font color= #hex code of the color' and '/font' to change the color of the text.<br>"
+                                  "-Encase text between 'font size=number of size' and '/font' to change the text size.",
+
+                )
+                if self.editing_notes is True:
+                    self.save_text = UIImageButton(pygame.Rect(
+                        (52, 514), (34, 34)),
+                        "",
+                        object_id="#unchecked_checkbox",
+                        tool_tip_text='lock and save text'
+                    )
+
+                    self.notes_entry = pygame_gui.elements.UITextEntryBox(
+                        pygame.Rect((100, 473), (600, 149)),
+                        initial_text=self.user_notes,
+                        object_id='#history_tab_entry_box_smalltooltip'
+                    )
+                else:
+                    self.edit_text = UIImageButton(pygame.Rect(
+                        (52, 514), (34, 34)),
+                        "",
+                        object_id="#checked_checkbox_smalltooltip",
+                        tool_tip_text='edit text'
+                    )
+
+                    self.display_notes = UITextBoxTweaked(self.user_notes,
+                                                          pygame.Rect((100, 473), (600, 149)),
+                                                          object_id="#history_tab_text_box",
+                                                          line_spacing=1)
+
+        # Conditions Tab
         elif self.open_tab == 'conditions':
             self.left_arrow.disable()
             self.right_arrow.disable()
@@ -1495,13 +1743,28 @@ class ProfileScreen(Screens):
             self.kill_cat_button.kill()
             self.exile_cat_button.kill()
             self.close_tab_button.kill()
-        elif self.open_tab == 'backstory':
+        elif self.open_tab == 'history':
             self.backstory_background.kill()
             self.sub_tab_1.kill()
             self.sub_tab_2.kill()
             self.sub_tab_3.kill()
             self.sub_tab_4.kill()
-            self.history_text_box.kill()
+            self.fav_tab.kill()
+            self.not_fav_tab.kill()
+            if self.open_sub_tab == 'user notes':
+                if self.edit_text:
+                    self.edit_text.kill()
+                if self.save_text:
+                    self.save_text.kill()
+                if self.notes_entry:
+                    self.notes_entry.kill()
+                if self.display_notes:
+                    self.display_notes.kill()
+                self.help_button.kill()
+            elif self.open_sub_tab == 'life events':
+                if self.history_text_box:
+                    self.history_text_box.kill()
+
         elif self.open_tab == 'conditions':
             self.first_page.kill()
             self.second_page.kill()
@@ -1572,7 +1835,7 @@ class ChangeNameScreen(Screens):
         self.heading = pygame_gui.elements.UITextBox("-Change Name-", pygame.Rect((100, 130), (600, 40)),
                                                      object_id=get_text_box_theme())
 
-        self.name_changed = pygame_gui.elements.UITextBox("Named Changed!", pygame.Rect((100, 350), (600, 40)),
+        self.name_changed = pygame_gui.elements.UITextBox("Name Changed!", pygame.Rect((100, 350), (600, 40)),
                                                           visible=False,
                                                           object_id=get_text_box_theme())
 

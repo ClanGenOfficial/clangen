@@ -154,8 +154,6 @@ cython_debug/
 .vscode/settings.json
 scripts/__pycache__/**
 /__pycache__/
-.vscode/settings.json
-.idea/clan_gen_working.iml
-.idea/misc.xml
-*.xml
-*.iml
+.vscode/**
+
+.vscode/launch.json

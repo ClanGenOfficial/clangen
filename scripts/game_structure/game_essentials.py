@@ -42,6 +42,7 @@ class Game():
 
     cat_to_fade = []
     loaded_faded_cats = [] #This is a list of Cat object, which are the loaded faded cats. This should be cleared freqenctly.
+    sub_tab_list = ['life events', 'user notes']
 
     # Keeping track of various last screen for various purposes
     last_screen_forupdate = 'start screen'
@@ -129,6 +130,7 @@ class Game():
         'set_game_mode': False,
         'broke_up': False,
         'show_info': False,
+        'favorite_sub_tab': None,
     }
     all_screens = {}
     cur_events = {}
@@ -156,7 +158,8 @@ class Game():
         'deputy': False,
         'den labels': True,
         'fading': True,
-        "save_faded_copy": False
+        "save_faded_copy": False,
+        'favorite sub tab': None
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
@@ -177,7 +180,8 @@ class Game():
         'romantic with former mentor': [False, True],
         'game_mode': game_mode_list,
         'deputy': [False, True],
-        'den labels': [False, True]
+        'den labels': [False, True],
+        'favorite sub tab': sub_tab_list
     }  # Lists of possible options for each setting
     settings_changed = False
 
@@ -204,10 +208,26 @@ class Game():
             if_clans = len(clan_list)
         if if_clans > 0:
             clan_list = clan_list.split('\n')
-            clan_list = [i for i in clan_list if i]  # Remove empty
+            clan_list = [i.strip() for i in clan_list if i]  # Remove empty and whitespace
             return clan_list
         else:
             return None
+    
+    def save_clanlist(self, loaded_clan = None):
+        """
+        Save list of clans to saves/clanlist.txt with the loaded_clan first in the list.
+        """
+        clans = []
+        if loaded_clan:
+            clans.append(f"{loaded_clan}\n")
+
+        for clan_name in self.switches['clan_list']:
+            if clan_name and clan_name != loaded_clan:
+                clans.append(f"{clan_name}\n")
+
+        if clans:
+            with open('saves/clanlist.txt', 'w') as f:
+                f.writelines(clans)
 
     def save_settings(self):
         """ Save user settings for later use """
