@@ -3,6 +3,7 @@ import random
 
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import scars1, scars2, scars3
+from scripts.conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
 from scripts.utility import save_death
 from scripts.game_structure.game_essentials import game, SAVE_DEATH
 
@@ -26,7 +27,12 @@ class Scar_Events():
         """
         scar_text = cat.possible_scar
 
-        if len(cat.scars) < 4 and not int(random.random() * 2):  # 1/2 chance to gain scar
+        chance = int(random.random() * 10)
+        amount_per_med = get_amount_cat_for_one_medic(game.clan)
+        if medical_cats_condition_fulfilled(game.cat_class.all_cats.values(), amount_per_med):
+            chance += 3
+        print(chance)
+        if len(cat.scars) < 4 and chance <= 6:
 
             # move potential scar text into displayed scar text
             cat.scar_event.append(scar_text)
@@ -63,13 +69,17 @@ class Scar_Events():
                 "LEFTEAR", "RIGHTEAR", 'NOLEFTEAR', 'NORIGHTEAR'
             ]
             frostbite_scars = [
-                "HALFTAIL", "NOTAIL", "NOPAW", 'NOLEFTEAR', 'NORIGHTEAR', 'NOEAR'
+                "HALFTAIL", "NOTAIL", "NOPAW", 'NOLEFTEAR', 'NORIGHTEAR', 'NOEAR',
+                "FROSTFACE", "FROSTTAIL", "FROSTMITT", "FROSTSOCK",
             ]
             eye_scars = [
                 "THREE", "RIGHTBLIND", "LEFTBLIND", "BOTHBLIND"
             ]
             burn_scars = [
                 "BRIGHTHEART", "BURNPAWS", "BURNTAIL", "BURNBELLY", "BURNRUMP"
+            ]
+            quill_scars = [
+                "QUILLCHUNK", "QUILLSCRATCH"
             ]
 
             scar_pool = []
@@ -98,6 +108,8 @@ class Scar_Events():
                 scar_pool = frostbite_scars
             elif injury_name == "damaged eyes":
                 scar_pool = eye_scars
+            elif injury_name == "quilled by porcupine":
+                scar_pool = quill_scars
 
             for scar in cat.scars:
                 if scar:
@@ -105,11 +117,11 @@ class Scar_Events():
                         if scar in scar_pool:
                             scar_pool.remove(scar)  # no duplicate scars
                         if "NOPAW" == scar:
-                            for option in ['TOETRAP', 'RATBITE']:
+                            for option in ['TOETRAP', 'RATBITE', "FROSTSOCK"]:
                                 if option in scar_pool:
                                     scar_pool.remove(option)
                         if "NOTAIL" in scar:
-                            for option in ["HALFTAIL", "TAILBASE", "TAILSCAR", "MANTAIL", "BURNTAIL"]:
+                            for option in ["HALFTAIL", "TAILBASE", "TAILSCAR", "MANTAIL", "BURNTAIL", "FROSTTAIL"]:
                                 if option in scar_pool:
                                     scar_pool.remove(option)
                         if "BRIGHTHEART" in scar:
@@ -121,13 +133,18 @@ class Scar_Events():
                                 if option in scar_pool:
                                     scar_pool.remove(option)
                         if "NOEAR" in scar:
-                            for option in ["LEFTEAR", "RIGHTEAR", 'NOLEFTEAR', 'NORIGHTEAR']:
+                            for option in ["LEFTEAR", "RIGHTEAR", 'NOLEFTEAR', 'NORIGHTEAR', "FROSTFACE"]:
                                 if option in scar_pool:
                                     scar_pool.remove(option)
-                        if 'MANTAIL' in scar and 'BURNTAIL' in scar_pool:
-                            scar_pool.remove('BURNTAIL')
-                        if 'BURNTAIL' in scar and 'MANTAIL' in scar_pool:
-                            scar_pool.remove('MANTAIL')
+                        if 'MANTAIL' in scar:
+                            for option in ["BURNTAIL", 'FROSTTAIL']:
+                                scar_pool.remove(option)
+                        elif 'BURNTAIL' in scar:
+                            for option in ["MANTAIL", 'FROSTTAIL']:
+                                scar_pool.remove(option)
+                        elif 'FROSTTAIL' in scar:
+                            for option in ["MANTAIL", 'BURNTAIL']:
+                                scar_pool.remove(option)
                         if 'NOLEFT' in scar and 'LEFTEAR' in scar_pool:
                             scar_pool.remove('LEFTEAR')
                         if 'NORIGHT' in scar and 'RIGHTEAR' in scar_pool:

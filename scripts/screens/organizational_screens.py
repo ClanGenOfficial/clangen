@@ -197,6 +197,8 @@ class SettingsScreen(Screens):
                 "Silverstar<br>" \
                 "Thrae<br>" \
                 "Chase<br>" \
+                "wood pank<br>" \
+                "grif<br>" \
                 "beejeans<br></i>" \
                 "Thank you to the beta testers and all those who have helped with development.<br><br>" \
                 "<b>Thank you for playing!!</b><br><br>" \
