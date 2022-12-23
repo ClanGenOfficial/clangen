@@ -2621,6 +2621,10 @@ class Cat(object):
 
         rel = []
         for r in self.relationships:
+            if r.log:
+                log = [r.log[-1]]
+            else:
+                log = []
             r_data = {
                 "cat_from_id": r.cat_from.ID,
                 "cat_to_id": r.cat_to.ID,
@@ -2633,7 +2637,7 @@ class Cat(object):
                 "comfortable": r.comfortable,
                 "jealousy": r.jealousy,
                 "trust": r.trust,
-                "log": r.log
+                "log": log
             }
             rel.append(r_data)
 
@@ -2910,7 +2914,7 @@ class Cat(object):
                             comfortable=rel['comfortable'] if rel['comfortable'] else 0,
                             jealousy=rel['jealousy'] if rel['jealousy'] else 0,
                             trust=rel['trust'] if rel['trust'] else 0,
-                            log =rel['log'] if rel['log'] else [])
+                            log =rel['log'])
                         relationships.append(new_rel)
                     self.relationships = relationships
             except:
