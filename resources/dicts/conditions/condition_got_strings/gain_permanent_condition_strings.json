@@ -85,6 +85,16 @@
             "m_c sighs sadly as r_c suggests that it's time to take their tail off. The flesh is blackened from frostbite and is obviously dead - there's no use in leaving it attached. m_c agrees.",
             "m_c's tail can hardly even move and r_c tells them that the frostbite has progressed too far. If m_c is to survive then the tail will have to be removed.",
             "m_c's tail is finally gone. It was more of a relief than anything. The frostbitten flesh was already dead and blackened, so they had no issue with taking it off before it fell off on its own."
+        ],
+        "partial hearing loss": [
+            "needs to be written",
+            "needs to be written",
+            "needs to be written"
+        ],
+        "deaf": [
+            "needs to be written",
+            "needs to be written",
+            "needs to be written"
 
         ]
     },
@@ -164,6 +174,11 @@
             "r_c informs m_c that the bite-wound they've healed from has left their leg permanently weakened.",
             "m_c finds that they have a new limp, despite healed from their bite-wound. r_c tells them it's likely permanent.",
             "m_c limps around camp, fully healed from their bite-wound but still marked by it for the rest of their life."
+        ],
+        "one bad eye": [
+            "r_c unwraps m_c's face and sighs when they see the remaining scar. They tell m_c that their eye will never be the same.",
+            "m_c curls up in their nest and tightly shuts their eyes, pretending that the darkness on one side is only temporary. But they know what r_c told them and they know the dark is permanent.",
+            "m_c jumps when another cat comes up on their bad side and reminds themselves that they have to get used to this. They know their eye is permanently damaged."
         ]
     },
     "broken back": {
