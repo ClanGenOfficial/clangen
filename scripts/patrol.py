@@ -507,7 +507,7 @@ class Patrol():
                     n = 1
                 else:
                     n = 4
-            elif len(fail_text) >= 7 and fail_text[6] is not None:
+            elif len(fail_text) >= 7 and fail_text[6] is not None and self.patrol_leader == game.clan.leader:
                 if not unscathed:
                     n = 6
             elif common and len(fail_text) >= 4 and fail_text[3] is not None:
@@ -519,7 +519,7 @@ class Patrol():
                     n = 3
                 elif len(fail_text) >= 3 and fail_text[2] is not None:
                     n = 2
-            elif rare and len(fail_text) >= 7 and fail_text[6] is not None:
+            elif rare and len(fail_text) >= 7 and fail_text[6] is not None and self.patrol_leader == game.clan.leader:
                 n = 6
             else:
                 n = 0
