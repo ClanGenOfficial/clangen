@@ -89,6 +89,10 @@ class ChooseMentorScreen(Screens):
                                                                     f"{str(self.mentor.name)}",
                                                                     pygame.Rect((230, 130), (340, 30)),
                                                                     object_id=get_text_box_theme("#cat_patrol_info_box"))
+        else:
+            self.current_mentor_text = pygame_gui.elements.UITextBox(f"{str(self.the_cat.name)} does not have a mentor",
+                                                                    pygame.Rect((230, 130), (340, 30)),
+                                                                    object_id=get_text_box_theme("#cat_patrol_info_box"))
 
         # Layout Images:
         self.mentor_frame = pygame_gui.elements.UIImage(pygame.Rect((40, 113), (281, 197)),
@@ -106,11 +110,16 @@ class ChooseMentorScreen(Screens):
         self.next_cat_button = UIImageButton(pygame.Rect((622, 25), (153, 30)), "", object_id="#next_cat_button")
         self.back_button = UIImageButton(pygame.Rect((25, 645), (105, 30)), "", object_id="#back_button")
         self.confirm_mentor = UIImageButton(pygame.Rect((326, 310), (148, 30)), "", object_id="#confirm_mentor_button")
-        self.current_mentor_warning = pygame_gui.elements.UITextBox("<font color=#FF0000>Current mentor selected</font>"
-                                                                    , pygame.Rect((300, 340), (200, 30)),
-                                                                    object_id=get_text_box_theme(
-                                                                        "#cat_patrol_info_box"))
-
+        if (self.mentor is not None):
+            self.current_mentor_warning = pygame_gui.elements.UITextBox("<font color=#FF0000>Current mentor selected</font>"
+                                                                        , pygame.Rect((300, 340), (200, 30)),
+                                                                        object_id=get_text_box_theme(
+                                                                            "#cat_patrol_info_box"))
+        else:
+            self.current_mentor_warning = pygame_gui.elements.UITextBox("<font color=#FF0000>No mentor selected</font>"
+                                                                        , pygame.Rect((300, 340), (200, 30)),
+                                                                        object_id=get_text_box_theme(
+                                                                            "#cat_patrol_info_box"))
         self.previous_page_button = UIImageButton(pygame.Rect((315, 580), (34, 34)), "",
                                                   object_id="#relation_list_previous")
         self.next_page_button = UIImageButton(pygame.Rect((451, 580), (34, 34)), "", object_id="#relation_list_next")
@@ -137,9 +146,8 @@ class ChooseMentorScreen(Screens):
         del self.heading
         self.info.kill()
         del self.info
-        if (self.current_mentor_text):
-            self.current_mentor_text.kill()
-            del self.current_mentor_text
+        self.current_mentor_text.kill()
+        del self.current_mentor_text
         self.mentor_frame.kill()
         del self.mentor_frame
         self.mentor_icon.kill()
@@ -175,7 +183,9 @@ class ChooseMentorScreen(Screens):
         if self.the_cat.mentor is not None:
             self.current_mentor_text.set_text(
                 f"{str(self.the_cat.name)}'s current mentor is {str(self.the_cat.mentor.name)}")
-
+        else:
+            self.current_mentor_text.set_text(
+                f"{str(self.the_cat.name)} does not have a mentor")
         self.apprentice_details["apprentice_image"] = pygame_gui.elements.UIImage(pygame.Rect((600, 150), (150, 150)),
                                                                                   self.the_cat.large_sprite)
 
@@ -258,8 +268,12 @@ class ChooseMentorScreen(Screens):
             self.the_cat.mentor = new_mentor
             new_mentor.apprentice.append(self.the_cat)
             self.mentor = self.the_cat.mentor
-            self.current_mentor_text.set_text(
-                f"{str(self.the_cat.name)}'s current mentor is {str(self.the_cat.mentor.name)}")
+            if (self.mentor is not None):
+                self.current_mentor_text.set_text(
+                    f"{str(self.the_cat.name)}'s current mentor is {str(self.the_cat.mentor.name)}")
+            else:
+                self.current_mentor_text.set_text(
+                f"{str(self.the_cat.name)} does not have a mentor")
 
     def update_selected_cat(self):
         """Updates the image and information on the currently selected mentor"""
