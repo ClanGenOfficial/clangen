@@ -140,7 +140,7 @@ def bs_blurb_text(cat):
         bs_blurb = "Something horrible happened to this cat's previous clan. They refuse to speak about it."
     if backstory == 'orphaned':
         bs_blurb = "This cat was found with a deceased parent. The clan took them in, but doesn't hide where " \
-                    "they came from."
+                   "they came from."
     return bs_blurb
 
 
@@ -600,16 +600,16 @@ class ProfileScreen(Screens):
                 if next_cat == 0 and Cat.all_cats[
                     check_cat].ID != self.the_cat.ID and Cat.all_cats[
                     check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                    check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                    check_cat].outside and Cat.all_cats[
+                    check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
+                    check_cat].outside == self.the_cat.outside and Cat.all_cats[
                     check_cat].df == self.the_cat.df:
                     previous_cat = Cat.all_cats[check_cat].ID
 
                 elif next_cat == 1 and Cat.all_cats[
                     check_cat].ID != self.the_cat.ID and Cat.all_cats[
                     check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                    check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                    check_cat].outside and Cat.all_cats[
+                    check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
+                    check_cat].outside == self.the_cat.outside and Cat.all_cats[
                     check_cat].df == self.the_cat.df:
                     next_cat = Cat.all_cats[check_cat].ID
 
