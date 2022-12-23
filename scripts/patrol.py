@@ -951,6 +951,8 @@ class Patrol():
             game.clan.add_cat(kit)
             if (kit.status == 'elder'):
                 kit.moons = randint(120, 150)
+            if (kit.status == 'apprentice'):
+                kit.update_mentor()
             new_backstory = choice(['kittypet1', 'kittypet2'])
             kit.backstory = new_backstory
             kit.thought = 'Is looking around the camp with wonder'
