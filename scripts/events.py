@@ -60,14 +60,14 @@ class Events():
                     cat.age = 'elder'
 
                 # killing exiled cats
-                if cat.moons > randint(100, 200):
+                if cat.moons > randint(100, 200) and cat.exiled:
                     if choice([1, 2, 3, 4, 5]) == 1 and not cat.dead:
                         cat.dead = True
                         text = f'Rumors reach your clan that the exiled {str(cat.name)} has died recently.'
                         game.cur_events_list.append(text)
                         game.birth_death_events_list.append(text)
 
-                if cat.outside and cat.status == 'leader' and not cat.dead and randint(
+                if cat.exiled and cat.status == 'leader' and not cat.dead and randint(
                         1, 10) == 1:
                     game.clan.leader_lives -= 1
                     if game.clan.leader_lives <= 0:
@@ -77,7 +77,7 @@ class Events():
                         game.birth_death_events_list.append(text)
 
                         game.clan.leader_lives = 0
-                elif cat.outside and cat.status == 'leader' and not cat.dead and randint(
+                elif cat.exiled and cat.status == 'leader' and not cat.dead and randint(
                         1, 45) == 1:
                     game.clan.leader_lives -= 10
                     cat.dead = True
@@ -155,7 +155,7 @@ class Events():
                 game.cur_events_list.insert(0, string)
                 game.health_events_list.insert(0, string)
 
-        if game.clan.deputy == 0 or game.clan.deputy is None or game.clan.deputy.dead or game.clan.deputy.outside:
+        if game.clan.deputy == 0 or game.clan.deputy is None or game.clan.deputy.dead or game.clan.deputy.outside or game.clan.deputy.is_retired:
             if game.settings.get('deputy') is True:
                 random_count = 0
                 while random_count < 30:
@@ -169,8 +169,10 @@ class Events():
                             if game.clan.deputy is not None:
                                 if game.clan.deputy.dead and not game.clan.leader.dead and not game.clan.leader.exiled:
                                     text = str(game.clan.leader.name) + ' chooses ' + str(Cat.all_cats[random_cat].name) + ' to take over as deputy. They know that ' + str(game.clan.deputy.name) + ' would agree.'
-                                if not game.clan.deputy.dead:
+                                if not game.clan.deputy.dead and not game.clan.deputy.outside:
                                     text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. The retired deputy nods their approval.'
+                                if game.clan.deputy.outside:
+                                    text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. The Clan hopes that ' + str(game.clan.deputy.name) + ' would approve.'
                             else:
                                 if Cat.all_cats[random_cat].trait == 'bloodthirsty':
                                     text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. They look at the clan leader with an odd glint in their eyes.' 
@@ -306,7 +308,7 @@ class Events():
 
         # leader dying or being exiled and dep promotion to leader
         if (game.clan.leader.dead or game.clan.leader.outside)\
-                and game.clan.deputy is not None and not game.clan.deputy.dead:
+                and game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.outside:
             if game.clan.leader.exiled:
                 text = str(game.clan.leader.name) + ' was exiled.'
                 game.ceremony_events_list.append(text)
@@ -427,12 +429,12 @@ class Events():
             if not game.clan.leader.dead:
                 ceremony.extend([
                     str(game.clan.leader.name) +
-                    " calls the clan to a meeting, and declares " + str(cat.name.prefix) +
+                    " calls the Clan to a meeting, and declares " + str(cat.name.prefix) +
                     "paw to be a warrior. They are now called " +
                     str(cat.name.prefix) + str(cat.name.suffix) +
                     " and are celebrated for their " + str(random_honor) + ".",
                     str(game.clan.leader.name) +
-                    " stands above the clan and proclaims that " + str(cat.name.prefix) +
+                    " stands above the Clan and proclaims that " + str(cat.name.prefix) +
                     "paw shall now be known as " + str(cat.name.prefix) +
                     str(cat.name.suffix) + ", honoring their " +
                     str(random_honor) + ".",
@@ -485,24 +487,24 @@ class Events():
         elif (promoted_to == 'medicine cat apprentice') and cat.mentor is not None:
             ceremony.extend([
                 str(cat.name) +
-                " has decided that hunting and fighting is not the way they can provide for their clan. Instead, they have decided to serve their clan by healing and communing with StarClan. "
+                " has decided that hunting and fighting is not the way they can provide for their Clan. Instead, they have decided to serve their Clan by healing and communing with StarClan. "
                 + str(cat.mentor.name) + " proudly becomes their mentor."
             ])
         elif (promoted_to =='medicine cat apprentice') and cat.mentor is None:
             ceremony.extend(["Newly-made medicine cat apprentice " + str(cat.name) +
                 " learns the way of healing through guidance from StarClan."])
         elif (promoted_to == 'medicine cat'):
-            ceremony.extend([str(cat.name) + " is taken to speak with StarClan. They are now a full medicine cat of the clan."])
+            ceremony.extend([str(cat.name) + " is taken to speak with StarClan. They are now a full medicine cat of the Clan."])
         elif (promoted_to == 'elder' and not game.clan.leader.dead):
             ceremony.extend([
                 str(game.clan.leader.name) +
-                " proudly calls a clan meeting to honor " + str(cat.name) +
-                "'s service to the clan. It is time they retire peacefully to the elder's den.",
-                str(cat.name) + " wished to join the elders. The clan honors them and all the service they have given to them."
+                " proudly calls a Clan meeting to honor " + str(cat.name) +
+                "'s service to the Clan. It is time they retire peacefully to the elder's den.",
+                str(cat.name) + " wished to join the elders. The Clan honors them and all the service they have given to them."
             ])
         elif (promoted_to == 'elder' and game.clan.leader.dead):
             ceremony.extend([
-                str(cat.name) + " wished to join the elders. The clan honors them and all the service they have given to them."
+                str(cat.name) + " wished to join the elders. The Clan honors them and all the service they have given to them."
             ])
         if (promoted_to == 'warrior' or promoted_to == 'apprentice' or promoted_to == 'medicine cat apprentice' or promoted_to == 'medicine cat' or promoted_to == 'elder'):
             ceremony_text = choice(ceremony)
@@ -1405,12 +1407,10 @@ class Events():
 
     def handle_twoleg_capture(self, cat):
         cat.outside = True
-        cat.exiled = True
         if cat.ID in cat_class.all_cats.keys() and cat.outside and cat.ID not in cat_class.other_cats.keys():
             # The outside-value must be set to True before the cat can go to cotc
             cat.thought = "Is terrified as they are trapped in a large silver twoleg den"
             cat_class.other_cats[cat.ID] = cat
-            game.clan.clan_cats.remove(cat.ID)
 
     def handle_outbreaks(self, cat):
         """
