@@ -326,7 +326,7 @@ class Patrol():
                     if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
                         continue
 
-
+            print(str(patrol.patrol_id))
             final_patrols.append(patrol)
 
         return final_patrols
