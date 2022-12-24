@@ -579,21 +579,15 @@ class Condition_Events():
                     triggered = True
                     # TODO: need to make death events for these so that we can have more variety
 
-                    if injury in ["bruises", "cracked pads", "joint pain", "scrapes", "tick bites",
-                                  "water in their lungs", "frostbite", "shock"]:
-                        if cat.status == "leader":
-                            event = f"{cat.name} has died in the medicine den from {injury}, losing a life."
-                            cat.died_by.append(f"died from {injury}.")
-                        else:
-                            event = f"{cat.name} has died in the medicine den from {injury}."
-                            cat.died_by.append(f"{cat.name} died from {injury}.")
+                    possible_string_list = INJURY_DEATH_STRINGS[injury]
+                    event = random.choice(possible_string_list)
+                    event = event_text_adjust(Cat, event, cat)
+                    if cat.status == 'leader':
+                        history_text = event.replace(cat.name, " ")
+                        cat.died_by.append(history_text.strip())
+                        event = event.replace('.', ', losing a life.')
                     else:
-                        if cat.status == "leader":
-                            event = f"{cat.name} has died in the medicine den from a {injury}, losing a life."
-                            cat.died_by.append(f"died from a {injury}.")
-                        else:
-                            event = f"{cat.name} has died in the medicine den from a {injury}."
-                            cat.died_by.append(f"{cat.name} died from a {injury}.")
+                        cat.died_by.append(event)
 
                     # clear event list first to make sure any heal or risk events from other injuries are not shown
                     event_list.clear()
@@ -921,9 +915,13 @@ with open(f"resources/dicts/conditions/condition_got_strings/gain_permanent_cond
     PERMANENT_CONDITION_GOT_STRINGS = ujson.loads(read_file.read())
 
 ILLNESS_HEALED_STRINGS = None
-with open(f"resources/dicts/conditions/healed_strings/illness_healed_strings.json", 'r') as read_file:
+with open(f"resources/dicts/conditions/healed_and_death_strings/illness_healed_strings.json", 'r') as read_file:
     ILLNESS_HEALED_STRINGS = ujson.loads(read_file.read())
 
 INJURY_HEALED_STRINGS = None
-with open(f"resources/dicts/conditions/healed_strings/injury_healed_strings.json", 'r') as read_file:
+with open(f"resources/dicts/conditions/healed_and_death_strings/injury_healed_strings.json", 'r') as read_file:
     INJURY_HEALED_STRINGS = ujson.loads(read_file.read())
+
+INJURY_DEATH_STRINGS = None
+with open(f"resources/dicts/conditions/healed_and_death_strings/injury_death_strings.json", 'r') as read_file:
+    INJURY_DEATH_STRINGS = ujson.loads(read_file.read())
