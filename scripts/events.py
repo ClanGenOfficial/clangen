@@ -155,7 +155,7 @@ class Events():
                 game.cur_events_list.insert(0, string)
                 game.health_events_list.insert(0, string)
 
-        if game.clan.deputy == 0 or game.clan.deputy is None or game.clan.deputy.dead or game.clan.deputy.outside or game.clan.deputy.is_retired:
+        if game.clan.deputy == 0 or game.clan.deputy is None or game.clan.deputy.dead or game.clan.deputy.outside or game.clan.deputy.retired:
             if game.settings.get('deputy') is True:
                 random_count = 0
                 while random_count < 30:
