@@ -1,0 +1,80 @@
+{
+    "seizure": [
+        "m_c has recovered from their seizure.",
+        "m_c is up and moving again after resting from their seizure."
+    ],
+    "diarrhea": [
+        "m_c has stopped constantly running to the dirtplace, it seems their brush with diarrhea has ended.",
+        "m_c is finally feeling better, their experience with diarrhea now over."
+    ],
+    "fleas": [
+        "m_c has finally gotten rid of all their fleas.",
+        "m_c is free of fleas at last."
+    ],
+    "greencough": [
+        "m_c has recovered from greencough.",
+        "m_c is no longer coughing and sputtering, their case of greencough now cured.",
+        "m_c no longer has greencough."
+    ],
+    "kittencough": [
+        "m_c is free of kittencough, once again able to play and frolick.",
+        "m_c has recovered from kittencough.",
+        "m_c no longer has whitecough."
+    ],
+    "an infected wound": [
+        "The infection in m_c's wound has abated.",
+        "m_c's wound is no longer infected.",
+        "m_c's infection is gone."
+    ],
+    "redcough": [
+        "Somehow, miraculously, m_c has recovered from redcough."
+    ],
+    "running nose": [
+        "m_c's running nose has finally stopped running.",
+        "m_c no longer has a running nose.",
+        "m_c's running nose is gone."
+    ],
+    "whitecough": [
+        "m_c has recovered from whitecough.",
+        "m_c no longer has whitecough.",
+        "m_c's whitecough is gone."
+    ],
+    "yellowcough": [
+        "m_c has survived yellowcough.",
+        "m_c has recovered from yellowcough.",
+        "m_c no longer has yellowcough.",
+        "m_c's yellowcough is gone."
+    ],
+    "a festering wound": [
+        "m_c's wound is no longer festering, the infection is gone.",
+        "m_c's festering wound seems to have gotten a bit better."
+    ],
+    "heat stroke": [
+        "m_c is no longer suffering from heat stroke.",
+        "m_c has recovered from heat stroke.",
+        "m_c is feeling much better, they've recovered from the heat stroke."
+    ],
+    "heat exhaustion": [
+        "m_c has recovered from the heat exhaustion.",
+        "m_c's heat exhaustion has abated.",
+        "m_c managed to recover from their heat exhaustion."
+    ],
+    "stomachache": [
+        "m_c is glad that their stomachache is finally gone.",
+        "m_c's stomachache has left.",
+        "m_c no longer has a stomachache."
+    ],
+    "constant nightmares": [
+        "m_c's constant nightmares have finally calmed.",
+        "m_c was struggling with a recent flood of nightmares, but thankfully they seem to have stopped.",
+        "m_c's nightmares have stopped.",
+        "m_c is no longer having constant nightmares."
+    ],
+    "grief stricken": [
+        "m_c will always feel their grief, but time has softened it, at least a little.",
+        "m_c gazes up into Silverpelt and finds that, finally, the grief has begun to lessen.",
+        "m_c wakes one day, after moons of numbness, and feels as though the world is less dull.",
+        "m_c tells themself that they can't let these feelings consume them, instead they have to learn to live with it.",
+        "m_c picks themself up out of their nest and begins the day anew, a fresh conviction in their heart."
+    ]
+}

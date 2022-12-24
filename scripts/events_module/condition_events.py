@@ -5,7 +5,7 @@ import ujson as ujson
 
 from scripts.cat.cats import Cat
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
-from scripts.utility import save_death, event_text_adjust, get_med_cats
+from scripts.utility import save_death, event_text_adjust, get_med_cats, change_relationship_values
 from scripts.game_structure.game_essentials import game, SAVE_DEATH
 from scripts.events_module.scar_events import Scar_Events
 from scripts.events_module.generate_events import GenerateEvents
@@ -55,20 +55,25 @@ class Condition_Events():
             "yellowcough": "redcough",
             "an infected wound": "a festering wound",
             "heat exhaustion": "heat stroke",
-            "stomachache": "diarrhea"
+            "stomachache": "diarrhea",
+            "grief stricken": "lasting grief"
         }
 
         # ---------------------------------------------------------------------------- #
         #                         handle currently sick cats                           #
         # ---------------------------------------------------------------------------- #
-        if cat.is_ill() and not cat.dead:
+        # need to hold this number so that we can check if the leader has died
+        starting_life_count = game.clan.leader_lives
+        clear_leader_conditions = False
+
+        if cat.is_ill():
             triggered = True
             for illness in cat.illnesses:
 
                 # moon skip to try and kill or heal cat
                 skipped = cat.moon_skip_illness(illness)
                 # test print, to track if events are displaying correctly
-                print(illness, cat.name, cat.healed_condition)
+                #print(illness, cat.name, cat.healed_condition)
 
                 # if event trigger was true, events should be skipped for this illness
                 if skipped is True:
@@ -84,6 +89,9 @@ class Condition_Events():
 
                 # if the leader died, then break before handling other illnesses cus they'll be fully healed
                 elif cat.dead and cat.status == 'leader':
+                    break
+                elif cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
+                    clear_leader_conditions = True
                     break
 
                 # heal the cat
@@ -163,6 +171,15 @@ class Condition_Events():
 
                             # break out of risk giving loop cus we don't want to give multiple risks for one illness
                             break
+
+            if clear_leader_conditions is True or cat.dead:
+                # reset leader after death
+                cat.injuries.clear()
+                cat.illnesses.clear()
+                new_illness.clear()
+                old_illness.clear()
+                healed_illnesses.clear()
+                cat.healed_condition = False
 
             # making sure that when an illness progresses, the old illness is not kept and new illness is given
             if len(new_illness) > 0:
@@ -255,13 +272,9 @@ class Condition_Events():
         This function handles overall the injuries in 'expanded' (or 'cruel season') game mode.
         Returns: boolean - if an event was triggered
         """
-        # one if-statement has a range of 10
-        number_of_conditions = 4 * 10
-        ratio = 40  # 1/75 times triggering for each cat each moon
-        chance_number = number_of_conditions * ratio
         has_other_clan = False
 
-        random_number = int(random.random() * chance_number)
+        random_number = int(random.random() * 150)
         triggered = False
         text = None
 
@@ -288,9 +301,9 @@ class Condition_Events():
                                   "troublesome",
                                   "vengeful",
                                   "impulsive"] and \
-                    random_number <= 60:
+                    random_number <= 15:
                 triggered = True
-            elif not triggered and random_number <= 50:
+            elif not triggered and random_number <= 5:
                 triggered = True
 
             if triggered:
@@ -338,6 +351,12 @@ class Condition_Events():
                         if other_cat.skill not in event.other_cat_skill and int(random.random() * 10):
                             continue
 
+                    if event.injury == 'mangled tail' and ('NOTAIL' in cat.scars or 'HALFTAIL' in cat.scars):
+                        continue
+
+                    if event.injury == 'torn ear' and 'NOEAR' in cat.scars:
+                        continue
+
                     final_events.append(event)
 
                 other_clan = random.choice(game.clan.all_clans)
@@ -357,7 +376,11 @@ class Condition_Events():
                     if "war" in injury_event.tags:
                         other_clan_name = enemy_clan
 
-                    print('INJURY:', cat.name, cat.status, len(final_events), other_cat.name, other_cat.status)
+                    #print('INJURY:', cat.name, cat.status, len(final_events), other_cat.name, other_cat.status)
+
+                    # let's change some relationship values \o/ check if another cat is mentioned
+                    if "other_cat" in injury_event.tags:
+                        self.handle_relationship_changes(cat, injury_event, other_cat)
 
                     text = event_text_adjust(Cat, injury_event.event_text, cat, other_cat, other_clan_name)
 
@@ -394,6 +417,65 @@ class Condition_Events():
 
         return triggered
 
+    def handle_relationship_changes(self, cat, injury_event, other_cat):
+        cat_to = None
+        cat_from = None
+        n = 10
+        romantic = 0
+        platonic = 0
+        dislike = 0
+        admiration = 0
+        comfortable = 0
+        jealousy = 0
+        trust = 0
+        if "rc_to_mc" in injury_event.tags:
+            cat_to = [cat.ID]
+            cat_from = [other_cat]
+        elif "mc_to_rc" in injury_event.tags:
+            cat_to = [other_cat.ID]
+            cat_from = [cat]
+        elif "to_both" in injury_event.tags:
+            cat_to = [cat.ID, other_cat.ID]
+            cat_from = [other_cat, cat]
+        if "romantic" in injury_event.tags:
+            romantic = n
+        elif "neg_romantic" in injury_event.tags:
+            romantic = -n
+        if "platonic" in injury_event.tags:
+            platonic = n
+        elif "neg_platonic" in injury_event.tags:
+            platonic = -n
+        if "dislike" in injury_event.tags:
+            dislike = n
+        elif "neg_dislike" in injury_event.tags:
+            dislike = -n
+        if "respect" in injury_event.tags:
+            admiration = n
+        elif "neg_respect" in injury_event.tags:
+            admiration = -n
+        if "comfort" in injury_event.tags:
+            comfortable = n
+        elif "neg_comfort" in injury_event.tags:
+            comfortable = -n
+        if "jealousy" in injury_event.tags:
+            jealousy = n
+        elif "neg_jealousy" in injury_event.tags:
+            jealousy = -n
+        if "trust" in injury_event.tags:
+            trust = n
+        elif "neg_trust" in injury_event.tags:
+            trust = -n
+        change_relationship_values(
+            cat_to,
+            cat_from,
+            romantic,
+            platonic,
+            dislike,
+            admiration,
+            comfortable,
+            jealousy,
+            trust)
+
     def handle_permanent_conditions(self,
                                     cat,
                                     condition=None,
@@ -415,11 +497,21 @@ class Condition_Events():
             "HALFTAIL": ["lost their tail"],
             "LEFTEAR": ["partial hearing loss"],
             "RIGHTEAR": ["partial hearing loss"],
+            "MANLEG": ["weak leg", "twisted leg"],
+            "BRIGHTHEART": ["one bad eye"],
+            "NOLEFTEAR": ["partial hearing loss"],
+            "NORIGHTEAR": ["partial hearing loss"],
+            "NOEAR": ["partial hearing loss, deaf"],
+            "LEFTBLIND": ["one bad eye", "failing eyesight"],
+            "RIGHTBLIND": ["one bad eye", "failing eyesight"],
+            "BOTHBLIND": ["blind"],
+            "RATBITE": ["weak leg"]
         }
 
         scarless_conditions = [
             "weak leg", "paralyzed", "raspy lungs", "wasting disease", "blind", "failing eyesight", "one bad eye",
-            "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy", "recurring shock", "broken back"
+            "partial hearing loss", "deaf", "constant joint pain", "constantly dizzy", "recurring shock",
+            "lasting grief"
         ]
 
         got_condition = False
@@ -465,6 +557,10 @@ class Condition_Events():
         event_list = []
         new_condition = None
 
+        # need to hold this number so that we can check if the leader has died
+        starting_life_count = game.clan.leader_lives
+        clear_leader_conditions = False
+
         if game.clan.game_mode == "classic":
             return triggered
 
@@ -474,25 +570,24 @@ class Condition_Events():
                 skipped = cat.moon_skip_injury(injury)
                 if skipped:
                     continue
+
+                elif cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
+                    clear_leader_conditions = True
+                    break
+
                 if cat.dead:
                     triggered = True
                     # TODO: need to make death events for these so that we can have more variety
 
-                    if injury in ["bruises", "cracked pads", "joint pain", "scrapes", "tick bites",
-                                  "water in their lungs", "frostbite", "shock"]:
-                        if cat.status == "leader":
-                            event = f"{cat.name} has died in the medicine den from {injury}, losing a life."
-                            cat.died_by.append(f"died from {injury}.")
-                        else:
-                            event = f"{cat.name} has died in the medicine den from {injury}."
-                            cat.died_by.append(f"{cat.name} died from {injury}.")
+                    possible_string_list = INJURY_DEATH_STRINGS[injury]
+                    event = random.choice(possible_string_list)
+                    event = event_text_adjust(Cat, event, cat)
+                    if cat.status == 'leader':
+                        history_text = event.replace(cat.name, " ")
+                        cat.died_by.append(history_text.strip())
+                        event = event.replace('.', ', losing a life.')
                     else:
-                        if cat.status == "leader":
-                            event = f"{cat.name} has died in the medicine den from a {injury}, losing a life."
-                            cat.died_by.append(f"died from a {injury}.")
-                        else:
-                            event = f"{cat.name} has died in the medicine den from a {injury}."
-                            cat.died_by.append(f"{cat.name} died from a {injury}.")
+                        cat.died_by.append(event)
 
                     # clear event list first to make sure any heal or risk events from other injuries are not shown
                     event_list.clear()
@@ -593,6 +688,16 @@ class Condition_Events():
                     if new_condition is not None:
                         triggered = True
                         break
+
+            if clear_leader_conditions is True or cat.dead:
+                # reset leader after death
+                cat.injuries.clear()
+                cat.illnesses.clear()
+                if new_condition is not None:
+                    new_condition.clear()
+                if healed_injury is not None:
+                    healed_injury.clear()
+                cat.healed_condition = False
 
             if len(healed_injury) != 0:
                 for y in healed_injury:
@@ -810,9 +915,13 @@ with open(f"resources/dicts/conditions/condition_got_strings/gain_permanent_cond
     PERMANENT_CONDITION_GOT_STRINGS = ujson.loads(read_file.read())
 
 ILLNESS_HEALED_STRINGS = None
-with open(f"resources/dicts/conditions/healed_strings/illness_healed_strings.json", 'r') as read_file:
+with open(f"resources/dicts/conditions/healed_and_death_strings/illness_healed_strings.json", 'r') as read_file:
     ILLNESS_HEALED_STRINGS = ujson.loads(read_file.read())
 
 INJURY_HEALED_STRINGS = None
-with open(f"resources/dicts/conditions/healed_strings/injury_healed_strings.json", 'r') as read_file:
+with open(f"resources/dicts/conditions/healed_and_death_strings/injury_healed_strings.json", 'r') as read_file:
     INJURY_HEALED_STRINGS = ujson.loads(read_file.read())
+
+INJURY_DEATH_STRINGS = None
+with open(f"resources/dicts/conditions/healed_and_death_strings/injury_death_strings.json", 'r') as read_file:
+    INJURY_DEATH_STRINGS = ujson.loads(read_file.read())

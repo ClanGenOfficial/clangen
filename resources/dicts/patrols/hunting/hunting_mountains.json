@@ -1,0 +1,2826 @@
+[
+    {
+        "patrol_id": "mtn_hunt_shrew1",
+        "biome": "mountainous",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "small_prey"
+        ],
+        "intro_text": "Your patrol comes across a shrew.",
+        "success_text": [
+            "r_c drops into a crouch and stalks towards the shrew. They pounce on it, swiftly killing it with a bite to the back of the head.",
+            "r_c drops into a crouch and silently treads towards the shrew. At the last second, the shrew looks up, but r_c is quick to pounce and cut off its escape.",
+            "s_c drops into a perfect hunting crouch and stalks the oblivious shrew until they're in striking distance. The shrew almost slips away, but s_c catches it with one paw and flings it towards their mouth for the killing bite."
+        ],
+        "fail_text": [
+            "Your patrol narrowly misses the shrew."
+        ],
+        "decline_text": "Your patrol decides to look for other prey.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": [
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "min_cats": 1,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "mtn_hunt_strange1",
+        "biome": "mountainous",
+        "season": "Any",
+        "tags": [
+            "hunting"
+        ],
+        "intro_text": "The patrol looks around for something to disguise their scent while hunting.",
+        "decline_text": "On second thought, maybe not.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "They can't think of anything that would work, but their hunt goes well regardless.",
+            "A snowy patch will do! The plan works and their hunt goes well.",
+            "s_c leads them to some moose dung on the slopes - it's not clean, but it's extremely effective, and the patrol hunts well.",
+            "s_c tells the patrol to roll in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelts though."
+        ],
+        "fail_text": [
+            "The patrol finds nothing to disguise their scent, and no prey either.",
+            "The patrol finds no prey; it seems like all the prey was scared off because of their stench!"
+        ],
+        "win_skills": [
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "strange"
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "mtn_hunt_strange2",
+        "biome": "mountainous",
+        "season": "Any",
+        "tags": [
+            "hunting"
+        ],
+        "intro_text": "r_c looks around for something to disguise their scent while hunting.",
+        "decline_text": "On second thought, maybe not.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "They can't think of anything that would work, but their hunt goes well regardless.",
+            null,
+            "s_c finds some moose dung on the slopes - it's not clean, but it's extremely effective, and the hunt goes well.",
+            "s_c rolls in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelt though."
+        ],
+        "fail_text": [
+            "The patrol finds nothing to disguise their scent, and no prey either.",
+            "r_c finds no prey; it seems like all the prey was scared off because of their stench!"
+        ],
+        "win_skills": [
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "mtn_hunt_solo1",
+        "biome": "mountainous",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "apprentice",
+            "minor_injury",
+            "scar"
+        ],
+        "intro_text": "r_c's mentor assesses them by sending them on a solo hunt.",
+        "decline_text": "r_c asks their mentor to do the assessment some other time.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "r_c manages a skillful catch, and brings it back to the camp to show everyone!",
+            "r_c focuses completely on their test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually they've caught enough to need their mentor's help carrying it back to camp, and the feeling seeing their prey stock the fresh-kill pile - they feel ready to burst with happiness!",
+            null,
+            "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place and they pull off a perfect catch!"
+        ],
+        "fail_text": [
+            "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
+            "s_c is too hasty, bouncing after first one prey, then another, and it ends with them empty pawed and exhausted. Their mentor is disappointed - they clearly need more training.",
+            null,
+            "While on the hunt, r_c tumbles right down a steep slope while their attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_trait": [
+            "adventurous",
+            "bold",
+            "charismatic",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "righteous"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c got injured as an apprentice, exploring alone."
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_solo2",
+        "biome": "mountainous",
+        "season": "Any",
+        "tags": [
+            "hunting"
+        ],
+        "intro_text": "r_c heads out onto the mountains alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "r_c heads off to one of their favorite spots in the mountains, a gully with stepped ridges running up and down its sides providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that ground squirrel thought.",
+            "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates.",
+            "s_c gets the chance to try out an idea they've been sitting on for a while. There's a nest of pika that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing out small rodents by the handful.",
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+        ],
+        "fail_text": [
+            "You can't catch what isn't there, and the prey today is very not there.",
+            "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. The come back to camp, empty pawed and prickling with frustration."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_trait": [
+            "bold",
+            "childish",
+            "confident",
+            "daring",
+            "playful"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "mtn_hunt_solo3",
+        "biome": "mountainous",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "deputy"
+        ],
+        "intro_text": "r_c heads out onto the mountains alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "r_c heads off to one of their favorite spots in the mountains, a gully with stepped ridges running up and down its sides providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that ground squirrel thought. They snicker to themselves as they pad back to camp.",
+            "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
+            "s_c gets the chance to try out an idea they've been sitting on for a while. There's a nest of pika that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing out small rodents by the handful. This is a good spot to remember when c_n hits hard times in Leaf-bare.",
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+        ],
+        "fail_text": [
+            "You can't catch what isn't there, and the prey today is very not there.",
+            "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "bold",
+            "childish",
+            "confident",
+            "daring",
+            "playful"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "mtn_hunt_solo4",
+        "biome": "mountainous",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "leader"
+        ],
+        "intro_text": "r_c heads out onto the mountains alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "r_c heads off to one of their favorite spots in the mountains, a gully with stepped ridges running up and down its sides providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that ground squirrel thought. They snicker to themselves as they pad back to camp.",
+            "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
+            "s_c gets the chance to try out an idea they've been sitting on for a while. There's a nest of pika that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing out small rodents by the handful. This is a good spot to remember when c_n hits hard times in Leaf-bare.",
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+        ],
+        "fail_text": [
+            "You can't catch what isn't there, and the prey today is very not there.",
+            "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_trait": [
+            "bold",
+            "childish",
+            "confident",
+            "daring",
+            "playful"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "mtn_hunt_noise1",
+        "biome": "mountainous",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "battle_injury",
+            "scar"
+        ],
+        "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from just beyond a rock fall.",
+        "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
+        "chance_of_success": 80,
+        "exp": 10,
+        "success_text": [
+            "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise. They find themselves to be correct when they pounce across the rocks and return to the patrol with the tasty morsel dangling from their mouth.",
+            null,
+            "p_l pads towards the rock fall to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
+        ],
+        "fail_text": [
+            "p_l pads towards the rock fall to check on the noise when a rabbit suddenly bursts out! None of the cats are quick enough to catch it, but at least the noise was nothing dangerous.",
+            "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts across the rocks, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back behind the rocks.",
+            null,
+            "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "excellent hunter"
+        ],
+        "fail_trait": [
+            "daring",
+            "bold",
+            "ambitious"
+        ],
+        "min_cats": 5,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "p_l gained a scar from a fox."
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_noise2",
+        "biome": "mountainous",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "battle_injury",
+            "scar",
+            "death"
+        ],
+        "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from just beyond a rock fall.",
+        "decline_text": "It's probably nothing. The patrol leaves the noise alone and continues on their way.",
+        "chance_of_success": 60,
+        "exp": 10,
+        "success_text": [
+            "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise.  They find themselves to be correct when they pounce across the rocks and return to the patrol with the tasty morsel dangling from their mouth.",
+            null,
+            "p_l pads towards the rock fall to check on the noise when a rabbit suddenly bursts out!  s_c is quick to react and manages to snag the rabbit before it can disappear."
+        ],
+        "fail_text": [
+            "p_l pads towards the rock fall to check on the noise when a rabbit suddenly bursts out! None of the cats are quick enough to catch it, but at least the noise was nothing dangerous.",
+            "s_c doesn't even hesitate before splitting from the patrol to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts across the rocks, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back behind the rocks.",
+            "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for their patrol but the other cats aren't quick enough to stop the wolverine from killing r_c in one quick and deadly swipe.",
+            "r_c takes the lead in checking the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before the rest of the patrol can back them up."
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "excellent hunter"
+        ],
+        "fail_trait": [
+            "daring",
+            "bold",
+            "ambitious"
+        ],
+        "min_cats": 2,
+        "max_cats": 4,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "p_l gained a scar from a fox.",
+            "p_l was killed by a wolverine.",
+            "were killed by a wolverine"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_noise3",
+        "biome": "mountainous",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "battle_injury",
+            "scar",
+            "death"
+        ],
+        "intro_text": "As the patrol is checking the border lines, they hear an odd sound coming from just beyond a rock fall.",
+        "decline_text": "It's probably nothing. They leave the noise alone and continue searching for prey.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "success_text": [
+            "r_c drops down into a hunting crouch, certain that a mouse must be the source of the noise.  They find themselves to be correct when they pounce across the rocks and continue on their patrol with the tasty morsel dangling from their mouth.",
+            null,
+            "s_c pads towards the grass to check on the noise when a rabbit suddenly bursts out! s_c is quick to react and manages to snag the rabbit before it can disappear."
+        ],
+        "fail_text": [
+            "p_l pads towards the rock fall to check on the noise when a rabbit suddenly bursts out! They aren't quick enough to catch it, but at least the noise was nothing dangerous.",
+            "s_c doesn't even hesitate before going to check on the source of the noise. They quickly regret their impulsivity, however, when an angry weasel bursts across the rocks, chattering loudly! s_c gets quite the scare, but thankfully the weasel only wanted to get away from them and quickly runs off back behind the rocks.",
+            "r_c takes the lead in checking the source of the noise and comes face to face with a snarling wolverine! r_c yowls for help, but they're alone on this patrol and they have the sudden realization that no one can help them now.  The wolverine kills the lone cat with little trouble.",
+            "r_c  heads toward the source of the noise and comes face to face with an angry fox! Though they backpedal rapidly, the fox still manages to take a bite out of them before they can sprint away."
+        ],
+        "win_skills": [
+            "good hunter",
+            "great hunter",
+            "excellent hunter"
+        ],
+        "fail_trait": [
+            "daring",
+            "bold",
+            "ambitious"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "p_l gained a scar from a fox.",
+            "p_l was killed by a wolverine while patrolling alone.",
+            "were killed by a predator while patrolling alone"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_gonetnr1",
+        "biome": "mountainous",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "gone",
+            "no_leader",
+            "small_prey"
+        ],
+        "intro_text": "r_c encounters a swarm of Twolegs, gathered at the foot of the mountain.",
+        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "r_c immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
+            "Slyly, r_c uses the unusual presence of the weird twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+            "s_c spots the Twolegs unloading metal boxes from their monsters, and recognises that it can't be anything good, leaving immediately.",
+            "s_c spits in the Twolegs' direction and decides to pick a different place to hunt."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "r_c mostly ignores the Twolegs as they hunt, crawling into a metal box to follow the scent of food. But when they try to back up, the way is blocked, and there's nothing they can do - eventually the Twolegs notice, and r_c is taken by them.",
+            null,
+            "s_c has heard terrible things about Twolegs, but they still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around them. They're taken out of the mountains with the injured Twoleg."
+        ],
+        "win_skills": [
+            "extremely smart"
+        ],
+        "win_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_gonetnr2",
+        "biome": "mountainous",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "gone",
+            "no_leader",
+            "small_prey"
+        ],
+        "intro_text": "Your patrol encounters a swarm of Twolegs, gathered at the foot of the mountain.",
+        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
+            "Slyly, the cats use the unusual presence of the weird twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+            "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+            "s_c stops anyone from going near the twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back up the mountain."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "r_c mostly ignores the Twolegs as they hunt, crawling into a metal box to follow the scent of food. But when they try to back up, the way is blocked, and there's nothing they or the patrol can do - eventually the Twolegs notice, and r_c is taken by them.",
+            null,
+            "s_c has heard terrible things about Twolegs, but they still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around them. They're taken out of the mountains with the injured Twoleg."
+        ],
+        "win_skills": [
+            "extremely smart"
+        ],
+        "win_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_gonetnr3",
+        "biome": "mountainous",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "gone",
+            "no_leader",
+            "big_prey"
+        ],
+        "intro_text": "Your patrol encounters a swarm of Twolegs, gathered at the foot of the mountain.",
+        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
+            "Slyly, the cats use the unusual presence of the weird twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+            "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+            "s_c stops anyone from going near the twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back up the mountain."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "r_c mostly ignores the Twolegs as they hunt, crawling into a metal box to follow the scent of food. But when they try to back up, the way is blocked, and there's nothing they or the patrol can do - eventually the Twolegs notice, and r_c is taken by them.",
+            null,
+            "s_c has heard terrible things about Twolegs, but they still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around them. They're taken out of the mountains with the injured Twoleg."
+        ],
+        "win_skills": [
+            "extremely smart"
+        ],
+        "win_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_thunderpath1",
+        "biome": "mountainous",
+        "season": "Any",
+        "tags": [
+            "death",
+            "scar",
+            "retirement",
+            "blunt_force_injury",
+            "hunting",
+            "small_prey"
+        ],
+        "intro_text": "The patrol comes across a thunderpath running through the mountains.",
+        "decline_text": "They decide it is better not to cross.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "success_text": [
+            "Your patrol waits until they can hear the wind whistling, not a murmur of a monster, and crosses the thunderpath to hunt on the other side.",
+            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side. The mountains have so few monsters passing through anyway, there's no need to be hasty."
+        ],
+        "fail_text": [
+            "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+            null,
+            "r_c is hit by a monster while crossing and dies instantly. c_n is shaken by the death, and it's a reminder to every cat that just because their territory contains few thunderpaths doesn't mean they can forget their dangers.",
+            "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because their territory contains few thunderpaths doesn't mean they can forget their dangers."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c was heavily injured by a monster, and carries the scars from it.",
+            "r_c was hit by a monster and killed.",
+            "were hit by a monster"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_thunderpath2",
+        "biome": "mountainous",
+        "season": "Any",
+        "tags": [
+            "death",
+            "scar",
+            "retirement",
+            "blunt_force_injury",
+            "hunting",
+            "small_prey",
+            "cruel_season"
+        ],
+        "intro_text": "The patrol comes across a thunderpath running through the mountains.",
+        "decline_text": "They decide it is better not to cross.",
+        "chance_of_success": 30,
+        "exp": 10,
+        "success_text": [
+            "Your patrol waits until they can hear the wind whistling, not a murmur of a monster, and crosses the thunderpath to hunt on the other side.",
+            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly damp paws, but a successful haul of prey.",
+            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side. The mountains have so few monsters passing through anyway, there's no need to be hasty."
+        ],
+        "fail_text": [
+            "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+            null,
+            "r_c is crossing the thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly. c_n is shaken by the death, and it's a reminder to every cat that just because their territory contains few thunderpaths doesn't mean they can forget their dangers.",
+            "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because their territory contains few thunderpaths doesn't mean they can forget their dangers."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c was heavily injured by a monster, and carries the scars from it.",
+            "r_c was hit by a monster and killed.",
+            "were hit by a monster"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_heat1",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "platonic"
+        ],
+        "intro_text": "It's hot out today, and the hunting patrol bounces around, infused with energy as they seek out prey.",
+        "decline_text": "The patrol decides to head back to camp. They can hunt a different day.",
+        "chance_of_success": 50,
+        "exp": 15,
+        "success_text": [
+            "It feels like every creature on the mountains is out enjoying the weather and fattening up, and the cats have what feels like the perfect day, sun and heat and prey dripping from every moment.",
+            "In the heat of midday, yawning with the sleepy pleasure of the heat, r_c hears a croaking bleat. The patrol trots off to investigate, and finds an upside-down mountain sheep stuck in a crevice. Not only do they bring back as much meat as they can carry, but they make sure to bring back wool too. Never to early to be thinking about next Leaf-bare."
+        ],
+        "fail_text": [
+            "No way, it's too hot for this. They can try to hunt again later."
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim1",
+        "biome": "mountainous",
+        "season": "newleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust"
+        ],
+        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+            "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. They win both the fish and the predator as prey for c_n."
+        ],
+        "fail_text": [
+            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and the cats are driven back, giving up on the idea of scavenging.",
+            null,
+            null,
+            "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from an eagle's beak.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim2",
+        "biome": "mountainous",
+        "season": "newleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust"
+        ],
+        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+            "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n."
+        ],
+        "fail_text": [
+            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and the cats are driven back, giving up on the idea of scavenging.",
+            null,
+            null,
+            "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from an eagle's beak.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim3",
+        "biome": "mountainous",
+        "season": "newleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust",
+            "cruel_season"
+        ],
+        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+            "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. They win both the fish and the predator as prey for c_n."
+        ],
+        "fail_text": [
+            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and the cats are driven back, giving up on the idea of scavenging.",
+            "Far too keen to try and prove themselves against the king of the skies, s_c leaps for the eagle and startles it into flight with it's massive catch, and the opportunity is lost.",
+            "The patrol decides to fight the eagle in the water for possession of the prey, but the bird drops the prey and a furious haphazard swimming fight ensues, its talons and beak and wing failing in an uncoordinated dangerous tangle that brings r_c below the water. It's hard to say what kills them, the talon wounds or drowning.",
+            "The patrol decides to fight the eagle in the water for possession of the prey, but while it's talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
+            null,
+            "Keen to prove themselves, s_c dives into the water and leaps for the eagle. Instead what they get is a damp, cold trip in the Newleaf snowmelt, and the associated chills that come with that.",
+            "Another member of the patrol tries to start a fight with the eagle as it climbs onto the riverbank, and r_c gets between them, taking the furious bird's full wrath. They lose a life bleeding out on the ground, and all for the sake of a silly fish."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "bloodthirsty"
+        ],
+        "min_cats": 1,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from an eagle's beak.",
+            "r_c was killed by an eagle, scrapping over food.",
+            "were killed by an eagle"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim4",
+        "biome": "mountainous",
+        "season": "newleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust",
+            "cruel_season"
+        ],
+        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+            "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n."
+        ],
+        "fail_text": [
+            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and the cats are driven back, giving up on the idea of scavenging.",
+            null,
+            "The patrol decides to fight the eagle in the water for possession of the prey, but the bird drops the prey and a furious haphazard swimming fight ensues, its talons and beak and wing failing in an uncoordinated dangerous tangle that brings r_c below the water. It's hard to say what kills them, the talon wounds or drowning.",
+            "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from an eagle's beak.",
+            "r_c was killed by an eagle, scrapping over food.",
+            "were killed by an eagle"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim5",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust"
+        ],
+        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+            "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. They win both the fish and the predator as prey for c_n."
+        ],
+        "fail_text": [
+            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they're driven back, giving up on the idea of scavenging.",
+            null,
+            null,
+            "The patrol decides to fight the eagle in the water for possession of the prey, but while it's talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from an eagle's beak.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim6",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust"
+        ],
+        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+            "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n."
+        ],
+        "fail_text": [
+            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they are driven back, giving up on the idea of scavenging.",
+            null,
+            null,
+            "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from an eagle's beak.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim7",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust",
+            "cruel_season"
+        ],
+        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+            "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. They win both the fish and the predator as prey for c_n."
+        ],
+        "fail_text": [
+            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they are driven back, giving up on the idea of scavenging.",
+            "Far too keen to try and prove themselves against the king of the skies, s_c leaps for the eagle and startles it into flight with it's massive catch, and the opportunity is lost.",
+            "The patrol decides to fight the eagle in the water for possession of the prey, but the bird drops the prey and a furious haphazard swimming fight ensues, its talons and beak and wing failing in an uncoordinated dangerous tangle that brings r_c below the water. It's hard to say what kills them, the talon wounds or drowning.",
+            "The patrol decides to fight the eagle in the water for possession of the prey, but while it's talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
+            null,
+            "Keen to prove themselves, s_c dives into the water and leaps for the eagle. Instead what they get is a damp, cold trip in the Newleaf snowmelt, and the associated chills that come with that.",
+            "Another member of the patrol tries to start a fight with the eagle as it climbs onto the riverbank, and r_c gets between them, taking the furious bird's full wrath. They lose a life bleeding out on the ground, and all for the sake of a silly fish."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "bloodthirsty"
+        ],
+        "min_cats": 1,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from an eagle's beak.",
+            "r_c was killed by an eagle, scrapping over food.",
+            "were killed by an eagle"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim8",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust",
+            "cruel_season"
+        ],
+        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+            "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n."
+        ],
+        "fail_text": [
+            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they're driven back, giving up on the idea of scavenging.",
+            null,
+            "The patrol decides to fight the eagle in the water for possession of the prey, but the bird drops the prey and a furious haphazard swimming fight ensues, its talons and beak and wing failing in an uncoordinated dangerous tangle that brings r_c below the water. It's hard to say what kills them, the talon wounds or drowning.",
+            "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from an eagle's beak.",
+            "r_c was killed by an eagle, scrapping over food.",
+            "were killed by an eagle"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim9",
+        "biome": "mountainous",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust"
+        ],
+        "intro_text": "The hunting patrol spots a juvenile eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+            "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. They win both the fish and the predator as prey for c_n."
+        ],
+        "fail_text": [
+            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they're driven back, giving up on the idea of scavenging.",
+            null
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim10",
+        "biome": "mountainous",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust"
+        ],
+        "intro_text": "The hunting patrol spots a juvenile eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 90,
+        "exp": 20,
+        "success_text": [
+            "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+            "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n."
+        ],
+        "fail_text": [
+            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they are driven back, giving up on the idea of scavenging.",
+            null
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim11",
+        "biome": "mountainous",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust",
+            "cruel_season"
+        ],
+        "intro_text": "The hunting patrol spots a juvenile eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+            "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards shore, and just as it's going to climb out s_c pounces, fighting in the shallows where s_c has the edge over the bird in swimming. They win both the fish and the predator as prey for c_n."
+        ],
+        "fail_text": [
+            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they are driven back, giving up on the idea of scavenging.",
+            "Far too keen to try and prove themselves against the king of the skies, s_c leaps for the eagle and startles it into flight with it's massive catch, and the opportunity is lost.",
+            null,
+            "The patrol decides to fight the eagle in the water for possession of the prey, but while it's talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
+            null,
+            "Keen to prove themselves, s_c dives into the water and leaps for the eagle. Instead what they get is a damp, cold trip in the Newleaf snowmelt, and the associated chills that come with that.",
+            null
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "bloodthirsty"
+        ],
+        "min_cats": 1,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from an eagle's beak.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim12",
+        "biome": "mountainous",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust",
+            "cruel_season"
+        ],
+        "intro_text": "The hunting patrol spots an eagle on the wing over a large bend in the river, and watches as it swoops to dig its talons through the spine of an impressively big fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 90,
+        "exp": 20,
+        "success_text": [
+            "Your patrol uses the eagle as a scout for their own hunt, and eventually manage several smaller catches from the same riverbank that cumulatively are just as impressive as the eagle's massive catch.",
+            "The cats' eyes light up with possibility, watching the eagle swimming awkwardly. p_l leads the patrol yowling threats and insults from the riverbank and making a massive racket. Bewildered, the eagle eventually gives up its catch and takes to the air. The massive fish is c_n's as soon as they can work out how to fish it from the river.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n.",
+            "As the rest of the patrol discuss whether they can steal the catch, s_c fixates on the bird that caught it. The eagle works its way awkwardly towards the bank. Just as it's going to climb out, s_c pounces, fighting in the shallows where s_c has the edge over the bird. They win both the fish and the predator as prey for c_n."
+        ],
+        "fail_text": [
+            "The patrol dives into the water, keen to make a play to steal the fish, but even though its talons are occupied keeping grip on its prey, the eagle's huge wings pack a buffeting punch and they're driven back, giving up on the idea of scavenging.",
+            null,
+            null,
+            "The patrol decides to fight the eagle in the water for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from an eagle's beak.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim13",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust",
+            "rel_patrol",
+            "respect",
+            "clan_to_r_c"
+        ],
+        "intro_text": "The hunting patrol comes across an eagle out on the ice of a little lake, eating a big fish catch",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "The cats' eyes light up with possibility. p_l leads the patrol yowling threats and insults as they charge across the ice with claws extended, making a massive racket. Bewildered, the eagle takes to the air. The massive fish is c_n's, invaluable in the harsh prey scarcity of Leaf-bare.",
+            null,
+            "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of their mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself.",
+            "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of their mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself."
+        ],
+        "fail_text": [
+            "The patrol waits around, keen to try scavenge form the eagle's scraps, but the bird is as hungry as the clan cats, and nothing but the odd scale and bone is left.",
+            null,
+            "The patrol decides to fight the eagle for possession of the prey, but the massive aerial predator is too much for the starving c_n cats, and it kills r_c in the battle.",
+            "The patrol decides to fight the eagle for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
+            null,
+            null,
+            "The patrol starts a furious fight over the crucial food, and r_c wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the clan."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from an eagle's beak.",
+            "r_c was killed by an eagle, scrapping over food.",
+            "were killed by an eagle"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim14",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust",
+            "rel_patrol",
+            "respect",
+            "clan_to_r_c"
+        ],
+        "intro_text": "The hunting patrol comes across an eagle out on the ice of a little lake, eating a big fish catch",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "The cats' eyes light up with possibility. p_l leads the patrol yowling threats and insults as they charge across the ice with claws extended, making a massive racket. Bewildered, the eagle takes to the air. The massive fish is c_n's, invaluable in the harsh prey scarcity of Leaf-bare.",
+            "The cats mob the bird, using their numbers to intimidate it and protect each other, and the skirmish ends with the eagle flapping indignantly off as c_n claims possession of the large half-eaten fish.",
+            "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of their mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself.",
+            "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of their mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself."
+        ],
+        "fail_text": [
+            "The patrol waits around, keen to try scavenge form the eagle's scraps, but the bird is as hungry as the clan cats, and nothing but the odd scale and bone is left.",
+            null,
+            null,
+            "The patrol decides to fight the eagle for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
+            null,
+            null,
+            "The patrol starts a furious fight over the crucial food, and r_c wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the clan."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from an eagle's beak.",
+            "r_c was killed by an eagle, scrapping over food.",
+            "were killed by an eagle"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim15",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust",
+            "cruel_season",
+            "rel_patrol",
+            "respect",
+            "clan_to_r_c"
+        ],
+        "intro_text": "The hunting patrol comes across an eagle out on the ice of a little lake, eating a big fish catch",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "The cats' eyes light up with possibility. p_l leads the patrol yowling threats and insults as they charge across the ice with claws extended, making a massive racket. Bewildered, the eagle takes to the air. The massive fish is c_n's, invaluable in the harsh prey scarcity of Leaf-bare.",
+            null,
+            "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of their mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself.",
+            "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of their mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself."
+        ],
+        "fail_text": [
+            "The patrol waits around, keen to try scavenge form the eagle's scraps, but the bird is as hungry as the clan cats, and nothing but the odd scale and bone is left.",
+            "Far too keen to try and prove themselves against the king of the skies, s_c leaps for the eagle and startles it into flight with it's massive catch, and the opportunity is lost.",
+            "The patrol decides to fight the eagle for possession of the prey, but the massive aerial predator is too much for the starving c_n cats, and it kills r_c in the battle.",
+            "The patrol decides to fight the eagle for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
+            null,
+            "Keen to prove themselves, s_c sprints across the ice and leaps for the eagle. Instead what they get is a damp, cold trip in the Leaf-bare, and the patrol rushes them home to get treated for chills and frostbite.",
+            "The patrol starts a furious fight over the crucial food, and r_c wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the clan."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "bloodthirsty"
+        ],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from an eagle's beak.",
+            "r_c was killed by an eagle, scrapping over food.",
+            "were killed by an eagle"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_eagleswim16",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "warrior",
+            "trust",
+            "cruel_season",
+            "rel_patrol",
+            "respect",
+            "clan_to_r_c"
+        ],
+        "intro_text": "The hunting patrol comes across an eagle out on the ice of a little lake, eating a big fish catch",
+        "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "The cats' eyes light up with possibility. p_l leads the patrol yowling threats and insults as they charge across the ice with claws extended, making a massive racket. Bewildered, the eagle takes to the air. The massive fish is c_n's, invaluable in the harsh prey scarcity of Leaf-bare.",
+            "The cats mob the bird, using their numbers to intimidate it and protect each other, and the skirmish ends with the eagle flapping indignantly off as c_n claims possession of the large half-eaten fish.",
+            "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of their mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself.",
+            "The patrol tries to intimidate the bird away from its catch, but s_c has another idea in the back of their mind, and when the bird turns its back to screech at another member of the patrol, s_c leaps for its throat. c_n will feast tonight, on both the fish the eagle caught for them, and the bird itself."
+        ],
+        "fail_text": [
+            "The patrol waits around, keen to try scavenge form the eagle's scraps, but the bird is as hungry as the clan cats, and nothing but the odd scale and bone is left.",
+            "Far too keen to try and prove themselves against the king of the skies, s_c leaps for the eagle and startles it into flight with it's massive catch, and the opportunity is lost.",
+            "The patrol decides to fight the eagle for possession of the prey, but the massive aerial predator is too much for the starving c_n cats, and it kills r_c in the battle.",
+            "The patrol decides to fight the eagle for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
+            null,
+            "Keen to prove themselves, s_c sprints across the ice and leaps for the eagle. Instead what they get is a damp, cold trip in the Leaf-bare, and the patrol rushes them home to get treated for chills and frostbite.",
+            "The patrol starts a furious fight over the crucial food, and r_c wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the clan."
+        ],
+        "win_skills": [
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "ambitious"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "bloodthirsty"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from an eagle's beak.",
+            "r_c was killed by an eagle, scrapping over food.",
+            "were killed by an eagle"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_leafbaresnowstorm1",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "small_prey",
+            "comfort",
+            "trust",
+            "patrol_to_p_l",
+            "patrol_to_r_c"
+        ],
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the freshkill pile.",
+        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "success_text": [
+            "Despite the snow, the patrol manages to hunt successfully, lurking where the songbirds forage. Only a couple, but in this season, that's more than enough to count as a success, and as p_l leads them home there's a sense of security and competence driving them onwards.",
+            null,
+            "Everyone looks admiringly at s_c by the end of the afternoon. Every cat carries something home, but nearly all of it was caught by s_c.",
+            "s_c really keeps the patrol on task and motivated through the sharp cold of the Leaf-bare morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n."
+        ],
+        "fail_text": [
+            "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together and retreat into a tiny mountain cave, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball.",
+            null,
+            null,
+            "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together in a mountain cave, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp r_c is cold and chilled."
+        ],
+        "win_skills": [
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "win_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c caught a chill while hunting in Leaf-bare.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_leafbaresnowstorm2",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "small_prey"
+        ],
+        "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something, anything, for the freshkill pile.",
+        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "success_text": [
+            "Despite the snow, r_c manages to hunt successfully, finding a mouse in the foothills. Only one, but in this season, that's more than enough to count as a success.",
+            null,
+            "s_c really shows their talent, bringing a clutch of mice back to camp for the freshkill pile."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, they hide in a mountain cave, and a patrol sent to find them the next morning can only bring their body back to camp.",
+            "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, they hide in a mountain cave, shivering and tightly tucked up against the cold. When they return to camp r_c is cold and chilled, their paws and tail prickling with the danger of frostbite."
+        ],
+        "win_skills": [
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "win_trait": [
+            "None"
+        ],
+        
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c caught a chill while hunting in Leaf-bare.",
+            "r_c died trying to provide for c_n during Leaf-bare.",
+            "died while hunting in the cold of Leaf-bare"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_leafbaresnowstorm3",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "small_prey",
+            "comfort",
+            "trust",
+            "rel_patrol",
+            "romantic",
+            "no_app"
+        ],
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something, anything, for the freshkill pile.",
+        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "success_text": [
+            "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats dig a snow-den and cuddle together, sharing what little warmth they have. Each cat takes a turn on the side nearest the entrance tunnel, selflessly risking themselves.",
+            null,
+            "A storm descends, sudden and violent, putting an end to any other thoughts but survival. s_c keeps everyone's spirits up as the patrol hides in a mountain cave, until everyone is talking, shaky and unhappy, but keeping each other's spirits up.",
+            "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats hide under shrubbery of a sheltered valley, s_c keeps an eye out for everyone. It's a long couple of hours, but with gentle understanding and compassion the cats make it though safely, closer than ever afterwards."
+        ],
+        "fail_text": [
+            null,
+            null,
+            "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats huddle together, desperately trying to conserve warmth, no one notices that r_c has stopped responding. At some point in the storm, their life slips away, and their distraught clanmates are left to carry their body home.",
+            "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, and the cats trudge back home, r_c hasn't escaped unscathed, their body chilled and refusing to warm up properly."
+        ],
+        "win_skills": [
+            "great speaker",
+            "excellent speaker"
+        ],
+        "win_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c caught a chill while hunting in Leaf-bare.",
+            "r_c froze to death while hunting in a storm.",
+            "died while hunting in the cold of Leaf-bare"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_leaffallsnowstorm1",
+        "biome": "mountainous",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "comfort",
+            "trust",
+            "patrol_to_p_l",
+            "patrol_to_r_c"
+        ],
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the freshkill pile.",
+        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "chance_of_success": 70,
+        "exp": 20,
+        "success_text": [
+            "Despite the snow, the patrol manages to hunt successfully, lurking where the pika are trying to stock their dens for Leaf-bare. As p_l leads them home there's a sense of security and competence driving them onwards.",
+            null,
+            "Everyone looks admiringly at s_c by the end of the afternoon. Every cat carries something home, but nearly all of it was caught by s_c.",
+            "s_c really keeps the patrol on task and motivated through the sharp chill of the Leaf-fall morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n."
+        ],
+        "fail_text": [
+            "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together and retreat into a tiny mountain cave, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball.",
+            null,
+            null,
+            "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together in a mountain cave, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp r_c is cold and chilled."
+        ],
+        "win_skills": [
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "win_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c caught a chill while hunting in Leaf-fall.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_leaffallsnowstorm2",
+        "biome": "mountainous",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "small_prey"
+        ],
+        "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something for the freshkill pile.",
+        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "Despite the snow, r_c manages to hunt successfully, ambushing a blackbird as it feast on Leaf-fall berries.",
+            null,
+            "s_c really shows their talent, bringing a clutch of mice back to camp for the freshkill pile."
+        ],
+        "fail_text": [
+            "The prey must be hiding; r_c catches nothing. Curled up in a sheltered tunnel, they let the storm pass them by outside.",
+            null,
+            null,
+            "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, they hide in a mountain cave, shivering and tightly tucked up against the cold. When they return to camp r_c is cold and chilled, their paws and tail prickling with the danger of frostbite."
+        ],
+        "win_skills": [
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "win_trait": [
+            "None"
+        ],
+        
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c caught a chill while hunting in Leaf-fall.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_leaffallsnowstorm3",
+        "biome": "mountainous",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "small_prey",
+            "comfort",
+            "trust",
+            "rel_patrol",
+            "romantic",
+            "no_app"
+        ],
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the freshkill pile.",
+        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "chance_of_success": 70,
+        "exp": 10,
+        "success_text": [
+            "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats dig a snow-den and cuddle together, sharing what little warmth they have. Each cat takes a turn on the side nearest the entrance tunnel, selflessly risking themselves.",
+            null,
+            "A storm descends, sudden and violent, putting an end to any other thoughts but survival. s_c keeps everyone's spirits up as the patrol hides in a mountain cave, until everyone is talking, shaky and unhappy, but keeping each other's spirits up.",
+            "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats hide under shrubbery of a sheltered valley, s_c keeps an eye out for everyone. It's a long couple of hours, but with gentle understanding and compassion the cats make it though safely, closer than ever afterwards."
+        ],
+        "fail_text": [
+            null,
+            null,
+            null,
+            "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, and the cats trudge back home, r_c hasn't escaped unscathed, their body chilled and refusing to warm up properly."
+        ],
+        "win_skills": [
+            "great speaker",
+            "excellent speaker"
+        ],
+        "win_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c caught a chill while hunting in Leaf-fall.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_newleafsnowstorm1",
+        "biome": "mountainous",
+        "season": "newleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "comfort",
+            "trust",
+            "patrol_to_p_l",
+            "patrol_to_r_c"
+        ],
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the freshkill pile.",
+        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "chance_of_success": 70,
+        "exp": 20,
+        "success_text": [
+            "Despite the snow, the patrol manages to hunt successfully, ambushing the rabbits trying to feast on the fresh grass of Newleaf. As p_l leads them home there's a sense of security and competence driving them onwards.",
+            null,
+            "Everyone looks admiringly at s_c by the end of the afternoon. Every cat carries something home, but nearly all of it was caught by s_c.",
+            "s_c really keeps the patrol on task and motivated through the sharp chill of the Leaf-fall morning, not through authority or commands, but with a gentle voice and compassionate understanding that encourages every cat to do their best for c_n."
+        ],
+        "fail_text": [
+            "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together and retreat into a tiny mountain cave, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball.",
+            null,
+            null,
+            "The prey must be hiding; the patrol catches nothing. As a snowstorm descends and visibility drops, the patrol clumps together in a mountain cave, their pelts and tails and legs all tightly wrapped into one indistinguishable kitty cat ball. Still, when they return to camp r_c is cold and chilled."
+        ],
+        "win_skills": [
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "win_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c caught a chill while hunting in Newleaf.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_newleafsnowstorm2",
+        "biome": "mountainous",
+        "season": "newleaf",
+        "tags": [
+            "hunting",
+            "small_prey"
+        ],
+        "intro_text": "It starts snowing soon after r_c sets out, trying to bring back something for the freshkill pile.",
+        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "Despite the snow, r_c manages to hunt successfully, finding the scraps of a dead squirrel emerging from the ice of Leaf-bare as the thaw of Newleaf wins the eternal battle of the seasons.",
+            null,
+            "s_c really shows their talent, bringing a clutch of mice back to camp for the freshkill pile."
+        ],
+        "fail_text": [
+            "The prey must be hiding; r_c catches nothing. Curled up in a sheltered tunnel, they let the storm pass them by outside.",
+            null,
+            null,
+            "The prey must be hiding; r_c catches nothing. As a snowstorm descends and visibility drops, they hide in a mountain cave, shivering and tightly tucked up against the cold. When they return to camp r_c is cold and chilled, their paws and tail prickling with the danger of frostbite."
+        ],
+        "win_skills": [
+            "great hunter",
+            "fantastic hunter"
+        ],
+        "win_trait": [
+            "None"
+        ],
+        
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c caught a chill while hunting in Newleaf.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_newleafsnowstorm3",
+        "biome": "mountainous",
+        "season": "newleaf",
+        "tags": [
+            "hunting",
+            "comfort",
+            "trust",
+            "rel_patrol",
+            "romantic",
+            "no_app"
+        ],
+        "intro_text": "It starts snowing soon after the patrol sets out, trying to bring back something for the freshkill pile.",
+        "decline_text": "They decide to turn back and wait until the snow dies down.",
+        "chance_of_success": 70,
+        "exp": 10,
+        "success_text": [
+            "A storm descends, sudden and violent, putting an end to any other thoughts but survival. The cats dig a snow-den and cuddle together, sharing what little warmth they have. Each cat takes a turn on the side nearest the entrance tunnel, selflessly risking themselves.",
+            null,
+            "A storm descends, sudden and violent, putting an end to any other thoughts but survival. s_c keeps everyone's spirits up as the patrol hides in a mountain cave, until everyone is talking, shaky and unhappy, but keeping each other's spirits up.",
+            "A storm descends, sudden and violent, putting an end to any other thoughts but survival. As the cats hide under shrubbery of a sheltered valley, s_c keeps an eye out for everyone. It's a long couple of hours, but with gentle understanding and compassion the cats make it though safely, closer than ever afterwards."
+        ],
+        "fail_text": [
+            null,
+            null,
+            null,
+            "A storm descends, sudden and violent, putting an end to any other thoughts but survival. When the snowstorm leaves, finally, and the cats trudge back home, r_c hasn't escaped unscathed, their body chilled and refusing to warm up properly."
+        ],
+        "win_skills": [
+            "great speaker",
+            "excellent speaker"
+        ],
+        "win_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c caught a chill while hunting in Newleaf.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_fox_newleafscavenge1",
+        "biome": "mountainous",
+        "season": "newleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "fighting",
+            "scar",
+            "injury",
+            "clan_to_patrol",
+            "respect",
+            "rel_patrol"
+        ],
+        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat kid carcass. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full of food and unwilling to lose blood over it, is driven off from the kill.",
+            null,
+            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
+            "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+            null,
+            null,
+            "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+            null,
+            "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+        ],
+        "win_skills": [
+            "good fighter",
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fox fight.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_fox_newleafscavenge2",
+        "biome": "mountainous",
+        "season": "newleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "fighting",
+            "scar",
+            "injury",
+            "clan_to_patrol",
+            "respect",
+            "rel_patrol"
+        ],
+        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat kid carcass. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 80,
+        "exp": 20,
+        "success_text": [
+            "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
+            null,
+            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+            "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
+            null,
+            null,
+            "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+            null,
+            "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+        ],
+        "win_skills": [
+            "good fighter",
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fox fight."
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_fox_newleafscavenge3",
+        "biome": "mountainous",
+        "season": "newleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "fighting",
+            "scar",
+            "injury",
+            "clan_to_patrol",
+            "respect"
+        ],
+        "intro_text": "r_c catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat kid carcass. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 30,
+        "exp": 30,
+        "success_text": [
+            "r_c smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full and unwilling to lose blood over it, leaves the kill with a grumble.",
+            null,
+            "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the kid carcass.",
+            "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the kid."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+            null,
+            "Fiercely, r_c throws themselves at the fox, determined to win the kid prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking them to pieces and killing them.",
+            "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the kid instead of the foolish cat.",
+            null,
+            "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the fox settles back down to its meal."
+        ],
+        "win_skills": [
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a solo fox fight.",
+            "r_c fell in a solo battle with a fox.",
+            "were killed in battle with a fox"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_fox_greenleafscavenge1",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "fighting",
+            "scar",
+            "injury",
+            "clan_to_patrol",
+            "respect",
+            "rel_patrol"
+        ],
+        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat kid carcass. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
+            null,
+            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
+            "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+            null,
+            null,
+            "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+            null,
+            "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+        ],
+        "win_skills": [
+            "good fighter",
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fox fight.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_fox_greenleafleafscavenge2",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "fighting",
+            "scar",
+            "injury",
+            "clan_to_patrol",
+            "respect",
+            "rel_patrol"
+        ],
+        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat kid carcass. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 80,
+        "exp": 20,
+        "success_text": [
+            "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
+            null,
+            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+            "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
+            null,
+            null,
+            "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+            null,
+            "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+        ],
+        "win_skills": [
+            "good fighter",
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fox fight."
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_fox_greenleafscavenge3",
+        "biome": "mountainous",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "fighting",
+            "scar",
+            "injury",
+            "clan_to_patrol",
+            "respect"
+        ],
+        "intro_text": "r_c catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat kid carcass. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 30,
+        "exp": 30,
+        "success_text": [
+            "r_c smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full and unwilling to lose blood over it, leaves the kill with a grumble.",
+            null,
+            "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the kid carcass.",
+            "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the kid."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+            null,
+            "Fiercely, r_c throws themselves at the fox, determined to win the kid prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking them to pieces and killing them.",
+            "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the kid instead of the foolish cat.",
+            null,
+            "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the fox settles back down to its meal."
+        ],
+        "win_skills": [
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a solo fox fight.",
+            "r_c fell in a solo battle with a fox.",
+            "were killed in battle with a fox"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_fox_leaf-fallscavenge1",
+        "biome": "mountainous",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "fighting",
+            "scar",
+            "injury",
+            "clan_to_patrol",
+            "respect",
+            "rel_patrol"
+        ],
+        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat kid carcass. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 50,
+        "exp": 20,
+        "success_text": [
+            "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
+            null,
+            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
+            "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+            null,
+            null,
+            "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+            null,
+            "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+        ],
+        "win_skills": [
+            "good fighter",
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fox fight.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_fox_leaf-fallscavenge2",
+        "biome": "mountainous",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "fighting",
+            "scar",
+            "injury",
+            "clan_to_patrol",
+            "respect",
+            "rel_patrol"
+        ],
+        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat kid carcass. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 80,
+        "exp": 20,
+        "success_text": [
+            "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
+            null,
+            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+            "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
+            null,
+            null,
+            "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+            null,
+            "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+        ],
+        "win_skills": [
+            "good fighter",
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fox fight."
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_fox_leaf-fallscavenge3",
+        "biome": "mountainous",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "fighting",
+            "scar",
+            "injury",
+            "clan_to_patrol",
+            "respect"
+        ],
+        "intro_text": "r_c catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat kid carcass. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 30,
+        "exp": 30,
+        "success_text": [
+            "r_c smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full and unwilling to lose blood over it, leaves the kill with a grumble.",
+            null,
+            "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the kid carcass.",
+            "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the kid."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+            null,
+            "Fiercely, r_c throws themselves at the fox, determined to win the kid prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking them to pieces and killing them.",
+            "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the kid instead of the foolish cat.",
+            null,
+            "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the fox settles back down to its meal."
+        ],
+        "win_skills": [
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a solo fox fight.",
+            "r_c fell in a solo battle with a fox.",
+            "were killed in battle with a fox"
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_fox_leaf-barescavenge1",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "fighting",
+            "scar",
+            "injury",
+            "clan_to_patrol",
+            "respect",
+            "rel_patrol"
+        ],
+        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat carcass, either a small nanny or one of last Newleaf's kids. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "Your cats are smaller but they outnumber the fox, if only by a little, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
+            null,
+            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until it gives up and runs.",
+            "The patrol launches into battle, but with so few cats it's exhausting trying to keep the fox and its snapping jaws on the defensive. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. It's only one bite, but the fox has had enough and flees."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+            null,
+            null,
+            "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+            null,
+            "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+        ],
+        "win_skills": [
+            "good fighter",
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fox fight.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_fox_leaf-barescavenge2",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "fighting",
+            "scar",
+            "injury",
+            "clan_to_patrol",
+            "respect",
+            "rel_patrol"
+        ],
+        "intro_text": "Your patrol catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat carcass, either a small nanny or one of last Newleaf's kids. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "Your patrol decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "Your cats are smaller but heavily outnumber the fox, and it's a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle, and the fox, already half full and unwilling to lose blood over it, is driven off from the kill.",
+            null,
+            "s_c shows their strength, leading the fight against the fox. By working together and keeping it distracted, the cats harry and harass the fox until s_c lands a crucial blow, snapping a tendon in one of the fox's hindlegs. The fox runs, but there's no way it'll live long with such a crippling injury.",
+            "The patrol launches into battle, keeping the fox on the defensive with teamwork. In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. Holding on grimly, s_c's daring move gives the rest of the patrol the opportunity needed to bring the fox down for good."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However with so many cats to protect each other, there were no injuries.",
+            null,
+            null,
+            "The patrol launches into battle, but r_c is caught with a nasty bite, and the cats give up on challenging for the food in favor of quickly helping r_c back to the medicine cat den.",
+            null,
+            "s_c means well, but they're overconfident in their attack and the fox manages to sink their teeth into them. The patrol is forced to retreat, forming a defensive ring around the hurt s_c."
+        ],
+        "win_skills": [
+            "good fighter",
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a fox fight."
+        ]
+    },
+    {
+        "patrol_id": "mtn_hunt_fox_leaf-barescavenge3",
+        "biome": "mountainous",
+        "season": "leaf-bare",
+        "tags": [
+            "hunting",
+            "big_prey",
+            "fighting",
+            "scar",
+            "injury",
+            "clan_to_patrol",
+            "respect"
+        ],
+        "intro_text": "r_c catches the scent of a red fox. Tracking it, they find the animal feeding on a mountain goat carcass, either a small nanny or one of last Newleaf's kids. It's impossible to say whether the fox killed it or found it.",
+        "decline_text": "r_c decides not to quarrel with the fox and to find prey elsewhere.",
+        "chance_of_success": 10,
+        "exp": 30,
+        "success_text": [
+            "r_c smaller, alone, and half its weight, but the fox has a prize they're willing to fight for. With a prayer to StarClan they throw themselves into battle. The fox, already stuffed full and unwilling to lose blood over it, leaves the kill with a grumble.",
+            null,
+            "s_c uses every trick in their talented fighting skillset to attack the fox with no one to watch their flank, until the perfect opportunity opens up and they pounce onto the fox's back, digging in their claws. It's a wild ride through the forest until the fox bucks them off, but it wins them the goat carcass.",
+            "In an act of daring bravery, s_c darts low to the ground, gets under the jaws, and sinks their teeth into the fox's throat. But then they're stuck, unwilling to let go and risk being bitten. They're dragged through the forest, over rocks and through bushes, until the fox finally collapses and the battered s_c goes back to proudly claim the goat."
+        ],
+        "fail_text": [
+            "Your patrol fails to drive away the fox, which keeps possession of the food. However there were no injuries.",
+            null,
+            "Fiercely, r_c throws themselves at the fox, determined to win the goat prize. But the fox values it just as dearly, and manages to get a good grip on r_c, shaking them to pieces and killing them.",
+            "r_c launches into battle, but is caught with a nasty bite, and retreats to limp back home. The fox doesn't follow, happy enough to eat the goat instead of the foolish cat.",
+            null,
+            "s_c is overconfident in their attack and the fox manages to sink their teeth into them. They retreat, bleeding and in pain, and the fox settles back down to its meal."
+        ],
+        "win_skills": [
+            "great fighter",
+            "excellent fighter"
+        ],
+        "win_trait": [
+            "adventurous",
+            "altruistic",
+            "ambitious",
+            "confident",
+            "daring",
+            "fierce",
+            "responsible",
+            "righteous"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "troublesome",
+            "vengeful",
+            "bloodthirsty",
+            "bold"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c carries a scar from a solo fox fight.",
+            "r_c fell in a solo battle with a fox.",
+            "were killed in battle with a fox"
+        ]
+    }
+]

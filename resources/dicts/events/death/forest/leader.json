@@ -51,7 +51,7 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "rc_to_mc", "neg_dislike", "platonic", "respect", "trust"],
         "death_text": "m_c lost a life defending r_c from a hawk.",
         "history_text": [null, "defended r_c from a hawk"],
         "cat_trait": ["altruistic", "bold", "bloodthirsty", "ambitious", "daring", "confident", "fierce", "loyal", "loving", "empathetic", "responsible", "righteous", "vengeful"],
@@ -61,7 +61,7 @@
     },
     {
         "camp": "any",
-        "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body"],
         "death_text": "m_c was carried off by a hawk, never to be seen again.",
         "history_text": [null, "were carried away by a hawk"],
         "cat_trait": null,
@@ -71,7 +71,7 @@
     },
     {
         "camp": "any",
-        "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall"],
+        "tags": ["all_lives", "Newleaf", "Greenleaf", "Leaf-fall", "no_body"],
         "death_text": "m_c fell into a river and was swept away by the current, never to be seen again.",
         "history_text": [null, "were swept away by the river"],
         "cat_trait": null,

@@ -1,0 +1,573 @@
+[
+{
+    "patrol_id": "bch_bord_rogue1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["border", "fighting", "scar", "battle_injury", "reputation", "multi_deaths", "respect", "trust", "platonic", "no_change_fail"],
+    "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the beach grass! An ambush!",
+    "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+    "chance_of_success": 70,
+    "exp": 30,
+    "success_text": [
+        "The patrol descends into battle without a second thought, eventually driving the rogues away.",
+        null,
+        "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the clan cats, the rogues turn tail and run.",
+        "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "The rogues are terrifyingly coordinated and are quick to use the patrol's shock and confuson against them. The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
+        "Taken by surprise, the patrol scatters and loses cohesion. The rogues are quick to take advantage of the confusion and r_c is badly wounded, forcing the patrol to retreat."
+    ],
+    "win_skills": ["excellent fighter"],
+    "win_trait": ["bloodthirsty", "fierce", "vengeful"],
+    "min_cats": 4,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c was badly scarred when rogues ambushed their patrol.",
+        "This cat was killed when rogues ambushed their patrol.",
+        "killed in a rogue ambush"
+    ]
+},
+{
+    "patrol_id": "bch_bord_rogue2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["border", "fighting", "death", "reputation", "sacrificial", "trust"],
+    "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the beach grass! An ambush!",
+    "decline_text": "r_c turns tail and races away! The rogues have them far outnumbered; warning the clan is more important than playing the hero.",
+    "chance_of_success": 10,
+    "exp": 30,
+    "success_text": [
+        "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but they manage to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from their lungs.",
+        null,
+        "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the clan cat, the rogues freeze. s_c sees their opportunity to run and takes it, racing back to the camp to gather more warriors and return.",
+        null
+    ],
+    "fail_text": [
+        null,
+        "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. The shock only lasts a moment before they descend upon the warrior once more. Eventually, s_c has no choice but to escape before they're killed.",
+        "The rogues greatly outnumber r_c and have no trouble killing the lone warrior. Their body is discovered the next day, covered in wounds and cold.",
+        null
+    ],
+    "win_skills": ["excellent fighter"],
+    "fail_skills": ["None"],
+    "fail_trait": ["bloodthirsty", "fierce", "vengeful"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        null,
+        "This cat was killed when rogues ambushed them while on a solo patrol.",
+        "killed in a rogue ambush"
+    ]
+},
+{
+    "patrol_id": "bch_bord_rogue3",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["border", "fighting", "scar", "battle_injury", "reputation", "respect", "trust", "multi_deaths"],
+    "intro_text": "As the patrol is marking the border lines, a gang of rogues stalks out of the beach grass to confront the clan cats!",
+    "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
+    "chance_of_success": 70,
+    "exp": 30,
+    "success_text": [
+        "The rogues posture and jeer, eventually provoking a battle. The clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away.",
+        "The rogues posture and jeer, eventually provoking a battle. The clan cats are strong, however, and after a short fight, the rogues are forced to retreat.",
+        "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory.",
+        "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory."
+    ],
+    "fail_text": [
+        null,
+        null,
+        "The rogues are terrifyingly coordinated and are quick to use the patrol's momentary surprise to their advantage. The patrol cats are picked off one by one, only a couple managing to escape the slaughter.",
+        "The rogues posture and jeer, eventually provoking a battle. They prove to be strong fighters and r_c is badly injured, forcing the patrol to retreat."
+    ],
+    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+    "win_trait": ["bold", "confident", "charming"],
+    "min_cats": 4,
+    "max_cats": 6,
+    "antagonize_text": "The patrol descends into battle without a second thought, eventually driving the rogues away.",
+    "antagonize_fail_text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected and eventually the patrol is forced to retreat.",
+    "history_text": [
+        "r_c was badly scarred when rogues attacked their patrol.",
+        "This cat was killed when rogues attacked their patrol.",
+        "killed in a rogue ambush"
+    ]
+},
+{
+    "patrol_id": "bch_bord_flashflood1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["border", "multi_deaths", "respect", "trust", "no_change_fail", "no_body"],
+    "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "The cats become wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment, and the patrol keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
+            "It's not worth the risk - s_c convinces the patrol to head for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. Some manage to ride the waves, paddling for their lives, but many are lost forever.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "This cat was drowned by floodwaters.",
+            "drowned in floodwaters"
+    ]
+},
+{
+    "patrol_id": "bch_bord_flashflood2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["border", "death", "respect", "trust", "no_change_fail", "no_body"],
+    "intro_text": "There are dark clouds in the horizon and p_l wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "The cats become wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment, and the patrol keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
+            "It's not worth the risk - s_c convinces the patrol to head for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps all of the cats in the patrol away. p_l yowls out a warning, and most of the patrol are able to react quickly, striking out strongly for passing pieces of driftwood, but r_c doesn't make it, sinking beneath the water.",
+            null
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "r_c was drowned by floodwaters.",
+            "drowned in floodwaters"
+    ]
+},
+{
+    "patrol_id": "bch_bord_flashflood3",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["border", "death", "blunt_force_injury", "water in their lungs", "injury", "no_body"],
+    "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "r_c becomes wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment, and keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
+            "It's not worth the risk - s_c heads for home."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away.",
+            "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. Injured, gasping for air and paddling desperately, r_c is able to remember enough of their training to keep an eye out for driftwood, and sinks their claws into the first piece that's swept past them. It saves their life."
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was injured in a flood.",
+            "r_c was drowned by floodwaters.",
+            "drowned in floodwaters"
+    ]
+},
+{
+    "patrol_id": "bch_bord_flashflood4",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["border", "blunt_force_injury", "water in their lungs", "injury"],
+    "intro_text": "There are dark clouds in the horizon and r_c wonders if they should continue.",
+    "decline_text": "Your patrol decides to head back early.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+            "While it's pretty gray up there, the promised rain never comes.",
+            "r_c becomes wet from the rain but otherwise the patrol is successful.",
+            "s_c makes a careful judgment, and keeps going. They stick to the clifftops, avoiding the low beaches as the rain begins to pour around them.",
+            "It's not worth the risk - s_c heads for home."
+    ],
+    "fail_text": [
+        null,
+        null,
+        null,
+         "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. With the little warning they have, they spot a branch being carried by the water, and strike out strongly for it. Hurt and shivering from both exhaustion and the cold, they nevertheless cling to safety as the floodwaters run their course."
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was injured in a flood."
+    ]
+},
+{
+    "patrol_id": "bch_bord_flashflood5",
+    "biome": "beach",
+    "season": "leaf-bare",
+    "tags": ["border", "death", "big_prey", "no_body"],
+    "intro_text": "As r_c crosses a beach, shivering with the cold, there's a creaking, rushing sound, like a wave - but out of sync with the ocean.",
+    "decline_text": "r_c decides to head back early.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+            "r_c leaps forward, dashing to the other side of the beach and up onto the rocks. They make in in time to watch the beach get lost under a tide of water from inland.",
+            null,
+            "s_c scrambles back the way they came and watches the beach disappear under a flood of water. It leaves behind a changed landscape, tons of debris - and a large dead sheep. s_c pounces on the opportunity to scavenge.",
+            "s_c shrieks at the strange sound, paws digging into the sand as they turn and run for home. They are proven right when the beach disappears under a flood of water from inland. Their caution saved their life."
+    ],
+    "fail_text": [
+            null,
+            null,
+            "r_c is in the middle of the beach when the flood hits them, freezing water rushing from inland, sweeping them straight out to sea to die in the cold ocean.",
+            null
+    ],
+    "win_skills": ["extremely smart"],
+    "win_trait": ["careful", "insecure", "nervous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            null,
+            "r_c was swept out to sea by a flood.",
+            "were swept out to sea by a flood"
+    ]
+},
+{
+    "patrol_id": "bch_bord_trackrogue1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["fighting", "battle_injury", "scar", "border", "death", "clan_to_patrol", "respect", "trust"],
+    "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
+    "decline_text": "They decide not to investigate.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+            "The pawprints lead to a trespassing rogue. r_c quickly hides themselves in the grass on the sand dunes and sets up an ambush that sends the rogue fleeing off c_n territory.",
+            "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+            "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and drives them off c_n territory.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
+    ],
+    "fail_text": [
+            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful they're alone.",
+            "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
+            "Nose to the ground following the trail, r_c doesn't see the blow that kills them.",
+            "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
+    ],
+    "win_skills": ["good fighter", "great fighter", "excellent fighter"],
+    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["smart"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was scarred by an invading rogue.",
+            "r_c was killed by an invading rogue.",
+            "were killed by an invading rogue"
+    ]
+},
+{
+    "patrol_id": "bch_bord_trackrogue2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["fighting", "battle_injury", "scar", "border", "death", "clan_to_patrol", "respect", "trust"],
+    "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
+    "decline_text": "They decide not to investigate.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+            "The pawprints lead to a trespassing rogue. r_c quickly hides themselves in the grass on the sand dunes and sets up an ambush that sends the rogue fleeing off c_n territory.",
+            "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+            "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learnt.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
+    ],
+    "fail_text": [
+            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful they're alone.",
+            "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
+            "Nose to the ground following the trail, r_c doesn't see the blow that kills them.",
+            "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["good fighter"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was scarred by an invading rogue.",
+            "r_c was killed by an invading rogue.",
+            "were killed by an invading rogue"
+    ]
+},
+{
+    "patrol_id": "bch_bord_trackrogue3",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["fighting", "battle_injury", "scar", "border", "apprentice", "death"],
+    "intro_text": "While on patrol, app1 notices some suspicious pawprints in the wet sand on the beach.",
+    "decline_text": "They decide not to investigate.",
+    "chance_of_success": 40,
+    "exp": 10,
+    "success_text": [
+            "The pawprints lead to a trespassing rogue. app1 quickly hides themselves in the grass on the sand dunes, and sets up an ambush that lets them pretend to be a far bigger and more impressive fighter, sending the rogue fleeing off c_n territory.",
+            "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact... they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
+            null,
+            null
+    ],
+    "fail_text": [
+            "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful they're alone. They don't want to look dumb in front of other cats.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by this teenager, and ignores them completely.",
+            "Nose to the ground following the trail, app1 doesn't see the blow that kills them.",
+            "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was scarred by an invading rogue.",
+            "r_c was killed by an invading rogue.",
+            "were killed by an invading rogue"
+    ]
+},
+{
+    "patrol_id": "bch_bord_trackrogue4",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["fighting", "battle_injury", "scar", "border", "respect", "trust"],
+    "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
+    "decline_text": "They decide not to investigate.",
+    "chance_of_success": 70,
+    "exp": 10,
+    "success_text": [
+            "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
+            "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+            "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
+    ],
+    "fail_text": [
+            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
+            "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
+            null,
+            "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run from the patrol."
+    ],
+    "win_skills": ["good fighter", "great fighter", "excellent fighter"],
+    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["smart"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was scarred by an invading rogue."
+    ]
+},
+{
+    "patrol_id": "bch_bord_trackrogue5",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["fighting", "battle_injury", "scar", "border", "respect", "trust"],
+    "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
+    "decline_text": "They decide not to investigate.",
+    "chance_of_success": 70,
+    "exp": 10,
+    "success_text": [
+            "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
+            "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+            "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learnt.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, s_c and r_c demand the rogue leaves c_n territory. Intimidated by their confidence, the rogue gives in and leaves without a fight."
+    ],
+    "fail_text": [
+            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment.",
+            "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory.",
+            null,
+            "Nose to the ground following the trail, r_c doesn't see the blow coming. They haul themselves to their feet, spitting with outrage, but the rogue that did it has already turned and run."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["good fighter"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was scarred by an invading rogue."
+    ]
+},
+{
+    "patrol_id": "bch_bord_trackrogue6",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["fighting", "battle_injury", "scar", "border", "apprentice"],
+    "intro_text": "While on patrol, app1 notices some suspicious pawprints in the wet sand on the beach.",
+    "decline_text": "They decide not to investigate.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+            "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
+            "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
+            null,
+            null
+    ],
+    "fail_text": [
+            "It turns out they were app1's own pawprints... app1 huffs with embarrassment, suddenly grateful that their patrol is so small. Less eyes watching that embarrassing moment. They don't want to look dumb in front of other cats.",
+             "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but reluctantly leaves c_n territory.",
+            null,
+            "Nose to the ground following the trail, app1 doesn't see the blow coming. They haul themselves to their feet, squealing with pain, and run for home."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was scarred by an invading rogue.",
+            null
+    ]
+},
+{
+    "patrol_id": "bch_bord_trackrogue7",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["fighting", "border", "respect", "trust"],
+    "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
+    "decline_text": "They decide not to investigate.",
+    "chance_of_success": 80,
+    "exp": 10,
+    "success_text": [
+            "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
+            "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+            "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, and together with r_c drives them off c_n territory.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight."
+    ],
+    "fail_text": [
+            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+            "The pawprints lead to a trespassing rogue. s_c tries to set up a trap by using the tides to cut off the rogue's escape path, but they aren't as smart as they think they are. The trap fails, and the rogue wanders on.",
+            null,
+            null
+    ],
+    "win_skills": ["good fighter", "great fighter", "excellent fighter"],
+    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["smart"],
+    "fail_trait": ["None"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_bord_trackrogue8",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["fighting", "border", "respect", "trust"],
+    "intro_text": "While on patrol, r_c notices some suspicious pawprints in the wet sand on the beach.",
+    "decline_text": "They decide not to investigate.",
+    "chance_of_success": 80,
+    "exp": 10,
+    "success_text": [
+            "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
+            "r_c soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat.",
+            "The pawprints lead to a trespassing rogue. s_c sets up a trap by using the tides to cut off the rogue's escape path. It makes the startled intruder cower to realize they've been caught and trapped by c_n, and they're escorted to the border with the lesson firmly learnt.",
+            "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, the patrol demands the rogue leave c_n territory. Intimidated by their confidence and the number of cats, the rogue gives in and leaves without a fight."
+    ],
+    "fail_text": [
+            "It turns out they were r_c's own pawprints... r_c huffs with embarrassment, and can't meet the eyes of the rest of the patrol.",
+            "The pawprints lead to a trespassing rogue. s_c throws themselves at the rogue, hissing furiously, but this is one battle hardened trespasser, and s_c isn't as good of a fighter as they'd like to think. The rogue manages to escape their grasp and run off further into c_n territory."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["good fighter"],
+    "fail_trait": ["None"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c was scarred by an invading rogue.",
+            null
+    ]
+},
+{
+    "patrol_id": "bch_bord_trackrogue9",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["fighting", "border", "apprentice"],
+    "intro_text": "While on patrol, app1 notices some suspicious pawprints in the wet sand on the beach.",
+    "decline_text": "They decide not to investigate.",
+    "chance_of_success": 70,
+    "exp": 10,
+    "success_text": [
+            "The pawprints lead to a trespassing rogue. The patrol quickly hides themselves in the grass on the sand dunes and sets up an ambush, sending the rogue fleeing off c_n territory.",
+            "app1 soon realizes that the pawprints smell of c_n. Someone must have wandered through this section of the border recently, but it's not a threat. In fact. . . they're pretty sure this is their mentor's scent. And their mentor has been hinting there'll be a test soon.",
+            null,
+            null
+    ],
+    "fail_text": [
+            "It turns out they were app1's own pawprints... app1 huffs with embarrassment, and can't meet the eyes of the rest of the patrol. They don't want to look dumb in front of other cats.",
+             "Boldy, s_c follows the pawprints to a trespassing rogue, and confronts them. Fur puffed up and scowling, they demand the rogue leaves c_n territory. The rogue is not impressed by the teenager, but with the full patrol backing them up, leaves c_n territory.",
+            null,
+            null
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful", "adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+}
+
+]

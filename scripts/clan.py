@@ -3,6 +3,7 @@ from scripts.game_structure.load_cat import *
 
 try:
     from scripts.world import *
+
     map_available = True
 except:
     map_available = False
@@ -79,7 +80,7 @@ class Clan():
                  camp_site=(20, 22),
                  camp_bg=None,
                  game_mode='classic',
-                 starting_members = []):
+                 starting_members=[]):
         if name != "":
             self.name = name
             self.leader = leader
@@ -111,7 +112,15 @@ class Clan():
             self.game_mode = game_mode
             self.pregnancy_data = {}
             self.closed_borders = False
+            self.reputation = 50
             self.starting_members = starting_members
+
+            """
+            Reputation is for loners/kittypets/outsiders in general that wish to join the clan. 
+            it's a range from 1-100, with 30-70 being neutral, 71-100 being "welcoming",
+            and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
+            """
+
 
     def create_clan(self):
         """ This function is only called once a new clan is created in the 'clan created' screen, not every time
@@ -152,7 +161,9 @@ class Clan():
         for _ in range(number_other_clans):
             self.all_clans.append(OtherClan())
         self.save_clan()
-        #if map_available:
+        game.save_clanlist(self.name)
+        game.switches['clan_list'] = game.read_clans()
+        # if map_available:
         #    save_map(game.map_info, game.clan.name)
 
         # CHECK IF CAMP BG IS SET -fail-safe in case it gets set to None-
@@ -181,12 +192,23 @@ class Clan():
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
 
+    def add_to_outside(self, cat): # same as add_cat
+        """ Places the gone cat into starclan. It should not be removed from the list of cats in the clan"""
+        if cat.ID in Cat.all_cats.keys(
+        ) and cat.outside and cat.ID not in Cat.outside_cats.keys():
+            # The outside-value must be set to True before the cat can go to cotc
+            Cat.outside_cats.update({cat.ID:cat})
+            if cat.status != 'leader': # takes away the suffix unless the cat used to be leader
+                cat.suffix = ''
+            
     def add_to_darkforest(self, cat):  # Same as add_cat
         """ Places the dead cat into the dark forest. It should not be removed from the list of cats in the clan"""
         if cat.ID in Cat.all_cats.keys(
         ) and cat.dead and cat.df is False:
             cat.df = True
             cat.thought = "Is distraught after being sent to the Place of No Stars"
+            if cat in self.starclan_cats:
+                self.starclan_cats.remove(cat.ID)
             if cat.ID in self.med_cat_list:
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
@@ -232,10 +254,7 @@ class Clan():
             self.med_cat_number = len(self.med_cat_list)
 
     def switch_clans(self, clan):
-        list_data = clan + "\n"
-        for c in game.read_clans():
-            if c != clan:
-                list_data += c + "\n"
+        game.save_clanlist(clan)
         game.cur_events_list.clear()
         game.other_clans_events_list.clear()
         game.birth_death_events_list.clear()
@@ -243,8 +262,6 @@ class Clan():
         game.health_events_list.clear()
         game.ceremony_events_list.clear()
         game.misc_events_list.clear()
-        with open('saves/clanlist.txt', 'w') as write_file:
-            write_file.write(list_data)
         game.cur_events_list.clear()
         game.other_clans_events_list.clear()
         game.birth_death_events_list.clear()
@@ -258,20 +275,20 @@ class Clan():
         exit()
 
     def save_clan(self):
-        data = f'{self.name},{self.age},{self.biome},{self.camp_bg},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]},{self.game_mode}' + '\n'
+        data = f'{self.name},{self.age},{self.biome},{self.camp_bg},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]},{self.game_mode},{self.reputation}' + '\n'
         data = data + self.leader.ID + ',' + str(
             self.leader_lives) + ',' + str(
-                self.leader_predecessors) + ',' + '\n'
+            self.leader_predecessors) + ',' + '\n'
 
         if self.deputy:
             data = data + self.deputy.ID + ',' + str(
                 self.deputy_predecessors) + ',' + '\n'
         else:
             data = data + '\n'
-        
+
         if self.medicine_cat:
             data = data + self.medicine_cat.ID + ',' + str(
-            self.med_cat_predecessors) + ','  + str(self.med_cat_number)   + '\n'
+                self.med_cat_predecessors) + ',' + str(self.med_cat_number) + '\n'
         else:
             data = data + '\n'
 
@@ -291,12 +308,7 @@ class Clan():
 
         with open(f'saves/{self.name}clan.txt', 'w') as write_file:
             write_file.write(data)
-        list_data = self.name + "\n"
-        for i in range(len(game.switches['clan_list'])):
-            if game.switches['clan_list'][i] != self.name:
-                list_data = list_data + game.switches['clan_list'][i] + "\n"
-        with open('saves/clanlist.txt', 'w') as write_file:
-            write_file.write(list_data)
+        # game.save_clanlist(self.name)
 
     def load_clan(self):
         other_clans = []
@@ -340,11 +352,32 @@ class Clan():
             instructor_info = sections[3]
             members = sections[4].split(',')
             other_clans = []
-        if len(general) == 8:
-            if general[4] == 'None':
-                general[4] = 0
-            elif general[3] == 'None':
+        if len(general) == 9:
+            if general[3] == 'None':
                 general[3] = 'camp1'
+            elif general[4] == 'None':
+                general[4] = 0
+            elif general[7] == 'None':
+                general[7] = 'classic'
+            elif general[8] == 'None':
+                general[8] = 50
+            game.clan = Clan(general[0],
+                             Cat.all_cats[leader_info[0]],
+                             Cat.all_cats.get(deputy_info[0], None),
+                             Cat.all_cats.get(med_cat_info[0], None),
+                             biome=general[2],
+                             camp_bg=general[3],
+                             world_seed=int(general[4]),
+                             camp_site=(int(general[5]),
+                                        int(general[6])),
+                             game_mode=general[7]
+                             )
+            game.clan.reputation = general[8]
+        elif len(general) == 8:
+            if general[3] == 'None':
+                general[3] = 'camp1'
+            elif general[4] == 'None':
+                general[4] = 0
             elif general[7] == 'None':
                 general[7] = 'classic'
             game.clan = Clan(general[0],
@@ -407,7 +440,7 @@ class Clan():
             for other_clan in other_clans:
                 other_clan_info = other_clan.split(';')
                 self.all_clans.append(
-                    OtherClan(other_clan_info[0],int(other_clan_info[1]),other_clan_info[2]))
+                    OtherClan(other_clan_info[0], int(other_clan_info[1]), other_clan_info[2]))
 
         else:
             number_other_clans = randint(3, 5)
@@ -428,7 +461,7 @@ class Clan():
             return
         file_path = f"saves/{game.clan.name}/pregnancy.json"
         if os.path.exists(file_path):
-            with open(file_path,'r') as read_file:
+            with open(file_path, 'r') as read_file:
                 clan.pregnancy_data = ujson.load(read_file)
         else:
             clan.pregnancy_data = {}
@@ -438,11 +471,12 @@ class Clan():
             return
         file_path = f"saves/{game.clan.name}/pregnancy.json"
         try:
-            with open(file_path,'w') as file:
-                json_string = ujson.dumps(clan.pregnancy_data, indent = 4)
+            with open(file_path, 'w') as file:
+                json_string = ujson.dumps(clan.pregnancy_data, indent=4)
                 file.write(json_string)
         except:
             print(f"Saving the pregnancy data didn't work.")
+
 
 class OtherClan():
 

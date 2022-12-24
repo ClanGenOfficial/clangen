@@ -65,11 +65,10 @@ if not os.path.exists('saves/clanlist.txt'):
     os.makedirs('saves', exist_ok=True)
     with open('saves/clanlist.txt', 'w') as write_file:
         write_file.write('')
-with open('saves/clanlist.txt', 'r') as read_file:
-    clan_list = read_file.read()
-    if_clans = len(clan_list.strip())
-if if_clans > 0:
-    game.switches['clan_list'] = clan_list.split('\n')
+
+clan_list = game.read_clans()
+if clan_list:
+    game.switches['clan_list'] = clan_list
     try:
         load_cats()
         clan_class.load_clan()

@@ -1,0 +1,71 @@
+{
+    "claw-wound": [
+        "m_c died from a claw-wound."
+    ],
+    "bite-wound": [
+        "m_c died from a bite-wound."
+    ],
+    "cat bite": [
+        "m_c died from a cat bite."
+    ],
+    "beak bite": [
+        "m_c died from a beak bite."
+    ],
+    "snake bite": [
+        "m_c died from a snake bite."
+    ],
+    "rat bite": [
+        "m_c died from a rat bite."
+    ],
+    "blood loss": [
+        "m_c died from blood loss."
+    ],
+    "broken jaw": [
+        "m_c died from a broken jaw."
+    ],
+    "broken bone": [
+        "m_c died from a broken bone."
+    ],
+    "mangled leg": [
+        "m_c died from a mangled leg."
+    ],
+    "mangled tail": [
+        "m_c died from a mangled tail."
+    ],
+    "frostbite": [
+        "m_c died from frostbite."
+    ],
+    "water in their lungs": [
+        "m_c died from water in their lungs."
+    ],
+    "burn": [
+        "m_c died from their burns."
+    ],
+    "severe burn": [
+        "m_c died from their severe burns."
+    ],
+    "shock": [
+        "m_c died from shock."
+    ],
+    "shivering": [
+        "m_c got too cold and died."
+    ],
+    "dehydrated": [
+        "m_c died from dehydration."
+    ],
+    "head damage": [
+        "m_c died from head damage."
+    ],
+    "damaged eyes": [
+        "m_c's eyes were too badly damaged and they died."
+    ],
+    "quilled by a porcupine": [
+        "m_c died from their wounds after being quilled by a porcupine."
+    ],
+    "poisoned": [
+        "m_c died from the poison in their body."
+    ],
+    "broken back": [
+        "m_c couldn't survive their broken back."
+    ]
+}

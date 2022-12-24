@@ -1,0 +1,68 @@
+{
+  "romantic": {
+    "body": [
+      "r_c bends over the body of their love, wailing their despair into m_c's fur. They sit vigil next to the body, wishing they could wake from this nightmare.",
+      "r_c stares dully at m_c, the world fading from awareness as they try to comprehend their death. All the things they'll never do together, the places r_c wanted to show them, the life they could have lived by each other's sides, all wiped away in an instant.",
+      "As the clan sits vigil for m_c, r_c refuses to even move from their nest, refuses to eat or drink or talk, as though by refusing to face the world will bring them back.",
+      "Surely, surely the world can't go on, surely the sun won't rise and the seasons won't turn, not now that m_c is dead. r_c doesn't know how to go on without them.",
+      "r_c lies next to m_c as the clan sits vigil for them. Their world has ended with m_c."
+    ],
+    "no_body": [
+      "Surely, surely the world can't go on, surely the sun won't rise and the seasons won't turn, not now that m_c is dead. r_c doesn't know how to go on without them.",
+      "As the clan sits vigil for m_c, r_c refuses to even move from their nest, refuses to eat or drink or talk, as though by refusing to face the world will bring them back."
+    ]
+  },
+  "platonic": {
+    "body": [
+      "r_c wails when they see the body of m_c, still and cold in the clearing. They sit vigil that night as grief fills their heart.",
+      "r_c fusses gently with m_c's fur, hiding the evidence of what killed them. They want to remember them as they were in life, not like this.",
+      "As the clan sits vigil, r_c's voice cracks with grief, talking about the time they had with m_c."
+                    
+    ],
+    "no_body": [
+      "As the clan sits vigil, r_c's voice cracks with grief, talking about the time they had with m_c."
+
+    ]
+
+  },
+  "admiration": {
+    "body": [
+      "r_c had always looked up to m_c and the sight of their dead body doesn't feel real. Their vigil that night is numb and cold.",
+      "m_c was one of those cats who you'd always find right in the thick of things, and it's something r_c greatly admired about them, their drive to help c_n. It's so strange and hard to comprehend, that they'll never see m_c do that again.",
+      "As the clan sits vigil for m_c, swapping stories of their life, r_c speaks of what they admired about them, of how m_c inspired them."
+                   
+    ],
+    "no_body": [
+      "r_c had always looked up to m_c and the sight of their dead body doesn't feel real. Their vigil that night is numb and cold.",
+      "m_c was one of those cats who you'd always find right in the thick of things, and it's something r_c greatly admired about them, their drive to help c_n. It's so strange and hard to comprehend, that they'll never see m_c do that again.",
+      "As the clan sits vigil for m_c, swapping stories of their life, r_c speaks of what they admired about them, of how m_c inspired them."
+    ]
+
+  },
+  "comfort": {
+    "body": [
+      "r_c can hardly process the sight of m_c's body before them. Somehow the world feels colder and crueler now.",
+      "r_c looks at all the cats sitting vigil for m_c, and wonders how any of them will cope without m_c in their lives.",
+      "It just doesn't feel real. r_c stares at m_c's body blankly, waiting for this horrible nightmare to end."
+                    
+    ],
+    "no_body": [
+      "r_c looks at all the cats sitting vigil for m_c, and wonders how any of them will cope without m_c in their lives."
+    ]
+
+  },
+  "trust": {
+    "body": [
+      "r_c will miss m_c, truly. There was no other cat they trusted more and they already miss m_c's steady presence at their side.",
+      "How is r_c supposed to keep going? They thought m_c was always going to be there, was supposed to always be by their side, but now. . .",
+      "It's like losing a tail, or a limb, or their shadow. r_c relied on m_c, trusted them, and contemplating trying to move on from their loss seems impossible."
+                    
+    ],
+    "no_body": [
+      "r_c will miss m_c, truly. There was no other cat they trusted more and they already miss m_c's steady presence at their side.",
+      "How is r_c supposed to keep going? They thought m_c was always going to be there, was supposed to always be by their side, but now. . .",
+      "It's like losing a tail, or a limb, or their shadow. r_c relied on m_c, trusted them, and contemplating trying to move on from their loss seems impossible."
+    ]
+
+  }
+}

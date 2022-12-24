@@ -1,0 +1,999 @@
+[
+    {
+        "patrol_id": "dst_gen_hunt_twolegplace1",
+        "biome": "desert",
+        "season": "Any",
+        "tags": [
+            "hunting"
+        ],
+        "intro_text": "The patrol approaches a very strange twoleg place. Gigantic metal leaves lie in unnatural rows, shading the desert beneath them, metal tree branches snake straightly across the ground, and a little twoleg hut sits in one corner, seemingly abandoned.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "The patrol has a successful hunt. While twolegs seem to have built this metal forest, they've also apparently abandoned it.",
+            "The shade of the metal forest offers countless desert creatures as possible prey, and the cats have a very successful hunt, hiding from the sunlight under twoleg leaves."
+        ],
+        "fail_text": [
+            "The patrol tries, but the unnatural environment causes everyone to be on edge, and their hunt is unsuccessful."
+        ],
+        "min_cats": 1,
+        "max_cats": 3,
+        "antagonize_text": "The cats leap onto a twoleg metal leaf, sending it over with a mighty crash. This is c_n territory, not twoleg!",
+        "antagonize_fail_text": "Your cats try to knock over a metal leaf, but there aren't enough of them to force it over."
+    },
+    {
+        "patrol_id": "dst_gen_hunt_twolegplace2",
+        "biome": "desert",
+        "season": "Any",
+        "tags": [
+            "hunting"
+        ],
+        "intro_text": "The patrol approaches a very strange twoleg place. Gigantic metal leaves lie in unnatural rows, shading the desert beneath them, metal tree branches snake straightly across the ground, and a little twoleg hut sits in one corner, seemingly abandoned.",
+        "decline_text": "The patrol decides to hunt elsewhere.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "The patrol cats split up, using sentries to ensure that nothing disturbs their hunts.",
+            "The shade of the metal forest offers countless desert creatures as possible prey, and the cats have a very successful hunt, hiding from the sunlight under twoleg leaves. "
+        ],
+        "fail_text": [
+            "The patrol tries, but the unnatural environment causes everyone to be on edge, and their hunt is unsuccessful."
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": "The cats leap onto a twoleg metal leaf, sending it over with a mighty crash. This is c_n territory, not twoleg!",
+        "antagonize_fail_text": "The cats try to knock over a metal leaf. It works, but several members of the patrol spring backward, yowling in pain - the twolegs have trapped the leaf, storing fire that does not burn in it!"
+    },
+    {
+        "patrol_id": "dst_hunt_strange1",
+        "biome": "desert",
+        "season": "Any",
+        "tags": [
+            "hunting"
+        ],
+        "intro_text": "The patrol looks around for something to disguise their scent while hunting.",
+        "decline_text": "On second thought, maybe not.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "They can't think of anything that would work, but their hunt goes well regardless.",
+            "A sand bath will do! The plan works and their hunt goes well.",
+            "s_c leads them to some rabbit droppings in the scrubland - it's not clean, but it's extremely effective, and the patrol hunts well.",
+            "s_c tells the patrol to roll in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelts though."
+        ],
+        "fail_text": [
+            "The patrol finds nothing to disguise their scent, and no prey either.",
+            "The patrol finds no prey; it seems like all the prey was scared off because of their stench!"
+        ],
+        "win_skills": [
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 2,
+        "max_cats": 6
+    },
+    {
+        "patrol_id": "dst_hunt_strange2",
+        "biome": "desert",
+        "season": "Any",
+        "tags": [
+            "hunting"
+        ],
+        "intro_text": "r_c looks around for something to disguise their scent while hunting.",
+        "decline_text": "On second thought, maybe not.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "They can't think of anything that would work, but their hunt goes well regardless.",
+            null,
+            "s_c finds some rabbit droppings in the scrublands - it's not clean, but it's extremely effective, and the hunt goes well.",
+            "s_c rolls in a patch of garlic to disguise their scent, which works perfectly. It's a funny taste to wash off their pelt though."
+        ],
+        "fail_text": [
+            "The patrol finds nothing to disguise their scent, and no prey either.",
+            "r_c finds no prey; it seems like all the prey was scared off because of their stench!"
+        ],
+        "win_skills": [
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "dst_hunt_solo1",
+        "biome": "desert",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "apprentice",
+            "injury",
+            "scar"
+        ],
+        "intro_text": "r_c's mentor assesses them by sending them on a solo hunt.",
+        "decline_text": "r_c asks their mentor to do the assessment some other time.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "r_c manages a skillful catch, and brings it back to the camp to show everyone!",
+            "r_c focuses completely on their test, slipping into a cleareyed, razor focused routine of catch and stash, catch and stash. Eventually they've caught enough to need their mentor's help carrying it back to camp, and the feeling seeing their prey stock the fresh-kill pile - they feel ready to burst with happiness!",
+            null,
+            "It's a terrible day for hunting, the prey running sparse and alert. But s_c takes their time and doesn't let the conditions discourage them, until eventually the perfect opportunity falls into place and they pull off a perfect catch!"
+        ],
+        "fail_text": [
+            "Hunting is poor, and while r_c's mentor is disappointed, they don't expect r_c to be able to catch what isn't there.",
+            "s_c is too hasty, bouncing after first one prey, then another, and it ends with them empty pawed and exhausted. Their mentor is disappointed - they clearly need more training.",
+            null,
+            "While on the hunt, r_c tumbles right down a steep slope while their attention is elsewhere. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
+        ],
+        "win_skills": [
+            "None"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "adventurous",
+            "bold",
+            "charismatic",
+            "childish",
+            "confident",
+            "daring",
+            "playful",
+            "righteous"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "history_text": [
+            "r_c got injured as an apprentice, exploring alone."
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_solo2",
+        "biome": "desert",
+        "season": "Any",
+        "tags": [
+            "hunting"
+        ],
+        "intro_text": "r_c heads out into the desert alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "r_c heads off to one of their favorite spots in the desert, a dry river bed with plenty of trees and bushes providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that hare thought.",
+            "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates.",
+            "s_c gets the chance to try out an idea they've been sitting on for a while. There's a nest of lizards that they've spotted that've chosen a particularly bad home, and they manage to reach down into one of the rock refuges, fishing out small reptiles by the handful.",
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+        ],
+        "fail_text": [
+            "You can't catch what isn't there, and the prey today is very not there.",
+            "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. The come back to camp, empty pawed and prickling with frustration.",
+            null,
+            null
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "bold",
+            "childish",
+            "confident",
+            "daring",
+            "playful"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "dst_hunt_solo3",
+        "biome": "desert",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "deputy"
+        ],
+        "intro_text": "r_c heads out into the desert alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "r_c heads off to one of their favorite spots in the desert, a dry river bed with plenty of trees and bushes providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that hare thought. They snicker to themselves as they pad back to camp.",
+            "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
+            "s_c gets the chance to try out an idea they've been sitting on for a while. There's a nest of lizards that they've spotted that've chosen a particularly bad home, and they manage to reach down into one of the rock refuges, fishing out small reptiles by the handful. This is a good spot to remember when c_n hits hard times in Greenleaf.",
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+        ],
+        "fail_text": [
+            "You can't catch what isn't there, and the prey today is very not there.",
+            "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there.",
+            null,
+            null
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "bold",
+            "childish",
+            "confident",
+            "daring",
+            "playful"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "dst_hunt_solo4",
+        "biome": "desert",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "leader"
+        ],
+        "intro_text": "r_c heads out into the desert  alone, wanting to sink their teeth into some prey and have some time to themselves.",
+        "decline_text": "r_c turns back to camp, deciding that a group hunt would be more effective.",
+        "chance_of_success": 30,
+        "exp": 20,
+        "success_text": [
+            "r_c heads off to one of their favorite spots in the desert, a dry river bed with plenty of trees and bushes providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that hare thought. They snicker to themselves as they pad back to camp.",
+            "r_c finds a fat, dumb, slow ground squirrel, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
+            "s_c gets the chance to try out an idea they've been sitting on for a while. There's a nest of lizards that they've spotted that've chosen a particularly bad home, and they manage to reach down into one of the rock refuges, fishing out small reptiles by the handful. This is a good spot to remember when c_n hits hard times in Greenleaf.",
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+        ],
+        "fail_text": [
+            "You can't catch what isn't there, and the prey today is very not there.",
+            "s_c starts the day with endless energy, but as one hunt fails after another, it very quickly runs dry. They give up and return to camp, to try and at least make progress on all the work piling up there.",
+            null,
+            null
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "lonesome",
+            "loyal",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "bold",
+            "childish",
+            "confident",
+            "daring",
+            "playful"
+        ],
+        "min_cats": 1,
+        "max_cats": 1
+    },
+    {
+        "patrol_id": "dst_hunt_gonetnr1",
+        "biome": "desert",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "gone",
+            "small_prey"
+        ],
+        "intro_text": "r_c encounters a swarm of Twolegs, gathered in a dry riverbed.",
+        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "r_c immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
+            "Slyly, r_c uses the unusual presence of the weird twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+            "s_c spots the Twolegs unloading metal boxes from their monsters, and recognises that it can't be anything good, leaving immediately.",
+            "s_c spits in the Twolegs' direction and picking a different place to hunt."
+        ],
+        "fail_text": [
+            null,
+            "s_c has heard terrible things about Twolegs, but they still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around them. They're taken out of the desert with the injured Twoleg.",
+            "r_c mostly ignores the Twolegs as they hunt, crawling into a metal box to follow the scent of food. But when they try to back up, the way is blocked, and there's nothing they can do - eventually the Twolegs notice, and r_c is taken by them.",
+            null
+        ],
+        "win_skills": [
+            "extremely smart"
+        ],
+        "win_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_gonetnr2",
+        "biome": "desert",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "gone",
+            "small_prey"
+        ],
+        "intro_text": "r_c encounters a swarm of Twolegs, gathered in a dry riverbed.",
+        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
+            "Slyly, the cats use the unusual presence of the weird twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+            "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+            "s_c stops anyone from going near the twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back into the desert."
+        ],
+        "fail_text": [
+            null,
+            "s_c has heard terrible things about Twolegs, but they still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around them. They're taken out of the desert with the injured Twoleg.",
+            "r_c mostly ignores the Twolegs as they hunt, crawling into a metal box to follow the scent of food. But when they try to back up, the way is blocked, and there's nothing they or the patrol can do - eventually the Twolegs notice, and r_c is taken by them.",
+            null
+        ],
+        "win_skills": [
+            "extremely smart"
+        ],
+        "win_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "min_cats": 2,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_gonetnr3",
+        "biome": "desert",
+        "season": "Any",
+        "tags": [
+            "hunting",
+            "gone",
+            "big_prey"
+        ],
+        "intro_text": "r_c encounters a swarm of Twolegs, gathered in a dry riverbed.",
+        "decline_text": "Your patrol decides to hunt elsewhere.",
+        "chance_of_success": 60,
+        "exp": 20,
+        "success_text": [
+            "Your patrol immediately turns and heads for home to report this to their leader, alarmed by the sudden presence of Twolegs in their territory.",
+            "Slyly, the cats use the unusual presence of the weird twolegs to help their hunt, hiding on the outskirts of the area and waiting for the Twolegs to flush prey towards them. It works, and they leave the Twolegs to their business.",
+            "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+            "s_c stops anyone from going near the twolegs, repeating that true warriors have nothing to do with Twolegs and their monsters, and the patrol leaves back into the desert."
+        ],
+        "fail_text": [
+            null,
+            "s_c has heard terrible things about Twolegs, but they still creep closer when one falls and starts yowling with pain. It's a mistake, and a trap snaps shut around them. They're taken out of the desert with the injured Twoleg.",
+            "r_c mostly ignores the Twolegs as they hunt, crawling into a metal box to follow the scent of food. But when they try to back up, the way is blocked, and there's nothing they or the patrol can do - eventually the Twolegs notice, and r_c is taken by them.",
+            null
+        ],
+        "win_skills": [
+            "extremely smart"
+        ],
+        "win_trait": [
+            "ambitious",
+            "bloodthirsty",
+            "cold",
+            "fierce",
+            "shameless",
+            "strict",
+            "troublesome",
+            "vengeful"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "altruistic",
+            "compassionate",
+            "empathetic",
+            "faithful",
+            "loving",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            null,
+            null
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_thunderpath1",
+        "biome": "desert",
+        "season": "Any",
+        "tags": [
+            "death",
+            "scar",
+            "retirement",
+            "injury",
+            "hunting",
+            "small_prey"
+        ],
+        "intro_text": "The patrol comes across a thunderpath running through the desert.",
+        "decline_text": "They decide it is better not to cross.",
+        "chance_of_success": 60,
+        "exp": 10,
+        "success_text": [
+            "Your patrol waits until they can hear the wind whistling, not a murmur of a monster, and crosses the thunderpath to hunt on the other side.",
+            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly sandy paws, but a successful haul of prey.",
+            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side. The deserts have so few monsters passing through anyway, there's no need to be hasty."
+        ],
+        "fail_text": [
+            "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+            null,
+            "r_c is hit by a monster while crossing and dies instantly. c_n is shaken by the death, and it's a reminder to every cat that just because their territory contains few thunderpaths doesn't mean they can forget their dangers.",
+            "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because their territory contains few thunderpaths doesn't mean they can forget their dangers."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c was heavily injured by a monster, and carries the scars from it.",
+            "r_c was hit by a monster and killed.",
+        "were hit by a monster"
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_thunderpath2",
+        "biome": "desert",
+        "season": "Any",
+        "tags": [
+            "death",
+            "scar",
+            "retirement",
+            "injury",
+            "hunting",
+            "small_prey",
+            "cruel_season"
+        ],
+        "intro_text": "The patrol comes across a thunderpath running through the desert.",
+        "decline_text": "They decide it is better not to cross.",
+        "chance_of_success": 30,
+        "exp": 10,
+        "success_text": [
+            "Your patrol waits until they can hear the wind whistling, not a murmur of a monster, and crosses the thunderpath to hunt on the other side.",
+            "Your patrol finds a pipe running under the thunderpath and uses it to cross. They end up with slightly sandy paws, but a successful haul of prey.",
+            "Your patrol stops on the edge of the thunderpath, and s_c organizes a thorough search that finds a flattened squirrel. It's a reminder of the danger of the thunderpath, and a good source of scavenged meat.",
+            "s_c is patient enough to wait until the thunderpath is completely clear, then trots across calmly to hunt on the other side. The deserts have so few monsters passing through anyway, there's no need to be hasty."
+        ],
+        "fail_text": [
+            "r_c hears a monster thundering towards them, but it screeches to a halt just in time. That was close! Maybe it's best to go back to camp.",
+            null,
+            "r_c is crossing the thunderpath and hears a monster thundering towards them. They freeze, and the monster swerves to hit them deliberately, killing them instantly. c_n is shaken by the death, and it's a reminder to every cat that just because their territory contains few thunderpaths doesn't mean they can forget their dangers.",
+            "r_c is hit by a monster and seems quite injured, but miraculously still alive. c_n is shaken by the incident, and it's a reminder to every cat that just because their territory contains few thunderpaths doesn't mean they can forget their dangers."
+        ],
+        "win_skills": [
+            "smart",
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "calm",
+            "careful",
+            "insecure",
+            "nervous",
+            "sneaky",
+            "strange",
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "r_c was heavily injured by a monster, and carries the scars from it.",
+            "r_c was hit by a monster and killed.",
+        "were hit by a monster"
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_heat1",
+        "biome": "desert",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "illness",
+            "death",
+            "small_prey",
+            "warrior",
+            "no_app"
+        ],
+        "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
+        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "chance_of_success": 50,
+        "exp": 15,
+        "success_text": [
+            "r_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
+            "r_c considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip their positions and drive it out into the heat, which slowly kills it.",
+            "Anticipating the heat of the Greenleaf sun, s_c has positioned themselves in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly.",
+            "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but also s_c, and they settle back down to wait until it's cooler to try and bring their catch back to c_n."
+        ],
+        "fail_text": [
+            "Making the smart choice, r_c doesn't move from the shade, taking a good long nap in the heat.",
+            null,
+            "r_c starts feeling confused and fuzzy as they walk, but ignore it. It takes them too long to recognise the symptoms of heat exhaustion, and when they do it's too late, with r_c stranded far from shade. Dizzy and retching, they collapse on the desert sands.,",
+            "r_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a clanmate finds them that they're able to totter home shakily."
+        ],
+        "win_skills": [
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise",
+            "calm",
+            "careful",
+            "nervous",
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "This cat got heatstroke while on a patrol.",
+            "r_c died from heatstroke.",
+            "died from heatstroke"
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_heat2",
+        "biome": "desert",
+        "season": "greenleaf",
+        "tags": [
+            "hunting",
+            "illness",
+            "death",
+            "apprentice"
+        ],
+        "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
+        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "chance_of_success": 50,
+        "exp": 15,
+        "success_text": [
+            "app1 watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
+            "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncortable shade of a cactus.",
+            null,
+            "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c waits."
+        ],
+        "fail_text": [
+            "Making the smart choice, app1 doesn't move from the shade, taking a good long nap in the heat.",
+            "Refusing to stop hunting, app1 bodly decides to go into a canyon where it'll be cooler. They don't find any prey, but don't overheat either.",
+            "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
+            "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a clanmate finds them that they're able to totter home shakily.",
+            "When s_c doesn't return to camp that evening, a search party goes out for them. They find app1 collapsed and badly affected by heat stroke, and carry them back to camp where their might be a way to help them. However, app1's breathing stops on the journey home, and they slip to StarClan.",
+            "When s_c doesn't return to camp that evening, a search party goes out for them. They find app1 collapsed and badly affected by heat stroke, and carry them back to camp where their might be a way to help them."
+        ],
+        "win_skills": [
+            "None"
+        ],
+        "win_trait": [
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise",
+            "calm",
+            "careful",
+            "nervous",
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "adventurous",
+            "bold",
+            "daring",
+            "ambitious",
+            "shameless",
+            "troublesome"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "This cat got heatstroke while on a patrol.",
+            "This cat died from heat stroke.",
+            "died from heatstroke"
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_heat3",
+        "biome": "desert",
+        "season": "newleaf",
+        "tags": [
+            "hunting",
+            "illness",
+            "death",
+            "small_prey",
+            "warrior",
+            "no_app"
+        ],
+        "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
+        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "chance_of_success": 50,
+        "exp": 15,
+        "success_text": [
+            "r_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
+            "r_c considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip their positions and drive it out into the heat, which slowly kills it.",
+            "Anticipating the heat of the sun, s_c has positioned themselves in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly.",
+            "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but also s_c, and they settle back down to wait until it's cooler to try and bring their catch back to c_n."
+        ],
+        "fail_text": [
+            "Making the smart choice, r_c doesn't move from the shade, taking a good long nap in the heat.",
+            null,
+            null,
+            "r_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a clanmate finds them that they're able to totter home shakily."
+        ],
+        "win_skills": [
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise",
+            "calm",
+            "careful",
+            "nervous",
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "This cat got heatstroke while on a patrol.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_heat4",
+        "biome": "desert",
+        "season": "newleaf",
+        "tags": [
+            "hunting",
+            "illness",
+            "death",
+            "apprentice"
+        ],
+        "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
+        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "chance_of_success": 50,
+        "exp": 15,
+        "success_text": [
+            "app1 watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
+            "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncortable shade of a cactus.",
+            null,
+            "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c waits."
+        ],
+        "fail_text": [
+            "Making the smart choice, app1 doesn't move from the shade, taking a good long nap in the heat.",
+            null,
+            "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
+            "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a clanmate finds them that they're able to totter home shakily."
+        ],
+        "win_skills": [
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise",
+            "calm",
+            "careful",
+            "nervous",
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "This cat got heatstroke while on a patrol.",
+            "This cat died from heat stroke.",
+            "died from heatstroke"
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_heat5",
+        "biome": "desert",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "illness",
+            "death",
+            "small_prey",
+            "warrior",
+            "no_app"
+        ],
+        "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
+        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "chance_of_success": 50,
+        "exp": 15,
+        "success_text": [
+            "r_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
+            "r_c considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except this burrow seems occupied. The tortoise inside puts up a fight, but r_c manages to flip their positions and drive it out into the heat, which slowly kills it.",
+            "Anticipating the heat of the sun, s_c has positioned themselves in the shadowed depths around a shaded tiny pool in the rocks. As predicted, it's not long until the water draws in a Thunderpath-runner, and the bird is dispatched neatly and quietly.",
+            "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but also s_c, and they settle back down to wait until it's cooler to try and bring their catch back to c_n."
+        ],
+        "fail_text": [
+            "Making the smart choice, r_c doesn't move from the shade, taking a good long nap in the heat.",
+            null,
+            null,
+            "r_c collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a clanmate finds them that they're able to totter home shakily."
+        ],
+        "win_skills": [
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise",
+            "calm",
+            "careful",
+            "nervous",
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "This cat got heatstroke while on a patrol.",
+            null
+        ]
+    },
+    {
+        "patrol_id": "dst_hunt_heat6",
+        "biome": "desert",
+        "season": "leaf-fall",
+        "tags": [
+            "hunting",
+            "illness",
+            "death",
+            "apprentice"
+        ],
+        "intro_text": "The sun beats down on the desert, driving every creature away from it's gaze with blinding heat.",
+        "decline_text": "Giving up on the hunt, r_c finds a burrow to wait out the heat of the day until they can return back to camp.",
+        "chance_of_success": 50,
+        "exp": 15,
+        "success_text": [
+            "app1 watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun, but their pounce is too soon, and their prey lives to see another day.",
+            "app1 considers pushing through to try to find a catch, but it's not worth it. They find a burrow to wait out the heat of the day - except their burrow is occupied, and app1 instead has to wait out the heat in the uncortable shade of a cactus.",
+            null,
+            "s_c watches from the shade of a large rock formation. Eventually their wait pays off, and they spot a lizard searching for shelter from the sun. It finds shelter, but sadly not in the place s_c waits."
+        ],
+        "fail_text": [
+            "Making the smart choice, app1 doesn't move from the shade, taking a good long nap in the heat.",
+            null,
+            "app1 doesn't make it back to camp. A patrol sent out for them find their body, collapsed in a shadeless part of the territory and already starting to dry out and mummify.",
+            "app1 collapses from heat exhaustion while trying to position themselves for a hunt. They're able to move to the shade, but the hunt is over, and it's only when a clanmate finds them that they're able to totter home shakily."
+        ],
+        "win_skills": [
+            "very smart",
+            "extremely smart"
+        ],
+        "win_trait": [
+            "patient",
+            "responsible",
+            "thoughtful",
+            "wise",
+            "calm",
+            "careful",
+            "nervous",
+            "strange"
+        ],
+        "fail_skills": [
+            "None"
+        ],
+        "fail_trait": [
+            "None"
+        ],
+        "min_cats": 1,
+        "max_cats": 1,
+        "antagonize_text": null,
+        "antagonize_fail_text": null,
+        "history_text": [
+            "This cat got heatstroke while on a patrol.",
+            "This cat died from heat stroke.",
+            "died from heat stroke"
+        ]
+    }
+]

@@ -1,0 +1,213 @@
+{
+    "claw-wound": [
+        "m_c has healed from their claw-wound.",
+        "m_c's claw-wound has healed.",
+        "m_c's wound has healed well."
+    ],
+    "bite-wound": [
+        "m_c has healed from their bite-wound.",
+        "m_c's bite-wound has healed.",
+        "m_c has healed well from their bite-wound."
+    ],
+    "cat bite": [
+        "m_c has healed from their cat bite.",
+        "m_c's cat bite has healed.",
+        "m_c has healed well from their cat bite."
+    ],
+    "beak bite": [
+        "m_c has healed from their cat bite.",
+        "m_c's cat bite has healed.",
+        "m_c has healed well from their cat bite."
+    ],
+    "snake bite": [
+        "The snake bite m_c got has healed.",
+        "m_c's snake bite has healed.",
+        "m_c has healed from the snake bite they got."
+    ],
+    "rat bite": [
+        "m_c has healed from their rat bite.",
+        "The rat bite m_c had gotten has healed.",
+        "m_c's rat bite has healed."
+    ],
+    "tick bites": [
+        "The tick bites m_c was suffering from have healed.",
+        "m_c's tick bites are no longer bothering them.",
+        "m_c's tick bites have healed up."
+    ],
+    "blood loss": [
+        "m_c has recovered from the blood loss they suffered.",
+        "m_c is no longer suffering from blood loss.",
+        "m_c has made a full recovery from the blood loss they suffered."
+    ],
+    "broken jaw": [
+        "m_c's broken jaw has healed.",
+        "m_c has healed well from the broken jaw they suffered.",
+        "m_c's jaw no longer bothers them, it seems to have healed from its break."
+    ],
+    "broken bone": [
+        "m_c's broken bone has healed.",
+        "m_c is happy to find their body pain free, it seems their broken bone has finally healed.",
+        "m_c has healed from their broken bone."
+    ],
+    "mangled leg": [
+        "m_c has healed from their mangled leg.",
+        "m_c's mangled leg has healed up.",
+        "m_c's mangled leg is looking much better and seems to have healed well.",
+        "m_c's leg seems to be much better.",
+        "m_c's leg has healed."
+    ],
+    "dislocated joint": [
+        "m_c's dislocated joint has been popped back into place and is feeling much better.",
+        "m_c has recovered from their dislocated joint."
+    ],
+    "joint pain": [
+        "The joint pain m_c was experiencing has abated.",
+        "m_c is no longer suffering from joint pain.",
+        "m_c's joint pain is gone.",
+        "m_c's joint pain is feeling much better.",
+        "m_c has recovered from their joint pain and is happy to be moving around pain free."
+    ],
+    "sprain": [
+        "m_c's sprain has healed.",
+        "m_c's sprain is feeling much better.",
+        "m_c can walk and move without pain, their sprain must have healed.",
+        "m_c has recovered from their sprain."
+    ],
+    "mangled tail": [
+        "m_c's tail has healed well.",
+        "m_c's mangled tail seems to be fully healed.",
+        "m_c has recovered from their mangled tail.",
+        "m_c's tail is feeling much better."
+    ],
+    "bruises": [
+        "m_c's bruises have healed.",
+        "m_c is feeling much better, their bruises are gone.",
+        "m_c's bruises are gone.",
+        "m_c's bruises have disappeared.",
+        "m_c is no longer bruised."
+    ],
+    "cracked pads": [
+        "m_c's pads have healed.",
+        "m_c can walk without pain, their cracked pads have healed.",
+        "m_c's cracked pads are feeling better.",
+        "m_c's pads are no longer cracked.",
+        "m_c's cracked pads have healed."
+    ],
+    "sore": [
+        "m_c is no longer sore.",
+        "m_c's soreness has abated.",
+        "m_c feels much better, their soreness is gone.",
+        "m_c's soreness is gone."
+    ],
+    "phantom pain": [
+        "m_c's phantom pain has abated.",
+        "m_c's phantom pain is gone.",
+        "m_c's missing limb no longer hurts.",
+        "m_c feels much better, their missing limb no longer causing them pain.",
+        "m_c is relieved to find their phantom pain gone."
+    ],
+    "scrapes": [
+        "m_c's scrapes have healed.",
+        "m_c's scrapes are all better.",
+        "m_c's scrapes are gone.",
+        "m_c is no longer all scraped up.",
+        "m_c has healed from all their scrapes."
+    ],
+    "splinter": [
+        "m_c finally got rid of their splinter.",
+        "m_c's splinter is gone.",
+        "m_c feels much better after they get rid of their splinter.",
+        "m_c's splinter has been pulled out.",
+        "m_c no longer has a splinter."
+    ],
+    "torn pelt": [
+        "m_c's pelt is looking much better.",
+        "m_c's pelt is no longer torn.",
+        "m_c's pelt has recovered from being so torn.",
+        "m_c's torn pelt has healed.",
+        "m_c grooms their pelt, happy to find the tears and wounds in it gone."
+    ],
+    "torn ear": [
+        "m_c's ear is feeling much better.",
+        "m_c's torn ear has healed.",
+        "m_c's ear is no longer torn."
+    ],
+    "frostbite": [
+        "m_c's frostbite is gone.",
+        "m_c has managed to get rid of their frostbite.",
+        "m_c has recovered from their frostbite.",
+        "m_c is no longer frostbitten."
+    ],
+    "recovering from birth": [
+        "m_c has recovered from birthing their litter.",
+        "m_c finally feels back to normal after the strain of birthing a litter.",
+        "m_c has healed from the strain of delivering their litter."
+    ],
+    "water in their lungs": [
+        "m_c's lungs finally feel back to normal.",
+        "m_c is breathing normally again, the water in their lungs is gone.",
+        "m_c has recovered from the water in their lungs",
+        "There's no longer water in m_c's lungs, they're back to breathing normally.",
+        "m_c's breathing has returned to normal, their lungs are no longer filled with water."
+    ],
+    "burn": [
+        "m_c's burn has healed.",
+        "m_c has healed from their burn.",
+        "m_c is no longer suffering from a burn.",
+        "m_c has recovered from the burn they suffered."
+    ],
+    "severe burn": [
+        "m_c was lucky and they've recovered from the severe burn they got.",
+        "m_c has healed from their severe burn.",
+        "m_c's severe burn has finally healed."
+    ],
+    "shock": [
+        "m_c is no longer suffering from shock.",
+        "m_c feels much better and is no longer suffering from shock.",
+        "m_c's shock is gone.",
+        "m_c is no longer in shock.",
+        "m_c finally feels more like themselves, their shock is gone."
+    ],
+    "lingering shock": [
+        "It took a little while, but m_c finally feels normal again.",
+        "m_c has finally processed the shock of their ordeal.",
+        "m_c feels much better this moon, the old memories of their pain fading."
+    ],
+    "shivering": [
+        "m_c has finally warmed up and is no longer shivering.",
+        "m_c thought the chill in their bones would never leave, but thankfully they feel warm again.",
+        "m_c's shivers have died down.",
+        "m_c is no longer shivering."
+    ],
+    "dehydrated": [
+        "m_c has recovered from the dehydration they were suffering.",
+        "After a lot of water and rest, m_c finally feels better.",
+        "m_c is no longer dehydrated."
+    ],
+    "head damage": [
+        "m_c has healed from their head damage.",
+        "m_c's head damage has healed.",
+        "m_c's head finally feels better.",
+        "m_c's head is no longer painful."
+    ],
+    "damaged eyes": [
+        "m_c's eyes have healed.",
+        "m_c's eyes are no longer damaged.",
+        "m_c's eyes have recovered from their injury."
+    ],
+    "quilled by a porcupine": [
+        "The porcupine quills stuck in m_c's pelt have finally been removed.",
+        "m_c has recovered from the wounds they got from the porcupine.",
+        "The barbed quills were no fun to remove, but at least m_c is feeling better now."
+    ],
+    "poisoned": [
+        "m_c got very lucky and has managed to recover from the poison.",
+        "Despite the lethality of the poison that coursed through them, m_c has managed to stay alive.",
+        "m_c has recovered from the poison.",
+        "m_c is no longer poisoned."
+    ],
+    "broken back": [
+        "m_c's broken back has healed and they've made a full recovery against all odds.",
+        "m_c is ecstatic to be walking around freely again, their broken back finally healed."
+    ]
+}

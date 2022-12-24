@@ -127,7 +127,7 @@ def bs_blurb_text(cat):
     if backstory == 'ostracized_warrior':
         bs_blurb = "This cat was ostracized from their old clan, but no one really knows why."
     if backstory == 'disgraced':
-        bs_blurb = "This cat was cast out of their old clan for some transgression that they’re not keen on " \
+        bs_blurb = "This cat was cast out of their old clan for some transgression that they're not keen on " \
                    "talking about."
     if backstory == 'retired_leader':
         bs_blurb = "This cat used to be the leader of another clan before deciding they needed a change of scenery " \
@@ -138,6 +138,9 @@ def bs_blurb_text(cat):
                    "leader that had taken over."
     if backstory == 'tragedy_survivor':
         bs_blurb = "Something horrible happened to this cat's previous clan. They refuse to speak about it."
+    if backstory == 'orphaned':
+        bs_blurb = "This cat was found with a deceased parent. The clan took them in, but doesn't hide where " \
+                   "they came from."
     return bs_blurb
 
 
@@ -182,6 +185,8 @@ def backstory_text(cat):
         bs_display = 'refugee'
     elif bs_display == 'tragedy_survivor':
         bs_display = 'survivor of a tragedy'
+    elif bs_display == 'orphaned':
+        bs_display = 'orphaned'
     if bs_display is None:
         bs_display = None
     else:
@@ -378,7 +383,10 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.exile_cat_button:
                 if not self.the_cat.dead and not self.the_cat.exiled:
                     self.the_cat.exiled = True
+                    self.the_cat.outside = True
                     self.the_cat.thought = "Is shocked that they have been exiled"
+                    for app in self.the_cat.apprentice:
+                        app.update_mentor()
                     self.clear_profile()
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
@@ -600,19 +608,19 @@ class ProfileScreen(Screens):
                 next_cat = 1
             else:
                 if next_cat == 0 and Cat.all_cats[
-                    check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                    check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                    check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                    check_cat].exiled and Cat.all_cats[
-                    check_cat].df == self.the_cat.df:
+                        check_cat].ID != self.the_cat.ID and Cat.all_cats[
+                        check_cat].dead == self.the_cat.dead and Cat.all_cats[
+                        check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
+                        check_cat].outside == self.the_cat.outside and Cat.all_cats[
+                        check_cat].df == self.the_cat.df:
                     previous_cat = Cat.all_cats[check_cat].ID
 
                 elif next_cat == 1 and Cat.all_cats[
-                    check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                    check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                    check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                    check_cat].exiled and Cat.all_cats[
-                    check_cat].df == self.the_cat.df:
+                        check_cat].ID != self.the_cat.ID and Cat.all_cats[
+                        check_cat].dead == self.the_cat.dead and Cat.all_cats[
+                        check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
+                        check_cat].outside == self.the_cat.outside and Cat.all_cats[
+                        check_cat].df == self.the_cat.df:
                     next_cat = Cat.all_cats[check_cat].ID
 
                 elif int(next_cat) > 1:
@@ -627,7 +635,6 @@ class ProfileScreen(Screens):
     def generate_column1(self, the_cat):
         """Generate the left column information"""
         output = ""
-
         # SEX/GENDER
         if the_cat.genderalign is None or the_cat.genderalign == the_cat.gender:
             output += str(the_cat.gender)
@@ -742,9 +749,9 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if the_cat.outside:
+        if the_cat.outside and not the_cat.exiled:
             output += "<font color='#FF0000'>lost</font>"
-        elif the_cat.exiled and not the_cat.outside:
+        elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"
         else:
             output += the_cat.status
@@ -764,9 +771,20 @@ class ProfileScreen(Screens):
         if the_cat.mentor is not None:
             output += "mentor: " + str(the_cat.mentor.name) + "\n"
 
+        # CURRENT APPRENTICES
+        # Optional - only shows up if the cat has an apprentice currently
+        if the_cat.apprentice:
+            app_count = len(the_cat.apprentice)
+            if app_count == 1:
+                output += 'apprentice: ' + str(the_cat.apprentice[0].name)
+            elif app_count > 1:
+                output += 'apprentice: ' + ", ".join([str(i.name) for i in the_cat.apprentice])
+
+            # NEWLINE ----------
+            output += "\n"
+
         # FORMER APPRENTICES
         # Optional - Only shows up if the cat has previous apprentice(s)
-        # FORMER APPRENTICES
         if len(the_cat.former_apprentices
                ) != 0 and the_cat.former_apprentices[0] is not None:
 
@@ -806,10 +824,15 @@ class ProfileScreen(Screens):
         output += "\n"
 
         if the_cat.is_disabled():
-            output += 'has a permanent condition'
+            for condition in the_cat.permanent_condition:
+                if the_cat.permanent_condition[condition]['born_with'] is True and \
+                        the_cat.permanent_condition[condition]["moons_until"] != -2:
+                    continue
+                output += 'has a permanent condition'
 
-            # NEWLINE ----------
-            output += "\n"
+                # NEWLINE ----------
+                output += "\n"
+                break
 
         if the_cat.is_injured():
             if "recovering from birth" in the_cat.injuries:
@@ -865,14 +888,12 @@ class ProfileScreen(Screens):
                 tool_tip_text='favorite this tab'
             )
 
-            print(self.open_sub_tab, game.settings['favorite sub tab'])
             if self.open_sub_tab != 'life events':
                 self.toggle_history_sub_tab()
             else:
                 # This will be overwritten in update_disabled_buttons_and_text()
                 self.history_text_box = pygame_gui.elements.UITextBox("", pygame.Rect((80, 480), (615, 142)))
                 self.update_disabled_buttons_and_text()
-
 
     def toggle_user_notes_tab(self):
         """Opens the User Notes portion of the History Tab"""
@@ -890,7 +911,6 @@ class ProfileScreen(Screens):
                                               pygame.Rect((100, 473), (600, 149)),
                                               object_id="#history_tab_text_box",
                                               line_spacing=1)
-
 
         self.update_disabled_buttons_and_text()
 
@@ -1072,26 +1092,26 @@ class ProfileScreen(Screens):
                     influenced_skill = adjust_skill
                     break
 
-            if self.the_cat.former_mentor:
-                mentor = self.the_cat.former_mentor[-1].name
-            else:
-                mentor = None
+        if self.the_cat.former_mentor:
+            mentor = self.the_cat.former_mentor[-1].name
+        else:
+            mentor = None
 
-            # append influence blurb to history
-            if mentor is None:
-                influence_history = "This cat either did not have a mentor, or their mentor is unknown."
-                if self.the_cat.status == 'kitten':
-                    influence_history = 'This cat has not begun training.'
-                if self.the_cat.status in ['apprentice', 'medicine cat apprentice']:
-                    influence_history = 'This cat has not finished training.'
-            elif influenced_trait is not None and influenced_skill is None:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait}."
-            elif influenced_trait is None and influenced_skill is not None:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_skill}."
-            elif influenced_trait is not None and influenced_skill is not None:
-                influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill}."
-            else:
-                influence_history = f"This cat's mentor was {mentor}."
+        # append influence blurb to history
+        if mentor is None:
+            influence_history = "This cat either did not have a mentor, or their mentor is unknown."
+            if self.the_cat.status == 'kitten':
+                influence_history = 'This cat has not begun training.'
+            if self.the_cat.status in ['apprentice', 'medicine cat apprentice']:
+                influence_history = 'This cat has not finished training.'
+        elif influenced_trait is not None and influenced_skill is None:
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait}."
+        elif influenced_trait is None and influenced_skill is not None:
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to {influenced_skill}."
+        elif influenced_trait is not None and influenced_skill is not None:
+            influence_history = f"The influence of their mentor, {mentor}, caused this cat to become more {influenced_trait} as well as {influenced_skill}."
+        else:
+            influence_history = f"This cat's mentor was {mentor}."
 
         return influence_history
 
@@ -1118,7 +1138,6 @@ class ProfileScreen(Screens):
     def toggle_conditions_tab(self):
         """Opens the conditions tab"""
         previous_open_tab = self.open_tab
-        print('toggled')
         # This closes the current tab, so only one can be open at a time
         self.close_current_tab()
 
@@ -1187,6 +1206,10 @@ class ProfileScreen(Screens):
         # check for permanent conditions and create their detail boxes
         if self.the_cat.is_disabled():
             for condition in self.the_cat.permanent_condition:
+                if self.the_cat.permanent_condition[condition]['born_with'] is True and \
+                        self.the_cat.permanent_condition[condition][
+                            "moons_until"] != -2:
+                    continue
                 # move to second page if count gets too high
                 if count < 4 and container != self.second_page:
                     container = self.first_page
@@ -1201,7 +1224,7 @@ class ProfileScreen(Screens):
                 # display the detail text
                 y_adjust = 30
                 # title
-                if len(str(condition)) > 18:
+                if len(str(condition)) > 17:
                     y_adjust += 18
                 self.condition_name_text = UITextBoxTweaked(
                     condition,
@@ -1454,7 +1477,7 @@ class ProfileScreen(Screens):
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
             #    If you can think of a better way to do this, please fix! 
             self.cis_trans_button = UIImageButton(pygame.Rect((402, 486), (0, 0)), "", visible=False)
-            self.toggle_kits = UIImageButton(pygame.Rect(((402, 574)), (0, 0)), "", visible=False)
+            self.toggle_kits = UIImageButton(pygame.Rect((402, 574), (0, 0)), "", visible=False)
             self.update_disabled_buttons_and_text()
 
     def toggle_dangerous_tab(self):
@@ -1469,13 +1492,23 @@ class ProfileScreen(Screens):
             pass
         else:
             self.open_tab = 'dangerous'
-            self.kill_cat_button = UIImageButton(pygame.Rect((578, 486), (172, 36)), "", object_id="#kill_cat_button")
+            self.kill_cat_button = UIImageButton \
+                (pygame.Rect((578, 486), (172, 36)),
+                 "",
+                 object_id="#kill_cat_button",
+                 tool_tip_text='This cannot be reversed.'
+                 )
             self.close_tab_button = UIImageButton(pygame.Rect((578, 522), (172, 36)), "", object_id="#close_tab_button")
 
             # These are a placeholders, to be killed and recreated in self.update_disabled_buttons_and_text().
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
             #    If you can think of a better way to do this, please fix! 
-            self.exile_cat_button = UIImageButton(pygame.Rect((578, 486), (172, 36)), "", visible=False)
+            self.exile_cat_button = UIImageButton(
+                pygame.Rect((578, 486), (172, 36)),
+                "",
+                visible=False,
+                tool_tip_text='This cannot be reversed.'
+            )
             self.update_disabled_buttons_and_text()
 
     def update_disabled_buttons_and_text(self):
@@ -1510,7 +1543,7 @@ class ProfileScreen(Screens):
             deputy = game.clan.deputy
             if game.clan.deputy is None:
                 deputy = None
-            elif game.clan.deputy.exiled:
+            elif game.clan.deputy.outside:
                 deputy = None
             elif game.clan.deputy.dead:
                 deputy = None
@@ -1520,10 +1553,10 @@ class ProfileScreen(Screens):
             self.toggle_deputy_button.kill()
             if self.the_cat.status in [
                 'warrior'
-            ] and not self.the_cat.dead and not self.the_cat.exiled and deputy is None:
+            ] and not self.the_cat.dead and not self.the_cat.outside and deputy is None:
                 self.toggle_deputy_button = UIImageButton(pygame.Rect((226, 486), (172, 36)), "",
                                                           object_id="#promote_deputy_button")
-            elif self.the_cat.status in ['deputy'] and not self.the_cat.dead and not self.the_cat.exiled:
+            elif self.the_cat.status in ['deputy'] and not self.the_cat.dead and not self.the_cat.outside:
                 self.toggle_deputy_button = UIImageButton(pygame.Rect((226, 486), (172, 36)), "",
                                                           object_id="#demote_deputy_button")
             else:
@@ -1536,23 +1569,26 @@ class ProfileScreen(Screens):
             self.close_tab_button.kill()
             self.toggle_med_button.kill()
             # Switch apprentice to medicine cat apprentice
-            if self.the_cat.status in ['apprentice'] and not self.the_cat.dead and not self.the_cat.exiled:
+            if self.the_cat.status in ['apprentice'] and not self.the_cat.dead and not self.the_cat.outside:
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 522), (172, 52)), "",
                                                        object_id="#switch_med_app_button")
                 close_button_location = (226, 574)
             # Switch med apprentice to warrior apprentice
             elif self.the_cat.status in [
-                'medicine cat apprentice'] and not self.the_cat.dead and not self.the_cat.exiled:
+                'medicine cat apprentice'] and not self.the_cat.dead and not self.the_cat.outside:
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 522), (172, 52)), "",
                                                        object_id="#switch_warrior_app_button")
                 close_button_location = (226, 574)
             # Switch warrior or elder to med cat.
-            elif self.the_cat.status in ['warrior', 'elder'] and not self.the_cat.dead and not self.the_cat.exiled:
+            elif self.the_cat.status in ['warrior', 'elder'] and not self.the_cat.dead and not self.the_cat.outside:
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 522), (172, 52)), "",
                                                        object_id="#switch_med_cat_button")
                 close_button_location = (226, 574)
             # Switch med cat to warrior
-            elif self.the_cat.status == 'medicine cat' and not self.the_cat.dead and not self.the_cat.exiled:
+            elif self.the_cat.status == 'medicine cat' and \
+                    not self.the_cat.dead and \
+                    not self.the_cat.outside and \
+                    self.the_cat.age != 'elder':
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 522), (172, 36)), "",
                                                        object_id="#switch_warrior_button")
                 close_button_location = (226, 558)
@@ -1601,9 +1637,12 @@ class ProfileScreen(Screens):
             # Button to exile cat
             self.exile_cat_button.kill()
             if not self.the_cat.dead:
-                self.exile_cat_button = UIImageButton(pygame.Rect((578, 450), (172, 36)), "",
-                                                      object_id="#exile_cat_button")
-                if self.the_cat.exiled:
+                self.exile_cat_button = UIImageButton(
+                    pygame.Rect((578, 450), (172, 36)),
+                    "",
+                    object_id="#exile_cat_button",
+                    tool_tip_text='This cannot be reversed.')
+                if self.the_cat.exiled or self.the_cat.outside:
                     self.exile_cat_button.disable()
             elif self.the_cat.dead:
                 self.exile_cat_button = UIImageButton(pygame.Rect((578, 450), (172, 46)), "",
@@ -1611,8 +1650,11 @@ class ProfileScreen(Screens):
                 if self.the_cat.df:
                     self.exile_cat_button.disable()
             else:
-                self.exile_cat_button = UIImageButton(pygame.Rect((578, 450), (172, 36)), "",
-                                                      object_id="#exile_cat_button")
+                self.exile_cat_button = UIImageButton(
+                    pygame.Rect((578, 450), (172, 36)),
+                    "",
+                    object_id="#exile_cat_button",
+                    tool_tip_text='This cannot be reversed.')
                 self.exile_cat_button.disable()
 
             if not self.the_cat.dead:
@@ -1655,16 +1697,21 @@ class ProfileScreen(Screens):
 
                 self.help_button = UIImageButton(pygame.Rect(
                     (52, 584), (34, 34)),
-                     "",
-                     object_id="#help_button",
-                     tool_tip_text="The notes section has limited html capabilities.<br>"
-                                   "Use the following commands with < and > in place of the apostrophes.<br>"
-                                   "-Use 'br' to start a new line.<br>"
-                                   "-Encase text between 'b' and '/b' to bold.<br>"
-                                   "-Encase text between 'i' and '/i' to italicize.<br>"
-                                   "-Encase text between 'u' and '/u' to underline.",
+                    "",
+                    object_id="#help_button",
+                    tool_tip_text="The notes section has limited html capabilities.<br>"
+                                  "Use the following commands with < and > in place of the apostrophes.<br>"
+                                  "-'br' to start a new line.<br>"
+                                  "-Encase text between 'b' and '/b' to bold.<br>"
+                                  "-Encase text between 'i' and '/i' to italicize.<br>"
+                                  "-Encase text between 'u' and '/u' to underline.<br><br>"
+                                  "The following font related codes can be used, "
+                                  "but keep in mind that not all font faces will work.<br>"
+                                  "-Encase text between 'font face = name of font you wish to use' and '/font' to change the font face.<br>"
+                                  "-Encase text between 'font color= #hex code of the color' and '/font' to change the color of the text.<br>"
+                                  "-Encase text between 'font size=number of size' and '/font' to change the text size.",
 
-                     )
+                )
                 if self.editing_notes is True:
                     self.save_text = UIImageButton(pygame.Rect(
                         (52, 514), (34, 34)),
@@ -1682,7 +1729,7 @@ class ProfileScreen(Screens):
                     self.edit_text = UIImageButton(pygame.Rect(
                         (52, 514), (34, 34)),
                         "",
-                        object_id="#checked_checkbox",
+                        object_id="#checked_checkbox_smalltooltip",
                         tool_tip_text='edit text'
                     )
 

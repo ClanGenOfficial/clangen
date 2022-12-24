@@ -85,6 +85,16 @@
             "m_c sighs sadly as r_c suggests that it's time to take their tail off. The flesh is blackened from frostbite and is obviously dead - there's no use in leaving it attached. m_c agrees.",
             "m_c's tail can hardly even move and r_c tells them that the frostbite has progressed too far. If m_c is to survive then the tail will have to be removed.",
             "m_c's tail is finally gone. It was more of a relief than anything. The frostbitten flesh was already dead and blackened, so they had no issue with taking it off before it fell off on its own."
+        ],
+        "partial hearing loss": [
+            "r_c tells m_c that the frostbite had simply progressed too far into their ear, their hearing is permanently damaged.",
+            "m_c concentrates, trying hard to hear the soft whispers of r_c, but it's barely audible at all. r_c shakes their head and tells m_c, in a louder voice, that their hearing was definitely damaged by the frostbite.",
+            "Ever since their ears were frostbit, m_c has struggled to hear clearly."
+        ],
+        "deaf": [
+            "m_c does their best to communicate to r_c with rudimentary tail signals that their hearing is permanently, the frostbite having damaged something deep within.",
+            "m_c watches as r_c talks to another cat in the medicine den, glancing towards them every so often. m_c can't hear a word they're saying. Truthfully, m_c can't hear anything at all anymore. The frostbite was more severe than they realized.",
+            "m_c sits and watches the clan going about their business and tries to get used to the stark silence. They know, instinctively, that their hearing is never coming back. The frostbite must have scarred something deep within their ears."
 
         ]
     },
@@ -120,30 +130,46 @@
     },
     "head damage": {
         "failing eyesight": [
-            ""
+            "m_c tells r_c that their vision seems to be growing blurrier and blurrier by the day. r_c looks worried at the news.",
+            "r_c tests m_c's eyesight one day, asking them to follow r_c's tail with their eyes. m_c struggles with the task and r_c tells them it may be a permanent consequence of their head injury.",
+            "m_c only seems to grow more disoriented, despite their head injury seeming to be fully healed. It seems their vision is blurry and slightly doubled now, they'll have to find a way to adjust."
         ],
         "one bad eye": [
-            ""
+            "m_c waits a few days before telling r_c, hoping that their vision will come back on it's own. It doesn't, however, and they begrudgingly admit to r_c that they haven't been able to see out of one eye ever since they were hit in the head.",
+            "m_c waits a few days before telling r_c, hoping that their vision will come back on it's own. It doesn't, however, and they begrudgingly admit to r_c that they haven't been able to see out of one eye ever since they were hit in the head.",
+            "m_c begins to practice moving around camp, trying to get used to the lack of depth perception that their vision loss is causing."
         ],
         "blind": [
-            ""
+            "The knock to their head has blinded them, is what r_c tells m_c when their vision never returns. Something in their eyes must have been damaged by the blow.",
+            "m_c hasn't been able to see clearly since they were hit in the head, and it only gets worse by the day. Eventually r_c breaks the news that they're going blind.",
+            "m_c stumbles through camp, trying their best to learn the layout. It seems like their head injury has made them go blind and their vision doesn't seem to be returning any time soon."
         ],
         "loss of balance": [
-            ""
+            "m_c stumbles through the medicine den, trying to walk a straight line as r_c instructed. r_c tells them that the newfound lack of balance might be a permanent result of their head injury.",
+            "m_c stumbles through the medicine den, trying to walk a straight line as r_c instructed. r_c tells them that the newfound lack of balance might be a permanent result of their head injury.",
+            "m_c finds that they have to concentrate to stay upright while standing and the newfound loss of balance is endlessly frustrating to them. They surmise that it's likely been caused by their head injury."
         ],
         "partial hearing loss": [
-            ""
+            "m_c tells r_c that they think their hearing has gotten worse. r_c assesses their hearing and confirms it, their hearing is failing and it can only be due to the head injury they suffered.",
+            "m_c tells r_c that they think their hearing has gotten worse. r_c assesses their hearing and confirms it, their hearing is failing and it can only be due to the head injury they suffered.",
+            "m_c strains to hear their clanmate talking to them. Ever since their head injury they've found it harder to hear the world around them."
         ]
     },
     "damaged eyes": {
         "blind": [
-            ""
+            "When r_c tells them that their vision will never return, m_c wants to wail. They hold it in, however, till they have a moment alone and away from their clanmates.",
+            "m_c had been expecting it, but they still feel disappointed when r_c tells them that their vision is permanently gone. They don't want to let this hold them back, though, they have plans and they will see those plans through.",
+            "Eventually m_c just accepts the truth that has made itself apparent, their vision will never come back. This is life now, this fog of shadows and shapes."
         ],
         "one bad eye": [
-            ""
+            "r_c breaks the new gently, that m_c is never going to see out of that eye again. This doesn't have to hinder them, though! They still have one good eye and they plan to make full use of it.",
+            "m_c growls when r_c tells them that the lack of vision in their eye is permanent. It feels unfair, to have half of their vision stolen away.",
+            "m_c won't let this hold them back, they're determined to adapt to their newly limited eyesight and continue living as normal."
         ],
         "failing eyesight": [
-            ""
+            "r_c tells m_c that they're lucky to have regained any eyesight at all and hopefully, their sight won't degrade further.",
+            "m_c stalks out the medicine den, nearly running into another cat, which only increases their frustration at the news that their eyesight won't be getting better.",
+            "m_c closes their eyes and after a few moments, opens them again, trying to get a sense of just how bad their eyesight is now."
         ]
     },
     "rat bite": {
@@ -158,6 +184,11 @@
             "r_c informs m_c that the bite-wound they've healed from has left their leg permanently weakened.",
             "m_c finds that they have a new limp, despite healed from their bite-wound. r_c tells them it's likely permanent.",
             "m_c limps around camp, fully healed from their bite-wound but still marked by it for the rest of their life."
+        ],
+        "one bad eye": [
+            "r_c unwraps m_c's face and sighs when they see the remaining scar. They tell m_c that their eye will never be the same.",
+            "m_c curls up in their nest and tightly shuts their eyes, pretending that the darkness on one side is only temporary. But they know what r_c told them and they know the dark is permanent.",
+            "m_c jumps when another cat comes up on their bad side and reminds themselves that they have to get used to this. They know their eye is permanently damaged."
         ]
     },
     "broken back": {
