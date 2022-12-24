@@ -60,14 +60,14 @@ class Events():
                     cat.age = 'elder'
 
                 # killing exiled cats
-                if cat.moons > randint(100, 200):
+                if cat.moons > randint(100, 200) and cat.exiled:
                     if choice([1, 2, 3, 4, 5]) == 1 and not cat.dead:
                         cat.dead = True
                         text = f'Rumors reach your clan that the exiled {str(cat.name)} has died recently.'
                         game.cur_events_list.append(text)
                         game.birth_death_events_list.append(text)
 
-                if cat.outside and cat.status == 'leader' and not cat.dead and randint(
+                if cat.exiled and cat.status == 'leader' and not cat.dead and randint(
                         1, 10) == 1:
                     game.clan.leader_lives -= 1
                     if game.clan.leader_lives <= 0:
@@ -77,7 +77,7 @@ class Events():
                         game.birth_death_events_list.append(text)
 
                         game.clan.leader_lives = 0
-                elif cat.outside and cat.status == 'leader' and not cat.dead and randint(
+                elif cat.exiled and cat.status == 'leader' and not cat.dead and randint(
                         1, 45) == 1:
                     game.clan.leader_lives -= 10
                     cat.dead = True
