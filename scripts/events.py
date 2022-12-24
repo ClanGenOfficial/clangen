@@ -298,7 +298,7 @@ class Events():
 
         # leader dying or being exiled and dep promotion to leader
         if (game.clan.leader.dead or game.clan.leader.outside)\
-                and game.clan.deputy is not None and not game.clan.deputy.dead:
+                and game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.outside:
             if game.clan.leader.exiled:
                 text = str(game.clan.leader.name) + ' was exiled.'
                 game.ceremony_events_list.append(text)
