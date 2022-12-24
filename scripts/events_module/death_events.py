@@ -102,7 +102,7 @@ class Death_Events():
         # ---------------------------------------------------------------------------- #
         #                                  kill cats                                   #
         # ---------------------------------------------------------------------------- #
-        print('DEATH:', cat.name, cat.status, len(final_events), other_cat.name, other_cat.status)
+        #print('DEATH:', cat.name, cat.status, len(final_events), other_cat.name, other_cat.status)
         death_cause = (random.choice(final_events))
 
         # check if the cat's body was retrievable

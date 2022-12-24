@@ -1433,7 +1433,7 @@ class Events():
 
         # if large amount of the population is already sick, stop spreading
         if already_sick_count >= alive_count * .25:
-            print('CURRENT SICK COUNT TOO HIGH', already_sick_count, alive_count)
+            #print('CURRENT SICK COUNT TOO HIGH', already_sick_count, alive_count)
             return
 
         for illness in cat.illnesses:

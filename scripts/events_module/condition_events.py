@@ -73,7 +73,7 @@ class Condition_Events():
                 # moon skip to try and kill or heal cat
                 skipped = cat.moon_skip_illness(illness)
                 # test print, to track if events are displaying correctly
-                print(illness, cat.name, cat.healed_condition)
+                #print(illness, cat.name, cat.healed_condition)
 
                 # if event trigger was true, events should be skipped for this illness
                 if skipped is True:
@@ -376,7 +376,7 @@ class Condition_Events():
                     if "war" in injury_event.tags:
                         other_clan_name = enemy_clan
 
-                    print('INJURY:', cat.name, cat.status, len(final_events), other_cat.name, other_cat.status)
+                    #print('INJURY:', cat.name, cat.status, len(final_events), other_cat.name, other_cat.status)
 
                     # let's change some relationship values \o/ check if another cat is mentioned
                     if "other_cat" in injury_event.tags:

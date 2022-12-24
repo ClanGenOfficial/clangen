@@ -129,7 +129,7 @@ class Patrol():
                 self.app6_name = str(self.patrol_apprentices[5].name)
 
         self.other_clan = choice(game.clan.all_clans)
-        print(self.patrol_total_experience)
+        #print(self.patrol_total_experience)
 
     def get_possible_patrols(self, current_season, biome, all_clans, patrol_type,
                              game_setting_disaster=game.settings['disasters']):
@@ -150,7 +150,7 @@ class Patrol():
         clan_allies = False
         clan_size = int(len(game.clan.clan_cats))
         chance = 0
-        print(str(self.patrol_statuses))
+        #print(str(self.patrol_statuses))
         # assigning other_clan relations
         if clan_relations > 17:
             clan_allies = True
@@ -320,13 +320,11 @@ class Patrol():
                 if ("rel_two_apps" and "two_apprentices") in patrol.tags and len(self.patrol_apprentices) >= 2:
                     if not self.patrol_apprentices[0].is_potential_mate(self.patrol_apprentices[1],
                                                                         for_love_interest=True):
-                        print(str(self.patrol_apprentices[0]) + ' and ' + str(self.patrol_apprentices[1]))
                         continue
                 else:
                     if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
                         continue
 
-            print(str(patrol.patrol_id))
             final_patrols.append(patrol)
 
         return final_patrols
@@ -569,7 +567,6 @@ class Patrol():
             gm_modifier = 6
         lvl_modifier = 1 # this makes exp gain slower after the cat reaches average
         for cat in self.patrol_cats:
-            print("EXP Before: " + str(cat.experience))
             gained_exp = ((patrol_exp + base_exp + max_boost) / len(self.patrol_cats)) / gm_modifier
             if cat.experience_level == "average":
                 lvl_modifier = 1.25
@@ -579,7 +576,6 @@ class Patrol():
                 lvl_modifier = 2
             final_exp = gained_exp / lvl_modifier
             cat.experience = cat.experience + final_exp
-            print("EXP After: " + str(cat.experience))
 
     def handle_deaths(self, cat):
         if "no_body" in self.patrol_event.tags:

@@ -71,7 +71,6 @@ def change_clan_reputation(difference=0):
     # change rep
     reputation += difference
     game.clan.reputation = reputation
-    print('CLAN REPUTATION: new rep', reputation)
 
 
 def change_clan_relations(other_clan, difference=0):
@@ -268,14 +267,14 @@ def change_relationship_values(cats_to,
             rel.trust += trust
 
             # for testing purposes
-            print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
+            """print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
                   "Romantic: " + str(romantic_love) +
                   " /Platonic: " + str(platonic_like) +
                   " /Dislike: " + str(dislike) +
                   " /Respect: " + str(admiration) +
                   " /Comfort: " + str(comfortable) +
                   " /Jealousy: " + str(jealousy) +
-                  " /Trust: " + str(trust)) if changed else print("No relationship change")
+                  " /Trust: " + str(trust)) if changed else print("No relationship change")"""
 
 
 # ---------------------------------------------------------------------------- #

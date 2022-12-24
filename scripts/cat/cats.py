@@ -467,7 +467,6 @@ class Cat():
                 if cat.trait in grief_minor:
                     chance = [2, 1]
                 severity = random.choices(['major', 'minor'], weights=chance, k=1)
-                print(severity, chance)
                 # give the cat the relevant severity text
                 severity = severity[0]
                 if severity == 'major':

@@ -31,7 +31,7 @@ class Scar_Events():
         amount_per_med = get_amount_cat_for_one_medic(game.clan)
         if medical_cats_condition_fulfilled(game.cat_class.all_cats.values(), amount_per_med):
             chance += 3
-        print(chance)
+        #print(chance)
         if len(cat.scars) < 4 and chance <= 6:
 
             # move potential scar text into displayed scar text

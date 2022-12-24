@@ -879,7 +879,6 @@ class ProfileScreen(Screens):
                 tool_tip_text='favorite this tab'
             )
 
-            print(self.open_sub_tab, game.settings['favorite sub tab'])
             if self.open_sub_tab != 'life events':
                 self.toggle_history_sub_tab()
             else:
@@ -1130,7 +1129,6 @@ class ProfileScreen(Screens):
     def toggle_conditions_tab(self):
         """Opens the conditions tab"""
         previous_open_tab = self.open_tab
-        print('toggled')
         # This closes the current tab, so only one can be open at a time
         self.close_current_tab()
 
