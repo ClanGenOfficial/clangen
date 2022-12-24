@@ -227,7 +227,7 @@
         "herbs",
         "no_app",
         "clan_to_patrol",
-        "respect"
+        "respect", "injury", "sore"
     ],
     "intro_text": "p_l is on a mission to find lungwort now that Newleaf is here. As the only reliable cure for yellowcough, they're determined that c_n replenish their stocks of it.",
     "decline_text": "A cat grabs p_l's attention before they can leave camp.",
@@ -240,6 +240,9 @@
         "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
     ],
     "fail_text": [
+        null,
+        null,
+        null,
         "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
     ],
     "win_skills": [
@@ -268,7 +271,7 @@
         "med_cat",
         "warrior",
         "herbs",
-        "dislike"
+        "dislike", "injury", "sore"
     ],
     "intro_text": "p_l is on a mission to find lungwort now that Newleaf is here. As the only reliable cure for yellowcough, they're determined that c_n replenish their stocks of it. They take along a warrior escort to help.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
@@ -281,8 +284,11 @@
         "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
     ],
     "fail_text": [
-        "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.",
-        "By the time they give up and return to camp, p_l is approaching the explosion point with r_c. They've gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today."
+        null,
+        "By the time they give up and return to camp, p_l is approaching the explosion point with r_c. They've gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
+        null,
+        "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+
     ],
     "win_skills": [
         "keen eye",
@@ -352,13 +358,7 @@
     "patrol_id": "fst_med_lungwort5",
     "biome": "forest",
     "season": "greenleaf",
-    "tags": [
-        "med_cat",
-        "herbs",
-        "no_app",
-        "clan_to_patrol",
-        "respect"
-    ],
+    "tags": ["med_cat", "herbs", "no_app", "clan_to_patrol", "respect", "injury", "sore"],
     "intro_text": "p_l is on a mission to find lungwort now that Greenleaf is here. As the only reliable cure for yellowcough, they're determined that c_n stock up on it.",
     "decline_text": "A cat grabs p_l's attention before they can leave camp.",
     "chance_of_success": 30,
@@ -370,6 +370,9 @@
         "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
     ],
     "fail_text": [
+        null,
+        null,
+        null,
         "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
     ],
     "win_skills": [
@@ -398,7 +401,7 @@
         "med_cat",
         "warrior",
         "herbs",
-        "dislike"
+        "dislike", "injury", "sore"
     ],
     "intro_text": "p_l is on a mission to find lungwort now that Greenleaf is here. As the only reliable cure for yellowcough, they're determined that c_n won't run out of it. They take along a warrior escort to help.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
@@ -411,6 +414,9 @@
         "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
     ],
     "fail_text": [
+        null,
+        null,
+        null,
         "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.","By the time they give up and return to camp, p_l is approaching explosion point with r_c. They've gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today."
     ],
     "win_skills": [
@@ -431,11 +437,7 @@
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null
-}
-
-
-,
-
+},
 {
     "patrol_id": "fst_med_lungwort7",
     "biome": "forest",
@@ -490,7 +492,7 @@
         "herbs",
         "no_app",
         "clan_to_patrol",
-        "respect"
+        "respect", "injury", "sore"
     ],
     "intro_text": "p_l is on a mission to find lungwort now that Leaf-bare is on the horizon. As the only reliable cure for yellowcough, they're determined that c_n stock up on it.",
     "decline_text": "A cat grabs p_l's attention before they can leave camp.",
@@ -503,6 +505,9 @@
         "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
     ],
     "fail_text": [
+        null,
+        null,
+        null,
         "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
     ],
     "win_skills": [
@@ -531,7 +536,7 @@
         "med_cat",
         "warrior",
         "herbs",
-        "dislike"
+        "dislike", "injury", "sore"
     ],
     "intro_text": "p_l is on a mission to find lungwort now that Leaf-bare is on the horizon. As the only reliable cure for yellowcough, they're determined that c_n won't run out of it. They take along a warrior escort to help.",
     "decline_text": "A cat grabs p_l's attention before they can leave.",
@@ -544,6 +549,9 @@
         "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
     ],
     "fail_text": [
+        null,
+        null,
+        null,
         "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of.","By the time they give up and return to camp, p_l is approaching explosion point with r_c. They've gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today."
     ],
     "win_skills": [
