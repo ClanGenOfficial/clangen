@@ -726,7 +726,7 @@ class Patrol():
                 lethal = False
 
             if "poison_clan" in self.patrol_event.tags:
-                possible_conditions.append("poisoned")
+                cat.get_injured("poisoned")
                 self.living_cats = []
                 for x in range(len(Cat.all_cats.values())):
                     the_cat = list(Cat.all_cats.values())[x]
