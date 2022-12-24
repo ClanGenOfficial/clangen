@@ -106,12 +106,13 @@ class Events():
 
         if Cat.grief_strings:
             remove_cats = []
-            for ID in Cat.grief_strings.keys:
-                check_cat = Cat.all_cats[ID]
+
+            for ID in Cat.grief_strings.keys():
+                check_cat = Cat.all_cats.get(ID)
                 if check_cat.dead or check_cat.outside:
                     remove_cats.append(check_cat.ID)
             for ID in remove_cats:
-                if ID in Cat.grief_strings.keys:
+                if ID in Cat.grief_strings.keys():
                     Cat.grief_strings.pop(ID)
 
             grief_strings = "<br><br>".join(Cat.grief_strings.values())
