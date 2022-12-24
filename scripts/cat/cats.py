@@ -1998,6 +1998,8 @@ def create_example_cats():
         else:
             game.choose_cats[a] = Cat(status=choice(
                 ['kitten', 'apprentice', 'warrior', 'warrior', 'elder']))
+        if game.choose_cats[a].moons >= 160:
+            game.choose_cats[a].moons = choice(range(120, 155))
         for scar in not_allowed:
             if scar in game.choose_cats[a].scars:
                 game.choose_cats[a].scars.remove(scar)
