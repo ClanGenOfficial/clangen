@@ -1577,7 +1577,10 @@ class ProfileScreen(Screens):
                                                        object_id="#switch_med_cat_button")
                 close_button_location = (226, 574)
             # Switch med cat to warrior
-            elif self.the_cat.status == 'medicine cat' and not self.the_cat.dead and not self.the_cat.outside:
+            elif self.the_cat.status == 'medicine cat' and \
+                    not self.the_cat.dead and \
+                    not self.the_cat.outside and \
+                    self.the_cat.age != 'elder':
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 522), (172, 36)), "",
                                                        object_id="#switch_warrior_button")
                 close_button_location = (226, 558)
