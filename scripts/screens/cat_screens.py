@@ -824,6 +824,7 @@ class ProfileScreen(Screens):
 
                 # NEWLINE ----------
                 output += "\n"
+                break
 
         if the_cat.is_injured():
             if "recovering from birth" in the_cat.injuries:
