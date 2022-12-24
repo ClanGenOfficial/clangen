@@ -527,8 +527,12 @@ class Relation_Events():
         if not chance:
             if relationship_from.dislike > 30:
                 will_break_up = True
+                relationship_to.romantic_love -= 10
+                relationship_from.romantic_love -= 10
             elif relationship_from.romantic_love < 50:
                 will_break_up = True
+                relationship_to.romantic_love -= 10
+                relationship_from.romantic_love -= 10
             elif had_fight:
                 text = f"{str(cat_from.name)} and {str(cat_to.name)} had a fight and nearly broke up."
                 game.relation_events_list.insert(0, text)
