@@ -111,7 +111,7 @@ class Death_Events():
         else:
             body = True
 
-        if "war" in death_cause.tags:
+        if "war" in death_cause.tags and other_clan is not None:
             other_clan = enemy_clan
             other_clan_name = other_clan.name
 
