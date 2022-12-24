@@ -1007,8 +1007,8 @@ class Events():
                         f'A loner leaves their litter to the clan. {str(parent1)} decides to adopt them as their own.'
                     ])
                     text = choice(a_kit_text)
-                    game.cur_events_list.append(text)
-                    game.misc_events_list.append(text)
+                    game.cur_events_list.append(a_kit_text)
+                    game.misc_events_list.append(a_kit_text)
 
     def create_new_cat(self,
                        loner=False,
