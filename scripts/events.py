@@ -1395,12 +1395,10 @@ class Events():
 
     def handle_twoleg_capture(self, cat):
         cat.outside = True
-        cat.exiled = True
         if cat.ID in cat_class.all_cats.keys() and cat.outside and cat.ID not in cat_class.other_cats.keys():
             # The outside-value must be set to True before the cat can go to cotc
             cat.thought = "Is terrified as they are trapped in a large silver twoleg den"
             cat_class.other_cats[cat.ID] = cat
-            game.clan.clan_cats.remove(cat.ID)
 
     def handle_outbreaks(self, cat):
         """
