@@ -107,7 +107,7 @@ class Cat():
     outside_cats = {}  # cats outside the clan
     id_iter = itertools.count()
 
-    grief_strings = []
+    grief_strings = {}
 
     def __init__(self,
                  prefix=None,
@@ -538,7 +538,7 @@ class Cat():
                 # adjust and append text to grief string list
                 text = ' '.join(text)
                 text = event_text_adjust(Cat, text, self, cat)
-                Cat.grief_strings.append(text)
+                Cat.grief_strings[self.ID] = text
                 possible_strings.clear()
                 text = None
 

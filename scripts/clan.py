@@ -353,14 +353,32 @@ class Clan():
             members = sections[4].split(',')
             other_clans = []
         if len(general) == 9:
-            if general[4] == 'None':
-                general[4] = 0
-            elif general[3] == 'None':
+            if general[3] == 'None':
                 general[3] = 'camp1'
+            elif general[4] == 'None':
+                general[4] = 0
             elif general[7] == 'None':
                 general[7] = 'classic'
             elif general[8] == 'None':
                 general[8] = 50
+            game.clan = Clan(general[0],
+                             Cat.all_cats[leader_info[0]],
+                             Cat.all_cats.get(deputy_info[0], None),
+                             Cat.all_cats.get(med_cat_info[0], None),
+                             biome=general[2],
+                             camp_bg=general[3],
+                             world_seed=int(general[4]),
+                             camp_site=(int(general[5]),
+                                        int(general[6])),
+                             game_mode=general[7],
+                             )
+        if len(general) == 8:
+            if general[3] == 'None':
+                general[3] = 'camp1'
+            elif general[4] == 'None':
+                general[4] = 0
+            elif general[7] == 'None':
+                general[7] = 'classic'
             game.clan = Clan(general[0],
                              Cat.all_cats[leader_info[0]],
                              Cat.all_cats.get(deputy_info[0], None),

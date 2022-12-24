@@ -105,7 +105,16 @@ class Events():
                 self.relation_events.handle_relationships(cat)
 
         if Cat.grief_strings:
-            grief_strings = "<br><br>".join(Cat.grief_strings)
+            remove_cats = []
+            for ID in Cat.grief_strings.keys:
+                check_cat = Cat.all_cats[ID]
+                if check_cat.dead or check_cat.outside:
+                    remove_cats.append(check_cat.ID)
+            for ID in remove_cats:
+                if ID in Cat.grief_strings.keys:
+                    Cat.grief_strings.pop(ID)
+
+            grief_strings = "<br><br>".join(Cat.grief_strings.values())
             game.cur_events_list.append(grief_strings)
             game.birth_death_events_list.append(grief_strings)
             game.relation_events_list.append(grief_strings)
