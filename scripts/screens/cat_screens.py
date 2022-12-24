@@ -824,6 +824,7 @@ class ProfileScreen(Screens):
 
                 # NEWLINE ----------
                 output += "\n"
+                break
 
         if the_cat.is_injured():
             if "recovering from birth" in the_cat.injuries:
@@ -1576,7 +1577,10 @@ class ProfileScreen(Screens):
                                                        object_id="#switch_med_cat_button")
                 close_button_location = (226, 574)
             # Switch med cat to warrior
-            elif self.the_cat.status == 'medicine cat' and not self.the_cat.dead and not self.the_cat.outside:
+            elif self.the_cat.status == 'medicine cat' and \
+                    not self.the_cat.dead and \
+                    not self.the_cat.outside and \
+                    self.the_cat.age != 'elder':
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 522), (172, 36)), "",
                                                        object_id="#switch_warrior_button")
                 close_button_location = (226, 558)
@@ -1711,7 +1715,7 @@ class ProfileScreen(Screens):
                     self.notes_entry = pygame_gui.elements.UITextEntryBox(
                         pygame.Rect((100, 473), (600, 149)),
                         initial_text=self.user_notes,
-                        object_id='#history_tab_entry_box_smalltooltip'
+                        object_id='#history_tab_entry_box'
                     )
                 else:
                     self.edit_text = UIImageButton(pygame.Rect(

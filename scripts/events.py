@@ -105,7 +105,17 @@ class Events():
                 self.relation_events.handle_relationships(cat)
 
         if Cat.grief_strings:
-            grief_strings = "<br><br>".join(Cat.grief_strings)
+            remove_cats = []
+
+            for ID in Cat.grief_strings.keys():
+                check_cat = Cat.all_cats.get(ID)
+                if check_cat.dead or check_cat.outside:
+                    remove_cats.append(check_cat.ID)
+            for ID in remove_cats:
+                if ID in Cat.grief_strings.keys():
+                    Cat.grief_strings.pop(ID)
+
+            grief_strings = "<br><br>".join(Cat.grief_strings.values())
             game.cur_events_list.append(grief_strings)
             game.birth_death_events_list.append(grief_strings)
             game.relation_events_list.append(grief_strings)
@@ -219,7 +229,7 @@ class Events():
             return
 
         # check for death/reveal/risks/retire caused by permanent conditions
-        if cat.is_disabled() or len(cat.permanent_condition) > 0:
+        if cat.is_disabled():
             self.condition_events.handle_already_disabled(cat)
         self.perform_ceremonies(cat)  # here is age up included
 
@@ -1007,8 +1017,8 @@ class Events():
                         f'A loner leaves their litter to the clan. {str(parent1)} decides to adopt them as their own.'
                     ])
                     text = choice(a_kit_text)
-                    game.cur_events_list.append(text)
-                    game.misc_events_list.append(text)
+                    game.cur_events_list.append(a_kit_text)
+                    game.misc_events_list.append(a_kit_text)
 
     def create_new_cat(self,
                        loner=False,
