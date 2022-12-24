@@ -600,9 +600,9 @@ class Patrol():
                     game.clan.leader_lives -= 1
             print("history text len", len(self.patrol_event.history_text))
             if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
-                cat.died_by.append(event_text_adjust(Cat, f'{self.patrol_event.history_text[1]})', cat))
+                cat.died_by.append(event_text_adjust(Cat, f'{self.patrol_event.history_text[1]}', cat))
             elif len(self.patrol_event.history_text) >= 2 and cat.status == 'leader':
-                cat.died_by.append(event_text_adjust(Cat, f'{self.patrol_event.history_text[2]})', cat))
+                cat.died_by.append(event_text_adjust(Cat, f'{self.patrol_event.history_text[2]}', cat))
             elif cat.status != 'leader':
                 cat.died_by.append(f'This cat died while patrolling.')
             else:
