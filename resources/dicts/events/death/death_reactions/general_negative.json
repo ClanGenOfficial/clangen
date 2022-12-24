@@ -1,0 +1,38 @@
+{
+  "dislike": {
+    "body": [
+      "Nobody wants to admit such a terrible thing out loud, but m_c will not be missed by the whole clan. r_c wanders past the vigil being held for them, pointedly ignoring it.",
+      "r_c approaches the clearing where m_c's body lies cold and lifeless. Defying expectations of sympathy and grief, r_c instead curses their fallen clanmate to the Dark Forest where they belong.",
+      "r_c wanders past m_c's vigil. They won't mourn m_c's passing.",
+      "Frankly, they're all better off without m_c, and r_c doesn't know why everyone else is so grief stricken.",
+      "As much as they hated m_c, the sight of their body still fills r_c with dread.",
+      "Yes, they hated m_c, but m_c was their clanmate first and foremost, and r_c bows their head at the vigil respectfully."
+
+    ],
+    "no_body": [
+      "Nobody wants to admit such a terrible thing out loud, but m_c will not be missed by the whole clan. r_c wanders past the vigil being held for them, pointedly ignoring it.",
+      "r_c wanders past m_c's vigil. They won't mourn m_c's passing.",
+      "Frankly, they're all better off without m_c, and r_c doesn't know why everyone else is so grief stricken.",
+      "Yes, they hated m_c, but m_c was their clanmate first and foremost, and r_c bows their head at the vigil respectfully."
+
+    ]
+
+  },
+  "jealousy": {
+    "body": [
+      "r_c watches the vigil being held for m_c from the sidelines, not at all sure how they feel about their death.",
+      "r_c resented m_c for what they couldn't have, but seeing m_c's body lying in the clearing as the clan hold vigil for them makes their jealousy feel petty and stupid.",
+      "r_c has always felt jealous of m_c, but could never want to take their place now, watching the clan holding vigil for them.",
+      "r_c listens to the stories being passed around as the vigil for m_c continues, and stalks off to their nest. They can't stand hearing everyone praise such a useless cat.",
+      "m_c really wasn't that great, but it's amazing how many cats want to ignore that now that they're dead, and r_c isn't interested in hearing it."
+
+    ],
+    "no_body": [
+      "r_c watches the vigil being held for m_c from the sidelines, not at all sure how they feel about their death.",
+      "r_c has always felt jealous of m_c, but could never want to take their place now, watching the clan holding vigil for them.",
+      "r_c listens to the stories being passed around as the vigil for m_c continues, and stalks off to their nest. They can't stand hearing everyone praise such a useless cat.",
+      "m_c really wasn't that great, but it's amazing how many cats want to ignore that now that they're dead, and r_c isn't interested in hearing it."
+
+    ]
+  }
+}

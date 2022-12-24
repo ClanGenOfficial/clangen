@@ -112,7 +112,15 @@ class Clan():
             self.game_mode = game_mode
             self.pregnancy_data = {}
             self.closed_borders = False
+            self.reputation = 50
             self.starting_members = starting_members
+
+            """
+            Reputation is for loners/kittypets/outsiders in general that wish to join the clan. 
+            it's a range from 1-100, with 30-70 being neutral, 71-100 being "welcoming",
+            and 1-29 being "hostile". if you're hostile to outsiders, they will VERY RARELY show up.
+            """
+
 
     def create_clan(self):
         """ This function is only called once a new clan is created in the 'clan created' screen, not every time
@@ -184,6 +192,15 @@ class Clan():
                 self.med_cat_list.remove(cat.ID)
                 self.med_cat_predecessors += 1
 
+    def add_to_outside(self, cat): # same as add_cat
+        """ Places the gone cat into starclan. It should not be removed from the list of cats in the clan"""
+        if cat.ID in Cat.all_cats.keys(
+        ) and cat.outside and cat.ID not in Cat.outside_cats.keys():
+            # The outside-value must be set to True before the cat can go to cotc
+            Cat.outside_cats.update({cat.ID:cat})
+            if cat.status != 'leader': # takes away the suffix unless the cat used to be leader
+                cat.suffix = ''
+            
     def add_to_darkforest(self, cat):  # Same as add_cat
         """ Places the dead cat into the dark forest. It should not be removed from the list of cats in the clan"""
         if cat.ID in Cat.all_cats.keys(
@@ -258,7 +275,7 @@ class Clan():
         exit()
 
     def save_clan(self):
-        data = f'{self.name},{self.age},{self.biome},{self.camp_bg},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]},{self.game_mode}' + '\n'
+        data = f'{self.name},{self.age},{self.biome},{self.camp_bg},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]},{self.game_mode},{self.reputation}' + '\n'
         data = data + self.leader.ID + ',' + str(
             self.leader_lives) + ',' + str(
             self.leader_predecessors) + ',' + '\n'
@@ -335,13 +352,15 @@ class Clan():
             instructor_info = sections[3]
             members = sections[4].split(',')
             other_clans = []
-        if len(general) == 8:
+        if len(general) == 9:
             if general[4] == 'None':
                 general[4] = 0
             elif general[3] == 'None':
                 general[3] = 'camp1'
             elif general[7] == 'None':
                 general[7] = 'classic'
+            elif general[8] == 'None':
+                general[8] = 50
             game.clan = Clan(general[0],
                              Cat.all_cats[leader_info[0]],
                              Cat.all_cats.get(deputy_info[0], None),

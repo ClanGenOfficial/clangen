@@ -53,6 +53,60 @@
         "cause_permanent": []
     },
 
+        "cat bite":{
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 45,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 15
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "torn pelt",
+            "blood loss"
+        ],
+        "cause_permanent": []
+    },
+
+        "beak bite":{
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 10,
+            "adolescent": 45,
+            "young adult": 60,
+            "adult": 60,
+            "senior adult": 60,
+            "elder": 15
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "torn pelt",
+            "blood loss"
+        ],
+        "cause_permanent": []
+    },
+
     "snake bite":{
         "duration": 2,
         "severity": "major",
@@ -253,7 +307,7 @@
     },
 
     "dislocated joint":{
-        "duration": 4,
+        "duration": 2,
         "severity": "major",
         "medicine_duration": 1,
         "mortality": {
@@ -276,7 +330,7 @@
         ]
     },
 
-        "joint pain":{
+    "joint pain":{
         "duration": 1,
         "severity": "minor",
         "medicine_duration": 1,
@@ -496,6 +550,7 @@
         "cause_permanent": [
         ]
     },
+
     "torn ear":{
         "duration": 1,
         "severity": "minor",
@@ -665,6 +720,7 @@
             "lost a leg"
         ]
     },
+
     "shock":{
         "duration": 1,
         "severity": "major",
@@ -688,6 +744,7 @@
         "cause_permanent": [
         ]
     },
+
     "lingering shock":{
         "duration": 12,
         "severity": "major",
@@ -708,6 +765,7 @@
             "recurring shock"
         ]
     },
+
     "shivering":{
         "duration": 2,
         "severity": "minor",
@@ -742,6 +800,7 @@
         "cause_permanent": [
         ]
     },
+
     "dehydrated":{
         "duration": 1,
         "severity": "major",
@@ -768,6 +827,7 @@
         "cause_permanent": [
         ]
     },
+
     "head damage":{
         "duration": 5,
         "severity": "major",
@@ -794,6 +854,7 @@
             "partial hearing loss"
         ]
     },
+
     "damaged eyes":{
         "duration": 6,
         "severity": "major",
@@ -822,6 +883,34 @@
             "failing eyesight"
         ]
     },
+
+    "quilled by a porcupine":{
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 20,
+            "adolescent": 40,
+            "young adult": 50,
+            "adult": 60,
+            "senior adult": 50,
+            "elder": 30
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "torn pelt"
+        ],
+        "cause_permanent": [
+        ]
+    },
+
     "broken back":{
         "duration": 12,
         "severity": "severe",
@@ -839,7 +928,33 @@
         "risks": [
             {
                 "name": "an infected wound",
-                "chance": 20
+                "chance": 6
+            }
+        ],
+        "also_got": [
+        ],
+        "cause_permanent": [
+        ]
+    },
+    
+    "poisoned": {
+        "duration": 2,
+        "severity": "major",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 5,
+            "adolescent": 15,
+            "young adult": 20,
+            "adult": 30,
+            "senior adult": 20,
+            "elder": 15
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "redcough",
+                "chance": 10
             }
         ],
         "also_got": [
@@ -853,3 +968,4 @@
         ]
     }
 }
+

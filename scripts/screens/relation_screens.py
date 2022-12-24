@@ -364,13 +364,13 @@ class ChooseMentorScreen(Screens):
 
         if self.the_cat.status == "apprentice":
             for cat in Cat.all_cats.values():
-                if not cat.dead and not cat.exiled and cat.status in [
-                    'warrior', 'deputy', 'leader'
-                ]:
+                if not cat.dead and not cat.outside and cat.status in [
+                            'warrior', 'deputy', 'leader'
+                        ]:
                     valid_mentors.append(cat)
         elif self.the_cat.status == "medicine cat apprentice":
             for cat in Cat.all_cats.values():
-                if not cat.dead and not cat.exiled and cat.status == 'medicine cat':
+                if not cat.dead and not cat.outside and cat.status == 'medicine cat':
                     valid_mentors.append(cat)
 
         return valid_mentors
@@ -795,9 +795,8 @@ class ChooseMateScreen(Screens):
 
             if event.ui_element == self.toggle_mate:
                 if self.the_cat.mate is None:
-
-                    self.selected_cat.mate = self.the_cat.ID
-                    self.the_cat.mate = self.selected_cat.ID
+                    Cat.set_mate(self.the_cat, self.selected_cat)
+                    Cat.set_mate(self.selected_cat, self.the_cat)
                     self.update_mate_screen()
                 else:
                     self.selected_cat.mate = None
@@ -1249,7 +1248,7 @@ class ChooseMateScreen(Screens):
             indirect_related = self.the_cat.is_uncle_aunt(relevant_cat) or relevant_cat.is_uncle_aunt(self.the_cat)
             related = direct_related or indirect_related
 
-            not_available = relevant_cat.dead or relevant_cat.exiled
+            not_available = relevant_cat.dead or relevant_cat.outside
 
             if not related and relevant_cat.ID != self.the_cat.ID and invalid_age \
                     and not not_available and relevant_cat.mate is None:

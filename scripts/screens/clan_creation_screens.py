@@ -40,14 +40,14 @@ class MakeClanScreen(Screens):
                         "With this mode you are the eye in the sky, watching the clan as their story unfolds. "
 
     expanded_mode_text = "A more hands-on experience. " \
-                         "This mode has everything in Classic Mode as well as more management focused features.<br><br>" \
+                         "This mode has everything in Classic Mode as well as more management-focused features.<br><br>" \
                          "New features include:<br>" \
-                         "-Illnesses, Injuries, and Permanent Conditions<br><br>" \
+                         "- Illnesses, Injuries, and Permanent Conditions<br><br>" \
+                         "- Ability to choose patrol type<br><br>" \
                          "With this mode you'll be making the important clan-life decisions."
 
     cruel_mode_text = "This mode has all the features of Expanded mode, but is significantly more difficult. If " \
-                      "you'd like a challenge, then this mode is for you.<br><br>" \
-                      "---this mode is currently unavailable---<br><br>" \
+                      "you'd like a challenge with a bit of brutality, then this mode is for you.<br><br>" \
                       "You heard the warnings... a Cruel Season is coming. Will you survive?"
 
     # This section holds all the information needed

@@ -3,7 +3,7 @@ import random
 
 from scripts.cat.cats import Cat
 from scripts.events_module.generate_events import GenerateEvents
-from scripts.utility import save_death, event_text_adjust
+from scripts.utility import save_death, event_text_adjust, change_clan_relations, change_relationship_values
 from scripts.game_structure.game_essentials import game, SAVE_DEATH
 
 # ---------------------------------------------------------------------------- #
@@ -27,7 +27,6 @@ class Death_Events():
 
         other_clan = random.choice(game.clan.all_clans)
         other_clan_name = f'{str(other_clan.name)}Clan'
-        enemy_clan = f'{str(enemy_clan)}'
         current_lives = int(game.clan.leader_lives)
 
         if other_clan_name == 'None':
@@ -103,11 +102,22 @@ class Death_Events():
         # ---------------------------------------------------------------------------- #
         #                                  kill cats                                   #
         # ---------------------------------------------------------------------------- #
-        print('DEATH:', cat.name, cat.status, len(final_events), other_cat.name, other_cat.status)
+        #print('DEATH:', cat.name, cat.status, len(final_events), other_cat.name, other_cat.status)
         death_cause = (random.choice(final_events))
 
-        if "war" in death_cause.tags:
-            other_clan_name = enemy_clan
+        # check if the cat's body was retrievable
+        if "no_body" in death_cause.tags:
+            body = False
+        else:
+            body = True
+
+        if "war" in death_cause.tags and other_clan is not None:
+            other_clan = enemy_clan
+            other_clan_name = other_clan.name
+
+        # let's change some relationship values \o/ check if another cat is mentioned and if they live
+        if "other_cat" in death_cause.tags and "multi_death" not in death_cause.tags:
+            self.handle_relationship_changes(cat, death_cause, other_cat)
 
         death_text = event_text_adjust(Cat, death_cause.death_text, cat, other_cat, other_clan_name)
         history_text = 'this should not show up'
@@ -130,37 +140,42 @@ class Death_Events():
         if cat.status == "leader" and "other_cat_death" not in death_cause.tags:
             if "all_lives" in death_cause.tags:
                 game.clan.leader_lives -= game.clan.leader_lives + 1
-                cat.die()
+                cat.die(body)
                 cat.died_by.append(history_text)
             elif "murder" in death_cause.tags or "some_lives" in death_cause.tags:
                 if game.clan.leader_lives > 2:
-                    game.clan.leader_lives -= random.randrange(2, current_lives - 1)
-                    cat.die()
+                    game.clan.leader_lives -= random.randrange(1, current_lives - 1)
+                    cat.die(body)
                     cat.died_by.append(history_text)
                 else:
-                    game.clan.leader_lives -= 3
-                    cat.die()
+                    game.clan.leader_lives -= 1
+                    cat.die(body)
                     cat.died_by.append(history_text)
             else:
                 game.clan.leader_lives -= 1
-                cat.die()
+                cat.die(body)
                 cat.died_by.append(history_text)
         else:
             if ("multi_death" in death_cause.tags or "other_cat_death" in death_cause.tags) \
                     and other_cat.status != 'leader':
-                other_cat.die()
+                other_cat.die(body)
                 other_cat.died_by.append(other_history_text)
             elif ("multi_death" in death_cause.tags or "other_cat_death" in death_cause.tags) \
                     and other_cat.status == 'leader':
                 game.clan.leader_lives -= 1
-                other_cat.die()
+                other_cat.die(body)
                 other_cat.died_by.append(other_history_text)
             if "other_cat_death" not in death_cause.tags:
-                cat.die()
+                cat.die(body)
                 cat.died_by.append(history_text)
 
-        # if "rel_down" in death_cause.tags:
-        #    other_clan.relations -= 5
+        if "rel_down" in death_cause.tags:
+            difference = -5
+            change_clan_relations(other_clan, difference=difference)
+
+        elif "rel_up" in death_cause.tags:
+            difference = 5
+            change_clan_relations(other_clan, difference=difference)
 
         game.cur_events_list.append(death_text)
         game.birth_death_events_list.append(death_text)
@@ -170,6 +185,62 @@ class Death_Events():
         if SAVE_DEATH:
             save_death(cat, death_text)
 
-
-
+    def handle_relationship_changes(self, cat, death_cause, other_cat):
+        cat_to = None
+        cat_from = None
+        n = 20
+        romantic = 0
+        platonic = 0
+        dislike = 0
+        admiration = 0
+        comfortable = 0
+        jealousy = 0
+        trust = 0
+        if "rc_to_mc" in death_cause.tags:
+            cat_to = [cat.ID]
+            cat_from = [other_cat]
+        elif "mc_to_rc" in death_cause.tags:
+            cat_to = [other_cat.ID]
+            cat_from = [cat]
+        elif "to_both" in death_cause.tags:
+            cat_to = [cat.ID, other_cat.ID]
+            cat_from = [other_cat, cat]
+        if "romantic" in death_cause.tags:
+            romantic = n
+        elif "neg_romantic" in death_cause.tags:
+            romantic = -n
+        if "platonic" in death_cause.tags:
+            platonic = n
+        elif "neg_platonic" in death_cause.tags:
+            platonic = -n
+        if "dislike" in death_cause.tags:
+            dislike = n
+        elif "neg_dislike" in death_cause.tags:
+            dislike = -n
+        if "respect" in death_cause.tags:
+            admiration = n
+        elif "neg_respect" in death_cause.tags:
+            admiration = -n
+        if "comfort" in death_cause.tags:
+            comfortable = n
+        elif "neg_comfort" in death_cause.tags:
+            comfortable = -n
+        if "jealousy" in death_cause.tags:
+            jealousy = n
+        elif "neg_jealousy" in death_cause.tags:
+            jealousy = -n
+        if "trust" in death_cause.tags:
+            trust = n
+        elif "neg_trust" in death_cause.tags:
+            trust = -n
+        change_relationship_values(
+            cat_to,
+            cat_from,
+            romantic,
+            platonic,
+            dislike,
+            admiration,
+            comfortable,
+            jealousy,
+            trust)
 

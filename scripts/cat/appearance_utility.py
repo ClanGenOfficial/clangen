@@ -188,32 +188,20 @@ def init_sprite(cat):
         cat.age_sprites['dead'] = None
 
 def init_scars(cat):
-    if cat.specialty is not None:
+    if not cat.scars:
         scar_choice = randint(0, 15)
         if cat.age in ['kitten', 'adolescent']:
             scar_choice = randint(0, 50)
         elif cat.age in ['young adult', 'adult']:
             scar_choice = randint(0, 20)
         if scar_choice == 1:
-            cat.specialty = choice([
+            cat.scars.append(choice([
                 choice(scars1),
                 choice(scars3)
-            ])
+            ]))
 
-    if cat.specialty2 is not None:
-        scar_choice2 = randint(0, 30)
-        if cat.age in ['kitten', 'adolescent']:
-            scar_choice2 = randint(0, 100)
-        elif cat.age in ['young adult', 'adult']:
-            scar_choice2 = randint(0, 40)
-        if scar_choice2 == 1:
-            cat.specialty2 = choice([
-                choice(scars1),
-                choice(scars3)
-            ])
-
-    if 'NOTAIL' in (cat.specialty, cat.specialty2) and 'HALFTAIL' in (cat.specialty, cat.specialty2):
-        cat.specialty2 = None
+    if 'NOTAIL' in cat.scars and 'HALFTAIL' in cat.scars:
+        cat.scars.remove('HALFTAIL')
 
 
 def init_accessories(cat):

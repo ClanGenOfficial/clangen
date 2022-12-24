@@ -40,10 +40,16 @@
     {
         "injury": "bruises",
         "tags": [
+            "other_cat",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "rc_to_mc",
+            "platonic",
+            "respect",
+            "comfort",
+            "trust"
         ],
         "event_text": "m_c saved r_c from d_l and was barely even hurt.",
         "history_text": [
@@ -97,10 +103,16 @@
     {
         "injury": "scrapes",
         "tags": [
+            "other_cat",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "rc_to_mc",
+            "platonic",
+            "respect",
+            "comfort",
+            "trust"
         ],
         "event_text": "m_c saved r_c from d_l and was barely even hurt.",
         "history_text": [
@@ -154,10 +166,16 @@
     {
         "injury": "bite-wound",
         "tags": [
+            "other_cat",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "rc_to_mc",
+            "platonic",
+            "respect",
+            "comfort",
+            "trust"
         ],
         "event_text": "m_c saved r_c from d_l, but was hurt.",
         "history_text": [
@@ -173,11 +191,17 @@
     {
         "injury": "bite-wound",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "rc_to_mc",
+            "respect",
+            "comfort",
+            "trust",
+            "platonic"
         ],
         "event_text": "m_c was hurt while protecting the leader from d_l.",
         "history_text": [
@@ -191,13 +215,20 @@
         "other_cat_skill": null
     },
     {
-        "injury": "bite-wound",
+        "injury": "cat bite",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c was wounded during a harsh training exercise lead by r_c.",
         "history_text": [
@@ -211,15 +242,22 @@
         "other_cat_skill": null
     },
     {
-        "injury": "bite-wound",
+        "injury": "cat bite",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "other_clan",
             "rel_down",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c was hurt by o_c warriors after being ordered by r_c to go over the border.",
         "history_text": [
@@ -233,13 +271,20 @@
         "other_cat_skill": null
     },
     {
-        "injury": "bite-wound",
+        "injury": "cat bite",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c was injured after a fight with a clanmate that r_c encouraged.",
         "history_text": [
@@ -274,10 +319,17 @@
     {
         "injury": "broken bone",
         "tags": [
+            "other_cat",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "rc_to_mc",
+            "platonic",
+            "respect",
+            "comfort",
+            "trust",
+            "neg_dislike"
         ],
         "event_text": "m_c saved r_c from d_l, but was badly injured.",
         "history_text": [
@@ -312,10 +364,16 @@
     {
         "injury": "claw-wound",
         "tags": [
+            "other_cat",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "rc_to_mc",
+            "platonic",
+            "respect",
+            "comfort",
+            "trust"
         ],
         "event_text": "m_c saved r_c from d_l, but was hurt.",
         "history_text": [
@@ -331,11 +389,18 @@
     {
         "injury": "claw-wound",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "rc_to_mc",
+            "respect",
+            "comfort",
+            "trust",
+            "neg_dislike",
+            "platonic"
         ],
         "event_text": "m_c was hurt while protecting the leader from d_l.",
         "history_text": [
@@ -351,11 +416,18 @@
     {
         "injury": "claw-wound",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c was wounded during a harsh training exercise lead by r_c.",
         "history_text": [
@@ -371,13 +443,20 @@
     {
         "injury": "claw-wound",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "other_clan",
             "rel_down",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c was hurt by o_c warriors after being ordered by r_c to go over the border.",
         "history_text": [
@@ -393,13 +472,20 @@
     {
         "injury": "claw-wound",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "other_clan",
             "rel_down",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c was injured after a fight with a clanmate that r_c encouraged.",
         "history_text": [
@@ -415,11 +501,18 @@
     {
         "injury": "mangled tail",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c's tail was badly hurt by t_l while they were trying to follow r_c's orders.",
         "history_text": [
@@ -435,11 +528,18 @@
     {
         "injury": "mangled leg",
         "tags": [
+            "other_cat",
             "other_cat_leader",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
         ],
         "event_text": "m_c's leg was badly injured after r_c forces them to fight a d_l.",
         "history_text": [

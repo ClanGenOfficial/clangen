@@ -1,0 +1,332 @@
+[
+    {
+        "patrol_id": "gen_hunt_mouse1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["hunting"],
+        "intro_text": "Your patrol comes across a mouse.",
+        "success_text": ["Your patrol catches the mouse!"],
+        "fail_text": ["Your patrol narrowly misses the mouse."],
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 60,
+        "exp": 10,
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 1,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "gen_hunt_mouse2",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["hunting", "apprentice"],
+        "intro_text": "Your patrol comes across a mouse.",
+        "decline_text": "Your patrol ignores the mouse.",
+        "chance_of_success": 60,
+        "exp": 10,
+        "success_text": [
+            "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
+            "r_c leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"],
+        "fail_text": ["Your patrol narrowly misses the mouse."],
+        "min_cats": 1,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "gen_hunt_rat1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["hunting"],
+        "intro_text": "Your patrol comes across a large rat.",
+        "success_text": ["Your patrol catches the rat! More freshkill!",
+        "The rat rears up and hisses at r_c, but while it's distracted p_l takes it out with a quick strike.",
+        "The rat is huge and quick, but s_c is quicker, bringing it down just before it scurries out of reach. Everyone gathers around them in congratulations of the skillful kill."
+        ],
+        "fail_text": ["Your patrol misses the rat, and their confidence is shaken."],
+        "decline_text": "Your patrol ignores the rat.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": ["great hunter", "fantastic hunter"],
+        "min_cats": 1,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "gen_hunt_hare1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["hunting"],
+        "intro_text": "Your patrol comes across a large hare.",
+        "success_text": [
+            "Your patrol catches the hare!",
+            null,
+            "s_c runs the hare down in a huge display of athleticism and skill."
+        ],
+        "fail_text": ["Your patrol narrowly misses the hare."],
+        "decline_text": "Your patrol ignores the hare.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "win_skills": ["fantastic hunter"],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "gen_hunt_bird1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["hunting"],
+        "intro_text": "Your patrol comes across a bird.",
+        "success_text": ["Your patrol catches the bird before it flies away!"],
+        "fail_text": ["Your patrol narrowly misses the bird."],
+        "decline_text": "Your patrol ignores the bird.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": ["great hunter", "fantastic hunter"],
+        "min_cats": 1,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "gen_hunt_squirrel1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["hunting"],
+        "intro_text": "Your patrol comes across a squirrel.",
+        "success_text": ["Your patrol catches the squirrel!"],
+        "fail_text": ["Your patrol narrowly misses the squirrel."],
+        "decline_text": "Your patrol ignores the squirrel.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 1,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "gen_hunt_fish1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["hunting"],
+        "intro_text": "Your patrol sees the shadow of a fish in a river.",
+        "success_text": ["r_c hooks the fish out of the water! More freshkill!"],
+        "fail_text": ["Your patrol accidentally scares the fish away."],
+        "decline_text": "Your patrol ignores the fish.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "win_skills": ["great hunter", "fantastic hunter"],
+        "min_cats": 1,
+        "max_cats": 3,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "gen_hunt_fish2",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["hunting"],
+        "intro_text": "Your patrol sees the shadow of a school of fish in the river.",
+        "decline_text": "Your patrol ignores the fish.",
+        "chance_of_success": 50,
+        "exp": 10,
+        "success_text": [
+            "p_l leads a successful fishing session, with almost everyone walking home with a fishy mouthful.",
+            null,
+            "s_c makes fishing look easy, giving out tips to any interested cats."
+        ],
+        "fail_text": ["Your patrol accidentally scares the fish away."],
+        "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
+        "min_cats": 4,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+
+    },
+    {
+        "patrol_id": "gen_hunt_rabbit1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["hunting", "poison_clan"],
+        "intro_text": "r_c spots a rabbit up ahead but it seems to be acting strange. The patrol can see its tremors from a few fox-lengths away.",
+        "success_text": [
+            "r_c catches the rabbit and it is eaten as normal.",
+            "r_c catches the rabbit, but when they report about the strange incident at camp, the dead rabbit is taken far away and buried.",
+            "s_c stops the patrol from catching the rabbit and takes the opportunity to teach them about illnesses that can pass from prey to cat."],
+        "fail_text": [
+            "r_c leaps for the rabbit but it still manages to slip away, despite it's obvious illness.",
+            null,
+            null,
+            "r_c catches the rabbit, but later they and the cats who eat it become violently ill."],
+        "decline_text": "r_c avoids catching the rabbit and looks for other prey.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "win_skills": ["smart", "very smart", "extremely smart"],
+        "min_cats": 1,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "gen_hunt_rabbit2",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["hunting", "trust", "minor_injury"],
+        "intro_text": "A rabbit bursts out from cover, startled by the patrol.",
+        "decline_text": "They watch it go, just as startled.",
+        "chance_of_success": 40,
+        "exp": 10,
+        "success_text": [
+            "The patrol rallies almost instantly, and through teamwork manage to corner and catch the rabbit!",
+            null,
+            "s_c reacts quicker than thought, tearing off after the rabbit and bringing it down."
+        ],
+        "fail_text": ["Your patrol jumps after it, but the rabbit has too great of a head start.",
+        "s_c is quicker than anyone else, tearing after the rabbit, but in their haste they put a paw wrong and stop as a sharp twinge of pain shoots up their leg."
+        ],
+        "win_skills": ["great hunter", "fantastic hunter"],
+        "min_cats": 1,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+    },
+    {
+        "patrol_id": "gen_hunt_vision1",
+        "biome": "Any",
+        "season": "Any",
+        "tags": ["hunting", "respect", "trust", "jealousy"],
+        "intro_text": "As the patrol spreads out to hunt, r_c admits they think they had a vision from StarClan last night.",
+        "decline_text": "The patrol doesn't talk about the vision.",
+        "chance_of_success": 40,
+        "exp": 20,
+        "success_text": [
+            "The patrol talks to them about whether it was a real vision as they hunt.",
+            "p_l takes r_c aside, giving them the full benefits of p_l's seniority and experience as they discuss r_c's vision.",
+            "s_c chooses to hunt with r_c, the spiritual warrior gently guiding the conversation. r_c feels deeply privileged and far more at peace after confiding in them.",
+            null
+        ],
+        "fail_text": [
+            "No one can make sense of the vision.",
+            "r_c notices p_l looking at them enviously, withdraws from the rest of the patrol, and dismisses the dream as unimportant."
+        ],
+        "win_skills": ["strong connection to starclan"],
+        "min_cats": 2,
+        "max_cats": 6,
+        "antagonize_text": null,
+        "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_hunt_vision2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["hunting"],
+    "intro_text": "As they head out to hunt, r_c thinks about the dream they had last night... was it sent by StarClan?",
+    "decline_text": "They push it from their mind.",
+    "chance_of_success": 40,
+    "exp": 20,
+    "success_text": [
+        "It definitely distracts them from the hunt, but r_c uses the time by themselves to put their thoughts in order. It was a sign from their ancestors. Now they need to figure out what to do next.",
+        "Somehow hunting brings r_c to almost a meditative state, and not only are they fairly confident of their next steps having been given this vision, but they also bring back a good haul to the prey pile.",
+        "s_c often feels like StarClan walks with them, and this is just another instance on the path. They use the solo patrol to collect their thoughts, and by the time they pad home with a good catch, they're ready for the next step their vision hinted at.",
+        null
+    ],
+    "fail_text": [
+        "r_c can't make sense of the vision."
+    ],
+    "win_skills": ["strong connection to starclan"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_hunt_sneakprey1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["hunting", "trust", "respect", "disrespect", "distrust", "no_app", "clan_to_r_c"],
+    "intro_text": "r_c is tempted to eat the prey they just caught.",
+    "decline_text": "r_c decides against breaking the warrior code",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "They resist the temptation, going on to make a couple of great catches to make sure the elders are fed.",
+        "After all, they have caught enough on this solo hunt that they won't be able to carry it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile."
+    ],
+    "fail_text": [
+            "r_c gives in to their grumbling belly, reasoning that no one will notice, but when they arrive back at camp empty-pawed and with blood on their lips they feel the stares of the other warriors on their pelt."
+    ],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_hunt_sneakprey2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["hunting", "apprentice", "trust", "respect", "disrespect", "distrust", "clan_to_r_c"],
+    "intro_text": "r_c is tempted to eat the prey they just caught.",
+    "decline_text": "r_c decides against breaking the warrior code",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "They resist the temptation, going on to make a couple of great catches to make sure the elders are fed.",
+        "After all, they have caught enough on this solo hunt that they won't be able to carry it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile."
+    ],
+    "fail_text": [
+            "r_c gives in to their grumbling belly, reasoning that no one will notice, but when they arrive back at camp empty-pawed and with blood on their lips they feel the stares of the warriors on their pelt. r_c slinks back to the apprentice's den, tail and ears low."
+    ],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_hunt_sneakprey3",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["hunting", "trust", "dislike", "respect", "disrespect", "distrust", "no_app", "clan_to_r_c", "patrol_to_r_c"],
+    "intro_text": "r_c is tempted to eat the prey they just caught.",
+    "decline_text": "r_c decides against breaking the warrior code",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "They resist the temptation, going on to make a couple of great catches to make sure the elders are fed.",
+        "After all, the patrol has caught enough on this hunt that they'll have trouble carrying it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile."
+    ],
+    "fail_text": [
+        "r_c gives in to their grumbling belly, reasoning that no one will notice, but when the patrol reforms and r_c arrives back empty-pawed with blood on their lips they feel the suspicious stares of the other warriors on their pelt.",
+        "They think they've gotten away with their clandestine snacking, but when r_c arrives back at camp another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns them to dig a new trench for the clan's dirtplace, and r_c hears snide remarks when they slink in to their nest that night."
+    ],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_hunt_sneakprey4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["hunting", "trust", "dislike", "apprentice", "respect", "disrespect", "distrust", "clan_to_r_c", "patrol_to_r_c"],
+    "intro_text": "r_c is tempted to eat the prey they just caught.",
+    "decline_text": "r_c decides against breaking the warrior code",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "They eat the prey without anyone noticing.",
+        "After all, the patrol has caught enough on this hunt that they'll have trouble carrying it all back to camp. They stop for a quick snack and return to camp laden with prey for the fresh-kill pile."
+    ],
+    "fail_text": [
+        "They think they've gotten away with their clandestine snacking, but when r_c arrives back at camp, another patrol member pulls the deputy aside for a quiet word, glaring back at r_c. The deputy assigns them to dig a new trench for the clan's dirtplace; r_c prickles with humiliation and terrible smells."
+    ],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+}
+]

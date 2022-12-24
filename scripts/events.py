@@ -38,12 +38,12 @@ class Events():
         self.living_cats = 0
         self.new_cat_invited = False
         game.patrolled.clear()
-        if any(str(cat.status) in {'leader', 'deputy', 'warrior', 'apprentice'}
-               and not cat.dead and not cat.exiled for cat in Cat.all_cats.values()):
+        if any(str(cat.status) in {'leader', 'deputy', 'warrior', 'medicine cat', 'medicine cat apprentice', 'apprentice'}
+                and not cat.dead and not cat.outside for cat in Cat.all_cats.values()):
             game.switches['no_able_left'] = False
         self.relation_events.handle_pregnancy_age(game.clan)
         for cat in Cat.all_cats.copy().values():
-            if not cat.exiled:
+            if not cat.outside:
                 self.one_moon_cat(cat)
             else:
                 # ---------------------------------------------------------------------------- #
@@ -67,7 +67,7 @@ class Events():
                         game.cur_events_list.append(text)
                         game.birth_death_events_list.append(text)
 
-                if cat.exiled and cat.status == 'leader' and not cat.dead and randint(
+                if cat.outside and cat.status == 'leader' and not cat.dead and randint(
                         1, 10) == 1:
                     game.clan.leader_lives -= 1
                     if game.clan.leader_lives <= 0:
@@ -77,7 +77,7 @@ class Events():
                         game.birth_death_events_list.append(text)
 
                         game.clan.leader_lives = 0
-                elif cat.exiled and cat.status == 'leader' and not cat.dead and randint(
+                elif cat.outside and cat.status == 'leader' and not cat.dead and randint(
                         1, 45) == 1:
                     game.clan.leader_lives -= 10
                     cat.dead = True
@@ -86,9 +86,9 @@ class Events():
                     game.birth_death_events_list.append(text)
                     game.clan.leader_lives = 0
 
-            # relationships have to be handled separately, because of the ceremony name change
+        # relationships have to be handled separately, because of the ceremony name change
         for cat in Cat.all_cats.copy().values():
-            if cat.dead or cat.exiled:
+            if cat.dead or cat.outside:
                 continue
             # switches between the two death handles
             self.handle_outbreaks(cat)
@@ -101,8 +101,15 @@ class Events():
                 if not triggered_death:
                     triggered_death = self.handle_injuries_or_general_death(cat)
 
-            if not cat.dead:
+            if not cat.dead or cat.outside:
                 self.relation_events.handle_relationships(cat)
+
+        if Cat.grief_strings:
+            grief_strings = "<br><br>".join(Cat.grief_strings)
+            game.cur_events_list.append(grief_strings)
+            game.birth_death_events_list.append(grief_strings)
+            game.relation_events_list.append(grief_strings)
+            Cat.grief_strings.clear()
 
         self.check_clan_relations()
 
@@ -131,19 +138,19 @@ class Events():
         else:
             has_med = any(
                 str(cat.status) in {"medicine cat", "medicine cat apprentice"}
-                and not cat.dead and not cat.exiled
+                and not cat.dead and not cat.outside
                 for cat in Cat.all_cats.values())
             if not has_med:
                 string = f"{game.clan.name}Clan has no medicine cat!"
                 game.cur_events_list.insert(0, string)
                 game.health_events_list.insert(0, string)
 
-        if game.clan.deputy == 0 or game.clan.deputy is None or game.clan.deputy.dead or game.clan.deputy.exiled:
+        if game.clan.deputy == 0 or game.clan.deputy is None or game.clan.deputy.dead or game.clan.deputy.outside:
             if game.settings.get('deputy') is True:
                 random_count = 0
                 while random_count < 30:
                     random_cat = str(random.choice(list(Cat.all_cats.keys())))
-                    if not Cat.all_cats[random_cat].dead and not Cat.all_cats[random_cat].exiled:
+                    if not Cat.all_cats[random_cat].dead and not Cat.all_cats[random_cat].outside:
                         if Cat.all_cats[random_cat].status == 'warrior' and (
                                 len(Cat.all_cats[random_cat].former_apprentices) > 0 or len(
                                 Cat.all_cats[random_cat].apprentice) > 0):
@@ -184,9 +191,9 @@ class Events():
                     0, f"{game.clan.name}Clan has no deputy!")
 
             # check for leader
-            if game.clan.leader.dead or game.clan.leader.exiled:
+            if game.clan.leader.dead or game.clan.leader.outside:
                 self.perform_ceremonies(game.clan.leader)
-                if game.clan.leader.dead or game.clan.leader.exiled:
+                if game.clan.leader.dead or game.clan.leader.outside:
                     game.cur_events_list.insert(0, f"{game.clan.name}Clan has no leader!")
 
     game.switches['timeskip'] = False
@@ -222,7 +229,7 @@ class Events():
         self.other_interactions(cat)
         self.coming_out(cat)
         self.gain_accessories(cat)
-        if game.clan.game_mode == "classic":
+        if game.clan.game_mode == "classic" and not int(random.random() * 3):
             self.gain_scars(cat)
         self.relation_events.handle_having_kits(cat, clan=game.clan)
 
@@ -253,7 +260,7 @@ class Events():
                         self.time_at_war += 1
                         self.at_war = True
                     else:
-                        self.enemy_clan = f'{str(other_clan.name)}Clan'
+                        self.enemy_clan = other_clan
                         possible_text = [
                             f'War rages between {game.clan.name}Clan and {other_clan.name}Clan.',
                             f'{other_clan.name}Clan has taken some of {game.clan.name}'
@@ -288,7 +295,7 @@ class Events():
         # ---------------------------------------------------------------------------- #
 
         # leader dying or being exiled and dep promotion to leader
-        if (game.clan.leader.dead or game.clan.leader.exiled) \
+        if (game.clan.leader.dead or game.clan.leader.outside)\
                 and game.clan.deputy is not None and not game.clan.deputy.dead:
             if game.clan.leader.exiled:
                 text = str(game.clan.leader.name) + ' was exiled.'
@@ -333,12 +340,12 @@ class Events():
                     # check if the medicine cat is an elder
                     has_elder_med = any(
                         cat.status == 'medicine cat' and cat.age == 'elder'
-                        and not cat.dead and not cat.exiled
+                        and not cat.dead and not cat.outside
                         for cat in Cat.all_cats.values())
 
                     very_old_med = any(
                         cat.status == 'medicine cat' and cat.moons >= 150
-                        and not cat.dead and not cat.exiled
+                        and not cat.dead and not cat.outside
                         for cat in Cat.all_cats.values())
 
                     # check if the clan has sufficient med cats
@@ -348,11 +355,11 @@ class Events():
                                                                        game.clan))
                     else:
                         has_med = any(str(cat.status) in {"medicine cat", "medicine cat apprentice"}
-                                      and not cat.dead and not cat.exiled for cat in Cat.all_cats.values())
+                                      and not cat.dead and not cat.outside for cat in Cat.all_cats.values())
                     # check if a med cat app already exists
                     has_med_app = any(
                         cat.status == 'medicine cat apprentice'
-                        and not cat.dead and not cat.exiled
+                        and not cat.dead and not cat.outside
                         for cat in Cat.all_cats.values())
 
                     # assign chance to become med app depending on current med cat and traits
@@ -400,6 +407,7 @@ class Events():
         # ---------------------------------------------------------------------------- #
         ceremony = []
         cat.status_change(promoted_to)
+
         if (promoted_to == 'warrior'):
             resource_directory = "resources/dicts/events/ceremonies/"
             TRAITS = None
@@ -443,13 +451,15 @@ class Events():
             if cat.parent1 is not None and str(
                     cat_class.all_cats[cat.parent1].name) != str(
                         cat.mentor.name) and cat.parent1 != "unnamed queen":
-                ceremony.extend([
-                    str(cat_class.all_cats[cat.parent1].name) +
-                    " is watching in pride as " + str(cat.name) +
-                    " is named and given to " + str(cat.mentor.name) +
-                    " to apprentice under. They know that " +
-                    str(cat.mentor.name) + " was a good choice."
-                ])
+                parent = Cat.all_cats[cat.parent1]
+                if not parent.dead and not parent.outside:
+                    ceremony.extend([
+                        str(cat_class.all_cats[cat.parent1].name) +
+                        " is watching in pride as " + str(cat.name) +
+                        " is named and given to " + str(cat.mentor.name) +
+                        " to apprentice under. They know that " +
+                        str(cat.mentor.name) + " was a good choice."
+                    ])
             if cat.is_disabled() and not game.clan.leader.dead:
                 ceremony.extend([
                     str(cat.name) + " is confidently telling " +
@@ -506,7 +516,7 @@ class Events():
         # find other_cat
         other_cat = choice(list(Cat.all_cats.values()))
         countdown = int(len(Cat.all_cats) / 3)
-        while cat == other_cat or other_cat.dead or other_cat.exiled:
+        while cat == other_cat or other_cat.dead or other_cat.outside:
             other_cat = choice(list(Cat.all_cats.values()))
             countdown -= 1
             if countdown <= 0:
@@ -545,9 +555,9 @@ class Events():
                 ])
                 # check if the cat is missing a tail before giving feather acc
                 if cat.accessory in ['RED FEATHERS', 'BLUE FEATHERS', 'JAY FEATHERS']:
-                    if 'NOTAIL' in (cat.specialty, cat.specialty2):
+                    if 'NOTAIL' in cat.scars:
                         cat.accessory = choice(plant_accessories)
-                    if 'HALFTAIL' in (cat.specialty, cat.specialty2):
+                    if 'HALFTAIL' in cat.scars:
                         cat.accessory = choice(plant_accessories)
                 acc_singular = plural_acc_names(cat.accessory, False, True)
                 acc_plural = plural_acc_names(cat.accessory, True, False)
@@ -568,7 +578,7 @@ class Events():
                                 f'A clanmate gave {name} some {acc_plural} and they decided to wear them.'
                             ])
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS",
-                                           "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
+                                           "JAY FEATHERS"] and "NOTAIL" in cat.scars:
                         acc_text.append(f'{name} found a bunch of pretty {acc_plural} and decided to wear them.')
                     elif cat.accessory in ["HERBS", "PETALS", "DRY_HERBS"]:
                         acc_text.append(f'{name} always seems to have {acc_plural} stuck in their fur.')
@@ -600,7 +610,7 @@ class Events():
 
                         ])
                     elif cat.accessory in ["RED FEATHERS", "BLUE FEATHERS",
-                                           "JAY FEATHERS"] and cat.specialty != "NOTAIL" and cat.specialty2 != "NOTAIL":
+                                           "JAY FEATHERS"] and "NOTAIL" in cat.scars:
                         acc_text.append(
                             f'{name} was playing with {acc_plural} earlier and decided to wear some of them.')
                     elif cat.accessory in ["HERBS", "PETALS", "DRYHERBS"]:
@@ -633,7 +643,7 @@ class Events():
         # ---------------------------------------------------------------------------- #
         #                                    scars                                     #
         # ---------------------------------------------------------------------------- #
-        if cat.specialty and cat.specialty2 or cat.age == 'kitten':
+        if len(cat.scars) == 4 or cat.age == 'kitten':
             return
 
         risky_traits = ["bloodthirsty", "ambitious", "vengeful", "strict", "cold", "fierce"]
@@ -648,7 +658,7 @@ class Events():
         specialty = None  # Scar to be set
         alive_kits = list(filter(lambda kitty: (kitty.age == "kitten"
                                                 and not kitty.dead
-                                                and not kitty.exiled),
+                                                and not kitty.outside),
                                  Cat.all_cats.values()))
         leader = Cat.all_cats[str(game.clan.leader)]
 
@@ -700,17 +710,17 @@ class Events():
         all_scars = scars1 + scars2 + scars3
         base_scars = scars1 + scars2  # Can be caused by other cats
         for scar_pool in [all_scars, base_scars]:
-            for special in [cat.specialty, cat.specialty2]:
-                if special:
+            for scar in cat.scars:
+                if scar:
                     try:
-                        if "NOPAW" == special and 'TOETRAP' in scar_pool:
+                        if "NOPAW" == scar and 'TOETRAP' in scar_pool:
                             scar_pool.remove('TOETRAP')
-                        if "NOTAIL" == special:
-                            for scar in ["HALFTAIL", "TAILBASE", "TAILSCAR"]:
-                                if scar in scar_pool:
-                                    scar_pool.remove(scar)
-                        if special in scar_pool:
-                            scar_pool.remove(special)  # No doubles
+                        if "NOTAIL" == scar:
+                            for option in ["HALFTAIL", "TAILBASE", "TAILSCAR"]:
+                                if option in scar_pool:
+                                    scar_pool.remove(option)
+                        if scar in scar_pool:
+                            scar_pool.remove(scar)  # No doubles
                     except ValueError as e:
                         print(f"Failed to exclude scar from pool: {e}")
 
@@ -809,10 +819,7 @@ class Events():
 
         # Apply scar
         if specialty:
-            if not cat.specialty:
-                cat.specialty = specialty
-            else:
-                cat.specialty2 = specialty
+            cat.scars.append(specialty)
 
     def invite_new_cats(self, cat):
         # ---------------------------------------------------------------------------- #
@@ -1066,7 +1073,7 @@ class Events():
 
             # create and update relationships
             for the_cat in new_cat.all_cats.values():
-                if the_cat.dead or the_cat.exiled:
+                if the_cat.dead or the_cat.outside:
                     continue
                 the_cat.relationships[new_cat.ID] = Relationship(the_cat, new_cat)
                 new_cat.relationships[the_cat.ID] = Relationship(new_cat, the_cat)
@@ -1090,9 +1097,9 @@ class Events():
 
                     # assign scars
                     if chosen_condition in ['lost a leg', 'born without a leg']:
-                        new_cat.specialty = 'NOPAW'
+                        new_cat.scars.append('NOPAW')
                     elif chosen_condition in ['lost their tail', 'born without a tail']:
-                        new_cat.specialty = "NOTAIL"
+                        new_cat.scars.append("NOTAIL")
 
             created_cats.append(new_cat)
 
@@ -1109,7 +1116,7 @@ class Events():
         interactions = []
         other_cat = choice(list(Cat.all_cats.values()))
         countdown = int(len(Cat.all_cats) / 3)
-        while cat == other_cat or other_cat.dead or other_cat.exiled:
+        while cat == other_cat or other_cat.dead or other_cat.outside:
             other_cat = choice(list(Cat.all_cats.values()))
             countdown -= 1
             if countdown <= 0:
@@ -1207,13 +1214,13 @@ class Events():
         alive_kits = list(filter(
             lambda kitty: (kitty.age == "kitten"
                            and not kitty.dead
-                           and not kitty.exiled),
+                           and not kitty.outside),
             Cat.all_cats.values()
         ))
 
         # chance to kill leader
         if not int(
-                random.random() * 90) and cat.status == 'leader' and not triggered_death and not cat.not_working():  # 1/80
+                random.random() * 100) and cat.status == 'leader' and not triggered_death and not cat.not_working():  # 1/80
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
 
@@ -1224,7 +1231,7 @@ class Events():
 
         # extra death chance and injuries in expanded & cruel season
         if game.clan.game_mode in ["expanded", "cruel season"]:
-            if not int(random.random() * 400) and not cat.not_working():  # 1/400
+            if not int(random.random() * 500) and not cat.not_working():  # 1/400
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
                 triggered_death = True
             else:
@@ -1238,8 +1245,8 @@ class Events():
                     triggered_death = True
                     self.handle_disasters(cat)
 
-        # classic scar chance
-        elif game.clan.game_mode == "classic" and not int(random.random() * 300):  # 1/300
+        # classic death chance
+        elif game.clan.game_mode == "classic" and not int(random.random() * 500):  # 1/500
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
 
@@ -1250,7 +1257,7 @@ class Events():
         alive_cats = list(filter(
             lambda kitty: (kitty.status != "leader"
                            and not kitty.dead
-                           and not kitty.exiled),
+                           and not kitty.outside),
             Cat.all_cats.values()
         )
         )
@@ -1365,22 +1372,22 @@ class Events():
             alive_kits = list(filter(
                 lambda kitty: (kitty.age == "kitten"
                                and not kitty.dead
-                               and not kitty.exiled),
+                               and not kitty.outside),
                 Cat.all_cats.values()
             ))
 
             # chance to kill leader
-            if not int(random.random() * 80) and cat.status == 'leader' and not triggered_death:  # 1/80
+            if not int(random.random() * 100) and cat.status == 'leader' and not triggered_death:  # 1/100
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
                 triggered_death = True
 
             # chance to die of old age
-            if cat.moons > int(random.random() * 51) + 140 and not triggered_death:  # cat.moons > 150 <--> 200
+            if cat.moons > int(random.random() * 51) + 150 and not triggered_death:  # cat.moons > 150 <--> 200
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
                 triggered_death = True
 
             # classic death chance
-            if not int(random.random() * 300):  # 1/300
+            if not int(random.random() * 500):  # 1/500
                 self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
                 triggered_death = True
 
@@ -1409,7 +1416,7 @@ class Events():
         # check how many kitties are already ill
         already_sick = list(filter(
             lambda kitty: (not kitty.dead
-                           and not kitty.exiled
+                           and not kitty.outside
                            and kitty.is_ill()),
             Cat.all_cats.values()
         ))
@@ -1418,7 +1425,7 @@ class Events():
         # round up the living kitties
         alive_cats = list(filter(
             lambda kitty: (not kitty.dead
-                           and not kitty.exiled
+                           and not kitty.outside
                            and not kitty.is_ill()),
             Cat.all_cats.values()
         ))
@@ -1426,7 +1433,7 @@ class Events():
 
         # if large amount of the population is already sick, stop spreading
         if already_sick_count >= alive_count * .25:
-            print('CURRENT SICK COUNT TOO HIGH', already_sick_count, alive_count)
+            #print('CURRENT SICK COUNT TOO HIGH', already_sick_count, alive_count)
             return
 
         for illness in cat.illnesses:
@@ -1443,7 +1450,7 @@ class Events():
                     alive_cats = list(filter(
                         lambda kitty: (kitty.status == "kitten"
                                        and not kitty.dead
-                                       and not kitty.exiled),
+                                       and not kitty.outside),
                         Cat.all_cats.values()
                     ))
                     alive_count = len(alive_cats)

@@ -1,3 +1,4 @@
+import re
 from random import choice
 import pygame_gui
 
@@ -6,7 +7,7 @@ import pygame
 from scripts.events import events_class
 from scripts.utility import draw, get_text_box_theme, get_living_cat_count
 # from scripts.game_structure.text import *
-from scripts.game_structure.image_button import UIImageButton
+from scripts.game_structure.image_button import UIImageButton, UITextBoxTweaked
 from scripts.game_structure.game_essentials import *
 from ..cat.cats import Cat
 from ..game_structure import image_cache

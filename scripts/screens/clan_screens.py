@@ -105,7 +105,7 @@ class ClanScreen(Screens):
                 break
             if not Cat.all_cats[x].dead and Cat.all_cats[
                 x].in_camp and not Cat.all_cats[x].exiled:
-                # print("Orginal location" + str(Cat.all_cats[x].placement))
+                # print("Original location" + str(Cat.all_cats[x].placement))
                 location = [0, 0]
                 if Cat.all_cats[x].placement[0] == "center":
                     # print("center - 0")
@@ -361,7 +361,7 @@ class StarClanScreen(Screens):
         self.dead_cats = [game.clan.instructor] if not game.clan.instructor.df else []
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
-            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and not the_cat.df:
+            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df:
                 self.dead_cats.append(the_cat)
 
 
@@ -378,7 +378,7 @@ class StarClanScreen(Screens):
                                                                          (110, 30)))  # Text will be filled in later
 
         self.set_disabled_menu_buttons(["starclan_screen"])
-        self.update_heading_text("Starclan")
+        self.update_heading_text("StarClan")
         self.show_menu_buttons()
 
         self.update_search_cats("")  # This will list all the cats, and create the button objects.
@@ -674,7 +674,7 @@ class ListScreen(Screens):
         self.living_cats = []
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
-            if not the_cat.dead and not the_cat.exiled:
+            if not the_cat.dead and not the_cat.outside:
                 self.living_cats.append(the_cat)
 
 
@@ -822,13 +822,18 @@ class AllegiancesScreen(Screens):
         living_cats = []
         # Determine the living cats.
         for the_cat in Cat.all_cats.values():
-            if not the_cat.dead and not the_cat.exiled:
+            if not the_cat.dead and not the_cat.outside:
                 living_cats.append(the_cat)
+        living_meds = []
+        for the_cat in Cat.all_cats.values():
+            if the_cat.status == 'medicine cat' and not the_cat.dead\
+            and not the_cat.outside:
+                living_meds.append(the_cat)
 
         # Pull the clan leaders
         leader = []
         if game.clan.leader is not None:
-            if not game.clan.leader.dead and not game.clan.leader.exiled:
+            if not game.clan.leader.dead and not game.clan.leader.outside:
                 self.allegiance_list.append([
                     '<b><u>LEADER</u></b>',
                     f"{str(game.clan.leader.name)} - a {game.clan.leader.describe_cat()}"
@@ -846,7 +851,8 @@ class AllegiancesScreen(Screens):
                             app_names += str(app.name) + ', '
                         self.allegiance_list.append(
                             ['', '      Apprentices: ' + app_names[:-2]])
-        if game.clan.deputy != 0 and game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.exiled:
+        # deputy
+        if game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.outside:
             self.allegiance_list.append([
                 '<b><u>DEPUTY</u></b>',
                 f"{str(game.clan.deputy.name)} - a {game.clan.deputy.describe_cat()}"
@@ -880,7 +886,7 @@ class AllegiancesScreen(Screens):
         for living_cat__ in living_cats:
             if str(
                     living_cat__.status
-            ) == 'warrior' and living_cat__.ID not in queens and not living_cat__.exiled:
+            ) == 'warrior' and living_cat__.ID not in queens and not living_cat__.outside:
                 if not cat_count:
                     self.allegiance_list.append([
                         '<b><u>WARRIORS</u></b>',
@@ -987,7 +993,7 @@ class AllegiancesScreen(Screens):
     def _extracted_from_screen_switches_24(self, living_cats, arg1, arg2):
         result = 0
         for living_cat in living_cats:
-            if str(living_cat.status) == arg1 and not living_cat.exiled:
+            if str(living_cat.status) == arg1 and not living_cat.outside:
                 if result == 0:
                     self.allegiance_list.append([
                         arg2,

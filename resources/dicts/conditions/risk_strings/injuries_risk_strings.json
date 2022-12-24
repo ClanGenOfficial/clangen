@@ -13,6 +13,18 @@
 
         ]
     },
+    "cat bite": {
+        "an infected wound": [
+            "The cat bite feels hot, and m_c winces as r_c cleans it. It's becoming infected.",
+            "m_c's skin is starting to feel feverish around the area of their wound. It looks a bit worse than it did yesterday."
+        ]
+    },
+    "beak bite": {
+        "an infected wound": [
+            "The beak wound feels hot, and m_c winces as r_c cleans it. It's becoming infected.",
+            "m_c's skin is starting to feel feverish around the area of their wound. It looks a bit worse than it did yesterday."
+        ]
+    },
     "snake bite": {
         "an infected wound": [
             "r_c mutters something about plantain, as m_c carefully licks around their snake bite wound. It's not healing like it should.",
@@ -70,7 +82,7 @@
     "cracked pads": {
         "an infected wound": [
             "r_c spreads the last of the salve on m_c's cracked and swollen pads, and sternly tells them to stay off their feet unless they'd like the infection to get any worse.",
-            "m_c swears they’ve been washing their pads, but they still seem to have become infected."
+            "m_c swears they've been washing their pads, but they still seem to have become infected."
 
         ]
     },
@@ -153,7 +165,7 @@
     "shivering": {
         "frostbite": [
             "r_c massages m_c's paw pads, looking for signs that blood flow is returning to them. This has definitely crossed the line into frostbite.",
-            "m_c says that their extremities feel like they’re being pricked by claws, and numbness soon follows. That's a sign of frostbite.",
+            "m_c says that their extremities feel like they're being pricked by claws, and numbness soon follows. That's a sign of frostbite.",
             "The skin of m_c's extremities is a worrying black and blue, one of their friends spends some time licking at the cold bits of skin but they seem to be frostbitten."
 
         ]
@@ -170,6 +182,20 @@
             "r_c drips the juice of herbs into m_c's damaged eyes, not paying any attention to their protests. This infection needs to be stopped before it goes any further.",
             "m_c can't open their eyes for the swelling and crust that has accumulated. Hopefully this infection doesn't spread."
 
+        ]
+    },
+    "quilled by a porcupine": {
+        "an infected wound": [
+            "r_c was careful when removing the quills from m_c's face, but unfortunately infection still found it's way in.",
+            "The wounds left behind on m_c by the porcupine quills have become infected.",
+            "m_c is distraught to find that infection has set in on their quill wounds."
+        ]
+    },
+    "poisoned": {
+        "redcough": [
+            "r_c watches as the inevitable happens and m_c begins to cough and choke on their own blood. The end is coming quickly for them.",
+            "m_c has been left weak and barely responsive from the poison, and now they've begun to choke up blood. That can't be a good sign.",
+            "m_c hacks and sputters on their own blood, they know the end is soon."
         ]
     },
     "broken back": {

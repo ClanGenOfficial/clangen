@@ -63,7 +63,7 @@ class Relation_Events():
                 current_relationship.link_relationship()
 
             # overcome dead mates
-            if cat_from_mate and cat_from_mate.dead and cat_from_mate.dead_for >= 4:
+            if cat_from_mate and cat_from_mate.dead and cat_from_mate.dead_for >= 4 and "grief stricken" not in cat_from.illnesses:
                 # randint is a slow function, don't call it unless we have to.
                 if random.random() > 0.96:  # Roughly 1/25
                     self.had_one_event = True
@@ -238,7 +238,7 @@ class Relation_Events():
                 cat_from.mate = None
                 return
             cat_from_mate = Cat.all_cats.get(cat_from.mate)
-            from_mate_in_clan = cat_from_mate.is_alive() and not cat_from_mate.exiled
+            from_mate_in_clan = cat_from_mate.is_alive() and not cat_from_mate.outside
 
         if not self.had_one_event and relationship_from.mates and from_mate_in_clan:
             if self.check_if_breakup(relationship_from, relationship_to, cat_from, cat_to):
@@ -299,7 +299,7 @@ class Relation_Events():
 
     def handle_zero_moon_pregnant(self, cat, other_cat=None, relation=None, clan=game.clan):
         """Handles if the cat is zero moons pregnant."""
-        if other_cat and (other_cat.dead or other_cat.exiled or other_cat.birth_cooldown > 0):
+        if other_cat and (other_cat.dead or other_cat.outside or other_cat.birth_cooldown > 0):
             return
 
         if cat.ID in clan.pregnancy_data:
@@ -359,8 +359,8 @@ class Relation_Events():
         if cat.ID not in clan.pregnancy_data.keys():
             return
 
-        # if the pregnant cat is exiled or killed meanwhile, delete it from the dictionary
-        if cat.dead or cat.exiled:
+        # if the pregnant cat is outside or killed meanwhile, delete it from the dictionary
+        if cat.dead or cat.outside:
             del clan.pregnancy_data[cat.ID]
             return
 
@@ -383,12 +383,12 @@ class Relation_Events():
 
     def handle_two_moon_pregnant(self, cat, clan=game.clan):
         """Handles if the cat is two moons pregnant."""
-        # if the pregnant cat is exiled or killed meanwhile, delete it from the dictionary
+        # if the pregnant cat is outside or killed meanwhile, delete it from the dictionary
         if cat.ID not in clan.pregnancy_data.keys():
             return
 
-        # if the pregnant cat is exiled or killed meanwhile, delete it from the dictionary
-        if cat.dead or cat.exiled:
+        # if the pregnant cat is outside or killed meanwhile, delete it from the dictionary
+        if cat.dead or cat.outside:
             del clan.pregnancy_data[cat.ID]
             return
 
@@ -411,33 +411,42 @@ class Relation_Events():
         # choose event string
         print_event = ""
         event_list = []
+        possible_events = []
         if other_cat is None:
             possible_events = [f"{str(cat.name)} had a {insert}, but refused to talk about their origin.",
                                f"{str(cat.name)} secretly had a {insert}.",
                                f"{str(cat.name)} had a {insert} with an unknown partner.",
                                f"{str(cat.name)} had a {insert} and refused to talk about their progenitor.",
-                               f"{str(cat.name)} had a {insert} and is absolutely refusing to talk about it or "
-                               f"acknowledge it at all.",
-                               f"{str(cat.name)} doesn't feel ready to be a parent of this {insert}. But they promise "
-                               f"to the tiny flailing limbs by their side that they'll do their best, they swear on "
-                               f"Starclan itself. "
+                               f"{str(cat.name)} had a {insert} and is absolutely refusing to talk about it or acknowledge it at all.",
+                               f"{str(cat.name)} doesn't feel ready to be a parent of this {insert}. But they promise to the tiny flailing limbs by their side that they'll do their best, they swear on StarClan itself.",
+                               f"No one knows who {str(cat.name)} has had their {insert} with, but they seem very happy watching over their little offspring in the nursery",
+                               f"Whenever someone asks whether {str(cat.name)} will be alright raising their {insert} alone, they just smile, and reply that everything is going to work out fine.",
+                               f"A {insert}! {str(cat.name)} welcomes them happily, and seems unperturbed by the lack of a partner in the nursery with them."
                                ]
-        elif cat.mate == other_cat.ID:
+        elif cat.mate == other_cat.ID and not other_cat.dead and not other_cat.outside:
             possible_events = [f"{str(cat.name)} had a {insert} with {str(other_cat.name)}.",
-                               f"In the nursery, {str(cat.name)} lies suckling a {insert}, {str(other_cat.name)}"
-                               f" watching over them and purring so hard their body vibrates.",
-                               f"{str(cat.name)} and {str(other_cat.name)}'s eyes meet over their {insert}, full of "
-                               f"love for their growing family.",
-                               f"In the quiet of the nursery, in the nest they've spent so long preparing, "
-                               f"{str(cat.name)} and {str(other_cat.name)} welcome a {insert}.",
-                               f"With their {insert} mewling at their belly, {str(cat.name)}'s long pregnancy has "
-                               f"finally given them and {str(other_cat.name)} the expansion to their family they've "
-                               f"been hoping and waiting for.",
-                               f"Even with {str(other_cat.name)} by their side, {str(cat.name)} doesn't feel ready to "
-                               f"be a parent of this {insert}. But they promise to the tiny flailing limbs by their "
-                               f"side that they'll do their best, they swear on Starclan itself. "
+                               f"In the nursery, {str(cat.name)} lies suckling a {insert}, {str(other_cat.name)} watching over them and purring so hard their body vibrates.",
+                               f"{str(cat.name)} and {str(other_cat.name)}'s eyes meet over their {insert}, full of love for their growing family.",
+                               f"In the quiet of the nursery, in the nest they've spent so long preparing, {str(cat.name)} and {str(other_cat.name)} welcome a {insert}.",
+                               f"With their {insert} mewling at their belly, {str(cat.name)}'s long pregnancy has finally given them and {str(other_cat.name)} the expansion to their family they've been hoping and waiting for.",
+                               f"Even with {str(other_cat.name)} by their side, {str(cat.name)} doesn't feel ready to be a parent of this {insert}. But they promise to the tiny flailing limbs by their side that they'll do their best, they swear on StarClan itself.",
+                               f"{str(other_cat.name)} has been waiting eagerly to meet their offspring. At {str(cat.name)}'s invitation, they crawl into the nursery, purring and joining {str(cat.name)} in licking their {insert} clean.",
+                               f"{str(other_cat.name)} has been impatient for the end of {str(cat.name)}'s pregnancy, and when they hear {str(cat.name)} has gone into labor they drop what they're doing and sprint for the nursery, where {str(cat.name)} is bringing a {insert} into the world.",
+                               f"{str(cat.name)} is so, so grateful that their adorable {insert} is here - both thrilled to meet them, and thrilled that {str(other_cat.name)} can take a turn parenting while {str(cat.name)} finally takes a little break from the stuffy air of the nursery.",
+                               f"{str(cat.name)} and {str(other_cat.name)} were so busy worrying about and looking forward to the birth that it's only now that they look at their {insert}, and wonder what to name them.",
+                               f"Purring with {str(other_cat.name)} against their back, {str(cat.name)} feels like they're going to explode with love, looking at their tiny new {insert}."
                                ]
-        else:
+        elif cat.mate == other_cat.ID and other_cat.dead or other_cat.outside:
+            possible_events = [
+                f"{str(cat.name)} looks at their {insert}, choking on both a purr and a wail. How are they supposed to do this without {str(other_cat.name)}?",
+                f"{str(cat.name)} sobs and pushes their new {insert} away from them. They look far too much like {str(other_cat.name)} for {str(cat.name)} to stand the sight of them.",
+                f"{str(cat.name)} purrs sadly over the tiny {insert} StarClan has blessed them with. They see {str(other_cat.name)} in their little pawpads, in their ears and eyes and mews.",
+                f"Cats call out, but {str(cat.name)} can't be convinced to go back to the nursery. Not with the new {insert} made from them and {str(other_cat.name)} there, taunting {str(cat.name)} with what should have been.",
+                f"Looking down at {str(other_cat.name)}'s last gift to them, {str(cat.name)} vows to protect their new {insert}.",
+                f"It's so hard, so very, very, nearly insurmountably hard doing this without their mate, but {str(cat.name)} wouldn't change it for the world. This {insert} is the last piece of {str(other_cat.name)} they have."
+
+            ]
+        elif cat.mate != other_cat.ID and cat.mate is not None:
             possible_events = [f"{str(cat.name)} secretly had a {insert} with {str(other_cat.name)}.",
                                f"{str(cat.name)} hopes that their {insert} doesn't look too much like "
                                f"{str(other_cat.name)}, otherwise questions might follow.",
@@ -446,19 +455,50 @@ class Relation_Events():
                                f"The newly arrived {insert} that {str(cat.name)} has just given birth to looks "
                                f"suspiciously like {str(other_cat.name)}. "
                                ]
+        else:
+            possible_events = [f"{str(cat.name)} had a {insert}, but refused to talk about their origin.",
+                               f"{str(cat.name)} had a {insert} and refused to talk about their progenitor.",
+                               f"{str(cat.name)} doesn't feel ready to be a parent of this {insert}. But they promise to the tiny flailing limbs by their side that they'll do their best, they swear on StarClan itself.",
+                               f"Whenever someone asks whether {str(cat.name)} will be alright raising their {insert} alone, they just smile, and reply that everything is going to work out fine.",
+                               f"A {insert}! {str(cat.name)} welcomes them happily, and seems unperturbed by the lack of a partner in the nursery with them."
+                               ]
+
+
         event_list.append(choice(possible_events))
 
-        if game.clan.game_mode != 'classic':
+        if not int(random.random() * 40):  # 1/40 chance for a cat to die during childbirth
+            possible_events = [
+                f"Later, as the medicine cat wails with {str(cat.name)}'s blood streaked through their pelt, and a warrior comes to move the body for its vigil, no one knows what to do with the {insert}.",
+                f"As the sun tracks across the sky, {str(cat.name)}'s bleeding gets worse and worse. It was still worth it, {str(cat.name)} decides, even as the medicine cat fights an impossible battle to keep them out of StarClan. Still so worth it.",
+                f"The birth was stressful, and {str(cat.name)} is exhausted and still bleeding and really just wants to sleep. Unfortunately, they don't ever wake up again.",
+                f"{str(cat.name)} wasn't expecting their birth to be so incredibly painful, and as the day wears on their condition deteriorates, leaving their {insert} mewling and trying to suckle a cooling body.",
+                f"It breaks their heart that they won't get to be with their {insert} as they grow. {str(cat.name)} pants out instructions and pleads to their friends around them, as the blood loss from birth slowly takes their life.",
+                f"However, {str(cat.name)} is too far gone for the herbs they're given to choke down to fix this blood loss, and the cats are helpless as {str(cat.name)} slowly slips to StarClan.",
+                f"Later, hours later, eons laters, the {insert} mews. Outside, {str(cat.name)}'s body cools, the toll of birth too much for it.",
+                f"Though all looks fine, the clan will wake to discover {str(cat.name)}'s body cold in the nursery, their {insert} mewing in vain for their parent.",
+                f"Though birth is always considered a difficult and risky event, no one thought they'd lose {str(cat.name)} to it, not after the {insert} was all born and seemed fine. They thought the blood loss was under control."
+            ]
+            if len(get_med_cats(Cat)) == 0:  # check number of med cats in the clan
+                event_list.append(choice(possible_events[2:]))  # limit possible events to those not mentioned med cats
+            else:
+                event_list.append(choice(possible_events))
+            if cat.status == 'leader':
+                game.clan.leader_lives -= 1
+            cat.die()
+        else:  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
             if 'blood loss' in cat.injuries:
                 possible_events = [f"The birth was stressful and {str(cat.name)} lost a lot of blood.",
-                                   f"{str(cat.name)} pants, looking at their wonderful {insert} and deciding that the "
-                                   f"pain and blood loss was all worth it.",
-                                   f"Weak with blood loss, {str(cat.name)} nevertheless purrs at the sight of their "
-                                   f"{insert}.",
+                                   f"{str(cat.name)} pants, looking at their wonderful {insert} and deciding that the pain and blood loss was all worth it.",
+                                   f"Weak with blood loss, {str(cat.name)} nevertheless purrs at the sight of their {insert}.",
                                    f"Though the blood loss did not make the birth any easier for {str(cat.name)}.",
-                                   f"Though {str(cat.name)} seems overly exhausted and weak from the birth."
+                                   f"Though {str(cat.name)} seems overly exhausted and weak from the birth.",
+                                   f"{str(cat.name)} wasn't expecting this birth to be so intensely painful.",
+                                   f"Everyone says giving birth is difficult, but {str(cat.name)} feels like this one has been worse than most.",
+                                   f"This will all be worth it, {str(cat.name)} groans, promising themselves that as the pains of afterbirth rock their exhausted and bleeding body.",
+                                   f"{str(cat.name)} chokes down the herbs given to them, retching at the taste but knowing they need them to stop the blood loss."
                                    ]
+
                 event_list.append(choice(possible_events))
 
         print_event = " ".join(event_list)
@@ -542,12 +582,8 @@ class Relation_Events():
         if mate:
             if mate.gender == cat.gender and not no_gendered_breeding:
                 return can_have_kits
-            if cat.gender == 'female' and cat.age == 'elder' or mate.gender == 'female' and mate.age == 'elder':
-                return can_have_kits
         else:
             if not unknown_parent_setting:
-                return can_have_kits
-            if cat.gender == 'female' and cat.age == 'elder':
                 return can_have_kits
 
         # if function reaches this point, having kits is possible
@@ -666,8 +702,8 @@ class Relation_Events():
         # calculate the chance of having kits
         chance = 100
         if other_cat is not None:
-            chance = 45
-            if relation.romantic_love >= 50:
+            chance = 40
+            if relation.romantic_love >= 45:
                 chance -= 5
             if relation.romantic_love >= 70:
                 chance -= 5
@@ -683,8 +719,8 @@ class Relation_Events():
             chance = int(chance * 2)
 
         if other_cat is None:
-            chance = int(int(living_cats) * 50)
-        if chance > 10 > living_cats:
+            chance = int(int(living_cats) * 45)
+        if chance > 20 > living_cats:
             chance -= 10
 
         return chance
@@ -697,30 +733,42 @@ class Relation_Events():
             Returns:
                 integer (number)
         """
+        affair_chance = 10
+
         if mate_relation is None:
-            return 0
+            if affair_relation.romantic_love > 10:
+                affair_chance -= 2
+            if affair_relation.platonic_like > 20:
+                affair_chance -= 2
+            if affair_relation.comfortable > 20:
+                affair_chance -= 3
+            if affair_relation.trust > 20:
+                affair_chance -= 3
 
-        affair_chance = 100
-
-        love_diff_mate_other = mate_relation.romantic_love - affair_relation.romantic_love
-        if love_diff_mate_other < 0:
-            affair_chance = 25
-            if abs(love_diff_mate_other) > 20:
-                affair_chance -= 5
-            if abs(love_diff_mate_other) > 25:
-                affair_chance -= 10
-            if abs(love_diff_mate_other) > 30:
-                affair_chance -= 10
         else:
-            affair_chance += love_diff_mate_other
+            love_diff_mate_other = mate_relation.romantic_love - affair_relation.romantic_love
+            if love_diff_mate_other < 0:
+                affair_chance = 5
+                if abs(love_diff_mate_other) > 20:
+                    affair_chance -= 1
+                if abs(love_diff_mate_other) > 25:
+                    affair_chance -= 3
+                if abs(love_diff_mate_other) > 30:
+                    affair_chance -= 4
+            else:
+                affair_chance += love_diff_mate_other
 
         return affair_chance
 
     def get_second_parent(self, cat, mate=None, affair=game.settings['affair']):
         """ Return the second parent of a cat, which will have kits."""
         second_parent = mate
-        if not affair or mate is None:
-            # if the cat has no mate, None will be returned
+        if game.settings['no gendered breeding'] is True:
+            samesex = True
+        else:
+            samesex = False
+        if not affair:
+            # if affairs setting is OFF, None will be returned
             return second_parent
 
         mate_relation = None
@@ -733,20 +781,19 @@ class Relation_Events():
         highest_romantic_relation = get_highest_romantic_relation(cat.relationships.values())
         if highest_romantic_relation is None:
             return second_parent
-
-        if highest_romantic_relation.cat_to.ID == mate.ID:
-            return second_parent
+        if mate:
+            if highest_romantic_relation.cat_to.ID == mate.ID:
+                return second_parent
 
         # the function should only call if highest_romantic_cat is not the mate
-        chance_affair = self.get_affair_chance(
-            mate_relation,
-            highest_romantic_relation
-        )
+        chance_affair = self.get_affair_chance(mate_relation, highest_romantic_relation)
 
         # a chance of 0 should always be a "auto hit"
         # if chance_affair == 0 or randint(1, chance_affair) == 1:
         if not chance_affair or not int(random.random() * chance_affair):
-            second_parent = highest_romantic_relation.cat_to
+            if highest_romantic_relation.cat_to.is_potential_mate(cat):
+                if cat.gender == highest_romantic_relation.cat_to.gender and samesex:
+                    second_parent = highest_romantic_relation.cat_to
 
         return second_parent
 
@@ -783,22 +830,21 @@ class Relation_Events():
                 kit.thought = f"Snuggles up to the belly of {cat.name}"
 
             # remove scars
-            kit.specialty = None
-            kit.specialty2 = None
+            kit.scars.clear()
 
             # try to give them a permanent condition. 1/100 chance
             if not int(random.random() * 90) and game.clan.game_mode != 'classic':
                 kit.congenital_condition(kit)
                 for condition in kit.permanent_condition:
                     if kit.permanent_condition[condition] == 'born without a leg':
-                        kit.specialty = 'NOPAW'
+                        kit.scars.append('NOPAW')
                     elif kit.permanent_condition[condition] == 'born without a tail':
-                        kit.specialty = 'NOTAIL'
+                        kit.scars.append('NOTAIL')
 
             # create and update relationships
             for cat_id in clan.clan_cats:
                 the_cat = Cat.all_cats.get(cat_id)
-                if the_cat.dead or the_cat.exiled:
+                if the_cat.dead or the_cat.outside:
                     continue
                 if the_cat.ID in kit.get_parents():
                     the_cat.relationships[kit.ID] = Relationship(the_cat, kit, False, True)

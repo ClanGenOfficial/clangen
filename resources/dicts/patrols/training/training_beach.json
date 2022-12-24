@@ -1,0 +1,467 @@
+[
+{
+    "patrol_id": "bch_train_session1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["apprentice", "training", "scar", "minor_injury", "warrior"],
+    "intro_text": "The patrol wants to hold a training session for app1. They decide to focus on how best to navigate the rocky tide pools.",
+    "decline_text": "They decide to focus on patrolling the territory instead. Training can wait for another day.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+            "app1 listens carefully as p_l explains where to find the best prey within the rich waters of the pools.",
+            "app1 picks up the instruction quicky and is soon hopping from pool to pool, picking out the tasty morsels within.",
+            null,
+            "By the end of the patrol s_c is easily fishing freshkill out of the pools, not an ounce of hesitation in their movements."
+    ],
+    "fail_text": [
+            "app1 tries to remember the differences and nuances between the creatures within the pools, but fails to retain any of the information.",
+            "s_c struggles to take the lesson seriously and eventually the training session ends early with no real progress made.",
+            null,
+            "app1 tries to poke around in the pools for potential food. Ouch! Oops, that was a sea urchin. app1 limps the whole way home."
+    ],
+    "win_trait": ["adventurous", "bold", "confident", "daring", "ambitious"],
+    "fail_trait": ["troublesome", "playful"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "app1 got spiked by a sea urchin while training as an apprentice."
+    ]
+},
+{
+    "patrol_id": "bch_train_stuck1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "platonic", "comfort", "trust", "blunt_force_injury", "death", "scar", "no_change_fail", "p_l_to_r_c", "s_c to r_c", "patrol_to_p_l", "patrol_to_r_c"],
+    "intro_text": "Trailing behind the patrol, the dune they're crossing shifts beneath r_c's paws. They look around wildly for safe footing - just as the sand caves in beneath them and the world goes dark.",
+    "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+    "chance_of_success": 90,
+    "exp": 20,
+    "success_text": [
+            "Their clanmates come running at their yowls, and r_c is soon freed, shaken but unharmed. The patrol settles down as everyone comforts each other.",
+            "p_l digs through the sand, helping r_c clear it away enough for the other cat to scramble free.",
+            "Without letting themselves panic, s_c carefully assesses the collapsed dune trapping their clanmate. They point out stable footing for the patrol to dig them out from above, and r_c is recovered, scared but okay.",
+            "Creeping in as close as possible, s_c purrs to their clanmate, keeping them calm as the patrol carefully digs down to them."
+    ],
+    "fail_text": [
+            "The patrol works all day to free r_C and gets nothing else done.",
+            "Harshly, s_c tells their clanmate that they're on their own - this patrol is too important to wait for some idiot who got stuck in the sand.",
+            "Hurt and wheezing, r_c hears the patrol panicking as they drift to StarClan.",
+            "The patrol eventually manages to rescue r_c, but they need to be helped back to camp, battered and injured."
+    ],
+    "win_skills": ["very smart", "extremely smart"],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise", "inquisitive"],
+    "fail_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c carries a scar from being trapped on patrol.",
+            "r_c tragically died after being trapped on patrol.",
+      "died after being trapped on patrol"
+    ]
+},
+{
+    "patrol_id": "bch_train_stuck2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "blunt_force_injury", "death", "scar"],
+    "intro_text": "r_c is training alone out on the coast when suddenly, the dune they're standing on shifts beneath their paws. They look around wildly for safe footing - just as the sand caves in beneath them and the world goes dark.",
+    "decline_text": "Thankfully, they're on the edge of the obstruction, and wriggle their way clear.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+        "r_c spends the entire day carefully working their way free and gets nothing else done, but at least they're unharmed.",
+        null,
+        "s_c tries to remain calm, clawing sand away from their muzzle so they can breathe. As the shock wears off, they realize the sand seems thinner on one side of their body. With a surge of energy, they burst through the weak point, terrified and caked in damp sand. They may have a new nightmare to take back with them, but at least they're alive.",
+        null
+    ],
+    "fail_text": [
+        "r_c tries their best, but unfortunately, they're only able to work their head free. They yowl until their voice is hoarse and their throat is sore, and thankfully, a patrol passes by after a few hours and frees their hapless clanmate.",
+        null,
+        "Hurt and wheezing, r_c does their best to hang on and wait for a patrol, but they succumb to their injuries and drift to StarClan alone.",
+        "r_c eventually manages to pull themselves free, but they're wheezing and injured. It's all they can do to find some beach grass to shelter in through the night out on the shore until a patrol finds them the next morning and helps them to the medicine den."
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+        "r_c carries a scar from being trapped on patrol.",
+        "r_c tragically died after being trapped on patrol.",
+      "died after being trapped on patrol"
+    ]
+
+},
+{
+    "patrol_id": "bch_train_solo1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "apprentice", "minor_injury", "scar"],
+    "intro_text": "r_c heads out along the coast alone, but maybe an apprentice shouldn't try to do a solo patrol.",
+    "decline_text": "r_c turns back to camp, deciding that this is a bad idea.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+            "At least this is a good chance to learn the territory! r_c heads off to map out a field of sand dunes they've always found confusing.",
+            "r_c clambers over a rise in the ground and stumbles across a tiny, perfect waterfall!",
+            null,
+            "There's nothing to worry about! s_c pads confidently through c_n territory, assured in their safety by the strength of c_n borders."
+    ],
+    "fail_text": [
+            "r_c gets lost in the territory and doesn't learn anything.",
+            "s_c shivers a little, imagining what could be out there... No, definitely not. They turn around and slink straight back to camp.",
+            null,
+            "The apprentice wanders along obliviously and slips, tumbling right down into a rocky pool. Bruised and sore, r_c has to report to the medicine cat den when they return to camp."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_trait": ["insecure", "lonesome", "nervous"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null,
+    "history_text": [
+            "r_c got injured as an apprentice, exploring alone."
+    ]
+},
+{
+    "patrol_id": "bch_train_solo2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "warrior"],
+    "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to themselves.",
+    "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that their duties have to come first.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+            "r_c heads off to map out a field of sand dunes they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date.",
+            "r_c rounds a corner and stumbles across a tiny, perfect waterfall!",
+            "s_c rounds a corner and stumbles across a tiny, perfect waterfall! Further investigation shows that it emerges from equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought.",
+            "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
+    ],
+    "fail_text": [
+            "r_c gets lost in the territory. Somehow.",
+            "s_c shivers a little, thinking of the dangers of solo patrols... No, definitely not. They turn around and slink straight back to camp.",
+            null,
+            null
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["insecure", "lonesome", "nervous"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_train_solo3",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "deputy"],
+    "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to themselves.",
+    "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that their duties have to come first.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+            "r_c heads off to map out a field of sand dunes they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and it isn't exactly the peaceful break they hoped for.",
+            "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+            "s_c rounds a corner and stumbles across a tiny, perfect waterfall! Further investigation shows its origin is an equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought, and its discovery helps to ease one of the many worries on the deputy's mind.",
+            "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
+    ],
+    "fail_text": [
+            "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
+            "s_c wavers in their decision. They have so much work to do, so many other things demanding their time... No, definitely not. They turn around and march straight back to camp.",
+            null,
+            null
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["insecure", "lonesome", "nervous"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_train_solo4",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "leader"],
+    "intro_text": "r_c heads out along the coast alone, wanting to explore and have some time to themselves.",
+    "decline_text": "r_c turns back to camp after getting some fresh sea air, deciding that their duties have to come first.",
+    "chance_of_success": 70,
+    "exp": 20,
+    "success_text": [
+            "r_c heads off to map out a field of sand dunes they've always found confusing. Hunting, fighting, driving off predators; it all requires knowledge of their home turf. It's always worth making sure their mental map is up to date. It feels a little like more work though, and it isn't exactly the peaceful break they hoped for.",
+            "r_c rounds a corner and stumbles across a tiny, perfect waterfall! Purring, they take the opportunity for a small moment of peace, relaxing and enjoying the view.",
+            "s_c rounds a corner and stumbles across a tiny, perfect waterfall! Further investigation shows its origin is an equally tiny spring, and s_c purrs. This reliable source of fresh water could be important during times of drought, and its discovery helps to ease one of the many worries on the leader's mind.",
+            "s_c pads confidently through c_n territory. There's a particular peace in exploring their beloved home, ears pricked up curiously whenever they spot how the seasons and weather have reshaped it since they last passed this way."
+    ],
+    "fail_text": [
+            "r_c gets lost in the territory. Somehow. Their pelt is burning with shame by the time they finally return, sneaking back to their den to avoid any embarrassing questions.",
+            "s_c wavers in their decision. They have so much work to do, so many other things demanding their time... No, definitely not. They turn around and march straight back to camp.",
+            null,
+            null
+    ],
+    "win_skills": ["smart", "very smart", "extremely smart"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["insecure", "lonesome", "nervous"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_train_elephantseal1",
+    "biome": "beach",
+    "season": "newleaf",
+    "tags": ["training", "apprentice", "platonic", "comfort", "respect", "warrior", "no_change_fail"],
+    "intro_text": "As the sun creeps over the horizon, p_l leads the patrol carefully towards a familiar beach, stopping the cats on the clifftop. Below them, the familiar sand is hidden under a mass of boulders, as long as twenty cats and as wide as ten.",
+    "decline_text": "They return to camp to report the new beach layout.",
+    "chance_of_success": 90,
+    "exp": 20,
+    "success_text": [
+            "As the cats watch, the silence is broken, as one of the massive boulders rears up and snorts. The apprentices jolt with fear, app1's fur standing on end while app2 looks seconds away from fleeing, but p_l flicks their tail encouragingly. These are nosy-seals, they explain, as the beach full of 'boulders' suddenly seems far more intimidating.",
+            "app1 and app2's jaws drop, disbelieving, as p_l explains these are animals, not a rockslide. They stare as a nosy-seal wakes from his slumber and bellows a challenge to his neighbour, flinching as the monolithic animals crash towards each other. Each drips enough blood to fill the veins of an enitre cat, crashing and careening off each other.",
+            "As the 'rocks' wake and reveal themselves to be the most massive animals app1 and app2 have ever seen, s_c reassures them - they may never have seen these frightening seals before, but c_n has. s_c spends the morning quizzing the apprentices until each is able to identify a male nosy-seal with his trunk vs the comparatively smaller females.",
+            "As the sun hits them and the massive boulders wake with grumbling snorts, app1 and app2 both look about to run. s_c quickly calms them, explaining that these massive yearly visitors to c_n are nosy-seals, and that if the cat's don't bother them, they won't bother the cats."
+    ],
+    "fail_text": [
+            "When one of the boulders abruptly starts roaring, app1 shrieks and runs. It takes the rest of the patrol to find them, and the teaching moment is forgotten as the cats gather to comfort them."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_train_octopus1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
+    "intro_text": "p_l takes them both out to see a big octopus a patrol spotted in one of c_n's rockpools.",
+    "decline_text": "When they get there, they can't find it, and the lesson fails.",
+    "chance_of_success": 80,
+    "exp": 15,
+    "success_text": [
+            "app1 watches the massive creature the tides have washed in with wide eyes, tail twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
+            "p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water. app1 flinches backwards as the creature suddenly lunges after a little fish. Once it's disappeared into the suddenly scary beak, the octopus goes back to swaying like harmless kelp.",
+            "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into becoming a monster, with legs sprouting from each claw. As app1 watches the octopus contort itself, more liquid than animal, they can see how it could be a sea cat."
+    ],
+    "fail_text": [
+            "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out, and starts an argument about it.",
+            "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey, and p_l can't get them to take the training session seriously."
+    ],
+    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_train_octopus2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
+    "intro_text": "p_l takes them both out to see a big octopus a patrol spotted in one of c_n's rockpools.",
+    "decline_text": "When they get there, they can't find it, and the lesson fails.",
+    "chance_of_success": 80,
+    "exp": 15,
+    "success_text": [
+            "app1 watches the massive creature the tides have washed in with wide eyes, tail twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
+            "p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water. app1 flinches backwards as the creature suddenly lunges after a little fish. Once it's disappeared into the suddenly scary beak, the octopus goes back to swaying like harmless kelp.",
+            "s_c points out the dangers of the creature, showing app1 exactly how the octopus has no direction that it can't move its limbs as the octopus lazily sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c teaches, and app1 wouldn't be able to predict how it can move in a fight. Something to be careful of."
+    ],
+    "fail_text": [
+            "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out, and starts an argument about it. ",
+            "app1 maintains that octopus are prey, not opponents or dangerous or anything like that, just prey, and p_l can't get them to take the training session seriously."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_train_octopus3",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
+    "intro_text": "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools.",
+    "decline_text": "When they get there, they can't find it, and the lesson fails.",
+    "chance_of_success": 90,
+    "exp": 20,
+    "success_text": [
+            "app1 and app2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
+            "p_l points out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water. app1 flinches backwards and app2's pelt puffs up as the creature suddenly lunges after a fish. Once it's disappeared into the suddenly scary beak, the octopus goes back to wavily swaying like harmless kelp.",
+            "s_c points out the dangers of the creature, explaining how some c_n stories tell of a Dark Forest cat who tried to escape into the ocean, only to be cursed by StarClan into a monster with legs sprouting from each claw. app1 and app2 watch the octopus contort itself, more liquid than animal, and frighteningly they can see how it could be a sea cat."
+    ],
+    "fail_text": [
+            "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out, and starts an argument about it. app2 sides with p_l and no one learns anything in the squabbling.",
+            "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey, and p_l can't get them to take the training session seriously. They distract app2 as well, and eventually p_l has to give up on teaching."
+    ],
+    "win_skills": ["good speaker", "great speaker", "excellent speaker"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_train_octopus4",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
+    "intro_text": "p_l takes them out to see a big octopus a patrol spotted in one of c_n's rockpools.",
+    "decline_text": "When they get there, they can't find it, and the lesson fails.",
+    "chance_of_success": 90,
+    "exp": 15,
+    "success_text": [
+            "app1 and app2 watch the massive creature the tides have washed in with wide eyes, tails twitching with excitement. p_l tries to point out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water.",
+            "p_l points out the hooked beak, as the octopus lazily waves a tentacle ever so temptingly just under the surface of the water. app1 flinches backwards and app2's pelt puffs up as the creature suddenly lunges after a fish. Once it's disappeared into the suddenly scary beak, the octopus goes back to swaying like harmless kelp.",
+            "s_c points out the dangers of the creature, showing app1 exactly how the octopus has no direction that it can't move its limbs, as the octopus lazily sways around in the rockpool waiting for the tides to free it. It's dangerous, s_c teaches, and app2 wouldn't be able to predict how it can move in a fight. Something to be careful of."
+    ],
+    "fail_text": [
+            "app1 refuses to believe that the octopus can fit into the tiny crevice that p_l points out, and starts an argument about it. app2 sides with p_l and no one learns anything in the squabbling.",
+            "app1 maintains that octopus are prey, not opponents or weird transformed dead cats or anything like that, just prey, and p_l can't get them to take the training session seriously. They distract app2 as well, and eventually p_l has to give up on teaching."
+    ],
+    "win_skills": ["good teacher", "great teacher", "fantastic teacher"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 3,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_train_stormwaves1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort"],
+    "intro_text": "It's storming in c_n's territory today, and app1 waits for app2 up on one of the cliffs.",
+    "decline_text": "The apprentices are called back to camp to deal with an elder's wet bedding.",
+    "chance_of_success": 70,
+    "exp": 10,
+    "success_text": [
+            "app2 wanders carefully up the cliff path, asking what app1 wanted to show them. app1 brings them to a point where the wind hits the land, and app2 gasps, watching the gigantic waves breaking against the cliff. It's thrilling and a little scary and very cool.",
+            "When app2 arrives, app1 spots them the spot they've found, where the apprentices can see the gigantic storm waves breaking against the land. Both of them gasp when a thunderbolt hits out to sea, throwing the world into black and white, pressed up safely against each other, warmed by the other's pelt.",
+            null,
+            "app2 rounds the top of the cliff and sees s_c, asking why s_c wanted to meet there. Stuttering but determined, s_c explains that they wondered if, possibly, maybe, app2 would like to go on a... date? app2 blushes and murmurs a soft yes to the ground, suddenly unable to make eye contact. They watch the storm together, quietly thrilled."
+    ],
+    "fail_text": [
+            "app2 refuses to come up the cliff while it's so stormy, and app1 gives up on their idea, disappointed they didn't get to spend time with app2.",
+            "app2 rounds the top of the cliff, and seeing app1, asks why app1 wanted to meet there. app1 stutters out some nonsense about hunting, and then runs off into the rain."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_train_shellhunt1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "apprentice", "two_apprentices", "rel_two_apps", "romantic", "platonic", "comfort"],
+    "intro_text": "app1 and app2 wanders on a sandy beach near camp.",
+    "decline_text": "The apprentices are called back to camp to help kitsit.",
+    "chance_of_success": 70,
+    "exp": 10,
+    "success_text": [
+            "app2 drapes themselves with a bunch of seaweed, and proclaims themselves clothed like a Twolegs. They chase after app1, who's not as keen to get seaweed slime all over themselves, and the two young cats play on the safe sands all afternoon.",
+            "app1 finds a gigantic and flawless shell that's washed up on the beach with last night's tide and calls app2 over. Both apprentices startle backwards when a hermit crab starts scurrying away from them. They chase it, shouting joyfully, eyes wide and silly as the poor hermit crab has to wait until they finally get bored to escape.",
+            null,
+            "app1 finds a shell that shines with a brilliant internal sheen. Picking it up, they shyly present it to app2, wondering if app2 might like it for their nest. Blushing to the tips of their ears, app2 accepts their gift."
+    ],
+    "fail_text": [
+            "app1 tries to give app2 a shell, but they don't want it, and the crestfallen apprentice slinks off sadly."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "lonesome", "loyal", "charismatic"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_train_sunset1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "warrior", "romantic", "platonic", "comfort", "no_app"],
+    "intro_text": "p_l approaches r_c, asking if they wouldn't mind showing p_l their hunting techniques, and perhaps doing some training with them?",
+    "decline_text": "r_c declines gently, explaining that they have too much work to do.",
+    "chance_of_success": 80,
+    "exp": 10,
+    "success_text": [
+            "The cats go out together in the late of the day, as the gulls fly home to roost. r_c goes through their tricks, showing p_l how they use the direction of the sun to avoid casting a shadow on pools as they fish, as p_l watches with eyes that r_c notices are a bit too admiring for what's just a little trick. They smirk, showing off a little.",
+            "It's a long but satisfying training session, with both cats having an in depth chance to test themselves and work on their skills. It ends with them both sitting on a little outlook, watching the sun go down and catching the last of its rays on their pelts. r_c sees p_l watching them instead of the sun, and smiles.",
+            "s_c is a fantastic hunter, and p_l isn't shy about telling them so. They blush, but work through it, showing p_l how to use the scraps of rotten freshkill from camp to attract crabs and fish in the rockpools out of their hidey-holes.",
+            "p_l marvels at the opportunity to have s_c's time to themselves. s_c is such a popular cat, so friendly and fun to be around, and yet when the training session draws to a close under the setting sun, s_c looks surprised to be told so."
+    ],
+    "fail_text": [
+            "r_c tries, but both the cats are too tired after a long day's work, and end up snapping at each other. It's nothing serious, but both agree to take some time to cool off.",
+            "r_c spots p_l looking at them a little bit too admiringly, and ends the training session early, diplomatically making up an excuse."
+    ],
+    "win_skills": ["fantastic hunter"],
+    "win_trait": ["adventurous", "bold", "charismatic", "childish", "confident", "daring", "playful", "righteous"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_train_biolumin1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["training", "warrior", "romantic", "platonic", "comfort", "no_app", "no_change_fail"],
+    "intro_text": "As p_l and r_c wander across the beach with only the stars to light their way, they notices sparkles of light where the waves break upon the shore.",
+    "decline_text": "A little freaked out, the warriors go to fetch a medicine cat to interpret this omen for them.",
+    "chance_of_success": 80,
+    "exp": 10,
+    "success_text": [
+            "r_c pokes curiously at one of the little lights, bringing their face down to it. It's a tiny crab, less than the width of one of their claws! It fascinates them and p_l, and they spend hours on the beach, lapping up mouthfuls of light crabs and crushing them between their teeth, laughing with each other as their mouths start glowing too.",
+            "Stunned, the cats sit back and watch as the waves bring ripples of light. It's a breathless, magical scene, and r_c leans against p_l, their pelts keeping each other warm as they take in the magic of the sea.",
+            null,
+            "As they watch, quiet and patient, more and more of the sea starts to come alive with light, tiny creatures dancing around in the water. With no words other than the occasional quiet gasp, p_l and r_c spend hours watching the magic of the sea swirl and dip and move, their hearts full of wonder."
+    ],
+    "fail_text": [
+            "They continue on their way, not stopping to see the sights."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["calm", "careful", "insecure", "lonesome", "loyal", "nervous", "patient", "responsible", "thoughtful", "wise"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+}
+]
