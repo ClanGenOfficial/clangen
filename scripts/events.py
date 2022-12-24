@@ -145,7 +145,7 @@ class Events():
                 game.cur_events_list.insert(0, string)
                 game.health_events_list.insert(0, string)
 
-        if game.clan.deputy == 0 or game.clan.deputy is None or game.clan.deputy.dead or game.clan.deputy.outside:
+        if game.clan.deputy == 0 or game.clan.deputy is None or game.clan.deputy.dead or game.clan.deputy.outside or game.clan.deputy.is_retired:
             if game.settings.get('deputy') is True:
                 random_count = 0
                 while random_count < 30:
@@ -159,8 +159,10 @@ class Events():
                             if game.clan.deputy is not None:
                                 if game.clan.deputy.dead and not game.clan.leader.dead and not game.clan.leader.exiled:
                                     text = str(game.clan.leader.name) + ' chooses ' + str(Cat.all_cats[random_cat].name) + ' to take over as deputy. They know that ' + str(game.clan.deputy.name) + ' would agree.'
-                                if not game.clan.deputy.dead:
+                                if not game.clan.deputy.dead and not game.clan.deputy.outside:
                                     text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. The retired deputy nods their approval.'
+                                if game.clan.deputy.outside:
+                                    text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. The Clan hopes that ' + str(game.clan.deputy.name) + ' would approve.'
                             else:
                                 if Cat.all_cats[random_cat].trait == 'bloodthirsty':
                                     text = str(Cat.all_cats[random_cat].name) + ' has been chosen as the new deputy. They look at the clan leader with an odd glint in their eyes.' 
