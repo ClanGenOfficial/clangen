@@ -407,6 +407,7 @@ class Events():
         # ---------------------------------------------------------------------------- #
         ceremony = []
         cat.status_change(promoted_to)
+
         if (promoted_to == 'warrior'):
             resource_directory = "resources/dicts/events/ceremonies/"
             TRAITS = None
@@ -450,13 +451,15 @@ class Events():
             if cat.parent1 is not None and str(
                     cat_class.all_cats[cat.parent1].name) != str(
                         cat.mentor.name) and cat.parent1 != "unnamed queen":
-                ceremony.extend([
-                    str(cat_class.all_cats[cat.parent1].name) +
-                    " is watching in pride as " + str(cat.name) +
-                    " is named and given to " + str(cat.mentor.name) +
-                    " to apprentice under. They know that " +
-                    str(cat.mentor.name) + " was a good choice."
-                ])
+                parent = Cat.all_cats[cat.parent1]
+                if not parent.dead and not parent.outside:
+                    ceremony.extend([
+                        str(cat_class.all_cats[cat.parent1].name) +
+                        " is watching in pride as " + str(cat.name) +
+                        " is named and given to " + str(cat.mentor.name) +
+                        " to apprentice under. They know that " +
+                        str(cat.mentor.name) + " was a good choice."
+                    ])
             if cat.is_disabled() and not game.clan.leader.dead:
                 ceremony.extend([
                     str(cat.name) + " is confidently telling " +
