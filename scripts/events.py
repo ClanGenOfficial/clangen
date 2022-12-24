@@ -307,7 +307,7 @@ class Events():
             game.clan.leader_lives = 9
             text = ''
             if (game.clan.deputy.trait == 'bloodthirsty'):
-                text = f'{str(game.clan.deputy.name)} has become the new leader. They stare down at their clanmates and grin, promising a new age for the clan.'
+                text = f'{str(game.clan.deputy.name)} has become the new leader. They stare down at their clanmates with unsheathed claws, promising a new era for the clans.'
             else:
                 c = choice([1,2,3])
                 if c == 1:
@@ -316,7 +316,6 @@ class Events():
                     text = f'{str(game.clan.deputy.name)} has become the new leader of the clan. They vow that they will protect the clan, even at the cost of their nine lives.'
                 elif c == 3:
                     text = f'{str(game.clan.deputy.name)} has received their nine lives and became the new leader of the clan. They feel like they are not ready for this new responsibility, but will try their best to do what is right for the clan.'
-
             game.ceremony_events_list.append(text)
             game.cur_events_list.append(text)
             self.ceremony_accessory = True
@@ -453,7 +452,7 @@ class Events():
             ])
             if cat.parent1 is not None and str(
                     cat_class.all_cats[cat.parent1].name) != str(
-                        cat.mentor.name) and cat.parent1 != "unnamed queen":
+                        cat.mentor.name) and str(cat_class.all_cats[cat.parent1].name) != "unnamed queen":
                 ceremony.extend([
                     str(cat_class.all_cats[cat.parent1].name) +
                     " is watching in pride as " + str(cat.name) +
@@ -502,11 +501,15 @@ class Events():
         else:
             game.cur_events_list.append(f'{str(cat.name)}{ceremony_text}')
             game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
-
+    
     def gain_accessories(self, cat):
         # ---------------------------------------------------------------------------- #
         #                                  accessories                                 #
         # ---------------------------------------------------------------------------- #
+        
+        if cat.dead:
+            return
+        
         # check if cat already has acc
         if cat.accessory is not None:
             self.ceremony_accessory = False
@@ -1321,6 +1324,8 @@ class Events():
                         self.handle_twoleg_capture(cat)
                     game.cur_events_list.append(event_string)
                     game.birth_death_events_list.append(event_string)
+                    if SAVE_DEATH:
+                        save_death(cat, event_string)
                     return
                 game.cur_events_list.append(event_string)
                 game.birth_death_events_list.append(event_string)

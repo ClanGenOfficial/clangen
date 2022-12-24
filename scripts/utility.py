@@ -225,7 +225,7 @@ def event_text_adjust(Cat, text, cat, other_cat=None, other_clan_name=None, keep
 
     adjust_text = text
     if keep_m_c is False:
-        adjust_text = adjust_text.replace("m_c", str(name))
+        adjust_text = adjust_text.replace("m_c", str(name).strip())
     if other_name is not None:
         adjust_text = adjust_text.replace("r_c", str(other_name))
     if other_clan_name is not None:

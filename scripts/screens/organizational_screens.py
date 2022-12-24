@@ -456,7 +456,7 @@ class SettingsScreen(Screens):
         self.sub_menu = 'language'
 
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
-            "Change the languange of the game here. NOT FULLY IMPLEMENTED",
+            "Change the languange of the game here. This has not been implemented yet.",
             pygame.Rect((100, 160), (600, 50)), object_id=get_text_box_theme())
 
         self.refresh_checkboxes()
