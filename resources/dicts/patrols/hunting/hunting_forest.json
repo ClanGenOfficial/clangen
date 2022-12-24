@@ -51,7 +51,8 @@
     "max_cats": 6,
     "history_text": [
         "r_c was scarred by a porcupine while on patrol.",
-        "r_c was killed by an angry porcupine while on patrol."
+        "r_c was killed by an angry porcupine while on patrol.",
+        "killed by a porcupine"
     ],
     "antagonize_text": null,
     "antagonize_fail_text": null
@@ -85,7 +86,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c was scarred by a porcupine while on patrol.",
-        "r_c was killed by an angry porcupine while on patrol."
+        "r_c was killed by an angry porcupine while on patrol.",
+        "killed by a porcupine"
     ]
 },
 {
@@ -227,7 +229,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         null,
-        "r_c was killed after an unfortunate experience with a wolverine."
+        "r_c was killed after an unfortunate experience with a wolverine.",
+        "killed by a wolverine"
     ]
 },
 {
@@ -260,7 +263,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c was scarred by a coyote protecting its scavenged meal.",
-        "r_c was killed by a coyote protecting its scavenged meal."
+        "r_c was killed by a coyote protecting its scavenged meal.",
+        "killed by a coyote"
     ]
 },
 {
@@ -293,7 +297,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c was scarred by a coyote protecting its scavenged meal.",
-        "r_c was killed by a coyote protecting its scavenged meal."
+        "r_c was killed by a coyote protecting its scavenged meal.",
+        "killed by a coyote"
     ]
 },
 {
@@ -324,7 +329,9 @@
     "antagonize_text": null,
     "antagonize_fail_text": null,
     "history_text": [
-        "r_c was killed by a coyote protecting its scavenged meal."
+        null,
+        "r_c was killed by a coyote protecting its scavenged meal.",
+        "killed by a coyote"
     ]
 },
 {
@@ -357,7 +364,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c was scarred by a wolf protecting its scavenged meal.",
-        "r_c was killed by a wolf pack protecting its meal."
+        "r_c was killed by a wolf pack protecting its meal.",
+        "killed by a wolf pack"
     ]
 },
 {
@@ -389,7 +397,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         null,
-        "r_c was killed by a wolf protecting its meal."
+        "r_c was killed by a wolf protecting its meal.",
+        "killed by a wolf"
     ]
 },
 {
@@ -421,7 +430,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         null,
-        "r_c was killed by a wolf protecting its meal."
+        "r_c was killed by a wolf protecting its meal.",
+        "killed by a wolf"
     ]
 },
 {
@@ -668,7 +678,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             "p_l gained a scar from a fox.",
-            "p_l was killed by a wolverine."
+            "p_l was killed by a wolverine.",
+        "killed by a wolverine"
     ]
 },
 {
@@ -700,11 +711,7 @@
     "min_cats": 1,
     "max_cats": 3,
     "antagonize_text": null,
-    "antagonize_fail_text": null,
-    "history_text": [
-            "scar",
-            "death"
-    ]
+    "antagonize_fail_text": null
 },
 {
     "patrol_id": "fst_hunt_gonetnr2",
@@ -1011,7 +1018,8 @@ null
     "antagonize_fail_text": null,
     "history_text": [
             "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed."
+            "r_c was hit by a monster and killed.",
+        "were hit by a monster"
     ]
 },
 {
@@ -1045,7 +1053,8 @@ null
     "antagonize_fail_text": null,
     "history_text": [
             "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed."
+            "r_c was hit by a monster and killed.",
+        "were hit by a monster"
     ]
 },
 {
@@ -1079,7 +1088,8 @@ null
     "antagonize_fail_text": null,
     "history_text": [
             "r_c was heavily injured by a monster, and carries the scars from it.",
-            "This cat was hit by a monster and killed."
+            "This cat was hit by a monster and killed.",
+        "were hit by a monster"
     ]
 },
 {
@@ -1113,7 +1123,8 @@ null
     "antagonize_fail_text": null,
     "history_text": [
             "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed."
+            "r_c was hit by a monster and killed.",
+        "were hit by a monster"
     ]
 },
 {
@@ -1253,7 +1264,8 @@ null
     "antagonize_fail_text": null,
     "history_text": [
         "This cat got heatstroke while on a patrol.",
-        "This cat died from heat stroke."
+        "This cat died from heat stroke.",
+        "died from heat stroke"
     ]
 },
 {
@@ -1439,7 +1451,8 @@ null
     "antagonize_fail_text": null,
     "history_text": [
             "r_c caught a chill while hunting in Leaf-bare.",
-            "r_c froze to death while hunting in a storm."
+            "r_c froze to death while hunting in a storm.",
+        "froze to death while hunting"
     ]
 },
 {
@@ -1546,7 +1559,8 @@ null
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from a solo fox fight.",
-        "r_c fell in a solo battle with a fox."
+        "r_c fell in a solo battle with a fox.",
+        "died while fighting a fox"
     ]
 },
 {
@@ -1653,7 +1667,8 @@ null
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from a solo fox fight.",
-        "r_c fell in a solo battle with a fox."
+        "r_c fell in a solo battle with a fox.",
+        "died while fighting a fox"
     ]
 },
 {
@@ -1760,7 +1775,8 @@ null
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from a solo fox fight.",
-        "r_c fell in a solo battle with a fox."
+        "r_c fell in a solo battle with a fox.",
+        "died while fighting a fox"
     ]
 },
 {
@@ -1867,7 +1883,8 @@ null
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from a solo fox fight.",
-        "r_c fell in a solo battle with a fox."
+        "r_c fell in a solo battle with a fox.",
+        "died while fighting a fox"
     ]
 },
 {
@@ -2313,7 +2330,8 @@ null
 	"antagonize_fail_text": null,
 	"history_text": [
     	"r_c carries a scar from a fox fight.",
-    	"r_c fell in battle with a fox."
+    	"r_c fell in battle with a fox.",
+        "died while fighting a fox"
 	]
 },
 {
@@ -2384,7 +2402,8 @@ null
 	"antagonize_fail_text": null,
 	"history_text": [
         "r_c carries a scar from a solo fight with a vixen.",
-        "r_c fell in a solo battle with a vixen."
+        "r_c fell in a solo battle with a vixen.",
+        "died while fighting a vixen"
 	]
 },
 {
@@ -2421,7 +2440,8 @@ null
 	"antagonize_fail_text": null,
 	"history_text": [
         "r_c carries a scar from a fox fight.",
-        "r_c fell in battle with a fox."
+        "r_c fell in battle with a fox.",
+        "died while fighting a fox"
 	]    
 },
 {
@@ -2492,7 +2512,8 @@ null
 	"antagonize_fail_text": null,
 	"history_text": [
 	"r_c carries a scar from a solo fight with a vixen.",
-	"r_c fell in a solo battle with a vixen."
+	"r_c fell in a solo battle with a vixen.",
+        "died while fighting a vixen"
 	]
 },
 {
@@ -2529,7 +2550,8 @@ null
 	"antagonize_fail_text": null,
 	"history_text": [
 	"r_c carries a scar from a fox fight.",
-	"r_c fell in battle with a fox."
+	"r_c fell in battle with a fox.",
+        "died while fighting a vixen"
 	]
 },
 {
@@ -2598,7 +2620,8 @@ null
 	"antagonize_fail_text": null,
 	"history_text": [
         "r_c carries a scar from a solo fight with a red vixen.",
-        "r_c fell in a solo battle with a red vixen."
+        "r_c fell in a solo battle with a red vixen.",
+        "died while fighting a vixen"
 	]
 },
 {

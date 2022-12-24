@@ -28,7 +28,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c was badly scarred when rogues ambushed their patrol.",
-        "This cat was killed when rogues ambushed their patrol."
+        "This cat was killed when rogues ambushed their patrol.",
+        "were killed in a rogue ambush"
     ]
 },  
 {    
@@ -58,7 +59,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         null,
-        "This cat was killed when rogues ambushed them while on a solo patrol."
+        "This cat was killed when rogues ambushed them while on a solo patrol.",
+        "were killed in a rogue ambush"
     ]
 },
 {    
@@ -90,7 +92,8 @@
     "antagonize_fail_text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected and eventually the patrol is forced to retreat.",
     "history_text": [
     "r_c was badly scarred when rogues attacked their patrol.",
-    "This cat was killed when rogues attacked their patrol."
+    "This cat was killed when rogues attacked their patrol.",
+        "were killed in a rogue ambush"
     ]
 },
 {
@@ -124,7 +127,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue."
+            "r_c was killed by an invading rogue.",
+        "were killed by an invading rogue"
     ]
 },
 {
@@ -158,7 +162,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue."
+            "r_c was killed by an invading rogue.",
+        "were killed by an invading rogue"
     ]
 },
 {
@@ -192,7 +197,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue."
+            "r_c was killed by an invading rogue.",
+        "were killed by an invading rogue"
     ]
 },
 {

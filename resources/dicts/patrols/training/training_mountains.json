@@ -60,7 +60,8 @@
     "antagonize_fail_text": null,
     "history_text": [
     "r_c was scarred by a badger.",
-    "r_c lost their life to a badger."
+    "r_c lost their life to a badger.",
+        "died to a badger"
     ]
 },
 {
@@ -125,7 +126,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from being trapped on patrol",
-        "r_c tragically died after being trapped on patrol."
+        "r_c tragically died after being trapped on patrol.",
+      "died after being trapped on patrol"
     ]
 },
 {
@@ -156,7 +158,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from being trapped on patrol.",
-        "r_c tragically died after trapped on patrol."
+        "r_c tragically died after trapped on patrol.",
+      "died after being trapped on patrol"
     ]
 
 },

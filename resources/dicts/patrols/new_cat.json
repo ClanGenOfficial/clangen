@@ -318,7 +318,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         null,
-        "This cat died in an ambush set by rogues."
+        "This cat died in an ambush set by rogues.",
+        "were killed in a rogue ambush"
     ]
 },
 {
@@ -350,7 +351,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         null,
-        "This cat died in an ambush set by rogues."
+        "This cat died in an ambush set by rogues.",
+        "were killed in a rogue ambush"
     ]
 },
 {
@@ -414,7 +416,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             null,
-            "This cat died from being ambushed by rogues."
+            "This cat died from being ambushed by rogues.",
+        "were killed in a rogue ambush"
     ]
 },
 {
@@ -448,7 +451,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             null,
-            "This cat died from being ambushed by rogues."
+            "This cat died from being ambushed by rogues.",
+        "were killed in a rogue ambush"
     ]
 }
 ]

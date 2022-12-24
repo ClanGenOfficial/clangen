@@ -597,12 +597,17 @@ class Patrol():
                         game.clan.leader_lives -= 1
                 else:
                     game.clan.leader_lives -= 1
-            cat.die(body)
 
-            if len(self.patrol_event.history_text) >= 2:
-                self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
+            if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
+                cat.died_by.append(f'{self.patrol_event.history_text[1]}')
+            elif len(self.patrol_event.history_text) >= 2 and cat.status == 'leader':
+                cat.died_by.append(f'{self.patrol_event.history_text[2]}')
+            elif cat.status != 'leader':
+                cat.died_by.append(f'This cat died while patrolling.')
             else:
-                self.patrol_random_cat.death_event.append(f'This cat died while patrolling.')
+                cat.died_by.append(f'died while patrolling')
+                
+            cat.die(body)
 
             if len(patrol.patrol_cats) > 1:
                 for cat in patrol.patrol_cats:
@@ -624,10 +629,14 @@ class Patrol():
                             game.clan.leader_lives -= 1
                     else:
                         game.clan.leader_lives -= 10
-                if len(self.patrol_event.history_text) >= 2:
-                    self.patrol_random_cat.death_event.append(f'{self.patrol_event.history_text[1]}')
+                if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
+                    cat.died_by.append(f'{self.patrol_event.history_text[1]}')
+                elif len(self.patrol_event.history_text) >= 2 and cat.status == 'leader':
+                    cat.died_by.append(f'{self.patrol_event.history_text[2]}')
+                elif cat.status != 'leader':
+                    cat.died_by.append(f'This cat died while patrolling.')
                 else:
-                    self.patrol_random_cat.death_event.append(f'This cat died while patrolling.')
+                    cat.died_by.append(f'died while patrolling')
                 cat.die(body)
 
         elif "multi_deaths" in self.patrol_event.tags:
@@ -636,6 +645,14 @@ class Patrol():
                 cats_dying = int(len(self.patrol_cats) - 1)
             for d in range(0, cats_dying):
                 self.patrol_cats[d].die(body)
+                if len(self.patrol_event.history_text) >= 2 and self.patrol_cats[d].status != 'leader':
+                    self.patrol_cats[d].died_by.append(f'{self.patrol_event.history_text[1]}')
+                elif len(self.patrol_event.history_text) >= 2 and self.patrol_cats[d].status == 'leader':
+                    self.patrol_cats[d].died_by.append(f'{self.patrol_event.history_text[2]}')
+                elif cat.status != 'leader':
+                    cat.died_by.append(f'This cat died while patrolling.')
+                else:
+                    cat.died_by.append(f'died while patrolling')
 
         # cats disappearing on patrol is also handled under this def for simplicity's sake
         elif "gone" in self.patrol_event.tags:

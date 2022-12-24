@@ -31,7 +31,8 @@
     "antagonize_fail_text": "Angry at the insult to their clan, your patrol throws themselves at the enemy patrol. Despite their righteous fury the o_c_n patrol quickly overpowers them and sends your patrol back onto their own side of the border.",
     "history_text": [
         "r_c was scarred by an enemy warrior.",
-        "r_c was killed by an enemy warrior."
+        "r_c was killed by an enemy warrior.",
+        "were killed by an enemy warrior"
     ]
 },
 {
@@ -66,7 +67,8 @@
     "antagonize_fail_text": "Angry at the insult to their clan, your patrol throws themselves at the enemy patrol. Despite their righteous fury the o_c_n patrol quickly overpowers them and sends your patrol back onto their own side of the border.",
     "history_text": [
         "r_c was scarred by an enemy warrior.",
-        "r_c was killed by an enemy warrior."
+        "r_c was killed by an enemy warrior.",
+        "were killed by an enemy warrior"
     ]
 },
 {
@@ -101,7 +103,8 @@
     "antagonize_fail_text": "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat laughs at the pathetic display and turns to walk deeper into their own territory. They seem to be unfazed and unimpressed by the sad attempt.",
     "history_text": [
         "r_c disrespected the border lines and was scarred by an enemy warrior for it.",
-        "r_c disrespected the border lines and was killed by an enemy warrior for it."
+        "r_c disrespected the border lines and was killed by an enemy warrior for it.",
+        "were killed by an enemy warrior"
 
     ]
 },
@@ -165,7 +168,8 @@
     "antagonize_fail_text": "How dare they trespass! Your patrol bounds after the scent, hoping to find the source of it, eventually discovering a limping o_c_n warrior who hastily explains that a dog had chased them into c_n's territory.  The patrol is still angry, but they rein in their hostility and tensely return the cat to o_c_n territory.",
     "history_text": [
             "r_c followed the scent of a trespassing cat and was scarred by a dog.",
-            "r_c followed the scent of a trespassing cat and was killed by a dog."
+            "r_c followed the scent of a trespassing cat and was killed by a dog.",
+        "followed the scent of a trespassing cat and were killed by a dog"
     ]
 },
 {
@@ -199,7 +203,8 @@
     "antagonize_fail_text": "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually discovering a limping o_c_n warrior who hastily explains that a dog had chased them into c_n's territory. p_l is still angry, but they rein in their hostility and tensely return the cat to o_c_n territory.",
     "history_text": [
         "r_c followed the scent of a trespassing cat and was scarred by a dog.",
-        "r_c followed the scent of a trespassing cat and was killed by a dog."
+        "r_c followed the scent of a trespassing cat and was killed by a dog.",
+        "followed the scent of a trespassing cat and were killed by a dog"
     ]
 },
 {
@@ -235,7 +240,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan."
+        "r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -271,7 +277,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan."
+        "r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -307,7 +314,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c lost a life against a hostile clan."
+        "r_c lost a life against a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -343,7 +351,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan."
+        "r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -379,7 +388,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan."
+        "r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -415,7 +425,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan."
+        "r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -451,7 +462,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan."
+        "r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -487,7 +499,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c lost a life against a hostile clan."
+        "r_c lost a life against a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -523,7 +536,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan."
+        "r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -559,7 +573,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan."
+        "r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -595,7 +610,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan."
+        "r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -631,7 +647,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan."
+        "r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -667,7 +684,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c lost a life against a hostile clan."
+        "r_c lost a life against a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -703,7 +721,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan."
+        "r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -739,7 +758,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan."
+        "r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -775,7 +795,8 @@ null,
     "antagonize_fail_text": null,
     "history_text": [
             "r_c got injured patrolling on the border.",
-"r_c was killed by a hostile clan."
+"r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -811,7 +832,8 @@ null,
     "antagonize_fail_text": null,
     "history_text": [
             "r_c got injured patrolling on the border.",
-"r_c was killed by a hostile clan."
+"r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -847,7 +869,8 @@ null,
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c lost a life against a hostile clan."
+        "r_c lost a life against a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -883,7 +906,8 @@ null,
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan."
+        "r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 },
 {
@@ -919,7 +943,8 @@ null,
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan."
+        "r_c was killed by a hostile clan.",
+        "were killed by a hostile clan"
     ]
 }
 

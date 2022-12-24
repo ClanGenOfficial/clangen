@@ -584,7 +584,8 @@
         "antagonize_fail_text": null,
         "history_text": [
             "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed."
+            "r_c was hit by a monster and killed.",
+        "were hit by a monster"
         ]
     },
     {
@@ -645,7 +646,8 @@
         "antagonize_fail_text": null,
         "history_text": [
             "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed."
+            "r_c was hit by a monster and killed.",
+        "were hit by a monster"
         ]
     },
     {
@@ -702,7 +704,8 @@
         "antagonize_fail_text": null,
         "history_text": [
             "This cat got heatstroke while on a patrol.",
-            "r_c died from heatstroke."
+            "r_c died from heatstroke.",
+            "died from heatstroke"
         ]
     },
     {
@@ -763,7 +766,8 @@
         "antagonize_fail_text": null,
         "history_text": [
             "This cat got heatstroke while on a patrol.",
-            "This cat died from heat stroke."
+            "This cat died from heat stroke.",
+            "died from heatstroke"
         ]
     },
     {
@@ -875,7 +879,8 @@
         "antagonize_fail_text": null,
         "history_text": [
             "This cat got heatstroke while on a patrol.",
-            "This cat died from heat stroke."
+            "This cat died from heat stroke.",
+            "died from heatstroke"
         ]
     },
     {
@@ -987,7 +992,8 @@
         "antagonize_fail_text": null,
         "history_text": [
             "This cat got heatstroke while on a patrol.",
-            "This cat died from heat stroke."
+            "This cat died from heat stroke.",
+            "died from heat stroke"
         ]
     }
 ]

@@ -28,7 +28,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "This cat is scarred from bravely defending the clan against a dog.",
-        "This cat died to keep c_n safe from a large dog."
+        "This cat died to keep c_n safe from a large dog.",
+        "died to keep c_n safe from a large dog"
     ]
 },
 {
@@ -61,7 +62,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "This cat is scarred from bravely defending the clan against a dog.",
-        "This cat died to keep the clan safe from a large dog."
+        "This cat died to keep the clan safe from a large dog.",
+        "died to keep c_n safe from a large dog"
     ]
 },
 {
@@ -95,7 +97,8 @@
     "antagonize_fail_text": null, 
     "history_text": [
         "This cat is scarred from bravely defending the clan against a dog.",
-        "This cat died to keep the clan safe from a large dog."
+        "This cat died to keep the clan safe from a large dog.",
+        "died to keep c_n safe from a large dog"
     ]
 },
 {
@@ -123,7 +126,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "This cat got a scar from a fight with a small dog, but they always say it was a huge dog.",
-        "This cat was killed in a fight with a small dog, but they took the dog out with them."
+        "This cat was killed in a fight with a small dog, but they took the dog out with them.",
+        "killed in a fight with a small dog"
     ]
 },
 {

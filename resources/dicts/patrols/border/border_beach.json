@@ -28,7 +28,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c was badly scarred when rogues ambushed their patrol.",
-        "This cat was killed when rogues ambushed their patrol."
+        "This cat was killed when rogues ambushed their patrol.",
+        "killed in a rogue ambush"
     ]
 },
 {
@@ -61,7 +62,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         null,
-        "This cat was killed when rogues ambushed them while on a solo patrol."
+        "This cat was killed when rogues ambushed them while on a solo patrol.",
+        "killed in a rogue ambush"
     ]
 },
 {
@@ -93,7 +95,8 @@
     "antagonize_fail_text": "The patrol descends into battle without a second thought, but the rogues are stronger than expected and eventually the patrol is forced to retreat.",
     "history_text": [
         "r_c was badly scarred when rogues attacked their patrol.",
-        "This cat was killed when rogues attacked their patrol."
+        "This cat was killed when rogues attacked their patrol.",
+        "killed in a rogue ambush"
     ]
 },
 {
@@ -127,7 +130,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             null,
-            "This cat was drowned by floodwaters."
+            "This cat was drowned by floodwaters.",
+            "drowned in floodwaters"
     ]
 },
 {
@@ -161,7 +165,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             null,
-            "r_c was drowned by floodwaters."
+            "r_c was drowned by floodwaters.",
+            "drowned in floodwaters"
     ]
 },
 {
@@ -195,7 +200,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             "r_c was injured in a flood.",
-            "r_c was drowned by floodwaters."
+            "r_c was drowned by floodwaters.",
+            "drowned in floodwaters"
     ]
 },
 {
@@ -262,7 +268,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             null,
-            "r_c was swept out to sea by a flood."
+            "r_c was swept out to sea by a flood.",
+            "were swept out to sea by a flood"
     ]
 },
 {
@@ -296,7 +303,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue."
+            "r_c was killed by an invading rogue.",
+            "were killed by an invading rogue"
     ]
 },
 {
@@ -330,7 +338,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue."
+            "r_c was killed by an invading rogue.",
+            "were killed by an invading rogue"
     ]
 },
 {
@@ -364,7 +373,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             "r_c was scarred by an invading rogue.",
-            "r_c was killed by an invading rogue."
+            "r_c was killed by an invading rogue.",
+            "were killed by an invading rogue"
     ]
 },
 {

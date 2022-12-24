@@ -261,7 +261,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             "p_l gained a scar from a fox.",
-            "p_l was killed by a wolverine."
+            "p_l was killed by a wolverine.",
+        "were killed by a wolverine"
 
     ]
 },
@@ -294,7 +295,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             "p_l gained a scar from a fox.",
-            "p_l was killed by a dog while patrolling alone."
+            "p_l was killed by a dog while patrolling alone.",
+        "were killed while patrolling alone"
 
     ]
 },
@@ -636,7 +638,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed."
+            "r_c was hit by a monster and killed.",
+        "were hit by a monster"
     ]
 },
 {
@@ -670,7 +673,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             "r_c was heavily injured by a monster, and carries the scars from it.",
-            "r_c was hit by a monster and killed."
+            "r_c was hit by a monster and killed.",
+        "were hit by a monster"
     ]
 },
 {
@@ -704,7 +708,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             "r_c was heavily injured by a monster, and carries the scars from it.",
-            "This cat was hit by a monster and killed."
+            "This cat was hit by a monster and killed.",
+        "were hit by a monster"
     ]
 },
 {
@@ -738,7 +743,8 @@
     "antagonize_fail_text": null,
     "history_text": [
             "r_c was heavily injured by a monster, and carries the scars from it.",
-            "This cat was hit by a monster and killed."
+            "This cat was hit by a monster and killed.",
+        "were hit by a monster"
     ]
 },
 {
@@ -1017,7 +1023,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from an eagle's beak.",
-        "r_c was killed by an eagle, scrapping over food."
+        "r_c was killed by an eagle, scrapping over food.",
+        "were killed by an eagle"
     ]
 },
 {
@@ -1053,7 +1060,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from an eagle's beak.",
-        "r_c was killed by an eagle, scrapping over food."
+        "r_c was killed by an eagle, scrapping over food.",
+        "were killed by an eagle"
     ]
 },
 {
@@ -1294,7 +1302,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c carries a scar from a solo fox fight.",
-        "r_c fell in a solo battle with a fox."
+        "r_c fell in a solo battle with a fox.",
+        "died fighting a fox"
     ]
 }
 

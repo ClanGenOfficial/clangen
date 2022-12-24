@@ -215,7 +215,8 @@
     "antagonize_fail_text": "How dare they trespass! Your patrol bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside they find the o_c_n deputy conversing with your leader. They tell the patrol off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
     "history_text": [
     "r_c followed the scent of a trespassing cat and was scarred by a dog.",
-    "r_c followed the scent of a trespassing cat and was killed by a dog."
+    "r_c followed the scent of a trespassing cat and was killed by a dog.",
+        "followed the scent of a trespassing cat and were killed by a dog"
     ]
 },
 {
@@ -249,7 +250,8 @@
     "antagonize_fail_text": "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp.  Inside they find the o_c_n deputy conversing with your leader.  They tell p_l off for so hastily jumping to conclusions. The o_c_n deputy was only delivering some news.",
     "history_text": [
     "r_c followed the scent of a trespassing cat and was scarred by a dog.",
-    "r_c followed the scent of a trespassing cat and was killed by a dog."
+    "r_c followed the scent of a trespassing cat and was killed by a dog.",
+        "followed the scent of a trespassing cat and were killed by a dog"
     ]
 },
 {
@@ -316,7 +318,8 @@
     "antagonize_fail_text": null,
     "history_text": [
     "r_c was injured by an enemy patrol while marking the border.",
-    "r_c lost their life in an ambush on the border."
+    "r_c lost their life in an ambush on the border.",
+        "were killed in a border ambush"
     ]
 },
 {
@@ -350,7 +353,8 @@
     "antagonize_fail_text": null,
     "history_text": [
     "r_c was injured by an enemy patrol while marking the border.",
-    "r_c lost a life in an ambush on the border."
+    "r_c lost a life in an ambush on the border.",
+        "were killed in a border ambush"
     ]
 },
 {
@@ -632,7 +636,8 @@
     "antagonize_fail_text": null,
     "history_text": [
     "r_c got injured patrolling on the border.",
-    "r_c lost their life in an ambush on the border."
+    "r_c lost their life in an ambush on the border.",
+        "were killed in a border ambush"
 ]
 },
 {
@@ -666,7 +671,8 @@
     "antagonize_fail_text": null,
     "history_text": [
     "r_c got injured patrolling on the border.",
-    "r_c lost a life in an ambush on the border."
+    "r_c lost a life in an ambush on the border.",
+        "were killed in a border ambush"
     ]
 },
 {
@@ -952,7 +958,8 @@
     "antagonize_fail_text": null,
     "history_text": [
     "r_c got injured patrolling on the border.",
-    "r_c lost their life in an ambush on the border."
+    "r_c lost their life in an ambush on the border.",
+        "were killed in a border ambush"
     ]
 },
 {
@@ -986,7 +993,8 @@
     "antagonize_fail_text": null,
     "history_text": [
     "r_c got injured patrolling on the border.",
-    "r_c lost a life in an ambush on the border."
+    "r_c lost a life in an ambush on the border.",
+        "were killed in a border ambush"
     ]
 },
 {

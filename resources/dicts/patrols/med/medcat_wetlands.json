@@ -438,11 +438,7 @@
             "min_cats": 2,
             "max_cats": 2,
             "antagonize_text": "null, ",
-            "antagonize_fail_text": "null, ",
-            "history_text": [
-                    "Scar", null,
-                    "Death", null
-            ]
+            "antagonize_fail_text": "null, "
     },
     {
         "patrol_id": "wtlnd_med_romance1",

@@ -148,7 +148,8 @@
     "antagonize_fail_text": "How dare they trespass! Your patrol bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside they find the o_c_n medicine cat conversing with your own medicine cat. They tell the patrol off for so hastily jumping to conclusions.  The other medicine cat was only looking to borrow some herbs.",
     "history_text": [
         "r_c followed the scent of a trespassing cat and was scarred by a dog.",
-        "r_c followed the scent of a trespassing cat and was killed by a dog."
+        "r_c followed the scent of a trespassing cat and was killed by a dog.",
+        "followed the scent of a trespassing cat and were killed by a dog"
     ]
 },
 {
@@ -182,7 +183,8 @@
     "antagonize_fail_text": "How dare they trespass! p_l bounds after the scent, hoping to find the source of it, eventually finding that it leads to the c_n camp. Inside they find the o_c_n medicine cat conversing with your own medicine cat. They tell p_l off for so hastily jumping to conclusions. The other medicine cat was only looking to borrow some herbs.",
     "history_text": [
         "r_c followed the scent of a trespassing cat and was scarred by a dog.",
-        "r_c followed the scent of a trespassing cat and was killed by a dog."
+        "r_c followed the scent of a trespassing cat and was killed by a dog.",
+        "followed the scent of a trespassing cat and were killed by a dog"
     ]
 },
 {
