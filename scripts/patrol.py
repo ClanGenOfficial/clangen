@@ -606,7 +606,7 @@ class Patrol():
                 cat.died_by.append(f'This cat died while patrolling.')
             else:
                 cat.died_by.append(f'died while patrolling')
-                
+
             cat.die(body)
 
             if len(patrol.patrol_cats) > 1:
