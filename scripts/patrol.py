@@ -348,7 +348,8 @@ class Patrol():
                 min_cats=patrol["min_cats"],
                 max_cats=patrol["max_cats"],
                 antagonize_text=patrol["antagonize_text"],
-                antagonize_fail_text=patrol["antagonize_fail_text"])
+                antagonize_fail_text=patrol["antagonize_fail_text"],
+                history_text=patrol["history_text"] if "history_text" in patrol else [])
 
             all_patrol_events.append(patrol_event)
 
@@ -597,11 +598,11 @@ class Patrol():
                         game.clan.leader_lives -= 1
                 else:
                     game.clan.leader_lives -= 1
-
-            if len(self.patrol_event.history_text) == 2 and cat.status != 'leader':
-                cat.died_by.append(f'{self.patrol_event.history_text[1]}')
-            elif len(self.patrol_event.history_text) == 2 and cat.status == 'leader':
-                cat.died_by.append(f'{self.patrol_event.history_text[2]}')
+            print("history text len", len(self.patrol_event.history_text))
+            if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
+                cat.died_by.append(event_text_adjust(Cat, f'{self.patrol_event.history_text[1]})', cat))
+            elif len(self.patrol_event.history_text) >= 2 and cat.status == 'leader':
+                cat.died_by.append(event_text_adjust(Cat, f'{self.patrol_event.history_text[2]})', cat))
             elif cat.status != 'leader':
                 cat.died_by.append(f'This cat died while patrolling.')
             else:
@@ -630,9 +631,9 @@ class Patrol():
                     else:
                         game.clan.leader_lives -= 10
                 if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
-                    cat.died_by.append(f'{self.patrol_event.history_text[1]}')
+                    cat.died_by.append(event_text_adjust(Cat, f'{self.patrol_event.history_text[1]}', cat))
                 elif len(self.patrol_event.history_text) >= 2 and cat.status == 'leader':
-                    cat.died_by.append(f'{self.patrol_event.history_text[2]}')
+                    cat.died_by.append(event_text_adjust(Cat, f'{self.patrol_event.history_text[2]}', cat))
                 elif cat.status != 'leader':
                     cat.died_by.append(f'This cat died while patrolling.')
                 else:
@@ -645,10 +646,10 @@ class Patrol():
                 cats_dying = int(len(self.patrol_cats) - 1)
             for d in range(0, cats_dying):
                 self.patrol_cats[d].die(body)
-                if len(self.patrol_event.history_text) == 2 and self.patrol_cats[d].status != 'leader':
-                    self.patrol_cats[d].died_by.append(f'{self.patrol_event.history_text[1]}')
-                elif len(self.patrol_event.history_text) == 2 and self.patrol_cats[d].status == 'leader':
-                    self.patrol_cats[d].died_by.append(f'{self.patrol_event.history_text[2]}')
+                if len(self.patrol_event.history_text) >= 2 and self.patrol_cats[d].status != 'leader':
+                    self.patrol_cats[d].died_by.append(event_text_adjust(Cat, f'{self.patrol_event.history_text[1]}', self.patrol_cats[d]))
+                elif len(self.patrol_event.history_text) >= 2 and self.patrol_cats[d].status == 'leader':
+                    self.patrol_cats[d].died_by.append(event_text_adjust(Cat, f'{self.patrol_event.history_text[2]}', self.patrol_cats[d]))
                 elif cat.status != 'leader':
                     cat.died_by.append(f'This cat died while patrolling.')
                 else:

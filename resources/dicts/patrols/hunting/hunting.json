@@ -161,6 +161,7 @@
         "fail_text": [
             "r_c leaps for the rabbit but it still manages to slip away, despite it's obvious illness.",
             null,
+            null,
             "r_c catches the rabbit, but later they and the cats who eat it become violently ill."],
         "decline_text": "r_c avoids catching the rabbit and looks for other prey.",
         "chance_of_success": 40,
