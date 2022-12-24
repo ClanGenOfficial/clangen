@@ -423,7 +423,7 @@ class Relation_Events():
                                f"Whenever someone asks whether {str(cat.name)} will be alright raising their {insert} alone, they just smile, and reply that everything is going to work out fine.",
                                f"A {insert}! {str(cat.name)} welcomes them happily, and seems unperturbed by the lack of a partner in the nursery with them."
                                ]
-        elif cat.mate == other_cat.ID and not other_cat.dead:
+        elif cat.mate == other_cat.ID and not other_cat.dead and not other_cat.outside:
             possible_events = [f"{str(cat.name)} had a {insert} with {str(other_cat.name)}.",
                                f"In the nursery, {str(cat.name)} lies suckling a {insert}, {str(other_cat.name)} watching over them and purring so hard their body vibrates.",
                                f"{str(cat.name)} and {str(other_cat.name)}'s eyes meet over their {insert}, full of love for their growing family.",
@@ -436,7 +436,7 @@ class Relation_Events():
                                f"{str(cat.name)} and {str(other_cat.name)} were so busy worrying about and looking forward to the birth that it's only now that they look at their {insert}, and wonder what to name them.",
                                f"Purring with {str(other_cat.name)} against their back, {str(cat.name)} feels like they're going to explode with love, looking at their tiny new {insert}."
                                ]
-        elif cat.mate == other_cat.ID and other_cat.dead:
+        elif cat.mate == other_cat.ID and other_cat.dead or other_cat.outside:
             possible_events = [
                 f"{str(cat.name)} looks at their {insert}, choking on both a purr and a wail. How are they supposed to do this without {str(other_cat.name)}?",
                 f"{str(cat.name)} sobs and pushes their new {insert} away from them. They look far too much like {str(other_cat.name)} for {str(cat.name)} to stand the sight of them.",
