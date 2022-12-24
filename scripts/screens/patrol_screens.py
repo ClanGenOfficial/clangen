@@ -413,7 +413,6 @@ class PatrolScreen(Screens):
             self.patrol_type,
             game.settings.get('disasters')
         )
-        print(self.patrol_type, len(possible_events))
         patrol.patrol_event = choice(possible_events)  # Set patrol event.
         intro_text = patrol.patrol_event.intro_text
         patrol_size = len(patrol.patrol_cats)
