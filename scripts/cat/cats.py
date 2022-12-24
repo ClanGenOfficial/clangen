@@ -996,20 +996,21 @@ class Cat():
         moons_until = self.permanent_condition[condition]["moons_until"]
         born_with = self.permanent_condition[condition]["born_with"]
 
+        # handling the countdown till a congenital condition is revealed
+        if moons_until is not None and moons_until >= 0 and born_with is True:
+            self.permanent_condition[condition]["moons_until"] = int(moons_until - 1)
+            self.permanent_condition[condition]["moons_with"] = 0
+            return False
+        if self.permanent_condition[condition]["moons_until"] == -1 and\
+                self.permanent_condition[condition]["born_with"] is True:
+            self.permanent_condition[condition]["moons_until"] = -2
+            return True
+
         keys = self.permanent_condition[condition].keys()
         if 'moons_with' in keys:
             self.permanent_condition[condition]["moons_with"] += 1
         else:
             self.permanent_condition[condition].update({'moons_with': 1})
-
-        # handling the countdown till a congenital condition is revealed
-        if moons_until is not None and moons_until >= 0 and born_with is True:
-            self.permanent_condition[condition]["moons_until"] = int(moons_until - 1)
-            self.permanent_condition[condition]["moons_with"] = 0
-        if self.permanent_condition[condition]["moons_until"] == -1 and\
-                self.permanent_condition[condition]["born_with"] is True:
-            self.permanent_condition[condition]["moons_until"] = -2
-            return True
 
         # leader should have a higher chance of death
         if self.status == "leader" and mortality != 0:
@@ -1017,7 +1018,7 @@ class Cat():
             if mortality == 0:
                 mortality = 1
 
-        if mortality and not int(random.random() * mortality) and moons_until == 0:
+        if mortality and not int(random.random() * mortality):
             if self.status == 'leader':
                 game.clan.leader_lives -= 1
             self.die(died_by_condition=True)
