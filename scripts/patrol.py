@@ -322,7 +322,7 @@ class Patrol():
                                                                         for_love_interest=True):
                         print(str(self.patrol_apprentices[0]) + ' and ' + str(self.patrol_apprentices[1]))
                         continue
-                elif "no_app" in patrol.tags:
+                else:
                     if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
                         continue
 
@@ -598,9 +598,9 @@ class Patrol():
                 else:
                     game.clan.leader_lives -= 1
 
-            if len(self.patrol_event.history_text) >= 2 and cat.status != 'leader':
+            if len(self.patrol_event.history_text) == 2 and cat.status != 'leader':
                 cat.died_by.append(f'{self.patrol_event.history_text[1]}')
-            elif len(self.patrol_event.history_text) >= 2 and cat.status == 'leader':
+            elif len(self.patrol_event.history_text) == 2 and cat.status == 'leader':
                 cat.died_by.append(f'{self.patrol_event.history_text[2]}')
             elif cat.status != 'leader':
                 cat.died_by.append(f'This cat died while patrolling.')
@@ -645,9 +645,9 @@ class Patrol():
                 cats_dying = int(len(self.patrol_cats) - 1)
             for d in range(0, cats_dying):
                 self.patrol_cats[d].die(body)
-                if len(self.patrol_event.history_text) >= 2 and self.patrol_cats[d].status != 'leader':
+                if len(self.patrol_event.history_text) == 2 and self.patrol_cats[d].status != 'leader':
                     self.patrol_cats[d].died_by.append(f'{self.patrol_event.history_text[1]}')
-                elif len(self.patrol_event.history_text) >= 2 and self.patrol_cats[d].status == 'leader':
+                elif len(self.patrol_event.history_text) == 2 and self.patrol_cats[d].status == 'leader':
                     self.patrol_cats[d].died_by.append(f'{self.patrol_event.history_text[2]}')
                 elif cat.status != 'leader':
                     cat.died_by.append(f'This cat died while patrolling.')
