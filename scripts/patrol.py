@@ -685,6 +685,7 @@ class Patrol():
         if self.patrol_event.tags:
             # here we check if a specific condition has been tagged for, excluding shock, and add it to possible
             # conditions list
+
             if "injury" in self.patrol_event.tags:
                 for tag in self.patrol_event.tags:
                     if tag in INJURIES:
@@ -705,6 +706,17 @@ class Patrol():
             # check for lethality
             if "non_lethal" in self.patrol_event.tags:
                 lethal = False
+
+            if "poison_clan" in self.patrol_event.tags:
+                possible_conditions.append("poisoned")
+                self.living_cats = []
+                for x in range(len(Cat.all_cats.values())):
+                    the_cat = list(Cat.all_cats.values())[x]
+                    if not the_cat.dead and not the_cat.outside:
+                        self.living_cats.append(the_cat)
+                cats_to_poison = random.choices(self.living_cats, k=choice([2, 3, 4]))
+                for cat in cats_to_poison:
+                    cat.get_injured('poisoned')
 
             # now we hurt the kitty
             if len(possible_conditions) > 0:

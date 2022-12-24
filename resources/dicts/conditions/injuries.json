@@ -889,14 +889,28 @@
         "severity": "minor",
         "medicine_duration": 1,
         "mortality": {
-            "kitten": 30,
-            "adolescent": 50,
-            "young adult": 70,
-            "adult": 70,
+            "kitten": 20,
+            "adolescent": 40,
+            "young adult": 50,
+            "adult": 60,
             "senior adult": 50,
             "elder": 30
-        }
-    },
+        },
+        "illness_infectiousness": [
+        ],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 5
+            }
+        ],
+        "also_got": [
+            "torn pelt"
+        ],
+        "cause_permanent": [
+        ]
+    }
+},
 
     "broken back":{
         "duration": 12,
