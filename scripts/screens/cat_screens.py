@@ -627,6 +627,10 @@ class ProfileScreen(Screens):
 
             self.checkboxes["prevent_fading"] = UIImageButton(pygame.Rect((100, 385), (34, 34)), "",
                                                               starting_height=2,
+                                                              tool_tip_text="Prevents a cat from fading away."
+                                                                            " If unchecked, and the cat has been dead "
+                                                                            "for longer than 302 moons, they will fade "
+                                                                            "on the next timeskip.",
                                                               object_id=box_type)
 
     def determine_previous_and_next_cat(self):

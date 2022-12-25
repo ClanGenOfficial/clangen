@@ -230,7 +230,7 @@ class Events():
         if game.settings["fading"] and not cat.prevent_fading and cat.ID != game.clan.instructor.ID and \
                 not cat.faded:
 
-            age_to_fade = 212
+            age_to_fade = 302
             # Handle opacity
             cat.opacity = int(100*(1-(cat.dead_for/age_to_fade)**5)+30)
 
