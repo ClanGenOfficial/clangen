@@ -2105,8 +2105,11 @@ class CeremonyScreen(Screens):
         else: 
             prev_lead_text = str(choice(names.normal_prefixes)) + 'star, one of Starclan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + choice(prev_lead_virtues) + '.'
         
-        ending_text = str(prev_lead.name) + " hails " + dep_name + " by their new name, " + str(cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(cat.name.prefix) + "star\'s name in support. " + str(cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the clan."
-                
+        if (prev_lead):
+            ending_text = str(prev_lead.name) + " hails " + dep_name + " by their new name, " + str(cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(cat.name.prefix) + "star\'s name in support. " + str(cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the clan."
+        else:
+            ending_text = "StarClan hails " + dep_name + " by their new name, " + str(cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(cat.name.prefix) + "star\'s name in support. " + str(cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the clan."
+
         return intro_text + '\n' + queen_text + '\n\n' + warrior_text + '\n\n' + kit_text + '\n\n' + warrior2_text + '\n\n' + app_text + '\n\n' + elder_text + '\n\n' + warrior3_text + '\n\n' + med_cat_text + '\n\n' + prev_lead_text + '\n\n' + ending_text
     
     def handle_event(self, event):
