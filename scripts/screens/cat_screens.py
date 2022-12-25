@@ -255,6 +255,7 @@ class ProfileScreen(Screens):
         self.back_button = None
         self.previous_cat_button = None
         self.next_cat_button = None
+        self.ceremony_button = None
         self.the_cat = None
 
     def handle_event(self, event):
@@ -290,6 +291,8 @@ class ProfileScreen(Screens):
                 self.toggle_history_tab()
             elif event.ui_element == self.conditions_tab_button:
                 self.toggle_conditions_tab()
+            elif event.ui_element == self.ceremony_button:
+                self.change_screen('ceremony screen')
             else:
                 self.handle_tab_events(event)
 
@@ -469,9 +472,14 @@ class ProfileScreen(Screens):
         self.placeholder_tab_3 = UIImageButton(pygame.Rect((400, 622), (176, 30)), "",
                                                object_id="#cat_tab_3_blank_button")
         self.placeholder_tab_3.disable()
-        self.placeholder_tab_4 = UIImageButton(pygame.Rect((576, 622), (176, 30)), "",
+        
+        if (self.the_cat.status == 'leader'):
+            self.placeholder_tab_4 = pygame_gui.elements.UIButton(pygame.Rect((576, 622), (176, 30)), "View Ceremony", object_id="#ceremony")
+        else:
+            self.placeholder_tab_4 = UIImageButton(pygame.Rect((576, 622), (176, 30)), "",
                                                object_id="#cat_tab_4_blank_button")
-        self.placeholder_tab_4.disable()
+            self.placeholder_tab_4.disable()
+            
         self.build_profile()
 
         self.hide_menu_buttons()  # Menu buttons don't appear on the profile screen
@@ -1959,3 +1967,148 @@ class ChangeGenderScreen(Screens):
             elif event.ui_element == self.back_button:
                 self.change_screen('profile screen')
         return
+
+# ---------------------------------------------------------------------------- #
+#                           ceremony screen                                    #
+# ---------------------------------------------------------------------------- #
+class CeremonyScreen(Screens):
+
+    def screen_switches(self):
+        self.hide_menu_buttons()
+
+        self.header = pygame_gui.elements.UITextBox(str(self.name) + 'leadership ceremony',
+                                                    pygame.Rect((100, 130), (600, -1)),
+                                                    object_id=get_text_box_theme())
+        # self.gender_changed = pygame_gui.elements.UITextBox("Gender Changed!",
+        #                                                     pygame.Rect((100, 240), (600, 40)),
+        #                                                     object_id=get_text_box_theme(),
+        #                                                     visible=False)
+        self.the_cat = Cat.all_cats.get(game.switches['cat'])
+
+        # self.done_button = UIImageButton(pygame.Rect((365, 282), (77, 30)), "",
+        #                                  object_id="#done_button")
+        self.back_button = UIImageButton(pygame.Rect((25, 25), (105, 30)), "",
+                                         object_id="#back_button")
+
+        # self.gender_entry_box = pygame_gui.elements.UITextEntryLine(pygame.Rect((300, 200), (200, 24)),
+        #                                                             placeholder_text=self.the_cat.genderalign)
+
+    def exit_screen(self):
+        self.header.kill()
+        del self.header
+
+        self.back_button.kill()
+        del self.back_button
+
+    def on_use(self):
+        pass
+    
+    def handle_leadership_ceremony(self, cat):
+        dep_name = str(cat.name.prefix) + str(cat.name.suffix)
+        intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader."
+        
+        # as of right now, chooses random starclan cats to give lives
+        # in the future, plan to have starclan cats with high relationships to give lives
+        # if not enough cats to give lives, generate a new random cat name to give a life
+        
+        queen = None
+        warrior = None
+        kit = None
+        warrior2 = None
+        app = None
+        elder = None
+        warrior3 = None
+        med_cat = None
+        prev_lead = None
+        life_givers = [queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead]
+        for i in cat_class.all_cats:
+            c = cat_class.all_cats[i]
+            if c.dead:
+                if not queen and c.status == 'queen':
+                    queen = c
+                    continue
+                elif not kit and c.status == 'kit':
+                    kit = c
+                    continue
+                elif not app and c.status == 'apprentice':
+                    app = c
+                    continue
+                elif not prev_lead and c.status == 'leader':
+                    prev_lead = c
+                    continue
+                elif not elder and c.status == 'elder':
+                    elder = c
+                    continue
+                elif not warrior and c.status == 'warrior':
+                    warrior = c
+                    continue
+                elif not warrior2 and c.status == 'warrior':
+                    warrior2 = c
+                    continue
+                elif not warrior3 and c.status == 'warrior':
+                    warrior3 = c
+                    continue
+                elif not med_cat and (c.status == 'medicine cat' or c.status == 'medicine cat apprentice'):
+                    med_cat = c
+                    continue
+                if queen and warrior and kit and warrior2 and app and elder and warrior3 and med_cat and prev_lead:
+                    break
+        print(intro_text)
+        queen_virtues = ["affection","compassion","empathy","duty","protection","pride"]
+        warrior_virtues = ["acceptance","bravery","certainty", "clear judgement","confidence"]
+        kit_virtues = ["adventure","curiosity","forgiveness","hope","perspective","protection"]
+        warrior2_virtues = ["courage","determination","endurance","sympathy"]
+        app_virtues = ["happiness","honesty","humor","justice","mentoring","trust"]
+        elder_virtues = ["empathy","grace","humility","integrity","persistence","resilience"]
+        warrior3_virtues = ["farsightedness","friendship","instincts","mercy","strength","unity"]
+        med_cat_virtues = ["clear sight","devotion","faith","healing","patience","selflessness","wisdom"]
+        prev_lead_virtues = ["endurance","honor","leadership","loyalty","nobility","tireless energy"]
+        if queen:
+            print(str(queen.name) + ' pads up to the new leader first, eyes soft as they touch their nose to ' + dep_name + '\'s head. They give a life for ' + choice(queen_virtues) + '.')
+        else: 
+            print('A queen introduces themself as ' + str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + '. Their eyes are soft as they touch their nose to ' + dep_name + '\'s head. They give a life for ' + choice(queen_virtues) + '.')
+        if warrior:
+            print(str(warrior.name) + ' walks up to ' + dep_name + ' next, offering a life for ' + choice(warrior_virtues) + '.')
+        else: 
+            print('An unknown warrior walks towards ' + dep_name + ' saying that their name is ' + str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + '. They offer a life for ' + choice(warrior_virtues) + '.')
+        if kit:
+            print(str(kit.name) + ' bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + choice(kit_virtues) + '.')
+        else:
+            print(str(choice(names.normal_prefixes)) + 'kit introduces themself and bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + choice(kit_virtues) + '.')
+        if warrior2:
+            print(str(warrior2.name) + ' steps forward to give ' + dep_name + ' a life for ' + choice(warrior2_virtues) + '.')
+        else: 
+            print(str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + ' states their name and steps forward to give ' + dep_name + ' a life for ' + choice(warrior2_virtues) + '.')
+        if app:
+            print('A young cat is next to give a life. Starlight reflects off their youthful eyes. ' + str(app.name.prefix) + 'paw stretches up to give a life for ' + choice(app_virtues) + '.')
+        else: 
+            print(str(choice(names.normal_prefixes)) + 'paw, an unfamiliar apprentice, stretches up to give a life for ' + choice(app_virtues) + '.')
+        if elder:
+            print(str(elder.name) + ' gives a life for determination')
+        else: 
+            print(str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + ', an unknown elder gives a life for determination')    
+        if warrior3:
+            print(str(warrior3.name) + ' gives a life for determination')
+        else: 
+            print(str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + ', an unknown warrior gives a life for determination')
+        if med_cat:
+            print(str(med_cat.name) + ' gives a life for determination')
+        else: 
+            print(str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + ', an unknown medcat gives a life for determination')
+        if prev_lead:
+            print(str(prev_lead.name.prefix) + 'star gives a life for determination')
+        else: 
+            print(str(choice(names.normal_prefixes)) + 'star, an unknown leader gives a life for determination')
+        
+        
+        ending_text = str(prev_lead) + " hails (deputy) by their new name, (star), telling them that their old life is no more. They are granted guardianship of (clan), and are told to use their new power wisely. The group of starry cats yowls (leader's) name in support. (leader) wakes up feeling a new strength within their body and know that they are now ready to lead the clan."
+        
+        print(ending_text)
+    
+    def handle_event(self, event):
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.back_button:
+                self.change_screen('profile screen')
+        return
+
+
