@@ -589,10 +589,7 @@ def update_sprite(cat):
 
     # Apply opacity
     if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
-        #temp = pygame.Surface(new_sprite.get_size()).convert_alpha()
-        #temp.blit(new_sprite, (0, 0))
         new_sprite = apply_opacity(new_sprite, cat.opacity)
-        #new_sprite = temp
 
     # apply
     cat.sprite = new_sprite
@@ -606,6 +603,7 @@ def update_sprite(cat):
     # update class dictionary
     cat.all_cats[cat.ID] = cat
     game.switches['error_message'] = ''
+
 
 def apply_opacity(surface, opacity):
     for x in range(surface.get_width()):

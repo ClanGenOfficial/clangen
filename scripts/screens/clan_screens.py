@@ -533,7 +533,8 @@ class DFScreen(Screens):
 
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
-            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and the_cat.df:
+            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and the_cat.df and \
+                    not the_cat.faded:
                 self.dead_cats.append(the_cat)
 
         self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525,142), (147,23)),

@@ -306,6 +306,16 @@ class SettingsScreen(Screens):
             self.settings_changed = True
             self.update_save_button()
             self.refresh_checkboxes()
+        elif event.ui_element == self.checkboxes['fading']:
+            game.switch_setting('fading')
+            self.settings_changed = True
+            self.update_save_button()
+            self.refresh_checkboxes()
+        elif event.ui_element == self.checkboxes['save_faded_copy']:
+            game.switch_setting('save_faded_copy')
+            self.settings_changed = True
+            self.update_save_button()
+            self.refresh_checkboxes()
 
     def handle_lang_events(self, event):
         if event.ui_element == self.checkboxes['english']:
@@ -381,40 +391,84 @@ class SettingsScreen(Screens):
         # For consistency's sake, use the name of the setting as the key for the
         #   checkbox text and checkbox
         x_value = 225
+        y_spacing = 39
+        n = 0
+
+        self.checkboxes_text["container"] = pygame_gui.elements.UIScrollingContainer(pygame.Rect((0, 220),
+                                                                                                 (700, 300)))
+
         self.checkboxes_text['dark mode'] = pygame_gui.elements.UITextBox(
-            "Dark Mode", pygame.Rect((x_value, 220), (500, 50)),
-            object_id=get_text_box_theme("#setting_text_box")
+            "Dark Mode", pygame.Rect((x_value, n * y_spacing), (500, 50)),
+            container= self.checkboxes_text["container"],
+            object_id=get_text_box_theme("#setting_text_box"),
         )
+        n += 1
         self.checkboxes_text['backgrounds'] = pygame_gui.elements.UITextBox(
-            "Enable clan page background", pygame.Rect((x_value, 259), (500, 39)),
+            "Enable clan page background", pygame.Rect((x_value, n * y_spacing), (500, 39)),
+            container=self.checkboxes_text["container"],
             object_id=get_text_box_theme("#setting_text_box")
         )
+        n += 1
         self.checkboxes_text['autosave'] = pygame_gui.elements.UITextBox(
-            "Automatically save every five moons", pygame.Rect((x_value, 298), (500, 39)),
+            "Automatically save every five moons", pygame.Rect((x_value, n * y_spacing), (500, 39)),
+            container=self.checkboxes_text["container"],
             object_id=get_text_box_theme("#setting_text_box")
         )
+        n += 1
         self.checkboxes_text['disasters'] = pygame_gui.elements.UITextBox(
-            "Allow mass extinction events", pygame.Rect((x_value, 337), (500, 39)),
+            "Allow mass extinction events", pygame.Rect((x_value, n * y_spacing), (500, 39)),
+            container=self.checkboxes_text["container"],
             object_id=get_text_box_theme("#setting_text_box")
         )
+        n += 1
         self.checkboxes_text['retirement'] = pygame_gui.elements.UITextBox(
-            "Cats will never retire due to a permanent condition", pygame.Rect((x_value, 376), (500, 39)),
+            "Cats will never retire due to a permanent condition", pygame.Rect((x_value, n * y_spacing), (500, 39)),
+            container=self.checkboxes_text["container"],
             object_id=get_text_box_theme("#setting_text_box")
         )
+        n += 1
         self.checkboxes_text['shaders'] = pygame_gui.elements.UITextBox(
-            "Enable Shaders", pygame.Rect((x_value, 415), (500, 50)),
+            "Enable Shaders", pygame.Rect((x_value, n * y_spacing), (500, 50)),
+            container=self.checkboxes_text["container"],
             object_id=get_text_box_theme("#setting_text_box")
         )
+        n += 1
         self.checkboxes_text['hotkey display'] = pygame_gui.elements.UITextBox(
             "Display hotkeys on text buttons -- NOT IMPLEMENTED",
-            pygame.Rect((x_value, 454), (500, 50)),
+            pygame.Rect((x_value, n * y_spacing), (500, 50)),
+            container=self.checkboxes_text["container"],
             object_id=get_text_box_theme("#setting_text_box")
         )
+        n += 1
         self.checkboxes_text['deputy'] = pygame_gui.elements.UITextBox(
             "Allow leaders to automatically choose a new deputy",
-            pygame.Rect((x_value, 493), (500, 50)),
+            pygame.Rect((x_value, n * y_spacing), (500, 50)),
+            container=self.checkboxes_text["container"],
             object_id=get_text_box_theme("#setting_text_box")
         )
+
+        n += 1
+        self.checkboxes_text['fading'] = pygame_gui.elements.UITextBox(
+            "Allow dead cats to fade away",
+            pygame.Rect((x_value, n * y_spacing), (500, 50)),
+            container=self.checkboxes_text["container"],
+            object_id=get_text_box_theme("#setting_text_box")
+        )
+
+        n += 1
+        self.checkboxes_text['fade_copy'] = pygame_gui.elements.UITextBox(
+            "Save a complete copy of faded cats information",
+            pygame.Rect((x_value, n * y_spacing), (500, 50)),
+            container=self.checkboxes_text["container"],
+            object_id=get_text_box_theme("#setting_text_box")
+        )
+
+        # This makes sure scrolling works properly.
+        for box in self.checkboxes_text:
+            if box != "container":
+                self.checkboxes_text[box].disable()
+
+        self.checkboxes_text["container"].set_scrollable_area_dimensions((680, n * y_spacing + 40))
 
         self.checkboxes_text['instr'] = pygame_gui.elements.UITextBox(
             "Change the general settings of your game here", pygame.Rect((100, 160), (600, 50)),
@@ -504,98 +558,144 @@ class SettingsScreen(Screens):
         if self.sub_menu == 'general':
             # Dark mode
             x_value = 170
+            y_spacing = 39
+            n = 0
+
             if game.settings['dark mode']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
             self.checkboxes['dark mode'] = UIImageButton(
-                pygame.Rect((x_value, 220), (34, 34)),
+                pygame.Rect((x_value, n * y_spacing), (34, 34)),
                 "",
                 object_id=box_type,
+                container=self.checkboxes_text["container"],
                 tool_tip_text='Camp backgrounds will match with the mode. Nighttime for Dark mode and daytime for Light mode.'
             )
-
+            n += 1
             # Enable clan page background
             if game.settings['backgrounds']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
             self.checkboxes['backgrounds'] = UIImageButton(
-                pygame.Rect((x_value, 259), (34, 34)),
+                pygame.Rect((x_value, n * y_spacing), (34, 34)),
                 "",
                 object_id=box_type,
+                container=self.checkboxes_text["container"],
                 tool_tip_text='Even with this off, the camp you choose will still affect the events you encounter.'
             )
 
+            n += 1
             # Automatically save every five moons
             if game.settings['autosave']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
             self.checkboxes['autosave'] = UIImageButton(
-                pygame.Rect((x_value, 298), (34, 34)),
+                pygame.Rect((x_value, n * y_spacing), (34, 34)),
                 "",
+                container=self.checkboxes_text["container"],
                 object_id=box_type
             )
 
+            n += 1
             # Allow mass extinction events
             if game.settings['disasters']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
             self.checkboxes['disasters'] = UIImageButton \
-                (pygame.Rect((x_value, 337), (34, 34)),
+                (pygame.Rect((x_value, n * y_spacing), (34, 34)),
                  "",
                  object_id=box_type,
+                 container=self.checkboxes_text["container"],
                  tool_tip_text='This may result in up to 1/3rd of your clan dying in one moon.'
                  )
 
+            n += 1
             # Cats will never retire due to a permanent condition
             if game.settings['retirement']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
             self.checkboxes['retirement'] = UIImageButton(
-                pygame.Rect((x_value, 376), (34, 34)),
+                pygame.Rect((x_value, n * y_spacing), (34, 34)),
                 "",
                 object_id=box_type,
+                container=self.checkboxes_text["container"],
                 tool_tip_text='When this setting is off, cats with permanent conditions will choose whether or not '
                               'they want to retire. '
             )
 
+            n += 1
             # Enable Shaders
             if game.settings['shaders']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
             self.checkboxes['shaders'] = UIImageButton(
-                pygame.Rect((x_value, 415), (34, 34)),
+                pygame.Rect((x_value, n * y_spacing), (34, 34)),
                 "",
                 object_id=box_type,
+                container=self.checkboxes_text["container"],
                 tool_tip_text='This will add a shading layer onto the cat sprites.'
             )
 
+            n += 1
             # Display hotkeys on text buttons -- NOT IMPLEMENTED
             if game.settings['hotkey display']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
             self.checkboxes['hotkey display'] = UIImageButton(
-                pygame.Rect((x_value, 454), (34, 34)),
+                pygame.Rect((x_value, n * y_spacing), (34, 34)),
                 "",
+                container=self.checkboxes_text["container"],
                 object_id=box_type,
             )
 
+            n += 1
             # Allow leaders to automatically choose a new deputy
             if game.settings['deputy']:
                 box_type = "#checked_checkbox"
             else:
                 box_type = "#unchecked_checkbox"
             self.checkboxes['deputy'] = UIImageButton(
-                pygame.Rect((x_value, 493), (34, 34)),
+                pygame.Rect((x_value, n * y_spacing), (34, 34)),
                 "",
                 object_id=box_type,
+                container=self.checkboxes_text["container"],
                 tool_tip_text="The warrior code rules will be taken into account when choosing a deputy."
+            )
+
+            n += 1
+            # Allow cats to fade
+            if game.settings['fading']:
+                box_type = "#checked_checkbox"
+            else:
+                box_type = "#unchecked_checkbox"
+            self.checkboxes['fading'] = UIImageButton(
+                pygame.Rect((x_value, n * y_spacing), (34, 34)),
+                "",
+                object_id=box_type,
+                container=self.checkboxes_text["container"],
+                tool_tip_text="After 212 moons, dead cats will be unloaded, and saved seperatly. "
+                              "No family relations will be lost."
+            )
+
+            n += 1
+            # Allow cats to fade
+            if game.settings['save_faded_copy']:
+                box_type = "#checked_checkbox"
+            else:
+                box_type = "#unchecked_checkbox"
+            self.checkboxes['save_faded_copy'] = UIImageButton(
+                pygame.Rect((x_value, n * y_spacing), (34, 34)),
+                "",
+                object_id=box_type,
+                container=self.checkboxes_text["container"],
+                tool_tip_text="A complete copy of faded cat save info will be saved in plain-text."
             )
 
         # CHECKBOXES FOR RELATION SETTINGS #################################################################

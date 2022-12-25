@@ -182,7 +182,9 @@ class Game():
         'game_mode': game_mode_list,
         'deputy': [False, True],
         'den labels': [False, True],
-        'favorite sub tab': sub_tab_list
+        'favorite sub tab': sub_tab_list,
+        'fading': [True, False],
+        'save_faded_copy': [False, True]
     }  # Lists of possible options for each setting
     settings_changed = False
 
@@ -466,8 +468,6 @@ class Game():
                 "tortie_pattern": {inter_cat.tortiepattern},
                 "skin": {inter_cat.skin},
                 "skill": {inter_cat.skill},
-                "specialty": {inter_cat.specialty},
-                "specialty2": {inter_cat.specialty2},
                 "accessory": {inter_cat.accessory},
                 "experience": {inter_cat.experience},
                 "dead_moons": {inter_cat.dead_for},
@@ -478,8 +478,8 @@ class Game():
                 "df": {inter_cat.df},
                 "corruption": {inter_cat.corruption if inter_cat.corruption else 0},
                 "outside": {inter_cat.outside},
-                "retired": {inter_cat.retired if inter_cat.retired else False}\n
-                "faded_offspring: {inter_cat.faded_offspring}'''
+                "retired": {inter_cat.retired if inter_cat.retired else False}
+                "faded_offspring: {inter_cat.faded_offspring}\n'''
 
 
             # SAVE TO IT'S OWN LITTLE FILE. This is a trimmed-down version for relation keeping only.

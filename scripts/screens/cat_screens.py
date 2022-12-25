@@ -257,6 +257,8 @@ class ProfileScreen(Screens):
         self.previous_cat_button = None
         self.next_cat_button = None
         self.the_cat = None
+        self.prevent_fading_text = None
+        self.checkboxes = {}
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -295,6 +297,16 @@ class ProfileScreen(Screens):
                 self.change_screen('ceremony screen')
             else:
                 self.handle_tab_events(event)
+
+            if self.the_cat.dead and game.settings["fading"]:
+                if event.ui_element == self.checkboxes["prevent_fading"]:
+                    if self.the_cat.prevent_fading:
+                        self.the_cat.prevent_fading = False
+                    else:
+                        self.the_cat.prevent_fading = True
+                    update_sprite(self.the_cat) # This will remove the transparency on the cat.
+                    self.clear_profile()
+                    self.build_profile()
 
         if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             if event.ui_element == self.alert:
@@ -491,6 +503,12 @@ class ProfileScreen(Screens):
             self.background.kill()
         if self.user_notes:
             self.user_notes = 'Click the check mark to enter notes about your cat!'
+        if self.the_cat.dead and game.settings["fading"]:
+            self.prevent_fading_text.kill()
+
+        for box in self.checkboxes:
+            self.checkboxes[box].kill()
+        self.checkboxes = {}
 
     def exit_screen(self):
         self.clear_profile()
@@ -587,6 +605,29 @@ class ProfileScreen(Screens):
         else:
             self.placeholder_tab_4 = UIImageButton(pygame.Rect((576, 622), (176, 30)), "",
                                                object_id="#cat_tab_4_blank_button")
+
+        # Prevent fading button:
+        if self.the_cat.dead and game.settings["fading"]:
+            self.prevent_fading_text = pygame_gui.elements.UILabel(pygame.Rect((136, 387), (-1, 30)),
+                                                                   "Prevent Fading",
+                                                                   object_id=get_text_box_theme())
+
+        self.update_toggle_buttons()
+
+    def update_toggle_buttons(self):
+        for box in self.checkboxes:
+            self.checkboxes[box].kill()
+        self.checkboxes = {}
+
+        if self.the_cat.dead and game.settings["fading"]:
+            if self.the_cat.prevent_fading:
+                box_type = "#checked_checkbox"
+            else:
+                box_type = "#unchecked_checkbox"
+
+            self.checkboxes["prevent_fading"] = UIImageButton(pygame.Rect((100, 385), (34, 34)), "",
+                                                              starting_height=2,
+                                                              object_id=box_type)
 
     def determine_previous_and_next_cat(self):
         """'Determines where the next and previous buttons point too."""

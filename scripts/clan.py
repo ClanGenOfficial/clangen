@@ -363,51 +363,10 @@ class Clan():
         if "None" in clan_data["deputy"]:
             deputy = None
         else:
-            general = sections[0].split(',')
-            leader_info = sections[1].split(',')
-            deputy_info = 0, 0
-            med_cat_info = sections[2].split(',')
-            instructor_info = sections[3]
-            members = sections[4].split(',')
-            other_clans = []
-        if len(general) == 8:
-            if general[4] == 'None':
-                general[4] = 0
-            elif general[3] == 'None':
-                general[3] = 'camp1'
-            elif general[7] == 'None':
-                general[7] = 'classic'
-            game.clan = Clan(general[0],
-                             Cat.all_cats[leader_info[0]],
-                             Cat.all_cats.get(deputy_info[0], None),
-                             Cat.all_cats.get(med_cat_info[0], None),
-                             biome=general[2],
-                             camp_bg=general[3],
-                             world_seed=int(general[4]),
-                             camp_site=(int(general[5]),
-                                        int(general[6])),
-                             game_mode=general[7],
-                             )
-        elif len(general) == 7:
-            if general[4] == 'None':
-                general[4] = 0
-            elif general[3] == 'None':
-                general[3] = 'camp1'
-            game.clan = Clan(general[0],
-                             Cat.all_cats[leader_info[0]],
-                             Cat.all_cats.get(deputy_info[0], None),
-                             Cat.all_cats.get(med_cat_info[0], None),
-                             biome=general[2],
-                             camp_bg=general[3],
-                             world_seed=int(general[4]),
-                             camp_site=(int(general[5]),
-                                        int(general[6])),
-                             )
-        elif len(general) == 3:
-            game.clan = Clan(general[0], Cat.all_cats[leader_info[0]],
-                             Cat.all_cats.get(deputy_info[0], None),
-                             Cat.all_cats.get(med_cat_info[0], None),
-                             general[2])
+            deputy = Cat.all_cats[clan_data["deputy"]]
+
+        if "None" in clan_data["med_cat"]:
+            med_cat = Cat.all_cats[clan_data["med_cat"]]
         else:
             med_cat = Cat.all_cats[clan_data["med_cat"]]
 
