@@ -71,13 +71,16 @@ class Events():
                 if cat.exiled and cat.status == 'leader' and not cat.dead and randint(
                         1, 10) == 1:
                     game.clan.leader_lives -= 1
-                    if game.clan.leader_lives <= 0:
-                        cat.dead = True
+                    if game.clan.leader_lives > 0:
                         text = f'Rumors reach your clan that the exiled {str(cat.name)} lost a life recently.'
                         game.cur_events_list.append(text)
                         game.birth_death_events_list.append(text)
+                    else:
+                        text = f'Rumors reach your clan that the exiled {str(cat.name)} has died recently.'
+                        game.cur_events_list.append(text)
+                        game.birth_death_events_list.append(text)
+                        cat.dead = True
 
-                        game.clan.leader_lives = 0
                 elif cat.exiled and cat.status == 'leader' and not cat.dead and randint(
                         1, 45) == 1:
                     game.clan.leader_lives -= 10

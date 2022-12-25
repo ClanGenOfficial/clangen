@@ -347,6 +347,7 @@ class PatrolScreen(Screens):
             for y in vowels:
                 if str(other_clan_name).startswith(y):
                     modify = text.split()
+                    pos = 0
                     if 'o_c_n' in modify:
                         pos = modify.index('o_c_n')
                     if "o_c_n's" in modify:
