@@ -84,10 +84,11 @@ class Clan():
         if name != "":
             self.name = name
             self.leader = leader
-            self.leader.status_change('leader')
+            if self.leader:
+                self.leader.status_change('leader')
+                self.clan_cats.append(self.leader.ID)
             self.leader_lives = 9
             self.leader_predecessors = 0
-            self.clan_cats.append(self.leader.ID)
             self.deputy = deputy
             if deputy is not None:
                 self.deputy.status_change('deputy')
@@ -100,8 +101,8 @@ class Clan():
             if medicine_cat is not None:
                 self.clan_cats.append(self.medicine_cat.ID)
                 self.med_cat_list.append(self.medicine_cat.ID)
-            if medicine_cat.status != 'medicine cat':
-                Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
+                if medicine_cat.status != 'medicine cat':
+                    Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
             self.age = 0
             self.current_season = 'Newleaf'
             self.instructor = None  # This is the first cat in starclan, to "guide" the other dead cats there.
@@ -379,11 +380,11 @@ class Clan():
             update_sprite(game.clan.instructor)
             game.clan.instructor.dead = True
             game.clan.add_cat(game.clan.instructor)
-        if other_clans != [""]:
-            for other_clan in other_clans:
-                other_clan_info = other_clan.split(';')
-                self.all_clans.append(
-                    OtherClan(other_clan_info[0],int(other_clan_info[1]),other_clan_info[2]))
+
+        for name, relation, temper in zip(clan_data["other_clans_names"].split(","),
+                                          clan_data["other_clans_relations"].split(","),
+                                          clan_data["other_clan_temperament"].split(",")):
+            game.clan.all_clans.append(OtherClan(name, int(relation), temper))
 
 
         for cat in clan_data["clan_cats"].split(","):

@@ -501,6 +501,10 @@ class ViewChildrenScreen(Screens):
             self.family_elements['parent1_image'] = UISpriteButton(pygame.Rect((95, 145), (50, 50)),
                                                                    Cat.all_cats[self.the_cat.parent1].sprite,
                                                                    cat_id=self.the_cat.parent1)
+            if Cat.all_cats[self.the_cat.parent1].faded:
+                #Disable the button for tagged, but not yet saved, faded cats
+                self.family_elements['parent1_image'].disable()
+
             name = str(Cat.all_cats[self.the_cat.parent1].name)
             if 8 <= len(name) >= 10:
                 short_name = str(Cat.all_cats[self.the_cat.parent1].name)[0:7]
@@ -509,19 +513,37 @@ class ViewChildrenScreen(Screens):
                                                                                  pygame.Rect((90, 195), (60, 30)),
                                                                                  object_id="#cat_patrol_info_box")
         else:
-            self.family_elements["parent1"] = pygame_gui.elements.UITextBox(
-                f'Error: cat {str(self.the_cat.parent1)} not found',
-                pygame.Rect((90, 165), (60, 30)),
-                object_id="#cat_patrol_info_box")
+            parent_ob = Cat.load_faded_cat(self.the_cat.parent1)
+            if parent_ob:
+                self.family_elements['parent1_image'] = UISpriteButton(pygame.Rect((95, 145), (50, 50)),
+                                                                       parent_ob.sprite)
+                self.family_elements["parent1_image"].disable() #There is no profile for faded cats.
+
+                name = str(parent_ob.name)
+                if 8 <= len(name) >= 10:
+                    short_name = str(parent_ob.name)[0:7]
+                    name = short_name + '...'
+                self.family_elements["parent1_name"] = pygame_gui.elements.UITextBox(name,
+                                                                                     pygame.Rect((90, 195), (60, 30)),
+                                                                                     object_id="#cat_patrol_info_box")
+            else:
+                self.family_elements["parent1"] = pygame_gui.elements.UITextBox(
+                    f'Error: cat {str(self.the_cat.parent1)} not found',
+                    pygame.Rect((90, 165), (60, 30)),
+                    object_id="#cat_patrol_info_box")
 
         # Parent 2
         if self.the_cat.parent2 is None:
             self.family_elements['parent2'] = pygame_gui.elements.UITextBox("Unknown", pygame.Rect((90, 258), (60, 40)),
                                                                             object_id="#cat_patrol_info_box")
-        elif self.the_cat.parent1 in Cat.all_cats:
+        elif self.the_cat.parent2 in Cat.all_cats:
             self.family_elements['parent2_image'] = UISpriteButton(pygame.Rect((95, 210), (50, 50)),
                                                                    Cat.all_cats[self.the_cat.parent2].sprite,
                                                                    cat_id=self.the_cat.parent2)
+            if Cat.all_cats[self.the_cat.parent2].faded:
+                # Disable the button for tagged, but not yet saved, faded cats
+                self.family_elements['parent2_image'].disable()
+
             name = str(Cat.all_cats[self.the_cat.parent2].name)
             if 8 <= len(name) >= 10:
                 short_name = str(Cat.all_cats[self.the_cat.parent2].name)[0:7]
@@ -530,10 +552,25 @@ class ViewChildrenScreen(Screens):
                                                                                  pygame.Rect((90, 258), (60, 30)),
                                                                                  object_id="#cat_patrol_info_box")
         else:
-            self.family_elements["parent2"] = pygame_gui.elements.UITextBox(
-                f'Error: cat {str(self.the_cat.parent2)} not found',
-                pygame.Rect((90, 250), (60, 30)),
-                object_id="#cat_patrol_info_box")
+            # Check for faded parent
+            parent_ob = Cat.load_faded_cat(self.the_cat.parent2)
+            if parent_ob:
+                self.family_elements['parent2_image'] = UISpriteButton(pygame.Rect((95, 210), (50, 50)),
+                                                                       parent_ob.sprite)
+                self.family_elements["parent2_image"].disable()  # There is no profile for faded cats.
+
+                name = str(parent_ob.name)
+                if 8 <= len(name) >= 10:
+                    short_name = str(parent_ob.name)[0:7]
+                    name = short_name + '...'
+                self.family_elements["parent2_name"] = pygame_gui.elements.UITextBox(name,
+                                                                                     pygame.Rect((90, 258), (60, 30)),
+                                                                                     object_id="#cat_patrol_info_box")
+            else:
+                self.family_elements["parent2"] = pygame_gui.elements.UITextBox(
+                    f'Error: cat {str(self.the_cat.parent2)} not found',
+                    pygame.Rect((90, 250), (60, 30)),
+                    object_id="#cat_patrol_info_box")
 
         # Siblings
         # Get siblings.
@@ -544,6 +581,29 @@ class ViewChildrenScreen(Screens):
                     self.the_cat.ID != Cat.all_cats[x].ID and self.the_cat.parent1 is not None and \
                     Cat.all_cats[x].parent1 is not None:
                 self.all_siblings.append(Cat.all_cats[x])
+
+        # Check for faded siblings through parent 1
+        if self.the_cat.parent1 not in Cat.all_cats and self.the_cat.parent1:
+            parent_ob = Cat.load_faded_cat(self.the_cat.parent1)
+            if parent_ob:
+                #Check to see if the faded offspring list is empty or not
+                for sib in parent_ob.faded_offspring:
+                    sib_ob = Cat.load_faded_cat(sib)
+                    if sib:
+                        self.all_siblings.append(sib_ob)
+
+        #Check for siblings through parent 1, but we need to make sure we don't have duplicates.
+        sibling_ids = [i.ID for i in self.all_siblings]
+
+        if self.the_cat.parent2 not in Cat.all_cats and self.the_cat.parent2:
+            parent_ob = Cat.load_faded_cat(self.the_cat.parent2)
+            if parent_ob:
+                for sib in parent_ob.faded_offspring:
+                    if sib not in sibling_ids:
+                        sib_ob = Cat.load_faded_cat(sib)
+                        if sib:
+                            self.all_siblings.append(sib_ob)
+
 
         self.siblings_page_number = 1  # Current sibling page
         self.all_siblings = self.chunks(self.all_siblings, 16)
@@ -578,6 +638,13 @@ class ViewChildrenScreen(Screens):
                 Cat.all_cats[x].parent2
             ]:
                 self.all_offspring.append(Cat.all_cats[x])
+
+        # Add faded offspring
+        for cat in self.the_cat.faded_offspring:
+            cat_ob = Cat.load_faded_cat(cat)
+            if cat_ob:
+                self.all_offspring.append(cat_ob)
+
         self.offspring_page_number = 1  # Current sibling page
         self.all_offspring = self.chunks(self.all_offspring, 16)
         self.update_offspring_page()
@@ -659,6 +726,9 @@ class ViewChildrenScreen(Screens):
             self.sibling_elements["sibling" + str(i)] = UISpriteButton(pygame.Rect((pos_x, pos_y), (50, 50)),
                                                                        cat.sprite,
                                                                        cat_id=cat.ID)
+            if cat.faded:
+                self.sibling_elements["sibling" + str(i)].disable()
+
             name = str(cat.name)
             if 6 <= len(name) >= 9:
                 short_name = str(cat.name)[0:5]
@@ -709,6 +779,8 @@ class ViewChildrenScreen(Screens):
             self.offspring_elements["offspring" + str(i)] = UISpriteButton(pygame.Rect((pos_x, pos_y), (50, 50)),
                                                                            cat.sprite,
                                                                            cat_id=cat.ID)
+            if cat.faded:
+                self.offspring_elements["offspring" + str(i)].disable()
 
             name = str(cat.name)
             if 6 <= len(name) >= 9:

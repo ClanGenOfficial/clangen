@@ -272,7 +272,7 @@ def draw_large(cat, pos):
 def update_sprite(cat):
     # First, check if the cat is faded.
     if cat.faded:
-
+        # Don't update the sprite if the cat is faded.
         return
 
     # First make pelt, if it wasn't possible before
@@ -523,6 +523,14 @@ def update_sprite(cat):
     game.switches[
         'error_message'] = 'There was an error scaling a cat\'s sprites. Last cat read was ' + str(
         cat)
+
+    # Apply opacity
+    if cat.opacity < 100 and not cat.prevent_fading and game.settings["fading"]:
+        #temp = pygame.Surface(new_sprite.get_size()).convert_alpha()
+        #temp.blit(new_sprite, (0, 0))
+        new_sprite = apply_opacity(new_sprite, cat.opacity)
+        #new_sprite = temp
+
     # apply
     cat.sprite = new_sprite
     cat.big_sprite = pygame.transform.scale(
@@ -536,6 +544,13 @@ def update_sprite(cat):
     cat.all_cats[cat.ID] = cat
     game.switches['error_message'] = ''
 
+def apply_opacity(surface, opacity):
+    for x in range(surface.get_width()):
+        for y in range(surface.get_height()):
+            pixel = list(surface.get_at((x, y)))
+            pixel[3] = int(pixel[3] * opacity/100)
+            surface.set_at((x,y), tuple(pixel))
+    return surface
 
 def get_text_box_theme(themename=""):
     """Updates the name of the theme based on dark or light mode"""
@@ -549,3 +564,6 @@ def get_text_box_theme(themename=""):
             return "text_box"
         else:
             return themename
+
+
+

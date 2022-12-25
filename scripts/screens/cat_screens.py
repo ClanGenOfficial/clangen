@@ -659,31 +659,37 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # PARENTS
-        if the_cat.parent1 is None:
+        if the_cat.parent1 is None and the_cat.parent2 is None:
             output += 'parents: unknown'
-        elif the_cat.parent2 is None and the_cat.parent1 in the_cat.all_cats:
-            par1 = str(the_cat.all_cats[the_cat.parent1].name)
-            output += 'parents: ' + par1 + ', unknown'
-        elif the_cat.parent2 is None:
-            par2 = "unknown"
-            par1 = "Error: Cat#" + the_cat.parent1 + " not found"
-            output += 'parents: ' + par1 + ', unknown'
-        else:
-            if the_cat.parent1 in the_cat.all_cats and the_cat.parent2 in the_cat.all_cats:
+        elif the_cat.parent1 and the_cat.parent2 is None:
+            if the_cat.parent1 in Cat.all_cats:
                 par1 = str(the_cat.all_cats[the_cat.parent1].name)
-                par2 = str(the_cat.all_cats[the_cat.parent2].name)
-
-            elif the_cat.parent1 in the_cat.all_cats:
-                par2 = "Error: Cat#" + the_cat.parent2 + " not found"
-                par1 = str(the_cat.all_cats[the_cat.parent1].name)
-
-            elif the_cat.parent2 in the_cat.all_cats:
-                par1 = "Error: Cat#" + the_cat.parent1 + " not found"
-                par2 = str(the_cat.all_cats[the_cat.parent2].name)
-
             else:
-                par1 = "Error: Cat#" + the_cat.parent1 + " not found"
-                par2 = "Error: Cat#" + the_cat.parent2 + " not found"
+                parent_ob = Cat.load_faded_cat(the_cat.parent1)
+                if parent_ob:
+                    par1 = str(parent_ob.name)
+                else:
+                    par1 = "Error: Cat#" + the_cat.parent1 + " not found"
+
+            output += 'parent: ' + par1 + ", unknown"
+        else:
+            if the_cat.parent1 in Cat.all_cats:
+                par1 = str(the_cat.all_cats[the_cat.parent1].name)
+            else:
+                parent_ob = Cat.load_faded_cat(the_cat.parent1)
+                if parent_ob:
+                    par1 = str(parent_ob.name)
+                else:
+                    par1 = "Error: Cat#" + the_cat.parent1 + " not found"
+
+            if the_cat.parent2 in Cat.all_cats:
+                par2 = str(the_cat.all_cats[the_cat.parent2].name)
+            else:
+                parent_ob = Cat.load_faded_cat(the_cat.parent2)
+                if parent_ob:
+                    par2 = str(parent_ob.name)
+                else:
+                    par2 = "Error: Cat#" + the_cat.parent2 + " not found"
 
             output += 'parents: ' + par1 + ' and ' + par2
         # NEWLINE ----------
