@@ -46,7 +46,7 @@ class OutsideClanScreen(Screens):
         self.living_cats = []
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
-            if not the_cat.dead and (the_cat.exiled or the_cat.outside):
+            if not the_cat.dead and the_cat.outside:
                 self.living_cats.append(the_cat)
 
         self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 23)),

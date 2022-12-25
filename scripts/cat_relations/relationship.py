@@ -1,3 +1,4 @@
+import random
 from random import choice, randint
 import copy
 import ujson
@@ -15,9 +16,15 @@ THIRD_RELATIONSHIP_INCLUDED = {
 }
 
 EXILED_CATS = {
-    "cat_to": ['bumped into (cat) at the clan border', 'Caught a glimpse of (cat) from the distance.'],
+    "cat_to": ['bumped into (cat) at the clan border', 'caught a glimpse of (cat) from the distance.'],
     "cat_from": ['was wandering near the clan territory and met (cat).'],
     "both": ['ran into (cat) by chance.']
+}
+
+OUTSIDE_CATS = {
+    "cat_to": ['is thinking about (cat)'],
+    "cat_from": ['is thinking about (cat) as they wander far from Clan territory.'],
+    "both": ['wonders where (cat) is right now. ']
 }
 
 # weights of the stat change
@@ -51,24 +58,29 @@ class Relationship():
         else:
             self.log = []
 
+        y = random.randrange(0, 31)
+
         if self.cat_from.is_parent(self.cat_to) or self.cat_to.is_parent(self.cat_from):
             self.family = True
             if platonic_like == 0:
-                platonic_like = 30
-                comfortable = 15
+                platonic_like = 30 + y
+                comfortable = 10 + y
+                admiration = 15 + y
+                trust = 10 + y
 
         if self.cat_from.is_sibling(self.cat_to):
             self.family = True
             if platonic_like == 0:
-                platonic_like = 20
-                comfortable = 10
+                platonic_like = 20 + y
+                comfortable = 10 + y
+                trust = 0 + y
 
         if self.cat_from.mate is not None and self.cat_from.mate == self.cat_to.ID:
             self.mates = True
             if romantic_love == 0:
-                romantic_love = 20
-                comfortable = 20
-                trust = 10
+                romantic_love = 20 + y
+                comfortable = 20 + y
+                trust = 10 + y
 
         # each stat can go from 0 to 100
         self.romantic_love = romantic_love
@@ -116,6 +128,29 @@ class Relationship():
             string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
             self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
             game.relation_events_list.append(f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            return
+
+        # quick fix for outside cat relationships
+        if self.cat_to.outside and not self.cat_from.outside:
+            action = choice(OUTSIDE_CATS['cat_to'])
+            string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
+            self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
+            game.relation_events_list.append(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            return
+        elif self.cat_from.outside and not self.cat_to.outside:
+            action = choice(OUTSIDE_CATS['cat_from'])
+            string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
+            self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
+            game.relation_events_list.append(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
+            return
+        elif self.cat_from.outside and self.cat_to.outside:
+            action = choice(OUTSIDE_CATS['both'])
+            string_to_replace = '(' + action[action.find("(") + 1:action.find(")")] + ')'
+            self.current_action_str = action.replace(string_to_replace, str(self.cat_to.name))
+            game.relation_events_list.append(
+                f"{str(self.cat_from.name)} {self.current_action_str} (neutral effect)")
             return
 
         # get action possibilities
@@ -218,7 +253,7 @@ class Relationship():
             return action_possibilities
 
         # chance to fall in love with some the character is not close to:
-        love_p = randint(0, 30)
+        love_p = randint(0, 20)
         if self.platonic_like > 30 or love_p == 1 or self.romantic_love > 5:
             # increase the chance of an love event for two un-mated cats
             action_possibilities = action_possibilities + LOVE['love_interest_only']

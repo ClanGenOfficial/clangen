@@ -3,7 +3,8 @@ from .game_essentials import *
 
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import choose_pelt
-from scripts.utility import update_sprite
+from scripts.utility import update_sprite, is_iterable
+
 
 def load_cats():
     directory = 'saves/' + game.switches['clan_list'][0] + '/clan_cats.json'
@@ -66,8 +67,15 @@ def json_load():
         new_cat.tortiepattern = cat["tortie_pattern"]
         new_cat.skin = cat["skin"]
         new_cat.skill = cat["skill"]
-        new_cat.specialty = cat["specialty"]
-        new_cat.specialty2 = cat["specialty2"]
+        new_cat.scars = cat["scars"] if "scars" in cat else []
+
+        # converting old specialty saves into new scar parameter
+        if "specialty" in cat or "specialty2" in cat:
+            if cat["specialty"] is not None:
+                new_cat.scars.append(cat["specialty"])
+            if cat["specialty2"] is not None:
+                new_cat.scars.append(cat["specialty2"])
+
         new_cat.accessory = cat["accessory"]
         new_cat.mate = cat["mate"]
         new_cat.dead = cat["dead"]
@@ -79,6 +87,7 @@ def json_load():
         new_cat.former_apprentices = cat["former_apprentices"]
         new_cat.possible_scar = cat["possible_scar"] if "possible_scar" in cat else None
         new_cat.scar_event = cat["scar_event"] if "scar_event" in cat else []
+        new_cat.death_event = cat["death_event"] if "death_event" in cat else []
         new_cat.df = cat["df"] if "df" in cat else False
         new_cat.corruption = cat["corruption"] if "corruption" in cat else 0
         new_cat.outside = cat["outside"] if "outside" in cat else False

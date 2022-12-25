@@ -12,11 +12,11 @@ def get_med_cats(Cat):
     all_cats = Cat.all_cats.values()
 
     medicine_apprentices = list(filter(
-        lambda c: c.status == 'medicine apprentice' and not c.dead and not c.exiled and not c.not_working()
+        lambda c: c.status == 'medicine apprentice' and not c.dead and not c.outside and not c.not_working()
         , all_cats
     ))
     medicine_cats = list(filter(
-        lambda c: c.status == 'medicine cat' and not c.dead and not c.exiled and not c.not_working()
+        lambda c: c.status == 'medicine cat' and not c.dead and not c.outside and not c.not_working()
         , all_cats
     ))
 
@@ -25,32 +25,6 @@ def get_med_cats(Cat):
     possible_med_cats.extend(medicine_apprentices)
 
     return possible_med_cats
-
-
-def get_cats_allowed_on_patrol(Cat, game_mode):
-    able_cats = []
-
-    # ASSIGN TO ABLE CATS AND SORT BY RANK
-    for the_cat in Cat.all_cats.values():
-        if the_cat.dead or the_cat.exiled or not the_cat.in_camp or the_cat in game.patrolled or the_cat in \
-                game.switches['current_patrol']:
-            continue
-        if game_mode == "expanded":
-            if the_cat.not_working():
-                continue
-        if the_cat.status in [
-            'leader', 'deputy', 'warrior', 'apprentice'
-        ]:
-            if the_cat.status == 'leader':
-                able_cats.insert(0, the_cat)
-            elif the_cat.status == 'deputy':
-                able_cats.insert(1, the_cat)
-            elif the_cat.status == 'warrior':
-                able_cats.insert(2, the_cat)
-            elif the_cat.status == 'apprentice':
-                able_cats.append(the_cat)
-
-    return able_cats
 
 
 def get_living_cat_count(Cat):
@@ -72,7 +46,7 @@ def save_death(cat, death_string):
         clanname = game.clan.name
 
     path = f"saves/{clanname}/deaths.json"
-    living_cats = list(filter(lambda c: not c.dead and not c.exiled, cat.all_cats.values()))
+    living_cats = list(filter(lambda c: not c.dead and not c.outside, cat.all_cats.values()))
 
     file_entry = []
     if os.path.exists(path):
@@ -84,6 +58,34 @@ def save_death(cat, death_string):
     with open(path, "w") as file:
         json_string = ujson.dumps(file_entry, indent=4)
         file.write(json_string)
+
+
+def change_clan_reputation(difference=0):
+    """
+    will change the clan's reputation with outsider cats according to the difference parameter.
+    """
+    # grab rep
+    reputation = game.clan.reputation
+    # ensure this is an int value
+    difference = int(difference)
+    # change rep
+    reputation += difference
+    game.clan.reputation = reputation
+
+
+def change_clan_relations(other_clan, difference=0):
+    """
+    will change the clan's relation with other clans according to the difference parameter.
+    """
+    # grab the clan that has been indicated
+    other_clan = other_clan
+    # grab the relation value for that clan
+    y = game.clan.all_clans.index(other_clan)
+    clan_relations = int(game.clan.all_clans[y].relations)
+    # change the value
+    clan_relations += difference
+    game.clan.all_clans[y].relations = clan_relations
+    print('CLAN RELATIONS:', other_clan.name, difference)
 
 
 # ---------------------------------------------------------------------------- #
@@ -185,13 +187,19 @@ def get_amount_of_cats_with_relation_value_towards(cat, value, all_cats):
     return return_dict
 
 
-def add_siblings_to_cat(cat, cat_class):
+def add_siblings_to_cat(cat, cat_class, orphan=False):
     """Iterate over all current cats and add the ID to the current cat."""
-    for inter_cat in cat_class.all_cats.values():
-        if inter_cat.is_sibling(cat) and inter_cat.ID not in cat.siblings:
+    orphan = orphan
+    if orphan:
+        for inter_cat in cat_class.all_cats.values():
             cat.siblings.append(inter_cat.ID)
-        if cat.is_sibling(inter_cat) and cat.ID not in inter_cat.siblings:
             inter_cat.siblings.append(cat.ID)
+    else:
+        for inter_cat in cat_class.all_cats.values():
+            if inter_cat.is_sibling(cat) and inter_cat.ID not in cat.siblings:
+                cat.siblings.append(inter_cat.ID)
+            if cat.is_sibling(inter_cat) and cat.ID not in inter_cat.siblings:
+                inter_cat.siblings.append(cat.ID)
 
 
 def add_children_to_cat(cat, cat_class):
@@ -201,6 +209,72 @@ def add_children_to_cat(cat, cat_class):
             cat.children.append(inter_cat.ID)
         if inter_cat.is_parent(inter_cat) and cat.ID not in inter_cat.children:
             inter_cat.children.append(cat.ID)
+
+
+def change_relationship_values(cats_to,
+                               cats_from,
+                               romantic_love=0,
+                               platonic_like=0,
+                               dislike=0,
+                               admiration=0,
+                               comfortable=0,
+                               jealousy=0,
+                               trust=0,
+                               auto_romance=False
+                               ):
+    """
+    changes relationship values according to the parameters.
+
+    cats_from - a list of cats for the cats whose rel values are being affected
+    cats_to - a list of cat IDs for the cats who are the target of that rel value
+            i.e. cats in cats_from lose respect towards the cats in cats_to
+    auto_romance - if this is set to False (which is the default) then if the cat_from already has romantic value
+            with cat_to then the platonic_like param value will also be used for the romantic_love param
+            if you don't want this to happen, then set auto_romance to False
+
+    use the relationship value params to indicate how much the values should change.
+    """
+    # this is just for prints, if it's still here later, just remove it
+    changed = False
+    if romantic_love == 0 and platonic_like == 0 and dislike == 0 and admiration == 0 and \
+            comfortable == 0 and jealousy == 0 and trust == 0:
+        changed = False
+    else:
+        changed = True
+
+    # pick out the correct cats
+    for cat in cats_from:
+        relationships = list(filter(lambda rel: rel.cat_to.ID in cats_to,
+                                    list(cat.relationships.values())))
+
+        # make sure that cats don't gain rel with themselves
+        for rel in relationships:
+            if cat.ID == rel.cat_to.ID:
+                continue
+
+            # if cat already has romantic feelings then automatically increase romantic feelings
+            # when platonic feelings would increase
+            if rel.romantic_love > 0 and auto_romance:
+                romantic_love = platonic_like
+
+            # now gain the values
+            rel.romantic_love += romantic_love
+            rel.platonic_like += platonic_like
+            rel.dislike += dislike
+            rel.admiration += admiration
+            rel.comfortable += comfortable
+            rel.jealousy += jealousy
+            rel.trust += trust
+
+            # for testing purposes
+            """print(str(cat.name) + " gained relationship with " + str(rel.cat_to.name) + ": " +
+                  "Romantic: " + str(romantic_love) +
+                  " /Platonic: " + str(platonic_like) +
+                  " /Dislike: " + str(dislike) +
+                  " /Respect: " + str(admiration) +
+                  " /Comfort: " + str(comfortable) +
+                  " /Jealousy: " + str(jealousy) +
+                  " /Trust: " + str(trust)) if changed else print("No relationship change")"""
 
 
 # ---------------------------------------------------------------------------- #
@@ -225,7 +299,7 @@ def event_text_adjust(Cat, text, cat, other_cat=None, other_clan_name=None, keep
 
     adjust_text = text
     if keep_m_c is False:
-        adjust_text = adjust_text.replace("m_c", str(name))
+        adjust_text = adjust_text.replace("m_c", str(name).strip())
     if other_name is not None:
         adjust_text = adjust_text.replace("r_c", str(other_name))
     if other_clan_name is not None:
@@ -234,6 +308,7 @@ def event_text_adjust(Cat, text, cat, other_cat=None, other_clan_name=None, keep
         adjust_text = adjust_text.replace("c_m", str(mate))
     adjust_text = adjust_text.replace("d_l", danger_choice)
     adjust_text = adjust_text.replace("t_l", tail_choice)
+    adjust_text = adjust_text.replace("c_n", str(game.clan.name) + "Clan")
 
     return adjust_text
 
@@ -349,45 +424,37 @@ def update_sprite(cat):
     if cat.pelt.length == 'long' and cat.status not in [
         'kitten', 'apprentice', 'medicine cat apprentice'
     ] or cat.age == 'elder':
-        if cat.specialty in scars1:
-            new_sprite.blit(
-                sprites.sprites['scarsextra' + cat.specialty +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty2 in scars1:
-            new_sprite.blit(
-                sprites.sprites['scarsextra' + cat.specialty2 +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty in scars3:
-            new_sprite.blit(
-                sprites.sprites['scarsextra' + cat.specialty +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty2 in scars3:
-            new_sprite.blit(
-                sprites.sprites['scarsextra' + cat.specialty2 +
-                                str(cat.age_sprites[cat.age])], (0, 0))
         new_sprite.blit(
             sprites.sprites['eyesextra' + cat.eye_colour +
                             str(cat.age_sprites[cat.age])], (0, 0))
+        for scar in cat.scars:
+            if scar in scars1:
+                new_sprite.blit(
+                    sprites.sprites['scarsextra' + scar + str(cat.age_sprites[cat.age])],
+                    (0, 0)
+                )
+            if scar in scars3:
+                new_sprite.blit(
+                    sprites.sprites['scarsextra' + scar + str(cat.age_sprites[cat.age])],
+                    (0, 0)
+                )
+        
     else:
-        if cat.specialty in scars1:
-            new_sprite.blit(
-                sprites.sprites['scars' + cat.specialty +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty2 in scars1:
-            new_sprite.blit(
-                sprites.sprites['scars' + cat.specialty2 +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty in scars3:
-            new_sprite.blit(
-                sprites.sprites['scars' + cat.specialty +
-                                str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty2 in scars3:
-            new_sprite.blit(
-                sprites.sprites['scars' + cat.specialty2 +
-                                str(cat.age_sprites[cat.age])], (0, 0))
         new_sprite.blit(
             sprites.sprites['eyes' + cat.eye_colour +
                             str(cat.age_sprites[cat.age])], (0, 0))
+        for scar in cat.scars:
+            if scar in scars1:
+                new_sprite.blit(
+                    sprites.sprites['scars' + scar + str(cat.age_sprites[cat.age])],
+                    (0, 0)
+                )
+            if scar in scars3:
+                new_sprite.blit(
+                    sprites.sprites['scars' + scar + str(cat.age_sprites[cat.age])],
+                    (0, 0)
+                )
+        
 
     game.switches[
         'error_message'] = 'There was an error loading a cat\'s shader sprites. Last cat read was ' + str(
@@ -452,23 +519,19 @@ def update_sprite(cat):
         new_sprite.blit(
             sprites.sprites['skinextra' + cat.skin +
                             str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty in scars2:
-            new_sprite.blit(sprites.sprites['scarsextra' + cat.specialty +
-                                            str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
-        if cat.specialty2 in scars2:
-            new_sprite.blit(sprites.sprites['scarsextra' + cat.specialty2 +
-                                            str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
+        for scar in cat.scars:
+            if scar in scars2:
+                new_sprite.blit(sprites.sprites['scarsextra' + scar +
+                                                str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
 
     else:
         new_sprite.blit(
             sprites.sprites['skin' + cat.skin +
                             str(cat.age_sprites[cat.age])], (0, 0))
-        if cat.specialty in scars2:
-            new_sprite.blit(sprites.sprites['scars' + cat.specialty +
-                                            str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
-        if cat.specialty2 in scars2:
-            new_sprite.blit(sprites.sprites['scars' + cat.specialty2 +
-                                            str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
+        for scar in cat.scars:
+            if scar in scars2:
+                new_sprite.blit(sprites.sprites['scars' + scar +
+                                                str(cat.age_sprites[cat.age])], (0, 0), special_flags=blendmode)
 
     game.switches[
         'error_message'] = 'There was an error loading a cat\'s accessory. Last cat read was ' + str(
@@ -551,6 +614,14 @@ def apply_opacity(surface, opacity):
             pixel[3] = int(pixel[3] * opacity/100)
             surface.set_at((x,y), tuple(pixel))
     return surface
+# ---------------------------------------------------------------------------- #
+#                                     OTHER                                    #
+# ---------------------------------------------------------------------------- #
+def is_iterable(y):
+    try:
+        0 in y
+    except TypeError:
+        return False
 
 def get_text_box_theme(themename=""):
     """Updates the name of the theme based on dark or light mode"""

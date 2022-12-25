@@ -1,0 +1,374 @@
+[
+{
+    "patrol_id": "pln_med_soloripples1",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["comfort", "respect", "trust", "clan_to_p_l", "no_change_fail", "med_cat", "med_only"],
+    "intro_text": "p_l sees weird ripples on the water of a puddle while gathering fresh water.",
+    "decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
+    "chance_of_success": 45,
+    "exp": 10, 
+    "success_text": [
+            "As p_l looks into the puddle they are greeted by an intense vision. They drop what they are doing and race back to the camp to tell and consult with their leader.",
+            "They are greeted with the vision of a cat they had failed to save looking content and happy in StarClan saying that they were not at fault for their death. They feel unburdened and at peace after receiving that vision."
+    ],
+    "fail_text": [
+            "They gaze into the puddle only to see the weird ripples were caused by a small frog. p_l feels disappointed because they really could have used some guidance from StarClan."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "pln_med_herblocation1",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["med_cat", "apprentice", "trust", "respect", "med_only"],
+    "intro_text": "p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory, both above and underground.",
+    "decline_text": "As they see app1's absent minded gaze they change their mind. Maybe another day when app1 is more focused and less liable to get lost in the tunnels",
+    "chance_of_success": 65,
+    "exp": 10,
+    "success_text": [
+        "app1 is focused and attentive. p_l is confident that next time when there is an emergency app1 will be able to find those herbs both under and above ground without them if needed.",
+        "As p_l is explaining why and where the herbs are growing, app1 lets out a shout. To p_l's surprise they have found a previously unknown patch of an uncommon herb. Stunned and filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh kill.",
+        null,
+        null
+    ],
+    "fail_text": [ "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "pln_med_herblocation2",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["med_cat", "apprentice", "med_only"],
+    "intro_text": "app1 has been sent out into the grasslands to try to find some specific herbs alone.",
+    "decline_text": "Nervous and with the feeling of being watched on the wide open plains, they decide to go back to camp and try again another day. Their mentor will not be pleased...",
+    "chance_of_success": 65,
+    "exp": 10,
+    "success_text": [
+        "app1 is focused and determined to prove their independence. They find the herbs easily, and bring them back to camp with their head held high, no sweat, no stress, no fuss.",
+        "app1 goes to a known herb patch - but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked bush that still has leaves on it.",
+        null,
+        null
+    ],
+    "fail_text": [ 
+        "app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible and with their tail dragging on the ground."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+    {
+    "patrol_id": "pln_med_romance1",
+    "biome": "plains",
+    "season": "newleaf",
+    "tags": ["med_cat", "warrior", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l goes out with a warrior escort, both for safety as they look for Newleaf's fresh buds, and for carrying capacity should they find anything.",
+    "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual speel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+    },
+    {
+    "patrol_id": "pln_med_romance2",
+    "biome": "plains",
+    "season": "newleaf",
+    "tags": ["med_cat", "med_only", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l heads out, leading a patrol of medicine cats to go find the buds of Newleaf.",
+    "decline_text": ". . . And they're called back almost immediately, as one of the elders starts hacking up something.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+    },
+    {
+    "patrol_id": "pln_med_romance3",
+    "biome": "plains",
+    "season": "greenleaf",
+    "tags": ["med_cat", "warrior", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l goes out with a warrior escort, both for safety as they look to take advantage of the Greenleaf growing season, and for carrying capacity should they find anything.",
+    "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual speel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+    },
+    {
+    "patrol_id": "pln_med_romance4",
+    "biome": "plains",
+    "season": "greenleaf",
+    "tags": ["med_cat", "med_only", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l heads out, leading a patrol of medicine cats to go find some of the bounty of Greenleaf.",
+    "decline_text": ". . . And they're called back almost immediately, as one of the elders starts hacking up something.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "The ground is dusty and slippery, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+    },
+    {
+    "patrol_id": "pln_med_romance5",
+    "biome": "plains",
+    "season": "leaf-fall",
+    "tags": ["med_cat", "warrior", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l goes out with a warrior escort, both for safety as they try to stock up under the clear Leaf-fall skies, and for carrying capacity should they find anything.",
+    "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual speel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+    },
+    {
+    "patrol_id": "pln_med_romance6",
+    "biome": "plains",
+    "season": "leaf-fall",
+    "tags": ["med_cat", "med_only", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l heads out, leading a patrol of medicine cats to go stock up on the ripening harvest available in Leaf-fall.",
+    "decline_text": ". . . And they're called back almost immediately, as one of the elders starts hacking up something.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+    },
+
+    {
+    "patrol_id": "pln_med_romance7",
+    "biome": "plains",
+    "season": "leaf-bare",
+    "tags": ["med_cat", "warrior", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l goes out with a warrior escort, both for safety as they look for sorely needed fresh supplies that have survived Leaf-bare so far, and for carrying capacity should they find anything.",
+    "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual speel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "pln_med_romance8",
+    "biome": "plains",
+    "season": "leaf-bare",
+    "tags": ["med_cat", "med_only", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l heads out, leading a patrol of medicine cats to go find any fresh herbs that have survived Leaf-bare so far.",
+    "decline_text": ". . . And they're called back almost immediately, as one of the elders starts hacking up something.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "The ground is slippery with frost, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "pln_med_herbs1",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["med_cat", "apprentice", "med_only", "herbs"],
+    "intro_text": "p_l and app1 are going out to gather dandelions. app1 asks their mentor what they'll do if the rabbits have eaten all of it. p_l responds that they'll cross that river when they get to it.",
+    "decline_text": "A cat grabs p_l's attention before they can leave.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "The two medicine cats find the plants in good shape and are able to collect plenty.",
+        "The dandelions are so plentiful that it seems like there's enough for both cats and rabbits to take what they need."
+    ],
+    "fail_text": [
+        "app1 reaches the patch first and p_l can tell by their drooping ears that there must not be enough left to collect."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "pln_med_herbs2",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["med_cat", "herbs", "no_app"],
+    "intro_text": "p_l is on a mission to find herbs. They know a nice place where mullein grows and it's always good to have some on paw for coughs and sore throats.",
+    "decline_text": "A cat grabs p_l's attention before they can leave camp.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "p_l is relieved to find that the mullein is still intact. They knock a stray weevil off of a leaf as they're gathering the herb.",
+        "Not only is the mullein intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l purrs in satisfaction - seems like they've caught two prey in one blow on this trip."
+    ],
+    "fail_text": [
+        "p_l reaches the mullein plant that the clan has used for many seasons and finds that it's being torn to shreds by bugs. They hiss in exasperation and bat some of the leaf bugs off the plant. Maybe it'll grow back next newleaf."
+    ],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "pln_med_herbs3",
+    "biome": "plains",
+    "season": "Any",
+    "tags": ["med_cat", "warrior", "herbs", "dislike"],
+    "intro_text": "p_l needs to go and gather some burdock root. They take along what warriors they can find around camp to help gather and carry the roots back.",
+    "decline_text": "A cat grabs p_l's attention before they can leave.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "The medicine cat and their entourage find the herbs in good time. The warriors don't even complain much when p_l instructs them to dig for the roots.",
+        "The burdock plants are plentiful in the area that p_l chose. They'll have a good supply to last a while!"
+    ],
+    "fail_text": [
+        "p_l can't find the burdock plant they were thinking about. Maybe it was trampled by some animal. Oh well.",
+        "By the time they reach the burdock plants, p_l is about ready to claw r_c's ears off. Great StarClan! How can a cat be so annoying? p_l hisses in exasperation and they notice that the burdock is wilted on top of that. The roots will surely be no good."
+    ],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+}
+
+]

@@ -3,12 +3,18 @@
         "injury": "claw-wound",
         "camp": "camp1",
         "tags": [
+            "other_cat",
             "other_cat_adult",
             "other_cat",
             "Newleaf",
             "Greenleaf",
             "Leaf-fall",
-            "Leaf-bare"
+            "Leaf-bare",
+            "mc_to_rc",
+            "respect",
+            "comfort",
+            "platonic",
+            "neg_dislike"
         ],
         "event_text": "m_c was grabbed by a seagull, but luckily r_c saves them! The kit is still left injured from the ordeal.",
         "history_text": [

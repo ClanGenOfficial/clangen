@@ -41,7 +41,7 @@
     },
     {
         "camp": "any",
-        "tags": ["Greenleaf"],
+        "tags": ["Greenleaf", "classic"],
         "death_text": "m_c died from dehydration and heat stroke.",
         "history_text": ["m_c died from dehydration and heat stroke.", null],
         "cat_trait": null,

@@ -129,7 +129,9 @@ class Game():
         'set_game_mode': False,
         'broke_up': False,
         'show_info': False,
-        'favorite_sub_tab': None,
+        'patrol_chosen': 'general',
+        'favorite_sub_tab': None
+
     }
     all_screens = {}
     cur_events = {}
@@ -354,8 +356,7 @@ class Game():
                 "tortie_pattern": inter_cat.tortiepattern,
                 "skin": inter_cat.skin,
                 "skill": inter_cat.skill,
-                "specialty": inter_cat.specialty,
-                "specialty2": inter_cat.specialty2,
+                "scars": inter_cat.scars if inter_cat.scars else [],
                 "accessory": inter_cat.accessory,
                 "experience": inter_cat.experience,
                 "dead_moons": inter_cat.dead_for,
@@ -364,6 +365,7 @@ class Game():
                 "possible_scar": inter_cat.possible_scar if inter_cat.possible_scar else None,
                 "scar_event": inter_cat.scar_event if inter_cat.scar_event else [],
                 "df": inter_cat.df,
+                "outside": inter_cat.outside,                
                 "corruption": inter_cat.corruption if inter_cat.corruption else 0,
                 "outside": inter_cat.outside,
                 "retired": inter_cat.retired if inter_cat.retired else False,

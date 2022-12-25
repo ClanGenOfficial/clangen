@@ -1,0 +1,49 @@
+{
+ "parent_reaction": {
+   "body": [
+      "As r_c stares down at m_c's body, they feel nothing. m_c was a disappointment.",
+      "r_c sits respectfully, but doesn't contribute a story to m_c's vigil. They know they should feel more about the death of their kit, but they don't.",
+      "It's sad, the vigil. More so because r_c knows they should care and doesn't, than any grief for m_c.",
+      "r_c keeps up appearances, soothing the fur of their dead kit and sitting vigil, but they don't care that m_c is dead. They don't know if they ever loved them, not like they were supposed to.",
+      "r_c doesn't know if they can be blamed for the slight relief they feel. m_c is dead and gone, and that seems overall an improvement. They regret ever bringing such a kit into the world."
+   ],
+   "no_body": [
+      "r_c sits respectfully, but doesn't contribute a story to m_c's vigil. They know they should feel more about the death of their kit, but they don't.",
+      "It's sad, the vigil. More so because r_c knows they should care and doesn't, than any grief for m_c.",
+      "r_c doesn't know if they can be blamed for the slight relief they feel. m_c is dead and gone, and that seems overall an improvement. They regret ever bringing such a kit into the world."
+
+   ]
+ },
+ "child_reaction": {
+   "body": [
+      "It's sad, the vigil. More so because r_c knows they should care and doesn't, than any grief for m_c.",
+      "r_c refuses to sit vigil for m_c. They failed r_c as a parent, guardian, and mentor, why should r_c honor them now?",
+      "r_c is called to m_c's vigil, but doesn't speak at at. They're not sure they'd have anything good to say.",
+      "They may have shared blood, but nothing more. r_c doesn't show up to m_c's vigil."
+   ],
+   "no_body": [
+      "It's sad, the vigil. More so because r_c knows they should care and doesn't, than any grief for m_c.",
+      "r_c refuses to sit vigil for m_c. They failed r_c as a parent, guardian, and mentor, why should r_c honor them now?",
+      "r_c is called to m_c's vigil, but doesn't speak at at. They're not sure they'd have anything good to say.",
+      "They may have shared blood, but nothing more. r_c doesn't show up to m_c's vigil."
+
+   ]
+
+ },
+ "sibling_reaction": {
+   "body": [
+      "It's sad, the vigil. More so because r_c knows they should care and doesn't, than any grief for m_c.",
+      "r_c is called to m_c's vigil, but doesn't speak at at. They're not sure they'd have anything good to say.",
+      "They know they're supposed to be distraught, but r_c simply isn't. The bad blood between them outweighs any sibling bond they might have had with m_c.",
+      "Maybe r_c would have mourned m_c, once upon a time. Afterall, they are siblings. But not in this time, not now."
+
+   ],
+   "no_body": [
+      "It's sad, the vigil. More so because r_c knows they should care and doesn't, than any grief for m_c.",
+      "r_c is called to m_c's vigil, but doesn't speak at at. They're not sure they'd have anything good to say.",
+      "They know they're supposed to be distraught, but r_c simply isn't. The bad blood between them outweighs any sibling bond they might have had with m_c.",
+      "Maybe r_c would have mourned m_c, once upon a time. Afterall, they are siblings. But not in this time, not now."
+
+   ]
+ }
+}

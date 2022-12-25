@@ -15,6 +15,7 @@ from re import sub
 from scripts.game_structure.image_button import UIImageButton, UISpriteButton, UITextBoxTweaked, UIImageTextBox
 from scripts.game_structure import image_cache
 from scripts.game_structure.game_essentials import *
+from scripts.cat.names import *
 
 
 # ---------------------------------------------------------------------------- #
@@ -127,7 +128,7 @@ def bs_blurb_text(cat):
     if backstory == 'ostracized_warrior':
         bs_blurb = "This cat was ostracized from their old clan, but no one really knows why."
     if backstory == 'disgraced':
-        bs_blurb = "This cat was cast out of their old clan for some transgression that they’re not keen on " \
+        bs_blurb = "This cat was cast out of their old clan for some transgression that they're not keen on " \
                    "talking about."
     if backstory == 'retired_leader':
         bs_blurb = "This cat used to be the leader of another clan before deciding they needed a change of scenery " \
@@ -138,6 +139,9 @@ def bs_blurb_text(cat):
                    "leader that had taken over."
     if backstory == 'tragedy_survivor':
         bs_blurb = "Something horrible happened to this cat's previous clan. They refuse to speak about it."
+    if backstory == 'orphaned':
+        bs_blurb = "This cat was found with a deceased parent. The clan took them in, but doesn't hide where " \
+                   "they came from."
     return bs_blurb
 
 
@@ -182,6 +186,8 @@ def backstory_text(cat):
         bs_display = 'refugee'
     elif bs_display == 'tragedy_survivor':
         bs_display = 'survivor of a tragedy'
+    elif bs_display == 'orphaned':
+        bs_display = 'orphaned'
     if bs_display is None:
         bs_display = None
     else:
@@ -285,6 +291,8 @@ class ProfileScreen(Screens):
                 self.toggle_history_tab()
             elif event.ui_element == self.conditions_tab_button:
                 self.toggle_conditions_tab()
+            elif event.ui_element == self.placeholder_tab_4:
+                self.change_screen('ceremony screen')
             else:
                 self.handle_tab_events(event)
 
@@ -375,7 +383,10 @@ class ProfileScreen(Screens):
             elif event.ui_element == self.exile_cat_button:
                 if not self.the_cat.dead and not self.the_cat.exiled:
                     self.the_cat.exiled = True
+                    self.the_cat.outside = True
                     self.the_cat.thought = "Is shocked that they have been exiled"
+                    for app in self.the_cat.apprentice:
+                        app.update_mentor()
                     self.clear_profile()
                     self.build_profile()
                     self.update_disabled_buttons_and_text()
@@ -461,9 +472,7 @@ class ProfileScreen(Screens):
         self.placeholder_tab_3 = UIImageButton(pygame.Rect((400, 622), (176, 30)), "",
                                                object_id="#cat_tab_3_blank_button")
         self.placeholder_tab_3.disable()
-        self.placeholder_tab_4 = UIImageButton(pygame.Rect((576, 622), (176, 30)), "",
-                                               object_id="#cat_tab_4_blank_button")
-        self.placeholder_tab_4.disable()
+        
         self.build_profile()
 
         self.hide_menu_buttons()  # Menu buttons don't appear on the profile screen
@@ -477,6 +486,7 @@ class ProfileScreen(Screens):
         self.cat_thought.kill()
         self.cat_name.kill()
         self.cat_image.kill()
+        self.placeholder_tab_4.kill()
         if self.background is not None:
             self.background.kill()
         if self.user_notes:
@@ -571,6 +581,12 @@ class ProfileScreen(Screens):
 
         if self.open_tab == "history" and self.open_sub_tab == 'user notes':
             self.load_user_notes()
+        
+        if (self.the_cat.status == 'leader' and not self.the_cat.dead):
+            self.placeholder_tab_4 = pygame_gui.elements.UIButton(pygame.Rect((576, 622), (176, 30)), "View Ceremony", object_id="#ceremony")
+        else:
+            self.placeholder_tab_4 = UIImageButton(pygame.Rect((576, 622), (176, 30)), "",
+                                               object_id="#cat_tab_4_blank_button")
 
     def determine_previous_and_next_cat(self):
         """'Determines where the next and previous buttons point too."""
@@ -592,19 +608,19 @@ class ProfileScreen(Screens):
                 next_cat = 1
             else:
                 if next_cat == 0 and Cat.all_cats[
-                    check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                    check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                    check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                    check_cat].exiled and Cat.all_cats[
-                    check_cat].df == self.the_cat.df:
+                        check_cat].ID != self.the_cat.ID and Cat.all_cats[
+                        check_cat].dead == self.the_cat.dead and Cat.all_cats[
+                        check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
+                        check_cat].outside == self.the_cat.outside and Cat.all_cats[
+                        check_cat].df == self.the_cat.df:
                     previous_cat = Cat.all_cats[check_cat].ID
 
                 elif next_cat == 1 and Cat.all_cats[
-                    check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                    check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                    check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                    check_cat].exiled and Cat.all_cats[
-                    check_cat].df == self.the_cat.df:
+                        check_cat].ID != self.the_cat.ID and Cat.all_cats[
+                        check_cat].dead == self.the_cat.dead and Cat.all_cats[
+                        check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
+                        check_cat].outside == self.the_cat.outside and Cat.all_cats[
+                        check_cat].df == self.the_cat.df:
                     next_cat = Cat.all_cats[check_cat].ID
 
                 elif int(next_cat) > 1:
@@ -619,7 +635,6 @@ class ProfileScreen(Screens):
     def generate_column1(self, the_cat):
         """Generate the left column information"""
         output = ""
-
         # SEX/GENDER
         if the_cat.genderalign is None or the_cat.genderalign == the_cat.gender:
             output += str(the_cat.gender)
@@ -740,9 +755,9 @@ class ProfileScreen(Screens):
         output = ""
 
         # STATUS
-        if the_cat.outside:
+        if the_cat.outside and not the_cat.exiled:
             output += "<font color='#FF0000'>lost</font>"
-        elif the_cat.exiled and not the_cat.outside:
+        elif the_cat.exiled:
             output += "<font color='#FF0000'>exiled</font>"
         else:
             output += the_cat.status
@@ -762,9 +777,20 @@ class ProfileScreen(Screens):
         if the_cat.mentor is not None:
             output += "mentor: " + str(the_cat.mentor.name) + "\n"
 
+        # CURRENT APPRENTICES
+        # Optional - only shows up if the cat has an apprentice currently
+        if the_cat.apprentice:
+            app_count = len(the_cat.apprentice)
+            if app_count == 1:
+                output += 'apprentice: ' + str(the_cat.apprentice[0].name)
+            elif app_count > 1:
+                output += 'apprentice: ' + ", ".join([str(i.name) for i in the_cat.apprentice])
+
+            # NEWLINE ----------
+            output += "\n"
+
         # FORMER APPRENTICES
         # Optional - Only shows up if the cat has previous apprentice(s)
-        # FORMER APPRENTICES
         if len(the_cat.former_apprentices
                ) != 0 and the_cat.former_apprentices[0] is not None:
 
@@ -812,6 +838,7 @@ class ProfileScreen(Screens):
 
                 # NEWLINE ----------
                 output += "\n"
+                break
 
         if the_cat.is_injured():
             if "recovering from birth" in the_cat.injuries:
@@ -867,7 +894,6 @@ class ProfileScreen(Screens):
                 tool_tip_text='favorite this tab'
             )
 
-            print(self.open_sub_tab, game.settings['favorite sub tab'])
             if self.open_sub_tab != 'life events':
                 self.toggle_history_sub_tab()
             else:
@@ -1118,7 +1144,6 @@ class ProfileScreen(Screens):
     def toggle_conditions_tab(self):
         """Opens the conditions tab"""
         previous_open_tab = self.open_tab
-        print('toggled')
         # This closes the current tab, so only one can be open at a time
         self.close_current_tab()
 
@@ -1458,7 +1483,7 @@ class ProfileScreen(Screens):
             #   This it due to the image switch depending on the cat's status, and the location switch the close button
             #    If you can think of a better way to do this, please fix! 
             self.cis_trans_button = UIImageButton(pygame.Rect((402, 486), (0, 0)), "", visible=False)
-            self.toggle_kits = UIImageButton(pygame.Rect(((402, 574)), (0, 0)), "", visible=False)
+            self.toggle_kits = UIImageButton(pygame.Rect((402, 574), (0, 0)), "", visible=False)
             self.update_disabled_buttons_and_text()
 
     def toggle_dangerous_tab(self):
@@ -1524,7 +1549,7 @@ class ProfileScreen(Screens):
             deputy = game.clan.deputy
             if game.clan.deputy is None:
                 deputy = None
-            elif game.clan.deputy.exiled:
+            elif game.clan.deputy.outside:
                 deputy = None
             elif game.clan.deputy.dead:
                 deputy = None
@@ -1534,10 +1559,10 @@ class ProfileScreen(Screens):
             self.toggle_deputy_button.kill()
             if self.the_cat.status in [
                 'warrior'
-            ] and not self.the_cat.dead and not self.the_cat.exiled and deputy is None:
+            ] and not self.the_cat.dead and not self.the_cat.outside and deputy is None:
                 self.toggle_deputy_button = UIImageButton(pygame.Rect((226, 486), (172, 36)), "",
                                                           object_id="#promote_deputy_button")
-            elif self.the_cat.status in ['deputy'] and not self.the_cat.dead and not self.the_cat.exiled:
+            elif self.the_cat.status in ['deputy'] and not self.the_cat.dead and not self.the_cat.outside:
                 self.toggle_deputy_button = UIImageButton(pygame.Rect((226, 486), (172, 36)), "",
                                                           object_id="#demote_deputy_button")
             else:
@@ -1550,23 +1575,26 @@ class ProfileScreen(Screens):
             self.close_tab_button.kill()
             self.toggle_med_button.kill()
             # Switch apprentice to medicine cat apprentice
-            if self.the_cat.status in ['apprentice'] and not self.the_cat.dead and not self.the_cat.exiled:
+            if self.the_cat.status in ['apprentice'] and not self.the_cat.dead and not self.the_cat.outside:
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 522), (172, 52)), "",
                                                        object_id="#switch_med_app_button")
                 close_button_location = (226, 574)
             # Switch med apprentice to warrior apprentice
             elif self.the_cat.status in [
-                'medicine cat apprentice'] and not self.the_cat.dead and not self.the_cat.exiled:
+                'medicine cat apprentice'] and not self.the_cat.dead and not self.the_cat.outside:
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 522), (172, 52)), "",
                                                        object_id="#switch_warrior_app_button")
                 close_button_location = (226, 574)
             # Switch warrior or elder to med cat.
-            elif self.the_cat.status in ['warrior', 'elder'] and not self.the_cat.dead and not self.the_cat.exiled:
+            elif self.the_cat.status in ['warrior', 'elder'] and not self.the_cat.dead and not self.the_cat.outside:
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 522), (172, 52)), "",
                                                        object_id="#switch_med_cat_button")
                 close_button_location = (226, 574)
             # Switch med cat to warrior
-            elif self.the_cat.status == 'medicine cat' and not self.the_cat.dead and not self.the_cat.exiled:
+            elif self.the_cat.status == 'medicine cat' and \
+                    not self.the_cat.dead and \
+                    not self.the_cat.outside and \
+                    self.the_cat.age != 'elder':
                 self.toggle_med_button = UIImageButton(pygame.Rect((226, 522), (172, 36)), "",
                                                        object_id="#switch_warrior_button")
                 close_button_location = (226, 558)
@@ -1620,7 +1648,7 @@ class ProfileScreen(Screens):
                     "",
                     object_id="#exile_cat_button",
                     tool_tip_text='This cannot be reversed.')
-                if self.the_cat.exiled:
+                if self.the_cat.exiled or self.the_cat.outside:
                     self.exile_cat_button.disable()
             elif self.the_cat.dead:
                 self.exile_cat_button = UIImageButton(pygame.Rect((578, 450), (172, 46)), "",
@@ -1701,7 +1729,7 @@ class ProfileScreen(Screens):
                     self.notes_entry = pygame_gui.elements.UITextEntryBox(
                         pygame.Rect((100, 473), (600, 149)),
                         initial_text=self.user_notes,
-                        object_id='#history_tab_entry_box_smalltooltip'
+                        object_id='#history_tab_entry_box'
                     )
                 else:
                     self.edit_text = UIImageButton(pygame.Rect(
@@ -1945,3 +1973,155 @@ class ChangeGenderScreen(Screens):
             elif event.ui_element == self.back_button:
                 self.change_screen('profile screen')
         return
+
+# ---------------------------------------------------------------------------- #
+#                           ceremony screen                                    #
+# ---------------------------------------------------------------------------- #
+class CeremonyScreen(Screens):
+
+    def screen_switches(self):
+        self.hide_menu_buttons()
+        self.the_cat = Cat.all_cats.get(game.switches['cat'])
+        if (self.the_cat.status == 'leader' and not self.the_cat.dead):
+            self.header = pygame_gui.elements.UITextBox(str(self.the_cat.name) + '\'s Leadership Ceremony',
+                                            pygame.Rect((100, 90), (600, -1)),
+                                            object_id=get_text_box_theme())
+        else:
+            self.header = pygame_gui.elements.UITextBox(str(self.the_cat.name) + ' has no ceremonies to view.',
+                                            pygame.Rect((100, 90), (600, -1)),
+                                            object_id=get_text_box_theme())
+        if (self.the_cat.status == 'leader' and not self.the_cat.dead):
+            self.life_text = self.handle_leadership_ceremony(self.the_cat)
+        else:
+            self.life_text = ""
+        self.scroll_container = pygame_gui.elements.UIScrollingContainer(pygame.Rect((50, 150), (700, 500)))
+        self.text = pygame_gui.elements.UITextBox(self.life_text,
+                                            pygame.Rect((0, 0), (550, -1)),
+                                            object_id=get_text_box_theme("#allegiances_box"), container = self.scroll_container)
+        self.back_button = UIImageButton(pygame.Rect((25, 25), (105, 30)), "",
+                                         object_id="#back_button")
+        self.scroll_container.set_scrollable_area_dimensions((680, self.text.rect[3]))
+
+    def exit_screen(self):
+        self.header.kill()
+        del self.header
+        self.text.kill()
+        del self.text
+        self.scroll_container.kill()
+        del self.scroll_container
+        self.back_button.kill()
+        del self.back_button
+
+    def on_use(self):
+        pass
+    
+    def handle_leadership_ceremony(self, cat):
+        dep_name = str(cat.name.prefix) + str(cat.name.suffix)
+        intro_text = dep_name + " leaves to speak with StarClan. They close their eyes and are immediately surrounded by their loved ones, friends, and clanmates who have passed on. Stars shine throughout their pelts, and their eyes are warm as they greet the new leader." + "\n"
+        
+        # as of right now, chooses random starclan cats to give lives
+        # in the future, plan to have starclan cats with high relationships to give lives
+        # if not enough cats to give lives, generate a new random cat name to give a life
+        
+        queen = None
+        warrior = None
+        kit = None
+        warrior2 = None
+        app = None
+        elder = None
+        warrior3 = None
+        med_cat = None
+        prev_lead = None
+        life_givers = [queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead]
+        for i in reversed(Cat.all_cats.keys()):
+            c = Cat.all_cats[i]
+            if c.dead:
+                if not queen and c.status == 'queen':
+                    queen = c
+                    continue
+                elif not kit and c.status == 'kit':
+                    kit = c
+                    continue
+                elif not app and c.status == 'apprentice':
+                    app = c
+                    continue
+                elif not prev_lead and c.status == 'leader':
+                    prev_lead = c
+                    continue
+                elif not elder and c.status == 'elder':
+                    elder = c
+                    continue
+                elif not warrior and c.status == 'warrior':
+                    warrior = c
+                    continue
+                elif not warrior2 and c.status == 'warrior':
+                    warrior2 = c
+                    continue
+                elif not warrior3 and c.status == 'warrior':
+                    warrior3 = c
+                    continue
+                elif not med_cat and (c.status == 'medicine cat' or c.status == 'medicine cat apprentice'):
+                    med_cat = c
+                    continue
+                if queen and warrior and kit and warrior2 and app and elder and warrior3 and med_cat and prev_lead:
+                    break
+        queen_virtues = ["affection","compassion","empathy","duty","protection","pride"]
+        warrior_virtues = ["acceptance","bravery","certainty", "clear judgement","confidence"]
+        kit_virtues = ["adventure","curiosity","forgiveness","hope","perspective","protection"]
+        warrior2_virtues = ["courage","determination","endurance","sympathy"]
+        app_virtues = ["happiness","honesty","humor","justice","mentoring","trust"]
+        elder_virtues = ["empathy","grace","humility","integrity","persistence","resilience"]
+        warrior3_virtues = ["farsightedness","friendship","instincts","mercy","strength","unity"]
+        med_cat_virtues = ["clear sight","devotion","faith","healing","patience","selflessness","wisdom"]
+        prev_lead_virtues = ["endurance","honor","leadership","loyalty","nobility","tireless energy"]
+        if queen:
+            queen_text = str(queen.name) + ' pads up to the new leader first, softly touching their nose to ' + dep_name + '\'s head. They give a life for ' + choice(queen_virtues) + '.'
+        else: 
+            queen_text = 'A queen introduces themself as ' + str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + '. They softly touch their nose to ' + dep_name + '\'s head. They give a life for ' + choice(queen_virtues) + '.'
+        if warrior:
+            warrior_text = str(warrior.name) + ' walks up to ' + dep_name + ' next, offering a life for ' + choice(warrior_virtues) + '.'
+        else: 
+            warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + '. They offer a life for ' + choice(warrior_virtues) + '.'
+        if kit:
+            kit_text = str(kit.name) + ' bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + choice(kit_virtues) + '.'
+        else:
+            kit_text = str(choice(names.normal_prefixes)) + 'kit introduces themself and bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + choice(kit_virtues) + '.'
+        if warrior2:
+            warrior2_text = str(warrior2.name) + ' steps forward to give ' + dep_name + ' a life for ' + choice(warrior2_virtues) + '.'
+        else: 
+            warrior2_text = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + ' states their name and steps forward to give ' + dep_name + ' a life for ' + choice(warrior2_virtues) + '.'
+        if app:
+            app_text = 'A young cat is next to give a life. Starlight reflects off their youthful eyes. ' + str(app.name.prefix) + 'paw stretches up to give a life for ' + choice(app_virtues) + '.'
+        else: 
+            app_text = str(choice(names.normal_prefixes)) + 'paw, an unfamiliar apprentice, stretches up to give a life for ' + choice(app_virtues) + '. Their eyes glimmer as they wish ' + dep_name + " well, and step back for the next cat."
+        if elder:
+            elder_text = str(elder.name) + ' strides forward, an energy in their steps that wasn\'t present in their last moments. They give a life for ' + choice(elder_virtues) + '.'
+        else: 
+            elder_text = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + ' introduces themself and strides forward to give a new life for ' + choice(elder_virtues) + '.'
+        if warrior3:
+            warrior3_text = str(warrior3.name) + ' dips their head in greeting. Energy surges through ' + dep_name + '\'s pelt as they receive a life for ' + choice(warrior3_virtues) + '. They reassure ' + dep_name + ' that they are almost done.'
+        else: 
+            warrior3_text = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + ', an unknown warrior gives a life for ' + choice(warrior3_virtues) + '.'
+        if med_cat:
+            med_cat_text = str(med_cat.name) + ' approaches next, a warm smile on their face. They offer a life for ' + choice(med_cat_virtues) + '.'
+        else: 
+            med_cat_text = 'A cat that smells of herbs tells ' + dep_name + ' that their name is ' + str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + '. They offer a life for ' + choice(med_cat_virtues) + '.'
+        if prev_lead:
+            prev_lead_text = 'Finally, ' + str(prev_lead.name.prefix) + 'star steps forward. There is pride in their gaze as they stare into ' + dep_name + '\'s eyes. They give a life for ' + choice(prev_lead_virtues) + '.'
+        else: 
+            prev_lead_text = str(choice(names.normal_prefixes)) + 'star, one of Starclan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + choice(prev_lead_virtues) + '.'
+        
+        if (prev_lead):
+            ending_text = str(prev_lead.name) + " hails " + dep_name + " by their new name, " + str(cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(cat.name.prefix) + "star\'s name in support. " + str(cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the clan."
+        else:
+            ending_text = "StarClan hails " + dep_name + " by their new name, " + str(cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(cat.name.prefix) + "star\'s name in support. " + str(cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the clan."
+
+        return intro_text + '\n' + queen_text + '\n\n' + warrior_text + '\n\n' + kit_text + '\n\n' + warrior2_text + '\n\n' + app_text + '\n\n' + elder_text + '\n\n' + warrior3_text + '\n\n' + med_cat_text + '\n\n' + prev_lead_text + '\n\n' + ending_text
+    
+    def handle_event(self, event):
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
+            if event.ui_element == self.back_button:
+                self.change_screen('profile screen')
+        return
+
+

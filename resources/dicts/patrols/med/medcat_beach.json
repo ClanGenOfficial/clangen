@@ -1,0 +1,725 @@
+[
+{
+    "patrol_id": "bch_med_soloripples1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["comfort", "respect", "trust", "clan_to_p_l", "no_change_fail", "med_cat", "med_only"],
+    "intro_text": "p_l sees weird ripples on the water of a puddle while gathering fresh water.",
+    "decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
+    "chance_of_success": 45,
+    "exp": 10, 
+    "success_text": [
+        "As p_l looks into the puddle they are greeted by an intense vision. They drop what they are doing and race back to the camp to tell and consult with their leader.",
+        "They are greeted with the vision of a cat they had failed to save looking content and happy in StarClan saying that they were not at fault for their death. They feel unburdened and at peace after receiving that vision."
+    ],
+    "fail_text": [
+        "They gaze into the puddle only to see the weird ripples were caused by a small frog. p_l feels disappointed because they really could have used some guidance from StarClan." 
+    ],
+    "win_skills":["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_herblocation1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["med_cat", "apprentice", "trust", "respect", "med_only"],
+    "intro_text": "p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory, also teaching them where to dig in the sand to find some of the more potent plant roots.",
+    "decline_text": "As they see app1's absent minded gaze they change their mind. Maybe another day when app1 is more focused and less liable to get sand everywhere and damage the herbs",
+    "chance_of_success": 65,
+    "exp": 10,
+    "success_text": [
+        "app1 is focused and attentive. p_l is confident that next time when there is an emergency app1 will be able to find those herbs both in and out of the sand.",
+        "As p_l is explaining why and where the herbs are growing, app1 lets out a shout. To p_l's surprise they have found a previously unknown patch of an uncommon herb. Stunned and filled with pride that they found and recognized the herb, p_l promises them the first pick of fresh kill.",
+        null,
+        null
+    ],
+    "fail_text": [ 
+        "app1 is constantly distracted and running ahead much to the frustration of p_l. Evidently no new knowledge will be learned that day." 
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_herblocation2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["med_cat", "apprentice", "med_only"],
+    "intro_text": "app1 has been sent out onto the beaches to try to find some specific herbs alone.",
+    "decline_text": "Nervous and sneezing because of the salty air, they decide to go back to camp and try again another day. Their mentor will not be pleased...",
+    "chance_of_success": 65,
+    "exp": 10,
+    "success_text": [
+        "app1 is focused and determined to prove their independence. They find the herbs easily, and bring them back to camp with their head held up high, no sweat, no stress, no fuss.",
+        "app1 goes to a known herb patch - but the plant has died! They don't give up, hunting around in the area until they find a smaller overlooked patch that still has leaves on it.",
+        null,
+        null
+    ],
+    "fail_text": [ 
+        "app1 goes to a known herb patch - but the plant has died! They give up and return to camp, feeling terrible and with their tail dragging behind them."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_lungwort1",
+    "biome": "beach",
+    "season": "newleaf",
+    "tags": ["med_cat", "apprentice", "med_only", "herbs", "comfort", "respect", "trust", "jealousy", "dislike"],
+    "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
+    "decline_text": "A cat grabs p_l's attention before they can leave. Sighing, the expedition is delayed for another time.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the clan's stores after the long Leaf-bare. For just a second, p_l feels the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
+        "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with accomplishment.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
+    ],
+    "fail_text": [
+        "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream."
+    ],
+    "win_skills": ["keen eye", "extremely smart"],
+    "win_trait": ["patient"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_lungwort2",
+    "biome": "beach",
+    "season": "newleaf",
+    "tags": ["med_cat", "herbs", "no_app", "clan_to_patrol", "respect", "injury", "sore"],
+    "intro_text": "p_l is on a mission to find lungwort now that Newleaf is here. As the only reliable cure for yellowcough, they're determined that c_n replenish their stocks of it.",
+    "decline_text": "A cat grabs p_l's attention before they can leave camp.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the clan's stores after the long Leaf-bare. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
+        "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
+    ],
+    "fail_text": [
+        null,
+        null,
+        null,
+        "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+    ],
+    "win_skills": ["keen eye", "extremely smart"],
+    "win_trait": ["patient"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_lungwort3",
+    "biome": "beach",
+    "season": "newleaf",
+    "tags": ["med_cat", "warrior", "herbs", "dislike", "injury", "sore"],
+    "intro_text": "p_l is on a mission to find lungwort now that Newleaf is here. As the only reliable cure for yellowcough, they're determined that c_n replenish their stocks of it. They take along a warrior escort to help.",
+    "decline_text": "A cat grabs p_l's attention before they can leave.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the clan's stores after the long Leaf-bare. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
+        "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up their mostly-obliging escort and carries the extensive harvest home, tail waving jollily with their good mood.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
+    ],
+    "fail_text": [
+        null,
+        "By the time they give up and return to camp, p_l is approaching explosion point with r_c. They've gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
+        null,
+        "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+        
+    ],
+    "win_skills": ["keen eye", "extremely smart"],
+    "win_trait": ["patient"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_lungwort4",
+    "biome": "beach",
+    "season": "greenleaf",
+    "tags": ["med_cat", "apprentice", "med_only", "herbs", "comfort", "respect", "trust", "jealousy", "dislike"],
+    "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
+    "decline_text": "A cat grabs p_l's attention before they can leave. Sighing, the expedition is delayed for another time.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, they feel the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
+        "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with accomplishment.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
+    ],
+    "fail_text": [
+        "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream."
+    ],
+    "win_skills": ["keen eye", "extremely smart"],
+    "win_trait": ["patient"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_lungwort5",
+    "biome": "beach",
+    "season": "greenleaf",
+    "tags": ["med_cat", "herbs", "no_app", "clan_to_patrol", "respect", "injury", "sore"],
+    "intro_text": "p_l is on a mission to find lungwort now that Greenleaf is here. As the only reliable cure for yellowcough, they're determined that c_n stock up on it.",
+    "decline_text": "A cat grabs p_l's attention before they can leave camp.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
+        "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
+    ],
+    "fail_text": [
+        null,
+        null,
+        null,
+        "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+    ],
+    "win_skills": ["keen eye", "extremely smart"],
+    "win_trait": ["patient"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_lungwort6",
+    "biome": "beach",
+    "season": "greenleaf",
+    "tags": ["med_cat", "warrior", "herbs", "dislike", "injury", "sore"],
+    "intro_text": "p_l is on a mission to find lungwort now that Greenleaf is here. As the only reliable cure for yellowcough, they're determined that c_n won't run out of it. They take along a warrior escort to help.",
+    "decline_text": "A cat grabs p_l's attention before they can leave.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest while the growing season is upon them. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
+        "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up their mostly-obliging escort and carries the extensive harvest home, tail waving jollily with their good mood.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
+    ],
+    "fail_text": [
+        null,
+        "By the time they give up and return to camp, p_l is approaching explosion point with r_c. They've gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
+        null,
+        "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+
+    ],
+    "win_skills": ["keen eye", "extremely smart"],
+    "win_trait": ["patient"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_lungwort7",
+    "biome": "beach",
+    "season": "leaf-fall",
+    "tags": ["med_cat", "apprentice", "med_only", "herbs", "comfort", "respect", "trust", "jealousy", "dislike"],
+    "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough.",
+    "decline_text": "A cat grabs p_l's attention before they can leave. Sighing, the expedition is delayed for another time.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plant dies back in Leaf-bare. For just a second, they feel the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
+        "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with accomplishment.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
+    ],
+    "fail_text": [
+        "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream."
+    ],
+    "win_skills": ["keen eye", "extremely smart"],
+    "win_trait": ["patient"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_lungwort8",
+    "biome": "beach",
+    "season": "leaf-fall",
+    "tags": ["med_cat", "herbs", "no_app", "clan_to_patrol", "respect", "injury", "sore"],
+    "intro_text": "p_l is on a mission to find lungwort now that Leaf-bare is on the horizon. As the only reliable cure for yellowcough, they're determined that c_n stock up on it.",
+    "decline_text": "A cat grabs p_l's attention before they can leave camp.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plant dies back in Leaf-bare. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
+        "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
+    ],
+    "fail_text": [
+        null,
+        null,
+        null,
+        "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+    ],
+    "win_skills": ["keen eye", "extremely smart"],
+    "win_trait": ["patient"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_lungwort9",
+    "biome": "beach",
+    "season": "leaf-fall",
+    "tags": ["med_cat", "warrior", "herbs", "dislike", "injury", "sore"],
+    "intro_text": "p_l is on a mission to find lungwort now that Leaf-bare is on the horizon. As the only reliable cure for yellowcough, they're determined that c_n won't run out of it. They take along a warrior escort to help.",
+    "decline_text": "A cat grabs p_l's attention before they can leave.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to harvest before the plant dies back in Leaf-bare. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
+        "Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up their mostly-obliging escort and carries the extensive harvest home, tail waving jollily with their good mood.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
+        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
+    ],
+    "fail_text": [
+        null,
+        "By the time they give up and return to camp, p_l is approaching explosion point with r_c. They've gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
+        null,
+        "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+
+    ],
+    "win_skills": ["keen eye", "extremely smart"],
+    "win_trait": ["patient"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_lungwort10",
+    "biome": "beach",
+    "season": "leaf-bare",
+    "tags": ["med_cat", "apprentice", "med_only", "herbs", "comfort", "respect", "trust", "jealousy", "dislike"],
+    "intro_text": "p_l and app1 head out for lungwort, with p_l starting a lesson on the value of this rare herb for treating yellowcough. It dies back during Leaf-bare, but the snow in c_n's territory will preserve its juice and freshness until the Newleaf thaw.",
+    "decline_text": "A cat grabs p_l's attention before they can leave. Sighing, the expedition is delayed for another time.",
+    "chance_of_success": 30,
+    "exp": 20,
+    "success_text": [
+        "p_l heads directly for a sheltered valley, a confused app1 trailing behind them. There, they dig for a lungwort plant they know is under the snow, and show app1 that while the plant is dormant for the winter, the snow has preserved its Leaf-fall greenery and kept them fresh - or fresh enough to still be useful anyway.",
+        "app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort, poking out from the snow! p_l showers them with praise, app1 feeling like they could burst with accomplishment.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found under a snowy blanket.",
+        "Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
+    ],
+    "fail_text": [
+        "Not only do they not find anything, app1 seems to take in absolutely nothing of what p_l is teaching them, and by the time they're back at camp p_l wants to scream."
+    ],
+    "win_skills": ["keen eye", "extremely smart"],
+    "win_trait": ["patient"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_lungwort11",
+    "biome": "beach",
+    "season": "leaf-bare",
+    "tags": ["med_cat", "herbs", "no_app", "clan_to_patrol", "respect", "injury", "sore"],
+    "intro_text": "p_l is on a mission to find lungwort now that Leaf-bare is upon the clan. As the only reliable cure for yellowcough, they're determined that c_n stock up on it. It dies back during Leaf-bare, but the snow in c_n's territory will preserve it's juice and freshness until the Newleaf thaw.",
+    "decline_text": "A cat grabs p_l's attention before they can leave camp.",
+    "chance_of_success": 30,
+    "exp": 20,
+    "success_text": [
+        "It takes them all day, checking spots where they've seen lungwort growing before, but finally when p_l sweeps back the snow covering they find a plant with leaves still green, if looking a little wilted. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
+        "Not only is the lungwort intact and still fresh, but there's also a nice patch of plantain nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found under the blanketing snow.",
+        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves, wilted but still valuable."
+    ],
+    "fail_text": [
+        null,
+        null,
+        null,
+        "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+    ],
+    "win_skills": ["keen eye", "extremely smart"],
+    "win_trait": ["patient"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_lungwort12",
+    "biome": "beach",
+    "season": "leaf-bare",
+    "tags": ["med_cat", "warrior", "herbs", "dislike", "injury", "sore"],
+    "intro_text": "p_l is on a mission to find lungwort now that Leaf-bare is upon the clan. As the only reliable cure for yellowcough, they're determined that c_n won't run out of it. They take along a warrior escort to help search for leaves preserved under the snow.",
+    "decline_text": "A cat grabs p_l's attention before they can leave.",
+    "chance_of_success": 30,
+    "exp": 20,
+    "success_text": [
+        "It takes them all day, checking spots where they've seen lungwort growing before, but finally when p_l sweeps back the snow covering they find a plant with leaves still green, if looking a little wilted. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
+        "Not only is the lungwort intact and still fresh, but there's also a nice patch of plantain nearby. p_l loads up their mostly-obliging escort and carries the extensive harvest home, tail waving jollily with their good mood.",
+        "It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found under the blanketing snow.",
+        "Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves, wilted but still valuable."
+    ],
+    "fail_text": [
+        null,
+        "By the time they give up and return to camp, p_l is approaching explosion point with r_c. They've gotten in the way, questioned the use of the gathering mission, and in general been utterly obnoxious today.",
+        null,
+        "p_l searches until their pawpads are sore and their muscles exhausted, but can't find lungwort anywhere. They return to camp disappointed, but determined to try again. It's simply too important to not keep a good supply of."
+    ],
+    "win_skills": ["keen eye", "extremely smart"],
+    "win_trait": ["patient"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_romance1",
+    "biome": "beach",
+    "season": "newleaf",
+    "tags": ["med_cat", "warrior", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l goes out with a warrior escort, both for safety as they look for Newleaf's fresh buds, and for carrying capacity should they find anything.",
+    "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual speel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_romance2",
+    "biome": "beach",
+    "season": "newleaf",
+    "tags": ["med_cat", "med_only", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l heads out, leading a patrol of medicine cats to go find the buds of Newleaf.",
+    "decline_text": ". . .And they're called back almost immediately, as one of the elders starts hacking up something.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_romance3",
+    "biome": "beach",
+    "season": "greenleaf",
+    "tags": ["med_cat", "warrior", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l goes out with a warrior escort, both for safety as they look to take advantage of the Greenleaf growing season, and for carrying capacity should they find anything.",
+    "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual speel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_romance4",
+    "biome": "beach",
+    "season": "greenleaf",
+    "tags": ["med_cat", "med_only", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l heads out, leading a patrol of medicine cats to go find some of the bounty of Greenleaf.",
+    "decline_text": ". . .And they're called back almost immediately, as one of the elders starts hacking up something.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "The ground is dusty and slippery, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_romance5",
+    "biome": "beach",
+    "season": "leaf-fall",
+    "tags": ["med_cat", "warrior", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l goes out with a warrior escort, both for safety as they try to stock up under the clear Leaf-fall skies, and for carrying capacity should they find anything.",
+    "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual speel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_romance6",
+    "biome": "beach",
+    "season": "leaf-fall",
+    "tags": ["med_cat", "med_only", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l heads out, leading a patrol of medicine cats to go stock up on the ripening harvest available in Leaf-fall.",
+    "decline_text": ". . .And they're called back almost immediately, as one of the elders starts hacking up something.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_romance7",
+    "biome": "beach",
+    "season": "leaf-bare",
+    "tags": ["med_cat", "warrior", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l goes out with a warrior escort, both for safety as they look for useful fresh supplies that have survived Leaf-bare so far, and for carrying capacity should they find anything.",
+    "decline_text": "Their escort is called away on a different mission, and p_l decides to reorganize the herb store instead.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "Surprisingly, r_c actually starts up a conversation with them about the herbs they're looking for. p_l launches into the usual speel, but even more astonishingly, r_c is actually interested, and it makes their heart feel lighter getting to share their knowledge and skills with someone who respects them.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common and the other cat bluntly refuses to talk about boring herbs.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_romance8",
+    "biome": "beach",
+    "season": "leaf-bare",
+    "tags": ["med_cat", "med_only", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
+    "intro_text": "p_l heads out, leading a patrol of medicine cats to go find any fresh herbs that have survived Leaf-bare so far.",
+    "decline_text": ". . . And they're called back almost immediately, as one of the elders starts hacking up something.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "The ground is slippery with frost, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+        null,
+        "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
+    ],
+    "fail_text": [
+        "It's an exhausting day. p_l starts chatting with r_c to pass the time, but they have nothing in common.",
+        "Not only do they not find anything, p_l wants to murder s_c. They're obnoxious and troublesome and childish, and simply not someone p_l enjoys interacting with."
+    ],
+    "win_skills": ["good mediator", "great mediator", "excellent mediator"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 6,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_herbs1",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["med_cat", "apprentice", "med_only", "herbs"],
+    "intro_text": "p_l and app1 are going out to gather dandelions. app1 asks their mentor what they'll do if the rabbits have eaten all of it. p_l responds that they'll cross that river when they get to it.",
+    "decline_text": "A cat grabs p_l's attention before they can leave.",
+    "chance_of_success": 60,
+    "exp": 20,
+    "success_text": [
+        "The two medicine cats find the plants in good shape and are able to collect plenty.",
+        "The dandelions are so plentiful that it seems like there's enough for both cats and rabbits to take what they need."
+    ],
+    "fail_text": [
+        "app1 reaches the patch first and p_l can tell by their drooping ears that there must not be enough left to collect."
+    ],
+    "win_skills": ["None"],
+    "win_trait": ["None"],
+    "fail_skills": ["None"],
+    "fail_trait": ["None"],
+    "min_cats": 2,
+    "max_cats": 2,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_herbs2",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["med_cat", "herbs", "no_app"],
+    "intro_text": "p_l is on a mission to find herbs. They know a nice place in a grassy meadow a quick trot away from the beach where mullein grows and it's always good to have some on paw for coughs and sore throats.",
+    "decline_text": "A cat grabs p_l's attention before they can leave camp.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "p_l is relieved to find that the mullein is still intact. They knock a stray weevil off of a leaf as they're gathering the herb.",
+        "Not only is the mullein intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l purrs in satisfaction - seems like they've caught two prey in one blow on this trip."
+    ],
+    "fail_text": [
+        "p_l reaches the mullein plant that the clan has used for many seasons and finds that it's being torn to shreds by bugs. They hiss in exasperation and bat some of the leaf bugs off the plant. Maybe it'll grow back next newleaf."
+    ],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": null,
+    "min_cats": 1,
+    "max_cats": 1,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "bch_med_herbs3",
+    "biome": "beach",
+    "season": "Any",
+    "tags": ["med_cat", "warrior", "herbs", "dislike"],
+    "intro_text": "p_l needs to go and gather some juniper berries. They take along what warriors they can find around camp to help gather and carry the berries back.",
+    "decline_text": "A cat grabs p_l's attention before they can leave.",
+    "chance_of_success": 50,
+    "exp": 10,
+    "success_text": [
+        "The medicine cat and their entourage find the herbs in good time. The warriors don't even complain much when p_l teaches them how to gingerly pick the berries without crushing them.",
+        "The juniper berries are plentiful in the area that p_l chose. They'll have a good supply to last a while!"
+    ],
+    "fail_text": [
+        "p_l finds the juniper bush they were thinking of, but it seems to be dying. The leaves are mostly brown and the only berries to be found are shriveled up and useless.",
+        "By the time they reach the juniper patch, p_l is about ready to claw r_c's ears off. Great StarClan! How can a cat be so annoying? p_l hisses in exasperation and they notice that all of the berries to be found in the area are shriveled and rotten."
+    ],
+    "win_skills": null,
+    "win_trait": null,
+    "fail_skills": null,
+    "fail_trait": ["troublesome", "childish"],
+    "min_cats": 2,
+    "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+}
+
+]
