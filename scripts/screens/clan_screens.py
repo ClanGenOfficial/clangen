@@ -104,7 +104,7 @@ class ClanScreen(Screens):
             if i > self.max_sprites_displayed:
                 break
             if not Cat.all_cats[x].dead and Cat.all_cats[
-                x].in_camp and not Cat.all_cats[x].exiled:
+                x].in_camp and not Cat.all_cats[x].exiled and not Cat.all_cats[x].outside:
                 # print("Original location" + str(Cat.all_cats[x].placement))
                 location = [0, 0]
                 if Cat.all_cats[x].placement[0] == "center":
