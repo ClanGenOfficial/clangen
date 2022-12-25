@@ -657,7 +657,7 @@ class ProfileScreen(Screens):
                         check_cat].dead == self.the_cat.dead and Cat.all_cats[
                         check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
                         check_cat].outside == self.the_cat.outside and Cat.all_cats[
-                        check_cat].df == self.the_cat.df:
+                        check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
                     previous_cat = Cat.all_cats[check_cat].ID
 
                 elif next_cat == 1 and Cat.all_cats[
@@ -665,7 +665,7 @@ class ProfileScreen(Screens):
                         check_cat].dead == self.the_cat.dead and Cat.all_cats[
                         check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
                         check_cat].outside == self.the_cat.outside and Cat.all_cats[
-                        check_cat].df == self.the_cat.df:
+                        check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
                     next_cat = Cat.all_cats[check_cat].ID
 
                 elif int(next_cat) > 1:

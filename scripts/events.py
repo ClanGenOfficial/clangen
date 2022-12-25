@@ -235,7 +235,7 @@ class Events():
             cat.opacity = int(100*(1-(cat.dead_for/age_to_fade)**5)+30)
 
             # Deal with fading the cat if they are old enough.
-            if cat.dead_for >= age_to_fade:
+            if cat.dead_for > age_to_fade:
                 print(str(cat.name) + " is fading away...")
                 print("dead_for: " + str(cat.dead_for))
                 # If order not to add a cat to the faded list twice, we can't remove them or add them to
