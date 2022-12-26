@@ -213,7 +213,13 @@ class Cat():
         # setting ID
         if ID is None:
             potential_id = str(next(Cat.id_iter))
-            while potential_id in self.all_cats:
+
+            if game.clan:
+                faded_cats = game.clan.faded_ids
+            else:
+                faded_cats = []
+
+            while potential_id in self.all_cats and potential_id in faded_cats:
                 potential_id = str(next(Cat.id_iter))
             self.ID = potential_id
         else:

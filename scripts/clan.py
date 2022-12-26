@@ -117,6 +117,8 @@ class Clan():
             self.reputation = 50
             self.starting_members = starting_members
 
+            self.faded_ids = []  # Stores ID's of faded cats, to ensure these IDs aren't reused.
+
             """
             Reputation is for loners/kittypets/outsiders in general that wish to join the clan. 
             it's a range from 1-100, with 30-70 being neutral, 71-100 being "welcoming",
@@ -318,6 +320,8 @@ class Clan():
 
         # LIST OF CLAN CATS
         clan_data['clan_cats'] = ",".join([str(i) for i in self.clan_cats])
+
+        clan_data["faded_cats"] = ",".join([str(i) for i in self.faded_ids])
 
         # OTHER CLANS
         # Clan Names
@@ -567,6 +571,11 @@ class Clan():
                 game.clan.add_to_starclan(Cat.all_cats[cat])
             else:
                 print('Cat not found:', cat)
+
+        if "faded_cats" in clan_data:
+            for cat in clan_data["faded_cats"].split(","):
+                game.clan.faded_ids.append(cat)
+
         self.load_pregnancy(game.clan)
         game.switches['error_message'] = ''
 

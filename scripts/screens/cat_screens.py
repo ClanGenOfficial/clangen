@@ -259,6 +259,7 @@ class ProfileScreen(Screens):
         self.the_cat = None
         self.prevent_fading_text = None
         self.checkboxes = {}
+        self.profile_elements = {}
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -493,18 +494,12 @@ class ProfileScreen(Screens):
 
     def clear_profile(self):
         """Clears all profile objects. """
-        self.cat_info_column1.kill()
-        self.cat_info_column2.kill()
-        self.cat_thought.kill()
-        self.cat_name.kill()
-        self.cat_image.kill()
-        self.placeholder_tab_4.kill()
-        if self.background is not None:
-            self.background.kill()
+        for ele in self.profile_elements:
+            self.profile_elements[ele].kill()
+        self.profile_elements = {}
+
         if self.user_notes:
             self.user_notes = 'Click the check mark to enter notes about your cat!'
-        if self.the_cat.dead and game.settings["fading"]:
-            self.prevent_fading_text.kill()
 
         for box in self.checkboxes:
             self.checkboxes[box].kill()
@@ -549,39 +544,43 @@ class ProfileScreen(Screens):
             self.the_cat.thought = "Hello. I am here to drag the dead cats of " + game.clan.name + "Clan into the Dark Forest."
 
         # Write cat name
-        self.cat_name = pygame_gui.elements.UITextBox(cat_name, pygame.Rect((200, 140), (400, 40)),
-                                                      object_id=get_text_box_theme("#cat_profile_name_box"))
+        self.profile_elements["cat_name"] = pygame_gui.elements.UITextBox(cat_name, pygame.Rect((200, 140), (400, 40)),
+                                                                          object_id=get_text_box_theme("#cat_profile_name_box"))
 
         # Write cat thought
-        self.cat_thought = pygame_gui.elements.UITextBox(self.the_cat.thought, pygame.Rect((100, 170), (600, 40)),
-                                                         wrap_to_height=True,
-                                                         object_id=get_text_box_theme("#cat_profile_thoughts_box"))
+        self.profile_elements["cat_thought"] = pygame_gui.elements.UITextBox(self.the_cat.thought,
+                                                                             pygame.Rect((100, 170), (600, 40)),
+                                                                             wrap_to_height=True,
+                                                                             object_id=get_text_box_theme("#cat_profile_thoughts_box"))
 
-        self.cat_info_column1 = UITextBoxTweaked(self.generate_column1(self.the_cat),
-                                                 pygame.Rect((300, 230), (180, 180)),
-                                                 object_id=get_text_box_theme("#cat_profile_info_box"),
-                                                 line_spacing=0.95)
-        self.cat_info_column2 = UITextBoxTweaked(self.generate_column2(self.the_cat),
-                                                 pygame.Rect((490, 230), (230, 180)),
-                                                 object_id=get_text_box_theme("#cat_profile_info_box"),
-                                                 line_spacing=0.95)
+        self.profile_elements["cat_info_column1"] = UITextBoxTweaked(self.generate_column1(self.the_cat),
+                                                                     pygame.Rect((300, 230), (180, 180)),
+                                                                     object_id=get_text_box_theme("#cat_profile_info_box"),
+                                                                     line_spacing=0.95)
+        self.profile_elements["cat_info_column2"] = UITextBoxTweaked(self.generate_column2(self.the_cat),
+                                                                     pygame.Rect((490, 230), (230, 180)),
+                                                                     object_id=get_text_box_theme("#cat_profile_info_box"),
+                                                                     line_spacing=0.95)
 
         # Set the cat backgrounds.
         self.update_platform()
         if game.settings['backgrounds']:
             if game.clan.current_season == 'Newleaf':
-                self.background = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)), self.newleaf_plt)
+                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)),
+                                                                                  self.newleaf_plt)
             elif game.clan.current_season == 'Greenleaf':
-                self.background = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)), self.greenleaf_plt)
+                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)),
+                                                                                  self.greenleaf_plt)
             elif game.clan.current_season == 'Leaf-bare':
-                self.background = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)), self.leafbare_plt)
+                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)),
+                                                                                  self.leafbare_plt)
             elif game.clan.current_season == 'Leaf-fall':
-                self.background = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)), self.leaffall_plt)
-        else:
-            self.background = None
+                self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)),
+                                                                                  self.leaffall_plt)
 
         # Create cat image object
-        self.cat_image = pygame_gui.elements.UIImage(pygame.Rect((100, 200), (150, 150)), self.the_cat.large_sprite)
+        self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(pygame.Rect((100, 200), (150, 150)),
+                                                                         self.the_cat.large_sprite)
 
         # Determine where the next and previous cat buttons lead
         self.determine_previous_and_next_cat()
@@ -599,7 +598,9 @@ class ProfileScreen(Screens):
 
         if self.open_tab == "history" and self.open_sub_tab == 'user notes':
             self.load_user_notes()
-        
+
+        if self.placeholder_tab_4:
+            self.placeholder_tab_4.kill()
         if (self.the_cat.status == 'leader' and not self.the_cat.dead):
             self.placeholder_tab_4 = pygame_gui.elements.UIButton(pygame.Rect((576, 622), (176, 30)), "View Ceremony", object_id="#ceremony")
         else:
@@ -608,9 +609,9 @@ class ProfileScreen(Screens):
 
         # Prevent fading button:
         if self.the_cat.dead and game.settings["fading"]:
-            self.prevent_fading_text = pygame_gui.elements.UILabel(pygame.Rect((136, 387), (-1, 30)),
-                                                                   "Prevent Fading",
-                                                                   object_id=get_text_box_theme())
+            self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(pygame.Rect((136, 387), (-1, 30)),
+                                                                                       "Prevent Fading",
+                                                                                       object_id=get_text_box_theme())
 
         self.update_toggle_buttons()
 
