@@ -476,13 +476,14 @@ class Events():
             if cat.parent1 is not None and str(
                     cat_class.all_cats[cat.parent1].name) != str(
                         cat.mentor.name) and str(cat_class.all_cats[cat.parent1].name) != "unnamed queen":
-                ceremony.extend([
-                    str(cat_class.all_cats[cat.parent1].name) +
-                    " is watching in pride as " + str(cat.name) +
-                    " is named and given to " + str(cat.mentor.name) +
-                    " to apprentice under. They know that " +
-                    str(cat.mentor.name) + " was a good choice."
-                ])
+                if not cat_class.all_cats[cat.parent1].dead:
+                    ceremony.extend([
+                        str(cat_class.all_cats[cat.parent1].name) +
+                        " is watching in pride as " + str(cat.name) +
+                        " is named and given to " + str(cat.mentor.name) +
+                        " to apprentice under. They know that " +
+                        str(cat.mentor.name) + " was a good choice."
+                    ])
 
             if cat.is_disabled() and not game.clan.leader.dead:
                 ceremony.extend([
@@ -590,8 +591,8 @@ class Events():
                 acc_singular = plural_acc_names(cat.accessory, False, True)
                 acc_plural = plural_acc_names(cat.accessory, True, False)
                 if self.ceremony_accessory is True:
-                    acc_text.extend([f'{other_name} gives {name} something to adorn their pelt as congratulations',
-                                     f'{name} decides to pick something to adorn their pelt as celebration'])
+                    acc_text.extend([f'{other_name} gives {name} something to adorn their pelt as congratulations.',
+                                     f'{name} decides to pick something to adorn their pelt as celebration.'])
                 if cat.age != 'kitten':
                     if cat.accessory in ["FORGET ME NOTS", "BLUEBELLS", "POPPY"]:
                         if game.clan.current_season == 'Leaf-bare':

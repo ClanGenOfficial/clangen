@@ -2030,7 +2030,7 @@ class CeremonyScreen(Screens):
         for i in reversed(Cat.all_cats.keys()):
             c = Cat.all_cats[i]
             if c.dead:
-                if not queen and c.status == 'queen':
+                if not queen and c.status == 'queen' and str(c.name) != "unnamed queen":
                     queen = c
                     continue
                 elif not kit and c.status == 'kit':
@@ -2067,21 +2067,21 @@ class CeremonyScreen(Screens):
         elder_virtues = ["empathy","grace","humility","integrity","persistence","resilience"]
         warrior3_virtues = ["farsightedness","friendship","instincts","mercy","strength","unity"]
         med_cat_virtues = ["clear sight","devotion","faith","healing","patience","selflessness","wisdom"]
-        prev_lead_virtues = ["endurance","honor","leadership","loyalty","nobility","tireless energy"]
+        prev_lead_virtues = ["endurance in the face of hardship","knowing when to fight and when to choose peace","leadership through the darkest times","loyalty to their clan","the strength to overcome their fears","tireless energy"]
         if queen:
             queen_text = str(queen.name) + ' pads up to the new leader first, softly touching their nose to ' + dep_name + '\'s head. They give a life for ' + choice(queen_virtues) + '.'
         else: 
-            queen_text = 'A queen introduces themself as ' + str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + '. They softly touch their nose to ' + dep_name + '\'s head. They give a life for ' + choice(queen_virtues) + '.'
+            queen_text = 'A queen introduces themself as ' + str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + '. They softly touch their nose to ' + dep_name + '\'s head, giving them a life for ' + choice(queen_virtues) + '.'
         if warrior:
-            warrior_text = str(warrior.name) + ' walks up to ' + dep_name + ' next, offering a life for ' + choice(warrior_virtues) + '.'
+            warrior_text = str(warrior.name) + ' walks up to ' + dep_name + ' next, offering a life for ' + choice(warrior_virtues) + '. They smile, and state that the clan will do well under ' + dep_name + '\'s leadership.'
         else: 
             warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + '. They offer a life for ' + choice(warrior_virtues) + '.'
         if kit:
-            kit_text = str(kit.name) + ' bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + choice(kit_virtues) + '.'
+            kit_text = str(kit.name) + ' bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + choice(kit_virtues) + '. They flick their tail and head back to make room for the next cat.'
         else:
             kit_text = str(choice(names.normal_prefixes)) + 'kit introduces themself and bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + choice(kit_virtues) + '.'
         if warrior2:
-            warrior2_text = str(warrior2.name) + ' steps forward to give ' + dep_name + ' a life for ' + choice(warrior2_virtues) + '.'
+            warrior2_text = 'Another cat approaches. ' + str(warrior2.name) + ' steps forward to give ' + dep_name + ' a life for ' + choice(warrior2_virtues) + '. ' + dep_name + ' grits their teeth as the life rushes into them.'
         else: 
             warrior2_text = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + ' states their name and steps forward to give ' + dep_name + ' a life for ' + choice(warrior2_virtues) + '.'
         if app:
@@ -2091,15 +2091,15 @@ class CeremonyScreen(Screens):
         if elder:
             elder_text = str(elder.name) + ' strides forward, an energy in their steps that wasn\'t present in their last moments. They give a life for ' + choice(elder_virtues) + '.'
         else: 
-            elder_text = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + ' introduces themself and strides forward to give a new life for ' + choice(elder_virtues) + '.'
+            elder_text = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + ', an elder, introduces themself and strides forward to give a new life for ' + choice(elder_virtues) + '.'
         if warrior3:
             warrior3_text = str(warrior3.name) + ' dips their head in greeting. Energy surges through ' + dep_name + '\'s pelt as they receive a life for ' + choice(warrior3_virtues) + '. They reassure ' + dep_name + ' that they are almost done.'
         else: 
-            warrior3_text = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + ', an unknown warrior gives a life for ' + choice(warrior3_virtues) + '.'
+            warrior3_text = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + ', an unknown warrior, gives a life for ' + choice(warrior3_virtues) + '. The cat turns around to take their place back in StarClan, leaving room for the next one to give a life.'
         if med_cat:
-            med_cat_text = str(med_cat.name) + ' approaches next, a warm smile on their face. They offer a life for ' + choice(med_cat_virtues) + '.'
+            med_cat_text = str(med_cat.name) + ' approaches next, a warm smile on their face. They offer a life for ' + choice(med_cat_virtues) + ', whispering to take care of the clan the best they can.'
         else: 
-            med_cat_text = 'A cat that smells of herbs tells ' + dep_name + ' that their name is ' + str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + '. They offer a life for ' + choice(med_cat_virtues) + '.'
+            med_cat_text = 'The next cat is not familiar. They smell of catmint and other herbs, and have a noble look to them. The cat tells ' + dep_name + ' that their name is ' + str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes)) + '. They offer a life for ' + choice(med_cat_virtues) + '.'
         if prev_lead:
             prev_lead_text = 'Finally, ' + str(prev_lead.name.prefix) + 'star steps forward. There is pride in their gaze as they stare into ' + dep_name + '\'s eyes. They give a life for ' + choice(prev_lead_virtues) + '.'
         else: 
