@@ -858,7 +858,7 @@
         "s_c knows how hard it is, feeling the pull of the ancestors watching over them. With r_c, they go to a quiet area near camp and show them how to breath, to feel connected to the world around them and let their worries evapourate from their pelt."
     ],
     "fail_text": [
-            "p_l tells r_c they should be glad to escape StarCLan's attention, and r_c pads away disappointed."
+            "p_l tells r_c they should be glad to escape StarClan's attention, and r_c pads away disappointed."
     ],
     "win_skills": ["strong connection to StarClan"],
     "min_cats": 2,

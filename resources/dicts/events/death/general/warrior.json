@@ -64,7 +64,7 @@
         "tags": ["multi_death", "other_cat_adult", "other_clan", "rel_down", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c and r_c are killed in a border skirmish against o_c.",
         "history_text": [
-            "m_c was killed in a border skirmish against o_c",
+            "m_c was killed in a border skirmish against o_c.",
             "was killed in a border skirmish against o_c."],
         "cat_trait": null,
         "cat_skill": null,
