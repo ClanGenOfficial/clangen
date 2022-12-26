@@ -1303,16 +1303,16 @@ class Events():
                                                                         self.enemy_clan, game.clan.current_season)
                 return triggered_death
 
-            # disaster death chance
-            if game.settings.get('disasters') and not triggered_death:
-                if not random.getrandbits(10):  # 1/1024
-                    triggered_death = True
-                    self.handle_disasters(cat)
-
         # classic death chance
         elif game.clan.game_mode == "classic" and not int(random.random() * 500):  # 1/500
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
+            
+        # disaster death chance
+        if game.settings.get('disasters') and not triggered_death:
+            if not random.getrandbits(10):  # 1/1024
+                triggered_death = True
+                self.handle_disasters(cat)
 
         return triggered_death
 
