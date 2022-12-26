@@ -49,6 +49,7 @@ class ClanScreen(Screens):
                 # print("cat pressed")
                 game.switches["cat"] = event.ui_element.return_cat_id()
                 # print(game.switches["cat"])
+                # print(game.switches["cat"])
                 # print(event.ui_element.return_cat_id())
                 self.change_screen('profile screen')
             if event.ui_element == self.label_toggle:
@@ -358,10 +359,11 @@ class StarClanScreen(Screens):
 
     def screen_switches(self):
         # Determine the dead, non-exiled cats.
-        self.dead_cats = [game.clan.instructor] if not game.clan.instructor.df else []
+        self.dead_cats = [game.clan.instructor]
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
-            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df:
+            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df and \
+                    not the_cat.faded:
                 self.dead_cats.append(the_cat)
 
 
@@ -531,7 +533,8 @@ class DFScreen(Screens):
 
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
-            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and the_cat.df:
+            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and the_cat.df and \
+                    not the_cat.faded:
                 self.dead_cats.append(the_cat)
 
         self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525,142), (147,23)),

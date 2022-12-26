@@ -257,6 +257,8 @@ class ProfileScreen(Screens):
         self.previous_cat_button = None
         self.next_cat_button = None
         self.the_cat = None
+        self.prevent_fading_text = None
+        self.checkboxes = {}
 
     def handle_event(self, event):
         if event.type == pygame_gui.UI_BUTTON_START_PRESS:
@@ -295,6 +297,16 @@ class ProfileScreen(Screens):
                 self.change_screen('ceremony screen')
             else:
                 self.handle_tab_events(event)
+
+            if self.the_cat.dead and game.settings["fading"]:
+                if event.ui_element == self.checkboxes["prevent_fading"]:
+                    if self.the_cat.prevent_fading:
+                        self.the_cat.prevent_fading = False
+                    else:
+                        self.the_cat.prevent_fading = True
+                    update_sprite(self.the_cat) # This will remove the transparency on the cat.
+                    self.clear_profile()
+                    self.build_profile()
 
         if event.type == pygame_gui.UI_BUTTON_ON_HOVERED:
             if event.ui_element == self.alert:
@@ -491,6 +503,12 @@ class ProfileScreen(Screens):
             self.background.kill()
         if self.user_notes:
             self.user_notes = 'Click the check mark to enter notes about your cat!'
+        if self.the_cat.dead and game.settings["fading"]:
+            self.prevent_fading_text.kill()
+
+        for box in self.checkboxes:
+            self.checkboxes[box].kill()
+        self.checkboxes = {}
 
     def exit_screen(self):
         self.clear_profile()
@@ -588,6 +606,33 @@ class ProfileScreen(Screens):
             self.placeholder_tab_4 = UIImageButton(pygame.Rect((576, 622), (176, 30)), "",
                                                object_id="#cat_tab_4_blank_button")
 
+        # Prevent fading button:
+        if self.the_cat.dead and game.settings["fading"]:
+            self.prevent_fading_text = pygame_gui.elements.UILabel(pygame.Rect((136, 387), (-1, 30)),
+                                                                   "Prevent Fading",
+                                                                   object_id=get_text_box_theme())
+
+        self.update_toggle_buttons()
+
+    def update_toggle_buttons(self):
+        for box in self.checkboxes:
+            self.checkboxes[box].kill()
+        self.checkboxes = {}
+
+        if self.the_cat.dead and game.settings["fading"]:
+            if self.the_cat.prevent_fading:
+                box_type = "#checked_checkbox"
+            else:
+                box_type = "#unchecked_checkbox"
+
+            self.checkboxes["prevent_fading"] = UIImageButton(pygame.Rect((100, 385), (34, 34)), "",
+                                                              starting_height=2,
+                                                              tool_tip_text="Prevents a cat from fading away."
+                                                                            " If unchecked, and the cat has been dead "
+                                                                            "for longer than 302 moons, they will fade "
+                                                                            "on the next timeskip.",
+                                                              object_id=box_type)
+
     def determine_previous_and_next_cat(self):
         """'Determines where the next and previous buttons point too."""
 
@@ -612,7 +657,7 @@ class ProfileScreen(Screens):
                         check_cat].dead == self.the_cat.dead and Cat.all_cats[
                         check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
                         check_cat].outside == self.the_cat.outside and Cat.all_cats[
-                        check_cat].df == self.the_cat.df:
+                        check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
                     previous_cat = Cat.all_cats[check_cat].ID
 
                 elif next_cat == 1 and Cat.all_cats[
@@ -620,7 +665,7 @@ class ProfileScreen(Screens):
                         check_cat].dead == self.the_cat.dead and Cat.all_cats[
                         check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
                         check_cat].outside == self.the_cat.outside and Cat.all_cats[
-                        check_cat].df == self.the_cat.df:
+                        check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
                     next_cat = Cat.all_cats[check_cat].ID
 
                 elif int(next_cat) > 1:
@@ -674,31 +719,37 @@ class ProfileScreen(Screens):
         output += "\n"
 
         # PARENTS
-        if the_cat.parent1 is None:
+        if the_cat.parent1 is None and the_cat.parent2 is None:
             output += 'parents: unknown'
-        elif the_cat.parent2 is None and the_cat.parent1 in the_cat.all_cats:
-            par1 = str(the_cat.all_cats[the_cat.parent1].name)
-            output += 'parents: ' + par1 + ', unknown'
-        elif the_cat.parent2 is None:
-            par2 = "unknown"
-            par1 = "Error: Cat#" + the_cat.parent1 + " not found"
-            output += 'parents: ' + par1 + ', unknown'
-        else:
-            if the_cat.parent1 in the_cat.all_cats and the_cat.parent2 in the_cat.all_cats:
+        elif the_cat.parent1 and the_cat.parent2 is None:
+            if the_cat.parent1 in Cat.all_cats:
                 par1 = str(the_cat.all_cats[the_cat.parent1].name)
-                par2 = str(the_cat.all_cats[the_cat.parent2].name)
-
-            elif the_cat.parent1 in the_cat.all_cats:
-                par2 = "Error: Cat#" + the_cat.parent2 + " not found"
-                par1 = str(the_cat.all_cats[the_cat.parent1].name)
-
-            elif the_cat.parent2 in the_cat.all_cats:
-                par1 = "Error: Cat#" + the_cat.parent1 + " not found"
-                par2 = str(the_cat.all_cats[the_cat.parent2].name)
-
             else:
-                par1 = "Error: Cat#" + the_cat.parent1 + " not found"
-                par2 = "Error: Cat#" + the_cat.parent2 + " not found"
+                parent_ob = Cat.load_faded_cat(the_cat.parent1)
+                if parent_ob:
+                    par1 = str(parent_ob.name)
+                else:
+                    par1 = "Error: Cat#" + the_cat.parent1 + " not found"
+
+            output += 'parent: ' + par1 + ", unknown"
+        else:
+            if the_cat.parent1 in Cat.all_cats:
+                par1 = str(the_cat.all_cats[the_cat.parent1].name)
+            else:
+                parent_ob = Cat.load_faded_cat(the_cat.parent1)
+                if parent_ob:
+                    par1 = str(parent_ob.name)
+                else:
+                    par1 = "Error: Cat#" + the_cat.parent1 + " not found"
+
+            if the_cat.parent2 in Cat.all_cats:
+                par2 = str(the_cat.all_cats[the_cat.parent2].name)
+            else:
+                parent_ob = Cat.load_faded_cat(the_cat.parent2)
+                if parent_ob:
+                    par2 = str(parent_ob.name)
+                else:
+                    par2 = "Error: Cat#" + the_cat.parent2 + " not found"
 
             output += 'parents: ' + par1 + ' and ' + par2
         # NEWLINE ----------

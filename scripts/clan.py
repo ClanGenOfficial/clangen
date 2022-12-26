@@ -1,5 +1,6 @@
 from scripts.cat.cats import *
 from scripts.game_structure.load_cat import *
+from os import path
 
 try:
     from scripts.world import *
@@ -84,10 +85,11 @@ class Clan():
         if name != "":
             self.name = name
             self.leader = leader
-            self.leader.status_change('leader')
+            if self.leader:
+                self.leader.status_change('leader')
+                self.clan_cats.append(self.leader.ID)
             self.leader_lives = 9
             self.leader_predecessors = 0
-            self.clan_cats.append(self.leader.ID)
             self.deputy = deputy
             if deputy is not None:
                 self.deputy.status_change('deputy')
@@ -100,8 +102,8 @@ class Clan():
             if medicine_cat is not None:
                 self.clan_cats.append(self.medicine_cat.ID)
                 self.med_cat_list.append(self.medicine_cat.ID)
-            if medicine_cat.status != 'medicine cat':
-                Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
+                if medicine_cat.status != 'medicine cat':
+                    Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
             self.age = 0
             self.current_season = 'Newleaf'
             self.instructor = None  # This is the first cat in starclan, to "guide" the other dead cats there.
@@ -275,42 +277,75 @@ class Clan():
         exit()
 
     def save_clan(self):
-        data = f'{self.name},{self.age},{self.biome},{self.camp_bg},{self.world_seed},{self.camp_site[0]},{self.camp_site[1]},{self.game_mode},{self.reputation}' + '\n'
-        data = data + self.leader.ID + ',' + str(
-            self.leader_lives) + ',' + str(
-            self.leader_predecessors) + ',' + '\n'
 
+        clan_data = {
+            "clanname": self.name,
+            "clanage": self.age,
+            "biome": self.biome,
+            "camp_bg": self.camp_bg,
+            "worldseed": self.world_seed,
+            "camp_site_1": self.camp_site[0],
+            "camp_site_2": self.camp_site[1],
+            "gamemode": self.game_mode,
+            "instructor": self.instructor.ID,
+            "reputation": self.reputation
+        }
+
+        # LEADER DATA
+        if self.leader:
+            clan_data["leader"] = self.leader.ID
+            clan_data["leader_lives"] = self.leader_lives
+        else:
+            clan_data["leader"] = "None"
+
+        clan_data["leader_predecessors"] = self.leader_predecessors
+
+        # DEPUTY DATA
         if self.deputy:
-            data = data + self.deputy.ID + ',' + str(
-                self.deputy_predecessors) + ',' + '\n'
+            clan_data["deputy"] = self.deputy.ID
         else:
-            data = data + '\n'
+            clan_data["deputy"] = "None"
 
+        clan_data["deputy_predecessors"] = self.deputy_predecessors
+
+        # MED CAT DATA
         if self.medicine_cat:
-            data = data + self.medicine_cat.ID + ',' + str(
-                self.med_cat_predecessors) + ',' + str(self.med_cat_number) + '\n'
+            clan_data["med_cat"] = self.medicine_cat.ID
         else:
-            data = data + '\n'
+            clan_data["med_cat"] = "None"
+        clan_data["med_cat_number"] = self.med_cat_number
+        clan_data["med_cat_predecessors"] = self.med_cat_predecessors
 
-        data = data + self.instructor.ID + '\n'
+        # LIST OF CLAN CATS
+        clan_data['clan_cats'] = ",".join([str(i) for i in self.clan_cats])
 
-        for a in range(len(self.clan_cats)):
-            if a == len(self.clan_cats) - 1:
-                data = data + self.clan_cats[a]
-            elif self.clan_cats[a] in Cat.all_cats.keys():
-                data = data + self.clan_cats[a] + ','
-        data = data + '\n'
-        for a, other_clan in enumerate(self.all_clans):
-            if a:
-                data = f"{data},"
-            data = data + str(other_clan.name) + ";" + str(
-                other_clan.relations) + ";" + str(other_clan.temperament)
+        # OTHER CLANS
+        # Clan Names
+        clan_data["other_clans_names"] = ",".join([str(i.name) for i in self.all_clans])
+        clan_data["other_clans_relations"] = ",".join([str(i.relations) for i in self.all_clans])
+        clan_data["other_clan_temperament"] = ",".join([str(i.temperament) for i in self.all_clans])
 
-        with open(f'saves/{self.name}clan.txt', 'w') as write_file:
-            write_file.write(data)
-        # game.save_clanlist(self.name)
+        with open(f'saves/{self.name}clan.json', 'w') as write_file:
+            json_string = ujson.dumps(clan_data, indent=4)
+            write_file.write(json_string)
+
+        list_data = self.name + "\n"
+        for i in range(len(game.switches['clan_list'])):
+            if game.switches['clan_list'][i] != self.name:
+                list_data = list_data + game.switches['clan_list'][i] + "\n"
+        with open('saves/clanlist.txt', 'w') as write_file:
+            write_file.write(list_data)
 
     def load_clan(self):
+        if os.path.exists('saves/' + game.switches['clan_list'][0] + 'clan.json'):
+            self.load_clan_json()
+        elif os.path.exists('saves/' + game.switches['clan_list'][0] + 'clan.txt'):
+            self.load_clan_txt()
+        else:
+            game.switches['error_message'] = "There was an error loading the clan.txt"
+        pass
+
+    def load_clan_txt(self):
         other_clans = []
         if game.switches['clan_list'] == '':
             number_other_clans = randint(3, 5)
@@ -448,6 +483,85 @@ class Clan():
                 self.all_clans.append(OtherClan())
 
         for cat in members:
+            if cat in Cat.all_cats.keys():
+                game.clan.add_cat(Cat.all_cats[cat])
+                game.clan.add_to_starclan(Cat.all_cats[cat])
+            else:
+                print('Cat not found:', cat)
+        self.load_pregnancy(game.clan)
+        game.switches['error_message'] = ''
+
+    def load_clan_json(self):
+        other_clans = []
+        if game.switches['clan_list'] == '':
+            number_other_clans = randint(3, 5)
+            for _ in range(number_other_clans):
+                self.all_clans.append(OtherClan())
+            return
+        if game.switches['clan_list'][0].strip() == '':
+            number_other_clans = randint(3, 5)
+            for _ in range(number_other_clans):
+                self.all_clans.append(OtherClan())
+            return
+
+        game.switches['error_message'] = "There was an error loading the clan.json"
+        with open('saves/' + game.switches['clan_list'][0] + 'clan.json',
+                  'r') as read_file:
+            clan_data = ujson.loads(read_file.read())
+
+        if "None" in clan_data["leader"]:
+            leader = None
+            leader_lives = 0
+        else:
+            leader = Cat.all_cats[clan_data["leader"]]
+            leader_lives = clan_data["leader_lives"]
+
+        if "None" in clan_data["deputy"]:
+            deputy = None
+        else:
+            deputy = Cat.all_cats[clan_data["deputy"]]
+
+        if "None" in clan_data["med_cat"]:
+            med_cat = Cat.all_cats[clan_data["med_cat"]]
+        else:
+            med_cat = Cat.all_cats[clan_data["med_cat"]]
+
+        game.clan = Clan(clan_data["clanname"],
+                         leader,
+                         deputy,
+                         med_cat,
+                         biome=clan_data["biome"],
+                         camp_bg=clan_data["camp_bg"],
+                         camp_site=(int(clan_data["camp_site_1"]), int(clan_data["camp_site_2"])),
+                         game_mode=clan_data["gamemode"])
+
+        game.clan.age = clan_data["clanage"]
+        game.clan.current_season = game.clan.seasons[game.clan.age % 12]
+        game.clan.leader_lives = leader_lives
+        game.clan.leader_predecessors = clan_data["leader_predecessors"]
+
+        game.clan.deputy_predecessors = clan_data["deputy_predecessors"]
+        game.clan.med_cat_predecessors = clan_data["med_cat_predecessors"]
+        game.clan.med_cat_number = clan_data["med_cat_number"]
+
+        # Instructor Info
+        if clan_data["instructor"] in Cat.all_cats.keys():
+            game.clan.instructor = Cat.all_cats[clan_data["instructor"]]
+            game.clan.add_cat(game.clan.instructor)
+        else:
+            game.clan.instructor = Cat(
+                status=choice(["warrior", "warrior", "elder"]))
+            update_sprite(game.clan.instructor)
+            game.clan.instructor.dead = True
+            game.clan.add_cat(game.clan.instructor)
+
+        for name, relation, temper in zip(clan_data["other_clans_names"].split(","),
+                                          clan_data["other_clans_relations"].split(","),
+                                          clan_data["other_clan_temperament"].split(",")):
+            game.clan.all_clans.append(OtherClan(name, int(relation), temper))
+
+
+        for cat in clan_data["clan_cats"].split(","):
             if cat in Cat.all_cats.keys():
                 game.clan.add_cat(Cat.all_cats[cat])
                 game.clan.add_to_starclan(Cat.all_cats[cat])

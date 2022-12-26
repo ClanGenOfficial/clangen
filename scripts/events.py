@@ -226,6 +226,23 @@ class Events():
 
     game.switches['timeskip'] = False
 
+    def handle_fading(self, cat):
+        if game.settings["fading"] and not cat.prevent_fading and cat.ID != game.clan.instructor.ID and \
+                not cat.faded:
+
+            age_to_fade = 302
+            # Handle opacity
+            cat.opacity = int(100*(1-(cat.dead_for/age_to_fade)**5)+30)
+
+            # Deal with fading the cat if they are old enough.
+            if cat.dead_for > age_to_fade:
+                print(str(cat.name) + " is fading away...")
+                print("dead_for: " + str(cat.dead_for))
+                # If order not to add a cat to the faded list twice, we can't remove them or add them to
+                # faded cat list here. Rather, they are added to a list of cats that will be "faded" at the next save.
+                game.cat_to_fade.append(cat.ID)
+                cat.set_faded()  # This is a flag to ensure they behave like a faded cat in the meantime.
+
     def one_moon_cat(self, cat):
         # ---------------------------------------------------------------------------- #
         #                                trigger events                                #
@@ -234,6 +251,7 @@ class Events():
         if cat.dead:
             cat.thoughts()
             cat.dead_for += 1
+            self.handle_fading(cat) # Deal with fading.
             return
 
         self.living_cats += 1

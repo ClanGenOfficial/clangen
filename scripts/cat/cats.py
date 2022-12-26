@@ -15,6 +15,7 @@ from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_c
 from scripts.utility import *
 from scripts.game_structure.game_essentials import *
 from scripts.cat_relations.relationship import *
+import scripts.game_structure.image_cache as image_cache
 
 
 class Cat():
@@ -121,7 +122,33 @@ class Cat():
                  suffix=None,
                  ID=None,
                  moons=None,
-                 example=False):
+                 example=False,
+                 faded=False, # Set this to True if you are loading a faded cat. This will prevent the cat from being added to the list
+                 age="" # Only used for faded cats, to choose the correct sprite
+                 ):
+
+        # This must be at the top. It's a smaller list of things to init, which is only for faded cats
+        if faded:
+            self.ID = ID
+            self.name = Name(status, prefix=prefix, suffix=suffix)
+            self.parent1 = None
+            self.parent2 = None
+            self.status = status
+            self.moons = moons
+            if moons > 300:
+                # Out of range, always elder
+                self.age = 'elder'
+            else:
+                # In range
+                for key_age in self.age_moons.keys():
+                    if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
+                        self.age = key_age
+
+            self.set_faded() # Sets the faded sprite and faded tag
+
+            return
+
+
         self.gender = gender
         self.status = status
         self.backstory = backstory
@@ -175,6 +202,13 @@ class Cat():
         self.corruption = 0
         self.no_kits = False
         self.paralyzed = False
+
+        self.opacity = 100
+        self.prevent_fading = False #Prevents a cat from fading.
+        self.faded_offspring = []  # Stores of a list of faded offspring, for family page purposes.
+
+        self.faded = faded  # This is only used to flag cat that are faded, but won't be added to the faded list until
+                            # the next save.
 
         # setting ID
         if ID is None:
@@ -1050,7 +1084,10 @@ class Cat():
         parents = other_cat.get_parents()
         for parent in parents:
             # Get parent 'Cat'
-            parent_obj = Cat.all_cats.get(parent)
+            if parent in Cat.all_cats.keys():
+                parent_obj = Cat.all_cats.get(parent)
+            else:
+                parent_obj = Cat.load_faded_cat(parent)
             if parent_obj:
                 # If there are parents, get grandparents and check if our ID is among them.
                 if self.ID in parent_obj.get_parents():
@@ -1767,6 +1804,8 @@ class Cat():
                 self.relationships[self.mate] = Relationship(self, mate)
 
         self.mate = None
+        if self.mate in Cat.all_cats:
+            Cat.all_cats[self.mate].mate = None
 
     def set_mate(self, other_cat):
         """Assigns other_cat as mate to self."""
@@ -1932,7 +1971,44 @@ class Cat():
             except:
                 print(f'WARNING: There was an error reading the relationship file of cat #{self}.')
 
+    def set_faded(self):
+        """This function is for cats that are faded. It will set the sprite and the faded tag"""
+        self.faded = True
 
+        # Sillotette sprite
+        if self.age in ['kitten']:
+            file_name = "faded_kitten.png"
+        elif self.age in ['adult', 'young adult', 'senior adult']:
+            file_name = "faded_adult.png"
+        elif self.age in ["adolescent"]:
+            file_name = "faded_adol.png"
+        else:
+            file_name = "faded_elder.png"
+
+        self.sprite = image_cache.load_image(f"sprites/faded/{file_name}").convert_alpha()
+
+    @staticmethod
+    def load_faded_cat(cat):
+        """Loads a faded cat, returning the cat object. This object is saved nowhere else. """
+        print("loading faded cat")
+        try:
+            with open('saves/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
+                cat_info = ujson.loads(read_file.read())
+        except:
+            print("Error in loading faded cat")
+            return False
+
+        cat_ob = Cat(ID=cat_info["ID"], prefix=cat_info["name_prefix"], suffix=cat_info["name_suffix"],
+                     status=cat_info["status"], moons=cat_info["moons"], faded=True)
+        if cat_info["parent1"]:
+            cat_ob.parent1 = cat_info["parent1"]
+        if cat_info["parent2"]:
+            cat_ob.parent2 = cat_info["parent2"]
+        cat_ob.paralyzed = cat_info["paralyzed"]
+        cat_ob.faded_offspring = cat_info["faded_offspring"]
+        cat_ob.faded = True
+
+        return cat_ob
 # ---------------------------------------------------------------------------- #
 #                                  properties                                  #
 # ---------------------------------------------------------------------------- #
