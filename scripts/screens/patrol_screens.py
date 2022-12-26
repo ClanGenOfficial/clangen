@@ -254,6 +254,15 @@ class PatrolScreen(Screens):
                                                                  pygame.image.load(
                                                                      "resources/images/patrol_cat_frame.png").convert_alpha())
 
+        #Frames
+        self.elements["able_frame"] = pygame_gui.elements.UIImage(pygame.Rect((40, 460), self.able_box.get_size()),
+                                                                  self.able_box)
+        self.elements["able_frame"].disable()
+
+        self.elements["patrol_frame"] = pygame_gui.elements.UIImage(pygame.Rect((490, 460), self.patrol_box.get_size()),
+                                                                    self.patrol_box)
+        self.elements["patrol_frame"].disable()
+
         # Buttons
         self.elements["add_remove_cat"] = UIImageButton(pygame.Rect((350, 460), (98, 30)), "",
                                                         object_id="#add_cat_button")
@@ -786,11 +795,7 @@ class PatrolScreen(Screens):
         self.clear_cat_buttons()
 
     def on_use(self):
-
-        # Due to an bug in pygame where buttons on top if UIImage don;t register hover imput, we must do this.
-        if self.patrol_stage == 'choose_cats':
-            screen.blit(PatrolScreen.able_box, (40, 460))
-            screen.blit(PatrolScreen.patrol_box, (490, 460))
+        pass
 
     def get_list_text(self, patrol_list):
         if not patrol_list:

@@ -504,6 +504,9 @@ class Game():
 
             self.clan.remove_cat(cat) # Remove the cat from the active cats lists
 
+            # Add ID to list of faded cats.
+            self.clan.faded_ids.append(cat)
+
         #Save the copy data is needed
         if game.settings["save_faded_copy"]:
             if not os.path.exists('saves/' + clanname + '/faded_cats_info_copy.txt'):
