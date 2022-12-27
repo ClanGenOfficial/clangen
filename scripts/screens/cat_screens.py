@@ -2030,10 +2030,10 @@ class CeremonyScreen(Screens):
         for i in reversed(Cat.all_cats.keys()):
             c = Cat.all_cats[i]
             if c.dead:
-                if not queen and c.status == 'queen' and str(c.name).strip() != "unnamed queen":
+                if not queen and c.status == 'queen' and str(c.name).strip() != "unnamed queen" and not c.outside:
                     queen = c
                     continue
-                elif not kit and c.status == 'kit':
+                elif not kit and c.status == 'kitten':
                     kit = c
                     continue
                 elif not app and c.status == 'apprentice':
@@ -2104,8 +2104,7 @@ class CeremonyScreen(Screens):
             prev_lead_text = 'Finally, ' + str(prev_lead.name.prefix) + 'star steps forward. There is pride in their gaze as they stare into ' + dep_name + '\'s eyes. They give a life for ' + choice(prev_lead_virtues) + '.'
         else: 
             prev_lead_text = str(choice(names.normal_prefixes)) + 'star, one of Starclan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + choice(prev_lead_virtues) + '.'
-        
-        if (prev_lead):
+        if prev_lead:
             ending_text = str(prev_lead.name) + " hails " + dep_name + " by their new name, " + str(cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(cat.name.prefix) + "star\'s name in support. " + str(cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the clan."
         else:
             ending_text = "StarClan hails " + dep_name + " by their new name, " + str(cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(cat.name.prefix) + "star\'s name in support. " + str(cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the clan."
