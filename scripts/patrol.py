@@ -679,7 +679,7 @@ class Patrol():
         condition_lists = {
             "battle_injury": ["claw-wound", "bite-wound", "mangled leg", "mangled tail", "torn pelt"],
             "minor_injury": ["sprain", "sore", "bruises", "scrapes"],
-            "blunt_force_injury": ["broken bone", "paralyzed", "head damage", "broken jaw"],
+            "blunt_force_injury": ["broken bone", "broken back", "head damage", "broken jaw"],
             "hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
             "cold_injury": ["shivering", "frostbite"],
             "big_bite_injury": ["bite-wound", "broken bone", "torn pelt", "mangled leg", "mangled tail"],
