@@ -4,7 +4,7 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["fighting", "death", "scar", "big_bite_injury", "border", "respect", "trust", "clan_to_patrol", "sacrificial"],
-    "intro_text": "r_c tracks the scent of a large dog, wandering along the edge of the clan's territory.",
+    "intro_text": "r_c tracks the scent of a large dog, wandering along the edge of the Clan's territory.",
     "decline_text": "r_c decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
     "chance_of_success": 30,
     "exp": 40,
@@ -17,7 +17,7 @@
     "fail_text": [
         null,
         null,
-        "r_c would give their life to protect c_n, and as they lead the huge dog away from the clan, in their heart, they accept that's what they're doing. As darkness closes in around them and the dog's jaws descend again, r_c tries to sink their claws into its face, and hopes desperately that they led it far enough.",
+        "r_c would give their life to protect c_n, and as they lead the huge dog away from the Clan, in their heart, they accept that's what they're doing. As darkness closes in around them and the dog's jaws descend again, r_c tries to sink their claws into its face, and hopes desperately that they led it far enough.",
         "r_c would give their life to protect c_n, and as they charge past the huge dog to lead it far, far from c_n, they accept it. Fear gives them speed, but it only takes one successful hit. Miraculously they fly out of the dog's jaws while it shakes them, landing in a refuge. r_c is injured, desperate, and terrified - but they're alive."
     ],
     "win_skills": ["excellent fighter"],
@@ -37,7 +37,7 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["fighting", "death", "scar", "big_bite_injury", "respect", "trust", "border", "clan_to_patrol", "patrol_rel", "pos_fail"],
-    "intro_text": "Your patrol tracks the scent of a large dog, wandering along the edge of the clan's territory.",
+    "intro_text": "Your patrol tracks the scent of a large dog, wandering along the edge of the Clan's territory.",
     "decline_text": "Your patrol decides not to pursue such a dangerous creature, especially seeing as it hasn't crossed the border.",
     "chance_of_success": 40,
     "exp": 20,
@@ -49,7 +49,7 @@
     "fail_text": [
         "The patrol tries to keep watch on the dog from a distance, but it spots the cats and they have to scatter. Everyone escapes just fine, but they lose track of the dog. It could be anywhere still out there, lurking, waiting to attack.",
         "s_c tries to take the lion's share of the effort to lead the dog away, but their strength fails them and the rest of the patrol needs to rescue them, cutting short the results of the patrol. Instead, everyone knows the dog could still be lurking on their borders.",
-        "The patrol tries to lead the dog away from the clan's borders, but with so few cats it's impossible to cover each other's backs. r_c falls to the dog as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their clanmate.",
+        "The patrol tries to lead the dog away from the Clan's borders, but with so few cats it's impossible to cover each other's backs. r_c falls to the dog as the rest of the patrol runs for their lives back to camp, terrified out of their pelts and mourning their clanmate.",
         "The patrol tries bravely to lead the dog away from c_n borders, but with so few cats it's impossible to cover each other's backs. r_c gets caught while running and it's all the rest of the patrol can do to distract the dog long enough to get r_c to safety."
     ],
     "win_skills": ["excellent fighter"],
@@ -71,7 +71,7 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["fighting", "death", "scar", "big_bite_injury", "respect", "trust", "border", "clan_to_patrol", "patrol_rel", "pos_fail"],
-    "intro_text": "Your patrol stumbles across a large dog, wandering in the middle of the clan's territory.",
+    "intro_text": "Your patrol stumbles across a large dog, wandering in the middle of the Clan's territory.",
     "decline_text": "Your patrol decides not to pursue such a dangerous creature. c_n will just have to hope it doesn't come any nearer to camp.",
     "chance_of_success": 50,
     "exp": 20,

@@ -75,8 +75,8 @@
         "success_text": [
             "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away.",
             "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and after a short fight, the rogues are forced to retreat.",
-            "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich plains outside of c_n territory.",
-            "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich plains outside of c_n territory."
+            "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of a prey-rich plains outside of c_n territory.",
+            "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the Clan. Tensions are eased when s_c informs the rogues of a prey-rich plains outside of c_n territory."
         ],
         "fail_text": [
             null,
@@ -106,7 +106,7 @@
         "chance_of_success": 10,
         "exp": 40,
         "success_text": [
-            "Concerned for the clan, r_c creeps through the woods, searching for the sett. It's empty when they arrive, its owner out foraging late. The sunlight blinds the beast as it fumbles its way back, and r_c attacks - but all it gives them is the opportunity for a lucky hit and an easy retreat, and r_c must give up the idea of saving the Clan single-pawed.",
+            "Concerned for the Clan, r_c creeps through the woods, searching for the sett. It's empty when they arrive, its owner out foraging late. The sunlight blinds the beast as it fumbles its way back, and r_c attacks - but all it gives them is the opportunity for a lucky hit and an easy retreat, and r_c must give up the idea of saving the Clan single-pawed.",
             null,
             "Worried about their clanmates, s_c sets out to try to solve the problem on their own. Once they find the sett, they set to yowling, challenging the beast to come out and fight until it emerges, grumbling and blinking in the sunlight. While s_c manages to get several good swipes in, the badger holds its ground, and they return to camp deflated.",
             "s_c sets out to separate truth from rumor. There are fresh tracks in the mud under the canopy, but they're smaller than s_c expected. To confirm their theory, they stake out the sett itself, and when the beast pokes its head out at night they're able to confirm it's a juvenile - young and inexperienced. s_c pads quietly back to camp with the intel."

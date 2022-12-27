@@ -240,7 +240,7 @@
         "r_c heads off to one of their favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that prairie dog thought.",
         "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates.",
         "s_c gets the chance to try out an idea they've been sitting on for a while. There's a rabbit warren that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing baby rabbits out by the pawful.",
-        "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+        "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
     ],
     "fail_text": [
         "You can't catch what isn't there, and the prey today is very not there.",
@@ -268,7 +268,7 @@
         "r_c heads off to one of their favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that prairie dog thought. They snicker to themselves as they pad back to camp.",
         "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
         "s_c gets the chance to try out an idea they've been sitting on for a while. There's a rabbit warren that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
-        "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+        "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
     ],
     "fail_text": [
         "You can't catch what isn't there, and the prey today is very not there.",
@@ -296,7 +296,7 @@
         "r_c heads off to one of their favorite spots in the grasslands, a trench running along in a winding line across a productive and lush field providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that prairie dog thought. They snicker to themselves as they pad back to camp.",
         "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
         "s_c gets the chance to try out an idea they've been sitting on for a while. There's a rabbit warren that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
-        "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+        "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
     ],
     "fail_text": [
         "You can't catch what isn't there, and the prey today is very not there.",
@@ -1882,9 +1882,9 @@
     "chance_of_success": 30,
     "exp": 30,
     "success_text": [
-        "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
+        "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
         "Your patrol drives away the fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
         "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
@@ -1922,7 +1922,7 @@
     "success_text": [
         "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the fox, seeks out her den, and kills her young cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
         "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she and her cubs pose.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
         "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
@@ -1955,9 +1955,9 @@
     "chance_of_success": 20,
     "exp": 50,
     "success_text": [
-        "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
+        "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
         null,
-        "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
+        "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
         "A brilliant battle move by s_c knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
     ],
     "fail_text": [
@@ -1992,9 +1992,9 @@
     "chance_of_success": 30,
     "exp": 30,
     "success_text": [
-        "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the clan. If they don't starve, c_n will hunt them down - they do not share with foxes.",
+        "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share with foxes.",
         "Your patrol drives away the fox, seeks out her den, and kills her cubs. It's brutal, but these fluffy small foxes would one day have grown to be kit-killers and thieves.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
         "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
@@ -2032,7 +2032,7 @@
     "success_text": [
         "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the fox, seeks out her den, and kills her growing cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
         "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she and her cubs pose.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
         "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
@@ -2065,9 +2065,9 @@
     "chance_of_success": 10,
     "exp": 50,
     "success_text": [
-        "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the clan.",
+        "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the Clan.",
         null,
-        "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
+        "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
         "A brilliant battle move by s_c at a critical moment knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
     ],
     "fail_text": [
@@ -2176,7 +2176,7 @@
     "success_text": [
         "It takes r_c's every scrap of bravery and strength to drive away the vixen - her near grown litter, fat on the bounty of Leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in their woods, before they start to compete for prey in Leaf-bare.",
         null,
-        "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her cubs pose a threat to the clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
+        "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
         "A brilliant battle move by s_c at a critical moment knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
     ],
     "fail_text": [
@@ -2211,9 +2211,9 @@
     "chance_of_success": 30,
     "exp": 30,
     "success_text": [
-        "The swift vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
+        "The swift vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
         "Your patrol drives away the fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
         "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
@@ -2251,7 +2251,7 @@
     "success_text": [
         "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the fox, seeks out her den, and kills her young cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
         "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she and her cubs pose.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
         "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
@@ -2284,9 +2284,9 @@
     "chance_of_success": 20,
     "exp": 50,
     "success_text": [
-        "The swift vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
+        "The swift vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
         null,
-        "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
+        "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
         "A brilliant battle move by s_c knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
     ],
     "fail_text": [
@@ -2321,9 +2321,9 @@
     "chance_of_success": 30,
     "exp": 30,
     "success_text": [
-        "The swift vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the clan. If they don't starve, c_n will hunt them down - they do not share with foxes.",
+        "The swift vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the Clan. If they don't starve, c_n will hunt them down - they do not share with foxes.",
         "Your patrol drives away the fox, seeks out her den, and kills her cubs. It's brutal, but these fluffy small foxes would one day have grown to be kit-killers and thieves.",
-        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+        "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
         "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
@@ -2361,7 +2361,7 @@
     "success_text": [
     "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the fox, seeks out her den, and kills her growing cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
     "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she and her cubs pose.",
-    "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
+    "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
     "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
@@ -2394,9 +2394,9 @@
     "chance_of_success": 10,
     "exp": 50,
     "success_text": [
-    "The swift vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the clan.",
+    "The swift vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the Clan.",
     null,
-    "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
+    "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her dependent cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
     "A brilliant battle move by s_c at a critical moment knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
     ],
     "fail_text": [
@@ -2504,7 +2504,7 @@
     "success_text": [
         "It takes r_c's every scrap of bravery and strength to drive away the vixen - her near grown litter, fat on the bounty of Leaf-fall, is a challenge for another day. c_n will have to deal with the young foxes now roaming motherless in their woods, before they start to compete for prey in Leaf-bare.",
         null,
-        "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her cubs pose a threat to the clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
+        "s_c displays incredible skill, driving the mother vixen and her brood out of the forest all by themselves. Now neither the fox nor her cubs pose a threat to the Clan. They swell with pride, feeling the confidence of knowing that they're truly one of the best fighters c_n has ever produced.",
         "A brilliant battle move by s_c at a critical moment knocks the vixen off balance, and s_c manages to drive her out of c_n territory, though it takes every spark of strength in their pelt to do it alone."
     ],
     "fail_text": [

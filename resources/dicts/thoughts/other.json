@@ -84,7 +84,7 @@
             "Purring as the sun's warmth eases their old joints",
             "Is glad they chose this life of freedom.",
             "Thinks about old friends",
-            "Hopes it isn't too late to join a clan",
+            "Hopes it isn't too late to join a Clan",
             "Wonders where they'll go when they die",
             "Telling stories about their younger days"
         ]
@@ -180,10 +180,10 @@
             "Tries to come up with a warrior name for themself"
         ],
         "warrior": [
-            "Hopes that the clan's kits are doing well",
+            "Hopes that the Clan's kits are doing well",
             "Misses the warmth of the warriors' den",
             "Hopes their friends from c_n are doing okay",
-            "Dreams about hunting for their clan",
+            "Dreams about hunting for their Clan",
             "Wonders if the apprentices of the Clan are now warriors"
         ],
         "deputy": [
@@ -196,7 +196,7 @@
             "Feels lost without the support of their Clan behind them. ",
             "Wonders if their deputy has already become leader",
             "Hopes that the Clan is doing okay without them",
-            "Feels like they have failed their clan",
+            "Feels like they have failed their Clan",
             "Is wondering if starclan is still able to contact them"
         ],
         "elder": [
@@ -209,7 +209,7 @@
             "Their aches and pain make them unable to hunt",
             "Feels the cold seep and settle into their old bones",
             "Is unable to remember what herbs to look out for to ease their pain",
-            "Wishes they could check in on the clan's kits"
+            "Wishes they could check in on the Clan's kits"
             ],
         "med": [
             "Hopes that their Clan is doing okay without their help"

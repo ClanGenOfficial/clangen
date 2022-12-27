@@ -172,7 +172,7 @@
             "r_c heads off to one of their favorite spots in the mountains, a gully with stepped ridges running up and down its sides providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that ground squirrel thought.",
             "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates.",
             "s_c gets the chance to try out an idea they've been sitting on for a while. There's a nest of pika that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing out small rodents by the handful.",
-            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
         ],
         "fail_text": [
             "You can't catch what isn't there, and the prey today is very not there.",
@@ -224,7 +224,7 @@
             "r_c heads off to one of their favorite spots in the mountains, a gully with stepped ridges running up and down its sides providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that ground squirrel thought. They snicker to themselves as they pad back to camp.",
             "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
             "s_c gets the chance to try out an idea they've been sitting on for a while. There's a nest of pika that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing out small rodents by the handful. This is a good spot to remember when c_n hits hard times in Leaf-bare.",
-            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
         ],
         "fail_text": [
             "You can't catch what isn't there, and the prey today is very not there.",
@@ -279,7 +279,7 @@
             "r_c heads off to one of their favorite spots in the mountains, a gully with stepped ridges running up and down its sides providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that ground squirrel thought. They snicker to themselves as they pad back to camp.",
             "r_c finds a fat, dumb, slow rabbit, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
             "s_c gets the chance to try out an idea they've been sitting on for a while. There's a nest of pika that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing out small rodents by the handful. This is a good spot to remember when c_n hits hard times in Leaf-bare.",
-            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+            "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
         ],
         "fail_text": [
             "You can't catch what isn't there, and the prey today is very not there.",
@@ -1397,7 +1397,7 @@
             "The patrol decides to fight the eagle for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
             null,
             null,
-            "The patrol starts a furious fight over the crucial food, and r_c wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the clan."
+            "The patrol starts a furious fight over the crucial food, and r_c wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the Clan."
         ],
         "win_skills": [
             "excellent fighter"
@@ -1451,7 +1451,7 @@
             "The patrol decides to fight the eagle for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
             null,
             null,
-            "The patrol starts a furious fight over the crucial food, and r_c wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the clan."
+            "The patrol starts a furious fight over the crucial food, and r_c wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the Clan."
         ],
         "win_skills": [
             "excellent fighter"
@@ -1506,7 +1506,7 @@
             "The patrol decides to fight the eagle for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
             null,
             "Keen to prove themselves, s_c sprints across the ice and leaps for the eagle. Instead what they get is a damp, cold trip in the Leaf-bare, and the patrol rushes them home to get treated for chills and frostbite.",
-            "The patrol starts a furious fight over the crucial food, and r_c wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the clan."
+            "The patrol starts a furious fight over the crucial food, and r_c wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the Clan."
         ],
         "win_skills": [
             "excellent fighter"
@@ -1561,7 +1561,7 @@
             "The patrol decides to fight the eagle for possession of the prey, but while its talons are occupied holding on to its prey, its beak is not, and it takes a nasty chunk out of r_c before the cats retreat.",
             null,
             "Keen to prove themselves, s_c sprints across the ice and leaps for the eagle. Instead what they get is a damp, cold trip in the Leaf-bare, and the patrol rushes them home to get treated for chills and frostbite.",
-            "The patrol starts a furious fight over the crucial food, and r_c wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the clan."
+            "The patrol starts a furious fight over the crucial food, and r_c wades into the thick of it, taking a blow that would've killed another cat. They lose a life bleeding out on the ground, though at this time of year, it was worth it to feed the Clan."
         ],
         "win_skills": [
             "excellent fighter"
