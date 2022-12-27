@@ -4,9 +4,14 @@
         "biome": "Any",
         "season": "Any",
         "tags": ["hunting"],
-        "intro_text": "Your patrol comes across a mouse.",
-        "success_text": ["Your patrol catches the mouse!"],
-        "fail_text": ["Your patrol narrowly misses the mouse."],
+        "intro_text": "Your patrol catches scent of a mouse nearby.",
+        "success_text": [
+            "r_c locates the mouse and begins to stalk. The mouse nibbles on a seed, unaware of the hunting cat. r_c waggles their haunches and leaps, pinning the mouse beneath a paw as they make the killing bite.",
+            "r_c pinpoints the location of the prey and begins creeping forward. They're almost within pouncing distance when the mouse suddenly bolts. With a lash of their tail, r_c leaps after the mouse, barely snagging it before it reaches a burrow. They purr in satisfaction as prey-blood hits their tongue."
+        ],
+        "fail_text": [
+            "Your patrol narrowly misses the mouse."
+        ],
         "decline_text": "Your patrol ignores the mouse.",
         "chance_of_success": 60,
         "exp": 10,
@@ -20,14 +25,14 @@
         "patrol_id": "gen_hunt_mouse2",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting", "apprentice"],
+        "tags": ["hunting", "apprentice", "small_prey", "warrior"],
         "intro_text": "Your patrol comes across a mouse.",
         "decline_text": "Your patrol ignores the mouse.",
         "chance_of_success": 60,
         "exp": 10,
         "success_text": [
             "r_c pounces on the mouse, with a squeak of surprise from both prey and apprentice.",
-            "r_c leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"],
+            "app1 leaps onto the mouse, an easy kill! They're really getting the hang of hunting!"],
         "fail_text": ["Your patrol narrowly misses the mouse."],
         "min_cats": 1,
         "max_cats": 3,
@@ -38,18 +43,19 @@
         "patrol_id": "gen_hunt_rat1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting"],
+        "tags": ["hunting", "big_prey"],
         "intro_text": "Your patrol comes across a large rat.",
-        "success_text": ["Your patrol catches the rat! More freshkill!",
-        "The rat rears up and hisses at r_c, but while it's distracted p_l takes it out with a quick strike.",
-        "The rat is huge and quick, but s_c is quicker, bringing it down just before it scurries out of reach. Everyone gathers around them in congratulations of the skillful kill."
+        "success_text": [
+            "Your patrol catches the rat! More freshkill!",
+            "The rat rears up and hisses at r_c, but while it's distracted, p_l takes it out with a quick strike.",
+            "The rat is huge and quick, but s_c is quicker, bringing it down just before it scurries out of reach. Everyone gathers around them in congratulations of the skillful kill."
         ],
         "fail_text": ["Your patrol misses the rat, and their confidence is shaken."],
         "decline_text": "Your patrol ignores the rat.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 20,
         "win_skills": ["great hunter", "fantastic hunter"],
-        "min_cats": 1,
+        "min_cats": 2,
         "max_cats": 6,
         "antagonize_text": null,
         "antagonize_fail_text": null
@@ -58,7 +64,7 @@
         "patrol_id": "gen_hunt_hare1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting"],
+        "tags": ["hunting", "big_prey"],
         "intro_text": "Your patrol comes across a large hare.",
         "success_text": [
             "Your patrol catches the hare!",
@@ -79,13 +85,16 @@
         "patrol_id": "gen_hunt_bird1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting"],
-        "intro_text": "Your patrol comes across a bird.",
-        "success_text": ["Your patrol catches the bird before it flies away!"],
+        "tags": ["hunting", "small_prey"],
+        "intro_text": "Your patrol comes across a bird that's occupied scratching at the ground for insects.",
+        "success_text": [
+            "Your patrol catches the bird before it flies away!",
+            "r_c creeps towards the bird, setting their paws down gently. The bird notices the cat sneaking towards it and attempts to take off. r_c bounds forward and smacks the bird to the ground with an outstretched paw. Outstanding!"
+        ],
         "fail_text": ["Your patrol narrowly misses the bird."],
         "decline_text": "Your patrol ignores the bird.",
         "chance_of_success": 50,
-        "exp": 10,
+        "exp": 15,
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
         "max_cats": 3,
@@ -96,10 +105,13 @@
         "patrol_id": "gen_hunt_squirrel1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting"],
-        "intro_text": "Your patrol comes across a squirrel.",
-        "success_text": ["Your patrol catches the squirrel!"],
-        "fail_text": ["Your patrol narrowly misses the squirrel."],
+        "tags": ["hunting", "small_prey"],
+        "intro_text": "Your patrol comes across a squirrel. It's engrossed in nibbling at a morsel beneath a tree.",
+        "success_text": [
+            "Stealthily, r_c stalks forward. The squirrel has no idea what's coming as the cat pounces on it and breaks its neck. r_c sends a silent thanks to StarClan for this prey.",
+            "r_c rapidly pads towards the squirrel, their tailtip twitching in excitement. The squirrel is alerted to their presence with a bird's alarm call, but r_c launches themself forward and cuts off its escape with a bite to the back of the head."
+        ],
+        "fail_text": ["Your patrol narrowly misses the squirrel as it's alerted by a bird's alarm call."],
         "decline_text": "Your patrol ignores the squirrel.",
         "chance_of_success": 50,
         "exp": 10,
@@ -113,10 +125,15 @@
         "patrol_id": "gen_hunt_fish1",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting"],
-        "intro_text": "Your patrol sees the shadow of a fish in a river.",
-        "success_text": ["r_c hooks the fish out of the water! More freshkill!"],
-        "fail_text": ["Your patrol accidentally scares the fish away."],
+        "tags": ["hunting", "small_prey"],
+        "intro_text": "Your patrol glimpses the shadow of a fish as they pad past a stream.",
+        "success_text": [
+            "r_c very carefully walks to the water's edge and waits for their chance. When the fish is near, they hook it out of the water with their claws. More freshkill!",
+            "r_c pads closer to the water's edge, careful to keep their shadow away from the water. The fish doesn't seem to notice them and darts too close. r_c's paw flashes into the water and the fish flops onto the bank. r_c kills it and happily carries it back to camp."
+        ],
+        "fail_text": [
+            "The patrol moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water."
+        ],
         "decline_text": "Your patrol ignores the fish.",
         "chance_of_success": 50,
         "exp": 10,
@@ -130,7 +147,7 @@
         "patrol_id": "gen_hunt_fish2",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting"],
+        "tags": ["hunting", "big_prey"],
         "intro_text": "Your patrol sees the shadow of a school of fish in the river.",
         "decline_text": "Your patrol ignores the fish.",
         "chance_of_success": 50,
@@ -140,7 +157,9 @@
             null,
             "s_c makes fishing look easy, giving out tips to any interested cats."
         ],
-        "fail_text": ["Your patrol accidentally scares the fish away."],
+        "fail_text": [
+            "The patrol moves too suddenly. The flickering shadow causes the fish to quickly vanish into murkier water."
+        ],
         "win_skills": ["good hunter", "great hunter", "fantastic hunter"],
         "min_cats": 4,
         "max_cats": 6,
@@ -159,7 +178,7 @@
             "r_c catches the rabbit, but when they report about the strange incident at camp, the dead rabbit is taken far away and buried.",
             "s_c stops the patrol from catching the rabbit and takes the opportunity to teach them about illnesses that can pass from prey to cat."],
         "fail_text": [
-            "r_c leaps for the rabbit but it still manages to slip away, despite it's obvious illness.",
+            "r_c leaps for the rabbit but it still manages to slip away, despite its obvious illness.",
             null,
             null,
             "r_c catches the rabbit, but later they and the cats who eat it become violently ill."],
@@ -176,18 +195,19 @@
         "patrol_id": "gen_hunt_rabbit2",
         "biome": "Any",
         "season": "Any",
-        "tags": ["hunting", "trust", "minor_injury"],
+        "tags": ["hunting", "trust", "minor_injury", "big_prey"],
         "intro_text": "A rabbit bursts out from cover, startled by the patrol.",
         "decline_text": "They watch it go, just as startled.",
         "chance_of_success": 40,
         "exp": 10,
         "success_text": [
-            "The patrol rallies almost instantly, and through teamwork manage to corner and catch the rabbit!",
+            "The patrol rallies almost instantly, and manages to corner and catch the rabbit!",
             null,
-            "s_c reacts quicker than thought, tearing off after the rabbit and bringing it down."
+            "s_c reacts quickly, tearing off after the rabbit and slamming a paw on its head to bring it down."
         ],
-        "fail_text": ["Your patrol jumps after it, but the rabbit has too great of a head start.",
-        "s_c is quicker than anyone else, tearing after the rabbit, but in their haste they put a paw wrong and stop as a sharp twinge of pain shoots up their leg."
+        "fail_text": [
+            "Your patrol jumps after it, but the rabbit has too great of a head start.",
+            "s_c is quicker than anyone else, tearing after the rabbit, but in their haste they put a paw wrong and stop as a sharp twinge of pain shoots up their leg."
         ],
         "win_skills": ["great hunter", "fantastic hunter"],
         "min_cats": 1,
