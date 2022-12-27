@@ -595,7 +595,7 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["training", "platonic", "trust", "apprentice"],
-    "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with app1 with them.",
+    "intro_text": "p_l suggests this might be a good chance for the cats to practice new hunting techniques, particularly with app1 present.",
     "decline_text": "They decide to focus on working on a different skill instead.",
     "chance_of_success": 80,
     "exp": 20,

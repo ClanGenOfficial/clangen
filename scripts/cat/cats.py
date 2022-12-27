@@ -524,10 +524,9 @@ class Cat():
                         "beating heart of a mouse, but they're uninterested, staring at the wall of their nest and "
                         "refusing to talk.",
                         "Things are never going to be the same now. Could never be the same. r_c doesn't know how "
-                        "they're supposed to rise the next morning and go on patrol. They refuse to.",
+                        "they're supposed to rise the next morning and go on with life. They refuse to.",
                         "r_c spends time by themselves, letting themselves mourn m_c and the time they should have "
-                        "had together. They'll return to their duties eventually, of course they will, but no one can "
-                        "begrudge them the need to grieve.",
+                        "had together. No one can begrudge them the need to grieve.",
                         "Cats offer r_c comfort and care. They refuse all of it."
                     ]))
                 elif severity == 'minor':
