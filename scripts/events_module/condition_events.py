@@ -705,6 +705,8 @@ class Condition_Events():
                         cat.injuries.pop(y)
 
         if new_condition in ILLNESSES:
+            if new_condition == 'redcough':
+                cat.injuries.pop('poisoned')
             cat.get_ill(new_condition, event_triggered=True)
         elif new_condition in INJURIES:
             if new_condition == 'lingering shock':
