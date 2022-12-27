@@ -394,18 +394,18 @@
     "biome": "plains",
     "season": "Any",
     "tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
-    "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic but with plenty of criss-crossed overlapping tunnels.",
+    "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic, but with plenty of criss-crossed, overlapping tunnels.",
     "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
     "chance_of_success": 80,
     "exp": 15,
     "success_text": [
-            "app1 carefully practices padding around, in the pitch black, in the dim where the light from the entrance still reaches, with their eyes shut, all of it. It's definitely easier in bigger burrows than the ones rabbits make, and it's good to train where no one can see them faceplant into the walls.",
-            "p_l reassures app1 that this sett is well known and safe. But with a little mischief in their expression, p_l suggests being careful where they set their paws. app1 discovers what that means when they're wandering around in the dark and slide head over heels down a steep slope. Maybe that'd be fun to do again?",
-            "app1 asks s_c why they learn all this. Once, their Clan starved through a leaf-bare, grass all dead, cats chewing on snow just to have something in their bellies. The only cat able to hunt was an overlooked warrior, lithe, small, and blind. For her the tunnels opened like a flower full of prey. She was their savior, they must never forget."
+        "app1 carefully practices padding around, in the pitch black, in the dim where the light from the entrance still reaches, with their eyes shut, all of it. It's definitely easier in bigger burrows than the ones rabbits make, and it's good to train where no one can see them faceplant into the walls.",
+        "p_l reassures app1 that this sett is well known and safe. But with a little mischief in their expression, p_l suggests being careful where they set their paws. app1 discovers what that means when they're wandering around in the dark and slide head over heels down a steep slope. Maybe that'd be fun to do again?",
+        "app1 asks s_c why they learn all this. Once, their Clan starved through a leaf-bare, grass all dead, cats chewing on snow just to have something in their bellies. The only cat able to hunt was an overlooked warrior, lithe, small, and blind. For her the tunnels opened like a flower full of prey. She was their savior, they must never forget."
     ],
     "fail_text": [
-            "app1 refuses to believe tunnels could possibly be hard to navigate. They also refuse to get any closer to them, and start an argument with p_l about it.",
-            "app1 maintains that tunnels aren't useful for anything, just annoying obstacles in the landscape, and p_l can't get them to take the training session seriously."
+        "app1 refuses to believe tunnels could possibly be hard to navigate. They also refuse to get any closer to them, and start an argument with p_l about it.",
+        "app1 maintains that tunnels aren't useful for anything, just annoying obstacles in the landscape, and p_l can't get them to take the training session seriously."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["None"],
@@ -421,7 +421,7 @@
     "biome": "plains",
     "season": "Any",
     "tags": ["training", "apprentice", "trust", "comfort", "dislike", "warrior"],
-    "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic but with plenty of criss-crossed overlapping tunnels.",
+    "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic, but with plenty of criss-crossed, overlapping tunnels.",
     "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
     "chance_of_success": 80,
     "exp": 15,
@@ -448,7 +448,7 @@
     "biome": "plains",
     "season": "Any",
     "tags": ["training", "apprentice", "trust", "comfort", "dislike", "two_apprentices", "warrior"],
-    "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic but with plenty of criss-crossed overlapping tunnels.",
+    "intro_text": "On this dry morning, the patrol heads out to practice tunnel navigation. There's an old, long abandoned badger sett that's perfect for apprentices, big enough to not be claustrophobic, but with plenty of criss-crossed, overlapping tunnels.",
     "decline_text": "When they get there, the tunnels look muddier than p_l expected, and the training is called off until the cats can be sure they're safe.",
     "chance_of_success": 90,
     "exp": 20,

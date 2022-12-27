@@ -11,8 +11,8 @@
     "success_text": [
     "When the two patrols get closer to each other the patrol leaders share a quick nod of acknowledgement. The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
     "p_l approaches the other Clan patrol, striking up a conversation about the weather. After talking for a short time, the two patrols part ways. p_l remarks on the o_c_n cats' kindness to the leader once the patrol has returned to camp.",
-    "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks feeling confident in their good relations with the opposite clan.",
-    "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks feeling confident in their good relations with the opposite clan."
+    "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks feeling confident in their good relations with the opposite Clan.",
+    "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks feeling confident in their good relations with the opposite Clan."
     ],
     "fail_text": [
     "The patrols eventually cross paths and an awkward tension fills the air. No one is quite sure what to say to break the silence and eventually everyone involved slowly shuffles away to continue their respective patrols.",
@@ -74,7 +74,7 @@
     "r_c pounces without hesitation! They glance around, rabbit hanging from their muzzle, but it seems there aren't any o_c_n cats nearby. r_c trots back over the border, their prize in tow and transgression unnoticed.",
     "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up. It's probably for the better that they weren't able to catch the rabbit. Trespassing could easily have damaged relations with o_c_n.",
     "s_c leaps for the rabbit, making a swift kill just before a o_c_n patrol comes into view. The o_c_n cats bristle at the trespass and a fight seems to be brewing. Thankfully s_c smooths things over with the other patrol, graciously gifting them the rabbit, and they part ways without damaging the relationship between clans.",
-    "r_c is about to leap for the rabbit before s_c grabs them by the scruff and pulls them back! A moment later, r_c sees the group of o_c_n cats that had just come into view. Good thing s_c stopped them before they could blatantly trespass in full view of the other clan."
+    "r_c is about to leap for the rabbit before s_c grabs them by the scruff and pulls them back! A moment later, r_c sees the group of o_c_n cats that had just come into view. Good thing s_c stopped them before they could blatantly trespass in full view of the other Clan."
     ],
     "fail_text": [
     "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat knows exactly what r_c was intending to do and turns away, presumably to report the incident to their own leader.",
@@ -104,9 +104,9 @@
     "exp": 10,
     "success_text": [
     "When the two patrols get closer to each other the patrol leader from o_c_n gives p_l a respectful nod, which they return. The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
-    "The other patrol greets p_l respectfully, remarking on the weather and enquirying politely about the youngest members of the clan. p_l smiles, impressed with them.",
-    "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks feeling confident in their good relations with the opposite clan.",
-    "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks feeling confident in their good relations with the opposite clan."
+    "The other patrol greets p_l respectfully, remarking on the weather and enquirying politely about the youngest members of the Clan. p_l smiles, impressed with them.",
+    "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks feeling confident in their good relations with the opposite Clan.",
+    "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks feeling confident in their good relations with the opposite Clan."
     ],
     "fail_text": [
     "The patrols eventually cross paths and an awkward tension fills the air. No one is quite sure what to say to break the silence and eventually everyone involved slowly shuffles away to continue their respective patrols.",
@@ -135,7 +135,7 @@
     "exp": 10,
     "success_text": [
     "When the two patrols get closer to each other the patrol leader from o_c_n gives p_l a respectful nod, which they return. The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
-    "The other patrol greets p_l respectfully, remarking on the weather and enquirying politely about the youngest members of the clan. p_l smiles, impressed with them.",
+    "The other patrol greets p_l respectfully, remarking on the weather and enquirying politely about the youngest members of the Clan. p_l smiles, impressed with them.",
     "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. s_c remembers some of the news that o_c_n shared at a recent gathering and brings it up, impressing the other patrol with their polite interest.",
     "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting. The patrols pause to converse for a little while, s_c bringing up a story that, while slightly embarrassing for s_c, is entertaining and lighthearted. The patrols part in good spirits."
     ],
@@ -271,7 +271,7 @@
     ],
     "fail_text": [
     "r_c marks a little, but they reach a section of border that is too muddled to make sense of, and have to give up and go home.",
-    "s_c is marking along the territory line when they encounter a o_c_n patrol, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. Though no words are exchanged, the tension is palpable.",
+    "s_c is marking along the territory line when they encounter a o_c_n patrol, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. Though no words are exchanged, the tension is palpable.",
     null,
     "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! They return to camp scratched up and embarrassed, and immediately apologize to the deputy for the diplomatic incident they've inadvertently caused."
     ],
@@ -304,7 +304,7 @@
     ],
     "fail_text": [
     "r_c marks a little, but they reach a section of border that is too muddled to make sense of, and have to give up and go home.",
-    "s_c is marking along the territory line when they encounter a o_c_n patrol, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. Though no words are exchanged, the tension is palpable.",
+    "s_c is marking along the territory line when they encounter a o_c_n patrol, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. Though no words are exchanged, the tension is palpable.",
     "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. . . r_c never returns to camp.",
     "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full-blown conflict, and r_c hauls themselves back to camp, wounded and bleeding."
     ],
@@ -339,7 +339,7 @@
     ],
     "fail_text": [
     "r_c marks a little, but they reach a section of border that is too muddled to make sense of, and have to give up and go home.",
-    "s_c is marking along the territory line when they encounter a o_c_n patrol, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. Though no words are exchanged, the tension is palpable.",
+    "s_c is marking along the territory line when they encounter a o_c_n patrol, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. Though no words are exchanged, the tension is palpable.",
     "r_c encounters a patrol from o_c_n on the border and greets them politely, but there's something different here. Something dangerous. . . r_c returns to camp late, blood soaked through their fur and a new hardness in their heart.",
     "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full-blown conflict, and r_c hauls themselves back to camp, wounded and bleeding."
     ],
@@ -436,7 +436,7 @@
     ],
     "fail_text": [
         "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
         null,
         null
     ],
@@ -467,7 +467,7 @@
     ],
     "fail_text": [
         "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
         null,
         "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
     ],
@@ -500,7 +500,7 @@
     ],
     "fail_text": [
         "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
         null,
         "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
     ],
@@ -589,7 +589,7 @@
     ],
     "fail_text": [
     "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
+    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
     null,
     "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! They come back to camp scratched up, and immediately apologize to the deputy for the diplomatic incident they've inadvertently caused."
     ],
@@ -622,7 +622,7 @@
     ],
     "fail_text": [
     "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
+    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
     "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They don't return to camp.",
     "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
     ],
@@ -657,7 +657,7 @@
     ],
     "fail_text": [
     "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
+    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
     "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new hardness in their heart.",
     "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
     ],
@@ -758,7 +758,7 @@
     ],
     "fail_text": [
     "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
+    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
     null,
     "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! They come back to camp scratched up, and immediately apologize to the deputy for the diplomatic incident they've inadvertently caused."
     ],
@@ -791,7 +791,7 @@
     ],
     "fail_text": [
     "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
+    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
     null,
     "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
     ],
@@ -824,7 +824,7 @@
     ],
     "fail_text": [
     "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
+    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
     null,
     "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
     ],
@@ -911,7 +911,7 @@
     ],
     "fail_text": [
     "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
+    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
     null,
     "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! They come back to camp scratched up, and immediately apologize to the deputy for the diplomatic incident they've inadvertently caused."
     ],
@@ -944,7 +944,7 @@
     ],
     "fail_text": [
     "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
+    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
     "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They don't return to camp.",
     "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
     ],
@@ -979,7 +979,7 @@
     ],
     "fail_text": [
     "r_c marks a little, but they reach a section where the border is muddled, and have to give up and go home.",
-    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
+    "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and though no words are exchanged it's very tense.",
     "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new hardness in their heart.",
     "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding."
     ],

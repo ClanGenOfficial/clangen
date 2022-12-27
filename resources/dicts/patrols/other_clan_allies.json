@@ -10,13 +10,13 @@
     "exp": 10,
     "success_text": [
             "The patrol has a nice conversation with them, remarking on the recent weather before parting to continue patrolling.",
-            "The patrols share recent Clan news with each other: how prey has been running lately, new apprentices or kits, and other such information. They part on good terms, comradery between the clans continuing to grow.",
+            "The patrols share recent Clan news with each other: how prey has been running lately, new apprentices or kits, and other such information. They part on good terms, comradery between the Clans continuing to grow.",
             "s_c approaches the other patrol first, calling out a greeting and smoothly beginning a friendly conversation. The two patrols sit and chat for a little while before once again parting to patrol their respective territories.",
-            "s_c excitedly trots up to the other patrol, greeting them pleasantly. They seem to be on good terms with the other cats on this patrol and strike up conversation about specific happenings in their clan, asking if so-and-so had kits or if a certain apprentice had been made a warrior yet."
+            "s_c excitedly trots up to the other patrol, greeting them pleasantly. They seem to be on good terms with the other cats on this patrol and strike up conversation about specific happenings in their Clan, asking if so-and-so had kits or if a certain apprentice had been made a warrior yet."
     ],
     "fail_text": [
             "Though your patrol stops to chat, the other patrol seems standoffish and cold. After a stilted attempt at conversation, the two patrols part and go on their way. It seems as though your alliance with o_c_n is weakening.",
-            "Your patrol stops to talk with the other cats but s_c is quick to begin taunting them, poking fun at the other clan. When the two patrols part ways tails are whipping and voices border on a hiss."
+            "Your patrol stops to talk with the other cats but s_c is quick to begin taunting them, poking fun at the other Clan. When the two patrols part ways tails are whipping and voices border on a hiss."
     ],
     "other_clan": ["None"],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
@@ -74,7 +74,7 @@
             "r_c pounces without hesitation! They glance around, rabbit hanging from their muzzle, but it seems there aren't any o_c_n cats nearby. r_c trots back over the border, their prize in tow and transgression unnoticed.",
             "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up. It's probably for the better that they weren't able to catch the rabbit. Trespassing could easily have damaged relations with o_c_n.",
             "s_c leaps for the rabbit, making a swift kill just before a o_c_n patrol comes into view. The o_c_n cats seem miffed by this trespass, but not yet hostile thanks to your alliance. Thankfully s_c smooths things over with the other patrol, graciously gifting them the rabbit, and they part ways without damaging the relationship between clans.",
-            "r_c is about to leap for the rabbit before s_c grabs them by the scruff and pulls them back! A moment later, r_c sees the group of o_c_n cats that had just come into view. Good thing s_c stopped them before they could blatantly trespass in full view of the other clan."
+            "r_c is about to leap for the rabbit before s_c grabs them by the scruff and pulls them back! A moment later, r_c sees the group of o_c_n cats that had just come into view. Good thing s_c stopped them before they could blatantly trespass in full view of the other Clan."
     ],
     "fail_text": [
             "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat knows exactly what r_c was intending to do and turns away, presumably to report the incident to their own leader.",

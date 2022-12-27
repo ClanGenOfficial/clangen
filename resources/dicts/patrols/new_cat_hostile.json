@@ -98,11 +98,11 @@
     "tags": ["border", "new_cat", "reputation", "new_cat_med"],
     "intro_text": "Your patrol scents a loner on the territory. r_c finds the loner, who offers their healing skills in exchange for shelter.",
     "success_text": [
-        "The new medicine cat is welcomed into the clan.",
+        "The new medicine cat is welcomed into the Clan.",
         "The new medicine cat is welcomed into the Clan along with their litter of kits."
     ],
     "fail_text": [
-        "After hearing more about your clan, the loner decides not to join, quickly turning and taking off."
+        "After hearing more about your Clan, the loner decides not to join, quickly turning and taking off."
     ],
     "decline_text": "The patrol declines their offer and sends them off.",
     "antagonize_text": "Healer or not, your patrol tells the cat to leave or feel their claws. The loner seems to choose life and quickly takes off.",
@@ -120,9 +120,9 @@
     "tags": ["border", "new_cat", "reputation", "scar"],
     "intro_text": "Your patrol cautiously moves towards the sound of barking. Near the border, they spot a dog chasing something. Oh no, it's a cat!",
     "success_text": [
-            "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stays hidden and goes to the cat while the rest of the patrol lures the dog away. They're unharmed, and this display of bravery makes them want to join the clan!",
+            "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stays hidden and goes to the cat while the rest of the patrol lures the dog away. They're unharmed, and this display of bravery makes them want to join the Clan!",
             null,
-            "s_c leaps into action, pelting towards the dog with a yowl rising in their throat. The dog looks alarmed by this newcomer and abandons the chase as s_c swipes at it. The loner, ruffled but unharmed, is amazed by this display. After some chatting, they decide to join the clan."
+            "s_c leaps into action, pelting towards the dog with a yowl rising in their throat. The dog looks alarmed by this newcomer and abandons the chase as s_c swipes at it. The loner, ruffled but unharmed, is amazed by this display. After some chatting, they decide to join the Clan."
     ],
     "fail_text": [
             "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stayed hidden while the rest of the patrol lured the dog away, but when they go to find the cat, they see that it's still running! Oh well, at least they're alright.",
@@ -181,7 +181,7 @@
     "chance_of_success": 45,
     "exp": 10,
     "success_text": [
-            "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds themself nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the clan, suspicious but obedient to the code, takes them in.",
+            "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds themself nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the Clan, suspicious but obedient to the code, takes them in.",
             "p_l sees a worn and weary queen protecting their mewling litter. Not happy but unwilling and unable to go against their beloved code they take them back to camp, refusing to let r_c say a word against it."
     ],
     "fail_text": [
@@ -231,7 +231,7 @@
     "chance_of_success": 45,
     "exp": 10,
     "success_text": [
-            "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds themself nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the clan, suspicious but obedient to the code, takes them in.",
+            "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds themself nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the Clan, suspicious but obedient to the code, takes them in.",
             "p_l sees a worn and weary queen protecting their mewling litter. Not happy but unwilling and unable to go against their beloved code they take them back to camp."
     ],
     "fail_text": [
