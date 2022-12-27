@@ -3251,6 +3251,29 @@
                 "path":"resources/images/buttons/leader_ceremony_unavailable.png"
             }
         }
+    },
+    "#guide_sc_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/guide_sc.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/guide_sc_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/guide_sc_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/guide_sc_unavailable.png"
+            }
+        }
     }
 }
 
