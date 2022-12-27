@@ -491,7 +491,7 @@ class Relation_Events():
                 f"Later, hours later, eons laters, the {insert} mews. Outside, {str(cat.name)}'s body cools, the toll "
                 f"of birth too much for it.",
 
-                f"Though all looks fine, the clan will wake to discover {str(cat.name)}'s body cold in the nursery, "
+                f"Though all looks fine, the Clan will wake to discover {str(cat.name)}'s body cold in the nursery, "
                 f"their {insert} mewing in vain for their parent.",
 
                 f"Though birth is always considered a difficult and risky event, no one thought they'd lose "

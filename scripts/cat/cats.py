@@ -541,7 +541,7 @@ class Cat():
                         "comfort and company.",
                         "r_c goes over the best of the moments they shared with m_c in their mind, again and again, "
                         "like wearing a rut into the ground, until they're sure that they will remember m_c forever.",
-                        "One day, the clan will have kittens who never knew m_c in life, but r_c vows to ensure m_c's "
+                        "One day, the Clan will have kittens who never knew m_c in life, but r_c vows to ensure m_c's "
                         "memory will live on through them.",
                         "Some of the memories shared at m_c's vigil make r_c laugh. Some cry. Most of them do both, "
                         "as r_c marvels at what a special cat m_c was.",

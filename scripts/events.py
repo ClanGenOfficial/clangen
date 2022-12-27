@@ -64,7 +64,7 @@ class Events():
                 if cat.moons > randint(100, 200) and cat.exiled:
                     if choice([1, 2, 3, 4, 5]) == 1 and not cat.dead:
                         cat.dead = True
-                        text = f'Rumors reach your clan that the exiled {str(cat.name)} has died recently.'
+                        text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
                         game.cur_events_list.append(text)
                         game.birth_death_events_list.append(text)
 
@@ -72,11 +72,11 @@ class Events():
                         1, 10) == 1:
                     game.clan.leader_lives -= 1
                     if game.clan.leader_lives > 0:
-                        text = f'Rumors reach your clan that the exiled {str(cat.name)} lost a life recently.'
+                        text = f'Rumors reach your Clan that the exiled {str(cat.name)} lost a life recently.'
                         game.cur_events_list.append(text)
                         game.birth_death_events_list.append(text)
                     else:
-                        text = f'Rumors reach your clan that the exiled {str(cat.name)} has died recently.'
+                        text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
                         game.cur_events_list.append(text)
                         game.birth_death_events_list.append(text)
                         cat.dead = True
@@ -85,7 +85,7 @@ class Events():
                         1, 45) == 1:
                     game.clan.leader_lives -= 10
                     cat.dead = True
-                    text = f'Rumors reach your clan that the exiled {str(cat.name)} has died recently.'
+                    text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
                     game.cur_events_list.append(text)
                     game.birth_death_events_list.append(text)
                     game.clan.leader_lives = 0
@@ -186,18 +186,18 @@ class Events():
                             else:
                                 if Cat.all_cats[random_cat].trait == 'bloodthirsty':
                                     text = str(Cat.all_cats[
-                                                   random_cat].name) + ' has been chosen as the new deputy. They look at the clan leader with an odd glint in their eyes.'
+                                                   random_cat].name) + ' has been chosen as the new deputy. They look at the Clan leader with an odd glint in their eyes.'
                                 else:
                                     r = choice([1, 2, 3, 4, 5])
                                     if r == 1:
                                         text = str(Cat.all_cats[
-                                                       random_cat].name) + ' has been chosen as the new deputy. The clan yowls their name in approval.'
+                                                       random_cat].name) + ' has been chosen as the new deputy. The Clan yowls their name in approval.'
                                     elif r == 2:
                                         text = str(Cat.all_cats[
-                                                       random_cat].name) + ' has been chosen as the new deputy. The clan chants their name out in support of the choice.'
+                                                       random_cat].name) + ' has been chosen as the new deputy. The Clan chants their name out in support of the choice.'
                                     elif r == 3:
                                         text = str(Cat.all_cats[
-                                                       random_cat].name) + ' has been chosen as the new deputy. Some of the older clan members question the wisdom in this choice.'
+                                                       random_cat].name) + ' has been chosen as the new deputy. Some of the older Clan members question the wisdom in this choice.'
                                     elif r == 4:
                                         text = str(Cat.all_cats[
                                                        random_cat].name) + ' has been chosen as the new deputy. They hold their head up high and promise to do their best for the clan.'
@@ -211,7 +211,7 @@ class Events():
                             break
                     random_count += 1
                 if random_count == 30:
-                    text = 'The clan decides that no cat is fit to be deputy'
+                    text = 'The Clan decides that no cat is fit to be deputy'
                     game.cur_events_list.append(text)
                     game.ceremony_events_list.append(text)
             else:
@@ -960,7 +960,7 @@ class Events():
                 loner_name = created_cats[0].name
                 loner_text = [
                     f'{name} finds a loner named {loner_name.prefix} who wishes to join the clan.',
-                    f'A loner says that they are interested in clan life and joins the clan.'
+                    f'A loner says that they are interested in Clan life and joins the clan.'
                 ]
                 if loner_name.suffix:
                     success_text = [
@@ -998,7 +998,7 @@ class Events():
                     ])
                 else:
                     warrior_text.extend([
-                        f'{name} finds a warrior from a different clan named {warrior_name} who asks to join the clan.'
+                        f'{name} finds a warrior from a different Clan named {warrior_name} who asks to join the clan.'
                     ])
                 text = choice(warrior_text)
 
@@ -1243,7 +1243,7 @@ class Events():
                 interactions.append(f'{name} assesses {other_name}' +
                                     "\'s progress.")
             interactions.extend([
-                f'{name} calls a clan meeting to give an important announcement.'
+                f'{name} calls a Clan meeting to give an important announcement.'
             ])
         elif cat.status == 'elder':
             interactions.extend(

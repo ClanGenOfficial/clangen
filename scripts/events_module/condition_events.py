@@ -848,12 +848,12 @@ class Condition_Events():
                     chance = int(retire_chances.get(cat.age))
                     if not int(random.random() * chance):
                         cat.retire_cat()
-                        event = f'{cat.name} has decided to retire from normal clan duty.'
+                        event = f'{cat.name} has decided to retire from normal Clan duty.'
                         event_list.append(event)
 
                 if cat.permanent_condition[condition]['severity'] == 'severe':
                     cat.retire_cat()
-                    event = f'{cat.name} has decided to retire from normal clan duty.'
+                    event = f'{cat.name} has decided to retire from normal Clan duty.'
                     event_list.append(event)
 
         if len(event_list) > 0:

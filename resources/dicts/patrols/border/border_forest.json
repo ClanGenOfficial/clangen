@@ -11,7 +11,7 @@
         "success_text": [
             "The patrol descends into battle without a second thought, eventually driving the rogues away.",
             null,
-            "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the clan cats, the rogues turn tail and run.",
+            "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
             "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
         ],
         "fail_text": [
@@ -38,13 +38,13 @@
         "season": "Any",
         "tags": ["border", "fighting", "death", "reputation", "respect", "trust", "clan_to_r_c", "sacrificial"],
         "intro_text": "As r_c is marking the border lines, a gang of rogues bursts from the bushes! An ambush!",
-        "decline_text": "r_c turns tail and races away! The rogues have them far outnumbered, warning the clan is more important than dying needlessly.",
+        "decline_text": "r_c turns tail and races away! The rogues have them far outnumbered, warning the Clan is more important than dying needlessly.",
         "chance_of_success": 20,
         "exp": 20,
         "success_text": [
             "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but they manage to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from their lungs.",
             null,
-            "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the clan cat, the rogues freeze. s_c sees their opportunity to run and takes it, racing back to the camp to gather more warriors and return."
+            "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the Clan cat, the rogues freeze. s_c sees their opportunity to run and takes it, racing back to the camp to gather more warriors and return."
         ],
         "fail_text": [
             null,
@@ -68,13 +68,13 @@
         "biome": "forest",
         "season": "Any",
         "tags": ["border", "fighting", "scar", "battle_injury", "reputation", "respect", "trust", "clan_to_r_c", "sacrificial", "rel_patrol", "multi_deaths"],
-        "intro_text": "As the patrol is marking the border lines, a gang of rogues strides out of the brush, challenging the clan cats.",
+        "intro_text": "As the patrol is marking the border lines, a gang of rogues strides out of the brush, challenging the Clan cats.",
         "decline_text": "The patrol turns tail and races away! The borders left open for the rogues to muddy.",
         "chance_of_success": 70,
         "exp": 20,
         "success_text": [
-            "The rogues posture and jeer, eventually provoking a battle. The clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away.",
-            "The rogues posture and jeer, eventually provoking a battle. The clan cats are strong, however, and after a short fight, the rogues are forced to retreat.",
+            "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away.",
+            "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and after a short fight, the rogues are forced to retreat.",
             "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich plains outside of c_n territory.",
             "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich plains outside of c_n territory."
         ],
@@ -106,7 +106,7 @@
         "chance_of_success": 10,
         "exp": 40,
         "success_text": [
-            "Concerned for the clan, r_c creeps through the woods, searching for the sett. It's empty when they arrive, its owner out foraging late. The sunlight blinds the beast as it fumbles its way back, and r_c attacks - but all it gives them is the opportunity for a lucky hit and an easy retreat, and r_c must give up the idea of saving the clan single-pawed.",
+            "Concerned for the clan, r_c creeps through the woods, searching for the sett. It's empty when they arrive, its owner out foraging late. The sunlight blinds the beast as it fumbles its way back, and r_c attacks - but all it gives them is the opportunity for a lucky hit and an easy retreat, and r_c must give up the idea of saving the Clan single-pawed.",
             null,
             "Worried about their clanmates, s_c sets out to try to solve the problem on their own. Once they find the sett, they set to yowling, challenging the beast to come out and fight until it emerges, grumbling and blinking in the sunlight. While s_c manages to get several good swipes in, the badger holds its ground, and they return to camp deflated.",
             "s_c sets out to separate truth from rumor. There are fresh tracks in the mud under the canopy, but they're smaller than s_c expected. To confirm their theory, they stake out the sett itself, and when the beast pokes its head out at night they're able to confirm it's a juvenile - young and inexperienced. s_c pads quietly back to camp with the intel."
