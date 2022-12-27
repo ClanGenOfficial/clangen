@@ -619,7 +619,6 @@ class Cat():
             game.clan.deputy.outside = True
         else:
             self.outside = True
-
         for app in self.apprentice.copy():
             app.update_mentor()
         self.update_mentor()
