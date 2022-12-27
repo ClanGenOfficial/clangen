@@ -553,7 +553,7 @@ class MakeClanScreen(Screens):
         self.elements['next_step'] = UIImageButton(pygame.Rect((400, 635), (147, 30)), "",
                                                    object_id="#next_step_button")
         self.elements['next_step'].disable()
-        self.elements["name_entry"] = pygame_gui.elements.UITextEntryLine(pygame.Rect((265, 600), (140, 25)))
+        self.elements["name_entry"] = pygame_gui.elements.UITextEntryLine(pygame.Rect((265, 600), (140, 27)))
         self.elements["clan"] = pygame_gui.elements.UITextBox("<font color='#FFFFFF'>-Clan</font>",
                                                               pygame.Rect((375, 600), (100, 25)))
         self.elements["reset_name"] = UIImageButton(pygame.Rect((455, 595), (134, 30)), "",
