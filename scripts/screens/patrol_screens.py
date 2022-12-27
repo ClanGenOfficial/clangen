@@ -108,16 +108,28 @@ class PatrolScreen(Screens):
             self.current_page -= 1
             self.update_cat_images_buttons()
         elif event.ui_element == self.elements["paw"]:
-            self.patrol_type = 'training'
+            if self.patrol_type == 'training':
+                self.patrol_type = 'general'
+            else:
+                self.patrol_type = 'training'
             self.update_button()
         elif event.ui_element == self.elements["claws"]:
-            self.patrol_type = 'border'
+            if self.patrol_type == 'border':
+                self.patrol_type = 'general'
+            else:
+                self.patrol_type = 'border'
             self.update_button()
         elif event.ui_element == self.elements["herb"]:
-            self.patrol_type = 'med'
+            if self.patrol_type == 'med':
+                self.patrol_type = 'general'
+            else:
+                self.patrol_type = 'med'
             self.update_button()
         elif event.ui_element == self.elements["mouse"]:
-            self.patrol_type = 'hunting'
+            if self.patrol_type == 'hunting':
+                self.patrol_type = 'general'
+            else:
+                self.patrol_type = 'hunting'
             self.update_button()
         elif event.ui_element == self.elements['patrol_start']:
             self.selected_cat = None
@@ -212,25 +224,29 @@ class PatrolScreen(Screens):
                     if cat.status in ['medicine cat', 'medicine cat apprentice']:
                         med = True
                         self.patrol_type = 'med'
-                if med is False:
+                if med is False and self.current_patrol:
                     self.elements['herb'].disable()
                     if self.patrol_type == 'med':
                         self.patrol_type = 'general'
 
-                text = 'general patrol'
                 self.elements['info'].kill()  # clearing the text before displaying new text
 
+                if self.patrol_type == 'general':
+                    text = 'random patrol type'
                 if self.patrol_type == 'training' and med is False:
                     text = 'training'
                 elif self.patrol_type == 'border' and med is False:
                     text = 'border'
                 elif self.patrol_type == 'hunting' and med is False:
                     text = 'hunting'
-                elif self.patrol_type == 'med' and med is True:
-                    text = 'herb gathering'
-                    self.elements['mouse'].disable()
-                    self.elements['claws'].disable()
-                    self.elements['paw'].disable()
+                elif self.patrol_type == 'med':
+                    if med is True and self.current_patrol:
+                        text = 'herb gathering'
+                        self.elements['mouse'].disable()
+                        self.elements['claws'].disable()
+                        self.elements['paw'].disable()
+                    else:
+                        text = 'herb gathering'
 
                 self.elements['info'] = pygame_gui.elements.UITextBox(
                     text, pygame.Rect((250, 525), (300, 400)), object_id=get_text_box_theme()
