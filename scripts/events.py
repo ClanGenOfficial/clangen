@@ -200,10 +200,10 @@ class Events():
                                                        random_cat].name) + ' has been chosen as the new deputy. Some of the older Clan members question the wisdom in this choice.'
                                     elif r == 4:
                                         text = str(Cat.all_cats[
-                                                       random_cat].name) + ' has been chosen as the new deputy. They hold their head up high and promise to do their best for the clan.'
+                                                       random_cat].name) + ' has been chosen as the new deputy. They hold their head up high and promise to do their best for the Clan.'
                                     else:
                                         text = str(Cat.all_cats[
-                                                       random_cat].name) + ' has been chosen as the new deputy. They pray to StarClan that they are the right choice for the clan.'
+                                                       random_cat].name) + ' has been chosen as the new deputy. They pray to StarClan that they are the right choice for the Clan.'
 
                             game.clan.deputy = Cat.all_cats[random_cat]
                             game.cur_events_list.append(text)
@@ -717,7 +717,7 @@ class Events():
         risky_traits = ["bloodthirsty", "ambitious", "vengeful", "strict", "cold", "fierce"]
         danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk", "an enemy warrior", "a badger"]
         tail_danger = ["a rogue", "a dog", "a fox", "an otter", "a rat", "a hawk",
-                       "an enemy warrior", "a badger", "a twoleg trap"]
+                       "an enemy warrior", "a badger", "a Twoleg trap"]
 
         name = str(cat.name)
         scar_chance = 0.015  # 1.5%
@@ -805,10 +805,10 @@ class Events():
                 scar_text.append(f"{name} was bit by a snake but miraculously survived.")
             elif specialty == "TOETRAP":
                 scar_text.append(
-                    f"{name} got their paw stuck in a twoleg trap and earned a scar."
+                    f"{name} got their paw stuck in a Twoleg trap and earned a scar."
                 )
             elif specialty == "NOPAW":
-                scar_text.append(f"{name} lost their paw to a twoleg trap.")
+                scar_text.append(f"{name} lost their paw to a Twoleg trap.")
             else:
                 scar_text.extend(
                     [
@@ -816,7 +816,7 @@ class Events():
                         f"{name} earned a scar defending the territory.",
                         f"{name} is injured after falling into a river.",
                         f"{name} is injured by enemy warriors after accidentally wandering over the border.",
-                        f"{name} is injured after messing with a twoleg object.",
+                        f"{name} is injured after messing with a Twoleg object.",
                     ]
                 )
                 if alive_kits:
@@ -833,7 +833,7 @@ class Events():
                     f"{name} earned a scar for not defending the territory well enough.",
                     f"{name} is injured after being pushed into a river.",
                     f"{name} is punished by their mentor after accidentally wandering over the border.",
-                    f"{name} is injured by their mentor after being caught messing with a twoleg object.",
+                    f"{name} is injured by their mentor after being caught messing with a Twoleg object.",
                     f"{name} is injured by their mentor while practicing with their claws out.",
                     f"{name}'s mentor punished them for disobeying.",
                     f"{name} gained a scar while fighting their mentor.",
@@ -845,7 +845,7 @@ class Events():
             )
             if specialty == "NOPAW":
                 scar_text.append(
-                    f"{name} lost their paw after {mentor_name} decided to use twoleg traps for a training exercice.")
+                    f"{name} lost their paw after {mentor_name} decided to use Twoleg traps for a training exercice.")
         # leader is sus guys
         elif leader_scar_chance > random.random() and risky_leader and cat.ID != leader.ID:
             specialty = choice(base_scars)
@@ -871,7 +871,7 @@ class Events():
                             f"{name} is wounded during a harsh training exercise led by {leader_name}.",
                             f"{name} is injured during an unsupervised training exercise.",
                             f"{name} is hurt by enemy warriors after being ordered by {leader_name} to go over the border.",
-                            f"{name} is injured after being ordered by {leader_name} to check out a twoleg object.",
+                            f"{name} is injured after being ordered by {leader_name} to check out a Twoleg object.",
                             f"{name} is battered while fighting a clanmate after {leader_name} encouraged a fight.",
                             f"{name} is injured by {leader_name} for disobeying orders.",
                             f"{name} is injured by {leader_name} for speaking out against them.",
@@ -1468,10 +1468,10 @@ class Events():
 
     def handle_twoleg_capture(self, cat):
         cat.outside = True
-        if cat.ID in cat_class.all_cats.keys() and cat.outside and cat.ID not in cat_class.other_cats.keys():
-            # The outside-value must be set to True before the cat can go to cotc
-            cat.thought = "Is terrified as they are trapped in a large silver twoleg den"
-            cat_class.other_cats[cat.ID] = cat
+        cat.gone()
+        # The outside-value must be set to True before the cat can go to cotc
+        cat.thought = "Is terrified as they are trapped in a large silver Twoleg den"
+        cat_class.other_cats[cat.ID] = cat
 
     def handle_outbreaks(self, cat):
         """
