@@ -206,7 +206,6 @@ class Clan():
             Cat.outside_cats.update({cat.ID:cat})
             if cat.status != 'leader': # takes away the suffix unless the cat used to be leader
                 cat.suffix = ''
-            cat.thought = "Tries to regain their composure enough to take stock of their surroundings"
             
             
     def add_to_darkforest(self, cat):  # Same as add_cat
