@@ -756,7 +756,13 @@ class Condition_Events():
                 random_index = int(random.random() * len(possible_string_list))
                 med_list = get_med_cats(Cat)
                 med_cat = None
-                if len(med_list) == 0:
+                has_parents = False
+                if cat.parent1 is not None and cat.parent2 is not None:
+                    if not cat.parent1.dead or not cat.parent2.dead:
+                        has_parents = True
+                        if cat.parent2.status == 'medicine cat' or cat.parent1.status == 'medicine cat':
+                            has_parents = False
+                if len(med_list) == 0 or not has_parents:
                     if random_index == 0:
                         random_index = 1
                     else:

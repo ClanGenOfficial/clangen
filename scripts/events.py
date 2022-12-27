@@ -1067,6 +1067,7 @@ class Events():
                     a_kit_text = ([
                         f'A {otherclan}Clan queen decides to leave their litter with you. {str(parent1)} takes them as their own.'
                     ])
+                    a_kit_text = choice(a_kit_text)
                     game.other_clans_events_list.append(a_kit_text)
                     game.cur_events_list.append(a_kit_text)
                 else:
@@ -1074,7 +1075,7 @@ class Events():
                         f'{parent1} finds an abandoned litter and decides to adopt them as their own.',
                         f'A loner leaves their litter to the clan. {str(parent1)} decides to adopt them as their own.'
                     ])
-                    text = choice(a_kit_text)
+                    a_kit_text = choice(a_kit_text)
                     game.cur_events_list.append(a_kit_text)
                     game.misc_events_list.append(a_kit_text)
 
