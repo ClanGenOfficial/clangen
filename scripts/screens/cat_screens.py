@@ -209,6 +209,7 @@ class ProfileScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.leader_ceremony_button = None
         self.help_button = None
         self.open_sub_tab = None
         self.editing_notes = False
@@ -294,7 +295,7 @@ class ProfileScreen(Screens):
                 self.toggle_history_tab()
             elif event.ui_element == self.conditions_tab_button:
                 self.toggle_conditions_tab()
-            elif event.ui_element == self.placeholder_tab_4:
+            elif event.ui_element == self.leader_ceremony_button:
                 self.change_screen('ceremony screen')
             else:
                 self.handle_tab_events(event)
@@ -485,6 +486,10 @@ class ProfileScreen(Screens):
         self.placeholder_tab_3 = UIImageButton(pygame.Rect((400, 622), (176, 30)), "",
                                                object_id="#cat_tab_3_blank_button")
         self.placeholder_tab_3.disable()
+
+        self.placeholder_tab_4 = UIImageButton(pygame.Rect((576, 622), (176, 30)), "",
+                                               object_id="#cat_tab_4_blank_button")
+        self.placeholder_tab_4.disable()
         
         self.build_profile()
 
@@ -500,6 +505,9 @@ class ProfileScreen(Screens):
 
         if self.user_notes:
             self.user_notes = 'Click the check mark to enter notes about your cat!'
+
+        if self.leader_ceremony_button:
+            self.leader_ceremony_button.kill()
 
         for box in self.checkboxes:
             self.checkboxes[box].kill()
@@ -577,10 +585,12 @@ class ProfileScreen(Screens):
             elif game.clan.current_season == 'Leaf-fall':
                 self.profile_elements["background"] = pygame_gui.elements.UIImage(pygame.Rect((55, 200), (240, 210)),
                                                                                   self.leaffall_plt)
+        self.profile_elements["background"].disable()
 
         # Create cat image object
         self.profile_elements["cat_image"] = pygame_gui.elements.UIImage(pygame.Rect((100, 200), (150, 150)),
                                                                          self.the_cat.large_sprite)
+        self.profile_elements["cat_image"].disable()
 
         # Determine where the next and previous cat buttons lead
         self.determine_previous_and_next_cat()
@@ -599,13 +609,12 @@ class ProfileScreen(Screens):
         if self.open_tab == "history" and self.open_sub_tab == 'user notes':
             self.load_user_notes()
 
-        if self.placeholder_tab_4:
-            self.placeholder_tab_4.kill()
-        if (self.the_cat.status == 'leader' and not self.the_cat.dead):
-            self.placeholder_tab_4 = pygame_gui.elements.UIButton(pygame.Rect((576, 622), (176, 30)), "View Ceremony", object_id="#ceremony")
-        else:
-            self.placeholder_tab_4 = UIImageButton(pygame.Rect((576, 622), (176, 30)), "",
-                                               object_id="#cat_tab_4_blank_button")
+        if self.the_cat.status == 'leader' and not self.the_cat.dead:
+            self.leader_ceremony_button = UIImageButton(pygame.Rect(
+                (383, 110), (34, 34)),
+                "",
+                object_id="#leader_ceremony_button"
+            )
 
         # Prevent fading button:
         if self.the_cat.dead and game.settings["fading"]:
