@@ -503,9 +503,9 @@ class Cat():
                 # check if the cat will get Major or Minor severity for grief
                 chance = [1, 1]
                 if cat.trait in grief_major:
-                    chance = [2, 1]
+                    chance = [3, 1]
                 if cat.trait in grief_minor:
-                    chance = [2, 1]
+                    chance = [1, 3]
                 severity = random.choices(['major', 'minor'], weights=chance, k=1)
                 # give the cat the relevant severity text
                 severity = severity[0]
@@ -537,7 +537,7 @@ class Cat():
                         "their mouth, but they know m_c would want them to take care of themselves. ",
                         "r_c keeps searching for tasks to do, for cats to comfort, for distractions against the hole "
                         "in their heart, as they fight to keep the grief from consuming them.",
-                        "The world seems dim and lifeless, and r_c keeps close to their clan, seeking out their "
+                        "The world seems dim and lifeless, and r_c keeps close to their Clan, seeking out their "
                         "comfort and company.",
                         "r_c goes over the best of the moments they shared with m_c in their mind, again and again, "
                         "like wearing a rut into the ground, until they're sure that they will remember m_c forever.",
