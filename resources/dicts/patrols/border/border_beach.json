@@ -223,7 +223,7 @@
         null,
         null,
         null,
-         "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. With the little warning they have, they spot a branch being carried by the water, and strike out strongly for it. Hurt and shivering from both exhaustion and the cold, they nevertheless cling to safety as the floodwaters run their course."
+        "There is a downpour and a sudden flood from the overflowing river sweeps r_c away. With the little warning they have, they spot a branch being carried by the water, and strike out strongly for it. Hurt and shivering from both exhaustion and the cold, they nevertheless cling to safety as the floodwaters run their course."
     ],
     "win_skills": ["very smart", "extremely smart"],
     "win_trait": ["careful", "insecure", "nervous"],
