@@ -621,7 +621,8 @@ class ProfileScreen(Screens):
             self.leader_ceremony_button = UIImageButton(pygame.Rect(
                 (383, 110), (34, 34)),
                 "",
-                object_id="#leader_ceremony_button"
+                object_id="#leader_ceremony_button",
+                tool_tip_text="Leader Ceremony"
             )
 
         # Prevent fading button:
