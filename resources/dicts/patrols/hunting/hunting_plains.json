@@ -92,7 +92,7 @@
     "exp": 10,
     "success_text": [
         "The patrol flushes a gopher out of the burrow! More fresh kill!",
-        "Inside the burrow is a rabbit, curled up and alone.  Perhaps a buck recently kicked from his birth warren?  Whatever the case, this rabbit will feed the clan now."
+        "Inside the burrow is a rabbit, curled up and alone.  Perhaps a buck recently kicked from his birth warren?  Whatever the case, this rabbit will feed the Clan now."
     ],
     "fail_text": [
         "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness.  Whatever used to live here is gone now.  Checking the burrow was a waste of time.",
@@ -120,7 +120,7 @@
     "exp": 10,
     "success_text": [
         "r_c flushes a gopher out of the burrow! More fresh kill!",
-        "Inside the burrow is a rabbit, curled up and alone.  Perhaps a buck recently kicked from his birth warren?  Whatever the case, this rabbit will feed the clan now."
+        "Inside the burrow is a rabbit, curled up and alone.  Perhaps a buck recently kicked from his birth warren?  Whatever the case, this rabbit will feed the Clan now."
     ],
     "fail_text": [
         "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness.  Whatever used to live here is gone now.  Checking the burrow was a waste of time.",
@@ -1455,7 +1455,7 @@
     "success_text": [
         "As the patrol approaches, the swift fox spots them and backs off from the carcass with a whine. Your cats are able to feed in peace for now, but larger predators will surely soon come to throw them off the kill. By cooperating together, the patrol is able to at least drag some of the intestines home to camp.",
         null,
-        "s_c sits and watches the swift fox as the patrol takes over the kill without a fight. It wanders the area, grabbing pieces of gristle and meat and caching them in little holes, giving s_c an idea. Together the clan cats gnaw off a leg, and take their bony price back to camp for c_n.",
+        "s_c sits and watches the swift fox as the patrol takes over the kill without a fight. It wanders the area, grabbing pieces of gristle and meat and caching them in little holes, giving s_c an idea. Together the Clan cats gnaw off a leg, and take their bony price back to camp for c_n.",
         "While the rest of the patrol feeds on the kill, the swift fox gnawing on the head at the other end in uneasy truce, s_c keeps watch. It turns out to have been a wise move, as they spot a cougar's ears sticking up out of the grass. The kill's original owner is coming back, and the cats vacate with speed."
     ],
     "fail_text": [
@@ -1885,7 +1885,7 @@
         "The red vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
         "Your patrol drives away the fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
         "The mother fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
@@ -1921,9 +1921,9 @@
     "exp": 30,
     "success_text": [
         "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the fox, seeks out her den, and kills her young cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
-        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the clan that she and her cubs pose.",
+        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she and her cubs pose.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
         "The mother fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
@@ -1995,7 +1995,7 @@
         "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the clan. If they don't starve, c_n will hunt them down - they do not share with foxes.",
         "Your patrol drives away the fox, seeks out her den, and kills her cubs. It's brutal, but these fluffy small foxes would one day have grown to be kit-killers and thieves.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
         "The mother fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
@@ -2031,9 +2031,9 @@
     "exp": 30,
     "success_text": [
         "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the fox, seeks out her den, and kills her growing cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
-        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the clan that she and her cubs pose.",
+        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she and her cubs pose.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
         "The mother fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
@@ -2105,7 +2105,7 @@
         "The vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
         "Your patrol drives away the fox, and seeks out her den, but her Leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully Leaf-bare takes care of them.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
         "The mother fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
@@ -2141,9 +2141,9 @@
     "exp": 30,
     "success_text": [
         "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the fox, and seeks out her den. But her cubs are near full-grown with the bounty of Leaf-fall, and scatter from the patrol into the wilderness. Hopefully Leaf-bare takes care of them.",
-        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the clan that she poses. The patrol drives her near-full grown litter of fox cubs out from the territory. Hopefully the coming Leaf-bare will take care of them.",
+        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she poses. The patrol drives her near-full grown litter of fox cubs out from the territory. Hopefully the coming Leaf-bare will take care of them.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to c_n.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
         "The mother fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
@@ -2214,7 +2214,7 @@
         "The swift vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
         "Your patrol drives away the fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
         "The mother fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
@@ -2250,9 +2250,9 @@
     "exp": 30,
     "success_text": [
         "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the fox, seeks out her den, and kills her young cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
-        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the clan that she and her cubs pose.",
+        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she and her cubs pose.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
         "The mother fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
@@ -2324,7 +2324,7 @@
         "The swift vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the clan. If they don't starve, c_n will hunt them down - they do not share with foxes.",
         "Your patrol drives away the fox, seeks out her den, and kills her cubs. It's brutal, but these fluffy small foxes would one day have grown to be kit-killers and thieves.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
         "The mother fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
@@ -2360,9 +2360,9 @@
     "exp": 30,
     "success_text": [
     "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the fox, seeks out her den, and kills her growing cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
-    "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the clan that she and her cubs pose.",
+    "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she and her cubs pose.",
     "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her dependent cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-    "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+    "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
     "The mother fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
@@ -2434,7 +2434,7 @@
         "The vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
         "Your patrol drives away the fox, and seeks out her den, but her Leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully Leaf-bare takes care of them.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
         "The mother fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
@@ -2470,9 +2470,9 @@
     "exp": 30,
     "success_text": [
         "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the fox, and seeks out her den. But her cubs are near full-grown with the bounty of Leaf-fall, and scatter from the patrol into the wilderness. Hopefully Leaf-bare takes care of them.",
-        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the clan that she poses. The patrol drives her near-full grown litter of fox cubs out from the territory. Hopefully the coming Leaf-bare will take care of them.",
+        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the mother vixen and ending the threat to the Clan that she poses. The patrol drives her near-full grown litter of fox cubs out from the territory. Hopefully the coming Leaf-bare will take care of them.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the fox nor her cubs pose a threat to c_n.",
-        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
     ],
     "fail_text": [
         "The mother fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",

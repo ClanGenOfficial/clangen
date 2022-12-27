@@ -4,13 +4,13 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "other_clan"],
-    "intro_text": "Your patrol meets o_c_n, a clan they consider to be allies, at the border.",
+    "intro_text": "Your patrol meets o_c_n, a Clan they consider to be allies, at the border.",
     "decline_text": "You decide not to stop and talk with their patrol.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "The patrol has a nice conversation with them, remarking on the recent weather before parting to continue patrolling.",
-            "The patrols share recent clan news with each other: how prey has been running lately, new apprentices or kits, and other such information. They part on good terms, comradery between the clans continuing to grow.",
+            "The patrols share recent Clan news with each other: how prey has been running lately, new apprentices or kits, and other such information. They part on good terms, comradery between the clans continuing to grow.",
             "s_c approaches the other patrol first, calling out a greeting and smoothly beginning a friendly conversation. The two patrols sit and chat for a little while before once again parting to patrol their respective territories.",
             "s_c excitedly trots up to the other patrol, greeting them pleasantly. They seem to be on good terms with the other cats on this patrol and strike up conversation about specific happenings in their clan, asking if so-and-so had kits or if a certain apprentice had been made a warrior yet."
     ],
@@ -35,13 +35,13 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["border", "other_clan"],
-    "intro_text": "Your patrol meets o_c_n, a clan they consider to be allies, at the border.",
+    "intro_text": "Your patrol meets o_c_n, a Clan they consider to be allies, at the border.",
     "decline_text": "You decide not to stop and talk with their patrol.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
             "The patrol has a nice conversation with them, remarking on the recent weather before parting to continue patrolling.",
-            "The patrols share recent clan news with each other: how prey has been running lately, new apprentices or kits, and other such information. They part on good terms, comradery between the clans continuing to grow.",
+            "The patrols share recent Clan news with each other: how prey has been running lately, new apprentices or kits, and other such information. They part on good terms, comradery between the clans continuing to grow.",
             "s_c approaches the other patrol first, calling out a greeting and then remarking on a recent battle between o_c_n and one of the other clans. s_c compliments the o_c_n cats on their battle prowess.",
             "s_c approaches the other patrol first, calling out a greeting and then remarking on a recent battle between o_c_n and one of the other clans. s_c compliments the o_c_n cats on their battle prowess."
     ],

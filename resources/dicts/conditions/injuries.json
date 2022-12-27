@@ -934,6 +934,7 @@
         "also_got": [
         ],
         "cause_permanent": [
+            "paralyzed"
         ]
     },
     
@@ -964,7 +965,6 @@
             "shock"
         ],
         "cause_permanent": [
-            "paralyzed"
         ]
     }
 }

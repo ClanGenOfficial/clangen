@@ -64,7 +64,7 @@ class Events():
                 if cat.moons > randint(100, 200) and cat.exiled:
                     if choice([1, 2, 3, 4, 5]) == 1 and not cat.dead:
                         cat.dead = True
-                        text = f'Rumors reach your clan that the exiled {str(cat.name)} has died recently.'
+                        text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
                         game.cur_events_list.append(text)
                         game.birth_death_events_list.append(text)
 
@@ -72,11 +72,11 @@ class Events():
                         1, 10) == 1:
                     game.clan.leader_lives -= 1
                     if game.clan.leader_lives > 0:
-                        text = f'Rumors reach your clan that the exiled {str(cat.name)} lost a life recently.'
+                        text = f'Rumors reach your Clan that the exiled {str(cat.name)} lost a life recently.'
                         game.cur_events_list.append(text)
                         game.birth_death_events_list.append(text)
                     else:
-                        text = f'Rumors reach your clan that the exiled {str(cat.name)} has died recently.'
+                        text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
                         game.cur_events_list.append(text)
                         game.birth_death_events_list.append(text)
                         cat.dead = True
@@ -85,7 +85,7 @@ class Events():
                         1, 45) == 1:
                     game.clan.leader_lives -= 10
                     cat.dead = True
-                    text = f'Rumors reach your clan that the exiled {str(cat.name)} has died recently.'
+                    text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
                     game.cur_events_list.append(text)
                     game.birth_death_events_list.append(text)
                     game.clan.leader_lives = 0
@@ -167,7 +167,7 @@ class Events():
                     if not Cat.all_cats[random_cat].dead and not Cat.all_cats[random_cat].outside:
                         if Cat.all_cats[random_cat].status == 'warrior' and (
                                 len(Cat.all_cats[random_cat].former_apprentices) > 0 or len(
-                            Cat.all_cats[random_cat].apprentice) > 0):
+                                Cat.all_cats[random_cat].apprentice) > 0):
                             Cat.all_cats[random_cat].status = 'deputy'
                             text = ''
                             if game.clan.deputy is not None:
@@ -186,18 +186,18 @@ class Events():
                             else:
                                 if Cat.all_cats[random_cat].trait == 'bloodthirsty':
                                     text = str(Cat.all_cats[
-                                                   random_cat].name) + ' has been chosen as the new deputy. They look at the clan leader with an odd glint in their eyes.'
+                                                   random_cat].name) + ' has been chosen as the new deputy. They look at the Clan leader with an odd glint in their eyes.'
                                 else:
                                     r = choice([1, 2, 3, 4, 5])
                                     if r == 1:
                                         text = str(Cat.all_cats[
-                                                       random_cat].name) + ' has been chosen as the new deputy. The clan yowls their name in approval.'
+                                                       random_cat].name) + ' has been chosen as the new deputy. The Clan yowls their name in approval.'
                                     elif r == 2:
                                         text = str(Cat.all_cats[
-                                                       random_cat].name) + ' has been chosen as the new deputy. The clan chants their name out in support of the choice.'
+                                                       random_cat].name) + ' has been chosen as the new deputy. The Clan chants their name out in support of the choice.'
                                     elif r == 3:
                                         text = str(Cat.all_cats[
-                                                       random_cat].name) + ' has been chosen as the new deputy. Some of the older clan members question the wisdom in this choice.'
+                                                       random_cat].name) + ' has been chosen as the new deputy. Some of the older Clan members question the wisdom in this choice.'
                                     elif r == 4:
                                         text = str(Cat.all_cats[
                                                        random_cat].name) + ' has been chosen as the new deputy. They hold their head up high and promise to do their best for the clan.'
@@ -211,7 +211,7 @@ class Events():
                             break
                     random_count += 1
                 if random_count == 30:
-                    text = 'The clan decides that no cat is fit to be deputy'
+                    text = 'The Clan decides that no cat is fit to be deputy'
                     game.cur_events_list.append(text)
                     game.ceremony_events_list.append(text)
             else:
@@ -232,7 +232,7 @@ class Events():
 
             age_to_fade = 302
             # Handle opacity
-            cat.opacity = int(100*(1-(cat.dead_for/age_to_fade)**5)+30)
+            cat.opacity = int(100 * (1 - (cat.dead_for / age_to_fade) ** 5) + 30)
 
             # Deal with fading the cat if they are old enough.
             if cat.dead_for > age_to_fade:
@@ -251,7 +251,7 @@ class Events():
         if cat.dead:
             cat.thoughts()
             cat.dead_for += 1
-            self.handle_fading(cat) # Deal with fading.
+            self.handle_fading(cat)  # Deal with fading.
             return
 
         self.living_cats += 1
@@ -363,13 +363,18 @@ class Events():
             if (game.clan.deputy.trait == 'bloodthirsty'):
                 text = f'{str(game.clan.deputy.name)} has become the new leader. They stare down at their clanmates with unsheathed claws, promising a new era for the clans.'
             else:
-                c = choice([1,2,3])
+                c = choice([1, 2, 3])
                 if c == 1:
-                    text = str(game.clan.deputy.name.prefix) + str(game.clan.deputy.name.suffix) + ' has been promoted to the new leader of the clan. They travel immediately to the Moonstone to get their nine lives and are hailed by their new name, ' + str(game.clan.deputy.name) + '.'
+                    text = str(game.clan.deputy.name.prefix) + str(
+                        game.clan.deputy.name.suffix) + ' has been promoted to the new leader of the clan. They travel immediately to the Moonstone to get their nine lives and are hailed by their new name, ' + str(
+                        game.clan.deputy.name) + '.'
                 elif c == 2:
                     text = f'{str(game.clan.deputy.name)} has become the new leader of the clan. They vow that they will protect the clan, even at the cost of their nine lives.'
                 elif c == 3:
                     text = f'{str(game.clan.deputy.name)} has received their nine lives and became the new leader of the clan. They feel like they are not ready for this new responsibility, but will try their best to do what is right for the clan.'
+            game.ceremony_events_list.append(text)
+            game.cur_events_list.append(text)
+            text = f"Visit {str(game.clan.deputy.name)}'s profile to see their full leader ceremony."
             game.ceremony_events_list.append(text)
             game.cur_events_list.append(text)
             self.ceremony_accessory = True
@@ -465,7 +470,7 @@ class Events():
         ceremony = []
         cat.status_change(promoted_to)
 
-        if (promoted_to == 'warrior'):
+        if promoted_to == 'warrior':
             resource_directory = "resources/dicts/events/ceremonies/"
             TRAITS = None
             with open(f"{resource_directory}ceremony_traits.json", 'r') as read_file:
@@ -507,7 +512,7 @@ class Events():
             ])
             if cat.parent1 is not None and str(
                     cat_class.all_cats[cat.parent1].name) != str(
-                        cat.mentor.name) and str(cat_class.all_cats[cat.parent1].name) != "unnamed queen":
+                cat.mentor.name) and str(cat_class.all_cats[cat.parent1].name) != "unnamed queen":
                 if not cat_class.all_cats[cat.parent1].dead:
                     ceremony.extend([
                         str(cat_class.all_cats[cat.parent1].name) +
@@ -538,17 +543,17 @@ class Events():
         elif (promoted_to == 'medicine cat apprentice') and cat.mentor is None:
             ceremony.extend(["Newly-made medicine cat apprentice " + str(cat.name) +
                              " learns the way of healing through guidance from StarClan."])
-        elif (promoted_to == 'medicine cat'):
+        elif promoted_to == 'medicine cat':
             ceremony.extend(
                 [str(cat.name) + " is taken to speak with StarClan. They are now a full medicine cat of the Clan."])
-        elif (promoted_to == 'elder' and not game.clan.leader.dead):
+        elif promoted_to == 'elder' and not game.clan.leader.dead:
             ceremony.extend([
                 str(game.clan.leader.name) +
                 " proudly calls a Clan meeting to honor " + str(cat.name) +
                 "'s service to the Clan. It is time they retire peacefully to the elder's den.",
                 str(cat.name) + " wished to join the elders. The Clan honors them and all the service they have given to them."
             ])
-        elif (promoted_to == 'elder' and game.clan.leader.dead):
+        elif promoted_to == 'elder' and game.clan.leader.dead:
             ceremony.extend([
                 str(cat.name) + " wished to join the elders. The Clan honors them and all the service they have given to them."
             ])
@@ -560,15 +565,15 @@ class Events():
         else:
             game.cur_events_list.append(f'{str(cat.name)}{ceremony_text}')
             game.ceremony_events_list.append(f'{str(cat.name)}{ceremony_text}')
-    
+
     def gain_accessories(self, cat):
         # ---------------------------------------------------------------------------- #
         #                                  accessories                                 #
         # ---------------------------------------------------------------------------- #
-        
+
         if cat.dead:
             return
-        
+
         # check if cat already has acc
         if cat.accessory is not None:
             self.ceremony_accessory = False
@@ -955,7 +960,7 @@ class Events():
                 loner_name = created_cats[0].name
                 loner_text = [
                     f'{name} finds a loner named {loner_name.prefix} who wishes to join the clan.',
-                    f'A loner says that they are interested in clan life and joins the clan.'
+                    f'A loner says that they are interested in Clan life and joins the clan.'
                 ]
                 if loner_name.suffix:
                     success_text = [
@@ -993,7 +998,7 @@ class Events():
                     ])
                 else:
                     warrior_text.extend([
-                        f'{name} finds a warrior from a different clan named {warrior_name} who asks to join the clan.'
+                        f'{name} finds a warrior from a different Clan named {warrior_name} who asks to join the clan.'
                     ])
                 text = choice(warrior_text)
 
@@ -1062,6 +1067,7 @@ class Events():
                     a_kit_text = ([
                         f'A {otherclan}Clan queen decides to leave their litter with you. {str(parent1)} takes them as their own.'
                     ])
+                    a_kit_text = choice(a_kit_text)
                     game.other_clans_events_list.append(a_kit_text)
                     game.cur_events_list.append(a_kit_text)
                 else:
@@ -1069,7 +1075,7 @@ class Events():
                         f'{parent1} finds an abandoned litter and decides to adopt them as their own.',
                         f'A loner leaves their litter to the clan. {str(parent1)} decides to adopt them as their own.'
                     ])
-                    text = choice(a_kit_text)
+                    a_kit_text = choice(a_kit_text)
                     game.cur_events_list.append(a_kit_text)
                     game.misc_events_list.append(a_kit_text)
 
@@ -1237,7 +1243,7 @@ class Events():
                 interactions.append(f'{name} assesses {other_name}' +
                                     "\'s progress.")
             interactions.extend([
-                f'{name} calls a clan meeting to give an important announcement.'
+                f'{name} calls a Clan meeting to give an important announcement.'
             ])
         elif cat.status == 'elder':
             interactions.extend(
@@ -1308,7 +1314,7 @@ class Events():
         elif game.clan.game_mode == "classic" and not int(random.random() * 500):  # 1/500
             self.death_events.handle_deaths(cat, other_cat, self.at_war, self.enemy_clan, alive_kits)
             triggered_death = True
-            
+
         # disaster death chance
         if game.settings.get('disasters') and not triggered_death:
             if not random.getrandbits(10):  # 1/1024

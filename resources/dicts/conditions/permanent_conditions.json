@@ -344,7 +344,7 @@
     "deaf": {
         "severity": "major",
         "congenital": "sometimes",
-        "moons_until": 3,
+        "moons_until": 2,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -383,7 +383,7 @@
     "seizure prone": {
         "severity": "major",
         "congenital": "sometimes",
-        "moons_until": 3,
+        "moons_until": 2,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,
@@ -404,7 +404,7 @@
     "allergies": {
         "severity": "minor",
         "congenital": "always",
-        "moons_until": 3,
+        "moons_until": 2,
         "mortality": {
             "kitten": 0,
             "adolescent": 0,

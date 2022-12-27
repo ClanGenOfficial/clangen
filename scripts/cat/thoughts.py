@@ -56,7 +56,7 @@ def get_dead_thoughts(cat, other_cat):
             thoughts += [
                 'Hoped that they were a good leader',
                 'Wishes that they had ten lives',
-                'Is proud of their clan from StarClan',
+                'Is proud of their Clan from StarClan',
                 'Is pleased to see the new direction the Clan is heading in',
                 'Still frets over their beloved former Clanmates from afar'
             ]

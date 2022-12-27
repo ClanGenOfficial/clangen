@@ -11,7 +11,7 @@
     "success_text": [
         "The patrol descends into battle without a second thought, eventually driving the rogues away.",
         null,
-        "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the clan cats, the rogues turn tail and run.",
+        "s_c immediately leaps to protect their clanmates, their ferocity in battle quickly terrifying the rogues. Realizing that they've sorely underestimated the Clan cats, the rogues turn tail and run.",
         "s_c revels in the battle, leaping into the fray with their teeth bared and claws ready. The rogues are quickly driven away by the patrol."
     ],
     "fail_text": [
@@ -38,13 +38,13 @@
     "season": "Any",
     "tags": ["border", "fighting", "death", "reputation", "sacrificial", "trust"],
     "intro_text": "As the patrol is marking the border lines, a gang of rogues bursts from the beach grass! An ambush!",
-    "decline_text": "r_c turns tail and races away! The rogues have them far outnumbered; warning the clan is more important than playing the hero.",
+    "decline_text": "r_c turns tail and races away! The rogues have them far outnumbered; warning the Clan is more important than playing the hero.",
     "chance_of_success": 10,
     "exp": 30,
     "success_text": [
         "Stunned for a moment, r_c is nearly caught in the teeth of the first rogue, but they manage to dodge and weave through the onslaught of attacks, eventually escaping the fray and pelting towards camp with yowls of warning bursting from their lungs.",
         null,
-        "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the clan cat, the rogues freeze. s_c sees their opportunity to run and takes it, racing back to the camp to gather more warriors and return.",
+        "s_c snarls at the rogues, outnumbered but not cowed. They throw themselves at the intruders with such ferocity and fury that the rogues are taken aback. Alarmed by the lack of fear and self-preservation from the Clan cat, the rogues freeze. s_c sees their opportunity to run and takes it, racing back to the camp to gather more warriors and return.",
         null
     ],
     "fail_text": [
@@ -71,13 +71,13 @@
     "biome": "beach",
     "season": "Any",
     "tags": ["border", "fighting", "scar", "battle_injury", "reputation", "respect", "trust", "multi_deaths"],
-    "intro_text": "As the patrol is marking the border lines, a gang of rogues stalks out of the beach grass to confront the clan cats!",
+    "intro_text": "As the patrol is marking the border lines, a gang of rogues stalks out of the beach grass to confront the Clan cats!",
     "decline_text": "The patrol turns tail and races away! The borders are left open for the rogues to muddy.",
     "chance_of_success": 70,
     "exp": 30,
     "success_text": [
-        "The rogues posture and jeer, eventually provoking a battle. The clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away.",
-        "The rogues posture and jeer, eventually provoking a battle. The clan cats are strong, however, and after a short fight, the rogues are forced to retreat.",
+        "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and the rogues seem to be weakened by hunger. The patrol easily drives the intruders away.",
+        "The rogues posture and jeer, eventually provoking a battle. The Clan cats are strong, however, and after a short fight, the rogues are forced to retreat.",
         "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory.",
         "s_c takes the lead, confronting the gang with confidence. Eventually the rogues admit that they've been struggling to find enough prey and were looking to steal richer territory from the clan. Tensions are eased when s_c informs the rogues of a prey-rich forest outside of c_n territory."
     ],

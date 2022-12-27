@@ -69,5 +69,12 @@
         {
             "rect_width": "400"
         }
+    },
+    "#leader_ceremony_button.tool_tip":
+    {
+        "misc":
+        {
+            "rect_width": "150"
+        }
     }
 }

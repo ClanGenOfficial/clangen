@@ -503,9 +503,9 @@ class Cat():
                 # check if the cat will get Major or Minor severity for grief
                 chance = [1, 1]
                 if cat.trait in grief_major:
-                    chance = [2, 1]
+                    chance = [3, 1]
                 if cat.trait in grief_minor:
-                    chance = [2, 1]
+                    chance = [1, 3]
                 severity = random.choices(['major', 'minor'], weights=chance, k=1)
                 # give the cat the relevant severity text
                 severity = severity[0]
@@ -524,10 +524,9 @@ class Cat():
                         "beating heart of a mouse, but they're uninterested, staring at the wall of their nest and "
                         "refusing to talk.",
                         "Things are never going to be the same now. Could never be the same. r_c doesn't know how "
-                        "they're supposed to rise the next morning and go on patrol. They refuse to.",
+                        "they're supposed to rise the next morning and go on with life. They refuse to.",
                         "r_c spends time by themselves, letting themselves mourn m_c and the time they should have "
-                        "had together. They'll return to their duties eventually, of course they will, but no one can "
-                        "begrudge them the need to grieve.",
+                        "had together. No one can begrudge them the need to grieve.",
                         "Cats offer r_c comfort and care. They refuse all of it."
                     ]))
                 elif severity == 'minor':
@@ -538,11 +537,11 @@ class Cat():
                         "their mouth, but they know m_c would want them to take care of themselves. ",
                         "r_c keeps searching for tasks to do, for cats to comfort, for distractions against the hole "
                         "in their heart, as they fight to keep the grief from consuming them.",
-                        "The world seems dim and lifeless, and r_c keeps close to their clan, seeking out their "
+                        "The world seems dim and lifeless, and r_c keeps close to their Clan, seeking out their "
                         "comfort and company.",
                         "r_c goes over the best of the moments they shared with m_c in their mind, again and again, "
                         "like wearing a rut into the ground, until they're sure that they will remember m_c forever.",
-                        "One day, the clan will have kittens who never knew m_c in life, but r_c vows to ensure m_c's "
+                        "One day, the Clan will have kittens who never knew m_c in life, but r_c vows to ensure m_c's "
                         "memory will live on through them.",
                         "Some of the memories shared at m_c's vigil make r_c laugh. Some cry. Most of them do both, "
                         "as r_c marvels at what a special cat m_c was.",

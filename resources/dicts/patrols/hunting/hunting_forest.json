@@ -35,7 +35,7 @@
     "success_text": [
         "The patrol examines the porcupine, eventually deciding that they shouldn't risk the potential injury it could cause.",
         "The porcupine rattles its quills viciously, the patrol heeds its warning and gives it space.",
-        "s_c sets up an ambush, devising a clever plan to take the porcupine by surprise and attack it before it can whip its quills into anyone's pelt.  The clan will be impressed by this hefty freshkill.",
+        "s_c sets up an ambush, devising a clever plan to take the porcupine by surprise and attack it before it can whip its quills into anyone's pelt.  The Clan will be impressed by this hefty freshkill.",
         "s_c has the ingenious idea to follow the porcupine from a distance and collect dropped quills to bring back to camp. The quills could be woven into the clan's defenses to strengthen them."
     ],
     "fail_text": [
@@ -69,7 +69,7 @@
     "success_text": [
         "The patrol examines the porcupine, eventually deciding that they shouldn't risk the potential injury it could cause.",
         "The porcupine rattles its quills viciously, the patrol heeds its warning and gives it space.",
-        "s_c sets up an ambush, devising a clever plan to take the porcupine by surprise and attack it before it can whip its quills into anyone's pelt.  The clan will be impressed by this hefty freshkill.",
+        "s_c sets up an ambush, devising a clever plan to take the porcupine by surprise and attack it before it can whip its quills into anyone's pelt.  The Clan will be impressed by this hefty freshkill.",
         "s_c has the ingenious idea to follow the porcupine from a distance and collect dropped quills to bring back to camp.  The quills could be woven into the clan's defenses to strengthen them."
     ],
     "fail_text": [
@@ -187,7 +187,7 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": ["The patrol flushes a gopher out of the burrow! More fresh kill!",
-    "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the clan now."
+    "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now."
     ],
     "fail_text": [
     "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now.  Checking the burrow was a waste of time.",
@@ -215,7 +215,7 @@
     "exp": 10,
     "success_text": [
         "r_c flushes a gopher out of the burrow! More fresh kill!",
-        "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the clan now."
+        "Inside the burrow is a rabbit, curled up and alone. Perhaps a buck recently kicked from his birth warren? Whatever the case, this rabbit will feed the Clan now."
     ],
     "fail_text": [
         "The burrow turns out to be empty, the smell nothing but stale air and a slight tang of sickness. Whatever used to live here is gone now.  Checking the burrow was a waste of time.",
@@ -2309,7 +2309,7 @@ null
     	"The red vixen smells of milk, and hopefully by driving her out of the territory, her litter this Newleaf won't be a threat to the clan. If they don't starve, c_n will hunt them down - they do not share territory with foxes.",
     	"Your patrol drives away the red fox, seeks out her den, and kills her young cubs. It's brutal, but these fluffy baby foxes would one day have grown to be kit-killers and thieves.",
     	"s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-    	"The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+    	"The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
 	],
 	"fail_text": [
     	"The mother red fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
@@ -2345,9 +2345,9 @@ null
 	"exp": 30,
 	"success_text": [
         "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the red fox, seeks out her den, and kills her young cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
-        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the red mother vixen and ending the threat to the clan that she and her cubs pose.",
+        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the red mother vixen and ending the threat to the Clan that she and her cubs pose.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her dependent cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
 	],
 	"fail_text": [
         "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
@@ -2419,7 +2419,7 @@ null
         "The red vixen smells of milk and blood. Hopefully by driving her out of the territory, the litter she has been raising this Greenleaf won't be a threat to the clan. If they don't starve, c_n will hunt them down - they do not share with foxes.",
         "Your patrol drives away the red fox, seeks out her den, and kills her cubs. It's brutal, but these fluffy small foxes would one day have grown to be kit-killers and thieves.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her dependent cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
 	],
 	"fail_text": [
     	"The mother red fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
@@ -2455,9 +2455,9 @@ null
 	"exp": 30,
 	"success_text": [
         "Led by p_l, and with a heap of cooperation and teamwork, the patrol drives away the red fox, seeks out her den, and kills her growing cubs. The forest will be safe from both the threat the vixen posed this season, and the threat her cubs would've given c_n in the seasons to come.",
-        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the red mother vixen and ending the threat to the clan that she and her cubs pose.",
+        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the red mother vixen and ending the threat to the Clan that she and her cubs pose.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her dependent cubs pose a threat to the clan. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
 	],
 	"fail_text": [
         "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",
@@ -2529,7 +2529,7 @@ null
         "The red vixen smells like the prey she's been poaching to feed her litter. She's stolen from c_n for the last time, and the patrol drives her from their territory, yowling their anger and fury.",
         "Your patrol drives away the red fox, and seeks out her den, but her Leaf-fall cubs are near full-grown and scatter into the wilderness. Hopefully Leaf-bare takes care of them.",
         "s_c displays incredible skill, driving the red mother vixen out of the territory almost by themselves. It truly proves s_c's place as one of c_n's most talented and skillful fighters.",
-        "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
 	],
 	"fail_text": [
     	"The mother red fox is vicious and determined, and the small patrol is beaten back. But this forest is c_n's and they haven't given up. They may have lost this battle, but c_n will win this war.",
@@ -2565,9 +2565,9 @@ null
 	"exp": 30,
 	"success_text": [
         "Led by p_l and with a heap of cooperation and teamwork, the patrol drives away the red fox, and seeks out her den. But her cubs are near full-grown with the bounty of Leaf-fall, and scatter from the patrol into the wilderness. Hopefully Leaf-bare takes care of them.",
-        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the red mother vixen and ending the threat to the clan that she poses. The patrol drives her near-full grown litter of fox cubs out from the territory. Hopefully the coming Leaf-bare will take care of them.",
+        "With so many cats working together in tight coordination, they manage to accomplish the near-impossible, killing the red mother vixen and ending the threat to the Clan that she poses. The patrol drives her near-full grown litter of fox cubs out from the territory. Hopefully the coming Leaf-bare will take care of them.",
         "s_c displays incredible skill, driving the mother vixen out of the territory almost by themselves. Now neither the red fox nor her cubs pose a threat to c_n.",
-        "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the clan knows it."
+        "The patrol overcomes the red vixen and drives her off thanks to a brilliant battle move by s_c at a critical moment. Their bravery ensures the patrol's success, and the cats arrive back at camp singing their praises to make sure the Clan knows it."
 	],
 	"fail_text": [
         "The mother red fox is vicious and determined. Although they lose this battle, through teamwork the cats manage to retreat without injury.",

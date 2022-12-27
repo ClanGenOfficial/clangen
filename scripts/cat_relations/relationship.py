@@ -12,12 +12,12 @@ THIRD_RELATIONSHIP_INCLUDED = {
     "troublesome": ['made (cat) and (cat) start an argument.'],
     "sneaky": ['is gossiping about (cat) and (cat).'],
     "like": '(cat) confesses to (cat) that they think they like (cat).',
-    "trick": 'has successfully tricked (cat) into believing a crazy tale about the clan leader.'
+    "trick": 'has successfully tricked (cat) into believing a crazy tale about the Clan leader.'
 }
 
 EXILED_CATS = {
-    "cat_to": ['bumped into (cat) at the clan border', 'caught a glimpse of (cat) from the distance.'],
-    "cat_from": ['was wandering near the clan territory and met (cat).'],
+    "cat_to": ['bumped into (cat) at the Clan border', 'caught a glimpse of (cat) from the distance.'],
+    "cat_from": ['was wandering near the Clan territory and met (cat).'],
     "both": ['ran into (cat) by chance.']
 }
 

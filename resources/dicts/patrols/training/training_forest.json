@@ -316,7 +316,7 @@
     "success_text": [
             "app1 watches the big bushy lump of a creature with wide eyes, tail twitching with excitement. p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery.",
             "p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery. app1 looks a bit disbelieving, so p_l darts towards the porcupine, making it throw its back up at the cats in a full threat display, spines just as fluffed up as app1's pelt.",
-            "s_c points out the dangers of the creature, finding some spines the porcupine has dropped and showing app1 exactly how they hook into a pelt, or worse, the flesh beneath. It's dangerous, s_c teaches, but it can also be used to defend the clan - this is why porcupine spines are so valuable for reinforcing c_n's defenses."
+            "s_c points out the dangers of the creature, finding some spines the porcupine has dropped and showing app1 exactly how they hook into a pelt, or worse, the flesh beneath. It's dangerous, s_c teaches, but it can also be used to defend the Clan - this is why porcupine spines are so valuable for reinforcing c_n's defenses."
     ],
     "fail_text": [
             "app1 refuses to believe that the happy snuffly creature they visit can possibly be dangerous prey, and starts an argument with p_l about it.",
@@ -370,7 +370,7 @@
     "success_text": [
             "app1 and app2 watch the big bushy lump of a creature with wide eyes, tails twitching with excitement. p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery.",
             "p_l points out the cascade of spines lying flat on its hairy back as the porcupine snuffles happily around the forest floor, sounding like a happy newborn kit in the nursery. app1 looks a bit disbelieving, so p_l darts towards the porcupine, making it throw its back up at the cats in a full threat display, spines just as fluffed up as app2's pelt.",
-            "s_c points out the dangers of the creature, finding some spines the porcupine has dropped and showing app1 and app2 exactly how they hook into a pelt, or worse, the flesh beneath. It's dangerous, s_c teaches, but it can also be used to defend the clan - this is why porcupine spines are so valuable for reinforcing c_n's defenses."
+            "s_c points out the dangers of the creature, finding some spines the porcupine has dropped and showing app1 and app2 exactly how they hook into a pelt, or worse, the flesh beneath. It's dangerous, s_c teaches, but it can also be used to defend the Clan - this is why porcupine spines are so valuable for reinforcing c_n's defenses."
     ],
     "fail_text": [
             "app1 refuses to believe that the happy snuffly creature they visit can possibly be dangerous prey, and starts an argument with p_l about it. app2 sides with p_l and no one learns anything in the squabbling.",
@@ -452,9 +452,9 @@
 	"chance_of_success": 60,
 	"exp": 15,
 	"success_text": [
-        	"Their ancestors lived in a sheltered redwood grove, and it protected them from the elements and fed their prey and kept their kits dry, p_l explains. But one day, Twolegs destroyed their home with fire and monsters, and the cats of that clan scattered. Some, after many trials, founded c_n, and chose a place that seemed familiar and safe.",
+        	"Their ancestors lived in a sheltered redwood grove, and it protected them from the elements and fed their prey and kept their kits dry, p_l explains. But one day, Twolegs destroyed their home with fire and monsters, and the cats of that Clan scattered. Some, after many trials, founded c_n, and chose a place that seemed familiar and safe.",
         	"p_l shows app1 how the trees protect from wind and rain, how, like their ancestors have done for generations, c_n has learnt to jump between branches like the squirrels they hunt. app1 nods, talking about how the plains or beaches wouldn't have those advantages.",
-        	"c_n myths tell of the clan their founders were descended from, who lived in a grove of redwood trees shielding them from the world. The clan has taken lessons from it, about how to use the resources of the forest to keep themselves safe, and to this day they still live with tree trunks standing sentry around camp."
+        	"c_n myths tell of the Clan their founders were descended from, who lived in a grove of redwood trees shielding them from the world. The Clan has taken lessons from it, about how to use the resources of the forest to keep themselves safe, and to this day they still live with tree trunks standing sentry around camp."
 	],
 	"fail_text": [
         	"app1 launches into a speech about how c_n is awesome because they aren't kittypets, only for p_l to stop them. That wasn't the point of the lesson.",

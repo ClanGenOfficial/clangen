@@ -149,7 +149,7 @@
         "Not only is the mullein intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l purrs in satisfaction - seems like they've caught two prey in one blow on this trip."
     ],
     "fail_text": [
-        "p_l reaches the mullein plant that the clan has used for many seasons and finds that it's being torn to shreds by bugs. They hiss in exasperation and bat some of the leaf bugs off the plant. Maybe it'll grow back next newleaf."
+        "p_l reaches the mullein plant that the Clan has used for many seasons and finds that it's being torn to shreds by bugs. They hiss in exasperation and bat some of the leaf bugs off the plant. Maybe it'll grow back next newleaf."
     ],
     "win_skills": null,
     "win_trait": null,
@@ -630,7 +630,7 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-        "The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+        "The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
         null,
         "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
     ],
@@ -724,7 +724,7 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-        "The ground is dusty and slippery, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+        "The ground is dusty and slippery, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
         null,
         "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
     ],
@@ -818,7 +818,7 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-        "The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+        "The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
         null,
         "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
     ],
@@ -912,7 +912,7 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-        "The ground is slippery with frost, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+        "The ground is slippery with frost, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
         null,
         "s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
     ],

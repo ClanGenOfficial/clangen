@@ -5,18 +5,18 @@
     "season": "Any",
     "tags": ["border", "no_leader", "other_clan"],
     "intro_text": "While walking along the border, your patrol notices a o_c_n patrol renewing their scent marks up ahead.",
-    "decline_text": "Your patrol decides to avoid the other clan cats.",
+    "decline_text": "Your patrol decides to avoid the other Clan cats.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
     "When the two patrols get closer to each other the patrol leaders share a quick nod of acknowledgement. The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
-    "p_l approaches the other clan patrol, striking up a conversation about the weather. After talking for a short time, the two patrols part ways. p_l remarks on the o_c_n cats' kindness to the leader once the patrol has returned to camp.",
+    "p_l approaches the other Clan patrol, striking up a conversation about the weather. After talking for a short time, the two patrols part ways. p_l remarks on the o_c_n cats' kindness to the leader once the patrol has returned to camp.",
     "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks feeling confident in their good relations with the opposite clan.",
     "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. The two patrols eventually return to their tasks feeling confident in their good relations with the opposite clan."
     ],
     "fail_text": [
     "The patrols eventually cross paths and an awkward tension fills the air. No one is quite sure what to say to break the silence and eventually everyone involved slowly shuffles away to continue their respective patrols.",
-    "s_c bounds ahead to the other patrol, not bothering to greet them or exchange pleasantries before remarking on the funny smell of the other clan cats. Offended, the other patrol stalks away, their tails whipping and ears pinned."
+    "s_c bounds ahead to the other patrol, not bothering to greet them or exchange pleasantries before remarking on the funny smell of the other Clan cats. Offended, the other patrol stalks away, their tails whipping and ears pinned."
     ],
     "other_clan": ["None"],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
@@ -36,12 +36,12 @@
     "season": "Any",
     "tags": ["border", "no_leader", "other_clan"],
     "intro_text": "While walking along the border, your patrol notices a o_c_n patrol renewing their scent marks up ahead.",
-    "decline_text": "Your patrol decides to avoid the other clan cats.",
+    "decline_text": "Your patrol decides to avoid the other Clan cats.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
     "When the two patrols get closer to each other the patrol leaders share a quick nod of acknowledgement. The patrols refocus on their tasks without stopping for a conversation, but a feeling of mutual respect has been fostered.",
-    "p_l approaches the other clan patrol, striking up a conversation about the weather. After talking for a short time, the two patrols part ways. p_l remarks on the o_c_n cats' kindness to the leader once the patrol has returned to camp.",
+    "p_l approaches the other Clan patrol, striking up a conversation about the weather. After talking for a short time, the two patrols part ways. p_l remarks on the o_c_n cats' kindness to the leader once the patrol has returned to camp.",
     "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting and easy conversation. s_c remembers some of the news that o_c_n shared at a recent gathering and brings it up, impressing the other patrol with their polite interest.",
     "Once the patrols cross paths, s_c is quick to break the awkward atmosphere with a friendly greeting. The patrols pause to converse for a little while, s_c bringing up a story that, while slightly embarrassing for s_c, is entertaining and lighthearted. The patrols part in good spirits."
     ],
@@ -99,7 +99,7 @@
     "season": "Any",
     "tags": ["border", "leader", "other_clan"],
     "intro_text": "While walking along the border, your patrol notices a o_c_n patrol renewing their scent marks up ahead.",
-    "decline_text": "Your patrol decides to avoid the other clan cats.",
+    "decline_text": "Your patrol decides to avoid the other Clan cats.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
@@ -110,7 +110,7 @@
     ],
     "fail_text": [
     "The patrols eventually cross paths and an awkward tension fills the air. No one is quite sure what to say to break the silence and eventually everyone involved slowly shuffles away to continue their respective patrols.",
-    "s_c bounds ahead to the other patrol, not bothering to greet them or exchange pleasantries before remarking on the funny smell of the other clan cats. Offended, the other patrol stalks away, their tails whipping and ears pinned."
+    "s_c bounds ahead to the other patrol, not bothering to greet them or exchange pleasantries before remarking on the funny smell of the other Clan cats. Offended, the other patrol stalks away, their tails whipping and ears pinned."
     ],
     "other_clan": ["None"],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
@@ -130,7 +130,7 @@
     "season": "Any",
     "tags": ["border", "leader", "other_clan"],
     "intro_text": "While walking along the border, your patrol notices a o_c_n patrol renewing their scent marks up ahead.",
-    "decline_text": "Your patrol decides to avoid the other clan cats.",
+    "decline_text": "Your patrol decides to avoid the other Clan cats.",
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
