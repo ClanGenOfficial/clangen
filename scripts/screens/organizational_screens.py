@@ -404,7 +404,7 @@ class SettingsScreen(Screens):
         )
         n += 1
         self.checkboxes_text['backgrounds'] = pygame_gui.elements.UITextBox(
-            "Enable clan page background", pygame.Rect((x_value, n * y_spacing), (500, 39)),
+            "Enable Clan page background", pygame.Rect((x_value, n * y_spacing), (500, 39)),
             container=self.checkboxes_text["container"],
             object_id=get_text_box_theme("#setting_text_box")
         )
@@ -610,7 +610,7 @@ class SettingsScreen(Screens):
                  "",
                  object_id=box_type,
                  container=self.checkboxes_text["container"],
-                 tool_tip_text='This may result in up to 1/3rd of your clan dying in one moon.'
+                 tool_tip_text='This may result in up to 1/3rd of your Clan dying in one moon.'
                  )
 
             n += 1

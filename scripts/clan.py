@@ -179,6 +179,8 @@ class Clan():
         # if no game mode chosen, set to Classic
         if game.switches['game_mode'] is None:
             game.switches['game_mode'] = 'classic'
+        if game.switches['game_mode'] == 'cruel_season':
+            game.settings['disasters'] = True
 
     def add_cat(self, cat):  # cat is a 'Cat' object
         """ Adds cat into the list of clan cats"""
@@ -197,13 +199,14 @@ class Clan():
                 self.med_cat_predecessors += 1
 
     def add_to_outside(self, cat): # same as add_cat
-        """ Places the gone cat into starclan. It should not be removed from the list of cats in the clan"""
+        """ Places the gone cat into cotc. It should not be removed from the list of cats in the clan"""
         if cat.ID in Cat.all_cats.keys(
         ) and cat.outside and cat.ID not in Cat.outside_cats.keys():
             # The outside-value must be set to True before the cat can go to cotc
             Cat.outside_cats.update({cat.ID:cat})
             if cat.status != 'leader': # takes away the suffix unless the cat used to be leader
                 cat.suffix = ''
+            
             
     def add_to_darkforest(self, cat):  # Same as add_cat
         """ Places the dead cat into the dark forest. It should not be removed from the list of cats in the clan"""

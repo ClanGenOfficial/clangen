@@ -748,10 +748,10 @@ class ViewChildrenScreen(Screens):
         if len(self.all_siblings) <= 1:
             self.previous_sibling_page.disable()
             self.next_sibling_page.disable()
-        elif self.sibling_page_number >= len(self.all_siblings):
+        elif self.siblings_page_number >= len(self.all_siblings):
             self.previous_sibling_page.enable()
             self.next_sibling_page.disable()
-        elif self.sibling_page_number == 1 and len(self.all_siblings) > 1:
+        elif self.siblings_page_number == 1 and len(self.all_siblings) > 1:
             self.previous_sibling_page.disable()
             self.next_sibling_page.enable()
         else:

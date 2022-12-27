@@ -35,7 +35,7 @@
         "general": [
             "Is spending the night with a friend",
             "Wonders where r_c went",
-            "Wonders about what clan life would be like",
+            "Wonders about what Clan life would be like",
             "Is considering finding some housefolk to live with",
             "Loves their life of freedom",
             "Thinks that Clancats are stupid",
@@ -49,7 +49,7 @@
             "Got chased off by a border patrol recently.",
             "Heard some strange stories about starry ancestors living in the sky.",
             "Shivers in the cold",
-            "Wonders if clan life is the only way to live with others",
+            "Wonders if Clan life is the only way to live with others",
             "Was chased away from the shelter they had been staying in",
             "Hopes their mild cough won't get worse",
             "Wishes newleaf would come already",
@@ -67,7 +67,7 @@
             "Is asking themself if becoming a kittypet would be an easier life",
             "Is trying not to feel overwhelmingly lonely.",
             "Learning about the clans",
-            "Thinks clan cats are strange"
+            "Thinks Clan cats are strange"
         ],
         "adult": [
             "Is scouting out locations for a new den",
@@ -84,7 +84,7 @@
             "Purring as the sun's warmth eases their old joints",
             "Is glad they chose this life of freedom.",
             "Thinks about old friends",
-            "Hopes it isn't too late to join a clan",
+            "Hopes it isn't too late to join a Clan",
             "Wonders where they'll go when they die",
             "Telling stories about their younger days"
         ]
@@ -106,7 +106,7 @@
             "Has been teaching themselves how to hunt",
             "Misses their friends",
             "Regrets their actions",
-            "Wonders what being in a clan is like"
+            "Wonders what being in a Clan is like"
         ],
         "adult": [
             "Hisses at a missed catch",
@@ -133,7 +133,7 @@
             "Wonders if the Clan has declared them dead yet",
             "Feels abandoned by StarClan",
             "Hopes their littermates are doing ok",
-            "Wonders if the clan is searching for them",
+            "Wonders if the Clan is searching for them",
             "Is starting to get used to living alone",
             "Misses their nest",
             "Feels homesick",
@@ -180,11 +180,11 @@
             "Tries to come up with a warrior name for themself"
         ],
         "warrior": [
-            "Hopes that the clan's kits are doing well",
+            "Hopes that the Clan's kits are doing well",
             "Misses the warmth of the warriors' den",
             "Hopes their friends from c_n are doing okay",
-            "Dreams about hunting for their clan",
-            "Wonders if the apprentices of the clan are now warriors"
+            "Dreams about hunting for their Clan",
+            "Wonders if the apprentices of the Clan are now warriors"
         ],
         "deputy": [
             "Wonders if they are still the deputy",
@@ -193,10 +193,10 @@
             "Is wondering if they'll still remain deputy after returning"
         ],
         "leader": [
-            "Feels lost without the support of their clan behind them. ",
+            "Feels lost without the support of their Clan behind them. ",
             "Wonders if their deputy has already become leader",
-            "Hopes that the clan is doing okay without them",
-            "Feels like they have failed their clan",
+            "Hopes that the Clan is doing okay without them",
+            "Feels like they have failed their Clan",
             "Is wondering if starclan is still able to contact them"
         ],
         "elder": [
@@ -209,10 +209,10 @@
             "Their aches and pain make them unable to hunt",
             "Feels the cold seep and settle into their old bones",
             "Is unable to remember what herbs to look out for to ease their pain",
-            "Wishes they could check in on the clan's kits"
+            "Wishes they could check in on the Clan's kits"
             ],
         "med": [
-            "Hopes that their clan is doing okay without their help"
+            "Hopes that their Clan is doing okay without their help"
         ]
     }
 }

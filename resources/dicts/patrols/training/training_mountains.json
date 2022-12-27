@@ -127,7 +127,7 @@
     "history_text": [
         "r_c carries a scar from being trapped on patrol",
         "r_c tragically died after being trapped on patrol.",
-      "died after being trapped on patrol"
+      	"died after being trapped on patrol"
     ]
 },
 {
@@ -159,7 +159,7 @@
     "history_text": [
         "r_c carries a scar from being trapped on patrol.",
         "r_c tragically died after being trapped on patrol.",
-      "died after being trapped on patrol"
+      	"died after being trapped on patrol"
     ]
 
 },
@@ -424,7 +424,7 @@
     "exp": 10,
     "success_text": [
             "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their haunches in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
-            "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
+            "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
             null,
             "After a while romping around in the snow, app1 complains of the cold seeping into their fur. app2 digs a little hollow, and invites them in to curl up with them. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth."
     ],
@@ -452,7 +452,7 @@
     "exp": 10,
     "success_text": [
             "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their eartips in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
-            "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
+            "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
             null,
             "After a while romping around in the heavy snow, app1 complains of the cold seeping into their fur. app2 digs a little hollow, and invites them in to curl up with them. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth."
     ],
@@ -482,7 +482,7 @@
     "exp": 10,
     "success_text": [
             "The snow seems to have melted and refrozen during the night, and app1 darts lightly over the top of the thin crust. app2 follows them, only to immediately hear a crack and sink up to their haunches in the fluffy stuff. Teasingly, app1 runs around near them, and it turns into a game of app2 romping through the snow trying to catch them.",
-            "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
+            "app1 finds a snowdrift, and over the course of an hour them and app2 turn it into a very respectable snow den, complete with short entrance tunnel. They're debating what to call the camp of their little Clan when their mentors arrive, congratulating them on running an excellent wilderness survival session without supervision.",
             null,
             "After a while romping around in the snow, app1 complains of the cold seeping into their fur. app2 digs a little hollow, and invites them in to curl up with them. Strictly for warmth purposes of course. They both stay there as the sun rises. Strictly for warmth."
     ],
@@ -539,7 +539,7 @@
 	"success_text": [
     	"app1 screws up their face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, they explain.",
     	"p_l tells app1 to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow, where a female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
-    	"As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells app1 how c_n's founders followed the hummingbird's wisdom, setting up the clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat clans."
+    	"As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells app1 how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat clans."
 	],
 	"fail_text": [
     	"app1 refuses to believe that going near an eagle nest could ever possibly be safe and flatly refuses to go.",
@@ -566,7 +566,7 @@
 	"success_text": [
     	"app1 screws up their face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, they explain.",
     	"p_l tells app1 to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow, where a female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
-    	"As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells app1 how the hummingbird arrival signals the start of Greenleaf, and how the clan will know it's Leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a Greenleaf it'll be."
+    	"As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells app1 how the hummingbird arrival signals the start of Greenleaf, and how the Clan will know it's Leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a Greenleaf it'll be."
 	],
 	"fail_text": [
     	"app1 refuses to believe that going near an eagle nest could ever possibly be safe and flatly refuses to go.",
@@ -593,7 +593,7 @@
 	"success_text": [
     	"app1 screws up their face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, they explain, astonishing app2.",
     	"p_l tells the apprentices to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow, where a female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
-    	"As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells the apprentices how c_n's founders followed the hummingbird's wisdom, setting up the clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat clans."
+    	"As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells the apprentices how c_n's founders followed the hummingbird's wisdom, setting up the Clan in the shadow of the dangers of the mountain to protect c_n cats from the attention of Twolegs and endless wars with other cat clans."
 	],
 	"fail_text": [
     	"app1 refuses to believe that going near an eagle nest could ever possibly be safe and flatly refuses to go. app2 tries to comfort them, but the patrol is called off.",
@@ -620,7 +620,7 @@
 	"success_text": [
     	"app1 screws up their face in confusion - weren't they here to learn about hummingbirds, not eagles? p_l, in a low whisper, carefully points out the tiny nest sitting in the shadow of the big one. Hummingbirds use the big predator's nest to conceal and protect their own tiny ones, they explain, astonishing app2.",
     	"p_l tells the apprentices to watch carefully - not the rowdy eagle nest, but the tiny home in its shadow, where a female hummingbird climbs out and takes to the wing, headed for the mountain meadows. app1's jaw drops as she whizzes past, nearly soundless, blindingly fast, and zigzagging through the trees in a way app1 swore was impossible for birds.",
-    	"As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells the apprentices how the hummingbird arrival signals the start of Greenleaf, and how the clan will know it's Leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a Greenleaf it'll be."
+    	"As they hide, watching the hummingbird nest in the shadow of the eagle nest, s_c tells the apprentices how the hummingbird arrival signals the start of Greenleaf, and how the Clan will know it's Leaf-fall when the birds leave their territory. The more hummingbirds there are that year, the better a Greenleaf it'll be."
 	],
 	"fail_text": [
     	"app1 refuses to believe that going near an eagle nest could ever possibly be safe and flatly refuses to go. app2 tries to comfort them, but the patrol is called off.",
@@ -1062,7 +1062,7 @@
 	"exp": 15,
 	"success_text": [
     	"app1 leaps backwards, falling in their haste and scrambling upright. Then in one of the weirdest moments of their young life, the green bird does the same thing, chattering as it leans sideways to tumble a little way down the slope. It's not broken, p_l grumbles, coming up to stand by app1. Kea are just, well, like that.",
-    	"p_l hisses for app1 to back away. Slowly. That's a kea, and while it's been a long time since the clan lost anyone to one... app1 suddenly notices the claws the size of their head. The kea chirps weirdly, tilting its head sideways, but when the cats don't move it seems to scoff at them, spreading its wings with their shocking orange undersides and flapping back into the air.",
+    	"p_l hisses for app1 to back away. Slowly. That's a kea, and while it's been a long time since the Clan lost anyone to one... app1 suddenly notices the claws the size of their head. The kea chirps weirdly, tilting its head sideways, but when the cats don't move it seems to scoff at them, spreading its wings with their shocking orange undersides and flapping back into the air.",
     	"app1 freezes in fear, but p_l comes up next to them, and bats a stone down the slope. The bird shrieks, startlingly loud, and waves its wings around. p_l offers it a branch from a shrub, dangling it like playing with a kit in the nursery, and the kea merrily hops after it, as p_l leads it teasingly away from app1. Later, app1 apologizes for being scared, and is shocked when p_l tells them that no, kea are very dangerous. "
 	],
 	"fail_text": [

@@ -15,8 +15,8 @@
         "s_c is quick to strike up conversation with the other patrol, trying to get to the root of their rudeness. Eventually the problem is smoothed over, nothing but a misunderstanding and unfounded assumptions."
     ],
     "fail_text": [
-        "Your patrol jeers right back. After trading insults and threats for a few minutes the two patrols part ways, begrudgingly leaving the area. This experience won't be good for clan relations.",
-        "s_c shuffles their feet, nervous at the appearance of a hostile o_c_n patrol. Suddenly, s_c takes off back towards the camp! The tension is just too much! Their cowardly reaction won't reflect well on the clan.",
+        "Your patrol jeers right back. After trading insults and threats for a few minutes the two patrols part ways, begrudgingly leaving the area. This experience won't be good for Clan relations.",
+        "s_c shuffles their feet, nervous at the appearance of a hostile o_c_n patrol. Suddenly, s_c takes off back towards the camp! The tension is just too much! Their cowardly reaction won't reflect well on the Clan.",
         "The two patrols begin throwing insults back and forth, the tension ratcheting higher and higher until suddenly a fight breaks out! The tussle quickly becomes deadly, r_c lying motionless on the ground when the enemy cat backs off.",
         "The two patrols begin throwing insults back and forth, the tension ratcheting higher and higher until suddenly a fight breaks out! The tussle ends quickly but r_c is still left injured."
     ],
@@ -27,8 +27,8 @@
     "fail_trait": ["insecure", "nervous"],
     "min_cats": 1,
     "max_cats": 6,
-    "antagonize_text": "Angry at the insult to their clan, your patrol throws themselves at the enemy patrol. They drive the o_c_n patrol away from the border.",
-    "antagonize_fail_text": "Angry at the insult to their clan, your patrol throws themselves at the enemy patrol. Despite their righteous fury the o_c_n patrol quickly overpowers them and sends your patrol back onto their own side of the border.",
+    "antagonize_text": "Angry at the insult to their Clan, your patrol throws themselves at the enemy patrol. They drive the o_c_n patrol away from the border.",
+    "antagonize_fail_text": "Angry at the insult to their Clan, your patrol throws themselves at the enemy patrol. Despite their righteous fury the o_c_n patrol quickly overpowers them and sends your patrol back onto their own side of the border.",
     "history_text": [
         "r_c was scarred by an enemy warrior.",
         "r_c was killed by an enemy warrior.",
@@ -51,8 +51,8 @@
             "s_c is quick to strike up conversation with the other patrol, playfully poking fun at both o_c_n and c_n. Their antics lighten the mood and make the other patrol cats laugh despite their previous aggression.  Situation successfully diffused and cats on both sides feeling surprisingly friendly toward each other, the two patrols part ways."
     ],
     "fail_text": [
-            "Your patrol jeers right back. After trading insults and threats for a few minutes the two patrols part ways, begrudgingly leaving the area. This experience won't be good for clan relations.",
-            "s_c won't stand for this insult to their clan. They throw themselves at the o_c_n patrol, but the enemy patrol has no trouble rebuffing one cat. Your patrol backs off from the border.",
+            "Your patrol jeers right back. After trading insults and threats for a few minutes the two patrols part ways, begrudgingly leaving the area. This experience won't be good for Clan relations.",
+            "s_c won't stand for this insult to their Clan. They throw themselves at the o_c_n patrol, but the enemy patrol has no trouble rebuffing one cat. Your patrol backs off from the border.",
             "The two patrols begin throwing insults back and forth, the tension ratcheting higher and higher until suddenly a fight breaks out! The tussle quickly becomes deadly, r_c lying motionless on the ground when the enemy cat backs off.",
             "The two patrols begin throwing insults back and forth, the tension ratcheting higher and higher until suddenly a fight breaks out! The tussle ends quickly but r_c is still left injured."
     ],
@@ -63,8 +63,8 @@
     "fail_trait": ["bloodthirsty", "vengeful", "loyal", "fierce"],
     "min_cats": 1,
     "max_cats": 6,
-    "antagonize_text": "Angry at the insult to their clan, your patrol throws themselves at the enemy patrol. They drive the o_c_n patrol away from the border.",
-    "antagonize_fail_text": "Angry at the insult to their clan, your patrol throws themselves at the enemy patrol. Despite their righteous fury the o_c_n patrol quickly overpowers them and sends your patrol back onto their own side of the border.",
+    "antagonize_text": "Angry at the insult to their Clan, your patrol throws themselves at the enemy patrol. They drive the o_c_n patrol away from the border.",
+    "antagonize_fail_text": "Angry at the insult to their Clan, your patrol throws themselves at the enemy patrol. Despite their righteous fury the o_c_n patrol quickly overpowers them and sends your patrol back onto their own side of the border.",
     "history_text": [
         "r_c was scarred by an enemy warrior.",
         "r_c was killed by an enemy warrior.",
@@ -84,7 +84,7 @@
         "r_c pounces without hesitation! They glance around, rabbit hanging from their muzzle, but it seems there aren't any o_c_n cats nearby. r_c trots back over the border, their prize in tow and transgression unnoticed.",
         "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up. It's probably for the better that they weren't able to catch the rabbit.  Trespassing could have easily caused a fight.",
         "s_c leaps for the rabbit, making a swift kill just before a o_c_n patrol comes into view. The o_c_n cats screech at the trespass and rush at your patrol. s_c barely manages to talk them down from a fight, begrudgingly handing over the rabbit, and the patrols part ways without any cat getting hurt.",
-        "r_c is about to leap for the rabbit before s_c grabs them by the scruff and pulls them back! A moment later, r_c sees the group of o_c_n cats that had just come into view. Good thing s_c stopped them before they could blatantly trespass in full view of the other clan."
+        "r_c is about to leap for the rabbit before s_c grabs them by the scruff and pulls them back! A moment later, r_c sees the group of o_c_n cats that had just come into view. Good thing s_c stopped them before they could blatantly trespass in full view of the other Clan."
     ],
     "fail_text": [
         "r_c leaps for the rabbit! And promptly trips over a rock. The rabbit hops away and r_c sheepishly picks themselves up before noticing the o_c_n cat watching them from the other side of the border. The other cat knows exactly what r_c was intending to do and hisses crossly before turning away, presumably to report the incident to their own leader.",
@@ -119,7 +119,7 @@
     "exp": 20,
     "success_text": [
         "They pad over to the border and hesitate only momentarily before crossing. They quickly gather some of the berries, making sure to leave plenty for o_c_n's medicine cat if they need some, too.",
-        "They pad to the border and pause for a heartbeat to scent the air. o_c_n's scent is very strong, but there's something else... o_c_n's medicine cat appears at that moment. They're walking towards the bearberries when they spot p_l and curl their lip. They snarl that they're not willing to share with an enemy clan. p_l takes the hint and leaves.",
+        "They pad to the border and pause for a heartbeat to scent the air. o_c_n's scent is very strong, but there's something else... o_c_n's medicine cat appears at that moment. They're walking towards the bearberries when they spot p_l and curl their lip. They snarl that they're not willing to share with an enemy Clan. p_l takes the hint and leaves.",
         "p_l is about to step over the border when a hiss stops them in their tracks. A o_c_n warrior bounds into view, bristling with rage. They quickly explain that they're the medicine cat and the warrior code allows them to cross the border and assure that they only need a few berries for some sick clanmates. The warrior looks torn, but agrees to this."
     ],
     "fail_text": [
@@ -219,12 +219,12 @@
     "success_text": [
         "There's a particular spot where a stream crosses from c_n's forest to o_c_n where the spray from the stream's little tumbling rapids wipes the territory marks particularly quickly. r_c remarks it, and heads home, a simple but necessary mission completed.",
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who are formally-but-genuinely grateful.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
         "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warriors teaching the youngster firmly but peacefully."
     ],
     "fail_text": [
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. They see the young cat off with a furious swipe of their claws, and then bring the prey back to c_n camp to report the incident to the deputy.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
         null,
         "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! They come back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident they've inadvertently caused.",
         "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next gathering.",
@@ -240,8 +240,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -256,12 +256,12 @@
     "success_text": [
         "There's a particular spot where a stream crosses from c_n's forest to o_c_n where the spray from the stream's little tumbling rapids wipes the territory marks particularly quickly. r_c remarks it, and heads home, a simple but necessary mission completed.",
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who bow their heads to c_n's deputy in gratitude.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
         "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warrior and deputy teaching the youngster firmly but peacefully."
     ],
     "fail_text": [
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
         "r_c encounters a patrol from o_c_n on the border, and greets them coldly, but there's something different here. Something dangerous. They don't return to camp.",
         "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
         "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next gathering.",
@@ -277,8 +277,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -293,12 +293,12 @@
     "success_text": [
         "There's a particular spot where a stream crosses from c_n's forest to o_c_n where the spray from the stream's little tumbling rapids wipes the territory marks particularly quickly. r_c remarks it, and heads home, a simple but necessary mission completed.",
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who crouch to the ground and thank r_c profusely.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
         "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warrior and leader teaching the youngster firmly but peacefully."
     ],
     "fail_text": [
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's face goes slack with horror to see c_n's leader.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
         "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new hardness in their heart.",
         "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
         "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c loses a life in a vicious fight. o_c_n boasts about it at the next gathering.",
@@ -314,8 +314,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c lost a life against a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c lost a life against a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -351,8 +351,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -367,7 +367,7 @@
     "success_text": [
         "There's a particular spot where a stream crosses from c_n's forest to o_c_n where the spray from the stream's little tumbling rapids wipes the territory marks particularly quickly. r_c remarks it, and heads home, a simple but necessary mission completed.",
         "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. They're carefully frosty with each other, but manage to work together to find a solution. Maybe o_c_n isn't as bad as r_c thought.",
-        "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their clan leader. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take them. The other leader calls their warrior back, begrudgingly impressed.",
+        "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their Clan leader. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take them. The other leader calls their warrior back, begrudgingly impressed.",
         "As s_c marks the border, they encounter the o_c_n leader out with their new apprentice. s_c passes on some important information affecting both their clans, and politely wishes the young apprentice well. The other leader is begrudgingly impressed."
     ],
     "fail_text": [
@@ -388,8 +388,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -404,12 +404,12 @@
     "success_text": [
         "There's a particular spot where a herd of buffalo have wandered recently along the border with o_c_n, churning the grass into mud and wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who are formally-but-genuinely grateful.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
         "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warriors teaching the youngster firmly but peacefully."
     ],
     "fail_text": [
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. They see the young cat off with a furious swipe of their claws, and then bring the prey back to c_n camp to report the incident to the deputy.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
         null,
         "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! They come back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident they've inadvertently caused.",
         "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next gathering.",
@@ -425,8 +425,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -441,12 +441,12 @@
     "success_text": [
         "There's a particular spot where a herd of buffalo have wandered recently along the border with o_c_n, churning the grass into mud and wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who bow their heads to c_n's deputy in gratitude.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
         "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warrior and deputy teaching the youngster firmly but peacefully."
     ],
     "fail_text": [
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
         "r_c encounters a patrol from o_c_n on the border, and greets them coldly, but there's something different here. Something dangerous. They don't return to camp.",
         "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
         "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next gathering.",
@@ -462,8 +462,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -478,12 +478,12 @@
     "success_text": [
         "There's a particular spot where a herd of buffalo have wandered recently along the border with o_c_n, churning the grass into mud and wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who crouch to the ground and thank r_c profusely.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
         "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warrior and leader teaching the youngster firmly but peacefully."
     ],
     "fail_text": [
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's face goes slack with horror to see c_n's leader.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
         "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new hardness in their heart.",
         "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
         "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c loses a life in a vicious fight. o_c_n boasts about it at the next gathering.",
@@ -499,8 +499,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c lost a life against a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c lost a life against a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -536,8 +536,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -552,7 +552,7 @@
     "success_text": [
         "There's a particular spot where a herd of buffalo have wandered recently along the border with o_c_n, churning the grass into mud and wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
         "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. They're carefully frosty with each other, but manage to work together to find a solution. Maybe o_c_n isn't as bad as r_c thought.",
-        "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their clan leader. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take them. The other leader calls their warrior back, begrudgingly impressed.",
+        "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their Clan leader. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take them. The other leader calls their warrior back, begrudgingly impressed.",
         "As s_c marks the border, they encounter the o_c_n leader out with their new apprentice. s_c passes on some important information affecting both their clans, and politely wishes the young apprentice well. The other leader is begrudgingly impressed."
     ],
     "fail_text": [
@@ -573,8 +573,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -589,12 +589,12 @@
     "success_text": [
         "There's a particular spot where the ground is prone to slipping along the border with o_c_n, dirt falling away from under the trails - not dangerous, but wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who are formally-but-genuinely grateful.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
         "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warriors teaching the youngster firmly but peacefully."
     ],
     "fail_text": [
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. They see the young cat off with a furious swipe of their claws, and then bring the prey back to c_n camp to report the incident to the deputy.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
         null,
         "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! They come back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident they've inadvertently caused.",
         "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next gathering.",
@@ -610,8 +610,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -626,12 +626,12 @@
     "success_text": [
         "There's a particular spot where the ground is prone to slipping along the border with o_c_n, dirt falling away from under the trails - not dangerous, but wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who bow their heads to c_n's deputy in gratitude.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
         "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warrior and deputy teaching the youngster firmly but peacefully."
     ],
     "fail_text": [
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
         "r_c encounters a patrol from o_c_n on the border, and greets them coldly, but there's something different here. Something dangerous. They don't return to camp.",
         "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
         "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next gathering.",
@@ -647,8 +647,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -663,12 +663,12 @@
     "success_text": [
         "There's a particular spot where the ground is prone to slipping along the border with o_c_n, dirt falling away from under the trails - not dangerous, but wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who crouch to the ground and thank r_c profusely.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
         "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warrior and leader teaching the youngster firmly but peacefully."
     ],
     "fail_text": [
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's face goes slack with horror to see c_n's leader.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
         "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new hardness in their heart.",
         "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
         "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c loses a life in a vicious fight. o_c_n boasts about it at the next gathering.",
@@ -684,8 +684,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c lost a life against a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c lost a life against a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -721,8 +721,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -737,7 +737,7 @@
     "success_text": [
         "There's a particular spot where the ground is prone to slipping along the border with o_c_n, dirt falling away from under the trails - not dangerous, but wiping the territorial marks off the map. r_c remarks it, and heads home, a simple but necessary mission completed.",
         "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. They're carefully frosty with each other, but manage to work together to find a solution. Maybe o_c_n isn't as bad as r_c thought.",
-        "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their clan leader. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take them. The other leader calls their warrior back, begrudgingly impressed.",
+        "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their Clan leader. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take them. The other leader calls their warrior back, begrudgingly impressed.",
         "As s_c marks the border, they encounter the o_c_n leader out with their new apprentice. s_c passes on some important information affecting both their clans, and politely wishes the young apprentice well. The other leader is begrudgingly impressed."
     ],
     "fail_text": [
@@ -758,8 +758,8 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -774,12 +774,12 @@
     "success_text": [
        "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the territorial marks. r_c remarks and heads home, a simple but necessary task completed.",
 "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who are formally-but-genuinely grateful.",
-"s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+"s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
 "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warriors teaching the youngster firmly but peacefully."
     ],
     "fail_text": [
 "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. They see the young cat off with a furious swipe of their claws, and then bring the prey back to c_n camp to report the incident to the deputy.",
-"s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+"s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
 null,
 "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! They come back to camp battered and scratched, and immediately apologize to the deputy for the diplomatic incident they've inadvertently caused.",
 "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next gathering.",
@@ -794,9 +794,9 @@ null,
     "antagonize_text": null,
     "antagonize_fail_text": null,
     "history_text": [
-            "r_c got injured patrolling on the border.",
-"r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c got injured patrolling on the border.",
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -810,17 +810,17 @@ null,
     "exp": 20,
     "success_text": [
        "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the territorial marks. r_c remarks and heads home, a simple but necessary task completed.",
-"r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who bow their heads to c_n's deputy in gratitude.",
-"s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
-"As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warrior and deputy teaching the youngster firmly but peacefully."
+        "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who bow their heads to c_n's deputy in gratitude.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+        "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warrior and deputy teaching the youngster firmly but peacefully."
     ],
     "fail_text": [
-"r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
-"s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
-"r_c encounters a patrol from o_c_n on the border, and greets them coldly, but there's something different here. Something dangerous. They don't return to camp.",
-"r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
-"s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next gathering.",
-"s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding."
+        "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's face goes slack with horror to see c_n's deputy.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+        "r_c encounters a patrol from o_c_n on the border, and greets them coldly, but there's something different here. Something dangerous. They don't return to camp.",
+        "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
+        "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c doesn't come back to camp. Their body is found along the border, and o_c_n boasts about it at the next gathering.",
+        "s_c can't contain their hatred for o_c_n, not even meeting a patrol of theirs at the border as a lone cat. They come back to camp bleeding."
     ],
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
     "win_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
@@ -831,9 +831,9 @@ null,
     "antagonize_text": null,
     "antagonize_fail_text": null,
     "history_text": [
-            "r_c got injured patrolling on the border.",
-"r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c got injured patrolling on the border.",
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -848,12 +848,12 @@ null,
     "success_text": [
        "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the territorial marks. r_c remarks and heads home, a simple but necessary task completed.",
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. The youngster is terrified, and loudly protests that they didn't know! r_c gives them the benefit of the doubt and brings them back to the frantic patrol looking for them on the other side of the border, who crouch to the ground and thank r_c profusely.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends. But by the standards of o_c_n - c_n relations, it's a peaceful encounter.",
         "As s_c marks the border, they encounter a o_c_n border patrol. It even includes a young apprentice, who starts fluffing up and insulting them. s_c sternly growls back to the apprentice that border fights are no joke, and surprisingly their mentor joins s_c, both warrior and leader teaching the youngster firmly but peacefully."
     ],
     "fail_text": [
         "r_c comes across a o_c_n apprentice on the wrong side of the border, and holding prey. Furious, they snarl their anger. The apprentice turns tail and flees, with r_c hot on their trail, and when the apprentice crosses the border to hide behind their mentor the o_c_n warrior's face goes slack with horror to see c_n's leader.",
-        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
+        "s_c is marking along the territory line when they encounter a patrol from o_c_n, out on a similar mission. They stare at the other Clan's patrol challengingly, following their every move until the shared border ends, and the patrol is marred by muttered insults and hissed threats from both sides.",
         "r_c encounters a patrol from o_c_n on the border, and greets them politely, but there's something different here. Something dangerous. They return to camp, blood soaked through their fur and a new hardness in their heart.",
         "r_c is having trouble focusing today, and puts a mark in the wrong place - and at the worst possible moment, because a o_c_n patrol sees them doing it! The diplomatic incident spirals into a full blown conflict, and r_c hauls themselves back to camp wounded and bleeding.",
         "s_c finds a o_c_n patrol out marking the same border, and can't contain their hostility. Eventually the other patrol snaps, and s_c loses a life in a vicious fight. o_c_n boasts about it at the next gathering.",
@@ -869,8 +869,8 @@ null,
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c lost a life against a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c lost a life against a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -906,8 +906,8 @@ null,
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 },
 {
@@ -922,7 +922,7 @@ null,
     "success_text": [
         "The border with o_c_n extends all the way to the coast, with all the pitfalls that come with that. The spray from the ocean has once again wiped away the territorial marks. r_c remarks and heads home, a simple but necessary task completed.",
         "r_c heads out to clarify a portion of the border that there's been confusion over recently, and encounters the leader of o_c_n out doing the same thing. They're carefully frosty with each other, but manage to work together to find a solution. Maybe o_c_n isn't as bad as r_c thought.",
-        "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their clan leader. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take them. The other leader calls their warrior back, begrudgingly impressed.",
+        "s_c comes across a patrol from o_c_n, out on a similar mission to them and being led by their Clan leader. One of the patrol yowls an insult, and s_c squares up, coldly sneering at the warrior that thinks they can take them. The other leader calls their warrior back, begrudgingly impressed.",
         "As s_c marks the border, they encounter the o_c_n leader out with their new apprentice. s_c passes on some important information affecting both their clans, and politely wishes the young apprentice well. The other leader is begrudgingly impressed."
     ],
     "fail_text": [
@@ -943,8 +943,8 @@ null,
     "antagonize_fail_text": null,
     "history_text": [
         "r_c got injured patrolling on the border.",
-        "r_c was killed by a hostile clan.",
-        "were killed by a hostile clan"
+        "r_c was killed by a hostile Clan.",
+        "were killed by a hostile Clan"
     ]
 }
 

@@ -677,13 +677,14 @@ class Patrol():
     def handle_conditions(self, outcome):
 
         condition_lists = {
-            "battle_injury": ["claw-wound", "bite-wound", "mangled leg", "mangled tail", "torn pelt"],
+            "battle_injury": ["claw-wound", "bite-wound", "mangled leg", "mangled tail", "torn pelt", "cat bite"],
             "minor_injury": ["sprain", "sore", "bruises", "scrapes"],
-            "blunt_force_injury": ["broken bone", "paralyzed", "head damage", "broken jaw"],
+            "blunt_force_injury": ["broken bone", "broken back", "head damage", "broken jaw"],
             "hot_injury": ["heat exhaustion", "heat stroke", "dehydrated"],
             "cold_injury": ["shivering", "frostbite"],
             "big_bite_injury": ["bite-wound", "broken bone", "torn pelt", "mangled leg", "mangled tail"],
-            "small_bite_injury": ["bite-wound", "torn ear", "torn pelt", "scrapes"]
+            "small_bite_injury": ["bite-wound", "torn ear", "torn pelt", "scrapes"],
+            "beak_bite": ["beak bite", "torn ear", "scrapes"]
         }
 
         possible_conditions = []

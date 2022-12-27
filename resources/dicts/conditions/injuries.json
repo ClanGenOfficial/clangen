@@ -53,7 +53,7 @@
         "cause_permanent": []
     },
 
-        "cat bite":{
+    "cat bite":{
         "duration": 2,
         "severity": "major",
         "medicine_duration": 1,
@@ -80,7 +80,7 @@
         "cause_permanent": []
     },
 
-        "beak bite":{
+    "beak bite":{
         "duration": 2,
         "severity": "major",
         "medicine_duration": 1,
@@ -934,6 +934,7 @@
         "also_got": [
         ],
         "cause_permanent": [
+            "paralyzed"
         ]
     },
     
@@ -964,7 +965,6 @@
             "shock"
         ],
         "cause_permanent": [
-            "paralyzed"
         ]
     }
 }
