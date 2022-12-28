@@ -173,6 +173,9 @@ class Cat():
         self.df = False
         self.experience_level = None
         self.corruption = 0
+        self.life_givers = []
+        self.known_life_givers = []
+        self.virtues = []
         self.no_kits = False
         self.paralyzed = False
 
