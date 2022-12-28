@@ -393,12 +393,16 @@ class Game():
             if not os.path.exists(directory):
                 os.makedirs(directory)
 
-
         #print(game.cat_to_fade)
         copy_of_info = ""
         for cat in game.cat_to_fade:
 
             inter_cat = self.cat_class.all_cats[cat]
+
+            # Add ID to list of faded cats.
+            print(self.clan.faded_ids)
+            self.clan.faded_ids.append(cat)
+            print(self.clan.faded_ids)
 
             # If they have a mate, break it up
             if inter_cat.mate:
@@ -503,9 +507,6 @@ class Game():
                 print("Something went wrong while saving a faded cat")
 
             self.clan.remove_cat(cat) # Remove the cat from the active cats lists
-
-            # Add ID to list of faded cats.
-            self.clan.faded_ids.append(cat)
 
         #Save the copy data is needed
         if game.settings["save_faded_copy"]:
