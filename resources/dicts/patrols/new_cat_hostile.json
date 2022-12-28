@@ -140,7 +140,7 @@
     "max_cats": 5
 },
 {
-    "patrol_id": "fst_border_noise1",
+    "patrol_id": "fst_bord_noise1",
     "biome": "forest",
     "season": "Any",
     "tags": ["border", "battle_injury", "scar", "death", "reputation"],
