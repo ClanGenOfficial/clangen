@@ -138,7 +138,7 @@
 		"respect",
 		"trust"
 	],
-	"intro_text":"p_l, fueled by desperation and unable to leave the clan because of the heat of greenleaf withering c_n, ingests a piece of sacred cacti hoping to trigger a vision.",
+	"intro_text":"p_l, fueled by desperation and unable to leave the Clan because of the heat of greenleaf withering c_n, ingests a piece of sacred cacti hoping to trigger a vision.",
 	"decline_text":"At that exact moment a cat walks into the medicine cat den looking for p_l. They put the piece of cacti back, having to wait for a better time.",
 	"chance_of_success":50,
 	"exp":20,
@@ -177,7 +177,7 @@
 	"Antagonize_fail_text":null,
 	"history_text":[
 		null,
-		"p_l died trying to communicate with starclan using a rare and dangerous ritual trying to save their clan."
+		"p_l died trying to communicate with starclan using a rare and dangerous ritual trying to save their Clan."
 	]
 },
 {
@@ -469,7 +469,7 @@
 	"chance_of_success":15,
 	"exp":20,
 	"success_text":[
-		"It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the clan's stores after the long Greenleaf. For just a second, they feel the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
+		"It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long Greenleaf. For just a second, they feel the weight of their responsibilities lift, and they let out a whoop and stop to play with app1.",
 		"app1 listens intently as the hours drift slowly by in their intense search, and then finally spots a bush with leaves sprinkled with white. It's lungwort! p_l showers them with praise, app1 feeling like they could burst with accomplishment.",
 		"It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cats visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
 		"Night falls, and still s_c insists they keep going - lungwort is the only reliable cure for yellowcough, they can't let c_n go without. Exhausted but determined, the medicine cats persist patiently until they find those precious speckled leaves."
@@ -511,7 +511,7 @@
 	"chance_of_success":15,
 	"exp":20,
 	"success_text":[
-		"It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the clan's stores after the long Greenleaf. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
+		"It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long Greenleaf. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
 		"Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. Frustratingly, p_l doesn't have the capacity to cart everything back to camp, but they stick the location in their mind as a place to return to.",
 		"It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
 		"Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
@@ -555,7 +555,7 @@
 	"chance_of_success":15,
 	"exp":20,
 	"success_text":[
-		"It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the clan's stores after the long Greenleaf. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
+		"It takes them all day, but eventually, finally, p_l spots the speckled leaves they've been looking for, so crucial to replenishing the Clan's stores after the long Greenleaf. For just a second, they feel the weight of their responsibilities lift, the strength of that relief catching them off guard.",
 		"Not only is the lungwort intact and growing nicely, but there's also a nice patch of plantain growing just nearby. p_l loads up their mostly-obliging escort and carries the extensive harvest home, tail waving jollily with their good mood.",
 		"It takes all of s_c's considerable talent for such things to hunt down the lungwort within their borders, the medicine cat visiting each likely nook and cranny in a carefully planned search pattern until finally those telltale speckled leaves are found.",
 		"Night falls, and still s_c insists they keep going - they just can't let c_n go without. Exhausted but determined, the medicine cat persists patiently until they find those precious speckled leaves."
@@ -705,7 +705,7 @@
 	"chance_of_success":60,
 	"exp":10,
 	"success_text":[
-		"The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+		"The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
 		null,
 		"s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
 	],
@@ -799,7 +799,7 @@
 	"chance_of_success":60,
 	"exp":10,
 	"success_text":[
-		"The ground is dusty and slippery, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+		"The ground is dusty and slippery, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
 		null,
 		"s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
 	],
@@ -893,7 +893,7 @@
 	"chance_of_success":60,
 	"exp":10,
 	"success_text":[
-		"The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+		"The ground is slippery with damp, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
 		null,
 		"s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
 	],
@@ -987,7 +987,7 @@
 	"chance_of_success":60,
 	"exp":10,
 	"success_text":[
-		"The ground is slippery with frost, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
+		"The ground is slippery with frost, and as p_l falls, r_c catches them. It's a nice reminder that the responsibility of looking after the Clan is a shared one, and the rescue also makes p_l shiver pleasantly.",
 		null,
 		"s_c has always been good at talking, but chatting with r_c they feel like they don't have to be. It's just a herb gathering patrol, but s_c feels more relaxed than they've felt in moons when they come back to camp, smiling softly."
 	],

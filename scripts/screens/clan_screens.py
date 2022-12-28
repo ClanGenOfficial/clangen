@@ -49,6 +49,7 @@ class ClanScreen(Screens):
                 # print("cat pressed")
                 game.switches["cat"] = event.ui_element.return_cat_id()
                 # print(game.switches["cat"])
+                # print(game.switches["cat"])
                 # print(event.ui_element.return_cat_id())
                 self.change_screen('profile screen')
             if event.ui_element == self.label_toggle:
@@ -314,6 +315,12 @@ class StarClanScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.page_number = None
+        self.previous_page_button = None
+        self.next_page_button = None
+        self.dark_forest_button = None
+        self.starclan_button = None
+        self.dead_cats = None
         self.starclan_bg = pygame.transform.scale(
             pygame.image.load("resources/images/starclanbg.png").convert(),
             (800, 700))
@@ -361,13 +368,12 @@ class StarClanScreen(Screens):
         self.dead_cats = [game.clan.instructor] if not game.clan.instructor.df else []
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
-            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df:
+            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df and \
+                    not the_cat.faded:
                 self.dead_cats.append(the_cat)
-
 
         self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 23)),
                                                               object_id="#search_entry_box")
-
 
         self.starclan_button = UIImageButton(pygame.Rect((150, 135), (34, 34)), "", object_id="#starclan_button")
         self.starclan_button.disable()
@@ -386,7 +392,7 @@ class StarClanScreen(Screens):
         cat_profiles()
 
     def update_search_cats(self, search_text):
-        '''Run this function when the search text changes, or when the screen is switched to.'''
+        """Run this function when the search text changes, or when the screen is switched to."""
         self.current_listed_cats = []
         search_text = search_text.strip()
         if search_text != '':
@@ -402,7 +408,7 @@ class StarClanScreen(Screens):
         self.update_page()
 
     def update_page(self):
-        '''Run this function when page changes.'''
+        """Run this function when page changes."""
 
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
@@ -439,7 +445,7 @@ class StarClanScreen(Screens):
         pos_x = 0
         pos_y = 0
         # print(self.current_listed_cats)
-        if self.current_listed_cats != []:
+        if self.current_listed_cats:
             for cat in self.chunks(self.current_listed_cats, 20)[self.list_page - 1]:
                 update_sprite(cat)
                 self.display_cats.append(
@@ -460,7 +466,7 @@ class StarClanScreen(Screens):
     def on_use(self):
         bg = self.starclan_bg
 
-        # Only update the postions if the search text changes
+        # Only update the positions if the search text changes
         if self.search_bar.get_text() != self.previous_search_text:
             self.update_search_cats(self.search_bar.get_text())
         self.previous_search_text = self.search_bar.get_text()
@@ -472,6 +478,7 @@ class StarClanScreen(Screens):
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
 
+
 class DFScreen(Screens):
     list_page = 1
     display_cats = []
@@ -480,6 +487,14 @@ class DFScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.all_pages = None
+        self.current_listed_cats = None
+        self.page_number = None
+        self.previous_page_button = None
+        self.next_page_button = None
+        self.dark_forest_button = None
+        self.starclan_button = None
+        self.dead_cats = None
         self.df_bg = pygame.transform.scale(
             pygame.image.load("resources/images/darkforestbg.png").convert(),
             (800, 700))
@@ -524,17 +539,15 @@ class DFScreen(Screens):
 
     def screen_switches(self):
         # Determine the dead, non-exiled cats.
-        if game.clan.instructor.df:
-            self.dead_cats = [game.clan.instructor]
-        else:
-            self.dead_cats = []
+        self.dead_cats = [game.clan.instructor] if game.clan.instructor.df else []
 
         for x in range(len(Cat.all_cats.values())):
             the_cat = list(Cat.all_cats.values())[x]
-            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and the_cat.df:
+            if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and the_cat.df and \
+                    not the_cat.faded:
                 self.dead_cats.append(the_cat)
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525,142), (147,23)),
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 23)),
                                                               object_id="#search_entry_box")
 
         self.starclan_button = UIImageButton(pygame.Rect((150, 135), (34, 34)), "", object_id="#starclan_button")
@@ -554,7 +567,7 @@ class DFScreen(Screens):
         cat_profiles()
 
     def update_search_cats(self, search_text):
-        '''Run this function when the search text changes, or when the screen is switched to.'''
+        """Run this function when the search text changes, or when the screen is switched to."""
         self.current_listed_cats = []
         search_text = search_text.strip()
         if search_text != '':
@@ -570,7 +583,7 @@ class DFScreen(Screens):
         self.update_page()
 
     def update_page(self):
-        '''Run this function when page changes.'''
+        """Run this function when page changes."""
 
         # If the number of pages becomes smaller than the number of our current page, set
         #   the current page to the last page
@@ -641,6 +654,7 @@ class DFScreen(Screens):
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
 
+
 class ListScreen(Screens):
     # the amount of cats a page can hold is 20, so the amount of pages is cats/20
     list_page = 1
@@ -677,10 +691,8 @@ class ListScreen(Screens):
             if not the_cat.dead and not the_cat.outside:
                 self.living_cats.append(the_cat)
 
-
         self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 23)),
                                                               object_id="#search_entry_box")
-
 
         self.your_clan_button = UIImageButton(pygame.Rect((115, 135), (34, 34)), "", object_id="#your_clan_button")
         self.your_clan_button.disable()
@@ -826,8 +838,8 @@ class AllegiancesScreen(Screens):
                 living_cats.append(the_cat)
         living_meds = []
         for the_cat in Cat.all_cats.values():
-            if the_cat.status == 'medicine cat' and not the_cat.dead\
-            and not the_cat.outside:
+            if the_cat.status == 'medicine cat' and not the_cat.dead \
+                    and not the_cat.outside:
                 living_meds.append(the_cat)
 
         # Pull the clan leaders
@@ -1021,6 +1033,4 @@ class AllegiancesScreen(Screens):
             self.allegiance_list.append([arg2, ''])
         return result
 
-
 # template for dark forest
-

@@ -14,7 +14,7 @@
     ],
     "decline_text": "Your patrol decides not to confront the loner.",
     "antagonize_text": "Your patrol drives the loner off of the territory.",
-    "antagonize_fail_text": "The loner is unimpressed by their hostility and decides this clan is not for them.",
+    "antagonize_fail_text": "The loner is unimpressed by their hostility and decides this Clan is not for them.",
     "chance_of_success": 40,
     "exp": 10,
     "win_skills": ["good speaker", "great speaker", "excellent speaker"],
@@ -98,15 +98,15 @@
     "tags": ["border", "new_cat", "new_cat_med", "reputation", "kits"],
     "intro_text": "r_c finds a loner who offers their healing skills in exchange for shelter.",
     "success_text": [
-        "The new medicine cat is welcomed into the clan.",
-        "The new medicine cat is welcomed into the clan along with their litter of kits."
+        "The new medicine cat is welcomed into the Clan.",
+        "The new medicine cat is welcomed into the Clan along with their litter of kits."
     ],
     "fail_text": [
-        "After hearing more about your clan, the loner decides not to join."
+        "After hearing more about your Clan, the loner decides not to join."
     ],
     "decline_text": "The patrol declines their offer.",
     "antagonize_text": "Your patrol drives the cat off of the territory.",
-    "antagonize_fail_text": "The loner is unimpressed by their hostility and decides this clan is not for them.",
+    "antagonize_fail_text": "The loner is unimpressed by their hostility and decides this Clan is not for them.",
     "chance_of_success": 40,
     "exp": 10,
     "win_skills": ["great speaker", "excellent speaker"],
@@ -123,9 +123,9 @@
     "chance_of_success": 40,
     "exp": 10,
     "success_text": [
-            "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stays hidden and goes to the cat while the rest of the patrol lures the dog away. They're unharmed, and this display of bravery makes them want to join the clan!",
+            "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stays hidden and goes to the cat while the rest of the patrol lures the dog away. They're unharmed, and this display of bravery makes them want to join the Clan!",
             null,
-            "s_c leaps into action, pelting towards the dog with a yowl rising in their throat. The dog looks alarmed by this newcomer and abandons the chase as s_c swipes at it. The loner, ruffled but unharmed, is amazed by this display. After some chatting, they decide to join the clan."
+            "s_c leaps into action, pelting towards the dog with a yowl rising in their throat. The dog looks alarmed by this newcomer and abandons the chase as s_c swipes at it. The loner, ruffled but unharmed, is amazed by this display. After some chatting, they decide to join the Clan."
     ],
     "fail_text": [
             "The patrol swiftly jumps into action. They capture the dog's attention and draw it away from the cat. r_c stayed hidden while the rest of the patrol lured the dog away, but when they go to find the cat, they see that it's still running! Oh well, at least they're alright.",
@@ -144,12 +144,12 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["med_cat", "med_only", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn"],
-    "intro_text": "While searching for some specific herbs p_l is startled by weird sounds and whispers on the wind.",
+    "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
     "exp": 10,
     "success_text": [
-            "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds themself nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the clan can assist.",
+            "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds themself nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the Clan can assist.",
             "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. r_c sprints back to camp to find help while p_l tries to make the queen eat some strengthening herbs. Thankful for the help the queen joins c_n with their kits."
     ],
     "fail_text": [
@@ -169,7 +169,7 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["med_cat", "med_only", "new_cat", "new_cat_kits", "new_cat_newborn"],
-    "intro_text": "While searching for some specific herbs p_l is startled by weird sounds and whispers on the wind.",
+    "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
     "exp": 10,
@@ -199,7 +199,7 @@
     "chance_of_success": 45,
     "exp": 10,
     "success_text": [
-            "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds themself nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the clan can assist.",
+            "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds themself nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. p_l brings the queen back to camp, where the Clan can assist.",
             "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. p_l tries to make the queen eat some strengthening herbs, and slowly helps them back to camp. Thankful for the help the queen joins c_n with their kits."
     ],
     "fail_text": [
@@ -340,7 +340,7 @@
     "fail_text": [
         null,
         null,
-        "Your patrol walks into an ambush. Before p_l can so much as yowl a warning, a group of rogues creeps from the shadows to surround the clan cats on all sides. Few of the cats manage to escape, and any that are left behind are found the next morning, cold and covered in battle wounds.",
+        "Your patrol walks into an ambush. Before p_l can so much as yowl a warning, a group of rogues creeps from the shadows to surround the Clan cats on all sides. Few of the cats manage to escape, and any that are left behind are found the next morning, cold and covered in battle wounds.",
         null
     ],
     "win_skills": ["excellent fighter"],
@@ -365,7 +365,7 @@
     "chance_of_success": 60,
     "exp": 10,
     "success_text": [
-        "p_l goes to check the bush and finds a loner sheepishly hiding inside. It seems the stranger was thinking of asking to join the clan. They're a bit intimidated though and, after speaking to p_l for a little while, they decide to join the clan.",
+        "p_l goes to check the bush and finds a loner sheepishly hiding inside. It seems the stranger was thinking of asking to join the Clan. They're a bit intimidated though and, after speaking to p_l for a little while, they decide to join the Clan.",
         "p_l pads towards the bush to check on the noise when a rabbit suddenly bursts out!  None of the cats are quick enough to catch it, but at least the noise was nothing dangerous.",
         "s_c takes the lead in checking the noise, and it's a good thing they did, because the moment they step closer to the bush a rogue comes springing out! s_c is quick to bat them away, hissing and spitting, before promptly chasing the rogue out of the territory.  It was hardly a fight, really. "
     ],

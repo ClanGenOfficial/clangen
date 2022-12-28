@@ -132,7 +132,7 @@
         "r_c heads off to one of their favorite spots on the beach, a rocky shore with high highs and low lows, providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that big crab thought.",
         "r_c finds a trapped fish flopping in a tidal pool, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates.",
         "s_c gets the chance to try out an idea they've been sitting on for a while. There's a rabbit warren in the sand dunes that they've spotted that's particularly badly built, and they manage to dig down into one of the dens, fishing baby rabbits out by the pawful.",
-        "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+        "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
     ],
     "fail_text": [
         "You can't catch what isn't there, and the prey today is very not there.",
@@ -160,7 +160,7 @@
         "r_c heads off to one of their favorite spots on the beach, a rocky shore with high highs and low lows, providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that big crab thought. They snicker to themselves as they pad back to camp.",
         "r_c finds a trapped fish flopping in a tidal pool, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
         "s_c gets the chance to try out an idea they've been sitting on for a while. There's a rabbit warren that they've spotted in the sand dunes that's particularly badly built, and they manage to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
-        "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+        "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
     ],
     "fail_text": [
         "You can't catch what isn't there, and the prey today is very not there.",
@@ -188,7 +188,7 @@
         "r_c heads off to one of their favorite spots on the beach, a rocky shore with high highs and low lows, providing excellent ambush chances. And what do you know, they are bush! Or they were as far as that big crab thought. They snicker to themselves as they pad back to camp.",
         "r_c finds a trapped fish flopping in a tidal pool, and they can barely drag the thing back to camp, but by the stars it's juicy when they sit down to eat it with their clanmates. Purring, they take the opportunity for a small moment of peace, relaxing with their friends.",
         "s_c gets the chance to try out an idea they've been sitting on for a while. There's a rabbit warren that they've spotted in the sand dunes that's particularly badly built, and they manage to dig down into one of the dens, fishing a couple baby rabbits out. This is a good spot to remember if c_n hits hard times.",
-        "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
+        "The prey is running terribly today. But s_c has patience, and wisely waits for the perfect opportunity instead of getting frustrated. They come back to camp with a good contribution to the Clan's stores, having had a relaxing day sitting with their thoughts while waiting for the prey to come to them."
     ],
     "fail_text": [
         "You can't catch what isn't there, and the prey today is very not there.",
@@ -310,17 +310,17 @@
     "chance_of_success": 60,
     "exp": 20,
     "success_text": [
-            "They continue hunting undetected.",
-            "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, before darting forward and making off with a sandwich in their mouth.",
-            "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
-            "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees."
+        "They continue hunting undetected.",
+        "Slyly, r_c uses the chance to get food, practicing their best kittypet impression until just the right moment, before darting forward and making off with a sandwich in their mouth.",
+        "s_c spots the Twolegs unloading metal boxes from their monsters, and abruptly tells the patrol to leave. Now.",
+        "A Twoleg spots s_c and crouches down, clicking softly. s_c hisses and flees."
     ],
     "fail_text": [
-            null,
-            null,
-            "The patrol mostly ignores the Twolegs. As they hunt they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
-            null,
-    "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before they can decide whether to step closer, there's a swoosh, and a net falls around them. s_c fights desperately, but the Twolegs take them away in the monster."
+        null,
+        null,
+        "The patrol mostly ignores the Twolegs. As they hunt they hear a yelp from r_c. They've crawled into a metal Twolegs box, and there's nothing they or the rest of the patrol can do to get them out - eventually the Twolegs notice, and r_c is taken by them.",
+        null,
+        "A Twoleg spots s_c and crouches down, clicking softly. s_c pauses - are they hurt? Do they want to make friends? Before they can decide whether to step closer, there's a swoosh, and a net falls around them. s_c fights desperately, but the Twolegs take them away in the monster."
     ],
     "win_skills": ["extremely smart"],
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
@@ -409,7 +409,7 @@
     "patrol_id": "bch_hunt_gonetwolegden1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["hunting", "gone", "small_prey", "warrior"],
+    "tags": ["hunting", "gone", "small_prey", "warrior", "injury", "blood loss", "scrapes"],
     "intro_text": "r_c decides to hunt out near the Twoleg dens.",
     "decline_text": "On second thought, they decide to reline their nest today instead.",
     "chance_of_success": 50,
@@ -443,7 +443,7 @@
     "patrol_id": "bch_hunt_gonetwolegden2",
     "biome": "beach",
     "season": "Any",
-    "tags": ["hunting", "gone", "small_prey", "apprentice"],
+    "tags": ["hunting", "gone", "small_prey", "apprentice", "injury", "blood loss", "scrapes"],
     "intro_text": "app1 decides to hunt out near the Twoleg dens.",
     "decline_text": "On second thought, they decide to reline their nest today instead.",
     "chance_of_success": 50,
@@ -835,7 +835,7 @@
     "patrol_id": "bch_hunt_octopus4",
     "biome": "beach",
     "season": "Any",
-    "tags": ["hunting", "big_prey", "trust", "injury", "beak bite"],
+    "tags": ["hunting", "big_prey", "trust", "injury", "beak_bite"],
     "intro_text": "As the patrol passes along the sand between the waves and some rockpools, they find one of the oddest things any of them have ever seen - a huge octopus on land. It's clearly trying to head for the ocean.",
     "decline_text": "A little impressed, a lot weirded out, the patrol decided to leave the poor creature alone.",
     "chance_of_success": 50,
@@ -870,7 +870,7 @@
     "patrol_id": "bch_hunt_octopus5",
     "biome": "beach",
     "season": "Any",
-    "tags": ["hunting", "small_prey", "trust", "distrust", "injury", "beak bite"],
+    "tags": ["hunting", "small_prey", "trust", "distrust", "injury", "beak_bite"],
     "intro_text": "As the patrol passes along the sand between the waves and some rockpools, they find one of the oddest things any of them have ever seen - a huge octopus on land. It's clearly trying to head for the ocean.",
     "decline_text": "A little impressed, a lot weirded out, the patrol decided to leave the poor creature alone.",
     "chance_of_success": 50,
@@ -926,7 +926,7 @@
     "patrol_id": "bch_hunt_eagleswim1",
     "biome": "beach",
     "season": "Any",
-    "tags": ["hunting", "big_prey", "warrior", "trust", "scar", "injury", "beak bite"],
+    "tags": ["hunting", "big_prey", "warrior", "trust", "scar", "injury", "beak+bite"],
     "intro_text": "The hunting patrol spots an eagle on the wing overhead, and watches as it swoops to dig its talons through the spine of an impressively huge fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
     "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
     "chance_of_success": 30,
@@ -960,7 +960,7 @@
     "patrol_id": "bch_hunt_eagleswim2",
     "biome": "beach",
     "season": "Any",
-    "tags": ["hunting", "big_prey", "warrior", "trust", "scar", "injury", "beak bite"],
+    "tags": ["hunting", "big_prey", "warrior", "trust", "scar", "injury", "beak_bite"],
     "intro_text": "The hunting patrol spots an eagle on the wing overhead, and watches as it swoops to dig its talons through the spine of an impressively huge fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
     "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
     "chance_of_success": 60,
@@ -994,7 +994,7 @@
     "patrol_id": "bch_hunt_eagleswim3",
     "biome": "beach",
     "season": "Any",
-    "tags": ["hunting", "big_prey", "warrior", "trust", "cruel_season", "death", "scar", "injury", "beak bite"],
+    "tags": ["hunting", "big_prey", "warrior", "trust", "cruel_season", "death", "scar", "injury", "beak_bite"],
     "intro_text": "The hunting patrol spots an eagle on the wing overhead, and watches as it swoops to dig its talons through the spine of an impressively huge fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
     "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
     "chance_of_success": 30,
@@ -1031,7 +1031,7 @@
     "patrol_id": "bch_hunt_eagleswim4",
     "biome": "beach",
     "season": "Any",
-    "tags": ["hunting", "big_prey", "warrior", "trust", "cruel_season", "death", "scar", "injury", "beak bite"],
+    "tags": ["hunting", "big_prey", "warrior", "trust", "cruel_season", "death", "scar", "injury", "beak_bite"],
     "intro_text": "The hunting patrol spots an eagle on the wing overhead, and watches as it swoops to dig its talons through the spine of an impressively huge fish. But then it doesn't take its catch into the air. Perhaps it's too heavy?",
     "decline_text": "They move on, ignoring the eagle to focus on their own hunt.",
     "chance_of_success": 60,

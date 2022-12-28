@@ -705,6 +705,8 @@ class Condition_Events():
                         cat.injuries.pop(y)
 
         if new_condition in ILLNESSES:
+            if new_condition == 'redcough':
+                cat.injuries.pop('poisoned')
             cat.get_ill(new_condition, event_triggered=True)
         elif new_condition in INJURIES:
             if new_condition == 'lingering shock':
@@ -756,7 +758,30 @@ class Condition_Events():
                 random_index = int(random.random() * len(possible_string_list))
                 med_list = get_med_cats(Cat)
                 med_cat = None
-                if len(med_list) == 0:
+                has_parents = False
+                if cat.parent1 is not None and cat.parent2 is not None:
+
+                    # Check if the parent is in Cat.all_cats. If not, they are faded are dead.
+
+                    med_parent = False # If they have a med parent, this will be flicked to True in the next couple lines.
+                    if cat.parent1 in Cat.all_cats:
+                        parent1_dead = Cat.all_cats[cat.parent1].dead
+                        if Cat.all_cats[cat.parent1].status == "medicine cat":
+                            med_parent = True
+                    else:
+                        parent1_dead = True
+
+                    if cat.parent2 in Cat.all_cats:
+                        parent2_dead = Cat.all_cats[cat.parent2.dead]
+                        if Cat.all_cats[cat.parent2].status == "medicine cat":
+                            med_parent = True
+                    else:
+                        parent2_dead = True
+
+                    if not parent1_dead or not parent2_dead and not med_parent:
+                        has_parents = True
+
+                if len(med_list) == 0 or not has_parents:
                     if random_index == 0:
                         random_index = 1
                     else:
@@ -842,12 +867,12 @@ class Condition_Events():
                     chance = int(retire_chances.get(cat.age))
                     if not int(random.random() * chance):
                         cat.retire_cat()
-                        event = f'{cat.name} has decided to retire from normal clan duty.'
+                        event = f'{cat.name} has decided to retire from normal Clan duty.'
                         event_list.append(event)
 
                 if cat.permanent_condition[condition]['severity'] == 'severe':
                     cat.retire_cat()
-                    event = f'{cat.name} has decided to retire from normal clan duty.'
+                    event = f'{cat.name} has decided to retire from normal Clan duty.'
                     event_list.append(event)
 
         if len(event_list) > 0:

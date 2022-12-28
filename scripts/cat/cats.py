@@ -15,6 +15,7 @@ from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_c
 from scripts.utility import *
 from scripts.game_structure.game_essentials import *
 from scripts.cat_relations.relationship import *
+import scripts.game_structure.image_cache as image_cache
 
 
 class Cat():
@@ -121,7 +122,33 @@ class Cat():
                  suffix=None,
                  ID=None,
                  moons=None,
-                 example=False):
+                 example=False,
+                 faded=False, # Set this to True if you are loading a faded cat. This will prevent the cat from being added to the list
+                 age="" # Only used for faded cats, to choose the correct sprite
+                 ):
+
+        # This must be at the top. It's a smaller list of things to init, which is only for faded cats
+        if faded:
+            self.ID = ID
+            self.name = Name(status, prefix=prefix, suffix=suffix)
+            self.parent1 = None
+            self.parent2 = None
+            self.status = status
+            self.moons = moons
+            if moons > 300:
+                # Out of range, always elder
+                self.age = 'elder'
+            else:
+                # In range
+                for key_age in self.age_moons.keys():
+                    if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
+                        self.age = key_age
+
+            self.set_faded() # Sets the faded sprite and faded tag
+
+            return
+
+
         self.gender = gender
         self.status = status
         self.backstory = backstory
@@ -179,10 +206,23 @@ class Cat():
         self.no_kits = False
         self.paralyzed = False
 
+        self.opacity = 100
+        self.prevent_fading = False #Prevents a cat from fading.
+        self.faded_offspring = []  # Stores of a list of faded offspring, for family page purposes.
+
+        self.faded = faded  # This is only used to flag cat that are faded, but won't be added to the faded list until
+                            # the next save.
+
         # setting ID
         if ID is None:
             potential_id = str(next(Cat.id_iter))
-            while potential_id in self.all_cats:
+
+            if game.clan:
+                faded_cats = game.clan.faded_ids
+            else:
+                faded_cats = []
+
+            while potential_id in self.all_cats or potential_id in faded_cats:
                 potential_id = str(next(Cat.id_iter))
             self.ID = potential_id
         else:
@@ -466,9 +506,9 @@ class Cat():
                 # check if the cat will get Major or Minor severity for grief
                 chance = [1, 1]
                 if cat.trait in grief_major:
-                    chance = [2, 1]
+                    chance = [3, 1]
                 if cat.trait in grief_minor:
-                    chance = [2, 1]
+                    chance = [1, 3]
                 severity = random.choices(['major', 'minor'], weights=chance, k=1)
                 # give the cat the relevant severity text
                 severity = severity[0]
@@ -487,10 +527,9 @@ class Cat():
                         "beating heart of a mouse, but they're uninterested, staring at the wall of their nest and "
                         "refusing to talk.",
                         "Things are never going to be the same now. Could never be the same. r_c doesn't know how "
-                        "they're supposed to rise the next morning and go on patrol. They refuse to.",
+                        "they're supposed to rise the next morning and go on with life. They refuse to.",
                         "r_c spends time by themselves, letting themselves mourn m_c and the time they should have "
-                        "had together. They'll return to their duties eventually, of course they will, but no one can "
-                        "begrudge them the need to grieve.",
+                        "had together. No one can begrudge them the need to grieve.",
                         "Cats offer r_c comfort and care. They refuse all of it."
                     ]))
                 elif severity == 'minor':
@@ -501,11 +540,11 @@ class Cat():
                         "their mouth, but they know m_c would want them to take care of themselves. ",
                         "r_c keeps searching for tasks to do, for cats to comfort, for distractions against the hole "
                         "in their heart, as they fight to keep the grief from consuming them.",
-                        "The world seems dim and lifeless, and r_c keeps close to their clan, seeking out their "
+                        "The world seems dim and lifeless, and r_c keeps close to their Clan, seeking out their "
                         "comfort and company.",
                         "r_c goes over the best of the moments they shared with m_c in their mind, again and again, "
                         "like wearing a rut into the ground, until they're sure that they will remember m_c forever.",
-                        "One day, the clan will have kittens who never knew m_c in life, but r_c vows to ensure m_c's "
+                        "One day, the Clan will have kittens who never knew m_c in life, but r_c vows to ensure m_c's "
                         "memory will live on through them.",
                         "Some of the memories shared at m_c's vigil make r_c laugh. Some cry. Most of them do both, "
                         "as r_c marvels at what a special cat m_c was.",
@@ -583,7 +622,6 @@ class Cat():
             game.clan.deputy.outside = True
         else:
             self.outside = True
-
         for app in self.apprentice.copy():
             app.update_mentor()
         self.update_mentor()
@@ -1053,7 +1091,10 @@ class Cat():
         parents = other_cat.get_parents()
         for parent in parents:
             # Get parent 'Cat'
-            parent_obj = Cat.all_cats.get(parent)
+            if parent in Cat.all_cats.keys():
+                parent_obj = Cat.all_cats.get(parent)
+            else:
+                parent_obj = Cat.load_faded_cat(parent)
             if parent_obj:
                 # If there are parents, get grandparents and check if our ID is among them.
                 if self.ID in parent_obj.get_parents():
@@ -1770,6 +1811,8 @@ class Cat():
                 self.relationships[self.mate] = Relationship(self, mate)
 
         self.mate = None
+        if self.mate in Cat.all_cats:
+            Cat.all_cats[self.mate].mate = None
 
     def set_mate(self, other_cat):
         """Assigns other_cat as mate to self."""
@@ -1935,7 +1978,44 @@ class Cat():
             except:
                 print(f'WARNING: There was an error reading the relationship file of cat #{self}.')
 
+    def set_faded(self):
+        """This function is for cats that are faded. It will set the sprite and the faded tag"""
+        self.faded = True
 
+        # Sillotette sprite
+        if self.age in ['kitten']:
+            file_name = "faded_kitten.png"
+        elif self.age in ['adult', 'young adult', 'senior adult']:
+            file_name = "faded_adult.png"
+        elif self.age in ["adolescent"]:
+            file_name = "faded_adol.png"
+        else:
+            file_name = "faded_elder.png"
+
+        self.sprite = image_cache.load_image(f"sprites/faded/{file_name}").convert_alpha()
+
+    @staticmethod
+    def load_faded_cat(cat):
+        """Loads a faded cat, returning the cat object. This object is saved nowhere else. """
+        print("loading faded cat")
+        try:
+            with open('saves/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
+                cat_info = ujson.loads(read_file.read())
+        except:
+            print("Error in loading faded cat")
+            return False
+
+        cat_ob = Cat(ID=cat_info["ID"], prefix=cat_info["name_prefix"], suffix=cat_info["name_suffix"],
+                     status=cat_info["status"], moons=cat_info["moons"], faded=True)
+        if cat_info["parent1"]:
+            cat_ob.parent1 = cat_info["parent1"]
+        if cat_info["parent2"]:
+            cat_ob.parent2 = cat_info["parent2"]
+        cat_ob.paralyzed = cat_info["paralyzed"]
+        cat_ob.faded_offspring = cat_info["faded_offspring"]
+        cat_ob.faded = True
+
+        return cat_ob
 # ---------------------------------------------------------------------------- #
 #                                  properties                                  #
 # ---------------------------------------------------------------------------- #

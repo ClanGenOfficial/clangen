@@ -35,9 +35,9 @@ class MakeClanScreen(Screens):
         pygame.image.load("resources/images/bg_preview_border.png").convert_alpha(), (466, 416))
 
     classic_mode_text = "This mode is Clan Generator at it's most basic. " \
-                        "The player will not be expected to manage the minutia of clan life. <br><br>" \
+                        "The player will not be expected to manage the minutia of Clan life. <br><br>" \
                         "Perfect for a relaxing game session or for focusing on storytelling. <br><br>" \
-                        "With this mode you are the eye in the sky, watching the clan as their story unfolds. "
+                        "With this mode you are the eye in the sky, watching the Clan as their story unfolds. "
 
     expanded_mode_text = "A more hands-on experience. " \
                          "This mode has everything in Classic Mode as well as more management-focused features.<br><br>" \
@@ -515,7 +515,7 @@ class MakeClanScreen(Screens):
         self.elements['game_mode_background'] = pygame_gui.elements.UIImage(pygame.Rect((325, 130), (399, 461)),
                                                                             text_box)
         self.elements['permi_warning'] = pygame_gui.elements.UITextBox(
-            "Your clan's game mode in permanent and cannot be changed after clan creation.",
+            "Your clan's game mode in permanent and cannot be changed after Clan creation.",
             pygame.Rect((100, 581), (600, 40)),
             object_id=get_text_box_theme()
         )
@@ -833,7 +833,7 @@ class MakeClanScreen(Screens):
                                                                     game.clan.leader.large_sprite)
         self.elements["continue"] = UIImageButton(pygame.Rect((349, 250), (102, 30)), "",
                                                   object_id="#continue_button_small")
-        self.elements["save_confirm"] = pygame_gui.elements.UITextBox('Your clan has been created and saved!',
+        self.elements["save_confirm"] = pygame_gui.elements.UITextBox('Your Clan has been created and saved!',
                                                                       pygame.Rect((100, 70), (600, 30)),
                                                                       object_id=get_text_box_theme())
 
@@ -1205,7 +1205,7 @@ class MakeClanScreen(Screens):
 
     def on_use(self):
         # LAYOUT
-        verdana.text('Your clan has been created and saved!', ('center', 50))
+        verdana.text('Your Clan has been created and saved!', ('center', 50))
         draw_big(game.clan.leader, (screen_x / 2 - 50, 100))
 
         # buttons
