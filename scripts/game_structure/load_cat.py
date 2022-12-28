@@ -90,6 +90,9 @@ def json_load():
         new_cat.death_event = cat["death_event"] if "death_event" in cat else []
         new_cat.df = cat["df"] if "df" in cat else False
         new_cat.corruption = cat["corruption"] if "corruption" in cat else 0
+        new_cat.life_givers = cat["life_givers"] if "life_givers" in cat else []
+        new_cat.known_life_givers = cat["known_life_givers"] if "known_life_givers" in cat else []
+        new_cat.virtues = cat["virtues"] if "virtues" in cat else []
         new_cat.outside = cat["outside"] if "outside" in cat else False
         new_cat.retired = cat["retired"] if "retired" in cat else False
         new_cat.faded_offspring = cat["faded_offspring"] if "faded_offspring" in cat else []

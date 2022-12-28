@@ -2099,137 +2099,136 @@ class CeremonyScreen(Screens):
         # as of right now, chooses random starclan cats to give lives
         # in the future, plan to have starclan cats with high relationships to give lives
         # if not enough cats to give lives, generate a new random cat name to give a life
+        queen = ""
+        warrior = ""
+        kit = ""
+        warrior2 = ""
+        app = ""
+        elder = ""
+        warrior3 = ""
+        med_cat = ""
+        prev_lead = ""
+        known = None
+        virtues = None
+        if len(cat.life_givers) == 0:
+            queen_virtues = ["affection","compassion","empathy","duty","protection","pride"]
+            warrior_virtues = ["acceptance","bravery","certainty", "clear judgement","confidence"]
+            kit_virtues = ["adventure","curiosity","forgiveness","hope","perspective","protection"]
+            warrior2_virtues = ["courage","determination","endurance","sympathy"]
+            app_virtues = ["happiness","honesty","humor","justice","mentoring","trust"]
+            elder_virtues = ["empathy","grace","humility","integrity","persistence","resilience"]
+            warrior3_virtues = ["farsightedness","friendship","instincts","mercy","strength","unity"]
+            med_cat_virtues = ["clear sight","devotion","faith","healing","patience","selflessness","wisdom"]
+            prev_lead_virtues = ["endurance in the face of hardship","knowing when to fight and when to choose peace","leadership through the darkest times","loyalty to their clan","the strength to overcome their fears","tireless energy"]
+            virtues = [choice(queen_virtues), choice(warrior_virtues), choice(kit_virtues), choice(warrior2_virtues), choice(app_virtues), choice(elder_virtues), choice(warrior3_virtues), choice(med_cat_virtues), choice(prev_lead_virtues)]
+            known = [False, False, False, False, False, False, False, False, False]
 
-        queen = None
-        warrior = None
-        kit = None
-        warrior2 = None
-        app = None
-        elder = None
-        warrior3 = None
-        med_cat = None
-        prev_lead = None
-        life_givers = [queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead]
-        for i in reversed(Cat.all_cats.keys()):
-            c = Cat.all_cats[i]
-            if c.dead:
-                if not queen and c.status == 'queen' and str(c.name).strip() != "unnamed queen" and not c.outside:
-                    queen = c
-                    continue
-                elif not kit and c.status == 'kitten':
-                    kit = c
-                    continue
-                elif not app and c.status == 'apprentice':
-                    app = c
-                    continue
-                elif not prev_lead and c.status == 'leader':
-                    prev_lead = c
-                    continue
-                elif not elder and c.status == 'elder':
-                    elder = c
-                    continue
-                elif not warrior and c.status == 'warrior':
-                    warrior = c
-                    continue
-                elif not warrior2 and c.status == 'warrior':
-                    warrior2 = c
-                    continue
-                elif not warrior3 and c.status == 'warrior':
-                    warrior3 = c
-                    continue
-                elif not med_cat and (c.status == 'medicine cat' or c.status == 'medicine cat apprentice'):
-                    med_cat = c
-                    continue
-                if queen and warrior and kit and warrior2 and app and elder and warrior3 and med_cat and prev_lead:
-                    break
-        queen_virtues = ["affection", "compassion", "empathy", "duty", "protection", "pride"]
-        warrior_virtues = ["acceptance", "bravery", "certainty", "clear judgement", "confidence"]
-        kit_virtues = ["adventure", "curiosity", "forgiveness", "hope", "perspective", "protection"]
-        warrior2_virtues = ["courage", "determination", "endurance", "sympathy"]
-        app_virtues = ["happiness", "honesty", "humor", "justice", "mentoring", "trust"]
-        elder_virtues = ["empathy", "grace", "humility", "integrity", "persistence", "resilience"]
-        warrior3_virtues = ["farsightedness", "friendship", "instincts", "mercy", "strength", "unity"]
-        med_cat_virtues = ["clear sight", "devotion", "faith", "healing", "patience", "selflessness", "wisdom"]
-        prev_lead_virtues = ["endurance in the face of hardship", "knowing when to fight and when to choose peace",
-                             "leadership through the darkest times", "loyalty to their clan",
-                             "the strength to overcome their fears", "tireless energy"]
-        if queen:
-            queen_text = str(
-                queen.name) + ' pads up to the new leader first, softly touching their nose to ' + dep_name + '\'s head. They give a life for ' + choice(
-                queen_virtues) + '.'
+            for i in reversed(Cat.all_cats.keys()):
+                c = Cat.all_cats[i]
+                if c.dead:
+                    if not queen and c.status == 'queen' and str(c.name).strip() != "unnamed queen" and not c.outside and not c.df:
+                        queen = str(c.name)
+                        known[0] = True
+                        continue
+                    elif not kit and c.status == 'kitten' and not c.df:
+                        kit = str(c.name)
+                        known[1] = True
+                        continue
+                    elif not app and c.status == 'apprentice' and not c.df:
+                        app = str(c.name)
+                        known[2] = True                        
+                        continue
+                    elif not prev_lead and c.status == 'leader' and not c.df:
+                        prev_lead = str(c.name)
+                        known[3] = True 
+                        continue
+                    elif not elder and c.status == 'elder' and not c.df:
+                        elder = str(c.name)
+                        known[4] = True 
+                        continue
+                    elif not warrior and c.status == 'warrior' and not c.df:
+                        warrior = str(c.name)
+                        known[5] = True 
+                        continue
+                    elif not warrior2 and c.status == 'warrior' and not c.df:
+                        warrior2 = str(c.name)
+                        known[6] = True 
+                        continue
+                    elif not warrior3 and c.status == 'warrior' and not c.df:
+                        warrior3 = str(c.name)
+                        known[7] = True 
+                        continue
+                    elif not med_cat and (c.status == 'medicine cat' or c.status == 'medicine cat apprentice') and not c.df:
+                        med_cat = str(c.name)
+                        known[8] = True 
+                        continue
+                    if queen and warrior and kit and warrior2 and app and elder and warrior3 and med_cat and prev_lead:
+                        break
+            if not queen:
+                queen = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes))
+            if not warrior:
+                warrior = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes))
+            if not kit:
+                kit = str(choice(names.normal_prefixes)) + "kit"
+            if not warrior2:
+                warrior2 = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes))
+            if not app:
+                app = str(choice(names.normal_prefixes)) + "paw"
+            if not elder:
+                elder = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes))
+            if not warrior3:
+                warrior3 = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes))
+            if not med_cat:
+                med_cat = str(choice(names.normal_prefixes)) + str(choice(names.normal_suffixes))
+            if not prev_lead:
+                prev_lead = str(choice(names.normal_prefixes)) + "star"
+            cat.life_givers.extend([queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead])
+            cat.known_life_givers.extend(known)
+            cat.virtues.extend(virtues)
         else:
-            queen_text = 'A queen introduces themself as ' + str(choice(names.normal_prefixes)) + str(choice(
-                names.normal_suffixes)) + '. They softly touch their nose to ' + dep_name + '\'s head, giving them a life for ' + choice(
-                queen_virtues) + '.'
-        if warrior:
-            warrior_text = str(warrior.name) + ' walks up to ' + dep_name + ' next, offering a life for ' + choice(
-                warrior_virtues) + '. They smile, and state that the Clan will do well under ' + dep_name + '\'s leadership.'
+            queen, warrior, kit, warrior2, app, elder, warrior3, med_cat, prev_lead = cat.life_givers[0], cat.life_givers[1], cat.life_givers[2], cat.life_givers[3], cat.life_givers[4], cat.life_givers[5], cat.life_givers[6], cat.life_givers[7], cat.life_givers[8]
+            known = cat.known_life_givers
+            virtues = cat.virtues 
+        
+        if known[0]:
+            queen_text = queen + ' pads up to the new leader first, softly touching their nose to ' + dep_name + '\'s head. They give a life for ' + cat.virtues[0] + '.'
+        else: 
+            queen_text = 'A queen introduces themself as ' + queen + '. They softly touch their nose to ' + dep_name + '\'s head, giving them a life for ' + cat.virtues[0] + '.'
+        if known[1]:
+            warrior_text = warrior + ' walks up to ' + dep_name + ' next, offering a life for ' + cat.virtues[1] + '. They smile, and state that the clan will do well under ' + dep_name + '\'s leadership.'
+        else: 
+            warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + warrior + '. They offer a life for ' + cat.virtues[1] + '.'
+        if known[2]:
+            kit_text = kit + ' bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + cat.virtues[2] + '. They flick their tail and head back to make room for the next cat.'
         else:
-            warrior_text = 'An unknown warrior walks towards ' + dep_name + ' stating that their name is ' + str(
-                choice(names.normal_prefixes)) + str(
-                choice(names.normal_suffixes)) + '. They offer a life for ' + choice(warrior_virtues) + '.'
-        if kit:
-            kit_text = str(
-                kit.name) + ' bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + choice(
-                kit_virtues) + '. They flick their tail and head back to make room for the next cat.'
-        else:
-            kit_text = str(choice(
-                names.normal_prefixes)) + 'kit introduces themself and bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + choice(
-                kit_virtues) + '.'
-        if warrior2:
-            warrior2_text = 'Another cat approaches. ' + str(
-                warrior2.name) + ' steps forward to give ' + dep_name + ' a life for ' + choice(
-                warrior2_virtues) + '. ' + dep_name + ' grits their teeth as the life rushes into them.'
-        else:
-            warrior2_text = str(choice(names.normal_prefixes)) + str(choice(
-                names.normal_suffixes)) + ' states their name and steps forward to give ' + dep_name + ' a life for ' + choice(
-                warrior2_virtues) + '.'
-        if app:
-            app_text = 'A young cat is next to give a life. Starlight reflects off their youthful eyes. ' + str(
-                app.name.prefix) + 'paw stretches up to give a life for ' + choice(app_virtues) + '.'
-        else:
-            app_text = str(choice(
-                names.normal_prefixes)) + 'paw, an unfamiliar apprentice, stretches up to give a life for ' + choice(
-                app_virtues) + '. Their eyes glimmer as they wish ' + dep_name + " well, and step back for the next cat."
-        if elder:
-            elder_text = str(
-                elder.name) + ' strides forward, an energy in their steps that wasn\'t present in their last moments. They give a life for ' + choice(
-                elder_virtues) + '.'
-        else:
-            elder_text = str(choice(names.normal_prefixes)) + str(choice(
-                names.normal_suffixes)) + ', an elder, introduces themself and strides forward to give a new life for ' + choice(
-                elder_virtues) + '.'
-        if warrior3:
-            warrior3_text = str(
-                warrior3.name) + ' dips their head in greeting. Energy surges through ' + dep_name + '\'s pelt as they receive a life for ' + choice(
-                warrior3_virtues) + '. They reassure ' + dep_name + ' that they are almost done.'
-        else:
-            warrior3_text = str(choice(names.normal_prefixes)) + str(
-                choice(names.normal_suffixes)) + ', an unknown warrior, gives a life for ' + choice(
-                warrior3_virtues) + '. The cat turns around to take their place back in StarClan, leaving room for the next one to give a life.'
-        if med_cat:
-            med_cat_text = str(
-                med_cat.name) + ' approaches next, a warm smile on their face. They offer a life for ' + choice(
-                med_cat_virtues) + ', whispering to take care of the Clan the best they can.'
-        else:
-            med_cat_text = 'The next cat is not familiar. They smell of catmint and other herbs, and have a noble look to them. The cat tells ' + dep_name + ' that their name is ' + str(
-                choice(names.normal_prefixes)) + str(
-                choice(names.normal_suffixes)) + '. They offer a life for ' + choice(med_cat_virtues) + '.'
-        if prev_lead:
-            prev_lead_text = 'Finally, ' + str(
-                prev_lead.name.prefix) + 'star steps forward. There is pride in their gaze as they stare into ' + dep_name + '\'s eyes. They give a life for ' + choice(
-                prev_lead_virtues) + '.'
-        else:
-            prev_lead_text = str(choice(
-                names.normal_prefixes)) + 'star, one of Starclan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + choice(
-                prev_lead_virtues) + '.'
+            kit_text = kit + ' introduces themself and bounds up to the new leader, reaching up on their hind legs to give them a new life for ' + cat.virtues[2] + '.'
+        if known[3]:
+            warrior2_text = 'Another cat approaches. ' + warrior2 + ' steps forward to give ' + dep_name + ' a life for ' + cat.virtues[3] + '. ' + dep_name + ' grits their teeth as the life rushes into them.'
+        else: 
+            warrior2_text = warrior2 + ' states their name and steps forward to give ' + dep_name + ' a life for ' + cat.virtues[3] + '.'
+        if known[4]:
+            app_text = 'A young cat is next to give a life. Starlight reflects off their youthful eyes. ' + app + ' stretches up to give a life for ' + cat.virtues[4] + '.'
+        else: 
+            app_text = app + ' an unfamiliar apprentice, stretches up to give a life for ' + cat.virtues[4] + '. Their eyes glimmer as they wish ' + dep_name + " well, and step back for the next cat."
+        if known[5]:
+            elder_text = elder + ' strides forward, an energy in their steps that wasn\'t present in their last moments. They give a life for ' + cat.virtues[5] + '.'
+        else: 
+            elder_text = elder + ', an elder, introduces themself and strides forward to give a new life for ' + cat.virtues[5] + '.'
+        if known[6]:
+            warrior3_text = warrior3 + ' dips their head in greeting. Energy surges through ' + dep_name + '\'s pelt as they receive a life for ' + cat.virtues[6] + '. They reassure ' + dep_name + ' that they are almost done.'
+        else: 
+            warrior3_text = warrior3 + ', an unknown warrior, gives a life for ' + cat.virtues[6] + '. The cat turns around to take their place back in StarClan, leaving room for the next one to give a life.'
+        if known[7]:
+            med_cat_text = med_cat + ' approaches next, a warm smile on their face. They offer a life for ' + cat.virtues[7] + ', whispering to take care of the clan the best they can.'
+        else: 
+            med_cat_text = 'The next cat is not familiar. They smell of catmint and other herbs, and have a noble look to them. The cat tells ' + dep_name + ' that their name is ' + med_cat + '. They offer a life for ' + cat.virtues[7] + '.'
+        if known[8]:
+            prev_lead_text = 'Finally, ' + prev_lead + ' steps forward. There is pride in their gaze as they stare into ' + dep_name + '\'s eyes. They give a life for ' + cat.virtues[8] + '.'
+        else: 
+            prev_lead_text = prev_lead + ' one of Starclan\'s oldest leaders, looks at the new leader with pride. They give a last life, the gift of ' + cat.virtues[8] + '.'
+        if known[8]:
+            ending_text = prev_lead + " hails " + dep_name + " by their new name, " + str(cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(cat.name.prefix) + "star\'s name in support. " + str(cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the clan."
 
-        if (prev_lead):
-            ending_text = str(prev_lead.name) + " hails " + dep_name + " by their new name, " + str(
-                cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(
-                game.clan.name) + "Clan, and are told to use their new power wisely. The group of starry cats yowls " + str(
-                cat.name.prefix) + "star\'s name in support. " + str(
-                cat.name.prefix) + "star wakes up feeling a new strength within their body and know that they are now ready to lead the clan."
         else:
             ending_text = "StarClan hails " + dep_name + " by their new name, " + str(
                 cat.name.prefix) + "star, telling them that their old life is no more. They are granted guardianship of " + str(
