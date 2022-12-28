@@ -231,6 +231,7 @@ class Events():
                 not cat.faded:
 
             age_to_fade = 302
+            age_to_fade = 2
             # Handle opacity
             cat.opacity = int(100 * (1 - (cat.dead_for / age_to_fade) ** 5) + 30)
 
@@ -240,6 +241,16 @@ class Events():
                 print("dead_for: " + str(cat.dead_for))
                 # If order not to add a cat to the faded list twice, we can't remove them or add them to
                 # faded cat list here. Rather, they are added to a list of cats that will be "faded" at the next save.
+
+                # If the cat is the current med, leader, or deputy, remove them
+                if game.clan.leader == cat.ID:
+                    game.clan.leader = None
+                if game.clan.deputy == cat.ID:
+                    game.clan.deputy = None
+                if game.clan.medicine_cat == cat.ID:
+                    game.clan.medicine_cat = None
+
+
                 game.cat_to_fade.append(cat.ID)
                 cat.set_faded()  # This is a flag to ensure they behave like a faded cat in the meantime.
 
@@ -502,24 +513,25 @@ class Events():
                                  str(cat.name.suffix) + " as a new warrior, honoring their " +
                                  str(random_honor) + "."])
         elif (promoted_to == 'apprentice') and cat.mentor is not None:
+            mentor_name = str(Cat.fetch_cat(cat.mentor).name)
             ceremony.extend([
                 str(cat.name) +
                 " has reached the age of six moons and has been made an apprentice, with "
-                + str(cat.mentor.name) + " as their mentor.",
+                + mentor_name + " as their mentor.",
                 "Newly-made apprentice " + str(cat.name) +
                 " touched noses with their new mentor, " +
-                str(cat.mentor.name) + "."
+                mentor_name + "."
             ])
             if cat.parent1 is not None and str(
                     cat_class.all_cats[cat.parent1].name) != str(
-                cat.mentor.name) and str(cat_class.all_cats[cat.parent1].name) != "unnamed queen":
+                Cat.fetch_cat(cat.mentor).name) and str(cat_class.all_cats[cat.parent1].name) != "unnamed queen":
                 if not cat_class.all_cats[cat.parent1].dead:
                     ceremony.extend([
                         str(cat_class.all_cats[cat.parent1].name) +
                         " is watching in pride as " + str(cat.name) +
-                        " is named and given to " + str(cat.mentor.name) +
+                        " is named and given to " + mentor_name +
                         " to apprentice under. They know that " +
-                        str(cat.mentor.name) + " was a good choice."
+                        mentor_name + " was a good choice."
                     ])
 
             if cat.is_disabled() and not game.clan.leader.dead:
@@ -528,17 +540,18 @@ class Events():
                     str(game.clan.leader.name) +
                     " that they can do anything any cat can. " +
                     str(game.clan.leader.name) + " assigns " +
-                    str(cat.mentor.name) +
+                    mentor_name +
                     " as their mentor to make sure that happens."
                 ])
         elif (promoted_to == 'apprentice') and cat.mentor is None:
             ceremony.extend(["Newly-made apprentice " + str(cat.name) +
                              " wished they had someone to mentor them."])
         elif (promoted_to == 'medicine cat apprentice') and cat.mentor is not None:
+            mentor_name = str(Cat.fetch_cat(cat.mentor).name)
             ceremony.extend([
                 str(cat.name) +
                 " has decided that hunting and fighting is not the way they can provide for their Clan. Instead, they have decided to serve their Clan by healing and communing with StarClan. "
-                + str(cat.mentor.name) + " proudly becomes their mentor."
+                + mentor_name + " proudly becomes their mentor."
             ])
         elif (promoted_to == 'medicine cat apprentice') and cat.mentor is None:
             ceremony.extend(["Newly-made medicine cat apprentice " + str(cat.name) +
@@ -731,7 +744,7 @@ class Events():
         leader = Cat.all_cats[str(game.clan.leader)]
 
         if cat.mentor:
-            mentor = cat.mentor
+            mentor = Cat.fetch_cat(cat.mentor)
 
         # Older cats are scarred more often
         if cat.age in ["adult", "senior adult"]:
@@ -1279,7 +1292,7 @@ class Events():
 
         if cat.status in ["apprentice", "medicine cat apprentice"] and not int(random.random() * 3):
             if cat.mentor is not None:
-                other_cat = cat.mentor
+                other_cat = Cat.fetch_cat(cat.mentor)
 
         # check if clan has kits, if True then clan has kits
         alive_kits = list(filter(

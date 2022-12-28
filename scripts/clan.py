@@ -528,7 +528,7 @@ class Clan():
             deputy = Cat.all_cats[clan_data["deputy"]]
 
         if "None" in clan_data["med_cat"]:
-            med_cat = Cat.all_cats[clan_data["med_cat"]]
+            med_cat = None
         else:
             med_cat = Cat.all_cats[clan_data["med_cat"]]
 

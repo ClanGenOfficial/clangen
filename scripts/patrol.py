@@ -765,7 +765,7 @@ class Patrol():
 
     def handle_mentor_app_pairing(self):
         for cat in self.patrol_cats:
-            if cat.mentor in self.patrol_cats:
+            if Cat.fetch_cat(cat.mentor) in self.patrol_cats:
                 cat.patrol_with_mentor += 1
 
     def handle_reputation(self, difference):

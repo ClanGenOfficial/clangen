@@ -852,16 +852,17 @@ class ProfileScreen(Screens):
         # MENTOR
         # Only shows up if the cat has a mentor.
         if the_cat.mentor is not None:
-            output += "mentor: " + str(the_cat.mentor.name) + "\n"
+            mentor_ob = Cat.fetch_cat(the_cat.mentor)
+            output += "mentor: " + str(mentor_ob.name) + "\n"
 
         # CURRENT APPRENTICES
         # Optional - only shows up if the cat has an apprentice currently
         if the_cat.apprentice:
             app_count = len(the_cat.apprentice)
             if app_count == 1:
-                output += 'apprentice: ' + str(the_cat.apprentice[0].name)
+                output += 'apprentice: ' + str(Cat.fetch_cat(the_cat.apprentice[0]).name)
             elif app_count > 1:
-                output += 'apprentice: ' + ", ".join([str(i.name) for i in the_cat.apprentice])
+                output += 'apprentice: ' + ", ".join([str(Cat.fetch_cat(i).name) for i in the_cat.apprentice])
 
             # NEWLINE ----------
             output += "\n"
@@ -873,10 +874,10 @@ class ProfileScreen(Screens):
 
             if len(the_cat.former_apprentices) == 1:
                 output += 'former apprentice: ' + str(
-                    the_cat.former_apprentices[0].name)
+                    Cat.fetch_cat(the_cat.former_apprentices[0]).name)
 
             elif len(the_cat.former_apprentices) > 1:
-                output += 'former apprentices: ' + ", ".join([str(i.name) for i in the_cat.former_apprentices])
+                output += 'former apprentices: ' + ", ".join([str(Cat.fetch_cat(i).name) for i in the_cat.former_apprentices])
 
             # NEWLINE ----------
             output += "\n"
@@ -1176,7 +1177,8 @@ class ProfileScreen(Screens):
                     break
 
         if self.the_cat.former_mentor:
-            mentor = self.the_cat.former_mentor[-1].name
+            former_mentor_ob = Cat.fetch_cat(self.the_cat.former_mentor[-1])
+            mentor = former_mentor_ob.name
         else:
             mentor = None
 
