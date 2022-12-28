@@ -315,7 +315,6 @@ class Clan():
         clan_data["deputy_predecessors"] = self.deputy_predecessors
 
         # MED CAT DATA
-        print(self.medicine_cat)
         if self.medicine_cat:
             clan_data["med_cat"] = self.medicine_cat.ID
         else:
