@@ -30,6 +30,7 @@ class PatrolScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.intro_image = None
         self.app_mentor = None
         self.able_cats = None
 
@@ -443,6 +444,25 @@ class PatrolScreen(Screens):
         patrol.patrol_event = choice(possible_events)  # Set patrol event.
         intro_text = patrol.patrol_event.intro_text
         patrol_size = len(patrol.patrol_cats)
+
+        file = 'train'
+        if patrol.patrol_event.patrol_id.find('med') != -1:
+            file = 'med'
+        elif patrol.patrol_event.patrol_id.find('hunt') != -1:
+            file = 'hunt'
+        elif patrol.patrol_event.patrol_id.find('train') != -1:
+            file = 'train'
+        elif patrol.patrol_event.patrol_id.find('bord') != -1:
+            file = 'bord'
+        
+        try:
+            self.elements['intro_image'] = pygame_gui.elements.UIImage(
+                pygame.Rect((75, 150), (300, 300)),
+                pygame.image.load(
+                    f"resources/images/patrol_art/{file}_general_intro.png").convert_alpha()
+            )
+        except:
+            print('ERROR: could not display patrol image')
 
         # Grab win trait.
         if patrol.patrol_event.win_trait is not None:

@@ -356,7 +356,7 @@
     ]
 },
 {
-    "patrol_id": "fst_border_noise1",
+    "patrol_id": "fst_bord_noise1",
     "biome": "forest",
     "season": "Any",
     "tags": ["border", "battle_injury", "scar", "reputation", "new_cat", "new_cat_apprentice"],
