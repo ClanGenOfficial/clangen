@@ -1543,8 +1543,12 @@ class Cat():
                     new_mentor = choice(priority_mentors)
                 elif len(potential_mentors) > 0:
                     new_mentor = choice(potential_mentors)
-            # Mentor changing to chosen/specified cat
-            self.mentor = new_mentor.ID
+
+            if new_mentor:
+                self.mentor = new_mentor.ID
+            else:
+                self.mentor = None
+
             if new_mentor is not None and old_mentor is None:
                 # remove and append in relevant lists
                 if self.ID not in new_mentor.apprentice:
@@ -1569,6 +1573,15 @@ class Cat():
                         new_mentor.apprentice.append(self.ID)
                     if self.ID in old_mentor.apprentice:
                         old_mentor.apprentice.remove(self.ID)
+            elif new_mentor is None and old_mentor is not None:
+                #  This should only trigger if there are no active med cats (they have all faded away)
+                if self.ID in old_mentor.apprentice:
+                    old_mentor.apprentice.remove(self.ID)
+                if self.moons > 6:
+                    if self.ID not in old_mentor.former_apprentices:
+                        old_mentor.former_apprentices.append(self.ID)
+
+
         else:
             self.mentor = None
 
@@ -1619,8 +1632,13 @@ class Cat():
                     new_mentor = choice(priority_mentors)
                 elif len(potential_mentors) > 0:
                     new_mentor = choice(potential_mentors)
+
             # Mentor changing to chosen/specified cat
-            self.mentor = new_mentor.ID
+            if new_mentor:
+                self.mentor = new_mentor.ID
+            else:
+                self.mentor = None
+
             if new_mentor is not None and not old_mentor:
                 # remove and append in relevant lists
                 if self.ID not in new_mentor.apprentice:

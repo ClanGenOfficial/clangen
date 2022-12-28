@@ -188,7 +188,8 @@ class ClanScreen(Screens):
     def choose_cat_postions(self):
         '''Determines the postions of cat on the clan screen.'''
         p = game.clan.cur_layout
-        game.clan.leader.placement = choice(p['leader place'])
+        if game.clan.leader:
+            game.clan.leader.placement = choice(p['leader place'])
         # prevent error if the clan has no medicine cat (last medicine cat is now a warrior)
         if game.clan.medicine_cat:
             game.clan.medicine_cat.placement = choice(p['medicine place'])

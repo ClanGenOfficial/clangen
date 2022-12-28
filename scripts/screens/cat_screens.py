@@ -1618,8 +1618,13 @@ class ProfileScreen(Screens):
                 self.change_mentor_button.enable()
         # Roles Tab
         elif self.open_tab == 'roles':
+            if game.clan.leader:
+                leader_dead = game.clan.leader.dead
+            else:
+                leader_dead = True
+
             if self.the_cat.status not in [
-                    'warrior'] or self.the_cat.dead or not game.clan.leader.dead or self.the_cat.exiled:
+                    'warrior'] or self.the_cat.dead or not leader_dead or self.the_cat.exiled:
                 self.promote_leader_button.disable()
             else:
                 self.promote_leader_button.enable()

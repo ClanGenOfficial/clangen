@@ -256,7 +256,9 @@ class Clan():
                 Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
             self.med_cat_list.append(medicine_cat.ID)
             medicine_cat = self.med_cat_list[0]
+            print(self.med_cat_list)
             self.medicine_cat = Cat.all_cats[medicine_cat]
+            print(self.medicine_cat)
             self.med_cat_number = len(self.med_cat_list)
 
     def switch_clans(self, clan):
@@ -313,6 +315,7 @@ class Clan():
         clan_data["deputy_predecessors"] = self.deputy_predecessors
 
         # MED CAT DATA
+        print(self.medicine_cat)
         if self.medicine_cat:
             clan_data["med_cat"] = self.medicine_cat.ID
         else:
