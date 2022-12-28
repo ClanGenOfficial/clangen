@@ -625,12 +625,22 @@ class ProfileScreen(Screens):
                 tool_tip_text="Leader Ceremony"
             )
 
-        # Prevent fading button:
-        if self.the_cat.dead and game.settings["fading"]:
-            self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
-                pygame.Rect((136, 387), (-1, 30)),
-                "Prevent Fading",
-                object_id=get_text_box_theme())
+        if game.settings["fading"]:
+            if is_sc_instructor:
+                self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
+                    pygame.Rect((85, 390), (-1, 30)),
+                    "The Starclan Guide will never fade",
+                    object_id=get_text_box_theme("#cat_profile_info_box"))
+            elif is_df_instructor:
+                self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
+                    pygame.Rect((80, 390), (-1, 30)),
+                    "The Dark Forest Guide will never fade",
+                    object_id=get_text_box_theme("#cat_profile_info_box"))
+            elif self.the_cat.dead:
+                self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
+                    pygame.Rect((136, 387), (-1, 30)),
+                    "Prevent Fading",
+                    object_id=get_text_box_theme())
 
         self.update_toggle_buttons()
 
@@ -652,6 +662,8 @@ class ProfileScreen(Screens):
                                                                             "for longer than 302 moons, they will fade "
                                                                             "on the next timeskip.",
                                                               object_id=box_type)
+            if game.clan.instructor.ID == self.the_cat.ID:
+                self.checkboxes["prevent_fading"].hide()
 
     def determine_previous_and_next_cat(self):
         """'Determines where the next and previous buttons point too."""
