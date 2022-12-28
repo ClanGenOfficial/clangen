@@ -498,7 +498,7 @@ class Relation_Events():
                 f"{str(cat.name)} to it, not after the {insert} was all born and seemed fine. "
                 f"They thought the blood loss was under control."
             ]
-            if len(get_med_cats(Cat)) == 0 or (len(get_med_cats(Cat) == 1 and cat.status == 'medicine cat')):  # check number of med cats in the clan
+            if len(get_med_cats(Cat)) == 0 or (len(get_med_cats(Cat)) == 1 and cat.status == 'medicine cat'):  # check number of med cats in the clan
                 event_list.append(choice(possible_events[2:]))  # limit possible events to those not mentioned med cats
             else:
                 event_list.append(choice(possible_events))

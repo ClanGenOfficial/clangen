@@ -575,8 +575,9 @@ class Clan():
                 print('Cat not found:', cat)
 
         if "faded_cats" in clan_data:
-            for cat in clan_data["faded_cats"].split(","):
-                game.clan.faded_ids.append(cat)
+            if clan_data["faded_cats"].strip(): # Check for empty string
+                for cat in clan_data["faded_cats"].split(","):
+                    game.clan.faded_ids.append(cat)
 
         self.load_pregnancy(game.clan)
         game.switches['error_message'] = ''

@@ -760,10 +760,27 @@ class Condition_Events():
                 med_cat = None
                 has_parents = False
                 if cat.parent1 is not None and cat.parent2 is not None:
-                    if not cat.parent1.dead or not cat.parent2.dead:
+
+                    # Check if the parent is in Cat.all_cats. If not, they are faded are dead.
+
+                    med_parent = False # If they have a med parent, this will be flicked to True in the next couple lines.
+                    if cat.parent1 in Cat.all_cats:
+                        parent1_dead = Cat.all_cats[cat.parent1].dead
+                        if Cat.all_cats[cat.parent1].status == "medicine cat":
+                            med_parent = True
+                    else:
+                        parent1_dead = True
+
+                    if cat.parent2 in Cat.all_cats:
+                        parent2_dead = Cat.all_cats[cat.parent2.dead]
+                        if Cat.all_cats[cat.parent2].status == "medicine cat":
+                            med_parent = True
+                    else:
+                        parent2_dead = True
+
+                    if not parent1_dead or not parent2_dead and not med_parent:
                         has_parents = True
-                        if cat.parent2.status == 'medicine cat' or cat.parent1.status == 'medicine cat':
-                            has_parents = False
+
                 if len(med_list) == 0 or not has_parents:
                     if random_index == 0:
                         random_index = 1

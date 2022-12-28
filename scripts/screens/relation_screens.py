@@ -654,6 +654,8 @@ class ViewChildrenScreen(Screens):
 
     def get_previous_next_cat(self):
         """Determines where the previous the next buttons should lead, and enables/diables them"""
+        """'Determines where the next and previous buttons point too."""
+
         is_instructor = False
         if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
             is_instructor = True
@@ -673,16 +675,16 @@ class ViewChildrenScreen(Screens):
                 if next_cat == 0 and Cat.all_cats[
                         check_cat].ID != self.the_cat.ID and Cat.all_cats[
                         check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                        check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                        check_cat].exiled and Cat.all_cats[
+                        check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
+                        check_cat].outside == self.the_cat.outside and Cat.all_cats[
                         check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
                     previous_cat = Cat.all_cats[check_cat].ID
 
                 elif next_cat == 1 and Cat.all_cats[
                         check_cat].ID != self.the_cat.ID and Cat.all_cats[
                         check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                        check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                        check_cat].exiled and Cat.all_cats[
+                        check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
+                        check_cat].outside == self.the_cat.outside and Cat.all_cats[
                         check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
                     next_cat = Cat.all_cats[check_cat].ID
 
@@ -1488,6 +1490,8 @@ class RelationshipScreen(Screens):
 
     def get_previous_next_cat(self):
         """Determines where the previous the next buttons should lead, and enables/diables them"""
+        """'Determines where the next and previous buttons point too."""
+
         is_instructor = False
         if self.the_cat.dead and game.clan.instructor.ID == self.the_cat.ID:
             is_instructor = True
@@ -1505,19 +1509,19 @@ class RelationshipScreen(Screens):
                 next_cat = 1
             else:
                 if next_cat == 0 and Cat.all_cats[
-                    check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                    check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                    check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                    check_cat].exiled and Cat.all_cats[
-                    check_cat].df == self.the_cat.df:
+                        check_cat].ID != self.the_cat.ID and Cat.all_cats[
+                        check_cat].dead == self.the_cat.dead and Cat.all_cats[
+                        check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
+                        check_cat].outside == self.the_cat.outside and Cat.all_cats[
+                        check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
                     previous_cat = Cat.all_cats[check_cat].ID
 
                 elif next_cat == 1 and Cat.all_cats[
-                    check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                    check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                    check_cat].ID != game.clan.instructor.ID and not Cat.all_cats[
-                    check_cat].exiled and Cat.all_cats[
-                    check_cat].df == self.the_cat.df:
+                        check_cat].ID != self.the_cat.ID and Cat.all_cats[
+                        check_cat].dead == self.the_cat.dead and Cat.all_cats[
+                        check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
+                        check_cat].outside == self.the_cat.outside and Cat.all_cats[
+                        check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
                     next_cat = Cat.all_cats[check_cat].ID
 
                 elif int(next_cat) > 1:
