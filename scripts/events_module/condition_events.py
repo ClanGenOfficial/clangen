@@ -772,7 +772,7 @@ class Condition_Events():
                         parent1_dead = True
 
                     if cat.parent2 in Cat.all_cats:
-                        parent2_dead = Cat.all_cats[cat.parent2.dead]
+                        parent2_dead = Cat.all_cats[cat.parent2].dead
                         if Cat.all_cats[cat.parent2].status == "medicine cat":
                             med_parent = True
                     else:
