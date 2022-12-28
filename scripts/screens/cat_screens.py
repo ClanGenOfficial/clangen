@@ -1593,7 +1593,7 @@ class ProfileScreen(Screens):
                 self.see_relationships_button.enable()
 
             if self.the_cat.age not in ['young adult', 'adult', 'senior adult', 'elder'
-                                        ] or self.the_cat.dead or self.the_cat.exiled:
+                                        ] or self.the_cat.dead or self.the_cat.exiled or self.the_cat.outside:
                 self.choose_mate_button.disable()
             else:
                 self.choose_mate_button.enable()
@@ -1605,7 +1605,7 @@ class ProfileScreen(Screens):
         # Roles Tab
         elif self.open_tab == 'roles':
             if self.the_cat.status not in [
-                'warrior'] or self.the_cat.dead or not game.clan.leader.dead or self.the_cat.exiled:
+                    'warrior'] or self.the_cat.dead or not game.clan.leader.dead or self.the_cat.exiled:
                 self.promote_leader_button.disable()
             else:
                 self.promote_leader_button.enable()
@@ -1738,7 +1738,7 @@ class ProfileScreen(Screens):
                     tool_tip_text='This cannot be reversed.')
                 self.exile_cat_button.disable()
 
-            if not self.the_cat.dead:
+            if not self.the_cat.dead and not self.the_cat.exiled and not self.the_cat.outside:
                 self.kill_cat_button.enable()
             else:
                 self.kill_cat_button.disable()
