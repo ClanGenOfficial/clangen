@@ -372,7 +372,7 @@ class Game():
                 "life_givers": inter_cat.life_givers if inter_cat.life_givers else [],
                 "known_life_givers": inter_cat.known_life_givers if inter_cat.known_life_givers else [],
                 "virtues": inter_cat.virtues if inter_cat.virtues else [],
-                "retired": inter_cat.retired if inter_cat.retired else False
+                "retired": inter_cat.retired if inter_cat.retired else False,
                 "outside": inter_cat.outside,
                 "retired": inter_cat.retired if inter_cat.retired else False,
                 "faded_offspring": inter_cat.faded_offspring,
