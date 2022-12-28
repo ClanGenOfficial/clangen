@@ -2113,10 +2113,10 @@ class CeremonyScreen(Screens):
         for i in reversed(Cat.all_cats.keys()):
             c = Cat.all_cats[i]
             if c.dead:
-                if not queen and c.status == 'queen' and str(c.name) != "unnamed queen":
+                if not queen and c.status == 'queen' and str(c.name).strip() != "unnamed queen" and not c.outside:
                     queen = c
                     continue
-                elif not kit and c.status == 'kit':
+                elif not kit and c.status == 'kitten':
                     kit = c
                     continue
                 elif not app and c.status == 'apprentice':

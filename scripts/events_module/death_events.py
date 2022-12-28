@@ -120,8 +120,8 @@ class Death_Events():
             self.handle_relationship_changes(cat, death_cause, other_cat)
 
         death_text = event_text_adjust(Cat, death_cause.death_text, cat, other_cat, other_clan_name)
-        history_text = 'this should not show up'
-        other_history_text = 'this should not show up'
+        history_text = 'this should not show up - history text'
+        other_history_text = 'this should not show up - other_history text'
 
         # give history to cat if they die
         if cat.status != "leader" and death_cause.history_text[0] is not None and "other_cat_death" not in death_cause.tags:
