@@ -505,6 +505,7 @@ class Relation_Events():
             if cat.status == 'leader':
                 game.clan.leader_lives -= 1
             cat.die()
+            cat.died_by.append(f"{str(cat.name)} died while kitting.")
         elif game.clan.game_mode != 'classic':  # if cat doesn't die, give recovering from birth
             cat.get_injured("recovering from birth", event_triggered=True)
             if 'blood loss' in cat.injuries:
