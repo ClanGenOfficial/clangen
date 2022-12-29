@@ -1,5 +1,6 @@
 import re
 from math import ceil
+from os.path import exists as file_exists
 from random import choice, sample
 import pygame
 import pygame_gui
@@ -445,24 +446,7 @@ class PatrolScreen(Screens):
         intro_text = patrol.patrol_event.intro_text
         patrol_size = len(patrol.patrol_cats)
 
-        file = 'train'
-        if patrol.patrol_event.patrol_id.find('med') != -1:
-            file = 'med'
-        elif patrol.patrol_event.patrol_id.find('hunt') != -1:
-            file = 'hunt'
-        elif patrol.patrol_event.patrol_id.find('train') != -1:
-            file = 'train'
-        elif patrol.patrol_event.patrol_id.find('bord') != -1:
-            file = 'bord'
-        
-        try:
-            self.elements['intro_image'] = pygame_gui.elements.UIImage(
-                pygame.Rect((75, 150), (300, 300)),
-                pygame.image.load(
-                    f"resources/images/patrol_art/{file}_general_intro.png").convert_alpha()
-            )
-        except:
-            print('ERROR: could not display patrol image')
+        self.get_patrol_art()
 
         # Grab win trait.
         if patrol.patrol_event.win_trait is not None:
@@ -523,6 +507,36 @@ class PatrolScreen(Screens):
                                                     object_id="#antagonize_button")
         if patrol.patrol_event.antagonize_text is None:
             self.elements["antagonize"].hide()
+
+    def get_patrol_art(self):
+        path = "resources/images/patrol_art/"
+
+        file = patrol.patrol_event.patrol_id
+        exists = file_exists(f"{path}{file}.png")
+        if exists:
+            self.elements['intro_image'] = pygame_gui.elements.UIImage(
+                pygame.Rect((75, 150), (300, 300)),
+                pygame.image.load(
+                    f"{path}{file}.png").convert_alpha()
+            )
+        else:
+            file = 'train'
+            if patrol.patrol_event.patrol_id.find('med') != -1:
+                file = 'med'
+            elif patrol.patrol_event.patrol_id.find('hunt') != -1:
+                file = 'hunt'
+            elif patrol.patrol_event.patrol_id.find('train') != -1:
+                file = 'train'
+            elif patrol.patrol_event.patrol_id.find('bord') != -1:
+                file = 'bord'
+            try:
+                self.elements['intro_image'] = pygame_gui.elements.UIImage(
+                    pygame.Rect((75, 150), (300, 300)),
+                    pygame.image.load(
+                        f"{path}{file}_general_intro.png").convert_alpha()
+                )
+            except:
+                print('ERROR: could not display patrol image')
 
     def open_patrol_complete_screen(self, user_input):
         """Deals with the next stage of the patrol, including antagonize, proceed, and do not proceed.
