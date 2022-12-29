@@ -256,10 +256,9 @@ class Clan():
                 Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
             self.med_cat_list.append(medicine_cat.ID)
             medicine_cat = self.med_cat_list[0]
-            print(self.med_cat_list)
             self.medicine_cat = Cat.all_cats[medicine_cat]
-            print(self.medicine_cat)
             self.med_cat_number = len(self.med_cat_list)
+            print(self.med_cat_number)
 
     def switch_clans(self, clan):
         game.save_clanlist(clan)

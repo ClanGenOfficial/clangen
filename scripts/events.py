@@ -257,6 +257,12 @@ class Events():
                 # If order not to add a cat to the faded list twice, we can't remove them or add them to
                 # faded cat list here. Rather, they are added to a list of cats that will be "faded" at the next save.
 
+                # Remove from med cat list, just in case. This should never be triggered, but I've has an issue or
+                # two with this, so here it is.
+                if cat.ID in game.clan.med_cat_list:
+                    game.clan.med_cat_list.remove(cat.ID)
+
+
                 # If the cat is the current med, leader, or deputy, remove them
                 if game.clan.leader:
                     if game.clan.leader.ID == cat.ID:
@@ -266,7 +272,10 @@ class Events():
                         game.clan.deputy = None
                 if game.clan.medicine_cat:
                     if game.clan.medicine_cat.ID == cat.ID:
-                        game.clan.medicine_cat = None
+                        if game.clan.med_cat_list: # If there are other med cats
+                            game.clan.medicine_cat = Cat.fetch_cat(game.clan.med_cat_list[0])
+                        else:
+                            game.clan.medicine_cat = None
 
 
                 game.cat_to_fade.append(cat.ID)
@@ -568,7 +577,7 @@ class Events():
                         mentor_name + " was a good choice."
                     ])
 
-            if cat.is_disabled() and not game.clan.leader.dead:
+            if cat.is_disabled() and not leader_dead:
                 ceremony.extend([
                     str(cat.name) + " is confidently telling " +
                     str(game.clan.leader.name) +

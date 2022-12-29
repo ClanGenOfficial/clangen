@@ -2036,7 +2036,7 @@ class Cat():
     @staticmethod
     def load_faded_cat(cat):
         """Loads a faded cat, returning the cat object. This object is saved nowhere else. """
-        print("Attempting to load faded cat")
+        #print("Attempting to load faded cat")
         try:
             with open('saves/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
@@ -2054,7 +2054,7 @@ class Cat():
         cat_ob.faded_offspring = cat_info["faded_offspring"]
         cat_ob.faded = True
 
-        print(str(cat_ob.name) + " has been loaded")
+        #print(str(cat_ob.name) + " has been loaded")
 
         return cat_ob
 # ---------------------------------------------------------------------------- #
