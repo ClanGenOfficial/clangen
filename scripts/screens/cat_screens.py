@@ -2132,15 +2132,15 @@ class CeremonyScreen(Screens):
                         continue
                     elif not kit and c.status == 'kitten' and not c.df:
                         kit = str(c.name)
-                        known[1] = True
+                        known[2] = True
                         continue
                     elif not app and c.status == 'apprentice' and not c.df:
                         app = str(c.name)
-                        known[2] = True                        
+                        known[3] = True                        
                         continue
                     elif not prev_lead and c.status == 'leader' and not c.df:
                         prev_lead = str(c.name)
-                        known[3] = True 
+                        known[7] = True 
                         continue
                     elif not elder and c.status == 'elder' and not c.df:
                         elder = str(c.name)
@@ -2148,19 +2148,19 @@ class CeremonyScreen(Screens):
                         continue
                     elif not warrior and c.status == 'warrior' and not c.df:
                         warrior = str(c.name)
-                        known[5] = True 
+                        known[1] = True 
                         continue
                     elif not warrior2 and c.status == 'warrior' and not c.df:
                         warrior2 = str(c.name)
-                        known[6] = True 
+                        known[2] = True 
                         continue
                     elif not warrior3 and c.status == 'warrior' and not c.df:
                         warrior3 = str(c.name)
-                        known[7] = True 
+                        known[5] = True 
                         continue
                     elif not med_cat and (c.status == 'medicine cat' or c.status == 'medicine cat apprentice') and not c.df:
                         med_cat = str(c.name)
-                        known[8] = True 
+                        known[6] = True 
                         continue
                     if queen and warrior and kit and warrior2 and app and elder and warrior3 and med_cat and prev_lead:
                         break
