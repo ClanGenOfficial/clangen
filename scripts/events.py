@@ -246,7 +246,6 @@ class Events():
                 not cat.faded:
 
             age_to_fade = 302
-            age_to_fade = 10
             # Handle opacity
             cat.opacity = int(100 * (1 - (cat.dead_for / age_to_fade) ** 5) + 30)
 
