@@ -752,7 +752,7 @@ class PatrolScreen(Screens):
                 if self.selected_cat.mate is not None:
                     self.elements['mate_frame'] = pygame_gui.elements.UIImage(pygame.Rect((140, 190), (166, 170)),
                                                                               self.mate_frame)
-                    mate = Cat.all_cats[self.selected_cat.mate]
+                    mate = Cat.fetch_cat(self.selected_cat.mate)
                     self.elements['mate_image'] = pygame_gui.elements.UIImage(pygame.Rect((150, 200), (100, 100)),
                                                                               mate.large_sprite)
                     # Check for name length
@@ -781,11 +781,11 @@ class PatrolScreen(Screens):
                                                                                 self.app_frame)
 
                 if self.selected_cat.status in ['medicine cat apprentice', 'apprentice'] and self.selected_cat.mentor is not None:
-                    self.app_mentor = self.selected_cat.mentor
+                    self.app_mentor = Cat.fetch_cat(self.selected_cat.mentor)
                     relation = 'mentor'
 
                 elif self.selected_cat.apprentice:
-                    self.app_mentor = self.selected_cat.apprentice[0]
+                    self.app_mentor = Cat.fetch_cat(self.selected_cat.apprentice[0])
                     relation = 'apprentice'
                 else:
                     self.app_mentor = None

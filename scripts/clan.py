@@ -261,6 +261,7 @@ class Clan():
             medicine_cat = self.med_cat_list[0]
             self.medicine_cat = Cat.all_cats[medicine_cat]
             self.med_cat_number = len(self.med_cat_list)
+            print(self.med_cat_number)
 
     def switch_clans(self, clan):
         game.save_clanlist(clan)
@@ -531,7 +532,7 @@ class Clan():
             deputy = Cat.all_cats[clan_data["deputy"]]
 
         if "None" in clan_data["med_cat"]:
-            med_cat = Cat.all_cats[clan_data["med_cat"]]
+            med_cat = None
         else:
             med_cat = Cat.all_cats[clan_data["med_cat"]]
 
