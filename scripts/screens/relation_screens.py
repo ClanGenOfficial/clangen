@@ -506,7 +506,7 @@ class ViewChildrenScreen(Screens):
                 self.family_elements['parent1_image'].disable()
 
             name = str(Cat.all_cats[self.the_cat.parent1].name)
-            if 8 <= len(name) >= 10:
+            if len(name) >= 9:
                 short_name = str(Cat.all_cats[self.the_cat.parent1].name)[0:7]
                 name = short_name + '...'
             self.family_elements["parent1_name"] = pygame_gui.elements.UITextBox(name,
@@ -545,7 +545,7 @@ class ViewChildrenScreen(Screens):
                 self.family_elements['parent2_image'].disable()
 
             name = str(Cat.all_cats[self.the_cat.parent2].name)
-            if 8 <= len(name) >= 10:
+            if len(name) >= 9:
                 short_name = str(Cat.all_cats[self.the_cat.parent2].name)[0:7]
                 name = short_name + '...'
             self.family_elements["parent2_name"] = pygame_gui.elements.UITextBox(name,
@@ -611,7 +611,7 @@ class ViewChildrenScreen(Screens):
 
         # MATE
         if self.the_cat.mate is None:
-            self.family_elements["mate"] = pygame_gui.elements.UITextBox("Unknown", pygame.Rect((93, 508), (60, 40)),
+            self.family_elements["mate"] = pygame_gui.elements.UITextBox("Unknown", pygame.Rect((90, 508), (60, 40)),
                                                                          object_id="#cat_patrol_info_box")
         elif self.the_cat.mate in Cat.all_cats:
             self.family_elements["mate_image"] = UISpriteButton(pygame.Rect((98, 458), (50, 50)),
