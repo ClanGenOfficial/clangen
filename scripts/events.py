@@ -383,8 +383,9 @@ class Events():
             leader_dead = game.clan.leader.dead
             leader_outside = game.clan.leader.outside
         else:
-            leader_dead = True
+            leader_dead = True # If leader is None, treat them as dead (since they are dead - and faded away.)
             leader_outside = True
+
         if (leader_dead or leader_outside) \
                 and game.clan.deputy is not None and not game.clan.deputy.dead and not game.clan.deputy.outside:
             if game.clan.leader.exiled:
