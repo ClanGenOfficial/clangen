@@ -797,10 +797,11 @@ class Events():
         risky_mentor = False
         risky_leader = False
         if cat.mentor:
-            if cat.mentor.trait in risky_traits:
+            mentor_ob = Cat.fetch_cat(cat.mentor)
+            if mentor_ob.trait in risky_traits:
                 risky_mentor = True
                 scar_chance += 0.0125  # + 1.25%
-                mentor_name = str(mentor.name)
+                mentor_name = str(mentor_ob.name)
         if leader:
             if leader.trait in risky_traits:
                 risky_leader = True

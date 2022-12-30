@@ -144,10 +144,9 @@ class Cat():
                     if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                         self.age = key_age
 
-            self.set_faded() # Sets the faded sprite and faded tag
+            self.set_faded()  # Sets the faded sprite and faded tag (self.faded = True)
 
             return
-
 
         self.gender = gender
         self.status = status
@@ -292,7 +291,7 @@ class Cat():
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
 
-        #trans cat chances
+        # trans cat chances
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)
         if self.gender == "female" and not self.age == 'kitten':
@@ -610,7 +609,10 @@ class Cat():
                 return GRIEF_FAMILY_NEGATIVE["sibling_reaction"][body]
             else:
                 return None
+
     def gone(self):
+        """ Makes a clan cat an "outside" cat. Handles removing them from special positions, and removing
+        mentors and apprentices. """
         if self.status == 'leader':
             self.outside = True
             game.clan.leader_lives = 1
@@ -629,6 +631,9 @@ class Cat():
         game.clan.add_to_outside(self)
 
     def status_change(self, new_status):
+        """ Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
+            new_status = The new status of a cat. Can be 'apprentice', 'medicine cat apprentice', 'warrior'
+                        'medicine cat', 'elder'. """
         self.status = new_status
         self.name.status = new_status
 
@@ -657,6 +662,7 @@ class Cat():
         self.all_cats[self.ID] = self
 
     def update_traits(self):
+        """Updates the traits of a cat upon ageing up.  """
         if self.moons == 6:
             chance = randint(0, 5)  # chance for cat to gain trait that matches their previous trait's personality group
             if chance == 0:
@@ -737,6 +743,8 @@ class Cat():
                             self.trait = chosen_trait
 
     def describe_cat(self):
+        """ Generates a string describing the cat's appearance and gender. Mainly used for generating
+        the allegiances."""
         if self.genderalign == 'male' or self.genderalign == "transmasc" or self.genderalign == "trans male":
             sex = 'tom'
         elif self.genderalign == 'female' or self.genderalign == "transfem" or self.genderalign == "trans female":
@@ -752,7 +760,7 @@ class Cat():
 # ---------------------------------------------------------------------------- #
 
     def one_moon(self):
-        """Handles a moon skip for a alive cat"""
+        """Handles a moon skip for an alive cat. """
         if self.exiled or self.outside:
             # this is handled in events.py
             self.thoughts()
@@ -776,6 +784,7 @@ class Cat():
         self.thoughts()
 
     def thoughts(self):
+        """ Generates a thought for the cat, which displays on their profile. """
         all_cats = self.all_cats
         other_cat = random.choice(list(all_cats.keys()))
         countdown = int(len(all_cats) / 3)
@@ -802,6 +811,7 @@ class Cat():
         self.thought = str(chosen_thought)
 
     def create_interaction(self):
+        """Creates an interaction between this cat and another, which effects relationship values. """
         # if the cat has no relationships, skip
         if len(self.relationships) < 1 or not self.relationships:
             return
@@ -885,8 +895,8 @@ class Cat():
             self.contact_with_ill_cat(relevant_relationship.cat_to)
 
     def update_skill(self):
-        # checking for skill and replacing empty skill if cat is old enough
-        # also adds a chance for cat to take a skill similar to their mentor
+        """Checks for skill and replaces empty skill if cat is old enough
+        # also adds a chance for cat to take a skill similar to their mentor"""
 
         if self.skill == '???':
             # assign skill to new medicine cat
