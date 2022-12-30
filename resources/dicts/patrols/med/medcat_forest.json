@@ -3,13 +3,7 @@
     "patrol_id": "fst_med_soloripples1",
     "biome": "forest",
     "season": "Any",
-    "tags": [
-        "comfort",
-        "respect",
-        "trust",
-        "med_cat",
-        "med_only"
-    ],
+    "tags": ["comfort", "respect", "trust", "med_cat", "med_only"],
     "intro_text": "p_l sees weird ripples on the water of a puddle while gathering fresh water.",
     "decline_text": "p_l is in a hurry and does not stop to look at the ripples.",
     "chance_of_success": 45,
@@ -75,11 +69,7 @@
     "patrol_id": "fst_med_herblocation2",
     "biome": "forest",
     "season": "Any",
-    "tags": [
-        "med_cat",
-        "apprentice",
-        "med_only"
-    ],
+    "tags": ["med_cat", "apprentice", "med_only"],
     "intro_text": "app1 has been sent out into the forest to try to find specific herbs alone.",
     "decline_text": "Nervous and scared of everything that even slightly moves, they decide to go back to camp and try again another day. Their mentor will not be pleased. . .",
     "chance_of_success": 65,
@@ -898,15 +888,7 @@
     "biome": "forest",
     "season": "leaf-bare",
     "tags": [
-        "med_cat",
-        "med_only",
-        "herbs",
-        "romantic",
-        "platonic",
-        "respect",
-        "p_l_to_r_c",
-        "s_c_to_r_c"
-    ],
+        "med_cat", "med_only", "herbs", "romantic", "platonic", "respect", "p_l_to_r_c", "s_c_to_r_c"],
     "intro_text": "p_l heads out, leading a patrol of medicine cats to go find any fresh herbs that have survived Leaf-bare so far.",
     "decline_text": ". . . And they're called back almost immediately, as one of the elders starts hacking up something.",
     "chance_of_success": 60,
@@ -944,7 +926,7 @@
     "patrol_id": "fst_med_appfirstsign1",
     "biome": "forest",
     "season": "Any",
-    "tags": ["med_cat", "apprentice", "med_only", "herbs"],
+    "tags": ["med_cat", "apprentice"],
     "intro_text": "app1 is out to gather a few herbs at the behest of their mentor. The wind is gently rustling the trees as they pad along.",
     "decline_text": "Just before the apprentice can leave, their mentor calls for their attention. Apparently they have a different task that's more pressing.",
     "chance_of_success": 50,
@@ -957,8 +939,6 @@
     ],
     "min_cats": 1,
     "max_cats": 1,
-    "win_skills": null,
-    "win_trait": ["None"],
     "antagonize_text": null,
     "antagonize_fail_text": null
 }
