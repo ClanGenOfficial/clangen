@@ -375,15 +375,15 @@
     "biome": "plains",
     "season": "Any",
     "tags": ["med_cat", "apprentice", "med_only", "herbs"],
-    "intro_text": "app1 is out to gather a few herbs at the behest of their mentor. The wind is gently rustling the tall grass as they pad along.",
+    "intro_text": "p_l is out to gather a few herbs at the behest of their mentor. The wind is gently rustling the tall grass as they pad along.",
     "decline_text": "Just before the apprentice can leave, their mentor calls for their attention. Apparently they have a different task that's more pressing.",
     "chance_of_success": 50,
     "exp": 20,
     "success_text": [
-        "app1 is plucking some goldenrod when their attention is suddenly grabbed by a a_sign. At the sight, the fur on their back prickles slightly and they can hear their thundering heartbeat. They have to tell their mentor about this sign right away!"
+        "p_l is plucking some goldenrod when their attention is suddenly grabbed by a a_sign. At the sight, the fur on their back prickles slightly and they can hear their thundering heartbeat. They have to tell their mentor about this sign right away!"
     ],
     "fail_text":[
-        "app1 feels a pit of dread beginning to form in their belly. They forgot where to find the herb that their mentor wanted. They scent the air hopefully, but it's useless. They'll have to swallow their shame and return to ask for directions."
+        "p_l feels a pit of dread beginning to form in their belly. They forgot where to find the herb that their mentor wanted. They scent the air hopefully, but it's useless. They'll have to swallow their shame and return to ask for directions."
     ],
     "min_cats": 1,
     "max_cats": 1,
