@@ -444,10 +444,7 @@ def init_white_patches(cat):
             cat.pelt.white = False
         else:
             whitechoice = choice(white_patches_choice)
-            if len(whitechoice) == 1:
-                cat.white_patches = whitechoice
-            else:
-                cat.white_patches = choice(whitechoice)
+            cat.white_patches = whitechoice
     else:
         cat.white_patches = None
         cat.pelt.white = False
