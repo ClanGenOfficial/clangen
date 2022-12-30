@@ -442,9 +442,11 @@ def init_white_patches(cat):
         elif white_patches_choice == None:
             cat.white_patches = None
             cat.pelt.white = False
+        elif white_patches_choice in ['FULLWHITE', 'EXTRA', 'POINTMARK']:
+            cat.white_patches = white_patches_choice
         else:
             whitechoice = choice(white_patches_choice)
-            cat.white_patches = choice(whitechoice)
+            cat.white_patches = whitechoice
     else:
         cat.white_patches = None
         cat.pelt.white = False

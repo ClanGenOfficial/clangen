@@ -363,9 +363,9 @@ class PatrolScreen(Screens):
             text = text.replace('o_c3', str(patrol.patrol_other_cats[2].name))
             text = text.replace('o_c4', str(patrol.patrol_other_cats[3].name))
         
-
-        if patrol.patrol_stat_cat is not None:
+        if 's_c' in text:
             text = text.replace('s_c', str(patrol.patrol_stat_cat.name))
+            text = text.replace('s_c', str(patrol.patrol_leader_name))
 
         other_clan_name = patrol.other_clan.name
         s = 0
@@ -410,8 +410,31 @@ class PatrolScreen(Screens):
                     text = " ".join(modify)
                     break
             s += index + 3
-
         text = text.replace('c_n', str(game.clan.name) + 'Clan')
+
+        sign_list = ['strangely-patterned stone', 'sharp stick', 'prey bone', 'cloud shaped like a cat', 
+        'tuft of red fur', 'red feather', 'brown feather', 'black feather', 'white feather', 'star-shaped leaf',
+        'beetle shell', 'snail shell', 'tuft of badger fur', 'two pawprints overlapping', 'flower missing a petal',
+        'tuft of fox fur', ]
+        sign = choice(sign_list)
+        s = 0
+        pos = 0
+        for x in range(text.count('a_sign')):
+            index = text.index('a_sign', s) or text.index('a_sign.', s)
+            for y in vowels:
+                if str(sign).startswith(y):
+                    modify = text.split()
+                    if 'a_sign' in modify:
+                        pos = modify.index('a_sign')
+                    if 'a_sign.' in modify:
+                        pos = modify.index('a_sign.')
+                    if modify[pos - 1] == 'a':
+                        modify.remove('a')
+                        modify.insert(pos - 1, 'an')
+                    text = " ".join(modify)
+                    break
+            s += index + 3
+        text = text.replace('a_sign', str(sign))
 
         return text
 

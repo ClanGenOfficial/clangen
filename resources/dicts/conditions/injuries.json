@@ -526,6 +526,30 @@
         ]
     },
 
+    "thorn in their paw":{
+        "duration": 1,
+        "severity": "minor",
+        "medicine_duration": 1,
+        "mortality": {
+            "kitten": 0,
+            "adolescent": 0,
+            "young adult": 0,
+            "adult": 0,
+            "senior adult": 0,
+            "elder": 0
+        },
+        "illness_infectiousness": [],
+        "risks": [
+            {
+                "name": "an infected wound",
+                "chance": 40
+            }
+        ],
+        "also_got": [],
+        "cause_permanent": [
+        ]
+    },
+
     "torn pelt":{
         "duration": 1,
         "severity": "minor",
