@@ -7,8 +7,11 @@ if directory:
 from scripts.game_structure.load_cat import *
 from scripts.cat.sprites import sprites
 from scripts.clan import clan_class
+from scripts.utility import get_text_box_theme
 import pygame_gui
 import pygame
+
+VERSION_NUMBER = "Ver. 0.4.0dev"
 
 # from scripts.world import load_map
 
@@ -96,6 +99,12 @@ game.load_settings()
 sprites.load_scars()
 
 start_screen.screen_switches()
+
+#Version Number
+version_number = pygame_gui.elements.UILabel(pygame.Rect((750, 675), (-1, -1)), VERSION_NUMBER,
+                                             object_id=get_text_box_theme())
+version_number.set_position((800 - version_number.get_relative_rect()[2], 700 - version_number.get_relative_rect()[3]))
+
 while True:
     time_delta = clock.tick(30) / 1000.0
     if game.switches['cur_screen'] not in ['start screen']:

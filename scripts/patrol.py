@@ -242,13 +242,13 @@ class Patrol():
                 continue
             if patrol_size > patrol.max_cats:
                 continue
-            if patrol.biome not in [biome, 'Any']:
+            if patrol.biome not in [biome, "Any"]:
                 continue
-            if patrol.season not in [current_season, 'Any']:
+            if patrol.season not in [current_season, "Any"]:
                 continue
             # makes sure that an apprentice is present if the apprentice tag is
             if "apprentice" in patrol.tags:
-                if "apprentice" not in self.patrol_statuses:
+                if "apprentice" not in self.patrol_statuses and "medicine cat apprentice" not in self.patrol_statuses:
                     continue
                 
 
@@ -280,7 +280,7 @@ class Patrol():
             # makes sure no apps are present if they're not supposed to be
             # mostly for romance patrols between warriors/dumb stuff that they wouldn't involve apprentices in
             if "no_app" in patrol.tags:
-                if "apprentice" in self.patrol_statuses:
+                if "apprentice" in self.patrol_statuses or "medicine cat apprentice" in self.patrol_statuses:
                     continue
 
             # makes sure no warriors/warrior apps are present. for med patrols
@@ -324,7 +324,7 @@ class Patrol():
                 else:
                     if not self.patrol_random_cat.is_potential_mate(self.patrol_leader, for_patrol=True):
                         continue
-
+            #print(str(patrol.patrol_id))
             final_patrols.append(patrol)
 
         return final_patrols
@@ -766,7 +766,7 @@ class Patrol():
 
     def handle_mentor_app_pairing(self):
         for cat in self.patrol_cats:
-            if cat.mentor in self.patrol_cats:
+            if Cat.fetch_cat(cat.mentor) in self.patrol_cats:
                 cat.patrol_with_mentor += 1
 
     def handle_reputation(self, difference):

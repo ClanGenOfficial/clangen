@@ -1,7 +1,7 @@
 [
 {
     "patrol_id": "mtn_med_soloripples1",
-    "biome": "mountain",
+    "biome": "mountainous",
     "season": "Any",
     "tags": ["comfort", "respect", "trust", "clan_to_p_l", "no_change_fail", "med_cat", "med_only"],
     "intro_text": "p_l sees weird ripples on the water of a puddle while gathering fresh water." ,
@@ -26,7 +26,7 @@
 },
 {
     "patrol_id": "mtn_med_herblocation1",
-    "biome": "mountain",
+    "biome": "mountainous",
     "season": "Any",
     "tags": ["med_cat", "apprentice", "trust", "respect", "dislike", "med_only"],
     "intro_text": "p_l decides it's a good opportunity to show app1 where the most commonly needed herbs are in the territory, both on even and uneven ground.",
@@ -715,6 +715,28 @@
     "fail_trait": ["troublesome", "childish"],
     "min_cats": 2,
     "max_cats": 3,
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "mtn_med_appfirstsign1",
+    "biome": "mountainous",
+    "season": "Any",
+    "tags": ["med_cat", "apprentice", "med_only", "herbs"],
+    "intro_text": "app1 is out to gather a few herbs at the behest of their mentor. The wind is whistling through the hills as they pad along.",
+    "decline_text": "Just before the apprentice can leave, their mentor calls for their attention. Apparently they have a different task that's more pressing.",
+    "chance_of_success": 50,
+    "exp": 20,
+    "success_text": [
+        "app1 is plucking some rosemary when their attention is suddenly grabbed by a a_sign. At the sight, the fur on their back prickles slightly and they can hear their thundering heartbeat. They have to tell their mentor about this sign right away!"
+    ],
+    "fail_text":[
+        "app1 feels a pit of dread beginning to form in their belly. They forgot where to find the herb that their mentor wanted. They scent the air hopefully, but it's useless. They'll have to swallow their shame and return to ask for directions."
+    ],
+    "min_cats": 1,
+    "max_cats": 1,
+    "win_skills": null,
+    "win_trait": ["None"],
     "antagonize_text": null,
     "antagonize_fail_text": null
 }

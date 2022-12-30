@@ -852,16 +852,17 @@ class ProfileScreen(Screens):
         # MENTOR
         # Only shows up if the cat has a mentor.
         if the_cat.mentor is not None:
-            output += "mentor: " + str(the_cat.mentor.name) + "\n"
+            mentor_ob = Cat.fetch_cat(the_cat.mentor)
+            output += "mentor: " + str(mentor_ob.name) + "\n"
 
         # CURRENT APPRENTICES
         # Optional - only shows up if the cat has an apprentice currently
         if the_cat.apprentice:
             app_count = len(the_cat.apprentice)
             if app_count == 1:
-                output += 'apprentice: ' + str(the_cat.apprentice[0].name)
+                output += 'apprentice: ' + str(Cat.fetch_cat(the_cat.apprentice[0]).name)
             elif app_count > 1:
-                output += 'apprentice: ' + ", ".join([str(i.name) for i in the_cat.apprentice])
+                output += 'apprentice: ' + ", ".join([str(Cat.fetch_cat(i).name) for i in the_cat.apprentice])
 
             # NEWLINE ----------
             output += "\n"
@@ -873,10 +874,10 @@ class ProfileScreen(Screens):
 
             if len(the_cat.former_apprentices) == 1:
                 output += 'former apprentice: ' + str(
-                    the_cat.former_apprentices[0].name)
+                    Cat.fetch_cat(the_cat.former_apprentices[0]).name)
 
             elif len(the_cat.former_apprentices) > 1:
-                output += 'former apprentices: ' + ", ".join([str(i.name) for i in the_cat.former_apprentices])
+                output += 'former apprentices: ' + ", ".join([str(Cat.fetch_cat(i).name) for i in the_cat.former_apprentices])
 
             # NEWLINE ----------
             output += "\n"
@@ -1176,7 +1177,8 @@ class ProfileScreen(Screens):
                     break
 
         if self.the_cat.former_mentor:
-            mentor = self.the_cat.former_mentor[-1].name
+            former_mentor_ob = Cat.fetch_cat(self.the_cat.former_mentor[-1])
+            mentor = former_mentor_ob.name
         else:
             mentor = None
 
@@ -1618,8 +1620,13 @@ class ProfileScreen(Screens):
                 self.change_mentor_button.enable()
         # Roles Tab
         elif self.open_tab == 'roles':
+            if game.clan.leader:
+                leader_dead = game.clan.leader.dead
+            else:
+                leader_dead = True
+
             if self.the_cat.status not in [
-                    'warrior'] or self.the_cat.dead or not game.clan.leader.dead or self.the_cat.exiled:
+                    'warrior'] or self.the_cat.dead or not leader_dead or self.the_cat.exiled:
                 self.promote_leader_button.disable()
             else:
                 self.promote_leader_button.enable()
@@ -2146,15 +2153,15 @@ class CeremonyScreen(Screens):
                         continue
                     elif not kit and c.status == 'kitten' and not c.df:
                         kit = str(c.name)
-                        known[1] = True
+                        known[2] = True
                         continue
                     elif not app and c.status == 'apprentice' and not c.df:
                         app = str(c.name)
-                        known[2] = True                        
+                        known[3] = True                        
                         continue
                     elif not prev_lead and c.status == 'leader' and not c.df:
                         prev_lead = str(c.name)
-                        known[3] = True 
+                        known[7] = True 
                         continue
                     elif not elder and c.status == 'elder' and not c.df:
                         elder = str(c.name)
@@ -2162,19 +2169,19 @@ class CeremonyScreen(Screens):
                         continue
                     elif not warrior and c.status == 'warrior' and not c.df:
                         warrior = str(c.name)
-                        known[5] = True 
+                        known[1] = True 
                         continue
                     elif not warrior2 and c.status == 'warrior' and not c.df:
                         warrior2 = str(c.name)
-                        known[6] = True 
+                        known[2] = True 
                         continue
                     elif not warrior3 and c.status == 'warrior' and not c.df:
                         warrior3 = str(c.name)
-                        known[7] = True 
+                        known[5] = True 
                         continue
                     elif not med_cat and (c.status == 'medicine cat' or c.status == 'medicine cat apprentice') and not c.df:
                         med_cat = str(c.name)
-                        known[8] = True 
+                        known[6] = True 
                         continue
                     if queen and warrior and kit and warrior2 and app and elder and warrior3 and med_cat and prev_lead:
                         break

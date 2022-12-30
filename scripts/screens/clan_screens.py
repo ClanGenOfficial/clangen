@@ -188,7 +188,8 @@ class ClanScreen(Screens):
     def choose_cat_postions(self):
         '''Determines the postions of cat on the clan screen.'''
         p = game.clan.cur_layout
-        game.clan.leader.placement = choice(p['leader place'])
+        if game.clan.leader:
+            game.clan.leader.placement = choice(p['leader place'])
         # prevent error if the clan has no medicine cat (last medicine cat is now a warrior)
         if game.clan.medicine_cat:
             game.clan.medicine_cat.placement = choice(p['medicine place'])
@@ -840,12 +841,12 @@ class AllegiancesScreen(Screens):
                     if len(game.clan.leader.apprentice) == 1:
                         self.allegiance_list.append([
                             '', '      Apprentice: ' +
-                                str(game.clan.leader.apprentice[0].name)
+                                str(Cat.fetch_cat(game.clan.leader.apprentice[0]).name)
                         ])
                     else:
                         app_names = ''
                         for app in game.clan.leader.apprentice:
-                            app_names += str(app.name) + ', '
+                            app_names += str(Cat.fetch_cat(app).name) + ', '
                         self.allegiance_list.append(
                             ['', '      Apprentices: ' + app_names[:-2]])
         # deputy
@@ -859,12 +860,12 @@ class AllegiancesScreen(Screens):
                 if len(game.clan.deputy.apprentice) == 1:
                     self.allegiance_list.append([
                         '', '      Apprentice: ' +
-                            str(game.clan.deputy.apprentice[0].name)
+                            str(Cat.fetch_cat(game.clan.deputy.apprentice[0]).name)
                     ])
                 else:
                     app_names = ''
                     for app in game.clan.deputy.apprentice:
-                        app_names += str(app.name) + ', '
+                        app_names += str(Cat.fetch_cat(app).name) + ', '
                     self.allegiance_list.append(
                         ['', '      Apprentices: ' + app_names[:-2]])
         cat_count = self._extracted_from_screen_switches_24(
@@ -898,12 +899,12 @@ class AllegiancesScreen(Screens):
                     if len(living_cat__.apprentice) == 1:
                         self.allegiance_list.append([
                             '', '      Apprentice: ' +
-                                str(living_cat__.apprentice[0].name)
+                                str(Cat.fetch_cat(living_cat__.apprentice[0]).name)
                         ])
                     else:
                         app_names = ''
                         for app in living_cat__.apprentice:
-                            app_names += str(app.name) + ', '
+                            app_names += str(Cat.fetch_cat(app).name) + ', '
                         self.allegiance_list.append(
                             ['', '      Apprentices: ' + app_names[:-2]])
                 cat_count += 1
@@ -1006,12 +1007,12 @@ class AllegiancesScreen(Screens):
                     if len(living_cat.apprentice) == 1:
                         self.allegiance_list.append([
                             '', '      Apprentice: ' +
-                                str(living_cat.apprentice[0].name)
+                                str(Cat.fetch_cat(living_cat.apprentice[0]).name)
                         ])
                     else:
                         app_names = ''
                         for app in living_cat.apprentice:
-                            app_names += str(app.name) + ', '
+                            app_names += str(Cat.fetch_cat(app).name) + ', '
                         self.allegiance_list.append(
                             ['', '      Apprentices: ' + app_names[:-2]])
         if not result:

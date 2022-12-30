@@ -12,8 +12,8 @@
     {
         "camp": "any",
         "tags": ["other_clan", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was killed while trying to save the o_c medicine cat.",
-        "history_text": ["m_c was killed while trying to save the o_c medicine cat.", null],
+        "death_text": "m_c was killed while trying to save the o_c_n medicine cat.",
+        "history_text": ["m_c was killed while trying to save the o_c_n medicine cat.", null],
         "cat_trait": ["bold", "charismatic", "confident", "daring", "altruistic", "empathetic", "compassionate", "loving", "responsible", "thoughtful", "strange"],
         "cat_skill": null,
         "other_cat_trait": null,
@@ -22,8 +22,8 @@
     {
         "camp": "any",
         "tags": ["other_clan", "rel_down", "war", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was killed by the o_c deputy.",
-        "history_text": ["m_c was killed by the o_c deputy.", null],
+        "death_text": "m_c was killed by the o_c_n deputy.",
+        "history_text": ["m_c was killed by the o_c_n deputy.", null],
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": null,
@@ -32,8 +32,8 @@
     {
         "camp": "any",
         "tags": ["other_clan", "rel_up", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
-        "death_text": "m_c was killed while trying to save the o_c deputy.",
-        "history_text": ["m_c was killed while trying to save the o_c deputy.", null],
+        "death_text": "m_c was killed while trying to save the o_c_n deputy.",
+        "history_text": ["m_c was killed while trying to save the o_c_n deputy.", null],
         "cat_trait": ["bold", "charismatic", "confident", "daring", "altruistic", "empathetic", "compassionate", "loving", "responsible", "thoughtful", "strange"],
         "cat_skill": null,
         "other_cat_trait": null,
