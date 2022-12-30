@@ -409,7 +409,7 @@ def init_white_patches(cat):
                         white_patches_choice = random.choices(white_list, weights=(0, 0, 0, 0, 40, 60))
                     else:
                         cat.white_patches = choice(mostly_white)
-            if cat.pelt.name == 'Calico' and not cat.white:
+            if cat.pelt.name == 'Calico' and not cat.pelt.white:
                 cat.pelt.name = 'Tortie'
                 
         # regular non-inheritance white patches generation
