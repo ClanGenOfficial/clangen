@@ -19,6 +19,60 @@
         "other_cat_skill": null
     },
     {
+        "injury": "cat bite",
+        "tags": [
+            "other_cat",
+            "other_cat_mentor",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
+        ],
+        "event_text": "m_c was injured recklessly fighting a rogue after their mentor, r_c, encouraged them to attack.",
+        "history_text": [
+            "m_c was scarred recklessly fighting a rogue after their mentor, r_c, encouraged them to attack.",
+            "m_c died after their mentor encouraged them to fight a rogue.",
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "shameless", "strict", "troublesome", "vengeful"],
+        "other_cat_skill": [ "good fighter", "great fighter", "excellent fighter"]
+    },
+    {
+        "injury": "cat bite",
+        "tags": [
+            "other_cat",
+            "other_cat_mentor",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
+        ],
+        "event_text": "m_c was injured recklessly fighting an enemy warrior after their mentor, r_c, encouraged them to attack.",
+        "history_text": [
+            "m_c was scarred recklessly fighting an enemy warrior after their mentor, r_c, encouraged them to attack.",
+            "m_c died after their mentor encouraged them to fight an enemy warrior.",
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "shameless", "strict", "troublesome", "vengeful"],
+        "other_cat_skill": [ "good fighter", "great fighter", "excellent fighter"]
+    },
+    {
         "injury": "bite-wound",
         "tags": [
             "other_cat",
@@ -34,10 +88,37 @@
             "dislike",
             "neg_platonic"
         ],
-        "event_text": "m_c was injured recklessly fighting d_l after their mentor, r_c, encouraged them to attack.",
+        "event_text": "m_c was injured recklessly fighting a dog after their mentor, r_c, encouraged them to attack.",
         "history_text": [
-            "m_c was scarred recklessly fighting d_l after their mentor, r_c, encouraged them to attack.",
-            "m_c died after their mentor encouraged them to fight d_l.",
+            "m_c was scarred recklessly fighting a dog after their mentor, r_c, encouraged them to attack.",
+            "m_c died after their mentor encouraged them to fight a dog.",
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "shameless", "strict", "troublesome", "vengeful"],
+        "other_cat_skill": [ "good fighter", "great fighter", "excellent fighter"]
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat",
+            "other_cat_mentor",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "mc_to_rc",
+            "neg_respect",
+            "neg_trust",
+            "neg_comfort",
+            "dislike",
+            "neg_platonic"
+        ],
+        "event_text": "m_c was injured recklessly fighting a fox after their mentor, r_c, encouraged them to attack.",
+        "history_text": [
+            "m_c was scarred recklessly fighting a fox after their mentor, r_c, encouraged them to attack.",
+            "m_c died after their mentor encouraged them to fight a fox.",
             null
         ],
         "cat_trait": null,
@@ -338,33 +419,6 @@
         "cat_skill": null,
         "other_cat_trait": null,
         "other_cat_skill": null
-    },
-    {
-        "injury": "claw-wound",
-        "tags": [
-            "other_cat",
-            "other_cat_mentor",
-            "Newleaf",
-            "Greenleaf",
-            "Leaf-fall",
-            "Leaf-bare",
-            "mc_to_rc",
-            "neg_respect",
-            "neg_trust",
-            "neg_comfort",
-            "dislike",
-            "neg_platonic"
-        ],
-        "event_text": "m_c was injured recklessly fighting d_l after their mentor, r_c, encouraged them to attack.",
-        "history_text": [
-            "m_c was scarred recklessly fighting d_l after their mentor, r_c, encouraged them to attack.",
-            "m_c died from their wounds after their mentor encouraged them to attack d_l.",
-            null
-        ],
-        "cat_trait": null,
-        "cat_skill": null,
-        "other_cat_trait": ["adventurous", "ambitious", "bloodthirsty", "bold", "cold", "daring", "fierce", "righteous", "shameless", "strict", "troublesome", "vengeful"],
-        "other_cat_skill": [ "good fighter", "great fighter", "excellent fighter"]
     },
     {
         "injury": "claw-wound",
