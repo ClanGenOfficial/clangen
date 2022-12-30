@@ -1835,8 +1835,6 @@ class Cat():
                 self.relationships[self.mate] = Relationship(self, mate)
 
         self.mate = None
-        if self.mate in Cat.all_cats:
-            Cat.all_cats[self.mate].mate = None
 
     def set_mate(self, other_cat):
         """Assigns other_cat as mate to self."""
