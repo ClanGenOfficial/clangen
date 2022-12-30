@@ -504,5 +504,49 @@
     "win_trait": ["None"],
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_gravetending1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["med_cat", "apprentice", "herbs", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw"],
+    "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat. The Clan's burial ground needs to be tended. They're bringing along app1 as their assistant for this trip.",
+    "decline_text": "Just before the medicine cat can leave, a cat calls for their attention.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "p_l points out to app1 each stone that marks the grave of a passed clanmate, making sure that the apprentice knows where to set their paws so as not to tread on anyone. The two cats solemnly go about their task. They pick the useful plants from around the graves to take back to the medicine den and rip up the rest."
+    ],
+    "fail_text":[
+        "There's a sharp yowl of pain and a string of muttered curses following it. p_l turns around to see app1 holding one of their paws off the ground. It seems that the apprentice stepped on a thorn. Ouch! They'll have to go back to camp and fix that up."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "win_skills": null,
+    "win_trait": ["None"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_gravetending2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["med_cat", "warrior", "herbs", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw"],
+    "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat. The Clan's burial ground needs to be tended. They're bringing along r_c as their assistant for this trip.",
+    "decline_text": "Just before the medicine cat can leave, a cat calls for their attention.",
+    "chance_of_success": 60,
+    "exp": 10,
+    "success_text": [
+        "p_l points out to r_c each stone that marks the grave of a passed clanmate, making sure that the other cat knows where to set their paws so as not to tread on anyone. The two cats solemnly go about their task. They pick the useful plants from around the graves to take back to the medicine den and rip up the rest."
+    ],
+    "fail_text":[
+        "There's a sharp yowl of pain and a string of muttered curses following it. p_l turns around to see r_c holding one of their paws off the ground. It seems that the other cat stepped on a thorn. Ouch! They'll have to go back to camp and fix that up."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "win_skills": null,
+    "win_trait": ["None"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 ]
