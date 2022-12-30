@@ -597,10 +597,10 @@ class Events():
             ceremony.extend([
                 str(cat.name) +
                 " has decided that hunting and fighting is not the way they can provide for their Clan. Instead, they have decided to serve their Clan by healing and communing with StarClan. "
-                + str(cat.mentor.name) + " proudly becomes their mentor.",
-                "Interested in herbs even in their kithood, " + str(cat.name) + " is eager to be apprenticed to " + str(cat.mentor.name) + ".",
-                "Interested in all the myths and stories told by the elders and queens " + str(cat.name) + " decides to become a medicine cat apprentice hoping to someday speak to those gone before. " + str(cat.mentor.name) + " loves their determination and eagerness to learn and agrees to take them on as their apprentice.",
-                "Only the thought alone of fighting and hurting another cat makes " + str(cat.name) + " shiver. They decide to heal instead of fight and " + str(cat.mentor.name) + " takes them under their wing."
+                + mentor_name + " proudly becomes their mentor.",
+                "Interested in herbs even in their kithood, " + str(cat.name) + " is eager to be apprenticed to " + mentor_name + ".",
+                "Interested in all the myths and stories told by the elders and queens " + str(cat.name) + " decides to become a medicine cat apprentice hoping to someday speak to those gone before. " + mentor_name + " loves their determination and eagerness to learn and agrees to take them on as their apprentice.",
+                "Only the thought alone of fighting and hurting another cat makes " + str(cat.name) + " shiver. They decide to heal instead of fight and " + mentor_name + " takes them under their wing."
             ])
         elif (promoted_to == 'medicine cat apprentice') and cat.mentor is None:
             ceremony.extend(["Newly-made medicine cat apprentice " + str(cat.name) +
@@ -793,9 +793,6 @@ class Events():
                                                 and not kitty.outside),
                                  Cat.all_cats.values()))
         leader = Cat.all_cats[str(game.clan.leader)]
-
-        if cat.mentor:
-            mentor = Cat.fetch_cat(cat.mentor)
 
         # Older cats are scarred more often
         if cat.age in ["adult", "senior adult"]:
