@@ -416,5 +416,93 @@
     "win_trait": ["None"],
     "antagonize_text": null,
     "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_bedding1",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["med_cat"],
+    "intro_text": "p_l noticed that the moss in the medicine den was getting old. They need to go and gather some more.",
+    "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+    "chance_of_success": 80,
+    "exp": 10,
+    "success_text": [
+        "p_l quickly makes their way to the best moss patch they know. They spend a bit of time slicing bits off with their claws, careful not to get any roots or dirt in the pile. Once they're satisfied, they take a moment to wrap their jaws around the heap and make their way back to camp."
+    ],
+    "fail_text":[
+        "Mouse-dung! When p_l gets to the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
+    ],
+    "min_cats": 1,
+    "max_cats": 1,
+    "win_skills": null,
+    "win_trait": ["None"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_bedding2",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["med_cat", "apprentice", "med_only"],
+    "intro_text": "p_l noticed that the moss in the medicine den was getting old. They need to go and gather some more.",
+    "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+    "chance_of_success": 80,
+    "exp": 10,
+    "success_text": [
+        "p_l leads the way to the best moss patch they know, with app1 following close behind. The two cats begin cutting off bits of moss and making their respective piles. Once the piles are a mouthful, they pick up the bundles of new bedding and start back towards camp."
+    ],
+    "fail_text":[
+        "Mouse-dung! When the two cats arrive at the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "win_skills": null,
+    "win_trait": ["None"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_bedding3",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["med_cat", "warrior"],
+    "intro_text": "p_l noticed that the moss in the medicine den was getting old. They need to go and gather some more.",
+    "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+    "chance_of_success": 80,
+    "exp": 10,
+    "success_text": [
+        "p_l leads the way to the best moss patch they know, with r_c following close behind. The two cats begin cutting off bits of moss and making their respective piles. Once the piles are a mouthful, they pick up the bundles of new bedding and start back towards camp."
+    ],
+    "fail_text":[
+        "Mouse-dung! When the two cats arrive at the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
+    ],
+    "min_cats": 2,
+    "max_cats": 2,
+    "win_skills": null,
+    "win_trait": ["None"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null
+},
+{
+    "patrol_id": "gen_med_bedding4",
+    "biome": "Any",
+    "season": "Any",
+    "tags": ["med_cat", "warrior"],
+    "intro_text": "p_l noticed that the moss in the medicine den was getting old. They need to go and gather some more.",
+    "decline_text": "A cat requires their attention just as they go to leave. Moss will have to wait.",
+    "chance_of_success": 80,
+    "exp": 10,
+    "success_text": [
+        "p_l leads the way to the best moss patch they know, with their entourage following close behind. The cats begin cutting off bits of moss and making their respective piles. Once the piles are a mouthful, they pick up the bundles of new bedding and start back towards camp."
+    ],
+    "fail_text":[
+        "Mouse-dung! When the cats arrive at the best moss-gathering spot, they find that some animal has dug up most of the moss. They'll have to leave the rest to repopulate before gathering from this spot again."
+    ],
+    "min_cats": 3,
+    "max_cats": 6,
+    "win_skills": null,
+    "win_trait": ["None"],
+    "antagonize_text": null,
+    "antagonize_fail_text": null
 }
 ]
