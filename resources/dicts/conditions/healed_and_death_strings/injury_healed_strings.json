@@ -120,6 +120,13 @@
         "m_c's splinter has been pulled out.",
         "m_c no longer has a splinter."
     ],
+    "thorn in their paw": [
+        "m_c finally got the thorn out of their paw.",
+        "m_c's paw is now thorn-free.",
+        "m_c feels much better after they pull the thorn out of their paw.",
+        "The thorn in m_c's paw has been pulled out.",
+        "m_c no longer has a thorn in their paw."
+    ],
     "torn pelt": [
         "m_c's pelt is looking much better.",
         "m_c's pelt is no longer torn.",

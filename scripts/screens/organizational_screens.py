@@ -58,7 +58,8 @@ class StartScreen(Screens):
         self.settings_button = UIImageButton(pygame.Rect((70, 445), (192, 35)), "",
                                              object_id=pygame_gui.core.ObjectID(object_id="#settings_button"))
 
-        self.error_label = pygame_gui.elements.UILabel(pygame.Rect(50, 50, -1, -1), "")
+        self.error_label = pygame_gui.elements.UILabel(pygame.Rect(50, 50, 700, -1), "",
+                                                       object_id="#save_text_box")
         self.error_label.hide()
 
         if game.clan is not None and game.switches['error_message'] == '':

@@ -625,12 +625,22 @@ class ProfileScreen(Screens):
                 tool_tip_text="Leader Ceremony"
             )
 
-        # Prevent fading button:
-        if self.the_cat.dead and game.settings["fading"]:
-            self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
-                pygame.Rect((136, 387), (-1, 30)),
-                "Prevent Fading",
-                object_id=get_text_box_theme())
+        if game.settings["fading"]:
+            if is_sc_instructor:
+                self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
+                    pygame.Rect((85, 390), (-1, 30)),
+                    "The Starclan Guide will never fade",
+                    object_id=get_text_box_theme("#cat_profile_info_box"))
+            elif is_df_instructor:
+                self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
+                    pygame.Rect((80, 390), (-1, 30)),
+                    "The Dark Forest Guide will never fade",
+                    object_id=get_text_box_theme("#cat_profile_info_box"))
+            elif self.the_cat.dead:
+                self.profile_elements["prevent_fading_text"] = pygame_gui.elements.UILabel(
+                    pygame.Rect((136, 387), (-1, 30)),
+                    "Prevent Fading",
+                    object_id=get_text_box_theme())
 
         self.update_toggle_buttons()
 
@@ -652,6 +662,8 @@ class ProfileScreen(Screens):
                                                                             "for longer than 302 moons, they will fade "
                                                                             "on the next timeskip.",
                                                               object_id=box_type)
+            if game.clan.instructor.ID == self.the_cat.ID:
+                self.checkboxes["prevent_fading"].hide()
 
     def determine_previous_and_next_cat(self):
         """'Determines where the next and previous buttons point too."""
@@ -840,16 +852,17 @@ class ProfileScreen(Screens):
         # MENTOR
         # Only shows up if the cat has a mentor.
         if the_cat.mentor is not None:
-            output += "mentor: " + str(the_cat.mentor.name) + "\n"
+            mentor_ob = Cat.fetch_cat(the_cat.mentor)
+            output += "mentor: " + str(mentor_ob.name) + "\n"
 
         # CURRENT APPRENTICES
         # Optional - only shows up if the cat has an apprentice currently
         if the_cat.apprentice:
             app_count = len(the_cat.apprentice)
             if app_count == 1:
-                output += 'apprentice: ' + str(the_cat.apprentice[0].name)
+                output += 'apprentice: ' + str(Cat.fetch_cat(the_cat.apprentice[0]).name)
             elif app_count > 1:
-                output += 'apprentice: ' + ", ".join([str(i.name) for i in the_cat.apprentice])
+                output += 'apprentice: ' + ", ".join([str(Cat.fetch_cat(i).name) for i in the_cat.apprentice])
 
             # NEWLINE ----------
             output += "\n"
@@ -861,10 +874,10 @@ class ProfileScreen(Screens):
 
             if len(the_cat.former_apprentices) == 1:
                 output += 'former apprentice: ' + str(
-                    the_cat.former_apprentices[0].name)
+                    Cat.fetch_cat(the_cat.former_apprentices[0]).name)
 
             elif len(the_cat.former_apprentices) > 1:
-                output += 'former apprentices: ' + ", ".join([str(i.name) for i in the_cat.former_apprentices])
+                output += 'former apprentices: ' + ", ".join([str(Cat.fetch_cat(i).name) for i in the_cat.former_apprentices])
 
             # NEWLINE ----------
             output += "\n"
@@ -1164,7 +1177,8 @@ class ProfileScreen(Screens):
                     break
 
         if self.the_cat.former_mentor:
-            mentor = self.the_cat.former_mentor[-1].name
+            former_mentor_ob = Cat.fetch_cat(self.the_cat.former_mentor[-1])
+            mentor = former_mentor_ob.name
         else:
             mentor = None
 
@@ -1201,6 +1215,8 @@ class ProfileScreen(Screens):
                         insert2 = f'lost all their lives'
                     elif game.clan.leader_lives == 8:
                         insert2 = f"lost a life"
+                    else:
+                        insert2 = f"lost lives"
                 text = f"{self.the_cat.name} {insert2} when they {insert}."
             else:
                 text = str(self.the_cat.died_by[0]).replace(f"{self.the_cat.name} was", 'They were')
@@ -1604,8 +1620,13 @@ class ProfileScreen(Screens):
                 self.change_mentor_button.enable()
         # Roles Tab
         elif self.open_tab == 'roles':
+            if game.clan.leader:
+                leader_dead = game.clan.leader.dead
+            else:
+                leader_dead = True
+
             if self.the_cat.status not in [
-                    'warrior'] or self.the_cat.dead or not game.clan.leader.dead or self.the_cat.exiled:
+                    'warrior'] or self.the_cat.dead or not leader_dead or self.the_cat.exiled:
                 self.promote_leader_button.disable()
             else:
                 self.promote_leader_button.enable()

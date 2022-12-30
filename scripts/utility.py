@@ -634,5 +634,3 @@ def get_text_box_theme(themename=""):
         else:
             return themename
 
-
-

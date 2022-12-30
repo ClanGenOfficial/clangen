@@ -99,6 +99,13 @@
 
         ]
     },
+    "thorn in their paw": {
+        "an infected wound": [
+            "Though r_c managed to get the thorn out earlier, the wound in m_c's pad looks inflamed. Infection must be setting in.",
+            "A bit of the thorn that was in m_c's paw still hasn't come out, but the area around it has begun to get inflamed and gross-looking."
+    
+            ]
+    },
     "torn pelt": {
         "an infected wound": [
             "r_c drips the juice of herbs over m_c's torn pelt. It should help m_c fight off the minor infection that's developing there.",

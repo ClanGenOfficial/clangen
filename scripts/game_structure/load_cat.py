@@ -116,7 +116,7 @@ def json_load():
         else:
             cat.relationships = {}
 
-        # replace mentor id with cat instance
+        """# replace mentor id with cat instance
         mentor_relevant = list(
             filter(lambda inter_cat: inter_cat.ID == cat.mentor, all_cats))
         cat.mentor = None
@@ -153,7 +153,7 @@ def json_load():
                 if len(relevant_list) > 0:
                     # if the cat can't be found, drop the cat_id
                     new_apprentices.append(relevant_list[0])
-            cat.former_apprentices = new_apprentices
+            cat.former_apprentices = new_apprentices"""
 
         # get all the siblings ids and save them
         siblings = list(
@@ -334,8 +334,8 @@ def csv_load(all_cats):
             for f_app_id in inter_cat.former_apprentices:
                 f_app = Cat.all_cats.get(f_app_id)
                 former_apps.append(f_app)
-            inter_cat.apprentice = apps
-            inter_cat.former_apprentices = former_apps
+            inter_cat.apprentice = [a.ID for a in apps] #Switch back to IDs. I don't want to risk breaking everything.
+            inter_cat.former_apprentices = [a.ID for a in former_apps]
             if not inter_cat.dead:
                 game.switches[
                     'error_message'] = 'There was an error loading this clan\'s relationships. Last cat read was ' + str(
