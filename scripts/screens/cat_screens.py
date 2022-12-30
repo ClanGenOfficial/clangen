@@ -1213,6 +1213,8 @@ class ProfileScreen(Screens):
                         insert2 = f'lost all their lives'
                     elif game.clan.leader_lives == 8:
                         insert2 = f"lost a life"
+                    else:
+                        insert2 = f"lost lives"
                 text = f"{self.the_cat.name} {insert2} when they {insert}."
             else:
                 text = str(self.the_cat.died_by[0]).replace(f"{self.the_cat.name} was", 'They were')
