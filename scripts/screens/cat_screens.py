@@ -534,8 +534,7 @@ class ProfileScreen(Screens):
 
     def build_profile(self):
         """Rebuild builds the cat profile. Run when you switch cats
-            or for changes in the profile.
-            the_cat should be a Cat object. """
+            or for changes in the profile."""
         self.the_cat = Cat.all_cats.get(game.switches['cat'])
 
         # use these attributes to create differing profiles for starclan cats etc.
@@ -645,6 +644,7 @@ class ProfileScreen(Screens):
         self.update_toggle_buttons()
 
     def update_toggle_buttons(self):
+        """Updates the image for all toggle buttons. """
         for box in self.checkboxes:
             self.checkboxes[box].kill()
         self.checkboxes = {}
@@ -999,6 +999,7 @@ class ProfileScreen(Screens):
         self.update_disabled_buttons_and_text()
 
     def save_user_notes(self):
+        """Saves user-entered notes. """
         clanname = game.clan.name
 
         notes = self.user_notes
@@ -1023,6 +1024,7 @@ class ProfileScreen(Screens):
             print(f"WARNING: Saving notes of cat #{self.the_cat.ID} didn't work.")
 
     def load_user_notes(self):
+        """Loads user-entered notes. """
         clanname = game.clan.name
 
         notes_directory = 'saves/' + clanname + '/notes'
@@ -1042,7 +1044,7 @@ class ProfileScreen(Screens):
             print(f'WARNING: there was an error reading the Notes file of cat #{self.the_cat.ID}.')
 
     def toggle_history_sub_tab(self):
-        """To toggle the sub-tab, when that's added"""
+        """To toggle the history-sub-tab"""
 
         if self.open_sub_tab == 'life events':
             self.toggle_history_tab(sub_tab_switch=True)
@@ -1051,6 +1053,7 @@ class ProfileScreen(Screens):
             self.toggle_user_notes_tab()
 
     def get_all_history_text(self):
+        """Generates a string with all important history information."""
         output = ""
         if self.open_sub_tab == 'life events':
             # start our history with the backstory, since all cats get one
