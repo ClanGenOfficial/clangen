@@ -509,7 +509,7 @@
     "patrol_id": "gen_med_gravetending1",
     "biome": "Any",
     "season": "Any",
-    "tags": ["med_cat", "apprentice", "herbs", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw"],
+    "tags": ["med_cat", "apprentice", "herbs", "comfort", "trust", "no_change_fail", "injury", "thorn in their paw", "med_only"],
     "intro_text": "p_l has to attend to one of their grimmer jobs as a medicine cat. The Clan's burial ground needs to be tended. They're bringing along app1 as their assistant for this trip.",
     "decline_text": "Just before the medicine cat can leave, a cat calls for their attention.",
     "chance_of_success": 60,
