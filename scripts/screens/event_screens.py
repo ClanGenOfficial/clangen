@@ -336,8 +336,8 @@ class EventsScreen(Screens):
     def exit_screen(self):
         self.timeskip_button.kill()
         del self.timeskip_button
-        self.toggle_borders_button.kill()
-        del self.toggle_borders_button
+        #self.toggle_borders_button.kill()
+        #del self.toggle_borders_button
         self.all_events_button.kill()
         del self.all_events_button
         self.ceremonies_events_button.kill()
