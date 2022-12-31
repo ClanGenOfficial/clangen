@@ -1058,7 +1058,8 @@ class Cat():
         if moons_until is not None and moons_until >= 0 and born_with is True:
             self.permanent_condition[condition]["moons_until"] = int(moons_until - 1)
             self.permanent_condition[condition]["moons_with"] = 0
-            return False
+            if self.permanent_condition[condition]["moons_until"] != -1:
+                return False
         if self.permanent_condition[condition]["moons_until"] == -1 and\
                 self.permanent_condition[condition]["born_with"] is True:
             self.permanent_condition[condition]["moons_until"] = -2

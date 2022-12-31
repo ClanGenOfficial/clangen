@@ -408,17 +408,20 @@ class Condition_Events():
 
                 # death event text and break bc any other illnesses no longer matter
                 if cat.dead and cat.status != 'leader':
-                    event = f"{cat.name} has died of {illness}."
+                    event = f"{cat.name} died of {illness}."
                     # clear event list to get rid of any healed or risk event texts from other illnesses
                     event_list.clear()
                     event_list.append(event)
+                    cat.died_by.append(event)
                     break
 
-                # if the leader died, then break before handling other illnesses cus they'll be fully healed
+                # if the leader died, then break before handling other illnesses cus they'll be fully healed or dead dead
                 elif cat.dead and cat.status == 'leader':
+                    cat.died_by.append(f"died to {illness}")
                     break
                 elif cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
                     clear_leader_conditions = True
+                    cat.died_by.append(f"died to {illness}")
                     break
 
                 # heal the cat
@@ -745,7 +748,10 @@ class Condition_Events():
         for condition in cat.permanent_condition:
             # checking if the cat has a congenital condition to reveal
             condition_appears = cat.moon_skip_permanent_condition(condition)
-            if cat.dead:
+            if cat.permanent_condition[condition]["born_with"] is True and cat.permanent_condition[condition]["moons_until"] != -2:
+                continue
+
+            elif cat.dead:
                 triggered = True
 
                 event = f"{cat.name} died from complications caused by {condition}."

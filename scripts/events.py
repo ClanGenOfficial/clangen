@@ -298,6 +298,8 @@ class Events():
 
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():
+            if cat.is_disabled():
+                self.condition_events.handle_already_disabled(cat)
             self.perform_ceremonies(cat)
             self.coming_out(cat)
             self.relation_events.handle_having_kits(cat, clan=game.clan)
