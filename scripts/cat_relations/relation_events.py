@@ -1,5 +1,6 @@
 import itertools
 
+from scripts.events_module.condition_events import Condition_Events
 from scripts.utility import *
 from scripts.cat.cats import *
 
@@ -12,6 +13,7 @@ class Relation_Events():
     def __init__(self) -> None:
         self.event_sums = 0
         self.had_one_event = False
+        self.condition_events = Condition_Events()
         pass
 
     def handle_relationships(self, cat):
@@ -878,6 +880,7 @@ class Relation_Events():
                         kit.scars.append('NOPAW')
                     elif kit.permanent_condition[condition] == 'born without a tail':
                         kit.scars.append('NOTAIL')
+                self.condition_events.handle_already_disabled(kit)
 
             # create and update relationships
             for cat_id in clan.clan_cats:
