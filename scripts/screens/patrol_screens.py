@@ -341,7 +341,10 @@ class PatrolScreen(Screens):
             text = text.replace('The patrol',
                                 str(patrol.patrol_leader.name))
         text = text.replace('p_l', str(patrol.patrol_leader.name))
-        text = text.replace('r_c', str(patrol.patrol_random_cat.name))
+        if patrol.patrol_random_cat is not None:
+            text = text.replace('r_c', str(patrol.patrol_random_cat.name))
+        else:
+            text = text.replace('r_c', str(patrol.patrol_leader.name))
         text = text.replace('app1', str(patrol.app1_name))
         text = text.replace('app2', str(patrol.app2_name))
         text = text.replace('app3', str(patrol.app3_name))
