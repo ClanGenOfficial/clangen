@@ -14,6 +14,7 @@ class Screens():
     game_y = screen_y
     last_screen = ''
 
+    # menu buttons are used very often, so they are generated here.
     menu_buttons = {
         "events_screen": UIImageButton(
             pygame.Rect((246, 60), (82, 30)),
@@ -168,12 +169,10 @@ class Screens():
 
 # CAT PROFILES
 def cat_profiles():
+    """Updates every cat's sprites"""
     game.choose_cats.clear()
-    #print(game.choose_cats)
-    #game.cat_buttons.clear()
+
     for x in Cat.all_cats:
-        #game.choose_cats[x] = Cat.all_cats[x]
         update_sprite(Cat.all_cats[x])
 
-    #print(game.choose_cats)
 

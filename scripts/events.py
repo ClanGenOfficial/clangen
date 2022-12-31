@@ -188,7 +188,7 @@ class Events():
                                     text = str(Cat.all_cats[
                                                    random_cat].name) + ' has been chosen as the new deputy. They look at the Clan leader with an odd glint in their eyes.'
                                 else:
-                                    r = choice([1, 2, 3, 4, 5])
+                                    r = choice([1, 2, 3, 4, 5, 6])
                                     if r == 1:
                                         text = str(Cat.all_cats[
                                                        random_cat].name) + ' has been chosen as the new deputy. The Clan yowls their name in approval.'
@@ -201,6 +201,9 @@ class Events():
                                     elif r == 4:
                                         text = str(Cat.all_cats[
                                                        random_cat].name) + ' has been chosen as the new deputy. They hold their head up high and promise to do their best for the Clan.'
+                                    elif r == 5 and not game.clan.leader.dead:
+                                        text = str(game.clan.leader.name) + ' has been thinking deeply all day who they would respect and trust enough to stand at their side and at sunhigh makes the announcement that ' + str(Cat.all_cats[
+                                                       random_cat].name) + ' will be the clan\'s new deputy.'
                                     else:
                                         text = str(Cat.all_cats[
                                                        random_cat].name) + ' has been chosen as the new deputy. They pray to StarClan that they are the right choice for the Clan.'
@@ -596,15 +599,20 @@ class Events():
             ceremony.extend([
                 str(cat.name) +
                 " has decided that hunting and fighting is not the way they can provide for their Clan. Instead, they have decided to serve their Clan by healing and communing with StarClan. "
-                + mentor_name + " proudly becomes their mentor."
+                + mentor_name + " proudly becomes their mentor.",
+                "Interested in herbs even in their kithood, " + str(cat.name) + " is eager to be apprenticed to " + mentor_name + ".",
+                "Interested in all the myths and stories told by the elders and queens " + str(cat.name) + " decides to become a medicine cat apprentice hoping to someday speak to those gone before. " + mentor_name + " loves their determination and eagerness to learn and agrees to take them on as their apprentice.",
+                "Only the thought alone of fighting and hurting another cat makes " + str(cat.name) + " shiver. They decide to heal instead of fight and " + mentor_name + " takes them under their wing."
             ])
         elif (promoted_to == 'medicine cat apprentice') and cat.mentor is None:
             ceremony.extend(["Newly-made medicine cat apprentice " + str(cat.name) +
                              " learns the way of healing through guidance from StarClan."])
         elif promoted_to == 'medicine cat':
-            ceremony.extend(
-                [str(cat.name) + " is taken to speak with StarClan. They are now a full medicine cat of the Clan."])
-        elif promoted_to == 'elder' and not leader_dead:
+                ceremony.extend(
+                [str(cat.name) + " is taken to speak with StarClan. They are now a full medicine cat of the Clan.",
+                 "The senior medicine cat has thought long and hard about this and names " + str(cat.name.prefix) + "paw " + str(cat.name) + ", StarClan gives their blessing and the stars twinkle in celebration."])
+                
+        elif promoted_to == 'elder' and not game.clan.leader.dead:
             ceremony.extend([
                 str(game.clan.leader.name) +
                 " proudly calls a Clan meeting to honor " + str(cat.name) +
@@ -788,9 +796,6 @@ class Events():
                                  Cat.all_cats.values()))
         leader = Cat.all_cats[str(game.clan.leader)]
 
-        if cat.mentor:
-            mentor = Cat.fetch_cat(cat.mentor)
-
         # Older cats are scarred more often
         if cat.age in ["adult", "senior adult"]:
             scar_chance += 0.01  # + 1%
@@ -799,10 +804,11 @@ class Events():
         risky_mentor = False
         risky_leader = False
         if cat.mentor:
-            if cat.mentor.trait in risky_traits:
+            mentor_ob = Cat.fetch_cat(cat.mentor)
+            if mentor_ob.trait in risky_traits:
                 risky_mentor = True
                 scar_chance += 0.0125  # + 1.25%
-                mentor_name = str(mentor.name)
+                mentor_name = str(mentor_ob.name)
         if leader:
             if leader.trait in risky_traits:
                 risky_leader = True
