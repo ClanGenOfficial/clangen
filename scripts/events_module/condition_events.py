@@ -408,17 +408,20 @@ class Condition_Events():
 
                 # death event text and break bc any other illnesses no longer matter
                 if cat.dead and cat.status != 'leader':
-                    event = f"{cat.name} has died of {illness}."
+                    event = f"{cat.name} died of {illness}."
                     # clear event list to get rid of any healed or risk event texts from other illnesses
                     event_list.clear()
                     event_list.append(event)
+                    cat.died_by.append(event)
                     break
 
-                # if the leader died, then break before handling other illnesses cus they'll be fully healed
+                # if the leader died, then break before handling other illnesses cus they'll be fully healed or dead dead
                 elif cat.dead and cat.status == 'leader':
+                    cat.died_by.append(f"died to {illness}")
                     break
                 elif cat.status == 'leader' and starting_life_count != game.clan.leader_lives:
                     clear_leader_conditions = True
+                    cat.died_by.append(f"died to {illness}")
                     break
 
                 # heal the cat
