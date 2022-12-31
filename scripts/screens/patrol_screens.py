@@ -30,6 +30,7 @@ class PatrolScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.intro_image = None
         self.app_mentor = None
         self.able_cats = None
 
@@ -340,7 +341,10 @@ class PatrolScreen(Screens):
             text = text.replace('The patrol',
                                 str(patrol.patrol_leader.name))
         text = text.replace('p_l', str(patrol.patrol_leader.name))
-        text = text.replace('r_c', str(patrol.patrol_random_cat.name))
+        if patrol.patrol_random_cat is not None:
+            text = text.replace('r_c', str(patrol.patrol_random_cat.name))
+        else:
+            text = text.replace('r_c', str(patrol.patrol_leader.name))
         text = text.replace('app1', str(patrol.app1_name))
         text = text.replace('app2', str(patrol.app2_name))
         text = text.replace('app3', str(patrol.app3_name))
@@ -362,9 +366,9 @@ class PatrolScreen(Screens):
             text = text.replace('o_c3', str(patrol.patrol_other_cats[2].name))
             text = text.replace('o_c4', str(patrol.patrol_other_cats[3].name))
         
-
-        if patrol.patrol_stat_cat is not None:
+        if 's_c' in text:
             text = text.replace('s_c', str(patrol.patrol_stat_cat.name))
+            text = text.replace('s_c', str(patrol.patrol_leader_name))
 
         other_clan_name = patrol.other_clan.name
         s = 0
@@ -409,8 +413,31 @@ class PatrolScreen(Screens):
                     text = " ".join(modify)
                     break
             s += index + 3
-
         text = text.replace('c_n', str(game.clan.name) + 'Clan')
+
+        sign_list = ['strangely-patterned stone', 'sharp stick', 'prey bone', 'cloud shaped like a cat', 
+        'tuft of red fur', 'red feather', 'brown feather', 'black feather', 'white feather', 'star-shaped leaf',
+        'beetle shell', 'snail shell', 'tuft of badger fur', 'two pawprints overlapping', 'flower missing a petal',
+        'tuft of fox fur', ]
+        sign = choice(sign_list)
+        s = 0
+        pos = 0
+        for x in range(text.count('a_sign')):
+            index = text.index('a_sign', s) or text.index('a_sign.', s)
+            for y in vowels:
+                if str(sign).startswith(y):
+                    modify = text.split()
+                    if 'a_sign' in modify:
+                        pos = modify.index('a_sign')
+                    if 'a_sign.' in modify:
+                        pos = modify.index('a_sign.')
+                    if modify[pos - 1] == 'a':
+                        modify.remove('a')
+                        modify.insert(pos - 1, 'an')
+                    text = " ".join(modify)
+                    break
+            s += index + 3
+        text = text.replace('a_sign', str(sign))
 
         return text
 
@@ -443,6 +470,25 @@ class PatrolScreen(Screens):
         patrol.patrol_event = choice(possible_events)  # Set patrol event.
         intro_text = patrol.patrol_event.intro_text
         patrol_size = len(patrol.patrol_cats)
+
+        file = 'train'
+        if patrol.patrol_event.patrol_id.find('med') != -1:
+            file = 'med'
+        elif patrol.patrol_event.patrol_id.find('hunt') != -1:
+            file = 'hunt'
+        elif patrol.patrol_event.patrol_id.find('train') != -1:
+            file = 'train'
+        elif patrol.patrol_event.patrol_id.find('bord') != -1:
+            file = 'bord'
+        
+        try:
+            self.elements['intro_image'] = pygame_gui.elements.UIImage(
+                pygame.Rect((75, 150), (300, 300)),
+                pygame.image.load(
+                    f"resources/images/patrol_art/{file}_general_intro.png").convert_alpha()
+            )
+        except:
+            print('ERROR: could not display patrol image')
 
         # Grab win trait.
         if patrol.patrol_event.win_trait is not None:
@@ -732,7 +778,7 @@ class PatrolScreen(Screens):
                 if self.selected_cat.mate is not None:
                     self.elements['mate_frame'] = pygame_gui.elements.UIImage(pygame.Rect((140, 190), (166, 170)),
                                                                               self.mate_frame)
-                    mate = Cat.all_cats[self.selected_cat.mate]
+                    mate = Cat.fetch_cat(self.selected_cat.mate)
                     self.elements['mate_image'] = pygame_gui.elements.UIImage(pygame.Rect((150, 200), (100, 100)),
                                                                               mate.large_sprite)
                     # Check for name length
@@ -761,11 +807,11 @@ class PatrolScreen(Screens):
                                                                                 self.app_frame)
 
                 if self.selected_cat.status in ['medicine cat apprentice', 'apprentice'] and self.selected_cat.mentor is not None:
-                    self.app_mentor = self.selected_cat.mentor
+                    self.app_mentor = Cat.fetch_cat(self.selected_cat.mentor)
                     relation = 'mentor'
 
                 elif self.selected_cat.apprentice:
-                    self.app_mentor = self.selected_cat.apprentice[0]
+                    self.app_mentor = Cat.fetch_cat(self.selected_cat.apprentice[0])
                     relation = 'apprentice'
                 else:
                     self.app_mentor = None

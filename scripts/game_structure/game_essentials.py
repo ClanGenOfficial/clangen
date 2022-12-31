@@ -328,8 +328,8 @@ class Game():
                 "trait": inter_cat.trait,
                 "parent1": inter_cat.parent1,
                 "parent2": inter_cat.parent2,
-                "mentor": inter_cat.mentor.ID if inter_cat.mentor else None,
-                "former_mentor": [cat.ID for cat in inter_cat.former_mentor] if inter_cat.former_mentor else [],
+                "mentor": inter_cat.mentor if inter_cat.mentor else None,
+                "former_mentor": [cat for cat in inter_cat.former_mentor] if inter_cat.former_mentor else [],
                 "patrol_with_mentor": inter_cat.patrol_with_mentor if inter_cat.patrol_with_mentor else 0,
                 "mentor_influence": inter_cat.mentor_influence if inter_cat.mentor_influence else [],
                 "mate": inter_cat.mate,
@@ -362,13 +362,17 @@ class Game():
                 "accessory": inter_cat.accessory,
                 "experience": inter_cat.experience,
                 "dead_moons": inter_cat.dead_for,
-                "current_apprentice": [appr.ID for appr in inter_cat.apprentice],
-                "former_apprentices": [appr.ID for appr in inter_cat.former_apprentices],
+                "current_apprentice": [appr for appr in inter_cat.apprentice],
+                "former_apprentices": [appr for appr in inter_cat.former_apprentices],
                 "possible_scar": inter_cat.possible_scar if inter_cat.possible_scar else None,
                 "scar_event": inter_cat.scar_event if inter_cat.scar_event else [],
                 "df": inter_cat.df,
                 "outside": inter_cat.outside,                
                 "corruption": inter_cat.corruption if inter_cat.corruption else 0,
+                "life_givers": inter_cat.life_givers if inter_cat.life_givers else [],
+                "known_life_givers": inter_cat.known_life_givers if inter_cat.known_life_givers else [],
+                "virtues": inter_cat.virtues if inter_cat.virtues else [],
+                "retired": inter_cat.retired if inter_cat.retired else False,
                 "outside": inter_cat.outside,
                 "retired": inter_cat.retired if inter_cat.retired else False,
                 "faded_offspring": inter_cat.faded_offspring,
@@ -400,9 +404,7 @@ class Game():
             inter_cat = self.cat_class.all_cats[cat]
 
             # Add ID to list of faded cats.
-            print(self.clan.faded_ids)
             self.clan.faded_ids.append(cat)
-            print(self.clan.faded_ids)
 
             # If they have a mate, break it up
             if inter_cat.mate:
@@ -475,8 +477,8 @@ class Game():
                 "accessory": {inter_cat.accessory},
                 "experience": {inter_cat.experience},
                 "dead_moons": {inter_cat.dead_for},
-                "current_apprentice":{[appr.ID for appr in inter_cat.apprentice]},
-                "former_apprentices": {[appr.ID for appr in inter_cat.former_apprentices]},
+                "current_apprentice":{[appr for appr in inter_cat.apprentice]},
+                "former_apprentices": {[appr for appr in inter_cat.former_apprentices]},
                 "possible_scar": {inter_cat.possible_scar if inter_cat.possible_scar else None},
                 "scar_event": {inter_cat.scar_event if inter_cat.scar_event else []},
                 "df": {inter_cat.df},

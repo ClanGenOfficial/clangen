@@ -86,12 +86,12 @@
             "elder": 3
         },
         "medicine_mortality": {
-            "kitten": 10,
-            "adolescent": 15,
-            "young adult": 25,
-            "adult": 30,
-            "senior adult": 25,
-            "elder": 10
+            "kitten": 7,
+            "adolescent": 12,
+            "young adult": 20,
+            "adult": 25,
+            "senior adult": 20,
+            "elder": 7
         },
         "duration": 3,
         "medicine_duration": 2,
@@ -114,7 +114,7 @@
             "elder": 5
         },
         "medicine_mortality": {
-            "kitten": 8,
+            "kitten": 5,
             "adolescent": 60,
             "young adult": 0,
             "adult": 0,
@@ -264,20 +264,20 @@
     "yellowcough": {
         "severity": "major",
         "mortality": {
-            "kitten": 3,
-            "adolescent": 5,
+            "kitten": 2,
+            "adolescent": 3,
             "young adult": 5,
             "adult": 5,
             "senior adult": 5,
             "elder": 3
         },
         "medicine_mortality": {
-            "kitten": 10,
-            "adolescent": 30,
-            "young adult": 40,
-            "adult": 50,
-            "senior adult": 40,
-            "elder": 10
+            "kitten": 5,
+            "adolescent": 10,
+            "young adult": 15,
+            "adult": 20,
+            "senior adult": 15,
+            "elder": 5
         },
         "duration": 3,
         "medicine_duration": 2,

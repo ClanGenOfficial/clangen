@@ -1,7 +1,7 @@
 import ujson
 import random
 
-from scripts.cat.cats import Cat
+from scripts.cat.cats import Cat, INJURIES
 from scripts.events_module.generate_events import GenerateEvents
 from scripts.utility import save_death, event_text_adjust, change_clan_relations, change_relationship_values
 from scripts.game_structure.game_essentials import game, SAVE_DEATH
@@ -111,7 +111,7 @@ class Death_Events():
         else:
             body = True
 
-        if "war" in death_cause.tags and other_clan is not None:
+        if "war" in death_cause.tags and other_clan is not None and enemy_clan is not None:
             other_clan = enemy_clan
             other_clan_name = other_clan.name
 
@@ -136,10 +136,18 @@ class Death_Events():
             elif other_cat.status == "leader" and death_cause.history_text[1] is not None:
                 other_history_text = event_text_adjust(Cat, death_cause.history_text[1], other_cat, cat, other_clan_name)
 
+        # give injuries to other cat if tagged as such
+        if "other_cat_injure" in death_cause.tags:
+            print("TAG DETECTED", other_cat.name)
+            for tag in death_cause.tags:
+                if tag in INJURIES:
+                    other_cat.get_injured(tag)
+                    print("INJURED IN EVENT")
+
         # handle leader lives
         if cat.status == "leader" and "other_cat_death" not in death_cause.tags:
             if "all_lives" in death_cause.tags:
-                game.clan.leader_lives -= game.clan.leader_lives + 1
+                game.clan.leader_lives -= 10
                 cat.die(body)
                 cat.died_by.append(history_text)
             elif "murder" in death_cause.tags or "some_lives" in death_cause.tags:

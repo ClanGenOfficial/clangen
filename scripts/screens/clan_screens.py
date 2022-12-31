@@ -73,19 +73,19 @@ class ClanScreen(Screens):
 
         # Den Labels
         # Redo the locations, so that it uses layout on the clan page
-        self.warrior_den_label = pygame_gui.elements.UIImage(pygame.Rect((590, 430), (121, 28)),
+        self.warrior_den_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout["warrior den"], (121, 28)),
                                                              image_cache.load_image('resources/images/warrior_den.png'))
-        self.leader_den_label = pygame_gui.elements.UIImage(pygame.Rect((344, 94), (112, 28)),
+        self.leader_den_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout["leader den"], (112, 28)),
                                                             image_cache.load_image('resources/images/leader_den.png'))
-        self.med_den_label = pygame_gui.elements.UIImage(pygame.Rect((80, 200), (151, 28)),
+        self.med_den_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout["medicine den"], (151, 28)),
                                                          image_cache.load_image('resources/images/med_den.png'))
-        self.elder_den_label = pygame_gui.elements.UIImage(pygame.Rect((348, 490), (103, 28)),
+        self.elder_den_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout["elder den"], (103, 28)),
                                                            image_cache.load_image('resources/images/elder_den.png'))
-        self.nursery_label = pygame_gui.elements.UIImage(pygame.Rect((620, 200), (80, 28)),
+        self.nursery_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout['nursery'], (80, 28)),
                                                          image_cache.load_image('resources/images/nursery_den.png'))
-        self.clearing_label = pygame_gui.elements.UIImage(pygame.Rect((360, 290), (81, 28)),
+        self.clearing_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout['clearing'], (81, 28)),
                                                           image_cache.load_image('resources/images/clearing.png'))
-        self.app_den_label = pygame_gui.elements.UIImage(pygame.Rect((82, 430), (147, 28)),
+        self.app_den_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout['apprentice den'], (147, 28)),
                                                          image_cache.load_image('resources/images/app_den.png'))
 
         # Draw the toggle and text
@@ -101,31 +101,16 @@ class ClanScreen(Screens):
         # This should be a temp solution. We should change the code that determines postions.
         i = 0
         for x in game.clan.clan_cats:
-            i += 1
-            if i > self.max_sprites_displayed:
-                break
-            if not Cat.all_cats[x].dead and Cat.all_cats[
-                x].in_camp and not Cat.all_cats[x].exiled and not Cat.all_cats[x].outside:
+            if not Cat.all_cats[x].dead and Cat.all_cats[x].in_camp and \
+                    not Cat.all_cats[x].exiled and not Cat.all_cats[x].outside:
                 # print("Original location" + str(Cat.all_cats[x].placement))
-                location = [0, 0]
-                if Cat.all_cats[x].placement[0] == "center":
-                    # print("center - 0")
-                    location[0] = 375
-                else:
-                    if Cat.all_cats[x].placement[0] < 0:
-                        location[0] = -Cat.all_cats[x].placement[0] + 375
-                    else:
-                        location[0] = Cat.all_cats[x].placement[0] - 25
 
-                if Cat.all_cats[x].placement[1] == "center":
-                    # print("center - 1")
-                    location[1] = 325
-                else:
-                    location[1] = Cat.all_cats[x].placement[1] - 5
+                i += 1
+                if i > self.max_sprites_displayed:
+                    break
 
-                # print("Converted Location" + str(location))
                 self.cat_buttons.append(
-                    UISpriteButton(pygame.Rect(tuple(location), (50, 50)), Cat.all_cats[x].sprite, cat_id=x))
+                    UISpriteButton(pygame.Rect(tuple(Cat.all_cats[x].placement), (50, 50)), Cat.all_cats[x].sprite, cat_id=x))
 
         self.save_button = UIImageButton(pygame.Rect(((343, 625), (114, 30))), "", object_id="#save_button")
 
@@ -203,7 +188,8 @@ class ClanScreen(Screens):
     def choose_cat_postions(self):
         '''Determines the postions of cat on the clan screen.'''
         p = game.clan.cur_layout
-        game.clan.leader.placement = choice(p['leader place'])
+        if game.clan.leader:
+            game.clan.leader.placement = choice(p['leader place'])
         # prevent error if the clan has no medicine cat (last medicine cat is now a warrior)
         if game.clan.medicine_cat:
             game.clan.medicine_cat.placement = choice(p['medicine place'])
@@ -855,12 +841,12 @@ class AllegiancesScreen(Screens):
                     if len(game.clan.leader.apprentice) == 1:
                         self.allegiance_list.append([
                             '', '      Apprentice: ' +
-                                str(game.clan.leader.apprentice[0].name)
+                                str(Cat.fetch_cat(game.clan.leader.apprentice[0]).name)
                         ])
                     else:
                         app_names = ''
                         for app in game.clan.leader.apprentice:
-                            app_names += str(app.name) + ', '
+                            app_names += str(Cat.fetch_cat(app).name) + ', '
                         self.allegiance_list.append(
                             ['', '      Apprentices: ' + app_names[:-2]])
         # deputy
@@ -874,12 +860,12 @@ class AllegiancesScreen(Screens):
                 if len(game.clan.deputy.apprentice) == 1:
                     self.allegiance_list.append([
                         '', '      Apprentice: ' +
-                            str(game.clan.deputy.apprentice[0].name)
+                            str(Cat.fetch_cat(game.clan.deputy.apprentice[0]).name)
                     ])
                 else:
                     app_names = ''
                     for app in game.clan.deputy.apprentice:
-                        app_names += str(app.name) + ', '
+                        app_names += str(Cat.fetch_cat(app).name) + ', '
                     self.allegiance_list.append(
                         ['', '      Apprentices: ' + app_names[:-2]])
         cat_count = self._extracted_from_screen_switches_24(
@@ -913,12 +899,12 @@ class AllegiancesScreen(Screens):
                     if len(living_cat__.apprentice) == 1:
                         self.allegiance_list.append([
                             '', '      Apprentice: ' +
-                                str(living_cat__.apprentice[0].name)
+                                str(Cat.fetch_cat(living_cat__.apprentice[0]).name)
                         ])
                     else:
                         app_names = ''
                         for app in living_cat__.apprentice:
-                            app_names += str(app.name) + ', '
+                            app_names += str(Cat.fetch_cat(app).name) + ', '
                         self.allegiance_list.append(
                             ['', '      Apprentices: ' + app_names[:-2]])
                 cat_count += 1
@@ -1021,12 +1007,12 @@ class AllegiancesScreen(Screens):
                     if len(living_cat.apprentice) == 1:
                         self.allegiance_list.append([
                             '', '      Apprentice: ' +
-                                str(living_cat.apprentice[0].name)
+                                str(Cat.fetch_cat(living_cat.apprentice[0]).name)
                         ])
                     else:
                         app_names = ''
                         for app in living_cat.apprentice:
-                            app_names += str(app.name) + ', '
+                            app_names += str(Cat.fetch_cat(app).name) + ', '
                         self.allegiance_list.append(
                             ['', '      Apprentices: ' + app_names[:-2]])
         if not result:

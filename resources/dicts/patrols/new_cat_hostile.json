@@ -140,7 +140,7 @@
     "max_cats": 5
 },
 {
-    "patrol_id": "fst_border_noise1",
+    "patrol_id": "fst_bord_noise1",
     "biome": "forest",
     "season": "Any",
     "tags": ["border", "battle_injury", "scar", "death", "reputation"],
@@ -276,16 +276,16 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["med_cat", "med_only", "apprentice", "new_cat", "new_cat_queen", "new_cat_kits", "new_cat_newborn"],
-    "intro_text": "While searching for some specific herbs app1 is startled by weird sounds and whispers on the wind.",
+    "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
     "exp": 10,
     "success_text": [
-            "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, app1 suddenly finds themself nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. They watch uncertainly, but when the queen begs for help they can't refuse.",
-            "app1 follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. Panicking, they run for home. It alerts c_n tp the problem, and begrudingly they take the queen and kits in."
+            "The sounds die away and then start up again in strange, unpredictable intervals. Investigating, p_l suddenly finds themself nose to nose with a panting, bleeding queen, one desperately trying to keep their newborn litter quiet. They watch uncertainly, but when the queen begs for help they can't refuse.",
+            "p_l follows the strange sounds on the wind and finds a struggling queen with their newborn kits clinging to them. Panicking, they run for home. It alerts c_n to the problem, and begrudingly they take the queen and kits in."
     ],
     "fail_text": [
-            "app1 sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
+            "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
     ],
     "win_skills": ["None"],
     "win_trait": ["None"],
@@ -301,16 +301,16 @@
     "biome": "Any",
     "season": "Any",
     "tags": ["med_cat", "med_only", "apprentice", "new_cat", "new_cat_kits", "new_cat_newborn"],
-    "intro_text": "While searching for some specific herbs app1 is startled by weird sounds and whispers on the wind.",
+    "intro_text": "While searching for some specific herbs, p_l is startled by weird sounds and whispers on the wind.",
     "decline_text": "Unnerved and unable to discern if it is a sign from StarClan or nothing, they go back to c_n to ask for help and guidance.",
     "chance_of_success": 45,
     "exp": 10,
     "success_text": [
-            "app1 comes across frantically mewling kits desperately trying to wake up their dead parent. Unsure but not willing for them to die they bring the kits back to the Clan to be raised as one of them.",
-            "It takes ages for app1 to pin point the sounds. Eventually they uncover the hidden birthing nest of a dead, cold queen, their newborn kits by their side. It's against everything app1 has been told about outsiders, but they can't leave the kittens to die."
+            "p_l comes across frantically mewling kits desperately trying to wake up their dead parent. Unsure but not willing for them to die they bring the kits back to the Clan to be raised as one of them.",
+            "It takes ages for p_l to pinpoint the sounds. Eventually they uncover the hidden birthing nest of a dead, cold queen, their newborn kits by their side. It's against everything p_l has been told about outsiders, but they can't leave the kittens to die."
     ],
     "fail_text": [
-            "app1 sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
+            "p_l sees the body of an unknown queen with their kits beside them, slowly cooling in the morning breeze. They are filled with an unexpected sense of grief and take the time to carry and bury them outside their borders."
     ],
     "win_skills": ["None"],
     "win_trait": ["None"],

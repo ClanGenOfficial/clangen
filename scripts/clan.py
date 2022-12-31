@@ -30,27 +30,27 @@ class Clan():
         'Leaf-bare',
     ]
     layout_1 = {
-        'leader den': ('center', 100),
-        'medicine den': (100, 230),
-        'nursery': (-100, 230),
-        'clearing': ('center', 300),
-        'apprentice den': (100, 450),
-        'warrior den': (-100, 450),
-        'elder den': ('center', 500),
-        'leader place': [('center', 120), (screen_x / 2 - 50, 170),
-                         (screen_x / 2, 170)],
+        'leader den': (344, 94),
+        'medicine den': (80, 200),
+        'nursery': (620, 200),
+        'clearing': (360, 290),
+        'apprentice den': (82, 430),
+        'warrior den': (590, 430),
+        'elder den': (348, 490),
+        'leader place': [(375, 120), (400 - 50, 170),
+                         (400, 170)],
         'medicine place': [(70, 250), (120, 250), (170, 250), (100, 300),
                            (150, 300)],
-        'nursery place': [(-100, 250), (-150, 250), (-200, 250), (-70, 300),
-                          (-120, 300), (-170, 300), (-220, 300), (-70, 350),
-                          (-120, 350), (-170, 350), (-220, 350)],
-        'clearing place': [('center', 320), (300, 370), (350, 370), (400, 370),
+        'nursery place': [(400 + 150, 250), (400 + 200, 250), (400 + 250, 250), (400 + 135, 300),
+                          (400 + 185, 300), (400 + 235, 300), (400 + 285, 300), (400 + 130, 350),
+                          (400 + 180, 350), (400 + 230, 350), (400 + 280, 350)],
+        'clearing place': [(375, 320), (300, 370), (350, 370), (400, 370),
                            (300, 420), (350, 420), (400, 420)],
         'apprentice place': [(70, 470), (120, 470), (170, 470), (100, 520),
                              (150, 520), (200, 520)],
-        'warrior place': [(-50, 470), (-100, 490), (-150, 470), (-200, 490),
-                          (-50, 520), (-100, 540), (-150, 520), (-200, 540)],
-        'elder place': [(300, 520), (350, 520), (400, 520), (320, 570),
+        'warrior place': [(400 + 300, 470), (400 + 150, 490), (400 + 200, 470), (400 + 250, 490),
+                          (400 + 300, 520), (400 + 150, 540), (400 + 200, 520), (400 + 250, 540)],
+        'elder place': [(420, 570), (350, 520), (400, 520), (320, 570),
                         (370, 570)]
     }
     cur_layout = layout_1
@@ -97,13 +97,13 @@ class Clan():
             self.deputy_predecessors = 0
             self.medicine_cat = medicine_cat
             self.med_cat_list = []
-            self.med_cat_number = len(self.med_cat_list)
             self.med_cat_predecessors = 0
             if medicine_cat is not None:
                 self.clan_cats.append(self.medicine_cat.ID)
                 self.med_cat_list.append(self.medicine_cat.ID)
                 if medicine_cat.status != 'medicine cat':
                     Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
+            self.med_cat_number = len(self.med_cat_list)  # Must do this after the medicine cat is added to the list.
             self.age = 0
             self.current_season = 'Newleaf'
             self.instructor = None  # This is the first cat in starclan, to "guide" the other dead cats there.
@@ -257,7 +257,8 @@ class Clan():
         if medicine_cat:
             if medicine_cat.status != 'medicine cat':
                 Cat.all_cats[medicine_cat.ID].status_change('medicine cat')
-            self.med_cat_list.append(medicine_cat.ID)
+            if medicine_cat.ID not in self.med_cat_list:
+                self.med_cat_list.append(medicine_cat.ID)
             medicine_cat = self.med_cat_list[0]
             self.medicine_cat = Cat.all_cats[medicine_cat]
             self.med_cat_number = len(self.med_cat_list)
@@ -531,7 +532,7 @@ class Clan():
             deputy = Cat.all_cats[clan_data["deputy"]]
 
         if "None" in clan_data["med_cat"]:
-            med_cat = Cat.all_cats[clan_data["med_cat"]]
+            med_cat = None
         else:
             med_cat = Cat.all_cats[clan_data["med_cat"]]
 

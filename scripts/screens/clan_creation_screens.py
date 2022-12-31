@@ -233,7 +233,6 @@ class MakeClanScreen(Screens):
         elif event.ui_element == self.elements['mountain_biome']:
             self.biome_selected = "Mountainous"
             self.selected_camp_tab = 1
-            print(self.biome_selected)
             self.refresh_text_and_buttons()
         elif event.ui_element == self.elements['plains_biome']:
             self.biome_selected = "Plains"

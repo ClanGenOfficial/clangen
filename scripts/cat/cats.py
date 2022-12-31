@@ -144,10 +144,9 @@ class Cat():
                     if moons in range(self.age_moons[key_age][0], self.age_moons[key_age][1] + 1):
                         self.age = key_age
 
-            self.set_faded() # Sets the faded sprite and faded tag
+            self.set_faded()  # Sets the faded sprite and faded tag (self.faded = True)
 
             return
-
 
         self.gender = gender
         self.status = status
@@ -200,6 +199,9 @@ class Cat():
         self.df = False
         self.experience_level = None
         self.corruption = 0
+        self.life_givers = []
+        self.known_life_givers = []
+        self.virtues = []
         self.no_kits = False
         self.paralyzed = False
 
@@ -289,7 +291,7 @@ class Cat():
             self.gender = choice(["female", "male"])
         self.g_tag = self.gender_tags[self.gender]
 
-        #trans cat chances
+        # trans cat chances
         trans_chance = randint(0, 50)
         nb_chance = randint(0, 75)
         if self.gender == "female" and not self.age == 'kitten':
@@ -390,7 +392,7 @@ class Cat():
                 self.mate.mate = None
 
         for app in self.apprentice.copy():
-            app.update_mentor()
+            Cat.fetch_cat(app).update_mentor()
         self.update_mentor()
 
         if game.clan.instructor.df is False:
@@ -607,7 +609,10 @@ class Cat():
                 return GRIEF_FAMILY_NEGATIVE["sibling_reaction"][body]
             else:
                 return None
+
     def gone(self):
+        """ Makes a clan cat an "outside" cat. Handles removing them from special positions, and removing
+        mentors and apprentices. """
         if self.status == 'leader':
             self.outside = True
             game.clan.leader_lives = 1
@@ -620,11 +625,15 @@ class Cat():
         else:
             self.outside = True
         for app in self.apprentice.copy():
-            app.update_mentor()
+            app_ob = Cat.fetch_cat(app)
+            app_ob.update_mentor()
         self.update_mentor()
         game.clan.add_to_outside(self)
 
     def status_change(self, new_status):
+        """ Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
+            new_status = The new status of a cat. Can be 'apprentice', 'medicine cat apprentice', 'warrior'
+                        'medicine cat', 'elder'. """
         self.status = new_status
         self.name.status = new_status
 
@@ -653,6 +662,7 @@ class Cat():
         self.all_cats[self.ID] = self
 
     def update_traits(self):
+        """Updates the traits of a cat upon ageing up.  """
         if self.moons == 6:
             chance = randint(0, 5)  # chance for cat to gain trait that matches their previous trait's personality group
             if chance == 0:
@@ -689,12 +699,12 @@ class Cat():
                 for x in possible_groups:
                     mentor = None
                     if self.mentor:
-                        mentor = self.mentor
+                        mentor = Cat.fetch_cat(self.mentor)
                     elif not self.mentor and len(self.former_mentor) != 0:
                         if len(self.former_mentor) > 1:
-                            mentor = self.former_mentor[-1]
+                            mentor = Cat.fetch_cat(self.former_mentor[-1])
                         else:
-                            mentor = self.former_mentor[0]
+                            mentor = Cat.fetch_cat(self.former_mentor[0])
                     else:
                         self.mentor_influence.append('None')
                     if mentor and mentor.trait in self.personality_groups[x]:
@@ -733,6 +743,8 @@ class Cat():
                             self.trait = chosen_trait
 
     def describe_cat(self):
+        """ Generates a string describing the cat's appearance and gender. Mainly used for generating
+        the allegiances."""
         if self.genderalign == 'male' or self.genderalign == "transmasc" or self.genderalign == "trans male":
             sex = 'tom'
         elif self.genderalign == 'female' or self.genderalign == "transfem" or self.genderalign == "trans female":
@@ -748,7 +760,7 @@ class Cat():
 # ---------------------------------------------------------------------------- #
 
     def one_moon(self):
-        """Handles a moon skip for a alive cat"""
+        """Handles a moon skip for an alive cat. """
         if self.exiled or self.outside:
             # this is handled in events.py
             self.thoughts()
@@ -772,6 +784,7 @@ class Cat():
         self.thoughts()
 
     def thoughts(self):
+        """ Generates a thought for the cat, which displays on their profile. """
         all_cats = self.all_cats
         other_cat = random.choice(list(all_cats.keys()))
         countdown = int(len(all_cats) / 3)
@@ -798,6 +811,7 @@ class Cat():
         self.thought = str(chosen_thought)
 
     def create_interaction(self):
+        """Creates an interaction between this cat and another, which effects relationship values. """
         # if the cat has no relationships, skip
         if len(self.relationships) < 1 or not self.relationships:
             return
@@ -881,8 +895,8 @@ class Cat():
             self.contact_with_ill_cat(relevant_relationship.cat_to)
 
     def update_skill(self):
-        # checking for skill and replacing empty skill if cat is old enough
-        # also adds a chance for cat to take a skill similar to their mentor
+        """Checks for skill and replaces empty skill if cat is old enough
+        # also adds a chance for cat to take a skill similar to their mentor"""
 
         if self.skill == '???':
             # assign skill to new medicine cat
@@ -892,7 +906,10 @@ class Cat():
                 # check if they had a mentor
                 if self.former_mentor:
                     chance = randint(0, 5)
-                    mentor = self.former_mentor[-1]
+                    mentor = Cat.fetch_cat(self.former_mentor[-1])
+                    if not mentor:
+                        print("error - mentor not found")
+                        return
                     # give skill from mentor, this is a higher chance of happening than the warrior has
                     # bc med cats have no patrol_with_mentor modifier
                     if chance >= 2:
@@ -916,7 +933,10 @@ class Cat():
                 # check if they had a mentor
                 if self.former_mentor:
                     chance = randint(0, 9) + int(self.patrol_with_mentor)
-                    mentor = self.former_mentor[-1]
+                    mentor = Cat.fetch_cat(self.former_mentor[-1])
+                    if not mentor:
+                        print("error - mentor not found")
+                        return
                     # give skill from mentor
                     if chance >= 9:
                         for x in possible_groups:
@@ -1038,7 +1058,8 @@ class Cat():
         if moons_until is not None and moons_until >= 0 and born_with is True:
             self.permanent_condition[condition]["moons_until"] = int(moons_until - 1)
             self.permanent_condition[condition]["moons_with"] = 0
-            return False
+            if self.permanent_condition[condition]["moons_until"] != -1:
+                return False
         if self.permanent_condition[condition]["moons_until"] == -1 and\
                 self.permanent_condition[condition]["born_with"] is True:
             self.permanent_condition[condition]["moons_until"] = -2
@@ -1513,11 +1534,12 @@ class Cat():
         return True
 
     def update_med_mentor(self, new_mentor=None):
+        old_mentor = Cat.fetch_cat(self.mentor)
         if new_mentor is None:
             # If not reassigning and current mentor works, leave it
-            if self.mentor and self.is_valid_med_mentor(self.mentor):
+            if old_mentor and self.is_valid_med_mentor(old_mentor):
                 return
-        old_mentor = self.mentor
+
         # Should only have mentor if alive and some kind of apprentice
         if 'medicine cat apprentice' in self.status and not self.dead and not self.outside:
             # Need to pick a random mentor if not specified
@@ -1534,32 +1556,45 @@ class Cat():
                     new_mentor = choice(priority_mentors)
                 elif len(potential_mentors) > 0:
                     new_mentor = choice(potential_mentors)
-            # Mentor changing to chosen/specified cat
-            self.mentor = new_mentor
+
+            if new_mentor:
+                self.mentor = new_mentor.ID
+            else:
+                self.mentor = None
+
             if new_mentor is not None and old_mentor is None:
                 # remove and append in relevant lists
-                if self not in new_mentor.apprentice:
-                    new_mentor.apprentice.append(self)
-                if self in new_mentor.former_apprentices:
-                    new_mentor.former_apprentices.remove(self)
+                if self.ID not in new_mentor.apprentice:
+                    new_mentor.apprentice.append(self.ID)
+                if self.ID in new_mentor.former_apprentices:
+                    new_mentor.former_apprentices.remove(self.ID)
             elif new_mentor is not None and old_mentor is not None:
                 # reset patrol number
                 self.patrol_with_mentor = 0
                 # remove and append in relevant lists
                 if self.moons > 6:
-                    if self not in new_mentor.apprentice:
-                        new_mentor.apprentice.append(self)
-                    if self not in old_mentor.former_apprentices:
-                        old_mentor.former_apprentices.append(self)
-                    if self in old_mentor.apprentice:
-                        old_mentor.apprentice.remove(self)
-                    if old_mentor not in self.former_mentor:
-                        self.former_mentor.append(old_mentor)
+                    if self.ID not in new_mentor.apprentice:
+                        new_mentor.apprentice.append(self.ID)
+                    if self.ID not in old_mentor.former_apprentices:
+                        old_mentor.former_apprentices.append(self.ID)
+                    if self.ID in old_mentor.apprentice:
+                        old_mentor.apprentice.remove(self.ID)
+                    if old_mentor.ID not in self.former_mentor:
+                        self.former_mentor.append(old_mentor.ID)
                 else:
-                    if self not in new_mentor.apprentice:
-                        new_mentor.apprentice.append(self)
-                    if self in old_mentor.apprentice:
-                        old_mentor.apprentice.remove(self)
+                    if self.ID not in new_mentor.apprentice:
+                        new_mentor.apprentice.append(self.ID)
+                    if self.ID in old_mentor.apprentice:
+                        old_mentor.apprentice.remove(self.ID)
+            elif new_mentor is None and old_mentor is not None:
+                #  This should only trigger if there are no active med cats (they have all faded away)
+                if self.ID in old_mentor.apprentice:
+                    old_mentor.apprentice.remove(self.ID)
+                if self.moons > 6:
+                    if self.ID not in old_mentor.former_apprentices:
+                        old_mentor.former_apprentices.append(self.ID)
+
+
         else:
             self.mentor = None
 
@@ -1571,29 +1606,29 @@ class Cat():
             # app has graduated, no mentor needed anymore
             self.mentor = None
             # append and remove
-            if old_mentor is not None and old_mentor != self.mentor:
-                if self in old_mentor.apprentice:
-                    old_mentor.apprentice.remove(self)
-                if self not in old_mentor.former_apprentices:
-                    old_mentor.former_apprentices.append(self)
-                if old_mentor not in self.former_mentor:
-                    self.former_mentor.append(old_mentor)
+            if old_mentor is not None and old_mentor.ID != self.mentor:
+                if self.ID in old_mentor.apprentice:
+                    old_mentor.apprentice.remove(self.ID)
+                if self.ID not in old_mentor.former_apprentices:
+                    old_mentor.former_apprentices.append(self.ID)
+                if old_mentor.ID not in self.former_mentor:
+                    self.former_mentor.append(old_mentor.ID)
 
     def update_mentor(self, new_mentor=None):
+        old_mentor = Cat.fetch_cat(self.mentor)  # This will return non if there is no current mentor
         if not new_mentor:
             # handle if the current cat is outside and still a apprentice
-            if self.outside and self.mentor:
-                if self in self.mentor.apprentice:
-                    self.mentor.apprentice.remove(self)
-                if self not in self.mentor.former_apprentices:
-                    self.mentor.former_apprentices.append(self)
-                if self.mentor not in self.former_mentor:
-                    self.former_mentor.append(self.mentor)
+            if self.outside and old_mentor:  # If the cat is outside and currently has a mentor.
+                if self.ID in old_mentor.apprentice:
+                    old_mentor.apprentice.remove(self.ID)
+                if self.ID not in old_mentor.former_apprentices:
+                    old_mentor.former_apprentices.append(self.ID)
+                if old_mentor.ID not in self.former_mentor:
+                    self.former_mentor.append(old_mentor.ID)
                 self.mentor = None
             # If not reassigning and current mentor works, leave it
-            if self.mentor and self.is_valid_mentor(self.mentor):
+            if old_mentor and self.is_valid_mentor(old_mentor):
                 return
-        old_mentor = self.mentor
         # Should only have mentor if alive and some kind of apprentice
         if 'apprentice' in self.status and not self.dead and not self.outside:
             # Need to pick a random mentor if not specified
@@ -1610,31 +1645,36 @@ class Cat():
                     new_mentor = choice(priority_mentors)
                 elif len(potential_mentors) > 0:
                     new_mentor = choice(potential_mentors)
+
             # Mentor changing to chosen/specified cat
-            self.mentor = new_mentor
-            if new_mentor is not None and old_mentor is None:
+            if new_mentor:
+                self.mentor = new_mentor.ID
+            else:
+                self.mentor = None
+
+            if new_mentor is not None and not old_mentor:
                 # remove and append in relevant lists
-                if self not in new_mentor.apprentice:
-                    new_mentor.apprentice.append(self)
-                if self in new_mentor.former_apprentices:
-                    new_mentor.former_apprentices.remove(self)
+                if self.ID not in new_mentor.apprentice:
+                    new_mentor.apprentice.append(self.ID)
+                if self.ID in new_mentor.former_apprentices:
+                    new_mentor.former_apprentices.remove(self.ID)
             elif new_mentor is not None and old_mentor is not None:
                 # reset patrol number
                 self.patrol_with_mentor = 0
                 if self.moons > 6:
-                    if self not in new_mentor.apprentice:
-                        new_mentor.apprentice.append(self)
-                    if self not in old_mentor.former_apprentices:
-                        old_mentor.former_apprentices.append(self)
-                    if self in old_mentor.apprentice:
-                        old_mentor.apprentice.remove(self)
-                    if old_mentor not in self.former_mentor:
-                        self.former_mentor.append(old_mentor)
+                    if self.ID not in new_mentor.apprentice:
+                        new_mentor.apprentice.append(self.ID)
+                    if self.ID not in old_mentor.former_apprentices:
+                        old_mentor.former_apprentices.append(self.ID)
+                    if self.ID in old_mentor.apprentice:
+                        old_mentor.apprentice.remove(self.ID)
+                    if old_mentor.ID not in self.former_mentor:
+                        self.former_mentor.append(old_mentor.ID)
                 else:
-                    if self not in new_mentor.apprentice:
-                        new_mentor.apprentice.append(self)
-                    if self in old_mentor.apprentice:
-                        old_mentor.apprentice.remove(self)
+                    if self.ID not in new_mentor.apprentice:
+                        new_mentor.apprentice.append(self.ID)
+                    if self.ID in old_mentor.apprentice:
+                        old_mentor.apprentice.remove(self.ID)
         else:
             self.mentor = None
 
@@ -1643,13 +1683,13 @@ class Cat():
             # app has graduated, no mentor needed anymore
             self.mentor = None
             # append and remove
-            if old_mentor is not None and old_mentor != self.mentor:
-                if self in old_mentor.apprentice:
-                    old_mentor.apprentice.remove(self)
-                if self not in old_mentor.former_apprentices:
-                    old_mentor.former_apprentices.append(self)
-                if old_mentor not in self.former_mentor:
-                    self.former_mentor.append(old_mentor)
+            if old_mentor is not None and old_mentor.ID != self.mentor:
+                if self.ID in old_mentor.apprentice:
+                    old_mentor.apprentice.remove(self.ID)
+                if self.ID not in old_mentor.former_apprentices:
+                    old_mentor.former_apprentices.append(self.ID)
+                if old_mentor.ID not in self.former_mentor:
+                    self.former_mentor.append(old_mentor.ID)
 
 
 # ---------------------------------------------------------------------------- #
@@ -1687,7 +1727,7 @@ class Cat():
             return False
 
         # check for mentor
-        is_former_mentor = (other_cat in self.former_apprentices or self in other_cat.former_apprentices)
+        is_former_mentor = (other_cat.ID in self.former_apprentices or self.ID in other_cat.former_apprentices)
         if is_former_mentor and not former_mentor_setting:
             return False
 
@@ -1749,7 +1789,7 @@ class Cat():
             return False
 
         # check for mentor
-        is_former_mentor = (other_cat in self.former_apprentices or self in other_cat.former_apprentices)
+        is_former_mentor = (other_cat.ID in self.former_apprentices or self.ID in other_cat.former_apprentices)
         if is_former_mentor and not former_mentor_setting:
             return False
 
@@ -1808,8 +1848,6 @@ class Cat():
                 self.relationships[self.mate] = Relationship(self, mate)
 
         self.mate = None
-        if self.mate in Cat.all_cats:
-            Cat.all_cats[self.mate].mate = None
 
     def set_mate(self, other_cat):
         """Assigns other_cat as mate to self."""
@@ -1992,9 +2030,24 @@ class Cat():
         self.sprite = image_cache.load_image(f"sprites/faded/{file_name}").convert_alpha()
 
     @staticmethod
+    def fetch_cat(cat_id):
+        """Fetches a cat object. Works for both faded and non-faded cats. Returns none if no cat was found. """
+        if not cat_id: #Check if None has been entered
+            return None
+
+        if cat_id in Cat.all_cats:
+            return Cat.all_cats[cat_id]
+        else:
+            ob = Cat.load_faded_cat(cat_id)
+            if ob:
+                return ob
+            else:
+                return None
+
+    @staticmethod
     def load_faded_cat(cat):
         """Loads a faded cat, returning the cat object. This object is saved nowhere else. """
-        print("loading faded cat")
+        #print("Attempting to load faded cat")
         try:
             with open('saves/' + game.clan.name + '/faded_cats/' + cat + ".json", 'r') as read_file:
                 cat_info = ujson.loads(read_file.read())
@@ -2011,6 +2064,8 @@ class Cat():
         cat_ob.paralyzed = cat_info["paralyzed"]
         cat_ob.faded_offspring = cat_info["faded_offspring"]
         cat_ob.faded = True
+
+        #print(str(cat_ob.name) + " has been loaded")
 
         return cat_ob
 # ---------------------------------------------------------------------------- #

@@ -308,10 +308,62 @@
             "comfort",
             "respect"
         ],
-        "event_text": "m_c was on a walk when they saw r_c being attacked by d_l! They helped r_c escape, but not before gaining a few wounds.",
+        "event_text": "m_c was on a walk when they saw r_c being attacked by an enemy warrior! They helped r_c escape, but not before gaining a few wounds.",
         "history_text": [
-            "m_c was scarred while trying to save r_c.",
-            "m_c died from their wounds after saving r_c from d_l.",
+            "m_c was scarred while trying to save r_c from an enemy warrior.",
+            "m_c died from their wounds after saving r_c from an enemy warrior.",
+            null
+        ],
+        "cat_trait": ["altruistic", "calm", "compassionate", "empathetic", "thoughtful", "daring", "bold", "fierce", "bloodthirsty", "vengeful"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "claw-wound",
+        "tags": [
+            "other_cat",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "rc_to_mc",
+            "platonic",
+            "neg_dislike",
+            "trust",
+            "comfort",
+            "respect"
+        ],
+        "event_text": "m_c was on a walk when they saw r_c being attacked by a rogue! They helped r_c escape, but not before gaining a few wounds.",
+        "history_text": [
+            "m_c was scarred while trying to save r_c from a rogue.",
+            "m_c died from their wounds after saving r_c from a rogue.",
+            null
+        ],
+        "cat_trait": ["altruistic", "calm", "compassionate", "empathetic", "thoughtful", "daring", "bold", "fierce", "bloodthirsty", "vengeful"],
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "bite-wound",
+        "tags": [
+            "other_cat",
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare",
+            "rc_to_mc",
+            "platonic",
+            "neg_dislike",
+            "trust",
+            "comfort",
+            "respect"
+        ],
+        "event_text": "m_c was on a walk when they saw r_c being attacked by a dog! They helped r_c escape, but not before gaining a few wounds.",
+        "history_text": [
+            "m_c was scarred while trying to save r_c from a dog.",
+            "m_c died from their wounds after saving r_c from a dog.",
             null
         ],
         "cat_trait": ["altruistic", "calm", "compassionate", "empathetic", "thoughtful", "daring", "bold", "fierce", "bloodthirsty", "vengeful"],
