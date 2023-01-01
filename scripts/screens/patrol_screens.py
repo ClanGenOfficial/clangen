@@ -337,14 +337,14 @@ class PatrolScreen(Screens):
         vowels = ['A', 'E', 'I', 'O', 'U']
         if size == 1:
             text = text.replace('Your patrol',
-                                str(patrol.patrol_leader.name))
+                                str(patrol.patrol_leader_name))
             text = text.replace('The patrol',
-                                str(patrol.patrol_leader.name))
-        text = text.replace('p_l', str(patrol.patrol_leader.name))
+                                str(patrol.patrol_leader_name))
+        text = text.replace('p_l', str(patrol.patrol_leader_name))
         if patrol.patrol_random_cat is not None:
             text = text.replace('r_c', str(patrol.patrol_random_cat.name))
         else:
-            text = text.replace('r_c', str(patrol.patrol_leader.name))
+            text = text.replace('r_c', str(patrol.patrol_leader_name))
         text = text.replace('app1', str(patrol.app1_name))
         text = text.replace('app2', str(patrol.app2_name))
         text = text.replace('app3', str(patrol.app3_name))
@@ -367,8 +367,10 @@ class PatrolScreen(Screens):
             text = text.replace('o_c4', str(patrol.patrol_other_cats[3].name))
         
         if 's_c' in text:
-            text = text.replace('s_c', str(patrol.patrol_stat_cat.name))
-            text = text.replace('s_c', str(patrol.patrol_leader_name))
+            if patrol.patrol_stat_cat is not None:
+                text = text.replace('s_c', str(patrol.patrol_stat_cat.name))
+            else:
+                text = text.replace('s_c', str(patrol.patrol_leader_name))
 
         other_clan_name = patrol.other_clan.name
         s = 0
