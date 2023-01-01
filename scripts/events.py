@@ -61,7 +61,7 @@ class Events():
                     cat.age = 'elder'
 
                 # killing exiled cats
-                if cat.moons > randint(100, 200) and cat.exiled:
+                if cat.moons > randint(100, 200) and (cat.exiled or cat.outside):
                     if choice([1, 2, 3, 4, 5]) == 1 and not cat.dead:
                         cat.dead = True
                         text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
