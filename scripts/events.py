@@ -1455,13 +1455,9 @@ class Events():
                         self.handle_twoleg_capture(cat)
                     game.cur_events_list.append(event_string)
                     game.birth_death_events_list.append(event_string)
-                    if SAVE_DEATH:
-                        save_death(cat, event_string)
                     return
                 game.cur_events_list.append(event_string)
                 game.birth_death_events_list.append(event_string)
-                if SAVE_DEATH:
-                    save_death(cat, event_string)
 
             else:
                 disaster_str = choice(disaster)
@@ -1474,8 +1470,6 @@ class Events():
                 event_string = f'{names}{disaster_str}'
                 game.cur_events_list.append(event_string)
                 game.birth_death_events_list.append(event_string)
-                if SAVE_DEATH:
-                    save_death(cat, event_string)
 
             for cat in dead_cats:
                 cat.die()

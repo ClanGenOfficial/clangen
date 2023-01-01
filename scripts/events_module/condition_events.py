@@ -5,8 +5,8 @@ import ujson as ujson
 
 from scripts.cat.cats import Cat
 from scripts.conditions import medical_cats_condition_fulfilled, get_amount_cat_for_one_medic
-from scripts.utility import save_death, event_text_adjust, get_med_cats, change_relationship_values
-from scripts.game_structure.game_essentials import game, SAVE_DEATH
+from scripts.utility import event_text_adjust, get_med_cats, change_relationship_values
+from scripts.game_structure.game_essentials import game
 from scripts.events_module.scar_events import Scar_Events
 from scripts.events_module.generate_events import GenerateEvents
 
@@ -74,8 +74,6 @@ class Condition_Events():
         # if an event happened, then add event to cur_event_list and save death if it happened.
         if event_string:
             if cat.dead:
-                if SAVE_DEATH:
-                    save_death(cat, event_string)
                 game.birth_death_events_list.append(event_string)
             game.cur_events_list.append(event_string)
             game.health_events_list.append(event_string)
@@ -597,7 +595,6 @@ class Condition_Events():
                     # clear event list first to make sure any heal or risk events from other injuries are not shown
                     event_list.clear()
                     event_list.append(event)
-                    save_death(cat, event)
                     break
 
                 elif cat.healed_condition is True:
@@ -756,7 +753,6 @@ class Condition_Events():
 
                 event = f"{cat.name} died from complications caused by {condition}."
                 event_list.append(event)
-                save_death(cat, event)
                 cat.died_by.append(event)
 
             elif condition_appears:
