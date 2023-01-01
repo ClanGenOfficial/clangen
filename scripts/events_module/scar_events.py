@@ -4,8 +4,7 @@ import random
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import scars1, scars2, scars3
 from scripts.conditions import get_amount_cat_for_one_medic, medical_cats_condition_fulfilled
-from scripts.utility import save_death
-from scripts.game_structure.game_essentials import game, SAVE_DEATH
+from scripts.game_structure.game_essentials import game
 
 
 # ---------------------------------------------------------------------------- #

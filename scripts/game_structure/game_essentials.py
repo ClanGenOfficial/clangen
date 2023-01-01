@@ -14,9 +14,6 @@ screen_y = 700
 screen = pygame.display.set_mode((screen_x, screen_y), pygame.HWSURFACE)
 pygame.display.set_caption('Clan Generator')
 
-SAVE_DEATH = False
-
-
 # G A M E
 class Game():
     max_name_length = 10
