@@ -64,7 +64,10 @@ class Events():
                 if cat.moons > randint(100, 200) and (cat.exiled or cat.outside):
                     if choice([1, 2, 3, 4, 5]) == 1 and not cat.dead:
                         cat.dead = True
-                        text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
+                        if cat.exiled:
+                            text = f'Rumors reach your Clan that the exiled {str(cat.name)} has died recently.'
+                        else:
+                            text = f'Rumors reach your Clan that {str(cat.name)} has died recently.'
                         game.cur_events_list.append(text)
                         game.birth_death_events_list.append(text)
 
