@@ -563,7 +563,7 @@ class PatrolScreen(Screens):
                     pygame.image.load(
                         f"{path}{file}_general_intro.png").convert_alpha()
                 )
-            except:
+            except Exception:
                 print('ERROR: could not display patrol image')
 
     def open_patrol_complete_screen(self, user_input):

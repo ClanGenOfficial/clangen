@@ -325,6 +325,11 @@ class SettingsScreen(Screens):
             self.settings_changed = True
             self.update_save_button()
             self.refresh_checkboxes()
+        elif event.ui_element == self.checkboxes['gore']:
+            game.switch_setting('gore')
+            self.settings_changed = True
+            self.update_save_button()
+            self.refresh_checkboxes()
 
     def handle_lang_events(self, event):
         if event.ui_element == self.checkboxes['english']:
@@ -353,7 +358,7 @@ class SettingsScreen(Screens):
                                          "", object_id="#info_settings_button")
         self.language_button = UIImageButton(pygame.Rect((550, 100), (150, 30)),
                                              "", object_id="#lang_settings_button")
-        self.save_settings_button = UIImageButton(pygame.Rect((327, 550), (146, 30)),
+        self.save_settings_button = UIImageButton(pygame.Rect((327, 600), (146, 30)),
                                                   "", object_id="#save_settings_button")
         self.update_save_button()
         self.main_menu_button = UIImageButton(pygame.Rect((25, 25), (153, 30)),
@@ -404,7 +409,7 @@ class SettingsScreen(Screens):
         n = 0
 
         self.checkboxes_text["container"] = pygame_gui.elements.UIScrollingContainer(pygame.Rect((0, 220),
-                                                                                                 (700, 300)))
+                                                                                                 (700, 350)))
 
         self.checkboxes_text['dark mode'] = pygame_gui.elements.UITextBox(
             "Dark Mode", pygame.Rect((x_value, n * y_spacing), (500, 50)),
@@ -467,6 +472,14 @@ class SettingsScreen(Screens):
         n += 1
         self.checkboxes_text['fade_copy'] = pygame_gui.elements.UITextBox(
             "Save a complete copy of faded cats information",
+            pygame.Rect((x_value, n * y_spacing), (500, 50)),
+            container=self.checkboxes_text["container"],
+            object_id=get_text_box_theme("#setting_text_box")
+        )
+
+        n += 1
+        self.checkboxes_text['gore'] = pygame_gui.elements.UITextBox(
+            "Allow mild gore and blood in patrol artwork.",
             pygame.Rect((x_value, n * y_spacing), (500, 50)),
             container=self.checkboxes_text["container"],
             object_id=get_text_box_theme("#setting_text_box")
@@ -579,7 +592,8 @@ class SettingsScreen(Screens):
                 "",
                 object_id=box_type,
                 container=self.checkboxes_text["container"],
-                tool_tip_text='Camp backgrounds will match with the mode. Nighttime for Dark mode and daytime for Light mode.'
+                tool_tip_text='Camp backgrounds will match with the mode.'
+                              ' Nighttime for Dark mode and daytime for Light mode.'
             )
             n += 1
             # Enable clan page background
@@ -705,6 +719,20 @@ class SettingsScreen(Screens):
                 object_id=box_type,
                 container=self.checkboxes_text["container"],
                 tool_tip_text="A complete copy of faded cat save info will be saved in plain-text."
+            )
+
+            n += 1
+            # Allow gorey patrol images
+            if game.settings['gore']:
+                box_type = "#checked_checkbox"
+            else:
+                box_type = "#unchecked_checkbox"
+            self.checkboxes['gore'] = UIImageButton(
+                pygame.Rect((x_value, n * y_spacing), (34, 34)),
+                "",
+                object_id=box_type,
+                container=self.checkboxes_text["container"],
+                tool_tip_text="Mild gore and blood will be allowed in the artwork displayed alongside patrols."
             )
 
         # CHECKBOXES FOR RELATION SETTINGS #################################################################

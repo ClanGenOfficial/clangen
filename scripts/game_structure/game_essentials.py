@@ -157,7 +157,8 @@ class Game():
         'den labels': True,
         'fading': True,
         "save_faded_copy": False,
-        'favorite sub tab': None
+        'favorite sub tab': None,
+        'gore': False
     }  # The current settings
     setting_lists = {
         'no gendered breeding': [False, True],
@@ -181,7 +182,8 @@ class Game():
         'den labels': [False, True],
         'favorite sub tab': sub_tab_list,
         'fading': [True, False],
-        'save_faded_copy': [False, True]
+        'save_faded_copy': [False, True],
+        "gore": [False, True]
     }  # Lists of possible options for each setting
     settings_changed = False
 
