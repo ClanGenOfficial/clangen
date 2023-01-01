@@ -82,7 +82,7 @@ class StartScreen(Screens):
 
         if game.switches['error_message']:
             # TODO: Switch to another kind of ui element here
-            error_text = f"There was an error loading the game: \n {game.switches['error_message']}"
+            error_text = f"There was an error loading the game: {game.switches['error_message']}"
             self.error_label.set_text(error_text)
             self.error_label.show()
 
