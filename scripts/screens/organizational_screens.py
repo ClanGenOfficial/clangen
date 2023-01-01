@@ -17,6 +17,7 @@ class StartScreen(Screens):
 
     def __init__(self, name=None):
         super().__init__(name)
+        self.warning_label = None
         self.bg = pygame.image.load("resources/images/menu.png").convert()
 
     def handle_event(self, event):
@@ -43,6 +44,7 @@ class StartScreen(Screens):
         self.new_clan_button.kill()
         self.settings_button.kill()
         self.error_label.kill()
+        self.warning_label.kill()
 
     def screen_switches(self):
         # Make those unslightly menu button hide away
@@ -62,6 +64,12 @@ class StartScreen(Screens):
                                                        object_id="#save_text_box")
         self.error_label.hide()
 
+        self.warning_label = pygame_gui.elements.UITextBox(
+            "Warning: this game includes some mild descriptions of gore.",
+            pygame.Rect((50, 622), (700, 30)),
+            object_id="#default_dark"
+        )
+
         if game.clan is not None and game.switches['error_message'] == '':
             self.continue_button.enable()
             self.switch_clan_button.enable()
@@ -74,7 +82,7 @@ class StartScreen(Screens):
 
         if game.switches['error_message']:
             # TODO: Switch to another kind of ui element here
-            error_text = f"There was an error loading the game: \n {game.switches['error_message']}"
+            error_text = f"There was an error loading the game: {game.switches['error_message']}"
             self.error_label.set_text(error_text)
             self.error_label.show()
 

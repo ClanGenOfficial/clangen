@@ -259,13 +259,15 @@ class EventsScreen(Screens):
         if game.clan.age != 1:
             self.clan_age.set_text(f'Clan age: {str(game.clan.age)} moons')
 
-        self.timeskip_button = UIImageButton(pygame.Rect((310, 205), (180, 30)), "", object_id="#timeskip_button")
-        if game.clan.closed_borders:
-            self.toggle_borders_button = pygame_gui.elements.UIButton(pygame.Rect((500, 210), (200, 30)),
-                                                                      "Open Clan Borders")
-        else:
-            self.toggle_borders_button = pygame_gui.elements.UIButton(pygame.Rect((500, 210), (200, 30)),
-                                                                      "Close Clan Borders")
+        self.timeskip_button = UIImageButton(pygame.Rect((310, 218), (180, 30)), "", object_id="#timeskip_button")
+
+        # commenting out for now as there seems to be a consensus that it isn't needed anymore?
+        #if game.clan.closed_borders:
+        #    self.toggle_borders_button = pygame_gui.elements.UIButton(pygame.Rect((500, 210), (200, 30)),
+        #                                                              "Open Clan Borders")
+        #else:
+        #    self.toggle_borders_button = pygame_gui.elements.UIButton(pygame.Rect((500, 210), (200, 30)),
+        #                                                              "Close Clan Borders")
 
         # Sets up the buttons to switch between the event types.
         self.all_events_button = UIImageButton(
@@ -334,8 +336,8 @@ class EventsScreen(Screens):
     def exit_screen(self):
         self.timeskip_button.kill()
         del self.timeskip_button
-        self.toggle_borders_button.kill()
-        del self.toggle_borders_button
+        #self.toggle_borders_button.kill()
+        #del self.toggle_borders_button
         self.all_events_button.kill()
         del self.all_events_button
         self.ceremonies_events_button.kill()

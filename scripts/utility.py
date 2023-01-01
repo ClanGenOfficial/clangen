@@ -36,30 +36,6 @@ def get_living_cat_count(Cat):
     return count
 
 
-def save_death(cat, death_string):
-    clanname = None
-    if game.switches['clan_name'] != '':
-        clanname = game.switches['clan_name']
-    elif len(game.switches['clan_name']) > 0:
-        clanname = game.switches['clan_list'][0]
-    elif game.clan is not None:
-        clanname = game.clan.name
-
-    path = f"saves/{clanname}/deaths.json"
-    living_cats = list(filter(lambda c: not c.dead and not c.outside, cat.all_cats.values()))
-
-    file_entry = []
-    if os.path.exists(path):
-        with open(path, "r") as file:
-            file_entry = ujson.loads(file.read())
-
-    file_entry.append(f"{death_string} ({cat.moons} moons)- {game.clan.age} moons with {len(living_cats)} living cats")
-
-    with open(path, "w") as file:
-        json_string = ujson.dumps(file_entry, indent=4)
-        file.write(json_string)
-
-
 def change_clan_reputation(difference=0):
     """
     will change the clan's reputation with outsider cats according to the difference parameter.
@@ -633,6 +609,4 @@ def get_text_box_theme(themename=""):
             return "text_box"
         else:
             return themename
-
-
 

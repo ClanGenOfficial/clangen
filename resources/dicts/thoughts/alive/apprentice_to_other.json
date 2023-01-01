@@ -19,7 +19,11 @@
             "Is rambling on to kits about the importance of respecting their elders"
         ],
         "medicine cat apprentice": [],
-        "apprentice": [],
+        "apprentice": [
+        "Is learning how to hunt with r_c",
+        "Teases r_c for missing an easy catch",
+        "Is happy that they are going to train with r_c"
+       ],
         "warrior": [],
         "medicine cat": [],
         "leader": [],
@@ -48,6 +52,15 @@
         "Practices some battle moves",
         "Is helping to reinforce the camp wall with brambles",
         "Is daydreaming about having a mate and kits someday",
-        "Had quite the adventure today"
+        "Had quite the adventure today",
+        "Is thinking about how cool it will be when they are a warrior",
+        "Wants to become a fierce warrior someday",
+        "Wants to learn as many fighting techniques as they can",
+        "Wants to show their mentor that they are smart, skilled, and talented",
+        "Wants to earn their warrior name",
+        "Is determined to master a hunting technique by dusk",
+        "Can see how busy their mentor is",
+        "Wants to be taught an advanced hunting move",
+        "Has been training very hard recently"
     ]
 }

@@ -204,7 +204,7 @@
             "kitten": 20,
             "adolescent": 60,
             "young adult": 80,
-            "adult": 80,
+            "adult": 90,
             "senior adult": 60,
             "elder": 30
         },
@@ -223,9 +223,9 @@
         "moons_until": 0,
         "mortality": {
             "kitten": 15,
-            "adolescent": 60,
-            "young adult": 120,
-            "adult": 100,
+            "adolescent": 50,
+            "young adult": 65,
+            "adult": 75,
             "senior adult": 50,
             "elder": 20
         },

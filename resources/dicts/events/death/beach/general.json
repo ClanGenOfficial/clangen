@@ -24,8 +24,8 @@
     },
     {
         "camp": "any",
-        "tags": ["other_cat", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body", "rc_to_mc", "platonic", "neg_dislike", "respect", "trust"],
-        "death_text": "m_c was lost to the sea while trying to save a r_c from drowning.",
+        "tags": ["other_cat", "other_cat_injure", "water in their lungs", "shock", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare", "no_body", "rc_to_mc", "platonic", "neg_dislike", "respect", "trust"],
+        "death_text": "m_c was lost to the sea while trying to save r_c from drowning.",
         "history_text": [
             "m_c was lost to the sea while trying to save r_c.",
         null

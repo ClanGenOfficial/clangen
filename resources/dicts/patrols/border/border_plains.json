@@ -29,7 +29,7 @@
     "antagonize_fail_text": null,
     "history_text": [
     "r_c was injured after disturbing a badger in its sett.",
-    "p_l was killed after an unfortunate meeting with a wolverine.",
+    "This cat was killed after an unfortunate meeting with a wolverine.",
         "were killed by a predator hiding in it's burrow"
     ]
 },
@@ -63,7 +63,7 @@
     "antagonize_fail_text": null,
     "history_text": [
         "r_c was injured after disturbing a badger in its sett.",
-        "p_l was killed after an unfortunate meeting with a wolverine.",
+        "This cat was killed after an unfortunate meeting with a wolverine.",
         "were killed by a predator hiding in it's burrow"
     ]
 },

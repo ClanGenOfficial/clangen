@@ -261,7 +261,7 @@
     },
     {
         "camp": "any",
-        "tags": ["Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
+        "tags": ["old_age", "Newleaf", "Greenleaf", "Leaf-fall", "Leaf-bare"],
         "death_text": "m_c lost a life to their old age.",
         "history_text": [null, "succumbed to old age"],
         "cat_trait": null,

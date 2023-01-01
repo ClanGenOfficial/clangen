@@ -270,7 +270,26 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c was out on a walk alone when they heard d_l approaching! They crawled into a thorny shrub to hide, but got some nasty scratches in the process.",
+        "event_text": "m_c was out on a walk alone when they heard a dog approaching! They crawled into a thorny shrub to hide, but got some nasty scratches in the process.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": ["nervous", "wise", "insecure", "careful", "calm", "sneaky", "strange"],
+        "cat_skill": ["smart", "very smart", "extremely smart"],
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "torn pelt",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was out on a walk alone when they heard a fox approaching! They crawled into a thorny shrub to hide, but got some nasty scratches in the process.",
         "history_text": [
             null,
             null,
@@ -416,11 +435,30 @@
             "Leaf-fall",
             "Leaf-bare"
         ],
-        "event_text": "m_c's tail was badly injured by t_l.",
+        "event_text": "m_c's tail was badly injured by a dog.",
         "history_text": [
-            "m_c was scarred by t_l",
-            "m_c died from their wounds after they were hurt by t_l.",
-            "were hurt by t_l"
+            "m_c was scarred by a dog",
+            "m_c died from their wounds after they were hurt by a dog.",
+            "were hurt by a dog"
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "mangled tail",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c's tail was badly injured by a fox.",
+        "history_text": [
+            "m_c was scarred by a fox.",
+            "m_c died from their wounds after they were hurt by a fox.",
+            "were hurt by a fox"
         ],
         "cat_trait": null,
         "cat_skill": null,
@@ -506,6 +544,46 @@
         "cat_trait": null,
         "cat_skill": null,
         "other_cat_trait": ["bloodthirsty", "bold", "cold", "fierce", "righteous", "strict", "vengeful"],
+        "other_cat_skill": null
+    },
+    {
+        "injury": "thorn in their paw",
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was helping reinforce the camp walls when they got a thorn stuck in their paw.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
+        "other_cat_skill": null
+    },
+    {
+        "injury": "thorn in their paw",
+        "camp": "any",
+        "tags": [
+            "Newleaf",
+            "Greenleaf",
+            "Leaf-fall",
+            "Leaf-bare"
+        ],
+        "event_text": "m_c was trying to fluff up their nest when they discovered that they were the victim of a prank. Fox-dung! There's now a sharp thorn embedded in their paw.",
+        "history_text": [
+            null,
+            null,
+            null
+        ],
+        "cat_trait": null,
+        "cat_skill": null,
+        "other_cat_trait": null,
         "other_cat_skill": null
     }
 ]

@@ -338,11 +338,14 @@ class PatrolScreen(Screens):
         vowels = ['A', 'E', 'I', 'O', 'U']
         if size == 1:
             text = text.replace('Your patrol',
-                                str(patrol.patrol_leader.name))
+                                str(patrol.patrol_leader_name))
             text = text.replace('The patrol',
-                                str(patrol.patrol_leader.name))
-        text = text.replace('p_l', str(patrol.patrol_leader.name))
-        text = text.replace('r_c', str(patrol.patrol_random_cat.name))
+                                str(patrol.patrol_leader_name))
+        text = text.replace('p_l', str(patrol.patrol_leader_name))
+        if patrol.patrol_random_cat is not None:
+            text = text.replace('r_c', str(patrol.patrol_random_cat.name))
+        else:
+            text = text.replace('r_c', str(patrol.patrol_leader_name))
         text = text.replace('app1', str(patrol.app1_name))
         text = text.replace('app2', str(patrol.app2_name))
         text = text.replace('app3', str(patrol.app3_name))
@@ -364,9 +367,11 @@ class PatrolScreen(Screens):
             text = text.replace('o_c3', str(patrol.patrol_other_cats[2].name))
             text = text.replace('o_c4', str(patrol.patrol_other_cats[3].name))
         
-
-        if patrol.patrol_stat_cat is not None:
-            text = text.replace('s_c', str(patrol.patrol_stat_cat.name))
+        if 's_c' in text:
+            if patrol.patrol_stat_cat is not None:
+                text = text.replace('s_c', str(patrol.patrol_stat_cat.name))
+            else:
+                text = text.replace('s_c', str(patrol.patrol_leader_name))
 
         other_clan_name = patrol.other_clan.name
         s = 0
@@ -411,8 +416,31 @@ class PatrolScreen(Screens):
                     text = " ".join(modify)
                     break
             s += index + 3
-
         text = text.replace('c_n', str(game.clan.name) + 'Clan')
+
+        sign_list = ['strangely-patterned stone', 'sharp stick', 'prey bone', 'cloud shaped like a cat', 
+        'tuft of red fur', 'red feather', 'brown feather', 'black feather', 'white feather', 'star-shaped leaf',
+        'beetle shell', 'snail shell', 'tuft of badger fur', 'two pawprints overlapping', 'flower missing a petal',
+        'tuft of fox fur', ]
+        sign = choice(sign_list)
+        s = 0
+        pos = 0
+        for x in range(text.count('a_sign')):
+            index = text.index('a_sign', s) or text.index('a_sign.', s)
+            for y in vowels:
+                if str(sign).startswith(y):
+                    modify = text.split()
+                    if 'a_sign' in modify:
+                        pos = modify.index('a_sign')
+                    if 'a_sign.' in modify:
+                        pos = modify.index('a_sign.')
+                    if modify[pos - 1] == 'a':
+                        modify.remove('a')
+                        modify.insert(pos - 1, 'an')
+                    text = " ".join(modify)
+                    break
+            s += index + 3
+        text = text.replace('a_sign', str(sign))
 
         return text
 
@@ -766,7 +794,7 @@ class PatrolScreen(Screens):
                 if self.selected_cat.mate is not None:
                     self.elements['mate_frame'] = pygame_gui.elements.UIImage(pygame.Rect((140, 190), (166, 170)),
                                                                               self.mate_frame)
-                    mate = Cat.all_cats[self.selected_cat.mate]
+                    mate = Cat.fetch_cat(self.selected_cat.mate)
                     self.elements['mate_image'] = pygame_gui.elements.UIImage(pygame.Rect((150, 200), (100, 100)),
                                                                               mate.large_sprite)
                     # Check for name length
@@ -795,11 +823,11 @@ class PatrolScreen(Screens):
                                                                                 self.app_frame)
 
                 if self.selected_cat.status in ['medicine cat apprentice', 'apprentice'] and self.selected_cat.mentor is not None:
-                    self.app_mentor = self.selected_cat.mentor
+                    self.app_mentor = Cat.fetch_cat(self.selected_cat.mentor)
                     relation = 'mentor'
 
                 elif self.selected_cat.apprentice:
-                    self.app_mentor = self.selected_cat.apprentice[0]
+                    self.app_mentor = Cat.fetch_cat(self.selected_cat.apprentice[0])
                     relation = 'apprentice'
                 else:
                     self.app_mentor = None
