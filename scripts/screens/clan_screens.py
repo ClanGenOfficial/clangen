@@ -946,12 +946,12 @@ class AllegiancesScreen(Screens):
                     if len(living_cat____.apprentice) == 1:
                         self.allegiance_list.append([
                             '', '      Apprentice: ' +
-                                str(living_cat____.apprentice[0].name)
+                                str(Cat.fetch_cat(living_cat____.apprentice[0]).name)
                         ])
                     else:
                         app_names = ''
                         for app in living_cat____.apprentice:
-                            app_names += str(app.name) + ', '
+                            app_names += str(Cat.fetch_cat(app).name) + ', '
                         self.allegiance_list.append(
                             ['', '      Apprentices: ' + app_names[:-2]])
         if not cat_count:
