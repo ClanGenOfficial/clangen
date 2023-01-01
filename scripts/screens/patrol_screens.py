@@ -523,7 +523,7 @@ class PatrolScreen(Screens):
             else:
                 break
 
-        ##################### Buttons:
+        # Buttons:
         self.elements["proceed"] = UIImageButton(pygame.Rect((550, 433), (172, 30)), "",
                                                  object_id="#proceed_button",
                                                  starting_height=2)
@@ -537,34 +537,50 @@ class PatrolScreen(Screens):
             self.elements["antagonize"].hide()
 
     def get_patrol_art(self):
+        """
+        grabs art for the patrol based on the patrol_id
+
+        if you are adding art and the art has gore or blood, add it to the explicit_patrol_art.json
+        """
         path = "resources/images/patrol_art/"
 
-        file = patrol.patrol_event.patrol_id
-        exists = file_exists(f"{path}{file}.png")
-        if exists:
-            self.elements['intro_image'] = pygame_gui.elements.UIImage(
-                pygame.Rect((75, 150), (300, 300)),
-                pygame.image.load(
-                    f"{path}{file}.png").convert_alpha()
-            )
-        else:
-            file = 'train'
-            if patrol.patrol_event.patrol_id.find('med') != -1:
-                file = 'med'
-            elif patrol.patrol_event.patrol_id.find('hunt') != -1:
-                file = 'hunt'
-            elif patrol.patrol_event.patrol_id.find('train') != -1:
-                file = 'train'
-            elif patrol.patrol_event.patrol_id.find('bord') != -1:
-                file = 'bord'
-            try:
+        gore_allowed = game.settings["gore"]
+        placeholder_needed = False
+        if not gore_allowed and patrol.patrol_event.patrol_id in EXPLICIT_PATROL_ART:
+            placeholder_needed = True
+
+        patrol_id = patrol.patrol_event.patrol_id
+
+        if self.patrol_stage == 'patrol_events':
+            intro_patrol_id = patrol_id
+            intro_patrol_id = ''.join([i for i in intro_patrol_id if not i.isdigit()])
+
+            file = intro_patrol_id
+            exists = file_exists(f"{path}{file}.png")
+            if exists and not placeholder_needed:
                 self.elements['intro_image'] = pygame_gui.elements.UIImage(
                     pygame.Rect((75, 150), (300, 300)),
                     pygame.image.load(
-                        f"{path}{file}_general_intro.png").convert_alpha()
+                        f"{path}{file}.png").convert_alpha()
                 )
-            except Exception:
-                print('ERROR: could not display patrol image')
+            else:
+                file = 'train'
+                if patrol.patrol_event.patrol_id.find('med') != -1:
+                    file = 'med'
+                elif patrol.patrol_event.patrol_id.find('hunt') != -1:
+                    file = 'hunt'
+                elif patrol.patrol_event.patrol_id.find('train') != -1:
+                    file = 'train'
+                elif patrol.patrol_event.patrol_id.find('bord') != -1:
+                    file = 'bord'
+                try:
+                    self.elements['intro_image'] = pygame_gui.elements.UIImage(
+                        pygame.Rect((75, 150), (300, 300)),
+                        pygame.image.load(
+                            f"{path}{file}_general_intro.png").convert_alpha()
+                    )
+                except Exception:
+                    print('ERROR: could not display patrol image')
 
     def open_patrol_complete_screen(self, user_input):
         """Deals with the next stage of the patrol, including antagonize, proceed, and do not proceed.
@@ -891,3 +907,13 @@ class PatrolScreen(Screens):
         # Removes duplicates.
         patrol_set = list(patrol_list)
         return ", ".join(patrol_set)
+
+# ---------------------------------------------------------------------------- #
+#                                LOAD RESOURCES                                #
+# ---------------------------------------------------------------------------- #
+
+resource_directory = "resources/dicts/patrols/"
+
+EXPLICIT_PATROL_ART = None
+with open(f"{resource_directory}explicit_patrol_art.json", 'r') as read_file:
+    EXPLICIT_PATROL_ART = ujson.loads(read_file.read())
