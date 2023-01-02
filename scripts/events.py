@@ -314,8 +314,7 @@ class Events():
             self.condition_events.handle_already_disabled(cat)
         self.perform_ceremonies(cat)  # here is age up included
 
-        if not game.clan.closed_borders:
-            self.invite_new_cats(cat)
+        self.invite_new_cats(cat)
 
         self.other_interactions(cat)
         self.coming_out(cat)
@@ -960,13 +959,43 @@ class Events():
         # ---------------------------------------------------------------------------- #
         #                                   new cats                                   #
         # ---------------------------------------------------------------------------- #
-        chance = 100
-        if self.living_cats < 10:
-            chance = 100
-        elif self.living_cats > 50:
-            chance = 700
-        elif self.living_cats > 30:
-            chance = 300
+        chance = 200
+
+        alive_cats = list(filter(
+            lambda kitty: (kitty.status != "leader"
+                           and not kitty.dead
+                           and not kitty.outside),
+            Cat.all_cats.values()
+        ))
+
+        clan_size = len(alive_cats)
+
+        base_chance = 200
+        if clan_size < 10:
+            base_chance = 100
+        elif clan_size > 50:
+            base_chance = 700
+        elif clan_size > 30:
+            base_chance = 300
+
+        reputation = game.clan.reputation
+        # hostile
+        if reputation in range(1, 30):
+            if clan_size < 10:
+                chance = base_chance
+            else:
+                rep_adjust = int(reputation / 2)
+                chance = base_chance + int(300 / rep_adjust)
+        # neutral
+        elif reputation in range(31, 70):
+            if clan_size < 10:
+                chance = base_chance - reputation
+            else:
+                chance = base_chance
+        # welcoming
+        elif reputation in range(71, 100):
+            chance = base_chance - reputation
+
         if randint(1, chance) == 1 and cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
             self.new_cat_invited = True
             name = str(cat.name)
