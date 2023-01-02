@@ -1209,7 +1209,7 @@ class ProfileScreen(Screens):
             if self.the_cat.status == 'leader':
                 insert2 = f"lost their lives"
                 if len(self.the_cat.died_by) > 2:
-                    insert = f"{', '.join(self.the_cat.died_by[:-2])}, and {self.the_cat.died_by[-1]}"
+                    insert = f"{', '.join(self.the_cat.died_by[0:-1])}, and {self.the_cat.died_by[-1]}"
                 elif len(self.the_cat.died_by) == 2:
                     insert = f"{self.the_cat.died_by[0]} and {self.the_cat.died_by[1]}"
                 else:
@@ -1429,27 +1429,26 @@ class ProfileScreen(Screens):
 
         # collect details for perm conditions
         if name in self.the_cat.permanent_condition:
-            # moons with condition
-            keys = self.the_cat.permanent_condition[name].keys()
             # display if the cat was born with it
             if self.the_cat.permanent_condition[name]["born_with"] is True:
                 text_list.append(f"born with this condition")
+
             # moons with the condition if not born with condition
-            elif 'moons_with' in keys:  # need to check if it exists for older saves
-                moons_with = self.the_cat.permanent_condition[name]["moons_with"]
-                if moons_with != 1:
-                    text_list.append(f"has had this condition for {moons_with} moons")
-                else:
-                    text_list.append(f"has had this condition for 1 moon")
+            moons_with = self.the_cat.permanent_condition[name].get("moons_with", 1)
+            if moons_with != 1:
+                text_list.append(f"has had this condition for {moons_with} moons")
+            else:
+                text_list.append(f"has had this condition for 1 moon")
+
             # is permanent
             text_list.append('permanent condition')
+
             # infected or festering
-            if 'complication' in keys:
-                complication = self.the_cat.permanent_condition[name]["complication"]
-                if complication is not None:
-                    if 'a festering wound' in self.the_cat.illnesses:
-                        complication = 'festering'
-                    text_list.append(f'is {complication}!')
+            complication = self.the_cat.permanent_condition[name].get("complication", None)
+            if complication is not None:
+                if 'a festering wound' in self.the_cat.illnesses:
+                    complication = 'festering'
+                text_list.append(f'is {complication}!')
 
         # collect details for injuries
         if name in self.the_cat.injuries:

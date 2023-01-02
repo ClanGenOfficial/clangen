@@ -432,7 +432,7 @@
     "win_trait": ["ambitious", "bloodthirsty", "cold", "fierce", "shameless", "strict", "troublesome", "vengeful"],
     "fail_skills": ["None"],
     "fail_trait": ["altruistic", "compassionate", "empathetic", "faithful", "loving", "patient", "responsible", "thoughtful", "wise"],
-    "min_cats": 1,
+    "min_cats": 2,
     "max_cats": 3,
     "antagonize_text": null,
     "antagonize_fail_text": null,
