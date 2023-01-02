@@ -488,11 +488,14 @@ class Patrol():
                 unscathed = True
             else:
                 unscathed = False
+
             # pick stat cat
             if self.patrol_event.fail_skills is not None and self.patrol_event.fail_trait is not None:
                 for cat in self.patrol_cats:
                     if cat.skill in self.patrol_event.fail_skills or cat.trait in self.patrol_event.fail_trait:
                         self.patrol_stat_cat = cat
+
+            n = 0
             if self.patrol_stat_cat is not None and len(fail_text) > 1:
                 if rare and unscathed and fail_text[1] is not None:
                     n = 1
@@ -520,8 +523,7 @@ class Patrol():
                     n = 2
             elif rare and len(fail_text) >= 7 and fail_text[6] is not None and self.patrol_leader == game.clan.leader:
                 n = 6
-            else:
-                n = 0
+
             if n == 2:
                 self.handle_deaths(self.patrol_random_cat)
             elif n == 4:
@@ -1041,6 +1043,7 @@ class Patrol():
                                                 'tragedy_survivor'])
                     created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, backstory=new_backstory,
                                                     age='young')
+                    new_cat = created_cats[0]
                     if majoryinjury:
                         new_cat.get_injured("broken bone")
 

@@ -862,12 +862,6 @@ class PatrolScreen(Screens):
     def on_use(self):
         pass
 
-    def get_list_text(self, patrol_list):
-        if not patrol_list:
-            return ""
-        patrol_set = list(patrol_list)
-        return ", ".join(patrol_set)
-
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
 
