@@ -996,8 +996,6 @@ class Events():
         elif reputation in range(71, 100):
             chance = base_chance - reputation
 
-        print('reputation:', reputation, "chance:", chance, "living", clan_size)
-
         if randint(1, chance) == 1 and cat.age != 'kitten' and cat.age != 'adolescent' and not self.new_cat_invited:
             self.new_cat_invited = True
             name = str(cat.name)
