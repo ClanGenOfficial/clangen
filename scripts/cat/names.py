@@ -76,8 +76,8 @@ class Name():
         'Cricket', 'Crooked', 'Crouch', 'Crow', 'Crow', 'Curl', 'Curlew',
         'Curly', 'Cypress', 'Dahlia', 'Daisy', 'Damp', 'Dapple', 'Dappled',
         'Dark', 'Dawn', 'Dawn', 'Day', 'Dead', 'Deer', 'Dew', 'Doe', 'Dog',
-        'Dove', 'Down', 'Downy', 'Drake', 'Drift', 'Drizzle', 'Drought', 'Dry',
-        'Duck', 'Dull', 'Dune', 'Dusk', 'Dust', 'Eagle', 'Echo', 'Eel',
+        'Dove', 'Down', 'Downy', 'Drake', 'Dragon', 'Drift', 'Drizzle', 'Drought',
+        'Dry', 'Duck', 'Dull', 'Dune', 'Dusk', 'Dust', 'Eagle', 'Echo', 'Eel',
         'Egret', 'Elk', 'Elm', 'Ember', 'Ermine', 'Faded', 'Faded', 'Fading',
         'Falcon', 'Fallen', 'Fallen', 'Fallow', 'Fawn', 'Feather', 'Fennel',
         'Fern', 'Ferret', 'Fidget', 'Fierce', 'Fin', 'Finch', 'Fir', 'Fish',
@@ -123,7 +123,7 @@ class Name():
         'Tuft', 'Tulip', 'Tumble', 'Turtle', 'Twig', 'Vine', 'Violet', 'Vixen',
         'Vole', 'Warm', 'Wasp', 'Weasel', 'Web', 'Weed', 'Wet', 'Wheat', 'Whirl',
         'Whisker', 'Wild', 'Willow', 'Wind', 'Wisteria', 'Wolf', 'Wood',
-        'Wren', 'Yarrow', 'Yew'
+        'Wren', 'Wyvern', 'Yarrow', 'Yew'
     ]
 
     colour_prefixes = {
@@ -260,7 +260,8 @@ class Name():
         "Leo", "Tucker", "Minette", "Milo", "Fork", "Penny", "Zelda", "Jake", 
         "Felix", "Oliver", "Kitty", "Chloe", "Angel", "Samantha", "Muschi", 
         "Chicco", "Caramel", "Charlotte", "Chanel", "Lola", "Ollie", "Boo", 
-        "Frankie", "Hotdog", "Beverly", "Mera", "Tasha"
+        "Frankie", "Hotdog", "Beverly", "Mera", "Tasha", "Olivier", "Kaz",
+        "Kira", "Shira", "Marina", "Nur", "Roy", "Gala", "Bilbo"
     ]
 
     if os.path.exists('saves/prefixlist.txt'):
