@@ -364,7 +364,7 @@ class Patrol():
             gm_modifier = 1
         elif game.clan.game_mode == "expanded":
             gm_modifier = 2
-        elif game.clan.game_mode == "cruel_season":
+        elif game.clan.game_mode == "cruel season":
             gm_modifier = 3
         # initially setting stat_cat
         if self.patrol_event.win_skills is not None and self.patrol_event.win_trait is not None:
@@ -565,7 +565,7 @@ class Patrol():
             gm_modifier = gm_modifier
         elif game.clan.game_mode == 'expanded':
             gm_modifier = 3
-        elif game.clan.game_mode == 'cruel_season':
+        elif game.clan.game_mode == 'cruel season':
             gm_modifier = 6
         lvl_modifier = 1 # this makes exp gain slower after the cat reaches average
         for cat in self.patrol_cats:
