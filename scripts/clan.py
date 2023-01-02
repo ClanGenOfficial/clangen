@@ -113,7 +113,6 @@ class Clan():
             self.camp_bg = camp_bg
             self.game_mode = game_mode
             self.pregnancy_data = {}
-            self.closed_borders = False
             self.reputation = 50
             self.starting_members = starting_members
 
@@ -544,6 +543,8 @@ class Clan():
                          camp_bg=clan_data["camp_bg"],
                          camp_site=(int(clan_data["camp_site_1"]), int(clan_data["camp_site_2"])),
                          game_mode=clan_data["gamemode"])
+
+        game.clan.reputation = clan_data["reputation"]
 
         game.clan.age = clan_data["clanage"]
         game.clan.current_season = game.clan.seasons[game.clan.age % 12]
