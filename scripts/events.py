@@ -1532,7 +1532,8 @@ class Events():
         cat.gone()
         # The outside-value must be set to True before the cat can go to cotc
         cat.thought = "Is terrified as they are trapped in a large silver Twoleg den"
-        cat_class.other_cats[cat.ID] = cat
+        # FIXME: Not sure what this is intended to do; 'cat_class' has no 'other_cats' attribute.
+        #cat_class.other_cats[cat.ID] = cat
 
     def handle_outbreaks(self, cat):
         """
