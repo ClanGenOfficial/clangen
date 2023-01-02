@@ -19,7 +19,6 @@ class Events():
         self.at_war = False
         self.time_at_war = False
         self.enemy_clan = None
-        self.living_cats = 0
         self.new_cat_invited = False
         self.ceremony_accessory = False
         self.relation_events = Relation_Events()
@@ -35,7 +34,6 @@ class Events():
         game.other_clans_events_list = []
         game.misc_events_list = []
         game.switches['saved_clan'] = False
-        self.living_cats = 0
         self.new_cat_invited = False
         game.patrolled.clear()
         if any(str(cat.status) in {'leader', 'deputy', 'warrior', 'medicine cat', 'medicine cat apprentice',
@@ -295,8 +293,6 @@ class Events():
             cat.dead_for += 1
             self.handle_fading(cat)  # Deal with fading.
             return
-
-        self.living_cats += 1
 
         # prevent injured or sick cats from unrealistic clan events
         if cat.is_ill() or cat.is_injured():
@@ -776,7 +772,6 @@ class Events():
 
         name = str(cat.name)
         scar_chance = 0.015  # 1.5%
-        clancats = self.living_cats
         scar_text = []
         specialty = None  # Scar to be set
         alive_kits = list(filter(lambda kitty: (kitty.age == "kitten"
