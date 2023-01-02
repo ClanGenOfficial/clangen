@@ -289,50 +289,41 @@ class Name():
                  suffix=None,
                  colour=None,
                  eyes=None,
-                 pelt=None):
+                 pelt=None,
+                 tortiepattern=None):
         self.status = status
+        self.prefix = prefix
+        self.suffix = suffix
+        
+        # Set prefix
         if prefix is None:
-            if colour is None and eyes is None:
-                self.prefix = random.choice(self.normal_prefixes)
-            elif eyes is None:
-                a = random.randint(0, 5)
-                if a != 1:
-                    self.prefix = random.choice(self.normal_prefixes)
-                else:
-                    self.prefix = random.choice(self.colour_prefixes[colour])
-            elif colour is None:
-                a = random.randint(0, 5)
-                if a != 1:
-                    self.prefix = random.choice(self.normal_prefixes)
-                else:
-                    self.prefix = random.choice(self.eye_prefixes[eyes])
+            named_after_appearance = not random.getrandbits(3)  # Chance for True is '1/8'.
+            possible_prefix_categories = []
+            if named_after_appearance and (eyes is not None or colour is not None):
+                if eyes in self.eye_prefixes:
+                    possible_prefix_categories.append(self.eye_prefixes[eyes])
+                if colour in self.colour_prefixes:
+                    possible_prefix_categories.append(self.colour_prefixes[colour])
+                prefix_category = random.choice(possible_prefix_categories)
+                self.prefix = random.choice(prefix_category)
             else:
-                a = random.randint(0, 7)
-                if a == 1:
-                    self.prefix = random.choice(self.colour_prefixes[colour])
-                elif a == 2:
-                    self.prefix = random.choice(self.eye_prefixes[eyes])
+                self.prefix = random.choice(self.normal_prefixes)
+                    
+        # Set suffix
+        while self.suffix is None or self.suffix == self.prefix.casefold():
+            if pelt is None or pelt == 'SingleColour':
+                self.suffix = random.choice(self.normal_suffixes)
+            else:
+                named_after_pelt = not random.getrandbits(3) # Chance for True is '1/8'.
+                # Pelt name only gets used if there's an associated suffix.
+                if (named_after_pelt
+                    and pelt in ["Tortie", "Calico"]
+                    and tortiepattern in self.tortie_pelt_suffixes):
+                    self.suffix = random.choice(self.tortie_pelt_suffixes[tortiepattern])
+                elif named_after_pelt and pelt in self.pelt_suffixes:
+                    self.suffix = random.choice(self.pelt_suffixes[pelt])
                 else:
-                    self.prefix = random.choice(self.normal_prefixes)
-        else:
-            self.prefix = prefix
-        if suffix is None:
-            loop = True
-            while loop:
-                if pelt is None or pelt == 'SingleColour':
                     self.suffix = random.choice(self.normal_suffixes)
-                else:
-                    a = random.randint(0, 7)
-                    if a == 1:
-                        self.suffix = random.choice(self.pelt_suffixes[pelt])
-                    elif a == 1 and self.pelt.name in ["Tortie", "Calico"]:
-                        self.suffix = random.choice(self.tortie_pelt_suffixes)
-                    else:
-                        self.suffix = random.choice(self.normal_suffixes)
-                if self.suffix != self.prefix.lower():
-                    loop = False
-        else:
-            self.suffix = suffix
 
     def __repr__(self):
         if self.status in ["deputy", "warrior", "medicine cat", "elder"]:

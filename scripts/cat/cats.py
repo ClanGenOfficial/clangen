@@ -311,13 +311,6 @@ class Cat():
         else:
             self.genderalign = self.gender
 
-        # NAME
-        if self.pelt is not None:
-            self.name = Name(status, prefix, suffix, self.pelt.colour,
-                             self.eye_colour, self.pelt.name)
-        else:
-            self.name = Name(status, prefix, suffix, eyes=self.eye_colour)
-
         # APPEARANCE
         init_eyes(self)
         init_pelt(self)
@@ -326,6 +319,18 @@ class Cat():
         init_accessories(self)
         init_white_patches(self)
         init_pattern(self)
+
+        # NAME
+        if self.pelt is not None:
+            self.name = Name(status,
+                             prefix,
+                             suffix,
+                             self.pelt.colour,
+                             self.eye_colour,
+                             self.pelt.name,
+                             self.tortiepattern)
+        else:
+            self.name = Name(status, prefix, suffix, eyes=self.eye_colour)
 
         # Sprite sizes
         self.sprite = None
