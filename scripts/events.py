@@ -93,7 +93,6 @@ class Events():
                     game.birth_death_events_list.append(text)
                     game.clan.leader_lives = 0
 
-        # relationships have to be handled separately, because of the ceremony name change
         for cat in Cat.all_cats.copy().values():
             if cat.dead or cat.outside:
                 continue
@@ -107,6 +106,8 @@ class Events():
                 triggered_death = self.handle_illnesses_or_illness_deaths(cat)
                 if not triggered_death:
                     triggered_death = self.handle_injuries_or_general_death(cat)
+
+            # relationships have to be handled separately, because of the ceremony name change
 
             if not cat.dead or cat.outside:
                 self.relation_events.handle_relationships(cat)

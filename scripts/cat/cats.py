@@ -1039,6 +1039,7 @@ class Cat():
             self.injuries[injury]["moons_with"] += 1
         else:
             self.injuries[injury].update({'moons_with': 1})
+
         # if the cat has an infected wound, the wound shouldn't heal till the illness is cured
         if "an infected wound" not in self.illnesses and "a festering wound" not in self.illnesses:
             self.injuries[injury]["duration"] -= 1
