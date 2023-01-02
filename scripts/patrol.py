@@ -1043,6 +1043,7 @@ class Patrol():
                                                 'tragedy_survivor'])
                     created_cats = self.create_new_cat(loner=True, loner_name=True, kittypet=False, backstory=new_backstory,
                                                     age='young')
+                    new_cat = created_cats[0]
                     if majoryinjury:
                         new_cat.get_injured("broken bone")
 
