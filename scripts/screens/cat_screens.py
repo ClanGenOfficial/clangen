@@ -1256,7 +1256,6 @@ class ProfileScreen(Screens):
                 pygame.Rect((89, 471), (624, 151)),
                 manager,
                 visible=self.first_page_visible)
-            container = self.first_page
 
             # holds next four conditions, displays only once arrow button is hit
             self.second_page_visible = False
