@@ -2147,44 +2147,44 @@ class CeremonyScreen(Screens):
             virtues = [choice(queen_virtues), choice(warrior_virtues), choice(kit_virtues), choice(warrior2_virtues), choice(app_virtues), choice(elder_virtues), choice(warrior3_virtues), choice(med_cat_virtues), choice(prev_lead_virtues)]
             known = [False, False, False, False, False, False, False, False, False]
 
-            for i in reversed(Cat.all_cats.keys()):
+            for i in reversed(game.clan.starclan_cats):
                 c = Cat.all_cats[i]
                 if c.dead:
-                    if not queen and c.status == 'queen' and str(c.name).strip() != "unnamed queen" and not c.outside and not c.df:
+                    if not queen and c.status == 'queen':
                         queen = str(c.name)
                         known[0] = True
                         continue
-                    elif not kit and c.status == 'kitten' and not c.df:
+                    elif not kit and c.status == 'kitten':
                         kit = str(c.name)
                         known[2] = True
                         continue
-                    elif not app and c.status == 'apprentice' and not c.df:
+                    elif not app and c.status == 'apprentice':
                         app = str(c.name)
-                        known[3] = True                        
+                        known[4] = True                        
                         continue
-                    elif not prev_lead and c.status == 'leader' and not c.df:
+                    elif not prev_lead and c.status == 'leader':
                         prev_lead = str(c.name)
-                        known[7] = True 
+                        known[8] = True 
                         continue
-                    elif not elder and c.status == 'elder' and not c.df:
+                    elif not elder and c.status == 'elder':
                         elder = str(c.name)
-                        known[4] = True 
+                        known[5] = True 
                         continue
-                    elif not warrior and c.status == 'warrior' and not c.df:
+                    elif not warrior and c.status == 'warrior':
                         warrior = str(c.name)
                         known[1] = True 
                         continue
-                    elif not warrior2 and c.status == 'warrior' and not c.df:
+                    elif not warrior2 and c.status == 'warrior':
                         warrior2 = str(c.name)
-                        known[2] = True 
+                        known[3] = True 
                         continue
-                    elif not warrior3 and c.status == 'warrior' and not c.df:
+                    elif not warrior3 and c.status == 'warrior':
                         warrior3 = str(c.name)
-                        known[5] = True 
-                        continue
-                    elif not med_cat and (c.status == 'medicine cat' or c.status == 'medicine cat apprentice') and not c.df:
-                        med_cat = str(c.name)
                         known[6] = True 
+                        continue
+                    elif not med_cat and (c.status == 'medicine cat' or c.status == 'medicine cat apprentice'):
+                        med_cat = str(c.name)
+                        known[7] = True 
                         continue
                     if queen and warrior and kit and warrior2 and app and elder and warrior3 and med_cat and prev_lead:
                         break
