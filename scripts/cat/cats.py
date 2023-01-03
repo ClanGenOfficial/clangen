@@ -11,6 +11,7 @@ from .thoughts import *
 from .appearance_utility import *
 from scripts.conditions import Illness, Injury, PermanentCondition, get_amount_cat_for_one_medic, \
     medical_cats_condition_fulfilled
+import bisect
 
 from scripts.utility import *
 from scripts.game_structure.game_essentials import *
@@ -107,6 +108,8 @@ class Cat():
     all_cats = {}  # ID: object
     outside_cats = {}  # cats outside the clan
     id_iter = itertools.count()
+
+    all_cats_list = []
 
     grief_strings = {}
 
@@ -356,6 +359,9 @@ class Cat():
 
         # SAVE CAT INTO ALL_CATS DICTIONARY IN CATS-CLASS
         self.all_cats[self.ID] = self
+
+        if self.ID != "0":
+            Cat.insert_cat(self)
 
     def __repr__(self):
         return self.ID
@@ -674,6 +680,12 @@ class Cat():
 
         # update class dictionary
         self.all_cats[self.ID] = self
+
+        # If we have it sorted by rank, we also need to re-sort
+        if game.sort_type == "rank":
+            print(str(self.name))
+            print("sorting...")
+            Cat.sort_cats()
 
     def update_traits(self):
         """Updates the traits of a cat upon ageing up.  """
@@ -2083,6 +2095,51 @@ class Cat():
         #print(str(cat_ob.name) + " has been loaded")
 
         return cat_ob
+
+    @staticmethod
+    def sort_cats():
+        if game.sort_type == "age":
+            Cat.all_cats_list.sort(key=lambda x: x.moons)
+        elif game.sort_type == "reverse_age":
+            Cat.all_cats_list.sort(key=lambda x: x.moons, reverse=True)
+        elif game.sort_type == "xp":
+            Cat.all_cats_list.sort(key=lambda x: x.experience_level)
+        elif game.sort_type == "reverse_xp":
+            Cat.all_cats_list.sort(key=lambda x: x.experience_level, reverse=True)
+        elif game.sort_type == "rank":
+            Cat.all_cats_list.sort(key=lambda x: (Cat.rank_order(x), x.moons), reverse=True)
+        return
+
+    @staticmethod
+    def insert_cat(c):
+        if game.sort_type == "age":
+            bisect.insort(Cat.all_cats_list, c, key=lambda x: x.moons)
+        elif game.sort_type == "rank":
+            bisect.insort(Cat.all_cats_list, c, key=lambda x: (Cat.rank_order(x), x.moons))
+
+
+    @staticmethod
+    def rank_order(cat):
+        if cat.status == "leader":
+            return 8
+        elif cat.status == "deputy":
+            return 7
+        elif cat.status == "medicine cat":
+            return 6
+        elif cat.status == "medicine cat apprentice":
+            return 5
+        elif cat.status == "warrior":
+            return 4
+        elif cat.status == "apprentice":
+            return 3
+        elif cat.status == "elder":
+            return 2
+        elif cat.status == "kitten":
+            return 1
+        else:
+            return 0
+
+
 # ---------------------------------------------------------------------------- #
 #                                  properties                                  #
 # ---------------------------------------------------------------------------- #
@@ -2130,7 +2187,6 @@ class Cat():
                 self.age = key_age
         if not updated_age and self.age is not None:
             self.age = "elder"
-
 
 
 # ---------------------------------------------------------------------------- #

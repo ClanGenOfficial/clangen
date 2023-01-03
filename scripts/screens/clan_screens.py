@@ -672,8 +672,7 @@ class ListScreen(Screens):
     def screen_switches(self):
         # Determine the living, non-exiled cats.
         self.living_cats = []
-        for x in range(len(Cat.all_cats.values())):
-            the_cat = list(Cat.all_cats.values())[x]
+        for the_cat in Cat.all_cats_list:
             if not the_cat.dead and not the_cat.outside:
                 self.living_cats.append(the_cat)
 

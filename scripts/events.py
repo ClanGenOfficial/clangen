@@ -181,7 +181,8 @@ class Events():
                         random_count += 1
                         continue
 
-                    Cat.all_cats[random_cat].status = 'deputy'
+
+                    Cat.all_cats[random_cat].status_change('deputy')
                     text = ''
                     if game.clan.deputy is not None:
                         if game.clan.deputy.dead and not game.clan.leader.dead and not game.clan.leader.exiled:

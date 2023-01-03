@@ -47,6 +47,9 @@ class Game():
     #down = pygame.image.load("resources/images/buttons/arrow_down.png").convert_alpha()
     #up = pygame.image.load("resources/images/buttons/arrow_up.png").convert_alpha()
 
+    # Sort-type
+    sort_type = "rank"
+
     choose_cats = {}
     '''cat_buttons = {
         'cat0': None,

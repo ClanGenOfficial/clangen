@@ -224,12 +224,17 @@ class Clan():
     def remove_cat(self, ID):  # ID is cat.ID
         """This function is for completely removing the cat from the game, it's not meant for a cat that's
         simply dead"""
+
+        if Cat.all_cats[ID] in Cat.all_cats_list:
+            Cat.all_cats_list.remove(Cat.all_cats[ID])
+
         if ID in Cat.all_cats.keys():
             Cat.all_cats.pop(ID)
             if ID in self.clan_cats:
                 self.clan_cats.remove(ID)
             if ID in self.starclan_cats:
                 self.starclan_cats.remove(ID)
+
 
     def __repr__(self):
         if self.name is not None:
