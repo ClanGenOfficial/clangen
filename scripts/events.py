@@ -511,8 +511,10 @@ class Events():
 
         if game.clan.leader:
             leader_dead = game.clan.leader.dead
+            leader_exiled = game.clan.leader.exiled
         else:
             leader_dead = True
+            leader_exiled = game.clan.leader.exiled
 
         if promoted_to == 'warrior':
             resource_directory = "resources/dicts/events/ceremonies/"
@@ -520,7 +522,7 @@ class Events():
             with open(f"{resource_directory}ceremony_traits.json", 'r') as read_file:
                 TRAITS = ujson.loads(read_file.read())
             random_honor = choice(TRAITS[cat.trait])
-            if not leader_dead:
+            if not leader_dead and not leader_exiled:
                 ceremony.extend([
                     str(game.clan.leader.name) +
                     " calls the Clan to a meeting, and declares " + str(cat.name.prefix) +
@@ -595,7 +597,7 @@ class Events():
         elif promoted_to == 'medicine cat':
                 ceremony.extend(
                 [str(cat.name) + " is taken to speak with StarClan. They are now a full medicine cat of the Clan.",
-                 "The senior medicine cat has thought long and hard about this and names " + str(cat.name.prefix) + "paw " + str(cat.name) + ", StarClan gives their blessing and the stars twinkle in celebration."])
+                 "The senior medicine cat has thought long and hard about this and gives " + str(cat.name.prefix) + "paw their full name of " + str(cat.name) + ". StarClan gives their blessing and the stars twinkle in celebration."])
                 
         elif promoted_to == 'elder' and not game.clan.leader.dead:
             ceremony.extend([
