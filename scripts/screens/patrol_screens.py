@@ -271,7 +271,6 @@ class PatrolScreen(Screens):
                 self.elements['info'] = pygame_gui.elements.UITextBox(
                     text, pygame.Rect((250, 525), (300, 400)), object_id=get_text_box_theme()
                 )
-<<<<<<< HEAD
             
             if self.selected_cat != None:
                 if 'cycle_app_mentor_right_button' in self.elements and 'cycle_app_mentor_left_button' in self.elements:
@@ -289,16 +288,6 @@ class PatrolScreen(Screens):
                         
                         self.elements['cycle_app_mentor_left_button'].hide()
                         self.elements['cycle_app_mentor_right_button'].hide()
-
-                
-                
-                    
-
-            
-
-
-=======
->>>>>>> 0d47da4090e44bfaf337ffa1bb8359f451f14055
 
     def open_choose_cats_screen(self):
         """Opens the choose-cat patrol stage. """
