@@ -873,6 +873,7 @@ class PatrolScreen(Screens):
                     if self.selected_cat.mentor == None:
                         self.elements['cycle_app_mentor_left_button'] = UIImageButton(pygame.Rect((548, 390), (34, 34)), "", object_id="#arrow_left_button")
                         self.elements['cycle_app_mentor_right_button'] = UIImageButton(pygame.Rect((618, 390), (34, 34)), "", object_id="#arrow_right_button")
+                        self.update_button()
 
                     
 
