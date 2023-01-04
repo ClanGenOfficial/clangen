@@ -1379,7 +1379,7 @@ class MedDenScreen(Screens):
                                             ((370, 409), (75, 35)),
                                             "",
                                             object_id="#in_den_tab")
-            self.in_den_tab.select()
+            self.in_den_tab.disable()
             self.out_den_tab = UIImageButton(pygame.Rect
                                              ((460, 409), (112, 35)),
                                              "",
