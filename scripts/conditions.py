@@ -31,17 +31,15 @@ def medical_cats_condition_fulfilled(all_cats, amount_per_med, give_clanmembers_
     normal_meds = float(
         len(list(filter(lambda c: c.skill not in ['good healer', 'great healer', 'fantastic healer'], medicine_cats))))
 
-    total_adult_med_number = good_healer + great_healer + fantastic_healer + normal_meds + total_exp
+    total_med_number = good_healer + great_healer + fantastic_healer + normal_meds + total_exp + (len(medicine_apprentices) / 2)
+
+    can_care_for = int(total_med_number * (amount_per_med + 1))
 
     relevant_cats = list(filter(lambda c: not c.dead and not c.outside, all_cats))
-    number = len(relevant_cats) / (amount_per_med + 1)
-
-    meds_available = int(total_adult_med_number + (len(medicine_apprentices) / 2))
-    needed_meds = math.ceil(number)
 
     if give_clanmembers_covered is True:
-        return int(meds_available * amount_per_med)
-    if meds_available >= needed_meds:
+        return can_care_for
+    if can_care_for >= len(relevant_cats):
         fulfilled = True
     return fulfilled
 
