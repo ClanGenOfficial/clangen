@@ -253,6 +253,7 @@ class PatrolScreen(Screens):
                 self.elements['info'] = pygame_gui.elements.UITextBox(
                     text, pygame.Rect((250, 525), (300, 400)), object_id=get_text_box_theme()
                 )
+
     def open_choose_cats_screen(self):
         """Opens the choose-cat patrol stage. """
         self.clear_page()  # Clear the page
@@ -605,28 +606,11 @@ class PatrolScreen(Screens):
         apprentices = []
 
         # ASSIGN TO ABLE CATS AND SORT BY RANK
-        for x in range(len(Cat.all_cats.values())):
-            the_cat = list(Cat.all_cats.values())[x]
+        for the_cat in Cat.all_cats_list:
             if not the_cat.dead and the_cat.in_camp and the_cat not in game.patrolled and the_cat.status not in [
                 'elder', 'kitten'
             ] and not the_cat.outside and the_cat not in self.current_patrol and not the_cat.not_working():
-                if the_cat.status == 'leader':
-                    self.able_cats.insert(0, the_cat)
-                elif the_cat.status == 'deputy':
-                    self.able_cats.insert(1, the_cat)
-                elif the_cat.status == 'medicine cat':
-                    med_cats.insert(2, the_cat)
-                elif the_cat.status == 'medicine cat apprentice':
-                    med_cats.append(the_cat)
-                elif the_cat.status == 'warrior':
-                    warriors.append(the_cat)
-                elif the_cat.status == 'apprentice':
-                    apprentices.append(the_cat)
-
-        # append all the sorting lists
-        self.able_cats.extend(med_cats)
-        self.able_cats.extend(warriors)
-        self.able_cats.extend(apprentices)
+                self.able_cats.append(the_cat)
 
         if not self.able_cats:
             all_pages = []
