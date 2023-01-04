@@ -345,9 +345,11 @@ class StarClanScreen(Screens):
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
             cat.kill()
+        self.display_cats = []
 
         for name in self.cat_names:
             name.kill()
+        self.cat_names = []
 
     def screen_switches(self):
         # Determine the dead, non-exiled cats.
@@ -423,9 +425,11 @@ class StarClanScreen(Screens):
         # Remove the images for currently listed cats
         for cat in self.display_cats:
             cat.kill()
+        self.display_cats = []
 
         for name in self.cat_names:
             name.kill()
+        self.cat_names = []
 
         # Generate object for the current cats
         pos_x = 0
@@ -519,9 +523,11 @@ class DFScreen(Screens):
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
             cat.kill()
+        self.display_cats = []
 
         for name in self.cat_names:
             name.kill()
+        self.cat_names = []
 
     def screen_switches(self):
         # Determine the dead, non-exiled cats.
@@ -598,9 +604,11 @@ class DFScreen(Screens):
         # Remove the images for currently listed cats
         for cat in self.display_cats:
             cat.kill()
+        self.display_cats = []
 
         for name in self.cat_names:
             name.kill()
+        self.cat_names = []
 
         # Generate object for the current cats
         pos_x = 0
@@ -709,9 +717,11 @@ class ListScreen(Screens):
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
             cat.kill()
+        self.display_cats = []
 
         for name in self.cat_names:
             name.kill()
+        self.cat_names = []
 
     def update_search_cats(self, search_text):
         '''Run this function when the search text changes, or when the screen is switched to.'''
@@ -756,9 +766,11 @@ class ListScreen(Screens):
         # Remove the images for currently listed cats
         for cat in self.display_cats:
             cat.kill()
+        self.display_cats = []
 
         for name in self.cat_names:
             name.kill()
+        self.cat_names = []
 
         # Generate object for the current cats
         pos_x = 0
