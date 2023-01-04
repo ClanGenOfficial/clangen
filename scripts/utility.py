@@ -5,20 +5,32 @@ from scripts.cat.pelts import *
 from scripts.game_structure.game_essentials import *
 
 
-def get_med_cats(Cat):
+def get_med_cats(Cat, working=True):
     """
     returns a list of all meds and med apps currently alive, in the clan, and able to work
+
+    set working to False if you want all meds and med apps regardless of their work status
     """
     all_cats = Cat.all_cats.values()
 
-    medicine_apprentices = list(filter(
-        lambda c: c.status == 'medicine apprentice' and not c.dead and not c.outside and not c.not_working()
-        , all_cats
-    ))
-    medicine_cats = list(filter(
-        lambda c: c.status == 'medicine cat' and not c.dead and not c.outside and not c.not_working()
-        , all_cats
-    ))
+    if working is False:
+        medicine_apprentices = list(filter(
+            lambda c: c.status == 'medicine apprentice' and not c.dead and not c.outside
+            , all_cats
+        ))
+        medicine_cats = list(filter(
+            lambda c: c.status == 'medicine cat' and not c.dead and not c.outside
+            , all_cats
+        ))
+    else:
+        medicine_apprentices = list(filter(
+            lambda c: c.status == 'medicine apprentice' and not c.dead and not c.outside and not c.not_working()
+            , all_cats
+        ))
+        medicine_cats = list(filter(
+            lambda c: c.status == 'medicine cat' and not c.dead and not c.outside and not c.not_working()
+            , all_cats
+        ))
 
     possible_med_cats = []
     possible_med_cats.extend(medicine_cats)

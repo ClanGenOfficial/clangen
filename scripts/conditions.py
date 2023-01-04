@@ -3,7 +3,12 @@ import math
 from scripts.game_structure.game_essentials import game
 
 
-def medical_cats_condition_fulfilled(all_cats, amount_per_med):
+def medical_cats_condition_fulfilled(all_cats, amount_per_med, give_clanmembers_covered=False):
+    """
+    returns True if the player has enough meds for the whole clan
+
+    set give_clanmembers_covered to True to return the int of clanmembers that the meds can treat
+    """
     fulfilled = False
 
     medicine_apprentices = list(filter(
@@ -34,6 +39,8 @@ def medical_cats_condition_fulfilled(all_cats, amount_per_med):
     meds_available = int(total_adult_med_number + (len(medicine_apprentices) / 2))
     needed_meds = math.ceil(number)
 
+    if give_clanmembers_covered is True:
+        return int(meds_available * amount_per_med)
     if meds_available >= needed_meds:
         fulfilled = True
     return fulfilled

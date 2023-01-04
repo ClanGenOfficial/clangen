@@ -3389,6 +3389,75 @@
                 "path":"resources/images/buttons/med_den.png"
             }
         }
+    },
+    "#in_den_tab":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med_den_in_den.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_den_in_den_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med_den_in_den_select.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/med_den_in_den_unavailable.png"
+            }
+        }
+    },
+    "#out_den_tab":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med_den_out_den.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_den_out_den_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med_den_out_den_select.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/med_den_out_den_unavailable.png"
+            }
+        }
+    },
+    "#minor_tab":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med_den_minor.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_den_minor_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med_den_minor_select.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/med_den_minor_unavailable.png"
+            }
+        }
     }
 }
 
