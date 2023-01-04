@@ -4,14 +4,17 @@ from .game_essentials import *
 from scripts.cat.cats import Cat
 from scripts.cat.pelts import choose_pelt
 from scripts.utility import update_sprite, is_iterable
-
+from ujson import JSONDecodeError
 
 def load_cats():
-    directory = 'saves/' + game.switches['clan_list'][0] + '/clan_cats.json'
-    if os.path.exists(directory):
+    try:
         json_load()
-    else:
-        csv_load(Cat.all_cats)
+    except FileNotFoundError:
+        try:
+            csv_load(Cat.all_cats)
+        except FileNotFoundError:
+            game.switches['error_message'] = 'Can\'t find clan_cats.json!'
+            raise
 
 def json_load():
     all_cats = []
@@ -20,9 +23,13 @@ def json_load():
     try:
         with open('saves/' + clanname + '/clan_cats.json', 'r') as read_file:
             cat_data = ujson.loads(read_file.read())
-    except:
-        game.switches['error_message'] = 'There was an error loading the json cats file!'
-        return
+    except PermissionError:
+        game.switches['error_message'] = f'Can\t open saves/{clanname}/clan_cats.json!'
+        raise
+    except JSONDecodeError:
+        game.switches['error_message'] = f'saves/{clanname}/clan_cats.json is malformed!'
+        raise
+        
     # create new cat objects
     for cat in cat_data:
         new_pelt = choose_pelt(cat["gender"], cat["pelt_color"],
