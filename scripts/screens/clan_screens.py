@@ -307,10 +307,14 @@ class StarClanScreen(Screens):
         self.dark_forest_button = None
         self.starclan_button = None
         self.dead_cats = None
+        self.filter_age = None
+        self.filter_rank = None
+        self.filter_by_open = None
+        self.filter_by_closed = None
         self.starclan_bg = pygame.transform.scale(
             pygame.image.load("resources/images/starclanbg.png").convert(),
             (800, 700))
-        self.search_bar = pygame.transform.scale(
+        self.search_bar_image = pygame.transform.scale(
             pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
         self.clan_name_bg = pygame.transform.scale(
             image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (180, 35))
@@ -330,6 +334,35 @@ class StarClanScreen(Screens):
             elif event.ui_element == self.previous_page_button:
                 self.list_page -= 1
                 self.update_page()
+            elif event.ui_element == self.filter_by_closed:
+                self.filter_by_closed.hide()
+                self.filter_by_open.show()
+                self.filter_rank.show()
+                self.filter_age.show()
+            elif event.ui_element == self.filter_by_open:
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                self.filter_options_visible = False
+                self.filter_rank.hide()
+                self.filter_age.hide()
+            elif event.ui_element == self.filter_age:
+                self.filter_age.hide()
+                self.filter_rank.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                game.sort_type = "reverse_age"
+                Cat.sort_cats()
+                self.get_dead_cats()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_rank:
+                self.filter_age.hide()
+                self.filter_rank.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                game.sort_type = "rank"
+                Cat.sort_cats()
+                self.get_dead_cats()
+                self.update_search_cats(self.search_bar.get_text())
             else:
                 self.menu_button_pressed(event)
 
@@ -341,6 +374,10 @@ class StarClanScreen(Screens):
         self.previous_page_button.kill()
         self.page_number.kill()
         self.search_bar.kill()
+        self.filter_by_closed.kill()
+        self.filter_by_open.kill()
+        self.filter_rank.kill()
+        self.filter_age.kill()
 
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
@@ -349,16 +386,18 @@ class StarClanScreen(Screens):
         for name in self.cat_names:
             name.kill()
 
-    def screen_switches(self):
-        # Determine the dead, non-exiled cats.
+    def get_dead_cats(self):
         self.dead_cats = [game.clan.instructor] if not game.clan.instructor.df else []
-        for x in range(len(Cat.all_cats.values())):
-            the_cat = list(Cat.all_cats.values())[x]
+        for the_cat in Cat.all_cats_list:
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.outside and not the_cat.df and \
                     not the_cat.faded:
                 self.dead_cats.append(the_cat)
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 23)),
+    def screen_switches(self):
+        # Determine the dead, non-exiled cats.
+        self.get_dead_cats()
+
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((421, 142), (147, 23)),
                                                               object_id="#search_entry_box")
 
         self.starclan_button = UIImageButton(pygame.Rect((150, 135), (34, 34)), "", object_id="#starclan_button")
@@ -374,6 +413,38 @@ class StarClanScreen(Screens):
         self.show_menu_buttons()
 
         self.update_search_cats("")  # This will list all the cats, and create the button objects.
+
+        x_pos = 576
+        y_pos = 135
+        self.filter_by_closed = UIImageButton(
+            pygame.Rect((x_pos, y_pos), (98, 34)),
+            "",
+            object_id="#filter_by_closed_button",
+            tool_tip_text="By default, cats are sorted by rank."
+        )
+        self.filter_by_open = UIImageButton(
+            pygame.Rect((x_pos, y_pos), (98, 34)),
+            "",
+            object_id="#filter_by_open_button",
+        )
+        self.filter_by_open.hide()
+        y_pos -= 29
+
+        self.filter_rank = UIImageButton(
+            pygame.Rect((x_pos - 2, y_pos), (102, 29)),
+            "",
+            object_id="#filter_rank_button",
+            starting_height=1
+        )
+        self.filter_rank.hide()
+        y_pos -= 29
+        self.filter_age = UIImageButton(
+            pygame.Rect((x_pos - 2, y_pos), (102, 29)),
+            "",
+            object_id="#filter_age_button",
+            starting_height=1
+        )
+        self.filter_age.hide()
 
         cat_profiles()
 
@@ -459,7 +530,7 @@ class StarClanScreen(Screens):
 
         screen.blit(bg, (0, 0))
 
-        screen.blit(ListScreen.search_bar, (452, 135))
+        screen.blit(ListScreen.search_bar, (348, 135))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
@@ -481,10 +552,14 @@ class DFScreen(Screens):
         self.dark_forest_button = None
         self.starclan_button = None
         self.dead_cats = None
+        self.filter_age = None
+        self.filter_rank = None
+        self.filter_by_open = None
+        self.filter_by_closed = None
         self.df_bg = pygame.transform.scale(
             pygame.image.load("resources/images/darkforestbg.png").convert(),
             (800, 700))
-        self.search_bar = pygame.transform.scale(
+        self.search_bar_image = pygame.transform.scale(
             pygame.image.load("resources/images/search_bar.png").convert_alpha(), (228, 34))
         self.clan_name_bg = pygame.transform.scale(
             image_cache.load_image("resources/images/clan_name_bg.png").convert_alpha(), (180, 35))
@@ -504,6 +579,35 @@ class DFScreen(Screens):
             elif event.ui_element == self.previous_page_button:
                 self.list_page -= 1
                 self.update_page()
+            elif event.ui_element == self.filter_by_closed:
+                self.filter_by_closed.hide()
+                self.filter_by_open.show()
+                self.filter_rank.show()
+                self.filter_age.show()
+            elif event.ui_element == self.filter_by_open:
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                self.filter_options_visible = False
+                self.filter_rank.hide()
+                self.filter_age.hide()
+            elif event.ui_element == self.filter_age:
+                self.filter_age.hide()
+                self.filter_rank.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                game.sort_type = "reverse_age"
+                Cat.sort_cats()
+                self.get_dead_cats()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_rank:
+                self.filter_age.hide()
+                self.filter_rank.hide()
+                self.filter_by_open.hide()
+                self.filter_by_closed.show()
+                game.sort_type = "rank"
+                Cat.sort_cats()
+                self.get_dead_cats()
+                self.update_search_cats(self.search_bar.get_text())
             else:
                 self.menu_button_pressed(event)
 
@@ -515,6 +619,10 @@ class DFScreen(Screens):
         self.previous_page_button.kill()
         self.page_number.kill()
         self.search_bar.kill()
+        self.filter_by_closed.kill()
+        self.filter_by_open.kill()
+        self.filter_rank.kill()
+        self.filter_age.kill()
 
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
@@ -523,17 +631,19 @@ class DFScreen(Screens):
         for name in self.cat_names:
             name.kill()
 
-    def screen_switches(self):
-        # Determine the dead, non-exiled cats.
+    def get_dead_cats(self):
         self.dead_cats = [game.clan.instructor] if game.clan.instructor.df else []
 
-        for x in range(len(Cat.all_cats.values())):
-            the_cat = list(Cat.all_cats.values())[x]
+        for the_cat in Cat.all_cats_list:
             if the_cat.dead and the_cat.ID != game.clan.instructor.ID and not the_cat.exiled and the_cat.df and \
                     not the_cat.faded:
                 self.dead_cats.append(the_cat)
 
-        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((525, 142), (147, 23)),
+    def screen_switches(self):
+        # Determine the dead, non-exiled cats.
+        self.get_dead_cats()
+
+        self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((421, 142), (147, 23)),
                                                               object_id="#search_entry_box")
 
         self.starclan_button = UIImageButton(pygame.Rect((150, 135), (34, 34)), "", object_id="#starclan_button")
@@ -549,6 +659,38 @@ class DFScreen(Screens):
         self.show_menu_buttons()
 
         self.update_search_cats("")  # This will list all the cats, and create the button objects.
+
+        x_pos = 576
+        y_pos = 135
+        self.filter_by_closed = UIImageButton(
+            pygame.Rect((x_pos, y_pos), (98, 34)),
+            "",
+            object_id="#filter_by_closed_button",
+            tool_tip_text="By default, cats are sorted by rank."
+        )
+        self.filter_by_open = UIImageButton(
+            pygame.Rect((x_pos, y_pos), (98, 34)),
+            "",
+            object_id="#filter_by_open_button",
+        )
+        self.filter_by_open.hide()
+        y_pos -= 29
+
+        self.filter_rank = UIImageButton(
+            pygame.Rect((x_pos - 2, y_pos), (102, 29)),
+            "",
+            object_id="#filter_rank_button",
+            starting_height=1
+        )
+        self.filter_rank.hide()
+        y_pos -= 29
+        self.filter_age = UIImageButton(
+            pygame.Rect((x_pos - 2, y_pos), (102, 29)),
+            "",
+            object_id="#filter_age_button",
+            starting_height=1
+        )
+        self.filter_age.hide()
 
         cat_profiles()
 
@@ -635,7 +777,7 @@ class DFScreen(Screens):
 
         screen.blit(bg, (0, 0))
 
-        screen.blit(ListScreen.search_bar, (452, 135))
+        screen.blit(ListScreen.search_bar, (348, 135))
 
     def chunks(self, L, n):
         return [L[x: x + n] for x in range(0, len(L), n)]
@@ -668,7 +810,7 @@ class ListScreen(Screens):
         self.current_listed_cats = None
 
     def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_PRESSED:
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.outside_clan_button:
                 self.change_screen("other screen")
             elif event.ui_element in self.display_cats:
@@ -698,20 +840,31 @@ class ListScreen(Screens):
                 self.filter_rank.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
-            elif event.ui_element == self.filter_age:
+                game.sort_type = "reverse_age"
+                Cat.sort_cats()
+                self.get_living_cats()
+                self.update_search_cats(self.search_bar.get_text())
+            elif event.ui_element == self.filter_rank:
                 self.filter_age.hide()
                 self.filter_rank.hide()
                 self.filter_by_open.hide()
                 self.filter_by_closed.show()
+                game.sort_type = "rank"
+                Cat.sort_cats()
+                self.get_living_cats()
+                self.update_search_cats(self.search_bar.get_text())
             else:
                 self.menu_button_pressed(event)
 
-    def screen_switches(self):
-        # Determine the living, non-exiled cats.
+    def get_living_cats(self):
         self.living_cats = []
         for the_cat in Cat.all_cats_list:
             if not the_cat.dead and not the_cat.outside:
                 self.living_cats.append(the_cat)
+
+    def screen_switches(self):
+        # Determine the living, non-exiled cats.
+        self.get_living_cats()
 
         self.search_bar = pygame_gui.elements.UITextEntryLine(pygame.Rect((421, 142), (147, 23)),
                                                               object_id="#search_entry_box")
@@ -737,7 +890,7 @@ class ListScreen(Screens):
             pygame.Rect((x_pos, y_pos), (98, 34)),
             "",
             object_id="#filter_by_closed_button",
-            tool_tip_text="By default cats are shown in the order they joined the clan."
+            tool_tip_text="By default, cats are sorted by rank."
         )
         self.filter_by_open = UIImageButton(
             pygame.Rect((x_pos, y_pos), (98, 34)),

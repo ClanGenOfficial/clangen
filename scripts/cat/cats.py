@@ -650,10 +650,12 @@ class Cat():
         self.update_mentor()
         game.clan.add_to_outside(self)
 
-    def status_change(self, new_status):
+    def status_change(self, new_status, resort=False):
         """ Changes the status of a cat. Additional functions are needed if you want to make a cat a leader or deputy.
             new_status = The new status of a cat. Can be 'apprentice', 'medicine cat apprentice', 'warrior'
-                        'medicine cat', 'elder'. """
+                        'medicine cat', 'elder'.
+            resort = If sorting type is 'rank', and resort is True, it will resort the cat list. This should
+                    only be true for non-timeskip status changes. """
         self.status = new_status
         self.name.status = new_status
 
@@ -682,7 +684,7 @@ class Cat():
         self.all_cats[self.ID] = self
 
         # If we have it sorted by rank, we also need to re-sort
-        if game.sort_type == "rank":
+        if game.sort_type == "rank" and resort:
             print(str(self.name))
             print("sorting...")
             Cat.sort_cats()
@@ -2100,12 +2102,13 @@ class Cat():
     def sort_cats():
         if game.sort_type == "age":
             Cat.all_cats_list.sort(key=lambda x: x.moons)
+            print("sort")
         elif game.sort_type == "reverse_age":
             Cat.all_cats_list.sort(key=lambda x: x.moons, reverse=True)
-        elif game.sort_type == "xp":
-            Cat.all_cats_list.sort(key=lambda x: x.experience_level)
-        elif game.sort_type == "reverse_xp":
-            Cat.all_cats_list.sort(key=lambda x: x.experience_level, reverse=True)
+        elif game.sort_type == "id":
+            Cat.all_cats_list.sort(key=lambda x: int(x.ID))
+        elif game.sort_type == "reverse_id":
+            Cat.all_cats_list.sort(key=lambda x: int(x.ID), reverse=True)
         elif game.sort_type == "rank":
             Cat.all_cats_list.sort(key=lambda x: (Cat.rank_order(x), x.moons), reverse=True)
         return
@@ -2114,9 +2117,14 @@ class Cat():
     def insert_cat(c):
         if game.sort_type == "age":
             bisect.insort(Cat.all_cats_list, c, key=lambda x: x.moons)
+        elif game.sort_type == "reverse_age":
+            bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * x.moons)
         elif game.sort_type == "rank":
-            bisect.insort(Cat.all_cats_list, c, key=lambda x: (Cat.rank_order(x), x.moons))
-
+            bisect.insort(Cat.all_cats_list, c, key=lambda x: (-1 * Cat.rank_order(x), -1 * x.moons))
+        elif game.sort_type == "id":
+            bisect.insort(Cat.all_cats_list, c, key=lambda x: int(x.ID))
+        elif game.sort_type == "reverse_id":
+            bisect.insort(Cat.all_cats_list, c, key=lambda x: -1 * int(x.ID))
 
     @staticmethod
     def rank_order(cat):

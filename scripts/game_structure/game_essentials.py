@@ -24,6 +24,8 @@ class Game():
     #max_relation_events_displayed = 10
     #relation_scroll_ct = 0
 
+    ranks_changed_timeskip = False  # Flag for when a cat's status changes occurs during a timeskip.
+
     cur_events_list = []
     ceremony_events_list = []
     birth_death_events_list = []

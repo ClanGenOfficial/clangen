@@ -342,23 +342,23 @@ class ProfileScreen(Screens):
                 self.update_disabled_buttons_and_text()
             elif event.ui_element == self.toggle_deputy_button:
                 if self.the_cat.status == 'warrior':
-                    self.the_cat.status_change('deputy')
+                    self.the_cat.status_change('deputy', resort=True)
                     game.clan.deputy = self.the_cat
                 elif self.the_cat.status == 'deputy':
-                    self.the_cat.status_change('warrior')
+                    self.the_cat.status_change('warrior', resort=True)
                     game.clan.deputy = None
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
             elif event.ui_element == self.toggle_med_button:
                 if self.the_cat.status == 'medicine cat apprentice':
-                    self.the_cat.status_change('apprentice')
+                    self.the_cat.status_change('apprentice', resort=True)
                 elif self.the_cat.status == "apprentice":
-                    self.the_cat.status_change('medicine cat apprentice')
+                    self.the_cat.status_change('medicine cat apprentice', resort=True)
                 elif self.the_cat.status == 'medicine cat':
-                    self.the_cat.status_change('warrior')
+                    self.the_cat.status_change('warrior', resort=True)
                 elif self.the_cat.status in ['warrior', 'elder']:
-                    self.the_cat.status_change('medicine cat')
+                    self.the_cat.status_change('medicine cat', resort=True)
                 self.clear_profile()
                 self.build_profile()
                 self.update_disabled_buttons_and_text()
@@ -680,25 +680,19 @@ class ProfileScreen(Screens):
         if is_instructor:
             next_cat = 1
 
-        for check_cat in Cat.all_cats:
-            if Cat.all_cats[check_cat].ID == self.the_cat.ID:
+        for check_cat in Cat.all_cats_list:
+            if check_cat.ID == self.the_cat.ID:
                 next_cat = 1
             else:
-                if next_cat == 0 and Cat.all_cats[
-                    check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                    check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                    check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
-                    check_cat].outside == self.the_cat.outside and Cat.all_cats[
-                    check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
-                    previous_cat = Cat.all_cats[check_cat].ID
+                if next_cat == 0 and check_cat.ID != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
+                        and check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
+                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                    previous_cat = check_cat.ID
 
-                elif next_cat == 1 and Cat.all_cats[
-                    check_cat].ID != self.the_cat.ID and Cat.all_cats[
-                    check_cat].dead == self.the_cat.dead and Cat.all_cats[
-                    check_cat].ID != game.clan.instructor.ID and Cat.all_cats[
-                    check_cat].outside == self.the_cat.outside and Cat.all_cats[
-                    check_cat].df == self.the_cat.df and not Cat.all_cats[check_cat].faded:
-                    next_cat = Cat.all_cats[check_cat].ID
+                elif next_cat == 1 and check_cat != self.the_cat.ID and check_cat.dead == self.the_cat.dead \
+                        and check_cat.ID != game.clan.instructor.ID and check_cat.outside == self.the_cat.outside and \
+                        check_cat.df == self.the_cat.df and not check_cat.faded:
+                    next_cat = check_cat.ID
 
                 elif int(next_cat) > 1:
                     break
