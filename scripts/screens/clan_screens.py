@@ -1355,72 +1355,73 @@ class MedDenScreen(Screens):
         self.back_button = UIImageButton(pygame.Rect((25, 25), (105, 30)), "", object_id="#back_button")
         self.next_med = UIImageButton(pygame.Rect((650, 278), (34, 34)), "", object_id="#arrow_right_button")
         self.last_med = UIImageButton(pygame.Rect((600, 278), (34, 34)), "", object_id="#arrow_left_button")
-        self.next_page = UIImageButton(pygame.Rect((676, 522), (34, 34)), "", object_id="#arrow_right_button")
-        self.last_page = UIImageButton(pygame.Rect((92, 522), (34, 34)), "", object_id="#arrow_left_button")
-        self.hurt_sick_title = pygame_gui.elements.UITextBox(
-            "Hurt & Sick Cats",
-            pygame.Rect((120, 410), (200, 30)),
-            object_id=get_text_box_theme("#cat_profile_name_box")
-        )
-        self.cat_bg = pygame_gui.elements.UIImage(pygame.Rect
-                                                  ((120, 440), (560, 200)),
-                                                  pygame.image.load(
-                                                      "resources/images/sick_hurt_bg.png").convert_alpha())
-        self.cat_bg.disable()
-        self.in_den_tab = UIImageButton(pygame.Rect
-                                        ((370, 409), (75, 35)),
-                                        "",
-                                        object_id="#in_den_tab")
-        self.in_den_tab.select()
-        self.out_den_tab = UIImageButton(pygame.Rect
-                                         ((460, 409), (112, 35)),
-                                         "",
-                                         object_id="#out_den_tab")
-        self.minor_tab = UIImageButton(pygame.Rect
-                                       ((587, 409), (70, 35)),
-                                       "",
-                                       object_id="#minor_tab")
-        self.tab_showing = self.in_den_tab
 
-        self.in_den_cats = []
-        self.out_den_cats = []
-        self.minor_cats = []
-        self.injured_and_sick_cats = []
-        for the_cat in Cat.all_cats_list:
-            if not the_cat.dead and not the_cat.outside and (the_cat.injuries or the_cat.illnesses):
-                self.injured_and_sick_cats.append(the_cat)
-        for cat in self.injured_and_sick_cats:
-            if cat.injuries:
-                for injury in cat.injuries:
-                    if injury in ['grief stricken', 'recovering from birth', "sprain"]:
-                        self.out_den_cats.append(cat)
-                        break
-                    elif cat.injuries[injury]["severity"] != 'minor':
-                        self.in_den_cats.append(cat)
-                        break
-                    else:
-                        self.minor_cats.append(cat)
-            if cat.illnesses:
-                for illness in cat.illnesses:
-                    if cat.illnesses[illness]["severity"] != 'minor':
-                        if cat not in self.in_den_cats:
+        if game.clan.game_mode != 'classic':
+            self.next_page = UIImageButton(pygame.Rect((676, 522), (34, 34)), "", object_id="#arrow_right_button")
+            self.last_page = UIImageButton(pygame.Rect((92, 522), (34, 34)), "", object_id="#arrow_left_button")
+            self.hurt_sick_title = pygame_gui.elements.UITextBox(
+                "Hurt & Sick Cats",
+                pygame.Rect((120, 410), (200, 30)),
+                object_id=get_text_box_theme("#cat_profile_name_box")
+            )
+            self.cat_bg = pygame_gui.elements.UIImage(pygame.Rect
+                                                      ((120, 440), (560, 200)),
+                                                      pygame.image.load(
+                                                          "resources/images/sick_hurt_bg.png").convert_alpha())
+            self.cat_bg.disable()
+            self.in_den_tab = UIImageButton(pygame.Rect
+                                            ((370, 409), (75, 35)),
+                                            "",
+                                            object_id="#in_den_tab")
+            self.in_den_tab.select()
+            self.out_den_tab = UIImageButton(pygame.Rect
+                                             ((460, 409), (112, 35)),
+                                             "",
+                                             object_id="#out_den_tab")
+            self.minor_tab = UIImageButton(pygame.Rect
+                                           ((587, 409), (70, 35)),
+                                           "",
+                                           object_id="#minor_tab")
+            self.tab_showing = self.in_den_tab
+
+            self.in_den_cats = []
+            self.out_den_cats = []
+            self.minor_cats = []
+            self.injured_and_sick_cats = []
+            for the_cat in Cat.all_cats_list:
+                if not the_cat.dead and not the_cat.outside and (the_cat.injuries or the_cat.illnesses):
+                    self.injured_and_sick_cats.append(the_cat)
+            for cat in self.injured_and_sick_cats:
+                if cat.injuries:
+                    for injury in cat.injuries:
+                        if injury in ['grief stricken', 'recovering from birth', "sprain"]:
+                            self.out_den_cats.append(cat)
+                            break
+                        elif cat.injuries[injury]["severity"] != 'minor':
                             self.in_den_cats.append(cat)
-                        if cat in self.out_den_cats:
-                            self.out_den_cats.remove(cat)
-                        elif cat in self.minor_cats:
-                            self.minor_cats.remove(cat)
-                        break
-                    else:
-                        self.minor_cats.append(cat)
-        self.tab_list = self.in_den_cats
-        print(self.tab_list)
+                            break
+                        else:
+                            self.minor_cats.append(cat)
+                if cat.illnesses:
+                    for illness in cat.illnesses:
+                        if cat.illnesses[illness]["severity"] != 'minor':
+                            if cat not in self.in_den_cats:
+                                self.in_den_cats.append(cat)
+                            if cat in self.out_den_cats:
+                                self.out_den_cats.remove(cat)
+                            elif cat in self.minor_cats:
+                                self.minor_cats.remove(cat)
+                            break
+                        else:
+                            self.minor_cats.append(cat)
+            self.tab_list = self.in_den_cats
+            self.current_page = 1
+            self.update_sick_cats()
 
-        self.current_page = 1
         self.current_med = 1
 
         self.draw_med_den()
         self.update_med_cat()
-        self.update_sick_cats()
 
         self.meds_messages = UITextBoxTweaked(
             "",
@@ -1589,20 +1590,21 @@ class MedDenScreen(Screens):
 
     def exit_screen(self):
         self.meds_messages.kill()
-        self.cat_bg.kill()
-        self.last_page.kill()
-        self.next_page.kill()
         self.last_med.kill()
         self.next_med.kill()
         self.den_base.kill()
         self.med_info.kill()
         self.med_name.kill()
         self.back_button.kill()
-        self.in_den_tab.kill()
-        self.out_den_tab.kill()
-        self.minor_tab.kill()
-        self.clear_cat_buttons()
-        self.hurt_sick_title.kill()
+        if game.clan.game_mode != 'classic':
+            self.cat_bg.kill()
+            self.last_page.kill()
+            self.next_page.kill()
+            self.in_den_tab.kill()
+            self.out_den_tab.kill()
+            self.minor_tab.kill()
+            self.clear_cat_buttons()
+            self.hurt_sick_title.kill()
         if self.med_cat:
             self.med_cat.kill()
 
