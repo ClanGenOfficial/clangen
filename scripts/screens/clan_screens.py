@@ -1342,10 +1342,8 @@ class MedDenScreen(Screens):
                 self.minor_tab.select()
                 self.update_sick_cats()
             elif event.ui_element in self.cat_buttons.values():
-                print("cat pressed")
                 cat = event.ui_element.return_cat_object()
                 game.switches["cat"] = cat.ID
-                print(game.switches["cat"])
                 self.change_screen('profile screen')
             elif event.ui_element == self.med_cat:
                 cat = event.ui_element.return_cat_object()
@@ -1355,8 +1353,8 @@ class MedDenScreen(Screens):
     def screen_switches(self):
         self.hide_menu_buttons()
         self.back_button = UIImageButton(pygame.Rect((25, 25), (105, 30)), "", object_id="#back_button")
-        self.next_med = UIImageButton(pygame.Rect((650, 268), (34, 34)), "", object_id="#arrow_right_button")
-        self.last_med = UIImageButton(pygame.Rect((600, 268), (34, 34)), "", object_id="#arrow_left_button")
+        self.next_med = UIImageButton(pygame.Rect((650, 278), (34, 34)), "", object_id="#arrow_right_button")
+        self.last_med = UIImageButton(pygame.Rect((600, 278), (34, 34)), "", object_id="#arrow_left_button")
         self.next_page = UIImageButton(pygame.Rect((676, 522), (34, 34)), "", object_id="#arrow_right_button")
         self.last_page = UIImageButton(pygame.Rect((92, 522), (34, 34)), "", object_id="#arrow_left_button")
         self.hurt_sick_title = pygame_gui.elements.UITextBox(
@@ -1370,16 +1368,16 @@ class MedDenScreen(Screens):
                                                       "resources/images/sick_hurt_bg.png").convert_alpha())
         self.cat_bg.disable()
         self.in_den_tab = UIImageButton(pygame.Rect
-                                        ((370, 410), (75, 35)),
+                                        ((370, 409), (75, 35)),
                                         "",
                                         object_id="#in_den_tab")
         self.in_den_tab.select()
         self.out_den_tab = UIImageButton(pygame.Rect
-                                         ((460, 410), (112, 35)),
+                                         ((460, 409), (112, 35)),
                                          "",
                                          object_id="#out_den_tab")
         self.minor_tab = UIImageButton(pygame.Rect
-                                       ((587, 410), (70, 35)),
+                                       ((587, 409), (70, 35)),
                                        "",
                                        object_id="#minor_tab")
         self.tab_showing = self.in_den_tab
@@ -1405,7 +1403,8 @@ class MedDenScreen(Screens):
             if cat.illnesses:
                 for illness in cat.illnesses:
                     if cat.illnesses[illness]["severity"] != 'minor':
-                        self.in_den_cats.append(cat)
+                        if cat not in self.in_den_cats:
+                            self.in_den_cats.append(cat)
                         if cat in self.out_den_cats:
                             self.out_den_cats.remove(cat)
                         elif cat in self.minor_cats:
@@ -1488,7 +1487,7 @@ class MedDenScreen(Screens):
 
         for cat in self.display_med:
             self.med_cat = UISpriteButton(pygame.Rect
-                                          ((435, 145), (150, 150)),
+                                          ((435, 155), (150, 150)),
                                           cat.sprite,
                                           cat_object=cat)
             name = str(cat.name)
@@ -1496,13 +1495,13 @@ class MedDenScreen(Screens):
                 short_name = str(cat.name)[0:9]
                 name = short_name + '...'
             self.med_name = pygame_gui.elements.ui_label.UILabel(pygame.Rect
-                                                                 ((590, 145), (100, 30)),
+                                                                 ((590, 155), (100, 30)),
                                                                  name,
                                                                  object_id=get_text_box_theme()
                                                                  )
             self.med_info = UITextBoxTweaked(
                 "",
-                pygame.Rect((580, 175), (120, 120)),
+                pygame.Rect((580, 185), (120, 120)),
                 object_id=get_text_box_theme("#cat_patrol_info_box"),
                 line_spacing=1
             )
@@ -1573,7 +1572,7 @@ class MedDenScreen(Screens):
                 name = short_name + '...'
             self.cat_names.append(pygame_gui.elements.UITextBox(name,
                                                                 pygame.Rect((pos_x - 30, pos_y + 50), (110, -1)),
-                                                                object_id=get_text_box_theme()))
+                                                                object_id="text_box"))
 
             pos_x += 100
             if pos_x >= 670:

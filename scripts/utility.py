@@ -15,7 +15,7 @@ def get_med_cats(Cat, working=True):
 
     if working is False:
         medicine_apprentices = list(filter(
-            lambda c: c.status == 'medicine apprentice' and not c.dead and not c.outside
+            lambda c: c.status == 'medicine cat apprentice' and not c.dead and not c.outside
             , all_cats
         ))
         medicine_cats = list(filter(
@@ -24,7 +24,7 @@ def get_med_cats(Cat, working=True):
         ))
     else:
         medicine_apprentices = list(filter(
-            lambda c: c.status == 'medicine apprentice' and not c.dead and not c.outside and not c.not_working()
+            lambda c: c.status == 'medicine cat apprentice' and not c.dead and not c.outside and not c.not_working()
             , all_cats
         ))
         medicine_cats = list(filter(
