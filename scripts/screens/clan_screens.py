@@ -382,9 +382,11 @@ class StarClanScreen(Screens):
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
             cat.kill()
+        self.display_cats = []
 
         for name in self.cat_names:
             name.kill()
+        self.cat_names = []
 
     def get_dead_cats(self):
         self.dead_cats = [game.clan.instructor] if not game.clan.instructor.df else []
@@ -627,9 +629,11 @@ class DFScreen(Screens):
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
             cat.kill()
+        self.display_cats = []
 
         for name in self.cat_names:
             name.kill()
+        self.cat_names = []
 
     def get_dead_cats(self):
         self.dead_cats = [game.clan.instructor] if game.clan.instructor.df else []
@@ -934,9 +938,11 @@ class ListScreen(Screens):
         # Remove currently displayed cats and cat names.
         for cat in self.display_cats:
             cat.kill()
+        self.display_cats = []
 
         for name in self.cat_names:
             name.kill()
+        self.cat_names = []
 
     def update_search_cats(self, search_text):
         """Run this function when the search text changes, or when the screen is switched to."""

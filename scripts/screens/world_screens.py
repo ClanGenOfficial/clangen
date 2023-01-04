@@ -201,10 +201,12 @@ class OutsideClanScreen(Screens):
         # Remove the images for currently listed cats
         for cat in self.display_cats:
             cat.kill()
+        self.display_cats = []
 
         for name in self.cat_names:
             name.kill()
-        
+        self.cat_names = []
+
         # Generate object for the current cats
         pos_x = 0
         pos_y = 0
