@@ -1314,7 +1314,7 @@ class MedDenScreen(Screens):
         self.tab_list = self.in_den_cats
 
     def handle_event(self, event):
-        if event.type == pygame_gui.UI_BUTTON_PRESSED:
+        if event.type == pygame_gui.UI_BUTTON_START_PRESS:
             if event.ui_element == self.back_button:
                 self.change_screen('clan screen')
             elif event.ui_element == self.next_med:
@@ -1330,22 +1330,22 @@ class MedDenScreen(Screens):
                 self.current_page -= 1
                 self.update_sick_cats()
             elif event.ui_element == self.in_den_tab:
-                self.tab_showing.unselect()
+                self.in_den_tab.disable()
+                self.tab_showing.enable()
                 self.tab_list = self.in_den_cats
                 self.tab_showing = self.in_den_tab
-                self.in_den_tab.select()
                 self.update_sick_cats()
             elif event.ui_element == self.out_den_tab:
-                self.tab_showing.unselect()
+                self.tab_showing.enable()
                 self.tab_list = self.out_den_cats
                 self.tab_showing = self.out_den_tab
-                self.out_den_tab.select()
+                self.out_den_tab.disable()
                 self.update_sick_cats()
             elif event.ui_element == self.minor_tab:
-                self.tab_showing.unselect()
+                self.tab_showing.enable()
                 self.tab_list = self.minor_cats
                 self.tab_showing = self.minor_tab
-                self.minor_tab.select()
+                self.minor_tab.disable()
                 self.update_sick_cats()
             elif event.ui_element in self.cat_buttons.values():
                 cat = event.ui_element.return_cat_object()

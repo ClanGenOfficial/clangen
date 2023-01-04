@@ -3409,7 +3409,7 @@
             },
             "disabled_image":
             {
-                "path":"resources/images/buttons/med_den_in_den_unavailable.png"
+                "path":"resources/images/buttons/med_den_in_den_select.png"
             }
         }
     },
@@ -3432,7 +3432,7 @@
             },
             "disabled_image":
             {
-                "path":"resources/images/buttons/med_den_out_den_unavailable.png"
+                "path":"resources/images/buttons/med_den_out_den_select.png"
             }
         }
     },
@@ -3455,7 +3455,7 @@
             },
             "disabled_image":
             {
-                "path":"resources/images/buttons/med_den_minor_unavailable.png"
+                "path":"resources/images/buttons/med_den_minor_select.png"
             }
         }
     }
