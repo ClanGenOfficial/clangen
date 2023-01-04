@@ -3363,7 +3363,30 @@
             },
             "disabled_image":
             {
-                "path":"resources/images/buttons/filter_age_unavailable.png"
+            "path": "resources/images/buttons/filter_age_unavailable.png"
+            }
+        }
+    },
+    "#med_den_button":
+    {
+        "prototype": "#image_button",
+        "images":
+        {
+            "normal_image":
+            {
+                "path": "resources/images/buttons/med_den.png"
+            },
+            "hovered_image":
+            {
+                "path": "resources/images/buttons/med_den_hover.png"
+            },
+            "selected_image":
+            {
+                "path": "resources/images/buttons/med_den_hover.png"
+            },
+            "disabled_image":
+            {
+                "path":"resources/images/buttons/med_den.png"
             }
         }
     }

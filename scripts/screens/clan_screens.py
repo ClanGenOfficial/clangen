@@ -16,6 +16,18 @@ class ClanScreen(Screens):
     max_sprites_displayed = 400  # we don't want 100,000 sprites rendering at once. 400 is enough.
     cat_buttons = []
 
+    def __init__(self, name=None):
+        super().__init__(name)
+        self.show_den_text = None
+        self.label_toggle = None
+        self.app_den_label = None
+        self.clearing_label = None
+        self.nursery_label = None
+        self.elder_den_label = None
+        self.med_den_label = None
+        self.leader_den_label = None
+        self.warrior_den_label = None
+
     def on_use(self):
         if game.settings['backgrounds']:
             if game.clan.current_season == 'Newleaf':
@@ -77,8 +89,11 @@ class ClanScreen(Screens):
                                                              image_cache.load_image('resources/images/warrior_den.png'))
         self.leader_den_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout["leader den"], (112, 28)),
                                                             image_cache.load_image('resources/images/leader_den.png'))
-        self.med_den_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout["medicine den"], (151, 28)),
-                                                         image_cache.load_image('resources/images/med_den.png'))
+        self.med_den_label = UIImageButton(pygame.Rect(
+            game.clan.cur_layout["medicine den"], (151, 28)),
+            "",
+            object_id="#med_den_button"
+            )
         self.elder_den_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout["elder den"], (103, 28)),
                                                            image_cache.load_image('resources/images/elder_den.png'))
         self.nursery_label = pygame_gui.elements.UIImage(pygame.Rect(game.clan.cur_layout['nursery'], (80, 28)),
@@ -186,7 +201,7 @@ class ClanScreen(Screens):
             pygame.image.load(all_backgrounds[3]).convert(), (800, 700))
 
     def choose_cat_postions(self):
-        '''Determines the postions of cat on the clan screen.'''
+        """Determines the postions of cat on the clan screen."""
         p = game.clan.cur_layout
         if game.clan.leader:
             game.clan.leader.placement = choice(p['leader place'])
